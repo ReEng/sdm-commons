@@ -14,7 +14,7 @@ import org.storydriven.modeling.activities.ActivityNode;
  * The following features are supported:
  * <ul>
  * <li>{@link org.storydriven.modeling.pattern.StoryNode#isForEach <em>For Each</em>}</li>
- * <li>{@link org.storydriven.modeling.pattern.StoryNode#getContainedPattern <em>Contained Pattern</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.StoryNode#getOwnedPattern <em>Owned Pattern</em>}</li>
  * </ul>
  * </p>
  * 
@@ -49,30 +49,30 @@ public interface StoryNode extends ActivityNode
    void setForEach (boolean value);
 
    /**
-    * Returns the value of the '<em><b>Contained Pattern</b></em>' containment reference. It is bidirectional and its opposite is '
-    * {@link org.storydriven.modeling.pattern.ObjectPattern#getContainingNode <em>Containing Node</em>}'. <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Owned Pattern</b></em>' containment reference. It is bidirectional and its opposite is '
+    * {@link org.storydriven.modeling.pattern.ObjectPattern#getOwningNode <em>Owning Node</em>}'. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Contained Pattern</em>' containment reference isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Owned Pattern</em>' containment reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
     * 
-    * @return the value of the '<em>Contained Pattern</em>' containment reference.
-    * @see #setContainedPattern(ObjectPattern)
-    * @see org.storydriven.modeling.pattern.PatternPackage#getStoryNode_ContainedPattern()
-    * @see org.storydriven.modeling.pattern.ObjectPattern#getContainingNode
-    * @model opposite="containingNode" containment="true" resolveProxies="true" required="true" ordered="false"
+    * @return the value of the '<em>Owned Pattern</em>' containment reference.
+    * @see #setOwnedPattern(ObjectPattern)
+    * @see org.storydriven.modeling.pattern.PatternPackage#getStoryNode_OwnedPattern()
+    * @see org.storydriven.modeling.pattern.ObjectPattern#getOwningNode
+    * @model opposite="owningNode" containment="true" resolveProxies="true" required="true" ordered="false"
     * @generated
     */
-   ObjectPattern getContainedPattern ();
+   ObjectPattern getOwnedPattern ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.pattern.StoryNode#getContainedPattern <em>Contained Pattern</em>}' containment reference. <!-- begin-user-doc --> <!--
+    * Sets the value of the '{@link org.storydriven.modeling.pattern.StoryNode#getOwnedPattern <em>Owned Pattern</em>}' containment reference. <!-- begin-user-doc --> <!--
     * end-user-doc -->
     * 
-    * @param value the new value of the '<em>Contained Pattern</em>' containment reference.
-    * @see #getContainedPattern()
+    * @param value the new value of the '<em>Owned Pattern</em>' containment reference.
+    * @see #getOwnedPattern()
     * @generated
     */
-   void setContainedPattern (ObjectPattern value);
+   void setOwnedPattern (ObjectPattern value);
 
 } // StoryNode

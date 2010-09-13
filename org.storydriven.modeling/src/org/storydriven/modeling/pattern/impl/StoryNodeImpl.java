@@ -22,7 +22,7 @@ import org.storydriven.modeling.pattern.StoryNode;
  * The following features are implemented:
  * <ul>
  * <li>{@link org.storydriven.modeling.pattern.impl.StoryNodeImpl#isForEach <em>For Each</em>}</li>
- * <li>{@link org.storydriven.modeling.pattern.impl.StoryNodeImpl#getContainedPattern <em>Contained Pattern</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.StoryNodeImpl#getOwnedPattern <em>Owned Pattern</em>}</li>
  * </ul>
  * </p>
  * 
@@ -49,13 +49,13 @@ public class StoryNodeImpl extends ActivityNodeImpl implements StoryNode
    protected boolean forEach = FOR_EACH_EDEFAULT;
 
    /**
-    * The cached value of the '{@link #getContainedPattern() <em>Contained Pattern</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The cached value of the '{@link #getOwnedPattern() <em>Owned Pattern</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
     * 
-    * @see #getContainedPattern()
+    * @see #getOwnedPattern()
     * @generated
     * @ordered
     */
-   protected ObjectPattern containedPattern;
+   protected ObjectPattern ownedPattern;
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -109,20 +109,20 @@ public class StoryNodeImpl extends ActivityNodeImpl implements StoryNode
     * 
     * @generated
     */
-   public ObjectPattern getContainedPattern ()
+   public ObjectPattern getOwnedPattern ()
    {
-      if (this.containedPattern != null && this.containedPattern.eIsProxy())
+      if (this.ownedPattern != null && this.ownedPattern.eIsProxy())
       {
-         InternalEObject oldContainedPattern = (InternalEObject) this.containedPattern;
-         this.containedPattern = (ObjectPattern) eResolveProxy(oldContainedPattern);
-         if (this.containedPattern != oldContainedPattern)
+         InternalEObject oldOwnedPattern = (InternalEObject) this.ownedPattern;
+         this.ownedPattern = (ObjectPattern) eResolveProxy(oldOwnedPattern);
+         if (this.ownedPattern != oldOwnedPattern)
          {
-            InternalEObject newContainedPattern = (InternalEObject) this.containedPattern;
-            NotificationChain msgs = oldContainedPattern.eInverseRemove(this,
-               PatternPackage.OBJECT_PATTERN__CONTAINING_NODE, ObjectPattern.class, null);
-            if (newContainedPattern.eInternalContainer() == null)
+            InternalEObject newOwnedPattern = (InternalEObject) this.ownedPattern;
+            NotificationChain msgs = oldOwnedPattern.eInverseRemove(this, PatternPackage.OBJECT_PATTERN__OWNING_NODE,
+               ObjectPattern.class, null);
+            if (newOwnedPattern.eInternalContainer() == null)
             {
-               msgs = newContainedPattern.eInverseAdd(this, PatternPackage.OBJECT_PATTERN__CONTAINING_NODE,
+               msgs = newOwnedPattern.eInverseAdd(this, PatternPackage.OBJECT_PATTERN__OWNING_NODE,
                   ObjectPattern.class, msgs);
             }
             if (msgs != null)
@@ -131,12 +131,12 @@ public class StoryNodeImpl extends ActivityNodeImpl implements StoryNode
             }
             if (eNotificationRequired())
             {
-               eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.STORY_NODE__CONTAINED_PATTERN,
-                  oldContainedPattern, this.containedPattern));
+               eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.STORY_NODE__OWNED_PATTERN,
+                  oldOwnedPattern, this.ownedPattern));
             }
          }
       }
-      return this.containedPattern;
+      return this.ownedPattern;
    }
 
    /**
@@ -144,9 +144,9 @@ public class StoryNodeImpl extends ActivityNodeImpl implements StoryNode
     * 
     * @generated
     */
-   public ObjectPattern basicGetContainedPattern ()
+   public ObjectPattern basicGetOwnedPattern ()
    {
-      return this.containedPattern;
+      return this.ownedPattern;
    }
 
    /**
@@ -154,14 +154,14 @@ public class StoryNodeImpl extends ActivityNodeImpl implements StoryNode
     * 
     * @generated
     */
-   public NotificationChain basicSetContainedPattern (ObjectPattern newContainedPattern, NotificationChain msgs)
+   public NotificationChain basicSetOwnedPattern (ObjectPattern newOwnedPattern, NotificationChain msgs)
    {
-      ObjectPattern oldContainedPattern = this.containedPattern;
-      this.containedPattern = newContainedPattern;
+      ObjectPattern oldOwnedPattern = this.ownedPattern;
+      this.ownedPattern = newOwnedPattern;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-            PatternPackage.STORY_NODE__CONTAINED_PATTERN, oldContainedPattern, newContainedPattern);
+            PatternPackage.STORY_NODE__OWNED_PATTERN, oldOwnedPattern, newOwnedPattern);
          if (msgs == null)
          {
             msgs = notification;
@@ -179,22 +179,22 @@ public class StoryNodeImpl extends ActivityNodeImpl implements StoryNode
     * 
     * @generated
     */
-   public void setContainedPattern (ObjectPattern newContainedPattern)
+   public void setOwnedPattern (ObjectPattern newOwnedPattern)
    {
-      if (newContainedPattern != this.containedPattern)
+      if (newOwnedPattern != this.ownedPattern)
       {
          NotificationChain msgs = null;
-         if (this.containedPattern != null)
+         if (this.ownedPattern != null)
          {
-            msgs = ((InternalEObject) this.containedPattern).eInverseRemove(this,
-               PatternPackage.OBJECT_PATTERN__CONTAINING_NODE, ObjectPattern.class, msgs);
+            msgs = ((InternalEObject) this.ownedPattern).eInverseRemove(this,
+               PatternPackage.OBJECT_PATTERN__OWNING_NODE, ObjectPattern.class, msgs);
          }
-         if (newContainedPattern != null)
+         if (newOwnedPattern != null)
          {
-            msgs = ((InternalEObject) newContainedPattern).eInverseAdd(this,
-               PatternPackage.OBJECT_PATTERN__CONTAINING_NODE, ObjectPattern.class, msgs);
+            msgs = ((InternalEObject) newOwnedPattern).eInverseAdd(this, PatternPackage.OBJECT_PATTERN__OWNING_NODE,
+               ObjectPattern.class, msgs);
          }
-         msgs = basicSetContainedPattern(newContainedPattern, msgs);
+         msgs = basicSetOwnedPattern(newOwnedPattern, msgs);
          if (msgs != null)
          {
             msgs.dispatch();
@@ -202,8 +202,8 @@ public class StoryNodeImpl extends ActivityNodeImpl implements StoryNode
       }
       else if (eNotificationRequired())
       {
-         eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.STORY_NODE__CONTAINED_PATTERN,
-            newContainedPattern, newContainedPattern));
+         eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.STORY_NODE__OWNED_PATTERN,
+            newOwnedPattern, newOwnedPattern));
       }
    }
 
@@ -217,13 +217,13 @@ public class StoryNodeImpl extends ActivityNodeImpl implements StoryNode
    {
       switch (featureID)
       {
-         case PatternPackage.STORY_NODE__CONTAINED_PATTERN:
-            if (this.containedPattern != null)
+         case PatternPackage.STORY_NODE__OWNED_PATTERN:
+            if (this.ownedPattern != null)
             {
-               msgs = ((InternalEObject) this.containedPattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-                  - PatternPackage.STORY_NODE__CONTAINED_PATTERN, null, msgs);
+               msgs = ((InternalEObject) this.ownedPattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+                  - PatternPackage.STORY_NODE__OWNED_PATTERN, null, msgs);
             }
-            return basicSetContainedPattern((ObjectPattern) otherEnd, msgs);
+            return basicSetOwnedPattern((ObjectPattern) otherEnd, msgs);
       }
       return super.eInverseAdd(otherEnd, featureID, msgs);
    }
@@ -238,8 +238,8 @@ public class StoryNodeImpl extends ActivityNodeImpl implements StoryNode
    {
       switch (featureID)
       {
-         case PatternPackage.STORY_NODE__CONTAINED_PATTERN:
-            return basicSetContainedPattern(null, msgs);
+         case PatternPackage.STORY_NODE__OWNED_PATTERN:
+            return basicSetOwnedPattern(null, msgs);
       }
       return super.eInverseRemove(otherEnd, featureID, msgs);
    }
@@ -256,12 +256,12 @@ public class StoryNodeImpl extends ActivityNodeImpl implements StoryNode
       {
          case PatternPackage.STORY_NODE__FOR_EACH:
             return isForEach();
-         case PatternPackage.STORY_NODE__CONTAINED_PATTERN:
+         case PatternPackage.STORY_NODE__OWNED_PATTERN:
             if (resolve)
             {
-               return getContainedPattern();
+               return getOwnedPattern();
             }
-            return basicGetContainedPattern();
+            return basicGetOwnedPattern();
       }
       return super.eGet(featureID, resolve, coreType);
    }
@@ -279,8 +279,8 @@ public class StoryNodeImpl extends ActivityNodeImpl implements StoryNode
          case PatternPackage.STORY_NODE__FOR_EACH:
             setForEach((Boolean) newValue);
             return;
-         case PatternPackage.STORY_NODE__CONTAINED_PATTERN:
-            setContainedPattern((ObjectPattern) newValue);
+         case PatternPackage.STORY_NODE__OWNED_PATTERN:
+            setOwnedPattern((ObjectPattern) newValue);
             return;
       }
       super.eSet(featureID, newValue);
@@ -299,8 +299,8 @@ public class StoryNodeImpl extends ActivityNodeImpl implements StoryNode
          case PatternPackage.STORY_NODE__FOR_EACH:
             setForEach(FOR_EACH_EDEFAULT);
             return;
-         case PatternPackage.STORY_NODE__CONTAINED_PATTERN:
-            setContainedPattern((ObjectPattern) null);
+         case PatternPackage.STORY_NODE__OWNED_PATTERN:
+            setOwnedPattern((ObjectPattern) null);
             return;
       }
       super.eUnset(featureID);
@@ -318,8 +318,8 @@ public class StoryNodeImpl extends ActivityNodeImpl implements StoryNode
       {
          case PatternPackage.STORY_NODE__FOR_EACH:
             return this.forEach != FOR_EACH_EDEFAULT;
-         case PatternPackage.STORY_NODE__CONTAINED_PATTERN:
-            return this.containedPattern != null;
+         case PatternPackage.STORY_NODE__OWNED_PATTERN:
+            return this.ownedPattern != null;
       }
       return super.eIsSet(featureID);
    }

@@ -447,7 +447,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage
     * 
     * @generated
     */
-   public EReference getObjectPattern_ContainedObjects ()
+   public EReference getObjectPattern_OwnedObjects ()
    {
       return (EReference) this.objectPatternEClass.getEStructuralFeatures().get(0);
    }
@@ -467,7 +467,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage
     * 
     * @generated
     */
-   public EReference getObjectPattern_ContainingNode ()
+   public EReference getObjectPattern_OwningNode ()
    {
       return (EReference) this.objectPatternEClass.getEStructuralFeatures().get(2);
    }
@@ -477,7 +477,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage
     * 
     * @generated
     */
-   public EReference getObjectPattern_ParentPattern ()
+   public EReference getObjectPattern_OwningPattern ()
    {
       return (EReference) this.objectPatternEClass.getEStructuralFeatures().get(3);
    }
@@ -487,7 +487,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage
     * 
     * @generated
     */
-   public EReference getObjectPattern_ChildPattern ()
+   public EReference getObjectPattern_OwnedPattern ()
    {
       return (EReference) this.objectPatternEClass.getEStructuralFeatures().get(4);
    }
@@ -537,7 +537,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage
     * 
     * @generated
     */
-   public EReference getStoryNode_ContainedPattern ()
+   public EReference getStoryNode_OwnedPattern ()
    {
       return (EReference) this.storyNodeEClass.getEStructuralFeatures().get(1);
    }
@@ -789,17 +789,17 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage
       createEReference(this.multiLinkEClass, MULTI_LINK__TARGET_LINK);
 
       this.objectPatternEClass = createEClass(OBJECT_PATTERN);
-      createEReference(this.objectPatternEClass, OBJECT_PATTERN__CONTAINED_OBJECTS);
+      createEReference(this.objectPatternEClass, OBJECT_PATTERN__OWNED_OBJECTS);
       createEReference(this.objectPatternEClass, OBJECT_PATTERN__STATEMENT);
-      createEReference(this.objectPatternEClass, OBJECT_PATTERN__CONTAINING_NODE);
-      createEReference(this.objectPatternEClass, OBJECT_PATTERN__PARENT_PATTERN);
-      createEReference(this.objectPatternEClass, OBJECT_PATTERN__CHILD_PATTERN);
+      createEReference(this.objectPatternEClass, OBJECT_PATTERN__OWNING_NODE);
+      createEReference(this.objectPatternEClass, OBJECT_PATTERN__OWNING_PATTERN);
+      createEReference(this.objectPatternEClass, OBJECT_PATTERN__OWNED_PATTERN);
       createEAttribute(this.objectPatternEClass, OBJECT_PATTERN__CONSTRAINT);
       createEReference(this.objectPatternEClass, OBJECT_PATTERN__CONSTRAINT_EXPRESSION);
 
       this.storyNodeEClass = createEClass(STORY_NODE);
       createEAttribute(this.storyNodeEClass, STORY_NODE__FOR_EACH);
-      createEReference(this.storyNodeEClass, STORY_NODE__CONTAINED_PATTERN);
+      createEReference(this.storyNodeEClass, STORY_NODE__OWNED_PATTERN);
 
       this.pathEClass = createEClass(PATH);
       createEReference(this.pathEClass, PATH__PATH_EXPRESSION);
@@ -937,20 +937,20 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage
 
       initEClass(this.objectPatternEClass, ObjectPattern.class, "ObjectPattern", !IS_ABSTRACT, !IS_INTERFACE,
          IS_GENERATED_INSTANCE_CLASS);
-      initEReference(getObjectPattern_ContainedObjects(), getObject(), getObject_Pattern(), "containedObjects", null,
-         0, -1, ObjectPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
+      initEReference(getObjectPattern_OwnedObjects(), getObject(), getObject_Pattern(), "ownedObjects", null, 0, -1,
+         ObjectPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
          !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
       initEReference(getObjectPattern_Statement(), theSDMPackage.getExpression(), null, "statement", null, 0, -1,
          ObjectPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
          !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-      initEReference(getObjectPattern_ContainingNode(), getStoryNode(), getStoryNode_ContainedPattern(),
-         "containingNode", null, 0, 1, ObjectPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+      initEReference(getObjectPattern_OwningNode(), getStoryNode(), getStoryNode_OwnedPattern(), "owningNode", null, 0,
+         1, ObjectPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+      initEReference(getObjectPattern_OwningPattern(), getObjectPattern(), getObjectPattern_OwnedPattern(),
+         "owningPattern", null, 0, 1, ObjectPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
          IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-      initEReference(getObjectPattern_ParentPattern(), getObjectPattern(), getObjectPattern_ChildPattern(),
-         "parentPattern", null, 0, 1, ObjectPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-         IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-      initEReference(getObjectPattern_ChildPattern(), getObjectPattern(), getObjectPattern_ParentPattern(),
-         "childPattern", null, 0, -1, ObjectPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+      initEReference(getObjectPattern_OwnedPattern(), getObjectPattern(), getObjectPattern_OwningPattern(),
+         "ownedPattern", null, 0, -1, ObjectPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
          IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
       initEAttribute(getObjectPattern_Constraint(), getConstraint(), "constraint", "NONE", 1, 1, ObjectPattern.class,
          !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -962,9 +962,9 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage
          IS_GENERATED_INSTANCE_CLASS);
       initEAttribute(getStoryNode_ForEach(), this.ecorePackage.getEBoolean(), "forEach", null, 1, 1, StoryNode.class,
          !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-      initEReference(getStoryNode_ContainedPattern(), getObjectPattern(), getObjectPattern_ContainingNode(),
-         "containedPattern", null, 1, 1, StoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-         IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+      initEReference(getStoryNode_OwnedPattern(), getObjectPattern(), getObjectPattern_OwningNode(), "ownedPattern",
+         null, 1, 1, StoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
+         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
       initEClass(this.pathEClass, Path.class, "Path", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
       initEReference(getPath_PathExpression(), theSDMPackage.getExpression(), null, "pathExpression", null, 1, 1,
@@ -983,8 +983,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage
       initEReference(getObject_LinkToTarget(), getLink(), getLink_Source(), "linkToTarget", null, 0, -1,
          org.storydriven.modeling.pattern.Object.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
          IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-      initEReference(getObject_Pattern(), getObjectPattern(), getObjectPattern_ContainedObjects(), "pattern", null, 0,
-         1, org.storydriven.modeling.pattern.Object.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+      initEReference(getObject_Pattern(), getObjectPattern(), getObjectPattern_OwnedObjects(), "pattern", null, 0, 1,
+         org.storydriven.modeling.pattern.Object.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
          IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
       initEAttribute(getObject_Bound(), getBoundType(), "bound", "UNBOUND", 1, 1,
          org.storydriven.modeling.pattern.Object.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,

@@ -91,12 +91,12 @@ public interface TemplatesPackage extends EPackage
    int OBJECT_PATTERN_TEMPLATE__COMMENT = PatternPackage.OBJECT_PATTERN__COMMENT;
 
    /**
-    * The feature id for the '<em><b>Contained Objects</b></em>' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Owned Objects</b></em>' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
     * 
     * @generated
     * @ordered
     */
-   int OBJECT_PATTERN_TEMPLATE__CONTAINED_OBJECTS = PatternPackage.OBJECT_PATTERN__CONTAINED_OBJECTS;
+   int OBJECT_PATTERN_TEMPLATE__OWNED_OBJECTS = PatternPackage.OBJECT_PATTERN__OWNED_OBJECTS;
 
    /**
     * The feature id for the '<em><b>Statement</b></em>' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -107,28 +107,28 @@ public interface TemplatesPackage extends EPackage
    int OBJECT_PATTERN_TEMPLATE__STATEMENT = PatternPackage.OBJECT_PATTERN__STATEMENT;
 
    /**
-    * The feature id for the '<em><b>Containing Node</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Owning Node</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
     * 
     * @generated
     * @ordered
     */
-   int OBJECT_PATTERN_TEMPLATE__CONTAINING_NODE = PatternPackage.OBJECT_PATTERN__CONTAINING_NODE;
+   int OBJECT_PATTERN_TEMPLATE__OWNING_NODE = PatternPackage.OBJECT_PATTERN__OWNING_NODE;
 
    /**
-    * The feature id for the '<em><b>Parent Pattern</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Owning Pattern</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
     * 
     * @generated
     * @ordered
     */
-   int OBJECT_PATTERN_TEMPLATE__PARENT_PATTERN = PatternPackage.OBJECT_PATTERN__PARENT_PATTERN;
+   int OBJECT_PATTERN_TEMPLATE__OWNING_PATTERN = PatternPackage.OBJECT_PATTERN__OWNING_PATTERN;
 
    /**
-    * The feature id for the '<em><b>Child Pattern</b></em>' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Owned Pattern</b></em>' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
     * 
     * @generated
     * @ordered
     */
-   int OBJECT_PATTERN_TEMPLATE__CHILD_PATTERN = PatternPackage.OBJECT_PATTERN__CHILD_PATTERN;
+   int OBJECT_PATTERN_TEMPLATE__OWNED_PATTERN = PatternPackage.OBJECT_PATTERN__OWNED_PATTERN;
 
    /**
     * The feature id for the '<em><b>Constraint</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->

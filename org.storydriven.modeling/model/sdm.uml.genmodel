@@ -187,15 +187,15 @@
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//pattern/ObjectPattern">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//pattern/ObjectPattern/containedObjects"/>
+            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//pattern/ObjectPattern/ownedObjects"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//pattern/ObjectPattern/statement"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
-            createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//pattern/ObjectPattern/containingNode"/>
+            createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//pattern/ObjectPattern/owningNode"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
-            createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//pattern/ObjectPattern/parentPattern"/>
+            createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//pattern/ObjectPattern/owningPattern"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//pattern/ObjectPattern/childPattern"/>
+            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//pattern/ObjectPattern/ownedPattern"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//pattern/ObjectPattern/constraint"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//pattern/ObjectPattern/constraintExpression"/>
@@ -203,7 +203,7 @@
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//pattern/StoryNode">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//pattern/StoryNode/forEach"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//pattern/StoryNode/containedPattern"/>
+            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//pattern/StoryNode/ownedPattern"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//pattern/Path">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

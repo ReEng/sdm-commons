@@ -89,7 +89,7 @@ public interface Object extends TypedElement, NamedElement
 
    /**
     * Returns the value of the '<em><b>Pattern</b></em>' container reference. It is bidirectional and its opposite is '
-    * {@link org.storydriven.modeling.pattern.ObjectPattern#getContainedObjects <em>Contained Objects</em>}'. <!-- begin-user-doc -->
+    * {@link org.storydriven.modeling.pattern.ObjectPattern#getOwnedObjects <em>Owned Objects</em>}'. <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Pattern</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
@@ -98,8 +98,8 @@ public interface Object extends TypedElement, NamedElement
     * @return the value of the '<em>Pattern</em>' container reference.
     * @see #setPattern(ObjectPattern)
     * @see org.storydriven.modeling.pattern.PatternPackage#getObject_Pattern()
-    * @see org.storydriven.modeling.pattern.ObjectPattern#getContainedObjects
-    * @model opposite="containedObjects" transient="false" ordered="false"
+    * @see org.storydriven.modeling.pattern.ObjectPattern#getOwnedObjects
+    * @model opposite="ownedObjects" transient="false" ordered="false"
     * @generated
     */
    ObjectPattern getPattern ();

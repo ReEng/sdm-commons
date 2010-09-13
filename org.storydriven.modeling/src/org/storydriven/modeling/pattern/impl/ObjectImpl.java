@@ -336,7 +336,7 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
          }
          if (newPattern != null)
          {
-            msgs = ((InternalEObject) newPattern).eInverseAdd(this, PatternPackage.OBJECT_PATTERN__CONTAINED_OBJECTS,
+            msgs = ((InternalEObject) newPattern).eInverseAdd(this, PatternPackage.OBJECT_PATTERN__OWNED_OBJECTS,
                ObjectPattern.class, msgs);
          }
          msgs = basicSetPattern(newPattern, msgs);
@@ -691,7 +691,7 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
       switch (eContainerFeatureID())
       {
          case PatternPackage.OBJECT__PATTERN:
-            return eInternalContainer().eInverseRemove(this, PatternPackage.OBJECT_PATTERN__CONTAINED_OBJECTS,
+            return eInternalContainer().eInverseRemove(this, PatternPackage.OBJECT_PATTERN__OWNED_OBJECTS,
                ObjectPattern.class, msgs);
       }
       return super.eBasicRemoveFromContainerFeature(msgs);

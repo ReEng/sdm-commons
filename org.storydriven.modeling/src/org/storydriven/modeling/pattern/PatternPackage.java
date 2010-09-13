@@ -360,12 +360,12 @@ public interface PatternPackage extends EPackage
    int OBJECT_PATTERN__COMMENT = SDMPackage.COMMENTABLE_ELEMENT__COMMENT;
 
    /**
-    * The feature id for the '<em><b>Contained Objects</b></em>' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Owned Objects</b></em>' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
     * 
     * @generated
     * @ordered
     */
-   int OBJECT_PATTERN__CONTAINED_OBJECTS = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+   int OBJECT_PATTERN__OWNED_OBJECTS = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
    /**
     * The feature id for the '<em><b>Statement</b></em>' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -376,28 +376,28 @@ public interface PatternPackage extends EPackage
    int OBJECT_PATTERN__STATEMENT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
    /**
-    * The feature id for the '<em><b>Containing Node</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Owning Node</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
     * 
     * @generated
     * @ordered
     */
-   int OBJECT_PATTERN__CONTAINING_NODE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+   int OBJECT_PATTERN__OWNING_NODE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
    /**
-    * The feature id for the '<em><b>Parent Pattern</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Owning Pattern</b></em>' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
     * 
     * @generated
     * @ordered
     */
-   int OBJECT_PATTERN__PARENT_PATTERN = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+   int OBJECT_PATTERN__OWNING_PATTERN = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
    /**
-    * The feature id for the '<em><b>Child Pattern</b></em>' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Owned Pattern</b></em>' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
     * 
     * @generated
     * @ordered
     */
-   int OBJECT_PATTERN__CHILD_PATTERN = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
+   int OBJECT_PATTERN__OWNED_PATTERN = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
    /**
     * The feature id for the '<em><b>Constraint</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -505,12 +505,12 @@ public interface PatternPackage extends EPackage
    int STORY_NODE__FOR_EACH = ActivitiesPackage.ACTIVITY_NODE_FEATURE_COUNT + 0;
 
    /**
-    * The feature id for the '<em><b>Contained Pattern</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Owned Pattern</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
     * 
     * @generated
     * @ordered
     */
-   int STORY_NODE__CONTAINED_PATTERN = ActivitiesPackage.ACTIVITY_NODE_FEATURE_COUNT + 1;
+   int STORY_NODE__OWNED_PATTERN = ActivitiesPackage.ACTIVITY_NODE_FEATURE_COUNT + 1;
 
    /**
     * The number of structural features of the '<em>Story Node</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1069,15 +1069,15 @@ public interface PatternPackage extends EPackage
    EClass getObjectPattern ();
 
    /**
-    * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.pattern.ObjectPattern#getContainedObjects <em>Contained Objects</em>}'. <!--
+    * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.pattern.ObjectPattern#getOwnedObjects <em>Owned Objects</em>}'. <!--
     * begin-user-doc --> <!-- end-user-doc -->
     * 
-    * @return the meta object for the containment reference list '<em>Contained Objects</em>'.
-    * @see org.storydriven.modeling.pattern.ObjectPattern#getContainedObjects()
+    * @return the meta object for the containment reference list '<em>Owned Objects</em>'.
+    * @see org.storydriven.modeling.pattern.ObjectPattern#getOwnedObjects()
     * @see #getObjectPattern()
     * @generated
     */
-   EReference getObjectPattern_ContainedObjects ();
+   EReference getObjectPattern_OwnedObjects ();
 
    /**
     * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.pattern.ObjectPattern#getStatements <em>Statement</em>}'. <!-- begin-user-doc -->
@@ -1091,37 +1091,37 @@ public interface PatternPackage extends EPackage
    EReference getObjectPattern_Statement ();
 
    /**
-    * Returns the meta object for the container reference '{@link org.storydriven.modeling.pattern.ObjectPattern#getContainingNode <em>Containing Node</em>}'. <!-- begin-user-doc
-    * --> <!-- end-user-doc -->
+    * Returns the meta object for the container reference '{@link org.storydriven.modeling.pattern.ObjectPattern#getOwningNode <em>Owning Node</em>}'. <!-- begin-user-doc --> <!--
+    * end-user-doc -->
     * 
-    * @return the meta object for the container reference '<em>Containing Node</em>'.
-    * @see org.storydriven.modeling.pattern.ObjectPattern#getContainingNode()
+    * @return the meta object for the container reference '<em>Owning Node</em>'.
+    * @see org.storydriven.modeling.pattern.ObjectPattern#getOwningNode()
     * @see #getObjectPattern()
     * @generated
     */
-   EReference getObjectPattern_ContainingNode ();
+   EReference getObjectPattern_OwningNode ();
 
    /**
-    * Returns the meta object for the container reference '{@link org.storydriven.modeling.pattern.ObjectPattern#getParentPattern <em>Parent Pattern</em>}'. <!-- begin-user-doc -->
+    * Returns the meta object for the container reference '{@link org.storydriven.modeling.pattern.ObjectPattern#getOwningPattern <em>Owning Pattern</em>}'. <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * 
-    * @return the meta object for the container reference '<em>Parent Pattern</em>'.
-    * @see org.storydriven.modeling.pattern.ObjectPattern#getParentPattern()
+    * @return the meta object for the container reference '<em>Owning Pattern</em>'.
+    * @see org.storydriven.modeling.pattern.ObjectPattern#getOwningPattern()
     * @see #getObjectPattern()
     * @generated
     */
-   EReference getObjectPattern_ParentPattern ();
+   EReference getObjectPattern_OwningPattern ();
 
    /**
-    * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.pattern.ObjectPattern#getChildPatterns <em>Child Pattern</em>}'. <!--
+    * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.pattern.ObjectPattern#getOwnedPatterns <em>Owned Pattern</em>}'. <!--
     * begin-user-doc --> <!-- end-user-doc -->
     * 
-    * @return the meta object for the containment reference list '<em>Child Pattern</em>'.
-    * @see org.storydriven.modeling.pattern.ObjectPattern#getChildPatterns()
+    * @return the meta object for the containment reference list '<em>Owned Pattern</em>'.
+    * @see org.storydriven.modeling.pattern.ObjectPattern#getOwnedPatterns()
     * @see #getObjectPattern()
     * @generated
     */
-   EReference getObjectPattern_ChildPattern ();
+   EReference getObjectPattern_OwnedPattern ();
 
    /**
     * Returns the meta object for the attribute '{@link org.storydriven.modeling.pattern.ObjectPattern#getConstraint <em>Constraint</em>}'. <!-- begin-user-doc --> <!--
@@ -1165,15 +1165,15 @@ public interface PatternPackage extends EPackage
    EAttribute getStoryNode_ForEach ();
 
    /**
-    * Returns the meta object for the containment reference '{@link org.storydriven.modeling.pattern.StoryNode#getContainedPattern <em>Contained Pattern</em>}'. <!-- begin-user-doc
-    * --> <!-- end-user-doc -->
+    * Returns the meta object for the containment reference '{@link org.storydriven.modeling.pattern.StoryNode#getOwnedPattern <em>Owned Pattern</em>}'. <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * 
-    * @return the meta object for the containment reference '<em>Contained Pattern</em>'.
-    * @see org.storydriven.modeling.pattern.StoryNode#getContainedPattern()
+    * @return the meta object for the containment reference '<em>Owned Pattern</em>'.
+    * @see org.storydriven.modeling.pattern.StoryNode#getOwnedPattern()
     * @see #getStoryNode()
     * @generated
     */
-   EReference getStoryNode_ContainedPattern ();
+   EReference getStoryNode_OwnedPattern ();
 
    /**
     * Returns the meta object for class '{@link org.storydriven.modeling.pattern.Path <em>Path</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1560,11 +1560,11 @@ public interface PatternPackage extends EPackage
       EClass OBJECT_PATTERN = eINSTANCE.getObjectPattern();
 
       /**
-       * The meta object literal for the '<em><b>Contained Objects</b></em>' containment reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+       * The meta object literal for the '<em><b>Owned Objects</b></em>' containment reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
        * 
        * @generated
        */
-      EReference OBJECT_PATTERN__CONTAINED_OBJECTS = eINSTANCE.getObjectPattern_ContainedObjects();
+      EReference OBJECT_PATTERN__OWNED_OBJECTS = eINSTANCE.getObjectPattern_OwnedObjects();
 
       /**
        * The meta object literal for the '<em><b>Statement</b></em>' containment reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1574,25 +1574,25 @@ public interface PatternPackage extends EPackage
       EReference OBJECT_PATTERN__STATEMENT = eINSTANCE.getObjectPattern_Statement();
 
       /**
-       * The meta object literal for the '<em><b>Containing Node</b></em>' container reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+       * The meta object literal for the '<em><b>Owning Node</b></em>' container reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
        * 
        * @generated
        */
-      EReference OBJECT_PATTERN__CONTAINING_NODE = eINSTANCE.getObjectPattern_ContainingNode();
+      EReference OBJECT_PATTERN__OWNING_NODE = eINSTANCE.getObjectPattern_OwningNode();
 
       /**
-       * The meta object literal for the '<em><b>Parent Pattern</b></em>' container reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+       * The meta object literal for the '<em><b>Owning Pattern</b></em>' container reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
        * 
        * @generated
        */
-      EReference OBJECT_PATTERN__PARENT_PATTERN = eINSTANCE.getObjectPattern_ParentPattern();
+      EReference OBJECT_PATTERN__OWNING_PATTERN = eINSTANCE.getObjectPattern_OwningPattern();
 
       /**
-       * The meta object literal for the '<em><b>Child Pattern</b></em>' containment reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+       * The meta object literal for the '<em><b>Owned Pattern</b></em>' containment reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
        * 
        * @generated
        */
-      EReference OBJECT_PATTERN__CHILD_PATTERN = eINSTANCE.getObjectPattern_ChildPattern();
+      EReference OBJECT_PATTERN__OWNED_PATTERN = eINSTANCE.getObjectPattern_OwnedPattern();
 
       /**
        * The meta object literal for the '<em><b>Constraint</b></em>' attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1625,11 +1625,11 @@ public interface PatternPackage extends EPackage
       EAttribute STORY_NODE__FOR_EACH = eINSTANCE.getStoryNode_ForEach();
 
       /**
-       * The meta object literal for the '<em><b>Contained Pattern</b></em>' containment reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+       * The meta object literal for the '<em><b>Owned Pattern</b></em>' containment reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
        * 
        * @generated
        */
-      EReference STORY_NODE__CONTAINED_PATTERN = eINSTANCE.getStoryNode_ContainedPattern();
+      EReference STORY_NODE__OWNED_PATTERN = eINSTANCE.getStoryNode_OwnedPattern();
 
       /**
        * The meta object literal for the '{@link org.storydriven.modeling.pattern.impl.PathImpl <em>Path</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->

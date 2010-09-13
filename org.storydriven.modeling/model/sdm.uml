@@ -424,7 +424,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="762a7829-3f0c-4d56-9644-9e12504ce2f4" name="ObjectPattern">
         <generalization xmi:id="_jqC-QLxXEd-Ytrd77fw2LA" general="_e7CFQLLyEd-uk56s-ldeog"/>
-        <ownedAttribute xmi:id="5999b52c-f7c5-4bc4-87ad-ef18581fea6a" name="containedObjects" visibility="public" type="c0f72d07-a643-4da9-859b-d95cfca69eee" aggregation="composite" association="71c51c4d-b7d4-44e9-8970-b4d9a946910c">
+        <ownedAttribute xmi:id="5999b52c-f7c5-4bc4-87ad-ef18581fea6a" name="ownedObjects" visibility="public" type="c0f72d07-a643-4da9-859b-d95cfca69eee" aggregation="composite" association="71c51c4d-b7d4-44e9-8970-b4d9a946910c">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA1T87KwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA1T9LKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
@@ -432,13 +432,13 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA17ALKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA17AbKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="7598794a-4329-46cc-b279-182cd7103938" name="containingNode" visibility="public" type="9f08ef2b-883b-486d-9dfd-53a9300410fa" association="0449f5f3-c15a-402c-882f-1fca689cec32">
+        <ownedAttribute xmi:id="7598794a-4329-46cc-b279-182cd7103938" name="owningNode" visibility="public" type="9f08ef2b-883b-486d-9dfd-53a9300410fa" association="0449f5f3-c15a-402c-882f-1fca689cec32">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0D3VoLLxEd-uk56s-ldeog"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="7ce0a38c-81f6-4c40-9a4a-941e9e84f02a" name="parentPattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="d99eb2d4-772b-4044-a9f4-a61accff7475">
+        <ownedAttribute xmi:id="7ce0a38c-81f6-4c40-9a4a-941e9e84f02a" name="owningPattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="d99eb2d4-772b-4044-a9f4-a61accff7475">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA17BLKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="406d03a7-91d4-450d-baa7-ee449e9f282c" name="childPattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" aggregation="composite" association="d99eb2d4-772b-4044-a9f4-a61accff7475">
+        <ownedAttribute xmi:id="406d03a7-91d4-450d-baa7-ee449e9f282c" name="ownedPattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" aggregation="composite" association="d99eb2d4-772b-4044-a9f4-a61accff7475">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA17BrKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA17B7KwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
@@ -471,13 +471,13 @@
         <ownedAttribute xmi:id="bb2022ce-286d-4865-9482-283f89214bb9" name="forEach" visibility="public">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="779bfb46-33f2-49f4-9ad0-8e26ce91a437" name="containedPattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" aggregation="composite" association="0449f5f3-c15a-402c-882f-1fca689cec32">
+        <ownedAttribute xmi:id="779bfb46-33f2-49f4-9ad0-8e26ce91a437" name="ownedPattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" aggregation="composite" association="0449f5f3-c15a-402c-882f-1fca689cec32">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA1T8bKwEd-DYIlz5ANeHA" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="5589daf2-a2cb-4afa-bb02-2da37d5af801" name="HasTargetLink" memberEnd="14426f7e-673a-4457-ab0e-c96c45d95a78 e63f051a-8e92-4ebb-9a36-1ab9ecd6e055"/>
       <packagedElement xmi:type="uml:Association" xmi:id="7614aedb-dfa3-426e-9c26-73a44d2ddb96" name="HasSourceLink" memberEnd="1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9 12c158aa-af57-4163-9840-4d19640d092f"/>
-      <packagedElement xmi:type="uml:Association" xmi:id="_xIwpgLK8Ed-uk56s-ldeog" name="HasTargetObject" memberEnd="_xIxQkLK8Ed-uk56s-ldeog _xIx3obK8Ed-uk56s-ldeog">
+      <packagedElement xmi:type="uml:Association" xmi:id="_xIwpgLK8Ed-uk56s-ldeog" name="MultiLinkHasTargetObject" memberEnd="_xIxQkLK8Ed-uk56s-ldeog _xIx3obK8Ed-uk56s-ldeog">
         <ownedEnd xmi:id="_xIxQkLK8Ed-uk56s-ldeog" name="multiLink" type="8fd71d27-94c0-49d5-9902-a26156244424" association="_xIwpgLK8Ed-uk56s-ldeog">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xIx3oLK8Ed-uk56s-ldeog" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xIxQkbK8Ed-uk56s-ldeog"/>
@@ -518,11 +518,11 @@
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="69655221-6bcf-4e10-844f-3c9d17afde9a" name="ContainsStatement" memberEnd="04d4d9bf-4c2b-4bdb-957a-798ead613f81 858a89b2-cf12-40f8-8517-5a91b8617f8c">
-        <ownedEnd xmi:id="04d4d9bf-4c2b-4bdb-957a-798ead613f81" name="containingPattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="69655221-6bcf-4e10-844f-3c9d17afde9a">
+        <ownedEnd xmi:id="04d4d9bf-4c2b-4bdb-957a-798ead613f81" name="owningPattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="69655221-6bcf-4e10-844f-3c9d17afde9a">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA3wNLKwEd-DYIlz5ANeHA"/>
         </ownedEnd>
       </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="d99eb2d4-772b-4044-a9f4-a61accff7475" name="ContainsObjectPattern" memberEnd="7ce0a38c-81f6-4c40-9a4a-941e9e84f02a 406d03a7-91d4-450d-baa7-ee449e9f282c"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="d99eb2d4-772b-4044-a9f4-a61accff7475" name="ContainsChildPattern" memberEnd="7ce0a38c-81f6-4c40-9a4a-941e9e84f02a 406d03a7-91d4-450d-baa7-ee449e9f282c"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_a2nPYLK3Ed-uk56s-ldeog" name="BindsProperty" memberEnd="_a2n2cLK3Ed-uk56s-ldeog _a2odgLK3Ed-uk56s-ldeog">
         <ownedEnd xmi:id="_a2n2cLK3Ed-uk56s-ldeog" name="attributeExpression" type="79151c76-8e24-4f76-8143-e713373a8b68" association="_a2nPYLK3Ed-uk56s-ldeog">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a2n2crK3Ed-uk56s-ldeog" value="*"/>
@@ -689,7 +689,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zN6qEbK6Ed-uk56s-ldeog" value="1"/>
         </ownedEnd>
       </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="049ea66d-1cf5-479f-a776-09368326162d" name="ContainsActivityNode" memberEnd="6c403dc1-70f7-4f30-b878-4934c90b223b 1269373e-d6c3-43b3-96b3-343306cf98fc"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="049ea66d-1cf5-479f-a776-09368326162d" name="ContainsChildNode" memberEnd="6c403dc1-70f7-4f30-b878-4934c90b223b 1269373e-d6c3-43b3-96b3-343306cf98fc"/>
       <packagedElement xmi:type="uml:Association" xmi:id="feba2068-db66-4ffd-9f3a-8450ab00eb0d" name="HasIncomingEdge" memberEnd="29056c96-b146-4262-acbe-9f82ad541768 0eece472-5dd6-4408-b6d5-d83ba21b2208"/>
       <packagedElement xmi:type="uml:Association" xmi:id="87a955bf-4e1d-40c5-bc6d-13f0e9c10b26" name="HasOutgoingEdge" memberEnd="9c8c19ca-fef2-4635-a0a6-9b783dfe4579 8cee2d74-0dce-4164-bad1-b56bc8d97577"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_8PZcMLK7Ed-uk56s-ldeog" name="HasExceptionType" memberEnd="_8PZcMbK7Ed-uk56s-ldeog _8PaDQrK7Ed-uk56s-ldeog">
@@ -706,7 +706,7 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_PwFBwL0pEd-DQ5q3aRKcIw" name="HasActivity" memberEnd="_PwFo0L0pEd-DQ5q3aRKcIw _PwGP4L0pEd-DQ5q3aRKcIw"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_ioCp4L8kEd-w-4cu1r3aHQ" client="_DxIjgL0pEd-DQ5q3aRKcIw">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_ioCp4L8kEd-w-4cu1r3aHQ" name="ExtendsOperation" client="_DxIjgL0pEd-DQ5q3aRKcIw">
         <supplier xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EOperation"/>
       </packagedElement>
     </packagedElement>
@@ -805,13 +805,6 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_w56cUb0cEd-DQ5q3aRKcIw"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Dependency" xmi:id="_otbAYL06Ed-8i6uUe2B2Qg">
-      <supplier xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Dependency" xmi:id="_phQ4IL06Ed-8i6uUe2B2Qg">
-      <supplier xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Dependency" xmi:id="_fcoVAL07Ed-8i6uUe2B2Qg" supplier="_zX-c0LyxEd-eCY_Peu5fFw"/>
     <profileApplication xmi:id="_kwI8ELw1Ed-Ytrd77fw2LA">
       <eAnnotations xmi:id="_kwTUILw1Ed-Ytrd77fw2LA" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>

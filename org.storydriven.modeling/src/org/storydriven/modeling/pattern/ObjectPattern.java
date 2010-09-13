@@ -15,11 +15,11 @@ import org.storydriven.modeling.Expression;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.storydriven.modeling.pattern.ObjectPattern#getContainedObjects <em>Contained Objects</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.ObjectPattern#getOwnedObjects <em>Owned Objects</em>}</li>
  * <li>{@link org.storydriven.modeling.pattern.ObjectPattern#getStatements <em>Statement</em>}</li>
- * <li>{@link org.storydriven.modeling.pattern.ObjectPattern#getContainingNode <em>Containing Node</em>}</li>
- * <li>{@link org.storydriven.modeling.pattern.ObjectPattern#getParentPattern <em>Parent Pattern</em>}</li>
- * <li>{@link org.storydriven.modeling.pattern.ObjectPattern#getChildPatterns <em>Child Pattern</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.ObjectPattern#getOwningNode <em>Owning Node</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.ObjectPattern#getOwningPattern <em>Owning Pattern</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.ObjectPattern#getOwnedPatterns <em>Owned Pattern</em>}</li>
  * <li>{@link org.storydriven.modeling.pattern.ObjectPattern#getConstraint <em>Constraint</em>}</li>
  * <li>{@link org.storydriven.modeling.pattern.ObjectPattern#getConstraintExpressions <em>Constraint Expression</em>}</li>
  * </ul>
@@ -32,20 +32,20 @@ import org.storydriven.modeling.Expression;
 public interface ObjectPattern extends CommentableElement
 {
    /**
-    * Returns the value of the '<em><b>Contained Objects</b></em>' containment reference list. The list contents are of type {@link org.storydriven.modeling.pattern.Object}. It is
+    * Returns the value of the '<em><b>Owned Objects</b></em>' containment reference list. The list contents are of type {@link org.storydriven.modeling.pattern.Object}. It is
     * bidirectional and its opposite is '{@link org.storydriven.modeling.pattern.Object#getPattern <em>Pattern</em>}'. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Contained Objects</em>' containment reference list isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Owned Objects</em>' containment reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
     * 
-    * @return the value of the '<em>Contained Objects</em>' containment reference list.
-    * @see org.storydriven.modeling.pattern.PatternPackage#getObjectPattern_ContainedObjects()
+    * @return the value of the '<em>Owned Objects</em>' containment reference list.
+    * @see org.storydriven.modeling.pattern.PatternPackage#getObjectPattern_OwnedObjects()
     * @see org.storydriven.modeling.pattern.Object#getPattern
     * @model opposite="pattern" containment="true" resolveProxies="true" ordered="false"
     * @generated
     */
-   EList<org.storydriven.modeling.pattern.Object> getContainedObjects ();
+   EList<org.storydriven.modeling.pattern.Object> getOwnedObjects ();
 
    /**
     * Returns the value of the '<em><b>Statement</b></em>' containment reference list. The list contents are of type {@link org.storydriven.modeling.Expression}. <!--
@@ -63,74 +63,74 @@ public interface ObjectPattern extends CommentableElement
    EList<Expression> getStatements ();
 
    /**
-    * Returns the value of the '<em><b>Containing Node</b></em>' container reference. It is bidirectional and its opposite is '
-    * {@link org.storydriven.modeling.pattern.StoryNode#getContainedPattern <em>Contained Pattern</em>}'. <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Owning Node</b></em>' container reference. It is bidirectional and its opposite is '
+    * {@link org.storydriven.modeling.pattern.StoryNode#getOwnedPattern <em>Owned Pattern</em>}'. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Containing Node</em>' container reference isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Owning Node</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
     * 
-    * @return the value of the '<em>Containing Node</em>' container reference.
-    * @see #setContainingNode(StoryNode)
-    * @see org.storydriven.modeling.pattern.PatternPackage#getObjectPattern_ContainingNode()
-    * @see org.storydriven.modeling.pattern.StoryNode#getContainedPattern
-    * @model opposite="containedPattern" transient="false" ordered="false"
+    * @return the value of the '<em>Owning Node</em>' container reference.
+    * @see #setOwningNode(StoryNode)
+    * @see org.storydriven.modeling.pattern.PatternPackage#getObjectPattern_OwningNode()
+    * @see org.storydriven.modeling.pattern.StoryNode#getOwnedPattern
+    * @model opposite="ownedPattern" transient="false" ordered="false"
     * @generated
     */
-   StoryNode getContainingNode ();
+   StoryNode getOwningNode ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.pattern.ObjectPattern#getContainingNode <em>Containing Node</em>}' container reference. <!-- begin-user-doc --> <!--
+    * Sets the value of the '{@link org.storydriven.modeling.pattern.ObjectPattern#getOwningNode <em>Owning Node</em>}' container reference. <!-- begin-user-doc --> <!--
     * end-user-doc -->
     * 
-    * @param value the new value of the '<em>Containing Node</em>' container reference.
-    * @see #getContainingNode()
+    * @param value the new value of the '<em>Owning Node</em>' container reference.
+    * @see #getOwningNode()
     * @generated
     */
-   void setContainingNode (StoryNode value);
+   void setOwningNode (StoryNode value);
 
    /**
-    * Returns the value of the '<em><b>Parent Pattern</b></em>' container reference. It is bidirectional and its opposite is '
-    * {@link org.storydriven.modeling.pattern.ObjectPattern#getChildPatterns <em>Child Pattern</em>}'. <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Owning Pattern</b></em>' container reference. It is bidirectional and its opposite is '
+    * {@link org.storydriven.modeling.pattern.ObjectPattern#getOwnedPatterns <em>Owned Pattern</em>}'. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Parent Pattern</em>' container reference isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Owning Pattern</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
     * 
-    * @return the value of the '<em>Parent Pattern</em>' container reference.
-    * @see #setParentPattern(ObjectPattern)
-    * @see org.storydriven.modeling.pattern.PatternPackage#getObjectPattern_ParentPattern()
-    * @see org.storydriven.modeling.pattern.ObjectPattern#getChildPatterns
-    * @model opposite="childPattern" transient="false" ordered="false"
+    * @return the value of the '<em>Owning Pattern</em>' container reference.
+    * @see #setOwningPattern(ObjectPattern)
+    * @see org.storydriven.modeling.pattern.PatternPackage#getObjectPattern_OwningPattern()
+    * @see org.storydriven.modeling.pattern.ObjectPattern#getOwnedPatterns
+    * @model opposite="ownedPattern" transient="false" ordered="false"
     * @generated
     */
-   ObjectPattern getParentPattern ();
+   ObjectPattern getOwningPattern ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.pattern.ObjectPattern#getParentPattern <em>Parent Pattern</em>}' container reference. <!-- begin-user-doc --> <!--
+    * Sets the value of the '{@link org.storydriven.modeling.pattern.ObjectPattern#getOwningPattern <em>Owning Pattern</em>}' container reference. <!-- begin-user-doc --> <!--
     * end-user-doc -->
     * 
-    * @param value the new value of the '<em>Parent Pattern</em>' container reference.
-    * @see #getParentPattern()
+    * @param value the new value of the '<em>Owning Pattern</em>' container reference.
+    * @see #getOwningPattern()
     * @generated
     */
-   void setParentPattern (ObjectPattern value);
+   void setOwningPattern (ObjectPattern value);
 
    /**
-    * Returns the value of the '<em><b>Child Pattern</b></em>' containment reference list. The list contents are of type {@link org.storydriven.modeling.pattern.ObjectPattern}. It
-    * is bidirectional and its opposite is '{@link org.storydriven.modeling.pattern.ObjectPattern#getParentPattern <em>Parent Pattern</em>}'. <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Owned Pattern</b></em>' containment reference list. The list contents are of type {@link org.storydriven.modeling.pattern.ObjectPattern}. It
+    * is bidirectional and its opposite is '{@link org.storydriven.modeling.pattern.ObjectPattern#getOwningPattern <em>Owning Pattern</em>}'. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Child Pattern</em>' containment reference list isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Owned Pattern</em>' containment reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
     * 
-    * @return the value of the '<em>Child Pattern</em>' containment reference list.
-    * @see org.storydriven.modeling.pattern.PatternPackage#getObjectPattern_ChildPattern()
-    * @see org.storydriven.modeling.pattern.ObjectPattern#getParentPattern
-    * @model opposite="parentPattern" containment="true" resolveProxies="true" ordered="false"
+    * @return the value of the '<em>Owned Pattern</em>' containment reference list.
+    * @see org.storydriven.modeling.pattern.PatternPackage#getObjectPattern_OwnedPattern()
+    * @see org.storydriven.modeling.pattern.ObjectPattern#getOwningPattern
+    * @model opposite="owningPattern" containment="true" resolveProxies="true" ordered="false"
     * @generated
     */
-   EList<ObjectPattern> getChildPatterns ();
+   EList<ObjectPattern> getOwnedPatterns ();
 
    /**
     * Returns the value of the '<em><b>Constraint</b></em>' attribute. The default value is <code>"NONE"</code>. The literals are from the enumeration

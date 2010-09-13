@@ -185,16 +185,16 @@
       <eLiterals name="INDEX" value="4"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ObjectPattern" eSuperTypes="#//CommentableElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="containedObjects" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedObjects" ordered="false"
           upperBound="-1" eType="#//pattern/Object" containment="true" eOpposite="#//pattern/Object/pattern"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="statement" upperBound="-1"
           eType="#//Expression" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="containingNode" ordered="false"
-          eType="#//pattern/StoryNode" eOpposite="#//pattern/StoryNode/containedPattern"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parentPattern" ordered="false"
-          eType="#//pattern/ObjectPattern" eOpposite="#//pattern/ObjectPattern/childPattern"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="childPattern" ordered="false"
-          upperBound="-1" eType="#//pattern/ObjectPattern" containment="true" eOpposite="#//pattern/ObjectPattern/parentPattern"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="owningNode" ordered="false"
+          eType="#//pattern/StoryNode" eOpposite="#//pattern/StoryNode/ownedPattern"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="owningPattern" ordered="false"
+          eType="#//pattern/ObjectPattern" eOpposite="#//pattern/ObjectPattern/ownedPattern"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPattern" ordered="false"
+          upperBound="-1" eType="#//pattern/ObjectPattern" containment="true" eOpposite="#//pattern/ObjectPattern/owningPattern"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraint" ordered="false"
           lowerBound="1" eType="#//pattern/Constraint" defaultValueLiteral="NONE"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="constraintExpression"
@@ -203,8 +203,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="StoryNode" eSuperTypes="#//activities/ActivityNode">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="forEach" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="containedPattern" ordered="false"
-          lowerBound="1" eType="#//pattern/ObjectPattern" containment="true" eOpposite="#//pattern/ObjectPattern/containingNode"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPattern" ordered="false"
+          lowerBound="1" eType="#//pattern/ObjectPattern" containment="true" eOpposite="#//pattern/ObjectPattern/owningNode"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Path" eSuperTypes="#//pattern/Link">
       <eStructuralFeatures xsi:type="ecore:EReference" name="pathExpression" ordered="false"
@@ -219,7 +219,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="linkToTarget" ordered="false"
           upperBound="-1" eType="#//pattern/Link" containment="true" eOpposite="#//pattern/Link/source"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" ordered="false"
-          eType="#//pattern/ObjectPattern" eOpposite="#//pattern/ObjectPattern/containedObjects"/>
+          eType="#//pattern/ObjectPattern" eOpposite="#//pattern/ObjectPattern/ownedObjects"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bound" ordered="false"
           lowerBound="1" eType="#//pattern/BoundType" defaultValueLiteral="UNBOUND"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraint" ordered="false"
