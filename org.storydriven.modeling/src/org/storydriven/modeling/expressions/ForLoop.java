@@ -7,23 +7,19 @@
 package org.storydriven.modeling.expressions;
 
 import org.eclipse.emf.ecore.EAttribute;
-
 import org.storydriven.modeling.Expression;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>For Loop</b></em>'.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>For Loop</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.storydriven.modeling.expressions.ForLoop#getLoopVariable <em>Loop Variable</em>}</li>
- *   <li>{@link org.storydriven.modeling.expressions.ForLoop#getStartValue <em>Start Value</em>}</li>
- *   <li>{@link org.storydriven.modeling.expressions.ForLoop#getStopValue <em>Stop Value</em>}</li>
+ * <li>{@link org.storydriven.modeling.expressions.ForLoop#getLoopVariable <em>Loop Variable</em>}</li>
+ * <li>{@link org.storydriven.modeling.expressions.ForLoop#getStartValue <em>Start Value</em>}</li>
+ * <li>{@link org.storydriven.modeling.expressions.ForLoop#getStopValue <em>Stop Value</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.storydriven.modeling.expressions.ExpressionsPackage#getForLoop()
  * @model
  * @generated
@@ -31,13 +27,12 @@ import org.storydriven.modeling.Expression;
 public interface ForLoop extends Expression
 {
    /**
-    * Returns the value of the '<em><b>Loop Variable</b></em>' containment reference.
-    * <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Loop Variable</b></em>' containment reference. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Loop Variable</em>' containment reference isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of the '<em>Loop Variable</em>' containment reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @return the value of the '<em>Loop Variable</em>' containment reference.
     * @see #setLoopVariable(EAttribute)
     * @see org.storydriven.modeling.expressions.ExpressionsPackage#getForLoop_LoopVariable()
@@ -47,9 +42,9 @@ public interface ForLoop extends Expression
    EAttribute getLoopVariable ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.expressions.ForLoop#getLoopVariable <em>Loop Variable</em>}' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Sets the value of the '{@link org.storydriven.modeling.expressions.ForLoop#getLoopVariable <em>Loop Variable</em>}' containment reference. <!-- begin-user-doc --> <!--
+    * end-user-doc -->
+    * 
     * @param value the new value of the '<em>Loop Variable</em>' containment reference.
     * @see #getLoopVariable()
     * @generated
@@ -57,13 +52,12 @@ public interface ForLoop extends Expression
    void setLoopVariable (EAttribute value);
 
    /**
-    * Returns the value of the '<em><b>Start Value</b></em>' containment reference.
-    * <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Start Value</b></em>' containment reference. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Start Value</em>' containment reference isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of the '<em>Start Value</em>' containment reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @return the value of the '<em>Start Value</em>' containment reference.
     * @see #setStartValue(Expression)
     * @see org.storydriven.modeling.expressions.ExpressionsPackage#getForLoop_StartValue()
@@ -73,9 +67,9 @@ public interface ForLoop extends Expression
    Expression getStartValue ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.expressions.ForLoop#getStartValue <em>Start Value</em>}' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Sets the value of the '{@link org.storydriven.modeling.expressions.ForLoop#getStartValue <em>Start Value</em>}' containment reference. <!-- begin-user-doc --> <!--
+    * end-user-doc -->
+    * 
     * @param value the new value of the '<em>Start Value</em>' containment reference.
     * @see #getStartValue()
     * @generated
@@ -83,13 +77,12 @@ public interface ForLoop extends Expression
    void setStartValue (Expression value);
 
    /**
-    * Returns the value of the '<em><b>Stop Value</b></em>' containment reference.
-    * <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Stop Value</b></em>' containment reference. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Stop Value</em>' containment reference isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of the '<em>Stop Value</em>' containment reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @return the value of the '<em>Stop Value</em>' containment reference.
     * @see #setStopValue(Expression)
     * @see org.storydriven.modeling.expressions.ExpressionsPackage#getForLoop_StopValue()
@@ -99,9 +92,9 @@ public interface ForLoop extends Expression
    Expression getStopValue ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.expressions.ForLoop#getStopValue <em>Stop Value</em>}' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Sets the value of the '{@link org.storydriven.modeling.expressions.ForLoop#getStopValue <em>Stop Value</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+    * -->
+    * 
     * @param value the new value of the '<em>Stop Value</em>' containment reference.
     * @see #getStopValue()
     * @generated

@@ -8,45 +8,37 @@ package org.storydriven.modeling.pattern.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.storydriven.modeling.impl.ExtendableElementImpl;
-
 import org.storydriven.modeling.pattern.Link;
 import org.storydriven.modeling.pattern.MultiLink;
 import org.storydriven.modeling.pattern.MultiLinkType;
 import org.storydriven.modeling.pattern.PatternPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Multi Link</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Multi Link</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.pattern.impl.MultiLinkImpl#getIndex <em>Index</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.MultiLinkImpl#getMultiLinkType <em>Multi Link Type</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.MultiLinkImpl#isNegative <em>Negative</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.MultiLinkImpl#getSourceLink <em>Source Link</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.MultiLinkImpl#getTargetObject <em>Target Object</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.MultiLinkImpl#getTargetLink <em>Target Link</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.MultiLinkImpl#getIndex <em>Index</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.MultiLinkImpl#getMultiLinkType <em>Multi Link Type</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.MultiLinkImpl#isNegative <em>Negative</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.MultiLinkImpl#getSourceLink <em>Source Link</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.MultiLinkImpl#getTargetObject <em>Target Object</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.MultiLinkImpl#getTargetLink <em>Target Link</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
 {
    /**
-    * The default value of the '{@link #getIndex() <em>Index</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The default value of the '{@link #getIndex() <em>Index</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getIndex()
     * @generated
     * @ordered
@@ -54,9 +46,8 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    protected static final int INDEX_EDEFAULT = 0;
 
    /**
-    * The cached value of the '{@link #getIndex() <em>Index</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getIndex() <em>Index</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getIndex()
     * @generated
     * @ordered
@@ -64,9 +55,8 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    protected int index = INDEX_EDEFAULT;
 
    /**
-    * The default value of the '{@link #getMultiLinkType() <em>Multi Link Type</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The default value of the '{@link #getMultiLinkType() <em>Multi Link Type</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getMultiLinkType()
     * @generated
     * @ordered
@@ -74,9 +64,8 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    protected static final MultiLinkType MULTI_LINK_TYPE_EDEFAULT = MultiLinkType.DIRECT;
 
    /**
-    * The cached value of the '{@link #getMultiLinkType() <em>Multi Link Type</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getMultiLinkType() <em>Multi Link Type</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getMultiLinkType()
     * @generated
     * @ordered
@@ -84,9 +73,8 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    protected MultiLinkType multiLinkType = MULTI_LINK_TYPE_EDEFAULT;
 
    /**
-    * The default value of the '{@link #isNegative() <em>Negative</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The default value of the '{@link #isNegative() <em>Negative</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #isNegative()
     * @generated
     * @ordered
@@ -94,9 +82,8 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    protected static final boolean NEGATIVE_EDEFAULT = false;
 
    /**
-    * The cached value of the '{@link #isNegative() <em>Negative</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #isNegative() <em>Negative</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #isNegative()
     * @generated
     * @ordered
@@ -104,9 +91,8 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    protected boolean negative = NEGATIVE_EDEFAULT;
 
    /**
-    * The cached value of the '{@link #getTargetObject() <em>Target Object</em>}' reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getTargetObject() <em>Target Object</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getTargetObject()
     * @generated
     * @ordered
@@ -114,9 +100,8 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    protected org.storydriven.modeling.pattern.Object targetObject;
 
    /**
-    * The cached value of the '{@link #getTargetLink() <em>Target Link</em>}' reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getTargetLink() <em>Target Link</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getTargetLink()
     * @generated
     * @ordered
@@ -124,8 +109,8 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    protected Link targetLink;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected MultiLinkImpl ()
@@ -134,8 +119,8 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -145,103 +130,113 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public int getIndex ()
    {
-      return index;
+      return this.index;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setIndex (int newIndex)
    {
-      int oldIndex = index;
-      index = newIndex;
+      int oldIndex = this.index;
+      this.index = newIndex;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.MULTI_LINK__INDEX, oldIndex, index));
+      {
+         eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.MULTI_LINK__INDEX, oldIndex, this.index));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public MultiLinkType getMultiLinkType ()
    {
-      return multiLinkType;
+      return this.multiLinkType;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setMultiLinkType (MultiLinkType newMultiLinkType)
    {
-      MultiLinkType oldMultiLinkType = multiLinkType;
-      multiLinkType = newMultiLinkType == null ? MULTI_LINK_TYPE_EDEFAULT : newMultiLinkType;
+      MultiLinkType oldMultiLinkType = this.multiLinkType;
+      this.multiLinkType = newMultiLinkType == null ? MULTI_LINK_TYPE_EDEFAULT : newMultiLinkType;
       if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.MULTI_LINK__MULTI_LINK_TYPE,
-            oldMultiLinkType, multiLinkType));
+            oldMultiLinkType, this.multiLinkType));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean isNegative ()
    {
-      return negative;
+      return this.negative;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setNegative (boolean newNegative)
    {
-      boolean oldNegative = negative;
-      negative = newNegative;
+      boolean oldNegative = this.negative;
+      this.negative = newNegative;
       if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.MULTI_LINK__NEGATIVE, oldNegative,
-            negative));
+            this.negative));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Link getSourceLink ()
    {
       if (eContainerFeatureID() != PatternPackage.MULTI_LINK__SOURCE_LINK)
+      {
          return null;
+      }
       return (Link) eContainer();
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Link basicGetSourceLink ()
    {
       if (eContainerFeatureID() != PatternPackage.MULTI_LINK__SOURCE_LINK)
+      {
          return null;
+      }
       return (Link) eInternalContainer();
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetSourceLink (Link newSourceLink, NotificationChain msgs)
@@ -251,8 +246,8 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setSourceLink (Link newSourceLink)
@@ -261,147 +256,175 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
          || (eContainerFeatureID() != PatternPackage.MULTI_LINK__SOURCE_LINK && newSourceLink != null))
       {
          if (EcoreUtil.isAncestor(this, newSourceLink))
+         {
             throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+         }
          NotificationChain msgs = null;
          if (eInternalContainer() != null)
+         {
             msgs = eBasicRemoveFromContainer(msgs);
+         }
          if (newSourceLink != null)
+         {
             msgs = ((InternalEObject) newSourceLink).eInverseAdd(this, PatternPackage.LINK__MULTI_LINK_FROM_SOURCE,
                Link.class, msgs);
+         }
          msgs = basicSetSourceLink(newSourceLink, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.MULTI_LINK__SOURCE_LINK, newSourceLink,
             newSourceLink));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public org.storydriven.modeling.pattern.Object getTargetObject ()
    {
-      if (targetObject != null && targetObject.eIsProxy())
+      if (this.targetObject != null && this.targetObject.eIsProxy())
       {
-         InternalEObject oldTargetObject = (InternalEObject) targetObject;
-         targetObject = (org.storydriven.modeling.pattern.Object) eResolveProxy(oldTargetObject);
-         if (targetObject != oldTargetObject)
+         InternalEObject oldTargetObject = (InternalEObject) this.targetObject;
+         this.targetObject = (org.storydriven.modeling.pattern.Object) eResolveProxy(oldTargetObject);
+         if (this.targetObject != oldTargetObject)
          {
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.MULTI_LINK__TARGET_OBJECT,
-                  oldTargetObject, targetObject));
+                  oldTargetObject, this.targetObject));
+            }
          }
       }
-      return targetObject;
+      return this.targetObject;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public org.storydriven.modeling.pattern.Object basicGetTargetObject ()
    {
-      return targetObject;
+      return this.targetObject;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setTargetObject (org.storydriven.modeling.pattern.Object newTargetObject)
    {
-      org.storydriven.modeling.pattern.Object oldTargetObject = targetObject;
-      targetObject = newTargetObject;
+      org.storydriven.modeling.pattern.Object oldTargetObject = this.targetObject;
+      this.targetObject = newTargetObject;
       if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.MULTI_LINK__TARGET_OBJECT,
-            oldTargetObject, targetObject));
+            oldTargetObject, this.targetObject));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Link getTargetLink ()
    {
-      if (targetLink != null && targetLink.eIsProxy())
+      if (this.targetLink != null && this.targetLink.eIsProxy())
       {
-         InternalEObject oldTargetLink = (InternalEObject) targetLink;
-         targetLink = (Link) eResolveProxy(oldTargetLink);
-         if (targetLink != oldTargetLink)
+         InternalEObject oldTargetLink = (InternalEObject) this.targetLink;
+         this.targetLink = (Link) eResolveProxy(oldTargetLink);
+         if (this.targetLink != oldTargetLink)
          {
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.MULTI_LINK__TARGET_LINK,
-                  oldTargetLink, targetLink));
+                  oldTargetLink, this.targetLink));
+            }
          }
       }
-      return targetLink;
+      return this.targetLink;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Link basicGetTargetLink ()
    {
-      return targetLink;
+      return this.targetLink;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetTargetLink (Link newTargetLink, NotificationChain msgs)
    {
-      Link oldTargetLink = targetLink;
-      targetLink = newTargetLink;
+      Link oldTargetLink = this.targetLink;
+      this.targetLink = newTargetLink;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             PatternPackage.MULTI_LINK__TARGET_LINK, oldTargetLink, newTargetLink);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setTargetLink (Link newTargetLink)
    {
-      if (newTargetLink != targetLink)
+      if (newTargetLink != this.targetLink)
       {
          NotificationChain msgs = null;
-         if (targetLink != null)
-            msgs = ((InternalEObject) targetLink).eInverseRemove(this, PatternPackage.LINK__MULTI_LINK_TO_TARGET,
+         if (this.targetLink != null)
+         {
+            msgs = ((InternalEObject) this.targetLink).eInverseRemove(this, PatternPackage.LINK__MULTI_LINK_TO_TARGET,
                Link.class, msgs);
+         }
          if (newTargetLink != null)
+         {
             msgs = ((InternalEObject) newTargetLink).eInverseAdd(this, PatternPackage.LINK__MULTI_LINK_TO_TARGET,
                Link.class, msgs);
+         }
          msgs = basicSetTargetLink(newTargetLink, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.MULTI_LINK__TARGET_LINK, newTargetLink,
             newTargetLink));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -411,20 +434,24 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
       {
          case PatternPackage.MULTI_LINK__SOURCE_LINK:
             if (eInternalContainer() != null)
+            {
                msgs = eBasicRemoveFromContainer(msgs);
+            }
             return basicSetSourceLink((Link) otherEnd, msgs);
          case PatternPackage.MULTI_LINK__TARGET_LINK:
-            if (targetLink != null)
-               msgs = ((InternalEObject) targetLink).eInverseRemove(this, PatternPackage.LINK__MULTI_LINK_TO_TARGET,
-                  Link.class, msgs);
+            if (this.targetLink != null)
+            {
+               msgs = ((InternalEObject) this.targetLink).eInverseRemove(this,
+                  PatternPackage.LINK__MULTI_LINK_TO_TARGET, Link.class, msgs);
+            }
             return basicSetTargetLink((Link) otherEnd, msgs);
       }
       return super.eInverseAdd(otherEnd, featureID, msgs);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -441,8 +468,8 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -458,8 +485,8 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -475,23 +502,29 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
             return isNegative();
          case PatternPackage.MULTI_LINK__SOURCE_LINK:
             if (resolve)
+            {
                return getSourceLink();
+            }
             return basicGetSourceLink();
          case PatternPackage.MULTI_LINK__TARGET_OBJECT:
             if (resolve)
+            {
                return getTargetObject();
+            }
             return basicGetTargetObject();
          case PatternPackage.MULTI_LINK__TARGET_LINK:
             if (resolve)
+            {
                return getTargetLink();
+            }
             return basicGetTargetLink();
       }
       return super.eGet(featureID, resolve, coreType);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -522,8 +555,8 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -554,8 +587,8 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -564,41 +597,43 @@ public class MultiLinkImpl extends ExtendableElementImpl implements MultiLink
       switch (featureID)
       {
          case PatternPackage.MULTI_LINK__INDEX:
-            return index != INDEX_EDEFAULT;
+            return this.index != INDEX_EDEFAULT;
          case PatternPackage.MULTI_LINK__MULTI_LINK_TYPE:
-            return multiLinkType != MULTI_LINK_TYPE_EDEFAULT;
+            return this.multiLinkType != MULTI_LINK_TYPE_EDEFAULT;
          case PatternPackage.MULTI_LINK__NEGATIVE:
-            return negative != NEGATIVE_EDEFAULT;
+            return this.negative != NEGATIVE_EDEFAULT;
          case PatternPackage.MULTI_LINK__SOURCE_LINK:
             return basicGetSourceLink() != null;
          case PatternPackage.MULTI_LINK__TARGET_OBJECT:
-            return targetObject != null;
+            return this.targetObject != null;
          case PatternPackage.MULTI_LINK__TARGET_LINK:
-            return targetLink != null;
+            return this.targetLink != null;
       }
       return super.eIsSet(featureID);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
    public String toString ()
    {
       if (eIsProxy())
+      {
          return super.toString();
+      }
 
       StringBuffer result = new StringBuffer(super.toString());
       result.append(" (index: ");
-      result.append(index);
+      result.append(this.index);
       result.append(", multiLinkType: ");
-      result.append(multiLinkType);
+      result.append(this.multiLinkType);
       result.append(", negative: ");
-      result.append(negative);
+      result.append(this.negative);
       result.append(')');
       return result.toString();
    }
 
-} //MultiLinkImpl
+} // MultiLinkImpl

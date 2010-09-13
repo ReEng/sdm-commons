@@ -23,18 +23,18 @@ import org.storydriven.modeling.TypedElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.impl.TypedElementImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.storydriven.modeling.impl.TypedElementImpl#getGenericType <em>Generic Type</em>}</li>
+ * <li>{@link org.storydriven.modeling.impl.TypedElementImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.storydriven.modeling.impl.TypedElementImpl#getGenericType <em>Generic Type</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public abstract class TypedElementImpl extends ExtendableElementImpl implements TypedElement
 {
    /**
-    * The cached value of the '{@link #getType() <em>Type</em>}' reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The cached value of the '{@link #getType() <em>Type</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getType()
     * @generated
     * @ordered
@@ -42,17 +42,16 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
    protected EClassifier type;
 
    /**
-    * This is true if the Type reference has been set.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * This is true if the Type reference has been set. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     * @ordered
     */
    protected boolean typeESet;
 
    /**
-    * The cached value of the '{@link #getGenericType() <em>Generic Type</em>}' containment reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The cached value of the '{@link #getGenericType() <em>Generic Type</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getGenericType()
     * @generated
     * @ordered
@@ -60,8 +59,8 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
    protected EGenericType genericType;
 
    /**
-    * This is true if the Generic Type containment reference has been set.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * This is true if the Generic Type containment reference has been set. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     * @ordered
     */
@@ -69,6 +68,7 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected TypedElementImpl ()
@@ -78,6 +78,7 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -88,40 +89,45 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EClassifier getType ()
    {
-      if (type != null && type.eIsProxy())
+      if (this.type != null && this.type.eIsProxy())
       {
-         InternalEObject oldType = (InternalEObject) type;
-         type = (EClassifier) eResolveProxy(oldType);
-         if (type != oldType)
+         InternalEObject oldType = (InternalEObject) this.type;
+         this.type = (EClassifier) eResolveProxy(oldType);
+         if (this.type != oldType)
          {
             if (eNotificationRequired())
-               eNotify(new ENotificationImpl(this, Notification.RESOLVE, SDMPackage.TYPED_ELEMENT__TYPE, oldType, type));
+            {
+               eNotify(new ENotificationImpl(this, Notification.RESOLVE, SDMPackage.TYPED_ELEMENT__TYPE, oldType,
+                  this.type));
+            }
          }
       }
-      return type;
+      return this.type;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EClassifier basicGetType ()
    {
-      return type;
+      return this.type;
    }
 
    protected NotificationChain basicSetType (EClassifier newType, NotificationChain msgs)
    {
-      EClassifier oldType = type;
-      type = newType;
+      EClassifier oldType = this.type;
+      this.type = newType;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SDMPackage.TYPED_ELEMENT__TYPE,
-            oldType, type);
+            oldType, this.type);
          if (msgs == null)
          {
             msgs = notification;
@@ -141,7 +147,7 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
       if (newType != null)
       {
          newGenericType = EcoreFactory.eINSTANCE.createEGenericType();
-         newGenericType.setEClassifier(type);
+         newGenericType.setEClassifier(this.type);
       }
       msgs = setGenericType(newGenericType, msgs);
       return msgs;
@@ -178,22 +184,24 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
     */
    public boolean isSetType ()
    {
-      return type != null && genericType.getETypeParameter() == null && genericType.getETypeArguments().isEmpty();
+      return this.type != null && this.genericType.getETypeParameter() == null
+         && this.genericType.getETypeArguments().isEmpty();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EGenericType getGenericType ()
    {
-      if (genericType != null && genericType.eIsProxy())
+      if (this.genericType != null && this.genericType.eIsProxy())
       {
-         InternalEObject oldGenericType = (InternalEObject) genericType;
-         genericType = (EGenericType) eResolveProxy(oldGenericType);
-         if (genericType != oldGenericType)
+         InternalEObject oldGenericType = (InternalEObject) this.genericType;
+         this.genericType = (EGenericType) eResolveProxy(oldGenericType);
+         if (this.genericType != oldGenericType)
          {
-            InternalEObject newGenericType = (InternalEObject) genericType;
+            InternalEObject newGenericType = (InternalEObject) this.genericType;
             NotificationChain msgs = oldGenericType.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - SDMPackage.TYPED_ELEMENT__GENERIC_TYPE, null, null);
             if (newGenericType.eInternalContainer() == null)
@@ -202,22 +210,27 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
                   null, msgs);
             }
             if (msgs != null)
+            {
                msgs.dispatch();
+            }
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE, SDMPackage.TYPED_ELEMENT__GENERIC_TYPE,
-                  oldGenericType, genericType));
+                  oldGenericType, this.genericType));
+            }
          }
       }
-      return genericType;
+      return this.genericType;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EGenericType basicGetGenericType ()
    {
-      return genericType;
+      return this.genericType;
    }
 
    /**
@@ -227,20 +240,24 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
     */
    protected NotificationChain basicSetGenericType (EGenericType newGenericType, NotificationChain msgs)
    {
-      EGenericType oldGenericType = genericType;
-      genericType = newGenericType;
+      EGenericType oldGenericType = this.genericType;
+      this.genericType = newGenericType;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             SDMPackage.TYPED_ELEMENT__GENERIC_TYPE, oldGenericType, newGenericType);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       if (newGenericType == null)
       {
-         if (type != null)
+         if (this.type != null)
          {
             msgs = setType(null, msgs);
          }
@@ -248,7 +265,7 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
       else
       {
          EClassifier newType = ((EGenericTypeImpl) newGenericType).basicGetERawType();
-         if (newType != type)
+         if (newType != this.type)
          {
             msgs = setType(newType, msgs);
          }
@@ -258,14 +275,18 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 
    protected NotificationChain setGenericType (EGenericType newGenericType, NotificationChain msgs)
    {
-      if (newGenericType != genericType)
+      if (newGenericType != this.genericType)
       {
-         if (genericType != null)
-            msgs = ((InternalEObject) genericType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+         if (this.genericType != null)
+         {
+            msgs = ((InternalEObject) this.genericType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - SDMPackage.TYPED_ELEMENT__GENERIC_TYPE, null, msgs);
+         }
          if (newGenericType != null)
+         {
             msgs = ((InternalEObject) newGenericType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
                - SDMPackage.TYPED_ELEMENT__GENERIC_TYPE, null, msgs);
+         }
          msgs = basicSetGenericType(newGenericType, msgs);
       }
       else if (eNotificationRequired())
@@ -321,16 +342,17 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean isSetGenericType ()
    {
-      return genericTypeESet;
+      return this.genericTypeESet;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -346,6 +368,7 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -355,11 +378,15 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
       {
          case SDMPackage.TYPED_ELEMENT__TYPE:
             if (resolve)
+            {
                return getType();
+            }
             return basicGetType();
          case SDMPackage.TYPED_ELEMENT__GENERIC_TYPE:
             if (resolve)
+            {
                return getGenericType();
+            }
             return basicGetGenericType();
       }
       return super.eGet(featureID, resolve, coreType);
@@ -367,6 +394,7 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -386,6 +414,7 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -405,6 +434,7 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements 
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override

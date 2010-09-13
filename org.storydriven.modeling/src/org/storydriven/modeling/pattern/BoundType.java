@@ -13,10 +13,8 @@ import java.util.List;
 import org.eclipse.emf.common.util.Enumerator;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Bound Type</b></em>',
- * and utility methods for working with them.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the literals of the enumeration '<em><b>Bound Type</b></em>', and utility methods for working with them. <!-- end-user-doc -->
+ * 
  * @see org.storydriven.modeling.pattern.PatternPackage#getBoundType()
  * @model
  * @generated
@@ -24,9 +22,8 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum BoundType implements Enumerator
 {
    /**
-    * The '<em><b>BOUND</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>BOUND</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #BOUND_VALUE
     * @generated
     * @ordered
@@ -34,9 +31,8 @@ public enum BoundType implements Enumerator
    BOUND (0, "BOUND", "BOUND"),
 
    /**
-    * The '<em><b>UNBOUND</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>UNBOUND</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #UNBOUND_VALUE
     * @generated
     * @ordered
@@ -44,9 +40,8 @@ public enum BoundType implements Enumerator
    UNBOUND (1, "UNBOUND", "UNBOUND"),
 
    /**
-    * The '<em><b>MAYBE BOUND</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>MAYBE BOUND</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #MAYBE_BOUND_VALUE
     * @generated
     * @ordered
@@ -54,13 +49,12 @@ public enum BoundType implements Enumerator
    MAYBE_BOUND (2, "MAYBE_BOUND", "MAYBE_BOUND");
 
    /**
-    * The '<em><b>BOUND</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>BOUND</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>BOUND</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>BOUND</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #BOUND
     * @model
     * @generated
@@ -69,13 +63,12 @@ public enum BoundType implements Enumerator
    public static final int BOUND_VALUE = 0;
 
    /**
-    * The '<em><b>UNBOUND</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>UNBOUND</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>UNBOUND</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>UNBOUND</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #UNBOUND
     * @model
     * @generated
@@ -84,13 +77,12 @@ public enum BoundType implements Enumerator
    public static final int UNBOUND_VALUE = 1;
 
    /**
-    * The '<em><b>MAYBE BOUND</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>MAYBE BOUND</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>MAYBE BOUND</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>MAYBE BOUND</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #MAYBE_BOUND
     * @model
     * @generated
@@ -99,25 +91,22 @@ public enum BoundType implements Enumerator
    public static final int MAYBE_BOUND_VALUE = 2;
 
    /**
-    * An array of all the '<em><b>Bound Type</b></em>' enumerators.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * An array of all the '<em><b>Bound Type</b></em>' enumerators. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private static final BoundType[] VALUES_ARRAY = new BoundType[] {BOUND, UNBOUND, MAYBE_BOUND,};
 
    /**
-    * A public read-only list of all the '<em><b>Bound Type</b></em>' enumerators.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * A public read-only list of all the '<em><b>Bound Type</b></em>' enumerators. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static final List<BoundType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
    /**
-    * Returns the '<em><b>Bound Type</b></em>' literal with the specified literal value.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the '<em><b>Bound Type</b></em>' literal with the specified literal value. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static BoundType get (String literal)
@@ -134,9 +123,8 @@ public enum BoundType implements Enumerator
    }
 
    /**
-    * Returns the '<em><b>Bound Type</b></em>' literal with the specified name.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the '<em><b>Bound Type</b></em>' literal with the specified name. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static BoundType getByName (String name)
@@ -153,9 +141,8 @@ public enum BoundType implements Enumerator
    }
 
    /**
-    * Returns the '<em><b>Bound Type</b></em>' literal with the specified integer value.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the '<em><b>Bound Type</b></em>' literal with the specified integer value. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static BoundType get (int value)
@@ -173,30 +160,29 @@ public enum BoundType implements Enumerator
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private final int value;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private final String name;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private final String literal;
 
    /**
-    * Only this class can construct instances.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Only this class can construct instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private BoundType (int value, String name, String literal)
@@ -207,45 +193,44 @@ public enum BoundType implements Enumerator
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public int getValue ()
    {
-      return value;
+      return this.value;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public String getName ()
    {
-      return name;
+      return this.name;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public String getLiteral ()
    {
-      return literal;
+      return this.literal;
    }
 
    /**
-    * Returns the literal value of the enumerator, which is its string representation.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the literal value of the enumerator, which is its string representation. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
    public String toString ()
    {
-      return literal;
+      return this.literal;
    }
 
-} //BoundType
+} // BoundType

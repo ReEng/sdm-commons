@@ -9,38 +9,31 @@ package org.storydriven.modeling.activities.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.ActivityNode;
 import org.storydriven.modeling.activities.StructuredNode;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Structured Node</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Structured Node</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.activities.impl.StructuredNodeImpl#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
+ * <li>{@link org.storydriven.modeling.activities.impl.StructuredNodeImpl#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNode
 {
    /**
-    * The cached value of the '{@link #getOwnedActivityNodes() <em>Owned Activity Node</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getOwnedActivityNodes() <em>Owned Activity Node</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getOwnedActivityNodes()
     * @generated
     * @ordered
@@ -48,8 +41,8 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
    protected EList<ActivityNode> ownedActivityNodes;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected StructuredNodeImpl ()
@@ -58,8 +51,8 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -69,24 +62,24 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<ActivityNode> getOwnedActivityNodes ()
    {
-      if (ownedActivityNodes == null)
+      if (this.ownedActivityNodes == null)
       {
-         ownedActivityNodes = new EObjectContainmentWithInverseEList.Resolving<ActivityNode>(ActivityNode.class, this,
-            ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+         this.ownedActivityNodes = new EObjectContainmentWithInverseEList.Resolving<ActivityNode>(ActivityNode.class,
+            this, ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
             ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE);
       }
-      return ownedActivityNodes;
+      return this.ownedActivityNodes;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -103,8 +96,8 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -119,8 +112,8 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -135,8 +128,8 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -154,8 +147,8 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -171,8 +164,8 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -181,9 +174,9 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
       switch (featureID)
       {
          case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-            return ownedActivityNodes != null && !ownedActivityNodes.isEmpty();
+            return this.ownedActivityNodes != null && !this.ownedActivityNodes.isEmpty();
       }
       return super.eIsSet(featureID);
    }
 
-} //StructuredNodeImpl
+} // StructuredNodeImpl

@@ -9,25 +9,26 @@ package org.storydriven.modeling.expressions.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.storydriven.modeling.expressions.*;
+import org.storydriven.modeling.expressions.Collaboration;
+import org.storydriven.modeling.expressions.ComplexExpression;
+import org.storydriven.modeling.expressions.ConditionalExpression;
+import org.storydriven.modeling.expressions.ExpressionsFactory;
+import org.storydriven.modeling.expressions.ExpressionsPackage;
+import org.storydriven.modeling.expressions.ForLoop;
+import org.storydriven.modeling.expressions.WhileLoop;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsFactory
 {
    /**
-    * Creates the default factory implementation.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static ExpressionsFactory init ()
@@ -49,9 +50,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * Creates an instance of the factory.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ExpressionsFactoryImpl ()
@@ -60,8 +60,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -85,8 +85,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Collaboration createCollaboration ()
@@ -96,8 +96,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ComplexExpression createComplexExpression ()
@@ -107,8 +107,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ForLoop createForLoop ()
@@ -118,8 +118,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public WhileLoop createWhileLoop ()
@@ -129,8 +129,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ConditionalExpression createConditionalExpression ()
@@ -140,8 +140,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ExpressionsPackage getExpressionsPackage ()
@@ -150,8 +150,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @deprecated
     * @generated
     */
@@ -161,4 +161,4 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
       return ExpressionsPackage.eINSTANCE;
    }
 
-} //ExpressionsFactoryImpl
+} // ExpressionsFactoryImpl

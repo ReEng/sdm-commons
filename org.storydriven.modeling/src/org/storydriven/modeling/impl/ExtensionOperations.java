@@ -17,15 +17,15 @@ import org.storydriven.modeling.Extension;
 import org.storydriven.modeling.SDMPackage;
 
 /**
- * @author    <a href="mailto:reckord@yatta-solutions.com">Carsten Reckord</a> (original author)
- * @author    $Author$ (last change)
- * @version   $Revision$
+ * @author <a href="mailto:reckord@yatta-solutions.com">Carsten Reckord</a> (original author)
+ * @author $Author$ (last change)
+ * @version $Revision$
  */
 public class ExtensionOperations
 {
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected ExtensionOperations ()
@@ -93,7 +93,7 @@ public class ExtensionOperations
                break;
             }
             default:
-               //do nothing
+               // do nothing
          }
       }
 
@@ -197,8 +197,8 @@ public class ExtensionOperations
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public static EModelElement getModelBase (Extension extension)
@@ -208,20 +208,20 @@ public class ExtensionOperations
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public static void setModelBase (Extension extension, EModelElement newModelBase)
    {
       EAnnotation annotation = EModelElementOperations.provideAnnotation(newModelBase, Extension.EXTENSION_SOURCE_URI);
       annotation.getContents().add(extension);
-      //TODO event
+      // TODO event
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public static void unsetModelBase (Extension extension)
@@ -231,12 +231,12 @@ public class ExtensionOperations
       {
          owningAnnotation.getContents().remove(extension);
       }
-      //TODO event
+      // TODO event
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public static boolean isSetModelBase (Extension extension)
@@ -245,8 +245,8 @@ public class ExtensionOperations
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public static EAnnotation getOwningAnnotation (Extension extension)
@@ -263,19 +263,19 @@ public class ExtensionOperations
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public static void setOwningAnnotation (Extension extension, EAnnotation newOwningAnnotation)
    {
       newOwningAnnotation.getContents().add(extension);
-      //TODO event
+      // TODO event
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public static void unsetOwningAnnotation (Extension extension)
@@ -285,12 +285,12 @@ public class ExtensionOperations
       {
          owningAnnotation.getContents().remove(extension);
       }
-      //TODO event
+      // TODO event
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public static boolean isSetOwningAnnotation (Extension extension)

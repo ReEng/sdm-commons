@@ -10,9 +10,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.modeling.Extension;
 
 /**
- * @author    <a href="mailto:reckord@yatta-solutions.com">Carsten Reckord</a> (original author)
- * @author    $Author$ (last change)
- * @version   $Revision$
+ * @author <a href="mailto:reckord@yatta-solutions.com">Carsten Reckord</a> (original author)
+ * @author $Author$ (last change)
+ * @version $Revision$
  */
 public class EModelElementOperations
 {
@@ -64,31 +64,31 @@ public class EModelElementOperations
       return annotation;
    }
 
-   public static Extension getExtension(EModelElement baseElement, EClass extensionType)
+   public static Extension getExtension (EModelElement baseElement, EClass extensionType)
    {
-      EAnnotation annotation = getAnnotation(baseElement, ""/*TODO*/);
+      EAnnotation annotation = getAnnotation(baseElement, ""/* TODO */);
       return annotation == null ? null : getContainedExtension(annotation, extensionType);
    }
 
-   public static Extension getContainedExtension(EAnnotation annotation, EClass extensionType)
+   public static Extension getContainedExtension (EAnnotation annotation, EClass extensionType)
    {
       for (EObject eObject: annotation.getContents())
       {
          if (extensionType.isInstance(eObject))
          {
-            return (Extension)eObject;
+            return (Extension) eObject;
          }
       }
       return null;
    }
 
-   public static Extension provideExtension(EModelElement baseElement, EClass extensionType)
+   public static Extension provideExtension (EModelElement baseElement, EClass extensionType)
    {
-      EAnnotation annotation = provideAnnotation(baseElement, ""/*TODO*/);
+      EAnnotation annotation = provideAnnotation(baseElement, ""/* TODO */);
       return provideContainedExtension(annotation, extensionType);
    }
 
-   public static Extension provideContainedExtension(EAnnotation annotation, EClass extensionType)
+   public static Extension provideContainedExtension (EAnnotation annotation, EClass extensionType)
    {
       Extension extension = getContainedExtension(annotation, extensionType);
       if (extension == null)

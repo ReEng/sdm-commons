@@ -10,53 +10,43 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.modeling.Expression;
-
 import org.storydriven.modeling.impl.CommentableElementImpl;
-
 import org.storydriven.modeling.pattern.Constraint;
 import org.storydriven.modeling.pattern.ObjectPattern;
 import org.storydriven.modeling.pattern.PatternPackage;
 import org.storydriven.modeling.pattern.StoryNode;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Object Pattern</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Object Pattern</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectPatternImpl#getContainedObjects <em>Contained Objects</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectPatternImpl#getStatements <em>Statement</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectPatternImpl#getContainingNode <em>Containing Node</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectPatternImpl#getParentPattern <em>Parent Pattern</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectPatternImpl#getChildPatterns <em>Child Pattern</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectPatternImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectPatternImpl#getConstraintExpressions <em>Constraint Expression</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectPatternImpl#getContainedObjects <em>Contained Objects</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectPatternImpl#getStatements <em>Statement</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectPatternImpl#getContainingNode <em>Containing Node</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectPatternImpl#getParentPattern <em>Parent Pattern</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectPatternImpl#getChildPatterns <em>Child Pattern</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectPatternImpl#getConstraint <em>Constraint</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectPatternImpl#getConstraintExpressions <em>Constraint Expression</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class ObjectPatternImpl extends CommentableElementImpl implements ObjectPattern
 {
    /**
-    * The cached value of the '{@link #getContainedObjects() <em>Contained Objects</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getContainedObjects() <em>Contained Objects</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getContainedObjects()
     * @generated
     * @ordered
@@ -64,9 +54,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    protected EList<org.storydriven.modeling.pattern.Object> containedObjects;
 
    /**
-    * The cached value of the '{@link #getStatements() <em>Statement</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getStatements() <em>Statement</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getStatements()
     * @generated
     * @ordered
@@ -74,9 +63,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    protected EList<Expression> statements;
 
    /**
-    * The cached value of the '{@link #getChildPatterns() <em>Child Pattern</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getChildPatterns() <em>Child Pattern</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getChildPatterns()
     * @generated
     * @ordered
@@ -84,9 +72,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    protected EList<ObjectPattern> childPatterns;
 
    /**
-    * The default value of the '{@link #getConstraint() <em>Constraint</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The default value of the '{@link #getConstraint() <em>Constraint</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getConstraint()
     * @generated
     * @ordered
@@ -94,9 +81,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    protected static final Constraint CONSTRAINT_EDEFAULT = Constraint.NONE;
 
    /**
-    * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getConstraint()
     * @generated
     * @ordered
@@ -104,9 +90,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    protected Constraint constraint = CONSTRAINT_EDEFAULT;
 
    /**
-    * The cached value of the '{@link #getConstraintExpressions() <em>Constraint Expression</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getConstraintExpressions() <em>Constraint Expression</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getConstraintExpressions()
     * @generated
     * @ordered
@@ -114,8 +99,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    protected EList<Expression> constraintExpressions;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected ObjectPatternImpl ()
@@ -124,8 +109,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -135,63 +120,67 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<org.storydriven.modeling.pattern.Object> getContainedObjects ()
    {
-      if (containedObjects == null)
+      if (this.containedObjects == null)
       {
-         containedObjects = new EObjectContainmentWithInverseEList.Resolving<org.storydriven.modeling.pattern.Object>(
+         this.containedObjects = new EObjectContainmentWithInverseEList.Resolving<org.storydriven.modeling.pattern.Object>(
             org.storydriven.modeling.pattern.Object.class, this, PatternPackage.OBJECT_PATTERN__CONTAINED_OBJECTS,
             PatternPackage.OBJECT__PATTERN);
       }
-      return containedObjects;
+      return this.containedObjects;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<Expression> getStatements ()
    {
-      if (statements == null)
+      if (this.statements == null)
       {
-         statements = new EObjectContainmentEList.Resolving<Expression>(Expression.class, this,
+         this.statements = new EObjectContainmentEList.Resolving<Expression>(Expression.class, this,
             PatternPackage.OBJECT_PATTERN__STATEMENT);
       }
-      return statements;
+      return this.statements;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public StoryNode getContainingNode ()
    {
       if (eContainerFeatureID() != PatternPackage.OBJECT_PATTERN__CONTAINING_NODE)
+      {
          return null;
+      }
       return (StoryNode) eContainer();
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public StoryNode basicGetContainingNode ()
    {
       if (eContainerFeatureID() != PatternPackage.OBJECT_PATTERN__CONTAINING_NODE)
+      {
          return null;
+      }
       return (StoryNode) eInternalContainer();
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetContainingNode (StoryNode newContainingNode, NotificationChain msgs)
@@ -202,8 +191,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setContainingNode (StoryNode newContainingNode)
@@ -212,49 +201,63 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
          || (eContainerFeatureID() != PatternPackage.OBJECT_PATTERN__CONTAINING_NODE && newContainingNode != null))
       {
          if (EcoreUtil.isAncestor(this, newContainingNode))
+         {
             throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+         }
          NotificationChain msgs = null;
          if (eInternalContainer() != null)
+         {
             msgs = eBasicRemoveFromContainer(msgs);
+         }
          if (newContainingNode != null)
+         {
             msgs = ((InternalEObject) newContainingNode).eInverseAdd(this,
                PatternPackage.STORY_NODE__CONTAINED_PATTERN, StoryNode.class, msgs);
+         }
          msgs = basicSetContainingNode(newContainingNode, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.OBJECT_PATTERN__CONTAINING_NODE,
             newContainingNode, newContainingNode));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ObjectPattern getParentPattern ()
    {
       if (eContainerFeatureID() != PatternPackage.OBJECT_PATTERN__PARENT_PATTERN)
+      {
          return null;
+      }
       return (ObjectPattern) eContainer();
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ObjectPattern basicGetParentPattern ()
    {
       if (eContainerFeatureID() != PatternPackage.OBJECT_PATTERN__PARENT_PATTERN)
+      {
          return null;
+      }
       return (ObjectPattern) eInternalContainer();
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetParentPattern (ObjectPattern newParentPattern, NotificationChain msgs)
@@ -264,8 +267,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setParentPattern (ObjectPattern newParentPattern)
@@ -274,79 +277,91 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
          || (eContainerFeatureID() != PatternPackage.OBJECT_PATTERN__PARENT_PATTERN && newParentPattern != null))
       {
          if (EcoreUtil.isAncestor(this, newParentPattern))
+         {
             throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+         }
          NotificationChain msgs = null;
          if (eInternalContainer() != null)
+         {
             msgs = eBasicRemoveFromContainer(msgs);
+         }
          if (newParentPattern != null)
+         {
             msgs = ((InternalEObject) newParentPattern).eInverseAdd(this, PatternPackage.OBJECT_PATTERN__CHILD_PATTERN,
                ObjectPattern.class, msgs);
+         }
          msgs = basicSetParentPattern(newParentPattern, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.OBJECT_PATTERN__PARENT_PATTERN,
             newParentPattern, newParentPattern));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<ObjectPattern> getChildPatterns ()
    {
-      if (childPatterns == null)
+      if (this.childPatterns == null)
       {
-         childPatterns = new EObjectContainmentWithInverseEList.Resolving<ObjectPattern>(ObjectPattern.class, this,
-            PatternPackage.OBJECT_PATTERN__CHILD_PATTERN, PatternPackage.OBJECT_PATTERN__PARENT_PATTERN);
+         this.childPatterns = new EObjectContainmentWithInverseEList.Resolving<ObjectPattern>(ObjectPattern.class,
+            this, PatternPackage.OBJECT_PATTERN__CHILD_PATTERN, PatternPackage.OBJECT_PATTERN__PARENT_PATTERN);
       }
-      return childPatterns;
+      return this.childPatterns;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Constraint getConstraint ()
    {
-      return constraint;
+      return this.constraint;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setConstraint (Constraint newConstraint)
    {
-      Constraint oldConstraint = constraint;
-      constraint = newConstraint == null ? CONSTRAINT_EDEFAULT : newConstraint;
+      Constraint oldConstraint = this.constraint;
+      this.constraint = newConstraint == null ? CONSTRAINT_EDEFAULT : newConstraint;
       if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.OBJECT_PATTERN__CONSTRAINT,
-            oldConstraint, constraint));
+            oldConstraint, this.constraint));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<Expression> getConstraintExpressions ()
    {
-      if (constraintExpressions == null)
+      if (this.constraintExpressions == null)
       {
-         constraintExpressions = new EObjectContainmentEList.Resolving<Expression>(Expression.class, this,
+         this.constraintExpressions = new EObjectContainmentEList.Resolving<Expression>(Expression.class, this,
             PatternPackage.OBJECT_PATTERN__CONSTRAINT_EXPRESSION);
       }
-      return constraintExpressions;
+      return this.constraintExpressions;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -359,11 +374,15 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
             return ((InternalEList<InternalEObject>) (InternalEList<?>) getContainedObjects()).basicAdd(otherEnd, msgs);
          case PatternPackage.OBJECT_PATTERN__CONTAINING_NODE:
             if (eInternalContainer() != null)
+            {
                msgs = eBasicRemoveFromContainer(msgs);
+            }
             return basicSetContainingNode((StoryNode) otherEnd, msgs);
          case PatternPackage.OBJECT_PATTERN__PARENT_PATTERN:
             if (eInternalContainer() != null)
+            {
                msgs = eBasicRemoveFromContainer(msgs);
+            }
             return basicSetParentPattern((ObjectPattern) otherEnd, msgs);
          case PatternPackage.OBJECT_PATTERN__CHILD_PATTERN:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) getChildPatterns()).basicAdd(otherEnd, msgs);
@@ -372,8 +391,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -398,8 +417,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -418,8 +437,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -433,11 +452,15 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
             return getStatements();
          case PatternPackage.OBJECT_PATTERN__CONTAINING_NODE:
             if (resolve)
+            {
                return getContainingNode();
+            }
             return basicGetContainingNode();
          case PatternPackage.OBJECT_PATTERN__PARENT_PATTERN:
             if (resolve)
+            {
                return getParentPattern();
+            }
             return basicGetParentPattern();
          case PatternPackage.OBJECT_PATTERN__CHILD_PATTERN:
             return getChildPatterns();
@@ -450,8 +473,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -490,8 +513,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -525,8 +548,8 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -535,39 +558,41 @@ public class ObjectPatternImpl extends CommentableElementImpl implements ObjectP
       switch (featureID)
       {
          case PatternPackage.OBJECT_PATTERN__CONTAINED_OBJECTS:
-            return containedObjects != null && !containedObjects.isEmpty();
+            return this.containedObjects != null && !this.containedObjects.isEmpty();
          case PatternPackage.OBJECT_PATTERN__STATEMENT:
-            return statements != null && !statements.isEmpty();
+            return this.statements != null && !this.statements.isEmpty();
          case PatternPackage.OBJECT_PATTERN__CONTAINING_NODE:
             return basicGetContainingNode() != null;
          case PatternPackage.OBJECT_PATTERN__PARENT_PATTERN:
             return basicGetParentPattern() != null;
          case PatternPackage.OBJECT_PATTERN__CHILD_PATTERN:
-            return childPatterns != null && !childPatterns.isEmpty();
+            return this.childPatterns != null && !this.childPatterns.isEmpty();
          case PatternPackage.OBJECT_PATTERN__CONSTRAINT:
-            return constraint != CONSTRAINT_EDEFAULT;
+            return this.constraint != CONSTRAINT_EDEFAULT;
          case PatternPackage.OBJECT_PATTERN__CONSTRAINT_EXPRESSION:
-            return constraintExpressions != null && !constraintExpressions.isEmpty();
+            return this.constraintExpressions != null && !this.constraintExpressions.isEmpty();
       }
       return super.eIsSet(featureID);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
    public String toString ()
    {
       if (eIsProxy())
+      {
          return super.toString();
+      }
 
       StringBuffer result = new StringBuffer(super.toString());
       result.append(" (constraint: ");
-      result.append(constraint);
+      result.append(this.constraint);
       result.append(')');
       return result.toString();
    }
 
-} //ObjectPatternImpl
+} // ObjectPatternImpl

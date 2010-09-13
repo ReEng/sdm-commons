@@ -7,17 +7,14 @@
 package org.storydriven.modeling;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Commentable Element</b></em>'.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Commentable Element</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.storydriven.modeling.CommentableElement#getComment <em>Comment</em>}</li>
+ * <li>{@link org.storydriven.modeling.CommentableElement#getComment <em>Comment</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.storydriven.modeling.SDMPackage#getCommentableElement()
  * @model abstract="true"
  * @generated
@@ -25,13 +22,12 @@ package org.storydriven.modeling;
 public interface CommentableElement extends ExtendableElement
 {
    /**
-    * Returns the value of the '<em><b>Comment</b></em>' attribute.
-    * <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Comment</b></em>' attribute. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Comment</em>' attribute isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of the '<em>Comment</em>' attribute isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @return the value of the '<em>Comment</em>' attribute.
     * @see #setComment(String)
     * @see org.storydriven.modeling.SDMPackage#getCommentableElement_Comment()
@@ -41,9 +37,8 @@ public interface CommentableElement extends ExtendableElement
    String getComment ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.CommentableElement#getComment <em>Comment</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Sets the value of the '{@link org.storydriven.modeling.CommentableElement#getComment <em>Comment</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @param value the new value of the '<em>Comment</em>' attribute.
     * @see #getComment()
     * @generated

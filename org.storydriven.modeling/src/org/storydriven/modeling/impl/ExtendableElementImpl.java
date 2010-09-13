@@ -26,19 +26,18 @@ import org.storydriven.modeling.SDMPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.impl.ExtendableElementImpl#getAnnotations <em>Annotation</em>}</li>
- *   <li>{@link org.storydriven.modeling.impl.ExtendableElementImpl#getExtensions <em>Extension</em>}</li>
+ * <li>{@link org.storydriven.modeling.impl.ExtendableElementImpl#getAnnotations <em>Annotation</em>}</li>
+ * <li>{@link org.storydriven.modeling.impl.ExtendableElementImpl#getExtensions <em>Extension</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public abstract class ExtendableElementImpl extends EObjectImpl implements ExtendableElement
 {
    /**
-    * The cached value of the '{@link #getAnnotations() <em>Annotation</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getAnnotations() <em>Annotation</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getAnnotations()
     * @generated
     * @ordered
@@ -46,9 +45,8 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
    protected EList<EAnnotation> annotations;
 
    /**
-    * The cached value of the '{@link #getExtensions() <em>Extension</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getExtensions() <em>Extension</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getExtensions()
     * @generated
     * @ordered
@@ -57,6 +55,7 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected ExtendableElementImpl ()
@@ -66,6 +65,7 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -75,38 +75,38 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<EAnnotation> getAnnotations ()
    {
-      if (annotations == null)
+      if (this.annotations == null)
       {
-         annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this,
+         this.annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this,
             SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION);
       }
-      return annotations;
+      return this.annotations;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<Extension> getExtensions ()
    {
-      if (extensions == null)
+      if (this.extensions == null)
       {
-         extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this,
+         this.extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this,
             SDMPackage.EXTENDABLE_ELEMENT__EXTENSION, SDMPackage.EXTENSION__EXTENDABLE_BASE);
       }
-      return extensions;
+      return this.extensions;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Extension getExtension (EClass type)
@@ -115,8 +115,8 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Extension provideExtension (EClass type)
@@ -125,8 +125,8 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EAnnotation getAnnotation (String source)
@@ -135,8 +135,8 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EAnnotation provideAnnotation (String source)
@@ -145,8 +145,8 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -163,6 +163,7 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -180,6 +181,7 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -197,6 +199,7 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -219,6 +222,7 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -238,6 +242,7 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -246,9 +251,9 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
       switch (featureID)
       {
          case SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION:
-            return annotations != null && !annotations.isEmpty();
+            return this.annotations != null && !this.annotations.isEmpty();
          case SDMPackage.EXTENDABLE_ELEMENT__EXTENSION:
-            return extensions != null && !extensions.isEmpty();
+            return this.extensions != null && !this.extensions.isEmpty();
       }
       return super.eIsSet(featureID);
    }

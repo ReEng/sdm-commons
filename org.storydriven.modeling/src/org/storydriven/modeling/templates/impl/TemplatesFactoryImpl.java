@@ -9,25 +9,24 @@ package org.storydriven.modeling.templates.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.storydriven.modeling.templates.*;
+import org.storydriven.modeling.templates.ObjectPatternTemplate;
+import org.storydriven.modeling.templates.PropertyBinding;
+import org.storydriven.modeling.templates.TemplateBinding;
+import org.storydriven.modeling.templates.TemplatesFactory;
+import org.storydriven.modeling.templates.TemplatesPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFactory
 {
    /**
-    * Creates the default factory implementation.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static TemplatesFactory init ()
@@ -49,9 +48,8 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
    }
 
    /**
-    * Creates an instance of the factory.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public TemplatesFactoryImpl ()
@@ -60,8 +58,8 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -81,8 +79,8 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ObjectPatternTemplate createObjectPatternTemplate ()
@@ -92,8 +90,8 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public TemplateBinding createTemplateBinding ()
@@ -103,8 +101,8 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public PropertyBinding createPropertyBinding ()
@@ -114,8 +112,8 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public TemplatesPackage getTemplatesPackage ()
@@ -124,8 +122,8 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @deprecated
     * @generated
     */
@@ -135,4 +133,4 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
       return TemplatesPackage.eINSTANCE;
    }
 
-} //TemplatesFactoryImpl
+} // TemplatesFactoryImpl

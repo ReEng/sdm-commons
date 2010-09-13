@@ -9,43 +9,35 @@ package org.storydriven.modeling.templates.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.modeling.pattern.impl.ObjectPatternImpl;
-
 import org.storydriven.modeling.templates.ObjectPatternTemplate;
 import org.storydriven.modeling.templates.TemplateBinding;
 import org.storydriven.modeling.templates.TemplatesPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Object Pattern Template</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Object Pattern Template</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.templates.impl.ObjectPatternTemplateImpl#getTypeParameters <em>Type Parameter</em>}</li>
- *   <li>{@link org.storydriven.modeling.templates.impl.ObjectPatternTemplateImpl#getTemplateBindings <em>Template Binding</em>}</li>
+ * <li>{@link org.storydriven.modeling.templates.impl.ObjectPatternTemplateImpl#getTypeParameters <em>Type Parameter</em>}</li>
+ * <li>{@link org.storydriven.modeling.templates.impl.ObjectPatternTemplateImpl#getTemplateBindings <em>Template Binding</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class ObjectPatternTemplateImpl extends ObjectPatternImpl implements ObjectPatternTemplate
 {
    /**
-    * The cached value of the '{@link #getTypeParameters() <em>Type Parameter</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getTypeParameters() <em>Type Parameter</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getTypeParameters()
     * @generated
     * @ordered
@@ -53,9 +45,8 @@ public class ObjectPatternTemplateImpl extends ObjectPatternImpl implements Obje
    protected EList<EClassifier> typeParameters;
 
    /**
-    * The cached value of the '{@link #getTemplateBindings() <em>Template Binding</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getTemplateBindings() <em>Template Binding</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getTemplateBindings()
     * @generated
     * @ordered
@@ -63,8 +54,8 @@ public class ObjectPatternTemplateImpl extends ObjectPatternImpl implements Obje
    protected EList<TemplateBinding> templateBindings;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected ObjectPatternTemplateImpl ()
@@ -73,8 +64,8 @@ public class ObjectPatternTemplateImpl extends ObjectPatternImpl implements Obje
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -84,39 +75,39 @@ public class ObjectPatternTemplateImpl extends ObjectPatternImpl implements Obje
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<EClassifier> getTypeParameters ()
    {
-      if (typeParameters == null)
+      if (this.typeParameters == null)
       {
-         typeParameters = new EObjectContainmentEList.Resolving<EClassifier>(EClassifier.class, this,
+         this.typeParameters = new EObjectContainmentEList.Resolving<EClassifier>(EClassifier.class, this,
             TemplatesPackage.OBJECT_PATTERN_TEMPLATE__TYPE_PARAMETER);
       }
-      return typeParameters;
+      return this.typeParameters;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<TemplateBinding> getTemplateBindings ()
    {
-      if (templateBindings == null)
+      if (this.templateBindings == null)
       {
-         templateBindings = new EObjectContainmentWithInverseEList.Resolving<TemplateBinding>(TemplateBinding.class,
-            this, TemplatesPackage.OBJECT_PATTERN_TEMPLATE__TEMPLATE_BINDING,
+         this.templateBindings = new EObjectContainmentWithInverseEList.Resolving<TemplateBinding>(
+            TemplateBinding.class, this, TemplatesPackage.OBJECT_PATTERN_TEMPLATE__TEMPLATE_BINDING,
             TemplatesPackage.TEMPLATE_BINDING__TEMPLATE);
       }
-      return templateBindings;
+      return this.templateBindings;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -132,8 +123,8 @@ public class ObjectPatternTemplateImpl extends ObjectPatternImpl implements Obje
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -150,8 +141,8 @@ public class ObjectPatternTemplateImpl extends ObjectPatternImpl implements Obje
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -168,8 +159,8 @@ public class ObjectPatternTemplateImpl extends ObjectPatternImpl implements Obje
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -191,8 +182,8 @@ public class ObjectPatternTemplateImpl extends ObjectPatternImpl implements Obje
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -211,8 +202,8 @@ public class ObjectPatternTemplateImpl extends ObjectPatternImpl implements Obje
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -221,11 +212,11 @@ public class ObjectPatternTemplateImpl extends ObjectPatternImpl implements Obje
       switch (featureID)
       {
          case TemplatesPackage.OBJECT_PATTERN_TEMPLATE__TYPE_PARAMETER:
-            return typeParameters != null && !typeParameters.isEmpty();
+            return this.typeParameters != null && !this.typeParameters.isEmpty();
          case TemplatesPackage.OBJECT_PATTERN_TEMPLATE__TEMPLATE_BINDING:
-            return templateBindings != null && !templateBindings.isEmpty();
+            return this.templateBindings != null && !this.templateBindings.isEmpty();
       }
       return super.eIsSet(featureID);
    }
 
-} //ObjectPatternTemplateImpl
+} // ObjectPatternTemplateImpl

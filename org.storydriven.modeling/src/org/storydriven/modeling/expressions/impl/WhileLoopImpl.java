@@ -8,39 +8,31 @@ package org.storydriven.modeling.expressions.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.modeling.Expression;
-
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 import org.storydriven.modeling.expressions.WhileLoop;
-
 import org.storydriven.modeling.impl.ExpressionImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>While Loop</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>While Loop</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.expressions.impl.WhileLoopImpl#getLoopCondition <em>Loop Condition</em>}</li>
- *   <li>{@link org.storydriven.modeling.expressions.impl.WhileLoopImpl#getBody <em>Body</em>}</li>
+ * <li>{@link org.storydriven.modeling.expressions.impl.WhileLoopImpl#getLoopCondition <em>Loop Condition</em>}</li>
+ * <li>{@link org.storydriven.modeling.expressions.impl.WhileLoopImpl#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class WhileLoopImpl extends ExpressionImpl implements WhileLoop
 {
    /**
-    * The cached value of the '{@link #getLoopCondition() <em>Loop Condition</em>}' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getLoopCondition() <em>Loop Condition</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getLoopCondition()
     * @generated
     * @ordered
@@ -48,9 +40,8 @@ public class WhileLoopImpl extends ExpressionImpl implements WhileLoop
    protected Expression loopCondition;
 
    /**
-    * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getBody()
     * @generated
     * @ordered
@@ -58,8 +49,8 @@ public class WhileLoopImpl extends ExpressionImpl implements WhileLoop
    protected Expression body;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected WhileLoopImpl ()
@@ -68,8 +59,8 @@ public class WhileLoopImpl extends ExpressionImpl implements WhileLoop
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -79,19 +70,19 @@ public class WhileLoopImpl extends ExpressionImpl implements WhileLoop
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression getLoopCondition ()
    {
-      if (loopCondition != null && loopCondition.eIsProxy())
+      if (this.loopCondition != null && this.loopCondition.eIsProxy())
       {
-         InternalEObject oldLoopCondition = (InternalEObject) loopCondition;
-         loopCondition = (Expression) eResolveProxy(oldLoopCondition);
-         if (loopCondition != oldLoopCondition)
+         InternalEObject oldLoopCondition = (InternalEObject) this.loopCondition;
+         this.loopCondition = (Expression) eResolveProxy(oldLoopCondition);
+         if (this.loopCondition != oldLoopCondition)
          {
-            InternalEObject newLoopCondition = (InternalEObject) loopCondition;
+            InternalEObject newLoopCondition = (InternalEObject) this.loopCondition;
             NotificationChain msgs = oldLoopCondition.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.WHILE_LOOP__LOOP_CONDITION, null, null);
             if (newLoopCondition.eInternalContainer() == null)
@@ -100,85 +91,101 @@ public class WhileLoopImpl extends ExpressionImpl implements WhileLoop
                   - ExpressionsPackage.WHILE_LOOP__LOOP_CONDITION, null, msgs);
             }
             if (msgs != null)
+            {
                msgs.dispatch();
+            }
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.WHILE_LOOP__LOOP_CONDITION,
-                  oldLoopCondition, loopCondition));
+                  oldLoopCondition, this.loopCondition));
+            }
          }
       }
-      return loopCondition;
+      return this.loopCondition;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression basicGetLoopCondition ()
    {
-      return loopCondition;
+      return this.loopCondition;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetLoopCondition (Expression newLoopCondition, NotificationChain msgs)
    {
-      Expression oldLoopCondition = loopCondition;
-      loopCondition = newLoopCondition;
+      Expression oldLoopCondition = this.loopCondition;
+      this.loopCondition = newLoopCondition;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             ExpressionsPackage.WHILE_LOOP__LOOP_CONDITION, oldLoopCondition, newLoopCondition);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setLoopCondition (Expression newLoopCondition)
    {
-      if (newLoopCondition != loopCondition)
+      if (newLoopCondition != this.loopCondition)
       {
          NotificationChain msgs = null;
-         if (loopCondition != null)
-            msgs = ((InternalEObject) loopCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+         if (this.loopCondition != null)
+         {
+            msgs = ((InternalEObject) this.loopCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.WHILE_LOOP__LOOP_CONDITION, null, msgs);
+         }
          if (newLoopCondition != null)
+         {
             msgs = ((InternalEObject) newLoopCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.WHILE_LOOP__LOOP_CONDITION, null, msgs);
+         }
          msgs = basicSetLoopCondition(newLoopCondition, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.WHILE_LOOP__LOOP_CONDITION,
             newLoopCondition, newLoopCondition));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression getBody ()
    {
-      if (body != null && body.eIsProxy())
+      if (this.body != null && this.body.eIsProxy())
       {
-         InternalEObject oldBody = (InternalEObject) body;
-         body = (Expression) eResolveProxy(oldBody);
-         if (body != oldBody)
+         InternalEObject oldBody = (InternalEObject) this.body;
+         this.body = (Expression) eResolveProxy(oldBody);
+         if (this.body != oldBody)
          {
-            InternalEObject newBody = (InternalEObject) body;
+            InternalEObject newBody = (InternalEObject) this.body;
             NotificationChain msgs = oldBody.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.WHILE_LOOP__BODY, null, null);
             if (newBody.eInternalContainer() == null)
@@ -187,73 +194,89 @@ public class WhileLoopImpl extends ExpressionImpl implements WhileLoop
                   msgs);
             }
             if (msgs != null)
+            {
                msgs.dispatch();
+            }
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.WHILE_LOOP__BODY, oldBody,
-                  body));
+                  this.body));
+            }
          }
       }
-      return body;
+      return this.body;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression basicGetBody ()
    {
-      return body;
+      return this.body;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetBody (Expression newBody, NotificationChain msgs)
    {
-      Expression oldBody = body;
-      body = newBody;
+      Expression oldBody = this.body;
+      this.body = newBody;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             ExpressionsPackage.WHILE_LOOP__BODY, oldBody, newBody);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setBody (Expression newBody)
    {
-      if (newBody != body)
+      if (newBody != this.body)
       {
          NotificationChain msgs = null;
-         if (body != null)
-            msgs = ((InternalEObject) body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+         if (this.body != null)
+         {
+            msgs = ((InternalEObject) this.body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.WHILE_LOOP__BODY, null, msgs);
+         }
          if (newBody != null)
+         {
             msgs = ((InternalEObject) newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.WHILE_LOOP__BODY, null, msgs);
+         }
          msgs = basicSetBody(newBody, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.WHILE_LOOP__BODY, newBody, newBody));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -270,8 +293,8 @@ public class WhileLoopImpl extends ExpressionImpl implements WhileLoop
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -281,19 +304,23 @@ public class WhileLoopImpl extends ExpressionImpl implements WhileLoop
       {
          case ExpressionsPackage.WHILE_LOOP__LOOP_CONDITION:
             if (resolve)
+            {
                return getLoopCondition();
+            }
             return basicGetLoopCondition();
          case ExpressionsPackage.WHILE_LOOP__BODY:
             if (resolve)
+            {
                return getBody();
+            }
             return basicGetBody();
       }
       return super.eGet(featureID, resolve, coreType);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -312,8 +339,8 @@ public class WhileLoopImpl extends ExpressionImpl implements WhileLoop
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -332,8 +359,8 @@ public class WhileLoopImpl extends ExpressionImpl implements WhileLoop
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -342,11 +369,11 @@ public class WhileLoopImpl extends ExpressionImpl implements WhileLoop
       switch (featureID)
       {
          case ExpressionsPackage.WHILE_LOOP__LOOP_CONDITION:
-            return loopCondition != null;
+            return this.loopCondition != null;
          case ExpressionsPackage.WHILE_LOOP__BODY:
-            return body != null;
+            return this.body != null;
       }
       return super.eIsSet(featureID);
    }
 
-} //WhileLoopImpl
+} // WhileLoopImpl

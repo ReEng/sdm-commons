@@ -7,25 +7,21 @@
 package org.storydriven.modeling.activities;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Activity Node</b></em>'.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Activity Node</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.storydriven.modeling.activities.ActivityNode#getOwningActivity <em>Owning Activity</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.ActivityNode#getIncomings <em>Incoming</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.ActivityNode#getOutgoings <em>Outgoing</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.ActivityNode#getOwningActivityNode <em>Owning Activity Node</em>}</li>
+ * <li>{@link org.storydriven.modeling.activities.ActivityNode#getOwningActivity <em>Owning Activity</em>}</li>
+ * <li>{@link org.storydriven.modeling.activities.ActivityNode#getIncomings <em>Incoming</em>}</li>
+ * <li>{@link org.storydriven.modeling.activities.ActivityNode#getOutgoings <em>Outgoing</em>}</li>
+ * <li>{@link org.storydriven.modeling.activities.ActivityNode#getOwningActivityNode <em>Owning Activity Node</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivityNode()
  * @model abstract="true"
  * @generated
@@ -33,14 +29,13 @@ import org.storydriven.modeling.NamedElement;
 public interface ActivityNode extends CommentableElement, NamedElement
 {
    /**
-    * Returns the value of the '<em><b>Owning Activity</b></em>' container reference.
-    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.activities.Activity#getOwnedActivityNodes <em>Owned Activity Node</em>}'.
-    * <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Owning Activity</b></em>' container reference. It is bidirectional and its opposite is '
+    * {@link org.storydriven.modeling.activities.Activity#getOwnedActivityNodes <em>Owned Activity Node</em>}'. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Owning Activity</em>' container reference isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of the '<em>Owning Activity</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @return the value of the '<em>Owning Activity</em>' container reference.
     * @see #setOwningActivity(Activity)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivityNode_OwningActivity()
@@ -51,9 +46,9 @@ public interface ActivityNode extends CommentableElement, NamedElement
    Activity getOwningActivity ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.activities.ActivityNode#getOwningActivity <em>Owning Activity</em>}' container reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Sets the value of the '{@link org.storydriven.modeling.activities.ActivityNode#getOwningActivity <em>Owning Activity</em>}' container reference. <!-- begin-user-doc --> <!--
+    * end-user-doc -->
+    * 
     * @param value the new value of the '<em>Owning Activity</em>' container reference.
     * @see #getOwningActivity()
     * @generated
@@ -61,15 +56,13 @@ public interface ActivityNode extends CommentableElement, NamedElement
    void setOwningActivity (Activity value);
 
    /**
-    * Returns the value of the '<em><b>Incoming</b></em>' reference list.
-    * The list contents are of type {@link org.storydriven.modeling.activities.ActivityEdge}.
-    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.activities.ActivityEdge#getTarget <em>Target</em>}'.
-    * <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Incoming</b></em>' reference list. The list contents are of type {@link org.storydriven.modeling.activities.ActivityEdge}. It is
+    * bidirectional and its opposite is '{@link org.storydriven.modeling.activities.ActivityEdge#getTarget <em>Target</em>}'. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Incoming</em>' reference list isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of the '<em>Incoming</em>' reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @return the value of the '<em>Incoming</em>' reference list.
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivityNode_Incoming()
     * @see org.storydriven.modeling.activities.ActivityEdge#getTarget
@@ -79,15 +72,13 @@ public interface ActivityNode extends CommentableElement, NamedElement
    EList<ActivityEdge> getIncomings ();
 
    /**
-    * Returns the value of the '<em><b>Outgoing</b></em>' containment reference list.
-    * The list contents are of type {@link org.storydriven.modeling.activities.ActivityEdge}.
-    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.activities.ActivityEdge#getSource <em>Source</em>}'.
-    * <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Outgoing</b></em>' containment reference list. The list contents are of type {@link org.storydriven.modeling.activities.ActivityEdge}. It is
+    * bidirectional and its opposite is '{@link org.storydriven.modeling.activities.ActivityEdge#getSource <em>Source</em>}'. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Outgoing</em>' containment reference list isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of the '<em>Outgoing</em>' containment reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @return the value of the '<em>Outgoing</em>' containment reference list.
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivityNode_Outgoing()
     * @see org.storydriven.modeling.activities.ActivityEdge#getSource
@@ -97,14 +88,13 @@ public interface ActivityNode extends CommentableElement, NamedElement
    EList<ActivityEdge> getOutgoings ();
 
    /**
-    * Returns the value of the '<em><b>Owning Activity Node</b></em>' container reference.
-    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.activities.StructuredNode#getOwnedActivityNodes <em>Owned Activity Node</em>}'.
-    * <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Owning Activity Node</b></em>' container reference. It is bidirectional and its opposite is '
+    * {@link org.storydriven.modeling.activities.StructuredNode#getOwnedActivityNodes <em>Owned Activity Node</em>}'. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Owning Activity Node</em>' container reference isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of the '<em>Owning Activity Node</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @return the value of the '<em>Owning Activity Node</em>' container reference.
     * @see #setOwningActivityNode(StructuredNode)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivityNode_OwningActivityNode()
@@ -115,9 +105,9 @@ public interface ActivityNode extends CommentableElement, NamedElement
    StructuredNode getOwningActivityNode ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.activities.ActivityNode#getOwningActivityNode <em>Owning Activity Node</em>}' container reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Sets the value of the '{@link org.storydriven.modeling.activities.ActivityNode#getOwningActivityNode <em>Owning Activity Node</em>}' container reference. <!-- begin-user-doc
+    * --> <!-- end-user-doc -->
+    * 
     * @param value the new value of the '<em>Owning Activity Node</em>' container reference.
     * @see #getOwningActivityNode()
     * @generated

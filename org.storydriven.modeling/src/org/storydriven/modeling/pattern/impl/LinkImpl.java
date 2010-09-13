@@ -28,32 +28,29 @@ import org.storydriven.modeling.pattern.MultiLink;
 import org.storydriven.modeling.pattern.PatternPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Link</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Link</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getModifier <em>Modifier</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getSource <em>Source</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getMultiLinkToTargets <em>Multi Link To Target</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getMultiLinkFromSources <em>Multi Link From Source</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getSourceEnd <em>Source End</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getTargetEnd <em>Target End</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getRangeExpression <em>Range Expression</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getConstraint <em>Constraint</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getModifier <em>Modifier</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getTarget <em>Target</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getSource <em>Source</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getMultiLinkToTargets <em>Multi Link To Target</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getMultiLinkFromSources <em>Multi Link From Source</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getSourceEnd <em>Source End</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getTargetEnd <em>Target End</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.LinkImpl#getRangeExpression <em>Range Expression</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class LinkImpl extends NamedElementImpl implements Link
 {
    /**
-    * The default value of the '{@link #getConstraint() <em>Constraint</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The default value of the '{@link #getConstraint() <em>Constraint</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getConstraint()
     * @generated
     * @ordered
@@ -61,9 +58,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    protected static final Constraint CONSTRAINT_EDEFAULT = Constraint.NONE;
 
    /**
-    * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getConstraint()
     * @generated
     * @ordered
@@ -71,9 +67,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    protected Constraint constraint = CONSTRAINT_EDEFAULT;
 
    /**
-    * The default value of the '{@link #getModifier() <em>Modifier</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The default value of the '{@link #getModifier() <em>Modifier</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getModifier()
     * @generated
     * @ordered
@@ -81,9 +76,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    protected static final Modifier MODIFIER_EDEFAULT = Modifier.NONE;
 
    /**
-    * The cached value of the '{@link #getModifier() <em>Modifier</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getModifier() <em>Modifier</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getModifier()
     * @generated
     * @ordered
@@ -91,9 +85,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    protected Modifier modifier = MODIFIER_EDEFAULT;
 
    /**
-    * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getTarget() <em>Target</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getTarget()
     * @generated
     * @ordered
@@ -101,9 +94,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    protected org.storydriven.modeling.pattern.Object target;
 
    /**
-    * The cached value of the '{@link #getMultiLinkToTargets() <em>Multi Link To Target</em>}' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getMultiLinkToTargets() <em>Multi Link To Target</em>}' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getMultiLinkToTargets()
     * @generated
     * @ordered
@@ -111,9 +103,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    protected EList<MultiLink> multiLinkToTargets;
 
    /**
-    * The cached value of the '{@link #getMultiLinkFromSources() <em>Multi Link From Source</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getMultiLinkFromSources() <em>Multi Link From Source</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getMultiLinkFromSources()
     * @generated
     * @ordered
@@ -121,9 +112,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    protected EList<MultiLink> multiLinkFromSources;
 
    /**
-    * The cached value of the '{@link #getTargetEnd() <em>Target End</em>}' reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getTargetEnd() <em>Target End</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getTargetEnd()
     * @generated
     * @ordered
@@ -131,9 +121,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    protected EReference targetEnd;
 
    /**
-    * The cached value of the '{@link #getRangeExpression() <em>Range Expression</em>}' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getRangeExpression() <em>Range Expression</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getRangeExpression()
     * @generated
     * @ordered
@@ -141,8 +130,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    protected Expression rangeExpression;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected LinkImpl ()
@@ -151,8 +140,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -162,154 +151,178 @@ public class LinkImpl extends NamedElementImpl implements Link
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Constraint getConstraint ()
    {
-      return constraint;
+      return this.constraint;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setConstraint (Constraint newConstraint)
    {
-      Constraint oldConstraint = constraint;
-      constraint = newConstraint == null ? CONSTRAINT_EDEFAULT : newConstraint;
+      Constraint oldConstraint = this.constraint;
+      this.constraint = newConstraint == null ? CONSTRAINT_EDEFAULT : newConstraint;
       if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.LINK__CONSTRAINT, oldConstraint,
-            constraint));
+            this.constraint));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Modifier getModifier ()
    {
-      return modifier;
+      return this.modifier;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setModifier (Modifier newModifier)
    {
-      Modifier oldModifier = modifier;
-      modifier = newModifier == null ? MODIFIER_EDEFAULT : newModifier;
+      Modifier oldModifier = this.modifier;
+      this.modifier = newModifier == null ? MODIFIER_EDEFAULT : newModifier;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.LINK__MODIFIER, oldModifier, modifier));
+      {
+         eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.LINK__MODIFIER, oldModifier,
+            this.modifier));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public org.storydriven.modeling.pattern.Object getTarget ()
    {
-      if (target != null && target.eIsProxy())
+      if (this.target != null && this.target.eIsProxy())
       {
-         InternalEObject oldTarget = (InternalEObject) target;
-         target = (org.storydriven.modeling.pattern.Object) eResolveProxy(oldTarget);
-         if (target != oldTarget)
+         InternalEObject oldTarget = (InternalEObject) this.target;
+         this.target = (org.storydriven.modeling.pattern.Object) eResolveProxy(oldTarget);
+         if (this.target != oldTarget)
          {
             if (eNotificationRequired())
-               eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.LINK__TARGET, oldTarget, target));
+            {
+               eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.LINK__TARGET, oldTarget,
+                  this.target));
+            }
          }
       }
-      return target;
+      return this.target;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public org.storydriven.modeling.pattern.Object basicGetTarget ()
    {
-      return target;
+      return this.target;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetTarget (org.storydriven.modeling.pattern.Object newTarget, NotificationChain msgs)
    {
-      org.storydriven.modeling.pattern.Object oldTarget = target;
-      target = newTarget;
+      org.storydriven.modeling.pattern.Object oldTarget = this.target;
+      this.target = newTarget;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternPackage.LINK__TARGET,
             oldTarget, newTarget);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setTarget (org.storydriven.modeling.pattern.Object newTarget)
    {
-      if (newTarget != target)
+      if (newTarget != this.target)
       {
          NotificationChain msgs = null;
-         if (target != null)
-            msgs = ((InternalEObject) target).eInverseRemove(this, PatternPackage.OBJECT__LINK_TO_SOURCE,
+         if (this.target != null)
+         {
+            msgs = ((InternalEObject) this.target).eInverseRemove(this, PatternPackage.OBJECT__LINK_TO_SOURCE,
                org.storydriven.modeling.pattern.Object.class, msgs);
+         }
          if (newTarget != null)
+         {
             msgs = ((InternalEObject) newTarget).eInverseAdd(this, PatternPackage.OBJECT__LINK_TO_SOURCE,
                org.storydriven.modeling.pattern.Object.class, msgs);
+         }
          msgs = basicSetTarget(newTarget, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.LINK__TARGET, newTarget, newTarget));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public org.storydriven.modeling.pattern.Object getSource ()
    {
       if (eContainerFeatureID() != PatternPackage.LINK__SOURCE)
+      {
          return null;
+      }
       return (org.storydriven.modeling.pattern.Object) eContainer();
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public org.storydriven.modeling.pattern.Object basicGetSource ()
    {
       if (eContainerFeatureID() != PatternPackage.LINK__SOURCE)
+      {
          return null;
+      }
       return (org.storydriven.modeling.pattern.Object) eInternalContainer();
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetSource (org.storydriven.modeling.pattern.Object newSource, NotificationChain msgs)
@@ -319,8 +332,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setSource (org.storydriven.modeling.pattern.Object newSource)
@@ -329,54 +342,64 @@ public class LinkImpl extends NamedElementImpl implements Link
          || (eContainerFeatureID() != PatternPackage.LINK__SOURCE && newSource != null))
       {
          if (EcoreUtil.isAncestor(this, newSource))
+         {
             throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+         }
          NotificationChain msgs = null;
          if (eInternalContainer() != null)
+         {
             msgs = eBasicRemoveFromContainer(msgs);
+         }
          if (newSource != null)
+         {
             msgs = ((InternalEObject) newSource).eInverseAdd(this, PatternPackage.OBJECT__LINK_TO_TARGET,
                org.storydriven.modeling.pattern.Object.class, msgs);
+         }
          msgs = basicSetSource(newSource, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.LINK__SOURCE, newSource, newSource));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<MultiLink> getMultiLinkToTargets ()
    {
-      if (multiLinkToTargets == null)
+      if (this.multiLinkToTargets == null)
       {
-         multiLinkToTargets = new EObjectWithInverseResolvingEList<MultiLink>(MultiLink.class, this,
+         this.multiLinkToTargets = new EObjectWithInverseResolvingEList<MultiLink>(MultiLink.class, this,
             PatternPackage.LINK__MULTI_LINK_TO_TARGET, PatternPackage.MULTI_LINK__TARGET_LINK);
       }
-      return multiLinkToTargets;
+      return this.multiLinkToTargets;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<MultiLink> getMultiLinkFromSources ()
    {
-      if (multiLinkFromSources == null)
+      if (this.multiLinkFromSources == null)
       {
-         multiLinkFromSources = new EObjectContainmentWithInverseEList.Resolving<MultiLink>(MultiLink.class, this,
+         this.multiLinkFromSources = new EObjectContainmentWithInverseEList.Resolving<MultiLink>(MultiLink.class, this,
             PatternPackage.LINK__MULTI_LINK_FROM_SOURCE, PatternPackage.MULTI_LINK__SOURCE_LINK);
       }
-      return multiLinkFromSources;
+      return this.multiLinkFromSources;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference getSourceEnd ()
@@ -387,8 +410,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public EReference basicGetSourceEnd ()
@@ -398,8 +421,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public void setSourceEnd (EReference newSourceEnd)
@@ -437,39 +460,41 @@ public class LinkImpl extends NamedElementImpl implements Link
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference getTargetEnd ()
    {
-      if (targetEnd != null && targetEnd.eIsProxy())
+      if (this.targetEnd != null && this.targetEnd.eIsProxy())
       {
-         InternalEObject oldTargetEnd = (InternalEObject) targetEnd;
-         targetEnd = (EReference) eResolveProxy(oldTargetEnd);
-         if (targetEnd != oldTargetEnd)
+         InternalEObject oldTargetEnd = (InternalEObject) this.targetEnd;
+         this.targetEnd = (EReference) eResolveProxy(oldTargetEnd);
+         if (this.targetEnd != oldTargetEnd)
          {
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.LINK__TARGET_END, oldTargetEnd,
-                  targetEnd));
+                  this.targetEnd));
+            }
          }
       }
-      return targetEnd;
+      return this.targetEnd;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference basicGetTargetEnd ()
    {
-      return targetEnd;
+      return this.targetEnd;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public void setTargetEnd (EReference newTargetEnd)
@@ -485,12 +510,12 @@ public class LinkImpl extends NamedElementImpl implements Link
 
    protected NotificationChain basicSetTargetEnd (EReference newTargetEnd, NotificationChain msgs)
    {
-      EReference oldTargetEnd = targetEnd;
-      targetEnd = newTargetEnd;
+      EReference oldTargetEnd = this.targetEnd;
+      this.targetEnd = newTargetEnd;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-            PatternPackage.LINK__TARGET_END, oldTargetEnd, targetEnd);
+            PatternPackage.LINK__TARGET_END, oldTargetEnd, this.targetEnd);
          if (msgs == null)
          {
             msgs = notification;
@@ -504,19 +529,19 @@ public class LinkImpl extends NamedElementImpl implements Link
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression getRangeExpression ()
    {
-      if (rangeExpression != null && rangeExpression.eIsProxy())
+      if (this.rangeExpression != null && this.rangeExpression.eIsProxy())
       {
-         InternalEObject oldRangeExpression = (InternalEObject) rangeExpression;
-         rangeExpression = (Expression) eResolveProxy(oldRangeExpression);
-         if (rangeExpression != oldRangeExpression)
+         InternalEObject oldRangeExpression = (InternalEObject) this.rangeExpression;
+         this.rangeExpression = (Expression) eResolveProxy(oldRangeExpression);
+         if (this.rangeExpression != oldRangeExpression)
          {
-            InternalEObject newRangeExpression = (InternalEObject) rangeExpression;
+            InternalEObject newRangeExpression = (InternalEObject) this.rangeExpression;
             NotificationChain msgs = oldRangeExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - PatternPackage.LINK__RANGE_EXPRESSION, null, null);
             if (newRangeExpression.eInternalContainer() == null)
@@ -525,74 +550,90 @@ public class LinkImpl extends NamedElementImpl implements Link
                   - PatternPackage.LINK__RANGE_EXPRESSION, null, msgs);
             }
             if (msgs != null)
+            {
                msgs.dispatch();
+            }
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.LINK__RANGE_EXPRESSION,
-                  oldRangeExpression, rangeExpression));
+                  oldRangeExpression, this.rangeExpression));
+            }
          }
       }
-      return rangeExpression;
+      return this.rangeExpression;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression basicGetRangeExpression ()
    {
-      return rangeExpression;
+      return this.rangeExpression;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetRangeExpression (Expression newRangeExpression, NotificationChain msgs)
    {
-      Expression oldRangeExpression = rangeExpression;
-      rangeExpression = newRangeExpression;
+      Expression oldRangeExpression = this.rangeExpression;
+      this.rangeExpression = newRangeExpression;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             PatternPackage.LINK__RANGE_EXPRESSION, oldRangeExpression, newRangeExpression);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setRangeExpression (Expression newRangeExpression)
    {
-      if (newRangeExpression != rangeExpression)
+      if (newRangeExpression != this.rangeExpression)
       {
          NotificationChain msgs = null;
-         if (rangeExpression != null)
-            msgs = ((InternalEObject) rangeExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+         if (this.rangeExpression != null)
+         {
+            msgs = ((InternalEObject) this.rangeExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - PatternPackage.LINK__RANGE_EXPRESSION, null, msgs);
+         }
          if (newRangeExpression != null)
+         {
             msgs = ((InternalEObject) newRangeExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
                - PatternPackage.LINK__RANGE_EXPRESSION, null, msgs);
+         }
          msgs = basicSetRangeExpression(newRangeExpression, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.LINK__RANGE_EXPRESSION,
             newRangeExpression, newRangeExpression));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -602,13 +643,17 @@ public class LinkImpl extends NamedElementImpl implements Link
       switch (featureID)
       {
          case PatternPackage.LINK__TARGET:
-            if (target != null)
-               msgs = ((InternalEObject) target).eInverseRemove(this, PatternPackage.OBJECT__LINK_TO_SOURCE,
+            if (this.target != null)
+            {
+               msgs = ((InternalEObject) this.target).eInverseRemove(this, PatternPackage.OBJECT__LINK_TO_SOURCE,
                   org.storydriven.modeling.pattern.Object.class, msgs);
+            }
             return basicSetTarget((org.storydriven.modeling.pattern.Object) otherEnd, msgs);
          case PatternPackage.LINK__SOURCE:
             if (eInternalContainer() != null)
+            {
                msgs = eBasicRemoveFromContainer(msgs);
+            }
             return basicSetSource((org.storydriven.modeling.pattern.Object) otherEnd, msgs);
          case PatternPackage.LINK__MULTI_LINK_TO_TARGET:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) getMultiLinkToTargets()).basicAdd(otherEnd,
@@ -621,8 +666,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -645,8 +690,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -662,8 +707,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -677,11 +722,15 @@ public class LinkImpl extends NamedElementImpl implements Link
             return getModifier();
          case PatternPackage.LINK__TARGET:
             if (resolve)
+            {
                return getTarget();
+            }
             return basicGetTarget();
          case PatternPackage.LINK__SOURCE:
             if (resolve)
+            {
                return getSource();
+            }
             return basicGetSource();
          case PatternPackage.LINK__MULTI_LINK_TO_TARGET:
             return getMultiLinkToTargets();
@@ -689,23 +738,29 @@ public class LinkImpl extends NamedElementImpl implements Link
             return getMultiLinkFromSources();
          case PatternPackage.LINK__SOURCE_END:
             if (resolve)
+            {
                return getSourceEnd();
+            }
             return basicGetSourceEnd();
          case PatternPackage.LINK__TARGET_END:
             if (resolve)
+            {
                return getTargetEnd();
+            }
             return basicGetTargetEnd();
          case PatternPackage.LINK__RANGE_EXPRESSION:
             if (resolve)
+            {
                return getRangeExpression();
+            }
             return basicGetRangeExpression();
       }
       return super.eGet(featureID, resolve, coreType);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -748,8 +803,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -789,8 +844,8 @@ public class LinkImpl extends NamedElementImpl implements Link
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -799,45 +854,47 @@ public class LinkImpl extends NamedElementImpl implements Link
       switch (featureID)
       {
          case PatternPackage.LINK__CONSTRAINT:
-            return constraint != CONSTRAINT_EDEFAULT;
+            return this.constraint != CONSTRAINT_EDEFAULT;
          case PatternPackage.LINK__MODIFIER:
-            return modifier != MODIFIER_EDEFAULT;
+            return this.modifier != MODIFIER_EDEFAULT;
          case PatternPackage.LINK__TARGET:
-            return target != null;
+            return this.target != null;
          case PatternPackage.LINK__SOURCE:
             return basicGetSource() != null;
          case PatternPackage.LINK__MULTI_LINK_TO_TARGET:
-            return multiLinkToTargets != null && !multiLinkToTargets.isEmpty();
+            return this.multiLinkToTargets != null && !this.multiLinkToTargets.isEmpty();
          case PatternPackage.LINK__MULTI_LINK_FROM_SOURCE:
-            return multiLinkFromSources != null && !multiLinkFromSources.isEmpty();
+            return this.multiLinkFromSources != null && !this.multiLinkFromSources.isEmpty();
          case PatternPackage.LINK__SOURCE_END:
             return basicGetSourceEnd() != null;
          case PatternPackage.LINK__TARGET_END:
-            return targetEnd != null;
+            return this.targetEnd != null;
          case PatternPackage.LINK__RANGE_EXPRESSION:
-            return rangeExpression != null;
+            return this.rangeExpression != null;
       }
       return super.eIsSet(featureID);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
    public String toString ()
    {
       if (eIsProxy())
+      {
          return super.toString();
+      }
 
       StringBuffer result = new StringBuffer(super.toString());
       result.append(" (constraint: ");
-      result.append(constraint);
+      result.append(this.constraint);
       result.append(", modifier: ");
-      result.append(modifier);
+      result.append(this.modifier);
       result.append(')');
       return result.toString();
    }
 
-} //LinkImpl
+} // LinkImpl

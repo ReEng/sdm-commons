@@ -8,36 +8,29 @@ package org.storydriven.modeling.pattern.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.modeling.Expression;
-
 import org.storydriven.modeling.pattern.Path;
 import org.storydriven.modeling.pattern.PatternPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Path</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Path</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.pattern.impl.PathImpl#getPathExpression <em>Path Expression</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.PathImpl#getPathExpression <em>Path Expression</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class PathImpl extends LinkImpl implements Path
 {
    /**
-    * The cached value of the '{@link #getPathExpression() <em>Path Expression</em>}' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getPathExpression() <em>Path Expression</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getPathExpression()
     * @generated
     * @ordered
@@ -45,8 +38,8 @@ public class PathImpl extends LinkImpl implements Path
    protected Expression pathExpression;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected PathImpl ()
@@ -55,8 +48,8 @@ public class PathImpl extends LinkImpl implements Path
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -66,19 +59,19 @@ public class PathImpl extends LinkImpl implements Path
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression getPathExpression ()
    {
-      if (pathExpression != null && pathExpression.eIsProxy())
+      if (this.pathExpression != null && this.pathExpression.eIsProxy())
       {
-         InternalEObject oldPathExpression = (InternalEObject) pathExpression;
-         pathExpression = (Expression) eResolveProxy(oldPathExpression);
-         if (pathExpression != oldPathExpression)
+         InternalEObject oldPathExpression = (InternalEObject) this.pathExpression;
+         this.pathExpression = (Expression) eResolveProxy(oldPathExpression);
+         if (this.pathExpression != oldPathExpression)
          {
-            InternalEObject newPathExpression = (InternalEObject) pathExpression;
+            InternalEObject newPathExpression = (InternalEObject) this.pathExpression;
             NotificationChain msgs = oldPathExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - PatternPackage.PATH__PATH_EXPRESSION, null, null);
             if (newPathExpression.eInternalContainer() == null)
@@ -87,74 +80,90 @@ public class PathImpl extends LinkImpl implements Path
                   EOPPOSITE_FEATURE_BASE - PatternPackage.PATH__PATH_EXPRESSION, null, msgs);
             }
             if (msgs != null)
+            {
                msgs.dispatch();
+            }
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.PATH__PATH_EXPRESSION,
-                  oldPathExpression, pathExpression));
+                  oldPathExpression, this.pathExpression));
+            }
          }
       }
-      return pathExpression;
+      return this.pathExpression;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression basicGetPathExpression ()
    {
-      return pathExpression;
+      return this.pathExpression;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetPathExpression (Expression newPathExpression, NotificationChain msgs)
    {
-      Expression oldPathExpression = pathExpression;
-      pathExpression = newPathExpression;
+      Expression oldPathExpression = this.pathExpression;
+      this.pathExpression = newPathExpression;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             PatternPackage.PATH__PATH_EXPRESSION, oldPathExpression, newPathExpression);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setPathExpression (Expression newPathExpression)
    {
-      if (newPathExpression != pathExpression)
+      if (newPathExpression != this.pathExpression)
       {
          NotificationChain msgs = null;
-         if (pathExpression != null)
-            msgs = ((InternalEObject) pathExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+         if (this.pathExpression != null)
+         {
+            msgs = ((InternalEObject) this.pathExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - PatternPackage.PATH__PATH_EXPRESSION, null, msgs);
+         }
          if (newPathExpression != null)
+         {
             msgs = ((InternalEObject) newPathExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
                - PatternPackage.PATH__PATH_EXPRESSION, null, msgs);
+         }
          msgs = basicSetPathExpression(newPathExpression, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.PATH__PATH_EXPRESSION, newPathExpression,
             newPathExpression));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -169,8 +178,8 @@ public class PathImpl extends LinkImpl implements Path
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -180,15 +189,17 @@ public class PathImpl extends LinkImpl implements Path
       {
          case PatternPackage.PATH__PATH_EXPRESSION:
             if (resolve)
+            {
                return getPathExpression();
+            }
             return basicGetPathExpression();
       }
       return super.eGet(featureID, resolve, coreType);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -204,8 +215,8 @@ public class PathImpl extends LinkImpl implements Path
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -221,8 +232,8 @@ public class PathImpl extends LinkImpl implements Path
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -231,9 +242,9 @@ public class PathImpl extends LinkImpl implements Path
       switch (featureID)
       {
          case PatternPackage.PATH__PATH_EXPRESSION:
-            return pathExpression != null;
+            return this.pathExpression != null;
       }
       return super.eIsSet(featureID);
    }
 
-} //PathImpl
+} // PathImpl

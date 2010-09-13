@@ -8,36 +8,29 @@ package org.storydriven.modeling.activities.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.modeling.Expression;
-
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.StatementNode;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Statement Node</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Statement Node</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.activities.impl.StatementNodeImpl#getStatementExpression <em>Statement Expression</em>}</li>
+ * <li>{@link org.storydriven.modeling.activities.impl.StatementNodeImpl#getStatementExpression <em>Statement Expression</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class StatementNodeImpl extends ActivityNodeImpl implements StatementNode
 {
    /**
-    * The cached value of the '{@link #getStatementExpression() <em>Statement Expression</em>}' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getStatementExpression() <em>Statement Expression</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getStatementExpression()
     * @generated
     * @ordered
@@ -45,8 +38,8 @@ public class StatementNodeImpl extends ActivityNodeImpl implements StatementNode
    protected Expression statementExpression;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected StatementNodeImpl ()
@@ -55,8 +48,8 @@ public class StatementNodeImpl extends ActivityNodeImpl implements StatementNode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -66,19 +59,19 @@ public class StatementNodeImpl extends ActivityNodeImpl implements StatementNode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression getStatementExpression ()
    {
-      if (statementExpression != null && statementExpression.eIsProxy())
+      if (this.statementExpression != null && this.statementExpression.eIsProxy())
       {
-         InternalEObject oldStatementExpression = (InternalEObject) statementExpression;
-         statementExpression = (Expression) eResolveProxy(oldStatementExpression);
-         if (statementExpression != oldStatementExpression)
+         InternalEObject oldStatementExpression = (InternalEObject) this.statementExpression;
+         this.statementExpression = (Expression) eResolveProxy(oldStatementExpression);
+         if (this.statementExpression != oldStatementExpression)
          {
-            InternalEObject newStatementExpression = (InternalEObject) statementExpression;
+            InternalEObject newStatementExpression = (InternalEObject) this.statementExpression;
             NotificationChain msgs = oldStatementExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION, null, null);
             if (newStatementExpression.eInternalContainer() == null)
@@ -87,74 +80,91 @@ public class StatementNodeImpl extends ActivityNodeImpl implements StatementNode
                   - ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION, null, msgs);
             }
             if (msgs != null)
+            {
                msgs.dispatch();
+            }
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                  ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION, oldStatementExpression, statementExpression));
+                  ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION, oldStatementExpression,
+                  this.statementExpression));
+            }
          }
       }
-      return statementExpression;
+      return this.statementExpression;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression basicGetStatementExpression ()
    {
-      return statementExpression;
+      return this.statementExpression;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetStatementExpression (Expression newStatementExpression, NotificationChain msgs)
    {
-      Expression oldStatementExpression = statementExpression;
-      statementExpression = newStatementExpression;
+      Expression oldStatementExpression = this.statementExpression;
+      this.statementExpression = newStatementExpression;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION, oldStatementExpression, newStatementExpression);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setStatementExpression (Expression newStatementExpression)
    {
-      if (newStatementExpression != statementExpression)
+      if (newStatementExpression != this.statementExpression)
       {
          NotificationChain msgs = null;
-         if (statementExpression != null)
-            msgs = ((InternalEObject) statementExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+         if (this.statementExpression != null)
+         {
+            msgs = ((InternalEObject) this.statementExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION, null, msgs);
+         }
          if (newStatementExpression != null)
+         {
             msgs = ((InternalEObject) newStatementExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
                - ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION, null, msgs);
+         }
          msgs = basicSetStatementExpression(newStatementExpression, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION,
             newStatementExpression, newStatementExpression));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -169,8 +179,8 @@ public class StatementNodeImpl extends ActivityNodeImpl implements StatementNode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -180,15 +190,17 @@ public class StatementNodeImpl extends ActivityNodeImpl implements StatementNode
       {
          case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
             if (resolve)
+            {
                return getStatementExpression();
+            }
             return basicGetStatementExpression();
       }
       return super.eGet(featureID, resolve, coreType);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -204,8 +216,8 @@ public class StatementNodeImpl extends ActivityNodeImpl implements StatementNode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -221,8 +233,8 @@ public class StatementNodeImpl extends ActivityNodeImpl implements StatementNode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -231,9 +243,9 @@ public class StatementNodeImpl extends ActivityNodeImpl implements StatementNode
       switch (featureID)
       {
          case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
-            return statementExpression != null;
+            return this.statementExpression != null;
       }
       return super.eIsSet(featureID);
    }
 
-} //StatementNodeImpl
+} // StatementNodeImpl

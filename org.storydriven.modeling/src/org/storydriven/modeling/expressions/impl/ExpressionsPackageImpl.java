@@ -11,15 +11,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.storydriven.modeling.SDMPackage;
-
 import org.storydriven.modeling.activities.ActivitiesPackage;
-
 import org.storydriven.modeling.activities.impl.ActivitiesPackageImpl;
-
 import org.storydriven.modeling.expressions.Collaboration;
 import org.storydriven.modeling.expressions.ComplexExpression;
 import org.storydriven.modeling.expressions.ConditionalExpression;
@@ -27,70 +22,60 @@ import org.storydriven.modeling.expressions.ExpressionsFactory;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 import org.storydriven.modeling.expressions.ForLoop;
 import org.storydriven.modeling.expressions.WhileLoop;
-
 import org.storydriven.modeling.impl.SDMPackageImpl;
-
 import org.storydriven.modeling.pattern.PatternPackage;
-
 import org.storydriven.modeling.pattern.impl.PatternPackageImpl;
-
 import org.storydriven.modeling.templates.TemplatesPackage;
-
 import org.storydriven.modeling.templates.impl.TemplatesPackageImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Package</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsPackage
 {
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private EClass collaborationEClass = null;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private EClass complexExpressionEClass = null;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private EClass forLoopEClass = null;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private EClass whileLoopEClass = null;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private EClass conditionalExpressionEClass = null;
 
    /**
-    * Creates an instance of the model <b>Package</b>, registered with
-    * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
-    * package URI value.
-    * <p>Note: the correct way to create the package is via the static
-    * factory method {@link #init init()}, which also performs
-    * initialization of the package, or returns the registered package,
-    * if one already exists.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package package URI value.
+    * <p>
+    * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the
+    * registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see org.eclipse.emf.ecore.EPackage.Registry
     * @see org.storydriven.modeling.expressions.ExpressionsPackage#eNS_URI
     * @see #init()
@@ -102,19 +87,18 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private static boolean isInited = false;
 
    /**
     * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+    * <p>
+    * This method is used to initialize {@link ExpressionsPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access
+    * that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
     * 
-    * <p>This method is used to initialize {@link ExpressionsPackage#eINSTANCE} when that field is accessed.
-    * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
     * @see #eNS_URI
     * @see #createPackageContents()
     * @see #initializePackageContents()
@@ -123,7 +107,9 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
    public static ExpressionsPackage init ()
    {
       if (isInited)
+      {
          return (ExpressionsPackage) EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
+      }
 
       // Obtain or create and register package
       ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ExpressionsPackageImpl
@@ -170,188 +156,188 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EClass getCollaboration ()
    {
-      return collaborationEClass;
+      return this.collaborationEClass;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference getCollaboration_Source ()
    {
-      return (EReference) collaborationEClass.getEStructuralFeatures().get(0);
+      return (EReference) this.collaborationEClass.getEStructuralFeatures().get(0);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference getCollaboration_Target ()
    {
-      return (EReference) collaborationEClass.getEStructuralFeatures().get(1);
+      return (EReference) this.collaborationEClass.getEStructuralFeatures().get(1);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference getCollaboration_Body ()
    {
-      return (EReference) collaborationEClass.getEStructuralFeatures().get(2);
+      return (EReference) this.collaborationEClass.getEStructuralFeatures().get(2);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EAttribute getCollaboration_ForEach ()
    {
-      return (EAttribute) collaborationEClass.getEStructuralFeatures().get(3);
+      return (EAttribute) this.collaborationEClass.getEStructuralFeatures().get(3);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EClass getComplexExpression ()
    {
-      return complexExpressionEClass;
+      return this.complexExpressionEClass;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference getComplexExpression_ChildExpression ()
    {
-      return (EReference) complexExpressionEClass.getEStructuralFeatures().get(0);
+      return (EReference) this.complexExpressionEClass.getEStructuralFeatures().get(0);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EClass getForLoop ()
    {
-      return forLoopEClass;
+      return this.forLoopEClass;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference getForLoop_LoopVariable ()
    {
-      return (EReference) forLoopEClass.getEStructuralFeatures().get(0);
+      return (EReference) this.forLoopEClass.getEStructuralFeatures().get(0);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference getForLoop_StartValue ()
    {
-      return (EReference) forLoopEClass.getEStructuralFeatures().get(1);
+      return (EReference) this.forLoopEClass.getEStructuralFeatures().get(1);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference getForLoop_StopValue ()
    {
-      return (EReference) forLoopEClass.getEStructuralFeatures().get(2);
+      return (EReference) this.forLoopEClass.getEStructuralFeatures().get(2);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EClass getWhileLoop ()
    {
-      return whileLoopEClass;
+      return this.whileLoopEClass;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference getWhileLoop_LoopCondition ()
    {
-      return (EReference) whileLoopEClass.getEStructuralFeatures().get(0);
+      return (EReference) this.whileLoopEClass.getEStructuralFeatures().get(0);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference getWhileLoop_Body ()
    {
-      return (EReference) whileLoopEClass.getEStructuralFeatures().get(1);
+      return (EReference) this.whileLoopEClass.getEStructuralFeatures().get(1);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EClass getConditionalExpression ()
    {
-      return conditionalExpressionEClass;
+      return this.conditionalExpressionEClass;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference getConditionalExpression_Condition ()
    {
-      return (EReference) conditionalExpressionEClass.getEStructuralFeatures().get(0);
+      return (EReference) this.conditionalExpressionEClass.getEStructuralFeatures().get(0);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference getConditionalExpression_Then ()
    {
-      return (EReference) conditionalExpressionEClass.getEStructuralFeatures().get(1);
+      return (EReference) this.conditionalExpressionEClass.getEStructuralFeatures().get(1);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EReference getConditionalExpression_Else ()
    {
-      return (EReference) conditionalExpressionEClass.getEStructuralFeatures().get(2);
+      return (EReference) this.conditionalExpressionEClass.getEStructuralFeatures().get(2);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ExpressionsFactory getExpressionsFactory ()
@@ -360,69 +346,70 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private boolean isCreated = false;
 
    /**
-    * Creates the meta-model objects for the package.  This method is
-    * guarded to have no affect on any invocation but its first.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Creates the meta-model objects for the package. This method is guarded to have no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void createPackageContents ()
    {
-      if (isCreated)
+      if (this.isCreated)
+      {
          return;
-      isCreated = true;
+      }
+      this.isCreated = true;
 
       // Create classes and their features
-      collaborationEClass = createEClass(COLLABORATION);
-      createEReference(collaborationEClass, COLLABORATION__SOURCE);
-      createEReference(collaborationEClass, COLLABORATION__TARGET);
-      createEReference(collaborationEClass, COLLABORATION__BODY);
-      createEAttribute(collaborationEClass, COLLABORATION__FOR_EACH);
+      this.collaborationEClass = createEClass(COLLABORATION);
+      createEReference(this.collaborationEClass, COLLABORATION__SOURCE);
+      createEReference(this.collaborationEClass, COLLABORATION__TARGET);
+      createEReference(this.collaborationEClass, COLLABORATION__BODY);
+      createEAttribute(this.collaborationEClass, COLLABORATION__FOR_EACH);
 
-      complexExpressionEClass = createEClass(COMPLEX_EXPRESSION);
-      createEReference(complexExpressionEClass, COMPLEX_EXPRESSION__CHILD_EXPRESSION);
+      this.complexExpressionEClass = createEClass(COMPLEX_EXPRESSION);
+      createEReference(this.complexExpressionEClass, COMPLEX_EXPRESSION__CHILD_EXPRESSION);
 
-      forLoopEClass = createEClass(FOR_LOOP);
-      createEReference(forLoopEClass, FOR_LOOP__LOOP_VARIABLE);
-      createEReference(forLoopEClass, FOR_LOOP__START_VALUE);
-      createEReference(forLoopEClass, FOR_LOOP__STOP_VALUE);
+      this.forLoopEClass = createEClass(FOR_LOOP);
+      createEReference(this.forLoopEClass, FOR_LOOP__LOOP_VARIABLE);
+      createEReference(this.forLoopEClass, FOR_LOOP__START_VALUE);
+      createEReference(this.forLoopEClass, FOR_LOOP__STOP_VALUE);
 
-      whileLoopEClass = createEClass(WHILE_LOOP);
-      createEReference(whileLoopEClass, WHILE_LOOP__LOOP_CONDITION);
-      createEReference(whileLoopEClass, WHILE_LOOP__BODY);
+      this.whileLoopEClass = createEClass(WHILE_LOOP);
+      createEReference(this.whileLoopEClass, WHILE_LOOP__LOOP_CONDITION);
+      createEReference(this.whileLoopEClass, WHILE_LOOP__BODY);
 
-      conditionalExpressionEClass = createEClass(CONDITIONAL_EXPRESSION);
-      createEReference(conditionalExpressionEClass, CONDITIONAL_EXPRESSION__CONDITION);
-      createEReference(conditionalExpressionEClass, CONDITIONAL_EXPRESSION__THEN);
-      createEReference(conditionalExpressionEClass, CONDITIONAL_EXPRESSION__ELSE);
+      this.conditionalExpressionEClass = createEClass(CONDITIONAL_EXPRESSION);
+      createEReference(this.conditionalExpressionEClass, CONDITIONAL_EXPRESSION__CONDITION);
+      createEReference(this.conditionalExpressionEClass, CONDITIONAL_EXPRESSION__THEN);
+      createEReference(this.conditionalExpressionEClass, CONDITIONAL_EXPRESSION__ELSE);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private boolean isInitialized = false;
 
    /**
-    * Complete the initialization of the package and its meta-model.  This
-    * method is guarded to have no affect on any invocation but its first.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Complete the initialization of the package and its meta-model. This method is guarded to have no affect on any invocation but its first. <!-- begin-user-doc --> <!--
+    * end-user-doc -->
+    * 
     * @generated
     */
    public void initializePackageContents ()
    {
-      if (isInitialized)
+      if (this.isInitialized)
+      {
          return;
-      isInitialized = true;
+      }
+      this.isInitialized = true;
 
       // Initialize package
       setName(eNAME);
@@ -440,14 +427,14 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
       // Set bounds for type parameters
 
       // Add supertypes to classes
-      collaborationEClass.getESuperTypes().add(theSDMPackage.getExpression());
-      complexExpressionEClass.getESuperTypes().add(theSDMPackage.getExpression());
-      forLoopEClass.getESuperTypes().add(theSDMPackage.getExpression());
-      whileLoopEClass.getESuperTypes().add(theSDMPackage.getExpression());
-      conditionalExpressionEClass.getESuperTypes().add(theSDMPackage.getExpression());
+      this.collaborationEClass.getESuperTypes().add(theSDMPackage.getExpression());
+      this.complexExpressionEClass.getESuperTypes().add(theSDMPackage.getExpression());
+      this.forLoopEClass.getESuperTypes().add(theSDMPackage.getExpression());
+      this.whileLoopEClass.getESuperTypes().add(theSDMPackage.getExpression());
+      this.conditionalExpressionEClass.getESuperTypes().add(theSDMPackage.getExpression());
 
       // Initialize classes and features; add operations and parameters
-      initEClass(collaborationEClass, Collaboration.class, "Collaboration", !IS_ABSTRACT, !IS_INTERFACE,
+      initEClass(this.collaborationEClass, Collaboration.class, "Collaboration", !IS_ABSTRACT, !IS_INTERFACE,
          IS_GENERATED_INSTANCE_CLASS);
       initEReference(getCollaboration_Source(), thePatternPackage.getObject(),
          thePatternPackage.getObject_SentCollaboration(), "source", null, 0, 1, Collaboration.class, !IS_TRANSIENT,
@@ -460,17 +447,17 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
       initEReference(getCollaboration_Body(), theSDMPackage.getExpression(), null, "body", null, 0, 1,
          Collaboration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
          !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-      initEAttribute(getCollaboration_ForEach(), ecorePackage.getEBoolean(), "forEach", null, 1, 1,
+      initEAttribute(getCollaboration_ForEach(), this.ecorePackage.getEBoolean(), "forEach", null, 1, 1,
          Collaboration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
 
-      initEClass(complexExpressionEClass, ComplexExpression.class, "ComplexExpression", !IS_ABSTRACT, !IS_INTERFACE,
-         IS_GENERATED_INSTANCE_CLASS);
+      initEClass(this.complexExpressionEClass, ComplexExpression.class, "ComplexExpression", !IS_ABSTRACT,
+         !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
       initEReference(getComplexExpression_ChildExpression(), theSDMPackage.getExpression(), null, "childExpression",
          null, 1, -1, ComplexExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
          IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-      initEClass(forLoopEClass, ForLoop.class, "ForLoop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+      initEClass(this.forLoopEClass, ForLoop.class, "ForLoop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
       initEReference(getForLoop_LoopVariable(), theEcorePackage.getEAttribute(), null, "loopVariable", null, 1, 1,
          ForLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
          IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -481,7 +468,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
          ForLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
          IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-      initEClass(whileLoopEClass, WhileLoop.class, "WhileLoop", !IS_ABSTRACT, !IS_INTERFACE,
+      initEClass(this.whileLoopEClass, WhileLoop.class, "WhileLoop", !IS_ABSTRACT, !IS_INTERFACE,
          IS_GENERATED_INSTANCE_CLASS);
       initEReference(getWhileLoop_LoopCondition(), theSDMPackage.getExpression(), null, "loopCondition", null, 0, 1,
          WhileLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
@@ -490,7 +477,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
          !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
 
-      initEClass(conditionalExpressionEClass, ConditionalExpression.class, "ConditionalExpression", !IS_ABSTRACT,
+      initEClass(this.conditionalExpressionEClass, ConditionalExpression.class, "ConditionalExpression", !IS_ABSTRACT,
          !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
       initEReference(getConditionalExpression_Condition(), theSDMPackage.getExpression(), null, "condition", null, 1,
          1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
@@ -503,4 +490,4 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
          !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
    }
 
-} //ExpressionsPackageImpl
+} // ExpressionsPackageImpl

@@ -13,10 +13,8 @@ import java.util.List;
 import org.eclipse.emf.common.util.Enumerator;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Multi Link Type</b></em>',
- * and utility methods for working with them.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the literals of the enumeration '<em><b>Multi Link Type</b></em>', and utility methods for working with them. <!-- end-user-doc -->
+ * 
  * @see org.storydriven.modeling.pattern.PatternPackage#getMultiLinkType()
  * @model
  * @generated
@@ -24,9 +22,8 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum MultiLinkType implements Enumerator
 {
    /**
-    * The '<em><b>FIRST</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>FIRST</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #FIRST_VALUE
     * @generated
     * @ordered
@@ -34,9 +31,8 @@ public enum MultiLinkType implements Enumerator
    FIRST (0, "FIRST", "FIRST"),
 
    /**
-    * The '<em><b>LAST</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>LAST</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #LAST_VALUE
     * @generated
     * @ordered
@@ -44,9 +40,8 @@ public enum MultiLinkType implements Enumerator
    LAST (1, "LAST", "LAST"),
 
    /**
-    * The '<em><b>DIRECT</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>DIRECT</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #DIRECT_VALUE
     * @generated
     * @ordered
@@ -54,9 +49,8 @@ public enum MultiLinkType implements Enumerator
    DIRECT (2, "DIRECT", "DIRECT"),
 
    /**
-    * The '<em><b>INDIRECT</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>INDIRECT</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #INDIRECT_VALUE
     * @generated
     * @ordered
@@ -64,9 +58,8 @@ public enum MultiLinkType implements Enumerator
    INDIRECT (3, "INDIRECT", "INDIRECT"),
 
    /**
-    * The '<em><b>INDEX</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>INDEX</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #INDEX_VALUE
     * @generated
     * @ordered
@@ -74,13 +67,12 @@ public enum MultiLinkType implements Enumerator
    INDEX (4, "INDEX", "INDEX");
 
    /**
-    * The '<em><b>FIRST</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>FIRST</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>FIRST</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>FIRST</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #FIRST
     * @model
     * @generated
@@ -89,13 +81,12 @@ public enum MultiLinkType implements Enumerator
    public static final int FIRST_VALUE = 0;
 
    /**
-    * The '<em><b>LAST</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>LAST</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>LAST</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>LAST</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #LAST
     * @model
     * @generated
@@ -104,13 +95,12 @@ public enum MultiLinkType implements Enumerator
    public static final int LAST_VALUE = 1;
 
    /**
-    * The '<em><b>DIRECT</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>DIRECT</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>DIRECT</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>DIRECT</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #DIRECT
     * @model
     * @generated
@@ -119,13 +109,12 @@ public enum MultiLinkType implements Enumerator
    public static final int DIRECT_VALUE = 2;
 
    /**
-    * The '<em><b>INDIRECT</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>INDIRECT</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>INDIRECT</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>INDIRECT</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #INDIRECT
     * @model
     * @generated
@@ -134,13 +123,12 @@ public enum MultiLinkType implements Enumerator
    public static final int INDIRECT_VALUE = 3;
 
    /**
-    * The '<em><b>INDEX</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>INDEX</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>INDEX</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>INDEX</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #INDEX
     * @model
     * @generated
@@ -149,25 +137,22 @@ public enum MultiLinkType implements Enumerator
    public static final int INDEX_VALUE = 4;
 
    /**
-    * An array of all the '<em><b>Multi Link Type</b></em>' enumerators.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * An array of all the '<em><b>Multi Link Type</b></em>' enumerators. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private static final MultiLinkType[] VALUES_ARRAY = new MultiLinkType[] {FIRST, LAST, DIRECT, INDIRECT, INDEX,};
 
    /**
-    * A public read-only list of all the '<em><b>Multi Link Type</b></em>' enumerators.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * A public read-only list of all the '<em><b>Multi Link Type</b></em>' enumerators. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static final List<MultiLinkType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
    /**
-    * Returns the '<em><b>Multi Link Type</b></em>' literal with the specified literal value.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the '<em><b>Multi Link Type</b></em>' literal with the specified literal value. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static MultiLinkType get (String literal)
@@ -184,9 +169,8 @@ public enum MultiLinkType implements Enumerator
    }
 
    /**
-    * Returns the '<em><b>Multi Link Type</b></em>' literal with the specified name.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the '<em><b>Multi Link Type</b></em>' literal with the specified name. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static MultiLinkType getByName (String name)
@@ -203,9 +187,8 @@ public enum MultiLinkType implements Enumerator
    }
 
    /**
-    * Returns the '<em><b>Multi Link Type</b></em>' literal with the specified integer value.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the '<em><b>Multi Link Type</b></em>' literal with the specified integer value. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static MultiLinkType get (int value)
@@ -227,30 +210,29 @@ public enum MultiLinkType implements Enumerator
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private final int value;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private final String name;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private final String literal;
 
    /**
-    * Only this class can construct instances.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Only this class can construct instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private MultiLinkType (int value, String name, String literal)
@@ -261,45 +243,44 @@ public enum MultiLinkType implements Enumerator
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public int getValue ()
    {
-      return value;
+      return this.value;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public String getName ()
    {
-      return name;
+      return this.name;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public String getLiteral ()
    {
-      return literal;
+      return this.literal;
    }
 
    /**
-    * Returns the literal value of the enumerator, which is its string representation.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the literal value of the enumerator, which is its string representation. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
    public String toString ()
    {
-      return literal;
+      return this.literal;
    }
 
-} //MultiLinkType
+} // MultiLinkType

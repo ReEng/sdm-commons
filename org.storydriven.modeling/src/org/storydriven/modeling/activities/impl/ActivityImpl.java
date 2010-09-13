@@ -28,17 +28,15 @@ import org.storydriven.modeling.activities.OperationExtension;
 import org.storydriven.modeling.impl.CommentableElementImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Activity</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Activity</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwningOperation <em>Owning Operation</em>}</li>
+ * <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
+ * <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwningOperation <em>Owning Operation</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class ActivityImpl extends CommentableElementImpl implements Activity
@@ -46,9 +44,8 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    private static final String ACTIVITY_ANNOTATION_URI = "http://ns.storydriven.org/sdm/activities/activity";
 
    /**
-    * The cached value of the '{@link #getOwnedActivityNodes() <em>Owned Activity Node</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getOwnedActivityNodes() <em>Owned Activity Node</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getOwnedActivityNodes()
     * @generated
     * @ordered
@@ -56,8 +53,8 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    protected EList<ActivityNode> ownedActivityNodes;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected ActivityImpl ()
@@ -66,8 +63,8 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -77,20 +74,22 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public OperationExtension getOwningOperation ()
    {
       if (eContainerFeatureID() != ActivitiesPackage.ACTIVITY__OWNING_OPERATION)
+      {
          return null;
+      }
       return (OperationExtension) eContainer();
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public EOperation basicGetOwningOperation ()
@@ -108,8 +107,8 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetOwningOperation (OperationExtension newOwningOperation, NotificationChain msgs)
@@ -120,8 +119,8 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setOwningOperation (OperationExtension newOwningOperation)
@@ -130,20 +129,30 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
          || (eContainerFeatureID() != ActivitiesPackage.ACTIVITY__OWNING_OPERATION && newOwningOperation != null))
       {
          if (EcoreUtil.isAncestor(this, newOwningOperation))
+         {
             throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+         }
          NotificationChain msgs = null;
          if (eInternalContainer() != null)
+         {
             msgs = eBasicRemoveFromContainer(msgs);
+         }
          if (newOwningOperation != null)
+         {
             msgs = ((InternalEObject) newOwningOperation).eInverseAdd(this,
                ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, OperationExtension.class, msgs);
+         }
          msgs = basicSetOwningOperation(newOwningOperation, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY__OWNING_OPERATION,
             newOwningOperation, newOwningOperation));
+      }
    }
 
    protected EAnnotation getOwningOperationAnnotation ()
@@ -160,23 +169,23 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<ActivityNode> getOwnedActivityNodes ()
    {
-      if (ownedActivityNodes == null)
+      if (this.ownedActivityNodes == null)
       {
-         ownedActivityNodes = new EObjectContainmentWithInverseEList.Resolving<ActivityNode>(ActivityNode.class, this,
-            ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE, ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY);
+         this.ownedActivityNodes = new EObjectContainmentWithInverseEList.Resolving<ActivityNode>(ActivityNode.class,
+            this, ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE, ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY);
       }
-      return ownedActivityNodes;
+      return this.ownedActivityNodes;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -190,15 +199,17 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
                msgs);
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             if (eInternalContainer() != null)
+            {
                msgs = eBasicRemoveFromContainer(msgs);
+            }
             return basicSetOwningOperation((OperationExtension) otherEnd, msgs);
       }
       return super.eInverseAdd(otherEnd, featureID, msgs);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -215,8 +226,8 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -232,8 +243,8 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -245,15 +256,17 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
             return getOwnedActivityNodes();
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             if (resolve)
+            {
                return getOwningOperation();
+            }
             return basicGetOwningOperation();
       }
       return super.eGet(featureID, resolve, coreType);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -274,8 +287,8 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -294,8 +307,8 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -304,11 +317,11 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
       switch (featureID)
       {
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
-            return ownedActivityNodes != null && !ownedActivityNodes.isEmpty();
+            return this.ownedActivityNodes != null && !this.ownedActivityNodes.isEmpty();
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             return basicGetOwningOperation() != null;
       }
       return super.eIsSet(featureID);
    }
 
-} //ActivityImpl
+} // ActivityImpl

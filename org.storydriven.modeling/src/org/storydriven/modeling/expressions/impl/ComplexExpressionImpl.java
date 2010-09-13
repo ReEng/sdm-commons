@@ -9,41 +9,32 @@ package org.storydriven.modeling.expressions.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.modeling.Expression;
-
 import org.storydriven.modeling.expressions.ComplexExpression;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
-
 import org.storydriven.modeling.impl.ExpressionImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Complex Expression</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Complex Expression</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.expressions.impl.ComplexExpressionImpl#getChildExpressions <em>Child Expression</em>}</li>
+ * <li>{@link org.storydriven.modeling.expressions.impl.ComplexExpressionImpl#getChildExpressions <em>Child Expression</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class ComplexExpressionImpl extends ExpressionImpl implements ComplexExpression
 {
    /**
-    * The cached value of the '{@link #getChildExpressions() <em>Child Expression</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getChildExpressions() <em>Child Expression</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getChildExpressions()
     * @generated
     * @ordered
@@ -51,8 +42,8 @@ public class ComplexExpressionImpl extends ExpressionImpl implements ComplexExpr
    protected EList<Expression> childExpressions;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected ComplexExpressionImpl ()
@@ -61,8 +52,8 @@ public class ComplexExpressionImpl extends ExpressionImpl implements ComplexExpr
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -72,23 +63,23 @@ public class ComplexExpressionImpl extends ExpressionImpl implements ComplexExpr
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<Expression> getChildExpressions ()
    {
-      if (childExpressions == null)
+      if (this.childExpressions == null)
       {
-         childExpressions = new EObjectContainmentEList.Resolving<Expression>(Expression.class, this,
+         this.childExpressions = new EObjectContainmentEList.Resolving<Expression>(Expression.class, this,
             ExpressionsPackage.COMPLEX_EXPRESSION__CHILD_EXPRESSION);
       }
-      return childExpressions;
+      return this.childExpressions;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -103,8 +94,8 @@ public class ComplexExpressionImpl extends ExpressionImpl implements ComplexExpr
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -119,8 +110,8 @@ public class ComplexExpressionImpl extends ExpressionImpl implements ComplexExpr
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -138,8 +129,8 @@ public class ComplexExpressionImpl extends ExpressionImpl implements ComplexExpr
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -155,8 +146,8 @@ public class ComplexExpressionImpl extends ExpressionImpl implements ComplexExpr
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -165,9 +156,9 @@ public class ComplexExpressionImpl extends ExpressionImpl implements ComplexExpr
       switch (featureID)
       {
          case ExpressionsPackage.COMPLEX_EXPRESSION__CHILD_EXPRESSION:
-            return childExpressions != null && !childExpressions.isEmpty();
+            return this.childExpressions != null && !this.childExpressions.isEmpty();
       }
       return super.eIsSet(featureID);
    }
 
-} //ComplexExpressionImpl
+} // ComplexExpressionImpl

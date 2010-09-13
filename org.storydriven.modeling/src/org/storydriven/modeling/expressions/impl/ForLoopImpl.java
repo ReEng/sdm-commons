@@ -8,41 +8,33 @@ package org.storydriven.modeling.expressions.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.modeling.Expression;
-
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 import org.storydriven.modeling.expressions.ForLoop;
-
 import org.storydriven.modeling.impl.ExpressionImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>For Loop</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>For Loop</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.expressions.impl.ForLoopImpl#getLoopVariable <em>Loop Variable</em>}</li>
- *   <li>{@link org.storydriven.modeling.expressions.impl.ForLoopImpl#getStartValue <em>Start Value</em>}</li>
- *   <li>{@link org.storydriven.modeling.expressions.impl.ForLoopImpl#getStopValue <em>Stop Value</em>}</li>
+ * <li>{@link org.storydriven.modeling.expressions.impl.ForLoopImpl#getLoopVariable <em>Loop Variable</em>}</li>
+ * <li>{@link org.storydriven.modeling.expressions.impl.ForLoopImpl#getStartValue <em>Start Value</em>}</li>
+ * <li>{@link org.storydriven.modeling.expressions.impl.ForLoopImpl#getStopValue <em>Stop Value</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class ForLoopImpl extends ExpressionImpl implements ForLoop
 {
    /**
-    * The cached value of the '{@link #getLoopVariable() <em>Loop Variable</em>}' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getLoopVariable() <em>Loop Variable</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getLoopVariable()
     * @generated
     * @ordered
@@ -50,9 +42,8 @@ public class ForLoopImpl extends ExpressionImpl implements ForLoop
    protected EAttribute loopVariable;
 
    /**
-    * The cached value of the '{@link #getStartValue() <em>Start Value</em>}' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getStartValue() <em>Start Value</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getStartValue()
     * @generated
     * @ordered
@@ -60,9 +51,8 @@ public class ForLoopImpl extends ExpressionImpl implements ForLoop
    protected Expression startValue;
 
    /**
-    * The cached value of the '{@link #getStopValue() <em>Stop Value</em>}' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getStopValue() <em>Stop Value</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getStopValue()
     * @generated
     * @ordered
@@ -70,8 +60,8 @@ public class ForLoopImpl extends ExpressionImpl implements ForLoop
    protected Expression stopValue;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected ForLoopImpl ()
@@ -80,8 +70,8 @@ public class ForLoopImpl extends ExpressionImpl implements ForLoop
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -91,19 +81,19 @@ public class ForLoopImpl extends ExpressionImpl implements ForLoop
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EAttribute getLoopVariable ()
    {
-      if (loopVariable != null && loopVariable.eIsProxy())
+      if (this.loopVariable != null && this.loopVariable.eIsProxy())
       {
-         InternalEObject oldLoopVariable = (InternalEObject) loopVariable;
-         loopVariable = (EAttribute) eResolveProxy(oldLoopVariable);
-         if (loopVariable != oldLoopVariable)
+         InternalEObject oldLoopVariable = (InternalEObject) this.loopVariable;
+         this.loopVariable = (EAttribute) eResolveProxy(oldLoopVariable);
+         if (this.loopVariable != oldLoopVariable)
          {
-            InternalEObject newLoopVariable = (InternalEObject) loopVariable;
+            InternalEObject newLoopVariable = (InternalEObject) this.loopVariable;
             NotificationChain msgs = oldLoopVariable.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.FOR_LOOP__LOOP_VARIABLE, null, null);
             if (newLoopVariable.eInternalContainer() == null)
@@ -112,85 +102,101 @@ public class ForLoopImpl extends ExpressionImpl implements ForLoop
                   - ExpressionsPackage.FOR_LOOP__LOOP_VARIABLE, null, msgs);
             }
             if (msgs != null)
+            {
                msgs.dispatch();
+            }
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.FOR_LOOP__LOOP_VARIABLE,
-                  oldLoopVariable, loopVariable));
+                  oldLoopVariable, this.loopVariable));
+            }
          }
       }
-      return loopVariable;
+      return this.loopVariable;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EAttribute basicGetLoopVariable ()
    {
-      return loopVariable;
+      return this.loopVariable;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetLoopVariable (EAttribute newLoopVariable, NotificationChain msgs)
    {
-      EAttribute oldLoopVariable = loopVariable;
-      loopVariable = newLoopVariable;
+      EAttribute oldLoopVariable = this.loopVariable;
+      this.loopVariable = newLoopVariable;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             ExpressionsPackage.FOR_LOOP__LOOP_VARIABLE, oldLoopVariable, newLoopVariable);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setLoopVariable (EAttribute newLoopVariable)
    {
-      if (newLoopVariable != loopVariable)
+      if (newLoopVariable != this.loopVariable)
       {
          NotificationChain msgs = null;
-         if (loopVariable != null)
-            msgs = ((InternalEObject) loopVariable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+         if (this.loopVariable != null)
+         {
+            msgs = ((InternalEObject) this.loopVariable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.FOR_LOOP__LOOP_VARIABLE, null, msgs);
+         }
          if (newLoopVariable != null)
+         {
             msgs = ((InternalEObject) newLoopVariable).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.FOR_LOOP__LOOP_VARIABLE, null, msgs);
+         }
          msgs = basicSetLoopVariable(newLoopVariable, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.FOR_LOOP__LOOP_VARIABLE,
             newLoopVariable, newLoopVariable));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression getStartValue ()
    {
-      if (startValue != null && startValue.eIsProxy())
+      if (this.startValue != null && this.startValue.eIsProxy())
       {
-         InternalEObject oldStartValue = (InternalEObject) startValue;
-         startValue = (Expression) eResolveProxy(oldStartValue);
-         if (startValue != oldStartValue)
+         InternalEObject oldStartValue = (InternalEObject) this.startValue;
+         this.startValue = (Expression) eResolveProxy(oldStartValue);
+         if (this.startValue != oldStartValue)
          {
-            InternalEObject newStartValue = (InternalEObject) startValue;
+            InternalEObject newStartValue = (InternalEObject) this.startValue;
             NotificationChain msgs = oldStartValue.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.FOR_LOOP__START_VALUE, null, null);
             if (newStartValue.eInternalContainer() == null)
@@ -199,85 +205,101 @@ public class ForLoopImpl extends ExpressionImpl implements ForLoop
                   EOPPOSITE_FEATURE_BASE - ExpressionsPackage.FOR_LOOP__START_VALUE, null, msgs);
             }
             if (msgs != null)
+            {
                msgs.dispatch();
+            }
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.FOR_LOOP__START_VALUE,
-                  oldStartValue, startValue));
+                  oldStartValue, this.startValue));
+            }
          }
       }
-      return startValue;
+      return this.startValue;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression basicGetStartValue ()
    {
-      return startValue;
+      return this.startValue;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetStartValue (Expression newStartValue, NotificationChain msgs)
    {
-      Expression oldStartValue = startValue;
-      startValue = newStartValue;
+      Expression oldStartValue = this.startValue;
+      this.startValue = newStartValue;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             ExpressionsPackage.FOR_LOOP__START_VALUE, oldStartValue, newStartValue);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setStartValue (Expression newStartValue)
    {
-      if (newStartValue != startValue)
+      if (newStartValue != this.startValue)
       {
          NotificationChain msgs = null;
-         if (startValue != null)
-            msgs = ((InternalEObject) startValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+         if (this.startValue != null)
+         {
+            msgs = ((InternalEObject) this.startValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.FOR_LOOP__START_VALUE, null, msgs);
+         }
          if (newStartValue != null)
+         {
             msgs = ((InternalEObject) newStartValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.FOR_LOOP__START_VALUE, null, msgs);
+         }
          msgs = basicSetStartValue(newStartValue, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.FOR_LOOP__START_VALUE, newStartValue,
             newStartValue));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression getStopValue ()
    {
-      if (stopValue != null && stopValue.eIsProxy())
+      if (this.stopValue != null && this.stopValue.eIsProxy())
       {
-         InternalEObject oldStopValue = (InternalEObject) stopValue;
-         stopValue = (Expression) eResolveProxy(oldStopValue);
-         if (stopValue != oldStopValue)
+         InternalEObject oldStopValue = (InternalEObject) this.stopValue;
+         this.stopValue = (Expression) eResolveProxy(oldStopValue);
+         if (this.stopValue != oldStopValue)
          {
-            InternalEObject newStopValue = (InternalEObject) stopValue;
+            InternalEObject newStopValue = (InternalEObject) this.stopValue;
             NotificationChain msgs = oldStopValue.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.FOR_LOOP__STOP_VALUE, null, null);
             if (newStopValue.eInternalContainer() == null)
@@ -286,74 +308,90 @@ public class ForLoopImpl extends ExpressionImpl implements ForLoop
                   null, msgs);
             }
             if (msgs != null)
+            {
                msgs.dispatch();
+            }
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionsPackage.FOR_LOOP__STOP_VALUE,
-                  oldStopValue, stopValue));
+                  oldStopValue, this.stopValue));
+            }
          }
       }
-      return stopValue;
+      return this.stopValue;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression basicGetStopValue ()
    {
-      return stopValue;
+      return this.stopValue;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetStopValue (Expression newStopValue, NotificationChain msgs)
    {
-      Expression oldStopValue = stopValue;
-      stopValue = newStopValue;
+      Expression oldStopValue = this.stopValue;
+      this.stopValue = newStopValue;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             ExpressionsPackage.FOR_LOOP__STOP_VALUE, oldStopValue, newStopValue);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setStopValue (Expression newStopValue)
    {
-      if (newStopValue != stopValue)
+      if (newStopValue != this.stopValue)
       {
          NotificationChain msgs = null;
-         if (stopValue != null)
-            msgs = ((InternalEObject) stopValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+         if (this.stopValue != null)
+         {
+            msgs = ((InternalEObject) this.stopValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.FOR_LOOP__STOP_VALUE, null, msgs);
+         }
          if (newStopValue != null)
+         {
             msgs = ((InternalEObject) newStopValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
                - ExpressionsPackage.FOR_LOOP__STOP_VALUE, null, msgs);
+         }
          msgs = basicSetStopValue(newStopValue, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.FOR_LOOP__STOP_VALUE, newStopValue,
             newStopValue));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -372,8 +410,8 @@ public class ForLoopImpl extends ExpressionImpl implements ForLoop
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -383,23 +421,29 @@ public class ForLoopImpl extends ExpressionImpl implements ForLoop
       {
          case ExpressionsPackage.FOR_LOOP__LOOP_VARIABLE:
             if (resolve)
+            {
                return getLoopVariable();
+            }
             return basicGetLoopVariable();
          case ExpressionsPackage.FOR_LOOP__START_VALUE:
             if (resolve)
+            {
                return getStartValue();
+            }
             return basicGetStartValue();
          case ExpressionsPackage.FOR_LOOP__STOP_VALUE:
             if (resolve)
+            {
                return getStopValue();
+            }
             return basicGetStopValue();
       }
       return super.eGet(featureID, resolve, coreType);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -421,8 +465,8 @@ public class ForLoopImpl extends ExpressionImpl implements ForLoop
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -444,8 +488,8 @@ public class ForLoopImpl extends ExpressionImpl implements ForLoop
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -454,13 +498,13 @@ public class ForLoopImpl extends ExpressionImpl implements ForLoop
       switch (featureID)
       {
          case ExpressionsPackage.FOR_LOOP__LOOP_VARIABLE:
-            return loopVariable != null;
+            return this.loopVariable != null;
          case ExpressionsPackage.FOR_LOOP__START_VALUE:
-            return startValue != null;
+            return this.startValue != null;
          case ExpressionsPackage.FOR_LOOP__STOP_VALUE:
-            return stopValue != null;
+            return this.stopValue != null;
       }
       return super.eIsSet(featureID);
    }
 
-} //ForLoopImpl
+} // ForLoopImpl

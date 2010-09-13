@@ -10,11 +10,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.storydriven.modeling.pattern.AttributeExpression;
 import org.storydriven.modeling.pattern.BoundType;
 import org.storydriven.modeling.pattern.Constraint;
@@ -30,17 +27,15 @@ import org.storydriven.modeling.pattern.PatternPackage;
 import org.storydriven.modeling.pattern.StoryNode;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
 {
    /**
-    * Creates the default factory implementation.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static PatternFactory init ()
@@ -62,9 +57,8 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * Creates an instance of the factory.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public PatternFactoryImpl ()
@@ -73,8 +67,8 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -102,8 +96,8 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -127,8 +121,8 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -152,8 +146,8 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public AttributeExpression createAttributeExpression ()
@@ -163,8 +157,8 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Link createLink ()
@@ -174,8 +168,8 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public MultiLink createMultiLink ()
@@ -185,8 +179,8 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ObjectPattern createObjectPattern ()
@@ -196,8 +190,8 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public StoryNode createStoryNode ()
@@ -207,8 +201,8 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Path createPath ()
@@ -218,8 +212,8 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public org.storydriven.modeling.pattern.Object createObject ()
@@ -229,22 +223,24 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Operator createOperatorFromString (EDataType eDataType, String initialValue)
    {
       Operator result = Operator.get(initialValue);
       if (result == null)
+      {
          throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
             + eDataType.getName() + "'");
+      }
       return result;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public String convertOperatorToString (EDataType eDataType, Object instanceValue)
@@ -253,22 +249,24 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public BoundType createBoundTypeFromString (EDataType eDataType, String initialValue)
    {
       BoundType result = BoundType.get(initialValue);
       if (result == null)
+      {
          throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
             + eDataType.getName() + "'");
+      }
       return result;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public String convertBoundTypeToString (EDataType eDataType, Object instanceValue)
@@ -277,22 +275,24 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Constraint createConstraintFromString (EDataType eDataType, String initialValue)
    {
       Constraint result = Constraint.get(initialValue);
       if (result == null)
+      {
          throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
             + eDataType.getName() + "'");
+      }
       return result;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public String convertConstraintToString (EDataType eDataType, Object instanceValue)
@@ -301,22 +301,24 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Modifier createModifierFromString (EDataType eDataType, String initialValue)
    {
       Modifier result = Modifier.get(initialValue);
       if (result == null)
+      {
          throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
             + eDataType.getName() + "'");
+      }
       return result;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public String convertModifierToString (EDataType eDataType, Object instanceValue)
@@ -325,22 +327,24 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public MultiLinkType createMultiLinkTypeFromString (EDataType eDataType, String initialValue)
    {
       MultiLinkType result = MultiLinkType.get(initialValue);
       if (result == null)
+      {
          throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
             + eDataType.getName() + "'");
+      }
       return result;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public String convertMultiLinkTypeToString (EDataType eDataType, Object instanceValue)
@@ -349,8 +353,8 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public PatternPackage getPatternPackage ()
@@ -359,8 +363,8 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @deprecated
     * @generated
     */
@@ -370,4 +374,4 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory
       return PatternPackage.eINSTANCE;
    }
 
-} //PatternFactoryImpl
+} // PatternFactoryImpl

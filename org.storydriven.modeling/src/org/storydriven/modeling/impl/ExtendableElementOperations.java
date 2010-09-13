@@ -10,29 +10,28 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EcoreFactory;
-
 import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.Extension;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations related to '<em><b>Extendable Element</b></em>' model objects. <!-- end-user-doc -->
- *
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.storydriven.modeling.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass) <em>Get Extension</em>}</li>
- *   <li>{@link org.storydriven.modeling.ExtendableElement#provideExtension(org.eclipse.emf.ecore.EClass) <em>Provide Extension</em>}</li>
- *   <li>{@link org.storydriven.modeling.ExtendableElement#getAnnotation(java.lang.String) <em>Get Annotation</em>}</li>
- *   <li>{@link org.storydriven.modeling.ExtendableElement#provideAnnotation(java.lang.String) <em>Provide Annotation</em>}</li>
+ * <li>{@link org.storydriven.modeling.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass) <em>Get Extension</em>}</li>
+ * <li>{@link org.storydriven.modeling.ExtendableElement#provideExtension(org.eclipse.emf.ecore.EClass) <em>Provide Extension</em>}</li>
+ * <li>{@link org.storydriven.modeling.ExtendableElement#getAnnotation(java.lang.String) <em>Get Annotation</em>}</li>
+ * <li>{@link org.storydriven.modeling.ExtendableElement#provideAnnotation(java.lang.String) <em>Provide Annotation</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class ExtendableElementOperations
 {
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected ExtendableElementOperations ()

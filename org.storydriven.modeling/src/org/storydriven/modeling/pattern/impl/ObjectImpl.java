@@ -10,29 +10,21 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.modeling.Expression;
 import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.SDMPackage;
-
 import org.storydriven.modeling.expressions.Collaboration;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
-
 import org.storydriven.modeling.impl.TypedElementImpl;
-
 import org.storydriven.modeling.pattern.AttributeExpression;
 import org.storydriven.modeling.pattern.BoundType;
 import org.storydriven.modeling.pattern.Constraint;
@@ -42,35 +34,32 @@ import org.storydriven.modeling.pattern.ObjectPattern;
 import org.storydriven.modeling.pattern.PatternPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Object</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Object</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getOwnedAttributeExpressions <em>Owned Attribute Expression</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getLinkToSources <em>Link To Source</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getLinkToTargets <em>Link To Target</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getPattern <em>Pattern</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getBound <em>Bound</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getModifier <em>Modifier</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getClassifier <em>Classifier</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getBindingExpression <em>Binding Expression</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getReceivedCollaborations <em>Received Collaboration</em>}</li>
- *   <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getSentCollaborations <em>Sent Collaboration</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getOwnedAttributeExpressions <em>Owned Attribute Expression</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getLinkToSources <em>Link To Source</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getLinkToTargets <em>Link To Target</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getPattern <em>Pattern</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getBound <em>Bound</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getConstraint <em>Constraint</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getModifier <em>Modifier</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getClassifier <em>Classifier</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getBindingExpression <em>Binding Expression</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getReceivedCollaborations <em>Received Collaboration</em>}</li>
+ * <li>{@link org.storydriven.modeling.pattern.impl.ObjectImpl#getSentCollaborations <em>Sent Collaboration</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class ObjectImpl extends TypedElementImpl implements org.storydriven.modeling.pattern.Object
 {
    /**
-    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getName()
     * @generated
     * @ordered
@@ -78,9 +67,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    protected static final String NAME_EDEFAULT = null;
 
    /**
-    * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getName()
     * @generated
     * @ordered
@@ -88,9 +76,9 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    protected String name = NAME_EDEFAULT;
 
    /**
-    * The cached value of the '{@link #getOwnedAttributeExpressions() <em>Owned Attribute Expression</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getOwnedAttributeExpressions() <em>Owned Attribute Expression</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc
+    * -->
+    * 
     * @see #getOwnedAttributeExpressions()
     * @generated
     * @ordered
@@ -98,9 +86,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    protected EList<AttributeExpression> ownedAttributeExpressions;
 
    /**
-    * The cached value of the '{@link #getLinkToSources() <em>Link To Source</em>}' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getLinkToSources() <em>Link To Source</em>}' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getLinkToSources()
     * @generated
     * @ordered
@@ -108,9 +95,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    protected EList<Link> linkToSources;
 
    /**
-    * The cached value of the '{@link #getLinkToTargets() <em>Link To Target</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getLinkToTargets() <em>Link To Target</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getLinkToTargets()
     * @generated
     * @ordered
@@ -118,9 +104,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    protected EList<Link> linkToTargets;
 
    /**
-    * The default value of the '{@link #getBound() <em>Bound</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The default value of the '{@link #getBound() <em>Bound</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getBound()
     * @generated
     * @ordered
@@ -128,9 +113,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    protected static final BoundType BOUND_EDEFAULT = BoundType.UNBOUND;
 
    /**
-    * The cached value of the '{@link #getBound() <em>Bound</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getBound() <em>Bound</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getBound()
     * @generated
     * @ordered
@@ -138,9 +122,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    protected BoundType bound = BOUND_EDEFAULT;
 
    /**
-    * The default value of the '{@link #getConstraint() <em>Constraint</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The default value of the '{@link #getConstraint() <em>Constraint</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getConstraint()
     * @generated
     * @ordered
@@ -148,9 +131,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    protected static final Constraint CONSTRAINT_EDEFAULT = Constraint.NONE;
 
    /**
-    * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getConstraint()
     * @generated
     * @ordered
@@ -158,9 +140,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    protected Constraint constraint = CONSTRAINT_EDEFAULT;
 
    /**
-    * The default value of the '{@link #getModifier() <em>Modifier</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The default value of the '{@link #getModifier() <em>Modifier</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getModifier()
     * @generated
     * @ordered
@@ -168,9 +149,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    protected static final Modifier MODIFIER_EDEFAULT = Modifier.NONE;
 
    /**
-    * The cached value of the '{@link #getModifier() <em>Modifier</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getModifier() <em>Modifier</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getModifier()
     * @generated
     * @ordered
@@ -178,9 +158,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    protected Modifier modifier = MODIFIER_EDEFAULT;
 
    /**
-    * The cached value of the '{@link #getBindingExpression() <em>Binding Expression</em>}' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getBindingExpression() <em>Binding Expression</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getBindingExpression()
     * @generated
     * @ordered
@@ -188,9 +167,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    protected Expression bindingExpression;
 
    /**
-    * The cached value of the '{@link #getReceivedCollaborations() <em>Received Collaboration</em>}' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getReceivedCollaborations() <em>Received Collaboration</em>}' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getReceivedCollaborations()
     * @generated
     * @ordered
@@ -198,9 +176,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    protected EList<Collaboration> receivedCollaborations;
 
    /**
-    * The cached value of the '{@link #getSentCollaborations() <em>Sent Collaboration</em>}' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getSentCollaborations() <em>Sent Collaboration</em>}' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getSentCollaborations()
     * @generated
     * @ordered
@@ -208,8 +185,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    protected EList<Collaboration> sentCollaborations;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected ObjectImpl ()
@@ -218,8 +195,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -229,101 +206,107 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public String getName ()
    {
-      return name;
+      return this.name;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setName (String newName)
    {
-      String oldName = name;
-      name = newName;
+      String oldName = this.name;
+      this.name = newName;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.OBJECT__NAME, oldName, name));
+      {
+         eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.OBJECT__NAME, oldName, this.name));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<AttributeExpression> getOwnedAttributeExpressions ()
    {
-      if (ownedAttributeExpressions == null)
+      if (this.ownedAttributeExpressions == null)
       {
-         ownedAttributeExpressions = new EObjectContainmentWithInverseEList.Resolving<AttributeExpression>(
+         this.ownedAttributeExpressions = new EObjectContainmentWithInverseEList.Resolving<AttributeExpression>(
             AttributeExpression.class, this, PatternPackage.OBJECT__OWNED_ATTRIBUTE_EXPRESSION,
             PatternPackage.ATTRIBUTE_EXPRESSION__OWNING_OBJECT);
       }
-      return ownedAttributeExpressions;
+      return this.ownedAttributeExpressions;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<Link> getLinkToSources ()
    {
-      if (linkToSources == null)
+      if (this.linkToSources == null)
       {
-         linkToSources = new EObjectWithInverseResolvingEList<Link>(Link.class, this,
+         this.linkToSources = new EObjectWithInverseResolvingEList<Link>(Link.class, this,
             PatternPackage.OBJECT__LINK_TO_SOURCE, PatternPackage.LINK__TARGET);
       }
-      return linkToSources;
+      return this.linkToSources;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<Link> getLinkToTargets ()
    {
-      if (linkToTargets == null)
+      if (this.linkToTargets == null)
       {
-         linkToTargets = new EObjectContainmentWithInverseEList.Resolving<Link>(Link.class, this,
+         this.linkToTargets = new EObjectContainmentWithInverseEList.Resolving<Link>(Link.class, this,
             PatternPackage.OBJECT__LINK_TO_TARGET, PatternPackage.LINK__SOURCE);
       }
-      return linkToTargets;
+      return this.linkToTargets;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ObjectPattern getPattern ()
    {
       if (eContainerFeatureID() != PatternPackage.OBJECT__PATTERN)
+      {
          return null;
+      }
       return (ObjectPattern) eContainer();
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ObjectPattern basicGetPattern ()
    {
       if (eContainerFeatureID() != PatternPackage.OBJECT__PATTERN)
+      {
          return null;
+      }
       return (ObjectPattern) eInternalContainer();
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetPattern (ObjectPattern newPattern, NotificationChain msgs)
@@ -333,8 +316,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setPattern (ObjectPattern newPattern)
@@ -343,94 +326,111 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
          || (eContainerFeatureID() != PatternPackage.OBJECT__PATTERN && newPattern != null))
       {
          if (EcoreUtil.isAncestor(this, newPattern))
+         {
             throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+         }
          NotificationChain msgs = null;
          if (eInternalContainer() != null)
+         {
             msgs = eBasicRemoveFromContainer(msgs);
+         }
          if (newPattern != null)
+         {
             msgs = ((InternalEObject) newPattern).eInverseAdd(this, PatternPackage.OBJECT_PATTERN__CONTAINED_OBJECTS,
                ObjectPattern.class, msgs);
+         }
          msgs = basicSetPattern(newPattern, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.OBJECT__PATTERN, newPattern, newPattern));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public BoundType getBound ()
    {
-      return bound;
+      return this.bound;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setBound (BoundType newBound)
    {
-      BoundType oldBound = bound;
-      bound = newBound == null ? BOUND_EDEFAULT : newBound;
+      BoundType oldBound = this.bound;
+      this.bound = newBound == null ? BOUND_EDEFAULT : newBound;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.OBJECT__BOUND, oldBound, bound));
+      {
+         eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.OBJECT__BOUND, oldBound, this.bound));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Constraint getConstraint ()
    {
-      return constraint;
+      return this.constraint;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setConstraint (Constraint newConstraint)
    {
-      Constraint oldConstraint = constraint;
-      constraint = newConstraint == null ? CONSTRAINT_EDEFAULT : newConstraint;
+      Constraint oldConstraint = this.constraint;
+      this.constraint = newConstraint == null ? CONSTRAINT_EDEFAULT : newConstraint;
       if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.OBJECT__CONSTRAINT, oldConstraint,
-            constraint));
+            this.constraint));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Modifier getModifier ()
    {
-      return modifier;
+      return this.modifier;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setModifier (Modifier newModifier)
    {
-      Modifier oldModifier = modifier;
-      modifier = newModifier == null ? MODIFIER_EDEFAULT : newModifier;
+      Modifier oldModifier = this.modifier;
+      this.modifier = newModifier == null ? MODIFIER_EDEFAULT : newModifier;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.OBJECT__MODIFIER, oldModifier, modifier));
+      {
+         eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.OBJECT__MODIFIER, oldModifier,
+            this.modifier));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EClass getClassifier ()
@@ -441,8 +441,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public EClass basicGetClassifier ()
@@ -451,8 +451,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public void setClassifier (EClass value)
@@ -462,7 +462,7 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-            PatternPackage.OBJECT__CLASSIFIER, oldType, type);
+            PatternPackage.OBJECT__CLASSIFIER, oldType, this.type);
          if (msgs == null)
          {
             msgs = notification;
@@ -475,8 +475,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
    public boolean isSetClassifier ()
@@ -485,19 +485,19 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression getBindingExpression ()
    {
-      if (bindingExpression != null && bindingExpression.eIsProxy())
+      if (this.bindingExpression != null && this.bindingExpression.eIsProxy())
       {
-         InternalEObject oldBindingExpression = (InternalEObject) bindingExpression;
-         bindingExpression = (Expression) eResolveProxy(oldBindingExpression);
-         if (bindingExpression != oldBindingExpression)
+         InternalEObject oldBindingExpression = (InternalEObject) this.bindingExpression;
+         this.bindingExpression = (Expression) eResolveProxy(oldBindingExpression);
+         if (this.bindingExpression != oldBindingExpression)
          {
-            InternalEObject newBindingExpression = (InternalEObject) bindingExpression;
+            InternalEObject newBindingExpression = (InternalEObject) this.bindingExpression;
             NotificationChain msgs = oldBindingExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - PatternPackage.OBJECT__BINDING_EXPRESSION, null, null);
             if (newBindingExpression.eInternalContainer() == null)
@@ -506,104 +506,121 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
                   - PatternPackage.OBJECT__BINDING_EXPRESSION, null, msgs);
             }
             if (msgs != null)
+            {
                msgs.dispatch();
+            }
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.OBJECT__BINDING_EXPRESSION,
-                  oldBindingExpression, bindingExpression));
+                  oldBindingExpression, this.bindingExpression));
+            }
          }
       }
-      return bindingExpression;
+      return this.bindingExpression;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression basicGetBindingExpression ()
    {
-      return bindingExpression;
+      return this.bindingExpression;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetBindingExpression (Expression newBindingExpression, NotificationChain msgs)
    {
-      Expression oldBindingExpression = bindingExpression;
-      bindingExpression = newBindingExpression;
+      Expression oldBindingExpression = this.bindingExpression;
+      this.bindingExpression = newBindingExpression;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             PatternPackage.OBJECT__BINDING_EXPRESSION, oldBindingExpression, newBindingExpression);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setBindingExpression (Expression newBindingExpression)
    {
-      if (newBindingExpression != bindingExpression)
+      if (newBindingExpression != this.bindingExpression)
       {
          NotificationChain msgs = null;
-         if (bindingExpression != null)
-            msgs = ((InternalEObject) bindingExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+         if (this.bindingExpression != null)
+         {
+            msgs = ((InternalEObject) this.bindingExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - PatternPackage.OBJECT__BINDING_EXPRESSION, null, msgs);
+         }
          if (newBindingExpression != null)
+         {
             msgs = ((InternalEObject) newBindingExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
                - PatternPackage.OBJECT__BINDING_EXPRESSION, null, msgs);
+         }
          msgs = basicSetBindingExpression(newBindingExpression, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.OBJECT__BINDING_EXPRESSION,
             newBindingExpression, newBindingExpression));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<Collaboration> getReceivedCollaborations ()
    {
-      if (receivedCollaborations == null)
+      if (this.receivedCollaborations == null)
       {
-         receivedCollaborations = new EObjectWithInverseResolvingEList.ManyInverse<Collaboration>(Collaboration.class,
-            this, PatternPackage.OBJECT__RECEIVED_COLLABORATION, ExpressionsPackage.COLLABORATION__TARGET);
+         this.receivedCollaborations = new EObjectWithInverseResolvingEList.ManyInverse<Collaboration>(
+            Collaboration.class, this, PatternPackage.OBJECT__RECEIVED_COLLABORATION,
+            ExpressionsPackage.COLLABORATION__TARGET);
       }
-      return receivedCollaborations;
+      return this.receivedCollaborations;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public EList<Collaboration> getSentCollaborations ()
    {
-      if (sentCollaborations == null)
+      if (this.sentCollaborations == null)
       {
-         sentCollaborations = new EObjectWithInverseResolvingEList<Collaboration>(Collaboration.class, this,
+         this.sentCollaborations = new EObjectWithInverseResolvingEList<Collaboration>(Collaboration.class, this,
             PatternPackage.OBJECT__SENT_COLLABORATION, ExpressionsPackage.COLLABORATION__SOURCE);
       }
-      return sentCollaborations;
+      return this.sentCollaborations;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -621,7 +638,9 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
             return ((InternalEList<InternalEObject>) (InternalEList<?>) getLinkToTargets()).basicAdd(otherEnd, msgs);
          case PatternPackage.OBJECT__PATTERN:
             if (eInternalContainer() != null)
+            {
                msgs = eBasicRemoveFromContainer(msgs);
+            }
             return basicSetPattern((ObjectPattern) otherEnd, msgs);
          case PatternPackage.OBJECT__RECEIVED_COLLABORATION:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) getReceivedCollaborations()).basicAdd(otherEnd,
@@ -634,8 +653,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -662,8 +681,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -679,8 +698,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -698,7 +717,9 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
             return getLinkToTargets();
          case PatternPackage.OBJECT__PATTERN:
             if (resolve)
+            {
                return getPattern();
+            }
             return basicGetPattern();
          case PatternPackage.OBJECT__BOUND:
             return getBound();
@@ -708,11 +729,15 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
             return getModifier();
          case PatternPackage.OBJECT__CLASSIFIER:
             if (resolve)
+            {
                return getClassifier();
+            }
             return basicGetClassifier();
          case PatternPackage.OBJECT__BINDING_EXPRESSION:
             if (resolve)
+            {
                return getBindingExpression();
+            }
             return basicGetBindingExpression();
          case PatternPackage.OBJECT__RECEIVED_COLLABORATION:
             return getReceivedCollaborations();
@@ -723,8 +748,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -779,8 +804,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -829,8 +854,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -839,36 +864,36 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
       switch (featureID)
       {
          case PatternPackage.OBJECT__NAME:
-            return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+            return NAME_EDEFAULT == null ? this.name != null : !NAME_EDEFAULT.equals(this.name);
          case PatternPackage.OBJECT__OWNED_ATTRIBUTE_EXPRESSION:
-            return ownedAttributeExpressions != null && !ownedAttributeExpressions.isEmpty();
+            return this.ownedAttributeExpressions != null && !this.ownedAttributeExpressions.isEmpty();
          case PatternPackage.OBJECT__LINK_TO_SOURCE:
-            return linkToSources != null && !linkToSources.isEmpty();
+            return this.linkToSources != null && !this.linkToSources.isEmpty();
          case PatternPackage.OBJECT__LINK_TO_TARGET:
-            return linkToTargets != null && !linkToTargets.isEmpty();
+            return this.linkToTargets != null && !this.linkToTargets.isEmpty();
          case PatternPackage.OBJECT__PATTERN:
             return basicGetPattern() != null;
          case PatternPackage.OBJECT__BOUND:
-            return bound != BOUND_EDEFAULT;
+            return this.bound != BOUND_EDEFAULT;
          case PatternPackage.OBJECT__CONSTRAINT:
-            return constraint != CONSTRAINT_EDEFAULT;
+            return this.constraint != CONSTRAINT_EDEFAULT;
          case PatternPackage.OBJECT__MODIFIER:
-            return modifier != MODIFIER_EDEFAULT;
+            return this.modifier != MODIFIER_EDEFAULT;
          case PatternPackage.OBJECT__CLASSIFIER:
             return isSetClassifier();
          case PatternPackage.OBJECT__BINDING_EXPRESSION:
-            return bindingExpression != null;
+            return this.bindingExpression != null;
          case PatternPackage.OBJECT__RECEIVED_COLLABORATION:
-            return receivedCollaborations != null && !receivedCollaborations.isEmpty();
+            return this.receivedCollaborations != null && !this.receivedCollaborations.isEmpty();
          case PatternPackage.OBJECT__SENT_COLLABORATION:
-            return sentCollaborations != null && !sentCollaborations.isEmpty();
+            return this.sentCollaborations != null && !this.sentCollaborations.isEmpty();
       }
       return super.eIsSet(featureID);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -888,8 +913,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -909,32 +934,34 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
    public String toString ()
    {
       if (eIsProxy())
+      {
          return super.toString();
+      }
 
       StringBuffer result = new StringBuffer(super.toString());
       result.append(" (name: ");
-      result.append(name);
+      result.append(this.name);
       result.append(", bound: ");
-      result.append(bound);
+      result.append(this.bound);
       result.append(", constraint: ");
-      result.append(constraint);
+      result.append(this.constraint);
       result.append(", modifier: ");
-      result.append(modifier);
+      result.append(this.modifier);
       result.append(')');
       return result.toString();
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -944,8 +971,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -955,8 +982,8 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -970,13 +997,14 @@ public class ObjectImpl extends TypedElementImpl implements org.storydriven.mode
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated NOT
     */
+   @Override
    public boolean isSetType ()
    {
       return false;
    }
 
-} //ObjectImpl
+} // ObjectImpl

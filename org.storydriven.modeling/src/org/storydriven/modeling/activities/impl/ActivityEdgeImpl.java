@@ -8,45 +8,36 @@ package org.storydriven.modeling.activities.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.storydriven.modeling.Expression;
-
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.ActivityEdge;
 import org.storydriven.modeling.activities.ActivityNode;
 import org.storydriven.modeling.activities.TransitionGuard;
-
 import org.storydriven.modeling.impl.ExtendableElementImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Activity Edge</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Activity Edge</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getSource <em>Source</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getGuardType <em>Guard Type</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getOwnedGuardExpression <em>Owned Guard Expression</em>}</li>
+ * <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getTarget <em>Target</em>}</li>
+ * <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getSource <em>Source</em>}</li>
+ * <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getGuardType <em>Guard Type</em>}</li>
+ * <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getOwnedGuardExpression <em>Owned Guard Expression</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityEdge
 {
    /**
-    * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getTarget() <em>Target</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getTarget()
     * @generated
     * @ordered
@@ -54,9 +45,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
    protected ActivityNode target;
 
    /**
-    * The default value of the '{@link #getGuardType() <em>Guard Type</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The default value of the '{@link #getGuardType() <em>Guard Type</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getGuardType()
     * @generated
     * @ordered
@@ -64,9 +54,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
    protected static final TransitionGuard GUARD_TYPE_EDEFAULT = TransitionGuard.NONE;
 
    /**
-    * The cached value of the '{@link #getGuardType() <em>Guard Type</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getGuardType() <em>Guard Type</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getGuardType()
     * @generated
     * @ordered
@@ -74,9 +63,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
    protected TransitionGuard guardType = GUARD_TYPE_EDEFAULT;
 
    /**
-    * The cached value of the '{@link #getOwnedGuardExpression() <em>Owned Guard Expression</em>}' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getOwnedGuardExpression() <em>Owned Guard Expression</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getOwnedGuardExpression()
     * @generated
     * @ordered
@@ -84,8 +72,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
    protected Expression ownedGuardExpression;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected ActivityEdgeImpl ()
@@ -94,8 +82,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -105,109 +93,127 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ActivityNode getTarget ()
    {
-      if (target != null && target.eIsProxy())
+      if (this.target != null && this.target.eIsProxy())
       {
-         InternalEObject oldTarget = (InternalEObject) target;
-         target = (ActivityNode) eResolveProxy(oldTarget);
-         if (target != oldTarget)
+         InternalEObject oldTarget = (InternalEObject) this.target;
+         this.target = (ActivityNode) eResolveProxy(oldTarget);
+         if (this.target != oldTarget)
          {
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActivitiesPackage.ACTIVITY_EDGE__TARGET,
-                  oldTarget, target));
+                  oldTarget, this.target));
+            }
          }
       }
-      return target;
+      return this.target;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ActivityNode basicGetTarget ()
    {
-      return target;
+      return this.target;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetTarget (ActivityNode newTarget, NotificationChain msgs)
    {
-      ActivityNode oldTarget = target;
-      target = newTarget;
+      ActivityNode oldTarget = this.target;
+      this.target = newTarget;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             ActivitiesPackage.ACTIVITY_EDGE__TARGET, oldTarget, newTarget);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setTarget (ActivityNode newTarget)
    {
-      if (newTarget != target)
+      if (newTarget != this.target)
       {
          NotificationChain msgs = null;
-         if (target != null)
-            msgs = ((InternalEObject) target).eInverseRemove(this, ActivitiesPackage.ACTIVITY_NODE__INCOMING,
+         if (this.target != null)
+         {
+            msgs = ((InternalEObject) this.target).eInverseRemove(this, ActivitiesPackage.ACTIVITY_NODE__INCOMING,
                ActivityNode.class, msgs);
+         }
          if (newTarget != null)
+         {
             msgs = ((InternalEObject) newTarget).eInverseAdd(this, ActivitiesPackage.ACTIVITY_NODE__INCOMING,
                ActivityNode.class, msgs);
+         }
          msgs = basicSetTarget(newTarget, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY_EDGE__TARGET, newTarget,
             newTarget));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ActivityNode getSource ()
    {
       if (eContainerFeatureID() != ActivitiesPackage.ACTIVITY_EDGE__SOURCE)
+      {
          return null;
+      }
       return (ActivityNode) eContainer();
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ActivityNode basicGetSource ()
    {
       if (eContainerFeatureID() != ActivitiesPackage.ACTIVITY_EDGE__SOURCE)
+      {
          return null;
+      }
       return (ActivityNode) eInternalContainer();
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetSource (ActivityNode newSource, NotificationChain msgs)
@@ -217,8 +223,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setSource (ActivityNode newSource)
@@ -227,60 +233,72 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
          || (eContainerFeatureID() != ActivitiesPackage.ACTIVITY_EDGE__SOURCE && newSource != null))
       {
          if (EcoreUtil.isAncestor(this, newSource))
+         {
             throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+         }
          NotificationChain msgs = null;
          if (eInternalContainer() != null)
+         {
             msgs = eBasicRemoveFromContainer(msgs);
+         }
          if (newSource != null)
+         {
             msgs = ((InternalEObject) newSource).eInverseAdd(this, ActivitiesPackage.ACTIVITY_NODE__OUTGOING,
                ActivityNode.class, msgs);
+         }
          msgs = basicSetSource(newSource, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY_EDGE__SOURCE, newSource,
             newSource));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public TransitionGuard getGuardType ()
    {
-      return guardType;
+      return this.guardType;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setGuardType (TransitionGuard newGuardType)
    {
-      TransitionGuard oldGuardType = guardType;
-      guardType = newGuardType == null ? GUARD_TYPE_EDEFAULT : newGuardType;
+      TransitionGuard oldGuardType = this.guardType;
+      this.guardType = newGuardType == null ? GUARD_TYPE_EDEFAULT : newGuardType;
       if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY_EDGE__GUARD_TYPE,
-            oldGuardType, guardType));
+            oldGuardType, this.guardType));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression getOwnedGuardExpression ()
    {
-      if (ownedGuardExpression != null && ownedGuardExpression.eIsProxy())
+      if (this.ownedGuardExpression != null && this.ownedGuardExpression.eIsProxy())
       {
-         InternalEObject oldOwnedGuardExpression = (InternalEObject) ownedGuardExpression;
-         ownedGuardExpression = (Expression) eResolveProxy(oldOwnedGuardExpression);
-         if (ownedGuardExpression != oldOwnedGuardExpression)
+         InternalEObject oldOwnedGuardExpression = (InternalEObject) this.ownedGuardExpression;
+         this.ownedGuardExpression = (Expression) eResolveProxy(oldOwnedGuardExpression);
+         if (this.ownedGuardExpression != oldOwnedGuardExpression)
          {
-            InternalEObject newOwnedGuardExpression = (InternalEObject) ownedGuardExpression;
+            InternalEObject newOwnedGuardExpression = (InternalEObject) this.ownedGuardExpression;
             NotificationChain msgs = oldOwnedGuardExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - ActivitiesPackage.ACTIVITY_EDGE__OWNED_GUARD_EXPRESSION, null, null);
             if (newOwnedGuardExpression.eInternalContainer() == null)
@@ -289,75 +307,91 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
                   - ActivitiesPackage.ACTIVITY_EDGE__OWNED_GUARD_EXPRESSION, null, msgs);
             }
             if (msgs != null)
+            {
                msgs.dispatch();
+            }
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
                   ActivitiesPackage.ACTIVITY_EDGE__OWNED_GUARD_EXPRESSION, oldOwnedGuardExpression,
-                  ownedGuardExpression));
+                  this.ownedGuardExpression));
+            }
          }
       }
-      return ownedGuardExpression;
+      return this.ownedGuardExpression;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Expression basicGetOwnedGuardExpression ()
    {
-      return ownedGuardExpression;
+      return this.ownedGuardExpression;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetOwnedGuardExpression (Expression newOwnedGuardExpression, NotificationChain msgs)
    {
-      Expression oldOwnedGuardExpression = ownedGuardExpression;
-      ownedGuardExpression = newOwnedGuardExpression;
+      Expression oldOwnedGuardExpression = this.ownedGuardExpression;
+      this.ownedGuardExpression = newOwnedGuardExpression;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             ActivitiesPackage.ACTIVITY_EDGE__OWNED_GUARD_EXPRESSION, oldOwnedGuardExpression, newOwnedGuardExpression);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setOwnedGuardExpression (Expression newOwnedGuardExpression)
    {
-      if (newOwnedGuardExpression != ownedGuardExpression)
+      if (newOwnedGuardExpression != this.ownedGuardExpression)
       {
          NotificationChain msgs = null;
-         if (ownedGuardExpression != null)
-            msgs = ((InternalEObject) ownedGuardExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+         if (this.ownedGuardExpression != null)
+         {
+            msgs = ((InternalEObject) this.ownedGuardExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - ActivitiesPackage.ACTIVITY_EDGE__OWNED_GUARD_EXPRESSION, null, msgs);
+         }
          if (newOwnedGuardExpression != null)
+         {
             msgs = ((InternalEObject) newOwnedGuardExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
                - ActivitiesPackage.ACTIVITY_EDGE__OWNED_GUARD_EXPRESSION, null, msgs);
+         }
          msgs = basicSetOwnedGuardExpression(newOwnedGuardExpression, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY_EDGE__OWNED_GUARD_EXPRESSION,
             newOwnedGuardExpression, newOwnedGuardExpression));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -366,21 +400,25 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
       switch (featureID)
       {
          case ActivitiesPackage.ACTIVITY_EDGE__TARGET:
-            if (target != null)
-               msgs = ((InternalEObject) target).eInverseRemove(this, ActivitiesPackage.ACTIVITY_NODE__INCOMING,
+            if (this.target != null)
+            {
+               msgs = ((InternalEObject) this.target).eInverseRemove(this, ActivitiesPackage.ACTIVITY_NODE__INCOMING,
                   ActivityNode.class, msgs);
+            }
             return basicSetTarget((ActivityNode) otherEnd, msgs);
          case ActivitiesPackage.ACTIVITY_EDGE__SOURCE:
             if (eInternalContainer() != null)
+            {
                msgs = eBasicRemoveFromContainer(msgs);
+            }
             return basicSetSource((ActivityNode) otherEnd, msgs);
       }
       return super.eInverseAdd(otherEnd, featureID, msgs);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -399,8 +437,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -416,8 +454,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -427,25 +465,31 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
       {
          case ActivitiesPackage.ACTIVITY_EDGE__TARGET:
             if (resolve)
+            {
                return getTarget();
+            }
             return basicGetTarget();
          case ActivitiesPackage.ACTIVITY_EDGE__SOURCE:
             if (resolve)
+            {
                return getSource();
+            }
             return basicGetSource();
          case ActivitiesPackage.ACTIVITY_EDGE__GUARD_TYPE:
             return getGuardType();
          case ActivitiesPackage.ACTIVITY_EDGE__OWNED_GUARD_EXPRESSION:
             if (resolve)
+            {
                return getOwnedGuardExpression();
+            }
             return basicGetOwnedGuardExpression();
       }
       return super.eGet(featureID, resolve, coreType);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -470,8 +514,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -496,8 +540,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -506,33 +550,35 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
       switch (featureID)
       {
          case ActivitiesPackage.ACTIVITY_EDGE__TARGET:
-            return target != null;
+            return this.target != null;
          case ActivitiesPackage.ACTIVITY_EDGE__SOURCE:
             return basicGetSource() != null;
          case ActivitiesPackage.ACTIVITY_EDGE__GUARD_TYPE:
-            return guardType != GUARD_TYPE_EDEFAULT;
+            return this.guardType != GUARD_TYPE_EDEFAULT;
          case ActivitiesPackage.ACTIVITY_EDGE__OWNED_GUARD_EXPRESSION:
-            return ownedGuardExpression != null;
+            return this.ownedGuardExpression != null;
       }
       return super.eIsSet(featureID);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
    public String toString ()
    {
       if (eIsProxy())
+      {
          return super.toString();
+      }
 
       StringBuffer result = new StringBuffer(super.toString());
       result.append(" (guardType: ");
-      result.append(guardType);
+      result.append(this.guardType);
       result.append(')');
       return result.toString();
    }
 
-} //ActivityEdgeImpl
+} // ActivityEdgeImpl

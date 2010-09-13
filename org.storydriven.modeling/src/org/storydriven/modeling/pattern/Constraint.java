@@ -13,10 +13,8 @@ import java.util.List;
 import org.eclipse.emf.common.util.Enumerator;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Constraint</b></em>',
- * and utility methods for working with them.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the literals of the enumeration '<em><b>Constraint</b></em>', and utility methods for working with them. <!-- end-user-doc -->
+ * 
  * @see org.storydriven.modeling.pattern.PatternPackage#getConstraint()
  * @model
  * @generated
@@ -24,9 +22,8 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum Constraint implements Enumerator
 {
    /**
-    * The '<em><b>NONE</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>NONE</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #NONE_VALUE
     * @generated
     * @ordered
@@ -34,9 +31,8 @@ public enum Constraint implements Enumerator
    NONE (0, "NONE", "NONE"),
 
    /**
-    * The '<em><b>NEGATIVE</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>NEGATIVE</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #NEGATIVE_VALUE
     * @generated
     * @ordered
@@ -44,9 +40,8 @@ public enum Constraint implements Enumerator
    NEGATIVE (1, "NEGATIVE", "NEGATIVE"),
 
    /**
-    * The '<em><b>OPTIONAL</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>OPTIONAL</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #OPTIONAL_VALUE
     * @generated
     * @ordered
@@ -54,9 +49,8 @@ public enum Constraint implements Enumerator
    OPTIONAL (2, "OPTIONAL", "OPTIONAL"),
 
    /**
-    * The '<em><b>SET</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>SET</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #SET_VALUE
     * @generated
     * @ordered
@@ -64,13 +58,12 @@ public enum Constraint implements Enumerator
    SET (3, "SET", "SET");
 
    /**
-    * The '<em><b>NONE</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>NONE</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>NONE</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>NONE</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #NONE
     * @model
     * @generated
@@ -79,13 +72,12 @@ public enum Constraint implements Enumerator
    public static final int NONE_VALUE = 0;
 
    /**
-    * The '<em><b>NEGATIVE</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>NEGATIVE</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>NEGATIVE</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>NEGATIVE</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #NEGATIVE
     * @model
     * @generated
@@ -94,13 +86,12 @@ public enum Constraint implements Enumerator
    public static final int NEGATIVE_VALUE = 1;
 
    /**
-    * The '<em><b>OPTIONAL</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>OPTIONAL</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>OPTIONAL</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>OPTIONAL</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #OPTIONAL
     * @model
     * @generated
@@ -109,13 +100,12 @@ public enum Constraint implements Enumerator
    public static final int OPTIONAL_VALUE = 2;
 
    /**
-    * The '<em><b>SET</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>SET</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>SET</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>SET</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #SET
     * @model
     * @generated
@@ -124,25 +114,22 @@ public enum Constraint implements Enumerator
    public static final int SET_VALUE = 3;
 
    /**
-    * An array of all the '<em><b>Constraint</b></em>' enumerators.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * An array of all the '<em><b>Constraint</b></em>' enumerators. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private static final Constraint[] VALUES_ARRAY = new Constraint[] {NONE, NEGATIVE, OPTIONAL, SET,};
 
    /**
-    * A public read-only list of all the '<em><b>Constraint</b></em>' enumerators.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * A public read-only list of all the '<em><b>Constraint</b></em>' enumerators. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static final List<Constraint> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
    /**
-    * Returns the '<em><b>Constraint</b></em>' literal with the specified literal value.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the '<em><b>Constraint</b></em>' literal with the specified literal value. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static Constraint get (String literal)
@@ -159,9 +146,8 @@ public enum Constraint implements Enumerator
    }
 
    /**
-    * Returns the '<em><b>Constraint</b></em>' literal with the specified name.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the '<em><b>Constraint</b></em>' literal with the specified name. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static Constraint getByName (String name)
@@ -178,9 +164,8 @@ public enum Constraint implements Enumerator
    }
 
    /**
-    * Returns the '<em><b>Constraint</b></em>' literal with the specified integer value.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the '<em><b>Constraint</b></em>' literal with the specified integer value. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static Constraint get (int value)
@@ -200,30 +185,29 @@ public enum Constraint implements Enumerator
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private final int value;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private final String name;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private final String literal;
 
    /**
-    * Only this class can construct instances.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Only this class can construct instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private Constraint (int value, String name, String literal)
@@ -234,45 +218,44 @@ public enum Constraint implements Enumerator
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public int getValue ()
    {
-      return value;
+      return this.value;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public String getName ()
    {
-      return name;
+      return this.name;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public String getLiteral ()
    {
-      return literal;
+      return this.literal;
    }
 
    /**
-    * Returns the literal value of the enumerator, which is its string representation.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the literal value of the enumerator, which is its string representation. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
    public String toString ()
    {
-      return literal;
+      return this.literal;
    }
 
-} //Constraint
+} // Constraint

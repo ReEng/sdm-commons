@@ -8,38 +8,30 @@ package org.storydriven.modeling.activities.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.activities.OperationExtension;
-
 import org.storydriven.modeling.impl.ExtensionImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Operation Extension</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Operation Extension</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getOwnedActivity <em>Owned Activity</em>}</li>
+ * <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getOwnedActivity <em>Owned Activity</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class OperationExtensionImpl extends ExtensionImpl implements OperationExtension
 {
    /**
-    * The cached value of the '{@link #getOwnedActivity() <em>Owned Activity</em>}' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached value of the '{@link #getOwnedActivity() <em>Owned Activity</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #getOwnedActivity()
     * @generated
     * @ordered
@@ -47,8 +39,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
    protected Activity ownedActivity;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected OperationExtensionImpl ()
@@ -57,8 +49,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -68,19 +60,19 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Activity getOwnedActivity ()
    {
-      if (ownedActivity != null && ownedActivity.eIsProxy())
+      if (this.ownedActivity != null && this.ownedActivity.eIsProxy())
       {
-         InternalEObject oldOwnedActivity = (InternalEObject) ownedActivity;
-         ownedActivity = (Activity) eResolveProxy(oldOwnedActivity);
-         if (ownedActivity != oldOwnedActivity)
+         InternalEObject oldOwnedActivity = (InternalEObject) this.ownedActivity;
+         this.ownedActivity = (Activity) eResolveProxy(oldOwnedActivity);
+         if (this.ownedActivity != oldOwnedActivity)
          {
-            InternalEObject newOwnedActivity = (InternalEObject) ownedActivity;
+            InternalEObject newOwnedActivity = (InternalEObject) this.ownedActivity;
             NotificationChain msgs = oldOwnedActivity.eInverseRemove(this,
                ActivitiesPackage.ACTIVITY__OWNING_OPERATION, Activity.class, null);
             if (newOwnedActivity.eInternalContainer() == null)
@@ -89,74 +81,90 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
                   msgs);
             }
             if (msgs != null)
+            {
                msgs.dispatch();
+            }
             if (eNotificationRequired())
+            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                  ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, oldOwnedActivity, ownedActivity));
+                  ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, oldOwnedActivity, this.ownedActivity));
+            }
          }
       }
-      return ownedActivity;
+      return this.ownedActivity;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Activity basicGetOwnedActivity ()
    {
-      return ownedActivity;
+      return this.ownedActivity;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public NotificationChain basicSetOwnedActivity (Activity newOwnedActivity, NotificationChain msgs)
    {
-      Activity oldOwnedActivity = ownedActivity;
-      ownedActivity = newOwnedActivity;
+      Activity oldOwnedActivity = this.ownedActivity;
+      this.ownedActivity = newOwnedActivity;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, oldOwnedActivity, newOwnedActivity);
          if (msgs == null)
+         {
             msgs = notification;
+         }
          else
+         {
             msgs.add(notification);
+         }
       }
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public void setOwnedActivity (Activity newOwnedActivity)
    {
-      if (newOwnedActivity != ownedActivity)
+      if (newOwnedActivity != this.ownedActivity)
       {
          NotificationChain msgs = null;
-         if (ownedActivity != null)
-            msgs = ((InternalEObject) ownedActivity).eInverseRemove(this, ActivitiesPackage.ACTIVITY__OWNING_OPERATION,
-               Activity.class, msgs);
+         if (this.ownedActivity != null)
+         {
+            msgs = ((InternalEObject) this.ownedActivity).eInverseRemove(this,
+               ActivitiesPackage.ACTIVITY__OWNING_OPERATION, Activity.class, msgs);
+         }
          if (newOwnedActivity != null)
+         {
             msgs = ((InternalEObject) newOwnedActivity).eInverseAdd(this, ActivitiesPackage.ACTIVITY__OWNING_OPERATION,
                Activity.class, msgs);
+         }
          msgs = basicSetOwnedActivity(newOwnedActivity, msgs);
          if (msgs != null)
+         {
             msgs.dispatch();
+         }
       }
       else if (eNotificationRequired())
+      {
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY,
             newOwnedActivity, newOwnedActivity));
+      }
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -165,17 +173,19 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
       switch (featureID)
       {
          case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
-            if (ownedActivity != null)
-               msgs = ((InternalEObject) ownedActivity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            if (this.ownedActivity != null)
+            {
+               msgs = ((InternalEObject) this.ownedActivity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                   - ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, null, msgs);
+            }
             return basicSetOwnedActivity((Activity) otherEnd, msgs);
       }
       return super.eInverseAdd(otherEnd, featureID, msgs);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -190,8 +200,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -201,15 +211,17 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
       {
          case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
             if (resolve)
+            {
                return getOwnedActivity();
+            }
             return basicGetOwnedActivity();
       }
       return super.eGet(featureID, resolve, coreType);
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -225,8 +237,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -242,8 +254,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -252,9 +264,9 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
       switch (featureID)
       {
          case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
-            return ownedActivity != null;
+            return this.ownedActivity != null;
       }
       return super.eIsSet(featureID);
    }
 
-} //OperationExtensionImpl
+} // OperationExtensionImpl

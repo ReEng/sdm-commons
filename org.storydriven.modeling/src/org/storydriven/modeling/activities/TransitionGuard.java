@@ -13,10 +13,8 @@ import java.util.List;
 import org.eclipse.emf.common.util.Enumerator;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Transition Guard</b></em>',
- * and utility methods for working with them.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the literals of the enumeration '<em><b>Transition Guard</b></em>', and utility methods for working with them. <!-- end-user-doc -->
+ * 
  * @see org.storydriven.modeling.activities.ActivitiesPackage#getTransitionGuard()
  * @model
  * @generated
@@ -24,9 +22,8 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum TransitionGuard implements Enumerator
 {
    /**
-    * The '<em><b>NONE</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>NONE</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #NONE_VALUE
     * @generated
     * @ordered
@@ -34,9 +31,8 @@ public enum TransitionGuard implements Enumerator
    NONE (0, "NONE", "NONE"),
 
    /**
-    * The '<em><b>SUCCESS</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>SUCCESS</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #SUCCESS_VALUE
     * @generated
     * @ordered
@@ -44,9 +40,8 @@ public enum TransitionGuard implements Enumerator
    SUCCESS (1, "SUCCESS", "SUCCESS"),
 
    /**
-    * The '<em><b>FAILURE</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>FAILURE</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #FAILURE_VALUE
     * @generated
     * @ordered
@@ -54,9 +49,8 @@ public enum TransitionGuard implements Enumerator
    FAILURE (2, "FAILURE", "FAILURE"),
 
    /**
-    * The '<em><b>EACH TIME</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>EACH TIME</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #EACH_TIME_VALUE
     * @generated
     * @ordered
@@ -64,9 +58,8 @@ public enum TransitionGuard implements Enumerator
    EACH_TIME (3, "EACH_TIME", "EACH_TIME"),
 
    /**
-    * The '<em><b>END</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>END</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #END_VALUE
     * @generated
     * @ordered
@@ -74,9 +67,8 @@ public enum TransitionGuard implements Enumerator
    END (4, "END", "END"),
 
    /**
-    * The '<em><b>ELSE</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>ELSE</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #ELSE_VALUE
     * @generated
     * @ordered
@@ -84,9 +76,8 @@ public enum TransitionGuard implements Enumerator
    ELSE (5, "ELSE", "ELSE"),
 
    /**
-    * The '<em><b>BOOL</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>BOOL</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #BOOL_VALUE
     * @generated
     * @ordered
@@ -94,9 +85,8 @@ public enum TransitionGuard implements Enumerator
    BOOL (6, "BOOL", "BOOL"),
 
    /**
-    * The '<em><b>EXCEPTION</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>EXCEPTION</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #EXCEPTION_VALUE
     * @generated
     * @ordered
@@ -104,9 +94,8 @@ public enum TransitionGuard implements Enumerator
    EXCEPTION (7, "EXCEPTION", "EXCEPTION"),
 
    /**
-    * The '<em><b>FINALLY</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The '<em><b>FINALLY</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see #FINALLY_VALUE
     * @generated
     * @ordered
@@ -114,13 +103,12 @@ public enum TransitionGuard implements Enumerator
    FINALLY (8, "FINALLY", "FINALLY");
 
    /**
-    * The '<em><b>NONE</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>NONE</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>NONE</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>NONE</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #NONE
     * @model
     * @generated
@@ -129,13 +117,12 @@ public enum TransitionGuard implements Enumerator
    public static final int NONE_VALUE = 0;
 
    /**
-    * The '<em><b>SUCCESS</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>SUCCESS</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>SUCCESS</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>SUCCESS</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #SUCCESS
     * @model
     * @generated
@@ -144,13 +131,12 @@ public enum TransitionGuard implements Enumerator
    public static final int SUCCESS_VALUE = 1;
 
    /**
-    * The '<em><b>FAILURE</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>FAILURE</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>FAILURE</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>FAILURE</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #FAILURE
     * @model
     * @generated
@@ -159,13 +145,12 @@ public enum TransitionGuard implements Enumerator
    public static final int FAILURE_VALUE = 2;
 
    /**
-    * The '<em><b>EACH TIME</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>EACH TIME</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>EACH TIME</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>EACH TIME</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #EACH_TIME
     * @model
     * @generated
@@ -174,13 +159,12 @@ public enum TransitionGuard implements Enumerator
    public static final int EACH_TIME_VALUE = 3;
 
    /**
-    * The '<em><b>END</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>END</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>END</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>END</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #END
     * @model
     * @generated
@@ -189,13 +173,12 @@ public enum TransitionGuard implements Enumerator
    public static final int END_VALUE = 4;
 
    /**
-    * The '<em><b>ELSE</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>ELSE</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>ELSE</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>ELSE</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #ELSE
     * @model
     * @generated
@@ -204,13 +187,12 @@ public enum TransitionGuard implements Enumerator
    public static final int ELSE_VALUE = 5;
 
    /**
-    * The '<em><b>BOOL</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>BOOL</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>BOOL</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>BOOL</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #BOOL
     * @model
     * @generated
@@ -219,13 +201,12 @@ public enum TransitionGuard implements Enumerator
    public static final int BOOL_VALUE = 6;
 
    /**
-    * The '<em><b>EXCEPTION</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>EXCEPTION</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>EXCEPTION</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>EXCEPTION</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #EXCEPTION
     * @model
     * @generated
@@ -234,13 +215,12 @@ public enum TransitionGuard implements Enumerator
    public static final int EXCEPTION_VALUE = 7;
 
    /**
-    * The '<em><b>FINALLY</b></em>' literal value.
-    * <!-- begin-user-doc -->
+    * The '<em><b>FINALLY</b></em>' literal value. <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>FINALLY</b></em>' literal object isn't clear,
-    * there really should be more of a description here...
+    * If the meaning of '<em><b>FINALLY</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * 
     * @see #FINALLY
     * @model
     * @generated
@@ -249,26 +229,23 @@ public enum TransitionGuard implements Enumerator
    public static final int FINALLY_VALUE = 8;
 
    /**
-    * An array of all the '<em><b>Transition Guard</b></em>' enumerators.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * An array of all the '<em><b>Transition Guard</b></em>' enumerators. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private static final TransitionGuard[] VALUES_ARRAY = new TransitionGuard[] {NONE, SUCCESS, FAILURE, EACH_TIME, END,
          ELSE, BOOL, EXCEPTION, FINALLY,};
 
    /**
-    * A public read-only list of all the '<em><b>Transition Guard</b></em>' enumerators.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * A public read-only list of all the '<em><b>Transition Guard</b></em>' enumerators. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static final List<TransitionGuard> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
    /**
-    * Returns the '<em><b>Transition Guard</b></em>' literal with the specified literal value.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the '<em><b>Transition Guard</b></em>' literal with the specified literal value. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static TransitionGuard get (String literal)
@@ -285,9 +262,8 @@ public enum TransitionGuard implements Enumerator
    }
 
    /**
-    * Returns the '<em><b>Transition Guard</b></em>' literal with the specified name.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the '<em><b>Transition Guard</b></em>' literal with the specified name. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static TransitionGuard getByName (String name)
@@ -304,9 +280,8 @@ public enum TransitionGuard implements Enumerator
    }
 
    /**
-    * Returns the '<em><b>Transition Guard</b></em>' literal with the specified integer value.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the '<em><b>Transition Guard</b></em>' literal with the specified integer value. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static TransitionGuard get (int value)
@@ -336,30 +311,29 @@ public enum TransitionGuard implements Enumerator
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private final int value;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private final String name;
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private final String literal;
 
    /**
-    * Only this class can construct instances.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Only this class can construct instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private TransitionGuard (int value, String name, String literal)
@@ -370,45 +344,44 @@ public enum TransitionGuard implements Enumerator
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public int getValue ()
    {
-      return value;
+      return this.value;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public String getName ()
    {
-      return name;
+      return this.name;
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public String getLiteral ()
    {
-      return literal;
+      return this.literal;
    }
 
    /**
-    * Returns the literal value of the enumerator, which is its string representation.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Returns the literal value of the enumerator, which is its string representation. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
    public String toString ()
    {
-      return literal;
+      return this.literal;
    }
 
-} //TransitionGuard
+} // TransitionGuard

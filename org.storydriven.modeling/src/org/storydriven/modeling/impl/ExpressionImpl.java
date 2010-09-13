@@ -7,24 +7,21 @@
 package org.storydriven.modeling.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.storydriven.modeling.Expression;
 import org.storydriven.modeling.SDMPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Expression</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Expression</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
- *
+ * 
  * @generated
  */
 public abstract class ExpressionImpl extends TypedElementImpl implements Expression
 {
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected ExpressionImpl ()
@@ -33,8 +30,8 @@ public abstract class ExpressionImpl extends TypedElementImpl implements Express
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -43,4 +40,4 @@ public abstract class ExpressionImpl extends TypedElementImpl implements Express
       return SDMPackage.Literals.EXPRESSION;
    }
 
-} //ExpressionImpl
+} // ExpressionImpl

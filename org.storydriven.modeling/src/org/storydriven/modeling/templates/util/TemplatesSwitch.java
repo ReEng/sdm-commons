@@ -10,41 +10,34 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.ExtendableElement;
-
 import org.storydriven.modeling.pattern.ObjectPattern;
-
-import org.storydriven.modeling.templates.*;
+import org.storydriven.modeling.templates.ObjectPatternTemplate;
+import org.storydriven.modeling.templates.PropertyBinding;
+import org.storydriven.modeling.templates.TemplateBinding;
+import org.storydriven.modeling.templates.TemplatesPackage;
 
 /**
- * <!-- begin-user-doc -->
- * The <b>Switch</b> for the model's inheritance hierarchy.
- * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
- * to invoke the <code>caseXXX</code> method for each class of the model,
- * starting with the actual class of the object
- * and proceeding up the inheritance hierarchy
- * until a non-null result is returned,
- * which is the result of the switch.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> The <b>Switch</b> for the model's inheritance hierarchy. It supports the call {@link #doSwitch(EObject) doSwitch(object)} to invoke the
+ * <code>caseXXX</code> method for each class of the model, starting with the actual class of the object and proceeding up the inheritance hierarchy until a non-null result is
+ * returned, which is the result of the switch. <!-- end-user-doc -->
+ * 
  * @see org.storydriven.modeling.templates.TemplatesPackage
  * @generated
  */
 public class TemplatesSwitch<T>
 {
    /**
-    * The cached model package
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected static TemplatesPackage modelPackage;
 
    /**
-    * Creates an instance of the switch.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public TemplatesSwitch ()
@@ -56,9 +49,8 @@ public class TemplatesSwitch<T>
    }
 
    /**
-    * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @return the first non-null result returned by a <code>caseXXX</code> call.
     * @generated
     */
@@ -68,9 +60,8 @@ public class TemplatesSwitch<T>
    }
 
    /**
-    * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @return the first non-null result returned by a <code>caseXXX</code> call.
     * @generated
     */
@@ -88,9 +79,8 @@ public class TemplatesSwitch<T>
    }
 
    /**
-    * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @return the first non-null result returned by a <code>caseXXX</code> call.
     * @generated
     */
@@ -103,13 +93,21 @@ public class TemplatesSwitch<T>
             ObjectPatternTemplate objectPatternTemplate = (ObjectPatternTemplate) theEObject;
             T result = caseObjectPatternTemplate(objectPatternTemplate);
             if (result == null)
+            {
                result = caseObjectPattern(objectPatternTemplate);
+            }
             if (result == null)
+            {
                result = caseCommentableElement(objectPatternTemplate);
+            }
             if (result == null)
+            {
                result = caseExtendableElement(objectPatternTemplate);
+            }
             if (result == null)
+            {
                result = defaultCase(theEObject);
+            }
             return result;
          }
          case TemplatesPackage.TEMPLATE_BINDING:
@@ -117,9 +115,13 @@ public class TemplatesSwitch<T>
             TemplateBinding templateBinding = (TemplateBinding) theEObject;
             T result = caseTemplateBinding(templateBinding);
             if (result == null)
+            {
                result = caseExtendableElement(templateBinding);
+            }
             if (result == null)
+            {
                result = defaultCase(theEObject);
+            }
             return result;
          }
          case TemplatesPackage.PROPERTY_BINDING:
@@ -127,9 +129,13 @@ public class TemplatesSwitch<T>
             PropertyBinding propertyBinding = (PropertyBinding) theEObject;
             T result = casePropertyBinding(propertyBinding);
             if (result == null)
+            {
                result = caseExtendableElement(propertyBinding);
+            }
             if (result == null)
+            {
                result = defaultCase(theEObject);
+            }
             return result;
          }
          default:
@@ -138,11 +144,9 @@ public class TemplatesSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Object Pattern Template</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch.
-    * <!-- end-user-doc -->
+    * Returns the result of interpreting the object as an instance of '<em>Object Pattern Template</em>'. <!-- begin-user-doc --> This implementation returns null; returning a
+    * non-null result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Object Pattern Template</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -154,11 +158,9 @@ public class TemplatesSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Template Binding</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch.
-    * <!-- end-user-doc -->
+    * Returns the result of interpreting the object as an instance of '<em>Template Binding</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Template Binding</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -170,11 +172,9 @@ public class TemplatesSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Property Binding</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch.
-    * <!-- end-user-doc -->
+    * Returns the result of interpreting the object as an instance of '<em>Property Binding</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Property Binding</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -186,11 +186,9 @@ public class TemplatesSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch.
-    * <!-- end-user-doc -->
+    * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -202,11 +200,9 @@ public class TemplatesSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch.
-    * <!-- end-user-doc -->
+    * Returns the result of interpreting the object as an instance of '<em>Commentable Element</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -218,11 +214,9 @@ public class TemplatesSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Object Pattern</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch.
-    * <!-- end-user-doc -->
+    * Returns the result of interpreting the object as an instance of '<em>Object Pattern</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Object Pattern</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -234,11 +228,9 @@ public class TemplatesSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch, but this is the last case anyway.
-    * <!-- end-user-doc -->
+    * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+    * terminate the switch, but this is the last case anyway. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject)
@@ -249,4 +241,4 @@ public class TemplatesSwitch<T>
       return null;
    }
 
-} //TemplatesSwitch
+} // TemplatesSwitch
