@@ -28,8 +28,9 @@
   </genAnnotations>
   <foreignModel>sdm.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="SDM" basePackage="org.storydriven"
-      resource="XMI" disposableProviderFactory="true" contentTypeIdentifier="org.storydriven.modeling"
-      ecorePackage="sdm.ecore#/" resourceInterfaces="true" operationsPackage="org.storydriven.modeling.impl">
+      resource="XMI" disposableProviderFactory="true" generateExampleClass="false"
+      contentTypeIdentifier="org.storydriven.modeling" ecorePackage="sdm.ecore#/"
+      resourceInterfaces="true" operationsPackage="org.storydriven.modeling.impl">
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sdm.ecore#//Expression"/>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sdm.ecore#//TypedElement">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -76,7 +77,8 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//CommentableElement/comment"/>
     </genClasses>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Expressions" basePackage="org.storydriven.modeling"
-        disposableProviderFactory="true" ecorePackage="sdm.ecore#//expressions" operationsPackage="org.storydriven.modeling.expressions.impl">
+        disposableProviderFactory="true" generateExampleClass="false" ecorePackage="sdm.ecore#//expressions"
+        operationsPackage="org.storydriven.modeling.expressions.impl">
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//expressions/Collaboration">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//expressions/Collaboration/source"/>
@@ -114,7 +116,8 @@
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Pattern" basePackage="org.storydriven.modeling"
-        disposableProviderFactory="true" ecorePackage="sdm.ecore#//pattern" operationsPackage="org.storydriven.modeling.pattern.impl">
+        disposableProviderFactory="true" generateExampleClass="false" ecorePackage="sdm.ecore#//pattern"
+        operationsPackage="org.storydriven.modeling.pattern.impl">
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sdm.ecore#//pattern/Operator">
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//pattern/Operator/ASSIGN"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//pattern/Operator/EQUAL"/>
@@ -232,7 +235,8 @@
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Activities" basePackage="org.storydriven.modeling"
-        disposableProviderFactory="true" ecorePackage="sdm.ecore#//activities" operationsPackage="org.storydriven.modeling.activities.impl">
+        disposableProviderFactory="true" generateExampleClass="false" ecorePackage="sdm.ecore#//activities"
+        operationsPackage="org.storydriven.modeling.activities.impl">
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sdm.ecore#//activities/TransitionGuard">
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/TransitionGuard/NONE"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/TransitionGuard/SUCCESS"/>
@@ -295,7 +299,8 @@
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Templates" basePackage="org.storydriven.modeling"
-        disposableProviderFactory="true" ecorePackage="sdm.ecore#//templates" operationsPackage="org.storydriven.modeling.templates.impl">
+        disposableProviderFactory="true" generateExampleClass="false" ecorePackage="sdm.ecore#//templates"
+        operationsPackage="org.storydriven.modeling.templates.impl">
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//templates/ObjectPatternTemplate">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//templates/ObjectPatternTemplate/typeParameter"/>
