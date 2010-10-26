@@ -241,13 +241,18 @@
   </eSubpackages>
   <eSubpackages name="activities" nsURI="http://ns.storydriven.org/sdm/activities/0.1.0"
       nsPrefix="sdma">
-    <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//CommentableElement #//calls/Callable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityNode" ordered="false"
           upperBound="-1" eType="#//activities/ActivityNode" containment="true" eOpposite="#//activities/ActivityNode/owningActivity"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="owningOperation" ordered="false"
           eType="#//activities/OperationExtension" eOpposite="#//activities/OperationExtension/ownedActivity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" eType="#//pattern/StoryNode">
+        <eAnnotations>
+          <details key="documentation" value="References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationExtension" eSuperTypes="#//Extension">
+    <eClassifiers xsi:type="ecore:EClass" name="OperationExtension" eSuperTypes="#//Extension #//calls/Callable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivity" ordered="false"
           eType="#//activities/Activity" containment="true" eOpposite="#//activities/Activity/owningOperation"/>
     </eClassifiers>
@@ -334,5 +339,62 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="templateBinding" ordered="false"
           lowerBound="1" eType="#//templates/TemplateBinding" eOpposite="#//templates/TemplateBinding/propertyBinding"/>
     </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="calls" nsURI="http://ns.storydriven.org/sdm/calls/0.1.0" nsPrefix="sdmc">
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityCallNode" eSuperTypes="#//activities/ActivityNode #//calls/Invocation">
+      <eAnnotations>
+        <details key="documentation" value="The TransformationCallNode is a special ActivityNode which represents the calling of another story diagram within an activity.&#xD;&#xA;To support polymorphic dispatching, multiple activities can be assigned to it (all of which must have the same call signature, i.e. matching in and out parameters). All assigned activities are then called in the given order and the first one whose precondition is fulfilled is executed (Chain of Responsibilty)."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callee" lowerBound="1"
+          upperBound="-1" eType="#//activities/Activity">
+        <eAnnotations>
+          <details key="documentation" value="References all activities that are to be considered for the polymorphic dispatching of the call. All activities must have the same call signature."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Invocation">
+      <eAnnotations>
+        <details key="documentation" value="Superclass for invocations of behavior which is specified elsewhere, e.g. in methods (MethodCall) or activities (ActivityCallNode). An invocation has one parameter binding for each parameter (in or out) of the called method/activity."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
+          eType="#//calls/ParameterBinding" containment="true" eOpposite="#//calls/ParameterBinding/invocation"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Callable">
+      <eAnnotations>
+        <details key="documentation" value="An entity which can be called by an Invocation.&#xD;&#xA;A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions can only have one out parameter."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="inParameters" upperBound="-1"
+          eType="#//calls/Parameter" eOpposite="#//calls/Parameter/inParameterOwner"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outParameters" upperBound="-1"
+          eType="#//calls/Parameter" eOpposite="#//calls/Parameter/outParameterOwner"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MethodCall" eSuperTypes="#//Expression #//calls/Invocation">
+      <eAnnotations>
+        <details key="documentation" value="Represents the invocation of a method."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+      <eAnnotations>
+        <details key="documentation" value="A parameter defined by a Callable. Can either be an in or out parameter, signified by the corresponding reference to the owning Callable (only one of those references can be assigned at any time).&#xD;&#xA;A parameter is typed by an EClassifier."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="inParameterOwner" lowerBound="1"
+          eType="#//calls/Callable" eOpposite="#//calls/Callable/inParameters"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outParameterOwner" lowerBound="1"
+          eType="#//calls/Callable" eOpposite="#//calls/Callable/outParameters"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding">
+      <eAnnotations>
+        <details key="documentation" value="Binds a parameter to a certain value for a given invocation. The value of the parameter is represented by an expression."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
+          eType="#//calls/Parameter"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valueExpression" lowerBound="1"
+          eType="#//Expression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="invocation" lowerBound="1"
+          eType="#//calls/Invocation" eOpposite="#//calls/Invocation/parameterBindings"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EClass0"/>
   </eSubpackages>
 </ecore:EPackage>
