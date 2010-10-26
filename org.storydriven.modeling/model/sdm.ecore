@@ -352,14 +352,14 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Invocation">
+    <eClassifiers xsi:type="ecore:EClass" name="Invocation" eSuperTypes="#//CommentableElement">
       <eAnnotations>
         <details key="documentation" value="Superclass for invocations of behavior which is specified elsewhere, e.g. in methods (MethodCall) or activities (ActivityCallNode). An invocation has one parameter binding for each parameter (in or out) of the called method/activity."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
           eType="#//calls/ParameterBinding" containment="true" eOpposite="#//calls/ParameterBinding/invocation"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Callable">
+    <eClassifiers xsi:type="ecore:EClass" name="Callable" eSuperTypes="#//CommentableElement">
       <eAnnotations>
         <details key="documentation" value="An entity which can be called by an Invocation.&#xD;&#xA;A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions can only have one out parameter."/>
       </eAnnotations>
@@ -373,7 +373,7 @@
         <details key="documentation" value="Represents the invocation of a method."/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//NamedElement">
       <eAnnotations>
         <details key="documentation" value="A parameter defined by a Callable. Can either be an in or out parameter, signified by the corresponding reference to the owning Callable (only one of those references can be assigned at any time).&#xD;&#xA;A parameter is typed by an EClassifier."/>
       </eAnnotations>
@@ -384,7 +384,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="outParameterOwner" lowerBound="1"
           eType="#//calls/Callable" eOpposite="#//calls/Callable/outParameters"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding">
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="#//CommentableElement">
       <eAnnotations>
         <details key="documentation" value="Binds a parameter to a certain value for a given invocation. The value of the parameter is represented by an expression."/>
       </eAnnotations>
@@ -395,6 +395,5 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="invocation" lowerBound="1"
           eType="#//calls/Invocation" eOpposite="#//calls/Invocation/parameterBindings"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EClass0"/>
   </eSubpackages>
 </ecore:EPackage>
