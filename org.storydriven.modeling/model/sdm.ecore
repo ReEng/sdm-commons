@@ -155,9 +155,9 @@
   <eSubpackages name="pattern" nsURI="http://ns.storydriven.org/sdm/pattern/0.1.0"
       nsPrefix="sdmp">
     <eClassifiers xsi:type="ecore:EEnum" name="BindingState">
-      <eLiterals name="BOUND"/>
-      <eLiterals name="UNBOUND" value="1"/>
-      <eLiterals name="MAYBE_BOUND" value="2"/>
+      <eLiterals name="DONT_CARE"/>
+      <eLiterals name="BOUND" value="1"/>
+      <eLiterals name="UNBOUND" value="2"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="BindingType">
       <eLiterals name="NONE"/>
@@ -169,7 +169,7 @@
       <eLiterals name="CREATE" value="1"/>
       <eLiterals name="DESTROY" value="2"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="MultiLinkType">
+    <eClassifiers xsi:type="ecore:EEnum" name="OrderConstraintType">
       <eLiterals name="FIRST"/>
       <eLiterals name="LAST" value="1"/>
       <eLiterals name="DIRECT" value="2"/>
@@ -215,8 +215,10 @@
           eType="#//Expression" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingType" ordered="false"
           lowerBound="1" eType="#//pattern/BindingType" defaultValueLiteral="NONE"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" eType="#//pattern/BindingState"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifier" eType="#//pattern/Modifier"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" lowerBound="1"
+          eType="#//pattern/BindingState"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifier" lowerBound="1"
+          eType="#//pattern/Modifier"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="linkOrderConstraint"
           upperBound="-1" eType="#//pattern/LinkOrderConstraint" containment="true"
           eOpposite="#//pattern/LinkOrderConstraint/referencingObject"/>
@@ -241,12 +243,16 @@
           ordered="false" eType="#//Expression" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingType" ordered="false"
           lowerBound="1" eType="#//pattern/BindingType" defaultValueLiteral="NONE"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" lowerBound="1"
+          eType="#//pattern/BindingState"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifier" lowerBound="1"
+          eType="#//pattern/Modifier"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="LinkOrderConstraint" eSuperTypes="#//ExtendableElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiLinkType" ordered="false"
-          lowerBound="1" eType="#//pattern/MultiLinkType" defaultValueLiteral="DIRECT"/>
+          lowerBound="1" eType="#//pattern/OrderConstraintType" defaultValueLiteral="DIRECT"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="negative" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="secondLink" ordered="false"
