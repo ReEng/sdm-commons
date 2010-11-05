@@ -273,7 +273,11 @@
           eOpposite="#//pattern/ObjectVariable/constraint"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StoryPattern" eSuperTypes="#//pattern/MatchingPattern"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ObjectSetVariable" eSuperTypes="#//pattern/ObjectVariable"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectSetVariable" eSuperTypes="#//pattern/ObjectVariable">
+      <eAnnotations>
+        <details key="documentation" value="Represents a set of objects.&#xD;&#xA;The context for contained Constraints and AttributeAssignments is a single object (e.g., &quot;name = 'abc'&quot;).&#xD;&#xA;After the set has been computed by the pattern matching, every other Constraints or AttributeAssignment can use the ObjectSetVariable as a set (e.g., &quot;osv1->size()&quot;)."/>
+      </eAnnotations>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="activities" nsURI="http://ns.storydriven.org/sdm/activities/0.1.0"
       nsPrefix="sdma">
