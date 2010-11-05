@@ -89,7 +89,8 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="LiteralExpression" eSuperTypes="#//Expression">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="valueType" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valueType" lowerBound="1"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AttributeValueExpression" eSuperTypes="#//Expression">
       <eStructuralFeatures xsi:type="ecore:EReference" name="object" lowerBound="1"
@@ -138,28 +139,20 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableName" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Collaboration" eSuperTypes="#//Expression">
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectSetSizeExpression" eSuperTypes="#//Expression">
       <eAnnotations>
-        <details key="documentation" value="Obsolete. Should be removed (to be discussed)."/>
+        <details key="documentation" value="represents the number of elements in a set"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
-          eType="#//pattern/ObjectVariable" eOpposite="#//pattern/ObjectVariable/sentCollaboration"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
-          upperBound="-1" eType="#//pattern/ObjectVariable" eOpposite="#//pattern/ObjectVariable/receivedCollaboration"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="body" ordered="false"
-          eType="#//Expression" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="forEach" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="set" lowerBound="1" eType="#//pattern/ObjectSetVariable"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="pattern" nsURI="http://ns.storydriven.org/sdm/pattern/0.1.0"
       nsPrefix="sdmp">
     <eClassifiers xsi:type="ecore:EEnum" name="BindingState">
-      <eLiterals name="DONT_CARE"/>
+      <eLiterals name="UNBOUND"/>
       <eLiterals name="BOUND" value="1"/>
-      <eLiterals name="UNBOUND" value="2"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="BindingType">
+    <eClassifiers xsi:type="ecore:EEnum" name="BindingSemantics">
       <eLiterals name="NONE"/>
       <eLiterals name="NEGATIVE" value="1"/>
       <eLiterals name="OPTIONAL" value="2"/>
@@ -188,7 +181,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentPattern" ordered="false"
           eType="#//pattern/MatchingPattern" eOpposite="#//pattern/MatchingPattern/containedPattern"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingType" ordered="false"
-          lowerBound="1" eType="#//pattern/BindingType" defaultValueLiteral="NONE"/>
+          lowerBound="1" eType="#//pattern/BindingSemantics" defaultValueLiteral="NONE"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ObjectVariable" eSuperTypes="#//TypedElement #//NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" ordered="false"
@@ -207,14 +200,10 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="attributeAssignment"
           upperBound="-1" eType="#//pattern/AttributeAssignment" containment="true"
           eOpposite="#//pattern/AttributeAssignment/objectVariable"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="receivedCollaboration"
-          ordered="false" upperBound="-1" eType="#//expressions/Collaboration" eOpposite="#//expressions/Collaboration/target"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sentCollaboration" ordered="false"
-          upperBound="-1" eType="#//expressions/Collaboration" eOpposite="#//expressions/Collaboration/source"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bindingExpression" ordered="false"
           eType="#//Expression" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingType" ordered="false"
-          lowerBound="1" eType="#//pattern/BindingType" defaultValueLiteral="NONE"/>
+          lowerBound="1" eType="#//pattern/BindingSemantics" defaultValueLiteral="NONE"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" lowerBound="1"
           eType="#//pattern/BindingState"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifier" lowerBound="1"
@@ -242,7 +231,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="qualifierExpression"
           ordered="false" eType="#//Expression" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingType" ordered="false"
-          lowerBound="1" eType="#//pattern/BindingType" defaultValueLiteral="NONE"/>
+          lowerBound="1" eType="#//pattern/BindingSemantics" defaultValueLiteral="NONE"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" lowerBound="1"
           eType="#//pattern/BindingState"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifier" lowerBound="1"
@@ -301,6 +290,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="OperationExtension" eSuperTypes="#//Extension #//calls/Callable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivity" ordered="false"
           eType="#//activities/Activity" containment="true" eOpposite="#//activities/Activity/owningOperation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//CommentableElement #//calls/Callable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityNode" ordered="false"
@@ -341,11 +331,15 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="forEach" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DecisionNode" eSuperTypes="#//activities/ActivityNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="JunctionNode" eSuperTypes="#//activities/ActivityNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="StartNode" eSuperTypes="#//activities/ActivityNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="StopNode" eSuperTypes="#//activities/ActivityNode">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="flowStopOnly" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations>
+          <details key="documentation" value="true if subactivity is stopped, but not the whole control flow"/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="returnValue" ordered="false"
           eType="#//Expression" containment="true"/>
     </eClassifiers>
