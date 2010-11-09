@@ -428,14 +428,14 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="calls" nsURI="http://ns.storydriven.org/sdm/calls/0.1.0" nsPrefix="sdmc">
-    <eClassifiers xsi:type="ecore:EClass" name="Invocation" eSuperTypes="#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Invocation" abstract="true" eSuperTypes="#//CommentableElement">
       <eAnnotations>
         <details key="documentation" value="Superclass for invocations of behavior which is specified elsewhere, e.g. in methods (MethodCall) or activities (ActivityCallNode). An invocation has one parameter binding for each parameter (in or out) of the called method/activity."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedParameterBindings"
           upperBound="-1" eType="#//calls/ParameterBinding" containment="true" eOpposite="#//calls/ParameterBinding/owningInvocation"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Callable" eSuperTypes="#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Callable" abstract="true" eSuperTypes="#//CommentableElement">
       <eAnnotations>
         <details key="documentation" value="An entity which can be called by an Invocation.&#xD;&#xA;A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions can only have one out parameter."/>
       </eAnnotations>
