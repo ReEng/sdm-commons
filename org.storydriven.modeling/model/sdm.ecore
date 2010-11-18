@@ -3,6 +3,9 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modeling"
     nsURI="http://ns.storydriven.org/sdm/0.1.0" nsPrefix="sdm">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="TypedElement" abstract="true" eSuperTypes="#//ExtendableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"
@@ -56,7 +59,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="CommentableElement" abstract="true"
       eSuperTypes="#//ExtendableElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/expressions/0.1.0"
       nsPrefix="sdme">
@@ -170,23 +173,9 @@
       <eLiterals name="INDIRECT" value="3"/>
       <eLiterals name="INDEX" value="4"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MatchingPattern" eSuperTypes="#//CommentableElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="objectVariable" ordered="false"
-          upperBound="-1" eType="#//pattern/ObjectVariable" containment="true" eOpposite="#//pattern/ObjectVariable/pattern"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="linkVariable" upperBound="-1"
-          eType="#//pattern/LinkVariable" containment="true" eOpposite="#//pattern/LinkVariable/pattern"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" ordered="false"
-          upperBound="-1" eType="#//pattern/Constraint" containment="true" eOpposite="#//pattern/Constraint/pattern"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="containedPattern" ordered="false"
-          upperBound="-1" eType="#//pattern/MatchingPattern" containment="true" eOpposite="#//pattern/MatchingPattern/parentPattern"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parentPattern" ordered="false"
-          eType="#//pattern/MatchingPattern" eOpposite="#//pattern/MatchingPattern/containedPattern"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingType" ordered="false"
-          lowerBound="1" eType="#//pattern/BindingSemantics" defaultValueLiteral="NONE"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ObjectVariable" eSuperTypes="#//TypedElement #//NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" ordered="false"
-          lowerBound="1" eType="#//pattern/MatchingPattern" eOpposite="#//pattern/MatchingPattern/objectVariable"/>
+          lowerBound="1" eType="#//pattern/StoryPattern" eOpposite="#//pattern/StoryPattern/objectVariable"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="incomingLink" ordered="false"
           upperBound="-1" eType="#//pattern/LinkVariable" eOpposite="#//pattern/LinkVariable/target"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingLink" ordered="false"
@@ -213,9 +202,23 @@
           upperBound="-1" eType="#//pattern/LinkOrderConstraint" containment="true"
           eOpposite="#//pattern/LinkOrderConstraint/referencingObject"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StoryPattern" eSuperTypes="#//CommentableElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="objectVariable" ordered="false"
+          upperBound="-1" eType="#//pattern/ObjectVariable" containment="true" eOpposite="#//pattern/ObjectVariable/pattern"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="linkVariable" upperBound="-1"
+          eType="#//pattern/LinkVariable" containment="true" eOpposite="#//pattern/LinkVariable/pattern"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" ordered="false"
+          upperBound="-1" eType="#//pattern/Constraint" containment="true" eOpposite="#//pattern/Constraint/pattern"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="containedPattern" ordered="false"
+          upperBound="-1" eType="#//pattern/StoryPattern" containment="true" eOpposite="#//pattern/StoryPattern/parentPattern"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentPattern" ordered="false"
+          eType="#//pattern/StoryPattern" eOpposite="#//pattern/StoryPattern/containedPattern"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingType" ordered="false"
+          lowerBound="1" eType="#//pattern/BindingSemantics" defaultValueLiteral="NONE"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="LinkVariable" eSuperTypes="#//NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
-          eType="#//pattern/MatchingPattern" eOpposite="#//pattern/MatchingPattern/linkVariable"/>
+          eType="#//pattern/StoryPattern" eOpposite="#//pattern/StoryPattern/linkVariable"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
           lowerBound="1" eType="#//pattern/ObjectVariable" eOpposite="#//pattern/ObjectVariable/incomingLink"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
@@ -267,12 +270,19 @@
     <eClassifiers xsi:type="ecore:EClass" name="Constraint">
       <eStructuralFeatures xsi:type="ecore:EReference" name="constraintExpression"
           lowerBound="1" eType="#//Expression" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//pattern/MatchingPattern"
-          eOpposite="#//pattern/MatchingPattern/constraint"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//pattern/StoryPattern"
+          eOpposite="#//pattern/StoryPattern/constraint"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="objectVariable" eType="#//pattern/ObjectVariable"
           eOpposite="#//pattern/ObjectVariable/constraint"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StoryPattern" eSuperTypes="#//pattern/MatchingPattern"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MatchingPattern" eSuperTypes="#//pattern/StoryPattern">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="NoModifierInMatchingPattern"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="NoModifierInMatchingPattern" value="self.objectVariable->forAll(v:ObjectVariable | v.modifier = Modifier::NONE) and self.linkVariable->forAll(v:LinkVariable | v.modifier = Modifier::NONE)"/>
+      </eAnnotations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ObjectSetVariable" eSuperTypes="#//pattern/ObjectVariable">
       <eAnnotations>
         <details key="documentation" value="Represents a set of objects.&#xD;&#xA;The context for contained Constraints and AttributeAssignments is a single object (e.g., &quot;name = 'abc'&quot;).&#xD;&#xA;After the set has been computed by the pattern matching, every other Constraints or AttributeAssignment can use the ObjectSetVariable as a set (e.g., &quot;osv1->size()&quot;)."/>
@@ -379,11 +389,11 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MatchingStoryNode" eSuperTypes="#//activities/StoryNode">
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPattern" ordered="false"
-          lowerBound="1" eType="#//pattern/MatchingPattern" containment="true"/>
+          lowerBound="1" eType="#//pattern/StoryPattern" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ModifyingStoryNode" eSuperTypes="#//activities/StoryNode">
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRule" lowerBound="1"
-          eType="#//pattern/StoryPattern" containment="true"/>
+          eType="#//pattern/MatchingPattern" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariable">
       <eAnnotations>
@@ -399,7 +409,7 @@
   </eSubpackages>
   <eSubpackages name="templates" nsURI="http://ns.storydriven.org/sdm/templates/0.1.0"
       nsPrefix="sdmt">
-    <eClassifiers xsi:type="ecore:EClass" name="ObjectPatternTemplate" eSuperTypes="#//pattern/MatchingPattern">
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectPatternTemplate" eSuperTypes="#//pattern/StoryPattern">
       <eStructuralFeatures xsi:type="ecore:EReference" name="typeParameter" ordered="false"
           upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"
           containment="true"/>
@@ -450,8 +460,8 @@
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
           eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="inParameterOwner" lowerBound="1"
-          eType="#//calls/Callable" eOpposite="#//calls/Callable/inParameters"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="inParameterOwner" eType="#//calls/Callable"
+          eOpposite="#//calls/Callable/inParameters"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="outParameterOwner" eType="#//calls/Callable"
           eOpposite="#//calls/Callable/outParameters"/>
     </eClassifiers>
