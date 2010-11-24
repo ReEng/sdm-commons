@@ -22,16 +22,20 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rule" upperBound="-1" eType="#//TripleGraphGrammarRule"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" upperBound="-1"
-        eType="#//Domain" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typedModel" upperBound="-1"
         eType="#//TypedModel" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TripleGraphGrammarRule" eSuperTypes="sdm.ecore#//pattern/StoryPattern"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TripleGraphGrammarRule" eSuperTypes="sdm.ecore#//pattern/StoryPattern">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" upperBound="-1"
+        eType="#//Domain" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TripleGraphGrammarAxiom" eSuperTypes="#//TripleGraphGrammarRule"/>
   <eClassifiers xsi:type="ecore:EClass" name="Domain" eSuperTypes="#//TypedModel sdm.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="typedModel" lowerBound="1"
         upperBound="-1" eType="#//TypedModel"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TypedModel" eSuperTypes="sdm.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedModel" eSuperTypes="sdm.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packages" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+  </eClassifiers>
 </ecore:EPackage>
