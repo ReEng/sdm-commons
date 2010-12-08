@@ -16,10 +16,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="domain" lowerBound="1"
         eType="#//Domain"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TGGLinkVariable" eSuperTypes="sdm.ecore#//pattern/LinkVariable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TGGLinkVariable" eSuperTypes="sdm.ecore#//pattern/LinkVariable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" lowerBound="1"
+        eType="#//Domain" changeable="false" transient="true" derived="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TripleGraphGrammar" eSuperTypes="sdm.ecore#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="axoim" lowerBound="1" eType="#//TripleGraphGrammarAxiom"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="axiom" lowerBound="1" upperBound="-1"
+        eType="#//TripleGraphGrammarAxiom" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rule" upperBound="-1" eType="#//TripleGraphGrammarRule"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typedModel" upperBound="-1"
@@ -32,7 +35,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="TripleGraphGrammarAxiom" eSuperTypes="#//TripleGraphGrammarRule"/>
   <eClassifiers xsi:type="ecore:EClass" name="Domain" eSuperTypes="#//TypedModel sdm.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="typedModel" lowerBound="1"
-        upperBound="-1" eType="#//TypedModel"/>
+        eType="#//TypedModel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypedModel" eSuperTypes="sdm.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="packages" lowerBound="1"
