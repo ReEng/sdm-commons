@@ -262,6 +262,11 @@
           eOpposite="#//patterns/StoryPattern/constraint"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="objectVariable" eType="#//patterns/ObjectVariable"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ContainmentRelation" eSuperTypes="#//patterns/AbstractLinkVariable">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the containment of an object in a set. Will be displayed by a line having a circle with a plus inside at the end of the container. Create modifier specifies that the object will be added to the container, delete that it will be removed, and none that it will be checked to be contained."/>
+      </eAnnotations>
+    </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/patterns/expressions/0.1.0"
         nsPrefix="sdmpe">
       <eClassifiers xsi:type="ecore:EClass" name="AttributeValueExpression" eSuperTypes="#//Expression">
