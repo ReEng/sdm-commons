@@ -348,6 +348,8 @@
           <details key="documentation" value="References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ActivityNode" abstract="true" eSuperTypes="#//CommentableElement #//NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="owningActivity" ordered="false"
@@ -454,38 +456,32 @@
         <details key="documentation" value="Superclass for invocations of behavior which is specified elsewhere, e.g. in methods (MethodCall) or activities (ActivityCallNode). An invocation has one parameter binding for each parameter (in or out) of the called method/activity."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedParameterBindings"
-          upperBound="-1" eType="#//calls/ParameterBinding" containment="true" eOpposite="#//calls/ParameterBinding/owningInvocation"/>
+          upperBound="-1" eType="#//calls/ParameterBinding" containment="true" eOpposite="#//calls/ParameterBinding/invocation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callee" eType="#//calls/Callable"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Callable" abstract="true" eSuperTypes="#//CommentableElement">
       <eAnnotations>
         <details key="documentation" value="An entity which can be called by an Invocation.&#xD;&#xA;A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions can only have one out parameter."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="inParameters" upperBound="-1"
-          eType="#//calls/Parameter" containment="true" eOpposite="#//calls/Parameter/inParameterOwner"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="outParameters" upperBound="-1"
-          eType="#//calls/Parameter" containment="true" eOpposite="#//calls/Parameter/outParameterOwner"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//NamedElement">
-      <eAnnotations>
-        <details key="documentation" value="A parameter defined by a Callable. Can either be an in or out parameter, signified by the corresponding reference to the owning Callable (only one of those references can be assigned at any time).&#xD;&#xA;A parameter is typed by an EClassifier."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="inParameterOwner" eType="#//calls/Callable"
-          eOpposite="#//calls/Callable/inParameters"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="outParameterOwner" eType="#//calls/Callable"
-          eOpposite="#//calls/Callable/outParameters"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="in" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
+          changeable="false" derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="out" upperBound="-1"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
+          changeable="false" derived="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="#//CommentableElement">
       <eAnnotations>
         <details key="documentation" value="Binds a parameter to a certain value for a given invocation. The value of the parameter is represented by an expression."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningInvocation" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="invocation" lowerBound="1"
           eType="#//calls/Invocation" eOpposite="#//calls/Invocation/ownedParameterBindings"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedValueExpression"
-          lowerBound="1" eType="#//Expression" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
-          eType="#//calls/Parameter"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valueExpression" lowerBound="1"
+          eType="#//Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OpaqueCallable" eSuperTypes="#//calls/Callable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callExpression" lowerBound="1"
+          eType="#//calls/expressions/MethodCallExpression" eOpposite="#//calls/expressions/MethodCallExpression/opaqueCallable"/>
     </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/calls/expressions/0.1.0"
         nsPrefix="sdmce">
@@ -493,9 +489,11 @@
         <eAnnotations>
           <details key="documentation" value="Represents the invocation of a method."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="targetObject" eType="#//patterns/ObjectVariable"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="callExpression" lowerBound="1"
             eType="#//Expression"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="opaqueCallable" eType="#//calls/OpaqueCallable"
+            containment="true" eOpposite="#//calls/OpaqueCallable/callExpression"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Expression"/>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
