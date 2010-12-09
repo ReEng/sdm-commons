@@ -428,4 +428,10 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__HiwoALhEeCn9NGQzmQquw" id="(0.8434782608695652,0.6166666666666667)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__HiwoQLhEeCn9NGQzmQquw" id="(0.5,0.06976744186046512)"/>
   </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_kf4TEANxEeCMFeH04-oBFg" type="3003" source="_TMafEALgEeCn9NGQzmQquw" target="_fLOP4ALfEeCn9NGQzmQquw">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_kf4TEQNxEeCMFeH04-oBFg" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_kf4TEgNxEeCMFeH04-oBFg" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kf4TEwNxEeCMFeH04-oBFg" points="[-75, 1, 165, 170]$[-209, 1, 31, 170]$[-209, -148, 31, 21]"/>
+  </edges>
 </notation:Diagram>
