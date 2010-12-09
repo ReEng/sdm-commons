@@ -62,8 +62,20 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Represents a variable which can be, for example, an object variable, a link variable, an attribute, or any other kind of variable."/>
+      <details key="documentation" value="Represents a variable which can be, for example, an object variable, an attribute, or any other kind of variable."/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is a derived attribute representing the name of the variable."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"
+        changeable="false" transient="true" unsettable="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is a derived attribute representing the type of the variable."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/expressions/0.1.0"
       nsPrefix="sdme">
@@ -303,7 +315,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="secondLinkOrderConstraint"
           ordered="false" upperBound="-1" eType="#//patterns/LinkOrderConstraint"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="LinkVariable" eSuperTypes="#//patterns/AbstractLinkVariable #//Variable">
+    <eClassifiers xsi:type="ecore:EClass" name="LinkVariable" eSuperTypes="#//patterns/AbstractLinkVariable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEnd" ordered="false"
           lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"
           volatile="true" transient="true" derived="true"/>
