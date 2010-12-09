@@ -6,7 +6,6 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//TypedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="TypedElement" abstract="true" eSuperTypes="#//ExtendableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"
         changeable="false" transient="true" unsettable="true" derived="true"/>
@@ -64,59 +63,138 @@
   <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/expressions/0.1.0"
       nsPrefix="sdme">
     <eClassifiers xsi:type="ecore:EEnum" name="LogicOperator">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the operators for bninary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression."/>
+      </eAnnotations>
       <eLiterals name="AND"/>
       <eLiterals name="OR" value="1"/>
       <eLiterals name="XOR" value="2"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ComparingOperator">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the operators for comparing expressions."/>
+      </eAnnotations>
       <eLiterals name="LESS"/>
-      <eLiterals name="LESS_OR_EQUAL" value="1" literal=""/>
+      <eLiterals name="LESS_OR_EQUAL" value="1" literal="LESS_OR_EQUAL"/>
       <eLiterals name="EQUAL" value="2"/>
       <eLiterals name="GREATER_OR_EQUAL" value="3"/>
       <eLiterals name="GREATER" value="4"/>
       <eLiterals name="UNEQUAL" value="5"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ArithmeticOperator">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the operators for arithmetic expressions."/>
+      </eAnnotations>
       <eLiterals name="PLUS"/>
       <eLiterals name="MINUS" value="1"/>
       <eLiterals name="TIMES" value="2"/>
       <eLiterals name="DIVIDE" value="3"/>
       <eLiterals name="MODULO" value="4"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TextualExpression" eSuperTypes="#//Expression">
+    <eClassifiers xsi:type="ecore:EClass" name="TextualExpression" eSuperTypes="#//expressions/Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents any expression in a textual language embedded into Story Diagrams, e.g. OCL or Java ."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="expressionText" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Holds the expression, e.g. in OCL or Java."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="languageVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="String representation of the used language which has to be unique. Examples are OCL and Java."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="languageVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="String representation of the used language's version. The format is &lt;Major>.&lt;Minor>[.&lt;Revision>[.&lt;Build>]]&#xD;&#xA;Examples: 1.4 or 3.0.1 or 1.0.2.20101208."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="LiteralExpression" eSuperTypes="#//Expression">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LiteralExpression" eSuperTypes="#//expressions/Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents any literal, i.e. a value whose type is an EDataType. Literals are, for example, 5, 3.14, 'c', &quot;text&quot;, true."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="String representation of the value, e.g. &quot;5&quot;, &quot;3.14&quot;, &quot;c&quot;, &quot;text&quot;, or &quot;true&quot;."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="valueType" lowerBound="1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType"/>
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The literal's type, e.g. EInt, EString, etc."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" abstract="true"
-        eSuperTypes="#//Expression">
+        eSuperTypes="#//expressions/Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents any binary expression like v &lt; 5 or x + 7."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="leftExpression" lowerBound="1"
-          eType="#//Expression" containment="true"/>
+          eType="#//expressions/Expression" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents the first operand of a binary expression, e.g. x in the expression x &lt; 5."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="rightExpression" lowerBound="1"
-          eType="#//Expression" containment="true"/>
+          eType="#//expressions/Expression" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents the second operand of a binary expression, e.g. 5 in the expression x &lt; 5."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="NotExpression" eSuperTypes="#//Expression">
+    <eClassifiers xsi:type="ecore:EClass" name="NotExpression" eSuperTypes="#//expressions/Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents a negated expression, e.g. NOT (a &lt; 5)."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="negatedExpression" lowerBound="1"
-          eType="#//Expression" containment="true"/>
+          eType="#//expressions/Expression" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents the operand of a NotExpression, e.g. a &lt; 5 in NOT (a &lt; 5)."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BinaryLogicExpression" eSuperTypes="#//expressions/BinaryExpression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents binary, logic expressions like a AND b and a OR b."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
-          eType="#//expressions/LogicOperator"/>
+          eType="#//expressions/LogicOperator">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specifies the expression's logic operator, e.g. AND, OR, or XOR."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ComparisonExpression" eSuperTypes="#//expressions/BinaryExpression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents comparing expressions like a &lt; 5 or a >= 7."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
-          eType="#//expressions/ComparingOperator"/>
+          eType="#//expressions/ComparingOperator">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specifies the expression's comparing operator, e.g. &lt;, >=, !=."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ArithmeticExpression" eSuperTypes="#//expressions/BinaryExpression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents arithmetic expressions like a + 5 or a * 7."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
-          eType="#//expressions/ArithmeticOperator"/>
+          eType="#//expressions/ArithmeticOperator">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specifies the expression's arithmetic operator, e.g. +, -, *, /, or MODULO."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//TypedElement #//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents any expression in an embedded textual language, e.g. OCL or Java. An expression's type is dynamically derived by an external mechanism (see TypedElement)."/>
+      </eAnnotations>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="patterns" nsURI="http://ns.storydriven.org/sdm/patterns/0.1.0"
@@ -176,7 +254,7 @@
           lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"
           volatile="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bindingExpression" ordered="false"
-          eType="#//Expression" containment="true"/>
+          eType="#//expressions/Expression" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="incomingLink" ordered="false"
           upperBound="-1" eType="#//patterns/AbstractLinkVariable"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="linkOrderConstraint"
@@ -227,12 +305,12 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="targetEnd" ordered="false"
           eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="qualifierExpression"
-          ordered="false" eType="#//Expression" containment="true"/>
+          ordered="false" eType="#//expressions/Expression" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="LinkOrderConstraint" eSuperTypes="#//ExtendableElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiLinkType" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintType" ordered="false"
           lowerBound="1" eType="#//patterns/OrderConstraintType" defaultValueLiteral="DIRECT"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="negative" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -244,20 +322,20 @@
           eType="#//patterns/ObjectVariable"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Path" eSuperTypes="#//patterns/AbstractLinkVariable">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPathExpression"
-          ordered="false" lowerBound="1" eType="#//Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pathExpression" ordered="false"
+          lowerBound="1" eType="#//expressions/Expression" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AttributeAssignment">
       <eStructuralFeatures xsi:type="ecore:EReference" name="objectVariable" lowerBound="1"
           eType="#//patterns/ObjectVariable"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedValueExpression"
-          lowerBound="1" eType="#//Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valueExpression" lowerBound="1"
+          eType="#//expressions/Expression" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
           eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Constraint">
       <eStructuralFeatures xsi:type="ecore:EReference" name="constraintExpression"
-          lowerBound="1" eType="#//Expression" containment="true"/>
+          lowerBound="1" eType="#//expressions/Expression" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//patterns/StoryPattern"
           eOpposite="#//patterns/StoryPattern/constraint"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="objectVariable" eType="#//patterns/ObjectVariable"/>
@@ -269,22 +347,44 @@
     </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/patterns/expressions/0.1.0"
         nsPrefix="sdmpe">
-      <eClassifiers xsi:type="ecore:EClass" name="AttributeValueExpression" eSuperTypes="#//Expression">
+      <eClassifiers xsi:type="ecore:EClass" name="AttributeValueExpression" eSuperTypes="#//expressions/Expression">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents the value of an object's attribute, e.g. obj.a for an object obj and an attribute a."/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="object" lowerBound="1"
-            eType="#//patterns/ObjectVariable"/>
+            eType="#//patterns/ObjectVariable">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the object variable whose attribute value is represented by this expression."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
-            eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
+            eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the object's attribute whose attribute value is represented by this expression."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ObjectVariableExpression" eSuperTypes="#//Expression">
+      <eClassifiers xsi:type="ecore:EClass" name="ObjectVariableExpression" eSuperTypes="#//expressions/Expression">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents the reference to an object in an expression, i.e. the value of an object variable."/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="object" lowerBound="1"
-            eType="#//patterns/ObjectVariable"/>
+            eType="#//patterns/ObjectVariable">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the object variable that holds the reference to be represented by this expression."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ObjectSetSizeExpression" eSuperTypes="#//Expression">
-        <eAnnotations>
-          <details key="documentation" value="represents the number of elements in a set"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ObjectSetSizeExpression" eSuperTypes="#//expressions/Expression">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents the number of elements in a set or more precisely: the number of elements in the set of objects that is represented by an object set variable. For example, if you have an object set variable objects, then this expression would represent something like objects.size()."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="set" lowerBound="1"
-            eType="#//patterns/ObjectSetVariable"/>
+            eType="#//patterns/ObjectSetVariable">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the object set variable whose number of set elements is to be represented by this expression."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
@@ -302,7 +402,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="boundParameter" ordered="false"
           lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bindingExpression" ordered="false"
-          lowerBound="1" eType="#//Expression" containment="true"/>
+          lowerBound="1" eType="#//expressions/Expression" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="propertyBinding" ordered="false"
           upperBound="-1" eType="#//templates/PropertyBinding" containment="true"
           eOpposite="#//templates/PropertyBinding/templateBinding"/>
@@ -313,7 +413,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="boundProperty" ordered="false"
           lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bindingExpression" ordered="false"
-          lowerBound="1" eType="#//Expression" containment="true"/>
+          lowerBound="1" eType="#//expressions/Expression" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="templateBinding" ordered="false"
           lowerBound="1" eType="#//templates/TemplateBinding" eOpposite="#//templates/TemplateBinding/propertyBinding"/>
     </eClassifiers>
@@ -371,14 +471,14 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="guardType" ordered="false"
           lowerBound="1" eType="#//activities/TransitionGuard" defaultValueLiteral="NONE"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="guardExpression" ordered="false"
-          eType="#//Expression" containment="true">
+          eType="#//expressions/Expression" containment="true">
         <eAnnotations>
           <details key="documentation" value="Points to the boolean expression in case of boolean transition guard."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="guardException" upperBound="-1"
           eType="#//activities/ExceptionVariable" containment="true" eOpposite="#//activities/ExceptionVariable/activityEdge">
-        <eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Declares variables representing the Exceptions that lead to firing this transition."/>
         </eAnnotations>
       </eStructuralFeatures>
@@ -399,22 +499,22 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="returnValue" ordered="false"
-          eType="#//Expression" containment="true"/>
+          eType="#//expressions/Expression" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ActivityCallNode" eSuperTypes="#//activities/ActivityNode #//calls/Invocation">
-      <eAnnotations>
-        <details key="documentation" value="The TransformationCallNode is a special ActivityNode which represents the calling of another story diagram within an activity.&#xD;&#xA;To support polymorphic dispatching, multiple activities can be assigned to it (all of which must have the same call signature, i.e. matching in and out parameters). All assigned activities are then called in the given order and the first one whose precondition is fulfilled is executed (Chain of Responsibilty)."/>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ActivityCallNode is a special ActivityNode which represents the calling of another story diagram within an activity.&#xD;&#xA;To support polymorphic dispatching, multiple activities can be assigned to it (all of which must have the same call signature, i.e. matching in and out parameters). All assigned activities are then called in the given order and the first one whose precondition is fulfilled is executed (Chain of Responsibilty)."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="callee" lowerBound="1"
           upperBound="-1" eType="#//activities/Activity">
-        <eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="References all activities that are to be considered for the polymorphic dispatching of the call. All activities must have the same call signature."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StatementNode" eSuperTypes="#//activities/ActivityNode">
       <eStructuralFeatures xsi:type="ecore:EReference" name="statementExpression"
-          ordered="false" lowerBound="1" eType="#//Expression" containment="true"/>
+          ordered="false" lowerBound="1" eType="#//expressions/Expression" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StructuredNode" eSuperTypes="#//activities/ActivityNode">
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityNode" ordered="false"
@@ -429,24 +529,40 @@
           eType="#//patterns/MatchingPattern" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariable">
-      <eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Declares a variable representing an Exception that leads to firing a transition (ActivityEdge)."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableName" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specifies the name of the declared exception variable."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="exceptionType" ordered="false"
-          upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+          upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specifies the type of the declared exception variable."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="activityEdge" lowerBound="1"
-          eType="#//activities/ActivityEdge" eOpposite="#//activities/ActivityEdge/guardException"/>
+          eType="#//activities/ActivityEdge" eOpposite="#//activities/ActivityEdge/guardException">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specifies the transition (activity edge) where the exception variable is declared."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/activities/expressions/0.1.0"
         nsPrefix="sdmae">
-      <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariableExpression" eSuperTypes="#//Expression">
-        <eAnnotations>
-          <details key="documentation" value="Represents the Exception variable declared as a transition guard."/>
+      <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariableExpression" eSuperTypes="#//expressions/Expression">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents the value of an exception variable declared as a transition guard (the guard of an activity edge)."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="exceptionVariable"
-            lowerBound="1" eType="#//activities/ExceptionVariable"/>
+            lowerBound="1" eType="#//activities/ExceptionVariable">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the exception variable that this expression refers to. If you have an activity edge that catches an exception e, then this expression can represent the reference e."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
@@ -476,7 +592,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="invocation" lowerBound="1"
           eType="#//calls/Invocation" eOpposite="#//calls/Invocation/ownedParameterBindings"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="valueExpression" lowerBound="1"
-          eType="#//Expression" containment="true"/>
+          eType="#//expressions/Expression" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="OpaqueCallable" eSuperTypes="#//calls/Callable">
@@ -488,18 +604,16 @@
     </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/calls/expressions/0.1.0"
         nsPrefix="sdmce">
-      <eClassifiers xsi:type="ecore:EClass" name="MethodCallExpression" eSuperTypes="#//Expression #//calls/Invocation">
-        <eAnnotations>
-          <details key="documentation" value="Represents the invocation of a method."/>
-        </eAnnotations>
+      <eClassifiers xsi:type="ecore:EClass" name="MethodCallExpression" eSuperTypes="#//expressions/Expression #//calls/Invocation">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A MethodCallEpression represents the direct invocation of a method. This can either be a method which is explicitly modeled as an EOperation in a class diagram (referenced by the OperationExtension) or an unmodeled method in an external library (referenced by an OpaqueCallable). Therefore, a MethodCallExpression references either an OperationExtension or an OpaqueCallable."/>
+          <details key="documentation" value="Represents the direct invocation of a method. This can either be a method which is explicitly modeled as an EOperation in a class diagram (referenced by the OperationExtension) or an unmodeled method in an external library (referenced by an OpaqueCallable). Therefore, a MethodCallExpression references either an OperationExtension or an OpaqueCallable."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="callExpression" lowerBound="1"
-            eType="#//Expression"/>
+            eType="#//expressions/Expression" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="opaqueCallable" eType="#//calls/OpaqueCallable"
             containment="true" eOpposite="#//calls/OpaqueCallable/callExpression"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Expression"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//expressions/Expression"
+            containment="true"/>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
