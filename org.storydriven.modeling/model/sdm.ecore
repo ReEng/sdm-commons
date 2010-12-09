@@ -449,6 +449,12 @@
       <eLiterals name="FINALLY" value="8"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="OperationExtension" eSuperTypes="#//Extension #//calls/Callable">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="NumberOfOutParams"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="NumberOfOutParams" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivity" ordered="false"
           eType="#//activities/Activity" containment="true" eOpposite="#//activities/Activity/owningOperation"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
@@ -615,6 +621,12 @@
     <eClassifiers xsi:type="ecore:EClass" name="OpaqueCallable" eSuperTypes="#//calls/Callable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An OpaqueCallable represents an external method which is not explicitly modeled (e.g. a method in an external library). Because it is not contained anywhere in the model it is directly referenced by and contained in the MethodCallExpression."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="NumberOfOutParams"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="NumberOfOutParams" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="callExpression" lowerBound="1"
           eType="#//calls/expressions/MethodCallExpression" eOpposite="#//calls/expressions/MethodCallExpression/opaqueCallable"/>
