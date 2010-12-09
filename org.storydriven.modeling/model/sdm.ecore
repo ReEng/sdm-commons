@@ -60,6 +60,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Represents a variable which can be, for example, an object variable, a link variable, an attribute, or any other kind of variable."/>
+    </eAnnotations>
+  </eClassifiers>
   <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/expressions/0.1.0"
       nsPrefix="sdme">
     <eClassifiers xsi:type="ecore:EEnum" name="LogicOperator">
@@ -249,7 +254,7 @@
         <details key="NoModifierInMatchingPattern" value="self.objectVariable->forAll(v:ObjectVariable | v.modifier = Modifier::NONE) and self.linkVariable->forAll(v:LinkVariable | v.modifier = Modifier::NONE)"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ObjectVariable" eSuperTypes="#//TypedElement #//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectVariable" eSuperTypes="#//TypedElement #//NamedElement #//Variable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" ordered="false"
           lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"
           volatile="true"/>
@@ -298,7 +303,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="secondLinkOrderConstraint"
           ordered="false" upperBound="-1" eType="#//patterns/LinkOrderConstraint"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="LinkVariable" eSuperTypes="#//patterns/AbstractLinkVariable">
+    <eClassifiers xsi:type="ecore:EClass" name="LinkVariable" eSuperTypes="#//patterns/AbstractLinkVariable #//Variable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEnd" ordered="false"
           lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"
           volatile="true" transient="true" derived="true"/>
@@ -444,7 +449,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="owningOperation" ordered="false"
           eType="#//activities/OperationExtension" eOpposite="#//activities/OperationExtension/ownedActivity"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" eType="#//activities/StoryNode">
-        <eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links."/>
         </eAnnotations>
       </eStructuralFeatures>
@@ -472,7 +477,7 @@
           lowerBound="1" eType="#//activities/TransitionGuard" defaultValueLiteral="NONE"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="guardExpression" ordered="false"
           eType="#//expressions/Expression" containment="true">
-        <eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Points to the boolean expression in case of boolean transition guard."/>
         </eAnnotations>
       </eStructuralFeatures>
@@ -494,7 +499,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="StopNode" eSuperTypes="#//activities/ActivityNode">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="flowStopOnly" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="true if subactivity is stopped, but not the whole control flow"/>
         </eAnnotations>
       </eStructuralFeatures>
@@ -528,7 +533,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRule" lowerBound="1"
           eType="#//patterns/MatchingPattern" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariable">
+    <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariable" eSuperTypes="#//Variable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Declares a variable representing an Exception that leads to firing a transition (ActivityEdge)."/>
       </eAnnotations>
@@ -601,6 +606,12 @@
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="callExpression" lowerBound="1"
           eType="#//calls/expressions/MethodCallExpression" eOpposite="#//calls/expressions/MethodCallExpression/opaqueCallable"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterExtension" eSuperTypes="#//Extension #//Variable">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents an EParameter and adds functionality to it, especially beiing subtype of Variable."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
     </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/calls/expressions/0.1.0"
         nsPrefix="sdmce">
