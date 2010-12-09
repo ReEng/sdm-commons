@@ -528,7 +528,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The ActivityCallNode is a special ActivityNode which represents the calling of another story diagram within an activity.&#xD;&#xA;To support polymorphic dispatching, multiple activities can be assigned to it (all of which must have the same call signature, i.e. matching in and out parameters). All assigned activities are then called in the given order and the first one whose precondition is fulfilled is executed (Chain of Responsibilty)."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="callee" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="calledActivity" lowerBound="1"
           upperBound="-1" eType="#//activities/Activity">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="References all activities that are to be considered for the polymorphic dispatching of the call. All activities must have the same call signature."/>
@@ -600,7 +600,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Callable" abstract="true" eSuperTypes="#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An entity which can be called by an Invocation. A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions and OpaqueCallables can only have one out parameter."/>
+        <details key="documentation" value="An entity which can be called by an Invocation. A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions and OpaqueCallables can only have one out parameter (This is enforced by an OCL constraint)."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="in" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
           changeable="false" derived="true"/>
@@ -641,14 +641,20 @@
         nsPrefix="sdmce">
       <eClassifiers xsi:type="ecore:EClass" name="MethodCallExpression" eSuperTypes="#//expressions/Expression #//calls/Invocation">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represents the direct invocation of a method. This can either be a method which is explicitly modeled as an EOperation in a class diagram (referenced by the OperationExtension) or an unmodeled method in an external library (referenced by an OpaqueCallable). Therefore, a MethodCallExpression references either an OperationExtension or an OpaqueCallable."/>
+          <details key="documentation" value="A MethodCallEpression represents the direct invocation of a method. This can either be a method which is explicitly modeled as an EOperation in a class diagram (referenced by the OperationExtension) or an unmodeled method in an external library (referenced by an OpaqueCallable). Therefore, a MethodCallExpression references either an OperationExtension (indirectly via the callee role between Invocation and Callable) or an OpaqueCallable."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="callExpression" lowerBound="1"
-            eType="#//expressions/Expression" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="opaqueCallable" eType="#//calls/OpaqueCallable"
-            containment="true" eOpposite="#//calls/OpaqueCallable/callExpression"/>
+            containment="true" eOpposite="#//calls/OpaqueCallable/callExpression">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This containment reference is a helper construct because the OpaqueCallable has to be contained somewhere. A MethodCallExpression (being an Invocation) could also reference an OpaqueCallable (being a Callable) via the callee reference but then the OpaqueCallable would not be contained anywhere in the model."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//expressions/Expression"
-            containment="true"/>
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A MethodCallExpression references an expression instead of a target object to allow the determination of the call target by an expression. This can be handy when a method should be called e.g. on the return value of another method (as in a.b().c() ). Then the method call of c() would be modeled by a MethodCallExpression with the callExpression a.b(), which again is a MethodCallExpression itself."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
