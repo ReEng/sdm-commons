@@ -6,17 +6,18 @@
  */
 package org.storydriven.modeling.activities;
 
-import org.storydriven.modeling.Expression;
+import org.storydriven.modeling.expressions.Expression;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Statement Node</b></em>'. <!-- end-user-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.storydriven.modeling.activities.StatementNode#getStatementExpression <em>Statement Expression</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.StatementNode#getStatementExpression <em>Statement Expression</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.storydriven.modeling.activities.ActivitiesPackage#getStatementNode()
  * @model
  * @generated
@@ -24,12 +25,12 @@ import org.storydriven.modeling.Expression;
 public interface StatementNode extends ActivityNode
 {
    /**
-    * Returns the value of the '<em><b>Statement Expression</b></em>' containment reference. <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Statement Expression</b></em>' containment reference.
+    * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Statement Expression</em>' containment reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * 
     * @return the value of the '<em>Statement Expression</em>' containment reference.
     * @see #setStatementExpression(Expression)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getStatementNode_StatementExpression()

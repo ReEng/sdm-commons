@@ -11,20 +11,19 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.modeling.*;
 import org.storydriven.modeling.SDMFactory;
 import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.StringExpression;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
  * @generated
  */
 public class SDMFactoryImpl extends EFactoryImpl implements SDMFactory
 {
    /**
-    * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates the default factory implementation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public static SDMFactory init ()
@@ -46,8 +45,8 @@ public class SDMFactoryImpl extends EFactoryImpl implements SDMFactory
    }
 
    /**
-    * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates an instance of the factory.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public SDMFactoryImpl ()
@@ -57,7 +56,6 @@ public class SDMFactoryImpl extends EFactoryImpl implements SDMFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -65,8 +63,6 @@ public class SDMFactoryImpl extends EFactoryImpl implements SDMFactory
    {
       switch (eClass.getClassifierID())
       {
-         case SDMPackage.STRING_EXPRESSION:
-            return createStringExpression();
          default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
       }
@@ -74,18 +70,6 @@ public class SDMFactoryImpl extends EFactoryImpl implements SDMFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
-    * @generated
-    */
-   public StringExpression createStringExpression ()
-   {
-      StringExpressionImpl stringExpression = new StringExpressionImpl();
-      return stringExpression;
-   }
-
-   /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public SDMPackage getSDMPackage ()
@@ -95,7 +79,6 @@ public class SDMFactoryImpl extends EFactoryImpl implements SDMFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @deprecated
     * @generated
     */

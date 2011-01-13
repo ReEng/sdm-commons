@@ -14,14 +14,13 @@ import org.storydriven.modeling.activities.StartNode;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Start Node</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class StartNodeImpl extends ActivityNodeImpl implements StartNode
 {
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    protected StartNodeImpl ()
@@ -31,7 +30,6 @@ public class StartNodeImpl extends ActivityNodeImpl implements StartNode
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override

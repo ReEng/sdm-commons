@@ -3,12 +3,11 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modeling"
     nsURI="http://ns.storydriven.org/sdm/0.1.0" nsPrefix="sdm">
-  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="TypedElement" abstract="true" eSuperTypes="#//ExtendableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"
-        changeable="false" transient="true" unsettable="true" derived="true"/>
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="genericType" ordered="false"
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EGenericType"
         unsettable="true" containment="true"/>
@@ -51,10 +50,6 @@
       <eAnnotations source="subsets" references="#//Extension/base"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//ExtendableElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CommentableElement" abstract="true"
       eSuperTypes="#//ExtendableElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" ordered="false"
@@ -64,9 +59,200 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Represents a variable which can be, for example, an object variable, an attribute, or any other kind of variable."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableName" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
         derived="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//ExtendableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eSubpackages name="activities" nsURI="http://ns.storydriven.org/sdm/activities/0.1.0"
+      nsPrefix="sdma">
+    <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariable" eSuperTypes="#//Variable">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Declares a variable representing an Exception that leads to firing a transition (ActivityEdge)."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityEdge" ordered="false"
+          lowerBound="1" eType="#//activities/ActivityEdge" eOpposite="#//activities/ActivityEdge/guardException">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specifies the transition (activity edge) where the exception variable is declared."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specifies the name of the declared exception variable."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="exceptionType" ordered="false"
+          upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"
+          transient="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specifies the type of the declared exception variable."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="genericExceptionType"
+          ordered="false" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EGenericType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityEdge" eSuperTypes="#//ExtendableElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+          lowerBound="1" eType="#//activities/ActivityNode" eOpposite="#//activities/ActivityNode/incoming"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+          lowerBound="1" eType="#//activities/ActivityNode" eOpposite="#//activities/ActivityNode/outgoing"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="owningActivity" ordered="false"
+          lowerBound="1" eType="#//activities/Activity" eOpposite="#//activities/Activity/ownedActivityEdge"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="guardType" ordered="false"
+          lowerBound="1" eType="#//activities/TransitionGuard" defaultValueLiteral="NONE"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="guardExpression" ordered="false"
+          eType="#//expressions/Expression" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Points to the boolean expression in case of boolean transition guard."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="guardException" upperBound="-1"
+          eType="#//activities/ExceptionVariable" containment="true" eOpposite="#//activities/ExceptionVariable/activityEdge">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Declares variables representing the Exceptions that lead to firing this transition."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityNode" abstract="true" eSuperTypes="#//NamedElement #//CommentableElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" ordered="false"
+          upperBound="-1" eType="#//activities/ActivityEdge" eOpposite="#//activities/ActivityEdge/source"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="owningActivity" ordered="false"
+          eType="#//activities/Activity" eOpposite="#//activities/Activity/ownedActivityNode"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="owningActivityNode" ordered="false"
+          eType="#//activities/StructuredNode" eOpposite="#//activities/StructuredNode/ownedActivityNode"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" ordered="false"
+          upperBound="-1" eType="#//activities/ActivityEdge" eOpposite="#//activities/ActivityEdge/target"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//CommentableElement #//calls/Callable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="owningOperation" ordered="false"
+          eType="#//activities/OperationExtension" eOpposite="#//activities/OperationExtension/ownedActivity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityEdge" upperBound="-1"
+          eType="#//activities/ActivityEdge" containment="true" eOpposite="#//activities/ActivityEdge/owningActivity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" ordered="false"
+          eType="#//activities/StoryNode">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityNode" ordered="false"
+          upperBound="-1" eType="#//activities/ActivityNode" containment="true" eOpposite="#//activities/ActivityNode/owningActivity"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationExtension" eSuperTypes="#//Extension #//calls/Callable">
+      <eOperations name="NumberOfOutParams" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operation" ordered="false"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"
+          volatile="true" transient="true" unsettable="true" derived="true" resolveProxies="false">
+        <eAnnotations source="redefines" references="#//Extension/base"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivity" ordered="false"
+          eType="#//activities/Activity" containment="true" eOpposite="#//activities/Activity/owningOperation"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StoryNode" abstract="true" eSuperTypes="#//activities/ActivityNode">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="forEach" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="storyPattern" ordered="false"
+          lowerBound="1" eType="#//patterns/StoryPattern" changeable="false" volatile="true"
+          transient="true" derived="true">
+        <eAnnotations source="union"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StructuredNode" eSuperTypes="#//activities/ActivityNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityNode" ordered="false"
+          upperBound="-1" eType="#//activities/ActivityNode" containment="true" eOpposite="#//activities/ActivityNode/owningActivityNode"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="TransitionGuard">
+      <eLiterals name="NONE"/>
+      <eLiterals name="SUCCESS" value="1"/>
+      <eLiterals name="FAILURE" value="2"/>
+      <eLiterals name="EACH_TIME" value="3"/>
+      <eLiterals name="END" value="4"/>
+      <eLiterals name="ELSE" value="5"/>
+      <eLiterals name="BOOL" value="6"/>
+      <eLiterals name="EXCEPTION" value="7"/>
+      <eLiterals name="FINALLY" value="8"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="JunctionNode" eSuperTypes="#//activities/ActivityNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StartNode" eSuperTypes="#//activities/ActivityNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StatementNode" eSuperTypes="#//activities/ActivityNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="statementExpression"
+          ordered="false" lowerBound="1" eType="#//expressions/Expression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StopNode" eSuperTypes="#//activities/ActivityNode">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="flowStopOnly" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="true if subactivity is stopped, but not the whole control flow"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="returnValue" ordered="false"
+          eType="#//expressions/Expression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityCallNode" eSuperTypes="#//activities/ActivityNode #//calls/Invocation">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ActivityCallNode is a special ActivityNode which represents the calling of another story diagram within an activity.&#xD;&#xA;To support polymorphic dispatching, multiple activities can be assigned to it (all of which must have the same call signature, i.e. matching in and out parameters). All assigned activities are then called in the given order and the first one whose precondition is fulfilled is executed (Chain of Responsibilty)."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="calledActivity" lowerBound="1"
+          upperBound="-1" eType="#//activities/Activity">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="References all activities that are to be considered for the polymorphic dispatching of the call. All activities must have the same call signature."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MatchingStoryNode" eSuperTypes="#//activities/StoryNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPattern" ordered="false"
+          lowerBound="1" eType="#//patterns/MatchingPattern" containment="true">
+        <eAnnotations source="subsets" references="#//activities/StoryNode/storyPattern"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ModifyingStoryNode" eSuperTypes="#//activities/StoryNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRule" ordered="false"
+          lowerBound="1" eType="#//patterns/StoryPattern" containment="true">
+        <eAnnotations source="subsets" references="#//activities/StoryNode/storyPattern"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/activities/expressions/0.1.0"
+        nsPrefix="sdmae">
+      <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariableExpression" eSuperTypes="#//expressions/Expression">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents the value of an exception variable declared as a transition guard (the guard of an activity edge)."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="exceptionVariable"
+            ordered="false" lowerBound="1" eType="#//activities/ExceptionVariable">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the exception variable that this expression refers to. If you have an activity edge that catches an exception e, then this expression can represent the reference e."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
   <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/expressions/0.1.0"
       nsPrefix="sdme">
     <eClassifiers xsi:type="ecore:EEnum" name="LogicOperator">
@@ -82,7 +268,7 @@
         <details key="documentation" value="Defines the operators for comparing expressions."/>
       </eAnnotations>
       <eLiterals name="LESS"/>
-      <eLiterals name="LESS_OR_EQUAL" value="1" literal="LESS_OR_EQUAL"/>
+      <eLiterals name="LESS_OR_EQUAL" value="1"/>
       <eLiterals name="EQUAL" value="2"/>
       <eLiterals name="GREATER_OR_EQUAL" value="3"/>
       <eLiterals name="GREATER" value="4"/>
@@ -114,7 +300,8 @@
           <details key="documentation" value="String representation of the used language which has to be unique. Examples are OCL and Java."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="languageVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="languageVersion" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="String representation of the used language's version. The format is &lt;Major>.&lt;Minor>[.&lt;Revision>[.&lt;Build>]]&#xD;&#xA;Examples: 1.4 or 3.0.1 or 1.0.2.20101208."/>
         </eAnnotations>
@@ -124,15 +311,28 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents any literal, i.e. a value whose type is an EDataType. Literals are, for example, 5, 3.14, 'c', &quot;text&quot;, true."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="String representation of the value, e.g. &quot;5&quot;, &quot;3.14&quot;, &quot;c&quot;, &quot;text&quot;, or &quot;true&quot;."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="valueType" lowerBound="1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valueType" ordered="false"
+          lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The literal's type, e.g. EInt, EString, etc."/>
+        </eAnnotations>
+        <eAnnotations source="subsets" references="#//TypedElement/type"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NotExpression" eSuperTypes="#//expressions/Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents a negated expression, e.g. NOT (a &lt; 5)."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="negatedExpression" ordered="false"
+          lowerBound="1" eType="#//expressions/Expression" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents the operand of a NotExpression, e.g. a &lt; 5 in NOT (a &lt; 5)."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -141,38 +341,16 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents any binary expression like v &lt; 5 or x + 7."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="leftExpression" lowerBound="1"
-          eType="#//expressions/Expression" containment="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="leftExpression" ordered="false"
+          lowerBound="1" eType="#//expressions/Expression" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Represents the first operand of a binary expression, e.g. x in the expression x &lt; 5."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="rightExpression" lowerBound="1"
-          eType="#//expressions/Expression" containment="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rightExpression" ordered="false"
+          lowerBound="1" eType="#//expressions/Expression" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Represents the second operand of a binary expression, e.g. 5 in the expression x &lt; 5."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="NotExpression" eSuperTypes="#//expressions/Expression">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Represents a negated expression, e.g. NOT (a &lt; 5)."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="negatedExpression" lowerBound="1"
-          eType="#//expressions/Expression" containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represents the operand of a NotExpression, e.g. a &lt; 5 in NOT (a &lt; 5)."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="BinaryLogicExpression" eSuperTypes="#//expressions/BinaryExpression">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Represents binary, logic expressions like a AND b and a OR b."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
-          eType="#//expressions/LogicOperator">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Specifies the expression's logic operator, e.g. AND, OR, or XOR."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -180,8 +358,8 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents comparing expressions like a &lt; 5 or a >= 7."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
-          eType="#//expressions/ComparingOperator">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
+          lowerBound="1" eType="#//expressions/ComparingOperator">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Specifies the expression's comparing operator, e.g. &lt;, >=, !=."/>
         </eAnnotations>
@@ -191,10 +369,21 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents arithmetic expressions like a + 5 or a * 7."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
-          eType="#//expressions/ArithmeticOperator">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
+          lowerBound="1" eType="#//expressions/ArithmeticOperator">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Specifies the expression's arithmetic operator, e.g. +, -, *, /, or MODULO."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BinaryLogicExpression" eSuperTypes="#//expressions/BinaryExpression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents binary, logic expressions like a AND b and a OR b."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
+          lowerBound="1" eType="#//expressions/LogicOperator">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specifies the expression's logic operator, e.g. AND, OR, or XOR."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -204,8 +393,127 @@
       </eAnnotations>
     </eClassifiers>
   </eSubpackages>
+  <eSubpackages name="calls" nsURI="http://ns.storydriven.org/sdm/calls/0.1.0" nsPrefix="sdmc">
+    <eClassifiers xsi:type="ecore:EClass" name="Invocation" abstract="true" eSuperTypes="#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Superclass for invocations of behavior which is specified elsewhere, e.g. in methods (MethodCallExpression) or activities (ActivityCallNode). An invocation has one parameter binding for each parameter (in or out) of the called method/activity. For Callables which are contained in the model (i.e. Activities and OperationExtensions) the Invocation directly points to the callee. OpaqueCallables are directly referenced by (and contained in) the MethodCallExpressions."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedParameterBindings"
+          upperBound="-1" eType="#//calls/ParameterBinding" containment="true" eOpposite="#//calls/ParameterBinding/invocation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callee" ordered="false"
+          eType="#//calls/Callable"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Binds a parameter to a certain value for a given invocation. The value of the parameter is represented by an expression."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valueExpression" ordered="false"
+          lowerBound="1" eType="#//expressions/Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" ordered="false"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="invocation" ordered="false"
+          lowerBound="1" eType="#//calls/Invocation" eOpposite="#//calls/Invocation/ownedParameterBindings"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OpaqueCallable" eSuperTypes="#//calls/Callable">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An OpaqueCallable represents an external method which is not explicitly modeled (e.g. a method in an external library). Because it is not contained anywhere in the model it is directly referenced by and contained in the MethodCallExpression."/>
+      </eAnnotations>
+      <eOperations name="NumberOfOutParams" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callExpression" ordered="false"
+          lowerBound="1" eType="#//calls/expressions/MethodCallExpression" eOpposite="#//calls/expressions/MethodCallExpression/opaqueCallable"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterExtension" eSuperTypes="#//Variable #//Extension">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents an EParameter and adds functionality to it, especially beiing subtype of Variable."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" ordered="false"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
+          volatile="true" transient="true" unsettable="true" derived="true" resolveProxies="false">
+        <eAnnotations source="redefines" references="#//Extension/base"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Callable" abstract="true" eSuperTypes="#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An entity which can be called by an Invocation. A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions and OpaqueCallables can only have one out parameter (This is enforced by an OCL constraint)."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="in" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
+          changeable="false" volatile="true" derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="out" upperBound="-1"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
+          changeable="false" volatile="true" derived="true"/>
+    </eClassifiers>
+    <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/calls/expressions/0.1.0"
+        nsPrefix="sdmce">
+      <eClassifiers xsi:type="ecore:EClass" name="MethodCallExpression" eSuperTypes="#//expressions/Expression #//calls/Invocation">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A MethodCallEpression represents the direct invocation of a method. This can either be a method which is explicitly modeled as an EOperation in a class diagram (referenced by the OperationExtension) or an unmodeled method in an external library (referenced by an OpaqueCallable). Therefore, a MethodCallExpression references either an OperationExtension (indirectly via the callee role between Invocation and Callable) or an OpaqueCallable."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+            eType="#//expressions/Expression" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A MethodCallExpression references an expression instead of a target object to allow the determination of the call target by an expression. This can be handy when a method should be called e.g. on the return value of another method (as in a.b().c() ). Then the method call of c() would be modeled by a MethodCallExpression with the callExpression a.b(), which again is a MethodCallExpression itself."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="opaqueCallable" ordered="false"
+            eType="#//calls/OpaqueCallable" containment="true" eOpposite="#//calls/OpaqueCallable/callExpression">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This containment reference is a helper construct because the OpaqueCallable has to be contained somewhere. A MethodCallExpression (being an Invocation) could also reference an OpaqueCallable (being a Callable) via the callee reference but then the OpaqueCallable would not be contained anywhere in the model."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
   <eSubpackages name="patterns" nsURI="http://ns.storydriven.org/sdm/patterns/0.1.0"
       nsPrefix="sdmp">
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectVariable" eSuperTypes="#//Variable #//NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" ordered="false"
+          lowerBound="1" eType="#//patterns/BindingState" defaultValueLiteral="UNBOUND"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingType" ordered="false"
+          lowerBound="1" eType="#//patterns/BindingSemantics" defaultValueLiteral="NONE"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifier" ordered="false"
+          lowerBound="1" eType="#//patterns/Modifier" defaultValueLiteral="NONE"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" ordered="false"
+          lowerBound="1" eType="#//patterns/StoryPattern" eOpposite="#//patterns/StoryPattern/objectVariable"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributeAssignment"
+          upperBound="-1" eType="#//patterns/AttributeAssignment" containment="true"
+          eOpposite="#//patterns/AttributeAssignment/objectVariable"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingLink" ordered="false"
+          upperBound="-1" eType="#//patterns/AbstractLinkVariable" eOpposite="#//patterns/AbstractLinkVariable/source"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="incomingLink" ordered="false"
+          upperBound="-1" eType="#//patterns/AbstractLinkVariable" eOpposite="#//patterns/AbstractLinkVariable/target"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="linkOrderConstraint"
+          upperBound="-1" eType="#//patterns/LinkOrderConstraint" containment="true"
+          eOpposite="#//patterns/LinkOrderConstraint/referencingObject"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" ordered="false"
+          lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+        <eAnnotations source="subsets" references="#//TypedElement/type"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bindingExpression" ordered="false"
+          eType="#//expressions/Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
+          eType="#//patterns/Constraint" containment="true" eOpposite="#//patterns/Constraint/objectVariable"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="BindingState">
       <eLiterals name="UNBOUND"/>
       <eLiterals name="BOUND" value="1"/>
@@ -225,94 +533,34 @@
       <eLiterals name="CREATE" value="1"/>
       <eLiterals name="DESTROY" value="2"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="OrderConstraintType">
-      <eLiterals name="FIRST"/>
-      <eLiterals name="LAST" value="1"/>
-      <eLiterals name="DIRECT" value="2"/>
-      <eLiterals name="INDIRECT" value="3"/>
-      <eLiterals name="INDEX" value="4"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StoryPattern" eSuperTypes="#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="AttributeAssignment">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" ordered="false"
+          lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valueExpression" ordered="false"
+          lowerBound="1" eType="#//expressions/Expression" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="objectVariable" ordered="false"
-          upperBound="-1" eType="#//patterns/ObjectVariable" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="linkVariable" upperBound="-1"
-          eType="#//patterns/AbstractLinkVariable" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" ordered="false"
-          upperBound="-1" eType="#//patterns/Constraint" containment="true" eOpposite="#//patterns/Constraint/pattern"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="containedPattern" ordered="false"
-          upperBound="-1" eType="#//patterns/StoryPattern" containment="true" eOpposite="#//patterns/StoryPattern/parentPattern"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parentPattern" ordered="false"
-          eType="#//patterns/StoryPattern" eOpposite="#//patterns/StoryPattern/containedPattern"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingType" ordered="false"
-          lowerBound="1" eType="#//patterns/BindingSemantics" defaultValueLiteral="NONE"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="templateSignature" eType="#//templates/TemplateSignature"
-          containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MatchingPattern" eSuperTypes="#//patterns/StoryPattern">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="NoModifierInMatchingPattern"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="NoModifierInMatchingPattern" value="self.objectVariable->forAll(v:ObjectVariable | v.modifier = Modifier::NONE) and self.linkVariable->forAll(v:LinkVariable | v.modifier = Modifier::NONE)"/>
-      </eAnnotations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ObjectVariable" eSuperTypes="#//TypedElement #//NamedElement #//Variable">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" ordered="false"
-          lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"
-          volatile="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="bindingExpression" ordered="false"
-          eType="#//expressions/Expression" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="incomingLink" ordered="false"
-          upperBound="-1" eType="#//patterns/AbstractLinkVariable"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="linkOrderConstraint"
-          upperBound="-1" eType="#//patterns/LinkOrderConstraint" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingLink" ordered="false"
-          upperBound="-1" eType="#//patterns/AbstractLinkVariable"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
-          eType="#//patterns/Constraint" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" ordered="false"
-          lowerBound="1" eType="#//patterns/StoryPattern"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="attributeAssignment"
-          upperBound="-1" eType="#//patterns/AttributeAssignment" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingType" ordered="false"
-          lowerBound="1" eType="#//patterns/BindingSemantics" defaultValueLiteral="NONE"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" lowerBound="1"
-          eType="#//patterns/BindingState"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifier" lowerBound="1"
-          eType="#//patterns/Modifier"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ObjectSetVariable" eSuperTypes="#//patterns/ObjectVariable">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Represents a set of objects.&#xD;&#xA;The context for contained Constraints and AttributeAssignments is a single object (e.g., &quot;name = 'abc'&quot;).&#xD;&#xA;After the set has been computed by the pattern matching, every other Constraints or AttributeAssignment can use the ObjectSetVariable as a set (e.g., &quot;osv1->size()&quot;)."/>
-      </eAnnotations>
+          lowerBound="1" eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/attributeAssignment"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractLinkVariable" abstract="true"
         eSuperTypes="#//NamedElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingType" ordered="false"
           lowerBound="1" eType="#//patterns/BindingSemantics" defaultValueLiteral="NONE"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifier" lowerBound="1"
-          eType="#//patterns/Modifier"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" lowerBound="1"
-          eType="#//patterns/BindingState"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
-          eType="#//patterns/StoryPattern"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
-          lowerBound="1" eType="#//patterns/ObjectVariable"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifier" ordered="false"
+          lowerBound="1" eType="#//patterns/Modifier" defaultValueLiteral="NONE"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
-          lowerBound="1" eType="#//patterns/ObjectVariable"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="firstLinkOrderConstraint"
-          ordered="false" upperBound="-1" eType="#//patterns/LinkOrderConstraint"/>
+          lowerBound="1" eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/incomingLink"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="secondLinkOrderConstraint"
-          ordered="false" upperBound="-1" eType="#//patterns/LinkOrderConstraint"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="LinkVariable" eSuperTypes="#//patterns/AbstractLinkVariable">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEnd" ordered="false"
-          lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"
-          volatile="true" transient="true" derived="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="targetEnd" ordered="false"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="qualifierExpression"
-          ordered="false" eType="#//expressions/Expression" containment="true"/>
+          ordered="false" upperBound="-1" eType="#//patterns/LinkOrderConstraint"
+          eOpposite="#//patterns/LinkOrderConstraint/secondLink"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="firstLinkOrderConstraint"
+          ordered="false" upperBound="-1" eType="#//patterns/LinkOrderConstraint"
+          eOpposite="#//patterns/LinkOrderConstraint/firstLink"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" ordered="false"
+          lowerBound="1" eType="#//patterns/BindingState"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" ordered="false"
+          lowerBound="1" eType="#//patterns/StoryPattern" eOpposite="#//patterns/StoryPattern/linkVariable"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+          lowerBound="1" eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/outgoingLink"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="LinkOrderConstraint" eSuperTypes="#//ExtendableElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" ordered="false"
@@ -321,36 +569,90 @@
           lowerBound="1" eType="#//patterns/OrderConstraintType" defaultValueLiteral="DIRECT"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="negative" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="secondLink" ordered="false"
-          lowerBound="1" eType="#//patterns/AbstractLinkVariable"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="firstLink" ordered="false"
-          lowerBound="1" eType="#//patterns/AbstractLinkVariable"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="referencingObject" lowerBound="1"
-          eType="#//patterns/ObjectVariable"/>
+          lowerBound="1" eType="#//patterns/AbstractLinkVariable" eOpposite="#//patterns/AbstractLinkVariable/firstLinkOrderConstraint"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="referencingObject" ordered="false"
+          lowerBound="1" eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/linkOrderConstraint"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="secondLink" ordered="false"
+          lowerBound="1" eType="#//patterns/AbstractLinkVariable" eOpposite="#//patterns/AbstractLinkVariable/secondLinkOrderConstraint"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="OrderConstraintType">
+      <eLiterals name="FIRST"/>
+      <eLiterals name="LAST" value="1"/>
+      <eLiterals name="DIRECT" value="2"/>
+      <eLiterals name="INDIRECT" value="3"/>
+      <eLiterals name="INDEX" value="4"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Constraint">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="constraintExpression"
+          ordered="false" lowerBound="1" eType="#//expressions/Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" ordered="false"
+          eType="#//patterns/StoryPattern" eOpposite="#//patterns/StoryPattern/constraint"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="objectVariable" ordered="false"
+          eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/constraint"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectSetVariable" eSuperTypes="#//patterns/ObjectVariable">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents a set of objects.&#xD;&#xA;The context for contained Constraints and AttributeAssignments is a single object (e.g., &quot;name = 'abc'&quot;).&#xD;&#xA;After the set has been computed by the pattern matching, every other Constraints or AttributeAssignment can use the ObjectSetVariable as a set (e.g., &quot;osv1->size()&quot;)."/>
+      </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Path" eSuperTypes="#//patterns/AbstractLinkVariable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="pathExpression" ordered="false"
           lowerBound="1" eType="#//expressions/Expression" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AttributeAssignment">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="objectVariable" lowerBound="1"
-          eType="#//patterns/ObjectVariable"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="valueExpression" lowerBound="1"
-          eType="#//expressions/Expression" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Constraint">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="constraintExpression"
-          lowerBound="1" eType="#//expressions/Expression" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//patterns/StoryPattern"
-          eOpposite="#//patterns/StoryPattern/constraint"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="objectVariable" eType="#//patterns/ObjectVariable"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LinkVariable" eSuperTypes="#//patterns/AbstractLinkVariable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEnd" ordered="false"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"
+          volatile="true" transient="true" derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetEnd" ordered="false"
+          lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="qualifierExpression"
+          ordered="false" eType="#//expressions/Expression" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ContainmentRelation" eSuperTypes="#//patterns/AbstractLinkVariable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Specifies the containment of an object in a set. Will be displayed by a line having a circle with a plus inside at the end of the container. Create modifier specifies that the object will be added to the container, delete that it will be removed, and none that it will be checked to be contained."/>
       </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MatchingPattern" eSuperTypes="#//patterns/StoryPattern">
+      <eOperations name="NoModifierInMatchingPattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="self.objectVariable->forAll(v:ObjectVariable | v.modifier = Modifier::NONE) and self.linkVariable->forAll(v:LinkVariable | v.modifier = Modifier::NONE)"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="self.objectVariable->forAll(v:ObjectVariable | v.modifier = Modifier::NONE) and self.linkVariable->forAll(v:LinkVariable | v.modifier = Modifier::NONE)"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StoryPattern" eSuperTypes="#//CommentableElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="objectVariable" ordered="false"
+          upperBound="-1" eType="#//patterns/ObjectVariable" containment="true" eOpposite="#//patterns/ObjectVariable/pattern"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="linkVariable" upperBound="-1"
+          eType="#//patterns/AbstractLinkVariable" containment="true" eOpposite="#//patterns/AbstractLinkVariable/pattern"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" ordered="false"
+          upperBound="-1" eType="#//patterns/Constraint" containment="true" eOpposite="#//patterns/Constraint/pattern"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentPattern" ordered="false"
+          eType="#//patterns/StoryPattern" eOpposite="#//patterns/StoryPattern/containedPattern"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="containedPattern" ordered="false"
+          upperBound="-1" eType="#//patterns/StoryPattern" containment="true" eOpposite="#//patterns/StoryPattern/parentPattern"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingType" ordered="false"
+          lowerBound="1" eType="#//patterns/BindingSemantics" defaultValueLiteral="NONE"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="templateSignature" ordered="false"
+          eType="#//templates/TemplateSignature" containment="true" eOpposite="#//templates/TemplateSignature/pattern"/>
     </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/patterns/expressions/0.1.0"
         nsPrefix="sdmpe">
@@ -358,14 +660,14 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Represents the value of an object's attribute, e.g. obj.a for an object obj and an attribute a."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="object" lowerBound="1"
-            eType="#//patterns/ObjectVariable">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="object" ordered="false"
+            lowerBound="1" eType="#//patterns/ObjectVariable">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Specifies the object variable whose attribute value is represented by this expression."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
-            eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" ordered="false"
+            lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Specifies the object's attribute whose attribute value is represented by this expression."/>
           </eAnnotations>
@@ -375,8 +677,8 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Represents the reference to an object in an expression, i.e. the value of an object variable."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="object" lowerBound="1"
-            eType="#//patterns/ObjectVariable">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="object" ordered="false"
+            lowerBound="1" eType="#//patterns/ObjectVariable">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Specifies the object variable that holds the reference to be represented by this expression."/>
           </eAnnotations>
@@ -386,8 +688,8 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Represents the number of elements in a set or more precisely: the number of elements in the set of objects that is represented by an object set variable. For example, if you have an object set variable objects, then this expression would represent something like objects.size()."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="set" lowerBound="1"
-            eType="#//patterns/ObjectSetVariable">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="set" ordered="false"
+            lowerBound="1" eType="#//patterns/ObjectSetVariable">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Specifies the object set variable whose number of set elements is to be represented by this expression."/>
           </eAnnotations>
@@ -397,24 +699,16 @@
   </eSubpackages>
   <eSubpackages name="templates" nsURI="http://ns.storydriven.org/sdm/templates/0.1.0"
       nsPrefix="sdmt">
-    <eClassifiers xsi:type="ecore:EClass" name="TemplateSignature">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="typeParameter" ordered="false"
-          upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"
-          containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="templateBinding" ordered="false"
-          upperBound="-1" eType="#//templates/TemplateBinding" containment="true"
-          eOpposite="#//templates/TemplateBinding/template"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TemplateBinding" eSuperTypes="#//ExtendableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="boundParameter" ordered="false"
           lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bindingExpression" ordered="false"
           lowerBound="1" eType="#//expressions/Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="template" ordered="false"
+          lowerBound="1" eType="#//templates/TemplateSignature" eOpposite="#//templates/TemplateSignature/templateBinding"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="propertyBinding" ordered="false"
           upperBound="-1" eType="#//templates/PropertyBinding" containment="true"
           eOpposite="#//templates/PropertyBinding/templateBinding"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="template" ordered="false"
-          lowerBound="1" eType="#//templates/TemplateSignature" eOpposite="#//templates/TemplateSignature/templateBinding"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PropertyBinding" eSuperTypes="#//ExtendableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="boundProperty" ordered="false"
@@ -424,228 +718,15 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="templateBinding" ordered="false"
           lowerBound="1" eType="#//templates/TemplateBinding" eOpposite="#//templates/TemplateBinding/propertyBinding"/>
     </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="activities" nsURI="http://ns.storydriven.org/sdm/activities/0.1.0"
-      nsPrefix="sdma">
-    <eClassifiers xsi:type="ecore:EEnum" name="TransitionGuard">
-      <eLiterals name="NONE"/>
-      <eLiterals name="SUCCESS" value="1"/>
-      <eLiterals name="FAILURE" value="2"/>
-      <eLiterals name="EACH_TIME" value="3"/>
-      <eLiterals name="END" value="4"/>
-      <eLiterals name="ELSE" value="5"/>
-      <eLiterals name="BOOL" value="6"/>
-      <eLiterals name="EXCEPTION" value="7"/>
-      <eLiterals name="FINALLY" value="8"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TemplateSignature">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="templateBinding" ordered="false"
+          upperBound="-1" eType="#//templates/TemplateBinding" containment="true"
+          eOpposite="#//templates/TemplateBinding/template"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="typeParameter" ordered="false"
+          upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" ordered="false"
+          lowerBound="1" eType="#//patterns/StoryPattern" eOpposite="#//patterns/StoryPattern/templateSignature"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationExtension" eSuperTypes="#//Extension #//calls/Callable">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="NumberOfOutParams"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="NumberOfOutParams" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivity" ordered="false"
-          eType="#//activities/Activity" containment="true" eOpposite="#//activities/Activity/owningOperation"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//CommentableElement #//calls/Callable">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityNode" ordered="false"
-          upperBound="-1" eType="#//activities/ActivityNode" containment="true" eOpposite="#//activities/ActivityNode/owningActivity"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityEdge" upperBound="-1"
-          eType="#//activities/ActivityEdge" containment="true" eOpposite="#//activities/ActivityEdge/owningActivity"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningOperation" ordered="false"
-          eType="#//activities/OperationExtension" eOpposite="#//activities/OperationExtension/ownedActivity"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" eType="#//activities/StoryNode">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ActivityNode" abstract="true" eSuperTypes="#//CommentableElement #//NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningActivity" ordered="false"
-          eType="#//activities/Activity" eOpposite="#//activities/Activity/ownedActivityNode"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" ordered="false"
-          upperBound="-1" eType="#//activities/ActivityEdge" eOpposite="#//activities/ActivityEdge/target"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" ordered="false"
-          upperBound="-1" eType="#//activities/ActivityEdge" eOpposite="#//activities/ActivityEdge/source"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningActivityNode" ordered="false"
-          eType="#//activities/StructuredNode" eOpposite="#//activities/StructuredNode/ownedActivityNode"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ActivityEdge" eSuperTypes="#//ExtendableElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningActivity" lowerBound="1"
-          eType="#//activities/Activity" eOpposite="#//activities/Activity/ownedActivityEdge"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
-          lowerBound="1" eType="#//activities/ActivityNode" eOpposite="#//activities/ActivityNode/incoming"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
-          lowerBound="1" eType="#//activities/ActivityNode" eOpposite="#//activities/ActivityNode/outgoing"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="guardType" ordered="false"
-          lowerBound="1" eType="#//activities/TransitionGuard" defaultValueLiteral="NONE"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="guardExpression" ordered="false"
-          eType="#//expressions/Expression" containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Points to the boolean expression in case of boolean transition guard."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="guardException" upperBound="-1"
-          eType="#//activities/ExceptionVariable" containment="true" eOpposite="#//activities/ExceptionVariable/activityEdge">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Declares variables representing the Exceptions that lead to firing this transition."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StoryNode" abstract="true" eSuperTypes="#//activities/ActivityNode">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="forEach" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="storyPattern" lowerBound="1"
-          eType="#//patterns/StoryPattern"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="JunctionNode" eSuperTypes="#//activities/ActivityNode"/>
-    <eClassifiers xsi:type="ecore:EClass" name="StartNode" eSuperTypes="#//activities/ActivityNode"/>
-    <eClassifiers xsi:type="ecore:EClass" name="StopNode" eSuperTypes="#//activities/ActivityNode">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="flowStopOnly" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="true if subactivity is stopped, but not the whole control flow"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="returnValue" ordered="false"
-          eType="#//expressions/Expression" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ActivityCallNode" eSuperTypes="#//activities/ActivityNode #//calls/Invocation">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The ActivityCallNode is a special ActivityNode which represents the calling of another story diagram within an activity.&#xD;&#xA;To support polymorphic dispatching, multiple activities can be assigned to it (all of which must have the same call signature, i.e. matching in and out parameters). All assigned activities are then called in the given order and the first one whose precondition is fulfilled is executed (Chain of Responsibilty)."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="calledActivity" lowerBound="1"
-          upperBound="-1" eType="#//activities/Activity">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="References all activities that are to be considered for the polymorphic dispatching of the call. All activities must have the same call signature."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StatementNode" eSuperTypes="#//activities/ActivityNode">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="statementExpression"
-          ordered="false" lowerBound="1" eType="#//expressions/Expression" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StructuredNode" eSuperTypes="#//activities/ActivityNode">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityNode" ordered="false"
-          upperBound="-1" eType="#//activities/ActivityNode" containment="true" eOpposite="#//activities/ActivityNode/owningActivityNode"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MatchingStoryNode" eSuperTypes="#//activities/StoryNode">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPattern" ordered="false"
-          lowerBound="1" eType="#//patterns/StoryPattern" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ModifyingStoryNode" eSuperTypes="#//activities/StoryNode">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRule" lowerBound="1"
-          eType="#//patterns/MatchingPattern" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariable" eSuperTypes="#//Variable">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Declares a variable representing an Exception that leads to firing a transition (ActivityEdge)."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Specifies the name of the declared exception variable."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="exceptionType" ordered="false"
-          upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Specifies the type of the declared exception variable."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="activityEdge" lowerBound="1"
-          eType="#//activities/ActivityEdge" eOpposite="#//activities/ActivityEdge/guardException">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Specifies the transition (activity edge) where the exception variable is declared."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/activities/expressions/0.1.0"
-        nsPrefix="sdmae">
-      <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariableExpression" eSuperTypes="#//expressions/Expression">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represents the value of an exception variable declared as a transition guard (the guard of an activity edge)."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="exceptionVariable"
-            lowerBound="1" eType="#//activities/ExceptionVariable">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Specifies the exception variable that this expression refers to. If you have an activity edge that catches an exception e, then this expression can represent the reference e."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-    </eSubpackages>
-  </eSubpackages>
-  <eSubpackages name="calls" nsURI="http://ns.storydriven.org/sdm/calls/0.1.0" nsPrefix="sdmc">
-    <eClassifiers xsi:type="ecore:EClass" name="Invocation" abstract="true" eSuperTypes="#//CommentableElement">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Superclass for invocations of behavior which is specified elsewhere, e.g. in methods (MethodCallExpression) or activities (ActivityCallNode). An invocation has one parameter binding for each parameter (in or out) of the called method/activity. For Callables which are contained in the model (i.e. Activities and OperationExtensions) the Invocation directly points to the callee. OpaqueCallables are directly referenced by (and contained in) the MethodCallExpressions."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedParameterBindings"
-          upperBound="-1" eType="#//calls/ParameterBinding" containment="true" eOpposite="#//calls/ParameterBinding/invocation"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="callee" eType="#//calls/Callable"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Callable" abstract="true" eSuperTypes="#//CommentableElement">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An entity which can be called by an Invocation. A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions and OpaqueCallables can only have one out parameter (This is enforced by an OCL constraint)."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="in" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
-          changeable="false" derived="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="out" upperBound="-1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
-          changeable="false" derived="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="#//CommentableElement">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Binds a parameter to a certain value for a given invocation. The value of the parameter is represented by an expression."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="invocation" lowerBound="1"
-          eType="#//calls/Invocation" eOpposite="#//calls/Invocation/ownedParameterBindings"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="valueExpression" lowerBound="1"
-          eType="#//expressions/Expression" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OpaqueCallable" eSuperTypes="#//calls/Callable">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An OpaqueCallable represents an external method which is not explicitly modeled (e.g. a method in an external library). Because it is not contained anywhere in the model it is directly referenced by and contained in the MethodCallExpression."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="NumberOfOutParams"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="NumberOfOutParams" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="callExpression" lowerBound="1"
-          eType="#//calls/expressions/MethodCallExpression" eOpposite="#//calls/expressions/MethodCallExpression/opaqueCallable"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterExtension" eSuperTypes="#//Extension #//Variable">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Represents an EParameter and adds functionality to it, especially beiing subtype of Variable."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
-    </eClassifiers>
-    <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/calls/expressions/0.1.0"
-        nsPrefix="sdmce">
-      <eClassifiers xsi:type="ecore:EClass" name="MethodCallExpression" eSuperTypes="#//expressions/Expression #//calls/Invocation">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A MethodCallEpression represents the direct invocation of a method. This can either be a method which is explicitly modeled as an EOperation in a class diagram (referenced by the OperationExtension) or an unmodeled method in an external library (referenced by an OpaqueCallable). Therefore, a MethodCallExpression references either an OperationExtension (indirectly via the callee role between Invocation and Callable) or an OpaqueCallable."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="opaqueCallable" eType="#//calls/OpaqueCallable"
-            containment="true" eOpposite="#//calls/OpaqueCallable/callExpression">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This containment reference is a helper construct because the OpaqueCallable has to be contained somewhere. A MethodCallExpression (being an Invocation) could also reference an OpaqueCallable (being a Callable) via the callee reference but then the OpaqueCallable would not be contained anywhere in the model."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//expressions/Expression"
-            containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="A MethodCallExpression references an expression instead of a target object to allow the determination of the call target by an expression. This can be handy when a method should be called e.g. on the return value of another method (as in a.b().c() ). Then the method call of c() would be modeled by a MethodCallExpression with the callExpression a.b(), which again is a MethodCallExpression itself."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-    </eSubpackages>
   </eSubpackages>
 </ecore:EPackage>

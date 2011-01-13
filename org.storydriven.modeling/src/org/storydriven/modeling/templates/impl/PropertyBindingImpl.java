@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.storydriven.modeling.Expression;
+import org.storydriven.modeling.expressions.Expression;
 import org.storydriven.modeling.impl.ExtendableElementImpl;
 import org.storydriven.modeling.templates.PropertyBinding;
 import org.storydriven.modeling.templates.TemplateBinding;
@@ -24,19 +24,19 @@ import org.storydriven.modeling.templates.TemplatesPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.storydriven.modeling.templates.impl.PropertyBindingImpl#getBoundProperty <em>Bound Property</em>}</li>
- * <li>{@link org.storydriven.modeling.templates.impl.PropertyBindingImpl#getBindingExpression <em>Binding Expression</em>}</li>
- * <li>{@link org.storydriven.modeling.templates.impl.PropertyBindingImpl#getTemplateBinding <em>Template Binding</em>}</li>
+ *   <li>{@link org.storydriven.modeling.templates.impl.PropertyBindingImpl#getBoundProperty <em>Bound Property</em>}</li>
+ *   <li>{@link org.storydriven.modeling.templates.impl.PropertyBindingImpl#getBindingExpression <em>Binding Expression</em>}</li>
+ *   <li>{@link org.storydriven.modeling.templates.impl.PropertyBindingImpl#getTemplateBinding <em>Template Binding</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class PropertyBindingImpl extends ExtendableElementImpl implements PropertyBinding
 {
    /**
-    * The cached value of the '{@link #getBoundProperty() <em>Bound Property</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached value of the '{@link #getBoundProperty() <em>Bound Property</em>}' reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getBoundProperty()
     * @generated
     * @ordered
@@ -44,8 +44,8 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
    protected EStructuralFeature boundProperty;
 
    /**
-    * The cached value of the '{@link #getBindingExpression() <em>Binding Expression</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached value of the '{@link #getBindingExpression() <em>Binding Expression</em>}' containment reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getBindingExpression()
     * @generated
     * @ordered
@@ -54,7 +54,6 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    protected PropertyBindingImpl ()
@@ -64,7 +63,6 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -75,67 +73,59 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public EStructuralFeature getBoundProperty ()
    {
-      if (this.boundProperty != null && this.boundProperty.eIsProxy())
+      if (boundProperty != null && boundProperty.eIsProxy())
       {
-         InternalEObject oldBoundProperty = (InternalEObject) this.boundProperty;
-         this.boundProperty = (EStructuralFeature) eResolveProxy(oldBoundProperty);
-         if (this.boundProperty != oldBoundProperty)
+         InternalEObject oldBoundProperty = (InternalEObject) boundProperty;
+         boundProperty = (EStructuralFeature) eResolveProxy(oldBoundProperty);
+         if (boundProperty != oldBoundProperty)
          {
             if (eNotificationRequired())
-            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                  TemplatesPackage.PROPERTY_BINDING__BOUND_PROPERTY, oldBoundProperty, this.boundProperty));
-            }
+                  TemplatesPackage.PROPERTY_BINDING__BOUND_PROPERTY, oldBoundProperty, boundProperty));
          }
       }
-      return this.boundProperty;
+      return boundProperty;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public EStructuralFeature basicGetBoundProperty ()
    {
-      return this.boundProperty;
+      return boundProperty;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setBoundProperty (EStructuralFeature newBoundProperty)
    {
-      EStructuralFeature oldBoundProperty = this.boundProperty;
-      this.boundProperty = newBoundProperty;
+      EStructuralFeature oldBoundProperty = boundProperty;
+      boundProperty = newBoundProperty;
       if (eNotificationRequired())
-      {
          eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.PROPERTY_BINDING__BOUND_PROPERTY,
-            oldBoundProperty, this.boundProperty));
-      }
+            oldBoundProperty, boundProperty));
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public Expression getBindingExpression ()
    {
-      if (this.bindingExpression != null && this.bindingExpression.eIsProxy())
+      if (bindingExpression != null && bindingExpression.eIsProxy())
       {
-         InternalEObject oldBindingExpression = (InternalEObject) this.bindingExpression;
-         this.bindingExpression = (Expression) eResolveProxy(oldBindingExpression);
-         if (this.bindingExpression != oldBindingExpression)
+         InternalEObject oldBindingExpression = (InternalEObject) bindingExpression;
+         bindingExpression = (Expression) eResolveProxy(oldBindingExpression);
+         if (bindingExpression != oldBindingExpression)
          {
-            InternalEObject newBindingExpression = (InternalEObject) this.bindingExpression;
+            InternalEObject newBindingExpression = (InternalEObject) bindingExpression;
             NotificationChain msgs = oldBindingExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION, null, null);
             if (newBindingExpression.eInternalContainer() == null)
@@ -144,118 +134,92 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
                   - TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION, null, msgs);
             }
             if (msgs != null)
-            {
                msgs.dispatch();
-            }
             if (eNotificationRequired())
-            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                  TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION, oldBindingExpression, this.bindingExpression));
-            }
+                  TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION, oldBindingExpression, bindingExpression));
          }
       }
-      return this.bindingExpression;
+      return bindingExpression;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public Expression basicGetBindingExpression ()
    {
-      return this.bindingExpression;
+      return bindingExpression;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public NotificationChain basicSetBindingExpression (Expression newBindingExpression, NotificationChain msgs)
    {
-      Expression oldBindingExpression = this.bindingExpression;
-      this.bindingExpression = newBindingExpression;
+      Expression oldBindingExpression = bindingExpression;
+      bindingExpression = newBindingExpression;
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
             TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION, oldBindingExpression, newBindingExpression);
          if (msgs == null)
-         {
             msgs = notification;
-         }
          else
-         {
             msgs.add(notification);
-         }
       }
       return msgs;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setBindingExpression (Expression newBindingExpression)
    {
-      if (newBindingExpression != this.bindingExpression)
+      if (newBindingExpression != bindingExpression)
       {
          NotificationChain msgs = null;
-         if (this.bindingExpression != null)
-         {
-            msgs = ((InternalEObject) this.bindingExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+         if (bindingExpression != null)
+            msgs = ((InternalEObject) bindingExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
                - TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION, null, msgs);
-         }
          if (newBindingExpression != null)
-         {
             msgs = ((InternalEObject) newBindingExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
                - TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION, null, msgs);
-         }
          msgs = basicSetBindingExpression(newBindingExpression, msgs);
          if (msgs != null)
-         {
             msgs.dispatch();
-         }
       }
       else if (eNotificationRequired())
-      {
          eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION,
             newBindingExpression, newBindingExpression));
-      }
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public TemplateBinding getTemplateBinding ()
    {
       if (eContainerFeatureID() != TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING)
-      {
          return null;
-      }
       return (TemplateBinding) eContainer();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public TemplateBinding basicGetTemplateBinding ()
    {
       if (eContainerFeatureID() != TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING)
-      {
          return null;
-      }
       return (TemplateBinding) eInternalContainer();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public NotificationChain basicSetTemplateBinding (TemplateBinding newTemplateBinding, NotificationChain msgs)
@@ -267,7 +231,6 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setTemplateBinding (TemplateBinding newTemplateBinding)
@@ -276,35 +239,24 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
          || (eContainerFeatureID() != TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING && newTemplateBinding != null))
       {
          if (EcoreUtil.isAncestor(this, newTemplateBinding))
-         {
             throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-         }
          NotificationChain msgs = null;
          if (eInternalContainer() != null)
-         {
             msgs = eBasicRemoveFromContainer(msgs);
-         }
          if (newTemplateBinding != null)
-         {
             msgs = ((InternalEObject) newTemplateBinding).eInverseAdd(this,
                TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING, TemplateBinding.class, msgs);
-         }
          msgs = basicSetTemplateBinding(newTemplateBinding, msgs);
          if (msgs != null)
-         {
             msgs.dispatch();
-         }
       }
       else if (eNotificationRequired())
-      {
          eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING,
             newTemplateBinding, newTemplateBinding));
-      }
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -314,9 +266,7 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
       {
          case TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING:
             if (eInternalContainer() != null)
-            {
                msgs = eBasicRemoveFromContainer(msgs);
-            }
             return basicSetTemplateBinding((TemplateBinding) otherEnd, msgs);
       }
       return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -324,7 +274,6 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -342,7 +291,6 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -359,7 +307,6 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -369,21 +316,15 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
       {
          case TemplatesPackage.PROPERTY_BINDING__BOUND_PROPERTY:
             if (resolve)
-            {
                return getBoundProperty();
-            }
             return basicGetBoundProperty();
          case TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION:
             if (resolve)
-            {
                return getBindingExpression();
-            }
             return basicGetBindingExpression();
          case TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING:
             if (resolve)
-            {
                return getTemplateBinding();
-            }
             return basicGetTemplateBinding();
       }
       return super.eGet(featureID, resolve, coreType);
@@ -391,7 +332,6 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -414,7 +354,6 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -437,7 +376,6 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -446,9 +384,9 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
       switch (featureID)
       {
          case TemplatesPackage.PROPERTY_BINDING__BOUND_PROPERTY:
-            return this.boundProperty != null;
+            return boundProperty != null;
          case TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION:
-            return this.bindingExpression != null;
+            return bindingExpression != null;
          case TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING:
             return basicGetTemplateBinding() != null;
       }

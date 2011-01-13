@@ -24,20 +24,19 @@ import org.storydriven.modeling.SDMPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.storydriven.modeling.impl.ExtensionImpl#getBase <em>Base</em>}</li>
- * <li>{@link org.storydriven.modeling.impl.ExtensionImpl#getModelBase <em>Model Base</em>}</li>
- * <li>{@link org.storydriven.modeling.impl.ExtensionImpl#getOwningAnnotation <em>Owning Annotation</em>}</li>
- * <li>{@link org.storydriven.modeling.impl.ExtensionImpl#getExtendableBase <em>Extendable Base</em>}</li>
+ *   <li>{@link org.storydriven.modeling.impl.ExtensionImpl#getBase <em>Base</em>}</li>
+ *   <li>{@link org.storydriven.modeling.impl.ExtensionImpl#getModelBase <em>Model Base</em>}</li>
+ *   <li>{@link org.storydriven.modeling.impl.ExtensionImpl#getOwningAnnotation <em>Owning Annotation</em>}</li>
+ *   <li>{@link org.storydriven.modeling.impl.ExtensionImpl#getExtendableBase <em>Extendable Base</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class ExtensionImpl extends ExtendableElementImpl implements Extension
 {
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    protected ExtensionImpl ()
@@ -47,7 +46,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -58,7 +56,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public EObject getBase ()
@@ -69,7 +66,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public EObject basicGetBase ()
@@ -88,7 +84,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public EModelElement getModelBase ()
@@ -140,7 +135,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public EAnnotation getOwningAnnotation ()
@@ -192,35 +186,28 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ExtendableElement getExtendableBase ()
    {
       if (eContainerFeatureID() != SDMPackage.EXTENSION__EXTENDABLE_BASE)
-      {
          return null;
-      }
       return (ExtendableElement) eContainer();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ExtendableElement basicGetExtendableBase ()
    {
       if (eContainerFeatureID() != SDMPackage.EXTENSION__EXTENDABLE_BASE)
-      {
          return null;
-      }
       return (ExtendableElement) eInternalContainer();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public NotificationChain basicSetExtendableBase (ExtendableElement newExtendableBase, NotificationChain msgs)
@@ -231,7 +218,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setExtendableBase (ExtendableElement newExtendableBase)
@@ -240,35 +226,24 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
          || (eContainerFeatureID() != SDMPackage.EXTENSION__EXTENDABLE_BASE && newExtendableBase != null))
       {
          if (EcoreUtil.isAncestor(this, newExtendableBase))
-         {
             throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-         }
          NotificationChain msgs = null;
          if (eInternalContainer() != null)
-         {
             msgs = eBasicRemoveFromContainer(msgs);
-         }
          if (newExtendableBase != null)
-         {
             msgs = ((InternalEObject) newExtendableBase).eInverseAdd(this, SDMPackage.EXTENDABLE_ELEMENT__EXTENSION,
                ExtendableElement.class, msgs);
-         }
          msgs = basicSetExtendableBase(newExtendableBase, msgs);
          if (msgs != null)
-         {
             msgs.dispatch();
-         }
       }
       else if (eNotificationRequired())
-      {
          eNotify(new ENotificationImpl(this, Notification.SET, SDMPackage.EXTENSION__EXTENDABLE_BASE,
             newExtendableBase, newExtendableBase));
-      }
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -278,9 +253,7 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
       {
          case SDMPackage.EXTENSION__EXTENDABLE_BASE:
             if (eInternalContainer() != null)
-            {
                msgs = eBasicRemoveFromContainer(msgs);
-            }
             return basicSetExtendableBase((ExtendableElement) otherEnd, msgs);
       }
       return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -288,7 +261,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    protected NotificationChain eInverseAddGen (InternalEObject otherEnd, int featureID, NotificationChain msgs)
@@ -297,9 +269,7 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
       {
          case SDMPackage.EXTENSION__EXTENDABLE_BASE:
             if (eInternalContainer() != null)
-            {
                msgs = eBasicRemoveFromContainer(msgs);
-            }
             return basicSetExtendableBase((ExtendableElement) otherEnd, msgs);
       }
       return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -307,7 +277,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -323,7 +292,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -340,7 +308,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -350,27 +317,19 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
       {
          case SDMPackage.EXTENSION__BASE:
             if (resolve)
-            {
                return getBase();
-            }
             return basicGetBase();
          case SDMPackage.EXTENSION__MODEL_BASE:
             if (resolve)
-            {
                return getModelBase();
-            }
             return basicGetModelBase();
          case SDMPackage.EXTENSION__OWNING_ANNOTATION:
             if (resolve)
-            {
                return getOwningAnnotation();
-            }
             return basicGetOwningAnnotation();
          case SDMPackage.EXTENSION__EXTENDABLE_BASE:
             if (resolve)
-            {
                return getExtendableBase();
-            }
             return basicGetExtendableBase();
       }
       return super.eGet(featureID, resolve, coreType);
@@ -378,7 +337,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -401,7 +359,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -424,7 +381,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -446,7 +402,6 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements Ext
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean isSetBase ()

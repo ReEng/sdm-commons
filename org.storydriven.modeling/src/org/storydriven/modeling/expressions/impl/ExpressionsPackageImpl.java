@@ -6,8 +6,10 @@
  */
 package org.storydriven.modeling.expressions.impl;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -15,67 +17,108 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.impl.ActivitiesPackageImpl;
-import org.storydriven.modeling.expressions.Collaboration;
-import org.storydriven.modeling.expressions.ComplexExpression;
-import org.storydriven.modeling.expressions.ConditionalExpression;
+import org.storydriven.modeling.calls.CallsPackage;
+import org.storydriven.modeling.calls.impl.CallsPackageImpl;
+import org.storydriven.modeling.expressions.ArithmeticExpression;
+import org.storydriven.modeling.expressions.ArithmeticOperator;
+import org.storydriven.modeling.expressions.BinaryExpression;
+import org.storydriven.modeling.expressions.BinaryLogicExpression;
+import org.storydriven.modeling.expressions.ComparingOperator;
+import org.storydriven.modeling.expressions.ComparisonExpression;
+import org.storydriven.modeling.expressions.Expression;
 import org.storydriven.modeling.expressions.ExpressionsFactory;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
-import org.storydriven.modeling.expressions.ForLoop;
-import org.storydriven.modeling.expressions.WhileLoop;
+import org.storydriven.modeling.expressions.LiteralExpression;
+import org.storydriven.modeling.expressions.LogicOperator;
+import org.storydriven.modeling.expressions.NotExpression;
+import org.storydriven.modeling.expressions.TextualExpression;
 import org.storydriven.modeling.impl.SDMPackageImpl;
-import org.storydriven.modeling.pattern.PatternPackage;
-import org.storydriven.modeling.pattern.impl.PatternPackageImpl;
+import org.storydriven.modeling.patterns.PatternsPackage;
+import org.storydriven.modeling.patterns.impl.PatternsPackageImpl;
 import org.storydriven.modeling.templates.TemplatesPackage;
 import org.storydriven.modeling.templates.impl.TemplatesPackageImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- * 
  * @generated
  */
 public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsPackage
 {
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   private EClass collaborationEClass = null;
+   private EClass expressionEClass = null;
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   private EClass complexExpressionEClass = null;
+   private EClass textualExpressionEClass = null;
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   private EClass forLoopEClass = null;
+   private EClass literalExpressionEClass = null;
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   private EClass whileLoopEClass = null;
+   private EClass notExpressionEClass = null;
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   private EClass conditionalExpressionEClass = null;
+   private EClass binaryExpressionEClass = null;
 
    /**
-    * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package package URI value.
-    * <p>
-    * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the
-    * registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    */
+   private EClass comparisonExpressionEClass = null;
+
+   /**
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    */
+   private EClass arithmeticExpressionEClass = null;
+
+   /**
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    */
+   private EClass binaryLogicExpressionEClass = null;
+
+   /**
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    */
+   private EEnum logicOperatorEEnum = null;
+
+   /**
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    */
+   private EEnum comparingOperatorEEnum = null;
+
+   /**
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    */
+   private EEnum arithmeticOperatorEEnum = null;
+
+   /**
+    * Creates an instance of the model <b>Package</b>, registered with
+    * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+    * package URI value.
+    * <p>Note: the correct way to create the package is via the static
+    * factory method {@link #init init()}, which also performs
+    * initialization of the package, or returns the registered package,
+    * if one already exists.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see org.eclipse.emf.ecore.EPackage.Registry
     * @see org.storydriven.modeling.expressions.ExpressionsPackage#eNS_URI
     * @see #init()
@@ -88,17 +131,16 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    private static boolean isInited = false;
 
    /**
     * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-    * <p>
-    * This method is used to initialize {@link ExpressionsPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access
-    * that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
     * 
+    * <p>This method is used to initialize {@link ExpressionsPackage#eINSTANCE} when that field is accessed.
+    * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #eNS_URI
     * @see #createPackageContents()
     * @see #initializePackageContents()
@@ -107,9 +149,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
    public static ExpressionsPackage init ()
    {
       if (isInited)
-      {
          return (ExpressionsPackage) EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
-      }
 
       // Obtain or create and register package
       ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ExpressionsPackageImpl
@@ -123,12 +163,30 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
       // Obtain or create and register interdependencies
       SDMPackageImpl theSDMPackage = (SDMPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI) instanceof SDMPackageImpl
          ? EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI) : SDMPackage.eINSTANCE);
-      PatternPackageImpl thePatternPackage = (PatternPackageImpl) (EPackage.Registry.INSTANCE
-         .getEPackage(PatternPackage.eNS_URI) instanceof PatternPackageImpl ? EPackage.Registry.INSTANCE
-         .getEPackage(PatternPackage.eNS_URI) : PatternPackage.eINSTANCE);
       ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl) (EPackage.Registry.INSTANCE
          .getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE
          .getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);
+      org.storydriven.modeling.activities.expressions.impl.ExpressionsPackageImpl theExpressionsPackage_1 = (org.storydriven.modeling.activities.expressions.impl.ExpressionsPackageImpl) (EPackage.Registry.INSTANCE
+         .getEPackage(org.storydriven.modeling.activities.expressions.ExpressionsPackage.eNS_URI) instanceof org.storydriven.modeling.activities.expressions.impl.ExpressionsPackageImpl
+         ? EPackage.Registry.INSTANCE
+            .getEPackage(org.storydriven.modeling.activities.expressions.ExpressionsPackage.eNS_URI)
+         : org.storydriven.modeling.activities.expressions.ExpressionsPackage.eINSTANCE);
+      CallsPackageImpl theCallsPackage = (CallsPackageImpl) (EPackage.Registry.INSTANCE
+         .getEPackage(CallsPackage.eNS_URI) instanceof CallsPackageImpl ? EPackage.Registry.INSTANCE
+         .getEPackage(CallsPackage.eNS_URI) : CallsPackage.eINSTANCE);
+      org.storydriven.modeling.calls.expressions.impl.ExpressionsPackageImpl theExpressionsPackage_2 = (org.storydriven.modeling.calls.expressions.impl.ExpressionsPackageImpl) (EPackage.Registry.INSTANCE
+         .getEPackage(org.storydriven.modeling.calls.expressions.ExpressionsPackage.eNS_URI) instanceof org.storydriven.modeling.calls.expressions.impl.ExpressionsPackageImpl
+         ? EPackage.Registry.INSTANCE
+            .getEPackage(org.storydriven.modeling.calls.expressions.ExpressionsPackage.eNS_URI)
+         : org.storydriven.modeling.calls.expressions.ExpressionsPackage.eINSTANCE);
+      PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl) (EPackage.Registry.INSTANCE
+         .getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE
+         .getEPackage(PatternsPackage.eNS_URI) : PatternsPackage.eINSTANCE);
+      org.storydriven.modeling.patterns.expressions.impl.ExpressionsPackageImpl theExpressionsPackage_3 = (org.storydriven.modeling.patterns.expressions.impl.ExpressionsPackageImpl) (EPackage.Registry.INSTANCE
+         .getEPackage(org.storydriven.modeling.patterns.expressions.ExpressionsPackage.eNS_URI) instanceof org.storydriven.modeling.patterns.expressions.impl.ExpressionsPackageImpl
+         ? EPackage.Registry.INSTANCE
+            .getEPackage(org.storydriven.modeling.patterns.expressions.ExpressionsPackage.eNS_URI)
+         : org.storydriven.modeling.patterns.expressions.ExpressionsPackage.eINSTANCE);
       TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl) (EPackage.Registry.INSTANCE
          .getEPackage(TemplatesPackage.eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE
          .getEPackage(TemplatesPackage.eNS_URI) : TemplatesPackage.eINSTANCE);
@@ -136,15 +194,23 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
       // Create package meta-data objects
       theExpressionsPackage.createPackageContents();
       theSDMPackage.createPackageContents();
-      thePatternPackage.createPackageContents();
       theActivitiesPackage.createPackageContents();
+      theExpressionsPackage_1.createPackageContents();
+      theCallsPackage.createPackageContents();
+      theExpressionsPackage_2.createPackageContents();
+      thePatternsPackage.createPackageContents();
+      theExpressionsPackage_3.createPackageContents();
       theTemplatesPackage.createPackageContents();
 
       // Initialize created meta-data
       theExpressionsPackage.initializePackageContents();
       theSDMPackage.initializePackageContents();
-      thePatternPackage.initializePackageContents();
       theActivitiesPackage.initializePackageContents();
+      theExpressionsPackage_1.initializePackageContents();
+      theCallsPackage.initializePackageContents();
+      theExpressionsPackage_2.initializePackageContents();
+      thePatternsPackage.initializePackageContents();
+      theExpressionsPackage_3.initializePackageContents();
       theTemplatesPackage.initializePackageContents();
 
       // Mark meta-data to indicate it can't be changed
@@ -157,187 +223,204 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EClass getCollaboration ()
+   public EClass getExpression ()
    {
-      return this.collaborationEClass;
+      return expressionEClass;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EReference getCollaboration_Source ()
+   public EClass getTextualExpression ()
    {
-      return (EReference) this.collaborationEClass.getEStructuralFeatures().get(0);
+      return textualExpressionEClass;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EReference getCollaboration_Target ()
+   public EAttribute getTextualExpression_ExpressionText ()
    {
-      return (EReference) this.collaborationEClass.getEStructuralFeatures().get(1);
+      return (EAttribute) textualExpressionEClass.getEStructuralFeatures().get(0);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EReference getCollaboration_Body ()
+   public EAttribute getTextualExpression_Language ()
    {
-      return (EReference) this.collaborationEClass.getEStructuralFeatures().get(2);
+      return (EAttribute) textualExpressionEClass.getEStructuralFeatures().get(1);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EAttribute getCollaboration_ForEach ()
+   public EAttribute getTextualExpression_LanguageVersion ()
    {
-      return (EAttribute) this.collaborationEClass.getEStructuralFeatures().get(3);
+      return (EAttribute) textualExpressionEClass.getEStructuralFeatures().get(2);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EClass getComplexExpression ()
+   public EClass getLiteralExpression ()
    {
-      return this.complexExpressionEClass;
+      return literalExpressionEClass;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EReference getComplexExpression_ChildExpression ()
+   public EAttribute getLiteralExpression_Value ()
    {
-      return (EReference) this.complexExpressionEClass.getEStructuralFeatures().get(0);
+      return (EAttribute) literalExpressionEClass.getEStructuralFeatures().get(0);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EClass getForLoop ()
+   public EReference getLiteralExpression_ValueType ()
    {
-      return this.forLoopEClass;
+      return (EReference) literalExpressionEClass.getEStructuralFeatures().get(1);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EReference getForLoop_LoopVariable ()
+   public EClass getNotExpression ()
    {
-      return (EReference) this.forLoopEClass.getEStructuralFeatures().get(0);
+      return notExpressionEClass;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EReference getForLoop_StartValue ()
+   public EReference getNotExpression_NegatedExpression ()
    {
-      return (EReference) this.forLoopEClass.getEStructuralFeatures().get(1);
+      return (EReference) notExpressionEClass.getEStructuralFeatures().get(0);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EReference getForLoop_StopValue ()
+   public EClass getBinaryExpression ()
    {
-      return (EReference) this.forLoopEClass.getEStructuralFeatures().get(2);
+      return binaryExpressionEClass;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EClass getWhileLoop ()
+   public EReference getBinaryExpression_LeftExpression ()
    {
-      return this.whileLoopEClass;
+      return (EReference) binaryExpressionEClass.getEStructuralFeatures().get(0);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EReference getWhileLoop_LoopCondition ()
+   public EReference getBinaryExpression_RightExpression ()
    {
-      return (EReference) this.whileLoopEClass.getEStructuralFeatures().get(0);
+      return (EReference) binaryExpressionEClass.getEStructuralFeatures().get(1);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EReference getWhileLoop_Body ()
+   public EClass getComparisonExpression ()
    {
-      return (EReference) this.whileLoopEClass.getEStructuralFeatures().get(1);
+      return comparisonExpressionEClass;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EClass getConditionalExpression ()
+   public EAttribute getComparisonExpression_Operator ()
    {
-      return this.conditionalExpressionEClass;
+      return (EAttribute) comparisonExpressionEClass.getEStructuralFeatures().get(0);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EReference getConditionalExpression_Condition ()
+   public EClass getArithmeticExpression ()
    {
-      return (EReference) this.conditionalExpressionEClass.getEStructuralFeatures().get(0);
+      return arithmeticExpressionEClass;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EReference getConditionalExpression_Then ()
+   public EAttribute getArithmeticExpression_Operator ()
    {
-      return (EReference) this.conditionalExpressionEClass.getEStructuralFeatures().get(1);
+      return (EAttribute) arithmeticExpressionEClass.getEStructuralFeatures().get(0);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public EReference getConditionalExpression_Else ()
+   public EClass getBinaryLogicExpression ()
    {
-      return (EReference) this.conditionalExpressionEClass.getEStructuralFeatures().get(2);
+      return binaryLogicExpressionEClass;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * @generated
+    */
+   public EAttribute getBinaryLogicExpression_Operator ()
+   {
+      return (EAttribute) binaryLogicExpressionEClass.getEStructuralFeatures().get(0);
+   }
+
+   /**
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    */
+   public EEnum getLogicOperator ()
+   {
+      return logicOperatorEEnum;
+   }
+
+   /**
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    */
+   public EEnum getComparingOperator ()
+   {
+      return comparingOperatorEEnum;
+   }
+
+   /**
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    */
+   public EEnum getArithmeticOperator ()
+   {
+      return arithmeticOperatorEEnum;
+   }
+
+   /**
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public ExpressionsFactory getExpressionsFactory ()
@@ -347,69 +430,74 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    private boolean isCreated = false;
 
    /**
-    * Creates the meta-model objects for the package. This method is guarded to have no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates the meta-model objects for the package.  This method is
+    * guarded to have no affect on any invocation but its first.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public void createPackageContents ()
    {
-      if (this.isCreated)
-      {
+      if (isCreated)
          return;
-      }
-      this.isCreated = true;
+      isCreated = true;
 
       // Create classes and their features
-      this.collaborationEClass = createEClass(COLLABORATION);
-      createEReference(this.collaborationEClass, COLLABORATION__SOURCE);
-      createEReference(this.collaborationEClass, COLLABORATION__TARGET);
-      createEReference(this.collaborationEClass, COLLABORATION__BODY);
-      createEAttribute(this.collaborationEClass, COLLABORATION__FOR_EACH);
+      textualExpressionEClass = createEClass(TEXTUAL_EXPRESSION);
+      createEAttribute(textualExpressionEClass, TEXTUAL_EXPRESSION__EXPRESSION_TEXT);
+      createEAttribute(textualExpressionEClass, TEXTUAL_EXPRESSION__LANGUAGE);
+      createEAttribute(textualExpressionEClass, TEXTUAL_EXPRESSION__LANGUAGE_VERSION);
 
-      this.complexExpressionEClass = createEClass(COMPLEX_EXPRESSION);
-      createEReference(this.complexExpressionEClass, COMPLEX_EXPRESSION__CHILD_EXPRESSION);
+      literalExpressionEClass = createEClass(LITERAL_EXPRESSION);
+      createEAttribute(literalExpressionEClass, LITERAL_EXPRESSION__VALUE);
+      createEReference(literalExpressionEClass, LITERAL_EXPRESSION__VALUE_TYPE);
 
-      this.forLoopEClass = createEClass(FOR_LOOP);
-      createEReference(this.forLoopEClass, FOR_LOOP__LOOP_VARIABLE);
-      createEReference(this.forLoopEClass, FOR_LOOP__START_VALUE);
-      createEReference(this.forLoopEClass, FOR_LOOP__STOP_VALUE);
+      notExpressionEClass = createEClass(NOT_EXPRESSION);
+      createEReference(notExpressionEClass, NOT_EXPRESSION__NEGATED_EXPRESSION);
 
-      this.whileLoopEClass = createEClass(WHILE_LOOP);
-      createEReference(this.whileLoopEClass, WHILE_LOOP__LOOP_CONDITION);
-      createEReference(this.whileLoopEClass, WHILE_LOOP__BODY);
+      binaryExpressionEClass = createEClass(BINARY_EXPRESSION);
+      createEReference(binaryExpressionEClass, BINARY_EXPRESSION__LEFT_EXPRESSION);
+      createEReference(binaryExpressionEClass, BINARY_EXPRESSION__RIGHT_EXPRESSION);
 
-      this.conditionalExpressionEClass = createEClass(CONDITIONAL_EXPRESSION);
-      createEReference(this.conditionalExpressionEClass, CONDITIONAL_EXPRESSION__CONDITION);
-      createEReference(this.conditionalExpressionEClass, CONDITIONAL_EXPRESSION__THEN);
-      createEReference(this.conditionalExpressionEClass, CONDITIONAL_EXPRESSION__ELSE);
+      comparisonExpressionEClass = createEClass(COMPARISON_EXPRESSION);
+      createEAttribute(comparisonExpressionEClass, COMPARISON_EXPRESSION__OPERATOR);
+
+      arithmeticExpressionEClass = createEClass(ARITHMETIC_EXPRESSION);
+      createEAttribute(arithmeticExpressionEClass, ARITHMETIC_EXPRESSION__OPERATOR);
+
+      binaryLogicExpressionEClass = createEClass(BINARY_LOGIC_EXPRESSION);
+      createEAttribute(binaryLogicExpressionEClass, BINARY_LOGIC_EXPRESSION__OPERATOR);
+
+      expressionEClass = createEClass(EXPRESSION);
+
+      // Create enums
+      logicOperatorEEnum = createEEnum(LOGIC_OPERATOR);
+      comparingOperatorEEnum = createEEnum(COMPARING_OPERATOR);
+      arithmeticOperatorEEnum = createEEnum(ARITHMETIC_OPERATOR);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    private boolean isInitialized = false;
 
    /**
-    * Complete the initialization of the package and its meta-model. This method is guarded to have no affect on any invocation but its first. <!-- begin-user-doc --> <!--
+    * Complete the initialization of the package and its meta-model.  This
+    * method is guarded to have no affect on any invocation but its first.
+    * <!-- begin-user-doc --> <!--
     * end-user-doc -->
-    * 
     * @generated
     */
    public void initializePackageContents ()
    {
-      if (this.isInitialized)
-      {
+      if (isInitialized)
          return;
-      }
-      this.isInitialized = true;
+      isInitialized = true;
 
       // Initialize package
       setName(eNAME);
@@ -417,77 +505,191 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
       setNsURI(eNS_URI);
 
       // Obtain other dependent packages
-      SDMPackage theSDMPackage = (SDMPackage) EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
-      PatternPackage thePatternPackage = (PatternPackage) EPackage.Registry.INSTANCE
-         .getEPackage(PatternPackage.eNS_URI);
       EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+      SDMPackage theSDMPackage = (SDMPackage) EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 
       // Create type parameters
 
       // Set bounds for type parameters
 
       // Add supertypes to classes
-      this.collaborationEClass.getESuperTypes().add(theSDMPackage.getExpression());
-      this.complexExpressionEClass.getESuperTypes().add(theSDMPackage.getExpression());
-      this.forLoopEClass.getESuperTypes().add(theSDMPackage.getExpression());
-      this.whileLoopEClass.getESuperTypes().add(theSDMPackage.getExpression());
-      this.conditionalExpressionEClass.getESuperTypes().add(theSDMPackage.getExpression());
+      textualExpressionEClass.getESuperTypes().add(this.getExpression());
+      literalExpressionEClass.getESuperTypes().add(this.getExpression());
+      notExpressionEClass.getESuperTypes().add(this.getExpression());
+      binaryExpressionEClass.getESuperTypes().add(this.getExpression());
+      comparisonExpressionEClass.getESuperTypes().add(this.getBinaryExpression());
+      arithmeticExpressionEClass.getESuperTypes().add(this.getBinaryExpression());
+      binaryLogicExpressionEClass.getESuperTypes().add(this.getBinaryExpression());
+      expressionEClass.getESuperTypes().add(theSDMPackage.getTypedElement());
+      expressionEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
 
-      // Initialize classes and features; add operations and parameters
-      initEClass(this.collaborationEClass, Collaboration.class, "Collaboration", !IS_ABSTRACT, !IS_INTERFACE,
+      // Initialize classes, features, and operations; add parameters
+      initEClass(textualExpressionEClass, TextualExpression.class, "TextualExpression", !IS_ABSTRACT, !IS_INTERFACE,
          IS_GENERATED_INSTANCE_CLASS);
-      initEReference(getCollaboration_Source(), thePatternPackage.getObject(),
-         thePatternPackage.getObject_SentCollaboration(), "source", null, 0, 1, Collaboration.class, !IS_TRANSIENT,
-         !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-         !IS_ORDERED);
-      initEReference(getCollaboration_Target(), thePatternPackage.getObject(),
-         thePatternPackage.getObject_ReceivedCollaboration(), "target", null, 0, -1, Collaboration.class,
-         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+      initEAttribute(getTextualExpression_ExpressionText(), ecorePackage.getEString(), "expressionText", null, 1, 1,
+         TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
-      initEReference(getCollaboration_Body(), theSDMPackage.getExpression(), null, "body", null, 0, 1,
-         Collaboration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
-         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-      initEAttribute(getCollaboration_ForEach(), this.ecorePackage.getEBoolean(), "forEach", null, 1, 1,
-         Collaboration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+      initEAttribute(getTextualExpression_Language(), ecorePackage.getEString(), "language", null, 1, 1,
+         TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+         !IS_DERIVED, !IS_ORDERED);
+      initEAttribute(getTextualExpression_LanguageVersion(), ecorePackage.getEString(), "languageVersion", null, 0, 1,
+         TextualExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
 
-      initEClass(this.complexExpressionEClass, ComplexExpression.class, "ComplexExpression", !IS_ABSTRACT,
-         !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-      initEReference(getComplexExpression_ChildExpression(), theSDMPackage.getExpression(), null, "childExpression",
-         null, 1, -1, ComplexExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-         IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-      initEClass(this.forLoopEClass, ForLoop.class, "ForLoop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-      initEReference(getForLoop_LoopVariable(), theEcorePackage.getEAttribute(), null, "loopVariable", null, 1, 1,
-         ForLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-         IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-      initEReference(getForLoop_StartValue(), theSDMPackage.getExpression(), null, "startValue", null, 1, 1,
-         ForLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-         IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-      initEReference(getForLoop_StopValue(), theSDMPackage.getExpression(), null, "stopValue", null, 1, 1,
-         ForLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-         IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-      initEClass(this.whileLoopEClass, WhileLoop.class, "WhileLoop", !IS_ABSTRACT, !IS_INTERFACE,
+      initEClass(literalExpressionEClass, LiteralExpression.class, "LiteralExpression", !IS_ABSTRACT, !IS_INTERFACE,
          IS_GENERATED_INSTANCE_CLASS);
-      initEReference(getWhileLoop_LoopCondition(), theSDMPackage.getExpression(), null, "loopCondition", null, 0, 1,
-         WhileLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-         IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-      initEReference(getWhileLoop_Body(), theSDMPackage.getExpression(), null, "body", null, 0, 1, WhileLoop.class,
-         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+      initEAttribute(getLiteralExpression_Value(), ecorePackage.getEString(), "value", null, 0, 1,
+         LiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+         !IS_DERIVED, !IS_ORDERED);
+      initEReference(getLiteralExpression_ValueType(), theEcorePackage.getEDataType(), null, "valueType", null, 1, 1,
+         LiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+      initEClass(notExpressionEClass, NotExpression.class, "NotExpression", !IS_ABSTRACT, !IS_INTERFACE,
+         IS_GENERATED_INSTANCE_CLASS);
+      initEReference(getNotExpression_NegatedExpression(), this.getExpression(), null, "negatedExpression", null, 1, 1,
+         NotExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
+         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+      initEClass(binaryExpressionEClass, BinaryExpression.class, "BinaryExpression", IS_ABSTRACT, !IS_INTERFACE,
+         IS_GENERATED_INSTANCE_CLASS);
+      initEReference(getBinaryExpression_LeftExpression(), this.getExpression(), null, "leftExpression", null, 1, 1,
+         BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
+         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+      initEReference(getBinaryExpression_RightExpression(), this.getExpression(), null, "rightExpression", null, 1, 1,
+         BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
+         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+      initEClass(comparisonExpressionEClass, ComparisonExpression.class, "ComparisonExpression", !IS_ABSTRACT,
+         !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+      initEAttribute(getComparisonExpression_Operator(), this.getComparingOperator(), "operator", null, 1, 1,
+         ComparisonExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
 
-      initEClass(this.conditionalExpressionEClass, ConditionalExpression.class, "ConditionalExpression", !IS_ABSTRACT,
+      initEClass(arithmeticExpressionEClass, ArithmeticExpression.class, "ArithmeticExpression", !IS_ABSTRACT,
          !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-      initEReference(getConditionalExpression_Condition(), theSDMPackage.getExpression(), null, "condition", null, 1,
-         1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
-         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-      initEReference(getConditionalExpression_Then(), theSDMPackage.getExpression(), null, "then", null, 0, 1,
-         ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
-         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-      initEReference(getConditionalExpression_Else(), theSDMPackage.getExpression(), null, "else", null, 0, 1,
-         ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
-         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+      initEAttribute(getArithmeticExpression_Operator(), this.getArithmeticOperator(), "operator", null, 1, 1,
+         ArithmeticExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+         !IS_DERIVED, !IS_ORDERED);
+
+      initEClass(binaryLogicExpressionEClass, BinaryLogicExpression.class, "BinaryLogicExpression", !IS_ABSTRACT,
+         !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+      initEAttribute(getBinaryLogicExpression_Operator(), this.getLogicOperator(), "operator", null, 1, 1,
+         BinaryLogicExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+         !IS_DERIVED, !IS_ORDERED);
+
+      initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE,
+         IS_GENERATED_INSTANCE_CLASS);
+
+      // Initialize enums and add enum literals
+      initEEnum(logicOperatorEEnum, LogicOperator.class, "LogicOperator");
+      addEEnumLiteral(logicOperatorEEnum, LogicOperator.AND);
+      addEEnumLiteral(logicOperatorEEnum, LogicOperator.OR);
+      addEEnumLiteral(logicOperatorEEnum, LogicOperator.XOR);
+
+      initEEnum(comparingOperatorEEnum, ComparingOperator.class, "ComparingOperator");
+      addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.LESS);
+      addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.LESS_OR_EQUAL);
+      addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.EQUAL);
+      addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.GREATER_OR_EQUAL);
+      addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.GREATER);
+      addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.UNEQUAL);
+
+      initEEnum(arithmeticOperatorEEnum, ArithmeticOperator.class, "ArithmeticOperator");
+      addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.PLUS);
+      addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.MINUS);
+      addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.TIMES);
+      addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.DIVIDE);
+      addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.MODULO);
+
+      // Create annotations
+      // http://www.eclipse.org/emf/2002/GenModel
+      createGenModelAnnotations();
+      // subsets
+      createSubsetsAnnotations();
+   }
+
+   /**
+    * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/GenModel</b>.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    */
+   protected void createGenModelAnnotations ()
+   {
+      String source = "http://www.eclipse.org/emf/2002/GenModel";
+      addAnnotation(
+         logicOperatorEEnum,
+         source,
+         new String[] {
+               "documentation",
+               "Defines the operators for bninary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression."});
+      addAnnotation(comparingOperatorEEnum, source, new String[] {"documentation",
+            "Defines the operators for comparing expressions."});
+      addAnnotation(arithmeticOperatorEEnum, source, new String[] {"documentation",
+            "Defines the operators for arithmetic expressions."});
+      addAnnotation(textualExpressionEClass, source, new String[] {"documentation",
+            "Represents any expression in a textual language embedded into Story Diagrams, e.g. OCL or Java ."});
+      addAnnotation(getTextualExpression_ExpressionText(), source, new String[] {"documentation",
+            "Holds the expression, e.g. in OCL or Java."});
+      addAnnotation(getTextualExpression_Language(), source, new String[] {"documentation",
+            "String representation of the used language which has to be unique. Examples are OCL and Java."});
+      addAnnotation(
+         getTextualExpression_LanguageVersion(),
+         source,
+         new String[] {
+               "documentation",
+               "String representation of the used language\'s version. The format is <Major>.<Minor>[.<Revision>[.<Build>]]\r\nExamples: 1.4 or 3.0.1 or 1.0.2.20101208."});
+      addAnnotation(
+         literalExpressionEClass,
+         source,
+         new String[] {
+               "documentation",
+               "Represents any literal, i.e. a value whose type is an EDataType. Literals are, for example, 5, 3.14, \'c\', \"text\", true."});
+      addAnnotation(getLiteralExpression_Value(), source, new String[] {"documentation",
+            "String representation of the value, e.g. \"5\", \"3.14\", \"c\", \"text\", or \"true\"."});
+      addAnnotation(getLiteralExpression_ValueType(), source, new String[] {"documentation",
+            "The literal\'s type, e.g. EInt, EString, etc."});
+      addAnnotation(notExpressionEClass, source, new String[] {"documentation",
+            "Represents a negated expression, e.g. NOT (a < 5)."});
+      addAnnotation(getNotExpression_NegatedExpression(), source, new String[] {"documentation",
+            "Represents the operand of a NotExpression, e.g. a < 5 in NOT (a < 5)."});
+      addAnnotation(binaryExpressionEClass, source, new String[] {"documentation",
+            "Represents any binary expression like v < 5 or x + 7."});
+      addAnnotation(getBinaryExpression_LeftExpression(), source, new String[] {"documentation",
+            "Represents the first operand of a binary expression, e.g. x in the expression x < 5."});
+      addAnnotation(getBinaryExpression_RightExpression(), source, new String[] {"documentation",
+            "Represents the second operand of a binary expression, e.g. 5 in the expression x < 5."});
+      addAnnotation(comparisonExpressionEClass, source, new String[] {"documentation",
+            "Represents comparing expressions like a < 5 or a >= 7."});
+      addAnnotation(getComparisonExpression_Operator(), source, new String[] {"documentation",
+            "Specifies the expression\'s comparing operator, e.g. <, >=, !=."});
+      addAnnotation(arithmeticExpressionEClass, source, new String[] {"documentation",
+            "Represents arithmetic expressions like a + 5 or a * 7."});
+      addAnnotation(getArithmeticExpression_Operator(), source, new String[] {"documentation",
+            "Specifies the expression\'s arithmetic operator, e.g. +, -, *, /, or MODULO."});
+      addAnnotation(binaryLogicExpressionEClass, source, new String[] {"documentation",
+            "Represents binary, logic expressions like a AND b and a OR b."});
+      addAnnotation(getBinaryLogicExpression_Operator(), source, new String[] {"documentation",
+            "Specifies the expression\'s logic operator, e.g. AND, OR, or XOR."});
+      addAnnotation(
+         expressionEClass,
+         source,
+         new String[] {
+               "documentation",
+               "Represents any expression in an embedded textual language, e.g. OCL or Java. An expression\'s type is dynamically derived by an external mechanism (see TypedElement)."});
+   }
+
+   /**
+    * Initializes the annotations for <b>subsets</b>.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   protected void createSubsetsAnnotations ()
+   {
+      String source = "subsets";
+      addAnnotation(getLiteralExpression_ValueType(), source, new String[] {},
+         new URI[] {URI.createURI(SDMPackage.eNS_URI).appendFragment("//TypedElement/type")});
    }
 
 } // ExpressionsPackageImpl

@@ -27,7 +27,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://ns.storydriven.org/sdm/pattern/0.1.0"
-            class="org.storydriven.modeling.pattern.PatternPackage"
+            class="org.storydriven.modeling.pattern.PatternsPackage"
             genModel="model/sdm.uml.genmodel"/>
    </extension>
 

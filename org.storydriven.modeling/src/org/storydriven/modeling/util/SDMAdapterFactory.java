@@ -10,33 +10,32 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.storydriven.modeling.*;
 import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.Expression;
 import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.Extension;
 import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.StringExpression;
 import org.storydriven.modeling.TypedElement;
+import org.storydriven.modeling.Variable;
 
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter <code>createXXX</code> method for each class of the model. <!-- end-user-doc -->
- * 
  * @see org.storydriven.modeling.SDMPackage
  * @generated
  */
 public class SDMAdapterFactory extends AdapterFactoryImpl
 {
    /**
-    * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached model package.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    protected static SDMPackage modelPackage;
 
    /**
-    * Creates an instance of the adapter factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates an instance of the adapter factory.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public SDMAdapterFactory ()
@@ -48,9 +47,9 @@ public class SDMAdapterFactory extends AdapterFactoryImpl
    }
 
    /**
-    * Returns whether this factory is applicable for the type of the object. <!-- begin-user-doc --> This implementation returns <code>true</code> if the object is either the
+    * Returns whether this factory is applicable for the type of the object.
+    * <!-- begin-user-doc --> This implementation returns <code>true</code> if the object is either the
     * model's package or is an instance object of the model. <!-- end-user-doc -->
-    * 
     * @return whether this factory is applicable for the type of the object.
     * @generated
     */
@@ -69,18 +68,12 @@ public class SDMAdapterFactory extends AdapterFactoryImpl
    }
 
    /**
-    * The switch that delegates to the <code>createXXX</code> methods. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The switch that delegates to the <code>createXXX</code> methods.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    protected SDMSwitch<Adapter> modelSwitch = new SDMSwitch<Adapter>()
    {
-      @Override
-      public Adapter caseExpression (Expression object)
-      {
-         return createExpressionAdapter();
-      }
-
       @Override
       public Adapter caseTypedElement (TypedElement object)
       {
@@ -100,21 +93,21 @@ public class SDMAdapterFactory extends AdapterFactoryImpl
       }
 
       @Override
-      public Adapter caseStringExpression (StringExpression object)
+      public Adapter caseCommentableElement (CommentableElement object)
       {
-         return createStringExpressionAdapter();
+         return createCommentableElementAdapter();
+      }
+
+      @Override
+      public Adapter caseVariable (Variable object)
+      {
+         return createVariableAdapter();
       }
 
       @Override
       public Adapter caseNamedElement (NamedElement object)
       {
          return createNamedElementAdapter();
-      }
-
-      @Override
-      public Adapter caseCommentableElement (CommentableElement object)
-      {
-         return createCommentableElementAdapter();
       }
 
       @Override
@@ -125,8 +118,8 @@ public class SDMAdapterFactory extends AdapterFactoryImpl
    };
 
    /**
-    * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates an adapter for the <code>target</code>.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @param target the object to adapt.
     * @return the adapter for the <code>target</code>.
     * @generated
@@ -134,78 +127,13 @@ public class SDMAdapterFactory extends AdapterFactoryImpl
    @Override
    public Adapter createAdapter (Notifier target)
    {
-      return this.modelSwitch.doSwitch((EObject) target);
+      return modelSwitch.doSwitch((EObject) target);
    }
 
    /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.Expression <em>Expression</em>}'. <!-- begin-user-doc --> This default implementation returns
-    * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
-    * @return the new adapter.
-    * @see org.storydriven.modeling.Expression
-    * @generated
-    */
-   public Adapter createExpressionAdapter ()
-   {
-      return null;
-   }
-
-   /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.TypedElement <em>Typed Element</em>}'. <!-- begin-user-doc --> This default implementation
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.NamedElement <em>Named Element</em>}'.
+    * <!-- begin-user-doc --> This default implementation
     * returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
-    * @return the new adapter.
-    * @see org.storydriven.modeling.TypedElement
-    * @generated
-    */
-   public Adapter createTypedElementAdapter ()
-   {
-      return null;
-   }
-
-   /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.ExtendableElement <em>Extendable Element</em>}'. <!-- begin-user-doc --> This default
-    * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
-    * @return the new adapter.
-    * @see org.storydriven.modeling.ExtendableElement
-    * @generated
-    */
-   public Adapter createExtendableElementAdapter ()
-   {
-      return null;
-   }
-
-   /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.Extension <em>Extension</em>}'. <!-- begin-user-doc --> This default implementation returns null
-    * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
-    * @return the new adapter.
-    * @see org.storydriven.modeling.Extension
-    * @generated
-    */
-   public Adapter createExtensionAdapter ()
-   {
-      return null;
-   }
-
-   /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.StringExpression <em>String Expression</em>}'. <!-- begin-user-doc --> This default
-    * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
-    * @return the new adapter.
-    * @see org.storydriven.modeling.StringExpression
-    * @generated
-    */
-   public Adapter createStringExpressionAdapter ()
-   {
-      return null;
-   }
-
-   /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.NamedElement <em>Named Element</em>}'. <!-- begin-user-doc --> This default implementation
-    * returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
     * @return the new adapter.
     * @see org.storydriven.modeling.NamedElement
     * @generated
@@ -216,9 +144,35 @@ public class SDMAdapterFactory extends AdapterFactoryImpl
    }
 
    /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.CommentableElement <em>Commentable Element</em>}'. <!-- begin-user-doc --> This default
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.ExtendableElement <em>Extendable Element</em>}'.
+    * <!-- begin-user-doc --> This default
     * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
+    * @return the new adapter.
+    * @see org.storydriven.modeling.ExtendableElement
+    * @generated
+    */
+   public Adapter createExtendableElementAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.Extension <em>Extension</em>}'.
+    * <!-- begin-user-doc --> This default implementation returns null
+    * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.Extension
+    * @generated
+    */
+   public Adapter createExtensionAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.CommentableElement <em>Commentable Element</em>}'.
+    * <!-- begin-user-doc --> This default
+    * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
     * @return the new adapter.
     * @see org.storydriven.modeling.CommentableElement
     * @generated
@@ -229,8 +183,34 @@ public class SDMAdapterFactory extends AdapterFactoryImpl
    }
 
    /**
-    * Creates a new adapter for the default case. <!-- begin-user-doc --> This default implementation returns null. <!-- end-user-doc -->
-    * 
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.TypedElement <em>Typed Element</em>}'.
+    * <!-- begin-user-doc --> This default implementation
+    * returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.TypedElement
+    * @generated
+    */
+   public Adapter createTypedElementAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.Variable <em>Variable</em>}'.
+    * <!-- begin-user-doc --> This default implementation returns null
+    * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.Variable
+    * @generated
+    */
+   public Adapter createVariableAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for the default case.
+    * <!-- begin-user-doc --> This default implementation returns null. <!-- end-user-doc -->
     * @return the new adapter.
     * @generated
     */

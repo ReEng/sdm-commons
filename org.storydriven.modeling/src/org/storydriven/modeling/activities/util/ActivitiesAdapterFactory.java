@@ -11,41 +11,47 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.Expression;
 import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.Extension;
 import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.TypedElement;
+import org.storydriven.modeling.Variable;
+import org.storydriven.modeling.activities.*;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.Activity;
+import org.storydriven.modeling.activities.ActivityCallNode;
 import org.storydriven.modeling.activities.ActivityEdge;
 import org.storydriven.modeling.activities.ActivityNode;
-import org.storydriven.modeling.activities.DecisionNode;
-import org.storydriven.modeling.activities.ExceptionExpression;
+import org.storydriven.modeling.activities.ExceptionVariable;
+import org.storydriven.modeling.activities.JunctionNode;
+import org.storydriven.modeling.activities.MatchingStoryNode;
+import org.storydriven.modeling.activities.ModifyingStoryNode;
 import org.storydriven.modeling.activities.OperationExtension;
 import org.storydriven.modeling.activities.StartNode;
 import org.storydriven.modeling.activities.StatementNode;
 import org.storydriven.modeling.activities.StopNode;
+import org.storydriven.modeling.activities.StoryNode;
 import org.storydriven.modeling.activities.StructuredNode;
+import org.storydriven.modeling.calls.Callable;
+import org.storydriven.modeling.calls.Invocation;
 
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter <code>createXXX</code> method for each class of the model. <!-- end-user-doc -->
- * 
  * @see org.storydriven.modeling.activities.ActivitiesPackage
  * @generated
  */
 public class ActivitiesAdapterFactory extends AdapterFactoryImpl
 {
    /**
-    * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached model package.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    protected static ActivitiesPackage modelPackage;
 
    /**
-    * Creates an instance of the adapter factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates an instance of the adapter factory.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public ActivitiesAdapterFactory ()
@@ -57,9 +63,9 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
    }
 
    /**
-    * Returns whether this factory is applicable for the type of the object. <!-- begin-user-doc --> This implementation returns <code>true</code> if the object is either the
+    * Returns whether this factory is applicable for the type of the object.
+    * <!-- begin-user-doc --> This implementation returns <code>true</code> if the object is either the
     * model's package or is an instance object of the model. <!-- end-user-doc -->
-    * 
     * @return whether this factory is applicable for the type of the object.
     * @generated
     */
@@ -78,12 +84,30 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
    }
 
    /**
-    * The switch that delegates to the <code>createXXX</code> methods. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The switch that delegates to the <code>createXXX</code> methods.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    protected ActivitiesSwitch<Adapter> modelSwitch = new ActivitiesSwitch<Adapter>()
    {
+      @Override
+      public Adapter caseExceptionVariable (ExceptionVariable object)
+      {
+         return createExceptionVariableAdapter();
+      }
+
+      @Override
+      public Adapter caseActivityEdge (ActivityEdge object)
+      {
+         return createActivityEdgeAdapter();
+      }
+
+      @Override
+      public Adapter caseActivityNode (ActivityNode object)
+      {
+         return createActivityNodeAdapter();
+      }
+
       @Override
       public Adapter caseActivity (Activity object)
       {
@@ -97,21 +121,21 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
       }
 
       @Override
-      public Adapter caseActivityEdge (ActivityEdge object)
+      public Adapter caseStoryNode (StoryNode object)
       {
-         return createActivityEdgeAdapter();
+         return createStoryNodeAdapter();
       }
 
       @Override
-      public Adapter caseDecisionNode (DecisionNode object)
+      public Adapter caseStructuredNode (StructuredNode object)
       {
-         return createDecisionNodeAdapter();
+         return createStructuredNodeAdapter();
       }
 
       @Override
-      public Adapter caseExceptionExpression (ExceptionExpression object)
+      public Adapter caseJunctionNode (JunctionNode object)
       {
-         return createExceptionExpressionAdapter();
+         return createJunctionNodeAdapter();
       }
 
       @Override
@@ -133,15 +157,21 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
       }
 
       @Override
-      public Adapter caseStructuredNode (StructuredNode object)
+      public Adapter caseActivityCallNode (ActivityCallNode object)
       {
-         return createStructuredNodeAdapter();
+         return createActivityCallNodeAdapter();
       }
 
       @Override
-      public Adapter caseActivityNode (ActivityNode object)
+      public Adapter caseMatchingStoryNode (MatchingStoryNode object)
       {
-         return createActivityNodeAdapter();
+         return createMatchingStoryNodeAdapter();
+      }
+
+      @Override
+      public Adapter caseModifyingStoryNode (ModifyingStoryNode object)
+      {
+         return createModifyingStoryNodeAdapter();
       }
 
       @Override
@@ -151,15 +181,15 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
       }
 
       @Override
-      public Adapter caseCommentableElement (CommentableElement object)
+      public Adapter caseTypedElement (TypedElement object)
       {
-         return createCommentableElementAdapter();
+         return createTypedElementAdapter();
       }
 
       @Override
-      public Adapter caseExtension (Extension object)
+      public Adapter caseVariable (Variable object)
       {
-         return createExtensionAdapter();
+         return createVariableAdapter();
       }
 
       @Override
@@ -169,15 +199,27 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
       }
 
       @Override
-      public Adapter caseTypedElement (TypedElement object)
+      public Adapter caseCommentableElement (CommentableElement object)
       {
-         return createTypedElementAdapter();
+         return createCommentableElementAdapter();
       }
 
       @Override
-      public Adapter caseExpression (Expression object)
+      public Adapter caseCallable (Callable object)
       {
-         return createExpressionAdapter();
+         return createCallableAdapter();
+      }
+
+      @Override
+      public Adapter caseExtension (Extension object)
+      {
+         return createExtensionAdapter();
+      }
+
+      @Override
+      public Adapter caseInvocation (Invocation object)
+      {
+         return createInvocationAdapter();
       }
 
       @Override
@@ -188,8 +230,8 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
    };
 
    /**
-    * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates an adapter for the <code>target</code>.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @param target the object to adapt.
     * @return the adapter for the <code>target</code>.
     * @generated
@@ -197,13 +239,13 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
    @Override
    public Adapter createAdapter (Notifier target)
    {
-      return this.modelSwitch.doSwitch((EObject) target);
+      return modelSwitch.doSwitch((EObject) target);
    }
 
    /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.Activity <em>Activity</em>}'. <!-- begin-user-doc --> This default implementation
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.Activity <em>Activity</em>}'.
+    * <!-- begin-user-doc --> This default implementation
     * returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
     * @return the new adapter.
     * @see org.storydriven.modeling.activities.Activity
     * @generated
@@ -214,113 +256,9 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
    }
 
    /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.OperationExtension <em>Operation Extension</em>}'. <!-- begin-user-doc --> This
-    * default implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
-    * @return the new adapter.
-    * @see org.storydriven.modeling.activities.OperationExtension
-    * @generated
-    */
-   public Adapter createOperationExtensionAdapter ()
-   {
-      return null;
-   }
-
-   /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.ActivityEdge <em>Activity Edge</em>}'. <!-- begin-user-doc --> This default
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.ActivityNode <em>Activity Node</em>}'.
+    * <!-- begin-user-doc --> This default
     * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
-    * @return the new adapter.
-    * @see org.storydriven.modeling.activities.ActivityEdge
-    * @generated
-    */
-   public Adapter createActivityEdgeAdapter ()
-   {
-      return null;
-   }
-
-   /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.DecisionNode <em>Decision Node</em>}'. <!-- begin-user-doc --> This default
-    * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
-    * @return the new adapter.
-    * @see org.storydriven.modeling.activities.DecisionNode
-    * @generated
-    */
-   public Adapter createDecisionNodeAdapter ()
-   {
-      return null;
-   }
-
-   /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.ExceptionExpression <em>Exception Expression</em>}'. <!-- begin-user-doc --> This
-    * default implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
-    * @return the new adapter.
-    * @see org.storydriven.modeling.activities.ExceptionExpression
-    * @generated
-    */
-   public Adapter createExceptionExpressionAdapter ()
-   {
-      return null;
-   }
-
-   /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.StartNode <em>Start Node</em>}'. <!-- begin-user-doc --> This default implementation
-    * returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
-    * @return the new adapter.
-    * @see org.storydriven.modeling.activities.StartNode
-    * @generated
-    */
-   public Adapter createStartNodeAdapter ()
-   {
-      return null;
-   }
-
-   /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.StatementNode <em>Statement Node</em>}'. <!-- begin-user-doc --> This default
-    * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
-    * @return the new adapter.
-    * @see org.storydriven.modeling.activities.StatementNode
-    * @generated
-    */
-   public Adapter createStatementNodeAdapter ()
-   {
-      return null;
-   }
-
-   /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.StopNode <em>Stop Node</em>}'. <!-- begin-user-doc --> This default implementation
-    * returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
-    * @return the new adapter.
-    * @see org.storydriven.modeling.activities.StopNode
-    * @generated
-    */
-   public Adapter createStopNodeAdapter ()
-   {
-      return null;
-   }
-
-   /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.StructuredNode <em>Structured Node</em>}'. <!-- begin-user-doc --> This default
-    * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
-    * @return the new adapter.
-    * @see org.storydriven.modeling.activities.StructuredNode
-    * @generated
-    */
-   public Adapter createStructuredNodeAdapter ()
-   {
-      return null;
-   }
-
-   /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.ActivityNode <em>Activity Node</em>}'. <!-- begin-user-doc --> This default
-    * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
     * @return the new adapter.
     * @see org.storydriven.modeling.activities.ActivityNode
     * @generated
@@ -331,9 +269,165 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
    }
 
    /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.ExtendableElement <em>Extendable Element</em>}'. <!-- begin-user-doc --> This default
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.ActivityEdge <em>Activity Edge</em>}'.
+    * <!-- begin-user-doc --> This default
     * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
+    * @return the new adapter.
+    * @see org.storydriven.modeling.activities.ActivityEdge
+    * @generated
+    */
+   public Adapter createActivityEdgeAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.ExceptionVariable <em>Exception Variable</em>}'.
+    * <!-- begin-user-doc --> This default
+    * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.activities.ExceptionVariable
+    * @generated
+    */
+   public Adapter createExceptionVariableAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.StructuredNode <em>Structured Node</em>}'.
+    * <!-- begin-user-doc --> This default
+    * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.activities.StructuredNode
+    * @generated
+    */
+   public Adapter createStructuredNodeAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.OperationExtension <em>Operation Extension</em>}'.
+    * <!-- begin-user-doc --> This
+    * default implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.activities.OperationExtension
+    * @generated
+    */
+   public Adapter createOperationExtensionAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.StoryNode <em>Story Node</em>}'.
+    * <!-- begin-user-doc --> This default implementation
+    * returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.activities.StoryNode
+    * @generated
+    */
+   public Adapter createStoryNodeAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.JunctionNode <em>Junction Node</em>}'.
+    * <!-- begin-user-doc --> This default
+    * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.activities.JunctionNode
+    * @generated
+    */
+   public Adapter createJunctionNodeAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.StartNode <em>Start Node</em>}'.
+    * <!-- begin-user-doc --> This default implementation
+    * returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.activities.StartNode
+    * @generated
+    */
+   public Adapter createStartNodeAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.StatementNode <em>Statement Node</em>}'.
+    * <!-- begin-user-doc --> This default
+    * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.activities.StatementNode
+    * @generated
+    */
+   public Adapter createStatementNodeAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.StopNode <em>Stop Node</em>}'.
+    * <!-- begin-user-doc --> This default implementation
+    * returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.activities.StopNode
+    * @generated
+    */
+   public Adapter createStopNodeAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.ActivityCallNode <em>Activity Call Node</em>}'.
+    * <!-- begin-user-doc --> This default
+    * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.activities.ActivityCallNode
+    * @generated
+    */
+   public Adapter createActivityCallNodeAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.MatchingStoryNode <em>Matching Story Node</em>}'.
+    * <!-- begin-user-doc --> This
+    * default implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.activities.MatchingStoryNode
+    * @generated
+    */
+   public Adapter createMatchingStoryNodeAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.activities.ModifyingStoryNode <em>Modifying Story Node</em>}'.
+    * <!-- begin-user-doc --> This
+    * default implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.activities.ModifyingStoryNode
+    * @generated
+    */
+   public Adapter createModifyingStoryNodeAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.ExtendableElement <em>Extendable Element</em>}'.
+    * <!-- begin-user-doc --> This default
+    * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
     * @return the new adapter.
     * @see org.storydriven.modeling.ExtendableElement
     * @generated
@@ -344,9 +438,9 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
    }
 
    /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.CommentableElement <em>Commentable Element</em>}'. <!-- begin-user-doc --> This default
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.CommentableElement <em>Commentable Element</em>}'.
+    * <!-- begin-user-doc --> This default
     * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
     * @return the new adapter.
     * @see org.storydriven.modeling.CommentableElement
     * @generated
@@ -357,22 +451,22 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
    }
 
    /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.Extension <em>Extension</em>}'. <!-- begin-user-doc --> This default implementation returns null
-    * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.calls.Callable <em>Callable</em>}'.
+    * <!-- begin-user-doc --> This default implementation returns
+    * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
     * @return the new adapter.
-    * @see org.storydriven.modeling.Extension
+    * @see org.storydriven.modeling.calls.Callable
     * @generated
     */
-   public Adapter createExtensionAdapter ()
+   public Adapter createCallableAdapter ()
    {
       return null;
    }
 
    /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.NamedElement <em>Named Element</em>}'. <!-- begin-user-doc --> This default implementation
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.NamedElement <em>Named Element</em>}'.
+    * <!-- begin-user-doc --> This default implementation
     * returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
     * @return the new adapter.
     * @see org.storydriven.modeling.NamedElement
     * @generated
@@ -383,9 +477,9 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
    }
 
    /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.TypedElement <em>Typed Element</em>}'. <!-- begin-user-doc --> This default implementation
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.TypedElement <em>Typed Element</em>}'.
+    * <!-- begin-user-doc --> This default implementation
     * returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
     * @return the new adapter.
     * @see org.storydriven.modeling.TypedElement
     * @generated
@@ -396,21 +490,47 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
    }
 
    /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.Expression <em>Expression</em>}'. <!-- begin-user-doc --> This default implementation returns
-    * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-    * 
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.Variable <em>Variable</em>}'.
+    * <!-- begin-user-doc --> This default implementation returns null
+    * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
     * @return the new adapter.
-    * @see org.storydriven.modeling.Expression
+    * @see org.storydriven.modeling.Variable
     * @generated
     */
-   public Adapter createExpressionAdapter ()
+   public Adapter createVariableAdapter ()
    {
       return null;
    }
 
    /**
-    * Creates a new adapter for the default case. <!-- begin-user-doc --> This default implementation returns null. <!-- end-user-doc -->
-    * 
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.Extension <em>Extension</em>}'.
+    * <!-- begin-user-doc --> This default implementation returns null
+    * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.Extension
+    * @generated
+    */
+   public Adapter createExtensionAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.calls.Invocation <em>Invocation</em>}'.
+    * <!-- begin-user-doc --> This default implementation
+    * returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.calls.Invocation
+    * @generated
+    */
+   public Adapter createInvocationAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for the default case.
+    * <!-- begin-user-doc --> This default implementation returns null. <!-- end-user-doc -->
     * @return the new adapter.
     * @generated
     */

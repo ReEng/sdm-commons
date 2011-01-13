@@ -7,33 +7,39 @@
 package org.storydriven.modeling.activities;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EParameter;
 import org.storydriven.modeling.CommentableElement;
+import org.storydriven.modeling.calls.Callable;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Activity</b></em>'. <!-- end-user-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.storydriven.modeling.activities.Activity#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
- * <li>{@link org.storydriven.modeling.activities.Activity#getOwningOperation <em>Owning Operation</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.Activity#getOwningOperation <em>Owning Operation</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.Activity#getOwnedActivityEdges <em>Owned Activity Edge</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.Activity#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.Activity#getPrecondition <em>Precondition</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.Activity#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivity()
  * @model
  * @generated
  */
-public interface Activity extends CommentableElement
+public interface Activity extends CommentableElement, Callable
 {
    /**
-    * Returns the value of the '<em><b>Owned Activity Node</b></em>' containment reference list. The list contents are of type
-    * {@link org.storydriven.modeling.activities.ActivityNode}. It is bidirectional and its opposite is '{@link org.storydriven.modeling.activities.ActivityNode#getOwningActivity
-    * <em>Owning Activity</em>}'. <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Owned Activity Node</b></em>' containment reference list.
+    * The list contents are of type {@link org.storydriven.modeling.activities.ActivityNode}.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.activities.ActivityNode#getOwningActivity <em>Owning Activity</em>}'.
+    * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Owned Activity Node</em>' containment reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * 
     * @return the value of the '<em>Owned Activity Node</em>' containment reference list.
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivity_OwnedActivityNode()
     * @see org.storydriven.modeling.activities.ActivityNode#getOwningActivity
@@ -43,13 +49,30 @@ public interface Activity extends CommentableElement
    EList<ActivityNode> getOwnedActivityNodes ();
 
    /**
-    * Returns the value of the '<em><b>Owning Operation</b></em>' container reference. It is bidirectional and its opposite is '
-    * {@link org.storydriven.modeling.activities.OperationExtension#getOwnedActivity <em>Owned Activity</em>}'. <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Owned Activity Edge</b></em>' containment reference list.
+    * The list contents are of type {@link org.storydriven.modeling.activities.ActivityEdge}.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.activities.ActivityEdge#getOwningActivity <em>Owning Activity</em>}'.
+    * <!-- begin-user-doc -->
+    * <p>
+    * If the meaning of the '<em>Owned Activity Edge</em>' containment reference list isn't clear, there really should be more of a description here...
+    * </p>
+    * <!-- end-user-doc -->
+    * @return the value of the '<em>Owned Activity Edge</em>' containment reference list.
+    * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivity_OwnedActivityEdge()
+    * @see org.storydriven.modeling.activities.ActivityEdge#getOwningActivity
+    * @model opposite="owningActivity" containment="true" resolveProxies="true"
+    * @generated
+    */
+   EList<ActivityEdge> getOwnedActivityEdges ();
+
+   /**
+    * Returns the value of the '<em><b>Owning Operation</b></em>' container reference.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.activities.OperationExtension#getOwnedActivity <em>Owned Activity</em>}'.
+    * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Owning Operation</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * 
     * @return the value of the '<em>Owning Operation</em>' container reference.
     * @see #setOwningOperation(OperationExtension)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivity_OwningOperation()
@@ -60,13 +83,51 @@ public interface Activity extends CommentableElement
    OperationExtension getOwningOperation ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.activities.Activity#getOwningOperation <em>Owning Operation</em>}' container reference. <!-- begin-user-doc --> <!--
+    * Sets the value of the '{@link org.storydriven.modeling.activities.Activity#getOwningOperation <em>Owning Operation</em>}' container reference.
+    * <!-- begin-user-doc --> <!--
     * end-user-doc -->
-    * 
     * @param value the new value of the '<em>Owning Operation</em>' container reference.
     * @see #getOwningOperation()
     * @generated
     */
    void setOwningOperation (OperationExtension value);
+
+   /**
+    * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+    * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
+    * <!-- begin-user-doc
+    * -->
+    * <p>
+    * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear, there really should be more of a description here...
+    * </p>
+    * <!-- end-user-doc -->
+    * @return the value of the '<em>Parameters</em>' containment reference list.
+    * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivity_Parameters()
+    * @model containment="true" resolveProxies="true"
+    * @generated
+    */
+   EList<EParameter> getParameters ();
+
+   /**
+    * Returns the value of the '<em><b>Precondition</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> References a story node which
+    * represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the
+    * referenced story node may only contain black (i.e., non-create and non-destroy) objects and links. <!-- end-model-doc -->
+    * 
+    * @return the value of the '<em>Precondition</em>' reference.
+    * @see #setPrecondition(StoryNode)
+    * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivity_Precondition()
+    * @model ordered="false"
+    * @generated
+    */
+   StoryNode getPrecondition ();
+
+   /**
+    * Sets the value of the '{@link org.storydriven.modeling.activities.Activity#getPrecondition <em>Precondition</em>}' reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @param value the new value of the '<em>Precondition</em>' reference.
+    * @see #getPrecondition()
+    * @generated
+    */
+   void setPrecondition (StoryNode value);
 
 } // Activity

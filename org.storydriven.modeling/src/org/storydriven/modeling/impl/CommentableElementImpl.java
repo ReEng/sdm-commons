@@ -17,17 +17,17 @@ import org.storydriven.modeling.SDMPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.storydriven.modeling.impl.CommentableElementImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link org.storydriven.modeling.impl.CommentableElementImpl#getComment <em>Comment</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class CommentableElementImpl extends ExtendableElementImpl implements CommentableElement
 {
    /**
-    * The default value of the '{@link #getComment() <em>Comment</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getComment()
     * @generated
     * @ordered
@@ -35,8 +35,8 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl imple
    protected static final String COMMENT_EDEFAULT = null;
 
    /**
-    * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getComment()
     * @generated
     * @ordered
@@ -45,7 +45,6 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl imple
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    protected CommentableElementImpl ()
@@ -55,7 +54,6 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl imple
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -66,33 +64,28 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl imple
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public String getComment ()
    {
-      return this.comment;
+      return comment;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setComment (String newComment)
    {
-      String oldComment = this.comment;
-      this.comment = newComment;
+      String oldComment = comment;
+      comment = newComment;
       if (eNotificationRequired())
-      {
          eNotify(new ENotificationImpl(this, Notification.SET, SDMPackage.COMMENTABLE_ELEMENT__COMMENT, oldComment,
-            this.comment));
-      }
+            comment));
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -108,7 +101,6 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl imple
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -125,7 +117,6 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl imple
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -142,7 +133,6 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl imple
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -151,27 +141,24 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl imple
       switch (featureID)
       {
          case SDMPackage.COMMENTABLE_ELEMENT__COMMENT:
-            return COMMENT_EDEFAULT == null ? this.comment != null : !COMMENT_EDEFAULT.equals(this.comment);
+            return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
       }
       return super.eIsSet(featureID);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
    public String toString ()
    {
       if (eIsProxy())
-      {
          return super.toString();
-      }
 
       StringBuffer result = new StringBuffer(super.toString());
       result.append(" (comment: ");
-      result.append(this.comment);
+      result.append(comment);
       result.append(')');
       return result.toString();
    }

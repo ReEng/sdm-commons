@@ -23,17 +23,17 @@ import org.storydriven.modeling.activities.StructuredNode;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.storydriven.modeling.activities.impl.StructuredNodeImpl#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.StructuredNodeImpl#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNode
 {
    /**
-    * The cached value of the '{@link #getOwnedActivityNodes() <em>Owned Activity Node</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached value of the '{@link #getOwnedActivityNodes() <em>Owned Activity Node</em>}' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getOwnedActivityNodes()
     * @generated
     * @ordered
@@ -42,7 +42,6 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    protected StructuredNodeImpl ()
@@ -52,7 +51,6 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -63,23 +61,21 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public EList<ActivityNode> getOwnedActivityNodes ()
    {
-      if (this.ownedActivityNodes == null)
+      if (ownedActivityNodes == null)
       {
-         this.ownedActivityNodes = new EObjectContainmentWithInverseEList.Resolving<ActivityNode>(ActivityNode.class,
-            this, ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+         ownedActivityNodes = new EObjectContainmentWithInverseEList.Resolving<ActivityNode>(ActivityNode.class, this,
+            ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
             ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE);
       }
-      return this.ownedActivityNodes;
+      return ownedActivityNodes;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -97,7 +93,6 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -113,7 +108,6 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -129,7 +123,6 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -148,7 +141,6 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -165,7 +157,6 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -174,7 +165,7 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
       switch (featureID)
       {
          case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-            return this.ownedActivityNodes != null && !this.ownedActivityNodes.isEmpty();
+            return ownedActivityNodes != null && !ownedActivityNodes.isEmpty();
       }
       return super.eIsSet(featureID);
    }

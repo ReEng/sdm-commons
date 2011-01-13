@@ -17,17 +17,17 @@ import org.storydriven.modeling.SDMPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.storydriven.modeling.impl.NamedElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.storydriven.modeling.impl.NamedElementImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class NamedElementImpl extends ExtendableElementImpl implements NamedElement
 {
    /**
-    * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getName()
     * @generated
     * @ordered
@@ -35,8 +35,8 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements 
    protected static final String NAME_EDEFAULT = null;
 
    /**
-    * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getName()
     * @generated
     * @ordered
@@ -45,7 +45,6 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements 
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    protected NamedElementImpl ()
@@ -55,7 +54,6 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements 
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -66,32 +64,27 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements 
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public String getName ()
    {
-      return this.name;
+      return name;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setName (String newName)
    {
-      String oldName = this.name;
-      this.name = newName;
+      String oldName = name;
+      name = newName;
       if (eNotificationRequired())
-      {
-         eNotify(new ENotificationImpl(this, Notification.SET, SDMPackage.NAMED_ELEMENT__NAME, oldName, this.name));
-      }
+         eNotify(new ENotificationImpl(this, Notification.SET, SDMPackage.NAMED_ELEMENT__NAME, oldName, name));
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -107,7 +100,6 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements 
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -124,7 +116,6 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements 
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -141,7 +132,6 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements 
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -150,27 +140,24 @@ public abstract class NamedElementImpl extends ExtendableElementImpl implements 
       switch (featureID)
       {
          case SDMPackage.NAMED_ELEMENT__NAME:
-            return NAME_EDEFAULT == null ? this.name != null : !NAME_EDEFAULT.equals(this.name);
+            return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       }
       return super.eIsSet(featureID);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
    public String toString ()
    {
       if (eIsProxy())
-      {
          return super.toString();
-      }
 
       StringBuffer result = new StringBuffer(super.toString());
       result.append(" (name: ");
-      result.append(this.name);
+      result.append(name);
       result.append(')');
       return result.toString();
    }

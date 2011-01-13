@@ -12,16 +12,17 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Extension</b></em>'. <!-- end-user-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.storydriven.modeling.Extension#getBase <em>Base</em>}</li>
- * <li>{@link org.storydriven.modeling.Extension#getModelBase <em>Model Base</em>}</li>
- * <li>{@link org.storydriven.modeling.Extension#getOwningAnnotation <em>Owning Annotation</em>}</li>
- * <li>{@link org.storydriven.modeling.Extension#getExtendableBase <em>Extendable Base</em>}</li>
+ *   <li>{@link org.storydriven.modeling.Extension#getBase <em>Base</em>}</li>
+ *   <li>{@link org.storydriven.modeling.Extension#getModelBase <em>Model Base</em>}</li>
+ *   <li>{@link org.storydriven.modeling.Extension#getOwningAnnotation <em>Owning Annotation</em>}</li>
+ *   <li>{@link org.storydriven.modeling.Extension#getExtendableBase <em>Extendable Base</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.storydriven.modeling.SDMPackage#getExtension()
  * @model abstract="true"
  * @generated
@@ -31,12 +32,13 @@ public interface Extension extends ExtendableElement
    public static final String EXTENSION_SOURCE_URI = "http://ns.storydriven.org/extension";
 
    /**
-    * Returns the value of the '<em><b>Base</b></em>' reference. This feature is a derived union. <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Base</b></em>' reference.
+    * This feature is a derived union.
+    * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Base</em>' reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * 
     * @return the value of the '<em>Base</em>' reference.
     * @see org.storydriven.modeling.SDMPackage#getExtension_Base()
     * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -49,7 +51,7 @@ public interface Extension extends ExtendableElement
     * <p>
     * This feature subsets the following features:
     * <ul>
-    * <li>'{@link org.storydriven.modeling.Extension#getBase() <em>Base</em>}'</li>
+    *   <li>'{@link org.storydriven.modeling.Extension#getBase() <em>Base</em>}'</li>
     * </ul>
     * </p>
     * <!-- begin-user-doc -->
@@ -57,7 +59,6 @@ public interface Extension extends ExtendableElement
     * If the meaning of the '<em>Model Base</em>' reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * 
     * @return the value of the '<em>Model Base</em>' reference.
     * @see #isSetModelBase()
     * @see #unsetModelBase()
@@ -69,8 +70,8 @@ public interface Extension extends ExtendableElement
    EModelElement getModelBase ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.Extension#getModelBase <em>Model Base</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Sets the value of the '{@link org.storydriven.modeling.Extension#getModelBase <em>Model Base</em>}' reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @param value the new value of the '<em>Model Base</em>' reference.
     * @see #isSetModelBase()
     * @see #unsetModelBase()
@@ -80,8 +81,9 @@ public interface Extension extends ExtendableElement
    void setModelBase (EModelElement value);
 
    /**
-    * Unsets the value of the '{@link org.storydriven.modeling.Extension#getModelBase <em>Model Base</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Unsets the value of the '{@link org.storydriven.modeling.Extension#getModelBase <em>Model Base</em>}' reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @see #isSetModelBase()
     * @see #getModelBase()
     * @see #setModelBase(EModelElement)
@@ -90,8 +92,9 @@ public interface Extension extends ExtendableElement
    void unsetModelBase ();
 
    /**
-    * Returns whether the value of the '{@link org.storydriven.modeling.Extension#getModelBase <em>Model Base</em>}' reference is set. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Returns whether the value of the '{@link org.storydriven.modeling.Extension#getModelBase <em>Model Base</em>}' reference is set.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @return whether the value of the '<em>Model Base</em>' reference is set.
     * @see #unsetModelBase()
     * @see #getModelBase()
@@ -101,12 +104,12 @@ public interface Extension extends ExtendableElement
    boolean isSetModelBase ();
 
    /**
-    * Returns the value of the '<em><b>Owning Annotation</b></em>' reference. <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Owning Annotation</b></em>' reference.
+    * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Owning Annotation</em>' reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * 
     * @return the value of the '<em>Owning Annotation</em>' reference.
     * @see #isSetOwningAnnotation()
     * @see #unsetOwningAnnotation()
@@ -118,8 +121,8 @@ public interface Extension extends ExtendableElement
    EAnnotation getOwningAnnotation ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.Extension#getOwningAnnotation <em>Owning Annotation</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Sets the value of the '{@link org.storydriven.modeling.Extension#getOwningAnnotation <em>Owning Annotation</em>}' reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @param value the new value of the '<em>Owning Annotation</em>' reference.
     * @see #isSetOwningAnnotation()
     * @see #unsetOwningAnnotation()
@@ -129,8 +132,9 @@ public interface Extension extends ExtendableElement
    void setOwningAnnotation (EAnnotation value);
 
    /**
-    * Unsets the value of the '{@link org.storydriven.modeling.Extension#getOwningAnnotation <em>Owning Annotation</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Unsets the value of the '{@link org.storydriven.modeling.Extension#getOwningAnnotation <em>Owning Annotation</em>}' reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @see #isSetOwningAnnotation()
     * @see #getOwningAnnotation()
     * @see #setOwningAnnotation(EAnnotation)
@@ -139,9 +143,9 @@ public interface Extension extends ExtendableElement
    void unsetOwningAnnotation ();
 
    /**
-    * Returns whether the value of the '{@link org.storydriven.modeling.Extension#getOwningAnnotation <em>Owning Annotation</em>}' reference is set. <!-- begin-user-doc --> <!--
-    * end-user-doc -->
-    * 
+    * Returns whether the value of the '{@link org.storydriven.modeling.Extension#getOwningAnnotation <em>Owning Annotation</em>}' reference is set.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @return whether the value of the '<em>Owning Annotation</em>' reference is set.
     * @see #unsetOwningAnnotation()
     * @see #getOwningAnnotation()
@@ -151,12 +155,12 @@ public interface Extension extends ExtendableElement
    boolean isSetOwningAnnotation ();
 
    /**
-    * Returns the value of the '<em><b>Extendable Base</b></em>' container reference. It is bidirectional and its opposite is '
-    * {@link org.storydriven.modeling.ExtendableElement#getExtensions <em>Extension</em>}'.
+    * Returns the value of the '<em><b>Extendable Base</b></em>' container reference.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.ExtendableElement#getExtensions <em>Extension</em>}'.
     * <p>
     * This feature subsets the following features:
     * <ul>
-    * <li>'{@link org.storydriven.modeling.Extension#getBase() <em>Base</em>}'</li>
+    *   <li>'{@link org.storydriven.modeling.Extension#getBase() <em>Base</em>}'</li>
     * </ul>
     * </p>
     * <!-- begin-user-doc -->
@@ -164,7 +168,6 @@ public interface Extension extends ExtendableElement
     * If the meaning of the '<em>Extendable Base</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * 
     * @return the value of the '<em>Extendable Base</em>' container reference.
     * @see #setExtendableBase(ExtendableElement)
     * @see org.storydriven.modeling.SDMPackage#getExtension_ExtendableBase()

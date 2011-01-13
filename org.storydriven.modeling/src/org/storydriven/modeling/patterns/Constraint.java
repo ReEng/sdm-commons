@@ -1,0 +1,108 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
+ */
+package org.storydriven.modeling.patterns;
+
+import org.eclipse.emf.ecore.EObject;
+import org.storydriven.modeling.expressions.Expression;
+
+/**
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Constraint</b></em>'. <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link org.storydriven.modeling.patterns.Constraint#getConstraintExpression <em>Constraint Expression</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.Constraint#getPattern <em>Pattern</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.Constraint#getObjectVariable <em>Object Variable</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see org.storydriven.modeling.patterns.PatternsPackage#getConstraint()
+ * @model
+ * @generated
+ */
+public interface Constraint extends EObject
+{
+   /**
+    * Returns the value of the '<em><b>Constraint Expression</b></em>' containment reference.
+    * <!-- begin-user-doc -->
+    * <p>
+    * If the meaning of the '<em>Constraint Expression</em>' containment reference isn't clear, there really should be more of a description here...
+    * </p>
+    * <!-- end-user-doc -->
+    * @return the value of the '<em>Constraint Expression</em>' containment reference.
+    * @see #setConstraintExpression(Expression)
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getConstraint_ConstraintExpression()
+    * @model containment="true" resolveProxies="true" required="true" ordered="false"
+    * @generated
+    */
+   Expression getConstraintExpression ();
+
+   /**
+    * Sets the value of the '{@link org.storydriven.modeling.patterns.Constraint#getConstraintExpression <em>Constraint Expression</em>}' containment reference.
+    * <!-- begin-user-doc
+    * --> <!-- end-user-doc -->
+    * @param value the new value of the '<em>Constraint Expression</em>' containment reference.
+    * @see #getConstraintExpression()
+    * @generated
+    */
+   void setConstraintExpression (Expression value);
+
+   /**
+    * Returns the value of the '<em><b>Pattern</b></em>' container reference.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.StoryPattern#getConstraints <em>Constraint</em>}'.
+    * <!-- begin-user-doc -->
+    * <p>
+    * If the meaning of the '<em>Pattern</em>' container reference isn't clear, there really should be more of a description here...
+    * </p>
+    * <!-- end-user-doc -->
+    * @return the value of the '<em>Pattern</em>' container reference.
+    * @see #setPattern(StoryPattern)
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getConstraint_Pattern()
+    * @see org.storydriven.modeling.patterns.StoryPattern#getConstraints
+    * @model opposite="constraint" transient="false" ordered="false"
+    * @generated
+    */
+   StoryPattern getPattern ();
+
+   /**
+    * Sets the value of the '{@link org.storydriven.modeling.patterns.Constraint#getPattern <em>Pattern</em>}' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @param value the new value of the '<em>Pattern</em>' container reference.
+    * @see #getPattern()
+    * @generated
+    */
+   void setPattern (StoryPattern value);
+
+   /**
+    * Returns the value of the '<em><b>Object Variable</b></em>' container reference.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.ObjectVariable#getConstraints <em>Constraint</em>}'.
+    * <!-- begin-user-doc -->
+    * <p>
+    * If the meaning of the '<em>Object Variable</em>' container reference isn't clear, there really should be more of a description here...
+    * </p>
+    * <!-- end-user-doc -->
+    * @return the value of the '<em>Object Variable</em>' container reference.
+    * @see #setObjectVariable(ObjectVariable)
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getConstraint_ObjectVariable()
+    * @see org.storydriven.modeling.patterns.ObjectVariable#getConstraints
+    * @model opposite="constraint" transient="false" ordered="false"
+    * @generated
+    */
+   ObjectVariable getObjectVariable ();
+
+   /**
+    * Sets the value of the '{@link org.storydriven.modeling.patterns.Constraint#getObjectVariable <em>Object Variable</em>}' container reference.
+    * <!-- begin-user-doc --> <!--
+    * end-user-doc -->
+    * @param value the new value of the '<em>Object Variable</em>' container reference.
+    * @see #getObjectVariable()
+    * @generated
+    */
+   void setObjectVariable (ObjectVariable value);
+
+} // Constraint

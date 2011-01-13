@@ -11,22 +11,22 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.storydriven.modeling.templates.ObjectPatternTemplate;
+import org.storydriven.modeling.templates.*;
 import org.storydriven.modeling.templates.PropertyBinding;
 import org.storydriven.modeling.templates.TemplateBinding;
+import org.storydriven.modeling.templates.TemplateSignature;
 import org.storydriven.modeling.templates.TemplatesFactory;
 import org.storydriven.modeling.templates.TemplatesPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
  * @generated
  */
 public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFactory
 {
    /**
-    * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates the default factory implementation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public static TemplatesFactory init ()
@@ -48,8 +48,8 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
    }
 
    /**
-    * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates an instance of the factory.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public TemplatesFactoryImpl ()
@@ -59,7 +59,6 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -67,12 +66,12 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
    {
       switch (eClass.getClassifierID())
       {
-         case TemplatesPackage.OBJECT_PATTERN_TEMPLATE:
-            return createObjectPatternTemplate();
          case TemplatesPackage.TEMPLATE_BINDING:
             return createTemplateBinding();
          case TemplatesPackage.PROPERTY_BINDING:
             return createPropertyBinding();
+         case TemplatesPackage.TEMPLATE_SIGNATURE:
+            return createTemplateSignature();
          default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
       }
@@ -80,18 +79,16 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
-   public ObjectPatternTemplate createObjectPatternTemplate ()
+   public TemplateSignature createTemplateSignature ()
    {
-      ObjectPatternTemplateImpl objectPatternTemplate = new ObjectPatternTemplateImpl();
-      return objectPatternTemplate;
+      TemplateSignatureImpl templateSignature = new TemplateSignatureImpl();
+      return templateSignature;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public TemplateBinding createTemplateBinding ()
@@ -102,7 +99,6 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public PropertyBinding createPropertyBinding ()
@@ -113,7 +109,6 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public TemplatesPackage getTemplatesPackage ()
@@ -123,7 +118,6 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @deprecated
     * @generated
     */
