@@ -21,7 +21,7 @@ import org.storydriven.modeling.templates.TemplateSignature;
  *   <li>{@link org.storydriven.modeling.patterns.StoryPattern#getConstraints <em>Constraint</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.StoryPattern#getParentPattern <em>Parent Pattern</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.StoryPattern#getContainedPatterns <em>Contained Pattern</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.StoryPattern#getBindingType <em>Binding Type</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.StoryPattern#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.StoryPattern#getTemplateSignature <em>Template Signature</em>}</li>
  * </ul>
  * </p>
@@ -128,32 +128,34 @@ public interface StoryPattern extends CommentableElement
    EList<StoryPattern> getContainedPatterns ();
 
    /**
-    * Returns the value of the '<em><b>Binding Type</b></em>' attribute.
+    * Returns the value of the '<em><b>Binding Semantics</b></em>' attribute.
     * The default value is <code>"NONE"</code>.
     * The literals are from the enumeration {@link org.storydriven.modeling.patterns.BindingSemantics}.
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Binding Type</em>' attribute isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Binding Semantics</em>' attribute isn't clear,
+    * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @return the value of the '<em>Binding Type</em>' attribute.
+    * @return the value of the '<em>Binding Semantics</em>' attribute.
     * @see org.storydriven.modeling.patterns.BindingSemantics
-    * @see #setBindingType(BindingSemantics)
-    * @see org.storydriven.modeling.patterns.PatternsPackage#getStoryPattern_BindingType()
+    * @see #setBindingSemantics(BindingSemantics)
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getStoryPattern_BindingSemantics()
     * @model default="NONE" required="true" ordered="false"
     * @generated
     */
-   BindingSemantics getBindingType ();
+   BindingSemantics getBindingSemantics ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.patterns.StoryPattern#getBindingType <em>Binding Type</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @param value the new value of the '<em>Binding Type</em>' attribute.
+    * Sets the value of the '{@link org.storydriven.modeling.patterns.StoryPattern#getBindingSemantics <em>Binding Semantics</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @param value the new value of the '<em>Binding Semantics</em>' attribute.
     * @see org.storydriven.modeling.patterns.BindingSemantics
-    * @see #getBindingType()
+    * @see #getBindingSemantics()
     * @generated
     */
-   void setBindingType (BindingSemantics value);
+   void setBindingSemantics (BindingSemantics value);
 
    /**
     * Returns the value of the '<em><b>Template Signature</b></em>' containment reference.

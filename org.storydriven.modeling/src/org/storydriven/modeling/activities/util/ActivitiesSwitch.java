@@ -172,6 +172,24 @@ public class ActivitiesSwitch<T>
                result = defaultCase(theEObject);
             return result;
          }
+         case ActivitiesPackage.MATCHING_STORY_NODE:
+         {
+            MatchingStoryNode matchingStoryNode = (MatchingStoryNode) theEObject;
+            T result = caseMatchingStoryNode(matchingStoryNode);
+            if (result == null)
+               result = caseStoryNode(matchingStoryNode);
+            if (result == null)
+               result = caseActivityNode(matchingStoryNode);
+            if (result == null)
+               result = caseNamedElement(matchingStoryNode);
+            if (result == null)
+               result = caseCommentableElement(matchingStoryNode);
+            if (result == null)
+               result = caseExtendableElement(matchingStoryNode);
+            if (result == null)
+               result = defaultCase(theEObject);
+            return result;
+         }
          case ActivitiesPackage.STORY_NODE:
          {
             StoryNode storyNode = (StoryNode) theEObject;
@@ -282,24 +300,6 @@ public class ActivitiesSwitch<T>
                result = caseCommentableElement(activityCallNode);
             if (result == null)
                result = caseExtendableElement(activityCallNode);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
-         case ActivitiesPackage.MATCHING_STORY_NODE:
-         {
-            MatchingStoryNode matchingStoryNode = (MatchingStoryNode) theEObject;
-            T result = caseMatchingStoryNode(matchingStoryNode);
-            if (result == null)
-               result = caseStoryNode(matchingStoryNode);
-            if (result == null)
-               result = caseActivityNode(matchingStoryNode);
-            if (result == null)
-               result = caseNamedElement(matchingStoryNode);
-            if (result == null)
-               result = caseCommentableElement(matchingStoryNode);
-            if (result == null)
-               result = caseExtendableElement(matchingStoryNode);
             if (result == null)
                result = defaultCase(theEObject);
             return result;

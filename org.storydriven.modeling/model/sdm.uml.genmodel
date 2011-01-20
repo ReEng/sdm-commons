@@ -143,6 +143,10 @@
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sdm.ecore#//activities/OperationExtension/NumberOfOutParams/context"/>
         </genOperations>
       </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//activities/MatchingStoryNode">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/MatchingStoryNode/ownedPattern"/>
+      </genClasses>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sdm.ecore#//activities/StoryNode">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//activities/StoryNode/forEach"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -167,10 +171,6 @@
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/ActivityCallNode/calledActivity"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//activities/MatchingStoryNode">
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/MatchingStoryNode/ownedPattern"/>
-      </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//activities/ModifyingStoryNode">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/ModifyingStoryNode/ownedRule"/>
@@ -191,6 +191,8 @@
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//expressions/LogicOperator/AND"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//expressions/LogicOperator/OR"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//expressions/LogicOperator/XOR"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//expressions/LogicOperator/IMPLY"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//expressions/LogicOperator/EQUIVALENT"/>
       </genEnums>
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sdm.ecore#//expressions/ComparingOperator">
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//expressions/ComparingOperator/LESS"/>
@@ -206,6 +208,7 @@
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//expressions/ArithmeticOperator/TIMES"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//expressions/ArithmeticOperator/DIVIDE"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//expressions/ArithmeticOperator/MODULO"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//expressions/ArithmeticOperator/EXP"/>
       </genEnums>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//expressions/TextualExpression">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//expressions/TextualExpression/expressionText"/>
@@ -297,10 +300,10 @@
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingSemantics/NEGATIVE"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingSemantics/OPTIONAL"/>
       </genEnums>
-      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sdm.ecore#//patterns/Modifier">
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/Modifier/NONE"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/Modifier/CREATE"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/Modifier/DESTROY"/>
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sdm.ecore#//patterns/BindingOperator">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingOperator/CHECK"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingOperator/CREATE"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingOperator/DESTROY"/>
       </genEnums>
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sdm.ecore#//patterns/OrderConstraintType">
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/OrderConstraintType/FIRST"/>
@@ -311,8 +314,8 @@
       </genEnums>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/ObjectVariable">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/ObjectVariable/bindingState"/>
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/ObjectVariable/bindingType"/>
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/ObjectVariable/modifier"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/ObjectVariable/bindingSemantics"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/ObjectVariable/bindingOperator"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
             createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/ObjectVariable/pattern"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -339,8 +342,8 @@
             createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AttributeAssignment/objectVariable"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sdm.ecore#//patterns/AbstractLinkVariable">
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/AbstractLinkVariable/bindingType"/>
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/AbstractLinkVariable/modifier"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/AbstractLinkVariable/bindingSemantics"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/AbstractLinkVariable/bindingOperator"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractLinkVariable/target"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -403,7 +406,7 @@
             createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/StoryPattern/parentPattern"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/StoryPattern/containedPattern"/>
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/StoryPattern/bindingType"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/StoryPattern/bindingSemantics"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/StoryPattern/templateSignature"/>
       </genClasses>

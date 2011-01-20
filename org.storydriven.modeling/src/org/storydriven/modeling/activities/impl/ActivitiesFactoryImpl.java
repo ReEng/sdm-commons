@@ -85,6 +85,8 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
             return createActivity();
          case ActivitiesPackage.OPERATION_EXTENSION:
             return createOperationExtension();
+         case ActivitiesPackage.MATCHING_STORY_NODE:
+            return createMatchingStoryNode();
          case ActivitiesPackage.STRUCTURED_NODE:
             return createStructuredNode();
          case ActivitiesPackage.JUNCTION_NODE:
@@ -97,8 +99,6 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
             return createStopNode();
          case ActivitiesPackage.ACTIVITY_CALL_NODE:
             return createActivityCallNode();
-         case ActivitiesPackage.MATCHING_STORY_NODE:
-            return createMatchingStoryNode();
          case ActivitiesPackage.MODIFYING_STORY_NODE:
             return createModifyingStoryNode();
          default:

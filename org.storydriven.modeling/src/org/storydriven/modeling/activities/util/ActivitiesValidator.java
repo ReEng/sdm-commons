@@ -116,6 +116,8 @@ public class ActivitiesValidator extends EObjectValidator
             return validateActivity((Activity) value, diagnostics, context);
          case ActivitiesPackage.OPERATION_EXTENSION:
             return validateOperationExtension((OperationExtension) value, diagnostics, context);
+         case ActivitiesPackage.MATCHING_STORY_NODE:
+            return validateMatchingStoryNode((MatchingStoryNode) value, diagnostics, context);
          case ActivitiesPackage.STORY_NODE:
             return validateStoryNode((StoryNode) value, diagnostics, context);
          case ActivitiesPackage.STRUCTURED_NODE:
@@ -130,8 +132,6 @@ public class ActivitiesValidator extends EObjectValidator
             return validateStopNode((StopNode) value, diagnostics, context);
          case ActivitiesPackage.ACTIVITY_CALL_NODE:
             return validateActivityCallNode((ActivityCallNode) value, diagnostics, context);
-         case ActivitiesPackage.MATCHING_STORY_NODE:
-            return validateMatchingStoryNode((MatchingStoryNode) value, diagnostics, context);
          case ActivitiesPackage.MODIFYING_STORY_NODE:
             return validateModifyingStoryNode((ModifyingStoryNode) value, diagnostics, context);
          case ActivitiesPackage.TRANSITION_GUARD:

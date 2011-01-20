@@ -28,6 +28,7 @@ import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.activities.ActivityEdge;
 import org.storydriven.modeling.activities.ActivityNode;
+import org.storydriven.modeling.activities.MatchingStoryNode;
 import org.storydriven.modeling.activities.OperationExtension;
 import org.storydriven.modeling.activities.StoryNode;
 import org.storydriven.modeling.calls.Callable;
@@ -81,7 +82,7 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
     * @generated
     * @ordered
     */
-   protected StoryNode precondition;
+   protected MatchingStoryNode precondition;
 
    /**
     * The cached value of the '{@link #getOwnedActivityNodes() <em>Owned Activity Node</em>}' containment reference list.
@@ -220,12 +221,12 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
-   public StoryNode getPrecondition ()
+   public MatchingStoryNode getPrecondition ()
    {
       if (precondition != null && precondition.eIsProxy())
       {
          InternalEObject oldPrecondition = (InternalEObject) precondition;
-         precondition = (StoryNode) eResolveProxy(oldPrecondition);
+         precondition = (MatchingStoryNode) eResolveProxy(oldPrecondition);
          if (precondition != oldPrecondition)
          {
             if (eNotificationRequired())
@@ -240,18 +241,19 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
-   public StoryNode basicGetPrecondition ()
+   public MatchingStoryNode basicGetPrecondition ()
    {
       return precondition;
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public void setPrecondition (StoryNode newPrecondition)
+   public void setPrecondition (MatchingStoryNode newPrecondition)
    {
-      StoryNode oldPrecondition = precondition;
+      MatchingStoryNode oldPrecondition = precondition;
       precondition = newPrecondition;
       if (eNotificationRequired())
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY__PRECONDITION,
@@ -413,7 +415,7 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
             getParameters().addAll((Collection<? extends EParameter>) newValue);
             return;
          case ActivitiesPackage.ACTIVITY__PRECONDITION:
-            setPrecondition((StoryNode) newValue);
+            setPrecondition((MatchingStoryNode) newValue);
             return;
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
             getOwnedActivityNodes().clear();
@@ -442,7 +444,7 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
             getParameters().clear();
             return;
          case ActivitiesPackage.ACTIVITY__PRECONDITION:
-            setPrecondition((StoryNode) null);
+            setPrecondition((MatchingStoryNode) null);
             return;
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
             getOwnedActivityNodes().clear();

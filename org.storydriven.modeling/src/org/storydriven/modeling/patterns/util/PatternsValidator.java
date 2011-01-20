@@ -132,8 +132,8 @@ public class PatternsValidator extends EObjectValidator
             return validateBindingState((BindingState) value, diagnostics, context);
          case PatternsPackage.BINDING_SEMANTICS:
             return validateBindingSemantics((BindingSemantics) value, diagnostics, context);
-         case PatternsPackage.MODIFIER:
-            return validateModifier((Modifier) value, diagnostics, context);
+         case PatternsPackage.BINDING_OPERATOR:
+            return validateBindingOperator((BindingOperator) value, diagnostics, context);
          case PatternsPackage.ORDER_CONSTRAINT_TYPE:
             return validateOrderConstraintType((OrderConstraintType) value, diagnostics, context);
          default:
@@ -301,10 +301,12 @@ public class PatternsValidator extends EObjectValidator
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public boolean validateModifier (Modifier modifier, DiagnosticChain diagnostics, Map<Object, Object> context)
+   public boolean validateBindingOperator (BindingOperator bindingOperator, DiagnosticChain diagnostics,
+                                           Map<Object, Object> context)
    {
       return true;
    }

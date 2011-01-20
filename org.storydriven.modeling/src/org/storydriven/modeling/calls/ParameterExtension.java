@@ -31,7 +31,7 @@ public interface ParameterExtension extends Variable, Extension
     * <p>
     * This feature redefines the following features:
     * <ul>
-    *   <li>'{@link org.storydriven.modeling.Extension#getBase() <em>Base</em>}'</li>
+    *   <li>'{@link org.storydriven.modeling.Extension#getModelBase() <em>Model Base</em>}'</li>
     * </ul>
     * </p>
     * <!-- begin-user-doc -->

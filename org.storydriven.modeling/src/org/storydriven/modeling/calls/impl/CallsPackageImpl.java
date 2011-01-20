@@ -547,7 +547,7 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage
    {
       String source = "redefines";
       addAnnotation(getParameterExtension_Parameter(), source, new String[] {},
-         new URI[] {URI.createURI(SDMPackage.eNS_URI).appendFragment("//Extension/base")});
+         new URI[] {URI.createURI(SDMPackage.eNS_URI).appendFragment("//Extension/modelBase")});
    }
 
 } // CallsPackageImpl

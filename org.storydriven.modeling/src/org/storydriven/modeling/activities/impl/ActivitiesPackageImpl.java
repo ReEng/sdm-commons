@@ -736,6 +736,9 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
       createEReference(operationExtensionEClass, OPERATION_EXTENSION__OWNED_ACTIVITY);
       createEOperation(operationExtensionEClass, OPERATION_EXTENSION___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP);
 
+      matchingStoryNodeEClass = createEClass(MATCHING_STORY_NODE);
+      createEReference(matchingStoryNodeEClass, MATCHING_STORY_NODE__OWNED_PATTERN);
+
       storyNodeEClass = createEClass(STORY_NODE);
       createEAttribute(storyNodeEClass, STORY_NODE__FOR_EACH);
       createEReference(storyNodeEClass, STORY_NODE__STORY_PATTERN);
@@ -756,9 +759,6 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 
       activityCallNodeEClass = createEClass(ACTIVITY_CALL_NODE);
       createEReference(activityCallNodeEClass, ACTIVITY_CALL_NODE__CALLED_ACTIVITY);
-
-      matchingStoryNodeEClass = createEClass(MATCHING_STORY_NODE);
-      createEReference(matchingStoryNodeEClass, MATCHING_STORY_NODE__OWNED_PATTERN);
 
       modifyingStoryNodeEClass = createEClass(MODIFYING_STORY_NODE);
       createEReference(modifyingStoryNodeEClass, MODIFYING_STORY_NODE__OWNED_RULE);
@@ -818,6 +818,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
       activityEClass.getESuperTypes().add(theCallsPackage.getCallable());
       operationExtensionEClass.getESuperTypes().add(theSDMPackage.getExtension());
       operationExtensionEClass.getESuperTypes().add(theCallsPackage.getCallable());
+      matchingStoryNodeEClass.getESuperTypes().add(this.getStoryNode());
       storyNodeEClass.getESuperTypes().add(this.getActivityNode());
       structuredNodeEClass.getESuperTypes().add(this.getActivityNode());
       junctionNodeEClass.getESuperTypes().add(this.getActivityNode());
@@ -826,7 +827,6 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
       stopNodeEClass.getESuperTypes().add(this.getActivityNode());
       activityCallNodeEClass.getESuperTypes().add(this.getActivityNode());
       activityCallNodeEClass.getESuperTypes().add(theCallsPackage.getInvocation());
-      matchingStoryNodeEClass.getESuperTypes().add(this.getStoryNode());
       modifyingStoryNodeEClass.getESuperTypes().add(this.getStoryNode());
 
       // Initialize classes, features, and operations; add parameters
@@ -895,9 +895,9 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
       initEReference(getActivity_Parameters(), theEcorePackage.getEParameter(), null, "parameters", null, 0, -1,
          Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
          IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-      initEReference(getActivity_Precondition(), this.getStoryNode(), null, "precondition", null, 0, 1, Activity.class,
-         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-         !IS_DERIVED, !IS_ORDERED);
+      initEReference(getActivity_Precondition(), this.getMatchingStoryNode(), null, "precondition", null, 0, 1,
+         Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+         IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
       initEReference(getActivity_OwnedActivityNode(), this.getActivityNode(), this.getActivityNode_OwningActivity(),
          "ownedActivityNode", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
          IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -920,6 +920,12 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
       g2 = createEGenericType(ecorePackage.getEJavaObject());
       g1.getETypeArguments().add(g2);
       addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+      initEClass(matchingStoryNodeEClass, MatchingStoryNode.class, "MatchingStoryNode", !IS_ABSTRACT, !IS_INTERFACE,
+         IS_GENERATED_INSTANCE_CLASS);
+      initEReference(getMatchingStoryNode_OwnedPattern(), thePatternsPackage.getMatchingPattern(), null,
+         "ownedPattern", null, 1, 1, MatchingStoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+         IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
       initEClass(storyNodeEClass, StoryNode.class, "StoryNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
       initEAttribute(getStoryNode_ForEach(), ecorePackage.getEBoolean(), "forEach", null, 1, 1, StoryNode.class,
@@ -961,12 +967,6 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
          ActivityCallNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
          !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-      initEClass(matchingStoryNodeEClass, MatchingStoryNode.class, "MatchingStoryNode", !IS_ABSTRACT, !IS_INTERFACE,
-         IS_GENERATED_INSTANCE_CLASS);
-      initEReference(getMatchingStoryNode_OwnedPattern(), thePatternsPackage.getMatchingPattern(), null,
-         "ownedPattern", null, 1, 1, MatchingStoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-         IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
       initEClass(modifyingStoryNodeEClass, ModifyingStoryNode.class, "ModifyingStoryNode", !IS_ABSTRACT, !IS_INTERFACE,
          IS_GENERATED_INSTANCE_CLASS);
       initEReference(getModifyingStoryNode_OwnedRule(), thePatternsPackage.getStoryPattern(), null, "ownedRule", null,
@@ -992,10 +992,10 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
       createGenModel_1Annotations();
       // redefines
       createRedefinesAnnotations();
-      // union
-      createUnionAnnotations();
       // subsets
       createSubsetsAnnotations();
+      // union
+      createUnionAnnotations();
    }
 
    /**

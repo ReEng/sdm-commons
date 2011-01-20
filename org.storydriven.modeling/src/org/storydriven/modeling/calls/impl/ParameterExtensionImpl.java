@@ -30,7 +30,7 @@ import org.storydriven.modeling.impl.VariableImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.calls.impl.ParameterExtensionImpl#getModelBase <em>Model Base</em>}</li>
+ *   <li>{@link org.storydriven.modeling.calls.impl.ParameterExtensionImpl#getBase <em>Base</em>}</li>
  *   <li>{@link org.storydriven.modeling.calls.impl.ParameterExtensionImpl#getOwningAnnotation <em>Owning Annotation</em>}</li>
  *   <li>{@link org.storydriven.modeling.calls.impl.ParameterExtensionImpl#getExtendableBase <em>Extendable Base</em>}</li>
  *   <li>{@link org.storydriven.modeling.calls.impl.ParameterExtensionImpl#getParameter <em>Parameter</em>}</li>
@@ -66,9 +66,7 @@ public class ParameterExtensionImpl extends VariableImpl implements ParameterExt
     */
    public EModelElement getModelBase ()
    {
-      EModelElement modelBase = basicGetModelBase();
-      return modelBase != null && modelBase.eIsProxy() ? (EModelElement) eResolveProxy((InternalEObject) modelBase)
-         : modelBase;
+      return getParameter();
    }
 
    /**
@@ -483,7 +481,8 @@ public class ParameterExtensionImpl extends VariableImpl implements ParameterExt
     */
    public EObject getBase ()
    {
-      return getParameter();
+      EObject base = basicGetBase();
+      return base != null && base.eIsProxy() ? eResolveProxy((InternalEObject) base) : base;
    }
 
    /**
@@ -492,7 +491,16 @@ public class ParameterExtensionImpl extends VariableImpl implements ParameterExt
     */
    public EObject basicGetBase ()
    {
-      return getParameter();
+      if (isSetModelBase())
+      {
+         return basicGetModelBase();
+      }
+      ExtendableElement extendableBase = basicGetExtendableBase();
+      if (extendableBase != null)
+      {
+         return extendableBase;
+      }
+      return null;
    }
 
    /**

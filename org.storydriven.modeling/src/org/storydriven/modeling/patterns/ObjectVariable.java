@@ -20,8 +20,8 @@ import org.storydriven.modeling.expressions.Expression;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.storydriven.modeling.patterns.ObjectVariable#getBindingState <em>Binding State</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.ObjectVariable#getBindingType <em>Binding Type</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.ObjectVariable#getModifier <em>Modifier</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.ObjectVariable#getBindingSemantics <em>Binding Semantics</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.ObjectVariable#getBindingOperator <em>Binding Operator</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.ObjectVariable#getPattern <em>Pattern</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.ObjectVariable#getAttributeAssignments <em>Attribute Assignment</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.ObjectVariable#getOutgoingLinks <em>Outgoing Link</em>}</li>
@@ -69,60 +69,64 @@ public interface ObjectVariable extends Variable, NamedElement
    void setBindingState (BindingState value);
 
    /**
-    * Returns the value of the '<em><b>Binding Type</b></em>' attribute.
+    * Returns the value of the '<em><b>Binding Semantics</b></em>' attribute.
     * The default value is <code>"NONE"</code>.
     * The literals are from the enumeration {@link org.storydriven.modeling.patterns.BindingSemantics}.
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Binding Type</em>' attribute isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Binding Semantics</em>' attribute isn't clear,
+    * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @return the value of the '<em>Binding Type</em>' attribute.
+    * @return the value of the '<em>Binding Semantics</em>' attribute.
     * @see org.storydriven.modeling.patterns.BindingSemantics
-    * @see #setBindingType(BindingSemantics)
-    * @see org.storydriven.modeling.patterns.PatternsPackage#getObjectVariable_BindingType()
+    * @see #setBindingSemantics(BindingSemantics)
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getObjectVariable_BindingSemantics()
     * @model default="NONE" required="true" ordered="false"
     * @generated
     */
-   BindingSemantics getBindingType ();
+   BindingSemantics getBindingSemantics ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.patterns.ObjectVariable#getBindingType <em>Binding Type</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @param value the new value of the '<em>Binding Type</em>' attribute.
+    * Sets the value of the '{@link org.storydriven.modeling.patterns.ObjectVariable#getBindingSemantics <em>Binding Semantics</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @param value the new value of the '<em>Binding Semantics</em>' attribute.
     * @see org.storydriven.modeling.patterns.BindingSemantics
-    * @see #getBindingType()
+    * @see #getBindingSemantics()
     * @generated
     */
-   void setBindingType (BindingSemantics value);
+   void setBindingSemantics (BindingSemantics value);
 
    /**
-    * Returns the value of the '<em><b>Modifier</b></em>' attribute.
-    * The default value is <code>"NONE"</code>.
-    * The literals are from the enumeration {@link org.storydriven.modeling.patterns.Modifier}.
+    * Returns the value of the '<em><b>Binding Operator</b></em>' attribute.
+    * The default value is <code>"CHECK"</code>.
+    * The literals are from the enumeration {@link org.storydriven.modeling.patterns.BindingOperator}.
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Modifier</em>' attribute isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Binding Operator</em>' attribute isn't clear,
+    * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @return the value of the '<em>Modifier</em>' attribute.
-    * @see org.storydriven.modeling.patterns.Modifier
-    * @see #setModifier(Modifier)
-    * @see org.storydriven.modeling.patterns.PatternsPackage#getObjectVariable_Modifier()
-    * @model default="NONE" required="true" ordered="false"
+    * @return the value of the '<em>Binding Operator</em>' attribute.
+    * @see org.storydriven.modeling.patterns.BindingOperator
+    * @see #setBindingOperator(BindingOperator)
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getObjectVariable_BindingOperator()
+    * @model default="CHECK" required="true" ordered="false"
     * @generated
     */
-   Modifier getModifier ();
+   BindingOperator getBindingOperator ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.patterns.ObjectVariable#getModifier <em>Modifier</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @param value the new value of the '<em>Modifier</em>' attribute.
-    * @see org.storydriven.modeling.patterns.Modifier
-    * @see #getModifier()
+    * Sets the value of the '{@link org.storydriven.modeling.patterns.ObjectVariable#getBindingOperator <em>Binding Operator</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @param value the new value of the '<em>Binding Operator</em>' attribute.
+    * @see org.storydriven.modeling.patterns.BindingOperator
+    * @see #getBindingOperator()
     * @generated
     */
-   void setModifier (Modifier value);
+   void setBindingOperator (BindingOperator value);
 
    /**
     * Returns the value of the '<em><b>Pattern</b></em>' container reference.

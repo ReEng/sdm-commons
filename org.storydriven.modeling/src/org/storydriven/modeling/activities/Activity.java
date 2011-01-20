@@ -119,15 +119,16 @@ public interface Activity extends CommentableElement, Callable
     * @model ordered="false"
     * @generated
     */
-   StoryNode getPrecondition ();
+   MatchingStoryNode getPrecondition ();
 
    /**
     * Sets the value of the '{@link org.storydriven.modeling.activities.Activity#getPrecondition <em>Precondition</em>}' reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @param value the new value of the '<em>Precondition</em>' reference.
     * @see #getPrecondition()
     * @generated
     */
-   void setPrecondition (StoryNode value);
+   void setPrecondition (MatchingStoryNode value);
 
 } // Activity

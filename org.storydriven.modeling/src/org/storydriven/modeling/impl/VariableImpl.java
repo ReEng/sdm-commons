@@ -68,17 +68,6 @@ public abstract class VariableImpl extends TypedElementImpl implements Variable
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
-   public void setVariableName (String newVariableName)
-   {
-      // TODO: implement this method to set the 'Variable Name' attribute
-      // Ensure that you remove @generated or mark it @generated NOT
-      throw new UnsupportedOperationException();
-   }
-
-   /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    */
    @Override
    public Object eGet (int featureID, boolean resolve, boolean coreType)
    {
@@ -88,38 +77,6 @@ public abstract class VariableImpl extends TypedElementImpl implements Variable
             return getVariableName();
       }
       return super.eGet(featureID, resolve, coreType);
-   }
-
-   /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public void eSet (int featureID, Object newValue)
-   {
-      switch (featureID)
-      {
-         case SDMPackage.VARIABLE__VARIABLE_NAME:
-            setVariableName((String) newValue);
-            return;
-      }
-      super.eSet(featureID, newValue);
-   }
-
-   /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public void eUnset (int featureID)
-   {
-      switch (featureID)
-      {
-         case SDMPackage.VARIABLE__VARIABLE_NAME:
-            setVariableName(VARIABLE_NAME_EDEFAULT);
-            return;
-      }
-      super.eUnset(featureID);
    }
 
    /**

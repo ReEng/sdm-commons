@@ -133,20 +133,22 @@ public interface PatternsPackage extends EPackage
    int OBJECT_VARIABLE__BINDING_STATE = SDMPackage.VARIABLE_FEATURE_COUNT + 1;
 
    /**
-    * The feature id for the '<em><b>Binding Type</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int OBJECT_VARIABLE__BINDING_TYPE = SDMPackage.VARIABLE_FEATURE_COUNT + 2;
+   int OBJECT_VARIABLE__BINDING_SEMANTICS = SDMPackage.VARIABLE_FEATURE_COUNT + 2;
 
    /**
-    * The feature id for the '<em><b>Modifier</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Operator</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int OBJECT_VARIABLE__MODIFIER = SDMPackage.VARIABLE_FEATURE_COUNT + 3;
+   int OBJECT_VARIABLE__BINDING_OPERATOR = SDMPackage.VARIABLE_FEATURE_COUNT + 3;
 
    /**
     * The feature id for the '<em><b>Pattern</b></em>' container reference.
@@ -455,20 +457,22 @@ public interface PatternsPackage extends EPackage
    int ABSTRACT_LINK_VARIABLE__NAME = SDMPackage.NAMED_ELEMENT__NAME;
 
    /**
-    * The feature id for the '<em><b>Binding Type</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int ABSTRACT_LINK_VARIABLE__BINDING_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+   int ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
    /**
-    * The feature id for the '<em><b>Modifier</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Operator</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int ABSTRACT_LINK_VARIABLE__MODIFIER = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+   int ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
    /**
     * The feature id for the '<em><b>Target</b></em>' reference.
@@ -1090,20 +1094,22 @@ public interface PatternsPackage extends EPackage
    int OBJECT_SET_VARIABLE__BINDING_STATE = OBJECT_VARIABLE__BINDING_STATE;
 
    /**
-    * The feature id for the '<em><b>Binding Type</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int OBJECT_SET_VARIABLE__BINDING_TYPE = OBJECT_VARIABLE__BINDING_TYPE;
+   int OBJECT_SET_VARIABLE__BINDING_SEMANTICS = OBJECT_VARIABLE__BINDING_SEMANTICS;
 
    /**
-    * The feature id for the '<em><b>Modifier</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Operator</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int OBJECT_SET_VARIABLE__MODIFIER = OBJECT_VARIABLE__MODIFIER;
+   int OBJECT_SET_VARIABLE__BINDING_OPERATOR = OBJECT_VARIABLE__BINDING_OPERATOR;
 
    /**
     * The feature id for the '<em><b>Pattern</b></em>' container reference.
@@ -1362,20 +1368,22 @@ public interface PatternsPackage extends EPackage
    int PATH__NAME = ABSTRACT_LINK_VARIABLE__NAME;
 
    /**
-    * The feature id for the '<em><b>Binding Type</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int PATH__BINDING_TYPE = ABSTRACT_LINK_VARIABLE__BINDING_TYPE;
+   int PATH__BINDING_SEMANTICS = ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS;
 
    /**
-    * The feature id for the '<em><b>Modifier</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Operator</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int PATH__MODIFIER = ABSTRACT_LINK_VARIABLE__MODIFIER;
+   int PATH__BINDING_OPERATOR = ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR;
 
    /**
     * The feature id for the '<em><b>Target</b></em>' reference.
@@ -1626,20 +1634,22 @@ public interface PatternsPackage extends EPackage
    int LINK_VARIABLE__NAME = ABSTRACT_LINK_VARIABLE__NAME;
 
    /**
-    * The feature id for the '<em><b>Binding Type</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_VARIABLE__BINDING_TYPE = ABSTRACT_LINK_VARIABLE__BINDING_TYPE;
+   int LINK_VARIABLE__BINDING_SEMANTICS = ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS;
 
    /**
-    * The feature id for the '<em><b>Modifier</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Operator</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_VARIABLE__MODIFIER = ABSTRACT_LINK_VARIABLE__MODIFIER;
+   int LINK_VARIABLE__BINDING_OPERATOR = ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR;
 
    /**
     * The feature id for the '<em><b>Target</b></em>' reference.
@@ -1906,20 +1916,22 @@ public interface PatternsPackage extends EPackage
    int CONTAINMENT_RELATION__NAME = ABSTRACT_LINK_VARIABLE__NAME;
 
    /**
-    * The feature id for the '<em><b>Binding Type</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int CONTAINMENT_RELATION__BINDING_TYPE = ABSTRACT_LINK_VARIABLE__BINDING_TYPE;
+   int CONTAINMENT_RELATION__BINDING_SEMANTICS = ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS;
 
    /**
-    * The feature id for the '<em><b>Modifier</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Operator</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int CONTAINMENT_RELATION__MODIFIER = ABSTRACT_LINK_VARIABLE__MODIFIER;
+   int CONTAINMENT_RELATION__BINDING_OPERATOR = ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR;
 
    /**
     * The feature id for the '<em><b>Target</b></em>' reference.
@@ -2202,12 +2214,13 @@ public interface PatternsPackage extends EPackage
    int STORY_PATTERN__CONTAINED_PATTERN = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
    /**
-    * The feature id for the '<em><b>Binding Type</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int STORY_PATTERN__BINDING_TYPE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
+   int STORY_PATTERN__BINDING_SEMANTICS = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
 
    /**
     * The feature id for the '<em><b>Template Signature</b></em>' containment reference.
@@ -2450,12 +2463,13 @@ public interface PatternsPackage extends EPackage
    int MATCHING_PATTERN__CONTAINED_PATTERN = STORY_PATTERN__CONTAINED_PATTERN;
 
    /**
-    * The feature id for the '<em><b>Binding Type</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int MATCHING_PATTERN__BINDING_TYPE = STORY_PATTERN__BINDING_TYPE;
+   int MATCHING_PATTERN__BINDING_SEMANTICS = STORY_PATTERN__BINDING_SEMANTICS;
 
    /**
     * The feature id for the '<em><b>Template Signature</b></em>' containment reference.
@@ -2660,13 +2674,14 @@ public interface PatternsPackage extends EPackage
    int BINDING_SEMANTICS = 12;
 
    /**
-    * The meta object id for the '{@link org.storydriven.modeling.patterns.Modifier <em>Modifier</em>}' enum.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see org.storydriven.modeling.patterns.Modifier
-    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getModifier()
+    * The meta object id for the '{@link org.storydriven.modeling.patterns.BindingOperator <em>Binding Operator</em>}' enum.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.storydriven.modeling.patterns.BindingOperator
+    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getBindingOperator()
     * @generated
     */
-   int MODIFIER = 13;
+   int BINDING_OPERATOR = 13;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.OrderConstraintType <em>Order Constraint Type</em>}' enum.
@@ -2740,26 +2755,26 @@ public interface PatternsPackage extends EPackage
    EAttribute getObjectVariable_BindingState ();
 
    /**
-    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.ObjectVariable#getBindingType <em>Binding Type</em>}'.
-    * <!-- begin-user-doc --> <!--
-    * end-user-doc -->
-    * @return the meta object for the attribute '<em>Binding Type</em>'.
-    * @see org.storydriven.modeling.patterns.ObjectVariable#getBindingType()
+    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.ObjectVariable#getBindingSemantics <em>Binding Semantics</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Binding Semantics</em>'.
+    * @see org.storydriven.modeling.patterns.ObjectVariable#getBindingSemantics()
     * @see #getObjectVariable()
     * @generated
     */
-   EAttribute getObjectVariable_BindingType ();
+   EAttribute getObjectVariable_BindingSemantics ();
 
    /**
-    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.ObjectVariable#getModifier <em>Modifier</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
-    * -->
-    * 
-    * @return the meta object for the attribute '<em>Modifier</em>'.
-    * @see org.storydriven.modeling.patterns.ObjectVariable#getModifier()
+    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.ObjectVariable#getBindingOperator <em>Binding Operator</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Binding Operator</em>'.
+    * @see org.storydriven.modeling.patterns.ObjectVariable#getBindingOperator()
     * @see #getObjectVariable()
     * @generated
     */
-   EAttribute getObjectVariable_Modifier ();
+   EAttribute getObjectVariable_BindingOperator ();
 
    /**
     * Returns the meta object for the container reference '{@link org.storydriven.modeling.patterns.ObjectVariable#getPattern <em>Pattern</em>}'.
@@ -2858,26 +2873,26 @@ public interface PatternsPackage extends EPackage
    EClass getAbstractLinkVariable ();
 
    /**
-    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getBindingType <em>Binding Type</em>}'.
-    * <!-- begin-user-doc --> <!--
-    * end-user-doc -->
-    * @return the meta object for the attribute '<em>Binding Type</em>'.
-    * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getBindingType()
+    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getBindingSemantics <em>Binding Semantics</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Binding Semantics</em>'.
+    * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getBindingSemantics()
     * @see #getAbstractLinkVariable()
     * @generated
     */
-   EAttribute getAbstractLinkVariable_BindingType ();
+   EAttribute getAbstractLinkVariable_BindingSemantics ();
 
    /**
-    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getModifier <em>Modifier</em>}'.
-    * <!-- begin-user-doc --> <!--
-    * end-user-doc -->
-    * @return the meta object for the attribute '<em>Modifier</em>'.
-    * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getModifier()
+    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getBindingOperator <em>Binding Operator</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Binding Operator</em>'.
+    * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getBindingOperator()
     * @see #getAbstractLinkVariable()
     * @generated
     */
-   EAttribute getAbstractLinkVariable_Modifier ();
+   EAttribute getAbstractLinkVariable_BindingOperator ();
 
    /**
     * Returns the meta object for the reference '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getTarget <em>Target</em>}'.
@@ -3224,15 +3239,15 @@ public interface PatternsPackage extends EPackage
    EReference getStoryPattern_ContainedPattern ();
 
    /**
-    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.StoryPattern#getBindingType <em>Binding Type</em>}'.
-    * <!-- begin-user-doc --> <!--
-    * end-user-doc -->
-    * @return the meta object for the attribute '<em>Binding Type</em>'.
-    * @see org.storydriven.modeling.patterns.StoryPattern#getBindingType()
+    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.StoryPattern#getBindingSemantics <em>Binding Semantics</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Binding Semantics</em>'.
+    * @see org.storydriven.modeling.patterns.StoryPattern#getBindingSemantics()
     * @see #getStoryPattern()
     * @generated
     */
-   EAttribute getStoryPattern_BindingType ();
+   EAttribute getStoryPattern_BindingSemantics ();
 
    /**
     * Returns the meta object for the containment reference '{@link org.storydriven.modeling.patterns.StoryPattern#getTemplateSignature <em>Template Signature</em>}'. <!--
@@ -3264,13 +3279,14 @@ public interface PatternsPackage extends EPackage
    EEnum getBindingSemantics ();
 
    /**
-    * Returns the meta object for enum '{@link org.storydriven.modeling.patterns.Modifier <em>Modifier</em>}'.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @return the meta object for enum '<em>Modifier</em>'.
-    * @see org.storydriven.modeling.patterns.Modifier
+    * Returns the meta object for enum '{@link org.storydriven.modeling.patterns.BindingOperator <em>Binding Operator</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for enum '<em>Binding Operator</em>'.
+    * @see org.storydriven.modeling.patterns.BindingOperator
     * @generated
     */
-   EEnum getModifier ();
+   EEnum getBindingOperator ();
 
    /**
     * Returns the meta object for enum '{@link org.storydriven.modeling.patterns.OrderConstraintType <em>Order Constraint Type</em>}'.
@@ -3351,18 +3367,20 @@ public interface PatternsPackage extends EPackage
       EAttribute OBJECT_VARIABLE__BINDING_STATE = eINSTANCE.getObjectVariable_BindingState();
 
       /**
-       * The meta object literal for the '<em><b>Binding Type</b></em>' attribute feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * The meta object literal for the '<em><b>Binding Semantics</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EAttribute OBJECT_VARIABLE__BINDING_TYPE = eINSTANCE.getObjectVariable_BindingType();
+      EAttribute OBJECT_VARIABLE__BINDING_SEMANTICS = eINSTANCE.getObjectVariable_BindingSemantics();
 
       /**
-       * The meta object literal for the '<em><b>Modifier</b></em>' attribute feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * The meta object literal for the '<em><b>Binding Operator</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EAttribute OBJECT_VARIABLE__MODIFIER = eINSTANCE.getObjectVariable_Modifier();
+      EAttribute OBJECT_VARIABLE__BINDING_OPERATOR = eINSTANCE.getObjectVariable_BindingOperator();
 
       /**
        * The meta object literal for the '<em><b>Pattern</b></em>' container reference feature.
@@ -3431,18 +3449,20 @@ public interface PatternsPackage extends EPackage
       EClass ABSTRACT_LINK_VARIABLE = eINSTANCE.getAbstractLinkVariable();
 
       /**
-       * The meta object literal for the '<em><b>Binding Type</b></em>' attribute feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * The meta object literal for the '<em><b>Binding Semantics</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EAttribute ABSTRACT_LINK_VARIABLE__BINDING_TYPE = eINSTANCE.getAbstractLinkVariable_BindingType();
+      EAttribute ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS = eINSTANCE.getAbstractLinkVariable_BindingSemantics();
 
       /**
-       * The meta object literal for the '<em><b>Modifier</b></em>' attribute feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * The meta object literal for the '<em><b>Binding Operator</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EAttribute ABSTRACT_LINK_VARIABLE__MODIFIER = eINSTANCE.getAbstractLinkVariable_Modifier();
+      EAttribute ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR = eINSTANCE.getAbstractLinkVariable_BindingOperator();
 
       /**
        * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -3701,11 +3721,12 @@ public interface PatternsPackage extends EPackage
       EReference STORY_PATTERN__CONTAINED_PATTERN = eINSTANCE.getStoryPattern_ContainedPattern();
 
       /**
-       * The meta object literal for the '<em><b>Binding Type</b></em>' attribute feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * The meta object literal for the '<em><b>Binding Semantics</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EAttribute STORY_PATTERN__BINDING_TYPE = eINSTANCE.getStoryPattern_BindingType();
+      EAttribute STORY_PATTERN__BINDING_SEMANTICS = eINSTANCE.getStoryPattern_BindingSemantics();
 
       /**
        * The meta object literal for the '<em><b>Template Signature</b></em>' containment reference feature.
@@ -3733,13 +3754,14 @@ public interface PatternsPackage extends EPackage
       EEnum BINDING_SEMANTICS = eINSTANCE.getBindingSemantics();
 
       /**
-       * The meta object literal for the '{@link org.storydriven.modeling.patterns.Modifier <em>Modifier</em>}' enum.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
-       * @see org.storydriven.modeling.patterns.Modifier
-       * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getModifier()
+       * The meta object literal for the '{@link org.storydriven.modeling.patterns.BindingOperator <em>Binding Operator</em>}' enum.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.storydriven.modeling.patterns.BindingOperator
+       * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getBindingOperator()
        * @generated
        */
-      EEnum MODIFIER = eINSTANCE.getModifier();
+      EEnum BINDING_OPERATOR = eINSTANCE.getBindingOperator();
 
       /**
        * The meta object literal for the '{@link org.storydriven.modeling.patterns.OrderConstraintType <em>Order Constraint Type</em>}' enum.

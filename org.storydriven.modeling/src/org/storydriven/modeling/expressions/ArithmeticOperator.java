@@ -65,7 +65,15 @@ public enum ArithmeticOperator implements Enumerator
     * @generated
     * @ordered
     */
-   MODULO (4, "MODULO", "MODULO");
+   MODULO (4, "MODULO", "MODULO"), /**
+                                    * The '<em><b>EXP</b></em>' literal object.
+                                    * <!-- begin-user-doc -->
+                                    * <!-- end-user-doc -->
+                                    * @see #EXP_VALUE
+                                    * @generated
+                                    * @ordered
+                                    */
+   EXP (5, "EXP", "EXP");
 
    /**
     * The '<em><b>PLUS</b></em>' literal value.
@@ -138,12 +146,27 @@ public enum ArithmeticOperator implements Enumerator
    public static final int MODULO_VALUE = 4;
 
    /**
+    * The '<em><b>EXP</b></em>' literal value.
+    * <!-- begin-user-doc -->
+    * <p>
+    * If the meaning of '<em><b>EXP</b></em>' literal object isn't clear,
+    * there really should be more of a description here...
+    * </p>
+    * <!-- end-user-doc -->
+    * @see #EXP
+    * @model
+    * @generated
+    * @ordered
+    */
+   public static final int EXP_VALUE = 5;
+
+   /**
     * An array of all the '<em><b>Arithmetic Operator</b></em>' enumerators.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    private static final ArithmeticOperator[] VALUES_ARRAY = new ArithmeticOperator[] {PLUS, MINUS, TIMES, DIVIDE,
-         MODULO,};
+         MODULO, EXP,};
 
    /**
     * A public read-only list of all the '<em><b>Arithmetic Operator</b></em>' enumerators.
@@ -207,6 +230,8 @@ public enum ArithmeticOperator implements Enumerator
             return DIVIDE;
          case MODULO_VALUE:
             return MODULO;
+         case EXP_VALUE:
+            return EXP;
       }
       return null;
    }

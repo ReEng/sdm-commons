@@ -137,7 +137,7 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yH0BIRzHEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yH0BIBzHEeChOvWwuwx7tQ"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_Bzgd8RzIEeChOvWwuwx7tQ" name="precondition" type="9f08ef2b-883b-486d-9dfd-53a9300410fa" association="_BzfP0BzIEeChOvWwuwx7tQ">
+        <ownedAttribute xmi:id="_Bzgd8RzIEeChOvWwuwx7tQ" name="precondition" type="_fD_b0BzQEeChOvWwuwx7tQ" association="_BzfP0BzIEeChOvWwuwx7tQ">
           <ownedComment xmi:id="_0aPsEBzuEeChOvWwuwx7tQ" annotatedElement="_Bzgd8RzIEeChOvWwuwx7tQ">
             <body>References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links.</body>
           </ownedComment>
@@ -541,6 +541,8 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
         <ownedLiteral xmi:id="_oMKiQBzFEeChOvWwuwx7tQ" name="AND"/>
         <ownedLiteral xmi:id="_ovlYYBzFEeChOvWwuwx7tQ" name="OR"/>
         <ownedLiteral xmi:id="_pU6TABzFEeChOvWwuwx7tQ" name="XOR"/>
+        <ownedLiteral xmi:id="_WYUSQCR9EeCZkonQmyNaoA" name="IMPLY"/>
+        <ownedLiteral xmi:id="_eVlq0CR9EeCZkonQmyNaoA" name="EQUIVALENT"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_jmhM0BzFEeChOvWwuwx7tQ" name="ComparingOperator">
         <ownedComment xmi:id="_CgmDEBzsEeChOvWwuwx7tQ" annotatedElement="_jmhM0BzFEeChOvWwuwx7tQ">
@@ -562,6 +564,7 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
         <ownedLiteral xmi:id="_24udUBzFEeChOvWwuwx7tQ" name="TIMES"/>
         <ownedLiteral xmi:id="_3y_tMBzFEeChOvWwuwx7tQ" name="DIVIDE"/>
         <ownedLiteral xmi:id="_4jt_gBzFEeChOvWwuwx7tQ" name="MODULO"/>
+        <ownedLiteral xmi:id="_hNz1ICR9EeCZkonQmyNaoA" name="EXP"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_8-3VIBzFEeChOvWwuwx7tQ" name="TextualExpression">
         <ownedComment xmi:id="_ROhQEBzsEeChOvWwuwx7tQ" annotatedElement="_8-3VIBzFEeChOvWwuwx7tQ">
@@ -850,10 +853,10 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="70a57767-3c96-4cff-87d3-8391bb039afc" name="AbstractLinkVariable" isAbstract="true">
         <generalization xmi:id="_0MvS4LLzEd-uk56s-ldeog" general="_tB8FcLK5Ed-uk56s-ldeog"/>
-        <ownedAttribute xmi:id="13223e42-7f6d-415c-a7c7-68e58015a9be" name="bindingType" visibility="public" type="5d5c7278-e6e7-4956-ab18-44332c8cc462">
+        <ownedAttribute xmi:id="13223e42-7f6d-415c-a7c7-68e58015a9be" name="bindingSemantics" visibility="public" type="5d5c7278-e6e7-4956-ab18-44332c8cc462">
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_-5l9gLL7Ed-uk56s-ldeog" instance="fa270781-e8e1-4379-ada0-d421ab1217e0"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="ef15800b-d4db-4f97-a719-6cac128fecad" name="modifier" visibility="public" type="74737b3a-1725-4fee-b753-d7458eda7189">
+        <ownedAttribute xmi:id="ef15800b-d4db-4f97-a719-6cac128fecad" name="bindingOperator" visibility="public" type="74737b3a-1725-4fee-b753-d7458eda7189">
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="__jOJULL7Ed-uk56s-ldeog" instance="888dbb97-a420-4e27-bfb0-f5b3de6da65b"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="29ee7390-8b89-420e-99c9-e1179f7cfd54" name="target" visibility="public" type="c0f72d07-a643-4da9-859b-d95cfca69eee" association="efa70337-efe7-457d-8d6a-3aea19469b7a">
@@ -876,8 +879,8 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IIFDQRzcEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="74737b3a-1725-4fee-b753-d7458eda7189" name="Modifier">
-        <ownedLiteral xmi:id="888dbb97-a420-4e27-bfb0-f5b3de6da65b" name="NONE"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="74737b3a-1725-4fee-b753-d7458eda7189" name="BindingOperator">
+        <ownedLiteral xmi:id="888dbb97-a420-4e27-bfb0-f5b3de6da65b" name="CHECK"/>
         <ownedLiteral xmi:id="261583f1-b911-4c05-b4d7-f7f2cda8496a" name="CREATE"/>
         <ownedLiteral xmi:id="501ae012-48cf-4ea0-83e6-11394bfe9a8d" name="DESTROY"/>
       </packagedElement>
@@ -912,10 +915,10 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
         <ownedAttribute xmi:id="60d4fc4e-8a40-44a9-9913-ea51221db1a8" name="bindingState" visibility="public" type="37d4c959-090c-411e-b62f-a01a5acd650c">
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_IwfxMLL8Ed-uk56s-ldeog" instance="_XroecBzhEeChOvWwuwx7tQ"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="8af9ddea-a5c4-4017-b709-364964a433cf" name="bindingType" visibility="public" type="5d5c7278-e6e7-4956-ab18-44332c8cc462">
+        <ownedAttribute xmi:id="8af9ddea-a5c4-4017-b709-364964a433cf" name="bindingSemantics" visibility="public" type="5d5c7278-e6e7-4956-ab18-44332c8cc462">
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_Jgg44LL8Ed-uk56s-ldeog" instance="fa270781-e8e1-4379-ada0-d421ab1217e0"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="35801d86-4de1-4fb5-becb-10e3f92a3afb" name="modifier" visibility="public" type="74737b3a-1725-4fee-b753-d7458eda7189">
+        <ownedAttribute xmi:id="35801d86-4de1-4fb5-becb-10e3f92a3afb" name="bindingOperator" visibility="public" type="74737b3a-1725-4fee-b753-d7458eda7189">
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_KXj1oLL8Ed-uk56s-ldeog" instance="888dbb97-a420-4e27-bfb0-f5b3de6da65b"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="97f7e21a-6cb3-4e71-a689-faf97d6546e6" name="pattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="71c51c4d-b7d4-44e9-8970-b4d9a946910c">
@@ -962,7 +965,7 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA17BrKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA17B7KwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="530fdd45-f95d-43dc-8501-8c4dd824bc24" name="bindingType" visibility="public" type="5d5c7278-e6e7-4956-ab18-44332c8cc462">
+        <ownedAttribute xmi:id="530fdd45-f95d-43dc-8501-8c4dd824bc24" name="bindingSemantics" visibility="public" type="5d5c7278-e6e7-4956-ab18-44332c8cc462">
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_Lp6OULL8Ed-uk56s-ldeog" instance="fa270781-e8e1-4379-ada0-d421ab1217e0"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_qINk0bLxEd-uk56s-ldeog" name="constraint" visibility="public" type="_82J4gBzaEeChOvWwuwx7tQ" aggregation="composite" association="_qIMWsLLxEd-uk56s-ldeog">

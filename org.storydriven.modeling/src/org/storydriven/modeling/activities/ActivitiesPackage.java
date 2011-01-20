@@ -1055,7 +1055,7 @@ public interface ActivitiesPackage extends EPackage
     * @see org.storydriven.modeling.activities.impl.ActivitiesPackageImpl#getStructuredNode()
     * @generated
     */
-   int STRUCTURED_NODE = 6;
+   int STRUCTURED_NODE = 7;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl <em>Operation Extension</em>}' class.
@@ -1338,7 +1338,7 @@ public interface ActivitiesPackage extends EPackage
     * @see org.storydriven.modeling.activities.impl.ActivitiesPackageImpl#getStoryNode()
     * @generated
     */
-   int STORY_NODE = 5;
+   int STORY_NODE = 6;
 
    /**
     * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1589,485 +1589,13 @@ public interface ActivitiesPackage extends EPackage
    int STORY_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
 
    /**
-    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
-
-   /**
-    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
-
-   /**
-    * The feature id for the '<em><b>Name</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE__NAME = ACTIVITY_NODE__NAME;
-
-   /**
-    * The feature id for the '<em><b>Comment</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
-
-   /**
-    * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
-
-   /**
-    * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
-
-   /**
-    * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
-
-   /**
-    * The feature id for the '<em><b>Incoming</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
-
-   /**
-    * The feature id for the '<em><b>Owned Activity Node</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE__OWNED_ACTIVITY_NODE = ACTIVITY_NODE_FEATURE_COUNT + 0;
-
-   /**
-    * The number of structural features of the '<em>Structured Node</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 1;
-
-   /**
-    * The operation id for the '<em>EClass</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
-
-   /**
-    * The operation id for the '<em>EIs Proxy</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
-
-   /**
-    * The operation id for the '<em>EResource</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
-
-   /**
-    * The operation id for the '<em>EContainer</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
-
-   /**
-    * The operation id for the '<em>EContaining Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
-
-   /**
-    * The operation id for the '<em>EContainment Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
-
-   /**
-    * The operation id for the '<em>EContents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
-
-   /**
-    * The operation id for the '<em>EAll Contents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
-
-   /**
-    * The operation id for the '<em>ECross References</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
-
-   /**
-    * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-   /**
-    * The operation id for the '<em>ESet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-   /**
-    * The operation id for the '<em>EIs Set</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EUnset</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EInvoke</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
-
-   /**
-    * The operation id for the '<em>Get Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
-
-   /**
-    * The operation id for the '<em>Provide Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
-
-   /**
-    * The operation id for the '<em>Get Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
-
-   /**
-    * The operation id for the '<em>Provide Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
-
-   /**
-    * The number of operations of the '<em>Structured Node</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STRUCTURED_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
-
-   /**
     * The meta object id for the '{@link org.storydriven.modeling.activities.impl.JunctionNodeImpl <em>Junction Node</em>}' class.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see org.storydriven.modeling.activities.impl.JunctionNodeImpl
     * @see org.storydriven.modeling.activities.impl.ActivitiesPackageImpl#getJunctionNode()
     * @generated
     */
-   int JUNCTION_NODE = 7;
-
-   /**
-    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
-
-   /**
-    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
-
-   /**
-    * The feature id for the '<em><b>Name</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE__NAME = ACTIVITY_NODE__NAME;
-
-   /**
-    * The feature id for the '<em><b>Comment</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
-
-   /**
-    * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
-
-   /**
-    * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
-
-   /**
-    * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
-
-   /**
-    * The feature id for the '<em><b>Incoming</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
-
-   /**
-    * The number of structural features of the '<em>Junction Node</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 0;
-
-   /**
-    * The operation id for the '<em>EClass</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
-
-   /**
-    * The operation id for the '<em>EIs Proxy</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
-
-   /**
-    * The operation id for the '<em>EResource</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
-
-   /**
-    * The operation id for the '<em>EContainer</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
-
-   /**
-    * The operation id for the '<em>EContaining Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
-
-   /**
-    * The operation id for the '<em>EContainment Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
-
-   /**
-    * The operation id for the '<em>EContents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
-
-   /**
-    * The operation id for the '<em>EAll Contents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
-
-   /**
-    * The operation id for the '<em>ECross References</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
-
-   /**
-    * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-   /**
-    * The operation id for the '<em>ESet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-   /**
-    * The operation id for the '<em>EIs Set</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EUnset</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EInvoke</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
-
-   /**
-    * The operation id for the '<em>Get Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
-
-   /**
-    * The operation id for the '<em>Provide Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
-
-   /**
-    * The operation id for the '<em>Get Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
-
-   /**
-    * The operation id for the '<em>Provide Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
-
-   /**
-    * The number of operations of the '<em>Junction Node</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int JUNCTION_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
+   int JUNCTION_NODE = 8;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.activities.impl.StartNodeImpl <em>Start Node</em>}' class.
@@ -2076,239 +1604,7 @@ public interface ActivitiesPackage extends EPackage
     * @see org.storydriven.modeling.activities.impl.ActivitiesPackageImpl#getStartNode()
     * @generated
     */
-   int START_NODE = 8;
-
-   /**
-    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
-
-   /**
-    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
-
-   /**
-    * The feature id for the '<em><b>Name</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE__NAME = ACTIVITY_NODE__NAME;
-
-   /**
-    * The feature id for the '<em><b>Comment</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
-
-   /**
-    * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
-
-   /**
-    * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
-
-   /**
-    * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
-
-   /**
-    * The feature id for the '<em><b>Incoming</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
-
-   /**
-    * The number of structural features of the '<em>Start Node</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 0;
-
-   /**
-    * The operation id for the '<em>EClass</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
-
-   /**
-    * The operation id for the '<em>EIs Proxy</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
-
-   /**
-    * The operation id for the '<em>EResource</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
-
-   /**
-    * The operation id for the '<em>EContainer</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
-
-   /**
-    * The operation id for the '<em>EContaining Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
-
-   /**
-    * The operation id for the '<em>EContainment Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
-
-   /**
-    * The operation id for the '<em>EContents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
-
-   /**
-    * The operation id for the '<em>EAll Contents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
-
-   /**
-    * The operation id for the '<em>ECross References</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
-
-   /**
-    * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-   /**
-    * The operation id for the '<em>ESet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-   /**
-    * The operation id for the '<em>EIs Set</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EUnset</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EInvoke</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
-
-   /**
-    * The operation id for the '<em>Get Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
-
-   /**
-    * The operation id for the '<em>Provide Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
-
-   /**
-    * The operation id for the '<em>Get Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
-
-   /**
-    * The operation id for the '<em>Provide Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
-
-   /**
-    * The number of operations of the '<em>Start Node</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int START_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
+   int START_NODE = 9;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.activities.impl.StatementNodeImpl <em>Statement Node</em>}' class.
@@ -2317,247 +1613,7 @@ public interface ActivitiesPackage extends EPackage
     * @see org.storydriven.modeling.activities.impl.ActivitiesPackageImpl#getStatementNode()
     * @generated
     */
-   int STATEMENT_NODE = 9;
-
-   /**
-    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
-
-   /**
-    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
-
-   /**
-    * The feature id for the '<em><b>Name</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE__NAME = ACTIVITY_NODE__NAME;
-
-   /**
-    * The feature id for the '<em><b>Comment</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
-
-   /**
-    * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
-
-   /**
-    * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
-
-   /**
-    * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
-
-   /**
-    * The feature id for the '<em><b>Incoming</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
-
-   /**
-    * The feature id for the '<em><b>Statement Expression</b></em>' containment reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE__STATEMENT_EXPRESSION = ACTIVITY_NODE_FEATURE_COUNT + 0;
-
-   /**
-    * The number of structural features of the '<em>Statement Node</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 1;
-
-   /**
-    * The operation id for the '<em>EClass</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
-
-   /**
-    * The operation id for the '<em>EIs Proxy</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
-
-   /**
-    * The operation id for the '<em>EResource</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
-
-   /**
-    * The operation id for the '<em>EContainer</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
-
-   /**
-    * The operation id for the '<em>EContaining Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
-
-   /**
-    * The operation id for the '<em>EContainment Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
-
-   /**
-    * The operation id for the '<em>EContents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
-
-   /**
-    * The operation id for the '<em>EAll Contents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
-
-   /**
-    * The operation id for the '<em>ECross References</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
-
-   /**
-    * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-   /**
-    * The operation id for the '<em>ESet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-   /**
-    * The operation id for the '<em>EIs Set</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EUnset</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EInvoke</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
-
-   /**
-    * The operation id for the '<em>Get Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
-
-   /**
-    * The operation id for the '<em>Provide Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
-
-   /**
-    * The operation id for the '<em>Get Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
-
-   /**
-    * The operation id for the '<em>Provide Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
-
-   /**
-    * The number of operations of the '<em>Statement Node</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STATEMENT_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
+   int STATEMENT_NODE = 10;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.activities.impl.StopNodeImpl <em>Stop Node</em>}' class.
@@ -2566,255 +1622,7 @@ public interface ActivitiesPackage extends EPackage
     * @see org.storydriven.modeling.activities.impl.ActivitiesPackageImpl#getStopNode()
     * @generated
     */
-   int STOP_NODE = 10;
-
-   /**
-    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
-
-   /**
-    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
-
-   /**
-    * The feature id for the '<em><b>Name</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE__NAME = ACTIVITY_NODE__NAME;
-
-   /**
-    * The feature id for the '<em><b>Comment</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
-
-   /**
-    * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
-
-   /**
-    * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
-
-   /**
-    * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
-
-   /**
-    * The feature id for the '<em><b>Incoming</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
-
-   /**
-    * The feature id for the '<em><b>Flow Stop Only</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE__FLOW_STOP_ONLY = ACTIVITY_NODE_FEATURE_COUNT + 0;
-
-   /**
-    * The feature id for the '<em><b>Return Value</b></em>' containment reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE__RETURN_VALUE = ACTIVITY_NODE_FEATURE_COUNT + 1;
-
-   /**
-    * The number of structural features of the '<em>Stop Node</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 2;
-
-   /**
-    * The operation id for the '<em>EClass</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
-
-   /**
-    * The operation id for the '<em>EIs Proxy</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
-
-   /**
-    * The operation id for the '<em>EResource</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
-
-   /**
-    * The operation id for the '<em>EContainer</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
-
-   /**
-    * The operation id for the '<em>EContaining Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
-
-   /**
-    * The operation id for the '<em>EContainment Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
-
-   /**
-    * The operation id for the '<em>EContents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
-
-   /**
-    * The operation id for the '<em>EAll Contents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
-
-   /**
-    * The operation id for the '<em>ECross References</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
-
-   /**
-    * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-   /**
-    * The operation id for the '<em>ESet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-   /**
-    * The operation id for the '<em>EIs Set</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EUnset</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EInvoke</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
-
-   /**
-    * The operation id for the '<em>Get Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
-
-   /**
-    * The operation id for the '<em>Provide Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
-
-   /**
-    * The operation id for the '<em>Get Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
-
-   /**
-    * The operation id for the '<em>Provide Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
-
-   /**
-    * The number of operations of the '<em>Stop Node</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STOP_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
+   int STOP_NODE = 11;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.activities.impl.ActivityCallNodeImpl <em>Activity Call Node</em>}' class.
@@ -2824,263 +1632,7 @@ public interface ActivitiesPackage extends EPackage
     * @see org.storydriven.modeling.activities.impl.ActivitiesPackageImpl#getActivityCallNode()
     * @generated
     */
-   int ACTIVITY_CALL_NODE = 11;
-
-   /**
-    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
-
-   /**
-    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
-
-   /**
-    * The feature id for the '<em><b>Name</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE__NAME = ACTIVITY_NODE__NAME;
-
-   /**
-    * The feature id for the '<em><b>Comment</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
-
-   /**
-    * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
-
-   /**
-    * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
-
-   /**
-    * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
-
-   /**
-    * The feature id for the '<em><b>Incoming</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
-
-   /**
-    * The feature id for the '<em><b>Owned Parameter Bindings</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS = ACTIVITY_NODE_FEATURE_COUNT + 0;
-
-   /**
-    * The feature id for the '<em><b>Callee</b></em>' reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE__CALLEE = ACTIVITY_NODE_FEATURE_COUNT + 1;
-
-   /**
-    * The feature id for the '<em><b>Called Activity</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE__CALLED_ACTIVITY = ACTIVITY_NODE_FEATURE_COUNT + 2;
-
-   /**
-    * The number of structural features of the '<em>Activity Call Node</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 3;
-
-   /**
-    * The operation id for the '<em>EClass</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
-
-   /**
-    * The operation id for the '<em>EIs Proxy</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
-
-   /**
-    * The operation id for the '<em>EResource</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
-
-   /**
-    * The operation id for the '<em>EContainer</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
-
-   /**
-    * The operation id for the '<em>EContaining Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
-
-   /**
-    * The operation id for the '<em>EContainment Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
-
-   /**
-    * The operation id for the '<em>EContents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
-
-   /**
-    * The operation id for the '<em>EAll Contents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
-
-   /**
-    * The operation id for the '<em>ECross References</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
-
-   /**
-    * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-   /**
-    * The operation id for the '<em>ESet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-   /**
-    * The operation id for the '<em>EIs Set</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EUnset</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EInvoke</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
-
-   /**
-    * The operation id for the '<em>Get Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
-
-   /**
-    * The operation id for the '<em>Provide Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
-
-   /**
-    * The operation id for the '<em>Get Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
-
-   /**
-    * The operation id for the '<em>Provide Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
-
-   /**
-    * The number of operations of the '<em>Activity Call Node</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY_CALL_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
+   int ACTIVITY_CALL_NODE = 12;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.activities.impl.MatchingStoryNodeImpl <em>Matching Story Node</em>}' class.
@@ -3090,7 +1642,7 @@ public interface ActivitiesPackage extends EPackage
     * @see org.storydriven.modeling.activities.impl.ActivitiesPackageImpl#getMatchingStoryNode()
     * @generated
     */
-   int MATCHING_STORY_NODE = 12;
+   int MATCHING_STORY_NODE = 5;
 
    /**
     * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -3347,6 +1899,1454 @@ public interface ActivitiesPackage extends EPackage
     * @ordered
     */
    int MATCHING_STORY_NODE_OPERATION_COUNT = STORY_NODE_OPERATION_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+
+   /**
+    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+
+   /**
+    * The feature id for the '<em><b>Name</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE__NAME = ACTIVITY_NODE__NAME;
+
+   /**
+    * The feature id for the '<em><b>Comment</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
+
+   /**
+    * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
+
+   /**
+    * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
+
+   /**
+    * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
+
+   /**
+    * The feature id for the '<em><b>Incoming</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
+
+   /**
+    * The feature id for the '<em><b>Owned Activity Node</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE__OWNED_ACTIVITY_NODE = ACTIVITY_NODE_FEATURE_COUNT + 0;
+
+   /**
+    * The number of structural features of the '<em>Structured Node</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 1;
+
+   /**
+    * The operation id for the '<em>EClass</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
+
+   /**
+    * The operation id for the '<em>EIs Proxy</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
+
+   /**
+    * The operation id for the '<em>EResource</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
+
+   /**
+    * The operation id for the '<em>EContainer</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
+
+   /**
+    * The operation id for the '<em>EContaining Feature</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContainment Feature</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContents</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
+
+   /**
+    * The operation id for the '<em>EAll Contents</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
+
+   /**
+    * The operation id for the '<em>ECross References</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+   /**
+    * The operation id for the '<em>ESet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+   /**
+    * The operation id for the '<em>EIs Set</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EUnset</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EInvoke</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
+
+   /**
+    * The operation id for the '<em>Get Extension</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Provide Extension</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Get Annotation</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
+
+   /**
+    * The operation id for the '<em>Provide Annotation</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
+
+   /**
+    * The number of operations of the '<em>Structured Node</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STRUCTURED_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+
+   /**
+    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+
+   /**
+    * The feature id for the '<em><b>Name</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE__NAME = ACTIVITY_NODE__NAME;
+
+   /**
+    * The feature id for the '<em><b>Comment</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
+
+   /**
+    * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
+
+   /**
+    * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
+
+   /**
+    * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
+
+   /**
+    * The feature id for the '<em><b>Incoming</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
+
+   /**
+    * The number of structural features of the '<em>Junction Node</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 0;
+
+   /**
+    * The operation id for the '<em>EClass</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
+
+   /**
+    * The operation id for the '<em>EIs Proxy</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
+
+   /**
+    * The operation id for the '<em>EResource</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
+
+   /**
+    * The operation id for the '<em>EContainer</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
+
+   /**
+    * The operation id for the '<em>EContaining Feature</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContainment Feature</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContents</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
+
+   /**
+    * The operation id for the '<em>EAll Contents</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
+
+   /**
+    * The operation id for the '<em>ECross References</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+   /**
+    * The operation id for the '<em>ESet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+   /**
+    * The operation id for the '<em>EIs Set</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EUnset</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EInvoke</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
+
+   /**
+    * The operation id for the '<em>Get Extension</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Provide Extension</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Get Annotation</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
+
+   /**
+    * The operation id for the '<em>Provide Annotation</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
+
+   /**
+    * The number of operations of the '<em>Junction Node</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int JUNCTION_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+
+   /**
+    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+
+   /**
+    * The feature id for the '<em><b>Name</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE__NAME = ACTIVITY_NODE__NAME;
+
+   /**
+    * The feature id for the '<em><b>Comment</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
+
+   /**
+    * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
+
+   /**
+    * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
+
+   /**
+    * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
+
+   /**
+    * The feature id for the '<em><b>Incoming</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
+
+   /**
+    * The number of structural features of the '<em>Start Node</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 0;
+
+   /**
+    * The operation id for the '<em>EClass</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
+
+   /**
+    * The operation id for the '<em>EIs Proxy</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
+
+   /**
+    * The operation id for the '<em>EResource</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
+
+   /**
+    * The operation id for the '<em>EContainer</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
+
+   /**
+    * The operation id for the '<em>EContaining Feature</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContainment Feature</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContents</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
+
+   /**
+    * The operation id for the '<em>EAll Contents</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
+
+   /**
+    * The operation id for the '<em>ECross References</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+   /**
+    * The operation id for the '<em>ESet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+   /**
+    * The operation id for the '<em>EIs Set</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EUnset</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EInvoke</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
+
+   /**
+    * The operation id for the '<em>Get Extension</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Provide Extension</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Get Annotation</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
+
+   /**
+    * The operation id for the '<em>Provide Annotation</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
+
+   /**
+    * The number of operations of the '<em>Start Node</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int START_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+
+   /**
+    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+
+   /**
+    * The feature id for the '<em><b>Name</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE__NAME = ACTIVITY_NODE__NAME;
+
+   /**
+    * The feature id for the '<em><b>Comment</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
+
+   /**
+    * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
+
+   /**
+    * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
+
+   /**
+    * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
+
+   /**
+    * The feature id for the '<em><b>Incoming</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
+
+   /**
+    * The feature id for the '<em><b>Statement Expression</b></em>' containment reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE__STATEMENT_EXPRESSION = ACTIVITY_NODE_FEATURE_COUNT + 0;
+
+   /**
+    * The number of structural features of the '<em>Statement Node</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 1;
+
+   /**
+    * The operation id for the '<em>EClass</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
+
+   /**
+    * The operation id for the '<em>EIs Proxy</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
+
+   /**
+    * The operation id for the '<em>EResource</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
+
+   /**
+    * The operation id for the '<em>EContainer</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
+
+   /**
+    * The operation id for the '<em>EContaining Feature</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContainment Feature</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContents</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
+
+   /**
+    * The operation id for the '<em>EAll Contents</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
+
+   /**
+    * The operation id for the '<em>ECross References</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+   /**
+    * The operation id for the '<em>ESet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+   /**
+    * The operation id for the '<em>EIs Set</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EUnset</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EInvoke</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
+
+   /**
+    * The operation id for the '<em>Get Extension</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Provide Extension</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Get Annotation</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
+
+   /**
+    * The operation id for the '<em>Provide Annotation</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
+
+   /**
+    * The number of operations of the '<em>Statement Node</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STATEMENT_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+
+   /**
+    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+
+   /**
+    * The feature id for the '<em><b>Name</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE__NAME = ACTIVITY_NODE__NAME;
+
+   /**
+    * The feature id for the '<em><b>Comment</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
+
+   /**
+    * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
+
+   /**
+    * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
+
+   /**
+    * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
+
+   /**
+    * The feature id for the '<em><b>Incoming</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
+
+   /**
+    * The feature id for the '<em><b>Flow Stop Only</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE__FLOW_STOP_ONLY = ACTIVITY_NODE_FEATURE_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>Return Value</b></em>' containment reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE__RETURN_VALUE = ACTIVITY_NODE_FEATURE_COUNT + 1;
+
+   /**
+    * The number of structural features of the '<em>Stop Node</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 2;
+
+   /**
+    * The operation id for the '<em>EClass</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
+
+   /**
+    * The operation id for the '<em>EIs Proxy</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
+
+   /**
+    * The operation id for the '<em>EResource</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
+
+   /**
+    * The operation id for the '<em>EContainer</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
+
+   /**
+    * The operation id for the '<em>EContaining Feature</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContainment Feature</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContents</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
+
+   /**
+    * The operation id for the '<em>EAll Contents</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
+
+   /**
+    * The operation id for the '<em>ECross References</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+   /**
+    * The operation id for the '<em>ESet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+   /**
+    * The operation id for the '<em>EIs Set</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EUnset</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EInvoke</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
+
+   /**
+    * The operation id for the '<em>Get Extension</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Provide Extension</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Get Annotation</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
+
+   /**
+    * The operation id for the '<em>Provide Annotation</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
+
+   /**
+    * The number of operations of the '<em>Stop Node</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+
+   /**
+    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+
+   /**
+    * The feature id for the '<em><b>Name</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE__NAME = ACTIVITY_NODE__NAME;
+
+   /**
+    * The feature id for the '<em><b>Comment</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
+
+   /**
+    * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
+
+   /**
+    * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
+
+   /**
+    * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
+
+   /**
+    * The feature id for the '<em><b>Incoming</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
+
+   /**
+    * The feature id for the '<em><b>Owned Parameter Bindings</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS = ACTIVITY_NODE_FEATURE_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>Callee</b></em>' reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE__CALLEE = ACTIVITY_NODE_FEATURE_COUNT + 1;
+
+   /**
+    * The feature id for the '<em><b>Called Activity</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE__CALLED_ACTIVITY = ACTIVITY_NODE_FEATURE_COUNT + 2;
+
+   /**
+    * The number of structural features of the '<em>Activity Call Node</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 3;
+
+   /**
+    * The operation id for the '<em>EClass</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
+
+   /**
+    * The operation id for the '<em>EIs Proxy</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
+
+   /**
+    * The operation id for the '<em>EResource</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
+
+   /**
+    * The operation id for the '<em>EContainer</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
+
+   /**
+    * The operation id for the '<em>EContaining Feature</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContainment Feature</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContents</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
+
+   /**
+    * The operation id for the '<em>EAll Contents</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
+
+   /**
+    * The operation id for the '<em>ECross References</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+   /**
+    * The operation id for the '<em>ESet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+   /**
+    * The operation id for the '<em>EIs Set</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EUnset</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EInvoke</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
+
+   /**
+    * The operation id for the '<em>Get Extension</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Provide Extension</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Get Annotation</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
+
+   /**
+    * The operation id for the '<em>Provide Annotation</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
+
+   /**
+    * The number of operations of the '<em>Activity Call Node</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY_CALL_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.activities.impl.ModifyingStoryNodeImpl <em>Modifying Story Node</em>}' class.

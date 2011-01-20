@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.impl.NamedElementImpl;
 import org.storydriven.modeling.patterns.AbstractLinkVariable;
+import org.storydriven.modeling.patterns.BindingOperator;
 import org.storydriven.modeling.patterns.BindingSemantics;
 import org.storydriven.modeling.patterns.BindingState;
 import org.storydriven.modeling.patterns.LinkOrderConstraint;
@@ -32,8 +33,8 @@ import org.storydriven.modeling.patterns.StoryPattern;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.patterns.impl.AbstractLinkVariableImpl#getBindingType <em>Binding Type</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.impl.AbstractLinkVariableImpl#getModifier <em>Modifier</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.impl.AbstractLinkVariableImpl#getBindingSemantics <em>Binding Semantics</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.impl.AbstractLinkVariableImpl#getBindingOperator <em>Binding Operator</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.impl.AbstractLinkVariableImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.impl.AbstractLinkVariableImpl#getSecondLinkOrderConstraints <em>Second Link Order Constraint</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.impl.AbstractLinkVariableImpl#getFirstLinkOrderConstraints <em>First Link Order Constraint</em>}</li>
@@ -48,40 +49,44 @@ import org.storydriven.modeling.patterns.StoryPattern;
 public abstract class AbstractLinkVariableImpl extends NamedElementImpl implements AbstractLinkVariable
 {
    /**
-    * The default value of the '{@link #getBindingType() <em>Binding Type</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see #getBindingType()
+    * The default value of the '{@link #getBindingSemantics() <em>Binding Semantics</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getBindingSemantics()
     * @generated
     * @ordered
     */
-   protected static final BindingSemantics BINDING_TYPE_EDEFAULT = BindingSemantics.NONE;
+   protected static final BindingSemantics BINDING_SEMANTICS_EDEFAULT = BindingSemantics.NONE;
 
    /**
-    * The cached value of the '{@link #getBindingType() <em>Binding Type</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see #getBindingType()
+    * The cached value of the '{@link #getBindingSemantics() <em>Binding Semantics</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getBindingSemantics()
     * @generated
     * @ordered
     */
-   protected BindingSemantics bindingType = BINDING_TYPE_EDEFAULT;
+   protected BindingSemantics bindingSemantics = BINDING_SEMANTICS_EDEFAULT;
 
    /**
-    * The default value of the '{@link #getModifier() <em>Modifier</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see #getModifier()
+    * The default value of the '{@link #getBindingOperator() <em>Binding Operator</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getBindingOperator()
     * @generated
     * @ordered
     */
-   protected static final Modifier MODIFIER_EDEFAULT = Modifier.NONE;
+   protected static final BindingOperator BINDING_OPERATOR_EDEFAULT = BindingOperator.CHECK;
 
    /**
-    * The cached value of the '{@link #getModifier() <em>Modifier</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see #getModifier()
+    * The cached value of the '{@link #getBindingOperator() <em>Binding Operator</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getBindingOperator()
     * @generated
     * @ordered
     */
-   protected Modifier modifier = MODIFIER_EDEFAULT;
+   protected BindingOperator bindingOperator = BINDING_OPERATOR_EDEFAULT;
 
    /**
     * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
@@ -157,47 +162,51 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public BindingSemantics getBindingType ()
+   public BindingSemantics getBindingSemantics ()
    {
-      return bindingType;
+      return bindingSemantics;
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public void setBindingType (BindingSemantics newBindingType)
+   public void setBindingSemantics (BindingSemantics newBindingSemantics)
    {
-      BindingSemantics oldBindingType = bindingType;
-      bindingType = newBindingType == null ? BINDING_TYPE_EDEFAULT : newBindingType;
+      BindingSemantics oldBindingSemantics = bindingSemantics;
+      bindingSemantics = newBindingSemantics == null ? BINDING_SEMANTICS_EDEFAULT : newBindingSemantics;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_TYPE,
-            oldBindingType, bindingType));
+         eNotify(new ENotificationImpl(this, Notification.SET,
+            PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS, oldBindingSemantics, bindingSemantics));
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public Modifier getModifier ()
+   public BindingOperator getBindingOperator ()
    {
-      return modifier;
+      return bindingOperator;
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public void setModifier (Modifier newModifier)
+   public void setBindingOperator (BindingOperator newBindingOperator)
    {
-      Modifier oldModifier = modifier;
-      modifier = newModifier == null ? MODIFIER_EDEFAULT : newModifier;
+      BindingOperator oldBindingOperator = bindingOperator;
+      bindingOperator = newBindingOperator == null ? BINDING_OPERATOR_EDEFAULT : newBindingOperator;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.ABSTRACT_LINK_VARIABLE__MODIFIER,
-            oldModifier, modifier));
+         eNotify(new ENotificationImpl(this, Notification.SET,
+            PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR, oldBindingOperator, bindingOperator));
    }
 
    /**
@@ -538,10 +547,10 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
    {
       switch (featureID)
       {
-         case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_TYPE:
-            return getBindingType();
-         case PatternsPackage.ABSTRACT_LINK_VARIABLE__MODIFIER:
-            return getModifier();
+         case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS:
+            return getBindingSemantics();
+         case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR:
+            return getBindingOperator();
          case PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET:
             if (resolve)
                return getTarget();
@@ -574,11 +583,11 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
    {
       switch (featureID)
       {
-         case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_TYPE:
-            setBindingType((BindingSemantics) newValue);
+         case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS:
+            setBindingSemantics((BindingSemantics) newValue);
             return;
-         case PatternsPackage.ABSTRACT_LINK_VARIABLE__MODIFIER:
-            setModifier((Modifier) newValue);
+         case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR:
+            setBindingOperator((BindingOperator) newValue);
             return;
          case PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET:
             setTarget((ObjectVariable) newValue);
@@ -613,11 +622,11 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
    {
       switch (featureID)
       {
-         case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_TYPE:
-            setBindingType(BINDING_TYPE_EDEFAULT);
+         case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS:
+            setBindingSemantics(BINDING_SEMANTICS_EDEFAULT);
             return;
-         case PatternsPackage.ABSTRACT_LINK_VARIABLE__MODIFIER:
-            setModifier(MODIFIER_EDEFAULT);
+         case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR:
+            setBindingOperator(BINDING_OPERATOR_EDEFAULT);
             return;
          case PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET:
             setTarget((ObjectVariable) null);
@@ -650,10 +659,10 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
    {
       switch (featureID)
       {
-         case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_TYPE:
-            return bindingType != BINDING_TYPE_EDEFAULT;
-         case PatternsPackage.ABSTRACT_LINK_VARIABLE__MODIFIER:
-            return modifier != MODIFIER_EDEFAULT;
+         case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS:
+            return bindingSemantics != BINDING_SEMANTICS_EDEFAULT;
+         case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR:
+            return bindingOperator != BINDING_OPERATOR_EDEFAULT;
          case PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET:
             return target != null;
          case PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_ORDER_CONSTRAINT:
@@ -681,10 +690,10 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
          return super.toString();
 
       StringBuffer result = new StringBuffer(super.toString());
-      result.append(" (bindingType: ");
-      result.append(bindingType);
-      result.append(", modifier: ");
-      result.append(modifier);
+      result.append(" (bindingSemantics: ");
+      result.append(bindingSemantics);
+      result.append(", bindingOperator: ");
+      result.append(bindingOperator);
       result.append(", bindingState: ");
       result.append(bindingState);
       result.append(')');

@@ -121,6 +121,12 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
       }
 
       @Override
+      public Adapter caseMatchingStoryNode (MatchingStoryNode object)
+      {
+         return createMatchingStoryNodeAdapter();
+      }
+
+      @Override
       public Adapter caseStoryNode (StoryNode object)
       {
          return createStoryNodeAdapter();
@@ -160,12 +166,6 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl
       public Adapter caseActivityCallNode (ActivityCallNode object)
       {
          return createActivityCallNodeAdapter();
-      }
-
-      @Override
-      public Adapter caseMatchingStoryNode (MatchingStoryNode object)
-      {
-         return createMatchingStoryNodeAdapter();
       }
 
       @Override

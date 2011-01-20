@@ -48,7 +48,23 @@ public enum LogicOperator implements Enumerator
     * @generated
     * @ordered
     */
-   XOR (2, "XOR", "XOR");
+   XOR (2, "XOR", "XOR"), /**
+                           * The '<em><b>IMPLY</b></em>' literal object.
+                           * <!-- begin-user-doc -->
+                           * <!-- end-user-doc -->
+                           * @see #IMPLY_VALUE
+                           * @generated
+                           * @ordered
+                           */
+   IMPLY (3, "IMPLY", "IMPLY"), /**
+                                 * The '<em><b>EQUIVALENT</b></em>' literal object.
+                                 * <!-- begin-user-doc -->
+                                 * <!-- end-user-doc -->
+                                 * @see #EQUIVALENT_VALUE
+                                 * @generated
+                                 * @ordered
+                                 */
+   EQUIVALENT (4, "EQUIVALENT", "EQUIVALENT");
 
    /**
     * The '<em><b>AND</b></em>' literal value.
@@ -93,11 +109,41 @@ public enum LogicOperator implements Enumerator
    public static final int XOR_VALUE = 2;
 
    /**
+    * The '<em><b>IMPLY</b></em>' literal value.
+    * <!-- begin-user-doc -->
+    * <p>
+    * If the meaning of '<em><b>IMPLY</b></em>' literal object isn't clear,
+    * there really should be more of a description here...
+    * </p>
+    * <!-- end-user-doc -->
+    * @see #IMPLY
+    * @model
+    * @generated
+    * @ordered
+    */
+   public static final int IMPLY_VALUE = 3;
+
+   /**
+    * The '<em><b>EQUIVALENT</b></em>' literal value.
+    * <!-- begin-user-doc -->
+    * <p>
+    * If the meaning of '<em><b>EQUIVALENT</b></em>' literal object isn't clear,
+    * there really should be more of a description here...
+    * </p>
+    * <!-- end-user-doc -->
+    * @see #EQUIVALENT
+    * @model
+    * @generated
+    * @ordered
+    */
+   public static final int EQUIVALENT_VALUE = 4;
+
+   /**
     * An array of all the '<em><b>Logic Operator</b></em>' enumerators.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
-   private static final LogicOperator[] VALUES_ARRAY = new LogicOperator[] {AND, OR, XOR,};
+   private static final LogicOperator[] VALUES_ARRAY = new LogicOperator[] {AND, OR, XOR, IMPLY, EQUIVALENT,};
 
    /**
     * A public read-only list of all the '<em><b>Logic Operator</b></em>' enumerators.
@@ -157,6 +203,10 @@ public enum LogicOperator implements Enumerator
             return OR;
          case XOR_VALUE:
             return XOR;
+         case IMPLY_VALUE:
+            return IMPLY;
+         case EQUIVALENT_VALUE:
+            return EQUIVALENT;
       }
       return null;
    }

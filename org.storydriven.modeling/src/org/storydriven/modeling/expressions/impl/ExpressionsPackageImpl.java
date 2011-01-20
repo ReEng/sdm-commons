@@ -586,6 +586,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
       addEEnumLiteral(logicOperatorEEnum, LogicOperator.AND);
       addEEnumLiteral(logicOperatorEEnum, LogicOperator.OR);
       addEEnumLiteral(logicOperatorEEnum, LogicOperator.XOR);
+      addEEnumLiteral(logicOperatorEEnum, LogicOperator.IMPLY);
+      addEEnumLiteral(logicOperatorEEnum, LogicOperator.EQUIVALENT);
 
       initEEnum(comparingOperatorEEnum, ComparingOperator.class, "ComparingOperator");
       addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.LESS);
@@ -601,6 +603,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
       addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.TIMES);
       addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.DIVIDE);
       addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.MODULO);
+      addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.EXP);
 
       // Create annotations
       // http://www.eclipse.org/emf/2002/GenModel

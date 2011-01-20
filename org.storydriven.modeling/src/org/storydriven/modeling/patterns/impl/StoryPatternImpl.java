@@ -37,7 +37,7 @@ import org.storydriven.modeling.templates.TemplatesPackage;
  *   <li>{@link org.storydriven.modeling.patterns.impl.StoryPatternImpl#getConstraints <em>Constraint</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.impl.StoryPatternImpl#getParentPattern <em>Parent Pattern</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.impl.StoryPatternImpl#getContainedPatterns <em>Contained Pattern</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.impl.StoryPatternImpl#getBindingType <em>Binding Type</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.impl.StoryPatternImpl#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.impl.StoryPatternImpl#getTemplateSignature <em>Template Signature</em>}</li>
  * </ul>
  * </p>
@@ -83,22 +83,24 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
    protected EList<StoryPattern> containedPatterns;
 
    /**
-    * The default value of the '{@link #getBindingType() <em>Binding Type</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see #getBindingType()
+    * The default value of the '{@link #getBindingSemantics() <em>Binding Semantics</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getBindingSemantics()
     * @generated
     * @ordered
     */
-   protected static final BindingSemantics BINDING_TYPE_EDEFAULT = BindingSemantics.NONE;
+   protected static final BindingSemantics BINDING_SEMANTICS_EDEFAULT = BindingSemantics.NONE;
 
    /**
-    * The cached value of the '{@link #getBindingType() <em>Binding Type</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see #getBindingType()
+    * The cached value of the '{@link #getBindingSemantics() <em>Binding Semantics</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getBindingSemantics()
     * @generated
     * @ordered
     */
-   protected BindingSemantics bindingType = BINDING_TYPE_EDEFAULT;
+   protected BindingSemantics bindingSemantics = BINDING_SEMANTICS_EDEFAULT;
 
    /**
     * The cached value of the '{@link #getTemplateSignature() <em>Template Signature</em>}' containment reference.
@@ -244,25 +246,27 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public BindingSemantics getBindingType ()
+   public BindingSemantics getBindingSemantics ()
    {
-      return bindingType;
+      return bindingSemantics;
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public void setBindingType (BindingSemantics newBindingType)
+   public void setBindingSemantics (BindingSemantics newBindingSemantics)
    {
-      BindingSemantics oldBindingType = bindingType;
-      bindingType = newBindingType == null ? BINDING_TYPE_EDEFAULT : newBindingType;
+      BindingSemantics oldBindingSemantics = bindingSemantics;
+      bindingSemantics = newBindingSemantics == null ? BINDING_SEMANTICS_EDEFAULT : newBindingSemantics;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.STORY_PATTERN__BINDING_TYPE,
-            oldBindingType, bindingType));
+         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.STORY_PATTERN__BINDING_SEMANTICS,
+            oldBindingSemantics, bindingSemantics));
    }
 
    /**
@@ -442,8 +446,8 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
             return basicGetParentPattern();
          case PatternsPackage.STORY_PATTERN__CONTAINED_PATTERN:
             return getContainedPatterns();
-         case PatternsPackage.STORY_PATTERN__BINDING_TYPE:
-            return getBindingType();
+         case PatternsPackage.STORY_PATTERN__BINDING_SEMANTICS:
+            return getBindingSemantics();
          case PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE:
             if (resolve)
                return getTemplateSignature();
@@ -481,8 +485,8 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
             getContainedPatterns().clear();
             getContainedPatterns().addAll((Collection<? extends StoryPattern>) newValue);
             return;
-         case PatternsPackage.STORY_PATTERN__BINDING_TYPE:
-            setBindingType((BindingSemantics) newValue);
+         case PatternsPackage.STORY_PATTERN__BINDING_SEMANTICS:
+            setBindingSemantics((BindingSemantics) newValue);
             return;
          case PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE:
             setTemplateSignature((TemplateSignature) newValue);
@@ -515,8 +519,8 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
          case PatternsPackage.STORY_PATTERN__CONTAINED_PATTERN:
             getContainedPatterns().clear();
             return;
-         case PatternsPackage.STORY_PATTERN__BINDING_TYPE:
-            setBindingType(BINDING_TYPE_EDEFAULT);
+         case PatternsPackage.STORY_PATTERN__BINDING_SEMANTICS:
+            setBindingSemantics(BINDING_SEMANTICS_EDEFAULT);
             return;
          case PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE:
             setTemplateSignature((TemplateSignature) null);
@@ -544,8 +548,8 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
             return basicGetParentPattern() != null;
          case PatternsPackage.STORY_PATTERN__CONTAINED_PATTERN:
             return containedPatterns != null && !containedPatterns.isEmpty();
-         case PatternsPackage.STORY_PATTERN__BINDING_TYPE:
-            return bindingType != BINDING_TYPE_EDEFAULT;
+         case PatternsPackage.STORY_PATTERN__BINDING_SEMANTICS:
+            return bindingSemantics != BINDING_SEMANTICS_EDEFAULT;
          case PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE:
             return templateSignature != null;
       }
@@ -563,8 +567,8 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
          return super.toString();
 
       StringBuffer result = new StringBuffer(super.toString());
-      result.append(" (bindingType: ");
-      result.append(bindingType);
+      result.append(" (bindingSemantics: ");
+      result.append(bindingSemantics);
       result.append(')');
       return result.toString();
    }

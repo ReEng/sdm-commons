@@ -28,17 +28,16 @@ import org.storydriven.modeling.calls.expressions.MethodCallExpression;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getCallExpression <em>Call Expression</em>}</li>
+ *   <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getCallExpression <em>Call Expression</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 {
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    protected OpaqueCallableImpl ()
@@ -48,7 +47,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -59,35 +57,28 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public MethodCallExpression getCallExpression ()
    {
       if (eContainerFeatureID() != CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION)
-      {
          return null;
-      }
       return (MethodCallExpression) eContainer();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public MethodCallExpression basicGetCallExpression ()
    {
       if (eContainerFeatureID() != CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION)
-      {
          return null;
-      }
       return (MethodCallExpression) eInternalContainer();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public NotificationChain basicSetCallExpression (MethodCallExpression newCallExpression, NotificationChain msgs)
@@ -99,7 +90,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setCallExpression (MethodCallExpression newCallExpression)
@@ -108,35 +98,24 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
          || (eContainerFeatureID() != CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION && newCallExpression != null))
       {
          if (EcoreUtil.isAncestor(this, newCallExpression))
-         {
             throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-         }
          NotificationChain msgs = null;
          if (eInternalContainer() != null)
-         {
             msgs = eBasicRemoveFromContainer(msgs);
-         }
          if (newCallExpression != null)
-         {
             msgs = ((InternalEObject) newCallExpression).eInverseAdd(this,
                ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, MethodCallExpression.class, msgs);
-         }
          msgs = basicSetCallExpression(newCallExpression, msgs);
          if (msgs != null)
-         {
             msgs.dispatch();
-         }
       }
       else if (eNotificationRequired())
-      {
          eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION,
             newCallExpression, newCallExpression));
-      }
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean NumberOfOutParams (DiagnosticChain diagnostics, Map<Object, Object> context)
@@ -146,7 +125,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -156,9 +134,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
       {
          case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
             if (eInternalContainer() != null)
-            {
                msgs = eBasicRemoveFromContainer(msgs);
-            }
             return basicSetCallExpression((MethodCallExpression) otherEnd, msgs);
       }
       return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -166,7 +142,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -182,7 +157,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -199,7 +173,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -209,9 +182,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
       {
          case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
             if (resolve)
-            {
                return getCallExpression();
-            }
             return basicGetCallExpression();
       }
       return super.eGet(featureID, resolve, coreType);
@@ -219,7 +190,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -236,7 +206,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -253,7 +222,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -269,7 +237,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override

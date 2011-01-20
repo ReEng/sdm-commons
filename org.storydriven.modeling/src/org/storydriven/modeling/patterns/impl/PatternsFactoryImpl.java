@@ -116,8 +116,8 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
             return createBindingStateFromString(eDataType, initialValue);
          case PatternsPackage.BINDING_SEMANTICS:
             return createBindingSemanticsFromString(eDataType, initialValue);
-         case PatternsPackage.MODIFIER:
-            return createModifierFromString(eDataType, initialValue);
+         case PatternsPackage.BINDING_OPERATOR:
+            return createBindingOperatorFromString(eDataType, initialValue);
          case PatternsPackage.ORDER_CONSTRAINT_TYPE:
             return createOrderConstraintTypeFromString(eDataType, initialValue);
          default:
@@ -138,8 +138,8 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
             return convertBindingStateToString(eDataType, instanceValue);
          case PatternsPackage.BINDING_SEMANTICS:
             return convertBindingSemanticsToString(eDataType, instanceValue);
-         case PatternsPackage.MODIFIER:
-            return convertModifierToString(eDataType, instanceValue);
+         case PatternsPackage.BINDING_OPERATOR:
+            return convertBindingOperatorToString(eDataType, instanceValue);
          case PatternsPackage.ORDER_CONSTRAINT_TYPE:
             return convertOrderConstraintTypeToString(eDataType, instanceValue);
          default:
@@ -292,12 +292,13 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public Modifier createModifierFromString (EDataType eDataType, String initialValue)
+   public BindingOperator createBindingOperatorFromString (EDataType eDataType, String initialValue)
    {
-      Modifier result = Modifier.get(initialValue);
+      BindingOperator result = BindingOperator.get(initialValue);
       if (result == null)
          throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
             + eDataType.getName() + "'");
@@ -305,10 +306,11 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public String convertModifierToString (EDataType eDataType, Object instanceValue)
+   public String convertBindingOperatorToString (EDataType eDataType, Object instanceValue)
    {
       return instanceValue == null ? null : instanceValue.toString();
    }

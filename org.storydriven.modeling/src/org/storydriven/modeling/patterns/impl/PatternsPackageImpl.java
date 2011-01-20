@@ -27,6 +27,7 @@ import org.storydriven.modeling.calls.impl.CallsPackageImpl;
 import org.storydriven.modeling.impl.SDMPackageImpl;
 import org.storydriven.modeling.patterns.AbstractLinkVariable;
 import org.storydriven.modeling.patterns.AttributeAssignment;
+import org.storydriven.modeling.patterns.BindingOperator;
 import org.storydriven.modeling.patterns.BindingSemantics;
 import org.storydriven.modeling.patterns.BindingState;
 import org.storydriven.modeling.patterns.Constraint;
@@ -131,10 +132,11 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
    private EEnum bindingSemanticsEEnum = null;
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   private EEnum modifierEEnum = null;
+   private EEnum bindingOperatorEEnum = null;
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -316,19 +318,21 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public EAttribute getObjectVariable_BindingType ()
+   public EAttribute getObjectVariable_BindingSemantics ()
    {
       return (EAttribute) objectVariableEClass.getEStructuralFeatures().get(1);
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public EAttribute getObjectVariable_Modifier ()
+   public EAttribute getObjectVariable_BindingOperator ()
    {
       return (EAttribute) objectVariableEClass.getEStructuralFeatures().get(2);
    }
@@ -415,19 +419,21 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public EAttribute getAbstractLinkVariable_BindingType ()
+   public EAttribute getAbstractLinkVariable_BindingSemantics ()
    {
       return (EAttribute) abstractLinkVariableEClass.getEStructuralFeatures().get(0);
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public EAttribute getAbstractLinkVariable_Modifier ()
+   public EAttribute getAbstractLinkVariable_BindingOperator ()
    {
       return (EAttribute) abstractLinkVariableEClass.getEStructuralFeatures().get(1);
    }
@@ -730,10 +736,11 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public EAttribute getStoryPattern_BindingType ()
+   public EAttribute getStoryPattern_BindingSemantics ()
    {
       return (EAttribute) storyPatternEClass.getEStructuralFeatures().get(5);
    }
@@ -766,12 +773,13 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public EEnum getModifier ()
+   public EEnum getBindingOperator ()
    {
-      return modifierEEnum;
+      return bindingOperatorEEnum;
    }
 
    /**
@@ -813,8 +821,8 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       // Create classes and their features
       objectVariableEClass = createEClass(OBJECT_VARIABLE);
       createEAttribute(objectVariableEClass, OBJECT_VARIABLE__BINDING_STATE);
-      createEAttribute(objectVariableEClass, OBJECT_VARIABLE__BINDING_TYPE);
-      createEAttribute(objectVariableEClass, OBJECT_VARIABLE__MODIFIER);
+      createEAttribute(objectVariableEClass, OBJECT_VARIABLE__BINDING_SEMANTICS);
+      createEAttribute(objectVariableEClass, OBJECT_VARIABLE__BINDING_OPERATOR);
       createEReference(objectVariableEClass, OBJECT_VARIABLE__PATTERN);
       createEReference(objectVariableEClass, OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT);
       createEReference(objectVariableEClass, OBJECT_VARIABLE__OUTGOING_LINK);
@@ -830,8 +838,8 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       createEReference(attributeAssignmentEClass, ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE);
 
       abstractLinkVariableEClass = createEClass(ABSTRACT_LINK_VARIABLE);
-      createEAttribute(abstractLinkVariableEClass, ABSTRACT_LINK_VARIABLE__BINDING_TYPE);
-      createEAttribute(abstractLinkVariableEClass, ABSTRACT_LINK_VARIABLE__MODIFIER);
+      createEAttribute(abstractLinkVariableEClass, ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS);
+      createEAttribute(abstractLinkVariableEClass, ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR);
       createEReference(abstractLinkVariableEClass, ABSTRACT_LINK_VARIABLE__TARGET);
       createEReference(abstractLinkVariableEClass, ABSTRACT_LINK_VARIABLE__SECOND_LINK_ORDER_CONSTRAINT);
       createEReference(abstractLinkVariableEClass, ABSTRACT_LINK_VARIABLE__FIRST_LINK_ORDER_CONSTRAINT);
@@ -873,13 +881,13 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       createEReference(storyPatternEClass, STORY_PATTERN__CONSTRAINT);
       createEReference(storyPatternEClass, STORY_PATTERN__PARENT_PATTERN);
       createEReference(storyPatternEClass, STORY_PATTERN__CONTAINED_PATTERN);
-      createEAttribute(storyPatternEClass, STORY_PATTERN__BINDING_TYPE);
+      createEAttribute(storyPatternEClass, STORY_PATTERN__BINDING_SEMANTICS);
       createEReference(storyPatternEClass, STORY_PATTERN__TEMPLATE_SIGNATURE);
 
       // Create enums
       bindingStateEEnum = createEEnum(BINDING_STATE);
       bindingSemanticsEEnum = createEEnum(BINDING_SEMANTICS);
-      modifierEEnum = createEEnum(MODIFIER);
+      bindingOperatorEEnum = createEEnum(BINDING_OPERATOR);
       orderConstraintTypeEEnum = createEEnum(ORDER_CONSTRAINT_TYPE);
    }
 
@@ -942,11 +950,12 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       initEAttribute(getObjectVariable_BindingState(), this.getBindingState(), "bindingState", "UNBOUND", 1, 1,
          ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
-      initEAttribute(getObjectVariable_BindingType(), this.getBindingSemantics(), "bindingType", "NONE", 1, 1,
+      initEAttribute(getObjectVariable_BindingSemantics(), this.getBindingSemantics(), "bindingSemantics", "NONE", 1,
+         1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+         !IS_DERIVED, !IS_ORDERED);
+      initEAttribute(getObjectVariable_BindingOperator(), this.getBindingOperator(), "bindingOperator", "CHECK", 1, 1,
          ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
-      initEAttribute(getObjectVariable_Modifier(), this.getModifier(), "modifier", "NONE", 1, 1, ObjectVariable.class,
-         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
       initEReference(getObjectVariable_Pattern(), this.getStoryPattern(), this.getStoryPattern_ObjectVariable(),
          "pattern", null, 1, 1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
          IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -991,12 +1000,12 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 
       initEClass(abstractLinkVariableEClass, AbstractLinkVariable.class, "AbstractLinkVariable", IS_ABSTRACT,
          !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-      initEAttribute(getAbstractLinkVariable_BindingType(), this.getBindingSemantics(), "bindingType", "NONE", 1, 1,
-         AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-         !IS_DERIVED, !IS_ORDERED);
-      initEAttribute(getAbstractLinkVariable_Modifier(), this.getModifier(), "modifier", "NONE", 1, 1,
-         AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-         !IS_DERIVED, !IS_ORDERED);
+      initEAttribute(getAbstractLinkVariable_BindingSemantics(), this.getBindingSemantics(), "bindingSemantics",
+         "NONE", 1, 1, AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+         IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+      initEAttribute(getAbstractLinkVariable_BindingOperator(), this.getBindingOperator(), "bindingOperator", "CHECK",
+         1, 1, AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+         IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
       initEReference(getAbstractLinkVariable_Target(), this.getObjectVariable(), this.getObjectVariable_IncomingLink(),
          "target", null, 1, 1, AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
          IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1108,7 +1117,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       initEReference(getStoryPattern_ContainedPattern(), this.getStoryPattern(), this.getStoryPattern_ParentPattern(),
          "containedPattern", null, 0, -1, StoryPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
          IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-      initEAttribute(getStoryPattern_BindingType(), this.getBindingSemantics(), "bindingType", "NONE", 1, 1,
+      initEAttribute(getStoryPattern_BindingSemantics(), this.getBindingSemantics(), "bindingSemantics", "NONE", 1, 1,
          StoryPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
       initEReference(getStoryPattern_TemplateSignature(), theTemplatesPackage.getTemplateSignature(),
@@ -1127,10 +1136,10 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       addEEnumLiteral(bindingSemanticsEEnum, BindingSemantics.NEGATIVE);
       addEEnumLiteral(bindingSemanticsEEnum, BindingSemantics.OPTIONAL);
 
-      initEEnum(modifierEEnum, Modifier.class, "Modifier");
-      addEEnumLiteral(modifierEEnum, Modifier.NONE);
-      addEEnumLiteral(modifierEEnum, Modifier.CREATE);
-      addEEnumLiteral(modifierEEnum, Modifier.DESTROY);
+      initEEnum(bindingOperatorEEnum, BindingOperator.class, "BindingOperator");
+      addEEnumLiteral(bindingOperatorEEnum, BindingOperator.CHECK);
+      addEEnumLiteral(bindingOperatorEEnum, BindingOperator.CREATE);
+      addEEnumLiteral(bindingOperatorEEnum, BindingOperator.DESTROY);
 
       initEEnum(orderConstraintTypeEEnum, OrderConstraintType.class, "OrderConstraintType");
       addEEnumLiteral(orderConstraintTypeEEnum, OrderConstraintType.FIRST);
