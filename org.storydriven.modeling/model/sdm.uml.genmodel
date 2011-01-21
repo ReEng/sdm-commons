@@ -296,7 +296,7 @@
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingState/MAYBE_BOUND"/>
       </genEnums>
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sdm.ecore#//patterns/BindingSemantics">
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingSemantics/NONE"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingSemantics/MANDATORY"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingSemantics/NEGATIVE"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingSemantics/OPTIONAL"/>
       </genEnums>

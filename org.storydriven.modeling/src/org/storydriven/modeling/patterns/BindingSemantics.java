@@ -21,21 +21,20 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum BindingSemantics implements Enumerator
 {
    /**
-    * The '<em><b>NONE</b></em>' literal object.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see #NONE_VALUE
+    * The '<em><b>MANDATORY</b></em>' literal object.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #MANDATORY_VALUE
     * @generated
     * @ordered
     */
-   NONE (0, "NONE", "NONE"),
-
-   /**
-    * The '<em><b>NEGATIVE</b></em>' literal object.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see #NEGATIVE_VALUE
-    * @generated
-    * @ordered
-    */
+   MANDATORY (0, "MANDATORY", "MANDATORY"), /**
+                                             * The '<em><b>NEGATIVE</b></em>' literal object.
+                                             * <!-- begin-user-doc --> <!-- end-user-doc -->
+                                             * @see #NEGATIVE_VALUE
+                                             * @generated
+                                             * @ordered
+                                             */
    NEGATIVE (1, "NEGATIVE", "NEGATIVE"),
 
    /**
@@ -48,18 +47,19 @@ public enum BindingSemantics implements Enumerator
    OPTIONAL (2, "OPTIONAL", "OPTIONAL");
 
    /**
-    * The '<em><b>NONE</b></em>' literal value.
+    * The '<em><b>MANDATORY</b></em>' literal value.
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>NONE</b></em>' literal object isn't clear, there really should be more of a description here...
+    * If the meaning of '<em><b>MANDATORY</b></em>' literal object isn't clear,
+    * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @see #NONE
+    * @see #MANDATORY
     * @model
     * @generated
     * @ordered
     */
-   public static final int NONE_VALUE = 0;
+   public static final int MANDATORY_VALUE = 0;
 
    /**
     * The '<em><b>NEGATIVE</b></em>' literal value.
@@ -94,7 +94,7 @@ public enum BindingSemantics implements Enumerator
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
-   private static final BindingSemantics[] VALUES_ARRAY = new BindingSemantics[] {NONE, NEGATIVE, OPTIONAL,};
+   private static final BindingSemantics[] VALUES_ARRAY = new BindingSemantics[] {MANDATORY, NEGATIVE, OPTIONAL,};
 
    /**
     * A public read-only list of all the '<em><b>Binding Semantics</b></em>' enumerators.
@@ -148,8 +148,8 @@ public enum BindingSemantics implements Enumerator
    {
       switch (value)
       {
-         case NONE_VALUE:
-            return NONE;
+         case MANDATORY_VALUE:
+            return MANDATORY;
          case NEGATIVE_VALUE:
             return NEGATIVE;
          case OPTIONAL_VALUE:

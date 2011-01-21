@@ -950,8 +950,8 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       initEAttribute(getObjectVariable_BindingState(), this.getBindingState(), "bindingState", "UNBOUND", 1, 1,
          ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
-      initEAttribute(getObjectVariable_BindingSemantics(), this.getBindingSemantics(), "bindingSemantics", "NONE", 1,
-         1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+      initEAttribute(getObjectVariable_BindingSemantics(), this.getBindingSemantics(), "bindingSemantics", "MANDATORY",
+         1, 1, ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
       initEAttribute(getObjectVariable_BindingOperator(), this.getBindingOperator(), "bindingOperator", "CHECK", 1, 1,
          ObjectVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
@@ -1001,8 +1001,8 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       initEClass(abstractLinkVariableEClass, AbstractLinkVariable.class, "AbstractLinkVariable", IS_ABSTRACT,
          !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
       initEAttribute(getAbstractLinkVariable_BindingSemantics(), this.getBindingSemantics(), "bindingSemantics",
-         "NONE", 1, 1, AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-         IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+         "MANDATORY", 1, 1, AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+         !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
       initEAttribute(getAbstractLinkVariable_BindingOperator(), this.getBindingOperator(), "bindingOperator", "CHECK",
          1, 1, AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
          IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1117,8 +1117,8 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       initEReference(getStoryPattern_ContainedPattern(), this.getStoryPattern(), this.getStoryPattern_ParentPattern(),
          "containedPattern", null, 0, -1, StoryPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
          IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-      initEAttribute(getStoryPattern_BindingSemantics(), this.getBindingSemantics(), "bindingSemantics", "NONE", 1, 1,
-         StoryPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+      initEAttribute(getStoryPattern_BindingSemantics(), this.getBindingSemantics(), "bindingSemantics", "MANDATORY",
+         1, 1, StoryPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
       initEReference(getStoryPattern_TemplateSignature(), theTemplatesPackage.getTemplateSignature(),
          theTemplatesPackage.getTemplateSignature_Pattern(), "templateSignature", null, 0, 1, StoryPattern.class,
@@ -1132,7 +1132,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       addEEnumLiteral(bindingStateEEnum, BindingState.MAYBE_BOUND);
 
       initEEnum(bindingSemanticsEEnum, BindingSemantics.class, "BindingSemantics");
-      addEEnumLiteral(bindingSemanticsEEnum, BindingSemantics.NONE);
+      addEEnumLiteral(bindingSemanticsEEnum, BindingSemantics.MANDATORY);
       addEEnumLiteral(bindingSemanticsEEnum, BindingSemantics.NEGATIVE);
       addEEnumLiteral(bindingSemanticsEEnum, BindingSemantics.OPTIONAL);
 

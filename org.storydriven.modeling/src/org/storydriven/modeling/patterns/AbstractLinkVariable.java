@@ -34,7 +34,7 @@ public interface AbstractLinkVariable extends NamedElement
 {
    /**
     * Returns the value of the '<em><b>Binding Semantics</b></em>' attribute.
-    * The default value is <code>"NONE"</code>.
+    * The default value is <code>"MANDATORY"</code>.
     * The literals are from the enumeration {@link org.storydriven.modeling.patterns.BindingSemantics}.
     * <!-- begin-user-doc -->
     * <p>
@@ -46,7 +46,7 @@ public interface AbstractLinkVariable extends NamedElement
     * @see org.storydriven.modeling.patterns.BindingSemantics
     * @see #setBindingSemantics(BindingSemantics)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractLinkVariable_BindingSemantics()
-    * @model default="NONE" required="true" ordered="false"
+    * @model default="MANDATORY" required="true" ordered="false"
     * @generated
     */
    BindingSemantics getBindingSemantics ();

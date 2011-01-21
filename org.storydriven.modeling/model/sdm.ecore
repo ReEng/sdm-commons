@@ -493,7 +493,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" ordered="false"
           lowerBound="1" eType="#//patterns/BindingState" defaultValueLiteral="UNBOUND"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingSemantics" ordered="false"
-          lowerBound="1" eType="#//patterns/BindingSemantics" defaultValueLiteral="NONE"/>
+          lowerBound="1" eType="#//patterns/BindingSemantics" defaultValueLiteral="MANDATORY"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingOperator" ordered="false"
           lowerBound="1" eType="#//patterns/BindingOperator" defaultValueLiteral="CHECK"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" ordered="false"
@@ -527,7 +527,7 @@
       </eLiterals>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="BindingSemantics">
-      <eLiterals name="NONE"/>
+      <eLiterals name="MANDATORY"/>
       <eLiterals name="NEGATIVE" value="1"/>
       <eLiterals name="OPTIONAL" value="2"/>
     </eClassifiers>
@@ -547,7 +547,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="AbstractLinkVariable" abstract="true"
         eSuperTypes="#//NamedElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingSemantics" ordered="false"
-          lowerBound="1" eType="#//patterns/BindingSemantics" defaultValueLiteral="NONE"/>
+          lowerBound="1" eType="#//patterns/BindingSemantics" defaultValueLiteral="MANDATORY"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingOperator" ordered="false"
           lowerBound="1" eType="#//patterns/BindingOperator" defaultValueLiteral="CHECK"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
@@ -653,7 +653,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="containedPattern" ordered="false"
           upperBound="-1" eType="#//patterns/StoryPattern" containment="true" eOpposite="#//patterns/StoryPattern/parentPattern"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingSemantics" ordered="false"
-          lowerBound="1" eType="#//patterns/BindingSemantics" defaultValueLiteral="NONE"/>
+          lowerBound="1" eType="#//patterns/BindingSemantics" defaultValueLiteral="MANDATORY"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="templateSignature" ordered="false"
           eType="#//templates/TemplateSignature" containment="true" eOpposite="#//templates/TemplateSignature/pattern"/>
     </eClassifiers>

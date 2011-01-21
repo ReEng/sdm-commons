@@ -56,7 +56,7 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
     * @generated
     * @ordered
     */
-   protected static final BindingSemantics BINDING_SEMANTICS_EDEFAULT = BindingSemantics.NONE;
+   protected static final BindingSemantics BINDING_SEMANTICS_EDEFAULT = BindingSemantics.MANDATORY;
 
    /**
     * The cached value of the '{@link #getBindingSemantics() <em>Binding Semantics</em>}' attribute.

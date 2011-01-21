@@ -847,7 +847,7 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
         </ownedLiteral>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="5d5c7278-e6e7-4956-ab18-44332c8cc462" name="BindingSemantics">
-        <ownedLiteral xmi:id="fa270781-e8e1-4379-ada0-d421ab1217e0" name="NONE"/>
+        <ownedLiteral xmi:id="fa270781-e8e1-4379-ada0-d421ab1217e0" name="MANDATORY"/>
         <ownedLiteral xmi:id="a393eadb-e48f-4d92-a8c2-60d11a0047f7" name="NEGATIVE"/>
         <ownedLiteral xmi:id="5cedb18b-1f2e-4154-9266-a26d96d084a0" name="OPTIONAL"/>
       </packagedElement>
