@@ -506,8 +506,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="incomingLink" ordered="false"
           upperBound="-1" eType="#//patterns/AbstractLinkVariable" eOpposite="#//patterns/AbstractLinkVariable/target"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="linkOrderConstraint"
-          upperBound="-1" eType="#//patterns/LinkOrderConstraint" containment="true"
-          eOpposite="#//patterns/LinkOrderConstraint/referencingObject"/>
+          upperBound="-1" eType="#//patterns/LinkConstraint" containment="true" eOpposite="#//patterns/LinkConstraint/referencingObject"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" ordered="false"
           lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
         <eAnnotations source="subsets" references="#//TypedElement/type"/>
@@ -553,11 +552,9 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
           lowerBound="1" eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/incomingLink"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="secondLinkOrderConstraint"
-          ordered="false" upperBound="-1" eType="#//patterns/LinkOrderConstraint"
-          eOpposite="#//patterns/LinkOrderConstraint/secondLink"/>
+          ordered="false" upperBound="-1" eType="#//patterns/LinkConstraint" eOpposite="#//patterns/LinkConstraint/secondLink"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="firstLinkOrderConstraint"
-          ordered="false" upperBound="-1" eType="#//patterns/LinkOrderConstraint"
-          eOpposite="#//patterns/LinkOrderConstraint/firstLink"/>
+          ordered="false" upperBound="-1" eType="#//patterns/LinkConstraint" eOpposite="#//patterns/LinkConstraint/firstLink"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" ordered="false"
           lowerBound="1" eType="#//patterns/BindingState"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" ordered="false"
@@ -565,11 +562,11 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
           lowerBound="1" eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/outgoingLink"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="LinkOrderConstraint" eSuperTypes="#//ExtendableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="LinkConstraint" eSuperTypes="#//ExtendableElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintType" ordered="false"
-          lowerBound="1" eType="#//patterns/OrderConstraintType" defaultValueLiteral="DIRECT"/>
+          lowerBound="1" eType="#//patterns/LinkConstraintType" defaultValueLiteral="DIRECT_SUCCESSOR"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="negative" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="firstLink" ordered="false"
@@ -577,13 +574,13 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="referencingObject" ordered="false"
           lowerBound="1" eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/linkOrderConstraint"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="secondLink" ordered="false"
-          lowerBound="1" eType="#//patterns/AbstractLinkVariable" eOpposite="#//patterns/AbstractLinkVariable/secondLinkOrderConstraint"/>
+          eType="#//patterns/AbstractLinkVariable" eOpposite="#//patterns/AbstractLinkVariable/secondLinkOrderConstraint"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="OrderConstraintType">
+    <eClassifiers xsi:type="ecore:EEnum" name="LinkConstraintType">
       <eLiterals name="FIRST"/>
       <eLiterals name="LAST" value="1"/>
-      <eLiterals name="DIRECT" value="2"/>
-      <eLiterals name="INDIRECT" value="3"/>
+      <eLiterals name="DIRECT_SUCCESSOR" value="2"/>
+      <eLiterals name="INDIRECT_SUCCESSOR" value="3"/>
       <eLiterals name="INDEX" value="4"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Constraint">

@@ -15,12 +15,11 @@ import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.TypedElement;
 import org.storydriven.modeling.Variable;
-import org.storydriven.modeling.patterns.*;
 import org.storydriven.modeling.patterns.AbstractLinkVariable;
 import org.storydriven.modeling.patterns.AttributeAssignment;
 import org.storydriven.modeling.patterns.Constraint;
 import org.storydriven.modeling.patterns.ContainmentRelation;
-import org.storydriven.modeling.patterns.LinkOrderConstraint;
+import org.storydriven.modeling.patterns.LinkConstraint;
 import org.storydriven.modeling.patterns.LinkVariable;
 import org.storydriven.modeling.patterns.MatchingPattern;
 import org.storydriven.modeling.patterns.ObjectSetVariable;
@@ -33,21 +32,22 @@ import org.storydriven.modeling.patterns.StoryPattern;
  * <!-- begin-user-doc --> The <b>Switch</b> for the model's inheritance hierarchy. It supports the call {@link #doSwitch(EObject) doSwitch(object)} to invoke the
  * <code>caseXXX</code> method for each class of the model, starting with the actual class of the object and proceeding up the inheritance hierarchy until a non-null result is
  * returned, which is the result of the switch. <!-- end-user-doc -->
+ * 
  * @see org.storydriven.modeling.patterns.PatternsPackage
  * @generated
  */
 public class PatternsSwitch<T>
 {
    /**
-    * The cached model package
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected static PatternsPackage modelPackage;
 
    /**
-    * Creates an instance of the switch.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public PatternsSwitch ()
@@ -59,8 +59,8 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @return the first non-null result returned by a <code>caseXXX</code> call.
     * @generated
     */
@@ -70,8 +70,8 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @return the first non-null result returned by a <code>caseXXX</code> call.
     * @generated
     */
@@ -89,8 +89,8 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @return the first non-null result returned by a <code>caseXXX</code> call.
     * @generated
     */
@@ -103,15 +103,25 @@ public class PatternsSwitch<T>
             ObjectVariable objectVariable = (ObjectVariable) theEObject;
             T result = caseObjectVariable(objectVariable);
             if (result == null)
+            {
                result = caseVariable(objectVariable);
+            }
             if (result == null)
+            {
                result = caseNamedElement(objectVariable);
+            }
             if (result == null)
+            {
                result = caseTypedElement(objectVariable);
+            }
             if (result == null)
+            {
                result = caseExtendableElement(objectVariable);
+            }
             if (result == null)
+            {
                result = defaultCase(theEObject);
+            }
             return result;
          }
          case PatternsPackage.ATTRIBUTE_ASSIGNMENT:
@@ -119,7 +129,9 @@ public class PatternsSwitch<T>
             AttributeAssignment attributeAssignment = (AttributeAssignment) theEObject;
             T result = caseAttributeAssignment(attributeAssignment);
             if (result == null)
+            {
                result = defaultCase(theEObject);
+            }
             return result;
          }
          case PatternsPackage.ABSTRACT_LINK_VARIABLE:
@@ -127,21 +139,31 @@ public class PatternsSwitch<T>
             AbstractLinkVariable abstractLinkVariable = (AbstractLinkVariable) theEObject;
             T result = caseAbstractLinkVariable(abstractLinkVariable);
             if (result == null)
+            {
                result = caseNamedElement(abstractLinkVariable);
+            }
             if (result == null)
+            {
                result = caseExtendableElement(abstractLinkVariable);
+            }
             if (result == null)
+            {
                result = defaultCase(theEObject);
+            }
             return result;
          }
-         case PatternsPackage.LINK_ORDER_CONSTRAINT:
+         case PatternsPackage.LINK_CONSTRAINT:
          {
-            LinkOrderConstraint linkOrderConstraint = (LinkOrderConstraint) theEObject;
-            T result = caseLinkOrderConstraint(linkOrderConstraint);
+            LinkConstraint linkConstraint = (LinkConstraint) theEObject;
+            T result = caseLinkConstraint(linkConstraint);
             if (result == null)
-               result = caseExtendableElement(linkOrderConstraint);
+            {
+               result = caseExtendableElement(linkConstraint);
+            }
             if (result == null)
+            {
                result = defaultCase(theEObject);
+            }
             return result;
          }
          case PatternsPackage.CONSTRAINT:
@@ -149,7 +171,9 @@ public class PatternsSwitch<T>
             Constraint constraint = (Constraint) theEObject;
             T result = caseConstraint(constraint);
             if (result == null)
+            {
                result = defaultCase(theEObject);
+            }
             return result;
          }
          case PatternsPackage.OBJECT_SET_VARIABLE:
@@ -157,17 +181,29 @@ public class PatternsSwitch<T>
             ObjectSetVariable objectSetVariable = (ObjectSetVariable) theEObject;
             T result = caseObjectSetVariable(objectSetVariable);
             if (result == null)
+            {
                result = caseObjectVariable(objectSetVariable);
+            }
             if (result == null)
+            {
                result = caseVariable(objectSetVariable);
+            }
             if (result == null)
+            {
                result = caseNamedElement(objectSetVariable);
+            }
             if (result == null)
+            {
                result = caseTypedElement(objectSetVariable);
+            }
             if (result == null)
+            {
                result = caseExtendableElement(objectSetVariable);
+            }
             if (result == null)
+            {
                result = defaultCase(theEObject);
+            }
             return result;
          }
          case PatternsPackage.PATH:
@@ -175,13 +211,21 @@ public class PatternsSwitch<T>
             Path path = (Path) theEObject;
             T result = casePath(path);
             if (result == null)
+            {
                result = caseAbstractLinkVariable(path);
+            }
             if (result == null)
+            {
                result = caseNamedElement(path);
+            }
             if (result == null)
+            {
                result = caseExtendableElement(path);
+            }
             if (result == null)
+            {
                result = defaultCase(theEObject);
+            }
             return result;
          }
          case PatternsPackage.LINK_VARIABLE:
@@ -189,13 +233,21 @@ public class PatternsSwitch<T>
             LinkVariable linkVariable = (LinkVariable) theEObject;
             T result = caseLinkVariable(linkVariable);
             if (result == null)
+            {
                result = caseAbstractLinkVariable(linkVariable);
+            }
             if (result == null)
+            {
                result = caseNamedElement(linkVariable);
+            }
             if (result == null)
+            {
                result = caseExtendableElement(linkVariable);
+            }
             if (result == null)
+            {
                result = defaultCase(theEObject);
+            }
             return result;
          }
          case PatternsPackage.CONTAINMENT_RELATION:
@@ -203,13 +255,21 @@ public class PatternsSwitch<T>
             ContainmentRelation containmentRelation = (ContainmentRelation) theEObject;
             T result = caseContainmentRelation(containmentRelation);
             if (result == null)
+            {
                result = caseAbstractLinkVariable(containmentRelation);
+            }
             if (result == null)
+            {
                result = caseNamedElement(containmentRelation);
+            }
             if (result == null)
+            {
                result = caseExtendableElement(containmentRelation);
+            }
             if (result == null)
+            {
                result = defaultCase(theEObject);
+            }
             return result;
          }
          case PatternsPackage.MATCHING_PATTERN:
@@ -217,13 +277,21 @@ public class PatternsSwitch<T>
             MatchingPattern matchingPattern = (MatchingPattern) theEObject;
             T result = caseMatchingPattern(matchingPattern);
             if (result == null)
+            {
                result = caseStoryPattern(matchingPattern);
+            }
             if (result == null)
+            {
                result = caseCommentableElement(matchingPattern);
+            }
             if (result == null)
+            {
                result = caseExtendableElement(matchingPattern);
+            }
             if (result == null)
+            {
                result = defaultCase(theEObject);
+            }
             return result;
          }
          case PatternsPackage.STORY_PATTERN:
@@ -231,11 +299,17 @@ public class PatternsSwitch<T>
             StoryPattern storyPattern = (StoryPattern) theEObject;
             T result = caseStoryPattern(storyPattern);
             if (result == null)
+            {
                result = caseCommentableElement(storyPattern);
+            }
             if (result == null)
+            {
                result = caseExtendableElement(storyPattern);
+            }
             if (result == null)
+            {
                result = defaultCase(theEObject);
+            }
             return result;
          }
          default:
@@ -244,9 +318,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Attribute Assignment</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a
+    * Returns the result of interpreting the object as an instance of '<em>Attribute Assignment</em>'. <!-- begin-user-doc --> This implementation returns null; returning a
     * non-null result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Attribute Assignment</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -258,9 +332,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Object Variable</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * Returns the result of interpreting the object as an instance of '<em>Object Variable</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
     * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Object Variable</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -272,9 +346,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Abstract Link Variable</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a
+    * Returns the result of interpreting the object as an instance of '<em>Abstract Link Variable</em>'. <!-- begin-user-doc --> This implementation returns null; returning a
     * non-null result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Abstract Link Variable</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -286,23 +360,23 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Link Order Constraint</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a
-    * non-null result will terminate the switch. <!-- end-user-doc -->
+    * Returns the result of interpreting the object as an instance of '<em>Link Constraint</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>Link Order Constraint</em>'.
+    * @return the result of interpreting the object as an instance of '<em>Link Constraint</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
     * @generated
     */
-   public T caseLinkOrderConstraint (LinkOrderConstraint object)
+   public T caseLinkConstraint (LinkConstraint object)
    {
       return null;
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a non-null result
+    * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null result
     * will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Constraint</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -314,9 +388,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Path</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+    * Returns the result of interpreting the object as an instance of '<em>Path</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
     * terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Path</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -328,9 +402,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Link Variable</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * Returns the result of interpreting the object as an instance of '<em>Link Variable</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
     * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Link Variable</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -342,9 +416,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Containment Relation</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a
+    * Returns the result of interpreting the object as an instance of '<em>Containment Relation</em>'. <!-- begin-user-doc --> This implementation returns null; returning a
     * non-null result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Containment Relation</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -356,9 +430,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Matching Pattern</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * Returns the result of interpreting the object as an instance of '<em>Matching Pattern</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
     * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Matching Pattern</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -370,9 +444,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Object Set Variable</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * Returns the result of interpreting the object as an instance of '<em>Object Set Variable</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
     * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Object Set Variable</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -384,9 +458,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Story Pattern</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * Returns the result of interpreting the object as an instance of '<em>Story Pattern</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
     * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Story Pattern</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -398,9 +472,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
     * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -412,9 +486,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Typed Element</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * Returns the result of interpreting the object as an instance of '<em>Typed Element</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
     * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Typed Element</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -426,9 +500,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a non-null result
+    * Returns the result of interpreting the object as an instance of '<em>Variable</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null result
     * will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -440,9 +514,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
     * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -454,9 +528,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a non-null
+    * Returns the result of interpreting the object as an instance of '<em>Commentable Element</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
     * result will terminate the switch. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
@@ -468,9 +542,9 @@ public class PatternsSwitch<T>
    }
 
    /**
-    * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
-    * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+    * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
     * terminate the switch, but this is the last case anyway. <!-- end-user-doc -->
+    * 
     * @param object the target of the switch.
     * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
     * @see #doSwitch(org.eclipse.emf.ecore.EObject)

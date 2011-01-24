@@ -884,7 +884,7 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
         <ownedLiteral xmi:id="261583f1-b911-4c05-b4d7-f7f2cda8496a" name="CREATE"/>
         <ownedLiteral xmi:id="501ae012-48cf-4ea0-83e6-11394bfe9a8d" name="DESTROY"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="8fd71d27-94c0-49d5-9902-a26156244424" name="LinkOrderConstraint">
+      <packagedElement xmi:type="uml:Class" xmi:id="8fd71d27-94c0-49d5-9902-a26156244424" name="LinkConstraint">
         <generalization xmi:id="_VBbqQLyzEd-eCY_Peu5fFw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
         <ownedAttribute xmi:id="0d854d3d-7441-49ec-9669-45740c948bf0" name="index" visibility="public">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
@@ -896,17 +896,19 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="12c158aa-af57-4163-9840-4d19640d092f" name="firstLink" visibility="public" type="70a57767-3c96-4cff-87d3-8391bb039afc" association="7614aedb-dfa3-426e-9c26-73a44d2ddb96"/>
-        <ownedAttribute xmi:id="e63f051a-8e92-4ebb-9a36-1ab9ecd6e055" name="secondLink" visibility="public" type="70a57767-3c96-4cff-87d3-8391bb039afc" association="5589daf2-a2cb-4afa-bb02-2da37d5af801"/>
+        <ownedAttribute xmi:id="e63f051a-8e92-4ebb-9a36-1ab9ecd6e055" name="secondLink" visibility="public" type="70a57767-3c96-4cff-87d3-8391bb039afc" association="5589daf2-a2cb-4afa-bb02-2da37d5af801">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_STI1QCehEeCn77wMTjBpqg"/>
+        </ownedAttribute>
         <ownedAttribute xmi:id="_xIx3obK8Ed-uk56s-ldeog" name="referencingObject" type="c0f72d07-a643-4da9-859b-d95cfca69eee" association="_xIwpgLK8Ed-uk56s-ldeog">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xIx3o7K8Ed-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xIx3orK8Ed-uk56s-ldeog" value="1"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="6e7cf16b-d8d7-4794-8fca-703d94b69494" name="OrderConstraintType">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="6e7cf16b-d8d7-4794-8fca-703d94b69494" name="LinkConstraintType">
         <ownedLiteral xmi:id="3e98d7e7-7724-45bb-8c67-8d82ed5585a5" name="FIRST"/>
         <ownedLiteral xmi:id="8f57045a-f941-41ce-96da-4990a7cf1706" name="LAST"/>
-        <ownedLiteral xmi:id="52dff23f-69db-4dc6-99f8-93989817c514" name="DIRECT"/>
-        <ownedLiteral xmi:id="8bc8df63-74a4-49ca-8b2f-b7e1728bece1" name="INDIRECT"/>
+        <ownedLiteral xmi:id="52dff23f-69db-4dc6-99f8-93989817c514" name="DIRECT_SUCCESSOR"/>
+        <ownedLiteral xmi:id="8bc8df63-74a4-49ca-8b2f-b7e1728bece1" name="INDIRECT_SUCCESSOR"/>
         <ownedLiteral xmi:id="6d2dda9b-0699-4bf5-be1a-30d9009257f0" name="INDEX"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">

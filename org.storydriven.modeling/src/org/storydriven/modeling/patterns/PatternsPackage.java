@@ -691,246 +691,275 @@ public interface PatternsPackage extends EPackage
    int ABSTRACT_LINK_VARIABLE_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
    /**
-    * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.LinkOrderConstraintImpl <em>Link Order Constraint</em>}' class.
-    * <!-- begin-user-doc --> <!--
-    * end-user-doc -->
-    * @see org.storydriven.modeling.patterns.impl.LinkOrderConstraintImpl
-    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getLinkOrderConstraint()
+    * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.LinkConstraintImpl <em>Link Constraint</em>}' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.storydriven.modeling.patterns.impl.LinkConstraintImpl
+    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getLinkConstraint()
     * @generated
     */
-   int LINK_ORDER_CONSTRAINT = 3;
+   int LINK_CONSTRAINT = 3;
 
    /**
     * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT__ANNOTATION = SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION;
+   int LINK_CONSTRAINT__ANNOTATION = SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION;
 
    /**
     * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT__EXTENSION = SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
+   int LINK_CONSTRAINT__EXTENSION = SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
 
    /**
     * The feature id for the '<em><b>Index</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT__INDEX = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+   int LINK_CONSTRAINT__INDEX = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
    /**
     * The feature id for the '<em><b>Constraint Type</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT__CONSTRAINT_TYPE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+   int LINK_CONSTRAINT__CONSTRAINT_TYPE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
    /**
     * The feature id for the '<em><b>Negative</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT__NEGATIVE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+   int LINK_CONSTRAINT__NEGATIVE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
    /**
     * The feature id for the '<em><b>First Link</b></em>' reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT__FIRST_LINK = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+   int LINK_CONSTRAINT__FIRST_LINK = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
    /**
     * The feature id for the '<em><b>Referencing Object</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT__REFERENCING_OBJECT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
+   int LINK_CONSTRAINT__REFERENCING_OBJECT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
    /**
     * The feature id for the '<em><b>Second Link</b></em>' reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT__SECOND_LINK = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
+   int LINK_CONSTRAINT__SECOND_LINK = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
 
    /**
-    * The number of structural features of the '<em>Link Order Constraint</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The number of structural features of the '<em>Link Constraint</em>' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
+   int LINK_CONSTRAINT_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
 
    /**
     * The operation id for the '<em>EClass</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___ECLASS = SDMPackage.EXTENDABLE_ELEMENT___ECLASS;
+   int LINK_CONSTRAINT___ECLASS = SDMPackage.EXTENDABLE_ELEMENT___ECLASS;
 
    /**
     * The operation id for the '<em>EIs Proxy</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___EIS_PROXY = SDMPackage.EXTENDABLE_ELEMENT___EIS_PROXY;
+   int LINK_CONSTRAINT___EIS_PROXY = SDMPackage.EXTENDABLE_ELEMENT___EIS_PROXY;
 
    /**
     * The operation id for the '<em>EResource</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___ERESOURCE = SDMPackage.EXTENDABLE_ELEMENT___ERESOURCE;
+   int LINK_CONSTRAINT___ERESOURCE = SDMPackage.EXTENDABLE_ELEMENT___ERESOURCE;
 
    /**
     * The operation id for the '<em>EContainer</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___ECONTAINER = SDMPackage.EXTENDABLE_ELEMENT___ECONTAINER;
+   int LINK_CONSTRAINT___ECONTAINER = SDMPackage.EXTENDABLE_ELEMENT___ECONTAINER;
 
    /**
     * The operation id for the '<em>EContaining Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___ECONTAINING_FEATURE = SDMPackage.EXTENDABLE_ELEMENT___ECONTAINING_FEATURE;
+   int LINK_CONSTRAINT___ECONTAINING_FEATURE = SDMPackage.EXTENDABLE_ELEMENT___ECONTAINING_FEATURE;
 
    /**
     * The operation id for the '<em>EContainment Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___ECONTAINMENT_FEATURE = SDMPackage.EXTENDABLE_ELEMENT___ECONTAINMENT_FEATURE;
+   int LINK_CONSTRAINT___ECONTAINMENT_FEATURE = SDMPackage.EXTENDABLE_ELEMENT___ECONTAINMENT_FEATURE;
 
    /**
     * The operation id for the '<em>EContents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___ECONTENTS = SDMPackage.EXTENDABLE_ELEMENT___ECONTENTS;
+   int LINK_CONSTRAINT___ECONTENTS = SDMPackage.EXTENDABLE_ELEMENT___ECONTENTS;
 
    /**
     * The operation id for the '<em>EAll Contents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___EALL_CONTENTS = SDMPackage.EXTENDABLE_ELEMENT___EALL_CONTENTS;
+   int LINK_CONSTRAINT___EALL_CONTENTS = SDMPackage.EXTENDABLE_ELEMENT___EALL_CONTENTS;
 
    /**
     * The operation id for the '<em>ECross References</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___ECROSS_REFERENCES = SDMPackage.EXTENDABLE_ELEMENT___ECROSS_REFERENCES;
+   int LINK_CONSTRAINT___ECROSS_REFERENCES = SDMPackage.EXTENDABLE_ELEMENT___ECROSS_REFERENCES;
 
    /**
     * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___EGET__ESTRUCTURALFEATURE = SDMPackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+   int LINK_CONSTRAINT___EGET__ESTRUCTURALFEATURE = SDMPackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
    /**
     * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDMPackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+   int LINK_CONSTRAINT___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDMPackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
    /**
     * The operation id for the '<em>ESet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___ESET__ESTRUCTURALFEATURE_OBJECT = SDMPackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+   int LINK_CONSTRAINT___ESET__ESTRUCTURALFEATURE_OBJECT = SDMPackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
    /**
     * The operation id for the '<em>EIs Set</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___EIS_SET__ESTRUCTURALFEATURE = SDMPackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+   int LINK_CONSTRAINT___EIS_SET__ESTRUCTURALFEATURE = SDMPackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
    /**
     * The operation id for the '<em>EUnset</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___EUNSET__ESTRUCTURALFEATURE = SDMPackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+   int LINK_CONSTRAINT___EUNSET__ESTRUCTURALFEATURE = SDMPackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
    /**
     * The operation id for the '<em>EInvoke</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___EINVOKE__EOPERATION_ELIST = SDMPackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+   int LINK_CONSTRAINT___EINVOKE__EOPERATION_ELIST = SDMPackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
    /**
     * The operation id for the '<em>Get Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___GET_EXTENSION__ECLASS = SDMPackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+   int LINK_CONSTRAINT___GET_EXTENSION__ECLASS = SDMPackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
    /**
     * The operation id for the '<em>Provide Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___PROVIDE_EXTENSION__ECLASS = SDMPackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+   int LINK_CONSTRAINT___PROVIDE_EXTENSION__ECLASS = SDMPackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
    /**
     * The operation id for the '<em>Get Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___GET_ANNOTATION__STRING = SDMPackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
+   int LINK_CONSTRAINT___GET_ANNOTATION__STRING = SDMPackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
 
    /**
     * The operation id for the '<em>Provide Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT___PROVIDE_ANNOTATION__STRING = SDMPackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+   int LINK_CONSTRAINT___PROVIDE_ANNOTATION__STRING = SDMPackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
    /**
-    * The number of operations of the '<em>Link Order Constraint</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The number of operations of the '<em>Link Constraint</em>' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_ORDER_CONSTRAINT_OPERATION_COUNT = SDMPackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
+   int LINK_CONSTRAINT_OPERATION_COUNT = SDMPackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -2684,13 +2713,14 @@ public interface PatternsPackage extends EPackage
    int BINDING_OPERATOR = 13;
 
    /**
-    * The meta object id for the '{@link org.storydriven.modeling.patterns.OrderConstraintType <em>Order Constraint Type</em>}' enum.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see org.storydriven.modeling.patterns.OrderConstraintType
-    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getOrderConstraintType()
+    * The meta object id for the '{@link org.storydriven.modeling.patterns.LinkConstraintType <em>Link Constraint Type</em>}' enum.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.storydriven.modeling.patterns.LinkConstraintType
+    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getLinkConstraintType()
     * @generated
     */
-   int ORDER_CONSTRAINT_TYPE = 14;
+   int LINK_CONSTRAINT_TYPE = 14;
 
    /**
     * Returns the meta object for class '{@link org.storydriven.modeling.patterns.AttributeAssignment <em>Attribute Assignment</em>}'.
@@ -2959,80 +2989,80 @@ public interface PatternsPackage extends EPackage
    EReference getAbstractLinkVariable_Source ();
 
    /**
-    * Returns the meta object for class '{@link org.storydriven.modeling.patterns.LinkOrderConstraint <em>Link Order Constraint</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
-    * -->
-    * 
-    * @return the meta object for class '<em>Link Order Constraint</em>'.
-    * @see org.storydriven.modeling.patterns.LinkOrderConstraint
+    * Returns the meta object for class '{@link org.storydriven.modeling.patterns.LinkConstraint <em>Link Constraint</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for class '<em>Link Constraint</em>'.
+    * @see org.storydriven.modeling.patterns.LinkConstraint
     * @generated
     */
-   EClass getLinkOrderConstraint ();
+   EClass getLinkConstraint ();
 
    /**
-    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getIndex <em>Index</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
-    * -->
-    * 
+    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.LinkConstraint#getIndex <em>Index</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @return the meta object for the attribute '<em>Index</em>'.
-    * @see org.storydriven.modeling.patterns.LinkOrderConstraint#getIndex()
-    * @see #getLinkOrderConstraint()
+    * @see org.storydriven.modeling.patterns.LinkConstraint#getIndex()
+    * @see #getLinkConstraint()
     * @generated
     */
-   EAttribute getLinkOrderConstraint_Index ();
+   EAttribute getLinkConstraint_Index ();
 
    /**
-    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getConstraintType <em>Constraint Type</em>}'.
+    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.LinkConstraint#getConstraintType <em>Constraint Type</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @return the meta object for the attribute '<em>Constraint Type</em>'.
-    * @see org.storydriven.modeling.patterns.LinkOrderConstraint#getConstraintType()
-    * @see #getLinkOrderConstraint()
+    * @see org.storydriven.modeling.patterns.LinkConstraint#getConstraintType()
+    * @see #getLinkConstraint()
     * @generated
     */
-   EAttribute getLinkOrderConstraint_ConstraintType ();
+   EAttribute getLinkConstraint_ConstraintType ();
 
    /**
-    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#isNegative <em>Negative</em>}'.
-    * <!-- begin-user-doc --> <!--
-    * end-user-doc -->
+    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.LinkConstraint#isNegative <em>Negative</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @return the meta object for the attribute '<em>Negative</em>'.
-    * @see org.storydriven.modeling.patterns.LinkOrderConstraint#isNegative()
-    * @see #getLinkOrderConstraint()
+    * @see org.storydriven.modeling.patterns.LinkConstraint#isNegative()
+    * @see #getLinkConstraint()
     * @generated
     */
-   EAttribute getLinkOrderConstraint_Negative ();
+   EAttribute getLinkConstraint_Negative ();
 
    /**
-    * Returns the meta object for the reference '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getFirstLink <em>First Link</em>}'.
-    * <!-- begin-user-doc --> <!--
-    * end-user-doc -->
+    * Returns the meta object for the reference '{@link org.storydriven.modeling.patterns.LinkConstraint#getFirstLink <em>First Link</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @return the meta object for the reference '<em>First Link</em>'.
-    * @see org.storydriven.modeling.patterns.LinkOrderConstraint#getFirstLink()
-    * @see #getLinkOrderConstraint()
+    * @see org.storydriven.modeling.patterns.LinkConstraint#getFirstLink()
+    * @see #getLinkConstraint()
     * @generated
     */
-   EReference getLinkOrderConstraint_FirstLink ();
+   EReference getLinkConstraint_FirstLink ();
 
    /**
-    * Returns the meta object for the container reference '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getReferencingObject <em>Referencing Object</em>}'. <!--
-    * begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Returns the meta object for the container reference '{@link org.storydriven.modeling.patterns.LinkConstraint#getReferencingObject <em>Referencing Object</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @return the meta object for the container reference '<em>Referencing Object</em>'.
-    * @see org.storydriven.modeling.patterns.LinkOrderConstraint#getReferencingObject()
-    * @see #getLinkOrderConstraint()
+    * @see org.storydriven.modeling.patterns.LinkConstraint#getReferencingObject()
+    * @see #getLinkConstraint()
     * @generated
     */
-   EReference getLinkOrderConstraint_ReferencingObject ();
+   EReference getLinkConstraint_ReferencingObject ();
 
    /**
-    * Returns the meta object for the reference '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getSecondLink <em>Second Link</em>}'.
-    * <!-- begin-user-doc --> <!--
-    * end-user-doc -->
+    * Returns the meta object for the reference '{@link org.storydriven.modeling.patterns.LinkConstraint#getSecondLink <em>Second Link</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @return the meta object for the reference '<em>Second Link</em>'.
-    * @see org.storydriven.modeling.patterns.LinkOrderConstraint#getSecondLink()
-    * @see #getLinkOrderConstraint()
+    * @see org.storydriven.modeling.patterns.LinkConstraint#getSecondLink()
+    * @see #getLinkConstraint()
     * @generated
     */
-   EReference getLinkOrderConstraint_SecondLink ();
+   EReference getLinkConstraint_SecondLink ();
 
    /**
     * Returns the meta object for class '{@link org.storydriven.modeling.patterns.Constraint <em>Constraint</em>}'.
@@ -3289,13 +3319,14 @@ public interface PatternsPackage extends EPackage
    EEnum getBindingOperator ();
 
    /**
-    * Returns the meta object for enum '{@link org.storydriven.modeling.patterns.OrderConstraintType <em>Order Constraint Type</em>}'.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @return the meta object for enum '<em>Order Constraint Type</em>'.
-    * @see org.storydriven.modeling.patterns.OrderConstraintType
+    * Returns the meta object for enum '{@link org.storydriven.modeling.patterns.LinkConstraintType <em>Link Constraint Type</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for enum '<em>Link Constraint Type</em>'.
+    * @see org.storydriven.modeling.patterns.LinkConstraintType
     * @generated
     */
-   EEnum getOrderConstraintType ();
+   EEnum getLinkConstraintType ();
 
    /**
     * Returns the factory that creates the instances of the model.
@@ -3509,56 +3540,62 @@ public interface PatternsPackage extends EPackage
       EReference ABSTRACT_LINK_VARIABLE__SOURCE = eINSTANCE.getAbstractLinkVariable_Source();
 
       /**
-       * The meta object literal for the '{@link org.storydriven.modeling.patterns.impl.LinkOrderConstraintImpl <em>Link Order Constraint</em>}' class.
-       * <!-- begin-user-doc --> <!--
-       * end-user-doc -->
-       * @see org.storydriven.modeling.patterns.impl.LinkOrderConstraintImpl
-       * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getLinkOrderConstraint()
+       * The meta object literal for the '{@link org.storydriven.modeling.patterns.impl.LinkConstraintImpl <em>Link Constraint</em>}' class.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.storydriven.modeling.patterns.impl.LinkConstraintImpl
+       * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getLinkConstraint()
        * @generated
        */
-      EClass LINK_ORDER_CONSTRAINT = eINSTANCE.getLinkOrderConstraint();
+      EClass LINK_CONSTRAINT = eINSTANCE.getLinkConstraint();
 
       /**
        * The meta object literal for the '<em><b>Index</b></em>' attribute feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EAttribute LINK_ORDER_CONSTRAINT__INDEX = eINSTANCE.getLinkOrderConstraint_Index();
+      EAttribute LINK_CONSTRAINT__INDEX = eINSTANCE.getLinkConstraint_Index();
 
       /**
        * The meta object literal for the '<em><b>Constraint Type</b></em>' attribute feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EAttribute LINK_ORDER_CONSTRAINT__CONSTRAINT_TYPE = eINSTANCE.getLinkOrderConstraint_ConstraintType();
+      EAttribute LINK_CONSTRAINT__CONSTRAINT_TYPE = eINSTANCE.getLinkConstraint_ConstraintType();
 
       /**
        * The meta object literal for the '<em><b>Negative</b></em>' attribute feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EAttribute LINK_ORDER_CONSTRAINT__NEGATIVE = eINSTANCE.getLinkOrderConstraint_Negative();
+      EAttribute LINK_CONSTRAINT__NEGATIVE = eINSTANCE.getLinkConstraint_Negative();
 
       /**
        * The meta object literal for the '<em><b>First Link</b></em>' reference feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EReference LINK_ORDER_CONSTRAINT__FIRST_LINK = eINSTANCE.getLinkOrderConstraint_FirstLink();
+      EReference LINK_CONSTRAINT__FIRST_LINK = eINSTANCE.getLinkConstraint_FirstLink();
 
       /**
        * The meta object literal for the '<em><b>Referencing Object</b></em>' container reference feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EReference LINK_ORDER_CONSTRAINT__REFERENCING_OBJECT = eINSTANCE.getLinkOrderConstraint_ReferencingObject();
+      EReference LINK_CONSTRAINT__REFERENCING_OBJECT = eINSTANCE.getLinkConstraint_ReferencingObject();
 
       /**
        * The meta object literal for the '<em><b>Second Link</b></em>' reference feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EReference LINK_ORDER_CONSTRAINT__SECOND_LINK = eINSTANCE.getLinkOrderConstraint_SecondLink();
+      EReference LINK_CONSTRAINT__SECOND_LINK = eINSTANCE.getLinkConstraint_SecondLink();
 
       /**
        * The meta object literal for the '{@link org.storydriven.modeling.patterns.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -3764,14 +3801,14 @@ public interface PatternsPackage extends EPackage
       EEnum BINDING_OPERATOR = eINSTANCE.getBindingOperator();
 
       /**
-       * The meta object literal for the '{@link org.storydriven.modeling.patterns.OrderConstraintType <em>Order Constraint Type</em>}' enum.
-       * <!-- begin-user-doc --> <!--
-       * end-user-doc -->
-       * @see org.storydriven.modeling.patterns.OrderConstraintType
-       * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getOrderConstraintType()
+       * The meta object literal for the '{@link org.storydriven.modeling.patterns.LinkConstraintType <em>Link Constraint Type</em>}' enum.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.storydriven.modeling.patterns.LinkConstraintType
+       * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getLinkConstraintType()
        * @generated
        */
-      EEnum ORDER_CONSTRAINT_TYPE = eINSTANCE.getOrderConstraintType();
+      EEnum LINK_CONSTRAINT_TYPE = eINSTANCE.getLinkConstraintType();
 
    }
 

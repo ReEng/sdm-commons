@@ -191,8 +191,8 @@ public interface ObjectVariable extends Variable, NamedElement
 
    /**
     * Returns the value of the '<em><b>Link Order Constraint</b></em>' containment reference list.
-    * The list contents are of type {@link org.storydriven.modeling.patterns.LinkOrderConstraint}.
-    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getReferencingObject <em>Referencing Object</em>}'.
+    * The list contents are of type {@link org.storydriven.modeling.patterns.LinkConstraint}.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.LinkConstraint#getReferencingObject <em>Referencing Object</em>}'.
     * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Link Order Constraint</em>' containment reference list isn't clear, there really should be more of a description here...
@@ -200,11 +200,11 @@ public interface ObjectVariable extends Variable, NamedElement
     * <!-- end-user-doc -->
     * @return the value of the '<em>Link Order Constraint</em>' containment reference list.
     * @see org.storydriven.modeling.patterns.PatternsPackage#getObjectVariable_LinkOrderConstraint()
-    * @see org.storydriven.modeling.patterns.LinkOrderConstraint#getReferencingObject
+    * @see org.storydriven.modeling.patterns.LinkConstraint#getReferencingObject
     * @model opposite="referencingObject" containment="true" resolveProxies="true"
     * @generated
     */
-   EList<LinkOrderConstraint> getLinkOrderConstraints ();
+   EList<LinkConstraint> getLinkOrderConstraints ();
 
    /**
     * Returns the value of the '<em><b>Classifier</b></em>' reference.

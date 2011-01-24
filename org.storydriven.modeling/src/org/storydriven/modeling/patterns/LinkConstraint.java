@@ -9,44 +9,48 @@ package org.storydriven.modeling.patterns;
 import org.storydriven.modeling.ExtendableElement;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '<em><b>Link Order Constraint</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Link Constraint</b></em>'.
+ * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getIndex <em>Index</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getConstraintType <em>Constraint Type</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.LinkOrderConstraint#isNegative <em>Negative</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getFirstLink <em>First Link</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getReferencingObject <em>Referencing Object</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getSecondLink <em>Second Link</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.LinkConstraint#getIndex <em>Index</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.LinkConstraint#getConstraintType <em>Constraint Type</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.LinkConstraint#isNegative <em>Negative</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.LinkConstraint#getFirstLink <em>First Link</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.LinkConstraint#getReferencingObject <em>Referencing Object</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.LinkConstraint#getSecondLink <em>Second Link</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkOrderConstraint()
+ * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkConstraint()
  * @model
  * @generated
  */
-public interface LinkOrderConstraint extends ExtendableElement
+public interface LinkConstraint extends ExtendableElement
 {
    /**
     * Returns the value of the '<em><b>Index</b></em>' attribute.
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Index</em>' attribute isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Index</em>' attribute isn't clear,
+    * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
     * @return the value of the '<em>Index</em>' attribute.
     * @see #setIndex(int)
-    * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkOrderConstraint_Index()
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkConstraint_Index()
     * @model required="true" ordered="false"
     * @generated
     */
    int getIndex ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getIndex <em>Index</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Sets the value of the '{@link org.storydriven.modeling.patterns.LinkConstraint#getIndex <em>Index</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @param value the new value of the '<em>Index</em>' attribute.
     * @see #getIndex()
     * @generated
@@ -55,51 +59,54 @@ public interface LinkOrderConstraint extends ExtendableElement
 
    /**
     * Returns the value of the '<em><b>Constraint Type</b></em>' attribute.
-    * The default value is <code>"DIRECT"</code>.
-    * The literals are from the enumeration {@link org.storydriven.modeling.patterns.OrderConstraintType}.
+    * The default value is <code>"DIRECT_SUCCESSOR"</code>.
+    * The literals are from the enumeration {@link org.storydriven.modeling.patterns.LinkConstraintType}.
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Constraint Type</em>' attribute isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Constraint Type</em>' attribute isn't clear,
+    * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
     * @return the value of the '<em>Constraint Type</em>' attribute.
-    * @see org.storydriven.modeling.patterns.OrderConstraintType
-    * @see #setConstraintType(OrderConstraintType)
-    * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkOrderConstraint_ConstraintType()
-    * @model default="DIRECT" required="true" ordered="false"
+    * @see org.storydriven.modeling.patterns.LinkConstraintType
+    * @see #setConstraintType(LinkConstraintType)
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkConstraint_ConstraintType()
+    * @model default="DIRECT_SUCCESSOR" required="true" ordered="false"
     * @generated
     */
-   OrderConstraintType getConstraintType ();
+   LinkConstraintType getConstraintType ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getConstraintType <em>Constraint Type</em>}' attribute.
-    * <!-- begin-user-doc --> <!--
-    * end-user-doc -->
+    * Sets the value of the '{@link org.storydriven.modeling.patterns.LinkConstraint#getConstraintType <em>Constraint Type</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @param value the new value of the '<em>Constraint Type</em>' attribute.
-    * @see org.storydriven.modeling.patterns.OrderConstraintType
+    * @see org.storydriven.modeling.patterns.LinkConstraintType
     * @see #getConstraintType()
     * @generated
     */
-   void setConstraintType (OrderConstraintType value);
+   void setConstraintType (LinkConstraintType value);
 
    /**
     * Returns the value of the '<em><b>Negative</b></em>' attribute.
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Negative</em>' attribute isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Negative</em>' attribute isn't clear,
+    * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
     * @return the value of the '<em>Negative</em>' attribute.
     * @see #setNegative(boolean)
-    * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkOrderConstraint_Negative()
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkConstraint_Negative()
     * @model required="true" ordered="false"
     * @generated
     */
    boolean isNegative ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#isNegative <em>Negative</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Sets the value of the '{@link org.storydriven.modeling.patterns.LinkConstraint#isNegative <em>Negative</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @param value the new value of the '<em>Negative</em>' attribute.
     * @see #isNegative()
     * @generated
@@ -111,12 +118,13 @@ public interface LinkOrderConstraint extends ExtendableElement
     * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getFirstLinkOrderConstraints <em>First Link Order Constraint</em>}'.
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>First Link</em>' reference isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>First Link</em>' reference isn't clear,
+    * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
     * @return the value of the '<em>First Link</em>' reference.
     * @see #setFirstLink(AbstractLinkVariable)
-    * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkOrderConstraint_FirstLink()
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkConstraint_FirstLink()
     * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getFirstLinkOrderConstraints
     * @model opposite="firstLinkOrderConstraint" required="true" ordered="false"
     * @generated
@@ -124,9 +132,9 @@ public interface LinkOrderConstraint extends ExtendableElement
    AbstractLinkVariable getFirstLink ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getFirstLink <em>First Link</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc
-    * -->
-    * 
+    * Sets the value of the '{@link org.storydriven.modeling.patterns.LinkConstraint#getFirstLink <em>First Link</em>}' reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @param value the new value of the '<em>First Link</em>' reference.
     * @see #getFirstLink()
     * @generated
@@ -138,12 +146,13 @@ public interface LinkOrderConstraint extends ExtendableElement
     * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.ObjectVariable#getLinkOrderConstraints <em>Link Order Constraint</em>}'.
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Referencing Object</em>' container reference isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Referencing Object</em>' container reference isn't clear,
+    * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
     * @return the value of the '<em>Referencing Object</em>' container reference.
     * @see #setReferencingObject(ObjectVariable)
-    * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkOrderConstraint_ReferencingObject()
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkConstraint_ReferencingObject()
     * @see org.storydriven.modeling.patterns.ObjectVariable#getLinkOrderConstraints
     * @model opposite="linkOrderConstraint" required="true" transient="false" ordered="false"
     * @generated
@@ -151,9 +160,9 @@ public interface LinkOrderConstraint extends ExtendableElement
    ObjectVariable getReferencingObject ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getReferencingObject <em>Referencing Object</em>}' container reference. <!--
-    * begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Sets the value of the '{@link org.storydriven.modeling.patterns.LinkConstraint#getReferencingObject <em>Referencing Object</em>}' container reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @param value the new value of the '<em>Referencing Object</em>' container reference.
     * @see #getReferencingObject()
     * @generated
@@ -165,26 +174,27 @@ public interface LinkOrderConstraint extends ExtendableElement
     * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getSecondLinkOrderConstraints <em>Second Link Order Constraint</em>}'.
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Second Link</em>' reference isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Second Link</em>' reference isn't clear,
+    * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
     * @return the value of the '<em>Second Link</em>' reference.
     * @see #setSecondLink(AbstractLinkVariable)
-    * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkOrderConstraint_SecondLink()
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkConstraint_SecondLink()
     * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getSecondLinkOrderConstraints
-    * @model opposite="secondLinkOrderConstraint" required="true" ordered="false"
+    * @model opposite="secondLinkOrderConstraint" ordered="false"
     * @generated
     */
    AbstractLinkVariable getSecondLink ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getSecondLink <em>Second Link</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc
-    * -->
-    * 
+    * Sets the value of the '{@link org.storydriven.modeling.patterns.LinkConstraint#getSecondLink <em>Second Link</em>}' reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @param value the new value of the '<em>Second Link</em>' reference.
     * @see #getSecondLink()
     * @generated
     */
    void setSecondLink (AbstractLinkVariable value);
 
-} // LinkOrderConstraint
+} // LinkConstraint

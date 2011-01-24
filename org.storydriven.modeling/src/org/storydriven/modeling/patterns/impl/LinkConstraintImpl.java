@@ -8,38 +8,46 @@ package org.storydriven.modeling.patterns.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import org.storydriven.modeling.impl.ExtendableElementImpl;
+
 import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.LinkOrderConstraint;
+import org.storydriven.modeling.patterns.LinkConstraint;
+import org.storydriven.modeling.patterns.LinkConstraintType;
 import org.storydriven.modeling.patterns.ObjectVariable;
-import org.storydriven.modeling.patterns.OrderConstraintType;
 import org.storydriven.modeling.patterns.PatternsPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Link Order Constraint</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Link Constraint</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.patterns.impl.LinkOrderConstraintImpl#getIndex <em>Index</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.impl.LinkOrderConstraintImpl#getConstraintType <em>Constraint Type</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.impl.LinkOrderConstraintImpl#isNegative <em>Negative</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.impl.LinkOrderConstraintImpl#getFirstLink <em>First Link</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.impl.LinkOrderConstraintImpl#getReferencingObject <em>Referencing Object</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.impl.LinkOrderConstraintImpl#getSecondLink <em>Second Link</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.impl.LinkConstraintImpl#getIndex <em>Index</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.impl.LinkConstraintImpl#getConstraintType <em>Constraint Type</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.impl.LinkConstraintImpl#isNegative <em>Negative</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.impl.LinkConstraintImpl#getFirstLink <em>First Link</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.impl.LinkConstraintImpl#getReferencingObject <em>Referencing Object</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.impl.LinkConstraintImpl#getSecondLink <em>Second Link</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class LinkOrderConstraintImpl extends ExtendableElementImpl implements LinkOrderConstraint
+public class LinkConstraintImpl extends ExtendableElementImpl implements LinkConstraint
 {
    /**
     * The default value of the '{@link #getIndex() <em>Index</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @see #getIndex()
     * @generated
     * @ordered
@@ -48,7 +56,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
 
    /**
     * The cached value of the '{@link #getIndex() <em>Index</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @see #getIndex()
     * @generated
     * @ordered
@@ -57,25 +66,28 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
 
    /**
     * The default value of the '{@link #getConstraintType() <em>Constraint Type</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @see #getConstraintType()
     * @generated
     * @ordered
     */
-   protected static final OrderConstraintType CONSTRAINT_TYPE_EDEFAULT = OrderConstraintType.DIRECT;
+   protected static final LinkConstraintType CONSTRAINT_TYPE_EDEFAULT = LinkConstraintType.DIRECT_SUCCESSOR;
 
    /**
     * The cached value of the '{@link #getConstraintType() <em>Constraint Type</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @see #getConstraintType()
     * @generated
     * @ordered
     */
-   protected OrderConstraintType constraintType = CONSTRAINT_TYPE_EDEFAULT;
+   protected LinkConstraintType constraintType = CONSTRAINT_TYPE_EDEFAULT;
 
    /**
     * The default value of the '{@link #isNegative() <em>Negative</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @see #isNegative()
     * @generated
     * @ordered
@@ -84,7 +96,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
 
    /**
     * The cached value of the '{@link #isNegative() <em>Negative</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @see #isNegative()
     * @generated
     * @ordered
@@ -93,7 +106,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
 
    /**
     * The cached value of the '{@link #getFirstLink() <em>First Link</em>}' reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @see #getFirstLink()
     * @generated
     * @ordered
@@ -102,7 +116,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
 
    /**
     * The cached value of the '{@link #getSecondLink() <em>Second Link</em>}' reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @see #getSecondLink()
     * @generated
     * @ordered
@@ -110,26 +125,29 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    protected AbstractLinkVariable secondLink;
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   protected LinkOrderConstraintImpl ()
+   protected LinkConstraintImpl ()
    {
       super();
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
    protected EClass eStaticClass ()
    {
-      return PatternsPackage.Literals.LINK_ORDER_CONSTRAINT;
+      return PatternsPackage.Literals.LINK_CONSTRAINT;
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public int getIndex ()
@@ -138,7 +156,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public void setIndex (int newIndex)
@@ -146,34 +165,36 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
       int oldIndex = index;
       index = newIndex;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_ORDER_CONSTRAINT__INDEX, oldIndex,
-            index));
+         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__INDEX, oldIndex, index));
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public OrderConstraintType getConstraintType ()
+   public LinkConstraintType getConstraintType ()
    {
       return constraintType;
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public void setConstraintType (OrderConstraintType newConstraintType)
+   public void setConstraintType (LinkConstraintType newConstraintType)
    {
-      OrderConstraintType oldConstraintType = constraintType;
+      LinkConstraintType oldConstraintType = constraintType;
       constraintType = newConstraintType == null ? CONSTRAINT_TYPE_EDEFAULT : newConstraintType;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_ORDER_CONSTRAINT__CONSTRAINT_TYPE,
+         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE,
             oldConstraintType, constraintType));
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public boolean isNegative ()
@@ -182,7 +203,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public void setNegative (boolean newNegative)
@@ -190,12 +212,13 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
       boolean oldNegative = negative;
       negative = newNegative;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_ORDER_CONSTRAINT__NEGATIVE,
-            oldNegative, negative));
+         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__NEGATIVE, oldNegative,
+            negative));
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public AbstractLinkVariable getFirstLink ()
@@ -207,15 +230,16 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
          if (firstLink != oldFirstLink)
          {
             if (eNotificationRequired())
-               eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                  PatternsPackage.LINK_ORDER_CONSTRAINT__FIRST_LINK, oldFirstLink, firstLink));
+               eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternsPackage.LINK_CONSTRAINT__FIRST_LINK,
+                  oldFirstLink, firstLink));
          }
       }
       return firstLink;
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public AbstractLinkVariable basicGetFirstLink ()
@@ -224,7 +248,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public NotificationChain basicSetFirstLink (AbstractLinkVariable newFirstLink, NotificationChain msgs)
@@ -234,7 +259,7 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-            PatternsPackage.LINK_ORDER_CONSTRAINT__FIRST_LINK, oldFirstLink, newFirstLink);
+            PatternsPackage.LINK_CONSTRAINT__FIRST_LINK, oldFirstLink, newFirstLink);
          if (msgs == null)
             msgs = notification;
          else
@@ -244,7 +269,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public void setFirstLink (AbstractLinkVariable newFirstLink)
@@ -263,51 +289,55 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
             msgs.dispatch();
       }
       else if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_ORDER_CONSTRAINT__FIRST_LINK,
+         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__FIRST_LINK,
             newFirstLink, newFirstLink));
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public ObjectVariable getReferencingObject ()
    {
-      if (eContainerFeatureID() != PatternsPackage.LINK_ORDER_CONSTRAINT__REFERENCING_OBJECT)
+      if (eContainerFeatureID() != PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT)
          return null;
       return (ObjectVariable) eContainer();
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public ObjectVariable basicGetReferencingObject ()
    {
-      if (eContainerFeatureID() != PatternsPackage.LINK_ORDER_CONSTRAINT__REFERENCING_OBJECT)
+      if (eContainerFeatureID() != PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT)
          return null;
       return (ObjectVariable) eInternalContainer();
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public NotificationChain basicSetReferencingObject (ObjectVariable newReferencingObject, NotificationChain msgs)
    {
       msgs = eBasicSetContainer((InternalEObject) newReferencingObject,
-         PatternsPackage.LINK_ORDER_CONSTRAINT__REFERENCING_OBJECT, msgs);
+         PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT, msgs);
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public void setReferencingObject (ObjectVariable newReferencingObject)
    {
       if (newReferencingObject != eInternalContainer()
-         || (eContainerFeatureID() != PatternsPackage.LINK_ORDER_CONSTRAINT__REFERENCING_OBJECT && newReferencingObject != null))
+         || (eContainerFeatureID() != PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT && newReferencingObject != null))
       {
          if (EcoreUtil.isAncestor(this, newReferencingObject))
             throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -322,12 +352,13 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
             msgs.dispatch();
       }
       else if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET,
-            PatternsPackage.LINK_ORDER_CONSTRAINT__REFERENCING_OBJECT, newReferencingObject, newReferencingObject));
+         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT,
+            newReferencingObject, newReferencingObject));
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public AbstractLinkVariable getSecondLink ()
@@ -339,15 +370,16 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
          if (secondLink != oldSecondLink)
          {
             if (eNotificationRequired())
-               eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                  PatternsPackage.LINK_ORDER_CONSTRAINT__SECOND_LINK, oldSecondLink, secondLink));
+               eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternsPackage.LINK_CONSTRAINT__SECOND_LINK,
+                  oldSecondLink, secondLink));
          }
       }
       return secondLink;
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public AbstractLinkVariable basicGetSecondLink ()
@@ -356,7 +388,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public NotificationChain basicSetSecondLink (AbstractLinkVariable newSecondLink, NotificationChain msgs)
@@ -366,7 +399,7 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
       if (eNotificationRequired())
       {
          ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-            PatternsPackage.LINK_ORDER_CONSTRAINT__SECOND_LINK, oldSecondLink, newSecondLink);
+            PatternsPackage.LINK_CONSTRAINT__SECOND_LINK, oldSecondLink, newSecondLink);
          if (msgs == null)
             msgs = notification;
          else
@@ -376,7 +409,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    public void setSecondLink (AbstractLinkVariable newSecondLink)
@@ -395,12 +429,13 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
             msgs.dispatch();
       }
       else if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_ORDER_CONSTRAINT__SECOND_LINK,
+         eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__SECOND_LINK,
             newSecondLink, newSecondLink));
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -408,17 +443,17 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    {
       switch (featureID)
       {
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__FIRST_LINK:
+         case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
             if (firstLink != null)
                msgs = ((InternalEObject) firstLink)
                   .eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_ORDER_CONSTRAINT,
                      AbstractLinkVariable.class, msgs);
             return basicSetFirstLink((AbstractLinkVariable) otherEnd, msgs);
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__REFERENCING_OBJECT:
+         case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
             if (eInternalContainer() != null)
                msgs = eBasicRemoveFromContainer(msgs);
             return basicSetReferencingObject((ObjectVariable) otherEnd, msgs);
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__SECOND_LINK:
+         case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
             if (secondLink != null)
                msgs = ((InternalEObject) secondLink).eInverseRemove(this,
                   PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_ORDER_CONSTRAINT, AbstractLinkVariable.class,
@@ -429,7 +464,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -437,18 +473,19 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    {
       switch (featureID)
       {
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__FIRST_LINK:
+         case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
             return basicSetFirstLink(null, msgs);
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__REFERENCING_OBJECT:
+         case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
             return basicSetReferencingObject(null, msgs);
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__SECOND_LINK:
+         case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
             return basicSetSecondLink(null, msgs);
       }
       return super.eInverseRemove(otherEnd, featureID, msgs);
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -456,7 +493,7 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    {
       switch (eContainerFeatureID())
       {
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__REFERENCING_OBJECT:
+         case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
             return eInternalContainer().eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT,
                ObjectVariable.class, msgs);
       }
@@ -464,7 +501,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -472,21 +510,21 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    {
       switch (featureID)
       {
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__INDEX:
+         case PatternsPackage.LINK_CONSTRAINT__INDEX:
             return getIndex();
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__CONSTRAINT_TYPE:
+         case PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE:
             return getConstraintType();
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__NEGATIVE:
+         case PatternsPackage.LINK_CONSTRAINT__NEGATIVE:
             return isNegative();
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__FIRST_LINK:
+         case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
             if (resolve)
                return getFirstLink();
             return basicGetFirstLink();
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__REFERENCING_OBJECT:
+         case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
             if (resolve)
                return getReferencingObject();
             return basicGetReferencingObject();
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__SECOND_LINK:
+         case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
             if (resolve)
                return getSecondLink();
             return basicGetSecondLink();
@@ -495,7 +533,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -503,22 +542,22 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    {
       switch (featureID)
       {
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__INDEX:
+         case PatternsPackage.LINK_CONSTRAINT__INDEX:
             setIndex((Integer) newValue);
             return;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__CONSTRAINT_TYPE:
-            setConstraintType((OrderConstraintType) newValue);
+         case PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE:
+            setConstraintType((LinkConstraintType) newValue);
             return;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__NEGATIVE:
+         case PatternsPackage.LINK_CONSTRAINT__NEGATIVE:
             setNegative((Boolean) newValue);
             return;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__FIRST_LINK:
+         case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
             setFirstLink((AbstractLinkVariable) newValue);
             return;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__REFERENCING_OBJECT:
+         case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
             setReferencingObject((ObjectVariable) newValue);
             return;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__SECOND_LINK:
+         case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
             setSecondLink((AbstractLinkVariable) newValue);
             return;
       }
@@ -526,7 +565,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -534,22 +574,22 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    {
       switch (featureID)
       {
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__INDEX:
+         case PatternsPackage.LINK_CONSTRAINT__INDEX:
             setIndex(INDEX_EDEFAULT);
             return;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__CONSTRAINT_TYPE:
+         case PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE:
             setConstraintType(CONSTRAINT_TYPE_EDEFAULT);
             return;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__NEGATIVE:
+         case PatternsPackage.LINK_CONSTRAINT__NEGATIVE:
             setNegative(NEGATIVE_EDEFAULT);
             return;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__FIRST_LINK:
+         case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
             setFirstLink((AbstractLinkVariable) null);
             return;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__REFERENCING_OBJECT:
+         case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
             setReferencingObject((ObjectVariable) null);
             return;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__SECOND_LINK:
+         case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
             setSecondLink((AbstractLinkVariable) null);
             return;
       }
@@ -557,7 +597,8 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -565,24 +606,25 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
    {
       switch (featureID)
       {
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__INDEX:
+         case PatternsPackage.LINK_CONSTRAINT__INDEX:
             return index != INDEX_EDEFAULT;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__CONSTRAINT_TYPE:
+         case PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE:
             return constraintType != CONSTRAINT_TYPE_EDEFAULT;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__NEGATIVE:
+         case PatternsPackage.LINK_CONSTRAINT__NEGATIVE:
             return negative != NEGATIVE_EDEFAULT;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__FIRST_LINK:
+         case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
             return firstLink != null;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__REFERENCING_OBJECT:
+         case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
             return basicGetReferencingObject() != null;
-         case PatternsPackage.LINK_ORDER_CONSTRAINT__SECOND_LINK:
+         case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
             return secondLink != null;
       }
       return super.eIsSet(featureID);
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -602,4 +644,4 @@ public class LinkOrderConstraintImpl extends ExtendableElementImpl implements Li
       return result.toString();
    }
 
-} // LinkOrderConstraintImpl
+} //LinkConstraintImpl

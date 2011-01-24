@@ -12,41 +12,42 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.storydriven.modeling.patterns.*;
 import org.storydriven.modeling.patterns.AbstractLinkVariable;
 import org.storydriven.modeling.patterns.AttributeAssignment;
+import org.storydriven.modeling.patterns.BindingOperator;
 import org.storydriven.modeling.patterns.BindingSemantics;
 import org.storydriven.modeling.patterns.BindingState;
 import org.storydriven.modeling.patterns.Constraint;
 import org.storydriven.modeling.patterns.ContainmentRelation;
-import org.storydriven.modeling.patterns.LinkOrderConstraint;
+import org.storydriven.modeling.patterns.LinkConstraint;
+import org.storydriven.modeling.patterns.LinkConstraintType;
 import org.storydriven.modeling.patterns.LinkVariable;
 import org.storydriven.modeling.patterns.MatchingPattern;
-import org.storydriven.modeling.patterns.Modifier;
 import org.storydriven.modeling.patterns.ObjectSetVariable;
 import org.storydriven.modeling.patterns.ObjectVariable;
-import org.storydriven.modeling.patterns.OrderConstraintType;
 import org.storydriven.modeling.patterns.Path;
 import org.storydriven.modeling.patterns.PatternsPackage;
 import org.storydriven.modeling.patterns.StoryPattern;
 
 /**
  * <!-- begin-user-doc --> The <b>Validator</b> for the model. <!-- end-user-doc -->
+ * 
  * @see org.storydriven.modeling.patterns.PatternsPackage
  * @generated
  */
 public class PatternsValidator extends EObjectValidator
 {
    /**
-    * The cached model package
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static final PatternsValidator INSTANCE = new PatternsValidator();
 
    /**
-    * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this
+    * package. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @see org.eclipse.emf.common.util.Diagnostic#getSource()
     * @see org.eclipse.emf.common.util.Diagnostic#getCode()
     * @generated
@@ -54,30 +55,30 @@ public class PatternsValidator extends EObjectValidator
    public static final String DIAGNOSTIC_SOURCE = "org.storydriven.modeling.patterns";
 
    /**
-    * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'No Modifier In Matching Pattern' of 'Matching Pattern'.
-    * <!-- begin-user-doc --> <!--
+    * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'No Modifier In Matching Pattern' of 'Matching Pattern'. <!-- begin-user-doc --> <!--
     * end-user-doc -->
+    * 
     * @generated
     */
    public static final int MATCHING_PATTERN__NO_MODIFIER_IN_MATCHING_PATTERN = 1;
 
    /**
-    * A constant with a fixed name that can be used as the base value for additional hand written constants.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * A constant with a fixed name that can be used as the base value for additional hand written constants. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 1;
 
    /**
-    * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
    /**
-    * Creates an instance of the switch.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public PatternsValidator ()
@@ -86,8 +87,8 @@ public class PatternsValidator extends EObjectValidator
    }
 
    /**
-    * Returns the package of this validator switch.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Returns the package of this validator switch. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -97,8 +98,8 @@ public class PatternsValidator extends EObjectValidator
    }
 
    /**
-    * Calls <code>validateXXX</code> for the corresponding classifier of the model.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Calls <code>validateXXX</code> for the corresponding classifier of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -112,8 +113,8 @@ public class PatternsValidator extends EObjectValidator
             return validateAttributeAssignment((AttributeAssignment) value, diagnostics, context);
          case PatternsPackage.ABSTRACT_LINK_VARIABLE:
             return validateAbstractLinkVariable((AbstractLinkVariable) value, diagnostics, context);
-         case PatternsPackage.LINK_ORDER_CONSTRAINT:
-            return validateLinkOrderConstraint((LinkOrderConstraint) value, diagnostics, context);
+         case PatternsPackage.LINK_CONSTRAINT:
+            return validateLinkConstraint((LinkConstraint) value, diagnostics, context);
          case PatternsPackage.CONSTRAINT:
             return validateConstraint((Constraint) value, diagnostics, context);
          case PatternsPackage.OBJECT_SET_VARIABLE:
@@ -134,8 +135,8 @@ public class PatternsValidator extends EObjectValidator
             return validateBindingSemantics((BindingSemantics) value, diagnostics, context);
          case PatternsPackage.BINDING_OPERATOR:
             return validateBindingOperator((BindingOperator) value, diagnostics, context);
-         case PatternsPackage.ORDER_CONSTRAINT_TYPE:
-            return validateOrderConstraintType((OrderConstraintType) value, diagnostics, context);
+         case PatternsPackage.LINK_CONSTRAINT_TYPE:
+            return validateLinkConstraintType((LinkConstraintType) value, diagnostics, context);
          default:
             return true;
       }
@@ -143,6 +144,7 @@ public class PatternsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean validateAttributeAssignment (AttributeAssignment attributeAssignment, DiagnosticChain diagnostics,
@@ -153,6 +155,7 @@ public class PatternsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean validateObjectVariable (ObjectVariable objectVariable, DiagnosticChain diagnostics,
@@ -163,6 +166,7 @@ public class PatternsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean validateAbstractLinkVariable (AbstractLinkVariable abstractLinkVariable, DiagnosticChain diagnostics,
@@ -173,16 +177,18 @@ public class PatternsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
-   public boolean validateLinkOrderConstraint (LinkOrderConstraint linkOrderConstraint, DiagnosticChain diagnostics,
-                                               Map<Object, Object> context)
+   public boolean validateLinkConstraint (LinkConstraint linkConstraint, DiagnosticChain diagnostics,
+                                          Map<Object, Object> context)
    {
-      return validate_EveryDefaultConstraint(linkOrderConstraint, diagnostics, context);
+      return validate_EveryDefaultConstraint(linkConstraint, diagnostics, context);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean validateConstraint (Constraint constraint, DiagnosticChain diagnostics, Map<Object, Object> context)
@@ -192,6 +198,7 @@ public class PatternsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean validatePath (Path path, DiagnosticChain diagnostics, Map<Object, Object> context)
@@ -201,6 +208,7 @@ public class PatternsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean validateLinkVariable (LinkVariable linkVariable, DiagnosticChain diagnostics,
@@ -211,6 +219,7 @@ public class PatternsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean validateContainmentRelation (ContainmentRelation containmentRelation, DiagnosticChain diagnostics,
@@ -221,36 +230,55 @@ public class PatternsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean validateMatchingPattern (MatchingPattern matchingPattern, DiagnosticChain diagnostics,
                                            Map<Object, Object> context)
    {
       if (!validate_NoCircularContainment(matchingPattern, diagnostics, context))
+      {
          return false;
+      }
       boolean result = validate_EveryMultiplicityConforms(matchingPattern, diagnostics, context);
       if (result || diagnostics != null)
+      {
          result &= validate_EveryDataValueConforms(matchingPattern, diagnostics, context);
+      }
       if (result || diagnostics != null)
+      {
          result &= validate_EveryReferenceIsContained(matchingPattern, diagnostics, context);
+      }
       if (result || diagnostics != null)
+      {
          result &= validate_EveryBidirectionalReferenceIsPaired(matchingPattern, diagnostics, context);
+      }
       if (result || diagnostics != null)
+      {
          result &= validate_EveryProxyResolves(matchingPattern, diagnostics, context);
+      }
       if (result || diagnostics != null)
+      {
          result &= validate_UniqueID(matchingPattern, diagnostics, context);
+      }
       if (result || diagnostics != null)
+      {
          result &= validate_EveryKeyUnique(matchingPattern, diagnostics, context);
+      }
       if (result || diagnostics != null)
+      {
          result &= validate_EveryMapEntryUnique(matchingPattern, diagnostics, context);
+      }
       if (result || diagnostics != null)
+      {
          result &= validateMatchingPattern_NoModifierInMatchingPattern(matchingPattern, diagnostics, context);
+      }
       return result;
    }
 
    /**
-    * Validates the NoModifierInMatchingPattern constraint of '<em>Matching Pattern</em>'.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Validates the NoModifierInMatchingPattern constraint of '<em>Matching Pattern</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean validateMatchingPattern_NoModifierInMatchingPattern (MatchingPattern matchingPattern,
@@ -262,6 +290,7 @@ public class PatternsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean validateObjectSetVariable (ObjectSetVariable objectSetVariable, DiagnosticChain diagnostics,
@@ -272,6 +301,7 @@ public class PatternsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean validateStoryPattern (StoryPattern storyPattern, DiagnosticChain diagnostics,
@@ -282,6 +312,7 @@ public class PatternsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean validateBindingState (BindingState bindingState, DiagnosticChain diagnostics,
@@ -292,6 +323,7 @@ public class PatternsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean validateBindingSemantics (BindingSemantics bindingSemantics, DiagnosticChain diagnostics,
@@ -301,8 +333,8 @@ public class PatternsValidator extends EObjectValidator
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public boolean validateBindingOperator (BindingOperator bindingOperator, DiagnosticChain diagnostics,
@@ -313,17 +345,18 @@ public class PatternsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
-   public boolean validateOrderConstraintType (OrderConstraintType orderConstraintType, DiagnosticChain diagnostics,
-                                               Map<Object, Object> context)
+   public boolean validateLinkConstraintType (LinkConstraintType linkConstraintType, DiagnosticChain diagnostics,
+                                              Map<Object, Object> context)
    {
       return true;
    }
 
    /**
-    * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Returns the resource locator that will be used to fetch messages for this validator's diagnostics. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override

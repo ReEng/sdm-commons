@@ -120,8 +120,8 @@ public interface AbstractLinkVariable extends NamedElement
 
    /**
     * Returns the value of the '<em><b>Second Link Order Constraint</b></em>' reference list.
-    * The list contents are of type {@link org.storydriven.modeling.patterns.LinkOrderConstraint}.
-    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getSecondLink <em>Second Link</em>}'.
+    * The list contents are of type {@link org.storydriven.modeling.patterns.LinkConstraint}.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.LinkConstraint#getSecondLink <em>Second Link</em>}'.
     * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Second Link Order Constraint</em>' reference list isn't clear, there really should be more of a description here...
@@ -129,16 +129,16 @@ public interface AbstractLinkVariable extends NamedElement
     * <!-- end-user-doc -->
     * @return the value of the '<em>Second Link Order Constraint</em>' reference list.
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractLinkVariable_SecondLinkOrderConstraint()
-    * @see org.storydriven.modeling.patterns.LinkOrderConstraint#getSecondLink
+    * @see org.storydriven.modeling.patterns.LinkConstraint#getSecondLink
     * @model opposite="secondLink" ordered="false"
     * @generated
     */
-   EList<LinkOrderConstraint> getSecondLinkOrderConstraints ();
+   EList<LinkConstraint> getSecondLinkOrderConstraints ();
 
    /**
     * Returns the value of the '<em><b>First Link Order Constraint</b></em>' reference list.
-    * The list contents are of type {@link org.storydriven.modeling.patterns.LinkOrderConstraint}.
-    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.LinkOrderConstraint#getFirstLink <em>First Link</em>}'.
+    * The list contents are of type {@link org.storydriven.modeling.patterns.LinkConstraint}.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.LinkConstraint#getFirstLink <em>First Link</em>}'.
     * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>First Link Order Constraint</em>' reference list isn't clear, there really should be more of a description here...
@@ -146,11 +146,11 @@ public interface AbstractLinkVariable extends NamedElement
     * <!-- end-user-doc -->
     * @return the value of the '<em>First Link Order Constraint</em>' reference list.
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractLinkVariable_FirstLinkOrderConstraint()
-    * @see org.storydriven.modeling.patterns.LinkOrderConstraint#getFirstLink
+    * @see org.storydriven.modeling.patterns.LinkConstraint#getFirstLink
     * @model opposite="firstLink" ordered="false"
     * @generated
     */
-   EList<LinkOrderConstraint> getFirstLinkOrderConstraints ();
+   EList<LinkConstraint> getFirstLinkOrderConstraints ();
 
    /**
     * Returns the value of the '<em><b>Binding State</b></em>' attribute. The literals are from the enumeration {@link org.storydriven.modeling.patterns.BindingState}. <!--

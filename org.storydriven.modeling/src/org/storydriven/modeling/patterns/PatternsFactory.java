@@ -31,20 +31,21 @@ public interface PatternsFactory extends EFactory
    AttributeAssignment createAttributeAssignment ();
 
    /**
+    * Returns a new object of class '<em>Link Constraint</em>'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return a new object of class '<em>Link Constraint</em>'.
+    * @generated
+    */
+   LinkConstraint createLinkConstraint ();
+
+   /**
     * Returns a new object of class '<em>Object Variable</em>'.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @return a new object of class '<em>Object Variable</em>'.
     * @generated
     */
    ObjectVariable createObjectVariable ();
-
-   /**
-    * Returns a new object of class '<em>Link Order Constraint</em>'.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @return a new object of class '<em>Link Order Constraint</em>'.
-    * @generated
-    */
-   LinkOrderConstraint createLinkOrderConstraint ();
 
    /**
     * Returns a new object of class '<em>Constraint</em>'.
