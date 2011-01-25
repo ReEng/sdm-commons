@@ -18,8 +18,8 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getBindingOperator <em>Binding Operator</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getTarget <em>Target</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getSecondLinkOrderConstraints <em>Second Link Order Constraint</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getFirstLinkOrderConstraints <em>First Link Order Constraint</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getSecondLinkConstraints <em>Second Link Constraint</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getFirstLinkConstraints <em>First Link Constraint</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getBindingState <em>Binding State</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getPattern <em>Pattern</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getSource <em>Source</em>}</li>
@@ -64,7 +64,7 @@ public interface AbstractLinkVariable extends NamedElement
 
    /**
     * Returns the value of the '<em><b>Binding Operator</b></em>' attribute.
-    * The default value is <code>"CHECK"</code>.
+    * The default value is <code>"CHECK_ONLY"</code>.
     * The literals are from the enumeration {@link org.storydriven.modeling.patterns.BindingOperator}.
     * <!-- begin-user-doc -->
     * <p>
@@ -76,7 +76,7 @@ public interface AbstractLinkVariable extends NamedElement
     * @see org.storydriven.modeling.patterns.BindingOperator
     * @see #setBindingOperator(BindingOperator)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractLinkVariable_BindingOperator()
-    * @model default="CHECK" required="true" ordered="false"
+    * @model default="CHECK_ONLY" required="true" ordered="false"
     * @generated
     */
    BindingOperator getBindingOperator ();
@@ -119,38 +119,40 @@ public interface AbstractLinkVariable extends NamedElement
    void setTarget (ObjectVariable value);
 
    /**
-    * Returns the value of the '<em><b>Second Link Order Constraint</b></em>' reference list.
+    * Returns the value of the '<em><b>Second Link Constraint</b></em>' reference list.
     * The list contents are of type {@link org.storydriven.modeling.patterns.LinkConstraint}.
     * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.LinkConstraint#getSecondLink <em>Second Link</em>}'.
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Second Link Order Constraint</em>' reference list isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Second Link Constraint</em>' reference list isn't clear,
+    * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @return the value of the '<em>Second Link Order Constraint</em>' reference list.
-    * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractLinkVariable_SecondLinkOrderConstraint()
+    * @return the value of the '<em>Second Link Constraint</em>' reference list.
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractLinkVariable_SecondLinkConstraint()
     * @see org.storydriven.modeling.patterns.LinkConstraint#getSecondLink
     * @model opposite="secondLink" ordered="false"
     * @generated
     */
-   EList<LinkConstraint> getSecondLinkOrderConstraints ();
+   EList<LinkConstraint> getSecondLinkConstraints ();
 
    /**
-    * Returns the value of the '<em><b>First Link Order Constraint</b></em>' reference list.
+    * Returns the value of the '<em><b>First Link Constraint</b></em>' reference list.
     * The list contents are of type {@link org.storydriven.modeling.patterns.LinkConstraint}.
     * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.LinkConstraint#getFirstLink <em>First Link</em>}'.
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>First Link Order Constraint</em>' reference list isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>First Link Constraint</em>' reference list isn't clear,
+    * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @return the value of the '<em>First Link Order Constraint</em>' reference list.
-    * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractLinkVariable_FirstLinkOrderConstraint()
+    * @return the value of the '<em>First Link Constraint</em>' reference list.
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractLinkVariable_FirstLinkConstraint()
     * @see org.storydriven.modeling.patterns.LinkConstraint#getFirstLink
     * @model opposite="firstLink" ordered="false"
     * @generated
     */
-   EList<LinkConstraint> getFirstLinkOrderConstraints ();
+   EList<LinkConstraint> getFirstLinkConstraints ();
 
    /**
     * Returns the value of the '<em><b>Binding State</b></em>' attribute. The literals are from the enumeration {@link org.storydriven.modeling.patterns.BindingState}. <!--

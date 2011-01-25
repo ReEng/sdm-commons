@@ -741,7 +741,7 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8pXc4hzeEeChOvWwuwx7tQ"/>
           </ownedEnd>
         </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="_Li5c8BzfEeChOvWwuwx7tQ" name="ObjectVariableHasObject" memberEnd="_Li5c8RzfEeChOvWwuwx7tQ _Li6EARzfEeChOvWwuwx7tQ">
+        <packagedElement xmi:type="uml:Association" xmi:id="_Li5c8BzfEeChOvWwuwx7tQ" name="ExpressionHasObject" memberEnd="_Li5c8RzfEeChOvWwuwx7tQ _Li6EARzfEeChOvWwuwx7tQ">
           <ownedEnd xmi:id="_Li5c8RzfEeChOvWwuwx7tQ" name="objectVariableExpression" type="_t26VMBzeEeChOvWwuwx7tQ" association="_Li5c8BzfEeChOvWwuwx7tQ">
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Li6EABzfEeChOvWwuwx7tQ" value="*"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Li5c8hzfEeChOvWwuwx7tQ"/>
@@ -756,7 +756,7 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="5589daf2-a2cb-4afa-bb02-2da37d5af801" name="HasSecondLink" memberEnd="14426f7e-673a-4457-ab0e-c96c45d95a78 e63f051a-8e92-4ebb-9a36-1ab9ecd6e055"/>
       <packagedElement xmi:type="uml:Association" xmi:id="7614aedb-dfa3-426e-9c26-73a44d2ddb96" name="HasFirstLink" memberEnd="1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9 12c158aa-af57-4163-9840-4d19640d092f"/>
-      <packagedElement xmi:type="uml:Association" xmi:id="_xIwpgLK8Ed-uk56s-ldeog" name="LinkOrderConstraintHasObjectVariable" memberEnd="_xIxQkLK8Ed-uk56s-ldeog _xIx3obK8Ed-uk56s-ldeog"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_xIwpgLK8Ed-uk56s-ldeog" name="LinkConstraintHasObjectVariable" memberEnd="_xIxQkLK8Ed-uk56s-ldeog _xIx3obK8Ed-uk56s-ldeog"/>
       <packagedElement xmi:type="uml:Association" xmi:id="639688a5-23e9-4581-98d8-2fcc57a3438b" name="HasSourceObject" memberEnd="e4084d63-9d8b-47a7-9d3e-34aeb0b09440 5e3eecac-3d82-4765-bec0-c98627eefb91"/>
       <packagedElement xmi:type="uml:Association" xmi:id="efa70337-efe7-457d-8d6a-3aea19469b7a" name="HasTargetObject" memberEnd="f59aeab8-59c7-4a35-bd9b-c05bda92d924 29ee7390-8b89-420e-99c9-e1179f7cfd54"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_XMUVoLK8Ed-uk56s-ldeog" name="ContainsRangeExpression" memberEnd="_XMU8sLK8Ed-uk56s-ldeog _XMVjwLK8Ed-uk56s-ldeog">
@@ -865,11 +865,11 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
         <ownedAttribute xmi:id="5e3eecac-3d82-4765-bec0-c98627eefb91" name="source" visibility="public" type="c0f72d07-a643-4da9-859b-d95cfca69eee" association="639688a5-23e9-4581-98d8-2fcc57a3438b">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA8BprKwEd-DYIlz5ANeHA" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="14426f7e-673a-4457-ab0e-c96c45d95a78" name="secondLinkOrderConstraint" visibility="public" type="8fd71d27-94c0-49d5-9902-a26156244424" association="5589daf2-a2cb-4afa-bb02-2da37d5af801">
+        <ownedAttribute xmi:id="14426f7e-673a-4457-ab0e-c96c45d95a78" name="secondLinkConstraint" visibility="public" type="8fd71d27-94c0-49d5-9902-a26156244424" association="5589daf2-a2cb-4afa-bb02-2da37d5af801">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA8osLKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA8osbKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9" name="firstLinkOrderConstraint" visibility="public" type="8fd71d27-94c0-49d5-9902-a26156244424" association="7614aedb-dfa3-426e-9c26-73a44d2ddb96">
+        <ownedAttribute xmi:id="1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9" name="firstLinkConstraint" visibility="public" type="8fd71d27-94c0-49d5-9902-a26156244424" association="7614aedb-dfa3-426e-9c26-73a44d2ddb96">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA8os7KwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA8otLKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
@@ -880,7 +880,7 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="74737b3a-1725-4fee-b753-d7458eda7189" name="BindingOperator">
-        <ownedLiteral xmi:id="888dbb97-a420-4e27-bfb0-f5b3de6da65b" name="CHECK"/>
+        <ownedLiteral xmi:id="888dbb97-a420-4e27-bfb0-f5b3de6da65b" name="CHECK_ONLY"/>
         <ownedLiteral xmi:id="261583f1-b911-4c05-b4d7-f7f2cda8496a" name="CREATE"/>
         <ownedLiteral xmi:id="501ae012-48cf-4ea0-83e6-11394bfe9a8d" name="DESTROY"/>
       </packagedElement>

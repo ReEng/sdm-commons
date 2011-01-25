@@ -301,7 +301,7 @@
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingSemantics/OPTIONAL"/>
       </genEnums>
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sdm.ecore#//patterns/BindingOperator">
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingOperator/CHECK"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingOperator/CHECK_ONLY"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingOperator/CREATE"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/BindingOperator/DESTROY"/>
       </genEnums>
@@ -347,9 +347,9 @@
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractLinkVariable/target"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractLinkVariable/secondLinkOrderConstraint"/>
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractLinkVariable/secondLinkConstraint"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractLinkVariable/firstLinkOrderConstraint"/>
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractLinkVariable/firstLinkConstraint"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/AbstractLinkVariable/bindingState"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
             createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractLinkVariable/pattern"/>

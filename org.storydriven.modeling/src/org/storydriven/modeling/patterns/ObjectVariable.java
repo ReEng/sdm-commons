@@ -100,7 +100,7 @@ public interface ObjectVariable extends Variable, NamedElement
 
    /**
     * Returns the value of the '<em><b>Binding Operator</b></em>' attribute.
-    * The default value is <code>"CHECK"</code>.
+    * The default value is <code>"CHECK_ONLY"</code>.
     * The literals are from the enumeration {@link org.storydriven.modeling.patterns.BindingOperator}.
     * <!-- begin-user-doc -->
     * <p>
@@ -112,7 +112,7 @@ public interface ObjectVariable extends Variable, NamedElement
     * @see org.storydriven.modeling.patterns.BindingOperator
     * @see #setBindingOperator(BindingOperator)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getObjectVariable_BindingOperator()
-    * @model default="CHECK" required="true" ordered="false"
+    * @model default="CHECK_ONLY" required="true" ordered="false"
     * @generated
     */
    BindingOperator getBindingOperator ();

@@ -483,20 +483,22 @@ public interface PatternsPackage extends EPackage
    int ABSTRACT_LINK_VARIABLE__TARGET = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
    /**
-    * The feature id for the '<em><b>Second Link Order Constraint</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Second Link Constraint</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int ABSTRACT_LINK_VARIABLE__SECOND_LINK_ORDER_CONSTRAINT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+   int ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
    /**
-    * The feature id for the '<em><b>First Link Order Constraint</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>First Link Constraint</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int ABSTRACT_LINK_VARIABLE__FIRST_LINK_ORDER_CONSTRAINT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+   int ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
    /**
     * The feature id for the '<em><b>Binding State</b></em>' attribute.
@@ -1423,20 +1425,22 @@ public interface PatternsPackage extends EPackage
    int PATH__TARGET = ABSTRACT_LINK_VARIABLE__TARGET;
 
    /**
-    * The feature id for the '<em><b>Second Link Order Constraint</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Second Link Constraint</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int PATH__SECOND_LINK_ORDER_CONSTRAINT = ABSTRACT_LINK_VARIABLE__SECOND_LINK_ORDER_CONSTRAINT;
+   int PATH__SECOND_LINK_CONSTRAINT = ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT;
 
    /**
-    * The feature id for the '<em><b>First Link Order Constraint</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>First Link Constraint</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int PATH__FIRST_LINK_ORDER_CONSTRAINT = ABSTRACT_LINK_VARIABLE__FIRST_LINK_ORDER_CONSTRAINT;
+   int PATH__FIRST_LINK_CONSTRAINT = ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT;
 
    /**
     * The feature id for the '<em><b>Binding State</b></em>' attribute.
@@ -1689,20 +1693,22 @@ public interface PatternsPackage extends EPackage
    int LINK_VARIABLE__TARGET = ABSTRACT_LINK_VARIABLE__TARGET;
 
    /**
-    * The feature id for the '<em><b>Second Link Order Constraint</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Second Link Constraint</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_VARIABLE__SECOND_LINK_ORDER_CONSTRAINT = ABSTRACT_LINK_VARIABLE__SECOND_LINK_ORDER_CONSTRAINT;
+   int LINK_VARIABLE__SECOND_LINK_CONSTRAINT = ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT;
 
    /**
-    * The feature id for the '<em><b>First Link Order Constraint</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>First Link Constraint</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_VARIABLE__FIRST_LINK_ORDER_CONSTRAINT = ABSTRACT_LINK_VARIABLE__FIRST_LINK_ORDER_CONSTRAINT;
+   int LINK_VARIABLE__FIRST_LINK_CONSTRAINT = ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT;
 
    /**
     * The feature id for the '<em><b>Binding State</b></em>' attribute.
@@ -1971,20 +1977,22 @@ public interface PatternsPackage extends EPackage
    int CONTAINMENT_RELATION__TARGET = ABSTRACT_LINK_VARIABLE__TARGET;
 
    /**
-    * The feature id for the '<em><b>Second Link Order Constraint</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Second Link Constraint</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int CONTAINMENT_RELATION__SECOND_LINK_ORDER_CONSTRAINT = ABSTRACT_LINK_VARIABLE__SECOND_LINK_ORDER_CONSTRAINT;
+   int CONTAINMENT_RELATION__SECOND_LINK_CONSTRAINT = ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT;
 
    /**
-    * The feature id for the '<em><b>First Link Order Constraint</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>First Link Constraint</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int CONTAINMENT_RELATION__FIRST_LINK_ORDER_CONSTRAINT = ABSTRACT_LINK_VARIABLE__FIRST_LINK_ORDER_CONSTRAINT;
+   int CONTAINMENT_RELATION__FIRST_LINK_CONSTRAINT = ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT;
 
    /**
     * The feature id for the '<em><b>Binding State</b></em>' attribute.
@@ -2936,24 +2944,26 @@ public interface PatternsPackage extends EPackage
    EReference getAbstractLinkVariable_Target ();
 
    /**
-    * Returns the meta object for the reference list '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getSecondLinkOrderConstraints <em>Second Link Order Constraint</em>}'.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @return the meta object for the reference list '<em>Second Link Order Constraint</em>'.
-    * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getSecondLinkOrderConstraints()
+    * Returns the meta object for the reference list '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getSecondLinkConstraints <em>Second Link Constraint</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the reference list '<em>Second Link Constraint</em>'.
+    * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getSecondLinkConstraints()
     * @see #getAbstractLinkVariable()
     * @generated
     */
-   EReference getAbstractLinkVariable_SecondLinkOrderConstraint ();
+   EReference getAbstractLinkVariable_SecondLinkConstraint ();
 
    /**
-    * Returns the meta object for the reference list '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getFirstLinkOrderConstraints <em>First Link Order Constraint</em>}'.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @return the meta object for the reference list '<em>First Link Order Constraint</em>'.
-    * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getFirstLinkOrderConstraints()
+    * Returns the meta object for the reference list '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getFirstLinkConstraints <em>First Link Constraint</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the reference list '<em>First Link Constraint</em>'.
+    * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getFirstLinkConstraints()
     * @see #getAbstractLinkVariable()
     * @generated
     */
-   EReference getAbstractLinkVariable_FirstLinkOrderConstraint ();
+   EReference getAbstractLinkVariable_FirstLinkConstraint ();
 
    /**
     * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getBindingState <em>Binding State</em>}'.
@@ -3503,20 +3513,22 @@ public interface PatternsPackage extends EPackage
       EReference ABSTRACT_LINK_VARIABLE__TARGET = eINSTANCE.getAbstractLinkVariable_Target();
 
       /**
-       * The meta object literal for the '<em><b>Second Link Order Constraint</b></em>' reference list feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * The meta object literal for the '<em><b>Second Link Constraint</b></em>' reference list feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EReference ABSTRACT_LINK_VARIABLE__SECOND_LINK_ORDER_CONSTRAINT = eINSTANCE
-         .getAbstractLinkVariable_SecondLinkOrderConstraint();
+      EReference ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT = eINSTANCE
+         .getAbstractLinkVariable_SecondLinkConstraint();
 
       /**
-       * The meta object literal for the '<em><b>First Link Order Constraint</b></em>' reference list feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * The meta object literal for the '<em><b>First Link Constraint</b></em>' reference list feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EReference ABSTRACT_LINK_VARIABLE__FIRST_LINK_ORDER_CONSTRAINT = eINSTANCE
-         .getAbstractLinkVariable_FirstLinkOrderConstraint();
+      EReference ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT = eINSTANCE
+         .getAbstractLinkVariable_FirstLinkConstraint();
 
       /**
        * The meta object literal for the '<em><b>Binding State</b></em>' attribute feature.

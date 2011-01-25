@@ -495,7 +495,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingSemantics" ordered="false"
           lowerBound="1" eType="#//patterns/BindingSemantics" defaultValueLiteral="MANDATORY"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingOperator" ordered="false"
-          lowerBound="1" eType="#//patterns/BindingOperator" defaultValueLiteral="CHECK"/>
+          lowerBound="1" eType="#//patterns/BindingOperator" defaultValueLiteral="CHECK_ONLY"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" ordered="false"
           lowerBound="1" eType="#//patterns/StoryPattern" eOpposite="#//patterns/StoryPattern/objectVariable"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="attributeAssignment"
@@ -531,7 +531,7 @@
       <eLiterals name="OPTIONAL" value="2"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="BindingOperator">
-      <eLiterals name="CHECK"/>
+      <eLiterals name="CHECK_ONLY"/>
       <eLiterals name="CREATE" value="1"/>
       <eLiterals name="DESTROY" value="2"/>
     </eClassifiers>
@@ -548,12 +548,12 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingSemantics" ordered="false"
           lowerBound="1" eType="#//patterns/BindingSemantics" defaultValueLiteral="MANDATORY"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingOperator" ordered="false"
-          lowerBound="1" eType="#//patterns/BindingOperator" defaultValueLiteral="CHECK"/>
+          lowerBound="1" eType="#//patterns/BindingOperator" defaultValueLiteral="CHECK_ONLY"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
           lowerBound="1" eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/incomingLink"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="secondLinkOrderConstraint"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="secondLinkConstraint"
           ordered="false" upperBound="-1" eType="#//patterns/LinkConstraint" eOpposite="#//patterns/LinkConstraint/secondLink"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="firstLinkOrderConstraint"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="firstLinkConstraint"
           ordered="false" upperBound="-1" eType="#//patterns/LinkConstraint" eOpposite="#//patterns/LinkConstraint/firstLink"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" ordered="false"
           lowerBound="1" eType="#//patterns/BindingState"/>
@@ -570,11 +570,11 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="negative" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="firstLink" ordered="false"
-          lowerBound="1" eType="#//patterns/AbstractLinkVariable" eOpposite="#//patterns/AbstractLinkVariable/firstLinkOrderConstraint"/>
+          lowerBound="1" eType="#//patterns/AbstractLinkVariable" eOpposite="#//patterns/AbstractLinkVariable/firstLinkConstraint"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="referencingObject" ordered="false"
           lowerBound="1" eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/linkOrderConstraint"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="secondLink" ordered="false"
-          eType="#//patterns/AbstractLinkVariable" eOpposite="#//patterns/AbstractLinkVariable/secondLinkOrderConstraint"/>
+          eType="#//patterns/AbstractLinkVariable" eOpposite="#//patterns/AbstractLinkVariable/secondLinkConstraint"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="LinkConstraintType">
       <eLiterals name="FIRST"/>

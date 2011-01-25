@@ -115,7 +115,7 @@ public interface LinkConstraint extends ExtendableElement
 
    /**
     * Returns the value of the '<em><b>First Link</b></em>' reference.
-    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getFirstLinkOrderConstraints <em>First Link Order Constraint</em>}'.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getFirstLinkConstraints <em>First Link Constraint</em>}'.
     * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>First Link</em>' reference isn't clear,
@@ -125,8 +125,8 @@ public interface LinkConstraint extends ExtendableElement
     * @return the value of the '<em>First Link</em>' reference.
     * @see #setFirstLink(AbstractLinkVariable)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkConstraint_FirstLink()
-    * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getFirstLinkOrderConstraints
-    * @model opposite="firstLinkOrderConstraint" required="true" ordered="false"
+    * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getFirstLinkConstraints
+    * @model opposite="firstLinkConstraint" required="true" ordered="false"
     * @generated
     */
    AbstractLinkVariable getFirstLink ();
@@ -171,7 +171,7 @@ public interface LinkConstraint extends ExtendableElement
 
    /**
     * Returns the value of the '<em><b>Second Link</b></em>' reference.
-    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getSecondLinkOrderConstraints <em>Second Link Order Constraint</em>}'.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getSecondLinkConstraints <em>Second Link Constraint</em>}'.
     * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Second Link</em>' reference isn't clear,
@@ -181,8 +181,8 @@ public interface LinkConstraint extends ExtendableElement
     * @return the value of the '<em>Second Link</em>' reference.
     * @see #setSecondLink(AbstractLinkVariable)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkConstraint_SecondLink()
-    * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getSecondLinkOrderConstraints
-    * @model opposite="secondLinkOrderConstraint" ordered="false"
+    * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getSecondLinkConstraints
+    * @model opposite="secondLinkConstraint" ordered="false"
     * @generated
     */
    AbstractLinkVariable getSecondLink ();

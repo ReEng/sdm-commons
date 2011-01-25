@@ -24,23 +24,21 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum BindingOperator implements Enumerator
 {
    /**
-    * The '<em><b>CHECK</b></em>' literal object.
+    * The '<em><b>CHECK ONLY</b></em>' literal object.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @see #CHECK_VALUE
+    * @see #CHECK_ONLY_VALUE
     * @generated
     * @ordered
     */
-   CHECK (0, "CHECK", "CHECK"),
-
-   /**
-    * The '<em><b>CREATE</b></em>' literal object.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #CREATE_VALUE
-    * @generated
-    * @ordered
-    */
+   CHECK_ONLY (0, "CHECK_ONLY", "CHECK_ONLY"), /**
+                                                * The '<em><b>CREATE</b></em>' literal object.
+                                                * <!-- begin-user-doc -->
+                                                * <!-- end-user-doc -->
+                                                * @see #CREATE_VALUE
+                                                * @generated
+                                                * @ordered
+                                                */
    CREATE (1, "CREATE", "CREATE"),
 
    /**
@@ -54,19 +52,19 @@ public enum BindingOperator implements Enumerator
    DESTROY (2, "DESTROY", "DESTROY");
 
    /**
-    * The '<em><b>CHECK</b></em>' literal value.
+    * The '<em><b>CHECK ONLY</b></em>' literal value.
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of '<em><b>CHECK</b></em>' literal object isn't clear,
+    * If the meaning of '<em><b>CHECK ONLY</b></em>' literal object isn't clear,
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @see #CHECK
+    * @see #CHECK_ONLY
     * @model
     * @generated
     * @ordered
     */
-   public static final int CHECK_VALUE = 0;
+   public static final int CHECK_ONLY_VALUE = 0;
 
    /**
     * The '<em><b>CREATE</b></em>' literal value.
@@ -104,7 +102,7 @@ public enum BindingOperator implements Enumerator
     * <!-- end-user-doc -->
     * @generated
     */
-   private static final BindingOperator[] VALUES_ARRAY = new BindingOperator[] {CHECK, CREATE, DESTROY,};
+   private static final BindingOperator[] VALUES_ARRAY = new BindingOperator[] {CHECK_ONLY, CREATE, DESTROY,};
 
    /**
     * A public read-only list of all the '<em><b>Binding Operator</b></em>' enumerators.
@@ -162,8 +160,8 @@ public enum BindingOperator implements Enumerator
    {
       switch (value)
       {
-         case CHECK_VALUE:
-            return CHECK;
+         case CHECK_ONLY_VALUE:
+            return CHECK_ONLY;
          case CREATE_VALUE:
             return CREATE;
          case DESTROY_VALUE:

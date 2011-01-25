@@ -1,99 +1,99 @@
 <?xml version="1.0" encoding="ASCII"?>
 <com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/0.9.0" xmi:id="_B_Gt4CJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_ZYPbsLbPEd-5oaYsE5oIPw">
   <modelElement href="sdm.uml#_ZYPbsLbPEd-5oaYsE5oIPw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_CATAsCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5589daf2-a2cb-4afa-bb02-2da37d5af801" sourceAnchor="21.0,5.0" targetAnchor="335.0,119.0" source="_CAl7oCJCEeCMEorpcZtLvw" target="_CAcx7yJCEeCMEorpcZtLvw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_CATAsCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5589daf2-a2cb-4afa-bb02-2da37d5af801" sourceAnchor="0.0,47.0" targetAnchor="334.0,115.0" source="_CAl7oCJCEeCMEorpcZtLvw" target="_CAcx7yJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#5589daf2-a2cb-4afa-bb02-2da37d5af801"/>
     <visualProperties xmi:id="_CATAuCJCEeCMEorpcZtLvw"/>
     <nameVisual xmi:id="_CATAsSJCEeCMEorpcZtLvw" text="HasSecondLink">
-      <visualProperties xmi:id="_CGZouSJCEeCMEorpcZtLvw" position="-91.0,4.0"/>
+      <visualProperties xmi:id="_CGZouSJCEeCMEorpcZtLvw" position="2.0,-106.0"/>
     </nameVisual>
-    <bendpoints xmi:id="_eqU0YCehEeCn77wMTjBpqg" sourceX="-1" sourceY="-155" targetX="190"/>
-    <sourceRole xmi:id="_CATAsiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#14426f7e-673a-4457-ab0e-c96c45d95a78" name="secondLinkOrderConstraint" navigable="true">
+    <bendpoints xmi:id="_C1CuhShwEeCgEbgNe3FItA" sourceX="-161" sourceY="1" targetY="192"/>
+    <sourceRole xmi:id="_CATAsiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#14426f7e-673a-4457-ab0e-c96c45d95a78" name="secondLinkConstraint" navigable="true">
       <modelElement href="sdm.uml#14426f7e-673a-4457-ab0e-c96c45d95a78"/>
-      <visualProperties xmi:id="_CGZouCJCEeCMEorpcZtLvw" position="-149.0,-39.0"/>
+      <visualProperties xmi:id="_CGZouCJCEeCMEorpcZtLvw" position="-121.0,-19.0"/>
       <visibility xmi:id="_CATAsyJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CATAtCJCEeCMEorpcZtLvw" label="*" max="-1"/>
     </sourceRole>
     <targetRole xmi:id="_CATAtSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#e63f051a-8e92-4ebb-9a36-1ab9ecd6e055" name="secondLink" navigable="true">
       <modelElement href="sdm.uml#e63f051a-8e92-4ebb-9a36-1ab9ecd6e055"/>
-      <visualProperties xmi:id="_CGZouiJCEeCMEorpcZtLvw" position="2.0,-14.0"/>
+      <visualProperties xmi:id="_CGZouiJCEeCMEorpcZtLvw" position="2.0,2.0"/>
       <visibility xmi:id="_CATAtiJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CATAtyJCEeCMEorpcZtLvw" label="0..1" max="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_CATAuSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#7614aedb-dfa3-426e-9c26-73a44d2ddb96" sourceAnchor="0.0,58.0" targetAnchor="326.0,168.0" source="_CAl7oCJCEeCMEorpcZtLvw" target="_CAcx7yJCEeCMEorpcZtLvw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_CATAuSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#7614aedb-dfa3-426e-9c26-73a44d2ddb96" sourceAnchor="56.0,0.0" targetAnchor="341.0,88.0" source="_CAl7oCJCEeCMEorpcZtLvw" target="_CAcx7yJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#7614aedb-dfa3-426e-9c26-73a44d2ddb96"/>
     <visualProperties xmi:id="_CATAwSJCEeCMEorpcZtLvw"/>
     <nameVisual xmi:id="_CATAuiJCEeCMEorpcZtLvw" text="HasFirstLink">
-      <visualProperties xmi:id="_CGZotiJCEeCMEorpcZtLvw" position="2.0,-17.0"/>
+      <visualProperties xmi:id="_CGZotiJCEeCMEorpcZtLvw" position="-76.0,3.0"/>
     </nameVisual>
-    <bendpoints xmi:id="_eqUNUCehEeCn77wMTjBpqg" sourceX="-179" targetY="159"/>
-    <sourceRole xmi:id="_CATAuyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9" name="firstLinkOrderConstraint" navigable="true">
+    <bendpoints xmi:id="_C1CuhChwEeCgEbgNe3FItA" sourceY="-171" targetX="210"/>
+    <sourceRole xmi:id="_CATAuyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9" name="firstLinkConstraint" navigable="true">
       <modelElement href="sdm.uml#1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9"/>
-      <visualProperties xmi:id="_CGZotSJCEeCMEorpcZtLvw" position="-130.0,-19.0"/>
+      <visualProperties xmi:id="_CGZotSJCEeCMEorpcZtLvw" position="-103.0,-36.0"/>
       <visibility xmi:id="_CATAvCJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CATAvSJCEeCMEorpcZtLvw" label="*" max="-1"/>
     </sourceRole>
     <targetRole xmi:id="_CATAviJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#12c158aa-af57-4163-9840-4d19640d092f" name="firstLink" navigable="true">
       <modelElement href="sdm.uml#12c158aa-af57-4163-9840-4d19640d092f"/>
-      <visualProperties xmi:id="_CGZotyJCEeCMEorpcZtLvw" position="2.0,3.0"/>
+      <visualProperties xmi:id="_CGZotyJCEeCMEorpcZtLvw" position="1.0,-18.0"/>
       <visibility xmi:id="_CATAvyJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CATAwCJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_CATAwiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_xIwpgLK8Ed-uk56s-ldeog" sourceAnchor="157.0,0.0" targetAnchor="96.0,167.0" source="_CAl7oCJCEeCMEorpcZtLvw" target="_CAl7xiJCEeCMEorpcZtLvw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_CATAwiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_xIwpgLK8Ed-uk56s-ldeog" sourceAnchor="241.0,0.0" targetAnchor="170.0,167.0" source="_CAl7oCJCEeCMEorpcZtLvw" target="_CAl7xiJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_xIwpgLK8Ed-uk56s-ldeog"/>
     <visualProperties xmi:id="_CATAyiJCEeCMEorpcZtLvw"/>
-    <nameVisual xmi:id="_CATAwyJCEeCMEorpcZtLvw" text="LinkOrderConstraintHasObjectVariable">
-      <visualProperties xmi:id="_CGiyoCJCEeCMEorpcZtLvw" position="1.0,0.0"/>
+    <nameVisual xmi:id="_CATAwyJCEeCMEorpcZtLvw" text="LinkConstraintHasObjectVariable">
+      <visualProperties xmi:id="_CGiyoCJCEeCMEorpcZtLvw" position="-77.0,-9.0"/>
     </nameVisual>
     <sourceRole xmi:id="_CATAxCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_xIxQkLK8Ed-uk56s-ldeog" aggregationKind="2" name="linkOrderConstraint" navigable="true">
       <modelElement href="sdm.uml#_xIxQkLK8Ed-uk56s-ldeog"/>
-      <visualProperties xmi:id="_CGZouyJCEeCMEorpcZtLvw" position="-107.0,-36.0"/>
+      <visualProperties xmi:id="_CGZouyJCEeCMEorpcZtLvw" position="4.0,-37.0"/>
       <visibility xmi:id="_CATAxSJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CATAxiJCEeCMEorpcZtLvw" label="*" max="-1"/>
     </sourceRole>
     <targetRole xmi:id="_CATAxyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_xIx3obK8Ed-uk56s-ldeog" name="referencingObject" navigable="true">
       <modelElement href="sdm.uml#_xIx3obK8Ed-uk56s-ldeog"/>
-      <visualProperties xmi:id="_CGiyoSJCEeCMEorpcZtLvw" position="-97.0,1.0"/>
+      <visualProperties xmi:id="_CGiyoSJCEeCMEorpcZtLvw" position="2.0,0.0"/>
       <visibility xmi:id="_CATAyCJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CATAySJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_CATAyyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#639688a5-23e9-4581-98d8-2fcc57a3438b" sourceAnchor="341.0,54.0" targetAnchor="0.0,54.0" source="_CAcx7yJCEeCMEorpcZtLvw" target="_CAl7xiJCEeCMEorpcZtLvw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_CATAyyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#639688a5-23e9-4581-98d8-2fcc57a3438b" sourceAnchor="339.0,50.0" targetAnchor="1.0,50.0" source="_CAcx7yJCEeCMEorpcZtLvw" target="_CAl7xiJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#639688a5-23e9-4581-98d8-2fcc57a3438b"/>
     <visualProperties xmi:id="_CATA0yJCEeCMEorpcZtLvw"/>
     <nameVisual xmi:id="_CATAzCJCEeCMEorpcZtLvw" text="HasSourceObject">
-      <visualProperties xmi:id="_CGZosCJCEeCMEorpcZtLvw" position="-38.0,17.0"/>
+      <visualProperties xmi:id="_CGZosCJCEeCMEorpcZtLvw" position="-42.0,-15.0"/>
     </nameVisual>
     <sourceRole xmi:id="_CATAzSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#e4084d63-9d8b-47a7-9d3e-34aeb0b09440" name="outgoingLink" navigable="true">
       <modelElement href="sdm.uml#e4084d63-9d8b-47a7-9d3e-34aeb0b09440"/>
-      <visualProperties xmi:id="_CGP3vyJCEeCMEorpcZtLvw" position="0.0,-16.0"/>
+      <visualProperties xmi:id="_CGP3vyJCEeCMEorpcZtLvw" position="1.0,-17.0"/>
       <visibility xmi:id="_CATAziJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CATAzyJCEeCMEorpcZtLvw" label="*" max="-1"/>
     </sourceRole>
     <targetRole xmi:id="_CATA0CJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5e3eecac-3d82-4765-bec0-c98627eefb91" name="source" navigable="true">
       <modelElement href="sdm.uml#5e3eecac-3d82-4765-bec0-c98627eefb91"/>
-      <visualProperties xmi:id="_CGZosSJCEeCMEorpcZtLvw" position="-41.0,-19.0"/>
+      <visualProperties xmi:id="_CGZosSJCEeCMEorpcZtLvw" position="-41.0,-16.0"/>
       <visibility xmi:id="_CATA0SJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CATA0iJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_CATA1CJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#efa70337-efe7-457d-8d6a-3aea19469b7a" sourceAnchor="341.0,24.0" targetAnchor="0.0,24.0" source="_CAcx7yJCEeCMEorpcZtLvw" target="_CAl7xiJCEeCMEorpcZtLvw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_CATA1CJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#efa70337-efe7-457d-8d6a-3aea19469b7a" sourceAnchor="337.0,19.0" targetAnchor="3.0,18.0" source="_CAcx7yJCEeCMEorpcZtLvw" target="_CAl7xiJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#efa70337-efe7-457d-8d6a-3aea19469b7a"/>
     <visualProperties xmi:id="_CATA3CJCEeCMEorpcZtLvw"/>
     <nameVisual xmi:id="_CATA1SJCEeCMEorpcZtLvw" text="HasTargetObject">
-      <visualProperties xmi:id="_CGZosyJCEeCMEorpcZtLvw" position="-29.0,2.0"/>
+      <visualProperties xmi:id="_CGZosyJCEeCMEorpcZtLvw" position="-41.0,-17.0"/>
     </nameVisual>
     <sourceRole xmi:id="_CATA1iJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#f59aeab8-59c7-4a35-bd9b-c05bda92d924" name="incomingLink" navigable="true">
       <modelElement href="sdm.uml#f59aeab8-59c7-4a35-bd9b-c05bda92d924"/>
-      <visualProperties xmi:id="_CGZosiJCEeCMEorpcZtLvw" position="1.0,-19.0"/>
+      <visualProperties xmi:id="_CGZosiJCEeCMEorpcZtLvw" position="2.0,-18.0"/>
       <visibility xmi:id="_CATA1yJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CATA2CJCEeCMEorpcZtLvw" label="*" max="-1"/>
     </sourceRole>
     <targetRole xmi:id="_CATA2SJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#29ee7390-8b89-420e-99c9-e1179f7cfd54" name="target" navigable="true">
       <modelElement href="sdm.uml#29ee7390-8b89-420e-99c9-e1179f7cfd54"/>
-      <visualProperties xmi:id="_CGZotCJCEeCMEorpcZtLvw" position="-34.0,-22.0"/>
+      <visualProperties xmi:id="_CGZotCJCEeCMEorpcZtLvw" position="-35.0,-17.0"/>
       <visibility xmi:id="_CATA2iJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CATA2yJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
     </targetRole>
@@ -151,7 +151,7 @@
     </nameVisual>
     <sourceRole xmi:id="_CATA-iJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0494208f-7471-4bfe-8c33-9a7bd40c3425" name="objectVariable" navigable="true">
       <modelElement href="sdm.uml#0494208f-7471-4bfe-8c33-9a7bd40c3425"/>
-      <visualProperties xmi:id="_CGiyoiJCEeCMEorpcZtLvw" position="-78.0,3.0"/>
+      <visualProperties xmi:id="_CGiyoiJCEeCMEorpcZtLvw" position="1.0,2.0"/>
       <visibility xmi:id="_CATA-yJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CATA_CJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
     </sourceRole>
@@ -168,8 +168,8 @@
     <nameVisual xmi:id="_CATBAiJCEeCMEorpcZtLvw" text="ContainsObject">
       <visualProperties xmi:id="_CGiyqSJCEeCMEorpcZtLvw" position="-13.0,-17.0"/>
     </nameVisual>
-    <bendpoints xmi:id="_eqRxECehEeCn77wMTjBpqg" sourceY="88" targetX="-563" targetY="-26"/>
-    <bendpoints xmi:id="_eqSYICehEeCn77wMTjBpqg" sourceX="563" sourceY="88" targetY="-26"/>
+    <bendpoints xmi:id="_C049gihwEeCgEbgNe3FItA" sourceY="88" targetX="-563" targetY="-26"/>
+    <bendpoints xmi:id="_C049gyhwEeCgEbgNe3FItA" sourceX="563" sourceY="88" targetY="-26"/>
     <sourceRole xmi:id="_CATBAyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#97f7e21a-6cb3-4e71-a689-faf97d6546e6" name="pattern" navigable="true">
       <modelElement href="sdm.uml#97f7e21a-6cb3-4e71-a689-faf97d6546e6"/>
       <visualProperties xmi:id="_CGiyqCJCEeCMEorpcZtLvw" position="-10.0,17.0"/>
@@ -202,18 +202,18 @@
     <modelElement href="sdm.uml#_qIMWsLLxEd-uk56s-ldeog"/>
     <visualProperties xmi:id="_CATBGyJCEeCMEorpcZtLvw"/>
     <nameVisual xmi:id="_CATBFCJCEeCMEorpcZtLvw" text="ContainsConstraints">
-      <visualProperties xmi:id="_CGsjpyJCEeCMEorpcZtLvw" position="-128.0,2.0"/>
+      <visualProperties xmi:id="_CGsjpyJCEeCMEorpcZtLvw" position="-137.0,-15.0"/>
     </nameVisual>
-    <bendpoints xmi:id="_eqTmQCehEeCn77wMTjBpqg" sourceX="429" targetY="-56"/>
+    <bendpoints xmi:id="_C1CugyhwEeCgEbgNe3FItA" sourceX="402" targetY="-57"/>
     <sourceRole xmi:id="_CATBFSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_qIM9wLLxEd-uk56s-ldeog" name="pattern" navigable="true">
       <modelElement href="sdm.uml#_qIM9wLLxEd-uk56s-ldeog"/>
-      <visualProperties xmi:id="_CGsjpiJCEeCMEorpcZtLvw" position="17.0,-16.0"/>
+      <visualProperties xmi:id="_CGsjpiJCEeCMEorpcZtLvw" position="36.0,2.0"/>
       <visibility xmi:id="_CATBFiJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CATBFyJCEeCMEorpcZtLvw" label="0..1" max="1"/>
     </sourceRole>
     <targetRole xmi:id="_CATBGCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_qINk0bLxEd-uk56s-ldeog" aggregationKind="2" name="constraint" navigable="true">
       <modelElement href="sdm.uml#_qINk0bLxEd-uk56s-ldeog"/>
-      <visualProperties xmi:id="_CGsjqCJCEeCMEorpcZtLvw" position="-60.0,-35.0"/>
+      <visualProperties xmi:id="_CGsjqCJCEeCMEorpcZtLvw" position="-59.0,-36.0"/>
       <visibility xmi:id="_CATBGSJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CATBGiJCEeCMEorpcZtLvw" label="*" max="-1"/>
     </targetRole>
@@ -224,9 +224,9 @@
     <nameVisual xmi:id="_CATBHSJCEeCMEorpcZtLvw" text="ContainsChildPattern">
       <visualProperties xmi:id="_CGsjoSJCEeCMEorpcZtLvw" position="5.0,-32.0"/>
     </nameVisual>
-    <bendpoints xmi:id="_eqSYISehEeCn77wMTjBpqg" sourceY="56" targetX="-136" targetY="83"/>
-    <bendpoints xmi:id="_eqS_MCehEeCn77wMTjBpqg" sourceX="172" sourceY="57" targetX="36" targetY="84"/>
-    <bendpoints xmi:id="_eqS_MSehEeCn77wMTjBpqg" sourceX="173" sourceY="-27" targetX="37"/>
+    <bendpoints xmi:id="_C1CugChwEeCgEbgNe3FItA" sourceY="56" targetX="-136" targetY="83"/>
+    <bendpoints xmi:id="_C1CugShwEeCgEbgNe3FItA" sourceX="172" sourceY="57" targetX="36" targetY="84"/>
+    <bendpoints xmi:id="_C1CugihwEeCgEbgNe3FItA" sourceX="173" sourceY="-27" targetX="37"/>
     <sourceRole xmi:id="_CATBHiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#7ce0a38c-81f6-4c40-9a4a-941e9e84f02a" name="parentPattern" navigable="true">
       <modelElement href="sdm.uml#7ce0a38c-81f6-4c40-9a4a-941e9e84f02a"/>
       <visualProperties xmi:id="_CGsjoCJCEeCMEorpcZtLvw" position="4.0,8.0"/>
@@ -349,17 +349,17 @@
     <modelElement href="sdm.uml#_IIEcMBzcEeChOvWwuwx7tQ"/>
     <visualProperties xmi:id="_CAcxwSJCEeCMEorpcZtLvw"/>
     <nameVisual xmi:id="_CAcxuiJCEeCMEorpcZtLvw" text="ContainsLinkVariables">
-      <visualProperties xmi:id="_CGsjpCJCEeCMEorpcZtLvw" position="-140.0,22.0"/>
+      <visualProperties xmi:id="_CGsjpCJCEeCMEorpcZtLvw" position="-135.0,22.0"/>
     </nameVisual>
     <sourceRole xmi:id="_CAcxuyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_IIFDQBzcEeChOvWwuwx7tQ" name="pattern" navigable="true">
       <modelElement href="sdm.uml#_IIFDQBzcEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_CGsjoyJCEeCMEorpcZtLvw" position="-39.0,2.0"/>
+      <visualProperties xmi:id="_CGsjoyJCEeCMEorpcZtLvw" position="-42.0,1.0"/>
       <visibility xmi:id="_CAcxvCJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CAcxvSJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
     </sourceRole>
     <targetRole xmi:id="_CAcxviJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_IIFqUBzcEeChOvWwuwx7tQ" aggregationKind="2" name="linkVariable" navigable="true">
       <modelElement href="sdm.uml#_IIFqUBzcEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_CGsjpSJCEeCMEorpcZtLvw" position="-26.0,-38.0"/>
+      <visualProperties xmi:id="_CGsjpSJCEeCMEorpcZtLvw" position="-21.0,-40.0"/>
       <visibility xmi:id="_CAcxvyJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CAcxwCJCEeCMEorpcZtLvw" label="*" max="-1"/>
     </targetRole>
@@ -379,39 +379,39 @@
       <cardinality xmi:id="_CAcxySJCEeCMEorpcZtLvw" label="0..1" max="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_CAcxyyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Q52lcBzdEeChOvWwuwx7tQ" sourceAnchor="208.0,0.0" targetAnchor="118.0,54.0" source="_CAl7xiJCEeCMEorpcZtLvw" target="_CAvsuiJCEeCMEorpcZtLvw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_CAcxyyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Q52lcBzdEeChOvWwuwx7tQ" sourceAnchor="200.0,0.0" targetAnchor="137.0,54.0" source="_CAl7xiJCEeCMEorpcZtLvw" target="_CAvsuiJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_Q52lcBzdEeChOvWwuwx7tQ"/>
     <visualProperties xmi:id="_CAcx0yJCEeCMEorpcZtLvw"/>
     <nameVisual xmi:id="_CAcxzCJCEeCMEorpcZtLvw" text="ContainsConstraints">
-      <visualProperties xmi:id="_CGiypiJCEeCMEorpcZtLvw" position="3.0,-12.0"/>
+      <visualProperties xmi:id="_CGiypiJCEeCMEorpcZtLvw" position="-125.0,-28.0"/>
     </nameVisual>
     <sourceRole xmi:id="_CAcxzSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Q53MgBzdEeChOvWwuwx7tQ" name="objectVariable" navigable="true">
       <modelElement href="sdm.uml#_Q53MgBzdEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_CGiypSJCEeCMEorpcZtLvw" position="7.0,-36.0"/>
+      <visualProperties xmi:id="_CGiypSJCEeCMEorpcZtLvw" position="7.0,-37.0"/>
       <visibility xmi:id="_CAcxziJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CAcxzyJCEeCMEorpcZtLvw" label="0..1" max="1"/>
     </sourceRole>
     <targetRole xmi:id="_CAcx0CJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Q53zkRzdEeChOvWwuwx7tQ" aggregationKind="2" name="constraint" navigable="true">
       <modelElement href="sdm.uml#_Q53zkRzdEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_CGiypyJCEeCMEorpcZtLvw" position="-60.0,0.0"/>
+      <visualProperties xmi:id="_CGiypyJCEeCMEorpcZtLvw" position="5.0,2.0"/>
       <visibility xmi:id="_CAcx0SJCEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_CAcx0iJCEeCMEorpcZtLvw" label="*" max="-1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_CAvsoSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_OBEkg7KwEd-DYIlz5ANeHA" sourceAnchor="193.0,0.0" targetAnchor="170.0,168.0" subClass="_CAvsoiJCEeCMEorpcZtLvw" superClass="_CAcx7yJCEeCMEorpcZtLvw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_CAvsoSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_OBEkg7KwEd-DYIlz5ANeHA" sourceAnchor="193.0,0.0" targetAnchor="170.0,117.0" subClass="_CAvsoiJCEeCMEorpcZtLvw" superClass="_CAcx7yJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_OBEkg7KwEd-DYIlz5ANeHA"/>
-    <bendpoints xmi:id="_eqP74CehEeCn77wMTjBpqg" sourceY="-125" targetX="96" targetY="19"/>
-    <bendpoints xmi:id="_eqP74SehEeCn77wMTjBpqg" sourceX="-96" sourceY="-125" targetY="19"/>
+    <bendpoints xmi:id="_C1CuiChwEeCgEbgNe3FItA" sourceY="-126" targetX="98" targetY="20"/>
+    <bendpoints xmi:id="_C1CuiShwEeCgEbgNe3FItA" sourceX="-98" sourceY="-126" targetY="20"/>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_CAvsqSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_thd1MBzUEeChOvWwuwx7tQ" sourceAnchor="126.0,0.0" targetAnchor="170.0,168.0" subClass="_CAvsqyJCEeCMEorpcZtLvw" superClass="_CAcx7yJCEeCMEorpcZtLvw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_CAvsqSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_thd1MBzUEeChOvWwuwx7tQ" sourceAnchor="126.0,0.0" targetAnchor="170.0,117.0" subClass="_CAvsqyJCEeCMEorpcZtLvw" superClass="_CAcx7yJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_thd1MBzUEeChOvWwuwx7tQ"/>
-    <bendpoints xmi:id="_eqPU0CehEeCn77wMTjBpqg" sourceY="-20" targetX="-45" targetY="19"/>
-    <bendpoints xmi:id="_eqPU0SehEeCn77wMTjBpqg" sourceX="45" sourceY="-20" targetY="19"/>
+    <bendpoints xmi:id="_C1CuhihwEeCgEbgNe3FItA" sourceY="-21" targetX="-43" targetY="20"/>
+    <bendpoints xmi:id="_C1CuhyhwEeCgEbgNe3FItA" sourceX="43" sourceY="-21" targetY="20"/>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_CAvsyyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_ocwZoBzeEeChOvWwuwx7tQ" sourceAnchor="105.0,0.0" targetAnchor="170.0,168.0" subClass="_CA42kCJCEeCMEorpcZtLvw" superClass="_CAcx7yJCEeCMEorpcZtLvw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_CAvsyyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_ocwZoBzeEeChOvWwuwx7tQ" sourceAnchor="102.0,2.0" targetAnchor="170.0,117.0" subClass="_CA42kCJCEeCMEorpcZtLvw" superClass="_CAcx7yJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_ocwZoBzeEeChOvWwuwx7tQ"/>
-    <bendpoints xmi:id="_eqQi8CehEeCn77wMTjBpqg" sourceY="-188" targetX="126" targetY="19"/>
-    <bendpoints xmi:id="_eqQi8SehEeCn77wMTjBpqg" sourceX="-126" sourceY="-188" targetY="19"/>
+    <bendpoints xmi:id="_C1CuiyhwEeCgEbgNe3FItA" sourceX="-1" sourceY="-191" targetX="124" targetY="20"/>
+    <bendpoints xmi:id="_C1CujChwEeCgEbgNe3FItA" sourceX="-23" sourceY="-204" targetY="20"/>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_CAvszSJCEeCMEorpcZtLvw" sourceItem="_CAvszCJCEeCMEorpcZtLvw" targetItem="_CA42kCJCEeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_CA42kyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_l7trIBzcEeChOvWwuwx7tQ" sourceAnchor="53.0,0.0" targetAnchor="53.0,92.0" subClass="_CA42lCJCEeCMEorpcZtLvw" superClass="_CAl7-SJCEeCMEorpcZtLvw">
@@ -424,31 +424,31 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_2Ng84CJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_8JZjYBzeEeChOvWwuwx7tQ" sourceAnchor="0.0,35.0" targetAnchor="341.0,83.0" source="_2Nz33CJGEeCMEorpcZtLvw" target="_CAl7xiJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_8JZjYBzeEeChOvWwuwx7tQ"/>
     <nameVisual xmi:id="_2Nz30SJGEeCMEorpcZtLvw" text="HasObject">
-      <visualProperties xmi:id="_2UWkwCJGEeCMEorpcZtLvw" position="-33.0,-17.0"/>
+      <visualProperties xmi:id="_2UWkwCJGEeCMEorpcZtLvw" position="-67.0,-20.0"/>
     </nameVisual>
     <sourceRole xmi:id="_2Nz30iJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_8JaKcBzeEeChOvWwuwx7tQ" name="attributeValueExpression">
       <modelElement href="sdm.uml#_8JaKcBzeEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_2UWkvyJGEeCMEorpcZtLvw" position="-158.0,2.0"/>
+      <visualProperties xmi:id="_2UWkvyJGEeCMEorpcZtLvw" position="-134.0,-18.0"/>
       <visibility xmi:id="_2Nz32SJGEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_2Nz32CJGEeCMEorpcZtLvw" label="*" max="-1"/>
     </sourceRole>
     <targetRole xmi:id="_2Nz30yJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_8JaxgRzeEeChOvWwuwx7tQ" name="object" navigable="true">
       <modelElement href="sdm.uml#_8JaxgRzeEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_2UWkwSJGEeCMEorpcZtLvw" position="28.0,-37.0"/>
+      <visualProperties xmi:id="_2UWkwSJGEeCMEorpcZtLvw" position="3.0,-17.0"/>
       <visibility xmi:id="_2Nz32yJGEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_2Nz32iJGEeCMEorpcZtLvw" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2Nz30CJGEeCMEorpcZtLvw" sourceItem="_2NqG0CJGEeCMEorpcZtLvw" targetItem="_2Nz33CJGEeCMEorpcZtLvw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2Nz31SJGEeCMEorpcZtLvw" sourceItem="_2Nz31CJGEeCMEorpcZtLvw" targetItem="_RLFBAiehEeCn77wMTjBpqg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2Nz31SJGEeCMEorpcZtLvw" sourceItem="_2Nz31CJGEeCMEorpcZtLvw" targetItem="_XmTMZihvEeCgEbgNe3FItA"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2Nz31yJGEeCMEorpcZtLvw" sourceItem="_2Nz31iJGEeCMEorpcZtLvw" targetItem="_2Nz34yJGEeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_2Nz36CJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_UBZ6UBzfEeChOvWwuwx7tQ" sourceAnchor="82.0,27.0" targetAnchor="63.0,27.0" source="_2OZtuiJGEeCMEorpcZtLvw" target="_CA42miJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_UBZ6UBzfEeChOvWwuwx7tQ"/>
     <nameVisual xmi:id="_2OZtsSJGEeCMEorpcZtLvw" text="HasSet">
       <visualProperties xmi:id="_2UgVsSJGEeCMEorpcZtLvw" position="-32.0,2.0"/>
     </nameVisual>
-    <bendpoints xmi:id="_eqOGsCehEeCn77wMTjBpqg" sourceY="43" targetX="204" targetY="42"/>
-    <bendpoints xmi:id="_eqOGsSehEeCn77wMTjBpqg" sourceX="-204" sourceY="43" targetY="42"/>
+    <bendpoints xmi:id="_C049gChwEeCgEbgNe3FItA" sourceY="43" targetX="204" targetY="42"/>
+    <bendpoints xmi:id="_C049gShwEeCgEbgNe3FItA" sourceX="-204" sourceY="43" targetY="42"/>
     <sourceRole xmi:id="_2OZtsiJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_UBZ6URzfEeChOvWwuwx7tQ" name="objectSetSizeExpression">
       <modelElement href="sdm.uml#_UBZ6URzfEeChOvWwuwx7tQ"/>
       <visualProperties xmi:id="_2UgVsCJGEeCMEorpcZtLvw" position="-74.0,4.0"/>
@@ -463,27 +463,27 @@
     </targetRole>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2OZtsCJGEeCMEorpcZtLvw" sourceItem="_2OGywCJGEeCMEorpcZtLvw" targetItem="_2OZtuiJGEeCMEorpcZtLvw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2OZttSJGEeCMEorpcZtLvw" sourceItem="_2OZttCJGEeCMEorpcZtLvw" targetItem="_RLFBACehEeCn77wMTjBpqg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2OZttSJGEeCMEorpcZtLvw" sourceItem="_2OZttCJGEeCMEorpcZtLvw" targetItem="_XmTMZChvEeCgEbgNe3FItA"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_2OZtwiJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Li5c8BzfEeChOvWwuwx7tQ" sourceAnchor="0.0,22.0" targetAnchor="341.0,15.0" source="_2PAKqiJGEeCMEorpcZtLvw" target="_CAl7xiJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_Li5c8BzfEeChOvWwuwx7tQ"/>
-    <nameVisual xmi:id="_2PAKoSJGEeCMEorpcZtLvw" text="ObjectVariableHasObject">
-      <visualProperties xmi:id="_2UgVtCJGEeCMEorpcZtLvw" position="-85.0,-17.0"/>
+    <nameVisual xmi:id="_2PAKoSJGEeCMEorpcZtLvw" text="ExpressionHasObject">
+      <visualProperties xmi:id="_2UgVtCJGEeCMEorpcZtLvw" position="-86.0,-33.0"/>
     </nameVisual>
     <sourceRole xmi:id="_2PAKoiJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Li5c8RzfEeChOvWwuwx7tQ" name="objectVariableExpression">
       <modelElement href="sdm.uml#_Li5c8RzfEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_2UgVsyJGEeCMEorpcZtLvw" position="-136.0,-76.0"/>
+      <visualProperties xmi:id="_2UgVsyJGEeCMEorpcZtLvw" position="-134.0,-18.0"/>
       <visibility xmi:id="_2PAKpyJGEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_2PAKpiJGEeCMEorpcZtLvw" label="*" max="-1"/>
     </sourceRole>
     <targetRole xmi:id="_2PAKoyJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Li6EARzfEeChOvWwuwx7tQ" name="object" navigable="true">
       <modelElement href="sdm.uml#_Li6EARzfEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_2UgVtSJGEeCMEorpcZtLvw" position="93.0,2.0"/>
+      <visualProperties xmi:id="_2UgVtSJGEeCMEorpcZtLvw" position="4.0,-16.0"/>
       <visibility xmi:id="_2PAKqSJGEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_2PAKqCJGEeCMEorpcZtLvw" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2PAKoCJGEeCMEorpcZtLvw" sourceItem="_2OtPsCJGEeCMEorpcZtLvw" targetItem="_2PAKqiJGEeCMEorpcZtLvw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2PAKpSJGEeCMEorpcZtLvw" sourceItem="_2PAKpCJGEeCMEorpcZtLvw" targetItem="_RLFoECehEeCn77wMTjBpqg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2PAKpSJGEeCMEorpcZtLvw" sourceItem="_2PAKpCJGEeCMEorpcZtLvw" targetItem="_XmTMaChvEeCgEbgNe3FItA"/>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_CAvszCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_5xPbYBztEeChOvWwuwx7tQ" item="_CA42kCJCEeCMEorpcZtLvw" sourceConnectionVisual="_CAvszSJCEeCMEorpcZtLvw" text="Specifies the containment of an object in a set. Will be displayed by a line having a circle with a plus inside at the end of the container. Create modifier specifies that the object will be added to the container, delete that it will be removed, and none that it will be checked to be contained.">
     <modelElement href="sdm.uml#_5xPbYBztEeChOvWwuwx7tQ"/>
   </nodes>
@@ -493,7 +493,7 @@
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2NqG0CJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_BiPSgBzuEeChOvWwuwx7tQ" item="_2Nz33CJGEeCMEorpcZtLvw" sourceConnectionVisual="_2Nz30CJGEeCMEorpcZtLvw" text="Represents the value of an object's attribute, e.g. obj.a for an object obj and an attribute a.">
     <modelElement href="sdm.uml#_BiPSgBzuEeChOvWwuwx7tQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2Nz31CJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_GzuaQBzuEeChOvWwuwx7tQ" item="_RLFBAiehEeCn77wMTjBpqg" sourceConnectionVisual="_2Nz31SJGEeCMEorpcZtLvw" text="Specifies the object variable whose attribute value is represented by this expression.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2Nz31CJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_GzuaQBzuEeChOvWwuwx7tQ" item="_XmTMZihvEeCgEbgNe3FItA" sourceConnectionVisual="_2Nz31SJGEeCMEorpcZtLvw" text="Specifies the object variable whose attribute value is represented by this expression.">
     <modelElement href="sdm.uml#_GzuaQBzuEeChOvWwuwx7tQ"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2Nz31iJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_JipeoBzuEeChOvWwuwx7tQ" item="_2Nz34yJGEeCMEorpcZtLvw" sourceConnectionVisual="_2Nz31yJGEeCMEorpcZtLvw" text="Specifies the object's attribute whose attribute value is represented by this expression.">
@@ -502,73 +502,42 @@
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2OGywCJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_WOiicBzuEeChOvWwuwx7tQ" item="_2OZtuiJGEeCMEorpcZtLvw" sourceConnectionVisual="_2OZtsCJGEeCMEorpcZtLvw" text="Represents the number of elements in a set or more precisely: the number of elements in the set of objects that is represented by an object set variable. For example, if you have an object set variable objects, then this expression would represent something like objects.size().">
     <modelElement href="sdm.uml#_WOiicBzuEeChOvWwuwx7tQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2OZttCJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Zjwx0BzuEeChOvWwuwx7tQ" item="_RLFBACehEeCn77wMTjBpqg" sourceConnectionVisual="_2OZttSJGEeCMEorpcZtLvw" text="Specifies the object set variable whose number of set elements is to be represented by this expression.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2OZttCJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Zjwx0BzuEeChOvWwuwx7tQ" item="_XmTMZChvEeCgEbgNe3FItA" sourceConnectionVisual="_2OZttSJGEeCMEorpcZtLvw" text="Specifies the object set variable whose number of set elements is to be represented by this expression.">
     <modelElement href="sdm.uml#_Zjwx0BzuEeChOvWwuwx7tQ"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2OtPsCJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Ouji0BzuEeChOvWwuwx7tQ" item="_2PAKqiJGEeCMEorpcZtLvw" sourceConnectionVisual="_2PAKoCJGEeCMEorpcZtLvw" text="Represents the reference to an object in an expression, i.e. the value of an object variable.">
     <modelElement href="sdm.uml#_Ouji0BzuEeChOvWwuwx7tQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2PAKpCJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_TlQMABzuEeChOvWwuwx7tQ" item="_RLFoECehEeCn77wMTjBpqg" sourceConnectionVisual="_2PAKpSJGEeCMEorpcZtLvw" text="Specifies the object variable that holds the reference to be represented by this expression.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2PAKpCJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_TlQMABzuEeChOvWwuwx7tQ" item="_XmTMaChvEeCgEbgNe3FItA" sourceConnectionVisual="_2PAKpSJGEeCMEorpcZtLvw" text="Specifies the object variable that holds the reference to be represented by this expression.">
     <modelElement href="sdm.uml#_TlQMABzuEeChOvWwuwx7tQ"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CA42lCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_kZu7ABzcEeChOvWwuwx7tQ" name="MatchingPattern" generalizations="_CA42kyJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_kZu7ABzcEeChOvWwuwx7tQ"/>
-    <visualProperties xmi:id="_CA42liJCEeCMEorpcZtLvw" position="12.0,168.0" size="-1.0,-1.0"/>
+    <visualProperties xmi:id="_CA42liJCEeCMEorpcZtLvw" position="26.0,168.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_CA42lSJCEeCMEorpcZtLvw" label="+"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CAvsuiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_82J4gBzaEeChOvWwuwx7tQ" name="Constraint" associationsIn="_CAcxyyJCEeCMEorpcZtLvw _CATBEyJCEeCMEorpcZtLvw" associationsOut="_CAcxsCJCEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#_82J4gBzaEeChOvWwuwx7tQ"/>
-    <visualProperties xmi:id="_CAvsyiJCEeCMEorpcZtLvw" position="667.0,103.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_CAvsuyJCEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_CAvsvCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_ETMR0hzbEeChOvWwuwx7tQ" name="constraintExpression">
-      <modelElement href="sdm.uml#_ETMR0hzbEeChOvWwuwx7tQ"/>
-      <visibility xmi:id="_CAvsvSJCEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_CAvsviJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_CAvsvyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
-        <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_RLBWoCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Q53MgBzdEeChOvWwuwx7tQ" name="objectVariable">
-      <modelElement href="sdm.uml#_Q53MgBzdEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_RLBWoSehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLOK8SehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLOK8iehEeCn77wMTjBpqg" label="0..1" max="1"/>
-      <type xmi:id="_RLOK8CehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
-        <modelElement href="sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_RLBWoiehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_qIM9wLLxEd-uk56s-ldeog" name="pattern">
-      <modelElement href="sdm.uml#_qIM9wLLxEd-uk56s-ldeog"/>
-      <visualProperties xmi:id="_RLBWoyehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLOK9CehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLOK9SehEeCn77wMTjBpqg" label="0..1" max="1"/>
-      <type xmi:id="_RLOK8yehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
-        <modelElement href="sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4"/>
-      </type>
-    </attributes>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CA42miJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_l-KFsBzdEeChOvWwuwx7tQ" comments="_CA42mCJCEeCMEorpcZtLvw" targetConnectionVisual="_CA42mSJCEeCMEorpcZtLvw" name="ObjectSetVariable" associationsIn="_2Nz36CJGEeCMEorpcZtLvw" generalizations="_CA42lyJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_l-KFsBzdEeChOvWwuwx7tQ"/>
-    <visualProperties xmi:id="_CA42nCJCEeCMEorpcZtLvw" position="945.0,360.0" size="-1.0,-1.0"/>
+    <visualProperties xmi:id="_CA42nCJCEeCMEorpcZtLvw" position="959.0,360.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_CA42myJCEeCMEorpcZtLvw" label="+"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_2OZtuiJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_vG7yoBzeEeChOvWwuwx7tQ" comments="_2OGywCJGEeCMEorpcZtLvw" targetConnectionVisual="_2OZtsCJGEeCMEorpcZtLvw" name="ObjectSetSizeExpression" associationsOut="_2Nz36CJGEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_vG7yoBzeEeChOvWwuwx7tQ"/>
-    <visualProperties xmi:id="_2OZtwSJGEeCMEorpcZtLvw" position="1130.0,359.0" size="-1.0,-1.0"/>
+    <visualProperties xmi:id="_2OZtwSJGEeCMEorpcZtLvw" position="1144.0,359.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_2OZtuyJGEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_RLFBACehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_UBahYhzfEeChOvWwuwx7tQ" comments="_2OZttCJGEeCMEorpcZtLvw" targetConnectionVisual="_2OZttSJGEeCMEorpcZtLvw" name="set">
+    <attributes xmi:id="_XmTMZChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_UBahYhzfEeChOvWwuwx7tQ" comments="_2OZttCJGEeCMEorpcZtLvw" targetConnectionVisual="_2OZttSJGEeCMEorpcZtLvw" name="set">
       <modelElement href="sdm.uml#_UBahYhzfEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_RLFBASehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLQAJCehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLQnMCehEeCn77wMTjBpqg" label="1" max="1" min="1"/>
-      <type xmi:id="_RLQAIyehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_l-KFsBzdEeChOvWwuwx7tQ" name="ObjectSetVariable">
+      <visualProperties xmi:id="_XmTMZShvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4UihvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4UyhvEeCgEbgNe3FItA" label="1" max="1" min="1"/>
+      <type xmi:id="_Xmv4UShvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_l-KFsBzdEeChOvWwuwx7tQ" name="ObjectSetVariable">
         <modelElement href="sdm.uml#_l-KFsBzdEeChOvWwuwx7tQ"/>
       </type>
     </attributes>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_2Nz33CJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_sliM4BzeEeChOvWwuwx7tQ" comments="_2NqG0CJGEeCMEorpcZtLvw" targetConnectionVisual="_2Nz30CJGEeCMEorpcZtLvw" name="AttributeValueExpression" associationsOut="_2Ng84CJGEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_sliM4BzeEeChOvWwuwx7tQ"/>
-    <visualProperties xmi:id="_2Nz35yJGEeCMEorpcZtLvw" position="1123.0,284.0" size="-1.0,-1.0"/>
+    <visualProperties xmi:id="_2Nz35yJGEeCMEorpcZtLvw" position="1137.0,284.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_2Nz33SJGEeCMEorpcZtLvw" label="+"/>
     <attributes xmi:id="_2Nz34yJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_8pXc5BzeEeChOvWwuwx7tQ" comments="_2Nz31iJGEeCMEorpcZtLvw" targetConnectionVisual="_2Nz31yJGEeCMEorpcZtLvw" name="attribute">
       <modelElement href="sdm.uml#_8pXc5BzeEeChOvWwuwx7tQ"/>
@@ -578,97 +547,33 @@
         <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAttribute"/>
       </type>
     </attributes>
-    <attributes xmi:id="_RLFBAiehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_8JaxgRzeEeChOvWwuwx7tQ" comments="_2Nz31CJGEeCMEorpcZtLvw" targetConnectionVisual="_2Nz31SJGEeCMEorpcZtLvw" name="object">
+    <attributes xmi:id="_XmTMZihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_8JaxgRzeEeChOvWwuwx7tQ" comments="_2Nz31CJGEeCMEorpcZtLvw" targetConnectionVisual="_2Nz31SJGEeCMEorpcZtLvw" name="object">
       <modelElement href="sdm.uml#_8JaxgRzeEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_RLFBAyehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLQnMiehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLROQCehEeCn77wMTjBpqg" label="1" max="1" min="1"/>
-      <type xmi:id="_RLQnMSehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
+      <visualProperties xmi:id="_XmTMZyhvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4VShvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4VihvEeCgEbgNe3FItA" label="1" max="1" min="1"/>
+      <type xmi:id="_Xmv4VChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
         <modelElement href="sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee"/>
       </type>
     </attributes>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_2PAKqiJGEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_t26VMBzeEeChOvWwuwx7tQ" comments="_2OtPsCJGEeCMEorpcZtLvw" targetConnectionVisual="_2PAKoCJGEeCMEorpcZtLvw" name="ObjectVariableExpression" associationsOut="_2OZtwiJGEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_t26VMBzeEeChOvWwuwx7tQ"/>
-    <visualProperties xmi:id="_2PAKsSJGEeCMEorpcZtLvw" position="1142.0,229.0" size="-1.0,-1.0"/>
+    <visualProperties xmi:id="_2PAKsSJGEeCMEorpcZtLvw" position="1156.0,229.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_2PAKqyJGEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_RLFoECehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Li6EARzfEeChOvWwuwx7tQ" comments="_2PAKpCJGEeCMEorpcZtLvw" targetConnectionVisual="_2PAKpSJGEeCMEorpcZtLvw" name="object">
+    <attributes xmi:id="_XmTMaChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Li6EARzfEeChOvWwuwx7tQ" comments="_2PAKpCJGEeCMEorpcZtLvw" targetConnectionVisual="_2PAKpSJGEeCMEorpcZtLvw" name="object">
       <modelElement href="sdm.uml#_Li6EARzfEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_RLFoESehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLROQiehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLROQyehEeCn77wMTjBpqg" label="1" max="1" min="1"/>
-      <type xmi:id="_RLROQSehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
+      <visualProperties xmi:id="_XmTMaShvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4WChvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4WShvEeCgEbgNe3FItA" label="1" max="1" min="1"/>
+      <type xmi:id="_Xmv4VyhvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
         <modelElement href="sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee"/>
       </type>
     </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CAvsqyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_jap9QBzUEeChOvWwuwx7tQ" name="LinkVariable" associationsOut="_CATA3SJCEeCMEorpcZtLvw _CATBOCJCEeCMEorpcZtLvw _CATBQiJCEeCMEorpcZtLvw" generalizations="_CAvsqSJCEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#_jap9QBzUEeChOvWwuwx7tQ"/>
-    <visualProperties xmi:id="_CAvsuSJCEeCMEorpcZtLvw" position="10.0,443.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_CAvsrCJCEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_CAvsrSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_9Tqc8bK4Ed-uk56s-ldeog" derived="true" name="sourceEnd">
-      <modelElement href="sdm.uml#_9Tqc8bK4Ed-uk56s-ldeog"/>
-      <stereotypes xmi:id="_RLepoCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_TmA58LxXEd-Ytrd77fw2LA" name="EReference">
-        <modelElement href="sdm.uml#_TmA58LxXEd-Ytrd77fw2LA"/>
-      </stereotypes>
-      <visibility xmi:id="_CAvsriJCEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_CAvsryJCEeCMEorpcZtLvw" label="0..1" max="1"/>
-      <type xmi:id="_CAvssCJCEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EReference" name="EReference">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EReference"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_CAvssSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#__qOrs7K4Ed-uk56s-ldeog" name="targetEnd">
-      <modelElement href="sdm.uml#__qOrs7K4Ed-uk56s-ldeog"/>
-      <visibility xmi:id="_CAvssiJCEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_CAvssyJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_CAvstCJCEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EReference" name="EReference">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EReference"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_CAvstSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_XMVjwLK8Ed-uk56s-ldeog" name="qualifierExpression">
-      <modelElement href="sdm.uml#_XMVjwLK8Ed-uk56s-ldeog"/>
-      <visibility xmi:id="_CAvstiJCEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_CAvstyJCEeCMEorpcZtLvw" label="0..1" max="1"/>
-      <type xmi:id="_CAvsuCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
-        <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CAvsoiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5bfa886f-6bb7-4920-98ce-b9512d3dd595" name="Path" associationsOut="_CATA5iJCEeCMEorpcZtLvw" generalizations="_CAvsoSJCEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#5bfa886f-6bb7-4920-98ce-b9512d3dd595"/>
-    <visualProperties xmi:id="_CAvsqCJCEeCMEorpcZtLvw" position="84.0,548.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_CAvsoyJCEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_CAvspCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_-z5JsbLxEd-uk56s-ldeog" name="pathExpression">
-      <modelElement href="sdm.uml#_-z5JsbLxEd-uk56s-ldeog"/>
-      <visibility xmi:id="_CAvspSJCEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_CAvspiJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_CAvspyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
-        <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CA42kCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_-k2O8BzaEeChOvWwuwx7tQ" comments="_CAvszCJCEeCMEorpcZtLvw" targetConnectionVisual="_CAvszSJCEeCMEorpcZtLvw" name="ContainmentRelation" generalizations="_CAvsyyJCEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#_-k2O8BzaEeChOvWwuwx7tQ"/>
-    <visualProperties xmi:id="_CA42kiJCEeCMEorpcZtLvw" position="202.0,611.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_CA42kSJCEeCMEorpcZtLvw" label="+"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:EnumerationVisual" xmi:id="_CAcyEiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#74737b3a-1725-4fee-b753-d7458eda7189" name="BindingOperator">
-    <modelElement href="sdm.uml#74737b3a-1725-4fee-b753-d7458eda7189"/>
-    <visualProperties xmi:id="_CAcyFyJCEeCMEorpcZtLvw" position="910.0,63.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_CAcyEyJCEeCMEorpcZtLvw" label="+"/>
-    <literals xmi:id="_CAcyFCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#888dbb97-a420-4e27-bfb0-f5b3de6da65b" name="CHECK">
-      <modelElement href="sdm.uml#888dbb97-a420-4e27-bfb0-f5b3de6da65b"/>
-    </literals>
-    <literals xmi:id="_CAcyFSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#261583f1-b911-4c05-b4d7-f7f2cda8496a" name="CREATE">
-      <modelElement href="sdm.uml#261583f1-b911-4c05-b4d7-f7f2cda8496a"/>
-    </literals>
-    <literals xmi:id="_CAcyFiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#501ae012-48cf-4ea0-83e6-11394bfe9a8d" name="DESTROY">
-      <modelElement href="sdm.uml#501ae012-48cf-4ea0-83e6-11394bfe9a8d"/>
-    </literals>
-  </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:EnumerationVisual" xmi:id="_CAcx6SJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5d5c7278-e6e7-4956-ab18-44332c8cc462" name="BindingSemantics">
     <modelElement href="sdm.uml#5d5c7278-e6e7-4956-ab18-44332c8cc462"/>
-    <visualProperties xmi:id="_CAcx7iJCEeCMEorpcZtLvw" position="1175.0,62.0" size="-1.0,-1.0"/>
+    <visualProperties xmi:id="_CAcx7iJCEeCMEorpcZtLvw" position="1189.0,62.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_CAcx6iJCEeCMEorpcZtLvw" label="+"/>
     <literals xmi:id="_CAcx6yJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#fa270781-e8e1-4379-ada0-d421ab1217e0" name="MANDATORY">
       <modelElement href="sdm.uml#fa270781-e8e1-4379-ada0-d421ab1217e0"/>
@@ -682,7 +587,7 @@
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:EnumerationVisual" xmi:id="_CAcx4yJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#37d4c959-090c-411e-b62f-a01a5acd650c" name="BindingState">
     <modelElement href="sdm.uml#37d4c959-090c-411e-b62f-a01a5acd650c"/>
-    <visualProperties xmi:id="_CAcx6CJCEeCMEorpcZtLvw" position="1029.0,63.0" size="141.0,106.0"/>
+    <visualProperties xmi:id="_CAcx6CJCEeCMEorpcZtLvw" position="1043.0,63.0" size="141.0,106.0"/>
     <visibility xmi:id="_CAcx5CJCEeCMEorpcZtLvw" label="+"/>
     <literals xmi:id="_CAcx5SJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_XroecBzhEeChOvWwuwx7tQ" name="UNBOUND">
       <modelElement href="sdm.uml#_XroecBzhEeChOvWwuwx7tQ"/>
@@ -696,7 +601,7 @@
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CAl7xiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable" associationsIn="_CATAyyJCEeCMEorpcZtLvw _CATA1CJCEeCMEorpcZtLvw _CATAwiJCEeCMEorpcZtLvw _CATBASJCEeCMEorpcZtLvw _2Ng84CJGEeCMEorpcZtLvw _2OZtwiJGEeCMEorpcZtLvw" associationsOut="_CATA-CJCEeCMEorpcZtLvw _CAcxyyJCEeCMEorpcZtLvw _CATA7yJCEeCMEorpcZtLvw _CATBSyJCEeCMEorpcZtLvw" subclassedBy="_CA42lyJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee"/>
-    <visualProperties xmi:id="_CAl7-CJCEeCMEorpcZtLvw" position="577.0,236.0" size="341.0,167.0"/>
+    <visualProperties xmi:id="_CAl7-CJCEeCMEorpcZtLvw" position="591.0,236.0" size="341.0,167.0"/>
     <visibility xmi:id="_CAl7xyJCEeCMEorpcZtLvw" label="+"/>
     <attributes xmi:id="_CAl7yCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#60d4fc4e-8a40-44a9-9913-ea51221db1a8" defaultValue="UNBOUND" name="bindingState">
       <modelElement href="sdm.uml#60d4fc4e-8a40-44a9-9913-ea51221db1a8"/>
@@ -724,7 +629,7 @@
     </attributes>
     <attributes xmi:id="_CAl75yJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5f30323f-8a08-46cd-841e-9f1733bc5943" name="classifier">
       <modelElement href="sdm.uml#5f30323f-8a08-46cd-841e-9f1733bc5943"/>
-      <stereotypes xmi:id="_RLf3wCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_DyGToLy3Ed-eCY_Peu5fFw" name="EReference">
+      <stereotypes xmi:id="_XnMkQShvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_DyGToLy3Ed-eCY_Peu5fFw" name="EReference">
         <modelElement href="sdm.uml#_DyGToLy3Ed-eCY_Peu5fFw"/>
       </stereotypes>
       <visibility xmi:id="_CAl76CJCEeCMEorpcZtLvw" label="+"/>
@@ -741,64 +646,281 @@
         <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
-    <attributes xmi:id="_RLIrYCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#97f7e21a-6cb3-4e71-a689-faf97d6546e6" name="pattern">
+    <attributes xmi:id="_Xmc9YChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#97f7e21a-6cb3-4e71-a689-faf97d6546e6" name="pattern">
       <modelElement href="sdm.uml#97f7e21a-6cb3-4e71-a689-faf97d6546e6"/>
-      <visualProperties xmi:id="_RLIrYSehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLR1USehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLR1UiehEeCn77wMTjBpqg" label="1" max="1" min="1"/>
-      <type xmi:id="_RLR1UCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
+      <visualProperties xmi:id="_Xmc9YShvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4WyhvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4XChvEeCgEbgNe3FItA" label="1" max="1" min="1"/>
+      <type xmi:id="_Xmv4WihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
         <modelElement href="sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4"/>
       </type>
     </attributes>
-    <attributes xmi:id="_RLIrYiehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1d75eb5a-c292-4676-951a-809ab4091e6b" name="attributeAssignment">
+    <attributes xmi:id="_Xmc9YihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1d75eb5a-c292-4676-951a-809ab4091e6b" name="attributeAssignment">
       <modelElement href="sdm.uml#1d75eb5a-c292-4676-951a-809ab4091e6b"/>
-      <visualProperties xmi:id="_RLIrYyehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLScYCehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLScYSehEeCn77wMTjBpqg" label="*" max="-1"/>
-      <type xmi:id="_RLR1UyehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#79151c76-8e24-4f76-8143-e713373a8b68" name="AttributeAssignment">
+      <visualProperties xmi:id="_Xmc9YyhvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4XihvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4XyhvEeCgEbgNe3FItA" label="*" max="-1"/>
+      <type xmi:id="_Xmv4XShvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#79151c76-8e24-4f76-8143-e713373a8b68" name="AttributeAssignment">
         <modelElement href="sdm.uml#79151c76-8e24-4f76-8143-e713373a8b68"/>
       </type>
     </attributes>
-    <attributes xmi:id="_RLIrZCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#e4084d63-9d8b-47a7-9d3e-34aeb0b09440" name="outgoingLink">
+    <attributes xmi:id="_Xmc9ZChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#e4084d63-9d8b-47a7-9d3e-34aeb0b09440" name="outgoingLink">
       <modelElement href="sdm.uml#e4084d63-9d8b-47a7-9d3e-34aeb0b09440"/>
-      <visualProperties xmi:id="_RLIrZSehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLScYyehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLScZCehEeCn77wMTjBpqg" label="*" max="-1"/>
-      <type xmi:id="_RLScYiehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc" name="AbstractLinkVariable">
+      <visualProperties xmi:id="_Xmc9ZShvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4YShvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4YihvEeCgEbgNe3FItA" label="*" max="-1"/>
+      <type xmi:id="_Xmv4YChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc" name="AbstractLinkVariable">
         <modelElement href="sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc"/>
       </type>
     </attributes>
-    <attributes xmi:id="_RLIrZiehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#f59aeab8-59c7-4a35-bd9b-c05bda92d924" name="incomingLink">
+    <attributes xmi:id="_Xmc9ZihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#f59aeab8-59c7-4a35-bd9b-c05bda92d924" name="incomingLink">
       <modelElement href="sdm.uml#f59aeab8-59c7-4a35-bd9b-c05bda92d924"/>
-      <visualProperties xmi:id="_RLIrZyehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLTDcSehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLTDciehEeCn77wMTjBpqg" label="*" max="-1"/>
-      <type xmi:id="_RLTDcCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc" name="AbstractLinkVariable">
+      <visualProperties xmi:id="_Xmc9ZyhvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4ZChvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4ZShvEeCgEbgNe3FItA" label="*" max="-1"/>
+      <type xmi:id="_Xmv4YyhvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc" name="AbstractLinkVariable">
         <modelElement href="sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc"/>
       </type>
     </attributes>
-    <attributes xmi:id="_RLIraCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Q53zkRzdEeChOvWwuwx7tQ" name="constraint">
+    <attributes xmi:id="_Xmc9aChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Q53zkRzdEeChOvWwuwx7tQ" name="constraint">
       <modelElement href="sdm.uml#_Q53zkRzdEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_RLIraSehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLTDdCehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLTDdSehEeCn77wMTjBpqg" label="*" max="-1"/>
-      <type xmi:id="_RLTDcyehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_82J4gBzaEeChOvWwuwx7tQ" name="Constraint">
+      <visualProperties xmi:id="_Xmc9aShvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4ZyhvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4aChvEeCgEbgNe3FItA" label="*" max="-1"/>
+      <type xmi:id="_Xmv4ZihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_82J4gBzaEeChOvWwuwx7tQ" name="Constraint">
         <modelElement href="sdm.uml#_82J4gBzaEeChOvWwuwx7tQ"/>
       </type>
     </attributes>
-    <attributes xmi:id="_RLIraiehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_xIxQkLK8Ed-uk56s-ldeog" name="linkOrderConstraint">
+    <attributes xmi:id="_Xmc9aihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_xIxQkLK8Ed-uk56s-ldeog" name="linkOrderConstraint">
       <modelElement href="sdm.uml#_xIxQkLK8Ed-uk56s-ldeog"/>
-      <visualProperties xmi:id="_RLIrayehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLTqgSehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLTqgiehEeCn77wMTjBpqg" label="*" max="-1"/>
-      <type xmi:id="_RLTqgCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#8fd71d27-94c0-49d5-9902-a26156244424" name="LinkConstraint">
+      <visualProperties xmi:id="_Xmc9ayhvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4aihvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4ayhvEeCgEbgNe3FItA" label="*" max="-1"/>
+      <type xmi:id="_Xmv4aShvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#8fd71d27-94c0-49d5-9902-a26156244424" name="LinkConstraint">
         <modelElement href="sdm.uml#8fd71d27-94c0-49d5-9902-a26156244424"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CAl7-SJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern" associationsIn="_CATBHCJCEeCMEorpcZtLvw _CATBLiJCEeCMEorpcZtLvw" associationsOut="_CATBASJCEeCMEorpcZtLvw _CATBHCJCEeCMEorpcZtLvw _CAcxuSJCEeCMEorpcZtLvw _CATBEyJCEeCMEorpcZtLvw _CAcxwiJCEeCMEorpcZtLvw" subclassedBy="_CA42kyJCEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4"/>
+    <visualProperties xmi:id="_CAvsoCJCEeCMEorpcZtLvw" position="26.0,30.0" size="344.0,92.0"/>
+    <visibility xmi:id="_CAl7-iJCEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_CAl8CiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#530fdd45-f95d-43dc-8501-8c4dd824bc24" defaultValue="MANDATORY" name="bindingSemantics">
+      <modelElement href="sdm.uml#530fdd45-f95d-43dc-8501-8c4dd824bc24"/>
+      <visibility xmi:id="_CAl8CyJCEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_CAl8DCJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_CAl8DSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5d5c7278-e6e7-4956-ab18-44332c8cc462" name="BindingSemantics">
+        <modelElement href="sdm.uml#5d5c7278-e6e7-4956-ab18-44332c8cc462"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_CAl8FyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_atA-EBzcEeChOvWwuwx7tQ" name="templateSignature">
+      <modelElement href="sdm.uml#_atA-EBzcEeChOvWwuwx7tQ"/>
+      <visibility xmi:id="_CAl8GCJCEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_CAl8GSJCEeCMEorpcZtLvw" label="0..1" max="1"/>
+      <type xmi:id="_CAl8GiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#__NCHYLN-Ed-vJ9Qpen_Iuw" name="TemplateSignature">
+        <modelElement href="sdm.uml#__NCHYLN-Ed-vJ9Qpen_Iuw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XmmHWihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5999b52c-f7c5-4bc4-87ad-ef18581fea6a" name="objectVariable">
+      <modelElement href="sdm.uml#5999b52c-f7c5-4bc4-87ad-ef18581fea6a"/>
+      <visualProperties xmi:id="_XmmHWyhvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4fChvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4fShvEeCgEbgNe3FItA" label="*" max="-1"/>
+      <type xmi:id="_Xmv4eyhvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
+        <modelElement href="sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XmmHXChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#7ce0a38c-81f6-4c40-9a4a-941e9e84f02a" name="parentPattern">
+      <modelElement href="sdm.uml#7ce0a38c-81f6-4c40-9a4a-941e9e84f02a"/>
+      <visualProperties xmi:id="_XmmHXShvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4fyhvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4gChvEeCgEbgNe3FItA" label="0..1" max="1"/>
+      <type xmi:id="_Xmv4fihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
+        <modelElement href="sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XmmHXihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#406d03a7-91d4-450d-baa7-ee449e9f282c" name="containedPattern">
+      <modelElement href="sdm.uml#406d03a7-91d4-450d-baa7-ee449e9f282c"/>
+      <visualProperties xmi:id="_XmmHXyhvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4gihvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4gyhvEeCgEbgNe3FItA" label="*" max="-1"/>
+      <type xmi:id="_Xmv4gShvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
+        <modelElement href="sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XmmHYChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_qINk0bLxEd-uk56s-ldeog" name="constraint">
+      <modelElement href="sdm.uml#_qINk0bLxEd-uk56s-ldeog"/>
+      <visualProperties xmi:id="_XmmHYShvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4hShvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4hihvEeCgEbgNe3FItA" label="*" max="-1"/>
+      <type xmi:id="_Xmv4hChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_82J4gBzaEeChOvWwuwx7tQ" name="Constraint">
+        <modelElement href="sdm.uml#_82J4gBzaEeChOvWwuwx7tQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XmmHYihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_IIFqUBzcEeChOvWwuwx7tQ" name="linkVariable">
+      <modelElement href="sdm.uml#_IIFqUBzcEeChOvWwuwx7tQ"/>
+      <visualProperties xmi:id="_XmmHYyhvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4iChvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4iShvEeCgEbgNe3FItA" label="*" max="-1"/>
+      <type xmi:id="_Xmv4hyhvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc" name="AbstractLinkVariable">
+        <modelElement href="sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CAcx1CJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#79151c76-8e24-4f76-8143-e713373a8b68" name="AttributeAssignment" associationsIn="_CATA-CJCEeCMEorpcZtLvw" associationsOut="_CATBCiJCEeCMEorpcZtLvw _CATBJSJCEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#79151c76-8e24-4f76-8143-e713373a8b68"/>
+    <visualProperties xmi:id="_CAcx4iJCEeCMEorpcZtLvw" position="896.0,513.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_CAcx1SJCEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_CAcx2iJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_a2odgLK3Ed-uk56s-ldeog" name="attribute">
+      <modelElement href="sdm.uml#_a2odgLK3Ed-uk56s-ldeog"/>
+      <visibility xmi:id="_CAcx2yJCEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_CAcx3CJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_CAcx3SJCEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAttribute" name="EAttribute">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAttribute"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_CAcx3iJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_bFtwcrK5Ed-uk56s-ldeog" name="valueExpression">
+      <modelElement href="sdm.uml#_bFtwcrK5Ed-uk56s-ldeog"/>
+      <visibility xmi:id="_CAcx3yJCEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_CAcx4CJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_CAcx4SJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
+        <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XmmHaihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0494208f-7471-4bfe-8c33-9a7bd40c3425" name="objectVariable">
+      <modelElement href="sdm.uml#0494208f-7471-4bfe-8c33-9a7bd40c3425"/>
+      <visualProperties xmi:id="_XmmHayhvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xm5pWShvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xm5pWihvEeCgEbgNe3FItA" label="1" max="1" min="1"/>
+      <type xmi:id="_Xm5pWChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
+        <modelElement href="sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:EnumerationVisual" xmi:id="_CAcyEiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#74737b3a-1725-4fee-b753-d7458eda7189" name="BindingOperator">
+    <modelElement href="sdm.uml#74737b3a-1725-4fee-b753-d7458eda7189"/>
+    <visualProperties xmi:id="_CAcyFyJCEeCMEorpcZtLvw" position="900.0,63.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_CAcyEyJCEeCMEorpcZtLvw" label="+"/>
+    <literals xmi:id="_CAcyFCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#888dbb97-a420-4e27-bfb0-f5b3de6da65b" name="CHECK_ONLY">
+      <modelElement href="sdm.uml#888dbb97-a420-4e27-bfb0-f5b3de6da65b"/>
+    </literals>
+    <literals xmi:id="_CAcyFSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#261583f1-b911-4c05-b4d7-f7f2cda8496a" name="CREATE">
+      <modelElement href="sdm.uml#261583f1-b911-4c05-b4d7-f7f2cda8496a"/>
+    </literals>
+    <literals xmi:id="_CAcyFiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#501ae012-48cf-4ea0-83e6-11394bfe9a8d" name="DESTROY">
+      <modelElement href="sdm.uml#501ae012-48cf-4ea0-83e6-11394bfe9a8d"/>
+    </literals>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CAvsuiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_82J4gBzaEeChOvWwuwx7tQ" name="Constraint" associationsIn="_CAcxyyJCEeCMEorpcZtLvw _CATBEyJCEeCMEorpcZtLvw" associationsOut="_CAcxsCJCEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#_82J4gBzaEeChOvWwuwx7tQ"/>
+    <visualProperties xmi:id="_CAvsyiJCEeCMEorpcZtLvw" position="654.0,104.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_CAvsuyJCEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_CAvsvCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_ETMR0hzbEeChOvWwuwx7tQ" name="constraintExpression">
+      <modelElement href="sdm.uml#_ETMR0hzbEeChOvWwuwx7tQ"/>
+      <visibility xmi:id="_CAvsvSJCEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_CAvsviJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_CAvsvyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
+        <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XmTMYChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Q53MgBzdEeChOvWwuwx7tQ" name="objectVariable">
+      <modelElement href="sdm.uml#_Q53MgBzdEeChOvWwuwx7tQ"/>
+      <visualProperties xmi:id="_XmTMYShvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_XmmHbShvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_XmmHbihvEeCgEbgNe3FItA" label="0..1" max="1"/>
+      <type xmi:id="_XmmHbChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
+        <modelElement href="sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XmTMYihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_qIM9wLLxEd-uk56s-ldeog" name="pattern">
+      <modelElement href="sdm.uml#_qIM9wLLxEd-uk56s-ldeog"/>
+      <visualProperties xmi:id="_XmTMYyhvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_XmmHcChvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4UChvEeCgEbgNe3FItA" label="0..1" max="1"/>
+      <type xmi:id="_XmmHbyhvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
+        <modelElement href="sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:EnumerationVisual" xmi:id="_CAl7vSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#6e7cf16b-d8d7-4794-8fca-703d94b69494" name="LinkConstraintType">
+    <modelElement href="sdm.uml#6e7cf16b-d8d7-4794-8fca-703d94b69494"/>
+    <visualProperties xmi:id="_CAl7xCJCEeCMEorpcZtLvw" position="1132.0,449.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_CAl7viJCEeCMEorpcZtLvw" label="+"/>
+    <literals xmi:id="_CAl7vyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#3e98d7e7-7724-45bb-8c67-8d82ed5585a5" name="FIRST">
+      <modelElement href="sdm.uml#3e98d7e7-7724-45bb-8c67-8d82ed5585a5"/>
+    </literals>
+    <literals xmi:id="_CAl7wCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#8f57045a-f941-41ce-96da-4990a7cf1706" name="LAST">
+      <modelElement href="sdm.uml#8f57045a-f941-41ce-96da-4990a7cf1706"/>
+    </literals>
+    <literals xmi:id="_CAl7wSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#52dff23f-69db-4dc6-99f8-93989817c514" name="DIRECT_SUCCESSOR">
+      <modelElement href="sdm.uml#52dff23f-69db-4dc6-99f8-93989817c514"/>
+    </literals>
+    <literals xmi:id="_CAl7wiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#8bc8df63-74a4-49ca-8b2f-b7e1728bece1" name="INDIRECT_SUCCESSOR">
+      <modelElement href="sdm.uml#8bc8df63-74a4-49ca-8b2f-b7e1728bece1"/>
+    </literals>
+    <literals xmi:id="_CAl7wyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#6d2dda9b-0699-4bf5-be1a-30d9009257f0" name="INDEX">
+      <modelElement href="sdm.uml#6d2dda9b-0699-4bf5-be1a-30d9009257f0"/>
+    </literals>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CAl7oCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#8fd71d27-94c0-49d5-9902-a26156244424" name="LinkConstraint" associationsOut="_CATAuSJCEeCMEorpcZtLvw _CATAsCJCEeCMEorpcZtLvw _CATAwiJCEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#8fd71d27-94c0-49d5-9902-a26156244424"/>
+    <visualProperties xmi:id="_CAl7vCJCEeCMEorpcZtLvw" position="520.0,495.0" size="367.0,94.0"/>
+    <visibility xmi:id="_CAl7oSJCEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_CAl7oiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0d854d3d-7441-49ec-9669-45740c948bf0" name="index">
+      <modelElement href="sdm.uml#0d854d3d-7441-49ec-9669-45740c948bf0"/>
+      <visibility xmi:id="_CAl7oyJCEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_CAl7pCJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_CAl7pSJCEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer" name="Integer">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_CAl7piJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0a03363e-4597-497f-948b-c73355114187" defaultValue="DIRECT_SUCCESSOR" name="constraintType">
+      <modelElement href="sdm.uml#0a03363e-4597-497f-948b-c73355114187"/>
+      <visibility xmi:id="_CAl7pyJCEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_CAl7qCJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_CAl7qSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#6e7cf16b-d8d7-4794-8fca-703d94b69494" name="LinkConstraintType">
+        <modelElement href="sdm.uml#6e7cf16b-d8d7-4794-8fca-703d94b69494"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_CAl7qiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5f3bad7e-fabb-4b50-b6de-939f6a105dff" name="negative">
+      <modelElement href="sdm.uml#5f3bad7e-fabb-4b50-b6de-939f6a105dff"/>
+      <visibility xmi:id="_CAl7qyJCEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_CAl7rCJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_CAl7rSJCEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean" name="Boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XmmHZChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#12c158aa-af57-4163-9840-4d19640d092f" name="firstLink">
+      <modelElement href="sdm.uml#12c158aa-af57-4163-9840-4d19640d092f"/>
+      <visualProperties xmi:id="_XmmHZShvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xm5pUChvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xm5pUShvEeCgEbgNe3FItA" label="1" max="1" min="1"/>
+      <type xmi:id="_Xmv4iihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc" name="AbstractLinkVariable">
+        <modelElement href="sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XmmHZihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#e63f051a-8e92-4ebb-9a36-1ab9ecd6e055" name="secondLink">
+      <modelElement href="sdm.uml#e63f051a-8e92-4ebb-9a36-1ab9ecd6e055"/>
+      <visualProperties xmi:id="_XmmHZyhvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xm5pUyhvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xm5pVChvEeCgEbgNe3FItA" label="0..1" max="1"/>
+      <type xmi:id="_Xm5pUihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc" name="AbstractLinkVariable">
+        <modelElement href="sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XmmHaChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_xIx3obK8Ed-uk56s-ldeog" name="referencingObject">
+      <modelElement href="sdm.uml#_xIx3obK8Ed-uk56s-ldeog"/>
+      <visualProperties xmi:id="_XmmHaShvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xm5pVihvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xm5pVyhvEeCgEbgNe3FItA" label="1" max="1" min="1"/>
+      <type xmi:id="_Xm5pVShvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
+        <modelElement href="sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee"/>
       </type>
     </attributes>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CAcx7yJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc" name="AbstractLinkVariable" abstractClass="true" associationsIn="_CATAuSJCEeCMEorpcZtLvw _CATAsCJCEeCMEorpcZtLvw _CAcxuSJCEeCMEorpcZtLvw" associationsOut="_CATAyyJCEeCMEorpcZtLvw _CATA1CJCEeCMEorpcZtLvw" subclassedBy="_CAvsoSJCEeCMEorpcZtLvw _CAvsqSJCEeCMEorpcZtLvw _CAvsyyJCEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc"/>
-    <visualProperties xmi:id="_CAcyESJCEeCMEorpcZtLvw" position="11.0,236.0" size="341.0,168.0"/>
+    <visualProperties xmi:id="_CAcyESJCEeCMEorpcZtLvw" position="25.0,236.0" size="341.0,117.0"/>
     <visibility xmi:id="_CAcx8CJCEeCMEorpcZtLvw" label="+"/>
     <attributes xmi:id="_CAcx8SJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#13223e42-7f6d-415c-a7c7-68e58015a9be" defaultValue="MANDATORY" name="bindingSemantics">
       <modelElement href="sdm.uml#13223e42-7f6d-415c-a7c7-68e58015a9be"/>
@@ -824,222 +946,100 @@
         <modelElement href="sdm.uml#37d4c959-090c-411e-b62f-a01a5acd650c"/>
       </type>
     </attributes>
-    <attributes xmi:id="_RLLHoCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#29ee7390-8b89-420e-99c9-e1179f7cfd54" name="target">
+    <attributes xmi:id="_XmmHUChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#29ee7390-8b89-420e-99c9-e1179f7cfd54" name="target">
       <modelElement href="sdm.uml#29ee7390-8b89-420e-99c9-e1179f7cfd54"/>
-      <visualProperties xmi:id="_RLLHoSehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLURkSehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLURkiehEeCn77wMTjBpqg" label="1" max="1" min="1"/>
-      <type xmi:id="_RLURkCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
+      <visualProperties xmi:id="_XmmHUShvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4bShvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4bihvEeCgEbgNe3FItA" label="1" max="1" min="1"/>
+      <type xmi:id="_Xmv4bChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
         <modelElement href="sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee"/>
       </type>
     </attributes>
-    <attributes xmi:id="_RLLHoiehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5e3eecac-3d82-4765-bec0-c98627eefb91" name="source">
+    <attributes xmi:id="_XmmHUihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5e3eecac-3d82-4765-bec0-c98627eefb91" name="source">
       <modelElement href="sdm.uml#5e3eecac-3d82-4765-bec0-c98627eefb91"/>
-      <visualProperties xmi:id="_RLLHoyehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLURlCehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLURlSehEeCn77wMTjBpqg" label="1" max="1" min="1"/>
-      <type xmi:id="_RLURkyehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
+      <visualProperties xmi:id="_XmmHUyhvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4cChvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4cShvEeCgEbgNe3FItA" label="1" max="1" min="1"/>
+      <type xmi:id="_Xmv4byhvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
         <modelElement href="sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee"/>
       </type>
     </attributes>
-    <attributes xmi:id="_RLLHpCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#14426f7e-673a-4457-ab0e-c96c45d95a78" name="secondLinkOrderConstraint">
+    <attributes xmi:id="_XmmHVChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#14426f7e-673a-4457-ab0e-c96c45d95a78" name="secondLinkConstraint">
       <modelElement href="sdm.uml#14426f7e-673a-4457-ab0e-c96c45d95a78"/>
-      <visualProperties xmi:id="_RLLHpSehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLU4oSehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLU4oiehEeCn77wMTjBpqg" label="*" max="-1"/>
-      <type xmi:id="_RLU4oCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#8fd71d27-94c0-49d5-9902-a26156244424" name="LinkConstraint">
+      <visualProperties xmi:id="_XmmHVShvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4cyhvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4dChvEeCgEbgNe3FItA" label="*" max="-1"/>
+      <type xmi:id="_Xmv4cihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#8fd71d27-94c0-49d5-9902-a26156244424" name="LinkConstraint">
         <modelElement href="sdm.uml#8fd71d27-94c0-49d5-9902-a26156244424"/>
       </type>
     </attributes>
-    <attributes xmi:id="_RLLHpiehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9" name="firstLinkOrderConstraint">
+    <attributes xmi:id="_XmmHVihvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9" name="firstLinkConstraint">
       <modelElement href="sdm.uml#1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9"/>
-      <visualProperties xmi:id="_RLLHpyehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLU4pCehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLU4pSehEeCn77wMTjBpqg" label="*" max="-1"/>
-      <type xmi:id="_RLU4oyehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#8fd71d27-94c0-49d5-9902-a26156244424" name="LinkConstraint">
+      <visualProperties xmi:id="_XmmHVyhvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4dihvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4dyhvEeCgEbgNe3FItA" label="*" max="-1"/>
+      <type xmi:id="_Xmv4dShvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#8fd71d27-94c0-49d5-9902-a26156244424" name="LinkConstraint">
         <modelElement href="sdm.uml#8fd71d27-94c0-49d5-9902-a26156244424"/>
       </type>
     </attributes>
-    <attributes xmi:id="_RLLHqCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_IIFDQBzcEeChOvWwuwx7tQ" name="pattern">
+    <attributes xmi:id="_XmmHWChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_IIFDQBzcEeChOvWwuwx7tQ" name="pattern">
       <modelElement href="sdm.uml#_IIFDQBzcEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_RLLHqSehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLVfsSehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLVfsiehEeCn77wMTjBpqg" label="1" max="1" min="1"/>
-      <type xmi:id="_RLVfsCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
+      <visualProperties xmi:id="_XmmHWShvEeCgEbgNe3FItA" visible="false"/>
+      <visibility xmi:id="_Xmv4eShvEeCgEbgNe3FItA" label="+"/>
+      <cardinality xmi:id="_Xmv4eihvEeCgEbgNe3FItA" label="1" max="1" min="1"/>
+      <type xmi:id="_Xmv4eChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
         <modelElement href="sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4"/>
       </type>
     </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CAl7-SJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern" associationsIn="_CATBHCJCEeCMEorpcZtLvw _CATBLiJCEeCMEorpcZtLvw" associationsOut="_CATBASJCEeCMEorpcZtLvw _CATBHCJCEeCMEorpcZtLvw _CAcxuSJCEeCMEorpcZtLvw _CATBEyJCEeCMEorpcZtLvw _CAcxwiJCEeCMEorpcZtLvw" subclassedBy="_CA42kyJCEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4"/>
-    <visualProperties xmi:id="_CAvsoCJCEeCMEorpcZtLvw" position="12.0,30.0" size="344.0,92.0"/>
-    <visibility xmi:id="_CAl7-iJCEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_CAl8CiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#530fdd45-f95d-43dc-8501-8c4dd824bc24" defaultValue="MANDATORY" name="bindingSemantics">
-      <modelElement href="sdm.uml#530fdd45-f95d-43dc-8501-8c4dd824bc24"/>
-      <visibility xmi:id="_CAl8CyJCEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_CAl8DCJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_CAl8DSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5d5c7278-e6e7-4956-ab18-44332c8cc462" name="BindingSemantics">
-        <modelElement href="sdm.uml#5d5c7278-e6e7-4956-ab18-44332c8cc462"/>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CAvsqyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_jap9QBzUEeChOvWwuwx7tQ" name="LinkVariable" associationsOut="_CATA3SJCEeCMEorpcZtLvw _CATBOCJCEeCMEorpcZtLvw _CATBQiJCEeCMEorpcZtLvw" generalizations="_CAvsqSJCEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#_jap9QBzUEeChOvWwuwx7tQ"/>
+    <visualProperties xmi:id="_CAvsuSJCEeCMEorpcZtLvw" position="26.0,394.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_CAvsrCJCEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_CAvsrSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_9Tqc8bK4Ed-uk56s-ldeog" derived="true" name="sourceEnd">
+      <modelElement href="sdm.uml#_9Tqc8bK4Ed-uk56s-ldeog"/>
+      <stereotypes xmi:id="_XnMkQChvEeCgEbgNe3FItA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_TmA58LxXEd-Ytrd77fw2LA" name="EReference">
+        <modelElement href="sdm.uml#_TmA58LxXEd-Ytrd77fw2LA"/>
+      </stereotypes>
+      <visibility xmi:id="_CAvsriJCEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_CAvsryJCEeCMEorpcZtLvw" label="0..1" max="1"/>
+      <type xmi:id="_CAvssCJCEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EReference" name="EReference">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EReference"/>
       </type>
     </attributes>
-    <attributes xmi:id="_CAl8FyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_atA-EBzcEeChOvWwuwx7tQ" name="templateSignature">
-      <modelElement href="sdm.uml#_atA-EBzcEeChOvWwuwx7tQ"/>
-      <visibility xmi:id="_CAl8GCJCEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_CAl8GSJCEeCMEorpcZtLvw" label="0..1" max="1"/>
-      <type xmi:id="_CAl8GiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#__NCHYLN-Ed-vJ9Qpen_Iuw" name="TemplateSignature">
-        <modelElement href="sdm.uml#__NCHYLN-Ed-vJ9Qpen_Iuw"/>
+    <attributes xmi:id="_CAvssSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#__qOrs7K4Ed-uk56s-ldeog" name="targetEnd">
+      <modelElement href="sdm.uml#__qOrs7K4Ed-uk56s-ldeog"/>
+      <visibility xmi:id="_CAvssiJCEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_CAvssyJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_CAvstCJCEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EReference" name="EReference">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EReference"/>
       </type>
     </attributes>
-    <attributes xmi:id="_RLM80CehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5999b52c-f7c5-4bc4-87ad-ef18581fea6a" name="objectVariable">
-      <modelElement href="sdm.uml#5999b52c-f7c5-4bc4-87ad-ef18581fea6a"/>
-      <visualProperties xmi:id="_RLM80SehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLWGwCehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLWGwSehEeCn77wMTjBpqg" label="*" max="-1"/>
-      <type xmi:id="_RLVfsyehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
-        <modelElement href="sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_RLM80iehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#7ce0a38c-81f6-4c40-9a4a-941e9e84f02a" name="parentPattern">
-      <modelElement href="sdm.uml#7ce0a38c-81f6-4c40-9a4a-941e9e84f02a"/>
-      <visualProperties xmi:id="_RLM80yehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLWGwyehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLWGxCehEeCn77wMTjBpqg" label="0..1" max="1"/>
-      <type xmi:id="_RLWGwiehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
-        <modelElement href="sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_RLM81CehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#406d03a7-91d4-450d-baa7-ee449e9f282c" name="containedPattern">
-      <modelElement href="sdm.uml#406d03a7-91d4-450d-baa7-ee449e9f282c"/>
-      <visualProperties xmi:id="_RLM81SehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLWt0SehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLWt0iehEeCn77wMTjBpqg" label="*" max="-1"/>
-      <type xmi:id="_RLWt0CehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
-        <modelElement href="sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_RLM81iehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_qINk0bLxEd-uk56s-ldeog" name="constraint">
-      <modelElement href="sdm.uml#_qINk0bLxEd-uk56s-ldeog"/>
-      <visualProperties xmi:id="_RLM81yehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLWt1CehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLWt1SehEeCn77wMTjBpqg" label="*" max="-1"/>
-      <type xmi:id="_RLWt0yehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_82J4gBzaEeChOvWwuwx7tQ" name="Constraint">
-        <modelElement href="sdm.uml#_82J4gBzaEeChOvWwuwx7tQ"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_RLM82CehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_IIFqUBzcEeChOvWwuwx7tQ" name="linkVariable">
-      <modelElement href="sdm.uml#_IIFqUBzcEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_RLM82SehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLXU4SehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLXU4iehEeCn77wMTjBpqg" label="*" max="-1"/>
-      <type xmi:id="_RLXU4CehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc" name="AbstractLinkVariable">
-        <modelElement href="sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CAl7oCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#8fd71d27-94c0-49d5-9902-a26156244424" name="LinkConstraint" associationsOut="_CATAuSJCEeCMEorpcZtLvw _CATAsCJCEeCMEorpcZtLvw _CATAwiJCEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#8fd71d27-94c0-49d5-9902-a26156244424"/>
-    <visualProperties xmi:id="_CAl7vCJCEeCMEorpcZtLvw" position="516.0,505.0" size="314.0,114.0"/>
-    <visibility xmi:id="_CAl7oSJCEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_CAl7oiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0d854d3d-7441-49ec-9669-45740c948bf0" name="index">
-      <modelElement href="sdm.uml#0d854d3d-7441-49ec-9669-45740c948bf0"/>
-      <visibility xmi:id="_CAl7oyJCEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_CAl7pCJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_CAl7pSJCEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer" name="Integer">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_CAl7piJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0a03363e-4597-497f-948b-c73355114187" defaultValue="DIRECT" name="constraintType">
-      <modelElement href="sdm.uml#0a03363e-4597-497f-948b-c73355114187"/>
-      <visibility xmi:id="_CAl7pyJCEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_CAl7qCJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_CAl7qSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#6e7cf16b-d8d7-4794-8fca-703d94b69494" name="LinkConstraintType">
-        <modelElement href="sdm.uml#6e7cf16b-d8d7-4794-8fca-703d94b69494"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_CAl7qiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5f3bad7e-fabb-4b50-b6de-939f6a105dff" name="negative">
-      <modelElement href="sdm.uml#5f3bad7e-fabb-4b50-b6de-939f6a105dff"/>
-      <visibility xmi:id="_CAl7qyJCEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_CAl7rCJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_CAl7rSJCEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean" name="Boolean">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_RLCkwCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#12c158aa-af57-4163-9840-4d19640d092f" name="firstLink">
-      <modelElement href="sdm.uml#12c158aa-af57-4163-9840-4d19640d092f"/>
-      <visualProperties xmi:id="_RLCkwSehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLOyASehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLOyAiehEeCn77wMTjBpqg" label="1" max="1" min="1"/>
-      <type xmi:id="_RLOyACehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc" name="AbstractLinkVariable">
-        <modelElement href="sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_RLCkwiehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#e63f051a-8e92-4ebb-9a36-1ab9ecd6e055" name="secondLink">
-      <modelElement href="sdm.uml#e63f051a-8e92-4ebb-9a36-1ab9ecd6e055"/>
-      <visualProperties xmi:id="_RLCkwyehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLPZECehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLPZESehEeCn77wMTjBpqg" label="0..1" max="1"/>
-      <type xmi:id="_RLOyAyehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc" name="AbstractLinkVariable">
-        <modelElement href="sdm.uml#70a57767-3c96-4cff-87d3-8391bb039afc"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_RLCkxCehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_xIx3obK8Ed-uk56s-ldeog" name="referencingObject">
-      <modelElement href="sdm.uml#_xIx3obK8Ed-uk56s-ldeog"/>
-      <visualProperties xmi:id="_RLCkxSehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLPZEyehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLPZFCehEeCn77wMTjBpqg" label="1" max="1" min="1"/>
-      <type xmi:id="_RLPZEiehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
-        <modelElement href="sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:EnumerationVisual" xmi:id="_CAl7vSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#6e7cf16b-d8d7-4794-8fca-703d94b69494" name="LinkConstraintType">
-    <modelElement href="sdm.uml#6e7cf16b-d8d7-4794-8fca-703d94b69494"/>
-    <visualProperties xmi:id="_CAl7xCJCEeCMEorpcZtLvw" position="1123.0,483.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_CAl7viJCEeCMEorpcZtLvw" label="+"/>
-    <literals xmi:id="_CAl7vyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#3e98d7e7-7724-45bb-8c67-8d82ed5585a5" name="FIRST">
-      <modelElement href="sdm.uml#3e98d7e7-7724-45bb-8c67-8d82ed5585a5"/>
-    </literals>
-    <literals xmi:id="_CAl7wCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#8f57045a-f941-41ce-96da-4990a7cf1706" name="LAST">
-      <modelElement href="sdm.uml#8f57045a-f941-41ce-96da-4990a7cf1706"/>
-    </literals>
-    <literals xmi:id="_CAl7wSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#52dff23f-69db-4dc6-99f8-93989817c514" name="DIRECT_SUCCESSOR">
-      <modelElement href="sdm.uml#52dff23f-69db-4dc6-99f8-93989817c514"/>
-    </literals>
-    <literals xmi:id="_CAl7wiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#8bc8df63-74a4-49ca-8b2f-b7e1728bece1" name="INDIRECT_SUCCESSOR">
-      <modelElement href="sdm.uml#8bc8df63-74a4-49ca-8b2f-b7e1728bece1"/>
-    </literals>
-    <literals xmi:id="_CAl7wyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#6d2dda9b-0699-4bf5-be1a-30d9009257f0" name="INDEX">
-      <modelElement href="sdm.uml#6d2dda9b-0699-4bf5-be1a-30d9009257f0"/>
-    </literals>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CAcx1CJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#79151c76-8e24-4f76-8143-e713373a8b68" name="AttributeAssignment" associationsIn="_CATA-CJCEeCMEorpcZtLvw" associationsOut="_CATBCiJCEeCMEorpcZtLvw _CATBJSJCEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#79151c76-8e24-4f76-8143-e713373a8b68"/>
-    <visualProperties xmi:id="_CAcx4iJCEeCMEorpcZtLvw" position="882.0,513.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_CAcx1SJCEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_CAcx2iJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_a2odgLK3Ed-uk56s-ldeog" name="attribute">
-      <modelElement href="sdm.uml#_a2odgLK3Ed-uk56s-ldeog"/>
-      <visibility xmi:id="_CAcx2yJCEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_CAcx3CJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_CAcx3SJCEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAttribute" name="EAttribute">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAttribute"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_CAcx3iJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_bFtwcrK5Ed-uk56s-ldeog" name="valueExpression">
-      <modelElement href="sdm.uml#_bFtwcrK5Ed-uk56s-ldeog"/>
-      <visibility xmi:id="_CAcx3yJCEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_CAcx4CJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_CAcx4SJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
+    <attributes xmi:id="_CAvstSJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_XMVjwLK8Ed-uk56s-ldeog" name="qualifierExpression">
+      <modelElement href="sdm.uml#_XMVjwLK8Ed-uk56s-ldeog"/>
+      <visibility xmi:id="_CAvstiJCEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_CAvstyJCEeCMEorpcZtLvw" label="0..1" max="1"/>
+      <type xmi:id="_CAvsuCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
         <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
-    <attributes xmi:id="_RLDy4CehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0494208f-7471-4bfe-8c33-9a7bd40c3425" name="objectVariable">
-      <modelElement href="sdm.uml#0494208f-7471-4bfe-8c33-9a7bd40c3425"/>
-      <visualProperties xmi:id="_RLDy4SehEeCn77wMTjBpqg" visible="false"/>
-      <visibility xmi:id="_RLQAISehEeCn77wMTjBpqg" label="+"/>
-      <cardinality xmi:id="_RLQAIiehEeCn77wMTjBpqg" label="1" max="1" min="1"/>
-      <type xmi:id="_RLQAICehEeCn77wMTjBpqg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
-        <modelElement href="sdm.uml#c0f72d07-a643-4da9-859b-d95cfca69eee"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CAvsoiJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#5bfa886f-6bb7-4920-98ce-b9512d3dd595" name="Path" associationsOut="_CATA5iJCEeCMEorpcZtLvw" generalizations="_CAvsoSJCEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#5bfa886f-6bb7-4920-98ce-b9512d3dd595"/>
+    <visualProperties xmi:id="_CAvsqCJCEeCMEorpcZtLvw" position="100.0,499.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_CAvsoyJCEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_CAvspCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_-z5JsbLxEd-uk56s-ldeog" name="pathExpression">
+      <modelElement href="sdm.uml#_-z5JsbLxEd-uk56s-ldeog"/>
+      <visibility xmi:id="_CAvspSJCEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_CAvspiJCEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_CAvspyJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
+        <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_CA42kCJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_-k2O8BzaEeChOvWwuwx7tQ" comments="_CAvszCJCEeCMEorpcZtLvw" targetConnectionVisual="_CAvszSJCEeCMEorpcZtLvw" name="ContainmentRelation" generalizations="_CAvsyyJCEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#_-k2O8BzaEeChOvWwuwx7tQ"/>
+    <visualProperties xmi:id="_CA42kiJCEeCMEorpcZtLvw" position="218.0,562.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_CA42kSJCEeCMEorpcZtLvw" label="+"/>
   </nodes>
 </com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
