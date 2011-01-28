@@ -9,7 +9,9 @@ package org.storydriven.modeling.activities;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EParameter;
 import org.storydriven.modeling.Extension;
 import org.storydriven.modeling.calls.Callable;
 

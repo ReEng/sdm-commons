@@ -825,28 +825,12 @@ public interface ActivitiesPackage extends EPackage
    int ACTIVITY__COMMENT = SDMPackage.COMMENTABLE_ELEMENT__COMMENT;
 
    /**
-    * The feature id for the '<em><b>In</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY__IN = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
-
-   /**
-    * The feature id for the '<em><b>Out</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY__OUT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
-
-   /**
     * The feature id for the '<em><b>Owning Operation</b></em>' container reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int ACTIVITY__OWNING_OPERATION = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+   int ACTIVITY__OWNING_OPERATION = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
    /**
     * The feature id for the '<em><b>Owned Activity Edge</b></em>' containment reference list.
@@ -854,15 +838,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__OWNED_ACTIVITY_EDGE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
-
-   /**
-    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int ACTIVITY__PARAMETERS = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
+   int ACTIVITY__OWNED_ACTIVITY_EDGE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
    /**
     * The feature id for the '<em><b>Precondition</b></em>' reference.
@@ -870,7 +846,25 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__PRECONDITION = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
+   int ACTIVITY__PRECONDITION = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+
+   /**
+    * The feature id for the '<em><b>In Parameter</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY__IN_PARAMETER = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+
+   /**
+    * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY__OUT_PARAMETER = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
    /**
     * The feature id for the '<em><b>Owned Activity Node</b></em>' containment reference list.
@@ -878,7 +872,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__OWNED_ACTIVITY_NODE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 6;
+   int ACTIVITY__OWNED_ACTIVITY_NODE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
 
    /**
     * The number of structural features of the '<em>Activity</em>' class.
@@ -886,7 +880,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY_FEATURE_COUNT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 7;
+   int ACTIVITY_FEATURE_COUNT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 6;
 
    /**
     * The operation id for the '<em>EClass</em>' operation.
@@ -1124,28 +1118,12 @@ public interface ActivitiesPackage extends EPackage
    int OPERATION_EXTENSION__COMMENT = SDMPackage.EXTENSION_FEATURE_COUNT + 0;
 
    /**
-    * The feature id for the '<em><b>In</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OPERATION_EXTENSION__IN = SDMPackage.EXTENSION_FEATURE_COUNT + 1;
-
-   /**
-    * The feature id for the '<em><b>Out</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OPERATION_EXTENSION__OUT = SDMPackage.EXTENSION_FEATURE_COUNT + 2;
-
-   /**
     * The feature id for the '<em><b>Operation</b></em>' reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int OPERATION_EXTENSION__OPERATION = SDMPackage.EXTENSION_FEATURE_COUNT + 3;
+   int OPERATION_EXTENSION__OPERATION = SDMPackage.EXTENSION_FEATURE_COUNT + 1;
 
    /**
     * The feature id for the '<em><b>Owned Activity</b></em>' containment reference.
@@ -1153,7 +1131,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int OPERATION_EXTENSION__OWNED_ACTIVITY = SDMPackage.EXTENSION_FEATURE_COUNT + 4;
+   int OPERATION_EXTENSION__OWNED_ACTIVITY = SDMPackage.EXTENSION_FEATURE_COUNT + 2;
 
    /**
     * The number of structural features of the '<em>Operation Extension</em>' class.
@@ -1161,7 +1139,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int OPERATION_EXTENSION_FEATURE_COUNT = SDMPackage.EXTENSION_FEATURE_COUNT + 5;
+   int OPERATION_EXTENSION_FEATURE_COUNT = SDMPackage.EXTENSION_FEATURE_COUNT + 3;
 
    /**
     * The operation id for the '<em>EClass</em>' operation.
@@ -3666,17 +3644,6 @@ public interface ActivitiesPackage extends EPackage
    EReference getActivity_OwningOperation ();
 
    /**
-    * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.activities.Activity#getParameters <em>Parameters</em>}'.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @return the meta object for the containment reference list '<em>Parameters</em>'.
-    * @see org.storydriven.modeling.activities.Activity#getParameters()
-    * @see #getActivity()
-    * @generated
-    */
-   EReference getActivity_Parameters ();
-
-   /**
     * Returns the meta object for the reference '{@link org.storydriven.modeling.activities.Activity#getPrecondition <em>Precondition</em>}'.
     * <!-- begin-user-doc --> <!--
     * end-user-doc -->
@@ -3686,6 +3653,28 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     */
    EReference getActivity_Precondition ();
+
+   /**
+    * Returns the meta object for the reference list '{@link org.storydriven.modeling.activities.Activity#getInParameters <em>In Parameter</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the reference list '<em>In Parameter</em>'.
+    * @see org.storydriven.modeling.activities.Activity#getInParameters()
+    * @see #getActivity()
+    * @generated
+    */
+   EReference getActivity_InParameter ();
+
+   /**
+    * Returns the meta object for the reference list '{@link org.storydriven.modeling.activities.Activity#getOutParameters <em>Out Parameter</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the reference list '<em>Out Parameter</em>'.
+    * @see org.storydriven.modeling.activities.Activity#getOutParameters()
+    * @see #getActivity()
+    * @generated
+    */
+   EReference getActivity_OutParameter ();
 
    /**
     * Returns the meta object for class '{@link org.storydriven.modeling.activities.ActivityNode <em>Activity Node</em>}'.
@@ -4145,18 +4134,27 @@ public interface ActivitiesPackage extends EPackage
       EReference ACTIVITY__OWNING_OPERATION = eINSTANCE.getActivity_OwningOperation();
 
       /**
-       * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
-       * @generated
-       */
-      EReference ACTIVITY__PARAMETERS = eINSTANCE.getActivity_Parameters();
-
-      /**
        * The meta object literal for the '<em><b>Precondition</b></em>' reference feature.
        * <!-- begin-user-doc --> <!-- end-user-doc -->
        * @generated
        */
       EReference ACTIVITY__PRECONDITION = eINSTANCE.getActivity_Precondition();
+
+      /**
+       * The meta object literal for the '<em><b>In Parameter</b></em>' reference list feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference ACTIVITY__IN_PARAMETER = eINSTANCE.getActivity_InParameter();
+
+      /**
+       * The meta object literal for the '<em><b>Out Parameter</b></em>' reference list feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference ACTIVITY__OUT_PARAMETER = eINSTANCE.getActivity_OutParameter();
 
       /**
        * The meta object literal for the '{@link org.storydriven.modeling.activities.impl.ActivityNodeImpl <em>Activity Node</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc

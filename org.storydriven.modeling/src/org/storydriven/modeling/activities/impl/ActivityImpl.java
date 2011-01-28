@@ -30,22 +30,19 @@ import org.storydriven.modeling.activities.ActivityEdge;
 import org.storydriven.modeling.activities.ActivityNode;
 import org.storydriven.modeling.activities.MatchingStoryNode;
 import org.storydriven.modeling.activities.OperationExtension;
-import org.storydriven.modeling.activities.StoryNode;
 import org.storydriven.modeling.calls.Callable;
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.impl.CommentableElementImpl;
-import org.storydriven.modeling.calls.impl.CallableImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Activity</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getIns <em>In</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOuts <em>Out</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getInParameters <em>In Parameter</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOutParameters <em>Out Parameter</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwningOperation <em>Owning Operation</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwnedActivityEdges <em>Owned Activity Edge</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getPrecondition <em>Precondition</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
  * </ul>
@@ -55,6 +52,26 @@ import org.storydriven.modeling.calls.impl.CallableImpl;
  */
 public class ActivityImpl extends CommentableElementImpl implements Activity
 {
+   /**
+    * The cached value of the '{@link #getInParameters() <em>In Parameter</em>}' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getInParameters()
+    * @generated
+    * @ordered
+    */
+   protected EList<EParameter> inParameters;
+
+   /**
+    * The cached value of the '{@link #getOutParameters() <em>Out Parameter</em>}' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getOutParameters()
+    * @generated
+    * @ordered
+    */
+   protected EList<EParameter> outParameters;
+
    private static final String ACTIVITY_ANNOTATION_URI = "http://ns.storydriven.org/sdm/activities/activity";
 
    /**
@@ -65,15 +82,6 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
     * @ordered
     */
    protected EList<ActivityEdge> ownedActivityEdges;
-
-   /**
-    * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see #getParameters()
-    * @generated
-    * @ordered
-    */
-   protected EList<EParameter> parameters;
 
    /**
     * The cached value of the '{@link #getPrecondition() <em>Precondition</em>}' reference.
@@ -117,11 +125,14 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
     * <!-- end-user-doc -->
     * @generated
     */
-   public EList<EParameter> getIns ()
+   public EList<EParameter> getInParameters ()
    {
-      // TODO: implement this method to return the 'In' reference list
-      // Ensure that you remove @generated or mark it @generated NOT
-      throw new UnsupportedOperationException();
+      if (inParameters == null)
+      {
+         inParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
+            ActivitiesPackage.ACTIVITY__IN_PARAMETER);
+      }
+      return inParameters;
    }
 
    /**
@@ -129,11 +140,34 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
     * <!-- end-user-doc -->
     * @generated
     */
-   public EList<EParameter> getOuts ()
+   public boolean isSetInParameters ()
    {
-      // TODO: implement this method to return the 'Out' reference list
-      // Ensure that you remove @generated or mark it @generated NOT
-      throw new UnsupportedOperationException();
+      return inParameters != null && !inParameters.isEmpty();
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public EList<EParameter> getOutParameters ()
+   {
+      if (outParameters == null)
+      {
+         outParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
+            ActivitiesPackage.ACTIVITY__OUT_PARAMETER);
+      }
+      return outParameters;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public boolean isSetOutParameters ()
+   {
+      return outParameters != null && !outParameters.isEmpty();
    }
 
    /**
@@ -207,20 +241,6 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
-   public EList<EParameter> getParameters ()
-   {
-      if (parameters == null)
-      {
-         parameters = new EObjectContainmentEList.Resolving<EParameter>(EParameter.class, this,
-            ActivitiesPackage.ACTIVITY__PARAMETERS);
-      }
-      return parameters;
-   }
-
-   /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    */
    public MatchingStoryNode getPrecondition ()
    {
       if (precondition != null && precondition.eIsProxy())
@@ -247,8 +267,7 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public void setPrecondition (MatchingStoryNode newPrecondition)
@@ -338,8 +357,6 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
             return basicSetOwningOperation(null, msgs);
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
             return ((InternalEList<?>) getOwnedActivityEdges()).basicRemove(otherEnd, msgs);
-         case ActivitiesPackage.ACTIVITY__PARAMETERS:
-            return ((InternalEList<?>) getParameters()).basicRemove(otherEnd, msgs);
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
             return ((InternalEList<?>) getOwnedActivityNodes()).basicRemove(otherEnd, msgs);
       }
@@ -371,18 +388,16 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    {
       switch (featureID)
       {
-         case ActivitiesPackage.ACTIVITY__IN:
-            return getIns();
-         case ActivitiesPackage.ACTIVITY__OUT:
-            return getOuts();
+         case ActivitiesPackage.ACTIVITY__IN_PARAMETER:
+            return getInParameters();
+         case ActivitiesPackage.ACTIVITY__OUT_PARAMETER:
+            return getOutParameters();
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             if (resolve)
                return getOwningOperation();
             return basicGetOwningOperation();
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
             return getOwnedActivityEdges();
-         case ActivitiesPackage.ACTIVITY__PARAMETERS:
-            return getParameters();
          case ActivitiesPackage.ACTIVITY__PRECONDITION:
             if (resolve)
                return getPrecondition();
@@ -403,16 +418,20 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    {
       switch (featureID)
       {
+         case ActivitiesPackage.ACTIVITY__IN_PARAMETER:
+            getInParameters().clear();
+            getInParameters().addAll((Collection<? extends EParameter>) newValue);
+            return;
+         case ActivitiesPackage.ACTIVITY__OUT_PARAMETER:
+            getOutParameters().clear();
+            getOutParameters().addAll((Collection<? extends EParameter>) newValue);
+            return;
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             setOwningOperation((OperationExtension) newValue);
             return;
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
             getOwnedActivityEdges().clear();
             getOwnedActivityEdges().addAll((Collection<? extends ActivityEdge>) newValue);
-            return;
-         case ActivitiesPackage.ACTIVITY__PARAMETERS:
-            getParameters().clear();
-            getParameters().addAll((Collection<? extends EParameter>) newValue);
             return;
          case ActivitiesPackage.ACTIVITY__PRECONDITION:
             setPrecondition((MatchingStoryNode) newValue);
@@ -434,14 +453,17 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    {
       switch (featureID)
       {
+         case ActivitiesPackage.ACTIVITY__IN_PARAMETER:
+            getInParameters().clear();
+            return;
+         case ActivitiesPackage.ACTIVITY__OUT_PARAMETER:
+            getOutParameters().clear();
+            return;
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             setOwningOperation((OperationExtension) null);
             return;
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
             getOwnedActivityEdges().clear();
-            return;
-         case ActivitiesPackage.ACTIVITY__PARAMETERS:
-            getParameters().clear();
             return;
          case ActivitiesPackage.ACTIVITY__PRECONDITION:
             setPrecondition((MatchingStoryNode) null);
@@ -462,68 +484,20 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    {
       switch (featureID)
       {
-         case ActivitiesPackage.ACTIVITY__IN:
-            return !getIns().isEmpty();
-         case ActivitiesPackage.ACTIVITY__OUT:
-            return !getOuts().isEmpty();
+         case ActivitiesPackage.ACTIVITY__IN_PARAMETER:
+            return isSetInParameters();
+         case ActivitiesPackage.ACTIVITY__OUT_PARAMETER:
+            return isSetOutParameters();
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             return basicGetOwningOperation() != null;
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
             return ownedActivityEdges != null && !ownedActivityEdges.isEmpty();
-         case ActivitiesPackage.ACTIVITY__PARAMETERS:
-            return parameters != null && !parameters.isEmpty();
          case ActivitiesPackage.ACTIVITY__PRECONDITION:
             return precondition != null;
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
             return ownedActivityNodes != null && !ownedActivityNodes.isEmpty();
       }
       return super.eIsSet(featureID);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public int eBaseStructuralFeatureID (int derivedFeatureID, Class<?> baseClass)
-   {
-      if (baseClass == Callable.class)
-      {
-         switch (derivedFeatureID)
-         {
-            case ActivitiesPackage.ACTIVITY__IN:
-               return CallsPackage.CALLABLE__IN;
-            case ActivitiesPackage.ACTIVITY__OUT:
-               return CallsPackage.CALLABLE__OUT;
-            default:
-               return -1;
-         }
-      }
-      return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public int eDerivedStructuralFeatureID (int baseFeatureID, Class<?> baseClass)
-   {
-      if (baseClass == Callable.class)
-      {
-         switch (baseFeatureID)
-         {
-            case CallsPackage.CALLABLE__IN:
-               return ActivitiesPackage.ACTIVITY__IN;
-            case CallsPackage.CALLABLE__OUT:
-               return ActivitiesPackage.ACTIVITY__OUT;
-            default:
-               return -1;
-         }
-      }
-      return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
    }
 
 } // ActivityImpl

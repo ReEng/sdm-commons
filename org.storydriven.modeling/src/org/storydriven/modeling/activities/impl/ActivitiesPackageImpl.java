@@ -276,7 +276,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
     */
    public EReference getActivity_OwnedActivityNode ()
    {
-      return (EReference) activityEClass.getEStructuralFeatures().get(4);
+      return (EReference) activityEClass.getEStructuralFeatures().get(5);
    }
 
    /**
@@ -301,18 +301,29 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
-   public EReference getActivity_Parameters ()
+   public EReference getActivity_Precondition ()
    {
       return (EReference) activityEClass.getEStructuralFeatures().get(2);
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public EReference getActivity_Precondition ()
+   public EReference getActivity_InParameter ()
    {
       return (EReference) activityEClass.getEStructuralFeatures().get(3);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public EReference getActivity_OutParameter ()
+   {
+      return (EReference) activityEClass.getEStructuralFeatures().get(4);
    }
 
    /**
@@ -727,8 +738,9 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
       activityEClass = createEClass(ACTIVITY);
       createEReference(activityEClass, ACTIVITY__OWNING_OPERATION);
       createEReference(activityEClass, ACTIVITY__OWNED_ACTIVITY_EDGE);
-      createEReference(activityEClass, ACTIVITY__PARAMETERS);
       createEReference(activityEClass, ACTIVITY__PRECONDITION);
+      createEReference(activityEClass, ACTIVITY__IN_PARAMETER);
+      createEReference(activityEClass, ACTIVITY__OUT_PARAMETER);
       createEReference(activityEClass, ACTIVITY__OWNED_ACTIVITY_NODE);
 
       operationExtensionEClass = createEClass(OPERATION_EXTENSION);
@@ -892,12 +904,15 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
       initEReference(getActivity_OwnedActivityEdge(), this.getActivityEdge(), this.getActivityEdge_OwningActivity(),
          "ownedActivityEdge", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
          IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-      initEReference(getActivity_Parameters(), theEcorePackage.getEParameter(), null, "parameters", null, 0, -1,
-         Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
       initEReference(getActivity_Precondition(), this.getMatchingStoryNode(), null, "precondition", null, 0, 1,
          Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
          IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+      initEReference(getActivity_InParameter(), theEcorePackage.getEParameter(), null, "inParameter", null, 0, -1,
+         Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+      initEReference(getActivity_OutParameter(), theEcorePackage.getEParameter(), null, "outParameter", null, 0, -1,
+         Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
       initEReference(getActivity_OwnedActivityNode(), this.getActivityNode(), this.getActivityNode_OwningActivity(),
          "ownedActivityNode", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
          IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -988,10 +1003,10 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
       // Create annotations
       // http://www.eclipse.org/emf/2002/GenModel
       createGenModelAnnotations();
-      // http://www.eclipse.org/uml2/1.1.0/GenModel
-      createGenModel_1Annotations();
       // redefines
       createRedefinesAnnotations();
+      // http://www.eclipse.org/uml2/1.1.0/GenModel
+      createGenModel_1Annotations();
       // subsets
       createSubsetsAnnotations();
       // union
@@ -1066,6 +1081,10 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
    protected void createRedefinesAnnotations ()
    {
       String source = "redefines";
+      addAnnotation(getActivity_InParameter(), source, new String[] {}, new URI[] {URI.createURI(SDMPackage.eNS_URI)
+         .appendFragment("//calls/Callable/%duplicates%/inParameter")});
+      addAnnotation(getActivity_OutParameter(), source, new String[] {}, new URI[] {URI.createURI(SDMPackage.eNS_URI)
+         .appendFragment("//calls/Callable/%duplicates%/outParameter")});
       addAnnotation(getOperationExtension_Operation(), source, new String[] {},
          new URI[] {URI.createURI(SDMPackage.eNS_URI).appendFragment("//Extension/base")});
    }

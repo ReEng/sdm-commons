@@ -19,8 +19,9 @@ import org.storydriven.modeling.calls.Callable;
  * <ul>
  *   <li>{@link org.storydriven.modeling.activities.Activity#getOwningOperation <em>Owning Operation</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.Activity#getOwnedActivityEdges <em>Owned Activity Edge</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.Activity#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.Activity#getPrecondition <em>Precondition</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.Activity#getInParameters <em>In Parameter</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.Activity#getOutParameters <em>Out Parameter</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.Activity#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
  * </ul>
  * </p>
@@ -93,22 +94,6 @@ public interface Activity extends CommentableElement, Callable
    void setOwningOperation (OperationExtension value);
 
    /**
-    * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-    * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
-    * <!-- begin-user-doc
-    * -->
-    * <p>
-    * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear, there really should be more of a description here...
-    * </p>
-    * <!-- end-user-doc -->
-    * @return the value of the '<em>Parameters</em>' containment reference list.
-    * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivity_Parameters()
-    * @model containment="true" resolveProxies="true"
-    * @generated
-    */
-   EList<EParameter> getParameters ();
-
-   /**
     * Returns the value of the '<em><b>Precondition</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> References a story node which
     * represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the
     * referenced story node may only contain black (i.e., non-create and non-destroy) objects and links. <!-- end-model-doc -->
@@ -130,5 +115,49 @@ public interface Activity extends CommentableElement, Callable
     * @generated
     */
    void setPrecondition (MatchingStoryNode value);
+
+   /**
+    * Returns the value of the '<em><b>In Parameter</b></em>' reference list.
+    * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
+    * <p>
+    * This feature redefines the following features:
+    * <ul>
+    *   <li>'{@link org.storydriven.modeling.calls.Callable#getInParameters() <em>In Parameter</em>}'</li>
+    * </ul>
+    * </p>
+    * <!-- begin-user-doc -->
+    * <p>
+    * If the meaning of the '<em>In Parameter</em>' reference list isn't clear,
+    * there really should be more of a description here...
+    * </p>
+    * <!-- end-user-doc -->
+    * @return the value of the '<em>In Parameter</em>' reference list.
+    * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivity_InParameter()
+    * @model
+    * @generated
+    */
+   EList<EParameter> getInParameters ();
+
+   /**
+    * Returns the value of the '<em><b>Out Parameter</b></em>' reference list.
+    * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
+    * <p>
+    * This feature redefines the following features:
+    * <ul>
+    *   <li>'{@link org.storydriven.modeling.calls.Callable#getOutParameters() <em>Out Parameter</em>}'</li>
+    * </ul>
+    * </p>
+    * <!-- begin-user-doc -->
+    * <p>
+    * If the meaning of the '<em>Out Parameter</em>' reference list isn't clear,
+    * there really should be more of a description here...
+    * </p>
+    * <!-- end-user-doc -->
+    * @return the value of the '<em>Out Parameter</em>' reference list.
+    * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivity_OutParameter()
+    * @model
+    * @generated
+    */
+   EList<EParameter> getOutParameters ();
 
 } // Activity

@@ -29,33 +29,33 @@ import org.storydriven.modeling.CommentableElement;
 public interface Callable extends CommentableElement
 {
    /**
-    * Returns the value of the '<em><b>In</b></em>' reference list.
+    * Returns the value of the '<em><b>In Parameter</b></em>' reference list.
     * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
     * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>In</em>' reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @return the value of the '<em>In</em>' reference list.
-    * @see org.storydriven.modeling.calls.CallsPackage#getCallable_In()
+    * @return the value of the '<em>In Parameter</em>' reference list.
+    * @see org.storydriven.modeling.calls.CallsPackage#getCallable_InParameter()
     * @model changeable="false" volatile="true" derived="true"
     * @generated
     */
-   EList<EParameter> getIns ();
+   EList<EParameter> getInParameters ();
 
    /**
-    * Returns the value of the '<em><b>Out</b></em>' reference list.
+    * Returns the value of the '<em><b>Out Parameter</b></em>' reference list.
     * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
     * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Out</em>' reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @return the value of the '<em>Out</em>' reference list.
-    * @see org.storydriven.modeling.calls.CallsPackage#getCallable_Out()
+    * @return the value of the '<em>Out Parameter</em>' reference list.
+    * @see org.storydriven.modeling.calls.CallsPackage#getCallable_OutParameter()
     * @model changeable="false" volatile="true" derived="true"
     * @generated
     */
-   EList<EParameter> getOuts ();
+   EList<EParameter> getOutParameters ();
 
 } // Callable

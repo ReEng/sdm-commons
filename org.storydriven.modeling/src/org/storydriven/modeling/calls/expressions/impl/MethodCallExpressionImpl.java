@@ -334,7 +334,7 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
             return null;
          }
       }
-      EList<EParameter> outs = callee.getOuts();
+      EList<EParameter> outs = callee.getOutParameters();
       EParameter returnParameter = outs.isEmpty() ? null : outs.get(0);
       return returnParameter;
    }

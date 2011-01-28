@@ -68,12 +68,6 @@
       <packagedElement xmi:type="uml:Association" xmi:id="87a955bf-4e1d-40c5-bc6d-13f0e9c10b26" name="HasOutgoingEdge" memberEnd="9c8c19ca-fef2-4635-a0a6-9b783dfe4579 8cee2d74-0dce-4164-bad1-b56bc8d97577"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_PwFBwL0pEd-DQ5q3aRKcIw" name="HasActivity" memberEnd="_PwFo0L0pEd-DQ5q3aRKcIw _PwGP4L0pEd-DQ5q3aRKcIw"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_kUNHUBzHEeChOvWwuwx7tQ" name="ContainsActivityEdge" memberEnd="_kUNHURzHEeChOvWwuwx7tQ _kUOVcBzHEeChOvWwuwx7tQ"/>
-      <packagedElement xmi:type="uml:Association" xmi:id="_yHyL8BzHEeChOvWwuwx7tQ" name="ContainsParameters" memberEnd="_yHyzABzHEeChOvWwuwx7tQ _yHzaERzHEeChOvWwuwx7tQ">
-        <ownedEnd xmi:id="_yHyzABzHEeChOvWwuwx7tQ" name="owningActivity" type="1f15de3e-b6d4-423a-b56b-04cc037e043c" association="_yHyL8BzHEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yHzaEBzHEeChOvWwuwx7tQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yHyzARzHEeChOvWwuwx7tQ"/>
-        </ownedEnd>
-      </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_BzfP0BzIEeChOvWwuwx7tQ" name="HasPrecondition" memberEnd="_Bzf24BzIEeChOvWwuwx7tQ _Bzgd8RzIEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_Bzf24BzIEeChOvWwuwx7tQ" name="activity" type="1f15de3e-b6d4-423a-b56b-04cc037e043c" association="_BzfP0BzIEeChOvWwuwx7tQ">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Bzgd8BzIEeChOvWwuwx7tQ" value="*"/>
@@ -132,17 +126,22 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kUOVchzHEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kUOVcRzHEeChOvWwuwx7tQ"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_yHzaERzHEeChOvWwuwx7tQ" name="parameters" isOrdered="true" aggregation="composite" association="_yHyL8BzHEeChOvWwuwx7tQ">
-          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yH0BIRzHEeChOvWwuwx7tQ" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yH0BIBzHEeChOvWwuwx7tQ"/>
-        </ownedAttribute>
         <ownedAttribute xmi:id="_Bzgd8RzIEeChOvWwuwx7tQ" name="precondition" type="_fD_b0BzQEeChOvWwuwx7tQ" association="_BzfP0BzIEeChOvWwuwx7tQ">
           <ownedComment xmi:id="_0aPsEBzuEeChOvWwuwx7tQ" annotatedElement="_Bzgd8RzIEeChOvWwuwx7tQ">
             <body>References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links.</body>
           </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BzhFARzIEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BzhFABzIEeChOvWwuwx7tQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_1YQ1wSrfEeCrkKoGytJPbg" name="inParameter" redefinedProperty="_bGIb8RzMEeChOvWwuwx7tQ" association="_1YPnoCrfEeCrkKoGytJPbg">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1YRc0SrfEeCrkKoGytJPbg" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1YRc0CrfEeCrkKoGytJPbg"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_16YrYCrfEeCrkKoGytJPbg" name="outParameter" redefinedProperty="_eWJbMBzMEeChOvWwuwx7tQ" association="_16XdQCrfEeCrkKoGytJPbg">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_16ZScCrfEeCrkKoGytJPbg" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_16YrYSrfEeCrkKoGytJPbg"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="39579588-fb90-4211-b314-2c5bc4ee2403" name="ActivityEdge">
@@ -328,6 +327,18 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ErC8oR2VEeCKeJCjS51luQ"/>
         </ownedEnd>
       </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_1YPnoCrfEeCrkKoGytJPbg" name="ContainsInParameter" memberEnd="_1YQOsCrfEeCrkKoGytJPbg _1YQ1wSrfEeCrkKoGytJPbg">
+        <ownedEnd xmi:id="_1YQOsCrfEeCrkKoGytJPbg" name="revInParameter" type="1f15de3e-b6d4-423a-b56b-04cc037e043c" association="_1YPnoCrfEeCrkKoGytJPbg">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1YQ1wCrfEeCrkKoGytJPbg" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1YQOsSrfEeCrkKoGytJPbg"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_16XdQCrfEeCrkKoGytJPbg" name="ContainsOutParameter" memberEnd="_16XdQSrfEeCrkKoGytJPbg _16YrYCrfEeCrkKoGytJPbg">
+        <ownedEnd xmi:id="_16XdQSrfEeCrkKoGytJPbg" name="revOutParameter" type="1f15de3e-b6d4-423a-b56b-04cc037e043c" association="_16XdQCrfEeCrkKoGytJPbg">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_16YEUSrfEeCrkKoGytJPbg" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_16YEUCrfEeCrkKoGytJPbg"/>
+        </ownedEnd>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_Y55xwBzIEeChOvWwuwx7tQ" name="calls">
       <elementImport xmi:id="_07wWEB2QEeCKeJCjS51luQ">
@@ -395,13 +406,13 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_bGHN0BzMEeChOvWwuwx7tQ" name="ContainsIn" memberEnd="_bGH04BzMEeChOvWwuwx7tQ _bGIb8RzMEeChOvWwuwx7tQ">
-        <ownedEnd xmi:id="_bGH04BzMEeChOvWwuwx7tQ" name="revIn" type="_gfdN4BzIEeChOvWwuwx7tQ" association="_bGHN0BzMEeChOvWwuwx7tQ">
+        <ownedEnd xmi:id="_bGH04BzMEeChOvWwuwx7tQ" name="revInParameter" type="_gfdN4BzIEeChOvWwuwx7tQ" association="_bGHN0BzMEeChOvWwuwx7tQ">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bGIb8BzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bGH04RzMEeChOvWwuwx7tQ"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_eWHmABzMEeChOvWwuwx7tQ" name="ContainsOut" memberEnd="_eWINEBzMEeChOvWwuwx7tQ _eWJbMBzMEeChOvWwuwx7tQ">
-        <ownedEnd xmi:id="_eWINEBzMEeChOvWwuwx7tQ" name="revOut" type="_gfdN4BzIEeChOvWwuwx7tQ" association="_eWHmABzMEeChOvWwuwx7tQ">
+        <ownedEnd xmi:id="_eWINEBzMEeChOvWwuwx7tQ" name="revOutParameter" type="_gfdN4BzIEeChOvWwuwx7tQ" association="_eWHmABzMEeChOvWwuwx7tQ">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eWI0IRzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eWI0IBzMEeChOvWwuwx7tQ"/>
         </ownedEnd>
@@ -443,12 +454,12 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
           <body>An entity which can be called by an Invocation. A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions and OpaqueCallables can only have one out parameter (This is enforced by an OCL constraint).</body>
         </ownedComment>
         <generalization xmi:id="_S8GhIBzJEeChOvWwuwx7tQ" general="_e7CFQLLyEd-uk56s-ldeog"/>
-        <ownedAttribute xmi:id="_bGIb8RzMEeChOvWwuwx7tQ" name="in" isOrdered="true" isReadOnly="true" isDerived="true" association="_bGHN0BzMEeChOvWwuwx7tQ">
+        <ownedAttribute xmi:id="_bGIb8RzMEeChOvWwuwx7tQ" name="inParameter" isOrdered="true" isReadOnly="true" isDerived="true" association="_bGHN0BzMEeChOvWwuwx7tQ">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bGJDABzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bGIb8hzMEeChOvWwuwx7tQ"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_eWJbMBzMEeChOvWwuwx7tQ" name="out" isOrdered="true" isReadOnly="true" isDerived="true" association="_eWHmABzMEeChOvWwuwx7tQ">
+        <ownedAttribute xmi:id="_eWJbMBzMEeChOvWwuwx7tQ" name="outParameter" isOrdered="true" isReadOnly="true" isDerived="true" association="_eWHmABzMEeChOvWwuwx7tQ">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eWJbMhzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eWJbMRzMEeChOvWwuwx7tQ"/>
@@ -488,6 +499,19 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9V4fQBzLEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9V34MRzLEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
+        <ownedAttribute xmi:id="_tDyJACrdEeCrkKoGytJPbg" name="name" visibility="public">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_xZ_UQSrdEeCrkKoGytJPbg" name="inParameter" redefinedProperty="_bGIb8RzMEeChOvWwuwx7tQ" association="_xZ9fECrdEeCrkKoGytJPbg">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xZ_7USrdEeCrkKoGytJPbg" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xZ_7UCrdEeCrkKoGytJPbg"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_HTvZUirfEeCrkKoGytJPbg" name="outParameter" redefinedProperty="_eWJbMBzMEeChOvWwuwx7tQ" association="_HTuLMCrfEeCrkKoGytJPbg">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HTwAYSrfEeCrkKoGytJPbg" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HTwAYCrfEeCrkKoGytJPbg"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_jIVUoBzIEeChOvWwuwx7tQ" name="ParameterExtension">
         <ownedComment xmi:id="_8sVooBzvEeChOvWwuwx7tQ" annotatedElement="_jIVUoBzIEeChOvWwuwx7tQ">
@@ -500,6 +524,18 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WMuAgRzNEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WMuAgBzNEeChOvWwuwx7tQ"/>
         </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_xZ9fECrdEeCrkKoGytJPbg" name="OpaqueCallableContainsIn" memberEnd="_xZ-tMCrdEeCrkKoGytJPbg _xZ_UQSrdEeCrkKoGytJPbg">
+        <ownedEnd xmi:id="_xZ-tMCrdEeCrkKoGytJPbg" name="revInParameter" type="_iEEbQBzIEeChOvWwuwx7tQ" association="_xZ9fECrdEeCrkKoGytJPbg">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xZ_UQCrdEeCrkKoGytJPbg" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xZ-tMSrdEeCrkKoGytJPbg"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_HTuLMCrfEeCrkKoGytJPbg" name="OpaqueCallableContainsOut" memberEnd="_HTuyQCrfEeCrkKoGytJPbg _HTvZUirfEeCrkKoGytJPbg">
+        <ownedEnd xmi:id="_HTuyQCrfEeCrkKoGytJPbg" name="revOutParameter" type="_iEEbQBzIEeChOvWwuwx7tQ" association="_HTuLMCrfEeCrkKoGytJPbg">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HTvZUSrfEeCrkKoGytJPbg" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HTvZUCrfEeCrkKoGytJPbg"/>
+        </ownedEnd>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_gsByQLN1Ed-vJ9Qpen_Iuw" name="expressions">

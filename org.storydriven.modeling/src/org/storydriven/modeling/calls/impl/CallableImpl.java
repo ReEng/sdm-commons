@@ -18,8 +18,8 @@ import org.storydriven.modeling.impl.CommentableElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.calls.impl.CallableImpl#getIns <em>In</em>}</li>
- *   <li>{@link org.storydriven.modeling.calls.impl.CallableImpl#getOuts <em>Out</em>}</li>
+ *   <li>{@link org.storydriven.modeling.calls.impl.CallableImpl#getInParameters <em>In Parameter</em>}</li>
+ *   <li>{@link org.storydriven.modeling.calls.impl.CallableImpl#getOutParameters <em>Out Parameter</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,47 +51,13 @@ public abstract class CallableImpl extends CommentableElementImpl implements Cal
     * 
     * @generated NOT
     */
-   public abstract EList<EParameter> getIns ();
+   public abstract EList<EParameter> getInParameters ();
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * 
     * @generated NOT
     */
-   public abstract EList<EParameter> getOuts ();
-
-   /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public Object eGet (int featureID, boolean resolve, boolean coreType)
-   {
-      switch (featureID)
-      {
-         case CallsPackage.CALLABLE__IN:
-            return getIns();
-         case CallsPackage.CALLABLE__OUT:
-            return getOuts();
-      }
-      return super.eGet(featureID, resolve, coreType);
-   }
-
-   /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public boolean eIsSet (int featureID)
-   {
-      switch (featureID)
-      {
-         case CallsPackage.CALLABLE__IN:
-            return !getIns().isEmpty();
-         case CallsPackage.CALLABLE__OUT:
-            return !getOuts().isEmpty();
-      }
-      return super.eIsSet(featureID);
-   }
+   public abstract EList<EParameter> getOutParameters ();
 
 } // CallableImpl

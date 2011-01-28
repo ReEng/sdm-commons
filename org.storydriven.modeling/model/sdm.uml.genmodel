@@ -10,7 +10,7 @@
     usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true" pluralizedGetters="true" invariantPrefix="">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
-    <details key="DUPLICATE_FEATURE_INHERITANCE" value="REPORT"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="PROCESS"/>
     <details key="DUPLICATE_OPERATIONS" value="REPORT"/>
     <details key="DERIVED_FEATURES" value="PROCESS"/>
     <details key="SUBSETTING_PROPERTIES" value="PROCESS"/>
@@ -19,7 +19,7 @@
     <details key="UNION_PROPERTIES" value="PROCESS"/>
     <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
     <details key="DUPLICATE_OPERATION_INHERITANCE" value="REPORT"/>
-    <details key="DUPLICATE_FEATURES" value="REPORT"/>
+    <details key="DUPLICATE_FEATURES" value="PROCESS"/>
     <details key="REDEFINING_PROPERTIES" value="PROCESS"/>
     <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
     <details key="COMMENTS" value="PROCESS"/>
@@ -126,10 +126,12 @@
             createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//activities/Activity/owningOperation"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/Activity/ownedActivityEdge"/>
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/Activity/parameters"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/Activity/precondition"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/Activity/inParameter"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/Activity/outParameter"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/Activity/ownedActivityNode"/>
       </genClasses>
@@ -259,6 +261,11 @@
             createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//calls/ParameterBinding/invocation"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//calls/OpaqueCallable">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//calls/OpaqueCallable/name"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//calls/OpaqueCallable/inParameter"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//calls/OpaqueCallable/outParameter"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
             createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//calls/OpaqueCallable/callExpression"/>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sdm.ecore#//calls/OpaqueCallable/NumberOfOutParams">
@@ -270,12 +277,7 @@
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//calls/ParameterExtension/parameter"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sdm.ecore#//calls/Callable">
-        <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-            createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//calls/Callable/in"/>
-        <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-            createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//calls/Callable/out"/>
-      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sdm.ecore#//calls/Callable"/>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Expressions" basePackage="org.storydriven.modeling.calls"
           disposableProviderFactory="true" ecorePackage="sdm.ecore#//calls/expressions"
           resourceInterfaces="true" operationsPackage="org.storydriven.modeling.calls.expressions.impl">
