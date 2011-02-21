@@ -287,6 +287,10 @@
           <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
               createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//calls/expressions/MethodCallExpression/opaqueCallable"/>
         </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//calls/expressions/ParameterExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//calls/expressions/ParameterExpression/parameter"/>
+        </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Patterns" basePackage="org.storydriven.modeling"

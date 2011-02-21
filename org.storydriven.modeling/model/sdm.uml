@@ -397,6 +397,22 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_9V3RIBzLEeChOvWwuwx7tQ" name="ContainsOpaqueCallable" memberEnd="_9V34MBzLEeChOvWwuwx7tQ _9V4fQRzLEeChOvWwuwx7tQ"/>
+        <packagedElement xmi:type="uml:Association" xmi:id="_WxbLYD3PEeCkabonkEk6JQ" name="parameter" memberEnd="_WxcZgD3PEeCkabonkEk6JQ _WxdAkj3PEeCkabonkEk6JQ">
+          <ownedEnd xmi:id="_WxcZgD3PEeCkabonkEk6JQ" name="parameterExpression" type="_AS2FgD3PEeCkabonkEk6JQ" association="_WxbLYD3PEeCkabonkEk6JQ">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WxdAkT3PEeCkabonkEk6JQ" value="*"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WxdAkD3PEeCkabonkEk6JQ"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_AS2FgD3PEeCkabonkEk6JQ" name="ParameterExpression">
+          <ownedComment xmi:id="_J8wUID3REeCkabonkEk6JQ" annotatedElement="_AS2FgD3PEeCkabonkEk6JQ">
+            <body>An Expressions that represents a parameter value, e.g. the value of an Activity's parameter.</body>
+          </ownedComment>
+          <generalization xmi:id="_uTu_ID3PEeCkabonkEk6JQ" general="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+          <ownedAttribute xmi:id="_WxdAkj3PEeCkabonkEk6JQ" name="parameter" type="_jIVUoBzIEeChOvWwuwx7tQ" association="_WxbLYD3PEeCkabonkEk6JQ">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WxdnoT3PEeCkabonkEk6JQ" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WxdnoD3PEeCkabonkEk6JQ"/>
+          </ownedAttribute>
+        </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_KDmvEBzMEeChOvWwuwx7tQ" name="ContainsParameterBindings" memberEnd="_KDnWIBzMEeChOvWwuwx7tQ _KDn9MBzMEeChOvWwuwx7tQ"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_Sj4uEBzMEeChOvWwuwx7tQ" name="HasCallee" memberEnd="_Sj5VIBzMEeChOvWwuwx7tQ _Sj58MRzMEeChOvWwuwx7tQ">

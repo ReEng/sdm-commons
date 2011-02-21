@@ -66,6 +66,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
       {
          case ExpressionsPackage.METHOD_CALL_EXPRESSION:
             return createMethodCallExpression();
+         case ExpressionsPackage.PARAMETER_EXPRESSION:
+            return createParameterExpression();
          default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
       }
@@ -79,6 +81,17 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    {
       MethodCallExpressionImpl methodCallExpression = new MethodCallExpressionImpl();
       return methodCallExpression;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public ParameterExpression createParameterExpression ()
+   {
+      ParameterExpressionImpl parameterExpression = new ParameterExpressionImpl();
+      return parameterExpression;
    }
 
    /**

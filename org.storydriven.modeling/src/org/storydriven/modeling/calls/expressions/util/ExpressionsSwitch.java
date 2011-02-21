@@ -106,6 +106,22 @@ public class ExpressionsSwitch<T>
                result = defaultCase(theEObject);
             return result;
          }
+         case ExpressionsPackage.PARAMETER_EXPRESSION:
+         {
+            ParameterExpression parameterExpression = (ParameterExpression) theEObject;
+            T result = caseParameterExpression(parameterExpression);
+            if (result == null)
+               result = caseExpression(parameterExpression);
+            if (result == null)
+               result = caseTypedElement(parameterExpression);
+            if (result == null)
+               result = caseCommentableElement(parameterExpression);
+            if (result == null)
+               result = caseExtendableElement(parameterExpression);
+            if (result == null)
+               result = defaultCase(theEObject);
+            return result;
+         }
          default:
             return defaultCase(theEObject);
       }
@@ -121,6 +137,22 @@ public class ExpressionsSwitch<T>
     * @generated
     */
    public T caseMethodCallExpression (MethodCallExpression object)
+   {
+      return null;
+   }
+
+   /**
+    * Returns the result of interpreting the object as an instance of '<em>Parameter Expression</em>'.
+    * <!-- begin-user-doc -->
+    * This implementation returns null;
+    * returning a non-null result will terminate the switch.
+    * <!-- end-user-doc -->
+    * @param object the target of the switch.
+    * @return the result of interpreting the object as an instance of '<em>Parameter Expression</em>'.
+    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+    * @generated
+    */
+   public T caseParameterExpression (ParameterExpression object)
    {
       return null;
    }

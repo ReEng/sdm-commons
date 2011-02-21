@@ -18,6 +18,7 @@ import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.calls.expressions.ExpressionsFactory;
 import org.storydriven.modeling.calls.expressions.ExpressionsPackage;
 import org.storydriven.modeling.calls.expressions.MethodCallExpression;
+import org.storydriven.modeling.calls.expressions.ParameterExpression;
 import org.storydriven.modeling.calls.impl.CallsPackageImpl;
 import org.storydriven.modeling.impl.SDMPackageImpl;
 import org.storydriven.modeling.patterns.PatternsPackage;
@@ -36,6 +37,13 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
     * @generated
     */
    private EClass methodCallExpressionEClass = null;
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   private EClass parameterExpressionEClass = null;
 
    /**
     * Creates an instance of the model <b>Package</b>, registered with
@@ -175,6 +183,26 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
    }
 
    /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public EClass getParameterExpression ()
+   {
+      return parameterExpressionEClass;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public EReference getParameterExpression_Parameter ()
+   {
+      return (EReference) parameterExpressionEClass.getEStructuralFeatures().get(0);
+   }
+
+   /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
@@ -205,6 +233,9 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
       methodCallExpressionEClass = createEClass(METHOD_CALL_EXPRESSION);
       createEReference(methodCallExpressionEClass, METHOD_CALL_EXPRESSION__TARGET);
       createEReference(methodCallExpressionEClass, METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE);
+
+      parameterExpressionEClass = createEClass(PARAMETER_EXPRESSION);
+      createEReference(parameterExpressionEClass, PARAMETER_EXPRESSION__PARAMETER);
    }
 
    /**
@@ -243,6 +274,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
       // Add supertypes to classes
       methodCallExpressionEClass.getESuperTypes().add(theExpressionsPackage_2.getExpression());
       methodCallExpressionEClass.getESuperTypes().add(theCallsPackage.getInvocation());
+      parameterExpressionEClass.getESuperTypes().add(theExpressionsPackage_2.getExpression());
 
       // Initialize classes, features, and operations; add parameters
       initEClass(methodCallExpressionEClass, MethodCallExpression.class, "MethodCallExpression", !IS_ABSTRACT,
@@ -254,6 +286,12 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
          theCallsPackage.getOpaqueCallable_CallExpression(), "opaqueCallable", null, 0, 1, MethodCallExpression.class,
          !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
+
+      initEClass(parameterExpressionEClass, ParameterExpression.class, "ParameterExpression", !IS_ABSTRACT,
+         !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+      initEReference(getParameterExpression_Parameter(), theCallsPackage.getParameterExtension(), null, "parameter",
+         null, 0, 1, ParameterExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+         IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
       // Create annotations
       // http://www.eclipse.org/emf/2002/GenModel
@@ -286,6 +324,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
          new String[] {
                "documentation",
                "This containment reference is a helper construct because the OpaqueCallable has to be contained somewhere. A MethodCallExpression (being an Invocation) could also reference an OpaqueCallable (being a Callable) via the callee reference but then the OpaqueCallable would not be contained anywhere in the model."});
+      addAnnotation(parameterExpressionEClass, source, new String[] {"documentation",
+            "An Expressions that represents a parameter value, e.g. the value of an Activity\'s parameter."});
    }
 
 } // ExpressionsPackageImpl

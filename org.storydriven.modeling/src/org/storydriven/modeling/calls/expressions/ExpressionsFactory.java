@@ -31,6 +31,15 @@ public interface ExpressionsFactory extends EFactory
    MethodCallExpression createMethodCallExpression ();
 
    /**
+    * Returns a new object of class '<em>Parameter Expression</em>'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return a new object of class '<em>Parameter Expression</em>'.
+    * @generated
+    */
+   ParameterExpression createParameterExpression ();
+
+   /**
     * Returns the package supported by this factory.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @return the package supported by this factory.
