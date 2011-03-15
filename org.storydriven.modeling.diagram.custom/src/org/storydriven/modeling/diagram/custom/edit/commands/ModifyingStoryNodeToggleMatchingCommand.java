@@ -158,11 +158,7 @@ public class ModifyingStoryNodeToggleMatchingCommand extends AbstractActionDeleg
 				}
 				
 				removeOldNode();
-				
-				owningStructuredNodeEditPart.refresh();
-				
-				//((View)owningStructuredNodeEditPart.getModel()).removeChild(modifyingNodeView);
-				
+												
 				return CommandResult.newOKCommandResult();
 			}
 
@@ -218,7 +214,6 @@ public class ModifyingStoryNodeToggleMatchingCommand extends AbstractActionDeleg
 		
 		ViewUtil.destroy(modifyingNodeView);
 		
-		
 		if(owningStructuredNodeEditPart != null) {			
 			Request destroyOldNodeRequest = new EditCommandRequestWrapper(new DestroyElementRequest(storyNodeEditPart.getEditingDomain(), modifyingNodeElement, false)); 
 			Command destroyOldNodeCommand = owningStructuredNodeEditPart.getCommand(destroyOldNodeRequest); 
@@ -252,9 +247,6 @@ public class ModifyingStoryNodeToggleMatchingCommand extends AbstractActionDeleg
 		modifyingNodeView = ((View) storyNodeEditPart.getModel());
 		diagramEditPart = (DiagramEditPart) storyNodeEditPart.getRoot().getContents();
 		owningStructuredNodeEditPart = (StructuredNodeStructuredNodeCompartmentEditPart) ((storyNodeEditPart.getParent() == diagramEditPart) ? null : storyNodeEditPart.getParent());
-//		if(owningStructuredNodeEditPart != null) {	
-//			((View)owningStructuredNodeEditPart.getModel()).removeChild(modifyingNodeView);
-//		}
 	}
 }
 
