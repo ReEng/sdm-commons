@@ -6,37 +6,41 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.workspace.AbstractEMFOperation;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.ui.action.AbstractActionDelegate;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.storydriven.modeling.activities.ActivitiesFactory;
 import org.storydriven.modeling.activities.MatchingStoryNode;
 import org.storydriven.modeling.activities.ModifyingStoryNode;
+import org.storydriven.modeling.activities.StoryNode;
 import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeEditPart;
 
-public class MatchingStoryNodeToggleForEachCommand extends AbstractActionDelegate implements
+public class StoryNodeToggleForEachCommand extends AbstractActionDelegate implements
 		IObjectActionDelegate {
 
-	MatchingStoryNode aMatchingNode;
+	StoryNode aNodeElement;
 	View theModel;
 	
 	@Override
 	protected void doRun(IProgressMonitor progressMonitor) {
-		MatchingStoryNodeEditPart storyNodeEditPart = ((MatchingStoryNodeEditPart) getStructuredSelection().getFirstElement());
-		aMatchingNode = (MatchingStoryNode) ((View) storyNodeEditPart.getModel()).getElement();
-		theModel = ((View) storyNodeEditPart.getModel());
+		GraphicalEditPart anEditPart = (GraphicalEditPart) (getStructuredSelection().getFirstElement());
+		aNodeElement = (StoryNode) ((View) anEditPart.getModel()).getElement();
+		theModel = ((View) anEditPart.getModel());
 		
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(storyNodeEditPart.getEditingDomain(),
-					"Toggle MatchingStoryNodes for each attribute", null) {
+		AbstractTransactionalCommand command = new AbstractTransactionalCommand(anEditPart.getEditingDomain(),
+					"Toggle StoryNodes for each attribute", null) {
 			
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 					IAdaptable info) throws ExecutionException {
 
-				aMatchingNode.setForEach(!aMatchingNode.isForEach());
+				aNodeElement.setForEach(!aNodeElement.isForEach());
 				
 				return CommandResult.newOKCommandResult();
 			}

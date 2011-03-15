@@ -4,6 +4,7 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.modeling.diagram.edit.parts.MatchingPatternEditPart;
 import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNodeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.SDMEditPartFactory;
 import org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart;
 import org.storydriven.modeling.diagram.part.SDMVisualIDRegistry;
@@ -20,6 +21,9 @@ public class CustomSDMEditPartFactory extends SDMEditPartFactory {
 			
 			case MatchingStoryNodeEditPart.VISUAL_ID:
 				return new CustomMatchingStoryNodeEditPart(view);
+				
+			case ModifyingStoryNodeEditPart.VISUAL_ID:
+				return new CustomModifyingStoryNodeEditPart(view);
 
 			case MatchingPatternEditPart.VISUAL_ID:
 				return new CustomStoryPatternEditPart(view);

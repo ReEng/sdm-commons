@@ -1,15 +1,18 @@
 package org.storydriven.modeling.diagram.custom.edit.parts;
 
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.gef.EditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableEditPolicyEx;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramCommandStack;
 import org.eclipse.gmf.runtime.notation.View;
+import org.storydriven.modeling.diagram.custom.edit.commands.RefreshElementCommand;
 import org.storydriven.modeling.diagram.edit.parts.MatchingPatternEditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart;
 import org.storydriven.modeling.patterns.StoryPattern;
 
 public class CustomStoryPatternEditPart extends MatchingPatternEditPart {
@@ -41,6 +44,11 @@ public class CustomStoryPatternEditPart extends MatchingPatternEditPart {
 		((RoundedRectangle) primaryRectangle.getChildren().get(0)).setOpaque(true);
 		primaryRectangle.setOpaque(true);
 
+		RefreshElementCommand refreshCommand = new RefreshElementCommand((EObject) (getParent().getModel()),
+												aStoryNode.getEditingDomain(),
+												((View) aStoryNode.getModel()));
+		DiagramCommandStack commandStack = getDiagramEditDomain().getDiagramCommandStack();
+		commandStack.execute(new ICommandProxy(refreshCommand));
 		//aStoryNodeCompartment.getFigure().setLayoutManager(null);
 	}
 	
@@ -54,7 +62,7 @@ public class CustomStoryPatternEditPart extends MatchingPatternEditPart {
 	@Override
 	public void notifyChanged(Notification notification) {
 			super.notifyChanged(notification);
-			updateFigure();
+			//updateFigure();
 	}
 	
 //	@Override
