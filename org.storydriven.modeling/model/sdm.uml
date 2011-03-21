@@ -250,6 +250,11 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GemP4xzPEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GemP4hzPEeChOvWwuwx7tQ"/>
         </ownedAttribute>
+        <ownedAttribute xmi:id="_HGPW1FPGEeCU3puq44liRg" name="returnValue" visibility="protected" aggregation="composite" association="_HGPW0FPGEeCU3puq44liRg">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HGPW1lPGEeCU3puq44liRg" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HGPW1VPGEeCU3puq44liRg"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_n9AgYBzPEeChOvWwuwx7tQ" name="ExceptionVariable">
         <ownedComment xmi:id="_RUl7gBzvEeChOvWwuwx7tQ" annotatedElement="_n9AgYBzPEeChOvWwuwx7tQ">
@@ -337,6 +342,15 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
         <ownedEnd xmi:id="_16XdQSrfEeCrkKoGytJPbg" name="revOutParameter" type="1f15de3e-b6d4-423a-b56b-04cc037e043c" association="_16XdQCrfEeCrkKoGytJPbg">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_16YEUSrfEeCrkKoGytJPbg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_16YEUCrfEeCrkKoGytJPbg"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_HGPW0FPGEeCU3puq44liRg" name="outParameter" visibility="protected" memberEnd="_HGPW0VPGEeCU3puq44liRg _HGPW1FPGEeCU3puq44liRg">
+        <ownedComment xmi:id="_Im6p8FPHEeCU3puq44liRg" annotatedElement="_HGPW0FPGEeCU3puq44liRg">
+          <body>Direct reference for return value of an operation. Allows EParameter to be contained in the OperationExtension.</body>
+        </ownedComment>
+        <ownedEnd xmi:id="_HGPW0VPGEeCU3puq44liRg" name="operationExtension" type="_DxIjgL0pEd-DQ5q3aRKcIw" association="_HGPW0FPGEeCU3puq44liRg">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HGPW01PGEeCU3puq44liRg" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HGPW0lPGEeCU3puq44liRg"/>
         </ownedEnd>
       </packagedElement>
     </packagedElement>

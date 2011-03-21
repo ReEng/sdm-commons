@@ -22,6 +22,7 @@ import org.storydriven.modeling.calls.Callable;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.storydriven.modeling.activities.OperationExtension#getOperation <em>Operation</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.OperationExtension#getReturnValue <em>Return Value</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.OperationExtension#getOwnedActivity <em>Owned Activity</em>}</li>
  * </ul>
  * </p>
@@ -87,6 +88,32 @@ public interface OperationExtension extends Extension, Callable
     * @generated
     */
    boolean isSetOperation ();
+
+   /**
+    * Returns the value of the '<em><b>Return Value</b></em>' containment reference.
+    * <!-- begin-user-doc -->
+    * <p>
+    * If the meaning of the '<em>Return Value</em>' containment reference isn't clear,
+    * there really should be more of a description here...
+    * </p>
+    * <!-- end-user-doc -->
+    * @return the value of the '<em>Return Value</em>' containment reference.
+    * @see #setReturnValue(EParameter)
+    * @see org.storydriven.modeling.activities.ActivitiesPackage#getOperationExtension_ReturnValue()
+    * @model containment="true" resolveProxies="true" ordered="false"
+    * @generated
+    */
+   EParameter getReturnValue ();
+
+   /**
+    * Sets the value of the '{@link org.storydriven.modeling.activities.OperationExtension#getReturnValue <em>Return Value</em>}' containment reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @param value the new value of the '<em>Return Value</em>' containment reference.
+    * @see #getReturnValue()
+    * @generated
+    */
+   void setReturnValue (EParameter value);
 
    /**
     * Returns the value of the '<em><b>Owned Activity</b></em>' containment reference.

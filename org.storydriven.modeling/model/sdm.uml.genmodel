@@ -139,6 +139,8 @@
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/OperationExtension/operation"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/OperationExtension/returnValue"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/OperationExtension/ownedActivity"/>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sdm.ecore#//activities/OperationExtension/NumberOfOutParams">
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sdm.ecore#//activities/OperationExtension/NumberOfOutParams/diagnostics"/>

@@ -517,12 +517,22 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
    }
 
    /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public EReference getOperationExtension_ReturnValue ()
+   {
+      return (EReference) operationExtensionEClass.getEStructuralFeatures().get(1);
+   }
+
+   /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public EReference getOperationExtension_OwnedActivity ()
    {
-      return (EReference) operationExtensionEClass.getEStructuralFeatures().get(1);
+      return (EReference) operationExtensionEClass.getEStructuralFeatures().get(2);
    }
 
    /**
@@ -745,6 +755,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 
       operationExtensionEClass = createEClass(OPERATION_EXTENSION);
       createEReference(operationExtensionEClass, OPERATION_EXTENSION__OPERATION);
+      createEReference(operationExtensionEClass, OPERATION_EXTENSION__RETURN_VALUE);
       createEReference(operationExtensionEClass, OPERATION_EXTENSION__OWNED_ACTIVITY);
       createEOperation(operationExtensionEClass, OPERATION_EXTENSION___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP);
 
@@ -922,6 +933,9 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
       initEReference(getOperationExtension_Operation(), theEcorePackage.getEOperation(), null, "operation", null, 0, 1,
          OperationExtension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
          IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+      initEReference(getOperationExtension_ReturnValue(), theEcorePackage.getEParameter(), null, "returnValue", null,
+         0, 1, OperationExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
+         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
       initEReference(getOperationExtension_OwnedActivity(), this.getActivity(), this.getActivity_OwningOperation(),
          "ownedActivity", null, 0, 1, OperationExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
          IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

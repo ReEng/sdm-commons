@@ -1126,12 +1126,21 @@ public interface ActivitiesPackage extends EPackage
    int OPERATION_EXTENSION__OPERATION = SDMPackage.EXTENSION_FEATURE_COUNT + 1;
 
    /**
+    * The feature id for the '<em><b>Return Value</b></em>' containment reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OPERATION_EXTENSION__RETURN_VALUE = SDMPackage.EXTENSION_FEATURE_COUNT + 2;
+
+   /**
     * The feature id for the '<em><b>Owned Activity</b></em>' containment reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int OPERATION_EXTENSION__OWNED_ACTIVITY = SDMPackage.EXTENSION_FEATURE_COUNT + 2;
+   int OPERATION_EXTENSION__OWNED_ACTIVITY = SDMPackage.EXTENSION_FEATURE_COUNT + 3;
 
    /**
     * The number of structural features of the '<em>Operation Extension</em>' class.
@@ -1139,7 +1148,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int OPERATION_EXTENSION_FEATURE_COUNT = SDMPackage.EXTENSION_FEATURE_COUNT + 3;
+   int OPERATION_EXTENSION_FEATURE_COUNT = SDMPackage.EXTENSION_FEATURE_COUNT + 4;
 
    /**
     * The operation id for the '<em>EClass</em>' operation.
@@ -3894,6 +3903,17 @@ public interface ActivitiesPackage extends EPackage
    EReference getOperationExtension_Operation ();
 
    /**
+    * Returns the meta object for the containment reference '{@link org.storydriven.modeling.activities.OperationExtension#getReturnValue <em>Return Value</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the containment reference '<em>Return Value</em>'.
+    * @see org.storydriven.modeling.activities.OperationExtension#getReturnValue()
+    * @see #getOperationExtension()
+    * @generated
+    */
+   EReference getOperationExtension_ReturnValue ();
+
+   /**
     * Returns the meta object for the containment reference '{@link org.storydriven.modeling.activities.OperationExtension#getOwnedActivity <em>Owned Activity</em>}'. <!--
     * begin-user-doc --> <!-- end-user-doc -->
     * 
@@ -4318,6 +4338,14 @@ public interface ActivitiesPackage extends EPackage
        * @generated
        */
       EReference OPERATION_EXTENSION__OPERATION = eINSTANCE.getOperationExtension_Operation();
+
+      /**
+       * The meta object literal for the '<em><b>Return Value</b></em>' containment reference feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference OPERATION_EXTENSION__RETURN_VALUE = eINSTANCE.getOperationExtension_ReturnValue();
 
       /**
        * The meta object literal for the '<em><b>Owned Activity</b></em>' containment reference feature.
