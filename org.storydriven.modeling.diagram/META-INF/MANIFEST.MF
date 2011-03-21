@@ -7,7 +7,8 @@ Bundle-ClassPath: .
 Bundle-Activator: org.storydriven.modeling.diagram.part.SDMDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: org.storydriven.modeling.diagram.edit.parts,
+Export-Package: org.storydriven.modeling.diagram.edit.commands,
+ org.storydriven.modeling.diagram.edit.parts,
  org.storydriven.modeling.diagram.part,
  org.storydriven.modeling.diagram.providers
 Require-Bundle: org.eclipse.core.runtime,
