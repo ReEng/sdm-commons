@@ -9,3 +9,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.storydriven.modeling.diagram.custom,
+ org.storydriven.modeling.diagram.custom.edit.commands,
+ org.storydriven.modeling.diagram.custom.edit.parts,
+ org.storydriven.modeling.diagram.custom.providers
