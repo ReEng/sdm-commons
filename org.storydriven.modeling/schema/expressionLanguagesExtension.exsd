@@ -52,7 +52,14 @@
          <attribute name="expressionLanguage" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The name of the expression language.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="version" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The supported version of the expression language.
                </documentation>
             </annotation>
          </attribute>

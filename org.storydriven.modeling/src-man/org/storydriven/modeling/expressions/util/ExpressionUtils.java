@@ -12,8 +12,11 @@ public class ExpressionUtils
 
    public static final String EXPRESSION_LANGUAGES_EXPRESSION_LANGUAGE_ATTRIBUTE_NAME = "expressionLanguage";
 
+   public static final String EXPRESSION_LANGUAGES_VERSION_ATTRIBUTE_NAME = "version";
+
    private static List<String> expressionLanguages = null;
 
+   // TODO Extend to support different versions of the same expression language.
    public static List<String> getAvailableExpressionLanguages ()
    {
       if (expressionLanguages == null)

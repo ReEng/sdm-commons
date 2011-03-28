@@ -8,5 +8,12 @@
             sourceViewerProvider="org.storydriven.modeling.diagram.custom.SourceViewerProvider">
       </expressionSourceViewer>
    </extension>
+   <extension
+         point="org.storydriven.modeling.expressionLanguagesExtension">
+      <expressionLanguage
+            expressionLanguage="OCL"
+            version="1.0">
+      </expressionLanguage>
+   </extension>
 
 </plugin>
