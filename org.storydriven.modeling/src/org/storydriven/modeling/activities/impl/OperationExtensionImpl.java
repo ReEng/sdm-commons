@@ -163,7 +163,7 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
 
       if (operation.getEType() != getReturnValue().getEType())
       {
-         getReturnValue().setEGenericType(operation.getEGenericType());
+         getReturnValue().setEType(operation.getEType());
       }
 
       return new BasicEList.UnmodifiableEList<EParameter>(1, new EParameter[] {getReturnValue()});
