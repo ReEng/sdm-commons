@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.modeling.Extension;
+import org.storydriven.modeling.SDMPackage;
 
 /**
  * @author <a href="mailto:reckord@yatta-solutions.com">Carsten Reckord</a> (original author)
@@ -66,7 +67,7 @@ public class EModelElementOperations
 
    public static Extension getExtension (EModelElement baseElement, EClass extensionType)
    {
-      EAnnotation annotation = getAnnotation(baseElement, ""/* TODO */);
+      EAnnotation annotation = getAnnotation(baseElement, SDMPackage.EXTENSION_NS_URI);
       return annotation == null ? null : getContainedExtension(annotation, extensionType);
    }
 
@@ -84,7 +85,7 @@ public class EModelElementOperations
 
    public static Extension provideExtension (EModelElement baseElement, EClass extensionType)
    {
-      EAnnotation annotation = provideAnnotation(baseElement, ""/* TODO */);
+      EAnnotation annotation = provideAnnotation(baseElement, SDMPackage.EXTENSION_NS_URI);
       return provideContainedExtension(annotation, extensionType);
    }
 

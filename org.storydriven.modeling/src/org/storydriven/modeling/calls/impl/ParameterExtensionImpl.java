@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -76,7 +77,7 @@ public class ParameterExtensionImpl extends VariableImpl implements ParameterExt
     */
    public EModelElement basicGetModelBase ()
    {
-      return ExtensionOperations.getModelBase(this);
+      return getParameter();
    }
 
    /**
@@ -86,7 +87,7 @@ public class ParameterExtensionImpl extends VariableImpl implements ParameterExt
     */
    public void setModelBase (EModelElement newModelBase)
    {
-      ExtensionOperations.setModelBase(this, newModelBase);
+      setParameter((EParameter) newModelBase);
    }
 
    /**
@@ -96,7 +97,7 @@ public class ParameterExtensionImpl extends VariableImpl implements ParameterExt
     */
    public void unsetModelBase ()
    {
-      ExtensionOperations.unsetModelBase(this);
+      unsetParameter();
    }
 
    /**
@@ -106,7 +107,7 @@ public class ParameterExtensionImpl extends VariableImpl implements ParameterExt
     */
    public boolean isSetModelBase ()
    {
-      return ExtensionOperations.isSetModelBase(this);
+      return isSetParameter();
    }
 
    /**
@@ -221,47 +222,42 @@ public class ParameterExtensionImpl extends VariableImpl implements ParameterExt
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
+    * 
+    * @generated NOT
     */
    public EParameter getParameter ()
    {
-      // TODO: implement this method to return the 'Parameter' reference
-      // Ensure that you remove @generated or mark it @generated NOT
-      throw new UnsupportedOperationException();
+      return (EParameter) ExtensionOperations.getModelBase(this);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
+    * 
+    * @generated NOT
     */
    public void setParameter (EParameter newParameter)
    {
-      // TODO: implement this method to set the 'Parameter' reference
-      // Ensure that you remove @generated or mark it @generated NOT
-      throw new UnsupportedOperationException();
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   public void unsetParameter ()
-   {
-      // TODO: implement this method to unset the 'Parameter' reference
-      // Ensure that you remove @generated or mark it @generated NOT
-      throw new UnsupportedOperationException();
+      ExtensionOperations.setModelBase(this, newParameter);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
+    * 
+    * @generated NOT
+    */
+   public void unsetParameter ()
+   {
+      ExtensionOperations.unsetModelBase(this);
+   }
+
+   /**
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
+    * @generated NOT
     */
    public boolean isSetParameter ()
    {
-      // TODO: implement this method to return whether the 'Parameter' reference is set
-      // Ensure that you remove @generated or mark it @generated NOT
-      throw new UnsupportedOperationException();
+      return ExtensionOperations.isSetModelBase(this);
    }
 
    @Override
@@ -511,6 +507,12 @@ public class ParameterExtensionImpl extends VariableImpl implements ParameterExt
    public boolean isSetBase ()
    {
       return isSetParameter();
+   }
+
+   public String getVariableName ()
+   {
+      ENamedElement namedElement = getParameter();
+      return namedElement == null ? null : namedElement.getName();
    }
 
 } // ParameterExtensionImpl

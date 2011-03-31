@@ -910,4 +910,9 @@ public class ObjectVariableImpl extends VariableImpl implements ObjectVariable
       }
       return msgs;
    }
+
+   public String getVariableName ()
+   {
+      return getName();
+   }
 } // ObjectVariableImpl

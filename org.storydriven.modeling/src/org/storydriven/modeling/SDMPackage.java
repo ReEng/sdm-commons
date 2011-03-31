@@ -57,6 +57,13 @@ public interface SDMPackage extends EPackage
    String eCONTENT_TYPE = "org.storydriven.modeling";
 
    /**
+    * The extension annotation namespace URI.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated NOT
+    */
+   String EXTENSION_NS_URI = "http://ns.storydriven.org/sdm/extension";
+
+   /**
     * The singleton instance of the package.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated

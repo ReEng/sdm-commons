@@ -54,12 +54,11 @@ public abstract class VariableImpl extends TypedElementImpl implements Variable
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated NOT
     */
-   public String getVariableName ()
-   {
-      return VARIABLE_NAME_EDEFAULT;
-   }
+   public abstract String getVariableName ();
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->

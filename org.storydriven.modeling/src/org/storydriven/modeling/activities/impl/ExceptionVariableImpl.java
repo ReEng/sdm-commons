@@ -402,4 +402,9 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
       return result.toString();
    }
 
+   public String getVariableName ()
+   {
+      return getName();
+   }
+
 } // ExceptionVariableImpl
