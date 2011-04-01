@@ -358,6 +358,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart_title;
 
 	/**
@@ -373,12 +383,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
 	public static String ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StoryPatternStoryPatternCompartementEditPart_title;
 
 	/**
 	 * @generated
@@ -414,6 +439,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_StartNode_3002_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_MatchingStoryNode_3010_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_MatchingStoryNode_3010_outgoinglinks;
 
 	/**
 	 * @generated
@@ -519,6 +554,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_StartNode_2001_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ModifyingStoryNode_3011_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ModifyingStoryNode_3011_outgoinglinks;
 
 	/**
 	 * @generated

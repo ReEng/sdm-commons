@@ -30,9 +30,9 @@
             objectClass="org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeEditPart">
          <action
                class="org.storydriven.modeling.diagram.custom.edit.commands.ModifyingStoryNodeToggleMatchingCommand"
-               id="org.storydriven.modeling.diagram.custom.ModifyingStoryNodeToggleFlowCommand"
+               id="org.storydriven.modeling.diagram.custom.ModifyingStoryNodeConvertToMatching"
                label="Toggle Modifying/Matching"
-               tooltip="This will toggle they isKey Attribute of the Attribute.">
+               tooltip="This will toggle whether the storynode is matching or modifying">
          </action>
          <action
                class="org.storydriven.modeling.diagram.custom.edit.commands.StoryNodeToggleForEachCommand"
@@ -50,6 +50,12 @@
                id="org.storydriven.modeling.diagram.custom.MatchingStoryNodeToogleForEachCommand"
                label="Toggle forEach"
                tooltip="This will toggle the for each attribute of the story node.">
+         </action>
+         <action
+               class="org.storydriven.modeling.diagram.custom.edit.commands.MatchingStoryNodeToggleModifyingCommand"
+               id="org.storydriven.modeling.diagram.custom.MatchingStoryNodeConvertToModifying"
+               label="Toggle Modifying/Matching"
+               tooltip="This will toggle whether the storynode is matching or modifying">
          </action>
       </objectContribution>
    </extension>

@@ -1,13 +1,17 @@
 package org.storydriven.modeling.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.modeling.diagram.edit.policies.MatchingPatternStoryPatternCompartementCanonicalEditPolicy;
 import org.storydriven.modeling.diagram.edit.policies.MatchingPatternStoryPatternCompartementItemSemanticEditPolicy;
@@ -17,7 +21,7 @@ import org.storydriven.modeling.diagram.part.Messages;
  * @generated
  */
 public class MatchingPatternStoryPatternCompartementEditPart extends
-		ListCompartmentEditPart {
+		ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -29,13 +33,6 @@ public class MatchingPatternStoryPatternCompartementEditPart extends
 	 */
 	public MatchingPatternStoryPatternCompartementEditPart(View view) {
 		super(view);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected boolean hasModelChildrenChanged(Notification evt) {
-		return false;
 	}
 
 	/**

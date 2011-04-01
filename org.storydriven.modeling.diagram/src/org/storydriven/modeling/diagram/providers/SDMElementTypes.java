@@ -21,8 +21,11 @@ import org.storydriven.modeling.diagram.edit.parts.ActivityEditPart;
 import org.storydriven.modeling.diagram.edit.parts.JunctionNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.JunctionNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.MatchingPatternEditPart;
+import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNodeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.ObjectVariable2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StartNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StartNodeEditPart;
@@ -30,6 +33,8 @@ import org.storydriven.modeling.diagram.edit.parts.StatementNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StopNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.ForkNodeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.StoryPatternEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeEditPart;
 import org.storydriven.modeling.diagram.part.SDMDiagramEditorPlugin;
@@ -116,11 +121,31 @@ public class SDMElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType MatchingStoryNode_3010 = getElementType("org.storydriven.modeling.diagram.MatchingStoryNode_3010"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType MatchingPattern_3006 = getElementType("org.storydriven.modeling.diagram.MatchingPattern_3006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType ObjectVariable_3007 = getElementType("org.storydriven.modeling.diagram.ObjectVariable_3007"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ModifyingStoryNode_3011 = getElementType("org.storydriven.modeling.diagram.ModifyingStoryNode_3011"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType StoryPattern_3008 = getElementType("org.storydriven.modeling.diagram.StoryPattern_3008"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ObjectVariable_3009 = getElementType("org.storydriven.modeling.diagram.ObjectVariable_3009"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -267,19 +292,31 @@ public class SDMElementTypes {
 			elements.put(StartNode_3002,
 					ActivitiesPackage.eINSTANCE.getStartNode());
 
-			elements.put(StatementNode_3003,
-					ActivitiesPackage.eINSTANCE.getStatementNode());
-
 			elements.put(StopNode_3004,
 					ActivitiesPackage.eINSTANCE.getStopNode());
 
+			elements.put(StatementNode_3003,
+					ActivitiesPackage.eINSTANCE.getStatementNode());
+
 			elements.put(StructuredNode_3005,
 					ActivitiesPackage.eINSTANCE.getStructuredNode());
+
+			elements.put(MatchingStoryNode_3010,
+					ActivitiesPackage.eINSTANCE.getMatchingStoryNode());
 
 			elements.put(MatchingPattern_3006,
 					PatternsPackage.eINSTANCE.getMatchingPattern());
 
 			elements.put(ObjectVariable_3007,
+					PatternsPackage.eINSTANCE.getObjectVariable());
+
+			elements.put(ModifyingStoryNode_3011,
+					ActivitiesPackage.eINSTANCE.getModifyingStoryNode());
+
+			elements.put(StoryPattern_3008,
+					PatternsPackage.eINSTANCE.getStoryPattern());
+
+			elements.put(ObjectVariable_3009,
 					PatternsPackage.eINSTANCE.getObjectVariable());
 
 			elements.put(ActivityEdge_4001,
@@ -311,11 +348,15 @@ public class SDMElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ModifyingStoryNode_2007);
 			KNOWN_ELEMENT_TYPES.add(JunctionNode_3001);
 			KNOWN_ELEMENT_TYPES.add(StartNode_3002);
-			KNOWN_ELEMENT_TYPES.add(StatementNode_3003);
 			KNOWN_ELEMENT_TYPES.add(StopNode_3004);
+			KNOWN_ELEMENT_TYPES.add(StatementNode_3003);
 			KNOWN_ELEMENT_TYPES.add(StructuredNode_3005);
+			KNOWN_ELEMENT_TYPES.add(MatchingStoryNode_3010);
 			KNOWN_ELEMENT_TYPES.add(MatchingPattern_3006);
 			KNOWN_ELEMENT_TYPES.add(ObjectVariable_3007);
+			KNOWN_ELEMENT_TYPES.add(ModifyingStoryNode_3011);
+			KNOWN_ELEMENT_TYPES.add(StoryPattern_3008);
+			KNOWN_ELEMENT_TYPES.add(ObjectVariable_3009);
 			KNOWN_ELEMENT_TYPES.add(ActivityEdge_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -346,16 +387,24 @@ public class SDMElementTypes {
 			return JunctionNode_3001;
 		case StartNode2EditPart.VISUAL_ID:
 			return StartNode_3002;
-		case StatementNode2EditPart.VISUAL_ID:
-			return StatementNode_3003;
 		case StopNode2EditPart.VISUAL_ID:
 			return StopNode_3004;
+		case StatementNode2EditPart.VISUAL_ID:
+			return StatementNode_3003;
 		case StructuredNode2EditPart.VISUAL_ID:
 			return StructuredNode_3005;
+		case MatchingStoryNode2EditPart.VISUAL_ID:
+			return MatchingStoryNode_3010;
 		case MatchingPatternEditPart.VISUAL_ID:
 			return MatchingPattern_3006;
 		case ObjectVariableEditPart.VISUAL_ID:
 			return ObjectVariable_3007;
+		case ModifyingStoryNode2EditPart.VISUAL_ID:
+			return ModifyingStoryNode_3011;
+		case StoryPatternEditPart.VISUAL_ID:
+			return StoryPattern_3008;
+		case ObjectVariable2EditPart.VISUAL_ID:
+			return ObjectVariable_3009;
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return ActivityEdge_4001;
 		}

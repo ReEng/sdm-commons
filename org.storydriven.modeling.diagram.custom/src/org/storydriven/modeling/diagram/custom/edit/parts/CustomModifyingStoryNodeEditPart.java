@@ -1,5 +1,6 @@
 package org.storydriven.modeling.diagram.custom.edit.parts;
 
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.ScrollPane;
@@ -8,6 +9,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.NotificationImpl;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ShapeCompartmentFigure;
@@ -32,6 +34,7 @@ public class CustomModifyingStoryNodeEditPart extends ModifyingStoryNodeEditPart
 	}
 		
 	private void updateFigure(Notification event) {
+		if(((StoryNode) ((View) getModel()).getElement()) != null) {
 			boolean isForEach = ((StoryNode) ((View) getModel()).getElement()).isForEach();
 
 			RectangleFigure frontRectangle = (RectangleFigure) getPrimaryShape().getChildren().get(1);
@@ -57,21 +60,16 @@ public class CustomModifyingStoryNodeEditPart extends ModifyingStoryNodeEditPart
 			rectangleFront =  (IFigure) rectangleFront.getChildren().get(0);
 			IFigure rectangleContent = (IFigure) rectangleFront.getChildren().get(1);
 			rectangleContent = (IFigure) rectangleContent.getChildren().get(1);
-			if(!rectangleContent.getChildren().isEmpty()) {
+			if(!rectangleContent.getChildren().isEmpty())
+			{
 				ResizableCompartmentFigure upperCompartment = (ResizableCompartmentFigure) rectangleContent.getChildren().get(0);
 				upperCompartment.getScrollPane().setHorizontalScrollBarVisibility(ScrollPane.NEVER);
 				upperCompartment.getScrollPane().setVerticalScrollBarVisibility(ScrollPane.NEVER);
-				
-				for(Object child : ((EditPart) getChildren().get(1)).getChildren() ) {
-					((GraphicalEditPart) child).notifyChanged(new NotificationImpl(event.getEventType(), event.getOldIntValue(), event.getNewIntValue()));
-				}
+				upperCompartment.setLayoutManager(new BorderLayout());
+				upperCompartment.add(((AbstractGraphicalEditPart) ((EditPart) this.getChildren().get(2)).getChildren().get(0)).getFigure(), 
+									BorderLayout.CENTER);
 			}
-			
-			
-			
-			
-			
-			
+		}
 	}
 	
 	@Override

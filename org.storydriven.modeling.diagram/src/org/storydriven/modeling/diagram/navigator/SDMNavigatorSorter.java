@@ -11,7 +11,7 @@ public class SDMNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 7009;
+	private static final int GROUP_CATEGORY = 7014;
 
 	/**
 	 * @generated

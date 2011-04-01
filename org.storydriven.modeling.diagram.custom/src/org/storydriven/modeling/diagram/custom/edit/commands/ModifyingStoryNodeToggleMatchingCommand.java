@@ -8,6 +8,7 @@ import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.emf.common.command.CommandWrapper;
@@ -15,6 +16,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.CompoundCommand;
+import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.ui.action.AbstractActionDelegate;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
@@ -41,12 +43,14 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.storydriven.modeling.activities.MatchingStoryNode;
 import org.storydriven.modeling.activities.ModifyingStoryNode;
 import org.storydriven.modeling.diagram.custom.edit.parts.CustomMatchingStoryNodeEditPart;
+import org.storydriven.modeling.diagram.custom.util.StoryPatternConverter;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartmentEditPart;
 import org.storydriven.modeling.diagram.part.SDMVisualIDRegistry;
 import org.storydriven.modeling.diagram.providers.SDMElementTypes;
 import org.storydriven.modeling.patterns.MatchingPattern;
+import org.storydriven.modeling.patterns.provider.MatchingPatternItemProvider;
 
 public class ModifyingStoryNodeToggleMatchingCommand extends AbstractActionDelegate implements
 		IObjectActionDelegate {
@@ -74,21 +78,25 @@ public class ModifyingStoryNodeToggleMatchingCommand extends AbstractActionDeleg
 				
 				initialize();
 
-				IElementType type = SDMElementTypes.MatchingStoryNode_2006;
-
+				IElementType type = null;
+				if(owningStructuredNodeEditPart != null) {
+					type = SDMElementTypes.MatchingStoryNode_3010;
+				}
+				else {
+					type = SDMElementTypes.MatchingStoryNode_2006;
+				}
 				ViewAndElementDescriptor viewDescriptor = new ViewAndElementDescriptor(
 						new CreateElementRequestAdapter(new CreateElementRequest(type)),
 						Node.class,
 						((IHintedType) type).getSemanticHint(), 
 						((GraphicalEditPart) diagramEditPart).getDiagramPreferencesHint());
-
 				CreateViewAndElementRequest req = new CreateViewAndElementRequest(viewDescriptor);
 								
 				// Use CompoundCommand to encapsulate the specific command returned by .getCommand
 				CompoundCommand cmd = new CompoundCommand("Create matching story node");
-				cmd.add(diagramEditPart.getCommand(req));
+				cmd.add(storyNodeEditPart.getParent().getCommand(req));
+				((GraphicalEditPart) storyNodeEditPart.getParent()).getDiagramEditDomain().getDiagramCommandStack().execute(cmd);
 				
-				((GraphicalEditPart) diagramEditPart).getDiagramEditDomain().getDiagramCommandStack().execute(cmd);
 				
 				Collection results = DiagramCommandStack.getReturnValues(cmd);
 				for (Object res: results) {
@@ -99,7 +107,7 @@ public class ModifyingStoryNodeToggleMatchingCommand extends AbstractActionDeleg
 						if (matchingNodeView != null) {
 							MatchingStoryNode newElement = (MatchingStoryNode)matchingNodeView.getElement();
 							
-							// The excluded features are nasty. They break to copying and we deal with it further down.
+							// The excluded features are nasty. They break the copying process and we deal with them further down.
 							for( EStructuralFeature aFeature : ( modifyingNodeElement.eClass().getEAllStructuralFeatures()) ) {	
 								if(!(aFeature.getName().equals("storyPattern")) && 
 								   !(aFeature.getName().equals("ownedRule"))	&&
@@ -109,7 +117,12 @@ public class ModifyingStoryNodeToggleMatchingCommand extends AbstractActionDeleg
 							if(modifyingNodeElement.getOwningActivityNode() != null) {
 								newElement.setOwningActivityNode(modifyingNodeElement.getOwningActivityNode());
 							}
-							newElement.setOwnedPattern((MatchingPattern) modifyingNodeElement.getOwnedRule());
+							
+							
+							//Create and Copy to matching pattern
+							//((EditPart) storyNodeEditPart.getChildren().get(2)).getChildren().get(0);
+//							MatchingPattern aMatchingPattern = new (adapterFactory)
+//							newElement.setOwnedPattern((MatchingPattern) modifyingNodeElement.getOwnedRule());
 							
 							// After semantic copying we now copy the functional features for the editor.
 							for( EStructuralFeature aFeature : ( modifyingNodeView.eClass().getEAllStructuralFeatures()) ) {	
@@ -117,9 +130,8 @@ public class ModifyingStoryNodeToggleMatchingCommand extends AbstractActionDeleg
 								   !(aFeature.getName().equals("diagram"))) {
 									matchingNodeView.eSet(aFeature, (modifyingNodeView.eGet(aFeature)) ); }
 							}
-							
 							if(owningStructuredNodeEditPart != null) {
-								((View) owningStructuredNodeEditPart.getModel()).insertChild( matchingNodeView);
+								((View) owningStructuredNodeEditPart.getModel()).insertChild(matchingNodeView);
 							}
 							
 						}
@@ -142,10 +154,16 @@ public class ModifyingStoryNodeToggleMatchingCommand extends AbstractActionDeleg
 				
 				CustomMatchingStoryNodeEditPart resultEditPart = (CustomMatchingStoryNodeEditPart) getNewEditPart();
 				
-				if(resultEditPart == null || resultEditPart.getClass() != CustomMatchingStoryNodeEditPart.class) {
+				StoryPatternConverter theConverter = new StoryPatternConverter(diagramEditPart, (EditPart) resultEditPart.getChildren().get(1));
+				((MatchingStoryNode) ((View) resultEditPart.getModel()).getElement())
+					.setOwnedPattern(theConverter.convertStoryToMatching(modifyingNodeElement.getOwnedRule()));
+				
+				if(resultEditPart == null || resultEditPart.getClass() != CustomMatchingStoryNodeEditPart.class)
+				{
 					return CommandResult.newErrorCommandResult("Could not find newly created Editpart");
 				}
-				else {
+				else 
+				{
 					Bounds initialBounds = (Bounds) ((Node) resultEditPart.getModel()).getLayoutConstraint();	
 					Rectangle tempBounds = storyNodeEditPart.getFigure().getBounds();
 

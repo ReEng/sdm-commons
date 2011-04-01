@@ -70,20 +70,26 @@ public class SDMEditPartFactory implements EditPartFactory {
 			case StartNode2EditPart.VISUAL_ID:
 				return new StartNode2EditPart(view);
 
+			case StopNode2EditPart.VISUAL_ID:
+				return new StopNode2EditPart(view);
+
 			case StatementNode2EditPart.VISUAL_ID:
 				return new StatementNode2EditPart(view);
 
 			case StatementNodeName2EditPart.VISUAL_ID:
 				return new StatementNodeName2EditPart(view);
 
-			case StopNode2EditPart.VISUAL_ID:
-				return new StopNode2EditPart(view);
-
 			case StructuredNode2EditPart.VISUAL_ID:
 				return new StructuredNode2EditPart(view);
 
 			case StructuredNodeName2EditPart.VISUAL_ID:
 				return new StructuredNodeName2EditPart(view);
+
+			case MatchingStoryNode2EditPart.VISUAL_ID:
+				return new MatchingStoryNode2EditPart(view);
+
+			case MatchingStoryNodeName2EditPart.VISUAL_ID:
+				return new MatchingStoryNodeName2EditPart(view);
 
 			case MatchingPatternEditPart.VISUAL_ID:
 				return new MatchingPatternEditPart(view);
@@ -93,6 +99,33 @@ public class SDMEditPartFactory implements EditPartFactory {
 
 			case ObjectVariableNameEditPart.VISUAL_ID:
 				return new ObjectVariableNameEditPart(view);
+
+			case WrappingLabelEditPart.VISUAL_ID:
+				return new WrappingLabelEditPart(view);
+
+			case ObjectVariableBindingOperatorEditPart.VISUAL_ID:
+				return new ObjectVariableBindingOperatorEditPart(view);
+
+			case ModifyingStoryNode2EditPart.VISUAL_ID:
+				return new ModifyingStoryNode2EditPart(view);
+
+			case ModifyingStoryNodeName2EditPart.VISUAL_ID:
+				return new ModifyingStoryNodeName2EditPart(view);
+
+			case StoryPatternEditPart.VISUAL_ID:
+				return new StoryPatternEditPart(view);
+
+			case ObjectVariable2EditPart.VISUAL_ID:
+				return new ObjectVariable2EditPart(view);
+
+			case ObjectVariableName2EditPart.VISUAL_ID:
+				return new ObjectVariableName2EditPart(view);
+
+			case WrappingLabel2EditPart.VISUAL_ID:
+				return new WrappingLabel2EditPart(view);
+
+			case WrappingLabel3EditPart.VISUAL_ID:
+				return new WrappingLabel3EditPart(view);
 
 			case StructuredNodeStructuredNodeCompartmentEditPart.VISUAL_ID:
 				return new StructuredNodeStructuredNodeCompartmentEditPart(view);
@@ -118,6 +151,25 @@ public class SDMEditPartFactory implements EditPartFactory {
 
 			case ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID:
 				return new ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart(
+						view);
+
+			case StoryPatternStoryPatternCompartementEditPart.VISUAL_ID:
+				return new StoryPatternStoryPatternCompartementEditPart(view);
+
+			case MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart.VISUAL_ID:
+				return new MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart(
+						view);
+
+			case MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID:
+				return new MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart(
+						view);
+
+			case ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID:
+				return new ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart(
+						view);
+
+			case ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID:
+				return new ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart(
 						view);
 
 			case ActivityEdgeEditPart.VISUAL_ID:

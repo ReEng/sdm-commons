@@ -15,7 +15,7 @@ public class MatchingStoryNodeMatchingStoryNodeContentCompartmentItemSemanticEdi
 	 * @generated
 	 */
 	public MatchingStoryNodeMatchingStoryNodeContentCompartmentItemSemanticEditPolicy() {
-		super(SDMElementTypes.MatchingStoryNode_2006);
+		super(SDMElementTypes.MatchingStoryNode_3010);
 	}
 
 	/**

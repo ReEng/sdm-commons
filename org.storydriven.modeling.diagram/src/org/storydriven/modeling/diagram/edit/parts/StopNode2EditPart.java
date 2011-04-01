@@ -230,13 +230,19 @@ public class StopNode2EditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof StartNode2EditPart) {
 			types.add(SDMElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof StatementNode2EditPart) {
-			types.add(SDMElementTypes.ActivityEdge_4001);
-		}
 		if (targetEditPart instanceof org.storydriven.modeling.diagram.edit.parts.StopNode2EditPart) {
 			types.add(SDMElementTypes.ActivityEdge_4001);
 		}
+		if (targetEditPart instanceof StatementNode2EditPart) {
+			types.add(SDMElementTypes.ActivityEdge_4001);
+		}
 		if (targetEditPart instanceof StructuredNode2EditPart) {
+			types.add(SDMElementTypes.ActivityEdge_4001);
+		}
+		if (targetEditPart instanceof MatchingStoryNode2EditPart) {
+			types.add(SDMElementTypes.ActivityEdge_4001);
+		}
+		if (targetEditPart instanceof ModifyingStoryNode2EditPart) {
 			types.add(SDMElementTypes.ActivityEdge_4001);
 		}
 		return types;
@@ -257,9 +263,11 @@ public class StopNode2EditPart extends ShapeNodeEditPart {
 			types.add(SDMElementTypes.ModifyingStoryNode_2007);
 			types.add(SDMElementTypes.JunctionNode_3001);
 			types.add(SDMElementTypes.StartNode_3002);
-			types.add(SDMElementTypes.StatementNode_3003);
 			types.add(SDMElementTypes.StopNode_3004);
+			types.add(SDMElementTypes.StatementNode_3003);
 			types.add(SDMElementTypes.StructuredNode_3005);
+			types.add(SDMElementTypes.MatchingStoryNode_3010);
+			types.add(SDMElementTypes.ModifyingStoryNode_3011);
 		}
 		return types;
 	}
@@ -288,9 +296,11 @@ public class StopNode2EditPart extends ShapeNodeEditPart {
 			types.add(SDMElementTypes.ModifyingStoryNode_2007);
 			types.add(SDMElementTypes.JunctionNode_3001);
 			types.add(SDMElementTypes.StartNode_3002);
-			types.add(SDMElementTypes.StatementNode_3003);
 			types.add(SDMElementTypes.StopNode_3004);
+			types.add(SDMElementTypes.StatementNode_3003);
 			types.add(SDMElementTypes.StructuredNode_3005);
+			types.add(SDMElementTypes.MatchingStoryNode_3010);
+			types.add(SDMElementTypes.ModifyingStoryNode_3011);
 		}
 		return types;
 	}

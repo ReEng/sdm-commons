@@ -4,6 +4,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.ScrollPane;
@@ -12,8 +13,13 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.NotificationImpl;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
+import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.commands.SetBoundsCommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ShapeCompartmentFigure;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.Location;
@@ -39,12 +45,11 @@ public class CustomMatchingStoryNodeEditPart extends MatchingStoryNodeEditPart {
 	}
 		
 	private void updateFigure(Notification event) {
+			
 			boolean isForEach = ((StoryNode) ((View) getModel()).getElement()).isForEach();
-
 			RectangleFigure frontRectangle = (RectangleFigure) getPrimaryShape().getChildren().get(1);
-
+			
 			Insets frontInsets = frontRectangle.getBorder().getInsets(frontRectangle);
-
 			if (!isForEach)
 			{
 				frontInsets.top = 0;
@@ -64,18 +69,17 @@ public class CustomMatchingStoryNodeEditPart extends MatchingStoryNodeEditPart {
 			rectangleFront =  (IFigure) rectangleFront.getChildren().get(0);
 			IFigure rectangleContent = (IFigure) rectangleFront.getChildren().get(1);
 			rectangleContent = (IFigure) rectangleContent.getChildren().get(1);
-			ShapeCompartmentFigure upperCompartment = (ShapeCompartmentFigure) rectangleContent.getChildren().get(0);
-			upperCompartment.getScrollPane().setHorizontalScrollBarVisibility(ScrollPane.NEVER);
-			upperCompartment.getScrollPane().setVerticalScrollBarVisibility(ScrollPane.NEVER);
-			
-			for(Object child : ((EditPart) getChildren().get(1)).getChildren() ) {
-				((GraphicalEditPart) child).notifyChanged(new NotificationImpl(event.getEventType(), event.getOldIntValue(), event.getNewIntValue()));
+			if(!rectangleContent.getChildren().isEmpty()) 
+			{
+				ResizableCompartmentFigure upperCompartment = (ResizableCompartmentFigure) rectangleContent.getChildren().get(0);
+				upperCompartment.getScrollPane().setHorizontalScrollBarVisibility(ScrollPane.NEVER);
+				upperCompartment.getScrollPane().setVerticalScrollBarVisibility(ScrollPane.NEVER);
+				upperCompartment.setLayoutManager(new BorderLayout());
+				upperCompartment.add(((AbstractGraphicalEditPart) ((EditPart) this.getChildren().get(1)).getChildren().get(0)).getFigure(), 
+									BorderLayout.CENTER);
 			}
-			
-			
-			
-			
 	}
+	
 	
 	@Override
 	protected void handleNotificationEvent(Notification event) {

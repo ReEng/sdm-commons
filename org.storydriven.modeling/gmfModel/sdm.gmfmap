@@ -100,13 +100,31 @@
       </children>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.1/@ownedChild">
+        <containmentFeature
+            href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
+      </children>
+      <children
+          compartment="//@nodes.4/@ownedChild/@compartments.0"
           referencedChild="//@nodes.3/@ownedChild">
         <containmentFeature
             href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0"
-          referencedChild="//@nodes.1/@ownedChild">
+          referencedChild="//@nodes.4/@ownedChild">
+        <containmentFeature
+            href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
+      </children>
+      <children
+          compartment="//@nodes.4/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.5/@ownedChild">
+        <containmentFeature
+            href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
+      </children>
+      <children
+          compartment="//@nodes.4/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.6/@ownedChild">
         <containmentFeature
             href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
@@ -117,7 +135,7 @@
             href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
       <compartments
-          children="//@nodes.4/@ownedChild/@children.0 //@nodes.4/@ownedChild/@children.1 //@nodes.4/@ownedChild/@children.2 //@nodes.4/@ownedChild/@children.3 //@nodes.4/@ownedChild/@children.4">
+          children="//@nodes.4/@ownedChild/@children.0 //@nodes.4/@ownedChild/@children.1 //@nodes.4/@ownedChild/@children.3 //@nodes.4/@ownedChild/@children.2 //@nodes.4/@ownedChild/@children.4 //@nodes.4/@ownedChild/@children.5 //@nodes.4/@ownedChild/@children.6 //@nodes.4/@ownedChild/@children.7">
         <compartment
             href="sdm.gmfgraph#StructuredNodeCompartment"/>
       </compartments>
@@ -129,6 +147,26 @@
     <ownedChild>
       <domainMetaElement
           href="../model/sdm.ecore#//activities/MatchingStoryNode"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:ReferenceNewElementSpec">
+          <feature
+              xsi:type="ecore:EReference"
+              href="../model/sdm.ecore#//activities/MatchingStoryNode/ownedPattern"/>
+          <newElementInitializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../model/sdm.ecore#//CommentableElement/comment"/>
+              <value
+                  body="&quot;&quot;"
+                  language="literal"/>
+            </initializers>
+          </newElementInitializers>
+        </initializers>
+      </domainInitializer>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
@@ -157,8 +195,7 @@
           <diagramNode
               href="sdm.gmfgraph#StoryPatternNode"/>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.0/@ownedChild/@compartments.0"
-              referencedChild="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
+              compartment="//@nodes.5/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
                 href="../model/sdm.ecore#//patterns/StoryPattern/objectVariable"/>
             <ownedChild>
@@ -170,6 +207,21 @@
                     href="sdm.gmfgraph#ObjectVariableNameLabel"/>
                 <features
                     href="../model/sdm.ecore#//NamedElement/name"/>
+                <editableFeatures
+                    href="../model/sdm.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <labelMappings
+                  readOnly="true">
+                <diagramLabel
+                    href="sdm.gmfgraph#ObjectVariableClassifierLabel"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="sdm.gmfgraph#ObjectVariableBindingOperatorLabel"/>
+                <features
+                    href="../model/sdm.ecore#//patterns/ObjectVariable/bindingOperator"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -202,6 +254,26 @@
     <ownedChild>
       <domainMetaElement
           href="../model/sdm.ecore#//activities/ModifyingStoryNode"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:ReferenceNewElementSpec">
+          <feature
+              xsi:type="ecore:EReference"
+              href="../model/sdm.ecore#//activities/ModifyingStoryNode/ownedRule"/>
+          <newElementInitializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../model/sdm.ecore#//CommentableElement/comment"/>
+              <value
+                  body="&quot;&quot;"
+                  language="literal"/>
+            </initializers>
+          </newElementInitializers>
+        </initializers>
+      </domainInitializer>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
@@ -216,11 +288,66 @@
           href="sdm.gmftool#//@palette/@tools.0/@tools.7"/>
       <diagramNode
           href="sdm.gmfgraph#ModifyingStoryNode"/>
+      <children
+          compartment="//@nodes.6/@ownedChild/@compartments.1"
+          referencedChild="//@nodes.6/@ownedChild/@children.0/@ownedChild">
+        <containmentFeature
+            href="../model/sdm.ecore#//activities/ModifyingStoryNode/ownedRule"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../model/sdm.ecore#//patterns/StoryPattern"/>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="sdm.gmftool#//@palette/@tools.0/@tools.8"/>
+          <diagramNode
+              href="sdm.gmfgraph#StoryPatternNode"/>
+          <children
+              compartment="//@nodes.6/@ownedChild/@children.0/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.6/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
+            <containmentFeature
+                href="../model/sdm.ecore#//patterns/StoryPattern/objectVariable"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../model/sdm.ecore#//patterns/ObjectVariable"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="sdm.gmfgraph#ObjectVariableNameLabel"/>
+                <features
+                    href="../model/sdm.ecore#//NamedElement/name"/>
+                <editableFeatures
+                    href="../model/sdm.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <labelMappings
+                  readOnly="true">
+                <diagramLabel
+                    href="sdm.gmfgraph#ObjectVariableClassifierLabel"/>
+              </labelMappings>
+              <labelMappings
+                  readOnly="true">
+                <diagramLabel
+                    href="sdm.gmfgraph#ObjectVariableBindingOperatorLabel"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="sdm.gmftool#//@palette/@tools.0/@tools.9"/>
+              <diagramNode
+                  href="sdm.gmfgraph#ObjectVariableNode"/>
+            </ownedChild>
+          </children>
+          <compartments
+              children="//@nodes.6/@ownedChild/@children.0/@ownedChild/@children.0">
+            <compartment
+                href="sdm.gmfgraph#StoryPatternCompartement"/>
+          </compartments>
+        </ownedChild>
+      </children>
       <compartments>
         <compartment
             href="sdm.gmfgraph#ModifyingStoryNodeConstraintsCompartment"/>
       </compartments>
-      <compartments>
+      <compartments
+          children="//@nodes.6/@ownedChild/@children.0">
         <compartment
             href="sdm.gmfgraph#ModifyingStoryNodeContentCompartment"/>
       </compartments>

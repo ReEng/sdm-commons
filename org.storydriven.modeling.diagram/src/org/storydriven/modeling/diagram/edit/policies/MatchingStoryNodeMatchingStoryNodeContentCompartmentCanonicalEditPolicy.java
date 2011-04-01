@@ -46,7 +46,7 @@ public class MatchingStoryNodeMatchingStoryNodeContentCompartmentCanonicalEditPo
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<SDMNodeDescriptor> childDescriptors = SDMDiagramUpdater
-				.getMatchingStoryNodeMatchingStoryNodeContentCompartment_7003SemanticChildren(viewObject);
+				.getMatchingStoryNodeMatchingStoryNodeContentCompartment_7009SemanticChildren(viewObject);
 		for (SDMNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -79,7 +79,7 @@ public class MatchingStoryNodeMatchingStoryNodeContentCompartmentCanonicalEditPo
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<SDMNodeDescriptor> childDescriptors = SDMDiagramUpdater
-				.getMatchingStoryNodeMatchingStoryNodeContentCompartment_7003SemanticChildren((View) getHost()
+				.getMatchingStoryNodeMatchingStoryNodeContentCompartment_7009SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

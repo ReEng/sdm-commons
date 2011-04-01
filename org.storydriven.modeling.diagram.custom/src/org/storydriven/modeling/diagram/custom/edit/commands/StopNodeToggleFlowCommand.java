@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.storydriven.modeling.activities.StopNode;
-import org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.ForkNodeEditPart;
 
 public class StopNodeToggleFlowCommand extends AbstractActionDelegate implements
 		IObjectActionDelegate {
@@ -20,7 +20,7 @@ public class StopNodeToggleFlowCommand extends AbstractActionDelegate implements
 	
 	@Override
 	protected void doRun(IProgressMonitor progressMonitor) {
-		StopNodeEditPart stopNodeEditPart = ((StopNodeEditPart) getStructuredSelection().getFirstElement());
+		ForkNodeEditPart stopNodeEditPart = ((ForkNodeEditPart) getStructuredSelection().getFirstElement());
 		aStopNode = (StopNode) ((View) stopNodeEditPart.getModel()).getElement();
 		
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(stopNodeEditPart.getEditingDomain(),

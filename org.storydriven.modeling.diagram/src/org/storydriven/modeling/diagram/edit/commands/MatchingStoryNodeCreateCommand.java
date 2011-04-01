@@ -14,6 +14,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.modeling.activities.ActivitiesFactory;
 import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.activities.MatchingStoryNode;
+import org.storydriven.modeling.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -58,6 +59,9 @@ public class MatchingStoryNodeCreateCommand extends EditElementCommand {
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getOwnedActivityNodes().add(newElement);
+
+		ElementInitializers.getInstance().init_MatchingStoryNode_2006(
+				newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -12,7 +12,7 @@ public class MatchingStoryNodeMatchingStoryNodeConstraintsCompartmentItemSemanti
 	 * @generated
 	 */
 	public MatchingStoryNodeMatchingStoryNodeConstraintsCompartmentItemSemanticEditPolicy() {
-		super(SDMElementTypes.MatchingStoryNode_2006);
+		super(SDMElementTypes.MatchingStoryNode_3010);
 	}
 
 }

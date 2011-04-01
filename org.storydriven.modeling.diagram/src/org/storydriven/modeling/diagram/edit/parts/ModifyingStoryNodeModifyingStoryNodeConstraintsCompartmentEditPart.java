@@ -19,7 +19,7 @@ public class ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7006;
+	public static final int VISUAL_ID = 7011;
 
 	/**
 	 * @generated

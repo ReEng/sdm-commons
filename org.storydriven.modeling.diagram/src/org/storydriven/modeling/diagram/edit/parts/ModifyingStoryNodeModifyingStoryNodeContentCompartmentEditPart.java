@@ -3,10 +3,14 @@ package org.storydriven.modeling.diagram.edit.parts;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
+import org.storydriven.modeling.diagram.edit.policies.ModifyingStoryNodeModifyingStoryNodeContentCompartmentCanonicalEditPolicy;
 import org.storydriven.modeling.diagram.edit.policies.ModifyingStoryNodeModifyingStoryNodeContentCompartmentItemSemanticEditPolicy;
 import org.storydriven.modeling.diagram.part.Messages;
 
@@ -14,12 +18,12 @@ import org.storydriven.modeling.diagram.part.Messages;
  * @generated
  */
 public class ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart
-		extends ListCompartmentEditPart {
+		extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7007;
+	public static final int VISUAL_ID = 7012;
 
 	/**
 	 * @generated
@@ -27,13 +31,6 @@ public class ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart
 	public ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart(
 			View view) {
 		super(view);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected boolean hasModelChildrenChanged(Notification evt) {
-		return false;
 	}
 
 	/**
@@ -61,6 +58,13 @@ public class ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new ModifyingStoryNodeModifyingStoryNodeContentCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicy());
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
+				new DragDropEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CANONICAL_ROLE,
+				new ModifyingStoryNodeModifyingStoryNodeContentCompartmentCanonicalEditPolicy());
 	}
 
 	/**

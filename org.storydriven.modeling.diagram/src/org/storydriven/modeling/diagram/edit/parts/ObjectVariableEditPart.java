@@ -1,25 +1,34 @@
 package org.storydriven.modeling.diagram.edit.parts;
 
+import java.util.Collections;
+import java.util.List;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -101,14 +110,14 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new StoryPatternObjectFigureDescriptor();
+		return primaryShape = new ObjectVariableFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public StoryPatternObjectFigureDescriptor getPrimaryShape() {
-		return (StoryPatternObjectFigureDescriptor) primaryShape;
+	public ObjectVariableFigure getPrimaryShape() {
+		return (ObjectVariableFigure) primaryShape;
 	}
 
 	/**
@@ -118,7 +127,18 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof ObjectVariableNameEditPart) {
 			((ObjectVariableNameEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureStoryPatternObjectNameLabel());
+							.getFigureObjectVariableNameLabel());
+			return true;
+		}
+		if (childEditPart instanceof WrappingLabelEditPart) {
+			((WrappingLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getFigureObjectVariableClassifierLabel());
+			return true;
+		}
+		if (childEditPart instanceof ObjectVariableBindingOperatorEditPart) {
+			((ObjectVariableBindingOperatorEditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureObjectVariableModifierLabel());
 			return true;
 		}
 		return false;
@@ -129,6 +149,12 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ObjectVariableNameEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof WrappingLabelEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof ObjectVariableBindingOperatorEditPart) {
 			return true;
 		}
 		return false;
@@ -258,21 +284,38 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class StoryPatternObjectFigureDescriptor extends RectangleFigure {
+	public class ObjectVariableFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureStoryPatternObjectNameLabel;
+		private WrappingLabel fFigureObjectVariableNameLabel;
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureObjectVariableModifierLabel;
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureObjectVariableClassifierLabel;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureObjectVariableConstraintsRectangle;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureObjectVariableAttributeAssignmentsRectangle;
 
 		/**
 		 * @generated
 		 */
-		public StoryPatternObjectFigureDescriptor() {
+		public ObjectVariableFigure() {
 			this.setLayoutManager(new StackLayout());
 			this.setFill(false);
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(40),
-					getMapMode().DPtoLP(60)));
+			this.setOutline(false);
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(0)));
 			createContents();
 		}
 
@@ -281,119 +324,118 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure storyPatternObjectContainerRectangle0 = new RectangleFigure();
-			storyPatternObjectContainerRectangle0.setFill(false);
-			storyPatternObjectContainerRectangle0.setOutline(false);
+			RectangleFigure objectVariableContainerRectangle0 = new RectangleFigure();
+			objectVariableContainerRectangle0.setFill(false);
+			objectVariableContainerRectangle0.setOutline(false);
 
-			storyPatternObjectContainerRectangle0.setBorder(new MarginBorder(
+			objectVariableContainerRectangle0.setBorder(new MarginBorder(
 					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 
-			this.add(storyPatternObjectContainerRectangle0);
-			storyPatternObjectContainerRectangle0
+			this.add(objectVariableContainerRectangle0);
+			objectVariableContainerRectangle0
 					.setLayoutManager(new StackLayout());
 
-			RectangleFigure storyPatternObjectRectangle1 = new RectangleFigure();
-			storyPatternObjectRectangle1
-					.setForegroundColor(ColorConstants.black);
+			RectangleFigure objectVariableRectangle1 = new RectangleFigure();
+			objectVariableRectangle1.setForegroundColor(ColorConstants.black);
 
-			storyPatternObjectContainerRectangle0
-					.add(storyPatternObjectRectangle1);
+			objectVariableContainerRectangle0.add(objectVariableRectangle1);
 
-			BorderLayout layoutStoryPatternObjectRectangle1 = new BorderLayout();
-			storyPatternObjectRectangle1
-					.setLayoutManager(layoutStoryPatternObjectRectangle1);
+			BorderLayout layoutObjectVariableRectangle1 = new BorderLayout();
+			objectVariableRectangle1
+					.setLayoutManager(layoutObjectVariableRectangle1);
 
-			RectangleFigure storyPatternObjectFigureNameRectangle2 = new RectangleFigure();
+			RectangleFigure objectVariableFigureNameRectangle2 = new RectangleFigure();
 
-			storyPatternObjectRectangle1.add(
-					storyPatternObjectFigureNameRectangle2, BorderLayout.TOP);
+			objectVariableRectangle1.add(objectVariableFigureNameRectangle2,
+					BorderLayout.TOP);
 
-			GridLayout layoutStoryPatternObjectFigureNameRectangle2 = new GridLayout();
-			layoutStoryPatternObjectFigureNameRectangle2.numColumns = 1;
-			layoutStoryPatternObjectFigureNameRectangle2.makeColumnsEqualWidth = true;
-			storyPatternObjectFigureNameRectangle2
-					.setLayoutManager(layoutStoryPatternObjectFigureNameRectangle2);
+			GridLayout layoutObjectVariableFigureNameRectangle2 = new GridLayout();
+			layoutObjectVariableFigureNameRectangle2.numColumns = 1;
+			layoutObjectVariableFigureNameRectangle2.makeColumnsEqualWidth = true;
+			objectVariableFigureNameRectangle2
+					.setLayoutManager(layoutObjectVariableFigureNameRectangle2);
 
-			WrappingLabel storyPatternObjectModifierLabel3 = new WrappingLabel();
-			storyPatternObjectModifierLabel3.setText("");
+			fFigureObjectVariableModifierLabel = new WrappingLabel();
+			fFigureObjectVariableModifierLabel.setText("");
 
-			storyPatternObjectModifierLabel3
-					.setFont(STORYPATTERNOBJECTMODIFIERLABEL3_FONT);
+			fFigureObjectVariableModifierLabel
+					.setFont(FFIGUREOBJECTVARIABLEMODIFIERLABEL_FONT);
 
-			GridData constraintStoryPatternObjectModifierLabel3 = new GridData();
-			constraintStoryPatternObjectModifierLabel3.verticalAlignment = GridData.BEGINNING;
-			constraintStoryPatternObjectModifierLabel3.horizontalAlignment = GridData.CENTER;
-			constraintStoryPatternObjectModifierLabel3.horizontalIndent = 0;
-			constraintStoryPatternObjectModifierLabel3.horizontalSpan = 1;
-			constraintStoryPatternObjectModifierLabel3.verticalSpan = 1;
-			constraintStoryPatternObjectModifierLabel3.grabExcessHorizontalSpace = true;
-			constraintStoryPatternObjectModifierLabel3.grabExcessVerticalSpace = false;
-			storyPatternObjectFigureNameRectangle2.add(
-					storyPatternObjectModifierLabel3,
-					constraintStoryPatternObjectModifierLabel3);
+			GridData constraintFFigureObjectVariableModifierLabel = new GridData();
+			constraintFFigureObjectVariableModifierLabel.verticalAlignment = GridData.BEGINNING;
+			constraintFFigureObjectVariableModifierLabel.horizontalAlignment = GridData.CENTER;
+			constraintFFigureObjectVariableModifierLabel.horizontalIndent = 0;
+			constraintFFigureObjectVariableModifierLabel.horizontalSpan = 1;
+			constraintFFigureObjectVariableModifierLabel.verticalSpan = 1;
+			constraintFFigureObjectVariableModifierLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureObjectVariableModifierLabel.grabExcessVerticalSpace = false;
+			objectVariableFigureNameRectangle2.add(
+					fFigureObjectVariableModifierLabel,
+					constraintFFigureObjectVariableModifierLabel);
 
-			fFigureStoryPatternObjectNameLabel = new WrappingLabel();
-			fFigureStoryPatternObjectNameLabel.setText("");
+			fFigureObjectVariableNameLabel = new WrappingLabel();
+			fFigureObjectVariableNameLabel.setText("");
 
-			fFigureStoryPatternObjectNameLabel
-					.setFont(FFIGURESTORYPATTERNOBJECTNAMELABEL_FONT);
+			fFigureObjectVariableNameLabel
+					.setFont(FFIGUREOBJECTVARIABLENAMELABEL_FONT);
 
-			GridData constraintFFigureStoryPatternObjectNameLabel = new GridData();
-			constraintFFigureStoryPatternObjectNameLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureStoryPatternObjectNameLabel.horizontalAlignment = GridData.CENTER;
-			constraintFFigureStoryPatternObjectNameLabel.horizontalIndent = 0;
-			constraintFFigureStoryPatternObjectNameLabel.horizontalSpan = 1;
-			constraintFFigureStoryPatternObjectNameLabel.verticalSpan = 1;
-			constraintFFigureStoryPatternObjectNameLabel.grabExcessHorizontalSpace = true;
-			constraintFFigureStoryPatternObjectNameLabel.grabExcessVerticalSpace = false;
-			storyPatternObjectFigureNameRectangle2.add(
-					fFigureStoryPatternObjectNameLabel,
-					constraintFFigureStoryPatternObjectNameLabel);
+			GridData constraintFFigureObjectVariableNameLabel = new GridData();
+			constraintFFigureObjectVariableNameLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureObjectVariableNameLabel.horizontalAlignment = GridData.CENTER;
+			constraintFFigureObjectVariableNameLabel.horizontalIndent = 0;
+			constraintFFigureObjectVariableNameLabel.horizontalSpan = 1;
+			constraintFFigureObjectVariableNameLabel.verticalSpan = 1;
+			constraintFFigureObjectVariableNameLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureObjectVariableNameLabel.grabExcessVerticalSpace = false;
+			objectVariableFigureNameRectangle2.add(
+					fFigureObjectVariableNameLabel,
+					constraintFFigureObjectVariableNameLabel);
 
-			WrappingLabel storyPatternObjectClassifierLabel3 = new WrappingLabel();
-			storyPatternObjectClassifierLabel3.setText("");
+			fFigureObjectVariableClassifierLabel = new WrappingLabel();
+			fFigureObjectVariableClassifierLabel.setText("");
 
-			storyPatternObjectClassifierLabel3
-					.setFont(STORYPATTERNOBJECTCLASSIFIERLABEL3_FONT);
+			fFigureObjectVariableClassifierLabel
+					.setFont(FFIGUREOBJECTVARIABLECLASSIFIERLABEL_FONT);
 
-			GridData constraintStoryPatternObjectClassifierLabel3 = new GridData();
-			constraintStoryPatternObjectClassifierLabel3.verticalAlignment = GridData.END;
-			constraintStoryPatternObjectClassifierLabel3.horizontalAlignment = GridData.CENTER;
-			constraintStoryPatternObjectClassifierLabel3.horizontalIndent = 0;
-			constraintStoryPatternObjectClassifierLabel3.horizontalSpan = 1;
-			constraintStoryPatternObjectClassifierLabel3.verticalSpan = 1;
-			constraintStoryPatternObjectClassifierLabel3.grabExcessHorizontalSpace = true;
-			constraintStoryPatternObjectClassifierLabel3.grabExcessVerticalSpace = false;
-			storyPatternObjectFigureNameRectangle2.add(
-					storyPatternObjectClassifierLabel3,
-					constraintStoryPatternObjectClassifierLabel3);
+			GridData constraintFFigureObjectVariableClassifierLabel = new GridData();
+			constraintFFigureObjectVariableClassifierLabel.verticalAlignment = GridData.END;
+			constraintFFigureObjectVariableClassifierLabel.horizontalAlignment = GridData.CENTER;
+			constraintFFigureObjectVariableClassifierLabel.horizontalIndent = 0;
+			constraintFFigureObjectVariableClassifierLabel.horizontalSpan = 1;
+			constraintFFigureObjectVariableClassifierLabel.verticalSpan = 1;
+			constraintFFigureObjectVariableClassifierLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureObjectVariableClassifierLabel.grabExcessVerticalSpace = false;
+			objectVariableFigureNameRectangle2.add(
+					fFigureObjectVariableClassifierLabel,
+					constraintFFigureObjectVariableClassifierLabel);
 
-			RectangleFigure storyPatternObjectFigureBodyRectangle2 = new RectangleFigure();
-			storyPatternObjectFigureBodyRectangle2.setFill(false);
-			storyPatternObjectFigureBodyRectangle2.setOutline(false);
+			RectangleFigure objectVariableFigureBodyRectangle2 = new RectangleFigure();
+			objectVariableFigureBodyRectangle2.setFill(false);
+			objectVariableFigureBodyRectangle2.setOutline(false);
 
-			storyPatternObjectRectangle1
-					.add(storyPatternObjectFigureBodyRectangle2,
-							BorderLayout.CENTER);
+			objectVariableRectangle1.add(objectVariableFigureBodyRectangle2,
+					BorderLayout.CENTER);
 
-			BorderLayout layoutStoryPatternObjectFigureBodyRectangle2 = new BorderLayout();
-			storyPatternObjectFigureBodyRectangle2
-					.setLayoutManager(layoutStoryPatternObjectFigureBodyRectangle2);
+			BorderLayout layoutObjectVariableFigureBodyRectangle2 = new BorderLayout();
+			objectVariableFigureBodyRectangle2
+					.setLayoutManager(layoutObjectVariableFigureBodyRectangle2);
 
-			RectangleFigure storyPatternObjectConstraintsRectangle3 = new RectangleFigure();
-			storyPatternObjectConstraintsRectangle3.setFill(false);
-			storyPatternObjectConstraintsRectangle3.setOutline(false);
+			fFigureObjectVariableConstraintsRectangle = new RectangleFigure();
+			fFigureObjectVariableConstraintsRectangle.setFill(false);
+			fFigureObjectVariableConstraintsRectangle.setOutline(false);
 
-			storyPatternObjectFigureBodyRectangle2.add(
-					storyPatternObjectConstraintsRectangle3, BorderLayout.TOP);
+			objectVariableFigureBodyRectangle2
+					.add(fFigureObjectVariableConstraintsRectangle,
+							BorderLayout.TOP);
 
-			RectangleFigure storyPatternObjectAttributeAssignmentsRectangle3 = new RectangleFigure();
-			storyPatternObjectAttributeAssignmentsRectangle3.setFill(false);
-			storyPatternObjectAttributeAssignmentsRectangle3.setOutline(false);
+			fFigureObjectVariableAttributeAssignmentsRectangle = new RectangleFigure();
+			fFigureObjectVariableAttributeAssignmentsRectangle.setFill(false);
+			fFigureObjectVariableAttributeAssignmentsRectangle
+					.setOutline(false);
 
-			storyPatternObjectFigureBodyRectangle2.add(
-					storyPatternObjectAttributeAssignmentsRectangle3,
+			objectVariableFigureBodyRectangle2.add(
+					fFigureObjectVariableAttributeAssignmentsRectangle,
 					BorderLayout.CENTER);
 
 		}
@@ -401,8 +443,36 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureStoryPatternObjectNameLabel() {
-			return fFigureStoryPatternObjectNameLabel;
+		public WrappingLabel getFigureObjectVariableNameLabel() {
+			return fFigureObjectVariableNameLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureObjectVariableModifierLabel() {
+			return fFigureObjectVariableModifierLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureObjectVariableClassifierLabel() {
+			return fFigureObjectVariableClassifierLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureObjectVariableConstraintsRectangle() {
+			return fFigureObjectVariableConstraintsRectangle;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureObjectVariableAttributeAssignmentsRectangle() {
+			return fFigureObjectVariableAttributeAssignmentsRectangle;
 		}
 
 	}
@@ -410,21 +480,21 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font STORYPATTERNOBJECTMODIFIERLABEL3_FONT = new Font(
+	static final Font FFIGUREOBJECTVARIABLEMODIFIERLABEL_FONT = new Font(
 			Display.getCurrent(), Display.getDefault().getSystemFont()
 					.getFontData()[0].getName(), 9, SWT.ITALIC);
 
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURESTORYPATTERNOBJECTNAMELABEL_FONT = new Font(
+	static final Font FFIGUREOBJECTVARIABLENAMELABEL_FONT = new Font(
 			Display.getCurrent(), Display.getDefault().getSystemFont()
 					.getFontData()[0].getName(), 9, SWT.BOLD);
 
 	/**
 	 * @generated
 	 */
-	static final Font STORYPATTERNOBJECTCLASSIFIERLABEL3_FONT = new Font(
+	static final Font FFIGUREOBJECTVARIABLECLASSIFIERLABEL_FONT = new Font(
 			Display.getCurrent(), Display.getDefault().getSystemFont()
 					.getFontData()[0].getName(), 9, SWT.BOLD);
 

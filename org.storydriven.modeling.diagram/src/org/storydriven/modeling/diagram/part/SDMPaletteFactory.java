@@ -157,11 +157,12 @@ public class SDMPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createMatchingStoryNode7CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(SDMElementTypes.MatchingStoryNode_3010);
+		types.add(SDMElementTypes.MatchingStoryNode_2006);
 		NodeToolEntry entry = new NodeToolEntry(
 				Messages.MatchingStoryNode7CreationTool_title,
-				Messages.MatchingStoryNode7CreationTool_desc,
-				Collections
-						.singletonList(SDMElementTypes.MatchingStoryNode_2006));
+				Messages.MatchingStoryNode7CreationTool_desc, types);
 		entry.setId("createMatchingStoryNode7CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(SDMDiagramEditorPlugin
 				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/StatementNode.gif")); //$NON-NLS-1$
@@ -174,11 +175,12 @@ public class SDMPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createModifyingStoryNode8CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(SDMElementTypes.ModifyingStoryNode_3011);
+		types.add(SDMElementTypes.ModifyingStoryNode_2007);
 		NodeToolEntry entry = new NodeToolEntry(
 				Messages.ModifyingStoryNode8CreationTool_title,
-				Messages.ModifyingStoryNode8CreationTool_desc,
-				Collections
-						.singletonList(SDMElementTypes.ModifyingStoryNode_2007));
+				Messages.ModifyingStoryNode8CreationTool_desc, types);
 		entry.setId("createModifyingStoryNode8CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(SDMDiagramEditorPlugin
 				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/StatementNode.gif")); //$NON-NLS-1$
@@ -191,10 +193,12 @@ public class SDMPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createStoryPatternNode9CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(SDMElementTypes.MatchingPattern_3006);
+		types.add(SDMElementTypes.StoryPattern_3008);
 		NodeToolEntry entry = new NodeToolEntry(
 				Messages.StoryPatternNode9CreationTool_title,
-				Messages.StoryPatternNode9CreationTool_desc,
-				Collections.singletonList(SDMElementTypes.MatchingPattern_3006));
+				Messages.StoryPatternNode9CreationTool_desc, types);
 		entry.setId("createStoryPatternNode9CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(SDMDiagramEditorPlugin
 				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/StatementNode.gif")); //$NON-NLS-1$
@@ -207,10 +211,12 @@ public class SDMPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createObjectVariableNode10CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(SDMElementTypes.ObjectVariable_3007);
+		types.add(SDMElementTypes.ObjectVariable_3009);
 		NodeToolEntry entry = new NodeToolEntry(
 				Messages.ObjectVariableNode10CreationTool_title,
-				Messages.ObjectVariableNode10CreationTool_desc,
-				Collections.singletonList(SDMElementTypes.ObjectVariable_3007));
+				Messages.ObjectVariableNode10CreationTool_desc, types);
 		entry.setId("createObjectVariableNode10CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(SDMElementTypes
 				.getImageDescriptor(SDMElementTypes.ObjectVariable_3007));

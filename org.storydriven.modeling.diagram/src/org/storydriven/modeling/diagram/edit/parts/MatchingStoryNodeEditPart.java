@@ -127,19 +127,19 @@ public class MatchingStoryNodeEditPart extends ShapeNodeEditPart {
 					.setLabel(getPrimaryShape().getFigureStoryNodeNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart) {
+		if (childEditPart instanceof MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureStoryNodeContentRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart) childEditPart)
+			pane.add(((MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
-		if (childEditPart instanceof MatchingStoryNodeMatchingStoryNodeConstraintsCompartmentEditPart) {
+		if (childEditPart instanceof MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureStoryNodeConstraintsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((MatchingStoryNodeMatchingStoryNodeConstraintsCompartmentEditPart) childEditPart)
+			pane.add(((MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -153,19 +153,19 @@ public class MatchingStoryNodeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof MatchingStoryNodeNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart) {
+		if (childEditPart instanceof MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureStoryNodeContentRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart) childEditPart)
+			pane.remove(((MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
-		if (childEditPart instanceof MatchingStoryNodeMatchingStoryNodeConstraintsCompartmentEditPart) {
+		if (childEditPart instanceof MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureStoryNodeConstraintsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((MatchingStoryNodeMatchingStoryNodeConstraintsCompartmentEditPart) childEditPart)
+			pane.remove(((MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -196,10 +196,10 @@ public class MatchingStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart) {
+		if (editPart instanceof MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart) {
 			return getPrimaryShape().getFigureStoryNodeContentRectangle();
 		}
-		if (editPart instanceof MatchingStoryNodeMatchingStoryNodeConstraintsCompartmentEditPart) {
+		if (editPart instanceof MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart) {
 			return getPrimaryShape().getFigureStoryNodeConstraintsRectangle();
 		}
 		return getContentPane();
@@ -341,13 +341,19 @@ public class MatchingStoryNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof StartNode2EditPart) {
 			types.add(SDMElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof StatementNode2EditPart) {
-			types.add(SDMElementTypes.ActivityEdge_4001);
-		}
 		if (targetEditPart instanceof StopNode2EditPart) {
 			types.add(SDMElementTypes.ActivityEdge_4001);
 		}
+		if (targetEditPart instanceof StatementNode2EditPart) {
+			types.add(SDMElementTypes.ActivityEdge_4001);
+		}
 		if (targetEditPart instanceof StructuredNode2EditPart) {
+			types.add(SDMElementTypes.ActivityEdge_4001);
+		}
+		if (targetEditPart instanceof MatchingStoryNode2EditPart) {
+			types.add(SDMElementTypes.ActivityEdge_4001);
+		}
+		if (targetEditPart instanceof ModifyingStoryNode2EditPart) {
 			types.add(SDMElementTypes.ActivityEdge_4001);
 		}
 		return types;
@@ -368,9 +374,11 @@ public class MatchingStoryNodeEditPart extends ShapeNodeEditPart {
 			types.add(SDMElementTypes.ModifyingStoryNode_2007);
 			types.add(SDMElementTypes.JunctionNode_3001);
 			types.add(SDMElementTypes.StartNode_3002);
-			types.add(SDMElementTypes.StatementNode_3003);
 			types.add(SDMElementTypes.StopNode_3004);
+			types.add(SDMElementTypes.StatementNode_3003);
 			types.add(SDMElementTypes.StructuredNode_3005);
+			types.add(SDMElementTypes.MatchingStoryNode_3010);
+			types.add(SDMElementTypes.ModifyingStoryNode_3011);
 		}
 		return types;
 	}
@@ -399,9 +407,11 @@ public class MatchingStoryNodeEditPart extends ShapeNodeEditPart {
 			types.add(SDMElementTypes.ModifyingStoryNode_2007);
 			types.add(SDMElementTypes.JunctionNode_3001);
 			types.add(SDMElementTypes.StartNode_3002);
-			types.add(SDMElementTypes.StatementNode_3003);
 			types.add(SDMElementTypes.StopNode_3004);
+			types.add(SDMElementTypes.StatementNode_3003);
 			types.add(SDMElementTypes.StructuredNode_3005);
+			types.add(SDMElementTypes.MatchingStoryNode_3010);
+			types.add(SDMElementTypes.ModifyingStoryNode_3011);
 		}
 		return types;
 	}
