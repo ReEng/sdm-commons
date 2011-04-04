@@ -31,7 +31,7 @@ public interface Variable extends TypedElement
     * <!-- end-user-doc -->
     * @return the value of the '<em>Variable Name</em>' attribute.
     * @see org.storydriven.modeling.SDMPackage#getVariable_VariableName()
-    * @model changeable="false" volatile="true" derived="true" ordered="false"
+    * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
     * @generated
     */
    String getVariableName ();
