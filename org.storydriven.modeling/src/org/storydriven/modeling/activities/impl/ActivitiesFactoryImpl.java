@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.storydriven.modeling.activities.*;
 import org.storydriven.modeling.activities.ActivitiesFactory;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.activities.ActivityCallNode;
 import org.storydriven.modeling.activities.ActivityEdge;
+import org.storydriven.modeling.activities.EdgeGuard;
 import org.storydriven.modeling.activities.ExceptionVariable;
 import org.storydriven.modeling.activities.JunctionNode;
 import org.storydriven.modeling.activities.MatchingStoryNode;
@@ -27,17 +27,17 @@ import org.storydriven.modeling.activities.StartNode;
 import org.storydriven.modeling.activities.StatementNode;
 import org.storydriven.modeling.activities.StopNode;
 import org.storydriven.modeling.activities.StructuredNode;
-import org.storydriven.modeling.activities.TransitionGuard;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFactory
 {
    /**
-    * Creates the default factory implementation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static ActivitiesFactory init ()
@@ -59,8 +59,8 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
    }
 
    /**
-    * Creates an instance of the factory.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ActivitiesFactoryImpl ()
@@ -70,6 +70,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -108,6 +109,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -115,8 +117,8 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
    {
       switch (eDataType.getClassifierID())
       {
-         case ActivitiesPackage.TRANSITION_GUARD:
-            return createTransitionGuardFromString(eDataType, initialValue);
+         case ActivitiesPackage.EDGE_GUARD:
+            return createEdgeGuardFromString(eDataType, initialValue);
          default:
             throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
       }
@@ -124,6 +126,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -131,8 +134,8 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
    {
       switch (eDataType.getClassifierID())
       {
-         case ActivitiesPackage.TRANSITION_GUARD:
-            return convertTransitionGuardToString(eDataType, instanceValue);
+         case ActivitiesPackage.EDGE_GUARD:
+            return convertEdgeGuardToString(eDataType, instanceValue);
          default:
             throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
       }
@@ -140,6 +143,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public Activity createActivity ()
@@ -150,6 +154,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ActivityEdge createActivityEdge ()
@@ -160,6 +165,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ExceptionVariable createExceptionVariable ()
@@ -170,6 +176,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public StructuredNode createStructuredNode ()
@@ -180,6 +187,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public OperationExtension createOperationExtension ()
@@ -190,6 +198,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public JunctionNode createJunctionNode ()
@@ -200,6 +209,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public StartNode createStartNode ()
@@ -210,6 +220,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public StatementNode createStatementNode ()
@@ -220,6 +231,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public StopNode createStopNode ()
@@ -230,6 +242,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ActivityCallNode createActivityCallNode ()
@@ -240,6 +253,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public MatchingStoryNode createMatchingStoryNode ()
@@ -250,6 +264,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ModifyingStoryNode createModifyingStoryNode ()
@@ -260,28 +275,33 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
-   public TransitionGuard createTransitionGuardFromString (EDataType eDataType, String initialValue)
+   public EdgeGuard createEdgeGuardFromString (EDataType eDataType, String initialValue)
    {
-      TransitionGuard result = TransitionGuard.get(initialValue);
+      EdgeGuard result = EdgeGuard.get(initialValue);
       if (result == null)
+      {
          throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
             + eDataType.getName() + "'");
+      }
       return result;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
-   public String convertTransitionGuardToString (EDataType eDataType, Object instanceValue)
+   public String convertEdgeGuardToString (EDataType eDataType, Object instanceValue)
    {
       return instanceValue == null ? null : instanceValue.toString();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ActivitiesPackage getActivitiesPackage ()
@@ -291,6 +311,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @deprecated
     * @generated
     */

@@ -78,16 +78,16 @@
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Activities" basePackage="org.storydriven.modeling"
         disposableProviderFactory="true" ecorePackage="sdm.ecore#//activities" resourceInterfaces="true"
         operationsPackage="org.storydriven.modeling.activities.impl">
-      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sdm.ecore#//activities/TransitionGuard">
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/TransitionGuard/NONE"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/TransitionGuard/SUCCESS"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/TransitionGuard/FAILURE"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/TransitionGuard/EACH_TIME"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/TransitionGuard/END"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/TransitionGuard/ELSE"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/TransitionGuard/BOOL"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/TransitionGuard/EXCEPTION"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/TransitionGuard/FINALLY"/>
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sdm.ecore#//activities/EdgeGuard">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/EdgeGuard/NONE"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/EdgeGuard/SUCCESS"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/EdgeGuard/FAILURE"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/EdgeGuard/EACH_TIME"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/EdgeGuard/END"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/EdgeGuard/ELSE"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/EdgeGuard/BOOL"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/EdgeGuard/EXCEPTION"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//activities/EdgeGuard/FINALLY"/>
       </genEnums>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//activities/ExceptionVariable">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
@@ -105,7 +105,7 @@
             propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/ActivityEdge/source"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
             createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//activities/ActivityEdge/owningActivity"/>
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//activities/ActivityEdge/guardType"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//activities/ActivityEdge/guard"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/ActivityEdge/guardExpression"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

@@ -377,12 +377,13 @@ public interface ActivitiesPackage extends EPackage
    int ACTIVITY_EDGE__OWNING_ACTIVITY = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
    /**
-    * The feature id for the '<em><b>Guard Type</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Guard</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int ACTIVITY_EDGE__GUARD_TYPE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+   int ACTIVITY_EDGE__GUARD = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
    /**
     * The feature id for the '<em><b>Guard Expression</b></em>' containment reference.
@@ -3602,13 +3603,14 @@ public interface ActivitiesPackage extends EPackage
    int MODIFYING_STORY_NODE_OPERATION_COUNT = STORY_NODE_OPERATION_COUNT + 0;
 
    /**
-    * The meta object id for the '{@link org.storydriven.modeling.activities.TransitionGuard <em>Transition Guard</em>}' enum.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see org.storydriven.modeling.activities.TransitionGuard
-    * @see org.storydriven.modeling.activities.impl.ActivitiesPackageImpl#getTransitionGuard()
+    * The meta object id for the '{@link org.storydriven.modeling.activities.EdgeGuard <em>Edge Guard</em>}' enum.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.storydriven.modeling.activities.EdgeGuard
+    * @see org.storydriven.modeling.activities.impl.ActivitiesPackageImpl#getEdgeGuard()
     * @generated
     */
-   int TRANSITION_GUARD = 14;
+   int EDGE_GUARD = 14;
 
    /**
     * Returns the meta object for class '{@link org.storydriven.modeling.activities.Activity <em>Activity</em>}'.
@@ -3758,17 +3760,6 @@ public interface ActivitiesPackage extends EPackage
    EReference getActivityEdge_Source ();
 
    /**
-    * Returns the meta object for the attribute '{@link org.storydriven.modeling.activities.ActivityEdge#getGuardType <em>Guard Type</em>}'.
-    * <!-- begin-user-doc --> <!--
-    * end-user-doc -->
-    * @return the meta object for the attribute '<em>Guard Type</em>'.
-    * @see org.storydriven.modeling.activities.ActivityEdge#getGuardType()
-    * @see #getActivityEdge()
-    * @generated
-    */
-   EAttribute getActivityEdge_GuardType ();
-
-   /**
     * Returns the meta object for the containment reference '{@link org.storydriven.modeling.activities.ActivityEdge#getGuardExpression <em>Guard Expression</em>}'. <!--
     * begin-user-doc --> <!-- end-user-doc -->
     * 
@@ -3789,6 +3780,17 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     */
    EReference getActivityEdge_OwningActivity ();
+
+   /**
+    * Returns the meta object for the attribute '{@link org.storydriven.modeling.activities.ActivityEdge#getGuard <em>Guard</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Guard</em>'.
+    * @see org.storydriven.modeling.activities.ActivityEdge#getGuard()
+    * @see #getActivityEdge()
+    * @generated
+    */
+   EAttribute getActivityEdge_Guard ();
 
    /**
     * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.activities.ActivityEdge#getGuardExceptions <em>Guard Exception</em>}'. <!--
@@ -4094,13 +4096,14 @@ public interface ActivitiesPackage extends EPackage
    EReference getModifyingStoryNode_OwnedRule ();
 
    /**
-    * Returns the meta object for enum '{@link org.storydriven.modeling.activities.TransitionGuard <em>Transition Guard</em>}'.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @return the meta object for enum '<em>Transition Guard</em>'.
-    * @see org.storydriven.modeling.activities.TransitionGuard
+    * Returns the meta object for enum '{@link org.storydriven.modeling.activities.EdgeGuard <em>Edge Guard</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for enum '<em>Edge Guard</em>'.
+    * @see org.storydriven.modeling.activities.EdgeGuard
     * @generated
     */
-   EEnum getTransitionGuard ();
+   EEnum getEdgeGuard ();
 
    /**
     * Returns the factory that creates the instances of the model.
@@ -4232,13 +4235,6 @@ public interface ActivitiesPackage extends EPackage
       EReference ACTIVITY_EDGE__SOURCE = eINSTANCE.getActivityEdge_Source();
 
       /**
-       * The meta object literal for the '<em><b>Guard Type</b></em>' attribute feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
-       * @generated
-       */
-      EAttribute ACTIVITY_EDGE__GUARD_TYPE = eINSTANCE.getActivityEdge_GuardType();
-
-      /**
        * The meta object literal for the '<em><b>Guard Expression</b></em>' containment reference feature.
        * <!-- begin-user-doc --> <!-- end-user-doc -->
        * @generated
@@ -4251,6 +4247,14 @@ public interface ActivitiesPackage extends EPackage
        * @generated
        */
       EReference ACTIVITY_EDGE__OWNING_ACTIVITY = eINSTANCE.getActivityEdge_OwningActivity();
+
+      /**
+       * The meta object literal for the '<em><b>Guard</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EAttribute ACTIVITY_EDGE__GUARD = eINSTANCE.getActivityEdge_Guard();
 
       /**
        * The meta object literal for the '<em><b>Guard Exception</b></em>' containment reference list feature.
@@ -4496,13 +4500,14 @@ public interface ActivitiesPackage extends EPackage
       EReference MODIFYING_STORY_NODE__OWNED_RULE = eINSTANCE.getModifyingStoryNode_OwnedRule();
 
       /**
-       * The meta object literal for the '{@link org.storydriven.modeling.activities.TransitionGuard <em>Transition Guard</em>}' enum.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
-       * @see org.storydriven.modeling.activities.TransitionGuard
-       * @see org.storydriven.modeling.activities.impl.ActivitiesPackageImpl#getTransitionGuard()
+       * The meta object literal for the '{@link org.storydriven.modeling.activities.EdgeGuard <em>Edge Guard</em>}' enum.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.storydriven.modeling.activities.EdgeGuard
+       * @see org.storydriven.modeling.activities.impl.ActivitiesPackageImpl#getEdgeGuard()
        * @generated
        */
-      EEnum TRANSITION_GUARD = eINSTANCE.getTransitionGuard();
+      EEnum EDGE_GUARD = eINSTANCE.getEdgeGuard();
 
    }
 

@@ -21,8 +21,8 @@ import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.activities.ActivityEdge;
 import org.storydriven.modeling.activities.ActivityNode;
+import org.storydriven.modeling.activities.EdgeGuard;
 import org.storydriven.modeling.activities.ExceptionVariable;
-import org.storydriven.modeling.activities.TransitionGuard;
 import org.storydriven.modeling.expressions.Expression;
 import org.storydriven.modeling.impl.ExtendableElementImpl;
 
@@ -34,7 +34,7 @@ import org.storydriven.modeling.impl.ExtendableElementImpl;
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getOwningActivity <em>Owning Activity</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getGuardType <em>Guard Type</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getGuard <em>Guard</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getGuardExpression <em>Guard Expression</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityEdgeImpl#getGuardExceptions <em>Guard Exception</em>}</li>
  * </ul>
@@ -63,22 +63,24 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
    protected ActivityNode source;
 
    /**
-    * The default value of the '{@link #getGuardType() <em>Guard Type</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see #getGuardType()
+    * The default value of the '{@link #getGuard() <em>Guard</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getGuard()
     * @generated
     * @ordered
     */
-   protected static final TransitionGuard GUARD_TYPE_EDEFAULT = TransitionGuard.NONE;
+   protected static final EdgeGuard GUARD_EDEFAULT = EdgeGuard.NONE;
 
    /**
-    * The cached value of the '{@link #getGuardType() <em>Guard Type</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see #getGuardType()
+    * The cached value of the '{@link #getGuard() <em>Guard</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getGuard()
     * @generated
     * @ordered
     */
-   protected TransitionGuard guardType = GUARD_TYPE_EDEFAULT;
+   protected EdgeGuard guard = GUARD_EDEFAULT;
 
    /**
     * The cached value of the '{@link #getGuardExpression() <em>Guard Expression</em>}' containment reference.
@@ -188,28 +190,6 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
       else if (eNotificationRequired())
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY_EDGE__SOURCE, newSource,
             newSource));
-   }
-
-   /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    */
-   public TransitionGuard getGuardType ()
-   {
-      return guardType;
-   }
-
-   /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    */
-   public void setGuardType (TransitionGuard newGuardType)
-   {
-      TransitionGuard oldGuardType = guardType;
-      guardType = newGuardType == null ? GUARD_TYPE_EDEFAULT : newGuardType;
-      if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY_EDGE__GUARD_TYPE,
-            oldGuardType, guardType));
    }
 
    /**
@@ -352,6 +332,29 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
       else if (eNotificationRequired())
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY_EDGE__OWNING_ACTIVITY,
             newOwningActivity, newOwningActivity));
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public EdgeGuard getGuard ()
+   {
+      return guard;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public void setGuard (EdgeGuard newGuard)
+   {
+      EdgeGuard oldGuard = guard;
+      guard = newGuard == null ? GUARD_EDEFAULT : newGuard;
+      if (eNotificationRequired())
+         eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY_EDGE__GUARD, oldGuard, guard));
    }
 
    /**
@@ -531,8 +534,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
             if (resolve)
                return getOwningActivity();
             return basicGetOwningActivity();
-         case ActivitiesPackage.ACTIVITY_EDGE__GUARD_TYPE:
-            return getGuardType();
+         case ActivitiesPackage.ACTIVITY_EDGE__GUARD:
+            return getGuard();
          case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXPRESSION:
             if (resolve)
                return getGuardExpression();
@@ -562,8 +565,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
          case ActivitiesPackage.ACTIVITY_EDGE__OWNING_ACTIVITY:
             setOwningActivity((Activity) newValue);
             return;
-         case ActivitiesPackage.ACTIVITY_EDGE__GUARD_TYPE:
-            setGuardType((TransitionGuard) newValue);
+         case ActivitiesPackage.ACTIVITY_EDGE__GUARD:
+            setGuard((EdgeGuard) newValue);
             return;
          case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXPRESSION:
             setGuardExpression((Expression) newValue);
@@ -594,8 +597,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
          case ActivitiesPackage.ACTIVITY_EDGE__OWNING_ACTIVITY:
             setOwningActivity((Activity) null);
             return;
-         case ActivitiesPackage.ACTIVITY_EDGE__GUARD_TYPE:
-            setGuardType(GUARD_TYPE_EDEFAULT);
+         case ActivitiesPackage.ACTIVITY_EDGE__GUARD:
+            setGuard(GUARD_EDEFAULT);
             return;
          case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXPRESSION:
             setGuardExpression((Expression) null);
@@ -622,8 +625,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
             return source != null;
          case ActivitiesPackage.ACTIVITY_EDGE__OWNING_ACTIVITY:
             return basicGetOwningActivity() != null;
-         case ActivitiesPackage.ACTIVITY_EDGE__GUARD_TYPE:
-            return guardType != GUARD_TYPE_EDEFAULT;
+         case ActivitiesPackage.ACTIVITY_EDGE__GUARD:
+            return guard != GUARD_EDEFAULT;
          case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXPRESSION:
             return guardExpression != null;
          case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION:
@@ -643,8 +646,8 @@ public class ActivityEdgeImpl extends ExtendableElementImpl implements ActivityE
          return super.toString();
 
       StringBuffer result = new StringBuffer(super.toString());
-      result.append(" (guardType: ");
-      result.append(guardType);
+      result.append(" (guard: ");
+      result.append(guard);
       result.append(')');
       return result.toString();
    }

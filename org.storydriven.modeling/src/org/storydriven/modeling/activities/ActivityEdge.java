@@ -19,7 +19,7 @@ import org.storydriven.modeling.expressions.Expression;
  *   <li>{@link org.storydriven.modeling.activities.ActivityEdge#getTarget <em>Target</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.ActivityEdge#getSource <em>Source</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.ActivityEdge#getOwningActivity <em>Owning Activity</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.ActivityEdge#getGuardType <em>Guard Type</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.ActivityEdge#getGuard <em>Guard</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.ActivityEdge#getGuardExpression <em>Guard Expression</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.ActivityEdge#getGuardExceptions <em>Guard Exception</em>}</li>
  * </ul>
@@ -56,34 +56,6 @@ public interface ActivityEdge extends ExtendableElement
     * @generated
     */
    void setSource (ActivityNode value);
-
-   /**
-    * Returns the value of the '<em><b>Guard Type</b></em>' attribute.
-    * The default value is <code>"NONE"</code>.
-    * The literals are from the enumeration {@link org.storydriven.modeling.activities.TransitionGuard}.
-    * <!-- begin-user-doc -->
-    * <p>
-    * If the meaning of the '<em>Guard Type</em>' attribute isn't clear, there really should be more of a description here...
-    * </p>
-    * <!-- end-user-doc -->
-    * @return the value of the '<em>Guard Type</em>' attribute.
-    * @see org.storydriven.modeling.activities.TransitionGuard
-    * @see #setGuardType(TransitionGuard)
-    * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivityEdge_GuardType()
-    * @model default="NONE" required="true" ordered="false"
-    * @generated
-    */
-   TransitionGuard getGuardType ();
-
-   /**
-    * Sets the value of the '{@link org.storydriven.modeling.activities.ActivityEdge#getGuardType <em>Guard Type</em>}' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @param value the new value of the '<em>Guard Type</em>' attribute.
-    * @see org.storydriven.modeling.activities.TransitionGuard
-    * @see #getGuardType()
-    * @generated
-    */
-   void setGuardType (TransitionGuard value);
 
    /**
     * Returns the value of the '<em><b>Guard Expression</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> Points to the
@@ -133,6 +105,36 @@ public interface ActivityEdge extends ExtendableElement
     * @generated
     */
    void setOwningActivity (Activity value);
+
+   /**
+    * Returns the value of the '<em><b>Guard</b></em>' attribute.
+    * The default value is <code>"NONE"</code>.
+    * The literals are from the enumeration {@link org.storydriven.modeling.activities.EdgeGuard}.
+    * <!-- begin-user-doc -->
+    * <p>
+    * If the meaning of the '<em>Guard</em>' attribute isn't clear,
+    * there really should be more of a description here...
+    * </p>
+    * <!-- end-user-doc -->
+    * @return the value of the '<em>Guard</em>' attribute.
+    * @see org.storydriven.modeling.activities.EdgeGuard
+    * @see #setGuard(EdgeGuard)
+    * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivityEdge_Guard()
+    * @model default="NONE" required="true" ordered="false"
+    * @generated
+    */
+   EdgeGuard getGuard ();
+
+   /**
+    * Sets the value of the '{@link org.storydriven.modeling.activities.ActivityEdge#getGuard <em>Guard</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @param value the new value of the '<em>Guard</em>' attribute.
+    * @see org.storydriven.modeling.activities.EdgeGuard
+    * @see #getGuard()
+    * @generated
+    */
+   void setGuard (EdgeGuard value);
 
    /**
     * Returns the value of the '<em><b>Guard Exception</b></em>' containment reference list. The list contents are of type

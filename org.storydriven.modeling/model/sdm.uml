@@ -148,7 +148,7 @@
         <generalization xmi:id="_HuhpwLyzEd-eCY_Peu5fFw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
         <ownedAttribute xmi:id="0eece472-5dd6-4408-b6d5-d83ba21b2208" name="target" visibility="public" type="0ef98ed0-902e-4764-91ad-f76566d6f80e" association="feba2068-db66-4ffd-9f3a-8450ab00eb0d"/>
         <ownedAttribute xmi:id="9c8c19ca-fef2-4635-a0a6-9b783dfe4579" name="source" visibility="public" type="0ef98ed0-902e-4764-91ad-f76566d6f80e" association="87a955bf-4e1d-40c5-bc6d-13f0e9c10b26"/>
-        <ownedAttribute xmi:id="b3cdddb7-9d0a-4aaf-9637-50bea176a48f" name="guardType" visibility="public" type="44d391e1-c2ec-4500-ac0c-d87b9a9804c1">
+        <ownedAttribute xmi:id="b3cdddb7-9d0a-4aaf-9637-50bea176a48f" name="guard" visibility="public" type="44d391e1-c2ec-4500-ac0c-d87b9a9804c1">
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_0Jvz0LL0Ed-uk56s-ldeog" instance="24708a8c-e663-44ba-8f50-fbe8728d34b8"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_zN7RIbK6Ed-uk56s-ldeog" name="guardExpression" visibility="public" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_zN6DALK6Ed-uk56s-ldeog">
@@ -221,7 +221,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA_sAbKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="44d391e1-c2ec-4500-ac0c-d87b9a9804c1" name="TransitionGuard">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="44d391e1-c2ec-4500-ac0c-d87b9a9804c1" name="EdgeGuard">
         <ownedLiteral xmi:id="24708a8c-e663-44ba-8f50-fbe8728d34b8" name="NONE"/>
         <ownedLiteral xmi:id="654ff89a-3b27-40cc-b12f-915e95467d51" name="SUCCESS"/>
         <ownedLiteral xmi:id="08f065b6-c109-4dd2-bb8c-3f60f9ef94a4" name="FAILURE"/>
