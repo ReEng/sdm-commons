@@ -250,7 +250,7 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GemP4xzPEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GemP4hzPEeChOvWwuwx7tQ"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_HGPW1FPGEeCU3puq44liRg" name="returnValue" visibility="protected" aggregation="composite" association="_HGPW0FPGEeCU3puq44liRg">
+        <ownedAttribute xmi:id="_HGPW1FPGEeCU3puq44liRg" name="returnValue" visibility="public" aggregation="composite" association="_HGPW0FPGEeCU3puq44liRg">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HGPW1lPGEeCU3puq44liRg" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HGPW1VPGEeCU3puq44liRg"/>
@@ -435,13 +435,13 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Sj5VIRzMEeChOvWwuwx7tQ"/>
         </ownedEnd>
       </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_bGHN0BzMEeChOvWwuwx7tQ" name="ContainsIn" memberEnd="_bGH04BzMEeChOvWwuwx7tQ _bGIb8RzMEeChOvWwuwx7tQ">
+      <packagedElement xmi:type="uml:Association" xmi:id="_bGHN0BzMEeChOvWwuwx7tQ" name="HasInParameter" memberEnd="_bGH04BzMEeChOvWwuwx7tQ _bGIb8RzMEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_bGH04BzMEeChOvWwuwx7tQ" name="revInParameter" type="_gfdN4BzIEeChOvWwuwx7tQ" association="_bGHN0BzMEeChOvWwuwx7tQ">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bGIb8BzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bGH04RzMEeChOvWwuwx7tQ"/>
         </ownedEnd>
       </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_eWHmABzMEeChOvWwuwx7tQ" name="ContainsOut" memberEnd="_eWINEBzMEeChOvWwuwx7tQ _eWJbMBzMEeChOvWwuwx7tQ">
+      <packagedElement xmi:type="uml:Association" xmi:id="_eWHmABzMEeChOvWwuwx7tQ" name="HasOutParameter" memberEnd="_eWINEBzMEeChOvWwuwx7tQ _eWJbMBzMEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_eWINEBzMEeChOvWwuwx7tQ" name="revOutParameter" type="_gfdN4BzIEeChOvWwuwx7tQ" association="_eWHmABzMEeChOvWwuwx7tQ">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eWI0IRzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eWI0IBzMEeChOvWwuwx7tQ"/>
@@ -838,13 +838,13 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_-GmbULLwEd-uk56s-ldeog" name="HasBindingExpression" memberEnd="_-GnCYLLwEd-uk56s-ldeog _-GnpcLLwEd-uk56s-ldeog">
-        <ownedEnd xmi:id="_-GnCYLLwEd-uk56s-ldeog" name="owningObject" visibility="public" type="c0f72d07-a643-4da9-859b-d95cfca69eee" association="_-GmbULLwEd-uk56s-ldeog">
+        <ownedEnd xmi:id="_-GnCYLLwEd-uk56s-ldeog" name="owningObject" visibility="public" type="_ieKckGHwEeCDNuSrVjgXCA" association="_-GmbULLwEd-uk56s-ldeog">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-GnCYrLwEd-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-GnCYbLwEd-uk56s-ldeog"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="9b10acef-9c32-4f56-8abd-1d56ed027e13" name="ContainsAttributeExpression" memberEnd="0494208f-7471-4bfe-8c33-9a7bd40c3425 1d75eb5a-c292-4676-951a-809ab4091e6b"/>
-      <packagedElement xmi:type="uml:Association" xmi:id="71c51c4d-b7d4-44e9-8970-b4d9a946910c" name="ContainsObject" memberEnd="97f7e21a-6cb3-4e71-a689-faf97d6546e6 5999b52c-f7c5-4bc4-87ad-ef18581fea6a"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="71c51c4d-b7d4-44e9-8970-b4d9a946910c" name="ContainsVariables" memberEnd="97f7e21a-6cb3-4e71-a689-faf97d6546e6 5999b52c-f7c5-4bc4-87ad-ef18581fea6a"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_bFtJYLK5Ed-uk56s-ldeog" name="HasValue" memberEnd="_bFtJYbK5Ed-uk56s-ldeog _bFtwcrK5Ed-uk56s-ldeog">
         <ownedEnd xmi:id="_bFtJYbK5Ed-uk56s-ldeog" name="attributeExpression" visibility="public" type="79151c76-8e24-4f76-8143-e713373a8b68" association="_bFtJYLK5Ed-uk56s-ldeog">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bFtwcbK5Ed-uk56s-ldeog" value="1"/>
@@ -925,7 +925,7 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
         <ownedAttribute xmi:id="ef15800b-d4db-4f97-a719-6cac128fecad" name="bindingOperator" visibility="public" type="74737b3a-1725-4fee-b753-d7458eda7189">
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="__jOJULL7Ed-uk56s-ldeog" instance="888dbb97-a420-4e27-bfb0-f5b3de6da65b"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="29ee7390-8b89-420e-99c9-e1179f7cfd54" name="target" visibility="public" type="c0f72d07-a643-4da9-859b-d95cfca69eee" association="efa70337-efe7-457d-8d6a-3aea19469b7a">
+        <ownedAttribute xmi:id="29ee7390-8b89-420e-99c9-e1179f7cfd54" name="target" visibility="public" type="_ieKckGHwEeCDNuSrVjgXCA" association="efa70337-efe7-457d-8d6a-3aea19469b7a">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA8BpLKwEd-DYIlz5ANeHA" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="5e3eecac-3d82-4765-bec0-c98627eefb91" name="source" visibility="public" type="c0f72d07-a643-4da9-859b-d95cfca69eee" association="639688a5-23e9-4581-98d8-2fcc57a3438b">
@@ -980,17 +980,12 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
       <packagedElement xmi:type="uml:Class" xmi:id="c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
         <generalization xmi:id="_vhAKYBzcEeChOvWwuwx7tQ" general="_c2cqYBzJEeChOvWwuwx7tQ"/>
         <generalization xmi:id="_89NC8LLzEd-uk56s-ldeog" general="_tB8FcLK5Ed-uk56s-ldeog"/>
-        <ownedAttribute xmi:id="60d4fc4e-8a40-44a9-9913-ea51221db1a8" name="bindingState" visibility="public" type="37d4c959-090c-411e-b62f-a01a5acd650c">
-          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_IwfxMLL8Ed-uk56s-ldeog" instance="_XroecBzhEeChOvWwuwx7tQ"/>
-        </ownedAttribute>
+        <generalization xmi:id="_o7JuIGHwEeCDNuSrVjgXCA" general="_ieKckGHwEeCDNuSrVjgXCA"/>
         <ownedAttribute xmi:id="8af9ddea-a5c4-4017-b709-364964a433cf" name="bindingSemantics" visibility="public" type="5d5c7278-e6e7-4956-ab18-44332c8cc462">
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_Jgg44LL8Ed-uk56s-ldeog" instance="fa270781-e8e1-4379-ada0-d421ab1217e0"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="35801d86-4de1-4fb5-becb-10e3f92a3afb" name="bindingOperator" visibility="public" type="74737b3a-1725-4fee-b753-d7458eda7189">
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_KXj1oLL8Ed-uk56s-ldeog" instance="888dbb97-a420-4e27-bfb0-f5b3de6da65b"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="97f7e21a-6cb3-4e71-a689-faf97d6546e6" name="pattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="71c51c4d-b7d4-44e9-8970-b4d9a946910c">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-ULKwEd-DYIlz5ANeHA" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="1d75eb5a-c292-4676-951a-809ab4091e6b" name="attributeAssignment" visibility="public" type="79151c76-8e24-4f76-8143-e713373a8b68" isOrdered="true" aggregation="composite" association="9b10acef-9c32-4f56-8abd-1d56ed027e13">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-UrKwEd-DYIlz5ANeHA" value="*"/>
@@ -1000,20 +995,8 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-VbKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-VrKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="f59aeab8-59c7-4a35-bd9b-c05bda92d924" name="incomingLink" visibility="public" type="70a57767-3c96-4cff-87d3-8391bb039afc" association="efa70337-efe7-457d-8d6a-3aea19469b7a">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-WLKwEd-DYIlz5ANeHA" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-WbKwEd-DYIlz5ANeHA"/>
-        </ownedAttribute>
         <ownedAttribute xmi:id="5f30323f-8a08-46cd-841e-9f1733bc5943" name="classifier" visibility="public" subsettedProperty="_HPpYkbLzEd-uk56s-ldeog" association="8838401c-d86f-4515-8e20-04bad8258657">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_-GnpcLLwEd-uk56s-ldeog" name="bindingExpression" visibility="public" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_-GmbULLwEd-uk56s-ldeog">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-GnpcrLwEd-uk56s-ldeog" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-GnpcbLwEd-uk56s-ldeog"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_Q53zkRzdEeChOvWwuwx7tQ" name="constraint" type="_82J4gBzaEeChOvWwuwx7tQ" isOrdered="true" aggregation="composite" association="_Q52lcBzdEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q54aoRzdEeChOvWwuwx7tQ" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q54aoBzdEeChOvWwuwx7tQ"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_xIxQkLK8Ed-uk56s-ldeog" name="linkOrderConstraint" type="8fd71d27-94c0-49d5-9902-a26156244424" isOrdered="true" aggregation="composite" association="_xIwpgLK8Ed-uk56s-ldeog">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xIx3oLK8Ed-uk56s-ldeog" value="*"/>
@@ -1022,7 +1005,7 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
         <generalization xmi:id="_jqC-QLxXEd-Ytrd77fw2LA" general="_e7CFQLLyEd-uk56s-ldeog"/>
-        <ownedAttribute xmi:id="5999b52c-f7c5-4bc4-87ad-ef18581fea6a" name="objectVariable" visibility="public" type="c0f72d07-a643-4da9-859b-d95cfca69eee" aggregation="composite" association="71c51c4d-b7d4-44e9-8970-b4d9a946910c">
+        <ownedAttribute xmi:id="5999b52c-f7c5-4bc4-87ad-ef18581fea6a" name="variable" visibility="public" type="_ieKckGHwEeCDNuSrVjgXCA" aggregation="composite" association="71c51c4d-b7d4-44e9-8970-b4d9a946910c">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA1T87KwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA1T9LKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
@@ -1078,7 +1061,7 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ETM44RzbEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ETM44BzbEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_Q53MgBzdEeChOvWwuwx7tQ" name="objectVariable" type="c0f72d07-a643-4da9-859b-d95cfca69eee" association="_Q52lcBzdEeChOvWwuwx7tQ">
+        <ownedAttribute xmi:id="_Q53MgBzdEeChOvWwuwx7tQ" name="objectVariable" type="_ieKckGHwEeCDNuSrVjgXCA" association="_Q52lcBzdEeChOvWwuwx7tQ">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q53zkBzdEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q53MgRzdEeChOvWwuwx7tQ"/>
         </ownedAttribute>
@@ -1089,7 +1072,7 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_-k2O8BzaEeChOvWwuwx7tQ" name="ContainmentRelation">
         <ownedComment xmi:id="_5xPbYBztEeChOvWwuwx7tQ" annotatedElement="_-k2O8BzaEeChOvWwuwx7tQ">
-          <body>Specifies the containment of an object in a set. Will be displayed by a line having a circle with a plus inside at the end of the container. Create modifier specifies that the object will be added to the container, delete that it will be removed, and none that it will be checked to be contained.</body>
+          <body>Specifies the containment of an object in a set (represented by a ContainerVariable). Will be displayed by a line having a circle with a plus inside at the end of the container. Create modifier specifies that the object will be added to the container, delete that it will be removed, and none that it will be checked to be contained.</body>
         </ownedComment>
         <generalization xmi:id="_ocwZoBzeEeChOvWwuwx7tQ" general="70a57767-3c96-4cff-87d3-8391bb039afc"/>
       </packagedElement>
@@ -1105,10 +1088,50 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
       <packagedElement xmi:type="uml:Class" xmi:id="_l-KFsBzdEeChOvWwuwx7tQ" name="ObjectSetVariable">
         <ownedComment xmi:id="_xdSBIBztEeChOvWwuwx7tQ" annotatedElement="_l-KFsBzdEeChOvWwuwx7tQ">
           <body>Represents a set of objects.&#xD;
-The context for contained Constraints and AttributeAssignments is a single object (e.g., &quot;name = 'abc'&quot;).&#xD;
-After the set has been computed by the pattern matching, every other Constraints or AttributeAssignment can use the ObjectSetVariable as a set (e.g., &quot;osv1->size()&quot;).</body>
+The context for contained Constraints and AttributeAssignments is a single object (e.g., &quot;name = 'abc'&quot;).</body>
         </ownedComment>
         <generalization xmi:id="_ndnGQBzdEeChOvWwuwx7tQ" general="c0f72d07-a643-4da9-859b-d95cfca69eee"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ieKckGHwEeCDNuSrVjgXCA" name="AbstractVariable" isAbstract="true">
+        <ownedAttribute xmi:id="97f7e21a-6cb3-4e71-a689-faf97d6546e6" name="pattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="71c51c4d-b7d4-44e9-8970-b4d9a946910c">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-ULKwEd-DYIlz5ANeHA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="60d4fc4e-8a40-44a9-9913-ea51221db1a8" name="bindingState" visibility="public" type="37d4c959-090c-411e-b62f-a01a5acd650c">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_IwfxMLL8Ed-uk56s-ldeog" instance="_XroecBzhEeChOvWwuwx7tQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_-GnpcLLwEd-uk56s-ldeog" name="bindingExpression" visibility="public" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_-GmbULLwEd-uk56s-ldeog">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-GnpcrLwEd-uk56s-ldeog" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-GnpcbLwEd-uk56s-ldeog"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Q53zkRzdEeChOvWwuwx7tQ" name="constraint" type="_82J4gBzaEeChOvWwuwx7tQ" isOrdered="true" aggregation="composite" association="_Q52lcBzdEeChOvWwuwx7tQ">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q54aoRzdEeChOvWwuwx7tQ" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q54aoBzdEeChOvWwuwx7tQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="f59aeab8-59c7-4a35-bd9b-c05bda92d924" name="incomingLink" visibility="public" type="70a57767-3c96-4cff-87d3-8391bb039afc" association="efa70337-efe7-457d-8d6a-3aea19469b7a">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-WLKwEd-DYIlz5ANeHA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-WbKwEd-DYIlz5ANeHA"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_p6mY8GHwEeCDNuSrVjgXCA" name="PrimitiveVariable">
+        <generalization xmi:id="_q1vLgGHwEeCDNuSrVjgXCA" general="_ieKckGHwEeCDNuSrVjgXCA"/>
+        <ownedAttribute xmi:id="_6Kri8mH1EeCDNuSrVjgXCA" name="eDataType" association="_6KqU0GH1EeCDNuSrVjgXCA">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EDataType"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6KsKAWH1EeCDNuSrVjgXCA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6KsKAGH1EeCDNuSrVjgXCA"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_qABkIGHzEeCDNuSrVjgXCA" name="ContainerVariable">
+        <ownedComment xmi:id="_2xRpEGHzEeCDNuSrVjgXCA" annotatedElement="_qABkIGHzEeCDNuSrVjgXCA">
+          <body>Represents a single container, e.g. a Set or List. ContainmentRelations can be used to add or remove objects to or from this container.&#xD;
+Every Constraint or AttributeAssignment can use the variable as a container (e.g., &quot;set->size() > 5&quot;).</body>
+        </ownedComment>
+        <generalization xmi:id="_qtkmoGHzEeCDNuSrVjgXCA" general="c0f72d07-a643-4da9-859b-d95cfca69eee"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_6KqU0GH1EeCDNuSrVjgXCA" name="" memberEnd="_6Kq74GH1EeCDNuSrVjgXCA _6Kri8mH1EeCDNuSrVjgXCA">
+        <ownedEnd xmi:id="_6Kq74GH1EeCDNuSrVjgXCA" name="primitiveVariable" type="_p6mY8GHwEeCDNuSrVjgXCA" subsettedProperty="_HPpYkbLzEd-uk56s-ldeog" association="_6KqU0GH1EeCDNuSrVjgXCA">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6Kri8WH1EeCDNuSrVjgXCA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6Kri8GH1EeCDNuSrVjgXCA"/>
+        </ownedEnd>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_qkASELN3Ed-vJ9Qpen_Iuw" name="templates">
