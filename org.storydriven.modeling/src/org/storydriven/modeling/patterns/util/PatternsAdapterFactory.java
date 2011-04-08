@@ -91,9 +91,15 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl
       }
 
       @Override
-      public Adapter caseAttributeAssignment (AttributeAssignment object)
+      public Adapter caseAbstractVariable (AbstractVariable object)
       {
-         return createAttributeAssignmentAdapter();
+         return createAbstractVariableAdapter();
+      }
+
+      @Override
+      public Adapter caseConstraint (Constraint object)
+      {
+         return createConstraintAdapter();
       }
 
       @Override
@@ -109,9 +115,9 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl
       }
 
       @Override
-      public Adapter caseConstraint (Constraint object)
+      public Adapter caseAttributeAssignment (AttributeAssignment object)
       {
-         return createConstraintAdapter();
+         return createAttributeAssignmentAdapter();
       }
 
       @Override
@@ -142,6 +148,18 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl
       public Adapter caseMatchingPattern (MatchingPattern object)
       {
          return createMatchingPatternAdapter();
+      }
+
+      @Override
+      public Adapter casePrimitiveVariable (PrimitiveVariable object)
+      {
+         return createPrimitiveVariableAdapter();
+      }
+
+      @Override
+      public Adapter caseContainerVariable (ContainerVariable object)
+      {
+         return createContainerVariableAdapter();
       }
 
       @Override
@@ -222,6 +240,21 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl
     * @generated
     */
    public Adapter createObjectVariableAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.patterns.AbstractVariable <em>Abstract Variable</em>}'.
+    * <!-- begin-user-doc -->
+    * This default implementation returns null so that we can easily ignore cases;
+    * it's useful to ignore a case when inheritance will catch all the cases anyway.
+    * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.patterns.AbstractVariable
+    * @generated
+    */
+   public Adapter createAbstractVariableAdapter ()
    {
       return null;
    }
@@ -313,6 +346,36 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl
     * @generated
     */
    public Adapter createMatchingPatternAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.patterns.PrimitiveVariable <em>Primitive Variable</em>}'.
+    * <!-- begin-user-doc -->
+    * This default implementation returns null so that we can easily ignore cases;
+    * it's useful to ignore a case when inheritance will catch all the cases anyway.
+    * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.patterns.PrimitiveVariable
+    * @generated
+    */
+   public Adapter createPrimitiveVariableAdapter ()
+   {
+      return null;
+   }
+
+   /**
+    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.patterns.ContainerVariable <em>Container Variable</em>}'.
+    * <!-- begin-user-doc -->
+    * This default implementation returns null so that we can easily ignore cases;
+    * it's useful to ignore a case when inheritance will catch all the cases anyway.
+    * <!-- end-user-doc -->
+    * @return the new adapter.
+    * @see org.storydriven.modeling.patterns.ContainerVariable
+    * @generated
+    */
+   public Adapter createContainerVariableAdapter ()
    {
       return null;
    }

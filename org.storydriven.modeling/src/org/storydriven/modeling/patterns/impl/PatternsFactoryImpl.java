@@ -80,12 +80,12 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
       {
          case PatternsPackage.OBJECT_VARIABLE:
             return createObjectVariable();
-         case PatternsPackage.ATTRIBUTE_ASSIGNMENT:
-            return createAttributeAssignment();
-         case PatternsPackage.LINK_CONSTRAINT:
-            return createLinkConstraint();
          case PatternsPackage.CONSTRAINT:
             return createConstraint();
+         case PatternsPackage.LINK_CONSTRAINT:
+            return createLinkConstraint();
+         case PatternsPackage.ATTRIBUTE_ASSIGNMENT:
+            return createAttributeAssignment();
          case PatternsPackage.OBJECT_SET_VARIABLE:
             return createObjectSetVariable();
          case PatternsPackage.PATH:
@@ -96,6 +96,10 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
             return createContainmentRelation();
          case PatternsPackage.MATCHING_PATTERN:
             return createMatchingPattern();
+         case PatternsPackage.PRIMITIVE_VARIABLE:
+            return createPrimitiveVariable();
+         case PatternsPackage.CONTAINER_VARIABLE:
+            return createContainerVariable();
          case PatternsPackage.STORY_PATTERN:
             return createStoryPattern();
          default:
@@ -225,6 +229,28 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
    {
       MatchingPatternImpl matchingPattern = new MatchingPatternImpl();
       return matchingPattern;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public PrimitiveVariable createPrimitiveVariable ()
+   {
+      PrimitiveVariableImpl primitiveVariable = new PrimitiveVariableImpl();
+      return primitiveVariable;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public ContainerVariable createContainerVariable ()
+   {
+      ContainerVariableImpl containerVariable = new ContainerVariableImpl();
+      return containerVariable;
    }
 
    /**

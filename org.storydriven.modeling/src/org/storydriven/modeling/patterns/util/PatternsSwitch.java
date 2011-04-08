@@ -107,6 +107,8 @@ public class PatternsSwitch<T>
             if (result == null)
                result = caseNamedElement(objectVariable);
             if (result == null)
+               result = caseAbstractVariable(objectVariable);
+            if (result == null)
                result = caseTypedElement(objectVariable);
             if (result == null)
                result = caseExtendableElement(objectVariable);
@@ -114,10 +116,18 @@ public class PatternsSwitch<T>
                result = defaultCase(theEObject);
             return result;
          }
-         case PatternsPackage.ATTRIBUTE_ASSIGNMENT:
+         case PatternsPackage.ABSTRACT_VARIABLE:
          {
-            AttributeAssignment attributeAssignment = (AttributeAssignment) theEObject;
-            T result = caseAttributeAssignment(attributeAssignment);
+            AbstractVariable abstractVariable = (AbstractVariable) theEObject;
+            T result = caseAbstractVariable(abstractVariable);
+            if (result == null)
+               result = defaultCase(theEObject);
+            return result;
+         }
+         case PatternsPackage.CONSTRAINT:
+         {
+            Constraint constraint = (Constraint) theEObject;
+            T result = caseConstraint(constraint);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -144,10 +154,10 @@ public class PatternsSwitch<T>
                result = defaultCase(theEObject);
             return result;
          }
-         case PatternsPackage.CONSTRAINT:
+         case PatternsPackage.ATTRIBUTE_ASSIGNMENT:
          {
-            Constraint constraint = (Constraint) theEObject;
-            T result = caseConstraint(constraint);
+            AttributeAssignment attributeAssignment = (AttributeAssignment) theEObject;
+            T result = caseAttributeAssignment(attributeAssignment);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -162,6 +172,8 @@ public class PatternsSwitch<T>
                result = caseVariable(objectSetVariable);
             if (result == null)
                result = caseNamedElement(objectSetVariable);
+            if (result == null)
+               result = caseAbstractVariable(objectSetVariable);
             if (result == null)
                result = caseTypedElement(objectSetVariable);
             if (result == null)
@@ -226,6 +238,36 @@ public class PatternsSwitch<T>
                result = defaultCase(theEObject);
             return result;
          }
+         case PatternsPackage.PRIMITIVE_VARIABLE:
+         {
+            PrimitiveVariable primitiveVariable = (PrimitiveVariable) theEObject;
+            T result = casePrimitiveVariable(primitiveVariable);
+            if (result == null)
+               result = caseAbstractVariable(primitiveVariable);
+            if (result == null)
+               result = defaultCase(theEObject);
+            return result;
+         }
+         case PatternsPackage.CONTAINER_VARIABLE:
+         {
+            ContainerVariable containerVariable = (ContainerVariable) theEObject;
+            T result = caseContainerVariable(containerVariable);
+            if (result == null)
+               result = caseObjectVariable(containerVariable);
+            if (result == null)
+               result = caseVariable(containerVariable);
+            if (result == null)
+               result = caseNamedElement(containerVariable);
+            if (result == null)
+               result = caseAbstractVariable(containerVariable);
+            if (result == null)
+               result = caseTypedElement(containerVariable);
+            if (result == null)
+               result = caseExtendableElement(containerVariable);
+            if (result == null)
+               result = defaultCase(theEObject);
+            return result;
+         }
          case PatternsPackage.STORY_PATTERN:
          {
             StoryPattern storyPattern = (StoryPattern) theEObject;
@@ -267,6 +309,22 @@ public class PatternsSwitch<T>
     * @generated
     */
    public T caseObjectVariable (ObjectVariable object)
+   {
+      return null;
+   }
+
+   /**
+    * Returns the result of interpreting the object as an instance of '<em>Abstract Variable</em>'.
+    * <!-- begin-user-doc -->
+    * This implementation returns null;
+    * returning a non-null result will terminate the switch.
+    * <!-- end-user-doc -->
+    * @param object the target of the switch.
+    * @return the result of interpreting the object as an instance of '<em>Abstract Variable</em>'.
+    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+    * @generated
+    */
+   public T caseAbstractVariable (AbstractVariable object)
    {
       return null;
    }
@@ -365,6 +423,38 @@ public class PatternsSwitch<T>
     * @generated
     */
    public T caseMatchingPattern (MatchingPattern object)
+   {
+      return null;
+   }
+
+   /**
+    * Returns the result of interpreting the object as an instance of '<em>Primitive Variable</em>'.
+    * <!-- begin-user-doc -->
+    * This implementation returns null;
+    * returning a non-null result will terminate the switch.
+    * <!-- end-user-doc -->
+    * @param object the target of the switch.
+    * @return the result of interpreting the object as an instance of '<em>Primitive Variable</em>'.
+    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+    * @generated
+    */
+   public T casePrimitiveVariable (PrimitiveVariable object)
+   {
+      return null;
+   }
+
+   /**
+    * Returns the result of interpreting the object as an instance of '<em>Container Variable</em>'.
+    * <!-- begin-user-doc -->
+    * This implementation returns null;
+    * returning a non-null result will terminate the switch.
+    * <!-- end-user-doc -->
+    * @param object the target of the switch.
+    * @return the result of interpreting the object as an instance of '<em>Container Variable</em>'.
+    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+    * @generated
+    */
+   public T caseContainerVariable (ContainerVariable object)
    {
       return null;
    }

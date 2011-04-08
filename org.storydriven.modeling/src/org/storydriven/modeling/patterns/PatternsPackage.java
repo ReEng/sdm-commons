@@ -65,7 +65,7 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getAttributeAssignment()
     * @generated
     */
-   int ATTRIBUTE_ASSIGNMENT = 1;
+   int ATTRIBUTE_ASSIGNMENT = 5;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.ObjectVariableImpl <em>Object Variable</em>}' class.
@@ -125,46 +125,44 @@ public interface PatternsPackage extends EPackage
    int OBJECT_VARIABLE__NAME = SDMPackage.VARIABLE_FEATURE_COUNT + 0;
 
    /**
-    * The feature id for the '<em><b>Binding State</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__BINDING_STATE = SDMPackage.VARIABLE_FEATURE_COUNT + 1;
-
-   /**
-    * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__BINDING_SEMANTICS = SDMPackage.VARIABLE_FEATURE_COUNT + 2;
-
-   /**
-    * The feature id for the '<em><b>Binding Operator</b></em>' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__BINDING_OPERATOR = SDMPackage.VARIABLE_FEATURE_COUNT + 3;
-
-   /**
     * The feature id for the '<em><b>Pattern</b></em>' container reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int OBJECT_VARIABLE__PATTERN = SDMPackage.VARIABLE_FEATURE_COUNT + 4;
+   int OBJECT_VARIABLE__PATTERN = SDMPackage.VARIABLE_FEATURE_COUNT + 1;
 
    /**
-    * The feature id for the '<em><b>Attribute Assignment</b></em>' containment reference list.
+    * The feature id for the '<em><b>Binding State</b></em>' attribute.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT = SDMPackage.VARIABLE_FEATURE_COUNT + 5;
+   int OBJECT_VARIABLE__BINDING_STATE = SDMPackage.VARIABLE_FEATURE_COUNT + 2;
+
+   /**
+    * The feature id for the '<em><b>Binding Expression</b></em>' containment reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__BINDING_EXPRESSION = SDMPackage.VARIABLE_FEATURE_COUNT + 3;
+
+   /**
+    * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__CONSTRAINT = SDMPackage.VARIABLE_FEATURE_COUNT + 4;
+
+   /**
+    * The feature id for the '<em><b>Incoming Link</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__INCOMING_LINK = SDMPackage.VARIABLE_FEATURE_COUNT + 5;
 
    /**
     * The feature id for the '<em><b>Outgoing Link</b></em>' reference list.
@@ -175,20 +173,38 @@ public interface PatternsPackage extends EPackage
    int OBJECT_VARIABLE__OUTGOING_LINK = SDMPackage.VARIABLE_FEATURE_COUNT + 6;
 
    /**
-    * The feature id for the '<em><b>Incoming Link</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__INCOMING_LINK = SDMPackage.VARIABLE_FEATURE_COUNT + 7;
-
-   /**
     * The feature id for the '<em><b>Link Order Constraint</b></em>' containment reference list.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT = SDMPackage.VARIABLE_FEATURE_COUNT + 8;
+   int OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT = SDMPackage.VARIABLE_FEATURE_COUNT + 7;
+
+   /**
+    * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__BINDING_SEMANTICS = SDMPackage.VARIABLE_FEATURE_COUNT + 8;
+
+   /**
+    * The feature id for the '<em><b>Binding Operator</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__BINDING_OPERATOR = SDMPackage.VARIABLE_FEATURE_COUNT + 9;
+
+   /**
+    * The feature id for the '<em><b>Attribute Assignment</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT = SDMPackage.VARIABLE_FEATURE_COUNT + 10;
 
    /**
     * The feature id for the '<em><b>Classifier</b></em>' reference.
@@ -196,23 +212,7 @@ public interface PatternsPackage extends EPackage
     * @generated
     * @ordered
     */
-   int OBJECT_VARIABLE__CLASSIFIER = SDMPackage.VARIABLE_FEATURE_COUNT + 9;
-
-   /**
-    * The feature id for the '<em><b>Binding Expression</b></em>' containment reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__BINDING_EXPRESSION = SDMPackage.VARIABLE_FEATURE_COUNT + 10;
-
-   /**
-    * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__CONSTRAINT = SDMPackage.VARIABLE_FEATURE_COUNT + 11;
+   int OBJECT_VARIABLE__CLASSIFIER = SDMPackage.VARIABLE_FEATURE_COUNT + 11;
 
    /**
     * The number of structural features of the '<em>Object Variable</em>' class.
@@ -383,44 +383,77 @@ public interface PatternsPackage extends EPackage
    int OBJECT_VARIABLE_OPERATION_COUNT = SDMPackage.VARIABLE_OPERATION_COUNT + 0;
 
    /**
-    * The feature id for the '<em><b>Attribute</b></em>' reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.AbstractVariableImpl <em>Abstract Variable</em>}' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.storydriven.modeling.patterns.impl.AbstractVariableImpl
+    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getAbstractVariable()
     * @generated
-    * @ordered
     */
-   int ATTRIBUTE_ASSIGNMENT__ATTRIBUTE = 0;
+   int ABSTRACT_VARIABLE = 1;
 
    /**
-    * The feature id for the '<em><b>Value Expression</b></em>' containment reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Pattern</b></em>' container reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION = 1;
+   int ABSTRACT_VARIABLE__PATTERN = 0;
 
    /**
-    * The feature id for the '<em><b>Object Variable</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding State</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE = 2;
+   int ABSTRACT_VARIABLE__BINDING_STATE = 1;
 
    /**
-    * The number of structural features of the '<em>Attribute Assignment</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Binding Expression</b></em>' containment reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int ATTRIBUTE_ASSIGNMENT_FEATURE_COUNT = 3;
+   int ABSTRACT_VARIABLE__BINDING_EXPRESSION = 2;
 
    /**
-    * The number of operations of the '<em>Attribute Assignment</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int ATTRIBUTE_ASSIGNMENT_OPERATION_COUNT = 0;
+   int ABSTRACT_VARIABLE__CONSTRAINT = 3;
+
+   /**
+    * The feature id for the '<em><b>Incoming Link</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE__INCOMING_LINK = 4;
+
+   /**
+    * The number of structural features of the '<em>Abstract Variable</em>' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE_FEATURE_COUNT = 5;
+
+   /**
+    * The number of operations of the '<em>Abstract Variable</em>' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE_OPERATION_COUNT = 0;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.AbstractLinkVariableImpl <em>Abstract Link Variable</em>}' class.
@@ -430,7 +463,66 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getAbstractLinkVariable()
     * @generated
     */
-   int ABSTRACT_LINK_VARIABLE = 2;
+   int ABSTRACT_LINK_VARIABLE = 3;
+
+   /**
+    * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.LinkConstraintImpl <em>Link Constraint</em>}' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.storydriven.modeling.patterns.impl.LinkConstraintImpl
+    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getLinkConstraint()
+    * @generated
+    */
+   int LINK_CONSTRAINT = 4;
+
+   /**
+    * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.ConstraintImpl <em>Constraint</em>}' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @see org.storydriven.modeling.patterns.impl.ConstraintImpl
+    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getConstraint()
+    * @generated
+    */
+   int CONSTRAINT = 2;
+
+   /**
+    * The feature id for the '<em><b>Constraint Expression</b></em>' containment reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONSTRAINT__CONSTRAINT_EXPRESSION = 0;
+
+   /**
+    * The feature id for the '<em><b>Pattern</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONSTRAINT__PATTERN = 1;
+
+   /**
+    * The feature id for the '<em><b>Object Variable</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONSTRAINT__OBJECT_VARIABLE = 2;
+
+   /**
+    * The number of structural features of the '<em>Constraint</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONSTRAINT_FEATURE_COUNT = 3;
+
+   /**
+    * The number of operations of the '<em>Constraint</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONSTRAINT_OPERATION_COUNT = 0;
 
    /**
     * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -475,12 +567,12 @@ public interface PatternsPackage extends EPackage
    int ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
    /**
-    * The feature id for the '<em><b>Target</b></em>' reference.
+    * The feature id for the '<em><b>Source</b></em>' reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int ABSTRACT_LINK_VARIABLE__TARGET = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+   int ABSTRACT_LINK_VARIABLE__SOURCE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
    /**
     * The feature id for the '<em><b>Second Link Constraint</b></em>' reference list.
@@ -517,12 +609,12 @@ public interface PatternsPackage extends EPackage
    int ABSTRACT_LINK_VARIABLE__PATTERN = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
    /**
-    * The feature id for the '<em><b>Source</b></em>' reference.
+    * The feature id for the '<em><b>Target</b></em>' reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int ABSTRACT_LINK_VARIABLE__SOURCE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+   int ABSTRACT_LINK_VARIABLE__TARGET = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
    /**
     * The number of structural features of the '<em>Abstract Link Variable</em>' class.
@@ -691,16 +783,6 @@ public interface PatternsPackage extends EPackage
     * @ordered
     */
    int ABSTRACT_LINK_VARIABLE_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-   /**
-    * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.LinkConstraintImpl <em>Link Constraint</em>}' class.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see org.storydriven.modeling.patterns.impl.LinkConstraintImpl
-    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getLinkConstraint()
-    * @generated
-    */
-   int LINK_CONSTRAINT = 3;
 
    /**
     * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -964,29 +1046,20 @@ public interface PatternsPackage extends EPackage
    int LINK_CONSTRAINT_OPERATION_COUNT = SDMPackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
 
    /**
-    * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.ConstraintImpl <em>Constraint</em>}' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @see org.storydriven.modeling.patterns.impl.ConstraintImpl
-    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getConstraint()
-    * @generated
-    */
-   int CONSTRAINT = 4;
-
-   /**
-    * The feature id for the '<em><b>Constraint Expression</b></em>' containment reference.
+    * The feature id for the '<em><b>Attribute</b></em>' reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int CONSTRAINT__CONSTRAINT_EXPRESSION = 0;
+   int ATTRIBUTE_ASSIGNMENT__ATTRIBUTE = 0;
 
    /**
-    * The feature id for the '<em><b>Pattern</b></em>' container reference.
+    * The feature id for the '<em><b>Value Expression</b></em>' containment reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int CONSTRAINT__PATTERN = 1;
+   int ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION = 1;
 
    /**
     * The feature id for the '<em><b>Object Variable</b></em>' container reference.
@@ -994,23 +1067,23 @@ public interface PatternsPackage extends EPackage
     * @generated
     * @ordered
     */
-   int CONSTRAINT__OBJECT_VARIABLE = 2;
+   int ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE = 2;
 
    /**
-    * The number of structural features of the '<em>Constraint</em>' class.
+    * The number of structural features of the '<em>Attribute Assignment</em>' class.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int CONSTRAINT_FEATURE_COUNT = 3;
+   int ATTRIBUTE_ASSIGNMENT_FEATURE_COUNT = 3;
 
    /**
-    * The number of operations of the '<em>Constraint</em>' class.
+    * The number of operations of the '<em>Attribute Assignment</em>' class.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int CONSTRAINT_OPERATION_COUNT = 0;
+   int ATTRIBUTE_ASSIGNMENT_OPERATION_COUNT = 0;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.PathImpl <em>Path</em>}' class.
@@ -1019,7 +1092,7 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getPath()
     * @generated
     */
-   int PATH = 6;
+   int PATH = 7;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.LinkVariableImpl <em>Link Variable</em>}' class.
@@ -1028,7 +1101,7 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getLinkVariable()
     * @generated
     */
-   int LINK_VARIABLE = 7;
+   int LINK_VARIABLE = 8;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.ContainmentRelationImpl <em>Containment Relation</em>}' class.
@@ -1038,7 +1111,7 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getContainmentRelation()
     * @generated
     */
-   int CONTAINMENT_RELATION = 8;
+   int CONTAINMENT_RELATION = 9;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.StoryPatternImpl <em>Story Pattern</em>}' class.
@@ -1047,7 +1120,7 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getStoryPattern()
     * @generated
     */
-   int STORY_PATTERN = 10;
+   int STORY_PATTERN = 13;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.MatchingPatternImpl <em>Matching Pattern</em>}' class.
@@ -1056,7 +1129,7 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getMatchingPattern()
     * @generated
     */
-   int MATCHING_PATTERN = 9;
+   int MATCHING_PATTERN = 10;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.ObjectSetVariableImpl <em>Object Set Variable</em>}' class.
@@ -1066,7 +1139,7 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getObjectSetVariable()
     * @generated
     */
-   int OBJECT_SET_VARIABLE = 5;
+   int OBJECT_SET_VARIABLE = 6;
 
    /**
     * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1117,12 +1190,60 @@ public interface PatternsPackage extends EPackage
    int OBJECT_SET_VARIABLE__NAME = OBJECT_VARIABLE__NAME;
 
    /**
+    * The feature id for the '<em><b>Pattern</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_SET_VARIABLE__PATTERN = OBJECT_VARIABLE__PATTERN;
+
+   /**
     * The feature id for the '<em><b>Binding State</b></em>' attribute.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
    int OBJECT_SET_VARIABLE__BINDING_STATE = OBJECT_VARIABLE__BINDING_STATE;
+
+   /**
+    * The feature id for the '<em><b>Binding Expression</b></em>' containment reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_SET_VARIABLE__BINDING_EXPRESSION = OBJECT_VARIABLE__BINDING_EXPRESSION;
+
+   /**
+    * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_SET_VARIABLE__CONSTRAINT = OBJECT_VARIABLE__CONSTRAINT;
+
+   /**
+    * The feature id for the '<em><b>Incoming Link</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_SET_VARIABLE__INCOMING_LINK = OBJECT_VARIABLE__INCOMING_LINK;
+
+   /**
+    * The feature id for the '<em><b>Outgoing Link</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_SET_VARIABLE__OUTGOING_LINK = OBJECT_VARIABLE__OUTGOING_LINK;
+
+   /**
+    * The feature id for the '<em><b>Link Order Constraint</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_SET_VARIABLE__LINK_ORDER_CONSTRAINT = OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT;
 
    /**
     * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
@@ -1143,14 +1264,6 @@ public interface PatternsPackage extends EPackage
    int OBJECT_SET_VARIABLE__BINDING_OPERATOR = OBJECT_VARIABLE__BINDING_OPERATOR;
 
    /**
-    * The feature id for the '<em><b>Pattern</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_SET_VARIABLE__PATTERN = OBJECT_VARIABLE__PATTERN;
-
-   /**
     * The feature id for the '<em><b>Attribute Assignment</b></em>' containment reference list.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
@@ -1159,52 +1272,12 @@ public interface PatternsPackage extends EPackage
    int OBJECT_SET_VARIABLE__ATTRIBUTE_ASSIGNMENT = OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT;
 
    /**
-    * The feature id for the '<em><b>Outgoing Link</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_SET_VARIABLE__OUTGOING_LINK = OBJECT_VARIABLE__OUTGOING_LINK;
-
-   /**
-    * The feature id for the '<em><b>Incoming Link</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_SET_VARIABLE__INCOMING_LINK = OBJECT_VARIABLE__INCOMING_LINK;
-
-   /**
-    * The feature id for the '<em><b>Link Order Constraint</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_SET_VARIABLE__LINK_ORDER_CONSTRAINT = OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT;
-
-   /**
     * The feature id for the '<em><b>Classifier</b></em>' reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
    int OBJECT_SET_VARIABLE__CLASSIFIER = OBJECT_VARIABLE__CLASSIFIER;
-
-   /**
-    * The feature id for the '<em><b>Binding Expression</b></em>' containment reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_SET_VARIABLE__BINDING_EXPRESSION = OBJECT_VARIABLE__BINDING_EXPRESSION;
-
-   /**
-    * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_SET_VARIABLE__CONSTRAINT = OBJECT_VARIABLE__CONSTRAINT;
 
    /**
     * The number of structural features of the '<em>Object Set Variable</em>' class.
@@ -1417,12 +1490,12 @@ public interface PatternsPackage extends EPackage
    int PATH__BINDING_OPERATOR = ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR;
 
    /**
-    * The feature id for the '<em><b>Target</b></em>' reference.
+    * The feature id for the '<em><b>Source</b></em>' reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int PATH__TARGET = ABSTRACT_LINK_VARIABLE__TARGET;
+   int PATH__SOURCE = ABSTRACT_LINK_VARIABLE__SOURCE;
 
    /**
     * The feature id for the '<em><b>Second Link Constraint</b></em>' reference list.
@@ -1459,12 +1532,12 @@ public interface PatternsPackage extends EPackage
    int PATH__PATTERN = ABSTRACT_LINK_VARIABLE__PATTERN;
 
    /**
-    * The feature id for the '<em><b>Source</b></em>' reference.
+    * The feature id for the '<em><b>Target</b></em>' reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int PATH__SOURCE = ABSTRACT_LINK_VARIABLE__SOURCE;
+   int PATH__TARGET = ABSTRACT_LINK_VARIABLE__TARGET;
 
    /**
     * The feature id for the '<em><b>Path Expression</b></em>' containment reference.
@@ -1685,12 +1758,12 @@ public interface PatternsPackage extends EPackage
    int LINK_VARIABLE__BINDING_OPERATOR = ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR;
 
    /**
-    * The feature id for the '<em><b>Target</b></em>' reference.
+    * The feature id for the '<em><b>Source</b></em>' reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_VARIABLE__TARGET = ABSTRACT_LINK_VARIABLE__TARGET;
+   int LINK_VARIABLE__SOURCE = ABSTRACT_LINK_VARIABLE__SOURCE;
 
    /**
     * The feature id for the '<em><b>Second Link Constraint</b></em>' reference list.
@@ -1727,12 +1800,12 @@ public interface PatternsPackage extends EPackage
    int LINK_VARIABLE__PATTERN = ABSTRACT_LINK_VARIABLE__PATTERN;
 
    /**
-    * The feature id for the '<em><b>Source</b></em>' reference.
+    * The feature id for the '<em><b>Target</b></em>' reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int LINK_VARIABLE__SOURCE = ABSTRACT_LINK_VARIABLE__SOURCE;
+   int LINK_VARIABLE__TARGET = ABSTRACT_LINK_VARIABLE__TARGET;
 
    /**
     * The feature id for the '<em><b>Source End</b></em>' reference.
@@ -1969,12 +2042,12 @@ public interface PatternsPackage extends EPackage
    int CONTAINMENT_RELATION__BINDING_OPERATOR = ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR;
 
    /**
-    * The feature id for the '<em><b>Target</b></em>' reference.
+    * The feature id for the '<em><b>Source</b></em>' reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int CONTAINMENT_RELATION__TARGET = ABSTRACT_LINK_VARIABLE__TARGET;
+   int CONTAINMENT_RELATION__SOURCE = ABSTRACT_LINK_VARIABLE__SOURCE;
 
    /**
     * The feature id for the '<em><b>Second Link Constraint</b></em>' reference list.
@@ -2011,12 +2084,12 @@ public interface PatternsPackage extends EPackage
    int CONTAINMENT_RELATION__PATTERN = ABSTRACT_LINK_VARIABLE__PATTERN;
 
    /**
-    * The feature id for the '<em><b>Source</b></em>' reference.
+    * The feature id for the '<em><b>Target</b></em>' reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int CONTAINMENT_RELATION__SOURCE = ABSTRACT_LINK_VARIABLE__SOURCE;
+   int CONTAINMENT_RELATION__TARGET = ABSTRACT_LINK_VARIABLE__TARGET;
 
    /**
     * The number of structural features of the '<em>Containment Relation</em>' class.
@@ -2211,20 +2284,13 @@ public interface PatternsPackage extends EPackage
    int STORY_PATTERN__COMMENT = SDMPackage.COMMENTABLE_ELEMENT__COMMENT;
 
    /**
-    * The feature id for the '<em><b>Object Variable</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Variable</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int STORY_PATTERN__OBJECT_VARIABLE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
-
-   /**
-    * The feature id for the '<em><b>Link Variable</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int STORY_PATTERN__LINK_VARIABLE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+   int STORY_PATTERN__VARIABLE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
    /**
     * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -2232,7 +2298,15 @@ public interface PatternsPackage extends EPackage
     * @generated
     * @ordered
     */
-   int STORY_PATTERN__CONSTRAINT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+   int STORY_PATTERN__CONSTRAINT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+
+   /**
+    * The feature id for the '<em><b>Link Variable</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STORY_PATTERN__LINK_VARIABLE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
    /**
     * The feature id for the '<em><b>Parent Pattern</b></em>' container reference.
@@ -2460,20 +2534,13 @@ public interface PatternsPackage extends EPackage
    int MATCHING_PATTERN__COMMENT = STORY_PATTERN__COMMENT;
 
    /**
-    * The feature id for the '<em><b>Object Variable</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * The feature id for the '<em><b>Variable</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int MATCHING_PATTERN__OBJECT_VARIABLE = STORY_PATTERN__OBJECT_VARIABLE;
-
-   /**
-    * The feature id for the '<em><b>Link Variable</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int MATCHING_PATTERN__LINK_VARIABLE = STORY_PATTERN__LINK_VARIABLE;
+   int MATCHING_PATTERN__VARIABLE = STORY_PATTERN__VARIABLE;
 
    /**
     * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -2482,6 +2549,14 @@ public interface PatternsPackage extends EPackage
     * @ordered
     */
    int MATCHING_PATTERN__CONSTRAINT = STORY_PATTERN__CONSTRAINT;
+
+   /**
+    * The feature id for the '<em><b>Link Variable</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int MATCHING_PATTERN__LINK_VARIABLE = STORY_PATTERN__LINK_VARIABLE;
 
    /**
     * The feature id for the '<em><b>Parent Pattern</b></em>' container reference.
@@ -2693,13 +2768,447 @@ public interface PatternsPackage extends EPackage
    int MATCHING_PATTERN_OPERATION_COUNT = STORY_PATTERN_OPERATION_COUNT + 1;
 
    /**
+    * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.PrimitiveVariableImpl <em>Primitive Variable</em>}' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.storydriven.modeling.patterns.impl.PrimitiveVariableImpl
+    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getPrimitiveVariable()
+    * @generated
+    */
+   int PRIMITIVE_VARIABLE = 11;
+
+   /**
+    * The feature id for the '<em><b>Pattern</b></em>' container reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__PATTERN = ABSTRACT_VARIABLE__PATTERN;
+
+   /**
+    * The feature id for the '<em><b>Binding State</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__BINDING_STATE = ABSTRACT_VARIABLE__BINDING_STATE;
+
+   /**
+    * The feature id for the '<em><b>Binding Expression</b></em>' containment reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__BINDING_EXPRESSION = ABSTRACT_VARIABLE__BINDING_EXPRESSION;
+
+   /**
+    * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__CONSTRAINT = ABSTRACT_VARIABLE__CONSTRAINT;
+
+   /**
+    * The feature id for the '<em><b>Incoming Link</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__INCOMING_LINK = ABSTRACT_VARIABLE__INCOMING_LINK;
+
+   /**
+    * The feature id for the '<em><b>EData Type</b></em>' reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__EDATA_TYPE = ABSTRACT_VARIABLE_FEATURE_COUNT + 0;
+
+   /**
+    * The number of structural features of the '<em>Primitive Variable</em>' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_FEATURE_COUNT = ABSTRACT_VARIABLE_FEATURE_COUNT + 1;
+
+   /**
+    * The number of operations of the '<em>Primitive Variable</em>' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_OPERATION_COUNT = ABSTRACT_VARIABLE_OPERATION_COUNT + 0;
+
+   /**
+    * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.ContainerVariableImpl <em>Container Variable</em>}' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.storydriven.modeling.patterns.impl.ContainerVariableImpl
+    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getContainerVariable()
+    * @generated
+    */
+   int CONTAINER_VARIABLE = 12;
+
+   /**
+    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__ANNOTATION = OBJECT_VARIABLE__ANNOTATION;
+
+   /**
+    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__EXTENSION = OBJECT_VARIABLE__EXTENSION;
+
+   /**
+    * The feature id for the '<em><b>Type</b></em>' reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__TYPE = OBJECT_VARIABLE__TYPE;
+
+   /**
+    * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__GENERIC_TYPE = OBJECT_VARIABLE__GENERIC_TYPE;
+
+   /**
+    * The feature id for the '<em><b>Variable Name</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__VARIABLE_NAME = OBJECT_VARIABLE__VARIABLE_NAME;
+
+   /**
+    * The feature id for the '<em><b>Name</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__NAME = OBJECT_VARIABLE__NAME;
+
+   /**
+    * The feature id for the '<em><b>Pattern</b></em>' container reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__PATTERN = OBJECT_VARIABLE__PATTERN;
+
+   /**
+    * The feature id for the '<em><b>Binding State</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__BINDING_STATE = OBJECT_VARIABLE__BINDING_STATE;
+
+   /**
+    * The feature id for the '<em><b>Binding Expression</b></em>' containment reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__BINDING_EXPRESSION = OBJECT_VARIABLE__BINDING_EXPRESSION;
+
+   /**
+    * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__CONSTRAINT = OBJECT_VARIABLE__CONSTRAINT;
+
+   /**
+    * The feature id for the '<em><b>Incoming Link</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__INCOMING_LINK = OBJECT_VARIABLE__INCOMING_LINK;
+
+   /**
+    * The feature id for the '<em><b>Outgoing Link</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__OUTGOING_LINK = OBJECT_VARIABLE__OUTGOING_LINK;
+
+   /**
+    * The feature id for the '<em><b>Link Order Constraint</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__LINK_ORDER_CONSTRAINT = OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT;
+
+   /**
+    * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__BINDING_SEMANTICS = OBJECT_VARIABLE__BINDING_SEMANTICS;
+
+   /**
+    * The feature id for the '<em><b>Binding Operator</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__BINDING_OPERATOR = OBJECT_VARIABLE__BINDING_OPERATOR;
+
+   /**
+    * The feature id for the '<em><b>Attribute Assignment</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__ATTRIBUTE_ASSIGNMENT = OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT;
+
+   /**
+    * The feature id for the '<em><b>Classifier</b></em>' reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE__CLASSIFIER = OBJECT_VARIABLE__CLASSIFIER;
+
+   /**
+    * The number of structural features of the '<em>Container Variable</em>' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE_FEATURE_COUNT = OBJECT_VARIABLE_FEATURE_COUNT + 0;
+
+   /**
+    * The operation id for the '<em>EClass</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___ECLASS = OBJECT_VARIABLE___ECLASS;
+
+   /**
+    * The operation id for the '<em>EIs Proxy</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___EIS_PROXY = OBJECT_VARIABLE___EIS_PROXY;
+
+   /**
+    * The operation id for the '<em>EResource</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___ERESOURCE = OBJECT_VARIABLE___ERESOURCE;
+
+   /**
+    * The operation id for the '<em>EContainer</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___ECONTAINER = OBJECT_VARIABLE___ECONTAINER;
+
+   /**
+    * The operation id for the '<em>EContaining Feature</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___ECONTAINING_FEATURE = OBJECT_VARIABLE___ECONTAINING_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContainment Feature</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___ECONTAINMENT_FEATURE = OBJECT_VARIABLE___ECONTAINMENT_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContents</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___ECONTENTS = OBJECT_VARIABLE___ECONTENTS;
+
+   /**
+    * The operation id for the '<em>EAll Contents</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___EALL_CONTENTS = OBJECT_VARIABLE___EALL_CONTENTS;
+
+   /**
+    * The operation id for the '<em>ECross References</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___ECROSS_REFERENCES = OBJECT_VARIABLE___ECROSS_REFERENCES;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___EGET__ESTRUCTURALFEATURE = OBJECT_VARIABLE___EGET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = OBJECT_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+   /**
+    * The operation id for the '<em>ESet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = OBJECT_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+   /**
+    * The operation id for the '<em>EIs Set</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = OBJECT_VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EUnset</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___EUNSET__ESTRUCTURALFEATURE = OBJECT_VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EInvoke</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___EINVOKE__EOPERATION_ELIST = OBJECT_VARIABLE___EINVOKE__EOPERATION_ELIST;
+
+   /**
+    * The operation id for the '<em>Get Extension</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___GET_EXTENSION__ECLASS = OBJECT_VARIABLE___GET_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Provide Extension</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___PROVIDE_EXTENSION__ECLASS = OBJECT_VARIABLE___PROVIDE_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Get Annotation</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___GET_ANNOTATION__STRING = OBJECT_VARIABLE___GET_ANNOTATION__STRING;
+
+   /**
+    * The operation id for the '<em>Provide Annotation</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE___PROVIDE_ANNOTATION__STRING = OBJECT_VARIABLE___PROVIDE_ANNOTATION__STRING;
+
+   /**
+    * The number of operations of the '<em>Container Variable</em>' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CONTAINER_VARIABLE_OPERATION_COUNT = OBJECT_VARIABLE_OPERATION_COUNT + 0;
+
+   /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.BindingState <em>Binding State</em>}' enum.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see org.storydriven.modeling.patterns.BindingState
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getBindingState()
     * @generated
     */
-   int BINDING_STATE = 11;
+   int BINDING_STATE = 14;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.BindingSemantics <em>Binding Semantics</em>}' enum.
@@ -2708,7 +3217,7 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getBindingSemantics()
     * @generated
     */
-   int BINDING_SEMANTICS = 12;
+   int BINDING_SEMANTICS = 15;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.BindingOperator <em>Binding Operator</em>}' enum.
@@ -2718,7 +3227,7 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getBindingOperator()
     * @generated
     */
-   int BINDING_OPERATOR = 13;
+   int BINDING_OPERATOR = 16;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.LinkConstraintType <em>Link Constraint Type</em>}' enum.
@@ -2728,7 +3237,7 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getLinkConstraintType()
     * @generated
     */
-   int LINK_CONSTRAINT_TYPE = 14;
+   int LINK_CONSTRAINT_TYPE = 17;
 
    /**
     * Returns the meta object for class '{@link org.storydriven.modeling.patterns.AttributeAssignment <em>Attribute Assignment</em>}'.
@@ -2782,17 +3291,6 @@ public interface PatternsPackage extends EPackage
    EClass getObjectVariable ();
 
    /**
-    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.ObjectVariable#getBindingState <em>Binding State</em>}'.
-    * <!-- begin-user-doc --> <!--
-    * end-user-doc -->
-    * @return the meta object for the attribute '<em>Binding State</em>'.
-    * @see org.storydriven.modeling.patterns.ObjectVariable#getBindingState()
-    * @see #getObjectVariable()
-    * @generated
-    */
-   EAttribute getObjectVariable_BindingState ();
-
-   /**
     * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.ObjectVariable#getBindingSemantics <em>Binding Semantics</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -2815,17 +3313,6 @@ public interface PatternsPackage extends EPackage
    EAttribute getObjectVariable_BindingOperator ();
 
    /**
-    * Returns the meta object for the container reference '{@link org.storydriven.modeling.patterns.ObjectVariable#getPattern <em>Pattern</em>}'.
-    * <!-- begin-user-doc --> <!--
-    * end-user-doc -->
-    * @return the meta object for the container reference '<em>Pattern</em>'.
-    * @see org.storydriven.modeling.patterns.ObjectVariable#getPattern()
-    * @see #getObjectVariable()
-    * @generated
-    */
-   EReference getObjectVariable_Pattern ();
-
-   /**
     * Returns the meta object for the reference list '{@link org.storydriven.modeling.patterns.ObjectVariable#getOutgoingLinks <em>Outgoing Link</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -2835,17 +3322,6 @@ public interface PatternsPackage extends EPackage
     * @generated
     */
    EReference getObjectVariable_OutgoingLink ();
-
-   /**
-    * Returns the meta object for the reference list '{@link org.storydriven.modeling.patterns.ObjectVariable#getIncomingLinks <em>Incoming Link</em>}'.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @return the meta object for the reference list '<em>Incoming Link</em>'.
-    * @see org.storydriven.modeling.patterns.ObjectVariable#getIncomingLinks()
-    * @see #getObjectVariable()
-    * @generated
-    */
-   EReference getObjectVariable_IncomingLink ();
 
    /**
     * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.patterns.ObjectVariable#getLinkOrderConstraints <em>Link Order Constraint</em>}'.
@@ -2869,26 +3345,69 @@ public interface PatternsPackage extends EPackage
    EReference getObjectVariable_Classifier ();
 
    /**
-    * Returns the meta object for the containment reference '{@link org.storydriven.modeling.patterns.ObjectVariable#getBindingExpression <em>Binding Expression</em>}'. <!--
-    * begin-user-doc --> <!-- end-user-doc -->
-    * 
-    * @return the meta object for the containment reference '<em>Binding Expression</em>'.
-    * @see org.storydriven.modeling.patterns.ObjectVariable#getBindingExpression()
-    * @see #getObjectVariable()
+    * Returns the meta object for class '{@link org.storydriven.modeling.patterns.AbstractVariable <em>Abstract Variable</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for class '<em>Abstract Variable</em>'.
+    * @see org.storydriven.modeling.patterns.AbstractVariable
     * @generated
     */
-   EReference getObjectVariable_BindingExpression ();
+   EClass getAbstractVariable ();
 
    /**
-    * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.patterns.ObjectVariable#getConstraints <em>Constraint</em>}'.
-    * <!-- begin-user-doc
-    * --> <!-- end-user-doc -->
-    * @return the meta object for the containment reference list '<em>Constraint</em>'.
-    * @see org.storydriven.modeling.patterns.ObjectVariable#getConstraints()
-    * @see #getObjectVariable()
+    * Returns the meta object for the container reference '{@link org.storydriven.modeling.patterns.AbstractVariable#getPattern <em>Pattern</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the container reference '<em>Pattern</em>'.
+    * @see org.storydriven.modeling.patterns.AbstractVariable#getPattern()
+    * @see #getAbstractVariable()
     * @generated
     */
-   EReference getObjectVariable_Constraint ();
+   EReference getAbstractVariable_Pattern ();
+
+   /**
+    * Returns the meta object for the attribute '{@link org.storydriven.modeling.patterns.AbstractVariable#getBindingState <em>Binding State</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Binding State</em>'.
+    * @see org.storydriven.modeling.patterns.AbstractVariable#getBindingState()
+    * @see #getAbstractVariable()
+    * @generated
+    */
+   EAttribute getAbstractVariable_BindingState ();
+
+   /**
+    * Returns the meta object for the containment reference '{@link org.storydriven.modeling.patterns.AbstractVariable#getBindingExpression <em>Binding Expression</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the containment reference '<em>Binding Expression</em>'.
+    * @see org.storydriven.modeling.patterns.AbstractVariable#getBindingExpression()
+    * @see #getAbstractVariable()
+    * @generated
+    */
+   EReference getAbstractVariable_BindingExpression ();
+
+   /**
+    * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.patterns.AbstractVariable#getConstraints <em>Constraint</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the containment reference list '<em>Constraint</em>'.
+    * @see org.storydriven.modeling.patterns.AbstractVariable#getConstraints()
+    * @see #getAbstractVariable()
+    * @generated
+    */
+   EReference getAbstractVariable_Constraint ();
+
+   /**
+    * Returns the meta object for the reference list '{@link org.storydriven.modeling.patterns.AbstractVariable#getIncomingLinks <em>Incoming Link</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the reference list '<em>Incoming Link</em>'.
+    * @see org.storydriven.modeling.patterns.AbstractVariable#getIncomingLinks()
+    * @see #getAbstractVariable()
+    * @generated
+    */
+   EReference getAbstractVariable_IncomingLink ();
 
    /**
     * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.patterns.ObjectVariable#getAttributeAssignments <em>Attribute Assignment</em>}'.
@@ -3206,6 +3725,37 @@ public interface PatternsPackage extends EPackage
    EOperation getMatchingPattern__NoModifierInMatchingPattern__DiagnosticChain_Map ();
 
    /**
+    * Returns the meta object for class '{@link org.storydriven.modeling.patterns.PrimitiveVariable <em>Primitive Variable</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for class '<em>Primitive Variable</em>'.
+    * @see org.storydriven.modeling.patterns.PrimitiveVariable
+    * @generated
+    */
+   EClass getPrimitiveVariable ();
+
+   /**
+    * Returns the meta object for the reference '{@link org.storydriven.modeling.patterns.PrimitiveVariable#getEDataType <em>EData Type</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the reference '<em>EData Type</em>'.
+    * @see org.storydriven.modeling.patterns.PrimitiveVariable#getEDataType()
+    * @see #getPrimitiveVariable()
+    * @generated
+    */
+   EReference getPrimitiveVariable_EDataType ();
+
+   /**
+    * Returns the meta object for class '{@link org.storydriven.modeling.patterns.ContainerVariable <em>Container Variable</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for class '<em>Container Variable</em>'.
+    * @see org.storydriven.modeling.patterns.ContainerVariable
+    * @generated
+    */
+   EClass getContainerVariable ();
+
+   /**
     * Returns the meta object for class '{@link org.storydriven.modeling.patterns.ObjectSetVariable <em>Object Set Variable</em>}'.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @return the meta object for class '<em>Object Set Variable</em>'.
@@ -3224,15 +3774,15 @@ public interface PatternsPackage extends EPackage
    EClass getStoryPattern ();
 
    /**
-    * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.patterns.StoryPattern#getObjectVariables <em>Object Variable</em>}'. <!--
-    * begin-user-doc --> <!-- end-user-doc -->
-    * 
-    * @return the meta object for the containment reference list '<em>Object Variable</em>'.
-    * @see org.storydriven.modeling.patterns.StoryPattern#getObjectVariables()
+    * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.patterns.StoryPattern#getVariables <em>Variable</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the containment reference list '<em>Variable</em>'.
+    * @see org.storydriven.modeling.patterns.StoryPattern#getVariables()
     * @see #getStoryPattern()
     * @generated
     */
-   EReference getStoryPattern_ObjectVariable ();
+   EReference getStoryPattern_Variable ();
 
    /**
     * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.patterns.StoryPattern#getLinkVariables <em>Link Variable</em>}'. <!--
@@ -3401,13 +3951,6 @@ public interface PatternsPackage extends EPackage
       EClass OBJECT_VARIABLE = eINSTANCE.getObjectVariable();
 
       /**
-       * The meta object literal for the '<em><b>Binding State</b></em>' attribute feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
-       * @generated
-       */
-      EAttribute OBJECT_VARIABLE__BINDING_STATE = eINSTANCE.getObjectVariable_BindingState();
-
-      /**
        * The meta object literal for the '<em><b>Binding Semantics</b></em>' attribute feature.
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
@@ -3424,25 +3967,11 @@ public interface PatternsPackage extends EPackage
       EAttribute OBJECT_VARIABLE__BINDING_OPERATOR = eINSTANCE.getObjectVariable_BindingOperator();
 
       /**
-       * The meta object literal for the '<em><b>Pattern</b></em>' container reference feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
-       * @generated
-       */
-      EReference OBJECT_VARIABLE__PATTERN = eINSTANCE.getObjectVariable_Pattern();
-
-      /**
        * The meta object literal for the '<em><b>Outgoing Link</b></em>' reference list feature.
        * <!-- begin-user-doc --> <!-- end-user-doc -->
        * @generated
        */
       EReference OBJECT_VARIABLE__OUTGOING_LINK = eINSTANCE.getObjectVariable_OutgoingLink();
-
-      /**
-       * The meta object literal for the '<em><b>Incoming Link</b></em>' reference list feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
-       * @generated
-       */
-      EReference OBJECT_VARIABLE__INCOMING_LINK = eINSTANCE.getObjectVariable_IncomingLink();
 
       /**
        * The meta object literal for the '<em><b>Link Order Constraint</b></em>' containment reference list feature.
@@ -3459,18 +3988,54 @@ public interface PatternsPackage extends EPackage
       EReference OBJECT_VARIABLE__CLASSIFIER = eINSTANCE.getObjectVariable_Classifier();
 
       /**
-       * The meta object literal for the '<em><b>Binding Expression</b></em>' containment reference feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * The meta object literal for the '{@link org.storydriven.modeling.patterns.impl.AbstractVariableImpl <em>Abstract Variable</em>}' class.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.storydriven.modeling.patterns.impl.AbstractVariableImpl
+       * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getAbstractVariable()
        * @generated
        */
-      EReference OBJECT_VARIABLE__BINDING_EXPRESSION = eINSTANCE.getObjectVariable_BindingExpression();
+      EClass ABSTRACT_VARIABLE = eINSTANCE.getAbstractVariable();
+
+      /**
+       * The meta object literal for the '<em><b>Pattern</b></em>' container reference feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference ABSTRACT_VARIABLE__PATTERN = eINSTANCE.getAbstractVariable_Pattern();
+
+      /**
+       * The meta object literal for the '<em><b>Binding State</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EAttribute ABSTRACT_VARIABLE__BINDING_STATE = eINSTANCE.getAbstractVariable_BindingState();
+
+      /**
+       * The meta object literal for the '<em><b>Binding Expression</b></em>' containment reference feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference ABSTRACT_VARIABLE__BINDING_EXPRESSION = eINSTANCE.getAbstractVariable_BindingExpression();
 
       /**
        * The meta object literal for the '<em><b>Constraint</b></em>' containment reference list feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EReference OBJECT_VARIABLE__CONSTRAINT = eINSTANCE.getObjectVariable_Constraint();
+      EReference ABSTRACT_VARIABLE__CONSTRAINT = eINSTANCE.getAbstractVariable_Constraint();
+
+      /**
+       * The meta object literal for the '<em><b>Incoming Link</b></em>' reference list feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference ABSTRACT_VARIABLE__INCOMING_LINK = eINSTANCE.getAbstractVariable_IncomingLink();
 
       /**
        * The meta object literal for the '<em><b>Attribute Assignment</b></em>' containment reference list feature.
@@ -3715,6 +4280,34 @@ public interface PatternsPackage extends EPackage
          .getMatchingPattern__NoModifierInMatchingPattern__DiagnosticChain_Map();
 
       /**
+       * The meta object literal for the '{@link org.storydriven.modeling.patterns.impl.PrimitiveVariableImpl <em>Primitive Variable</em>}' class.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.storydriven.modeling.patterns.impl.PrimitiveVariableImpl
+       * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getPrimitiveVariable()
+       * @generated
+       */
+      EClass PRIMITIVE_VARIABLE = eINSTANCE.getPrimitiveVariable();
+
+      /**
+       * The meta object literal for the '<em><b>EData Type</b></em>' reference feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference PRIMITIVE_VARIABLE__EDATA_TYPE = eINSTANCE.getPrimitiveVariable_EDataType();
+
+      /**
+       * The meta object literal for the '{@link org.storydriven.modeling.patterns.impl.ContainerVariableImpl <em>Container Variable</em>}' class.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.storydriven.modeling.patterns.impl.ContainerVariableImpl
+       * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getContainerVariable()
+       * @generated
+       */
+      EClass CONTAINER_VARIABLE = eINSTANCE.getContainerVariable();
+
+      /**
        * The meta object literal for the '{@link org.storydriven.modeling.patterns.impl.ObjectSetVariableImpl <em>Object Set Variable</em>}' class.
        * <!-- begin-user-doc --> <!--
        * end-user-doc -->
@@ -3735,11 +4328,12 @@ public interface PatternsPackage extends EPackage
       EClass STORY_PATTERN = eINSTANCE.getStoryPattern();
 
       /**
-       * The meta object literal for the '<em><b>Object Variable</b></em>' containment reference list feature.
-       * <!-- begin-user-doc --> <!-- end-user-doc -->
+       * The meta object literal for the '<em><b>Variable</b></em>' containment reference list feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
        * @generated
        */
-      EReference STORY_PATTERN__OBJECT_VARIABLE = eINSTANCE.getStoryPattern_ObjectVariable();
+      EReference STORY_PATTERN__VARIABLE = eINSTANCE.getStoryPattern_Variable();
 
       /**
        * The meta object literal for the '<em><b>Link Variable</b></em>' containment reference list feature.

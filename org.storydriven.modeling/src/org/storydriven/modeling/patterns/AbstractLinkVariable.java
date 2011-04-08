@@ -17,12 +17,12 @@ import org.storydriven.modeling.NamedElement;
  * <ul>
  *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getBindingSemantics <em>Binding Semantics</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getBindingOperator <em>Binding Operator</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getSource <em>Source</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getSecondLinkConstraints <em>Second Link Constraint</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getFirstLinkConstraints <em>First Link Constraint</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getBindingState <em>Binding State</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getPattern <em>Pattern</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getSource <em>Source</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getTarget <em>Target</em>}</li>
  * </ul>
  * </p>
  *
@@ -94,29 +94,30 @@ public interface AbstractLinkVariable extends NamedElement
 
    /**
     * Returns the value of the '<em><b>Target</b></em>' reference.
-    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.ObjectVariable#getIncomingLinks <em>Incoming Link</em>}'.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.AbstractVariable#getIncomingLinks <em>Incoming Link</em>}'.
     * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Target</em>' reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
     * @return the value of the '<em>Target</em>' reference.
-    * @see #setTarget(ObjectVariable)
+    * @see #setTarget(AbstractVariable)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractLinkVariable_Target()
-    * @see org.storydriven.modeling.patterns.ObjectVariable#getIncomingLinks
+    * @see org.storydriven.modeling.patterns.AbstractVariable#getIncomingLinks
     * @model opposite="incomingLink" required="true" ordered="false"
     * @generated
     */
-   ObjectVariable getTarget ();
+   AbstractVariable getTarget ();
 
    /**
     * Sets the value of the '{@link org.storydriven.modeling.patterns.AbstractLinkVariable#getTarget <em>Target</em>}' reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @param value the new value of the '<em>Target</em>' reference.
     * @see #getTarget()
     * @generated
     */
-   void setTarget (ObjectVariable value);
+   void setTarget (AbstractVariable value);
 
    /**
     * Returns the value of the '<em><b>Second Link Constraint</b></em>' reference list.

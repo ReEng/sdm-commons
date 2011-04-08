@@ -108,14 +108,16 @@ public class PatternsValidator extends EObjectValidator
       {
          case PatternsPackage.OBJECT_VARIABLE:
             return validateObjectVariable((ObjectVariable) value, diagnostics, context);
-         case PatternsPackage.ATTRIBUTE_ASSIGNMENT:
-            return validateAttributeAssignment((AttributeAssignment) value, diagnostics, context);
+         case PatternsPackage.ABSTRACT_VARIABLE:
+            return validateAbstractVariable((AbstractVariable) value, diagnostics, context);
+         case PatternsPackage.CONSTRAINT:
+            return validateConstraint((Constraint) value, diagnostics, context);
          case PatternsPackage.ABSTRACT_LINK_VARIABLE:
             return validateAbstractLinkVariable((AbstractLinkVariable) value, diagnostics, context);
          case PatternsPackage.LINK_CONSTRAINT:
             return validateLinkConstraint((LinkConstraint) value, diagnostics, context);
-         case PatternsPackage.CONSTRAINT:
-            return validateConstraint((Constraint) value, diagnostics, context);
+         case PatternsPackage.ATTRIBUTE_ASSIGNMENT:
+            return validateAttributeAssignment((AttributeAssignment) value, diagnostics, context);
          case PatternsPackage.OBJECT_SET_VARIABLE:
             return validateObjectSetVariable((ObjectSetVariable) value, diagnostics, context);
          case PatternsPackage.PATH:
@@ -126,6 +128,10 @@ public class PatternsValidator extends EObjectValidator
             return validateContainmentRelation((ContainmentRelation) value, diagnostics, context);
          case PatternsPackage.MATCHING_PATTERN:
             return validateMatchingPattern((MatchingPattern) value, diagnostics, context);
+         case PatternsPackage.PRIMITIVE_VARIABLE:
+            return validatePrimitiveVariable((PrimitiveVariable) value, diagnostics, context);
+         case PatternsPackage.CONTAINER_VARIABLE:
+            return validateContainerVariable((ContainerVariable) value, diagnostics, context);
          case PatternsPackage.STORY_PATTERN:
             return validateStoryPattern((StoryPattern) value, diagnostics, context);
          case PatternsPackage.BINDING_STATE:
@@ -159,6 +165,17 @@ public class PatternsValidator extends EObjectValidator
                                           Map<Object, Object> context)
    {
       return validate_EveryDefaultConstraint(objectVariable, diagnostics, context);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public boolean validateAbstractVariable (AbstractVariable abstractVariable, DiagnosticChain diagnostics,
+                                            Map<Object, Object> context)
+   {
+      return validate_EveryDefaultConstraint(abstractVariable, diagnostics, context);
    }
 
    /**
@@ -258,6 +275,28 @@ public class PatternsValidator extends EObjectValidator
                                                                        Map<Object, Object> context)
    {
       return matchingPattern.NoModifierInMatchingPattern(diagnostics, context);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public boolean validatePrimitiveVariable (PrimitiveVariable primitiveVariable, DiagnosticChain diagnostics,
+                                             Map<Object, Object> context)
+   {
+      return validate_EveryDefaultConstraint(primitiveVariable, diagnostics, context);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public boolean validateContainerVariable (ContainerVariable containerVariable, DiagnosticChain diagnostics,
+                                             Map<Object, Object> context)
+   {
+      return validate_EveryDefaultConstraint(containerVariable, diagnostics, context);
    }
 
    /**

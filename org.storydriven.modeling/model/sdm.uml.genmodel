@@ -321,39 +321,41 @@
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//patterns/LinkConstraintType/INDEX"/>
       </genEnums>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/ObjectVariable">
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/ObjectVariable/bindingState"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/ObjectVariable/outgoingLink"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/ObjectVariable/linkOrderConstraint"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/ObjectVariable/bindingSemantics"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/ObjectVariable/bindingOperator"/>
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
-            createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/ObjectVariable/pattern"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/ObjectVariable/attributeAssignment"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/ObjectVariable/outgoingLink"/>
-        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/ObjectVariable/incomingLink"/>
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/ObjectVariable/linkOrderConstraint"/>
-        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/ObjectVariable/classifier"/>
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/ObjectVariable/bindingExpression"/>
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/ObjectVariable/constraint"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/AttributeAssignment">
-        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AttributeAssignment/attribute"/>
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AttributeAssignment/valueExpression"/>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sdm.ecore#//patterns/AbstractVariable">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
-            createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AttributeAssignment/objectVariable"/>
+            createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractVariable/pattern"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/AbstractVariable/bindingState"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractVariable/bindingExpression"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractVariable/constraint"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractVariable/incomingLink"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/Constraint">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/Constraint/constraintExpression"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/Constraint/pattern"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/Constraint/objectVariable"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sdm.ecore#//patterns/AbstractLinkVariable">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/AbstractLinkVariable/bindingSemantics"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/AbstractLinkVariable/bindingOperator"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractLinkVariable/target"/>
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractLinkVariable/source"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractLinkVariable/secondLinkConstraint"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -362,7 +364,7 @@
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
             createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractLinkVariable/pattern"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractLinkVariable/source"/>
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AbstractLinkVariable/target"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/LinkConstraint">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//patterns/LinkConstraint/index"/>
@@ -375,13 +377,13 @@
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/LinkConstraint/secondLink"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/Constraint">
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/AttributeAssignment">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AttributeAssignment/attribute"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/Constraint/constraintExpression"/>
+            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AttributeAssignment/valueExpression"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
-            createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/Constraint/pattern"/>
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
-            createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/Constraint/objectVariable"/>
+            createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AttributeAssignment/objectVariable"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/ObjectSetVariable"/>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/Path">
@@ -403,13 +405,18 @@
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sdm.ecore#//patterns/MatchingPattern/NoModifierInMatchingPattern/context"/>
         </genOperations>
       </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/PrimitiveVariable">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/PrimitiveVariable/eDataType"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/ContainerVariable"/>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/StoryPattern">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/StoryPattern/objectVariable"/>
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/StoryPattern/linkVariable"/>
+            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/StoryPattern/variable"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/StoryPattern/constraint"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/StoryPattern/linkVariable"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
             createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/StoryPattern/parentPattern"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

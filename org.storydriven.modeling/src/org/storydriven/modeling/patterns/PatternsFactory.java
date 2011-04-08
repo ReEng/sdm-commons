@@ -88,6 +88,24 @@ public interface PatternsFactory extends EFactory
    MatchingPattern createMatchingPattern ();
 
    /**
+    * Returns a new object of class '<em>Primitive Variable</em>'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return a new object of class '<em>Primitive Variable</em>'.
+    * @generated
+    */
+   PrimitiveVariable createPrimitiveVariable ();
+
+   /**
+    * Returns a new object of class '<em>Container Variable</em>'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return a new object of class '<em>Container Variable</em>'.
+    * @generated
+    */
+   ContainerVariable createContainerVariable ();
+
+   /**
     * Returns a new object of class '<em>Object Set Variable</em>'.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @return a new object of class '<em>Object Set Variable</em>'.

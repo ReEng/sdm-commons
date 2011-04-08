@@ -16,9 +16,9 @@ import org.storydriven.modeling.templates.TemplateSignature;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.storydriven.modeling.patterns.StoryPattern#getObjectVariables <em>Object Variable</em>}</li>
- *   <li>{@link org.storydriven.modeling.patterns.StoryPattern#getLinkVariables <em>Link Variable</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.StoryPattern#getVariables <em>Variable</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.StoryPattern#getConstraints <em>Constraint</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.StoryPattern#getLinkVariables <em>Link Variable</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.StoryPattern#getParentPattern <em>Parent Pattern</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.StoryPattern#getContainedPatterns <em>Contained Pattern</em>}</li>
  *   <li>{@link org.storydriven.modeling.patterns.StoryPattern#getBindingSemantics <em>Binding Semantics</em>}</li>
@@ -33,21 +33,22 @@ import org.storydriven.modeling.templates.TemplateSignature;
 public interface StoryPattern extends CommentableElement
 {
    /**
-    * Returns the value of the '<em><b>Object Variable</b></em>' containment reference list.
-    * The list contents are of type {@link org.storydriven.modeling.patterns.ObjectVariable}.
-    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.ObjectVariable#getPattern <em>Pattern</em>}'.
+    * Returns the value of the '<em><b>Variable</b></em>' containment reference list.
+    * The list contents are of type {@link org.storydriven.modeling.patterns.AbstractVariable}.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.AbstractVariable#getPattern <em>Pattern</em>}'.
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>Object Variable</em>' containment reference list isn't clear, there really should be more of a description here...
+    * If the meaning of the '<em>Variable</em>' containment reference list isn't clear,
+    * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @return the value of the '<em>Object Variable</em>' containment reference list.
-    * @see org.storydriven.modeling.patterns.PatternsPackage#getStoryPattern_ObjectVariable()
-    * @see org.storydriven.modeling.patterns.ObjectVariable#getPattern
+    * @return the value of the '<em>Variable</em>' containment reference list.
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getStoryPattern_Variable()
+    * @see org.storydriven.modeling.patterns.AbstractVariable#getPattern
     * @model opposite="pattern" containment="true" resolveProxies="true" ordered="false"
     * @generated
     */
-   EList<ObjectVariable> getObjectVariables ();
+   EList<AbstractVariable> getVariables ();
 
    /**
     * Returns the value of the '<em><b>Link Variable</b></em>' containment reference list.

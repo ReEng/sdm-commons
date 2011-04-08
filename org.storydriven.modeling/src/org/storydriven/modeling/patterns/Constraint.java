@@ -80,29 +80,29 @@ public interface Constraint extends EObject
 
    /**
     * Returns the value of the '<em><b>Object Variable</b></em>' container reference.
-    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.ObjectVariable#getConstraints <em>Constraint</em>}'.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.patterns.AbstractVariable#getConstraints <em>Constraint</em>}'.
     * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Object Variable</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
     * @return the value of the '<em>Object Variable</em>' container reference.
-    * @see #setObjectVariable(ObjectVariable)
+    * @see #setObjectVariable(AbstractVariable)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getConstraint_ObjectVariable()
-    * @see org.storydriven.modeling.patterns.ObjectVariable#getConstraints
+    * @see org.storydriven.modeling.patterns.AbstractVariable#getConstraints
     * @model opposite="constraint" transient="false" ordered="false"
     * @generated
     */
-   ObjectVariable getObjectVariable ();
+   AbstractVariable getObjectVariable ();
 
    /**
     * Sets the value of the '{@link org.storydriven.modeling.patterns.Constraint#getObjectVariable <em>Object Variable</em>}' container reference.
-    * <!-- begin-user-doc --> <!--
-    * end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @param value the new value of the '<em>Object Variable</em>' container reference.
     * @see #getObjectVariable()
     * @generated
     */
-   void setObjectVariable (ObjectVariable value);
+   void setObjectVariable (AbstractVariable value);
 
 } // Constraint

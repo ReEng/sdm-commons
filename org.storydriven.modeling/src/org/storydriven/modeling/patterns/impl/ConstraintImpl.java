@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.modeling.patterns.AbstractVariable;
 import org.storydriven.modeling.patterns.Constraint;
 import org.storydriven.modeling.patterns.ObjectVariable;
 import org.storydriven.modeling.patterns.PatternsPackage;
@@ -207,39 +208,41 @@ public class ConstraintImpl extends EObjectImpl implements Constraint
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
-   public ObjectVariable getObjectVariable ()
+   public AbstractVariable getObjectVariable ()
    {
       if (eContainerFeatureID() != PatternsPackage.CONSTRAINT__OBJECT_VARIABLE)
          return null;
-      return (ObjectVariable) eContainer();
+      return (AbstractVariable) eContainer();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
-   public ObjectVariable basicGetObjectVariable ()
+   public AbstractVariable basicGetObjectVariable ()
    {
       if (eContainerFeatureID() != PatternsPackage.CONSTRAINT__OBJECT_VARIABLE)
          return null;
-      return (ObjectVariable) eInternalContainer();
+      return (AbstractVariable) eInternalContainer();
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public NotificationChain basicSetObjectVariable (ObjectVariable newObjectVariable, NotificationChain msgs)
+   public NotificationChain basicSetObjectVariable (AbstractVariable newObjectVariable, NotificationChain msgs)
    {
       msgs = eBasicSetContainer((InternalEObject) newObjectVariable, PatternsPackage.CONSTRAINT__OBJECT_VARIABLE, msgs);
       return msgs;
    }
 
    /**
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-   public void setObjectVariable (ObjectVariable newObjectVariable)
+   public void setObjectVariable (AbstractVariable newObjectVariable)
    {
       if (newObjectVariable != eInternalContainer()
          || (eContainerFeatureID() != PatternsPackage.CONSTRAINT__OBJECT_VARIABLE && newObjectVariable != null))
@@ -250,8 +253,8 @@ public class ConstraintImpl extends EObjectImpl implements Constraint
          if (eInternalContainer() != null)
             msgs = eBasicRemoveFromContainer(msgs);
          if (newObjectVariable != null)
-            msgs = ((InternalEObject) newObjectVariable).eInverseAdd(this, PatternsPackage.OBJECT_VARIABLE__CONSTRAINT,
-               ObjectVariable.class, msgs);
+            msgs = ((InternalEObject) newObjectVariable).eInverseAdd(this,
+               PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT, AbstractVariable.class, msgs);
          msgs = basicSetObjectVariable(newObjectVariable, msgs);
          if (msgs != null)
             msgs.dispatch();
@@ -277,7 +280,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint
          case PatternsPackage.CONSTRAINT__OBJECT_VARIABLE:
             if (eInternalContainer() != null)
                msgs = eBasicRemoveFromContainer(msgs);
-            return basicSetObjectVariable((ObjectVariable) otherEnd, msgs);
+            return basicSetObjectVariable((AbstractVariable) otherEnd, msgs);
       }
       return super.eInverseAdd(otherEnd, featureID, msgs);
    }
@@ -314,8 +317,8 @@ public class ConstraintImpl extends EObjectImpl implements Constraint
             return eInternalContainer().eInverseRemove(this, PatternsPackage.STORY_PATTERN__CONSTRAINT,
                StoryPattern.class, msgs);
          case PatternsPackage.CONSTRAINT__OBJECT_VARIABLE:
-            return eInternalContainer().eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__CONSTRAINT,
-               ObjectVariable.class, msgs);
+            return eInternalContainer().eInverseRemove(this, PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT,
+               AbstractVariable.class, msgs);
       }
       return super.eBasicRemoveFromContainerFeature(msgs);
    }
@@ -361,7 +364,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint
             setPattern((StoryPattern) newValue);
             return;
          case PatternsPackage.CONSTRAINT__OBJECT_VARIABLE:
-            setObjectVariable((ObjectVariable) newValue);
+            setObjectVariable((AbstractVariable) newValue);
             return;
       }
       super.eSet(featureID, newValue);
@@ -383,7 +386,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint
             setPattern((StoryPattern) null);
             return;
          case PatternsPackage.CONSTRAINT__OBJECT_VARIABLE:
-            setObjectVariable((ObjectVariable) null);
+            setObjectVariable((AbstractVariable) null);
             return;
       }
       super.eUnset(featureID);
