@@ -1114,10 +1114,10 @@ The context for contained Constraints and AttributeAssignments is a single objec
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_p6mY8GHwEeCDNuSrVjgXCA" name="PrimitiveVariable">
         <generalization xmi:id="_q1vLgGHwEeCDNuSrVjgXCA" general="_ieKckGHwEeCDNuSrVjgXCA"/>
-        <ownedAttribute xmi:id="_6Kri8mH1EeCDNuSrVjgXCA" name="eDataType" association="_6KqU0GH1EeCDNuSrVjgXCA">
+        <ownedAttribute xmi:id="_6Kri8mH1EeCDNuSrVjgXCA" name="eDataType" subsettedProperty="_HPpYkbLzEd-uk56s-ldeog" association="_6KqU0GH1EeCDNuSrVjgXCA">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EDataType"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6KsKAWH1EeCDNuSrVjgXCA" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6KsKAGH1EeCDNuSrVjgXCA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6KsKAWH1EeCDNuSrVjgXCA" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6KsKAGH1EeCDNuSrVjgXCA" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_qABkIGHzEeCDNuSrVjgXCA" name="ContainerVariable">
@@ -1128,7 +1128,7 @@ Every Constraint or AttributeAssignment can use the variable as a container (e.g
         <generalization xmi:id="_qtkmoGHzEeCDNuSrVjgXCA" general="c0f72d07-a643-4da9-859b-d95cfca69eee"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_6KqU0GH1EeCDNuSrVjgXCA" name="" memberEnd="_6Kq74GH1EeCDNuSrVjgXCA _6Kri8mH1EeCDNuSrVjgXCA">
-        <ownedEnd xmi:id="_6Kq74GH1EeCDNuSrVjgXCA" name="primitiveVariable" type="_p6mY8GHwEeCDNuSrVjgXCA" subsettedProperty="_HPpYkbLzEd-uk56s-ldeog" association="_6KqU0GH1EeCDNuSrVjgXCA">
+        <ownedEnd xmi:id="_6Kq74GH1EeCDNuSrVjgXCA" name="primitiveVariable" type="_p6mY8GHwEeCDNuSrVjgXCA" association="_6KqU0GH1EeCDNuSrVjgXCA">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6Kri8WH1EeCDNuSrVjgXCA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6Kri8GH1EeCDNuSrVjgXCA"/>
         </ownedEnd>
