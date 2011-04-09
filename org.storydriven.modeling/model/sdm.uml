@@ -819,6 +819,22 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UBahYBzfEeChOvWwuwx7tQ"/>
           </ownedEnd>
         </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_W3fMwGKSEeCBq7LKLVIv3g" name="PrimitiveVariableExpression">
+          <ownedComment xmi:id="_CPc8UmKTEeCBq7LKLVIv3g" annotatedElement="_W3fMwGKSEeCBq7LKLVIv3g">
+            <body>Represents the value of a primitive variable.</body>
+          </ownedComment>
+          <generalization xmi:id="_g4QuIGKSEeCBq7LKLVIv3g" general="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+          <ownedAttribute xmi:id="_lFF68WKSEeCBq7LKLVIv3g" name="primitiveVariable" type="_p6mY8GHwEeCDNuSrVjgXCA" association="_lE8J8GKSEeCBq7LKLVIv3g">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lFF682KSEeCBq7LKLVIv3g" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lFF68mKSEeCBq7LKLVIv3g" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_lE8J8GKSEeCBq7LKLVIv3g" name="" memberEnd="_lE8J8WKSEeCBq7LKLVIv3g _lFF68WKSEeCBq7LKLVIv3g">
+          <ownedEnd xmi:id="_lE8J8WKSEeCBq7LKLVIv3g" name="primitiveVariableExpression" type="_W3fMwGKSEeCBq7LKLVIv3g" association="_lE8J8GKSEeCBq7LKLVIv3g">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lFF68GKSEeCBq7LKLVIv3g" value="*"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lE8J8mKSEeCBq7LKLVIv3g"/>
+          </ownedEnd>
+        </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="5589daf2-a2cb-4afa-bb02-2da37d5af801" name="HasSecondLink" memberEnd="14426f7e-673a-4457-ab0e-c96c45d95a78 e63f051a-8e92-4ebb-9a36-1ab9ecd6e055"/>
       <packagedElement xmi:type="uml:Association" xmi:id="7614aedb-dfa3-426e-9c26-73a44d2ddb96" name="HasFirstLink" memberEnd="1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9 12c158aa-af57-4163-9840-4d19640d092f"/>
@@ -978,8 +994,6 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
         <ownedLiteral xmi:id="6d2dda9b-0699-4bf5-be1a-30d9009257f0" name="INDEX"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
-        <generalization xmi:id="_vhAKYBzcEeChOvWwuwx7tQ" general="_c2cqYBzJEeChOvWwuwx7tQ"/>
-        <generalization xmi:id="_89NC8LLzEd-uk56s-ldeog" general="_tB8FcLK5Ed-uk56s-ldeog"/>
         <generalization xmi:id="_o7JuIGHwEeCDNuSrVjgXCA" general="_ieKckGHwEeCDNuSrVjgXCA"/>
         <ownedAttribute xmi:id="8af9ddea-a5c4-4017-b709-364964a433cf" name="bindingSemantics" visibility="public" type="5d5c7278-e6e7-4956-ab18-44332c8cc462">
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_Jgg44LL8Ed-uk56s-ldeog" instance="fa270781-e8e1-4379-ada0-d421ab1217e0"/>
@@ -1093,6 +1107,8 @@ The context for contained Constraints and AttributeAssignments is a single objec
         <generalization xmi:id="_ndnGQBzdEeChOvWwuwx7tQ" general="c0f72d07-a643-4da9-859b-d95cfca69eee"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_ieKckGHwEeCDNuSrVjgXCA" name="AbstractVariable" isAbstract="true">
+        <generalization xmi:id="_vhAKYBzcEeChOvWwuwx7tQ" general="_c2cqYBzJEeChOvWwuwx7tQ"/>
+        <generalization xmi:id="_89NC8LLzEd-uk56s-ldeog" general="_tB8FcLK5Ed-uk56s-ldeog"/>
         <ownedAttribute xmi:id="97f7e21a-6cb3-4e71-a689-faf97d6546e6" name="pattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="71c51c4d-b7d4-44e9-8970-b4d9a946910c">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-ULKwEd-DYIlz5ANeHA" value="1"/>
         </ownedAttribute>
@@ -1113,8 +1129,11 @@ The context for contained Constraints and AttributeAssignments is a single objec
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_p6mY8GHwEeCDNuSrVjgXCA" name="PrimitiveVariable">
+        <ownedComment xmi:id="_IKFHsGKTEeCBq7LKLVIv3g" annotatedElement="_p6mY8GHwEeCDNuSrVjgXCA">
+          <body>Represents a variable that holds a value of a primitive type, e.g. integer, boolean, String.</body>
+        </ownedComment>
         <generalization xmi:id="_q1vLgGHwEeCDNuSrVjgXCA" general="_ieKckGHwEeCDNuSrVjgXCA"/>
-        <ownedAttribute xmi:id="_6Kri8mH1EeCDNuSrVjgXCA" name="eDataType" subsettedProperty="_HPpYkbLzEd-uk56s-ldeog" association="_6KqU0GH1EeCDNuSrVjgXCA">
+        <ownedAttribute xmi:id="_6Kri8mH1EeCDNuSrVjgXCA" name="classifier" subsettedProperty="_HPpYkbLzEd-uk56s-ldeog" association="_6KqU0GH1EeCDNuSrVjgXCA">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EDataType"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6KsKAWH1EeCDNuSrVjgXCA" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6KsKAGH1EeCDNuSrVjgXCA" value="1"/>
@@ -1384,4 +1403,5 @@ Every Constraint or AttributeAssignment can use the variable as a container (e.g
   <Ecore:EReference xmi:id="_YZiT8B2qEeCgKe8vMUdTKg" isTransient="true" isVolatile="true" isUnsettable="true" base_Property="_GemP4RzPEeChOvWwuwx7tQ" isResolveProxies="false"/>
   <Ecore:EReference xmi:id="_av6VcB2qEeCgKe8vMUdTKg" isTransient="true" isVolatile="true" isUnsettable="true" base_Property="_WMtZcxzNEeChOvWwuwx7tQ" isResolveProxies="false"/>
   <Ecore:EAttribute xmi:id="_Cxb3EF65EeC6SYIxo2pjJw" isTransient="true" isVolatile="true" base_Property="_ga_IIBzJEeChOvWwuwx7tQ"/>
+  <Ecore:EReference xmi:id="_47OfQGKPEeCBq7LKLVIv3g" base_Property="_6Kri8mH1EeCDNuSrVjgXCA"/>
 </xmi:XMI>

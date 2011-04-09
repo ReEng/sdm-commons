@@ -120,6 +120,8 @@ public class PatternsValidator extends EObjectValidator
             return validateAttributeAssignment((AttributeAssignment) value, diagnostics, context);
          case PatternsPackage.OBJECT_SET_VARIABLE:
             return validateObjectSetVariable((ObjectSetVariable) value, diagnostics, context);
+         case PatternsPackage.PRIMITIVE_VARIABLE:
+            return validatePrimitiveVariable((PrimitiveVariable) value, diagnostics, context);
          case PatternsPackage.PATH:
             return validatePath((Path) value, diagnostics, context);
          case PatternsPackage.LINK_VARIABLE:
@@ -128,8 +130,6 @@ public class PatternsValidator extends EObjectValidator
             return validateContainmentRelation((ContainmentRelation) value, diagnostics, context);
          case PatternsPackage.MATCHING_PATTERN:
             return validateMatchingPattern((MatchingPattern) value, diagnostics, context);
-         case PatternsPackage.PRIMITIVE_VARIABLE:
-            return validatePrimitiveVariable((PrimitiveVariable) value, diagnostics, context);
          case PatternsPackage.CONTAINER_VARIABLE:
             return validateContainerVariable((ContainerVariable) value, diagnostics, context);
          case PatternsPackage.STORY_PATTERN:

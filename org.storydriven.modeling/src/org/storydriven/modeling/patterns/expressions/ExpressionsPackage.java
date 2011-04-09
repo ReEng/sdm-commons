@@ -740,6 +740,259 @@ public interface ExpressionsPackage extends EPackage
    int OBJECT_SET_SIZE_EXPRESSION_OPERATION_COUNT = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION_OPERATION_COUNT + 0;
 
    /**
+    * The meta object id for the '{@link org.storydriven.modeling.patterns.expressions.impl.PrimitiveVariableExpressionImpl <em>Primitive Variable Expression</em>}' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.storydriven.modeling.patterns.expressions.impl.PrimitiveVariableExpressionImpl
+    * @see org.storydriven.modeling.patterns.expressions.impl.ExpressionsPackageImpl#getPrimitiveVariableExpression()
+    * @generated
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION = 3;
+
+   /**
+    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION__ANNOTATION = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION__ANNOTATION;
+
+   /**
+    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION__EXTENSION = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION__EXTENSION;
+
+   /**
+    * The feature id for the '<em><b>Type</b></em>' reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION__TYPE = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION__TYPE;
+
+   /**
+    * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION__GENERIC_TYPE = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
+
+   /**
+    * The feature id for the '<em><b>Comment</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION__COMMENT = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION__COMMENT;
+
+   /**
+    * The feature id for the '<em><b>Primitive Variable</b></em>' reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+   /**
+    * The number of structural features of the '<em>Primitive Variable Expression</em>' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION_FEATURE_COUNT = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+   /**
+    * The operation id for the '<em>EClass</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___ECLASS = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___ECLASS;
+
+   /**
+    * The operation id for the '<em>EIs Proxy</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___EIS_PROXY = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___EIS_PROXY;
+
+   /**
+    * The operation id for the '<em>EResource</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___ERESOURCE = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___ERESOURCE;
+
+   /**
+    * The operation id for the '<em>EContainer</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___ECONTAINER = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___ECONTAINER;
+
+   /**
+    * The operation id for the '<em>EContaining Feature</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___ECONTAINING_FEATURE = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___ECONTAINING_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContainment Feature</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___ECONTAINMENT_FEATURE = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___ECONTAINMENT_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContents</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___ECONTENTS = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___ECONTENTS;
+
+   /**
+    * The operation id for the '<em>EAll Contents</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___EALL_CONTENTS = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___EALL_CONTENTS;
+
+   /**
+    * The operation id for the '<em>ECross References</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___ECROSS_REFERENCES = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___ECROSS_REFERENCES;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___EGET__ESTRUCTURALFEATURE = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+   /**
+    * The operation id for the '<em>ESet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+   /**
+    * The operation id for the '<em>EIs Set</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EUnset</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EInvoke</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___EINVOKE__EOPERATION_ELIST = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+
+   /**
+    * The operation id for the '<em>Get Extension</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___GET_EXTENSION__ECLASS = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___GET_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Provide Extension</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___PROVIDE_EXTENSION__ECLASS = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___PROVIDE_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Get Annotation</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___GET_ANNOTATION__STRING = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___GET_ANNOTATION__STRING;
+
+   /**
+    * The operation id for the '<em>Provide Annotation</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION___PROVIDE_ANNOTATION__STRING = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION___PROVIDE_ANNOTATION__STRING;
+
+   /**
+    * The number of operations of the '<em>Primitive Variable Expression</em>' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_EXPRESSION_OPERATION_COUNT = org.storydriven.modeling.expressions.ExpressionsPackage.EXPRESSION_OPERATION_COUNT + 0;
+
+   /**
     * Returns the meta object for class '{@link org.storydriven.modeling.patterns.expressions.AttributeValueExpression <em>Attribute Value Expression</em>}'.
     * <!-- begin-user-doc
     * --> <!-- end-user-doc -->
@@ -812,6 +1065,27 @@ public interface ExpressionsPackage extends EPackage
     * @generated
     */
    EReference getObjectSetSizeExpression_Set ();
+
+   /**
+    * Returns the meta object for class '{@link org.storydriven.modeling.patterns.expressions.PrimitiveVariableExpression <em>Primitive Variable Expression</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for class '<em>Primitive Variable Expression</em>'.
+    * @see org.storydriven.modeling.patterns.expressions.PrimitiveVariableExpression
+    * @generated
+    */
+   EClass getPrimitiveVariableExpression ();
+
+   /**
+    * Returns the meta object for the reference '{@link org.storydriven.modeling.patterns.expressions.PrimitiveVariableExpression#getPrimitiveVariable <em>Primitive Variable</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the reference '<em>Primitive Variable</em>'.
+    * @see org.storydriven.modeling.patterns.expressions.PrimitiveVariableExpression#getPrimitiveVariable()
+    * @see #getPrimitiveVariableExpression()
+    * @generated
+    */
+   EReference getPrimitiveVariableExpression_PrimitiveVariable ();
 
    /**
     * Returns the factory that creates the instances of the model.
@@ -891,6 +1165,25 @@ public interface ExpressionsPackage extends EPackage
        * @generated
        */
       EReference OBJECT_SET_SIZE_EXPRESSION__SET = eINSTANCE.getObjectSetSizeExpression_Set();
+
+      /**
+       * The meta object literal for the '{@link org.storydriven.modeling.patterns.expressions.impl.PrimitiveVariableExpressionImpl <em>Primitive Variable Expression</em>}' class.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.storydriven.modeling.patterns.expressions.impl.PrimitiveVariableExpressionImpl
+       * @see org.storydriven.modeling.patterns.expressions.impl.ExpressionsPackageImpl#getPrimitiveVariableExpression()
+       * @generated
+       */
+      EClass PRIMITIVE_VARIABLE_EXPRESSION = eINSTANCE.getPrimitiveVariableExpression();
+
+      /**
+       * The meta object literal for the '<em><b>Primitive Variable</b></em>' reference feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE = eINSTANCE
+         .getPrimitiveVariableExpression_PrimitiveVariable();
 
    }
 

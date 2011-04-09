@@ -722,7 +722,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
     * <!-- end-user-doc -->
     * @generated
     */
-   public EReference getPrimitiveVariable_EDataType ()
+   public EReference getPrimitiveVariable_Classifier ()
    {
       return (EReference) primitiveVariableEClass.getEStructuralFeatures().get(0);
    }
@@ -928,6 +928,9 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 
       objectSetVariableEClass = createEClass(OBJECT_SET_VARIABLE);
 
+      primitiveVariableEClass = createEClass(PRIMITIVE_VARIABLE);
+      createEReference(primitiveVariableEClass, PRIMITIVE_VARIABLE__CLASSIFIER);
+
       pathEClass = createEClass(PATH);
       createEReference(pathEClass, PATH__PATH_EXPRESSION);
 
@@ -940,9 +943,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 
       matchingPatternEClass = createEClass(MATCHING_PATTERN);
       createEOperation(matchingPatternEClass, MATCHING_PATTERN___NO_MODIFIER_IN_MATCHING_PATTERN__DIAGNOSTICCHAIN_MAP);
-
-      primitiveVariableEClass = createEClass(PRIMITIVE_VARIABLE);
-      createEReference(primitiveVariableEClass, PRIMITIVE_VARIABLE__EDATA_TYPE);
 
       containerVariableEClass = createEClass(CONTAINER_VARIABLE);
 
@@ -989,8 +989,8 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       // Obtain other dependent packages
       org.storydriven.modeling.patterns.expressions.ExpressionsPackage theExpressionsPackage_3 = (org.storydriven.modeling.patterns.expressions.ExpressionsPackage) EPackage.Registry.INSTANCE
          .getEPackage(org.storydriven.modeling.patterns.expressions.ExpressionsPackage.eNS_URI);
-      SDMPackage theSDMPackage = (SDMPackage) EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
       EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+      SDMPackage theSDMPackage = (SDMPackage) EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
       org.storydriven.modeling.expressions.ExpressionsPackage theExpressionsPackage_1 = (org.storydriven.modeling.expressions.ExpressionsPackage) EPackage.Registry.INSTANCE
          .getEPackage(org.storydriven.modeling.expressions.ExpressionsPackage.eNS_URI);
       TemplatesPackage theTemplatesPackage = (TemplatesPackage) EPackage.Registry.INSTANCE
@@ -1004,17 +1004,17 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       // Set bounds for type parameters
 
       // Add supertypes to classes
-      objectVariableEClass.getESuperTypes().add(theSDMPackage.getVariable());
-      objectVariableEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
       objectVariableEClass.getESuperTypes().add(this.getAbstractVariable());
+      abstractVariableEClass.getESuperTypes().add(theSDMPackage.getVariable());
+      abstractVariableEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
       abstractLinkVariableEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
       linkConstraintEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
       objectSetVariableEClass.getESuperTypes().add(this.getObjectVariable());
+      primitiveVariableEClass.getESuperTypes().add(this.getAbstractVariable());
       pathEClass.getESuperTypes().add(this.getAbstractLinkVariable());
       linkVariableEClass.getESuperTypes().add(this.getAbstractLinkVariable());
       containmentRelationEClass.getESuperTypes().add(this.getAbstractLinkVariable());
       matchingPatternEClass.getESuperTypes().add(this.getStoryPattern());
-      primitiveVariableEClass.getESuperTypes().add(this.getAbstractVariable());
       containerVariableEClass.getESuperTypes().add(this.getObjectVariable());
       storyPatternEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
 
@@ -1143,6 +1143,12 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       initEClass(objectSetVariableEClass, ObjectSetVariable.class, "ObjectSetVariable", !IS_ABSTRACT, !IS_INTERFACE,
          IS_GENERATED_INSTANCE_CLASS);
 
+      initEClass(primitiveVariableEClass, PrimitiveVariable.class, "PrimitiveVariable", !IS_ABSTRACT, !IS_INTERFACE,
+         IS_GENERATED_INSTANCE_CLASS);
+      initEReference(getPrimitiveVariable_Classifier(), theEcorePackage.getEDataType(), null, "classifier", null, 1, 1,
+         PrimitiveVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
       initEClass(pathEClass, Path.class, "Path", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
       initEReference(getPath_PathExpression(), theExpressionsPackage_1.getExpression(), null, "pathExpression", null,
          1, 1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
@@ -1175,12 +1181,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       g2 = createEGenericType(ecorePackage.getEJavaObject());
       g1.getETypeArguments().add(g2);
       addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-      initEClass(primitiveVariableEClass, PrimitiveVariable.class, "PrimitiveVariable", !IS_ABSTRACT, !IS_INTERFACE,
-         IS_GENERATED_INSTANCE_CLASS);
-      initEReference(getPrimitiveVariable_EDataType(), theEcorePackage.getEDataType(), null, "eDataType", null, 1, 1,
-         PrimitiveVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
       initEClass(containerVariableEClass, ContainerVariable.class, "ContainerVariable", !IS_ABSTRACT, !IS_INTERFACE,
          IS_GENERATED_INSTANCE_CLASS);
@@ -1253,7 +1253,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       String source = "subsets";
       addAnnotation(getObjectVariable_Classifier(), source, new String[] {},
          new URI[] {URI.createURI(SDMPackage.eNS_URI).appendFragment("//TypedElement/type")});
-      addAnnotation(getPrimitiveVariable_EDataType(), source, new String[] {},
+      addAnnotation(getPrimitiveVariable_Classifier(), source, new String[] {},
          new URI[] {URI.createURI(SDMPackage.eNS_URI).appendFragment("//TypedElement/type")});
    }
 
@@ -1277,6 +1277,8 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
          new String[] {
                "documentation",
                "Represents a set of objects.\r\nThe context for contained Constraints and AttributeAssignments is a single object (e.g., \"name = \'abc\'\")."});
+      addAnnotation(primitiveVariableEClass, source, new String[] {"documentation",
+            "Represents a variable that holds a value of a primitive type, e.g. integer, boolean, String."});
       addAnnotation(
          containmentRelationEClass,
          source,

@@ -88,6 +88,8 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
             return createAttributeAssignment();
          case PatternsPackage.OBJECT_SET_VARIABLE:
             return createObjectSetVariable();
+         case PatternsPackage.PRIMITIVE_VARIABLE:
+            return createPrimitiveVariable();
          case PatternsPackage.PATH:
             return createPath();
          case PatternsPackage.LINK_VARIABLE:
@@ -96,8 +98,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
             return createContainmentRelation();
          case PatternsPackage.MATCHING_PATTERN:
             return createMatchingPattern();
-         case PatternsPackage.PRIMITIVE_VARIABLE:
-            return createPrimitiveVariable();
          case PatternsPackage.CONTAINER_VARIABLE:
             return createContainerVariable();
          case PatternsPackage.STORY_PATTERN:

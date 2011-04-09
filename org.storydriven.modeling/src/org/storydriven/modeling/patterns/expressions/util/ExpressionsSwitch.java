@@ -137,6 +137,22 @@ public class ExpressionsSwitch<T>
                result = defaultCase(theEObject);
             return result;
          }
+         case ExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION:
+         {
+            PrimitiveVariableExpression primitiveVariableExpression = (PrimitiveVariableExpression) theEObject;
+            T result = casePrimitiveVariableExpression(primitiveVariableExpression);
+            if (result == null)
+               result = caseExpression(primitiveVariableExpression);
+            if (result == null)
+               result = caseTypedElement(primitiveVariableExpression);
+            if (result == null)
+               result = caseCommentableElement(primitiveVariableExpression);
+            if (result == null)
+               result = caseExtendableElement(primitiveVariableExpression);
+            if (result == null)
+               result = defaultCase(theEObject);
+            return result;
+         }
          default:
             return defaultCase(theEObject);
       }
@@ -180,6 +196,22 @@ public class ExpressionsSwitch<T>
     * @generated
     */
    public T caseObjectSetSizeExpression (ObjectSetSizeExpression object)
+   {
+      return null;
+   }
+
+   /**
+    * Returns the result of interpreting the object as an instance of '<em>Primitive Variable Expression</em>'.
+    * <!-- begin-user-doc -->
+    * This implementation returns null;
+    * returning a non-null result will terminate the switch.
+    * <!-- end-user-doc -->
+    * @param object the target of the switch.
+    * @return the result of interpreting the object as an instance of '<em>Primitive Variable Expression</em>'.
+    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+    * @generated
+    */
+   public T casePrimitiveVariableExpression (PrimitiveVariableExpression object)
    {
       return null;
    }

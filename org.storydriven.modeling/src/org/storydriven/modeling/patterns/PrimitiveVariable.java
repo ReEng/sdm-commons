@@ -13,10 +13,14 @@ import org.eclipse.emf.ecore.EDataType;
  * A representation of the model object '<em><b>Primitive Variable</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Represents a variable that holds a value of a primitive type, e.g. integer, boolean, String.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.storydriven.modeling.patterns.PrimitiveVariable#getEDataType <em>EData Type</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.PrimitiveVariable#getClassifier <em>Classifier</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,7 +31,7 @@ import org.eclipse.emf.ecore.EDataType;
 public interface PrimitiveVariable extends AbstractVariable
 {
    /**
-    * Returns the value of the '<em><b>EData Type</b></em>' reference.
+    * Returns the value of the '<em><b>Classifier</b></em>' reference.
     * <p>
     * This feature subsets the following features:
     * <ul>
@@ -36,26 +40,26 @@ public interface PrimitiveVariable extends AbstractVariable
     * </p>
     * <!-- begin-user-doc -->
     * <p>
-    * If the meaning of the '<em>EData Type</em>' reference isn't clear,
+    * If the meaning of the '<em>Classifier</em>' reference isn't clear,
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @return the value of the '<em>EData Type</em>' reference.
-    * @see #setEDataType(EDataType)
-    * @see org.storydriven.modeling.patterns.PatternsPackage#getPrimitiveVariable_EDataType()
+    * @return the value of the '<em>Classifier</em>' reference.
+    * @see #setClassifier(EDataType)
+    * @see org.storydriven.modeling.patterns.PatternsPackage#getPrimitiveVariable_Classifier()
     * @model required="true" ordered="false"
     * @generated
     */
-   EDataType getEDataType ();
+   EDataType getClassifier ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.patterns.PrimitiveVariable#getEDataType <em>EData Type</em>}' reference.
+    * Sets the value of the '{@link org.storydriven.modeling.patterns.PrimitiveVariable#getClassifier <em>Classifier</em>}' reference.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @param value the new value of the '<em>EData Type</em>' reference.
-    * @see #getEDataType()
+    * @param value the new value of the '<em>Classifier</em>' reference.
+    * @see #getClassifier()
     * @generated
     */
-   void setEDataType (EDataType value);
+   void setClassifier (EDataType value);
 
 } // PrimitiveVariable

@@ -47,6 +47,15 @@ public interface ExpressionsFactory extends EFactory
    ObjectSetSizeExpression createObjectSetSizeExpression ();
 
    /**
+    * Returns a new object of class '<em>Primitive Variable Expression</em>'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return a new object of class '<em>Primitive Variable Expression</em>'.
+    * @generated
+    */
+   PrimitiveVariableExpression createPrimitiveVariableExpression ();
+
+   /**
     * Returns the package supported by this factory.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @return the package supported by this factory.

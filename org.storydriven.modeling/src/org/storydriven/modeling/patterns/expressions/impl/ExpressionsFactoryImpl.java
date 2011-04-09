@@ -72,6 +72,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
             return createObjectVariableExpression();
          case ExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION:
             return createObjectSetSizeExpression();
+         case ExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION:
+            return createPrimitiveVariableExpression();
          default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
       }
@@ -105,6 +107,17 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    {
       ObjectSetSizeExpressionImpl objectSetSizeExpression = new ObjectSetSizeExpressionImpl();
       return objectSetSizeExpression;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public PrimitiveVariableExpression createPrimitiveVariableExpression ()
+   {
+      PrimitiveVariableExpressionImpl primitiveVariableExpression = new PrimitiveVariableExpressionImpl();
+      return primitiveVariableExpression;
    }
 
    /**

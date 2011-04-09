@@ -103,11 +103,11 @@ public class PatternsSwitch<T>
             ObjectVariable objectVariable = (ObjectVariable) theEObject;
             T result = caseObjectVariable(objectVariable);
             if (result == null)
+               result = caseAbstractVariable(objectVariable);
+            if (result == null)
                result = caseVariable(objectVariable);
             if (result == null)
                result = caseNamedElement(objectVariable);
-            if (result == null)
-               result = caseAbstractVariable(objectVariable);
             if (result == null)
                result = caseTypedElement(objectVariable);
             if (result == null)
@@ -120,6 +120,14 @@ public class PatternsSwitch<T>
          {
             AbstractVariable abstractVariable = (AbstractVariable) theEObject;
             T result = caseAbstractVariable(abstractVariable);
+            if (result == null)
+               result = caseVariable(abstractVariable);
+            if (result == null)
+               result = caseNamedElement(abstractVariable);
+            if (result == null)
+               result = caseTypedElement(abstractVariable);
+            if (result == null)
+               result = caseExtendableElement(abstractVariable);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -169,15 +177,33 @@ public class PatternsSwitch<T>
             if (result == null)
                result = caseObjectVariable(objectSetVariable);
             if (result == null)
+               result = caseAbstractVariable(objectSetVariable);
+            if (result == null)
                result = caseVariable(objectSetVariable);
             if (result == null)
                result = caseNamedElement(objectSetVariable);
             if (result == null)
-               result = caseAbstractVariable(objectSetVariable);
-            if (result == null)
                result = caseTypedElement(objectSetVariable);
             if (result == null)
                result = caseExtendableElement(objectSetVariable);
+            if (result == null)
+               result = defaultCase(theEObject);
+            return result;
+         }
+         case PatternsPackage.PRIMITIVE_VARIABLE:
+         {
+            PrimitiveVariable primitiveVariable = (PrimitiveVariable) theEObject;
+            T result = casePrimitiveVariable(primitiveVariable);
+            if (result == null)
+               result = caseAbstractVariable(primitiveVariable);
+            if (result == null)
+               result = caseVariable(primitiveVariable);
+            if (result == null)
+               result = caseNamedElement(primitiveVariable);
+            if (result == null)
+               result = caseTypedElement(primitiveVariable);
+            if (result == null)
+               result = caseExtendableElement(primitiveVariable);
             if (result == null)
                result = defaultCase(theEObject);
             return result;
@@ -238,16 +264,6 @@ public class PatternsSwitch<T>
                result = defaultCase(theEObject);
             return result;
          }
-         case PatternsPackage.PRIMITIVE_VARIABLE:
-         {
-            PrimitiveVariable primitiveVariable = (PrimitiveVariable) theEObject;
-            T result = casePrimitiveVariable(primitiveVariable);
-            if (result == null)
-               result = caseAbstractVariable(primitiveVariable);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
          case PatternsPackage.CONTAINER_VARIABLE:
          {
             ContainerVariable containerVariable = (ContainerVariable) theEObject;
@@ -255,11 +271,11 @@ public class PatternsSwitch<T>
             if (result == null)
                result = caseObjectVariable(containerVariable);
             if (result == null)
+               result = caseAbstractVariable(containerVariable);
+            if (result == null)
                result = caseVariable(containerVariable);
             if (result == null)
                result = caseNamedElement(containerVariable);
-            if (result == null)
-               result = caseAbstractVariable(containerVariable);
             if (result == null)
                result = caseTypedElement(containerVariable);
             if (result == null)

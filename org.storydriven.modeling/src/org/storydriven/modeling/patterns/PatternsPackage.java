@@ -77,312 +77,6 @@ public interface PatternsPackage extends EPackage
    int OBJECT_VARIABLE = 0;
 
    /**
-    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__ANNOTATION = SDMPackage.VARIABLE__ANNOTATION;
-
-   /**
-    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__EXTENSION = SDMPackage.VARIABLE__EXTENSION;
-
-   /**
-    * The feature id for the '<em><b>Type</b></em>' reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__TYPE = SDMPackage.VARIABLE__TYPE;
-
-   /**
-    * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__GENERIC_TYPE = SDMPackage.VARIABLE__GENERIC_TYPE;
-
-   /**
-    * The feature id for the '<em><b>Variable Name</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__VARIABLE_NAME = SDMPackage.VARIABLE__VARIABLE_NAME;
-
-   /**
-    * The feature id for the '<em><b>Name</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__NAME = SDMPackage.VARIABLE_FEATURE_COUNT + 0;
-
-   /**
-    * The feature id for the '<em><b>Pattern</b></em>' container reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__PATTERN = SDMPackage.VARIABLE_FEATURE_COUNT + 1;
-
-   /**
-    * The feature id for the '<em><b>Binding State</b></em>' attribute.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__BINDING_STATE = SDMPackage.VARIABLE_FEATURE_COUNT + 2;
-
-   /**
-    * The feature id for the '<em><b>Binding Expression</b></em>' containment reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__BINDING_EXPRESSION = SDMPackage.VARIABLE_FEATURE_COUNT + 3;
-
-   /**
-    * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__CONSTRAINT = SDMPackage.VARIABLE_FEATURE_COUNT + 4;
-
-   /**
-    * The feature id for the '<em><b>Incoming Link</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__INCOMING_LINK = SDMPackage.VARIABLE_FEATURE_COUNT + 5;
-
-   /**
-    * The feature id for the '<em><b>Outgoing Link</b></em>' reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__OUTGOING_LINK = SDMPackage.VARIABLE_FEATURE_COUNT + 6;
-
-   /**
-    * The feature id for the '<em><b>Link Order Constraint</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT = SDMPackage.VARIABLE_FEATURE_COUNT + 7;
-
-   /**
-    * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__BINDING_SEMANTICS = SDMPackage.VARIABLE_FEATURE_COUNT + 8;
-
-   /**
-    * The feature id for the '<em><b>Binding Operator</b></em>' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__BINDING_OPERATOR = SDMPackage.VARIABLE_FEATURE_COUNT + 9;
-
-   /**
-    * The feature id for the '<em><b>Attribute Assignment</b></em>' containment reference list.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT = SDMPackage.VARIABLE_FEATURE_COUNT + 10;
-
-   /**
-    * The feature id for the '<em><b>Classifier</b></em>' reference.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE__CLASSIFIER = SDMPackage.VARIABLE_FEATURE_COUNT + 11;
-
-   /**
-    * The number of structural features of the '<em>Object Variable</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE_FEATURE_COUNT = SDMPackage.VARIABLE_FEATURE_COUNT + 12;
-
-   /**
-    * The operation id for the '<em>EClass</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___ECLASS = SDMPackage.VARIABLE___ECLASS;
-
-   /**
-    * The operation id for the '<em>EIs Proxy</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___EIS_PROXY = SDMPackage.VARIABLE___EIS_PROXY;
-
-   /**
-    * The operation id for the '<em>EResource</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___ERESOURCE = SDMPackage.VARIABLE___ERESOURCE;
-
-   /**
-    * The operation id for the '<em>EContainer</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___ECONTAINER = SDMPackage.VARIABLE___ECONTAINER;
-
-   /**
-    * The operation id for the '<em>EContaining Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___ECONTAINING_FEATURE = SDMPackage.VARIABLE___ECONTAINING_FEATURE;
-
-   /**
-    * The operation id for the '<em>EContainment Feature</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___ECONTAINMENT_FEATURE = SDMPackage.VARIABLE___ECONTAINMENT_FEATURE;
-
-   /**
-    * The operation id for the '<em>EContents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___ECONTENTS = SDMPackage.VARIABLE___ECONTENTS;
-
-   /**
-    * The operation id for the '<em>EAll Contents</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___EALL_CONTENTS = SDMPackage.VARIABLE___EALL_CONTENTS;
-
-   /**
-    * The operation id for the '<em>ECross References</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___ECROSS_REFERENCES = SDMPackage.VARIABLE___ECROSS_REFERENCES;
-
-   /**
-    * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___EGET__ESTRUCTURALFEATURE = SDMPackage.VARIABLE___EGET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EGet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDMPackage.VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-   /**
-    * The operation id for the '<em>ESet</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = SDMPackage.VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-   /**
-    * The operation id for the '<em>EIs Set</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = SDMPackage.VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EUnset</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___EUNSET__ESTRUCTURALFEATURE = SDMPackage.VARIABLE___EUNSET__ESTRUCTURALFEATURE;
-
-   /**
-    * The operation id for the '<em>EInvoke</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___EINVOKE__EOPERATION_ELIST = SDMPackage.VARIABLE___EINVOKE__EOPERATION_ELIST;
-
-   /**
-    * The operation id for the '<em>Get Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___GET_EXTENSION__ECLASS = SDMPackage.VARIABLE___GET_EXTENSION__ECLASS;
-
-   /**
-    * The operation id for the '<em>Provide Extension</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___PROVIDE_EXTENSION__ECLASS = SDMPackage.VARIABLE___PROVIDE_EXTENSION__ECLASS;
-
-   /**
-    * The operation id for the '<em>Get Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___GET_ANNOTATION__STRING = SDMPackage.VARIABLE___GET_ANNOTATION__STRING;
-
-   /**
-    * The operation id for the '<em>Provide Annotation</em>' operation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE___PROVIDE_ANNOTATION__STRING = SDMPackage.VARIABLE___PROVIDE_ANNOTATION__STRING;
-
-   /**
-    * The number of operations of the '<em>Object Variable</em>' class.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OBJECT_VARIABLE_OPERATION_COUNT = SDMPackage.VARIABLE_OPERATION_COUNT + 0;
-
-   /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.AbstractVariableImpl <em>Abstract Variable</em>}' class.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -393,13 +87,67 @@ public interface PatternsPackage extends EPackage
    int ABSTRACT_VARIABLE = 1;
 
    /**
+    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE__ANNOTATION = SDMPackage.VARIABLE__ANNOTATION;
+
+   /**
+    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE__EXTENSION = SDMPackage.VARIABLE__EXTENSION;
+
+   /**
+    * The feature id for the '<em><b>Type</b></em>' reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE__TYPE = SDMPackage.VARIABLE__TYPE;
+
+   /**
+    * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE__GENERIC_TYPE = SDMPackage.VARIABLE__GENERIC_TYPE;
+
+   /**
+    * The feature id for the '<em><b>Variable Name</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE__VARIABLE_NAME = SDMPackage.VARIABLE__VARIABLE_NAME;
+
+   /**
+    * The feature id for the '<em><b>Name</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE__NAME = SDMPackage.VARIABLE_FEATURE_COUNT + 0;
+
+   /**
     * The feature id for the '<em><b>Pattern</b></em>' container reference.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int ABSTRACT_VARIABLE__PATTERN = 0;
+   int ABSTRACT_VARIABLE__PATTERN = SDMPackage.VARIABLE_FEATURE_COUNT + 1;
 
    /**
     * The feature id for the '<em><b>Binding State</b></em>' attribute.
@@ -408,7 +156,7 @@ public interface PatternsPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ABSTRACT_VARIABLE__BINDING_STATE = 1;
+   int ABSTRACT_VARIABLE__BINDING_STATE = SDMPackage.VARIABLE_FEATURE_COUNT + 2;
 
    /**
     * The feature id for the '<em><b>Binding Expression</b></em>' containment reference.
@@ -417,7 +165,7 @@ public interface PatternsPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ABSTRACT_VARIABLE__BINDING_EXPRESSION = 2;
+   int ABSTRACT_VARIABLE__BINDING_EXPRESSION = SDMPackage.VARIABLE_FEATURE_COUNT + 3;
 
    /**
     * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -426,7 +174,7 @@ public interface PatternsPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ABSTRACT_VARIABLE__CONSTRAINT = 3;
+   int ABSTRACT_VARIABLE__CONSTRAINT = SDMPackage.VARIABLE_FEATURE_COUNT + 4;
 
    /**
     * The feature id for the '<em><b>Incoming Link</b></em>' reference list.
@@ -435,7 +183,7 @@ public interface PatternsPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ABSTRACT_VARIABLE__INCOMING_LINK = 4;
+   int ABSTRACT_VARIABLE__INCOMING_LINK = SDMPackage.VARIABLE_FEATURE_COUNT + 5;
 
    /**
     * The number of structural features of the '<em>Abstract Variable</em>' class.
@@ -444,7 +192,178 @@ public interface PatternsPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ABSTRACT_VARIABLE_FEATURE_COUNT = 5;
+   int ABSTRACT_VARIABLE_FEATURE_COUNT = SDMPackage.VARIABLE_FEATURE_COUNT + 6;
+
+   /**
+    * The operation id for the '<em>EClass</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___ECLASS = SDMPackage.VARIABLE___ECLASS;
+
+   /**
+    * The operation id for the '<em>EIs Proxy</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___EIS_PROXY = SDMPackage.VARIABLE___EIS_PROXY;
+
+   /**
+    * The operation id for the '<em>EResource</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___ERESOURCE = SDMPackage.VARIABLE___ERESOURCE;
+
+   /**
+    * The operation id for the '<em>EContainer</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___ECONTAINER = SDMPackage.VARIABLE___ECONTAINER;
+
+   /**
+    * The operation id for the '<em>EContaining Feature</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___ECONTAINING_FEATURE = SDMPackage.VARIABLE___ECONTAINING_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContainment Feature</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___ECONTAINMENT_FEATURE = SDMPackage.VARIABLE___ECONTAINMENT_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContents</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___ECONTENTS = SDMPackage.VARIABLE___ECONTENTS;
+
+   /**
+    * The operation id for the '<em>EAll Contents</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___EALL_CONTENTS = SDMPackage.VARIABLE___EALL_CONTENTS;
+
+   /**
+    * The operation id for the '<em>ECross References</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___ECROSS_REFERENCES = SDMPackage.VARIABLE___ECROSS_REFERENCES;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE = SDMPackage.VARIABLE___EGET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDMPackage.VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+   /**
+    * The operation id for the '<em>ESet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = SDMPackage.VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+   /**
+    * The operation id for the '<em>EIs Set</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = SDMPackage.VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EUnset</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___EUNSET__ESTRUCTURALFEATURE = SDMPackage.VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EInvoke</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___EINVOKE__EOPERATION_ELIST = SDMPackage.VARIABLE___EINVOKE__EOPERATION_ELIST;
+
+   /**
+    * The operation id for the '<em>Get Extension</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___GET_EXTENSION__ECLASS = SDMPackage.VARIABLE___GET_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Provide Extension</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___PROVIDE_EXTENSION__ECLASS = SDMPackage.VARIABLE___PROVIDE_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Get Annotation</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___GET_ANNOTATION__STRING = SDMPackage.VARIABLE___GET_ANNOTATION__STRING;
+
+   /**
+    * The operation id for the '<em>Provide Annotation</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ABSTRACT_VARIABLE___PROVIDE_ANNOTATION__STRING = SDMPackage.VARIABLE___PROVIDE_ANNOTATION__STRING;
 
    /**
     * The number of operations of the '<em>Abstract Variable</em>' class.
@@ -453,7 +372,313 @@ public interface PatternsPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ABSTRACT_VARIABLE_OPERATION_COUNT = 0;
+   int ABSTRACT_VARIABLE_OPERATION_COUNT = SDMPackage.VARIABLE_OPERATION_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__ANNOTATION = ABSTRACT_VARIABLE__ANNOTATION;
+
+   /**
+    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__EXTENSION = ABSTRACT_VARIABLE__EXTENSION;
+
+   /**
+    * The feature id for the '<em><b>Type</b></em>' reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__TYPE = ABSTRACT_VARIABLE__TYPE;
+
+   /**
+    * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__GENERIC_TYPE = ABSTRACT_VARIABLE__GENERIC_TYPE;
+
+   /**
+    * The feature id for the '<em><b>Variable Name</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__VARIABLE_NAME = ABSTRACT_VARIABLE__VARIABLE_NAME;
+
+   /**
+    * The feature id for the '<em><b>Name</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__NAME = ABSTRACT_VARIABLE__NAME;
+
+   /**
+    * The feature id for the '<em><b>Pattern</b></em>' container reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__PATTERN = ABSTRACT_VARIABLE__PATTERN;
+
+   /**
+    * The feature id for the '<em><b>Binding State</b></em>' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__BINDING_STATE = ABSTRACT_VARIABLE__BINDING_STATE;
+
+   /**
+    * The feature id for the '<em><b>Binding Expression</b></em>' containment reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__BINDING_EXPRESSION = ABSTRACT_VARIABLE__BINDING_EXPRESSION;
+
+   /**
+    * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__CONSTRAINT = ABSTRACT_VARIABLE__CONSTRAINT;
+
+   /**
+    * The feature id for the '<em><b>Incoming Link</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__INCOMING_LINK = ABSTRACT_VARIABLE__INCOMING_LINK;
+
+   /**
+    * The feature id for the '<em><b>Outgoing Link</b></em>' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__OUTGOING_LINK = ABSTRACT_VARIABLE_FEATURE_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>Link Order Constraint</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT = ABSTRACT_VARIABLE_FEATURE_COUNT + 1;
+
+   /**
+    * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__BINDING_SEMANTICS = ABSTRACT_VARIABLE_FEATURE_COUNT + 2;
+
+   /**
+    * The feature id for the '<em><b>Binding Operator</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__BINDING_OPERATOR = ABSTRACT_VARIABLE_FEATURE_COUNT + 3;
+
+   /**
+    * The feature id for the '<em><b>Attribute Assignment</b></em>' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT = ABSTRACT_VARIABLE_FEATURE_COUNT + 4;
+
+   /**
+    * The feature id for the '<em><b>Classifier</b></em>' reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE__CLASSIFIER = ABSTRACT_VARIABLE_FEATURE_COUNT + 5;
+
+   /**
+    * The number of structural features of the '<em>Object Variable</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE_FEATURE_COUNT = ABSTRACT_VARIABLE_FEATURE_COUNT + 6;
+
+   /**
+    * The operation id for the '<em>EClass</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___ECLASS = ABSTRACT_VARIABLE___ECLASS;
+
+   /**
+    * The operation id for the '<em>EIs Proxy</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___EIS_PROXY = ABSTRACT_VARIABLE___EIS_PROXY;
+
+   /**
+    * The operation id for the '<em>EResource</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___ERESOURCE = ABSTRACT_VARIABLE___ERESOURCE;
+
+   /**
+    * The operation id for the '<em>EContainer</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___ECONTAINER = ABSTRACT_VARIABLE___ECONTAINER;
+
+   /**
+    * The operation id for the '<em>EContaining Feature</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___ECONTAINING_FEATURE = ABSTRACT_VARIABLE___ECONTAINING_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContainment Feature</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___ECONTAINMENT_FEATURE = ABSTRACT_VARIABLE___ECONTAINMENT_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContents</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___ECONTENTS = ABSTRACT_VARIABLE___ECONTENTS;
+
+   /**
+    * The operation id for the '<em>EAll Contents</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___EALL_CONTENTS = ABSTRACT_VARIABLE___EALL_CONTENTS;
+
+   /**
+    * The operation id for the '<em>ECross References</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___ECROSS_REFERENCES = ABSTRACT_VARIABLE___ECROSS_REFERENCES;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___EGET__ESTRUCTURALFEATURE = ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+   /**
+    * The operation id for the '<em>ESet</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = ABSTRACT_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+   /**
+    * The operation id for the '<em>EIs Set</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = ABSTRACT_VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EUnset</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___EUNSET__ESTRUCTURALFEATURE = ABSTRACT_VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EInvoke</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___EINVOKE__EOPERATION_ELIST = ABSTRACT_VARIABLE___EINVOKE__EOPERATION_ELIST;
+
+   /**
+    * The operation id for the '<em>Get Extension</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___GET_EXTENSION__ECLASS = ABSTRACT_VARIABLE___GET_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Provide Extension</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___PROVIDE_EXTENSION__ECLASS = ABSTRACT_VARIABLE___PROVIDE_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Get Annotation</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___GET_ANNOTATION__STRING = ABSTRACT_VARIABLE___GET_ANNOTATION__STRING;
+
+   /**
+    * The operation id for the '<em>Provide Annotation</em>' operation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE___PROVIDE_ANNOTATION__STRING = ABSTRACT_VARIABLE___PROVIDE_ANNOTATION__STRING;
+
+   /**
+    * The number of operations of the '<em>Object Variable</em>' class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OBJECT_VARIABLE_OPERATION_COUNT = ABSTRACT_VARIABLE_OPERATION_COUNT + 0;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.AbstractLinkVariableImpl <em>Abstract Link Variable</em>}' class.
@@ -1092,7 +1317,7 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getPath()
     * @generated
     */
-   int PATH = 7;
+   int PATH = 8;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.LinkVariableImpl <em>Link Variable</em>}' class.
@@ -1101,7 +1326,7 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getLinkVariable()
     * @generated
     */
-   int LINK_VARIABLE = 8;
+   int LINK_VARIABLE = 9;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.ContainmentRelationImpl <em>Containment Relation</em>}' class.
@@ -1111,7 +1336,7 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getContainmentRelation()
     * @generated
     */
-   int CONTAINMENT_RELATION = 9;
+   int CONTAINMENT_RELATION = 10;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.StoryPatternImpl <em>Story Pattern</em>}' class.
@@ -1129,7 +1354,7 @@ public interface PatternsPackage extends EPackage
     * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getMatchingPattern()
     * @generated
     */
-   int MATCHING_PATTERN = 10;
+   int MATCHING_PATTERN = 11;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.ObjectSetVariableImpl <em>Object Set Variable</em>}' class.
@@ -1446,6 +1671,313 @@ public interface PatternsPackage extends EPackage
     * @ordered
     */
    int OBJECT_SET_VARIABLE_OPERATION_COUNT = OBJECT_VARIABLE_OPERATION_COUNT + 0;
+
+   /**
+    * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.PrimitiveVariableImpl <em>Primitive Variable</em>}' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.storydriven.modeling.patterns.impl.PrimitiveVariableImpl
+    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getPrimitiveVariable()
+    * @generated
+    */
+   int PRIMITIVE_VARIABLE = 7;
+
+   /**
+    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__ANNOTATION = ABSTRACT_VARIABLE__ANNOTATION;
+
+   /**
+    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__EXTENSION = ABSTRACT_VARIABLE__EXTENSION;
+
+   /**
+    * The feature id for the '<em><b>Type</b></em>' reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__TYPE = ABSTRACT_VARIABLE__TYPE;
+
+   /**
+    * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__GENERIC_TYPE = ABSTRACT_VARIABLE__GENERIC_TYPE;
+
+   /**
+    * The feature id for the '<em><b>Variable Name</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__VARIABLE_NAME = ABSTRACT_VARIABLE__VARIABLE_NAME;
+
+   /**
+    * The feature id for the '<em><b>Name</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__NAME = ABSTRACT_VARIABLE__NAME;
+
+   /**
+    * The feature id for the '<em><b>Pattern</b></em>' container reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__PATTERN = ABSTRACT_VARIABLE__PATTERN;
+
+   /**
+    * The feature id for the '<em><b>Binding State</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__BINDING_STATE = ABSTRACT_VARIABLE__BINDING_STATE;
+
+   /**
+    * The feature id for the '<em><b>Binding Expression</b></em>' containment reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__BINDING_EXPRESSION = ABSTRACT_VARIABLE__BINDING_EXPRESSION;
+
+   /**
+    * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__CONSTRAINT = ABSTRACT_VARIABLE__CONSTRAINT;
+
+   /**
+    * The feature id for the '<em><b>Incoming Link</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__INCOMING_LINK = ABSTRACT_VARIABLE__INCOMING_LINK;
+
+   /**
+    * The feature id for the '<em><b>Classifier</b></em>' reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE__CLASSIFIER = ABSTRACT_VARIABLE_FEATURE_COUNT + 0;
+
+   /**
+    * The number of structural features of the '<em>Primitive Variable</em>' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_FEATURE_COUNT = ABSTRACT_VARIABLE_FEATURE_COUNT + 1;
+
+   /**
+    * The operation id for the '<em>EClass</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___ECLASS = ABSTRACT_VARIABLE___ECLASS;
+
+   /**
+    * The operation id for the '<em>EIs Proxy</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___EIS_PROXY = ABSTRACT_VARIABLE___EIS_PROXY;
+
+   /**
+    * The operation id for the '<em>EResource</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___ERESOURCE = ABSTRACT_VARIABLE___ERESOURCE;
+
+   /**
+    * The operation id for the '<em>EContainer</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___ECONTAINER = ABSTRACT_VARIABLE___ECONTAINER;
+
+   /**
+    * The operation id for the '<em>EContaining Feature</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___ECONTAINING_FEATURE = ABSTRACT_VARIABLE___ECONTAINING_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContainment Feature</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___ECONTAINMENT_FEATURE = ABSTRACT_VARIABLE___ECONTAINMENT_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContents</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___ECONTENTS = ABSTRACT_VARIABLE___ECONTENTS;
+
+   /**
+    * The operation id for the '<em>EAll Contents</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___EALL_CONTENTS = ABSTRACT_VARIABLE___EALL_CONTENTS;
+
+   /**
+    * The operation id for the '<em>ECross References</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___ECROSS_REFERENCES = ABSTRACT_VARIABLE___ECROSS_REFERENCES;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___EGET__ESTRUCTURALFEATURE = ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+   /**
+    * The operation id for the '<em>ESet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = ABSTRACT_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+   /**
+    * The operation id for the '<em>EIs Set</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = ABSTRACT_VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EUnset</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___EUNSET__ESTRUCTURALFEATURE = ABSTRACT_VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EInvoke</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___EINVOKE__EOPERATION_ELIST = ABSTRACT_VARIABLE___EINVOKE__EOPERATION_ELIST;
+
+   /**
+    * The operation id for the '<em>Get Extension</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___GET_EXTENSION__ECLASS = ABSTRACT_VARIABLE___GET_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Provide Extension</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___PROVIDE_EXTENSION__ECLASS = ABSTRACT_VARIABLE___PROVIDE_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Get Annotation</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___GET_ANNOTATION__STRING = ABSTRACT_VARIABLE___GET_ANNOTATION__STRING;
+
+   /**
+    * The operation id for the '<em>Provide Annotation</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE___PROVIDE_ANNOTATION__STRING = ABSTRACT_VARIABLE___PROVIDE_ANNOTATION__STRING;
+
+   /**
+    * The number of operations of the '<em>Primitive Variable</em>' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int PRIMITIVE_VARIABLE_OPERATION_COUNT = ABSTRACT_VARIABLE_OPERATION_COUNT + 0;
 
    /**
     * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2768,88 +3300,6 @@ public interface PatternsPackage extends EPackage
    int MATCHING_PATTERN_OPERATION_COUNT = STORY_PATTERN_OPERATION_COUNT + 1;
 
    /**
-    * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.PrimitiveVariableImpl <em>Primitive Variable</em>}' class.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see org.storydriven.modeling.patterns.impl.PrimitiveVariableImpl
-    * @see org.storydriven.modeling.patterns.impl.PatternsPackageImpl#getPrimitiveVariable()
-    * @generated
-    */
-   int PRIMITIVE_VARIABLE = 11;
-
-   /**
-    * The feature id for the '<em><b>Pattern</b></em>' container reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int PRIMITIVE_VARIABLE__PATTERN = ABSTRACT_VARIABLE__PATTERN;
-
-   /**
-    * The feature id for the '<em><b>Binding State</b></em>' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int PRIMITIVE_VARIABLE__BINDING_STATE = ABSTRACT_VARIABLE__BINDING_STATE;
-
-   /**
-    * The feature id for the '<em><b>Binding Expression</b></em>' containment reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int PRIMITIVE_VARIABLE__BINDING_EXPRESSION = ABSTRACT_VARIABLE__BINDING_EXPRESSION;
-
-   /**
-    * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int PRIMITIVE_VARIABLE__CONSTRAINT = ABSTRACT_VARIABLE__CONSTRAINT;
-
-   /**
-    * The feature id for the '<em><b>Incoming Link</b></em>' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int PRIMITIVE_VARIABLE__INCOMING_LINK = ABSTRACT_VARIABLE__INCOMING_LINK;
-
-   /**
-    * The feature id for the '<em><b>EData Type</b></em>' reference.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int PRIMITIVE_VARIABLE__EDATA_TYPE = ABSTRACT_VARIABLE_FEATURE_COUNT + 0;
-
-   /**
-    * The number of structural features of the '<em>Primitive Variable</em>' class.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int PRIMITIVE_VARIABLE_FEATURE_COUNT = ABSTRACT_VARIABLE_FEATURE_COUNT + 1;
-
-   /**
-    * The number of operations of the '<em>Primitive Variable</em>' class.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int PRIMITIVE_VARIABLE_OPERATION_COUNT = ABSTRACT_VARIABLE_OPERATION_COUNT + 0;
-
-   /**
     * The meta object id for the '{@link org.storydriven.modeling.patterns.impl.ContainerVariableImpl <em>Container Variable</em>}' class.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -3735,15 +4185,15 @@ public interface PatternsPackage extends EPackage
    EClass getPrimitiveVariable ();
 
    /**
-    * Returns the meta object for the reference '{@link org.storydriven.modeling.patterns.PrimitiveVariable#getEDataType <em>EData Type</em>}'.
+    * Returns the meta object for the reference '{@link org.storydriven.modeling.patterns.PrimitiveVariable#getClassifier <em>Classifier</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return the meta object for the reference '<em>EData Type</em>'.
-    * @see org.storydriven.modeling.patterns.PrimitiveVariable#getEDataType()
+    * @return the meta object for the reference '<em>Classifier</em>'.
+    * @see org.storydriven.modeling.patterns.PrimitiveVariable#getClassifier()
     * @see #getPrimitiveVariable()
     * @generated
     */
-   EReference getPrimitiveVariable_EDataType ();
+   EReference getPrimitiveVariable_Classifier ();
 
    /**
     * Returns the meta object for class '{@link org.storydriven.modeling.patterns.ContainerVariable <em>Container Variable</em>}'.
@@ -4290,12 +4740,12 @@ public interface PatternsPackage extends EPackage
       EClass PRIMITIVE_VARIABLE = eINSTANCE.getPrimitiveVariable();
 
       /**
-       * The meta object literal for the '<em><b>EData Type</b></em>' reference feature.
+       * The meta object literal for the '<em><b>Classifier</b></em>' reference feature.
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
        * @generated
        */
-      EReference PRIMITIVE_VARIABLE__EDATA_TYPE = eINSTANCE.getPrimitiveVariable_EDataType();
+      EReference PRIMITIVE_VARIABLE__CLASSIFIER = eINSTANCE.getPrimitiveVariable_Classifier();
 
       /**
        * The meta object literal for the '{@link org.storydriven.modeling.patterns.impl.ContainerVariableImpl <em>Container Variable</em>}' class.

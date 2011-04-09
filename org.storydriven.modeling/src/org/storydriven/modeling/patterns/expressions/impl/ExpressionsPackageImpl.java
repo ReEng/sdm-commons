@@ -23,6 +23,7 @@ import org.storydriven.modeling.patterns.expressions.ExpressionsFactory;
 import org.storydriven.modeling.patterns.expressions.ExpressionsPackage;
 import org.storydriven.modeling.patterns.expressions.ObjectSetSizeExpression;
 import org.storydriven.modeling.patterns.expressions.ObjectVariableExpression;
+import org.storydriven.modeling.patterns.expressions.PrimitiveVariableExpression;
 import org.storydriven.modeling.patterns.impl.PatternsPackageImpl;
 import org.storydriven.modeling.templates.TemplatesPackage;
 import org.storydriven.modeling.templates.impl.TemplatesPackageImpl;
@@ -50,6 +51,13 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
     * @generated
     */
    private EClass objectSetSizeExpressionEClass = null;
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   private EClass primitiveVariableExpressionEClass = null;
 
    /**
     * Creates an instance of the model <b>Package</b>, registered with
@@ -225,6 +233,26 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
    }
 
    /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public EClass getPrimitiveVariableExpression ()
+   {
+      return primitiveVariableExpressionEClass;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public EReference getPrimitiveVariableExpression_PrimitiveVariable ()
+   {
+      return (EReference) primitiveVariableExpressionEClass.getEStructuralFeatures().get(0);
+   }
+
+   /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
@@ -261,6 +289,9 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 
       objectSetSizeExpressionEClass = createEClass(OBJECT_SET_SIZE_EXPRESSION);
       createEReference(objectSetSizeExpressionEClass, OBJECT_SET_SIZE_EXPRESSION__SET);
+
+      primitiveVariableExpressionEClass = createEClass(PRIMITIVE_VARIABLE_EXPRESSION);
+      createEReference(primitiveVariableExpressionEClass, PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE);
    }
 
    /**
@@ -302,6 +333,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
       attributeValueExpressionEClass.getESuperTypes().add(theExpressionsPackage_2.getExpression());
       objectVariableExpressionEClass.getESuperTypes().add(theExpressionsPackage_2.getExpression());
       objectSetSizeExpressionEClass.getESuperTypes().add(theExpressionsPackage_2.getExpression());
+      primitiveVariableExpressionEClass.getESuperTypes().add(theExpressionsPackage_2.getExpression());
 
       // Initialize classes, features, and operations; add parameters
       initEClass(attributeValueExpressionEClass, AttributeValueExpression.class, "AttributeValueExpression",
@@ -324,6 +356,12 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
       initEReference(getObjectSetSizeExpression_Set(), thePatternsPackage.getObjectSetVariable(), null, "set", null, 1,
          1, ObjectSetSizeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
          IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+      initEClass(primitiveVariableExpressionEClass, PrimitiveVariableExpression.class, "PrimitiveVariableExpression",
+         !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+      initEReference(getPrimitiveVariableExpression_PrimitiveVariable(), thePatternsPackage.getPrimitiveVariable(),
+         null, "primitiveVariable", null, 1, 1, PrimitiveVariableExpression.class, !IS_TRANSIENT, !IS_VOLATILE,
+         IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
       // Create annotations
       // http://www.eclipse.org/emf/2002/GenModel
@@ -356,6 +394,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
                "Represents the number of elements in a set or more precisely: the number of elements in the set of objects that is represented by an object set variable. For example, if you have an object set variable objects, then this expression would represent something like objects.size()."});
       addAnnotation(getObjectSetSizeExpression_Set(), source, new String[] {"documentation",
             "Specifies the object set variable whose number of set elements is to be represented by this expression."});
+      addAnnotation(primitiveVariableExpressionEClass, source, new String[] {"documentation",
+            "Represents the value of a primitive variable."});
    }
 
 } // ExpressionsPackageImpl

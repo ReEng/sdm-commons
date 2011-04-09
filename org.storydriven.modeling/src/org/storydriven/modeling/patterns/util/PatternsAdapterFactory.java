@@ -127,6 +127,12 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl
       }
 
       @Override
+      public Adapter casePrimitiveVariable (PrimitiveVariable object)
+      {
+         return createPrimitiveVariableAdapter();
+      }
+
+      @Override
       public Adapter casePath (Path object)
       {
          return createPathAdapter();
@@ -148,12 +154,6 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl
       public Adapter caseMatchingPattern (MatchingPattern object)
       {
          return createMatchingPatternAdapter();
-      }
-
-      @Override
-      public Adapter casePrimitiveVariable (PrimitiveVariable object)
-      {
-         return createPrimitiveVariableAdapter();
       }
 
       @Override

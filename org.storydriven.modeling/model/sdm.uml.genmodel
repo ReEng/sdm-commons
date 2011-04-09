@@ -386,6 +386,10 @@
             createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//patterns/AttributeAssignment/objectVariable"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/ObjectSetVariable"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/PrimitiveVariable">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/PrimitiveVariable/classifier"/>
+      </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/Path">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/Path/pathExpression"/>
@@ -404,10 +408,6 @@
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sdm.ecore#//patterns/MatchingPattern/NoModifierInMatchingPattern/diagnostics"/>
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sdm.ecore#//patterns/MatchingPattern/NoModifierInMatchingPattern/context"/>
         </genOperations>
-      </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/PrimitiveVariable">
-        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/PrimitiveVariable/eDataType"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/ContainerVariable"/>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/StoryPattern">
@@ -441,6 +441,10 @@
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/expressions/ObjectSetSizeExpression">
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
               propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/expressions/ObjectSetSizeExpression/set"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//patterns/expressions/PrimitiveVariableExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//patterns/expressions/PrimitiveVariableExpression/primitiveVariable"/>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>

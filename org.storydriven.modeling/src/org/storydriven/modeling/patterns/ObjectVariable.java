@@ -32,7 +32,7 @@ import org.storydriven.modeling.expressions.Expression;
  * @model
  * @generated
  */
-public interface ObjectVariable extends Variable, NamedElement, AbstractVariable
+public interface ObjectVariable extends AbstractVariable
 {
    /**
     * Returns the value of the '<em><b>Binding Semantics</b></em>' attribute.
