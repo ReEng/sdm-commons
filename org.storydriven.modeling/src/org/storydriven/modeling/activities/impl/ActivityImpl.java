@@ -53,7 +53,7 @@ import org.storydriven.modeling.impl.CommentableElementImpl;
 public class ActivityImpl extends CommentableElementImpl implements Activity
 {
    /**
-    * The cached value of the '{@link #getInParameters() <em>In Parameter</em>}' reference list.
+    * The cached value of the '{@link #getInParameters() <em>In Parameter</em>}' containment reference list.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @see #getInParameters()
@@ -63,7 +63,7 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    protected EList<EParameter> inParameters;
 
    /**
-    * The cached value of the '{@link #getOutParameters() <em>Out Parameter</em>}' reference list.
+    * The cached value of the '{@link #getOutParameters() <em>Out Parameter</em>}' containment reference list.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @see #getOutParameters()
@@ -129,7 +129,7 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    {
       if (inParameters == null)
       {
-         inParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
+         inParameters = new EObjectContainmentEList.Resolving<EParameter>(EParameter.class, this,
             ActivitiesPackage.ACTIVITY__IN_PARAMETER);
       }
       return inParameters;
@@ -154,7 +154,7 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    {
       if (outParameters == null)
       {
-         outParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
+         outParameters = new EObjectContainmentEList.Resolving<EParameter>(EParameter.class, this,
             ActivitiesPackage.ACTIVITY__OUT_PARAMETER);
       }
       return outParameters;
@@ -353,6 +353,10 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    {
       switch (featureID)
       {
+         case ActivitiesPackage.ACTIVITY__IN_PARAMETER:
+            return ((InternalEList<?>) getInParameters()).basicRemove(otherEnd, msgs);
+         case ActivitiesPackage.ACTIVITY__OUT_PARAMETER:
+            return ((InternalEList<?>) getOutParameters()).basicRemove(otherEnd, msgs);
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             return basicSetOwningOperation(null, msgs);
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:

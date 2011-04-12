@@ -505,7 +505,7 @@ public interface CallsPackage extends EPackage
     * @see org.storydriven.modeling.calls.impl.CallsPackageImpl#getCallable()
     * @generated
     */
-   int CALLABLE = 4;
+   int CALLABLE = 5;
 
    /**
     * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -742,7 +742,7 @@ public interface CallsPackage extends EPackage
    int OPAQUE_CALLABLE__NAME = CALLABLE_FEATURE_COUNT + 0;
 
    /**
-    * The feature id for the '<em><b>In Parameter</b></em>' reference list.
+    * The feature id for the '<em><b>In Parameter</b></em>' containment reference list.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
@@ -751,7 +751,7 @@ public interface CallsPackage extends EPackage
    int OPAQUE_CALLABLE__IN_PARAMETER = CALLABLE_FEATURE_COUNT + 1;
 
    /**
-    * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
+    * The feature id for the '<em><b>Out Parameter</b></em>' containment reference list.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
@@ -1202,6 +1202,259 @@ public interface CallsPackage extends EPackage
    int PARAMETER_EXTENSION_OPERATION_COUNT = SDMPackage.VARIABLE_OPERATION_COUNT + 0;
 
    /**
+    * The meta object id for the '{@link org.storydriven.modeling.calls.impl.EOperationCallableImpl <em>EOperation Callable</em>}' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see org.storydriven.modeling.calls.impl.EOperationCallableImpl
+    * @see org.storydriven.modeling.calls.impl.CallsPackageImpl#getEOperationCallable()
+    * @generated
+    */
+   int EOPERATION_CALLABLE = 4;
+
+   /**
+    * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE__ANNOTATION = CALLABLE__ANNOTATION;
+
+   /**
+    * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE__EXTENSION = CALLABLE__EXTENSION;
+
+   /**
+    * The feature id for the '<em><b>Comment</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE__COMMENT = CALLABLE__COMMENT;
+
+   /**
+    * The feature id for the '<em><b>Name</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE__NAME = CALLABLE_FEATURE_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>EOperation</b></em>' containment reference.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE__EOPERATION = CALLABLE_FEATURE_COUNT + 1;
+
+   /**
+    * The number of structural features of the '<em>EOperation Callable</em>' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE_FEATURE_COUNT = CALLABLE_FEATURE_COUNT + 2;
+
+   /**
+    * The operation id for the '<em>EClass</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___ECLASS = CALLABLE___ECLASS;
+
+   /**
+    * The operation id for the '<em>EIs Proxy</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___EIS_PROXY = CALLABLE___EIS_PROXY;
+
+   /**
+    * The operation id for the '<em>EResource</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___ERESOURCE = CALLABLE___ERESOURCE;
+
+   /**
+    * The operation id for the '<em>EContainer</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___ECONTAINER = CALLABLE___ECONTAINER;
+
+   /**
+    * The operation id for the '<em>EContaining Feature</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___ECONTAINING_FEATURE = CALLABLE___ECONTAINING_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContainment Feature</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___ECONTAINMENT_FEATURE = CALLABLE___ECONTAINMENT_FEATURE;
+
+   /**
+    * The operation id for the '<em>EContents</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___ECONTENTS = CALLABLE___ECONTENTS;
+
+   /**
+    * The operation id for the '<em>EAll Contents</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___EALL_CONTENTS = CALLABLE___EALL_CONTENTS;
+
+   /**
+    * The operation id for the '<em>ECross References</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___ECROSS_REFERENCES = CALLABLE___ECROSS_REFERENCES;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___EGET__ESTRUCTURALFEATURE = CALLABLE___EGET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EGet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CALLABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+   /**
+    * The operation id for the '<em>ESet</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___ESET__ESTRUCTURALFEATURE_OBJECT = CALLABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+   /**
+    * The operation id for the '<em>EIs Set</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___EIS_SET__ESTRUCTURALFEATURE = CALLABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EUnset</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___EUNSET__ESTRUCTURALFEATURE = CALLABLE___EUNSET__ESTRUCTURALFEATURE;
+
+   /**
+    * The operation id for the '<em>EInvoke</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___EINVOKE__EOPERATION_ELIST = CALLABLE___EINVOKE__EOPERATION_ELIST;
+
+   /**
+    * The operation id for the '<em>Get Extension</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___GET_EXTENSION__ECLASS = CALLABLE___GET_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Provide Extension</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___PROVIDE_EXTENSION__ECLASS = CALLABLE___PROVIDE_EXTENSION__ECLASS;
+
+   /**
+    * The operation id for the '<em>Get Annotation</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___GET_ANNOTATION__STRING = CALLABLE___GET_ANNOTATION__STRING;
+
+   /**
+    * The operation id for the '<em>Provide Annotation</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___PROVIDE_ANNOTATION__STRING = CALLABLE___PROVIDE_ANNOTATION__STRING;
+
+   /**
+    * The operation id for the '<em>Number Of Out Params</em>' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP = CALLABLE_OPERATION_COUNT + 0;
+
+   /**
+    * The number of operations of the '<em>EOperation Callable</em>' class.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int EOPERATION_CALLABLE_OPERATION_COUNT = CALLABLE_OPERATION_COUNT + 1;
+
+   /**
     * Returns the meta object for class '{@link org.storydriven.modeling.calls.Invocation <em>Invocation</em>}'.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @return the meta object for class '<em>Invocation</em>'.
@@ -1293,10 +1546,10 @@ public interface CallsPackage extends EPackage
    EAttribute getOpaqueCallable_Name ();
 
    /**
-    * Returns the meta object for the reference list '{@link org.storydriven.modeling.calls.OpaqueCallable#getInParameters <em>In Parameter</em>}'.
+    * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.calls.OpaqueCallable#getInParameters <em>In Parameter</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return the meta object for the reference list '<em>In Parameter</em>'.
+    * @return the meta object for the containment reference list '<em>In Parameter</em>'.
     * @see org.storydriven.modeling.calls.OpaqueCallable#getInParameters()
     * @see #getOpaqueCallable()
     * @generated
@@ -1304,10 +1557,10 @@ public interface CallsPackage extends EPackage
    EReference getOpaqueCallable_InParameter ();
 
    /**
-    * Returns the meta object for the reference list '{@link org.storydriven.modeling.calls.OpaqueCallable#getOutParameters <em>Out Parameter</em>}'.
+    * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.calls.OpaqueCallable#getOutParameters <em>Out Parameter</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return the meta object for the reference list '<em>Out Parameter</em>'.
+    * @return the meta object for the containment reference list '<em>Out Parameter</em>'.
     * @see org.storydriven.modeling.calls.OpaqueCallable#getOutParameters()
     * @see #getOpaqueCallable()
     * @generated
@@ -1353,6 +1606,48 @@ public interface CallsPackage extends EPackage
     * @generated
     */
    EReference getParameterExtension_Parameter ();
+
+   /**
+    * Returns the meta object for class '{@link org.storydriven.modeling.calls.EOperationCallable <em>EOperation Callable</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for class '<em>EOperation Callable</em>'.
+    * @see org.storydriven.modeling.calls.EOperationCallable
+    * @generated
+    */
+   EClass getEOperationCallable ();
+
+   /**
+    * Returns the meta object for the attribute '{@link org.storydriven.modeling.calls.EOperationCallable#getName <em>Name</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the attribute '<em>Name</em>'.
+    * @see org.storydriven.modeling.calls.EOperationCallable#getName()
+    * @see #getEOperationCallable()
+    * @generated
+    */
+   EAttribute getEOperationCallable_Name ();
+
+   /**
+    * Returns the meta object for the containment reference '{@link org.storydriven.modeling.calls.EOperationCallable#getEOperation <em>EOperation</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the containment reference '<em>EOperation</em>'.
+    * @see org.storydriven.modeling.calls.EOperationCallable#getEOperation()
+    * @see #getEOperationCallable()
+    * @generated
+    */
+   EReference getEOperationCallable_EOperation ();
+
+   /**
+    * Returns the meta object for the '{@link org.storydriven.modeling.calls.EOperationCallable#NumberOfOutParams(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Number Of Out Params</em>}' operation.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the '<em>Number Of Out Params</em>' operation.
+    * @see org.storydriven.modeling.calls.EOperationCallable#NumberOfOutParams(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+    * @generated
+    */
+   EOperation getEOperationCallable__NumberOfOutParams__DiagnosticChain_Map ();
 
    /**
     * Returns the meta object for class '{@link org.storydriven.modeling.calls.Callable <em>Callable</em>}'.
@@ -1457,7 +1752,7 @@ public interface CallsPackage extends EPackage
       EAttribute OPAQUE_CALLABLE__NAME = eINSTANCE.getOpaqueCallable_Name();
 
       /**
-       * The meta object literal for the '<em><b>In Parameter</b></em>' reference list feature.
+       * The meta object literal for the '<em><b>In Parameter</b></em>' containment reference list feature.
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
        * @generated
@@ -1465,7 +1760,7 @@ public interface CallsPackage extends EPackage
       EReference OPAQUE_CALLABLE__IN_PARAMETER = eINSTANCE.getOpaqueCallable_InParameter();
 
       /**
-       * The meta object literal for the '<em><b>Out Parameter</b></em>' reference list feature.
+       * The meta object literal for the '<em><b>Out Parameter</b></em>' containment reference list feature.
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
        * @generated
@@ -1503,6 +1798,41 @@ public interface CallsPackage extends EPackage
        * @generated
        */
       EReference PARAMETER_EXTENSION__PARAMETER = eINSTANCE.getParameterExtension_Parameter();
+
+      /**
+       * The meta object literal for the '{@link org.storydriven.modeling.calls.impl.EOperationCallableImpl <em>EOperation Callable</em>}' class.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @see org.storydriven.modeling.calls.impl.EOperationCallableImpl
+       * @see org.storydriven.modeling.calls.impl.CallsPackageImpl#getEOperationCallable()
+       * @generated
+       */
+      EClass EOPERATION_CALLABLE = eINSTANCE.getEOperationCallable();
+
+      /**
+       * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EAttribute EOPERATION_CALLABLE__NAME = eINSTANCE.getEOperationCallable_Name();
+
+      /**
+       * The meta object literal for the '<em><b>EOperation</b></em>' containment reference feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference EOPERATION_CALLABLE__EOPERATION = eINSTANCE.getEOperationCallable_EOperation();
+
+      /**
+       * The meta object literal for the '<em><b>Number Of Out Params</b></em>' operation.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EOperation EOPERATION_CALLABLE___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP = eINSTANCE
+         .getEOperationCallable__NumberOfOutParams__DiagnosticChain_Map();
 
       /**
        * The meta object literal for the '{@link org.storydriven.modeling.calls.impl.CallableImpl <em>Callable</em>}' class.

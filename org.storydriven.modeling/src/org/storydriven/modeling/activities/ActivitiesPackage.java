@@ -850,7 +850,7 @@ public interface ActivitiesPackage extends EPackage
    int ACTIVITY__PRECONDITION = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
    /**
-    * The feature id for the '<em><b>In Parameter</b></em>' reference list.
+    * The feature id for the '<em><b>In Parameter</b></em>' containment reference list.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
@@ -859,7 +859,7 @@ public interface ActivitiesPackage extends EPackage
    int ACTIVITY__IN_PARAMETER = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
    /**
-    * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
+    * The feature id for the '<em><b>Out Parameter</b></em>' containment reference list.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
@@ -3666,10 +3666,10 @@ public interface ActivitiesPackage extends EPackage
    EReference getActivity_Precondition ();
 
    /**
-    * Returns the meta object for the reference list '{@link org.storydriven.modeling.activities.Activity#getInParameters <em>In Parameter</em>}'.
+    * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.activities.Activity#getInParameters <em>In Parameter</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return the meta object for the reference list '<em>In Parameter</em>'.
+    * @return the meta object for the containment reference list '<em>In Parameter</em>'.
     * @see org.storydriven.modeling.activities.Activity#getInParameters()
     * @see #getActivity()
     * @generated
@@ -3677,10 +3677,10 @@ public interface ActivitiesPackage extends EPackage
    EReference getActivity_InParameter ();
 
    /**
-    * Returns the meta object for the reference list '{@link org.storydriven.modeling.activities.Activity#getOutParameters <em>Out Parameter</em>}'.
+    * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.activities.Activity#getOutParameters <em>Out Parameter</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return the meta object for the reference list '<em>Out Parameter</em>'.
+    * @return the meta object for the containment reference list '<em>Out Parameter</em>'.
     * @see org.storydriven.modeling.activities.Activity#getOutParameters()
     * @see #getActivity()
     * @generated
@@ -4164,7 +4164,7 @@ public interface ActivitiesPackage extends EPackage
       EReference ACTIVITY__PRECONDITION = eINSTANCE.getActivity_Precondition();
 
       /**
-       * The meta object literal for the '<em><b>In Parameter</b></em>' reference list feature.
+       * The meta object literal for the '<em><b>In Parameter</b></em>' containment reference list feature.
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
        * @generated
@@ -4172,7 +4172,7 @@ public interface ActivitiesPackage extends EPackage
       EReference ACTIVITY__IN_PARAMETER = eINSTANCE.getActivity_InParameter();
 
       /**
-       * The meta object literal for the '<em><b>Out Parameter</b></em>' reference list feature.
+       * The meta object literal for the '<em><b>Out Parameter</b></em>' containment reference list feature.
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
        * @generated

@@ -1,8 +1,5 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
+ * <copyright> </copyright> $Id$
  */
 package org.storydriven.modeling.templates.provider;
 
@@ -12,7 +9,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -24,7 +20,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.storydriven.modeling.templates.util.TemplatesAdapterFactory;
 
 /**
@@ -36,16 +31,16 @@ import org.storydriven.modeling.templates.util.TemplatesAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplatesItemProviderAdapterFactory extends
-		TemplatesAdapterFactory implements ComposeableAdapterFactory,
-		IChangeNotifier, IDisposable {
+public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier,
+		IDisposable
+{
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComposedAdapterFactory parentAdapterFactory;
+	protected ComposedAdapterFactory	parentAdapterFactory;
 
 	/**
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
@@ -53,7 +48,7 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IChangeNotifier changeNotifier = new ChangeNotifier();
+	protected IChangeNotifier			changeNotifier	= new ChangeNotifier();
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -61,7 +56,7 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<Object> supportedTypes = new ArrayList<Object>();
+	protected Collection<Object>		supportedTypes	= new ArrayList<Object>();
 
 	/**
 	 * This constructs an instance.
@@ -69,7 +64,8 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TemplatesItemProviderAdapterFactory() {
+	public TemplatesItemProviderAdapterFactory()
+	{
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -83,7 +79,7 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TemplateBindingItemProvider templateBindingItemProvider;
+	protected TemplateBindingItemProvider	templateBindingItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.templates.TemplateBinding}.
@@ -92,8 +88,10 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	@Override
-	public Adapter createTemplateBindingAdapter() {
-		if (templateBindingItemProvider == null) {
+	public Adapter createTemplateBindingAdapter()
+	{
+		if (templateBindingItemProvider == null)
+		{
 			templateBindingItemProvider = new TemplateBindingItemProvider(this);
 		}
 
@@ -106,7 +104,7 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PropertyBindingItemProvider propertyBindingItemProvider;
+	protected PropertyBindingItemProvider	propertyBindingItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.templates.PropertyBinding}.
@@ -115,8 +113,10 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	@Override
-	public Adapter createPropertyBindingAdapter() {
-		if (propertyBindingItemProvider == null) {
+	public Adapter createPropertyBindingAdapter()
+	{
+		if (propertyBindingItemProvider == null)
+		{
 			propertyBindingItemProvider = new PropertyBindingItemProvider(this);
 		}
 
@@ -129,7 +129,7 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TemplateSignatureItemProvider templateSignatureItemProvider;
+	protected TemplateSignatureItemProvider	templateSignatureItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.templates.TemplateSignature}.
@@ -138,10 +138,11 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	@Override
-	public Adapter createTemplateSignatureAdapter() {
-		if (templateSignatureItemProvider == null) {
-			templateSignatureItemProvider = new TemplateSignatureItemProvider(
-					this);
+	public Adapter createTemplateSignatureAdapter()
+	{
+		if (templateSignatureItemProvider == null)
+		{
+			templateSignatureItemProvider = new TemplateSignatureItemProvider(this);
 		}
 
 		return templateSignatureItemProvider;
@@ -153,9 +154,9 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+	public ComposeableAdapterFactory getRootAdapterFactory()
+	{
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -164,8 +165,8 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory)
+	{
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -175,7 +176,8 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object type) {
+	public boolean isFactoryForType(Object type)
+	{
 		return supportedTypes.contains(type) || super.isFactoryForType(type);
 	}
 
@@ -186,7 +188,8 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	@Override
-	public Adapter adapt(Notifier notifier, Object type) {
+	public Adapter adapt(Notifier notifier, Object type)
+	{
 		return super.adapt(notifier, this);
 	}
 
@@ -196,11 +199,13 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	@Override
-	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
+	public Object adapt(Object object, Object type)
+	{
+		if (isFactoryForType(type))
+		{
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter)))
+			{
 				return adapter;
 			}
 		}
@@ -214,7 +219,8 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addListener(INotifyChangedListener notifyChangedListener) {
+	public void addListener(INotifyChangedListener notifyChangedListener)
+	{
 		changeNotifier.addListener(notifyChangedListener);
 	}
 
@@ -224,7 +230,8 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void removeListener(INotifyChangedListener notifyChangedListener) {
+	public void removeListener(INotifyChangedListener notifyChangedListener)
+	{
 		changeNotifier.removeListener(notifyChangedListener);
 	}
 
@@ -234,10 +241,12 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void fireNotifyChanged(Notification notification) {
+	public void fireNotifyChanged(Notification notification)
+	{
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
+		if (parentAdapterFactory != null)
+		{
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -248,7 +257,8 @@ public class TemplatesItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void dispose() {
+	public void dispose()
+	{
 		if (templateBindingItemProvider != null)
 			templateBindingItemProvider.dispose();
 		if (propertyBindingItemProvider != null)

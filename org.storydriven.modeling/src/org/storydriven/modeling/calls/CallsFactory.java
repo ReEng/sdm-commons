@@ -47,6 +47,15 @@ public interface CallsFactory extends EFactory
    ParameterExtension createParameterExtension ();
 
    /**
+    * Returns a new object of class '<em>EOperation Callable</em>'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return a new object of class '<em>EOperation Callable</em>'.
+    * @generated
+    */
+   EOperationCallable createEOperationCallable ();
+
+   /**
     * Returns the package supported by this factory.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @return the package supported by this factory.

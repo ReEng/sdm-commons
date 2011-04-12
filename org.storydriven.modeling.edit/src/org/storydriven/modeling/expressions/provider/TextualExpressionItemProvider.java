@@ -1,8 +1,5 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
+ * <copyright> </copyright> $Id$
  */
 package org.storydriven.modeling.expressions.provider;
 
@@ -11,7 +8,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,10 +17,8 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 import org.storydriven.modeling.expressions.TextualExpression;
-import org.storydriven.modeling.expressions.util.ExpressionUtils;
 
 /**
  * This is the item provider adapter for a
@@ -92,29 +86,11 @@ public class TextualExpressionItemProvider extends ExpressionItemProvider implem
 	 */
 	protected void addLanguagePropertyDescriptor(Object object)
 	{
-		// itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)
-		// adapterFactory).getRootAdapterFactory(),
-		// getResourceLocator(),
-		// getString("_UI_TextualExpression_language_feature"),
-		// getString("_UI_PropertyDescriptor_description",
-		// "_UI_TextualExpression_language_feature",
-		// "_UI_TextualExpression_type"),
-		// ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE, true,
-		// false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-		// null, null));
-
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_TextualExpression_language_feature"), getString("_UI_PropertyDescriptor_description",
-						"_UI_TextualExpression_language_feature", "_UI_TextualExpression_type"),
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_TextualExpression_language_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_TextualExpression_language_feature", "_UI_TextualExpression_type"),
 				ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null)
-		{
-			@Override
-			public Collection<?> getChoiceOfValues(Object object)
-			{
-				return ExpressionUtils.getAvailableExpressionLanguages();
-			}
-		});
+				null, null));
 	}
 
 	/**
@@ -135,9 +111,9 @@ public class TextualExpressionItemProvider extends ExpressionItemProvider implem
 	}
 
 	/**
-	 * This returns TextualExpression.gif. <!-- begin-user-doc --> <!--
+	 * This returns TextualExpression.gif.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -147,9 +123,9 @@ public class TextualExpressionItemProvider extends ExpressionItemProvider implem
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -161,11 +137,10 @@ public class TextualExpressionItemProvider extends ExpressionItemProvider implem
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

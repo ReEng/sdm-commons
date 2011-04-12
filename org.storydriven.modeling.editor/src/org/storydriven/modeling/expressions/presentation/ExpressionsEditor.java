@@ -1,8 +1,5 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
+ * <copyright> </copyright> $Id$
  */
 package org.storydriven.modeling.expressions.presentation;
 
@@ -180,16 +177,16 @@ import org.storydriven.modeling.templates.provider.TemplatesItemProviderAdapterF
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExpressionsEditor extends MultiPageEditorPart implements
-		IEditingDomainProvider, ISelectionProvider, IMenuListener,
-		IViewerProvider, IGotoMarker {
+public class ExpressionsEditor extends MultiPageEditorPart implements IEditingDomainProvider, ISelectionProvider, IMenuListener,
+		IViewerProvider, IGotoMarker
+{
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AdapterFactoryEditingDomain editingDomain;
+	protected AdapterFactoryEditingDomain			editingDomain;
 
 	/**
 	 * This is the one adapter factory used for providing views of the model.
@@ -197,7 +194,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComposedAdapterFactory adapterFactory;
+	protected ComposedAdapterFactory				adapterFactory;
 
 	/**
 	 * This is the content outline page.
@@ -205,7 +202,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IContentOutlinePage contentOutlinePage;
+	protected IContentOutlinePage					contentOutlinePage;
 
 	/**
 	 * This is a kludge...
@@ -213,7 +210,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IStatusLineManager contentOutlineStatusLineManager;
+	protected IStatusLineManager					contentOutlineStatusLineManager;
 
 	/**
 	 * This is the content outline page's viewer.
@@ -221,7 +218,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TreeViewer contentOutlineViewer;
+	protected TreeViewer							contentOutlineViewer;
 
 	/**
 	 * This is the property sheet page.
@@ -229,7 +226,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PropertySheetPage propertySheetPage;
+	protected PropertySheetPage						propertySheetPage;
 
 	/**
 	 * This is the viewer that shadows the selection in the content outline.
@@ -238,7 +235,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TreeViewer selectionViewer;
+	protected TreeViewer							selectionViewer;
 
 	/**
 	 * This inverts the roll of parent and child in the content provider and show parents as a tree.
@@ -246,7 +243,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TreeViewer parentViewer;
+	protected TreeViewer							parentViewer;
 
 	/**
 	 * This shows how a tree view works.
@@ -254,7 +251,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TreeViewer treeViewer;
+	protected TreeViewer							treeViewer;
 
 	/**
 	 * This shows how a list view works.
@@ -263,7 +260,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ListViewer listViewer;
+	protected ListViewer							listViewer;
 
 	/**
 	 * This shows how a table view works.
@@ -272,7 +269,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TableViewer tableViewer;
+	protected TableViewer							tableViewer;
 
 	/**
 	 * This shows how a tree view with columns works.
@@ -280,7 +277,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TreeViewer treeViewerWithColumns;
+	protected TreeViewer							treeViewerWithColumns;
 
 	/**
 	 * This keeps track of the active viewer pane, in the book.
@@ -288,7 +285,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewerPane currentViewerPane;
+	protected ViewerPane							currentViewerPane;
 
 	/**
 	 * This keeps track of the active content viewer, which may be either one of the viewers in the pages or the content outline viewer.
@@ -296,7 +293,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Viewer currentViewer;
+	protected Viewer								currentViewer;
 
 	/**
 	 * This listens to which ever viewer is active.
@@ -304,7 +301,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ISelectionChangedListener selectionChangedListener;
+	protected ISelectionChangedListener				selectionChangedListener;
 
 	/**
 	 * This keeps track of all the {@link org.eclipse.jface.viewers.ISelectionChangedListener}s that are listening to this editor.
@@ -312,7 +309,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<ISelectionChangedListener> selectionChangedListeners = new ArrayList<ISelectionChangedListener>();
+	protected Collection<ISelectionChangedListener>	selectionChangedListeners	= new ArrayList<ISelectionChangedListener>();
 
 	/**
 	 * This keeps track of the selection of the editor as a whole.
@@ -320,7 +317,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ISelection editorSelection = StructuredSelection.EMPTY;
+	protected ISelection							editorSelection				= StructuredSelection.EMPTY;
 
 	/**
 	 * The MarkerHelper is responsible for creating workspace resource markers presented
@@ -329,7 +326,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MarkerHelper markerHelper = new EditUIMarkerHelper();
+	protected MarkerHelper							markerHelper				= new EditUIMarkerHelper();
 
 	/**
 	 * This listens for when the outline becomes active
@@ -337,42 +334,55 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IPartListener partListener = new IPartListener() {
-		public void partActivated(IWorkbenchPart p) {
-			if (p instanceof ContentOutline) {
-				if (((ContentOutline) p).getCurrentPage() == contentOutlinePage) {
-					getActionBarContributor().setActiveEditor(
-							ExpressionsEditor.this);
+	protected IPartListener							partListener				= new IPartListener()
+																				{
+																					public void partActivated(IWorkbenchPart p)
+																					{
+																						if (p instanceof ContentOutline)
+																						{
+																							if (((ContentOutline) p).getCurrentPage() == contentOutlinePage)
+																							{
+																								getActionBarContributor().setActiveEditor(
+																										ExpressionsEditor.this);
 
-					setCurrentViewer(contentOutlineViewer);
-				}
-			} else if (p instanceof PropertySheet) {
-				if (((PropertySheet) p).getCurrentPage() == propertySheetPage) {
-					getActionBarContributor().setActiveEditor(
-							ExpressionsEditor.this);
-					handleActivate();
-				}
-			} else if (p == ExpressionsEditor.this) {
-				handleActivate();
-			}
-		}
+																								setCurrentViewer(contentOutlineViewer);
+																							}
+																						}
+																						else if (p instanceof PropertySheet)
+																						{
+																							if (((PropertySheet) p).getCurrentPage() == propertySheetPage)
+																							{
+																								getActionBarContributor().setActiveEditor(
+																										ExpressionsEditor.this);
+																								handleActivate();
+																							}
+																						}
+																						else if (p == ExpressionsEditor.this)
+																						{
+																							handleActivate();
+																						}
+																					}
 
-		public void partBroughtToTop(IWorkbenchPart p) {
-			// Ignore.
-		}
+																					public void partBroughtToTop(IWorkbenchPart p)
+																					{
+																						// Ignore.
+																					}
 
-		public void partClosed(IWorkbenchPart p) {
-			// Ignore.
-		}
+																					public void partClosed(IWorkbenchPart p)
+																					{
+																						// Ignore.
+																					}
 
-		public void partDeactivated(IWorkbenchPart p) {
-			// Ignore.
-		}
+																					public void partDeactivated(IWorkbenchPart p)
+																					{
+																						// Ignore.
+																					}
 
-		public void partOpened(IWorkbenchPart p) {
-			// Ignore.
-		}
-	};
+																					public void partOpened(IWorkbenchPart p)
+																					{
+																						// Ignore.
+																					}
+																				};
 
 	/**
 	 * Resources that have been removed since last activation.
@@ -380,7 +390,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<Resource> removedResources = new ArrayList<Resource>();
+	protected Collection<Resource>					removedResources			= new ArrayList<Resource>();
 
 	/**
 	 * Resources that have been changed since last activation.
@@ -388,7 +398,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<Resource> changedResources = new ArrayList<Resource>();
+	protected Collection<Resource>					changedResources			= new ArrayList<Resource>();
 
 	/**
 	 * Resources that have been saved.
@@ -396,7 +406,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<Resource> savedResources = new ArrayList<Resource>();
+	protected Collection<Resource>					savedResources				= new ArrayList<Resource>();
 
 	/**
 	 * Map to store the diagnostic associated with a resource.
@@ -404,7 +414,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Map<Resource, Diagnostic> resourceToDiagnosticMap = new LinkedHashMap<Resource, Diagnostic>();
+	protected Map<Resource, Diagnostic>				resourceToDiagnosticMap		= new LinkedHashMap<Resource, Diagnostic>();
 
 	/**
 	 * Controls whether the problem indication should be updated.
@@ -412,7 +422,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected boolean updateProblemIndication = true;
+	protected boolean								updateProblemIndication		= true;
 
 	/**
 	 * Adapter used to update the problem indication when resources are demanded loaded.
@@ -420,49 +430,68 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EContentAdapter problemIndicationAdapter = new EContentAdapter() {
-		@Override
-		public void notifyChanged(Notification notification) {
-			if (notification.getNotifier() instanceof Resource) {
-				switch (notification.getFeatureID(Resource.class)) {
-				case Resource.RESOURCE__IS_LOADED:
-				case Resource.RESOURCE__ERRORS:
-				case Resource.RESOURCE__WARNINGS: {
-					Resource resource = (Resource) notification.getNotifier();
-					Diagnostic diagnostic = analyzeResourceProblems(resource,
-							null);
-					if (diagnostic.getSeverity() != Diagnostic.OK) {
-						resourceToDiagnosticMap.put(resource, diagnostic);
-					} else {
-						resourceToDiagnosticMap.remove(resource);
-					}
+	protected EContentAdapter						problemIndicationAdapter	= new EContentAdapter()
+																				{
+																					@Override
+																					public void notifyChanged(Notification notification)
+																					{
+																						if (notification.getNotifier() instanceof Resource)
+																						{
+																							switch (notification
+																									.getFeatureID(Resource.class))
+																							{
+																								case Resource.RESOURCE__IS_LOADED:
+																								case Resource.RESOURCE__ERRORS:
+																								case Resource.RESOURCE__WARNINGS:
+																								{
+																									Resource resource = (Resource) notification
+																											.getNotifier();
+																									Diagnostic diagnostic = analyzeResourceProblems(
+																											resource, null);
+																									if (diagnostic.getSeverity() != Diagnostic.OK)
+																									{
+																										resourceToDiagnosticMap.put(
+																												resource, diagnostic);
+																									}
+																									else
+																									{
+																										resourceToDiagnosticMap
+																												.remove(resource);
+																									}
 
-					if (updateProblemIndication) {
-						getSite().getShell().getDisplay()
-								.asyncExec(new Runnable() {
-									public void run() {
-										updateProblemIndication();
-									}
-								});
-					}
-					break;
-				}
-				}
-			} else {
-				super.notifyChanged(notification);
-			}
-		}
+																									if (updateProblemIndication)
+																									{
+																										getSite().getShell().getDisplay()
+																												.asyncExec(new Runnable()
+																												{
+																													public void run()
+																													{
+																														updateProblemIndication();
+																													}
+																												});
+																									}
+																									break;
+																								}
+																							}
+																						}
+																						else
+																						{
+																							super.notifyChanged(notification);
+																						}
+																					}
 
-		@Override
-		protected void setTarget(Resource target) {
-			basicSetTarget(target);
-		}
+																					@Override
+																					protected void setTarget(Resource target)
+																					{
+																						basicSetTarget(target);
+																					}
 
-		@Override
-		protected void unsetTarget(Resource target) {
-			basicUnsetTarget(target);
-		}
-	};
+																					@Override
+																					protected void unsetTarget(Resource target)
+																					{
+																						basicUnsetTarget(target);
+																					}
+																				};
 
 	/**
 	 * This listens for workspace changes.
@@ -470,81 +499,115 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IResourceChangeListener resourceChangeListener = new IResourceChangeListener() {
-		public void resourceChanged(IResourceChangeEvent event) {
-			IResourceDelta delta = event.getDelta();
-			try {
-				class ResourceDeltaVisitor implements IResourceDeltaVisitor {
-					protected ResourceSet resourceSet = editingDomain
-							.getResourceSet();
-					protected Collection<Resource> changedResources = new ArrayList<Resource>();
-					protected Collection<Resource> removedResources = new ArrayList<Resource>();
+	protected IResourceChangeListener				resourceChangeListener		= new IResourceChangeListener()
+																				{
+																					public void resourceChanged(IResourceChangeEvent event)
+																					{
+																						IResourceDelta delta = event.getDelta();
+																						try
+																						{
+																							class ResourceDeltaVisitor implements
+																									IResourceDeltaVisitor
+																							{
+																								protected ResourceSet			resourceSet			= editingDomain
+																																							.getResourceSet();
+																								protected Collection<Resource>	changedResources	= new ArrayList<Resource>();
+																								protected Collection<Resource>	removedResources	= new ArrayList<Resource>();
 
-					public boolean visit(IResourceDelta delta) {
-						if (delta.getResource().getType() == IResource.FILE) {
-							if (delta.getKind() == IResourceDelta.REMOVED
-									|| delta.getKind() == IResourceDelta.CHANGED
-									&& delta.getFlags() != IResourceDelta.MARKERS) {
-								Resource resource = resourceSet
-										.getResource(URI
-												.createPlatformResourceURI(
-														delta.getFullPath()
-																.toString(),
-														true), false);
-								if (resource != null) {
-									if (delta.getKind() == IResourceDelta.REMOVED) {
-										removedResources.add(resource);
-									} else if (!savedResources.remove(resource)) {
-										changedResources.add(resource);
-									}
-								}
-							}
-						}
+																								public boolean visit(IResourceDelta delta)
+																								{
+																									if (delta.getResource().getType() == IResource.FILE)
+																									{
+																										if (delta.getKind() == IResourceDelta.REMOVED
+																												|| delta.getKind() == IResourceDelta.CHANGED
+																												&& delta.getFlags() != IResourceDelta.MARKERS)
+																										{
+																											Resource resource = resourceSet
+																													.getResource(
+																															URI.createPlatformResourceURI(
+																																	delta.getFullPath()
+																																			.toString(),
+																																	true),
+																															false);
+																											if (resource != null)
+																											{
+																												if (delta.getKind() == IResourceDelta.REMOVED)
+																												{
+																													removedResources
+																															.add(resource);
+																												}
+																												else if (!savedResources
+																														.remove(resource))
+																												{
+																													changedResources
+																															.add(resource);
+																												}
+																											}
+																										}
+																									}
 
-						return true;
-					}
+																									return true;
+																								}
 
-					public Collection<Resource> getChangedResources() {
-						return changedResources;
-					}
+																								public Collection<Resource> getChangedResources()
+																								{
+																									return changedResources;
+																								}
 
-					public Collection<Resource> getRemovedResources() {
-						return removedResources;
-					}
-				}
+																								public Collection<Resource> getRemovedResources()
+																								{
+																									return removedResources;
+																								}
+																							}
 
-				final ResourceDeltaVisitor visitor = new ResourceDeltaVisitor();
-				delta.accept(visitor);
+																							final ResourceDeltaVisitor visitor = new ResourceDeltaVisitor();
+																							delta.accept(visitor);
 
-				if (!visitor.getRemovedResources().isEmpty()) {
-					getSite().getShell().getDisplay().asyncExec(new Runnable() {
-						public void run() {
-							removedResources.addAll(visitor
-									.getRemovedResources());
-							if (!isDirty()) {
-								getSite().getPage().closeEditor(
-										ExpressionsEditor.this, false);
-							}
-						}
-					});
-				}
+																							if (!visitor.getRemovedResources().isEmpty())
+																							{
+																								getSite().getShell().getDisplay()
+																										.asyncExec(new Runnable()
+																										{
+																											public void run()
+																											{
+																												removedResources.addAll(visitor
+																														.getRemovedResources());
+																												if (!isDirty())
+																												{
+																													getSite()
+																															.getPage()
+																															.closeEditor(
+																																	ExpressionsEditor.this,
+																																	false);
+																												}
+																											}
+																										});
+																							}
 
-				if (!visitor.getChangedResources().isEmpty()) {
-					getSite().getShell().getDisplay().asyncExec(new Runnable() {
-						public void run() {
-							changedResources.addAll(visitor
-									.getChangedResources());
-							if (getSite().getPage().getActiveEditor() == ExpressionsEditor.this) {
-								handleActivate();
-							}
-						}
-					});
-				}
-			} catch (CoreException exception) {
-				SDMEditorPlugin.INSTANCE.log(exception);
-			}
-		}
-	};
+																							if (!visitor.getChangedResources().isEmpty())
+																							{
+																								getSite().getShell().getDisplay()
+																										.asyncExec(new Runnable()
+																										{
+																											public void run()
+																											{
+																												changedResources.addAll(visitor
+																														.getChangedResources());
+																												if (getSite().getPage()
+																														.getActiveEditor() == ExpressionsEditor.this)
+																												{
+																													handleActivate();
+																												}
+																											}
+																										});
+																							}
+																						}
+																						catch (CoreException exception)
+																						{
+																							SDMEditorPlugin.INSTANCE.log(exception);
+																						}
+																					}
+																				};
 
 	/**
 	 * Handles activation of the editor or it's associated views.
@@ -552,10 +615,12 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void handleActivate() {
+	protected void handleActivate()
+	{
 		// Recompute the read only state.
 		//
-		if (editingDomain.getResourceToReadOnlyMap() != null) {
+		if (editingDomain.getResourceToReadOnlyMap() != null)
+		{
 			editingDomain.getResourceToReadOnlyMap().clear();
 
 			// Refresh any actions that may become enabled or disabled.
@@ -563,15 +628,21 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 			setSelection(getSelection());
 		}
 
-		if (!removedResources.isEmpty()) {
-			if (handleDirtyConflict()) {
+		if (!removedResources.isEmpty())
+		{
+			if (handleDirtyConflict())
+			{
 				getSite().getPage().closeEditor(ExpressionsEditor.this, false);
-			} else {
+			}
+			else
+			{
 				removedResources.clear();
 				changedResources.clear();
 				savedResources.clear();
 			}
-		} else if (!changedResources.isEmpty()) {
+		}
+		else if (!changedResources.isEmpty())
+		{
 			changedResources.removeAll(savedResources);
 			handleChangedResources();
 			changedResources.clear();
@@ -585,33 +656,38 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void handleChangedResources() {
-		if (!changedResources.isEmpty()
-				&& (!isDirty() || handleDirtyConflict())) {
-			if (isDirty()) {
-				changedResources.addAll(editingDomain.getResourceSet()
-						.getResources());
+	protected void handleChangedResources()
+	{
+		if (!changedResources.isEmpty() && (!isDirty() || handleDirtyConflict()))
+		{
+			if (isDirty())
+			{
+				changedResources.addAll(editingDomain.getResourceSet().getResources());
 			}
 			editingDomain.getCommandStack().flush();
 
 			updateProblemIndication = false;
-			for (Resource resource : changedResources) {
-				if (resource.isLoaded()) {
+			for (Resource resource : changedResources)
+			{
+				if (resource.isLoaded())
+				{
 					resource.unload();
-					try {
+					try
+					{
 						resource.load(Collections.EMPTY_MAP);
-					} catch (IOException exception) {
-						if (!resourceToDiagnosticMap.containsKey(resource)) {
-							resourceToDiagnosticMap
-									.put(resource,
-											analyzeResourceProblems(resource,
-													exception));
+					}
+					catch (IOException exception)
+					{
+						if (!resourceToDiagnosticMap.containsKey(resource))
+						{
+							resourceToDiagnosticMap.put(resource, analyzeResourceProblems(resource, exception));
 						}
 					}
 				}
 			}
 
-			if (AdapterFactoryEditingDomain.isStale(editorSelection)) {
+			if (AdapterFactoryEditingDomain.isStale(editorSelection))
+			{
 				setSelection(StructuredSelection.EMPTY);
 			}
 
@@ -626,46 +702,60 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void updateProblemIndication() {
-		if (updateProblemIndication) {
-			BasicDiagnostic diagnostic = new BasicDiagnostic(Diagnostic.OK,
-					"org.storydriven.modeling.editor", 0, null,
-					new Object[] { editingDomain.getResourceSet() });
-			for (Diagnostic childDiagnostic : resourceToDiagnosticMap.values()) {
-				if (childDiagnostic.getSeverity() != Diagnostic.OK) {
+	protected void updateProblemIndication()
+	{
+		if (updateProblemIndication)
+		{
+			BasicDiagnostic diagnostic = new BasicDiagnostic(Diagnostic.OK, "org.storydriven.modeling.editor", 0, null, new Object[]
+			{
+				editingDomain.getResourceSet()
+			});
+			for (Diagnostic childDiagnostic : resourceToDiagnosticMap.values())
+			{
+				if (childDiagnostic.getSeverity() != Diagnostic.OK)
+				{
 					diagnostic.add(childDiagnostic);
 				}
 			}
 
 			int lastEditorPage = getPageCount() - 1;
-			if (lastEditorPage >= 0
-					&& getEditor(lastEditorPage) instanceof ProblemEditorPart) {
-				((ProblemEditorPart) getEditor(lastEditorPage))
-						.setDiagnostic(diagnostic);
-				if (diagnostic.getSeverity() != Diagnostic.OK) {
+			if (lastEditorPage >= 0 && getEditor(lastEditorPage) instanceof ProblemEditorPart)
+			{
+				((ProblemEditorPart) getEditor(lastEditorPage)).setDiagnostic(diagnostic);
+				if (diagnostic.getSeverity() != Diagnostic.OK)
+				{
 					setActivePage(lastEditorPage);
 				}
-			} else if (diagnostic.getSeverity() != Diagnostic.OK) {
+			}
+			else if (diagnostic.getSeverity() != Diagnostic.OK)
+			{
 				ProblemEditorPart problemEditorPart = new ProblemEditorPart();
 				problemEditorPart.setDiagnostic(diagnostic);
 				problemEditorPart.setMarkerHelper(markerHelper);
-				try {
-					addPage(++lastEditorPage, problemEditorPart,
-							getEditorInput());
+				try
+				{
+					addPage(++lastEditorPage, problemEditorPart, getEditorInput());
 					setPageText(lastEditorPage, problemEditorPart.getPartName());
 					setActivePage(lastEditorPage);
 					showTabs();
-				} catch (PartInitException exception) {
+				}
+				catch (PartInitException exception)
+				{
 					SDMEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 
-			if (markerHelper.hasMarkers(editingDomain.getResourceSet())) {
+			if (markerHelper.hasMarkers(editingDomain.getResourceSet()))
+			{
 				markerHelper.deleteMarkers(editingDomain.getResourceSet());
-				if (diagnostic.getSeverity() != Diagnostic.OK) {
-					try {
+				if (diagnostic.getSeverity() != Diagnostic.OK)
+				{
+					try
+					{
 						markerHelper.createMarkers(diagnostic);
-					} catch (CoreException exception) {
+					}
+					catch (CoreException exception)
+					{
 						SDMEditorPlugin.INSTANCE.log(exception);
 					}
 				}
@@ -679,10 +769,9 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected boolean handleDirtyConflict() {
-		return MessageDialog.openQuestion(getSite().getShell(),
-				getString("_UI_FileConflict_label"),
-				getString("_WARN_FileConflict"));
+	protected boolean handleDirtyConflict()
+	{
+		return MessageDialog.openQuestion(getSite().getShell(), getString("_UI_FileConflict_label"), getString("_WARN_FileConflict"));
 	}
 
 	/**
@@ -691,7 +780,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExpressionsEditor() {
+	public ExpressionsEditor()
+	{
 		super();
 		initializeEditingDomain();
 	}
@@ -702,33 +792,26 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void initializeEditingDomain() {
+	protected void initializeEditingDomain()
+	{
 		// Create an adapter factory that yields item providers.
 		//
-		adapterFactory = new ComposedAdapterFactory(
-				ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
-		adapterFactory
-				.addAdapterFactory(new ResourceItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SDMItemProviderAdapterFactory());
-		adapterFactory
-				.addAdapterFactory(new ActivitiesItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ActivitiesItemProviderAdapterFactory());
 		adapterFactory
 				.addAdapterFactory(new org.storydriven.modeling.activities.expressions.provider.ExpressionsItemProviderAdapterFactory());
-		adapterFactory
-				.addAdapterFactory(new ExpressionsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ExpressionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new CallsItemProviderAdapterFactory());
-		adapterFactory
-				.addAdapterFactory(new org.storydriven.modeling.calls.expressions.provider.ExpressionsItemProviderAdapterFactory());
-		adapterFactory
-				.addAdapterFactory(new PatternsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new org.storydriven.modeling.calls.expressions.provider.ExpressionsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new PatternsItemProviderAdapterFactory());
 		adapterFactory
 				.addAdapterFactory(new org.storydriven.modeling.patterns.expressions.provider.ExpressionsItemProviderAdapterFactory());
-		adapterFactory
-				.addAdapterFactory(new TemplatesItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new TemplatesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
-		adapterFactory
-				.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
 		//
@@ -736,22 +819,25 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 
 		// Add a listener to set the most recent command's affected objects to be the selection of the viewer with focus.
 		//
-		commandStack.addCommandStackListener(new CommandStackListener() {
-			public void commandStackChanged(final EventObject event) {
-				getContainer().getDisplay().asyncExec(new Runnable() {
-					public void run() {
+		commandStack.addCommandStackListener(new CommandStackListener()
+		{
+			public void commandStackChanged(final EventObject event)
+			{
+				getContainer().getDisplay().asyncExec(new Runnable()
+				{
+					public void run()
+					{
 						firePropertyChange(IEditorPart.PROP_DIRTY);
 
 						// Try to select the affected objects.
 						//
-						Command mostRecentCommand = ((CommandStack) event
-								.getSource()).getMostRecentCommand();
-						if (mostRecentCommand != null) {
-							setSelectionToViewer(mostRecentCommand
-									.getAffectedObjects());
+						Command mostRecentCommand = ((CommandStack) event.getSource()).getMostRecentCommand();
+						if (mostRecentCommand != null)
+						{
+							setSelectionToViewer(mostRecentCommand.getAffectedObjects());
 						}
-						if (propertySheetPage != null
-								&& !propertySheetPage.getControl().isDisposed()) {
+						if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed())
+						{
 							propertySheetPage.refresh();
 						}
 					}
@@ -761,8 +847,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 
 		// Create the editing domain with a special command stack.
 		//
-		editingDomain = new AdapterFactoryEditingDomain(adapterFactory,
-				commandStack, new HashMap<Resource, Boolean>());
+		editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new HashMap<Resource, Boolean>());
 	}
 
 	/**
@@ -772,7 +857,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * @generated
 	 */
 	@Override
-	protected void firePropertyChange(int action) {
+	protected void firePropertyChange(int action)
+	{
 		super.firePropertyChange(action);
 	}
 
@@ -782,18 +868,22 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSelectionToViewer(Collection<?> collection) {
+	public void setSelectionToViewer(Collection<?> collection)
+	{
 		final Collection<?> theSelection = collection;
 		// Make sure it's okay.
 		//
-		if (theSelection != null && !theSelection.isEmpty()) {
-			Runnable runnable = new Runnable() {
-				public void run() {
+		if (theSelection != null && !theSelection.isEmpty())
+		{
+			Runnable runnable = new Runnable()
+			{
+				public void run()
+				{
 					// Try to select the items in the current content viewer of the editor.
 					//
-					if (currentViewer != null) {
-						currentViewer.setSelection(new StructuredSelection(
-								theSelection.toArray()), true);
+					if (currentViewer != null)
+					{
+						currentViewer.setSelection(new StructuredSelection(theSelection.toArray()), true);
 					}
 				}
 			};
@@ -809,7 +899,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EditingDomain getEditingDomain() {
+	public EditingDomain getEditingDomain()
+	{
 		return editingDomain;
 	}
 
@@ -818,15 +909,15 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class ReverseAdapterFactoryContentProvider extends
-			AdapterFactoryContentProvider {
+	public class ReverseAdapterFactoryContentProvider extends AdapterFactoryContentProvider
+	{
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public ReverseAdapterFactoryContentProvider(
-				AdapterFactory adapterFactory) {
+		public ReverseAdapterFactoryContentProvider(AdapterFactory adapterFactory)
+		{
 			super(adapterFactory);
 		}
 
@@ -836,10 +927,10 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 		 * @generated
 		 */
 		@Override
-		public Object[] getElements(Object object) {
+		public Object[] getElements(Object object)
+		{
 			Object parent = super.getParent(object);
-			return (parent == null ? Collections.EMPTY_SET : Collections
-					.singleton(parent)).toArray();
+			return (parent == null ? Collections.EMPTY_SET : Collections.singleton(parent)).toArray();
 		}
 
 		/**
@@ -848,10 +939,10 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 		 * @generated
 		 */
 		@Override
-		public Object[] getChildren(Object object) {
+		public Object[] getChildren(Object object)
+		{
 			Object parent = super.getParent(object);
-			return (parent == null ? Collections.EMPTY_SET : Collections
-					.singleton(parent)).toArray();
+			return (parent == null ? Collections.EMPTY_SET : Collections.singleton(parent)).toArray();
 		}
 
 		/**
@@ -860,7 +951,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 		 * @generated
 		 */
 		@Override
-		public boolean hasChildren(Object object) {
+		public boolean hasChildren(Object object)
+		{
 			Object parent = super.getParent(object);
 			return parent != null;
 		}
@@ -871,7 +963,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 		 * @generated
 		 */
 		@Override
-		public Object getParent(Object object) {
+		public Object getParent(Object object)
+		{
 			return null;
 		}
 	}
@@ -881,9 +974,12 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCurrentViewerPane(ViewerPane viewerPane) {
-		if (currentViewerPane != viewerPane) {
-			if (currentViewerPane != null) {
+	public void setCurrentViewerPane(ViewerPane viewerPane)
+	{
+		if (currentViewerPane != viewerPane)
+		{
+			if (currentViewerPane != null)
+			{
 				currentViewerPane.showFocus(false);
 			}
 			currentViewerPane = viewerPane;
@@ -898,18 +994,22 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCurrentViewer(Viewer viewer) {
+	public void setCurrentViewer(Viewer viewer)
+	{
 		// If it is changing...
 		//
-		if (currentViewer != viewer) {
-			if (selectionChangedListener == null) {
+		if (currentViewer != viewer)
+		{
+			if (selectionChangedListener == null)
+			{
 				// Create the listener on demand.
 				//
-				selectionChangedListener = new ISelectionChangedListener() {
+				selectionChangedListener = new ISelectionChangedListener()
+				{
 					// This just notifies those things that are affected by the section.
 					//
-					public void selectionChanged(
-							SelectionChangedEvent selectionChangedEvent) {
+					public void selectionChanged(SelectionChangedEvent selectionChangedEvent)
+					{
 						setSelection(selectionChangedEvent.getSelection());
 					}
 				};
@@ -917,14 +1017,15 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 
 			// Stop listening to the old one.
 			//
-			if (currentViewer != null) {
-				currentViewer
-						.removeSelectionChangedListener(selectionChangedListener);
+			if (currentViewer != null)
+			{
+				currentViewer.removeSelectionChangedListener(selectionChangedListener);
 			}
 
 			// Start listening to the new one.
 			//
-			if (viewer != null) {
+			if (viewer != null)
+			{
 				viewer.addSelectionChangedListener(selectionChangedListener);
 			}
 
@@ -934,8 +1035,7 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 
 			// Set the editors selection based on the current viewer's selection.
 			//
-			setSelection(currentViewer == null ? StructuredSelection.EMPTY
-					: currentViewer.getSelection());
+			setSelection(currentViewer == null ? StructuredSelection.EMPTY : currentViewer.getSelection());
 		}
 	}
 
@@ -945,7 +1045,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Viewer getViewer() {
+	public Viewer getViewer()
+	{
 		return currentViewer;
 	}
 
@@ -955,22 +1056,23 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createContextMenuFor(StructuredViewer viewer) {
+	protected void createContextMenuFor(StructuredViewer viewer)
+	{
 		MenuManager contextMenu = new MenuManager("#PopUp");
 		contextMenu.add(new Separator("additions"));
 		contextMenu.setRemoveAllWhenShown(true);
 		contextMenu.addMenuListener(this);
 		Menu menu = contextMenu.createContextMenu(viewer.getControl());
 		viewer.getControl().setMenu(menu);
-		getSite().registerContextMenu(contextMenu,
-				new UnwrappingSelectionProvider(viewer));
+		getSite().registerContextMenu(contextMenu, new UnwrappingSelectionProvider(viewer));
 
 		int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
-		Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance() };
-		viewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(
-				viewer));
-		viewer.addDropSupport(dndOperations, transfers,
-				new EditingDomainViewerDropAdapter(editingDomain, viewer));
+		Transfer[] transfers = new Transfer[]
+		{
+			LocalTransfer.getInstance()
+		};
+		viewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(viewer));
+		viewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(editingDomain, viewer));
 	}
 
 	/**
@@ -979,28 +1081,29 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createModel() {
+	public void createModel()
+	{
 		URI resourceURI = EditUIUtil.getURI(getEditorInput());
 		Exception exception = null;
 		Resource resource = null;
-		try {
+		try
+		{
 			// Load the resource through the editing domain.
 			//
-			resource = editingDomain.getResourceSet().getResource(resourceURI,
-					true);
-		} catch (Exception e) {
+			resource = editingDomain.getResourceSet().getResource(resourceURI, true);
+		}
+		catch (Exception e)
+		{
 			exception = e;
-			resource = editingDomain.getResourceSet().getResource(resourceURI,
-					false);
+			resource = editingDomain.getResourceSet().getResource(resourceURI, false);
 		}
 
 		Diagnostic diagnostic = analyzeResourceProblems(resource, exception);
-		if (diagnostic.getSeverity() != Diagnostic.OK) {
-			resourceToDiagnosticMap.put(resource,
-					analyzeResourceProblems(resource, exception));
+		if (diagnostic.getSeverity() != Diagnostic.OK)
+		{
+			resourceToDiagnosticMap.put(resource, analyzeResourceProblems(resource, exception));
 		}
-		editingDomain.getResourceSet().eAdapters()
-				.add(problemIndicationAdapter);
+		editingDomain.getResourceSet().eAdapters().add(problemIndicationAdapter);
 	}
 
 	/**
@@ -1010,25 +1113,28 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Diagnostic analyzeResourceProblems(Resource resource,
-			Exception exception) {
-		if (!resource.getErrors().isEmpty()
-				|| !resource.getWarnings().isEmpty()) {
-			BasicDiagnostic basicDiagnostic = new BasicDiagnostic(
-					Diagnostic.ERROR,
-					"org.storydriven.modeling.editor",
-					0,
-					getString("_UI_CreateModelError_message", resource.getURI()),
-					new Object[] { exception == null ? (Object) resource
-							: exception });
+	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception)
+	{
+		if (!resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty())
+		{
+			BasicDiagnostic basicDiagnostic = new BasicDiagnostic(Diagnostic.ERROR, "org.storydriven.modeling.editor", 0, getString(
+					"_UI_CreateModelError_message", resource.getURI()), new Object[]
+			{
+				exception == null ? (Object) resource : exception
+			});
 			basicDiagnostic.merge(EcoreUtil.computeDiagnostic(resource, true));
 			return basicDiagnostic;
-		} else if (exception != null) {
-			return new BasicDiagnostic(Diagnostic.ERROR,
-					"org.storydriven.modeling.editor", 0, getString(
-							"_UI_CreateModelError_message", resource.getURI()),
-					new Object[] { exception });
-		} else {
+		}
+		else if (exception != null)
+		{
+			return new BasicDiagnostic(Diagnostic.ERROR, "org.storydriven.modeling.editor", 0, getString("_UI_CreateModelError_message",
+					resource.getURI()), new Object[]
+			{
+				exception
+			});
+		}
+		else
+		{
 			return Diagnostic.OK_INSTANCE;
 		}
 	}
@@ -1040,28 +1146,32 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * @generated
 	 */
 	@Override
-	public void createPages() {
+	public void createPages()
+	{
 		// Creates the model from the editor input
 		//
 		createModel();
 
 		// Only creates the other pages if there is something that can be edited
 		//
-		if (!getEditingDomain().getResourceSet().getResources().isEmpty()) {
+		if (!getEditingDomain().getResourceSet().getResources().isEmpty())
+		{
 			// Create a page for the selection tree view.
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(),
-						ExpressionsEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ExpressionsEditor.this)
+				{
 					@Override
-					public Viewer createViewer(Composite composite) {
+					public Viewer createViewer(Composite composite)
+					{
 						Tree tree = new Tree(composite, SWT.MULTI);
 						TreeViewer newTreeViewer = new TreeViewer(tree);
 						return newTreeViewer;
 					}
 
 					@Override
-					public void requestActivation() {
+					public void requestActivation()
+					{
 						super.requestActivation();
 						setCurrentViewerPane(this);
 					}
@@ -1069,21 +1179,14 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 				viewerPane.createControl(getContainer());
 
 				selectionViewer = (TreeViewer) viewerPane.getViewer();
-				selectionViewer
-						.setContentProvider(new AdapterFactoryContentProvider(
-								adapterFactory));
+				selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
 
-				selectionViewer
-						.setLabelProvider(new AdapterFactoryLabelProvider(
-								adapterFactory));
+				selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 				selectionViewer.setInput(editingDomain.getResourceSet());
-				selectionViewer.setSelection(new StructuredSelection(
-						editingDomain.getResourceSet().getResources().get(0)),
-						true);
+				selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
 				viewerPane.setTitle(editingDomain.getResourceSet());
 
-				new AdapterFactoryTreeEditor(selectionViewer.getTree(),
-						adapterFactory);
+				new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
 
 				createContextMenuFor(selectionViewer);
 				int pageIndex = addPage(viewerPane.getControl());
@@ -1093,17 +1196,19 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 			// Create a page for the parent tree view.
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(),
-						ExpressionsEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ExpressionsEditor.this)
+				{
 					@Override
-					public Viewer createViewer(Composite composite) {
+					public Viewer createViewer(Composite composite)
+					{
 						Tree tree = new Tree(composite, SWT.MULTI);
 						TreeViewer newTreeViewer = new TreeViewer(tree);
 						return newTreeViewer;
 					}
 
 					@Override
-					public void requestActivation() {
+					public void requestActivation()
+					{
 						super.requestActivation();
 						setCurrentViewerPane(this);
 					}
@@ -1112,11 +1217,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 
 				parentViewer = (TreeViewer) viewerPane.getViewer();
 				parentViewer.setAutoExpandLevel(30);
-				parentViewer
-						.setContentProvider(new ReverseAdapterFactoryContentProvider(
-								adapterFactory));
-				parentViewer.setLabelProvider(new AdapterFactoryLabelProvider(
-						adapterFactory));
+				parentViewer.setContentProvider(new ReverseAdapterFactoryContentProvider(adapterFactory));
+				parentViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 
 				createContextMenuFor(parentViewer);
 				int pageIndex = addPage(viewerPane.getControl());
@@ -1126,26 +1228,25 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 			// This is the page for the list viewer
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(),
-						ExpressionsEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ExpressionsEditor.this)
+				{
 					@Override
-					public Viewer createViewer(Composite composite) {
+					public Viewer createViewer(Composite composite)
+					{
 						return new ListViewer(composite);
 					}
 
 					@Override
-					public void requestActivation() {
+					public void requestActivation()
+					{
 						super.requestActivation();
 						setCurrentViewerPane(this);
 					}
 				};
 				viewerPane.createControl(getContainer());
 				listViewer = (ListViewer) viewerPane.getViewer();
-				listViewer
-						.setContentProvider(new AdapterFactoryContentProvider(
-								adapterFactory));
-				listViewer.setLabelProvider(new AdapterFactoryLabelProvider(
-						adapterFactory));
+				listViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+				listViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 
 				createContextMenuFor(listViewer);
 				int pageIndex = addPage(viewerPane.getControl());
@@ -1155,29 +1256,27 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 			// This is the page for the tree viewer
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(),
-						ExpressionsEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ExpressionsEditor.this)
+				{
 					@Override
-					public Viewer createViewer(Composite composite) {
+					public Viewer createViewer(Composite composite)
+					{
 						return new TreeViewer(composite);
 					}
 
 					@Override
-					public void requestActivation() {
+					public void requestActivation()
+					{
 						super.requestActivation();
 						setCurrentViewerPane(this);
 					}
 				};
 				viewerPane.createControl(getContainer());
 				treeViewer = (TreeViewer) viewerPane.getViewer();
-				treeViewer
-						.setContentProvider(new AdapterFactoryContentProvider(
-								adapterFactory));
-				treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(
-						adapterFactory));
+				treeViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+				treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 
-				new AdapterFactoryTreeEditor(treeViewer.getTree(),
-						adapterFactory);
+				new AdapterFactoryTreeEditor(treeViewer.getTree(), adapterFactory);
 
 				createContextMenuFor(treeViewer);
 				int pageIndex = addPage(viewerPane.getControl());
@@ -1187,15 +1286,17 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 			// This is the page for the table viewer.
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(),
-						ExpressionsEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ExpressionsEditor.this)
+				{
 					@Override
-					public Viewer createViewer(Composite composite) {
+					public Viewer createViewer(Composite composite)
+					{
 						return new TableViewer(composite);
 					}
 
 					@Override
-					public void requestActivation() {
+					public void requestActivation()
+					{
 						super.requestActivation();
 						setCurrentViewerPane(this);
 					}
@@ -1219,12 +1320,12 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 				selfColumn.setText(getString("_UI_SelfColumn_label"));
 				selfColumn.setResizable(true);
 
-				tableViewer.setColumnProperties(new String[] { "a", "b" });
-				tableViewer
-						.setContentProvider(new AdapterFactoryContentProvider(
-								adapterFactory));
-				tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(
-						adapterFactory));
+				tableViewer.setColumnProperties(new String[]
+				{
+						"a", "b"
+				});
+				tableViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+				tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 
 				createContextMenuFor(tableViewer);
 				int pageIndex = addPage(viewerPane.getControl());
@@ -1234,15 +1335,17 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 			// This is the page for the table tree viewer.
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(),
-						ExpressionsEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ExpressionsEditor.this)
+				{
 					@Override
-					public Viewer createViewer(Composite composite) {
+					public Viewer createViewer(Composite composite)
+					{
 						return new TreeViewer(composite);
 					}
 
 					@Override
-					public void requestActivation() {
+					public void requestActivation()
+					{
 						super.requestActivation();
 						setCurrentViewerPane(this);
 					}
@@ -1266,23 +1369,22 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 				selfColumn.setResizable(true);
 				selfColumn.setWidth(200);
 
-				treeViewerWithColumns.setColumnProperties(new String[] { "a",
-						"b" });
-				treeViewerWithColumns
-						.setContentProvider(new AdapterFactoryContentProvider(
-								adapterFactory));
-				treeViewerWithColumns
-						.setLabelProvider(new AdapterFactoryLabelProvider(
-								adapterFactory));
+				treeViewerWithColumns.setColumnProperties(new String[]
+				{
+						"a", "b"
+				});
+				treeViewerWithColumns.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+				treeViewerWithColumns.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 
 				createContextMenuFor(treeViewerWithColumns);
 				int pageIndex = addPage(viewerPane.getControl());
-				setPageText(pageIndex,
-						getString("_UI_TreeWithColumnsPage_label"));
+				setPageText(pageIndex, getString("_UI_TreeWithColumnsPage_label"));
 			}
 
-			getSite().getShell().getDisplay().asyncExec(new Runnable() {
-				public void run() {
+			getSite().getShell().getDisplay().asyncExec(new Runnable()
+			{
+				public void run()
+				{
 					setActivePage(0);
 				}
 			});
@@ -1291,12 +1393,15 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 		// Ensures that this editor will only display the page's tab
 		// area if there are more than one page
 		//
-		getContainer().addControlListener(new ControlAdapter() {
-			boolean guard = false;
+		getContainer().addControlListener(new ControlAdapter()
+		{
+			boolean	guard	= false;
 
 			@Override
-			public void controlResized(ControlEvent event) {
-				if (!guard) {
+			public void controlResized(ControlEvent event)
+			{
+				if (!guard)
+				{
 					guard = true;
 					hideTabs();
 					guard = false;
@@ -1304,8 +1409,10 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 			}
 		});
 
-		getSite().getShell().getDisplay().asyncExec(new Runnable() {
-			public void run() {
+		getSite().getShell().getDisplay().asyncExec(new Runnable()
+		{
+			public void run()
+			{
 				updateProblemIndication();
 			}
 		});
@@ -1318,10 +1425,13 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void hideTabs() {
-		if (getPageCount() <= 1) {
+	protected void hideTabs()
+	{
+		if (getPageCount() <= 1)
+		{
 			setPageText(0, "");
-			if (getContainer() instanceof CTabFolder) {
+			if (getContainer() instanceof CTabFolder)
+			{
 				((CTabFolder) getContainer()).setTabHeight(1);
 				Point point = getContainer().getSize();
 				getContainer().setSize(point.x, point.y + 6);
@@ -1336,10 +1446,13 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void showTabs() {
-		if (getPageCount() > 1) {
+	protected void showTabs()
+	{
+		if (getPageCount() > 1)
+		{
 			setPageText(0, getString("_UI_SelectionPage_label"));
-			if (getContainer() instanceof CTabFolder) {
+			if (getContainer() instanceof CTabFolder)
+			{
 				((CTabFolder) getContainer()).setTabHeight(SWT.DEFAULT);
 				Point point = getContainer().getSize();
 				getContainer().setSize(point.x, point.y - 6);
@@ -1354,10 +1467,12 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * @generated
 	 */
 	@Override
-	protected void pageChange(int pageIndex) {
+	protected void pageChange(int pageIndex)
+	{
 		super.pageChange(pageIndex);
 
-		if (contentOutlinePage != null) {
+		if (contentOutlinePage != null)
+		{
 			handleContentOutlineSelection(contentOutlinePage.getSelection());
 		}
 	}
@@ -1370,14 +1485,22 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 */
 	@SuppressWarnings("rawtypes")
 	@Override
-	public Object getAdapter(Class key) {
-		if (key.equals(IContentOutlinePage.class)) {
+	public Object getAdapter(Class key)
+	{
+		if (key.equals(IContentOutlinePage.class))
+		{
 			return showOutlineView() ? getContentOutlinePage() : null;
-		} else if (key.equals(IPropertySheetPage.class)) {
+		}
+		else if (key.equals(IPropertySheetPage.class))
+		{
 			return getPropertySheetPage();
-		} else if (key.equals(IGotoMarker.class)) {
+		}
+		else if (key.equals(IGotoMarker.class))
+		{
 			return this;
-		} else {
+		}
+		else
+		{
 			return super.getAdapter(key);
 		}
 	}
@@ -1388,57 +1511,52 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IContentOutlinePage getContentOutlinePage() {
-		if (contentOutlinePage == null) {
+	public IContentOutlinePage getContentOutlinePage()
+	{
+		if (contentOutlinePage == null)
+		{
 			// The content outline is just a tree.
 			//
-			class MyContentOutlinePage extends ContentOutlinePage {
+			class MyContentOutlinePage extends ContentOutlinePage
+			{
 				@Override
-				public void createControl(Composite parent) {
+				public void createControl(Composite parent)
+				{
 					super.createControl(parent);
 					contentOutlineViewer = getTreeViewer();
 					contentOutlineViewer.addSelectionChangedListener(this);
 
 					// Set up the tree viewer.
 					//
-					contentOutlineViewer
-							.setContentProvider(new AdapterFactoryContentProvider(
-									adapterFactory));
-					contentOutlineViewer
-							.setLabelProvider(new AdapterFactoryLabelProvider(
-									adapterFactory));
-					contentOutlineViewer.setInput(editingDomain
-							.getResourceSet());
+					contentOutlineViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+					contentOutlineViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+					contentOutlineViewer.setInput(editingDomain.getResourceSet());
 
 					// Make sure our popups work.
 					//
 					createContextMenuFor(contentOutlineViewer);
 
-					if (!editingDomain.getResourceSet().getResources()
-							.isEmpty()) {
+					if (!editingDomain.getResourceSet().getResources().isEmpty())
+					{
 						// Select the root object in the view.
 						//
-						contentOutlineViewer
-								.setSelection(new StructuredSelection(
-										editingDomain.getResourceSet()
-												.getResources().get(0)), true);
+						contentOutlineViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)),
+								true);
 					}
 				}
 
 				@Override
-				public void makeContributions(IMenuManager menuManager,
-						IToolBarManager toolBarManager,
-						IStatusLineManager statusLineManager) {
-					super.makeContributions(menuManager, toolBarManager,
-							statusLineManager);
+				public void makeContributions(IMenuManager menuManager, IToolBarManager toolBarManager, IStatusLineManager statusLineManager)
+				{
+					super.makeContributions(menuManager, toolBarManager, statusLineManager);
 					contentOutlineStatusLineManager = statusLineManager;
 				}
 
 				@Override
-				public void setActionBars(IActionBars actionBars) {
+				public void setActionBars(IActionBars actionBars)
+				{
 					super.setActionBars(actionBars);
-					getActionBarContributor().shareGlobalActions(this,
-							actionBars);
+					getActionBarContributor().shareGlobalActions(this, actionBars);
 				}
 			}
 
@@ -1446,14 +1564,15 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 
 			// Listen to selection so that we can handle it is a special way.
 			//
-			contentOutlinePage
-					.addSelectionChangedListener(new ISelectionChangedListener() {
-						// This ensures that we handle selections correctly.
-						//
-						public void selectionChanged(SelectionChangedEvent event) {
-							handleContentOutlineSelection(event.getSelection());
-						}
-					});
+			contentOutlinePage.addSelectionChangedListener(new ISelectionChangedListener()
+			{
+				// This ensures that we handle selections correctly.
+				//
+				public void selectionChanged(SelectionChangedEvent event)
+				{
+					handleContentOutlineSelection(event.getSelection());
+				}
+			});
 		}
 
 		return contentOutlinePage;
@@ -1465,25 +1584,27 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IPropertySheetPage getPropertySheetPage() {
-		if (propertySheetPage == null) {
-			propertySheetPage = new ExtendedPropertySheetPage(editingDomain) {
+	public IPropertySheetPage getPropertySheetPage()
+	{
+		if (propertySheetPage == null)
+		{
+			propertySheetPage = new ExtendedPropertySheetPage(editingDomain)
+			{
 				@Override
-				public void setSelectionToViewer(List<?> selection) {
+				public void setSelectionToViewer(List<?> selection)
+				{
 					ExpressionsEditor.this.setSelectionToViewer(selection);
 					ExpressionsEditor.this.setFocus();
 				}
 
 				@Override
-				public void setActionBars(IActionBars actionBars) {
+				public void setActionBars(IActionBars actionBars)
+				{
 					super.setActionBars(actionBars);
-					getActionBarContributor().shareGlobalActions(this,
-							actionBars);
+					getActionBarContributor().shareGlobalActions(this, actionBars);
 				}
 			};
-			propertySheetPage
-					.setPropertySourceProvider(new AdapterFactoryContentProvider(
-							adapterFactory));
+			propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(adapterFactory));
 		}
 
 		return propertySheetPage;
@@ -1495,33 +1616,38 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void handleContentOutlineSelection(ISelection selection) {
-		if (currentViewerPane != null && !selection.isEmpty()
-				&& selection instanceof IStructuredSelection) {
-			Iterator<?> selectedElements = ((IStructuredSelection) selection)
-					.iterator();
-			if (selectedElements.hasNext()) {
+	public void handleContentOutlineSelection(ISelection selection)
+	{
+		if (currentViewerPane != null && !selection.isEmpty() && selection instanceof IStructuredSelection)
+		{
+			Iterator<?> selectedElements = ((IStructuredSelection) selection).iterator();
+			if (selectedElements.hasNext())
+			{
 				// Get the first selected element.
 				//
 				Object selectedElement = selectedElements.next();
 
 				// If it's the selection viewer, then we want it to select the same selection as this selection.
 				//
-				if (currentViewerPane.getViewer() == selectionViewer) {
+				if (currentViewerPane.getViewer() == selectionViewer)
+				{
 					ArrayList<Object> selectionList = new ArrayList<Object>();
 					selectionList.add(selectedElement);
-					while (selectedElements.hasNext()) {
+					while (selectedElements.hasNext())
+					{
 						selectionList.add(selectedElements.next());
 					}
 
 					// Set the selection to the widget.
 					//
-					selectionViewer.setSelection(new StructuredSelection(
-							selectionList));
-				} else {
+					selectionViewer.setSelection(new StructuredSelection(selectionList));
+				}
+				else
+				{
 					// Set the input to the widget.
 					//
-					if (currentViewerPane.getViewer().getInput() != selectedElement) {
+					if (currentViewerPane.getViewer().getInput() != selectedElement)
+					{
 						currentViewerPane.getViewer().setInput(selectedElement);
 						currentViewerPane.setTitle(selectedElement);
 					}
@@ -1537,9 +1663,9 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * @generated
 	 */
 	@Override
-	public boolean isDirty() {
-		return ((BasicCommandStack) editingDomain.getCommandStack())
-				.isSaveNeeded();
+	public boolean isDirty()
+	{
+		return ((BasicCommandStack) editingDomain.getCommandStack()).isSaveNeeded();
 	}
 
 	/**
@@ -1549,38 +1675,41 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * @generated
 	 */
 	@Override
-	public void doSave(IProgressMonitor progressMonitor) {
+	public void doSave(IProgressMonitor progressMonitor)
+	{
 		// Save only resources that have actually changed.
 		//
 		final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
-		saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED,
-				Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
+		saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
 
 		// Do the work within an operation because this is a long running activity that modifies the workbench.
 		//
-		WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
+		WorkspaceModifyOperation operation = new WorkspaceModifyOperation()
+		{
 			// This is the method that gets invoked when the operation runs.
 			//
 			@Override
-			public void execute(IProgressMonitor monitor) {
+			public void execute(IProgressMonitor monitor)
+			{
 				// Save the resources to the file system.
 				//
 				boolean first = true;
-				for (Resource resource : editingDomain.getResourceSet()
-						.getResources()) {
-					if ((first || !resource.getContents().isEmpty() || isPersisted(resource))
-							&& !editingDomain.isReadOnly(resource)) {
-						try {
+				for (Resource resource : editingDomain.getResourceSet().getResources())
+				{
+					if ((first || !resource.getContents().isEmpty() || isPersisted(resource)) && !editingDomain.isReadOnly(resource))
+					{
+						try
+						{
 							long timeStamp = resource.getTimeStamp();
 							resource.save(saveOptions);
-							if (resource.getTimeStamp() != timeStamp) {
+							if (resource.getTimeStamp() != timeStamp)
+							{
 								savedResources.add(resource);
 							}
-						} catch (Exception exception) {
-							resourceToDiagnosticMap
-									.put(resource,
-											analyzeResourceProblems(resource,
-													exception));
+						}
+						catch (Exception exception)
+						{
+							resourceToDiagnosticMap.put(resource, analyzeResourceProblems(resource, exception));
 						}
 						first = false;
 					}
@@ -1589,17 +1718,19 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 		};
 
 		updateProblemIndication = false;
-		try {
+		try
+		{
 			// This runs the options, and shows progress.
 			//
-			new ProgressMonitorDialog(getSite().getShell()).run(true, false,
-					operation);
+			new ProgressMonitorDialog(getSite().getShell()).run(true, false, operation);
 
 			// Refresh the necessary state.
 			//
 			((BasicCommandStack) editingDomain.getCommandStack()).saveIsDone();
 			firePropertyChange(IEditorPart.PROP_DIRTY);
-		} catch (Exception exception) {
+		}
+		catch (Exception exception)
+		{
 			// Something went wrong that shouldn't.
 			//
 			SDMEditorPlugin.INSTANCE.log(exception);
@@ -1615,16 +1746,20 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected boolean isPersisted(Resource resource) {
+	protected boolean isPersisted(Resource resource)
+	{
 		boolean result = false;
-		try {
-			InputStream stream = editingDomain.getResourceSet()
-					.getURIConverter().createInputStream(resource.getURI());
-			if (stream != null) {
+		try
+		{
+			InputStream stream = editingDomain.getResourceSet().getURIConverter().createInputStream(resource.getURI());
+			if (stream != null)
+			{
 				result = true;
 				stream.close();
 			}
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			// Ignore
 		}
 		return result;
@@ -1637,7 +1772,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * @generated
 	 */
 	@Override
-	public boolean isSaveAsAllowed() {
+	public boolean isSaveAsAllowed()
+	{
 		return true;
 	}
 
@@ -1648,15 +1784,17 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * @generated
 	 */
 	@Override
-	public void doSaveAs() {
+	public void doSaveAs()
+	{
 		SaveAsDialog saveAsDialog = new SaveAsDialog(getSite().getShell());
 		saveAsDialog.open();
 		IPath path = saveAsDialog.getResult();
-		if (path != null) {
+		if (path != null)
+		{
 			IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
-			if (file != null) {
-				doSaveAs(URI.createPlatformResourceURI(file.getFullPath()
-						.toString(), true), new FileEditorInput(file));
+			if (file != null)
+			{
+				doSaveAs(URI.createPlatformResourceURI(file.getFullPath().toString(), true), new FileEditorInput(file));
 			}
 		}
 	}
@@ -1666,14 +1804,13 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void doSaveAs(URI uri, IEditorInput editorInput) {
+	protected void doSaveAs(URI uri, IEditorInput editorInput)
+	{
 		(editingDomain.getResourceSet().getResources().get(0)).setURI(uri);
 		setInputWithNotify(editorInput);
 		setPartName(editorInput.getName());
-		IProgressMonitor progressMonitor = getActionBars()
-				.getStatusLineManager() != null ? getActionBars()
-				.getStatusLineManager().getProgressMonitor()
-				: new NullProgressMonitor();
+		IProgressMonitor progressMonitor = getActionBars().getStatusLineManager() != null ? getActionBars().getStatusLineManager()
+				.getProgressMonitor() : new NullProgressMonitor();
 		doSave(progressMonitor);
 	}
 
@@ -1682,22 +1819,26 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void gotoMarker(IMarker marker) {
-		try {
-			if (marker.getType().equals(EValidator.MARKER)) {
-				String uriAttribute = marker.getAttribute(
-						EValidator.URI_ATTRIBUTE, null);
-				if (uriAttribute != null) {
+	public void gotoMarker(IMarker marker)
+	{
+		try
+		{
+			if (marker.getType().equals(EValidator.MARKER))
+			{
+				String uriAttribute = marker.getAttribute(EValidator.URI_ATTRIBUTE, null);
+				if (uriAttribute != null)
+				{
 					URI uri = URI.createURI(uriAttribute);
-					EObject eObject = editingDomain.getResourceSet()
-							.getEObject(uri, true);
-					if (eObject != null) {
-						setSelectionToViewer(Collections
-								.singleton(editingDomain.getWrapper(eObject)));
+					EObject eObject = editingDomain.getResourceSet().getEObject(uri, true);
+					if (eObject != null)
+					{
+						setSelectionToViewer(Collections.singleton(editingDomain.getWrapper(eObject)));
 					}
 				}
 			}
-		} catch (CoreException exception) {
+		}
+		catch (CoreException exception)
+		{
 			SDMEditorPlugin.INSTANCE.log(exception);
 		}
 	}
@@ -1709,14 +1850,14 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * @generated
 	 */
 	@Override
-	public void init(IEditorSite site, IEditorInput editorInput) {
+	public void init(IEditorSite site, IEditorInput editorInput)
+	{
 		setSite(site);
 		setInputWithNotify(editorInput);
 		setPartName(editorInput.getName());
 		site.setSelectionProvider(this);
 		site.getPage().addPartListener(partListener);
-		ResourcesPlugin.getWorkspace().addResourceChangeListener(
-				resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
+		ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
 	}
 
 	/**
@@ -1725,10 +1866,14 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * @generated
 	 */
 	@Override
-	public void setFocus() {
-		if (currentViewerPane != null) {
+	public void setFocus()
+	{
+		if (currentViewerPane != null)
+		{
 			currentViewerPane.setFocus();
-		} else {
+		}
+		else
+		{
 			getControl(getActivePage()).setFocus();
 		}
 	}
@@ -1739,7 +1884,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addSelectionChangedListener(ISelectionChangedListener listener) {
+	public void addSelectionChangedListener(ISelectionChangedListener listener)
+	{
 		selectionChangedListeners.add(listener);
 	}
 
@@ -1749,8 +1895,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void removeSelectionChangedListener(
-			ISelectionChangedListener listener) {
+	public void removeSelectionChangedListener(ISelectionChangedListener listener)
+	{
 		selectionChangedListeners.remove(listener);
 	}
 
@@ -1760,7 +1906,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ISelection getSelection() {
+	public ISelection getSelection()
+	{
 		return editorSelection;
 	}
 
@@ -1771,10 +1918,12 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSelection(ISelection selection) {
+	public void setSelection(ISelection selection)
+	{
 		editorSelection = selection;
 
-		for (ISelectionChangedListener listener : selectionChangedListeners) {
+		for (ISelectionChangedListener listener : selectionChangedListeners)
+		{
 			listener.selectionChanged(new SelectionChangedEvent(this, selection));
 		}
 		setStatusLineManager(selection);
@@ -1785,37 +1934,38 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatusLineManager(ISelection selection) {
-		IStatusLineManager statusLineManager = currentViewer != null
-				&& currentViewer == contentOutlineViewer ? contentOutlineStatusLineManager
+	public void setStatusLineManager(ISelection selection)
+	{
+		IStatusLineManager statusLineManager = currentViewer != null && currentViewer == contentOutlineViewer ? contentOutlineStatusLineManager
 				: getActionBars().getStatusLineManager();
 
-		if (statusLineManager != null) {
-			if (selection instanceof IStructuredSelection) {
-				Collection<?> collection = ((IStructuredSelection) selection)
-						.toList();
-				switch (collection.size()) {
-				case 0: {
-					statusLineManager
-							.setMessage(getString("_UI_NoObjectSelected"));
-					break;
+		if (statusLineManager != null)
+		{
+			if (selection instanceof IStructuredSelection)
+			{
+				Collection<?> collection = ((IStructuredSelection) selection).toList();
+				switch (collection.size())
+				{
+					case 0:
+					{
+						statusLineManager.setMessage(getString("_UI_NoObjectSelected"));
+						break;
+					}
+					case 1:
+					{
+						String text = new AdapterFactoryItemDelegator(adapterFactory).getText(collection.iterator().next());
+						statusLineManager.setMessage(getString("_UI_SingleObjectSelected", text));
+						break;
+					}
+					default:
+					{
+						statusLineManager.setMessage(getString("_UI_MultiObjectSelected", Integer.toString(collection.size())));
+						break;
+					}
 				}
-				case 1: {
-					String text = new AdapterFactoryItemDelegator(
-							adapterFactory).getText(collection.iterator()
-							.next());
-					statusLineManager.setMessage(getString(
-							"_UI_SingleObjectSelected", text));
-					break;
-				}
-				default: {
-					statusLineManager.setMessage(getString(
-							"_UI_MultiObjectSelected",
-							Integer.toString(collection.size())));
-					break;
-				}
-				}
-			} else {
+			}
+			else
+			{
 				statusLineManager.setMessage("");
 			}
 		}
@@ -1827,7 +1977,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static String getString(String key) {
+	private static String getString(String key)
+	{
 		return SDMEditorPlugin.INSTANCE.getString(key);
 	}
 
@@ -1837,8 +1988,12 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static String getString(String key, Object s1) {
-		return SDMEditorPlugin.INSTANCE.getString(key, new Object[] { s1 });
+	private static String getString(String key, Object s1)
+	{
+		return SDMEditorPlugin.INSTANCE.getString(key, new Object[]
+		{
+			s1
+		});
 	}
 
 	/**
@@ -1847,9 +2002,9 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void menuAboutToShow(IMenuManager menuManager) {
-		((IMenuListener) getEditorSite().getActionBarContributor())
-				.menuAboutToShow(menuManager);
+	public void menuAboutToShow(IMenuManager menuManager)
+	{
+		((IMenuListener) getEditorSite().getActionBarContributor()).menuAboutToShow(menuManager);
 	}
 
 	/**
@@ -1857,9 +2012,9 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EditingDomainActionBarContributor getActionBarContributor() {
-		return (EditingDomainActionBarContributor) getEditorSite()
-				.getActionBarContributor();
+	public EditingDomainActionBarContributor getActionBarContributor()
+	{
+		return (EditingDomainActionBarContributor) getEditorSite().getActionBarContributor();
 	}
 
 	/**
@@ -1867,7 +2022,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IActionBars getActionBars() {
+	public IActionBars getActionBars()
+	{
 		return getActionBarContributor().getActionBars();
 	}
 
@@ -1876,7 +2032,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AdapterFactory getAdapterFactory() {
+	public AdapterFactory getAdapterFactory()
+	{
 		return adapterFactory;
 	}
 
@@ -1886,25 +2043,28 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * @generated
 	 */
 	@Override
-	public void dispose() {
+	public void dispose()
+	{
 		updateProblemIndication = false;
 
-		ResourcesPlugin.getWorkspace().removeResourceChangeListener(
-				resourceChangeListener);
+		ResourcesPlugin.getWorkspace().removeResourceChangeListener(resourceChangeListener);
 
 		getSite().getPage().removePartListener(partListener);
 
 		adapterFactory.dispose();
 
-		if (getActionBarContributor().getActiveEditor() == this) {
+		if (getActionBarContributor().getActiveEditor() == this)
+		{
 			getActionBarContributor().setActiveEditor(null);
 		}
 
-		if (propertySheetPage != null) {
+		if (propertySheetPage != null)
+		{
 			propertySheetPage.dispose();
 		}
 
-		if (contentOutlinePage != null) {
+		if (contentOutlinePage != null)
+		{
 			contentOutlinePage.dispose();
 		}
 
@@ -1917,7 +2077,8 @@ public class ExpressionsEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected boolean showOutlineView() {
+	protected boolean showOutlineView()
+	{
 		return true;
 	}
 }

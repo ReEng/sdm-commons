@@ -1,8 +1,5 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
+ * <copyright> </copyright> $Id$
  */
 package org.storydriven.modeling.activities.provider;
 
@@ -11,14 +8,12 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.storydriven.modeling.activities.StartNode;
 
 /**
@@ -27,16 +22,17 @@ import org.storydriven.modeling.activities.StartNode;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StartNodeItemProvider extends ActivityNodeItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class StartNodeItemProvider extends ActivityNodeItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
+{
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StartNodeItemProvider(AdapterFactory adapterFactory) {
+	public StartNodeItemProvider(AdapterFactory adapterFactory)
+	{
 		super(adapterFactory);
 	}
 
@@ -47,8 +43,10 @@ public class StartNodeItemProvider extends ActivityNodeItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
+	{
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 		}
@@ -62,9 +60,9 @@ public class StartNodeItemProvider extends ActivityNodeItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/StartNode"));
+	public Object getImage(Object object)
+	{
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/StartNode"));
 	}
 
 	/**
@@ -74,10 +72,10 @@ public class StartNodeItemProvider extends ActivityNodeItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
+	public String getText(Object object)
+	{
 		String label = ((StartNode) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_StartNode_type")
-				: getString("_UI_StartNode_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_StartNode_type") : getString("_UI_StartNode_type") + " " + label;
 	}
 
 	/**
@@ -88,7 +86,8 @@ public class StartNodeItemProvider extends ActivityNodeItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(Notification notification)
+	{
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -101,8 +100,8 @@ public class StartNodeItemProvider extends ActivityNodeItemProvider implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
+	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

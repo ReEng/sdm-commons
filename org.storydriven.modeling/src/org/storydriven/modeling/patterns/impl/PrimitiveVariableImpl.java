@@ -22,18 +22,18 @@ import org.storydriven.modeling.util.SDMUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.storydriven.modeling.patterns.impl.PrimitiveVariableImpl#getType <em>Type</em>}</li>
- * <li>{@link org.storydriven.modeling.patterns.impl.PrimitiveVariableImpl#getClassifier <em>Classifier</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.impl.PrimitiveVariableImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.storydriven.modeling.patterns.impl.PrimitiveVariableImpl#getClassifier <em>Classifier</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class PrimitiveVariableImpl extends AbstractVariableImpl implements PrimitiveVariable
 {
    /**
-    * The cached value of the '{@link #getClassifier() <em>Classifier</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached value of the '{@link #getClassifier() <em>Classifier</em>}' reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getClassifier()
     * @generated
     * @ordered
@@ -42,7 +42,6 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements Primi
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    protected PrimitiveVariableImpl ()
@@ -52,7 +51,6 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements Primi
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -63,7 +61,6 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements Primi
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -75,7 +72,6 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements Primi
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -90,56 +86,48 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements Primi
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public EDataType getClassifier ()
    {
-      if (this.classifier != null && this.classifier.eIsProxy())
+      if (classifier != null && classifier.eIsProxy())
       {
-         InternalEObject oldClassifier = (InternalEObject) this.classifier;
-         this.classifier = (EDataType) eResolveProxy(oldClassifier);
-         if (this.classifier != oldClassifier)
+         InternalEObject oldClassifier = (InternalEObject) classifier;
+         classifier = (EDataType) eResolveProxy(oldClassifier);
+         if (classifier != oldClassifier)
          {
             if (eNotificationRequired())
-            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                  PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER, oldClassifier, this.classifier));
-            }
+                  PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER, oldClassifier, classifier));
          }
       }
-      return this.classifier;
+      return classifier;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public EDataType basicGetClassifier ()
    {
-      return this.classifier;
+      return classifier;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setClassifier (EDataType newClassifier)
    {
-      EDataType oldClassifier = this.classifier;
-      this.classifier = newClassifier;
+      EDataType oldClassifier = classifier;
+      classifier = newClassifier;
       if (eNotificationRequired())
-      {
          eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER,
-            oldClassifier, this.classifier));
-      }
+            oldClassifier, classifier));
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -149,9 +137,7 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements Primi
       {
          case PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER:
             if (resolve)
-            {
                return getClassifier();
-            }
             return basicGetClassifier();
       }
       return super.eGet(featureID, resolve, coreType);
@@ -159,7 +145,6 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements Primi
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -176,7 +161,6 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements Primi
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -193,7 +177,6 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements Primi
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -202,14 +185,13 @@ public class PrimitiveVariableImpl extends AbstractVariableImpl implements Primi
       switch (featureID)
       {
          case PatternsPackage.PRIMITIVE_VARIABLE__CLASSIFIER:
-            return this.classifier != null;
+            return classifier != null;
       }
       return super.eIsSet(featureID);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
