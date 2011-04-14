@@ -8,10 +8,6 @@ package org.storydriven.modeling.patterns;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.storydriven.modeling.NamedElement;
-import org.storydriven.modeling.TypedElement;
-import org.storydriven.modeling.Variable;
-import org.storydriven.modeling.expressions.Expression;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Object Variable</b></em>'. <!-- end-user-doc -->

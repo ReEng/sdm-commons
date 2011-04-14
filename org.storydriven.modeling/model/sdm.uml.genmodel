@@ -264,10 +264,10 @@
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//calls/OpaqueCallable">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//calls/OpaqueCallable/name"/>
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//calls/OpaqueCallable/inParameter"/>
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//calls/OpaqueCallable/outParameter"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//calls/OpaqueCallable/inParameter"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//calls/OpaqueCallable/outParameter"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
             createChild="false" ecoreFeature="ecore:EReference sdm.ecore#//calls/OpaqueCallable/callExpression"/>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sdm.ecore#//calls/OpaqueCallable/NumberOfOutParams">
@@ -279,16 +279,10 @@
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference sdm.ecore#//calls/ParameterExtension/parameter"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//calls/EOperationCallable">
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//calls/EOperationCallable/name"/>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sdm.ecore#//calls/Callable">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//calls/EOperationCallable/eOperation"/>
-        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sdm.ecore#//calls/EOperationCallable/NumberOfOutParams">
-          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sdm.ecore#//calls/EOperationCallable/NumberOfOutParams/diagnostics"/>
-          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sdm.ecore#//calls/EOperationCallable/NumberOfOutParams/context"/>
-        </genOperations>
+            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//calls/Callable/containedParameters"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sdm.ecore#//calls/Callable"/>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Expressions" basePackage="org.storydriven.modeling.calls"
           disposableProviderFactory="true" ecorePackage="sdm.ecore#//calls/expressions"
           resourceInterfaces="true" operationsPackage="org.storydriven.modeling.calls.expressions.impl">

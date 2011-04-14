@@ -8,16 +8,11 @@ package org.storydriven.modeling.patterns.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.storydriven.modeling.impl.ExtendableElementImpl;
-
 import org.storydriven.modeling.patterns.AbstractLinkVariable;
 import org.storydriven.modeling.patterns.LinkConstraint;
 import org.storydriven.modeling.patterns.LinkConstraintType;

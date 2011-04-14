@@ -103,12 +103,6 @@ public class CallsAdapterFactory extends AdapterFactoryImpl
       }
 
       @Override
-      public Adapter caseEOperationCallable (EOperationCallable object)
-      {
-         return createEOperationCallableAdapter();
-      }
-
-      @Override
       public Adapter caseCallable (Callable object)
       {
          return createCallableAdapter();
@@ -212,21 +206,6 @@ public class CallsAdapterFactory extends AdapterFactoryImpl
     * @generated
     */
    public Adapter createParameterExtensionAdapter ()
-   {
-      return null;
-   }
-
-   /**
-    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.calls.EOperationCallable <em>EOperation Callable</em>}'.
-    * <!-- begin-user-doc -->
-    * This default implementation returns null so that we can easily ignore cases;
-    * it's useful to ignore a case when inheritance will catch all the cases anyway.
-    * <!-- end-user-doc -->
-    * @return the new adapter.
-    * @see org.storydriven.modeling.calls.EOperationCallable
-    * @generated
-    */
-   public Adapter createEOperationCallableAdapter ()
    {
       return null;
    }

@@ -914,10 +914,10 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
          Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
          IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
       initEReference(getActivity_InParameter(), theEcorePackage.getEParameter(), null, "inParameter", null, 0, -1,
-         Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+         Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
          IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
       initEReference(getActivity_OutParameter(), theEcorePackage.getEParameter(), null, "outParameter", null, 0, -1,
-         Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+         Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
          IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
       initEReference(getActivity_OwnedActivityNode(), this.getActivityNode(), this.getActivityNode_OwningActivity(),
          "ownedActivityNode", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,

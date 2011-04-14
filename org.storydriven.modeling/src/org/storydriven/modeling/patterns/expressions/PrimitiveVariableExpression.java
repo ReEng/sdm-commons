@@ -7,7 +7,6 @@
 package org.storydriven.modeling.patterns.expressions;
 
 import org.storydriven.modeling.expressions.Expression;
-
 import org.storydriven.modeling.patterns.PrimitiveVariable;
 
 /**

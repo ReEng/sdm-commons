@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.Activity;
@@ -26,7 +25,6 @@ import org.storydriven.modeling.activities.ActivityEdge;
 import org.storydriven.modeling.activities.ActivityNode;
 import org.storydriven.modeling.activities.StructuredNode;
 import org.storydriven.modeling.impl.NamedElementImpl;
-import org.storydriven.modeling.impl.CommentableElementImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Activity Node</b></em>'. <!-- end-user-doc -->

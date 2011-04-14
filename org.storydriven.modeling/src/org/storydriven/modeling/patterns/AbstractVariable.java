@@ -7,11 +7,8 @@
 package org.storydriven.modeling.patterns;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.Variable;
-import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.modeling.expressions.Expression;
 
 /**

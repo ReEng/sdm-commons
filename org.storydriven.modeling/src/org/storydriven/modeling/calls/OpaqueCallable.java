@@ -57,7 +57,7 @@ public interface OpaqueCallable extends Callable
    void setName (String value);
 
    /**
-    * Returns the value of the '<em><b>In Parameter</b></em>' containment reference list.
+    * Returns the value of the '<em><b>In Parameter</b></em>' reference list.
     * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
     * <p>
     * This feature redefines the following features:
@@ -71,15 +71,15 @@ public interface OpaqueCallable extends Callable
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @return the value of the '<em>In Parameter</em>' containment reference list.
+    * @return the value of the '<em>In Parameter</em>' reference list.
     * @see org.storydriven.modeling.calls.CallsPackage#getOpaqueCallable_InParameter()
-    * @model containment="true" resolveProxies="true"
+    * @model
     * @generated
     */
    EList<EParameter> getInParameters ();
 
    /**
-    * Returns the value of the '<em><b>Out Parameter</b></em>' containment reference list.
+    * Returns the value of the '<em><b>Out Parameter</b></em>' reference list.
     * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
     * <p>
     * This feature redefines the following features:
@@ -93,9 +93,9 @@ public interface OpaqueCallable extends Callable
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @return the value of the '<em>Out Parameter</em>' containment reference list.
+    * @return the value of the '<em>Out Parameter</em>' reference list.
     * @see org.storydriven.modeling.calls.CallsPackage#getOpaqueCallable_OutParameter()
-    * @model containment="true" resolveProxies="true"
+    * @model
     * @generated
     */
    EList<EParameter> getOutParameters ();

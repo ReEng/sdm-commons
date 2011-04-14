@@ -7,6 +7,7 @@
 package org.storydriven.modeling.activities.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -22,12 +23,15 @@ import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.activities.OperationExtension;
 import org.storydriven.modeling.calls.Callable;
+import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.impl.ExtensionImpl;
 import org.storydriven.modeling.impl.ExtensionOperations;
 
@@ -37,6 +41,7 @@ import org.storydriven.modeling.impl.ExtensionOperations;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getContainedParameters <em>Contained Parameters</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getInParameters <em>In Parameter</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getOutParameters <em>Out Parameter</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getOperation <em>Operation</em>}</li>
@@ -65,6 +70,15 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
     * @ordered
     */
    protected String comment = COMMENT_EDEFAULT;
+   /**
+    * The cached value of the '{@link #getContainedParameters() <em>Contained Parameters</em>}' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getContainedParameters()
+    * @generated
+    * @ordered
+    */
+   protected EList<EParameter> containedParameters;
    /**
     * The cached value of the '{@link #getReturnValue() <em>Return Value</em>}' containment reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -121,6 +135,21 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
       if (eNotificationRequired())
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.OPERATION_EXTENSION__COMMENT,
             oldComment, comment));
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public EList<EParameter> getContainedParameters ()
+   {
+      if (containedParameters == null)
+      {
+         containedParameters = new EObjectContainmentEList.Resolving<EParameter>(EParameter.class, this,
+            ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS);
+      }
+      return containedParameters;
    }
 
    /**
@@ -405,6 +434,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
    {
       switch (featureID)
       {
+         case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
+            return ((InternalEList<?>) getContainedParameters()).basicRemove(otherEnd, msgs);
          case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
             return basicSetReturnValue(null, msgs);
          case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
@@ -424,6 +455,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
       {
          case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
             return getComment();
+         case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
+            return getContainedParameters();
          case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
             return getOperation();
          case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
@@ -442,6 +475,7 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
+   @SuppressWarnings ("unchecked")
    @Override
    public void eSet (int featureID, Object newValue)
    {
@@ -449,6 +483,10 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
       {
          case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
             setComment((String) newValue);
+            return;
+         case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
+            getContainedParameters().clear();
+            getContainedParameters().addAll((Collection<? extends EParameter>) newValue);
             return;
          case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
             setOperation((EOperation) newValue);
@@ -475,6 +513,9 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
          case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
             setComment(COMMENT_EDEFAULT);
             return;
+         case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
+            getContainedParameters().clear();
+            return;
          case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
             unsetOperation();
             return;
@@ -499,6 +540,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
       {
          case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
             return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+         case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
+            return containedParameters != null && !containedParameters.isEmpty();
          case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
             return isSetOperation();
          case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
@@ -530,6 +573,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
       {
          switch (derivedFeatureID)
          {
+            case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
+               return CallsPackage.CALLABLE__CONTAINED_PARAMETERS;
             default:
                return -1;
          }
@@ -558,6 +603,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
       {
          switch (baseFeatureID)
          {
+            case CallsPackage.CALLABLE__CONTAINED_PARAMETERS:
+               return ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS;
             default:
                return -1;
          }

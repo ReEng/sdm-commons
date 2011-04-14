@@ -19,6 +19,7 @@ import org.storydriven.modeling.patterns.expressions.AttributeValueExpression;
 import org.storydriven.modeling.patterns.expressions.ExpressionsPackage;
 import org.storydriven.modeling.patterns.expressions.ObjectSetSizeExpression;
 import org.storydriven.modeling.patterns.expressions.ObjectVariableExpression;
+import org.storydriven.modeling.patterns.expressions.PrimitiveVariableExpression;
 
 /**
  * <!-- begin-user-doc --> The <b>Switch</b> for the model's inheritance hierarchy. It supports the call {@link #doSwitch(EObject) doSwitch(object)} to invoke the

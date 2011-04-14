@@ -24,6 +24,7 @@ import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.activities.ActivitiesFactory;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.OperationExtension;
+import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.provider.ExtensionItemProvider;
 import org.storydriven.modeling.provider.SDMEditPlugin;
 
@@ -109,6 +110,7 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider implem
 		if (childrenFeatures == null)
 		{
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
 			childrenFeatures.add(ActivitiesPackage.Literals.OPERATION_EXTENSION__RETURN_VALUE);
 			childrenFeatures.add(ActivitiesPackage.Literals.OPERATION_EXTENSION__OWNED_ACTIVITY);
 		}
@@ -172,6 +174,7 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider implem
 			case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
 			case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
 			case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -192,11 +195,39 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider implem
 	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
+		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS,
+				EcoreFactory.eINSTANCE.createEParameter()));
+
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.OPERATION_EXTENSION__RETURN_VALUE,
 				EcoreFactory.eINSTANCE.createEParameter()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.OPERATION_EXTENSION__OWNED_ACTIVITY,
 				ActivitiesFactory.eINSTANCE.createActivity()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection)
+	{
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS
+				|| childFeature == ActivitiesPackage.Literals.OPERATION_EXTENSION__RETURN_VALUE;
+
+		if (qualify)
+		{
+			return getString("_UI_CreateChild_text2", new Object[]
+			{
+					getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner)
+			});
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

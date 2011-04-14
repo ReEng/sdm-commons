@@ -51,19 +51,11 @@ public class CallsValidator extends EObjectValidator
    public static final int OPAQUE_CALLABLE__NUMBER_OF_OUT_PARAMS = 1;
 
    /**
-    * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Number Of Out Params' of 'EOperation Callable'.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   public static final int EOPERATION_CALLABLE__NUMBER_OF_OUT_PARAMS = 2;
-
-   /**
     * A constant with a fixed name that can be used as the base value for additional hand written constants.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
-   private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 2;
+   private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 1;
 
    /**
     * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -111,8 +103,6 @@ public class CallsValidator extends EObjectValidator
             return validateOpaqueCallable((OpaqueCallable) value, diagnostics, context);
          case CallsPackage.PARAMETER_EXTENSION:
             return validateParameterExtension((ParameterExtension) value, diagnostics, context);
-         case CallsPackage.EOPERATION_CALLABLE:
-            return validateEOperationCallable((EOperationCallable) value, diagnostics, context);
          case CallsPackage.CALLABLE:
             return validateCallable((Callable) value, diagnostics, context);
          default:
@@ -187,48 +177,6 @@ public class CallsValidator extends EObjectValidator
                                               Map<Object, Object> context)
    {
       return validate_EveryDefaultConstraint(parameterExtension, diagnostics, context);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   public boolean validateEOperationCallable (EOperationCallable eOperationCallable, DiagnosticChain diagnostics,
-                                              Map<Object, Object> context)
-   {
-      if (!validate_NoCircularContainment(eOperationCallable, diagnostics, context))
-         return false;
-      boolean result = validate_EveryMultiplicityConforms(eOperationCallable, diagnostics, context);
-      if (result || diagnostics != null)
-         result &= validate_EveryDataValueConforms(eOperationCallable, diagnostics, context);
-      if (result || diagnostics != null)
-         result &= validate_EveryReferenceIsContained(eOperationCallable, diagnostics, context);
-      if (result || diagnostics != null)
-         result &= validate_EveryBidirectionalReferenceIsPaired(eOperationCallable, diagnostics, context);
-      if (result || diagnostics != null)
-         result &= validate_EveryProxyResolves(eOperationCallable, diagnostics, context);
-      if (result || diagnostics != null)
-         result &= validate_UniqueID(eOperationCallable, diagnostics, context);
-      if (result || diagnostics != null)
-         result &= validate_EveryKeyUnique(eOperationCallable, diagnostics, context);
-      if (result || diagnostics != null)
-         result &= validate_EveryMapEntryUnique(eOperationCallable, diagnostics, context);
-      if (result || diagnostics != null)
-         result &= validateEOperationCallable_NumberOfOutParams(eOperationCallable, diagnostics, context);
-      return result;
-   }
-
-   /**
-    * Validates the NumberOfOutParams constraint of '<em>EOperation Callable</em>'.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   public boolean validateEOperationCallable_NumberOfOutParams (EOperationCallable eOperationCallable,
-                                                                DiagnosticChain diagnostics, Map<Object, Object> context)
-   {
-      return eOperationCallable.NumberOfOutParams(diagnostics, context);
    }
 
    /**

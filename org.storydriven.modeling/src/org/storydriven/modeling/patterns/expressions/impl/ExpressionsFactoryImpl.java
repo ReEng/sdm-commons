@@ -17,6 +17,7 @@ import org.storydriven.modeling.patterns.expressions.ExpressionsFactory;
 import org.storydriven.modeling.patterns.expressions.ExpressionsPackage;
 import org.storydriven.modeling.patterns.expressions.ObjectSetSizeExpression;
 import org.storydriven.modeling.patterns.expressions.ObjectVariableExpression;
+import org.storydriven.modeling.patterns.expressions.PrimitiveVariableExpression;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->

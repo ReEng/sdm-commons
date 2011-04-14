@@ -7,17 +7,12 @@
 package org.storydriven.modeling.calls.expressions.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.modeling.calls.ParameterExtension;
-
 import org.storydriven.modeling.calls.expressions.ExpressionsPackage;
 import org.storydriven.modeling.calls.expressions.ParameterExpression;
-
 import org.storydriven.modeling.expressions.impl.ExpressionImpl;
 
 /**

@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.modeling.expressions.Expression;
 import org.storydriven.modeling.patterns.AbstractVariable;
 import org.storydriven.modeling.patterns.Constraint;
-import org.storydriven.modeling.patterns.ObjectVariable;
 import org.storydriven.modeling.patterns.PatternsPackage;
 import org.storydriven.modeling.patterns.StoryPattern;
 

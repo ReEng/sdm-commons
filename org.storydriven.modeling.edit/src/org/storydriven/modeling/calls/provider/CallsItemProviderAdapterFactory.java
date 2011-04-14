@@ -148,31 +148,6 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.modeling.calls.EOperationCallable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EOperationCallableItemProvider	eOperationCallableItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.storydriven.modeling.calls.EOperationCallable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEOperationCallableAdapter()
-	{
-		if (eOperationCallableItemProvider == null)
-		{
-			eOperationCallableItemProvider = new EOperationCallableItemProvider(this);
-		}
-
-		return eOperationCallableItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -289,8 +264,6 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 			opaqueCallableItemProvider.dispose();
 		if (parameterExtensionItemProvider != null)
 			parameterExtensionItemProvider.dispose();
-		if (eOperationCallableItemProvider != null)
-			eOperationCallableItemProvider.dispose();
 	}
 
 }

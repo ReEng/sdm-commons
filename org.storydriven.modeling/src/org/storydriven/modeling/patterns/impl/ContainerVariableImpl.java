@@ -7,7 +7,6 @@
 package org.storydriven.modeling.patterns.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.storydriven.modeling.patterns.ContainerVariable;
 import org.storydriven.modeling.patterns.PatternsPackage;
 

@@ -18,10 +18,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.calls.OpaqueCallable;
 import org.storydriven.modeling.calls.expressions.ExpressionsPackage;
@@ -62,7 +60,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
     */
    protected String name = NAME_EDEFAULT;
    /**
-    * The cached value of the '{@link #getInParameters() <em>In Parameter</em>}' containment reference list.
+    * The cached value of the '{@link #getInParameters() <em>In Parameter</em>}' reference list.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @see #getInParameters()
@@ -71,7 +69,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
     */
    protected EList<EParameter> inParameters;
    /**
-    * The cached value of the '{@link #getOutParameters() <em>Out Parameter</em>}' containment reference list.
+    * The cached value of the '{@link #getOutParameters() <em>Out Parameter</em>}' reference list.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @see #getOutParameters()
@@ -131,7 +129,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
    {
       if (inParameters == null)
       {
-         inParameters = new EObjectContainmentEList.Resolving<EParameter>(EParameter.class, this,
+         inParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
             CallsPackage.OPAQUE_CALLABLE__IN_PARAMETER);
       }
       return inParameters;
@@ -156,7 +154,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
    {
       if (outParameters == null)
       {
-         outParameters = new EObjectContainmentEList.Resolving<EParameter>(EParameter.class, this,
+         outParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
             CallsPackage.OPAQUE_CALLABLE__OUT_PARAMETER);
       }
       return outParameters;
@@ -266,10 +264,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
    {
       switch (featureID)
       {
-         case CallsPackage.OPAQUE_CALLABLE__IN_PARAMETER:
-            return ((InternalEList<?>) getInParameters()).basicRemove(otherEnd, msgs);
-         case CallsPackage.OPAQUE_CALLABLE__OUT_PARAMETER:
-            return ((InternalEList<?>) getOutParameters()).basicRemove(otherEnd, msgs);
          case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
             return basicSetCallExpression(null, msgs);
       }

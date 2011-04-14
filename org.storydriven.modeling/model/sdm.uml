@@ -133,12 +133,12 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BzhFARzIEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BzhFABzIEeChOvWwuwx7tQ"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_1YQ1wSrfEeCrkKoGytJPbg" name="inParameter" aggregation="composite" redefinedProperty="_bGIb8RzMEeChOvWwuwx7tQ" association="_1YPnoCrfEeCrkKoGytJPbg">
+        <ownedAttribute xmi:id="_1YQ1wSrfEeCrkKoGytJPbg" name="inParameter" redefinedProperty="_bGIb8RzMEeChOvWwuwx7tQ" association="_1YPnoCrfEeCrkKoGytJPbg">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1YRc0SrfEeCrkKoGytJPbg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1YRc0CrfEeCrkKoGytJPbg"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_16YrYCrfEeCrkKoGytJPbg" name="outParameter" aggregation="composite" redefinedProperty="_eWJbMBzMEeChOvWwuwx7tQ" association="_16XdQCrfEeCrkKoGytJPbg">
+        <ownedAttribute xmi:id="_16YrYCrfEeCrkKoGytJPbg" name="outParameter" redefinedProperty="_eWJbMBzMEeChOvWwuwx7tQ" association="_16XdQCrfEeCrkKoGytJPbg">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_16ZScCrfEeCrkKoGytJPbg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_16YrYSrfEeCrkKoGytJPbg"/>
@@ -494,6 +494,11 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eWJbMhzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eWJbMRzMEeChOvWwuwx7tQ"/>
         </ownedAttribute>
+        <ownedAttribute xmi:id="_UxWXoGZsEeCjFI7iCZKgmw" name="containedParameters" aggregation="composite" association="_QpRvAGZsEeCjFI7iCZKgmw">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_X54O0GZsEeCjFI7iCZKgmw" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YOoW0GZsEeCjFI7iCZKgmw"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_hCbYEBzIEeChOvWwuwx7tQ" name="ParameterBinding">
         <ownedComment xmi:id="_xWpiwBzvEeChOvWwuwx7tQ" annotatedElement="_hCbYEBzIEeChOvWwuwx7tQ">
@@ -532,12 +537,12 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
         <ownedAttribute xmi:id="_tDyJACrdEeCrkKoGytJPbg" name="name" visibility="public">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_xZ_UQSrdEeCrkKoGytJPbg" name="inParameter" aggregation="composite" redefinedProperty="_bGIb8RzMEeChOvWwuwx7tQ" association="_xZ9fECrdEeCrkKoGytJPbg">
+        <ownedAttribute xmi:id="_xZ_UQSrdEeCrkKoGytJPbg" name="inParameter" redefinedProperty="_bGIb8RzMEeChOvWwuwx7tQ" association="_xZ9fECrdEeCrkKoGytJPbg">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xZ_7USrdEeCrkKoGytJPbg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xZ_7UCrdEeCrkKoGytJPbg"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_HTvZUirfEeCrkKoGytJPbg" name="outParameter" aggregation="composite" redefinedProperty="_eWJbMBzMEeChOvWwuwx7tQ" association="_HTuLMCrfEeCrkKoGytJPbg">
+        <ownedAttribute xmi:id="_HTvZUirfEeCrkKoGytJPbg" name="outParameter" redefinedProperty="_eWJbMBzMEeChOvWwuwx7tQ" association="_HTuLMCrfEeCrkKoGytJPbg">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HTwAYSrfEeCrkKoGytJPbg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HTwAYCrfEeCrkKoGytJPbg"/>
@@ -567,40 +572,10 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HTvZUCrfEeCrkKoGytJPbg"/>
         </ownedEnd>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_OoUc0GUMEeCFQ6h8F_noTQ" name="EOperationCallable">
-        <ownedComment xmi:id="_Uf2Q4GUMEeCFQ6h8F_noTQ" annotatedElement="_iEEbQBzIEeChOvWwuwx7tQ">
-          <body>An OpaqueCallable represents an external method which is not explicitly modeled (e.g. a method in an external library). Because it is not contained anywhere in the model it is directly referenced by and contained in the MethodCallExpression.</body>
-        </ownedComment>
-        <ownedRule xmi:id="_U5WWAGUMEeCFQ6h8F_noTQ" name="NumberOfOutParams">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_U5WWAWUMEeCFQ6h8F_noTQ">
-            <language>OCL</language>
-            <body>self.oclAsType(Callable).out->size() &lt;= 1</body>
-          </specification>
-        </ownedRule>
-        <generalization xmi:id="_Xa7h8GUMEeCFQ6h8F_noTQ" general="_gfdN4BzIEeChOvWwuwx7tQ"/>
-        <ownedAttribute xmi:id="_W-ZW8GUMEeCFQ6h8F_noTQ" name="name" visibility="public">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_AUIwEGUNEeCFQ6h8F_noTQ" name="eOperation" aggregation="composite" association="_KY8c4GUNEeCFQ6h8F_noTQ">
-          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EOperation"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AUIwEWUNEeCFQ6h8F_noTQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AUIwEmUNEeCFQ6h8F_noTQ" value="1"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_RQOBQGUOEeCFQ6h8F_noTQ" name="inParameter" isOrdered="true" isReadOnly="true" isDerived="true">
-          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RQOBQWUOEeCFQ6h8F_noTQ" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RQOBQmUOEeCFQ6h8F_noTQ"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_RQOBQ2UOEeCFQ6h8F_noTQ" name="outParameter" isOrdered="true" isReadOnly="true" isDerived="true">
-          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RQOBRGUOEeCFQ6h8F_noTQ" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RQOBRWUOEeCFQ6h8F_noTQ"/>
-        </ownedAttribute>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_KY8c4GUNEeCFQ6h8F_noTQ" name="EOperationCallableEOperation" memberEnd="_AUIwEGUNEeCFQ6h8F_noTQ _uJGtkGUNEeCFQ6h8F_noTQ">
-        <ownedEnd xmi:id="_uJGtkGUNEeCFQ6h8F_noTQ" name="revEOperation" type="_iEEbQBzIEeChOvWwuwx7tQ" association="_KY8c4GUNEeCFQ6h8F_noTQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uJGtkWUNEeCFQ6h8F_noTQ" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uJGtkmUNEeCFQ6h8F_noTQ"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_QpRvAGZsEeCjFI7iCZKgmw" name="ContainsParameter" memberEnd="_UxWXoGZsEeCjFI7iCZKgmw _QpRvAWZsEeCjFI7iCZKgmw">
+        <ownedEnd xmi:id="_QpRvAWZsEeCjFI7iCZKgmw" name="revContainedParameters" type="_gfdN4BzIEeChOvWwuwx7tQ" association="_QpRvAGZsEeCjFI7iCZKgmw">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QpRvAmZsEeCjFI7iCZKgmw" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QpRvA2ZsEeCjFI7iCZKgmw"/>
         </ownedEnd>
       </packagedElement>
     </packagedElement>

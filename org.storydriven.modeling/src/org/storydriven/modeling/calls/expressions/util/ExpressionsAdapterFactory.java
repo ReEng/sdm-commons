@@ -17,6 +17,7 @@ import org.storydriven.modeling.calls.Invocation;
 import org.storydriven.modeling.calls.expressions.*;
 import org.storydriven.modeling.calls.expressions.ExpressionsPackage;
 import org.storydriven.modeling.calls.expressions.MethodCallExpression;
+import org.storydriven.modeling.calls.expressions.ParameterExpression;
 import org.storydriven.modeling.expressions.Expression;
 
 /**

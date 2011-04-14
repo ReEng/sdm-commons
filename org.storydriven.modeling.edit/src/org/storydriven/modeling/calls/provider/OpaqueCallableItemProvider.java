@@ -8,8 +8,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -56,6 +54,8 @@ public class OpaqueCallableItemProvider extends CallableItemProvider implements 
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addInParameterPropertyDescriptor(object);
+			addOutParameterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -75,37 +75,31 @@ public class OpaqueCallableItemProvider extends CallableItemProvider implements 
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the In Parameter feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
+	protected void addInParameterPropertyDescriptor(Object object)
 	{
-		if (childrenFeatures == null)
-		{
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(CallsPackage.Literals.OPAQUE_CALLABLE__IN_PARAMETER);
-			childrenFeatures.add(CallsPackage.Literals.OPAQUE_CALLABLE__OUT_PARAMETER);
-		}
-		return childrenFeatures;
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_OpaqueCallable_inParameter_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_OpaqueCallable_inParameter_feature", "_UI_OpaqueCallable_type"),
+				CallsPackage.Literals.OPAQUE_CALLABLE__IN_PARAMETER, true, false, true, null, null, null));
 	}
 
 	/**
+	 * This adds a property descriptor for the Out Parameter feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
+	protected void addOutParameterPropertyDescriptor(Object object)
 	{
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_OpaqueCallable_outParameter_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_OpaqueCallable_outParameter_feature", "_UI_OpaqueCallable_type"),
+				CallsPackage.Literals.OPAQUE_CALLABLE__OUT_PARAMETER, true, false, true, null, null, null));
 	}
 
 	/**
@@ -151,10 +145,6 @@ public class OpaqueCallableItemProvider extends CallableItemProvider implements 
 			case CallsPackage.OPAQUE_CALLABLE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case CallsPackage.OPAQUE_CALLABLE__IN_PARAMETER:
-			case CallsPackage.OPAQUE_CALLABLE__OUT_PARAMETER:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -170,37 +160,6 @@ public class OpaqueCallableItemProvider extends CallableItemProvider implements 
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
 	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.OPAQUE_CALLABLE__IN_PARAMETER,
-				EcoreFactory.eINSTANCE.createEParameter()));
-
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.OPAQUE_CALLABLE__OUT_PARAMETER,
-				EcoreFactory.eINSTANCE.createEParameter()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection)
-	{
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify = childFeature == CallsPackage.Literals.OPAQUE_CALLABLE__IN_PARAMETER
-				|| childFeature == CallsPackage.Literals.OPAQUE_CALLABLE__OUT_PARAMETER;
-
-		if (qualify)
-		{
-			return getString("_UI_CreateChild_text2", new Object[]
-			{
-					getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner)
-			});
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

@@ -146,20 +146,6 @@ public class CallsSwitch<T>
                result = defaultCase(theEObject);
             return result;
          }
-         case CallsPackage.EOPERATION_CALLABLE:
-         {
-            EOperationCallable eOperationCallable = (EOperationCallable) theEObject;
-            T result = caseEOperationCallable(eOperationCallable);
-            if (result == null)
-               result = caseCallable(eOperationCallable);
-            if (result == null)
-               result = caseCommentableElement(eOperationCallable);
-            if (result == null)
-               result = caseExtendableElement(eOperationCallable);
-            if (result == null)
-               result = defaultCase(theEObject);
-            return result;
-         }
          case CallsPackage.CALLABLE:
          {
             Callable callable = (Callable) theEObject;
@@ -229,22 +215,6 @@ public class CallsSwitch<T>
     * @generated
     */
    public T caseParameterExtension (ParameterExtension object)
-   {
-      return null;
-   }
-
-   /**
-    * Returns the result of interpreting the object as an instance of '<em>EOperation Callable</em>'.
-    * <!-- begin-user-doc -->
-    * This implementation returns null;
-    * returning a non-null result will terminate the switch.
-    * <!-- end-user-doc -->
-    * @param object the target of the switch.
-    * @return the result of interpreting the object as an instance of '<em>EOperation Callable</em>'.
-    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-    * @generated
-    */
-   public T caseEOperationCallable (EOperationCallable object)
    {
       return null;
    }

@@ -15,6 +15,7 @@ import org.storydriven.modeling.calls.expressions.*;
 import org.storydriven.modeling.calls.expressions.ExpressionsFactory;
 import org.storydriven.modeling.calls.expressions.ExpressionsPackage;
 import org.storydriven.modeling.calls.expressions.MethodCallExpression;
+import org.storydriven.modeling.calls.expressions.ParameterExpression;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->

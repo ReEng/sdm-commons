@@ -14,11 +14,13 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.storydriven.modeling.patterns.*;
 import org.storydriven.modeling.patterns.AbstractLinkVariable;
+import org.storydriven.modeling.patterns.AbstractVariable;
 import org.storydriven.modeling.patterns.AttributeAssignment;
 import org.storydriven.modeling.patterns.BindingOperator;
 import org.storydriven.modeling.patterns.BindingSemantics;
 import org.storydriven.modeling.patterns.BindingState;
 import org.storydriven.modeling.patterns.Constraint;
+import org.storydriven.modeling.patterns.ContainerVariable;
 import org.storydriven.modeling.patterns.ContainmentRelation;
 import org.storydriven.modeling.patterns.LinkConstraint;
 import org.storydriven.modeling.patterns.LinkConstraintType;
@@ -28,6 +30,7 @@ import org.storydriven.modeling.patterns.ObjectSetVariable;
 import org.storydriven.modeling.patterns.ObjectVariable;
 import org.storydriven.modeling.patterns.Path;
 import org.storydriven.modeling.patterns.PatternsPackage;
+import org.storydriven.modeling.patterns.PrimitiveVariable;
 import org.storydriven.modeling.patterns.StoryPattern;
 
 /**

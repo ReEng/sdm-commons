@@ -139,13 +139,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="inParameter" upperBound="-1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
-          containment="true">
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
         <eAnnotations source="redefines" references="#//calls/Callable/%duplicates%/inParameter"/>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="outParameter" upperBound="-1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
-          containment="true">
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
         <eAnnotations source="redefines" references="#//calls/Callable/%duplicates%/outParameter"/>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityNode" ordered="false"
@@ -429,7 +427,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="OpaqueCallable" eSuperTypes="#//calls/Callable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An OpaqueCallable represents an external method which is not explicitly modeled (e.g. a method in an external library). Because it is not contained anywhere in the model it is directly referenced by and contained in the MethodCallExpression.&#xA;An OpaqueCallable represents an external method which is not explicitly modeled (e.g. a method in an external library). Because it is not contained anywhere in the model it is directly referenced by and contained in the MethodCallExpression."/>
+        <details key="documentation" value="An OpaqueCallable represents an external method which is not explicitly modeled (e.g. a method in an external library). Because it is not contained anywhere in the model it is directly referenced by and contained in the MethodCallExpression."/>
       </eAnnotations>
       <eOperations name="NumberOfOutParams" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -456,13 +454,11 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="inParameter" upperBound="-1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
-          containment="true">
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
         <eAnnotations source="redefines" references="#//calls/Callable/%duplicates%/inParameter"/>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="outParameter" upperBound="-1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
-          containment="true">
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
         <eAnnotations source="redefines" references="#//calls/Callable/%duplicates%/outParameter"/>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="callExpression" ordered="false"
@@ -478,46 +474,6 @@
         <eAnnotations source="redefines" references="#//Extension/modelBase"/>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EOperationCallable" eSuperTypes="#//calls/Callable">
-      <eAnnotations source="duplicates">
-        <contents xsi:type="ecore:EReference" name="inParameter" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
-            changeable="false" volatile="true" derived="true">
-          <eAnnotations source="redefines" references="#//calls/Callable/%duplicates%/inParameter"/>
-        </contents>
-        <contents xsi:type="ecore:EReference" name="outParameter" upperBound="-1"
-            eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
-            changeable="false" volatile="true" derived="true">
-          <eAnnotations source="redefines" references="#//calls/Callable/%duplicates%/outParameter"/>
-        </contents>
-      </eAnnotations>
-      <eOperations name="NumberOfOutParams" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
-        </eAnnotations>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="eOperation" ordered="false"
-          lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"
-          containment="true"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Callable" abstract="true" eSuperTypes="#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An entity which can be called by an Invocation. A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions and OpaqueCallables can only have one out parameter (This is enforced by an OCL constraint)."/>
@@ -529,6 +485,9 @@
             eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
             changeable="false" volatile="true" derived="true"/>
       </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="containedParameters"
+          ordered="false" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
+          containment="true"/>
     </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/calls/expressions/0.1.0"
         nsPrefix="sdmce">

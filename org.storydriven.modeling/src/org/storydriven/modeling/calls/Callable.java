@@ -29,6 +29,22 @@ import org.storydriven.modeling.CommentableElement;
 public interface Callable extends CommentableElement
 {
    /**
+    * Returns the value of the '<em><b>Contained Parameters</b></em>' containment reference list.
+    * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
+    * <!-- begin-user-doc -->
+    * <p>
+    * If the meaning of the '<em>Contained Parameters</em>' containment reference list isn't clear,
+    * there really should be more of a description here...
+    * </p>
+    * <!-- end-user-doc -->
+    * @return the value of the '<em>Contained Parameters</em>' containment reference list.
+    * @see org.storydriven.modeling.calls.CallsPackage#getCallable_ContainedParameters()
+    * @model containment="true" resolveProxies="true" ordered="false"
+    * @generated
+    */
+   EList<EParameter> getContainedParameters ();
+
+   /**
     * Returns the value of the '<em><b>In Parameter</b></em>' reference list.
     * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
     * <!-- begin-user-doc -->

@@ -72,8 +72,6 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory
             return createOpaqueCallable();
          case CallsPackage.PARAMETER_EXTENSION:
             return createParameterExtension();
-         case CallsPackage.EOPERATION_CALLABLE:
-            return createEOperationCallable();
          default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
       }
@@ -107,17 +105,6 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory
    {
       ParameterExtensionImpl parameterExtension = new ParameterExtensionImpl();
       return parameterExtension;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   public EOperationCallable createEOperationCallable ()
-   {
-      EOperationCallableImpl eOperationCallable = new EOperationCallableImpl();
-      return eOperationCallable;
    }
 
    /**

@@ -9,7 +9,6 @@ package org.storydriven.modeling.activities;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EClass;
 import org.storydriven.modeling.Variable;
 
 /**

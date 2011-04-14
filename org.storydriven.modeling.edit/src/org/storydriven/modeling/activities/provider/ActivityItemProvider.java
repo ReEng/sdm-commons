@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,6 +22,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.activities.ActivitiesFactory;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.Activity;
+import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.provider.CommentableElementItemProvider;
 import org.storydriven.modeling.provider.SDMEditPlugin;
 
@@ -120,6 +122,7 @@ public class ActivityItemProvider extends CommentableElementItemProvider impleme
 		if (childrenFeatures == null)
 		{
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
 			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGE);
 			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE);
 		}
@@ -179,6 +182,7 @@ public class ActivityItemProvider extends CommentableElementItemProvider impleme
 
 		switch (notification.getFeatureID(Activity.class))
 		{
+			case ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS:
 			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
 			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -198,6 +202,9 @@ public class ActivityItemProvider extends CommentableElementItemProvider impleme
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
 	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS,
+				EcoreFactory.eINSTANCE.createEParameter()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGE,
 				ActivitiesFactory.eINSTANCE.createActivityEdge()));

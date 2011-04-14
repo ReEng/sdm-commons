@@ -19,6 +19,7 @@ import org.storydriven.modeling.patterns.expressions.AttributeValueExpression;
 import org.storydriven.modeling.patterns.expressions.ExpressionsPackage;
 import org.storydriven.modeling.patterns.expressions.ObjectSetSizeExpression;
 import org.storydriven.modeling.patterns.expressions.ObjectVariableExpression;
+import org.storydriven.modeling.patterns.expressions.PrimitiveVariableExpression;
 
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter <code>createXXX</code> method for each class of the model. <!-- end-user-doc -->
