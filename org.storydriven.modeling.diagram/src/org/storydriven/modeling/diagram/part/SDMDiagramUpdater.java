@@ -16,7 +16,6 @@ import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.activities.ActivityEdge;
 import org.storydriven.modeling.activities.ActivityNode;
 import org.storydriven.modeling.activities.JunctionNode;
-import org.storydriven.modeling.activities.MatchingStoryNode;
 import org.storydriven.modeling.activities.ModifyingStoryNode;
 import org.storydriven.modeling.activities.StartNode;
 import org.storydriven.modeling.activities.StatementNode;
@@ -24,27 +23,23 @@ import org.storydriven.modeling.activities.StopNode;
 import org.storydriven.modeling.activities.StructuredNode;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEditPart;
+import org.storydriven.modeling.diagram.edit.parts.AttributeAssignmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.JunctionNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.JunctionNodeEditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingPatternEditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingPatternStoryPatternCompartementEditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNode2EditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNodeEditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart;
+import org.storydriven.modeling.diagram.edit.parts.LinkVariableEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart;
-import org.storydriven.modeling.diagram.edit.parts.ObjectVariable2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableEditPart;
+import org.storydriven.modeling.diagram.edit.parts.ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart;
+import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StartNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StartNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StopNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart;
-import org.storydriven.modeling.diagram.edit.parts.ForkNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StoryPatternEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StoryPatternStoryPatternCompartementEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNode2EditPart;
@@ -52,8 +47,12 @@ import org.storydriven.modeling.diagram.edit.parts.StructuredNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartment2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartmentEditPart;
 import org.storydriven.modeling.diagram.providers.SDMElementTypes;
-import org.storydriven.modeling.patterns.MatchingPattern;
+import org.storydriven.modeling.patterns.AbstractVariable;
+import org.storydriven.modeling.patterns.AttributeAssignment;
+import org.storydriven.modeling.patterns.LinkVariable;
 import org.storydriven.modeling.patterns.ObjectVariable;
+import org.storydriven.modeling.patterns.PatternsPackage;
+import org.storydriven.modeling.patterns.PrimitiveVariable;
 import org.storydriven.modeling.patterns.StoryPattern;
 
 /**
@@ -72,16 +71,12 @@ public class SDMDiagramUpdater {
 			return getStructuredNodeStructuredNodeCompartment_7001SemanticChildren(view);
 		case StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID:
 			return getStructuredNodeStructuredNodeCompartment_7002SemanticChildren(view);
-		case MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart.VISUAL_ID:
-			return getMatchingStoryNodeMatchingStoryNodeContentCompartment_7009SemanticChildren(view);
-		case MatchingPatternStoryPatternCompartementEditPart.VISUAL_ID:
-			return getMatchingPatternStoryPatternCompartement_7005SemanticChildren(view);
 		case ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID:
 			return getModifyingStoryNodeModifyingStoryNodeContentCompartment_7012SemanticChildren(view);
 		case StoryPatternStoryPatternCompartementEditPart.VISUAL_ID:
 			return getStoryPatternStoryPatternCompartement_7008SemanticChildren(view);
-		case MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart.VISUAL_ID:
-			return getMatchingStoryNodeMatchingStoryNodeContentCompartment_7003SemanticChildren(view);
+		case ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart.VISUAL_ID:
+			return getObjectVariableObjectVariableAttributeAsignmentsCompartment_7014SemanticChildren(view);
 		case ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID:
 			return getModifyingStoryNodeModifyingStoryNodeContentCompartment_7007SemanticChildren(view);
 		}
@@ -120,10 +115,6 @@ public class SDMDiagramUpdater {
 				continue;
 			}
 			if (visualID == StructuredNodeEditPart.VISUAL_ID) {
-				result.add(new SDMNodeDescriptor(childElement, visualID));
-				continue;
-			}
-			if (visualID == MatchingStoryNodeEditPart.VISUAL_ID) {
 				result.add(new SDMNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -175,10 +166,6 @@ public class SDMDiagramUpdater {
 				result.add(new SDMNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == MatchingStoryNode2EditPart.VISUAL_ID) {
-				result.add(new SDMNodeDescriptor(childElement, visualID));
-				continue;
-			}
 			if (visualID == ModifyingStoryNode2EditPart.VISUAL_ID) {
 				result.add(new SDMNodeDescriptor(childElement, visualID));
 				continue;
@@ -227,91 +214,7 @@ public class SDMDiagramUpdater {
 				result.add(new SDMNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == MatchingStoryNode2EditPart.VISUAL_ID) {
-				result.add(new SDMNodeDescriptor(childElement, visualID));
-				continue;
-			}
 			if (visualID == ModifyingStoryNode2EditPart.VISUAL_ID) {
-				result.add(new SDMNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<SDMNodeDescriptor> getMatchingStoryNodeMatchingStoryNodeContentCompartment_7009SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		MatchingStoryNode modelElement = (MatchingStoryNode) containerView
-				.getElement();
-		LinkedList<SDMNodeDescriptor> result = new LinkedList<SDMNodeDescriptor>();
-		{
-			MatchingPattern childElement = modelElement.getOwnedPattern();
-			int visualID = SDMVisualIDRegistry.getNodeVisualID(view,
-					childElement);
-			if (visualID == MatchingPatternEditPart.VISUAL_ID) {
-				result.add(new SDMNodeDescriptor(childElement, visualID));
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<SDMNodeDescriptor> getMatchingStoryNodeMatchingStoryNodeContentCompartment_7003SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		MatchingStoryNode modelElement = (MatchingStoryNode) containerView
-				.getElement();
-		LinkedList<SDMNodeDescriptor> result = new LinkedList<SDMNodeDescriptor>();
-		{
-			MatchingPattern childElement = modelElement.getOwnedPattern();
-			int visualID = SDMVisualIDRegistry.getNodeVisualID(view,
-					childElement);
-			if (visualID == MatchingPatternEditPart.VISUAL_ID) {
-				result.add(new SDMNodeDescriptor(childElement, visualID));
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<SDMNodeDescriptor> getMatchingPatternStoryPatternCompartement_7005SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		MatchingPattern modelElement = (MatchingPattern) containerView
-				.getElement();
-		LinkedList<SDMNodeDescriptor> result = new LinkedList<SDMNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getObjectVariables().iterator(); it
-				.hasNext();) {
-			ObjectVariable childElement = (ObjectVariable) it.next();
-			int visualID = SDMVisualIDRegistry.getNodeVisualID(view,
-					childElement);
-			if (visualID == ObjectVariableEditPart.VISUAL_ID) {
 				result.add(new SDMNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -348,6 +251,65 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<SDMNodeDescriptor> getStoryPatternStoryPatternCompartement_7008SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		StoryPattern modelElement = (StoryPattern) containerView.getElement();
+		LinkedList<SDMNodeDescriptor> result = new LinkedList<SDMNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getVariables().iterator(); it
+				.hasNext();) {
+			AbstractVariable childElement = (AbstractVariable) it.next();
+			int visualID = SDMVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == ObjectVariableEditPart.VISUAL_ID) {
+				result.add(new SDMNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == PrimitiveVariableEditPart.VISUAL_ID) {
+				result.add(new SDMNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMNodeDescriptor> getObjectVariableObjectVariableAttributeAsignmentsCompartment_7014SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		ObjectVariable modelElement = (ObjectVariable) containerView
+				.getElement();
+		LinkedList<SDMNodeDescriptor> result = new LinkedList<SDMNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getAttributeAssignments().iterator(); it
+				.hasNext();) {
+			AttributeAssignment childElement = (AttributeAssignment) it.next();
+			int visualID = SDMVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == AttributeAssignmentEditPart.VISUAL_ID) {
+				result.add(new SDMNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<SDMNodeDescriptor> getModifyingStoryNodeModifyingStoryNodeContentCompartment_7007SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -374,33 +336,6 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<SDMNodeDescriptor> getStoryPatternStoryPatternCompartement_7008SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		StoryPattern modelElement = (StoryPattern) containerView.getElement();
-		LinkedList<SDMNodeDescriptor> result = new LinkedList<SDMNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getObjectVariables().iterator(); it
-				.hasNext();) {
-			ObjectVariable childElement = (ObjectVariable) it.next();
-			int visualID = SDMVisualIDRegistry.getNodeVisualID(view,
-					childElement);
-			if (visualID == ObjectVariable2EditPart.VISUAL_ID) {
-				result.add(new SDMNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List<SDMLinkDescriptor> getContainedLinks(View view) {
 		switch (SDMVisualIDRegistry.getVisualID(view)) {
 		case ActivityEditPart.VISUAL_ID:
@@ -415,8 +350,6 @@ public class SDMDiagramUpdater {
 			return getStatementNode_2004ContainedLinks(view);
 		case StructuredNodeEditPart.VISUAL_ID:
 			return getStructuredNode_2005ContainedLinks(view);
-		case MatchingStoryNodeEditPart.VISUAL_ID:
-			return getMatchingStoryNode_2006ContainedLinks(view);
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return getModifyingStoryNode_2007ContainedLinks(view);
 		case JunctionNode2EditPart.VISUAL_ID:
@@ -429,20 +362,20 @@ public class SDMDiagramUpdater {
 			return getStatementNode_3003ContainedLinks(view);
 		case StructuredNode2EditPart.VISUAL_ID:
 			return getStructuredNode_3005ContainedLinks(view);
-		case MatchingStoryNode2EditPart.VISUAL_ID:
-			return getMatchingStoryNode_3010ContainedLinks(view);
-		case MatchingPatternEditPart.VISUAL_ID:
-			return getMatchingPattern_3006ContainedLinks(view);
-		case ObjectVariableEditPart.VISUAL_ID:
-			return getObjectVariable_3007ContainedLinks(view);
 		case ModifyingStoryNode2EditPart.VISUAL_ID:
 			return getModifyingStoryNode_3011ContainedLinks(view);
 		case StoryPatternEditPart.VISUAL_ID:
 			return getStoryPattern_3008ContainedLinks(view);
-		case ObjectVariable2EditPart.VISUAL_ID:
-			return getObjectVariable_3009ContainedLinks(view);
+		case ObjectVariableEditPart.VISUAL_ID:
+			return getObjectVariable_3012ContainedLinks(view);
+		case AttributeAssignmentEditPart.VISUAL_ID:
+			return getAttributeAssignment_3013ContainedLinks(view);
+		case PrimitiveVariableEditPart.VISUAL_ID:
+			return getPrimitiveVariable_3014ContainedLinks(view);
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return getActivityEdge_4001ContainedLinks(view);
+		case LinkVariableEditPart.VISUAL_ID:
+			return getLinkVariable_4002ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -462,8 +395,6 @@ public class SDMDiagramUpdater {
 			return getStatementNode_2004IncomingLinks(view);
 		case StructuredNodeEditPart.VISUAL_ID:
 			return getStructuredNode_2005IncomingLinks(view);
-		case MatchingStoryNodeEditPart.VISUAL_ID:
-			return getMatchingStoryNode_2006IncomingLinks(view);
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return getModifyingStoryNode_2007IncomingLinks(view);
 		case JunctionNode2EditPart.VISUAL_ID:
@@ -476,20 +407,20 @@ public class SDMDiagramUpdater {
 			return getStatementNode_3003IncomingLinks(view);
 		case StructuredNode2EditPart.VISUAL_ID:
 			return getStructuredNode_3005IncomingLinks(view);
-		case MatchingStoryNode2EditPart.VISUAL_ID:
-			return getMatchingStoryNode_3010IncomingLinks(view);
-		case MatchingPatternEditPart.VISUAL_ID:
-			return getMatchingPattern_3006IncomingLinks(view);
-		case ObjectVariableEditPart.VISUAL_ID:
-			return getObjectVariable_3007IncomingLinks(view);
 		case ModifyingStoryNode2EditPart.VISUAL_ID:
 			return getModifyingStoryNode_3011IncomingLinks(view);
 		case StoryPatternEditPart.VISUAL_ID:
 			return getStoryPattern_3008IncomingLinks(view);
-		case ObjectVariable2EditPart.VISUAL_ID:
-			return getObjectVariable_3009IncomingLinks(view);
+		case ObjectVariableEditPart.VISUAL_ID:
+			return getObjectVariable_3012IncomingLinks(view);
+		case AttributeAssignmentEditPart.VISUAL_ID:
+			return getAttributeAssignment_3013IncomingLinks(view);
+		case PrimitiveVariableEditPart.VISUAL_ID:
+			return getPrimitiveVariable_3014IncomingLinks(view);
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return getActivityEdge_4001IncomingLinks(view);
+		case LinkVariableEditPart.VISUAL_ID:
+			return getLinkVariable_4002IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -509,8 +440,6 @@ public class SDMDiagramUpdater {
 			return getStatementNode_2004OutgoingLinks(view);
 		case StructuredNodeEditPart.VISUAL_ID:
 			return getStructuredNode_2005OutgoingLinks(view);
-		case MatchingStoryNodeEditPart.VISUAL_ID:
-			return getMatchingStoryNode_2006OutgoingLinks(view);
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return getModifyingStoryNode_2007OutgoingLinks(view);
 		case JunctionNode2EditPart.VISUAL_ID:
@@ -523,20 +452,20 @@ public class SDMDiagramUpdater {
 			return getStatementNode_3003OutgoingLinks(view);
 		case StructuredNode2EditPart.VISUAL_ID:
 			return getStructuredNode_3005OutgoingLinks(view);
-		case MatchingStoryNode2EditPart.VISUAL_ID:
-			return getMatchingStoryNode_3010OutgoingLinks(view);
-		case MatchingPatternEditPart.VISUAL_ID:
-			return getMatchingPattern_3006OutgoingLinks(view);
-		case ObjectVariableEditPart.VISUAL_ID:
-			return getObjectVariable_3007OutgoingLinks(view);
 		case ModifyingStoryNode2EditPart.VISUAL_ID:
 			return getModifyingStoryNode_3011OutgoingLinks(view);
 		case StoryPatternEditPart.VISUAL_ID:
 			return getStoryPattern_3008OutgoingLinks(view);
-		case ObjectVariable2EditPart.VISUAL_ID:
-			return getObjectVariable_3009OutgoingLinks(view);
+		case ObjectVariableEditPart.VISUAL_ID:
+			return getObjectVariable_3012OutgoingLinks(view);
+		case AttributeAssignmentEditPart.VISUAL_ID:
+			return getAttributeAssignment_3013OutgoingLinks(view);
+		case PrimitiveVariableEditPart.VISUAL_ID:
+			return getPrimitiveVariable_3014OutgoingLinks(view);
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return getActivityEdge_4001OutgoingLinks(view);
+		case LinkVariableEditPart.VISUAL_ID:
+			return getLinkVariable_4002OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -595,14 +524,6 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<SDMLinkDescriptor> getMatchingStoryNode_2006ContainedLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List<SDMLinkDescriptor> getModifyingStoryNode_2007ContainedLinks(
 			View view) {
 		return Collections.emptyList();
@@ -627,14 +548,6 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<SDMLinkDescriptor> getStatementNode_3003ContainedLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List<SDMLinkDescriptor> getStopNode_3004ContainedLinks(
 			View view) {
 		return Collections.emptyList();
@@ -643,31 +556,15 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<SDMLinkDescriptor> getStatementNode_3003ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<SDMLinkDescriptor> getStructuredNode_3005ContainedLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<SDMLinkDescriptor> getMatchingStoryNode_3010ContainedLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<SDMLinkDescriptor> getMatchingPattern_3006ContainedLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<SDMLinkDescriptor> getObjectVariable_3007ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -685,13 +582,32 @@ public class SDMDiagramUpdater {
 	 */
 	public static List<SDMLinkDescriptor> getStoryPattern_3008ContainedLinks(
 			View view) {
+		StoryPattern modelElement = (StoryPattern) view.getElement();
+		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
+		result.addAll(getContainedTypeModelFacetLinks_LinkVariable_4002(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMLinkDescriptor> getObjectVariable_3012ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<SDMLinkDescriptor> getObjectVariable_3009ContainedLinks(
+	public static List<SDMLinkDescriptor> getAttributeAssignment_3013ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMLinkDescriptor> getPrimitiveVariable_3014ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -700,6 +616,14 @@ public class SDMDiagramUpdater {
 	 * @generated
 	 */
 	public static List<SDMLinkDescriptor> getActivityEdge_4001ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMLinkDescriptor> getLinkVariable_4002ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -777,20 +701,6 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<SDMLinkDescriptor> getMatchingStoryNode_2006IncomingLinks(
-			View view) {
-		MatchingStoryNode modelElement = (MatchingStoryNode) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(
-				modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List<SDMLinkDescriptor> getModifyingStoryNode_2007IncomingLinks(
 			View view) {
 		ModifyingStoryNode modelElement = (ModifyingStoryNode) view
@@ -834,9 +744,9 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<SDMLinkDescriptor> getStatementNode_3003IncomingLinks(
+	public static List<SDMLinkDescriptor> getStopNode_3004IncomingLinks(
 			View view) {
-		StatementNode modelElement = (StatementNode) view.getElement();
+		StopNode modelElement = (StopNode) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
@@ -848,9 +758,9 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<SDMLinkDescriptor> getStopNode_3004IncomingLinks(
+	public static List<SDMLinkDescriptor> getStatementNode_3003IncomingLinks(
 			View view) {
-		StopNode modelElement = (StopNode) view.getElement();
+		StatementNode modelElement = (StatementNode) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
@@ -871,36 +781,6 @@ public class SDMDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(
 				modelElement, crossReferences));
 		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<SDMLinkDescriptor> getMatchingStoryNode_3010IncomingLinks(
-			View view) {
-		MatchingStoryNode modelElement = (MatchingStoryNode) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(
-				modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<SDMLinkDescriptor> getMatchingPattern_3006IncomingLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<SDMLinkDescriptor> getObjectVariable_3007IncomingLinks(
-			View view) {
-		return Collections.emptyList();
 	}
 
 	/**
@@ -929,7 +809,21 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<SDMLinkDescriptor> getObjectVariable_3009IncomingLinks(
+	public static List<SDMLinkDescriptor> getObjectVariable_3012IncomingLinks(
+			View view) {
+		ObjectVariable modelElement = (ObjectVariable) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkVariable_4002(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMLinkDescriptor> getAttributeAssignment_3013IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -937,7 +831,29 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<SDMLinkDescriptor> getPrimitiveVariable_3014IncomingLinks(
+			View view) {
+		PrimitiveVariable modelElement = (PrimitiveVariable) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkVariable_4002(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<SDMLinkDescriptor> getActivityEdge_4001IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMLinkDescriptor> getLinkVariable_4002IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -1000,17 +916,6 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<SDMLinkDescriptor> getMatchingStoryNode_2006OutgoingLinks(
-			View view) {
-		MatchingStoryNode modelElement = (MatchingStoryNode) view.getElement();
-		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List<SDMLinkDescriptor> getModifyingStoryNode_2007OutgoingLinks(
 			View view) {
 		ModifyingStoryNode modelElement = (ModifyingStoryNode) view
@@ -1045,9 +950,9 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<SDMLinkDescriptor> getStatementNode_3003OutgoingLinks(
+	public static List<SDMLinkDescriptor> getStopNode_3004OutgoingLinks(
 			View view) {
-		StatementNode modelElement = (StatementNode) view.getElement();
+		StopNode modelElement = (StopNode) view.getElement();
 		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
 		return result;
@@ -1056,9 +961,9 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<SDMLinkDescriptor> getStopNode_3004OutgoingLinks(
+	public static List<SDMLinkDescriptor> getStatementNode_3003OutgoingLinks(
 			View view) {
-		StopNode modelElement = (StopNode) view.getElement();
+		StatementNode modelElement = (StatementNode) view.getElement();
 		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
 		return result;
@@ -1073,33 +978,6 @@ public class SDMDiagramUpdater {
 		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
 		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<SDMLinkDescriptor> getMatchingStoryNode_3010OutgoingLinks(
-			View view) {
-		MatchingStoryNode modelElement = (MatchingStoryNode) view.getElement();
-		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<SDMLinkDescriptor> getMatchingPattern_3006OutgoingLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<SDMLinkDescriptor> getObjectVariable_3007OutgoingLinks(
-			View view) {
-		return Collections.emptyList();
 	}
 
 	/**
@@ -1125,7 +1003,26 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<SDMLinkDescriptor> getObjectVariable_3009OutgoingLinks(
+	public static List<SDMLinkDescriptor> getObjectVariable_3012OutgoingLinks(
+			View view) {
+		ObjectVariable modelElement = (ObjectVariable) view.getElement();
+		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkVariable_4002(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMLinkDescriptor> getAttributeAssignment_3013OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMLinkDescriptor> getPrimitiveVariable_3014OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -1134,6 +1031,14 @@ public class SDMDiagramUpdater {
 	 * @generated
 	 */
 	public static List<SDMLinkDescriptor> getActivityEdge_4001OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMLinkDescriptor> getLinkVariable_4002OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -1167,6 +1072,32 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	private static Collection<SDMLinkDescriptor> getContainedTypeModelFacetLinks_LinkVariable_4002(
+			StoryPattern container) {
+		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
+		for (Iterator<?> links = container.getLinkVariables().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof LinkVariable) {
+				continue;
+			}
+			LinkVariable link = (LinkVariable) linkObject;
+			if (LinkVariableEditPart.VISUAL_ID != SDMVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			AbstractVariable dst = link.getTarget();
+			ObjectVariable src = link.getSource();
+			result.add(new SDMLinkDescriptor(src, dst, link,
+					SDMElementTypes.LinkVariable_4002,
+					LinkVariableEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	private static Collection<SDMLinkDescriptor> getIncomingTypeModelFacetLinks_ActivityEdge_4001(
 			ActivityNode target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
@@ -1188,6 +1119,34 @@ public class SDMDiagramUpdater {
 			result.add(new SDMLinkDescriptor(src, target, link,
 					SDMElementTypes.ActivityEdge_4001,
 					ActivityEdgeEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<SDMLinkDescriptor> getIncomingTypeModelFacetLinks_LinkVariable_4002(
+			AbstractVariable target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() != PatternsPackage.eINSTANCE
+					.getAbstractLinkVariable_Target()
+					|| false == setting.getEObject() instanceof LinkVariable) {
+				continue;
+			}
+			LinkVariable link = (LinkVariable) setting.getEObject();
+			if (LinkVariableEditPart.VISUAL_ID != SDMVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			ObjectVariable src = link.getSource();
+			result.add(new SDMLinkDescriptor(src, target, link,
+					SDMElementTypes.LinkVariable_4002,
+					LinkVariableEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -1230,6 +1189,48 @@ public class SDMDiagramUpdater {
 			result.add(new SDMLinkDescriptor(src, dst, link,
 					SDMElementTypes.ActivityEdge_4001,
 					ActivityEdgeEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<SDMLinkDescriptor> getOutgoingTypeModelFacetLinks_LinkVariable_4002(
+			ObjectVariable source) {
+		StoryPattern container = null;
+		// Find container element for the link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null && container == null; element = element
+				.eContainer()) {
+			if (element instanceof StoryPattern) {
+				container = (StoryPattern) element;
+			}
+		}
+		if (container == null) {
+			return Collections.emptyList();
+		}
+		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
+		for (Iterator<?> links = container.getLinkVariables().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof LinkVariable) {
+				continue;
+			}
+			LinkVariable link = (LinkVariable) linkObject;
+			if (LinkVariableEditPart.VISUAL_ID != SDMVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			AbstractVariable dst = link.getTarget();
+			ObjectVariable src = link.getSource();
+			if (src != source) {
+				continue;
+			}
+			result.add(new SDMLinkDescriptor(src, dst, link,
+					SDMElementTypes.LinkVariable_4002,
+					LinkVariableEditPart.VISUAL_ID));
 		}
 		return result;
 	}

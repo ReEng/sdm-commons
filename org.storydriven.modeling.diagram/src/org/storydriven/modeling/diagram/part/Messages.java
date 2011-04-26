@@ -248,22 +248,77 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StartNode1CreationTool_title;
+	public static String ActivityNodeTools2Group_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StartNode1CreationTool_desc;
+	public static String ModifyingStoryNode1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String JunctionNode2CreationTool_title;
+	public static String ModifyingStoryNode1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String JunctionNode2CreationTool_desc;
+	public static String ObjectVariableNode2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ObjectVariableNode2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String AttributeAssignment3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String AttributeAssignment3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String PrimitiveVariableNode4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String PrimitiveVariableNode4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String LinkVariable5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String LinkVariable5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityEdge1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityEdge1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String StartNode2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StartNode2CreationTool_desc;
 
 	/**
 	 * @generated
@@ -278,12 +333,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ActivityEdge4CreationTool_title;
+	public static String JunctionNode4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ActivityEdge4CreationTool_desc;
+	public static String JunctionNode4CreationTool_desc;
 
 	/**
 	 * @generated
@@ -308,77 +363,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String MatchingStoryNode7CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String MatchingStoryNode7CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ModifyingStoryNode8CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ModifyingStoryNode8CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String StoryPatternNode9CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String StoryPatternNode9CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ObjectVariableNode10CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ObjectVariableNode10CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
 	public static String StructuredNodeStructuredNodeCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
 	public static String StructuredNodeStructuredNodeCompartment2EditPart_title;
-
-	/**
-	 * @generated
-	 */
-	public static String MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart_title;
-
-	/**
-	 * @generated
-	 */
-	public static String MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart_title;
-
-	/**
-	 * @generated
-	 */
-	public static String MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart_title;
-
-	/**
-	 * @generated
-	 */
-	public static String MatchingStoryNodeMatchingStoryNodeConstraintsCompartmentEditPart_title;
-
-	/**
-	 * @generated
-	 */
-	public static String MatchingPatternStoryPatternCompartementEditPart_title;
 
 	/**
 	 * @generated
@@ -404,6 +394,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String StoryPatternStoryPatternCompartementEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ObjectVariableObjectVariableConstraintsCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -443,12 +443,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_MatchingStoryNode_3010_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MatchingStoryNode_3010_outgoinglinks;
+	public static String NavigatorGroupName_PrimitiveVariable_3014_incominglinks;
 
 	/**
 	 * @generated
@@ -469,16 +464,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_StopNode_2002_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MatchingStoryNode_2006_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MatchingStoryNode_2006_outgoinglinks;
 
 	/**
 	 * @generated
@@ -504,6 +489,26 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Activity_1000_links;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LinkVariable_4002_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LinkVariable_4002_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ObjectVariable_3012_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ObjectVariable_3012_outgoinglinks;
 
 	/**
 	 * @generated

@@ -218,9 +218,6 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof StructuredNodeEditPart) {
 			types.add(SDMElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
-			types.add(SDMElementTypes.ActivityEdge_4001);
-		}
 		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
 			types.add(SDMElementTypes.ActivityEdge_4001);
 		}
@@ -237,9 +234,6 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 			types.add(SDMElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof StructuredNode2EditPart) {
-			types.add(SDMElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof MatchingStoryNode2EditPart) {
 			types.add(SDMElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof ModifyingStoryNode2EditPart) {
@@ -259,14 +253,12 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 			types.add(SDMElementTypes.JunctionNode_2003);
 			types.add(SDMElementTypes.StatementNode_2004);
 			types.add(SDMElementTypes.StructuredNode_2005);
-			types.add(SDMElementTypes.MatchingStoryNode_2006);
 			types.add(SDMElementTypes.ModifyingStoryNode_2007);
 			types.add(SDMElementTypes.JunctionNode_3001);
 			types.add(SDMElementTypes.StartNode_3002);
 			types.add(SDMElementTypes.StopNode_3004);
 			types.add(SDMElementTypes.StatementNode_3003);
 			types.add(SDMElementTypes.StructuredNode_3005);
-			types.add(SDMElementTypes.MatchingStoryNode_3010);
 			types.add(SDMElementTypes.ModifyingStoryNode_3011);
 		}
 		return types;
@@ -292,14 +284,12 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 			types.add(SDMElementTypes.JunctionNode_2003);
 			types.add(SDMElementTypes.StatementNode_2004);
 			types.add(SDMElementTypes.StructuredNode_2005);
-			types.add(SDMElementTypes.MatchingStoryNode_2006);
 			types.add(SDMElementTypes.ModifyingStoryNode_2007);
 			types.add(SDMElementTypes.JunctionNode_3001);
 			types.add(SDMElementTypes.StartNode_3002);
 			types.add(SDMElementTypes.StopNode_3004);
 			types.add(SDMElementTypes.StatementNode_3003);
 			types.add(SDMElementTypes.StructuredNode_3005);
-			types.add(SDMElementTypes.MatchingStoryNode_3010);
 			types.add(SDMElementTypes.ModifyingStoryNode_3011);
 		}
 		return types;

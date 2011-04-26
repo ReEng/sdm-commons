@@ -1,0 +1,26 @@
+-- @nsURI GM=http://www.eclipse.org/gmf/2009/GenModel
+module sdm;
+create OUT : GM refining IN : GM;
+
+rule GenCompartment1 {
+	from
+		gcin : GM!GenCompartment (
+			gcin.editPartClassName = 'StoryPatternStoryPatternCompartementEditPart'
+		)
+	to
+		gcout : GM!GenCompartment (
+			listLayout <- false
+			canCollapse <- true
+		)
+}
+
+rule GenCompartment2 {
+	from
+		gcin : GM!GenCompartment (
+			gcin.editPartClassName = 'MatchingPatternStoryPatternCompartementEditPart'
+		)
+	to
+		gcout : GM!GenCompartment (
+			listLayout <- false
+		)
+}

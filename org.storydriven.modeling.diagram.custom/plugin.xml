@@ -29,7 +29,7 @@
             id="org.storydriven.modeling.diagram.custom.ModifyingStoryNodeContribution"
             objectClass="org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeEditPart">
          <action
-               class="org.storydriven.modeling.diagram.custom.edit.commands.ModifyingStoryNodeToggleMatchingCommand"
+               class="deprecated.ModifyingStoryNodeToggleMatchingCommand"
                id="org.storydriven.modeling.diagram.custom.ModifyingStoryNodeConvertToMatching"
                label="Toggle Modifying/Matching"
                tooltip="This will toggle whether the storynode is matching or modifying">
@@ -52,12 +52,31 @@
                tooltip="This will toggle the for each attribute of the story node.">
          </action>
          <action
-               class="org.storydriven.modeling.diagram.custom.edit.commands.MatchingStoryNodeToggleModifyingCommand"
+               class="deprecated.MatchingStoryNodeToggleModifyingCommand"
                id="org.storydriven.modeling.diagram.custom.MatchingStoryNodeConvertToModifying"
                label="Toggle Modifying/Matching"
                tooltip="This will toggle whether the storynode is matching or modifying">
          </action>
       </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="org.storydriven.modeling.diagram.custom.expressions.OpenExpressionsDialog"
+            objectClass="org.storydriven.modeling.diagram.edit.parts.ObjectVariableEditPart">
+         <action
+               class="org.storydriven.modeling.diagram.custom.expressions.EditExpressionWithDialog"
+               id="org.storydriven.modeling.diagram.custom.expressions.OpenExpressionsDialog"
+               label="Edit Expressions"
+               tooltip="This will toggle whether the storynode is matching or modifying">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.storydriven.modeling.diagram.custom.expressionSourceViewerExtension">
+      <expressionSourceViewer
+            expressionLanguage="Logics"
+            sourceViewerProvider="org.storydriven.modeling.diagram.custom.sourceViewerProviders.logics01ViewerProvider"
+            version="0.1">
+      </expressionSourceViewer>
    </extension>
 
 </plugin>

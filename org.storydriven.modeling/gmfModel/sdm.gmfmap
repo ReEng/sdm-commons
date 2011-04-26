@@ -13,7 +13,7 @@
           href="../model/sdm.ecore#//activities/StartNode"/>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="sdm.gmftool#//@palette/@tools.0/@tools.0"/>
+          href="sdm.gmftool#//@palette/@tools.1/@tools.1"/>
       <diagramNode
           href="sdm.gmfgraph#StartNode"/>
     </ownedChild>
@@ -26,7 +26,7 @@
           href="../model/sdm.ecore#//activities/StopNode"/>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="sdm.gmftool#//@palette/@tools.0/@tools.2"/>
+          href="sdm.gmftool#//@palette/@tools.1/@tools.2"/>
       <diagramNode
           href="sdm.gmfgraph#StopNode"/>
     </ownedChild>
@@ -39,7 +39,7 @@
           href="../model/sdm.ecore#//activities/JunctionNode"/>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="sdm.gmftool#//@palette/@tools.0/@tools.1"/>
+          href="sdm.gmftool#//@palette/@tools.1/@tools.3"/>
       <diagramNode
           href="sdm.gmfgraph#JunctionNode"/>
     </ownedChild>
@@ -61,7 +61,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="sdm.gmftool#//@palette/@tools.0/@tools.5"/>
+          href="sdm.gmftool#//@palette/@tools.1/@tools.5"/>
       <diagramNode
           href="sdm.gmfgraph#StatementNode"/>
     </ownedChild>
@@ -83,7 +83,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="sdm.gmftool#//@palette/@tools.0/@tools.4"/>
+          href="sdm.gmftool#//@palette/@tools.1/@tools.4"/>
       <diagramNode
           href="sdm.gmfgraph#StructuredNode"/>
       <children
@@ -124,127 +124,14 @@
       </children>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0"
-          referencedChild="//@nodes.6/@ownedChild">
-        <containmentFeature
-            href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
-      </children>
-      <children
-          compartment="//@nodes.4/@ownedChild/@compartments.0"
           referencedChild="//@nodes.4/@ownedChild">
         <containmentFeature
             href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
       <compartments
-          children="//@nodes.4/@ownedChild/@children.0 //@nodes.4/@ownedChild/@children.1 //@nodes.4/@ownedChild/@children.3 //@nodes.4/@ownedChild/@children.2 //@nodes.4/@ownedChild/@children.4 //@nodes.4/@ownedChild/@children.5 //@nodes.4/@ownedChild/@children.6 //@nodes.4/@ownedChild/@children.7">
+          children="//@nodes.4/@ownedChild/@children.0 //@nodes.4/@ownedChild/@children.1 //@nodes.4/@ownedChild/@children.3 //@nodes.4/@ownedChild/@children.2 //@nodes.4/@ownedChild/@children.4 //@nodes.4/@ownedChild/@children.5 //@nodes.4/@ownedChild/@children.6">
         <compartment
             href="sdm.gmfgraph#StructuredNodeCompartment"/>
-      </compartments>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature
-        href="../model/sdm.ecore#//activities/Activity/ownedActivityNode"/>
-    <ownedChild>
-      <domainMetaElement
-          href="../model/sdm.ecore#//activities/MatchingStoryNode"/>
-      <domainInitializer
-          xsi:type="gmfmap:FeatureSeqInitializer">
-        <initializers
-            xsi:type="gmfmap:ReferenceNewElementSpec">
-          <feature
-              xsi:type="ecore:EReference"
-              href="../model/sdm.ecore#//activities/MatchingStoryNode/ownedPattern"/>
-          <newElementInitializers>
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EAttribute"
-                  href="../model/sdm.ecore#//CommentableElement/comment"/>
-              <value
-                  body="&quot;&quot;"
-                  language="literal"/>
-            </initializers>
-          </newElementInitializers>
-        </initializers>
-      </domainInitializer>
-      <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel
-            href="sdm.gmfgraph#MatchingStoryNodeNameLabel"/>
-        <features
-            href="../model/sdm.ecore#//NamedElement/name"/>
-        <editableFeatures
-            href="../model/sdm.ecore#//NamedElement/name"/>
-      </labelMappings>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="sdm.gmftool#//@palette/@tools.0/@tools.6"/>
-      <diagramNode
-          href="sdm.gmfgraph#MatchingStoryNode"/>
-      <children
-          compartment="//@nodes.5/@ownedChild/@compartments.0"
-          referencedChild="//@nodes.5/@ownedChild/@children.0/@ownedChild">
-        <containmentFeature
-            href="../model/sdm.ecore#//activities/MatchingStoryNode/ownedPattern"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../model/sdm.ecore#//patterns/MatchingPattern"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="sdm.gmftool#//@palette/@tools.0/@tools.8"/>
-          <diagramNode
-              href="sdm.gmfgraph#StoryPatternNode"/>
-          <children
-              compartment="//@nodes.5/@ownedChild/@children.0/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="../model/sdm.ecore#//patterns/StoryPattern/objectVariable"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="../model/sdm.ecore#//patterns/ObjectVariable"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="sdm.gmfgraph#ObjectVariableNameLabel"/>
-                <features
-                    href="../model/sdm.ecore#//NamedElement/name"/>
-                <editableFeatures
-                    href="../model/sdm.ecore#//NamedElement/name"/>
-              </labelMappings>
-              <labelMappings
-                  readOnly="true">
-                <diagramLabel
-                    href="sdm.gmfgraph#ObjectVariableClassifierLabel"/>
-              </labelMappings>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping"
-                  readOnly="true">
-                <diagramLabel
-                    href="sdm.gmfgraph#ObjectVariableBindingOperatorLabel"/>
-                <features
-                    href="../model/sdm.ecore#//patterns/ObjectVariable/bindingOperator"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="sdm.gmftool#//@palette/@tools.0/@tools.9"/>
-              <diagramNode
-                  href="sdm.gmfgraph#ObjectVariableNode"/>
-            </ownedChild>
-          </children>
-          <compartments
-              children="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.0">
-            <compartment
-                href="sdm.gmfgraph#StoryPatternCompartement"/>
-          </compartments>
-        </ownedChild>
-      </children>
-      <compartments
-          children="//@nodes.5/@ownedChild/@children.0">
-        <compartment
-            href="sdm.gmfgraph#MatchingStoryNodeContentCompartment"/>
-      </compartments>
-      <compartments>
-        <compartment
-            href="sdm.gmfgraph#MatchingStoryNodeConstraintsCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -285,27 +172,24 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="sdm.gmftool#//@palette/@tools.0/@tools.7"/>
+          href="sdm.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
           href="sdm.gmfgraph#ModifyingStoryNode"/>
       <children
-          compartment="//@nodes.6/@ownedChild/@compartments.1"
-          referencedChild="//@nodes.6/@ownedChild/@children.0/@ownedChild">
+          compartment="//@nodes.5/@ownedChild/@compartments.1"
+          referencedChild="//@nodes.5/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
             href="../model/sdm.ecore#//activities/ModifyingStoryNode/ownedRule"/>
         <ownedChild>
           <domainMetaElement
               href="../model/sdm.ecore#//patterns/StoryPattern"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="sdm.gmftool#//@palette/@tools.0/@tools.8"/>
           <diagramNode
               href="sdm.gmfgraph#StoryPatternNode"/>
           <children
-              compartment="//@nodes.6/@ownedChild/@children.0/@ownedChild/@compartments.0"
-              referencedChild="//@nodes.6/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
+              compartment="//@nodes.5/@ownedChild/@children.0/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
             <containmentFeature
-                href="../model/sdm.ecore#//patterns/StoryPattern/objectVariable"/>
+                href="../model/sdm.ecore#//patterns/StoryPattern/variable"/>
             <ownedChild>
               <domainMetaElement
                   href="../model/sdm.ecore#//patterns/ObjectVariable"/>
@@ -321,22 +205,81 @@
               <labelMappings
                   readOnly="true">
                 <diagramLabel
-                    href="sdm.gmfgraph#ObjectVariableClassifierLabel"/>
+                    href="sdm.gmfgraph#ObjectVariableBindingOperatorLabel"/>
               </labelMappings>
               <labelMappings
                   readOnly="true">
                 <diagramLabel
-                    href="sdm.gmfgraph#ObjectVariableBindingOperatorLabel"/>
+                    href="sdm.gmfgraph#ObjectVariableClassifierLabel"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="sdm.gmftool#//@palette/@tools.0/@tools.9"/>
+                  href="sdm.gmftool#//@palette/@tools.0/@tools.1"/>
               <diagramNode
                   href="sdm.gmfgraph#ObjectVariableNode"/>
+              <children
+                  compartment="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.1"
+                  referencedChild="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
+                <containmentFeature
+                    href="../model/sdm.ecore#//patterns/ObjectVariable/attributeAssignment"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="../model/sdm.ecore#//patterns/AttributeAssignment"/>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="sdm.gmftool#//@palette/@tools.0/@tools.2"/>
+                  <diagramNode
+                      href="sdm.gmfgraph#ExpressionLabel"/>
+                </ownedChild>
+              </children>
+              <compartments>
+                <compartment
+                    href="sdm.gmfgraph#ObjectVariableConstraintsCompartment"/>
+              </compartments>
+              <compartments
+                  children="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0">
+                <compartment
+                    href="sdm.gmfgraph#ObjectVariableAttributeAsignmentsCompartment"/>
+              </compartments>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.5/@ownedChild/@children.0/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild">
+            <containmentFeature
+                href="../model/sdm.ecore#//patterns/StoryPattern/variable"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../model/sdm.ecore#//patterns/PrimitiveVariable"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  editPattern="">
+                <diagramLabel
+                    href="sdm.gmfgraph#PrimitiveVariableNameLabel"/>
+                <features
+                    href="../model/sdm.ecore#//NamedElement/name"/>
+                <editableFeatures
+                    href="../model/sdm.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <labelMappings
+                  readOnly="true">
+                <diagramLabel
+                    href="sdm.gmfgraph#PrimitiveVariableBindingOperatorLabel"/>
+              </labelMappings>
+              <labelMappings
+                  readOnly="true">
+                <diagramLabel
+                    href="sdm.gmfgraph#PrimitveVariableClassifierLabel"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="sdm.gmftool#//@palette/@tools.0/@tools.3"/>
+              <diagramNode
+                  href="sdm.gmfgraph#PrimitiveVariableNode"/>
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.6/@ownedChild/@children.0/@ownedChild/@children.0">
+              children="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.0/@ownedChild/@children.1">
             <compartment
                 href="sdm.gmfgraph#StoryPatternCompartement"/>
           </compartments>
@@ -347,7 +290,7 @@
             href="sdm.gmfgraph#ModifyingStoryNodeConstraintsCompartment"/>
       </compartments>
       <compartments
-          children="//@nodes.6/@ownedChild/@children.0">
+          children="//@nodes.5/@ownedChild/@children.0">
         <compartment
             href="sdm.gmfgraph#ModifyingStoryNodeContentCompartment"/>
       </compartments>
@@ -360,7 +303,7 @@
         href="../model/sdm.ecore#//activities/Activity/ownedActivityEdge"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="sdm.gmftool#//@palette/@tools.0/@tools.3"/>
+        href="sdm.gmftool#//@palette/@tools.1/@tools.0"/>
     <diagramLink
         href="sdm.gmfgraph#ActivityEdgeConnection"/>
     <sourceMetaFeature
@@ -369,6 +312,23 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../model/sdm.ecore#//activities/ActivityEdge/target"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="../model/sdm.ecore#//patterns/LinkVariable"/>
+    <containmentFeature
+        href="../model/sdm.ecore#//patterns/StoryPattern/linkVariable"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="sdm.gmftool#//@palette/@tools.0/@tools.4"/>
+    <diagramLink
+        href="sdm.gmfgraph#LinkVariableConnection"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="../model/sdm.ecore#//patterns/AbstractLinkVariable/source"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../model/sdm.ecore#//patterns/AbstractLinkVariable/target"/>
   </links>
   <diagram>
     <diagramCanvas

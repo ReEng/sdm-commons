@@ -45,5 +45,26 @@
             class="org.storydriven.modeling.templates.TemplatesPackage"
             genModel="model/sdm.uml.genmodel"/>
    </extension>
+   <extension
+         point="org.storydriven.modeling.expressionLanguagesExtension">
+      <expressionLanguage
+            expressionLanguage="OCL"
+            version="0.1">
+      </expressionLanguage>
+   </extension>
+   <extension
+         point="org.storydriven.modeling.expressionLanguagesExtension">
+      <expressionLanguage
+            expressionLanguage="OCL"
+            version="0.2">
+      </expressionLanguage>
+   </extension>
+   <extension
+         point="org.storydriven.modeling.expressionLanguagesExtension">
+      <expressionLanguage
+            expressionLanguage="Logics"
+            version="0.1">
+      </expressionLanguage>
+   </extension>
 
 </plugin>

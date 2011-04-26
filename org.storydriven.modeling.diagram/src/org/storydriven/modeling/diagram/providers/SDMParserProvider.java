@@ -13,20 +13,17 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNodeName2EditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNodeNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeName2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableBindingOperatorEditPart;
-import org.storydriven.modeling.diagram.edit.parts.ObjectVariableName2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableNameEditPart;
+import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNodeName2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNodeNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeName2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeNameEditPart;
 import org.storydriven.modeling.diagram.parsers.MessageFormatParser;
 import org.storydriven.modeling.diagram.part.SDMVisualIDRegistry;
-import org.storydriven.modeling.patterns.PatternsPackage;
 
 /**
  * @generated
@@ -74,27 +71,6 @@ public class SDMParserProvider extends AbstractProvider implements
 			structuredNodeName_5004Parser = parser;
 		}
 		return structuredNodeName_5004Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser matchingStoryNodeName_5006Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getMatchingStoryNodeName_5006Parser() {
-		if (matchingStoryNodeName_5006Parser == null) {
-			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { SDMPackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
-			matchingStoryNodeName_5006Parser = parser;
-		}
-		return matchingStoryNodeName_5006Parser;
 	}
 
 	/**
@@ -163,66 +139,6 @@ public class SDMParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser matchingStoryNodeName_5009Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getMatchingStoryNodeName_5009Parser() {
-		if (matchingStoryNodeName_5009Parser == null) {
-			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { SDMPackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
-			matchingStoryNodeName_5009Parser = parser;
-		}
-		return matchingStoryNodeName_5009Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser objectVariableName_5005Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getObjectVariableName_5005Parser() {
-		if (objectVariableName_5005Parser == null) {
-			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { SDMPackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
-			objectVariableName_5005Parser = parser;
-		}
-		return objectVariableName_5005Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser objectVariableBindingOperator_5014Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getObjectVariableBindingOperator_5014Parser() {
-		if (objectVariableBindingOperator_5014Parser == null) {
-			EAttribute[] features = new EAttribute[] { PatternsPackage.eINSTANCE
-					.getObjectVariable_BindingOperator() };
-			MessageFormatParser parser = new MessageFormatParser(features);
-			objectVariableBindingOperator_5014Parser = parser;
-		}
-		return objectVariableBindingOperator_5014Parser;
-	}
-
-	/**
-	 * @generated
-	 */
 	private IParser modifyingStoryNodeName_5010Parser;
 
 	/**
@@ -244,22 +160,43 @@ public class SDMParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser objectVariableName_5008Parser;
+	private IParser objectVariableName_5015Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getObjectVariableName_5008Parser() {
-		if (objectVariableName_5008Parser == null) {
+	private IParser getObjectVariableName_5015Parser() {
+		if (objectVariableName_5015Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			EAttribute[] editableFeatures = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features,
 					editableFeatures);
-			objectVariableName_5008Parser = parser;
+			objectVariableName_5015Parser = parser;
 		}
-		return objectVariableName_5008Parser;
+		return objectVariableName_5015Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser primitiveVariableName_5018Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPrimitiveVariableName_5018Parser() {
+		if (primitiveVariableName_5018Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features,
+					editableFeatures);
+			primitiveVariableName_5018Parser = parser;
+		}
+		return primitiveVariableName_5018Parser;
 	}
 
 	/**
@@ -271,24 +208,18 @@ public class SDMParserProvider extends AbstractProvider implements
 			return getStatementNodeName_5001Parser();
 		case StructuredNodeNameEditPart.VISUAL_ID:
 			return getStructuredNodeName_5004Parser();
-		case MatchingStoryNodeNameEditPart.VISUAL_ID:
-			return getMatchingStoryNodeName_5006Parser();
 		case ModifyingStoryNodeNameEditPart.VISUAL_ID:
 			return getModifyingStoryNodeName_5007Parser();
 		case StatementNodeName2EditPart.VISUAL_ID:
 			return getStatementNodeName_5002Parser();
 		case StructuredNodeName2EditPart.VISUAL_ID:
 			return getStructuredNodeName_5003Parser();
-		case MatchingStoryNodeName2EditPart.VISUAL_ID:
-			return getMatchingStoryNodeName_5009Parser();
-		case ObjectVariableNameEditPart.VISUAL_ID:
-			return getObjectVariableName_5005Parser();
-		case ObjectVariableBindingOperatorEditPart.VISUAL_ID:
-			return getObjectVariableBindingOperator_5014Parser();
 		case ModifyingStoryNodeName2EditPart.VISUAL_ID:
 			return getModifyingStoryNodeName_5010Parser();
-		case ObjectVariableName2EditPart.VISUAL_ID:
-			return getObjectVariableName_5008Parser();
+		case ObjectVariableNameEditPart.VISUAL_ID:
+			return getObjectVariableName_5015Parser();
+		case PrimitiveVariableNameEditPart.VISUAL_ID:
+			return getPrimitiveVariableName_5018Parser();
 		}
 		return null;
 	}

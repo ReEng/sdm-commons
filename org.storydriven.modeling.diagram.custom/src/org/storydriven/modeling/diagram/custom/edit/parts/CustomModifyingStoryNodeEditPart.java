@@ -66,8 +66,9 @@ public class CustomModifyingStoryNodeEditPart extends ModifyingStoryNodeEditPart
 				upperCompartment.getScrollPane().setHorizontalScrollBarVisibility(ScrollPane.NEVER);
 				upperCompartment.getScrollPane().setVerticalScrollBarVisibility(ScrollPane.NEVER);
 				upperCompartment.setLayoutManager(new BorderLayout());
+				if (!((EditPart) this.getChildren().get(2)).getChildren().isEmpty()) {
 				upperCompartment.add(((AbstractGraphicalEditPart) ((EditPart) this.getChildren().get(2)).getChildren().get(0)).getFigure(), 
-									BorderLayout.CENTER);
+									BorderLayout.CENTER); }
 			}
 		}
 	}
@@ -79,4 +80,9 @@ public class CustomModifyingStoryNodeEditPart extends ModifyingStoryNodeEditPart
 		super.refreshVisuals();
 	}
 
+	@Override 
+	public void refresh() {
+		super.refresh();
+		updateFigure(null);
+	}
 }

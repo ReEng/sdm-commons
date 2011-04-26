@@ -24,6 +24,8 @@ public class CustomObjectVariableNameLabelEditPart extends
 			}
 
 			super.handleNotificationEvent(event);
+			
+		
 		}
 
 		@Override
@@ -31,11 +33,8 @@ public class CustomObjectVariableNameLabelEditPart extends
 		{
 			super.refreshVisuals();
 			SdmUtility.adaptColor(getFigure(), ((ObjectVariable) ((View) this.getModel()).getElement()).getBindingOperator());
-
+			
 			((WrappingLabel) getFigure()).setTextUnderline(true);
 		}
-	
-
-	
 
 }

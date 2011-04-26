@@ -1,6 +1,7 @@
 package org.storydriven.modeling.diagram.edit.parts;
 
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.ColorConstants;
@@ -8,29 +9,26 @@ import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
-import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -40,6 +38,7 @@ import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.storydriven.modeling.diagram.edit.policies.ObjectVariableItemSemanticEditPolicy;
 import org.storydriven.modeling.diagram.part.SDMVisualIDRegistry;
+import org.storydriven.modeling.diagram.providers.SDMElementTypes;
 
 /**
  * @generated
@@ -49,7 +48,7 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3007;
+	public static final int VISUAL_ID = 3012;
 
 	/**
 	 * @generated
@@ -72,6 +71,8 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicy());
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new ObjectVariableItemSemanticEditPolicy());
@@ -130,15 +131,32 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 							.getFigureObjectVariableNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof WrappingLabelEditPart) {
-			((WrappingLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getFigureObjectVariableClassifierLabel());
-			return true;
-		}
 		if (childEditPart instanceof ObjectVariableBindingOperatorEditPart) {
 			((ObjectVariableBindingOperatorEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureObjectVariableModifierLabel());
+			return true;
+		}
+		if (childEditPart instanceof ObjectVariableClassifierLabelEditPart) {
+			((ObjectVariableClassifierLabelEditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureObjectVariableClassifierLabel());
+			return true;
+		}
+		if (childEditPart instanceof ObjectVariableObjectVariableConstraintsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureObjectVariableConstraintsRectangle();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((ObjectVariableObjectVariableConstraintsCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureObjectVariableAttributeAssignmentsRectangle();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -151,10 +169,26 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof ObjectVariableNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof WrappingLabelEditPart) {
+		if (childEditPart instanceof ObjectVariableBindingOperatorEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof ObjectVariableBindingOperatorEditPart) {
+		if (childEditPart instanceof ObjectVariableClassifierLabelEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof ObjectVariableObjectVariableConstraintsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureObjectVariableConstraintsRectangle();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((ObjectVariableObjectVariableConstraintsCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureObjectVariableAttributeAssignmentsRectangle();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -184,6 +218,14 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof ObjectVariableObjectVariableConstraintsCompartmentEditPart) {
+			return getPrimaryShape()
+					.getFigureObjectVariableConstraintsRectangle();
+		}
+		if (editPart instanceof ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart) {
+			return getPrimaryShape()
+					.getFigureObjectVariableAttributeAssignmentsRectangle();
+		}
 		return getContentPane();
 	}
 
@@ -279,6 +321,80 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(SDMVisualIDRegistry
 				.getType(ObjectVariableNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMARelTypesOnSource() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(SDMElementTypes.LinkVariable_4002);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMARelTypesOnSourceAndTarget(
+			IGraphicalEditPart targetEditPart) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
+		if (targetEditPart instanceof org.storydriven.modeling.diagram.edit.parts.ObjectVariableEditPart) {
+			types.add(SDMElementTypes.LinkVariable_4002);
+		}
+		if (targetEditPart instanceof PrimitiveVariableEditPart) {
+			types.add(SDMElementTypes.LinkVariable_4002);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
+		if (relationshipType == SDMElementTypes.LinkVariable_4002) {
+			types.add(SDMElementTypes.ObjectVariable_3012);
+			types.add(SDMElementTypes.PrimitiveVariable_3014);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMARelTypesOnTarget() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(SDMElementTypes.LinkVariable_4002);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
+		if (relationshipType == SDMElementTypes.LinkVariable_4002) {
+			types.add(SDMElementTypes.ObjectVariable_3012);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
+					.getViewAndElementDescriptor()
+					.getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter
+					.getAdapter(IElementType.class);
+			if (type == SDMElementTypes.AttributeAssignment_3013) {
+				return getChildBySemanticHint(SDMVisualIDRegistry
+						.getType(ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
 	}
 
 	/**

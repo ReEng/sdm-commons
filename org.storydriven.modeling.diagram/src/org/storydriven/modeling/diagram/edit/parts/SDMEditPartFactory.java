@@ -52,12 +52,6 @@ public class SDMEditPartFactory implements EditPartFactory {
 			case StructuredNodeNameEditPart.VISUAL_ID:
 				return new StructuredNodeNameEditPart(view);
 
-			case MatchingStoryNodeEditPart.VISUAL_ID:
-				return new MatchingStoryNodeEditPart(view);
-
-			case MatchingStoryNodeNameEditPart.VISUAL_ID:
-				return new MatchingStoryNodeNameEditPart(view);
-
 			case ModifyingStoryNodeEditPart.VISUAL_ID:
 				return new ModifyingStoryNodeEditPart(view);
 
@@ -85,27 +79,6 @@ public class SDMEditPartFactory implements EditPartFactory {
 			case StructuredNodeName2EditPart.VISUAL_ID:
 				return new StructuredNodeName2EditPart(view);
 
-			case MatchingStoryNode2EditPart.VISUAL_ID:
-				return new MatchingStoryNode2EditPart(view);
-
-			case MatchingStoryNodeName2EditPart.VISUAL_ID:
-				return new MatchingStoryNodeName2EditPart(view);
-
-			case MatchingPatternEditPart.VISUAL_ID:
-				return new MatchingPatternEditPart(view);
-
-			case ObjectVariableEditPart.VISUAL_ID:
-				return new ObjectVariableEditPart(view);
-
-			case ObjectVariableNameEditPart.VISUAL_ID:
-				return new ObjectVariableNameEditPart(view);
-
-			case WrappingLabelEditPart.VISUAL_ID:
-				return new WrappingLabelEditPart(view);
-
-			case ObjectVariableBindingOperatorEditPart.VISUAL_ID:
-				return new ObjectVariableBindingOperatorEditPart(view);
-
 			case ModifyingStoryNode2EditPart.VISUAL_ID:
 				return new ModifyingStoryNode2EditPart(view);
 
@@ -115,17 +88,32 @@ public class SDMEditPartFactory implements EditPartFactory {
 			case StoryPatternEditPart.VISUAL_ID:
 				return new StoryPatternEditPart(view);
 
-			case ObjectVariable2EditPart.VISUAL_ID:
-				return new ObjectVariable2EditPart(view);
+			case ObjectVariableEditPart.VISUAL_ID:
+				return new ObjectVariableEditPart(view);
 
-			case ObjectVariableName2EditPart.VISUAL_ID:
-				return new ObjectVariableName2EditPart(view);
+			case ObjectVariableNameEditPart.VISUAL_ID:
+				return new ObjectVariableNameEditPart(view);
 
-			case WrappingLabel2EditPart.VISUAL_ID:
-				return new WrappingLabel2EditPart(view);
+			case ObjectVariableBindingOperatorEditPart.VISUAL_ID:
+				return new ObjectVariableBindingOperatorEditPart(view);
 
-			case WrappingLabel3EditPart.VISUAL_ID:
-				return new WrappingLabel3EditPart(view);
+			case ObjectVariableClassifierLabelEditPart.VISUAL_ID:
+				return new ObjectVariableClassifierLabelEditPart(view);
+
+			case AttributeAssignmentEditPart.VISUAL_ID:
+				return new AttributeAssignmentEditPart(view);
+
+			case PrimitiveVariableEditPart.VISUAL_ID:
+				return new PrimitiveVariableEditPart(view);
+
+			case PrimitiveVariableNameEditPart.VISUAL_ID:
+				return new PrimitiveVariableNameEditPart(view);
+
+			case PrimitiveVariableBindingOperatorLabelEditPart.VISUAL_ID:
+				return new PrimitiveVariableBindingOperatorLabelEditPart(view);
+
+			case PrimitiveVariableClassifierLabelEditPart.VISUAL_ID:
+				return new PrimitiveVariableClassifierLabelEditPart(view);
 
 			case StructuredNodeStructuredNodeCompartmentEditPart.VISUAL_ID:
 				return new StructuredNodeStructuredNodeCompartmentEditPart(view);
@@ -133,17 +121,6 @@ public class SDMEditPartFactory implements EditPartFactory {
 			case StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID:
 				return new StructuredNodeStructuredNodeCompartment2EditPart(
 						view);
-
-			case MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart.VISUAL_ID:
-				return new MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart(
-						view);
-
-			case MatchingStoryNodeMatchingStoryNodeConstraintsCompartmentEditPart.VISUAL_ID:
-				return new MatchingStoryNodeMatchingStoryNodeConstraintsCompartmentEditPart(
-						view);
-
-			case MatchingPatternStoryPatternCompartementEditPart.VISUAL_ID:
-				return new MatchingPatternStoryPatternCompartementEditPart(view);
 
 			case ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart.VISUAL_ID:
 				return new ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart(
@@ -156,12 +133,12 @@ public class SDMEditPartFactory implements EditPartFactory {
 			case StoryPatternStoryPatternCompartementEditPart.VISUAL_ID:
 				return new StoryPatternStoryPatternCompartementEditPart(view);
 
-			case MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart.VISUAL_ID:
-				return new MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart(
+			case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
+				return new ObjectVariableObjectVariableConstraintsCompartmentEditPart(
 						view);
 
-			case MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID:
-				return new MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart(
+			case ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart.VISUAL_ID:
+				return new ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart(
 						view);
 
 			case ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID:
@@ -174,6 +151,9 @@ public class SDMEditPartFactory implements EditPartFactory {
 
 			case ActivityEdgeEditPart.VISUAL_ID:
 				return new ActivityEdgeEditPart(view);
+
+			case LinkVariableEditPart.VISUAL_ID:
+				return new LinkVariableEditPart(view);
 
 			}
 		}

@@ -52,7 +52,7 @@ public class ObjectVariableNameEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5005;
+	public static final int VISUAL_ID = 5015;
 
 	/**
 	 * @generated
@@ -290,7 +290,7 @@ public class ObjectVariableNameEditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = SDMParserProvider
 					.getParser(
-							SDMElementTypes.ObjectVariable_3007,
+							SDMElementTypes.ObjectVariable_3012,
 							getParserElement(),
 							SDMVisualIDRegistry
 									.getType(org.storydriven.modeling.diagram.edit.parts.ObjectVariableNameEditPart.VISUAL_ID));

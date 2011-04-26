@@ -52,7 +52,7 @@ public class WrappingLabel2EditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5011;
+	public static final int VISUAL_ID = 5020;
 
 	/**
 	 * @generated
@@ -290,7 +290,7 @@ public class WrappingLabel2EditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = SDMParserProvider
 					.getParser(
-							SDMElementTypes.ObjectVariable_3009,
+							SDMElementTypes.PrimitiveVariable_3014,
 							getParserElement(),
 							SDMVisualIDRegistry
 									.getType(org.storydriven.modeling.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));

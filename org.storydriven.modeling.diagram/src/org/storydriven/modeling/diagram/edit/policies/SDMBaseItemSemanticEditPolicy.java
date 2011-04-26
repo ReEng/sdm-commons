@@ -37,6 +37,10 @@ import org.storydriven.modeling.diagram.edit.helpers.SDMBaseEditHelper;
 import org.storydriven.modeling.diagram.part.SDMDiagramEditorPlugin;
 import org.storydriven.modeling.diagram.part.SDMVisualIDRegistry;
 import org.storydriven.modeling.diagram.providers.SDMElementTypes;
+import org.storydriven.modeling.patterns.AbstractVariable;
+import org.storydriven.modeling.patterns.LinkVariable;
+import org.storydriven.modeling.patterns.ObjectVariable;
+import org.storydriven.modeling.patterns.StoryPattern;
 
 /**
  * @generated
@@ -331,9 +335,26 @@ public class SDMBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public boolean canCreateLinkVariable_4002(StoryPattern container,
+				ObjectVariable source, AbstractVariable target) {
+			return canExistLinkVariable_4002(container, null, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistActivityEdge_4001(Activity container,
 				ActivityEdge linkInstance, ActivityNode source,
 				ActivityNode target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistLinkVariable_4002(StoryPattern container,
+				LinkVariable linkInstance, ObjectVariable source,
+				AbstractVariable target) {
 			return true;
 		}
 	}

@@ -23,24 +23,18 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEditPart;
 import org.storydriven.modeling.diagram.edit.parts.JunctionNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.JunctionNodeEditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingPatternEditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingPatternStoryPatternCompartementEditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNode2EditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNodeEditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart;
+import org.storydriven.modeling.diagram.edit.parts.ObjectVariableEditPart;
+import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StartNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StartNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StopNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart;
-import org.storydriven.modeling.diagram.edit.parts.ForkNodeEditPart;
-import org.storydriven.modeling.diagram.edit.parts.StoryPatternEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StoryPatternStoryPatternCompartementEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeEditPart;
@@ -61,46 +55,38 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host
 				.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof ActivityEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(7);
+			ArrayList<IElementType> types = new ArrayList<IElementType>(6);
 			types.add(SDMElementTypes.StartNode_2001);
 			types.add(SDMElementTypes.StopNode_2002);
 			types.add(SDMElementTypes.JunctionNode_2003);
 			types.add(SDMElementTypes.StatementNode_2004);
 			types.add(SDMElementTypes.StructuredNode_2005);
-			types.add(SDMElementTypes.MatchingStoryNode_2006);
 			types.add(SDMElementTypes.ModifyingStoryNode_2007);
 			return types;
 		}
+		if (editPart instanceof ObjectVariableEditPart) {
+			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+			types.add(SDMElementTypes.AttributeAssignment_3013);
+			return types;
+		}
 		if (editPart instanceof StructuredNodeStructuredNodeCompartmentEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(7);
+			ArrayList<IElementType> types = new ArrayList<IElementType>(6);
 			types.add(SDMElementTypes.JunctionNode_3001);
 			types.add(SDMElementTypes.StartNode_3002);
 			types.add(SDMElementTypes.StopNode_3004);
 			types.add(SDMElementTypes.StatementNode_3003);
 			types.add(SDMElementTypes.StructuredNode_3005);
-			types.add(SDMElementTypes.MatchingStoryNode_3010);
 			types.add(SDMElementTypes.ModifyingStoryNode_3011);
 			return types;
 		}
 		if (editPart instanceof StructuredNodeStructuredNodeCompartment2EditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(7);
+			ArrayList<IElementType> types = new ArrayList<IElementType>(6);
 			types.add(SDMElementTypes.JunctionNode_3001);
 			types.add(SDMElementTypes.StartNode_3002);
 			types.add(SDMElementTypes.StopNode_3004);
 			types.add(SDMElementTypes.StatementNode_3003);
 			types.add(SDMElementTypes.StructuredNode_3005);
-			types.add(SDMElementTypes.MatchingStoryNode_3010);
 			types.add(SDMElementTypes.ModifyingStoryNode_3011);
-			return types;
-		}
-		if (editPart instanceof MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-			types.add(SDMElementTypes.MatchingPattern_3006);
-			return types;
-		}
-		if (editPart instanceof MatchingPatternStoryPatternCompartementEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-			types.add(SDMElementTypes.ObjectVariable_3007);
 			return types;
 		}
 		if (editPart instanceof ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) {
@@ -109,13 +95,9 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 			return types;
 		}
 		if (editPart instanceof StoryPatternStoryPatternCompartementEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-			types.add(SDMElementTypes.ObjectVariable_3009);
-			return types;
-		}
-		if (editPart instanceof MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-			types.add(SDMElementTypes.MatchingPattern_3006);
+			ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+			types.add(SDMElementTypes.ObjectVariable_3012);
+			types.add(SDMElementTypes.PrimitiveVariable_3014);
 			return types;
 		}
 		if (editPart instanceof ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart) {
@@ -150,10 +132,6 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((StructuredNodeEditPart) sourceEditPart)
 					.getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof MatchingStoryNodeEditPart) {
-			return ((MatchingStoryNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
 		if (sourceEditPart instanceof ModifyingStoryNodeEditPart) {
 			return ((ModifyingStoryNodeEditPart) sourceEditPart)
 					.getMARelTypesOnSource();
@@ -177,12 +155,12 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((StructuredNode2EditPart) sourceEditPart)
 					.getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof MatchingStoryNode2EditPart) {
-			return ((MatchingStoryNode2EditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
 		if (sourceEditPart instanceof ModifyingStoryNode2EditPart) {
 			return ((ModifyingStoryNode2EditPart) sourceEditPart)
+					.getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof ObjectVariableEditPart) {
+			return ((ObjectVariableEditPart) sourceEditPart)
 					.getMARelTypesOnSource();
 		}
 		return Collections.EMPTY_LIST;
@@ -212,10 +190,6 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((StructuredNodeEditPart) targetEditPart)
 					.getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
-			return ((MatchingStoryNodeEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
 		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
 			return ((ModifyingStoryNodeEditPart) targetEditPart)
 					.getMARelTypesOnTarget();
@@ -239,12 +213,16 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((StructuredNode2EditPart) targetEditPart)
 					.getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof MatchingStoryNode2EditPart) {
-			return ((MatchingStoryNode2EditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
 		if (targetEditPart instanceof ModifyingStoryNode2EditPart) {
 			return ((ModifyingStoryNode2EditPart) targetEditPart)
+					.getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ObjectVariableEditPart) {
+			return ((ObjectVariableEditPart) targetEditPart)
+					.getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof PrimitiveVariableEditPart) {
+			return ((PrimitiveVariableEditPart) targetEditPart)
 					.getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
@@ -279,10 +257,6 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((StructuredNodeEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof MatchingStoryNodeEditPart) {
-			return ((MatchingStoryNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
 		if (sourceEditPart instanceof ModifyingStoryNodeEditPart) {
 			return ((ModifyingStoryNodeEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -307,12 +281,12 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((StructuredNode2EditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof MatchingStoryNode2EditPart) {
-			return ((MatchingStoryNode2EditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
 		if (sourceEditPart instanceof ModifyingStoryNode2EditPart) {
 			return ((ModifyingStoryNode2EditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ObjectVariableEditPart) {
+			return ((ObjectVariableEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		return Collections.EMPTY_LIST;
@@ -345,10 +319,6 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((StructuredNodeEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
-			return ((MatchingStoryNodeEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
 		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
 			return ((ModifyingStoryNodeEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
@@ -373,12 +343,16 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((StructuredNode2EditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof MatchingStoryNode2EditPart) {
-			return ((MatchingStoryNode2EditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
 		if (targetEditPart instanceof ModifyingStoryNode2EditPart) {
 			return ((ModifyingStoryNode2EditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ObjectVariableEditPart) {
+			return ((ObjectVariableEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof PrimitiveVariableEditPart) {
+			return ((PrimitiveVariableEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
@@ -411,10 +385,6 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((StructuredNodeEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof MatchingStoryNodeEditPart) {
-			return ((MatchingStoryNodeEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
 		if (sourceEditPart instanceof ModifyingStoryNodeEditPart) {
 			return ((ModifyingStoryNodeEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
@@ -439,12 +409,12 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((StructuredNode2EditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof MatchingStoryNode2EditPart) {
-			return ((MatchingStoryNode2EditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
 		if (sourceEditPart instanceof ModifyingStoryNode2EditPart) {
 			return ((ModifyingStoryNode2EditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ObjectVariableEditPart) {
+			return ((ObjectVariableEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;

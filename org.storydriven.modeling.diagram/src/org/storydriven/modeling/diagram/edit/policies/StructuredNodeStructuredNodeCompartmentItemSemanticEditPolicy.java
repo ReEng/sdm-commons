@@ -3,7 +3,6 @@ package org.storydriven.modeling.diagram.edit.policies;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.storydriven.modeling.diagram.edit.commands.JunctionNode2CreateCommand;
-import org.storydriven.modeling.diagram.edit.commands.MatchingStoryNode2CreateCommand;
 import org.storydriven.modeling.diagram.edit.commands.ModifyingStoryNode2CreateCommand;
 import org.storydriven.modeling.diagram.edit.commands.StartNode2CreateCommand;
 import org.storydriven.modeling.diagram.edit.commands.StatementNode2CreateCommand;
@@ -42,9 +41,6 @@ public class StructuredNodeStructuredNodeCompartmentItemSemanticEditPolicy
 		}
 		if (SDMElementTypes.StructuredNode_3005 == req.getElementType()) {
 			return getGEFWrapper(new StructuredNode2CreateCommand(req));
-		}
-		if (SDMElementTypes.MatchingStoryNode_3010 == req.getElementType()) {
-			return getGEFWrapper(new MatchingStoryNode2CreateCommand(req));
 		}
 		if (SDMElementTypes.ModifyingStoryNode_3011 == req.getElementType()) {
 			return getGEFWrapper(new ModifyingStoryNode2CreateCommand(req));

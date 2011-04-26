@@ -57,7 +57,7 @@ public class ObjectVariableCreateCommand extends EditElementCommand {
 				.createObjectVariable();
 
 		StoryPattern owner = (StoryPattern) getElementToEdit();
-		owner.getObjectVariables().add(newElement);
+		owner.getVariables().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -1,6 +1,9 @@
 package org.storydriven.modeling.diagram.edit.parts;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.PolylineDecoration;
+import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -70,8 +73,10 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements
 		 * @generated
 		 */
 		public ActivityEdgeFigure() {
+			this.setLineWidth(2);
 
 			createContents();
+			setTargetDecoration(createTargetDecoration());
 		}
 
 		/**
@@ -84,6 +89,15 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements
 
 			this.add(fFigureActivityEdgeGuardTypeFigure);
 
+		}
+
+		/**
+		 * @generated
+		 */
+		private RotatableDecoration createTargetDecoration() {
+			PolylineDecoration df = new PolylineDecoration();
+			df.setForegroundColor(ColorConstants.black);
+			return df;
 		}
 
 		/**

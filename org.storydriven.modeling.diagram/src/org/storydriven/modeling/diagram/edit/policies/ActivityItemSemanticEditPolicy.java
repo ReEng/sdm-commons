@@ -7,7 +7,6 @@ import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsComma
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 import org.storydriven.modeling.diagram.edit.commands.JunctionNodeCreateCommand;
-import org.storydriven.modeling.diagram.edit.commands.MatchingStoryNodeCreateCommand;
 import org.storydriven.modeling.diagram.edit.commands.ModifyingStoryNodeCreateCommand;
 import org.storydriven.modeling.diagram.edit.commands.StartNodeCreateCommand;
 import org.storydriven.modeling.diagram.edit.commands.StatementNodeCreateCommand;
@@ -46,9 +45,6 @@ public class ActivityItemSemanticEditPolicy extends
 		}
 		if (SDMElementTypes.StructuredNode_2005 == req.getElementType()) {
 			return getGEFWrapper(new StructuredNodeCreateCommand(req));
-		}
-		if (SDMElementTypes.MatchingStoryNode_2006 == req.getElementType()) {
-			return getGEFWrapper(new MatchingStoryNodeCreateCommand(req));
 		}
 		if (SDMElementTypes.ModifyingStoryNode_2007 == req.getElementType()) {
 			return getGEFWrapper(new ModifyingStoryNodeCreateCommand(req));

@@ -21,7 +21,6 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.diagram.edit.parts.JunctionNode2EditPart;
-import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StartNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNode2EditPart;
@@ -80,7 +79,6 @@ public class StructuredNodeStructuredNodeCompartment2CanonicalEditPolicy extends
 		case StopNode2EditPart.VISUAL_ID:
 		case StatementNode2EditPart.VISUAL_ID:
 		case StructuredNode2EditPart.VISUAL_ID:
-		case MatchingStoryNode2EditPart.VISUAL_ID:
 		case ModifyingStoryNode2EditPart.VISUAL_ID:
 			return true;
 		}

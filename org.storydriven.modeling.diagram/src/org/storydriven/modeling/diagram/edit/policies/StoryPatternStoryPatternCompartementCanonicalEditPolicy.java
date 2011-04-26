@@ -19,7 +19,8 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.modeling.diagram.edit.parts.ObjectVariable2EditPart;
+import org.storydriven.modeling.diagram.edit.parts.ObjectVariableEditPart;
+import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableEditPart;
 import org.storydriven.modeling.diagram.part.SDMDiagramUpdater;
 import org.storydriven.modeling.diagram.part.SDMNodeDescriptor;
 import org.storydriven.modeling.diagram.part.SDMVisualIDRegistry;
@@ -35,7 +36,7 @@ public class StoryPatternStoryPatternCompartementCanonicalEditPolicy extends
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return PatternsPackage.eINSTANCE.getStoryPattern_ObjectVariable();
+		return PatternsPackage.eINSTANCE.getStoryPattern_Variable();
 	}
 
 	/**
@@ -66,8 +67,9 @@ public class StoryPatternStoryPatternCompartementCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return ObjectVariable2EditPart.VISUAL_ID == SDMVisualIDRegistry
-				.getVisualID(view);
+		int visualID = SDMVisualIDRegistry.getVisualID(view);
+		return visualID == ObjectVariableEditPart.VISUAL_ID
+				|| visualID == PrimitiveVariableEditPart.VISUAL_ID;
 	}
 
 	/**

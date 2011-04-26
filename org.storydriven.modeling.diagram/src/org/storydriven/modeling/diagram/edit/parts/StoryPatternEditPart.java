@@ -1,7 +1,5 @@
 package org.storydriven.modeling.diagram.edit.parts;
 
-import org.eclipse.draw2d.BorderLayout;
-import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RoundedRectangle;
@@ -15,21 +13,15 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.storydriven.modeling.diagram.edit.policies.StoryPatternItemSemanticEditPolicy;
-import org.storydriven.modeling.diagram.part.SDMVisualIDRegistry;
-import org.storydriven.modeling.diagram.providers.SDMElementTypes;
 
 /**
  * @generated
@@ -273,6 +265,7 @@ public class StoryPatternEditPart extends ShapeNodeEditPart {
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16),
 					getMapMode().DPtoLP(16)));
 			this.setFill(false);
+			this.setOutline(false);
 			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(50),
 					getMapMode().DPtoLP(50)));
 
@@ -292,6 +285,7 @@ public class StoryPatternEditPart extends ShapeNodeEditPart {
 					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16),
 							getMapMode().DPtoLP(16)));
 			fFigureStoryPatternInnerRectangle.setFill(false);
+			fFigureStoryPatternInnerRectangle.setOutline(false);
 			fFigureStoryPatternInnerRectangle.setMinimumSize(new Dimension(
 					getMapMode().DPtoLP(50), getMapMode().DPtoLP(50)));
 

@@ -5,21 +5,13 @@ import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.workspace.AbstractEMFOperation;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.ui.action.AbstractActionDelegate;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.ui.IObjectActionDelegate;
-import org.storydriven.modeling.activities.ActivitiesFactory;
-import org.storydriven.modeling.activities.MatchingStoryNode;
-import org.storydriven.modeling.activities.ModifyingStoryNode;
 import org.storydriven.modeling.activities.StoryNode;
-import org.storydriven.modeling.diagram.edit.parts.MatchingStoryNodeEditPart;
-import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeEditPart;
 
 public class StoryNodeToggleForEachCommand extends AbstractActionDelegate implements
 		IObjectActionDelegate {

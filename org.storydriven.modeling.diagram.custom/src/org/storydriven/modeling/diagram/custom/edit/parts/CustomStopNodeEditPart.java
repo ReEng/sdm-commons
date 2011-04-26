@@ -13,9 +13,9 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableEditPolicyEx;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.modeling.activities.StopNode;
-import org.storydriven.modeling.diagram.edit.parts.ForkNodeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart;
 
-public class CustomStopNodeEditPart extends ForkNodeEditPart {
+public class CustomStopNodeEditPart extends StopNodeEditPart {
 
 	public CustomStopNodeEditPart(View view) {
 		super(view);
@@ -85,6 +85,12 @@ public class CustomStopNodeEditPart extends ForkNodeEditPart {
 	@Override
 	public EditPolicy getPrimaryDragEditPolicy() {
 	  return new NonResizableEditPolicyEx(); 
+	}
+	
+	@Override 
+	public void refresh() {
+		super.refresh();
+		updateFigure();
 	}
 
 }
