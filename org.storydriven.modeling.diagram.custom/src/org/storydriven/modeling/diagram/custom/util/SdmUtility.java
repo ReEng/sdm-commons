@@ -1,10 +1,14 @@
 package org.storydriven.modeling.diagram.custom.util;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.graphics.Color;
 import org.storydriven.modeling.diagram.custom.SdmDiagramConstants;
 import org.storydriven.modeling.patterns.BindingOperator;
+import org.storydriven.modeling.patterns.BindingState;
 import org.storydriven.modeling.patterns.ObjectVariable;
 
 

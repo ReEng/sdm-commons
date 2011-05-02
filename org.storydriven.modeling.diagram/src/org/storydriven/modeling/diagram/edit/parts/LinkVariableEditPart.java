@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.graphics.Color;
 import org.storydriven.modeling.diagram.edit.policies.LinkVariableItemSemanticEditPolicy;
 
 /**
@@ -73,7 +74,8 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements
 		 * @generated
 		 */
 		public LinkVariableFigure() {
-			this.setLineWidth(2);
+			this.setForegroundColor(THIS_FORE);
+			this.setBackgroundColor(THIS_BACK);
 
 			createContents();
 			setTargetDecoration(createTargetDecoration());
@@ -108,5 +110,14 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Color THIS_FORE = new Color(null, 0, 0, 0);
+	/**
+	 * @generated
+	 */
+	static final Color THIS_BACK = new Color(null, 0, 0, 0);
 
 }

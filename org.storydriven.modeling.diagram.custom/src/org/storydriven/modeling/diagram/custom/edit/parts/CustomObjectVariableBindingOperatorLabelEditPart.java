@@ -8,6 +8,7 @@ import org.storydriven.modeling.patterns.ObjectVariable;
 
 public class CustomObjectVariableBindingOperatorLabelEditPart extends
 		ObjectVariableBindingOperatorEditPart {
+	
 	public CustomObjectVariableBindingOperatorLabelEditPart(View view)
 	{
 		super(view);

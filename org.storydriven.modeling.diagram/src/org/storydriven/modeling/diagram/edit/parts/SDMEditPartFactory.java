@@ -109,9 +109,6 @@ public class SDMEditPartFactory implements EditPartFactory {
 			case PrimitiveVariableNameEditPart.VISUAL_ID:
 				return new PrimitiveVariableNameEditPart(view);
 
-			case PrimitiveVariableBindingOperatorLabelEditPart.VISUAL_ID:
-				return new PrimitiveVariableBindingOperatorLabelEditPart(view);
-
 			case PrimitiveVariableClassifierLabelEditPart.VISUAL_ID:
 				return new PrimitiveVariableClassifierLabelEditPart(view);
 
@@ -139,6 +136,10 @@ public class SDMEditPartFactory implements EditPartFactory {
 
 			case ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart.VISUAL_ID:
 				return new ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart(
+						view);
+
+			case PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart.VISUAL_ID:
+				return new PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart(
 						view);
 
 			case ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID:

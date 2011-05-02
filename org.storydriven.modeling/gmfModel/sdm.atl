@@ -24,3 +24,51 @@ rule GenCompartment2 {
 			listLayout <- false
 		)
 }
+
+rule GenNodeLabel1 {
+	from
+		gnlin : GM!GenNodeLabel (
+			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+				gnlin.viewmap.getterName = 'getFigureObjectVariableModifierLabel'
+			else
+				false
+			endif
+		)
+	to
+		gnlout : GM!GenNodeLabel (
+			editPartClassName <- 'ObjectVariableBindingOperatorEditPart',
+			itemSemanticEditPolicyClassName <- 'ObjectVariableBindingOperatorItemSemanticEditPolicy'
+		)
+}
+
+rule GenNodeLabel2 {
+	from
+		gnlin : GM!GenNodeLabel (
+			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+				gnlin.viewmap.getterName = 'getFigureObjectVariableClassifierLabel'
+			else
+				false
+			endif
+		)
+	to
+		gnlout : GM!GenNodeLabel (
+			editPartClassName <- 'ObjectVariableClassifierLabelEditPart',
+			itemSemanticEditPolicyClassName <- 'ObjectVariableClassifierItemSemanticEditPolicy'
+		)
+}
+
+rule GenNodeLabel3 {
+	from
+		gnlin : GM!GenNodeLabel (
+			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+				gnlin.viewmap.getterName = 'getFigurePrimitiveVariableClassifierLabel'
+			else
+				false
+			endif
+		)
+	to
+		gnlout : GM!GenNodeLabel (
+			editPartClassName <- 'PrimitiveVariableClassifierLabelEditPart',
+			itemSemanticEditPolicyClassName <- 'PrimitiveVariableClassifierLabelItemSemanticEditPolicy'
+		)
+}

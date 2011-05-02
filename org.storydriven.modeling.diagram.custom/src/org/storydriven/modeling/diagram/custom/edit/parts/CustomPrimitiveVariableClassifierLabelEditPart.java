@@ -4,15 +4,15 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.storydriven.modeling.diagram.custom.util.SdmUtility;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableClassifierLabelEditPart;
+import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableClassifierLabelEditPart;
 import org.storydriven.modeling.patterns.BindingState;
-import org.storydriven.modeling.patterns.ObjectVariable;
+import org.storydriven.modeling.patterns.PrimitiveVariable;
 
-public class CustomObjectVariableClassifierLabelEditPart extends ObjectVariableClassifierLabelEditPart
+public class CustomPrimitiveVariableClassifierLabelEditPart extends PrimitiveVariableClassifierLabelEditPart
 {
 
-	public CustomObjectVariableClassifierLabelEditPart(View view)
+	public CustomPrimitiveVariableClassifierLabelEditPart(View view)
 	{
 		super(view);
 	}
@@ -94,31 +94,29 @@ public class CustomObjectVariableClassifierLabelEditPart extends ObjectVariableC
 
 	protected void updateFigure()
 	{
-		SdmUtility.adaptColor(getFigure(), ((ObjectVariable) ((View) this.getModel()).getElement()).getBindingOperator());
-
-		ObjectVariable ov = (ObjectVariable) ((View) getModel()).getElement();
+		PrimitiveVariable pv = (PrimitiveVariable) ((View) getModel()).getElement();
 
 		String text = "";
 
 		String eClassName = "[null]";
-		if (ov.getClassifier() != null)
+		if (pv.getClassifier() != null)
 		{
-			eClassName = ov.getClassifier().getName();
+			eClassName = pv.getClassifier().getName();
 		}
 
 		text = " : " + eClassName;
 		
-		if (ov.getBindingState() == BindingState.BOUND)
+		if (pv.getBindingState() == BindingState.BOUND)
 		{
 			setForegroundColor(new Color(null, 160, 160, 160));
 			((WrappingLabel) this.getFigure()).setOpaque(false);
 		}
-		else if (ov.getBindingState() == BindingState.MAYBE_BOUND)
+		else if (pv.getBindingState() == BindingState.MAYBE_BOUND)
 		{
 			setBackgroundColor(new Color(null, 200, 200, 200));
 			((WrappingLabel) this.getFigure()).setOpaque(true);
 		}
-		else if (ov.getBindingState() == BindingState.UNBOUND)
+		else if (pv.getBindingState() == BindingState.UNBOUND)
 		{
 			((WrappingLabel) this.getFigure()).setOpaque(false);
 			/*

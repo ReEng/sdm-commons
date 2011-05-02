@@ -126,16 +126,18 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 							.getFigurePrimitiveVariableNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof PrimitiveVariableBindingOperatorLabelEditPart) {
-			((PrimitiveVariableBindingOperatorLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigurePrimitiveVariableModifierLabel());
-			return true;
-		}
 		if (childEditPart instanceof PrimitiveVariableClassifierLabelEditPart) {
 			((PrimitiveVariableClassifierLabelEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigurePrimitiveVariableClassifierLabel());
+			return true;
+		}
+		if (childEditPart instanceof PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigurePrimitiveVariableConstraintsRectangle();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -148,10 +150,15 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof PrimitiveVariableNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof PrimitiveVariableBindingOperatorLabelEditPart) {
+		if (childEditPart instanceof PrimitiveVariableClassifierLabelEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof PrimitiveVariableClassifierLabelEditPart) {
+		if (childEditPart instanceof PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigurePrimitiveVariableConstraintsRectangle();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -181,6 +188,10 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart) {
+			return getPrimaryShape()
+					.getFigurePrimitiveVariableConstraintsRectangle();
+		}
 		return getContentPane();
 	}
 
@@ -310,10 +321,6 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigurePrimitiveVariableModifierLabel;
-		/**
-		 * @generated
-		 */
 		private WrappingLabel fFigurePrimitiveVariableClassifierLabel;
 		/**
 		 * @generated
@@ -370,24 +377,6 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 			layoutPrimitiveVariableFigureNameRectangle2.makeColumnsEqualWidth = true;
 			primitiveVariableFigureNameRectangle2
 					.setLayoutManager(layoutPrimitiveVariableFigureNameRectangle2);
-
-			fFigurePrimitiveVariableModifierLabel = new WrappingLabel();
-			fFigurePrimitiveVariableModifierLabel.setText("");
-
-			fFigurePrimitiveVariableModifierLabel
-					.setFont(FFIGUREPRIMITIVEVARIABLEMODIFIERLABEL_FONT);
-
-			GridData constraintFFigurePrimitiveVariableModifierLabel = new GridData();
-			constraintFFigurePrimitiveVariableModifierLabel.verticalAlignment = GridData.BEGINNING;
-			constraintFFigurePrimitiveVariableModifierLabel.horizontalAlignment = GridData.CENTER;
-			constraintFFigurePrimitiveVariableModifierLabel.horizontalIndent = 0;
-			constraintFFigurePrimitiveVariableModifierLabel.horizontalSpan = 1;
-			constraintFFigurePrimitiveVariableModifierLabel.verticalSpan = 1;
-			constraintFFigurePrimitiveVariableModifierLabel.grabExcessHorizontalSpace = true;
-			constraintFFigurePrimitiveVariableModifierLabel.grabExcessVerticalSpace = false;
-			primitiveVariableFigureNameRectangle2.add(
-					fFigurePrimitiveVariableModifierLabel,
-					constraintFFigurePrimitiveVariableModifierLabel);
 
 			fFigurePrimitiveVariableNameLabel = new WrappingLabel();
 			fFigurePrimitiveVariableNameLabel.setText("");
@@ -456,13 +445,6 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigurePrimitiveVariableModifierLabel() {
-			return fFigurePrimitiveVariableModifierLabel;
-		}
-
-		/**
-		 * @generated
-		 */
 		public WrappingLabel getFigurePrimitiveVariableClassifierLabel() {
 			return fFigurePrimitiveVariableClassifierLabel;
 		}
@@ -475,13 +457,6 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 		}
 
 	}
-
-	/**
-	 * @generated
-	 */
-	static final Font FFIGUREPRIMITIVEVARIABLEMODIFIERLABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.ITALIC);
 
 	/**
 	 * @generated

@@ -52,7 +52,7 @@ public class PrimitiveVariableClassifierLabelEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5020;
+	public static final int VISUAL_ID = 5019;
 
 	/**
 	 * @generated

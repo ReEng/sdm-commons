@@ -458,7 +458,6 @@ public class ModifyingStoryNode2EditPart extends ShapeNodeEditPart {
 			storyActionNodeFigureBackRectangle1
 					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16),
 							getMapMode().DPtoLP(16)));
-			storyActionNodeFigureBackRectangle1.setOutline(false);
 			storyActionNodeFigureBackRectangle1
 					.setForegroundColor(ColorConstants.black);
 			storyActionNodeFigureBackRectangle1

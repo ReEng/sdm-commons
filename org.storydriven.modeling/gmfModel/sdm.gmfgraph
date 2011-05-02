@@ -86,11 +86,11 @@
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="ActivityEdgeFigure"
-          lineWidth="2"
           targetDecoration="//@figures.0/@figures.0">
         <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="black"/>
+            xsi:type="gmfgraph:RGBColor"/>
+        <backgroundColor
+            xsi:type="gmfgraph:RGBColor"/>
         <children
             xsi:type="gmfgraph:Label"
             name="ActivityEdgeGuardTypeFigure"/>
@@ -229,7 +229,6 @@
           <children
               xsi:type="gmfgraph:RoundedRectangle"
               name="StoryActionNodeFigureBackRectangle"
-              outline="false"
               cornerWidth="16"
               cornerHeight="16">
             <foregroundColor
@@ -686,17 +685,6 @@
                   xsi:type="gmfgraph:GridLayout"/>
               <children
                   xsi:type="gmfgraph:Label"
-                  name="PrimitiveVariableModifierLabel">
-                <layoutData
-                    xsi:type="gmfgraph:GridLayoutData"
-                    grabExcessHorizontalSpace="true"
-                    verticalAlignment="BEGINNING"/>
-                <font
-                    xsi:type="gmfgraph:BasicFont"
-                    style="ITALIC"/>
-              </children>
-              <children
-                  xsi:type="gmfgraph:Label"
                   name="PrimitiveVariableNameLabel"
                   text="">
                 <layoutData
@@ -744,11 +732,9 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0/@children.0/@children.0/@children.1"/>
-      <accessors
           figure="//@figures.0/@descriptors.10/@actualFigure/@children.0/@children.0/@children.0/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0/@children.0/@children.0/@children.2"/>
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0/@children.0/@children.0/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.10/@actualFigure/@children.0/@children.0/@children.1/@children.0"/>
     </descriptors>
@@ -757,11 +743,11 @@
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="LinkVariablePolylineConnection"
-          lineWidth="2"
           targetDecoration="//@figures.0/@figures.0">
         <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="black"/>
+            xsi:type="gmfgraph:RGBColor"/>
+        <backgroundColor
+            xsi:type="gmfgraph:RGBColor"/>
         <children
             xsi:type="gmfgraph:Label"
             name="LinkVariableFeature"/>
@@ -853,6 +839,10 @@
       name="ObjectVariableAttributeAsignmentsCompartment"
       figure="ObjectVariableFigure"
       accessor="//@figures.0/@descriptors.9/@accessors.4"/>
+  <compartments
+      name="PrimitiveVariableConstraintsCompartment"
+      figure="PrimitiveVariableFigure"
+      accessor="//@figures.0/@descriptors.10/@accessors.2"/>
   <labels
       name="StatementNodeNameLabel"
       figure="StatementNodeFigure"
@@ -906,12 +896,11 @@
       name="PrimitveVariableClassifierLabel"
       figure="PrimitiveVariableFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.10/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.10/@accessors.1"/>
   <labels
       name="PrimitiveVariableBindingOperatorLabel"
       figure="PrimitiveVariableFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.10/@accessors.1"/>
+      elementIcon="false"/>
   <labels
       name="ExpressionLabel"
       figure="ExpressionFigure"

@@ -264,11 +264,6 @@
               <labelMappings
                   readOnly="true">
                 <diagramLabel
-                    href="sdm.gmfgraph#PrimitiveVariableBindingOperatorLabel"/>
-              </labelMappings>
-              <labelMappings
-                  readOnly="true">
-                <diagramLabel
                     href="sdm.gmfgraph#PrimitveVariableClassifierLabel"/>
               </labelMappings>
               <tool
@@ -276,6 +271,10 @@
                   href="sdm.gmftool#//@palette/@tools.0/@tools.3"/>
               <diagramNode
                   href="sdm.gmfgraph#PrimitiveVariableNode"/>
+              <compartments>
+                <compartment
+                    href="sdm.gmfgraph#PrimitiveVariableConstraintsCompartment"/>
+              </compartments>
             </ownedChild>
           </children>
           <compartments

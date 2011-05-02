@@ -3,11 +3,14 @@
  */
 package org.storydriven.modeling.patterns.provider;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -16,9 +19,11 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.activities.expressions.ExpressionsFactory;
 import org.storydriven.modeling.patterns.LinkVariable;
+import org.storydriven.modeling.patterns.ObjectVariable;
 import org.storydriven.modeling.patterns.PatternsPackage;
 
 /**
@@ -78,14 +83,38 @@ public class LinkVariableItemProvider extends AbstractLinkVariableItemProvider i
 	 * This adds a property descriptor for the Target End feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	protected void addTargetEndPropertyDescriptor(Object object)
 	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+//		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+//				getResourceLocator(), getString("_UI_LinkVariable_targetEnd_feature"),
+//				getString("_UI_PropertyDescriptor_description", "_UI_LinkVariable_targetEnd_feature", "_UI_LinkVariable_type"),
+//				PatternsPackage.Literals.LINK_VARIABLE__TARGET_END, true, false, true, null, null, null));
+		
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(), getString("_UI_LinkVariable_targetEnd_feature"),
 				getString("_UI_PropertyDescriptor_description", "_UI_LinkVariable_targetEnd_feature", "_UI_LinkVariable_type"),
-				PatternsPackage.Literals.LINK_VARIABLE__TARGET_END, true, false, true, null, null, null));
+				PatternsPackage.Literals.LINK_VARIABLE__TARGET_END, true, false, true, null, null, null) 
+		    {
+			
+			@Override
+			public Collection<EReference> getChoiceOfValues(Object object){
+
+				Collection<EReference> choices = new ArrayList<EReference>();
+
+				ObjectVariable ov = ((LinkVariable) object).getSource();
+				if(ov != null) {
+					EClass ovClass = ov.getClassifier();
+
+					for(EReference aReference : ovClass.getEAllReferences()) {
+						choices.add(aReference);
+					}
+				}
+
+				return choices;			
+			}
+		} );
 	}
 
 	/**

@@ -31,6 +31,7 @@ import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableBindingOpera
 import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableClassifierLabelEditPart;
 import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableEditPart;
 import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableNameEditPart;
+import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StartNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StartNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNode2EditPart;
@@ -382,10 +383,10 @@ public class SDMVisualIDRegistry {
 			if (PrimitiveVariableNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (PrimitiveVariableBindingOperatorLabelEditPart.VISUAL_ID == nodeVisualID) {
+			if (PrimitiveVariableClassifierLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (PrimitiveVariableClassifierLabelEditPart.VISUAL_ID == nodeVisualID) {
+			if (PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

@@ -86,7 +86,7 @@ public class StructuredNodeStructuredNodeCompartment2CanonicalEditPolicy extends
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void refreshSemantic() {
 		if (resolveSemanticElement() == null) {
@@ -170,5 +170,7 @@ public class StructuredNodeStructuredNodeCompartment2CanonicalEditPolicy extends
 		}
 
 		makeViewsImmutable(createdViews);
+
+		super.refreshSemantic();
 	}
 }
