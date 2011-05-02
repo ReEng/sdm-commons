@@ -153,6 +153,9 @@ public enum ArithmeticOperator implements Enumerator
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * For formulas like a^b.
+    * <!-- end-model-doc -->
     * @see #EXP
     * @model
     * @generated

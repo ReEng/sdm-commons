@@ -74,7 +74,15 @@ public enum ComparingOperator implements Enumerator
     * @generated
     * @ordered
     */
-   UNEQUAL (5, "UNEQUAL", "UNEQUAL");
+   UNEQUAL (5, "UNEQUAL", "UNEQUAL"), /**
+                                       * The '<em><b>REGULAR EXPRESSION</b></em>' literal object.
+                                       * <!-- begin-user-doc -->
+                                       * <!-- end-user-doc -->
+                                       * @see #REGULAR_EXPRESSION_VALUE
+                                       * @generated
+                                       * @ordered
+                                       */
+   REGULAR_EXPRESSION (6, "REGULAR_EXPRESSION", "REGULAR_EXPRESSION");
 
    /**
     * The '<em><b>LESS</b></em>' literal value.
@@ -161,12 +169,26 @@ public enum ComparingOperator implements Enumerator
    public static final int UNEQUAL_VALUE = 5;
 
    /**
+    * The '<em><b>REGULAR EXPRESSION</b></em>' literal value.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * For comparison of a String with a regular expression.
+    * <!-- end-model-doc -->
+    * @see #REGULAR_EXPRESSION
+    * @model
+    * @generated
+    * @ordered
+    */
+   public static final int REGULAR_EXPRESSION_VALUE = 6;
+
+   /**
     * An array of all the '<em><b>Comparing Operator</b></em>' enumerators.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    private static final ComparingOperator[] VALUES_ARRAY = new ComparingOperator[] {LESS, LESS_OR_EQUAL, EQUAL,
-         GREATER_OR_EQUAL, GREATER, UNEQUAL,};
+         GREATER_OR_EQUAL, GREATER, UNEQUAL, REGULAR_EXPRESSION,};
 
    /**
     * A public read-only list of all the '<em><b>Comparing Operator</b></em>' enumerators.
@@ -232,6 +254,8 @@ public enum ComparingOperator implements Enumerator
             return GREATER;
          case UNEQUAL_VALUE:
             return UNEQUAL;
+         case REGULAR_EXPRESSION_VALUE:
+            return REGULAR_EXPRESSION;
       }
       return null;
    }

@@ -283,6 +283,11 @@
       <eLiterals name="GREATER_OR_EQUAL" value="3"/>
       <eLiterals name="GREATER" value="4"/>
       <eLiterals name="UNEQUAL" value="5"/>
+      <eLiterals name="REGULAR_EXPRESSION" value="6">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="For comparison of a String with a regular expression."/>
+        </eAnnotations>
+      </eLiterals>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ArithmeticOperator">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -293,7 +298,11 @@
       <eLiterals name="TIMES" value="2"/>
       <eLiterals name="DIVIDE" value="3"/>
       <eLiterals name="MODULO" value="4"/>
-      <eLiterals name="EXP" value="5"/>
+      <eLiterals name="EXP" value="5">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="For formulas like a^b."/>
+        </eAnnotations>
+      </eLiterals>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TextualExpression" eSuperTypes="#//expressions/Expression">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

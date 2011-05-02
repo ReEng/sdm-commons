@@ -631,6 +631,11 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
         <ownedLiteral xmi:id="_sxMzsBzFEeChOvWwuwx7tQ" name="GREATER_OR_EQUAL"/>
         <ownedLiteral xmi:id="_uv7xQBzFEeChOvWwuwx7tQ" name="GREATER"/>
         <ownedLiteral xmi:id="_wcn8kBzFEeChOvWwuwx7tQ" name="UNEQUAL"/>
+        <ownedLiteral xmi:id="_kXV5sHSREeCw_4Cp_HQS5Q" name="REGULAR_EXPRESSION">
+          <ownedComment xmi:id="__xY0AHSREeCw_4Cp_HQS5Q" annotatedElement="_kXV5sHSREeCw_4Cp_HQS5Q">
+            <body>For comparison of a String with a regular expression.</body>
+          </ownedComment>
+        </ownedLiteral>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_k4Jz0BzFEeChOvWwuwx7tQ" name="ArithmeticOperator">
         <ownedComment xmi:id="_HsybIBzsEeChOvWwuwx7tQ" annotatedElement="_k4Jz0BzFEeChOvWwuwx7tQ">
@@ -641,7 +646,11 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
         <ownedLiteral xmi:id="_24udUBzFEeChOvWwuwx7tQ" name="TIMES"/>
         <ownedLiteral xmi:id="_3y_tMBzFEeChOvWwuwx7tQ" name="DIVIDE"/>
         <ownedLiteral xmi:id="_4jt_gBzFEeChOvWwuwx7tQ" name="MODULO"/>
-        <ownedLiteral xmi:id="_hNz1ICR9EeCZkonQmyNaoA" name="EXP"/>
+        <ownedLiteral xmi:id="_hNz1ICR9EeCZkonQmyNaoA" name="EXP">
+          <ownedComment xmi:id="_QhTG4XSSEeCw_4Cp_HQS5Q" annotatedElement="_hNz1ICR9EeCZkonQmyNaoA">
+            <body>For formulas like a^b.</body>
+          </ownedComment>
+        </ownedLiteral>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_8-3VIBzFEeChOvWwuwx7tQ" name="TextualExpression">
         <ownedComment xmi:id="_ROhQEBzsEeChOvWwuwx7tQ" annotatedElement="_8-3VIBzFEeChOvWwuwx7tQ">

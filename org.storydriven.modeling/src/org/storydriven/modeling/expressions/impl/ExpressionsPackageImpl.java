@@ -596,6 +596,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
       addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.GREATER_OR_EQUAL);
       addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.GREATER);
       addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.UNEQUAL);
+      addEEnumLiteral(comparingOperatorEEnum, ComparingOperator.REGULAR_EXPRESSION);
 
       initEEnum(arithmeticOperatorEEnum, ArithmeticOperator.class, "ArithmeticOperator");
       addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.PLUS);
@@ -628,8 +629,12 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
                "Defines the operators for bninary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression."});
       addAnnotation(comparingOperatorEEnum, source, new String[] {"documentation",
             "Defines the operators for comparing expressions."});
+      addAnnotation(comparingOperatorEEnum.getELiterals().get(6), source, new String[] {"documentation",
+            "For comparison of a String with a regular expression."});
       addAnnotation(arithmeticOperatorEEnum, source, new String[] {"documentation",
             "Defines the operators for arithmetic expressions."});
+      addAnnotation(arithmeticOperatorEEnum.getELiterals().get(5), source, new String[] {"documentation",
+            "For formulas like a^b."});
       addAnnotation(textualExpressionEClass, source, new String[] {"documentation",
             "Represents any expression in a textual language embedded into Story Diagrams, e.g. OCL or Java ."});
       addAnnotation(getTextualExpression_ExpressionText(), source, new String[] {"documentation",
