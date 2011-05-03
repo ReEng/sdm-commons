@@ -760,13 +760,16 @@
       <actualFigure
           xsi:type="gmfgraph:Label"
           name="ExpressionFigureLabel"
-          text="anExpression"/>
+          text="piep"/>
     </descriptors>
   </figures>
   <nodes
       name="StartNode"
       figure="StartNodeFigure"
       resizeConstraint="NONE"/>
+  <nodes
+      name="ExpressionNode"
+      figure="ExpressionFigure"/>
   <nodes
       name="DebugNode"
       figure="DebugFigure"/>

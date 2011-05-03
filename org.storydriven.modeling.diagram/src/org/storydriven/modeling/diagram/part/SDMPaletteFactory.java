@@ -24,18 +24,18 @@ public class SDMPaletteFactory {
 	 * @generated
 	 */
 	public void fillPalette(PaletteRoot paletteRoot) {
-		paletteRoot.add(createModeling1Group());
+		paletteRoot.add(createStoryPatternTools1Group());
 		paletteRoot.add(createActivityNodeTools2Group());
 	}
 
 	/**
-	 * Creates "modeling" palette tool group
+	 * Creates "Story Pattern Tools" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createModeling1Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(
-				Messages.Modeling1Group_title);
-		paletteContainer.setId("createModeling1Group"); //$NON-NLS-1$
+	private PaletteContainer createStoryPatternTools1Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(
+				Messages.StoryPatternTools1Group_title);
+		paletteContainer.setId("createStoryPatternTools1Group"); //$NON-NLS-1$
 		paletteContainer.add(createModifyingStoryNode1CreationTool());
 		paletteContainer.add(createObjectVariableNode2CreationTool());
 		paletteContainer.add(createAttributeAssignment3CreationTool());
@@ -73,9 +73,9 @@ public class SDMPaletteFactory {
 				Messages.ModifyingStoryNode1CreationTool_desc, types);
 		entry.setId("createModifyingStoryNode1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(SDMDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/StatementNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/ModifyingStoryNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(SDMDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/StatementNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/ModifyingStoryNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -88,9 +88,10 @@ public class SDMPaletteFactory {
 				Messages.ObjectVariableNode2CreationTool_desc,
 				Collections.singletonList(SDMElementTypes.ObjectVariable_3012));
 		entry.setId("createObjectVariableNode2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(SDMElementTypes
-				.getImageDescriptor(SDMElementTypes.ObjectVariable_3012));
-		entry.setLargeIcon(entry.getSmallIcon());
+		entry.setSmallIcon(SDMDiagramEditorPlugin
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/ObjectVariableNode.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(SDMDiagramEditorPlugin
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/ObjectVariableNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -104,9 +105,10 @@ public class SDMPaletteFactory {
 				Collections
 						.singletonList(SDMElementTypes.AttributeAssignment_3013));
 		entry.setId("createAttributeAssignment3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(SDMElementTypes
-				.getImageDescriptor(SDMElementTypes.AttributeAssignment_3013));
-		entry.setLargeIcon(entry.getSmallIcon());
+		entry.setSmallIcon(SDMDiagramEditorPlugin
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/AttributeAssignment.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(SDMDiagramEditorPlugin
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/AttributeAssignment.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -120,9 +122,10 @@ public class SDMPaletteFactory {
 				Collections
 						.singletonList(SDMElementTypes.PrimitiveVariable_3014));
 		entry.setId("createPrimitiveVariableNode4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(SDMElementTypes
-				.getImageDescriptor(SDMElementTypes.PrimitiveVariable_3014));
-		entry.setLargeIcon(entry.getSmallIcon());
+		entry.setSmallIcon(SDMDiagramEditorPlugin
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/PrimitiveVariableNode.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(SDMDiagramEditorPlugin
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/PrimitiveVariableNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -136,9 +139,9 @@ public class SDMPaletteFactory {
 				Collections.singletonList(SDMElementTypes.LinkVariable_4002));
 		entry.setId("createLinkVariable5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(SDMDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/ActivityEdge.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/LinkVariable.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(SDMDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/ActivityEdge.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/LinkVariable.gif")); //$NON-NLS-1$
 		return entry;
 	}
 

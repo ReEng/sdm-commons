@@ -416,17 +416,6 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 			}
 			break;
 		}
-		case AttributeAssignmentEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(SDMDiagramUpdater
-						.getAttributeAssignment_3013ContainedLinks(view));
-			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
-			break;
-		}
 		case PrimitiveVariableEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(SDMDiagramUpdater

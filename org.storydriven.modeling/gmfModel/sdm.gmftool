@@ -7,44 +7,60 @@
       title="modelingPalette">
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="modeling">
+        title="Story Pattern Tools"
+        collapsible="true"
+        active="//@palette/@tools.0">
       <tools
           xsi:type="gmftool:CreationTool"
           title="Modifying StoryNode"
           description="create new ModifyingStoryNode">
         <smallIcon
             xsi:type="gmftool:BundleImage"
-            path="/icons/full/obj16/StatementNode.gif"
+            path="/icons/objects16/ModifyingStoryNode.gif"
             bundle="org.storydriven.modeling.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
-            path="/icons/full/obj16/StatementNode.gif"
+            path="/icons/objects16/ModifyingStoryNode.gif"
             bundle="org.storydriven.modeling.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="ObjectVariable Node"
+          title="Object Variable Node"
           description="create new ObjectVariableNode">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="/icons/objects16/ObjectVariableNode.gif"
+            bundle="org.storydriven.modeling.diagram.custom"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="/icons/objects16/ObjectVariableNode.gif"
+            bundle="org.storydriven.modeling.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Attribute Assignment"
           description="create new AttributeAssignment">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="/icons/objects16/AttributeAssignment.gif"
+            bundle="org.storydriven.modeling.diagram.custom"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="/icons/objects16/AttributeAssignment.gif"
+            bundle="org.storydriven.modeling.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="PrimitiveVariable Node"
+          title="Primitive Variable Node"
           description="create new PrimitveVariableNode">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="/icons/objects16/PrimitiveVariableNode.gif"
+            bundle="org.storydriven.modeling.diagram.custom"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="/icons/objects16/PrimitiveVariableNode.gif"
+            bundle="org.storydriven.modeling.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -52,11 +68,11 @@
           description="Create new LinkVariable">
         <smallIcon
             xsi:type="gmftool:BundleImage"
-            path="/icons/objects16/ActivityEdge.gif"
+            path="/icons/objects16/LinkVariable.gif"
             bundle="org.storydriven.modeling.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
-            path="/icons/objects16/ActivityEdge.gif"
+            path="/icons/objects16/LinkVariable.gif"
             bundle="org.storydriven.modeling.diagram.custom"/>
       </tools>
     </tools>

@@ -427,6 +427,7 @@
       </labels>
     </childNodes>
     <childNodes
+        xsi:type="gmfgen:GenChildLabelNode"
         visualID="3013"
         editPartClassName="AttributeAssignmentEditPart"
         itemSemanticEditPolicyClassName="AttributeAssignmentItemSemanticEditPolicy"
@@ -443,10 +444,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ExpressionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ExpressionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ExpressionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;anExpression&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
-      </viewmap>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ExpressionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ExpressionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;piep&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="../model/sdm.uml.genmodel#//modeling/patterns/AttributeAssignment"/>
@@ -455,6 +453,8 @@
         <childMetaFeature
             href="../model/sdm.uml.genmodel#//modeling/patterns/ObjectVariable/attributeAssignment"/>
       </modelFacet>
+      <labelModelFacet
+          parser="//@labelParsers/@implementations.1"/>
     </childNodes>
     <childNodes
         visualID="3014"
@@ -1064,35 +1064,42 @@
     </compartments>
     <palette>
       <groups
-          title="modeling">
+          title="Story Pattern Tools"
+          collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Modifying StoryNode"
             description="create new ModifyingStoryNode"
-            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/full/obj16/StatementNode.gif"
-            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/full/obj16/StatementNode.gif"
+            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/ModifyingStoryNode.gif"
+            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/ModifyingStoryNode.gif"
             genNodes="//@diagram/@childNodes.5 //@diagram/@topLevelNodes.5"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="ObjectVariable Node"
+            title="Object Variable Node"
             description="create new ObjectVariableNode"
+            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/ObjectVariableNode.gif"
+            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/ObjectVariableNode.gif"
             genNodes="//@diagram/@childNodes.7"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Attribute Assignment"
             description="create new AttributeAssignment"
+            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/AttributeAssignment.gif"
+            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/AttributeAssignment.gif"
             genNodes="//@diagram/@childNodes.8"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="PrimitiveVariable Node"
+            title="Primitive Variable Node"
             description="create new PrimitveVariableNode"
+            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/PrimitiveVariableNode.gif"
+            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/PrimitiveVariableNode.gif"
             genNodes="//@diagram/@childNodes.9"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Link Variable"
             description="Create new LinkVariable"
-            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/ActivityEdge.gif"
-            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/ActivityEdge.gif"
+            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/LinkVariable.gif"
+            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/LinkVariable.gif"
             genLinks="//@diagram/@links.1"/>
       </groups>
       <groups
@@ -1622,7 +1629,7 @@
         uses="//@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExternalParser"
-        uses="//@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.2/@modelFacet //@diagram/@childNodes.9/@labels.1/@modelFacet"/>
+        uses="//@diagram/@childNodes.8/@labelModelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.2/@modelFacet //@diagram/@childNodes.9/@labels.1/@modelFacet"/>
   </labelParsers>
   <contextMenus
       context="//@diagram">

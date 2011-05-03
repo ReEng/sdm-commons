@@ -9,14 +9,15 @@ import java.util.Map.Entry;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StackLayout;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowData;
@@ -64,6 +65,7 @@ public class EditExpressionDialog extends Dialog {
 	private Map<String, SourceViewerProvider> sourceViewerProviders = new HashMap<String, SourceViewerProvider>();
 	private HashMap<String, ISourceViewer> sourceViewers;
 	private EClassifier contextClassifier;
+	private EClassifier expectedReturnType;
 	
 	public EditExpressionDialog(Shell parent) {
 		super(parent);
@@ -118,14 +120,14 @@ public class EditExpressionDialog extends Dialog {
 	
 	@Override
 	public boolean close() {
-		this.disposeSourceViewers();
+		this.disposeSourceViewerProviders();
 		return super.close();
 	}
 	
 	@Override
 	protected void okPressed() {
 		setReturnCode(OK);
-		// Implement whatever we want to do here
+		// TODO Set ChangeAttributeCommandsValue and send it to CommandReceiver
 		this.close();
 	}
 
@@ -165,7 +167,7 @@ public class EditExpressionDialog extends Dialog {
 		Label expectedReturnLabel = new Label(expectedReturnArea, SWT.NONE);
 		expectedReturnLabel.setText("Expected return Value:");
 		Label expectedReturnValueLabel = new Label(expectedReturnArea, SWT.NONE);
-		expectedReturnValueLabel.setText("null");
+		expectedReturnValueLabel.setText(this.getExpectedReturnString());
 		
 		languageEditingArea = new Composite(composite, SWT.NONE);
 		languageEditingArea.setLayout(new StackLayout());
@@ -292,53 +294,6 @@ public class EditExpressionDialog extends Dialog {
 		
 	}
 
-//	TODO Deprecated & Deletion with next revision	
-//	private void changeVersionButtons(String languageName) {
-//		for( Control aButton : ((Composite)((StackLayout)versionRadioButtonsArea.getLayout()).topControl).getChildren()) {
-//			((Button) aButton).setSelection(false);
-//		}
-//		
-//		((StackLayout)versionRadioButtonsArea.getLayout()).topControl = versionSelectionAreas.get(languageName);
-//		versionRadioButtonsArea.layout();
-//	}
-//
-//	private void createDialogVersionRadioButtons(Composite languageChoosingArea) {
-//		versionRadioButtonsArea = new Composite(languageChoosingArea, SWT.NONE);
-//		versionRadioButtonsArea.setLayoutData(new GridData(GridData.FILL, GridData.BEGINNING, false, false));
-//		versionRadioButtonsArea.setLayout(new StackLayout());
-//		versionSelectionAreas = new HashMap<String, Composite>();
-//		
-//		Listener listener = new Listener() {
-//            public void handleEvent (Event e) {
-//            		Button tempButton = null;
-//            		for(Button aButton : languageRadioButtons) {
-//            			if(aButton.getSelection()) {
-//            				tempButton = aButton;
-//            			}
-//            		}
-//            		if(tempButton != null) {
-//            			changeSourceViewerTo(tempButton.getText(), ((Button)e.widget).getText());
-//            		}
-//            }
-//		 };
-//		
-//		Composite tempComposite;
-//		Button	  tempButton;
-//		 
-//		for(String aLanguage : ExpressionUtils.getAvailableExpressionLanguages()) {
-//			tempComposite = new Composite(versionRadioButtonsArea, SWT.NONE | SWT.BORDER);
-//			tempComposite.setLayout(new RowLayout());
-//			
-//			for(String aVersion : ExpressionUtils.getAvailableExpressionLanguageVersions(aLanguage)) {
-//				tempButton = new Button(tempComposite, SWT.RADIO);
-//				tempButton.setText(aVersion);
-//				tempButton.addListener(SWT.Selection, listener);
-//			}
-//			tempComposite.layout();
-//			versionSelectionAreas.put(aLanguage, tempComposite);
-//		}
-//	}
-//	
 	private void initializeSourceViewers() {
 		sourceViewers = new HashMap<String, ISourceViewer>();
 
@@ -366,9 +321,10 @@ public class EditExpressionDialog extends Dialog {
 		languageEditingArea.layout();
 	}
 
-	private void disposeSourceViewers() {
-		// TODO Auto-generated method stub
-		
+	private void disposeSourceViewerProviders() {
+		for(SourceViewerProvider svp : sourceViewerProviders.values()) {
+			svp.dispose();
+		}
 	}
 	
 	private Map<String, EClassifier> getContextInformation() {
@@ -403,5 +359,29 @@ public class EditExpressionDialog extends Dialog {
 		nextSourceViewer.getTextWidget().setVisible(true);
 		currentSourceViewer = nextSourceViewer;
 		languageEditingArea.layout();
+	}
+	
+
+	public void setExpectedReturnType(EClassifier classifier) {
+		this.expectedReturnType = classifier;
+	}
+	
+	private String getExpectedReturnString() {
+		return (this.expectedReturnType != null) ? this.expectedReturnType.getName() : "null";
+	}
+
+	public void setDialogText(String expressionText) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setChangeAttributeCommand(Command changeAttributeCommand, TransactionalEditingDomain transactionalEditingDomain) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setContextInformation(Object contextInformation) {
+		// TODO Auto-generated method stub
+		
 	}
 }

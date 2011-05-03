@@ -29,12 +29,6 @@
             id="org.storydriven.modeling.diagram.custom.ModifyingStoryNodeContribution"
             objectClass="org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeEditPart">
          <action
-               class="deprecated.ModifyingStoryNodeToggleMatchingCommand"
-               id="org.storydriven.modeling.diagram.custom.ModifyingStoryNodeConvertToMatching"
-               label="Toggle Modifying/Matching"
-               tooltip="This will toggle whether the storynode is matching or modifying">
-         </action>
-         <action
                class="org.storydriven.modeling.diagram.custom.edit.commands.StoryNodeToggleForEachCommand"
                id="org.storydriven.modeling.diagram.custom.ModifyingStoryNodeToogleForEachCommand"
                label="Toggle forEach"
@@ -63,9 +57,20 @@
             id="org.storydriven.modeling.diagram.custom.expressions.OpenExpressionsDialog"
             objectClass="org.storydriven.modeling.diagram.edit.parts.ObjectVariableEditPart">
          <action
-               class="org.storydriven.modeling.diagram.custom.expressions.EditExpressionWithDialog"
+               class="org.storydriven.modeling.diagram.custom.expressions.EditExpressionWithDialogAction"
                id="org.storydriven.modeling.diagram.custom.expressions.OpenExpressionsDialog"
                label="Edit Expressions"
+               tooltip="This will toggle whether the storynode is matching or modifying">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="org.storydriven.modeling.diagram.custom.expressions.OpenExpressionsDialogForAttributeAssignment"
+            objectClass="org.storydriven.modeling.diagram.edit.parts.AttributeAssignmentEditPart">
+         <action
+               class="org.storydriven.modeling.diagram.custom.expressions.EditAttributeAssignmentWithDialogAction"
+               id="org.storydriven.modeling.diagram.custom.expressions.OpenExpressionsDialogForAttributeAssignment"
+               label="Edit Attribute Assignment"
                tooltip="This will toggle whether the storynode is matching or modifying">
          </action>
       </objectContribution>

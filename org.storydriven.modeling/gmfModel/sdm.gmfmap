@@ -225,6 +225,10 @@
                 <ownedChild>
                   <domainMetaElement
                       href="../model/sdm.ecore#//patterns/AttributeAssignment"/>
+                  <labelMappings>
+                    <diagramLabel
+                        href="sdm.gmfgraph#ExpressionLabel"/>
+                  </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
                       href="sdm.gmftool#//@palette/@tools.0/@tools.2"/>

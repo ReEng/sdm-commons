@@ -2,6 +2,7 @@ package org.storydriven.modeling.diagram.custom.edit.parts;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
+import org.storydriven.modeling.diagram.edit.parts.AttributeAssignmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableBindingOperatorEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableClassifierLabelEditPart;
@@ -35,6 +36,9 @@ public class CustomSDMEditPartFactory extends SDMEditPartFactory {
 				
 			case PrimitiveVariableClassifierLabelEditPart.VISUAL_ID:
 				return new CustomPrimitiveVariableClassifierLabelEditPart(view);
+				
+			case AttributeAssignmentEditPart.VISUAL_ID:
+				return new CustomAttributeAssignmentEditPart(view);
 				
 			/* In case MatchingStoryNodes strike back add this:
 			 * 	case MatchingStoryNodeEditPart.VISUAL_ID:

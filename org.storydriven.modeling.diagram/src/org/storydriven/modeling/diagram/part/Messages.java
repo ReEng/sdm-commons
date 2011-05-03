@@ -243,7 +243,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Modeling1Group_title;
+	public static String StoryPatternTools1Group_title;
 
 	/**
 	 * @generated

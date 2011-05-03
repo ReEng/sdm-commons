@@ -5,13 +5,14 @@ import org.eclipse.gmf.runtime.common.ui.action.AbstractActionDelegate;
 import org.eclipse.ui.IActionDelegate;
 
 // TODO abstract all those Abstract Action Delegates
-public class EditExpressionWithDialog extends AbstractActionDelegate implements IActionDelegate{
+public class EditExpressionWithDialogAction extends AbstractActionDelegate implements IActionDelegate{
 
 	EditExpressionDialog expressionDialog;
 	
 	@Override
 	protected void doRun(IProgressMonitor progressMonitor) {
 		expressionDialog = new EditExpressionDialog(null);
+		expressionDialog.setExpectedReturnType(null);
 		expressionDialog.open();		
 	}
 
