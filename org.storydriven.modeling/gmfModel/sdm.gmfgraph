@@ -93,7 +93,7 @@
             xsi:type="gmfgraph:RGBColor"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="ActivityEdgeGuardTypeFigure"/>
+            name="ActivityEdgeGuardFigure"/>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
@@ -839,7 +839,7 @@
       figure="ObjectVariableFigure"
       accessor="//@figures.0/@descriptors.9/@accessors.3"/>
   <compartments
-      name="ObjectVariableAttributeAsignmentsCompartment"
+      name="ObjectVariableAttributeAssignmentsCompartment"
       figure="ObjectVariableFigure"
       accessor="//@figures.0/@descriptors.9/@accessors.4"/>
   <compartments
@@ -909,4 +909,9 @@
       figure="ExpressionFigure"
       resizeConstraint="NONE"
       elementIcon="false"/>
+  <labels
+      name="ActivityEdgeGuardConstraintLabel"
+      figure="ActivityEdgeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
 </gmfgraph:Canvas>

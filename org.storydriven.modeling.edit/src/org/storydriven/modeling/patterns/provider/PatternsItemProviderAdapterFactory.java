@@ -31,16 +31,15 @@ import org.storydriven.modeling.patterns.util.PatternsAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier,
-		IDisposable
-{
+public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComposedAdapterFactory	parentAdapterFactory;
+	protected ComposedAdapterFactory parentAdapterFactory;
 
 	/**
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
@@ -48,7 +47,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IChangeNotifier			changeNotifier	= new ChangeNotifier();
+	protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -56,7 +55,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<Object>		supportedTypes	= new ArrayList<Object>();
+	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
 	 * This constructs an instance.
@@ -64,8 +63,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PatternsItemProviderAdapterFactory()
-	{
+	public PatternsItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -79,7 +77,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ObjectVariableItemProvider	objectVariableItemProvider;
+	protected ObjectVariableItemProvider objectVariableItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.patterns.ObjectVariable}.
@@ -88,10 +86,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public Adapter createObjectVariableAdapter()
-	{
-		if (objectVariableItemProvider == null)
-		{
+	public Adapter createObjectVariableAdapter() {
+		if (objectVariableItemProvider == null) {
 			objectVariableItemProvider = new ObjectVariableItemProvider(this);
 		}
 
@@ -104,7 +100,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AttributeAssignmentItemProvider	attributeAssignmentItemProvider;
+	protected AttributeAssignmentItemProvider attributeAssignmentItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.patterns.AttributeAssignment}.
@@ -113,11 +109,10 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public Adapter createAttributeAssignmentAdapter()
-	{
-		if (attributeAssignmentItemProvider == null)
-		{
-			attributeAssignmentItemProvider = new AttributeAssignmentItemProvider(this);
+	public Adapter createAttributeAssignmentAdapter() {
+		if (attributeAssignmentItemProvider == null) {
+			attributeAssignmentItemProvider = new AttributeAssignmentItemProvider(
+					this);
 		}
 
 		return attributeAssignmentItemProvider;
@@ -129,7 +124,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LinkConstraintItemProvider	linkConstraintItemProvider;
+	protected LinkConstraintItemProvider linkConstraintItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.patterns.LinkConstraint}.
@@ -138,10 +133,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public Adapter createLinkConstraintAdapter()
-	{
-		if (linkConstraintItemProvider == null)
-		{
+	public Adapter createLinkConstraintAdapter() {
+		if (linkConstraintItemProvider == null) {
 			linkConstraintItemProvider = new LinkConstraintItemProvider(this);
 		}
 
@@ -154,7 +147,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConstraintItemProvider	constraintItemProvider;
+	protected ConstraintItemProvider constraintItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.patterns.Constraint}.
@@ -163,10 +156,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public Adapter createConstraintAdapter()
-	{
-		if (constraintItemProvider == null)
-		{
+	public Adapter createConstraintAdapter() {
+		if (constraintItemProvider == null) {
 			constraintItemProvider = new ConstraintItemProvider(this);
 		}
 
@@ -179,7 +170,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ObjectSetVariableItemProvider	objectSetVariableItemProvider;
+	protected ObjectSetVariableItemProvider objectSetVariableItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.patterns.ObjectSetVariable}.
@@ -188,11 +179,10 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public Adapter createObjectSetVariableAdapter()
-	{
-		if (objectSetVariableItemProvider == null)
-		{
-			objectSetVariableItemProvider = new ObjectSetVariableItemProvider(this);
+	public Adapter createObjectSetVariableAdapter() {
+		if (objectSetVariableItemProvider == null) {
+			objectSetVariableItemProvider = new ObjectSetVariableItemProvider(
+					this);
 		}
 
 		return objectSetVariableItemProvider;
@@ -204,7 +194,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PrimitiveVariableItemProvider	primitiveVariableItemProvider;
+	protected PrimitiveVariableItemProvider primitiveVariableItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.patterns.PrimitiveVariable}.
@@ -213,11 +203,10 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public Adapter createPrimitiveVariableAdapter()
-	{
-		if (primitiveVariableItemProvider == null)
-		{
-			primitiveVariableItemProvider = new PrimitiveVariableItemProvider(this);
+	public Adapter createPrimitiveVariableAdapter() {
+		if (primitiveVariableItemProvider == null) {
+			primitiveVariableItemProvider = new PrimitiveVariableItemProvider(
+					this);
 		}
 
 		return primitiveVariableItemProvider;
@@ -229,7 +218,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PathItemProvider	pathItemProvider;
+	protected PathItemProvider pathItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.patterns.Path}.
@@ -238,10 +227,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public Adapter createPathAdapter()
-	{
-		if (pathItemProvider == null)
-		{
+	public Adapter createPathAdapter() {
+		if (pathItemProvider == null) {
 			pathItemProvider = new PathItemProvider(this);
 		}
 
@@ -254,7 +241,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LinkVariableItemProvider	linkVariableItemProvider;
+	protected LinkVariableItemProvider linkVariableItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.patterns.LinkVariable}.
@@ -263,10 +250,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public Adapter createLinkVariableAdapter()
-	{
-		if (linkVariableItemProvider == null)
-		{
+	public Adapter createLinkVariableAdapter() {
+		if (linkVariableItemProvider == null) {
 			linkVariableItemProvider = new LinkVariableItemProvider(this);
 		}
 
@@ -279,7 +264,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContainmentRelationItemProvider	containmentRelationItemProvider;
+	protected ContainmentRelationItemProvider containmentRelationItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.patterns.ContainmentRelation}.
@@ -288,11 +273,10 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public Adapter createContainmentRelationAdapter()
-	{
-		if (containmentRelationItemProvider == null)
-		{
-			containmentRelationItemProvider = new ContainmentRelationItemProvider(this);
+	public Adapter createContainmentRelationAdapter() {
+		if (containmentRelationItemProvider == null) {
+			containmentRelationItemProvider = new ContainmentRelationItemProvider(
+					this);
 		}
 
 		return containmentRelationItemProvider;
@@ -304,7 +288,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MatchingPatternItemProvider	matchingPatternItemProvider;
+	protected MatchingPatternItemProvider matchingPatternItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.patterns.MatchingPattern}.
@@ -313,10 +297,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public Adapter createMatchingPatternAdapter()
-	{
-		if (matchingPatternItemProvider == null)
-		{
+	public Adapter createMatchingPatternAdapter() {
+		if (matchingPatternItemProvider == null) {
 			matchingPatternItemProvider = new MatchingPatternItemProvider(this);
 		}
 
@@ -329,7 +311,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContainerVariableItemProvider	containerVariableItemProvider;
+	protected ContainerVariableItemProvider containerVariableItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.patterns.ContainerVariable}.
@@ -338,11 +320,10 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public Adapter createContainerVariableAdapter()
-	{
-		if (containerVariableItemProvider == null)
-		{
-			containerVariableItemProvider = new ContainerVariableItemProvider(this);
+	public Adapter createContainerVariableAdapter() {
+		if (containerVariableItemProvider == null) {
+			containerVariableItemProvider = new ContainerVariableItemProvider(
+					this);
 		}
 
 		return containerVariableItemProvider;
@@ -354,7 +335,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StoryPatternItemProvider	storyPatternItemProvider;
+	protected StoryPatternItemProvider storyPatternItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.patterns.StoryPattern}.
@@ -363,10 +344,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public Adapter createStoryPatternAdapter()
-	{
-		if (storyPatternItemProvider == null)
-		{
+	public Adapter createStoryPatternAdapter() {
+		if (storyPatternItemProvider == null) {
 			storyPatternItemProvider = new StoryPatternItemProvider(this);
 		}
 
@@ -379,9 +358,9 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComposeableAdapterFactory getRootAdapterFactory()
-	{
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+	public ComposeableAdapterFactory getRootAdapterFactory() {
+		return parentAdapterFactory == null ? this : parentAdapterFactory
+				.getRootAdapterFactory();
 	}
 
 	/**
@@ -390,8 +369,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory)
-	{
+	public void setParentAdapterFactory(
+			ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -401,8 +380,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object type)
-	{
+	public boolean isFactoryForType(Object type) {
 		return supportedTypes.contains(type) || super.isFactoryForType(type);
 	}
 
@@ -413,8 +391,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public Adapter adapt(Notifier notifier, Object type)
-	{
+	public Adapter adapt(Notifier notifier, Object type) {
 		return super.adapt(notifier, this);
 	}
 
@@ -424,13 +401,11 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	@Override
-	public Object adapt(Object object, Object type)
-	{
-		if (isFactoryForType(type))
-		{
+	public Object adapt(Object object, Object type) {
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter)))
-			{
+			if (!(type instanceof Class<?>)
+					|| (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -444,8 +419,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addListener(INotifyChangedListener notifyChangedListener)
-	{
+	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
 
@@ -455,8 +429,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void removeListener(INotifyChangedListener notifyChangedListener)
-	{
+	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
 
@@ -466,12 +439,10 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void fireNotifyChanged(Notification notification)
-	{
+	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null)
-		{
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -482,8 +453,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void dispose()
-	{
+	public void dispose() {
 		if (objectVariableItemProvider != null)
 			objectVariableItemProvider.dispose();
 		if (constraintItemProvider != null)

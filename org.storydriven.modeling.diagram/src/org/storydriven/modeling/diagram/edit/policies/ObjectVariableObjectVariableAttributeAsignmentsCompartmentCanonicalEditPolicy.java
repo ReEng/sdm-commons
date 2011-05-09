@@ -47,7 +47,7 @@ public class ObjectVariableObjectVariableAttributeAsignmentsCompartmentCanonical
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<SDMNodeDescriptor> childDescriptors = SDMDiagramUpdater
-				.getObjectVariableObjectVariableAttributeAsignmentsCompartment_7014SemanticChildren(viewObject);
+				.getObjectVariableObjectVariableAttributeAssignmentsCompartment_7014SemanticChildren(viewObject);
 		for (SDMNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -80,7 +80,7 @@ public class ObjectVariableObjectVariableAttributeAsignmentsCompartmentCanonical
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<SDMNodeDescriptor> childDescriptors = SDMDiagramUpdater
-				.getObjectVariableObjectVariableAttributeAsignmentsCompartment_7014SemanticChildren((View) getHost()
+				.getObjectVariableObjectVariableAttributeAssignmentsCompartment_7014SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

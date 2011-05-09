@@ -72,3 +72,19 @@ rule GenNodeLabel3 {
 			itemSemanticEditPolicyClassName <- 'PrimitiveVariableClassifierLabelItemSemanticEditPolicy'
 		)
 }
+
+rule GenLinkLabel1 {
+	from
+		gllin : GM!GenLinkLabel (
+			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+				gllin.viewmap.getterName = 'getFigureActivityEdgeGuardFigure'
+			else
+				false
+			endif
+		)
+	to
+		gllout : GM!GenLinkLabel (
+			editPartClassName <- 'ActivityEdgeGuardConstraintLabelEditPart',
+			itemSemanticEditPolicyClassName <- 'ActivityEdgeGuardConstraintLabelItemSemanticEditPolicy'
+		)
+}

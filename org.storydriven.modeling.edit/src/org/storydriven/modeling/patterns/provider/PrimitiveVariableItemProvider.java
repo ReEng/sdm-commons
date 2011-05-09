@@ -24,17 +24,16 @@ import org.storydriven.modeling.patterns.PrimitiveVariable;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
-{
+public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PrimitiveVariableItemProvider(AdapterFactory adapterFactory)
-	{
+	public PrimitiveVariableItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,10 +44,8 @@ public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider 
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addClassifierPropertyDescriptor(object);
@@ -62,12 +59,17 @@ public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addClassifierPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_PrimitiveVariable_classifier_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveVariable_classifier_feature", "_UI_PrimitiveVariable_type"),
-				PatternsPackage.Literals.PRIMITIVE_VARIABLE__CLASSIFIER, true, false, true, null, null, null));
+	protected void addClassifierPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_PrimitiveVariable_classifier_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_PrimitiveVariable_classifier_feature",
+						"_UI_PrimitiveVariable_type"),
+				PatternsPackage.Literals.PRIMITIVE_VARIABLE__CLASSIFIER, true,
+				false, true, null, null, null));
 	}
 
 	/**
@@ -77,9 +79,9 @@ public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider 
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PrimitiveVariable"));
+	public Object getImage(Object object) {
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/PrimitiveVariable"));
 	}
 
 	/**
@@ -89,11 +91,10 @@ public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider 
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		String label = ((PrimitiveVariable) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_PrimitiveVariable_type") : getString("_UI_PrimitiveVariable_type")
-				+ " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_PrimitiveVariable_type")
+				: getString("_UI_PrimitiveVariable_type") + " " + label;
 	}
 
 	/**
@@ -104,8 +105,7 @@ public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider 
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -118,8 +118,8 @@ public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider 
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

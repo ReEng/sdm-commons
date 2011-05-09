@@ -76,7 +76,7 @@ public class SDMDiagramUpdater {
 		case StoryPatternStoryPatternCompartementEditPart.VISUAL_ID:
 			return getStoryPatternStoryPatternCompartement_7008SemanticChildren(view);
 		case ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart.VISUAL_ID:
-			return getObjectVariableObjectVariableAttributeAsignmentsCompartment_7014SemanticChildren(view);
+			return getObjectVariableObjectVariableAttributeAssignmentsCompartment_7014SemanticChildren(view);
 		case ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID:
 			return getModifyingStoryNodeModifyingStoryNodeContentCompartment_7007SemanticChildren(view);
 		}
@@ -282,7 +282,7 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<SDMNodeDescriptor> getObjectVariableObjectVariableAttributeAsignmentsCompartment_7014SemanticChildren(
+	public static List<SDMNodeDescriptor> getObjectVariableObjectVariableAttributeAssignmentsCompartment_7014SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();

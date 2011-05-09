@@ -28,17 +28,16 @@ import org.storydriven.modeling.activities.expressions.ExpressionsFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StopNodeItemProvider extends ActivityNodeItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
-{
+public class StopNodeItemProvider extends ActivityNodeItemProvider implements
+		IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StopNodeItemProvider(AdapterFactory adapterFactory)
-	{
+	public StopNodeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -49,10 +48,8 @@ public class StopNodeItemProvider extends ActivityNodeItemProvider implements IE
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addFlowStopOnlyPropertyDescriptor(object);
@@ -66,12 +63,17 @@ public class StopNodeItemProvider extends ActivityNodeItemProvider implements IE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFlowStopOnlyPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_StopNode_flowStopOnly_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_StopNode_flowStopOnly_feature", "_UI_StopNode_type"),
-				ActivitiesPackage.Literals.STOP_NODE__FLOW_STOP_ONLY, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
+	protected void addFlowStopOnlyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_StopNode_flowStopOnly_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_StopNode_flowStopOnly_feature",
+						"_UI_StopNode_type"),
+				ActivitiesPackage.Literals.STOP_NODE__FLOW_STOP_ONLY, true,
+				false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
 				null));
 	}
 
@@ -84,12 +86,12 @@ public class StopNodeItemProvider extends ActivityNodeItemProvider implements IE
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
-	{
-		if (childrenFeatures == null)
-		{
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE);
+			childrenFeatures
+					.add(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -100,8 +102,7 @@ public class StopNodeItemProvider extends ActivityNodeItemProvider implements IE
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
@@ -115,9 +116,9 @@ public class StopNodeItemProvider extends ActivityNodeItemProvider implements IE
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StopNode"));
+	public Object getImage(Object object) {
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/StopNode"));
 	}
 
 	/**
@@ -127,10 +128,10 @@ public class StopNodeItemProvider extends ActivityNodeItemProvider implements IE
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		String label = ((StopNode) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_StopNode_type") : getString("_UI_StopNode_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_StopNode_type")
+				: getString("_UI_StopNode_type") + " " + label;
 	}
 
 	/**
@@ -141,18 +142,18 @@ public class StopNodeItemProvider extends ActivityNodeItemProvider implements IE
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StopNode.class))
-		{
-			case ActivitiesPackage.STOP_NODE__FLOW_STOP_ONLY:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ActivitiesPackage.STOP_NODE__RETURN_VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(StopNode.class)) {
+		case ActivitiesPackage.STOP_NODE__FLOW_STOP_ONLY:
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), false, true));
+			return;
+		case ActivitiesPackage.STOP_NODE__RETURN_VALUE:
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -165,48 +166,86 @@ public class StopNodeItemProvider extends ActivityNodeItemProvider implements IE
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
-				ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
+				ExpressionsFactory.eINSTANCE
+						.createExceptionVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
-				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
+						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
+								.createTextualExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
-				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
+						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
+								.createLiteralExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
-				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createNotExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
+						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
+								.createNotExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
-				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
+						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
+								.createComparisonExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
-				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
+						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
+								.createArithmeticExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
-				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
+						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
+								.createBinaryLogicExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
-				org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
+						org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE
+								.createMethodCallExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
-				org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
+						org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE
+								.createParameterExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
-				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
+						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
+								.createAttributeValueExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
-				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
+						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
+								.createObjectVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
-				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
+						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
+								.createObjectSetSizeExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
-				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
+						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
+								.createPrimitiveVariableExpression()));
 	}
 
 }

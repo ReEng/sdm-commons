@@ -153,6 +153,9 @@ public class SDMEditPartFactory implements EditPartFactory {
 			case ActivityEdgeEditPart.VISUAL_ID:
 				return new ActivityEdgeEditPart(view);
 
+			case ActivityEdgeGuardConstraintLabelEditPart.VISUAL_ID:
+				return new ActivityEdgeGuardConstraintLabelEditPart(view);
+
 			case LinkVariableEditPart.VISUAL_ID:
 				return new LinkVariableEditPart(view);
 

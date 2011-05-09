@@ -30,17 +30,16 @@ import org.storydriven.modeling.provider.TypedElementItemProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExpressionItemProvider extends TypedElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
-{
+public class ExpressionItemProvider extends TypedElementItemProvider implements
+		IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExpressionItemProvider(AdapterFactory adapterFactory)
-	{
+	public ExpressionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -51,10 +50,8 @@ public class ExpressionItemProvider extends TypedElementItemProvider implements 
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
@@ -68,13 +65,17 @@ public class ExpressionItemProvider extends TypedElementItemProvider implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommentPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_CommentableElement_comment_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				SDMPackage.Literals.COMMENTABLE_ELEMENT__COMMENT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				null));
+	protected void addCommentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_CommentableElement_comment_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_CommentableElement_comment_feature",
+						"_UI_CommentableElement_type"),
+				SDMPackage.Literals.COMMENTABLE_ELEMENT__COMMENT, true, false,
+				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -84,10 +85,10 @@ public class ExpressionItemProvider extends TypedElementItemProvider implements 
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		String label = ((Expression) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_Expression_type") : getString("_UI_Expression_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Expression_type")
+				: getString("_UI_Expression_type") + " " + label;
 	}
 
 	/**
@@ -98,15 +99,14 @@ public class ExpressionItemProvider extends TypedElementItemProvider implements 
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Expression.class))
-		{
-			case ExpressionsPackage.EXPRESSION__COMMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(Expression.class)) {
+		case ExpressionsPackage.EXPRESSION__COMMENT:
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -119,8 +119,8 @@ public class ExpressionItemProvider extends TypedElementItemProvider implements 
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -131,8 +131,7 @@ public class ExpressionItemProvider extends TypedElementItemProvider implements 
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator()
-	{
+	public ResourceLocator getResourceLocator() {
 		return SDMEditPlugin.INSTANCE;
 	}
 

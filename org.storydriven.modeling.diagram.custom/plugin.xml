@@ -74,6 +74,90 @@
                tooltip="This will toggle whether the storynode is matching or modifying">
          </action>
       </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="org.storydriven.modeling.diagram.custom.ActivityEdgeGuardContribution"
+            objectClass="org.storydriven.modeling.diagram.edit.parts.ActivityEdgeEditPart">
+         <menu
+               id="ActivityEdgeGuardMenu"
+               label="Activity Edge Guard">
+            <separator
+                  name="GuardGroup">
+            </separator>
+         </menu>
+         <action
+               class="org.storydriven.modeling.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               id="org.storydriven.modeling.diagram.custom.ActicityEdgeGuardMenuEntry.FINALLY"
+               label="finally"
+               menubarPath="ActivityEdgeGuardMenu/GuardGroup"
+               style="radio"
+               tooltip="This will toggle they isKey Attribute of the Attribute.">
+         </action>
+         <action
+               class="org.storydriven.modeling.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               id="org.storydriven.modeling.diagram.custom.ActicityEdgeGuardMenuEntry.BOOL"
+               label="bool"
+               menubarPath="ActivityEdgeGuardMenu/GuardGroup"
+               style="radio"
+               tooltip="This will toggle they isKey Attribute of the Attribute.">
+         </action>
+         <action
+               class="org.storydriven.modeling.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               id="org.storydriven.modeling.diagram.custom.ActicityEdgeGuardMenuEntry.END"
+               label="end"
+               menubarPath="ActivityEdgeGuardMenu/GuardGroup"
+               style="radio"
+               tooltip="This will toggle they isKey Attribute of the Attribute.">
+         </action>
+         <action
+               class="org.storydriven.modeling.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               id="org.storydriven.modeling.diagram.custom.ActicityEdgeGuardMenuEntry.FAILURE"
+               label="failure"
+               menubarPath="ActivityEdgeGuardMenu/GuardGroup"
+               style="radio"
+               tooltip="This will toggle they isKey Attribute of the Attribute.">
+         </action>
+         <action
+               class="org.storydriven.modeling.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               id="org.storydriven.modeling.diagram.custom.ActicityEdgeGuardMenuEntry.EACH_TIME"
+               label="each time"
+               menubarPath="ActivityEdgeGuardMenu/GuardGroup"
+               style="radio"
+               tooltip="This will toggle they isKey Attribute of the Attribute.">
+         </action>
+         <action
+               class="org.storydriven.modeling.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               id="org.storydriven.modeling.diagram.custom.ActicityEdgeGuardMenuEntry.SUCCESS"
+               label="success"
+               menubarPath="ActivityEdgeGuardMenu/GuardGroup"
+               style="radio"
+               tooltip="This will toggle they isKey Attribute of the Attribute.">
+         </action>
+         <action
+               class="org.storydriven.modeling.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               id="org.storydriven.modeling.diagram.custom.ActicityEdgeGuardMenuEntry.NONE"
+               label="none"
+               menubarPath="ActivityEdgeGuardMenu/GuardGroup"
+               style="radio"
+               tooltip="This will toggle they isKey Attribute of the Attribute.">
+         </action>
+         <action
+               class="org.storydriven.modeling.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               id="org.storydriven.modeling.diagram.custom.ActicityEdgeGuardMenuEntry.ELSE"
+               label="else"
+               menubarPath="ActivityEdgeGuardMenu/GuardGroup"
+               style="radio"
+               tooltip="This will toggle they isKey Attribute of the Attribute.">
+         </action>
+         <action
+               class="org.storydriven.modeling.diagram.custom.edit.commands.SetActivityEdgeGuardTypeAction"
+               id="org.storydriven.modeling.diagram.custom.ActicityEdgeGuardMenuEntry.EXCEPTION"
+               label="exception"
+               menubarPath="ActivityEdgeGuardMenu/GuardGroup"
+               style="radio"
+               tooltip="This will toggle they isKey Attribute of the Attribute.">
+         </action>
+      </objectContribution>
    </extension>
    <extension
          point="org.storydriven.modeling.diagram.custom.expressionSourceViewerExtension">

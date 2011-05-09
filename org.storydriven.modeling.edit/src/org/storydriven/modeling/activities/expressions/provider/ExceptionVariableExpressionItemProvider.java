@@ -27,17 +27,17 @@ import org.storydriven.modeling.provider.SDMEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExceptionVariableExpressionItemProvider extends ExpressionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
-{
+public class ExceptionVariableExpressionItemProvider extends
+		ExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExceptionVariableExpressionItemProvider(AdapterFactory adapterFactory)
-	{
+	public ExceptionVariableExpressionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -48,10 +48,8 @@ public class ExceptionVariableExpressionItemProvider extends ExpressionItemProvi
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addExceptionVariablePropertyDescriptor(object);
@@ -65,15 +63,19 @@ public class ExceptionVariableExpressionItemProvider extends ExpressionItemProvi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addExceptionVariablePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ExceptionVariableExpression_exceptionVariable_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ExceptionVariableExpression_exceptionVariable_feature",
-						"_UI_ExceptionVariableExpression_type"),
-				ExpressionsPackage.Literals.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE, true, false, true, null, null, null));
+	protected void addExceptionVariablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ExceptionVariableExpression_exceptionVariable_feature"),
+						getString(
+								"_UI_PropertyDescriptor_description",
+								"_UI_ExceptionVariableExpression_exceptionVariable_feature",
+								"_UI_ExceptionVariableExpression_type"),
+						ExpressionsPackage.Literals.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE,
+						true, false, true, null, null, null));
 	}
 
 	/**
@@ -83,9 +85,11 @@ public class ExceptionVariableExpressionItemProvider extends ExpressionItemProvi
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExceptionVariableExpression"));
+	public Object getImage(Object object) {
+		return overlayImage(
+				object,
+				getResourceLocator().getImage(
+						"full/obj16/ExceptionVariableExpression"));
 	}
 
 	/**
@@ -95,11 +99,11 @@ public class ExceptionVariableExpressionItemProvider extends ExpressionItemProvi
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		String label = ((ExceptionVariableExpression) object).getComment();
 		return label == null || label.length() == 0 ? getString("_UI_ExceptionVariableExpression_type")
-				: getString("_UI_ExceptionVariableExpression_type") + " " + label;
+				: getString("_UI_ExceptionVariableExpression_type") + " "
+						+ label;
 	}
 
 	/**
@@ -110,8 +114,7 @@ public class ExceptionVariableExpressionItemProvider extends ExpressionItemProvi
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -124,8 +127,8 @@ public class ExceptionVariableExpressionItemProvider extends ExpressionItemProvi
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -136,8 +139,7 @@ public class ExceptionVariableExpressionItemProvider extends ExpressionItemProvi
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator()
-	{
+	public ResourceLocator getResourceLocator() {
 		return SDMEditPlugin.INSTANCE;
 	}
 

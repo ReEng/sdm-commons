@@ -26,17 +26,16 @@ import org.storydriven.modeling.expressions.NotExpression;
  * <!-- end-user-doc -->
  * @generated
  */
-public class NotExpressionItemProvider extends ExpressionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
-{
+public class NotExpressionItemProvider extends ExpressionItemProvider implements
+		IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotExpressionItemProvider(AdapterFactory adapterFactory)
-	{
+	public NotExpressionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -47,10 +46,8 @@ public class NotExpressionItemProvider extends ExpressionItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -66,12 +63,12 @@ public class NotExpressionItemProvider extends ExpressionItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
-	{
-		if (childrenFeatures == null)
-		{
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION);
+			childrenFeatures
+					.add(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -82,8 +79,7 @@ public class NotExpressionItemProvider extends ExpressionItemProvider implements
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
@@ -97,9 +93,9 @@ public class NotExpressionItemProvider extends ExpressionItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/NotExpression"));
+	public Object getImage(Object object) {
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/NotExpression"));
 	}
 
 	/**
@@ -109,11 +105,10 @@ public class NotExpressionItemProvider extends ExpressionItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		String label = ((NotExpression) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_NotExpression_type") : getString("_UI_NotExpression_type") + " "
-				+ label;
+		return label == null || label.length() == 0 ? getString("_UI_NotExpression_type")
+				: getString("_UI_NotExpression_type") + " " + label;
 	}
 
 	/**
@@ -124,15 +119,14 @@ public class NotExpressionItemProvider extends ExpressionItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(NotExpression.class))
-		{
-			case ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(NotExpression.class)) {
+		case ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION:
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -145,48 +139,75 @@ public class NotExpressionItemProvider extends ExpressionItemProvider implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(
+				ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors.add(createChildParameter(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(
+				ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors.add(createChildParameter(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(
+				ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createNotExpression()));
 
-		newChildDescriptors.add(createChildParameter(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(
+				ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors.add(createChildParameter(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(
+				ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors.add(createChildParameter(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(
+				ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 
-		newChildDescriptors.add(createChildParameter(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
-				org.storydriven.modeling.activities.expressions.ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
+						org.storydriven.modeling.activities.expressions.ExpressionsFactory.eINSTANCE
+								.createExceptionVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
-				org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
+						org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE
+								.createMethodCallExpression()));
 
-		newChildDescriptors.add(createChildParameter(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
-				org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
+						org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE
+								.createParameterExpression()));
 
-		newChildDescriptors.add(createChildParameter(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
-				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
+						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
+								.createAttributeValueExpression()));
 
-		newChildDescriptors.add(createChildParameter(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
-				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
+						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
+								.createObjectVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
-				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
+						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
+								.createObjectSetSizeExpression()));
 
-		newChildDescriptors.add(createChildParameter(ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
-				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION,
+						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
+								.createPrimitiveVariableExpression()));
 	}
 
 }

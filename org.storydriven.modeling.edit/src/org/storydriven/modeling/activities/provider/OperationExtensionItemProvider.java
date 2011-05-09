@@ -34,17 +34,16 @@ import org.storydriven.modeling.provider.SDMEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OperationExtensionItemProvider extends ExtensionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
-{
+public class OperationExtensionItemProvider extends ExtensionItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OperationExtensionItemProvider(AdapterFactory adapterFactory)
-	{
+	public OperationExtensionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,10 +54,8 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider implem
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
@@ -73,13 +70,17 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommentPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_CommentableElement_comment_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				SDMPackage.Literals.COMMENTABLE_ELEMENT__COMMENT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				null));
+	protected void addCommentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_CommentableElement_comment_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_CommentableElement_comment_feature",
+						"_UI_CommentableElement_type"),
+				SDMPackage.Literals.COMMENTABLE_ELEMENT__COMMENT, true, false,
+				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -88,12 +89,17 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOperationPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_OperationExtension_operation_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_OperationExtension_operation_feature", "_UI_OperationExtension_type"),
-				ActivitiesPackage.Literals.OPERATION_EXTENSION__OPERATION, true, false, true, null, null, null));
+	protected void addOperationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_OperationExtension_operation_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_OperationExtension_operation_feature",
+						"_UI_OperationExtension_type"),
+				ActivitiesPackage.Literals.OPERATION_EXTENSION__OPERATION,
+				true, false, true, null, null, null));
 	}
 
 	/**
@@ -105,14 +111,16 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider implem
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
-	{
-		if (childrenFeatures == null)
-		{
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
-			childrenFeatures.add(ActivitiesPackage.Literals.OPERATION_EXTENSION__RETURN_VALUE);
-			childrenFeatures.add(ActivitiesPackage.Literals.OPERATION_EXTENSION__OWNED_ACTIVITY);
+			childrenFeatures
+					.add(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
+			childrenFeatures
+					.add(ActivitiesPackage.Literals.OPERATION_EXTENSION__RETURN_VALUE);
+			childrenFeatures
+					.add(ActivitiesPackage.Literals.OPERATION_EXTENSION__OWNED_ACTIVITY);
 		}
 		return childrenFeatures;
 	}
@@ -123,8 +131,7 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider implem
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
@@ -138,9 +145,9 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider implem
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/OperationExtension"));
+	public Object getImage(Object object) {
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/OperationExtension"));
 	}
 
 	/**
@@ -150,11 +157,10 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider implem
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		String label = ((OperationExtension) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_OperationExtension_type") : getString("_UI_OperationExtension_type")
-				+ " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_OperationExtension_type")
+				: getString("_UI_OperationExtension_type") + " " + label;
 	}
 
 	/**
@@ -165,20 +171,20 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider implem
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(OperationExtension.class))
-		{
-			case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
-			case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
-			case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(OperationExtension.class)) {
+		case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), false, true));
+			return;
+		case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
+		case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
+		case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -191,17 +197,20 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider implem
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS,
+		newChildDescriptors.add(createChildParameter(
+				CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS,
 				EcoreFactory.eINSTANCE.createEParameter()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.OPERATION_EXTENSION__RETURN_VALUE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.OPERATION_EXTENSION__RETURN_VALUE,
 				EcoreFactory.eINSTANCE.createEParameter()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.OPERATION_EXTENSION__OWNED_ACTIVITY,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.OPERATION_EXTENSION__OWNED_ACTIVITY,
 				ActivitiesFactory.eINSTANCE.createActivity()));
 	}
 
@@ -212,20 +221,18 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider implem
 	 * @generated
 	 */
 	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection)
-	{
+	public String getCreateChildText(Object owner, Object feature,
+			Object child, Collection<?> selection) {
 		Object childFeature = feature;
 		Object childObject = child;
 
 		boolean qualify = childFeature == CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS
 				|| childFeature == ActivitiesPackage.Literals.OPERATION_EXTENSION__RETURN_VALUE;
 
-		if (qualify)
-		{
-			return getString("_UI_CreateChild_text2", new Object[]
-			{
-					getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner)
-			});
+		if (qualify) {
+			return getString("_UI_CreateChild_text2", new Object[] {
+					getTypeText(childObject), getFeatureText(childFeature),
+					getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}
@@ -237,8 +244,7 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider implem
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator()
-	{
+	public ResourceLocator getResourceLocator() {
 		return SDMEditPlugin.INSTANCE;
 	}
 

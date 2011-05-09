@@ -243,7 +243,7 @@
               <compartments
                   children="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0">
                 <compartment
-                    href="sdm.gmfgraph#ObjectVariableAttributeAsignmentsCompartment"/>
+                    href="sdm.gmfgraph#ObjectVariableAttributeAssignmentsCompartment"/>
               </compartments>
             </ownedChild>
           </children>
@@ -302,6 +302,11 @@
   <links>
     <domainMetaElement
         href="../model/sdm.ecore#//activities/ActivityEdge"/>
+    <labelMappings
+        readOnly="true">
+      <diagramLabel
+          href="sdm.gmfgraph#ActivityEdgeGuardConstraintLabel"/>
+    </labelMappings>
     <containmentFeature
         href="../model/sdm.ecore#//activities/Activity/ownedActivityEdge"/>
     <tool

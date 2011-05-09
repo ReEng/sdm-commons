@@ -10,7 +10,9 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.text.source.ISourceViewer;
@@ -31,6 +33,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 import org.storydriven.modeling.diagram.custom.SourceViewerProvider;
+import org.storydriven.modeling.expressions.TextualExpression;
 import org.storydriven.modeling.expressions.util.ExpressionUtils;
 
 
@@ -45,6 +48,9 @@ public class EditExpressionDialog extends Dialog {
 
 	protected ISourceViewer currentSourceViewer;
 	private ISourceViewer defaultSourceViewer;
+	
+	protected String selectedLanguage;
+	protected String selectedVersion;
 	
 	protected static final String DIALOG_TITLE = "Edit Expression";
 	protected static final int DIALOG_WIDTH = 500;
@@ -64,8 +70,13 @@ public class EditExpressionDialog extends Dialog {
 	// Key for both Maps is the source viewers name concatenated with the source viewers version.
 	private Map<String, SourceViewerProvider> sourceViewerProviders = new HashMap<String, SourceViewerProvider>();
 	private HashMap<String, ISourceViewer> sourceViewers;
+	
 	private EClassifier contextClassifier;
 	private EClassifier expectedReturnType;
+	private TransactionalEditingDomain commandReceiver;
+	private String originalText;
+	private TextualExpression expression;
+	private Map<String, EClassifier> contextInformation;
 	
 	public EditExpressionDialog(Shell parent) {
 		super(parent);
@@ -127,8 +138,37 @@ public class EditExpressionDialog extends Dialog {
 	@Override
 	protected void okPressed() {
 		setReturnCode(OK);
-		// TODO Set ChangeAttributeCommandsValue and send it to CommandReceiver
+		CompoundCommand ccmd = new CompoundCommand();
+		SetCommand cmd = new SetCommand(commandReceiver, 
+										expression, 
+										expression.eClass().getEStructuralFeature("expressionText"), 
+										currentSourceViewer.getDocument().get());
+		ccmd.append(cmd);
+		
+		cmd = new SetCommand(commandReceiver, 
+							expression, 
+							expression.eClass().getEStructuralFeature("language"), 
+							this.getSelectedLanguage());
+		ccmd.append(cmd);
+		
+		cmd = new SetCommand(commandReceiver, 
+				expression, 
+				expression.eClass().getEStructuralFeature("languageVersion"), 
+				this.getSelectedVersion());
+		ccmd.append(cmd);
+		
+		commandReceiver.getCommandStack().execute(ccmd);
 		this.close();
+	}
+
+	private String getSelectedVersion() {
+		// TODO Auto-generated method stub
+		return selectedVersion;
+	}
+
+	private String getSelectedLanguage() {
+		// TODO Auto-generated method stub
+		return selectedLanguage;
 	}
 
 	/**
@@ -180,13 +220,14 @@ public class EditExpressionDialog extends Dialog {
 		this.getShell().setText(DIALOG_TITLE);
 		
 		adjustDefaultSourceViewer();
-		
+				
 		return composite;
 	}
 
 	private void adjustDefaultSourceViewer() {
 		if(ExpressionUtils.getAvailableExpressionLanguages().contains(DEFAULT_LANGUAGE)) {
-			String searchString = DEFAULT_LANGUAGE.concat(
+			// TODO refactor getKeyFor
+			String searchString = DEFAULT_LANGUAGE.concat(" ").concat(
 					ExpressionUtils.getAvailableExpressionLanguageVersions(DEFAULT_LANGUAGE).get(0));
 			changeSourceViewerTo(searchString);
 
@@ -252,6 +293,8 @@ public class EditExpressionDialog extends Dialog {
 			
 			@Override
 			public void widgetSelected(SelectionEvent e) {
+				selectedLanguage = languageCombo.getItem(languageCombo.getSelectionIndex());
+				selectedVersion = versionCombo.getItem(languageCombo.getSelectionIndex());
 				changeSourceViewerTo(languageCombo.getItem(languageCombo.getSelectionIndex()), 
 									versionCombo.getItem(versionCombo.getSelectionIndex()));
 			}
@@ -275,7 +318,9 @@ public class EditExpressionDialog extends Dialog {
             	 		((Button) aButton).setSelection(false);
             	 	}
             	 	((Button)e.widget).setSelection(true);
-                     changeSourceViewerTo(((Button)e.widget).getText());
+            	 	selectedLanguage = ((Button)e.widget).getText().split(" ")[0];
+            	 	selectedVersion = ((Button)e.widget).getText().split(" ")[1];
+                    changeSourceViewerTo(((Button)e.widget).getText().replace(" ", ""));
              }
 		 };
 		
@@ -286,7 +331,7 @@ public class EditExpressionDialog extends Dialog {
 			buttonRow.setLayout(new RowLayout());
 			for (String aVersion : ExpressionUtils.getAvailableExpressionLanguageVersions(aLanguage)) {
 				tempButton = new Button(buttonRow, SWT.RADIO);
-				tempButton.setText(aLanguage.concat(aVersion));
+				tempButton.setText(aLanguage.concat(" ").concat(aVersion));
 				tempButton.addListener(SWT.Selection, listener);
 				languageRadioButtons.add(tempButton);
 			}
@@ -302,8 +347,8 @@ public class EditExpressionDialog extends Dialog {
 			ISourceViewer sv = svpEntry.getValue().createSourceViewer(languageEditingArea, 
 																	SWT.BORDER | SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL, 
 																	contextClassifier,
-																	getContextInformation(), 
-																	"");
+																	contextInformation, 
+																	originalText);
 			sourceViewers.put(svpEntry.getKey(), sv);
 
 			sv.getTextWidget().setVisible(false);
@@ -312,8 +357,8 @@ public class EditExpressionDialog extends Dialog {
 		defaultSourceViewer = new SourceViewerProvider().createSourceViewer(languageEditingArea, 
 				SWT.BORDER | SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL, 
 				contextClassifier,
-				getContextInformation(), 
-				"");
+				contextInformation, 
+				originalText);
 		currentSourceViewer = defaultSourceViewer;
 		currentSourceViewer.getTextWidget().setVisible(true);
 		((StackLayout) languageEditingArea.getLayout()).topControl = currentSourceViewer.getTextWidget();
@@ -325,11 +370,6 @@ public class EditExpressionDialog extends Dialog {
 		for(SourceViewerProvider svp : sourceViewerProviders.values()) {
 			svp.dispose();
 		}
-	}
-	
-	private Map<String, EClassifier> getContextInformation() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	private void changeSourceViewerTo(String language, String version) {
@@ -343,8 +383,7 @@ public class EditExpressionDialog extends Dialog {
 		else 
 		{
 			changeToDefaultSourceViewer();
-		}
-		
+		}	
 	}
 	
 	private void changeToDefaultSourceViewer() {
@@ -360,28 +399,29 @@ public class EditExpressionDialog extends Dialog {
 		currentSourceViewer = nextSourceViewer;
 		languageEditingArea.layout();
 	}
-	
 
-	public void setExpectedReturnType(EClassifier classifier) {
-		this.expectedReturnType = classifier;
-	}
-	
 	private String getExpectedReturnString() {
 		return (this.expectedReturnType != null) ? this.expectedReturnType.getName() : "null";
 	}
 
+	public void setExpectedReturnType(EClassifier classifier) {
+		this.expectedReturnType = classifier;
+	}
+
 	public void setDialogText(String expressionText) {
-		// TODO Auto-generated method stub
-		
+		this.originalText = expressionText;
 	}
 
 	public void setChangeAttributeCommand(Command changeAttributeCommand, TransactionalEditingDomain transactionalEditingDomain) {
-		// TODO Auto-generated method stub
-		
+		this.commandReceiver = transactionalEditingDomain;
 	}
 
-	public void setContextInformation(Object contextInformation) {
-		// TODO Auto-generated method stub
-		
+	public void setContextInformation(Map<String, EClassifier> contextInformation) {
+		this.contextInformation = contextInformation;
+	}
+
+	
+	public void setExpression(TextualExpression expression) {
+		this.expression = expression;
 	}
 }

@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEdgeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.ActivityEdgeGuardConstraintLabelEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEditPart;
 import org.storydriven.modeling.diagram.edit.parts.AttributeAssignmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.JunctionNode2EditPart;
@@ -450,6 +451,11 @@ public class SDMVisualIDRegistry {
 			break;
 		case ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID:
 			if (StoryPatternEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActivityEdgeEditPart.VISUAL_ID:
+			if (ActivityEdgeGuardConstraintLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
