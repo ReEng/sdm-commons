@@ -1,10 +1,14 @@
 package org.storydriven.modeling.diagram.custom.expressions;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Vector;
+
+import javax.security.auth.callback.LanguageCallback;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -20,6 +24,8 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StackLayout;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.internal.SWTEventListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowData;
@@ -33,24 +39,17 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 import org.storydriven.modeling.diagram.custom.SourceViewerProvider;
+import org.storydriven.modeling.diagram.custom.expressions.EditExpressionDialog.LanguageSelectionComboWidget;
 import org.storydriven.modeling.expressions.TextualExpression;
 import org.storydriven.modeling.expressions.util.ExpressionUtils;
 
 
 public class EditExpressionDialog extends Dialog {
 	
-	protected Combo languageCombo;
-	protected Combo versionCombo;
-	protected Composite languageEditingArea;
+	private LanguageSelectionWidget languageChoosingWidget;
 	
-	protected Composite	languageRadioArea;
-	protected List<Button> languageRadioButtons;
-
 	protected ISourceViewer currentSourceViewer;
 	private ISourceViewer defaultSourceViewer;
-	
-	protected String selectedLanguage;
-	protected String selectedVersion;
 	
 	protected static final String DIALOG_TITLE = "Edit Expression";
 	protected static final int DIALOG_WIDTH = 500;
@@ -77,6 +76,9 @@ public class EditExpressionDialog extends Dialog {
 	private String originalText;
 	private TextualExpression expression;
 	private Map<String, EClassifier> contextInformation;
+
+	private Composite languageEditingArea;
+	
 	
 	public EditExpressionDialog(Shell parent) {
 		super(parent);
@@ -162,13 +164,11 @@ public class EditExpressionDialog extends Dialog {
 	}
 
 	private String getSelectedVersion() {
-		// TODO Auto-generated method stub
-		return selectedVersion;
+		return languageChoosingWidget.getSelectedVersion();
 	}
 
 	private String getSelectedLanguage() {
-		// TODO Auto-generated method stub
-		return selectedLanguage;
+		return languageChoosingWidget.getSelectedLanguage();
 	}
 
 	/**
@@ -180,28 +180,34 @@ public class EditExpressionDialog extends Dialog {
 		composite.setLayout(new RowLayout(SWT.VERTICAL));
 		composite.setSize(DIALOG_WIDTH, DIALOG_HEIGHT);
 
-		Composite languageChoosing = new Composite(composite, SWT.NONE);
 		
-
 		if (ExpressionUtils.getAmountLanguages() <= RADIO_BUTTON_THRESHOLD_LANGUAGES
 				&& ExpressionUtils.getMaximumAmountVersions() <= RADIO_BUTTON_THRESHOLD_VERSIONS) {
-			languageChoosing.setLayout(new RowLayout(SWT.VERTICAL));
-			Label languageLabel = new Label(languageChoosing, SWT.NONE);
-			languageLabel.setText("Expression Language");
-			createDialogLanguageRadioButtons(languageChoosing);
+			languageChoosingWidget = new LanguageSelectionRadioWidget(composite, SWT.NONE);
 		} 
 		else 
 		{
-			languageChoosing.setLayout(new GridLayout(2, false));
-			Label languageLabel = new Label(languageChoosing, SWT.NONE);
-			languageLabel.setText("Expression Language");
-			createDialogLanguageCombo(languageChoosing);
-
-			Label versionLabel = new Label(languageChoosing, SWT.NONE);
-			versionLabel.setText("Language Version");
-			createDialogVersionCombo(languageChoosing);
+			languageChoosingWidget = new LanguageSelectionComboWidget(composite, SWT.NONE);
 		}
 
+		populateLanguageChoosingWidget(languageChoosingWidget);
+
+		LanguageSelectedListener listener = new LanguageSelectedListener() {
+
+			@Override
+			public void languageSelected(LanguageSelectedEvent event) {
+				changeSourceViewerTo(event.language, event.version);
+			}
+
+			@Override
+			public void noLanguageSelected() {
+				changeToDefaultSourceViewer();
+			}
+			
+		};
+		
+		languageChoosingWidget.addLanguageSelectedListener(listener);
+		
 		Composite expectedReturnArea = new Composite(composite, SWT.NONE);
 		expectedReturnArea.setLayout(new RowLayout());
 		Label expectedReturnLabel = new Label(expectedReturnArea, SWT.NONE);
@@ -224,119 +230,22 @@ public class EditExpressionDialog extends Dialog {
 		return composite;
 	}
 
-	private void adjustDefaultSourceViewer() {
-		if(ExpressionUtils.getAvailableExpressionLanguages().contains(DEFAULT_LANGUAGE)) {
-			// TODO refactor getKeyFor
-			String searchString = DEFAULT_LANGUAGE.concat(" ").concat(
-					ExpressionUtils.getAvailableExpressionLanguageVersions(DEFAULT_LANGUAGE).get(0));
-			changeSourceViewerTo(searchString);
-
-			if (ExpressionUtils.getAmountLanguages() <= RADIO_BUTTON_THRESHOLD_LANGUAGES
-					&& ExpressionUtils.getMaximumAmountVersions() <= RADIO_BUTTON_THRESHOLD_VERSIONS) {
-
-				// In case we have Radio Buttons as selection widgets.
-				for(Button aButton : languageRadioButtons) {
-					if(aButton.getText().equals(searchString)) {
-						aButton.setSelection(true);
-						changeSourceViewerTo(searchString);
-					}
-				}
-			} else 
-			{
-				// In case we have Combos as selection widgets.
-				for(int i = 0; i < languageCombo.getItemCount(); i++) {
-					if(languageCombo.getItem(i).equals(DEFAULT_LANGUAGE)) {
-						languageCombo.select(i);
-						changeDialogVersionCombo(DEFAULT_LANGUAGE);
-						versionCombo.select(0);
-					}
-				}
-			}
-		} 
-				
-	}
-
-	private void createDialogLanguageCombo(Composite languageChoosingArea) {
-		languageCombo = new Combo(languageChoosingArea, SWT.DROP_DOWN);
-		languageCombo.setLayoutData(new GridData(GridData.FILL, GridData.BEGINNING, false, false));
-		String[] items =  {};
-		languageCombo.setItems((String[]) ExpressionUtils.getAvailableExpressionLanguages().toArray(items));
-		
-		languageCombo.addSelectionListener(new SelectionListener() {
-			
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				changeDialogVersionCombo(languageCombo.getItem(languageCombo.getSelectionIndex()));
-			}
-			
-			@Override
-			public void widgetDefaultSelected(SelectionEvent e) {
-				String[] emptyBuffer = {};
-				versionCombo.setItems(emptyBuffer);
-				changeToDefaultSourceViewer();
-			}
-		});
-	}
-	
-	private void changeDialogVersionCombo(String language) {
-		String[] emptyBuffer = {};
-		versionCombo.setItems(ExpressionUtils.getAvailableExpressionLanguageVersions(language).toArray(emptyBuffer));
-	}
-	
-	private void createDialogVersionCombo(Composite languageChoosingArea) {
-		versionCombo = new Combo(languageChoosingArea, SWT.DROP_DOWN);
-		versionCombo.setLayoutData(new GridData(GridData.FILL, GridData.CENTER, false, false));
-		String[] items =  {};
-		versionCombo.setItems(items);	
-		
-		versionCombo.addSelectionListener(new SelectionListener() {
-			
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				selectedLanguage = languageCombo.getItem(languageCombo.getSelectionIndex());
-				selectedVersion = versionCombo.getItem(languageCombo.getSelectionIndex());
-				changeSourceViewerTo(languageCombo.getItem(languageCombo.getSelectionIndex()), 
-									versionCombo.getItem(versionCombo.getSelectionIndex()));
-			}
-			
-			@Override
-			public void widgetDefaultSelected(SelectionEvent e) {
-				changeToDefaultSourceViewer();
-			}
-
-		});
-	}
-	
-	private void createDialogLanguageRadioButtons(Composite languageChoosingArea) {
-		languageRadioArea = new Composite(languageChoosingArea, SWT.NONE);
-		languageRadioArea.setLayout(new RowLayout(SWT.VERTICAL));
-		languageRadioButtons = new ArrayList<Button>();
-		
-		Listener listener = new Listener() {
-             public void handleEvent (Event e) {
-            	 	for( Control aButton : languageRadioButtons) {
-            	 		((Button) aButton).setSelection(false);
-            	 	}
-            	 	((Button)e.widget).setSelection(true);
-            	 	selectedLanguage = ((Button)e.widget).getText().split(" ")[0];
-            	 	selectedVersion = ((Button)e.widget).getText().split(" ")[1];
-                    changeSourceViewerTo(((Button)e.widget).getText().replace(" ", ""));
-             }
-		 };
-		
-		Button tempButton;
-		Composite buttonRow;
+	private void populateLanguageChoosingWidget(
+			LanguageSelectionWidget alanguageChoosingWidget) {
 		for( String aLanguage : ExpressionUtils.getAvailableExpressionLanguages()) {
-			buttonRow = new Composite(languageRadioArea, SWT.NONE);
-			buttonRow.setLayout(new RowLayout());
 			for (String aVersion : ExpressionUtils.getAvailableExpressionLanguageVersions(aLanguage)) {
-				tempButton = new Button(buttonRow, SWT.RADIO);
-				tempButton.setText(aLanguage.concat(" ").concat(aVersion));
-				tempButton.addListener(SWT.Selection, listener);
-				languageRadioButtons.add(tempButton);
+				alanguageChoosingWidget.addLanguageWithVersion(aLanguage, aVersion);
 			}
 		}
 		
+	}
+
+	private void adjustDefaultSourceViewer() {
+		if(ExpressionUtils.getAvailableExpressionLanguages().contains(DEFAULT_LANGUAGE)) {
+			String availableVersion = ExpressionUtils.getAvailableExpressionLanguageVersions(DEFAULT_LANGUAGE).get(0);
+			languageChoosingWidget.setSelectedLanguage(DEFAULT_LANGUAGE, availableVersion);
+			changeSourceViewerTo(DEFAULT_LANGUAGE, availableVersion);
+		} 		
 	}
 
 	private void initializeSourceViewers() {
@@ -420,8 +329,308 @@ public class EditExpressionDialog extends Dialog {
 		this.contextInformation = contextInformation;
 	}
 
-	
 	public void setExpression(TextualExpression expression) {
 		this.expression = expression;
+	}
+	
+	public interface LanguageSelectionWidget {
+		public abstract void addLanguageSelectedListener(LanguageSelectedListener listener);
+
+		public abstract void removeLanguageSelectedListener(LanguageSelectedListener listener);
+		 
+		public abstract void setSelectedLanguage(String language, String version);
+		
+		public abstract void addLanguageWithVersion(String language, String version);
+		
+		public abstract String getSelectedLanguage();
+		
+		public abstract String getSelectedVersion();
+		
+	}
+	
+	public class LanguageSelectedEvent extends java.util.EventObject {
+
+		public String language, version;
+
+		public LanguageSelectedEvent(Object source, String language, String version) {
+			super(source);
+			this.language = language;
+			this.version = version;
+		}
+	}
+
+	public interface LanguageSelectedListener extends java.util.EventListener {
+		public void languageSelected(LanguageSelectedEvent event);
+		
+		public void noLanguageSelected();
+	}
+	
+	protected class LanguageSelectionComboWidget extends Composite implements LanguageSelectionWidget {
+
+		Combo languageCombo;
+		Combo versionCombo;
+
+		Map<String, Collection<String>> languageDirectory;
+
+		Vector<LanguageSelectedListener> languageSelectedListeners = new Vector<LanguageSelectedListener>();
+
+		public LanguageSelectionComboWidget(Composite parent, int style) {
+			super(parent, style);
+			this.setLayout(new GridLayout(2, false));
+			
+			languageDirectory = new HashMap<String, Collection<String>>();
+			
+			Label languageLabel = new Label(this, SWT.NONE);
+			languageLabel.setText("Expression Language");
+			createDialogLanguageCombo(this);
+
+			Label versionLabel = new Label(this, SWT.NONE);
+			versionLabel.setText("Language Version");
+			createDialogVersionCombo(this);	
+		}
+		
+		public void addLanguageSelectedListener(LanguageSelectedListener listener) {
+
+			languageSelectedListeners.addElement(listener);
+
+		}
+
+		public void removeLanguageSelectedListener(LanguageSelectedListener listener) {
+
+			languageSelectedListeners.removeElement(listener);
+
+		}
+
+		private void createDialogLanguageCombo(Composite mainArea) {
+			languageCombo = new Combo(mainArea, SWT.DROP_DOWN);
+			languageCombo.setLayoutData(new GridData(GridData.FILL, GridData.BEGINNING, false, false));
+			String[] items =  {};
+			languageCombo.setItems(items);
+			
+			languageCombo.addSelectionListener(new SelectionListener() {
+				
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					changeDialogVersionCombo(languageCombo.getItem(languageCombo.getSelectionIndex()));
+				}
+				
+				@Override
+				public void widgetDefaultSelected(SelectionEvent e) {
+					String[] emptyBuffer = {};
+					versionCombo.setItems(emptyBuffer);
+					noLanguageSelected();
+				}
+
+			});
+		}
+		
+		private void changeDialogVersionCombo(String language) {
+			String[] emptyBuffer = {};
+			versionCombo.setItems(languageDirectory.get(language).toArray(emptyBuffer));
+		}
+		
+		private void createDialogVersionCombo(Composite mainArea) {
+			versionCombo = new Combo(mainArea, SWT.DROP_DOWN);
+			versionCombo.setLayoutData(new GridData(GridData.FILL, GridData.CENTER, false, false));
+			String[] items =  {};
+			versionCombo.setItems(items);	
+			
+			versionCombo.addSelectionListener(new SelectionListener() {
+				
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					languageSelected(languageCombo.getItem(languageCombo.getSelectionIndex()), 
+										versionCombo.getItem(versionCombo.getSelectionIndex()));
+				}
+				
+				@Override
+				public void widgetDefaultSelected(SelectionEvent e) {
+					noLanguageSelected();
+				}
+
+			});
+		}
+		
+		protected void languageSelected(String language, String version) {
+			LanguageSelectedEvent e = new LanguageSelectedEvent(this, language, version);
+
+		     for (LanguageSelectedListener listener :  this.languageSelectedListeners) {
+		         listener.languageSelected(e);
+		     }
+			
+		}
+
+		private void noLanguageSelected() {
+			 for (LanguageSelectedListener listener :  this.languageSelectedListeners) {
+		         listener.noLanguageSelected();
+		     }
+		}
+
+		@Override
+		public void addLanguageWithVersion(String language, String version) {
+			if(!languageDirectory.containsKey(language)) {
+				languageDirectory.put(language, new Vector<String>());
+				String[] items = {};
+				languageCombo.setItems(languageDirectory.keySet().toArray(items));
+			}
+			languageDirectory.get(language).add(version);
+		}
+
+		/**
+		 * Sets the selected Language of the widget if it is already registered. If not nothing happens.
+		 * Furthermore this does not trigger a languageSelectedEvent.
+		 */
+		@Override
+		public void setSelectedLanguage(String language, String version) {
+			int index = searchStringInCombo(languageCombo, language);
+			languageCombo.select(index);
+			
+			index = searchStringInCombo(versionCombo, version);
+			languageCombo.select(index);
+		}
+		
+		private int searchStringInCombo(Combo aCombo, String searchString) {
+			String[] items = aCombo.getItems();
+			int numberOfItems = items.length;
+			
+			int searchedIndex = 0;
+			for(int i = 0; 
+				i < numberOfItems && !items[searchedIndex].equals(searchString); 
+				i++) 
+			{
+				searchedIndex++;
+			}
+			
+			return searchedIndex;
+		}
+		
+
+		@Override
+		public String getSelectedLanguage() {
+			return languageCombo.getItem(languageCombo.getSelectionIndex());
+		}
+		
+
+		@Override
+		public String getSelectedVersion() {
+			return versionCombo.getItem(versionCombo.getSelectionIndex());
+		}
+		
+	}
+
+	protected class LanguageSelectionRadioWidget extends Composite implements LanguageSelectionWidget {
+
+		private Map<String, Collection<String>> languageDirectory;
+		Composite languageRadioArea;
+		
+		Map<String, Composite> buttonRowList;
+		Map<Button, String[]> buttonList;
+		
+		Vector<LanguageSelectedListener> languageSelectedListeners = new Vector<LanguageSelectedListener>();
+
+
+		public LanguageSelectionRadioWidget(Composite parent, int style) {
+			super(parent, style);
+			this.setLayout(new RowLayout(SWT.VERTICAL));
+			
+			languageDirectory = new HashMap<String, Collection<String>>();
+			
+			Label languageLabel = new Label(this, SWT.NONE);
+			languageLabel.setText("Expression Language");
+			createDialogLanguageRadioButtons(this);
+			
+		}
+		
+		public void addLanguageSelectedListener(LanguageSelectedListener listener) {
+
+			languageSelectedListeners.addElement(listener);
+
+		}
+
+		public void removeLanguageSelectedListener(LanguageSelectedListener listener) {
+
+			languageSelectedListeners.removeElement(listener);
+
+		}
+
+		public void createDialogLanguageRadioButtons(Composite mainArea) {
+			languageRadioArea = new Composite(mainArea, SWT.NONE);
+			languageRadioArea.setLayout(new RowLayout(SWT.VERTICAL));
+			buttonList = new HashMap<Button, String[]>();
+			buttonRowList = new HashMap<String, Composite>();
+		}
+		
+		protected void languageSelected(String language, String version) {
+			LanguageSelectedEvent e = new LanguageSelectedEvent(this, language, version);
+
+		     for (LanguageSelectedListener listener :  this.languageSelectedListeners) {
+		         listener.languageSelected(e);
+		     }
+			
+		}
+
+		@Override
+		public void addLanguageWithVersion(String language, String version) {
+			if(!languageDirectory.containsKey(language)) {
+				languageDirectory.put(language, new Vector<String>());
+				Composite buttonRow = new Composite(this, SWT.NONE);
+				buttonRow.setLayout(new RowLayout());
+				buttonRowList.put(language, buttonRow);
+			}
+			languageDirectory.get(language).add(version);
+			
+			Listener listener = new Listener() {
+	             public void handleEvent (Event e) {
+	            	 	for( Control aButton : buttonList.keySet()) {
+	            	 		((Button) aButton).setSelection(false);
+	            	 	}
+	            	 	((Button)e.widget).setSelection(true);
+	            	 	languageSelected(buttonList.get((Button)e.widget)[0], buttonList.get((Button)e.widget)[1]);
+	             }
+			 };
+			 
+			 Button tempButton = new Button(buttonRowList.get(language), SWT.RADIO);
+			 tempButton.setText(language.concat(" ").concat(version));
+			 tempButton.addListener(SWT.Selection, listener);
+			 String[] buttonInfo = new String[2];
+			 buttonInfo[0] = language;
+			 buttonInfo[1] = version;
+			 buttonList.put(tempButton, buttonInfo);
+			 
+		}
+
+		@Override
+		public void setSelectedLanguage(String language, String version) {
+			Button searchedButton = buttonList.keySet().iterator().next();
+			for(Button aButton : buttonList.keySet()) {
+				if(buttonList.get(aButton)[0].equals(language)
+				&& buttonList.get(aButton)[1].equals(version)) {
+					searchedButton = aButton;
+				}
+				aButton.setSelection(false);
+			}
+			searchedButton.setSelection(true);
+		}
+		
+		@Override
+		public String getSelectedLanguage() {
+			return getInfoOfSelectedButton(0);
+		}
+
+		@Override
+		public String getSelectedVersion() {
+			return getInfoOfSelectedButton(1);
+		}
+		
+		private String getInfoOfSelectedButton(int indexOfInfo) {
+			String resultString = "none";
+			for(Button aButton : buttonList.keySet()) {
+				if(aButton.getSelection()) {
+					resultString = buttonList.get(aButton)[indexOfInfo];
+				}
+			}
+			return resultString;
+		}
+		
 	}
 }
