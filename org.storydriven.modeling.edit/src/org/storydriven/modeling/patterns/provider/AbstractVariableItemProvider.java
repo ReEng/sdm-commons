@@ -33,16 +33,17 @@ import org.storydriven.modeling.provider.VariableItemProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AbstractVariableItemProvider extends VariableItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class AbstractVariableItemProvider extends VariableItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
+{
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractVariableItemProvider(AdapterFactory adapterFactory) {
+	public AbstractVariableItemProvider(AdapterFactory adapterFactory)
+	{
 		super(adapterFactory);
 	}
 
@@ -53,8 +54,10 @@ public class AbstractVariableItemProvider extends VariableItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
+	{
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -70,17 +73,12 @@ public class AbstractVariableItemProvider extends VariableItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_NamedElement_name_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_NamedElement_name_feature",
-						"_UI_NamedElement_type"),
-				SDMPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	protected void addNamePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_NamedElement_name_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				SDMPackage.Literals.NAMED_ELEMENT__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -89,17 +87,12 @@ public class AbstractVariableItemProvider extends VariableItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addBindingStatePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_AbstractVariable_bindingState_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_AbstractVariable_bindingState_feature",
-						"_UI_AbstractVariable_type"),
-				PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_STATE,
-				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+	protected void addBindingStatePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_AbstractVariable_bindingState_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractVariable_bindingState_feature", "_UI_AbstractVariable_type"),
+				PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_STATE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null, null));
 	}
 
@@ -109,17 +102,12 @@ public class AbstractVariableItemProvider extends VariableItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIncomingLinkPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_AbstractVariable_incomingLink_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_AbstractVariable_incomingLink_feature",
-						"_UI_AbstractVariable_type"),
-				PatternsPackage.Literals.ABSTRACT_VARIABLE__INCOMING_LINK,
-				true, false, true, null, null, null));
+	protected void addIncomingLinkPropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_AbstractVariable_incomingLink_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractVariable_incomingLink_feature", "_UI_AbstractVariable_type"),
+				PatternsPackage.Literals.ABSTRACT_VARIABLE__INCOMING_LINK, true, false, true, null, null, null));
 	}
 
 	/**
@@ -131,14 +119,13 @@ public class AbstractVariableItemProvider extends VariableItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
-		if (childrenFeatures == null) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
+	{
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION);
-			childrenFeatures
-					.add(PatternsPackage.Literals.ABSTRACT_VARIABLE__CONSTRAINT);
+			childrenFeatures.add(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION);
+			childrenFeatures.add(PatternsPackage.Literals.ABSTRACT_VARIABLE__CONSTRAINT);
 		}
 		return childrenFeatures;
 	}
@@ -149,7 +136,8 @@ public class AbstractVariableItemProvider extends VariableItemProvider
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
+	protected EStructuralFeature getChildFeature(Object object, Object child)
+	{
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
@@ -163,10 +151,11 @@ public class AbstractVariableItemProvider extends VariableItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
+	public String getText(Object object)
+	{
 		String label = ((AbstractVariable) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_AbstractVariable_type")
-				: getString("_UI_AbstractVariable_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_AbstractVariable_type") : getString("_UI_AbstractVariable_type") + " "
+				+ label;
 	}
 
 	/**
@@ -177,20 +166,20 @@ public class AbstractVariableItemProvider extends VariableItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(Notification notification)
+	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(AbstractVariable.class)) {
-		case PatternsPackage.ABSTRACT_VARIABLE__NAME:
-		case PatternsPackage.ABSTRACT_VARIABLE__BINDING_STATE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
-		case PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION:
-		case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
+		switch (notification.getFeatureID(AbstractVariable.class))
+		{
+			case PatternsPackage.ABSTRACT_VARIABLE__NAME:
+			case PatternsPackage.ABSTRACT_VARIABLE__BINDING_STATE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION:
+			case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -203,89 +192,50 @@ public class AbstractVariableItemProvider extends VariableItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
+	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				ExpressionsFactory.eINSTANCE
-						.createExceptionVariableExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
-								.createTextualExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
-								.createLiteralExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
-								.createNotExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createNotExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
-								.createComparisonExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
-								.createArithmeticExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
-								.createBinaryLogicExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-						org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE
-								.createMethodCallExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-						org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE
-								.createParameterExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
-								.createAttributeValueExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
-								.createObjectVariableExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
-								.createObjectSetSizeExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
-								.createPrimitiveVariableExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.ABSTRACT_VARIABLE__CONSTRAINT,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__CONSTRAINT,
 				PatternsFactory.eINSTANCE.createConstraint()));
 	}
 
@@ -296,7 +246,8 @@ public class AbstractVariableItemProvider extends VariableItemProvider
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator() {
+	public ResourceLocator getResourceLocator()
+	{
 		return SDMEditPlugin.INSTANCE;
 	}
 

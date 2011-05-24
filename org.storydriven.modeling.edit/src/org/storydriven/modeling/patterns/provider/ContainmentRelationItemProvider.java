@@ -22,17 +22,17 @@ import org.storydriven.modeling.patterns.ContainmentRelation;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ContainmentRelationItemProvider extends
-		AbstractLinkVariableItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+public class ContainmentRelationItemProvider extends AbstractLinkVariableItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
+{
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContainmentRelationItemProvider(AdapterFactory adapterFactory) {
+	public ContainmentRelationItemProvider(AdapterFactory adapterFactory)
+	{
 		super(adapterFactory);
 	}
 
@@ -43,8 +43,10 @@ public class ContainmentRelationItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
+	{
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 		}
@@ -58,9 +60,9 @@ public class ContainmentRelationItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/ContainmentRelation"));
+	public Object getImage(Object object)
+	{
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ContainmentRelation"));
 	}
 
 	/**
@@ -70,10 +72,11 @@ public class ContainmentRelationItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
+	public String getText(Object object)
+	{
 		String label = ((ContainmentRelation) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ContainmentRelation_type")
-				: getString("_UI_ContainmentRelation_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_ContainmentRelation_type") : getString("_UI_ContainmentRelation_type")
+				+ " " + label;
 	}
 
 	/**
@@ -84,7 +87,8 @@ public class ContainmentRelationItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(Notification notification)
+	{
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -97,8 +101,8 @@ public class ContainmentRelationItemProvider extends
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
+	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

@@ -29,16 +29,17 @@ import org.storydriven.modeling.provider.VariableItemProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExceptionVariableItemProvider extends VariableItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ExceptionVariableItemProvider extends VariableItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
+{
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExceptionVariableItemProvider(AdapterFactory adapterFactory) {
+	public ExceptionVariableItemProvider(AdapterFactory adapterFactory)
+	{
 		super(adapterFactory);
 	}
 
@@ -49,8 +50,10 @@ public class ExceptionVariableItemProvider extends VariableItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
+	{
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -66,17 +69,12 @@ public class ExceptionVariableItemProvider extends VariableItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ExceptionVariable_name_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ExceptionVariable_name_feature",
-						"_UI_ExceptionVariable_type"),
-				ActivitiesPackage.Literals.EXCEPTION_VARIABLE__NAME, true,
-				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+	protected void addNamePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_ExceptionVariable_name_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ExceptionVariable_name_feature", "_UI_ExceptionVariable_type"),
+				ActivitiesPackage.Literals.EXCEPTION_VARIABLE__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
 	}
 
@@ -86,17 +84,16 @@ public class ExceptionVariableItemProvider extends VariableItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addExceptionTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ExceptionVariable_exceptionType_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ExceptionVariable_exceptionType_feature",
-						"_UI_ExceptionVariable_type"),
-				ActivitiesPackage.Literals.EXCEPTION_VARIABLE__EXCEPTION_TYPE,
-				true, false, true, null, null, null));
+	protected void addExceptionTypePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ExceptionVariable_exceptionType_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ExceptionVariable_exceptionType_feature",
+								"_UI_ExceptionVariable_type"), ActivitiesPackage.Literals.EXCEPTION_VARIABLE__EXCEPTION_TYPE, true, false,
+						true, null, null, null));
 	}
 
 	/**
@@ -105,19 +102,15 @@ public class ExceptionVariableItemProvider extends VariableItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGenericExceptionTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_ExceptionVariable_genericExceptionType_feature"),
-						getString(
-								"_UI_PropertyDescriptor_description",
-								"_UI_ExceptionVariable_genericExceptionType_feature",
-								"_UI_ExceptionVariable_type"),
-						ActivitiesPackage.Literals.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE,
-						true, false, true, null, null, null));
+	protected void addGenericExceptionTypePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ExceptionVariable_genericExceptionType_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ExceptionVariable_genericExceptionType_feature",
+						"_UI_ExceptionVariable_type"), ActivitiesPackage.Literals.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -127,9 +120,9 @@ public class ExceptionVariableItemProvider extends VariableItemProvider
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/ExceptionVariable"));
+	public Object getImage(Object object)
+	{
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExceptionVariable"));
 	}
 
 	/**
@@ -139,10 +132,11 @@ public class ExceptionVariableItemProvider extends VariableItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
+	public String getText(Object object)
+	{
 		String label = ((ExceptionVariable) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ExceptionVariable_type")
-				: getString("_UI_ExceptionVariable_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_ExceptionVariable_type") : getString("_UI_ExceptionVariable_type")
+				+ " " + label;
 	}
 
 	/**
@@ -153,14 +147,15 @@ public class ExceptionVariableItemProvider extends VariableItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(Notification notification)
+	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ExceptionVariable.class)) {
-		case ActivitiesPackage.EXCEPTION_VARIABLE__NAME:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+		switch (notification.getFeatureID(ExceptionVariable.class))
+		{
+			case ActivitiesPackage.EXCEPTION_VARIABLE__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -173,8 +168,8 @@ public class ExceptionVariableItemProvider extends VariableItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
+	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -185,7 +180,8 @@ public class ExceptionVariableItemProvider extends VariableItemProvider
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator() {
+	public ResourceLocator getResourceLocator()
+	{
 		return SDMEditPlugin.INSTANCE;
 	}
 

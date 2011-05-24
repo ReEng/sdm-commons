@@ -27,16 +27,17 @@ import org.storydriven.modeling.provider.SDMEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ObjectSetSizeExpressionItemProvider extends ExpressionItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ObjectSetSizeExpressionItemProvider extends ExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
+{
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ObjectSetSizeExpressionItemProvider(AdapterFactory adapterFactory) {
+	public ObjectSetSizeExpressionItemProvider(AdapterFactory adapterFactory)
+	{
 		super(adapterFactory);
 	}
 
@@ -47,8 +48,10 @@ public class ObjectSetSizeExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
+	{
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addSetPropertyDescriptor(object);
@@ -62,17 +65,15 @@ public class ObjectSetSizeExpressionItemProvider extends ExpressionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSetPropertyDescriptor(Object object) {
+	protected void addSetPropertyDescriptor(Object object)
+	{
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_ObjectSetSizeExpression_set_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ObjectSetSizeExpression_set_feature",
-						"_UI_ObjectSetSizeExpression_type"),
-				ExpressionsPackage.Literals.OBJECT_SET_SIZE_EXPRESSION__SET,
-				true, false, true, null, null, null));
+				getString("_UI_PropertyDescriptor_description", "_UI_ObjectSetSizeExpression_set_feature",
+						"_UI_ObjectSetSizeExpression_type"), ExpressionsPackage.Literals.OBJECT_SET_SIZE_EXPRESSION__SET, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -82,11 +83,9 @@ public class ObjectSetSizeExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"full/obj16/ObjectSetSizeExpression"));
+	public Object getImage(Object object)
+	{
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ObjectSetSizeExpression"));
 	}
 
 	/**
@@ -96,7 +95,8 @@ public class ObjectSetSizeExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
+	public String getText(Object object)
+	{
 		String label = ((ObjectSetSizeExpression) object).getComment();
 		return label == null || label.length() == 0 ? getString("_UI_ObjectSetSizeExpression_type")
 				: getString("_UI_ObjectSetSizeExpression_type") + " " + label;
@@ -110,7 +110,8 @@ public class ObjectSetSizeExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(Notification notification)
+	{
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -123,8 +124,8 @@ public class ObjectSetSizeExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
+	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -135,7 +136,8 @@ public class ObjectSetSizeExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator() {
+	public ResourceLocator getResourceLocator()
+	{
 		return SDMEditPlugin.INSTANCE;
 	}
 

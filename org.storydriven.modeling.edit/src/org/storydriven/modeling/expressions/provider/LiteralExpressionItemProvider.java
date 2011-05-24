@@ -26,16 +26,17 @@ import org.storydriven.modeling.expressions.LiteralExpression;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LiteralExpressionItemProvider extends ExpressionItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class LiteralExpressionItemProvider extends ExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
+{
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LiteralExpressionItemProvider(AdapterFactory adapterFactory) {
+	public LiteralExpressionItemProvider(AdapterFactory adapterFactory)
+	{
 		super(adapterFactory);
 	}
 
@@ -46,8 +47,10 @@ public class LiteralExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
+	{
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addValuePropertyDescriptor(object);
@@ -62,18 +65,13 @@ public class LiteralExpressionItemProvider extends ExpressionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_LiteralExpression_value_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_LiteralExpression_value_feature",
-						"_UI_LiteralExpression_type"),
-				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE, true,
-				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				null));
+	protected void addValuePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_LiteralExpression_value_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_LiteralExpression_value_feature", "_UI_LiteralExpression_type"),
+				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
@@ -82,17 +80,12 @@ public class LiteralExpressionItemProvider extends ExpressionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValueTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_LiteralExpression_valueType_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_LiteralExpression_valueType_feature",
-						"_UI_LiteralExpression_type"),
-				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE_TYPE,
-				true, false, true, null, null, null));
+	protected void addValueTypePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_LiteralExpression_valueType_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_LiteralExpression_valueType_feature", "_UI_LiteralExpression_type"),
+				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE_TYPE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -102,9 +95,9 @@ public class LiteralExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/LiteralExpression"));
+	public Object getImage(Object object)
+	{
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/LiteralExpression"));
 	}
 
 	/**
@@ -114,10 +107,11 @@ public class LiteralExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
+	public String getText(Object object)
+	{
 		String label = ((LiteralExpression) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_LiteralExpression_type")
-				: getString("_UI_LiteralExpression_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_LiteralExpression_type") : getString("_UI_LiteralExpression_type")
+				+ " " + label;
 	}
 
 	/**
@@ -128,14 +122,15 @@ public class LiteralExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(Notification notification)
+	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(LiteralExpression.class)) {
-		case ExpressionsPackage.LITERAL_EXPRESSION__VALUE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+		switch (notification.getFeatureID(LiteralExpression.class))
+		{
+			case ExpressionsPackage.LITERAL_EXPRESSION__VALUE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -148,8 +143,8 @@ public class LiteralExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
+	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

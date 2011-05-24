@@ -27,16 +27,17 @@ import org.storydriven.modeling.provider.SDMEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ParameterExpressionItemProvider extends ExpressionItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ParameterExpressionItemProvider extends ExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
+{
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ParameterExpressionItemProvider(AdapterFactory adapterFactory) {
+	public ParameterExpressionItemProvider(AdapterFactory adapterFactory)
+	{
 		super(adapterFactory);
 	}
 
@@ -47,8 +48,10 @@ public class ParameterExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
+	{
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addParameterPropertyDescriptor(object);
@@ -62,17 +65,16 @@ public class ParameterExpressionItemProvider extends ExpressionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addParameterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ParameterExpression_parameter_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ParameterExpression_parameter_feature",
-						"_UI_ParameterExpression_type"),
-				ExpressionsPackage.Literals.PARAMETER_EXPRESSION__PARAMETER,
-				true, false, true, null, null, null));
+	protected void addParameterPropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ParameterExpression_parameter_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ParameterExpression_parameter_feature",
+								"_UI_ParameterExpression_type"), ExpressionsPackage.Literals.PARAMETER_EXPRESSION__PARAMETER, true, false,
+						true, null, null, null));
 	}
 
 	/**
@@ -82,9 +84,9 @@ public class ParameterExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/ParameterExpression"));
+	public Object getImage(Object object)
+	{
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ParameterExpression"));
 	}
 
 	/**
@@ -94,10 +96,11 @@ public class ParameterExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
+	public String getText(Object object)
+	{
 		String label = ((ParameterExpression) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_ParameterExpression_type")
-				: getString("_UI_ParameterExpression_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_ParameterExpression_type") : getString("_UI_ParameterExpression_type")
+				+ " " + label;
 	}
 
 	/**
@@ -108,7 +111,8 @@ public class ParameterExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(Notification notification)
+	{
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -121,8 +125,8 @@ public class ParameterExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
+	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -133,7 +137,8 @@ public class ParameterExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator() {
+	public ResourceLocator getResourceLocator()
+	{
 		return SDMEditPlugin.INSTANCE;
 	}
 

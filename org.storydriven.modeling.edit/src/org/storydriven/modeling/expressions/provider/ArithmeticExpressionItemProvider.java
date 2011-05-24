@@ -26,17 +26,17 @@ import org.storydriven.modeling.expressions.ExpressionsPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ArithmeticExpressionItemProvider extends
-		BinaryExpressionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+public class ArithmeticExpressionItemProvider extends BinaryExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
+{
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArithmeticExpressionItemProvider(AdapterFactory adapterFactory) {
+	public ArithmeticExpressionItemProvider(AdapterFactory adapterFactory)
+	{
 		super(adapterFactory);
 	}
 
@@ -47,8 +47,10 @@ public class ArithmeticExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
+	{
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addOperatorPropertyDescriptor(object);
@@ -62,18 +64,15 @@ public class ArithmeticExpressionItemProvider extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOperatorPropertyDescriptor(Object object) {
+	protected void addOperatorPropertyDescriptor(Object object)
+	{
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_ArithmeticExpression_operator_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ArithmeticExpression_operator_feature",
-						"_UI_ArithmeticExpression_type"),
-				ExpressionsPackage.Literals.ARITHMETIC_EXPRESSION__OPERATOR,
-				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
+				getString("_UI_PropertyDescriptor_description", "_UI_ArithmeticExpression_operator_feature",
+						"_UI_ArithmeticExpression_type"), ExpressionsPackage.Literals.ARITHMETIC_EXPRESSION__OPERATOR, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -83,10 +82,9 @@ public class ArithmeticExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator()
-						.getImage("full/obj16/ArithmeticExpression"));
+	public Object getImage(Object object)
+	{
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ArithmeticExpression"));
 	}
 
 	/**
@@ -96,7 +94,8 @@ public class ArithmeticExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
+	public String getText(Object object)
+	{
 		String label = ((ArithmeticExpression) object).getComment();
 		return label == null || label.length() == 0 ? getString("_UI_ArithmeticExpression_type")
 				: getString("_UI_ArithmeticExpression_type") + " " + label;
@@ -110,14 +109,15 @@ public class ArithmeticExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(Notification notification)
+	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ArithmeticExpression.class)) {
-		case ExpressionsPackage.ARITHMETIC_EXPRESSION__OPERATOR:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+		switch (notification.getFeatureID(ArithmeticExpression.class))
+		{
+			case ExpressionsPackage.ARITHMETIC_EXPRESSION__OPERATOR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -130,8 +130,8 @@ public class ArithmeticExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
+	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -142,18 +142,20 @@ public class ArithmeticExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public String getCreateChildText(Object owner, Object feature,
-			Object child, Collection<?> selection) {
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection)
+	{
 		Object childFeature = feature;
 		Object childObject = child;
 
 		boolean qualify = childFeature == ExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION
 				|| childFeature == ExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION;
 
-		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] {
-					getTypeText(childObject), getFeatureText(childFeature),
-					getTypeText(owner) });
+		if (qualify)
+		{
+			return getString("_UI_CreateChild_text2", new Object[]
+			{
+					getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner)
+			});
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}

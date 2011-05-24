@@ -6,11 +6,15 @@
  */
 package org.storydriven.modeling.activities.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.StopNode;
 import org.storydriven.modeling.expressions.Expression;
@@ -22,6 +26,7 @@ import org.storydriven.modeling.expressions.Expression;
  * <ul>
  *   <li>{@link org.storydriven.modeling.activities.impl.StopNodeImpl#isFlowStopOnly <em>Flow Stop Only</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.StopNodeImpl#getReturnValue <em>Return Value</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.StopNodeImpl#getReturnValues <em>Return Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +60,16 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode
     * @ordered
     */
    protected Expression returnValue;
+
+   /**
+    * The cached value of the '{@link #getReturnValues() <em>Return Values</em>}' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getReturnValues()
+    * @generated
+    * @ordered
+    */
+   protected EList<Expression> returnValues;
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -181,6 +196,21 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode
    }
 
    /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public EList<Expression> getReturnValues ()
+   {
+      if (returnValues == null)
+      {
+         returnValues = new EObjectContainmentEList.Resolving<Expression>(Expression.class, this,
+            ActivitiesPackage.STOP_NODE__RETURN_VALUES);
+      }
+      return returnValues;
+   }
+
+   /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
@@ -191,6 +221,8 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode
       {
          case ActivitiesPackage.STOP_NODE__RETURN_VALUE:
             return basicSetReturnValue(null, msgs);
+         case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
+            return ((InternalEList<?>) getReturnValues()).basicRemove(otherEnd, msgs);
       }
       return super.eInverseRemove(otherEnd, featureID, msgs);
    }
@@ -210,6 +242,8 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode
             if (resolve)
                return getReturnValue();
             return basicGetReturnValue();
+         case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
+            return getReturnValues();
       }
       return super.eGet(featureID, resolve, coreType);
    }
@@ -218,6 +252,7 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
+   @SuppressWarnings ("unchecked")
    @Override
    public void eSet (int featureID, Object newValue)
    {
@@ -228,6 +263,10 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode
             return;
          case ActivitiesPackage.STOP_NODE__RETURN_VALUE:
             setReturnValue((Expression) newValue);
+            return;
+         case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
+            getReturnValues().clear();
+            getReturnValues().addAll((Collection<? extends Expression>) newValue);
             return;
       }
       super.eSet(featureID, newValue);
@@ -248,6 +287,9 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode
          case ActivitiesPackage.STOP_NODE__RETURN_VALUE:
             setReturnValue((Expression) null);
             return;
+         case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
+            getReturnValues().clear();
+            return;
       }
       super.eUnset(featureID);
    }
@@ -265,6 +307,8 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode
             return flowStopOnly != FLOW_STOP_ONLY_EDEFAULT;
          case ActivitiesPackage.STOP_NODE__RETURN_VALUE:
             return returnValue != null;
+         case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
+            return returnValues != null && !returnValues.isEmpty();
       }
       return super.eIsSet(featureID);
    }

@@ -2930,12 +2930,21 @@ public interface ActivitiesPackage extends EPackage
    int STOP_NODE__RETURN_VALUE = ACTIVITY_NODE_FEATURE_COUNT + 1;
 
    /**
+    * The feature id for the '<em><b>Return Values</b></em>' containment reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int STOP_NODE__RETURN_VALUES = ACTIVITY_NODE_FEATURE_COUNT + 2;
+
+   /**
     * The number of structural features of the '<em>Stop Node</em>' class.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int STOP_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 2;
+   int STOP_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 3;
 
    /**
     * The operation id for the '<em>EClass</em>' operation.
@@ -4052,6 +4061,17 @@ public interface ActivitiesPackage extends EPackage
    EReference getStopNode_ReturnValue ();
 
    /**
+    * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.activities.StopNode#getReturnValues <em>Return Values</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the containment reference list '<em>Return Values</em>'.
+    * @see org.storydriven.modeling.activities.StopNode#getReturnValues()
+    * @see #getStopNode()
+    * @generated
+    */
+   EReference getStopNode_ReturnValues ();
+
+   /**
     * Returns the meta object for class '{@link org.storydriven.modeling.activities.ActivityCallNode <em>Activity Call Node</em>}'.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @return the meta object for class '<em>Activity Call Node</em>'.
@@ -4464,6 +4484,14 @@ public interface ActivitiesPackage extends EPackage
        * @generated
        */
       EReference STOP_NODE__RETURN_VALUE = eINSTANCE.getStopNode_ReturnValue();
+
+      /**
+       * The meta object literal for the '<em><b>Return Values</b></em>' containment reference list feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference STOP_NODE__RETURN_VALUES = eINSTANCE.getStopNode_ReturnValues();
 
       /**
        * The meta object literal for the '{@link org.storydriven.modeling.activities.impl.ActivityCallNodeImpl <em>Activity Call Node</em>}' class.

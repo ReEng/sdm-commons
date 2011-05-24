@@ -213,6 +213,10 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WnuyU7LyEd-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WnuyUrLyEd-uk56s-ldeog"/>
         </ownedAttribute>
+        <ownedAttribute xmi:id="_27rV8IYIEeCsDOrao2DJIA" name="returnValues" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_27rV8YYIEeCsDOrao2DJIA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_27rV8oYIEeCsDOrao2DJIA"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="bac68bbf-67d6-474b-81c5-6a12361a7e63" name="StructuredNode">
         <generalization xmi:id="_OBFLk7KwEd-DYIlz5ANeHA" general="0ef98ed0-902e-4764-91ad-f76566d6f80e"/>

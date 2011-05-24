@@ -6,6 +6,7 @@
  */
 package org.storydriven.modeling.activities;
 
+import org.eclipse.emf.common.util.EList;
 import org.storydriven.modeling.expressions.Expression;
 
 /**
@@ -16,6 +17,7 @@ import org.storydriven.modeling.expressions.Expression;
  * <ul>
  *   <li>{@link org.storydriven.modeling.activities.StopNode#isFlowStopOnly <em>Flow Stop Only</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.StopNode#getReturnValue <em>Return Value</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.StopNode#getReturnValues <em>Return Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,5 +72,21 @@ public interface StopNode extends ActivityNode
     * @generated
     */
    void setReturnValue (Expression value);
+
+   /**
+    * Returns the value of the '<em><b>Return Values</b></em>' containment reference list.
+    * The list contents are of type {@link org.storydriven.modeling.expressions.Expression}.
+    * <!-- begin-user-doc -->
+    * <p>
+    * If the meaning of the '<em>Return Values</em>' containment reference list isn't clear,
+    * there really should be more of a description here...
+    * </p>
+    * <!-- end-user-doc -->
+    * @return the value of the '<em>Return Values</em>' containment reference list.
+    * @see org.storydriven.modeling.activities.ActivitiesPackage#getStopNode_ReturnValues()
+    * @model containment="true" resolveProxies="true" ordered="false"
+    * @generated
+    */
+   EList<Expression> getReturnValues ();
 
 } // StopNode

@@ -27,17 +27,17 @@ import org.storydriven.modeling.provider.SDMEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PrimitiveVariableExpressionItemProvider extends
-		ExpressionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+public class PrimitiveVariableExpressionItemProvider extends ExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
+{
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PrimitiveVariableExpressionItemProvider(AdapterFactory adapterFactory) {
+	public PrimitiveVariableExpressionItemProvider(AdapterFactory adapterFactory)
+	{
 		super(adapterFactory);
 	}
 
@@ -48,8 +48,10 @@ public class PrimitiveVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
+	{
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addPrimitiveVariablePropertyDescriptor(object);
@@ -63,19 +65,15 @@ public class PrimitiveVariableExpressionItemProvider extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPrimitiveVariablePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_PrimitiveVariableExpression_primitiveVariable_feature"),
-						getString(
-								"_UI_PropertyDescriptor_description",
-								"_UI_PrimitiveVariableExpression_primitiveVariable_feature",
-								"_UI_PrimitiveVariableExpression_type"),
-						ExpressionsPackage.Literals.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE,
-						true, false, true, null, null, null));
+	protected void addPrimitiveVariablePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_PrimitiveVariableExpression_primitiveVariable_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveVariableExpression_primitiveVariable_feature",
+						"_UI_PrimitiveVariableExpression_type"),
+				ExpressionsPackage.Literals.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -85,11 +83,9 @@ public class PrimitiveVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"full/obj16/PrimitiveVariableExpression"));
+	public Object getImage(Object object)
+	{
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/PrimitiveVariableExpression"));
 	}
 
 	/**
@@ -99,11 +95,11 @@ public class PrimitiveVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
+	public String getText(Object object)
+	{
 		String label = ((PrimitiveVariableExpression) object).getComment();
 		return label == null || label.length() == 0 ? getString("_UI_PrimitiveVariableExpression_type")
-				: getString("_UI_PrimitiveVariableExpression_type") + " "
-						+ label;
+				: getString("_UI_PrimitiveVariableExpression_type") + " " + label;
 	}
 
 	/**
@@ -114,7 +110,8 @@ public class PrimitiveVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(Notification notification)
+	{
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -127,8 +124,8 @@ public class PrimitiveVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
+	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -139,7 +136,8 @@ public class PrimitiveVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator() {
+	public ResourceLocator getResourceLocator()
+	{
 		return SDMEditPlugin.INSTANCE;
 	}
 

@@ -31,15 +31,15 @@ import org.storydriven.modeling.calls.util.CallsAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
-		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class CallsItemProviderAdapterFactory extends CallsAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable
+{
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComposedAdapterFactory parentAdapterFactory;
+	protected ComposedAdapterFactory	parentAdapterFactory;
 
 	/**
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
@@ -47,7 +47,7 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IChangeNotifier changeNotifier = new ChangeNotifier();
+	protected IChangeNotifier			changeNotifier	= new ChangeNotifier();
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -55,7 +55,7 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<Object> supportedTypes = new ArrayList<Object>();
+	protected Collection<Object>		supportedTypes	= new ArrayList<Object>();
 
 	/**
 	 * This constructs an instance.
@@ -63,7 +63,8 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CallsItemProviderAdapterFactory() {
+	public CallsItemProviderAdapterFactory()
+	{
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -77,7 +78,7 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterBindingItemProvider parameterBindingItemProvider;
+	protected ParameterBindingItemProvider	parameterBindingItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.calls.ParameterBinding}.
@@ -86,10 +87,11 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * @generated
 	 */
 	@Override
-	public Adapter createParameterBindingAdapter() {
-		if (parameterBindingItemProvider == null) {
-			parameterBindingItemProvider = new ParameterBindingItemProvider(
-					this);
+	public Adapter createParameterBindingAdapter()
+	{
+		if (parameterBindingItemProvider == null)
+		{
+			parameterBindingItemProvider = new ParameterBindingItemProvider(this);
 		}
 
 		return parameterBindingItemProvider;
@@ -101,7 +103,7 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OpaqueCallableItemProvider opaqueCallableItemProvider;
+	protected OpaqueCallableItemProvider	opaqueCallableItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.calls.OpaqueCallable}.
@@ -110,8 +112,10 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * @generated
 	 */
 	@Override
-	public Adapter createOpaqueCallableAdapter() {
-		if (opaqueCallableItemProvider == null) {
+	public Adapter createOpaqueCallableAdapter()
+	{
+		if (opaqueCallableItemProvider == null)
+		{
 			opaqueCallableItemProvider = new OpaqueCallableItemProvider(this);
 		}
 
@@ -124,7 +128,7 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterExtensionItemProvider parameterExtensionItemProvider;
+	protected ParameterExtensionItemProvider	parameterExtensionItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.calls.ParameterExtension}.
@@ -133,10 +137,11 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * @generated
 	 */
 	@Override
-	public Adapter createParameterExtensionAdapter() {
-		if (parameterExtensionItemProvider == null) {
-			parameterExtensionItemProvider = new ParameterExtensionItemProvider(
-					this);
+	public Adapter createParameterExtensionAdapter()
+	{
+		if (parameterExtensionItemProvider == null)
+		{
+			parameterExtensionItemProvider = new ParameterExtensionItemProvider(this);
 		}
 
 		return parameterExtensionItemProvider;
@@ -148,9 +153,9 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+	public ComposeableAdapterFactory getRootAdapterFactory()
+	{
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -159,8 +164,8 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory)
+	{
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -170,7 +175,8 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object type) {
+	public boolean isFactoryForType(Object type)
+	{
 		return supportedTypes.contains(type) || super.isFactoryForType(type);
 	}
 
@@ -181,7 +187,8 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * @generated
 	 */
 	@Override
-	public Adapter adapt(Notifier notifier, Object type) {
+	public Adapter adapt(Notifier notifier, Object type)
+	{
 		return super.adapt(notifier, this);
 	}
 
@@ -191,11 +198,13 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * @generated
 	 */
 	@Override
-	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
+	public Object adapt(Object object, Object type)
+	{
+		if (isFactoryForType(type))
+		{
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter)))
+			{
 				return adapter;
 			}
 		}
@@ -209,7 +218,8 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addListener(INotifyChangedListener notifyChangedListener) {
+	public void addListener(INotifyChangedListener notifyChangedListener)
+	{
 		changeNotifier.addListener(notifyChangedListener);
 	}
 
@@ -219,7 +229,8 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void removeListener(INotifyChangedListener notifyChangedListener) {
+	public void removeListener(INotifyChangedListener notifyChangedListener)
+	{
 		changeNotifier.removeListener(notifyChangedListener);
 	}
 
@@ -229,10 +240,12 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void fireNotifyChanged(Notification notification) {
+	public void fireNotifyChanged(Notification notification)
+	{
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
+		if (parentAdapterFactory != null)
+		{
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -243,7 +256,8 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void dispose() {
+	public void dispose()
+	{
 		if (parameterBindingItemProvider != null)
 			parameterBindingItemProvider.dispose();
 		if (opaqueCallableItemProvider != null)

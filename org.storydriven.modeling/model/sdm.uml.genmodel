@@ -170,6 +170,8 @@
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//activities/StopNode/flowStopOnly"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/StopNode/returnValue"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference sdm.ecore#//activities/StopNode/returnValues"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//activities/ActivityCallNode">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

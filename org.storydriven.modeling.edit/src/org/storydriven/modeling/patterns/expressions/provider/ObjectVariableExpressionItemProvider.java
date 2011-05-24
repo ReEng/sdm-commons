@@ -27,17 +27,17 @@ import org.storydriven.modeling.provider.SDMEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ObjectVariableExpressionItemProvider extends
-		ExpressionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+public class ObjectVariableExpressionItemProvider extends ExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
+{
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ObjectVariableExpressionItemProvider(AdapterFactory adapterFactory) {
+	public ObjectVariableExpressionItemProvider(AdapterFactory adapterFactory)
+	{
 		super(adapterFactory);
 	}
 
@@ -48,8 +48,10 @@ public class ObjectVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
+	{
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addObjectPropertyDescriptor(object);
@@ -63,17 +65,15 @@ public class ObjectVariableExpressionItemProvider extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addObjectPropertyDescriptor(Object object) {
+	protected void addObjectPropertyDescriptor(Object object)
+	{
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_ObjectVariableExpression_object_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ObjectVariableExpression_object_feature",
-						"_UI_ObjectVariableExpression_type"),
-				ExpressionsPackage.Literals.OBJECT_VARIABLE_EXPRESSION__OBJECT,
-				true, false, true, null, null, null));
+				getString("_UI_PropertyDescriptor_description", "_UI_ObjectVariableExpression_object_feature",
+						"_UI_ObjectVariableExpression_type"), ExpressionsPackage.Literals.OBJECT_VARIABLE_EXPRESSION__OBJECT, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -83,11 +83,9 @@ public class ObjectVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"full/obj16/ObjectVariableExpression"));
+	public Object getImage(Object object)
+	{
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ObjectVariableExpression"));
 	}
 
 	/**
@@ -97,7 +95,8 @@ public class ObjectVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
+	public String getText(Object object)
+	{
 		String label = ((ObjectVariableExpression) object).getComment();
 		return label == null || label.length() == 0 ? getString("_UI_ObjectVariableExpression_type")
 				: getString("_UI_ObjectVariableExpression_type") + " " + label;
@@ -111,7 +110,8 @@ public class ObjectVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(Notification notification)
+	{
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -124,8 +124,8 @@ public class ObjectVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
+	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -136,7 +136,8 @@ public class ObjectVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator() {
+	public ResourceLocator getResourceLocator()
+	{
 		return SDMEditPlugin.INSTANCE;
 	}
 

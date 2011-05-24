@@ -631,6 +631,16 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
    }
 
    /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public EReference getStopNode_ReturnValues ()
+   {
+      return (EReference) stopNodeEClass.getEStructuralFeatures().get(2);
+   }
+
+   /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
@@ -775,6 +785,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
       stopNodeEClass = createEClass(STOP_NODE);
       createEAttribute(stopNodeEClass, STOP_NODE__FLOW_STOP_ONLY);
       createEReference(stopNodeEClass, STOP_NODE__RETURN_VALUE);
+      createEReference(stopNodeEClass, STOP_NODE__RETURN_VALUES);
 
       activityCallNodeEClass = createEClass(ACTIVITY_CALL_NODE);
       createEReference(activityCallNodeEClass, ACTIVITY_CALL_NODE__CALLED_ACTIVITY);
@@ -983,6 +994,9 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
          !IS_ORDERED);
       initEReference(getStopNode_ReturnValue(), theExpressionsPackage_1.getExpression(), null, "returnValue", null, 0,
          1, StopNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
+         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+      initEReference(getStopNode_ReturnValues(), theExpressionsPackage_1.getExpression(), null, "returnValues", null,
+         0, -1, StopNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
          !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
       initEClass(activityCallNodeEClass, ActivityCallNode.class, "ActivityCallNode", !IS_ABSTRACT, !IS_INTERFACE,

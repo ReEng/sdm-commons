@@ -26,16 +26,17 @@ import org.storydriven.modeling.calls.OpaqueCallable;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OpaqueCallableItemProvider extends CallableItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class OpaqueCallableItemProvider extends CallableItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
+{
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OpaqueCallableItemProvider(AdapterFactory adapterFactory) {
+	public OpaqueCallableItemProvider(AdapterFactory adapterFactory)
+	{
 		super(adapterFactory);
 	}
 
@@ -46,8 +47,10 @@ public class OpaqueCallableItemProvider extends CallableItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
+	{
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -63,17 +66,12 @@ public class OpaqueCallableItemProvider extends CallableItemProvider implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_OpaqueCallable_name_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_OpaqueCallable_name_feature",
-						"_UI_OpaqueCallable_type"),
-				CallsPackage.Literals.OPAQUE_CALLABLE__NAME, true, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	protected void addNamePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_OpaqueCallable_name_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_OpaqueCallable_name_feature", "_UI_OpaqueCallable_type"),
+				CallsPackage.Literals.OPAQUE_CALLABLE__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -82,17 +80,12 @@ public class OpaqueCallableItemProvider extends CallableItemProvider implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInParameterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_OpaqueCallable_inParameter_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_OpaqueCallable_inParameter_feature",
-						"_UI_OpaqueCallable_type"),
-				CallsPackage.Literals.OPAQUE_CALLABLE__IN_PARAMETER, true,
-				false, true, null, null, null));
+	protected void addInParameterPropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_OpaqueCallable_inParameter_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_OpaqueCallable_inParameter_feature", "_UI_OpaqueCallable_type"),
+				CallsPackage.Literals.OPAQUE_CALLABLE__IN_PARAMETER, true, false, true, null, null, null));
 	}
 
 	/**
@@ -101,17 +94,12 @@ public class OpaqueCallableItemProvider extends CallableItemProvider implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOutParameterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_OpaqueCallable_outParameter_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_OpaqueCallable_outParameter_feature",
-						"_UI_OpaqueCallable_type"),
-				CallsPackage.Literals.OPAQUE_CALLABLE__OUT_PARAMETER, true,
-				false, true, null, null, null));
+	protected void addOutParameterPropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_OpaqueCallable_outParameter_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_OpaqueCallable_outParameter_feature", "_UI_OpaqueCallable_type"),
+				CallsPackage.Literals.OPAQUE_CALLABLE__OUT_PARAMETER, true, false, true, null, null, null));
 	}
 
 	/**
@@ -121,9 +109,9 @@ public class OpaqueCallableItemProvider extends CallableItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/OpaqueCallable"));
+	public Object getImage(Object object)
+	{
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/OpaqueCallable"));
 	}
 
 	/**
@@ -133,10 +121,11 @@ public class OpaqueCallableItemProvider extends CallableItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
+	public String getText(Object object)
+	{
 		String label = ((OpaqueCallable) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_OpaqueCallable_type")
-				: getString("_UI_OpaqueCallable_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_OpaqueCallable_type") : getString("_UI_OpaqueCallable_type") + " "
+				+ label;
 	}
 
 	/**
@@ -147,14 +136,15 @@ public class OpaqueCallableItemProvider extends CallableItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(Notification notification)
+	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(OpaqueCallable.class)) {
-		case CallsPackage.OPAQUE_CALLABLE__NAME:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+		switch (notification.getFeatureID(OpaqueCallable.class))
+		{
+			case CallsPackage.OPAQUE_CALLABLE__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -167,8 +157,8 @@ public class OpaqueCallableItemProvider extends CallableItemProvider implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
+	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
