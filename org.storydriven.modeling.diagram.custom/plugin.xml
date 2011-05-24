@@ -158,6 +158,28 @@
                tooltip="This will toggle they isKey Attribute of the Attribute.">
          </action>
       </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="org.storydriven.modeling.diagram.custom.ActivityEdgeGuardExpressionContribution"
+            objectClass="org.storydriven.modeling.diagram.edit.parts.ActivityEdgeEditPart">
+         <action
+               class="org.storydriven.modeling.diagram.custom.expressions.EditActivityEdgeGuardExpressionWithDialogAction"
+               id="org.storydriven.modeling.diagram.custom.ActicityEdgeGuardExpressionEdit"
+               label="Edit Guard Expression"
+               tooltip="This will toggle they isKey Attribute of the Attribute.">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="org.storydriven.modeling.diagram.custom.StatementNodeEditExpression"
+            objectClass="org.storydriven.modeling.diagram.edit.parts.StatementNodeEditPart">
+         <action
+               class="org.storydriven.modeling.diagram.custom.expressions.EditStatementExpressionWithDialogAction"
+               id="org.storydriven.modeling.diagram.custom.StatementNodeEditExpression"
+               label="Edit Statement Expression"
+               tooltip="This will toggle they isKey Attribute of the Attribute.">
+         </action>
+      </objectContribution>
    </extension>
    <extension
          point="org.storydriven.modeling.diagram.custom.expressionSourceViewerExtension">

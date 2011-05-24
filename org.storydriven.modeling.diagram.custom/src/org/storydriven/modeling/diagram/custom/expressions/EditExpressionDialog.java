@@ -1,21 +1,21 @@
 package org.storydriven.modeling.diagram.custom.expressions;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Vector;
-
-import javax.security.auth.callback.LanguageCallback;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CompoundCommand;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.dialogs.Dialog;
@@ -24,8 +24,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StackLayout;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.graphics.Point;
-import org.eclipse.swt.internal.SWTEventListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowData;
@@ -38,10 +36,12 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
+import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.diagram.custom.SourceViewerProvider;
-import org.storydriven.modeling.diagram.custom.expressions.EditExpressionDialog.LanguageSelectionComboWidget;
+import org.storydriven.modeling.expressions.Expression;
 import org.storydriven.modeling.expressions.TextualExpression;
 import org.storydriven.modeling.expressions.util.ExpressionUtils;
+import org.storydriven.modeling.patterns.ObjectVariable;
 
 
 public class EditExpressionDialog extends Dialog {
@@ -75,9 +75,12 @@ public class EditExpressionDialog extends Dialog {
 	private TransactionalEditingDomain commandReceiver;
 	private String originalText;
 	private TextualExpression expression;
+	private Activity activity;
 	private Map<String, EClassifier> contextInformation;
 
 	private Composite languageEditingArea;
+
+	
 	
 	
 	public EditExpressionDialog(Shell parent) {
@@ -317,10 +320,6 @@ public class EditExpressionDialog extends Dialog {
 		this.expectedReturnType = classifier;
 	}
 
-	public void setDialogText(String expressionText) {
-		this.originalText = expressionText;
-	}
-
 	public void setChangeAttributeCommand(Command changeAttributeCommand, TransactionalEditingDomain transactionalEditingDomain) {
 		this.commandReceiver = transactionalEditingDomain;
 	}
@@ -331,6 +330,7 @@ public class EditExpressionDialog extends Dialog {
 
 	public void setExpression(TextualExpression expression) {
 		this.expression = expression;
+		this.originalText = expression.getExpressionText();
 	}
 	
 	public interface LanguageSelectionWidget {
@@ -632,5 +632,65 @@ public class EditExpressionDialog extends Dialog {
 			return resultString;
 		}
 		
+	}
+
+	public void setActivity(Activity activity) {
+		this.activity = activity;
+	}
+	
+	protected Map<String, EClassifier> getContextInformation()
+	{
+		Map<String, EClassifier> contextInfos = new HashMap<String, EClassifier>();
+
+		if (activity != null)
+		{
+			/*
+			 * THIS and parameters
+			 */
+			if (activity.getOwningOperation().getOperation() != null)
+			{
+				EClass thisClass = activity.getOwningOperation().getOperation().getEContainingClass();
+
+				if (thisClass != null)
+				{
+					contextInfos.put("this", thisClass);
+				}
+
+				for (EParameter parameter : activity.getOwningOperation().getOperation().getEParameters())
+				{
+					if (parameter.getName() != null && !"".equals(parameter) && parameter.getEType() != null)
+					{
+						contextInfos.put(parameter.getName(), parameter.getEType());
+					}
+				}
+			}
+
+			/*
+			 * Variables created in story patterns and
+			 * VariableDeclarationActions
+			 */
+			TreeIterator<EObject> it = activity.eAllContents();
+
+			while (it.hasNext())
+			{
+				EObject eObject = it.next();
+
+				if (eObject instanceof ObjectVariable)
+				{
+					ObjectVariable spo = (ObjectVariable) eObject;
+
+					if (spo.getName() != null && !"".equals(spo.getName()) && spo.getClassifier() != null)
+					{
+						contextInfos.put(spo.getName(), spo.getClassifier());
+					}
+				}
+			}
+		}
+
+		return contextInfos;
+	}
+
+	public Expression getExpression() {
+		return expression;
 	}
 }

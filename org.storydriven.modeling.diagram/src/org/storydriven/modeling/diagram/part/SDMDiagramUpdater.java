@@ -38,6 +38,8 @@ import org.storydriven.modeling.diagram.edit.parts.StartNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StartNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNodeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.StatementNodeStatementNodeCompartment2EditPart;
+import org.storydriven.modeling.diagram.edit.parts.StatementNodeStatementNodeCompartmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StopNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StoryPatternEditPart;
@@ -46,7 +48,9 @@ import org.storydriven.modeling.diagram.edit.parts.StructuredNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartment2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartmentEditPart;
+import org.storydriven.modeling.diagram.edit.parts.TextualExpressionEditPart;
 import org.storydriven.modeling.diagram.providers.SDMElementTypes;
+import org.storydriven.modeling.expressions.Expression;
 import org.storydriven.modeling.patterns.AbstractVariable;
 import org.storydriven.modeling.patterns.AttributeAssignment;
 import org.storydriven.modeling.patterns.LinkVariable;
@@ -67,8 +71,12 @@ public class SDMDiagramUpdater {
 		switch (SDMVisualIDRegistry.getVisualID(view)) {
 		case ActivityEditPart.VISUAL_ID:
 			return getActivity_1000SemanticChildren(view);
+		case StatementNodeStatementNodeCompartmentEditPart.VISUAL_ID:
+			return getStatementNodeStatementNodeCompartment_7016SemanticChildren(view);
 		case StructuredNodeStructuredNodeCompartmentEditPart.VISUAL_ID:
 			return getStructuredNodeStructuredNodeCompartment_7001SemanticChildren(view);
+		case StatementNodeStatementNodeCompartment2EditPart.VISUAL_ID:
+			return getStatementNodeStatementNodeCompartment_7017SemanticChildren(view);
 		case StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID:
 			return getStructuredNodeStructuredNodeCompartment_7002SemanticChildren(view);
 		case ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID:
@@ -129,6 +137,31 @@ public class SDMDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<SDMNodeDescriptor> getStatementNodeStatementNodeCompartment_7016SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		StatementNode modelElement = (StatementNode) containerView.getElement();
+		LinkedList<SDMNodeDescriptor> result = new LinkedList<SDMNodeDescriptor>();
+		{
+			Expression childElement = modelElement.getStatementExpression();
+			int visualID = SDMVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == TextualExpressionEditPart.VISUAL_ID) {
+				result.add(new SDMNodeDescriptor(childElement, visualID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<SDMNodeDescriptor> getStructuredNodeStructuredNodeCompartment_7001SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -169,6 +202,31 @@ public class SDMDiagramUpdater {
 			if (visualID == ModifyingStoryNode2EditPart.VISUAL_ID) {
 				result.add(new SDMNodeDescriptor(childElement, visualID));
 				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMNodeDescriptor> getStatementNodeStatementNodeCompartment_7017SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		StatementNode modelElement = (StatementNode) containerView.getElement();
+		LinkedList<SDMNodeDescriptor> result = new LinkedList<SDMNodeDescriptor>();
+		{
+			Expression childElement = modelElement.getStatementExpression();
+			int visualID = SDMVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == TextualExpressionEditPart.VISUAL_ID) {
+				result.add(new SDMNodeDescriptor(childElement, visualID));
 			}
 		}
 		return result;
@@ -352,6 +410,8 @@ public class SDMDiagramUpdater {
 			return getStructuredNode_2005ContainedLinks(view);
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return getModifyingStoryNode_2007ContainedLinks(view);
+		case TextualExpressionEditPart.VISUAL_ID:
+			return getTextualExpression_3015ContainedLinks(view);
 		case JunctionNode2EditPart.VISUAL_ID:
 			return getJunctionNode_3001ContainedLinks(view);
 		case StartNode2EditPart.VISUAL_ID:
@@ -397,6 +457,8 @@ public class SDMDiagramUpdater {
 			return getStructuredNode_2005IncomingLinks(view);
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return getModifyingStoryNode_2007IncomingLinks(view);
+		case TextualExpressionEditPart.VISUAL_ID:
+			return getTextualExpression_3015IncomingLinks(view);
 		case JunctionNode2EditPart.VISUAL_ID:
 			return getJunctionNode_3001IncomingLinks(view);
 		case StartNode2EditPart.VISUAL_ID:
@@ -442,6 +504,8 @@ public class SDMDiagramUpdater {
 			return getStructuredNode_2005OutgoingLinks(view);
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return getModifyingStoryNode_2007OutgoingLinks(view);
+		case TextualExpressionEditPart.VISUAL_ID:
+			return getTextualExpression_3015OutgoingLinks(view);
 		case JunctionNode2EditPart.VISUAL_ID:
 			return getJunctionNode_3001OutgoingLinks(view);
 		case StartNode2EditPart.VISUAL_ID:
@@ -525,6 +589,14 @@ public class SDMDiagramUpdater {
 	 * @generated
 	 */
 	public static List<SDMLinkDescriptor> getModifyingStoryNode_2007ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMLinkDescriptor> getTextualExpression_3015ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -711,6 +783,14 @@ public class SDMDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(
 				modelElement, crossReferences));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMLinkDescriptor> getTextualExpression_3015IncomingLinks(
+			View view) {
+		return Collections.emptyList();
 	}
 
 	/**
@@ -923,6 +1003,14 @@ public class SDMDiagramUpdater {
 		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMLinkDescriptor> getTextualExpression_3015OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
 	}
 
 	/**

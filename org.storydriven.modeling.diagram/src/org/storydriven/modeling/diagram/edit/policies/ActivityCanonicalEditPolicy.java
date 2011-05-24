@@ -48,6 +48,7 @@ import org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StoryPatternEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.TextualExpressionEditPart;
 import org.storydriven.modeling.diagram.part.SDMDiagramUpdater;
 import org.storydriven.modeling.diagram.part.SDMLinkDescriptor;
 import org.storydriven.modeling.diagram.part.SDMNodeDescriptor;

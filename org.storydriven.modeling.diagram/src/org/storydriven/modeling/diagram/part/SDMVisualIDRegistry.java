@@ -39,6 +39,8 @@ import org.storydriven.modeling.diagram.edit.parts.StatementNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNodeName2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNodeNameEditPart;
+import org.storydriven.modeling.diagram.edit.parts.StatementNodeStatementNodeCompartment2EditPart;
+import org.storydriven.modeling.diagram.edit.parts.StatementNodeStatementNodeCompartmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StopNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StoryPatternEditPart;
@@ -49,7 +51,9 @@ import org.storydriven.modeling.diagram.edit.parts.StructuredNodeName2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartment2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartmentEditPart;
+import org.storydriven.modeling.diagram.edit.parts.TextualExpressionEditPart;
 import org.storydriven.modeling.diagram.edit.parts.WrappingLabel2EditPart;
+import org.storydriven.modeling.expressions.ExpressionsPackage;
 import org.storydriven.modeling.patterns.PatternsPackage;
 
 /**
@@ -185,6 +189,12 @@ public class SDMVisualIDRegistry {
 				return ModifyingStoryNodeEditPart.VISUAL_ID;
 			}
 			break;
+		case StatementNodeStatementNodeCompartmentEditPart.VISUAL_ID:
+			if (ExpressionsPackage.eINSTANCE.getTextualExpression()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return TextualExpressionEditPart.VISUAL_ID;
+			}
+			break;
 		case StructuredNodeStructuredNodeCompartmentEditPart.VISUAL_ID:
 			if (ActivitiesPackage.eINSTANCE.getJunctionNode().isSuperTypeOf(
 					domainElement.eClass())) {
@@ -209,6 +219,12 @@ public class SDMVisualIDRegistry {
 			if (ActivitiesPackage.eINSTANCE.getModifyingStoryNode()
 					.isSuperTypeOf(domainElement.eClass())) {
 				return ModifyingStoryNode2EditPart.VISUAL_ID;
+			}
+			break;
+		case StatementNodeStatementNodeCompartment2EditPart.VISUAL_ID:
+			if (ExpressionsPackage.eINSTANCE.getTextualExpression()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return TextualExpressionEditPart.VISUAL_ID;
 			}
 			break;
 		case StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID:
@@ -314,6 +330,9 @@ public class SDMVisualIDRegistry {
 			if (StatementNodeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (StatementNodeStatementNodeCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case StructuredNodeEditPart.VISUAL_ID:
 			if (StructuredNodeNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -336,6 +355,9 @@ public class SDMVisualIDRegistry {
 			break;
 		case StatementNode2EditPart.VISUAL_ID:
 			if (StatementNodeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StatementNodeStatementNodeCompartment2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -391,6 +413,11 @@ public class SDMVisualIDRegistry {
 				return true;
 			}
 			break;
+		case StatementNodeStatementNodeCompartmentEditPart.VISUAL_ID:
+			if (TextualExpressionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case StructuredNodeStructuredNodeCompartmentEditPart.VISUAL_ID:
 			if (JunctionNode2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -408,6 +435,11 @@ public class SDMVisualIDRegistry {
 				return true;
 			}
 			if (ModifyingStoryNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StatementNodeStatementNodeCompartment2EditPart.VISUAL_ID:
+			if (TextualExpressionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

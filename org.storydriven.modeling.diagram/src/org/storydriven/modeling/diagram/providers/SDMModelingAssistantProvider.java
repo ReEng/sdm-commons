@@ -64,6 +64,16 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(SDMElementTypes.ModifyingStoryNode_2007);
 			return types;
 		}
+		if (editPart instanceof StatementNodeEditPart) {
+			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+			types.add(SDMElementTypes.TextualExpression_3015);
+			return types;
+		}
+		if (editPart instanceof StatementNode2EditPart) {
+			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+			types.add(SDMElementTypes.TextualExpression_3015);
+			return types;
+		}
 		if (editPart instanceof ObjectVariableEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
 			types.add(SDMElementTypes.AttributeAssignment_3013);

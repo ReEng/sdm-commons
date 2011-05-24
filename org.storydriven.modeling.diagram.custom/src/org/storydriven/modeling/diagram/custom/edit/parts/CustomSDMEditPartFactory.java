@@ -11,6 +11,8 @@ import org.storydriven.modeling.diagram.edit.parts.ObjectVariableNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableClassifierLabelEditPart;
 import org.storydriven.modeling.diagram.edit.parts.SDMEditPartFactory;
 import org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.StoryPatternEditPart;
+import org.storydriven.modeling.diagram.edit.parts.TextualExpressionEditPart;
 import org.storydriven.modeling.diagram.part.SDMVisualIDRegistry;
 
 public class CustomSDMEditPartFactory extends SDMEditPartFactory {
@@ -26,6 +28,9 @@ public class CustomSDMEditPartFactory extends SDMEditPartFactory {
 			case ModifyingStoryNodeEditPart.VISUAL_ID:
 				return new CustomModifyingStoryNodeEditPart(view);
 				
+			case StoryPatternEditPart.VISUAL_ID:
+				return new CustomStoryPatternEditPart(view);
+				
 			case ObjectVariableNameEditPart.VISUAL_ID:
 				return new CustomObjectVariableNameLabelEditPart(view);
 				
@@ -40,6 +45,9 @@ public class CustomSDMEditPartFactory extends SDMEditPartFactory {
 				
 			case AttributeAssignmentEditPart.VISUAL_ID:
 				return new CustomAttributeAssignmentEditPart(view);
+				
+			case TextualExpressionEditPart.VISUAL_ID:
+				return new CustomTextualExpressionEditPart(view);
 				
 			case ActivityEdgeGuardConstraintLabelEditPart.VISUAL_ID:
 				return new CustomActivityEdgeGuardConstraintLabelEditPart(view);

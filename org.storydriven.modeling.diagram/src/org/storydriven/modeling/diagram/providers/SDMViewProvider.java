@@ -74,6 +74,8 @@ import org.storydriven.modeling.diagram.edit.parts.StatementNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNodeName2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNodeNameEditPart;
+import org.storydriven.modeling.diagram.edit.parts.StatementNodeStatementNodeCompartment2EditPart;
+import org.storydriven.modeling.diagram.edit.parts.StatementNodeStatementNodeCompartmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StopNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StoryPatternEditPart;
@@ -84,6 +86,7 @@ import org.storydriven.modeling.diagram.edit.parts.StructuredNodeName2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartment2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartmentEditPart;
+import org.storydriven.modeling.diagram.edit.parts.TextualExpressionEditPart;
 import org.storydriven.modeling.diagram.edit.parts.WrappingLabel2EditPart;
 import org.storydriven.modeling.diagram.part.SDMVisualIDRegistry;
 
@@ -180,6 +183,7 @@ public class SDMViewProvider extends AbstractProvider implements IViewProvider {
 				case JunctionNodeEditPart.VISUAL_ID:
 				case StatementNodeEditPart.VISUAL_ID:
 				case StructuredNodeEditPart.VISUAL_ID:
+				case TextualExpressionEditPart.VISUAL_ID:
 				case ModifyingStoryNode2EditPart.VISUAL_ID:
 				case StoryPatternEditPart.VISUAL_ID:
 				case ObjectVariableEditPart.VISUAL_ID:
@@ -208,6 +212,7 @@ public class SDMViewProvider extends AbstractProvider implements IViewProvider {
 				|| StatementNodeEditPart.VISUAL_ID == visualID
 				|| StructuredNodeEditPart.VISUAL_ID == visualID
 				|| ModifyingStoryNodeEditPart.VISUAL_ID == visualID
+				|| TextualExpressionEditPart.VISUAL_ID == visualID
 				|| JunctionNode2EditPart.VISUAL_ID == visualID
 				|| StartNode2EditPart.VISUAL_ID == visualID
 				|| StopNode2EditPart.VISUAL_ID == visualID
@@ -291,6 +296,9 @@ public class SDMViewProvider extends AbstractProvider implements IViewProvider {
 					index, persisted, preferencesHint);
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return createModifyingStoryNode_2007(domainElement, containerView,
+					index, persisted, preferencesHint);
+		case TextualExpressionEditPart.VISUAL_ID:
+			return createTextualExpression_3015(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case JunctionNode2EditPart.VISUAL_ID:
 			return createJunctionNode_3001(domainElement, containerView, index,
@@ -499,6 +507,11 @@ public class SDMViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5001 = createLabel(node,
 				SDMVisualIDRegistry
 						.getType(StatementNodeNameEditPart.VISUAL_ID));
+		createCompartment(
+				node,
+				SDMVisualIDRegistry
+						.getType(StatementNodeStatementNodeCompartmentEditPart.VISUAL_ID),
+				false, false, true, true);
 		return node;
 	}
 
@@ -608,6 +621,21 @@ public class SDMViewProvider extends AbstractProvider implements IViewProvider {
 				SDMVisualIDRegistry
 						.getType(ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID),
 				false, false, false, false);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createTextualExpression_3015(EObject domainElement,
+			View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		node.setType(SDMVisualIDRegistry
+				.getType(TextualExpressionEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
 		return node;
 	}
 
@@ -759,6 +787,11 @@ public class SDMViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5002 = createLabel(node,
 				SDMVisualIDRegistry
 						.getType(StatementNodeName2EditPart.VISUAL_ID));
+		createCompartment(
+				node,
+				SDMVisualIDRegistry
+						.getType(StatementNodeStatementNodeCompartment2EditPart.VISUAL_ID),
+				false, false, true, true);
 		return node;
 	}
 

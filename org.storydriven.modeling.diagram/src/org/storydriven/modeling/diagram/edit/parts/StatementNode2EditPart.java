@@ -21,9 +21,12 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -69,6 +72,8 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicy());
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new StatementNode2ItemSemanticEditPolicy());
@@ -127,6 +132,14 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 							.getFigureStatementNodeFigureNameLabel());
 			return true;
 		}
+		if (childEditPart instanceof StatementNodeStatementNodeCompartment2EditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureStatementNodeFigureRectangleBody();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((StatementNodeStatementNodeCompartment2EditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -135,6 +148,14 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof StatementNodeName2EditPart) {
+			return true;
+		}
+		if (childEditPart instanceof StatementNodeStatementNodeCompartment2EditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureStatementNodeFigureRectangleBody();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((StatementNodeStatementNodeCompartment2EditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -164,6 +185,10 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof StatementNodeStatementNodeCompartment2EditPart) {
+			return getPrimaryShape()
+					.getFigureStatementNodeFigureRectangleBody();
+		}
 		return getContentPane();
 	}
 
@@ -366,6 +391,24 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 			types.add(SDMElementTypes.ModifyingStoryNode_3011);
 		}
 		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
+					.getViewAndElementDescriptor()
+					.getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter
+					.getAdapter(IElementType.class);
+			if (type == SDMElementTypes.TextualExpression_3015) {
+				return getChildBySemanticHint(SDMVisualIDRegistry
+						.getType(StatementNodeStatementNodeCompartment2EditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
 	}
 
 	/**

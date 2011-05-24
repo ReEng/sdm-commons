@@ -3,20 +3,22 @@ package org.storydriven.modeling.diagram.custom.expressions;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.diagram.edit.parts.AttributeAssignmentEditPart;
+import org.storydriven.modeling.activities.ActivityEdge;
+import org.storydriven.modeling.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.modeling.expressions.TextualExpression;
 import org.storydriven.modeling.expressions.impl.ExpressionsFactoryImpl;
-import org.storydriven.modeling.patterns.AttributeAssignment;
 
 
 // TODO abstract all those Abstract Action Delegates and refactor hierachy!!!
-public class EditAttributeAssignmentWithDialogAction extends CommonEditExpressionWithDialogAction implements 
+public class EditActivityEdgeGuardExpressionWithDialogAction extends CommonEditExpressionWithDialogAction implements 
 	IObjectActionDelegate{
 
 	EditExpressionDialog expressionDialog;
@@ -32,30 +34,31 @@ public class EditAttributeAssignmentWithDialogAction extends CommonEditExpressio
 	}
 
 	protected EClassifier getExpectedReturnType() {
-		return this.getModel().getAttribute() != null ? this.getModel().getAttribute().getEAttributeType() : null;
+		return EcorePackage.eINSTANCE.getEBoolean();
 	}
 
-	protected AttributeAssignment getModel() {
-		AttributeAssignmentEditPart aaEditPart = this.getEditPart();
-		return (AttributeAssignment) ((View) aaEditPart.getModel()).getElement();
+	protected ActivityEdge getModel() {
+		EditPart aEditPart = this.getEditPart();
+		return (ActivityEdge) ((View) aEditPart.getModel()).getElement();
 	}
 
 	@Override
 	protected TransactionalEditingDomain getChangeCommandReceiver() {
-		return this.getEditPart().getEditingDomain();
+		return ((ActivityEdgeEditPart
+				) this.getEditPart()).getEditingDomain();
 	}
 
 	@Override
 	protected Command getChangeAttributeCommand() {
-		return new SetCommand(this.getEditPart().getEditingDomain(), 
+		return new SetCommand(this.getChangeCommandReceiver(), 
 									this.getModel(), 
-									this.getModel().eClass().getEStructuralFeature("ValueExpression"),
+									this.getModel().eClass().getEStructuralFeature("guardExpression"),
 									null);
 	
 	}
 
-	protected AttributeAssignmentEditPart getEditPart() {
-		return (AttributeAssignmentEditPart) this.getStructuredSelection().getFirstElement();
+	protected EditPart getEditPart() {
+		return (EditPart) this.getStructuredSelection().getFirstElement();
 	}
 	
 	@Override
@@ -65,13 +68,13 @@ public class EditAttributeAssignmentWithDialogAction extends CommonEditExpressio
 
 	
 	protected TextualExpression getExpression() {
-		TextualExpression e = (TextualExpression) this.getModel().getValueExpression();
+		TextualExpression e = (TextualExpression) this.getModel().getGuardExpression();
 		if(e == null) {
 			e = ExpressionsFactoryImpl.eINSTANCE.createTextualExpression();
 			this.getChangeCommandReceiver().
-						getCommandStack().execute(new SetCommand(this.getEditPart().getEditingDomain(), 
+						getCommandStack().execute(new SetCommand(this.getChangeCommandReceiver(), 
 																this.getModel(), 
-																this.getModel().eClass().getEStructuralFeature("valueExpression"),
+																this.getModel().eClass().getEStructuralFeature("guardExpression"),
 																e));
 		}
 		return e;

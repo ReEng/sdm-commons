@@ -64,6 +64,27 @@
           href="sdm.gmftool#//@palette/@tools.1/@tools.5"/>
       <diagramNode
           href="sdm.gmfgraph#StatementNode"/>
+      <children
+          compartment="//@nodes.3/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.3/@ownedChild/@children.0/@ownedChild">
+        <containmentFeature
+            href="../model/sdm.ecore#//activities/StatementNode/statementExpression"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../model/sdm.ecore#//expressions/TextualExpression"/>
+          <labelMappings>
+            <diagramLabel
+                href="sdm.gmfgraph#ExpressionLabel"/>
+          </labelMappings>
+          <diagramNode
+              href="sdm.gmfgraph#ExpressionLabel"/>
+        </ownedChild>
+      </children>
+      <compartments
+          children="//@nodes.3/@ownedChild/@children.0">
+        <compartment
+            href="sdm.gmfgraph#StatementNodeCompartment"/>
+      </compartments>
     </ownedChild>
   </nodes>
   <nodes>

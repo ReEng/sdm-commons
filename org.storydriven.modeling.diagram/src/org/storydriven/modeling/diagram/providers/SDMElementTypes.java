@@ -35,7 +35,9 @@ import org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StoryPatternEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.TextualExpressionEditPart;
 import org.storydriven.modeling.diagram.part.SDMDiagramEditorPlugin;
+import org.storydriven.modeling.expressions.ExpressionsPackage;
 import org.storydriven.modeling.patterns.PatternsPackage;
 
 /**
@@ -92,6 +94,11 @@ public class SDMElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ModifyingStoryNode_2007 = getElementType("org.storydriven.modeling.diagram.ModifyingStoryNode_2007"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType TextualExpression_3015 = getElementType("org.storydriven.modeling.diagram.TextualExpression_3015"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -276,6 +283,9 @@ public class SDMElementTypes {
 			elements.put(ModifyingStoryNode_2007,
 					ActivitiesPackage.eINSTANCE.getModifyingStoryNode());
 
+			elements.put(TextualExpression_3015,
+					ExpressionsPackage.eINSTANCE.getTextualExpression());
+
 			elements.put(JunctionNode_3001,
 					ActivitiesPackage.eINSTANCE.getJunctionNode());
 
@@ -335,6 +345,7 @@ public class SDMElementTypes {
 			KNOWN_ELEMENT_TYPES.add(StatementNode_2004);
 			KNOWN_ELEMENT_TYPES.add(StructuredNode_2005);
 			KNOWN_ELEMENT_TYPES.add(ModifyingStoryNode_2007);
+			KNOWN_ELEMENT_TYPES.add(TextualExpression_3015);
 			KNOWN_ELEMENT_TYPES.add(JunctionNode_3001);
 			KNOWN_ELEMENT_TYPES.add(StartNode_3002);
 			KNOWN_ELEMENT_TYPES.add(StopNode_3004);
@@ -370,6 +381,8 @@ public class SDMElementTypes {
 			return StructuredNode_2005;
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return ModifyingStoryNode_2007;
+		case TextualExpressionEditPart.VISUAL_ID:
+			return TextualExpression_3015;
 		case JunctionNode2EditPart.VISUAL_ID:
 			return JunctionNode_3001;
 		case StartNode2EditPart.VISUAL_ID:

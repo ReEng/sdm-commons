@@ -38,8 +38,8 @@ public class SDMPaletteFactory {
 		paletteContainer.setId("createStoryPatternTools1Group"); //$NON-NLS-1$
 		paletteContainer.add(createModifyingStoryNode1CreationTool());
 		paletteContainer.add(createObjectVariableNode2CreationTool());
-		paletteContainer.add(createAttributeAssignment3CreationTool());
-		paletteContainer.add(createPrimitiveVariableNode4CreationTool());
+		paletteContainer.add(createPrimitiveVariableNode3CreationTool());
+		paletteContainer.add(createAttributeAssignment4CreationTool());
 		paletteContainer.add(createLinkVariable5CreationTool());
 		return paletteContainer;
 	}
@@ -98,34 +98,34 @@ public class SDMPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createAttributeAssignment3CreationTool() {
+	private ToolEntry createPrimitiveVariableNode3CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				Messages.AttributeAssignment3CreationTool_title,
-				Messages.AttributeAssignment3CreationTool_desc,
+				Messages.PrimitiveVariableNode3CreationTool_title,
+				Messages.PrimitiveVariableNode3CreationTool_desc,
 				Collections
 						.singletonList(SDMElementTypes.AttributeAssignment_3013));
-		entry.setId("createAttributeAssignment3CreationTool"); //$NON-NLS-1$
+		entry.setId("createPrimitiveVariableNode3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(SDMDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/AttributeAssignment.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/PrimitiveVariableNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(SDMDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/AttributeAssignment.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/PrimitiveVariableNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createPrimitiveVariableNode4CreationTool() {
+	private ToolEntry createAttributeAssignment4CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				Messages.PrimitiveVariableNode4CreationTool_title,
-				Messages.PrimitiveVariableNode4CreationTool_desc,
+				Messages.AttributeAssignment4CreationTool_title,
+				Messages.AttributeAssignment4CreationTool_desc,
 				Collections
 						.singletonList(SDMElementTypes.PrimitiveVariable_3014));
-		entry.setId("createPrimitiveVariableNode4CreationTool"); //$NON-NLS-1$
+		entry.setId("createAttributeAssignment4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(SDMDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/PrimitiveVariableNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/AttributeAssignment.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(SDMDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/PrimitiveVariableNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/AttributeAssignment.gif")); //$NON-NLS-1$
 		return entry;
 	}
 

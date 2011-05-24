@@ -273,22 +273,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String AttributeAssignment3CreationTool_title;
+	public static String PrimitiveVariableNode3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String AttributeAssignment3CreationTool_desc;
+	public static String PrimitiveVariableNode3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String PrimitiveVariableNode4CreationTool_title;
+	public static String AttributeAssignment4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String PrimitiveVariableNode4CreationTool_desc;
+	public static String AttributeAssignment4CreationTool_desc;
 
 	/**
 	 * @generated
@@ -363,7 +363,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String StatementNodeStatementNodeCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String StructuredNodeStructuredNodeCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StatementNodeStatementNodeCompartment2EditPart_title;
 
 	/**
 	 * @generated

@@ -38,19 +38,6 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Attribute Assignment"
-          description="create new AttributeAssignment">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/objects16/AttributeAssignment.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
-        <largeIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/objects16/AttributeAssignment.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="Primitive Variable Node"
           description="create new PrimitveVariableNode">
         <smallIcon
@@ -60,6 +47,19 @@
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/PrimitiveVariableNode.gif"
+            bundle="org.storydriven.modeling.diagram.custom"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Attribute Assignment"
+          description="create new AttributeAssignment">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="/icons/objects16/AttributeAssignment.gif"
+            bundle="org.storydriven.modeling.diagram.custom"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="/icons/objects16/AttributeAssignment.gif"
             bundle="org.storydriven.modeling.diagram.custom"/>
       </tools>
       <tools

@@ -49,10 +49,12 @@ import org.storydriven.modeling.diagram.edit.parts.StructuredNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeName2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeNameEditPart;
+import org.storydriven.modeling.diagram.edit.parts.TextualExpressionEditPart;
 import org.storydriven.modeling.diagram.part.SDMDiagramEditorPlugin;
 import org.storydriven.modeling.diagram.part.SDMVisualIDRegistry;
 import org.storydriven.modeling.diagram.providers.SDMElementTypes;
 import org.storydriven.modeling.diagram.providers.SDMParserProvider;
+import org.storydriven.modeling.expressions.TextualExpression;
 import org.storydriven.modeling.patterns.LinkVariable;
 import org.storydriven.modeling.patterns.StoryPattern;
 
@@ -115,63 +117,66 @@ public class SDMNavigatorLabelProvider extends LabelProvider implements
 	 */
 	public Image getImage(View view) {
 		switch (SDMVisualIDRegistry.getVisualID(view)) {
-		case StatementNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://ns.storydriven.org/sdm/activities/0.1.0?StatementNode", SDMElementTypes.StatementNode_2004); //$NON-NLS-1$
-		case StatementNode2EditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://ns.storydriven.org/sdm/activities/0.1.0?StatementNode", SDMElementTypes.StatementNode_3003); //$NON-NLS-1$
-		case LinkVariableEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://ns.storydriven.org/sdm/patterns/0.1.0?LinkVariable", SDMElementTypes.LinkVariable_4002); //$NON-NLS-1$
-		case PrimitiveVariableEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://ns.storydriven.org/sdm/patterns/0.1.0?PrimitiveVariable", SDMElementTypes.PrimitiveVariable_3014); //$NON-NLS-1$
-		case AttributeAssignmentEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://ns.storydriven.org/sdm/patterns/0.1.0?AttributeAssignment", SDMElementTypes.AttributeAssignment_3013); //$NON-NLS-1$
-		case JunctionNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://ns.storydriven.org/sdm/activities/0.1.0?JunctionNode", SDMElementTypes.JunctionNode_2003); //$NON-NLS-1$
-		case StructuredNode2EditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://ns.storydriven.org/sdm/activities/0.1.0?StructuredNode", SDMElementTypes.StructuredNode_3005); //$NON-NLS-1$
-		case StartNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://ns.storydriven.org/sdm/activities/0.1.0?StartNode", SDMElementTypes.StartNode_2001); //$NON-NLS-1$
 		case ActivityEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Diagram?http://ns.storydriven.org/sdm/activities/0.1.0?Activity", SDMElementTypes.Activity_1000); //$NON-NLS-1$
-		case ModifyingStoryNodeEditPart.VISUAL_ID:
+		case ObjectVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://ns.storydriven.org/sdm/activities/0.1.0?ModifyingStoryNode", SDMElementTypes.ModifyingStoryNode_2007); //$NON-NLS-1$
+					"Navigator?Node?http://ns.storydriven.org/sdm/patterns/0.1.0?ObjectVariable", SDMElementTypes.ObjectVariable_3012); //$NON-NLS-1$
+		case LinkVariableEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://ns.storydriven.org/sdm/patterns/0.1.0?LinkVariable", SDMElementTypes.LinkVariable_4002); //$NON-NLS-1$
 		case StopNode2EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://ns.storydriven.org/sdm/activities/0.1.0?StopNode", SDMElementTypes.StopNode_3004); //$NON-NLS-1$
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://ns.storydriven.org/sdm/activities/0.1.0?ActivityEdge", SDMElementTypes.ActivityEdge_4001); //$NON-NLS-1$
-		case ObjectVariableEditPart.VISUAL_ID:
+		case StartNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://ns.storydriven.org/sdm/patterns/0.1.0?ObjectVariable", SDMElementTypes.ObjectVariable_3012); //$NON-NLS-1$
-		case StopNodeEditPart.VISUAL_ID:
+					"Navigator?TopLevelNode?http://ns.storydriven.org/sdm/activities/0.1.0?StartNode", SDMElementTypes.StartNode_2001); //$NON-NLS-1$
+		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://ns.storydriven.org/sdm/activities/0.1.0?StopNode", SDMElementTypes.StopNode_2002); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://ns.storydriven.org/sdm/activities/0.1.0?ModifyingStoryNode", SDMElementTypes.ModifyingStoryNode_2007); //$NON-NLS-1$
+		case StructuredNode2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://ns.storydriven.org/sdm/activities/0.1.0?StructuredNode", SDMElementTypes.StructuredNode_3005); //$NON-NLS-1$
 		case ModifyingStoryNode2EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://ns.storydriven.org/sdm/activities/0.1.0?ModifyingStoryNode", SDMElementTypes.ModifyingStoryNode_3011); //$NON-NLS-1$
-		case StructuredNodeEditPart.VISUAL_ID:
+		case StopNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://ns.storydriven.org/sdm/activities/0.1.0?StructuredNode", SDMElementTypes.StructuredNode_2005); //$NON-NLS-1$
-		case StoryPatternEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://ns.storydriven.org/sdm/patterns/0.1.0?StoryPattern", SDMElementTypes.StoryPattern_3008); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://ns.storydriven.org/sdm/activities/0.1.0?StopNode", SDMElementTypes.StopNode_2002); //$NON-NLS-1$
 		case StartNode2EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://ns.storydriven.org/sdm/activities/0.1.0?StartNode", SDMElementTypes.StartNode_3002); //$NON-NLS-1$
 		case JunctionNode2EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://ns.storydriven.org/sdm/activities/0.1.0?JunctionNode", SDMElementTypes.JunctionNode_3001); //$NON-NLS-1$
+		case AttributeAssignmentEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://ns.storydriven.org/sdm/patterns/0.1.0?AttributeAssignment", SDMElementTypes.AttributeAssignment_3013); //$NON-NLS-1$
+		case JunctionNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://ns.storydriven.org/sdm/activities/0.1.0?JunctionNode", SDMElementTypes.JunctionNode_2003); //$NON-NLS-1$
+		case StructuredNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://ns.storydriven.org/sdm/activities/0.1.0?StructuredNode", SDMElementTypes.StructuredNode_2005); //$NON-NLS-1$
+		case PrimitiveVariableEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://ns.storydriven.org/sdm/patterns/0.1.0?PrimitiveVariable", SDMElementTypes.PrimitiveVariable_3014); //$NON-NLS-1$
+		case StatementNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://ns.storydriven.org/sdm/activities/0.1.0?StatementNode", SDMElementTypes.StatementNode_2004); //$NON-NLS-1$
+		case StoryPatternEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://ns.storydriven.org/sdm/patterns/0.1.0?StoryPattern", SDMElementTypes.StoryPattern_3008); //$NON-NLS-1$
+		case TextualExpressionEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://ns.storydriven.org/sdm/expressions/0.1.0?TextualExpression", SDMElementTypes.TextualExpression_3015); //$NON-NLS-1$
+		case StatementNode2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://ns.storydriven.org/sdm/activities/0.1.0?StatementNode", SDMElementTypes.StatementNode_3003); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -224,44 +229,46 @@ public class SDMNavigatorLabelProvider extends LabelProvider implements
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (SDMVisualIDRegistry.getVisualID(view)) {
-		case StatementNodeEditPart.VISUAL_ID:
-			return getStatementNode_2004Text(view);
-		case StatementNode2EditPart.VISUAL_ID:
-			return getStatementNode_3003Text(view);
-		case LinkVariableEditPart.VISUAL_ID:
-			return getLinkVariable_4002Text(view);
-		case PrimitiveVariableEditPart.VISUAL_ID:
-			return getPrimitiveVariable_3014Text(view);
-		case AttributeAssignmentEditPart.VISUAL_ID:
-			return getAttributeAssignment_3013Text(view);
-		case JunctionNodeEditPart.VISUAL_ID:
-			return getJunctionNode_2003Text(view);
-		case StructuredNode2EditPart.VISUAL_ID:
-			return getStructuredNode_3005Text(view);
-		case StartNodeEditPart.VISUAL_ID:
-			return getStartNode_2001Text(view);
 		case ActivityEditPart.VISUAL_ID:
 			return getActivity_1000Text(view);
-		case ModifyingStoryNodeEditPart.VISUAL_ID:
-			return getModifyingStoryNode_2007Text(view);
+		case ObjectVariableEditPart.VISUAL_ID:
+			return getObjectVariable_3012Text(view);
+		case LinkVariableEditPart.VISUAL_ID:
+			return getLinkVariable_4002Text(view);
 		case StopNode2EditPart.VISUAL_ID:
 			return getStopNode_3004Text(view);
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return getActivityEdge_4001Text(view);
-		case ObjectVariableEditPart.VISUAL_ID:
-			return getObjectVariable_3012Text(view);
-		case StopNodeEditPart.VISUAL_ID:
-			return getStopNode_2002Text(view);
+		case StartNodeEditPart.VISUAL_ID:
+			return getStartNode_2001Text(view);
+		case ModifyingStoryNodeEditPart.VISUAL_ID:
+			return getModifyingStoryNode_2007Text(view);
+		case StructuredNode2EditPart.VISUAL_ID:
+			return getStructuredNode_3005Text(view);
 		case ModifyingStoryNode2EditPart.VISUAL_ID:
 			return getModifyingStoryNode_3011Text(view);
-		case StructuredNodeEditPart.VISUAL_ID:
-			return getStructuredNode_2005Text(view);
-		case StoryPatternEditPart.VISUAL_ID:
-			return getStoryPattern_3008Text(view);
+		case StopNodeEditPart.VISUAL_ID:
+			return getStopNode_2002Text(view);
 		case StartNode2EditPart.VISUAL_ID:
 			return getStartNode_3002Text(view);
 		case JunctionNode2EditPart.VISUAL_ID:
 			return getJunctionNode_3001Text(view);
+		case AttributeAssignmentEditPart.VISUAL_ID:
+			return getAttributeAssignment_3013Text(view);
+		case JunctionNodeEditPart.VISUAL_ID:
+			return getJunctionNode_2003Text(view);
+		case StructuredNodeEditPart.VISUAL_ID:
+			return getStructuredNode_2005Text(view);
+		case PrimitiveVariableEditPart.VISUAL_ID:
+			return getPrimitiveVariable_3014Text(view);
+		case StatementNodeEditPart.VISUAL_ID:
+			return getStatementNode_2004Text(view);
+		case StoryPatternEditPart.VISUAL_ID:
+			return getStoryPattern_3008Text(view);
+		case TextualExpressionEditPart.VISUAL_ID:
+			return getTextualExpression_3015Text(view);
+		case StatementNode2EditPart.VISUAL_ID:
+			return getStatementNode_3003Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -554,6 +561,26 @@ public class SDMNavigatorLabelProvider extends LabelProvider implements
 		} else {
 			SDMDiagramEditorPlugin.getInstance().logError(
 					"No domain element for view with visualID = " + 3008); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getTextualExpression_3015Text(View view) {
+		IParser parser = SDMParserProvider.getParser(
+				SDMElementTypes.TextualExpression_3015,
+				view.getElement() != null ? view.getElement() : view,
+				SDMVisualIDRegistry
+						.getType(TextualExpressionEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			SDMDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 3015); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

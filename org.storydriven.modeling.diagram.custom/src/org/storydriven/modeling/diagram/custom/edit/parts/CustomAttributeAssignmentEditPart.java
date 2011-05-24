@@ -4,6 +4,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.modeling.diagram.custom.SdmDiagramConstants;
 import org.storydriven.modeling.diagram.edit.parts.AttributeAssignmentEditPart;
+import org.storydriven.modeling.expressions.TextualExpression;
 import org.storydriven.modeling.patterns.AttributeAssignment;
 
 public class CustomAttributeAssignmentEditPart extends AttributeAssignmentEditPart
@@ -57,7 +58,7 @@ public class CustomAttributeAssignmentEditPart extends AttributeAssignmentEditPa
 
 		if (aa.getValueExpression() != null)
 		{
-			text += aa.getValueExpression().toString();
+			text += ((TextualExpression) aa.getValueExpression()).getExpressionText();
 		}
 		else
 		{

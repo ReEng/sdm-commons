@@ -39,6 +39,8 @@ import org.storydriven.modeling.diagram.edit.parts.StartNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StartNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNodeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.StatementNodeStatementNodeCompartment2EditPart;
+import org.storydriven.modeling.diagram.edit.parts.StatementNodeStatementNodeCompartmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StopNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StoryPatternEditPart;
@@ -47,6 +49,7 @@ import org.storydriven.modeling.diagram.edit.parts.StructuredNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartment2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartmentEditPart;
+import org.storydriven.modeling.diagram.edit.parts.TextualExpressionEditPart;
 import org.storydriven.modeling.diagram.part.Messages;
 import org.storydriven.modeling.diagram.part.SDMVisualIDRegistry;
 
@@ -240,253 +243,6 @@ public class SDMNavigatorContentProvider implements ICommonContentProvider {
 	private Object[] getViewChildren(View view, Object parentElement) {
 		switch (SDMVisualIDRegistry.getVisualID(view)) {
 
-		case StatementNodeEditPart.VISUAL_ID: {
-			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_StatementNode_2004_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_StatementNode_2004_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case StatementNode2EditPart.VISUAL_ID: {
-			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_StatementNode_3003_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_StatementNode_3003_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case LinkVariableEditPart.VISUAL_ID: {
-			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			SDMNavigatorGroup target = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_LinkVariable_4002_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			SDMNavigatorGroup source = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_LinkVariable_4002_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					SDMVisualIDRegistry
-							.getType(ObjectVariableEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					SDMVisualIDRegistry
-							.getType(PrimitiveVariableEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					SDMVisualIDRegistry
-							.getType(ObjectVariableEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case PrimitiveVariableEditPart.VISUAL_ID: {
-			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_PrimitiveVariable_3014_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			return result.toArray();
-		}
-
-		case JunctionNodeEditPart.VISUAL_ID: {
-			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_JunctionNode_2003_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_JunctionNode_2003_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case StructuredNode2EditPart.VISUAL_ID: {
-			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_StructuredNode_3005_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_StructuredNode_3005_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					SDMVisualIDRegistry
-							.getType(StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					SDMVisualIDRegistry
-							.getType(JunctionNode2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					SDMVisualIDRegistry
-							.getType(StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					SDMVisualIDRegistry.getType(StartNode2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					SDMVisualIDRegistry
-							.getType(StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					SDMVisualIDRegistry.getType(StopNode2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					SDMVisualIDRegistry
-							.getType(StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					SDMVisualIDRegistry
-							.getType(StatementNode2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					SDMVisualIDRegistry
-							.getType(StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					SDMVisualIDRegistry
-							.getType(StructuredNode2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					SDMVisualIDRegistry
-							.getType(StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					SDMVisualIDRegistry
-							.getType(ModifyingStoryNode2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					SDMVisualIDRegistry
-							.getType(StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					SDMVisualIDRegistry
-							.getType(StructuredNode2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case StartNodeEditPart.VISUAL_ID: {
-			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_StartNode_2001_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_StartNode_2001_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
 		case ActivityEditPart.VISUAL_ID: {
 			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
 			Diagram sv = (Diagram) view;
@@ -533,30 +289,31 @@ public class SDMNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case ModifyingStoryNodeEditPart.VISUAL_ID: {
+		case ObjectVariableEditPart.VISUAL_ID: {
 			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_ModifyingStoryNode_2007_incominglinks,
+					Messages.NavigatorGroupName_ObjectVariable_3012_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_ModifyingStoryNode_2007_outgoinglinks,
+					Messages.NavigatorGroupName_ObjectVariable_3012_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
 					SDMVisualIDRegistry
-							.getType(ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID));
+							.getType(ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					SDMVisualIDRegistry.getType(StoryPatternEditPart.VISUAL_ID));
+					SDMVisualIDRegistry
+							.getType(AttributeAssignmentEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+					SDMVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+					SDMVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
@@ -564,6 +321,40 @@ public class SDMNavigatorContentProvider implements ICommonContentProvider {
 			}
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case LinkVariableEditPart.VISUAL_ID: {
+			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			SDMNavigatorGroup target = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_LinkVariable_4002_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			SDMNavigatorGroup source = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_LinkVariable_4002_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					SDMVisualIDRegistry
+							.getType(ObjectVariableEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					SDMVisualIDRegistry
+							.getType(PrimitiveVariableEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					SDMVisualIDRegistry
+							.getType(ObjectVariableEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
 			}
 			return result.toArray();
 		}
@@ -724,31 +515,180 @@ public class SDMNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case ObjectVariableEditPart.VISUAL_ID: {
+		case StartNodeEditPart.VISUAL_ID: {
 			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_ObjectVariable_3012_incominglinks,
+					Messages.NavigatorGroupName_StartNode_2001_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_ObjectVariable_3012_outgoinglinks,
+					Messages.NavigatorGroupName_StartNode_2001_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case ModifyingStoryNodeEditPart.VISUAL_ID: {
+			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_ModifyingStoryNode_2007_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_ModifyingStoryNode_2007_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
 					SDMVisualIDRegistry
-							.getType(ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart.VISUAL_ID));
+							.getType(ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					SDMVisualIDRegistry
-							.getType(AttributeAssignmentEditPart.VISUAL_ID));
+					SDMVisualIDRegistry.getType(StoryPatternEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
+					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
+					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case StructuredNode2EditPart.VISUAL_ID: {
+			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_StructuredNode_3005_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_StructuredNode_3005_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					SDMVisualIDRegistry
+							.getType(StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					SDMVisualIDRegistry
+							.getType(JunctionNode2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					SDMVisualIDRegistry
+							.getType(StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					SDMVisualIDRegistry.getType(StartNode2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					SDMVisualIDRegistry
+							.getType(StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					SDMVisualIDRegistry.getType(StopNode2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					SDMVisualIDRegistry
+							.getType(StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					SDMVisualIDRegistry
+							.getType(StatementNode2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					SDMVisualIDRegistry
+							.getType(StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					SDMVisualIDRegistry
+							.getType(StructuredNode2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					SDMVisualIDRegistry
+							.getType(StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					SDMVisualIDRegistry
+							.getType(ModifyingStoryNode2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					SDMVisualIDRegistry
+							.getType(StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					SDMVisualIDRegistry
+							.getType(StructuredNode2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case ModifyingStoryNode2EditPart.VISUAL_ID: {
+			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_ModifyingStoryNode_3011_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_ModifyingStoryNode_3011_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					SDMVisualIDRegistry
+							.getType(ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					SDMVisualIDRegistry.getType(StoryPatternEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
@@ -787,24 +727,70 @@ public class SDMNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case ModifyingStoryNode2EditPart.VISUAL_ID: {
+		case StartNode2EditPart.VISUAL_ID: {
 			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_ModifyingStoryNode_3011_incominglinks,
+					Messages.NavigatorGroupName_StartNode_3002_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_ModifyingStoryNode_3011_outgoinglinks,
+					Messages.NavigatorGroupName_StartNode_3002_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					SDMVisualIDRegistry
-							.getType(ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					SDMVisualIDRegistry.getType(StoryPatternEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case JunctionNode2EditPart.VISUAL_ID: {
+			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_JunctionNode_3001_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_JunctionNode_3001_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case JunctionNodeEditPart.VISUAL_ID: {
+			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_JunctionNode_2003_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_JunctionNode_2003_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
@@ -910,6 +896,59 @@ public class SDMNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
+		case PrimitiveVariableEditPart.VISUAL_ID: {
+			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_PrimitiveVariable_3014_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					SDMVisualIDRegistry.getType(LinkVariableEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case StatementNodeEditPart.VISUAL_ID: {
+			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_StatementNode_2004_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
+					Messages.NavigatorGroupName_StatementNode_2004_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					SDMVisualIDRegistry
+							.getType(StatementNodeStatementNodeCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					SDMVisualIDRegistry
+							.getType(TextualExpressionEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
 		case StoryPatternEditPart.VISUAL_ID: {
 			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
 			Node sv = (Node) view;
@@ -935,43 +974,25 @@ public class SDMNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case StartNode2EditPart.VISUAL_ID: {
+		case StatementNode2EditPart.VISUAL_ID: {
 			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_StartNode_3002_incominglinks,
+					Messages.NavigatorGroupName_StatementNode_3003_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_StartNode_3002_outgoinglinks,
+					Messages.NavigatorGroupName_StatementNode_3003_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case JunctionNode2EditPart.VISUAL_ID: {
-			LinkedList<SDMAbstractNavigatorItem> result = new LinkedList<SDMAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			SDMNavigatorGroup incominglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_JunctionNode_3001_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			SDMNavigatorGroup outgoinglinks = new SDMNavigatorGroup(
-					Messages.NavigatorGroupName_JunctionNode_3001_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					SDMVisualIDRegistry
+							.getType(StatementNodeStatementNodeCompartment2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					SDMVisualIDRegistry
+							.getType(TextualExpressionEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					SDMVisualIDRegistry.getType(ActivityEdgeEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,

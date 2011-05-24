@@ -8,6 +8,7 @@ import org.storydriven.modeling.activities.ActivityEdge;
 import org.storydriven.modeling.activities.EdgeGuard;
 import org.storydriven.modeling.diagram.custom.util.SdmUtility;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEdgeGuardConstraintLabelEditPart;
+import org.storydriven.modeling.expressions.TextualExpression;
 
 
 public class CustomActivityEdgeGuardConstraintLabelEditPart extends ActivityEdgeGuardConstraintLabelEditPart
@@ -50,7 +51,7 @@ public class CustomActivityEdgeGuardConstraintLabelEditPart extends ActivityEdge
 		String text = "hihihi";
 		if (edge.getGuardExpression() != null)
 		{
-			text = format(edge.getGuardExpression().toString());
+			text = format(((TextualExpression) edge.getGuardExpression()).getExpressionText());
 		}
 		else if (edge.getGuard() != EdgeGuard.NONE)
 		{
