@@ -359,6 +359,10 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_Y55xwBzIEeChOvWwuwx7tQ" name="calls">
+      <ownedComment xmi:id="_uksrMJKxEeCoWcgn2XgBaQ">
+        <body>This package contains all classes for modeling calls to activities and EOperations&#xD;
+from within an activity.</body>
+      </ownedComment>
       <elementImport xmi:id="_07wWEB2QEeCKeJCjS51luQ">
         <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
       </elementImport>
@@ -584,6 +588,10 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_gsByQLN1Ed-vJ9Qpen_Iuw" name="expressions">
+      <ownedComment xmi:id="_OScPUJKyEeCoWcgn2XgBaQ">
+        <body>The base package for all expressions which can be used for modeling activities&#xD;
+and patterns.</body>
+      </ownedComment>
       <packagedElement xmi:type="uml:Association" xmi:id="_YsG4QBzGEeChOvWwuwx7tQ" name="HasValueType" memberEnd="_YsG4QRzGEeChOvWwuwx7tQ _YsHfUhzGEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_YsG4QRzGEeChOvWwuwx7tQ" name="literalExpression" type="_-CqUcBzFEeChOvWwuwx7tQ" association="_YsG4QBzGEeChOvWwuwx7tQ">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YsHfURzGEeChOvWwuwx7tQ" value="*"/>
@@ -617,7 +625,7 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_Zu35oBzCEeChOvWwuwx7tQ" name="LogicOperator">
         <ownedComment xmi:id="_-IZ60BzrEeChOvWwuwx7tQ" annotatedElement="_Zu35oBzCEeChOvWwuwx7tQ">
-          <body>Defines the operators for bninary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression.</body>
+          <body>Defines the operators for binary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression.</body>
         </ownedComment>
         <ownedLiteral xmi:id="_oMKiQBzFEeChOvWwuwx7tQ" name="AND"/>
         <ownedLiteral xmi:id="_ovlYYBzFEeChOvWwuwx7tQ" name="OR"/>
@@ -771,6 +779,10 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_ZYPbsLbPEd-5oaYsE5oIPw" name="patterns">
+      <ownedComment xmi:id="_Ue6_sJKyEeCoWcgn2XgBaQ">
+        <body>This package contains all classes for modeling story patterns that may be &#xD;
+embedded into StoryActivityNodes of an Activity.</body>
+      </ownedComment>
       <packagedElement xmi:type="uml:Package" xmi:id="_qb_GcBzeEeChOvWwuwx7tQ" name="expressions">
         <packagedElement xmi:type="uml:Class" xmi:id="_sliM4BzeEeChOvWwuwx7tQ" name="AttributeValueExpression">
           <ownedComment xmi:id="_BiPSgBzuEeChOvWwuwx7tQ" annotatedElement="_sliM4BzeEeChOvWwuwx7tQ">
@@ -1042,6 +1054,10 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
+        <ownedComment xmi:id="_pw8L0JKyEeCoWcgn2XgBaQ" annotatedElement="762a7829-3f0c-4d56-9644-9e12504ce2f4">
+          <body>A Story Pattern is a graph rewrite rule that may be embedded into a StoryActivityNode&#xD;
+of an Activity.</body>
+        </ownedComment>
         <generalization xmi:id="_jqC-QLxXEd-Ytrd77fw2LA" general="_e7CFQLLyEd-uk56s-ldeog"/>
         <ownedAttribute xmi:id="5999b52c-f7c5-4bc4-87ad-ef18581fea6a" name="variable" visibility="public" type="_ieKckGHwEeCDNuSrVjgXCA" aggregation="composite" association="71c51c4d-b7d4-44e9-8970-b4d9a946910c">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA1T87KwEd-DYIlz5ANeHA" value="*"/>
