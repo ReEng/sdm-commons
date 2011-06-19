@@ -25,6 +25,7 @@
         visualID="3015"
         editPartClassName="TextualExpressionEditPart"
         itemSemanticEditPolicyClassName="TextualExpressionItemSemanticEditPolicy"
+        notationViewFactoryClassName="TextualExpressionViewFactory"
         canonicalEditPolicyClassName="TextualExpressionCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="TextualExpressionGraphicalNodeEditPolicy"
         createCommandClassName="TextualExpressionCreateCommand"

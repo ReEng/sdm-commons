@@ -7,6 +7,7 @@ import org.storydriven.modeling.diagram.edit.parts.AttributeAssignmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableBindingOperatorEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableClassifierLabelEditPart;
+import org.storydriven.modeling.diagram.edit.parts.ObjectVariableEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableClassifierLabelEditPart;
 import org.storydriven.modeling.diagram.edit.parts.SDMEditPartFactory;
@@ -52,6 +53,8 @@ public class CustomSDMEditPartFactory extends SDMEditPartFactory {
 			case ActivityEdgeGuardConstraintLabelEditPart.VISUAL_ID:
 				return new CustomActivityEdgeGuardConstraintLabelEditPart(view);
 				
+			case ObjectVariableEditPart.VISUAL_ID:
+				return new CustomObjectVariableEditPart(view);
 			/* In case MatchingStoryNodes strike back add this:
 			 * 	case MatchingStoryNodeEditPart.VISUAL_ID:
 			 *		return new CustomMatchingStoryNodeEditPart(view);

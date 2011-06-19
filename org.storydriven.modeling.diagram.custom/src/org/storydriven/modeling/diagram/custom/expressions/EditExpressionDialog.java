@@ -143,6 +143,7 @@ public class EditExpressionDialog extends Dialog {
 	@Override
 	protected void okPressed() {
 		setReturnCode(OK);
+		
 		CompoundCommand ccmd = new CompoundCommand();
 		SetCommand cmd = new SetCommand(commandReceiver, 
 										expression, 
@@ -321,6 +322,8 @@ public class EditExpressionDialog extends Dialog {
 	}
 
 	public void setChangeAttributeCommand(Command changeAttributeCommand, TransactionalEditingDomain transactionalEditingDomain) {
+		
+		//TODO Refactor this. Name is missleading and deprecated.
 		this.commandReceiver = transactionalEditingDomain;
 	}
 

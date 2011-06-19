@@ -180,6 +180,17 @@
                tooltip="This will toggle they isKey Attribute of the Attribute.">
          </action>
       </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="org.storydriven.modeling.diagram.custom.expressions.StopNodeReturnExpression"
+            objectClass="org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart">
+         <action
+               class="org.storydriven.modeling.diagram.custom.expressions.EditStopNodeReturnExpressionAction"
+               id="org.storydriven.modeling.diagram.custom.expressions.EditStopNodeReturnExpression"
+               label="Edit Return Value Expression"
+               tooltip="This will toggle whether the storynode is matching or modifying">
+         </action>
+      </objectContribution>
    </extension>
    <extension
          point="org.storydriven.modeling.diagram.custom.expressionSourceViewerExtension">
