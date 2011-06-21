@@ -359,7 +359,7 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_Y55xwBzIEeChOvWwuwx7tQ" name="calls">
-      <ownedComment xmi:id="_uksrMJKxEeCoWcgn2XgBaQ">
+      <ownedComment xmi:id="_uksrMJKxEeCoWcgn2XgBaQ" annotatedElement="_Y55xwBzIEeChOvWwuwx7tQ">
         <body>This package contains all classes for modeling calls to activities and EOperations&#xD;
 from within an activity.</body>
       </ownedComment>
@@ -588,7 +588,7 @@ from within an activity.</body>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_gsByQLN1Ed-vJ9Qpen_Iuw" name="expressions">
-      <ownedComment xmi:id="_OScPUJKyEeCoWcgn2XgBaQ">
+      <ownedComment xmi:id="_OScPUJKyEeCoWcgn2XgBaQ" annotatedElement="_gsByQLN1Ed-vJ9Qpen_Iuw">
         <body>The base package for all expressions which can be used for modeling activities&#xD;
 and patterns.</body>
       </ownedComment>
@@ -779,7 +779,7 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_ZYPbsLbPEd-5oaYsE5oIPw" name="patterns">
-      <ownedComment xmi:id="_Ue6_sJKyEeCoWcgn2XgBaQ">
+      <ownedComment xmi:id="_Ue6_sJKyEeCoWcgn2XgBaQ" annotatedElement="_ZYPbsLbPEd-5oaYsE5oIPw">
         <body>This package contains all classes for modeling story patterns that may be &#xD;
 embedded into StoryActivityNodes of an Activity.</body>
       </ownedComment>

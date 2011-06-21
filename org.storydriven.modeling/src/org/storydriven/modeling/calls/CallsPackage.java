@@ -22,6 +22,10 @@ import org.storydriven.modeling.SDMPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package contains all classes for modeling calls to activities and EOperations
+ * from within an activity.
+ * <!-- end-model-doc -->
  * @see org.storydriven.modeling.calls.CallsFactory
  * @model kind="package"
  * @generated

@@ -525,6 +525,11 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage
    {
       String source = "http://www.eclipse.org/emf/2002/GenModel";
       addAnnotation(
+         this,
+         source,
+         new String[] {"documentation",
+               "This package contains all classes for modeling calls to activities and EOperations\r\nfrom within an activity."});
+      addAnnotation(
          invocationEClass,
          source,
          new String[] {

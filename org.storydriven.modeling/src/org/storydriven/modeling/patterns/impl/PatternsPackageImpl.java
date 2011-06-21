@@ -1235,10 +1235,10 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       addEEnumLiteral(linkConstraintTypeEEnum, LinkConstraintType.INDEX);
 
       // Create annotations
-      // subsets
-      createSubsetsAnnotations();
       // http://www.eclipse.org/emf/2002/GenModel
       createGenModelAnnotations();
+      // subsets
+      createSubsetsAnnotations();
       // http://www.eclipse.org/uml2/1.1.0/GenModel
       createGenModel_1Annotations();
    }
@@ -1265,6 +1265,12 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
    protected void createGenModelAnnotations ()
    {
       String source = "http://www.eclipse.org/emf/2002/GenModel";
+      addAnnotation(
+         this,
+         source,
+         new String[] {
+               "documentation",
+               "This package contains all classes for modeling story patterns that may be \r\nembedded into StoryActivityNodes of an Activity."});
       addAnnotation(
          bindingStateEEnum.getELiterals().get(2),
          source,
@@ -1301,6 +1307,8 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
          new String[] {
                "documentation",
                "Represents a single container, e.g. a Set or List. ContainmentRelations can be used to add or remove objects to or from this container.\r\nEvery Constraint or AttributeAssignment can use the variable as a container (e.g., \"set->size() > 5\")."});
+      addAnnotation(storyPatternEClass, source, new String[] {"documentation",
+            "A Story Pattern is a graph rewrite rule that may be embedded into a StoryActivityNode\r\nof an Activity."});
    }
 
    /**

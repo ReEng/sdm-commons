@@ -22,6 +22,10 @@ import org.storydriven.modeling.SDMPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * The base package for all expressions which can be used for modeling activities
+ * and patterns.
+ * <!-- end-model-doc -->
  * @see org.storydriven.modeling.expressions.ExpressionsFactory
  * @model kind="package"
  * @generated

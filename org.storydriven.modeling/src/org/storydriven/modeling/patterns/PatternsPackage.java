@@ -23,6 +23,10 @@ import org.storydriven.modeling.SDMPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package contains all classes for modeling story patterns that may be 
+ * embedded into StoryActivityNodes of an Activity.
+ * <!-- end-model-doc -->
  * @see org.storydriven.modeling.patterns.PatternsFactory
  * @model kind="package"
  * @generated

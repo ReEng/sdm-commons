@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.Enumerator;
 /**
  * <!-- begin-user-doc --> A representation of the literals of the enumeration '<em><b>Logic Operator</b></em>', and utility methods for working with them. <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * Defines the operators for bninary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression.
+ * Defines the operators for binary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression.
  * <!-- end-model-doc -->
  * @see org.storydriven.modeling.expressions.ExpressionsPackage#getLogicOperator()
  * @model

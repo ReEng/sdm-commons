@@ -13,6 +13,11 @@ import org.storydriven.modeling.templates.TemplateSignature;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Story Pattern</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A Story Pattern is a graph rewrite rule that may be embedded into a StoryActivityNode
+ * of an Activity.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

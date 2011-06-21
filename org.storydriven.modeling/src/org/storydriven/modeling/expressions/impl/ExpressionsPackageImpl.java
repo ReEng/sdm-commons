@@ -621,12 +621,14 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
    protected void createGenModelAnnotations ()
    {
       String source = "http://www.eclipse.org/emf/2002/GenModel";
+      addAnnotation(this, source, new String[] {"documentation",
+            "The base package for all expressions which can be used for modeling activities\r\nand patterns."});
       addAnnotation(
          logicOperatorEEnum,
          source,
          new String[] {
                "documentation",
-               "Defines the operators for bninary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression."});
+               "Defines the operators for binary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression."});
       addAnnotation(comparingOperatorEEnum, source, new String[] {"documentation",
             "Defines the operators for comparing expressions."});
       addAnnotation(comparingOperatorEEnum.getELiterals().get(6), source, new String[] {"documentation",

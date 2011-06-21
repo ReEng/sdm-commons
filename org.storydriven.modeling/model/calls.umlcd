@@ -399,6 +399,20 @@
     </targetRole>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_InEa8VPHEeCU3puq44liRg" sourceItem="_InEa8FPHEeCU3puq44liRg" targetItem="_HGZH0FPGEeCU3puq44liRg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_mIO-kJxcEeCuYMafrm1l2g" source="_xAy9MCJCEeCMEorpcZtLvw" target="_rX3l3SJCEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#_QpRvAGZsEeCjFI7iCZKgmw"/>
+    <nameVisual xmi:id="_mIO-kpxcEeCuYMafrm1l2g" text="ContainsParameter"/>
+    <sourceRole xmi:id="_mIO-k5xcEeCuYMafrm1l2g" aggregationKind="2" name="containedParameters" navigable="true">
+      <modelElement href="sdm.uml#_UxWXoGZsEeCjFI7iCZKgmw"/>
+      <visibility xmi:id="_mIYvlJxcEeCuYMafrm1l2g" label="+"/>
+      <cardinality xmi:id="_mIYvk5xcEeCuYMafrm1l2g" label="*" max="-1"/>
+    </sourceRole>
+    <targetRole xmi:id="_mIO-lJxcEeCuYMafrm1l2g" name="revContainedParameters">
+      <modelElement href="sdm.uml#_QpRvAWZsEeCjFI7iCZKgmw"/>
+      <visibility xmi:id="_mIYvlpxcEeCuYMafrm1l2g" label="+"/>
+      <cardinality xmi:id="_mIYvlZxcEeCuYMafrm1l2g" label="*" max="-1"/>
+    </targetRole>
+  </edges>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_rXt1ECJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_raFdsBzvEeChOvWwuwx7tQ" item="_rX3l0CJCEeCMEorpcZtLvw" sourceConnectionVisual="_rXt1ESJCEeCMEorpcZtLvw" text="Superclass for invocations of behavior which is specified elsewhere, e.g. in methods (MethodCallExpression) or activities (ActivityCallNode). An invocation has one parameter binding for each parameter (in or out) of the called method/activity. For Callables which are contained in the model (i.e. Activities and OperationExtensions) the Invocation directly points to the callee. OpaqueCallables are directly referenced by (and contained in) the MethodCallExpressions.">
     <modelElement href="sdm.uml#_raFdsBzvEeChOvWwuwx7tQ"/>
   </nodes>
@@ -508,7 +522,7 @@
       </type>
     </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_rX3l3SJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_gfdN4BzIEeChOvWwuwx7tQ" comments="_504VtCR2EeCZkonQmyNaoA" targetConnectionVisual="_rX3l3CJCEeCMEorpcZtLvw _5048wCR2EeCZkonQmyNaoA" name="Callable" abstractClass="true" associationsIn="_rXt02SJCEeCMEorpcZtLvw" associationsOut="_rXt04iJCEeCMEorpcZtLvw _rXt06yJCEeCMEorpcZtLvw" subclassedBy="_rX3l-iJCEeCMEorpcZtLvw _D2TqpyJDEeCMEorpcZtLvw _nt_GECLnEeCLL8iyhYH9-w">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_rX3l3SJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_gfdN4BzIEeChOvWwuwx7tQ" comments="_504VtCR2EeCZkonQmyNaoA" targetConnectionVisual="_rX3l3CJCEeCMEorpcZtLvw _5048wCR2EeCZkonQmyNaoA" name="Callable" abstractClass="true" associationsIn="_rXt02SJCEeCMEorpcZtLvw _mIO-kJxcEeCuYMafrm1l2g" associationsOut="_rXt04iJCEeCMEorpcZtLvw _rXt06yJCEeCMEorpcZtLvw" subclassedBy="_rX3l-iJCEeCMEorpcZtLvw _D2TqpyJDEeCMEorpcZtLvw _nt_GECLnEeCLL8iyhYH9-w">
     <modelElement href="sdm.uml#_gfdN4BzIEeChOvWwuwx7tQ"/>
     <visualProperties xmi:id="_rX3l5yJCEeCMEorpcZtLvw" position="431.0,69.0" size="102.0,28.0"/>
     <visibility xmi:id="_rX3l3iJCEeCMEorpcZtLvw" label="+"/>
@@ -530,8 +544,16 @@
         <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
       </type>
     </attributes>
+    <attributes xmi:id="_mIO-kZxcEeCuYMafrm1l2g" name="containedParameters">
+      <modelElement href="sdm.uml#_UxWXoGZsEeCjFI7iCZKgmw"/>
+      <visibility xmi:id="_mIYvkZxcEeCuYMafrm1l2g" label="+"/>
+      <cardinality xmi:id="_mIYvkpxcEeCuYMafrm1l2g" label="*" max="-1"/>
+      <type xmi:id="_mIYvkJxcEeCuYMafrm1l2g" name="EParameter">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
+      </type>
+    </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_xAy9MCJCEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter" name="EParameter" associationsIn="_rXt04iJCEeCMEorpcZtLvw _rXt06yJCEeCMEorpcZtLvw _rXt0_SJCEeCMEorpcZtLvw _rXt1BiJCEeCMEorpcZtLvw _xaEMwCrdEeCrkKoGytJPbg _HT044CrfEeCrkKoGytJPbg _1aMvcCrfEeCrkKoGytJPbg _18cg4CrfEeCrkKoGytJPbg _HGZH0FPGEeCU3puq44liRg">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_xAy9MCJCEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter" name="EParameter" associationsIn="_rXt04iJCEeCMEorpcZtLvw _rXt06yJCEeCMEorpcZtLvw _rXt0_SJCEeCMEorpcZtLvw _rXt1BiJCEeCMEorpcZtLvw _xaEMwCrdEeCrkKoGytJPbg _HT044CrfEeCrkKoGytJPbg _1aMvcCrfEeCrkKoGytJPbg _18cg4CrfEeCrkKoGytJPbg _HGZH0FPGEeCU3puq44liRg" associationsOut="_mIO-kJxcEeCuYMafrm1l2g">
     <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
     <visualProperties xmi:id="_xA8HICJCEeCMEorpcZtLvw" position="373.0,214.0" size="226.0,68.0"/>
     <stereotypes xmi:id="_xA8HISJCEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQykpcYdEduPJbEsMYXjUQ" name="Metaclass">
