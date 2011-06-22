@@ -13,6 +13,10 @@ import org.storydriven.modeling.expressions.Expression;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Activity Edge</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The ActivityEdge represents the control flow in an activity. It is a dericted connection from one activity to another one. Their exist different kinds of activity edges which are differentiated by the guard attribute.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -39,6 +43,9 @@ public interface ActivityEdge extends ExtendableElement
     * If the meaning of the '<em>Source</em>' reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The source node of this ActivityEdge.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Source</em>' reference.
     * @see #setSource(ActivityNode)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivityEdge_Source()
@@ -87,6 +94,9 @@ public interface ActivityEdge extends ExtendableElement
     * If the meaning of the '<em>Owning Activity</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * Points to the activity this ActivityEdge is contained in.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Owning Activity</em>' container reference.
     * @see #setOwningActivity(Activity)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivityEdge_OwningActivity()
@@ -116,6 +126,9 @@ public interface ActivityEdge extends ExtendableElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The guard defines the kind of the activity edge. The possible kinds of guards are specified by the EdgeGuard enum.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Guard</em>' attribute.
     * @see org.storydriven.modeling.activities.EdgeGuard
     * @see #setGuard(EdgeGuard)
@@ -158,6 +171,9 @@ public interface ActivityEdge extends ExtendableElement
     * If the meaning of the '<em>Target</em>' reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The target node of this ActivityEdge.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Target</em>' reference.
     * @see #setTarget(ActivityNode)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivityEdge_Target()

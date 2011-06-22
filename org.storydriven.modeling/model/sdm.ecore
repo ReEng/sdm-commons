@@ -118,14 +118,33 @@
           ordered="false" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EGenericType"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ActivityEdge" eSuperTypes="#//ExtendableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ActivityEdge represents the control flow in an activity. It is a dericted connection from one activity to another one. Their exist different kinds of activity edges which are differentiated by the guard attribute."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
-          lowerBound="1" eType="#//activities/ActivityNode" eOpposite="#//activities/ActivityNode/incoming"/>
+          lowerBound="1" eType="#//activities/ActivityNode" eOpposite="#//activities/ActivityNode/incoming">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The target node of this ActivityEdge."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
-          lowerBound="1" eType="#//activities/ActivityNode" eOpposite="#//activities/ActivityNode/outgoing"/>
+          lowerBound="1" eType="#//activities/ActivityNode" eOpposite="#//activities/ActivityNode/outgoing">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The source node of this ActivityEdge."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="owningActivity" ordered="false"
-          lowerBound="1" eType="#//activities/Activity" eOpposite="#//activities/Activity/ownedActivityEdge"/>
+          lowerBound="1" eType="#//activities/Activity" eOpposite="#//activities/Activity/ownedActivityEdge">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Points to the activity this ActivityEdge is contained in."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="guard" ordered="false"
-          lowerBound="1" eType="#//activities/EdgeGuard" defaultValueLiteral="NONE"/>
+          lowerBound="1" eType="#//activities/EdgeGuard" defaultValueLiteral="NONE">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The guard defines the kind of the activity edge. The possible kinds of guards are specified by the EdgeGuard enum."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="guardExpression" ordered="false"
           eType="#//expressions/Expression" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -140,20 +159,39 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ActivityNode" abstract="true" eSuperTypes="#//NamedElement #//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Abstract super class for all kinds of nodes that may be added to an activity. This class provides the basic functionality of connecting the activity nodes in the activity by ActivityEdges."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" ordered="false"
-          upperBound="-1" eType="#//activities/ActivityEdge" eOpposite="#//activities/ActivityEdge/source"/>
+          upperBound="-1" eType="#//activities/ActivityEdge" eOpposite="#//activities/ActivityEdge/source">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="All ActivityEdges that leave this activity node. The guards of the outgoing activity edges must be exclusive in order to obtain a well-defined activity."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="owningActivity" ordered="false"
-          eType="#//activities/Activity" eOpposite="#//activities/Activity/ownedActivityNode"/>
+          eType="#//activities/Activity" eOpposite="#//activities/Activity/ownedActivityNode">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Points to the activity this ActivityNode is contained in."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="owningActivityNode" ordered="false"
           eType="#//activities/StructuredNode" eOpposite="#//activities/StructuredNode/ownedActivityNode"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" ordered="false"
-          upperBound="-1" eType="#//activities/ActivityEdge" eOpposite="#//activities/ActivityEdge/target"/>
+          upperBound="-1" eType="#//activities/ActivityEdge" eOpposite="#//activities/ActivityEdge/target">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="All ActivityEdges entering this activity node."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//CommentableElement #//calls/Callable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="owningOperation" ordered="false"
           eType="#//activities/OperationExtension" eOpposite="#//activities/OperationExtension/ownedActivity"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityEdge" upperBound="-1"
-          eType="#//activities/ActivityEdge" containment="true" eOpposite="#//activities/ActivityEdge/owningActivity"/>
+          eType="#//activities/ActivityEdge" containment="true" eOpposite="#//activities/ActivityEdge/owningActivity">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="All ActivityEdges that are contained in this activity."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" ordered="false"
           eType="#//activities/MatchingStoryNode">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -169,7 +207,11 @@
         <eAnnotations source="redefines" references="#//calls/Callable/%duplicates%/outParameter"/>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityNode" ordered="false"
-          upperBound="-1" eType="#//activities/ActivityNode" containment="true" eOpposite="#//activities/ActivityNode/owningActivity"/>
+          upperBound="-1" eType="#//activities/ActivityNode" containment="true" eOpposite="#//activities/ActivityNode/owningActivity">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The activity contains all activity nodes via this reference."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="OperationExtension" eSuperTypes="#//Extension #//calls/Callable">
       <eOperations name="NumberOfOutParams" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -212,8 +254,15 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StoryNode" abstract="true" eSuperTypes="#//activities/ActivityNode">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An activity node containing a story pattern."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="forEach" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specifies whether just one match should be found for the contained pattern (forEach  = false) or whether all matches should be found (forEach = true)."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="storyPattern" ordered="false"
           lowerBound="1" eType="#//patterns/StoryPattern" changeable="false" volatile="true"
           transient="true" derived="true">
@@ -225,19 +274,61 @@
           upperBound="-1" eType="#//activities/ActivityNode" containment="true" eOpposite="#//activities/ActivityNode/owningActivityNode"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="EdgeGuard">
-      <eLiterals name="NONE"/>
-      <eLiterals name="SUCCESS" value="1"/>
-      <eLiterals name="FAILURE" value="2"/>
-      <eLiterals name="EACH_TIME" value="3"/>
-      <eLiterals name="END" value="4"/>
-      <eLiterals name="ELSE" value="5"/>
-      <eLiterals name="BOOL" value="6"/>
-      <eLiterals name="EXCEPTION" value="7"/>
-      <eLiterals name="FINALLY" value="8"/>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This enum is used to model different kinds of activity edges."/>
+      </eAnnotations>
+      <eLiterals name="NONE">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="No guard, only one outgoing activity edge of this kind is supported per activity node. If an edge with EdgeGuard NONE is used, it must be the only edge leaving a state."/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="SUCCESS" value="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Edge will be taken if execution of the souce activity node was successful, e.g., a story pattern was matched successfully. There must be another edge leaving the same node which is of kind FAILURE."/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="FAILURE" value="2">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Edge will be taken if execution of the source activity node was not successful, e.g., a story pattern could not be matched. There must be another edge leaving the same node which is of kind SUCCESS"/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="EACH_TIME" value="3">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Edge may only leave a StoryNode whose forEach attribute is true. It will be taken for each match that can be identified for the story pattern in the foreach StoryNode. There must be another edge leaving the same node which is of kind END"/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="END" value="4">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Edge may only leave a StoryNode whose forEach attribute is true. It will be taken if no more fresh matches for the story pattern in the foreach node can be found."/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="ELSE" value="5">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Complement to the BOOL guard, ELSE may only be used if at least one BOOL activity edge leaves the same state. The edge will be taken if none of the BOOL guards can be evaluated to true"/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="BOOL" value="6">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An activity edge specifying a boolean guard using variables that have been previously used in the activity. Edge will be taken if the guardExpression of the activity edge evaluates to true. More than one BOOL edge is allowed to leave an activity node."/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="EXCEPTION" value="7">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An EXCEPTION edge will be taken if an exception of the  type defined by the ExceptionVariable connected to the activity edge occured while executing the source activity node of the edge. More than one edge of kind EXCEPTION is allowed to leave a node."/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="FINALLY" value="8">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An activity edge of kind FINALLY may only leave an activity node that has at least one other outgoing edge of kind EXCEPTION. The finally edge will be taken after the source node has been executed and after, possibly, the EXCEPTION edge has been taken."/>
+        </eAnnotations>
+      </eLiterals>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="JunctionNode" eSuperTypes="#//activities/ActivityNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="StartNode" eSuperTypes="#//activities/ActivityNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="StatementNode" eSuperTypes="#//activities/ActivityNode">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A statement node is a node that just contains an expression defining its behavior. In combination with a textual expression, arbitrary souce code might be added by using StatementNodes."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="statementExpression"
           ordered="false" lowerBound="1" eType="#//expressions/Expression" containment="true"/>
     </eClassifiers>

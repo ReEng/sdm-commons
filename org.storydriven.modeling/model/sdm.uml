@@ -118,6 +118,9 @@
         <generalization xmi:id="_AI5vELxZEd-Ytrd77fw2LA" general="_e7CFQLLyEd-uk56s-ldeog"/>
         <generalization xmi:id="_Bo3FcBzOEeChOvWwuwx7tQ" general="_gfdN4BzIEeChOvWwuwx7tQ"/>
         <ownedAttribute xmi:id="c38d6d26-77ad-489b-aef2-755014fcadb9" name="ownedActivityNode" visibility="public" type="0ef98ed0-902e-4764-91ad-f76566d6f80e" aggregation="composite" association="a0ea066c-e9db-4626-bb5b-e4bf75c4f4d4">
+          <ownedComment xmi:id="_Sl1TsJ0REeCuYMafrm1l2g" annotatedElement="c38d6d26-77ad-489b-aef2-755014fcadb9">
+            <body>The activity contains all activity nodes via this reference.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OAyQoLKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OAyQobKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
@@ -126,6 +129,9 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PwFo0b0pEd-DQ5q3aRKcIw"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_kUOVcBzHEeChOvWwuwx7tQ" name="ownedActivityEdge" type="39579588-fb90-4211-b314-2c5bc4ee2403" isOrdered="true" aggregation="composite" association="_kUNHUBzHEeChOvWwuwx7tQ">
+          <ownedComment xmi:id="_7gi9sJ0REeCuYMafrm1l2g" annotatedElement="_kUOVcBzHEeChOvWwuwx7tQ">
+            <body>All ActivityEdges that are contained in this activity.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kUOVchzHEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kUOVcRzHEeChOvWwuwx7tQ"/>
         </ownedAttribute>
@@ -148,10 +154,24 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="39579588-fb90-4211-b314-2c5bc4ee2403" name="ActivityEdge">
+        <ownedComment xmi:id="_t8uBwJ0QEeCuYMafrm1l2g" annotatedElement="39579588-fb90-4211-b314-2c5bc4ee2403">
+          <body>The ActivityEdge represents the control flow in an activity. It is a dericted connection from one activity to another one. Their exist different kinds of activity edges which are differentiated by the guard attribute.</body>
+        </ownedComment>
         <generalization xmi:id="_HuhpwLyzEd-eCY_Peu5fFw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
-        <ownedAttribute xmi:id="0eece472-5dd6-4408-b6d5-d83ba21b2208" name="target" visibility="public" type="0ef98ed0-902e-4764-91ad-f76566d6f80e" association="feba2068-db66-4ffd-9f3a-8450ab00eb0d"/>
-        <ownedAttribute xmi:id="9c8c19ca-fef2-4635-a0a6-9b783dfe4579" name="source" visibility="public" type="0ef98ed0-902e-4764-91ad-f76566d6f80e" association="87a955bf-4e1d-40c5-bc6d-13f0e9c10b26"/>
+        <ownedAttribute xmi:id="0eece472-5dd6-4408-b6d5-d83ba21b2208" name="target" visibility="public" type="0ef98ed0-902e-4764-91ad-f76566d6f80e" association="feba2068-db66-4ffd-9f3a-8450ab00eb0d">
+          <ownedComment xmi:id="_i7t9AJ0REeCuYMafrm1l2g" annotatedElement="0eece472-5dd6-4408-b6d5-d83ba21b2208">
+            <body>The target node of this ActivityEdge.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="9c8c19ca-fef2-4635-a0a6-9b783dfe4579" name="source" visibility="public" type="0ef98ed0-902e-4764-91ad-f76566d6f80e" association="87a955bf-4e1d-40c5-bc6d-13f0e9c10b26">
+          <ownedComment xmi:id="_gBckQJ0REeCuYMafrm1l2g" annotatedElement="9c8c19ca-fef2-4635-a0a6-9b783dfe4579">
+            <body>The source node of this ActivityEdge.</body>
+          </ownedComment>
+        </ownedAttribute>
         <ownedAttribute xmi:id="b3cdddb7-9d0a-4aaf-9637-50bea176a48f" name="guard" visibility="public" type="44d391e1-c2ec-4500-ac0c-d87b9a9804c1">
+          <ownedComment xmi:id="_6KrMYJ0QEeCuYMafrm1l2g" annotatedElement="b3cdddb7-9d0a-4aaf-9637-50bea176a48f">
+            <body>The guard defines the kind of the activity edge. The possible kinds of guards are specified by the EdgeGuard enum.</body>
+          </ownedComment>
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_0Jvz0LL0Ed-uk56s-ldeog" instance="24708a8c-e663-44ba-8f50-fbe8728d34b8"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_zN7RIbK6Ed-uk56s-ldeog" name="guardExpression" visibility="public" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_zN6DALK6Ed-uk56s-ldeog">
@@ -162,6 +182,9 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zN7RIrK6Ed-uk56s-ldeog"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_kUNHURzHEeChOvWwuwx7tQ" name="owningActivity" type="1f15de3e-b6d4-423a-b56b-04cc037e043c" association="_kUNHUBzHEeChOvWwuwx7tQ">
+          <ownedComment xmi:id="_2h4EQJ0REeCuYMafrm1l2g" annotatedElement="_kUNHURzHEeChOvWwuwx7tQ">
+            <body>Points to the activity this ActivityEdge is contained in.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kUNuYRzHEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kUNuYBzHEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
@@ -174,17 +197,29 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="0ef98ed0-902e-4764-91ad-f76566d6f80e" name="ActivityNode" isAbstract="true">
+        <ownedComment xmi:id="_9fBgwJ0KEeCuYMafrm1l2g" annotatedElement="0ef98ed0-902e-4764-91ad-f76566d6f80e">
+          <body>Abstract super class for all kinds of nodes that may be added to an activity. This class provides the basic functionality of connecting the activity nodes in the activity by ActivityEdges.</body>
+        </ownedComment>
         <generalization xmi:id="_xOdwQLK5Ed-uk56s-ldeog" general="_tB8FcLK5Ed-uk56s-ldeog"/>
         <generalization xmi:id="__W84QLxZEd-Ytrd77fw2LA" general="_e7CFQLLyEd-uk56s-ldeog"/>
         <ownedAttribute xmi:id="29056c96-b146-4262-acbe-9f82ad541768" name="incoming" visibility="public" type="39579588-fb90-4211-b314-2c5bc4ee2403" association="feba2068-db66-4ffd-9f3a-8450ab00eb0d">
+          <ownedComment xmi:id="_vm-HoJ0REeCuYMafrm1l2g" annotatedElement="29056c96-b146-4262-acbe-9f82ad541768">
+            <body>All ActivityEdges entering this activity node.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OAxCgLKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OAxCgbKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="8cee2d74-0dce-4164-bad1-b56bc8d97577" name="outgoing" visibility="public" type="39579588-fb90-4211-b314-2c5bc4ee2403" association="87a955bf-4e1d-40c5-bc6d-13f0e9c10b26">
+          <ownedComment xmi:id="_oF14gJ0REeCuYMafrm1l2g" annotatedElement="8cee2d74-0dce-4164-bad1-b56bc8d97577">
+            <body>All ActivityEdges that leave this activity node. The guards of the outgoing activity edges must be exclusive in order to obtain a well-defined activity.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OAxpkLKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OAxpkbKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="02f6324e-2986-4092-83b5-05c92533ca68" name="owningActivity" visibility="public" type="1f15de3e-b6d4-423a-b56b-04cc037e043c" association="a0ea066c-e9db-4626-bb5b-e4bf75c4f4d4">
+          <ownedComment xmi:id="_crgjMJ0REeCuYMafrm1l2g" annotatedElement="02f6324e-2986-4092-83b5-05c92533ca68">
+            <body>Points to the activity this ActivityNode is contained in.</body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mD44YLw0Ed-Ytrd77fw2LA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="6c403dc1-70f7-4f30-b878-4934c90b223b" name="owningActivityNode" visibility="public" type="bac68bbf-67d6-474b-81c5-6a12361a7e63" association="049ea66d-1cf5-479f-a776-09368326162d">
@@ -198,6 +233,9 @@
         <generalization xmi:id="_OBD9dbKwEd-DYIlz5ANeHA" general="0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="09ce4f32-4ea3-459e-8d03-555250a5780e" name="StatementNode">
+        <ownedComment xmi:id="_ddn_0J0VEeCuYMafrm1l2g" annotatedElement="09ce4f32-4ea3-459e-8d03-555250a5780e">
+          <body>A statement node is a node that just contains an expression defining its behavior. In combination with a textual expression, arbitrary souce code might be added by using StatementNodes.</body>
+        </ownedComment>
         <generalization xmi:id="_OBD9c7KwEd-DYIlz5ANeHA" general="0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
         <ownedAttribute xmi:id="_OISg0rLyEd-uk56s-ldeog" name="statementExpression" visibility="public" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_OIR5wLLyEd-uk56s-ldeog">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OITH4bLyEd-uk56s-ldeog" value="1"/>
@@ -229,15 +267,54 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="44d391e1-c2ec-4500-ac0c-d87b9a9804c1" name="EdgeGuard">
-        <ownedLiteral xmi:id="24708a8c-e663-44ba-8f50-fbe8728d34b8" name="NONE"/>
-        <ownedLiteral xmi:id="654ff89a-3b27-40cc-b12f-915e95467d51" name="SUCCESS"/>
-        <ownedLiteral xmi:id="08f065b6-c109-4dd2-bb8c-3f60f9ef94a4" name="FAILURE"/>
-        <ownedLiteral xmi:id="4caff1c6-3c54-4e07-82d3-1c4c4067a49e" name="EACH_TIME"/>
-        <ownedLiteral xmi:id="8329e292-1f73-4d36-82fa-ca15b7ce9a3b" name="END"/>
-        <ownedLiteral xmi:id="b924bc47-418b-4565-8e2f-1fa3681cda1c" name="ELSE"/>
-        <ownedLiteral xmi:id="d94c486b-685e-4f50-8108-381eced2a831" name="BOOL"/>
-        <ownedLiteral xmi:id="f8b29fd6-c50b-43cd-a18a-8124cf85ef1b" name="EXCEPTION"/>
-        <ownedLiteral xmi:id="7da092a4-8daa-400b-a73f-c18e172c319b" name="FINALLY"/>
+        <ownedComment xmi:id="_My090J0SEeCuYMafrm1l2g" annotatedElement="44d391e1-c2ec-4500-ac0c-d87b9a9804c1">
+          <body>This enum is used to model different kinds of activity edges.</body>
+        </ownedComment>
+        <ownedLiteral xmi:id="24708a8c-e663-44ba-8f50-fbe8728d34b8" name="NONE">
+          <ownedComment xmi:id="_1UuCsJ0TEeCuYMafrm1l2g" annotatedElement="24708a8c-e663-44ba-8f50-fbe8728d34b8">
+            <body>No guard, only one outgoing activity edge of this kind is supported per activity node. If an edge with EdgeGuard NONE is used, it must be the only edge leaving a state.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="654ff89a-3b27-40cc-b12f-915e95467d51" name="SUCCESS">
+          <ownedComment xmi:id="_9YqrAJ0TEeCuYMafrm1l2g" annotatedElement="654ff89a-3b27-40cc-b12f-915e95467d51">
+            <body>Edge will be taken if execution of the souce activity node was successful, e.g., a story pattern was matched successfully. There must be another edge leaving the same node which is of kind FAILURE.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="08f065b6-c109-4dd2-bb8c-3f60f9ef94a4" name="FAILURE">
+          <ownedComment xmi:id="_CjPScJ0UEeCuYMafrm1l2g" annotatedElement="08f065b6-c109-4dd2-bb8c-3f60f9ef94a4">
+            <body>Edge will be taken if execution of the source activity node was not successful, e.g., a story pattern could not be matched. There must be another edge leaving the same node which is of kind SUCCESS</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="4caff1c6-3c54-4e07-82d3-1c4c4067a49e" name="EACH_TIME">
+          <ownedComment xmi:id="_Iac9cJ0UEeCuYMafrm1l2g" annotatedElement="4caff1c6-3c54-4e07-82d3-1c4c4067a49e">
+            <body>Edge may only leave a StoryNode whose forEach attribute is true. It will be taken for each match that can be identified for the story pattern in the foreach StoryNode. There must be another edge leaving the same node which is of kind END</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="8329e292-1f73-4d36-82fa-ca15b7ce9a3b" name="END">
+          <ownedComment xmi:id="_N6AWYJ0UEeCuYMafrm1l2g" annotatedElement="8329e292-1f73-4d36-82fa-ca15b7ce9a3b">
+            <body>Edge may only leave a StoryNode whose forEach attribute is true. It will be taken if no more fresh matches for the story pattern in the foreach node can be found.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="b924bc47-418b-4565-8e2f-1fa3681cda1c" name="ELSE">
+          <ownedComment xmi:id="_ZkPv8J0UEeCuYMafrm1l2g" annotatedElement="b924bc47-418b-4565-8e2f-1fa3681cda1c">
+            <body>Complement to the BOOL guard, ELSE may only be used if at least one BOOL activity edge leaves the same state. The edge will be taken if none of the BOOL guards can be evaluated to true</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="d94c486b-685e-4f50-8108-381eced2a831" name="BOOL">
+          <ownedComment xmi:id="_UwcCsJ0UEeCuYMafrm1l2g" annotatedElement="d94c486b-685e-4f50-8108-381eced2a831">
+            <body>An activity edge specifying a boolean guard using variables that have been previously used in the activity. Edge will be taken if the guardExpression of the activity edge evaluates to true. More than one BOOL edge is allowed to leave an activity node.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="f8b29fd6-c50b-43cd-a18a-8124cf85ef1b" name="EXCEPTION">
+          <ownedComment xmi:id="_f-3C8J0UEeCuYMafrm1l2g" annotatedElement="f8b29fd6-c50b-43cd-a18a-8124cf85ef1b">
+            <body>An EXCEPTION edge will be taken if an exception of the  type defined by the ExceptionVariable connected to the activity edge occured while executing the source activity node of the edge. More than one edge of kind EXCEPTION is allowed to leave a node.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="7da092a4-8daa-400b-a73f-c18e172c319b" name="FINALLY">
+          <ownedComment xmi:id="_1puz8J0UEeCuYMafrm1l2g" annotatedElement="7da092a4-8daa-400b-a73f-c18e172c319b">
+            <body>An activity edge of kind FINALLY may only leave an activity node that has at least one other outgoing edge of kind EXCEPTION. The finally edge will be taken after the source node has been executed and after, possibly, the EXCEPTION edge has been taken.</body>
+          </ownedComment>
+        </ownedLiteral>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_DxIjgL0pEd-DQ5q3aRKcIw" name="OperationExtension">
         <ownedRule xmi:id="_rf3yEBzuEeChOvWwuwx7tQ" name="NumberOfOutParams">
@@ -296,8 +373,14 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="9f08ef2b-883b-486d-9dfd-53a9300410fa" name="StoryNode" isAbstract="true">
+        <ownedComment xmi:id="_mLE4IJ0VEeCuYMafrm1l2g" annotatedElement="9f08ef2b-883b-486d-9dfd-53a9300410fa">
+          <body>An activity node containing a story pattern.</body>
+        </ownedComment>
         <generalization xmi:id="_OBEkgbKwEd-DYIlz5ANeHA" general="0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
         <ownedAttribute xmi:id="bb2022ce-286d-4865-9482-283f89214bb9" name="forEach" visibility="public">
+          <ownedComment xmi:id="_qYWw4J0VEeCuYMafrm1l2g" annotatedElement="bb2022ce-286d-4865-9482-283f89214bb9">
+            <body>Specifies whether just one match should be found for the contained pattern (forEach  = false) or whether all matches should be found (forEach = true).</body>
+          </ownedComment>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="779bfb46-33f2-49f4-9ad0-8e26ce91a437" name="storyPattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" isReadOnly="true" isDerived="true" isDerivedUnion="true" association="0449f5f3-c15a-402c-882f-1fca689cec32">

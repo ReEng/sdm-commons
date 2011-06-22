@@ -41,6 +41,9 @@ public interface Activity extends CommentableElement, Callable
     * If the meaning of the '<em>Owned Activity Node</em>' containment reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The activity contains all activity nodes via this reference.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Owned Activity Node</em>' containment reference list.
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivity_OwnedActivityNode()
     * @see org.storydriven.modeling.activities.ActivityNode#getOwningActivity
@@ -58,6 +61,9 @@ public interface Activity extends CommentableElement, Callable
     * If the meaning of the '<em>Owned Activity Edge</em>' containment reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * All ActivityEdges that are contained in this activity.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Owned Activity Edge</em>' containment reference list.
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivity_OwnedActivityEdge()
     * @see org.storydriven.modeling.activities.ActivityEdge#getOwningActivity

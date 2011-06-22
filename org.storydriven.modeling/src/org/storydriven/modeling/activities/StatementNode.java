@@ -11,6 +11,10 @@ import org.storydriven.modeling.expressions.Expression;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Statement Node</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A statement node is a node that just contains an expression defining its behavior. In combination with a textual expression, arbitrary souce code might be added by using StatementNodes.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

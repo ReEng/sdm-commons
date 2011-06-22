@@ -11,6 +11,10 @@ import org.storydriven.modeling.patterns.StoryPattern;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Story Node</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An activity node containing a story pattern.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -32,6 +36,9 @@ public interface StoryNode extends ActivityNode
     * If the meaning of the '<em>For Each</em>' attribute isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * Specifies whether just one match should be found for the contained pattern (forEach  = false) or whether all matches should be found (forEach = true).
+    * <!-- end-model-doc -->
     * @return the value of the '<em>For Each</em>' attribute.
     * @see #setForEach(boolean)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getStoryNode_ForEach()

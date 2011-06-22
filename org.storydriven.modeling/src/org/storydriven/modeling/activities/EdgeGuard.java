@@ -17,6 +17,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Edge Guard</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This enum is used to model different kinds of activity edges.
+ * <!-- end-model-doc -->
  * @see org.storydriven.modeling.activities.ActivitiesPackage#getEdgeGuard()
  * @model
  * @generated
@@ -121,6 +124,9 @@ public enum EdgeGuard implements Enumerator
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * No guard, only one outgoing activity edge of this kind is supported per activity node. If an edge with EdgeGuard NONE is used, it must be the only edge leaving a state.
+    * <!-- end-model-doc -->
     * @see #NONE
     * @model
     * @generated
@@ -136,6 +142,9 @@ public enum EdgeGuard implements Enumerator
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * Edge will be taken if execution of the souce activity node was successful, e.g., a story pattern was matched successfully. There must be another edge leaving the same node which is of kind FAILURE.
+    * <!-- end-model-doc -->
     * @see #SUCCESS
     * @model
     * @generated
@@ -151,6 +160,9 @@ public enum EdgeGuard implements Enumerator
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * Edge will be taken if execution of the source activity node was not successful, e.g., a story pattern could not be matched. There must be another edge leaving the same node which is of kind SUCCESS
+    * <!-- end-model-doc -->
     * @see #FAILURE
     * @model
     * @generated
@@ -166,6 +178,9 @@ public enum EdgeGuard implements Enumerator
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * Edge may only leave a StoryNode whose forEach attribute is true. It will be taken for each match that can be identified for the story pattern in the foreach StoryNode. There must be another edge leaving the same node which is of kind END
+    * <!-- end-model-doc -->
     * @see #EACH_TIME
     * @model
     * @generated
@@ -181,6 +196,9 @@ public enum EdgeGuard implements Enumerator
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * Edge may only leave a StoryNode whose forEach attribute is true. It will be taken if no more fresh matches for the story pattern in the foreach node can be found.
+    * <!-- end-model-doc -->
     * @see #END
     * @model
     * @generated
@@ -196,6 +214,9 @@ public enum EdgeGuard implements Enumerator
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * Complement to the BOOL guard, ELSE may only be used if at least one BOOL activity edge leaves the same state. The edge will be taken if none of the BOOL guards can be evaluated to true
+    * <!-- end-model-doc -->
     * @see #ELSE
     * @model
     * @generated
@@ -211,6 +232,9 @@ public enum EdgeGuard implements Enumerator
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * An activity edge specifying a boolean guard using variables that have been previously used in the activity. Edge will be taken if the guardExpression of the activity edge evaluates to true. More than one BOOL edge is allowed to leave an activity node.
+    * <!-- end-model-doc -->
     * @see #BOOL
     * @model
     * @generated
@@ -226,6 +250,9 @@ public enum EdgeGuard implements Enumerator
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * An EXCEPTION edge will be taken if an exception of the  type defined by the ExceptionVariable connected to the activity edge occured while executing the source activity node of the edge. More than one edge of kind EXCEPTION is allowed to leave a node.
+    * <!-- end-model-doc -->
     * @see #EXCEPTION
     * @model
     * @generated
@@ -241,6 +268,9 @@ public enum EdgeGuard implements Enumerator
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * An activity edge of kind FINALLY may only leave an activity node that has at least one other outgoing edge of kind EXCEPTION. The finally edge will be taken after the source node has been executed and after, possibly, the EXCEPTION edge has been taken.
+    * <!-- end-model-doc -->
     * @see #FINALLY
     * @model
     * @generated

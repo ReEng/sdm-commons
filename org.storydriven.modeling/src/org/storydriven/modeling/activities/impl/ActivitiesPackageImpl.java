@@ -1052,22 +1052,129 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
             "Specifies the name of the declared exception variable."});
       addAnnotation(getExceptionVariable_ExceptionType(), source, new String[] {"documentation",
             "Specifies the type of the declared exception variable."});
+      addAnnotation(
+         activityEdgeEClass,
+         source,
+         new String[] {
+               "documentation",
+               "The ActivityEdge represents the control flow in an activity. It is a dericted connection from one activity to another one. Their exist different kinds of activity edges which are differentiated by the guard attribute."});
+      addAnnotation(getActivityEdge_Target(), source, new String[] {"documentation",
+            "The target node of this ActivityEdge."});
+      addAnnotation(getActivityEdge_Source(), source, new String[] {"documentation",
+            "The source node of this ActivityEdge."});
+      addAnnotation(getActivityEdge_OwningActivity(), source, new String[] {"documentation",
+            "Points to the activity this ActivityEdge is contained in."});
+      addAnnotation(
+         getActivityEdge_Guard(),
+         source,
+         new String[] {"documentation",
+               "The guard defines the kind of the activity edge. The possible kinds of guards are specified by the EdgeGuard enum."});
       addAnnotation(getActivityEdge_GuardExpression(), source, new String[] {"documentation",
             "Points to the boolean expression in case of boolean transition guard."});
       addAnnotation(getActivityEdge_GuardException(), source, new String[] {"documentation",
             "Declares variables representing the Exceptions that lead to firing this transition."});
+      addAnnotation(
+         activityNodeEClass,
+         source,
+         new String[] {
+               "documentation",
+               "Abstract super class for all kinds of nodes that may be added to an activity. This class provides the basic functionality of connecting the activity nodes in the activity by ActivityEdges."});
+      addAnnotation(
+         getActivityNode_Outgoing(),
+         source,
+         new String[] {
+               "documentation",
+               "All ActivityEdges that leave this activity node. The guards of the outgoing activity edges must be exclusive in order to obtain a well-defined activity."});
+      addAnnotation(getActivityNode_OwningActivity(), source, new String[] {"documentation",
+            "Points to the activity this ActivityNode is contained in."});
+      addAnnotation(getActivityNode_Incoming(), source, new String[] {"documentation",
+            "All ActivityEdges entering this activity node."});
+      addAnnotation(getActivity_OwnedActivityEdge(), source, new String[] {"documentation",
+            "All ActivityEdges that are contained in this activity."});
       addAnnotation(
          getActivity_Precondition(),
          source,
          new String[] {
                "documentation",
                "References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links."});
+      addAnnotation(getActivity_OwnedActivityNode(), source, new String[] {"documentation",
+            "The activity contains all activity nodes via this reference."});
       addAnnotation(getOperationExtension__NumberOfOutParams__DiagnosticChain_Map(), source, new String[] {
             "documentation", "self.oclAsType(Callable).out->size() <= 1"});
       addAnnotation((getOperationExtension__NumberOfOutParams__DiagnosticChain_Map()).getEParameters().get(0), source,
          new String[] {"documentation", "The chain of diagnostics to which problems are to be appended."});
       addAnnotation((getOperationExtension__NumberOfOutParams__DiagnosticChain_Map()).getEParameters().get(1), source,
          new String[] {"documentation", "The cache of context-specific information."});
+      addAnnotation(storyNodeEClass, source, new String[] {"documentation",
+            "An activity node containing a story pattern."});
+      addAnnotation(
+         getStoryNode_ForEach(),
+         source,
+         new String[] {
+               "documentation",
+               "Specifies whether just one match should be found for the contained pattern (forEach  = false) or whether all matches should be found (forEach = true)."});
+      addAnnotation(edgeGuardEEnum, source, new String[] {"documentation",
+            "This enum is used to model different kinds of activity edges."});
+      addAnnotation(
+         edgeGuardEEnum.getELiterals().get(0),
+         source,
+         new String[] {
+               "documentation",
+               "No guard, only one outgoing activity edge of this kind is supported per activity node. If an edge with EdgeGuard NONE is used, it must be the only edge leaving a state."});
+      addAnnotation(
+         edgeGuardEEnum.getELiterals().get(1),
+         source,
+         new String[] {
+               "documentation",
+               "Edge will be taken if execution of the souce activity node was successful, e.g., a story pattern was matched successfully. There must be another edge leaving the same node which is of kind FAILURE."});
+      addAnnotation(
+         edgeGuardEEnum.getELiterals().get(2),
+         source,
+         new String[] {
+               "documentation",
+               "Edge will be taken if execution of the source activity node was not successful, e.g., a story pattern could not be matched. There must be another edge leaving the same node which is of kind SUCCESS"});
+      addAnnotation(
+         edgeGuardEEnum.getELiterals().get(3),
+         source,
+         new String[] {
+               "documentation",
+               "Edge may only leave a StoryNode whose forEach attribute is true. It will be taken for each match that can be identified for the story pattern in the foreach StoryNode. There must be another edge leaving the same node which is of kind END"});
+      addAnnotation(
+         edgeGuardEEnum.getELiterals().get(4),
+         source,
+         new String[] {
+               "documentation",
+               "Edge may only leave a StoryNode whose forEach attribute is true. It will be taken if no more fresh matches for the story pattern in the foreach node can be found."});
+      addAnnotation(
+         edgeGuardEEnum.getELiterals().get(5),
+         source,
+         new String[] {
+               "documentation",
+               "Complement to the BOOL guard, ELSE may only be used if at least one BOOL activity edge leaves the same state. The edge will be taken if none of the BOOL guards can be evaluated to true"});
+      addAnnotation(
+         edgeGuardEEnum.getELiterals().get(6),
+         source,
+         new String[] {
+               "documentation",
+               "An activity edge specifying a boolean guard using variables that have been previously used in the activity. Edge will be taken if the guardExpression of the activity edge evaluates to true. More than one BOOL edge is allowed to leave an activity node."});
+      addAnnotation(
+         edgeGuardEEnum.getELiterals().get(7),
+         source,
+         new String[] {
+               "documentation",
+               "An EXCEPTION edge will be taken if an exception of the  type defined by the ExceptionVariable connected to the activity edge occured while executing the source activity node of the edge. More than one edge of kind EXCEPTION is allowed to leave a node."});
+      addAnnotation(
+         edgeGuardEEnum.getELiterals().get(8),
+         source,
+         new String[] {
+               "documentation",
+               "An activity edge of kind FINALLY may only leave an activity node that has at least one other outgoing edge of kind EXCEPTION. The finally edge will be taken after the source node has been executed and after, possibly, the EXCEPTION edge has been taken."});
+      addAnnotation(
+         statementNodeEClass,
+         source,
+         new String[] {
+               "documentation",
+               "A statement node is a node that just contains an expression defining its behavior. In combination with a textual expression, arbitrary souce code might be added by using StatementNodes."});
       addAnnotation(getStopNode_FlowStopOnly(), source, new String[] {"documentation",
             "true if subactivity is stopped, but not the whole control flow"});
       addAnnotation(

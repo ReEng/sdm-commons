@@ -13,6 +13,10 @@ import org.storydriven.modeling.NamedElement;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Activity Node</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Abstract super class for all kinds of nodes that may be added to an activity. This class provides the basic functionality of connecting the activity nodes in the activity by ActivityEdges.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -38,6 +42,9 @@ public interface ActivityNode extends NamedElement, CommentableElement
     * If the meaning of the '<em>Incoming</em>' reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * All ActivityEdges entering this activity node.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Incoming</em>' reference list.
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivityNode_Incoming()
     * @see org.storydriven.modeling.activities.ActivityEdge#getTarget
@@ -55,6 +62,9 @@ public interface ActivityNode extends NamedElement, CommentableElement
     * If the meaning of the '<em>Outgoing</em>' reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * All ActivityEdges that leave this activity node. The guards of the outgoing activity edges must be exclusive in order to obtain a well-defined activity.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Outgoing</em>' reference list.
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivityNode_Outgoing()
     * @see org.storydriven.modeling.activities.ActivityEdge#getSource
@@ -98,6 +108,9 @@ public interface ActivityNode extends NamedElement, CommentableElement
     * If the meaning of the '<em>Owning Activity</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * Points to the activity this ActivityNode is contained in.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Owning Activity</em>' container reference.
     * @see #setOwningActivity(Activity)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivityNode_OwningActivity()
