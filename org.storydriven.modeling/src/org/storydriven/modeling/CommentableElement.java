@@ -9,6 +9,10 @@ package org.storydriven.modeling;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Commentable Element</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Abstract super class for all meta-model elements that may carry a comment in form of a string.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

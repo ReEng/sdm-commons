@@ -12,6 +12,10 @@ import org.eclipse.emf.ecore.EGenericType;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Typed Element</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Abstract super class for all meta-model elements that are typed by means of an EClassifier or an EGenericType.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

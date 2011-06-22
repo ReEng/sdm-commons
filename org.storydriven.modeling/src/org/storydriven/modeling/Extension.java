@@ -13,6 +13,10 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Extension</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Abstract super class for an Extension that can be defined for an object.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

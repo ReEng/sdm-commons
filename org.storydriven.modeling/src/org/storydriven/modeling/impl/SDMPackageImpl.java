@@ -554,12 +554,12 @@ public class SDMPackageImpl extends EPackageImpl implements SDMPackage
       createResource(eNS_URI);
 
       // Create annotations
+      // http://www.eclipse.org/emf/2002/GenModel
+      createGenModelAnnotations();
       // union
       createUnionAnnotations();
       // subsets
       createSubsetsAnnotations();
-      // http://www.eclipse.org/emf/2002/GenModel
-      createGenModelAnnotations();
    }
 
    /**
@@ -597,10 +597,35 @@ public class SDMPackageImpl extends EPackageImpl implements SDMPackage
    {
       String source = "http://www.eclipse.org/emf/2002/GenModel";
       addAnnotation(
+         this,
+         source,
+         new String[] {
+               "documentation",
+               "The modeling package is the root package for the SDM meta-model. It defines several abstract super classes which implement an extension mechanism as well as reoccuring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element."});
+      addAnnotation(
+         typedElementEClass,
+         source,
+         new String[] {"documentation",
+               "Abstract super class for all meta-model elements that are typed by means of an EClassifier or an EGenericType."});
+      addAnnotation(
+         extendableElementEClass,
+         source,
+         new String[] {
+               "documentation",
+               "Abstract base class for the whole SDM model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references."});
+      addAnnotation(extensionEClass, source, new String[] {"documentation",
+            "Abstract super class for an Extension that can be defined for an object."});
+      addAnnotation(commentableElementEClass, source, new String[] {"documentation",
+            "Abstract super class for all meta-model elements that may carry a comment in form of a string."});
+      addAnnotation(
          variableEClass,
          source,
          new String[] {"documentation",
                "Represents a variable which can be, for example, an object variable, an attribute, or any other kind of variable."});
+      addAnnotation(namedElementEClass, source, new String[] {"documentation",
+            "Abstract super class for all meta-model elements that carry a name. "});
+      addAnnotation(getNamedElement_Name(), source, new String[] {"documentation",
+            "The name attribute of a meta-model element."});
    }
 
 } // SDMPackageImpl

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
   <uml:Package xmi:id="bd7155bb-4f57-4868-b74a-5672b1eac640" name="modeling">
+    <ownedComment xmi:id="_2szqgJxkEeCuYMafrm1l2g" annotatedElement="bd7155bb-4f57-4868-b74a-5672b1eac640">
+      <body>The modeling package is the root package for the SDM meta-model. It defines several abstract super classes which implement an extension mechanism as well as reoccuring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element.</body>
+    </ownedComment>
     <elementImport xmi:id="_lO7FMLLyEd-uk56s-ldeog">
       <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </elementImport>
@@ -1279,6 +1282,9 @@ Every Constraint or AttributeAssignment can use the variable as a container (e.g
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_HPoxgLLzEd-uk56s-ldeog" name="HasType" memberEnd="_HPoxgbLzEd-uk56s-ldeog _HPpYkbLzEd-uk56s-ldeog">
+      <ownedComment xmi:id="_rmak4JxkEeCuYMafrm1l2g" annotatedElement="_HPoxgLLzEd-uk56s-ldeog">
+        <body>The EClassifier this model element is typed over.</body>
+      </ownedComment>
       <ownedEnd xmi:id="_HPoxgbLzEd-uk56s-ldeog" name="typedElement" visibility="public" type="__xUl0LLyEd-uk56s-ldeog" association="_HPoxgLLzEd-uk56s-ldeog">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HPpYkLLzEd-uk56s-ldeog" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HPoxgrLzEd-uk56s-ldeog"/>
@@ -1316,12 +1322,21 @@ Every Constraint or AttributeAssignment can use the variable as a container (e.g
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_tB8FcLK5Ed-uk56s-ldeog" name="NamedElement" isAbstract="true">
+      <ownedComment xmi:id="_beYKUJxkEeCuYMafrm1l2g" annotatedElement="_tB8FcLK5Ed-uk56s-ldeog">
+        <body>Abstract super class for all meta-model elements that carry a name. </body>
+      </ownedComment>
       <generalization xmi:id="_3_6b0LyyEd-eCY_Peu5fFw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
       <ownedAttribute xmi:id="9a70c295-e052-4eb6-a68c-778c528f658f" name="name" visibility="public">
+        <ownedComment xmi:id="_f_Jm0JxkEeCuYMafrm1l2g" annotatedElement="9a70c295-e052-4eb6-a68c-778c528f658f">
+          <body>The name attribute of a meta-model element.</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_e7CFQLLyEd-uk56s-ldeog" name="CommentableElement" isAbstract="true">
+      <ownedComment xmi:id="_XD2fwJxkEeCuYMafrm1l2g" annotatedElement="_e7CFQLLyEd-uk56s-ldeog">
+        <body>Abstract super class for all meta-model elements that may carry a comment in form of a string.</body>
+      </ownedComment>
       <generalization xmi:id="_5NGAoLyyEd-eCY_Peu5fFw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
       <ownedAttribute xmi:id="_l9XfkLLyEd-uk56s-ldeog" name="comment" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -1329,6 +1344,9 @@ Every Constraint or AttributeAssignment can use the variable as a container (e.g
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="__xUl0LLyEd-uk56s-ldeog" name="TypedElement" isAbstract="true">
+      <ownedComment xmi:id="_iSb4EJxkEeCuYMafrm1l2g" annotatedElement="__xUl0LLyEd-uk56s-ldeog">
+        <body>Abstract super class for all meta-model elements that are typed by means of an EClassifier or an EGenericType.</body>
+      </ownedComment>
       <generalization xmi:id="_3aIOMLyyEd-eCY_Peu5fFw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
       <ownedAttribute xmi:id="_HPpYkbLzEd-uk56s-ldeog" name="type" isReadOnly="true" isDerived="true" isDerivedUnion="true" association="_HPoxgLLzEd-uk56s-ldeog">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
@@ -1342,6 +1360,9 @@ Every Constraint or AttributeAssignment can use the variable as a container (e.g
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_zX-c0LyxEd-eCY_Peu5fFw" name="ExtendableElement" isAbstract="true">
+      <ownedComment xmi:id="_-S-AEJxjEeCuYMafrm1l2g" annotatedElement="_zX-c0LyxEd-eCY_Peu5fFw">
+        <body>Abstract base class for the whole SDM model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references.</body>
+      </ownedComment>
       <generalization xmi:id="_Sm0qkL0XEd-DQ5q3aRKcIw">
         <general xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
       </generalization>
@@ -1384,6 +1405,9 @@ Every Constraint or AttributeAssignment can use the variable as a container (e.g
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_vasJcL0VEd-DQ5q3aRKcIw" name="Extension" isAbstract="true">
+      <ownedComment xmi:id="_Pj6jcJxkEeCuYMafrm1l2g" annotatedElement="_vasJcL0VEd-DQ5q3aRKcIw">
+        <body>Abstract super class for an Extension that can be defined for an object.</body>
+      </ownedComment>
       <generalization xmi:id="_DmpoQL0dEd-DQ5q3aRKcIw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
       <ownedAttribute xmi:id="_8kmwkb0WEd-DQ5q3aRKcIw" name="base" isReadOnly="true" isDerived="true" isDerivedUnion="true" association="_8klicL0WEd-DQ5q3aRKcIw">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
