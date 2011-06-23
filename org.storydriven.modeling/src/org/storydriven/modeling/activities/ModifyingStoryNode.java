@@ -11,6 +11,10 @@ import org.storydriven.modeling.patterns.StoryPattern;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Modifying Story Node</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A ModifyingStoryNode contains a story pattern which may change the underlying graph upon execution.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -37,6 +41,9 @@ public interface ModifyingStoryNode extends StoryNode
     * If the meaning of the '<em>Owned Rule</em>' containment reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The story pattern contained in this ModifyingStoryNode.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Owned Rule</em>' containment reference.
     * @see #setOwnedRule(StoryPattern)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getModifyingStoryNode_OwnedRule()

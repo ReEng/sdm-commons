@@ -223,13 +223,22 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mD44YLw0Ed-Ytrd77fw2LA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="6c403dc1-70f7-4f30-b878-4934c90b223b" name="owningActivityNode" visibility="public" type="bac68bbf-67d6-474b-81c5-6a12361a7e63" association="049ea66d-1cf5-479f-a776-09368326162d">
+          <ownedComment xmi:id="_r_FjsJ1NEeCuYMafrm1l2g" annotatedElement="6c403dc1-70f7-4f30-b878-4934c90b223b">
+            <body>The parent node if this node is contained in a StructuredNode.</body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OAxplLKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="0f293f48-25be-4376-a7a4-f866d4c1d687" name="JunctionNode">
+        <ownedComment xmi:id="_W1svIJ1NEeCuYMafrm1l2g" annotatedElement="0f293f48-25be-4376-a7a4-f866d4c1d687">
+          <body>A JunctionNode represents a pseudo-activity which is used for branching and merging the control flow in an activity. It is visualized by a diamond shaped figure.</body>
+        </ownedComment>
         <generalization xmi:id="_OBD9d7KwEd-DYIlz5ANeHA" general="0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="1c4eadb1-8677-4a5f-acd9-4b33da61c6fd" name="StartNode">
+        <ownedComment xmi:id="_yxLYAJ1MEeCuYMafrm1l2g" annotatedElement="1c4eadb1-8677-4a5f-acd9-4b33da61c6fd">
+          <body>The start node of an activity defines the starting point for the execution of the activity.</body>
+        </ownedComment>
         <generalization xmi:id="_OBD9dbKwEd-DYIlz5ANeHA" general="0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="09ce4f32-4ea3-459e-8d03-555250a5780e" name="StatementNode">
@@ -238,11 +247,17 @@
         </ownedComment>
         <generalization xmi:id="_OBD9c7KwEd-DYIlz5ANeHA" general="0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
         <ownedAttribute xmi:id="_OISg0rLyEd-uk56s-ldeog" name="statementExpression" visibility="public" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_OIR5wLLyEd-uk56s-ldeog">
+          <ownedComment xmi:id="_vFb0IJ1OEeCuYMafrm1l2g" annotatedElement="_OISg0rLyEd-uk56s-ldeog">
+            <body>The expression which defines the behavior of this StatementNode.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OITH4bLyEd-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OITH4LLyEd-uk56s-ldeog" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="68a71c0d-6c71-4b10-90a5-bad7e5e02981" name="StopNode">
+        <ownedComment xmi:id="_5Ylw4J1MEeCuYMafrm1l2g" annotatedElement="68a71c0d-6c71-4b10-90a5-bad7e5e02981">
+          <body>At a StopNode, the execution of an activity terminates. If the activity specifies any out-parameters, they have to be bound to a return expression.</body>
+        </ownedComment>
         <generalization xmi:id="_OBD9cbKwEd-DYIlz5ANeHA" general="0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
         <ownedAttribute xmi:id="49f46f44-8f1d-4634-a708-d2e822995869" name="flowStopOnly" visibility="public">
           <ownedComment xmi:id="_DgU6YBzvEeChOvWwuwx7tQ" annotatedElement="49f46f44-8f1d-4634-a708-d2e822995869">
@@ -260,8 +275,14 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="bac68bbf-67d6-474b-81c5-6a12361a7e63" name="StructuredNode">
+        <ownedComment xmi:id="_pEFLIJ1NEeCuYMafrm1l2g" annotatedElement="bac68bbf-67d6-474b-81c5-6a12361a7e63">
+          <body>A structured node is a node that contains several other activities.</body>
+        </ownedComment>
         <generalization xmi:id="_OBFLk7KwEd-DYIlz5ANeHA" general="0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
         <ownedAttribute xmi:id="1269373e-d6c3-43b3-96b3-343306cf98fc" name="ownedActivityNode" visibility="public" type="0ef98ed0-902e-4764-91ad-f76566d6f80e" aggregation="composite" association="049ea66d-1cf5-479f-a776-09368326162d">
+          <ownedComment xmi:id="_y9aAsJ1NEeCuYMafrm1l2g" annotatedElement="1269373e-d6c3-43b3-96b3-343306cf98fc">
+            <body>All subnodes which are contained in this structured node.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA_sALKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA_sAbKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
@@ -403,15 +424,27 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_fD_b0BzQEeChOvWwuwx7tQ" name="MatchingStoryNode">
+        <ownedComment xmi:id="_3F7VQJ1NEeCuYMafrm1l2g" annotatedElement="_fD_b0BzQEeChOvWwuwx7tQ">
+          <body>A MatchingStoryNode may only contain a MatchingPattern which does not change the graph. I.e., no element contained in this activity carries a create or destroy annotation. Thus, after executing a MatchingStoryNode, the underlying graph is guaranteed to be unchanged.</body>
+        </ownedComment>
         <generalization xmi:id="_TwB-0BzREeChOvWwuwx7tQ" general="9f08ef2b-883b-486d-9dfd-53a9300410fa"/>
         <ownedAttribute xmi:id="_yU1k8RzREeChOvWwuwx7tQ" name="ownedPattern" type="_kZu7ABzcEeChOvWwuwx7tQ" aggregation="composite" subsettedProperty="779bfb46-33f2-49f4-9ad0-8e26ce91a437" association="_yU0W0BzREeChOvWwuwx7tQ">
+          <ownedComment xmi:id="_iBn_kJ1OEeCuYMafrm1l2g" annotatedElement="_yU1k8RzREeChOvWwuwx7tQ">
+            <body>This MatchingPattern contained in this activity.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yU2MABzREeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yU1k8hzREeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_gDYcQBzQEeChOvWwuwx7tQ" name="ModifyingStoryNode">
+        <ownedComment xmi:id="_kW2KgJ1OEeCuYMafrm1l2g" annotatedElement="_gDYcQBzQEeChOvWwuwx7tQ">
+          <body>A ModifyingStoryNode contains a story pattern which may change the underlying graph upon execution.</body>
+        </ownedComment>
         <generalization xmi:id="_YgpBkBzmEeChOvWwuwx7tQ" general="9f08ef2b-883b-486d-9dfd-53a9300410fa"/>
         <ownedAttribute xmi:id="_L3OaERzSEeChOvWwuwx7tQ" name="ownedRule" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" aggregation="composite" subsettedProperty="779bfb46-33f2-49f4-9ad0-8e26ce91a437" association="_L3NL8BzSEeChOvWwuwx7tQ">
+          <ownedComment xmi:id="_odIqcJ1OEeCuYMafrm1l2g" annotatedElement="_L3OaERzSEeChOvWwuwx7tQ">
+            <body>The story pattern contained in this ModifyingStoryNode.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_L3PBIBzSEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_L3OaEhzSEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>

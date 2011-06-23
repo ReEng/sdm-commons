@@ -81,6 +81,9 @@ public interface ActivityNode extends NamedElement, CommentableElement
     * If the meaning of the '<em>Owning Activity Node</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The parent node if this node is contained in a StructuredNode.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Owning Activity Node</em>' container reference.
     * @see #setOwningActivityNode(StructuredNode)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivityNode_OwningActivityNode()

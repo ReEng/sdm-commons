@@ -1087,6 +1087,8 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
                "All ActivityEdges that leave this activity node. The guards of the outgoing activity edges must be exclusive in order to obtain a well-defined activity."});
       addAnnotation(getActivityNode_OwningActivity(), source, new String[] {"documentation",
             "Points to the activity this ActivityNode is contained in."});
+      addAnnotation(getActivityNode_OwningActivityNode(), source, new String[] {"documentation",
+            "The parent node if this node is contained in a StructuredNode."});
       addAnnotation(getActivityNode_Incoming(), source, new String[] {"documentation",
             "All ActivityEdges entering this activity node."});
       addAnnotation(getActivity_OwnedActivityEdge(), source, new String[] {"documentation",
@@ -1105,6 +1107,14 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
          new String[] {"documentation", "The chain of diagnostics to which problems are to be appended."});
       addAnnotation((getOperationExtension__NumberOfOutParams__DiagnosticChain_Map()).getEParameters().get(1), source,
          new String[] {"documentation", "The cache of context-specific information."});
+      addAnnotation(
+         matchingStoryNodeEClass,
+         source,
+         new String[] {
+               "documentation",
+               "A MatchingStoryNode may only contain a MatchingPattern which does not change the graph. I.e., no element contained in this activity carries a create or destroy annotation. Thus, after executing a MatchingStoryNode, the underlying graph is guaranteed to be unchanged."});
+      addAnnotation(getMatchingStoryNode_OwnedPattern(), source, new String[] {"documentation",
+            "This MatchingPattern contained in this activity."});
       addAnnotation(storyNodeEClass, source, new String[] {"documentation",
             "An activity node containing a story pattern."});
       addAnnotation(
@@ -1113,6 +1123,10 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
          new String[] {
                "documentation",
                "Specifies whether just one match should be found for the contained pattern (forEach  = false) or whether all matches should be found (forEach = true)."});
+      addAnnotation(structuredNodeEClass, source, new String[] {"documentation",
+            "A structured node is a node that contains several other activities."});
+      addAnnotation(getStructuredNode_OwnedActivityNode(), source, new String[] {"documentation",
+            "All subnodes which are contained in this structured node."});
       addAnnotation(edgeGuardEEnum, source, new String[] {"documentation",
             "This enum is used to model different kinds of activity edges."});
       addAnnotation(
@@ -1170,11 +1184,27 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
                "documentation",
                "An activity edge of kind FINALLY may only leave an activity node that has at least one other outgoing edge of kind EXCEPTION. The finally edge will be taken after the source node has been executed and after, possibly, the EXCEPTION edge has been taken."});
       addAnnotation(
+         junctionNodeEClass,
+         source,
+         new String[] {
+               "documentation",
+               "A JunctionNode represents a pseudo-activity which is used for branching and merging the control flow in an activity. It is visualized by a diamond shaped figure."});
+      addAnnotation(startNodeEClass, source, new String[] {"documentation",
+            "The start node of an activity defines the starting point for the execution of the activity."});
+      addAnnotation(
          statementNodeEClass,
          source,
          new String[] {
                "documentation",
                "A statement node is a node that just contains an expression defining its behavior. In combination with a textual expression, arbitrary souce code might be added by using StatementNodes."});
+      addAnnotation(getStatementNode_StatementExpression(), source, new String[] {"documentation",
+            "The expression which defines the behavior of this StatementNode."});
+      addAnnotation(
+         stopNodeEClass,
+         source,
+         new String[] {
+               "documentation",
+               "At a StopNode, the execution of an activity terminates. If the activity specifies any out-parameters, they have to be bound to a return expression."});
       addAnnotation(getStopNode_FlowStopOnly(), source, new String[] {"documentation",
             "true if subactivity is stopped, but not the whole control flow"});
       addAnnotation(
@@ -1189,6 +1219,10 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
          new String[] {
                "documentation",
                "References all activities that are to be considered for the polymorphic dispatching of the call. All activities must have the same call signature."});
+      addAnnotation(modifyingStoryNodeEClass, source, new String[] {"documentation",
+            "A ModifyingStoryNode contains a story pattern which may change the underlying graph upon execution."});
+      addAnnotation(getModifyingStoryNode_OwnedRule(), source, new String[] {"documentation",
+            "The story pattern contained in this ModifyingStoryNode."});
    }
 
    /**

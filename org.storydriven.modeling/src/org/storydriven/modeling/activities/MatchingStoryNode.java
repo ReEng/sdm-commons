@@ -11,6 +11,10 @@ import org.storydriven.modeling.patterns.MatchingPattern;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Matching Story Node</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A MatchingStoryNode may only contain a MatchingPattern which does not change the graph. I.e., no element contained in this activity carries a create or destroy annotation. Thus, after executing a MatchingStoryNode, the underlying graph is guaranteed to be unchanged.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -37,6 +41,9 @@ public interface MatchingStoryNode extends StoryNode
     * If the meaning of the '<em>Owned Pattern</em>' containment reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * This MatchingPattern contained in this activity.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Owned Pattern</em>' containment reference.
     * @see #setOwnedPattern(MatchingPattern)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getMatchingStoryNode_OwnedPattern()

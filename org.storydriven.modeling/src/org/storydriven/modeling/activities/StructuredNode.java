@@ -11,6 +11,10 @@ import org.eclipse.emf.common.util.EList;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Structured Node</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A structured node is a node that contains several other activities.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -33,6 +37,9 @@ public interface StructuredNode extends ActivityNode
     * If the meaning of the '<em>Owned Activity Node</em>' containment reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * All subnodes which are contained in this structured node.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Owned Activity Node</em>' containment reference list.
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getStructuredNode_OwnedActivityNode()
     * @see org.storydriven.modeling.activities.ActivityNode#getOwningActivityNode

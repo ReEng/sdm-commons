@@ -175,7 +175,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="owningActivityNode" ordered="false"
-          eType="#//activities/StructuredNode" eOpposite="#//activities/StructuredNode/ownedActivityNode"/>
+          eType="#//activities/StructuredNode" eOpposite="#//activities/StructuredNode/ownedActivityNode">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The parent node if this node is contained in a StructuredNode."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" ordered="false"
           upperBound="-1" eType="#//activities/ActivityEdge" eOpposite="#//activities/ActivityEdge/target">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -248,8 +252,14 @@
           eType="#//activities/Activity" containment="true" eOpposite="#//activities/Activity/owningOperation"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MatchingStoryNode" eSuperTypes="#//activities/StoryNode">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A MatchingStoryNode may only contain a MatchingPattern which does not change the graph. I.e., no element contained in this activity carries a create or destroy annotation. Thus, after executing a MatchingStoryNode, the underlying graph is guaranteed to be unchanged."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPattern" ordered="false"
           lowerBound="1" eType="#//patterns/MatchingPattern" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This MatchingPattern contained in this activity."/>
+        </eAnnotations>
         <eAnnotations source="subsets" references="#//activities/StoryNode/storyPattern"/>
       </eStructuralFeatures>
     </eClassifiers>
@@ -270,8 +280,15 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StructuredNode" eSuperTypes="#//activities/ActivityNode">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A structured node is a node that contains several other activities."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityNode" ordered="false"
-          upperBound="-1" eType="#//activities/ActivityNode" containment="true" eOpposite="#//activities/ActivityNode/owningActivityNode"/>
+          upperBound="-1" eType="#//activities/ActivityNode" containment="true" eOpposite="#//activities/ActivityNode/owningActivityNode">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="All subnodes which are contained in this structured node."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="EdgeGuard">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -323,16 +340,31 @@
         </eAnnotations>
       </eLiterals>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="JunctionNode" eSuperTypes="#//activities/ActivityNode"/>
-    <eClassifiers xsi:type="ecore:EClass" name="StartNode" eSuperTypes="#//activities/ActivityNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="JunctionNode" eSuperTypes="#//activities/ActivityNode">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A JunctionNode represents a pseudo-activity which is used for branching and merging the control flow in an activity. It is visualized by a diamond shaped figure."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StartNode" eSuperTypes="#//activities/ActivityNode">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The start node of an activity defines the starting point for the execution of the activity."/>
+      </eAnnotations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StatementNode" eSuperTypes="#//activities/ActivityNode">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A statement node is a node that just contains an expression defining its behavior. In combination with a textual expression, arbitrary souce code might be added by using StatementNodes."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="statementExpression"
-          ordered="false" lowerBound="1" eType="#//expressions/Expression" containment="true"/>
+          ordered="false" lowerBound="1" eType="#//expressions/Expression" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The expression which defines the behavior of this StatementNode."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StopNode" eSuperTypes="#//activities/ActivityNode">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="At a StopNode, the execution of an activity terminates. If the activity specifies any out-parameters, they have to be bound to a return expression."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="flowStopOnly" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -356,8 +388,14 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ModifyingStoryNode" eSuperTypes="#//activities/StoryNode">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A ModifyingStoryNode contains a story pattern which may change the underlying graph upon execution."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRule" ordered="false"
           lowerBound="1" eType="#//patterns/StoryPattern" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The story pattern contained in this ModifyingStoryNode."/>
+        </eAnnotations>
         <eAnnotations source="subsets" references="#//activities/StoryNode/storyPattern"/>
       </eStructuralFeatures>
     </eClassifiers>

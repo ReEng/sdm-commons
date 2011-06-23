@@ -12,6 +12,10 @@ import org.storydriven.modeling.expressions.Expression;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Stop Node</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * At a StopNode, the execution of an activity terminates. If the activity specifies any out-parameters, they have to be bound to a return expression.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

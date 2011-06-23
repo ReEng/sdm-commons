@@ -35,6 +35,9 @@ public interface StatementNode extends ActivityNode
     * If the meaning of the '<em>Statement Expression</em>' containment reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The expression which defines the behavior of this StatementNode.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Statement Expression</em>' containment reference.
     * @see #setStatementExpression(Expression)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getStatementNode_StatementExpression()
