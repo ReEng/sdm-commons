@@ -41,7 +41,7 @@ public class ModelinstanceValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.modelinstance";
+	public static final String DIAGNOSTIC_SOURCE = "de.fujaba.modelinstance";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.

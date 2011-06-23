@@ -5,7 +5,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EObject;
 
 public class ModelElementCategoryRegistry {
-	private static final String EXTENSION_POINT_ID = "de.uni_paderborn.fujaba.modelinstance.modelelementcategory";
+	private static final String EXTENSION_POINT_ID = "de.fujaba.modelinstance.modelelementcategory";
 
 	public boolean isValidCategory(String key, EObject modelElement) {
 		if (key == null || modelElement == null)  {
