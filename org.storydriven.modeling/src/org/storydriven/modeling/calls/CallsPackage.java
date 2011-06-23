@@ -536,13 +536,31 @@ public interface CallsPackage extends EPackage
    int CALLABLE__COMMENT = SDMPackage.COMMENTABLE_ELEMENT__COMMENT;
 
    /**
+    * The feature id for the '<em><b>In Parameter</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CALLABLE__IN_PARAMETER = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+
+   /**
+    * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int CALLABLE__OUT_PARAMETER = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+
+   /**
     * The feature id for the '<em><b>Contained Parameters</b></em>' containment reference list.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int CALLABLE__CONTAINED_PARAMETERS = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+   int CALLABLE__CONTAINED_PARAMETERS = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
    /**
     * The number of structural features of the '<em>Callable</em>' class.
@@ -550,7 +568,7 @@ public interface CallsPackage extends EPackage
     * @generated
     * @ordered
     */
-   int CALLABLE_FEATURE_COUNT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+   int CALLABLE_FEATURE_COUNT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
    /**
     * The operation id for the '<em>EClass</em>' operation.
@@ -746,6 +764,24 @@ public interface CallsPackage extends EPackage
    int OPAQUE_CALLABLE__COMMENT = CALLABLE__COMMENT;
 
    /**
+    * The feature id for the '<em><b>In Parameter</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OPAQUE_CALLABLE__IN_PARAMETER = CALLABLE__IN_PARAMETER;
+
+   /**
+    * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int OPAQUE_CALLABLE__OUT_PARAMETER = CALLABLE__OUT_PARAMETER;
+
+   /**
     * The feature id for the '<em><b>Contained Parameters</b></em>' containment reference list.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -764,30 +800,12 @@ public interface CallsPackage extends EPackage
    int OPAQUE_CALLABLE__NAME = CALLABLE_FEATURE_COUNT + 0;
 
    /**
-    * The feature id for the '<em><b>In Parameter</b></em>' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OPAQUE_CALLABLE__IN_PARAMETER = CALLABLE_FEATURE_COUNT + 1;
-
-   /**
-    * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    * @ordered
-    */
-   int OPAQUE_CALLABLE__OUT_PARAMETER = CALLABLE_FEATURE_COUNT + 2;
-
-   /**
     * The feature id for the '<em><b>Call Expression</b></em>' container reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int OPAQUE_CALLABLE__CALL_EXPRESSION = CALLABLE_FEATURE_COUNT + 3;
+   int OPAQUE_CALLABLE__CALL_EXPRESSION = CALLABLE_FEATURE_COUNT + 1;
 
    /**
     * The number of structural features of the '<em>Opaque Callable</em>' class.
@@ -795,7 +813,7 @@ public interface CallsPackage extends EPackage
     * @generated
     * @ordered
     */
-   int OPAQUE_CALLABLE_FEATURE_COUNT = CALLABLE_FEATURE_COUNT + 4;
+   int OPAQUE_CALLABLE_FEATURE_COUNT = CALLABLE_FEATURE_COUNT + 2;
 
    /**
     * The operation id for the '<em>EClass</em>' operation.
@@ -1315,28 +1333,6 @@ public interface CallsPackage extends EPackage
    EAttribute getOpaqueCallable_Name ();
 
    /**
-    * Returns the meta object for the reference list '{@link org.storydriven.modeling.calls.OpaqueCallable#getInParameters <em>In Parameter</em>}'.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @return the meta object for the reference list '<em>In Parameter</em>'.
-    * @see org.storydriven.modeling.calls.OpaqueCallable#getInParameters()
-    * @see #getOpaqueCallable()
-    * @generated
-    */
-   EReference getOpaqueCallable_InParameter ();
-
-   /**
-    * Returns the meta object for the reference list '{@link org.storydriven.modeling.calls.OpaqueCallable#getOutParameters <em>Out Parameter</em>}'.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @return the meta object for the reference list '<em>Out Parameter</em>'.
-    * @see org.storydriven.modeling.calls.OpaqueCallable#getOutParameters()
-    * @see #getOpaqueCallable()
-    * @generated
-    */
-   EReference getOpaqueCallable_OutParameter ();
-
-   /**
     * Returns the meta object for the container reference '{@link org.storydriven.modeling.calls.OpaqueCallable#getCallExpression <em>Call Expression</em>}'.
     * <!-- begin-user-doc
     * --> <!-- end-user-doc -->
@@ -1384,6 +1380,28 @@ public interface CallsPackage extends EPackage
     * @generated
     */
    EClass getCallable ();
+
+   /**
+    * Returns the meta object for the reference list '{@link org.storydriven.modeling.calls.Callable#getInParameters <em>In Parameter</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the reference list '<em>In Parameter</em>'.
+    * @see org.storydriven.modeling.calls.Callable#getInParameters()
+    * @see #getCallable()
+    * @generated
+    */
+   EReference getCallable_InParameter ();
+
+   /**
+    * Returns the meta object for the reference list '{@link org.storydriven.modeling.calls.Callable#getOutParameters <em>Out Parameter</em>}'.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @return the meta object for the reference list '<em>Out Parameter</em>'.
+    * @see org.storydriven.modeling.calls.Callable#getOutParameters()
+    * @see #getCallable()
+    * @generated
+    */
+   EReference getCallable_OutParameter ();
 
    /**
     * Returns the meta object for the containment reference list '{@link org.storydriven.modeling.calls.Callable#getContainedParameters <em>Contained Parameters</em>}'.
@@ -1490,22 +1508,6 @@ public interface CallsPackage extends EPackage
       EAttribute OPAQUE_CALLABLE__NAME = eINSTANCE.getOpaqueCallable_Name();
 
       /**
-       * The meta object literal for the '<em><b>In Parameter</b></em>' reference list feature.
-       * <!-- begin-user-doc -->
-       * <!-- end-user-doc -->
-       * @generated
-       */
-      EReference OPAQUE_CALLABLE__IN_PARAMETER = eINSTANCE.getOpaqueCallable_InParameter();
-
-      /**
-       * The meta object literal for the '<em><b>Out Parameter</b></em>' reference list feature.
-       * <!-- begin-user-doc -->
-       * <!-- end-user-doc -->
-       * @generated
-       */
-      EReference OPAQUE_CALLABLE__OUT_PARAMETER = eINSTANCE.getOpaqueCallable_OutParameter();
-
-      /**
        * The meta object literal for the '<em><b>Call Expression</b></em>' container reference feature.
        * <!-- begin-user-doc --> <!-- end-user-doc -->
        * @generated
@@ -1545,6 +1547,22 @@ public interface CallsPackage extends EPackage
        * @generated
        */
       EClass CALLABLE = eINSTANCE.getCallable();
+
+      /**
+       * The meta object literal for the '<em><b>In Parameter</b></em>' reference list feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference CALLABLE__IN_PARAMETER = eINSTANCE.getCallable_InParameter();
+
+      /**
+       * The meta object literal for the '<em><b>Out Parameter</b></em>' reference list feature.
+       * <!-- begin-user-doc -->
+       * <!-- end-user-doc -->
+       * @generated
+       */
+      EReference CALLABLE__OUT_PARAMETER = eINSTANCE.getCallable_OutParameter();
 
       /**
        * The meta object literal for the '<em><b>Contained Parameters</b></em>' containment reference list feature.

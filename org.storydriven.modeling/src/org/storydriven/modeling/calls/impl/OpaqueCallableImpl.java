@@ -31,9 +31,9 @@ import org.storydriven.modeling.calls.expressions.MethodCallExpression;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getCallExpression <em>Call Expression</em>}</li>
  *   <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getInParameters <em>In Parameter</em>}</li>
  *   <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getOutParameters <em>Out Parameter</em>}</li>
- *   <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getCallExpression <em>Call Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,24 +59,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
     * @ordered
     */
    protected String name = NAME_EDEFAULT;
-   /**
-    * The cached value of the '{@link #getInParameters() <em>In Parameter</em>}' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #getInParameters()
-    * @generated
-    * @ordered
-    */
-   protected EList<EParameter> inParameters;
-   /**
-    * The cached value of the '{@link #getOutParameters() <em>Out Parameter</em>}' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #getOutParameters()
-    * @generated
-    * @ordered
-    */
-   protected EList<EParameter> outParameters;
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -125,6 +107,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
     * <!-- end-user-doc -->
     * @generated
     */
+   @Override
    public EList<EParameter> getInParameters ()
    {
       if (inParameters == null)
@@ -150,6 +133,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
     * <!-- end-user-doc -->
     * @generated
     */
+   @Override
    public EList<EParameter> getOutParameters ()
    {
       if (outParameters == null)
@@ -297,10 +281,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
       {
          case CallsPackage.OPAQUE_CALLABLE__NAME:
             return getName();
-         case CallsPackage.OPAQUE_CALLABLE__IN_PARAMETER:
-            return getInParameters();
-         case CallsPackage.OPAQUE_CALLABLE__OUT_PARAMETER:
-            return getOutParameters();
          case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
             if (resolve)
                return getCallExpression();
@@ -322,14 +302,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
          case CallsPackage.OPAQUE_CALLABLE__NAME:
             setName((String) newValue);
             return;
-         case CallsPackage.OPAQUE_CALLABLE__IN_PARAMETER:
-            getInParameters().clear();
-            getInParameters().addAll((Collection<? extends EParameter>) newValue);
-            return;
-         case CallsPackage.OPAQUE_CALLABLE__OUT_PARAMETER:
-            getOutParameters().clear();
-            getOutParameters().addAll((Collection<? extends EParameter>) newValue);
-            return;
          case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
             setCallExpression((MethodCallExpression) newValue);
             return;
@@ -349,12 +321,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
          case CallsPackage.OPAQUE_CALLABLE__NAME:
             setName(NAME_EDEFAULT);
             return;
-         case CallsPackage.OPAQUE_CALLABLE__IN_PARAMETER:
-            getInParameters().clear();
-            return;
-         case CallsPackage.OPAQUE_CALLABLE__OUT_PARAMETER:
-            getOutParameters().clear();
-            return;
          case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
             setCallExpression((MethodCallExpression) null);
             return;
@@ -373,10 +339,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
       {
          case CallsPackage.OPAQUE_CALLABLE__NAME:
             return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-         case CallsPackage.OPAQUE_CALLABLE__IN_PARAMETER:
-            return isSetInParameters();
-         case CallsPackage.OPAQUE_CALLABLE__OUT_PARAMETER:
-            return isSetOutParameters();
          case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
             return basicGetCallExpression() != null;
       }

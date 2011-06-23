@@ -28,17 +28,16 @@ import org.storydriven.modeling.calls.CallsPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
-{
+public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActivityCallNodeItemProvider(AdapterFactory adapterFactory)
-	{
+	public ActivityCallNodeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -49,10 +48,8 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addCalleePropertyDescriptor(object);
@@ -67,12 +64,18 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCalleePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_Invocation_callee_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Invocation_callee_feature", "_UI_Invocation_type"),
-				CallsPackage.Literals.INVOCATION__CALLEE, true, false, true, null, null, null));
+	protected void addCalleePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Invocation_callee_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_Invocation_callee_feature",
+								"_UI_Invocation_type"),
+						CallsPackage.Literals.INVOCATION__CALLEE, true, false,
+						true, null, null, null));
 	}
 
 	/**
@@ -81,16 +84,17 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCalledActivityPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_ActivityCallNode_calledActivity_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ActivityCallNode_calledActivity_feature",
-								"_UI_ActivityCallNode_type"), ActivitiesPackage.Literals.ACTIVITY_CALL_NODE__CALLED_ACTIVITY, true, false,
-						true, null, null, null));
+	protected void addCalledActivityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ActivityCallNode_calledActivity_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_ActivityCallNode_calledActivity_feature",
+						"_UI_ActivityCallNode_type"),
+				ActivitiesPackage.Literals.ACTIVITY_CALL_NODE__CALLED_ACTIVITY,
+				true, false, true, null, null, null));
 	}
 
 	/**
@@ -102,12 +106,12 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
-	{
-		if (childrenFeatures == null)
-		{
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS);
+			childrenFeatures
+					.add(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS);
 		}
 		return childrenFeatures;
 	}
@@ -118,8 +122,7 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
@@ -133,9 +136,9 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ActivityCallNode"));
+	public Object getImage(Object object) {
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/ActivityCallNode"));
 	}
 
 	/**
@@ -145,11 +148,10 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		String label = ((ActivityCallNode) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ActivityCallNode_type") : getString("_UI_ActivityCallNode_type") + " "
-				+ label;
+		return label == null || label.length() == 0 ? getString("_UI_ActivityCallNode_type")
+				: getString("_UI_ActivityCallNode_type") + " " + label;
 	}
 
 	/**
@@ -160,15 +162,14 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ActivityCallNode.class))
-		{
-			case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(ActivityCallNode.class)) {
+		case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -181,11 +182,12 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
+		newChildDescriptors.add(createChildParameter(
+				CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
 				CallsFactory.eINSTANCE.createParameterBinding()));
 	}
 

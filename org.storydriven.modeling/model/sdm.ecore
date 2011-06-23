@@ -202,14 +202,6 @@
           <details key="documentation" value="References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="inParameter" upperBound="-1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
-        <eAnnotations source="redefines" references="#//calls/Callable/%duplicates%/inParameter"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="outParameter" upperBound="-1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
-        <eAnnotations source="redefines" references="#//calls/Callable/%duplicates%/outParameter"/>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityNode" ordered="false"
           upperBound="-1" eType="#//activities/ActivityNode" containment="true" eOpposite="#//activities/ActivityNode/owningActivity">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -605,6 +597,15 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An OpaqueCallable represents an external method which is not explicitly modeled (e.g. a method in an external library). Because it is not contained anywhere in the model it is directly referenced by and contained in the MethodCallExpression."/>
       </eAnnotations>
+      <eAnnotations source="duplicates">
+        <contents xsi:type="ecore:EReference" name="inParameter" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
+          <eAnnotations source="redefines" references="#//calls/Callable/inParameter"/>
+        </contents>
+        <contents xsi:type="ecore:EReference" name="outParameter" upperBound="-1"
+            eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
+          <eAnnotations source="redefines" references="#//calls/Callable/outParameter"/>
+        </contents>
+      </eAnnotations>
       <eOperations name="NumberOfOutParams" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
           <details key="body" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
@@ -629,14 +630,6 @@
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="inParameter" upperBound="-1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
-        <eAnnotations source="redefines" references="#//calls/Callable/%duplicates%/inParameter"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="outParameter" upperBound="-1"
-          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
-        <eAnnotations source="redefines" references="#//calls/Callable/%duplicates%/outParameter"/>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="callExpression" ordered="false"
           lowerBound="1" eType="#//calls/expressions/MethodCallExpression" eOpposite="#//calls/expressions/MethodCallExpression/opaqueCallable"/>
     </eClassifiers>
@@ -654,16 +647,25 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An entity which can be called by an Invocation. A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions and OpaqueCallables can only have one out parameter (This is enforced by an OCL constraint)."/>
       </eAnnotations>
-      <eAnnotations source="duplicates">
-        <contents xsi:type="ecore:EReference" name="inParameter" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
-            changeable="false" volatile="true" derived="true"/>
-        <contents xsi:type="ecore:EReference" name="outParameter" upperBound="-1"
-            eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
-            changeable="false" volatile="true" derived="true"/>
-      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="inParameter" upperBound="-1"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The ordered set of in parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outParameter" upperBound="-1"
+          eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The ordered set of out parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="containedParameters"
           ordered="false" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
-          containment="true"/>
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This reference is used to contain the parameters of a Callable if they are not already contained in another container. If the parameter is contained in another container as it is the case for parameters of a EOperation, they must not be added to this container!"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/calls/expressions/0.1.0"
         nsPrefix="sdmce">

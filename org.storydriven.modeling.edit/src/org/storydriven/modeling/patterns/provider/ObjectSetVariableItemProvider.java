@@ -22,17 +22,16 @@ import org.storydriven.modeling.patterns.ObjectSetVariable;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ObjectSetVariableItemProvider extends ObjectVariableItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
-{
+public class ObjectSetVariableItemProvider extends ObjectVariableItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ObjectSetVariableItemProvider(AdapterFactory adapterFactory)
-	{
+	public ObjectSetVariableItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -43,10 +42,8 @@ public class ObjectSetVariableItemProvider extends ObjectVariableItemProvider im
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -60,9 +57,9 @@ public class ObjectSetVariableItemProvider extends ObjectVariableItemProvider im
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ObjectSetVariable"));
+	public Object getImage(Object object) {
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/ObjectSetVariable"));
 	}
 
 	/**
@@ -72,11 +69,10 @@ public class ObjectSetVariableItemProvider extends ObjectVariableItemProvider im
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		String label = ((ObjectSetVariable) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ObjectSetVariable_type") : getString("_UI_ObjectSetVariable_type")
-				+ " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_ObjectSetVariable_type")
+				: getString("_UI_ObjectSetVariable_type") + " " + label;
 	}
 
 	/**
@@ -87,8 +83,7 @@ public class ObjectSetVariableItemProvider extends ObjectVariableItemProvider im
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -101,8 +96,8 @@ public class ObjectSetVariableItemProvider extends ObjectVariableItemProvider im
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

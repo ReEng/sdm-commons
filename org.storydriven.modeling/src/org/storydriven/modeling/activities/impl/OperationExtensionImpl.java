@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
@@ -41,9 +42,9 @@ import org.storydriven.modeling.impl.ExtensionOperations;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getContainedParameters <em>Contained Parameters</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getInParameters <em>In Parameter</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getOutParameters <em>Out Parameter</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getContainedParameters <em>Contained Parameters</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getReturnValue <em>Return Value</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.OperationExtensionImpl#getOwnedActivity <em>Owned Activity</em>}</li>
@@ -70,6 +71,24 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
     * @ordered
     */
    protected String comment = COMMENT_EDEFAULT;
+   /**
+    * The cached value of the '{@link #getInParameters() <em>In Parameter</em>}' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getInParameters()
+    * @generated
+    * @ordered
+    */
+   protected EList<EParameter> inParameters;
+   /**
+    * The cached value of the '{@link #getOutParameters() <em>Out Parameter</em>}' reference list.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getOutParameters()
+    * @generated
+    * @ordered
+    */
+   protected EList<EParameter> outParameters;
    /**
     * The cached value of the '{@link #getContainedParameters() <em>Contained Parameters</em>}' containment reference list.
     * <!-- begin-user-doc -->
@@ -455,6 +474,10 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
       {
          case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
             return getComment();
+         case ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETER:
+            return getInParameters();
+         case ActivitiesPackage.OPERATION_EXTENSION__OUT_PARAMETER:
+            return getOutParameters();
          case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
             return getContainedParameters();
          case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
@@ -483,6 +506,14 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
       {
          case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
             setComment((String) newValue);
+            return;
+         case ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETER:
+            getInParameters().clear();
+            getInParameters().addAll((Collection<? extends EParameter>) newValue);
+            return;
+         case ActivitiesPackage.OPERATION_EXTENSION__OUT_PARAMETER:
+            getOutParameters().clear();
+            getOutParameters().addAll((Collection<? extends EParameter>) newValue);
             return;
          case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
             getContainedParameters().clear();
@@ -513,6 +544,12 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
          case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
             setComment(COMMENT_EDEFAULT);
             return;
+         case ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETER:
+            getInParameters().clear();
+            return;
+         case ActivitiesPackage.OPERATION_EXTENSION__OUT_PARAMETER:
+            getOutParameters().clear();
+            return;
          case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
             getContainedParameters().clear();
             return;
@@ -540,6 +577,10 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
       {
          case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
             return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+         case ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETER:
+            return inParameters != null && !inParameters.isEmpty();
+         case ActivitiesPackage.OPERATION_EXTENSION__OUT_PARAMETER:
+            return outParameters != null && !outParameters.isEmpty();
          case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
             return containedParameters != null && !containedParameters.isEmpty();
          case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
@@ -573,6 +614,10 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
       {
          switch (derivedFeatureID)
          {
+            case ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETER:
+               return CallsPackage.CALLABLE__IN_PARAMETER;
+            case ActivitiesPackage.OPERATION_EXTENSION__OUT_PARAMETER:
+               return CallsPackage.CALLABLE__OUT_PARAMETER;
             case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
                return CallsPackage.CALLABLE__CONTAINED_PARAMETERS;
             default:
@@ -603,6 +648,10 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
       {
          switch (baseFeatureID)
          {
+            case CallsPackage.CALLABLE__IN_PARAMETER:
+               return ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETER;
+            case CallsPackage.CALLABLE__OUT_PARAMETER:
+               return ActivitiesPackage.OPERATION_EXTENSION__OUT_PARAMETER;
             case CallsPackage.CALLABLE__CONTAINED_PARAMETERS:
                return ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS;
             default:

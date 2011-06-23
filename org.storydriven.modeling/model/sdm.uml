@@ -142,16 +142,6 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BzhFARzIEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BzhFABzIEeChOvWwuwx7tQ"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_1YQ1wSrfEeCrkKoGytJPbg" name="inParameter" redefinedProperty="_bGIb8RzMEeChOvWwuwx7tQ" association="_1YPnoCrfEeCrkKoGytJPbg">
-          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1YRc0SrfEeCrkKoGytJPbg" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1YRc0CrfEeCrkKoGytJPbg"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_16YrYCrfEeCrkKoGytJPbg" name="outParameter" redefinedProperty="_eWJbMBzMEeChOvWwuwx7tQ" association="_16XdQCrfEeCrkKoGytJPbg">
-          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_16ZScCrfEeCrkKoGytJPbg" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_16YrYSrfEeCrkKoGytJPbg"/>
-        </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="39579588-fb90-4211-b314-2c5bc4ee2403" name="ActivityEdge">
         <ownedComment xmi:id="_t8uBwJ0QEeCuYMafrm1l2g" annotatedElement="39579588-fb90-4211-b314-2c5bc4ee2403">
@@ -461,18 +451,6 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ErC8oR2VEeCKeJCjS51luQ"/>
         </ownedEnd>
       </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_1YPnoCrfEeCrkKoGytJPbg" name="ContainsInParameter" memberEnd="_1YQOsCrfEeCrkKoGytJPbg _1YQ1wSrfEeCrkKoGytJPbg">
-        <ownedEnd xmi:id="_1YQOsCrfEeCrkKoGytJPbg" name="revInParameter" type="1f15de3e-b6d4-423a-b56b-04cc037e043c" association="_1YPnoCrfEeCrkKoGytJPbg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1YQ1wCrfEeCrkKoGytJPbg" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1YQOsSrfEeCrkKoGytJPbg"/>
-        </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_16XdQCrfEeCrkKoGytJPbg" name="ContainsOutParameter" memberEnd="_16XdQSrfEeCrkKoGytJPbg _16YrYCrfEeCrkKoGytJPbg">
-        <ownedEnd xmi:id="_16XdQSrfEeCrkKoGytJPbg" name="revOutParameter" type="1f15de3e-b6d4-423a-b56b-04cc037e043c" association="_16XdQCrfEeCrkKoGytJPbg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_16YEUSrfEeCrkKoGytJPbg" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_16YEUCrfEeCrkKoGytJPbg"/>
-        </ownedEnd>
-      </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_HGPW0FPGEeCU3puq44liRg" name="outParameter" visibility="protected" memberEnd="_HGPW0VPGEeCU3puq44liRg _HGPW1FPGEeCU3puq44liRg">
         <ownedComment xmi:id="_Im6p8FPHEeCU3puq44liRg" annotatedElement="_HGPW0FPGEeCU3puq44liRg">
           <body>Direct reference for return value of an operation. Allows EParameter to be contained in the OperationExtension.</body>
@@ -617,17 +595,26 @@ from within an activity.</body>
           <body>An entity which can be called by an Invocation. A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions and OpaqueCallables can only have one out parameter (This is enforced by an OCL constraint).</body>
         </ownedComment>
         <generalization xmi:id="_S8GhIBzJEeChOvWwuwx7tQ" general="_e7CFQLLyEd-uk56s-ldeog"/>
-        <ownedAttribute xmi:id="_bGIb8RzMEeChOvWwuwx7tQ" name="inParameter" isOrdered="true" isReadOnly="true" isDerived="true" association="_bGHN0BzMEeChOvWwuwx7tQ">
+        <ownedAttribute xmi:id="_bGIb8RzMEeChOvWwuwx7tQ" name="inParameter" isOrdered="true" association="_bGHN0BzMEeChOvWwuwx7tQ">
+          <ownedComment xmi:id="_UBXKYJ29EeCuYMafrm1l2g" annotatedElement="_bGIb8RzMEeChOvWwuwx7tQ">
+            <body>The ordered set of in parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference.</body>
+          </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bGJDABzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bGIb8hzMEeChOvWwuwx7tQ"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_eWJbMBzMEeChOvWwuwx7tQ" name="outParameter" isOrdered="true" isReadOnly="true" isDerived="true" association="_eWHmABzMEeChOvWwuwx7tQ">
+        <ownedAttribute xmi:id="_eWJbMBzMEeChOvWwuwx7tQ" name="outParameter" isOrdered="true" association="_eWHmABzMEeChOvWwuwx7tQ">
+          <ownedComment xmi:id="_041zMJ28EeCuYMafrm1l2g" annotatedElement="_eWJbMBzMEeChOvWwuwx7tQ">
+            <body>The ordered set of out parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference.</body>
+          </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eWJbMhzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eWJbMRzMEeChOvWwuwx7tQ"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_UxWXoGZsEeCjFI7iCZKgmw" name="containedParameters" aggregation="composite" association="_QpRvAGZsEeCjFI7iCZKgmw">
+          <ownedComment xmi:id="_oiaCAJ28EeCuYMafrm1l2g" annotatedElement="_UxWXoGZsEeCjFI7iCZKgmw">
+            <body>This reference is used to contain the parameters of a Callable if they are not already contained in another container. If the parameter is contained in another container as it is the case for parameters of a EOperation, they must not be added to this container!</body>
+          </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_X54O0GZsEeCjFI7iCZKgmw" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YOoW0GZsEeCjFI7iCZKgmw"/>

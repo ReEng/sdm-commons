@@ -273,32 +273,12 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   public EReference getOpaqueCallable_InParameter ()
-   {
-      return (EReference) opaqueCallableEClass.getEStructuralFeatures().get(1);
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   public EReference getOpaqueCallable_OutParameter ()
-   {
-      return (EReference) opaqueCallableEClass.getEStructuralFeatures().get(2);
-   }
-
-   /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public EReference getOpaqueCallable_CallExpression ()
    {
-      return (EReference) opaqueCallableEClass.getEStructuralFeatures().get(3);
+      return (EReference) opaqueCallableEClass.getEStructuralFeatures().get(1);
    }
 
    /**
@@ -342,9 +322,29 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage
     * <!-- end-user-doc -->
     * @generated
     */
-   public EReference getCallable_ContainedParameters ()
+   public EReference getCallable_InParameter ()
    {
       return (EReference) callableEClass.getEStructuralFeatures().get(0);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public EReference getCallable_OutParameter ()
+   {
+      return (EReference) callableEClass.getEStructuralFeatures().get(1);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public EReference getCallable_ContainedParameters ()
+   {
+      return (EReference) callableEClass.getEStructuralFeatures().get(2);
    }
 
    /**
@@ -386,8 +386,6 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage
 
       opaqueCallableEClass = createEClass(OPAQUE_CALLABLE);
       createEAttribute(opaqueCallableEClass, OPAQUE_CALLABLE__NAME);
-      createEReference(opaqueCallableEClass, OPAQUE_CALLABLE__IN_PARAMETER);
-      createEReference(opaqueCallableEClass, OPAQUE_CALLABLE__OUT_PARAMETER);
       createEReference(opaqueCallableEClass, OPAQUE_CALLABLE__CALL_EXPRESSION);
       createEOperation(opaqueCallableEClass, OPAQUE_CALLABLE___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP);
 
@@ -395,6 +393,8 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage
       createEReference(parameterExtensionEClass, PARAMETER_EXTENSION__PARAMETER);
 
       callableEClass = createEClass(CALLABLE);
+      createEReference(callableEClass, CALLABLE__IN_PARAMETER);
+      createEReference(callableEClass, CALLABLE__OUT_PARAMETER);
       createEReference(callableEClass, CALLABLE__CONTAINED_PARAMETERS);
    }
 
@@ -473,12 +473,6 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage
          IS_GENERATED_INSTANCE_CLASS);
       initEAttribute(getOpaqueCallable_Name(), ecorePackage.getEString(), "name", null, 1, 1, OpaqueCallable.class,
          !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-      initEReference(getOpaqueCallable_InParameter(), theEcorePackage.getEParameter(), null, "inParameter", null, 0,
-         -1, OpaqueCallable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-      initEReference(getOpaqueCallable_OutParameter(), theEcorePackage.getEParameter(), null, "outParameter", null, 0,
-         -1, OpaqueCallable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
       initEReference(getOpaqueCallable_CallExpression(), theExpressionsPackage_2.getMethodCallExpression(),
          theExpressionsPackage_2.getMethodCallExpression_OpaqueCallable(), "callExpression", null, 1, 1,
          OpaqueCallable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
@@ -501,6 +495,12 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage
          IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
       initEClass(callableEClass, Callable.class, "Callable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+      initEReference(getCallable_InParameter(), theEcorePackage.getEParameter(), null, "inParameter", null, 0, -1,
+         Callable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+      initEReference(getCallable_OutParameter(), theEcorePackage.getEParameter(), null, "outParameter", null, 0, -1,
+         Callable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
       initEReference(getCallable_ContainedParameters(), theEcorePackage.getEParameter(), null, "containedParameters",
          null, 0, -1, Callable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
          !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -508,12 +508,12 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage
       // Create annotations
       // http://www.eclipse.org/emf/2002/GenModel
       createGenModelAnnotations();
+      // duplicates
+      createDuplicatesAnnotations();
       // http://www.eclipse.org/uml2/1.1.0/GenModel
       createGenModel_1Annotations();
       // redefines
       createRedefinesAnnotations();
-      // duplicates
-      createDuplicatesAnnotations();
    }
 
    /**
@@ -561,6 +561,24 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage
          new String[] {
                "documentation",
                "An entity which can be called by an Invocation. A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions and OpaqueCallables can only have one out parameter (This is enforced by an OCL constraint)."});
+      addAnnotation(
+         getCallable_InParameter(),
+         source,
+         new String[] {
+               "documentation",
+               "The ordered set of in parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference."});
+      addAnnotation(
+         getCallable_OutParameter(),
+         source,
+         new String[] {
+               "documentation",
+               "The ordered set of out parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference."});
+      addAnnotation(
+         getCallable_ContainedParameters(),
+         source,
+         new String[] {
+               "documentation",
+               "This reference is used to contain the parameters of a Callable if they are not already contained in another container. If the parameter is contained in another container as it is the case for parameters of a EOperation, they must not be added to this container!"});
    }
 
    /**
@@ -583,10 +601,6 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage
    protected void createRedefinesAnnotations ()
    {
       String source = "redefines";
-      addAnnotation(getOpaqueCallable_InParameter(), source, new String[] {},
-         new URI[] {URI.createURI(SDMPackage.eNS_URI).appendFragment("//calls/Callable/%duplicates%/inParameter")});
-      addAnnotation(getOpaqueCallable_OutParameter(), source, new String[] {},
-         new URI[] {URI.createURI(SDMPackage.eNS_URI).appendFragment("//calls/Callable/%duplicates%/outParameter")});
       addAnnotation(getParameterExtension_Parameter(), source, new String[] {},
          new URI[] {URI.createURI(SDMPackage.eNS_URI).appendFragment("//Extension/modelBase")});
    }
@@ -600,7 +614,7 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage
    protected void createDuplicatesAnnotations ()
    {
       String source = "duplicates";
-      addAnnotation(callableEClass, source, new String[] {});
+      addAnnotation(opaqueCallableEClass, source, new String[] {});
    }
 
 } // CallsPackageImpl

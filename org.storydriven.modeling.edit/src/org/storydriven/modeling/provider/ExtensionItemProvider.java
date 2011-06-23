@@ -23,17 +23,16 @@ import org.storydriven.modeling.SDMPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExtensionItemProvider extends ExtendableElementItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
-{
+public class ExtensionItemProvider extends ExtendableElementItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExtensionItemProvider(AdapterFactory adapterFactory)
-	{
+	public ExtensionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,10 +43,8 @@ public class ExtensionItemProvider extends ExtendableElementItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addBasePropertyDescriptor(object);
@@ -63,12 +60,16 @@ public class ExtensionItemProvider extends ExtendableElementItemProvider impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addBasePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_Extension_base_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Extension_base_feature", "_UI_Extension_type"),
-				SDMPackage.Literals.EXTENSION__BASE, false, false, false, null, null, null));
+	protected void addBasePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Extension_base_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Extension_base_feature", "_UI_Extension_type"),
+				SDMPackage.Literals.EXTENSION__BASE, false, false, false, null,
+				null, null));
 	}
 
 	/**
@@ -77,12 +78,18 @@ public class ExtensionItemProvider extends ExtendableElementItemProvider impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addModelBasePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_Extension_modelBase_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Extension_modelBase_feature", "_UI_Extension_type"),
-				SDMPackage.Literals.EXTENSION__MODEL_BASE, true, false, true, null, null, null));
+	protected void addModelBasePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Extension_modelBase_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_Extension_modelBase_feature",
+								"_UI_Extension_type"),
+						SDMPackage.Literals.EXTENSION__MODEL_BASE, true, false,
+						true, null, null, null));
 	}
 
 	/**
@@ -91,12 +98,17 @@ public class ExtensionItemProvider extends ExtendableElementItemProvider impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOwningAnnotationPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_Extension_owningAnnotation_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Extension_owningAnnotation_feature", "_UI_Extension_type"),
-				SDMPackage.Literals.EXTENSION__OWNING_ANNOTATION, true, false, true, null, null, null));
+	protected void addOwningAnnotationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Extension_owningAnnotation_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Extension_owningAnnotation_feature",
+						"_UI_Extension_type"),
+				SDMPackage.Literals.EXTENSION__OWNING_ANNOTATION, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -106,8 +118,7 @@ public class ExtensionItemProvider extends ExtendableElementItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		return getString("_UI_Extension_type");
 	}
 
@@ -119,8 +130,7 @@ public class ExtensionItemProvider extends ExtendableElementItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -133,8 +143,8 @@ public class ExtensionItemProvider extends ExtendableElementItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

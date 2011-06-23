@@ -37,6 +37,9 @@ public interface Callable extends CommentableElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * This reference is used to contain the parameters of a Callable if they are not already contained in another container. If the parameter is contained in another container as it is the case for parameters of a EOperation, they must not be added to this container!
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Contained Parameters</em>' containment reference list.
     * @see org.storydriven.modeling.calls.CallsPackage#getCallable_ContainedParameters()
     * @model containment="true" resolveProxies="true" ordered="false"
@@ -52,9 +55,12 @@ public interface Callable extends CommentableElement
     * If the meaning of the '<em>In</em>' reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The ordered set of in parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>In Parameter</em>' reference list.
     * @see org.storydriven.modeling.calls.CallsPackage#getCallable_InParameter()
-    * @model changeable="false" volatile="true" derived="true"
+    * @model
     * @generated
     */
    EList<EParameter> getInParameters ();
@@ -67,9 +73,12 @@ public interface Callable extends CommentableElement
     * If the meaning of the '<em>Out</em>' reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The ordered set of out parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Out Parameter</em>' reference list.
     * @see org.storydriven.modeling.calls.CallsPackage#getCallable_OutParameter()
-    * @model changeable="false" volatile="true" derived="true"
+    * @model
     * @generated
     */
    EList<EParameter> getOutParameters ();

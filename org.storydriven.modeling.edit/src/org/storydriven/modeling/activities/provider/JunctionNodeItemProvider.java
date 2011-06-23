@@ -22,17 +22,16 @@ import org.storydriven.modeling.activities.JunctionNode;
  * <!-- end-user-doc -->
  * @generated
  */
-public class JunctionNodeItemProvider extends ActivityNodeItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
-{
+public class JunctionNodeItemProvider extends ActivityNodeItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public JunctionNodeItemProvider(AdapterFactory adapterFactory)
-	{
+	public JunctionNodeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -43,10 +42,8 @@ public class JunctionNodeItemProvider extends ActivityNodeItemProvider implement
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -60,9 +57,9 @@ public class JunctionNodeItemProvider extends ActivityNodeItemProvider implement
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/JunctionNode"));
+	public Object getImage(Object object) {
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/JunctionNode"));
 	}
 
 	/**
@@ -72,10 +69,10 @@ public class JunctionNodeItemProvider extends ActivityNodeItemProvider implement
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		String label = ((JunctionNode) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_JunctionNode_type") : getString("_UI_JunctionNode_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_JunctionNode_type")
+				: getString("_UI_JunctionNode_type") + " " + label;
 	}
 
 	/**
@@ -86,8 +83,7 @@ public class JunctionNodeItemProvider extends ActivityNodeItemProvider implement
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -100,8 +96,8 @@ public class JunctionNodeItemProvider extends ActivityNodeItemProvider implement
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

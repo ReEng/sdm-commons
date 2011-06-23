@@ -57,50 +57,6 @@ public interface OpaqueCallable extends Callable
    void setName (String value);
 
    /**
-    * Returns the value of the '<em><b>In Parameter</b></em>' reference list.
-    * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
-    * <p>
-    * This feature redefines the following features:
-    * <ul>
-    *   <li>'{@link org.storydriven.modeling.calls.Callable#getInParameters() <em>In Parameter</em>}'</li>
-    * </ul>
-    * </p>
-    * <!-- begin-user-doc -->
-    * <p>
-    * If the meaning of the '<em>In Parameter</em>' reference list isn't clear,
-    * there really should be more of a description here...
-    * </p>
-    * <!-- end-user-doc -->
-    * @return the value of the '<em>In Parameter</em>' reference list.
-    * @see org.storydriven.modeling.calls.CallsPackage#getOpaqueCallable_InParameter()
-    * @model
-    * @generated
-    */
-   EList<EParameter> getInParameters ();
-
-   /**
-    * Returns the value of the '<em><b>Out Parameter</b></em>' reference list.
-    * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
-    * <p>
-    * This feature redefines the following features:
-    * <ul>
-    *   <li>'{@link org.storydriven.modeling.calls.Callable#getOutParameters() <em>Out Parameter</em>}'</li>
-    * </ul>
-    * </p>
-    * <!-- begin-user-doc -->
-    * <p>
-    * If the meaning of the '<em>Out Parameter</em>' reference list isn't clear,
-    * there really should be more of a description here...
-    * </p>
-    * <!-- end-user-doc -->
-    * @return the value of the '<em>Out Parameter</em>' reference list.
-    * @see org.storydriven.modeling.calls.CallsPackage#getOpaqueCallable_OutParameter()
-    * @model
-    * @generated
-    */
-   EList<EParameter> getOutParameters ();
-
-   /**
     * Returns the value of the '<em><b>Call Expression</b></em>' container reference.
     * It is bidirectional and its opposite is '{@link org.storydriven.modeling.calls.expressions.MethodCallExpression#getOpaqueCallable <em>Opaque Callable</em>}'.
     * <!-- begin-user-doc -->

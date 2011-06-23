@@ -26,17 +26,16 @@ import org.storydriven.modeling.activities.expressions.ExpressionsFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StatementNodeItemProvider extends ActivityNodeItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
-{
+public class StatementNodeItemProvider extends ActivityNodeItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StatementNodeItemProvider(AdapterFactory adapterFactory)
-	{
+	public StatementNodeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -47,10 +46,8 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider implemen
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -66,12 +63,12 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider implemen
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
-	{
-		if (childrenFeatures == null)
-		{
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION);
+			childrenFeatures
+					.add(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -82,8 +79,7 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider implemen
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
@@ -97,9 +93,9 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider implemen
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StatementNode"));
+	public Object getImage(Object object) {
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/StatementNode"));
 	}
 
 	/**
@@ -109,11 +105,10 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider implemen
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		String label = ((StatementNode) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_StatementNode_type") : getString("_UI_StatementNode_type") + " "
-				+ label;
+		return label == null || label.length() == 0 ? getString("_UI_StatementNode_type")
+				: getString("_UI_StatementNode_type") + " " + label;
 	}
 
 	/**
@@ -124,15 +119,14 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider implemen
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StatementNode.class))
-		{
-			case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(StatementNode.class)) {
+		case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -145,48 +139,87 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider implemen
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+						ExpressionsFactory.eINSTANCE
+								.createExceptionVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
+								.createTextualExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
+								.createLiteralExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createNotExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
+								.createNotExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
+								.createComparisonExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
+								.createArithmeticExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+						org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
+								.createBinaryLogicExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+						org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE
+								.createMethodCallExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+						org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE
+								.createParameterExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
+								.createAttributeValueExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
+								.createObjectVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
+								.createObjectSetSizeExpression()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+						org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE
+								.createPrimitiveVariableExpression()));
 	}
 
 }

@@ -32,17 +32,16 @@ import org.storydriven.modeling.provider.SDMEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivityItemProvider extends CommentableElementItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
-{
+public class ActivityItemProvider extends CommentableElementItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActivityItemProvider(AdapterFactory adapterFactory)
-	{
+	public ActivityItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,15 +52,14 @@ public class ActivityItemProvider extends CommentableElementItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPreconditionPropertyDescriptor(object);
 			addInParameterPropertyDescriptor(object);
 			addOutParameterPropertyDescriptor(object);
+			addContainedParametersPropertyDescriptor(object);
+			addPreconditionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -72,12 +70,17 @@ public class ActivityItemProvider extends CommentableElementItemProvider impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPreconditionPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_Activity_precondition_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Activity_precondition_feature", "_UI_Activity_type"),
-				ActivitiesPackage.Literals.ACTIVITY__PRECONDITION, true, false, true, null, null, null));
+	protected void addPreconditionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Activity_precondition_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Activity_precondition_feature",
+						"_UI_Activity_type"),
+				ActivitiesPackage.Literals.ACTIVITY__PRECONDITION, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -86,12 +89,18 @@ public class ActivityItemProvider extends CommentableElementItemProvider impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInParameterPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_Activity_inParameter_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Activity_inParameter_feature", "_UI_Activity_type"),
-				ActivitiesPackage.Literals.ACTIVITY__IN_PARAMETER, true, false, true, null, null, null));
+	protected void addInParameterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Callable_inParameter_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_Callable_inParameter_feature",
+								"_UI_Callable_type"),
+						CallsPackage.Literals.CALLABLE__IN_PARAMETER, true,
+						false, true, null, null, null));
 	}
 
 	/**
@@ -100,12 +109,36 @@ public class ActivityItemProvider extends CommentableElementItemProvider impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOutParameterPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_Activity_outParameter_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Activity_outParameter_feature", "_UI_Activity_type"),
-				ActivitiesPackage.Literals.ACTIVITY__OUT_PARAMETER, true, false, true, null, null, null));
+	protected void addOutParameterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Callable_outParameter_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Callable_outParameter_feature",
+						"_UI_Callable_type"),
+				CallsPackage.Literals.CALLABLE__OUT_PARAMETER, true, false,
+				true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Contained Parameters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainedParametersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Callable_containedParameters_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Callable_containedParameters_feature",
+						"_UI_Callable_type"),
+				CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS, true,
+				false, false, null, null, null));
 	}
 
 	/**
@@ -117,14 +150,16 @@ public class ActivityItemProvider extends CommentableElementItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
-	{
-		if (childrenFeatures == null)
-		{
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
-			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGE);
-			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE);
+			childrenFeatures
+					.add(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
+			childrenFeatures
+					.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGE);
+			childrenFeatures
+					.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE);
 		}
 		return childrenFeatures;
 	}
@@ -135,8 +170,7 @@ public class ActivityItemProvider extends CommentableElementItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
@@ -150,9 +184,9 @@ public class ActivityItemProvider extends CommentableElementItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Activity"));
+	public Object getImage(Object object) {
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/Activity"));
 	}
 
 	/**
@@ -162,10 +196,10 @@ public class ActivityItemProvider extends CommentableElementItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		String label = ((Activity) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_Activity_type") : getString("_UI_Activity_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Activity_type")
+				: getString("_UI_Activity_type") + " " + label;
 	}
 
 	/**
@@ -176,17 +210,16 @@ public class ActivityItemProvider extends CommentableElementItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Activity.class))
-		{
-			case ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS:
-			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
-			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(Activity.class)) {
+		case ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS:
+		case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
+		case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -199,38 +232,48 @@ public class ActivityItemProvider extends CommentableElementItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS,
+		newChildDescriptors.add(createChildParameter(
+				CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS,
 				EcoreFactory.eINSTANCE.createEParameter()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGE,
 				ActivitiesFactory.eINSTANCE.createActivityEdge()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
 				ActivitiesFactory.eINSTANCE.createMatchingStoryNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
 				ActivitiesFactory.eINSTANCE.createStructuredNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
 				ActivitiesFactory.eINSTANCE.createJunctionNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
 				ActivitiesFactory.eINSTANCE.createStartNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
 				ActivitiesFactory.eINSTANCE.createStatementNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
 				ActivitiesFactory.eINSTANCE.createStopNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
 				ActivitiesFactory.eINSTANCE.createActivityCallNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
 				ActivitiesFactory.eINSTANCE.createModifyingStoryNode()));
 	}
 
@@ -241,8 +284,7 @@ public class ActivityItemProvider extends CommentableElementItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator()
-	{
+	public ResourceLocator getResourceLocator() {
 		return SDMEditPlugin.INSTANCE;
 	}
 

@@ -20,8 +20,6 @@ import org.storydriven.modeling.calls.Callable;
  *   <li>{@link org.storydriven.modeling.activities.Activity#getOwningOperation <em>Owning Operation</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.Activity#getOwnedActivityEdges <em>Owned Activity Edge</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.Activity#getPrecondition <em>Precondition</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.Activity#getInParameters <em>In Parameter</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.Activity#getOutParameters <em>Out Parameter</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.Activity#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
  * </ul>
  * </p>
@@ -121,49 +119,5 @@ public interface Activity extends CommentableElement, Callable
     * @generated
     */
    void setPrecondition (MatchingStoryNode value);
-
-   /**
-    * Returns the value of the '<em><b>In Parameter</b></em>' reference list.
-    * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
-    * <p>
-    * This feature redefines the following features:
-    * <ul>
-    *   <li>'{@link org.storydriven.modeling.calls.Callable#getInParameters() <em>In Parameter</em>}'</li>
-    * </ul>
-    * </p>
-    * <!-- begin-user-doc -->
-    * <p>
-    * If the meaning of the '<em>In Parameter</em>' reference list isn't clear,
-    * there really should be more of a description here...
-    * </p>
-    * <!-- end-user-doc -->
-    * @return the value of the '<em>In Parameter</em>' reference list.
-    * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivity_InParameter()
-    * @model
-    * @generated
-    */
-   EList<EParameter> getInParameters ();
-
-   /**
-    * Returns the value of the '<em><b>Out Parameter</b></em>' reference list.
-    * The list contents are of type {@link org.eclipse.emf.ecore.EParameter}.
-    * <p>
-    * This feature redefines the following features:
-    * <ul>
-    *   <li>'{@link org.storydriven.modeling.calls.Callable#getOutParameters() <em>Out Parameter</em>}'</li>
-    * </ul>
-    * </p>
-    * <!-- begin-user-doc -->
-    * <p>
-    * If the meaning of the '<em>Out Parameter</em>' reference list isn't clear,
-    * there really should be more of a description here...
-    * </p>
-    * <!-- end-user-doc -->
-    * @return the value of the '<em>Out Parameter</em>' reference list.
-    * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivity_OutParameter()
-    * @model
-    * @generated
-    */
-   EList<EParameter> getOutParameters ();
 
 } // Activity

@@ -31,16 +31,16 @@ import org.storydriven.modeling.activities.util.ActivitiesAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier,
-		IDisposable
-{
+public class ActivitiesItemProviderAdapterFactory extends
+		ActivitiesAdapterFactory implements ComposeableAdapterFactory,
+		IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComposedAdapterFactory	parentAdapterFactory;
+	protected ComposedAdapterFactory parentAdapterFactory;
 
 	/**
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
@@ -48,7 +48,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IChangeNotifier			changeNotifier	= new ChangeNotifier();
+	protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -56,7 +56,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<Object>		supportedTypes	= new ArrayList<Object>();
+	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
 	 * This constructs an instance.
@@ -64,8 +64,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActivitiesItemProviderAdapterFactory()
-	{
+	public ActivitiesItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -79,7 +78,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExceptionVariableItemProvider	exceptionVariableItemProvider;
+	protected ExceptionVariableItemProvider exceptionVariableItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.activities.ExceptionVariable}.
@@ -88,11 +87,10 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Adapter createExceptionVariableAdapter()
-	{
-		if (exceptionVariableItemProvider == null)
-		{
-			exceptionVariableItemProvider = new ExceptionVariableItemProvider(this);
+	public Adapter createExceptionVariableAdapter() {
+		if (exceptionVariableItemProvider == null) {
+			exceptionVariableItemProvider = new ExceptionVariableItemProvider(
+					this);
 		}
 
 		return exceptionVariableItemProvider;
@@ -104,7 +102,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActivityEdgeItemProvider	activityEdgeItemProvider;
+	protected ActivityEdgeItemProvider activityEdgeItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.activities.ActivityEdge}.
@@ -113,10 +111,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Adapter createActivityEdgeAdapter()
-	{
-		if (activityEdgeItemProvider == null)
-		{
+	public Adapter createActivityEdgeAdapter() {
+		if (activityEdgeItemProvider == null) {
 			activityEdgeItemProvider = new ActivityEdgeItemProvider(this);
 		}
 
@@ -129,7 +125,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActivityItemProvider	activityItemProvider;
+	protected ActivityItemProvider activityItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.activities.Activity}.
@@ -138,10 +134,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Adapter createActivityAdapter()
-	{
-		if (activityItemProvider == null)
-		{
+	public Adapter createActivityAdapter() {
+		if (activityItemProvider == null) {
 			activityItemProvider = new ActivityItemProvider(this);
 		}
 
@@ -154,7 +148,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OperationExtensionItemProvider	operationExtensionItemProvider;
+	protected OperationExtensionItemProvider operationExtensionItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.activities.OperationExtension}.
@@ -163,11 +157,10 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Adapter createOperationExtensionAdapter()
-	{
-		if (operationExtensionItemProvider == null)
-		{
-			operationExtensionItemProvider = new OperationExtensionItemProvider(this);
+	public Adapter createOperationExtensionAdapter() {
+		if (operationExtensionItemProvider == null) {
+			operationExtensionItemProvider = new OperationExtensionItemProvider(
+					this);
 		}
 
 		return operationExtensionItemProvider;
@@ -179,7 +172,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MatchingStoryNodeItemProvider	matchingStoryNodeItemProvider;
+	protected MatchingStoryNodeItemProvider matchingStoryNodeItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.activities.MatchingStoryNode}.
@@ -188,11 +181,10 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Adapter createMatchingStoryNodeAdapter()
-	{
-		if (matchingStoryNodeItemProvider == null)
-		{
-			matchingStoryNodeItemProvider = new MatchingStoryNodeItemProvider(this);
+	public Adapter createMatchingStoryNodeAdapter() {
+		if (matchingStoryNodeItemProvider == null) {
+			matchingStoryNodeItemProvider = new MatchingStoryNodeItemProvider(
+					this);
 		}
 
 		return matchingStoryNodeItemProvider;
@@ -204,7 +196,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StructuredNodeItemProvider	structuredNodeItemProvider;
+	protected StructuredNodeItemProvider structuredNodeItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.activities.StructuredNode}.
@@ -213,10 +205,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Adapter createStructuredNodeAdapter()
-	{
-		if (structuredNodeItemProvider == null)
-		{
+	public Adapter createStructuredNodeAdapter() {
+		if (structuredNodeItemProvider == null) {
 			structuredNodeItemProvider = new StructuredNodeItemProvider(this);
 		}
 
@@ -229,7 +219,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected JunctionNodeItemProvider	junctionNodeItemProvider;
+	protected JunctionNodeItemProvider junctionNodeItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.activities.JunctionNode}.
@@ -238,10 +228,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Adapter createJunctionNodeAdapter()
-	{
-		if (junctionNodeItemProvider == null)
-		{
+	public Adapter createJunctionNodeAdapter() {
+		if (junctionNodeItemProvider == null) {
 			junctionNodeItemProvider = new JunctionNodeItemProvider(this);
 		}
 
@@ -254,7 +242,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StartNodeItemProvider	startNodeItemProvider;
+	protected StartNodeItemProvider startNodeItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.activities.StartNode}.
@@ -263,10 +251,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Adapter createStartNodeAdapter()
-	{
-		if (startNodeItemProvider == null)
-		{
+	public Adapter createStartNodeAdapter() {
+		if (startNodeItemProvider == null) {
 			startNodeItemProvider = new StartNodeItemProvider(this);
 		}
 
@@ -279,7 +265,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StatementNodeItemProvider	statementNodeItemProvider;
+	protected StatementNodeItemProvider statementNodeItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.activities.StatementNode}.
@@ -288,10 +274,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Adapter createStatementNodeAdapter()
-	{
-		if (statementNodeItemProvider == null)
-		{
+	public Adapter createStatementNodeAdapter() {
+		if (statementNodeItemProvider == null) {
 			statementNodeItemProvider = new StatementNodeItemProvider(this);
 		}
 
@@ -304,7 +288,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StopNodeItemProvider	stopNodeItemProvider;
+	protected StopNodeItemProvider stopNodeItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.activities.StopNode}.
@@ -313,10 +297,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Adapter createStopNodeAdapter()
-	{
-		if (stopNodeItemProvider == null)
-		{
+	public Adapter createStopNodeAdapter() {
+		if (stopNodeItemProvider == null) {
 			stopNodeItemProvider = new StopNodeItemProvider(this);
 		}
 
@@ -329,7 +311,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActivityCallNodeItemProvider	activityCallNodeItemProvider;
+	protected ActivityCallNodeItemProvider activityCallNodeItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.activities.ActivityCallNode}.
@@ -338,11 +320,10 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Adapter createActivityCallNodeAdapter()
-	{
-		if (activityCallNodeItemProvider == null)
-		{
-			activityCallNodeItemProvider = new ActivityCallNodeItemProvider(this);
+	public Adapter createActivityCallNodeAdapter() {
+		if (activityCallNodeItemProvider == null) {
+			activityCallNodeItemProvider = new ActivityCallNodeItemProvider(
+					this);
 		}
 
 		return activityCallNodeItemProvider;
@@ -354,7 +335,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModifyingStoryNodeItemProvider	modifyingStoryNodeItemProvider;
+	protected ModifyingStoryNodeItemProvider modifyingStoryNodeItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.modeling.activities.ModifyingStoryNode}.
@@ -363,11 +344,10 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Adapter createModifyingStoryNodeAdapter()
-	{
-		if (modifyingStoryNodeItemProvider == null)
-		{
-			modifyingStoryNodeItemProvider = new ModifyingStoryNodeItemProvider(this);
+	public Adapter createModifyingStoryNodeAdapter() {
+		if (modifyingStoryNodeItemProvider == null) {
+			modifyingStoryNodeItemProvider = new ModifyingStoryNodeItemProvider(
+					this);
 		}
 
 		return modifyingStoryNodeItemProvider;
@@ -379,9 +359,9 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComposeableAdapterFactory getRootAdapterFactory()
-	{
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+	public ComposeableAdapterFactory getRootAdapterFactory() {
+		return parentAdapterFactory == null ? this : parentAdapterFactory
+				.getRootAdapterFactory();
 	}
 
 	/**
@@ -390,8 +370,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory)
-	{
+	public void setParentAdapterFactory(
+			ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -401,8 +381,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object type)
-	{
+	public boolean isFactoryForType(Object type) {
 		return supportedTypes.contains(type) || super.isFactoryForType(type);
 	}
 
@@ -413,8 +392,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Adapter adapt(Notifier notifier, Object type)
-	{
+	public Adapter adapt(Notifier notifier, Object type) {
 		return super.adapt(notifier, this);
 	}
 
@@ -424,13 +402,11 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Object adapt(Object object, Object type)
-	{
-		if (isFactoryForType(type))
-		{
+	public Object adapt(Object object, Object type) {
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter)))
-			{
+			if (!(type instanceof Class<?>)
+					|| (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -444,8 +420,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addListener(INotifyChangedListener notifyChangedListener)
-	{
+	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
 
@@ -455,8 +430,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void removeListener(INotifyChangedListener notifyChangedListener)
-	{
+	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
 
@@ -466,12 +440,10 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void fireNotifyChanged(Notification notification)
-	{
+	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null)
-		{
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -482,8 +454,7 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void dispose()
-	{
+	public void dispose() {
 		if (exceptionVariableItemProvider != null)
 			exceptionVariableItemProvider.dispose();
 		if (activityEdgeItemProvider != null)
