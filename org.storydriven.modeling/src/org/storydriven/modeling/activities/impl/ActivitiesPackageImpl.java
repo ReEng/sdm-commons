@@ -993,8 +993,8 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
          StopNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
          !IS_ORDERED);
       initEReference(getStopNode_ReturnValue(), theExpressionsPackage_1.getExpression(), null, "returnValue", null, 0,
-         1, StopNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
-         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+         1, StopNode.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+         !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
       initEReference(getStopNode_ReturnValues(), theExpressionsPackage_1.getExpression(), null, "returnValues", null,
          0, -1, StopNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
          !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1207,6 +1207,14 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
                "At a StopNode, the execution of an activity terminates. If the activity specifies any out-parameters, they have to be bound to a return expression."});
       addAnnotation(getStopNode_FlowStopOnly(), source, new String[] {"documentation",
             "true if subactivity is stopped, but not the whole control flow"});
+      addAnnotation(
+         getStopNode_ReturnValue(),
+         source,
+         new String[] {
+               "documentation",
+               "Convenience method when dealing with activities that implement an EOperation. In this case, only one out parameter is supported. This attributes then returns the first out parameter."});
+      addAnnotation(getStopNode_ReturnValues(), source, new String[] {"documentation",
+            "Defines the return values of the activity. These return values will be assigned to the out-parameters."});
       addAnnotation(
          activityCallNodeEClass,
          source,

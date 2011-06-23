@@ -30,7 +30,7 @@
       <visibility xmi:id="_tVZ7fCJAEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_tVZ7fSJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
     </sourceRole>
-    <targetRole xmi:id="_tVZ7fiJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_WnuyUbLyEd-uk56s-ldeog" aggregationKind="2" name="returnValue" navigable="true">
+    <targetRole xmi:id="_tVZ7fiJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_WnuyUbLyEd-uk56s-ldeog" aggregationKind="2" derived="true" name="returnValue" navigable="true">
       <modelElement href="sdm.uml#_WnuyUbLyEd-uk56s-ldeog"/>
       <visibility xmi:id="_tVZ7fyJAEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_tVZ7gCJAEeCMEorpcZtLvw" label="0..1" max="1"/>
@@ -502,6 +502,8 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_kW_7gJ1OEeCuYMafrm1l2g" sourceItem="_kW2KgZ1OEeCuYMafrm1l2g" targetItem="_tV2nmSJAEeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_odIqcp1OEeCuYMafrm1l2g" sourceItem="_odIqcZ1OEeCuYMafrm1l2g" targetItem="_tV2nmyJAEeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_vFb0Ip1OEeCuYMafrm1l2g" sourceItem="_vFb0IZ1OEeCuYMafrm1l2g" targetItem="_tVtdciJAEeCMEorpcZtLvw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_a5x9sZ1PEeCuYMafrm1l2g" sourceItem="_a5x9sJ1PEeCuYMafrm1l2g" targetItem="_7UOdIJ0KEeCuYMafrm1l2g"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_5InT0p1PEeCuYMafrm1l2g" sourceItem="_5InT0Z1PEeCuYMafrm1l2g" targetItem="_tVtdgCJAEeCMEorpcZtLvw"/>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVZ7iyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_7cUAoBzuEeChOvWwuwx7tQ" item="_tVjslSJAEeCMEorpcZtLvw" sourceConnectionVisual="_tVZ7jCJAEeCMEorpcZtLvw" text="Points to the boolean expression in case of boolean transition guard.">
     <modelElement href="sdm.uml#_7cUAoBzuEeChOvWwuwx7tQ"/>
   </nodes>
@@ -552,7 +554,7 @@
     </attributes>
     <attributes xmi:id="_tV2nbyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_v4HgUBzQEeChOvWwuwx7tQ" comments="_tVZ77iJAEeCMEorpcZtLvw" targetConnectionVisual="_tVZ77yJAEeCMEorpcZtLvw" name="exceptionType">
       <modelElement href="sdm.uml#_v4HgUBzQEeChOvWwuwx7tQ"/>
-      <stereotypes xmi:id="_xV-lUZ1MEeCuYMafrm1l2g" name="EReference">
+      <stereotypes xmi:id="_XmqnIZ1PEeCuYMafrm1l2g" name="EReference">
         <modelElement href="sdm.uml#_8MjQ4B2VEeCKeJCjS51luQ"/>
       </stereotypes>
       <visibility xmi:id="_tV2ncCJAEeCMEorpcZtLvw" label="+"/>
@@ -589,7 +591,7 @@
     <visibility xmi:id="_tVtdnCJAEeCMEorpcZtLvw" label="+"/>
     <attributes xmi:id="_tVtdoiJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_GemP4RzPEeChOvWwuwx7tQ" derived="true" name="operation">
       <modelElement href="sdm.uml#_GemP4RzPEeChOvWwuwx7tQ"/>
-      <stereotypes xmi:id="_xV-lUJ1MEeCuYMafrm1l2g" name="EReference">
+      <stereotypes xmi:id="_XmqnIJ1PEeCuYMafrm1l2g" name="EReference">
         <modelElement href="sdm.uml#_YZiT8B2qEeCgKe8vMUdTKg"/>
       </stereotypes>
       <visibility xmi:id="_tVtdoyJAEeCMEorpcZtLvw" label="+"/>
@@ -914,7 +916,7 @@
         <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </type>
     </attributes>
-    <attributes xmi:id="_tVtdgCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_WnuyUbLyEd-uk56s-ldeog" name="returnValue">
+    <attributes xmi:id="_tVtdgCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_WnuyUbLyEd-uk56s-ldeog" comments="_5InT0Z1PEeCuYMafrm1l2g" targetConnectionVisual="_5InT0p1PEeCuYMafrm1l2g" derived="true" name="returnValue">
       <modelElement href="sdm.uml#_WnuyUbLyEd-uk56s-ldeog"/>
       <visibility xmi:id="_tVtdgSJAEeCMEorpcZtLvw" label="+"/>
       <cardinality xmi:id="_tVtdgiJAEeCMEorpcZtLvw" label="0..1" max="1"/>
@@ -922,7 +924,7 @@
         <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
-    <attributes xmi:id="_7UOdIJ0KEeCuYMafrm1l2g" name="returnValues">
+    <attributes xmi:id="_7UOdIJ0KEeCuYMafrm1l2g" comments="_a5x9sJ1PEeCuYMafrm1l2g" targetConnectionVisual="_a5x9sZ1PEeCuYMafrm1l2g" name="returnValues">
       <modelElement href="sdm.uml#_27rV8IYIEeCsDOrao2DJIA"/>
       <visibility xmi:id="_7UOdIp0KEeCuYMafrm1l2g" label="+"/>
       <cardinality xmi:id="_7UOdI50KEeCuYMafrm1l2g" label="*" max="-1"/>
@@ -1029,5 +1031,11 @@
         <modelElement href="sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c"/>
       </type>
     </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_a5x9sJ1PEeCuYMafrm1l2g" item="_7UOdIJ0KEeCuYMafrm1l2g" sourceConnectionVisual="_a5x9sZ1PEeCuYMafrm1l2g" text="Defines the return values of the activity. These return values will be assigned to the out-parameters.">
+    <modelElement href="sdm.uml#_a5oMsJ1PEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_5InT0Z1PEeCuYMafrm1l2g" item="_tVtdgCJAEeCMEorpcZtLvw" sourceConnectionVisual="_5InT0p1PEeCuYMafrm1l2g" text="Convenience method when dealing with activities that implement an EOperation. In this case, only one out parameter is supported. This attributes then returns the first out parameter.">
+    <modelElement href="sdm.uml#_5InT0J1PEeCuYMafrm1l2g"/>
   </nodes>
 </com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

@@ -2922,7 +2922,7 @@ public interface ActivitiesPackage extends EPackage
    int STOP_NODE__FLOW_STOP_ONLY = ACTIVITY_NODE_FEATURE_COUNT + 0;
 
    /**
-    * The feature id for the '<em><b>Return Value</b></em>' containment reference.
+    * The feature id for the '<em><b>Return Value</b></em>' reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
@@ -4050,10 +4050,10 @@ public interface ActivitiesPackage extends EPackage
    EAttribute getStopNode_FlowStopOnly ();
 
    /**
-    * Returns the meta object for the containment reference '{@link org.storydriven.modeling.activities.StopNode#getReturnValue <em>Return Value</em>}'.
+    * Returns the meta object for the reference '{@link org.storydriven.modeling.activities.StopNode#getReturnValue <em>Return Value</em>}'.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return the meta object for the containment reference '<em>Return Value</em>'.
+    * @return the meta object for the reference '<em>Return Value</em>'.
     * @see org.storydriven.modeling.activities.StopNode#getReturnValue()
     * @see #getStopNode()
     * @generated
@@ -4479,7 +4479,7 @@ public interface ActivitiesPackage extends EPackage
       EAttribute STOP_NODE__FLOW_STOP_ONLY = eINSTANCE.getStopNode_FlowStopOnly();
 
       /**
-       * The meta object literal for the '<em><b>Return Value</b></em>' containment reference feature.
+       * The meta object literal for the '<em><b>Return Value</b></em>' reference feature.
        * <!-- begin-user-doc --> <!-- end-user-doc -->
        * @generated
        */

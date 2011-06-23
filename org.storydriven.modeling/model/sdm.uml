@@ -265,11 +265,17 @@
           </ownedComment>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_WnuyUbLyEd-uk56s-ldeog" name="returnValue" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_WnuLQLLyEd-uk56s-ldeog">
+        <ownedAttribute xmi:id="_WnuyUbLyEd-uk56s-ldeog" name="returnValue" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" isReadOnly="true" isDerived="true" aggregation="composite" association="_WnuLQLLyEd-uk56s-ldeog">
+          <ownedComment xmi:id="_5InT0J1PEeCuYMafrm1l2g" annotatedElement="_WnuyUbLyEd-uk56s-ldeog">
+            <body>Convenience method when dealing with activities that implement an EOperation. In this case, only one out parameter is supported. This attributes then returns the first out parameter.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WnuyU7LyEd-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WnuyUrLyEd-uk56s-ldeog"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_27rV8IYIEeCsDOrao2DJIA" name="returnValues" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite">
+          <ownedComment xmi:id="_a5oMsJ1PEeCuYMafrm1l2g" annotatedElement="_27rV8IYIEeCsDOrao2DJIA">
+            <body>Defines the return values of the activity. These return values will be assigned to the out-parameters.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_27rV8YYIEeCsDOrao2DJIA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_27rV8oYIEeCsDOrao2DJIA"/>
         </ownedAttribute>

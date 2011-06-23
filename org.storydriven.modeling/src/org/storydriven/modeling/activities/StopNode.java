@@ -53,29 +53,21 @@ public interface StopNode extends ActivityNode
    void setFlowStopOnly (boolean value);
 
    /**
-    * Returns the value of the '<em><b>Return Value</b></em>' containment reference.
+    * Returns the value of the '<em><b>Return Value</b></em>' reference.
     * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Return Value</em>' containment reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @return the value of the '<em>Return Value</em>' containment reference.
-    * @see #setReturnValue(Expression)
+    * <!-- begin-model-doc -->
+    * Convenience method when dealing with activities that implement an EOperation. In this case, only one out parameter is supported. This attributes then returns the first out parameter.
+    * <!-- end-model-doc -->
+    * @return the value of the '<em>Return Value</em>' reference.
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getStopNode_ReturnValue()
-    * @model containment="true" resolveProxies="true" ordered="false"
+    * @model changeable="false" volatile="true" derived="true" ordered="false"
     * @generated
     */
    Expression getReturnValue ();
-
-   /**
-    * Sets the value of the '{@link org.storydriven.modeling.activities.StopNode#getReturnValue <em>Return Value</em>}' containment reference.
-    * <!-- begin-user-doc --> <!--
-    * end-user-doc -->
-    * @param value the new value of the '<em>Return Value</em>' containment reference.
-    * @see #getReturnValue()
-    * @generated
-    */
-   void setReturnValue (Expression value);
 
    /**
     * Returns the value of the '<em><b>Return Values</b></em>' containment reference list.
@@ -86,6 +78,9 @@ public interface StopNode extends ActivityNode
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * Defines the return values of the activity. These return values will be assigned to the out-parameters.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Return Values</em>' containment reference list.
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getStopNode_ReturnValues()
     * @model containment="true" resolveProxies="true" ordered="false"
