@@ -1271,12 +1271,114 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
          new String[] {
                "documentation",
                "This package contains all classes for modeling story patterns that may be \r\nembedded into StoryActivityNodes of an Activity."});
+      addAnnotation(objectVariableEClass, source, new String[] {"documentation",
+            "An ObjectVariable holds a value of a complex type which is defined by an EClass. "});
+      addAnnotation(
+         getObjectVariable_BindingSemantics(),
+         source,
+         new String[] {
+               "documentation",
+               "The binding semantics defines whether the object must be matched for a successful application of the containing story pattern, whether it must not be matched or whether it is optional, i.e., it will be bound if it can be bound but that does not affect the success of matching the story pattern."});
+      addAnnotation(
+         getObjectVariable_BindingOperator(),
+         source,
+         new String[] {"documentation",
+               "The binding operator defines whether this object will be matched, created or destroyed by the story pattern."});
+      addAnnotation(getObjectVariable_Classifier(), source, new String[] {"documentation",
+            "The type of this ObjectVariable, given as an EClass."});
+      addAnnotation(abstractVariableEClass, source, new String[] {"documentation",
+            "Abstract super class for all kinds of variables which may occur in a story pattern."});
+      addAnnotation(
+         getAbstractVariable_BindingState(),
+         source,
+         new String[] {"documentation",
+               "The binding state defines whether the link is already bound or whether a match has to be obtained for it."});
+      addAnnotation(
+         getAbstractVariable_Constraint(),
+         source,
+         new String[] {
+               "documentation",
+               "All constraints which are defined for this variable. For a successful matching, all constraints for this variable must evaluate to true."});
+      addAnnotation(bindingStateEEnum, source, new String[] {"documentation",
+            "The BindingState defines whether an object or link variable is already bound to a value or not."});
+      addAnnotation(
+         bindingStateEEnum.getELiterals().get(0),
+         source,
+         new String[] {
+               "documentation",
+               "UNBOUND is the default value for this enum. If an object or link variable in a story pattern is unbound, a new match has to be obtained for that variable."});
+      addAnnotation(
+         bindingStateEEnum.getELiterals().get(1),
+         source,
+         new String[] {
+               "documentation",
+               "A bound variable has already been bound to a concrete value, i.e., it has either been passed as a parameter or it has been bound in a previous activity. If, during the execution of a story pattern, a bound variable has no value, the execution of the story pattern fails."});
       addAnnotation(
          bindingStateEEnum.getELiterals().get(2),
          source,
          new String[] {
                "documentation",
                "MAYBE_BOUND: unknown whether the variable is bound or not. If the variable is not bound, an object is matched and bound to the variable. If it is already bound, it is not altered. If the variable is still unbound after this process, the matching fails (except for OPTIONAL variables)."});
+      addAnnotation(constraintEClass, source, new String[] {"documentation",
+            "A constraint represents a condition which must be fulfilled for a successful pattern matching."});
+      addAnnotation(getConstraint_ConstraintExpression(), source, new String[] {"documentation",
+            "The constraintExpression defines the concrete condition of this constraint."});
+      addAnnotation(getConstraint_Pattern(), source, new String[] {"documentation",
+            "The story pattern this constraint applies to."});
+      addAnnotation(getConstraint_ObjectVariable(), source, new String[] {"documentation",
+            "The object variable this constraint applies to."});
+      addAnnotation(
+         abstractLinkVariableEClass,
+         source,
+         new String[] {"documentation",
+               "Abstract super class for all kinds of link variables that represent links between two objects in a story pattern."});
+      addAnnotation(
+         getAbstractLinkVariable_BindingSemantics(),
+         source,
+         new String[] {
+               "documentation",
+               "The binding semantics defines whether the link must be matched for a successful application of the containing story pattern, whether it must not be matched or whether it is optional, i.e., it will be bound if it can be bound but that does not affect the success of matching the story pattern."});
+      addAnnotation(
+         getAbstractLinkVariable_BindingOperator(),
+         source,
+         new String[] {"documentation",
+               "The binding operator defines whether this link will be matched, created or destroyed by the story pattern."});
+      addAnnotation(
+         getAbstractLinkVariable_BindingState(),
+         source,
+         new String[] {"documentation",
+               "The binding state defines whether the link is already bound or whether a match has to be obtained for it."});
+      addAnnotation(bindingSemanticsEEnum, source, new String[] {"documentation",
+            "The binding semantics defines which kind of match will be obtained for the object or link variable."});
+      addAnnotation(bindingSemanticsEEnum.getELiterals().get(0), source, new String[] {"documentation",
+            "For a mandatory object or link, a match must be found for a successful pattern application."});
+      addAnnotation(
+         bindingSemanticsEEnum.getELiterals().get(1),
+         source,
+         new String[] {
+               "documentation",
+               "If an object or link is marked as NEGATIVE, no match must be found for that object or variable. If a match can be found, the execution of the story pattern fails."});
+      addAnnotation(
+         bindingSemanticsEEnum.getELiterals().get(2),
+         source,
+         new String[] {
+               "documentation",
+               "For an OPTIONAL object or link, the matching tries to find a match. If no match can be found, this does not affect the success of the pattern matching. If a match can be found, the respective object or link is bound to the variable."});
+      addAnnotation(
+         bindingOperatorEEnum,
+         source,
+         new String[] {
+               "documentation",
+               "The BindingOperator enum defines all possible operations for object and link variables. An object or link may be checked for existence be the story pattern (black object/link), it may be created (green object/link), or it may be destroyed (red object/link)."});
+      addAnnotation(
+         bindingOperatorEEnum.getELiterals().get(0),
+         source,
+         new String[] {"documentation",
+               "CHECK_ONLY is the default value of this enum. It requires an object or link just to be matched by the story pattern."});
+      addAnnotation(bindingOperatorEEnum.getELiterals().get(1), source, new String[] {"documentation",
+            "An object or link marked as CREATE will be created by the story pattern."});
+      addAnnotation(bindingOperatorEEnum.getELiterals().get(2), source, new String[] {"documentation",
+            "An object or variable marked as DESTROY will be destroyed be the story pattern."});
       addAnnotation(
          objectSetVariableEClass,
          source,
@@ -1291,6 +1393,12 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
          new String[] {
                "documentation",
                "Specifies the containment of an object in a set (represented by a ContainerVariable). Will be displayed by a line having a circle with a plus inside at the end of the container. Create modifier specifies that the object will be added to the container, delete that it will be removed, and none that it will be checked to be contained."});
+      addAnnotation(
+         matchingPatternEClass,
+         source,
+         new String[] {
+               "documentation",
+               "A MatchingPattern is a special kind of story pattern that does not change the underlying graph. Thus, no contained object or link may carry an create or destroy BindingOperator."});
       addAnnotation(
          getMatchingPattern__NoModifierInMatchingPattern__DiagnosticChain_Map(),
          source,
@@ -1309,6 +1417,12 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
                "Represents a single container, e.g. a Set or List. ContainmentRelations can be used to add or remove objects to or from this container.\r\nEvery Constraint or AttributeAssignment can use the variable as a container (e.g., \"set->size() > 5\")."});
       addAnnotation(storyPatternEClass, source, new String[] {"documentation",
             "A Story Pattern is a graph rewrite rule that may be embedded into a StoryActivityNode\r\nof an Activity."});
+      addAnnotation(
+         getStoryPattern_Constraint(),
+         source,
+         new String[] {
+               "documentation",
+               "All constraints which are defined for this story pattern. For a successful matching, all constraints for this story pattern must evaluate to true."});
    }
 
    /**

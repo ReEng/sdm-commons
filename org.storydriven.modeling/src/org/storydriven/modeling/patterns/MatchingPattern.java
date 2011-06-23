@@ -13,6 +13,10 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Matching Pattern</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A MatchingPattern is a special kind of story pattern that does not change the underlying graph. Thus, no contained object or link may carry an create or destroy BindingOperator.
+ * <!-- end-model-doc -->
+ *
  *
  * @see org.storydriven.modeling.patterns.PatternsPackage#getMatchingPattern()
  * @model

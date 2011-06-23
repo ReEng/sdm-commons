@@ -12,6 +12,10 @@ import org.storydriven.modeling.expressions.Expression;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Constraint</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A constraint represents a condition which must be fulfilled for a successful pattern matching.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -34,6 +38,9 @@ public interface Constraint extends EObject
     * If the meaning of the '<em>Constraint Expression</em>' containment reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The constraintExpression defines the concrete condition of this constraint.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Constraint Expression</em>' containment reference.
     * @see #setConstraintExpression(Expression)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getConstraint_ConstraintExpression()
@@ -60,6 +67,9 @@ public interface Constraint extends EObject
     * If the meaning of the '<em>Pattern</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The story pattern this constraint applies to.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Pattern</em>' container reference.
     * @see #setPattern(StoryPattern)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getConstraint_Pattern()
@@ -86,6 +96,9 @@ public interface Constraint extends EObject
     * If the meaning of the '<em>Object Variable</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The object variable this constraint applies to.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Object Variable</em>' container reference.
     * @see #setObjectVariable(AbstractVariable)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getConstraint_ObjectVariable()

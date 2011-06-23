@@ -12,6 +12,10 @@ import org.eclipse.emf.ecore.EClass;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Object Variable</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An ObjectVariable holds a value of a complex type which is defined by an EClass. 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -40,6 +44,9 @@ public interface ObjectVariable extends AbstractVariable
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The binding semantics defines whether the object must be matched for a successful application of the containing story pattern, whether it must not be matched or whether it is optional, i.e., it will be bound if it can be bound but that does not affect the success of matching the story pattern.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Binding Semantics</em>' attribute.
     * @see org.storydriven.modeling.patterns.BindingSemantics
     * @see #setBindingSemantics(BindingSemantics)
@@ -70,6 +77,9 @@ public interface ObjectVariable extends AbstractVariable
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The binding operator defines whether this object will be matched, created or destroyed by the story pattern.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Binding Operator</em>' attribute.
     * @see org.storydriven.modeling.patterns.BindingOperator
     * @see #setBindingOperator(BindingOperator)
@@ -137,6 +147,9 @@ public interface ObjectVariable extends AbstractVariable
     * If the meaning of the '<em>Classifier</em>' reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The type of this ObjectVariable, given as an EClass.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Classifier</em>' reference.
     * @see #setClassifier(EClass)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getObjectVariable_Classifier()

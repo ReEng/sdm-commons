@@ -16,6 +16,10 @@ import org.storydriven.modeling.expressions.Expression;
  * A representation of the model object '<em><b>Abstract Variable</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Abstract super class for all kinds of variables which may occur in a story pattern.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -71,6 +75,9 @@ public interface AbstractVariable extends Variable, NamedElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The binding state defines whether the link is already bound or whether a match has to be obtained for it.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Binding State</em>' attribute.
     * @see org.storydriven.modeling.patterns.BindingState
     * @see #setBindingState(BindingState)
@@ -127,6 +134,9 @@ public interface AbstractVariable extends Variable, NamedElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * All constraints which are defined for this variable. For a successful matching, all constraints for this variable must evaluate to true.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Constraint</em>' containment reference list.
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractVariable_Constraint()
     * @see org.storydriven.modeling.patterns.Constraint#getObjectVariable

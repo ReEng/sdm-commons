@@ -81,6 +81,9 @@ public interface StoryPattern extends CommentableElement
     * If the meaning of the '<em>Constraint</em>' containment reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * All constraints which are defined for this story pattern. For a successful matching, all constraints for this story pattern must evaluate to true.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Constraint</em>' containment reference list.
     * @see org.storydriven.modeling.patterns.PatternsPackage#getStoryPattern_Constraint()
     * @see org.storydriven.modeling.patterns.Constraint#getPattern

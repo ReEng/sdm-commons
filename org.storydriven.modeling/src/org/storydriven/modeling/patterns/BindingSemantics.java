@@ -14,6 +14,9 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc --> A representation of the literals of the enumeration '<em><b>Binding Semantics</b></em>', and utility methods for working with them. <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * The binding semantics defines which kind of match will be obtained for the object or link variable.
+ * <!-- end-model-doc -->
  * @see org.storydriven.modeling.patterns.PatternsPackage#getBindingSemantics()
  * @model
  * @generated
@@ -54,6 +57,9 @@ public enum BindingSemantics implements Enumerator
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * For a mandatory object or link, a match must be found for a successful pattern application.
+    * <!-- end-model-doc -->
     * @see #MANDATORY
     * @model
     * @generated
@@ -68,6 +74,9 @@ public enum BindingSemantics implements Enumerator
     * If the meaning of '<em><b>NEGATIVE</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * If an object or link is marked as NEGATIVE, no match must be found for that object or variable. If a match can be found, the execution of the story pattern fails.
+    * <!-- end-model-doc -->
     * @see #NEGATIVE
     * @model
     * @generated
@@ -82,6 +91,9 @@ public enum BindingSemantics implements Enumerator
     * If the meaning of '<em><b>OPTIONAL</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * For an OPTIONAL object or link, the matching tries to find a match. If no match can be found, this does not affect the success of the pattern matching. If a match can be found, the respective object or link is bound to the variable.
+    * <!-- end-model-doc -->
     * @see #OPTIONAL
     * @model
     * @generated

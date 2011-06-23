@@ -12,6 +12,10 @@ import org.storydriven.modeling.NamedElement;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Abstract Link Variable</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Abstract super class for all kinds of link variables that represent links between two objects in a story pattern.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -42,6 +46,9 @@ public interface AbstractLinkVariable extends NamedElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The binding semantics defines whether the link must be matched for a successful application of the containing story pattern, whether it must not be matched or whether it is optional, i.e., it will be bound if it can be bound but that does not affect the success of matching the story pattern.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Binding Semantics</em>' attribute.
     * @see org.storydriven.modeling.patterns.BindingSemantics
     * @see #setBindingSemantics(BindingSemantics)
@@ -72,6 +79,9 @@ public interface AbstractLinkVariable extends NamedElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The binding operator defines whether this link will be matched, created or destroyed by the story pattern.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Binding Operator</em>' attribute.
     * @see org.storydriven.modeling.patterns.BindingOperator
     * @see #setBindingOperator(BindingOperator)

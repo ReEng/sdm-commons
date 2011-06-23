@@ -1068,8 +1068,19 @@ embedded into StoryActivityNodes of an Activity.</body>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="37d4c959-090c-411e-b62f-a01a5acd650c" name="BindingState">
-        <ownedLiteral xmi:id="_XroecBzhEeChOvWwuwx7tQ" name="UNBOUND"/>
-        <ownedLiteral xmi:id="_YcNm0BzhEeChOvWwuwx7tQ" name="BOUND"/>
+        <ownedComment xmi:id="_jbGdEJ3UEeCuYMafrm1l2g" annotatedElement="37d4c959-090c-411e-b62f-a01a5acd650c">
+          <body>The BindingState defines whether an object or link variable is already bound to a value or not.</body>
+        </ownedComment>
+        <ownedLiteral xmi:id="_XroecBzhEeChOvWwuwx7tQ" name="UNBOUND">
+          <ownedComment xmi:id="_pUPasJ3UEeCuYMafrm1l2g" annotatedElement="_XroecBzhEeChOvWwuwx7tQ">
+            <body>UNBOUND is the default value for this enum. If an object or link variable in a story pattern is unbound, a new match has to be obtained for that variable.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="_YcNm0BzhEeChOvWwuwx7tQ" name="BOUND">
+          <ownedComment xmi:id="_wViTMJ3UEeCuYMafrm1l2g" annotatedElement="_YcNm0BzhEeChOvWwuwx7tQ">
+            <body>A bound variable has already been bound to a concrete value, i.e., it has either been passed as a parameter or it has been bound in a previous activity. If, during the execution of a story pattern, a bound variable has no value, the execution of the story pattern fails.</body>
+          </ownedComment>
+        </ownedLiteral>
         <ownedLiteral xmi:id="_ZHaf8BzhEeChOvWwuwx7tQ" name="MAYBE_BOUND">
           <ownedComment xmi:id="_eR1f8BztEeChOvWwuwx7tQ" annotatedElement="_ZHaf8BzhEeChOvWwuwx7tQ">
             <body>MAYBE_BOUND: unknown whether the variable is bound or not. If the variable is not bound, an object is matched and bound to the variable. If it is already bound, it is not altered. If the variable is still unbound after this process, the matching fails (except for OPTIONAL variables).</body>
@@ -1077,16 +1088,40 @@ embedded into StoryActivityNodes of an Activity.</body>
         </ownedLiteral>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="5d5c7278-e6e7-4956-ab18-44332c8cc462" name="BindingSemantics">
-        <ownedLiteral xmi:id="fa270781-e8e1-4379-ada0-d421ab1217e0" name="MANDATORY"/>
-        <ownedLiteral xmi:id="a393eadb-e48f-4d92-a8c2-60d11a0047f7" name="NEGATIVE"/>
-        <ownedLiteral xmi:id="5cedb18b-1f2e-4154-9266-a26d96d084a0" name="OPTIONAL"/>
+        <ownedComment xmi:id="__AJtgJ3UEeCuYMafrm1l2g" annotatedElement="5d5c7278-e6e7-4956-ab18-44332c8cc462">
+          <body>The binding semantics defines which kind of match will be obtained for the object or link variable.</body>
+        </ownedComment>
+        <ownedLiteral xmi:id="fa270781-e8e1-4379-ada0-d421ab1217e0" name="MANDATORY">
+          <ownedComment xmi:id="_CRxPQJ3VEeCuYMafrm1l2g" annotatedElement="fa270781-e8e1-4379-ada0-d421ab1217e0">
+            <body>For a mandatory object or link, a match must be found for a successful pattern application.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="a393eadb-e48f-4d92-a8c2-60d11a0047f7" name="NEGATIVE">
+          <ownedComment xmi:id="_GwmyEJ3VEeCuYMafrm1l2g" annotatedElement="a393eadb-e48f-4d92-a8c2-60d11a0047f7">
+            <body>If an object or link is marked as NEGATIVE, no match must be found for that object or variable. If a match can be found, the execution of the story pattern fails.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="5cedb18b-1f2e-4154-9266-a26d96d084a0" name="OPTIONAL">
+          <ownedComment xmi:id="_ND7xUJ3VEeCuYMafrm1l2g" annotatedElement="5cedb18b-1f2e-4154-9266-a26d96d084a0">
+            <body>For an OPTIONAL object or link, the matching tries to find a match. If no match can be found, this does not affect the success of the pattern matching. If a match can be found, the respective object or link is bound to the variable.</body>
+          </ownedComment>
+        </ownedLiteral>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="70a57767-3c96-4cff-87d3-8391bb039afc" name="AbstractLinkVariable" isAbstract="true">
+        <ownedComment xmi:id="_YqsrAJ3TEeCuYMafrm1l2g" annotatedElement="70a57767-3c96-4cff-87d3-8391bb039afc">
+          <body>Abstract super class for all kinds of link variables that represent links between two objects in a story pattern.</body>
+        </ownedComment>
         <generalization xmi:id="_0MvS4LLzEd-uk56s-ldeog" general="_tB8FcLK5Ed-uk56s-ldeog"/>
         <ownedAttribute xmi:id="13223e42-7f6d-415c-a7c7-68e58015a9be" name="bindingSemantics" visibility="public" type="5d5c7278-e6e7-4956-ab18-44332c8cc462">
+          <ownedComment xmi:id="_kr_5sJ3TEeCuYMafrm1l2g" annotatedElement="13223e42-7f6d-415c-a7c7-68e58015a9be">
+            <body>The binding semantics defines whether the link must be matched for a successful application of the containing story pattern, whether it must not be matched or whether it is optional, i.e., it will be bound if it can be bound but that does not affect the success of matching the story pattern.</body>
+          </ownedComment>
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_-5l9gLL7Ed-uk56s-ldeog" instance="fa270781-e8e1-4379-ada0-d421ab1217e0"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="ef15800b-d4db-4f97-a719-6cac128fecad" name="bindingOperator" visibility="public" type="74737b3a-1725-4fee-b753-d7458eda7189">
+          <ownedComment xmi:id="_1DEOwJ3TEeCuYMafrm1l2g" annotatedElement="ef15800b-d4db-4f97-a719-6cac128fecad">
+            <body>The binding operator defines whether this link will be matched, created or destroyed by the story pattern.</body>
+          </ownedComment>
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="__jOJULL7Ed-uk56s-ldeog" instance="888dbb97-a420-4e27-bfb0-f5b3de6da65b"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="29ee7390-8b89-420e-99c9-e1179f7cfd54" name="target" visibility="public" type="_ieKckGHwEeCDNuSrVjgXCA" association="efa70337-efe7-457d-8d6a-3aea19469b7a">
@@ -1103,16 +1138,35 @@ embedded into StoryActivityNodes of an Activity.</body>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA8os7KwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA8otLKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_4SO20BzZEeChOvWwuwx7tQ" name="bindingState" visibility="public" type="37d4c959-090c-411e-b62f-a01a5acd650c"/>
+        <ownedAttribute xmi:id="_4SO20BzZEeChOvWwuwx7tQ" name="bindingState" visibility="public" type="37d4c959-090c-411e-b62f-a01a5acd650c">
+          <ownedComment xmi:id="_5seC0J3TEeCuYMafrm1l2g" annotatedElement="_4SO20BzZEeChOvWwuwx7tQ">
+            <body>The binding state defines whether the link is already bound or whether a match has to be obtained for it.</body>
+          </ownedComment>
+        </ownedAttribute>
         <ownedAttribute xmi:id="_IIFDQBzcEeChOvWwuwx7tQ" name="pattern" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="_IIEcMBzcEeChOvWwuwx7tQ">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IIFDQhzcEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IIFDQRzcEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="74737b3a-1725-4fee-b753-d7458eda7189" name="BindingOperator">
-        <ownedLiteral xmi:id="888dbb97-a420-4e27-bfb0-f5b3de6da65b" name="CHECK_ONLY"/>
-        <ownedLiteral xmi:id="261583f1-b911-4c05-b4d7-f7f2cda8496a" name="CREATE"/>
-        <ownedLiteral xmi:id="501ae012-48cf-4ea0-83e6-11394bfe9a8d" name="DESTROY"/>
+        <ownedComment xmi:id="_HRmbwJ3UEeCuYMafrm1l2g" annotatedElement="74737b3a-1725-4fee-b753-d7458eda7189">
+          <body>The BindingOperator enum defines all possible operations for object and link variables. An object or link may be checked for existence be the story pattern (black object/link), it may be created (green object/link), or it may be destroyed (red object/link).</body>
+        </ownedComment>
+        <ownedLiteral xmi:id="888dbb97-a420-4e27-bfb0-f5b3de6da65b" name="CHECK_ONLY">
+          <ownedComment xmi:id="_UOkogJ3UEeCuYMafrm1l2g" annotatedElement="888dbb97-a420-4e27-bfb0-f5b3de6da65b">
+            <body>CHECK_ONLY is the default value of this enum. It requires an object or link just to be matched by the story pattern.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="261583f1-b911-4c05-b4d7-f7f2cda8496a" name="CREATE">
+          <ownedComment xmi:id="_ahJZ0J3UEeCuYMafrm1l2g" annotatedElement="261583f1-b911-4c05-b4d7-f7f2cda8496a">
+            <body>An object or link marked as CREATE will be created by the story pattern.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="501ae012-48cf-4ea0-83e6-11394bfe9a8d" name="DESTROY">
+          <ownedComment xmi:id="_fjsGoJ3UEeCuYMafrm1l2g" annotatedElement="501ae012-48cf-4ea0-83e6-11394bfe9a8d">
+            <body>An object or variable marked as DESTROY will be destroyed be the story pattern.</body>
+          </ownedComment>
+        </ownedLiteral>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="8fd71d27-94c0-49d5-9902-a26156244424" name="LinkConstraint">
         <generalization xmi:id="_VBbqQLyzEd-eCY_Peu5fFw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
@@ -1142,11 +1196,20 @@ embedded into StoryActivityNodes of an Activity.</body>
         <ownedLiteral xmi:id="6d2dda9b-0699-4bf5-be1a-30d9009257f0" name="INDEX"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="c0f72d07-a643-4da9-859b-d95cfca69eee" name="ObjectVariable">
+        <ownedComment xmi:id="__HUQAJ3VEeCuYMafrm1l2g" annotatedElement="c0f72d07-a643-4da9-859b-d95cfca69eee">
+          <body>An ObjectVariable holds a value of a complex type which is defined by an EClass. </body>
+        </ownedComment>
         <generalization xmi:id="_o7JuIGHwEeCDNuSrVjgXCA" general="_ieKckGHwEeCDNuSrVjgXCA"/>
         <ownedAttribute xmi:id="8af9ddea-a5c4-4017-b709-364964a433cf" name="bindingSemantics" visibility="public" type="5d5c7278-e6e7-4956-ab18-44332c8cc462">
+          <ownedComment xmi:id="_JgV5UJ3WEeCuYMafrm1l2g" annotatedElement="8af9ddea-a5c4-4017-b709-364964a433cf">
+            <body>The binding semantics defines whether the object must be matched for a successful application of the containing story pattern, whether it must not be matched or whether it is optional, i.e., it will be bound if it can be bound but that does not affect the success of matching the story pattern.</body>
+          </ownedComment>
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_Jgg44LL8Ed-uk56s-ldeog" instance="fa270781-e8e1-4379-ada0-d421ab1217e0"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="35801d86-4de1-4fb5-becb-10e3f92a3afb" name="bindingOperator" visibility="public" type="74737b3a-1725-4fee-b753-d7458eda7189">
+          <ownedComment xmi:id="_MuiToJ3WEeCuYMafrm1l2g" annotatedElement="35801d86-4de1-4fb5-becb-10e3f92a3afb">
+            <body>The binding operator defines whether this object will be matched, created or destroyed by the story pattern.</body>
+          </ownedComment>
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_KXj1oLL8Ed-uk56s-ldeog" instance="888dbb97-a420-4e27-bfb0-f5b3de6da65b"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="1d75eb5a-c292-4676-951a-809ab4091e6b" name="attributeAssignment" visibility="public" type="79151c76-8e24-4f76-8143-e713373a8b68" isOrdered="true" aggregation="composite" association="9b10acef-9c32-4f56-8abd-1d56ed027e13">
@@ -1158,6 +1221,9 @@ embedded into StoryActivityNodes of an Activity.</body>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-VrKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="5f30323f-8a08-46cd-841e-9f1733bc5943" name="classifier" visibility="public" subsettedProperty="_HPpYkbLzEd-uk56s-ldeog" association="8838401c-d86f-4515-8e20-04bad8258657">
+          <ownedComment xmi:id="_D45vsJ3WEeCuYMafrm1l2g" annotatedElement="5f30323f-8a08-46cd-841e-9f1733bc5943">
+            <body>The type of this ObjectVariable, given as an EClass.</body>
+          </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_xIxQkLK8Ed-uk56s-ldeog" name="linkOrderConstraint" type="8fd71d27-94c0-49d5-9902-a26156244424" isOrdered="true" aggregation="composite" association="_xIwpgLK8Ed-uk56s-ldeog">
@@ -1186,6 +1252,9 @@ of an Activity.</body>
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_Lp6OULL8Ed-uk56s-ldeog" instance="fa270781-e8e1-4379-ada0-d421ab1217e0"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_qINk0bLxEd-uk56s-ldeog" name="constraint" visibility="public" type="_82J4gBzaEeChOvWwuwx7tQ" aggregation="composite" association="_qIMWsLLxEd-uk56s-ldeog">
+          <ownedComment xmi:id="_rsw70J3VEeCuYMafrm1l2g" annotatedElement="_qINk0bLxEd-uk56s-ldeog">
+            <body>All constraints which are defined for this story pattern. For a successful matching, all constraints for this story pattern must evaluate to true.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qIOL4LLxEd-uk56s-ldeog" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qINk0rLxEd-uk56s-ldeog"/>
         </ownedAttribute>
@@ -1223,15 +1292,27 @@ of an Activity.</body>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_82J4gBzaEeChOvWwuwx7tQ" name="Constraint">
+        <ownedComment xmi:id="_bxEUIJ3VEeCuYMafrm1l2g" annotatedElement="_82J4gBzaEeChOvWwuwx7tQ">
+          <body>A constraint represents a condition which must be fulfilled for a successful pattern matching.</body>
+        </ownedComment>
         <ownedAttribute xmi:id="_ETMR0hzbEeChOvWwuwx7tQ" name="constraintExpression" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_ETLDsBzbEeChOvWwuwx7tQ">
+          <ownedComment xmi:id="_feg2QJ3VEeCuYMafrm1l2g" annotatedElement="_ETMR0hzbEeChOvWwuwx7tQ">
+            <body>The constraintExpression defines the concrete condition of this constraint.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ETM44RzbEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ETM44BzbEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_Q53MgBzdEeChOvWwuwx7tQ" name="objectVariable" type="_ieKckGHwEeCDNuSrVjgXCA" association="_Q52lcBzdEeChOvWwuwx7tQ">
+          <ownedComment xmi:id="_i0vyQJ3VEeCuYMafrm1l2g" annotatedElement="_Q53MgBzdEeChOvWwuwx7tQ">
+            <body>The object variable this constraint applies to.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q53zkBzdEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q53MgRzdEeChOvWwuwx7tQ"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_qIM9wLLxEd-uk56s-ldeog" name="pattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="_qIMWsLLxEd-uk56s-ldeog">
+          <ownedComment xmi:id="_vdCIcJ3VEeCuYMafrm1l2g" annotatedElement="_qIM9wLLxEd-uk56s-ldeog">
+            <body>The story pattern this constraint applies to.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qINk0LLxEd-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qIM9wbLxEd-uk56s-ldeog"/>
         </ownedAttribute>
@@ -1243,6 +1324,9 @@ of an Activity.</body>
         <generalization xmi:id="_ocwZoBzeEeChOvWwuwx7tQ" general="70a57767-3c96-4cff-87d3-8391bb039afc"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_kZu7ABzcEeChOvWwuwx7tQ" name="MatchingPattern">
+        <ownedComment xmi:id="_QY6bAJ3TEeCuYMafrm1l2g" annotatedElement="_kZu7ABzcEeChOvWwuwx7tQ">
+          <body>A MatchingPattern is a special kind of story pattern that does not change the underlying graph. Thus, no contained object or link may carry an create or destroy BindingOperator.</body>
+        </ownedComment>
         <ownedRule xmi:id="_oxWLwBztEeChOvWwuwx7tQ" name="NoModifierInMatchingPattern">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_oxWy0BztEeChOvWwuwx7tQ">
             <language>OCL</language>
@@ -1259,12 +1343,18 @@ The context for contained Constraints and AttributeAssignments is a single objec
         <generalization xmi:id="_ndnGQBzdEeChOvWwuwx7tQ" general="c0f72d07-a643-4da9-859b-d95cfca69eee"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_ieKckGHwEeCDNuSrVjgXCA" name="AbstractVariable" isAbstract="true">
+        <ownedComment xmi:id="_48eeYJ3VEeCuYMafrm1l2g" annotatedElement="_ieKckGHwEeCDNuSrVjgXCA">
+          <body>Abstract super class for all kinds of variables which may occur in a story pattern.</body>
+        </ownedComment>
         <generalization xmi:id="_vhAKYBzcEeChOvWwuwx7tQ" general="_c2cqYBzJEeChOvWwuwx7tQ"/>
         <generalization xmi:id="_89NC8LLzEd-uk56s-ldeog" general="_tB8FcLK5Ed-uk56s-ldeog"/>
         <ownedAttribute xmi:id="97f7e21a-6cb3-4e71-a689-faf97d6546e6" name="pattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="71c51c4d-b7d4-44e9-8970-b4d9a946910c">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-ULKwEd-DYIlz5ANeHA" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="60d4fc4e-8a40-44a9-9913-ea51221db1a8" name="bindingState" visibility="public" type="37d4c959-090c-411e-b62f-a01a5acd650c">
+          <ownedComment xmi:id="_R0zC0J3WEeCuYMafrm1l2g" annotatedElement="60d4fc4e-8a40-44a9-9913-ea51221db1a8">
+            <body>The binding state defines whether the link is already bound or whether a match has to be obtained for it.</body>
+          </ownedComment>
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_IwfxMLL8Ed-uk56s-ldeog" instance="_XroecBzhEeChOvWwuwx7tQ"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_-GnpcLLwEd-uk56s-ldeog" name="bindingExpression" visibility="public" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_-GmbULLwEd-uk56s-ldeog">
@@ -1272,6 +1362,9 @@ The context for contained Constraints and AttributeAssignments is a single objec
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-GnpcbLwEd-uk56s-ldeog"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_Q53zkRzdEeChOvWwuwx7tQ" name="constraint" type="_82J4gBzaEeChOvWwuwx7tQ" isOrdered="true" aggregation="composite" association="_Q52lcBzdEeChOvWwuwx7tQ">
+          <ownedComment xmi:id="_lDRfUJ3VEeCuYMafrm1l2g" annotatedElement="_Q53zkRzdEeChOvWwuwx7tQ">
+            <body>All constraints which are defined for this variable. For a successful matching, all constraints for this variable must evaluate to true.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q54aoRzdEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q54aoBzdEeChOvWwuwx7tQ"/>
         </ownedAttribute>

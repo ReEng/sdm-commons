@@ -14,6 +14,9 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc --> A representation of the literals of the enumeration '<em><b>Binding State</b></em>', and utility methods for working with them. <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * The BindingState defines whether an object or link variable is already bound to a value or not.
+ * <!-- end-model-doc -->
  * @see org.storydriven.modeling.patterns.PatternsPackage#getBindingState()
  * @model
  * @generated
@@ -54,6 +57,9 @@ public enum BindingState implements Enumerator
     * If the meaning of '<em><b>UNBOUND</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * UNBOUND is the default value for this enum. If an object or link variable in a story pattern is unbound, a new match has to be obtained for that variable.
+    * <!-- end-model-doc -->
     * @see #UNBOUND
     * @model
     * @generated
@@ -68,6 +74,9 @@ public enum BindingState implements Enumerator
     * If the meaning of '<em><b>BOUND</b></em>' literal object isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * A bound variable has already been bound to a concrete value, i.e., it has either been passed as a parameter or it has been bound in a previous activity. If, during the execution of a story pattern, a bound variable has no value, the execution of the story pattern fails.
+    * <!-- end-model-doc -->
     * @see #BOUND
     * @model
     * @generated
