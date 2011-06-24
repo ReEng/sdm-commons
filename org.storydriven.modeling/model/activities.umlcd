@@ -8,7 +8,7 @@
       <visualProperties xmi:id="_tbqUeiJAEeCMEorpcZtLvw" position="0.0,-33.0"/>
     </nameVisual>
     <bendpoints xmi:id="_M-FSYV-XEeCraej0mjEdNw" sourceX="-169" sourceY="-1" targetY="156"/>
-    <sourceRole xmi:id="_tVZ7ciJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c38d6d26-77ad-489b-aef2-755014fcadb9" aggregationKind="2" name="ownedActivityNode" navigable="true">
+    <sourceRole xmi:id="_tVZ7ciJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c38d6d26-77ad-489b-aef2-755014fcadb9" comments="_Sl1TsZ0REeCuYMafrm1l2g" targetConnectionVisual="_Sl1Tsp0REeCuYMafrm1l2g" aggregationKind="2" name="ownedActivityNode" navigable="true">
       <modelElement href="sdm.uml#c38d6d26-77ad-489b-aef2-755014fcadb9"/>
       <visualProperties xmi:id="_tbqUeSJAEeCMEorpcZtLvw" position="-111.0,-17.0"/>
       <visibility xmi:id="_tVZ7cyJAEeCMEorpcZtLvw" label="+"/>
@@ -166,7 +166,7 @@
       <cardinality xmi:id="_tVZ7wSJAEeCMEorpcZtLvw" label="*" max="-1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_tVZ7zSJAEeCMEorpcZtLvw" sourceItem="_tVZ7zCJAEeCMEorpcZtLvw" targetItem="_KKdJpl-WEeCraej0mjEdNw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_tVZ7zSJAEeCMEorpcZtLvw" sourceItem="_tVZ7zCJAEeCMEorpcZtLvw" targetItem="_3jzPfp5-EeCWWYky4ZcK-A"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tVZ7ziJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_BzfP0BzIEeChOvWwuwx7tQ" sourceAnchor="23.0,73.0" targetAnchor="0.0,27.0" source="_tVjscCJAEeCMEorpcZtLvw" target="_tV2nkSJAEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_BzfP0BzIEeChOvWwuwx7tQ"/>
     <visualProperties xmi:id="_tVZ71iJAEeCMEorpcZtLvw"/>
@@ -208,8 +208,8 @@
       <cardinality xmi:id="_tVZ73yJAEeCMEorpcZtLvw" label="0..1" max="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_tVZ74iJAEeCMEorpcZtLvw" sourceItem="_tVZ74SJAEeCMEorpcZtLvw" targetItem="_KKY4MF-WEeCraej0mjEdNw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_tVZ75CJAEeCMEorpcZtLvw" sourceItem="_tVZ74yJAEeCMEorpcZtLvw" targetItem="_KKC59l-WEeCraej0mjEdNw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_tVZ74iJAEeCMEorpcZtLvw" sourceItem="_tVZ74SJAEeCMEorpcZtLvw" targetItem="_3jzPcp5-EeCWWYky4ZcK-A"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_tVZ75CJAEeCMEorpcZtLvw" sourceItem="_tVZ74yJAEeCMEorpcZtLvw" targetItem="_3j9Afp5-EeCWWYky4ZcK-A"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tVZ75SJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_ttgfYBzPEeChOvWwuwx7tQ" sourceAnchor="235.0,36.0" targetAnchor="0.0,16.0" source="_tVjshyJAEeCMEorpcZtLvw" target="_tV2nZCJAEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_ttgfYBzPEeChOvWwuwx7tQ"/>
     <visualProperties xmi:id="_tVZ77SJAEeCMEorpcZtLvw"/>
@@ -251,7 +251,7 @@
       <cardinality xmi:id="_tVZ7-CJAEeCMEorpcZtLvw" label="*" max="-1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_tVZ7-yJAEeCMEorpcZtLvw" sourceItem="_tVZ7-iJAEeCMEorpcZtLvw" targetItem="_KKatYF-WEeCraej0mjEdNw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_tVZ7-yJAEeCMEorpcZtLvw" sourceItem="_tVZ7-iJAEeCMEorpcZtLvw" targetItem="_3kGKYp5-EeCWWYky4ZcK-A"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tVZ7_CJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_IrZMsBzREeChOvWwuwx7tQ" sourceAnchor="19.0,0.0" targetAnchor="57.0,73.0" source="_tV2niCJAEeCMEorpcZtLvw" target="_tVjscCJAEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_IrZMsBzREeChOvWwuwx7tQ"/>
     <visualProperties xmi:id="_tVZ8BCJAEeCMEorpcZtLvw"/>
@@ -301,7 +301,7 @@
       <cardinality xmi:id="_tVZ8FSJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_tVZ8GCJAEeCMEorpcZtLvw" sourceItem="_tVZ8FyJAEeCMEorpcZtLvw" targetItem="_KKYRIF-WEeCraej0mjEdNw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_tVZ8GCJAEeCMEorpcZtLvw" sourceItem="_tVZ8FyJAEeCMEorpcZtLvw" targetItem="_3jzPdp5-EeCWWYky4ZcK-A"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tVZ8GSJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_3JKaIBzSEeChOvWwuwx7tQ" sourceAnchor="110.0,27.0" targetAnchor="143.0,0.0" source="_JVbo8iJHEeCMEorpcZtLvw" target="_tV2nZCJAEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_3JKaIBzSEeChOvWwuwx7tQ"/>
     <visualProperties xmi:id="_tVZ8ISJAEeCMEorpcZtLvw"/>
@@ -398,7 +398,7 @@
       <visibility xmi:id="_wdwqoSrfEeCrkKoGytJPbg" label="+"/>
       <cardinality xmi:id="_wdwqoCrfEeCrkKoGytJPbg" label="*" max="-1"/>
     </sourceRole>
-    <targetRole xmi:id="_wdaFUCrfEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_bGIb8RzMEeChOvWwuwx7tQ" derived="true" name="inParameter" navigable="true">
+    <targetRole xmi:id="_wdaFUCrfEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_bGIb8RzMEeChOvWwuwx7tQ" name="inParameter" navigable="true">
       <modelElement href="sdm.uml#_bGIb8RzMEeChOvWwuwx7tQ"/>
       <visualProperties xmi:id="_zUMFMSrfEeCrkKoGytJPbg" position="62.0,-64.0"/>
       <visibility xmi:id="_wdxRsSrfEeCrkKoGytJPbg" label="+"/>
@@ -417,7 +417,7 @@
       <visibility xmi:id="_wdx4wCrfEeCrkKoGytJPbg" label="+"/>
       <cardinality xmi:id="_wdxRsirfEeCrkKoGytJPbg" label="*" max="-1"/>
     </sourceRole>
-    <targetRole xmi:id="_wdasYCrfEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_eWJbMBzMEeChOvWwuwx7tQ" derived="true" name="outParameter" navigable="true">
+    <targetRole xmi:id="_wdasYCrfEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_eWJbMBzMEeChOvWwuwx7tQ" name="outParameter" navigable="true">
       <modelElement href="sdm.uml#_eWJbMBzMEeChOvWwuwx7tQ"/>
       <visualProperties xmi:id="_zUOhcCrfEeCrkKoGytJPbg" position="50.0,-32.0"/>
       <visibility xmi:id="_wdx4wirfEeCrkKoGytJPbg" label="+"/>
@@ -430,63 +430,17 @@
     <bendpoints xmi:id="_1-wOACrfEeCrkKoGytJPbg" sourceY="-36" targetX="-20" targetY="63"/>
     <bendpoints xmi:id="_1-wOASrfEeCrkKoGytJPbg" sourceX="20" sourceY="-36" targetY="63"/>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_wdY3MSrfEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_ru4E8BzOEeChOvWwuwx7tQ" sourceAnchor="116.0,0.0" targetAnchor="35.0,26.0" subClass="_tVtdmyJAEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#_ru4E8BzOEeChOvWwuwx7tQ"/>
-    <bendpoints xmi:id="_1-r8kCrfEeCrkKoGytJPbg" sourceY="-30" targetX="473" targetY="63"/>
-    <bendpoints xmi:id="_1-r8kSrfEeCrkKoGytJPbg" sourceX="-473" sourceY="-30" targetY="63"/>
-  </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_1YVuQCrfEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_1YPnoCrfEeCrkKoGytJPbg" sourceAnchor="0.0,15.0" targetAnchor="39.0,64.0" source="_tVjscCJAEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#_1YPnoCrfEeCrkKoGytJPbg"/>
-    <visualProperties xmi:id="_1YVuQSrfEeCrkKoGytJPbg"/>
-    <nameVisual xmi:id="_1YVuQirfEeCrkKoGytJPbg" text="ContainsInParameter">
-      <visualProperties xmi:id="_1ci40CrfEeCrkKoGytJPbg" position="42.0,-40.0"/>
-    </nameVisual>
-    <bendpoints xmi:id="_1-u_4CrfEeCrkKoGytJPbg" sourceX="-146" targetY="30"/>
-    <sourceRole xmi:id="_1YVuQyrfEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_1YQOsCrfEeCrkKoGytJPbg" name="revInParameter">
-      <modelElement href="sdm.uml#_1YQOsCrfEeCrkKoGytJPbg"/>
-      <visualProperties xmi:id="_1chqsCrfEeCrkKoGytJPbg" position="-83.0,-18.0"/>
-      <visibility xmi:id="_1YVuRCrfEeCrkKoGytJPbg" label="+"/>
-      <cardinality xmi:id="_1YVuRSrfEeCrkKoGytJPbg" label="*" max="-1"/>
-    </sourceRole>
-    <targetRole xmi:id="_1YVuRirfEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_1YQ1wSrfEeCrkKoGytJPbg" name="inParameter" navigable="true">
-      <modelElement href="sdm.uml#_1YQ1wSrfEeCrkKoGytJPbg"/>
-      <visualProperties xmi:id="_1cjf4CrfEeCrkKoGytJPbg" position="-13.0,15.0"/>
-      <visibility xmi:id="_1YVuRyrfEeCrkKoGytJPbg" label="+"/>
-      <cardinality xmi:id="_1YVuSCrfEeCrkKoGytJPbg" label="*" max="-1"/>
-    </targetRole>
-  </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_16c80CrfEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_16XdQCrfEeCrkKoGytJPbg" sourceAnchor="3.0,24.0" targetAnchor="9.0,64.0" source="_tVjscCJAEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#_16XdQCrfEeCrkKoGytJPbg"/>
-    <visualProperties xmi:id="_16c80SrfEeCrkKoGytJPbg"/>
-    <nameVisual xmi:id="_16c80irfEeCrkKoGytJPbg" text="ContainsOutParameter">
-      <visualProperties xmi:id="_1-3iwCrfEeCrkKoGytJPbg" position="-98.0,7.0"/>
-    </nameVisual>
-    <bendpoints xmi:id="_1-vm8CrfEeCrkKoGytJPbg" sourceX="-1" sourceY="54" targetX="178" targetY="93"/>
-    <bendpoints xmi:id="_1-vm8SrfEeCrkKoGytJPbg" sourceX="-204" sourceY="53" targetY="93"/>
-    <sourceRole xmi:id="_16c80yrfEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_16XdQSrfEeCrkKoGytJPbg" name="revOutParameter">
-      <modelElement href="sdm.uml#_16XdQSrfEeCrkKoGytJPbg"/>
-      <visualProperties xmi:id="_1-2UoCrfEeCrkKoGytJPbg" position="-91.0,19.0"/>
-      <visibility xmi:id="_16c81CrfEeCrkKoGytJPbg" label="+"/>
-      <cardinality xmi:id="_16c81SrfEeCrkKoGytJPbg" label="*" max="-1"/>
-    </sourceRole>
-    <targetRole xmi:id="_16dj4CrfEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_16YrYCrfEeCrkKoGytJPbg" name="outParameter" navigable="true">
-      <modelElement href="sdm.uml#_16YrYCrfEeCrkKoGytJPbg"/>
-      <visualProperties xmi:id="_1-4J0CrfEeCrkKoGytJPbg" position="-69.0,16.0"/>
-      <visibility xmi:id="_16dj4SrfEeCrkKoGytJPbg" label="+"/>
-      <cardinality xmi:id="_16dj4irfEeCrkKoGytJPbg" label="*" max="-1"/>
-    </targetRole>
-  </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_9fBgwp0KEeCuYMafrm1l2g" sourceItem="_9fBgwZ0KEeCuYMafrm1l2g" targetItem="_tVjsoyJAEeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_t8uBwp0QEeCuYMafrm1l2g" sourceItem="_t8uBwZ0QEeCuYMafrm1l2g" targetItem="_tVjshyJAEeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_6K0WUZ0QEeCuYMafrm1l2g" sourceItem="_6K0WUJ0QEeCuYMafrm1l2g" targetItem="_tVjskSJAEeCMEorpcZtLvw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_Sl1Tsp0REeCuYMafrm1l2g" sourceItem="_Sl1TsZ0REeCuYMafrm1l2g" targetItem="_KKdJoF-WEeCraej0mjEdNw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_crgjMp0REeCuYMafrm1l2g" sourceItem="_crgjMZ0REeCuYMafrm1l2g" targetItem="_KKXDBF-WEeCraej0mjEdNw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gBckQp0REeCuYMafrm1l2g" sourceItem="_gBckQZ0REeCuYMafrm1l2g" targetItem="_KKC58l-WEeCraej0mjEdNw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_i7t9Ap0REeCuYMafrm1l2g" sourceItem="_i7t9AZ0REeCuYMafrm1l2g" targetItem="_KKC58F-WEeCraej0mjEdNw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_oF_pgJ0REeCuYMafrm1l2g" sourceItem="_oF14gZ0REeCuYMafrm1l2g" targetItem="_KKXDAl-WEeCraej0mjEdNw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_vnH4oJ0REeCuYMafrm1l2g" sourceItem="_vm-HoZ0REeCuYMafrm1l2g" targetItem="_KKXDAF-WEeCraej0mjEdNw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2h4EQp0REeCuYMafrm1l2g" sourceItem="_2h4EQZ0REeCuYMafrm1l2g" targetItem="_KKC59F-WEeCraej0mjEdNw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_7gi9sp0REeCuYMafrm1l2g" sourceItem="_7gi9sZ0REeCuYMafrm1l2g" targetItem="_KKdJpF-WEeCraej0mjEdNw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_Sl1Tsp0REeCuYMafrm1l2g" sourceItem="_Sl1TsZ0REeCuYMafrm1l2g" targetItem="_tVZ7ciJAEeCMEorpcZtLvw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_crgjMp0REeCuYMafrm1l2g" sourceItem="_crgjMZ0REeCuYMafrm1l2g" targetItem="_3j9AdJ5-EeCWWYky4ZcK-A"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_gBckQp0REeCuYMafrm1l2g" sourceItem="_gBckQZ0REeCuYMafrm1l2g" targetItem="_3j9Aep5-EeCWWYky4ZcK-A"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_i7t9Ap0REeCuYMafrm1l2g" sourceItem="_i7t9AZ0REeCuYMafrm1l2g" targetItem="_3j9AeJ5-EeCWWYky4ZcK-A"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_oF_pgJ0REeCuYMafrm1l2g" sourceItem="_oF14gZ0REeCuYMafrm1l2g" targetItem="_3j9Acp5-EeCWWYky4ZcK-A"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_vnH4oJ0REeCuYMafrm1l2g" sourceItem="_vm-HoZ0REeCuYMafrm1l2g" targetItem="_3j9AcJ5-EeCWWYky4ZcK-A"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2h4EQp0REeCuYMafrm1l2g" sourceItem="_2h4EQZ0REeCuYMafrm1l2g" targetItem="_3j9AfJ5-EeCWWYky4ZcK-A"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_7gi9sp0REeCuYMafrm1l2g" sourceItem="_7gi9sZ0REeCuYMafrm1l2g" targetItem="_3jzPfJ5-EeCWWYky4ZcK-A"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_My090p0SEeCuYMafrm1l2g" sourceItem="_My090Z0SEeCuYMafrm1l2g" targetItem="_tVtdjiJAEeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_ddn_0p0VEeCuYMafrm1l2g" sourceItem="_ddn_0Z0VEeCuYMafrm1l2g" targetItem="_tVtdcCJAEeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_mLE4Ip0VEeCuYMafrm1l2g" sourceItem="_mLE4IZ0VEeCuYMafrm1l2g" targetItem="_tV2neSJAEeCMEorpcZtLvw"/>
@@ -495,8 +449,8 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_5Ylw4p1MEeCuYMafrm1l2g" sourceItem="_5Ylw4Z1MEeCuYMafrm1l2g" targetItem="_tVtdeiJAEeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_W1svIp1NEeCuYMafrm1l2g" sourceItem="_W1svIZ1NEeCuYMafrm1l2g" targetItem="_tVjsuiJAEeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_pEFLIp1NEeCuYMafrm1l2g" sourceItem="_pEFLIZ1NEeCuYMafrm1l2g" targetItem="_tVtdhiJAEeCMEorpcZtLvw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_r_Fjsp1NEeCuYMafrm1l2g" sourceItem="_r_FjsZ1NEeCuYMafrm1l2g" targetItem="_KKXDBl-WEeCraej0mjEdNw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_y9jxsJ1NEeCuYMafrm1l2g" sourceItem="_y9aAsZ1NEeCuYMafrm1l2g" targetItem="_KKBr0F-WEeCraej0mjEdNw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_r_Fjsp1NEeCuYMafrm1l2g" sourceItem="_r_FjsZ1NEeCuYMafrm1l2g" targetItem="_3j9Adp5-EeCWWYky4ZcK-A"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_y9jxsJ1NEeCuYMafrm1l2g" sourceItem="_y9aAsZ1NEeCuYMafrm1l2g" targetItem="_3kGKYJ5-EeCWWYky4ZcK-A"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_3GFGQJ1NEeCuYMafrm1l2g" sourceItem="_3F7VQZ1NEeCuYMafrm1l2g" targetItem="_tV2nkSJAEeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_iBn_kp1OEeCuYMafrm1l2g" sourceItem="_iBn_kZ1OEeCuYMafrm1l2g" targetItem="_tV2nkyJAEeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_kW_7gJ1OEeCuYMafrm1l2g" sourceItem="_kW2KgZ1OEeCuYMafrm1l2g" targetItem="_tV2nmSJAEeCMEorpcZtLvw"/>
@@ -504,31 +458,38 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_vFb0Ip1OEeCuYMafrm1l2g" sourceItem="_vFb0IZ1OEeCuYMafrm1l2g" targetItem="_tVtdciJAEeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_a5x9sZ1PEeCuYMafrm1l2g" sourceItem="_a5x9sJ1PEeCuYMafrm1l2g" targetItem="_7UOdIJ0KEeCuYMafrm1l2g"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_5InT0p1PEeCuYMafrm1l2g" sourceItem="_5InT0Z1PEeCuYMafrm1l2g" targetItem="_tVtdgCJAEeCMEorpcZtLvw"/>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVZ7iyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_7cUAoBzuEeChOvWwuwx7tQ" item="_tVjslSJAEeCMEorpcZtLvw" sourceConnectionVisual="_tVZ7jCJAEeCMEorpcZtLvw" text="Points to the boolean expression in case of boolean transition guard.">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_3jqFgZ5-EeCWWYky4ZcK-A" sourceItem="_3jqFgJ5-EeCWWYky4ZcK-A"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_3jzPcZ5-EeCWWYky4ZcK-A" sourceItem="_3jzPcJ5-EeCWWYky4ZcK-A"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_3kZscJ5-EeCWWYky4ZcK-A" sourceItem="_3kZsb55-EeCWWYky4ZcK-A"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_w_iQMp6JEeCWWYky4ZcK-A" sourceItem="_w_iQMZ6JEeCWWYky4ZcK-A" targetItem="_tVjscCJAEeCMEorpcZtLvw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_mbZGkZ6KEeCWWYky4ZcK-A" sourceItem="_mbZGkJ6KEeCWWYky4ZcK-A" targetItem="_tVtdmyJAEeCMEorpcZtLvw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_4_rEop6LEeCWWYky4ZcK-A" sourceItem="_4_rEoZ6LEeCWWYky4ZcK-A" targetItem="_tVtdoiJAEeCMEorpcZtLvw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_CC2VUp6MEeCWWYky4ZcK-A" sourceItem="_CC2VUZ6MEeCWWYky4ZcK-A" targetItem="_KKbUcl-WEeCraej0mjEdNw"/>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVZ7iyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_7cUAoBzuEeChOvWwuwx7tQ" item="_tVjslSJAEeCMEorpcZtLvw" sourceConnectionVisual="_tVZ7jCJAEeCMEorpcZtLvw" text="Points to an expression in case the transition guard is BOOL. The expression has to evaulate to a boolean value.">
     <modelElement href="sdm.uml#_7cUAoBzuEeChOvWwuwx7tQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVZ7zCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_0aPsEBzuEeChOvWwuwx7tQ" item="_KKdJpl-WEeCraej0mjEdNw" sourceConnectionVisual="_tVZ7zSJAEeCMEorpcZtLvw" text="References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVZ7zCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_0aPsEBzuEeChOvWwuwx7tQ" item="_3jzPfp5-EeCWWYky4ZcK-A" sourceConnectionVisual="_tVZ7zSJAEeCMEorpcZtLvw" text="References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links.">
     <modelElement href="sdm.uml#_0aPsEBzuEeChOvWwuwx7tQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVZ74SJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_aTH8wBzvEeChOvWwuwx7tQ" item="_KKY4MF-WEeCraej0mjEdNw" sourceConnectionVisual="_tVZ74iJAEeCMEorpcZtLvw" text="Specifies the transition (activity edge) where the exception variable is declared.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVZ74SJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_aTH8wBzvEeChOvWwuwx7tQ" item="_3jzPcp5-EeCWWYky4ZcK-A" sourceConnectionVisual="_tVZ74iJAEeCMEorpcZtLvw" text="Specifies the transition (activity edge) where the exception variable is declared.">
     <modelElement href="sdm.uml#_aTH8wBzvEeChOvWwuwx7tQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVZ74yJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_-FissBzuEeChOvWwuwx7tQ" item="_KKC59l-WEeCraej0mjEdNw" sourceConnectionVisual="_tVZ75CJAEeCMEorpcZtLvw" text="Declares variables representing the Exceptions that lead to firing this transition.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVZ74yJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_-FissBzuEeChOvWwuwx7tQ" item="_3j9Afp5-EeCWWYky4ZcK-A" sourceConnectionVisual="_tVZ75CJAEeCMEorpcZtLvw" text="Declares variables representing the Exceptions that lead to firing this transition.">
     <modelElement href="sdm.uml#_-FissBzuEeChOvWwuwx7tQ"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVZ77iJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Xt0HYBzvEeChOvWwuwx7tQ" item="_tV2nbyJAEeCMEorpcZtLvw" sourceConnectionVisual="_tVZ77yJAEeCMEorpcZtLvw" text="Specifies the type of the declared exception variable.">
     <modelElement href="sdm.uml#_Xt0HYBzvEeChOvWwuwx7tQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVZ7-iJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_KLkqYBzvEeChOvWwuwx7tQ" item="_KKatYF-WEeCraej0mjEdNw" sourceConnectionVisual="_tVZ7-yJAEeCMEorpcZtLvw" text="References all activities that are to be considered for the polymorphic dispatching of the call. All activities must have the same call signature.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVZ7-iJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_KLkqYBzvEeChOvWwuwx7tQ" item="_3kGKYp5-EeCWWYky4ZcK-A" sourceConnectionVisual="_tVZ7-yJAEeCMEorpcZtLvw" text="References all activities that are to be considered for the polymorphic dispatching of the call. All activities must have the same call signature.">
     <modelElement href="sdm.uml#_KLkqYBzvEeChOvWwuwx7tQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVZ8FyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_h5rechzvEeChOvWwuwx7tQ" item="_KKYRIF-WEeCraej0mjEdNw" sourceConnectionVisual="_tVZ8GCJAEeCMEorpcZtLvw" text="Specifies the exception variable that this expression refers to. If you have an activity edge that catches an exception e, then this expression can represent the reference e.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVZ8FyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_h5rechzvEeChOvWwuwx7tQ" item="_3jzPdp5-EeCWWYky4ZcK-A" sourceConnectionVisual="_tVZ8GCJAEeCMEorpcZtLvw" text="Specifies the exception variable that this expression refers to. If you have an activity edge that catches an exception e, then this expression can represent the reference e.">
     <modelElement href="sdm.uml#_h5rechzvEeChOvWwuwx7tQ"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVtdeCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_DgU6YBzvEeChOvWwuwx7tQ" item="_tVtdfCJAEeCMEorpcZtLvw" sourceConnectionVisual="_tVtdeSJAEeCMEorpcZtLvw" text="true if subactivity is stopped, but not the whole control flow">
     <modelElement href="sdm.uml#_DgU6YBzvEeChOvWwuwx7tQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVtdpyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_RUl7gBzvEeChOvWwuwx7tQ" item="_tV2nZCJAEeCMEorpcZtLvw" sourceConnectionVisual="_tV2nYCJAEeCMEorpcZtLvw" text="Declares a variable representing an Exception that leads to firing a transition (ActivityEdge).">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tVtdpyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_RUl7gBzvEeChOvWwuwx7tQ" item="_tV2nZCJAEeCMEorpcZtLvw" sourceConnectionVisual="_tV2nYCJAEeCMEorpcZtLvw" text="Declares a variable representing an Exception that leads to firing a transition (ActivityEdge). Can only be applied to ActivityEdge whose guard is set to EXCEPTION.">
     <modelElement href="sdm.uml#_RUl7gBzvEeChOvWwuwx7tQ"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tV2nYSJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_USZJYhzvEeChOvWwuwx7tQ" item="_tV2nayJAEeCMEorpcZtLvw" sourceConnectionVisual="_tV2nYiJAEeCMEorpcZtLvw" text="Specifies the name of the declared exception variable.">
@@ -540,58 +501,287 @@
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_JVbo8CJHEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_fQB7oBzvEeChOvWwuwx7tQ" item="_JVbo8iJHEeCMEorpcZtLvw" sourceConnectionVisual="_JVbo8SJHEeCMEorpcZtLvw" text="Represents the value of an exception variable declared as a transition guard (the guard of an activity edge).">
     <modelElement href="sdm.uml#_fQB7oBzvEeChOvWwuwx7tQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tV2nZCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_n9AgYBzPEeChOvWwuwx7tQ" comments="_tVtdpyJAEeCMEorpcZtLvw" targetConnectionVisual="_tV2nYCJAEeCMEorpcZtLvw" name="ExceptionVariable" associationsIn="_tVZ75SJAEeCMEorpcZtLvw _tVZ8GSJAEeCMEorpcZtLvw" associationsOut="_tWAYYCJAEeCMEorpcZtLvw _tVZ78CJAEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#_n9AgYBzPEeChOvWwuwx7tQ"/>
-    <visualProperties xmi:id="_tV2ndyJAEeCMEorpcZtLvw" position="969.0,180.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_tV2nZSJAEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_tV2nayJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_pnXT8BzQEeChOvWwuwx7tQ" comments="_tV2nYSJAEeCMEorpcZtLvw" targetConnectionVisual="_tV2nYiJAEeCMEorpcZtLvw" name="name">
-      <modelElement href="sdm.uml#_pnXT8BzQEeChOvWwuwx7tQ"/>
-      <visibility xmi:id="_tV2nbCJAEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_tV2nbSJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_tV2nbiJAEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String" name="String">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_tV2nbyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_v4HgUBzQEeChOvWwuwx7tQ" comments="_tVZ77iJAEeCMEorpcZtLvw" targetConnectionVisual="_tVZ77yJAEeCMEorpcZtLvw" name="exceptionType">
-      <modelElement href="sdm.uml#_v4HgUBzQEeChOvWwuwx7tQ"/>
-      <stereotypes xmi:id="_XmqnIZ1PEeCuYMafrm1l2g" name="EReference">
-        <modelElement href="sdm.uml#_8MjQ4B2VEeCKeJCjS51luQ"/>
-      </stereotypes>
-      <visibility xmi:id="_tV2ncCJAEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_tV2ncSJAEeCMEorpcZtLvw" label="*" max="-1"/>
-      <type xmi:id="_tV2nciJAEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier" name="EClassifier">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_tV2ncyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_ErDjsB2VEeCKeJCjS51luQ" name="genericExceptionType">
-      <modelElement href="sdm.uml#_ErDjsB2VEeCKeJCjS51luQ"/>
-      <visibility xmi:id="_tV2ndCJAEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_tV2ndSJAEeCMEorpcZtLvw" label="*" max="-1"/>
-      <type xmi:id="_tV2ndiJAEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType" name="EGenericType">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_KKY4MF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_tthGcBzPEeChOvWwuwx7tQ" comments="_tVZ74SJAEeCMEorpcZtLvw" targetConnectionVisual="_tVZ74iJAEeCMEorpcZtLvw" name="activityEdge">
-      <modelElement href="sdm.uml#_tthGcBzPEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_KKY4MV-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKlFcV-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKlFcl-WEeCraej0mjEdNw" label="1" max="1" min="1"/>
-      <type xmi:id="_KKlFcF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403" name="ActivityEdge">
-        <modelElement href="sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403"/>
-      </type>
-    </attributes>
-  </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_wdXpECrfEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_ubJa8BzvEeChOvWwuwx7tQ" sourceConnectionVisual="_wdYQICrfEeCrkKoGytJPbg" text="An entity which can be called by an Invocation. A Callable can have a number of (ordered) parameters which are either in or out parameters. In the case of activities, the number of in and out parameters is unbounded, whereas OperationExtensions and OpaqueCallables can only have one out parameter (This is enforced by an OCL constraint).">
     <modelElement href="sdm.uml#_ubJa8BzvEeChOvWwuwx7tQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVtdmyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_DxIjgL0pEd-DQ5q3aRKcIw" name="OperationExtension" associationsOut="_tVZ7sSJAEeCMEorpcZtLvw _tVZ71yJAEeCMEorpcZtLvw" generalizations="_wdY3MSrfEeCrkKoGytJPbg">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_9fBgwZ0KEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_9fBgwJ0KEeCuYMafrm1l2g" item="_tVjsoyJAEeCMEorpcZtLvw" sourceConnectionVisual="_9fBgwp0KEeCuYMafrm1l2g" text="Abstract super class for all kinds of nodes that may be added to an activity. This class provides the basic functionality of connecting the activity nodes in the activity by ActivityEdges.">
+    <modelElement href="sdm.uml#_9fBgwJ0KEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_t8uBwZ0QEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_t8uBwJ0QEeCuYMafrm1l2g" item="_tVjshyJAEeCMEorpcZtLvw" sourceConnectionVisual="_t8uBwp0QEeCuYMafrm1l2g" text="The ActivityEdge represents the control flow in an activity. It is a dericted connection from one activity to another one. There exist different kinds of activity edges which are differentiated by the guard attribute.">
+    <modelElement href="sdm.uml#_t8uBwJ0QEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_6K0WUJ0QEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_6KrMYJ0QEeCuYMafrm1l2g" item="_tVjskSJAEeCMEorpcZtLvw" sourceConnectionVisual="_6K0WUZ0QEeCuYMafrm1l2g" text="The guard defines the kind of the activity edge. The possible kinds of guards are specified by the EdgeGuard enum.">
+    <modelElement href="sdm.uml#_6KrMYJ0QEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_Sl1TsZ0REeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Sl1TsJ0REeCuYMafrm1l2g" item="_tVZ7ciJAEeCMEorpcZtLvw" sourceConnectionVisual="_Sl1Tsp0REeCuYMafrm1l2g" text="The activity contains all activity nodes via this reference.">
+    <modelElement href="sdm.uml#_Sl1TsJ0REeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_crgjMZ0REeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_crgjMJ0REeCuYMafrm1l2g" item="_3j9AdJ5-EeCWWYky4ZcK-A" sourceConnectionVisual="_crgjMp0REeCuYMafrm1l2g" text="Points to the activity this ActivityNode is contained in.">
+    <modelElement href="sdm.uml#_crgjMJ0REeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gBckQZ0REeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_gBckQJ0REeCuYMafrm1l2g" item="_3j9Aep5-EeCWWYky4ZcK-A" sourceConnectionVisual="_gBckQp0REeCuYMafrm1l2g" text="The source node of this ActivityEdge.">
+    <modelElement href="sdm.uml#_gBckQJ0REeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_i7t9AZ0REeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_i7t9AJ0REeCuYMafrm1l2g" item="_3j9AeJ5-EeCWWYky4ZcK-A" sourceConnectionVisual="_i7t9Ap0REeCuYMafrm1l2g" text="The target node of this ActivityEdge.">
+    <modelElement href="sdm.uml#_i7t9AJ0REeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_oF14gZ0REeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_oF14gJ0REeCuYMafrm1l2g" item="_3j9Acp5-EeCWWYky4ZcK-A" sourceConnectionVisual="_oF_pgJ0REeCuYMafrm1l2g" text="All ActivityEdges that leave this activity node. The guards of the outgoing activity edges must be exclusive in order to obtain a well-defined activity.">
+    <modelElement href="sdm.uml#_oF14gJ0REeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_vm-HoZ0REeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_vm-HoJ0REeCuYMafrm1l2g" item="_3j9AcJ5-EeCWWYky4ZcK-A" sourceConnectionVisual="_vnH4oJ0REeCuYMafrm1l2g" text="All ActivityEdges entering this activity node.">
+    <modelElement href="sdm.uml#_vm-HoJ0REeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2h4EQZ0REeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_2h4EQJ0REeCuYMafrm1l2g" item="_3j9AfJ5-EeCWWYky4ZcK-A" sourceConnectionVisual="_2h4EQp0REeCuYMafrm1l2g" text="Points to the activity this ActivityEdge is contained in.">
+    <modelElement href="sdm.uml#_2h4EQJ0REeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_7gi9sZ0REeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_7gi9sJ0REeCuYMafrm1l2g" item="_3jzPfJ5-EeCWWYky4ZcK-A" sourceConnectionVisual="_7gi9sp0REeCuYMafrm1l2g" text="All ActivityEdges that are contained in this activity.">
+    <modelElement href="sdm.uml#_7gi9sJ0REeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_My090Z0SEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_My090J0SEeCuYMafrm1l2g" item="_tVtdjiJAEeCMEorpcZtLvw" sourceConnectionVisual="_My090p0SEeCuYMafrm1l2g" text="This enum is used to model different kinds of activity edges. ">
+    <modelElement href="sdm.uml#_My090J0SEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_ddn_0Z0VEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_ddn_0J0VEeCuYMafrm1l2g" item="_tVtdcCJAEeCMEorpcZtLvw" sourceConnectionVisual="_ddn_0p0VEeCuYMafrm1l2g" text="A statement node is a node that just contains an expression defining its behavior. In combination with a textual expression, arbitrary souce code might be added by using StatementNodes.">
+    <modelElement href="sdm.uml#_ddn_0J0VEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tV2neSJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#9f08ef2b-883b-486d-9dfd-53a9300410fa" comments="_mLE4IZ0VEeCuYMafrm1l2g" targetConnectionVisual="_mLE4Ip0VEeCuYMafrm1l2g" name="StoryNode" abstractClass="true" generalizations="_tV2neCJAEeCMEorpcZtLvw" subclassedBy="_tV2nkCJAEeCMEorpcZtLvw _tV2nmCJAEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#9f08ef2b-883b-486d-9dfd-53a9300410fa"/>
+    <visualProperties xmi:id="_tV2nhCJAEeCMEorpcZtLvw" position="606.0,357.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_tV2neiJAEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_tV2neyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#bb2022ce-286d-4865-9482-283f89214bb9" comments="_qYWw4Z0VEeCuYMafrm1l2g" targetConnectionVisual="_qYWw4p0VEeCuYMafrm1l2g" name="forEach">
+      <modelElement href="sdm.uml#bb2022ce-286d-4865-9482-283f89214bb9"/>
+      <visibility xmi:id="_tV2nfCJAEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_tV2nfSJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_tV2nfiJAEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean" name="Boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tV2nfyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#779bfb46-33f2-49f4-9ad0-8e26ce91a437" derived="true" name="storyPattern">
+      <modelElement href="sdm.uml#779bfb46-33f2-49f4-9ad0-8e26ce91a437"/>
+      <stereotypes xmi:id="_tV2ngCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_UR3SkB1rEeCKeJCjS51luQ" name="EReference">
+        <modelElement href="sdm.uml#_UR3SkB1rEeCKeJCjS51luQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tV2ngSJAEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_tV2ngiJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_tV2ngyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
+        <modelElement href="sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_mLE4IZ0VEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_mLE4IJ0VEeCuYMafrm1l2g" item="_tV2neSJAEeCMEorpcZtLvw" sourceConnectionVisual="_mLE4Ip0VEeCuYMafrm1l2g" text="An activity node containing a story pattern.">
+    <modelElement href="sdm.uml#_mLE4IJ0VEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_qYWw4Z0VEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_qYWw4J0VEeCuYMafrm1l2g" item="_tV2neyJAEeCMEorpcZtLvw" sourceConnectionVisual="_qYWw4p0VEeCuYMafrm1l2g" text="Specifies whether just one match should be found for the contained pattern (forEach  = false) or whether all matches should be found (forEach = true).">
+    <modelElement href="sdm.uml#_qYWw4J0VEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVjsviJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1c4eadb1-8677-4a5f-acd9-4b33da61c6fd" comments="_yxVJAJ1MEeCuYMafrm1l2g" targetConnectionVisual="_yxVJAZ1MEeCuYMafrm1l2g" name="StartNode" generalizations="_tVjsvSJAEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#1c4eadb1-8677-4a5f-acd9-4b33da61c6fd"/>
+    <visualProperties xmi:id="_tVjswCJAEeCMEorpcZtLvw" position="166.0,356.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_tVjsvyJAEeCMEorpcZtLvw" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_yxVJAJ1MEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_yxLYAJ1MEeCuYMafrm1l2g" item="_tVjsviJAEeCMEorpcZtLvw" sourceConnectionVisual="_yxVJAZ1MEeCuYMafrm1l2g" text="The start node of an activity defines the starting point for the execution of the activity.">
+    <modelElement href="sdm.uml#_yxLYAJ1MEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_5Ylw4Z1MEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_5Ylw4J1MEeCuYMafrm1l2g" item="_tVtdeiJAEeCMEorpcZtLvw" sourceConnectionVisual="_5Ylw4p1MEeCuYMafrm1l2g" text="At a StopNode, the execution of an activity terminates. If the activity specifies any out-parameters, they have to be bound to a return expression.">
+    <modelElement href="sdm.uml#_5Ylw4J1MEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVjsuiJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0f293f48-25be-4376-a7a4-f866d4c1d687" comments="_W1svIZ1NEeCuYMafrm1l2g" targetConnectionVisual="_W1svIp1NEeCuYMafrm1l2g" name="JunctionNode" generalizations="_tVjsuSJAEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#0f293f48-25be-4376-a7a4-f866d4c1d687"/>
+    <visualProperties xmi:id="_tVjsvCJAEeCMEorpcZtLvw" position="489.0,357.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_tVjsuyJAEeCMEorpcZtLvw" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_W1svIZ1NEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_W1svIJ1NEeCuYMafrm1l2g" item="_tVjsuiJAEeCMEorpcZtLvw" sourceConnectionVisual="_W1svIp1NEeCuYMafrm1l2g" text="A JunctionNode represents a pseudo-activity which is used for branching and merging the control flow in an activity. It is visualized by a diamond shaped figure.">
+    <modelElement href="sdm.uml#_W1svIJ1NEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVtdhiJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#bac68bbf-67d6-474b-81c5-6a12361a7e63" comments="_pEFLIZ1NEeCuYMafrm1l2g" targetConnectionVisual="_pEFLIp1NEeCuYMafrm1l2g" name="StructuredNode" associationsOut="_tVZ7liJAEeCMEorpcZtLvw" generalizations="_tVtdhSJAEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#bac68bbf-67d6-474b-81c5-6a12361a7e63"/>
+    <visualProperties xmi:id="_tVtdjSJAEeCMEorpcZtLvw" position="1105.0,357.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_tVtdhyJAEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_3kGKYJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1269373e-d6c3-43b3-96b3-343306cf98fc" comments="_y9aAsZ1NEeCuYMafrm1l2g" targetConnectionVisual="_y9jxsJ1NEeCuYMafrm1l2g" name="ownedActivityNode">
+      <modelElement href="sdm.uml#1269373e-d6c3-43b3-96b3-343306cf98fc"/>
+      <visualProperties xmi:id="_3kGKYZ5-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kZsap5-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kZsa55-EeCWWYky4ZcK-A" label="*" max="-1"/>
+      <type xmi:id="_3kZsaZ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e" name="ActivityNode">
+        <modelElement href="sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_pEFLIZ1NEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_pEFLIJ1NEeCuYMafrm1l2g" item="_tVtdhiJAEeCMEorpcZtLvw" sourceConnectionVisual="_pEFLIp1NEeCuYMafrm1l2g" text="A structured node is a node that contains several other activities.">
+    <modelElement href="sdm.uml#_pEFLIJ1NEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_r_FjsZ1NEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_r_FjsJ1NEeCuYMafrm1l2g" item="_3j9Adp5-EeCWWYky4ZcK-A" sourceConnectionVisual="_r_Fjsp1NEeCuYMafrm1l2g" text="The parent node if this node is contained in a StructuredNode.">
+    <modelElement href="sdm.uml#_r_FjsJ1NEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_y9aAsZ1NEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_y9aAsJ1NEeCuYMafrm1l2g" item="_3kGKYJ5-EeCWWYky4ZcK-A" sourceConnectionVisual="_y9jxsJ1NEeCuYMafrm1l2g" text="All subnodes which are contained in this structured node.">
+    <modelElement href="sdm.uml#_y9aAsJ1NEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_3F7VQZ1NEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_3F7VQJ1NEeCuYMafrm1l2g" item="_tV2nkSJAEeCMEorpcZtLvw" sourceConnectionVisual="_3GFGQJ1NEeCuYMafrm1l2g" text="A MatchingStoryNode may only contain a MatchingPattern which does not change the graph. I.e., no element contained in this activity carries a create or destroy annotation. Thus, after executing a MatchingStoryNode, the underlying graph is guaranteed to be unchanged.">
+    <modelElement href="sdm.uml#_3F7VQJ1NEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_iBn_kZ1OEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_iBn_kJ1OEeCuYMafrm1l2g" item="_tV2nkyJAEeCMEorpcZtLvw" sourceConnectionVisual="_iBn_kp1OEeCuYMafrm1l2g" text="This MatchingPattern contained in this activity.">
+    <modelElement href="sdm.uml#_iBn_kJ1OEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tV2nmSJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_gDYcQBzQEeChOvWwuwx7tQ" comments="_kW2KgZ1OEeCuYMafrm1l2g" targetConnectionVisual="_kW_7gJ1OEeCuYMafrm1l2g" name="ModifyingStoryNode" associationsOut="_tVZ8DiJAEeCMEorpcZtLvw" generalizations="_tV2nmCJAEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#_gDYcQBzQEeChOvWwuwx7tQ"/>
+    <visualProperties xmi:id="_tV2nnyJAEeCMEorpcZtLvw" position="728.0,476.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_tV2nmiJAEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_tV2nmyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_L3OaERzSEeChOvWwuwx7tQ" comments="_odIqcZ1OEeCuYMafrm1l2g" targetConnectionVisual="_odIqcp1OEeCuYMafrm1l2g" name="ownedRule">
+      <modelElement href="sdm.uml#_L3OaERzSEeChOvWwuwx7tQ"/>
+      <visibility xmi:id="_tV2nnCJAEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_tV2nnSJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_tV2nniJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
+        <modelElement href="sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_kW2KgZ1OEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_kW2KgJ1OEeCuYMafrm1l2g" item="_tV2nmSJAEeCMEorpcZtLvw" sourceConnectionVisual="_kW_7gJ1OEeCuYMafrm1l2g" text="A ModifyingStoryNode contains a story pattern which may change the underlying graph upon execution.">
+    <modelElement href="sdm.uml#_kW2KgJ1OEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_odIqcZ1OEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_odIqcJ1OEeCuYMafrm1l2g" item="_tV2nmyJAEeCMEorpcZtLvw" sourceConnectionVisual="_odIqcp1OEeCuYMafrm1l2g" text="The story pattern contained in this ModifyingStoryNode.">
+    <modelElement href="sdm.uml#_odIqcJ1OEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVtdcCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#09ce4f32-4ea3-459e-8d03-555250a5780e" comments="_ddn_0Z0VEeCuYMafrm1l2g" targetConnectionVisual="_ddn_0p0VEeCuYMafrm1l2g" name="StatementNode" associationsOut="_tVZ7giJAEeCMEorpcZtLvw" generalizations="_tVjswSJAEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#09ce4f32-4ea3-459e-8d03-555250a5780e"/>
+    <visualProperties xmi:id="_tVtddiJAEeCMEorpcZtLvw" position="857.0,357.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_tVtdcSJAEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_tVtdciJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_OISg0rLyEd-uk56s-ldeog" comments="_vFb0IZ1OEeCuYMafrm1l2g" targetConnectionVisual="_vFb0Ip1OEeCuYMafrm1l2g" name="statementExpression">
+      <modelElement href="sdm.uml#_OISg0rLyEd-uk56s-ldeog"/>
+      <visibility xmi:id="_tVtdcyJAEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_tVtddCJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_tVtddSJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
+        <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_vFb0IZ1OEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_vFb0IJ1OEeCuYMafrm1l2g" item="_tVtdciJAEeCMEorpcZtLvw" sourceConnectionVisual="_vFb0Ip1OEeCuYMafrm1l2g" text="The expression which defines the behavior of this StatementNode.">
+    <modelElement href="sdm.uml#_vFb0IJ1OEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tV2nkSJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_fD_b0BzQEeChOvWwuwx7tQ" comments="_3F7VQZ1NEeCuYMafrm1l2g" targetConnectionVisual="_3GFGQJ1NEeCuYMafrm1l2g" name="MatchingStoryNode" associationsIn="_tVZ7ziJAEeCMEorpcZtLvw" associationsOut="_tVZ8BSJAEeCMEorpcZtLvw" generalizations="_tV2nkCJAEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#_fD_b0BzQEeChOvWwuwx7tQ"/>
+    <visualProperties xmi:id="_tV2nlyJAEeCMEorpcZtLvw" position="471.0,475.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_tV2nkiJAEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_tV2nkyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_yU1k8RzREeChOvWwuwx7tQ" comments="_iBn_kZ1OEeCuYMafrm1l2g" targetConnectionVisual="_iBn_kp1OEeCuYMafrm1l2g" name="ownedPattern">
+      <modelElement href="sdm.uml#_yU1k8RzREeChOvWwuwx7tQ"/>
+      <visibility xmi:id="_tV2nlCJAEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_tV2nlSJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_tV2nliJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_kZu7ABzcEeChOvWwuwx7tQ" name="MatchingPattern">
+        <modelElement href="sdm.uml#_kZu7ABzcEeChOvWwuwx7tQ"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tV2niCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_dV0p0BzQEeChOvWwuwx7tQ" comments="_tV2nhiJAEeCMEorpcZtLvw" targetConnectionVisual="_tV2nhyJAEeCMEorpcZtLvw" name="ActivityCallNode" associationsOut="_tVZ7_CJAEeCMEorpcZtLvw" generalizations="_tV2nhSJAEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#_dV0p0BzQEeChOvWwuwx7tQ"/>
+    <visualProperties xmi:id="_tV2njyJAEeCMEorpcZtLvw" position="48.0,407.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_tV2niSJAEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_3kGKYp5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Iraa0BzREeChOvWwuwx7tQ" comments="_tVZ7-iJAEeCMEorpcZtLvw" targetConnectionVisual="_tVZ7-yJAEeCMEorpcZtLvw" name="calledActivity">
+      <modelElement href="sdm.uml#_Iraa0BzREeChOvWwuwx7tQ"/>
+      <visualProperties xmi:id="_3kGKY55-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kZsbZ5-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kZsbp5-EeCWWYky4ZcK-A" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_3kZsbJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c" name="Activity">
+        <modelElement href="sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_a5x9sJ1PEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_a5oMsJ1PEeCuYMafrm1l2g" item="_7UOdIJ0KEeCuYMafrm1l2g" sourceConnectionVisual="_a5x9sZ1PEeCuYMafrm1l2g" text="Defines the return values of the activity. These return values will be assigned to the out-parameters.">
+    <modelElement href="sdm.uml#_a5oMsJ1PEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_5InT0Z1PEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_5InT0J1PEeCuYMafrm1l2g" item="_tVtdgCJAEeCMEorpcZtLvw" sourceConnectionVisual="_5InT0p1PEeCuYMafrm1l2g" text="Convenience method when dealing with activities that implement an EOperation. In this case, only one out parameter is supported. This attributes then returns the first out parameter.">
+    <modelElement href="sdm.uml#_5InT0J1PEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_3jqFgJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_UBXKYJ29EeCuYMafrm1l2g" sourceConnectionVisual="_3jqFgZ5-EeCWWYky4ZcK-A" text="The ordered set of in parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference.">
+    <modelElement href="sdm.uml#_UBXKYJ29EeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_3jzPcJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_041zMJ28EeCuYMafrm1l2g" sourceConnectionVisual="_3jzPcZ5-EeCWWYky4ZcK-A" text="The ordered set of out parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference.">
+    <modelElement href="sdm.uml#_041zMJ28EeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_3kZsb55-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_oiaCAJ28EeCuYMafrm1l2g" sourceConnectionVisual="_3kZscJ5-EeCWWYky4ZcK-A" text="This reference is used to contain the parameters of a Callable if they are not already contained in another container. If the parameter is contained in another container as it is the case for parameters of a EOperation, they must not be added to this container!">
+    <modelElement href="sdm.uml#_oiaCAJ28EeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVjscCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c" comments="_w_iQMZ6JEeCWWYky4ZcK-A" targetConnectionVisual="_w_iQMp6JEeCWWYky4ZcK-A" name="Activity" associationsIn="_tVZ7cCJAEeCMEorpcZtLvw _tVZ7sSJAEeCMEorpcZtLvw _tVZ7_CJAEeCMEorpcZtLvw" associationsOut="_tVZ7uiJAEeCMEorpcZtLvw _tVZ7ziJAEeCMEorpcZtLvw" generalizations="_wdY3MCrfEeCrkKoGytJPbg">
+    <modelElement href="sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c"/>
+    <visualProperties xmi:id="_tVjshiJAEeCMEorpcZtLvw" position="10.0,32.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_tVjscSJAEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_3jzPeJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c38d6d26-77ad-489b-aef2-755014fcadb9" name="ownedActivityNode">
+      <modelElement href="sdm.uml#c38d6d26-77ad-489b-aef2-755014fcadb9"/>
+      <visualProperties xmi:id="_3jzPeZ5-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kP7Yp5-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kP7Y55-EeCWWYky4ZcK-A" label="*" max="-1"/>
+      <type xmi:id="_3kP7YZ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e" name="ActivityNode">
+        <modelElement href="sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_3jzPep5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_PwFo0L0pEd-DQ5q3aRKcIw" name="owningOperation">
+      <modelElement href="sdm.uml#_PwFo0L0pEd-DQ5q3aRKcIw"/>
+      <visualProperties xmi:id="_3jzPe55-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kP7ZZ5-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kP7Zp5-EeCWWYky4ZcK-A" label="0..1" max="1"/>
+      <type xmi:id="_3kP7ZJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_DxIjgL0pEd-DQ5q3aRKcIw" name="OperationExtension">
+        <modelElement href="sdm.uml#_DxIjgL0pEd-DQ5q3aRKcIw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_3jzPfJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_kUOVcBzHEeChOvWwuwx7tQ" comments="_7gi9sZ0REeCuYMafrm1l2g" targetConnectionVisual="_7gi9sp0REeCuYMafrm1l2g" name="ownedActivityEdge">
+      <modelElement href="sdm.uml#_kUOVcBzHEeChOvWwuwx7tQ"/>
+      <visualProperties xmi:id="_3jzPfZ5-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kP7aJ5-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kP7aZ5-EeCWWYky4ZcK-A" label="*" max="-1"/>
+      <type xmi:id="_3kP7Z55-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403" name="ActivityEdge">
+        <modelElement href="sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_3jzPfp5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Bzgd8RzIEeChOvWwuwx7tQ" comments="_tVZ7zCJAEeCMEorpcZtLvw" targetConnectionVisual="_tVZ7zSJAEeCMEorpcZtLvw" name="precondition">
+      <modelElement href="sdm.uml#_Bzgd8RzIEeChOvWwuwx7tQ"/>
+      <visualProperties xmi:id="_3jzPf55-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kP7a55-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kP7bJ5-EeCWWYky4ZcK-A" label="0..1" max="1"/>
+      <type xmi:id="_3kP7ap5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_fD_b0BzQEeChOvWwuwx7tQ" name="MatchingStoryNode">
+        <modelElement href="sdm.uml#_fD_b0BzQEeChOvWwuwx7tQ"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_w_iQMZ6JEeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_w_iQMJ6JEeCWWYky4ZcK-A" item="_tVjscCJAEeCMEorpcZtLvw" sourceConnectionVisual="_w_iQMp6JEeCWWYky4ZcK-A" text="The diagram that describes the control flow of an operation. It is used to structure a number story patterns into a stroy diagram. Story patterns are contained in activity nodes which are connected by activity edges. In addition, there are special nodes like start, stop, and juction nodes.  ">
+    <modelElement href="sdm.uml#_w_iQMJ6JEeCWWYky4ZcK-A"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVtdeiJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#68a71c0d-6c71-4b10-90a5-bad7e5e02981" comments="_5Ylw4Z1MEeCuYMafrm1l2g" targetConnectionVisual="_5Ylw4p1MEeCuYMafrm1l2g" name="StopNode" associationsOut="_tVZ7eSJAEeCMEorpcZtLvw" generalizations="_tVtddyJAEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#68a71c0d-6c71-4b10-90a5-bad7e5e02981"/>
+    <visualProperties xmi:id="_tVtdhCJAEeCMEorpcZtLvw" position="248.0,356.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_tVtdeyJAEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_tVtdfCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#49f46f44-8f1d-4634-a708-d2e822995869" comments="_tVtdeCJAEeCMEorpcZtLvw" targetConnectionVisual="_tVtdeSJAEeCMEorpcZtLvw" name="flowStopOnly">
+      <modelElement href="sdm.uml#49f46f44-8f1d-4634-a708-d2e822995869"/>
+      <visibility xmi:id="_tVtdfSJAEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_tVtdfiJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_tVtdfyJAEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean" name="Boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tVtdgCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_WnuyUbLyEd-uk56s-ldeog" comments="_5InT0Z1PEeCuYMafrm1l2g" targetConnectionVisual="_5InT0p1PEeCuYMafrm1l2g" derived="true" name="returnValue">
+      <modelElement href="sdm.uml#_WnuyUbLyEd-uk56s-ldeog"/>
+      <visibility xmi:id="_tVtdgSJAEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_tVtdgiJAEeCMEorpcZtLvw" label="0..1" max="1"/>
+      <type xmi:id="_tVtdgyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
+        <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_7UOdIJ0KEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_27rV8IYIEeCsDOrao2DJIA" comments="_a5x9sJ1PEeCuYMafrm1l2g" targetConnectionVisual="_a5x9sZ1PEeCuYMafrm1l2g" name="returnValues">
+      <modelElement href="sdm.uml#_27rV8IYIEeCsDOrao2DJIA"/>
+      <visibility xmi:id="_7UOdIp0KEeCuYMafrm1l2g" label="+"/>
+      <cardinality xmi:id="_7UOdI50KEeCuYMafrm1l2g" label="*" max="-1"/>
+      <type xmi:id="_7UOdIZ0KEeCuYMafrm1l2g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
+        <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_mbZGkJ6KEeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_mbPVkJ6KEeCWWYky4ZcK-A" item="_tVtdmyJAEeCMEorpcZtLvw" sourceConnectionVisual="_mbZGkZ6KEeCWWYky4ZcK-A" text="An OperationExtension is a stand-in for an EOperation in our model. It is necessary because we cannot change the type EOperation. Thus, OperationExtension points to an EOperation but adds the reference to an Activity that describes the operations behavior.">
+    <modelElement href="sdm.uml#_mbPVkJ6KEeCWWYky4ZcK-A"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVtdmyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_DxIjgL0pEd-DQ5q3aRKcIw" comments="_mbZGkJ6KEeCWWYky4ZcK-A" targetConnectionVisual="_mbZGkZ6KEeCWWYky4ZcK-A" name="OperationExtension" associationsOut="_tVZ7sSJAEeCMEorpcZtLvw _tVZ71yJAEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#_DxIjgL0pEd-DQ5q3aRKcIw"/>
     <visualAttributeProperties xmi:id="_Yzc0ACPlEeCBbagboshu9g" attributeName="attributeCompartment"/>
     <visualProperties xmi:id="_tVtdpiJAEeCMEorpcZtLvw" position="432.0,30.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_tVtdnCJAEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_tVtdoiJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_GemP4RzPEeChOvWwuwx7tQ" derived="true" name="operation">
+    <attributes xmi:id="_tVtdoiJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_GemP4RzPEeChOvWwuwx7tQ" comments="_4_rEoZ6LEeCWWYky4ZcK-A" targetConnectionVisual="_4_rEop6LEeCWWYky4ZcK-A" derived="true" name="operation">
       <modelElement href="sdm.uml#_GemP4RzPEeChOvWwuwx7tQ"/>
-      <stereotypes xmi:id="_XmqnIJ1PEeCuYMafrm1l2g" name="EReference">
+      <stereotypes xmi:id="_3ksnUJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_YZiT8B2qEeCgKe8vMUdTKg" name="EReference">
         <modelElement href="sdm.uml#_YZiT8B2qEeCgKe8vMUdTKg"/>
       </stereotypes>
       <visibility xmi:id="_tVtdoyJAEeCMEorpcZtLvw" label="+"/>
@@ -600,16 +790,7 @@
         <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EOperation"/>
       </type>
     </attributes>
-    <attributes xmi:id="_KKbUcF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_PwGP4L0pEd-DQ5q3aRKcIw" name="ownedActivity">
-      <modelElement href="sdm.uml#_PwGP4L0pEd-DQ5q3aRKcIw"/>
-      <visualProperties xmi:id="_KKbUcV-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKmTkV-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKmTkl-WEeCraej0mjEdNw" label="0..1" max="1"/>
-      <type xmi:id="_KKmTkF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c" name="Activity">
-        <modelElement href="sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_KKbUcl-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_HGPW1FPGEeCU3puq44liRg" name="returnValue">
+    <attributes xmi:id="_KKbUcl-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_HGPW1FPGEeCU3puq44liRg" comments="_CC2VUZ6MEeCWWYky4ZcK-A" targetConnectionVisual="_CC2VUp6MEeCWWYky4ZcK-A" name="returnValue">
       <modelElement href="sdm.uml#_HGPW1FPGEeCU3puq44liRg"/>
       <visibility xmi:id="_KKm6oV-WEeCraej0mjEdNw" label="+"/>
       <cardinality xmi:id="_KKm6ol-WEeCraej0mjEdNw" label="0..1" max="1"/>
@@ -620,150 +801,62 @@
         </stereotypes>
       </type>
     </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_JVbo8iJHEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_s-xCsBzSEeChOvWwuwx7tQ" comments="_JVbo8CJHEeCMEorpcZtLvw" targetConnectionVisual="_JVbo8SJHEeCMEorpcZtLvw" name="ExceptionVariableExpression" associationsOut="_tVZ8GSJAEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#_s-xCsBzSEeChOvWwuwx7tQ"/>
-    <visualProperties xmi:id="_JVbo-SJHEeCMEorpcZtLvw" position="1002.0,61.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_JVbo8yJHEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_KKYRIF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_3JLBMhzSEeChOvWwuwx7tQ" comments="_tVZ8FyJAEeCMEorpcZtLvw" targetConnectionVisual="_tVZ8GCJAEeCMEorpcZtLvw" name="exceptionVariable">
-      <modelElement href="sdm.uml#_3JLBMhzSEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_KKYRIV-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKkeYV-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKkeYl-WEeCraej0mjEdNw" label="1" max="1" min="1"/>
-      <type xmi:id="_KKkeYF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_n9AgYBzPEeChOvWwuwx7tQ" name="ExceptionVariable">
-        <modelElement href="sdm.uml#_n9AgYBzPEeChOvWwuwx7tQ"/>
+    <attributes xmi:id="_3jzPdJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_PwGP4L0pEd-DQ5q3aRKcIw" name="ownedActivity">
+      <modelElement href="sdm.uml#_PwGP4L0pEd-DQ5q3aRKcIw"/>
+      <visualProperties xmi:id="_3jzPdZ5-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kGKaJ5-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kGKaZ5-EeCWWYky4ZcK-A" label="0..1" max="1"/>
+      <type xmi:id="_3kGKZ55-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c" name="Activity">
+        <modelElement href="sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c"/>
       </type>
     </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVjscCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c" name="Activity" associationsIn="_tVZ7cCJAEeCMEorpcZtLvw _tVZ7sSJAEeCMEorpcZtLvw _tVZ7_CJAEeCMEorpcZtLvw" associationsOut="_tVZ7uiJAEeCMEorpcZtLvw _tVZ7ziJAEeCMEorpcZtLvw _1YVuQCrfEeCrkKoGytJPbg _16c80CrfEeCrkKoGytJPbg" generalizations="_wdY3MCrfEeCrkKoGytJPbg">
-    <modelElement href="sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c"/>
-    <visualProperties xmi:id="_tVjshiJAEeCMEorpcZtLvw" position="10.0,32.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_tVjscSJAEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_1YXjcCrfEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_1YQ1wSrfEeCrkKoGytJPbg" name="inParameter">
-      <modelElement href="sdm.uml#_1YQ1wSrfEeCrkKoGytJPbg"/>
-      <visualProperties xmi:id="_1YXjcSrfEeCrkKoGytJPbg"/>
-      <visibility xmi:id="_1YXjcirfEeCrkKoGytJPbg" label="+"/>
-      <cardinality xmi:id="_1YXjcyrfEeCrkKoGytJPbg" label="*" max="-1"/>
-      <type xmi:id="_1YXjdCrfEeCrkKoGytJPbg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter" name="EParameter">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_16fZECrfEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_16YrYCrfEeCrkKoGytJPbg" name="outParameter">
-      <modelElement href="sdm.uml#_16YrYCrfEeCrkKoGytJPbg"/>
-      <visualProperties xmi:id="_16fZESrfEeCrkKoGytJPbg"/>
-      <visibility xmi:id="_16fZEirfEeCrkKoGytJPbg" label="+"/>
-      <cardinality xmi:id="_16fZEyrfEeCrkKoGytJPbg" label="*" max="-1"/>
-      <type xmi:id="_16fZFCrfEeCrkKoGytJPbg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter" name="EParameter">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_KKdJoF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#c38d6d26-77ad-489b-aef2-755014fcadb9" comments="_Sl1TsZ0REeCuYMafrm1l2g" targetConnectionVisual="_Sl1Tsp0REeCuYMafrm1l2g" name="ownedActivityNode">
-      <modelElement href="sdm.uml#c38d6d26-77ad-489b-aef2-755014fcadb9"/>
-      <visualProperties xmi:id="_KKdJoV-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKnhsV-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKnhsl-WEeCraej0mjEdNw" label="*" max="-1"/>
-      <type xmi:id="_KKnhsF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e" name="ActivityNode">
-        <modelElement href="sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_KKdJol-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_PwFo0L0pEd-DQ5q3aRKcIw" name="owningOperation">
-      <modelElement href="sdm.uml#_PwFo0L0pEd-DQ5q3aRKcIw"/>
-      <visualProperties xmi:id="_KKdJo1-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKnhtF-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKoIwF-WEeCraej0mjEdNw" label="0..1" max="1"/>
-      <type xmi:id="_KKnhs1-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_DxIjgL0pEd-DQ5q3aRKcIw" name="OperationExtension">
-        <modelElement href="sdm.uml#_DxIjgL0pEd-DQ5q3aRKcIw"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_KKdJpF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_kUOVcBzHEeChOvWwuwx7tQ" comments="_7gi9sZ0REeCuYMafrm1l2g" targetConnectionVisual="_7gi9sp0REeCuYMafrm1l2g" name="ownedActivityEdge">
-      <modelElement href="sdm.uml#_kUOVcBzHEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_KKdJpV-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKoIwl-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKoIw1-WEeCraej0mjEdNw" label="*" max="-1"/>
-      <type xmi:id="_KKoIwV-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403" name="ActivityEdge">
-        <modelElement href="sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_KKdJpl-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Bzgd8RzIEeChOvWwuwx7tQ" comments="_tVZ7zCJAEeCMEorpcZtLvw" targetConnectionVisual="_tVZ7zSJAEeCMEorpcZtLvw" name="precondition">
-      <modelElement href="sdm.uml#_Bzgd8RzIEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_KKdJp1-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKov0V-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKov0l-WEeCraej0mjEdNw" label="0..1" max="1"/>
-      <type xmi:id="_KKov0F-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_fD_b0BzQEeChOvWwuwx7tQ" name="MatchingStoryNode">
-        <modelElement href="sdm.uml#_fD_b0BzQEeChOvWwuwx7tQ"/>
-      </type>
-    </attributes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_4_rEoZ6LEeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_4_rEoJ6LEeCWWYky4ZcK-A" item="_tVtdoiJAEeCMEorpcZtLvw" sourceConnectionVisual="_4_rEop6LEeCWWYky4ZcK-A" text="The EOperation whose behavior is defined by the Activity. The property is derived because the actual value is determined by the utility class OperationsExtensionOperation.">
+    <modelElement href="sdm.uml#_4_rEoJ6LEeCWWYky4ZcK-A"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_CC2VUZ6MEeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_CC2VUJ6MEeCWWYky4ZcK-A" item="_KKbUcl-WEeCraej0mjEdNw" sourceConnectionVisual="_CC2VUp6MEeCWWYky4ZcK-A" text="The return value of the referenced operation.">
+    <modelElement href="sdm.uml#_CC2VUJ6MEeCWWYky4ZcK-A"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVjsoyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e" comments="_9fBgwZ0KEeCuYMafrm1l2g" targetConnectionVisual="_9fBgwp0KEeCuYMafrm1l2g" name="ActivityNode" abstractClass="true" associationsIn="_tVZ7nyJAEeCMEorpcZtLvw _tVZ7liJAEeCMEorpcZtLvw" associationsOut="_tVZ7qCJAEeCMEorpcZtLvw _tVZ7cCJAEeCMEorpcZtLvw" subclassedBy="_tVjsuSJAEeCMEorpcZtLvw _tVjsvSJAEeCMEorpcZtLvw _tVjswSJAEeCMEorpcZtLvw _tVtddyJAEeCMEorpcZtLvw _tVtdhSJAEeCMEorpcZtLvw _tV2neCJAEeCMEorpcZtLvw _tV2nhSJAEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
     <visualProperties xmi:id="_tVjsuCJAEeCMEorpcZtLvw" position="266.0,227.0" size="113.0,71.0"/>
     <visibility xmi:id="_tVjspCJAEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_KKXDAF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#29056c96-b146-4262-acbe-9f82ad541768" comments="_vm-HoZ0REeCuYMafrm1l2g" targetConnectionVisual="_vnH4oJ0REeCuYMafrm1l2g" name="incoming">
+    <attributes xmi:id="_3j9AcJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#29056c96-b146-4262-acbe-9f82ad541768" comments="_vm-HoZ0REeCuYMafrm1l2g" targetConnectionVisual="_vnH4oJ0REeCuYMafrm1l2g" name="incoming">
       <modelElement href="sdm.uml#29056c96-b146-4262-acbe-9f82ad541768"/>
-      <visualProperties xmi:id="_KKXDAV-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKipMV-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKipMl-WEeCraej0mjEdNw" label="*" max="-1"/>
-      <type xmi:id="_KKipMF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403" name="ActivityEdge">
+      <visualProperties xmi:id="_3j9AcZ5-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kP7bp5-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kP7b55-EeCWWYky4ZcK-A" label="*" max="-1"/>
+      <type xmi:id="_3kP7bZ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403" name="ActivityEdge">
         <modelElement href="sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403"/>
       </type>
     </attributes>
-    <attributes xmi:id="_KKXDAl-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#8cee2d74-0dce-4164-bad1-b56bc8d97577" comments="_oF14gZ0REeCuYMafrm1l2g" targetConnectionVisual="_oF_pgJ0REeCuYMafrm1l2g" name="outgoing">
+    <attributes xmi:id="_3j9Acp5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#8cee2d74-0dce-4164-bad1-b56bc8d97577" comments="_oF14gZ0REeCuYMafrm1l2g" targetConnectionVisual="_oF_pgJ0REeCuYMafrm1l2g" name="outgoing">
       <modelElement href="sdm.uml#8cee2d74-0dce-4164-bad1-b56bc8d97577"/>
-      <visualProperties xmi:id="_KKXDA1-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKjQQV-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKjQQl-WEeCraej0mjEdNw" label="*" max="-1"/>
-      <type xmi:id="_KKjQQF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403" name="ActivityEdge">
+      <visualProperties xmi:id="_3j9Ac55-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kP7cZ5-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kP7cp5-EeCWWYky4ZcK-A" label="*" max="-1"/>
+      <type xmi:id="_3kP7cJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403" name="ActivityEdge">
         <modelElement href="sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403"/>
       </type>
     </attributes>
-    <attributes xmi:id="_KKXDBF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#02f6324e-2986-4092-83b5-05c92533ca68" comments="_crgjMZ0REeCuYMafrm1l2g" targetConnectionVisual="_crgjMp0REeCuYMafrm1l2g" name="owningActivity">
+    <attributes xmi:id="_3j9AdJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#02f6324e-2986-4092-83b5-05c92533ca68" comments="_crgjMZ0REeCuYMafrm1l2g" targetConnectionVisual="_crgjMp0REeCuYMafrm1l2g" name="owningActivity">
       <modelElement href="sdm.uml#02f6324e-2986-4092-83b5-05c92533ca68"/>
-      <visualProperties xmi:id="_KKXDBV-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKjQRF-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKj3UF-WEeCraej0mjEdNw" label="0..1" max="1"/>
-      <type xmi:id="_KKjQQ1-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c" name="Activity">
+      <visualProperties xmi:id="_3j9AdZ5-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kP7dJ5-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kP7dZ5-EeCWWYky4ZcK-A" label="0..1" max="1"/>
+      <type xmi:id="_3kP7c55-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c" name="Activity">
         <modelElement href="sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c"/>
       </type>
     </attributes>
-    <attributes xmi:id="_KKXDBl-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#6c403dc1-70f7-4f30-b878-4934c90b223b" comments="_r_FjsZ1NEeCuYMafrm1l2g" targetConnectionVisual="_r_Fjsp1NEeCuYMafrm1l2g" name="owningActivityNode">
+    <attributes xmi:id="_3j9Adp5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#6c403dc1-70f7-4f30-b878-4934c90b223b" comments="_r_FjsZ1NEeCuYMafrm1l2g" targetConnectionVisual="_r_Fjsp1NEeCuYMafrm1l2g" name="owningActivityNode">
       <modelElement href="sdm.uml#6c403dc1-70f7-4f30-b878-4934c90b223b"/>
-      <visualProperties xmi:id="_KKXDB1-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKj3Ul-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKj3U1-WEeCraej0mjEdNw" label="0..1" max="1"/>
-      <type xmi:id="_KKj3UV-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#bac68bbf-67d6-474b-81c5-6a12361a7e63" name="StructuredNode">
+      <visualProperties xmi:id="_3j9Ad55-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kP7d55-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kP7eJ5-EeCWWYky4ZcK-A" label="0..1" max="1"/>
+      <type xmi:id="_3kP7dp5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#bac68bbf-67d6-474b-81c5-6a12361a7e63" name="StructuredNode">
         <modelElement href="sdm.uml#bac68bbf-67d6-474b-81c5-6a12361a7e63"/>
       </type>
     </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_9fBgwZ0KEeCuYMafrm1l2g" item="_tVjsoyJAEeCMEorpcZtLvw" sourceConnectionVisual="_9fBgwp0KEeCuYMafrm1l2g" text="Abstract super class for all kinds of nodes that may be added to an activity. This class provides the basic functionality of connecting the activity nodes in the activity by ActivityEdges.">
-    <modelElement href="sdm.uml#_9fBgwJ0KEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_t8uBwZ0QEeCuYMafrm1l2g" item="_tVjshyJAEeCMEorpcZtLvw" sourceConnectionVisual="_t8uBwp0QEeCuYMafrm1l2g" text="The ActivityEdge represents the control flow in an activity. It is a dericted connection from one activity to another one. Their exist different kinds of activity edges which are differentiated by the guard attribute.">
-    <modelElement href="sdm.uml#_t8uBwJ0QEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_6K0WUJ0QEeCuYMafrm1l2g" item="_tVjskSJAEeCMEorpcZtLvw" sourceConnectionVisual="_6K0WUZ0QEeCuYMafrm1l2g" text="The guard defines the kind of the activity edge. The possible kinds of guards are specified by the EdgeGuard enum.">
-    <modelElement href="sdm.uml#_6KrMYJ0QEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_Sl1TsZ0REeCuYMafrm1l2g" item="_KKdJoF-WEeCraej0mjEdNw" sourceConnectionVisual="_Sl1Tsp0REeCuYMafrm1l2g" text="The activity contains all activity nodes via this reference.">
-    <modelElement href="sdm.uml#_Sl1TsJ0REeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_crgjMZ0REeCuYMafrm1l2g" item="_KKXDBF-WEeCraej0mjEdNw" sourceConnectionVisual="_crgjMp0REeCuYMafrm1l2g" text="Points to the activity this ActivityNode is contained in.">
-    <modelElement href="sdm.uml#_crgjMJ0REeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_gBckQZ0REeCuYMafrm1l2g" item="_KKC58l-WEeCraej0mjEdNw" sourceConnectionVisual="_gBckQp0REeCuYMafrm1l2g" text="The source node of this ActivityEdge.">
-    <modelElement href="sdm.uml#_gBckQJ0REeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_i7t9AZ0REeCuYMafrm1l2g" item="_KKC58F-WEeCraej0mjEdNw" sourceConnectionVisual="_i7t9Ap0REeCuYMafrm1l2g" text="The target node of this ActivityEdge.">
-    <modelElement href="sdm.uml#_i7t9AJ0REeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_oF14gZ0REeCuYMafrm1l2g" item="_KKXDAl-WEeCraej0mjEdNw" sourceConnectionVisual="_oF_pgJ0REeCuYMafrm1l2g" text="All ActivityEdges that leave this activity node. The guards of the outgoing activity edges must be exclusive in order to obtain a well-defined activity.">
-    <modelElement href="sdm.uml#_oF14gJ0REeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_vm-HoZ0REeCuYMafrm1l2g" item="_KKXDAF-WEeCraej0mjEdNw" sourceConnectionVisual="_vnH4oJ0REeCuYMafrm1l2g" text="All ActivityEdges entering this activity node.">
-    <modelElement href="sdm.uml#_vm-HoJ0REeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2h4EQZ0REeCuYMafrm1l2g" item="_KKC59F-WEeCraej0mjEdNw" sourceConnectionVisual="_2h4EQp0REeCuYMafrm1l2g" text="Points to the activity this ActivityEdge is contained in.">
-    <modelElement href="sdm.uml#_2h4EQJ0REeCuYMafrm1l2g"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVjshyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403" comments="_t8uBwZ0QEeCuYMafrm1l2g" targetConnectionVisual="_t8uBwp0QEeCuYMafrm1l2g" name="ActivityEdge" associationsIn="_tVZ7uiJAEeCMEorpcZtLvw _tVZ7qCJAEeCMEorpcZtLvw" associationsOut="_tVZ7nyJAEeCMEorpcZtLvw _tVZ75SJAEeCMEorpcZtLvw _tVZ7jSJAEeCMEorpcZtLvw">
     <modelElement href="sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403"/>
@@ -785,48 +878,97 @@
         <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
       </type>
     </attributes>
-    <attributes xmi:id="_KKC58F-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0eece472-5dd6-4408-b6d5-d83ba21b2208" comments="_i7t9AZ0REeCuYMafrm1l2g" targetConnectionVisual="_i7t9Ap0REeCuYMafrm1l2g" name="target">
+    <attributes xmi:id="_3j9AeJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0eece472-5dd6-4408-b6d5-d83ba21b2208" comments="_i7t9AZ0REeCuYMafrm1l2g" targetConnectionVisual="_i7t9Ap0REeCuYMafrm1l2g" name="target">
       <modelElement href="sdm.uml#0eece472-5dd6-4408-b6d5-d83ba21b2208"/>
-      <visualProperties xmi:id="_KKC58V-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKgM8V-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKgM8l-WEeCraej0mjEdNw" label="1" max="1" min="1"/>
-      <type xmi:id="_KKgM8F-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e" name="ActivityNode">
+      <visualProperties xmi:id="_3j9AeZ5-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kP7ep5-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kP7e55-EeCWWYky4ZcK-A" label="1" max="1" min="1"/>
+      <type xmi:id="_3kP7eZ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e" name="ActivityNode">
         <modelElement href="sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
       </type>
     </attributes>
-    <attributes xmi:id="_KKC58l-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#9c8c19ca-fef2-4635-a0a6-9b783dfe4579" comments="_gBckQZ0REeCuYMafrm1l2g" targetConnectionVisual="_gBckQp0REeCuYMafrm1l2g" name="source">
+    <attributes xmi:id="_3j9Aep5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#9c8c19ca-fef2-4635-a0a6-9b783dfe4579" comments="_gBckQZ0REeCuYMafrm1l2g" targetConnectionVisual="_gBckQp0REeCuYMafrm1l2g" name="source">
       <modelElement href="sdm.uml#9c8c19ca-fef2-4635-a0a6-9b783dfe4579"/>
-      <visualProperties xmi:id="_KKC581-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKg0AV-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKg0Al-WEeCraej0mjEdNw" label="1" max="1" min="1"/>
-      <type xmi:id="_KKg0AF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e" name="ActivityNode">
+      <visualProperties xmi:id="_3j9Ae55-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kZsYZ5-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kZsYp5-EeCWWYky4ZcK-A" label="1" max="1" min="1"/>
+      <type xmi:id="_3kZsYJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e" name="ActivityNode">
         <modelElement href="sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
       </type>
     </attributes>
-    <attributes xmi:id="_KKC59F-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_kUNHURzHEeChOvWwuwx7tQ" comments="_2h4EQZ0REeCuYMafrm1l2g" targetConnectionVisual="_2h4EQp0REeCuYMafrm1l2g" name="owningActivity">
+    <attributes xmi:id="_3j9AfJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_kUNHURzHEeChOvWwuwx7tQ" comments="_2h4EQZ0REeCuYMafrm1l2g" targetConnectionVisual="_2h4EQp0REeCuYMafrm1l2g" name="owningActivity">
       <modelElement href="sdm.uml#_kUNHURzHEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_KKC59V-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKhbEV-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKhbEl-WEeCraej0mjEdNw" label="1" max="1" min="1"/>
-      <type xmi:id="_KKhbEF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c" name="Activity">
+      <visualProperties xmi:id="_3j9AfZ5-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kZsZJ5-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kZsZZ5-EeCWWYky4ZcK-A" label="1" max="1" min="1"/>
+      <type xmi:id="_3kZsY55-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c" name="Activity">
         <modelElement href="sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c"/>
       </type>
     </attributes>
-    <attributes xmi:id="_KKC59l-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_tthtgBzPEeChOvWwuwx7tQ" comments="_tVZ74yJAEeCMEorpcZtLvw" targetConnectionVisual="_tVZ75CJAEeCMEorpcZtLvw" name="guardException">
+    <attributes xmi:id="_3j9Afp5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_tthtgBzPEeChOvWwuwx7tQ" comments="_tVZ74yJAEeCMEorpcZtLvw" targetConnectionVisual="_tVZ75CJAEeCMEorpcZtLvw" name="guardException">
       <modelElement href="sdm.uml#_tthtgBzPEeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_KKC591-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKiCIF-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKiCIV-WEeCraej0mjEdNw" label="*" max="-1"/>
-      <type xmi:id="_KKhbE1-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_n9AgYBzPEeChOvWwuwx7tQ" name="ExceptionVariable">
+      <visualProperties xmi:id="_3j9Af55-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kZsZ55-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kZsaJ5-EeCWWYky4ZcK-A" label="*" max="-1"/>
+      <type xmi:id="_3kZsZp5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_n9AgYBzPEeChOvWwuwx7tQ" name="ExceptionVariable">
         <modelElement href="sdm.uml#_n9AgYBzPEeChOvWwuwx7tQ"/>
       </type>
     </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_7gi9sZ0REeCuYMafrm1l2g" item="_KKdJpF-WEeCraej0mjEdNw" sourceConnectionVisual="_7gi9sp0REeCuYMafrm1l2g" text="All ActivityEdges that are contained in this activity.">
-    <modelElement href="sdm.uml#_7gi9sJ0REeCuYMafrm1l2g"/>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tV2nZCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_n9AgYBzPEeChOvWwuwx7tQ" comments="_tVtdpyJAEeCMEorpcZtLvw" targetConnectionVisual="_tV2nYCJAEeCMEorpcZtLvw" name="ExceptionVariable" associationsIn="_tVZ75SJAEeCMEorpcZtLvw _tVZ8GSJAEeCMEorpcZtLvw" associationsOut="_tWAYYCJAEeCMEorpcZtLvw _tVZ78CJAEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#_n9AgYBzPEeChOvWwuwx7tQ"/>
+    <visualProperties xmi:id="_tV2ndyJAEeCMEorpcZtLvw" position="969.0,180.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_tV2nZSJAEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_tV2nayJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_pnXT8BzQEeChOvWwuwx7tQ" comments="_tV2nYSJAEeCMEorpcZtLvw" targetConnectionVisual="_tV2nYiJAEeCMEorpcZtLvw" name="name">
+      <modelElement href="sdm.uml#_pnXT8BzQEeChOvWwuwx7tQ"/>
+      <visibility xmi:id="_tV2nbCJAEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_tV2nbSJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
+      <type xmi:id="_tV2nbiJAEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tV2nbyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_v4HgUBzQEeChOvWwuwx7tQ" comments="_tVZ77iJAEeCMEorpcZtLvw" targetConnectionVisual="_tVZ77yJAEeCMEorpcZtLvw" name="exceptionType">
+      <modelElement href="sdm.uml#_v4HgUBzQEeChOvWwuwx7tQ"/>
+      <stereotypes xmi:id="_3ksnUZ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_8MjQ4B2VEeCKeJCjS51luQ" name="EReference">
+        <modelElement href="sdm.uml#_8MjQ4B2VEeCKeJCjS51luQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tV2ncCJAEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_tV2ncSJAEeCMEorpcZtLvw" label="*" max="-1"/>
+      <type xmi:id="_tV2nciJAEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier" name="EClassifier">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tV2ncyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_ErDjsB2VEeCKeJCjS51luQ" name="genericExceptionType">
+      <modelElement href="sdm.uml#_ErDjsB2VEeCKeJCjS51luQ"/>
+      <visibility xmi:id="_tV2ndCJAEeCMEorpcZtLvw" label="+"/>
+      <cardinality xmi:id="_tV2ndSJAEeCMEorpcZtLvw" label="*" max="-1"/>
+      <type xmi:id="_tV2ndiJAEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType" name="EGenericType">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_3jzPcp5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_tthGcBzPEeChOvWwuwx7tQ" comments="_tVZ74SJAEeCMEorpcZtLvw" targetConnectionVisual="_tVZ74iJAEeCMEorpcZtLvw" name="activityEdge">
+      <modelElement href="sdm.uml#_tthGcBzPEeChOvWwuwx7tQ"/>
+      <visualProperties xmi:id="_3jzPc55-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kGKZZ5-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kGKZp5-EeCWWYky4ZcK-A" label="1" max="1" min="1"/>
+      <type xmi:id="_3kGKZJ5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403" name="ActivityEdge">
+        <modelElement href="sdm.uml#39579588-fb90-4211-b314-2c5bc4ee2403"/>
+      </type>
+    </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_My090Z0SEeCuYMafrm1l2g" item="_tVtdjiJAEeCMEorpcZtLvw" sourceConnectionVisual="_My090p0SEeCuYMafrm1l2g" text="This enum is used to model different kinds of activity edges.">
-    <modelElement href="sdm.uml#_My090J0SEeCuYMafrm1l2g"/>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_JVbo8iJHEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_s-xCsBzSEeChOvWwuwx7tQ" comments="_JVbo8CJHEeCMEorpcZtLvw" targetConnectionVisual="_JVbo8SJHEeCMEorpcZtLvw" name="ExceptionVariableExpression" associationsOut="_tVZ8GSJAEeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#_s-xCsBzSEeChOvWwuwx7tQ"/>
+    <visualProperties xmi:id="_JVbo-SJHEeCMEorpcZtLvw" position="1002.0,61.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_JVbo8yJHEeCMEorpcZtLvw" label="+"/>
+    <attributes xmi:id="_3jzPdp5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_3JLBMhzSEeChOvWwuwx7tQ" comments="_tVZ8FyJAEeCMEorpcZtLvw" targetConnectionVisual="_tVZ8GCJAEeCMEorpcZtLvw" name="exceptionVariable">
+      <modelElement href="sdm.uml#_3JLBMhzSEeChOvWwuwx7tQ"/>
+      <visualProperties xmi:id="_3jzPd55-EeCWWYky4ZcK-A" visible="false"/>
+      <visibility xmi:id="_3kGKa55-EeCWWYky4ZcK-A" label="+"/>
+      <cardinality xmi:id="_3kP7YJ5-EeCWWYky4ZcK-A" label="1" max="1" min="1"/>
+      <type xmi:id="_3kGKap5-EeCWWYky4ZcK-A" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_n9AgYBzPEeChOvWwuwx7tQ" name="ExceptionVariable">
+        <modelElement href="sdm.uml#_n9AgYBzPEeChOvWwuwx7tQ"/>
+      </type>
+    </attributes>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:EnumerationVisual" xmi:id="_tVtdjiJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#44d391e1-c2ec-4500-ac0c-d87b9a9804c1" comments="_My090Z0SEeCuYMafrm1l2g" targetConnectionVisual="_My090p0SEeCuYMafrm1l2g" name="EdgeGuard">
     <modelElement href="sdm.uml#44d391e1-c2ec-4500-ac0c-d87b9a9804c1"/>
@@ -859,183 +1001,5 @@
     <literals xmi:id="_tVtdmCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#7da092a4-8daa-400b-a73f-c18e172c319b" name="FINALLY">
       <modelElement href="sdm.uml#7da092a4-8daa-400b-a73f-c18e172c319b"/>
     </literals>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_ddn_0Z0VEeCuYMafrm1l2g" item="_tVtdcCJAEeCMEorpcZtLvw" sourceConnectionVisual="_ddn_0p0VEeCuYMafrm1l2g" text="A statement node is a node that just contains an expression defining its behavior. In combination with a textual expression, arbitrary souce code might be added by using StatementNodes.">
-    <modelElement href="sdm.uml#_ddn_0J0VEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tV2neSJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#9f08ef2b-883b-486d-9dfd-53a9300410fa" comments="_mLE4IZ0VEeCuYMafrm1l2g" targetConnectionVisual="_mLE4Ip0VEeCuYMafrm1l2g" name="StoryNode" abstractClass="true" generalizations="_tV2neCJAEeCMEorpcZtLvw" subclassedBy="_tV2nkCJAEeCMEorpcZtLvw _tV2nmCJAEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#9f08ef2b-883b-486d-9dfd-53a9300410fa"/>
-    <visualProperties xmi:id="_tV2nhCJAEeCMEorpcZtLvw" position="606.0,357.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_tV2neiJAEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_tV2neyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#bb2022ce-286d-4865-9482-283f89214bb9" comments="_qYWw4Z0VEeCuYMafrm1l2g" targetConnectionVisual="_qYWw4p0VEeCuYMafrm1l2g" name="forEach">
-      <modelElement href="sdm.uml#bb2022ce-286d-4865-9482-283f89214bb9"/>
-      <visibility xmi:id="_tV2nfCJAEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_tV2nfSJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_tV2nfiJAEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean" name="Boolean">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_tV2nfyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#779bfb46-33f2-49f4-9ad0-8e26ce91a437" derived="true" name="storyPattern">
-      <modelElement href="sdm.uml#779bfb46-33f2-49f4-9ad0-8e26ce91a437"/>
-      <stereotypes xmi:id="_tV2ngCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_UR3SkB1rEeCKeJCjS51luQ" name="EReference">
-        <modelElement href="sdm.uml#_UR3SkB1rEeCKeJCjS51luQ"/>
-      </stereotypes>
-      <visibility xmi:id="_tV2ngSJAEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_tV2ngiJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_tV2ngyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
-        <modelElement href="sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_mLE4IZ0VEeCuYMafrm1l2g" item="_tV2neSJAEeCMEorpcZtLvw" sourceConnectionVisual="_mLE4Ip0VEeCuYMafrm1l2g" text="An activity node containing a story pattern.">
-    <modelElement href="sdm.uml#_mLE4IJ0VEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_qYWw4Z0VEeCuYMafrm1l2g" item="_tV2neyJAEeCMEorpcZtLvw" sourceConnectionVisual="_qYWw4p0VEeCuYMafrm1l2g" text="Specifies whether just one match should be found for the contained pattern (forEach  = false) or whether all matches should be found (forEach = true).">
-    <modelElement href="sdm.uml#_qYWw4J0VEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVjsviJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1c4eadb1-8677-4a5f-acd9-4b33da61c6fd" comments="_yxVJAJ1MEeCuYMafrm1l2g" targetConnectionVisual="_yxVJAZ1MEeCuYMafrm1l2g" name="StartNode" generalizations="_tVjsvSJAEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#1c4eadb1-8677-4a5f-acd9-4b33da61c6fd"/>
-    <visualProperties xmi:id="_tVjswCJAEeCMEorpcZtLvw" position="166.0,356.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_tVjsvyJAEeCMEorpcZtLvw" label="+"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_yxVJAJ1MEeCuYMafrm1l2g" item="_tVjsviJAEeCMEorpcZtLvw" sourceConnectionVisual="_yxVJAZ1MEeCuYMafrm1l2g" text="The start node of an activity defines the starting point for the execution of the activity.">
-    <modelElement href="sdm.uml#_yxLYAJ1MEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_5Ylw4Z1MEeCuYMafrm1l2g" item="_tVtdeiJAEeCMEorpcZtLvw" sourceConnectionVisual="_5Ylw4p1MEeCuYMafrm1l2g" text="At a StopNode, the execution of an activity terminates. If the activity specifies any out-parameters, they have to be bound to a return expression.">
-    <modelElement href="sdm.uml#_5Ylw4J1MEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVtdeiJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#68a71c0d-6c71-4b10-90a5-bad7e5e02981" comments="_5Ylw4Z1MEeCuYMafrm1l2g" targetConnectionVisual="_5Ylw4p1MEeCuYMafrm1l2g" name="StopNode" associationsOut="_tVZ7eSJAEeCMEorpcZtLvw" generalizations="_tVtddyJAEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#68a71c0d-6c71-4b10-90a5-bad7e5e02981"/>
-    <visualProperties xmi:id="_tVtdhCJAEeCMEorpcZtLvw" position="248.0,356.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_tVtdeyJAEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_tVtdfCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#49f46f44-8f1d-4634-a708-d2e822995869" comments="_tVtdeCJAEeCMEorpcZtLvw" targetConnectionVisual="_tVtdeSJAEeCMEorpcZtLvw" name="flowStopOnly">
-      <modelElement href="sdm.uml#49f46f44-8f1d-4634-a708-d2e822995869"/>
-      <visibility xmi:id="_tVtdfSJAEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_tVtdfiJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_tVtdfyJAEeCMEorpcZtLvw" abstractModelReference="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean" name="Boolean">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_tVtdgCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_WnuyUbLyEd-uk56s-ldeog" comments="_5InT0Z1PEeCuYMafrm1l2g" targetConnectionVisual="_5InT0p1PEeCuYMafrm1l2g" derived="true" name="returnValue">
-      <modelElement href="sdm.uml#_WnuyUbLyEd-uk56s-ldeog"/>
-      <visibility xmi:id="_tVtdgSJAEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_tVtdgiJAEeCMEorpcZtLvw" label="0..1" max="1"/>
-      <type xmi:id="_tVtdgyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
-        <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_7UOdIJ0KEeCuYMafrm1l2g" comments="_a5x9sJ1PEeCuYMafrm1l2g" targetConnectionVisual="_a5x9sZ1PEeCuYMafrm1l2g" name="returnValues">
-      <modelElement href="sdm.uml#_27rV8IYIEeCsDOrao2DJIA"/>
-      <visibility xmi:id="_7UOdIp0KEeCuYMafrm1l2g" label="+"/>
-      <cardinality xmi:id="_7UOdI50KEeCuYMafrm1l2g" label="*" max="-1"/>
-      <type xmi:id="_7UOdIZ0KEeCuYMafrm1l2g" name="Expression">
-        <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVjsuiJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0f293f48-25be-4376-a7a4-f866d4c1d687" comments="_W1svIZ1NEeCuYMafrm1l2g" targetConnectionVisual="_W1svIp1NEeCuYMafrm1l2g" name="JunctionNode" generalizations="_tVjsuSJAEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#0f293f48-25be-4376-a7a4-f866d4c1d687"/>
-    <visualProperties xmi:id="_tVjsvCJAEeCMEorpcZtLvw" position="489.0,357.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_tVjsuyJAEeCMEorpcZtLvw" label="+"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_W1svIZ1NEeCuYMafrm1l2g" item="_tVjsuiJAEeCMEorpcZtLvw" sourceConnectionVisual="_W1svIp1NEeCuYMafrm1l2g" text="A JunctionNode represents a pseudo-activity which is used for branching and merging the control flow in an activity. It is visualized by a diamond shaped figure.">
-    <modelElement href="sdm.uml#_W1svIJ1NEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVtdhiJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#bac68bbf-67d6-474b-81c5-6a12361a7e63" comments="_pEFLIZ1NEeCuYMafrm1l2g" targetConnectionVisual="_pEFLIp1NEeCuYMafrm1l2g" name="StructuredNode" associationsOut="_tVZ7liJAEeCMEorpcZtLvw" generalizations="_tVtdhSJAEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#bac68bbf-67d6-474b-81c5-6a12361a7e63"/>
-    <visualProperties xmi:id="_tVtdjSJAEeCMEorpcZtLvw" position="1105.0,357.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_tVtdhyJAEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_KKBr0F-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1269373e-d6c3-43b3-96b3-343306cf98fc" comments="_y9aAsZ1NEeCuYMafrm1l2g" targetConnectionVisual="_y9jxsJ1NEeCuYMafrm1l2g" name="ownedActivityNode">
-      <modelElement href="sdm.uml#1269373e-d6c3-43b3-96b3-343306cf98fc"/>
-      <visualProperties xmi:id="_KKBr0V-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKfl4V-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKfl4l-WEeCraej0mjEdNw" label="*" max="-1"/>
-      <type xmi:id="_KKfl4F-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e" name="ActivityNode">
-        <modelElement href="sdm.uml#0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_pEFLIZ1NEeCuYMafrm1l2g" item="_tVtdhiJAEeCMEorpcZtLvw" sourceConnectionVisual="_pEFLIp1NEeCuYMafrm1l2g" text="A structured node is a node that contains several other activities.">
-    <modelElement href="sdm.uml#_pEFLIJ1NEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_r_FjsZ1NEeCuYMafrm1l2g" item="_KKXDBl-WEeCraej0mjEdNw" sourceConnectionVisual="_r_Fjsp1NEeCuYMafrm1l2g" text="The parent node if this node is contained in a StructuredNode.">
-    <modelElement href="sdm.uml#_r_FjsJ1NEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_y9aAsZ1NEeCuYMafrm1l2g" item="_KKBr0F-WEeCraej0mjEdNw" sourceConnectionVisual="_y9jxsJ1NEeCuYMafrm1l2g" text="All subnodes which are contained in this structured node.">
-    <modelElement href="sdm.uml#_y9aAsJ1NEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_3F7VQZ1NEeCuYMafrm1l2g" item="_tV2nkSJAEeCMEorpcZtLvw" sourceConnectionVisual="_3GFGQJ1NEeCuYMafrm1l2g" text="A MatchingStoryNode may only contain a MatchingPattern which does not change the graph. I.e., no element contained in this activity carries a create or destroy annotation. Thus, after executing a MatchingStoryNode, the underlying graph is guaranteed to be unchanged.">
-    <modelElement href="sdm.uml#_3F7VQJ1NEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_iBn_kZ1OEeCuYMafrm1l2g" item="_tV2nkyJAEeCMEorpcZtLvw" sourceConnectionVisual="_iBn_kp1OEeCuYMafrm1l2g" text="This MatchingPattern contained in this activity.">
-    <modelElement href="sdm.uml#_iBn_kJ1OEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tV2nmSJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_gDYcQBzQEeChOvWwuwx7tQ" comments="_kW2KgZ1OEeCuYMafrm1l2g" targetConnectionVisual="_kW_7gJ1OEeCuYMafrm1l2g" name="ModifyingStoryNode" associationsOut="_tVZ8DiJAEeCMEorpcZtLvw" generalizations="_tV2nmCJAEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#_gDYcQBzQEeChOvWwuwx7tQ"/>
-    <visualProperties xmi:id="_tV2nnyJAEeCMEorpcZtLvw" position="728.0,476.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_tV2nmiJAEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_tV2nmyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_L3OaERzSEeChOvWwuwx7tQ" comments="_odIqcZ1OEeCuYMafrm1l2g" targetConnectionVisual="_odIqcp1OEeCuYMafrm1l2g" name="ownedRule">
-      <modelElement href="sdm.uml#_L3OaERzSEeChOvWwuwx7tQ"/>
-      <visibility xmi:id="_tV2nnCJAEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_tV2nnSJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_tV2nniJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
-        <modelElement href="sdm.uml#762a7829-3f0c-4d56-9644-9e12504ce2f4"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_kW2KgZ1OEeCuYMafrm1l2g" item="_tV2nmSJAEeCMEorpcZtLvw" sourceConnectionVisual="_kW_7gJ1OEeCuYMafrm1l2g" text="A ModifyingStoryNode contains a story pattern which may change the underlying graph upon execution.">
-    <modelElement href="sdm.uml#_kW2KgJ1OEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_odIqcZ1OEeCuYMafrm1l2g" item="_tV2nmyJAEeCMEorpcZtLvw" sourceConnectionVisual="_odIqcp1OEeCuYMafrm1l2g" text="The story pattern contained in this ModifyingStoryNode.">
-    <modelElement href="sdm.uml#_odIqcJ1OEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tVtdcCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#09ce4f32-4ea3-459e-8d03-555250a5780e" comments="_ddn_0Z0VEeCuYMafrm1l2g" targetConnectionVisual="_ddn_0p0VEeCuYMafrm1l2g" name="StatementNode" associationsOut="_tVZ7giJAEeCMEorpcZtLvw" generalizations="_tVjswSJAEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#09ce4f32-4ea3-459e-8d03-555250a5780e"/>
-    <visualProperties xmi:id="_tVtddiJAEeCMEorpcZtLvw" position="857.0,357.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_tVtdcSJAEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_tVtdciJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_OISg0rLyEd-uk56s-ldeog" comments="_vFb0IZ1OEeCuYMafrm1l2g" targetConnectionVisual="_vFb0Ip1OEeCuYMafrm1l2g" name="statementExpression">
-      <modelElement href="sdm.uml#_OISg0rLyEd-uk56s-ldeog"/>
-      <visibility xmi:id="_tVtdcyJAEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_tVtddCJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_tVtddSJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression">
-        <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_vFb0IZ1OEeCuYMafrm1l2g" item="_tVtdciJAEeCMEorpcZtLvw" sourceConnectionVisual="_vFb0Ip1OEeCuYMafrm1l2g" text="The expression which defines the behavior of this StatementNode.">
-    <modelElement href="sdm.uml#_vFb0IJ1OEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tV2nkSJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_fD_b0BzQEeChOvWwuwx7tQ" comments="_3F7VQZ1NEeCuYMafrm1l2g" targetConnectionVisual="_3GFGQJ1NEeCuYMafrm1l2g" name="MatchingStoryNode" associationsIn="_tVZ7ziJAEeCMEorpcZtLvw" associationsOut="_tVZ8BSJAEeCMEorpcZtLvw" generalizations="_tV2nkCJAEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#_fD_b0BzQEeChOvWwuwx7tQ"/>
-    <visualProperties xmi:id="_tV2nlyJAEeCMEorpcZtLvw" position="471.0,475.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_tV2nkiJAEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_tV2nkyJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_yU1k8RzREeChOvWwuwx7tQ" comments="_iBn_kZ1OEeCuYMafrm1l2g" targetConnectionVisual="_iBn_kp1OEeCuYMafrm1l2g" name="ownedPattern">
-      <modelElement href="sdm.uml#_yU1k8RzREeChOvWwuwx7tQ"/>
-      <visibility xmi:id="_tV2nlCJAEeCMEorpcZtLvw" label="+"/>
-      <cardinality xmi:id="_tV2nlSJAEeCMEorpcZtLvw" label="1" max="1" min="1"/>
-      <type xmi:id="_tV2nliJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_kZu7ABzcEeChOvWwuwx7tQ" name="MatchingPattern">
-        <modelElement href="sdm.uml#_kZu7ABzcEeChOvWwuwx7tQ"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tV2niCJAEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_dV0p0BzQEeChOvWwuwx7tQ" comments="_tV2nhiJAEeCMEorpcZtLvw" targetConnectionVisual="_tV2nhyJAEeCMEorpcZtLvw" name="ActivityCallNode" associationsOut="_tVZ7_CJAEeCMEorpcZtLvw" generalizations="_tV2nhSJAEeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#_dV0p0BzQEeChOvWwuwx7tQ"/>
-    <visualProperties xmi:id="_tV2njyJAEeCMEorpcZtLvw" position="48.0,407.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_tV2niSJAEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_KKatYF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_Iraa0BzREeChOvWwuwx7tQ" comments="_tVZ7-iJAEeCMEorpcZtLvw" targetConnectionVisual="_tVZ7-yJAEeCMEorpcZtLvw" name="calledActivity">
-      <modelElement href="sdm.uml#_Iraa0BzREeChOvWwuwx7tQ"/>
-      <visualProperties xmi:id="_KKatYV-WEeCraej0mjEdNw" visible="false"/>
-      <visibility xmi:id="_KKlsgV-WEeCraej0mjEdNw" label="+"/>
-      <cardinality xmi:id="_KKlsgl-WEeCraej0mjEdNw" label="1..*" max="-1" min="1"/>
-      <type xmi:id="_KKlsgF-WEeCraej0mjEdNw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c" name="Activity">
-        <modelElement href="sdm.uml#1f15de3e-b6d4-423a-b56b-04cc037e043c"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_a5x9sJ1PEeCuYMafrm1l2g" item="_7UOdIJ0KEeCuYMafrm1l2g" sourceConnectionVisual="_a5x9sZ1PEeCuYMafrm1l2g" text="Defines the return values of the activity. These return values will be assigned to the out-parameters.">
-    <modelElement href="sdm.uml#_a5oMsJ1PEeCuYMafrm1l2g"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_5InT0Z1PEeCuYMafrm1l2g" item="_tVtdgCJAEeCMEorpcZtLvw" sourceConnectionVisual="_5InT0p1PEeCuYMafrm1l2g" text="Convenience method when dealing with activities that implement an EOperation. In this case, only one out parameter is supported. This attributes then returns the first out parameter.">
-    <modelElement href="sdm.uml#_5InT0J1PEeCuYMafrm1l2g"/>
   </nodes>
 </com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
