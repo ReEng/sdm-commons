@@ -13,6 +13,10 @@ import org.storydriven.modeling.expressions.Expression;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Attribute Assignment</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An AttributeAssignment is used to set the value of a certain attribute of an object. It references the attribute that is to be set and the value. The value can be an expression to allow for calculations or calls that determine the final value. AttributeAssignments are carried out during the final phase of pattern application, i.e. after the matching and destruction are completed.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -62,6 +66,9 @@ public interface AttributeAssignment extends EObject
     * If the meaning of the '<em>Attribute</em>' reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The attribute whose value is set. It has to be an attribute of the objectVariable that contains the AttributeAssignment.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Attribute</em>' reference.
     * @see #setAttribute(EAttribute)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAttributeAssignment_Attribute()
@@ -86,6 +93,9 @@ public interface AttributeAssignment extends EObject
     * If the meaning of the '<em>Value Expression</em>' containment reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The expression that determines the new value that is given to the attribute.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Value Expression</em>' containment reference.
     * @see #setValueExpression(Expression)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAttributeAssignment_ValueExpression()

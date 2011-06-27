@@ -17,7 +17,7 @@ import org.storydriven.modeling.expressions.Expression;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Abstract super class for all kinds of variables which may occur in a story pattern.
+ * Abstract super class for object and primitive variables.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -76,7 +76,7 @@ public interface AbstractVariable extends Variable, NamedElement
     * </p>
     * <!-- end-user-doc -->
     * <!-- begin-model-doc -->
-    * The binding state defines whether the link is already bound or whether a match has to be obtained for it.
+    * The binding state defines whether the variable is already bound or whether a match has to be obtained for it. The default value is "unbound".
     * <!-- end-model-doc -->
     * @return the value of the '<em>Binding State</em>' attribute.
     * @see org.storydriven.modeling.patterns.BindingState
@@ -106,6 +106,9 @@ public interface AbstractVariable extends Variable, NamedElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * A binding expression can be used to bind a variable in a different way than just by pattern matching. This way, for example, the return value of a call can be bound to a variable.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Binding Expression</em>' containment reference.
     * @see #setBindingExpression(Expression)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractVariable_BindingExpression()

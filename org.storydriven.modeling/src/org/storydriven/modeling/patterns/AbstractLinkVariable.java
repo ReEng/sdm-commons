@@ -47,7 +47,7 @@ public interface AbstractLinkVariable extends NamedElement
     * </p>
     * <!-- end-user-doc -->
     * <!-- begin-model-doc -->
-    * The binding semantics defines whether the link must be matched for a successful application of the containing story pattern, whether it must not be matched or whether it is optional, i.e., it will be bound if it can be bound but that does not affect the success of matching the story pattern.
+    * The binding semantics defines whether the link must be matched for a successful application of the containing story pattern, whether it must not be matched or whether it is optional, i.e., it will be bound if it can be bound but that does not affect the success of matching the story pattern. The default value is "mandatory" (i.e., it must be matched).
     * <!-- end-model-doc -->
     * @return the value of the '<em>Binding Semantics</em>' attribute.
     * @see org.storydriven.modeling.patterns.BindingSemantics
@@ -80,7 +80,7 @@ public interface AbstractLinkVariable extends NamedElement
     * </p>
     * <!-- end-user-doc -->
     * <!-- begin-model-doc -->
-    * The binding operator defines whether this link will be matched, created or destroyed by the story pattern.
+    * The binding operator defines whether this link will be matched, created or destroyed by the story pattern. The default value ist "check_only", i.e., the link will be matched.
     * <!-- end-model-doc -->
     * @return the value of the '<em>Binding Operator</em>' attribute.
     * @see org.storydriven.modeling.patterns.BindingOperator

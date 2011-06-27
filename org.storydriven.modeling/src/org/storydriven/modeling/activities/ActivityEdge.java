@@ -14,7 +14,7 @@ import org.storydriven.modeling.expressions.Expression;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Activity Edge</b></em>'. <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The ActivityEdge represents the control flow in an activity. It is a dericted connection from one activity to another one. Their exist different kinds of activity edges which are differentiated by the guard attribute.
+ * The ActivityEdge represents the control flow in an activity. It is a dericted connection from one activity to another one. There exist different kinds of activity edges which are differentiated by the guard attribute.
  * <!-- end-model-doc -->
  *
  * <p>

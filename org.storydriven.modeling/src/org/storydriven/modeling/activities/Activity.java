@@ -14,6 +14,10 @@ import org.storydriven.modeling.calls.Callable;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Activity</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The diagram that describes the control flow of an operation. It is used to structure a number story patterns into a stroy diagram. Story patterns are contained in activity nodes which are connected by activity edges. In addition, there are special nodes like start, stop, and juction nodes.  
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

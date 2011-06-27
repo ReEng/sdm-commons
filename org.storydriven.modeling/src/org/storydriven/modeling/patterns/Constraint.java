@@ -13,7 +13,7 @@ import org.storydriven.modeling.expressions.Expression;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Constraint</b></em>'. <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A constraint represents a condition which must be fulfilled for a successful pattern matching.
+ * A constraint represents a condition which must be fulfilled for a successful pattern matching. It can either be contained in the story pattern or in a variable. In the former case, the constraint is evaluated after the matching of the object structure is complete. It still has to be true for the pattern application to be sucessful (and therefore for creations and destructions to be carried out). If the constraint is contained in a variable, it constrains the matching of that variable, i.e., it is evaluated during the matching of the containing variable and has to be true for a successful matching. If the variable is an ObjectSetVariable, the constraint has to be true for every object in the set.
  * <!-- end-model-doc -->
  *
  * <p>

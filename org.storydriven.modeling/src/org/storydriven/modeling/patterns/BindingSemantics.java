@@ -58,7 +58,7 @@ public enum BindingSemantics implements Enumerator
     * </p>
     * <!-- end-user-doc -->
     * <!-- begin-model-doc -->
-    * For a mandatory object or link, a match must be found for a successful pattern application.
+    * For a mandatory object or link variable, a match has to be found for a pattern to be successfully applied.
     * <!-- end-model-doc -->
     * @see #MANDATORY
     * @model
@@ -75,7 +75,7 @@ public enum BindingSemantics implements Enumerator
     * </p>
     * <!-- end-user-doc -->
     * <!-- begin-model-doc -->
-    * If an object or link is marked as NEGATIVE, no match must be found for that object or variable. If a match can be found, the execution of the story pattern fails.
+    * If an object or link variable is marked as NEGATIVE, no match may be found for that object or link variable. If a match can be found, the execution of the story pattern fails.
     * <!-- end-model-doc -->
     * @see #NEGATIVE
     * @model
@@ -92,7 +92,7 @@ public enum BindingSemantics implements Enumerator
     * </p>
     * <!-- end-user-doc -->
     * <!-- begin-model-doc -->
-    * For an OPTIONAL object or link, the matching tries to find a match. If no match can be found, this does not affect the success of the pattern matching. If a match can be found, the respective object or link is bound to the variable.
+    * For an OPTIONAL object or link variable, the matching tries to find a match. If no match can be found, this does not affect the success of the pattern application. If a match can be found, the respective object or link is bound to the variable.
     * <!-- end-model-doc -->
     * @see #OPTIONAL
     * @model

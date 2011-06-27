@@ -17,6 +17,10 @@ import org.storydriven.modeling.calls.Callable;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Operation Extension</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An OperationExtension is a stand-in for an EOperation in our model. It is necessary because we cannot change the type EOperation. Thus, OperationExtension points to an EOperation but adds the reference to an Activity that describes the operations behavior.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -45,6 +49,9 @@ public interface OperationExtension extends Extension, Callable
     * If the meaning of the '<em>Operation</em>' reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The EOperation whose behavior is defined by the Activity. The property is derived because the actual value is determined by the utility class OperationsExtensionOperation.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Operation</em>' reference.
     * @see #isSetOperation()
     * @see #unsetOperation()
@@ -96,6 +103,9 @@ public interface OperationExtension extends Extension, Callable
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The return value of the referenced operation.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Return Value</em>' containment reference.
     * @see #setReturnValue(EParameter)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getOperationExtension_ReturnValue()

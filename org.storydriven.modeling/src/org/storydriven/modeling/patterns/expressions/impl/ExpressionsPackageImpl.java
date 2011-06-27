@@ -377,7 +377,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
    {
       String source = "http://www.eclipse.org/emf/2002/GenModel";
       addAnnotation(attributeValueExpressionEClass, source, new String[] {"documentation",
-            "Represents the value of an object\'s attribute, e.g. obj.a for an object obj and an attribute a."});
+            "Represents the value of an object\'s attribute, e.g. obj.attr for an object obj and an attribute attr."});
       addAnnotation(getAttributeValueExpression_Object(), source, new String[] {"documentation",
             "Specifies the object variable whose attribute value is represented by this expression."});
       addAnnotation(getAttributeValueExpression_Attribute(), source, new String[] {"documentation",
@@ -391,11 +391,11 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
          source,
          new String[] {
                "documentation",
-               "Represents the number of elements in a set or more precisely: the number of elements in the set of objects that is represented by an object set variable. For example, if you have an object set variable objects, then this expression would represent something like objects.size()."});
+               "Represents the number of elements in the set of objects that is represented by an object set variable. For example, if you have an object set variable mySet, then this expression would represent something like mySet.size(). The expression can be used to constrain the pattern application, e.g., to only a apply the pattern when at least two objects can be matched for the set."});
       addAnnotation(getObjectSetSizeExpression_Set(), source, new String[] {"documentation",
             "Specifies the object set variable whose number of set elements is to be represented by this expression."});
       addAnnotation(primitiveVariableExpressionEClass, source, new String[] {"documentation",
-            "Represents the value of a primitive variable."});
+            "Represents the value of a primitive variable, e.g., 5 or \"MyName\"."});
    }
 
 } // ExpressionsPackageImpl

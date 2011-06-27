@@ -967,7 +967,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
          StopNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
          !IS_ORDERED);
       initEReference(getStopNode_ReturnValue(), theExpressionsPackage_1.getExpression(), null, "returnValue", null, 0,
-         1, StopNode.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+         1, StopNode.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
          !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
       initEReference(getStopNode_ReturnValues(), theExpressionsPackage_1.getExpression(), null, "returnValues", null,
          0, -1, StopNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
@@ -1018,8 +1018,12 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
    protected void createGenModelAnnotations ()
    {
       String source = "http://www.eclipse.org/emf/2002/GenModel";
-      addAnnotation(exceptionVariableEClass, source, new String[] {"documentation",
-            "Declares a variable representing an Exception that leads to firing a transition (ActivityEdge)."});
+      addAnnotation(
+         exceptionVariableEClass,
+         source,
+         new String[] {
+               "documentation",
+               "Declares a variable representing an Exception that leads to firing a transition (ActivityEdge). Can only be applied to ActivityEdge whose guard is set to EXCEPTION."});
       addAnnotation(getExceptionVariable_ActivityEdge(), source, new String[] {"documentation",
             "Specifies the transition (activity edge) where the exception variable is declared."});
       addAnnotation(getExceptionVariable_Name(), source, new String[] {"documentation",
@@ -1031,7 +1035,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
          source,
          new String[] {
                "documentation",
-               "The ActivityEdge represents the control flow in an activity. It is a dericted connection from one activity to another one. Their exist different kinds of activity edges which are differentiated by the guard attribute."});
+               "The ActivityEdge represents the control flow in an activity. It is a dericted connection from one activity to another one. There exist different kinds of activity edges which are differentiated by the guard attribute."});
       addAnnotation(getActivityEdge_Target(), source, new String[] {"documentation",
             "The target node of this ActivityEdge."});
       addAnnotation(getActivityEdge_Source(), source, new String[] {"documentation",
@@ -1043,8 +1047,11 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
          source,
          new String[] {"documentation",
                "The guard defines the kind of the activity edge. The possible kinds of guards are specified by the EdgeGuard enum."});
-      addAnnotation(getActivityEdge_GuardExpression(), source, new String[] {"documentation",
-            "Points to the boolean expression in case of boolean transition guard."});
+      addAnnotation(
+         getActivityEdge_GuardExpression(),
+         source,
+         new String[] {"documentation",
+               "Points to an expression in case the transition guard is BOOL. The expression has to evaulate to a boolean value."});
       addAnnotation(getActivityEdge_GuardException(), source, new String[] {"documentation",
             "Declares variables representing the Exceptions that lead to firing this transition."});
       addAnnotation(
@@ -1065,6 +1072,12 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
             "The parent node if this node is contained in a StructuredNode."});
       addAnnotation(getActivityNode_Incoming(), source, new String[] {"documentation",
             "All ActivityEdges entering this activity node."});
+      addAnnotation(
+         activityEClass,
+         source,
+         new String[] {
+               "documentation",
+               "The diagram that describes the control flow of an operation. It is used to structure a number story patterns into a stroy diagram. Story patterns are contained in activity nodes which are connected by activity edges. In addition, there are special nodes like start, stop, and juction nodes.  "});
       addAnnotation(getActivity_OwnedActivityEdge(), source, new String[] {"documentation",
             "All ActivityEdges that are contained in this activity."});
       addAnnotation(
@@ -1075,12 +1088,26 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
                "References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links."});
       addAnnotation(getActivity_OwnedActivityNode(), source, new String[] {"documentation",
             "The activity contains all activity nodes via this reference."});
+      addAnnotation(
+         operationExtensionEClass,
+         source,
+         new String[] {
+               "documentation",
+               "An OperationExtension is a stand-in for an EOperation in our model. It is necessary because we cannot change the type EOperation. Thus, OperationExtension points to an EOperation but adds the reference to an Activity that describes the operations behavior."});
       addAnnotation(getOperationExtension__NumberOfOutParams__DiagnosticChain_Map(), source, new String[] {
             "documentation", "self.oclAsType(Callable).out->size() <= 1"});
       addAnnotation((getOperationExtension__NumberOfOutParams__DiagnosticChain_Map()).getEParameters().get(0), source,
          new String[] {"documentation", "The chain of diagnostics to which problems are to be appended."});
       addAnnotation((getOperationExtension__NumberOfOutParams__DiagnosticChain_Map()).getEParameters().get(1), source,
          new String[] {"documentation", "The cache of context-specific information."});
+      addAnnotation(
+         getOperationExtension_Operation(),
+         source,
+         new String[] {
+               "documentation",
+               "The EOperation whose behavior is defined by the Activity. The property is derived because the actual value is determined by the utility class OperationsExtensionOperation."});
+      addAnnotation(getOperationExtension_ReturnValue(), source, new String[] {"documentation",
+            "The return value of the referenced operation."});
       addAnnotation(
          matchingStoryNodeEClass,
          source,
@@ -1102,7 +1129,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
       addAnnotation(getStructuredNode_OwnedActivityNode(), source, new String[] {"documentation",
             "All subnodes which are contained in this structured node."});
       addAnnotation(edgeGuardEEnum, source, new String[] {"documentation",
-            "This enum is used to model different kinds of activity edges."});
+            "This enum is used to model different kinds of activity edges. "});
       addAnnotation(
          edgeGuardEEnum.getELiterals().get(0),
          source,

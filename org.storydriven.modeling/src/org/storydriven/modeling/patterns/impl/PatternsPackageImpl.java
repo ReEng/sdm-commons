@@ -1093,7 +1093,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
          this.getLinkConstraint_FirstLink(), "firstLinkConstraint", null, 0, -1, AbstractLinkVariable.class,
          !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
-      initEAttribute(getAbstractLinkVariable_BindingState(), this.getBindingState(), "bindingState", null, 1, 1,
+      initEAttribute(getAbstractLinkVariable_BindingState(), this.getBindingState(), "bindingState", "UNBOUND", 1, 1,
          AbstractLinkVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
       initEReference(getAbstractLinkVariable_Pattern(), this.getStoryPattern(), this.getStoryPattern_LinkVariable(),
@@ -1287,12 +1287,19 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
       addAnnotation(getObjectVariable_Classifier(), source, new String[] {"documentation",
             "The type of this ObjectVariable, given as an EClass."});
       addAnnotation(abstractVariableEClass, source, new String[] {"documentation",
-            "Abstract super class for all kinds of variables which may occur in a story pattern."});
+            "Abstract super class for object and primitive variables."});
       addAnnotation(
          getAbstractVariable_BindingState(),
          source,
-         new String[] {"documentation",
-               "The binding state defines whether the link is already bound or whether a match has to be obtained for it."});
+         new String[] {
+               "documentation",
+               "The binding state defines whether the variable is already bound or whether a match has to be obtained for it. The default value is \"unbound\"."});
+      addAnnotation(
+         getAbstractVariable_BindingExpression(),
+         source,
+         new String[] {
+               "documentation",
+               "A binding expression can be used to bind a variable in a different way than just by pattern matching. This way, for example, the return value of a call can be bound to a variable."});
       addAnnotation(
          getAbstractVariable_Constraint(),
          source,
@@ -1300,7 +1307,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
                "documentation",
                "All constraints which are defined for this variable. For a successful matching, all constraints for this variable must evaluate to true."});
       addAnnotation(bindingStateEEnum, source, new String[] {"documentation",
-            "The BindingState defines whether an object or link variable is already bound to a value or not."});
+            "The BindingState defines whether an object or link variable is already bound to a concrete value or not."});
       addAnnotation(
          bindingStateEEnum.getELiterals().get(0),
          source,
@@ -1312,15 +1319,19 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
          source,
          new String[] {
                "documentation",
-               "A bound variable has already been bound to a concrete value, i.e., it has either been passed as a parameter or it has been bound in a previous activity. If, during the execution of a story pattern, a bound variable has no value, the execution of the story pattern fails."});
+               "A bound variable has already been bound to a concrete value. The concrete value has to be passed either as a parameter or it has to be bound in a previous activity. If, during the execution of a story pattern, a bound variable has no value, the execution of the story pattern fails."});
       addAnnotation(
          bindingStateEEnum.getELiterals().get(2),
          source,
          new String[] {
                "documentation",
-               "MAYBE_BOUND: unknown whether the variable is bound or not. If the variable is not bound, an object is matched and bound to the variable. If it is already bound, it is not altered. If the variable is still unbound after this process, the matching fails (except for OPTIONAL variables)."});
-      addAnnotation(constraintEClass, source, new String[] {"documentation",
-            "A constraint represents a condition which must be fulfilled for a successful pattern matching."});
+               "A variable marked with maybe_bound indicates that it is unknown (or unimportant) at design time whether the variable is bound or not. If, during the execution of the pattern, the variable is not bound, an object is matched and bound to the variable. If it is already bound, it is not altered. If the variable is still unbound after this process, the matching fails (except for OPTIONAL variables)."});
+      addAnnotation(
+         constraintEClass,
+         source,
+         new String[] {
+               "documentation",
+               "A constraint represents a condition which must be fulfilled for a successful pattern matching. It can either be contained in the story pattern or in a variable. In the former case, the constraint is evaluated after the matching of the object structure is complete. It still has to be true for the pattern application to be sucessful (and therefore for creations and destructions to be carried out). If the constraint is contained in a variable, it constrains the matching of that variable, i.e., it is evaluated during the matching of the containing variable and has to be true for a successful matching. If the variable is an ObjectSetVariable, the constraint has to be true for every object in the set."});
       addAnnotation(getConstraint_ConstraintExpression(), source, new String[] {"documentation",
             "The constraintExpression defines the concrete condition of this constraint."});
       addAnnotation(getConstraint_Pattern(), source, new String[] {"documentation",
@@ -1337,12 +1348,13 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
          source,
          new String[] {
                "documentation",
-               "The binding semantics defines whether the link must be matched for a successful application of the containing story pattern, whether it must not be matched or whether it is optional, i.e., it will be bound if it can be bound but that does not affect the success of matching the story pattern."});
+               "The binding semantics defines whether the link must be matched for a successful application of the containing story pattern, whether it must not be matched or whether it is optional, i.e., it will be bound if it can be bound but that does not affect the success of matching the story pattern. The default value is \"mandatory\" (i.e., it must be matched)."});
       addAnnotation(
          getAbstractLinkVariable_BindingOperator(),
          source,
-         new String[] {"documentation",
-               "The binding operator defines whether this link will be matched, created or destroyed by the story pattern."});
+         new String[] {
+               "documentation",
+               "The binding operator defines whether this link will be matched, created or destroyed by the story pattern. The default value ist \"check_only\", i.e., the link will be matched."});
       addAnnotation(
          getAbstractLinkVariable_BindingState(),
          source,
@@ -1350,49 +1362,131 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
                "The binding state defines whether the link is already bound or whether a match has to be obtained for it."});
       addAnnotation(bindingSemanticsEEnum, source, new String[] {"documentation",
             "The binding semantics defines which kind of match will be obtained for the object or link variable."});
-      addAnnotation(bindingSemanticsEEnum.getELiterals().get(0), source, new String[] {"documentation",
-            "For a mandatory object or link, a match must be found for a successful pattern application."});
+      addAnnotation(
+         bindingSemanticsEEnum.getELiterals().get(0),
+         source,
+         new String[] {"documentation",
+               "For a mandatory object or link variable, a match has to be found for a pattern to be successfully applied."});
       addAnnotation(
          bindingSemanticsEEnum.getELiterals().get(1),
          source,
          new String[] {
                "documentation",
-               "If an object or link is marked as NEGATIVE, no match must be found for that object or variable. If a match can be found, the execution of the story pattern fails."});
+               "If an object or link variable is marked as NEGATIVE, no match may be found for that object or link variable. If a match can be found, the execution of the story pattern fails."});
       addAnnotation(
          bindingSemanticsEEnum.getELiterals().get(2),
          source,
          new String[] {
                "documentation",
-               "For an OPTIONAL object or link, the matching tries to find a match. If no match can be found, this does not affect the success of the pattern matching. If a match can be found, the respective object or link is bound to the variable."});
+               "For an OPTIONAL object or link variable, the matching tries to find a match. If no match can be found, this does not affect the success of the pattern application. If a match can be found, the respective object or link is bound to the variable."});
       addAnnotation(
          bindingOperatorEEnum,
          source,
          new String[] {
                "documentation",
-               "The BindingOperator enum defines all possible operations for object and link variables. An object or link may be checked for existence be the story pattern (black object/link), it may be created (green object/link), or it may be destroyed (red object/link)."});
+               "The BindingOperator enum defines all possible operations for object and link variables. An object or link variable may be checked for existence be the story pattern (black object/link variable), it may be created (green object/link variable), or it may be destroyed (red object/link variable)."});
       addAnnotation(
          bindingOperatorEEnum.getELiterals().get(0),
          source,
-         new String[] {"documentation",
-               "CHECK_ONLY is the default value of this enum. It requires an object or link just to be matched by the story pattern."});
+         new String[] {
+               "documentation",
+               "CHECK_ONLY is the default value of this enum. It requires an object or link variable just to be matched by the story pattern."});
       addAnnotation(bindingOperatorEEnum.getELiterals().get(1), source, new String[] {"documentation",
-            "An object or link marked as CREATE will be created by the story pattern."});
+            "An object or link variable marked as CREATE will be created by the story pattern."});
       addAnnotation(bindingOperatorEEnum.getELiterals().get(2), source, new String[] {"documentation",
-            "An object or variable marked as DESTROY will be destroyed be the story pattern."});
+            "An object or link variable marked as DESTROY will be destroyed be the story pattern."});
+      addAnnotation(
+         linkConstraintEClass,
+         source,
+         new String[] {
+               "documentation",
+               "Link constraints (formerly known as MultiLinks in old meta-model) constrain the ordering of links of the referencingObject is a collection. This way objects can be required to have a certain position in the collection (FIRST, LAST, INDEX) or a certain ordering relative to each other (DIRECT_SUCCESSOR, INDIRECT_SUCCESSOR). While the first kind of LinkConstraint can be imposed upon a single link, the second kind requires two links that are related to each other (e.g., have the same referencingObject)."});
+      addAnnotation(
+         getLinkConstraint_Index(),
+         source,
+         new String[] {
+               "documentation",
+               "The index of the linked object in the collection. The semantics of this attribute is only defined if the constraintType of the LinkConstraint is INDEX."});
+      addAnnotation(getLinkConstraint_ConstraintType(), source, new String[] {"documentation",
+            "The constraint type of the LinkConstraint."});
+      addAnnotation(
+         getLinkConstraint_Negative(),
+         source,
+         new String[] {
+               "documentation",
+               "If the negative attribute is true, the link constraint may not be fulfilled for the complete pattern application to be successful."});
+      addAnnotation(
+         linkConstraintTypeEEnum,
+         source,
+         new String[] {
+               "documentation",
+               "The LinkConstraintType represents the different uses of LinkConstraints. Objects can be required to have a certain position in their containing collection (FIRST, LAST, INDEX) or a certain ordering relative to each other (DIRECT_SUCCESSOR, INDIRECT_SUCCESSOR)."});
+      addAnnotation(
+         attributeAssignmentEClass,
+         source,
+         new String[] {
+               "documentation",
+               "An AttributeAssignment is used to set the value of a certain attribute of an object. It references the attribute that is to be set and the value. The value can be an expression to allow for calculations or calls that determine the final value. AttributeAssignments are carried out during the final phase of pattern application, i.e. after the matching and destruction are completed."});
+      addAnnotation(
+         getAttributeAssignment_Attribute(),
+         source,
+         new String[] {
+               "documentation",
+               "The attribute whose value is set. It has to be an attribute of the objectVariable that contains the AttributeAssignment."});
+      addAnnotation(getAttributeAssignment_ValueExpression(), source, new String[] {"documentation",
+            "The expression that determines the new value that is given to the attribute."});
       addAnnotation(
          objectSetVariableEClass,
          source,
          new String[] {
                "documentation",
-               "Represents a set of objects.\r\nThe context for contained Constraints and AttributeAssignments is a single object (e.g., \"name = \'abc\'\")."});
+               "Represents a set of objects of the same type that are represented by a single node.\r\nThe context for contained Constraints and AttributeAssignments is every single object in the set. E.g., if the constraint is \"name = \'abc\'\", only objects with that name are matched and added to the set. The use of the binding operator \"CREATE\" is not defined for ObjectSetVariables, i.e., the sets can only be matched and deleted."});
       addAnnotation(primitiveVariableEClass, source, new String[] {"documentation",
             "Represents a variable that holds a value of a primitive type, e.g. integer, boolean, String."});
+      addAnnotation(getPrimitiveVariable_Classifier(), source, new String[] {"documentation",
+            "The type of the primitive variable which must be an EDataType."});
+      addAnnotation(
+         pathEClass,
+         source,
+         new String[] {
+               "documentation",
+               "A path is a special link variable that specifies an indirect connection between two objects. That means, the connected objects have other links and objects \"between them\". Exactly which types of links may be traversed during the matching of a path can be constrained by a path expression."});
+      addAnnotation(
+         getPath_PathExpression(),
+         source,
+         new String[] {
+               "documentation",
+               "The path expression constrains the matching of the path variable during pattern application. It can determine which links may be matched when and how many times to reach the target object of the path from the source object."});
+      addAnnotation(
+         linkVariableEClass,
+         source,
+         new String[] {
+               "documentation",
+               "A link variable represents one link between two object variables. It is typed over one of the associations between the classes of those objects. Because EMF only directly supports references, the two link ends are typed over these references. In case of a uni-directional association, only the targetEnd is typed. In case of a bi-directional association, the reference that types the source end is automatically determined."});
+      addAnnotation(
+         getLinkVariable_SourceEnd(),
+         source,
+         new String[] {
+               "documentation",
+               "The source end of a link variable can only be determined when the link is typed over a bi-directional association. In this case, it points to the \"reverse\" direction of the association. If the reference is only uni-directional, the source end is null. The value of this attribute is derived automatically."});
+      addAnnotation(
+         getLinkVariable_TargetEnd(),
+         source,
+         new String[] {
+               "documentation",
+               "The target end points to the reference that types this direction of the link (the \"normal\" direction). This link end must be set always."});
+      addAnnotation(
+         getLinkVariable_QualifierExpression(),
+         source,
+         new String[] {
+               "documentation",
+               "If a link is typed over a qualified reference, a qualifier determines the key under which the object reachable via the link is stored. Because the qualifier can be set by an expression, it can either be a simple string or something more complex, e.g., a call like \"object.getName()\"."});
       addAnnotation(
          containmentRelationEClass,
          source,
          new String[] {
                "documentation",
-               "Specifies the containment of an object in a set (represented by a ContainerVariable). Will be displayed by a line having a circle with a plus inside at the end of the container. Create modifier specifies that the object will be added to the container, delete that it will be removed, and none that it will be checked to be contained."});
+               "Specifies the containment of an object in a set (represented by a ContainerVariable). Will be displayed by a line having a circle with a plus inside at the end of the container (the source end of the link). A create modifier specifies that the object will be added to the container, delete that it will be removed, and none that it will be checked to be contained."});
       addAnnotation(
          matchingPatternEClass,
          source,

@@ -1731,4 +1731,5 @@ Every Constraint or AttributeAssignment can use the variable as a container (e.g
   <Ecore:EReference xmi:id="_av6VcB2qEeCgKe8vMUdTKg" isTransient="true" isVolatile="true" isUnsettable="true" base_Property="_WMtZcxzNEeChOvWwuwx7tQ" isResolveProxies="false"/>
   <Ecore:EAttribute xmi:id="_Cxb3EF65EeC6SYIxo2pjJw" isTransient="true" isVolatile="true" base_Property="_ga_IIBzJEeChOvWwuwx7tQ"/>
   <Ecore:EReference xmi:id="_47OfQGKPEeCBq7LKLVIv3g" base_Property="_6Kri8mH1EeCDNuSrVjgXCA"/>
+  <Ecore:EReference xmi:id="_fD9fcKDOEeC9buz9OQgOvw" isTransient="true" base_Property="_WnuyUbLyEd-uk56s-ldeog"/>
 </xmi:XMI>

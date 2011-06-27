@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * The BindingOperator enum defines all possible operations for object and link variables. An object or link may be checked for existence be the story pattern (black object/link), it may be created (green object/link), or it may be destroyed (red object/link).
+ * The BindingOperator enum defines all possible operations for object and link variables. An object or link variable may be checked for existence be the story pattern (black object/link variable), it may be created (green object/link variable), or it may be destroyed (red object/link variable).
  * <!-- end-model-doc -->
  * @see org.storydriven.modeling.patterns.PatternsPackage#getBindingOperator()
  * @model
@@ -63,7 +63,7 @@ public enum BindingOperator implements Enumerator
     * </p>
     * <!-- end-user-doc -->
     * <!-- begin-model-doc -->
-    * CHECK_ONLY is the default value of this enum. It requires an object or link just to be matched by the story pattern.
+    * CHECK_ONLY is the default value of this enum. It requires an object or link variable just to be matched by the story pattern.
     * <!-- end-model-doc -->
     * @see #CHECK_ONLY
     * @model
@@ -81,7 +81,7 @@ public enum BindingOperator implements Enumerator
     * </p>
     * <!-- end-user-doc -->
     * <!-- begin-model-doc -->
-    * An object or link marked as CREATE will be created by the story pattern.
+    * An object or link variable marked as CREATE will be created by the story pattern.
     * <!-- end-model-doc -->
     * @see #CREATE
     * @model
@@ -99,7 +99,7 @@ public enum BindingOperator implements Enumerator
     * </p>
     * <!-- end-user-doc -->
     * <!-- begin-model-doc -->
-    * An object or variable marked as DESTROY will be destroyed be the story pattern.
+    * An object or link variable marked as DESTROY will be destroyed be the story pattern.
     * <!-- end-model-doc -->
     * @see #DESTROY
     * @model

@@ -15,7 +15,7 @@ import org.storydriven.modeling.patterns.PrimitiveVariable;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Represents the value of a primitive variable.
+ * Represents the value of a primitive variable, e.g., 5 or "MyName".
  * <!-- end-model-doc -->
  *
  * <p>

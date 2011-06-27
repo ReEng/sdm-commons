@@ -64,7 +64,7 @@ public interface StopNode extends ActivityNode
     * <!-- end-model-doc -->
     * @return the value of the '<em>Return Value</em>' reference.
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getStopNode_ReturnValue()
-    * @model changeable="false" volatile="true" derived="true" ordered="false"
+    * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
     * @generated
     */
    Expression getReturnValue ();

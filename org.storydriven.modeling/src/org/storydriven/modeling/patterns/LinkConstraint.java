@@ -13,6 +13,10 @@ import org.storydriven.modeling.ExtendableElement;
  * A representation of the model object '<em><b>Link Constraint</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Link constraints (formerly known as MultiLinks in old meta-model) constrain the ordering of links of the referencingObject is a collection. This way objects can be required to have a certain position in the collection (FIRST, LAST, INDEX) or a certain ordering relative to each other (DIRECT_SUCCESSOR, INDIRECT_SUCCESSOR). While the first kind of LinkConstraint can be imposed upon a single link, the second kind requires two links that are related to each other (e.g., have the same referencingObject).
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -39,6 +43,9 @@ public interface LinkConstraint extends ExtendableElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The index of the linked object in the collection. The semantics of this attribute is only defined if the constraintType of the LinkConstraint is INDEX.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Index</em>' attribute.
     * @see #setIndex(int)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkConstraint_Index()
@@ -67,6 +74,9 @@ public interface LinkConstraint extends ExtendableElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The constraint type of the LinkConstraint.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Constraint Type</em>' attribute.
     * @see org.storydriven.modeling.patterns.LinkConstraintType
     * @see #setConstraintType(LinkConstraintType)
@@ -95,6 +105,9 @@ public interface LinkConstraint extends ExtendableElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * If the negative attribute is true, the link constraint may not be fulfilled for the complete pattern application to be successful.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Negative</em>' attribute.
     * @see #setNegative(boolean)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkConstraint_Negative()

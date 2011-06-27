@@ -44,6 +44,9 @@ public interface PrimitiveVariable extends AbstractVariable
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The type of the primitive variable which must be an EDataType.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Classifier</em>' reference.
     * @see #setClassifier(EDataType)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getPrimitiveVariable_Classifier()

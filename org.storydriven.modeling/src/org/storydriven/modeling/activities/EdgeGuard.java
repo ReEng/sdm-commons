@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * This enum is used to model different kinds of activity edges.
+ * This enum is used to model different kinds of activity edges. 
  * <!-- end-model-doc -->
  * @see org.storydriven.modeling.activities.ActivitiesPackage#getEdgeGuard()
  * @model
