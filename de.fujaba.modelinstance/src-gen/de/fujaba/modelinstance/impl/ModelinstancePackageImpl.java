@@ -288,13 +288,13 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });		
+		   });					
 		addAnnotation
 		  (modelElementCategoryEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "ExclusivelyContainsValidElements"
-		   });	
+		   });						
 	}
 
 	/**
@@ -304,13 +304,13 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";				
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";							
 		addAnnotation
 		  (modelElementCategoryEClass, 
 		   source, 
 		   new String[] {
 			 "ExclusivelyContainsValidElements", "self.modelElements->select (e | not isValidElement(e))->isEmpty()"
-		   });
+		   });					
 	}
 
 } //ModelinstancePackageImpl

@@ -15,6 +15,12 @@ import org.storydriven.modeling.ExtendableElement;
  * A representation of the model object '<em><b>Model Element Category</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The ModelElementCategory contains all model elements of a FUJABA model that
+ * have the same type and will be opened by the same editor. A ModelElementCategory
+ * may only store subclasses of NamedElement.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -39,6 +45,10 @@ public interface ModelElementCategory extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The ModelElements which are contained in this category. All model elements
+	 * must be of the same type.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Model Elements</em>' containment reference list.
 	 * @see de.fujaba.modelinstance.ModelinstancePackage#getModelElementCategory_ModelElements()
 	 * @model containment="true"
@@ -54,6 +64,10 @@ public interface ModelElementCategory extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The uniquely identifying key of this category. The key of the category may be
+	 * used by editors to register for the model elements contained in this section.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Key</em>' attribute.
 	 * @see #setKey(String)
 	 * @see de.fujaba.modelinstance.ModelinstancePackage#getModelElementCategory_Key()
@@ -80,6 +94,9 @@ public interface ModelElementCategory extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A human readable name for this category.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see de.fujaba.modelinstance.ModelinstancePackage#getModelElementCategory_Name()
@@ -101,6 +118,10 @@ public interface ModelElementCategory extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Evaluates for the passed object whether it is a valid model element for this 
+	 * ModelElementCategory.
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */

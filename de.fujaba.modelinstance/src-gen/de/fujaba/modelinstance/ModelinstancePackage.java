@@ -22,6 +22,11 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * The package modelinstance defines the base classes for the FUJABA xmi format.
+ * In detail, it defines a root node and model element categories in order to serialize
+ * the model elements that may be contained in a FUJABA model.
+ * <!-- end-model-doc -->
  * @see de.fujaba.modelinstance.ModelinstanceFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
