@@ -51,10 +51,8 @@ ExceptionVariableDeclarationExpression ::= Identifier ':' Identifier
 
 PathExpression ::= Path | ( "(" Path ")" [ "|" "(" Path ")" ]* )
 Path ::= PathSegment [ "." PathSegment ]*
-PathSegment ::= SegmentDescription | ( "(" SegmentDescription [ "|"
-SegmentDescription ]* ")" )
-SegmentDescription ::= ( ImplicitPathSegment | ExplicitPathSegment )
-[ "[" TypeRestrictions "]" ] [ "*" ]
+PathSegment ::= SegmentDescription | ( "(" SegmentDescription [ "|" SegmentDescription ]* ")" )
+SegmentDescription ::= ( ImplicitPathSegment | ExplicitPathSegment ) [ "[" TypeRestrictions "]" ] [ "*" ]
 ImplicitPathSegment ::= "-->" | "<>-->" | "--><>"
 ExplicitPathSegment ::= AssociationName
 TypeRestrictions ::= TypeRestriction [ "," TypeRestriction ]*
