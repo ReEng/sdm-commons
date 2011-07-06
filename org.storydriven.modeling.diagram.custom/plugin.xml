@@ -200,5 +200,18 @@
             version="0.1">
       </expressionSourceViewer>
    </extension>
+   <extension
+         id="creation-wizard"
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="de.fujaba/de.fujaba.diagrams"
+            class="org.storydriven.modeling.diagram.custom.part.CustomActivityDiagramCreationWizard"
+            id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
+            name="Activity Diagram">
+         <description>
+            Creates a new Activity Diagram.
+         </description>
+      </wizard>
+   </extension>
 
 </plugin>
