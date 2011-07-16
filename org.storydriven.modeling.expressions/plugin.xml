@@ -13,6 +13,14 @@
 
 
 
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="org.storydriven.modeling.expressions.pathbridge.PathbridgePackage"
+            uri="http://www.storydriven.org/modeling/expressions/pathbridge"
+       genModel = "org/storydriven/modeling/expressions/model/bridge.genmodel" > 
+      </package>
+   </extension>
 
 
 </plugin>
