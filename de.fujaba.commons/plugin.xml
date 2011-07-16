@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="palettes" name="Palette" schema="schema/palettes.exsd"/>
+   <extension-point id="paletteEntries" name="Palette Entries" schema="schema/paletteEntries.exsd"/>
+   <extension-point id="paletteContainer" name="Palette Container" schema="schema/paletteContainers.exsd"/>
+   <extension
+         id="org.fujaba.commons.preferences"
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="de.fujaba.commons.preferences.CommonPreferenceInitializer">
+      </initializer>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.fujaba.commons.handlers.ResizeHandler"
+            id="org.fujaba.commons.editor.resize"
+            name="Resize Element">
+         <commandParameter
+               id="org.fujaba.commons.editor.resize.minimum"
+               name="To Minimum"
+               optional="true"
+               typeId="org.fujaba.commons.commands.parameter.boolean"
+               values="de.fujaba.commons.internal.commands.BooleanParameterValues">
+         </commandParameter>
+         <commandParameter
+               id="org.fujaba.commons.editor.resize.commandstack"
+               name="Command Stack"
+               optional="true"
+               typeId="org.fujaba.commons.commands.parameter.boolean"
+               values="de.fujaba.commons.internal.commands.BooleanParameterValues">
+         </commandParameter>
+      </command>
+      <commandParameterType
+            converter="de.fujaba.commons.internal.commands.BooleanConverter"
+            id="org.fujaba.commons.commands.parameter.boolean"
+            type="java.lang.Boolean">
+      </commandParameterType>
+   </extension>
+   
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="de.fujaba.commons.identifier.IdentifierPackage"
+            genModel="design/identifier.genmodel"
+            uri="http://www.fujaba.org/ns/identifier">
+      </package>
+      <package
+            uri="http://www.fujaba.org/ns/notation"
+            class="de.fujaba.commons.notation.NotationPackage"
+            genModel="design/notation.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            class="de.fujaba.commons.identifier.IdentifierFactory"
+            supportedTypes="org.fujaba.commons.identifier.factory1"
+            uri="http://www.fujaba.org/ns/identifier">
+      </factory>
+   </extension>
+
+</plugin>
