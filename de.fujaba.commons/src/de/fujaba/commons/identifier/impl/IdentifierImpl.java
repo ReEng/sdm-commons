@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.EModelElementImpl;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import de.fujaba.commons.identifier.Identifier;
 import de.fujaba.commons.identifier.IdentifierPackage;
@@ -75,11 +76,13 @@ public abstract class IdentifierImpl extends EModelElementImpl implements Identi
    /**
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @generated
+    * @generated NOT
     */
    protected IdentifierImpl()
    {
       super();
+      // set UUID
+      setId(EcoreUtil.generateUUID());
    }
 
    /**
