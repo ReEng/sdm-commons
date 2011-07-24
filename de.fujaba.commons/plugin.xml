@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
+<?eclipse version="3.5"?>
+
 <plugin>
+
    <extension-point id="palettes" name="Palette" schema="schema/palettes.exsd"/>
    <extension-point id="paletteEntries" name="Palette Entries" schema="schema/paletteEntries.exsd"/>
    <extension-point id="paletteContainer" name="Palette Container" schema="schema/paletteContainers.exsd"/>
-   <extension
-         id="org.fujaba.commons.preferences"
-         point="org.eclipse.core.runtime.preferences">
+   
+   <extension  point="org.eclipse.core.runtime.preferences">
       <initializer
             class="de.fujaba.commons.preferences.CommonPreferenceInitializer">
       </initializer>
