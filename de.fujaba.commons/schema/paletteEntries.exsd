@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="de.fujaba.commons" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.fujaba.commons" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="de.fujaba.commons" id="paletteEntries" name="Used to specify palette entries for FujabaForEclipse"/>
+         <meta.schema plugin="org.fujaba.commons" id="paletteEntries" name="Used to specify palette entries for FujabaForEclipse"/>
       </appinfo>
       <documentation>
          This extension point is used to specify palette entries which can plugged into a palette of a diagram editor.
@@ -120,13 +120,13 @@
                </appinfo>
             </annotation>
          </attribute>
-         <attribute name="factory" type="string" use="default" value="de.fujaba.commons.editor.palette.PaletteEntryFactory">
+         <attribute name="factory" type="string" use="default" value="org.fujaba.commons.editor.palette.PaletteEntryFactory">
             <annotation>
                <documentation>
-                  a class that implements the &lt;samp&gt;de.fujaba.commons.extensionpoints.IPaletteEntryExtension&lt;/samp&gt; interface --- defaults to using the default factory &lt;samp&gt;de.fujaba.commons.editor.palette.PaletteEntryFactory&lt;/samp&gt;
+                  a class that implements the &lt;samp&gt;org.fujaba.commons.extensionpoints.IPaletteEntryExtension&lt;/samp&gt; interface --- defaults to using the default factory &lt;samp&gt;org.fujaba.commons.editor.palette.PaletteEntryFactory&lt;/samp&gt;
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":de.fujaba.commons.extensionpoints.IPaletteEntryExtension"/>
+                  <meta.attribute kind="java" basedOn=":org.fujaba.commons.extensionpoints.IPaletteEntryExtension"/>
                </appinfo>
             </annotation>
          </attribute>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fujaba.commons/src"
-    modelPluginID="de.fujaba.commons" modelName="Notation" importerID="org.eclipse.emf.importer.ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.fujaba.commons/src"
+    modelPluginID="org.fujaba.commons" modelName="Notation" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="6.0" copyrightFields="false" usedGenPackages="identifier.genmodel#//identifier">
   <foreignModel>notation.ecore</foreignModel>
-  <genPackages prefix="Notation" basePackage="de.fujaba.commons" disposableProviderFactory="true"
+  <genPackages prefix="Notation" basePackage="org.fujaba.commons" disposableProviderFactory="true"
       ecorePackage="notation.ecore#/">
     <genClasses image="false" ecoreClass="notation.ecore#//DiagramElement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference notation.ecore#//DiagramElement/model"/>

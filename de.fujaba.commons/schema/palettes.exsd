@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="de.fujaba.commons" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.fujaba.commons" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="de.fujaba.commons" id="palette" name="Used to specify the palette for an diagram editor in FujabaForEclipse"/>
+         <meta.schema plugin="org.fujaba.commons" id="palette" name="Used to specify the palette for an diagram editor in FujabaForEclipse"/>
       </appinfo>
       <documentation>
          This extension point is used to specify the palette for an diagram editor in FujabaForEclipse consisting of previously defined palette containers.
@@ -50,7 +50,7 @@
    <element name="palette">
       <annotation>
          <documentation>
-            Defines a palette for an editor, the factory to create the palette with and the palette containers the palette consists of. To define the palette containers use the &lt;samp&gt;de.fujaba.commons.paletteContainers&lt;/samp&gt; extensionpoint.
+            Defines a palette for an editor, the factory to create the palette with and the palette containers the palette consists of. To define the palette containers use the &lt;samp&gt;org.fujaba.commons.paletteContainers&lt;/samp&gt; extensionpoint.
          </documentation>
       </annotation>
       <complexType>
@@ -68,17 +68,17 @@
          <attribute name="editor" type="string" use="required">
             <annotation>
                <documentation>
-                  class that extends the &lt;samp&gt;de.fujaba.commons.AbstractSimpleEditorPart&lt;/samp&gt; class
+                  class that extends the &lt;samp&gt;org.fujaba.commons.AbstractSimpleEditorPart&lt;/samp&gt; class
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn="de.fujaba.commons.editor.AbstractSimpleEditorPart:"/>
+                  <meta.attribute kind="java" basedOn="org.fujaba.commons.editor.AbstractSimpleEditorPart:"/>
                </appinfo>
             </annotation>
          </attribute>
-         <attribute name="factory" type="string" use="default" value="de.fujaba.commons.editor.palette.PaletteFactory">
+         <attribute name="factory" type="string" use="default" value="org.fujaba.commons.editor.palette.PaletteFactory">
             <annotation>
                <documentation>
-                  a class that implements the &lt;samp&gt;de.fujaba.commons..extensionpoints.IPaletteExtension&lt;/samp&gt; interface --- defaults to using the default factory &lt;samp&gt;de.fujaba.commons.editor.palette.PaletteFactory&lt;/samp&gt;
+                  a class that implements the &lt;samp&gt;org.fujaba.commons..extensionpoints.IPaletteExtension&lt;/samp&gt; interface --- defaults to using the default factory &lt;samp&gt;org.fujaba.commons.editor.palette.PaletteFactory&lt;/samp&gt;
                </documentation>
                <appinfo>
                   <meta.attribute kind="java" basedOn=":de.uni_paderborn.fujaba4eclipse.extensionpoints.IPaletteExtension"/>
@@ -91,7 +91,7 @@
                   a palette whose containers should be inherited
                </documentation>
                <appinfo>
-                  <meta.attribute kind="identifier" basedOn="de.fujaba.commons.extensionpoints.palettes/palette/@id"/>
+                  <meta.attribute kind="identifier" basedOn="org.fujaba.commons.extensionpoints.palettes/palette/@id"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -111,7 +111,7 @@
                   id of an previously defined palette container
                </documentation>
                <appinfo>
-                  <meta.attribute kind="identifier" basedOn="de.fujaba.commons.paletteContainer/paletteContainer/@id"/>
+                  <meta.attribute kind="identifier" basedOn="org.fujaba.commons.paletteContainer/paletteContainer/@id"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -121,7 +121,7 @@
                   previous container ids (as comma separated list)
                </documentation>
                <appinfo>
-                  <meta.attribute kind="identifier" basedOn="de.fujaba.commons.paletteContainer/paletteContainer/@id"/>
+                  <meta.attribute kind="identifier" basedOn="org.fujaba.commons.paletteContainer/paletteContainer/@id"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -131,7 +131,7 @@
                   next container ids (as comma separated list)
                </documentation>
                <appinfo>
-                  <meta.attribute kind="identifier" basedOn="de.fujaba.commons.paletteContainer/paletteContainer/@id"/>
+                  <meta.attribute kind="identifier" basedOn="org.fujaba.commons.paletteContainer/paletteContainer/@id"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -151,7 +151,7 @@
                   id of an inherited palette container which should be hidden in this palette
                </documentation>
                <appinfo>
-                  <meta.attribute kind="identifier" basedOn="de.fujaba.commons.paletteContainer/paletteContainer/@id"/>
+                  <meta.attribute kind="identifier" basedOn="org.fujaba.commons.paletteContainer/paletteContainer/@id"/>
                </appinfo>
             </annotation>
          </attribute>
