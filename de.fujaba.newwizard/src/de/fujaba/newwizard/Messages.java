@@ -34,5 +34,18 @@ public class Messages extends NLS {
 	public static String NewDiagramFileWizard_CreationPageDescription;
 	public static String AddNewDiagramElementToRootNode;
 
+	public static String CreateNewModelExtensionCreateNewModel;
+	public static String ModelSelectionPageBadURI;
+	public static String ModelSelectionPageBrowseFS;
+	public static String ModelSelectionPageBrowseWS;
+	public static String ModelSelectionPageErrorLoadingModel;
+	public static String ModelSelectionPageFindInWS;
+	public static String ModelSelectionPageLoad;
+	public static String ModelSelectionPageModelNA;
+	public static String ModelSelectionPageModelURI;
+	public static String ModelSelectionPageSelectModel;
+	public static String ModelSelectionPageSelectModelDesc;
+	public static String PredefinedModelExtensionPredefinedModels;
+
 	// TODO: put accessor fields manually
 }

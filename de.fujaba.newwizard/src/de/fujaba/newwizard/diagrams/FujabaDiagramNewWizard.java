@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
-import org.eclipse.gmf.internal.common.ui.ResourceLocationProvider;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
@@ -44,6 +43,7 @@ import de.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.fujaba.newwizard.Messages;
 import de.fujaba.newwizard.diagrams.pages.DiagramModelSelectionPage;
 import de.fujaba.newwizard.diagrams.pages.NewExtendedFileCreationPage;
+import de.fujaba.newwizard.ui.ResourceLocationProvider;
 
 public abstract class FujabaDiagramNewWizard extends Wizard implements
 		INewWizard, DiagramElementValidator {
@@ -279,12 +279,11 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 
 				ModelElementCategory elementCategory = null;
 
-				ExtendableElement diagramElement = domainModelSelectionPage
+				EObject element = domainModelSelectionPage
 						.getSelectedDiagramElement();
 
-				if (diagramElement == null) {
+				if (!(element instanceof ExtendableElement)) {
 					List<?> rootElements = modelResource.getContents();
-					// diagramElement = createInitialModel();
 					if (!rootElements.isEmpty()) {
 						Object rootElement = rootElements.get(0);
 						if (rootElement instanceof RootNode) {
@@ -308,18 +307,18 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 								rootNode.getCategories().add(elementCategory);
 							}
 
-							diagramElement = createDiagramElement();
+							ExtendableElement newDiagramElement = createDiagramElement();
 
-							if (diagramElement != null) {
+							if (newDiagramElement != null) {
 								elementCategory.getModelElements().add(
-										diagramElement);
+										newDiagramElement);
+								element = newDiagramElement;
 							}
 						}
 					}
 				}
 
-				EObject element = diagramElement;
-				if (diagramElement == null) {
+				if (element == null) {
 					element = elementCategory;
 				}
 

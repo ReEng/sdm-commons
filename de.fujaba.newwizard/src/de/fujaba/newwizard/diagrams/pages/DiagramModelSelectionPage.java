@@ -8,14 +8,13 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.gmf.internal.common.ui.ExtensibleModelSelectionPage;
-import org.eclipse.gmf.internal.common.ui.PredefinedModelExtension;
-import org.eclipse.gmf.internal.common.ui.ResourceLocationProvider;
-import org.storydriven.modeling.ExtendableElement;
 
 import de.fujaba.modelinstance.RootNode;
 import de.fujaba.newwizard.Messages;
 import de.fujaba.newwizard.diagrams.DiagramElementValidator;
+import de.fujaba.newwizard.ui.ExtensibleModelSelectionPage;
+import de.fujaba.newwizard.ui.PredefinedModelExtension;
+import de.fujaba.newwizard.ui.ResourceLocationProvider;
 
 /**
  * A Wizard Page that allows selecting the Diagram Element within an
@@ -160,7 +159,7 @@ public class DiagramModelSelectionPage extends ExtensibleModelSelectionPage {
 	 * @return The selected Diagram Element, or null if the Root Node was
 	 *         selected, or no Element was selected at all.
 	 */
-	public ExtendableElement getSelectedDiagramElement() {
+	public EObject getSelectedDiagramElement() {
 		// Add a new element
 		if (!addElementExtension.shouldAddElement()) {
 

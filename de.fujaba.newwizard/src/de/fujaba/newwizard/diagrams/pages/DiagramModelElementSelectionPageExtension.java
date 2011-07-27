@@ -6,7 +6,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.edit.provider.IWrapperItemProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
-import org.eclipse.gmf.internal.common.ui.ModelSelectionPageExtension;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
@@ -17,10 +16,10 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-import org.storydriven.modeling.ExtendableElement;
 
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.fujaba.newwizard.Messages;
+import de.fujaba.newwizard.ui.ModelSelectionPageExtension;
 
 /**
  * A PageExtension for the ModelSelectionPage that allows selecting Diagram
@@ -40,7 +39,7 @@ public class DiagramModelElementSelectionPageExtension implements
 	/**
 	 * The currently selected Diagram Element.
 	 */
-	protected ExtendableElement selectedDiagramElement;
+	protected EObject selectedDiagramElement;
 
 	/**
 	 * 
@@ -54,7 +53,7 @@ public class DiagramModelElementSelectionPageExtension implements
 		this.wizardPage = wizardPage;
 	}
 
-	public ExtendableElement getSelectedDiagramElement() {
+	public EObject getSelectedDiagramElement() {
 		return selectedDiagramElement;
 	}
 
@@ -150,8 +149,8 @@ public class DiagramModelElementSelectionPageExtension implements
 				selectedElement = ((FeatureMap.Entry) selectedElement)
 						.getValue();
 			}
-			if (selectedElement instanceof ExtendableElement) {
-				selectedDiagramElement = (ExtendableElement) selectedElement;
+			if (selectedElement instanceof EObject) {
+				selectedDiagramElement = (EObject) selectedElement;
 			}
 		}
 		wizardPage.validatePage();

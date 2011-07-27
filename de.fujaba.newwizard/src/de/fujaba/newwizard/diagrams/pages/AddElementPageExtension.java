@@ -14,7 +14,6 @@ package de.fujaba.newwizard.diagrams.pages;
 import java.util.Observable;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.gmf.internal.common.ui.ModelSelectionPageExtension;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -22,6 +21,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
 import de.fujaba.newwizard.Messages;
+import de.fujaba.newwizard.ui.ModelSelectionPageExtension;
 
 /**
  * A Page Extension for the ModelSelectionPage with a check box. The user can
