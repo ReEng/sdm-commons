@@ -1,0 +1,41 @@
+\section{Story Diagram}
+
+Story diagrams are an extension of UML 1.4 activity diagrams \cite{UML} that embed story patterns into the activities.
+That allows to model basic control flow structures like branches or loops.
+Figure \ref{fig:controlFlow} shows a story diagram that embeds the story pattern of Figure \ref{fig:SP} into one of its activities.
+The purpose of the story diagram is to create a new class in the source system if no class with the name given by the parameter \fe{className} already exists. 
+
+\begin{figure}[tbp]
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{figures/ControlFlow}
+  \caption{Control flow in story diagrams}
+  \label{fig:controlFlow}
+\end{center}
+\end{figure}
+
+In the first activity, the embedded story pattern tries to bind a class with the respective name in the source system. The \fe{sourceSystem} is given as a parameter to the story diagram and can be used as a \emph{bound} node by referring to the name of the parameter. A bound node is signified in the concrete syntax by omitting its type information. Then, the story pattern tries to bind an object of type \fe{Class} to the \emph{unbound} node named \fe{c} such that the attribute condition is fulfilled. 
+If this pattern can be matched successfully, i.e., the class already exists, the activity is left via the \fe{[success]} transition and the story diagram terminates.
+If no such class can be found, the matching fails and the activity is left via the \fe{[failure]} transition.
+Then, the second activity creates the class, links it to the source system, and sets the respective name. 
+Additionally, it is possible to add boolean conditions and an \fe{[else]} to the transitions to model more specific conditions.
+
+In general, an initial matching is established by the parameters. This matching is extended by the story patterns in the activities. Then, the matching is propagated to the next activity along the transitions. If a story pattern fails, the current matching is not changed. In subsequent activities, an object previously bound to a node \emph{c} can be referenced using a bound node with name \emph{c}.
+
+The specification of the transformation outlined in Figure~\ref{fig:transformationOverview} can only be accomplished by specifying loops because it requires iterating over all classifiers of the system and all methods of the classes. Loops can be modeled using \emph{forEach activities}.
+The story patterns in forEach activities are matched as long as new matchings can be found.
+They are visualized by a double border line as depicted in Figure~\ref{fig:forEach}. The transformation formalizes the informal description of Figure~\ref{fig:transformationOverview} using the current features of story diagrams.
+
+\begin{figure}[htb]
+\begin{center}
+  \includegraphics[width=\textwidth]{figures/ForEach}
+  \caption{Example of a complex transformation including several forEach activities}
+  \label{fig:forEach}
+\end{center}
+\end{figure}
+
+The story diagram creates a target system in its first activity. Then, all classes of the source system \fe{sourceSystem} are matched. For each match that has been found, the forEach activity is left via the \fe{[each time]} transition. Then, the third activity creates a respective class and its header in the target system. Afterwards, all methods of the class \fe{c} of the source system are matched. Again, the forEach activity is left for each new match using the \fe{[each time]} transition. After all methods have been transformed, the control flow returns to the activity \fe{Bind classes} to bind the next class. It is required that a control flow that has left a forEach activity eventually returns to this activity to obtain a correct story diagram.
+
+After transforming the classes, all primitive types of the source model have to be transformed. We omit the details here due to space limitations. 
+Finally, the target system object \fe{targetSystem} is returned by the story diagram as indicated by the annotation \fe{return targetSystem} on the stop node.
+
+Hitherto, story diagrams only support proprietary calls to library functions called collaboration statements. In Figure \ref{fig:forEach}, the activity \fe{InvokeCodeGen} contains such a call to the code generator. The call only is a string expression that does neither allow type checking of the input parameters nor getting a matching of return values, i.e., the return values cannot be used in the story diagram.

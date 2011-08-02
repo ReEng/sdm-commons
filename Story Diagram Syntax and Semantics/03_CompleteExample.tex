@@ -1,0 +1,41 @@
+\chapter{Complete Example}
+
+To illustrate our concept, we use a language transformation scenario: Suppose we have a model representing the abstract syntax graph (ASG) of a program. The ASG is language-specific, of course. If we want to generate code from the ASG for a target language other than the language on which the given ASG is based, one option is to transform the ASG first.
+One example of this would be a transformation from Java to C++.
+
+\begin{figure}[ht]
+
+\begin{minipage}[b]{0.42\linewidth}
+	\centering
+	\includegraphics[scale=0.7]{figures/sourceMetamodel}
+\caption{Source meta-model}
+\label{fig:sourceMetamodel}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.55\linewidth}
+\centering
+	\includegraphics[scale=0.7]{figures/targetMetamodel}
+\caption{Target meta-model}
+\label{fig:targetMetamodel}
+\end{minipage}
+
+\end{figure}
+
+
+Figure~\ref{fig:sourceMetamodel} shows a simplified meta-model for an ASG which acts as the source meta-model for our exemplary transformation scenario. A \fe{SourceSystem} consists of a number of \fe{Classifiers} which can either be \fe{PrimitiveTypes} or \fe{Classes}. Each \fe{Class} can have a number of \fe{Methods}.
+
+The target meta-model for the transformation, shown in Figure~\ref{fig:targetMetamodel}, is slightly more complex.
+The \fe{TargetSystem} consists of a number of \fe{CClassifiers} which are either \fe{DataTypes} or \fe{CClasses}.
+An \fe{CClass} can contain a number of \fe{Functions}. In addition, each \fe{CClass} has a corresponding \fe{Header} which contains a \fe{FunctionDeclaration} for each \fe{Function} of the \fe{CClass}.
+
+
+\begin{figure}[htbp]
+\begin{center}
+  \includegraphics[width=\textwidth]{figures/transformationOverview}
+  \caption{An activity diagram describing the example transformation}
+  \label{fig:transformationOverview}
+\end{center}
+\end{figure}
+
+Figure~\ref{fig:transformationOverview} shows an activity diagram which gives an overview of the transformation from a source ASG to a target ASG.
+At first, the target system has to be created. Each classifier in the source system has to be transformed into a corresponding classifier in the target system. While primitive types can be transformed easily, headers have to be created for all transformed classes. For each method, a function has to be created and a corresponding function declaration has to be added to the correct header. In the end, the target system can be passed to the code generation mechanism.

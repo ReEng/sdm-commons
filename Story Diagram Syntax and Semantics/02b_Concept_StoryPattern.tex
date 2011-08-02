@@ -1,0 +1,19 @@
+\section{Story Pattern}
+
+Story patterns describe graph replacement rules that can be embedded into the activities of a story diagram. They are based on labeled, attributed graphs that are extended by a type model \cite{FNTZ00}. 
+The types and references that are specified in the type model are used to type the nodes and edges within the story pattern.
+Type models for story diagrams can be created, e.g., by using EMF Ecore \cite{SBP+08}.
+In our example, we will use the meta-models shown in Figures~\ref{fig:sourceMetamodel} and~\ref{fig:targetMetamodel} as type models. The type model supports inheritance and polymorphism, i.e., a node of type \fe{Classifier} matches objects of types \fe{Classifier}, \fe{Class}, and \fe{PrimitiveType}.
+This allows specifying graph replacement rules for object-oriented models.
+
+In order to provide a concise notation, story patterns apply a short-hand notation depicting left-hand side and right-hand side in one graph. Nodes and edges being created (or deleted) are annotated with \small \verb|<<create>>| \normalsize (or  {\small \verb|<<destroy>>|\normalsize}, respectively). The matching of story patterns in a host graph requires an isomorphic matching of the pattern's left-hand side in the host graph, i.e., two nodes of the pattern may not be matched to the same node in the host graph \cite{FNTZ00,Roz97}. The matching is performed with respect to the types of the type model. The deletion of nodes is applied according to the Single Pushout Approach (SPO, \cite{Roz97}), i.e., dangling edges resulting from the deletion of nodes are deleted as well.
+
+Figure~\ref{fig:SP} shows an example of a story pattern that simply adds a class to the set of classifiers of the source system (cf. Figure~\ref{fig:sourceMetamodel}).
+
+\begin{figure}[htbp]
+\begin{center}
+  \includegraphics[width=0.25\textwidth]{figures/StoryPattern}
+  \caption{Simple story pattern}
+  \label{fig:SP}
+\end{center}
+\end{figure}

@@ -1,0 +1,21 @@
+\chapter{Concepts}\label{sec-concepts}
+
+In this section, we will briefly introduce story diagrams and their current features. 
+Story diagrams combine
+UML activity diagrams and graph transformations by embedding graph replacement rules into the activities.
+This allows the activities in Figure \ref{fig:transformationOverview} to be specified formally by graph replacements while preserving the general control flow structure of the example transformation.
+
+In terms of the classification of model transformations proposed by Czarnecki and Helsen~\cite{Czarnecki06}, story diagrams are an endogenous, in-place transformation language.
+It has both declarative (pattern matching) and operational elements (specification of control flow):
+Its control flow allows a deterministic selection of the graph replacement rules to be applied, with a (non-deterministic) pattern matching in the graph replacement rules.
+It can also be used for inter-model transformations to create a new target model from a given source model, as seen in the example given in this paper. 
+In order to execute story diagrams, code generation \cite{GBD07} and interpretation \cite{GHS09} are supported.
+
+In the following, we will describe the graph transformations, the so-called story patterns, in Section~\ref{sub:sp}.
+Afterwards, we will explain how control flow can be modeled by using elements from activity diagrams in Section~\ref{sub:controlFlow}.
+
+	\input{02a_Concept_Expressions.tex}
+	
+	\input{02b_Concept_StoryPattern.tex} 
+	
+	\input{02c_Concept_StoryDiagrams.tex}

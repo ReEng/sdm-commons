@@ -16,7 +16,7 @@
 \usepackage[pdftex,bookmarks=true,bookmarksopen=false,bookmarksnumbered=true,linktocpage,colorlinks=true,backref,pagebackref, linkcolor=blue,  citecolor=blue, urlcolor=blue]{hyperref}
 %% Weitere Hyperrefeinstellungen
 \hypersetup{%
-pdfauthor={t.b.a.}
+pdfauthor={Markus von Detten, Christian Heinzemann, Dietrich Travkin, and many more}
 ,pdftitle={Story Diagrams -- Syntax and Semantics}
 ,pdfsubject={Technical Report}
 %% fuer die Screen-Version: blue
@@ -159,7 +159,9 @@ backgroundcolor=\color{white}
 
 %\usepackage[colorinlistoftodos, textwidth=2.0cm, disable]{todonotes}
 \usepackage[colorinlistoftodos, textwidth=2.0cm]{todonotes}
+\newcommand{\todoall}[1]{\todo[inline, color=green!40]{Alle: #1}}
 \newcommand{\todoch}[1]{\todo[inline, color=yellow!40]{Chris: #1}}
+\newcommand{\todomvd}[1]{\todo[inline, color=cyan!40]{Markus: #1}}
 
 
 
@@ -176,7 +178,7 @@ backgroundcolor=\color{white}
 	\thispagestyle{empty}
 	{\center
 
-			
+			\todoall{Kill the left margin to center the page.}
 			\vspace{1.5cm}
             {\LARGE  {\bf Story Diagrams -- Syntax and Semantics}}
 			\\
@@ -187,7 +189,7 @@ backgroundcolor=\color{white}
 			%f"ur den Masterstudiengang \\ Informatik \\ \vspace{1cm}
 			
 			~\\ % Jannis Drewello, |$drewello$
-			{t.b.a.} \\%[0.2cm]
+			{Markus von Detten, Christian Heinzemann, Dietrich Travkin, and many more} \\%[0.2cm]
 			Software Engineering Group\\			
 			Heinz Nixdorf Institute\\
 			University of Paderborn\\
@@ -242,20 +244,13 @@ backgroundcolor=\color{white}
 	% ------------------------------------------------------------------ Seminarausarbeitung -----------------------------------------------------------------
 	\input{01_Introduction.tex} 
 
-	\chapter{Concepts}\label{sec-concepts}
-
-
-	\input{02_Concept_Expressions.tex}
+	\input{02_Concepts.tex}
 	
-	\input{03_Concept_StoryPattern.tex} 
+	\input{03_CompleteExample.tex}	
 	
-	\input{04_Concept_StoryDiagrams.tex}	
+	\input{04_RelatedWork.tex}
 	
-	\input{05_CompleteExample.tex}	
-	
-	\input{06_RelatedWork.tex}
-	
-	\input{07_Conclusions.tex}
+	\input{05_Conclusions.tex}
 	
 	%\setstretch{1}
         
@@ -266,7 +261,7 @@ backgroundcolor=\color{white}
                         	      % sonst das Literaturverzeichnis falsch im Inhaltsverzeichnis erscheint.
 	\bibliographystyle{alpha}
 
-	\bibliography{MumlPaper}
+	\bibliography{SdmPaper}
 
 % ------------------------------------------------------------
 % Appendix
@@ -275,7 +270,7 @@ backgroundcolor=\color{white}
 \appendix
 	\chapter{Technical Reference}\label{sec-reference}
 	
-	\input{11_TechDoc_Contents}	
+	\input{06_TechDoc_Contents}	
 
 % ------------------------------------------------------------
 % Abbilungsverzeichnis
