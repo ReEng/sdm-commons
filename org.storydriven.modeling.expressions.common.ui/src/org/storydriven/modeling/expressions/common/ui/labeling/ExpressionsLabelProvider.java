@@ -8,6 +8,8 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
 import org.storydriven.modeling.expressions.common.expressions.BooleanValue;
 import org.storydriven.modeling.expressions.common.expressions.NumberValue;
+import org.storydriven.modeling.expressions.common.expressions.StringValue;
+import org.storydriven.modeling.expressions.common.expressions.Variable;
 
 import com.google.inject.Inject;
 
@@ -34,13 +36,25 @@ public class ExpressionsLabelProvider extends DefaultEObjectLabelProvider {
          {
             BooleanValue b = (BooleanValue)ele;
             
-            return b.getVarName() != null? b.getVarName() : String.valueOf(b.isValue()); 
+            return "bool: " + String.valueOf(b.isValue()); 
          }
          else if(ele instanceof NumberValue)
          {
             NumberValue n = (NumberValue)ele;
             
-            return n.getVarName() != null? n.getVarName() : String.valueOf(n.getNumValue().doubleValue()); 
+            return "num: " + String.valueOf(n.getNumValue().doubleValue()); 
+         }
+         else if(ele instanceof StringValue)
+         {
+            StringValue n = (StringValue)ele;
+            
+            return String.valueOf("\""+n.getStrValue() + "\""); 
+         }
+         else if(ele instanceof Variable)
+         {
+            Variable n = (Variable)ele;
+            
+            return "var: " + String.valueOf(n.getVarName()); 
          }
          return ((EObject)ele).eClass().getName();
       }

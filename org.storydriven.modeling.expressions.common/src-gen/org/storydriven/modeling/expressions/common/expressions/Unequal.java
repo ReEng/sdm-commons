@@ -35,12 +35,12 @@ public interface Unequal extends CExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Left</em>' containment reference.
-   * @see #setLeft(AExpression)
+   * @see #setLeft(SomeValue)
    * @see org.storydriven.modeling.expressions.common.expressions.ExpressionsPackage#getUnequal_Left()
    * @model containment="true"
    * @generated
    */
-  AExpression getLeft();
+  SomeValue getLeft();
 
   /**
    * Sets the value of the '{@link org.storydriven.modeling.expressions.common.expressions.Unequal#getLeft <em>Left</em>}' containment reference.
@@ -50,7 +50,7 @@ public interface Unequal extends CExpression
    * @see #getLeft()
    * @generated
    */
-  void setLeft(AExpression value);
+  void setLeft(SomeValue value);
 
   /**
    * Returns the value of the '<em><b>Right</b></em>' containment reference.
@@ -61,12 +61,12 @@ public interface Unequal extends CExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Right</em>' containment reference.
-   * @see #setRight(AExpression)
+   * @see #setRight(SomeValue)
    * @see org.storydriven.modeling.expressions.common.expressions.ExpressionsPackage#getUnequal_Right()
    * @model containment="true"
    * @generated
    */
-  AExpression getRight();
+  SomeValue getRight();
 
   /**
    * Sets the value of the '{@link org.storydriven.modeling.expressions.common.expressions.Unequal#getRight <em>Right</em>}' containment reference.
@@ -76,6 +76,6 @@ public interface Unequal extends CExpression
    * @see #getRight()
    * @generated
    */
-  void setRight(AExpression value);
+  void setRight(SomeValue value);
 
 } // Unequal

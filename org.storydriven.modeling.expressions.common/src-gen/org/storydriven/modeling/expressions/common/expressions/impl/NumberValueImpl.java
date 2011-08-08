@@ -25,7 +25,6 @@ import org.storydriven.modeling.expressions.common.expressions.NumberValue;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.storydriven.modeling.expressions.common.expressions.impl.NumberValueImpl#getNumValue <em>Num Value</em>}</li>
- *   <li>{@link org.storydriven.modeling.expressions.common.expressions.impl.NumberValueImpl#getVarName <em>Var Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,26 +51,6 @@ public class NumberValueImpl extends AExpressionImpl implements NumberValue
    * @ordered
    */
   protected BigDecimal numValue = NUM_VALUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getVarName() <em>Var Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVarName()
-   * @generated
-   * @ordered
-   */
-  protected static final String VAR_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getVarName() <em>Var Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVarName()
-   * @generated
-   * @ordered
-   */
-  protected String varName = VAR_NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -122,29 +101,6 @@ public class NumberValueImpl extends AExpressionImpl implements NumberValue
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVarName()
-  {
-    return varName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setVarName(String newVarName)
-  {
-    String oldVarName = varName;
-    varName = newVarName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.NUMBER_VALUE__VAR_NAME, oldVarName, varName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -152,8 +108,6 @@ public class NumberValueImpl extends AExpressionImpl implements NumberValue
     {
       case ExpressionsPackage.NUMBER_VALUE__NUM_VALUE:
         return getNumValue();
-      case ExpressionsPackage.NUMBER_VALUE__VAR_NAME:
-        return getVarName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -170,9 +124,6 @@ public class NumberValueImpl extends AExpressionImpl implements NumberValue
     {
       case ExpressionsPackage.NUMBER_VALUE__NUM_VALUE:
         setNumValue((BigDecimal)newValue);
-        return;
-      case ExpressionsPackage.NUMBER_VALUE__VAR_NAME:
-        setVarName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -191,9 +142,6 @@ public class NumberValueImpl extends AExpressionImpl implements NumberValue
       case ExpressionsPackage.NUMBER_VALUE__NUM_VALUE:
         setNumValue(NUM_VALUE_EDEFAULT);
         return;
-      case ExpressionsPackage.NUMBER_VALUE__VAR_NAME:
-        setVarName(VAR_NAME_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -210,8 +158,6 @@ public class NumberValueImpl extends AExpressionImpl implements NumberValue
     {
       case ExpressionsPackage.NUMBER_VALUE__NUM_VALUE:
         return NUM_VALUE_EDEFAULT == null ? numValue != null : !NUM_VALUE_EDEFAULT.equals(numValue);
-      case ExpressionsPackage.NUMBER_VALUE__VAR_NAME:
-        return VAR_NAME_EDEFAULT == null ? varName != null : !VAR_NAME_EDEFAULT.equals(varName);
     }
     return super.eIsSet(featureID);
   }
@@ -229,8 +175,6 @@ public class NumberValueImpl extends AExpressionImpl implements NumberValue
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (numValue: ");
     result.append(numValue);
-    result.append(", varName: ");
-    result.append(varName);
     result.append(')');
     return result.toString();
   }

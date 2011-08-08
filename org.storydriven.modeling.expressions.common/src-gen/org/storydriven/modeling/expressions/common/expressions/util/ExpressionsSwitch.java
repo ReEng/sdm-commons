@@ -111,10 +111,20 @@ public class ExpressionsSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ExpressionsPackage.SOME_VALUE:
+      {
+        SomeValue someValue = (SomeValue)theEObject;
+        T result = caseSomeValue(someValue);
+        if (result == null) result = caseCExpression(someValue);
+        if (result == null) result = caseLExpression(someValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ExpressionsPackage.AEXPRESSION:
       {
         AExpression aExpression = (AExpression)theEObject;
         T result = caseAExpression(aExpression);
+        if (result == null) result = caseSomeValue(aExpression);
         if (result == null) result = caseCExpression(aExpression);
         if (result == null) result = caseLExpression(aExpression);
         if (result == null) result = defaultCase(theEObject);
@@ -125,6 +135,7 @@ public class ExpressionsSwitch<T>
         NumberValue numberValue = (NumberValue)theEObject;
         T result = caseNumberValue(numberValue);
         if (result == null) result = caseAExpression(numberValue);
+        if (result == null) result = caseSomeValue(numberValue);
         if (result == null) result = caseCExpression(numberValue);
         if (result == null) result = caseLExpression(numberValue);
         if (result == null) result = defaultCase(theEObject);
@@ -134,7 +145,30 @@ public class ExpressionsSwitch<T>
       {
         BooleanValue booleanValue = (BooleanValue)theEObject;
         T result = caseBooleanValue(booleanValue);
+        if (result == null) result = caseSomeValue(booleanValue);
+        if (result == null) result = caseCExpression(booleanValue);
         if (result == null) result = caseLExpression(booleanValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ExpressionsPackage.STRING_VALUE:
+      {
+        StringValue stringValue = (StringValue)theEObject;
+        T result = caseStringValue(stringValue);
+        if (result == null) result = caseSomeValue(stringValue);
+        if (result == null) result = caseCExpression(stringValue);
+        if (result == null) result = caseLExpression(stringValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ExpressionsPackage.VARIABLE:
+      {
+        Variable variable = (Variable)theEObject;
+        T result = caseVariable(variable);
+        if (result == null) result = caseAExpression(variable);
+        if (result == null) result = caseSomeValue(variable);
+        if (result == null) result = caseCExpression(variable);
+        if (result == null) result = caseLExpression(variable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -254,6 +288,7 @@ public class ExpressionsSwitch<T>
         Plus plus = (Plus)theEObject;
         T result = casePlus(plus);
         if (result == null) result = caseAExpression(plus);
+        if (result == null) result = caseSomeValue(plus);
         if (result == null) result = caseCExpression(plus);
         if (result == null) result = caseLExpression(plus);
         if (result == null) result = defaultCase(theEObject);
@@ -264,6 +299,7 @@ public class ExpressionsSwitch<T>
         Minus minus = (Minus)theEObject;
         T result = caseMinus(minus);
         if (result == null) result = caseAExpression(minus);
+        if (result == null) result = caseSomeValue(minus);
         if (result == null) result = caseCExpression(minus);
         if (result == null) result = caseLExpression(minus);
         if (result == null) result = defaultCase(theEObject);
@@ -274,6 +310,7 @@ public class ExpressionsSwitch<T>
         Multi multi = (Multi)theEObject;
         T result = caseMulti(multi);
         if (result == null) result = caseAExpression(multi);
+        if (result == null) result = caseSomeValue(multi);
         if (result == null) result = caseCExpression(multi);
         if (result == null) result = caseLExpression(multi);
         if (result == null) result = defaultCase(theEObject);
@@ -284,6 +321,7 @@ public class ExpressionsSwitch<T>
         Div div = (Div)theEObject;
         T result = caseDiv(div);
         if (result == null) result = caseAExpression(div);
+        if (result == null) result = caseSomeValue(div);
         if (result == null) result = caseCExpression(div);
         if (result == null) result = caseLExpression(div);
         if (result == null) result = defaultCase(theEObject);
@@ -294,6 +332,7 @@ public class ExpressionsSwitch<T>
         Mod mod = (Mod)theEObject;
         T result = caseMod(mod);
         if (result == null) result = caseAExpression(mod);
+        if (result == null) result = caseSomeValue(mod);
         if (result == null) result = caseCExpression(mod);
         if (result == null) result = caseLExpression(mod);
         if (result == null) result = defaultCase(theEObject);
@@ -304,6 +343,7 @@ public class ExpressionsSwitch<T>
         Pow pow = (Pow)theEObject;
         T result = casePow(pow);
         if (result == null) result = caseAExpression(pow);
+        if (result == null) result = caseSomeValue(pow);
         if (result == null) result = caseCExpression(pow);
         if (result == null) result = caseLExpression(pow);
         if (result == null) result = defaultCase(theEObject);
@@ -341,6 +381,22 @@ public class ExpressionsSwitch<T>
    * @generated
    */
   public T caseCExpression(CExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Some Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Some Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSomeValue(SomeValue object)
   {
     return null;
   }
@@ -389,6 +445,38 @@ public class ExpressionsSwitch<T>
    * @generated
    */
   public T caseBooleanValue(BooleanValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringValue(StringValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariable(Variable object)
   {
     return null;
   }

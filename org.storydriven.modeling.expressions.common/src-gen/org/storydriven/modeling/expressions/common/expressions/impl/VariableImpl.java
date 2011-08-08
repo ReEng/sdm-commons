@@ -12,50 +12,50 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.storydriven.modeling.expressions.common.expressions.BooleanValue;
 import org.storydriven.modeling.expressions.common.expressions.ExpressionsPackage;
+import org.storydriven.modeling.expressions.common.expressions.Variable;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Boolean Value</b></em>'.
+ * An implementation of the model object '<em><b>Variable</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.expressions.common.expressions.impl.BooleanValueImpl#isValue <em>Value</em>}</li>
+ *   <li>{@link org.storydriven.modeling.expressions.common.expressions.impl.VariableImpl#getVarName <em>Var Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
+public class VariableImpl extends LExpressionImpl implements Variable
 {
   /**
-   * The default value of the '{@link #isValue() <em>Value</em>}' attribute.
+   * The default value of the '{@link #getVarName() <em>Var Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isValue()
+   * @see #getVarName()
    * @generated
    * @ordered
    */
-  protected static final boolean VALUE_EDEFAULT = false;
+  protected static final String VAR_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #isValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getVarName() <em>Var Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isValue()
+   * @see #getVarName()
    * @generated
    * @ordered
    */
-  protected boolean value = VALUE_EDEFAULT;
+  protected String varName = VAR_NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected BooleanValueImpl()
+  protected VariableImpl()
   {
     super();
   }
@@ -68,7 +68,7 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
   @Override
   protected EClass eStaticClass()
   {
-    return ExpressionsPackage.Literals.BOOLEAN_VALUE;
+    return ExpressionsPackage.Literals.VARIABLE;
   }
 
   /**
@@ -76,9 +76,9 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isValue()
+  public String getVarName()
   {
-    return value;
+    return varName;
   }
 
   /**
@@ -86,12 +86,12 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(boolean newValue)
+  public void setVarName(String newVarName)
   {
-    boolean oldValue = value;
-    value = newValue;
+    String oldVarName = varName;
+    varName = newVarName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.BOOLEAN_VALUE__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.VARIABLE__VAR_NAME, oldVarName, varName));
   }
 
   /**
@@ -104,8 +104,8 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
   {
     switch (featureID)
     {
-      case ExpressionsPackage.BOOLEAN_VALUE__VALUE:
-        return isValue();
+      case ExpressionsPackage.VARIABLE__VAR_NAME:
+        return getVarName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
   {
     switch (featureID)
     {
-      case ExpressionsPackage.BOOLEAN_VALUE__VALUE:
-        setValue((Boolean)newValue);
+      case ExpressionsPackage.VARIABLE__VAR_NAME:
+        setVarName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
   {
     switch (featureID)
     {
-      case ExpressionsPackage.BOOLEAN_VALUE__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case ExpressionsPackage.VARIABLE__VAR_NAME:
+        setVarName(VAR_NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
   {
     switch (featureID)
     {
-      case ExpressionsPackage.BOOLEAN_VALUE__VALUE:
-        return value != VALUE_EDEFAULT;
+      case ExpressionsPackage.VARIABLE__VAR_NAME:
+        return VAR_NAME_EDEFAULT == null ? varName != null : !VAR_NAME_EDEFAULT.equals(varName);
     }
     return super.eIsSet(featureID);
   }
@@ -171,10 +171,10 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
-    result.append(value);
+    result.append(" (varName: ");
+    result.append(varName);
     result.append(')');
     return result.toString();
   }
 
-} //BooleanValueImpl
+} //VariableImpl

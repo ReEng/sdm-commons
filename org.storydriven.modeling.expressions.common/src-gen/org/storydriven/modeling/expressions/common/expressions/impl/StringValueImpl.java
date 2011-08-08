@@ -12,50 +12,50 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.storydriven.modeling.expressions.common.expressions.BooleanValue;
 import org.storydriven.modeling.expressions.common.expressions.ExpressionsPackage;
+import org.storydriven.modeling.expressions.common.expressions.StringValue;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Boolean Value</b></em>'.
+ * An implementation of the model object '<em><b>String Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.expressions.common.expressions.impl.BooleanValueImpl#isValue <em>Value</em>}</li>
+ *   <li>{@link org.storydriven.modeling.expressions.common.expressions.impl.StringValueImpl#getStrValue <em>Str Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
+public class StringValueImpl extends SomeValueImpl implements StringValue
 {
   /**
-   * The default value of the '{@link #isValue() <em>Value</em>}' attribute.
+   * The default value of the '{@link #getStrValue() <em>Str Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isValue()
+   * @see #getStrValue()
    * @generated
    * @ordered
    */
-  protected static final boolean VALUE_EDEFAULT = false;
+  protected static final String STR_VALUE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #isValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getStrValue() <em>Str Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isValue()
+   * @see #getStrValue()
    * @generated
    * @ordered
    */
-  protected boolean value = VALUE_EDEFAULT;
+  protected String strValue = STR_VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected BooleanValueImpl()
+  protected StringValueImpl()
   {
     super();
   }
@@ -68,7 +68,7 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
   @Override
   protected EClass eStaticClass()
   {
-    return ExpressionsPackage.Literals.BOOLEAN_VALUE;
+    return ExpressionsPackage.Literals.STRING_VALUE;
   }
 
   /**
@@ -76,9 +76,9 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isValue()
+  public String getStrValue()
   {
-    return value;
+    return strValue;
   }
 
   /**
@@ -86,12 +86,12 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(boolean newValue)
+  public void setStrValue(String newStrValue)
   {
-    boolean oldValue = value;
-    value = newValue;
+    String oldStrValue = strValue;
+    strValue = newStrValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.BOOLEAN_VALUE__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.STRING_VALUE__STR_VALUE, oldStrValue, strValue));
   }
 
   /**
@@ -104,8 +104,8 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
   {
     switch (featureID)
     {
-      case ExpressionsPackage.BOOLEAN_VALUE__VALUE:
-        return isValue();
+      case ExpressionsPackage.STRING_VALUE__STR_VALUE:
+        return getStrValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
   {
     switch (featureID)
     {
-      case ExpressionsPackage.BOOLEAN_VALUE__VALUE:
-        setValue((Boolean)newValue);
+      case ExpressionsPackage.STRING_VALUE__STR_VALUE:
+        setStrValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
   {
     switch (featureID)
     {
-      case ExpressionsPackage.BOOLEAN_VALUE__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case ExpressionsPackage.STRING_VALUE__STR_VALUE:
+        setStrValue(STR_VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
   {
     switch (featureID)
     {
-      case ExpressionsPackage.BOOLEAN_VALUE__VALUE:
-        return value != VALUE_EDEFAULT;
+      case ExpressionsPackage.STRING_VALUE__STR_VALUE:
+        return STR_VALUE_EDEFAULT == null ? strValue != null : !STR_VALUE_EDEFAULT.equals(strValue);
     }
     return super.eIsSet(featureID);
   }
@@ -171,10 +171,10 @@ public class BooleanValueImpl extends LExpressionImpl implements BooleanValue
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
-    result.append(value);
+    result.append(" (strValue: ");
+    result.append(strValue);
     result.append(')');
     return result.toString();
   }
 
-} //BooleanValueImpl
+} //StringValueImpl

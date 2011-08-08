@@ -45,6 +45,15 @@ public interface ExpressionsFactory extends EFactory
   CExpression createCExpression();
 
   /**
+   * Returns a new object of class '<em>Some Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Some Value</em>'.
+   * @generated
+   */
+  SomeValue createSomeValue();
+
+  /**
    * Returns a new object of class '<em>AExpression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -70,6 +79,24 @@ public interface ExpressionsFactory extends EFactory
    * @generated
    */
   BooleanValue createBooleanValue();
+
+  /**
+   * Returns a new object of class '<em>String Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Value</em>'.
+   * @generated
+   */
+  StringValue createStringValue();
+
+  /**
+   * Returns a new object of class '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable</em>'.
+   * @generated
+   */
+  Variable createVariable();
 
   /**
    * Returns a new object of class '<em>Equivalent</em>'.

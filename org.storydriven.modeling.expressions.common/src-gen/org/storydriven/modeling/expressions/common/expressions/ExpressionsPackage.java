@@ -99,6 +99,25 @@ public interface ExpressionsPackage extends EPackage
   int CEXPRESSION_FEATURE_COUNT = LEXPRESSION_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link org.storydriven.modeling.expressions.common.expressions.impl.SomeValueImpl <em>Some Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.storydriven.modeling.expressions.common.expressions.impl.SomeValueImpl
+   * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getSomeValue()
+   * @generated
+   */
+  int SOME_VALUE = 2;
+
+  /**
+   * The number of structural features of the '<em>Some Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SOME_VALUE_FEATURE_COUNT = CEXPRESSION_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link org.storydriven.modeling.expressions.common.expressions.impl.AExpressionImpl <em>AExpression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -106,7 +125,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getAExpression()
    * @generated
    */
-  int AEXPRESSION = 2;
+  int AEXPRESSION = 3;
 
   /**
    * The number of structural features of the '<em>AExpression</em>' class.
@@ -115,7 +134,7 @@ public interface ExpressionsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AEXPRESSION_FEATURE_COUNT = CEXPRESSION_FEATURE_COUNT + 0;
+  int AEXPRESSION_FEATURE_COUNT = SOME_VALUE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.storydriven.modeling.expressions.common.expressions.impl.NumberValueImpl <em>Number Value</em>}' class.
@@ -125,7 +144,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getNumberValue()
    * @generated
    */
-  int NUMBER_VALUE = 3;
+  int NUMBER_VALUE = 4;
 
   /**
    * The feature id for the '<em><b>Num Value</b></em>' attribute.
@@ -137,22 +156,13 @@ public interface ExpressionsPackage extends EPackage
   int NUMBER_VALUE__NUM_VALUE = AEXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Var Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_VALUE__VAR_NAME = AEXPRESSION_FEATURE_COUNT + 1;
-
-  /**
    * The number of structural features of the '<em>Number Value</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_VALUE_FEATURE_COUNT = AEXPRESSION_FEATURE_COUNT + 2;
+  int NUMBER_VALUE_FEATURE_COUNT = AEXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.storydriven.modeling.expressions.common.expressions.impl.BooleanValueImpl <em>Boolean Value</em>}' class.
@@ -162,7 +172,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 4;
+  int BOOLEAN_VALUE = 5;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -174,22 +184,69 @@ public interface ExpressionsPackage extends EPackage
   int BOOLEAN_VALUE__VALUE = LEXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Var Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_VALUE__VAR_NAME = LEXPRESSION_FEATURE_COUNT + 1;
-
-  /**
    * The number of structural features of the '<em>Boolean Value</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_VALUE_FEATURE_COUNT = LEXPRESSION_FEATURE_COUNT + 2;
+  int BOOLEAN_VALUE_FEATURE_COUNT = LEXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.storydriven.modeling.expressions.common.expressions.impl.StringValueImpl <em>String Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.storydriven.modeling.expressions.common.expressions.impl.StringValueImpl
+   * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getStringValue()
+   * @generated
+   */
+  int STRING_VALUE = 6;
+
+  /**
+   * The feature id for the '<em><b>Str Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_VALUE__STR_VALUE = SOME_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>String Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_VALUE_FEATURE_COUNT = SOME_VALUE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.storydriven.modeling.expressions.common.expressions.impl.VariableImpl <em>Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.storydriven.modeling.expressions.common.expressions.impl.VariableImpl
+   * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getVariable()
+   * @generated
+   */
+  int VARIABLE = 7;
+
+  /**
+   * The feature id for the '<em><b>Var Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__VAR_NAME = LEXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_FEATURE_COUNT = LEXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.storydriven.modeling.expressions.common.expressions.impl.EquivalentImpl <em>Equivalent</em>}' class.
@@ -199,7 +256,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getEquivalent()
    * @generated
    */
-  int EQUIVALENT = 5;
+  int EQUIVALENT = 8;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -236,7 +293,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getImply()
    * @generated
    */
-  int IMPLY = 6;
+  int IMPLY = 9;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -273,7 +330,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getOr()
    * @generated
    */
-  int OR = 7;
+  int OR = 10;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -310,7 +367,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getXor()
    * @generated
    */
-  int XOR = 8;
+  int XOR = 11;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -347,7 +404,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getAnd()
    * @generated
    */
-  int AND = 9;
+  int AND = 12;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -384,7 +441,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getNot()
    * @generated
    */
-  int NOT = 10;
+  int NOT = 13;
 
   /**
    * The feature id for the '<em><b>Not</b></em>' containment reference.
@@ -412,7 +469,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getLessOrEqual()
    * @generated
    */
-  int LESS_OR_EQUAL = 11;
+  int LESS_OR_EQUAL = 14;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -449,7 +506,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getLess()
    * @generated
    */
-  int LESS = 12;
+  int LESS = 15;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -486,7 +543,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getGreaterOrEqual()
    * @generated
    */
-  int GREATER_OR_EQUAL = 13;
+  int GREATER_OR_EQUAL = 16;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -523,7 +580,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getGreater()
    * @generated
    */
-  int GREATER = 14;
+  int GREATER = 17;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -560,7 +617,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getEqual()
    * @generated
    */
-  int EQUAL = 15;
+  int EQUAL = 18;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -597,7 +654,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getUnequal()
    * @generated
    */
-  int UNEQUAL = 16;
+  int UNEQUAL = 19;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -634,7 +691,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getApprox()
    * @generated
    */
-  int APPROX = 17;
+  int APPROX = 20;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -671,7 +728,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 18;
+  int PLUS = 21;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -708,7 +765,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 19;
+  int MINUS = 22;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -745,7 +802,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getMulti()
    * @generated
    */
-  int MULTI = 20;
+  int MULTI = 23;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -782,7 +839,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 21;
+  int DIV = 24;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -819,7 +876,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getMod()
    * @generated
    */
-  int MOD = 22;
+  int MOD = 25;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -856,7 +913,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getPow()
    * @generated
    */
-  int POW = 23;
+  int POW = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -907,6 +964,16 @@ public interface ExpressionsPackage extends EPackage
   EClass getCExpression();
 
   /**
+   * Returns the meta object for class '{@link org.storydriven.modeling.expressions.common.expressions.SomeValue <em>Some Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Some Value</em>'.
+   * @see org.storydriven.modeling.expressions.common.expressions.SomeValue
+   * @generated
+   */
+  EClass getSomeValue();
+
+  /**
    * Returns the meta object for class '{@link org.storydriven.modeling.expressions.common.expressions.AExpression <em>AExpression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -938,17 +1005,6 @@ public interface ExpressionsPackage extends EPackage
   EAttribute getNumberValue_NumValue();
 
   /**
-   * Returns the meta object for the attribute '{@link org.storydriven.modeling.expressions.common.expressions.NumberValue#getVarName <em>Var Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var Name</em>'.
-   * @see org.storydriven.modeling.expressions.common.expressions.NumberValue#getVarName()
-   * @see #getNumberValue()
-   * @generated
-   */
-  EAttribute getNumberValue_VarName();
-
-  /**
    * Returns the meta object for class '{@link org.storydriven.modeling.expressions.common.expressions.BooleanValue <em>Boolean Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -970,15 +1026,46 @@ public interface ExpressionsPackage extends EPackage
   EAttribute getBooleanValue_Value();
 
   /**
-   * Returns the meta object for the attribute '{@link org.storydriven.modeling.expressions.common.expressions.BooleanValue#getVarName <em>Var Name</em>}'.
+   * Returns the meta object for class '{@link org.storydriven.modeling.expressions.common.expressions.StringValue <em>String Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Value</em>'.
+   * @see org.storydriven.modeling.expressions.common.expressions.StringValue
+   * @generated
+   */
+  EClass getStringValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.storydriven.modeling.expressions.common.expressions.StringValue#getStrValue <em>Str Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Str Value</em>'.
+   * @see org.storydriven.modeling.expressions.common.expressions.StringValue#getStrValue()
+   * @see #getStringValue()
+   * @generated
+   */
+  EAttribute getStringValue_StrValue();
+
+  /**
+   * Returns the meta object for class '{@link org.storydriven.modeling.expressions.common.expressions.Variable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable</em>'.
+   * @see org.storydriven.modeling.expressions.common.expressions.Variable
+   * @generated
+   */
+  EClass getVariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.storydriven.modeling.expressions.common.expressions.Variable#getVarName <em>Var Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Var Name</em>'.
-   * @see org.storydriven.modeling.expressions.common.expressions.BooleanValue#getVarName()
-   * @see #getBooleanValue()
+   * @see org.storydriven.modeling.expressions.common.expressions.Variable#getVarName()
+   * @see #getVariable()
    * @generated
    */
-  EAttribute getBooleanValue_VarName();
+  EAttribute getVariable_VarName();
 
   /**
    * Returns the meta object for class '{@link org.storydriven.modeling.expressions.common.expressions.Equivalent <em>Equivalent</em>}'.
@@ -1621,6 +1708,16 @@ public interface ExpressionsPackage extends EPackage
     EClass CEXPRESSION = eINSTANCE.getCExpression();
 
     /**
+     * The meta object literal for the '{@link org.storydriven.modeling.expressions.common.expressions.impl.SomeValueImpl <em>Some Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.storydriven.modeling.expressions.common.expressions.impl.SomeValueImpl
+     * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getSomeValue()
+     * @generated
+     */
+    EClass SOME_VALUE = eINSTANCE.getSomeValue();
+
+    /**
      * The meta object literal for the '{@link org.storydriven.modeling.expressions.common.expressions.impl.AExpressionImpl <em>AExpression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1649,14 +1746,6 @@ public interface ExpressionsPackage extends EPackage
     EAttribute NUMBER_VALUE__NUM_VALUE = eINSTANCE.getNumberValue_NumValue();
 
     /**
-     * The meta object literal for the '<em><b>Var Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NUMBER_VALUE__VAR_NAME = eINSTANCE.getNumberValue_VarName();
-
-    /**
      * The meta object literal for the '{@link org.storydriven.modeling.expressions.common.expressions.impl.BooleanValueImpl <em>Boolean Value</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1675,12 +1764,40 @@ public interface ExpressionsPackage extends EPackage
     EAttribute BOOLEAN_VALUE__VALUE = eINSTANCE.getBooleanValue_Value();
 
     /**
+     * The meta object literal for the '{@link org.storydriven.modeling.expressions.common.expressions.impl.StringValueImpl <em>String Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.storydriven.modeling.expressions.common.expressions.impl.StringValueImpl
+     * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getStringValue()
+     * @generated
+     */
+    EClass STRING_VALUE = eINSTANCE.getStringValue();
+
+    /**
+     * The meta object literal for the '<em><b>Str Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_VALUE__STR_VALUE = eINSTANCE.getStringValue_StrValue();
+
+    /**
+     * The meta object literal for the '{@link org.storydriven.modeling.expressions.common.expressions.impl.VariableImpl <em>Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.storydriven.modeling.expressions.common.expressions.impl.VariableImpl
+     * @see org.storydriven.modeling.expressions.common.expressions.impl.ExpressionsPackageImpl#getVariable()
+     * @generated
+     */
+    EClass VARIABLE = eINSTANCE.getVariable();
+
+    /**
      * The meta object literal for the '<em><b>Var Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BOOLEAN_VALUE__VAR_NAME = eINSTANCE.getBooleanValue_VarName();
+    EAttribute VARIABLE__VAR_NAME = eINSTANCE.getVariable_VarName();
 
     /**
      * The meta object literal for the '{@link org.storydriven.modeling.expressions.common.expressions.impl.EquivalentImpl <em>Equivalent</em>}' class.

@@ -11,14 +11,19 @@
       disposableProviderFactory="true" ecorePackage="Expressions.ecore#/">
     <genClasses ecoreClass="Expressions.ecore#//LExpression"/>
     <genClasses ecoreClass="Expressions.ecore#//CExpression"/>
+    <genClasses ecoreClass="Expressions.ecore#//SomeValue"/>
     <genClasses ecoreClass="Expressions.ecore#//AExpression"/>
     <genClasses ecoreClass="Expressions.ecore#//NumberValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expressions.ecore#//NumberValue/numValue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expressions.ecore#//NumberValue/varName"/>
     </genClasses>
     <genClasses ecoreClass="Expressions.ecore#//BooleanValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expressions.ecore#//BooleanValue/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expressions.ecore#//BooleanValue/varName"/>
+    </genClasses>
+    <genClasses ecoreClass="Expressions.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expressions.ecore#//StringValue/strValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Expressions.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expressions.ecore#//Variable/varName"/>
     </genClasses>
     <genClasses ecoreClass="Expressions.ecore#//Equivalent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//Equivalent/left"/>

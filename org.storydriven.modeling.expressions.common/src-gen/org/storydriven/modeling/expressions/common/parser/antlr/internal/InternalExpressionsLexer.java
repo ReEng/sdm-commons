@@ -13,33 +13,32 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalExpressionsLexer extends Lexer {
     public static final int RULE_BOOLEAN=5;
-    public static final int RULE_ID=6;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int RULE_STRING_TERMINAL=8;
+    public static final int RULE_ID=7;
+    public static final int RULE_ANY_OTHER=11;
     public static final int T29=29;
     public static final int T28=28;
     public static final int T27=27;
     public static final int T26=26;
     public static final int T25=25;
-    public static final int Tokens=37;
+    public static final int Tokens=36;
     public static final int T24=24;
     public static final int EOF=-1;
-    public static final int RULE_SL_COMMENT=10;
+    public static final int RULE_SL_COMMENT=9;
     public static final int T23=23;
     public static final int T22=22;
     public static final int T21=21;
     public static final int T20=20;
-    public static final int RULE_ML_COMMENT=9;
-    public static final int RULE_STRING=7;
+    public static final int RULE_ML_COMMENT=8;
+    public static final int RULE_STRING=6;
     public static final int RULE_INT=4;
+    public static final int T12=12;
     public static final int T13=13;
     public static final int T14=14;
     public static final int T34=34;
-    public static final int RULE_WS=11;
+    public static final int RULE_WS=10;
     public static final int T15=15;
     public static final int T33=33;
     public static final int T16=16;
-    public static final int T36=36;
     public static final int T17=17;
     public static final int T35=35;
     public static final int T18=18;
@@ -53,14 +52,33 @@ public class InternalExpressionsLexer extends Lexer {
     }
     public String getGrammarFileName() { return "../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g"; }
 
-    // $ANTLR start T13
-    public final void mT13() throws RecognitionException {
+    // $ANTLR start T12
+    public final void mT12() throws RecognitionException {
         try {
-            int _type = T13;
+            int _type = T12;
             // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:10:5: ( 'equiv' )
             // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:10:7: 'equiv'
             {
             match("equiv"); 
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end T12
+
+    // $ANTLR start T13
+    public final void mT13() throws RecognitionException {
+        try {
+            int _type = T13;
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:11:5: ( 'imply' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:11:7: 'imply'
+            {
+            match("imply"); 
 
 
             }
@@ -76,10 +94,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT14() throws RecognitionException {
         try {
             int _type = T14;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:11:5: ( 'imply' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:11:7: 'imply'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:12:5: ( 'or' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:12:7: 'or'
             {
-            match("imply"); 
+            match("or"); 
 
 
             }
@@ -95,10 +113,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT15() throws RecognitionException {
         try {
             int _type = T15;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:12:5: ( 'or' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:12:7: 'or'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:13:5: ( 'xor' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:13:7: 'xor'
             {
-            match("or"); 
+            match("xor"); 
 
 
             }
@@ -114,10 +132,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT16() throws RecognitionException {
         try {
             int _type = T16;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:13:5: ( 'xor' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:13:7: 'xor'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:14:5: ( 'and' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:14:7: 'and'
             {
-            match("xor"); 
+            match("and"); 
 
 
             }
@@ -133,10 +151,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT17() throws RecognitionException {
         try {
             int _type = T17;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:14:5: ( 'and' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:14:7: 'and'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:15:5: ( 'not' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:15:7: 'not'
             {
-            match("and"); 
+            match("not"); 
 
 
             }
@@ -152,11 +170,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT18() throws RecognitionException {
         try {
             int _type = T18;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:15:5: ( 'not' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:15:7: 'not'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:16:5: ( '(' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:16:7: '('
             {
-            match("not"); 
-
+            match('('); 
 
             }
 
@@ -171,10 +188,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT19() throws RecognitionException {
         try {
             int _type = T19;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:16:5: ( '(' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:16:7: '('
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:17:5: ( ')' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:17:7: ')'
             {
-            match('('); 
+            match(')'); 
 
             }
 
@@ -189,10 +206,11 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT20() throws RecognitionException {
         try {
             int _type = T20;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:17:5: ( ')' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:17:7: ')'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:18:5: ( '<=' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:18:7: '<='
             {
-            match(')'); 
+            match("<="); 
+
 
             }
 
@@ -207,11 +225,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT21() throws RecognitionException {
         try {
             int _type = T21;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:18:5: ( '<=' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:18:7: '<='
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:19:5: ( '<' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:19:7: '<'
             {
-            match("<="); 
-
+            match('<'); 
 
             }
 
@@ -226,10 +243,11 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT22() throws RecognitionException {
         try {
             int _type = T22;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:19:5: ( '<' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:19:7: '<'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:20:5: ( '>=' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:20:7: '>='
             {
-            match('<'); 
+            match(">="); 
+
 
             }
 
@@ -244,11 +262,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT23() throws RecognitionException {
         try {
             int _type = T23;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:20:5: ( '>=' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:20:7: '>='
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:21:5: ( '>' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:21:7: '>'
             {
-            match(">="); 
-
+            match('>'); 
 
             }
 
@@ -263,10 +280,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT24() throws RecognitionException {
         try {
             int _type = T24;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:21:5: ( '>' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:21:7: '>'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:22:5: ( '=' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:22:7: '='
             {
-            match('>'); 
+            match('='); 
 
             }
 
@@ -281,10 +298,11 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT25() throws RecognitionException {
         try {
             int _type = T25;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:22:5: ( '=' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:22:7: '='
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:23:5: ( '!=' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:23:7: '!='
             {
-            match('='); 
+            match("!="); 
+
 
             }
 
@@ -299,11 +317,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT26() throws RecognitionException {
         try {
             int _type = T26;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:23:5: ( '!=' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:23:7: '!='
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:24:5: ( '~' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:24:7: '~'
             {
-            match("!="); 
-
+            match('~'); 
 
             }
 
@@ -318,10 +335,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT27() throws RecognitionException {
         try {
             int _type = T27;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:24:5: ( '~' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:24:7: '~'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:25:5: ( '+' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:25:7: '+'
             {
-            match('~'); 
+            match('+'); 
 
             }
 
@@ -336,10 +353,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT28() throws RecognitionException {
         try {
             int _type = T28;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:25:5: ( '+' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:25:7: '+'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:26:5: ( '-' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:26:7: '-'
             {
-            match('+'); 
+            match('-'); 
 
             }
 
@@ -354,10 +371,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT29() throws RecognitionException {
         try {
             int _type = T29;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:26:5: ( '-' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:26:7: '-'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:27:5: ( '*' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:27:7: '*'
             {
-            match('-'); 
+            match('*'); 
 
             }
 
@@ -372,10 +389,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT30() throws RecognitionException {
         try {
             int _type = T30;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:27:5: ( '*' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:27:7: '*'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:28:5: ( '/' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:28:7: '/'
             {
-            match('*'); 
+            match('/'); 
 
             }
 
@@ -390,10 +407,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT31() throws RecognitionException {
         try {
             int _type = T31;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:28:5: ( '/' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:28:7: '/'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:29:5: ( '%' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:29:7: '%'
             {
-            match('/'); 
+            match('%'); 
 
             }
 
@@ -408,10 +425,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT32() throws RecognitionException {
         try {
             int _type = T32;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:29:5: ( '%' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:29:7: '%'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:30:5: ( '^' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:30:7: '^'
             {
-            match('%'); 
+            match('^'); 
 
             }
 
@@ -426,10 +443,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT33() throws RecognitionException {
         try {
             int _type = T33;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:30:5: ( '^' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:30:7: '^'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:31:5: ( '[' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:31:7: '['
             {
-            match('^'); 
+            match('['); 
 
             }
 
@@ -444,10 +461,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT34() throws RecognitionException {
         try {
             int _type = T34;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:31:5: ( '[' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:31:7: '['
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:32:5: ( ']' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:32:7: ']'
             {
-            match('['); 
+            match(']'); 
 
             }
 
@@ -462,24 +479,6 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mT35() throws RecognitionException {
         try {
             int _type = T35;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:32:5: ( ']' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:32:7: ']'
-            {
-            match(']'); 
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end T35
-
-    // $ANTLR start T36
-    public final void mT36() throws RecognitionException {
-        try {
-            int _type = T36;
             // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:33:5: ( '.' )
             // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:33:7: '.'
             {
@@ -492,16 +491,16 @@ public class InternalExpressionsLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end T36
+    // $ANTLR end T35
 
     // $ANTLR start RULE_BOOLEAN
     public final void mRULE_BOOLEAN() throws RecognitionException {
         try {
             int _type = RULE_BOOLEAN;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1524:14: ( ( 'true' | 'false' ) )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1524:16: ( 'true' | 'false' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1655:14: ( ( 'true' | 'false' ) )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1655:16: ( 'true' | 'false' )
             {
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1524:16: ( 'true' | 'false' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1655:16: ( 'true' | 'false' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -513,13 +512,13 @@ public class InternalExpressionsLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("1524:16: ( 'true' | 'false' )", 1, 0, input);
+                    new NoViableAltException("1655:16: ( 'true' | 'false' )", 1, 0, input);
 
                 throw nvae;
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1524:17: 'true'
+                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1655:17: 'true'
                     {
                     match("true"); 
 
@@ -527,7 +526,7 @@ public class InternalExpressionsLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1524:24: 'false'
+                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1655:24: 'false'
                     {
                     match("false"); 
 
@@ -547,34 +546,14 @@ public class InternalExpressionsLexer extends Lexer {
     }
     // $ANTLR end RULE_BOOLEAN
 
-    // $ANTLR start RULE_STRING_TERMINAL
-    public final void mRULE_STRING_TERMINAL() throws RecognitionException {
-        try {
-            int _type = RULE_STRING_TERMINAL;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1526:22: ( '\"' RULE_STRING '\"' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1526:24: '\"' RULE_STRING '\"'
-            {
-            match('\"'); 
-            mRULE_STRING(); 
-            match('\"'); 
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end RULE_STRING_TERMINAL
-
     // $ANTLR start RULE_ID
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1528:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1528:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1657:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1657:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1528:11: ( '^' )?
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1657:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -583,7 +562,7 @@ public class InternalExpressionsLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1528:11: '^'
+                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1657:11: '^'
                     {
                     match('^'); 
 
@@ -602,7 +581,7 @@ public class InternalExpressionsLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1528:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1657:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -650,10 +629,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mRULE_INT() throws RecognitionException {
         try {
             int _type = RULE_INT;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1530:10: ( ( '0' .. '9' )+ )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1530:12: ( '0' .. '9' )+
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1659:10: ( ( '0' .. '9' )+ )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1659:12: ( '0' .. '9' )+
             {
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1530:12: ( '0' .. '9' )+
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1659:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -667,7 +646,7 @@ public class InternalExpressionsLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1530:13: '0' .. '9'
+            	    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1659:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -697,10 +676,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1532:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1532:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1661:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1661:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1532:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1661:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -712,16 +691,16 @@ public class InternalExpressionsLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("1532:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 7, 0, input);
+                    new NoViableAltException("1661:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 7, 0, input);
 
                 throw nvae;
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1532:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1661:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1532:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1661:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -737,7 +716,7 @@ public class InternalExpressionsLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1532:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1661:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -754,7 +733,7 @@ public class InternalExpressionsLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1532:62: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1661:62: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -780,10 +759,10 @@ public class InternalExpressionsLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1532:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1661:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1532:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1661:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -799,7 +778,7 @@ public class InternalExpressionsLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1532:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1661:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -816,7 +795,7 @@ public class InternalExpressionsLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1532:129: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1661:129: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -858,12 +837,12 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mRULE_ML_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_ML_COMMENT;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1534:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1534:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1663:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1663:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1534:24: ( options {greedy=false; } : . )*
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1663:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -888,7 +867,7 @@ public class InternalExpressionsLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1534:52: .
+            	    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1663:52: .
             	    {
             	    matchAny(); 
 
@@ -916,12 +895,12 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mRULE_SL_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_SL_COMMENT;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1536:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1536:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1665:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1665:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1536:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1665:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -934,7 +913,7 @@ public class InternalExpressionsLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1536:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1665:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -955,7 +934,7 @@ public class InternalExpressionsLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1536:40: ( ( '\\r' )? '\\n' )?
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1665:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -964,9 +943,9 @@ public class InternalExpressionsLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1536:41: ( '\\r' )? '\\n'
+                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1665:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1536:41: ( '\\r' )?
+                    // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1665:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -975,7 +954,7 @@ public class InternalExpressionsLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1536:41: '\\r'
+                            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1665:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1005,10 +984,10 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mRULE_WS() throws RecognitionException {
         try {
             int _type = RULE_WS;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1538:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1538:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1667:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1667:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1538:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1667:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -1061,8 +1040,8 @@ public class InternalExpressionsLexer extends Lexer {
     public final void mRULE_ANY_OTHER() throws RecognitionException {
         try {
             int _type = RULE_ANY_OTHER;
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1540:16: ( . )
-            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1540:18: .
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1669:16: ( . )
+            // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1669:18: .
             {
             matchAny(); 
 
@@ -1076,175 +1055,501 @@ public class InternalExpressionsLexer extends Lexer {
     // $ANTLR end RULE_ANY_OTHER
 
     public void mTokens() throws RecognitionException {
-        // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:8: ( T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | T33 | T34 | T35 | T36 | RULE_BOOLEAN | RULE_STRING_TERMINAL | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt13=33;
-        alt13 = dfa13.predict(input);
+        // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:8: ( T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | T33 | T34 | T35 | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt13=32;
+        int LA13_0 = input.LA(1);
+
+        if ( (LA13_0=='e') ) {
+            int LA13_1 = input.LA(2);
+
+            if ( (LA13_1=='q') ) {
+                int LA13_31 = input.LA(3);
+
+                if ( (LA13_31=='u') ) {
+                    int LA13_63 = input.LA(4);
+
+                    if ( (LA13_63=='i') ) {
+                        int LA13_71 = input.LA(5);
+
+                        if ( (LA13_71=='v') ) {
+                            int LA13_78 = input.LA(6);
+
+                            if ( ((LA13_78>='0' && LA13_78<='9')||(LA13_78>='A' && LA13_78<='Z')||LA13_78=='_'||(LA13_78>='a' && LA13_78<='z')) ) {
+                                alt13=26;
+                            }
+                            else {
+                                alt13=1;}
+                        }
+                        else {
+                            alt13=26;}
+                    }
+                    else {
+                        alt13=26;}
+                }
+                else {
+                    alt13=26;}
+            }
+            else {
+                alt13=26;}
+        }
+        else if ( (LA13_0=='i') ) {
+            int LA13_2 = input.LA(2);
+
+            if ( (LA13_2=='m') ) {
+                int LA13_33 = input.LA(3);
+
+                if ( (LA13_33=='p') ) {
+                    int LA13_64 = input.LA(4);
+
+                    if ( (LA13_64=='l') ) {
+                        int LA13_72 = input.LA(5);
+
+                        if ( (LA13_72=='y') ) {
+                            int LA13_79 = input.LA(6);
+
+                            if ( ((LA13_79>='0' && LA13_79<='9')||(LA13_79>='A' && LA13_79<='Z')||LA13_79=='_'||(LA13_79>='a' && LA13_79<='z')) ) {
+                                alt13=26;
+                            }
+                            else {
+                                alt13=2;}
+                        }
+                        else {
+                            alt13=26;}
+                    }
+                    else {
+                        alt13=26;}
+                }
+                else {
+                    alt13=26;}
+            }
+            else {
+                alt13=26;}
+        }
+        else if ( (LA13_0=='o') ) {
+            int LA13_3 = input.LA(2);
+
+            if ( (LA13_3=='r') ) {
+                int LA13_34 = input.LA(3);
+
+                if ( ((LA13_34>='0' && LA13_34<='9')||(LA13_34>='A' && LA13_34<='Z')||LA13_34=='_'||(LA13_34>='a' && LA13_34<='z')) ) {
+                    alt13=26;
+                }
+                else {
+                    alt13=3;}
+            }
+            else {
+                alt13=26;}
+        }
+        else if ( (LA13_0=='x') ) {
+            int LA13_4 = input.LA(2);
+
+            if ( (LA13_4=='o') ) {
+                int LA13_35 = input.LA(3);
+
+                if ( (LA13_35=='r') ) {
+                    int LA13_66 = input.LA(4);
+
+                    if ( ((LA13_66>='0' && LA13_66<='9')||(LA13_66>='A' && LA13_66<='Z')||LA13_66=='_'||(LA13_66>='a' && LA13_66<='z')) ) {
+                        alt13=26;
+                    }
+                    else {
+                        alt13=4;}
+                }
+                else {
+                    alt13=26;}
+            }
+            else {
+                alt13=26;}
+        }
+        else if ( (LA13_0=='a') ) {
+            int LA13_5 = input.LA(2);
+
+            if ( (LA13_5=='n') ) {
+                int LA13_36 = input.LA(3);
+
+                if ( (LA13_36=='d') ) {
+                    int LA13_67 = input.LA(4);
+
+                    if ( ((LA13_67>='0' && LA13_67<='9')||(LA13_67>='A' && LA13_67<='Z')||LA13_67=='_'||(LA13_67>='a' && LA13_67<='z')) ) {
+                        alt13=26;
+                    }
+                    else {
+                        alt13=5;}
+                }
+                else {
+                    alt13=26;}
+            }
+            else {
+                alt13=26;}
+        }
+        else if ( (LA13_0=='n') ) {
+            int LA13_6 = input.LA(2);
+
+            if ( (LA13_6=='o') ) {
+                int LA13_37 = input.LA(3);
+
+                if ( (LA13_37=='t') ) {
+                    int LA13_68 = input.LA(4);
+
+                    if ( ((LA13_68>='0' && LA13_68<='9')||(LA13_68>='A' && LA13_68<='Z')||LA13_68=='_'||(LA13_68>='a' && LA13_68<='z')) ) {
+                        alt13=26;
+                    }
+                    else {
+                        alt13=6;}
+                }
+                else {
+                    alt13=26;}
+            }
+            else {
+                alt13=26;}
+        }
+        else if ( (LA13_0=='(') ) {
+            alt13=7;
+        }
+        else if ( (LA13_0==')') ) {
+            alt13=8;
+        }
+        else if ( (LA13_0=='<') ) {
+            int LA13_9 = input.LA(2);
+
+            if ( (LA13_9=='=') ) {
+                alt13=9;
+            }
+            else {
+                alt13=10;}
+        }
+        else if ( (LA13_0=='>') ) {
+            int LA13_10 = input.LA(2);
+
+            if ( (LA13_10=='=') ) {
+                alt13=11;
+            }
+            else {
+                alt13=12;}
+        }
+        else if ( (LA13_0=='=') ) {
+            alt13=13;
+        }
+        else if ( (LA13_0=='!') ) {
+            int LA13_12 = input.LA(2);
+
+            if ( (LA13_12=='=') ) {
+                alt13=14;
+            }
+            else {
+                alt13=32;}
+        }
+        else if ( (LA13_0=='~') ) {
+            alt13=15;
+        }
+        else if ( (LA13_0=='+') ) {
+            alt13=16;
+        }
+        else if ( (LA13_0=='-') ) {
+            alt13=17;
+        }
+        else if ( (LA13_0=='*') ) {
+            alt13=18;
+        }
+        else if ( (LA13_0=='/') ) {
+            switch ( input.LA(2) ) {
+            case '/':
+                {
+                alt13=30;
+                }
+                break;
+            case '*':
+                {
+                alt13=29;
+                }
+                break;
+            default:
+                alt13=19;}
+
+        }
+        else if ( (LA13_0=='%') ) {
+            alt13=20;
+        }
+        else if ( (LA13_0=='^') ) {
+            int LA13_19 = input.LA(2);
+
+            if ( ((LA13_19>='A' && LA13_19<='Z')||LA13_19=='_'||(LA13_19>='a' && LA13_19<='z')) ) {
+                alt13=26;
+            }
+            else {
+                alt13=21;}
+        }
+        else if ( (LA13_0=='[') ) {
+            alt13=22;
+        }
+        else if ( (LA13_0==']') ) {
+            alt13=23;
+        }
+        else if ( (LA13_0=='.') ) {
+            alt13=24;
+        }
+        else if ( (LA13_0=='t') ) {
+            int LA13_23 = input.LA(2);
+
+            if ( (LA13_23=='r') ) {
+                int LA13_58 = input.LA(3);
+
+                if ( (LA13_58=='u') ) {
+                    int LA13_69 = input.LA(4);
+
+                    if ( (LA13_69=='e') ) {
+                        int LA13_76 = input.LA(5);
+
+                        if ( ((LA13_76>='0' && LA13_76<='9')||(LA13_76>='A' && LA13_76<='Z')||LA13_76=='_'||(LA13_76>='a' && LA13_76<='z')) ) {
+                            alt13=26;
+                        }
+                        else {
+                            alt13=25;}
+                    }
+                    else {
+                        alt13=26;}
+                }
+                else {
+                    alt13=26;}
+            }
+            else {
+                alt13=26;}
+        }
+        else if ( (LA13_0=='f') ) {
+            int LA13_24 = input.LA(2);
+
+            if ( (LA13_24=='a') ) {
+                int LA13_59 = input.LA(3);
+
+                if ( (LA13_59=='l') ) {
+                    int LA13_70 = input.LA(4);
+
+                    if ( (LA13_70=='s') ) {
+                        int LA13_77 = input.LA(5);
+
+                        if ( (LA13_77=='e') ) {
+                            int LA13_81 = input.LA(6);
+
+                            if ( ((LA13_81>='0' && LA13_81<='9')||(LA13_81>='A' && LA13_81<='Z')||LA13_81=='_'||(LA13_81>='a' && LA13_81<='z')) ) {
+                                alt13=26;
+                            }
+                            else {
+                                alt13=25;}
+                        }
+                        else {
+                            alt13=26;}
+                    }
+                    else {
+                        alt13=26;}
+                }
+                else {
+                    alt13=26;}
+            }
+            else {
+                alt13=26;}
+        }
+        else if ( ((LA13_0>='A' && LA13_0<='Z')||LA13_0=='_'||(LA13_0>='b' && LA13_0<='d')||(LA13_0>='g' && LA13_0<='h')||(LA13_0>='j' && LA13_0<='m')||(LA13_0>='p' && LA13_0<='s')||(LA13_0>='u' && LA13_0<='w')||(LA13_0>='y' && LA13_0<='z')) ) {
+            alt13=26;
+        }
+        else if ( ((LA13_0>='0' && LA13_0<='9')) ) {
+            alt13=27;
+        }
+        else if ( (LA13_0=='\"') ) {
+            int LA13_27 = input.LA(2);
+
+            if ( ((LA13_27>='\u0000' && LA13_27<='\uFFFE')) ) {
+                alt13=28;
+            }
+            else {
+                alt13=32;}
+        }
+        else if ( (LA13_0=='\'') ) {
+            int LA13_28 = input.LA(2);
+
+            if ( ((LA13_28>='\u0000' && LA13_28<='\uFFFE')) ) {
+                alt13=28;
+            }
+            else {
+                alt13=32;}
+        }
+        else if ( ((LA13_0>='\t' && LA13_0<='\n')||LA13_0=='\r'||LA13_0==' ') ) {
+            alt13=31;
+        }
+        else if ( ((LA13_0>='\u0000' && LA13_0<='\b')||(LA13_0>='\u000B' && LA13_0<='\f')||(LA13_0>='\u000E' && LA13_0<='\u001F')||(LA13_0>='#' && LA13_0<='$')||LA13_0=='&'||LA13_0==','||(LA13_0>=':' && LA13_0<=';')||(LA13_0>='?' && LA13_0<='@')||LA13_0=='\\'||LA13_0=='`'||(LA13_0>='{' && LA13_0<='}')||(LA13_0>='\u007F' && LA13_0<='\uFFFE')) ) {
+            alt13=32;
+        }
+        else {
+            NoViableAltException nvae =
+                new NoViableAltException("1:1: Tokens : ( T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | T33 | T34 | T35 | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );", 13, 0, input);
+
+            throw nvae;
+        }
         switch (alt13) {
             case 1 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:10: T13
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:10: T12
+                {
+                mT12(); 
+
+                }
+                break;
+            case 2 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:14: T13
                 {
                 mT13(); 
 
                 }
                 break;
-            case 2 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:14: T14
+            case 3 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:18: T14
                 {
                 mT14(); 
 
                 }
                 break;
-            case 3 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:18: T15
+            case 4 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:22: T15
                 {
                 mT15(); 
 
                 }
                 break;
-            case 4 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:22: T16
+            case 5 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:26: T16
                 {
                 mT16(); 
 
                 }
                 break;
-            case 5 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:26: T17
+            case 6 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:30: T17
                 {
                 mT17(); 
 
                 }
                 break;
-            case 6 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:30: T18
+            case 7 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:34: T18
                 {
                 mT18(); 
 
                 }
                 break;
-            case 7 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:34: T19
+            case 8 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:38: T19
                 {
                 mT19(); 
 
                 }
                 break;
-            case 8 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:38: T20
+            case 9 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:42: T20
                 {
                 mT20(); 
 
                 }
                 break;
-            case 9 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:42: T21
+            case 10 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:46: T21
                 {
                 mT21(); 
 
                 }
                 break;
-            case 10 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:46: T22
+            case 11 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:50: T22
                 {
                 mT22(); 
 
                 }
                 break;
-            case 11 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:50: T23
+            case 12 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:54: T23
                 {
                 mT23(); 
 
                 }
                 break;
-            case 12 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:54: T24
+            case 13 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:58: T24
                 {
                 mT24(); 
 
                 }
                 break;
-            case 13 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:58: T25
+            case 14 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:62: T25
                 {
                 mT25(); 
 
                 }
                 break;
-            case 14 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:62: T26
+            case 15 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:66: T26
                 {
                 mT26(); 
 
                 }
                 break;
-            case 15 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:66: T27
+            case 16 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:70: T27
                 {
                 mT27(); 
 
                 }
                 break;
-            case 16 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:70: T28
+            case 17 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:74: T28
                 {
                 mT28(); 
 
                 }
                 break;
-            case 17 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:74: T29
+            case 18 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:78: T29
                 {
                 mT29(); 
 
                 }
                 break;
-            case 18 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:78: T30
+            case 19 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:82: T30
                 {
                 mT30(); 
 
                 }
                 break;
-            case 19 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:82: T31
+            case 20 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:86: T31
                 {
                 mT31(); 
 
                 }
                 break;
-            case 20 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:86: T32
+            case 21 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:90: T32
                 {
                 mT32(); 
 
                 }
                 break;
-            case 21 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:90: T33
+            case 22 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:94: T33
                 {
                 mT33(); 
 
                 }
                 break;
-            case 22 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:94: T34
+            case 23 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:98: T34
                 {
                 mT34(); 
 
                 }
                 break;
-            case 23 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:98: T35
+            case 24 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:102: T35
                 {
                 mT35(); 
-
-                }
-                break;
-            case 24 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:102: T36
-                {
-                mT36(); 
 
                 }
                 break;
@@ -1256,56 +1561,49 @@ public class InternalExpressionsLexer extends Lexer {
                 }
                 break;
             case 26 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:119: RULE_STRING_TERMINAL
-                {
-                mRULE_STRING_TERMINAL(); 
-
-                }
-                break;
-            case 27 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:140: RULE_ID
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:119: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 28 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:148: RULE_INT
+            case 27 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:127: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 29 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:157: RULE_STRING
+            case 28 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:136: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 30 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:169: RULE_ML_COMMENT
+            case 29 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:148: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 31 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:185: RULE_SL_COMMENT
+            case 30 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:164: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 32 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:201: RULE_WS
+            case 31 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:180: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 33 :
-                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:209: RULE_ANY_OTHER
+            case 32 :
+                // ../org.storydriven.modeling.expressions.common/src-gen/org/storydriven/modeling/expressions/common/parser/antlr/internal/InternalExpressions.g:1:188: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1317,172 +1615,6 @@ public class InternalExpressionsLexer extends Lexer {
     }
 
 
-    protected DFA13 dfa13 = new DFA13(this);
-    static final String DFA13_eotS =
-        "\1\uffff\6\40\2\uffff\1\51\1\53\1\uffff\1\36\4\uffff\1\64\1\uffff"+
-        "\1\66\3\uffff\2\40\1\36\2\uffff\1\36\2\uffff\1\40\1\uffff\1\40\1"+
-        "\103\3\40\24\uffff\2\40\2\uffff\1\74\2\uffff\2\40\1\uffff\1\120"+
-        "\1\121\1\122\2\40\1\uffff\1\74\3\uffff\2\40\3\uffff\1\131\1\40\2"+
-        "\uffff\1\133\1\134\1\uffff\1\131\2\uffff";
-    static final String DFA13_eofS =
-        "\135\uffff";
-    static final String DFA13_minS =
-        "\1\0\1\161\1\155\1\162\1\157\1\156\1\157\2\uffff\2\75\1\uffff\1"+
-        "\75\4\uffff\1\52\1\uffff\1\101\3\uffff\1\162\1\141\1\0\2\uffff\1"+
-        "\0\2\uffff\1\165\1\uffff\1\160\1\60\1\162\1\144\1\164\24\uffff\1"+
-        "\165\1\154\1\uffff\2\0\2\uffff\1\151\1\154\1\uffff\3\60\1\145\1"+
-        "\163\1\42\3\0\1\uffff\1\166\1\171\3\uffff\1\60\1\145\1\0\1\uffff"+
-        "\2\60\1\uffff\1\60\2\uffff";
-    static final String DFA13_maxS =
-        "\1\ufffe\1\161\1\155\1\162\1\157\1\156\1\157\2\uffff\2\75\1\uffff"+
-        "\1\75\4\uffff\1\57\1\uffff\1\172\3\uffff\1\162\1\141\1\ufffe\2\uffff"+
-        "\1\ufffe\2\uffff\1\165\1\uffff\1\160\1\172\1\162\1\144\1\164\24"+
-        "\uffff\1\165\1\154\1\uffff\2\ufffe\2\uffff\1\151\1\154\1\uffff\3"+
-        "\172\1\145\1\163\1\164\3\ufffe\1\uffff\1\166\1\171\3\uffff\1\172"+
-        "\1\145\1\ufffe\1\uffff\2\172\1\uffff\1\172\2\uffff";
-    static final String DFA13_acceptS =
-        "\7\uffff\1\7\1\10\2\uffff\1\15\1\uffff\1\17\1\20\1\21\1\22\1\uffff"+
-        "\1\24\1\uffff\1\26\1\27\1\30\3\uffff\1\33\1\34\1\uffff\1\40\1\41"+
-        "\1\uffff\1\33\5\uffff\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17"+
-        "\1\20\1\21\1\22\1\36\1\37\1\23\1\24\1\25\1\26\1\27\1\30\2\uffff"+
-        "\1\35\2\uffff\1\34\1\40\2\uffff\1\3\11\uffff\1\32\2\uffff\1\4\1"+
-        "\5\1\6\3\uffff\1\32\2\uffff\1\31\1\uffff\1\1\1\2";
-    static final String DFA13_specialS =
-        "\135\uffff}>";
-    static final String[] DFA13_transitionS = {
-            "\11\36\2\35\2\36\1\35\22\36\1\35\1\14\1\31\2\36\1\22\1\36\1"+
-            "\34\1\7\1\10\1\20\1\16\1\36\1\17\1\26\1\21\12\33\2\36\1\11\1"+
-            "\13\1\12\2\36\32\32\1\24\1\36\1\25\1\23\1\32\1\36\1\5\3\32\1"+
-            "\1\1\30\2\32\1\2\4\32\1\6\1\3\4\32\1\27\3\32\1\4\2\32\3\36\1"+
-            "\15\uff80\36",
-            "\1\37",
-            "\1\41",
-            "\1\42",
-            "\1\43",
-            "\1\44",
-            "\1\45",
-            "",
-            "",
-            "\1\50",
-            "\1\52",
-            "",
-            "\1\55",
-            "",
-            "",
-            "",
-            "",
-            "\1\62\4\uffff\1\63",
-            "",
-            "\32\40\4\uffff\1\40\1\uffff\32\40",
-            "",
-            "",
-            "",
-            "\1\72",
-            "\1\73",
-            "\42\74\1\76\4\74\1\75\uffd7\74",
-            "",
-            "",
-            "\uffff\74",
-            "",
-            "",
-            "\1\101",
-            "",
-            "\1\102",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\1\104",
-            "\1\105",
-            "\1\106",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\107",
-            "\1\110",
-            "",
-            "\42\114\1\112\4\114\1\113\64\114\1\111\uffa2\114",
-            "\uffff\115",
-            "",
-            "",
-            "\1\116",
-            "\1\117",
-            "",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\1\123",
-            "\1\124",
-            "\1\125\4\uffff\1\125\64\uffff\1\125\5\uffff\1\125\3\uffff\1"+
-            "\125\7\uffff\1\125\3\uffff\1\125\1\uffff\1\125",
-            "\uffff\115",
-            "\42\74\1\126\uffdc\74",
-            "\42\114\1\112\4\114\1\113\64\114\1\111\uffa2\114",
-            "",
-            "\1\127",
-            "\1\130",
-            "",
-            "",
-            "",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\1\132",
-            "\42\114\1\112\4\114\1\113\64\114\1\111\uffa2\114",
-            "",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "",
-            ""
-    };
-
-    static final short[] DFA13_eot = DFA.unpackEncodedString(DFA13_eotS);
-    static final short[] DFA13_eof = DFA.unpackEncodedString(DFA13_eofS);
-    static final char[] DFA13_min = DFA.unpackEncodedStringToUnsignedChars(DFA13_minS);
-    static final char[] DFA13_max = DFA.unpackEncodedStringToUnsignedChars(DFA13_maxS);
-    static final short[] DFA13_accept = DFA.unpackEncodedString(DFA13_acceptS);
-    static final short[] DFA13_special = DFA.unpackEncodedString(DFA13_specialS);
-    static final short[][] DFA13_transition;
-
-    static {
-        int numStates = DFA13_transitionS.length;
-        DFA13_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA13_transition[i] = DFA.unpackEncodedString(DFA13_transitionS[i]);
-        }
-    }
-
-    class DFA13 extends DFA {
-
-        public DFA13(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 13;
-            this.eot = DFA13_eot;
-            this.eof = DFA13_eof;
-            this.min = DFA13_min;
-            this.max = DFA13_max;
-            this.accept = DFA13_accept;
-            this.special = DFA13_special;
-            this.transition = DFA13_transition;
-        }
-        public String getDescription() {
-            return "1:1: Tokens : ( T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | T33 | T34 | T35 | T36 | RULE_BOOLEAN | RULE_STRING_TERMINAL | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
-        }
-    }
  
 
 }

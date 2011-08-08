@@ -9,16 +9,16 @@ LExpression:
 	;
 
 Equivalent returns LExpression:
-	Implication({Equivalent.left=current} 'equiv' right=Implication)?;
+	Implication({Equivalent.left=current} 'equiv' right=Equivalent)?;
 
 Implication returns LExpression:
-	Disjunction({Imply.left=current} 'imply' right=Disjunction)?;
+	Disjunction({Imply.left=current} 'imply' right=Implication)?;
 	
 Disjunction returns LExpression:
-	Conjunction(({Or.left=current} 'or' | {Xor.left=current} 'xor') right=Conjunction)?;
+	Conjunction(({Or.left=current} 'or' | {Xor.left=current} 'xor') right=Disjunction)?;
 
 Conjunction returns LExpression:
-	Negation({And.left=current} 'and' right=Negation)?;
+	Negation({And.left=current} 'and' right=Conjunction)?;
 
 Negation returns LExpression:
 	'not' Negated  
@@ -31,10 +31,13 @@ Negated returns LExpression:
 CExpression returns LExpression:
 	'(' LExpression ')' |
 	Compare
-	| BooleanValue;
-	
+	| BooleanValue
+	| Variable
+	;
+
+
 Compare returns CExpression:
-	AExpression( 
+	SomeValue( 
 	  {LessOrEqual.left=current} '<='
 	| {Less.left=current} '<'
 	| {GreaterOrEqual.left=current} '>='
@@ -42,7 +45,15 @@ Compare returns CExpression:
 	| {Equal.left=current} '='
 	| {Unequal.left=current} '!='
 	| {Approx.left=current} '~') 
-	right=AExpression;	
+	right=SomeValue
+	;	
+
+SomeValue:
+	StringValue
+	| BooleanValue
+	| AExpression
+	;
+
 
 // Arithmetic Layer   ------------------------------------------------
 AExpression:
@@ -59,11 +70,11 @@ Power returns AExpression:
 
 PrimaryExpression returns AExpression:
 	'[' AExpression ']' |
-	NumberValue;
+	NumberValue
+	|Variable;
 
 NumberValue: 
 	numValue = NUMBER
-	| varName = VARIABLE_VALUE
 	;
 
 NUMBER returns EBigDecimal:
@@ -71,17 +82,20 @@ NUMBER returns EBigDecimal:
 	
 BooleanValue: 
 	value = BOOLEAN
-	| varName = VARIABLE_VALUE
 	;
 	
 terminal BOOLEAN returns EBoolean: 
 	'true' 
 	| 'false';
 
+StringValue: 
+	strValue = STRING
+	;
+
+Variable:
+	varName = VARIABLE_VALUE;
 
 VARIABLE_VALUE returns EString: 
 	ID  
 	| ID '.' ID ;
 	
-terminal STRING_TERMINAL :
-	'"' STRING '"';

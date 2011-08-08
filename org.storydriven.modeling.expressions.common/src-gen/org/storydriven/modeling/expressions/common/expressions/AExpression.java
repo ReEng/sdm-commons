@@ -17,6 +17,6 @@ package org.storydriven.modeling.expressions.common.expressions;
  * @model
  * @generated
  */
-public interface AExpression extends CExpression
+public interface AExpression extends SomeValue
 {
 } // AExpression

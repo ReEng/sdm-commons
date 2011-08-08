@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.storydriven.modeling.expressions.common.expressions.AExpression;
 import org.storydriven.modeling.expressions.common.expressions.ExpressionsPackage;
 import org.storydriven.modeling.expressions.common.expressions.Greater;
+import org.storydriven.modeling.expressions.common.expressions.SomeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +42,7 @@ public class GreaterImpl extends CExpressionImpl implements Greater
    * @generated
    * @ordered
    */
-  protected AExpression left;
+  protected SomeValue left;
 
   /**
    * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
@@ -52,7 +52,7 @@ public class GreaterImpl extends CExpressionImpl implements Greater
    * @generated
    * @ordered
    */
-  protected AExpression right;
+  protected SomeValue right;
 
   /**
    * <!-- begin-user-doc -->
@@ -80,7 +80,7 @@ public class GreaterImpl extends CExpressionImpl implements Greater
    * <!-- end-user-doc -->
    * @generated
    */
-  public AExpression getLeft()
+  public SomeValue getLeft()
   {
     return left;
   }
@@ -90,9 +90,9 @@ public class GreaterImpl extends CExpressionImpl implements Greater
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeft(AExpression newLeft, NotificationChain msgs)
+  public NotificationChain basicSetLeft(SomeValue newLeft, NotificationChain msgs)
   {
-    AExpression oldLeft = left;
+    SomeValue oldLeft = left;
     left = newLeft;
     if (eNotificationRequired())
     {
@@ -107,7 +107,7 @@ public class GreaterImpl extends CExpressionImpl implements Greater
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(AExpression newLeft)
+  public void setLeft(SomeValue newLeft)
   {
     if (newLeft != left)
     {
@@ -128,7 +128,7 @@ public class GreaterImpl extends CExpressionImpl implements Greater
    * <!-- end-user-doc -->
    * @generated
    */
-  public AExpression getRight()
+  public SomeValue getRight()
   {
     return right;
   }
@@ -138,9 +138,9 @@ public class GreaterImpl extends CExpressionImpl implements Greater
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRight(AExpression newRight, NotificationChain msgs)
+  public NotificationChain basicSetRight(SomeValue newRight, NotificationChain msgs)
   {
-    AExpression oldRight = right;
+    SomeValue oldRight = right;
     right = newRight;
     if (eNotificationRequired())
     {
@@ -155,7 +155,7 @@ public class GreaterImpl extends CExpressionImpl implements Greater
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRight(AExpression newRight)
+  public void setRight(SomeValue newRight)
   {
     if (newRight != right)
     {
@@ -218,10 +218,10 @@ public class GreaterImpl extends CExpressionImpl implements Greater
     switch (featureID)
     {
       case ExpressionsPackage.GREATER__LEFT:
-        setLeft((AExpression)newValue);
+        setLeft((SomeValue)newValue);
         return;
       case ExpressionsPackage.GREATER__RIGHT:
-        setRight((AExpression)newValue);
+        setRight((SomeValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -238,10 +238,10 @@ public class GreaterImpl extends CExpressionImpl implements Greater
     switch (featureID)
     {
       case ExpressionsPackage.GREATER__LEFT:
-        setLeft((AExpression)null);
+        setLeft((SomeValue)null);
         return;
       case ExpressionsPackage.GREATER__RIGHT:
-        setRight((AExpression)null);
+        setRight((SomeValue)null);
         return;
     }
     super.eUnset(featureID);

@@ -41,11 +41,10 @@ public class ExpressionsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNegationAccess().getAlternatives(), "rule__Negation__Alternatives");
 					put(grammarAccess.getCExpressionAccess().getAlternatives(), "rule__CExpression__Alternatives");
 					put(grammarAccess.getCompareAccess().getAlternatives_1(), "rule__Compare__Alternatives_1");
+					put(grammarAccess.getSomeValueAccess().getAlternatives(), "rule__SomeValue__Alternatives");
 					put(grammarAccess.getAdditionAccess().getAlternatives_1_0(), "rule__Addition__Alternatives_1_0");
 					put(grammarAccess.getMultiplicationAccess().getAlternatives_1_0(), "rule__Multiplication__Alternatives_1_0");
 					put(grammarAccess.getPrimaryExpressionAccess().getAlternatives(), "rule__PrimaryExpression__Alternatives");
-					put(grammarAccess.getNumberValueAccess().getAlternatives(), "rule__NumberValue__Alternatives");
-					put(grammarAccess.getBooleanValueAccess().getAlternatives(), "rule__BooleanValue__Alternatives");
 					put(grammarAccess.getVARIABLE_VALUEAccess().getAlternatives(), "rule__VARIABLE_VALUE__Alternatives");
 					put(grammarAccess.getEquivalentAccess().getGroup(), "rule__Equivalent__Group__0");
 					put(grammarAccess.getEquivalentAccess().getGroup_1(), "rule__Equivalent__Group_1__0");
@@ -93,10 +92,10 @@ public class ExpressionsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAdditionAccess().getRightAssignment_1_1(), "rule__Addition__RightAssignment_1_1");
 					put(grammarAccess.getMultiplicationAccess().getRightAssignment_1_1(), "rule__Multiplication__RightAssignment_1_1");
 					put(grammarAccess.getPowerAccess().getRightAssignment_1_1(), "rule__Power__RightAssignment_1_1");
-					put(grammarAccess.getNumberValueAccess().getNumValueAssignment_0(), "rule__NumberValue__NumValueAssignment_0");
-					put(grammarAccess.getNumberValueAccess().getVarNameAssignment_1(), "rule__NumberValue__VarNameAssignment_1");
-					put(grammarAccess.getBooleanValueAccess().getValueAssignment_0(), "rule__BooleanValue__ValueAssignment_0");
-					put(grammarAccess.getBooleanValueAccess().getVarNameAssignment_1(), "rule__BooleanValue__VarNameAssignment_1");
+					put(grammarAccess.getNumberValueAccess().getNumValueAssignment(), "rule__NumberValue__NumValueAssignment");
+					put(grammarAccess.getBooleanValueAccess().getValueAssignment(), "rule__BooleanValue__ValueAssignment");
+					put(grammarAccess.getStringValueAccess().getStrValueAssignment(), "rule__StringValue__StrValueAssignment");
+					put(grammarAccess.getVariableAccess().getVarNameAssignment(), "rule__Variable__VarNameAssignment");
 				}
 			};
 		}

@@ -70,9 +70,12 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
     {
       case ExpressionsPackage.LEXPRESSION: return createLExpression();
       case ExpressionsPackage.CEXPRESSION: return createCExpression();
+      case ExpressionsPackage.SOME_VALUE: return createSomeValue();
       case ExpressionsPackage.AEXPRESSION: return createAExpression();
       case ExpressionsPackage.NUMBER_VALUE: return createNumberValue();
       case ExpressionsPackage.BOOLEAN_VALUE: return createBooleanValue();
+      case ExpressionsPackage.STRING_VALUE: return createStringValue();
+      case ExpressionsPackage.VARIABLE: return createVariable();
       case ExpressionsPackage.EQUIVALENT: return createEquivalent();
       case ExpressionsPackage.IMPLY: return createImply();
       case ExpressionsPackage.OR: return createOr();
@@ -124,6 +127,17 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    * <!-- end-user-doc -->
    * @generated
    */
+  public SomeValue createSomeValue()
+  {
+    SomeValueImpl someValue = new SomeValueImpl();
+    return someValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AExpression createAExpression()
   {
     AExpressionImpl aExpression = new AExpressionImpl();
@@ -150,6 +164,28 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
   {
     BooleanValueImpl booleanValue = new BooleanValueImpl();
     return booleanValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringValue createStringValue()
+  {
+    StringValueImpl stringValue = new StringValueImpl();
+    return stringValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable createVariable()
+  {
+    VariableImpl variable = new VariableImpl();
+    return variable;
   }
 
   /**

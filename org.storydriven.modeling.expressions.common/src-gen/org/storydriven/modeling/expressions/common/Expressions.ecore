@@ -5,13 +5,18 @@
     nsURI="http://www.storydriven.org/modeling/expressions/common/Expressions" nsPrefix="expressions">
   <eClassifiers xsi:type="ecore:EClass" name="LExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="CExpression" eSuperTypes="#//LExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AExpression" eSuperTypes="#//CExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SomeValue" eSuperTypes="#//CExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AExpression" eSuperTypes="#//SomeValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumberValue" eSuperTypes="#//AExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BooleanValue" eSuperTypes="#//LExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanValue" eSuperTypes="#//LExpression #//SomeValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringValue" eSuperTypes="#//SomeValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//LExpression #//AExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Equivalent" eSuperTypes="#//LExpression">
@@ -49,45 +54,45 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LessOrEqual" eSuperTypes="#//CExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//AExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//SomeValue"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//AExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//SomeValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Less" eSuperTypes="#//CExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//AExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//SomeValue"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//AExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//SomeValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GreaterOrEqual" eSuperTypes="#//CExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//AExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//SomeValue"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//AExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//SomeValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Greater" eSuperTypes="#//CExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//AExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//SomeValue"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//AExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//SomeValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Equal" eSuperTypes="#//CExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//AExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//SomeValue"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//AExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//SomeValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Unequal" eSuperTypes="#//CExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//AExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//SomeValue"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//AExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//SomeValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Approx" eSuperTypes="#//CExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//AExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//SomeValue"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//AExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//SomeValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Plus" eSuperTypes="#//AExpression">

@@ -89,6 +89,11 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl
         return createCExpressionAdapter();
       }
       @Override
+      public Adapter caseSomeValue(SomeValue object)
+      {
+        return createSomeValueAdapter();
+      }
+      @Override
       public Adapter caseAExpression(AExpression object)
       {
         return createAExpressionAdapter();
@@ -102,6 +107,16 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl
       public Adapter caseBooleanValue(BooleanValue object)
       {
         return createBooleanValueAdapter();
+      }
+      @Override
+      public Adapter caseStringValue(StringValue object)
+      {
+        return createStringValueAdapter();
+      }
+      @Override
+      public Adapter caseVariable(Variable object)
+      {
+        return createVariableAdapter();
       }
       @Override
       public Adapter caseEquivalent(Equivalent object)
@@ -251,6 +266,21 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.storydriven.modeling.expressions.common.expressions.SomeValue <em>Some Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.storydriven.modeling.expressions.common.expressions.SomeValue
+   * @generated
+   */
+  public Adapter createSomeValueAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.storydriven.modeling.expressions.common.expressions.AExpression <em>AExpression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -291,6 +321,36 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBooleanValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.storydriven.modeling.expressions.common.expressions.StringValue <em>String Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.storydriven.modeling.expressions.common.expressions.StringValue
+   * @generated
+   */
+  public Adapter createStringValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.storydriven.modeling.expressions.common.expressions.Variable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.storydriven.modeling.expressions.common.expressions.Variable
+   * @generated
+   */
+  public Adapter createVariableAdapter()
   {
     return null;
   }
