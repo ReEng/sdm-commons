@@ -5,6 +5,7 @@ grammar InternalExpressions;
 
 options {
 	superClass=AbstractInternalContentAssistParser;
+	backtrack=true;
 	
 }
 
@@ -306,6 +307,8 @@ ruleCompare
 finally {
 	restoreStackSize(stackSize);
 }
+
+
 
 
 
@@ -775,6 +778,7 @@ rule__Compare__Alternatives_1
 finally {
 	restoreStackSize(stackSize);
 }
+
 
 rule__SomeValue__Alternatives
     @init {
@@ -2398,6 +2402,14 @@ finally {
 
 
 
+
+
+
+
+
+
+
+
 rule__Addition__Group__0
     @init {
 		int stackSize = keepStackSize();
@@ -3172,11 +3184,11 @@ rule__PrimaryExpression__Group_0__0__Impl
     }
 :
 (
-{ before(grammarAccess.getPrimaryExpressionAccess().getLeftSquareBracketKeyword_0_0()); }
+{ before(grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_0_0()); }
 
-	'[' 
+	'(' 
 
-{ after(grammarAccess.getPrimaryExpressionAccess().getLeftSquareBracketKeyword_0_0()); }
+{ after(grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_0_0()); }
 )
 
 ;
@@ -3231,11 +3243,11 @@ rule__PrimaryExpression__Group_0__2__Impl
     }
 :
 (
-{ before(grammarAccess.getPrimaryExpressionAccess().getRightSquareBracketKeyword_0_2()); }
+{ before(grammarAccess.getPrimaryExpressionAccess().getRightParenthesisKeyword_0_2()); }
 
-	']' 
+	')' 
 
-{ after(grammarAccess.getPrimaryExpressionAccess().getRightSquareBracketKeyword_0_2()); }
+{ after(grammarAccess.getPrimaryExpressionAccess().getRightParenthesisKeyword_0_2()); }
 )
 
 ;
@@ -3558,6 +3570,7 @@ rule__Compare__RightAssignment_2
 finally {
 	restoreStackSize(stackSize);
 }
+
 
 rule__Addition__RightAssignment_1_1
     @init {

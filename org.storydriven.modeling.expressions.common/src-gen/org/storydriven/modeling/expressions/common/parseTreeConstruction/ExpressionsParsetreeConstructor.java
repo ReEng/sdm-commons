@@ -40,16 +40,17 @@ protected class ThisRootNode extends RootToken {
 			case 6: return new Negated_Group(this, this, 6, inst);
 			case 7: return new CExpression_Alternatives(this, this, 7, inst);
 			case 8: return new Compare_Group(this, this, 8, inst);
-			case 9: return new SomeValue_Alternatives(this, this, 9, inst);
-			case 10: return new AExpression_AdditionParserRuleCall(this, this, 10, inst);
-			case 11: return new Addition_Group(this, this, 11, inst);
-			case 12: return new Multiplication_Group(this, this, 12, inst);
-			case 13: return new Power_Group(this, this, 13, inst);
-			case 14: return new PrimaryExpression_Alternatives(this, this, 14, inst);
-			case 15: return new NumberValue_NumValueAssignment(this, this, 15, inst);
-			case 16: return new BooleanValue_ValueAssignment(this, this, 16, inst);
-			case 17: return new StringValue_StrValueAssignment(this, this, 17, inst);
-			case 18: return new Variable_VarNameAssignment(this, this, 18, inst);
+			case 9: return new OpenCompare_Group(this, this, 9, inst);
+			case 10: return new SomeValue_Alternatives(this, this, 10, inst);
+			case 11: return new AExpression_AdditionParserRuleCall(this, this, 11, inst);
+			case 12: return new Addition_Group(this, this, 12, inst);
+			case 13: return new Multiplication_Group(this, this, 13, inst);
+			case 14: return new Power_Group(this, this, 14, inst);
+			case 15: return new PrimaryExpression_Alternatives(this, this, 15, inst);
+			case 16: return new NumberValue_NumValueAssignment(this, this, 16, inst);
+			case 17: return new BooleanValue_ValueAssignment(this, this, 17, inst);
+			case 18: return new StringValue_StrValueAssignment(this, this, 18, inst);
+			case 19: return new Variable_VarNameAssignment(this, this, 19, inst);
 			default: return null;
 		}	
 	}	
@@ -1681,10 +1682,6 @@ protected class CExpression_VariableParserRuleCall_3 extends RuleCallToken {
 
 /************ begin Rule Compare ****************
  *
- * //	|SomeValue(({UnknownEqual.left=current} '='
- * 
- * //	| {UnknownUnequal.left=current} '!=') right=SomeValue)
- * 
  * Compare returns CExpression:
  * 	SomeValue ({LessOrEqual.left=current} "<=" | {Less.left=current} "<" | {GreaterOrEqual.left=current} ">=" |
  * 	{Greater.left=current} ">" | {Equal.left=current} "=" | {Unequal.left=current} "!=" | {Approx.left=current} "~")
@@ -2421,16 +2418,906 @@ protected class Compare_RightAssignment_2 extends AssignmentToken  {
 /************ end Rule Compare ****************/
 
 
+/************ begin Rule OpenCompare ****************
+ *
+ * OpenCompare returns CExpression:
+ * 	SomeValue ({LessOrEqual.left=current} ")" "<=" | {Less.left=current} ")" "<" | {GreaterOrEqual.left=current} ")" ">="
+ * 	| {Greater.left=current} ")" ">" | {Equal.left=current} ")" "=" | {Unequal.left=current} ")" "!=" |
+ * 	{Approx.left=current} ")" "~") right=SomeValue;
+ *
+ **/
+
+// SomeValue ({LessOrEqual.left=current} ")" "<=" | {Less.left=current} ")" "<" | {GreaterOrEqual.left=current} ")" ">=" |
+// {Greater.left=current} ")" ">" | {Equal.left=current} ")" "=" | {Unequal.left=current} ")" "!=" | {Approx.left=current}
+// ")" "~") right=SomeValue
+protected class OpenCompare_Group extends GroupToken {
+	
+	public OpenCompare_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_RightAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getOpenCompareAccess().getApproxLeftAction_1_6_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getOpenCompareAccess().getEqualLeftAction_1_4_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getOpenCompareAccess().getGreaterLeftAction_1_3_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getOpenCompareAccess().getGreaterOrEqualLeftAction_1_2_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getOpenCompareAccess().getLessLeftAction_1_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getOpenCompareAccess().getLessOrEqualLeftAction_1_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getOpenCompareAccess().getUnequalLeftAction_1_5_0().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// SomeValue
+protected class OpenCompare_SomeValueParserRuleCall_0 extends RuleCallToken {
+	
+	public OpenCompare_SomeValueParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getSomeValueParserRuleCall_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new SomeValue_Alternatives(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getBooleanValueRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getAdditionAccess().getMinusLeftAction_1_0_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMultiplicationAccess().getModLeftAction_1_0_2_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getNumberValueRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getAdditionAccess().getPlusLeftAction_1_0_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getPowerAccess().getPowLeftAction_1_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getStringValueRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getVariableRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(SomeValue_Alternatives.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+// {LessOrEqual.left=current} ")" "<=" | {Less.left=current} ")" "<" | {GreaterOrEqual.left=current} ")" ">=" |
+// {Greater.left=current} ")" ">" | {Equal.left=current} ")" "=" | {Unequal.left=current} ")" "!=" | {Approx.left=current}
+// ")" "~"
+protected class OpenCompare_Alternatives_1 extends AlternativesToken {
+
+	public OpenCompare_Alternatives_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Alternatives getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getAlternatives_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_Group_1_0(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new OpenCompare_Group_1_1(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new OpenCompare_Group_1_2(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new OpenCompare_Group_1_3(lastRuleCallOrigin, this, 3, inst);
+			case 4: return new OpenCompare_Group_1_4(lastRuleCallOrigin, this, 4, inst);
+			case 5: return new OpenCompare_Group_1_5(lastRuleCallOrigin, this, 5, inst);
+			case 6: return new OpenCompare_Group_1_6(lastRuleCallOrigin, this, 6, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// {LessOrEqual.left=current} ")" "<="
+protected class OpenCompare_Group_1_0 extends GroupToken {
+	
+	public OpenCompare_Group_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getGroup_1_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_LessThanSignEqualsSignKeyword_1_0_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getOpenCompareAccess().getLessOrEqualLeftAction_1_0_0().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// {LessOrEqual.left=current}
+protected class OpenCompare_LessOrEqualLeftAction_1_0_0 extends ActionToken  {
+
+	public OpenCompare_LessOrEqualLeftAction_1_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Action getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getLessOrEqualLeftAction_1_0_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_SomeValueParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		Object val = eObjectConsumer.getConsumable("left", false);
+		if(val == null) return null;
+		if(!eObjectConsumer.isConsumedWithLastConsumtion("left")) return null;
+		return createEObjectConsumer((EObject) val);
+	}
+}
+
+// ")"
+protected class OpenCompare_RightParenthesisKeyword_1_0_1 extends KeywordToken  {
+	
+	public OpenCompare_RightParenthesisKeyword_1_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getRightParenthesisKeyword_1_0_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_LessOrEqualLeftAction_1_0_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "<="
+protected class OpenCompare_LessThanSignEqualsSignKeyword_1_0_2 extends KeywordToken  {
+	
+	public OpenCompare_LessThanSignEqualsSignKeyword_1_0_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getLessThanSignEqualsSignKeyword_1_0_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_RightParenthesisKeyword_1_0_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+// {Less.left=current} ")" "<"
+protected class OpenCompare_Group_1_1 extends GroupToken {
+	
+	public OpenCompare_Group_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getGroup_1_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_LessThanSignKeyword_1_1_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getOpenCompareAccess().getLessLeftAction_1_1_0().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// {Less.left=current}
+protected class OpenCompare_LessLeftAction_1_1_0 extends ActionToken  {
+
+	public OpenCompare_LessLeftAction_1_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Action getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getLessLeftAction_1_1_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_SomeValueParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		Object val = eObjectConsumer.getConsumable("left", false);
+		if(val == null) return null;
+		if(!eObjectConsumer.isConsumedWithLastConsumtion("left")) return null;
+		return createEObjectConsumer((EObject) val);
+	}
+}
+
+// ")"
+protected class OpenCompare_RightParenthesisKeyword_1_1_1 extends KeywordToken  {
+	
+	public OpenCompare_RightParenthesisKeyword_1_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getRightParenthesisKeyword_1_1_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_LessLeftAction_1_1_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "<"
+protected class OpenCompare_LessThanSignKeyword_1_1_2 extends KeywordToken  {
+	
+	public OpenCompare_LessThanSignKeyword_1_1_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getLessThanSignKeyword_1_1_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_RightParenthesisKeyword_1_1_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+// {GreaterOrEqual.left=current} ")" ">="
+protected class OpenCompare_Group_1_2 extends GroupToken {
+	
+	public OpenCompare_Group_1_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getGroup_1_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_GreaterThanSignEqualsSignKeyword_1_2_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getOpenCompareAccess().getGreaterOrEqualLeftAction_1_2_0().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// {GreaterOrEqual.left=current}
+protected class OpenCompare_GreaterOrEqualLeftAction_1_2_0 extends ActionToken  {
+
+	public OpenCompare_GreaterOrEqualLeftAction_1_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Action getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getGreaterOrEqualLeftAction_1_2_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_SomeValueParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		Object val = eObjectConsumer.getConsumable("left", false);
+		if(val == null) return null;
+		if(!eObjectConsumer.isConsumedWithLastConsumtion("left")) return null;
+		return createEObjectConsumer((EObject) val);
+	}
+}
+
+// ")"
+protected class OpenCompare_RightParenthesisKeyword_1_2_1 extends KeywordToken  {
+	
+	public OpenCompare_RightParenthesisKeyword_1_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getRightParenthesisKeyword_1_2_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_GreaterOrEqualLeftAction_1_2_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// ">="
+protected class OpenCompare_GreaterThanSignEqualsSignKeyword_1_2_2 extends KeywordToken  {
+	
+	public OpenCompare_GreaterThanSignEqualsSignKeyword_1_2_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getGreaterThanSignEqualsSignKeyword_1_2_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_RightParenthesisKeyword_1_2_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+// {Greater.left=current} ")" ">"
+protected class OpenCompare_Group_1_3 extends GroupToken {
+	
+	public OpenCompare_Group_1_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getGroup_1_3();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_GreaterThanSignKeyword_1_3_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getOpenCompareAccess().getGreaterLeftAction_1_3_0().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// {Greater.left=current}
+protected class OpenCompare_GreaterLeftAction_1_3_0 extends ActionToken  {
+
+	public OpenCompare_GreaterLeftAction_1_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Action getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getGreaterLeftAction_1_3_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_SomeValueParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		Object val = eObjectConsumer.getConsumable("left", false);
+		if(val == null) return null;
+		if(!eObjectConsumer.isConsumedWithLastConsumtion("left")) return null;
+		return createEObjectConsumer((EObject) val);
+	}
+}
+
+// ")"
+protected class OpenCompare_RightParenthesisKeyword_1_3_1 extends KeywordToken  {
+	
+	public OpenCompare_RightParenthesisKeyword_1_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getRightParenthesisKeyword_1_3_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_GreaterLeftAction_1_3_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// ">"
+protected class OpenCompare_GreaterThanSignKeyword_1_3_2 extends KeywordToken  {
+	
+	public OpenCompare_GreaterThanSignKeyword_1_3_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getGreaterThanSignKeyword_1_3_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_RightParenthesisKeyword_1_3_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+// {Equal.left=current} ")" "="
+protected class OpenCompare_Group_1_4 extends GroupToken {
+	
+	public OpenCompare_Group_1_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getGroup_1_4();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_EqualsSignKeyword_1_4_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getOpenCompareAccess().getEqualLeftAction_1_4_0().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// {Equal.left=current}
+protected class OpenCompare_EqualLeftAction_1_4_0 extends ActionToken  {
+
+	public OpenCompare_EqualLeftAction_1_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Action getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getEqualLeftAction_1_4_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_SomeValueParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		Object val = eObjectConsumer.getConsumable("left", false);
+		if(val == null) return null;
+		if(!eObjectConsumer.isConsumedWithLastConsumtion("left")) return null;
+		return createEObjectConsumer((EObject) val);
+	}
+}
+
+// ")"
+protected class OpenCompare_RightParenthesisKeyword_1_4_1 extends KeywordToken  {
+	
+	public OpenCompare_RightParenthesisKeyword_1_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getRightParenthesisKeyword_1_4_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_EqualLeftAction_1_4_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "="
+protected class OpenCompare_EqualsSignKeyword_1_4_2 extends KeywordToken  {
+	
+	public OpenCompare_EqualsSignKeyword_1_4_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getEqualsSignKeyword_1_4_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_RightParenthesisKeyword_1_4_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+// {Unequal.left=current} ")" "!="
+protected class OpenCompare_Group_1_5 extends GroupToken {
+	
+	public OpenCompare_Group_1_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getGroup_1_5();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_ExclamationMarkEqualsSignKeyword_1_5_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getOpenCompareAccess().getUnequalLeftAction_1_5_0().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// {Unequal.left=current}
+protected class OpenCompare_UnequalLeftAction_1_5_0 extends ActionToken  {
+
+	public OpenCompare_UnequalLeftAction_1_5_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Action getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getUnequalLeftAction_1_5_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_SomeValueParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		Object val = eObjectConsumer.getConsumable("left", false);
+		if(val == null) return null;
+		if(!eObjectConsumer.isConsumedWithLastConsumtion("left")) return null;
+		return createEObjectConsumer((EObject) val);
+	}
+}
+
+// ")"
+protected class OpenCompare_RightParenthesisKeyword_1_5_1 extends KeywordToken  {
+	
+	public OpenCompare_RightParenthesisKeyword_1_5_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getRightParenthesisKeyword_1_5_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_UnequalLeftAction_1_5_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "!="
+protected class OpenCompare_ExclamationMarkEqualsSignKeyword_1_5_2 extends KeywordToken  {
+	
+	public OpenCompare_ExclamationMarkEqualsSignKeyword_1_5_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getExclamationMarkEqualsSignKeyword_1_5_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_RightParenthesisKeyword_1_5_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+// {Approx.left=current} ")" "~"
+protected class OpenCompare_Group_1_6 extends GroupToken {
+	
+	public OpenCompare_Group_1_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getGroup_1_6();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_TildeKeyword_1_6_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getOpenCompareAccess().getApproxLeftAction_1_6_0().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// {Approx.left=current}
+protected class OpenCompare_ApproxLeftAction_1_6_0 extends ActionToken  {
+
+	public OpenCompare_ApproxLeftAction_1_6_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Action getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getApproxLeftAction_1_6_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_SomeValueParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		Object val = eObjectConsumer.getConsumable("left", false);
+		if(val == null) return null;
+		if(!eObjectConsumer.isConsumedWithLastConsumtion("left")) return null;
+		return createEObjectConsumer((EObject) val);
+	}
+}
+
+// ")"
+protected class OpenCompare_RightParenthesisKeyword_1_6_1 extends KeywordToken  {
+	
+	public OpenCompare_RightParenthesisKeyword_1_6_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getRightParenthesisKeyword_1_6_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_ApproxLeftAction_1_6_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "~"
+protected class OpenCompare_TildeKeyword_1_6_2 extends KeywordToken  {
+	
+	public OpenCompare_TildeKeyword_1_6_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getTildeKeyword_1_6_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OpenCompare_RightParenthesisKeyword_1_6_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+
+// right=SomeValue
+protected class OpenCompare_RightAssignment_2 extends AssignmentToken  {
+	
+	public OpenCompare_RightAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getOpenCompareAccess().getRightAssignment_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new SomeValue_Alternatives(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("right",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("right");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getSomeValueRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getOpenCompareAccess().getRightSomeValueParserRuleCall_2_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new OpenCompare_Alternatives_1(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+
+/************ end Rule OpenCompare ****************/
+
+
 /************ begin Rule SomeValue ****************
  *
- * SomeValue: //	NumberValue
- * 
+ * SomeValue:
  * 	StringValue | BooleanValue | AExpression;
  *
  **/
 
-// //	NumberValue
-// 
 // StringValue | BooleanValue | AExpression
 protected class SomeValue_Alternatives extends AlternativesToken {
 
@@ -2471,8 +3358,6 @@ protected class SomeValue_Alternatives extends AlternativesToken {
 
 }
 
-// //	NumberValue
-// 
 // StringValue
 protected class SomeValue_StringValueParserRuleCall_0 extends RuleCallToken {
 	
@@ -3661,11 +4546,11 @@ protected class Power_RightAssignment_1_1 extends AssignmentToken  {
 /************ begin Rule PrimaryExpression ****************
  *
  * PrimaryExpression returns AExpression:
- * 	"[" AExpression "]" | NumberValue | Variable;
+ * 	"(" AExpression ")" | NumberValue | Variable;
  *
  **/
 
-// "[" AExpression "]" | NumberValue | Variable
+// "(" AExpression ")" | NumberValue | Variable
 protected class PrimaryExpression_Alternatives extends AlternativesToken {
 
 	public PrimaryExpression_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3703,7 +4588,7 @@ protected class PrimaryExpression_Alternatives extends AlternativesToken {
 
 }
 
-// "[" AExpression "]"
+// "(" AExpression ")"
 protected class PrimaryExpression_Group_0 extends GroupToken {
 	
 	public PrimaryExpression_Group_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3718,23 +4603,23 @@ protected class PrimaryExpression_Group_0 extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new PrimaryExpression_RightSquareBracketKeyword_0_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new PrimaryExpression_RightParenthesisKeyword_0_2(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// "["
-protected class PrimaryExpression_LeftSquareBracketKeyword_0_0 extends KeywordToken  {
+// "("
+protected class PrimaryExpression_LeftParenthesisKeyword_0_0 extends KeywordToken  {
 	
-	public PrimaryExpression_LeftSquareBracketKeyword_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public PrimaryExpression_LeftParenthesisKeyword_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getPrimaryExpressionAccess().getLeftSquareBracketKeyword_0_0();
+		return grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_0_0();
 	}
 
     @Override
@@ -3775,22 +4660,22 @@ protected class PrimaryExpression_AExpressionParserRuleCall_0_1 extends RuleCall
     @Override
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new PrimaryExpression_LeftSquareBracketKeyword_0_0(lastRuleCallOrigin, next, actIndex, inst);
+			case 0: return new PrimaryExpression_LeftParenthesisKeyword_0_0(lastRuleCallOrigin, next, actIndex, inst);
 			default: return null;
 		}	
 	}	
 }
 
-// "]"
-protected class PrimaryExpression_RightSquareBracketKeyword_0_2 extends KeywordToken  {
+// ")"
+protected class PrimaryExpression_RightParenthesisKeyword_0_2 extends KeywordToken  {
 	
-	public PrimaryExpression_RightSquareBracketKeyword_0_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public PrimaryExpression_RightParenthesisKeyword_0_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getPrimaryExpressionAccess().getRightSquareBracketKeyword_0_2();
+		return grammarAccess.getPrimaryExpressionAccess().getRightParenthesisKeyword_0_2();
 	}
 
     @Override
@@ -3882,8 +4767,6 @@ protected class PrimaryExpression_VariableParserRuleCall_2 extends RuleCallToken
 
 /************ begin Rule NumberValue ****************
  *
- * //	| varName = VARIABLE_VALUE
- * 
  * NumberValue:
  * 	numValue=NUMBER;
  *
@@ -3930,8 +4813,6 @@ protected class NumberValue_NumValueAssignment extends AssignmentToken  {
 
 /************ begin Rule BooleanValue ****************
  *
- * //	| varName = VARIABLE_VALUE
- * 
  * BooleanValue:
  * 	value=BOOLEAN;
  *
@@ -3977,8 +4858,6 @@ protected class BooleanValue_ValueAssignment extends AssignmentToken  {
 
 /************ begin Rule StringValue ****************
  *
- * //	| varName = VARIABLE_VALUE
- * 
  * StringValue:
  * 	strValue=STRING;
  *

@@ -30,11 +30,10 @@ Negated returns LExpression:
 // Compare Layer   ------------------------------------------------
 CExpression returns LExpression:
 	'(' LExpression ')' |
-	Compare
+	  Compare 
 	| BooleanValue
 	| Variable
 	;
-
 
 Compare returns CExpression:
 	SomeValue( 
@@ -61,15 +60,16 @@ AExpression:
 
 Addition returns AExpression:
 	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*;
-
+	
 Multiplication returns AExpression:
 	Power (({Multi.left=current} '*' | {Div.left=current} '/' | {Mod.left=current} '%') right=Power)*;
 
 Power returns AExpression:
 	PrimaryExpression (({Pow.left=current} '^') right=PrimaryExpression)*;
 
+
 PrimaryExpression returns AExpression:
-	'[' AExpression ']' |
+	'(' AExpression ')' |
 	NumberValue
 	|Variable;
 

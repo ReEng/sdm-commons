@@ -887,6 +887,8 @@ ruleCompare returns [EObject current=null]
 
 
 
+
+
 // Entry rule entryRuleSomeValue
 entryRuleSomeValue returns [EObject current=null] 
 	:
@@ -1317,9 +1319,9 @@ rulePrimaryExpression returns [EObject current=null]
     @after { resetLookahead(); 
     	lastConsumedNode = currentNode;
     }:
-((	'[' 
+((	'(' 
     {
-        createLeafNode(grammarAccess.getPrimaryExpressionAccess().getLeftSquareBracketKeyword_0_0(), null); 
+        createLeafNode(grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_0_0(), null); 
     }
 
 	{ 
@@ -1333,9 +1335,9 @@ rulePrimaryExpression returns [EObject current=null]
         $current = $this_AExpression_1.current; 
         currentNode = currentNode.getParent();
     }
-	']' 
+	')' 
     {
-        createLeafNode(grammarAccess.getPrimaryExpressionAccess().getRightSquareBracketKeyword_0_2(), null); 
+        createLeafNode(grammarAccess.getPrimaryExpressionAccess().getRightParenthesisKeyword_0_2(), null); 
     }
 )
     |
