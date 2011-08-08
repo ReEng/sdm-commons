@@ -1,0 +1,87 @@
+grammar org.storydriven.modeling.expressions.common.Expressions with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+generate expressions "http://www.storydriven.org/modeling/expressions/common/Expressions"
+
+// Boolean Logic Layer    ------------------------------------------------
+LExpression:
+	Equivalent
+	;
+
+Equivalent returns LExpression:
+	Implication({Equivalent.left=current} 'equiv' right=Implication)?;
+
+Implication returns LExpression:
+	Disjunction({Imply.left=current} 'imply' right=Disjunction)?;
+	
+Disjunction returns LExpression:
+	Conjunction(({Or.left=current} 'or' | {Xor.left=current} 'xor') right=Conjunction)?;
+
+Conjunction returns LExpression:
+	Negation({And.left=current} 'and' right=Negation)?;
+
+Negation returns LExpression:
+	'not' Negated  
+	| CExpression;  
+
+Negated returns LExpression:
+	{Not}not= CExpression;
+
+// Compare Layer   ------------------------------------------------
+CExpression returns LExpression:
+	'(' LExpression ')' |
+	Compare
+	| BooleanValue;
+	
+Compare returns CExpression:
+	AExpression( 
+	  {LessOrEqual.left=current} '<='
+	| {Less.left=current} '<'
+	| {GreaterOrEqual.left=current} '>='
+	| {Greater.left=current} '>'
+	| {Equal.left=current} '='
+	| {Unequal.left=current} '!='
+	| {Approx.left=current} '~') 
+	right=AExpression;	
+
+// Arithmetic Layer   ------------------------------------------------
+AExpression:
+	Addition;
+
+Addition returns AExpression:
+	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*;
+
+Multiplication returns AExpression:
+	Power (({Multi.left=current} '*' | {Div.left=current} '/' | {Mod.left=current} '%') right=Power)*;
+
+Power returns AExpression:
+	PrimaryExpression (({Pow.left=current} '^') right=PrimaryExpression)*;
+
+PrimaryExpression returns AExpression:
+	'[' AExpression ']' |
+	NumberValue;
+
+NumberValue: 
+	numValue = NUMBER
+	| varName = VARIABLE_VALUE
+	;
+
+NUMBER returns EBigDecimal:
+	INT ('.' INT)?;
+	
+BooleanValue: 
+	value = BOOLEAN
+	| varName = VARIABLE_VALUE
+	;
+	
+terminal BOOLEAN returns EBoolean: 
+	'true' 
+	| 'false';
+
+
+VARIABLE_VALUE returns EString: 
+	ID  
+	| ID '.' ID ;
+	
+terminal STRING_TERMINAL :
+	'"' STRING '"';
