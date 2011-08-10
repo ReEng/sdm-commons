@@ -5,9 +5,6 @@ package org.fujaba.commons.editor.overviewpage;
 
 import java.util.List;
 
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.commands.Command;
@@ -23,11 +20,8 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
-import org.eclipse.ui.forms.SectionPart;
-import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.fujaba.commons.editor.AbstractPersistableModelViewMultiPageEditor;
 import org.fujaba.commons.identifier.Identifier;
@@ -39,17 +33,11 @@ import org.fujaba.commons.identifier.Identifier;
  * @version $Revision$ $Date$
  *
  */
-public abstract class NestedDiagramsSectionPart extends SectionPart implements Adapter
+public abstract class NestedDiagramsSectionPart extends AbstractDiagramsSectionPart
 {
-   protected AbstractPersistableModelViewMultiPageEditor editor;
    private EObject rootElement;
    private Button removeButton;
    private Table table;
-   
-   private String sectionName = "Contained Diagrams", 
-   deleteConfirmQuestion = "Are you sure that you want to delete this diagram?", 
-   chooseANameMsg = "Choose a name for your new diagram.", 
-   newDiagramDefaultName = "New Diagram";
 
    public NestedDiagramsSectionPart(AbstractPersistableModelViewMultiPageEditor editor, Composite parent,
          FormToolkit toolkit)
@@ -60,20 +48,12 @@ public abstract class NestedDiagramsSectionPart extends SectionPart implements A
    public NestedDiagramsSectionPart(AbstractPersistableModelViewMultiPageEditor editor, Composite parent,
          FormToolkit toolkit, String sectionName, String deleteConfirmQuestion, String chooseANameMsg, String newDiagramDefaultName)
    {
-      super(toolkit.createSection(parent, ExpandableComposite.TITLE_BAR
-            | ExpandableComposite.TWISTIE | ExpandableComposite.EXPANDED));
-      
-      this.editor = editor;
-      this.sectionName = sectionName != null ? sectionName : this.sectionName;
-      this.deleteConfirmQuestion = deleteConfirmQuestion != null ? deleteConfirmQuestion : this.deleteConfirmQuestion;
-      this.chooseANameMsg = chooseANameMsg != null ? chooseANameMsg : this.chooseANameMsg;
-      this.newDiagramDefaultName = newDiagramDefaultName != null ? newDiagramDefaultName : this.newDiagramDefaultName;
-
-      createSectionContent(toolkit);
+      super(editor, parent, toolkit, sectionName, deleteConfirmQuestion, chooseANameMsg, newDiagramDefaultName);
    }
 
 
-   private void createSectionContent(FormToolkit toolkit)
+   @Override
+   protected void createSectionContent(FormToolkit toolkit)
    {
       getSection().setText(this.sectionName);
       Composite sectionClient = toolkit.createComposite(getSection());
@@ -144,71 +124,36 @@ public abstract class NestedDiagramsSectionPart extends SectionPart implements A
       this.table.addMouseListener(new MouseListener()
       {
          
+         @Override
          public void mouseUp(MouseEvent e){ }
          
       
+         @Override
          public void mouseDown(MouseEvent e){ }
          
       
+         @Override
          public void mouseDoubleClick(MouseEvent e)
          {
             openButtonPressed();
          }
       });
    }
-
-
-   /**
-    * @see org.eclipse.emf.common.notify.Adapter#getTarget()
-    */
-   public Notifier getTarget()
-   {
-      return null;
-   }
-
-
-   /**
-    * @see org.eclipse.emf.common.notify.Adapter#isAdapterForType(java.lang.Object)
-    */
-   public boolean isAdapterForType(Object type)
-   {
-      return false;
-   }
-
-
-   /**
-    * @see org.eclipse.emf.common.notify.Adapter#notifyChanged(org.eclipse.emf.common.notify.Notification)
-    */
-   public void notifyChanged(Notification notification)
-   {
-      //TODO react only to corresponding changes
-      safeRefresh();
-   }
-
-
-   /**
-    * @see org.eclipse.emf.common.notify.Adapter#setTarget(org.eclipse.emf.common.notify.Notifier)
-    */
-   public void setTarget(Notifier newTarget)
-   {
-
-   }
    
-   protected void safeRefresh()
+   
+   
+   @Override
+   protected EObject[] getSelection()
    {
-      if(Display.getDefault()!=null)
+      TableItem[] items = this.table.getSelection();
+      EObject[] eItems = new EObject[items.length];
+      for (int i = 0; i < items.length; i++)
       {
-         Display.getDefault().asyncExec(new Runnable(){
-            public void run()
-            {
-               NestedDiagramsSectionPart.this.refresh();
-            }
-         });      
+         eItems[i] = (EObject)items[i].getData();
       }
+      return eItems;
    }
-   
-   
-   
+
    @Override
    public void refresh()
    {
@@ -253,6 +198,7 @@ public abstract class NestedDiagramsSectionPart extends SectionPart implements A
     * Override this if you need some special behavior.
     * @param e
     */
+   @Override
    protected void addButtonPressed(SelectionEvent e)
    {
       InputDialog dialog = new InputDialog(getSection().getShell(), "Choose a name", this.chooseANameMsg, this.newDiagramDefaultName, null);
@@ -262,15 +208,10 @@ public abstract class NestedDiagramsSectionPart extends SectionPart implements A
          this.executeCommand(createAddDiagramCommand(dialog.getValue()));
       }
    }
+
    
-   private void executeCommand(Command cmd)
-   {
-      editor.getCommandStack().execute(cmd);
-   }
-   
-   protected abstract Command createAddDiagramCommand(String newName);
-   
-   private void removeButtonPressed(SelectionEvent e)
+   @Override
+   protected void removeButtonPressed(SelectionEvent e)
    {
       if(!MessageDialog.openConfirm(getSection().getShell(), "Confirm", this.deleteConfirmQuestion))
       {
@@ -288,9 +229,9 @@ public abstract class NestedDiagramsSectionPart extends SectionPart implements A
       this.executeCommand(cmd.unwrap());
    }
    
-   protected abstract Command createDeleteDiagramCommandFor(EObject diagramRoot);
    
-   private void openButtonPressed()
+   @Override
+   protected void openButtonPressed()
    {
       TableItem[] items = this.table.getSelection();
       for (int i = 0; i < items.length; i++)
@@ -302,7 +243,6 @@ public abstract class NestedDiagramsSectionPart extends SectionPart implements A
    
    
    
-   protected abstract void openDiagramFor(EObject diagramRoot);
    
    private class TableSelectionListener extends SelectionAdapter
    {
