@@ -49,6 +49,7 @@
          point="org.eclipse.emf.ecore.generated_package">
       <package
             class="org.storydriven.modeling.activities.expressions.ExpressionsPackage"
+            genModel="model/sdm.uml.genmodel"
             uri="org.storydriven.modeling.expressions">
       </package>
    </extension>
@@ -56,7 +57,24 @@
          point="org.eclipse.emf.ecore.generated_package">
       <package
             class="org.storydriven.modeling.patterns.expressions.ExpressionsPackage"
+            genModel="model/sdm.uml.genmodel"
             uri="org.storydriven.modeling.pattern.expressions">
+      </package>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="org.storydriven.modeling.calls.CallsPackage"
+            genModel="model/sdm.uml.genmodel"
+            uri="http://ns.storydriven.org/sdm/calls/0.1.0">
+      </package>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="org.storydriven.modeling.calls.expressions.ExpressionsPackage"
+            genModel="model/sdm.uml.genmodel"
+            uri="http://ns.storydriven.org/sdm/calls/expressions/0.1.0">
       </package>
    </extension>
    <extension
