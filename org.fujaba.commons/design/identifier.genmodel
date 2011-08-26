@@ -10,7 +10,7 @@
   <genPackages prefix="Identifier" basePackage="org.fujaba.commons" disposableProviderFactory="true"
       ecorePackage="identifier.ecore#/">
     <genClasses image="false" ecoreClass="identifier.ecore#//Identifier">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute identifier.ecore#//Identifier/id"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute identifier.ecore#//Identifier/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute identifier.ecore#//Identifier/name"/>
     </genClasses>
   </genPackages>

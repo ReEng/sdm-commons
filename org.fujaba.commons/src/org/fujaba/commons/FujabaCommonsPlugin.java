@@ -1,5 +1,6 @@
 package org.fujaba.commons;
 
+
 import org.eclipse.core.runtime.Status;
 import org.osgi.framework.BundleContext;
 
@@ -14,7 +15,8 @@ import org.osgi.framework.BundleContext;
 public class FujabaCommonsPlugin extends AbstractFujabaPlugin
 {
 
-   public final static String ID = "org.reclipse.emf.commons";
+   public final static String ID = "org.fujaba.commons";
+
    /**
     * The shared instance.
     */
@@ -26,6 +28,19 @@ public class FujabaCommonsPlugin extends AbstractFujabaPlugin
    {
       super.start(context);
       instance = this;
+
+      // add images to cache
+      addImage(FujabaCommonsImages.IMG_CONSOLE_DEFAULT);
+      addImage(FujabaCommonsImages.IMG_CONSOLE_PAUSE);
+      addImage(FujabaCommonsImages.IMG_CONSOLE_ABORT);
+      addImage(FujabaCommonsImages.IMG_CONSOLE_REMOVE);
+      addImage(FujabaCommonsImages.IMG_CONSOLE_REMOVEALL);
+   }
+
+
+   private void addImage(String path)
+   {
+      addImageToCache(path, path);
    }
 
 
@@ -46,7 +61,8 @@ public class FujabaCommonsPlugin extends AbstractFujabaPlugin
    {
       return instance;
    }
-   
+
+
    @Override
    protected void log(int severity, String message, Throwable throwable)
    {

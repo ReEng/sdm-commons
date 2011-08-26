@@ -61,6 +61,16 @@ import org.osgi.framework.Bundle;
  */
 public abstract class FujabaCommonsImages
 {
+   public static final String IMG_CONSOLE_DEFAULT = "icons/console/default.png"; //$NON-NLS-1$
+
+   public static final String IMG_CONSOLE_PAUSE = "icons/console/pause.png"; //$NON-NLS-1$
+
+   public static final String IMG_CONSOLE_ABORT = "icons/console/abort.gif"; //$NON-NLS-1$
+
+   public static final String IMG_CONSOLE_REMOVE = "icons/console/remove.gif"; //$NON-NLS-1$
+
+   public static final String IMG_CONSOLE_REMOVEALL = "icons/console/removeall.gif"; //$NON-NLS-1$
+  
    private final static String ETOOL_PATH = "icons/etool/";
 
    public final static String IMG_DLG_REMOVE_CLASSES_WITHOUT_CONTEXT = ETOOL_PATH

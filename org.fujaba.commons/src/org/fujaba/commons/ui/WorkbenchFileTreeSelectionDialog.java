@@ -6,7 +6,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
 import org.eclipse.ui.model.BaseWorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
-import org.eclipse.ui.model.WorkbenchViewerComparator;
+import org.eclipse.ui.views.navigator.ResourceComparator;
 
 
 /**
@@ -72,7 +72,8 @@ public class WorkbenchFileTreeSelectionDialog extends
       setHelpAvailable(false);
 
       setInput(ResourcesPlugin.getWorkspace().getRoot());
-      setComparator(new WorkbenchViewerComparator());
+
+      setComparator(new ResourceComparator(ResourceComparator.NAME));
       setValidator(new FileInputValidator(extensions, max));
       addFilter(new FileExtensionViewerFilter(extensions));
    }

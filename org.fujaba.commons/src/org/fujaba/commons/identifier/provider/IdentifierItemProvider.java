@@ -71,33 +71,9 @@ public class IdentifierItemProvider
       {
          super.getPropertyDescriptors(object);
 
-         addIdPropertyDescriptor(object);
          addNamePropertyDescriptor(object);
       }
       return itemPropertyDescriptors;
-   }
-
-   /**
-    * This adds a property descriptor for the Id feature.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   protected void addIdPropertyDescriptor(Object object)
-   {
-      itemPropertyDescriptors.add
-         (createItemPropertyDescriptor
-            (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-             getResourceLocator(),
-             getString("_UI_Identifier_id_feature"), //$NON-NLS-1$
-             getString("_UI_PropertyDescriptor_description", "_UI_Identifier_id_feature", "_UI_Identifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-             IdentifierPackage.Literals.IDENTIFIER__ID,
-             true,
-             false,
-             false,
-             ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-             null,
-             null));
    }
 
    /**
