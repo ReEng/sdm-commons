@@ -37,8 +37,7 @@ public abstract class CallableImpl extends CommentableElementImpl implements Cal
 {
    /**
     * The cached value of the '{@link #getInParameters() <em>In Parameter</em>}' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getInParameters()
     * @generated
     * @ordered
@@ -46,8 +45,7 @@ public abstract class CallableImpl extends CommentableElementImpl implements Cal
    protected EList<EParameter> inParameters;
    /**
     * The cached value of the '{@link #getOutParameters() <em>Out Parameter</em>}' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getOutParameters()
     * @generated
     * @ordered
@@ -55,8 +53,7 @@ public abstract class CallableImpl extends CommentableElementImpl implements Cal
    protected EList<EParameter> outParameters;
    /**
     * The cached value of the '{@link #getContainedParameters() <em>Contained Parameters</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getContainedParameters()
     * @generated
     * @ordered
@@ -83,8 +80,7 @@ public abstract class CallableImpl extends CommentableElementImpl implements Cal
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public EList<EParameter> getContainedParameters ()
@@ -99,21 +95,34 @@ public abstract class CallableImpl extends CommentableElementImpl implements Cal
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
-    * @generated NOT
+    * @generated
     */
-   public abstract EList<EParameter> getInParameters ();
+   public EList<EParameter> getInParameters ()
+   {
+      if (inParameters == null)
+      {
+         inParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
+            CallsPackage.CALLABLE__IN_PARAMETER);
+      }
+      return inParameters;
+   }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
-    * @generated NOT
+    * @generated
     */
-   public abstract EList<EParameter> getOutParameters ();
+   public EList<EParameter> getOutParameters ()
+   {
+      if (outParameters == null)
+      {
+         outParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
+            CallsPackage.CALLABLE__OUT_PARAMETER);
+      }
+      return outParameters;
+   }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -128,8 +137,7 @@ public abstract class CallableImpl extends CommentableElementImpl implements Cal
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -148,8 +156,7 @@ public abstract class CallableImpl extends CommentableElementImpl implements Cal
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -175,8 +182,7 @@ public abstract class CallableImpl extends CommentableElementImpl implements Cal
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -198,8 +204,7 @@ public abstract class CallableImpl extends CommentableElementImpl implements Cal
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    @Override
