@@ -705,6 +705,9 @@ from within an activity.</body>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_QpRvAGZsEeCjFI7iCZKgmw" name="ContainsParameter" memberEnd="_UxWXoGZsEeCjFI7iCZKgmw _QpRvAWZsEeCjFI7iCZKgmw">
+        <ownedComment xmi:id="_YBOQ4M__EeCx6pm3dTaU4Q" annotatedElement="_QpRvAGZsEeCjFI7iCZKgmw">
+          <body>All parameters in this list are contained within the callable. This reference may only be used if the parameters of the callable are not yet contained in another object. For an EOperationExtension, the parameters are contained in the respective EOperation and, thus, this reference will contain no elements. For an activity that is not associated with an EOperation, this reference contains all parameters of the activity (inParameters and outParameters).</body>
+        </ownedComment>
         <ownedEnd xmi:id="_QpRvAWZsEeCjFI7iCZKgmw" name="revContainedParameters" type="_gfdN4BzIEeChOvWwuwx7tQ" association="_QpRvAGZsEeCjFI7iCZKgmw">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QpRvAmZsEeCjFI7iCZKgmw" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QpRvA2ZsEeCjFI7iCZKgmw"/>
