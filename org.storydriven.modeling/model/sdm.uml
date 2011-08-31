@@ -120,6 +120,7 @@
         </ownedComment>
         <generalization xmi:id="_AI5vELxZEd-Ytrd77fw2LA" general="_e7CFQLLyEd-uk56s-ldeog"/>
         <generalization xmi:id="_Bo3FcBzOEeChOvWwuwx7tQ" general="_gfdN4BzIEeChOvWwuwx7tQ"/>
+        <generalization xmi:id="_Jv9OkNPMEeCSf9VnKNPwAA" general="_tB8FcLK5Ed-uk56s-ldeog"/>
         <ownedAttribute xmi:id="c38d6d26-77ad-489b-aef2-755014fcadb9" name="ownedActivityNode" visibility="public" type="0ef98ed0-902e-4764-91ad-f76566d6f80e" aggregation="composite" association="a0ea066c-e9db-4626-bb5b-e4bf75c4f4d4">
           <ownedComment xmi:id="_Sl1TsJ0REeCuYMafrm1l2g" annotatedElement="c38d6d26-77ad-489b-aef2-755014fcadb9">
             <body>The activity contains all activity nodes via this reference.</body>

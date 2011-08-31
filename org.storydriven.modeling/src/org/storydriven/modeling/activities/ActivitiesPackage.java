@@ -852,12 +852,21 @@ public interface ActivitiesPackage extends EPackage
    int ACTIVITY__CONTAINED_PARAMETERS = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
    /**
+    * The feature id for the '<em><b>Name</b></em>' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   int ACTIVITY__NAME = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+
+   /**
     * The feature id for the '<em><b>Owning Operation</b></em>' container reference.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     * @ordered
     */
-   int ACTIVITY__OWNING_OPERATION = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+   int ACTIVITY__OWNING_OPERATION = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
    /**
     * The feature id for the '<em><b>Owned Activity Edge</b></em>' containment reference list.
@@ -865,7 +874,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__OWNED_ACTIVITY_EDGE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
+   int ACTIVITY__OWNED_ACTIVITY_EDGE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
 
    /**
     * The feature id for the '<em><b>Precondition</b></em>' reference.
@@ -873,7 +882,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__PRECONDITION = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
+   int ACTIVITY__PRECONDITION = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 6;
 
    /**
     * The feature id for the '<em><b>Owned Activity Node</b></em>' containment reference list.
@@ -881,7 +890,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__OWNED_ACTIVITY_NODE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 6;
+   int ACTIVITY__OWNED_ACTIVITY_NODE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 7;
 
    /**
     * The number of structural features of the '<em>Activity</em>' class.
@@ -889,7 +898,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY_FEATURE_COUNT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 7;
+   int ACTIVITY_FEATURE_COUNT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 8;
 
    /**
     * The operation id for the '<em>EClass</em>' operation.

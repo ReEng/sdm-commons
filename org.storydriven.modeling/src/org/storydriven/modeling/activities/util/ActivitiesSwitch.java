@@ -149,6 +149,8 @@ public class ActivitiesSwitch<T>
             if (result == null)
                result = caseCallable(activity);
             if (result == null)
+               result = caseNamedElement(activity);
+            if (result == null)
                result = caseCommentableElement(activity);
             if (result == null)
                result = caseExtendableElement(activity);

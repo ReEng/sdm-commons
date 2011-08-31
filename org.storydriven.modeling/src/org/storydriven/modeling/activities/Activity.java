@@ -9,6 +9,7 @@ package org.storydriven.modeling.activities;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EParameter;
 import org.storydriven.modeling.CommentableElement;
+import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.calls.Callable;
 
 /**
@@ -32,7 +33,7 @@ import org.storydriven.modeling.calls.Callable;
  * @model
  * @generated
  */
-public interface Activity extends CommentableElement, Callable
+public interface Activity extends CommentableElement, Callable, NamedElement
 {
    /**
     * Returns the value of the '<em><b>Owned Activity Node</b></em>' containment reference list.

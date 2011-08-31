@@ -24,6 +24,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.modeling.NamedElement;
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.activities.ActivityEdge;
@@ -42,6 +44,7 @@ import org.storydriven.modeling.impl.CommentableElementImpl;
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getInParameters <em>In Parameter</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOutParameters <em>Out Parameter</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getContainedParameters <em>Contained Parameters</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwningOperation <em>Owning Operation</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwnedActivityEdges <em>Owned Activity Edge</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getPrecondition <em>Precondition</em>}</li>
@@ -82,6 +85,26 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
     * @ordered
     */
    protected EList<EParameter> containedParameters;
+
+   /**
+    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getName()
+    * @generated
+    * @ordered
+    */
+   protected static final String NAME_EDEFAULT = null;
+
+   /**
+    * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @see #getName()
+    * @generated
+    * @ordered
+    */
+   protected String name = NAME_EDEFAULT;
 
    private static final String ACTIVITY_ANNOTATION_URI = "http://ns.storydriven.org/sdm/activities/activity";
 
@@ -144,6 +167,29 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
             ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS);
       }
       return containedParameters;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public String getName ()
+   {
+      return name;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   public void setName (String newName)
+   {
+      String oldName = name;
+      name = newName;
+      if (eNotificationRequired())
+         eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY__NAME, oldName, name));
    }
 
    /**
@@ -402,6 +448,8 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
             return getOutParameters();
          case ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS:
             return getContainedParameters();
+         case ActivitiesPackage.ACTIVITY__NAME:
+            return getName();
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             if (resolve)
                return getOwningOperation();
@@ -440,6 +488,9 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
             getContainedParameters().clear();
             getContainedParameters().addAll((Collection<? extends EParameter>) newValue);
             return;
+         case ActivitiesPackage.ACTIVITY__NAME:
+            setName((String) newValue);
+            return;
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             setOwningOperation((OperationExtension) newValue);
             return;
@@ -476,6 +527,9 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
          case ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS:
             getContainedParameters().clear();
             return;
+         case ActivitiesPackage.ACTIVITY__NAME:
+            setName(NAME_EDEFAULT);
+            return;
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             setOwningOperation((OperationExtension) null);
             return;
@@ -507,6 +561,8 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
             return outParameters != null && !outParameters.isEmpty();
          case ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS:
             return containedParameters != null && !containedParameters.isEmpty();
+         case ActivitiesPackage.ACTIVITY__NAME:
+            return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             return basicGetOwningOperation() != null;
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
@@ -541,6 +597,16 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
                return -1;
          }
       }
+      if (baseClass == NamedElement.class)
+      {
+         switch (derivedFeatureID)
+         {
+            case ActivitiesPackage.ACTIVITY__NAME:
+               return SDMPackage.NAMED_ELEMENT__NAME;
+            default:
+               return -1;
+         }
+      }
       return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
    }
 
@@ -566,7 +632,35 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
                return -1;
          }
       }
+      if (baseClass == NamedElement.class)
+      {
+         switch (baseFeatureID)
+         {
+            case SDMPackage.NAMED_ELEMENT__NAME:
+               return ActivitiesPackage.ACTIVITY__NAME;
+            default:
+               return -1;
+         }
+      }
       return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public String toString ()
+   {
+      if (eIsProxy())
+         return super.toString();
+
+      StringBuffer result = new StringBuffer(super.toString());
+      result.append(" (name: ");
+      result.append(name);
+      result.append(')');
+      return result.toString();
    }
 
 } // ActivityImpl

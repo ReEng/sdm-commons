@@ -14,15 +14,14 @@ import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public final class SDMEditorPlugin extends EMFPlugin
-{
+public final class SDMEditorPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final SDMEditorPlugin	INSTANCE	= new SDMEditorPlugin();
+	public static final SDMEditorPlugin INSTANCE = new SDMEditorPlugin();
 
 	/**
 	 * Keep track of the singleton.
@@ -30,7 +29,7 @@ public final class SDMEditorPlugin extends EMFPlugin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static Implementation		plugin;
+	private static Implementation plugin;
 
 	/**
 	 * Create the instance.
@@ -38,12 +37,8 @@ public final class SDMEditorPlugin extends EMFPlugin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SDMEditorPlugin()
-	{
-		super(new ResourceLocator[]
-		{
-			EcoreEditPlugin.INSTANCE,
-		});
+	public SDMEditorPlugin() {
+		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, });
 	}
 
 	/**
@@ -54,8 +49,7 @@ public final class SDMEditorPlugin extends EMFPlugin
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getPluginResourceLocator()
-	{
+	public ResourceLocator getPluginResourceLocator() {
 		return plugin;
 	}
 
@@ -66,8 +60,7 @@ public final class SDMEditorPlugin extends EMFPlugin
 	 * @return the singleton instance.
 	 * @generated
 	 */
-	public static Implementation getPlugin()
-	{
+	public static Implementation getPlugin() {
 		return plugin;
 	}
 
@@ -77,16 +70,14 @@ public final class SDMEditorPlugin extends EMFPlugin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static class Implementation extends EclipseUIPlugin
-	{
+	public static class Implementation extends EclipseUIPlugin {
 		/**
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public Implementation()
-		{
+		public Implementation() {
 			super();
 
 			// Remember the static instance.
