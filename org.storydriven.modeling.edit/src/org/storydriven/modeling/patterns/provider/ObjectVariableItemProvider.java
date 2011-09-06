@@ -4,11 +4,18 @@
 package org.storydriven.modeling.patterns.provider;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EPackage.Registry;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,6 +28,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.patterns.ObjectVariable;
 import org.storydriven.modeling.patterns.PatternsFactory;
 import org.storydriven.modeling.patterns.PatternsPackage;
+
 
 /**
  * This is the item provider adapter for a {@link org.storydriven.modeling.patterns.ObjectVariable} object.
@@ -123,19 +131,53 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider
 	 * This adds a property descriptor for the Classifier feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addClassifierPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ObjectVariable_classifier_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ObjectVariable_classifier_feature",
-						"_UI_ObjectVariable_type"),
-				PatternsPackage.Literals.OBJECT_VARIABLE__CLASSIFIER, true,
-				false, true, null, null, null));
+		//		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+		//				((ComposeableAdapterFactory) adapterFactory)
+		//						.getRootAdapterFactory(),
+		//				getResourceLocator(),
+		//				getString("_UI_ObjectVariable_classifier_feature"),
+		//				getString("_UI_PropertyDescriptor_description",
+		//						"_UI_ObjectVariable_classifier_feature",
+		//						"_UI_ObjectVariable_type"),
+		//				PatternsPackage.Literals.OBJECT_VARIABLE__CLASSIFIER, true,
+		//				false, true, null, null, null));
+		
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_ObjectVariable_classifier_feature"), getString(
+						"_UI_PropertyDescriptor_description", "_UI_ObjectVariable_classifier_feature",
+						"_UI_ObjectVariable_type"), PatternsPackage.Literals.OBJECT_VARIABLE__CLASSIFIER, true, false,
+				true, null, null, null)
+		{
+			@Override
+			public Collection<?> getChoiceOfValues(Object object)
+			{
+				Collection<?> result = super.getChoiceOfValues(object);
+				if (feature instanceof EReference && object instanceof EObject)
+				{
+					@SuppressWarnings("unchecked")
+					List<EObject> eObjects = (List<EObject>) (List<?>) new LinkedList<Object>(result);
+					Resource resource = ((EObject) object).eResource();
+					if (resource != null)
+					{
+						ResourceSet resourceSet = resource.getResourceSet();
+						if (resourceSet != null)
+						{
+							Collection<EObject> visited = new HashSet<EObject>(eObjects);
+							Registry packageRegistry = resourceSet.getPackageRegistry();
+							for (String nsURI : packageRegistry.keySet())
+							{
+								collectReachableObjectsOfType(visited, eObjects, packageRegistry.getEPackage(nsURI), feature.getEType());
+							}
+						}
+					}
+					result = eObjects;
+				}
+				return result;
+			}
+		});
 	}
 
 	/**
