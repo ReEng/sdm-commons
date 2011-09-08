@@ -214,6 +214,16 @@ public class ExtensionOperations
     */
    public static void setModelBase (Extension extension, EModelElement newModelBase)
    {
+      if (newModelBase == null)
+      {
+         EObject anno = extension.eContainer();
+         if (anno != null)
+         {
+            EAnnotation annotation = (EAnnotation) anno;
+            annotation.setEModelElement(null);
+         }
+         return;
+      }
       EAnnotation annotation = EModelElementOperations.provideAnnotation(newModelBase, Extension.EXTENSION_SOURCE_URI);
       annotation.getContents().add(extension);
       // TODO event
