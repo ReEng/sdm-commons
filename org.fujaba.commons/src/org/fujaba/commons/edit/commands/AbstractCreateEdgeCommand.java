@@ -77,10 +77,10 @@ public abstract class AbstractCreateEdgeCommand extends AbstractViewCommand
          getView().setVisible(true);
       }
 
-      // stuff to perform with every redo, this must be also undone in undoView
-      viewParent.getEdges().add(getView());
+      // stuff to perform with every redo, this must be also undone in undoView      
       viewSource.getOutgoing().add(getView());
       viewTarget.getIncoming().add(getView());
+      viewParent.getEdges().add(getView());
    }
 
 

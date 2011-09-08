@@ -96,6 +96,13 @@ public abstract class AbstractDiagramEditPart extends AbstractNodeEditPart
             || fid == NotationPackage.HIERARCHICAL_NODE__EDGES)
       {
          refresh();
+         for(Object o : getChildren())
+         {
+            if(o instanceof AbstractNodeEditPart)
+            {
+               ((AbstractNodeEditPart)o).refresh();
+            }
+         }
       }
       else if (fid == NotationPackage.HIERARCHICAL_NODE__VISIBLE
             || fid == NotationPackage.HIERARCHICAL_NODE__X

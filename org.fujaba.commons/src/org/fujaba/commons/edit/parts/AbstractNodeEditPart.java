@@ -77,6 +77,7 @@ public abstract class AbstractNodeEditPart extends AbstractNodeViewEditPart
    }
 
 
+   @Override
    public ConnectionAnchor getSourceConnectionAnchor(
          ConnectionEditPart connection)
    {
@@ -84,12 +85,14 @@ public abstract class AbstractNodeEditPart extends AbstractNodeViewEditPart
    }
 
 
+   @Override
    public ConnectionAnchor getSourceConnectionAnchor(Request request)
    {
       return getAnchor();
    }
 
 
+   @Override
    public ConnectionAnchor getTargetConnectionAnchor(
          ConnectionEditPart connection)
    {
@@ -97,6 +100,7 @@ public abstract class AbstractNodeEditPart extends AbstractNodeViewEditPart
    }
 
 
+   @Override
    public ConnectionAnchor getTargetConnectionAnchor(Request request)
    {
       return getAnchor();
