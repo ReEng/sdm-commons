@@ -211,6 +211,7 @@ public abstract class FujabaCommonsImages
    public final static String IMG_WIZ_EXPORT_SOURCE_CODE = WIZ_PATH
       + "exportModel_wiz.gif";
 
+   public static final String IMAGE_HELP = "icons/help.gif";
 
    public static Image getImage (String symbolicName)
    {
