@@ -89,7 +89,7 @@ public class SingleTypeSelectionDialog extends Dialog
 
    private Text infoboxText;
 
-   private EClass selected;
+   private EClassifier selected;
 
    private TreeNode[] input;
 
@@ -166,8 +166,8 @@ public class SingleTypeSelectionDialog extends Dialog
    }
 
 
-   private TreeNode createNode(EClass type, TreeNode parent,
-         Collection<EClass> types)
+   private TreeNode createNode(EClassifier type, TreeNode parent,
+         Collection<? extends EClassifier> types)
    {
       // create node
       TreeNode node = new TreeNode(type);
@@ -185,12 +185,15 @@ public class SingleTypeSelectionDialog extends Dialog
       addChild(parent, node);
 
       // collect children
-      for (EClass other : types)
+      for (EClassifier other : types)
       {
-         if (other.getESuperTypes().contains(type))
+         if(other instanceof EClass)
          {
-            TreeNode child = createNode(other, node, types);
-            addChild(node, child);
+            if (((EClass)other).getESuperTypes().contains(type))
+            {
+               TreeNode child = createNode(other, node, types);
+               addChild(node, child);
+            }
          }
       }
 
@@ -222,7 +225,7 @@ public class SingleTypeSelectionDialog extends Dialog
    }
 
 
-   public EClass getSelected()
+   public EClassifier getSelected()
    {
       return selected;
    }
@@ -363,7 +366,7 @@ public class SingleTypeSelectionDialog extends Dialog
    }
 
 
-   public void setInput(Collection<EClass> input, EClass current)
+   public void setInput(Collection<? extends EClassifier> input, EClassifier current)
    {
       // set current type selection
       this.selected = current;
@@ -371,7 +374,7 @@ public class SingleTypeSelectionDialog extends Dialog
 
       // collect packages
       Collection<EPackage> packages = new ArrayList<EPackage>();
-      for (EClass type : input)
+      for (EClassifier type : input)
       {
          // add the package to cache
          if (!packages.contains(type.getEPackage()))
@@ -412,7 +415,7 @@ public class SingleTypeSelectionDialog extends Dialog
                if (add)
                {
                   // create type node
-                  createNode((EClass) type, packNode, input);
+                  createNode((EClassifier) type, packNode, input);
                }
             }
          }
