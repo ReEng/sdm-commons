@@ -15,5 +15,6 @@ Require-Bundle: org.storydriven.modeling.expressions.common;visibility:=reexport
  org.antlr.runtime
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: org.storydriven.modeling.expressions.common.ui.contentassist.antlr
+Export-Package: org.storydriven.modeling.expressions.common.ui.contentassist.antlr,
+ org.storydriven.modeling.expressions.common.ui.internal
 Bundle-Activator: org.storydriven.modeling.expressions.common.ui.internal.ExpressionsActivator
