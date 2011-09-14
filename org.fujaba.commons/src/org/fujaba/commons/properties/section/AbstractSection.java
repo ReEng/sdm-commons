@@ -515,4 +515,15 @@ public abstract class AbstractSection extends AbstractPropertySection
    {
       setDecorator(control, message, IMessageProvider.WARNING);
    }
+
+
+   /**
+    * Getter of the model listener.
+    * 
+    * @return Returns the model listener.
+    */
+   protected Adapter getModelListener()
+   {
+      return modelListener;
+   }
 }
