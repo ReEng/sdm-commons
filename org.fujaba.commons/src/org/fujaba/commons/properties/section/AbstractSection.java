@@ -226,7 +226,7 @@ public abstract class AbstractSection extends AbstractPropertySection
    protected abstract void createWidgets(Composite parent);
 
 
-   private EditingDomain getEditingDomain()
+   protected EditingDomain getEditingDomain()
    {
       IWorkbenchPart part = getPart();
 
