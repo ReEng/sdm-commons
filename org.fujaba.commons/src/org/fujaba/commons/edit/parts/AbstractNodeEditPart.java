@@ -156,7 +156,8 @@ public abstract class AbstractNodeEditPart extends AbstractNodeViewEditPart
       }
 
       // change parent constraint to get scroll bars on views
-      if (getParent() != null && getParent() instanceof AbstractNodeEditPart)
+      if (getParent() != null && getParent() instanceof AbstractNodeEditPart 
+            && getFigure().getParent() != null)
       {
          ((AbstractNodeEditPart) getParent()).setLayoutConstraint(this,
                getFigure(), rect);
