@@ -1,5 +1,6 @@
-\section{Story Diagram} \label{sec:StoryDiagrams}
+\section{Story Diagrams} \label{sec:StoryDiagrams}
 
+\subsection*{Old stuff from rejected paper}
 Story diagrams are an extension of UML 1.4 activity diagrams \cite{UML} that embed story patterns into the activities.
 That allows to model basic control flow structures like branches or loops.
 Figure \ref{fig:controlFlow} shows a story diagram that embeds the story pattern of Figure \ref{fig:SP} into one of its activities.
@@ -39,3 +40,16 @@ After transforming the classes, all primitive types of the source model have to 
 Finally, the target system object \fe{targetSystem} is returned by the story diagram as indicated by the annotation \fe{return targetSystem} on the stop node.
 
 Hitherto, story diagrams only support proprietary calls to library functions called collaboration statements. In Figure \ref{fig:forEach}, the activity \fe{InvokeCodeGen} contains such a call to the code generator. The call only is a string expression that does neither allow type checking of the input parameters nor getting a matching of return values, i.e., the return values cannot be used in the story diagram.
+
+\subsection{Applications of Stroy Diagrams (Dietrich)}
+2 worlds: with and without methods\ldots
+
+\subsection{General composition of Story Diagrams}
+\begin{itemize}
+  \item Based on UML 1.5 activity diagrams
+  \item Grammar for story diagrams (based on grammar in diploma thesis of Thomas Klein (1999))
+\end{itemize}
+
+\subsection{Calls}
+
+\todomvd{Wie sehen Calls (Method/Activity) aus?}

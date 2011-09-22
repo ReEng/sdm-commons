@@ -1,5 +1,7 @@
 \chapter{Complete Example}
 
+\section*{Old stuff from rejected paper}
+
 To illustrate our concept, we use a language transformation scenario: Suppose we have a model representing the abstract syntax graph (ASG) of a program. The ASG is language-specific, of course. If we want to generate code from the ASG for a target language other than the language on which the given ASG is based, one option is to transform the ASG first.
 One example of this would be a transformation from Java to C++.
 
@@ -40,7 +42,7 @@ An \fe{CClass} can contain a number of \fe{Functions}. In addition, each \fe{CCl
 Figure~\ref{fig:transformationOverview} shows an activity diagram which gives an overview of the transformation from a source ASG to a target ASG.
 At first, the target system has to be created. Each classifier in the source system has to be transformed into a corresponding classifier in the target system. While primitive types can be transformed easily, headers have to be created for all transformed classes. For each method, a function has to be created and a corresponding function declaration has to be added to the correct header. In the end, the target system can be passed to the code generation mechanism.
 
-\subsection{Requirements}
+\section{Requirements for new example}
 
 Vorschlag fuer das Beispiel: Interface Violation Reengineering Beispiel, die Konstrukte (x) sind bereits enthalten, die Konstrukte (...) sind Ideen, wie man das Beispiel ergaenzen kann
 
