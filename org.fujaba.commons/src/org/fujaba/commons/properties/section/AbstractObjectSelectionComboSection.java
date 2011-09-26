@@ -24,7 +24,7 @@ import org.fujaba.commons.FujabaCommonsImages;
 public abstract class AbstractObjectSelectionComboSection extends
       AbstractSection
 {
-   private CLabel label;
+   protected CLabel label;
 
    protected Combo list;
 
