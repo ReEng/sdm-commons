@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.modeling.SDMPackage;
+import org.storydriven.modeling.calls.CallsPackage;
 
 /**
  * <!-- begin-user-doc --> The <b>Package</b> for the model. It contains accessors for the meta objects to represent
@@ -806,7 +807,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__ANNOTATION = SDMPackage.COMMENTABLE_ELEMENT__ANNOTATION;
+   int ACTIVITY__ANNOTATION = CallsPackage.CALLABLE__ANNOTATION;
 
    /**
     * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -814,7 +815,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__EXTENSION = SDMPackage.COMMENTABLE_ELEMENT__EXTENSION;
+   int ACTIVITY__EXTENSION = CallsPackage.CALLABLE__EXTENSION;
 
    /**
     * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -822,7 +823,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__COMMENT = SDMPackage.COMMENTABLE_ELEMENT__COMMENT;
+   int ACTIVITY__COMMENT = CallsPackage.CALLABLE__COMMENT;
 
    /**
     * The feature id for the '<em><b>In Parameter</b></em>' reference list.
@@ -831,7 +832,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__IN_PARAMETER = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+   int ACTIVITY__IN_PARAMETER = CallsPackage.CALLABLE__IN_PARAMETER;
 
    /**
     * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
@@ -840,7 +841,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__OUT_PARAMETER = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+   int ACTIVITY__OUT_PARAMETER = CallsPackage.CALLABLE__OUT_PARAMETER;
 
    /**
     * The feature id for the '<em><b>Contained Parameters</b></em>' containment reference list.
@@ -849,7 +850,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__CONTAINED_PARAMETERS = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+   int ACTIVITY__CONTAINED_PARAMETERS = CallsPackage.CALLABLE__CONTAINED_PARAMETERS;
 
    /**
     * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -858,7 +859,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__NAME = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+   int ACTIVITY__NAME = CallsPackage.CALLABLE_FEATURE_COUNT + 0;
 
    /**
     * The feature id for the '<em><b>Owning Operation</b></em>' container reference.
@@ -866,7 +867,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__OWNING_OPERATION = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
+   int ACTIVITY__OWNING_OPERATION = CallsPackage.CALLABLE_FEATURE_COUNT + 1;
 
    /**
     * The feature id for the '<em><b>Owned Activity Edge</b></em>' containment reference list.
@@ -874,7 +875,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__OWNED_ACTIVITY_EDGE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
+   int ACTIVITY__OWNED_ACTIVITY_EDGE = CallsPackage.CALLABLE_FEATURE_COUNT + 2;
 
    /**
     * The feature id for the '<em><b>Precondition</b></em>' reference.
@@ -882,7 +883,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__PRECONDITION = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 6;
+   int ACTIVITY__PRECONDITION = CallsPackage.CALLABLE_FEATURE_COUNT + 3;
 
    /**
     * The feature id for the '<em><b>Owned Activity Node</b></em>' containment reference list.
@@ -890,7 +891,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY__OWNED_ACTIVITY_NODE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 7;
+   int ACTIVITY__OWNED_ACTIVITY_NODE = CallsPackage.CALLABLE_FEATURE_COUNT + 4;
 
    /**
     * The number of structural features of the '<em>Activity</em>' class.
@@ -898,7 +899,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY_FEATURE_COUNT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 8;
+   int ACTIVITY_FEATURE_COUNT = CallsPackage.CALLABLE_FEATURE_COUNT + 5;
 
    /**
     * The operation id for the '<em>EClass</em>' operation.
@@ -906,7 +907,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___ECLASS = SDMPackage.COMMENTABLE_ELEMENT___ECLASS;
+   int ACTIVITY___ECLASS = CallsPackage.CALLABLE___ECLASS;
 
    /**
     * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -914,7 +915,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___EIS_PROXY = SDMPackage.COMMENTABLE_ELEMENT___EIS_PROXY;
+   int ACTIVITY___EIS_PROXY = CallsPackage.CALLABLE___EIS_PROXY;
 
    /**
     * The operation id for the '<em>EResource</em>' operation.
@@ -922,7 +923,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___ERESOURCE = SDMPackage.COMMENTABLE_ELEMENT___ERESOURCE;
+   int ACTIVITY___ERESOURCE = CallsPackage.CALLABLE___ERESOURCE;
 
    /**
     * The operation id for the '<em>EContainer</em>' operation.
@@ -930,7 +931,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___ECONTAINER = SDMPackage.COMMENTABLE_ELEMENT___ECONTAINER;
+   int ACTIVITY___ECONTAINER = CallsPackage.CALLABLE___ECONTAINER;
 
    /**
     * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -938,7 +939,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___ECONTAINING_FEATURE = SDMPackage.COMMENTABLE_ELEMENT___ECONTAINING_FEATURE;
+   int ACTIVITY___ECONTAINING_FEATURE = CallsPackage.CALLABLE___ECONTAINING_FEATURE;
 
    /**
     * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -946,7 +947,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___ECONTAINMENT_FEATURE = SDMPackage.COMMENTABLE_ELEMENT___ECONTAINMENT_FEATURE;
+   int ACTIVITY___ECONTAINMENT_FEATURE = CallsPackage.CALLABLE___ECONTAINMENT_FEATURE;
 
    /**
     * The operation id for the '<em>EContents</em>' operation.
@@ -954,7 +955,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___ECONTENTS = SDMPackage.COMMENTABLE_ELEMENT___ECONTENTS;
+   int ACTIVITY___ECONTENTS = CallsPackage.CALLABLE___ECONTENTS;
 
    /**
     * The operation id for the '<em>EAll Contents</em>' operation.
@@ -962,7 +963,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___EALL_CONTENTS = SDMPackage.COMMENTABLE_ELEMENT___EALL_CONTENTS;
+   int ACTIVITY___EALL_CONTENTS = CallsPackage.CALLABLE___EALL_CONTENTS;
 
    /**
     * The operation id for the '<em>ECross References</em>' operation.
@@ -970,7 +971,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___ECROSS_REFERENCES = SDMPackage.COMMENTABLE_ELEMENT___ECROSS_REFERENCES;
+   int ACTIVITY___ECROSS_REFERENCES = CallsPackage.CALLABLE___ECROSS_REFERENCES;
 
    /**
     * The operation id for the '<em>EGet</em>' operation.
@@ -978,7 +979,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___EGET__ESTRUCTURALFEATURE = SDMPackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+   int ACTIVITY___EGET__ESTRUCTURALFEATURE = CallsPackage.CALLABLE___EGET__ESTRUCTURALFEATURE;
 
    /**
     * The operation id for the '<em>EGet</em>' operation.
@@ -986,7 +987,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDMPackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+   int ACTIVITY___EGET__ESTRUCTURALFEATURE_BOOLEAN = CallsPackage.CALLABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
    /**
     * The operation id for the '<em>ESet</em>' operation.
@@ -994,7 +995,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___ESET__ESTRUCTURALFEATURE_OBJECT = SDMPackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+   int ACTIVITY___ESET__ESTRUCTURALFEATURE_OBJECT = CallsPackage.CALLABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
    /**
     * The operation id for the '<em>EIs Set</em>' operation.
@@ -1002,7 +1003,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___EIS_SET__ESTRUCTURALFEATURE = SDMPackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+   int ACTIVITY___EIS_SET__ESTRUCTURALFEATURE = CallsPackage.CALLABLE___EIS_SET__ESTRUCTURALFEATURE;
 
    /**
     * The operation id for the '<em>EUnset</em>' operation.
@@ -1010,7 +1011,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___EUNSET__ESTRUCTURALFEATURE = SDMPackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+   int ACTIVITY___EUNSET__ESTRUCTURALFEATURE = CallsPackage.CALLABLE___EUNSET__ESTRUCTURALFEATURE;
 
    /**
     * The operation id for the '<em>EInvoke</em>' operation.
@@ -1018,7 +1019,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___EINVOKE__EOPERATION_ELIST = SDMPackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+   int ACTIVITY___EINVOKE__EOPERATION_ELIST = CallsPackage.CALLABLE___EINVOKE__EOPERATION_ELIST;
 
    /**
     * The operation id for the '<em>Get Extension</em>' operation.
@@ -1026,7 +1027,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___GET_EXTENSION__ECLASS = SDMPackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+   int ACTIVITY___GET_EXTENSION__ECLASS = CallsPackage.CALLABLE___GET_EXTENSION__ECLASS;
 
    /**
     * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1034,7 +1035,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___PROVIDE_EXTENSION__ECLASS = SDMPackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+   int ACTIVITY___PROVIDE_EXTENSION__ECLASS = CallsPackage.CALLABLE___PROVIDE_EXTENSION__ECLASS;
 
    /**
     * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1042,7 +1043,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___GET_ANNOTATION__STRING = SDMPackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
+   int ACTIVITY___GET_ANNOTATION__STRING = CallsPackage.CALLABLE___GET_ANNOTATION__STRING;
 
    /**
     * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1050,7 +1051,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY___PROVIDE_ANNOTATION__STRING = SDMPackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+   int ACTIVITY___PROVIDE_ANNOTATION__STRING = CallsPackage.CALLABLE___PROVIDE_ANNOTATION__STRING;
 
    /**
     * The number of operations of the '<em>Activity</em>' class.
@@ -1058,7 +1059,7 @@ public interface ActivitiesPackage extends EPackage
     * @generated
     * @ordered
     */
-   int ACTIVITY_OPERATION_COUNT = SDMPackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
+   int ACTIVITY_OPERATION_COUNT = CallsPackage.CALLABLE_OPERATION_COUNT + 0;
 
    /**
     * The meta object id for the '{@link org.storydriven.modeling.activities.impl.StructuredNodeImpl <em>Structured Node</em>}' class.

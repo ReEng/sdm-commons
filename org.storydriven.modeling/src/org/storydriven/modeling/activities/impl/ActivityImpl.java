@@ -32,6 +32,7 @@ import org.storydriven.modeling.activities.ActivityEdge;
 import org.storydriven.modeling.activities.ActivityNode;
 import org.storydriven.modeling.activities.MatchingStoryNode;
 import org.storydriven.modeling.activities.OperationExtension;
+import org.storydriven.modeling.calls.impl.CallableImpl;
 import org.storydriven.modeling.calls.Callable;
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.impl.CommentableElementImpl;
@@ -41,9 +42,6 @@ import org.storydriven.modeling.impl.CommentableElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getInParameters <em>In Parameter</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOutParameters <em>Out Parameter</em>}</li>
- *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getContainedParameters <em>Contained Parameters</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwningOperation <em>Owning Operation</em>}</li>
  *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwnedActivityEdges <em>Owned Activity Edge</em>}</li>
@@ -54,38 +52,8 @@ import org.storydriven.modeling.impl.CommentableElementImpl;
  *
  * @generated
  */
-public class ActivityImpl extends CommentableElementImpl implements Activity
+public class ActivityImpl extends CallableImpl implements Activity
 {
-   /**
-    * The cached value of the '{@link #getInParameters() <em>In Parameter</em>}' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #getInParameters()
-    * @generated
-    * @ordered
-    */
-   protected EList<EParameter> inParameters;
-
-   /**
-    * The cached value of the '{@link #getOutParameters() <em>Out Parameter</em>}' reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #getOutParameters()
-    * @generated
-    * @ordered
-    */
-   protected EList<EParameter> outParameters;
-
-   /**
-    * The cached value of the '{@link #getContainedParameters() <em>Contained Parameters</em>}' containment reference list.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #getContainedParameters()
-    * @generated
-    * @ordered
-    */
-   protected EList<EParameter> containedParameters;
-
    /**
     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -159,21 +127,6 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
     * <!-- end-user-doc -->
     * @generated
     */
-   public EList<EParameter> getContainedParameters ()
-   {
-      if (containedParameters == null)
-      {
-         containedParameters = new EObjectContainmentEList.Resolving<EParameter>(EParameter.class, this,
-            ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS);
-      }
-      return containedParameters;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
    public String getName ()
    {
       return name;
@@ -190,36 +143,6 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
       name = newName;
       if (eNotificationRequired())
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY__NAME, oldName, name));
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   public EList<EParameter> getInParameters ()
-   {
-      if (inParameters == null)
-      {
-         inParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
-            ActivitiesPackage.ACTIVITY__IN_PARAMETER);
-      }
-      return inParameters;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   public EList<EParameter> getOutParameters ()
-   {
-      if (outParameters == null)
-      {
-         outParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
-            ActivitiesPackage.ACTIVITY__OUT_PARAMETER);
-      }
-      return outParameters;
    }
 
    /**
@@ -405,8 +328,6 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    {
       switch (featureID)
       {
-         case ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS:
-            return ((InternalEList<?>) getContainedParameters()).basicRemove(otherEnd, msgs);
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             return basicSetOwningOperation(null, msgs);
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
@@ -442,12 +363,6 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    {
       switch (featureID)
       {
-         case ActivitiesPackage.ACTIVITY__IN_PARAMETER:
-            return getInParameters();
-         case ActivitiesPackage.ACTIVITY__OUT_PARAMETER:
-            return getOutParameters();
-         case ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS:
-            return getContainedParameters();
          case ActivitiesPackage.ACTIVITY__NAME:
             return getName();
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
@@ -476,18 +391,6 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    {
       switch (featureID)
       {
-         case ActivitiesPackage.ACTIVITY__IN_PARAMETER:
-            getInParameters().clear();
-            getInParameters().addAll((Collection<? extends EParameter>) newValue);
-            return;
-         case ActivitiesPackage.ACTIVITY__OUT_PARAMETER:
-            getOutParameters().clear();
-            getOutParameters().addAll((Collection<? extends EParameter>) newValue);
-            return;
-         case ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS:
-            getContainedParameters().clear();
-            getContainedParameters().addAll((Collection<? extends EParameter>) newValue);
-            return;
          case ActivitiesPackage.ACTIVITY__NAME:
             setName((String) newValue);
             return;
@@ -518,15 +421,6 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    {
       switch (featureID)
       {
-         case ActivitiesPackage.ACTIVITY__IN_PARAMETER:
-            getInParameters().clear();
-            return;
-         case ActivitiesPackage.ACTIVITY__OUT_PARAMETER:
-            getOutParameters().clear();
-            return;
-         case ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS:
-            getContainedParameters().clear();
-            return;
          case ActivitiesPackage.ACTIVITY__NAME:
             setName(NAME_EDEFAULT);
             return;
@@ -555,12 +449,6 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    {
       switch (featureID)
       {
-         case ActivitiesPackage.ACTIVITY__IN_PARAMETER:
-            return inParameters != null && !inParameters.isEmpty();
-         case ActivitiesPackage.ACTIVITY__OUT_PARAMETER:
-            return outParameters != null && !outParameters.isEmpty();
-         case ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS:
-            return containedParameters != null && !containedParameters.isEmpty();
          case ActivitiesPackage.ACTIVITY__NAME:
             return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
@@ -583,20 +471,6 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    @Override
    public int eBaseStructuralFeatureID (int derivedFeatureID, Class<?> baseClass)
    {
-      if (baseClass == Callable.class)
-      {
-         switch (derivedFeatureID)
-         {
-            case ActivitiesPackage.ACTIVITY__IN_PARAMETER:
-               return CallsPackage.CALLABLE__IN_PARAMETER;
-            case ActivitiesPackage.ACTIVITY__OUT_PARAMETER:
-               return CallsPackage.CALLABLE__OUT_PARAMETER;
-            case ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS:
-               return CallsPackage.CALLABLE__CONTAINED_PARAMETERS;
-            default:
-               return -1;
-         }
-      }
       if (baseClass == NamedElement.class)
       {
          switch (derivedFeatureID)
@@ -618,20 +492,6 @@ public class ActivityImpl extends CommentableElementImpl implements Activity
    @Override
    public int eDerivedStructuralFeatureID (int baseFeatureID, Class<?> baseClass)
    {
-      if (baseClass == Callable.class)
-      {
-         switch (baseFeatureID)
-         {
-            case CallsPackage.CALLABLE__IN_PARAMETER:
-               return ActivitiesPackage.ACTIVITY__IN_PARAMETER;
-            case CallsPackage.CALLABLE__OUT_PARAMETER:
-               return ActivitiesPackage.ACTIVITY__OUT_PARAMETER;
-            case CallsPackage.CALLABLE__CONTAINED_PARAMETERS:
-               return ActivitiesPackage.ACTIVITY__CONTAINED_PARAMETERS;
-            default:
-               return -1;
-         }
-      }
       if (baseClass == NamedElement.class)
       {
          switch (baseFeatureID)

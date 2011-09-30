@@ -29,7 +29,6 @@ import org.storydriven.modeling.patterns.ObjectVariable;
 import org.storydriven.modeling.patterns.PatternsFactory;
 import org.storydriven.modeling.patterns.PatternsPackage;
 
-
 /**
  * This is the item provider adapter for a {@link org.storydriven.modeling.patterns.ObjectVariable} object.
  * <!-- begin-user-doc -->
@@ -144,32 +143,36 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider
 		//						"_UI_ObjectVariable_type"),
 		//				PatternsPackage.Literals.OBJECT_VARIABLE__CLASSIFIER, true,
 		//				false, true, null, null, null));
-		
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_ObjectVariable_classifier_feature"), getString(
-						"_UI_PropertyDescriptor_description", "_UI_ObjectVariable_classifier_feature",
-						"_UI_ObjectVariable_type"), PatternsPackage.Literals.OBJECT_VARIABLE__CLASSIFIER, true, false,
-				true, null, null, null)
-		{
+
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ObjectVariable_classifier_feature"), getString(
+						"_UI_PropertyDescriptor_description",
+						"_UI_ObjectVariable_classifier_feature",
+						"_UI_ObjectVariable_type"),
+				PatternsPackage.Literals.OBJECT_VARIABLE__CLASSIFIER, true,
+				false, true, null, null, null) {
 			@Override
-			public Collection<?> getChoiceOfValues(Object object)
-			{
+			public Collection<?> getChoiceOfValues(Object object) {
 				Collection<?> result = super.getChoiceOfValues(object);
-				if (feature instanceof EReference && object instanceof EObject)
-				{
+				if (feature instanceof EReference && object instanceof EObject) {
 					@SuppressWarnings("unchecked")
-					List<EObject> eObjects = (List<EObject>) (List<?>) new LinkedList<Object>(result);
+					List<EObject> eObjects = (List<EObject>) (List<?>) new LinkedList<Object>(
+							result);
 					Resource resource = ((EObject) object).eResource();
-					if (resource != null)
-					{
+					if (resource != null) {
 						ResourceSet resourceSet = resource.getResourceSet();
-						if (resourceSet != null)
-						{
-							Collection<EObject> visited = new HashSet<EObject>(eObjects);
-							Registry packageRegistry = resourceSet.getPackageRegistry();
-							for (String nsURI : packageRegistry.keySet())
-							{
-								collectReachableObjectsOfType(visited, eObjects, packageRegistry.getEPackage(nsURI), feature.getEType());
+						if (resourceSet != null) {
+							Collection<EObject> visited = new HashSet<EObject>(
+									eObjects);
+							Registry packageRegistry = resourceSet
+									.getPackageRegistry();
+							for (String nsURI : packageRegistry.keySet()) {
+								collectReachableObjectsOfType(visited,
+										eObjects,
+										packageRegistry.getEPackage(nsURI),
+										feature.getEType());
 							}
 						}
 					}

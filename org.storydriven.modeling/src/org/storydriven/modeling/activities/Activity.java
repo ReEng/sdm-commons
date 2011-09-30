@@ -33,7 +33,7 @@ import org.storydriven.modeling.calls.Callable;
  * @model
  * @generated
  */
-public interface Activity extends CommentableElement, Callable, NamedElement
+public interface Activity extends Callable, CommentableElement, NamedElement
 {
    /**
     * Returns the value of the '<em><b>Owned Activity Node</b></em>' containment reference list.

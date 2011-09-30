@@ -18,25 +18,27 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.calls.Callable;
 import org.storydriven.modeling.calls.CallsPackage;
+import org.storydriven.modeling.calls.descriptor.CallableParametersPropertyDescriptor;
 import org.storydriven.modeling.provider.CommentableElementItemProvider;
 import org.storydriven.modeling.provider.SDMEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.storydriven.modeling.calls.Callable} object.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc
+ * --> <!-- end-user-doc -->
  * @generated
  */
 public class CallableItemProvider extends CommentableElementItemProvider
 		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
-	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This constructs an instance from a factory and a notifier. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CallableItemProvider(AdapterFactory adapterFactory) {
@@ -44,9 +46,9 @@ public class CallableItemProvider extends CommentableElementItemProvider
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns the property descriptors for the adapted class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -62,48 +64,49 @@ public class CallableItemProvider extends CommentableElementItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the In Parameter feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This adds a property descriptor for the In Parameter feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	protected void addInParameterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Callable_inParameter_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_Callable_inParameter_feature",
-								"_UI_Callable_type"),
-						CallsPackage.Literals.CALLABLE__IN_PARAMETER, true,
-						false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Out Parameter feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOutParameterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+		CallableParametersPropertyDescriptor itemPropertyDescriptor = new CallableParametersPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_Callable_outParameter_feature"),
+				getString("_UI_Callable_inParameter_feature"),
 				getString("_UI_PropertyDescriptor_description",
+						"_UI_Callable_inParameter_feature", "_UI_Callable_type"),
+				CallsPackage.Literals.CALLABLE__IN_PARAMETER, true, false,
+				true, null, null, null);
+
+		itemPropertyDescriptors.add(itemPropertyDescriptor);
+	}
+
+	/**
+	 * This adds a property descriptor for the Out Parameter feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	protected void addOutParameterPropertyDescriptor(Object object) {
+		CallableParametersPropertyDescriptor itemPropertyDescriptor = new CallableParametersPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Callable_outParameter_feature"), getString(
+						"_UI_PropertyDescriptor_description",
 						"_UI_Callable_outParameter_feature",
 						"_UI_Callable_type"),
 				CallsPackage.Literals.CALLABLE__OUT_PARAMETER, true, false,
-				true, null, null, null));
+				true, null, null, null);
+
+		itemPropertyDescriptors.add(itemPropertyDescriptor);
 	}
 
 	/**
 	 * This adds a property descriptor for the Contained Parameters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addContainedParametersPropertyDescriptor(Object object) {
@@ -123,8 +126,7 @@ public class CallableItemProvider extends CommentableElementItemProvider
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -139,8 +141,7 @@ public class CallableItemProvider extends CommentableElementItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -153,8 +154,8 @@ public class CallableItemProvider extends CommentableElementItemProvider
 
 	/**
 	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -167,8 +168,8 @@ public class CallableItemProvider extends CommentableElementItemProvider
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -185,10 +186,10 @@ public class CallableItemProvider extends CommentableElementItemProvider
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
+	 * describing the children that can be created under this object. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -202,9 +203,9 @@ public class CallableItemProvider extends CommentableElementItemProvider
 	}
 
 	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Return the resource locator for this item provider's resources. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
