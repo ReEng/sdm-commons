@@ -503,7 +503,7 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage
          IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
       initEReference(getCallable_ContainedParameters(), theEcorePackage.getEParameter(), null, "containedParameters",
          null, 0, -1, Callable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
-         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
       // Create annotations
       // http://www.eclipse.org/emf/2002/GenModel

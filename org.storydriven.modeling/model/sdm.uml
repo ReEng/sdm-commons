@@ -624,7 +624,7 @@ from within an activity.</body>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eWJbMhzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eWJbMRzMEeChOvWwuwx7tQ"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_UxWXoGZsEeCjFI7iCZKgmw" name="containedParameters" aggregation="composite" association="_QpRvAGZsEeCjFI7iCZKgmw">
+        <ownedAttribute xmi:id="_UxWXoGZsEeCjFI7iCZKgmw" name="containedParameters" isOrdered="true" aggregation="composite" association="_QpRvAGZsEeCjFI7iCZKgmw">
           <ownedComment xmi:id="_oiaCAJ28EeCuYMafrm1l2g" annotatedElement="_UxWXoGZsEeCjFI7iCZKgmw">
             <body>This reference is used to contain the parameters of a Callable if they are not already contained in another container. If the parameter is contained in another container as it is the case for parameters of a EOperation, they must not be added to this container!</body>
           </ownedComment>

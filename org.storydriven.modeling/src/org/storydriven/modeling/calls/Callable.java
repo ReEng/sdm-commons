@@ -42,7 +42,7 @@ public interface Callable extends CommentableElement
     * <!-- end-model-doc -->
     * @return the value of the '<em>Contained Parameters</em>' containment reference list.
     * @see org.storydriven.modeling.calls.CallsPackage#getCallable_ContainedParameters()
-    * @model containment="true" resolveProxies="true" ordered="false"
+    * @model containment="true" resolveProxies="true"
     * @generated
     */
    EList<EParameter> getContainedParameters ();

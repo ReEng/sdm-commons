@@ -824,8 +824,8 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
       activityEdgeEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
       activityNodeEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
       activityNodeEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
-      activityEClass.getESuperTypes().add(theCallsPackage.getCallable());
       activityEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
+      activityEClass.getESuperTypes().add(theCallsPackage.getCallable());
       activityEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
       operationExtensionEClass.getESuperTypes().add(theSDMPackage.getExtension());
       operationExtensionEClass.getESuperTypes().add(theCallsPackage.getCallable());
