@@ -118,8 +118,8 @@
         <ownedComment xmi:id="_w_iQMJ6JEeCWWYky4ZcK-A" annotatedElement="1f15de3e-b6d4-423a-b56b-04cc037e043c">
           <body>The diagram that describes the control flow of an operation. It is used to structure a number story patterns into a stroy diagram. Story patterns are contained in activity nodes which are connected by activity edges. In addition, there are special nodes like start, stop, and juction nodes.  </body>
         </ownedComment>
-        <generalization xmi:id="_AI5vELxZEd-Ytrd77fw2LA" general="_e7CFQLLyEd-uk56s-ldeog"/>
         <generalization xmi:id="_Bo3FcBzOEeChOvWwuwx7tQ" general="_gfdN4BzIEeChOvWwuwx7tQ"/>
+        <generalization xmi:id="_AI5vELxZEd-Ytrd77fw2LA" general="_e7CFQLLyEd-uk56s-ldeog"/>
         <generalization xmi:id="_Jv9OkNPMEeCSf9VnKNPwAA" general="_tB8FcLK5Ed-uk56s-ldeog"/>
         <ownedAttribute xmi:id="c38d6d26-77ad-489b-aef2-755014fcadb9" name="ownedActivityNode" visibility="public" type="0ef98ed0-902e-4764-91ad-f76566d6f80e" aggregation="composite" association="a0ea066c-e9db-4626-bb5b-e4bf75c4f4d4">
           <ownedComment xmi:id="_Sl1TsJ0REeCuYMafrm1l2g" annotatedElement="c38d6d26-77ad-489b-aef2-755014fcadb9">

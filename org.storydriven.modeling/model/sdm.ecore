@@ -187,7 +187,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//CommentableElement #//calls/Callable #//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//calls/Callable #//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The diagram that describes the control flow of an operation. It is used to structure a number story patterns into a stroy diagram. Story patterns are contained in activity nodes which are connected by activity edges. In addition, there are special nodes like start, stop, and juction nodes.  "/>
       </eAnnotations>

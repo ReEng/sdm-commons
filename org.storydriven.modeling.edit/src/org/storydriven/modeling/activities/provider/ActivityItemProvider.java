@@ -101,8 +101,7 @@ public class ActivityItemProvider extends CallableItemProvider implements
 				SDMPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
-	
-	
+
 	/**
 	 * @generated NOT
 	 */
