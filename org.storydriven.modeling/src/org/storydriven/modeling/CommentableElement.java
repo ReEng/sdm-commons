@@ -28,6 +28,7 @@ public interface CommentableElement extends ExtendableElement
 {
    /**
     * Returns the value of the '<em><b>Comment</b></em>' attribute.
+    * The default value is <code>"\"no comment provided\""</code>.
     * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Comment</em>' attribute isn't clear, there really should be more of a description here...
@@ -36,7 +37,7 @@ public interface CommentableElement extends ExtendableElement
     * @return the value of the '<em>Comment</em>' attribute.
     * @see #setComment(String)
     * @see org.storydriven.modeling.SDMPackage#getCommentableElement_Comment()
-    * @model ordered="false"
+    * @model default="\"no comment provided\"" ordered="false"
     * @generated
     */
    String getComment ();

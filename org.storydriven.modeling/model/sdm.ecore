@@ -68,7 +68,7 @@
       <details key="documentation" value="Abstract super class for all meta-model elements that may carry a comment in form of a string."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="&quot;no comment provided&quot;"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable" abstract="true" eSuperTypes="#//TypedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

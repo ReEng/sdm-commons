@@ -537,8 +537,8 @@ public class SDMPackageImpl extends EPackageImpl implements SDMPackage
 
       initEClass(commentableElementEClass, CommentableElement.class, "CommentableElement", IS_ABSTRACT, !IS_INTERFACE,
          IS_GENERATED_INSTANCE_CLASS);
-      initEAttribute(getCommentableElement_Comment(), ecorePackage.getEString(), "comment", null, 0, 1,
-         CommentableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+      initEAttribute(getCommentableElement_Comment(), ecorePackage.getEString(), "comment", "\"no comment provided\"",
+         0, 1, CommentableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
 
       initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -51,7 +51,7 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
     * @generated
     * @ordered
     */
-   protected static final String COMMENT_EDEFAULT = null;
+   protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
 
    /**
     * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.

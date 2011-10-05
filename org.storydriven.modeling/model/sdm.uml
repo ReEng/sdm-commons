@@ -1608,6 +1608,7 @@ Every Constraint or AttributeAssignment can use the variable as a container (e.g
       <ownedAttribute xmi:id="_l9XfkLLyEd-uk56s-ldeog" name="comment" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Fs4yABzCEeChOvWwuwx7tQ"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_IRlmIO82EeC2_OK3onprow" value="&quot;no comment provided&quot;"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="__xUl0LLyEd-uk56s-ldeog" name="TypedElement" isAbstract="true">

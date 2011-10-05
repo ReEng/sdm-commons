@@ -62,7 +62,7 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
     * @generated
     * @ordered
     */
-   protected static final String COMMENT_EDEFAULT = null;
+   protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
    /**
     * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
     * <!-- begin-user-doc --> <!-- end-user-doc -->
