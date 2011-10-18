@@ -2,7 +2,6 @@ package org.fujaba.commons.console.internal;
 
 
 import java.text.DateFormat;
-import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
@@ -24,8 +23,6 @@ public class ProcessConsole extends MessageConsole implements IProcessConsole,
    private static final String CONSOLE_TYPE = "FujabaProcessConsole"; //$NON-NLS-1$
 
    private static SimpleDateFormat DATE_FORMATTER;
-
-   private static NumberFormat NUMBER_FORMATTER;
 
 
    private static String getName(ProcessConsole console)
@@ -73,17 +70,46 @@ public class ProcessConsole extends MessageConsole implements IProcessConsole,
    }
 
 
-   private static String getSeconds(double ms)
+   private static String getSeconds(long millis)
    {
-      if (NUMBER_FORMATTER == null)
+      long ms = millis % 1000;
+      long s = (millis / 1000) % 60;
+      long m = (millis / (1000 * 60)) % 60;
+      long h = millis / (1000 * 3600);
+
+      String zero = "0"; //$NON-NLS-1$
+
+      StringBuilder durance = new StringBuilder();
+
+      if (h < 10)
       {
-         NUMBER_FORMATTER = NumberFormat.getNumberInstance();
-
-         NUMBER_FORMATTER.setMaximumFractionDigits(3);
-         NUMBER_FORMATTER.setMinimumFractionDigits(3);
+         durance.append(zero);
       }
+      durance.append(h);
+      durance.append(":");
+      if (m < 10)
+      {
+         durance.append(zero);
+      }
+      durance.append(m);
+      durance.append(":");
+      if (s < 10)
+      {
+         durance.append(zero);
+      }
+      durance.append(s);
+      durance.append(",");
+      if (ms < 100)
+      {
+         durance.append(zero);
+      }
+      if (ms < 10)
+      {
+         durance.append(zero);
+      }
+      durance.append(ms);
 
-      return NUMBER_FORMATTER.format(ms / 1000d);
+      return durance.toString();
    }
 
 
@@ -273,7 +299,7 @@ public class ProcessConsole extends MessageConsole implements IProcessConsole,
          case FINISHED:
             if (pauseDurance > 0)
             {
-               String message = "The process has been finished after %1$s seconds (plus %2$s seconds paused).";
+               String message = "The process has been finished after %1$s (plus %2$s paused).";
                String running = getSeconds((current - started) - pauseDurance);
                String paused = getSeconds(pauseDurance);
 
@@ -281,7 +307,7 @@ public class ProcessConsole extends MessageConsole implements IProcessConsole,
             }
             else
             {
-               String message = "The process has been finished after %1$s seconds.";
+               String message = "The process has been finished after %1$s.";
                String running = getSeconds(current - started);
 
                text = String.format(message, running);
@@ -292,7 +318,7 @@ public class ProcessConsole extends MessageConsole implements IProcessConsole,
          case ABORTED:
             if (pauseDurance > 0)
             {
-               String message = "The process has been aborted after %1$s seconds (plus %2$s seconds paused).";
+               String message = "The process has been aborted after %1$s (plus %2$s paused).";
                String running = getSeconds((current - started) - pauseDurance);
                String paused = getSeconds(pauseDurance);
 
@@ -300,7 +326,7 @@ public class ProcessConsole extends MessageConsole implements IProcessConsole,
             }
             else
             {
-               String message = "The process has been aborted after %1$s seconds.";
+               String message = "The process has been aborted after %1$s.";
                String running = getSeconds(current - started);
 
                text = String.format(message, running);
