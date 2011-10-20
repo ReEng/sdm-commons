@@ -7,3 +7,23 @@
 Typed, attributed graph transformations with inheritance\ldots
 
 \subsection{Single Pushout (Christian und Julian)}
+
+In the field of graph transformations the two most popular approaches are the
+\emph{double-pushout approach} \cite{Roz97} and the \emph{single-pushout
+approach} \cite{Roz97}. The definition of story diagrams follows the
+single-pushout approach. Besides the more theoretical differences the two
+approaches differ in the handling of two special situations that might occur
+upon rule application.
+The first situation is the following. Assume the left-hand side of a rule
+consists of two nodes. The first node is to be deleted and the second one is
+to be preserved. Both of these nodes may be matched to the same node in the host
+graph. In this situation it is not clear if the node in the host graph is to be
+deleted or preserved. The double-pushout approach explicitely forbits such
+situations. The single-pushout approach allows such situations and gives
+deletion priority over preservation.The second situation deals with dangling edges. It occurs if a certain node is
+to be deleted but some of its incident edges are to be preserved. The
+transformation would lead to a non-valid graph in which the edges would not have
+either a source or a target node. The double pushout approach does not allow
+such situations and instead requires that incident edges are explicitely
+deleted. The single-pushout approach allows such situations and implicitely
+deletes edges if one of the source or target nodes are deleted.

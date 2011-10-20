@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Thu Oct 20 15:13:48 CEST 2011
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=
+mainTexFile=SdmPaper.tex
+outputFile=SdmPaper.pdf
+langSpell=
+markDer=true
+srcDir=
