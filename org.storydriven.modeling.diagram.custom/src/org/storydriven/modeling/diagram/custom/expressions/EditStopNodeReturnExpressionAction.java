@@ -23,6 +23,7 @@ public class EditStopNodeReturnExpressionAction extends AbstractActionDelegate i
 		parameterDialog.setParameterList(this.getActivity().getOutParameters());
 		parameterDialog.setChangeCommandReceiver(this.getChangeCommandReceiver());
 		parameterDialog.setNode(this.getModel());
+		parameterDialog.setActivity(this.getActivity());
 		parameterDialog.setEditPart(this.getEditPart());
 		
 		parameterDialog.open();

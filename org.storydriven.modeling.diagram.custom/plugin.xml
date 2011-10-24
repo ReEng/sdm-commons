@@ -193,14 +193,6 @@
       </objectContribution>
    </extension>
    <extension
-         point="org.storydriven.modeling.diagram.custom.expressionSourceViewerExtension">
-      <expressionSourceViewer
-            expressionLanguage="Logics"
-            sourceViewerProvider="org.storydriven.modeling.diagram.custom.sourceViewerProviders.logics01ViewerProvider"
-            version="0.1">
-      </expressionSourceViewer>
-   </extension>
-   <extension
          id="creation-wizard"
          point="org.eclipse.ui.newWizards">
       <wizard

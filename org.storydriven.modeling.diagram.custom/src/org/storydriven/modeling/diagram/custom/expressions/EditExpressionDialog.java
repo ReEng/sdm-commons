@@ -79,9 +79,6 @@ public class EditExpressionDialog extends Dialog {
 	private Map<String, EClassifier> contextInformation;
 
 	private Composite languageEditingArea;
-
-	
-	
 	
 	public EditExpressionDialog(Shell parent) {
 		super(parent);
@@ -180,10 +177,11 @@ public class EditExpressionDialog extends Dialog {
 	   *      createDialogArea(org.eclipse.swt.widgets.Composite) 
 	   */
 	protected Control createDialogArea(Composite parent) {
+
+		this.getShell().setText(DIALOG_TITLE);
+		
 		Composite composite = (Composite) super.createDialogArea(parent);
 		composite.setLayout(new RowLayout(SWT.VERTICAL));
-		composite.setSize(DIALOG_WIDTH, DIALOG_HEIGHT);
-
 		
 		if (ExpressionUtils.getAmountLanguages() <= RADIO_BUTTON_THRESHOLD_LANGUAGES
 				&& ExpressionUtils.getMaximumAmountVersions() <= RADIO_BUTTON_THRESHOLD_VERSIONS) {
@@ -227,7 +225,6 @@ public class EditExpressionDialog extends Dialog {
 		composite.layout(false);
 		languageEditingArea.layout(false);
 		
-		this.getShell().setText(DIALOG_TITLE);
 		
 		adjustDefaultSourceViewer();
 				
@@ -241,7 +238,6 @@ public class EditExpressionDialog extends Dialog {
 				alanguageChoosingWidget.addLanguageWithVersion(aLanguage, aVersion);
 			}
 		}
-		
 	}
 
 	private void adjustDefaultSourceViewer() {

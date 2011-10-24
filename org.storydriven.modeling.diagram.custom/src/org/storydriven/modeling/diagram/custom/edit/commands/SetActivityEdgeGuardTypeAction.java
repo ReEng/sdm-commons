@@ -69,8 +69,9 @@ public class SetActivityEdgeGuardTypeAction extends AbstractActionDelegate imple
 
 		final String actEdgeGuardValue = getAction().getText();
 
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(activityEdgeEditPart.getEditingDomain(), "Set Guard",
-				null)
+		AbstractTransactionalCommand command = new AbstractTransactionalCommand(activityEdgeEditPart.getEditingDomain(), 
+																				"Set Guard",
+																				null)
 		{
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException
 			{

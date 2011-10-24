@@ -21,12 +21,14 @@ public class StoryNodeToggleForEachCommand extends AbstractActionDelegate implem
 	
 	@Override
 	protected void doRun(IProgressMonitor progressMonitor) {
+		
 		GraphicalEditPart anEditPart = (GraphicalEditPart) (getStructuredSelection().getFirstElement());
 		aNodeElement = (StoryNode) ((View) anEditPart.getModel()).getElement();
 		theModel = ((View) anEditPart.getModel());
 		
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(anEditPart.getEditingDomain(),
-					"Toggle StoryNodes for each attribute", null) {
+																				"Toggle StoryNodes foreach attribute", 
+																				null) {
 			
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
@@ -38,6 +40,8 @@ public class StoryNodeToggleForEachCommand extends AbstractActionDelegate implem
 			}
 		};
 		
+		aNodeElement = null;
+		
 		try
 		{
 			OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
@@ -48,3 +52,21 @@ public class StoryNodeToggleForEachCommand extends AbstractActionDelegate implem
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
