@@ -3,6 +3,7 @@
 \todoall{What else do we need to address in this chapter?}
 
 \section{Graphs and Graph Transformations}
+\label{sec:foundations:simpleGTS}
 
 Graphs consist of nodes and edges where an edge always connects two nodes. Nodes are used to represent objects and edges denote relationships between these objects. In course of this document, we will assume edges to be directed, i.e., they have a source node and a target node. In the most simple case, neither nodes nor edges have a predefined semantics \cite{Roz97}.
 
@@ -63,7 +64,7 @@ deletes edges if one of the source or target nodes are deleted.
 
 \section{Typed Attributed Graph Transformations}
 
-Story Diagrams are based on typed attributed graph transformations.
+Graphs and according graph transformations as introduced in Section \ref{sec:foundations:simpleGTS} are a very basic approach to modeling behavior. When using graph transformations for modeling behavior for object-oriented software or as a foundation for defining the semantics of modeling languages, it is necessary to distinguish different types of nodes and edges in a graph in order to give them semantics. 
 
-Typed, attributed graph transformations with inheritance\ldots
+Therefore, story diagrams are based on typed attributed graph transformations \cite{EEPT06}. Typed attributed graph transformations introduce a type graph and node attributes. The type graph defines different types of nodes and edges and it defines which types of edges are allowed for which type of nodes. Additionally, nodes may carry attributes like, e.g., objects in an object-oriented programming language. Accordingly, the type graph specifies inheritance relations between types of objects which are also known from object oriented programming languages.
 
