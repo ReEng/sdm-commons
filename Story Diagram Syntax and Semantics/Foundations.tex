@@ -2,28 +2,68 @@
 
 \todoall{What else do we need to address in this chapter?}
 
-\section{What are Story Diagrams?}
+\section{Graphs and Graph Transformations}
 
-Typed, attributed graph transformations with inheritance\ldots
+Graphs consist of nodes and edges where an edge always connects two nodes. Nodes are used to represent objects and edges denote relationships between these objects. In course of this document, we will assume edges to be directed, i.e., they have a source node and a target node. In the most simple case, neither nodes nor edges have a predefined semantics \cite{Roz97}.
 
-\subsection{Single Pushout (Christian und Julian)}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1.5]{figures/SimpleGraph}
+  \caption{Simple Graph}
+  \label{fig:simpleGraph}
+\end{figure}
 
-In the field of graph transformations the two most popular approaches are the
+Figure \ref{fig:simpleGraph} shows an example of a simple graph with three nodes and four edges. The nodes are visualized a circles, the edges are visualized as arrows. An edge may have the same node as a source and target node. Such an edge is called a \emph{self-edge}.
+
+\emph{Graph transformation rules} specify allowed modifications of graphs. They consist of a left-hand side (LHS), a right-hand side (RHS), and a so-called rule morphism. Both, the LHS and the RHS are graphs while the rule morphism specifies which nodes of the LHS and RHS are considered to be the same. This information is required for the application of a graph transformation rule to a graph.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1.5]{figures/SimpleGTRule}
+  \caption{Simple Graph Transformation Rule}
+  \label{fig:simpleGTRule}
+\end{figure}
+
+Figure \ref{fig:simpleGTRule} shows an example of a graph transformation rule. The LHS contains only node node with a self-edge. The RHS contains two nodes connected by an edge where the right node of the RHS has a self-edge as well. The rule morphism is visualized by the grey, dotted arrow. It specifies that the node of the LHS and the left node of the RHS are considered to be the same.
+
+The application of a graph transformation rule to a graph is called a \emph{graph transformation} \cite{EEPT06}. The graph on which the rule is to be applied is called the \emph{host graph}.
+The application of a graph transformation rule to a graph is performed in three steps. In the first step, an occurrence of the LHS of the graph transformation rule in the host graph is searched. Such an occurrence is called a \emph{match} of the graph transformation rule. If a match has been found, all nodes and edges that occur in the LHS but not in the RHS are deleted from the host graph. In this step, the rule morphism is used to decide which nodes do not occur in the RHS. In the third step, all nodes and edges that occur in the RHS but not in the LHS are added to the host graph. After the application of the graph transformation rule, there exists a match of the RHS into the host graph.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{figures/GTApplication}
+  \caption{Application of a Graph Transformation Rule}
+  \label{fig:GTApplication}
+\end{figure}
+
+Figure \ref{fig:GTApplication} shows an example of a graph transformation that applies the graph transformation rule of Figure \ref{fig:simpleGTRule} to the graph of Figure \ref{fig:simpleGraph}. The matching of the LHS into the host graph is visualized by a gray, dotted line. Then, the graph transformation rule deletes the self-edge from this node. Afterwards, a new node with a self-edge is created and connected to the previously matched node by an edge. The match of the RHS into the host graph after the rule application is again shown by gray, dotted lines.
+
+In the field of algebraic graph transformations, the two most popular approaches for applying a graph transformation rule to a graph are the
 \emph{double-pushout approach} \cite{Roz97} and the \emph{single-pushout
 approach} \cite{Roz97}. The definition of story diagrams follows the
 single-pushout approach. Besides the more theoretical differences the two
 approaches differ in the handling of two special situations that might occur
-upon rule application.
+upon rule application.
+
 The first situation is the following. Assume the left-hand side of a rule
 consists of two nodes. The first node is to be deleted and the second one is
 to be preserved. Both of these nodes may be matched to the same node in the host
-graph. In this situation it is not clear if the node in the host graph is to be
-deleted or preserved. The double-pushout approach explicitely forbits such
+graph. In this situation, it is not clear if the node in the host graph is to be
+deleted or preserved. The double-pushout approach explicitly forbids the application of the rule in such
 situations. The single-pushout approach allows such situations and gives
-deletion priority over preservation.The second situation deals with dangling edges. It occurs if a certain node is
+deletion priority over preservation.
+
+The second situation deals with dangling edges. It occurs if a certain node is
 to be deleted but some of its incident edges are to be preserved. The
 transformation would lead to a non-valid graph in which the edges would not have
 either a source or a target node. The double pushout approach does not allow
-such situations and instead requires that incident edges are explicitely
-deleted. The single-pushout approach allows such situations and implicitely
-deletes edges if one of the source or target nodes are deleted.
+such situations and instead requires that incident edges are explicitly
+deleted. The single-pushout approach allows such situations and implicitly
+deletes edges if one of the source or target nodes are deleted.
+
+\section{Typed Attributed Graph Transformations}
+
+Story Diagrams are based on typed attributed graph transformations.
+
+Typed, attributed graph transformations with inheritance\ldots
+
