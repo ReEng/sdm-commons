@@ -11,6 +11,12 @@ general idea, purpose, attributes (matching, normal)
 
 object variables
 
+\todomcp{Are Primitive Variables part of this section? Should we have an own Section dealing with them?}
+
+\todomcp{What is the concrete syntax for primitive variables? How do we assign values to them?}
+
+\todomcp{Are primitive variables connected to other nodes in the story pattern? What is their scope/lifetime? Do they exist beyond the end of the Activity?}
+
 \subsection{Links and Link Variables [MCP]}
 
 \subsection{Binding of Variables [MCP]}
@@ -80,6 +86,18 @@ Link constraints are only applicable to link variables that reference an ordered
 
 \todoch{Is this semantic description correct/complete?}
 
+\subsubsection{Maybe Links}
+
+Disables the isomorphism check for two object variables, these two object variables may be matched to the same object.
+
+\todoch{What is the concrete Syntax? Using a special pattern constraint as proposed in Alberts Habil is very low-level. Alternative version is proposed in Figure \ref{fig:maybeLink}.}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1.5]{figures/MaybeLink}
+  \caption{Maybe Link}
+  \label{fig:maybeLink}
+\end{figure}
 
 \subsection{Pattern Constraints [CH]}
 
