@@ -1,7 +1,7 @@
 \section{Story Patterns (Christian und Marie)} \label{sec:StoryPatterns}
 
 \todoch{Define concrete syntax for new elements. In particular, check syntax for links.}
-\todoch{What happens when a constraint is placed inside a for each story pattern (not inside a node in that pattern)?}
+
 
 \subsection{Story Pattern [CH]}
 
@@ -25,19 +25,82 @@ object constraints, attribute assignments
 
 explain objectSetVariables, set size expressions
 
+\todomcp{If we bind an object set, can we use the bound object in other story pattern? E.g. to insert all elements bound by the object set into a container via a containment link? (See Figure \ref{fig:reuseObjSet}).}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1.0]{figures/ReuseObjectSet}
+  \caption{Reusing Object Sets}
+  \label{fig:reuseObjSet}
+\end{figure}
+
+\todomcp{What happens if an object set contains no ObjectSetSizeExpression and no object is matched into the object set? Proposal: ObjectSet is interpreted as optional and the matching succeeds.}
+
+\todomcp{What happens if $\leq$ is used in the ObjectSetSizeExpression and there exist more objects in the graph that could be matched into the set? E.g., the pattern in Figure \ref{fig:objSetSize} is applied to a class with 3 methods. Is  $\leq$ allowed as an operator in this case? Proposal: The operator is allowed and the pattern does not match.}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1.0]{figures/ObjectSetSize}
+  \caption{Object Set Size}
+  \label{fig:objSetSize}
+\end{figure}
+
+\todomcp{What happens if one pattern contains two object sets that may possibly contain the same objects. Consider the pattern in Figure \ref{fig:isoObjSet}. If c1 and c2 share the same super classes, su1 and su2 contain the same objects. Is this allowed? Isomorphic matching would normally forbid this.}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1.0]{figures/IsomorphismInObjectSets}
+  \caption{Isomorphism in Object Sets}
+  \label{fig:isoObjSet}
+\end{figure}
+
+
 \subsection{Special Link Kinds [CH]}
 
 \subsubsection{Containment Relations [CH]}
+
+\todoch{What is the semantics of a containment link? Current understanding: an element is contained in a container. What is the difference to to-many references which are containments?}
+
+\todoch{Which classifiers are allowed for ContainerVariables? This should not only be the EMF collection types EList and EMap. Does a ContainmentLink need a reference as a type like normal LinkVariables?}
 
 \subsubsection{Paths [MCP]}
 
 \subsubsection{Link Constraints [CH]}
 
+\todoch{What is the concrete Syntax for this?}
+
+Link constraints are only applicable to link variables that reference an ordered to-many reference. 
+\begin{itemize}
+  \item FIRST = matches the first element in the list, requires one link variable
+  \item LAST = matches the last element in the list, requires one link variable
+  \item INDEX = matches the element at the specified index, requires one link variable
+  \item DIRECT\_SUCCESSOR = requires two link variables, target of the second one must be located directly after the target of the first one in the list
+  \item INDIRECT\_SUCCESSOR = requires two link variables, target of the second one must be located somewhere after the target of the first one in the list
+\end{itemize}
+
+\todoch{Is this semantic description correct/complete?}
+
+
 \subsection{Pattern Constraints [CH]}
+
+\todoch{What happens when a pattern constraint is placed inside a for each story pattern (not inside a node in that pattern)? Proposal: The particular match must fulfill the pattern constraint, if it does not fulfill the pattern constraint, the match is rejected and the iteration continues.}
 
 \subsection{Contained Pattern [MCP]}
 
 patterns contained in other patterns, negative, semantics? review enhanced story patterns from Diss Florian Klein
+
+\todomcp{Should contained pattern be marked as forEach? Idea for semantics: first the part of the pattern outside the forEach pattern is matched, then the forEach subpattern is applied to any match that may be located, the variables bound in a forEach subpattern may not be used in subsequent activities}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1.0]{figures/ContainedPattern}
+  \caption{Different Kinds of Contained Patterns}
+  \label{fig:containedPattern}
+\end{figure}
+
+\todomcp{Should contained pattern be marked as optional? Is currently possible in the meta-model. Idea for semantics: Whole pattern must be found, if found, variables may be used in subsequent activities, if pattern may not be found as a whole, matching still succeeds but all variables in the subpattern are not bound in subsequent activities.}
+
+\todomcp{How deep may patterns be nested? What is the semantics of alternating binding semantics of sub-patterns, e.g. negative in optional in negative and so on.}
 
 \subsection*{Old stuff from rejected paper}
 
