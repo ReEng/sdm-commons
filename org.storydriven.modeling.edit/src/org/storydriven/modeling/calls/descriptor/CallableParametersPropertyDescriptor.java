@@ -16,6 +16,8 @@ import org.storydriven.modeling.calls.CallsPackage;
 
 public class CallableParametersPropertyDescriptor extends
 		ItemPropertyDescriptor {
+	
+	private Collection<EStructuralFeature> parameterFeatures = new ArrayList<EStructuralFeature>();
 
 	public CallableParametersPropertyDescriptor(AdapterFactory adapterFactory,
 			ResourceLocator resourceLocator, String displayName,
@@ -26,24 +28,31 @@ public class CallableParametersPropertyDescriptor extends
 				feature, isSettable, multiLine, sortChoices, staticImage,
 				category, filterFlags);
 		Assert.isLegal(isMany(null));
+		addParameterFeature(CallsPackage.Literals.CALLABLE__IN_PARAMETER);
+		addParameterFeature(CallsPackage.Literals.CALLABLE__OUT_PARAMETER);
+	}
+	
+	protected void addParameterFeature(EStructuralFeature feature) {
+		Assert.isLegal(feature.isMany());
+		parameterFeatures.add(feature);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void setPropertyValue(Object object, Object newValue) {
-
-		Collection<?> oldValues = (Collection<?>) unwrap(getPropertyValue(object));
-		Collection<?> newValues = (Collection<?>) newValue;
-
-		Collection<Object> addedValues = new ArrayList<Object>(newValues);
-		Collection<Object> removedValues = new ArrayList<Object>(oldValues);
-		addedValues.removeAll(oldValues);
-		removedValues.removeAll(newValues);
-
-		Collection<Object> containedValues = new ArrayList<Object>(
-				getContainedValues(object));
-		containedValues.addAll(addedValues);
-		containedValues.removeAll(removedValues);
-
+		EObject element = (EObject) object;
+		Collection<Object> containedValues = (Collection<Object>) unwrap(getPropertyValue(object));
+		containedValues.clear();
+		for (EStructuralFeature feature : parameterFeatures) {
+			Collection<Object> values;
+			
+			if (feature.equals(getFeature(object))) {
+				values = (Collection<Object>) newValue;
+			} else {
+				values = (Collection<Object>) element.eGet(feature);
+			}
+			containedValues.addAll(values);
+		}
 		setContainedValues(object, containedValues);
 
 		super.setPropertyValue(object, newValue);

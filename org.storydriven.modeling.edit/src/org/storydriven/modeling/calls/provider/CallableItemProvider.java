@@ -58,7 +58,6 @@ public class CallableItemProvider extends CommentableElementItemProvider
 
 			addInParameterPropertyDescriptor(object);
 			addOutParameterPropertyDescriptor(object);
-			addContainedParametersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -102,24 +101,6 @@ public class CallableItemProvider extends CommentableElementItemProvider
 				true, null, null, null);
 
 		itemPropertyDescriptors.add(itemPropertyDescriptor);
-	}
-
-	/**
-	 * This adds a property descriptor for the Contained Parameters feature.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContainedParametersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Callable_containedParameters_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Callable_containedParameters_feature",
-						"_UI_Callable_type"),
-				CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS, true,
-				false, false, null, null, null));
 	}
 
 	/**

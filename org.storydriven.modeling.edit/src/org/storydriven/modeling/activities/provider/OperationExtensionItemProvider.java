@@ -61,7 +61,6 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider
 			addCommentPropertyDescriptor(object);
 			addInParameterPropertyDescriptor(object);
 			addOutParameterPropertyDescriptor(object);
-			addContainedParametersPropertyDescriptor(object);
 			addOperationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -123,25 +122,6 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider
 						"_UI_Callable_type"),
 				CallsPackage.Literals.CALLABLE__OUT_PARAMETER, true, false,
 				true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Contained Parameters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContainedParametersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Callable_containedParameters_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Callable_containedParameters_feature",
-						"_UI_Callable_type"),
-				CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS, true,
-				false, false, null, null, null));
 	}
 
 	/**
