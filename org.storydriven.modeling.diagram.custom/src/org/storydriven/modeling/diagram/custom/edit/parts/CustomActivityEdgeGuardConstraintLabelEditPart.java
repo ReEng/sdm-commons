@@ -48,7 +48,7 @@ public class CustomActivityEdgeGuardConstraintLabelEditPart extends ActivityEdge
 
 		ActivityEdge edge = (ActivityEdge) ((View) getModel()).getElement();
 
-		String text = "hihihi";
+		String text = "";
 		if (edge.getGuardExpression() != null)
 		{
 			text = format(((TextualExpression) edge.getGuardExpression()).getExpressionText());
