@@ -6,6 +6,7 @@ package org.storydriven.modeling.calls.provider;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -21,6 +22,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.activities.expressions.ExpressionsFactory;
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.calls.ParameterBinding;
+import org.storydriven.modeling.expressions.LiteralExpression;
 import org.storydriven.modeling.provider.CommentableElementItemProvider;
 import org.storydriven.modeling.provider.SDMEditPlugin;
 
@@ -127,13 +129,32 @@ public class ParameterBindingItemProvider extends
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ParameterBinding) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_ParameterBinding_type")
-				: getString("_UI_ParameterBinding_type") + " " + label;
+		ParameterBinding parameterBinding = (ParameterBinding) object;
+		StringBuffer sb = new StringBuffer();
+		//sb.append(getString("_UI_ParameterBinding_type"));
+		sb.append(' ');
+		if (parameterBinding.getParameter() != null
+				&& parameterBinding.getParameter().getName() != null) {
+			sb.append(parameterBinding.getParameter().getName());
+			sb.append(' ');
+		}
+		if (parameterBinding.getValueExpression() != null) {
+			sb.append(":=");
+			// TODO: Use abstract operation of Expression, which gives the label
+			// for every kind of Expression.
+			String label;
+			Assert.isLegal(parameterBinding.getValueExpression() instanceof LiteralExpression);
+			LiteralExpression literalExpression = (LiteralExpression) parameterBinding
+					.getValueExpression();
+			label = literalExpression.getValue();
+			sb.append(label);
+		}
+
+		return sb.toString();
 	}
 
 	/**

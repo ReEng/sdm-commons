@@ -204,6 +204,18 @@
             Creates a new Activity Diagram.
          </description>
       </wizard>
+   </extension>   
+   <extension
+         id="modelelementcategory"
+         point="de.fujaba.modelinstance.modelelementcategory">
+      <category
+            key="org.storydriven.modeling.activities"
+            name="Activities">
+         <child
+               class="Activity"
+               packageNsUri="http://ns.storydriven.org/sdm/activities/0.1.0">
+         </child>
+      </category>
    </extension>
 
 </plugin>

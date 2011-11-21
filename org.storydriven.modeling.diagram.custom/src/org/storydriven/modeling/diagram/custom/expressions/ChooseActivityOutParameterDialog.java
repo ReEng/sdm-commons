@@ -29,7 +29,7 @@ import org.storydriven.modeling.expressions.impl.ExpressionsFactoryImpl;
 /**
  * 
  * This dialog provides buttons to choose which Out Parameter should be edited. It depends on information about
- * the diagram and the stopNode which expressions should be edited. It uses the EditExpressionDialog to edit the expression.
+ * the diagramResource and the stopNode which expressions should be edited. It uses the EditExpressionDialog to edit the expression.
  * The mapping of expresssions and Out Parameters depends on the order and number of expressions.
  *
  * @author Patrick Rein (pre)

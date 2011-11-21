@@ -2,7 +2,9 @@ package de.fujaba.newwizard.diagrams;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -11,18 +13,33 @@ import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.transaction.Transaction;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
+import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
+import org.eclipse.gmf.runtime.diagram.core.services.view.CreateNodeViewOperation;
+import org.eclipse.gmf.runtime.diagram.ui.commands.CreateCommand;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.commands.SetViewMutabilityCommand;
+import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -37,10 +54,14 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.storydriven.modeling.ExtendableElement;
 
 import de.fujaba.modelinstance.ModelElementCategory;
+import de.fujaba.modelinstance.ModelInstancePlugin;
 import de.fujaba.modelinstance.ModelinstanceFactory;
 import de.fujaba.modelinstance.RootNode;
+import de.fujaba.modelinstance.categories.ModelElementCategoryRegistry;
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.fujaba.newwizard.Messages;
+import de.fujaba.newwizard.diagrams.pages.DiagramContentsSelectionPage;
+import de.fujaba.newwizard.diagrams.pages.DiagramElementSelectionPage;
 import de.fujaba.newwizard.diagrams.pages.DiagramModelSelectionPage;
 import de.fujaba.newwizard.diagrams.pages.NewExtendedFileCreationPage;
 import de.fujaba.newwizard.ui.ResourceLocationProvider;
@@ -68,10 +89,14 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 	 */
 	protected DiagramModelSelectionPage domainModelSelectionPage;
 
+	protected DiagramElementSelectionPage diagramElementSelectionPage;
+
+	protected DiagramContentsSelectionPage diagramContentsSelectionPage;
+
 	/**
 	 * @generated
 	 */
-	protected Resource diagram;
+	protected Resource diagramResource;
 
 	/**
 	 * @generated
@@ -115,11 +140,6 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 	protected abstract String getDiagramFileExtension();
 
 	/**
-	 * Create a new instance of domain element associated with canvas.
-	 */
-	// protected abstract EObject createInitialModel();
-
-	/**
 	 * Return the Diagram Element, or null if the ModelElementCategory should be
 	 * used as the Diagram Element.
 	 */
@@ -145,7 +165,7 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 	 * @generated
 	 */
 	public final Resource getDiagram() {
-		return diagram;
+		return diagramResource;
 	}
 
 	/**
@@ -171,19 +191,16 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 		this.selection = selection;
 
 		setNeedsProgressMonitor(true);
+		setWindowTitle(getWindowTitle());
 	}
 
 	@Override
 	public void addPages() {
+		/*
+		 * Create Pages
+		 */
+
 		// 1) Create Diagram Model File
-		addDiagramModelFilePage();
-
-		// 2) Select existing Domain File and Domain Element.
-		addDomainModelSelectionPage();
-
-	}
-
-	private void addDiagramModelFilePage() {
 		diagramModelFilePage = new NewExtendedFileCreationPage(
 				"DiagramModelFile", getSelection(), getDiagramFileExtension()); //$NON-NLS-1$
 
@@ -192,23 +209,48 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 		diagramModelFilePage
 				.setDescription(Messages.CreationWizard_DiagramModelFilePageDescription);
 
-		addPage(diagramModelFilePage);
-	}
-
-	private void addDomainModelSelectionPage() {
+		// 2) Select Domain Model
 		ResourceLocationProvider rloc = new ResourceLocationProvider(
 				getSelection());
 
 		domainModelSelectionPage = new DiagramModelSelectionPage(
-				"domain", rloc, editingDomain.getResourceSet(), "fujaba", this); //$NON-NLS-1$ //$NON-NLS-2$
+				"domain", rloc, editingDomain.getResourceSet(), "fujaba", getModelElementCategoryKey()); //$NON-NLS-1$ //$NON-NLS-2$
 
 		domainModelSelectionPage.setTitle("Select Domain Model");
-		domainModelSelectionPage
-				.setDescription("Load domain model and select element for diagram.");
+		domainModelSelectionPage.setDescription("Load domain model.");
 		domainModelSelectionPage.setModelRequired(true);
 
+		// 3) Select Diagram Element
+		diagramElementSelectionPage = new DiagramElementSelectionPage(
+				"diagramResource element", this, getModelElementCategoryKey(),
+				domainModelSelectionPage);
+
+		diagramElementSelectionPage.setTitle("Select Diagram Element");
+
+		diagramElementSelectionPage
+				.setDescription("Select existing Diagram Element.");
+
+		// 4) Select existing Diagram contents
+		diagramContentsSelectionPage = new DiagramContentsSelectionPage(
+				"diagramResource contents", this, diagramElementSelectionPage);
+
+		diagramContentsSelectionPage.setTitle("Select Diagram contents");
+		diagramContentsSelectionPage
+				.setDescription("Select initial contents for the Diagram.");
+
+		/*
+		 * Add pages
+		 */
+		addPage(diagramModelFilePage);
 		addPage(domainModelSelectionPage);
+		if (!isModelElementCategoryDiagramElement()) {
+			addPage(diagramElementSelectionPage);
+		} else {
+			addPage(diagramContentsSelectionPage);
+		}
 	}
+
+	protected abstract boolean isModelElementCategoryDiagramElement();
 
 	/**
 	 * @generated
@@ -219,11 +261,13 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 			protected void execute(IProgressMonitor monitor)
 					throws CoreException, InterruptedException {
 
-				diagram = createDiagram(diagramModelFilePage.getURI(),
+				diagramResource = createDiagram(diagramModelFilePage.getURI(),
 						domainModelSelectionPage.getURI(), monitor);
-				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
+				if (isOpenNewlyCreatedDiagramEditor()
+						&& diagramResource != null) {
 					try {
-						DiagramEditorUtil.openDiagram(diagram, getEditorId());
+						DiagramEditorUtil.openDiagram(diagramResource,
+								getEditorId());
 					} catch (PartInitException e) {
 						ErrorDialog.openError(getContainer().getShell(),
 								Messages.CreationWizardOpenEditorError, null,
@@ -242,12 +286,14 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 						Messages.CreationWizardCreationError, null,
 						((CoreException) e.getTargetException()).getStatus());
 			} else {
-				FujabaNewwizardPlugin.getDefault().logError(
-						"Error creating diagram", e.getTargetException()); //$NON-NLS-1$
+				FujabaNewwizardPlugin
+						.getDefault()
+						.logError(
+								"Error creating diagramResource", e.getTargetException()); //$NON-NLS-1$
 			}
 			return false;
 		}
-		return diagram != null;
+		return diagramResource != null;
 	}
 
 	/**
@@ -279,8 +325,10 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 
 				ModelElementCategory elementCategory = null;
 
-				EObject element = domainModelSelectionPage
-						.getSelectedDiagramElement();
+				EObject element = diagramElementSelectionPage
+						.getSelectedElement();
+				Collection<EObject> contents = diagramContentsSelectionPage
+						.getSelectedElements();
 
 				if (!(element instanceof ExtendableElement)) {
 					List<?> rootElements = modelResource.getContents();
@@ -289,29 +337,14 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 						if (rootElement instanceof RootNode) {
 							RootNode rootNode = (RootNode) rootElement;
 							String categoryKey = getModelElementCategoryKey();
-							for (ModelElementCategory category : rootNode
-									.getCategories()) {
-								if (category.getKey().equals(categoryKey)
-								/*
-								 * && category .isValidElement(diagramElement)
-								 */) {
-									elementCategory = category;
-									break;
-								}
-							}
+							elementCategory = getModelElementCategory(rootNode,
+									categoryKey);
 
-							if (elementCategory == null) {
-								elementCategory = ModelinstanceFactory.eINSTANCE
-										.createModelElementCategory();
-								elementCategory.setKey(categoryKey);
-								rootNode.getCategories().add(elementCategory);
-							}
-
-							ExtendableElement newDiagramElement = createDiagramElement();
+							EObject newDiagramElement = createDiagramElement();
 
 							if (newDiagramElement != null) {
 								elementCategory.getModelElements().add(
-										newDiagramElement);
+										(ExtendableElement) newDiagramElement);
 								element = newDiagramElement;
 							}
 						}
@@ -322,11 +355,22 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 					element = elementCategory;
 				}
 
+				// Create diagramResource
 				Diagram diagram = ViewService.createDiagram(element,
 						getModelId(), getDiagramPreferencesHint());
+
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);
 					diagram.setName(diagramName);
+				}
+
+				CreateViewRequest request = getCreatePersistedViewsRequest(
+						diagram, contents);
+				Command cmd = getCreateViewCommand(request, diagram);
+				if (cmd != null && cmd.canExecute()) {
+					SetViewMutabilityCommand.makeMutable(
+							new EObjectAdapter(diagram)).execute();
+					executeCreateViewsCommand(cmd, diagram);
 				}
 
 				try {
@@ -334,8 +378,10 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 					modelResource.save(saveOptions);
 					diagramResource.save(saveOptions);
 				} catch (IOException e) {
-					FujabaNewwizardPlugin.getDefault().logError(
-							"Unable to store model and diagram resources", e); //$NON-NLS-1$
+					FujabaNewwizardPlugin
+							.getDefault()
+							.logError(
+									"Unable to store model and diagramResource resources", e); //$NON-NLS-1$
 				}
 				return CommandResult.newOKCommandResult();
 			}
@@ -345,7 +391,7 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 					new SubProgressMonitor(progressMonitor, 1), null);
 		} catch (ExecutionException e) {
 			FujabaNewwizardPlugin.getDefault().logError(
-					"Unable to create model and diagram", e); //$NON-NLS-1$
+					"Unable to create model and diagramResource", e); //$NON-NLS-1$
 		}
 		DiagramEditorUtil.setCharset(WorkspaceSynchronizer
 				.getFile(modelResource));
@@ -354,11 +400,108 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 		return diagramResource;
 	}
 
+	protected ModelElementCategory getModelElementCategory(RootNode rootNode,
+			String categoryKey) {
+		ModelElementCategory result = null;
+		for (ModelElementCategory category : rootNode.getCategories()) {
+			if (category.getKey().equals(categoryKey)
+			/*
+			 * && category .isValidElement(diagramElement)
+			 */) {
+				result = category;
+				break;
+			}
+		}
+
+		if (result == null) {
+			result = ModelinstanceFactory.eINSTANCE
+					.createModelElementCategory();
+			String categoryName = null;
+			ModelElementCategoryRegistry registry = ModelInstancePlugin.getInstance().getModelElementCategoryRegistry();
+			if (registry != null) {
+				categoryName = registry.getCategoryName(categoryKey);
+			}
+			result.setName(categoryName);
+			result.setKey(categoryKey);
+			rootNode.getCategories().add(result);
+		}
+		return result;
+	}
+
+	// Copied from CanonicalEditPolicy.executeCommand()
+	protected void executeCreateViewsCommand(final Command cmd, Diagram diagram) {
+		Map<String, Boolean> options = null;
+
+		// If still activating... set unprotected mode
+		options = Collections.singletonMap(Transaction.OPTION_UNPROTECTED,
+				Boolean.TRUE);
+
+		AbstractEMFOperation operation = new AbstractEMFOperation(
+				getEditingDomain(diagram), StringStatics.BLANK, options) {
+
+			protected IStatus doExecute(IProgressMonitor monitor,
+					IAdaptable info) throws ExecutionException {
+
+				cmd.execute();
+
+				return Status.OK_STATUS;
+			}
+		};
+		try {
+			operation.execute(new NullProgressMonitor(), null);
+		} catch (ExecutionException e) {
+			FujabaNewwizardPlugin.getDefault().logError(
+					"Unable to create initial views.", e); //$NON-NLS-1$
+		}
+	}
+
+	// Copied from CreationEditPolicy.getCreateCommand()
+	protected Command getCreateViewCommand(CreateViewRequest request,
+			Diagram diagram) {
+
+		TransactionalEditingDomain editingDomain = getEditingDomain(diagram);
+		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(
+				editingDomain, DiagramUIMessages.AddCommand_Label);
+
+		Iterator<?> descriptors = request.getViewDescriptors().iterator();
+
+		while (descriptors.hasNext()) {
+			CreateViewRequest.ViewDescriptor descriptor = (CreateViewRequest.ViewDescriptor) descriptors
+					.next();
+
+			CreateCommand createCommand = new CreateCommand(editingDomain,
+					descriptor, diagram);
+
+			cc.compose(createCommand);
+		}
+		return new ICommandProxy(cc.reduce());
+
+	}
+
+	protected TransactionalEditingDomain getEditingDomain(Diagram diagram) {
+		return TransactionUtil.getEditingDomain(diagram);
+	}
+
+	protected abstract CreateViewRequest getCreatePersistedViewsRequest(
+			Diagram diagram, Collection<EObject> elements);
+
 	@Override
-	public boolean isValidDiagramElement(EObject object) {
-		IAdaptable adapter = new EObjectAdapter(object);
+	public boolean isValidDiagramElement(EObject diagramElement) {
+		IAdaptable adapter = new EObjectAdapter(diagramElement);
 		IOperation operation = new CreateDiagramViewOperation(adapter,
 				getModelId(), getDiagramPreferencesHint());
+		return ViewService.getInstance().provides(operation);
+	}
+
+	@Override
+	public boolean isValidTopLevelNodeElement(EObject diagramElement,
+			EObject topLevelNodeElement) {
+		Diagram diagram = ViewService.createDiagram(diagramElement,
+				getModelId(), getDiagramPreferencesHint());
+
+		IAdaptable adapter = new EObjectAdapter(topLevelNodeElement);
+		IOperation operation = new CreateNodeViewOperation(adapter, diagram,
+				null, 0, false, getDiagramPreferencesHint());
 		return ViewService.getInstance().provides(operation);
 	}
 }

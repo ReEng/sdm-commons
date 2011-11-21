@@ -285,7 +285,7 @@ public class DiagramEditorUtil {
 							element2ViewMap.put(element, view); // take only
 																// those that
 																// part of our
-																// diagram
+																// diagramResource
 						}
 					}
 				}

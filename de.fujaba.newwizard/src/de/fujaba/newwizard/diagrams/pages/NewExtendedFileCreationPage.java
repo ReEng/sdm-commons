@@ -12,7 +12,7 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import de.fujaba.newwizard.Messages;
 
 /**
- * A Wizard Page for creating new diagram files that have a certain file
+ * A Wizard Page for creating new diagramResource files that have a certain file
  * extension. This class has been copied from a generated GMF-Editor, where it
  * was named ???CreationWizardPage.
  * 
@@ -153,4 +153,5 @@ public class NewExtendedFileCreationPage extends WizardNewFileCreationPage {
 		}
 		return true;
 	}
+
 }

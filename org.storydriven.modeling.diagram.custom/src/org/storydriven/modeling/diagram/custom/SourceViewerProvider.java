@@ -18,7 +18,7 @@ import org.eclipse.swt.widgets.Composite;
  * SourceViewers provide a text field for editing text of a specific textual
  * language. They provide syntax highlighting, code completion and other useful
  * programming features. The SourceViewer provided by a SourceViewerProvider is
- * integrated into the story diagram editors expression edit dialog when the
+ * integrated into the story diagramResource editors expression edit dialog when the
  * user selects the appropriate expression language.
  * 
  * To register a customized SourceViewer with the SDM editor, implement a

@@ -7,39 +7,29 @@
 package de.fujaba.modelinstance.provider;
 
 
-import de.fujaba.modelinstance.ModelElementCategory;
-import de.fujaba.modelinstance.ModelinstancePackage;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.storydriven.modeling.activities.ActivitiesFactory;
-
 import org.storydriven.modeling.activities.expressions.ExpressionsFactory;
-
 import org.storydriven.modeling.calls.CallsFactory;
-
 import org.storydriven.modeling.patterns.PatternsFactory;
-
 import org.storydriven.modeling.templates.TemplatesFactory;
+
+import de.fujaba.modelinstance.ModelElementCategory;
+import de.fujaba.modelinstance.ModelinstancePackage;
 
 /**
  * This is the item provider adapter for a {@link de.fujaba.modelinstance.ModelElementCategory} object.
@@ -76,54 +66,8 @@ public class ModelElementCategoryItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addKeyPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addKeyPropertyDescriptor(Object object) {
-//		itemPropertyDescriptors.add
-//			(createItemPropertyDescriptor
-//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-//				 getResourceLocator(),
-//				 getString("_UI_ModelElementCategory_key_feature"),
-//				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElementCategory_key_feature", "_UI_ModelElementCategory_type"),
-//				 ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__KEY,
-//				 true,
-//				 false,
-//				 false,
-//				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-//				 null,
-//				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-//		itemPropertyDescriptors.add
-//			(createItemPropertyDescriptor
-//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-//				 getResourceLocator(),
-//				 getString("_UI_ModelElementCategory_name_feature"),
-//				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElementCategory_name_feature", "_UI_ModelElementCategory_type"),
-//				 ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__NAME,
-//				 true,
-//				 false,
-//				 false,
-//				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-//				 null,
-//				 null));
 	}
 
 	/**

@@ -74,7 +74,7 @@ public class AddElementPageExtension extends Observable implements
 	 * @return The text to use.
 	 */
 	protected String getLabelText() {
-		return Messages.AddNewDiagramElementToRootNode;
+		return "Select existing Diagram element";
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class AddElementPageExtension extends Observable implements
 			}
 
 			public void widgetSelected(SelectionEvent e) {
-				onStatusChanged(btn.getSelection());
+				onStatusChanged(!btn.getSelection());
 			}
 		});
 	}
@@ -110,7 +110,11 @@ public class AddElementPageExtension extends Observable implements
 	 *            The selection status to set.
 	 */
 	public void setAddElement(boolean status) {
-		btn.setSelection(status);
+		btn.setSelection(!status);
 		onStatusChanged(status);
+	}
+
+	public void setEnabled(boolean enabled) {
+		btn.setEnabled(enabled);
 	}
 }

@@ -49,6 +49,9 @@
 
    <element name="category">
       <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="child"/>
+         </sequence>
          <attribute name="key" type="string" use="required">
             <annotation>
                <documentation>
@@ -57,6 +60,18 @@
             </annotation>
          </attribute>
          <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="child">
+      <complexType>
+         <attribute name="packageNsUri" type="string" use="required">
             <annotation>
                <documentation>
                   
@@ -72,4 +87,10 @@
          </attribute>
       </complexType>
    </element>
+
+
+
+
+
+
 </schema>

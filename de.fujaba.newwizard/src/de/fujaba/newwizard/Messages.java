@@ -32,7 +32,6 @@ public class Messages extends NLS {
 	public static String DiagramEditorUtil_CreateDiagramCommandLabel;
 	public static String NewDiagramFileWizard_CreationPageTitle;
 	public static String NewDiagramFileWizard_CreationPageDescription;
-	public static String AddNewDiagramElementToRootNode;
 
 	public static String CreateNewModelExtensionCreateNewModel;
 	public static String ModelSelectionPageBadURI;

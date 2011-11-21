@@ -18,5 +18,26 @@
     </wizard>
     
   </extension>
+  <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+        <menu
+              icon="icons/newfujabamodel.gif"
+              id="de.fujaba.popupmenu"
+              label="Fujaba"
+              mnemonic="F">
+           <command
+                 commandId="de.fujaba.popupmenu.newmodel"
+                 icon="icons/newfujabamodel.gif"
+                 label="Create new Fujaba Model"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="true">
+              </visibleWhen>
+           </command>
+        </menu>
+     </menuContribution>
+  </extension>
 
 </plugin>
