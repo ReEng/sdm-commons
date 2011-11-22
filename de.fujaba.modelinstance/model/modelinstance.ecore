@@ -37,6 +37,7 @@
     <eOperations name="isValidElement" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Evaluates for the passed object whether it is a valid model element for this &#xD;&#xA;ModelElementCategory."/>
+        <details key="body" value="boolean valid = false;&#xD;&#xA;&#xD;&#xA;ModelInstancePlugin plugin = ModelInstancePlugin.getInstance();&#xD;&#xA;if (plugin != null) {&#xD;&#xA;&#x9;ModelElementCategoryRegistry registry = plugin.getModelElementCategoryRegistry();&#xD;&#xA;&#x9;valid = registry.isValidCategory(key, object);&#xD;&#xA;}&#xD;&#xA;return valid;"/>
       </eAnnotations>
       <eParameters name="object" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     </eOperations>

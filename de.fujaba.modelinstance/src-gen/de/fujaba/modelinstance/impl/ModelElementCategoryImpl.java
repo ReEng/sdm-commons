@@ -167,7 +167,7 @@ public class ModelElementCategoryImpl extends EObjectImpl implements ModelElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public boolean isValidElement(EObject object) {
 		boolean valid = false;
@@ -175,7 +175,7 @@ public class ModelElementCategoryImpl extends EObjectImpl implements ModelElemen
 		ModelInstancePlugin plugin = ModelInstancePlugin.getInstance();
 		if (plugin != null) {
 			ModelElementCategoryRegistry registry = plugin.getModelElementCategoryRegistry();
-			registry.isValidCategory(key, object);
+			valid = registry.isValidCategory(key, object);
 		}
 		return valid;
 	}

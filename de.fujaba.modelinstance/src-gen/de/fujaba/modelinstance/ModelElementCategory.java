@@ -122,7 +122,7 @@ public interface ModelElementCategory extends EObject {
 	 * Evaluates for the passed object whether it is a valid model element for this 
 	 * ModelElementCategory.
 	 * <!-- end-model-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean valid = false;\r\n\r\nModelInstancePlugin plugin = ModelInstancePlugin.getInstance();\r\nif (plugin != null) {\r\n\tModelElementCategoryRegistry registry = plugin.getModelElementCategoryRegistry();\r\n\tvalid = registry.isValidCategory(key, object);\r\n}\r\nreturn valid;'"
 	 * @generated
 	 */
 	boolean isValidElement(EObject object);
