@@ -24,20 +24,55 @@
            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
         <menu
               icon="icons/newfujabamodel.gif"
-              id="de.fujaba.popupmenu"
-              label="Fujaba"
-              mnemonic="F">
+              id="de.fujaba"
+              label="Fujaba">
            <command
-                 commandId="de.fujaba.popupmenu.newmodel"
+                 commandId="de.fujaba.core.ui.command.newmodel"
                  icon="icons/newfujabamodel.gif"
+                 id="de.fujaba.core.ui.command.newmodel"
                  label="Create new Fujaba Model"
                  style="push">
               <visibleWhen
-                    checkEnabled="true">
+                    checkEnabled="false">
+                 <iterate
+                       ifEmpty="true"
+                       operator="or">
+                 </iterate>
               </visibleWhen>
            </command>
+           <separator
+                 name="additions">
+           </separator>
         </menu>
      </menuContribution>
+  </extension>
+  <extension
+        point="org.eclipse.core.expressions.definitions">
+     <definition
+           id="de.fujaba.expression.fujabafile">
+	    <iterate
+           ifEmpty="false"
+           operator="and">
+	       <adapt type="org.eclipse.core.resources.IResource">
+	          <test property="org.eclipse.core.resources.name" 
+	                value="*.fujaba"/>
+	       </adapt>
+	    </iterate>
+     </definition>
+  </extension>
+  <extension
+        point="org.eclipse.ui.commands">
+     <category
+           id="de.fujaba"
+           name="Fujaba">
+     </category>
+     <command
+           categoryId="de.fujaba"
+           defaultHandler="de.fujaba.newwizard.commands.CreateModelFileCommand"
+           description="Create new Fujaba Model"
+           id="de.fujaba.core.ui.command.newmodel"
+           name="Create new Fujaba Model">
+     </command>
   </extension>
 
 </plugin>

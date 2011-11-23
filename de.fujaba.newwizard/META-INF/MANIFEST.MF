@@ -10,8 +10,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.ide,
  org.eclipse.emf.edit.ui;bundle-version="2.6.0",
  org.storydriven.modeling;bundle-version="1.0.0",
- de.fujaba.modelinstance;bundle-version="1.0.0"
+ de.fujaba.modelinstance;bundle-version="1.0.0",
+ org.eclipse.core.expressions;bundle-version="3.4.200"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.fujaba.newwizard,
+ de.fujaba.newwizard.commands,
  de.fujaba.newwizard.diagrams

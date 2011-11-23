@@ -8,6 +8,11 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
+import de.fujaba.modelinstance.ModelElementCategory;
+import de.fujaba.modelinstance.ModelInstancePlugin;
+import de.fujaba.modelinstance.ModelinstanceFactory;
+import de.fujaba.modelinstance.RootNode;
+
 public class ModelElementCategoryRegistry {
 	private static final String EXTENSION_POINT_ID = "de.fujaba.modelinstance.modelelementcategory";
 
@@ -68,5 +73,37 @@ public class ModelElementCategoryRegistry {
 		}
 		return null;
 	}
+
+	
+	public ModelElementCategory getModelElementCategory(RootNode rootNode,
+			String categoryKey) {
+		ModelElementCategory result = null;
+		if (categoryKey != null) {
+			for (ModelElementCategory category : rootNode.getCategories()) {
+				if (categoryKey.equals(category.getKey())
+				/*
+				 * && category .isValidElement(diagramElement)
+				 */) {
+					result = category;
+					break;
+				}
+			}
+		}
+
+		if (result == null) {
+			result = ModelinstanceFactory.eINSTANCE
+					.createModelElementCategory();
+			String categoryName = null;
+			ModelElementCategoryRegistry registry = ModelInstancePlugin.getInstance().getModelElementCategoryRegistry();
+			if (registry != null) {
+				categoryName = registry.getCategoryName(categoryKey);
+			}
+			result.setName(categoryName);
+			result.setKey(categoryKey);
+			rootNode.getCategories().add(result);
+		}
+		return result;
+	}
+
 
 }
