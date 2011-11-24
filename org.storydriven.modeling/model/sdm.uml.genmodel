@@ -213,7 +213,8 @@
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//expressions/ArithmeticOperator/MODULO"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sdm.ecore#//expressions/ArithmeticOperator/EXP"/>
       </genEnums>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//expressions/TextualExpression">
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="sdm.ecore#//expressions/TextualExpression"
+          labelFeature="#//modeling/expressions/TextualExpression/language">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//expressions/TextualExpression/expressionText"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//expressions/TextualExpression/language"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sdm.ecore#//expressions/TextualExpression/languageVersion"/>
