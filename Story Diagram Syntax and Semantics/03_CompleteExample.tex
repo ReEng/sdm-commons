@@ -106,16 +106,26 @@ Activity node 4 is responsible for adapting all other classes that implement the
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=\linewidth]{./figures/SDGenerateMethodStub}
+\includegraphics[width=0.9\linewidth]{./figures/SDGenerateMethodStub}
 \caption{Story Diagram: GenerateMethodStub}
 \label{fig:SDGenerateMethodStub}
 \end{figure}
+
+The story diagram \fe{GenerateMethodStub} is shown in Figure~\ref{fig:SDGenerateMethodStub}. It creates a method which implements a method \fe{methodDecl} in a given \fe{interface}. This is accomplished by three activity nodes. The first node checks if the given \fe{class} contains a \fe{method} with the same name as the given declaration \fe{methodDecl}. The check is performed by the expression \fe{'name = methodDecl.name'}. Because the object variable \fe{method} is negative (crossed-out), the matching of this activity node is considered successful if \emph{no} such method exists in the class. In that case the next activity node is executed. If a method of the name in question already exists, the execution of the first activity node fails and the story diagram terminates.
+
+The second activity node creates a new \fe{methodStub} in the given \fe{class}. The visibility of this method is set to public and its name is set to the name of the method declaration as signified by the expression \fe{'name := methodDecl.name'}. The correct return type for the method is set by creating a \fe{newTypeAccess} from the \fe{methodStub} to the \fe{returnType} that was passed to this story diagram as a parameter.
+
+Finally, the story diagram \fe{CopyParameters} is called in the story diagram call node. The \fe{method} and the \fe{methodStub} are passed as parameters. The called diagram then copies all parameters from the given \fe{method} to the newly created \fe{methodStub}. It is explained in the following section.
 
 \subsection{Story diagram: Copy parameters} \label{sec:SDCopyParameters}
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=\linewidth]{./figures/SDCopyParameters}
+\includegraphics[width=0.9\linewidth]{./figures/SDCopyParameters}
 \caption{Story Diagram: CopyParameters}
 \label{fig:SDCopyParameters}
 \end{figure}
+
+The story diagram \fe{CopyParameters} (see Figure~\ref{fig:SDCopyParameters}) copies all the parameters from a \fe{sourceMethod} to a \fe{targetMethod}. Both methods are provided as parameters. The diagram consists of two activity nodes.
+
+The first activity node is a for each node. It successively binds all formal parameters of the given \fe{sourceMethod} to the object variable \fe{param}. Each time a new parameter is bound, the second activity node is executed. There, a new formal parameter \fe{newParam} is created in the \fe{targetMethod}. Its name is set to the same name as the original parameter's by the expression \fe{'name := param.name'}. The return type is also set accordingly by binding the \fe{returnType} of \fe{param}. Then, a new access to that type is created an connected to \fe{newParam}.
