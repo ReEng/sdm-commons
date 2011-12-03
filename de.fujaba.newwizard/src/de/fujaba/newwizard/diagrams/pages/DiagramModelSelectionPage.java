@@ -104,7 +104,7 @@ public class DiagramModelSelectionPage extends ExtensibleModelSelectionPage {
 		Resource resource = getResource();
 		boolean shouldAddElement = false;
 		boolean containsValidCategory = false;
-		if (!resource.getContents().isEmpty()) {
+		if (resource != null && !resource.getContents().isEmpty()) {
 			EObject firstElement = resource.getContents().get(0);
 			if (firstElement instanceof RootNode) {
 				shouldAddElement = true;
@@ -131,9 +131,13 @@ public class DiagramModelSelectionPage extends ExtensibleModelSelectionPage {
 
 		String error = null;
 
-		if (addElementExtension.shouldAddElement()) {
+		Resource resource = getResource();
+		
+		if (resource == null) {
+			error = "No resource selected.";
+		} else if (addElementExtension.shouldAddElement()) {
 			boolean rootNodeFound = false;
-			List<?> rootElements = getResource().getContents();
+			List<?> rootElements = resource.getContents();
 			if (!rootElements.isEmpty()) {
 				Object rootElement = rootElements.get(0);
 				if (rootElement instanceof RootNode) {

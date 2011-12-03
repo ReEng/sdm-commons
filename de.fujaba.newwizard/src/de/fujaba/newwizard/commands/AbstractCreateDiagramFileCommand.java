@@ -8,6 +8,7 @@ import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
@@ -102,20 +103,26 @@ public abstract class AbstractCreateDiagramFileCommand extends
 					diagramElement = category;
 				}
 
-				Diagram diagram = ViewService.createDiagram(category,
+				Diagram diagram = ViewService.createDiagram(diagramElement,
 						getModelId(), getDiagramPreferencesHint());
+				if (diagram == null) {
+					return CommandResult.newErrorCommandResult("Diagram could not be created.");
+				}
+
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
 			}
 		};
 		try {
-			OperationHistoryFactory.getOperationHistory().execute(command,
+			IStatus status = OperationHistoryFactory.getOperationHistory().execute(command,
 					new NullProgressMonitor(), null);
-			diagramResource.save(DiagramEditorUtil.getSaveOptions());
-			Resource modelResource = diagramRoot.eResource();
-			modelResource.save(DiagramEditorUtil.getSaveOptions());
+			if (status.isOK()) {
+				diagramResource.save(DiagramEditorUtil.getSaveOptions());
+				Resource modelResource = diagramRoot.eResource();
+				modelResource.save(DiagramEditorUtil.getSaveOptions());
+				DiagramEditorUtil.openDiagram(diagramResource, getEditorId());
+			}
 
-			DiagramEditorUtil.openDiagram(diagramResource, getEditorId());
 		} catch (ExecutionException e) {
 			FujabaNewwizardPlugin.getDefault().logError(
 					"Unable to create model and diagram", e); //$NON-NLS-1$
