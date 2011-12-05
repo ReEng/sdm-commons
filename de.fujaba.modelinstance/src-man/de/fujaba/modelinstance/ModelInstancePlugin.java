@@ -5,7 +5,6 @@ import org.osgi.framework.BundleContext;
 
 import de.fujaba.modelinstance.categories.ModelElementCategoryRegistry;
 
-
 public class ModelInstancePlugin implements BundleActivator {
 
 	private static ModelInstancePlugin instance;
@@ -28,7 +27,7 @@ public class ModelInstancePlugin implements BundleActivator {
 		ModelInstancePlugin.instance = this;
 		ModelInstancePlugin.context = bundleContext;
 		
-		modelElementCategoryRegistry = new ModelElementCategoryRegistry();
+		modelElementCategoryRegistry = new ModelElementCategoryRegistry(true);
 	}
 
 	/*
