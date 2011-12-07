@@ -172,34 +172,46 @@ explain objectSetVariables, set size expressions
   	\label{fig:reuseObjSet3}
 	\end{minipage}
 \end{figure}
+
 \todomcp{What happens if an object set contains no ObjectSetSizeExpression and no object is matched into the object set? Proposal: ObjectSet is interpreted as optional and the matching succeeds.}
+
+\tododt{D'accord.}
 
 \todomcp{What happens if $\leq$ is used in the ObjectSetSizeExpression and there exist more objects in the graph that could be matched into the set? E.g., the pattern in Figure \ref{fig:objSetSize} is applied to a class with 3 methods. Is  $\leq$ allowed as an operator in this case? Proposal: The operator is allowed and the pattern does not match.}
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[scale=1.0]{figures/ObjectSetSize}
-  \caption{Object Set Size}
-  \label{fig:objSetSize}
+\tododt{I agree.}
+
+\begin{figure}[p]
+	\begin{minipage}{.45\textwidth}
+		\centering
+		\includegraphics[scale=.8]{figures/ObjectSetSize}
+  	\caption{Object Set Size}
+  	\label{fig:objSetSize}
+	\end{minipage}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+  	\centering
+		\includegraphics[scale=.8]{figures/IsomorphismInObjectSets}
+  	\caption{Isomorphism in Object Sets}
+  	\label{fig:isoObjSet}
+	\end{minipage}
 \end{figure}
 
 \todomcp{What happens if one pattern contains two object sets that may possibly contain the same objects. Consider the pattern in Figure \ref{fig:isoObjSet}. If c1 and c2 share the same super classes, su1 and su2 contain the same objects. Is this allowed? Isomorphic matching would normally forbid this.}
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[scale=1.0]{figures/IsomorphismInObjectSets}
-  \caption{Isomorphism in Object Sets}
-  \label{fig:isoObjSet}
-\end{figure}
-
+\tododt{I would allow this which would comply with our isomorphic matching.
+But in this case it is non-deterministic how the objects are matched to the set nodes (assuming the classes are already bound).
+A maybe constraint could allow to match the same objects to both sets.}
 
 \subsection{Special Link Kinds [CH]}
 
 \subsubsection{Containment Relations [CH]}
 
 \todoch{What is the semantics of a containment link? Current understanding: an element is contained in a container. What is the difference to to-many references which are containments?}
+\tododt{Containment links do not correspond to any association or reference. They only describe containments of objects in containers or set nodes.}
 
 \todoch{Which classifiers are allowed for ContainerVariables? This should not only be the EMF collection types EList and EMap. Does a ContainmentLink need a reference as a type like normal LinkVariables?}
+\tododt{The contaiment links do not need any reference. I would suggest to allow any subtype of java.util.Collection (and java.util.List in case that link order constraints are used), but not java.util.Map! This is something different and needs a key for containment. Maybe we need special containment links for maps that include a key.}
 
 \subsubsection{Paths [MCP]}
 
@@ -211,8 +223,8 @@ explain objectSetVariables, set size expressions
 
 \begin{figure}[p]
   \centering
-  \includegraphics[scale=1.0]{figures/LinkConstraints1}
-  \caption{Link order constraints}
+  \includegraphics[scale=.8]{figures/LinkConstraints1}
+  \caption{Link order constraints FIRST and DIRECT\_SUCCESSOR}
   \label{fig:linkConstraints}
 \end{figure}
 
@@ -235,7 +247,7 @@ Disables the isomorphism check for two object variables, these two object variab
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[scale=1.5]{figures/MaybeLink}
+  \includegraphics[scale=.8]{figures/MaybeLink}
   \caption{Maybe Link}
   \label{fig:maybeLink}
 \end{figure}
@@ -243,12 +255,21 @@ Disables the isomorphism check for two object variables, these two object variab
 \subsection{Pattern Constraints [CH]}
 
 \todoch{What happens when a pattern constraint is placed inside a for each story pattern (not inside a node in that pattern)? Proposal: The particular match must fulfill the pattern constraint, if it does not fulfill the pattern constraint, the match is rejected and the iteration continues.}
+\tododt{Exactly. In this case, it is a kind of post condition that has to be satisfied at the end of the matching step.}
 
 \subsection{Contained Pattern [MCP]}
 
 patterns contained in other patterns, negative, semantics? review enhanced story patterns from Diss Florian Klein
 
 \todomcp{Should contained pattern be marked as forEach? Idea for semantics: first the part of the pattern outside the forEach pattern is matched, then the forEach subpattern is applied to any match that may be located, the variables bound in a forEach subpattern may not be used in subsequent activities}
+
+\tododt{This is somewhat confusing.
+As I understand them, subpatterns are ordinary story patterns within another story pattern.
+They are surrounded by a fragment box and can be labeled with a name (see Figure~\ref{fig:labeledSubPattern}).
+Special types of such subpatterns are negative application condition fragments (NACs), set fragments, and optional fragments.
+As far as I know, we did not plan to add $\forall$ and $\exists$ fragments, did we?
+These are only used in SDDs and TSSDs which are constraint languages.
+}
 
 \begin{figure}[htbp]
   \centering
@@ -258,8 +279,25 @@ patterns contained in other patterns, negative, semantics? review enhanced story
 \end{figure}
 
 \todomcp{Should contained pattern be marked as optional? Is currently possible in the meta-model. Idea for semantics: Whole pattern must be found, if found, variables may be used in subsequent activities, if pattern may not be found as a whole, matching still succeeds but all variables in the subpattern are not bound in subsequent activities.}
+\tododt{I would say, contained patterns are mandatory in general (or are NAC/optional/set in case of the according fragment).}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1.0]{figures/SubPatterns2}
+  \caption{Labeled sub pattern}
+  \label{fig:labeledSubPattern}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1.0]{figures/SubPatterns1}
+  \caption{Hierarchies of NAC, set, and optional sub patterns}
+  \label{fig:subPatternHierarchies}
+\end{figure}
 
 \todomcp{How deep may patterns be nested? What is the semantics of alternating binding semantics of sub-patterns, e.g. negative in optional in negative and so on.}
+\tododt{I would prefer to allow arbitrarily deep nestings and would suggest to interpret the fragments in the order from outside to inside. Example (see Figure~\ref{fig:subPatternHierarchies}): You match a super class \emph{superClass} of \emph{myClass} and ensure that \emph{superClass} has no attribute. Then you you match all methods \emph{new} (outer set fragment) that have no class as their type (enclosed NAC fragment). Now you match for each of these methods all parameters (enclosed set fragment) that have \emph{myClass} as their type. Furthermore, you try to find a path from the matched \emph{new} method to a return statement (optional fragment).}
+
 
 \subsection*{Old stuff from rejected paper}
 
