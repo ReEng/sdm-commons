@@ -139,14 +139,39 @@ explain objectSetVariables, set size expressions
 \todomcp{object sets and binding operators/states/semantics}
 
 \todomcp{If we bind an object set, can we use the bound object in other story pattern? E.g. to insert all elements bound by the object set into a container via a containment link? (See Figure \ref{fig:reuseObjSet}).}
+\tododt{Yes, but I would use another concrete syntax (see Figures~\ref{fig:reuseObjSet1}, \ref{fig:reuseObjSet2}, and \ref{fig:reuseObjSet1}).}
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[scale=1.0]{figures/ReuseObjectSet}
-  \caption{Reusing Object Sets}
-  \label{fig:reuseObjSet}
+\begin{figure}[p]
+	\begin{minipage}{.45\textwidth}
+		\centering
+		\includegraphics[scale=.8]{figures/ReuseObjectSet}
+  	\caption{Reusing Object Sets}
+  	\label{fig:reuseObjSet}
+	\end{minipage}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+  	\centering
+		\includegraphics[scale=.8]{figures/ReuseObjectSet1}
+  	\caption{Reuse objects in a set}
+  	\label{fig:reuseObjSet1}
+	\end{minipage}
 \end{figure}
 
+\begin{figure}[p]
+	\begin{minipage}{.45\textwidth}
+		\centering
+		\includegraphics[scale=.8]{figures/ReuseObjectSet2}
+  	\caption{Add an object to a set}
+  	\label{fig:reuseObjSet2}
+	\end{minipage}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+  	\centering
+		\includegraphics[scale=.8]{figures/ReuseObjectSet3}
+  	\caption{Add all objects from a set to a container}
+  	\label{fig:reuseObjSet3}
+	\end{minipage}
+\end{figure}
 \todomcp{What happens if an object set contains no ObjectSetSizeExpression and no object is matched into the object set? Proposal: ObjectSet is interpreted as optional and the matching succeeds.}
 
 \todomcp{What happens if $\leq$ is used in the ObjectSetSizeExpression and there exist more objects in the graph that could be matched into the set? E.g., the pattern in Figure \ref{fig:objSetSize} is applied to a class with 3 methods. Is  $\leq$ allowed as an operator in this case? Proposal: The operator is allowed and the pattern does not match.}
@@ -181,6 +206,15 @@ explain objectSetVariables, set size expressions
 \subsubsection{Link Constraints [CH]}
 
 \todoch{What is the concrete Syntax for this?}
+
+\tododt{I have a suggestion in Figure~\ref{fig:linkConstraints}.}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[scale=1.0]{figures/LinkConstraints1}
+  \caption{Link order constraints}
+  \label{fig:linkConstraints}
+\end{figure}
 
 Link constraints are only applicable to link variables that reference an ordered to-many reference. 
 \begin{itemize}
