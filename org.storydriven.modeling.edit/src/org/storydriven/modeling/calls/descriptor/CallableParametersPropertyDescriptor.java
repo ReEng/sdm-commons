@@ -41,8 +41,11 @@ public class CallableParametersPropertyDescriptor extends
 	@Override
 	public void setPropertyValue(Object object, Object newValue) {
 		EObject element = (EObject) object;
-		Collection<Object> containedValues = (Collection<Object>) unwrap(getPropertyValue(object));
-		containedValues.clear();
+		
+		// Collection<Object> containedValues = (Collection<Object>) unwrap(getPropertyValue(object));
+		// containedValues.clear();
+		Collection<Object> containedValues = new ArrayList<Object>();
+		
 		for (EStructuralFeature feature : parameterFeatures) {
 			Collection<Object> values;
 			
