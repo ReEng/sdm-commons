@@ -6,22 +6,20 @@ import org.eclipse.core.runtime.IStatus;
 
 public interface IReportListener
 {
-   String PREFIX_ERROR = "ERROR";
-
-   String PREFIX_WARNING = "WARNING";
+   IStatus error(String message, Object... args);
 
 
-   void append(String message, String type);
+   void warn(String message, Object... args);
+
+
+   void append(String message, Object... args);
+
+
+   void task(String message, Object... args);
 
 
    void info(String message, Object... args);
 
 
-   void info(String message);
-
-
-   void warn(String message);
-
-
-   IStatus error(String message);
+   void debug(String message, Object... args);
 }

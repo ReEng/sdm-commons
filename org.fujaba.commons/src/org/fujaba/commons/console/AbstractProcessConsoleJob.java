@@ -14,6 +14,8 @@ public abstract class AbstractProcessConsoleJob extends Job implements IReportLi
 {
    private final ProcessConsole console;
 
+   private ReportLevel reportLevel;
+
 
    /**
     * Creates a new console process with the given attributes and connects a new console to it.
@@ -24,7 +26,22 @@ public abstract class AbstractProcessConsoleJob extends Job implements IReportLi
     */
    public AbstractProcessConsoleJob(String category, String name, String description)
    {
-      this(category, name, description, FujabaCommonsImages.getDescriptor(FujabaCommonsImages.IMG_CONSOLE_DEFAULT));
+      this(category, name, description, ReportLevel.INFO);
+   }
+
+
+   /**
+    * Creates a new console process with the given attributes and connects a new console to it.
+    * 
+    * @param category The category of the process.
+    * @param name The name of the process.
+    * @param description The description of the process.
+    * @param reportLevel The level of report messages.
+    */
+   public AbstractProcessConsoleJob(String category, String name, String description, ReportLevel reportLevel)
+   {
+      this(category, name, description, FujabaCommonsImages.getDescriptor(FujabaCommonsImages.IMG_CONSOLE_DEFAULT),
+            reportLevel);
    }
 
 
@@ -38,8 +55,26 @@ public abstract class AbstractProcessConsoleJob extends Job implements IReportLi
     */
    public AbstractProcessConsoleJob(String category, String name, String description, ImageDescriptor image)
    {
+      this(category, name, description, image, ReportLevel.INFO);
+   }
+
+
+   /**
+    * Creates a new console process with the given attributes and connects a new console to it.
+    * 
+    * @param category The category of the process.
+    * @param name The name of the process.
+    * @param description The description of the process.
+    * @param image An image descriptor for the process.
+    * @param reportLevel The level of report messages.
+    */
+   public AbstractProcessConsoleJob(String category, String name, String description, ImageDescriptor image,
+         ReportLevel reportLevel)
+   {
       super(name);
       setUser(true);
+
+      this.reportLevel = reportLevel;
 
       console = (ProcessConsole) ProcessConsoleFactory.createConsole(category, name, description, image);
    }
@@ -87,31 +122,54 @@ public abstract class AbstractProcessConsoleJob extends Job implements IReportLi
 
 
    @Override
-   public final void append(String message, String type)
+   public final IStatus error(String message, Object... args)
    {
-      console.append(message, type);
-   }
-
-
-   @Override
-   public final IStatus error(String message)
-   {
-      console.append(message, PREFIX_ERROR);
+      console.append(String.format(message, args), "ERROR");
       return Status.CANCEL_STATUS;
    }
 
 
    @Override
-   public final void info(String message)
+   public final void warn(String message, Object... args)
    {
-      console.append(message);
+      console.append(String.format(message, args), "WARNING");
+   }
+
+
+   @Override
+   public final void append(String message, Object... args)
+   {
+      console.append(String.format(message, args));
+   }
+
+
+   @Override
+   public final void task(String message, Object... args)
+   {
+      if (ReportLevel.TASK.compareTo(reportLevel) <= 0)
+      {
+         console.append("[TASK] " + String.format(message, args) + "...");
+      }
    }
 
 
    @Override
    public final void info(String message, Object... args)
    {
-      console.append(String.format(message, args));
+      if (ReportLevel.INFO.compareTo(reportLevel) <= 0)
+      {
+         console.append("[INFO] " + String.format(message, args));
+      }
+   }
+
+
+   @Override
+   public final void debug(String message, Object... args)
+   {
+      if (ReportLevel.DEBUG.compareTo(reportLevel) <= 0)
+      {
+         console.append("[DEBUG] " + String.format(message, args));
+      }
    }
 
 
@@ -134,13 +192,6 @@ public abstract class AbstractProcessConsoleJob extends Job implements IReportLi
    public final boolean isPaused()
    {
       return console.getProcessState().equals(ProcessConsoleState.PAUSED);
-   }
-
-
-   @Override
-   public final void warn(String message)
-   {
-      console.append(message, PREFIX_WARNING);
    }
 
 
