@@ -214,10 +214,11 @@ explain objectSetVariables, set size expressions
 \tododt{I would allow this which would comply with our isomorphic matching.
 But in this case it is non-deterministic how the objects are matched to the set nodes (assuming the classes are already bound).
 A maybe constraint could allow to match the same objects to both sets.}
+\todojr{We decided to match set nodes without them having to be disjoint, thus, we do not enforce isomorphism for the content of two or more set variables.}
 
 \subsection{Special Link Kinds [CH]}
 
-\subsubsection{Containment Relations [CH]}
+\subsubsection{Inclusion Links [CH]}
 
 \todoch{What is the semantics of a containment link? Current understanding: an element is contained in a container. What is the difference to to-many references which are containments?}
 \tododt{Containment links do not correspond to any association or reference. They only describe containments of objects in containers or set nodes.}
@@ -240,14 +241,19 @@ A maybe constraint could allow to match the same objects to both sets.}
   \label{fig:linkConstraints}
 \end{figure}
 
-Link constraints are only applicable to link variables that reference an ordered to-many reference. 
+Link constraints are only applicable to link variables that reference an ordered to-many reference.
+\todoch{No link constraints for inclusion links.}
+
 \begin{itemize}
   \item FIRST = matches the first element in the list, requires one link variable
   \item LAST = matches the last element in the list, requires one link variable
-  \item INDEX = matches the element at the specified index, requires one link variable
+%  \item INDEX = matches the element at the specified index, requires one link variable
+%  \todoch{Our lowest index value is 0, not 1.}
   \item DIRECT\_SUCCESSOR = requires two link variables, target of the second one must be located directly after the target of the first one in the list
-  \item INDIRECT\_SUCCESSOR = requires two link variables, target of the second one must be located somewhere after the target of the first one in the list
+  \item SUCCESSOR = requires two link variables, target of the second one must be located somewhere after the target of the first one in the list
 \end{itemize}
+
+\todojr{We will separate link constraints for single links and those for two links and their order. Stephan will make a suggestion.}
 
 \todoch{Is this semantic description correct/complete?}
 
@@ -256,6 +262,7 @@ Link constraints are only applicable to link variables that reference an ordered
 Disables the isomorphism check for two object variables, these two object variables may be matched to the same object.
 
 \todoch{What is the concrete Syntax? Using a special pattern constraint as proposed in Alberts Habil is very low-level. Alternative version is proposed in Figure \ref{fig:maybeLink}.}
+\todoch{conrete syntax: "same?"}
 
 \begin{figure}[htbp]
   \centering
