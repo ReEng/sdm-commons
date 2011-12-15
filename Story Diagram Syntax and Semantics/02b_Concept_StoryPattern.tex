@@ -4,10 +4,31 @@
 
 
 \subsection{Story Pattern [CH]}
+\label{sec:StoryPatterns:storyPattern}
 
-general idea, purpose, attributes (matching, normal)
+Story Patterns are typed attributed graph transformation rules with inheritance (cf. Section \ref{sec:foundations:typedAttrGTS}) that may be embedded into an activity node of a story diagram (cf. Section \ref{sec:StoryDiagrams}). Type models for story diagrams can be created, e.g., by using EMF Ecore \cite{SBP+08}.  Using a type model enables use of inheritance and polymorphism for matching nodes.
+This allows specifying graph replacement rules for object-oriented models.
+
+\todoch{Should we provide an example for a type model here? Maybe we should have a section introducing type models (Ecore, UML, MOF) in the foundations.}
+
+Story patterns are applied according to single pushout semantics using isomorphic matchings.
+For enabling a concise notation of the graph transformation, story pattern apply a short-hand notation depicting the left-hand side (LHS) and the right-hand side (RHS) in a single, annotated graph. Nodes and edges being created (or deleted) are annotated with \small \verb|<<create>>| \normalsize (or  {\small \verb|<<destroy>>|\normalsize}, respectively).
+
+Figure \ref{fig:simpleStoryPattern} shows an example of a single story pattern that creates a new method declaration in an interface and delegates the target of a call to this new method.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1.0]{figures/SimpleStoryPattern}
+  \caption{Simple Story Pattern}
+  \label{fig:simpleStoryPattern}
+\end{figure}
+
+In the example, the nodes \fe{call}, \fe{interface}, and \fe{method} are bound objects (cf. Section \ref{sec:StoryPatterns:binding:states}), i.e., they are already matched. When applying the story pattern, the link from \fe{call} to \fe{method} will be deleted. Thereafter, the node \fe{methodDecl} of type \fe{Method} will be created along with the three links pointing to it. Upon creation, the attributes \fe{visibility}, \fe{abstract}, and \fe{name} are initialized with the specified values.
+
+In a story pattern, we call all nodes and links that do not carry an annotation the \emph{core graph} of the story pattern. Then, the LHS of the story pattern consists of the core graph and all nodes and links annotated with {\small \verb|<<destroy>>|\normalsize}. Accordingly, the RHS of the story pattern consists of the core graph and all node and links annotated wiht {\small \verb|<<create>>|\normalsize}.
 
 \subsection{Objects and Object Variables [MCP]}
+\label{sec:StoryPatterns:objects}
 
 \todomcp{each connected component must contain at least one bound object
 variable}
@@ -42,12 +63,15 @@ object variables; binding expressions for initialization, see figure
 EStructuralFeature}
 
 \subsection{Links and Link Variables [MCP]}
+\label{sec:StoryPatterns:links}
 
 \subsection{Binding of Variables [MCP]}
+\label{sec:StoryPatterns:binding}
 
 %Object variables and link variables have binding operators, binding states, and binding semantics.
 
 \subsubsection{Binding Operators}
+\label{sec:StoryPatterns:binding:operators}
 %The binding operators define whether an element is to be created, deleted, or just matched.
 %After all elements that are defined to be deleted or just matched have been matched, the model ist modified by creating
 %and deleting the elements as defined. 
@@ -56,8 +80,10 @@ EStructuralFeature}
 %label \texttt{CREATE} and elements to be deleted are marked with the label \texttt{DESTROY}.
 
 \subsubsection{Binding States}
+\label{sec:StoryPatterns:binding:states}
 
 \subsubsection{Binding Semantics}
+\label{sec:StoryPatterns:binding:semantics}
 
 \todomcp{Negative objects, Figure \ref{fig:negativeObjects}:
 a) allowed; same semantics for the same situation with link not negative
@@ -318,22 +344,3 @@ These are only used in SDDs and TSSDs which are constraint languages.
 \tododt{I would prefer to allow arbitrarily deep nestings and would suggest to interpret the fragments in the order from outside to inside. Example (see Figure~\ref{fig:subPatternHierarchies}): You match a super class \emph{superClass} of \emph{myClass} and ensure that \emph{superClass} has no attribute. Then you you match all methods \emph{new} (outer set fragment) that have no class as their type (enclosed NAC fragment). Now you match for each of these methods all parameters (enclosed set fragment) that have \emph{myClass} as their type. Furthermore, you try to find a path from the matched \emph{new} method to a return statement (optional fragment).}
 
 
-\subsection*{Old stuff from rejected paper}
-
-Story patterns describe graph replacement rules that can be embedded into the activities of a story diagram. They are based on labeled, attributed graphs that are extended by a type model \cite{FNTZ00}. 
-The types and references that are specified in the type model are used to type the nodes and edges within the story pattern.
-Type models for story diagrams can be created, e.g., by using EMF Ecore \cite{SBP+08}.
-In our example, we will use the meta-models shown in Figures~\ref{fig:sourceMetamodel} and~\ref{fig:targetMetamodel} as type models. The type model supports inheritance and polymorphism, i.e., a node of type \fe{Classifier} matches objects of types \fe{Classifier}, \fe{Class}, and \fe{PrimitiveType}.
-This allows specifying graph replacement rules for object-oriented models.
-
-In order to provide a concise notation, story patterns apply a short-hand notation depicting left-hand side and right-hand side in one graph. Nodes and edges being created (or deleted) are annotated with \small \verb|<<create>>| \normalsize (or  {\small \verb|<<destroy>>|\normalsize}, respectively). The matching of story patterns in a host graph requires an isomorphic matching of the pattern's left-hand side in the host graph, i.e., two nodes of the pattern may not be matched to the same node in the host graph \cite{FNTZ00,Roz97}. The matching is performed with respect to the types of the type model. The deletion of nodes is applied according to the Single Pushout Approach (SPO, \cite{Roz97}), i.e., dangling edges resulting from the deletion of nodes are deleted as well.
-
-Figure~\ref{fig:SP} shows an example of a story pattern that simply adds a class to the set of classifiers of the source system (cf. Figure~\ref{fig:sourceMetamodel}).
-
-\begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=0.25\textwidth]{figures/StoryPattern}
-  \caption{Simple story pattern}
-  \label{fig:SP}
-\end{center}
-\end{figure}
