@@ -12,7 +12,7 @@ This allows specifying graph replacement rules for object-oriented models.
 \todoch{Should we provide an example for a type model here? Maybe we should have a section introducing type models (Ecore, UML, MOF) in the foundations.}
 
 Story patterns are applied according to single pushout semantics using isomorphic matchings.
-For enabling a concise notation of the graph transformation, story pattern apply a short-hand notation depicting the left-hand side (LHS) and the right-hand side (RHS) in a single, annotated graph. Nodes and edges being created (or deleted) are annotated with \small \verb|<<create>>| \normalsize (or  {\small \verb|<<destroy>>|\normalsize}, respectively).
+For enabling a concise notation of the graph transformation, story pattern apply a short-hand notation depicting the left-hand side (LHS) and the right-hand side (RHS) in a single, annotated graph. Nodes and edges being created (or deleted) are annotated with \create (or  \destroy, respectively).
 
 Figure \ref{fig:simpleStoryPattern} shows an example of a single story pattern that creates a new method declaration in an interface and delegates the target of a call to this new method.
 
@@ -25,7 +25,7 @@ Figure \ref{fig:simpleStoryPattern} shows an example of a single story pattern t
 
 In the example, the nodes \fe{call}, \fe{interface}, and \fe{method} are bound objects (cf. Section \ref{sec:StoryPatterns:binding:states}), i.e., they are already matched. When applying the story pattern, the link from \fe{call} to \fe{method} will be deleted. Thereafter, the node \fe{methodDecl} of type \fe{Method} will be created along with the three links pointing to it. Upon creation, the attributes \fe{visibility}, \fe{abstract}, and \fe{name} are initialized with the specified values.
 
-In a story pattern, we call all nodes and links that do not carry an annotation the \emph{core graph} of the story pattern. Then, the LHS of the story pattern consists of the core graph and all nodes and links annotated with {\small \verb|<<destroy>>|\normalsize}. Accordingly, the RHS of the story pattern consists of the core graph and all node and links annotated wiht {\small \verb|<<create>>|\normalsize}.
+In a story pattern, we call all nodes and links that do not carry an annotation the \emph{core graph} of the story pattern. Then, the LHS of the story pattern consists of the core graph and all nodes and links annotated with \destroy. Accordingly, the RHS of the story pattern consists of the core graph and all node and links annotated with \create.
 
 \subsection{Objects and Object Variables [MCP]}
 \label{sec:StoryPatterns:objects}
