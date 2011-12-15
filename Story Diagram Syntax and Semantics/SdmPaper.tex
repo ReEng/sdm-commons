@@ -1,6 +1,11 @@
 \documentclass[12pt,a4paper,twoside,titlepage,openright,headsepline,listof=totoc,index=totoc,chapterprefix,bibliography=totoc]{scrreprt}
 
 
+\usepackage[ngerman,english]{babel}
+%\selectlanguage{english}
+\usepackage[T1]{fontenc}
+
+
 \newif\ifpdfhere
 \ifx\pdfoutput\undefined
 \pdfherefalse % we are not running pdflatex
@@ -53,7 +58,6 @@ backgroundcolor=\color{white}
 \usepackage{color}
 \usepackage{tabularx}
 \usepackage[normalem]{ulem}
-\usepackage[T1]{fontenc}
 \usepackage{inputenc}
 
 \usepackage{std_authorlist}
@@ -102,7 +106,7 @@ backgroundcolor=\color{white}
 %          /usr/share/doc/packages/te_latex/texmf/generic/styles/gerdoc.dvi
 %\usepackage{ngerman}
 %\selectlanguage{english} % Dokumentensprache auf deutsch stellen
-%\usepackage[english]{babel}
+
 
 % *** times ***
 % Paket: Times
@@ -147,15 +151,15 @@ backgroundcolor=\color{white}
 \pagestyle{fancy} 
 \fancyhf{} 
 \fancyhead[EL,OR]{\thepage} 
-\fancyhead[ER]{\small\MakeUppercase{\leftmark}}
-\fancyhead[OL]{\small\MakeUppercase{\rightmark}}
+\fancyhead[ER]{\small\scshape{\leftmark}}
+\fancyhead[OL]{\small\scshape{\rightmark}}
 
 %% \TODO{}-Command um schnell zu sehen was noch zu machen ist ;)
 
 \RequirePackage{xspace}
 \providecommand{\fuj}[1][\xspace]{{\scshape FUJABA}#1}
-\providecommand{\destroy}[1][\xspace]{{\small{ \texttt{{<}<destroy{>}>}}}#1}
-\providecommand{\create}[1][\xspace]{{\small{ \texttt{{<}<create{>}>}}}#1}
+\providecommand{\destroy}[1][\xspace]{{\small{ \texttt{\flqq destroy\frqq}}}#1}
+\providecommand{\create}[1][\xspace]{\small{\texttt{\flqq create\frqq}}#1}
 
 \setlength{\marginparwidth}{2cm}
 
