@@ -171,7 +171,38 @@ f) allowed; same semantics for the same situation with links not optional
 
 \subsection{Using Object Attributes [CH]}
 
-object constraints, attribute assignments
+The objects of our host graph carries attributes. During the application of a story pattern, these attributes may be used twofold. First, constraints may be specified on the attributes to restrict the possible matches of a story pattern. Second, attribute values may be changed during the graph rewriting step.
+
+In story pattern, we may restrict the matchings of nodes to objects of the host graph that have specific attribute values. We achieve this by so-called \emph{object constraints}. Such object constraints are considered to be part of the LHS and do not change the host graph. Figure \ref{fig:objectConstraint} shows an example.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1]{figures/ObjectConstraint}
+  \caption{Matching with an Object Constraint}
+  \label{fig:objectConstraint}
+\end{figure}
+
+In the example, we match a method being contained the class \fe{class}. The match is restricted to a method which has a name that equals variable \emph{methodDecl.name}.
+
+The values of attributes that are not restricted by an object constraint are not considered during the matching. Thus, they may have an arbitrary value. In the current version of story pattern, such object constraints need to be specified using OCL. Besides equality checks, all comparative operations on the attributes of the object supported by OCL may be used as object constraints. OCL statements, however, that traverse the references of the objects are not to be used but modeled as part of the story pattern.
+
+Beside object constraints, we may also use \emph{attribute assignments} to change the value of an attribute during the application of the story pattern. Thus, attribute assignments are considered to be part of the RHS. When using attribute assignments, the value of the attribute is not considered while matching the LHS to the host graph. Figure \ref{fig:attributeAssignment} shows an example.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1]{figures/AttributeAssignment}
+  \caption{Using an Attribute Assignment}
+  \label{fig:attributeAssignment}
+\end{figure}
+
+In the example, a method of class \fe{class} with an arbitrary name is matched. Then, the name of the method is changed to the name that equals variable \emph{methodDecl.name}. 
+
+The concrete syntax of an attribute assignment is
+\begin{lstlisting}
+ <attributeAssignment> ::= #Attribute.name ':=' Expression
+\end{lstlisting}
+The expression is to be specified using OCL. The type of the return value of the OCL expression must be the same as the type of the attribute. Since the attribute assignment is considered to be part of the RHS, it is visualized in green color.
+
 
 \subsection{Object Sets [MCP]}
 
