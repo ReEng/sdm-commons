@@ -72,3 +72,35 @@ Graphs and according graph transformations as introduced in Section \ref{sec:fou
 
 Therefore, story diagrams are based on typed attributed graph transformations \cite{EEPT06}. Typed attributed graph transformations introduce a type graph and node attributes. The type graph defines different types of nodes and edges and it defines which types of edges are allowed for which type of nodes. Additionally, nodes may carry attributes like, e.g., objects in an object-oriented programming language. Accordingly, the type graph specifies inheritance relations between types of objects which are also known from object oriented programming languages.
 
+\section{Type Model used in this Report}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{figures/gast-mm}
+  \caption{Type model of a generalized abstract syntax tree (GAST).}
+  \label{fig:gast-mm}
+\end{figure}
+
+The type model used in the examples in this report describes the structure of an abstract syntax tree. In particular it is an updated and slightly simplified version of the generalized abstract syntax tree (GAST) meta model developed in the QBench project \cite{QBench}. The GAST was developed to provide a unified syntax tree model for different programming languages like Java, C, and C++.
+Figure~\ref{fig:gast-mm} shows an excerpt of that meta model. Especially some specialized sub classes have been omitted for clarity reasons.
+
+\begin{description}
+\item[Root] The \fe{Root} element is the central element of every GAST model. All other elements are reachable from the \fe{Root} node via composition relations.
+\item[File] Elements of the GAST, e.g., classes and packages, can be assigned to files in the file system. A \fe{File} element holds references to those classes and packages and a String containing the path to the file.
+\item[Package] Similar to packages in Java, the \fe{Package} element provides name spaces and visibilities. A \fe{Package} element can contain other packages, classes, global variables, and functions.
+\item[GASTType] The \fe{GASTType} element represents data types like primitive data types and classes. The attribute \fe{qualifiedName} contains the unique, fully qualified name of the type.
+\item[GASTClass] Classes are represented by the element \fe{GASTClass} in the GAST and are a sub type of the \fe{GASTType}. A \fe{GASTClass} holds references to its methods, attributes, and inner classes. A \fe{GASTClass} can be assigned to a \fe{Package}.
+\item[Function] \fe{Function} is the super type for all executable operations. In addition to a name attribute, a \fe{Function} can have a number of local variables and formal parameters. The return type of a \fe{Function} is determined by its \fe{DeclarationTypeAccess}, a sub class of \fe{Access} (not shown in Figure~\ref{fig:gast-mm}). A \fe{Function} always contains a block statement which, in turn, can contain other statements.
+\item[GlobalFunction] A \fe{GlobalFunction} element represents a globally accessible operation, i.e., an operation that does not belong to a class. They can be assigned to a name space defined by a package. For example, C functions are represented by \fe{GlobalFunctions}.
+\item[Method] Functions that belong to an class are represented by \fe{Method} elements, a sub type of \fe{Function}.
+\item[Variable] \fe{Variable} is a super type for all kinds of variables. A \fe{Variable} always has a name and a type.
+\item[LocalVariable] \fe{LocalVariables} are variables that are contained in a \fe{Function}.
+\item[FormalParameter] \fe{FormalParameters} are variables that represent the parameters of a \fe{Function},
+\item[GlobalVariable] \fe{GlobalVariables} are variables that are globally accessible within a given scope. The scope is determined by the package in which the \fe{GlobalVariable} is contained.
+\item[Field] The \fe{Field} element represents class variables. Therefore it is contained in a \fe{GASTClass}.
+\item[Statement] A \fe{Function} consists of a number of \fe{Statements}. There are multiple sub classes of \fe{Statement} which represent the different kinds of statements. Most of them are omitted here. A \fe{Statement} can contain a number of \fe{Accesses}.
+\item[BlockStatement] The \fe{BlockStatement} is a special kind of statement which can contain other \fe{Statements}. It is the root element of all \fe{Statements} contained within a \fe{Function}.
+\item[Access] An \fe{Access} represents the use of a \fe{Variable} or a \fe{Function}. It always belongs to a certain \fe{Statement}.
+\item[FunctionAccess] A \fe{FunctionAccess} represents the use of a \fe{Function} in a \fe{Statement} and therefore references the accessed \fe{Funtion} element.
+\item[VariableAccess] A \fe{VariableAccess} represents the use of a \fe{Variable} in a \fe{Statement} and therefore references the accessed \fe{Variable} element.
+\end{description}
