@@ -33,7 +33,8 @@ In a story pattern, we call all nodes and links that do not carry an annotation 
 Object variables represent the objects defined in a story pattern.
 They are identified by their name.
 The objects are instances of classes of the underlying classmodel (cp. Section \ref{sec:foundations:typedAttrGTS}).
-Thus, the object variables are typed by classes from this model.
+Thus, the object variables are typed by classes from this model, i.e.
+EClassifier objects.
 
 The story pattern in Figure \ref{fig:simpleStoryPattern} contains four
 object variables with the names \fe{call}, \fe{interface}, \fe{methodDecl}, and
@@ -55,11 +56,21 @@ object variables; binding expressions for initialization, see figure
   \label{fig:primitiveVariable}
 \end{figure}
 
-\todomcp{Links to primitive variables: special LinkVariable, typed over
-EStructuralFeature}
 
 \subsection{Links and Link Variables [MCP]}
 \label{sec:StoryPatterns:links}
+
+Link variables are used to connect different object variables. 
+A link variable is typed over an EReference object of the underlying
+classmodel.
+
+Like object variables, link variables also have binding states, binding
+operators and binding semantics (cf. Section \ref{sec:StoryPatterns:binding}).
+
+\todomcp{binding state (unbound/bound) of link variables?}
+
+\todomcp{Links to primitive variables: special LinkVariable, typed over
+EStructuralFeature}
 
 \subsection{Binding of Variables [MCP]}
 \label{sec:StoryPatterns:binding}
@@ -68,7 +79,6 @@ Object variables and link variables have binding states (unbound, bound, maybe
 bound), binding semantics (mandatory, negative, optional), and binding operators
 (check only, create, destroy).
 
-\todomcp{bindings for links}
 
 \subsubsection{Binding States}
 \label{sec:StoryPatterns:binding:states}
@@ -82,7 +92,11 @@ A bound variable must have been matched previously.
 For a variable that is specified as maybe bound, a new match will only be
 determined if it has not been bound before. 
 Otherwise it will be treated as a bound variable.
-\todomcp{explain variable scopes}
+The variable scope is limitted by the surrounding activity. 
+That means a bound variable keeps its binding until the activity ends, unless
+it has been matched again in the meantime.
+An exception is the variable scope inside an each activity node (cf. Section
+\label{sec:StoryDiagrams}).
 
 Unbound objects are visualized with a label of the form ``name:type'', while
 the type is hidden for bound objects.
@@ -90,10 +104,14 @@ the type is hidden for bound objects.
 In a valid, interpretable story pattern, each connected component must contain
 at least one bound object variable.
 
+\todomcp{bindings states for links}
+
+\todomcp{concrete syntax of maybe bound objects?}
+
 \subsubsection{Binding Semantics}
 \label{sec:StoryPatterns:binding:semantics}
-Furthermore, Variables have binding semantics that determine if a variable is
-mandatory, negative or optional.
+Furthermore, object variables and link variables have binding semantics that
+determine if a variable is mandatory, negative or optional.
 Mandatory variables must exist in the given host graph, otherwise the pattern
 fails. 
 In contrast, negative variables must not exist in the host graph. If a variable
@@ -103,9 +121,18 @@ Optional variables may exist. If an optional variable exists, it will be
 bound, but if it does not exist, the story pattern may also be matched
 successfully.
 
-Negative variables are visualized crossed-out and optional variables are
-visualized with a dashed border.
-\todomcp{figure}
+Negative variables are visualized crossed-out (cf. Figure
+\ref{fig:bindingSemanticsOverview} b) and optional variables are visualized with
+a dashed border (cf. Figure \ref{fig:bindingSemanticsOverview} c).
+The same holds for negative and optional link variables (cf. Figure
+\ref{fig:bindingSemanticsOverview} e+f).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1.2]{figures/BindingSemanticsOverview}
+  \caption{Binding Semantics for object and link variables}
+  \label{fig:bindingSemanticsOverview}
+\end{figure}
 
 \todomcp{Negative objects, Figure \ref{fig:negativeObjects}:
 a) allowed; same semantics for the same situation with link not negative
@@ -142,16 +169,23 @@ f) allowed; same semantics for the same situation with links not optional
 
 \subsubsection{Binding Operators}
 \label{sec:StoryPatterns:binding:operators}
-Binding operators define whether an element is to be created, deleted, or just
-matched.
+Binding operators define whether an element or link is to be created, deleted,
+or just matched.
 After all elements that are defined to be deleted or just matched have been
 matched, the model ist modified by deleting and creating the elements as
 defined.
 
-Elements to be created are marked with the
-label \create and elements to be deleted are marked with the label
-\destroy.
+Elements or links to be created are marked with the
+label \create (cf. Figure \ref{fig:bindingOperatorsOverview} b+e) and elements
+to be deleted are marked with the label \destroy (cf. Figure
+\ref{fig:bindingOperatorsOverview} c+f).
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1.2]{figures/BindingOperatorsOverview}
+  \caption{Binding Operators for object and link variables}
+  \label{fig:bindingOperatorsOverview}
+\end{figure}
 
 \subsubsection{Feasible Binding Combinations}
 
@@ -205,7 +239,7 @@ used with object variables.
 \end{table}%
 
 \todomcp{see albert's habil for example for optional-create}
-\todomcp{table for link variables and for object set variables}
+\todomcp{table for link variables and for object set variables?}
 
 \subsection{Using Object Attributes [CH]}
 
