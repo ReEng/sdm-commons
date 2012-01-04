@@ -10,7 +10,7 @@ import org.fujaba.commons.FujabaCommonsImages;
 import org.fujaba.commons.console.internal.ProcessConsole;
 
 
-public abstract class AbstractProcessConsoleJob extends Job implements IReportListener
+public abstract class AbstractProcessConsoleJob extends Job implements IControllableReportListener
 {
    private final ProcessConsole console;
 
