@@ -1,10 +1,42 @@
 \section{Previous Work (Jan)}
 
-new meta-model \cite{HRvD+11},
-SD interpreter \cite{GHS09},
-story diagrams \cite{FNTZ00,Zun01},
-story-driven modelling and story boards (roots of Fujaba) \cite{ZSW99,FNT98,DGZ04},
-SD graph grammar for the construction of valid SDs (besides others) \cite{Kle99},
-motivation for the acronym Fujaba, \textit{F}rom \textit{U}ML to \textit{J}ava \textit{a}nd \textit{b}ack \textit{a}gain \cite{JZ97},
-Fujaba tool demo \cite{NNZ00},
-semantic issues \cite{TMG06}
+Story diagrams have been described first by Fischer et al. \cite{FNTZ00} and Jahnke and Z\"{u}ndorf \cite{JZ98} in 1998.
+The foundations of story diagrams lay in the programmed graph rewriting systems PROGRES \cite{SWZ95} which has been developed at the University of Aachen since 1989.
+Story diagrams (or story flow diagrams, as they have been called in early publications) adapt and enhance the PROGRES approach to a UML-like notation and an object-oriented data model \cite{JZ98}, using an easily comprehensible graphical syntax and well-defined semantics.
+Z\"{u}ndorf \cite{Zun01} describes the syntax and semantics of early story diagrams in detail.
+A graph grammar that formally describes the syntax of the control flow of story diagrams was defined by Klein \cite{Kle99}.
+Story diagrams are embedded in a rigorous and systematic software development method called story driven modeling \cite{Zun01,DGZ04}.
+
+From the beginning, there was strong tool support for story diagrams.
+In December 1997 the Fujaba project started at the University of Paderborn.
+A first prototype was implemented in the course of a master thesis \cite{FNT98}.
+Fujaba, an acronym for ``From UML to Java And Back Again''\footnote{The acronym is derived from a predecessing tool called FUCABA (''From UML to C++ And Back Again'') \cite{JZ97}.}, combines UML class diagrams, UML activity diagrams, and story diagrams to allow completely specifying the structure and behavior of software systems.
+These specifications can then be executed.
+For instance, Z\"{u}ndorf, Sch\"{u}rr and Winter \cite{ZSW99} describe how story diagrams can be compiled into Java code.
+A first public tool demonstration of Fujaba was presented at the ICSE 2000 \cite{NNZ00}, showing advanced class and story diagram modeling facilities as well as graphical debugging and simulation.
+
+In the following, story diagrams and Fujaba have been modified and enhanced.
+Originally, story diagrams use expressions of the target programming language to define constraints, return values etc.
+I.e., if a story diagram should be compiled into Java code, Java expressions must be used.
+St\"{o}lzel, Zschaler and Geiger \cite{SZG07} integrated OCL into story diagrams, making them more platform-independent.
+They conntected Fujaba with the Dresden OCL toolkit, allowing a code generation for story diagrams including the OCL constraints.
+
+SD interpreter \cite{GHS09}
+
+Tichy, Meyer and Giese \cite{TMG06} identified some semantic issues in story diagrams.
+
+
+%motivation for the acronym Fujaba, \textit{F}rom \textit{U}ML to \textit{J}ava \textit{a}nd \textit{b}ack \textit{a}gain \cite{JZ97}
+
+%story-driven modelling and story boards (roots of Fujaba) \cite{FNT98,FNTZ00,JZ98,ZSW99,DGZ04}
+
+%story diagrams \cite{FNTZ00,Zun01}
+
+%SD graph grammar for the construction of valid SDs (besides others) \cite{Kle99}
+
+%Fujaba tool demo \cite{NNZ00}
+
+
+%semantic issues \cite{TMG06}
+
+new meta-model \cite{HRvD+11}
