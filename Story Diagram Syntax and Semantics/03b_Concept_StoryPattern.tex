@@ -10,6 +10,7 @@ Story Patterns are typed attributed graph transformation rules with inheritance 
 This allows specifying graph replacement rules for object-oriented models.
 
 \todoch{Should we provide an example for a type model here? Maybe we should have a section introducing type models (Ecore, UML, MOF) in the foundations.}
+\todomvd{I added a description of the GAST type model in section \ref{sec:typeGraph}.}
 
 Story patterns are applied according to single pushout semantics using isomorphic matchings.
 For enabling a concise notation of the graph transformation, story pattern apply a short-hand notation depicting the left-hand side (LHS) and the right-hand side (RHS) in a single, annotated graph. Nodes and edges being created (or deleted) are annotated with \create (or  \destroy, respectively).
@@ -445,5 +446,6 @@ These are only used in SDDs and TSSDs which are constraint languages.
 
 \todomcp{How deep may patterns be nested? What is the semantics of alternating binding semantics of sub-patterns, e.g. negative in optional in negative and so on.}
 \tododt{I would prefer to allow arbitrarily deep nestings and would suggest to interpret the fragments in the order from outside to inside. Example (see Figure~\ref{fig:subPatternHierarchies}): You match a super class \emph{superClass} of \emph{myClass} and ensure that \emph{superClass} has no attribute. Then you you match all methods \emph{new} (outer set fragment) that have no class as their type (enclosed NAC fragment). Now you match for each of these methods all parameters (enclosed set fragment) that have \emph{myClass} as their type. Furthermore, you try to find a path from the matched \emph{new} method to a return statement (optional fragment).}
+
 
 
