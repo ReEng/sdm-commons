@@ -387,6 +387,75 @@ Link constraints are only applicable to link variables that reference an ordered
 
 \todoch{Is this semantic description correct/complete?}
 
+\todoall{Stephan: Following is my suggestion for link constraints.}
+
+Link constraints specify constraints on the absolute position of an element in an ordered reference and the position of an element relative to another element. These constraints are only applicable to \emph{LinkVariables} that refer to ordered multi-valued references. Other kinds of links cannot be adorned with link constraints.
+
+\paragraph{Link Position Constraints}
+
+\begin{figure}[htb]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/linkPositionConstraint1.png}
+\caption{A \emph{first} link position constraint}
+\label{fig:linkPositionConstraints:linkPositionConstraint1}
+\end{figure}
+
+A link position constraint specifies that the target object of the constrained link has to be the \emph{first} or the \emph{last} element in that reference. For example, in a valid match of the story pattern in Fig.~\ref{fig:linkPositionConstraints:linkPositionConstraint1}, the object matched to \emph{bx} must be also be the first element in the \emph{elements} reference of the object matched to \emph{a}. Link position constraints support only these two positions: \emph{First} and \emph{last}. If a story pattern contains multiple links that refer to the same metamodel reference and have the same source variable, only one of them may have a \emph{first} (or \emph{last}) constraint.
+
+When link position constraints are attached to links with \destroy stereotypes, the semantics are identical, even if they are optional. For links with \create stereotype, the link's target element is inserted at the specified position. For optionally created links, the semantics is somewhat different. If the link does not yet exist, it is created. The target element is inserted at the specified position in the reference. If the link does exist but the element is not at the specified position, it is moved.
+
+\todoall{Alternatives: 1.) Ignore link position constraints on optional-create links, 2.) add target element a second time. For unique references, this has the same effect like moving the element, in case of non-unique references, the element exists twice (or more times) in the list, afterwards.}
+
+\begin{figure}[htb]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/linkPositionConstraint2.png}
+\caption{A negative link position constraint}
+\label{fig:linkPositionConstraints:linkPositionConstraint2}
+\end{figure}
+
+A combination with negative links is also straight-forward. In a valid match of the pattern shown in Fig.~\ref{fig:linkPositionConstraints:linkPositionConstraint2}, the match of \emph{bx} must \emph{not} be the first element in the \emph{elements} reference.
+
+\paragraph{Link Order Constraints}
+
+\begin{figure}
+\center
+\includegraphics[width=0.4\columnwidth]{figures/linkOrderConstraint1.png}
+\caption{A link order constraint specifies a relative order between two links.}
+\label{fig:linkOrderConstraints:linkOrderConstaint1}
+\end{figure}
+
+Link order constraints specify a relative order between two links. In Fig.~\ref{fig:linkOrderConstraints:linkOrderConstaint1}, \emph{b2} must be the immediate successor of \emph{b1} in the \emph{elements} reference (depicted by \emph{\{next\}}). It is also possible to specify that \emph{b2} may be a direct or indirect successor, which is depicted by \emph{\{...\}}. Note, that then there may be multiple possible matches. Which of them is chosen is still non-deterministic.
+
+Link order constraints can be combined straight-forwardly with \create and \destroy stereotypes. However, the combination with \create is only possible for the \emph{\{next\}} order constraint, not for \emph{\{...\}}. In case of created links, the order in the instance model is enforced accordingly.
+
+\todoall{Do we want to allow this? This would make the choice, where an element is inserted non-deterministic.}
+
+It is also possible to have only one of the two related links be destroyed or created. Though, it is not possible to create one link and destroy the other.
+
+Link order constraints may not form circles or unsatisfiable story patterns (e.g., where a link is the successor of another but also has a \emph{\{first\}} link position constraint).
+
+\begin{figure}
+\center
+\includegraphics[width=0.4\columnwidth]{figures/linkOrderConstraint2.png}
+\caption{A link order constraint with a negative link.}
+\label{fig:linkOrderConstraints:linkOrderConstaint2}
+\end{figure}
+
+Link order constraints can also be combined with negative link. However, only one of both links may be marked as negative. Otherwise, there would be nothing to relate to. For example, in the story pattern in Fig.~\ref{fig:linkOrderConstraints:linkOrderConstaint2}, \emph{b2} may not be the direct successor of \emph{b1}.
+
+\begin{figure}
+\center
+\includegraphics[width=0.6\columnwidth]{figures/linkOrderConstraint3.png}
+\caption{Two link order constraints with a negative link.}
+\label{fig:linkOrderConstraints:linkOrderConstaint3}
+\end{figure}
+
+If there are multiple link order constraints, like in Fig.~\ref{fig:linkOrderConstraints:linkOrderConstaint3}, the semantics of the negative link is as follows: \emph{b2} must neither be the direct successor of \emph{b1} nor the direct predecessor of \emph{b3}. If one of both conditions is fulfilled, the pattern does not match.
+
+\todoall{This should match the semantics of multiple NACs in a story pattern.}
+
+For optionally created and destroyed links, the same applies to link order constraints like to link position constraints. Optionally destroyed link can be used straight-forwardly. An optionally created link is created if it does not exist, so that the specified order is enforced. If the link does exist but the element is not at an appropriate position, it is moved.
+
 \subsubsection{Maybe Links}
 
 Disables the isomorphism check for two object variables, these two object variables may be matched to the same object.
