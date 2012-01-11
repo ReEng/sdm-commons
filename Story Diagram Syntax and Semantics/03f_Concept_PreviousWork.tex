@@ -5,16 +5,26 @@
 Story diagrams have been described first by Fischer et al. \cite{FNTZ00} and Jahnke and Z\"{u}ndorf \cite{JZ98} in 1998.
 The foundations of story diagrams lay in the programmed graph rewriting systems PROGRES \cite{SWZ95} which has been developed at the University of Aachen since 1989.
 Story diagrams (or story flow diagrams, as they have been called in early publications) adapt and enhance the PROGRES approach to a UML-like notation and an object-oriented data model \cite{JZ98}, using an easily comprehensible graphical syntax and well-defined semantics.
-Z\"{u}ndorf \cite{Zun01} describes the syntax and semantics of early story diagrams in detail.
+Z\"{u}ndorf \cite{Zun01} describes the syntax and semantics of story diagrams in detail.
 A graph grammar that formally describes the syntax of the control flow of story diagrams was defined by Klein \cite{Kle99}.
-Story diagrams are embedded in a rigorous and systematic software development method called story driven modeling \cite{Zun01,DGZ04}.
 
-From the beginning, there was strong tool support for story diagrams.
-In December 1997 the Fujaba project started at the University of Paderborn.
+Story diagrams are embedded in a rigorous and systematic software development method called \emph{story-driven modeling} (SDM) \cite{Zun01,DGZ04}.
+While existing approaches like UML focused on the specification of the static structure of software, SDM combines, amongst others, UML class diagrams, UML activity diagrams, and story diagrams to allow completely specifying the structure and behavior of software systems.
+Furthermore, SDM describes how such a software specification can be derived from requirements.
+First, each use-case in the requirements is refined by a set of sample scenarios defined by so-called \emph{story boards}.
+A story board is a sequence of single snap shots of graph-like object structures, describing changes in these object structures.
+Next, the static class structure of the system is derived from the story boards and further refined.
+Given the sample scenarios, the general dynamic behavior of the system is then defined using story diagrams.
+Finally, the implementation of the software system can be automatically generated from these formal models.
+
+From the beginning, tool support for story diagrams was a main focus.
+Fujaba, an acronym for ``From UML to Java And Back Again''\footnote{The acronym is derived from a preceding tool called FUCABA (''From UML to C++ And Back Again'') \cite{JZ97}.}, was the first tool which implemented the concept of story diagrams.
+In December 1997, the project started at the University of Paderborn.
 A first prototype was implemented in the course of a master thesis \cite{FNT98}.
-Fujaba, an acronym for ``From UML to Java And Back Again''\footnote{The acronym is derived from a preceding tool called FUCABA (''From UML to C++ And Back Again'') \cite{JZ97}.}, combines UML class diagrams, UML activity diagrams, and story diagrams to allow completely specifying the structure and behavior of software systems.
-These specifications can then be executed.
+As story diagrams specify the behavior of software, the execution of story diagrams is an important requirement.
 For instance, Z\"{u}ndorf, Sch\"{u}rr and Winter \cite{ZSW99} describe how story diagrams can be compiled into Java code.
+This code generation approach was also integrated into Fujaba.
+
 A first public tool demonstration of Fujaba was presented at the ICSE 2000 \cite{NNZ00}, showing advanced class and story diagram modeling facilities as well as graphical debugging and simulation.
 
 In the following, story diagrams and Fujaba have been modified and enhanced.
@@ -24,7 +34,8 @@ St\"{o}lzel, Zschaler and Geiger \cite{SZG07} integrated OCL into story diagrams
 They connected Fujaba with the Dresden OCL toolkit, allowing a code generation for story diagrams including the OCL constraints.
 
 To improve flexibility for the execution of story diagrams, Giese, Hildebrand and Seibel \cite{GHS09} present an interpreter for story diagrams.
-In contrast to executing generated Java code, with this approach generated story diagrams can be executed immediately, allowing to create higher-order transformations where story diagrams are created by other story diagrams.
+In contrast to executing generated Java code, with this approach generated story diagrams can be executed immediately.
+This allows, for instance, to create higher-order transformations where story diagrams are created by other story diagrams and immediately be executed.
 As interpreting in general is slower than compiling, the authors implemented a new dynamic matching policy for their interpreter.
 
 Tichy, Meyer and Giese \cite{TMG06} identified some semantic issues in story diagrams.
@@ -41,14 +52,6 @@ Forth, the set of possible bindings that match in a for-each activity may be ext
 Thus, we clarify whether we use a \emph{pre-select} or a \emph{fresh matches} semantics for for-each activities in \todojr{Section X}.
 Fifth, the authors propose that the result of a creating can be check in cases where creations may fail, e.g., due to resource constraints.
 We mention this in \todojr{Section X}.
-
-Giese and Klein extend story patterns to so called Story Decision Diagrams (SDDs) that allow to express complex safety properties \cite{GK06a} .
-Second, they present Timed Story Scenario Diagrams (TSSDs) that are used to specify structural and temporal properties of systems in an integrated way \cite{KG07a}.
-
-\todojr{Ist eigentlich nicht so wirklich wichtig für diesen TechReport. Streichen?}
-Tichy et al. \cite{THH+08} describe how story diagrams can be used to describe reconfigurations of component-based architectures.
-A transformation language called Component Story Diagrams is used to specify reconfiguration steps.
-This language is transformed to story diagrams that can be executed to perform the actual reconfigurations.
 
 The control flow of story diagrams is modeled explicitly.
 However, in certain situations, it is useful to only implicitly define the execution order, as it may significantly improve the comprehensibility of a story diagram.
