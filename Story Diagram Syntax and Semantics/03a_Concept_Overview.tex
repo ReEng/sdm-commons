@@ -2,21 +2,37 @@
 
 \tododt{Suggestion for an overview section:}
 
+- model-driven software development, raise abstraction level and use models instead of code as the key artifact
+- specify structure and behavior of the software under development, make the models runnable/executable
+- UML offers notations for description of software structure and development, esp. class and activity diagrams
+- activity diagrams are too informal to be automatically executed (natural language used)
+- we replaced the informal activity descriptions with formal descriptions of operations on object structures and developed a new formal language called story diagrams
+
 - story diagrams are special UML activity diagrams
 - developed to formalize the description of a software's behavior (UML activity diagrams usually use informal textual descriptions of the tasks to be performed)
 - motivation: complete specification of a software, structure and behavior, i.e. make the software specification executable (code generation and interpretation)
 
 - motivation: (formally) describe modifications of object structures for object-oriented software systems
-- motivation: use graphically specified operations, stay in the OO world, (hopefully) more intuitive and on a higher abstraction level than other languages
-- motivation: declaratively describe the operations in activity nodes, thus, reduce complexity (avoid describing how to perform the operations)
+- use a graphical notation to specify operations on object structures (object structure modifications), OO world
+- each operation describes a modification of a given object structure, basically the modifactions are creations and removals of objects and their interconnections
+- graphically describe the object structure to be modified, mark the elements to be created and those to be removed
 
 \tododt{Introduce a very simple example from the same domain as our complete example}
 
-- story diagrams use graph transformations in their activity nodes (well-known formalism, exhaust the given theories for analyses)
-- given a so called host graph (an object structure or model), story diagrams describe the graph's modifications by means of creating or removing objects and their interconnections
-- the host graph, in our case, is a typed attributed graph, i.e. we have a graph to be modified (model) and a corresponding type graph (meta-model) describing the types and properties of the objects in our host graph
+- motivation: use an appropriate, familiar, and simple notation for object structure modifications; we use a notation similar to UML object diagrams
+- motivation: declaratively describe the operations in activity nodes, thus, reduce complexity (avoid describing how to perform the operations)
+- motivation: keep determinism to a certain extent to specify the conditions for and the order of object structure modifications
 
-\tododt{complete this section's structure}
+- motivation: base the specification on a well-known formalism (for execution and analyses)
+- story diagrams use graph transformations in their activity nodes (well-known formalism, exhaust the given theories for analyses and execution)
+- given a so called host graph (an object structure or model), story diagrams describe the graph's modifications by means of creating or removing nodes and edges (objects and links)
+- the host graph, in our case, is a typed attributed graph, i.e. we have a graph to be modified (object structure, token model) and a corresponding type graph (type model or meta-model) describing the types and properties of the objects in our host graph
+- a graph transformation is executed by identifying a subgraph in the host graph which corresponds to the graph specified in the transformation (matching, subgraph isomorphism), removing nodes and links that are marked to be removed, and creating new nodes and links that are marked to be created
+
+- each graph transformation in an activity node is called a story pattern and specifies an object structure to be modified and the corresponding modifications; this is done by means of specifying the object types, their attribute values and interconnections (links) and indicating which of them to remove or to create and which values to set
+- each story pattern can be performed on any object structure that is based on the type model (meta-model) used for the story pattern specification
+
+
 
 
 
