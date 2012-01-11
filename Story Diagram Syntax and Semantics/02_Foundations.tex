@@ -15,7 +15,7 @@ Graphs consist of nodes and edges where an edge always connects two nodes. Nodes
   \label{fig:simpleGraph}
 \end{figure}
 
-Figure \ref{fig:simpleGraph} shows an example of a simple graph with three nodes and four edges. The nodes are visualized a circles, the edges are visualized as arrows. An edge may have the same node as a source and target node. Such an edge is called a \emph{self-edge}.
+Figure \ref{fig:simpleGraph} shows an example of a simple graph with three nodes and four edges. The nodes are visualized as circles, the edges are visualized as arrows. An edge may have the same node as a source and target node. Such an edge is called a \emph{self-edge}.
 
 \emph{Graph transformation rules} specify allowed modifications of graphs. They consist of a left-hand side (LHS), a right-hand side (RHS), and a so-called rule morphism. Both, the LHS and the RHS are graphs while the rule morphism specifies which nodes of the LHS and RHS are considered to be the same. This information is required for the application of a graph transformation rule to a graph.
 
@@ -26,7 +26,7 @@ Figure \ref{fig:simpleGraph} shows an example of a simple graph with three nodes
   \label{fig:simpleGTRule}
 \end{figure}
 
-Figure \ref{fig:simpleGTRule} shows an example of a graph transformation rule. The LHS contains only node node with a self-edge. The RHS contains two nodes connected by an edge where the right node of the RHS has a self-edge as well. The rule morphism is visualized by the grey, dotted arrow. It specifies that the node of the LHS and the left node of the RHS are considered to be the same.
+Figure \ref{fig:simpleGTRule} shows an example of a graph transformation rule. The LHS contains only one node with a self-edge. The RHS contains two nodes connected by an edge where the right node of the RHS has a self-edge as well. The rule morphism is visualized by the grey, dotted arrow. It specifies that the node of the LHS and the left node of the RHS are considered to be the same.
 
 The application of a graph transformation rule to a graph is called a \emph{graph transformation} \cite{EEPT06}. The graph on which the rule is to be applied is called the \emph{host graph}.
 The application of a graph transformation rule to a graph is performed in three steps. In the first step, an occurrence of the LHS of the graph transformation rule in the host graph is searched. Such an occurrence is called a \emph{match} of the graph transformation rule. If a match has been found, all nodes and edges that occur in the LHS but not in the RHS are deleted from the host graph. In this step, the rule morphism is used to decide which nodes do not occur in the RHS. In the third step, all nodes and edges that occur in the RHS but not in the LHS are added to the host graph. After the application of the graph transformation rule, there exists a match of the RHS into the host graph.
@@ -63,7 +63,7 @@ such situations and instead requires that incident edges are explicitly
 deleted. The single-pushout approach allows such situations and implicitly
 deletes edges if one of the source or target nodes are deleted.
 
-In general, matches of graph transformation rules are homomorphisms of the LHS of the rule to the host graph. That allows to match two nodes of the LHS to the same node of the host graph leading to first situation mentioned above. Such situations may be prevented by using isomorphisms for matching the LHS. Then, each node of the LHS must be matched to a unique node of the host graph. Thus, using isomorphic matchings solves the first situation when using single pushouts.
+In general, matches of graph transformation rules are homomorphisms of the LHS of the rule to the host graph. That allows to match two nodes of the LHS to the same node of the host graph leading to the first situation mentioned above. Such situations may be prevented by using isomorphisms for matching the LHS. Then, each node of the LHS must be matched to a unique node of the host graph. Thus, using isomorphic matchings solves the first situation when using single pushouts.
 
 \section{Typed Attributed Graph Transformations}
 \label{sec:foundations:typedAttrGTS}
