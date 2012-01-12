@@ -1,16 +1,13 @@
 \section{Story Patterns (Christian und Marie)} \label{sec:StoryPatterns}
 
-\todoch{Define concrete syntax for new elements. In particular, check syntax for links.}
+In this section, we introduce story patterns in more detail. We start by giving the general idea of story pattern in Section \ref{sec:StoryPatterns:storyPattern}. Thereafter, we describe the basic concepts of story pattern, namely object variables, link variables and there respective binding semantics in Sections \ref{sec:StoryPatterns:objects} to \ref{sec:StoryPatterns:binding}. Finally, we show the use of object attributes in a story pattern in Section \ref{sec:StoryPatterns:attributes}.
 
 
 \subsection{Story Pattern [CH]}
 \label{sec:StoryPatterns:storyPattern}
 
-Story Patterns are typed attributed graph transformation rules with inheritance (cf. Section \ref{sec:foundations:typedAttrGTS}) that may be embedded into an activity node of a story diagram (cf. Section \ref{sec:StoryDiagrams}). Type models for story diagrams can be created, e.g., by using EMF Ecore \cite{SBP+08}.  Using a type model enables use of inheritance and polymorphism for matching nodes.
-This allows specifying graph replacement rules for object-oriented models.
-
-\todoch{Should we provide an example for a type model here? Maybe we should have a section introducing type models (Ecore, UML, MOF) in the foundations.}
-\todomvd{I added a description of the GAST type model in section \ref{sec:typeGraph}.}
+Story patterns are typed attributed graph transformation rules with inheritance (cf. Section \ref{sec:foundations:typedAttrGTS}) that may be embedded into an activity node of a story diagram (cf. Section \ref{sec:StoryDiagrams}). Using a type model as introduced in Section \ref{sec:typeGraph} enables use of inheritance and polymorphism for matching nodes and edges.
+This allows for specifying graph replacement rules for object-oriented models.
 
 Story patterns are applied according to single pushout semantics using isomorphic matchings.
 For enabling a concise notation of the graph transformation, story pattern apply a short-hand notation depicting the left-hand side (LHS) and the right-hand side (RHS) in a single, annotated graph. Nodes and edges being created (or deleted) are annotated with \create (or  \destroy, respectively).
@@ -249,6 +246,7 @@ bound or maybe bound and the binding operator create is not allowed.
 \todomcp{table for link variables and for object set variables?}
 
 \subsection{Using Object Attributes [CH]}
+\label{sec:StoryPatterns:attributes}
 
 The objects of our host graph carries attributes. During the application of a story pattern, these attributes may be used twofold. First, constraints may be specified on the attributes to restrict the possible matches of a story pattern. Second, attribute values may be changed during the graph rewriting step.
 

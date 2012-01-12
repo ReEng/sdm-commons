@@ -74,8 +74,12 @@ Therefore, story diagrams are based on typed attributed graph transformations \c
 
 If the graph transformation transforms a model based on a given type graph into a model based on the same type graph, the transformation is called \emph{endogenous}. Otherwise, i.e., the transformation transforms a model based on a given type graph into a model based on another type graph, the transformation is called \emph{exogenous.} Story diagrams are endogenous graph transformations.
 
-\section{Type Graph used in this Report}
+\section{Type Graphs}
 \label{sec:typeGraph}
+
+The type graphs that may be used with story pattern may be created by using an arbitrary meta-modeling language. Examples include Ecore \cite{SBP+08}, MOF \cite{MOF05}, and UML \cite{UML23}.
+
+The type graph used in the examples in this report describes the structure of an abstract syntax tree. In particular it is an updated and slightly simplified version of the generalized abstract syntax tree (GAST) meta model developed in the QBench project \cite{QBench}. The GAST was developed to provide a unified syntax tree model for different programming languages like Java, C, and C++. Figure~\ref{fig:gast-mm} shows an excerpt of that meta model. Especially some specialized sub classes have been omitted for clarity reasons.
 
 \begin{figure}[htbp]
   \centering
@@ -84,8 +88,6 @@ If the graph transformation transforms a model based on a given type graph into 
   \label{fig:gast-mm}
 \end{figure}
 
-The type graph used in the examples in this report describes the structure of an abstract syntax tree. In particular it is an updated and slightly simplified version of the generalized abstract syntax tree (GAST) meta model developed in the QBench project \cite{QBench}. The GAST was developed to provide a unified syntax tree model for different programming languages like Java, C, and C++.
-Figure~\ref{fig:gast-mm} shows an excerpt of that meta model. Especially some specialized sub classes have been omitted for clarity reasons.
 
 \begin{description}
 \item[Root] The \fe{Root} element is the central element of every GAST model. All other elements are reachable from the \fe{Root} node via composition relations.
