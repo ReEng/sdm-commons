@@ -17,7 +17,7 @@ The UML offers notations for the description of the software structure and behav
 besides others class diagrams and activity diagrams.
 Since UML activity diagrams use natural language to describe the software's behavior,
 a formal behavioral specification is needed to make the software model executable.
-For that purpose \emph{story diagrams} have been developed.
+For that purpose \emph{story diagrams} have been developed \cite{FNTZ00}.
 They refine UML activity diagrams and replace the natural language with a formal language to specify behavior
 and, thus, can be automatically executed.
 
@@ -54,21 +54,21 @@ e.g., it can be checked if certain properties of the object structure to be modi
 %- the host graph, in our case, is a typed attributed graph, i.e. we have a graph to be modified (object structure, token model) and a corresponding type graph (type model or meta-model) describing the types and properties of the objects in our host graph
 %- a graph transformation is executed by identifying a subgraph in the host graph which corresponds to the graph specified in the transformation (matching, subgraph isomorphism), removing nodes and links that are marked to be removed, and creating new nodes and links that are marked to be created
 
-A story pattern specifies a graph transformation.
+A story pattern specifies a graph transformation \cite{Roz97}.
 Given a so-called \emph{host graph}, the graph to be modified, a graph transformation removes and creates nodes and edges in the given host graph.
 The host graph is a typed attributed graph, i.e. there is a type graph determining the types and attributes of the nodes.
 A graph transformation is executed on a host graph by identifying a subgraph in the host graph that is similar to the one specified in the graph transformation and then removing and adding the specified nodes and edges.
-The identification of the subgraph for modification is called graph matching and includes the subgraph isomorphism problem.
+The identification of the subgraph for modification is called \emph{graph matching} and includes the \emph{subgraph isomorphism} problem.
 
-In case of story patterns, the host graph is the object structure or model to be modified (token model),
-\tododt{ref}
+In case of story patterns, the host graph is the object structure or model to be modified (\emph{token model}) \cite{Kue06},
 i.e. the run-time data of the executed software.
-The type graph is a set of classes and their relations defining all potential object structures at run-time.
-These classes and relatiosn are a so-called type model or meta-model. \tododt{ref}
+The type graph is a set of classes and their relations which define all potential object structures at run-time.
+These classes and relations are a so-called \emph{type model} or meta-model \cite{Kue06}.
 They are required to specify story patterns.
 
-In summary, a story diagram is a formal kind of UML activity diagram
-that embeds story patterns in its activity nodes to precisely describe run-time behavior by means of graph transformations.
+In summary, a story diagram is a special, formally defined UML activity diagram
+that embeds graph transformations, so-called story patterns, in its activity nodes
+to precisely describe run-time behavior by means of graph transformations.
 
 \tododt{Introduce a very simple example from the same domain as our complete example}
 
