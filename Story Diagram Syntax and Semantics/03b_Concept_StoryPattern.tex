@@ -280,7 +280,8 @@ The concrete syntax of an attribute assignment is
 \end{lstlisting}
 The expression is to be specified using OCL. The type of the return value of the OCL expression must be the same as the type of the attribute. Since the attribute assignment is considered to be part of the RHS, it is visualized in green color.
 
-
+\ext  %--- Comment this line to include object sets into the document
+{
 \subsection{Object Sets [MCP]}
 
 explain objectSetVariables, set size expressions
@@ -349,7 +350,10 @@ explain objectSetVariables, set size expressions
 But in this case it is non-deterministic how the objects are matched to the set nodes (assuming the classes are already bound).
 A maybe constraint could allow to match the same objects to both sets.}
 \todojr{We decided to match set nodes without them having to be disjoint, thus, we do not enforce isomorphism for the content of two or more set variables.}
+}%------ End of object set section
 
+\ext  %--- Comment this line to include special link kinds into the document
+{
 \subsection{Special Link Kinds [CH]}
 
 \subsubsection{Inclusion Links [CH]}
@@ -473,12 +477,19 @@ Disables the isomorphism check for two object variables, these two object variab
   \caption{Maybe Link}
   \label{fig:maybeLink}
 \end{figure}
+} %--- End of special link kinds section
 
+\ext  %--- Comment this line to include pattern constraints into the document
+{
 \subsection{Pattern Constraints [CH]}
 
 \todoch{What happens when a pattern constraint is placed inside a for each story pattern (not inside a node in that pattern)? Proposal: The particular match must fulfill the pattern constraint, if it does not fulfill the pattern constraint, the match is rejected and the iteration continues.}
 \tododt{Exactly. In this case, it is a kind of post condition that has to be satisfied at the end of the matching step.}
 
+} %--- End of pattern constraints section
+
+\ext  %--- Comment this line to include pattern fragments into the document
+{
 \subsection{Pattern Fragments [MCP]}
 
 patterns contained in other patterns, negative, semantics? review enhanced story patterns from Diss Florian Klein
@@ -519,6 +530,6 @@ These are only used in SDDs and TSSDs which are constraint languages.
 
 \todomcp{How deep may patterns be nested? What is the semantics of alternating binding semantics of sub-patterns, e.g. negative in optional in negative and so on.}
 \tododt{I would prefer to allow arbitrarily deep nestings and would suggest to interpret the fragments in the order from outside to inside. Example (see Figure~\ref{fig:subPatternHierarchies}): You match a super class \emph{superClass} of \emph{myClass} and ensure that \emph{superClass} has no attribute. Then you you match all methods \emph{new} (outer set fragment) that have no class as their type (enclosed NAC fragment). Now you match for each of these methods all parameters (enclosed set fragment) that have \emph{myClass} as their type. Furthermore, you try to find a path from the matched \emph{new} method to a return statement (optional fragment).}
-
+} %--- End of pattern fragment section
 
 
