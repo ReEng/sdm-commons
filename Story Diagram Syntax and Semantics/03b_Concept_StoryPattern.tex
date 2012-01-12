@@ -283,6 +283,7 @@ The expression is to be specified using OCL. The type of the return value of the
 \ext  %--- Comment this line to include object sets into the document
 {
 \subsection{Object Sets [MCP]}
+\label{sec:StoryPatterns:objectsets}
 
 explain objectSetVariables, set size expressions
 
@@ -355,8 +356,10 @@ A maybe constraint could allow to match the same objects to both sets.}
 \ext  %--- Comment this line to include special link kinds into the document
 {
 \subsection{Special Link Kinds [CH]}
+\label{sec:StoryPatterns:specialLinks}
 
 \subsubsection{Inclusion Links [CH]}
+\label{sec:StoryPatterns:specialLinks:inclusion}
 
 \todoch{What is the semantics of a containment link? Current understanding: an element is contained in a container. What is the difference to to-many references which are containments?}
 \tododt{Containment links do not correspond to any association or reference. They only describe containments of objects in containers or set nodes.}
@@ -365,8 +368,10 @@ A maybe constraint could allow to match the same objects to both sets.}
 \tododt{The contaiment links do not need any reference. I would suggest to allow any subtype of java.util.Collection (and java.util.List in case that link order constraints are used), but not java.util.Map! This is something different and needs a key for containment. Maybe we need special containment links for maps that include a key.}
 
 \subsubsection{Paths [MCP]}
+\label{sec:StoryPatterns:specialLinks:paths}
 
 \subsubsection{Link Constraints [CH]}
+\label{sec:StoryPatterns:specialLinks:linkConstraints}
 
 \todoch{What is the concrete Syntax for this?}
 
@@ -465,18 +470,19 @@ If there are multiple link order constraints, like in Fig.~\ref{fig:linkOrderCon
 For optionally created and destroyed links, the same applies to link order constraints like to link position constraints. Optionally destroyed link can be used straight-forwardly. An optionally created link is created if it does not exist, so that the specified order is enforced. If the link does exist but the element is not at an appropriate position, it is moved.
 
 \subsubsection{Maybe Links}
+\label{sec:StoryPatterns:specialLinks:maybeLink}
 
-Disables the isomorphism check for two object variables, these two object variables may be matched to the same object.
-
-\todoch{What is the concrete Syntax? Using a special pattern constraint as proposed in Alberts Habil is very low-level. Alternative version is proposed in Figure \ref{fig:maybeLink}.}
-\todoch{conrete syntax: "same?"}
+Story pattern are matched by using isomorphic matchings. That means that two object variables in a story pattern may not be matched to the same object of the host graph. A matching which matches two object variables to the same object is, thus, considered to be invalid. In some situations, however, such matchings should be explicitly allowed. Then, the isomorphic matching must be disabled. This may be achieved by connecting the object variables with a maybe link. Figure \ref{fig:maybeLink} shows the concrete syntax of maybe links. 
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=.8]{figures/MaybeLink}
-  \caption{Maybe Link}
+  \caption{Maybe Link allowing two Object Variables to be matched to the same Object}
   \label{fig:maybeLink}
 \end{figure}
+
+If two object variables are connected by a maybe link, they both must be mandatory or optional. In addition, a maybe link requires the object variables to be matched or destroyed, but not created.  
+
 } %--- End of special link kinds section
 
 \ext  %--- Comment this line to include pattern constraints into the document
