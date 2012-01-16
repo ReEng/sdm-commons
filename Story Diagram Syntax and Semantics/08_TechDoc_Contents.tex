@@ -1,3 +1,5 @@
+
+
 \section{Package \bfseries \texttt{modeling}\normalfont}
 % Here comes the package documentation
 \subsection{Package Overview}
@@ -29,6 +31,7 @@ Abstract super class for all meta-model elements that may carry a comment in for
 	\item[\textbf{Class Properties}] Class \texttt{CommentableElement} has the following properties:
 	\begin{description}
 \item[comment : EString 			\symbol{"5B}0..1\symbol{"5D}]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -58,7 +61,7 @@ Abstract base class for the whole SDM model. The ExtendableElement specifies the
 
 \paragraph{Parent Classes}
 \begin{itemize}
-\item EObject\end{itemize}
+\item EObject \end{itemize}
 \subsubsection{\Large{Class \bfseries \texttt{Extension}\normalfont}}
 \label{cls:modeling::Extension} \index{2}
 \paragraph{Overview}
@@ -90,6 +93,7 @@ Abstract super class for all meta-model elements that carry a name.
 	\item[\textbf{Class Properties}] Class \texttt{NamedElement} has the following properties:
 	\begin{description}
 \item[name : EString 	]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -139,6 +143,7 @@ Represents a variable which can be, for example, an object variable, an attribut
 	\item[\textbf{Class Properties}] Class \texttt{Variable} has the following properties:
 	\begin{description}
 \item[/variableName : EString 			\symbol{"5B}0..1\symbol{"5D}]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -165,8 +170,8 @@ Represents a variable which can be, for example, an object variable, an attribut
 	
 			
 		
-% Here a manual modifiable file is included: activities/graphics.tex
-\input{figures/packages/activities/graphics}
+% Here a manual modifiable file is included: modeling_activities/graphics.tex
+\input{figures/packages/modeling_activities/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -184,7 +189,7 @@ The diagram that describes the control flow of an operation. It is used to struc
 
 \paragraph{Parent Classes}
 \begin{itemize}
-\item CommentableElement see Section~\ref{cls:modeling::CommentableElement} on Page~\pageref{cls:modeling::CommentableElement}, \item Callable see Section~\ref{cls:modeling::calls::Callable} on Page~\pageref{cls:modeling::calls::Callable}\end{itemize}
+\item Callable see Section~\ref{cls:modeling::calls::Callable} on Page~\pageref{cls:modeling::calls::Callable}, \item NamedElement see Section~\ref{cls:modeling::NamedElement} on Page~\pageref{cls:modeling::NamedElement}\end{itemize}
 \subsubsection{\Large{Class \bfseries \texttt{ActivityCallNode}\normalfont}}
 \label{cls:modeling::activities::ActivityCallNode} \index{13}
 \paragraph{Overview}
@@ -217,7 +222,8 @@ The ActivityEdge represents the control flow in an activity. It is a dericted co
 	\item[\textbf{Class Properties}] Class \texttt{ActivityEdge} has the following properties:
 	\begin{description}
 \item[guard : EdgeGuard 	]
-see Section~\ref{cls:modeling::activities::EdgeGuard} on Page~\pageref{cls:modeling::activities::EdgeGuard}\hspace{\fill}
+see Section~\ref{cls:modeling::activities::EdgeGuard} on Page~\pageref{cls:modeling::activities::EdgeGuard}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -231,7 +237,8 @@ The guard defines the kind of the activity edge. The possible kinds of guards ar
 	\item[\textbf{Class References}] Class \texttt{ActivityEdge} has the following references:
 	\begin{description}
 \item[guardException : ExceptionVariable 			\symbol{"5B}0..$*$\symbol{"5D}]
-see Section~\ref{cls:modeling::activities::ExceptionVariable} on Page~\pageref{cls:modeling::activities::ExceptionVariable}\hspace{\fill}
+see Section~\ref{cls:modeling::activities::ExceptionVariable} on Page~\pageref{cls:modeling::activities::ExceptionVariable}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -241,7 +248,8 @@ Declares variables representing the Exceptions that lead to firing this transiti
 		
 	
 \item[guardExpression : Expression 			\symbol{"5B}0..1\symbol{"5D}]
-see Section~\ref{cls:modeling::expressions::Expression} on Page~\pageref{cls:modeling::expressions::Expression}\hspace{\fill}
+see Section~\ref{cls:modeling::expressions::Expression} on Page~\pageref{cls:modeling::expressions::Expression}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -251,7 +259,8 @@ Points to an expression in case the transition guard is BOOL. The expression has
 		
 	
 \item[owningActivity : Activity 	]
-see Section~\ref{cls:modeling::activities::Activity} on Page~\pageref{cls:modeling::activities::Activity}\hspace{\fill}
+see Section~\ref{cls:modeling::activities::Activity} on Page~\pageref{cls:modeling::activities::Activity}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -261,7 +270,8 @@ Points to the activity this ActivityEdge is contained in.
 		
 	
 \item[source : ActivityNode 	]
-see Section~\ref{cls:modeling::activities::ActivityNode} on Page~\pageref{cls:modeling::activities::ActivityNode}\hspace{\fill}
+see Section~\ref{cls:modeling::activities::ActivityNode} on Page~\pageref{cls:modeling::activities::ActivityNode}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -271,7 +281,8 @@ The source node of this ActivityEdge.
 		
 	
 \item[target : ActivityNode 	]
-see Section~\ref{cls:modeling::activities::ActivityNode} on Page~\pageref{cls:modeling::activities::ActivityNode}\hspace{\fill}
+see Section~\ref{cls:modeling::activities::ActivityNode} on Page~\pageref{cls:modeling::activities::ActivityNode}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -395,6 +406,7 @@ Declares a variable representing an Exception that leads to firing a transition 
 	\item[\textbf{Class Properties}] Class \texttt{ExceptionVariable} has the following properties:
 	\begin{description}
 \item[name : EString 	]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -409,7 +421,8 @@ Specifies the name of the declared exception variable.
 	\item[\textbf{Class References}] Class \texttt{ExceptionVariable} has the following references:
 	\begin{description}
 \item[activityEdge : ActivityEdge 	]
-see Section~\ref{cls:modeling::activities::ActivityEdge} on Page~\pageref{cls:modeling::activities::ActivityEdge}\hspace{\fill}
+see Section~\ref{cls:modeling::activities::ActivityEdge} on Page~\pageref{cls:modeling::activities::ActivityEdge}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -419,6 +432,7 @@ Specifies the transition (activity edge) where the exception variable is declare
 		
 	
 \item[exceptionType : EClassifier 			\symbol{"5B}0..$*$\symbol{"5D}]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -429,6 +443,7 @@ Specifies the type of the declared exception variable.
 		
 	
 \item[genericExceptionType : EGenericType 			\symbol{"5B}0..$*$\symbol{"5D}]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -549,6 +564,7 @@ At a StopNode, the execution of an activity terminates. If the activity specifie
 	\item[\textbf{Class Properties}] Class \texttt{StopNode} has the following properties:
 	\begin{description}
 \item[flowStopOnly : EBoolean 	]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -563,7 +579,8 @@ true if subactivity is stopped, but not the whole control flow
 	\item[\textbf{Class References}] Class \texttt{StopNode} has the following references:
 	\begin{description}
 \item[/returnValue : Expression 			\symbol{"5B}0..1\symbol{"5D}]
-see Section~\ref{cls:modeling::expressions::Expression} on Page~\pageref{cls:modeling::expressions::Expression}\hspace{\fill}
+see Section~\ref{cls:modeling::expressions::Expression} on Page~\pageref{cls:modeling::expressions::Expression}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -573,7 +590,8 @@ Convenience method when dealing with activities that implement an EOperation. In
 		
 	
 \item[returnValues : Expression 			\symbol{"5B}0..$*$\symbol{"5D}]
-see Section~\ref{cls:modeling::expressions::Expression} on Page~\pageref{cls:modeling::expressions::Expression}\hspace{\fill}
+see Section~\ref{cls:modeling::expressions::Expression} on Page~\pageref{cls:modeling::expressions::Expression}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -606,6 +624,7 @@ An activity node containing a story pattern.
 	\item[\textbf{Class Properties}] Class \texttt{StoryNode} has the following properties:
 	\begin{description}
 \item[forEach : EBoolean 	]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -620,7 +639,8 @@ Specifies whether just one match should be found for the contained pattern (forE
 	\item[\textbf{Class References}] Class \texttt{StoryNode} has the following references:
 	\begin{description}
 \item[/storyPattern : StoryPattern 	]
-see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:modeling::patterns::StoryPattern}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:modeling::patterns::StoryPattern}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -662,7 +682,9 @@ A structured node is a node that contains several other activities.
 		\todoib{Documentation missing?}
 	
 			
-
+		
+% Here a manual modifiable file is included: modeling_activities_expressions/graphics.tex
+\input{figures/packages/modeling_activities_expressions/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -696,8 +718,8 @@ from within an activity.
 	
 			
 		
-% Here a manual modifiable file is included: calls/graphics.tex
-\input{figures/packages/calls/graphics}
+% Here a manual modifiable file is included: modeling_calls/graphics.tex
+\input{figures/packages/modeling_calls/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -749,6 +771,7 @@ An OpaqueCallable represents an external method which is not explicitly modeled 
 	\item[\textbf{Class Properties}] Class \texttt{OpaqueCallable} has the following properties:
 	\begin{description}
 \item[name : EString 	]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -760,7 +783,8 @@ An OpaqueCallable represents an external method which is not explicitly modeled 
 	\item[\textbf{Class References}] Class \texttt{OpaqueCallable} has the following references:
 	\begin{description}
 \item[callExpression : MethodCallExpression 	]
-see Section~\ref{cls:modeling::calls::expressions::MethodCallExpression} on Page~\pageref{cls:modeling::calls::expressions::MethodCallExpression}\hspace{\fill}
+see Section~\ref{cls:modeling::calls::expressions::MethodCallExpression} on Page~\pageref{cls:modeling::calls::expressions::MethodCallExpression}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -815,7 +839,8 @@ Represents an EParameter and adds functionality to it, especially beiing subtype
 	
 			
 		
-
+% Here a manual modifiable file is included: modeling_calls_expressions/graphics.tex
+\input{figures/packages/modeling_calls_expressions/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -864,8 +889,8 @@ and patterns.
 	
 			
 		
-% Here a manual modifiable file is included: expressions/graphics.tex
-\input{figures/packages/expressions/graphics}
+% Here a manual modifiable file is included: modeling_expressions/graphics.tex
+\input{figures/packages/modeling_expressions/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -885,7 +910,8 @@ Represents arithmetic expressions like a + 5 or a * 7.
 	\item[\textbf{Class Properties}] Class \texttt{ArithmeticExpression} has the following properties:
 	\begin{description}
 \item[operator : ArithmeticOperator 	]
-see Section~\ref{cls:modeling::expressions::ArithmeticOperator} on Page~\pageref{cls:modeling::expressions::ArithmeticOperator}\hspace{\fill}
+see Section~\ref{cls:modeling::expressions::ArithmeticOperator} on Page~\pageref{cls:modeling::expressions::ArithmeticOperator}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -982,7 +1008,8 @@ Represents binary, logic expressions like a AND b and a OR b.
 	\item[\textbf{Class Properties}] Class \texttt{BinaryLogicExpression} has the following properties:
 	\begin{description}
 \item[operator : LogicOperator 	]
-see Section~\ref{cls:modeling::expressions::LogicOperator} on Page~\pageref{cls:modeling::expressions::LogicOperator}\hspace{\fill}
+see Section~\ref{cls:modeling::expressions::LogicOperator} on Page~\pageref{cls:modeling::expressions::LogicOperator}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1068,7 +1095,8 @@ Represents comparing expressions like a < 5 or a >= 7.
 	\item[\textbf{Class Properties}] Class \texttt{ComparisonExpression} has the following properties:
 	\begin{description}
 \item[operator : ComparingOperator 	]
-see Section~\ref{cls:modeling::expressions::ComparingOperator} on Page~\pageref{cls:modeling::expressions::ComparingOperator}\hspace{\fill}
+see Section~\ref{cls:modeling::expressions::ComparingOperator} on Page~\pageref{cls:modeling::expressions::ComparingOperator}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1117,6 +1145,7 @@ Represents any literal, i.e. a value whose type is an EDataType. Literals are, f
 	\item[\textbf{Class Properties}] Class \texttt{LiteralExpression} has the following properties:
 	\begin{description}
 \item[value : EString 			\symbol{"5B}0..1\symbol{"5D}]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -1131,6 +1160,7 @@ String representation of the value, e.g. "5", "3.14", "c", "text", or "true".
 	\item[\textbf{Class References}] Class \texttt{LiteralExpression} has the following references:
 	\begin{description}
 \item[valueType : EDataType 	]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -1223,6 +1253,7 @@ Represents any expression in a textual language embedded into Story Diagrams, e.
 	\item[\textbf{Class Properties}] Class \texttt{TextualExpression} has the following properties:
 	\begin{description}
 \item[expressionText : EString 	]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -1233,6 +1264,7 @@ Holds the expression, e.g. in OCL or Java.
 		
 	
 \item[language : EString 	]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -1243,6 +1275,7 @@ String representation of the used language which has to be unique. Examples are 
 		
 	
 \item[languageVersion : EString 			\symbol{"5B}0..1\symbol{"5D}]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -1277,8 +1310,8 @@ embedded into StoryActivityNodes of an Activity.
 	
 			
 		
-% Here a manual modifiable file is included: patterns/graphics.tex
-\input{figures/packages/patterns/graphics}
+% Here a manual modifiable file is included: modeling_patterns/graphics.tex
+\input{figures/packages/modeling_patterns/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -1298,7 +1331,8 @@ Abstract super class for all kinds of link variables that represent links betwee
 	\item[\textbf{Class Properties}] Class \texttt{AbstractLinkVariable} has the following properties:
 	\begin{description}
 \item[bindingOperator : BindingOperator 	]
-see Section~\ref{cls:modeling::patterns::BindingOperator} on Page~\pageref{cls:modeling::patterns::BindingOperator}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::BindingOperator} on Page~\pageref{cls:modeling::patterns::BindingOperator}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1308,7 +1342,8 @@ The binding operator defines whether this link will be matched, created or destr
 		
 	
 \item[bindingSemantics : BindingSemantics 	]
-see Section~\ref{cls:modeling::patterns::BindingSemantics} on Page~\pageref{cls:modeling::patterns::BindingSemantics}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::BindingSemantics} on Page~\pageref{cls:modeling::patterns::BindingSemantics}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1318,7 +1353,8 @@ The binding semantics defines whether the link must be matched for a successful 
 		
 	
 \item[bindingState : BindingState 	]
-see Section~\ref{cls:modeling::patterns::BindingState} on Page~\pageref{cls:modeling::patterns::BindingState}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::BindingState} on Page~\pageref{cls:modeling::patterns::BindingState}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1332,35 +1368,40 @@ The binding state defines whether the link is already bound or whether a match h
 	\item[\textbf{Class References}] Class \texttt{AbstractLinkVariable} has the following references:
 	\begin{description}
 \item[firstLinkConstraint : LinkConstraint 			\symbol{"5B}0..$*$\symbol{"5D}]
-see Section~\ref{cls:modeling::patterns::LinkConstraint} on Page~\pageref{cls:modeling::patterns::LinkConstraint}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::LinkConstraint} on Page~\pageref{cls:modeling::patterns::LinkConstraint}
+\hspace{\fill}
 \nopagebreak
 
 
 		\todoib{Documentation missing?}
 	
 \item[pattern : StoryPattern 	]
-see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:modeling::patterns::StoryPattern}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:modeling::patterns::StoryPattern}
+\hspace{\fill}
 \nopagebreak
 
 
 		\todoib{Documentation missing?}
 	
 \item[secondLinkConstraint : LinkConstraint 			\symbol{"5B}0..$*$\symbol{"5D}]
-see Section~\ref{cls:modeling::patterns::LinkConstraint} on Page~\pageref{cls:modeling::patterns::LinkConstraint}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::LinkConstraint} on Page~\pageref{cls:modeling::patterns::LinkConstraint}
+\hspace{\fill}
 \nopagebreak
 
 
 		\todoib{Documentation missing?}
 	
 \item[source : ObjectVariable 	]
-see Section~\ref{cls:modeling::patterns::ObjectVariable} on Page~\pageref{cls:modeling::patterns::ObjectVariable}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::ObjectVariable} on Page~\pageref{cls:modeling::patterns::ObjectVariable}
+\hspace{\fill}
 \nopagebreak
 
 
 		\todoib{Documentation missing?}
 	
 \item[target : AbstractVariable 	]
-see Section~\ref{cls:modeling::patterns::AbstractVariable} on Page~\pageref{cls:modeling::patterns::AbstractVariable}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::AbstractVariable} on Page~\pageref{cls:modeling::patterns::AbstractVariable}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1390,7 +1431,8 @@ Abstract super class for object and primitive variables.
 	\item[\textbf{Class Properties}] Class \texttt{AbstractVariable} has the following properties:
 	\begin{description}
 \item[bindingState : BindingState 	]
-see Section~\ref{cls:modeling::patterns::BindingState} on Page~\pageref{cls:modeling::patterns::BindingState}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::BindingState} on Page~\pageref{cls:modeling::patterns::BindingState}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1404,7 +1446,8 @@ The binding state defines whether the variable is already bound or whether a mat
 	\item[\textbf{Class References}] Class \texttt{AbstractVariable} has the following references:
 	\begin{description}
 \item[bindingExpression : Expression 			\symbol{"5B}0..1\symbol{"5D}]
-see Section~\ref{cls:modeling::expressions::Expression} on Page~\pageref{cls:modeling::expressions::Expression}\hspace{\fill}
+see Section~\ref{cls:modeling::expressions::Expression} on Page~\pageref{cls:modeling::expressions::Expression}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1414,7 +1457,8 @@ A binding expression can be used to bind a variable in a different way than just
 		
 	
 \item[constraint : Constraint 			\symbol{"5B}0..$*$\symbol{"5D}]
-see Section~\ref{cls:modeling::patterns::Constraint} on Page~\pageref{cls:modeling::patterns::Constraint}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::Constraint} on Page~\pageref{cls:modeling::patterns::Constraint}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1424,14 +1468,16 @@ All constraints which are defined for this variable. For a successful matching, 
 		
 	
 \item[incomingLink : AbstractLinkVariable 			\symbol{"5B}0..$*$\symbol{"5D}]
-see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{cls:modeling::patterns::AbstractLinkVariable}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{cls:modeling::patterns::AbstractLinkVariable}
+\hspace{\fill}
 \nopagebreak
 
 
 		\todoib{Documentation missing?}
 	
 \item[pattern : StoryPattern 	]
-see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:modeling::patterns::StoryPattern}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:modeling::patterns::StoryPattern}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1636,7 +1682,8 @@ Link constraints (formerly known as MultiLinks in old meta-model) constrain the 
 	\item[\textbf{Class Properties}] Class \texttt{LinkConstraint} has the following properties:
 	\begin{description}
 \item[constraintType : LinkConstraintType 	]
-see Section~\ref{cls:modeling::patterns::LinkConstraintType} on Page~\pageref{cls:modeling::patterns::LinkConstraintType}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::LinkConstraintType} on Page~\pageref{cls:modeling::patterns::LinkConstraintType}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1646,6 +1693,7 @@ The constraint type of the LinkConstraint.
 		
 	
 \item[index : EInt 	]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -1656,6 +1704,7 @@ The index of the linked object in the collection. The semantics of this attribut
 		
 	
 \item[negative : EBoolean 	]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -1670,21 +1719,24 @@ If the negative attribute is true, the link constraint may not be fulfilled for 
 	\item[\textbf{Class References}] Class \texttt{LinkConstraint} has the following references:
 	\begin{description}
 \item[firstLink : AbstractLinkVariable 	]
-see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{cls:modeling::patterns::AbstractLinkVariable}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{cls:modeling::patterns::AbstractLinkVariable}
+\hspace{\fill}
 \nopagebreak
 
 
 		\todoib{Documentation missing?}
 	
 \item[referencingObject : ObjectVariable 	]
-see Section~\ref{cls:modeling::patterns::ObjectVariable} on Page~\pageref{cls:modeling::patterns::ObjectVariable}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::ObjectVariable} on Page~\pageref{cls:modeling::patterns::ObjectVariable}
+\hspace{\fill}
 \nopagebreak
 
 
 		\todoib{Documentation missing?}
 	
 \item[secondLink : AbstractLinkVariable 			\symbol{"5B}0..1\symbol{"5D}]
-see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{cls:modeling::patterns::AbstractLinkVariable}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{cls:modeling::patterns::AbstractLinkVariable}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1802,7 +1854,8 @@ An ObjectVariable holds a value of a complex type which is defined by an EClass.
 	\item[\textbf{Class Properties}] Class \texttt{ObjectVariable} has the following properties:
 	\begin{description}
 \item[bindingOperator : BindingOperator 	]
-see Section~\ref{cls:modeling::patterns::BindingOperator} on Page~\pageref{cls:modeling::patterns::BindingOperator}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::BindingOperator} on Page~\pageref{cls:modeling::patterns::BindingOperator}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1812,7 +1865,8 @@ The binding operator defines whether this object will be matched, created or des
 		
 	
 \item[bindingSemantics : BindingSemantics 	]
-see Section~\ref{cls:modeling::patterns::BindingSemantics} on Page~\pageref{cls:modeling::patterns::BindingSemantics}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::BindingSemantics} on Page~\pageref{cls:modeling::patterns::BindingSemantics}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1826,13 +1880,15 @@ The binding semantics defines whether the object must be matched for a successfu
 	\item[\textbf{Class References}] Class \texttt{ObjectVariable} has the following references:
 	\begin{description}
 \item[attributeAssignment : AttributeAssignment 			\symbol{"5B}0..$*$\symbol{"5D}]
-see Section~\ref{cls:modeling::patterns::AttributeAssignment} on Page~\pageref{cls:modeling::patterns::AttributeAssignment}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::AttributeAssignment} on Page~\pageref{cls:modeling::patterns::AttributeAssignment}
+\hspace{\fill}
 \nopagebreak
 
 
 		\todoib{Documentation missing?}
 	
 \item[classifier : EClass 	]
+
 \hspace{\fill}
 \nopagebreak
 
@@ -1845,14 +1901,16 @@ The type of this ObjectVariable, given as an EClass.
 		
 	
 \item[linkOrderConstraint : LinkConstraint 			\symbol{"5B}0..$*$\symbol{"5D}]
-see Section~\ref{cls:modeling::patterns::LinkConstraint} on Page~\pageref{cls:modeling::patterns::LinkConstraint}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::LinkConstraint} on Page~\pageref{cls:modeling::patterns::LinkConstraint}
+\hspace{\fill}
 \nopagebreak
 
 
 		\todoib{Documentation missing?}
 	
 \item[outgoingLink : AbstractLinkVariable 			\symbol{"5B}0..$*$\symbol{"5D}]
-see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{cls:modeling::patterns::AbstractLinkVariable}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{cls:modeling::patterns::AbstractLinkVariable}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1913,7 +1971,8 @@ of an Activity.
 	\item[\textbf{Class Properties}] Class \texttt{StoryPattern} has the following properties:
 	\begin{description}
 \item[bindingSemantics : BindingSemantics 	]
-see Section~\ref{cls:modeling::patterns::BindingSemantics} on Page~\pageref{cls:modeling::patterns::BindingSemantics}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::BindingSemantics} on Page~\pageref{cls:modeling::patterns::BindingSemantics}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1924,7 +1983,8 @@ see Section~\ref{cls:modeling::patterns::BindingSemantics} on Page~\pageref{cls:
 	\item[\textbf{Class References}] Class \texttt{StoryPattern} has the following references:
 	\begin{description}
 \item[constraint : Constraint 			\symbol{"5B}0..$*$\symbol{"5D}]
-see Section~\ref{cls:modeling::patterns::Constraint} on Page~\pageref{cls:modeling::patterns::Constraint}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::Constraint} on Page~\pageref{cls:modeling::patterns::Constraint}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1934,35 +1994,40 @@ All constraints which are defined for this story pattern. For a successful match
 		
 	
 \item[containedPattern : StoryPattern 			\symbol{"5B}0..$*$\symbol{"5D}]
-see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:modeling::patterns::StoryPattern}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:modeling::patterns::StoryPattern}
+\hspace{\fill}
 \nopagebreak
 
 
 		\todoib{Documentation missing?}
 	
 \item[linkVariable : AbstractLinkVariable 			\symbol{"5B}0..$*$\symbol{"5D}]
-see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{cls:modeling::patterns::AbstractLinkVariable}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{cls:modeling::patterns::AbstractLinkVariable}
+\hspace{\fill}
 \nopagebreak
 
 
 		\todoib{Documentation missing?}
 	
 \item[parentPattern : StoryPattern 			\symbol{"5B}0..1\symbol{"5D}]
-see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:modeling::patterns::StoryPattern}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:modeling::patterns::StoryPattern}
+\hspace{\fill}
 \nopagebreak
 
 
 		\todoib{Documentation missing?}
 	
 \item[templateSignature : TemplateSignature 			\symbol{"5B}0..1\symbol{"5D}]
-see Section~\ref{cls:modeling::templates::TemplateSignature} on Page~\pageref{cls:modeling::templates::TemplateSignature}\hspace{\fill}
+see Section~\ref{cls:modeling::templates::TemplateSignature} on Page~\pageref{cls:modeling::templates::TemplateSignature}
+\hspace{\fill}
 \nopagebreak
 
 
 		\todoib{Documentation missing?}
 	
 \item[variable : AbstractVariable 			\symbol{"5B}0..$*$\symbol{"5D}]
-see Section~\ref{cls:modeling::patterns::AbstractVariable} on Page~\pageref{cls:modeling::patterns::AbstractVariable}\hspace{\fill}
+see Section~\ref{cls:modeling::patterns::AbstractVariable} on Page~\pageref{cls:modeling::patterns::AbstractVariable}
+\hspace{\fill}
 \nopagebreak
 
 
@@ -1987,7 +2052,8 @@ see Section~\ref{cls:modeling::patterns::AbstractVariable} on Page~\pageref{cls:
 	
 			
 		
-
+% Here a manual modifiable file is included: modeling_patterns_expressions/graphics.tex
+\input{figures/packages/modeling_patterns_expressions/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -2062,8 +2128,8 @@ Represents the value of a primitive variable, e.g., 5 or "MyName".
 	
 			
 		
-% Here a manual modifiable file is included: templates/graphics.tex
-\input{figures/packages/templates/graphics}
+% Here a manual modifiable file is included: modeling_templates/graphics.tex
+\input{figures/packages/modeling_templates/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -2101,8 +2167,3 @@ Represents the value of a primitive variable, e.g., 5 or "MyName".
 
 
 \newpage
-		
-
-
-
-
