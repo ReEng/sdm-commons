@@ -3,25 +3,35 @@
 \subsection{General Idea (Dietrich)}
 
 - combine activity diagrams and graph transformations as well as imperative, deterministic and declarative, non-deterministic languages to formally and compactly describe software behavior in terms of model transformations using an OO-based, familiar notation
-- enable formal analyses to check/ensure certain behavioral software propoerties
-- Story diagrams in MDSD process
-- 2 worlds: stand-alone transformations and specifications of methods' behavior
+- enable formal analyses to check/ensure certain behavioral software properties
+- Story diagrams in MDSD process, 2 worlds: stand-alone transformations and specifications of methods' behavior:
+  1. alternative (completely modeling software): model classes in class diagrams, specify their methods' behavior in story diagrams, generate executable source code (e.g. Java) or use an interpreter
+  2. alternative (specify recurring model operations/transformations for a given type of models): model only classes representing the editor's model under development (meta-model), specify modification operations of this model (adding and removing elements, analysis operations, translations to/generation of other models, etc.), need of a software that triggers the specified operations, the operations can be performed using generated code or an interpreter
 - introduce an example
 
 
 \subsection{The Language Constructs in Story Diagrams (Jan/Dietrich)}\label{sec:StoryDiagrams:composition}
 
 \begin{itemize}
-  \item Combination of UML 1.5 activity diagrams and story patterns (incl. example)
+  \item Combination of an excerpt of UML 1.5 activity diagrams and story patterns (incl. example)
   \item list the major language constructs like activity nodes and edges, guards (concrete syntax, well-formedness, and execution semantics)
   \item name our restrictions, e.g., omition of fork and join
   \item refer to the appendix due to a complete language reference
   \item mention the grammar for story diagrams (based on grammar in diploma thesis of Thomas Klein \cite{Kle99})?
 \end{itemize}
 
-\subsection{Story diagram calls (Markus)}
 
-Story Diagram Calls are special nodes in a story diagram which are used to invoke other story diagrams. Similar to method calls, this reduces redundancy and promotes reuse.
+\subsubsection{Activities, Activity Parameters and Return Values}
+
+\subsubsection{Activity Nodes, Activity Edges}
+
+\subsubsection{Decision Nodes and Guards}
+
+\subsubsection{Loops}
+
+\subsubsection{Story Diagram Calls (Markus)}
+
+Story diagram calls are special nodes in a story diagram which are used to invoke other story diagrams. Similar to method calls, this reduces redundancy and promotes reuse.
 
 As described in the previous sections, a story diagram can have an arbitrary number of in and out parameters. When calling a story diagram, concrete arguments have to be assigned to the in parameters. Consequently, if an object variable named n is bound somewhere in the story diagram, the identifier n can be used to pass this object variable as an argument to a call. Similarly, if the called story diagram has out parameters, those can be bound to object variables that use the same name.
 
