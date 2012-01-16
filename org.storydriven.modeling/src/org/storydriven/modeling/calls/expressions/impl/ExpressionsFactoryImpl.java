@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.storydriven.modeling.calls.expressions.*;
 import org.storydriven.modeling.calls.expressions.ExpressionsFactory;
 import org.storydriven.modeling.calls.expressions.ExpressionsPackage;
 import org.storydriven.modeling.calls.expressions.MethodCallExpression;
@@ -19,13 +18,14 @@ import org.storydriven.modeling.calls.expressions.ParameterExpression;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsFactory
 {
    /**
-    * Creates the default factory implementation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static ExpressionsFactory init ()
@@ -47,8 +47,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * Creates an instance of the factory.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ExpressionsFactoryImpl ()
@@ -58,6 +58,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -76,6 +77,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public MethodCallExpression createMethodCallExpression ()
@@ -85,8 +87,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ParameterExpression createParameterExpression ()
@@ -97,6 +99,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ExpressionsPackage getExpressionsPackage ()
@@ -106,6 +109,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @deprecated
     * @generated
     */

@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.storydriven.modeling.expressions
-Bundle-Vendor: My Company
-Bundle-Version: 1.0.0
+Bundle-Name: SDM Expressions
+Bundle-Vendor: www.storydriven.org
+Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.storydriven.modeling.expressions; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,

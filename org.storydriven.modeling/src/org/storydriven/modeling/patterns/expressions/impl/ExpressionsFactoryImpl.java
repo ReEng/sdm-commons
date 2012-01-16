@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.storydriven.modeling.patterns.expressions.*;
 import org.storydriven.modeling.patterns.expressions.AttributeValueExpression;
 import org.storydriven.modeling.patterns.expressions.ExpressionsFactory;
 import org.storydriven.modeling.patterns.expressions.ExpressionsPackage;
@@ -21,13 +20,14 @@ import org.storydriven.modeling.patterns.expressions.PrimitiveVariableExpression
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsFactory
 {
    /**
-    * Creates the default factory implementation.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public static ExpressionsFactory init ()
@@ -49,8 +49,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * Creates an instance of the factory.
-    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ExpressionsFactoryImpl ()
@@ -60,6 +60,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    @Override
@@ -82,6 +83,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public AttributeValueExpression createAttributeValueExpression ()
@@ -92,6 +94,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ObjectVariableExpression createObjectVariableExpression ()
@@ -102,6 +105,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ObjectSetSizeExpression createObjectSetSizeExpression ()
@@ -111,8 +115,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public PrimitiveVariableExpression createPrimitiveVariableExpression ()
@@ -123,6 +127,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @generated
     */
    public ExpressionsPackage getExpressionsPackage ()
@@ -132,6 +137,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
+    * 
     * @deprecated
     * @generated
     */
