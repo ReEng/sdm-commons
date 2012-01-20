@@ -1,6 +1,11 @@
 \chapter{Execution of Story Diagrams (Stephan)}
 
-In general, there are two possibilities to execute models: Executing them directly using an interpreter \cite{GHS09} or generating GPL code, which is either compiled or interpreted. \fuj can generate Java or C code from story diagrams and their accompanying class diagrams. Here, a story diagram describes the behavior of a single method. Therefore, this method and its containing class must be defined first. Interpreting a story diagram does not impose this restriction.
+In general, there are two possibilities to execute models: Executing them directly using an interpreter \cite{GHS09} or generating GPL code, which is either compiled or interpreted. 
+\fuj can generate Java or C code from story diagrams and their accompanying class diagrams. 
+Here, a story diagram describes the behavior of a single method. 
+Therefore, this method and its containing class must be defined first. 
+Interpreting a story diagram does not impose this restriction.
+In the following sections, we describe the structure and operation principles of an interpreter for story diagrams.
 
 
 \section{Interpreting Story Diagrams}
@@ -10,13 +15,21 @@ In general, there are two possibilities to execute models: Executing them direct
 \begin{figure}[htb]
   \centering
   \includegraphics[width=1.0\columnwidth]{./figures/interpreter_packages.pdf}
-  \caption{Overview of the packages of the interpreter}
+  \caption{Overview of the Packages of the Interpreter}
   \label{fig:interpreter_packages}
 \end{figure}
 
-Fig.~\ref{fig:interpreter_packages} shows the package structure of the SDM interpreter. The interpreter is divided into a metamodel-independent core (\emph{de.mdelab.sdm.interpreter.core})  and multiple metamodel-dependent extensions (\emph{org.storydriven.modeling.interpreter} and \emph{de.mdelab.sdm.interpreter.sde}). Currently, multiple story diagram metamodels are in use that must all be supported by the interpreter. This separation of metamodel-dependent and independent parts allows for easier maintenance of the interpreter. The classes of the core package define a quite extensive list of generic type parameters (not shown in the subsequent class diagrams), e.g., for activity nodes, classifiers, or features. Subclasses in the metamodel-dependent packages replace these generic types with the concrete types defined in the respective metamodel.
+Figure~\ref{fig:interpreter_packages} shows the package structure of the SDM interpreter.
+Currently, there are multiple story diagram metamodels in use that must all be supported by the interpreter. 
+Therefore, the interpreter is divided into a metamodel-independent core (\emph{de.mdelab.sdm.interpreter.core}) and multiple metamodel-dependent extensions (\emph{org.storydriven.modeling.interpreter} and \emph{de.mdelab.sdm.interpreter.sde}). 
+This separation of metamodel-dependent and independent parts allows for easier maintenance of the interpreter. 
+The classes of the core package define a quite extensive list of generic type parameters (not shown in the subsequent class diagrams), e.g., for activity nodes, classifiers, or features. 
+Subclasses in the metamodel-dependent packages replace these generic types with the concrete types defined in the respective metamodel.
 
-Furthermore, those parts of the interpreter that depend on Eclipse are also separated (\emph{*.eclipse} packages). This allows to use the interpreter in stand-alone applications without Eclipse. In addition, the interpreters for expression languages like OCL are also separated (\emph{de.mdelab.sdm.interpreter.ocl}). The SDM interpreter provides an extension mechanism to add interpreters for other expression languages.
+Furthermore, those parts of the interpreter that depend on Eclipse are also separated (\emph{*.eclipse} packages). 
+This allows to use the interpreter in stand-alone applications without Eclipse. 
+In addition, the interpreters for expression languages like OCL are also separated (\emph{de.mdelab.sdm.interpreter.ocl}). 
+The SDM interpreter provides an extension mechanism to add interpreters for other expression languages.
 
 \subsubsection{SDM Interpreter}
 \label{sec:sdm_interpreter}
@@ -28,19 +41,42 @@ Furthermore, those parts of the interpreter that depend on Eclipse are also sepa
   \label{fig:sdm_interpreter}
 \end{figure}
 
-Fig.~\ref{fig:sdm_interpreter} shows the main classes of the interpreter core. \emph{SDMInterpreter} is the abstract superclass of all SDM interpreters. It is responsible for the execution of a whole story diagram. \emph{StoryDrivenInterpreter} and \emph{StoryDrivenEclipseInterpreter} inherit from it to implement metamodel specific functionality. Here, this is mostly limited to defining the concrete types to use in place of the generic types of the superclass and defining constructors with fewer parameters. The \emph{SDMInterpreter} provides the \emph{executeActivity()} method to execute a story diagram.
+Figure~\ref{fig:sdm_interpreter} shows the main classes of the interpreter core. 
+\emph{SDMInterpreter} is the abstract superclass of all SDM interpreters. 
+It is responsible for the execution of a whole story diagram. 
+\emph{StoryDrivenInterpreter} and \emph{StoryDrivenEclipseInterpreter} inherit from it to implement metamodel specific functionality. 
+Here, this is mostly limited to defining the concrete types to use in place of the generic types of the superclass and defining constructors with fewer parameters. 
+The \emph{SDMInterpreter} provides the \emph{executeActivity()} method to execute a story diagram.
 
-\todoall{Is there already a definition of scopes in story diagrams?}
+A \emph{VariableScope} is a collection of \emph{Variable}s that are valid in a specific scope.
+A \emph{Variable} is a triple of the name, the classifier, and the value of the variable.
+The \emph{SDMInterpreter} maintains multiple \emph{VariableScope}s, one for each activity node.
+Currently, the whole story diagram forms a single scope.
+All variables created in a story diagram are also valid in the whole story diagram. 
+Therefore, the same scope is used for all activity nodes.
+Only, when other story diagrams are called, a new variable scope is created. 
+However, if additional elements are added to story diagrams, e.g., fork and join nodes, or the semantics of existing elements is changed, it is easily possible to support separate scopes for each activity node.
 
-A \emph{VariableScope} is a collection of \emph{Variable}s that are valid in a specific scope. Such a scope can be, e.g., a whole story diagram, a single activity node, or the body of a loop. The \emph{SDMInterpreter} maintains multiple \emph{VariableScope}s, one for each story diagram element that has an own scope. Currently, there is only one scope for the whole story diagram. A \emph{Variable} is a triple of the name, the classfier, and the value of the variable.
+The \emph{ExpressionInterpreterManager} is responsible for managing the interpreters for expression languages and delegating the evaluation of an expression to the appropriate \emph{ExpressionInterpreter}. 
+The \emph{evaluateExpression()} method is provided for that purpose. 
+\emph{ExpressionInterpreter}s have to be registered at the \emph{ExpressionInterpreterManager} via the \emph{registerExpressionInterpreter()} method before expressions of that language can be handled. 
+The \emph{EclipseExpressionInterpreterManager} performs this registration automatically. 
+The plug-in \emph{de.mdelab.sdm.interpreter.eclipse} defines an extension point for \emph{ExpressionInterpreter}s. 
+All interpreters extending this extension point are registered automatically by the \emph{EclipseExpressionInterpreterManager}. 
+If the interpreter is not used within Eclipse, \emph{ExpressionInterpreter}s have to be registered explicitly before executing a story diagram.
 
-The \emph{ExpressionInterpreterManager} is responsible for managing the interpreters for expression languages and delegating the evaluation of an expression to the appropriate \emph{ExpressionInterpreter}. The \emph{evaluateExpression()} method is provided for that purpose. \emph{ExpressionInterpreter}s have to be registered at the \emph{ExpressionInterpreterManager} via the \emph{registerExpressionInterpreter()} method to be able to evaluate expressions of that language. The \emph{EclipseExpressionInterpreterManager} performs this registration automatically. The plug-in \emph{de.mdelab.sdm.interpreter.eclipse} defines an extension point for \emph{ExpressionInterpreter}s. All interpreters extending this extension point are registered automatically by the \emph{EclipseExpressionInterpreterManager}. If the interpreter is not used within Eclipse, \emph{ExpressionInterpreter}s have to be registered explicitly before executing a story diagram.
+The abstract class \emph{ExpressionInterpreter} only defines the \emph{evaluateExpression()} method that must be implemented by subclasses such as the \emph{OCLExpressionInterpreter} and the \emph{CallsInterpreter}. The methods performs the execution of the expression, which may have side effects, and has to return a \emph{Variable} with the return type and return value of the expression. In this methods, the current \emph{VariableScope} can also be access and modified.
 
-The abstract class \emph{ExpressionInterpreter} only defines the \emph{evaluateExpression()} method that must be implemented by subclasses such as the \emph{OCLExpressionInterpreter} and the \emph{CallsInterpreter}. For more information, see Sec.~\ref{sec:expression_interpreters}.
+The interpreter often needs to access specific properties of story diagram elements, e.g., the name of elements or incoming and outgoing edges of activity nodes.
+While the interpreter core is metamodel-independent, it cannot access these properties directly but needs a facade for that purpose.
+The \emph{MetamodelFacadeFactory} provides access to these facades. 
+There are several interfaces for common kinds of story diagram elements (e.g., story nodes, junction nodes, object variables or link variables), which have to be implemented for specific story diagram metamodels.
 
-At several points in the interpreter, specific properties of story diagram elements have to be accessed, e.g., the name of elements or incoming and outgoing edges of activity nodes. While the interpreter core is metamodel-independent, a facade is required to access these properties. the \emph{MetamodelFacadeFactory} provides access to these facades. There are several interfaces for common kinds of story diagram elements (e.g., story nodes, decision nodes, story pattern variables and links), which have to be implemented for specific story diagram metamodels.
-
-A \emph{StoryPatternMatcher} is responsible for the execution of a single story pattern. This abstract superclass defines the methods \emph{findNextMatch()} to search for the next match of a story pattern and \emph{applyMatch()} to execute the graph transformation on the last match. The class \emph{StoryPatternMatcher} does not implement a particular matching strategy. This is done by \emph{PatternPartBasedPatternMatcher}. This pattern matching strategy is explained in more detail in Sec.~\ref{sec:story_pattern_matcher}. 
+A \emph{StoryPatternMatcher} is responsible for the execution of a single story pattern. 
+This abstract superclass defines the methods \emph{findNextMatch()} to search for the next match of a story pattern and \emph{applyMatch()} to execute the graph transformation on the last match. 
+The class \emph{StoryPatternMatcher} does not implement a particular matching strategy. 
+This is done by \emph{PatternPartBasedPatternMatcher}. 
+This pattern matching strategy is explained in more detail in Section~\ref{sec:story_pattern_matcher}. 
 
 
 \subsubsection{Story Pattern Matcher}
@@ -53,30 +89,67 @@ A \emph{StoryPatternMatcher} is responsible for the execution of a single story 
   \label{fig:interpreter_storyPatternMatcher}
 \end{figure}
 
-Fig.~\ref{fig:interpreter_storyPatternMatcher} shows the classes of the story pattern matcher. Currently, only one pattern matching approach is implemented. The \emph{PatternPartBasedPatternMatcher} splits the story pattern into multiple \emph{PatternParts}. What exactly constitutes a \emph{PatternPart} is not specified in the interpreter core. This has to be implemented in the metamodel specific subclasses. Currently, the \emph{StoryDrivenPatternMatcher} enforces the following semantics: A pattern part consists either of a single variable that has no incoming or outgoing links (\emph{VariableOnlyPatternPart}), or of a single link and its adjacent object variables (\emph{StoryDrivenLinkVariablePatternPart}, \emph{StoryDrivenContainmentRelationPatternPart}, and \emph{StoryDrivenPathPatternPart} depending on the kind of link). This implies that a variable can be contained in more than one pattern parts. To implement subpatterns or complex negative application conditions, this semantics has to be modified. But this remains transparent to the basic \emph{PatternPartBasedPatternMatcher}.
+Figure~\ref{fig:interpreter_storyPatternMatcher} shows the classes of the story pattern matcher. 
+Currently, only one pattern matching approach is implemented. 
+The \emph{PatternPartBasedPatternMatcher} splits the story pattern into multiple \emph{PatternParts}. 
+What exactly constitutes a \emph{PatternPart} is not specified in the interpreter core. 
+This has to be implemented in the metamodel specific subclasses. 
+Currently, the \emph{StoryDrivenPatternMatcher} enforces the following semantics: A pattern part consists either of a single variable that has no incoming or outgoing links (\emph{VariableOnlyPatternPart}), or of a single link and its adjacent object variables (\emph{StoryDrivenLinkVariablePatternPart}, \emph{StoryDrivenContainmentRelationPatternPart}, and \emph{StoryDrivenPathPatternPart} depending on the kind of link). 
+This implies that a variable can be contained in more than one pattern parts. 
+To implement subpatterns or complex negative application conditions, this semantics has to be modified. 
+But this remains transparent to the basic \emph{PatternPartBasedPatternMatcher}.
 
 \emph{PatternPart} defines several abstract methods:
 
 \begin{enumerate}
-	\item \emph{getMatchType()} returns whether matching the pattern parts is mandatory or optional, or whether the pattern part is a negative application condition. 
+	\item \emph{getMatchType()} returns whether matching the pattern parts is mandatory or optional, or whether the pattern part is a negative application condition (cf. Section~\ref{sec:StoryPatterns:binding:semantics}). 
 	
-	\item \emph{check()} checks whether the link exists in the instance graph. Of course, the prerequisite is that all variables of the pattern part are already bound to an instance object. If this is not the case, \emph{check()} returns \emph{UNKNOWN}. 
+	\item \emph{check()} checks whether the link exists in the instance graph, which requires that all variables of the pattern part are already bound to an instance object. 
+	If this is not the case, \emph{check()} returns \emph{UNKNOWN}. 
 
-	\item \emph{calculateMatchingCost()} provides an estimate of the cost to match a variable using the link of the pattern part. This estimate can be based, e.g., on the number of elements contained in the link. If it is currently not possible to match this pattern part (e.g., because all variables of the pattern part are still unbound), \emph{-1} is returned.
+	\item \emph{calculateMatchingCost()} provides an estimate of the cost to match a variable using the link of the pattern part. 
+	This estimate can be based, e.g., on the number of elements contained in the link.
+	If it is currently not possible to match this pattern part (e.g., because all variables of the pattern part are still unbound), \emph{-1} is returned.
 
-	\item \emph{match()} implements the pattern matching for this kind of pattern part. It is called after \emph{calculateMatchingCost()}. To find a match, at least one variable of the pattern part has to be bound and one unbound. Then, \emph{match()} tries to find matches for all unbound variables. This part of the pattern matching algorithm is highly implementation specific. It is not only different for different metamodels. It also has to be implemented differently for different kinds of links. However, this also allows to exploit certain features of the metamodel to improve performance. For example, \emph{StoryDrivenCointainmentRelationPatternPart} uses EMF's \emph{eContainer()} method to navigate containment links in the opposite direction.	
+	\item \emph{match()} implements the pattern matching for this kind of pattern part. 
+	It is called after \emph{calculateMatchingCost()}. 
+	To find a match, at least one variable of the pattern part has to be bound and one unbound. 
+	Then, \emph{match()} tries to find matches for all unbound variables. 
+	This part of the pattern matching algorithm is highly implementation specific. 
+	It is not only different for different metamodels. 
+	It also has to be implemented differently for different kinds of link variables.
+	For example, matching an object via an ordinary \emph{LinkVariable} has to be done differently than matching via a \emph{Path} or a \emph{ContainmentRelation}.
+	However, this also allows to exploit certain features of the metamodel to improve execution performance. 
+	For example, \emph{StoryDrivenContainmentRelationPatternPart} uses EMF's \emph{eContainer()} method to navigate containment links in the opposite direction.	
 	
 	\item \emph{createElements()} creates the elements of the pattern part, that are marked with \create.
 	
-	\item \emph{destroyLink()} and \emph{destroyObjects()} destroy links and objects. In contrast to the creation of elements, these steps are separated to ensure an orderly deletion of story pattern variables in the \emph{VariableScope}.\footnote{Background: There two ways to execute story patterns with deleted elements: Destroy all links first and then all objects, or the way round. EMF also supports unidirectional references. Therefore, deleting objects as implemented in \emph{EcoreUtil.delete()} is done by going from the deleted object to the root of the containment hierarchy (usually the \emph{Resource} or \emph{ResourceSet}) and searching for cross-references to the deleted object. If the links are deleted first when the story pattern is executed, the destroyed object may be removed from its containment hierarchy (if a destroyed link represents this containment). After that, existing cross-references to the destroyed object that are not represented by a link in the story pattern (remember that story patterns have SPO semantics) cannot be found and deleted. For this reason, the interpreter first deletes all objects and then all links.}
+	\item \emph{destroyLink()} and \emph{destroyObjects()} destroy links and objects. 
+	In contrast to the creation of elements, these steps are separated to ensure an orderly deletion of story pattern variables in the \emph{VariableScope}.
+	\footnote{Background: There are two ways to execute story patterns with deleted elements: Destroy all links first and then all objects, or the other way round. 
+	EMF also supports unidirectional references. 
+	Therefore, deleting objects as implemented in \emph{EcoreUtil.delete()} is done by going from the deleted object to the root of the containment hierarchy (usually the \emph{Resource} or \emph{ResourceSet}) and searching for cross-references to the deleted object. 
+	If the links are deleted first when the story pattern is executed, the destroyed object may be removed from its containment hierarchy (if a destroyed link represents this containment). 
+	After that, existing cross-references to the destroyed object that are not represented by a link in the story pattern (remember that story patterns have SPO semantics) cannot be found and deleted. 
+	For this reason, the interpreter first deletes all objects and then all links.}
 	
 
 \end{enumerate}
 
 
-The \emph{MatchingStrategy} determines the order in which pattern parts are matched. The \emph{DefaultMatchingStrategy} matches pattern parts in the order of their matching cost estimates, i.e., \emph{getNextPatternPartForMatching()} returns that pattern part with the lowest cost estimate. 
+The \emph{MatchingStrategy} determines the order in which pattern parts are matched. 
+The \emph{DefaultMatchingStrategy} matches pattern parts in the order of their matching cost estimates, i.e., \emph{getNextPatternPartForMatching()} returns that pattern part with the lowest cost estimate. 
 
-There are also two additional pattern matching strategies: \emph{DefaultMatchingStrategyWithLog} and \emph{LogReproducingMatchingStrategy}. These are required for \emph{for-each} story nodes. By default for-each story nodes are executed with the fresh-match semantics. Side effects of the story pattern application can influence pattern matching in subsequent loop iterations, e.g., create new matches or destroy existing matches. They can also influence the matching order if they change the number of elements in links. Then, the \emph{DefaultMatchingStrategy} may choose a different order in which pattern parts are matched in the next loop iteration. This may cause the pattern matcher to return the same match more than once or skip matches. Therefore, \emph{DefaultMatchingStrategyWithLog} is used in the first iteration of a for-each story node. It extends \emph{DefaultMatchingStrategy} and logs the order in which pattern parts were matched. \emph{LogReproducingMatchingStrategy} is used in all subsequent iterations of the for-each node and returns the pattern parts to match in the order that the log specifies.
+There are also two additional pattern matching strategies: \emph{DefaultMatchingStrategyWithLog} and \emph{LogReproducingMatchingStrategy}. 
+These are required for \emph{for-each} story nodes. 
+By default for-each story nodes are executed with the fresh-match semantics. 
+Side effects of the story pattern application can influence pattern matching in subsequent loop iterations, e.g., create new matches or destroy existing matches. 
+They can also influence the matching order if they change the number of elements in links. 
+Then, the \emph{DefaultMatchingStrategy} may choose a different order in which pattern parts are matched in the next loop iteration. 
+This may cause the pattern matcher to return the same match more than once or skip matches. 
+Therefore, \emph{DefaultMatchingStrategyWithLog} is used in the first iteration of a for-each story node. 
+It extends \emph{DefaultMatchingStrategy} and logs the order in which pattern parts were matched. 
+\emph{LogReproducingMatchingStrategy} is used in all subsequent iterations of the for-each node and returns the pattern parts to match in the order that the log specifies.
 
 \subsubsection{Notification Mechanism}
 \label{sec:notification_mechanism}
@@ -86,21 +159,59 @@ There are also two additional pattern matching strategies: \emph{DefaultMatching
 \caption{Relevant classes of the interpreter's notification mechanism}
 \end{figure}
 
-The interpreter and all its components provide a notification mechanism to inform clients of all important steps during the execution of a story diagram.
+The interpreter and all its components provide a notification mechanism to inform clients of all important steps during the execution of a story diagram, which is an implementation of the observer design pattern.
 
-All active components of the interpreter (e.g., \emph{SDMInterpreter} or \emph{StoryPatternMatcher}), extend the \emph{Notifier} superclass. \emph{Notifier} defines a reference to a \emph{NotificationEmitter}. This class provides an operation for each type of notification defined in \emph{NotificationTypeEnum} that creates an \emph{InterpreterNotification} and forwards it to all registered \emph{NotificationReceivers} by calling their \emph{notifyChanged()} operations. Clients can add their own \emph{NotificationReceiver}s to the \emph{NotificationEmitter}'s list of receivers.
+All active components of the interpreter (e.g., \emph{SDMInterpreter} or \emph{StoryPatternMatcher}), extend the \emph{Notifier} superclass.
+\emph{Notifier} defines a reference to a \emph{NotificationEmitter}. 
+This class provides an operation for each type of notification defined in \emph{NotificationTypeEnum} that creates an \emph{InterpreterNotification} and forwards it to all registered \emph{NotificationReceivers} by calling their \emph{notifyChanged()} operations. 
+Clients can add their own \emph{NotificationReceiver}s to the \emph{NotificationEmitter}'s list of receivers.
 
-By default, each \emph{Notifier} uses the default implementation in \emph{NotificationEmitter}. However, it is also possible to create \emph{Notifiers} with custom implementations of \emph{NotificationEmitter} to directly process notifications there or process notifications asynchronously, for example.
+By default, each \emph{Notifier} uses the default implementation in \emph{NotificationEmitter}. 
+However, it is also possible to create \emph{Notifiers} with custom implementations of \emph{NotificationEmitter} to directly process notifications there or process notifications asynchronously, for example.
 
 
 \subsection{Interpreting Story Activities}
-
-The interpretation of the overall story activity starts at the activity's initial node. 
-
+%
+%The overall interpretation of a story diagram is a simple graph traversal.
+%The interpretation starts at the story diagram's \emph{StartNode}. 
+%The interpreter traverses the control flow graph of the story diagram until it reaches a \emph{StopNode}. 
+%All activity nodes are executed by specialized methods, e.g., for \emph{StoryNodes}, \emph{JunctionNodes}, or \emph{ActivityCallNodes}.
+%These methods take care of executing that kind of activity node, e.g., invoking the \emph{StoryPatternMatcher}, calling the story diagram interpreter for another story diagram, or evaluating expressions of \emph{JunctionNodes}.
+%After that, these methods return the next activity node to execute.
+%If a \emph{StopNode} is reached, the return value expressions of all outgoing parameters are evaluated and put into a map, which is returned by the interpreter.
+%This maps the parameter names to their values.\footnote{For backward compatibility, all variables of the story diagram are currently returned.}
 
 
 
 \subsection{Interpreting Story Patterns}
+
+%We will explain the operation principle of the story pattern matcher using the example in Figure~X.
+%This story pattern creates abstract super classes for implementation classes and moves these implementation classes into a subpackage.
+%That subpackage is created if necessary.
+%
+%First, the story pattern is split into pattern parts. Each pattern part consists of a link and its adjacent pattern variables\footnote{Subsequently, we use the term \emph{pattern variable} to refer to variables in a story pattern in contrast to \emph{Variable} to refer to \emph{Variable} objects used internally by the pattern matcher.}
+%All pattern variables are sorted into lists of bound and unbound pattern variables. In the example, only \emph{pack1} is bound. 
+%The other pattern variables are unbound.
+%The matching process starts by analyzing all pattern parts that contain a bound pattern variable: \emph{pp1}, \emph{pp2}, and \emph{pp3}. However, \emph{pp3} only creates a link and is, therefore, not relevant for matching. In contrast, the link of \emph{pp2} is set to \emph{optional} and \create. Thus, an existing match for that pattern part has to be reused.
+%
+%Suppose, the story pattern is executed on the instance graph in Figure~Y. From the set of pattern parts that can be used for matching an unbound pattern variable, that pattern part is preferred that has the least matching cost (cf. method \emph{calculateMatchingCost()} in Section~\ref{sec:story_pattern_matcher}. By default, the matching cost estimate is based on the number of elements contained in the instance link. Here, \emph{pack1} is connected to two classes and one package. The cost estimate for \emph{pp1} is 2 and for \emph{pp2} 1. Therefore, \emph{pp2} is preferred.
+%
+%Now, \emph{pack2} is bound to instance object \emph{ip2}. 
+%The constraint of \emph{pack2} is evaluated and it is not satisfied. 
+%Therefore, the binding is revoked. 
+%There are no more packages in the instance graph left, so matching continues with pattern part \emph{pp1}. 
+%Pattern variable \emph{cl1} is bound to instance class \emph{ic1} but the constraint is not satisfied because the name of \emph{ic1} ends with \emph{'Impl'}. 
+%Therefore, the binding is revoked and \emph{cl1} is bound to \emph{ic2}.
+%Now, the constraint is satisfied, so the match is valid.
+%
+%This process repeats until a match for all pattern parts relevant for matching could be found, or the pattern matcher determines that no match exists.
+%If a valid match was found, side effects of all pattern parts are executed next.
+%First, all attribute assignments are evaluated and their return values are stored.
+%This allows to access attribute values of deleted elements in assignments of created elements.
+%Elements marked for deletion are deleted after that.
+%In the example, \emph{pp1} deletes the link between \emph{pack1} and \emph{cl1}.
+%Subsequently, all \create elements are created, which is the case for pattern parts \emph{pp2} (because no match was found for it), \emph{pp3}, \emph{pp4}, and \emph{pp5}.
+%Finally, the results of attribute assignment expression are assigned to attributes, the names of \emph{cl1}, \emph{cl2}, and \emph{pack2} are set accordingly.
 
 
 \section{Code Generation for Story Diagrams}
