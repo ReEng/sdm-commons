@@ -2,8 +2,24 @@
 
 \subsection{General Idea (Dietrich)}
 
-- combine activity diagrams and graph transformations as well as imperative, deterministic and declarative, non-deterministic languages to formally and compactly describe software behavior in terms of model transformations using an OO-based, familiar notation
-- enable formal analyses to check/ensure certain behavioral software properties
+% - combine activity diagrams and graph transformations as well as imperative, deterministic and declarative, non-deterministic languages to formally and compactly describe software behavior in terms of model transformations using an OO-based, familiar notation
+
+The main idea behind story diagrams is to formalize UML activity diagrams
+to better support model-driven software development
+by means of completely modeling software structure and behavior and making the software model executable.
+For that purpose, graph transformations, a well-known formalism, were chosen to formally specify behavior and have been combined with UML activity diagrams.
+The result, story diagrams, is a mixture of two languages:
+an imperative, deterministic language for the description of control flow, UML activity diagrams,
+and a declarative, non-deterministic, object-oriented, graph-transformation-based language for the description of model modifications, so-called story patterns.
+Both languages are graphical, formally defined, and use a familiar notation based on UML activity diagrams \todoall{ver. 1.5 or 1.4?} and UML object diagrams with minor modifications.
+
+% - enable formal analyses to check/ensure certain behavioral software properties
+
+The formally defined story diagrams not only have the advantage that they can be executed by means of code generation or an interpreter.
+They can also be formally analyzed, e.g., with the help of model checking to guarantee certain behavioral propoerties like\ldots
+
+
+
 - Story diagrams in MDSD process, 2 worlds: stand-alone transformations and specifications of methods' behavior:
   1. alternative (completely modeling software): model classes in class diagrams, specify their methods' behavior in story diagrams, generate executable source code (e.g. Java) or use an interpreter
   2. alternative (specify recurring model operations/transformations for a given type of models): model only classes representing the editor's model under development (meta-model), specify modification operations of this model (adding and removing elements, analysis operations, translations to/generation of other models, etc.), need of a software that triggers the specified operations, the operations can be performed using generated code or an interpreter
