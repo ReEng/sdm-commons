@@ -142,14 +142,6 @@ The \emph{DefaultMatchingStrategy} matches pattern parts in the order of their m
 
 There are also two additional pattern matching strategies: \emph{DefaultMatchingStrategyWithLog} and \emph{LogReproducingMatchingStrategy}. 
 These are required for \emph{for-each} story nodes. 
-By default for-each story nodes are executed with the fresh-match semantics. 
-Side effects of the story pattern application can influence pattern matching in subsequent loop iterations, e.g., create new matches or destroy existing matches. 
-They can also influence the matching order if they change the number of elements in links. 
-Then, the \emph{DefaultMatchingStrategy} may choose a different order in which pattern parts are matched in the next loop iteration. 
-This may cause the pattern matcher to return the same match more than once or skip matches. 
-Therefore, \emph{DefaultMatchingStrategyWithLog} is used in the first iteration of a for-each story node. 
-It extends \emph{DefaultMatchingStrategy} and logs the order in which pattern parts were matched. 
-\emph{LogReproducingMatchingStrategy} is used in all subsequent iterations of the for-each node and returns the pattern parts to match in the order that the log specifies.
 
 \subsubsection{Notification Mechanism}
 \label{sec:notification_mechanism}
@@ -170,20 +162,60 @@ By default, each \emph{Notifier} uses the default implementation in \emph{Notifi
 However, it is also possible to create \emph{Notifiers} with custom implementations of \emph{NotificationEmitter} to directly process notifications there or process notifications asynchronously, for example.
 
 
-\subsection{Interpreting Story Activities}
-%
-%The overall interpretation of a story diagram is a simple graph traversal.
-%The interpretation starts at the story diagram's \emph{StartNode}. 
-%The interpreter traverses the control flow graph of the story diagram until it reaches a \emph{StopNode}. 
-%All activity nodes are executed by specialized methods, e.g., for \emph{StoryNodes}, \emph{JunctionNodes}, or \emph{ActivityCallNodes}.
-%These methods take care of executing that kind of activity node, e.g., invoking the \emph{StoryPatternMatcher}, calling the story diagram interpreter for another story diagram, or evaluating expressions of \emph{JunctionNodes}.
-%After that, these methods return the next activity node to execute.
-%If a \emph{StopNode} is reached, the return value expressions of all outgoing parameters are evaluated and put into a map, which is returned by the interpreter.
-%This maps the parameter names to their values.\footnote{For backward compatibility, all variables of the story diagram are currently returned.}
+\subsection{Interpreting Story Diagrams}
 
+\begin{figure}[htb]
+\center
+\includegraphics[scale=0.7]{figures/SDInterpreterExecution.pdf} 
+\caption{Execution Scheme of the \emph{SDMInterpreter}}
+\label{fig:sdmInterpreter_execution_scheme}
+\end{figure}
+
+
+The overall interpretation of a story diagram is a simple graph traversal algorithm.
+The interpretation starts at the story diagram's \emph{StartNode} and traverses the story diagram until it reaches a \emph{StopNode}. 
+All activity nodes are executed by specialized methods, which return the next activity node to execute afterwards. The activity diagram in Figure~\ref{fig:sdmInterpreter_execution_scheme} shows the overall execution scheme of the interpreter.
+
+The interpreter is started with the \emph{executeActivity()} method.
+This method creates the root \emph{VariableScope} and a \emph{Variable} for each parameter of the story diagram.
+Then, the \emph{StartNode} of the story diagram is obtained and executed.
+
+In general, the execution of activity nodes works as follows: 
+First, the kind of the activity node is determined. Then, it is executed by the appropriate execution method.
+\emph{StoryNode}s, \emph{JunctionNode}s, \emph{StopNode}s, and \emph{StatementNode}s require special handling.
+All other kinds of activity nodes are simply skipped.
+After execution of a node, the next node to execute is returned by the handling methods.
+This process is repeated until a \emph{StopNode} is reached, which has no subsequent nodes.
+Then, the loop terminates. The return value expressions of all outgoing parameters are evaluated and put into a map, which is returned by \emph{executeActivity()}.
+This map maps the parameter names to their values.\footnote{For backward compatibility, all variables of the story diagram are currently returned, not only parameters.}
+
+A non-for-each \emph{StoryNode} is executed using the \emph{StoryPatternMatcher} (cf. Section~\ref{sec:story_pattern_matcher}) with the \emph{DefaultMatchingStrategy}. 
+It searches for a match of the story pattern and applies the graph transformation rule if a match was found. 
+For for-each nodes, the process is more complex. 
+If the story pattern is executed for the first time, a new \emph{StoryPatternMatcher} is created and stored in a local map for this \emph{StoryNode}. 
+The pattern matcher is executed with the \emph{DefaultMatchingStrategyWithLog}, which keeps a log of the order in which elements were matched. 
+If a match was found, the next activity node is returned that is connected via a for-each edge. 
+The interpreter executes that node and eventually the control flow returns to the for-each node.
+Now, the existing \emph{StoryPatternMatcher} is reused so that it continues pattern matching where it left of. 
+This time, however, the pattern matcher uses the \emph{LogReproducingMatchingStrategy}. 
+This ensures, that all elements are matched in the same order as the first time. 
+For-each nodes are executed with the \emph{fresh match} semantics. 
+After a match was found, the story pattern's side effects are executed immediately. 
+Then, the next match is sought. 
+Side-effects may influence subsequent matches, they may create new matches or eliminate existing ones. 
+They may also influence they matching order if they change the number of elements in references, which changes the cost estimates (for details, see Section~\ref{sec:interpreting_story_patterns}). 
+If the \emph{DefaultMatchingStrategy} would be used in each iteration of the for-each node, it may choose a different matching order in subsequent iterations. 
+Due to the way how previous matches are managed, this may cause the pattern matcher to return a match multiple times or skip valid matches.
+Therefore, the \emph{DefaultMatchingStrategyWithLog} is used in the first iteration of a for-each story node to log the matching order, and the \emph{LogReproducingMatchingStrategy} is used in all subsequent iterations, which matches elements in exactly the same order.
+
+After the last iteration, when the pattern matcher did not find any more matches, the stored mapping between the \emph{StoryNode} and the pattern matcher is discarded. 
+If the story diagram's control flow returns to the for-each node again, the pattern matching process starts anew.
+
+In addition to the \emph{fresh match} semantics, it is also possible to add other execution semantics for for-each nodes, e.g., \emph{pre-select}, which searches for all matches before executing side-effects.
 
 
 \subsection{Interpreting Story Patterns}
+\label{sec:interpreting_story_patterns}
 
 %We will explain the operation principle of the story pattern matcher using the example in Figure~X.
 %This story pattern creates abstract super classes for implementation classes and moves these implementation classes into a subpackage.
