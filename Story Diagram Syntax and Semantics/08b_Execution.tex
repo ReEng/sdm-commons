@@ -217,6 +217,62 @@ In addition to the \emph{fresh match} semantics, it is also possible to add othe
 \subsection{Interpreting Story Patterns}
 \label{sec:interpreting_story_patterns}
 
+The execution of a single story pattern comprises three steps:
+Initialization of the pattern matcher and analysis of the story pattern (Section~\ref{sec:spm_initialization}),
+pattern matching (Section~\ref{sec:spm_pattern_matching}),
+and pattern application (Section~\ref{sec:spm_pattern_application}).
+These steps are executed in the constructor of the pattern matcher, the \emph{findNextMatch()}, and the \emph{applyMatch()} operations respectively.
+\emph{findNextMatch()} can be called successively to return all matches for a story pattern one-by-one.
+These operations are separated, to allow for additional operations between these phases by the user of the pattern matcher.
+
+
+\subsubsection{Initialization and Pattern Analysis}
+\label{sec:spm_initialization}
+
+A \emph{StoryPatternMatcher} is instantiated for a specific story pattern. 
+Therefore, the \emph{StoryPatternMatcher}'s constructor already requires the story pattern as a parameter.
+In the constructor, the matcher's internal data structures are set up. 
+These comprise lists of the bound and unbound pattern variables\footnote{Subsequently, we use the term \emph{pattern variable} to refer to object variables or primitive variables in a story pattern in contrast to \emph{Variable}s to refer to \emph{Variable} objects used internally by the pattern matcher.}, check and unchecked \emph{PatternPart}s, bound instance objects, the matching history, and the stack of match transactions.
+The matching history is a mapping between pattern variables and lists of instance objects, that were previously bound to that pattern variable.
+The match transaction stack is a stack that contains stack elements for each relevant action of the matcher.
+Each time, a pattern variable is bound to an object, a link is checked, and for many more actions, an match transaction is executed and push onto the stack.
+A transaction usually involves a manipulation of the internal data structures of the matcher, e.g., moving an element from the list of unbound to that of bound pattern variables.
+When the matcher has to step back, these match transactions are popped from the stack and rolled back.
+Furthermore, a \emph{VariableScope} has to be provided as a parameter so that the pattern matcher can access the instance model via these \emph{Variable}s. However, during the initialization phase, these \emph{Variables} are neither accessed nor modified.
+
+After initializing these data structures, all pattern variables are inserted into the appropriate lists: Either for bound or unbound pattern variables.
+Then the story pattern is divided into pattern parts.
+Each unconnected pattern variable and each link variable with its connected pattern variables form a pattern part.
+The matching process works on the granularity of these pattern parts.
+This is the current default semantics specific for the two introduced metamodels.
+This semantics can be different for other metamodels and it can be changed to support, e.g., complex (negative) application conditions.
+Finally, an initial stack element is pushed onto the match transaction stack to indicate a successful initialization.
+
+
+\subsubsection{Pattern Matching}
+\label{sec:spm_pattern_matching}
+
+\emph{findNextMatch()} is responsible for searching for the next valid match of the story pattern in the instance model.
+The operation returns a boolean value indicating whether a match was found or not.
+If a match was found, the pattern matcher's \emph{VariableScope} is manipulated accordingly.
+If no match was found, the \emph{VariableScope} is left untouched.
+
+First, \emph{findNextMatch()} checks if the match transaction stack is empty.
+If so, all matches have already been found and no further matches exist.
+Otherwise, there may still be matches to find.
+So, now for all bound pattern variables the corresponding \emph{Variable}s are picked from the \emph{VariableScope} and checked for compatible types.
+If these pattern variables also have assignment expressions or constraints, these are checked as well.
+Pattern variables that are set to \emph{maybe bound} and for which a corresponding \emph{Variable} exists, are treated the same way.
+All other pattern variables are unbound and are not treated specially at this time.
+
+For each of the bound pattern variables\footnote{Here and in the rest of this chapter, ``bound'' pattern variable refers to a pattern variable that is either set to \emph{bound} or which the pattern matcher has bound to an instance object.}, their containing pattern parts are checked.
+
+
+
+
+\subsubsection{Pattern Application}
+\label{sec:spm_pattern_application}
+
 %We will explain the operation principle of the story pattern matcher using the example in Figure~X.
 %This story pattern creates abstract super classes for implementation classes and moves these implementation classes into a subpackage.
 %That subpackage is created if necessary.
