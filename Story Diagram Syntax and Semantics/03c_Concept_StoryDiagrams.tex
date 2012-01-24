@@ -10,8 +10,19 @@ by means of completely modeling software structure and behavior and making the s
 For that purpose, graph transformations, a well-known formalism, were chosen to formally specify behavior and have been combined with UML activity diagrams.
 The result, story diagrams, is a mixture of two languages:
 an imperative, deterministic language for the description of control flow, UML activity diagrams,
-and a declarative, non-deterministic, object-oriented, graph-transformation-based language for the description of model modifications, so-called story patterns.
+and a declarative, non-deterministic, object-oriented, graph-transformation-based language for the description of model modifications, so-called story patterns (see Section~\ref{sec:StoryPatterns}).
 Both languages are graphical, formally defined, and use a familiar notation based on UML activity diagrams \todoall{ver. 1.5 or 1.4?} and UML object diagrams with minor modifications.
+
+Like UML activity diagrams, story diagrams model control flow by means of activity nodes and activity edges.
+Each activity node\footnote{With some few exceptions like activity call nodes.} contains a story pattern to formally specify the behavior for this node.
+The activity edges can carry guards.
+These are either boolean expressions, e.g., checking attribute values of a matched object,
+or guards used to specify decisions on whether a story pattern could be
+matched\footnote{I.e., for each object and link variable corresponding objects and links are found and all specified constraints are satisfied.}
+or not.
+In contrast to ordinary UML activity diagrams, story diagrams, so far, do not model concurrent execution.
+Thus, the language constructs \emph{fork} and \emph{join} are omitted in story diagrams.
+
 
 % - enable formal analyses to check/ensure certain behavioral software properties
 
