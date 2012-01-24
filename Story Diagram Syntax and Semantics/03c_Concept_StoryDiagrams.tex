@@ -24,6 +24,13 @@ In contrast to ordinary UML activity diagrams, story diagrams, so far, do not mo
 Thus, the language constructs \emph{fork} and \emph{join} are omitted in story diagrams.
 
 
+
+- Story diagrams in MDSD process, 2 worlds: stand-alone transformations and specifications of methods' behavior:
+  1. alternative (completely modeling software): model classes in class diagrams, specify their methods' behavior in story diagrams, generate executable source code (e.g. Java) or use an interpreter
+  2. alternative (specify recurring model operations/transformations for a given type of models): model only classes representing the editor's model under development (meta-model), specify modification operations of this model (adding and removing elements, analysis operations, translations to/generation of other models, etc.), need of a software that triggers the specified operations, the operations can be performed using generated code or an interpreter
+- introduce an example
+
+
 % - enable formal analyses to check/ensure certain behavioral software properties
 
 The formally defined story diagrams not only have the advantage that they can be executed by means of code generation or an interpreter.
@@ -31,10 +38,6 @@ They can also be formally analyzed, e.g., with the help of model checking to gua
 
 
 
-- Story diagrams in MDSD process, 2 worlds: stand-alone transformations and specifications of methods' behavior:
-  1. alternative (completely modeling software): model classes in class diagrams, specify their methods' behavior in story diagrams, generate executable source code (e.g. Java) or use an interpreter
-  2. alternative (specify recurring model operations/transformations for a given type of models): model only classes representing the editor's model under development (meta-model), specify modification operations of this model (adding and removing elements, analysis operations, translations to/generation of other models, etc.), need of a software that triggers the specified operations, the operations can be performed using generated code or an interpreter
-- introduce an example
 
 
 \subsection{The Language Constructs in Story Diagrams (Jan/Dietrich)}\label{sec:StoryDiagrams:composition}
