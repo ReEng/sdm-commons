@@ -23,6 +23,7 @@ import org.storydriven.modeling.activities.expressions.ExpressionsFactory;
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.calls.ParameterBinding;
 import org.storydriven.modeling.expressions.LiteralExpression;
+import org.storydriven.modeling.expressions.TextualExpression;
 import org.storydriven.modeling.provider.CommentableElementItemProvider;
 import org.storydriven.modeling.provider.SDMEditPlugin;
 
@@ -147,7 +148,8 @@ public class ParameterBindingItemProvider extends
 			// TODO: Use abstract operation of Expression, which gives the label
 			// for every kind of Expression.
 			String label;
-			Assert.isLegal(parameterBinding.getValueExpression() instanceof LiteralExpression);
+			Assert.isLegal(parameterBinding.getValueExpression() instanceof LiteralExpression ||
+					parameterBinding.getValueExpression() instanceof TextualExpression);
 			LiteralExpression literalExpression = (LiteralExpression) parameterBinding
 					.getValueExpression();
 			label = literalExpression.getValue();
