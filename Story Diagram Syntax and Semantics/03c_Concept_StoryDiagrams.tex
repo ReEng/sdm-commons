@@ -14,30 +14,41 @@ and a declarative, non-deterministic, object-oriented, graph-transformation-base
 Both languages are graphical, formally defined, and use a familiar notation based on UML activity diagrams \todoall{ver. 1.5 or 1.4?} and UML object diagrams with minor modifications.
 
 Like UML activity diagrams, story diagrams model control flow by means of activity nodes and activity edges.
-Each activity node\footnote{With some few exceptions like activity call nodes.} contains a story pattern to formally specify the behavior for this node.
+Each activity node contains a story pattern to formally specify the behavior for this node\footnote{With some few exceptions like activity call nodes.}.
 The activity edges can carry guards.
 These are either boolean expressions, e.g., checking attribute values of a matched object,
 or guards used to specify decisions on whether a story pattern could be
-matched\footnote{I.e., for each object and link variable corresponding objects and links are found and all specified constraints are satisfied.}
-or not.
+matched or not\footnote{A story pattern is successfully matched if for each object and link variable in the pattern corresponding objects and links are found in the host graph and all specified constraints are satisfied.}.
 In contrast to ordinary UML activity diagrams, story diagrams, so far, do not model concurrent execution.
 Thus, the language constructs \emph{fork} and \emph{join} are omitted in story diagrams.
 
+%- Story diagrams in MDSD process, 2 worlds: stand-alone transformations and specifications of methods' behavior:
+%  1. alternative (completely modeling software): model classes in class diagrams, specify their methods' behavior in story diagrams, generate executable source code (e.g. Java) or use an interpreter
+%  2. alternative (specify recurring model operations/transformations for a given type of models): model only classes representing the editor's model under development (meta-model), specify modification operations of this model (adding and removing elements, analysis operations, translations to/generation of other models, etc.), need of a software that triggers the specified operations, the operations can be performed using generated code or an interpreter
+%- introduce an example
 
+Basically, there are two slightly different ways of using story diagrams in a model-driven software development process.
 
-- Story diagrams in MDSD process, 2 worlds: stand-alone transformations and specifications of methods' behavior:
-  1. alternative (completely modeling software): model classes in class diagrams, specify their methods' behavior in story diagrams, generate executable source code (e.g. Java) or use an interpreter
-  2. alternative (specify recurring model operations/transformations for a given type of models): model only classes representing the editor's model under development (meta-model), specify modification operations of this model (adding and removing elements, analysis operations, translations to/generation of other models, etc.), need of a software that triggers the specified operations, the operations can be performed using generated code or an interpreter
-- introduce an example
+Originally, story diagrams were used to formally specify the behavior of methods that are defined in classes in object-oriented software development.
+Calling such a method would mean to execute the story diagram that represents the method's behavior.
+If for all defined methods story diagrams are specified, the software can be executed.
+In this case, story diagrams specify the behavior of objects whose properties are defined by classes.
+Thus, story diagrams have a \emph{this} variable representing an object (class instance) that they belong to.
+This variable can be used as a starting point for the graph matching specified in a story diagram.
+\tododt{add an example}
 
+Another more flexible way of using story diagrams is to specify any kind of model transformation or operation in a story diagram without sticking this behavior to a certain class.
+In contrast to the previous case, there is no \emph{this} variable that could be used as a starting point for the graph matching.
+All starting nodes for the graph matching have to be provided as arguments of the story diagram call.
+This way, the operations or transformations defined by story diagrams can be used from within any other part of the developed software like a software library.
+Typically, model-to-model transformations, consistency checks, or more generally speaking, recurring and object-independent operations are defined this way.
+\tododt{add an example}
 
 % - enable formal analyses to check/ensure certain behavioral software properties
 
-The formally defined story diagrams not only have the advantage that they can be executed by means of code generation or an interpreter.
-They can also be formally analyzed, e.g., with the help of model checking to guarantee certain behavioral propoerties like\ldots
-
-
-
+In both cases the story diagrams can be used to generate executable source code or be executed using an interpreter.
+Besides execution, the formally defined story diagrams can also be analyzed to guarantee certain behavioral properties.
+For example, model checking can be used to check if a safety property is always met (\todoall{example!!!}) or if a critical state (\todoall{example!!!}) can ever be reached.
 
 
 \subsection{The Language Constructs in Story Diagrams (Jan/Dietrich)}\label{sec:StoryDiagrams:composition}
