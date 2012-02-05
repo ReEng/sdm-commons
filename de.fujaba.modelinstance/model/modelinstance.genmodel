@@ -5,7 +5,7 @@
     modelPluginID="de.fujaba.modelinstance" modelName="Modelinstance" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling">
   <foreignModel>modelinstance.ecore</foreignModel>
-  <genPackages prefix="Modelinstance" basePackage="de.fujaba" disposableProviderFactory="true"
+  <genPackages prefix="Modelinstance" basePackage="de.fujaba" resource="XMI" disposableProviderFactory="true"
       ecorePackage="modelinstance.ecore#/">
     <genClasses ecoreClass="modelinstance.ecore#//RootNode">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modelinstance.ecore#//RootNode/categories"/>

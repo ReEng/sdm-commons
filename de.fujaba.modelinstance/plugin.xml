@@ -18,5 +18,13 @@
             uri="http://de.fujaba.modelinstance">
       </package>
    </extension>
+   
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+   <parser type="fujaba"
+      class="de.fujaba.modelinstance.util.ModelinstanceResourceFactoryImpl">
+   </parser>
+</extension>
+
+   
 
 </plugin>
