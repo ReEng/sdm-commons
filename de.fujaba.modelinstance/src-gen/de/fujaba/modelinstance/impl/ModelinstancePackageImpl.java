@@ -269,6 +269,8 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.eclipse.org/edapt
+		createEdaptAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
 	}
@@ -288,7 +290,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });					
+		   });						
 		addAnnotation
 		  (modelElementCategoryEClass, 
 		   source, 
@@ -298,13 +300,29 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 	}
 
 	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/edapt</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEdaptAnnotations() {
+		String source = "http://www.eclipse.org/edapt";				
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "historyURI", "../../de.uni_paderborn.fujaba.muml.model/model/muml.history"
+		   });									
+	}
+
+	/**
 	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";							
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";								
 		addAnnotation
 		  (modelElementCategoryEClass, 
 		   source, 
