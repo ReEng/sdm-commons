@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modelinstance"
-    nsURI="http://de.fujaba.modelinstance" nsPrefix="modelinstance">
+    nsURI="http://www.fujaba.de/modelinstance/0.2.1" nsPrefix="modelinstance">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -10,6 +10,9 @@
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The package modelinstance defines the base classes for the FUJABA xmi format.&#xD;&#xA;In detail, it defines a root node and model element categories in order to serialize&#xD;&#xA;the model elements that may be contained in a FUJABA model."/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/edapt">
+    <details key="historyURI" value="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="RootNode">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
