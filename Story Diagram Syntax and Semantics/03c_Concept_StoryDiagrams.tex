@@ -13,12 +13,26 @@ an imperative, deterministic language for the description of control flow, UML a
 and a declarative, non-deterministic, object-oriented, graph-transformation-based language for the description of model modifications, so-called story patterns (see Section~\ref{sec:StoryPatterns}).
 Both languages are graphical, formally defined, and use a familiar notation based on UML activity diagrams \todoall{ver. 1.5 or 1.4?} and UML object diagrams with minor modifications.
 
+An exemplary story diagram is illustrated in Figure~\ref{fig:simpleStoryDiagram}.
+This story diagram replaces calls of a given method (\emph{oldMethod}) with calls of another given method (\emph{newMethod}).
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=1.0]{figures/SimpleStoryDiagramExample}
+  \caption{Exemplary Story Diagram -- Replace Method Calls}
+  \label{fig:simpleStoryDiagram}
+\end{figure}
+
 Like UML activity diagrams, story diagrams model control flow by means of activity nodes and activity edges.
-Each activity node contains a story pattern to formally specify the behavior for this node\footnote{With some few exceptions like activity call nodes.}.
+Each activity node contains a story pattern to formally specify the behavior for this node\footnote{There are
+some few exceptions like activity call nodes which do not contain story patterns to specify the behavior.}.
 The activity edges can carry guards.
 These are either boolean expressions, e.g., checking attribute values of a matched object,
 or guards used to specify decisions on whether a story pattern could be
 matched or not\footnote{A story pattern is successfully matched if for each object and link variable in the pattern corresponding objects and links are found in the host graph and all specified constraints are satisfied.}.
+In Figure~\ref{fig:simpleStoryDiagram} the used guards are \text[success\text] (successful matching),
+\text[failure\text] (failed to completely execute a story pattern),
+and \text[end\text] (activity edge points to the first activity node to be executed after a loop).
 In contrast to ordinary UML activity diagrams, story diagrams, so far, do not model concurrent execution.
 Thus, the language constructs \emph{fork} and \emph{join} are omitted in story diagrams.
 
@@ -40,6 +54,8 @@ This variable can be used as a starting point for the graph matching specified i
 Another more flexible way of using story diagrams is to specify any kind of model transformation or operation in a story diagram without sticking this behavior to a certain class.
 In contrast to the previous case, there is no \emph{this} variable that could be used as a starting point for the graph matching.
 All starting nodes for the graph matching have to be provided as arguments of the story diagram call.
+For this purpose, the story diagram in Figure~\ref{fig:simpleStoryDiagram} has two parameters \fe{oldMethod} and \fe{newMethod}.
+The corresponding arguments of a story diagram call are assumed to be known (bound object variables) and are used as starting points for the graph matching.
 This way, the operations or transformations defined by story diagrams can be used from within any other part of the developed software, like a software library would be used.
 Typically, model-to-model transformations, consistency checks, or more generally speaking, recurring and object-independent operations are defined this way.
 \tododt{add an example}
@@ -63,10 +79,72 @@ For example, model checking can be used to check if a safety property is always 
 
 
 \subsubsection{Activities, Activity Parameters and Return Values (Dietrich)}
-- also mention "this" object variable (2 worlds: stand-alone transformations and method behavior)
+
+Since story diagrams can be seen as special UML activity diagrams, we reused the class names defined by the UML.
+Thus, similar to UML activity diagrams, a story diagram is represented by a so-called activity (class \fe{Activity}).
+
+Each story diagram can have parameters.
+We distinguish \emph{in} and \emph{out} parameters,
+i.e. parameters representing arguments given when a story diagram is called (\emph{in})
+and parameters representing return values (\emph{out}).
+Parameters can be (\emph{in}) and (\emph{out}) parameter at the same time.
+The story diagram in Figure~\ref{fig:simpleStoryDiagram} has two (\emph{in}) parameters \fe{oldMethod} and \fe{newMethod}
+as well as an unnamed (\emph{out}) parameter of the type \fe{Call}.
+
+If a story diagram defines the behavior of a method, the parameters are defined by the corresponding method's signature.
+In this case, the number of \emph{out} parameters is limited to one single parameter and represents the only \emph{return} value of the method and story diagram.
+Besides these parameters there is another implicitly defined parameter \emph{this}
+which -- similar to Java's \emph{this} keyword -- represents the object that the story diagram belongs to.
+
+In case that a story diagram is not defining a method's behavior, it defines it's own signature explicitly with according (\emph{in}) and (\emph{out}) parameters.
+The number of \emph{out} parameters is allowed to be arbitrary in this case and there is no \emph{this} parameter.
+
+The values or objects returned after execution of a story diagram are defined by the object variable listed in the \emph{stop} activity nodes.
+For example, the object matched to the object variable \fe{c} is returned by the story diagram in Figure~\ref{fig:simpleStoryDiagram} in case of a successful execution.
+Otherwise, the \emph{null} reference is returned which is specified by the keyword \emph{null}.
+
 
 \subsubsection{Activity Nodes, Activity Edges (Dietrich)}
-- explain that any activity node (at least implicitly) has a success or failure outgoing activity edge
+
+A story diagram's control flow is defined by activity nodes and activity edges, similar to UML activity diagrams.
+Except of a few exceptions where an activity node represents a call of another story diagram,
+each node contains a story pattern to specify the corresponding behavior.
+Thus, executing an activity node results in executing the corresponding story pattern.
+
+In contrast to single story patterns, story patterns contained in activity nodes of a story diagram have another scope.
+Here, you can reuse all object variables declared in a story pattern of a preceding activity node.
+For example, in Figure~\ref{fig:simpleStoryDiagram}, the object variable \fe{parentClass} is reused in the following story pattern
+by specifying the variable as a bound variable
+(i.e. the variable does not have to be matched anymore, the object matched in the steps before is used instead).
+
+Executing an activity node means to execute the corresponding story pattern
+which means to find a subgraph with the specified properties (e.g. find objects of a certain type and with certain connections).
+As a consequence, since trying to find such a subgraph can fail, each execution of an activity node can fail.
+To distinguish the cases of a successful activity node execution and its failure,
+the outgoing activity edges can be provided with the guards \text[success\text] and \text[failure\text].
+The control flow is following the activity edge with the \emph{success} guard in case of a successful activity node execution,
+i.e. a successful matching of the corresponding story pattern,
+otherwise it follows the activity edge with the \emph{failure} guard.
+If an outgoing activity edge has no guard, it covers both cases, success and failure.
+The guards \text[success\text] and \text[failure\text] can only be used pair-wise.
+The first activity node in Figure~\ref{fig:simpleStoryDiagram} has two outgoing activity edges with these guards.
+
+A special activity node is the \emph{for-each} activity node, depicted by a cascading activity node.
+The second activity node in Figure~\ref{fig:simpleStoryDiagram} is a \emph{for-each} activity node.
+Such a node represents a loop where the contained story pattern is executed as often as new subgraphs can be matched
+that differ from the previously matched graphs by at least one other matched object.
+For example, the story pattern in the \emph{for-each} activity node in Figure~\ref{fig:simpleStoryDiagram}
+is matched for each existing pair of a method (object variable \fe{anyMethod}) and corresponding call object (object variable \fe{c}).
+Besides the matching itself, all \emph{destroy} and \emph{create} steps are also executed for each of these matched subgraphs.
+After all these matching steps, the control flow is guided by the outgoing activity edge with the guard \text[end\text].
+Each \emph{for-each} activity node has such an outgoing activity edge.
+In addition, this edge can be combined with another activity edge having the guard \text[for each\text].
+This edge is leading to the activity node (or e.g. a sequence of such nodes)
+that is to be executed after each successful execution of the \emph{for-each} activity node.
+In this case, there has to be an activity edge leading back to the \emph{for-each} activity node
+to terminate the specified loop by following the \text[end\text] activity edge.
+
+
 
 \subsubsection{Decision Nodes and Guards (Jan)}
 - no fork and join
