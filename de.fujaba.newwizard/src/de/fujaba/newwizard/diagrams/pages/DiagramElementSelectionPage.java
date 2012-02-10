@@ -23,61 +23,39 @@ import org.eclipse.swt.widgets.Label;
 import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.fujaba.newwizard.Messages;
-import de.fujaba.newwizard.diagrams.DiagramElementValidator;
+import de.fujaba.newwizard.diagrams.IDiagramElementValidator;
+import de.fujaba.newwizard.diagrams.IDiagramInformation;
 
-public class DiagramElementSelectionPage extends WizardPage {
+public class DiagramElementSelectionPage extends WizardPage implements IResourceChangedListener {
 
-	/**
-	 * The DiagramElementValidator that can check, if the current selection is a
-	 * valid Diagram Element.
-	 */
-	private DiagramElementValidator diagramElementValidator;
+	private String modelElementCategoryKey;
+	private IDiagramElementValidator diagramValidator;
 
 	private ViewerFilter viewerFilter = new ViewerFilter() {
-
 		@Override
 		public boolean select(Viewer viewer, Object parentElement, Object object) {
-			if (object instanceof ModelElementCategory) {
-
+			if (modelElementCategoryKey != null
+					&& object instanceof ModelElementCategory) {
 				return modelElementCategoryKey
 						.equals(((ModelElementCategory) object).getKey());
 			}
 			return true;
 		}
-
 	};
-
-	private String modelElementCategoryKey;
-
-	private DiagramModelSelectionPage domainModelSelectionPage;
 
 	/**
 	 * Constructs this DiagramModelSelectionPage.
 	 * 
 	 * @param pageId
 	 *            The ID for this Page.
-	 * @param diagramElementValidator
-	 *            The Validator that can check, if the current selection is a
-	 *            valid Diagram Element.
-	 * @param domainModelSelectionPage 
-	 * @param canSelectMultipleElements
+	 * @param diagramInformation 
 	 */
-	public DiagramElementSelectionPage(String pageId,
-			DiagramElementValidator diagramElementValidator,
-			String modelElementCategoryKey, DiagramModelSelectionPage domainModelSelectionPage) {
+	public DiagramElementSelectionPage(String pageId, IDiagramInformation diagramInformation) {
 		super(pageId);
-		this.diagramElementValidator = diagramElementValidator;
-		this.modelElementCategoryKey = modelElementCategoryKey;
-		this.domainModelSelectionPage = domainModelSelectionPage;
-	}
 
-	@Override
-	public void setVisible(boolean visible) {
-		super.setVisible(visible);
-		if (visible) {
-			setResource(domainModelSelectionPage.getResource());
-			validatePage();
-		}
+		diagramValidator = diagramInformation.getFujabaEditor();
+		modelElementCategoryKey = diagramInformation
+				.getModelElementCategoryKey();
 	}
 
 	/**
@@ -91,8 +69,9 @@ public class DiagramElementSelectionPage extends WizardPage {
 		if (selectedDiagramElement == null) {
 			error = Messages.NewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
 
-		} else if (!diagramElementValidator
-				.isValidDiagramElement(selectedDiagramElement)) {
+		} else if (diagramValidator != null
+				&& !diagramValidator
+						.isValidDiagramElement(selectedDiagramElement)) {
 			error = Messages.NewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
 		}
 
@@ -105,9 +84,7 @@ public class DiagramElementSelectionPage extends WizardPage {
 	 */
 	private Composite plate;
 
-
 	private TreeViewer modelViewer;
-
 
 	public EObject getSelectedElement() {
 		if (modelViewer != null) {
@@ -115,19 +92,9 @@ public class DiagramElementSelectionPage extends WizardPage {
 					.getSelection();
 			return (EObject) unwrapElement(selection.getFirstElement());
 		}
-		return getModelElementCategory();
-	}
-
-	private EObject getModelElementCategory() {
-		EObject rootNode = domainModelSelectionPage.getResource().getContents().get(0);
-		for (EObject content: rootNode.eContents()) {
-			ModelElementCategory category = (ModelElementCategory) content;
-			if (modelElementCategoryKey.equals(category.getKey())) {
-				return category;
-			}
-		}
 		return null;
 	}
+
 
 	protected Object unwrapElement(Object element) {
 
@@ -185,7 +152,6 @@ public class DiagramElementSelectionPage extends WizardPage {
 		modelViewer.addFilter(viewerFilter);
 
 		setControl(plate);
-
 	}
 
 	/**
@@ -198,8 +164,10 @@ public class DiagramElementSelectionPage extends WizardPage {
 		modelViewer.getTree().setEnabled(!value);
 	}
 
-	public void setResource(Resource resource) {
-		if (resource != null && modelViewer.getInput() != resource) {
+	@Override
+	public void resourceChanged(Resource resource) {
+		if (resource != null && modelViewer != null
+				&& modelViewer.getInput() != resource) {
 			modelViewer.setInput(resource);
 			if (!resource.getContents().isEmpty()) {
 				EObject firstElement = resource.getContents().get(0);

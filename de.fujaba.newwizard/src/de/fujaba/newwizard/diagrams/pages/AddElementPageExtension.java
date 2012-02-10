@@ -20,7 +20,6 @@ import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
-import de.fujaba.newwizard.Messages;
 import de.fujaba.newwizard.ui.ModelSelectionPageExtension;
 
 /**

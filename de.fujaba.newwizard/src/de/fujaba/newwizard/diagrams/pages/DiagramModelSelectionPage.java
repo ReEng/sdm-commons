@@ -1,5 +1,7 @@
 package de.fujaba.newwizard.diagrams.pages;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
@@ -16,6 +18,7 @@ import org.eclipse.swt.widgets.Composite;
 
 import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.modelinstance.RootNode;
+import de.fujaba.newwizard.diagrams.IDiagramInformation;
 import de.fujaba.newwizard.ui.ExtensibleModelSelectionPage;
 import de.fujaba.newwizard.ui.ModelSelectionPageExtension;
 import de.fujaba.newwizard.ui.PredefinedModelExtension;
@@ -44,6 +47,8 @@ public class DiagramModelSelectionPage extends ExtensibleModelSelectionPage {
 	 */
 	private AddElementPageExtension addElementExtension;
 
+	private Collection<IResourceChangedListener> resourceChangedListeners = new ArrayList<IResourceChangedListener>();
+
 	/**
 	 * Constructs this DiagramModelSelectionPage.
 	 * 
@@ -56,13 +61,54 @@ public class DiagramModelSelectionPage extends ExtensibleModelSelectionPage {
 	 *            is null, a new one will be created internally.
 	 * @param modelFileExtension
 	 *            The File Extension for the Domain Model.
+	 * @param diagramInformation
 	 * @param diagramModelFilePage
 	 */
 	public DiagramModelSelectionPage(String pageId,
 			ResourceLocationProvider rloc, ResourceSet resourceSet,
-			String modelFileExtension, String modelElementCategoryKey) {
+			String modelFileExtension, IDiagramInformation diagramInformation) {
 		super(pageId, rloc, resourceSet, modelFileExtension);
-		this.modelElementCategoryKey = modelElementCategoryKey;
+		this.modelElementCategoryKey = diagramInformation
+				.getModelElementCategoryKey();
+
+		addResourceChangedListener(new IResourceChangedListener() {
+
+			@Override
+			public void resourceChanged(Resource newResource) {
+
+				Resource resource = getResource();
+				boolean shouldAddElement = false;
+				boolean containsValidCategory = false;
+				if (resource != null && !resource.getContents().isEmpty()) {
+					EObject firstElement = resource.getContents().get(0);
+					if (firstElement instanceof RootNode) {
+						shouldAddElement = true;
+						RootNode rootNode = (RootNode) firstElement;
+						for (ModelElementCategory category : rootNode
+								.getCategories()) {
+							if (modelElementCategoryKey == null
+									|| modelElementCategoryKey.equals(category
+											.getKey())) {
+								containsValidCategory = true;
+								break;
+							}
+						}
+					}
+				}
+				addElementExtension.setEnabled(containsValidCategory);
+				addElementExtension.setAddElement(shouldAddElement);
+			}
+
+		});
+	}
+
+	public void addResourceChangedListener(
+			IResourceChangedListener resourceChangedListener) {
+		resourceChangedListeners.add(resourceChangedListener);
+	}
+	public void removeResourceChangedListener(
+			IResourceChangedListener resourceChangedListener) {
+		resourceChangedListeners.remove(resourceChangedListener);
 	}
 
 	/**
@@ -101,23 +147,9 @@ public class DiagramModelSelectionPage extends ExtensibleModelSelectionPage {
 	protected void resourceChanged() {
 		super.resourceChanged();
 
-		Resource resource = getResource();
-		boolean shouldAddElement = false;
-		boolean containsValidCategory = false;
-		if (resource != null && !resource.getContents().isEmpty()) {
-			EObject firstElement = resource.getContents().get(0);
-			if (firstElement instanceof RootNode) {
-				shouldAddElement = true;
-				RootNode rootNode = (RootNode) firstElement;
-				for (ModelElementCategory category : rootNode.getCategories()) {
-					if (modelElementCategoryKey.equals(category.getKey())) {
-						containsValidCategory = true;
-					}
-				}
-			}
+		for (IResourceChangedListener listener : resourceChangedListeners) {
+			listener.resourceChanged(getResource());
 		}
-		addElementExtension.setEnabled(containsValidCategory);
-		addElementExtension.setAddElement(shouldAddElement);
 	}
 
 	/**
@@ -132,7 +164,7 @@ public class DiagramModelSelectionPage extends ExtensibleModelSelectionPage {
 		String error = null;
 
 		Resource resource = getResource();
-		
+
 		if (resource == null) {
 			error = "No resource selected.";
 		} else if (addElementExtension.shouldAddElement()) {

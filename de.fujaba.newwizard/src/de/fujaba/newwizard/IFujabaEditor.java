@@ -8,23 +8,16 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.storydriven.modeling.ExtendableElement;
 
-import de.fujaba.newwizard.diagrams.DiagramElementValidator;
+import de.fujaba.newwizard.diagrams.IDiagramElementValidator;
 
-public interface IFujabaEditorDescription extends DiagramElementValidator {
-
-	/**
-	 * Should return the ID of the generated Editor class.
-	 * 
-	 * @return the Editor-ID.
-	 */
-	String getEditorId();
-
-	/**
-	 * Should return the MODEL_ID of the generated DiagramEditPart.
-	 * 
-	 * @return The Model-ID.
-	 */
-	String getModelId();
+/**
+ * An interface that should be implemented by Fujaba Diagram-Editors (not
+ * necessarily by the Eclipse Editor-Class).
+ * 
+ * @author bingo
+ * 
+ */
+public interface IFujabaEditor extends IDiagramElementValidator {
 
 	/**
 	 * Should return the DIAGRAM_PREFERENCES_HINT of the generated Editor-Plugin
@@ -32,14 +25,7 @@ public interface IFujabaEditorDescription extends DiagramElementValidator {
 	 * 
 	 * @return the PreferencesHint.
 	 */
-	PreferencesHint getDiagramPreferencesHint();
-
-	/**
-	 * Should return the file extension to use in the NewWizard.
-	 * 
-	 * @return the file extension.
-	 */
-	String getDiagramFileExtension();
+	PreferencesHint getPreferencesHint();
 
 	/**
 	 * Return the Diagram Element, or null if the ModelElementCategory should be
@@ -47,10 +33,15 @@ public interface IFujabaEditorDescription extends DiagramElementValidator {
 	 */
 	ExtendableElement createDiagramElement();
 
-	String getModelElementCategoryKey();
-
-	boolean isModelElementCategoryDiagramElement();
-
+	/**
+	 * Create diagram views for the elements.
+	 * 
+	 * @param diagram
+	 *            The diagram to put the views into.
+	 * @param elements
+	 *            The elements to create a view for.
+	 * @return The request.
+	 */
 	CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
 			Collection<EObject> elements);
 }

@@ -1,4 +1,4 @@
-package de.fujaba.newwizard.commands;
+package de.fujaba.newwizard.ui.commands;
 
 import java.lang.reflect.InvocationTargetException;
 

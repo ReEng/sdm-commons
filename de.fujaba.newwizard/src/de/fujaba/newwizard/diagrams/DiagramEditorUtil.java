@@ -135,15 +135,15 @@ public class DiagramEditorUtil {
 		dialog.open();
 	}
 
-	/**
-	 * Store model element in the resource. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private static void attachModelToResource(EObject model, Resource resource) {
-		resource.getContents().add(model);
-	}
+//	/**
+//	 * Store model element in the resource. <!-- begin-user-doc --> <!--
+//	 * end-user-doc -->
+//	 * 
+//	 * @generated
+//	 */
+//	private static void attachModelToResource(EObject model, Resource resource) {
+//		resource.getContents().add(model);
+//	}
 
 	/**
 	 * @generated

@@ -1,9 +1,13 @@
 package de.fujaba.newwizard;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.RegistryFactory;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -15,6 +19,9 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+import de.fujaba.newwizard.diagrams.DiagramInformation;
+import de.fujaba.newwizard.diagrams.IDiagramInformation;
+
 /**
  * The activator class controls the plug-in life cycle
  */
@@ -24,6 +31,10 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 	public static final String ID = "de.uni_paderborn.fujaba.muml.modelwizard"; //$NON-NLS-1$
 
 	public static final String FUJABA_MODEL_EXTENSION = "fujaba";
+
+	public static final String EXTENSION_POINT_ID = "de.fujaba.newwizard.diagraminformation";
+
+	private Map<String, IDiagramInformation> editorIdToDiagramInformation;
 
 	// The shared instance
 	private static FujabaNewwizardPlugin plugin;
@@ -37,6 +48,7 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 	 * The constructor
 	 */
 	public FujabaNewwizardPlugin() {
+
 	}
 
 	/*
@@ -50,6 +62,9 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 		super.start(context);
 		plugin = this;
 		adapterFactory = createAdapterFactory();
+
+		// Force reading the extension point
+		getDiagramInformationMap();
 	}
 
 	/*
@@ -68,18 +83,12 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 		super.stop(context);
 	}
 
-	/**
-	 * @generated
-	 */
 	protected ComposedAdapterFactory createAdapterFactory() {
 		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 		fillItemProviderFactories(factories);
 		return new ComposedAdapterFactory(factories);
 	}
 
-	/**
-	 * @generated
-	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
@@ -94,16 +103,10 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 		return plugin;
 	}
 
-	/**
-	 * @generated
-	 */
 	public void logError(String error) {
 		logError(error, null);
 	}
 
-	/**
-	 * @generated
-	 */
 	public void logError(String error, Throwable throwable) {
 		if (error == null && throwable != null) {
 			error = throwable.getMessage();
@@ -114,16 +117,10 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 		debug(error, throwable);
 	}
 
-	/**
-	 * @generated
-	 */
 	public void logInfo(String message) {
 		logInfo(message, null);
 	}
 
-	/**
-	 * @generated
-	 */
 	public void logInfo(String message, Throwable throwable) {
 		if (message == null && throwable != null) {
 			message = throwable.getMessage();
@@ -134,9 +131,6 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 		debug(message, throwable);
 	}
 
-	/**
-	 * @generated
-	 */
 	private void debug(String message, Throwable throwable) {
 		if (!isDebugging()) {
 			return;
@@ -149,16 +143,10 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 		}
 	}
 
-	/**
-	 * @generated
-	 */
 	public AdapterFactory getItemProvidersAdapterFactory() {
 		return adapterFactory;
 	}
 
-	/**
-	 * @generated
-	 */
 	public ImageDescriptor getItemImageDescriptor(Object item) {
 		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory
 				.adapt(item, IItemLabelProvider.class);
@@ -169,4 +157,56 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 		return null;
 	}
 
+	public IDiagramInformation getDiagramInformation(String editorId) {
+		return getDiagramInformationMap().get(editorId);
+	}
+
+	/**
+	 * Gets (and lazily creates) the diagram information map (EditorId ->
+	 * IDiagramInformation), by reading the extension point de.fujaba.newwizard.diagraminformation.
+	 * 
+	 * @return The map; never null.
+	 */
+	public Map<String, IDiagramInformation> getDiagramInformationMap() {
+		if (editorIdToDiagramInformation == null) {
+			// Create the map, in case it does not exist yet.
+			editorIdToDiagramInformation = doCreateDiagramInformationMap();
+		}
+		return editorIdToDiagramInformation;
+	}
+
+	private Map<String, IDiagramInformation> doCreateDiagramInformationMap() {
+		Map<String, IDiagramInformation> map = new HashMap<String, IDiagramInformation>();
+		IConfigurationElement[] config = RegistryFactory.getRegistry()
+				.getConfigurationElementsFor(EXTENSION_POINT_ID);
+		for (IConfigurationElement editorElements : config) {
+			// Read editorId
+			String editorId = editorElements.getAttribute("editorId");
+			if (editorId == null) {
+				continue;
+			}
+
+			// Read Diagram Information from extension Point
+			IConfigurationElement information = null;
+			if ("editor".equals(editorElements.getName())) {
+				IConfigurationElement[] informationElements = editorElements
+						.getChildren("information");
+				// The lower bound is one, but we want to be safe
+				if (informationElements.length > 0) {
+					information = informationElements[0];
+				}
+			}
+			if (information == null) {
+				continue;
+			}
+
+			// Fill DiagramInformation datastructure
+			IDiagramInformation diagramInformation = new DiagramInformation(
+					information);
+
+			// Put this entry into the map
+			map.put(editorId, diagramInformation);
+		}
+		return map;
+	}
 }

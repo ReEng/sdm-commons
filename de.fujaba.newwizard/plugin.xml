@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+   <extension-point id="de.fujaba.newwizard.diagraminformation" name="DiagramInformation" schema="schema/de.fujaba.newwizard.diagraminformation.exsd"/>
   <extension point="org.eclipse.ui.newWizards" >
     <category name="Fujaba" id="de.fujaba" />
     <category name="Diagrams" id="de.fujaba.diagrams"
@@ -41,7 +42,16 @@
               </visibleWhen>
            </command>
            <separator
-                 name="additions">
+                 name="diagrams"
+                 visible="false">
+           </separator>
+           <separator
+                 name="additions"
+                 visible="false">
+           </separator>
+           <separator
+                 name="utilities"
+                 visible="false">
            </separator>
         </menu>
      </menuContribution>
@@ -68,7 +78,7 @@
      </category>
      <command
            categoryId="de.fujaba"
-           defaultHandler="de.fujaba.newwizard.commands.CreateModelFileCommand"
+           defaultHandler="de.fujaba.newwizard.ui.commands.CreateModelFileCommand"
            description="Create new Fujaba Model"
            id="de.fujaba.core.ui.command.newmodel"
            name="Create new Fujaba Model">

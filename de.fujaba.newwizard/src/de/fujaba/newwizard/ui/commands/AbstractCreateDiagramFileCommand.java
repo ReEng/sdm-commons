@@ -1,4 +1,4 @@
-package de.fujaba.newwizard.commands;
+package de.fujaba.newwizard.ui.commands;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -6,8 +6,6 @@ import java.util.LinkedList;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -16,25 +14,27 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.common.core.command.CommandResult;
-import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
-import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.ui.PartInitException;
-import org.storydriven.modeling.ExtendableElement;
 
-import de.fujaba.modelinstance.ModelElementCategory;
-import de.fujaba.modelinstance.ModelInstancePlugin;
-import de.fujaba.modelinstance.RootNode;
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
-import de.fujaba.newwizard.IFujabaEditorDescription;
 import de.fujaba.newwizard.Messages;
+import de.fujaba.newwizard.commands.CreateEmptyDiagramCommand;
 import de.fujaba.newwizard.diagrams.DiagramEditorUtil;
+import de.fujaba.newwizard.diagrams.IDiagramInformation;
 
 public abstract class AbstractCreateDiagramFileCommand extends
-		AbstractCreateFileCommand implements IFujabaEditorDescription {
+		AbstractCreateFileCommand {
+
+	protected abstract String getEditorId();
+
+	private IDiagramInformation diagramInformation;
+	
+	public AbstractCreateDiagramFileCommand() {
+		diagramInformation = FujabaNewwizardPlugin.getDefault().getDiagramInformation(getEditorId());
+	}
 
 	@Override
 	protected void createContents(URI selectedURI, IFile newFile) {
@@ -64,58 +64,13 @@ public abstract class AbstractCreateDiagramFileCommand extends
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
 		final Resource diagramResource = resourceSet
 				.createResource(diagramModelURI);
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(
-				myEditingDomain, "Initializing diagram contents", affectedFiles) {
+		AbstractTransactionalCommand command = new CreateEmptyDiagramCommand(
+				myEditingDomain, "Initializing diagram contents",
+				affectedFiles, diagramResource, diagramRoot, diagramInformation, getEditorId());
 
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
-					throws ExecutionException {
-				// int diagramVID =
-				// de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-				// .getDiagramVisualID(diagramRootElementSelectionPage
-				// .getModelElement());
-				// if (diagramVID !=
-				// de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID)
-				// {
-				// return CommandResult
-				// .newErrorCommandResult(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.MumlNewDiagramFileWizard_IncorrectRootError);
-				// }
-				ModelElementCategory category = null;
-				if (diagramRoot instanceof RootNode) {
-					RootNode rootNode = (RootNode) diagramRoot;
-					String categoryKey = getModelElementCategoryKey();
-					category = ModelInstancePlugin.getInstance()
-							.getModelElementCategoryRegistry()
-							.getModelElementCategory(rootNode, categoryKey);
-
-				} else {
-					// MessageDialog.openError(getShell(), "Error",
-					// "Model file loading fail");
-					return CommandResult
-							.newErrorCommandResult("Model file loading fail");
-				}
-				
-				EObject diagramElement = createDiagramElement();
-				
-				if (diagramElement != null) {
-					category.getModelElements().add((ExtendableElement) diagramElement);
-				} else {
-					diagramElement = category;
-				}
-
-				Diagram diagram = ViewService.createDiagram(diagramElement,
-						getModelId(), getDiagramPreferencesHint());
-				if (diagram == null) {
-					return CommandResult.newErrorCommandResult("Diagram could not be created.");
-				}
-
-				diagramResource.getContents().add(diagram);
-				return CommandResult.newOKCommandResult();
-			}
-		};
 		try {
-			IStatus status = OperationHistoryFactory.getOperationHistory().execute(command,
-					new NullProgressMonitor(), null);
+			IStatus status = OperationHistoryFactory.getOperationHistory()
+					.execute(command, new NullProgressMonitor(), null);
 			if (status.isOK()) {
 				diagramResource.save(DiagramEditorUtil.getSaveOptions());
 				Resource modelResource = diagramRoot.eResource();
@@ -138,7 +93,12 @@ public abstract class AbstractCreateDiagramFileCommand extends
 
 	@Override
 	protected String getExtension() {
-		return getDiagramFileExtension();
+		IDiagramInformation diagramInformation = FujabaNewwizardPlugin.getDefault()
+				.getDiagramInformation(getEditorId());
+		if (diagramInformation != null) {
+			return diagramInformation.getFileExtension();
+		}
+		return null;
 	}
 
 	@Override

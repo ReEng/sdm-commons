@@ -18,6 +18,7 @@ public class InitialElementAdapter extends EObjectAdapter {
 	}
 	
 	/** Adds <code>String.class</tt> adaptablity. */
+	@SuppressWarnings("rawtypes")
 	public Object getAdapter(Class adapter) { 
 		if ( adapter.equals(String.class) ) {
 			return _hint;

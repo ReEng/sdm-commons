@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EObject;
  * @author bingo
  * 
  */
-public interface DiagramElementValidator {
+public interface IDiagramElementValidator {
 
 	/**
 	 * Tests if the given object is a valid Diagram Element for the Editor.

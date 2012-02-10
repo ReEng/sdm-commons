@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.edit.provider.IWrapperItemProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
@@ -21,45 +22,51 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
+import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
-import de.fujaba.newwizard.diagrams.DiagramElementValidator;
+import de.fujaba.newwizard.diagrams.IDiagramElementValidator;
+import de.fujaba.newwizard.diagrams.IDiagramInformation;
 
-public class DiagramContentsSelectionPage extends WizardPage {
+public class DiagramContentsSelectionPage extends WizardPage implements
+		IResourceChangedListener {
 
 	/**
-	 * The DiagramElementValidator that can check, if the current selection is a
-	 * valid Diagram Element.
+	 * The top level control for this Page Extension.
 	 */
-	private DiagramElementValidator diagramElementValidator;
+	private Composite plate;
 
-	private ViewerFilter viewerFilter = new ViewerFilter() {
+	private CheckboxTreeViewer modelViewer;
 
-		@Override
-		public boolean select(Viewer viewer, Object parentElement, Object object) {
-			return parentElement == modelViewer.getInput();
-		}
-
-	};
-
-	private DiagramElementSelectionPage diagramElementSelectionPage;
+	/*
+	 * Start of attributes that can be null, if no diagramInformation was
+	 * provided in constructor.
+	 */
+	private String modelElementCategoryKey;
+	private ViewerFilter viewerFilter;
+	private IDiagramElementValidator diagramElementValidator;
 
 	/**
 	 * Constructs this DiagramModelSelectionPage.
 	 * 
 	 * @param pageId
 	 *            The ID for this Page.
-	 * @param diagramElementValidator
-	 *            The Validator that can check, if the current selection is a
-	 *            valid Diagram Element.
-	 * @param diagramElementSelectionPage
-	 * @param canSelectMultipleElements
+	 * @param diagramInformation
 	 */
 	public DiagramContentsSelectionPage(String pageId,
-			DiagramElementValidator diagramElementValidator,
-			DiagramElementSelectionPage diagramElementSelectionPage) {
+			IDiagramInformation diagramInformation) {
 		super(pageId);
-		this.diagramElementValidator = diagramElementValidator;
-		this.diagramElementSelectionPage = diagramElementSelectionPage;
+		if (diagramInformation != null) {
+			modelElementCategoryKey = diagramInformation
+					.getModelElementCategoryKey();
+			diagramElementValidator = diagramInformation.getFujabaEditor();
+			viewerFilter = new ViewerFilter() {
+				@Override
+				public boolean select(Viewer viewer, Object parentElement,
+						Object object) {
+					return parentElement == modelViewer.getInput();
+				}
+			};
+		}
 	}
 
 	/**
@@ -69,12 +76,14 @@ public class DiagramContentsSelectionPage extends WizardPage {
 	public void validatePage() {
 		String error = null;
 
-		EObject diagramElement = (EObject) modelViewer.getInput();
-		for (Object object : getSelectedElements()) {
-			EObject topLevelNodeElement = (EObject) object;
-			if (!diagramElementValidator.isValidTopLevelNodeElement(
-					diagramElement, topLevelNodeElement)) {
-				error = "Invalid top level element(s) selected.";
+		if (diagramElementValidator != null) {
+			EObject diagramElement = (EObject) modelViewer.getInput();
+			for (Object object : getSelectedElements()) {
+				EObject topLevelNodeElement = (EObject) object;
+				if (!diagramElementValidator.isValidTopLevelNodeElement(
+						diagramElement, topLevelNodeElement)) {
+					error = "Invalid top level element(s) selected.";
+				}
 			}
 		}
 
@@ -96,7 +105,8 @@ public class DiagramContentsSelectionPage extends WizardPage {
 	public void setVisible(boolean visible) {
 		super.setVisible(visible);
 		if (visible) {
-			setDiagramElement(diagramElementSelectionPage.getSelectedElement());
+			// We set this page to invalid before it was opened! So we must
+			// revalidate once it is open.
 			validatePage();
 		}
 	}
@@ -107,15 +117,9 @@ public class DiagramContentsSelectionPage extends WizardPage {
 		}
 	}
 
-	/**
-	 * The top level control for this Page Extension.
-	 */
-	private Composite plate;
-
-	/**
-	 * 
-	 */
-	private CheckboxTreeViewer modelViewer;
+	public EObject getDiagramElement() {
+		return (EObject) modelViewer.getInput();
+	}
 
 	/**
 	 * Create the controls for this Page Extension.
@@ -159,7 +163,10 @@ public class DiagramContentsSelectionPage extends WizardPage {
 		modelViewer.setLabelProvider(new AdapterFactoryLabelProvider(
 				FujabaNewwizardPlugin.getDefault()
 						.getItemProvidersAdapterFactory()));
-		modelViewer.addFilter(viewerFilter);
+
+		if (viewerFilter != null) {
+			modelViewer.addFilter(viewerFilter);
+		}
 
 		setControl(plate);
 
@@ -195,6 +202,29 @@ public class DiagramContentsSelectionPage extends WizardPage {
 	 */
 	protected String getSelectionTitle() {
 		return "Diagram contents:";
+	}
+
+	@Override
+	public void resourceChanged(Resource newResource) {
+		setDiagramElement(getResourceRoot(newResource));
+	}
+
+	public EObject getResourceRoot(Resource newResource) {
+
+		EObject rootNode = newResource.getContents().get(0);
+
+		if (modelElementCategoryKey == null) {
+			return rootNode;
+		}
+
+		for (EObject content : rootNode.eContents()) {
+			ModelElementCategory category = (ModelElementCategory) content;
+			if (modelElementCategoryKey.equals(category.getKey())) {
+				return category;
+			}
+		}
+
+		return null;
 	}
 
 }
