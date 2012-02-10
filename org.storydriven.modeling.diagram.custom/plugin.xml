@@ -217,5 +217,53 @@
          </child>
       </category>
    </extension>
+   <extension
+         point="de.fujaba.newwizard.diagraminformation">
+      <editor
+            editorId="org.storydriven.modeling.diagram.part.SDMDiagramEditorID">
+         <information
+               editorName="SDM Editor"
+               fileExtension="sdm_diagram"
+               fujabaEditor="org.storydriven.modeling.diagram.custom.part.SDMFujabaEditor"
+               modelElementCategoryKey="org.storydriven.modeling.activities"
+               modelId="SDM"
+               useModelElementCategory="false">
+         </information>
+      </editor>
+   </extension>
+   
+   
+   <extension
+      point="org.eclipse.ui.menus">
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.fujaba?after=additions">
+	      <command
+             commandId="org.storydriven.modeling.diagram.createDiagram"
+             icon="icons/objects16/ActivitiesDiagramFile.gif"
+             id="org.storydriven.modeling.diagram.createDiagram"
+             label="%initDiagramActionLabel"
+             style="push">
+	         <visibleWhen
+	               checkEnabled="false">
+	            <reference
+	                  definitionId="de.fujaba.expression.fujabafile">
+	            </reference>
+	         </visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+
+    <extension point="org.eclipse.ui.commands">
+		<command
+			categoryId="de.fujaba"
+			description="Initialize SDM Diagram"
+			defaultHandler="org.storydriven.modeling.diagram.custom.part.SDMFujabaDiagramFileAction"
+			id="org.storydriven.modeling.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+	
+   
 
 </plugin>

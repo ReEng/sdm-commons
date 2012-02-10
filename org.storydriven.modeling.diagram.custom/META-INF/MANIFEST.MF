@@ -14,3 +14,4 @@ Export-Package: org.storydriven.modeling.diagram.custom,
  org.storydriven.modeling.diagram.custom.edit.commands,
  org.storydriven.modeling.diagram.custom.edit.parts,
  org.storydriven.modeling.diagram.custom.providers
+Bundle-Localization: messages
