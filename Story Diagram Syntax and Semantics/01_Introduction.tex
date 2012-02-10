@@ -33,32 +33,3 @@ As an example, we show how story diagrams can be used to specify refactoring ope
 
 % Structure
 \todojr{Struktur}
-
-\section*{Old stuff from rejected paper}
-% Problem Area
-In model-driven software engineering, model transformations play a central role in transforming models of higher abstraction levels into more concrete models. 
-Such transformations are written in special purpose languages which offer explicit support for common transformation tasks like matching elements of the source model.
-While the development of current model transformation languages focused on those model transformation specific tasks, classical issues like inheritance and structuring were neglected.
-As a result, the transformations are often concise and efficient but hardly maintainable.
-
-% Problem
-Story diagrams~\cite{ZSW99,FNTZ00,Zun01} form a special model transformation language.
-They feature declarative parts to specify object patterns which are matched and altered in the source model and combine them with an imperative part to specify the control flow of the transformation execution.
-The concrete syntax of story diagrams extends the concrete syntax of UML activity diagrams.
-A specific challenge for story diagrams is the missing support for the invocation of other story diagrams.
-We require these invocations to account for aspects like the increased complexity of binding parameters and result values in a graphical language as well as dynamic dispatching of calls.
-
-% Related Work
-Some of the related transformation languages like ATL, QVT Operational, or Henshin already offer some support for structuring transformations into sub transformations.
-However, no existing hybrid and graphical transformation languages addresses all of the aforementioned challenges. 
-
-% Approach
-In this paper, we present an approach to tackle the lacking feature of invoking story diagrams.
-Our solution supports binding the parameter values as well as the result values of the invoked diagram.
-We also introduce polymorphic dispatching in our solution, i.e., the invoked diagram is chosen at run-time based on the actual types of the bound parameter values.
-Consequently, the story diagram meta-model as well as the existing interpreter for story diagrams \cite{GHS09} have to be extended to support the new concepts. 
-
-% Validation
-We show the effectiveness of our approach in a qualitative study of an existing transformation implemented in story diagrams. In the study, we estimate the potential to reduce the total amount and size of the story diagrams in our initial implementation. The results show a significant improvement in transformation size, leading to reduced complexity and thus an increase in the long-term maintainability of the transformation.
-
-% Contribution summary
