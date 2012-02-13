@@ -10,24 +10,29 @@ Finally, we show the use of object attributes in a story pattern in Section \ref
 \subsection{Story Patterns [CH]}
 \label{sec:StoryPatterns:storyPattern}
 
-Story patterns are typed attributed graph transformation rules with inheritance (cf. Section \ref{sec:foundations:typedAttrGTS}) that may be embedded into an activity node of a story diagram (cf. Section \ref{sec:StoryDiagrams}). Using a type model as introduced in Section \ref{sec:typeGraph} enables use of inheritance and polymorphism for matching nodes and edges.
+Story patterns are typed attributed graph transformation rules with inheritance (cf. Section \ref{sec:foundations:typedAttrGTS}) that may be embedded into an activity node of a story diagram (cf. Section \ref{sec:StoryDiagrams}). By using a type model as introduced in Section \ref{sec:typeGraph}, story patterns enable inheritance and polymorphism for matching nodes and edges.
 This allows for specifying graph replacement rules for object-oriented models.
 
 Story patterns are applied according to single pushout semantics using isomorphic matchings.
-For enabling a concise notation of the graph transformation, story pattern apply a short-hand notation depicting the left-hand side (LHS) and the right-hand side (RHS) in a single, annotated graph. Nodes and edges being created (or deleted) are annotated with \create (or  \destroy, respectively).
+For enabling a concise notation of the graph transformation, story patterns apply a short-hand notation depicting the left-hand side (LHS) and the right-hand side (RHS) in a single, annotated graph. Nodes and edges being created (or deleted) are annotated with \create (or  \destroy, respectively).
 
-Figure \ref{fig:simpleStoryPattern} shows an example of a single story pattern that creates a new method declaration in an interface and delegates the target of a call to this new method.
+Figure \ref{fig:simpleStoryPattern} shows an example of a single story pattern that creates a new method declaration in an interface and redirects a method call to this new method.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=1.0]{figures/SimpleStoryPattern}
-  \caption{Simple Story Pattern}
+  \caption{Example of a Story Pattern}
   \label{fig:simpleStoryPattern}
 \end{figure}
 
-In the example, the nodes \fe{call}, \fe{interface}, and \fe{method} are bound objects (cf. Section \ref{sec:StoryPatterns:binding:states}), i.e., they are already matched. When applying the story pattern, the link from \fe{call} to \fe{method} will be deleted. Thereafter, the node \fe{methodDecl} of type \fe{Method} will be created along with the three links pointing to it. Upon creation, the attributes \fe{visibility}, \fe{abstract}, and \fe{name} are initialized with the specified values.
+In the example, the nodes \fe{call}, \fe{interface}, and \fe{method} are bound variables, i.e., they already refer to objects (cf. Section \ref{sec:StoryPatterns:binding:states}). When applying the story pattern, the link from \fe{call} to \fe{method} will be deleted. Thereafter, the node \fe{methodDecl} of type \fe{Method} will be created along with the three links pointing to it. Upon creation, the attributes \fe{visibility}, \fe{abstract}, and \fe{name} are initialized with the specified values. \fe{PUBLIC} and \fe{true} are literal to be assigned to the attributes, while \fe{method.name} refers to the name attribute of the object bound to \fe{method}. More information on attributes can be found in Section~\ref{sec:StoryPatterns:attributes}.
 
 In a story pattern, we call all nodes and links that do not carry an annotation the \emph{core graph} of the story pattern. Then, the LHS of the story pattern consists of the core graph and all nodes and links annotated with \destroy. Accordingly, the RHS of the story pattern consists of the core graph and all node and links annotated with \create.
+
+In our concrete syntax, the elements of the core graph are visualized in black. Objects and links to be destroyed are annotated with \destroy and visualized in red. Objects and links to be created are annotated with \create and visualized in green.
+
+In general, the matching process is executed as a three step process:
+first, a matching is searched which uses a bound variable of the core graph as a starting point. The matching includes all objects and links of the core graph as well as all objects and links annotated with \destroy. If such matching can be obtained, the story pattern is applicable and the execution proceeds. In the second step, all objects and links annotated with \destroy are deleted. Finally, in Step 3 all objects and links annotated with \create are created.
 
 \subsection{Objects and Object Variables [MCP]}
 \label{sec:StoryPatterns:objects}
