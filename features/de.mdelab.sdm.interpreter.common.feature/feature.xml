@@ -16,6 +16,8 @@
    <requires>
       <import plugin="org.eclipse.core.runtime" version="3.6.0" match="greaterOrEqual"/>
       <import plugin="de.mdelab.sdm.interpreter.common" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ocl.ecore" version="3.0.1" match="greaterOrEqual"/>
+      <import plugin="de.mdelab.sdm.interpreter.common.eclipse" version="1.0.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -27,6 +29,13 @@
 
    <plugin
          id="de.mdelab.sdm.interpreter.common.eclipse"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.mdelab.sdm.interpreter.ocl"
          download-size="0"
          install-size="0"
          version="0.0.0"
