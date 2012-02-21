@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.storydriven.modeling.model.feature"
+      label="Storydriven Model"
+      version="1.0.0.qualifier"
+      provider-name="storydriven.org">
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      Eclipse Public License
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="compatible"/>
+      <import plugin="org.eclipse.uml2.codegen.ecore" version="1.6.0" match="compatible"/>
+      <import plugin="org.storydriven.modeling" version="1.0.0" match="compatible"/>
+      <import plugin="org.antlr.runtime" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.xtext" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.xtext.util" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.xtext.xtend2" version="2.0.0" match="compatible"/>
+      <import plugin="org.storydriven.modeling.expressions.common" version="1.0.0" match="compatible"/>
+      <import plugin="org.eclipse.xtext.builder" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.xtext.ui" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.xtext.ui.shared" version="2.0.0" match="compatible"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.storydriven.modeling.expressions" version="1.0.0" match="compatible"/>
+      <import plugin="org.eclipse.ocl" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.uml2.common.edit" version="1.5.0" match="compatible"/>
+   </requires>
+
+   <plugin
+         id="org.storydriven.modeling"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.modeling.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.modeling.expressions"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.modeling.expressions.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.modeling.expressions.common.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.modeling.expressions.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
