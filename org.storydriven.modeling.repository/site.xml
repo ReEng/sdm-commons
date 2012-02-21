@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.storydriven.modeling.editor.feature_1.0.0.201202211747.jar" id="org.storydriven.modeling.editor.feature" version="1.0.0.201202211747"/>
+   <feature url="features/org.storydriven.modeling.interpreter.feature_1.0.0.201202211747.jar" id="org.storydriven.modeling.interpreter.feature" version="1.0.0.201202211747"/>
+   <feature url="features/org.storydriven.modeling.model.feature_1.0.0.201202211747.jar" id="org.storydriven.modeling.model.feature" version="1.0.0.201202211747"/>
+</site>
