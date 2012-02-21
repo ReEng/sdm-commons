@@ -13,12 +13,13 @@
          id="org.storydriven.modeling.model.feature"
          version="0.0.0"/>
 
+   <includes
+         id="de.mdelab.sdm.interpreter.common.feature"
+         version="0.0.0"/>
+
    <requires>
-      <import plugin="org.storydriven.modeling" version="1.0.0" match="compatible"/>
-      <import plugin="org.storydriven.modeling.expressions" version="1.0.0" match="compatible"/>
-      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="compatible"/>
-      <import plugin="org.eclipse.emf.common.ui" version="2.5.0" match="compatible"/>
       <import plugin="org.eclipse.ui" version="3.6.0" match="compatible"/>
+      <import plugin="org.storydriven.modeling.expressions" version="1.0.0" match="compatible"/>
       <import plugin="de.mdelab.sdm.interpreter.common" version="1.0.0" match="compatible"/>
       <import plugin="de.mdelab.sdm.interpreter.common.eclipse" version="1.0.0" match="compatible"/>
    </requires>
