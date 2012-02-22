@@ -17,7 +17,6 @@ public class ExpressionUtils
    public static final String EXPRESSION_SOURCE_VIEWER_ATTRIBUTE_NAME = "sourceViewerProvider";
 
    private static Map<String, List<String>> expressionLanguages = null;
-   private static Map<String, String> sourceViewerProviders = null;
 
    private static int amountLanguages = 0;
    private static int maximumAmountVersions = 0;
@@ -72,7 +71,6 @@ public class ExpressionUtils
    public static void initializeExpressionLanguageCollection ()
    {
       expressionLanguages = new HashMap<String, List<String>>();
-      sourceViewerProviders = new HashMap<String, String>();
 
       if (Platform.getExtensionRegistry() != null)
       {
