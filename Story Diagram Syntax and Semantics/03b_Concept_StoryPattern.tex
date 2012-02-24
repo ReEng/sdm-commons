@@ -54,6 +54,7 @@ For example, the object variable \fe{methodDecl} has the type \fe{Method}.
 Object variables have binding states, binding operators and binding semantics.
 They are described in Section  \ref{sec:StoryPatterns:binding}.
 
+
 \ext %--- Comment this line to include primitive variables into the document
 {
 \todomcp{Primitive Variables: concrete syntax like
@@ -70,7 +71,9 @@ exist to the end of the Activity}
 
 \todomcp{Links to primitive variables: special LinkVariable, typed over
 EStructuralFeature}
-}
+}%------ End of primitive variables section
+
+
 
 \subsection{Links and Link Variables [MCP]}
 \label{sec:StoryPatterns:links}
@@ -222,6 +225,7 @@ Since elements marked with \create do not exist in the object graph during the
 matching process yet, they also do not belong to a connected component (like
 negative or optional variables).
 
+
 \subsubsection{Feasible Binding Combinations}
 
 Binding states, binding semantics and binding operators can be
@@ -306,6 +310,7 @@ The feasible combinations of binding semantics and binding operators for link
 variables are given in Table \ref{tab:bindingCombinations_links}. Link variables
 have no binding state.
 
+
 \subsection{Using Object Attributes [CH]}
 \label{sec:StoryPatterns:attributes}
 
@@ -340,6 +345,8 @@ The concrete syntax of an attribute assignment is
  <attributeAssignment> ::= #Attribute.name ':=' Expression
 \end{lstlisting}
 The expression is to be specified using OCL. The type of the return value of the OCL expression must be the same as the type of the attribute. Since the attribute assignment is considered to be part of the RHS, it is visualized in green color.
+
+
 
 \ext  %--- Comment this line to include object sets into the document
 {
@@ -414,6 +421,9 @@ A maybe constraint could allow to match the same objects to both sets.}
 \todojr{We decided to match set nodes without them having to be disjoint, thus, we do not enforce isomorphism for the content of two or more set variables.}
 }%------ End of object set section
 
+
+
+
 \ext  %--- Comment this line to include special link kinds into the document
 {
 \subsection{Special Link Kinds [CH]}
@@ -478,7 +488,7 @@ A link position constraint specifies that the target object of the constrained l
 
 When link position constraints are attached to links with \destroy stereotypes, the semantics are identical, even if they are optional. For links with \create stereotype, the link's target element is inserted at the specified position. For optionally created links, the semantics is somewhat different. If the link does not yet exist, it is created. The target element is inserted at the specified position in the reference. If the link does exist but the element is not at the specified position, it is moved.
 
-\todoall{Alternatives: 1.) Ignore link position constraints on optional-create links, 2.) add target element a second time. For unique references, this has the same effect like moving the element, in case of non-unique references, the element exists twice (or more times) in the list, afterwards.}
+\todoall{Alternatives: 1. Ignore link position constraints on optional-create links, 2. add target element a second time. For unique references, this has the same effect like moving the element, in case of non-unique references, the element exists twice (or more times) in the list, afterwards.}
 
 \begin{figure}[htb]
 \center
@@ -543,8 +553,9 @@ Story pattern are matched by using isomorphic matchings. That means that two obj
 \end{figure}
 
 If two object variables are connected by a maybe link, they both must be mandatory or optional. In addition, a maybe link requires the object variables to be matched or destroyed, but not created.  
-
 } %--- End of special link kinds section
+
+
 
 \ext  %--- Comment this line to include pattern constraints into the document
 {
@@ -554,6 +565,9 @@ If two object variables are connected by a maybe link, they both must be mandato
 \tododt{Exactly. In this case, it is a kind of post condition that has to be satisfied at the end of the matching step.}
 
 } %--- End of pattern constraints section
+
+
+
 
 \ext  %--- Comment this line to include pattern fragments into the document
 {
@@ -600,5 +614,3 @@ These are only used in SDDs and TSSDs which are constraint languages.
 \todomcp{How deep may patterns be nested? What is the semantics of alternating binding semantics of sub-patterns, e.g. negative in optional in negative and so on.}
 \tododt{I would prefer to allow arbitrarily deep nestings and would suggest to interpret the fragments in the order from outside to inside. Example (see Figure~\ref{fig:subPatternHierarchies}): You match a super class \emph{superClass} of \emph{myClass} and ensure that \emph{superClass} has no attribute. Then you you match all methods \emph{new} (outer set fragment) that have no class as their type (enclosed NAC fragment). Now you match for each of these methods all parameters (enclosed set fragment) that have \emph{myClass} as their type. Furthermore, you try to find a path from the matched \emph{new} method to a return statement (optional fragment).}
 } %--- End of pattern fragment section
-
-

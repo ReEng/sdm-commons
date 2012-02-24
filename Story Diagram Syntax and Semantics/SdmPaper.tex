@@ -5,7 +5,6 @@
 %\selectlanguage{english}
 \usepackage[T1]{fontenc}
 
-
 \newif\ifpdfhere
 \ifx\pdfoutput\undefined
 \pdfherefalse % we are not running pdflatex
@@ -151,8 +150,15 @@ backgroundcolor=\color{white}
 \pagestyle{fancy} 
 \fancyhf{} 
 \fancyhead[EL,OR]{\thepage} 
-\fancyhead[ER]{\small\scshape{\leftmark}}
-\fancyhead[OL]{\small\scshape{\rightmark}}
+\fancyhead[ER]{\bf\small\nouppercase\leftmark}
+\fancyhead[OL]{\it\small\nouppercase\rightmark}
+
+\fancypagestyle{plain}{% Neudefinition der plain-Seiten (erste Seite bei Verzeichnissen und Kapiteln)
+  \fancyhf{}
+  \fancyhead[EL,OR]{\thepage} 
+  \fancyhead[ER]{\bf\small\nouppercase\leftmark}
+  \fancyhead[OL]{\it\small\nouppercase\rightmark}
+}
 
 %% \TODO{}-Command um schnell zu sehen was noch zu machen ist ;)
 
@@ -181,7 +187,7 @@ backgroundcolor=\color{white}
 	% ************************************************************
 
 	\setcounter{page}{1}
-	\pagenumbering{Roman}
+	\pagenumbering{roman}
 
 	\begin{titlepage}
 	\thispagestyle{empty}
