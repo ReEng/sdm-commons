@@ -67,7 +67,7 @@ Besides execution, the formally defined story diagrams can also be analyzed to g
 For example, model checking can be used to check if a safety property is always met (\todoall{example!!!}) or if a critical state (\todoall{example!!!}) can ever be reached.
 
 
-\subsection{The Language Constructs in Story Diagrams (Jan/Dietrich)}\label{sec:StoryDiagrams:composition}
+%\subsection{The Language Constructs in Story Diagrams (Jan/Dietrich)}\label{sec:StoryDiagrams:composition}
 
 \begin{itemize}
 %  \item Combination of an excerpt of UML 1.5 activity diagrams and story patterns (incl. example)
@@ -78,7 +78,7 @@ For example, model checking can be used to check if a safety property is always 
 \end{itemize}
 
 
-\subsubsection{Activities, Activity Parameters and Return Values (Dietrich)}
+\subsection{Activities, Activity Parameters and Return Values (Dietrich)}
 
 Since story diagrams can be seen as special UML activity diagrams, we reused the class names defined by the UML.
 Thus, similar to UML activity diagrams, a story diagram is represented by a so-called activity (class \fe{Activity}).
@@ -104,7 +104,7 @@ For example, the object matched to the object variable \fe{c} is returned by the
 Otherwise, the \emph{null} reference is returned which is specified by the keyword \emph{null}.
 
 
-\subsubsection{Activity Nodes, Activity Edges (Dietrich)}
+\subsection{Activity Nodes, Activity Edges (Dietrich)}
 
 \todoall{Story Nodes (laut Doku im Meta Modell ist ein
 Story Node ``an activity node containing a story pattern'') werden in Modifying
@@ -150,12 +150,12 @@ to terminate the specified loop by following the \text[end\text] activity edge.
 
 
 
-\subsubsection{Decision Nodes and Guards (Jan)}
+\subsection{Decision Nodes and Guards (Jan)}
 - no fork and join
 
-\subsubsection{Loops (Jan)}
+\subsection{Loops (Jan)}
 
-\subsubsection{Story Diagram Calls (Markus)}
+\subsection{Story Diagram Calls (Markus)}
 
 Story diagram calls are special nodes in a story diagram which are used to invoke other story diagrams. Similar to method calls, this reduces redundancy and promotes reuse.
 
@@ -183,4 +183,6 @@ If a story diagram has no out parameters, the colon and the out parameters names
 % method calls
 % polymorphic calls
 
-\subsubsection{Exception Handling (maybe not in Ver. 0.1)}
+\ext{
+\subsection{Exception Handling (maybe not in Ver. 0.1)}
+}
