@@ -406,152 +406,6 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getRightSomeValueParserRuleCall_2_0() { return cRightSomeValueParserRuleCall_2_0; }
 	}
 
-	public class OpenCompareElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OpenCompare");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cSomeValueParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
-		private final Action cLessOrEqualLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
-		private final Keyword cLessThanSignEqualsSignKeyword_1_0_2 = (Keyword)cGroup_1_0.eContents().get(2);
-		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
-		private final Action cLessLeftAction_1_1_0 = (Action)cGroup_1_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
-		private final Keyword cLessThanSignKeyword_1_1_2 = (Keyword)cGroup_1_1.eContents().get(2);
-		private final Group cGroup_1_2 = (Group)cAlternatives_1.eContents().get(2);
-		private final Action cGreaterOrEqualLeftAction_1_2_0 = (Action)cGroup_1_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
-		private final Keyword cGreaterThanSignEqualsSignKeyword_1_2_2 = (Keyword)cGroup_1_2.eContents().get(2);
-		private final Group cGroup_1_3 = (Group)cAlternatives_1.eContents().get(3);
-		private final Action cGreaterLeftAction_1_3_0 = (Action)cGroup_1_3.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_3_1 = (Keyword)cGroup_1_3.eContents().get(1);
-		private final Keyword cGreaterThanSignKeyword_1_3_2 = (Keyword)cGroup_1_3.eContents().get(2);
-		private final Group cGroup_1_4 = (Group)cAlternatives_1.eContents().get(4);
-		private final Action cEqualLeftAction_1_4_0 = (Action)cGroup_1_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_4_1 = (Keyword)cGroup_1_4.eContents().get(1);
-		private final Keyword cEqualsSignKeyword_1_4_2 = (Keyword)cGroup_1_4.eContents().get(2);
-		private final Group cGroup_1_5 = (Group)cAlternatives_1.eContents().get(5);
-		private final Action cUnequalLeftAction_1_5_0 = (Action)cGroup_1_5.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_5_1 = (Keyword)cGroup_1_5.eContents().get(1);
-		private final Keyword cExclamationMarkEqualsSignKeyword_1_5_2 = (Keyword)cGroup_1_5.eContents().get(2);
-		private final Group cGroup_1_6 = (Group)cAlternatives_1.eContents().get(6);
-		private final Action cApproxLeftAction_1_6_0 = (Action)cGroup_1_6.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_6_1 = (Keyword)cGroup_1_6.eContents().get(1);
-		private final Keyword cTildeKeyword_1_6_2 = (Keyword)cGroup_1_6.eContents().get(2);
-		private final Assignment cRightAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cRightSomeValueParserRuleCall_2_0 = (RuleCall)cRightAssignment_2.eContents().get(0);
-		
-		//OpenCompare returns CExpression:
-		//	SomeValue ({LessOrEqual.left=current} ")" "<=" | {Less.left=current} ")" "<" | {GreaterOrEqual.left=current} ")" ">="
-		//	| {Greater.left=current} ")" ">" | {Equal.left=current} ")" "=" | {Unequal.left=current} ")" "!=" |
-		//	{Approx.left=current} ")" "~") right=SomeValue;
-		public ParserRule getRule() { return rule; }
-
-		//SomeValue ({LessOrEqual.left=current} ")" "<=" | {Less.left=current} ")" "<" | {GreaterOrEqual.left=current} ")" ">=" |
-		//{Greater.left=current} ")" ">" | {Equal.left=current} ")" "=" | {Unequal.left=current} ")" "!=" | {Approx.left=current}
-		//")" "~") right=SomeValue
-		public Group getGroup() { return cGroup; }
-
-		//SomeValue
-		public RuleCall getSomeValueParserRuleCall_0() { return cSomeValueParserRuleCall_0; }
-
-		//{LessOrEqual.left=current} ")" "<=" | {Less.left=current} ")" "<" | {GreaterOrEqual.left=current} ")" ">=" |
-		//{Greater.left=current} ")" ">" | {Equal.left=current} ")" "=" | {Unequal.left=current} ")" "!=" | {Approx.left=current}
-		//")" "~"
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-
-		//{LessOrEqual.left=current} ")" "<="
-		public Group getGroup_1_0() { return cGroup_1_0; }
-
-		//{LessOrEqual.left=current}
-		public Action getLessOrEqualLeftAction_1_0_0() { return cLessOrEqualLeftAction_1_0_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_1_0_1() { return cRightParenthesisKeyword_1_0_1; }
-
-		//"<="
-		public Keyword getLessThanSignEqualsSignKeyword_1_0_2() { return cLessThanSignEqualsSignKeyword_1_0_2; }
-
-		//{Less.left=current} ")" "<"
-		public Group getGroup_1_1() { return cGroup_1_1; }
-
-		//{Less.left=current}
-		public Action getLessLeftAction_1_1_0() { return cLessLeftAction_1_1_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_1_1_1() { return cRightParenthesisKeyword_1_1_1; }
-
-		//"<"
-		public Keyword getLessThanSignKeyword_1_1_2() { return cLessThanSignKeyword_1_1_2; }
-
-		//{GreaterOrEqual.left=current} ")" ">="
-		public Group getGroup_1_2() { return cGroup_1_2; }
-
-		//{GreaterOrEqual.left=current}
-		public Action getGreaterOrEqualLeftAction_1_2_0() { return cGreaterOrEqualLeftAction_1_2_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_1_2_1() { return cRightParenthesisKeyword_1_2_1; }
-
-		//">="
-		public Keyword getGreaterThanSignEqualsSignKeyword_1_2_2() { return cGreaterThanSignEqualsSignKeyword_1_2_2; }
-
-		//{Greater.left=current} ")" ">"
-		public Group getGroup_1_3() { return cGroup_1_3; }
-
-		//{Greater.left=current}
-		public Action getGreaterLeftAction_1_3_0() { return cGreaterLeftAction_1_3_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_1_3_1() { return cRightParenthesisKeyword_1_3_1; }
-
-		//">"
-		public Keyword getGreaterThanSignKeyword_1_3_2() { return cGreaterThanSignKeyword_1_3_2; }
-
-		//{Equal.left=current} ")" "="
-		public Group getGroup_1_4() { return cGroup_1_4; }
-
-		//{Equal.left=current}
-		public Action getEqualLeftAction_1_4_0() { return cEqualLeftAction_1_4_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_1_4_1() { return cRightParenthesisKeyword_1_4_1; }
-
-		//"="
-		public Keyword getEqualsSignKeyword_1_4_2() { return cEqualsSignKeyword_1_4_2; }
-
-		//{Unequal.left=current} ")" "!="
-		public Group getGroup_1_5() { return cGroup_1_5; }
-
-		//{Unequal.left=current}
-		public Action getUnequalLeftAction_1_5_0() { return cUnequalLeftAction_1_5_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_1_5_1() { return cRightParenthesisKeyword_1_5_1; }
-
-		//"!="
-		public Keyword getExclamationMarkEqualsSignKeyword_1_5_2() { return cExclamationMarkEqualsSignKeyword_1_5_2; }
-
-		//{Approx.left=current} ")" "~"
-		public Group getGroup_1_6() { return cGroup_1_6; }
-
-		//{Approx.left=current}
-		public Action getApproxLeftAction_1_6_0() { return cApproxLeftAction_1_6_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_1_6_1() { return cRightParenthesisKeyword_1_6_1; }
-
-		//"~"
-		public Keyword getTildeKeyword_1_6_2() { return cTildeKeyword_1_6_2; }
-
-		//right=SomeValue
-		public Assignment getRightAssignment_2() { return cRightAssignment_2; }
-
-		//SomeValue
-		public RuleCall getRightSomeValueParserRuleCall_2_0() { return cRightSomeValueParserRuleCall_2_0; }
-	}
-
 	public class SomeValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SomeValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -924,7 +778,6 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 	private NegatedElements pNegated;
 	private CExpressionElements pCExpression;
 	private CompareElements pCompare;
-	private OpenCompareElements pOpenCompare;
 	private SomeValueElements pSomeValue;
 	private AExpressionElements pAExpression;
 	private AdditionElements pAddition;
@@ -1054,18 +907,6 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getCompareRule() {
 		return getCompareAccess().getRule();
-	}
-
-	//OpenCompare returns CExpression:
-	//	SomeValue ({LessOrEqual.left=current} ")" "<=" | {Less.left=current} ")" "<" | {GreaterOrEqual.left=current} ")" ">="
-	//	| {Greater.left=current} ")" ">" | {Equal.left=current} ")" "=" | {Unequal.left=current} ")" "!=" |
-	//	{Approx.left=current} ")" "~") right=SomeValue;
-	public OpenCompareElements getOpenCompareAccess() {
-		return (pOpenCompare != null) ? pOpenCompare : (pOpenCompare = new OpenCompareElements());
-	}
-	
-	public ParserRule getOpenCompareRule() {
-		return getOpenCompareAccess().getRule();
 	}
 
 	//SomeValue:
@@ -1209,8 +1050,8 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" | "n" |
-	//	"f" | "r" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
+	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
+	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 

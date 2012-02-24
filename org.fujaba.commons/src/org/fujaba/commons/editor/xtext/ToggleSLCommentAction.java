@@ -123,7 +123,6 @@ public final class ToggleSLCommentAction extends Action implements IUpdate {
 			IRegion block= getTextBlockFromSelection(textSelection, document);
 			ITypedRegion[] regions= TextUtilities.computePartitioning(document, fDocumentPartitioning, block.getOffset(), block.getLength(), false);
 
-			int lineCount= 0;
 			int[] lines= new int[regions.length * 2]; // [startline, endline, startline, endline, ...]
 			for (int i= 0, j= 0; i < regions.length; i++, j+= 2) {
 				// start line of region
@@ -134,7 +133,6 @@ public final class ToggleSLCommentAction extends Action implements IUpdate {
 				if (length > 0)
 					offset--;
 				lines[j + 1]= (lines[j] == -1 ? -1 : document.getLineOfOffset(offset));
-				lineCount += lines[j + 1] - lines[j] + 1;
 			}
 
 			// Perform the check

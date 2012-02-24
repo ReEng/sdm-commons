@@ -41,7 +41,6 @@ public class ExpressionsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNegationAccess().getAlternatives(), "rule__Negation__Alternatives");
 					put(grammarAccess.getCExpressionAccess().getAlternatives(), "rule__CExpression__Alternatives");
 					put(grammarAccess.getCompareAccess().getAlternatives_1(), "rule__Compare__Alternatives_1");
-					put(grammarAccess.getOpenCompareAccess().getAlternatives_1(), "rule__OpenCompare__Alternatives_1");
 					put(grammarAccess.getSomeValueAccess().getAlternatives(), "rule__SomeValue__Alternatives");
 					put(grammarAccess.getAdditionAccess().getAlternatives_1_0(), "rule__Addition__Alternatives_1_0");
 					put(grammarAccess.getMultiplicationAccess().getAlternatives_1_0(), "rule__Multiplication__Alternatives_1_0");
@@ -68,14 +67,6 @@ public class ExpressionsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCompareAccess().getGroup_1_4(), "rule__Compare__Group_1_4__0");
 					put(grammarAccess.getCompareAccess().getGroup_1_5(), "rule__Compare__Group_1_5__0");
 					put(grammarAccess.getCompareAccess().getGroup_1_6(), "rule__Compare__Group_1_6__0");
-					put(grammarAccess.getOpenCompareAccess().getGroup(), "rule__OpenCompare__Group__0");
-					put(grammarAccess.getOpenCompareAccess().getGroup_1_0(), "rule__OpenCompare__Group_1_0__0");
-					put(grammarAccess.getOpenCompareAccess().getGroup_1_1(), "rule__OpenCompare__Group_1_1__0");
-					put(grammarAccess.getOpenCompareAccess().getGroup_1_2(), "rule__OpenCompare__Group_1_2__0");
-					put(grammarAccess.getOpenCompareAccess().getGroup_1_3(), "rule__OpenCompare__Group_1_3__0");
-					put(grammarAccess.getOpenCompareAccess().getGroup_1_4(), "rule__OpenCompare__Group_1_4__0");
-					put(grammarAccess.getOpenCompareAccess().getGroup_1_5(), "rule__OpenCompare__Group_1_5__0");
-					put(grammarAccess.getOpenCompareAccess().getGroup_1_6(), "rule__OpenCompare__Group_1_6__0");
 					put(grammarAccess.getAdditionAccess().getGroup(), "rule__Addition__Group__0");
 					put(grammarAccess.getAdditionAccess().getGroup_1(), "rule__Addition__Group_1__0");
 					put(grammarAccess.getAdditionAccess().getGroup_1_0_0(), "rule__Addition__Group_1_0_0__0");
@@ -98,7 +89,6 @@ public class ExpressionsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConjunctionAccess().getRightAssignment_1_2(), "rule__Conjunction__RightAssignment_1_2");
 					put(grammarAccess.getNegatedAccess().getNotAssignment_1(), "rule__Negated__NotAssignment_1");
 					put(grammarAccess.getCompareAccess().getRightAssignment_2(), "rule__Compare__RightAssignment_2");
-					put(grammarAccess.getOpenCompareAccess().getRightAssignment_2(), "rule__OpenCompare__RightAssignment_2");
 					put(grammarAccess.getAdditionAccess().getRightAssignment_1_1(), "rule__Addition__RightAssignment_1_1");
 					put(grammarAccess.getMultiplicationAccess().getRightAssignment_1_1(), "rule__Multiplication__RightAssignment_1_1");
 					put(grammarAccess.getPowerAccess().getRightAssignment_1_1(), "rule__Power__RightAssignment_1_1");

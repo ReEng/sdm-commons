@@ -1,10 +1,8 @@
 package org.storydriven.modeling.expressions.parser.antlr.internal; 
 
-import java.io.InputStream;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
-import org.eclipse.xtext.parsetree.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.common.util.Enumerator;
@@ -12,7 +10,6 @@ import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
-import org.eclipse.xtext.conversion.ValueConverterException;
 import org.storydriven.modeling.expressions.services.PathExpressionsGrammarAccess;
 
 
@@ -27,38 +24,53 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'", "'|'", "'.'", "'['", "','", "']'", "'!'", "'NO_REPEAT'", "'+'", "'*'", "'-->'", "'<>-->'", "'--><>'"
     };
-    public static final int RULE_ID=4;
-    public static final int RULE_STRING=6;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int RULE_INT=5;
-    public static final int RULE_WS=9;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int EOF=-1;
     public static final int RULE_ML_COMMENT=7;
+    public static final int T__12=12;
+    public static final int RULE_ID=4;
+    public static final int T__23=23;
+    public static final int T__20=20;
+    public static final int T__13=13;
+    public static final int RULE_STRING=6;
+    public static final int T__21=21;
+    public static final int T__19=19;
+    public static final int T__14=14;
+    public static final int T__11=11;
+    public static final int T__22=22;
+    public static final int RULE_WS=9;
+    public static final int T__17=17;
+    public static final int EOF=-1;
+    public static final int RULE_INT=5;
+    public static final int T__16=16;
+    public static final int T__24=24;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__18=18;
+    public static final int T__15=15;
+
+    // delegates
+    // delegators
+
 
         public InternalPathExpressionsParser(TokenStream input) {
-            super(input);
+            this(input, new RecognizerSharedState());
+        }
+        public InternalPathExpressionsParser(TokenStream input, RecognizerSharedState state) {
+            super(input, state);
+             
         }
         
 
-    public String[] getTokenNames() { return tokenNames; }
+    public String[] getTokenNames() { return InternalPathExpressionsParser.tokenNames; }
     public String getGrammarFileName() { return "../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g"; }
 
 
 
      	private PathExpressionsGrammarAccess grammarAccess;
      	
-        public InternalPathExpressionsParser(TokenStream input, IAstFactory factory, PathExpressionsGrammarAccess grammarAccess) {
+        public InternalPathExpressionsParser(TokenStream input, PathExpressionsGrammarAccess grammarAccess) {
             this(input);
-            this.factory = factory;
-            registerRules(grammarAccess.getGrammar());
             this.grammarAccess = grammarAccess;
-        }
-        
-        @Override
-        protected InputStream getTokenFile() {
-        	ClassLoader classLoader = getClass().getClassLoader();
-        	return classLoader.getResourceAsStream("org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.tokens");
+            registerRules(grammarAccess.getGrammar());
         }
         
         @Override
@@ -73,8 +85,8 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
 
 
-    // $ANTLR start entryRulePathExpression
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:78:1: entryRulePathExpression returns [EObject current=null] : iv_rulePathExpression= rulePathExpression EOF ;
+    // $ANTLR start "entryRulePathExpression"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:68:1: entryRulePathExpression returns [EObject current=null] : iv_rulePathExpression= rulePathExpression EOF ;
     public final EObject entryRulePathExpression() throws RecognitionException {
         EObject current = null;
 
@@ -82,13 +94,14 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:79:2: (iv_rulePathExpression= rulePathExpression EOF )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:80:2: iv_rulePathExpression= rulePathExpression EOF
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:69:2: (iv_rulePathExpression= rulePathExpression EOF )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:70:2: iv_rulePathExpression= rulePathExpression EOF
             {
-             currentNode = createCompositeNode(grammarAccess.getPathExpressionRule(), currentNode); 
+             newCompositeNode(grammarAccess.getPathExpressionRule()); 
             pushFollow(FOLLOW_rulePathExpression_in_entryRulePathExpression75);
             iv_rulePathExpression=rulePathExpression();
-            _fsp--;
+
+            state._fsp--;
 
              current =iv_rulePathExpression; 
             match(input,EOF,FOLLOW_EOF_in_entryRulePathExpression85); 
@@ -105,14 +118,19 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end entryRulePathExpression
+    // $ANTLR end "entryRulePathExpression"
 
 
-    // $ANTLR start rulePathExpression
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:87:1: rulePathExpression returns [EObject current=null] : ( ( (lv_pathAlternatives_0_0= rulePath ) ) | ( '(' ( (lv_pathAlternatives_2_0= rulePath ) ) ')' ( '|' '(' ( (lv_pathAlternatives_6_0= rulePath ) ) ')' )+ ) ) ;
+    // $ANTLR start "rulePathExpression"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:77:1: rulePathExpression returns [EObject current=null] : ( ( (lv_pathAlternatives_0_0= rulePath ) ) | (otherlv_1= '(' ( (lv_pathAlternatives_2_0= rulePath ) ) otherlv_3= ')' (otherlv_4= '|' otherlv_5= '(' ( (lv_pathAlternatives_6_0= rulePath ) ) otherlv_7= ')' )+ ) ) ;
     public final EObject rulePathExpression() throws RecognitionException {
         EObject current = null;
 
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
         EObject lv_pathAlternatives_0_0 = null;
 
         EObject lv_pathAlternatives_2_0 = null;
@@ -120,48 +138,43 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         EObject lv_pathAlternatives_6_0 = null;
 
 
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
+         enterRule(); 
             
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:92:6: ( ( ( (lv_pathAlternatives_0_0= rulePath ) ) | ( '(' ( (lv_pathAlternatives_2_0= rulePath ) ) ')' ( '|' '(' ( (lv_pathAlternatives_6_0= rulePath ) ) ')' )+ ) ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:93:1: ( ( (lv_pathAlternatives_0_0= rulePath ) ) | ( '(' ( (lv_pathAlternatives_2_0= rulePath ) ) ')' ( '|' '(' ( (lv_pathAlternatives_6_0= rulePath ) ) ')' )+ ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:80:28: ( ( ( (lv_pathAlternatives_0_0= rulePath ) ) | (otherlv_1= '(' ( (lv_pathAlternatives_2_0= rulePath ) ) otherlv_3= ')' (otherlv_4= '|' otherlv_5= '(' ( (lv_pathAlternatives_6_0= rulePath ) ) otherlv_7= ')' )+ ) ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:81:1: ( ( (lv_pathAlternatives_0_0= rulePath ) ) | (otherlv_1= '(' ( (lv_pathAlternatives_2_0= rulePath ) ) otherlv_3= ')' (otherlv_4= '|' otherlv_5= '(' ( (lv_pathAlternatives_6_0= rulePath ) ) otherlv_7= ')' )+ ) )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:93:1: ( ( (lv_pathAlternatives_0_0= rulePath ) ) | ( '(' ( (lv_pathAlternatives_2_0= rulePath ) ) ')' ( '|' '(' ( (lv_pathAlternatives_6_0= rulePath ) ) ')' )+ ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:81:1: ( ( (lv_pathAlternatives_0_0= rulePath ) ) | (otherlv_1= '(' ( (lv_pathAlternatives_2_0= rulePath ) ) otherlv_3= ')' (otherlv_4= '|' otherlv_5= '(' ( (lv_pathAlternatives_6_0= rulePath ) ) otherlv_7= ')' )+ ) )
             int alt2=2;
             alt2 = dfa2.predict(input);
             switch (alt2) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:93:2: ( (lv_pathAlternatives_0_0= rulePath ) )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:81:2: ( (lv_pathAlternatives_0_0= rulePath ) )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:93:2: ( (lv_pathAlternatives_0_0= rulePath ) )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:94:1: (lv_pathAlternatives_0_0= rulePath )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:81:2: ( (lv_pathAlternatives_0_0= rulePath ) )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:82:1: (lv_pathAlternatives_0_0= rulePath )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:94:1: (lv_pathAlternatives_0_0= rulePath )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:95:3: lv_pathAlternatives_0_0= rulePath
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:82:1: (lv_pathAlternatives_0_0= rulePath )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:83:3: lv_pathAlternatives_0_0= rulePath
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getPathExpressionAccess().getPathAlternativesPathParserRuleCall_0_0(), currentNode); 
+                    	        newCompositeNode(grammarAccess.getPathExpressionAccess().getPathAlternativesPathParserRuleCall_0_0()); 
                     	    
                     pushFollow(FOLLOW_rulePath_in_rulePathExpression131);
                     lv_pathAlternatives_0_0=rulePath();
-                    _fsp--;
+
+                    state._fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getPathExpressionRule().getType().getClassifier());
-                    	            associateNodeWithAstElement(currentNode.getParent(), current);
+                    	            current = createModelElementForParent(grammarAccess.getPathExpressionRule());
                     	        }
-                    	        try {
-                    	       		add(
-                    	       			current, 
-                    	       			"pathAlternatives",
-                    	        		lv_pathAlternatives_0_0, 
-                    	        		"Path", 
-                    	        		currentNode);
-                    	        } catch (ValueConverterException vce) {
-                    				handleValueConverterException(vce);
-                    	        }
-                    	        currentNode = currentNode.getParent();
+                           		add(
+                           			current, 
+                           			"pathAlternatives",
+                            		lv_pathAlternatives_0_0, 
+                            		"Path");
+                    	        afterParserOrEnumRuleCall();
                     	    
 
                     }
@@ -173,44 +186,39 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:118:6: ( '(' ( (lv_pathAlternatives_2_0= rulePath ) ) ')' ( '|' '(' ( (lv_pathAlternatives_6_0= rulePath ) ) ')' )+ )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:100:6: (otherlv_1= '(' ( (lv_pathAlternatives_2_0= rulePath ) ) otherlv_3= ')' (otherlv_4= '|' otherlv_5= '(' ( (lv_pathAlternatives_6_0= rulePath ) ) otherlv_7= ')' )+ )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:118:6: ( '(' ( (lv_pathAlternatives_2_0= rulePath ) ) ')' ( '|' '(' ( (lv_pathAlternatives_6_0= rulePath ) ) ')' )+ )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:118:8: '(' ( (lv_pathAlternatives_2_0= rulePath ) ) ')' ( '|' '(' ( (lv_pathAlternatives_6_0= rulePath ) ) ')' )+
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:100:6: (otherlv_1= '(' ( (lv_pathAlternatives_2_0= rulePath ) ) otherlv_3= ')' (otherlv_4= '|' otherlv_5= '(' ( (lv_pathAlternatives_6_0= rulePath ) ) otherlv_7= ')' )+ )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:100:8: otherlv_1= '(' ( (lv_pathAlternatives_2_0= rulePath ) ) otherlv_3= ')' (otherlv_4= '|' otherlv_5= '(' ( (lv_pathAlternatives_6_0= rulePath ) ) otherlv_7= ')' )+
                     {
-                    match(input,11,FOLLOW_11_in_rulePathExpression148); 
+                    otherlv_1=(Token)match(input,11,FOLLOW_11_in_rulePathExpression150); 
 
-                            createLeafNode(grammarAccess.getPathExpressionAccess().getLeftParenthesisKeyword_1_0(), null); 
+                        	newLeafNode(otherlv_1, grammarAccess.getPathExpressionAccess().getLeftParenthesisKeyword_1_0());
                         
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:122:1: ( (lv_pathAlternatives_2_0= rulePath ) )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:123:1: (lv_pathAlternatives_2_0= rulePath )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:104:1: ( (lv_pathAlternatives_2_0= rulePath ) )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:105:1: (lv_pathAlternatives_2_0= rulePath )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:123:1: (lv_pathAlternatives_2_0= rulePath )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:124:3: lv_pathAlternatives_2_0= rulePath
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:105:1: (lv_pathAlternatives_2_0= rulePath )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:106:3: lv_pathAlternatives_2_0= rulePath
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getPathExpressionAccess().getPathAlternativesPathParserRuleCall_1_1_0(), currentNode); 
+                    	        newCompositeNode(grammarAccess.getPathExpressionAccess().getPathAlternativesPathParserRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FOLLOW_rulePath_in_rulePathExpression169);
+                    pushFollow(FOLLOW_rulePath_in_rulePathExpression171);
                     lv_pathAlternatives_2_0=rulePath();
-                    _fsp--;
+
+                    state._fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getPathExpressionRule().getType().getClassifier());
-                    	            associateNodeWithAstElement(currentNode.getParent(), current);
+                    	            current = createModelElementForParent(grammarAccess.getPathExpressionRule());
                     	        }
-                    	        try {
-                    	       		add(
-                    	       			current, 
-                    	       			"pathAlternatives",
-                    	        		lv_pathAlternatives_2_0, 
-                    	        		"Path", 
-                    	        		currentNode);
-                    	        } catch (ValueConverterException vce) {
-                    				handleValueConverterException(vce);
-                    	        }
-                    	        currentNode = currentNode.getParent();
+                           		add(
+                           			current, 
+                           			"pathAlternatives",
+                            		lv_pathAlternatives_2_0, 
+                            		"Path");
+                    	        afterParserOrEnumRuleCall();
                     	    
 
                     }
@@ -218,11 +226,11 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    match(input,12,FOLLOW_12_in_rulePathExpression179); 
+                    otherlv_3=(Token)match(input,12,FOLLOW_12_in_rulePathExpression183); 
 
-                            createLeafNode(grammarAccess.getPathExpressionAccess().getRightParenthesisKeyword_1_2(), null); 
+                        	newLeafNode(otherlv_3, grammarAccess.getPathExpressionAccess().getRightParenthesisKeyword_1_2());
                         
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:150:1: ( '|' '(' ( (lv_pathAlternatives_6_0= rulePath ) ) ')' )+
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:126:1: (otherlv_4= '|' otherlv_5= '(' ( (lv_pathAlternatives_6_0= rulePath ) ) otherlv_7= ')' )+
                     int cnt1=0;
                     loop1:
                     do {
@@ -236,45 +244,40 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:150:3: '|' '(' ( (lv_pathAlternatives_6_0= rulePath ) ) ')'
+                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:126:3: otherlv_4= '|' otherlv_5= '(' ( (lv_pathAlternatives_6_0= rulePath ) ) otherlv_7= ')'
                     	    {
-                    	    match(input,13,FOLLOW_13_in_rulePathExpression190); 
+                    	    otherlv_4=(Token)match(input,13,FOLLOW_13_in_rulePathExpression196); 
 
-                    	            createLeafNode(grammarAccess.getPathExpressionAccess().getVerticalLineKeyword_1_3_0(), null); 
+                    	        	newLeafNode(otherlv_4, grammarAccess.getPathExpressionAccess().getVerticalLineKeyword_1_3_0());
                     	        
-                    	    match(input,11,FOLLOW_11_in_rulePathExpression200); 
+                    	    otherlv_5=(Token)match(input,11,FOLLOW_11_in_rulePathExpression208); 
 
-                    	            createLeafNode(grammarAccess.getPathExpressionAccess().getLeftParenthesisKeyword_1_3_1(), null); 
+                    	        	newLeafNode(otherlv_5, grammarAccess.getPathExpressionAccess().getLeftParenthesisKeyword_1_3_1());
                     	        
-                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:158:1: ( (lv_pathAlternatives_6_0= rulePath ) )
-                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:159:1: (lv_pathAlternatives_6_0= rulePath )
+                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:134:1: ( (lv_pathAlternatives_6_0= rulePath ) )
+                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:135:1: (lv_pathAlternatives_6_0= rulePath )
                     	    {
-                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:159:1: (lv_pathAlternatives_6_0= rulePath )
-                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:160:3: lv_pathAlternatives_6_0= rulePath
+                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:135:1: (lv_pathAlternatives_6_0= rulePath )
+                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:136:3: lv_pathAlternatives_6_0= rulePath
                     	    {
                     	     
-                    	    	        currentNode=createCompositeNode(grammarAccess.getPathExpressionAccess().getPathAlternativesPathParserRuleCall_1_3_2_0(), currentNode); 
+                    	    	        newCompositeNode(grammarAccess.getPathExpressionAccess().getPathAlternativesPathParserRuleCall_1_3_2_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_rulePath_in_rulePathExpression221);
+                    	    pushFollow(FOLLOW_rulePath_in_rulePathExpression229);
                     	    lv_pathAlternatives_6_0=rulePath();
-                    	    _fsp--;
+
+                    	    state._fsp--;
 
 
                     	    	        if (current==null) {
-                    	    	            current = factory.create(grammarAccess.getPathExpressionRule().getType().getClassifier());
-                    	    	            associateNodeWithAstElement(currentNode.getParent(), current);
+                    	    	            current = createModelElementForParent(grammarAccess.getPathExpressionRule());
                     	    	        }
-                    	    	        try {
-                    	    	       		add(
-                    	    	       			current, 
-                    	    	       			"pathAlternatives",
-                    	    	        		lv_pathAlternatives_6_0, 
-                    	    	        		"Path", 
-                    	    	        		currentNode);
-                    	    	        } catch (ValueConverterException vce) {
-                    	    				handleValueConverterException(vce);
-                    	    	        }
-                    	    	        currentNode = currentNode.getParent();
+                    	           		add(
+                    	           			current, 
+                    	           			"pathAlternatives",
+                    	            		lv_pathAlternatives_6_0, 
+                    	            		"Path");
+                    	    	        afterParserOrEnumRuleCall();
                     	    	    
 
                     	    }
@@ -282,9 +285,9 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
                     	    }
 
-                    	    match(input,12,FOLLOW_12_in_rulePathExpression231); 
+                    	    otherlv_7=(Token)match(input,12,FOLLOW_12_in_rulePathExpression241); 
 
-                    	            createLeafNode(grammarAccess.getPathExpressionAccess().getRightParenthesisKeyword_1_3_3(), null); 
+                    	        	newLeafNode(otherlv_7, grammarAccess.getPathExpressionAccess().getRightParenthesisKeyword_1_3_3());
                     	        
 
                     	    }
@@ -311,9 +314,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-             resetLookahead(); 
-                	lastConsumedNode = currentNode;
-                
+             leaveRule(); 
         }
          
             catch (RecognitionException re) { 
@@ -324,11 +325,11 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end rulePathExpression
+    // $ANTLR end "rulePathExpression"
 
 
-    // $ANTLR start entryRulePath
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:194:1: entryRulePath returns [EObject current=null] : iv_rulePath= rulePath EOF ;
+    // $ANTLR start "entryRulePath"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:164:1: entryRulePath returns [EObject current=null] : iv_rulePath= rulePath EOF ;
     public final EObject entryRulePath() throws RecognitionException {
         EObject current = null;
 
@@ -336,16 +337,17 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:195:2: (iv_rulePath= rulePath EOF )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:196:2: iv_rulePath= rulePath EOF
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:165:2: (iv_rulePath= rulePath EOF )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:166:2: iv_rulePath= rulePath EOF
             {
-             currentNode = createCompositeNode(grammarAccess.getPathRule(), currentNode); 
-            pushFollow(FOLLOW_rulePath_in_entryRulePath270);
+             newCompositeNode(grammarAccess.getPathRule()); 
+            pushFollow(FOLLOW_rulePath_in_entryRulePath280);
             iv_rulePath=rulePath();
-            _fsp--;
+
+            state._fsp--;
 
              current =iv_rulePath; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePath280); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePath290); 
 
             }
 
@@ -359,57 +361,53 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end entryRulePath
+    // $ANTLR end "entryRulePath"
 
 
-    // $ANTLR start rulePath
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:203:1: rulePath returns [EObject current=null] : ( ( (lv_segments_0_0= rulePathSegment ) ) ( '.' ( (lv_segments_2_0= rulePathSegment ) ) )* ) ;
+    // $ANTLR start "rulePath"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:173:1: rulePath returns [EObject current=null] : ( ( (lv_segments_0_0= rulePathSegment ) ) (otherlv_1= '.' ( (lv_segments_2_0= rulePathSegment ) ) )* ) ;
     public final EObject rulePath() throws RecognitionException {
         EObject current = null;
 
+        Token otherlv_1=null;
         EObject lv_segments_0_0 = null;
 
         EObject lv_segments_2_0 = null;
 
 
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
+         enterRule(); 
             
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:208:6: ( ( ( (lv_segments_0_0= rulePathSegment ) ) ( '.' ( (lv_segments_2_0= rulePathSegment ) ) )* ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:209:1: ( ( (lv_segments_0_0= rulePathSegment ) ) ( '.' ( (lv_segments_2_0= rulePathSegment ) ) )* )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:176:28: ( ( ( (lv_segments_0_0= rulePathSegment ) ) (otherlv_1= '.' ( (lv_segments_2_0= rulePathSegment ) ) )* ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:177:1: ( ( (lv_segments_0_0= rulePathSegment ) ) (otherlv_1= '.' ( (lv_segments_2_0= rulePathSegment ) ) )* )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:209:1: ( ( (lv_segments_0_0= rulePathSegment ) ) ( '.' ( (lv_segments_2_0= rulePathSegment ) ) )* )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:209:2: ( (lv_segments_0_0= rulePathSegment ) ) ( '.' ( (lv_segments_2_0= rulePathSegment ) ) )*
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:177:1: ( ( (lv_segments_0_0= rulePathSegment ) ) (otherlv_1= '.' ( (lv_segments_2_0= rulePathSegment ) ) )* )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:177:2: ( (lv_segments_0_0= rulePathSegment ) ) (otherlv_1= '.' ( (lv_segments_2_0= rulePathSegment ) ) )*
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:209:2: ( (lv_segments_0_0= rulePathSegment ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:210:1: (lv_segments_0_0= rulePathSegment )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:177:2: ( (lv_segments_0_0= rulePathSegment ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:178:1: (lv_segments_0_0= rulePathSegment )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:210:1: (lv_segments_0_0= rulePathSegment )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:211:3: lv_segments_0_0= rulePathSegment
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:178:1: (lv_segments_0_0= rulePathSegment )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:179:3: lv_segments_0_0= rulePathSegment
             {
              
-            	        currentNode=createCompositeNode(grammarAccess.getPathAccess().getSegmentsPathSegmentParserRuleCall_0_0(), currentNode); 
+            	        newCompositeNode(grammarAccess.getPathAccess().getSegmentsPathSegmentParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_rulePathSegment_in_rulePath326);
+            pushFollow(FOLLOW_rulePathSegment_in_rulePath336);
             lv_segments_0_0=rulePathSegment();
-            _fsp--;
+
+            state._fsp--;
 
 
             	        if (current==null) {
-            	            current = factory.create(grammarAccess.getPathRule().getType().getClassifier());
-            	            associateNodeWithAstElement(currentNode.getParent(), current);
+            	            current = createModelElementForParent(grammarAccess.getPathRule());
             	        }
-            	        try {
-            	       		add(
-            	       			current, 
-            	       			"segments",
-            	        		lv_segments_0_0, 
-            	        		"PathSegment", 
-            	        		currentNode);
-            	        } catch (ValueConverterException vce) {
-            				handleValueConverterException(vce);
-            	        }
-            	        currentNode = currentNode.getParent();
+                   		add(
+                   			current, 
+                   			"segments",
+                    		lv_segments_0_0, 
+                    		"PathSegment");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -417,7 +415,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:233:2: ( '.' ( (lv_segments_2_0= rulePathSegment ) ) )*
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:195:2: (otherlv_1= '.' ( (lv_segments_2_0= rulePathSegment ) ) )*
             loop3:
             do {
                 int alt3=2;
@@ -430,41 +428,36 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:233:4: '.' ( (lv_segments_2_0= rulePathSegment ) )
+            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:195:4: otherlv_1= '.' ( (lv_segments_2_0= rulePathSegment ) )
             	    {
-            	    match(input,14,FOLLOW_14_in_rulePath337); 
+            	    otherlv_1=(Token)match(input,14,FOLLOW_14_in_rulePath349); 
 
-            	            createLeafNode(grammarAccess.getPathAccess().getFullStopKeyword_1_0(), null); 
+            	        	newLeafNode(otherlv_1, grammarAccess.getPathAccess().getFullStopKeyword_1_0());
             	        
-            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:237:1: ( (lv_segments_2_0= rulePathSegment ) )
-            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:238:1: (lv_segments_2_0= rulePathSegment )
+            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:199:1: ( (lv_segments_2_0= rulePathSegment ) )
+            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:200:1: (lv_segments_2_0= rulePathSegment )
             	    {
-            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:238:1: (lv_segments_2_0= rulePathSegment )
-            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:239:3: lv_segments_2_0= rulePathSegment
+            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:200:1: (lv_segments_2_0= rulePathSegment )
+            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:201:3: lv_segments_2_0= rulePathSegment
             	    {
             	     
-            	    	        currentNode=createCompositeNode(grammarAccess.getPathAccess().getSegmentsPathSegmentParserRuleCall_1_1_0(), currentNode); 
+            	    	        newCompositeNode(grammarAccess.getPathAccess().getSegmentsPathSegmentParserRuleCall_1_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_rulePathSegment_in_rulePath358);
+            	    pushFollow(FOLLOW_rulePathSegment_in_rulePath370);
             	    lv_segments_2_0=rulePathSegment();
-            	    _fsp--;
+
+            	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = factory.create(grammarAccess.getPathRule().getType().getClassifier());
-            	    	            associateNodeWithAstElement(currentNode.getParent(), current);
+            	    	            current = createModelElementForParent(grammarAccess.getPathRule());
             	    	        }
-            	    	        try {
-            	    	       		add(
-            	    	       			current, 
-            	    	       			"segments",
-            	    	        		lv_segments_2_0, 
-            	    	        		"PathSegment", 
-            	    	        		currentNode);
-            	    	        } catch (ValueConverterException vce) {
-            	    				handleValueConverterException(vce);
-            	    	        }
-            	    	        currentNode = currentNode.getParent();
+            	           		add(
+            	           			current, 
+            	           			"segments",
+            	            		lv_segments_2_0, 
+            	            		"PathSegment");
+            	    	        afterParserOrEnumRuleCall();
             	    	    
 
             	    }
@@ -487,9 +480,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-             resetLookahead(); 
-                	lastConsumedNode = currentNode;
-                
+             leaveRule(); 
         }
          
             catch (RecognitionException re) { 
@@ -500,11 +491,11 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end rulePath
+    // $ANTLR end "rulePath"
 
 
-    // $ANTLR start entryRulePathSegment
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:269:1: entryRulePathSegment returns [EObject current=null] : iv_rulePathSegment= rulePathSegment EOF ;
+    // $ANTLR start "entryRulePathSegment"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:225:1: entryRulePathSegment returns [EObject current=null] : iv_rulePathSegment= rulePathSegment EOF ;
     public final EObject entryRulePathSegment() throws RecognitionException {
         EObject current = null;
 
@@ -512,16 +503,17 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:270:2: (iv_rulePathSegment= rulePathSegment EOF )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:271:2: iv_rulePathSegment= rulePathSegment EOF
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:226:2: (iv_rulePathSegment= rulePathSegment EOF )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:227:2: iv_rulePathSegment= rulePathSegment EOF
             {
-             currentNode = createCompositeNode(grammarAccess.getPathSegmentRule(), currentNode); 
-            pushFollow(FOLLOW_rulePathSegment_in_entryRulePathSegment396);
+             newCompositeNode(grammarAccess.getPathSegmentRule()); 
+            pushFollow(FOLLOW_rulePathSegment_in_entryRulePathSegment408);
             iv_rulePathSegment=rulePathSegment();
-            _fsp--;
+
+            state._fsp--;
 
              current =iv_rulePathSegment; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePathSegment406); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePathSegment418); 
 
             }
 
@@ -535,14 +527,17 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end entryRulePathSegment
+    // $ANTLR end "entryRulePathSegment"
 
 
-    // $ANTLR start rulePathSegment
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:278:1: rulePathSegment returns [EObject current=null] : ( ( ( (lv_alternatives_0_0= rulePathSegmentDescription ) ) | ( '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) ( '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ ')' ) ) ( (lv_repeatOperator_6_0= ruleRepeatOperator ) )? ) ;
+    // $ANTLR start "rulePathSegment"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:234:1: rulePathSegment returns [EObject current=null] : ( ( ( (lv_alternatives_0_0= rulePathSegmentDescription ) ) | (otherlv_1= '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) (otherlv_3= '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ otherlv_5= ')' ) ) ( (lv_repeatOperator_6_0= ruleRepeatOperator ) )? ) ;
     public final EObject rulePathSegment() throws RecognitionException {
         EObject current = null;
 
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
         EObject lv_alternatives_0_0 = null;
 
         EObject lv_alternatives_2_0 = null;
@@ -552,16 +547,16 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         Enumerator lv_repeatOperator_6_0 = null;
 
 
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
+         enterRule(); 
             
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:283:6: ( ( ( ( (lv_alternatives_0_0= rulePathSegmentDescription ) ) | ( '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) ( '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ ')' ) ) ( (lv_repeatOperator_6_0= ruleRepeatOperator ) )? ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:284:1: ( ( ( (lv_alternatives_0_0= rulePathSegmentDescription ) ) | ( '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) ( '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ ')' ) ) ( (lv_repeatOperator_6_0= ruleRepeatOperator ) )? )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:237:28: ( ( ( ( (lv_alternatives_0_0= rulePathSegmentDescription ) ) | (otherlv_1= '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) (otherlv_3= '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ otherlv_5= ')' ) ) ( (lv_repeatOperator_6_0= ruleRepeatOperator ) )? ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:238:1: ( ( ( (lv_alternatives_0_0= rulePathSegmentDescription ) ) | (otherlv_1= '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) (otherlv_3= '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ otherlv_5= ')' ) ) ( (lv_repeatOperator_6_0= ruleRepeatOperator ) )? )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:284:1: ( ( ( (lv_alternatives_0_0= rulePathSegmentDescription ) ) | ( '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) ( '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ ')' ) ) ( (lv_repeatOperator_6_0= ruleRepeatOperator ) )? )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:284:2: ( ( (lv_alternatives_0_0= rulePathSegmentDescription ) ) | ( '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) ( '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ ')' ) ) ( (lv_repeatOperator_6_0= ruleRepeatOperator ) )?
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:238:1: ( ( ( (lv_alternatives_0_0= rulePathSegmentDescription ) ) | (otherlv_1= '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) (otherlv_3= '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ otherlv_5= ')' ) ) ( (lv_repeatOperator_6_0= ruleRepeatOperator ) )? )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:238:2: ( ( (lv_alternatives_0_0= rulePathSegmentDescription ) ) | (otherlv_1= '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) (otherlv_3= '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ otherlv_5= ')' ) ) ( (lv_repeatOperator_6_0= ruleRepeatOperator ) )?
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:284:2: ( ( (lv_alternatives_0_0= rulePathSegmentDescription ) ) | ( '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) ( '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ ')' ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:238:2: ( ( (lv_alternatives_0_0= rulePathSegmentDescription ) ) | (otherlv_1= '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) (otherlv_3= '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ otherlv_5= ')' ) )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -573,43 +568,38 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("284:2: ( ( (lv_alternatives_0_0= rulePathSegmentDescription ) ) | ( '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) ( '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ ')' ) )", 5, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:284:3: ( (lv_alternatives_0_0= rulePathSegmentDescription ) )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:238:3: ( (lv_alternatives_0_0= rulePathSegmentDescription ) )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:284:3: ( (lv_alternatives_0_0= rulePathSegmentDescription ) )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:285:1: (lv_alternatives_0_0= rulePathSegmentDescription )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:238:3: ( (lv_alternatives_0_0= rulePathSegmentDescription ) )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:239:1: (lv_alternatives_0_0= rulePathSegmentDescription )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:285:1: (lv_alternatives_0_0= rulePathSegmentDescription )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:286:3: lv_alternatives_0_0= rulePathSegmentDescription
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:239:1: (lv_alternatives_0_0= rulePathSegmentDescription )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:240:3: lv_alternatives_0_0= rulePathSegmentDescription
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getPathSegmentAccess().getAlternativesPathSegmentDescriptionParserRuleCall_0_0_0(), currentNode); 
+                    	        newCompositeNode(grammarAccess.getPathSegmentAccess().getAlternativesPathSegmentDescriptionParserRuleCall_0_0_0()); 
                     	    
-                    pushFollow(FOLLOW_rulePathSegmentDescription_in_rulePathSegment453);
+                    pushFollow(FOLLOW_rulePathSegmentDescription_in_rulePathSegment465);
                     lv_alternatives_0_0=rulePathSegmentDescription();
-                    _fsp--;
+
+                    state._fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getPathSegmentRule().getType().getClassifier());
-                    	            associateNodeWithAstElement(currentNode.getParent(), current);
+                    	            current = createModelElementForParent(grammarAccess.getPathSegmentRule());
                     	        }
-                    	        try {
-                    	       		add(
-                    	       			current, 
-                    	       			"alternatives",
-                    	        		lv_alternatives_0_0, 
-                    	        		"PathSegmentDescription", 
-                    	        		currentNode);
-                    	        } catch (ValueConverterException vce) {
-                    				handleValueConverterException(vce);
-                    	        }
-                    	        currentNode = currentNode.getParent();
+                           		add(
+                           			current, 
+                           			"alternatives",
+                            		lv_alternatives_0_0, 
+                            		"PathSegmentDescription");
+                    	        afterParserOrEnumRuleCall();
                     	    
 
                     }
@@ -621,44 +611,39 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:309:6: ( '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) ( '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ ')' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:257:6: (otherlv_1= '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) (otherlv_3= '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ otherlv_5= ')' )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:309:6: ( '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) ( '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ ')' )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:309:8: '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) ( '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ ')'
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:257:6: (otherlv_1= '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) (otherlv_3= '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ otherlv_5= ')' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:257:8: otherlv_1= '(' ( (lv_alternatives_2_0= rulePathSegmentDescription ) ) (otherlv_3= '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+ otherlv_5= ')'
                     {
-                    match(input,11,FOLLOW_11_in_rulePathSegment470); 
+                    otherlv_1=(Token)match(input,11,FOLLOW_11_in_rulePathSegment484); 
 
-                            createLeafNode(grammarAccess.getPathSegmentAccess().getLeftParenthesisKeyword_0_1_0(), null); 
+                        	newLeafNode(otherlv_1, grammarAccess.getPathSegmentAccess().getLeftParenthesisKeyword_0_1_0());
                         
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:313:1: ( (lv_alternatives_2_0= rulePathSegmentDescription ) )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:314:1: (lv_alternatives_2_0= rulePathSegmentDescription )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:261:1: ( (lv_alternatives_2_0= rulePathSegmentDescription ) )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:262:1: (lv_alternatives_2_0= rulePathSegmentDescription )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:314:1: (lv_alternatives_2_0= rulePathSegmentDescription )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:315:3: lv_alternatives_2_0= rulePathSegmentDescription
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:262:1: (lv_alternatives_2_0= rulePathSegmentDescription )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:263:3: lv_alternatives_2_0= rulePathSegmentDescription
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getPathSegmentAccess().getAlternativesPathSegmentDescriptionParserRuleCall_0_1_1_0(), currentNode); 
+                    	        newCompositeNode(grammarAccess.getPathSegmentAccess().getAlternativesPathSegmentDescriptionParserRuleCall_0_1_1_0()); 
                     	    
-                    pushFollow(FOLLOW_rulePathSegmentDescription_in_rulePathSegment491);
+                    pushFollow(FOLLOW_rulePathSegmentDescription_in_rulePathSegment505);
                     lv_alternatives_2_0=rulePathSegmentDescription();
-                    _fsp--;
+
+                    state._fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getPathSegmentRule().getType().getClassifier());
-                    	            associateNodeWithAstElement(currentNode.getParent(), current);
+                    	            current = createModelElementForParent(grammarAccess.getPathSegmentRule());
                     	        }
-                    	        try {
-                    	       		add(
-                    	       			current, 
-                    	       			"alternatives",
-                    	        		lv_alternatives_2_0, 
-                    	        		"PathSegmentDescription", 
-                    	        		currentNode);
-                    	        } catch (ValueConverterException vce) {
-                    				handleValueConverterException(vce);
-                    	        }
-                    	        currentNode = currentNode.getParent();
+                           		add(
+                           			current, 
+                           			"alternatives",
+                            		lv_alternatives_2_0, 
+                            		"PathSegmentDescription");
+                    	        afterParserOrEnumRuleCall();
                     	    
 
                     }
@@ -666,7 +651,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:337:2: ( '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:279:2: (otherlv_3= '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) ) )+
                     int cnt4=0;
                     loop4:
                     do {
@@ -680,41 +665,36 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:337:4: '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) )
+                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:279:4: otherlv_3= '|' ( (lv_alternatives_4_0= rulePathSegmentDescription ) )
                     	    {
-                    	    match(input,13,FOLLOW_13_in_rulePathSegment502); 
+                    	    otherlv_3=(Token)match(input,13,FOLLOW_13_in_rulePathSegment518); 
 
-                    	            createLeafNode(grammarAccess.getPathSegmentAccess().getVerticalLineKeyword_0_1_2_0(), null); 
+                    	        	newLeafNode(otherlv_3, grammarAccess.getPathSegmentAccess().getVerticalLineKeyword_0_1_2_0());
                     	        
-                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:341:1: ( (lv_alternatives_4_0= rulePathSegmentDescription ) )
-                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:342:1: (lv_alternatives_4_0= rulePathSegmentDescription )
+                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:283:1: ( (lv_alternatives_4_0= rulePathSegmentDescription ) )
+                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:284:1: (lv_alternatives_4_0= rulePathSegmentDescription )
                     	    {
-                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:342:1: (lv_alternatives_4_0= rulePathSegmentDescription )
-                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:343:3: lv_alternatives_4_0= rulePathSegmentDescription
+                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:284:1: (lv_alternatives_4_0= rulePathSegmentDescription )
+                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:285:3: lv_alternatives_4_0= rulePathSegmentDescription
                     	    {
                     	     
-                    	    	        currentNode=createCompositeNode(grammarAccess.getPathSegmentAccess().getAlternativesPathSegmentDescriptionParserRuleCall_0_1_2_1_0(), currentNode); 
+                    	    	        newCompositeNode(grammarAccess.getPathSegmentAccess().getAlternativesPathSegmentDescriptionParserRuleCall_0_1_2_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_rulePathSegmentDescription_in_rulePathSegment523);
+                    	    pushFollow(FOLLOW_rulePathSegmentDescription_in_rulePathSegment539);
                     	    lv_alternatives_4_0=rulePathSegmentDescription();
-                    	    _fsp--;
+
+                    	    state._fsp--;
 
 
                     	    	        if (current==null) {
-                    	    	            current = factory.create(grammarAccess.getPathSegmentRule().getType().getClassifier());
-                    	    	            associateNodeWithAstElement(currentNode.getParent(), current);
+                    	    	            current = createModelElementForParent(grammarAccess.getPathSegmentRule());
                     	    	        }
-                    	    	        try {
-                    	    	       		add(
-                    	    	       			current, 
-                    	    	       			"alternatives",
-                    	    	        		lv_alternatives_4_0, 
-                    	    	        		"PathSegmentDescription", 
-                    	    	        		currentNode);
-                    	    	        } catch (ValueConverterException vce) {
-                    	    				handleValueConverterException(vce);
-                    	    	        }
-                    	    	        currentNode = currentNode.getParent();
+                    	           		add(
+                    	           			current, 
+                    	           			"alternatives",
+                    	            		lv_alternatives_4_0, 
+                    	            		"PathSegmentDescription");
+                    	    	        afterParserOrEnumRuleCall();
                     	    	    
 
                     	    }
@@ -735,9 +715,9 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
                         cnt4++;
                     } while (true);
 
-                    match(input,12,FOLLOW_12_in_rulePathSegment535); 
+                    otherlv_5=(Token)match(input,12,FOLLOW_12_in_rulePathSegment553); 
 
-                            createLeafNode(grammarAccess.getPathSegmentAccess().getRightParenthesisKeyword_0_1_3(), null); 
+                        	newLeafNode(otherlv_5, grammarAccess.getPathSegmentAccess().getRightParenthesisKeyword_0_1_3());
                         
 
                     }
@@ -748,7 +728,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:369:3: ( (lv_repeatOperator_6_0= ruleRepeatOperator ) )?
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:305:3: ( (lv_repeatOperator_6_0= ruleRepeatOperator ) )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -757,34 +737,29 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:370:1: (lv_repeatOperator_6_0= ruleRepeatOperator )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:306:1: (lv_repeatOperator_6_0= ruleRepeatOperator )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:370:1: (lv_repeatOperator_6_0= ruleRepeatOperator )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:371:3: lv_repeatOperator_6_0= ruleRepeatOperator
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:306:1: (lv_repeatOperator_6_0= ruleRepeatOperator )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:307:3: lv_repeatOperator_6_0= ruleRepeatOperator
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getPathSegmentAccess().getRepeatOperatorRepeatOperatorEnumRuleCall_1_0(), currentNode); 
+                    	        newCompositeNode(grammarAccess.getPathSegmentAccess().getRepeatOperatorRepeatOperatorEnumRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleRepeatOperator_in_rulePathSegment558);
+                    pushFollow(FOLLOW_ruleRepeatOperator_in_rulePathSegment576);
                     lv_repeatOperator_6_0=ruleRepeatOperator();
-                    _fsp--;
+
+                    state._fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getPathSegmentRule().getType().getClassifier());
-                    	            associateNodeWithAstElement(currentNode.getParent(), current);
+                    	            current = createModelElementForParent(grammarAccess.getPathSegmentRule());
                     	        }
-                    	        try {
-                    	       		set(
-                    	       			current, 
-                    	       			"repeatOperator",
-                    	        		lv_repeatOperator_6_0, 
-                    	        		"RepeatOperator", 
-                    	        		currentNode);
-                    	        } catch (ValueConverterException vce) {
-                    				handleValueConverterException(vce);
-                    	        }
-                    	        currentNode = currentNode.getParent();
+                           		set(
+                           			current, 
+                           			"repeatOperator",
+                            		lv_repeatOperator_6_0, 
+                            		"RepeatOperator");
+                    	        afterParserOrEnumRuleCall();
                     	    
 
                     }
@@ -801,9 +776,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-             resetLookahead(); 
-                	lastConsumedNode = currentNode;
-                
+             leaveRule(); 
         }
          
             catch (RecognitionException re) { 
@@ -814,11 +787,11 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end rulePathSegment
+    // $ANTLR end "rulePathSegment"
 
 
-    // $ANTLR start entryRulePathSegmentDescription
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:401:1: entryRulePathSegmentDescription returns [EObject current=null] : iv_rulePathSegmentDescription= rulePathSegmentDescription EOF ;
+    // $ANTLR start "entryRulePathSegmentDescription"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:331:1: entryRulePathSegmentDescription returns [EObject current=null] : iv_rulePathSegmentDescription= rulePathSegmentDescription EOF ;
     public final EObject entryRulePathSegmentDescription() throws RecognitionException {
         EObject current = null;
 
@@ -826,16 +799,17 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:402:2: (iv_rulePathSegmentDescription= rulePathSegmentDescription EOF )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:403:2: iv_rulePathSegmentDescription= rulePathSegmentDescription EOF
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:332:2: (iv_rulePathSegmentDescription= rulePathSegmentDescription EOF )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:333:2: iv_rulePathSegmentDescription= rulePathSegmentDescription EOF
             {
-             currentNode = createCompositeNode(grammarAccess.getPathSegmentDescriptionRule(), currentNode); 
-            pushFollow(FOLLOW_rulePathSegmentDescription_in_entryRulePathSegmentDescription595);
+             newCompositeNode(grammarAccess.getPathSegmentDescriptionRule()); 
+            pushFollow(FOLLOW_rulePathSegmentDescription_in_entryRulePathSegmentDescription613);
             iv_rulePathSegmentDescription=rulePathSegmentDescription();
-            _fsp--;
+
+            state._fsp--;
 
              current =iv_rulePathSegmentDescription; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePathSegmentDescription605); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePathSegmentDescription623); 
 
             }
 
@@ -849,11 +823,11 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end entryRulePathSegmentDescription
+    // $ANTLR end "entryRulePathSegmentDescription"
 
 
-    // $ANTLR start rulePathSegmentDescription
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:410:1: rulePathSegmentDescription returns [EObject current=null] : ( (this_ImplicitPathDescription_0= ruleImplicitPathDescription | this_ExplicitPathDescription_1= ruleExplicitPathDescription ) ( (lv_restrictionList_2_0= ruleRestrictionList ) )? ) ;
+    // $ANTLR start "rulePathSegmentDescription"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:340:1: rulePathSegmentDescription returns [EObject current=null] : ( (this_ImplicitPathDescription_0= ruleImplicitPathDescription | this_ExplicitPathDescription_1= ruleExplicitPathDescription ) ( (lv_restrictionList_2_0= ruleRestrictionList ) )? ) ;
     public final EObject rulePathSegmentDescription() throws RecognitionException {
         EObject current = null;
 
@@ -864,16 +838,16 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         EObject lv_restrictionList_2_0 = null;
 
 
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
+         enterRule(); 
             
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:415:6: ( ( (this_ImplicitPathDescription_0= ruleImplicitPathDescription | this_ExplicitPathDescription_1= ruleExplicitPathDescription ) ( (lv_restrictionList_2_0= ruleRestrictionList ) )? ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:416:1: ( (this_ImplicitPathDescription_0= ruleImplicitPathDescription | this_ExplicitPathDescription_1= ruleExplicitPathDescription ) ( (lv_restrictionList_2_0= ruleRestrictionList ) )? )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:343:28: ( ( (this_ImplicitPathDescription_0= ruleImplicitPathDescription | this_ExplicitPathDescription_1= ruleExplicitPathDescription ) ( (lv_restrictionList_2_0= ruleRestrictionList ) )? ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:344:1: ( (this_ImplicitPathDescription_0= ruleImplicitPathDescription | this_ExplicitPathDescription_1= ruleExplicitPathDescription ) ( (lv_restrictionList_2_0= ruleRestrictionList ) )? )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:416:1: ( (this_ImplicitPathDescription_0= ruleImplicitPathDescription | this_ExplicitPathDescription_1= ruleExplicitPathDescription ) ( (lv_restrictionList_2_0= ruleRestrictionList ) )? )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:416:2: (this_ImplicitPathDescription_0= ruleImplicitPathDescription | this_ExplicitPathDescription_1= ruleExplicitPathDescription ) ( (lv_restrictionList_2_0= ruleRestrictionList ) )?
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:344:1: ( (this_ImplicitPathDescription_0= ruleImplicitPathDescription | this_ExplicitPathDescription_1= ruleExplicitPathDescription ) ( (lv_restrictionList_2_0= ruleRestrictionList ) )? )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:344:2: (this_ImplicitPathDescription_0= ruleImplicitPathDescription | this_ExplicitPathDescription_1= ruleExplicitPathDescription ) ( (lv_restrictionList_2_0= ruleRestrictionList ) )?
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:416:2: (this_ImplicitPathDescription_0= ruleImplicitPathDescription | this_ExplicitPathDescription_1= ruleExplicitPathDescription )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:344:2: (this_ImplicitPathDescription_0= ruleImplicitPathDescription | this_ExplicitPathDescription_1= ruleExplicitPathDescription )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -885,41 +859,43 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("416:2: (this_ImplicitPathDescription_0= ruleImplicitPathDescription | this_ExplicitPathDescription_1= ruleExplicitPathDescription )", 7, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:417:5: this_ImplicitPathDescription_0= ruleImplicitPathDescription
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:345:5: this_ImplicitPathDescription_0= ruleImplicitPathDescription
                     {
                      
-                            currentNode=createCompositeNode(grammarAccess.getPathSegmentDescriptionAccess().getImplicitPathDescriptionParserRuleCall_0_0(), currentNode); 
+                            newCompositeNode(grammarAccess.getPathSegmentDescriptionAccess().getImplicitPathDescriptionParserRuleCall_0_0()); 
                         
-                    pushFollow(FOLLOW_ruleImplicitPathDescription_in_rulePathSegmentDescription653);
+                    pushFollow(FOLLOW_ruleImplicitPathDescription_in_rulePathSegmentDescription671);
                     this_ImplicitPathDescription_0=ruleImplicitPathDescription();
-                    _fsp--;
+
+                    state._fsp--;
 
                      
                             current = this_ImplicitPathDescription_0; 
-                            currentNode = currentNode.getParent();
+                            afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
                 case 2 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:427:5: this_ExplicitPathDescription_1= ruleExplicitPathDescription
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:355:5: this_ExplicitPathDescription_1= ruleExplicitPathDescription
                     {
                      
-                            currentNode=createCompositeNode(grammarAccess.getPathSegmentDescriptionAccess().getExplicitPathDescriptionParserRuleCall_0_1(), currentNode); 
+                            newCompositeNode(grammarAccess.getPathSegmentDescriptionAccess().getExplicitPathDescriptionParserRuleCall_0_1()); 
                         
-                    pushFollow(FOLLOW_ruleExplicitPathDescription_in_rulePathSegmentDescription680);
+                    pushFollow(FOLLOW_ruleExplicitPathDescription_in_rulePathSegmentDescription698);
                     this_ExplicitPathDescription_1=ruleExplicitPathDescription();
-                    _fsp--;
+
+                    state._fsp--;
 
                      
                             current = this_ExplicitPathDescription_1; 
-                            currentNode = currentNode.getParent();
+                            afterParserOrEnumRuleCall();
                         
 
                     }
@@ -927,7 +903,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:435:2: ( (lv_restrictionList_2_0= ruleRestrictionList ) )?
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:363:2: ( (lv_restrictionList_2_0= ruleRestrictionList ) )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -936,34 +912,29 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:436:1: (lv_restrictionList_2_0= ruleRestrictionList )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:364:1: (lv_restrictionList_2_0= ruleRestrictionList )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:436:1: (lv_restrictionList_2_0= ruleRestrictionList )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:437:3: lv_restrictionList_2_0= ruleRestrictionList
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:364:1: (lv_restrictionList_2_0= ruleRestrictionList )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:365:3: lv_restrictionList_2_0= ruleRestrictionList
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getPathSegmentDescriptionAccess().getRestrictionListRestrictionListParserRuleCall_1_0(), currentNode); 
+                    	        newCompositeNode(grammarAccess.getPathSegmentDescriptionAccess().getRestrictionListRestrictionListParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleRestrictionList_in_rulePathSegmentDescription701);
+                    pushFollow(FOLLOW_ruleRestrictionList_in_rulePathSegmentDescription719);
                     lv_restrictionList_2_0=ruleRestrictionList();
-                    _fsp--;
+
+                    state._fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getPathSegmentDescriptionRule().getType().getClassifier());
-                    	            associateNodeWithAstElement(currentNode.getParent(), current);
+                    	            current = createModelElementForParent(grammarAccess.getPathSegmentDescriptionRule());
                     	        }
-                    	        try {
-                    	       		set(
-                    	       			current, 
-                    	       			"restrictionList",
-                    	        		lv_restrictionList_2_0, 
-                    	        		"RestrictionList", 
-                    	        		currentNode);
-                    	        } catch (ValueConverterException vce) {
-                    				handleValueConverterException(vce);
-                    	        }
-                    	        currentNode = currentNode.getParent();
+                           		set(
+                           			current, 
+                           			"restrictionList",
+                            		lv_restrictionList_2_0, 
+                            		"RestrictionList");
+                    	        afterParserOrEnumRuleCall();
                     	    
 
                     }
@@ -980,9 +951,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-             resetLookahead(); 
-                	lastConsumedNode = currentNode;
-                
+             leaveRule(); 
         }
          
             catch (RecognitionException re) { 
@@ -993,11 +962,11 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end rulePathSegmentDescription
+    // $ANTLR end "rulePathSegmentDescription"
 
 
-    // $ANTLR start entryRuleRestrictionList
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:467:1: entryRuleRestrictionList returns [EObject current=null] : iv_ruleRestrictionList= ruleRestrictionList EOF ;
+    // $ANTLR start "entryRuleRestrictionList"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:389:1: entryRuleRestrictionList returns [EObject current=null] : iv_ruleRestrictionList= ruleRestrictionList EOF ;
     public final EObject entryRuleRestrictionList() throws RecognitionException {
         EObject current = null;
 
@@ -1005,16 +974,17 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:468:2: (iv_ruleRestrictionList= ruleRestrictionList EOF )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:469:2: iv_ruleRestrictionList= ruleRestrictionList EOF
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:390:2: (iv_ruleRestrictionList= ruleRestrictionList EOF )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:391:2: iv_ruleRestrictionList= ruleRestrictionList EOF
             {
-             currentNode = createCompositeNode(grammarAccess.getRestrictionListRule(), currentNode); 
-            pushFollow(FOLLOW_ruleRestrictionList_in_entryRuleRestrictionList738);
+             newCompositeNode(grammarAccess.getRestrictionListRule()); 
+            pushFollow(FOLLOW_ruleRestrictionList_in_entryRuleRestrictionList756);
             iv_ruleRestrictionList=ruleRestrictionList();
-            _fsp--;
+
+            state._fsp--;
 
              current =iv_ruleRestrictionList; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRestrictionList748); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRestrictionList766); 
 
             }
 
@@ -1028,61 +998,59 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end entryRuleRestrictionList
+    // $ANTLR end "entryRuleRestrictionList"
 
 
-    // $ANTLR start ruleRestrictionList
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:476:1: ruleRestrictionList returns [EObject current=null] : ( '[' ( (lv_restrictions_1_0= ruleTypeRestriction ) ) ( ',' ( (lv_restrictions_3_0= ruleTypeRestriction ) ) )* ']' ) ;
+    // $ANTLR start "ruleRestrictionList"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:398:1: ruleRestrictionList returns [EObject current=null] : (otherlv_0= '[' ( (lv_restrictions_1_0= ruleTypeRestriction ) ) (otherlv_2= ',' ( (lv_restrictions_3_0= ruleTypeRestriction ) ) )* otherlv_4= ']' ) ;
     public final EObject ruleRestrictionList() throws RecognitionException {
         EObject current = null;
 
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
         EObject lv_restrictions_1_0 = null;
 
         EObject lv_restrictions_3_0 = null;
 
 
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
+         enterRule(); 
             
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:481:6: ( ( '[' ( (lv_restrictions_1_0= ruleTypeRestriction ) ) ( ',' ( (lv_restrictions_3_0= ruleTypeRestriction ) ) )* ']' ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:482:1: ( '[' ( (lv_restrictions_1_0= ruleTypeRestriction ) ) ( ',' ( (lv_restrictions_3_0= ruleTypeRestriction ) ) )* ']' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:401:28: ( (otherlv_0= '[' ( (lv_restrictions_1_0= ruleTypeRestriction ) ) (otherlv_2= ',' ( (lv_restrictions_3_0= ruleTypeRestriction ) ) )* otherlv_4= ']' ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:402:1: (otherlv_0= '[' ( (lv_restrictions_1_0= ruleTypeRestriction ) ) (otherlv_2= ',' ( (lv_restrictions_3_0= ruleTypeRestriction ) ) )* otherlv_4= ']' )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:482:1: ( '[' ( (lv_restrictions_1_0= ruleTypeRestriction ) ) ( ',' ( (lv_restrictions_3_0= ruleTypeRestriction ) ) )* ']' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:482:3: '[' ( (lv_restrictions_1_0= ruleTypeRestriction ) ) ( ',' ( (lv_restrictions_3_0= ruleTypeRestriction ) ) )* ']'
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:402:1: (otherlv_0= '[' ( (lv_restrictions_1_0= ruleTypeRestriction ) ) (otherlv_2= ',' ( (lv_restrictions_3_0= ruleTypeRestriction ) ) )* otherlv_4= ']' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:402:3: otherlv_0= '[' ( (lv_restrictions_1_0= ruleTypeRestriction ) ) (otherlv_2= ',' ( (lv_restrictions_3_0= ruleTypeRestriction ) ) )* otherlv_4= ']'
             {
-            match(input,15,FOLLOW_15_in_ruleRestrictionList783); 
+            otherlv_0=(Token)match(input,15,FOLLOW_15_in_ruleRestrictionList803); 
 
-                    createLeafNode(grammarAccess.getRestrictionListAccess().getLeftSquareBracketKeyword_0(), null); 
+                	newLeafNode(otherlv_0, grammarAccess.getRestrictionListAccess().getLeftSquareBracketKeyword_0());
                 
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:486:1: ( (lv_restrictions_1_0= ruleTypeRestriction ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:487:1: (lv_restrictions_1_0= ruleTypeRestriction )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:406:1: ( (lv_restrictions_1_0= ruleTypeRestriction ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:407:1: (lv_restrictions_1_0= ruleTypeRestriction )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:487:1: (lv_restrictions_1_0= ruleTypeRestriction )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:488:3: lv_restrictions_1_0= ruleTypeRestriction
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:407:1: (lv_restrictions_1_0= ruleTypeRestriction )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:408:3: lv_restrictions_1_0= ruleTypeRestriction
             {
              
-            	        currentNode=createCompositeNode(grammarAccess.getRestrictionListAccess().getRestrictionsTypeRestrictionParserRuleCall_1_0(), currentNode); 
+            	        newCompositeNode(grammarAccess.getRestrictionListAccess().getRestrictionsTypeRestrictionParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleTypeRestriction_in_ruleRestrictionList804);
+            pushFollow(FOLLOW_ruleTypeRestriction_in_ruleRestrictionList824);
             lv_restrictions_1_0=ruleTypeRestriction();
-            _fsp--;
+
+            state._fsp--;
 
 
             	        if (current==null) {
-            	            current = factory.create(grammarAccess.getRestrictionListRule().getType().getClassifier());
-            	            associateNodeWithAstElement(currentNode.getParent(), current);
+            	            current = createModelElementForParent(grammarAccess.getRestrictionListRule());
             	        }
-            	        try {
-            	       		add(
-            	       			current, 
-            	       			"restrictions",
-            	        		lv_restrictions_1_0, 
-            	        		"TypeRestriction", 
-            	        		currentNode);
-            	        } catch (ValueConverterException vce) {
-            				handleValueConverterException(vce);
-            	        }
-            	        currentNode = currentNode.getParent();
+                   		add(
+                   			current, 
+                   			"restrictions",
+                    		lv_restrictions_1_0, 
+                    		"TypeRestriction");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -1090,7 +1058,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:510:2: ( ',' ( (lv_restrictions_3_0= ruleTypeRestriction ) ) )*
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:424:2: (otherlv_2= ',' ( (lv_restrictions_3_0= ruleTypeRestriction ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -1103,41 +1071,36 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:510:4: ',' ( (lv_restrictions_3_0= ruleTypeRestriction ) )
+            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:424:4: otherlv_2= ',' ( (lv_restrictions_3_0= ruleTypeRestriction ) )
             	    {
-            	    match(input,16,FOLLOW_16_in_ruleRestrictionList815); 
+            	    otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleRestrictionList837); 
 
-            	            createLeafNode(grammarAccess.getRestrictionListAccess().getCommaKeyword_2_0(), null); 
+            	        	newLeafNode(otherlv_2, grammarAccess.getRestrictionListAccess().getCommaKeyword_2_0());
             	        
-            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:514:1: ( (lv_restrictions_3_0= ruleTypeRestriction ) )
-            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:515:1: (lv_restrictions_3_0= ruleTypeRestriction )
+            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:428:1: ( (lv_restrictions_3_0= ruleTypeRestriction ) )
+            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:429:1: (lv_restrictions_3_0= ruleTypeRestriction )
             	    {
-            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:515:1: (lv_restrictions_3_0= ruleTypeRestriction )
-            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:516:3: lv_restrictions_3_0= ruleTypeRestriction
+            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:429:1: (lv_restrictions_3_0= ruleTypeRestriction )
+            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:430:3: lv_restrictions_3_0= ruleTypeRestriction
             	    {
             	     
-            	    	        currentNode=createCompositeNode(grammarAccess.getRestrictionListAccess().getRestrictionsTypeRestrictionParserRuleCall_2_1_0(), currentNode); 
+            	    	        newCompositeNode(grammarAccess.getRestrictionListAccess().getRestrictionsTypeRestrictionParserRuleCall_2_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleTypeRestriction_in_ruleRestrictionList836);
+            	    pushFollow(FOLLOW_ruleTypeRestriction_in_ruleRestrictionList858);
             	    lv_restrictions_3_0=ruleTypeRestriction();
-            	    _fsp--;
+
+            	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = factory.create(grammarAccess.getRestrictionListRule().getType().getClassifier());
-            	    	            associateNodeWithAstElement(currentNode.getParent(), current);
+            	    	            current = createModelElementForParent(grammarAccess.getRestrictionListRule());
             	    	        }
-            	    	        try {
-            	    	       		add(
-            	    	       			current, 
-            	    	       			"restrictions",
-            	    	        		lv_restrictions_3_0, 
-            	    	        		"TypeRestriction", 
-            	    	        		currentNode);
-            	    	        } catch (ValueConverterException vce) {
-            	    				handleValueConverterException(vce);
-            	    	        }
-            	    	        currentNode = currentNode.getParent();
+            	           		add(
+            	           			current, 
+            	           			"restrictions",
+            	            		lv_restrictions_3_0, 
+            	            		"TypeRestriction");
+            	    	        afterParserOrEnumRuleCall();
             	    	    
 
             	    }
@@ -1154,9 +1117,9 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            match(input,17,FOLLOW_17_in_ruleRestrictionList848); 
+            otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleRestrictionList872); 
 
-                    createLeafNode(grammarAccess.getRestrictionListAccess().getRightSquareBracketKeyword_3(), null); 
+                	newLeafNode(otherlv_4, grammarAccess.getRestrictionListAccess().getRightSquareBracketKeyword_3());
                 
 
             }
@@ -1164,9 +1127,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-             resetLookahead(); 
-                	lastConsumedNode = currentNode;
-                
+             leaveRule(); 
         }
          
             catch (RecognitionException re) { 
@@ -1177,11 +1138,11 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end ruleRestrictionList
+    // $ANTLR end "ruleRestrictionList"
 
 
-    // $ANTLR start entryRuleImplicitPathDescription
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:550:1: entryRuleImplicitPathDescription returns [EObject current=null] : iv_ruleImplicitPathDescription= ruleImplicitPathDescription EOF ;
+    // $ANTLR start "entryRuleImplicitPathDescription"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:458:1: entryRuleImplicitPathDescription returns [EObject current=null] : iv_ruleImplicitPathDescription= ruleImplicitPathDescription EOF ;
     public final EObject entryRuleImplicitPathDescription() throws RecognitionException {
         EObject current = null;
 
@@ -1189,16 +1150,17 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:551:2: (iv_ruleImplicitPathDescription= ruleImplicitPathDescription EOF )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:552:2: iv_ruleImplicitPathDescription= ruleImplicitPathDescription EOF
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:459:2: (iv_ruleImplicitPathDescription= ruleImplicitPathDescription EOF )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:460:2: iv_ruleImplicitPathDescription= ruleImplicitPathDescription EOF
             {
-             currentNode = createCompositeNode(grammarAccess.getImplicitPathDescriptionRule(), currentNode); 
-            pushFollow(FOLLOW_ruleImplicitPathDescription_in_entryRuleImplicitPathDescription884);
+             newCompositeNode(grammarAccess.getImplicitPathDescriptionRule()); 
+            pushFollow(FOLLOW_ruleImplicitPathDescription_in_entryRuleImplicitPathDescription908);
             iv_ruleImplicitPathDescription=ruleImplicitPathDescription();
-            _fsp--;
+
+            state._fsp--;
 
              current =iv_ruleImplicitPathDescription; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleImplicitPathDescription894); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleImplicitPathDescription918); 
 
             }
 
@@ -1212,52 +1174,47 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end entryRuleImplicitPathDescription
+    // $ANTLR end "entryRuleImplicitPathDescription"
 
 
-    // $ANTLR start ruleImplicitPathDescription
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:559:1: ruleImplicitPathDescription returns [EObject current=null] : ( (lv_kind_0_0= ruleImplicitPathKind ) ) ;
+    // $ANTLR start "ruleImplicitPathDescription"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:467:1: ruleImplicitPathDescription returns [EObject current=null] : ( (lv_kind_0_0= ruleImplicitPathKind ) ) ;
     public final EObject ruleImplicitPathDescription() throws RecognitionException {
         EObject current = null;
 
         Enumerator lv_kind_0_0 = null;
 
 
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
+         enterRule(); 
             
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:564:6: ( ( (lv_kind_0_0= ruleImplicitPathKind ) ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:565:1: ( (lv_kind_0_0= ruleImplicitPathKind ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:470:28: ( ( (lv_kind_0_0= ruleImplicitPathKind ) ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:471:1: ( (lv_kind_0_0= ruleImplicitPathKind ) )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:565:1: ( (lv_kind_0_0= ruleImplicitPathKind ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:566:1: (lv_kind_0_0= ruleImplicitPathKind )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:471:1: ( (lv_kind_0_0= ruleImplicitPathKind ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:472:1: (lv_kind_0_0= ruleImplicitPathKind )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:566:1: (lv_kind_0_0= ruleImplicitPathKind )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:567:3: lv_kind_0_0= ruleImplicitPathKind
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:472:1: (lv_kind_0_0= ruleImplicitPathKind )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:473:3: lv_kind_0_0= ruleImplicitPathKind
             {
              
-            	        currentNode=createCompositeNode(grammarAccess.getImplicitPathDescriptionAccess().getKindImplicitPathKindEnumRuleCall_0(), currentNode); 
+            	        newCompositeNode(grammarAccess.getImplicitPathDescriptionAccess().getKindImplicitPathKindEnumRuleCall_0()); 
             	    
-            pushFollow(FOLLOW_ruleImplicitPathKind_in_ruleImplicitPathDescription939);
+            pushFollow(FOLLOW_ruleImplicitPathKind_in_ruleImplicitPathDescription963);
             lv_kind_0_0=ruleImplicitPathKind();
-            _fsp--;
+
+            state._fsp--;
 
 
             	        if (current==null) {
-            	            current = factory.create(grammarAccess.getImplicitPathDescriptionRule().getType().getClassifier());
-            	            associateNodeWithAstElement(currentNode.getParent(), current);
+            	            current = createModelElementForParent(grammarAccess.getImplicitPathDescriptionRule());
             	        }
-            	        try {
-            	       		set(
-            	       			current, 
-            	       			"kind",
-            	        		lv_kind_0_0, 
-            	        		"ImplicitPathKind", 
-            	        		currentNode);
-            	        } catch (ValueConverterException vce) {
-            				handleValueConverterException(vce);
-            	        }
-            	        currentNode = currentNode.getParent();
+                   		set(
+                   			current, 
+                   			"kind",
+                    		lv_kind_0_0, 
+                    		"ImplicitPathKind");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -1268,9 +1225,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-             resetLookahead(); 
-                	lastConsumedNode = currentNode;
-                
+             leaveRule(); 
         }
          
             catch (RecognitionException re) { 
@@ -1281,11 +1236,11 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end ruleImplicitPathDescription
+    // $ANTLR end "ruleImplicitPathDescription"
 
 
-    // $ANTLR start entryRuleExplicitPathDescription
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:597:1: entryRuleExplicitPathDescription returns [EObject current=null] : iv_ruleExplicitPathDescription= ruleExplicitPathDescription EOF ;
+    // $ANTLR start "entryRuleExplicitPathDescription"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:497:1: entryRuleExplicitPathDescription returns [EObject current=null] : iv_ruleExplicitPathDescription= ruleExplicitPathDescription EOF ;
     public final EObject entryRuleExplicitPathDescription() throws RecognitionException {
         EObject current = null;
 
@@ -1293,16 +1248,17 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:598:2: (iv_ruleExplicitPathDescription= ruleExplicitPathDescription EOF )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:599:2: iv_ruleExplicitPathDescription= ruleExplicitPathDescription EOF
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:498:2: (iv_ruleExplicitPathDescription= ruleExplicitPathDescription EOF )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:499:2: iv_ruleExplicitPathDescription= ruleExplicitPathDescription EOF
             {
-             currentNode = createCompositeNode(grammarAccess.getExplicitPathDescriptionRule(), currentNode); 
-            pushFollow(FOLLOW_ruleExplicitPathDescription_in_entryRuleExplicitPathDescription974);
+             newCompositeNode(grammarAccess.getExplicitPathDescriptionRule()); 
+            pushFollow(FOLLOW_ruleExplicitPathDescription_in_entryRuleExplicitPathDescription998);
             iv_ruleExplicitPathDescription=ruleExplicitPathDescription();
-            _fsp--;
+
+            state._fsp--;
 
              current =iv_ruleExplicitPathDescription; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExplicitPathDescription984); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExplicitPathDescription1008); 
 
             }
 
@@ -1316,48 +1272,41 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end entryRuleExplicitPathDescription
+    // $ANTLR end "entryRuleExplicitPathDescription"
 
 
-    // $ANTLR start ruleExplicitPathDescription
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:606:1: ruleExplicitPathDescription returns [EObject current=null] : ( (lv_associationName_0_0= RULE_ID ) ) ;
+    // $ANTLR start "ruleExplicitPathDescription"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:506:1: ruleExplicitPathDescription returns [EObject current=null] : ( (lv_associationName_0_0= RULE_ID ) ) ;
     public final EObject ruleExplicitPathDescription() throws RecognitionException {
         EObject current = null;
 
         Token lv_associationName_0_0=null;
 
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
+         enterRule(); 
             
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:611:6: ( ( (lv_associationName_0_0= RULE_ID ) ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:612:1: ( (lv_associationName_0_0= RULE_ID ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:509:28: ( ( (lv_associationName_0_0= RULE_ID ) ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:510:1: ( (lv_associationName_0_0= RULE_ID ) )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:612:1: ( (lv_associationName_0_0= RULE_ID ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:613:1: (lv_associationName_0_0= RULE_ID )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:510:1: ( (lv_associationName_0_0= RULE_ID ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:511:1: (lv_associationName_0_0= RULE_ID )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:613:1: (lv_associationName_0_0= RULE_ID )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:614:3: lv_associationName_0_0= RULE_ID
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:511:1: (lv_associationName_0_0= RULE_ID )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:512:3: lv_associationName_0_0= RULE_ID
             {
-            lv_associationName_0_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleExplicitPathDescription1025); 
+            lv_associationName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleExplicitPathDescription1049); 
 
-            			createLeafNode(grammarAccess.getExplicitPathDescriptionAccess().getAssociationNameIDTerminalRuleCall_0(), "associationName"); 
+            			newLeafNode(lv_associationName_0_0, grammarAccess.getExplicitPathDescriptionAccess().getAssociationNameIDTerminalRuleCall_0()); 
             		
 
             	        if (current==null) {
-            	            current = factory.create(grammarAccess.getExplicitPathDescriptionRule().getType().getClassifier());
-            	            associateNodeWithAstElement(currentNode, current);
+            	            current = createModelElement(grammarAccess.getExplicitPathDescriptionRule());
             	        }
-            	        try {
-            	       		set(
-            	       			current, 
-            	       			"associationName",
-            	        		lv_associationName_0_0, 
-            	        		"ID", 
-            	        		lastConsumedNode);
-            	        } catch (ValueConverterException vce) {
-            				handleValueConverterException(vce);
-            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"associationName",
+                    		lv_associationName_0_0, 
+                    		"ID");
             	    
 
             }
@@ -1368,9 +1317,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-             resetLookahead(); 
-                	lastConsumedNode = currentNode;
-                
+             leaveRule(); 
         }
          
             catch (RecognitionException re) { 
@@ -1381,11 +1328,11 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end ruleExplicitPathDescription
+    // $ANTLR end "ruleExplicitPathDescription"
 
 
-    // $ANTLR start entryRuleTypeRestriction
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:644:1: entryRuleTypeRestriction returns [EObject current=null] : iv_ruleTypeRestriction= ruleTypeRestriction EOF ;
+    // $ANTLR start "entryRuleTypeRestriction"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:536:1: entryRuleTypeRestriction returns [EObject current=null] : iv_ruleTypeRestriction= ruleTypeRestriction EOF ;
     public final EObject entryRuleTypeRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -1393,16 +1340,17 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:645:2: (iv_ruleTypeRestriction= ruleTypeRestriction EOF )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:646:2: iv_ruleTypeRestriction= ruleTypeRestriction EOF
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:537:2: (iv_ruleTypeRestriction= ruleTypeRestriction EOF )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:538:2: iv_ruleTypeRestriction= ruleTypeRestriction EOF
             {
-             currentNode = createCompositeNode(grammarAccess.getTypeRestrictionRule(), currentNode); 
-            pushFollow(FOLLOW_ruleTypeRestriction_in_entryRuleTypeRestriction1065);
+             newCompositeNode(grammarAccess.getTypeRestrictionRule()); 
+            pushFollow(FOLLOW_ruleTypeRestriction_in_entryRuleTypeRestriction1089);
             iv_ruleTypeRestriction=ruleTypeRestriction();
-            _fsp--;
+
+            state._fsp--;
 
              current =iv_ruleTypeRestriction; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeRestriction1075); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeRestriction1099); 
 
             }
 
@@ -1416,27 +1364,27 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end entryRuleTypeRestriction
+    // $ANTLR end "entryRuleTypeRestriction"
 
 
-    // $ANTLR start ruleTypeRestriction
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:653:1: ruleTypeRestriction returns [EObject current=null] : ( ( (lv_forbidden_0_0= '!' ) )? ( (lv_typeName_1_0= RULE_ID ) ) ) ;
+    // $ANTLR start "ruleTypeRestriction"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:545:1: ruleTypeRestriction returns [EObject current=null] : ( ( (lv_forbidden_0_0= '!' ) )? ( (lv_typeName_1_0= RULE_ID ) ) ) ;
     public final EObject ruleTypeRestriction() throws RecognitionException {
         EObject current = null;
 
         Token lv_forbidden_0_0=null;
         Token lv_typeName_1_0=null;
 
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
+         enterRule(); 
             
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:658:6: ( ( ( (lv_forbidden_0_0= '!' ) )? ( (lv_typeName_1_0= RULE_ID ) ) ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:659:1: ( ( (lv_forbidden_0_0= '!' ) )? ( (lv_typeName_1_0= RULE_ID ) ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:548:28: ( ( ( (lv_forbidden_0_0= '!' ) )? ( (lv_typeName_1_0= RULE_ID ) ) ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:549:1: ( ( (lv_forbidden_0_0= '!' ) )? ( (lv_typeName_1_0= RULE_ID ) ) )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:659:1: ( ( (lv_forbidden_0_0= '!' ) )? ( (lv_typeName_1_0= RULE_ID ) ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:659:2: ( (lv_forbidden_0_0= '!' ) )? ( (lv_typeName_1_0= RULE_ID ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:549:1: ( ( (lv_forbidden_0_0= '!' ) )? ( (lv_typeName_1_0= RULE_ID ) ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:549:2: ( (lv_forbidden_0_0= '!' ) )? ( (lv_typeName_1_0= RULE_ID ) )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:659:2: ( (lv_forbidden_0_0= '!' ) )?
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:549:2: ( (lv_forbidden_0_0= '!' ) )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1445,27 +1393,20 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:660:1: (lv_forbidden_0_0= '!' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:550:1: (lv_forbidden_0_0= '!' )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:660:1: (lv_forbidden_0_0= '!' )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:661:3: lv_forbidden_0_0= '!'
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:550:1: (lv_forbidden_0_0= '!' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:551:3: lv_forbidden_0_0= '!'
                     {
-                    lv_forbidden_0_0=(Token)input.LT(1);
-                    match(input,18,FOLLOW_18_in_ruleTypeRestriction1118); 
+                    lv_forbidden_0_0=(Token)match(input,18,FOLLOW_18_in_ruleTypeRestriction1142); 
 
-                            createLeafNode(grammarAccess.getTypeRestrictionAccess().getForbiddenExclamationMarkKeyword_0_0(), "forbidden"); 
+                            newLeafNode(lv_forbidden_0_0, grammarAccess.getTypeRestrictionAccess().getForbiddenExclamationMarkKeyword_0_0());
                         
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getTypeRestrictionRule().getType().getClassifier());
-                    	            associateNodeWithAstElement(currentNode, current);
+                    	            current = createModelElement(grammarAccess.getTypeRestrictionRule());
                     	        }
-                    	        
-                    	        try {
-                    	       		set(current, "forbidden", true, "!", lastConsumedNode);
-                    	        } catch (ValueConverterException vce) {
-                    				handleValueConverterException(vce);
-                    	        }
+                           		setWithLastConsumed(current, "forbidden", true, "!");
                     	    
 
                     }
@@ -1476,32 +1417,25 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:680:3: ( (lv_typeName_1_0= RULE_ID ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:681:1: (lv_typeName_1_0= RULE_ID )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:564:3: ( (lv_typeName_1_0= RULE_ID ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:565:1: (lv_typeName_1_0= RULE_ID )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:681:1: (lv_typeName_1_0= RULE_ID )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:682:3: lv_typeName_1_0= RULE_ID
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:565:1: (lv_typeName_1_0= RULE_ID )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:566:3: lv_typeName_1_0= RULE_ID
             {
-            lv_typeName_1_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeRestriction1149); 
+            lv_typeName_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeRestriction1173); 
 
-            			createLeafNode(grammarAccess.getTypeRestrictionAccess().getTypeNameIDTerminalRuleCall_1_0(), "typeName"); 
+            			newLeafNode(lv_typeName_1_0, grammarAccess.getTypeRestrictionAccess().getTypeNameIDTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
-            	            current = factory.create(grammarAccess.getTypeRestrictionRule().getType().getClassifier());
-            	            associateNodeWithAstElement(currentNode, current);
+            	            current = createModelElement(grammarAccess.getTypeRestrictionRule());
             	        }
-            	        try {
-            	       		set(
-            	       			current, 
-            	       			"typeName",
-            	        		lv_typeName_1_0, 
-            	        		"ID", 
-            	        		lastConsumedNode);
-            	        } catch (ValueConverterException vce) {
-            				handleValueConverterException(vce);
-            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"typeName",
+                    		lv_typeName_1_0, 
+                    		"ID");
             	    
 
             }
@@ -1515,9 +1449,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-             resetLookahead(); 
-                	lastConsumedNode = currentNode;
-                
+             leaveRule(); 
         }
          
             catch (RecognitionException re) { 
@@ -1528,20 +1460,24 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end ruleTypeRestriction
+    // $ANTLR end "ruleTypeRestriction"
 
 
-    // $ANTLR start ruleRepeatOperator
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:712:1: ruleRepeatOperator returns [Enumerator current=null] : ( ( 'NO_REPEAT' ) | ( '+' ) | ( '*' ) ) ;
+    // $ANTLR start "ruleRepeatOperator"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:590:1: ruleRepeatOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'NO_REPEAT' ) | (enumLiteral_1= '+' ) | (enumLiteral_2= '*' ) ) ;
     public final Enumerator ruleRepeatOperator() throws RecognitionException {
         Enumerator current = null;
 
-         setCurrentLookahead(); resetLookahead(); 
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
+
+         enterRule(); 
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:716:6: ( ( ( 'NO_REPEAT' ) | ( '+' ) | ( '*' ) ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:717:1: ( ( 'NO_REPEAT' ) | ( '+' ) | ( '*' ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:592:28: ( ( (enumLiteral_0= 'NO_REPEAT' ) | (enumLiteral_1= '+' ) | (enumLiteral_2= '*' ) ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:593:1: ( (enumLiteral_0= 'NO_REPEAT' ) | (enumLiteral_1= '+' ) | (enumLiteral_2= '*' ) )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:717:1: ( ( 'NO_REPEAT' ) | ( '+' ) | ( '*' ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:593:1: ( (enumLiteral_0= 'NO_REPEAT' ) | (enumLiteral_1= '+' ) | (enumLiteral_2= '*' ) )
             int alt11=3;
             switch ( input.LA(1) ) {
             case 19:
@@ -1561,22 +1497,22 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("717:1: ( ( 'NO_REPEAT' ) | ( '+' ) | ( '*' ) )", 11, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
 
             switch (alt11) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:717:2: ( 'NO_REPEAT' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:593:2: (enumLiteral_0= 'NO_REPEAT' )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:717:2: ( 'NO_REPEAT' )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:717:4: 'NO_REPEAT'
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:593:2: (enumLiteral_0= 'NO_REPEAT' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:593:4: enumLiteral_0= 'NO_REPEAT'
                     {
-                    match(input,19,FOLLOW_19_in_ruleRepeatOperator1202); 
+                    enumLiteral_0=(Token)match(input,19,FOLLOW_19_in_ruleRepeatOperator1228); 
 
                             current = grammarAccess.getRepeatOperatorAccess().getNO_REPEATEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                            createLeafNode(grammarAccess.getRepeatOperatorAccess().getNO_REPEATEnumLiteralDeclaration_0(), null); 
+                            newLeafNode(enumLiteral_0, grammarAccess.getRepeatOperatorAccess().getNO_REPEATEnumLiteralDeclaration_0()); 
                         
 
                     }
@@ -1585,15 +1521,15 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:723:6: ( '+' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:599:6: (enumLiteral_1= '+' )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:723:6: ( '+' )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:723:8: '+'
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:599:6: (enumLiteral_1= '+' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:599:8: enumLiteral_1= '+'
                     {
-                    match(input,20,FOLLOW_20_in_ruleRepeatOperator1217); 
+                    enumLiteral_1=(Token)match(input,20,FOLLOW_20_in_ruleRepeatOperator1245); 
 
                             current = grammarAccess.getRepeatOperatorAccess().getAT_LEAST_ONCEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                            createLeafNode(grammarAccess.getRepeatOperatorAccess().getAT_LEAST_ONCEEnumLiteralDeclaration_1(), null); 
+                            newLeafNode(enumLiteral_1, grammarAccess.getRepeatOperatorAccess().getAT_LEAST_ONCEEnumLiteralDeclaration_1()); 
                         
 
                     }
@@ -1602,15 +1538,15 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:729:6: ( '*' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:605:6: (enumLiteral_2= '*' )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:729:6: ( '*' )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:729:8: '*'
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:605:6: (enumLiteral_2= '*' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:605:8: enumLiteral_2= '*'
                     {
-                    match(input,21,FOLLOW_21_in_ruleRepeatOperator1232); 
+                    enumLiteral_2=(Token)match(input,21,FOLLOW_21_in_ruleRepeatOperator1262); 
 
                             current = grammarAccess.getRepeatOperatorAccess().getARBITRARYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                            createLeafNode(grammarAccess.getRepeatOperatorAccess().getARBITRARYEnumLiteralDeclaration_2(), null); 
+                            newLeafNode(enumLiteral_2, grammarAccess.getRepeatOperatorAccess().getARBITRARYEnumLiteralDeclaration_2()); 
                         
 
                     }
@@ -1624,9 +1560,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-             resetLookahead(); 
-                	lastConsumedNode = currentNode;
-                
+             leaveRule(); 
         }
          
             catch (RecognitionException re) { 
@@ -1637,20 +1571,24 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end ruleRepeatOperator
+    // $ANTLR end "ruleRepeatOperator"
 
 
-    // $ANTLR start ruleImplicitPathKind
-    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:739:1: ruleImplicitPathKind returns [Enumerator current=null] : ( ( '-->' ) | ( '<>-->' ) | ( '--><>' ) ) ;
+    // $ANTLR start "ruleImplicitPathKind"
+    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:615:1: ruleImplicitPathKind returns [Enumerator current=null] : ( (enumLiteral_0= '-->' ) | (enumLiteral_1= '<>-->' ) | (enumLiteral_2= '--><>' ) ) ;
     public final Enumerator ruleImplicitPathKind() throws RecognitionException {
         Enumerator current = null;
 
-         setCurrentLookahead(); resetLookahead(); 
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
+
+         enterRule(); 
         try {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:743:6: ( ( ( '-->' ) | ( '<>-->' ) | ( '--><>' ) ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:744:1: ( ( '-->' ) | ( '<>-->' ) | ( '--><>' ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:617:28: ( ( (enumLiteral_0= '-->' ) | (enumLiteral_1= '<>-->' ) | (enumLiteral_2= '--><>' ) ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:618:1: ( (enumLiteral_0= '-->' ) | (enumLiteral_1= '<>-->' ) | (enumLiteral_2= '--><>' ) )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:744:1: ( ( '-->' ) | ( '<>-->' ) | ( '--><>' ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:618:1: ( (enumLiteral_0= '-->' ) | (enumLiteral_1= '<>-->' ) | (enumLiteral_2= '--><>' ) )
             int alt12=3;
             switch ( input.LA(1) ) {
             case 22:
@@ -1670,22 +1608,22 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("744:1: ( ( '-->' ) | ( '<>-->' ) | ( '--><>' ) )", 12, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
 
             switch (alt12) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:744:2: ( '-->' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:618:2: (enumLiteral_0= '-->' )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:744:2: ( '-->' )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:744:4: '-->'
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:618:2: (enumLiteral_0= '-->' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:618:4: enumLiteral_0= '-->'
                     {
-                    match(input,22,FOLLOW_22_in_ruleImplicitPathKind1275); 
+                    enumLiteral_0=(Token)match(input,22,FOLLOW_22_in_ruleImplicitPathKind1307); 
 
                             current = grammarAccess.getImplicitPathKindAccess().getANYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                            createLeafNode(grammarAccess.getImplicitPathKindAccess().getANYEnumLiteralDeclaration_0(), null); 
+                            newLeafNode(enumLiteral_0, grammarAccess.getImplicitPathKindAccess().getANYEnumLiteralDeclaration_0()); 
                         
 
                     }
@@ -1694,15 +1632,15 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:750:6: ( '<>-->' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:624:6: (enumLiteral_1= '<>-->' )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:750:6: ( '<>-->' )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:750:8: '<>-->'
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:624:6: (enumLiteral_1= '<>-->' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:624:8: enumLiteral_1= '<>-->'
                     {
-                    match(input,23,FOLLOW_23_in_ruleImplicitPathKind1290); 
+                    enumLiteral_1=(Token)match(input,23,FOLLOW_23_in_ruleImplicitPathKind1324); 
 
                             current = grammarAccess.getImplicitPathKindAccess().getCONTAINMENT_SOURCEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                            createLeafNode(grammarAccess.getImplicitPathKindAccess().getCONTAINMENT_SOURCEEnumLiteralDeclaration_1(), null); 
+                            newLeafNode(enumLiteral_1, grammarAccess.getImplicitPathKindAccess().getCONTAINMENT_SOURCEEnumLiteralDeclaration_1()); 
                         
 
                     }
@@ -1711,15 +1649,15 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:756:6: ( '--><>' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:630:6: (enumLiteral_2= '--><>' )
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:756:6: ( '--><>' )
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:756:8: '--><>'
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:630:6: (enumLiteral_2= '--><>' )
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:630:8: enumLiteral_2= '--><>'
                     {
-                    match(input,24,FOLLOW_24_in_ruleImplicitPathKind1305); 
+                    enumLiteral_2=(Token)match(input,24,FOLLOW_24_in_ruleImplicitPathKind1341); 
 
                             current = grammarAccess.getImplicitPathKindAccess().getCONTAINMENT_TARGETEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                            createLeafNode(grammarAccess.getImplicitPathKindAccess().getCONTAINMENT_TARGETEnumLiteralDeclaration_2(), null); 
+                            newLeafNode(enumLiteral_2, grammarAccess.getImplicitPathKindAccess().getCONTAINMENT_TARGETEnumLiteralDeclaration_2()); 
                         
 
                     }
@@ -1733,9 +1671,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
 
             }
 
-             resetLookahead(); 
-                	lastConsumedNode = currentNode;
-                
+             leaveRule(); 
         }
          
             catch (RecognitionException re) { 
@@ -1746,7 +1682,9 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end ruleImplicitPathKind
+    // $ANTLR end "ruleImplicitPathKind"
+
+    // Delegated rules
 
 
     protected DFA2 dfa2 = new DFA2(this);
@@ -1810,7 +1748,7 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
             this.transition = DFA2_transition;
         }
         public String getDescription() {
-            return "93:1: ( ( (lv_pathAlternatives_0_0= rulePath ) ) | ( '(' ( (lv_pathAlternatives_2_0= rulePath ) ) ')' ( '|' '(' ( (lv_pathAlternatives_6_0= rulePath ) ) ')' )+ ) )";
+            return "81:1: ( ( (lv_pathAlternatives_0_0= rulePath ) ) | (otherlv_1= '(' ( (lv_pathAlternatives_2_0= rulePath ) ) otherlv_3= ')' (otherlv_4= '|' otherlv_5= '(' ( (lv_pathAlternatives_6_0= rulePath ) ) otherlv_7= ')' )+ ) )";
         }
     }
  
@@ -1818,54 +1756,54 @@ public class InternalPathExpressionsParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_rulePathExpression_in_entryRulePathExpression75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePathExpression85 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePath_in_rulePathExpression131 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rulePathExpression148 = new BitSet(new long[]{0x0000000001C00810L});
-    public static final BitSet FOLLOW_rulePath_in_rulePathExpression169 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_rulePathExpression179 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_rulePathExpression190 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_rulePathExpression200 = new BitSet(new long[]{0x0000000001C00810L});
-    public static final BitSet FOLLOW_rulePath_in_rulePathExpression221 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_rulePathExpression231 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_rulePath_in_entryRulePath270 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePath280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePathSegment_in_rulePath326 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_rulePath337 = new BitSet(new long[]{0x0000000001C00810L});
-    public static final BitSet FOLLOW_rulePathSegment_in_rulePath358 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_rulePathSegment_in_entryRulePathSegment396 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePathSegment406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePathSegmentDescription_in_rulePathSegment453 = new BitSet(new long[]{0x0000000000380002L});
-    public static final BitSet FOLLOW_11_in_rulePathSegment470 = new BitSet(new long[]{0x0000000001C00010L});
-    public static final BitSet FOLLOW_rulePathSegmentDescription_in_rulePathSegment491 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_rulePathSegment502 = new BitSet(new long[]{0x0000000001C00010L});
-    public static final BitSet FOLLOW_rulePathSegmentDescription_in_rulePathSegment523 = new BitSet(new long[]{0x0000000000003000L});
-    public static final BitSet FOLLOW_12_in_rulePathSegment535 = new BitSet(new long[]{0x0000000000380002L});
-    public static final BitSet FOLLOW_ruleRepeatOperator_in_rulePathSegment558 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePathSegmentDescription_in_entryRulePathSegmentDescription595 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePathSegmentDescription605 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImplicitPathDescription_in_rulePathSegmentDescription653 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_ruleExplicitPathDescription_in_rulePathSegmentDescription680 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_ruleRestrictionList_in_rulePathSegmentDescription701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRestrictionList_in_entryRuleRestrictionList738 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRestrictionList748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleRestrictionList783 = new BitSet(new long[]{0x0000000000040010L});
-    public static final BitSet FOLLOW_ruleTypeRestriction_in_ruleRestrictionList804 = new BitSet(new long[]{0x0000000000030000L});
-    public static final BitSet FOLLOW_16_in_ruleRestrictionList815 = new BitSet(new long[]{0x0000000000040010L});
-    public static final BitSet FOLLOW_ruleTypeRestriction_in_ruleRestrictionList836 = new BitSet(new long[]{0x0000000000030000L});
-    public static final BitSet FOLLOW_17_in_ruleRestrictionList848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImplicitPathDescription_in_entryRuleImplicitPathDescription884 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleImplicitPathDescription894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImplicitPathKind_in_ruleImplicitPathDescription939 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExplicitPathDescription_in_entryRuleExplicitPathDescription974 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExplicitPathDescription984 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleExplicitPathDescription1025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeRestriction_in_entryRuleTypeRestriction1065 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTypeRestriction1075 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleTypeRestriction1118 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeRestriction1149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleRepeatOperator1202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleRepeatOperator1217 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleRepeatOperator1232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleImplicitPathKind1275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleImplicitPathKind1290 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleImplicitPathKind1305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rulePathExpression150 = new BitSet(new long[]{0x0000000001C00810L});
+    public static final BitSet FOLLOW_rulePath_in_rulePathExpression171 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_rulePathExpression183 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_rulePathExpression196 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_11_in_rulePathExpression208 = new BitSet(new long[]{0x0000000001C00810L});
+    public static final BitSet FOLLOW_rulePath_in_rulePathExpression229 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_rulePathExpression241 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_rulePath_in_entryRulePath280 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePath290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePathSegment_in_rulePath336 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_rulePath349 = new BitSet(new long[]{0x0000000001C00810L});
+    public static final BitSet FOLLOW_rulePathSegment_in_rulePath370 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_rulePathSegment_in_entryRulePathSegment408 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePathSegment418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePathSegmentDescription_in_rulePathSegment465 = new BitSet(new long[]{0x0000000000380002L});
+    public static final BitSet FOLLOW_11_in_rulePathSegment484 = new BitSet(new long[]{0x0000000001C00010L});
+    public static final BitSet FOLLOW_rulePathSegmentDescription_in_rulePathSegment505 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_rulePathSegment518 = new BitSet(new long[]{0x0000000001C00010L});
+    public static final BitSet FOLLOW_rulePathSegmentDescription_in_rulePathSegment539 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_12_in_rulePathSegment553 = new BitSet(new long[]{0x0000000000380002L});
+    public static final BitSet FOLLOW_ruleRepeatOperator_in_rulePathSegment576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePathSegmentDescription_in_entryRulePathSegmentDescription613 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePathSegmentDescription623 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleImplicitPathDescription_in_rulePathSegmentDescription671 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_ruleExplicitPathDescription_in_rulePathSegmentDescription698 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_ruleRestrictionList_in_rulePathSegmentDescription719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRestrictionList_in_entryRuleRestrictionList756 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRestrictionList766 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_ruleRestrictionList803 = new BitSet(new long[]{0x0000000000040010L});
+    public static final BitSet FOLLOW_ruleTypeRestriction_in_ruleRestrictionList824 = new BitSet(new long[]{0x0000000000030000L});
+    public static final BitSet FOLLOW_16_in_ruleRestrictionList837 = new BitSet(new long[]{0x0000000000040010L});
+    public static final BitSet FOLLOW_ruleTypeRestriction_in_ruleRestrictionList858 = new BitSet(new long[]{0x0000000000030000L});
+    public static final BitSet FOLLOW_17_in_ruleRestrictionList872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleImplicitPathDescription_in_entryRuleImplicitPathDescription908 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleImplicitPathDescription918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleImplicitPathKind_in_ruleImplicitPathDescription963 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExplicitPathDescription_in_entryRuleExplicitPathDescription998 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExplicitPathDescription1008 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleExplicitPathDescription1049 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeRestriction_in_entryRuleTypeRestriction1089 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTypeRestriction1099 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleTypeRestriction1142 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeRestriction1173 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleRepeatOperator1228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleRepeatOperator1245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleRepeatOperator1262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleImplicitPathKind1307 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleImplicitPathKind1324 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleImplicitPathKind1341 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -39,6 +39,5 @@ public class ExpressionsStandaloneSetupGenerated implements ISetup {
 
 
 
-
 	}
 }

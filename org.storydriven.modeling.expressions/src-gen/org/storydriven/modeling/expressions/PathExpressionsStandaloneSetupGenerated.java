@@ -39,6 +39,5 @@ public class PathExpressionsStandaloneSetupGenerated implements ISetup {
 
 
 
-
 	}
 }

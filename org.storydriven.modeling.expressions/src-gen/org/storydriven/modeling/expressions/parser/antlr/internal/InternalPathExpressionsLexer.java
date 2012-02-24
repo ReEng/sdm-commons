@@ -12,299 +12,335 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalPathExpressionsLexer extends Lexer {
-    public static final int RULE_ID=4;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int Tokens=25;
-    public static final int T24=24;
-    public static final int EOF=-1;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int T23=23;
-    public static final int T22=22;
-    public static final int T21=21;
-    public static final int T20=20;
     public static final int RULE_ML_COMMENT=7;
+    public static final int RULE_ID=4;
+    public static final int T__12=12;
+    public static final int T__23=23;
+    public static final int T__20=20;
+    public static final int T__13=13;
     public static final int RULE_STRING=6;
-    public static final int RULE_INT=5;
-    public static final int T11=11;
-    public static final int T12=12;
-    public static final int T13=13;
-    public static final int T14=14;
+    public static final int T__21=21;
+    public static final int T__19=19;
+    public static final int T__14=14;
+    public static final int T__11=11;
+    public static final int T__22=22;
     public static final int RULE_WS=9;
-    public static final int T15=15;
-    public static final int T16=16;
-    public static final int T17=17;
-    public static final int T18=18;
-    public static final int T19=19;
+    public static final int T__17=17;
+    public static final int EOF=-1;
+    public static final int RULE_INT=5;
+    public static final int T__16=16;
+    public static final int T__24=24;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__18=18;
+    public static final int T__15=15;
+
+    // delegates
+    // delegators
+
     public InternalPathExpressionsLexer() {;} 
     public InternalPathExpressionsLexer(CharStream input) {
-        super(input);
+        this(input, new RecognizerSharedState());
+    }
+    public InternalPathExpressionsLexer(CharStream input, RecognizerSharedState state) {
+        super(input,state);
+
     }
     public String getGrammarFileName() { return "../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g"; }
 
-    // $ANTLR start T11
-    public final void mT11() throws RecognitionException {
+    // $ANTLR start "T__11"
+    public final void mT__11() throws RecognitionException {
         try {
-            int _type = T11;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:10:5: ( '(' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:10:7: '('
+            int _type = T__11;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:11:7: ( '(' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:11:9: '('
             {
             match('('); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T11
+    // $ANTLR end "T__11"
 
-    // $ANTLR start T12
-    public final void mT12() throws RecognitionException {
+    // $ANTLR start "T__12"
+    public final void mT__12() throws RecognitionException {
         try {
-            int _type = T12;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:11:5: ( ')' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:11:7: ')'
+            int _type = T__12;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:12:7: ( ')' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:12:9: ')'
             {
             match(')'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T12
+    // $ANTLR end "T__12"
 
-    // $ANTLR start T13
-    public final void mT13() throws RecognitionException {
+    // $ANTLR start "T__13"
+    public final void mT__13() throws RecognitionException {
         try {
-            int _type = T13;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:12:5: ( '|' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:12:7: '|'
+            int _type = T__13;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:13:7: ( '|' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:13:9: '|'
             {
             match('|'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T13
+    // $ANTLR end "T__13"
 
-    // $ANTLR start T14
-    public final void mT14() throws RecognitionException {
+    // $ANTLR start "T__14"
+    public final void mT__14() throws RecognitionException {
         try {
-            int _type = T14;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:13:5: ( '.' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:13:7: '.'
+            int _type = T__14;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:14:7: ( '.' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:14:9: '.'
             {
             match('.'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T14
+    // $ANTLR end "T__14"
 
-    // $ANTLR start T15
-    public final void mT15() throws RecognitionException {
+    // $ANTLR start "T__15"
+    public final void mT__15() throws RecognitionException {
         try {
-            int _type = T15;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:14:5: ( '[' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:14:7: '['
+            int _type = T__15;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:15:7: ( '[' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:15:9: '['
             {
             match('['); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T15
+    // $ANTLR end "T__15"
 
-    // $ANTLR start T16
-    public final void mT16() throws RecognitionException {
+    // $ANTLR start "T__16"
+    public final void mT__16() throws RecognitionException {
         try {
-            int _type = T16;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:15:5: ( ',' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:15:7: ','
+            int _type = T__16;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:16:7: ( ',' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:16:9: ','
             {
             match(','); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T16
+    // $ANTLR end "T__16"
 
-    // $ANTLR start T17
-    public final void mT17() throws RecognitionException {
+    // $ANTLR start "T__17"
+    public final void mT__17() throws RecognitionException {
         try {
-            int _type = T17;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:16:5: ( ']' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:16:7: ']'
+            int _type = T__17;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:17:7: ( ']' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:17:9: ']'
             {
             match(']'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T17
+    // $ANTLR end "T__17"
 
-    // $ANTLR start T18
-    public final void mT18() throws RecognitionException {
+    // $ANTLR start "T__18"
+    public final void mT__18() throws RecognitionException {
         try {
-            int _type = T18;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:17:5: ( '!' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:17:7: '!'
+            int _type = T__18;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:18:7: ( '!' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:18:9: '!'
             {
             match('!'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T18
+    // $ANTLR end "T__18"
 
-    // $ANTLR start T19
-    public final void mT19() throws RecognitionException {
+    // $ANTLR start "T__19"
+    public final void mT__19() throws RecognitionException {
         try {
-            int _type = T19;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:18:5: ( 'NO_REPEAT' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:18:7: 'NO_REPEAT'
+            int _type = T__19;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:19:7: ( 'NO_REPEAT' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:19:9: 'NO_REPEAT'
             {
             match("NO_REPEAT"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T19
+    // $ANTLR end "T__19"
 
-    // $ANTLR start T20
-    public final void mT20() throws RecognitionException {
+    // $ANTLR start "T__20"
+    public final void mT__20() throws RecognitionException {
         try {
-            int _type = T20;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:19:5: ( '+' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:19:7: '+'
+            int _type = T__20;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:20:7: ( '+' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:20:9: '+'
             {
             match('+'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T20
+    // $ANTLR end "T__20"
 
-    // $ANTLR start T21
-    public final void mT21() throws RecognitionException {
+    // $ANTLR start "T__21"
+    public final void mT__21() throws RecognitionException {
         try {
-            int _type = T21;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:20:5: ( '*' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:20:7: '*'
+            int _type = T__21;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:21:7: ( '*' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:21:9: '*'
             {
             match('*'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T21
+    // $ANTLR end "T__21"
 
-    // $ANTLR start T22
-    public final void mT22() throws RecognitionException {
+    // $ANTLR start "T__22"
+    public final void mT__22() throws RecognitionException {
         try {
-            int _type = T22;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:21:5: ( '-->' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:21:7: '-->'
+            int _type = T__22;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:22:7: ( '-->' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:22:9: '-->'
             {
             match("-->"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T22
+    // $ANTLR end "T__22"
 
-    // $ANTLR start T23
-    public final void mT23() throws RecognitionException {
+    // $ANTLR start "T__23"
+    public final void mT__23() throws RecognitionException {
         try {
-            int _type = T23;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:22:5: ( '<>-->' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:22:7: '<>-->'
+            int _type = T__23;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:23:7: ( '<>-->' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:23:9: '<>-->'
             {
             match("<>-->"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T23
+    // $ANTLR end "T__23"
 
-    // $ANTLR start T24
-    public final void mT24() throws RecognitionException {
+    // $ANTLR start "T__24"
+    public final void mT__24() throws RecognitionException {
         try {
-            int _type = T24;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:23:5: ( '--><>' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:23:7: '--><>'
+            int _type = T__24;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:24:7: ( '--><>' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:24:9: '--><>'
             {
             match("--><>"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T24
+    // $ANTLR end "T__24"
 
-    // $ANTLR start RULE_ID
+    // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:765:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:765:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:639:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:639:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:765:11: ( '^' )?
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:639:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -313,7 +349,7 @@ public class InternalPathExpressionsLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:765:11: '^'
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:639:11: '^'
                     {
                     match('^'); 
 
@@ -327,12 +363,11 @@ public class InternalPathExpressionsLexer extends Lexer {
 
             }
             else {
-                MismatchedSetException mse =
-                    new MismatchedSetException(null,input);
-                recover(mse);    throw mse;
-            }
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
 
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:765:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:639:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -352,10 +387,9 @@ public class InternalPathExpressionsLexer extends Lexer {
 
             	    }
             	    else {
-            	        MismatchedSetException mse =
-            	            new MismatchedSetException(null,input);
-            	        recover(mse);    throw mse;
-            	    }
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
 
 
             	    }
@@ -369,21 +403,23 @@ public class InternalPathExpressionsLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_ID
+    // $ANTLR end "RULE_ID"
 
-    // $ANTLR start RULE_INT
+    // $ANTLR start "RULE_INT"
     public final void mRULE_INT() throws RecognitionException {
         try {
             int _type = RULE_INT;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:767:10: ( ( '0' .. '9' )+ )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:767:12: ( '0' .. '9' )+
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:641:10: ( ( '0' .. '9' )+ )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:641:12: ( '0' .. '9' )+
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:767:12: ( '0' .. '9' )+
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:641:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -397,7 +433,7 @@ public class InternalPathExpressionsLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:767:13: '0' .. '9'
+            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:641:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -416,21 +452,23 @@ public class InternalPathExpressionsLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_INT
+    // $ANTLR end "RULE_INT"
 
-    // $ANTLR start RULE_STRING
+    // $ANTLR start "RULE_STRING"
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:769:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:769:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:643:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:643:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:769:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:643:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -442,16 +480,16 @@ public class InternalPathExpressionsLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("769:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 6, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:769:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:643:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:769:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:643:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -460,41 +498,39 @@ public class InternalPathExpressionsLexer extends Lexer {
                         if ( (LA4_0=='\\') ) {
                             alt4=1;
                         }
-                        else if ( ((LA4_0>='\u0000' && LA4_0<='!')||(LA4_0>='#' && LA4_0<='[')||(LA4_0>=']' && LA4_0<='\uFFFE')) ) {
+                        else if ( ((LA4_0>='\u0000' && LA4_0<='!')||(LA4_0>='#' && LA4_0<='[')||(LA4_0>=']' && LA4_0<='\uFFFF')) ) {
                             alt4=2;
                         }
 
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:769:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:643:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
+                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
                     	        input.consume();
 
                     	    }
                     	    else {
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:769:62: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:643:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
-                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
+                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
 
                     	    }
                     	    else {
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
 
 
                     	    }
@@ -510,10 +546,10 @@ public class InternalPathExpressionsLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:769:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:643:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:769:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:643:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -522,41 +558,39 @@ public class InternalPathExpressionsLexer extends Lexer {
                         if ( (LA5_0=='\\') ) {
                             alt5=1;
                         }
-                        else if ( ((LA5_0>='\u0000' && LA5_0<='&')||(LA5_0>='(' && LA5_0<='[')||(LA5_0>=']' && LA5_0<='\uFFFE')) ) {
+                        else if ( ((LA5_0>='\u0000' && LA5_0<='&')||(LA5_0>='(' && LA5_0<='[')||(LA5_0>=']' && LA5_0<='\uFFFF')) ) {
                             alt5=2;
                         }
 
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:769:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:643:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
+                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
                     	        input.consume();
 
                     	    }
                     	    else {
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:769:129: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:643:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
-                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
+                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
 
                     	    }
                     	    else {
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
 
 
                     	    }
@@ -577,23 +611,25 @@ public class InternalPathExpressionsLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_STRING
+    // $ANTLR end "RULE_STRING"
 
-    // $ANTLR start RULE_ML_COMMENT
+    // $ANTLR start "RULE_ML_COMMENT"
     public final void mRULE_ML_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_ML_COMMENT;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:771:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:771:19: '/*' ( options {greedy=false; } : . )* '*/'
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:645:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:645:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:771:24: ( options {greedy=false; } : . )*
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:645:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -605,20 +641,20 @@ public class InternalPathExpressionsLexer extends Lexer {
                     if ( (LA7_1=='/') ) {
                         alt7=2;
                     }
-                    else if ( ((LA7_1>='\u0000' && LA7_1<='.')||(LA7_1>='0' && LA7_1<='\uFFFE')) ) {
+                    else if ( ((LA7_1>='\u0000' && LA7_1<='.')||(LA7_1>='0' && LA7_1<='\uFFFF')) ) {
                         alt7=1;
                     }
 
 
                 }
-                else if ( ((LA7_0>='\u0000' && LA7_0<=')')||(LA7_0>='+' && LA7_0<='\uFFFE')) ) {
+                else if ( ((LA7_0>='\u0000' && LA7_0<=')')||(LA7_0>='+' && LA7_0<='\uFFFF')) ) {
                     alt7=1;
                 }
 
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:771:52: .
+            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:645:52: .
             	    {
             	    matchAny(); 
 
@@ -635,46 +671,47 @@ public class InternalPathExpressionsLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_ML_COMMENT
+    // $ANTLR end "RULE_ML_COMMENT"
 
-    // $ANTLR start RULE_SL_COMMENT
+    // $ANTLR start "RULE_SL_COMMENT"
     public final void mRULE_SL_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_SL_COMMENT;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:773:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:773:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:647:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:647:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:773:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:647:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( ((LA8_0>='\u0000' && LA8_0<='\t')||(LA8_0>='\u000B' && LA8_0<='\f')||(LA8_0>='\u000E' && LA8_0<='\uFFFE')) ) {
+                if ( ((LA8_0>='\u0000' && LA8_0<='\t')||(LA8_0>='\u000B' && LA8_0<='\f')||(LA8_0>='\u000E' && LA8_0<='\uFFFF')) ) {
                     alt8=1;
                 }
 
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:773:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:647:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
-            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFE') ) {
+            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
 
             	    }
             	    else {
-            	        MismatchedSetException mse =
-            	            new MismatchedSetException(null,input);
-            	        recover(mse);    throw mse;
-            	    }
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
 
 
             	    }
@@ -685,7 +722,7 @@ public class InternalPathExpressionsLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:773:40: ( ( '\\r' )? '\\n' )?
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:647:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -694,9 +731,9 @@ public class InternalPathExpressionsLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:773:41: ( '\\r' )? '\\n'
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:647:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:773:41: ( '\\r' )?
+                    // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:647:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -705,7 +742,7 @@ public class InternalPathExpressionsLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:773:41: '\\r'
+                            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:647:41: '\\r'
                             {
                             match('\r'); 
 
@@ -724,21 +761,23 @@ public class InternalPathExpressionsLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_SL_COMMENT
+    // $ANTLR end "RULE_SL_COMMENT"
 
-    // $ANTLR start RULE_WS
+    // $ANTLR start "RULE_WS"
     public final void mRULE_WS() throws RecognitionException {
         try {
             int _type = RULE_WS;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:775:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:775:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:649:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:649:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:775:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:649:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -759,10 +798,9 @@ public class InternalPathExpressionsLexer extends Lexer {
 
             	    }
             	    else {
-            	        MismatchedSetException mse =
-            	            new MismatchedSetException(null,input);
-            	        recover(mse);    throw mse;
-            	    }
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
 
 
             	    }
@@ -780,361 +818,181 @@ public class InternalPathExpressionsLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_WS
+    // $ANTLR end "RULE_WS"
 
-    // $ANTLR start RULE_ANY_OTHER
+    // $ANTLR start "RULE_ANY_OTHER"
     public final void mRULE_ANY_OTHER() throws RecognitionException {
         try {
             int _type = RULE_ANY_OTHER;
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:777:16: ( . )
-            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:777:18: .
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:651:16: ( . )
+            // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:651:18: .
             {
             matchAny(); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_ANY_OTHER
+    // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:8: ( T11 | T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt12=21;
-        int LA12_0 = input.LA(1);
-
-        if ( (LA12_0=='(') ) {
-            alt12=1;
-        }
-        else if ( (LA12_0==')') ) {
-            alt12=2;
-        }
-        else if ( (LA12_0=='|') ) {
-            alt12=3;
-        }
-        else if ( (LA12_0=='.') ) {
-            alt12=4;
-        }
-        else if ( (LA12_0=='[') ) {
-            alt12=5;
-        }
-        else if ( (LA12_0==',') ) {
-            alt12=6;
-        }
-        else if ( (LA12_0==']') ) {
-            alt12=7;
-        }
-        else if ( (LA12_0=='!') ) {
-            alt12=8;
-        }
-        else if ( (LA12_0=='N') ) {
-            int LA12_9 = input.LA(2);
-
-            if ( (LA12_9=='O') ) {
-                int LA12_30 = input.LA(3);
-
-                if ( (LA12_30=='_') ) {
-                    int LA12_41 = input.LA(4);
-
-                    if ( (LA12_41=='R') ) {
-                        int LA12_43 = input.LA(5);
-
-                        if ( (LA12_43=='E') ) {
-                            int LA12_46 = input.LA(6);
-
-                            if ( (LA12_46=='P') ) {
-                                int LA12_47 = input.LA(7);
-
-                                if ( (LA12_47=='E') ) {
-                                    int LA12_48 = input.LA(8);
-
-                                    if ( (LA12_48=='A') ) {
-                                        int LA12_49 = input.LA(9);
-
-                                        if ( (LA12_49=='T') ) {
-                                            int LA12_50 = input.LA(10);
-
-                                            if ( ((LA12_50>='0' && LA12_50<='9')||(LA12_50>='A' && LA12_50<='Z')||LA12_50=='_'||(LA12_50>='a' && LA12_50<='z')) ) {
-                                                alt12=15;
-                                            }
-                                            else {
-                                                alt12=9;}
-                                        }
-                                        else {
-                                            alt12=15;}
-                                    }
-                                    else {
-                                        alt12=15;}
-                                }
-                                else {
-                                    alt12=15;}
-                            }
-                            else {
-                                alt12=15;}
-                        }
-                        else {
-                            alt12=15;}
-                    }
-                    else {
-                        alt12=15;}
-                }
-                else {
-                    alt12=15;}
-            }
-            else {
-                alt12=15;}
-        }
-        else if ( (LA12_0=='+') ) {
-            alt12=10;
-        }
-        else if ( (LA12_0=='*') ) {
-            alt12=11;
-        }
-        else if ( (LA12_0=='-') ) {
-            int LA12_12 = input.LA(2);
-
-            if ( (LA12_12=='-') ) {
-                int LA12_34 = input.LA(3);
-
-                if ( (LA12_34=='>') ) {
-                    int LA12_42 = input.LA(4);
-
-                    if ( (LA12_42=='<') ) {
-                        alt12=14;
-                    }
-                    else {
-                        alt12=12;}
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("1:1: Tokens : ( T11 | T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );", 12, 34, input);
-
-                    throw nvae;
-                }
-            }
-            else {
-                alt12=21;}
-        }
-        else if ( (LA12_0=='<') ) {
-            int LA12_13 = input.LA(2);
-
-            if ( (LA12_13=='>') ) {
-                alt12=13;
-            }
-            else {
-                alt12=21;}
-        }
-        else if ( (LA12_0=='^') ) {
-            int LA12_14 = input.LA(2);
-
-            if ( ((LA12_14>='A' && LA12_14<='Z')||LA12_14=='_'||(LA12_14>='a' && LA12_14<='z')) ) {
-                alt12=15;
-            }
-            else {
-                alt12=21;}
-        }
-        else if ( ((LA12_0>='A' && LA12_0<='M')||(LA12_0>='O' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='z')) ) {
-            alt12=15;
-        }
-        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {
-            alt12=16;
-        }
-        else if ( (LA12_0=='\"') ) {
-            int LA12_17 = input.LA(2);
-
-            if ( ((LA12_17>='\u0000' && LA12_17<='\uFFFE')) ) {
-                alt12=17;
-            }
-            else {
-                alt12=21;}
-        }
-        else if ( (LA12_0=='\'') ) {
-            int LA12_18 = input.LA(2);
-
-            if ( ((LA12_18>='\u0000' && LA12_18<='\uFFFE')) ) {
-                alt12=17;
-            }
-            else {
-                alt12=21;}
-        }
-        else if ( (LA12_0=='/') ) {
-            switch ( input.LA(2) ) {
-            case '*':
-                {
-                alt12=18;
-                }
-                break;
-            case '/':
-                {
-                alt12=19;
-                }
-                break;
-            default:
-                alt12=21;}
-
-        }
-        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {
-            alt12=20;
-        }
-        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||(LA12_0>='#' && LA12_0<='&')||(LA12_0>=':' && LA12_0<=';')||(LA12_0>='=' && LA12_0<='@')||LA12_0=='\\'||LA12_0=='`'||LA12_0=='{'||(LA12_0>='}' && LA12_0<='\uFFFE')) ) {
-            alt12=21;
-        }
-        else {
-            NoViableAltException nvae =
-                new NoViableAltException("1:1: Tokens : ( T11 | T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );", 12, 0, input);
-
-            throw nvae;
-        }
+        alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:10: T11
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:10: T__11
                 {
-                mT11(); 
+                mT__11(); 
 
                 }
                 break;
             case 2 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:14: T12
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:16: T__12
                 {
-                mT12(); 
+                mT__12(); 
 
                 }
                 break;
             case 3 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:18: T13
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:22: T__13
                 {
-                mT13(); 
+                mT__13(); 
 
                 }
                 break;
             case 4 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:22: T14
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:28: T__14
                 {
-                mT14(); 
+                mT__14(); 
 
                 }
                 break;
             case 5 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:26: T15
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:34: T__15
                 {
-                mT15(); 
+                mT__15(); 
 
                 }
                 break;
             case 6 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:30: T16
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:40: T__16
                 {
-                mT16(); 
+                mT__16(); 
 
                 }
                 break;
             case 7 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:34: T17
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:46: T__17
                 {
-                mT17(); 
+                mT__17(); 
 
                 }
                 break;
             case 8 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:38: T18
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:52: T__18
                 {
-                mT18(); 
+                mT__18(); 
 
                 }
                 break;
             case 9 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:42: T19
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:58: T__19
                 {
-                mT19(); 
+                mT__19(); 
 
                 }
                 break;
             case 10 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:46: T20
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:64: T__20
                 {
-                mT20(); 
+                mT__20(); 
 
                 }
                 break;
             case 11 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:50: T21
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:70: T__21
                 {
-                mT21(); 
+                mT__21(); 
 
                 }
                 break;
             case 12 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:54: T22
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:76: T__22
                 {
-                mT22(); 
+                mT__22(); 
 
                 }
                 break;
             case 13 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:58: T23
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:82: T__23
                 {
-                mT23(); 
+                mT__23(); 
 
                 }
                 break;
             case 14 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:62: T24
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:88: T__24
                 {
-                mT24(); 
+                mT__24(); 
 
                 }
                 break;
             case 15 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:66: RULE_ID
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:94: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 16 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:74: RULE_INT
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:102: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 17 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:83: RULE_STRING
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:111: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 18 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:95: RULE_ML_COMMENT
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:123: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 19 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:111: RULE_SL_COMMENT
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:139: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 20 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:127: RULE_WS
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:155: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 21 :
-                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:135: RULE_ANY_OTHER
+                // ../org.storydriven.modeling.expressions/src-gen/org/storydriven/modeling/expressions/parser/antlr/internal/InternalPathExpressions.g:1:163: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1146,6 +1004,195 @@ public class InternalPathExpressionsLexer extends Lexer {
     }
 
 
+    protected DFA12 dfa12 = new DFA12(this);
+    static final String DFA12_eotS =
+        "\11\uffff\1\37\2\uffff\3\25\2\uffff\3\25\12\uffff\1\37\12\uffff"+
+        "\1\37\1\55\1\37\2\uffff\4\37\1\63\1\uffff";
+    static final String DFA12_eofS =
+        "\64\uffff";
+    static final String DFA12_minS =
+        "\1\0\10\uffff\1\117\2\uffff\1\55\1\76\1\101\2\uffff\2\0\1\52\12"+
+        "\uffff\1\137\3\uffff\1\76\6\uffff\1\122\1\74\1\105\2\uffff\1\120"+
+        "\1\105\1\101\1\124\1\60\1\uffff";
+    static final String DFA12_maxS =
+        "\1\uffff\10\uffff\1\117\2\uffff\1\55\1\76\1\172\2\uffff\2\uffff"+
+        "\1\57\12\uffff\1\137\3\uffff\1\76\6\uffff\1\122\1\74\1\105\2\uffff"+
+        "\1\120\1\105\1\101\1\124\1\172\1\uffff";
+    static final String DFA12_acceptS =
+        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\uffff\1\12\1\13\3\uffff"+
+        "\1\17\1\20\3\uffff\1\24\1\25\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1"+
+        "\uffff\1\17\1\12\1\13\1\uffff\1\15\1\20\1\21\1\22\1\23\1\24\3\uffff"+
+        "\1\16\1\14\5\uffff\1\11";
+    static final String DFA12_specialS =
+        "\1\2\20\uffff\1\0\1\1\41\uffff}>";
+    static final String[] DFA12_transitionS = {
+            "\11\25\2\24\2\25\1\24\22\25\1\24\1\10\1\21\4\25\1\22\1\1\1"+
+            "\2\1\13\1\12\1\6\1\14\1\4\1\23\12\20\2\25\1\15\4\25\15\17\1"+
+            "\11\14\17\1\5\1\25\1\7\1\16\1\17\1\25\32\17\1\25\1\3\uff83\25",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\36",
+            "",
+            "",
+            "\1\42",
+            "\1\43",
+            "\32\37\4\uffff\1\37\1\uffff\32\37",
+            "",
+            "",
+            "\0\45",
+            "\0\45",
+            "\1\46\4\uffff\1\47",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\51",
+            "",
+            "",
+            "",
+            "\1\52",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\53",
+            "\1\54",
+            "\1\56",
+            "",
+            "",
+            "\1\57",
+            "\1\60",
+            "\1\61",
+            "\1\62",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+            ""
+    };
+
+    static final short[] DFA12_eot = DFA.unpackEncodedString(DFA12_eotS);
+    static final short[] DFA12_eof = DFA.unpackEncodedString(DFA12_eofS);
+    static final char[] DFA12_min = DFA.unpackEncodedStringToUnsignedChars(DFA12_minS);
+    static final char[] DFA12_max = DFA.unpackEncodedStringToUnsignedChars(DFA12_maxS);
+    static final short[] DFA12_accept = DFA.unpackEncodedString(DFA12_acceptS);
+    static final short[] DFA12_special = DFA.unpackEncodedString(DFA12_specialS);
+    static final short[][] DFA12_transition;
+
+    static {
+        int numStates = DFA12_transitionS.length;
+        DFA12_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA12_transition[i] = DFA.unpackEncodedString(DFA12_transitionS[i]);
+        }
+    }
+
+    class DFA12 extends DFA {
+
+        public DFA12(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 12;
+            this.eot = DFA12_eot;
+            this.eof = DFA12_eof;
+            this.min = DFA12_min;
+            this.max = DFA12_max;
+            this.accept = DFA12_accept;
+            this.special = DFA12_special;
+            this.transition = DFA12_transition;
+        }
+        public String getDescription() {
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            IntStream input = _input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA12_17 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_17>='\u0000' && LA12_17<='\uFFFF')) ) {s = 37;}
+
+                        else s = 21;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA12_18 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_18>='\u0000' && LA12_18<='\uFFFF')) ) {s = 37;}
+
+                        else s = 21;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA12_0 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA12_0=='(') ) {s = 1;}
+
+                        else if ( (LA12_0==')') ) {s = 2;}
+
+                        else if ( (LA12_0=='|') ) {s = 3;}
+
+                        else if ( (LA12_0=='.') ) {s = 4;}
+
+                        else if ( (LA12_0=='[') ) {s = 5;}
+
+                        else if ( (LA12_0==',') ) {s = 6;}
+
+                        else if ( (LA12_0==']') ) {s = 7;}
+
+                        else if ( (LA12_0=='!') ) {s = 8;}
+
+                        else if ( (LA12_0=='N') ) {s = 9;}
+
+                        else if ( (LA12_0=='+') ) {s = 10;}
+
+                        else if ( (LA12_0=='*') ) {s = 11;}
+
+                        else if ( (LA12_0=='-') ) {s = 12;}
+
+                        else if ( (LA12_0=='<') ) {s = 13;}
+
+                        else if ( (LA12_0=='^') ) {s = 14;}
+
+                        else if ( ((LA12_0>='A' && LA12_0<='M')||(LA12_0>='O' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='z')) ) {s = 15;}
+
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 16;}
+
+                        else if ( (LA12_0=='\"') ) {s = 17;}
+
+                        else if ( (LA12_0=='\'') ) {s = 18;}
+
+                        else if ( (LA12_0=='/') ) {s = 19;}
+
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 20;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||(LA12_0>='#' && LA12_0<='&')||(LA12_0>=':' && LA12_0<=';')||(LA12_0>='=' && LA12_0<='@')||LA12_0=='\\'||LA12_0=='`'||LA12_0=='{'||(LA12_0>='}' && LA12_0<='\uFFFF')) ) {s = 21;}
+
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 12, _s, input);
+            error(nvae);
+            throw nvae;
+        }
+    }
  
 
 }
