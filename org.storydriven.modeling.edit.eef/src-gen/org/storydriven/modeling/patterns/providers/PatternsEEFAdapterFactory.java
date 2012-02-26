@@ -5,6 +5,7 @@ package org.storydriven.modeling.patterns.providers;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.storydriven.modeling.patterns.util.PatternsAdapterFactory;
+import org.storydriven.modeling.providers.CommentableElementPropertiesEditionProvider;
 
 
 /**
@@ -84,6 +85,14 @@ public class PatternsEEFAdapterFactory extends PatternsAdapterFactory {
 	 */
 	public Adapter createContainmentRelationAdapter() {
 		return new ContainmentRelationPropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
+	 * @see org.storydriven.modeling.patterns.util.PatternsAdapterFactory#createCommentableElementAdapter()
+	 * 
+	 */
+	public Adapter createCommentableElementAdapter() {
+		return new CommentableElementPropertiesEditionProvider();
 	}
 	/**
 	 * {@inheritDoc}

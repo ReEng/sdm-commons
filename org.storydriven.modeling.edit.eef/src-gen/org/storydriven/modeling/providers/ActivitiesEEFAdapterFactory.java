@@ -43,6 +43,14 @@ public class ActivitiesEEFAdapterFactory extends ActivitiesAdapterFactory {
 	}
 	/**
 	 * {@inheritDoc}
+	 * @see org.storydriven.modeling.activities.util.ActivitiesAdapterFactory#createCommentableElementAdapter()
+	 * 
+	 */
+	public Adapter createCommentableElementAdapter() {
+		return new CommentableElementPropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
 	 * @see org.storydriven.modeling.activities.util.ActivitiesAdapterFactory#createActivityAdapter()
 	 * 
 	 */

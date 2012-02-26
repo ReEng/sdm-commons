@@ -13,8 +13,17 @@ public class ModelingMessages extends NLS {
 	
 	private static final String BUNDLE_NAME = "org.storydriven.modeling.providers.modelingMessages"; //$NON-NLS-1$
 
+	
+	public static String DocumentationPropertiesEditionPart_DocumentationGroupLabel;
 
+	
+	public static String Documentation_ReadOnly;
 
+	
+	public static String Documentation_Part_Title;
+
+	
+	public static String DocumentationPropertiesEditionPart_DocumentationLabel;
 
 	
 	public static String PropertiesEditionPart_DocumentationLabel;
@@ -65,8 +74,8 @@ public class ModelingMessages extends NLS {
 	public static String PropertiesEditionPart_RemoveListViewerLabel;
 
 	// Start of user code for additionnal NLS Constants
-	
-	// End of user code
+
+// End of user code
 
 	static {
 		// initialize resource bundle

@@ -7,6 +7,8 @@ import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
 import org.storydriven.modeling.parts.ModelingViewsRepository;
+import org.storydriven.modeling.parts.forms.DocumentationPropertiesEditionPartForm;
+import org.storydriven.modeling.parts.impl.DocumentationPropertiesEditionPartImpl;
 
 
 
@@ -32,6 +34,12 @@ public class ModelingPropertiesEditionPartProvider implements IPropertiesEdition
 	 * 
 	 */
 	public IPropertiesEditionPart getPropertiesEditionPart(Object key, int kind, IPropertiesEditionComponent component) {
+		if (key == ModelingViewsRepository.Documentation.class) {
+			if (kind == ModelingViewsRepository.SWT_KIND)
+				return new DocumentationPropertiesEditionPartImpl(component);
+			if (kind == ModelingViewsRepository.FORM_KIND)
+				return new DocumentationPropertiesEditionPartForm(component);
+		}
 		return null;
 	}
 

@@ -99,6 +99,14 @@ public class PatternsEEFAdapterFactory extends PatternsAdapterFactory {
 	}
 	/**
 	 * {@inheritDoc}
+	 * @see org.storydriven.modeling.patterns.util.PatternsAdapterFactory#createCommentableElementAdapter()
+	 * 
+	 */
+	public Adapter createCommentableElementAdapter() {
+		return new CommentableElementPropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
 	 * @see org.storydriven.modeling.patterns.util.PatternsAdapterFactory#createStoryPatternAdapter()
 	 * 
 	 */

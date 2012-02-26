@@ -5,6 +5,7 @@ package org.storydriven.modeling.patterns.expressions.providers;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.storydriven.modeling.patterns.expressions.util.ExpressionsAdapterFactory;
+import org.storydriven.modeling.providers.CommentableElementPropertiesEditionProvider;
 
 
 /**
@@ -13,6 +14,14 @@ import org.storydriven.modeling.patterns.expressions.util.ExpressionsAdapterFact
  */
 public class ExpressionsEEFAdapterFactory extends ExpressionsAdapterFactory {
 
+	/**
+	 * {@inheritDoc}
+	 * @see org.storydriven.modeling.patterns.expressions.util.ExpressionsAdapterFactory#createCommentableElementAdapter()
+	 * 
+	 */
+	public Adapter createCommentableElementAdapter() {
+		return new CommentableElementPropertiesEditionProvider();
+	}
 	/**
 	 * {@inheritDoc}
 	 * @see org.storydriven.modeling.patterns.expressions.util.ExpressionsAdapterFactory#createAttributeValueExpressionAdapter()

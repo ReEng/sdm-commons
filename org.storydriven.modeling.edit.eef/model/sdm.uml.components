@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
   <eef-components:PropertiesEditionContext xmi:id="_lvcnIFYUEeGJ4qlxiuPyww" documentation="Edition Context for modeling GenPackage">
-    <categories xmi:id="_lvcnIVYUEeGJ4qlxiuPyww" name="modeling"/>
+    <categories xmi:id="_lvcnIVYUEeGJ4qlxiuPyww" name="modeling">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_oZsWUFZVEeGM7bq70O6isA" name="CommentableElement" views="_A4w_MFZUEeGM7bq70O6isA">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_xIQo8FZVEeGM7bq70O6isA" name="documentation" views="_DpI1EFZUEeGM7bq70O6isA">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.modeling/model/sdm.ecore#//CommentableElement"/>
+      </bindings>
+    </categories>
+    <categories xmi:id="_yXgVMFZTEeGM7bq70O6isA" name="documentation"/>
     <model href="platform:/resource/org.storydriven.modeling/model/sdm.uml.genmodel#//modeling"/>
   </eef-components:PropertiesEditionContext>
   <eef-components:PropertiesEditionContext xmi:id="_lvcnIlYUEeGJ4qlxiuPyww" documentation="Edition Context for activities GenPackage">
@@ -1562,5 +1570,15 @@
     <RepositoryKind>SWT</RepositoryKind>
     <RepositoryKind>Form</RepositoryKind>
     <categories xmi:id="_lvgRyFYUEeGJ4qlxiuPyww" name="modeling"/>
+    <categories xmi:id="_8tnNYFZTEeGM7bq70O6isA" name="documentation">
+      <views xmi:id="_A4w_MFZUEeGM7bq70O6isA" name="Documentation">
+        <elements xsi:type="eef-views:Container" xmi:id="_CbZ2oFZUEeGM7bq70O6isA" name="Documentation">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_DpI1EFZUEeGM7bq70O6isA" name="documentation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
   </eef-views:ViewsRepository>
 </xmi:XMI>

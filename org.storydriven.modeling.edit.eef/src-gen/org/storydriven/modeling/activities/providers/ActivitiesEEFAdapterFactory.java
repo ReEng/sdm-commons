@@ -5,6 +5,7 @@ package org.storydriven.modeling.activities.providers;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.storydriven.modeling.activities.util.ActivitiesAdapterFactory;
+import org.storydriven.modeling.providers.CommentableElementPropertiesEditionProvider;
 
 
 /**
@@ -28,6 +29,14 @@ public class ActivitiesEEFAdapterFactory extends ActivitiesAdapterFactory {
 	 */
 	public Adapter createActivityEdgeAdapter() {
 		return new ActivityEdgePropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
+	 * @see org.storydriven.modeling.activities.util.ActivitiesAdapterFactory#createCommentableElementAdapter()
+	 * 
+	 */
+	public Adapter createCommentableElementAdapter() {
+		return new CommentableElementPropertiesEditionProvider();
 	}
 	/**
 	 * {@inheritDoc}

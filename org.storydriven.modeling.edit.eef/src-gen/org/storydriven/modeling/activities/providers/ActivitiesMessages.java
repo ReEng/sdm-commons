@@ -383,8 +383,8 @@ public class ActivitiesMessages extends NLS {
 	public static String PropertiesEditionPart_RemoveListViewerLabel;
 
 	// Start of user code for additionnal NLS Constants
-	
-	// End of user code
+
+// End of user code
 
 	static {
 		// initialize resource bundle

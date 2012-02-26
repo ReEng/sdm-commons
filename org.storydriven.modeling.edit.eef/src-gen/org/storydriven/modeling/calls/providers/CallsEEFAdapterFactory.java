@@ -5,6 +5,7 @@ package org.storydriven.modeling.calls.providers;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.storydriven.modeling.calls.util.CallsAdapterFactory;
+import org.storydriven.modeling.providers.CommentableElementPropertiesEditionProvider;
 
 
 /**
@@ -13,6 +14,14 @@ import org.storydriven.modeling.calls.util.CallsAdapterFactory;
  */
 public class CallsEEFAdapterFactory extends CallsAdapterFactory {
 
+	/**
+	 * {@inheritDoc}
+	 * @see org.storydriven.modeling.calls.util.CallsAdapterFactory#createCommentableElementAdapter()
+	 * 
+	 */
+	public Adapter createCommentableElementAdapter() {
+		return new CommentableElementPropertiesEditionProvider();
+	}
 	/**
 	 * {@inheritDoc}
 	 * @see org.storydriven.modeling.calls.util.CallsAdapterFactory#createParameterBindingAdapter()

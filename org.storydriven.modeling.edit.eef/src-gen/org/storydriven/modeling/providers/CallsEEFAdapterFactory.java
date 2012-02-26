@@ -18,6 +18,14 @@ public class CallsEEFAdapterFactory extends CallsAdapterFactory {
 
 	/**
 	 * {@inheritDoc}
+	 * @see org.storydriven.modeling.calls.util.CallsAdapterFactory#createCommentableElementAdapter()
+	 * 
+	 */
+	public Adapter createCommentableElementAdapter() {
+		return new CommentableElementPropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
 	 * @see org.storydriven.modeling.calls.util.CallsAdapterFactory#createParameterBindingAdapter()
 	 * 
 	 */

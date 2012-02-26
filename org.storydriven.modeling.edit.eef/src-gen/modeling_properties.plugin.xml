@@ -138,12 +138,26 @@
                category="default"
                id="Base">
          </propertyTab>
+         <propertyTab
+               label="Documentation"
+               category="extended"
+               id="Documentation"
+               afterTab="Documentation">
+         </propertyTab>
       </propertyTabs>
    </extension>
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
             contributorId="org.storydriven.modeling.properties">
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="org.storydriven.modeling.section.CommentableElement"
+               tab="Documentation">
+             <input
+                    type="org.storydriven.modeling.CommentableElement">
+             </input>
+         </propertySection>
       </propertySections>
    </extension>
  </plugin>

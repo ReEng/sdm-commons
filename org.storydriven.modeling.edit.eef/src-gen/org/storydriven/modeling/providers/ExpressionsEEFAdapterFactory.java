@@ -19,6 +19,14 @@ public class ExpressionsEEFAdapterFactory extends ExpressionsAdapterFactory {
 
 	/**
 	 * {@inheritDoc}
+	 * @see org.storydriven.modeling.patterns.expressions.util.ExpressionsAdapterFactory#createCommentableElementAdapter()
+	 * 
+	 */
+	public Adapter createCommentableElementAdapter() {
+		return new CommentableElementPropertiesEditionProvider();
+	}
+	/**
+	 * {@inheritDoc}
 	 * @see org.storydriven.modeling.patterns.expressions.util.ExpressionsAdapterFactory#createAttributeValueExpressionAdapter()
 	 * 
 	 */
