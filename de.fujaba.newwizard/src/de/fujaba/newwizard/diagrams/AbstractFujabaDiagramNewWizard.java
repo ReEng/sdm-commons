@@ -122,6 +122,7 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 		if (diagramInformation != null
 				&& !diagramInformation.shouldUseModelElementCategory()) {
 			addPage(diagramElementSelectionPage);
+			domainModelSelectionPage.addResourceChangedListener(diagramElementSelectionPage);
 		}
 
 		// Select existing Diagram contents
@@ -129,10 +130,10 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 		if (diagramInformation == null
 				|| diagramInformation.shouldUseModelElementCategory()) {
 			addPage(diagramContentsSelectionPage);
+			domainModelSelectionPage.addResourceChangedListener(diagramContentsSelectionPage);
 		}
 		
 		
-		domainModelSelectionPage.addResourceChangedListener(diagramContentsSelectionPage);
 	}
 
 	protected NewExtendedFileCreationPage createDiagramModelFilePage() {

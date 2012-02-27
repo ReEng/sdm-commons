@@ -63,7 +63,7 @@ public class DiagramContentsSelectionPage extends WizardPage implements
 				@Override
 				public boolean select(Viewer viewer, Object parentElement,
 						Object object) {
-					return parentElement == modelViewer.getInput();
+					return parentElement == getDiagramElement();
 				}
 			};
 		}
@@ -93,7 +93,7 @@ public class DiagramContentsSelectionPage extends WizardPage implements
 
 	public Collection<EObject> getSelectedElements() {
 		Collection<EObject> selectedElements = new ArrayList<EObject>();
-		if (modelViewer != null) {
+		if (modelViewer != null && !modelViewer.getTree().isDisposed()) {
 			for (Object object : modelViewer.getCheckedElements()) {
 				selectedElements.add((EObject) object);
 			}
@@ -111,14 +111,22 @@ public class DiagramContentsSelectionPage extends WizardPage implements
 		}
 	}
 
-	public void setDiagramElement(EObject diagramElement) {
-		if (modelViewer.getInput() != diagramElement) {
-			modelViewer.setInput(diagramElement);
+	public void setDiagramElement(EObject input) {
+		// If the modelViewer tree control was created and its input element
+		// differs from the new input element, set it.
+		if (modelViewer != null && !modelViewer.getTree().isDisposed()
+				&& modelViewer.getInput() != input) {
+			modelViewer.setInput(input);
 		}
 	}
 
 	public EObject getDiagramElement() {
-		return (EObject) modelViewer.getInput();
+		// If the modelViewer tree control was created return its input element,
+		// else return null.
+		if (modelViewer != null && !modelViewer.getTree().isDisposed()) {
+			return (EObject) modelViewer.getInput();
+		}
+		return null;
 	}
 
 	/**

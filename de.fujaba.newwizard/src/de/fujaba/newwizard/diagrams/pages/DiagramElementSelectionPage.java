@@ -1,5 +1,7 @@
 package de.fujaba.newwizard.diagrams.pages;
 
+import java.util.List;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.FeatureMap;
@@ -21,6 +23,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
 import de.fujaba.modelinstance.ModelElementCategory;
+import de.fujaba.modelinstance.RootNode;
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.fujaba.newwizard.Messages;
 import de.fujaba.newwizard.diagrams.IDiagramElementValidator;
@@ -87,7 +90,7 @@ public class DiagramElementSelectionPage extends WizardPage implements IResource
 	private TreeViewer modelViewer;
 
 	public EObject getSelectedElement() {
-		if (modelViewer != null) {
+		if (modelViewer != null && !modelViewer.getTree().isDisposed()) {
 			IStructuredSelection selection = (IStructuredSelection) modelViewer
 					.getSelection();
 			return (EObject) unwrapElement(selection.getFirstElement());
@@ -107,6 +110,16 @@ public class DiagramElementSelectionPage extends WizardPage implements IResource
 		}
 
 		return element;
+	}
+	
+	@Override
+	public void setVisible(boolean visible) {
+		super.setVisible(visible);
+		if (visible) {
+			// We set this page to invalid before it was opened! So we must
+			// revalidate once it is open.
+			validatePage();
+		}
 	}
 
 	/**
@@ -161,18 +174,31 @@ public class DiagramElementSelectionPage extends WizardPage implements IResource
 	 *            The enable status to set.
 	 */
 	public void setEnabled(boolean value) {
-		modelViewer.getTree().setEnabled(!value);
+		if (modelViewer != null && !modelViewer.getTree().isDisposed()) {
+			modelViewer.getTree().setEnabled(!value);
+		}
 	}
 
 	@Override
 	public void resourceChanged(Resource resource) {
-		if (resource != null && modelViewer != null
-				&& modelViewer.getInput() != resource) {
-			modelViewer.setInput(resource);
-			if (!resource.getContents().isEmpty()) {
-				EObject firstElement = resource.getContents().get(0);
-				modelViewer.setSelection(new StructuredSelection(firstElement));
+		if (resource.getContents().isEmpty()) {
+			return;
+		}
+		
+		EObject modelElementCategory = null;
+		EObject rootNode = resource.getContents().get(0);
+		if (rootNode instanceof RootNode) {
+			List<ModelElementCategory> categories = ((RootNode) rootNode).getCategories();
+			for (ModelElementCategory category : categories) {
+				if (modelElementCategoryKey.equals(category.getKey())) {
+					modelElementCategory = category;
+				}
 			}
+		}
+
+		if (modelElementCategory != null && modelViewer != null && !modelViewer.getTree().isDisposed()
+				&& modelViewer.getInput() != modelElementCategory) {
+			modelViewer.setInput(modelElementCategory);
 			modelViewer.expandToLevel(3);
 		}
 	}
