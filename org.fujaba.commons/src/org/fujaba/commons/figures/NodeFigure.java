@@ -78,7 +78,7 @@ public class NodeFigure extends FigureWithAntialiasingSupport
       {
          ConnectionAnchor c = e.nextElement();
          Point p2 = c.getLocation (null);
-         long d = p.getDistance2 (p2);
+         long d = (long) Math.pow(p.getDistance(p2),2);
          if (d < min)
          {
             min = d;
@@ -90,7 +90,7 @@ public class NodeFigure extends FigureWithAntialiasingSupport
       {
          ConnectionAnchor c = e.nextElement();
          Point p2 = c.getLocation (null);
-         long d = p.getDistance2 (p2);
+         long d = (long) Math.pow(p.getDistance(p2),2);
          if (d < min)
          {
             min = d;
@@ -131,7 +131,7 @@ public class NodeFigure extends FigureWithAntialiasingSupport
       {
          ConnectionAnchor c = e.nextElement();
          Point p2 = c.getLocation (null);
-         long d = point.getDistance2 (p2);
+         long d = (long) Math.pow(point.getDistance(p2),2);
          if (d < min)
          {
             min = d;
@@ -157,7 +157,7 @@ public class NodeFigure extends FigureWithAntialiasingSupport
       {
          ConnectionAnchor c = e.nextElement();
          Point p2 = c.getLocation (null);
-         long d = point.getDistance2 (p2);
+         long d = (long) Math.pow(point.getDistance(p2),2);
          if (d < min)
          {
             min = d;

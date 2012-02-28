@@ -54,6 +54,7 @@ import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.draw2d.geometry.PrecisionPoint;
 import org.eclipse.draw2d.geometry.Rectangle;
 
 
@@ -84,7 +85,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
  *             reference:absolute.
  * axisBalance - positive values reduce the movement of the anchor point
  *               on the y-axis and emphasize the x-axis (negative values have
- *               the opposite effect). For a 45° connection between two nodes,
+ *               the opposite effect). For a 45ï¿½ connection between two nodes,
  *               this will keep the label closer to the y-coordinate of the
  *               midpoint, thus preventing it from touching one of the nodes.
  * 
@@ -359,7 +360,7 @@ public class AdaptiveConnectionLocator extends ConnectionLocator
          segments.getPoint(p1, index);
          length = p0.getDistance(p1);
          double r = offset / length;
-         return new Point(p0.x + r * (p1.x - p0.x), p0.y + r * (p1.y - p0.y));
+         return new PrecisionPoint(p0.x + r * (p1.x - p0.x), p0.y + r * (p1.y - p0.y));
       }
       return new Point();
    }
@@ -536,11 +537,11 @@ public class AdaptiveConnectionLocator extends ConnectionLocator
                RotatableDecoration decoration = (RotatableDecoration) target;
                if (this.orientation == ORIENTATION_SOURCE)
                {
-                  decoration.setReferencePoint(new Point(p0.x + nx, p0.y + ny));
+                  decoration.setReferencePoint(new PrecisionPoint(p0.x + nx, p0.y + ny));
                }
                else
                {
-                  decoration.setReferencePoint(new Point(p1.x + nx, p1.y + ny));
+                  decoration.setReferencePoint(new PrecisionPoint(p1.x + nx, p1.y + ny));
                }
             }
          }

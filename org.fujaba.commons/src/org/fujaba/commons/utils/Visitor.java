@@ -63,9 +63,9 @@ import java.util.Map;
 public class Visitor
 {
 
-   private final static transient Map visitorCache = new HashMap();
+   private final static transient Map<Class<? extends Visitor>, Map<Class<?>, Method>> visitorCache = new HashMap<Class<? extends Visitor>, Map<Class<?>, Method>>();
 
-   private final transient Map visitMethodCache;
+   private final transient Map<Class<?>, Method> visitMethodCache;
 
 
    public Visitor()
@@ -79,10 +79,10 @@ public class Visitor
       this.ignoreUnhandled = ignoreUnhandled;
       synchronized (visitorCache)
       {
-         Map visit = (Map) visitorCache.get(this.getClass());
+         Map<Class<?>, Method> visit = visitorCache.get(this.getClass());
          if (visit == null)
          {
-            visit = new HashMap();
+            visit = new HashMap<Class<?>, Method>();
             visitorCache.put(this.getClass(), visit);
          }
          this.visitMethodCache = visit;
@@ -118,7 +118,7 @@ public class Visitor
          throw new IllegalArgumentException("Argument must not be null!");
       }
 
-      Class nodeClass = node.getClass();
+      Class<?> nodeClass = node.getClass();
       try
       {
          Method method = getMethod(nodeClass, false);
@@ -163,7 +163,7 @@ public class Visitor
     */
    public Object visit(Object node, Object... arguments)
    {
-      Class nodeClass = node.getClass();
+      Class<?> nodeClass = node.getClass();
       try
       {
          Method method = getMethod(nodeClass, true);
@@ -227,19 +227,19 @@ public class Visitor
     * @see java.lang.Class#getSuperclass
     * @throws NoSuchMethodException Exception description not provided
     */
-   protected Method getMethod(Class clazz, boolean arguments)
+   protected Method getMethod(Class<?> clazz, boolean arguments)
          throws NoSuchMethodException
    {
       synchronized (this.visitMethodCache)
       {
-         Method method = (Method) this.visitMethodCache.get(clazz);
+         Method method = this.visitMethodCache.get(clazz);
 
          if (method == null)
          {
-            Class tmpClass = clazz;
+            Class<?> tmpClass = clazz;
             if (!this.visitMethodCache.containsKey(clazz))
             {
-               LinkedList classes = new LinkedList();
+               LinkedList<Class<?>> classes = new LinkedList<Class<?>>();
                StringBuffer buffer = new StringBuffer();
 
                while (method == null && tmpClass != null)
@@ -292,10 +292,10 @@ public class Visitor
     * @return a suitable visitor method or null if none was found
     * @see #getMethod
     */
-   protected Method findMethod(LinkedList classList, StringBuffer buffer,
+   protected Method findMethod(LinkedList<Class<?>> classList, StringBuffer buffer,
          boolean arguments)
    {
-      Class clazz = (Class) classList.removeFirst();
+	  Class<?> clazz = classList.removeFirst();
       Method method = null;
       createMethodName(clazz, buffer);
       try
@@ -312,7 +312,7 @@ public class Visitor
       }
       catch (NoSuchMethodException e)
       {
-         Class[] interfaces = clazz.getInterfaces();
+    	 Class<?>[] interfaces = clazz.getInterfaces();
          for (int i = 0; i < interfaces.length; i++)
          {
             classList.add(interfaces[i]);
@@ -326,7 +326,7 @@ public class Visitor
    /**
     * Creates a method name from the prefix 'visit' and the class name.
     */
-   protected void createMethodName(Class clazz, StringBuffer buffer)
+   protected void createMethodName(Class<?> clazz, StringBuffer buffer)
    {
       String methodName = clazz.getName();
 

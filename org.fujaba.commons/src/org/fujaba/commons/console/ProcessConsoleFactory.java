@@ -1,10 +1,8 @@
 package org.fujaba.commons.console;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
@@ -18,150 +16,119 @@ import org.eclipse.ui.console.IConsoleView;
 import org.fujaba.commons.console.internal.ConsoleRemoveAllAction;
 import org.fujaba.commons.console.internal.ProcessConsole;
 
+public final class ProcessConsoleFactory implements IConsoleFactory {
+	private static final List<ProcessConsole> CONSOLES = new ArrayList<ProcessConsole>();
 
-public final class ProcessConsoleFactory implements IConsoleFactory
-{
-   private static final List<ProcessConsole> CONSOLES = new ArrayList<ProcessConsole>();
+	/**
+	 * Removes the given console.
+	 * 
+	 * @param console
+	 *            The console to remove.
+	 * @return Returns <code>true</code> on success, otherwise
+	 *         <code>false</code>.
+	 */
+	public static boolean remove(ProcessConsole console) {
+		if (console.canRemove()) {
+			// remove from cache
+			CONSOLES.remove(console);
 
+			// remove from managed consoles
+			IConsoleManager manager = ConsolePlugin.getDefault().getConsoleManager();
+			manager.removeConsoles(new IConsole[] { console });
 
-   /**
-    * Removes the given console.
-    * 
-    * @param console The console to remove.
-    * @return Returns <code>true</code> on success, otherwise <code>false</code>.
-    */
-   public static boolean remove(ProcessConsole console)
-   {
-      if (console.canRemove())
-      {
-         // remove from cache
-         CONSOLES.remove(console);
+			// recheck state
+			checkRemoveAllState();
 
-         // remove from managed consoles
-         IConsoleManager manager = ConsolePlugin.getDefault()
-               .getConsoleManager();
-         manager.removeConsoles(new IConsole[] { console });
+			return true;
+		}
 
-         // recheck state
-         checkRemoveAllState();
+		return false;
+	}
 
-         return true;
-      }
+	public static IProcessConsole createConsole(AbstractProcessConsoleJob job) {
+		// get manager
+		IConsoleManager manager = ConsolePlugin.getDefault().getConsoleManager();
 
-      return false;
-   }
+		// create console
+		ProcessConsole console = new ProcessConsole(job);
 
+		// add it
+		CONSOLES.add(console);
+		manager.addConsoles(new IConsole[] { console });
 
-   public static IProcessConsole createConsole(String category, String name,
-         String description, ImageDescriptor image)
-   {
-      // get manager
-      IConsoleManager manager = ConsolePlugin.getDefault().getConsoleManager();
+		return console;
+	}
 
-      // create console
-      ProcessConsole console = new ProcessConsole(category, name, description,
-            image);
+	public static boolean showConsole(ProcessConsole console) {
+		// get manager
+		IConsoleManager manager = ConsolePlugin.getDefault().getConsoleManager();
 
-      // add it
-      CONSOLES.add(console);
-      manager.addConsoles(new IConsole[] { console });
+		// search for existing console
+		for (IConsole existing : manager.getConsoles()) {
+			if (existing.equals(console)) {
+				// show it and abort
+				manager.showConsoleView(console);
+				return true;
+			}
+		}
 
-      return console;
-   }
+		return false;
+	}
 
+	public static void removeAll() {
+		// get manager
+		IConsoleManager manager = ConsolePlugin.getDefault().getConsoleManager();
 
-   public static boolean showConsole(ProcessConsole console)
-   {
-      // get manager
-      IConsoleManager manager = ConsolePlugin.getDefault().getConsoleManager();
+		// go through all existing console
+		for (IConsole console : manager.getConsoles()) {
+			// check console type
+			if (console instanceof ProcessConsole) {
+				remove((ProcessConsole) console);
+			}
+		}
+	}
 
-      // search for existing console
-      for (IConsole existing : manager.getConsoles())
-      {
-         if (existing.equals(console))
-         {
-            // show it and abort
-            manager.showConsoleView(console);
-            return true;
-         }
-      }
+	@Override
+	public void openConsole() {
+		IWorkbench workbench = PlatformUI.getWorkbench();
+		if (workbench != null) {
+			IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();
+			if (window != null) {
+				IWorkbenchPage page = window.getActivePage();
+				if (page != null) {
+					IWorkbenchPart part = page.getActivePart();
+					if (part instanceof IConsoleView) {
+						IConsole console = ((IConsoleView) part).getConsole();
 
-      return false;
-   }
+						if (console instanceof ProcessConsole) {
+							// show console
+							showConsole((ProcessConsole) console);
+						} else {
+							// show last added console
+							if (!CONSOLES.isEmpty()) {
+								showConsole(CONSOLES.get(CONSOLES.size() - 1));
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 
+	public static void checkRemoveAllState() {
+		boolean foundOne = false;
 
-   public static void removeAll()
-   {
-      // get manager
-      IConsoleManager manager = ConsolePlugin.getDefault().getConsoleManager();
+		for (ProcessConsole console : CONSOLES) {
+			if (console.canRemove()) {
+				if (foundOne) {
+					ConsoleRemoveAllAction.DEFAULT.setEnabled(true);
+					return;
+				}
 
-      // go through all existing console
-      for (IConsole console : manager.getConsoles())
-      {
-         // check console type
-         if (console instanceof ProcessConsole)
-         {
-            remove((ProcessConsole) console);
-         }
-      }
-   }
+				foundOne = true;
+			}
+		}
 
-
-   @Override
-   public void openConsole()
-   {
-      IWorkbench workbench = PlatformUI.getWorkbench();
-      if (workbench != null)
-      {
-         IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();
-         if (window != null)
-         {
-            IWorkbenchPage page = window.getActivePage();
-            if (page != null)
-            {
-               IWorkbenchPart part = page.getActivePart();
-               if (part instanceof IConsoleView)
-               {
-                  IConsole console = ((IConsoleView) part).getConsole();
-
-                  if (console instanceof ProcessConsole)
-                  {
-                     // show console
-                     showConsole((ProcessConsole) console);
-                  }
-                  else
-                  {
-                     // show last added console
-                     if (!CONSOLES.isEmpty())
-                     {
-                        showConsole(CONSOLES.get(CONSOLES.size() - 1));
-                     }
-                  }
-               }
-            }
-         }
-      }
-   }
-
-
-   public static void checkRemoveAllState()
-   {
-      boolean foundOne = false;
-
-      for (ProcessConsole console : CONSOLES)
-      {
-         if (console.canRemove())
-         {
-            if (foundOne)
-            {
-               ConsoleRemoveAllAction.DEFAULT.setEnabled(true);
-               return;
-            }
-
-            foundOne = true;
-         }
-      }
-
-      ConsoleRemoveAllAction.DEFAULT.setEnabled(false);
-   }
+		ConsoleRemoveAllAction.DEFAULT.setEnabled(false);
+	}
 }

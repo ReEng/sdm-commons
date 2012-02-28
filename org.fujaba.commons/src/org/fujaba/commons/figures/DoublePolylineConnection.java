@@ -8,6 +8,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PolylineConnection;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.draw2d.geometry.PrecisionPoint;
 import org.eclipse.draw2d.geometry.Rectangle;
 
 /**
@@ -186,9 +187,9 @@ public class DoublePolylineConnection extends PolylineConnection
 		}
 
 		// eventually corrects the previously saved point (bx,by)
-		translatedPoints.setPoint(new Point(cx, cy), endPointIndex-1);
+		translatedPoints.setPoint(new PrecisionPoint(cx, cy), endPointIndex-1);
 		// temporarily sets the point (dx,dy) that will be corrected in the next iteration step, if necessary
-		translatedPoints.setPoint(new Point(dx, dy), endPointIndex);
+		translatedPoints.setPoint(new PrecisionPoint(dx, dy), endPointIndex);
 	}
 
 	/**
@@ -200,8 +201,8 @@ public class DoublePolylineConnection extends PolylineConnection
 		if (this.bounds == null)
 		{
 			this.updatePointLists();
-			this.bounds = this.leftLinePointList.getBounds().getExpanded(this.lineWidth / 2, this.lineWidth / 2);
-			Rectangle boundsTemp = this.rightLinePointList.getBounds().getExpanded(this.lineWidth / 2, this.lineWidth / 2);
+			this.bounds = this.leftLinePointList.getBounds().getExpanded(getLineWidth() / 2, getLineWidth() / 2);
+			Rectangle boundsTemp = this.rightLinePointList.getBounds().getExpanded(getLineWidth() / 2, getLineWidth() / 2);
 			this.bounds = this.bounds.union(boundsTemp);
 			
 			for (int i = 0; i < getChildren().size(); i++)
@@ -217,7 +218,7 @@ public class DoublePolylineConnection extends PolylineConnection
 /*
  * $Log$
  * Revision 1.3  2008/05/06 09:03:57  travkin
- * Added a new GEF figure for connections (suggested by Jörg Holtmann).
+ * Added a new GEF figure for connections (suggested by Jï¿½rg Holtmann).
  *
  * Revision 1.2  2006/05/20 16:08:15  travkin
  * Removed some compile warnings.

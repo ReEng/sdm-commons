@@ -49,7 +49,7 @@ public abstract class LineBorderedRectangleWithCompartmentsFigure extends
    public LineBorderedRectangleWithCompartmentsFigure()
    {
       ToolbarLayout layout = new ToolbarLayout();
-      layout.setVertical(true);
+      layout.setHorizontal(false);
       layout.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
       layout.setStretchMinorAxis(true);
 
@@ -155,7 +155,7 @@ public abstract class LineBorderedRectangleWithCompartmentsFigure extends
       compartment.setOpaque(true);
 
       ToolbarLayout layout = new ToolbarLayout();
-      layout.setVertical(true);
+      layout.setHorizontal(false);
       layout.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
       layout.setStretchMinorAxis(true);
 
