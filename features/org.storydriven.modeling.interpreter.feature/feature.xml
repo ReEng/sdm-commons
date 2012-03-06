@@ -9,19 +9,9 @@
       Eclipse Public License
    </license>
 
-   <includes
-         id="org.storydriven.modeling.model.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="de.mdelab.sdm.interpreter.common.feature"
-         version="0.0.0"/>
-
    <requires>
-      <import plugin="org.eclipse.ui" version="3.6.0" match="compatible"/>
-      <import plugin="org.storydriven.modeling.expressions" version="1.0.0" match="compatible"/>
-      <import plugin="de.mdelab.sdm.interpreter.common" version="1.0.0" match="compatible"/>
-      <import plugin="de.mdelab.sdm.interpreter.common.eclipse" version="1.0.0" match="compatible"/>
+      <import feature="de.mdelab.sdm.interpreter.common.feature" version="1.0.0.qualifier"/>
+      <import feature="org.storydriven.modeling.model.feature" version="1.0.0.qualifier"/>
    </requires>
 
    <plugin
