@@ -11,7 +11,6 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
@@ -27,7 +26,6 @@ import de.fujaba.modelinstance.RootNode;
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.fujaba.newwizard.Messages;
 import de.fujaba.newwizard.diagrams.IDiagramElementValidator;
-import de.fujaba.newwizard.diagrams.IDiagramInformation;
 
 public class DiagramElementSelectionPage extends WizardPage implements IResourceChangedListener {
 
@@ -53,12 +51,10 @@ public class DiagramElementSelectionPage extends WizardPage implements IResource
 	 *            The ID for this Page.
 	 * @param diagramInformation 
 	 */
-	public DiagramElementSelectionPage(String pageId, IDiagramInformation diagramInformation) {
+	public DiagramElementSelectionPage(String pageId, IDiagramElementValidator validator, String modelElementCategoryKey) {
 		super(pageId);
-
-		diagramValidator = diagramInformation.getFujabaEditor();
-		modelElementCategoryKey = diagramInformation
-				.getModelElementCategoryKey();
+		this.diagramValidator = validator;
+		this.modelElementCategoryKey = modelElementCategoryKey;
 	}
 
 	/**

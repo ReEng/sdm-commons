@@ -49,63 +49,99 @@
 
    <element name="editor">
       <complexType>
-         <choice>
-            <element ref="information"/>
+         <choice minOccurs="1" maxOccurs="unbounded">
+            <element ref="diagramElement"/>
+            <element ref="node" minOccurs="0" maxOccurs="unbounded"/>
          </choice>
-         <attribute name="editorId" type="string">
+         <attribute name="preferencesHint" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The preferences hint of this diagram editor.
                </documentation>
             </annotation>
          </attribute>
-      </complexType>
-   </element>
-
-   <element name="information">
-      <complexType>
+         <attribute name="editorId" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The editor id for this diagram editor.
+               </documentation>
+            </annotation>
+         </attribute>
          <attribute name="modelId" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The model id for this diagram editor (normally this is the value of the MODEL_ID attribute of the diagram editpart).
                </documentation>
             </annotation>
          </attribute>
          <attribute name="editorName" type="string">
             <annotation>
                <documentation>
-                  
+                  The human readable name for this diagram editor.
                </documentation>
             </annotation>
          </attribute>
          <attribute name="fileExtension" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The file extension that is used for diagram files by this editor.
                </documentation>
             </annotation>
          </attribute>
-         <attribute name="modelElementCategoryKey" type="string">
+         <attribute name="modelElementCategoryKey" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The value to use for &quot;ModelElementCategory.key&quot;. It defines, into which ModelElementCategory the diagram element should be put.
                </documentation>
             </annotation>
          </attribute>
-         <attribute name="fujabaEditor" type="string" use="required">
+      </complexType>
+   </element>
+
+   <element name="diagramElement">
+      <annotation>
+         <documentation>
+            The unique class name of the class to instantiate for new diagram elements represented by its name and the nsURI of its package.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="packageNsURI" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The nsURI of the ecore package containing the class to use for diagram elements.
                </documentation>
-               <appinfo>
-                  <meta.attribute kind="java" basedOn=":de.fujaba.newwizard.IFujabaEditor"/>
-               </appinfo>
             </annotation>
          </attribute>
-         <attribute name="useModelElementCategory" type="boolean" use="required">
+         <attribute name="className" type="string" use="required">
             <annotation>
                <documentation>
-                  Use the ModelElementCategory as Diagram Element?
+                  The class name to use for diagram elements.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="node">
+      <annotation>
+         <documentation>
+            A mapping from a domain element to its visual id.
+
+It can be used for example to create views for a domain element.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="domainElement" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The name of the domain element.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="semanticHint" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The semantic hint for the domain element (is a string representing the visual id of the element).
                </documentation>
             </annotation>
          </attribute>

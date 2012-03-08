@@ -1,6 +1,7 @@
 package de.fujaba.newwizard.commands;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
@@ -10,13 +11,13 @@ import java.util.Map;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.ISafeRunnable;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.SafeRunner;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.Transaction;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -26,6 +27,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
+import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CreateCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.SetViewMutabilityCommand;
@@ -35,24 +37,24 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.Node;
 import org.storydriven.modeling.ExtendableElement;
 
 import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.modelinstance.ModelInstancePlugin;
 import de.fujaba.modelinstance.ModelinstanceFactory;
+import de.fujaba.modelinstance.ModelinstancePackage;
 import de.fujaba.modelinstance.RootNode;
 import de.fujaba.modelinstance.categories.ModelElementCategoryRegistry;
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
-import de.fujaba.newwizard.IFujabaEditor;
 import de.fujaba.newwizard.diagrams.DiagramEditorUtil;
 import de.fujaba.newwizard.diagrams.IDiagramInformation;
-
 
 /**
  * Creates a new Diagram with initial contents.
  * 
  * @author bingo
- *
+ * 
  */
 public class CreateDiagramCommand extends AbstractTransactionalCommand {
 
@@ -61,18 +63,16 @@ public class CreateDiagramCommand extends AbstractTransactionalCommand {
 	private EObject element;
 	private Collection<EObject> contents;
 	private String diagramName;
-	private String editorId;
-	private IDiagramInformation diagramInformation;
-	private IFujabaEditor fujabaEditor;
-	private EObject diagramElement;
 	private PreferencesHint preferencesHint;
+	
+	private IDiagramInformation diagramInformation;
 
 	@SuppressWarnings("rawtypes")
 	public CreateDiagramCommand(TransactionalEditingDomain domain,
 			String label, List affectedFiles, Resource modelResource,
 			Resource diagramResource, EObject element,
 			Collection<EObject> contents, String diagramName,
-			IDiagramInformation diagramInformation, String editorId) {
+			IDiagramInformation diagramInformation) {
 		super(domain, label, affectedFiles);
 		this.modelResource = modelResource;
 		this.diagramResource = diagramResource;
@@ -80,35 +80,20 @@ public class CreateDiagramCommand extends AbstractTransactionalCommand {
 		this.contents = contents;
 		this.diagramName = diagramName;
 		this.diagramInformation = diagramInformation;
-		this.editorId = editorId;
+		this.preferencesHint = new PreferencesHint(diagramInformation.getPreferencesHint());
 	}
 
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
 
-		if (diagramInformation != null) {
-			fujabaEditor = diagramInformation.getFujabaEditor();
+		// Create Diagram Element
+		EObject diagramElement = null;
+		EClass diagramElementClass = diagramInformation.getDiagramElementClass();
+		if (!ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY
+				.isSuperTypeOf(diagramElementClass)) {
+			diagramElement = EcoreUtil.create(diagramElementClass);
 		}
-		if (fujabaEditor != null) {
-			// Safely ask the interface provided by extension
-			ISafeRunnable runnable = new ISafeRunnable() {
-				@Override
-				public void handleException(Throwable exception) {
-					System.out.println("Exception in Fujaba Editor:"
-							+ editorId + ":");
-					exception.printStackTrace();
-				}
 
-				@Override
-				public void run() throws Exception {
-					diagramElement = fujabaEditor.createDiagramElement();
-					preferencesHint = fujabaEditor.getPreferencesHint();
-				}
-			};
-			SafeRunner.run(runnable);
-		}
-		
-		// TODO: We do no null checks for information that comes from inside DiagramInformation...
 		
 		ModelElementCategory elementCategory = null;
 
@@ -135,16 +120,16 @@ public class CreateDiagramCommand extends AbstractTransactionalCommand {
 		}
 
 		// Create diagramResource
-		Diagram diagram = ViewService.createDiagram(element, diagramInformation.getModelId(),
-				preferencesHint);
+		Diagram diagram = ViewService.createDiagram(element,
+				diagramInformation.getModelId(), preferencesHint);
 
 		if (diagram != null) {
 			diagramResource.getContents().add(diagram);
 			diagram.setName(diagramName);
 		}
 
-		CreateViewRequest request = fujabaEditor
-				.getCreatePersistedViewsRequest(diagram, contents);
+		CreateViewRequest request = getCreatePersistedViewsRequest(diagram,
+				contents);
 		Command cmd = getCreateViewCommand(request, diagram);
 		if (cmd != null && cmd.canExecute()) {
 			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(diagram))
@@ -161,6 +146,23 @@ public class CreateDiagramCommand extends AbstractTransactionalCommand {
 					"Unable to store model and diagramResource resources", e); //$NON-NLS-1$
 		}
 		return CommandResult.newOKCommandResult();
+	}
+
+	private CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
+			Collection<EObject> elements) {
+		List<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>();
+		Map<String, String> nodes = diagramInformation.getNodes();
+		for (EObject element : elements) {
+			String hint = nodes.get(element.eClass().getName());
+			if (hint != null) {
+				IAdaptable elementAdapter = new ElementAdapter(element, hint);
+				CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
+						elementAdapter, Node.class, hint, ViewUtil.APPEND,
+						true, preferencesHint);
+				viewDescriptors.add(descriptor);
+			}
+		}
+		return new CreateViewRequest(viewDescriptors);
 	}
 
 	protected ModelElementCategory getModelElementCategory(RootNode rootNode,
@@ -242,4 +244,28 @@ public class CreateDiagramCommand extends AbstractTransactionalCommand {
 		}
 	}
 
+	// Copied from CanonicalEditPolicy$CanonicalElementAdapter.
+	private class ElementAdapter extends EObjectAdapter {
+		private String _hint;
+
+		/**
+		 * constructor
+		 * 
+		 * @param element
+		 * @param hint
+		 */
+		public ElementAdapter(EObject element, String hint) {
+			super(element);
+			_hint = hint;
+		}
+
+		/** Adds <code>String.class</tt> adaptablity. */
+		@SuppressWarnings("rawtypes")
+		public Object getAdapter(Class adapter) {
+			if (adapter.equals(String.class)) {
+				return _hint;
+			}
+			return super.getAdapter(adapter);
+		}
+	}
 }

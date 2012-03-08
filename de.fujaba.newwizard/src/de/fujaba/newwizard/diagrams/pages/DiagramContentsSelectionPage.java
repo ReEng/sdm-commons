@@ -25,7 +25,6 @@ import org.eclipse.swt.widgets.Label;
 import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.fujaba.newwizard.diagrams.IDiagramElementValidator;
-import de.fujaba.newwizard.diagrams.IDiagramInformation;
 
 public class DiagramContentsSelectionPage extends WizardPage implements
 		IResourceChangedListener {
@@ -35,15 +34,11 @@ public class DiagramContentsSelectionPage extends WizardPage implements
 	 */
 	private Composite plate;
 
+	private String modelElementCategoryKey;
+
 	private CheckboxTreeViewer modelViewer;
 
-	/*
-	 * Start of attributes that can be null, if no diagramInformation was
-	 * provided in constructor.
-	 */
-	private String modelElementCategoryKey;
-	private ViewerFilter viewerFilter;
-	private IDiagramElementValidator diagramElementValidator;
+	private IDiagramElementValidator validator;
 
 	/**
 	 * Constructs this DiagramModelSelectionPage.
@@ -53,20 +48,10 @@ public class DiagramContentsSelectionPage extends WizardPage implements
 	 * @param diagramInformation
 	 */
 	public DiagramContentsSelectionPage(String pageId,
-			IDiagramInformation diagramInformation) {
+			IDiagramElementValidator validator, String modelElementCategoryKey) {
 		super(pageId);
-		if (diagramInformation != null) {
-			modelElementCategoryKey = diagramInformation
-					.getModelElementCategoryKey();
-			diagramElementValidator = diagramInformation.getFujabaEditor();
-			viewerFilter = new ViewerFilter() {
-				@Override
-				public boolean select(Viewer viewer, Object parentElement,
-						Object object) {
-					return parentElement == getDiagramElement();
-				}
-			};
-		}
+		this.validator = validator;
+		this.modelElementCategoryKey = modelElementCategoryKey;
 	}
 
 	/**
@@ -76,12 +61,12 @@ public class DiagramContentsSelectionPage extends WizardPage implements
 	public void validatePage() {
 		String error = null;
 
-		if (diagramElementValidator != null) {
+		if (validator != null) {
 			EObject diagramElement = (EObject) modelViewer.getInput();
 			for (Object object : getSelectedElements()) {
 				EObject topLevelNodeElement = (EObject) object;
-				if (!diagramElementValidator.isValidTopLevelNodeElement(
-						diagramElement, topLevelNodeElement)) {
+				if (!validator.isValidTopLevelNodeElement(diagramElement,
+						topLevelNodeElement)) {
 					error = "Invalid top level element(s) selected.";
 				}
 			}
@@ -172,8 +157,14 @@ public class DiagramContentsSelectionPage extends WizardPage implements
 				FujabaNewwizardPlugin.getDefault()
 						.getItemProvidersAdapterFactory()));
 
-		if (viewerFilter != null) {
-			modelViewer.addFilter(viewerFilter);
+		if (modelElementCategoryKey != null) {
+			modelViewer.addFilter(new ViewerFilter() {
+				@Override
+				public boolean select(Viewer viewer, Object parentElement,
+						Object object) {
+					return parentElement == getDiagramElement();
+				}
+			});
 		}
 
 		setControl(plate);

@@ -1,60 +1,67 @@
 package de.fujaba.newwizard.diagrams;
 
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IConfigurationElement;
+import java.util.HashMap;
+import java.util.Map;
 
-import de.fujaba.newwizard.IFujabaEditor;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EPackage;
 
 /**
- * Datastructure that represents the information provided by an
- * extension of "de.fujaba.newwizard.diagraminformation" for a given editorId.
+ * Datastructure that represents the information provided by an extension of
+ * "de.fujaba.newwizard.diagraminformation" for a given editorId.
  * 
  * @author bingo
  * 
  */
 public class DiagramInformation implements IDiagramInformation {
-	
+
+	private Map<String, String> nodes;
+
+	private String preferencesHint;
+
+	private String editorId;
+
 	private String editorName;
-	
+
 	private String fileExtension;
-	
+
 	private String modelId;
-	
+
 	private String modelElementCategoryKey;
-	
-	private IFujabaEditor fujabaEditor;
 
-	private boolean useModelElementCategory;
+	private String diagramElementPackageNsURI;
 
+	private String diagramElementClassName;
 
-	public DiagramInformation(String editorName, String fileExtension, String modelId, String modelElementCategoryKey, IFujabaEditor fujabaEditor, boolean useModelElementCategory) {
-		this.editorName = editorName;
-		this.fileExtension = fileExtension;
-		this.modelId = modelId;
-		this.modelElementCategoryKey = modelElementCategoryKey;
-		this.fujabaEditor = fujabaEditor;
-		this.useModelElementCategory = useModelElementCategory;
-	}
-
-	public DiagramInformation(IConfigurationElement information) {
-		modelId = information.getAttribute("modelId");
-		editorName = information.getAttribute("editorName");
-		modelElementCategoryKey = information
+	public DiagramInformation(IConfigurationElement configurationElement) {
+		preferencesHint = configurationElement.getAttribute("preferencesHint");
+		editorId = configurationElement.getAttribute("editorId");
+		modelId = configurationElement.getAttribute("modelId");
+		editorName = configurationElement.getAttribute("editorName");
+		modelElementCategoryKey = configurationElement
 				.getAttribute("modelElementCategoryKey");
-		useModelElementCategory = Boolean.valueOf(information
-				.getAttribute("useModelElementCategory"));
-		Object o;
-		try {
-			o = information.createExecutableExtension("fujabaEditor");
-			if (o instanceof IFujabaEditor) {
-				fujabaEditor = (IFujabaEditor) o;
-			}
-		} catch (CoreException e) {
-			e.printStackTrace();
+		fileExtension = configurationElement.getAttribute("fileExtension");
+
+		IConfigurationElement[] diagramElement = configurationElement
+				.getChildren("diagramElement");
+
+		if (diagramElement.length == 1) {
+			diagramElementPackageNsURI = diagramElement[0]
+					.getAttribute("packageNsURI");
+			diagramElementClassName = diagramElement[0]
+					.getAttribute("className");
 		}
-		fileExtension = information.getAttribute("fileExtension");
+
+		nodes = new HashMap<String, String>();
+		IConfigurationElement[] nodeChildren = configurationElement.getChildren("node");
+		for (IConfigurationElement node : nodeChildren) {
+			String domainElement = node.getAttribute("domainElement");
+			String semanticHint = node.getAttribute("semanticHint");
+			nodes.put(domainElement, semanticHint);
+		}
 	}
-	
 
 	@Override
 	public String getEditorName() {
@@ -77,13 +84,30 @@ public class DiagramInformation implements IDiagramInformation {
 	}
 
 	@Override
-	public IFujabaEditor getFujabaEditor() {
-		return fujabaEditor;
+	public String getEditorId() {
+		return editorId;
 	}
 
 	@Override
-	public boolean shouldUseModelElementCategory() {
-		return useModelElementCategory;
+	public String getPreferencesHint() {
+		return preferencesHint;
+	}
+
+	@Override
+	public Map<String, String> getNodes() {
+		return nodes;
+	}
+
+	@Override
+	public EClass getDiagramElementClass() {
+		EPackage ePackage = EPackage.Registry.INSTANCE
+				.getEPackage(diagramElementPackageNsURI);
+		EClassifier eClassifier = ePackage
+				.getEClassifier(diagramElementClassName);
+		if (eClassifier instanceof EClass) {
+			return (EClass) eClassifier;
+		}
+		return null;
 	}
 
 }

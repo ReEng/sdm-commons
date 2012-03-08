@@ -8,6 +8,7 @@ import java.util.Collections;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -15,8 +16,15 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
+import org.eclipse.gmf.runtime.common.core.service.IOperation;
+import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
+import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
+import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
+import org.eclipse.gmf.runtime.diagram.core.services.view.CreateNodeViewOperation;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -26,6 +34,7 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
+import de.fujaba.modelinstance.ModelinstancePackage;
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.fujaba.newwizard.Messages;
 import de.fujaba.newwizard.commands.CreateDiagramCommand;
@@ -42,8 +51,37 @@ import de.fujaba.newwizard.ui.ResourceLocationProvider;
  * @author bingo
  * 
  */
+// TODO: IEditorIdentifier?
 public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 		INewWizard, IEditorIdentifier {
+
+	private IDiagramElementValidator diagramElementValidator = new IDiagramElementValidator() {
+		@Override
+		public boolean isValidDiagramElement(EObject diagramElement) {
+			IAdaptable adapter = new EObjectAdapter(diagramElement);
+			IOperation operation = new CreateDiagramViewOperation(
+					adapter,
+					getDiagramInformation().getModelId(),
+					new PreferencesHint(getDiagramInformation().getPreferencesHint()));
+			return ViewService.getInstance().provides(operation);
+		}
+
+
+		@Override
+		public boolean isValidTopLevelNodeElement(EObject diagramElement,
+				EObject topLevelNodeElement) {
+			PreferencesHint preferencesHint = new PreferencesHint(getDiagramInformation().getPreferencesHint());
+			Diagram diagram = ViewService
+					.createDiagram(
+							diagramElement,
+							getDiagramInformation().getModelId(),
+							preferencesHint);
+			IAdaptable adapter = new EObjectAdapter(topLevelNodeElement);
+			IOperation operation = new CreateNodeViewOperation(adapter, diagram,
+					null, 0, false, preferencesHint);
+			return ViewService.getInstance().provides(operation);
+		}
+	};
 
 	/**
 	 * Lazily created DiagramInformation
@@ -62,8 +100,8 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 
 	protected DiagramContentsSelectionPage diagramContentsSelectionPage;
 
-
 	private TransactionalEditingDomain editingDomain;
+	private Resource diagramResource;
 
 	/**
 	 * Constructs this AbstractFujabaDiagramNewWizard.
@@ -105,35 +143,35 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 	@Override
 	public void addPages() {
 
-		// Try to read the diagram information (it might be that it is not yet
-		// known)
-		IDiagramInformation diagramInformation = getDiagramInformation();
+		// Find out, if the editor uses the ModelElementCategory as diagram
+		// element.
+		boolean usesModelElementCategory = ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY
+				.isSuperTypeOf(getDiagramInformation().getDiagramElementClass());
 
 		// Create Diagram Model File
 		diagramModelFilePage = createDiagramModelFilePage();
 		addPage(diagramModelFilePage);
 
 		// Select Domain Model
-		domainModelSelectionPage = createDomainModelSelectionPage(diagramInformation);
+		domainModelSelectionPage = createDomainModelSelectionPage();
 		addPage(domainModelSelectionPage);
 
 		// Select Diagram Element
-		diagramElementSelectionPage = createDiagramElementSelectionPage(diagramInformation);
-		if (diagramInformation != null
-				&& !diagramInformation.shouldUseModelElementCategory()) {
+		diagramElementSelectionPage = createDiagramElementSelectionPage();
+		if (diagramInformation != null && !usesModelElementCategory) {
 			addPage(diagramElementSelectionPage);
-			domainModelSelectionPage.addResourceChangedListener(diagramElementSelectionPage);
+			domainModelSelectionPage
+					.addResourceChangedListener(diagramElementSelectionPage);
 		}
 
 		// Select existing Diagram contents
-		diagramContentsSelectionPage = createDiagramContentsSelectionPage(diagramInformation);
-		if (diagramInformation == null
-				|| diagramInformation.shouldUseModelElementCategory()) {
+		diagramContentsSelectionPage = createDiagramContentsSelectionPage();
+		if (diagramInformation == null || usesModelElementCategory) {
 			addPage(diagramContentsSelectionPage);
-			domainModelSelectionPage.addResourceChangedListener(diagramContentsSelectionPage);
+			domainModelSelectionPage
+					.addResourceChangedListener(diagramContentsSelectionPage);
 		}
-		
-		
+
 	}
 
 	protected NewExtendedFileCreationPage createDiagramModelFilePage() {
@@ -148,8 +186,7 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 		return diagramModelFilePage;
 	}
 
-	protected DiagramModelSelectionPage createDomainModelSelectionPage(
-			IDiagramInformation diagramInformation) {
+	protected DiagramModelSelectionPage createDomainModelSelectionPage() {
 		ResourceLocationProvider rloc = new ResourceLocationProvider(selection);
 
 		DiagramModelSelectionPage domainModelSelectionPage = new DiagramModelSelectionPage(
@@ -159,11 +196,9 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 		domainModelSelectionPage.setDescription("Load domain model.");
 		domainModelSelectionPage.setModelRequired(true);
 
-
 		return domainModelSelectionPage;
 	}
 
-	
 	public Resource getModelResource() {
 		if (domainModelSelectionPage != null) {
 			return domainModelSelectionPage.getResource();
@@ -171,10 +206,10 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 		return null;
 	}
 
-	protected DiagramElementSelectionPage createDiagramElementSelectionPage(
-			IDiagramInformation diagramInformation) {
+	protected DiagramElementSelectionPage createDiagramElementSelectionPage() {
 		DiagramElementSelectionPage diagramElementSelectionPage = new DiagramElementSelectionPage(
-				"diagramResource element", diagramInformation);
+				"diagramResource element", diagramElementValidator,
+				getDiagramInformation().getModelElementCategoryKey());
 
 		diagramElementSelectionPage.setTitle("Select Diagram Element");
 
@@ -184,10 +219,10 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 		return diagramElementSelectionPage;
 	}
 
-	protected DiagramContentsSelectionPage createDiagramContentsSelectionPage(
-			IDiagramInformation diagramInformation) {
+	protected DiagramContentsSelectionPage createDiagramContentsSelectionPage() {
 		DiagramContentsSelectionPage diagramContentsSelectionPage = new DiagramContentsSelectionPage(
-				"diagramResource contents", diagramInformation);
+				"diagramResource contents", diagramElementValidator,
+				getDiagramInformation().getModelElementCategoryKey());
 
 		diagramContentsSelectionPage.setTitle("Select Diagram contents");
 		diagramContentsSelectionPage
@@ -196,7 +231,7 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 		return diagramContentsSelectionPage;
 	}
 
-	private Resource diagramResource;
+
 	public boolean performFinish() {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
@@ -215,10 +250,8 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 						Messages.CreationWizardCreationError, null,
 						((CoreException) e.getTargetException()).getStatus());
 			} else {
-				FujabaNewwizardPlugin
-						.getDefault()
-						.logError(
-								"Error creating resources", e.getTargetException()); //$NON-NLS-1$
+				FujabaNewwizardPlugin.getDefault().logError(
+						"Error creating resources", e.getTargetException()); //$NON-NLS-1$
 			}
 			return false;
 		}
@@ -230,8 +263,7 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 				domainModelSelectionPage.getURI(), monitor);
 		if (diagramResource != null) {
 			try {
-				DiagramEditorUtil.openDiagram(diagramResource,
-						getEditorId());
+				DiagramEditorUtil.openDiagram(diagramResource, getEditorId());
 			} catch (PartInitException e) {
 				ErrorDialog.openError(getContainer().getShell(),
 						Messages.CreationWizardOpenEditorError, null,
@@ -259,8 +291,8 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 				editingDomain,
 				Messages.DiagramEditorUtil_CreateDiagramCommandLabel,
 				Collections.EMPTY_LIST, modelResource, diagramResource,
-				getSelectedElement(), getSelectedContents(), diagramName, getDiagramInformation(),
-				getEditorId());
+				getSelectedElement(), getSelectedContents(), diagramName,
+				getDiagramInformation());
 		try {
 			OperationHistoryFactory.getOperationHistory().execute(command,
 					new SubProgressMonitor(progressMonitor, 1), null);
@@ -290,17 +322,17 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 		}
 		return contents;
 	}
-	
+
 	public EObject getSelectedElement() {
 		EObject selectedElement = null;
 		if (diagramElementSelectionPage != null) {
 			selectedElement = diagramElementSelectionPage.getSelectedElement();
 		}
 		if (selectedElement == null) {
-			selectedElement = diagramContentsSelectionPage.getResourceRoot(getModelResource());
+			selectedElement = diagramContentsSelectionPage
+					.getResourceRoot(getModelResource());
 		}
 		return selectedElement;
 	}
-
 
 }

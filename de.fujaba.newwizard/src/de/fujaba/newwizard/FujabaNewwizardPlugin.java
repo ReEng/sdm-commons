@@ -163,49 +163,41 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 
 	/**
 	 * Gets (and lazily creates) the diagram information map (EditorId ->
-	 * IDiagramInformation), by reading the extension point de.fujaba.newwizard.diagraminformation.
+	 * IDiagramInformation), by reading the extension point
+	 * de.fujaba.newwizard.diagraminformation.
 	 * 
 	 * @return The map; never null.
 	 */
 	public Map<String, IDiagramInformation> getDiagramInformationMap() {
+
 		if (editorIdToDiagramInformation == null) {
+			
 			// Create the map, in case it does not exist yet.
 			editorIdToDiagramInformation = doCreateDiagramInformationMap();
 		}
+
 		return editorIdToDiagramInformation;
 	}
 
 	private Map<String, IDiagramInformation> doCreateDiagramInformationMap() {
 		Map<String, IDiagramInformation> map = new HashMap<String, IDiagramInformation>();
+
 		IConfigurationElement[] config = RegistryFactory.getRegistry()
 				.getConfigurationElementsFor(EXTENSION_POINT_ID);
-		for (IConfigurationElement editorElements : config) {
-			// Read editorId
-			String editorId = editorElements.getAttribute("editorId");
-			if (editorId == null) {
-				continue;
-			}
 
-			// Read Diagram Information from extension Point
-			IConfigurationElement information = null;
-			if ("editor".equals(editorElements.getName())) {
-				IConfigurationElement[] informationElements = editorElements
-						.getChildren("information");
-				// The lower bound is one, but we want to be safe
-				if (informationElements.length > 0) {
-					information = informationElements[0];
-				}
-			}
-			if (information == null) {
-				continue;
-			}
+		for (IConfigurationElement element : config) {
 
 			// Fill DiagramInformation datastructure
 			IDiagramInformation diagramInformation = new DiagramInformation(
-					information);
+					element);
 
+			// Read editorId
+			String editorId = diagramInformation.getEditorId();
+			
 			// Put this entry into the map
-			map.put(editorId, diagramInformation);
+			if (editorId != null) {
+				map.put(editorId, diagramInformation);
+			}
 		}
 		return map;
 	}

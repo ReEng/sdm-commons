@@ -7,8 +7,10 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.ISafeRunnable;
 import org.eclipse.core.runtime.SafeRunner;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
@@ -19,8 +21,8 @@ import org.storydriven.modeling.ExtendableElement;
 
 import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.modelinstance.ModelInstancePlugin;
+import de.fujaba.modelinstance.ModelinstancePackage;
 import de.fujaba.modelinstance.RootNode;
-import de.fujaba.newwizard.IFujabaEditor;
 import de.fujaba.newwizard.diagrams.IDiagramInformation;
 
 /**
@@ -33,60 +35,37 @@ import de.fujaba.newwizard.diagrams.IDiagramInformation;
 public class CreateEmptyDiagramCommand extends AbstractTransactionalCommand {
 	private Resource diagramResource;
 	private EObject diagramRoot;
-	private IDiagramInformation diagramInformation;
-	private IFujabaEditor fujabaEditor;
-	private String editorId;
 	private EObject diagramElement;
 	private PreferencesHint preferencesHint;
+	private String modelElementCategoryKey;
+	private String modelId;
 
-	
 	@SuppressWarnings("rawtypes")
 	public CreateEmptyDiagramCommand(TransactionalEditingDomain domain,
 			String label, List affectedFiles, Resource diagramResource,
-			EObject diagramRoot, IDiagramInformation diagramInformation,
-			String editorId) {
+			EObject diagramRoot, EClass diagramElementClass, PreferencesHint preferencesHint, String modelElementCategoryKey, String modelId) {
 		super(domain, label, affectedFiles);
 		this.diagramResource = diagramResource;
 		this.diagramRoot = diagramRoot;
-		this.diagramInformation = diagramInformation;
-		this.editorId = editorId;
+		this.preferencesHint = preferencesHint;
+		this.modelId = modelId;
+		this.modelElementCategoryKey = modelElementCategoryKey;
+		
+		diagramElement = null;
+		if (!ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY.isSuperTypeOf(diagramElementClass)) {
+			diagramElement = EcoreUtil.create(diagramElementClass);
+		}
 	}
 
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-
-		if (diagramInformation != null) {
-			fujabaEditor = diagramInformation.getFujabaEditor();
-		}
-		if (fujabaEditor != null) {
-			// Safely ask the interface provided by extension
-			ISafeRunnable runnable = new ISafeRunnable() {
-				@Override
-				public void handleException(Throwable exception) {
-					System.out.println("Exception in Fujaba Editor:" + editorId
-							+ ":");
-					exception.printStackTrace();
-				}
-
-				@Override
-				public void run() throws Exception {
-					diagramElement = fujabaEditor.createDiagramElement();
-					preferencesHint = fujabaEditor.getPreferencesHint();
-				}
-			};
-			SafeRunner.run(runnable);
-		}
-		
-		// TODO: We do no null checks for information that comes from inside DiagramInformation...
-
 		ModelElementCategory category = null;
 		if (diagramRoot instanceof RootNode) {
 			RootNode rootNode = (RootNode) diagramRoot;
 			category = ModelInstancePlugin
 					.getInstance()
 					.getModelElementCategoryRegistry()
-					.getModelElementCategory(rootNode,
-							diagramInformation.getModelElementCategoryKey());
+					.getModelElementCategory(rootNode, modelElementCategoryKey);
 
 		} else {
 			return CommandResult
@@ -100,7 +79,7 @@ public class CreateEmptyDiagramCommand extends AbstractTransactionalCommand {
 		}
 
 		Diagram diagram = ViewService.createDiagram(diagramElement,
-				diagramInformation.getModelId(), preferencesHint);
+				modelId, preferencesHint);
 		if (diagram == null) {
 			return CommandResult
 					.newErrorCommandResult("Diagram could not be created.");

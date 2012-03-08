@@ -1,15 +1,21 @@
 package de.fujaba.newwizard.diagrams;
 
-import de.fujaba.newwizard.IFujabaEditor;
+import java.util.Map;
+
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * Interface for objects that can be asked about information provided by an
- * extension of "de.fujaba.newwizard.diagraminformation" for a given editorId.
+ * extension of "de.fujaba.newwizard.diagraminformation".
  * 
  * @author bingo
  * 
  */
 public interface IDiagramInformation {
+	
+	String getPreferencesHint();
+	
+	String getEditorId();
 
 	String getEditorName();
 
@@ -19,8 +25,12 @@ public interface IDiagramInformation {
 
 	String getModelElementCategoryKey();
 
-	IFujabaEditor getFujabaEditor();
+	EClass getDiagramElementClass();
 
-	boolean shouldUseModelElementCategory();
+	/**
+	 * Gets a map from domainElement to semanticHint.
+	 * @return a map from domainElement to semanticHint.
+	 */
+	Map<String, String> getNodes();
 
 }

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.jface.dialogs.ErrorDialog;
@@ -31,9 +32,10 @@ public abstract class AbstractCreateDiagramFileCommand extends
 	protected abstract String getEditorId();
 
 	private IDiagramInformation diagramInformation;
-	
+
 	public AbstractCreateDiagramFileCommand() {
-		diagramInformation = FujabaNewwizardPlugin.getDefault().getDiagramInformation(getEditorId());
+		diagramInformation = FujabaNewwizardPlugin.getDefault()
+				.getDiagramInformation(getEditorId());
 	}
 
 	@Override
@@ -64,9 +66,14 @@ public abstract class AbstractCreateDiagramFileCommand extends
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
 		final Resource diagramResource = resourceSet
 				.createResource(diagramModelURI);
+
 		AbstractTransactionalCommand command = new CreateEmptyDiagramCommand(
 				myEditingDomain, "Initializing diagram contents",
-				affectedFiles, diagramResource, diagramRoot, diagramInformation, getEditorId());
+				affectedFiles, diagramResource, diagramRoot,
+				diagramInformation.getDiagramElementClass(),
+				new PreferencesHint(diagramInformation.getPreferencesHint()),
+				diagramInformation.getModelElementCategoryKey(),
+				diagramInformation.getModelId());
 
 		try {
 			IStatus status = OperationHistoryFactory.getOperationHistory()
@@ -93,8 +100,8 @@ public abstract class AbstractCreateDiagramFileCommand extends
 
 	@Override
 	protected String getExtension() {
-		IDiagramInformation diagramInformation = FujabaNewwizardPlugin.getDefault()
-				.getDiagramInformation(getEditorId());
+		IDiagramInformation diagramInformation = FujabaNewwizardPlugin
+				.getDefault().getDiagramInformation(getEditorId());
 		if (diagramInformation != null) {
 			return diagramInformation.getFileExtension();
 		}

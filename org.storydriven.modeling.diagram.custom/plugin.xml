@@ -205,35 +205,7 @@
          </description>
       </wizard>
    </extension>   
-   <extension
-         id="modelelementcategory"
-         point="de.fujaba.modelinstance.modelelementcategory">
-      <category
-            key="org.storydriven.modeling.activities"
-            name="Activities">
-         <child
-               class="Activity"
-               packageNsUri="http://ns.storydriven.org/sdm/activities/0.1.0">
-         </child>
-      </category>
-   </extension>
-   <extension
-         point="de.fujaba.newwizard.diagraminformation">
-      <editor
-            editorId="org.storydriven.modeling.diagram.part.SDMDiagramEditorID">
-         <information
-               editorName="SDM Editor"
-               fileExtension="sdm_diagram"
-               fujabaEditor="org.storydriven.modeling.diagram.custom.part.SDMFujabaEditor"
-               modelElementCategoryKey="org.storydriven.modeling.activities"
-               modelId="SDM"
-               useModelElementCategory="false">
-         </information>
-      </editor>
-   </extension>
-   
-   
-   <extension
+    <extension
       point="org.eclipse.ui.menus">
 	   <menuContribution
 	         allPopups="false"
@@ -253,7 +225,6 @@
 	      </command>
 	   </menuContribution>
 	</extension>
-
     <extension point="org.eclipse.ui.commands">
 		<command
 			categoryId="de.fujaba"
@@ -263,7 +234,118 @@
 			name="%initDiagramActionLabel">
 		</command>
 	</extension>
-	
-   
-
+    <extension
+         point="de.fujaba.modelinstance.modelelementcategory">
+      <category
+            key="org.storydrivening.activities.category"
+            name="activities">
+         <child
+               class="StartNode"
+               packageNsUri="http://ns.storydriven.org/sdm/activities/0.1.0">
+         </child>
+         <child
+               class="StopNode"
+               packageNsUri="http://ns.storydriven.org/sdm/activities/0.1.0">
+         </child>
+         <child
+               class="JunctionNode"
+               packageNsUri="http://ns.storydriven.org/sdm/activities/0.1.0">
+         </child>
+         <child
+               class="StatementNode"
+               packageNsUri="http://ns.storydriven.org/sdm/activities/0.1.0">
+         </child>
+         <child
+               class="StructuredNode"
+               packageNsUri="http://ns.storydriven.org/sdm/activities/0.1.0">
+         </child>
+         <child
+               class="ModifyingStoryNode"
+               packageNsUri="http://ns.storydriven.org/sdm/activities/0.1.0">
+         </child>
+      </category>
+   </extension>
+   <extension
+         point="de.fujaba.newwizard.diagraminformation">
+      <editor
+            preferencesHint="org.storydriven.modeling.diagram"
+            editorId="org.storydriven.modeling.diagram.part.SDMDiagramEditorID"
+            editorName="SDM Editor"
+            fileExtension="sdm_diagram"
+            modelElementCategoryKey="org.storydrivening.activities.category"
+            modelId="SDM">
+         <diagramElement
+               packageNsURI="http://ns.storydriven.org/sdm/activities/0.1.0"
+               className="Activity">
+         </diagramElement>
+         <node
+               domainElement="StartNode"
+               semanticHint="2001">
+         </node>
+         <node
+               domainElement="StopNode"
+               semanticHint="2002">
+         </node>
+         <node
+               domainElement="JunctionNode"
+               semanticHint="2003">
+         </node>
+         <node
+               domainElement="StatementNode"
+               semanticHint="2004">
+         </node>
+         <node
+               domainElement="StructuredNode"
+               semanticHint="2005">
+         </node>
+         <node
+               domainElement="ModifyingStoryNode"
+               semanticHint="2007">
+         </node>
+         <node
+               domainElement="TextualExpression"
+               semanticHint="3015">
+         </node>
+         <node
+               domainElement="JunctionNode"
+               semanticHint="3001">
+         </node>
+         <node
+               domainElement="StartNode"
+               semanticHint="3002">
+         </node>
+         <node
+               domainElement="StopNode"
+               semanticHint="3004">
+         </node>
+         <node
+               domainElement="StatementNode"
+               semanticHint="3003">
+         </node>
+         <node
+               domainElement="StructuredNode"
+               semanticHint="3005">
+         </node>
+         <node
+               domainElement="ModifyingStoryNode"
+               semanticHint="3011">
+         </node>
+         <node
+               domainElement="StoryPattern"
+               semanticHint="3008">
+         </node>
+         <node
+               domainElement="ObjectVariable"
+               semanticHint="3012">
+         </node>
+         <node
+               domainElement="AttributeAssignment"
+               semanticHint="3013">
+         </node>
+         <node
+               domainElement="PrimitiveVariable"
+               semanticHint="3014">
+         </node>
+      </editor>
+   </extension>
 </plugin>
