@@ -313,23 +313,22 @@ have no binding state.
 \subsection{Using Object Attributes [CH]}
 \label{sec:StoryPatterns:attributes}
 
-The nodes of our host graph carry attributes. During the application of a story pattern, these attributes can be used twofold. First, object constraints can be specified to restrict the attribute values to a certain range thereby restricting the possible matches of a story pattern. Second, attribute values can be changed during the graph rewriting step after a successful matching.
+The nodes of our host graph carry attributes. During the application of a story pattern, these attributes can be used twofold. First, attribute constraints can be specified to restrict the attribute values to a certain range thereby restricting the possible matches of a story pattern. Second, attribute values can be changed during the graph rewriting step after a successful matching.
 
-We use \emph{object constraints} to restrict the matching of object variables to nodes of the host graph that have specific attribute values. Thus, object constraints are considered to be part of the LHS and do not change the host graph. Figure \ref{fig:objectConstraint} shows an example.
+We use \emph{attribute constraints} to restrict the matching of object variables to nodes of the host graph that have specific attribute values. Thus, attribute constraints are considered to be part of the LHS and do not change the host graph. Figure \ref{fig:objectConstraint} shows an example.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=1]{figures/ObjectConstraint}
-  \caption{Matching Pattern with an Object Constraint}
+  \caption{Matching Pattern with an Attribute Constraint}
   \label{fig:objectConstraint}
 \end{figure}
 
 In the example, we match a method being contained by the class \fe{theClass}. The match is restricted to a method which has the name "getName".
 
-The values of attributes that are not restricted by an object constraint are not considered during the matching. Thus, they may have an arbitrary value. In the current version of story patterns, such object constraints need to be specified using OCL. Besides equality checks, all comparative operations on the attributes of the object supported by OCL can be used as object constraints. OCL statements, however, that traverse the references of the objects are not to be used, but modeled as part of a story pattern.
-\todoch{Cite OCL}
+The values of attributes that are not restricted by an attribute constraint are not considered during the matching. Thus, they may have an arbitrary value. In the current version of story patterns, attribute constraints need to be specified using OCL~\cite{OCL}. Besides equality checks, all comparative operations on the attributes of the object supported by OCL can be used as object constraints. 
 
-Beside object constraints, we may also use \emph{attribute assignments} to change the value of an attribute during the application of a story pattern. Thus, attribute assignments are considered to be part of the RHS. When using attribute assignments, the value of the attribute is not considered while matching the LHS to the host graph. Figure \ref{fig:attributeAssignment} shows an example.
+Beside attribute constraints, we may also use \emph{attribute assignments} to change the value of an attribute during the application of a story pattern. Thus, attribute assignments are considered to be part of the RHS. When using attribute assignments, the value of the attribute is not considered while matching the LHS to the host graph. Figure \ref{fig:attributeAssignment} shows an example.
 
 \begin{figure}[htbp]
   \centering
@@ -346,6 +345,7 @@ The concrete syntax of an attribute assignment is
 \end{lstlisting}
 The expression is to be specified using OCL. The type of the return value of the OCL expression must be the same as the type of the attribute. Since the attribute assignment is considered to be part of the RHS, it is visualized in green color.
 
+The OCL statements we allow for attribute constraints and attribute assignments must not traverse the references of the object variables. Both may only use the attributes of object variables in the story pattern and arbitrary arithmetic operations on them. 
 
 
 \ext  %--- Comment this line to include object sets into the document
