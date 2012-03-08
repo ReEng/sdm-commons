@@ -15,7 +15,7 @@
       <package
             class="de.fujaba.modelinstance.ModelinstancePackage"
             genModel="model/modelinstance.genmodel"
-            uri="http://www.fujaba.de/modelinstance/0.2.2">
+            uri="http://www.fujaba.de/modelinstance/0.2.3">
       </package>
    </extension>
    
