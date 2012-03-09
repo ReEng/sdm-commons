@@ -9,6 +9,7 @@ In the following sections, we describe the structure and operation principles of
 
 
 \section{Interpreting Story Diagrams}
+\label{sec:InterpretingStoryDiagrams}
 
 \subsection{Interpreter Architecture}
 
@@ -347,8 +348,9 @@ Attribute assignment expressions are evaluated at the beginning to support expre
 If attribute assignments would be evaluated at the end, it would no be possible to evaluate expressions with references to deleted elements because these do not exists anymore in the \emph{VariableScope}.
 
 
-
-
-
 \section{Code Generation for Story Diagrams}
- We don't do it currently. Others have tried that before.\cite{GBD07}
+As stated in the introduction of this chapter, a second possibility of executing story diagrams besides interpretation is code generation.
+When story diagrams were originally conceived, this was the first approach to executing them.
+The \fuj Tool Suite \cite{KNNZ99,NNZ00} provided the possibility to generate Java code from the story diagrams that could then be executed.
+This functionality was retained throughout several versions of \fuj and even extended to allow the generation of EMF-compatible code \cite{GBD07}.
+With the creation of the new metamodel for story diagrams \cite{HRvD+11}, this option was discontinued in favour of the interpretation described in Section~\ref{sec:InterpretingStoryDiagrams}.
