@@ -13,6 +13,7 @@ import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
 import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.wizard.WizardPage;
@@ -36,7 +37,7 @@ public class DiagramContentsSelectionPage extends WizardPage implements
 
 	private String modelElementCategoryKey;
 
-	private CheckboxTreeViewer modelViewer;
+	protected CheckboxTreeViewer modelViewer;
 
 	private IDiagramElementValidator validator;
 
@@ -127,15 +128,11 @@ public class DiagramContentsSelectionPage extends WizardPage implements
 		layout.marginWidth = 0;
 		plate.setLayout(layout);
 
-		// create the label
-		Label label = new Label(plate, SWT.NONE);
-		label.setText(getSelectionTitle());
-		label.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_BEGINNING));
-
-		// create the tree viewer
-		int style = SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER;
-
-		modelViewer = new CheckboxTreeViewer(plate, style);
+		// Create controls
+		createLabel(plate);
+		modelViewer = createTreeViewer(plate);
+	
+		// Initialize modelViewer
 		modelViewer.addCheckStateListener(new ICheckStateListener() {
 
 			@Override
@@ -170,6 +167,19 @@ public class DiagramContentsSelectionPage extends WizardPage implements
 		setControl(plate);
 
 	}
+
+	protected Label createLabel(Composite plate) {
+		// create the label
+		Label label = new Label(plate, SWT.NONE);
+		label.setText(getSelectionTitle());
+		label.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_BEGINNING));
+		return label;
+	}
+
+	protected CheckboxTreeViewer createTreeViewer(Composite plate) {
+		return new CheckboxTreeViewer(plate, SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER);
+	}
+	
 
 	/**
 	 * A Handler that will be called by the Tree Viewer, when its selection
