@@ -180,7 +180,7 @@ public class ActivityEdgePropertiesEditionComponent extends SinglePartProperties
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	protected EStructuralFeature associatedFeature(Object editorKey) {
+	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == ActivitiesViewsRepository.ActivityEdge.Properties.target) {
 			return ActivitiesPackage.eINSTANCE.getActivityEdge_Target();
 		}

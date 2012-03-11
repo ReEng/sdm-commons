@@ -261,7 +261,7 @@ public class ContainmentRelationPropertiesEditionComponent extends SinglePartPro
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	protected EStructuralFeature associatedFeature(Object editorKey) {
+	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == PatternsViewsRepository.ContainmentRelation.Properties.name) {
 			return SDMPackage.eINSTANCE.getNamedElement_Name();
 		}

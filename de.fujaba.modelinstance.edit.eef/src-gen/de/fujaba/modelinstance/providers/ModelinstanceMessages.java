@@ -5,7 +5,6 @@ package de.fujaba.modelinstance.providers;
 
 import org.eclipse.osgi.util.NLS;
 
-
 /**
  * 
  * 

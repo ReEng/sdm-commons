@@ -111,7 +111,7 @@ public class TemplateSignaturePropertiesEditionComponent extends SinglePartPrope
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	protected EStructuralFeature associatedFeature(Object editorKey) {
+	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == TemplatesViewsRepository.TemplateSignature.Properties.pattern) {
 			return TemplatesPackage.eINSTANCE.getTemplateSignature_Pattern();
 		}

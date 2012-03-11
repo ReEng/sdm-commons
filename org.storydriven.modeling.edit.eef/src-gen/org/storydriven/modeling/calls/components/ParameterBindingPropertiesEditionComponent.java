@@ -152,7 +152,7 @@ public class ParameterBindingPropertiesEditionComponent extends SinglePartProper
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	protected EStructuralFeature associatedFeature(Object editorKey) {
+	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == CallsViewsRepository.ParameterBinding.Properties.comment) {
 			return SDMPackage.eINSTANCE.getCommentableElement_Comment();
 		}

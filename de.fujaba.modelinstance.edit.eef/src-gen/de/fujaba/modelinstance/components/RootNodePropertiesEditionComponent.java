@@ -143,7 +143,7 @@ public class RootNodePropertiesEditionComponent extends SinglePartPropertiesEdit
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	protected EStructuralFeature associatedFeature(Object editorKey) {
+	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == ModelinstanceViewsRepository.RootNode.Properties.categories) {
 			return ModelinstancePackage.eINSTANCE.getRootNode_Categories();
 		}

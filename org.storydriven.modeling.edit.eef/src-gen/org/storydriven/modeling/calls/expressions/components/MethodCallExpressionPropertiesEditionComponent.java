@@ -121,7 +121,7 @@ public class MethodCallExpressionPropertiesEditionComponent extends SinglePartPr
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	protected EStructuralFeature associatedFeature(Object editorKey) {
+	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == ExpressionsViewsRepository.MethodCallExpression.Properties.comment) {
 			return SDMPackage.eINSTANCE.getCommentableElement_Comment();
 		}

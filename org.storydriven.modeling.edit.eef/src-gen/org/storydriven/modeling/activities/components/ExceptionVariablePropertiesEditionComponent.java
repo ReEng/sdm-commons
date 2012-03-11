@@ -181,7 +181,7 @@ public class ExceptionVariablePropertiesEditionComponent extends SinglePartPrope
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	protected EStructuralFeature associatedFeature(Object editorKey) {
+	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == ActivitiesViewsRepository.ExceptionVariable.Properties.activityEdge) {
 			return ActivitiesPackage.eINSTANCE.getExceptionVariable_ActivityEdge();
 		}

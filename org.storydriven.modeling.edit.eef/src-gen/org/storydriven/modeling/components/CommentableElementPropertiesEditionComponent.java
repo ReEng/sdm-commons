@@ -81,7 +81,7 @@ public class CommentableElementPropertiesEditionComponent extends SinglePartProp
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	protected EStructuralFeature associatedFeature(Object editorKey) {
+	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == ModelingViewsRepository.Documentation.Documentation_.documentation__) {
 			return SDMPackage.eINSTANCE.getCommentableElement_Comment();
 		}

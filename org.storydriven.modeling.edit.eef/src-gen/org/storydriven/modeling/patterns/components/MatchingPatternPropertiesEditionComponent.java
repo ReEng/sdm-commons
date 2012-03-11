@@ -129,7 +129,7 @@ public class MatchingPatternPropertiesEditionComponent extends SinglePartPropert
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	protected EStructuralFeature associatedFeature(Object editorKey) {
+	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == PatternsViewsRepository.MatchingPattern.Properties.comment) {
 			return SDMPackage.eINSTANCE.getCommentableElement_Comment();
 		}
