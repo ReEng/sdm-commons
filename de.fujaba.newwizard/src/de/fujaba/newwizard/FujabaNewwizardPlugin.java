@@ -1,19 +1,14 @@
 package de.fujaba.newwizard;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.RegistryFactory;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
-import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
-import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -58,10 +53,10 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 	 * org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext
 	 * )
 	 */
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
-		adapterFactory = createAdapterFactory();
 
 		// Force reading the extension point
 		getDiagramInformationMap();
@@ -74,6 +69,7 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 	 * org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext
 	 * )
 	 */
+	@Override
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
@@ -81,17 +77,6 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 		// initializers = null;
 		plugin = null;
 		super.stop(context);
-	}
-
-	protected ComposedAdapterFactory createAdapterFactory() {
-		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
-		fillItemProviderFactories(factories);
-		return new ComposedAdapterFactory(factories);
-	}
-
-	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
-		factories.add(new ResourceItemProviderAdapterFactory());
-		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}
 
 	/**
@@ -141,10 +126,6 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 		if (throwable != null) {
 			throwable.printStackTrace();
 		}
-	}
-
-	public AdapterFactory getItemProvidersAdapterFactory() {
-		return adapterFactory;
 	}
 
 	public ImageDescriptor getItemImageDescriptor(Object item) {

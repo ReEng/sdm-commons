@@ -11,6 +11,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -51,9 +52,8 @@ import de.fujaba.newwizard.ui.ResourceLocationProvider;
  * @author bingo
  * 
  */
-// TODO: IEditorIdentifier?
 public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
-		INewWizard, IEditorIdentifier {
+		INewWizard {
 
 	private IDiagramElementValidator diagramElementValidator = new IDiagramElementValidator() {
 		@Override
@@ -101,6 +101,7 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 	protected DiagramContentsSelectionPage diagramContentsSelectionPage;
 
 	private TransactionalEditingDomain editingDomain;
+
 	private Resource diagramResource;
 
 	/**
@@ -110,6 +111,26 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 		editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 	}
 
+	/**
+	 * Returns the AdapterFactory to be used by the ContentProvider and
+	 * LabelProvider.
+	 * 
+	 * @return the AdapterFactory to be used.
+	 */
+	public abstract AdapterFactory getItemProvidersAdapterFactory();
+
+	/**
+	 * Should return the ID of the generated Editor class.
+	 * 
+	 * @return the Editor-ID.
+	 */
+	public abstract String getEditorId();
+
+	/**
+	 * Returns the workbench.
+	 * 
+	 * @return the workbench
+	 */
 	public IWorkbench getWorkbench() {
 		return workbench;
 	}
@@ -118,6 +139,7 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 		return selection;
 	}
 
+	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
@@ -209,7 +231,8 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 	protected DiagramElementSelectionPage createDiagramElementSelectionPage() {
 		DiagramElementSelectionPage diagramElementSelectionPage = new DiagramElementSelectionPage(
 				"diagramResource element", diagramElementValidator,
-				getDiagramInformation().getModelElementCategoryKey());
+				getDiagramInformation().getModelElementCategoryKey(),
+				getItemProvidersAdapterFactory());
 
 		diagramElementSelectionPage.setTitle("Select Diagram Element");
 
@@ -219,10 +242,13 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 		return diagramElementSelectionPage;
 	}
 
+
+
 	protected DiagramContentsSelectionPage createDiagramContentsSelectionPage() {
 		DiagramContentsSelectionPage diagramContentsSelectionPage = new DiagramContentsSelectionPage(
 				"diagramResource contents", diagramElementValidator,
-				getDiagramInformation().getModelElementCategoryKey());
+				getDiagramInformation().getModelElementCategoryKey(),
+				getItemProvidersAdapterFactory());
 
 		diagramContentsSelectionPage.setTitle("Select Diagram contents");
 		diagramContentsSelectionPage
@@ -232,9 +258,11 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 	}
 
 
+	@Override
 	public boolean performFinish() {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
+			@Override
 			protected void execute(IProgressMonitor monitor)
 					throws CoreException, InterruptedException {
 				performModification(monitor);

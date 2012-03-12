@@ -2,6 +2,7 @@ package de.fujaba.newwizard.diagrams.pages;
 
 import java.util.List;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.FeatureMap;
@@ -23,14 +24,15 @@ import org.eclipse.swt.widgets.Label;
 
 import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.modelinstance.RootNode;
-import de.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.fujaba.newwizard.Messages;
 import de.fujaba.newwizard.diagrams.IDiagramElementValidator;
 
-public class DiagramElementSelectionPage extends WizardPage implements IResourceChangedListener {
+public class DiagramElementSelectionPage extends WizardPage implements
+		IResourceChangedListener {
 
 	private String modelElementCategoryKey;
 	private IDiagramElementValidator diagramValidator;
+	private AdapterFactory adapterFactory;
 
 	private ViewerFilter viewerFilter = new ViewerFilter() {
 		@Override
@@ -49,12 +51,19 @@ public class DiagramElementSelectionPage extends WizardPage implements IResource
 	 * 
 	 * @param pageId
 	 *            The ID for this Page.
-	 * @param diagramInformation 
+	 * @param diagramInformation
+	 *            The diagram information for this editor.
+	 * @param adapterFactory
+	 *            The AdapterFactory to use for ContentProvider and
+	 *            LabelProvider.
 	 */
-	public DiagramElementSelectionPage(String pageId, IDiagramElementValidator validator, String modelElementCategoryKey) {
+	public DiagramElementSelectionPage(String pageId,
+			IDiagramElementValidator validator, String modelElementCategoryKey,
+			AdapterFactory adapterFactory) {
 		super(pageId);
 		this.diagramValidator = validator;
 		this.modelElementCategoryKey = modelElementCategoryKey;
+		this.adapterFactory = adapterFactory;
 	}
 
 	/**
@@ -94,7 +103,6 @@ public class DiagramElementSelectionPage extends WizardPage implements IResource
 		return null;
 	}
 
-
 	protected Object unwrapElement(Object element) {
 
 		if (element instanceof IWrapperItemProvider) {
@@ -107,7 +115,7 @@ public class DiagramElementSelectionPage extends WizardPage implements IResource
 
 		return element;
 	}
-	
+
 	@Override
 	public void setVisible(boolean visible) {
 		super.setVisible(visible);
@@ -142,6 +150,7 @@ public class DiagramElementSelectionPage extends WizardPage implements IResource
 		modelViewer = new TreeViewer(plate, style);
 		modelViewer
 				.addSelectionChangedListener(new ISelectionChangedListener() {
+					@Override
 					public void selectionChanged(SelectionChangedEvent event) {
 						validatePage();
 					}
@@ -153,11 +162,9 @@ public class DiagramElementSelectionPage extends WizardPage implements IResource
 		modelViewer.getTree().setLayoutData(layoutData);
 
 		modelViewer.setContentProvider(new AdapterFactoryContentProvider(
-				FujabaNewwizardPlugin.getDefault()
-						.getItemProvidersAdapterFactory()));
+				adapterFactory));
 		modelViewer.setLabelProvider(new AdapterFactoryLabelProvider(
-				FujabaNewwizardPlugin.getDefault()
-						.getItemProvidersAdapterFactory()));
+				adapterFactory));
 		modelViewer.addFilter(viewerFilter);
 
 		setControl(plate);
@@ -180,11 +187,12 @@ public class DiagramElementSelectionPage extends WizardPage implements IResource
 		if (resource.getContents().isEmpty()) {
 			return;
 		}
-		
+
 		EObject modelElementCategory = null;
 		EObject rootNode = resource.getContents().get(0);
 		if (rootNode instanceof RootNode) {
-			List<ModelElementCategory> categories = ((RootNode) rootNode).getCategories();
+			List<ModelElementCategory> categories = ((RootNode) rootNode)
+					.getCategories();
 			for (ModelElementCategory category : categories) {
 				if (modelElementCategoryKey.equals(category.getKey())) {
 					modelElementCategory = category;
@@ -192,7 +200,8 @@ public class DiagramElementSelectionPage extends WizardPage implements IResource
 			}
 		}
 
-		if (modelElementCategory != null && modelViewer != null && !modelViewer.getTree().isDisposed()
+		if (modelElementCategory != null && modelViewer != null
+				&& !modelViewer.getTree().isDisposed()
 				&& modelViewer.getInput() != modelElementCategory) {
 			modelViewer.setInput(modelElementCategory);
 			modelViewer.expandToLevel(3);

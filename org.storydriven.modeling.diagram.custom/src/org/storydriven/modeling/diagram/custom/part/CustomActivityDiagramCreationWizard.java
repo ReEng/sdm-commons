@@ -1,7 +1,9 @@
 package org.storydriven.modeling.diagram.custom.part;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
+import org.storydriven.modeling.diagram.part.SDMDiagramEditorPlugin;
 
 import de.fujaba.newwizard.diagrams.AbstractFujabaDiagramNewWizard;
 
@@ -14,6 +16,7 @@ import de.fujaba.newwizard.diagrams.AbstractFujabaDiagramNewWizard;
  */
 public class CustomActivityDiagramCreationWizard extends AbstractFujabaDiagramNewWizard {
 
+	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
@@ -25,6 +28,12 @@ public class CustomActivityDiagramCreationWizard extends AbstractFujabaDiagramNe
 	@Override
 	public String getEditorId() {
 		return org.storydriven.modeling.diagram.part.SDMDiagramEditor.ID;
+	}
+
+	@Override
+	public AdapterFactory getItemProvidersAdapterFactory() {
+		return SDMDiagramEditorPlugin.getInstance()
+				.getItemProvidersAdapterFactory();
 	}
 
 }

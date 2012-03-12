@@ -3,6 +3,7 @@ package de.fujaba.newwizard.diagrams.pages;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.FeatureMap;
@@ -13,7 +14,6 @@ import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
 import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.wizard.WizardPage;
@@ -24,7 +24,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
 import de.fujaba.modelinstance.ModelElementCategory;
-import de.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.fujaba.newwizard.diagrams.IDiagramElementValidator;
 
 public class DiagramContentsSelectionPage extends WizardPage implements
@@ -41,6 +40,8 @@ public class DiagramContentsSelectionPage extends WizardPage implements
 
 	private IDiagramElementValidator validator;
 
+	private AdapterFactory adapterFactory;
+
 	/**
 	 * Constructs this DiagramModelSelectionPage.
 	 * 
@@ -49,10 +50,12 @@ public class DiagramContentsSelectionPage extends WizardPage implements
 	 * @param diagramInformation
 	 */
 	public DiagramContentsSelectionPage(String pageId,
-			IDiagramElementValidator validator, String modelElementCategoryKey) {
+			IDiagramElementValidator validator, String modelElementCategoryKey,
+			AdapterFactory adapterFactory) {
 		super(pageId);
 		this.validator = validator;
 		this.modelElementCategoryKey = modelElementCategoryKey;
+		this.adapterFactory = adapterFactory;
 	}
 
 	/**
@@ -148,11 +151,9 @@ public class DiagramContentsSelectionPage extends WizardPage implements
 		modelViewer.getTree().setLayoutData(layoutData);
 
 		modelViewer.setContentProvider(new AdapterFactoryContentProvider(
-				FujabaNewwizardPlugin.getDefault()
-						.getItemProvidersAdapterFactory()));
+				adapterFactory));
 		modelViewer.setLabelProvider(new AdapterFactoryLabelProvider(
-				FujabaNewwizardPlugin.getDefault()
-						.getItemProvidersAdapterFactory()));
+				adapterFactory));
 
 		if (modelElementCategoryKey != null) {
 			modelViewer.addFilter(new ViewerFilter() {
