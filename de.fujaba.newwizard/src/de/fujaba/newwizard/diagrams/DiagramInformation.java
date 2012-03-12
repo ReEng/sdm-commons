@@ -55,7 +55,8 @@ public class DiagramInformation implements IDiagramInformation {
 		}
 
 		nodes = new HashMap<String, String>();
-		IConfigurationElement[] nodeChildren = configurationElement.getChildren("node");
+		IConfigurationElement[] nodeChildren = configurationElement
+				.getChildren("node");
 		for (IConfigurationElement node : nodeChildren) {
 			String domainElement = node.getAttribute("domainElement");
 			String semanticHint = node.getAttribute("semanticHint");
@@ -102,8 +103,10 @@ public class DiagramInformation implements IDiagramInformation {
 	public EClass getDiagramElementClass() {
 		EPackage ePackage = EPackage.Registry.INSTANCE
 				.getEPackage(diagramElementPackageNsURI);
-		EClassifier eClassifier = ePackage
-				.getEClassifier(diagramElementClassName);
+		EClassifier eClassifier = null;
+		if (ePackage != null) {
+			eClassifier = ePackage.getEClassifier(diagramElementClassName);
+		}
 		if (eClassifier instanceof EClass) {
 			return (EClass) eClassifier;
 		}
