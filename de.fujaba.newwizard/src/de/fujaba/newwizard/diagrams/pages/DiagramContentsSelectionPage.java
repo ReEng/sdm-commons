@@ -228,9 +228,11 @@ public class DiagramContentsSelectionPage extends WizardPage implements
 		}
 
 		for (EObject content : rootNode.eContents()) {
-			ModelElementCategory category = (ModelElementCategory) content;
-			if (modelElementCategoryKey.equals(category.getKey())) {
-				return category;
+			if (content instanceof ModelElementCategory) {
+				ModelElementCategory category = (ModelElementCategory) content;
+				if (modelElementCategoryKey.equals(category.getKey())) {
+					return category;
+				}
 			}
 		}
 
