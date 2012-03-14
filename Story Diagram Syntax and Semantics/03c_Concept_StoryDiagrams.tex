@@ -162,7 +162,7 @@ Story diagram calls are special nodes in a story diagram which are used to invok
 As described in the previous sections, a story diagram can have an arbitrary number of in and out parameters. When calling a story diagram, concrete arguments have to be assigned to the in parameters. Consequently, if an object variable named n is bound somewhere in the story diagram, the identifier n can be used to pass this object variable as an argument to a call. Similarly, if the called story diagram has out parameters, those are implicitly bound to their respective names and can be used by specifying object variables of the same name.
 
 In contrast to QVT \cite{QVT}, we do not explicitly model inout parameters. Instead, we allow the same objects which are passed as in parameters to be also returned as out parameters.
-\todomvd{Werden die dann neu gebunden?}
+These objects are not bound again after the call. Instead the binding is preserved and the same object variable is used before and after the call. This is similar to the semantics of a call-by-reference parameter.
 
 An example of a story diagram call is shown in Figure~\ref{fig:call}.
 
