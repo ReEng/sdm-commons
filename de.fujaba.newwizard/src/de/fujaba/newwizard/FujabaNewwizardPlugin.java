@@ -7,10 +7,6 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.RegistryFactory;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
-import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -34,10 +30,6 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 	// The shared instance
 	private static FujabaNewwizardPlugin plugin;
 
-	/**
-	 * @generated
-	 */
-	private ComposedAdapterFactory adapterFactory;
 
 	/**
 	 * The constructor
@@ -71,8 +63,6 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 	 */
 	@Override
 	public void stop(BundleContext context) throws Exception {
-		adapterFactory.dispose();
-		adapterFactory = null;
 		// linkConstraints = null;
 		// initializers = null;
 		plugin = null;
@@ -126,16 +116,6 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 		if (throwable != null) {
 			throwable.printStackTrace();
 		}
-	}
-
-	public ImageDescriptor getItemImageDescriptor(Object item) {
-		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory
-				.adapt(item, IItemLabelProvider.class);
-		if (labelProvider != null) {
-			return ExtendedImageRegistry.getInstance().getImageDescriptor(
-					labelProvider.getImage(item));
-		}
-		return null;
 	}
 
 	public IDiagramInformation getDiagramInformation(String editorId) {
