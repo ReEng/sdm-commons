@@ -24,12 +24,12 @@ public class ModelElementCategoryRegistry {
 
 	// struct-like datatype that stores two Strings describing a class
 	private class QualifiedClassName {
-		public QualifiedClassName(String packageName, String className) {
-			this.packageName = packageName;
+		public QualifiedClassName(String packageNsURI, String className) {
+			this.packageNsURI = packageNsURI;
 			this.className = className;
 		}
 
-		public String packageName;
+		public String packageNsURI;
 		public String className;
 	}
 
@@ -123,7 +123,7 @@ public class ModelElementCategoryRegistry {
 	 * 
 	 * @param object
 	 *            The object, which type should be checked.
-	 * @param packageName
+	 * @param packageNsURI
 	 *            The package name to compare with.
 	 * @param className
 	 *            The className to compare with.
@@ -132,7 +132,7 @@ public class ModelElementCategoryRegistry {
 	private boolean hasType(EObject object,
 			QualifiedClassName qualifiedClassName) {
 		EPackage ePackage = EPackage.Registry.INSTANCE
-				.getEPackage(qualifiedClassName.packageName);
+				.getEPackage(qualifiedClassName.packageNsURI);
 		EClassifier classifier = ePackage
 				.getEClassifier(qualifiedClassName.className);
 		if (classifier instanceof EClass) {

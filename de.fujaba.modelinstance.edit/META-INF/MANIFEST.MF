@@ -1,11 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
+Bundle-Name: Fujaba-Model Edit-Support
 Bundle-SymbolicName: de.fujaba.modelinstance.edit;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.2.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.fujaba.modelinstance.provider.ModelinstanceEditPlugin$Implementation
-Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.fujaba.modelinstance.provider
@@ -14,5 +13,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.storydriven.modeling.edit;bundle-version="1.0.0",
- de.fujaba.modelinstance;bundle-version="1.0.0"
+ de.fujaba.modelinstance;bundle-version="0.2.0"
 Bundle-ActivationPolicy: lazy
