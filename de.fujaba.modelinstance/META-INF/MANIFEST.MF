@@ -12,3 +12,4 @@ Bundle-Activator: de.fujaba.modelinstance.ModelInstancePlugin
 Export-Package: de.fujaba.modelinstance,
  de.fujaba.modelinstance.categories,
  de.fujaba.modelinstance.util
+Bundle-Vendor: Fujaba Community made up of Heinz Nixdorf Institute Paderborn, Technische Universität Darmstadt, University of Kassel, Hasso Plattner Institute Potsdam, Yatta Solutions GmbH

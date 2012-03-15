@@ -14,3 +14,4 @@ Export-Package: org.storydriven.modeling.activities.expressions.providers,
  org.storydriven.modeling.patterns.providers,
  org.storydriven.modeling.providers,
  org.storydriven.modeling.templates.providers
+Bundle-Vendor: Fujaba Community made up of Heinz Nixdorf Institute Paderborn, Technische Universität Darmstadt, University of Kassel, Hasso Plattner Institute Potsdam, Yatta Solutions GmbH
