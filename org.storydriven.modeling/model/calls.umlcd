@@ -392,6 +392,8 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_7XcNA8_-EeCx6pm3dTaU4Q" sourceItem="_7XcNAs_-EeCx6pm3dTaU4Q" targetItem="_D2c0liJDEeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_7XcNBc_-EeCx6pm3dTaU4Q" sourceItem="_7XcNBM_-EeCx6pm3dTaU4Q" targetItem="_nvKx0SLnEeCLL8iyhYH9-w"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_YBOQ4s__EeCx6pm3dTaU4Q" sourceItem="_YBOQ4c__EeCx6pm3dTaU4Q" targetItem="_mIO-kJxcEeCuYMafrm1l2g"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_OVAPwG6bEeGe68i8O7GmYA" sourceItem="_OU_BoG6bEeGe68i8O7GmYA" targetItem="_WUovQCe2EeC9dK-XHdbVkw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_0HoHcG6bEeGe68i8O7GmYA" sourceItem="_0HngYG6bEeGe68i8O7GmYA" targetItem="_tDywECrdEeCrkKoGytJPbg"/>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_rXt1ECJCEeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_raFdsBzvEeChOvWwuwx7tQ" item="_rX3l0CJCEeCMEorpcZtLvw" sourceConnectionVisual="_rXt1ESJCEeCMEorpcZtLvw" text="Superclass for invocations of behavior which is specified elsewhere, e.g. in methods (MethodCallExpression) or activities (ActivityCallNode). An invocation has one parameter binding for each parameter (in or out) of the called method/activity. For Callables which are contained in the model (i.e. Activities and OperationExtensions) the Invocation directly points to the callee. OpaqueCallables are directly referenced by (and contained in) the MethodCallExpressions.">
     <modelElement href="sdm.uml#_raFdsBzvEeChOvWwuwx7tQ"/>
   </nodes>
@@ -537,7 +539,7 @@
     <visualAttributeProperties xmi:id="_rQF90CrdEeCrkKoGytJPbg" attributeName="attributeCompartment"/>
     <visualProperties xmi:id="_rX3mAyJCEeCMEorpcZtLvw" position="1491.0,378.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_rX3l_iJCEeCMEorpcZtLvw" label="+"/>
-    <attributes xmi:id="_WUovQCe2EeC9dK-XHdbVkw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_9V34MBzLEeChOvWwuwx7tQ" name="callExpression">
+    <attributes xmi:id="_WUovQCe2EeC9dK-XHdbVkw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_9V34MBzLEeChOvWwuwx7tQ" comments="_OU_BoG6bEeGe68i8O7GmYA" targetConnectionVisual="_OVAPwG6bEeGe68i8O7GmYA" name="callExpression">
       <modelElement href="sdm.uml#_9V34MBzLEeChOvWwuwx7tQ"/>
       <visualProperties xmi:id="_WUovQSe2EeC9dK-XHdbVkw"/>
       <visibility xmi:id="_WVBJwie2EeC9dK-XHdbVkw" label="+"/>
@@ -546,7 +548,7 @@
         <modelElement href="sdm.uml#_fJSk0BzLEeChOvWwuwx7tQ"/>
       </type>
     </attributes>
-    <attributes xmi:id="_tDywECrdEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_tDyJACrdEeCrkKoGytJPbg" name="name">
+    <attributes xmi:id="_tDywECrdEeCrkKoGytJPbg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_tDyJACrdEeCrkKoGytJPbg" comments="_0HngYG6bEeGe68i8O7GmYA" targetConnectionVisual="_0HoHcG6bEeGe68i8O7GmYA" name="name">
       <modelElement href="sdm.uml#_tDyJACrdEeCrkKoGytJPbg"/>
       <visibility xmi:id="_tDywESrdEeCrkKoGytJPbg" label="+"/>
       <cardinality xmi:id="_tDywEirdEeCrkKoGytJPbg" label="1" max="1" min="1"/>
@@ -726,5 +728,11 @@
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_YBOQ4c__EeCx6pm3dTaU4Q" item="_mIO-kJxcEeCuYMafrm1l2g" sourceConnectionVisual="_YBOQ4s__EeCx6pm3dTaU4Q" text="All parameters in this list are contained within the callable. This reference may only be used if the parameters of the callable are not yet contained in another object. For an EOperationExtension, the parameters are contained in the respective EOperation and, thus, this reference will contain no elements. For an activity that is not associated with an EOperation, this reference contains all parameters of the activity (inParameters and outParameters).">
     <modelElement href="sdm.uml#_YBOQ4M__EeCx6pm3dTaU4Q"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_OU_BoG6bEeGe68i8O7GmYA" item="_WUovQCe2EeC9dK-XHdbVkw" sourceConnectionVisual="_OVAPwG6bEeGe68i8O7GmYA" text="An expression that specifies which method should be called by the OpaqueCallable.">
+    <modelElement href="sdm.uml#_OU8lYG6bEeGe68i8O7GmYA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_0HngYG6bEeGe68i8O7GmYA" item="_tDywECrdEeCrkKoGytJPbg" sourceConnectionVisual="_0HoHcG6bEeGe68i8O7GmYA" text="The name of the Callable.">
+    <modelElement href="sdm.uml#_0HlEIG6bEeGe68i8O7GmYA"/>
   </nodes>
 </com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

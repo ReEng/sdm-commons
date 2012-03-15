@@ -32,6 +32,9 @@
       <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
     </elementImport>
     <packagedElement xmi:type="uml:Package" xmi:id="_cWyQcLbPEd-5oaYsE5oIPw" name="activities">
+      <ownedComment xmi:id="_HUqJoG3DEeGdlstntMEf0g" annotatedElement="_cWyQcLbPEd-5oaYsE5oIPw">
+        <body>This package contains everything to model activities: the different kinds of activity nodes and edges as well as guards.</body>
+      </ownedComment>
       <packagedElement xmi:type="uml:Package" xmi:id="_pULnUBzSEeChOvWwuwx7tQ" name="expressions">
         <packagedElement xmi:type="uml:Class" xmi:id="_s-xCsBzSEeChOvWwuwx7tQ" name="ExceptionVariableExpression">
           <ownedComment xmi:id="_fQB7oBzvEeChOvWwuwx7tQ" annotatedElement="_s-xCsBzSEeChOvWwuwx7tQ">
@@ -397,6 +400,9 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v4HgURzQEeChOvWwuwx7tQ"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_ErDjsB2VEeCKeJCjS51luQ" name="genericExceptionType" association="_ErCVkB2VEeCKeJCjS51luQ">
+          <ownedComment xmi:id="_Btk1MG6bEeGe68i8O7GmYA" annotatedElement="_ErDjsB2VEeCKeJCjS51luQ">
+            <body>Allows the use of generics for the declaration of exception types.</body>
+          </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ErDjsh2VEeCKeJCjS51luQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ErDjsR2VEeCKeJCjS51luQ"/>
@@ -664,10 +670,16 @@ from within an activity.</body>
         </ownedRule>
         <generalization xmi:id="_Us_3ABzJEeChOvWwuwx7tQ" general="_gfdN4BzIEeChOvWwuwx7tQ"/>
         <ownedAttribute xmi:id="_9V34MBzLEeChOvWwuwx7tQ" name="callExpression" type="_fJSk0BzLEeChOvWwuwx7tQ" association="_9V3RIBzLEeChOvWwuwx7tQ">
+          <ownedComment xmi:id="_OU8lYG6bEeGe68i8O7GmYA" annotatedElement="_9V34MBzLEeChOvWwuwx7tQ">
+            <body>An expression that specifies which method should be called by the OpaqueCallable.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9V4fQBzLEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9V34MRzLEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_tDyJACrdEeCrkKoGytJPbg" name="name" visibility="public">
+          <ownedComment xmi:id="_0HlEIG6bEeGe68i8O7GmYA" annotatedElement="_tDyJACrdEeCrkKoGytJPbg">
+            <body>The name of the Callable.</body>
+          </ownedComment>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_xZ_UQSrdEeCrkKoGytJPbg" name="inParameter" redefinedProperty="_bGIb8RzMEeChOvWwuwx7tQ" association="_xZ9fECrdEeCrkKoGytJPbg">
@@ -1032,7 +1044,11 @@ embedded into StoryActivityNodes of an Activity.</body>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_qIMWsLLxEd-uk56s-ldeog" name="ContainsConstraints" memberEnd="_qIM9wLLxEd-uk56s-ldeog _qINk0bLxEd-uk56s-ldeog"/>
-      <packagedElement xmi:type="uml:Association" xmi:id="d99eb2d4-772b-4044-a9f4-a61accff7475" name="ContainsChildPattern" memberEnd="7ce0a38c-81f6-4c40-9a4a-941e9e84f02a 406d03a7-91d4-450d-baa7-ee449e9f282c"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="d99eb2d4-772b-4044-a9f4-a61accff7475" name="ContainsChildPattern" memberEnd="7ce0a38c-81f6-4c40-9a4a-941e9e84f02a 406d03a7-91d4-450d-baa7-ee449e9f282c">
+        <ownedComment xmi:id="_tx07oG6eEeGe68i8O7GmYA" annotatedElement="d99eb2d4-772b-4044-a9f4-a61accff7475">
+          <body></body>
+        </ownedComment>
+      </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_a2nPYLK3Ed-uk56s-ldeog" name="BindsProperty" memberEnd="_a2n2cLK3Ed-uk56s-ldeog _a2odgLK3Ed-uk56s-ldeog">
         <ownedEnd xmi:id="_a2n2cLK3Ed-uk56s-ldeog" name="attributeExpression" type="79151c76-8e24-4f76-8143-e713373a8b68" association="_a2nPYLK3Ed-uk56s-ldeog">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a2n2crK3Ed-uk56s-ldeog" value="*"/>
@@ -1150,16 +1166,28 @@ embedded into StoryActivityNodes of an Activity.</body>
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="__jOJULL7Ed-uk56s-ldeog" instance="888dbb97-a420-4e27-bfb0-f5b3de6da65b"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="29ee7390-8b89-420e-99c9-e1179f7cfd54" name="target" visibility="public" type="_ieKckGHwEeCDNuSrVjgXCA" association="efa70337-efe7-457d-8d6a-3aea19469b7a">
+          <ownedComment xmi:id="_KJbVQG6dEeGe68i8O7GmYA" annotatedElement="29ee7390-8b89-420e-99c9-e1179f7cfd54">
+            <body>The target of the link.</body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA8BpLKwEd-DYIlz5ANeHA" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="5e3eecac-3d82-4765-bec0-c98627eefb91" name="source" visibility="public" type="c0f72d07-a643-4da9-859b-d95cfca69eee" association="639688a5-23e9-4581-98d8-2fcc57a3438b">
+          <ownedComment xmi:id="_Q7Z_YG6dEeGe68i8O7GmYA" annotatedElement="5e3eecac-3d82-4765-bec0-c98627eefb91">
+            <body>The source of the link. This always has to be an object variable.</body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA8BprKwEd-DYIlz5ANeHA" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="14426f7e-673a-4457-ab0e-c96c45d95a78" name="secondLinkConstraint" visibility="public" type="8fd71d27-94c0-49d5-9902-a26156244424" association="5589daf2-a2cb-4afa-bb02-2da37d5af801">
+          <ownedComment xmi:id="_x1yyQG6cEeGe68i8O7GmYA" annotatedElement="14426f7e-673a-4457-ab0e-c96c45d95a78">
+            <body>The constraint that refers to this link as the &quot;second link&quot;.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA8osLKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA8osbKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9" name="firstLinkConstraint" visibility="public" type="8fd71d27-94c0-49d5-9902-a26156244424" association="7614aedb-dfa3-426e-9c26-73a44d2ddb96">
+          <ownedComment xmi:id="_2qyyUG6cEeGe68i8O7GmYA" annotatedElement="1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9">
+            <body>The constraint that refers to this link as the &quot;first link&quot;.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA8os7KwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA8otLKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
@@ -1170,6 +1198,9 @@ embedded into StoryActivityNodes of an Activity.</body>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_wBqeQJ5_EeCWWYky4ZcK-A" value="UNBOUND"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_IIFDQBzcEeChOvWwuwx7tQ" name="pattern" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="_IIEcMBzcEeChOvWwuwx7tQ">
+          <ownedComment xmi:id="_6Q4vQG6cEeGe68i8O7GmYA" annotatedElement="_IIFDQBzcEeChOvWwuwx7tQ">
+            <body>The story pattern in which the link variable is contained.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IIFDQhzcEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IIFDQRzcEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
@@ -1196,7 +1227,7 @@ embedded into StoryActivityNodes of an Activity.</body>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="8fd71d27-94c0-49d5-9902-a26156244424" name="LinkConstraint">
         <ownedComment xmi:id="_0DfisJ6EEeCWWYky4ZcK-A" annotatedElement="8fd71d27-94c0-49d5-9902-a26156244424">
-          <body>Link constraints (formerly known as MultiLinks in old meta-model) constrain the ordering of links of the referencingObject is a collection. This way objects can be required to have a certain position in the collection (FIRST, LAST, INDEX) or a certain ordering relative to each other (DIRECT_SUCCESSOR, INDIRECT_SUCCESSOR). While the first kind of LinkConstraint can be imposed upon a single link, the second kind requires two links that are related to each other (e.g., have the same referencingObject).</body>
+          <body>Link constraints (formerly known as MultiLinks in old meta-model) constrain the ordering of links if the referencingObject is a collection. This way objects can be required to have a certain position in the collection (FIRST, LAST, INDEX) or a certain ordering relative to each other (DIRECT_SUCCESSOR, INDIRECT_SUCCESSOR). While the first kind of LinkConstraint can be imposed upon a single link, the second kind requires two links that are related to each other (e.g., have the same referencingObject).</body>
         </ownedComment>
         <generalization xmi:id="_VBbqQLyzEd-eCY_Peu5fFw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
         <ownedAttribute xmi:id="0d854d3d-7441-49ec-9669-45740c948bf0" name="index" visibility="public">
@@ -1217,11 +1248,21 @@ embedded into StoryActivityNodes of an Activity.</body>
           </ownedComment>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="12c158aa-af57-4163-9840-4d19640d092f" name="firstLink" visibility="public" type="70a57767-3c96-4cff-87d3-8391bb039afc" association="7614aedb-dfa3-426e-9c26-73a44d2ddb96"/>
+        <ownedAttribute xmi:id="12c158aa-af57-4163-9840-4d19640d092f" name="firstLink" visibility="public" type="70a57767-3c96-4cff-87d3-8391bb039afc" association="7614aedb-dfa3-426e-9c26-73a44d2ddb96">
+          <ownedComment xmi:id="_N9t7sG6cEeGe68i8O7GmYA" annotatedElement="12c158aa-af57-4163-9840-4d19640d092f">
+            <body>The first link that the link constraint refers to. For link constraints that only relate to one link (FIRST, LAST, INDEX) this is the only referenced link.</body>
+          </ownedComment>
+        </ownedAttribute>
         <ownedAttribute xmi:id="e63f051a-8e92-4ebb-9a36-1ab9ecd6e055" name="secondLink" visibility="public" type="70a57767-3c96-4cff-87d3-8391bb039afc" association="5589daf2-a2cb-4afa-bb02-2da37d5af801">
+          <ownedComment xmi:id="_iJ12wG6cEeGe68i8O7GmYA" annotatedElement="e63f051a-8e92-4ebb-9a36-1ab9ecd6e055">
+            <body>The second link that the link constraint refers to. Applies only to link constraints that relate two links to each other (DIRECT_SUCCESSOR and INDIRECT_SUCCESSOR). For all other constraints this variable is always null.</body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_STI1QCehEeCn77wMTjBpqg"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_xIx3obK8Ed-uk56s-ldeog" name="referencingObject" type="c0f72d07-a643-4da9-859b-d95cfca69eee" association="_xIwpgLK8Ed-uk56s-ldeog">
+          <ownedComment xmi:id="_qIn1wG6dEeGe68i8O7GmYA" annotatedElement="_xIx3obK8Ed-uk56s-ldeog">
+            <body>The ObjectVariable to which this LinkContraint is associated. That ObjectVariable has to be a collection.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xIx3o7K8Ed-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xIx3orK8Ed-uk56s-ldeog" value="1"/>
         </ownedAttribute>
@@ -1254,10 +1295,16 @@ embedded into StoryActivityNodes of an Activity.</body>
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_KXj1oLL8Ed-uk56s-ldeog" instance="888dbb97-a420-4e27-bfb0-f5b3de6da65b"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="1d75eb5a-c292-4676-951a-809ab4091e6b" name="attributeAssignment" visibility="public" type="79151c76-8e24-4f76-8143-e713373a8b68" isOrdered="true" aggregation="composite" association="9b10acef-9c32-4f56-8abd-1d56ed027e13">
+          <ownedComment xmi:id="_9BpxQG6dEeGe68i8O7GmYA" annotatedElement="1d75eb5a-c292-4676-951a-809ab4091e6b">
+            <body>The AttributeAssignments that have to be executed for this ObjectVariable.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-UrKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-U7KwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="e4084d63-9d8b-47a7-9d3e-34aeb0b09440" name="outgoingLink" visibility="public" type="70a57767-3c96-4cff-87d3-8391bb039afc" association="639688a5-23e9-4581-98d8-2fcc57a3438b">
+          <ownedComment xmi:id="_PMl3sG6eEeGe68i8O7GmYA" annotatedElement="e4084d63-9d8b-47a7-9d3e-34aeb0b09440">
+            <body>The links that originate from this ObjectVariable.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-VbKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-VrKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
@@ -1268,6 +1315,9 @@ embedded into StoryActivityNodes of an Activity.</body>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_xIxQkLK8Ed-uk56s-ldeog" name="linkOrderConstraint" type="8fd71d27-94c0-49d5-9902-a26156244424" isOrdered="true" aggregation="composite" association="_xIwpgLK8Ed-uk56s-ldeog">
+          <ownedComment xmi:id="_D4g7YG6eEeGe68i8O7GmYA" annotatedElement="_xIxQkLK8Ed-uk56s-ldeog">
+            <body>The LinkConstraints that are imposed on the links of this ObjectVariable. Only makes sense if the ObjectVariable is a collection.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xIx3oLK8Ed-uk56s-ldeog" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xIxQkbK8Ed-uk56s-ldeog"/>
         </ownedAttribute>
@@ -1279,17 +1329,29 @@ of an Activity.</body>
         </ownedComment>
         <generalization xmi:id="_jqC-QLxXEd-Ytrd77fw2LA" general="_e7CFQLLyEd-uk56s-ldeog"/>
         <ownedAttribute xmi:id="5999b52c-f7c5-4bc4-87ad-ef18581fea6a" name="variable" visibility="public" type="_ieKckGHwEeCDNuSrVjgXCA" aggregation="composite" association="71c51c4d-b7d4-44e9-8970-b4d9a946910c">
+          <ownedComment xmi:id="_tOHVIG6fEeGe68i8O7GmYA" annotatedElement="5999b52c-f7c5-4bc4-87ad-ef18581fea6a">
+            <body>All the variables that are contained in the StoryPattern.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA1T87KwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA1T9LKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="7ce0a38c-81f6-4c40-9a4a-941e9e84f02a" name="parentPattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="d99eb2d4-772b-4044-a9f4-a61accff7475">
+          <ownedComment xmi:id="_g9IEoG6fEeGe68i8O7GmYA" annotatedElement="7ce0a38c-81f6-4c40-9a4a-941e9e84f02a">
+            <body>If the StoryPattern is a sub pattern, this points to the StoryPattern in which the sub pattern is contained.</body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA17BLKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="406d03a7-91d4-450d-baa7-ee449e9f282c" name="containedPattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" aggregation="composite" association="d99eb2d4-772b-4044-a9f4-a61accff7475">
+          <ownedComment xmi:id="_3R-cMG6eEeGe68i8O7GmYA" annotatedElement="406d03a7-91d4-450d-baa7-ee449e9f282c">
+            <body>A number of sub patterns that are contained in this StoryPattern. They can be negated or made optional as a whole by setting their binding semantics accordingly.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA17BrKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA17B7KwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="530fdd45-f95d-43dc-8501-8c4dd824bc24" name="bindingSemantics" visibility="public" type="5d5c7278-e6e7-4956-ab18-44332c8cc462">
+          <ownedComment xmi:id="_E1UscG6fEeGe68i8O7GmYA" annotatedElement="530fdd45-f95d-43dc-8501-8c4dd824bc24">
+            <body>The binding semantics of a story pattern express if a pattern as a whole should matched normally (MANDATORY), if it should be NEGATIVE or OPTIONAL. This only makes sense if the StoryPattern is a sub pattern f another StoryPattern. Top-level StoryPatterns should always have the binding semantics MANDATORY.</body>
+          </ownedComment>
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_Lp6OULL8Ed-uk56s-ldeog" instance="fa270781-e8e1-4379-ada0-d421ab1217e0"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_qINk0bLxEd-uk56s-ldeog" name="constraint" visibility="public" type="_82J4gBzaEeChOvWwuwx7tQ" aggregation="composite" association="_qIMWsLLxEd-uk56s-ldeog">
@@ -1300,6 +1362,9 @@ of an Activity.</body>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qINk0rLxEd-uk56s-ldeog"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_IIFqUBzcEeChOvWwuwx7tQ" name="linkVariable" type="70a57767-3c96-4cff-87d3-8391bb039afc" isOrdered="true" aggregation="composite" association="_IIEcMBzcEeChOvWwuwx7tQ">
+          <ownedComment xmi:id="_6bKasG6eEeGe68i8O7GmYA" annotatedElement="_IIFqUBzcEeChOvWwuwx7tQ">
+            <body>All the LinkVariables that are contained in this StoryPattern.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IIFqUhzcEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IIFqURzcEeChOvWwuwx7tQ"/>
         </ownedAttribute>
@@ -1408,6 +1473,9 @@ The context for contained Constraints and AttributeAssignments is every single o
         <generalization xmi:id="_vhAKYBzcEeChOvWwuwx7tQ" general="_c2cqYBzJEeChOvWwuwx7tQ"/>
         <generalization xmi:id="_89NC8LLzEd-uk56s-ldeog" general="_tB8FcLK5Ed-uk56s-ldeog"/>
         <ownedAttribute xmi:id="97f7e21a-6cb3-4e71-a689-faf97d6546e6" name="pattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="71c51c4d-b7d4-44e9-8970-b4d9a946910c">
+          <ownedComment xmi:id="_ijnzQG6dEeGe68i8O7GmYA" annotatedElement="97f7e21a-6cb3-4e71-a689-faf97d6546e6">
+            <body>The story pattern in which this AbstractVariable is contained.</body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-ULKwEd-DYIlz5ANeHA" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="60d4fc4e-8a40-44a9-9913-ea51221db1a8" name="bindingState" visibility="public" type="37d4c959-090c-411e-b62f-a01a5acd650c">
@@ -1431,6 +1499,9 @@ The context for contained Constraints and AttributeAssignments is every single o
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q54aoBzdEeChOvWwuwx7tQ"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="f59aeab8-59c7-4a35-bd9b-c05bda92d924" name="incomingLink" visibility="public" type="70a57767-3c96-4cff-87d3-8391bb039afc" association="efa70337-efe7-457d-8d6a-3aea19469b7a">
+          <ownedComment xmi:id="_bdNxQG6dEeGe68i8O7GmYA" annotatedElement="f59aeab8-59c7-4a35-bd9b-c05bda92d924">
+            <body>All the links which have this AbstractVariable as a target.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-WLKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-WbKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
@@ -1606,6 +1677,9 @@ Every Constraint or AttributeAssignment can use the variable as a container (e.g
       </ownedComment>
       <generalization xmi:id="_5NGAoLyyEd-eCY_Peu5fFw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
       <ownedAttribute xmi:id="_l9XfkLLyEd-uk56s-ldeog" name="comment" visibility="public">
+        <ownedComment xmi:id="_kY5KUG3CEeGdlstntMEf0g" annotatedElement="_l9XfkLLyEd-uk56s-ldeog">
+          <body>The comment string that can be used to attach arbitrary information to CommentableElements.</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Fs4yABzCEeChOvWwuwx7tQ"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_IRlmIO82EeC2_OK3onprow" value="&quot;no comment provided&quot;"/>
@@ -1703,6 +1777,9 @@ Every Constraint or AttributeAssignment can use the variable as a container (e.g
       </ownedComment>
       <generalization xmi:id="_eO2nwBzJEeChOvWwuwx7tQ" general="__xUl0LLyEd-uk56s-ldeog"/>
       <ownedAttribute xmi:id="_ga_IIBzJEeChOvWwuwx7tQ" name="variableName" visibility="public" isReadOnly="true" isDerived="true">
+        <ownedComment xmi:id="_-N29MG3CEeGdlstntMEf0g" annotatedElement="_ga_IIBzJEeChOvWwuwx7tQ">
+          <body>The name of the variable.</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g8RQQBzJEeChOvWwuwx7tQ"/>
       </ownedAttribute>
