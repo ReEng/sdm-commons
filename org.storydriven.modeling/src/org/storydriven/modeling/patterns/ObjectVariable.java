@@ -109,6 +109,9 @@ public interface ObjectVariable extends AbstractVariable
     * If the meaning of the '<em>Outgoing Link</em>' reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * Represents the link variables whose source is this object variable.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Outgoing Link</em>' reference list.
     * @see org.storydriven.modeling.patterns.PatternsPackage#getObjectVariable_OutgoingLink()
     * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getSource
@@ -126,6 +129,9 @@ public interface ObjectVariable extends AbstractVariable
     * If the meaning of the '<em>Link Order Constraint</em>' containment reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The LinkConstraints that are imposed on the links of this ObjectVariable. Only makes sense if the ObjectVariable is a collection.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Link Order Constraint</em>' containment reference list.
     * @see org.storydriven.modeling.patterns.PatternsPackage#getObjectVariable_LinkOrderConstraint()
     * @see org.storydriven.modeling.patterns.LinkConstraint#getReferencingObject
@@ -176,6 +182,9 @@ public interface ObjectVariable extends AbstractVariable
     * If the meaning of the '<em>Attribute Assignment</em>' containment reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The AttributeAssignments that have to be executed for this ObjectVariable.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Attribute Assignment</em>' containment reference list.
     * @see org.storydriven.modeling.patterns.PatternsPackage#getObjectVariable_AttributeAssignment()
     * @see org.storydriven.modeling.patterns.AttributeAssignment#getObjectVariable

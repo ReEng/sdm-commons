@@ -36,21 +36,21 @@ import org.storydriven.modeling.calls.impl.CallableImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getName <em>Name</em>}</li>
- * <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwningOperation <em>Owning Operation</em>}</li>
- * <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwnedActivityEdges <em>Owned Activity Edge</em>}</li>
- * <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getPrecondition <em>Precondition</em>}</li>
- * <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwningOperation <em>Owning Operation</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwnedActivityEdges <em>Owned Activity Edge</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getPrecondition <em>Precondition</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.ActivityImpl#getOwnedActivityNodes <em>Owned Activity Node</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ActivityImpl extends CallableImpl implements Activity
 {
    /**
-    * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getName()
     * @generated
     * @ordered
@@ -58,8 +58,8 @@ public class ActivityImpl extends CallableImpl implements Activity
    protected static final String NAME_EDEFAULT = null;
 
    /**
-    * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getName()
     * @generated
     * @ordered
@@ -69,8 +69,8 @@ public class ActivityImpl extends CallableImpl implements Activity
    private static final String ACTIVITY_ANNOTATION_URI = "http://ns.storydriven.org/sdm/activities/activity";
 
    /**
-    * The cached value of the '{@link #getOwnedActivityEdges() <em>Owned Activity Edge</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached value of the '{@link #getOwnedActivityEdges() <em>Owned Activity Edge</em>}' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getOwnedActivityEdges()
     * @generated
     * @ordered
@@ -78,8 +78,8 @@ public class ActivityImpl extends CallableImpl implements Activity
    protected EList<ActivityEdge> ownedActivityEdges;
 
    /**
-    * The cached value of the '{@link #getPrecondition() <em>Precondition</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached value of the '{@link #getPrecondition() <em>Precondition</em>}' reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getPrecondition()
     * @generated
     * @ordered
@@ -87,8 +87,8 @@ public class ActivityImpl extends CallableImpl implements Activity
    protected MatchingStoryNode precondition;
 
    /**
-    * The cached value of the '{@link #getOwnedActivityNodes() <em>Owned Activity Node</em>}' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached value of the '{@link #getOwnedActivityNodes() <em>Owned Activity Node</em>}' containment reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getOwnedActivityNodes()
     * @generated
     * @ordered
@@ -97,7 +97,6 @@ public class ActivityImpl extends CallableImpl implements Activity
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    protected ActivityImpl ()
@@ -107,7 +106,6 @@ public class ActivityImpl extends CallableImpl implements Activity
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -118,40 +116,33 @@ public class ActivityImpl extends CallableImpl implements Activity
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public String getName ()
    {
-      return this.name;
+      return name;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setName (String newName)
    {
-      String oldName = this.name;
-      this.name = newName;
+      String oldName = name;
+      name = newName;
       if (eNotificationRequired())
-      {
-         eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY__NAME, oldName, this.name));
-      }
+         eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY__NAME, oldName, name));
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public OperationExtension getOwningOperation ()
    {
       if (eContainerFeatureID() != ActivitiesPackage.ACTIVITY__OWNING_OPERATION)
-      {
          return null;
-      }
       return (OperationExtension) eContainer();
    }
 
@@ -176,7 +167,6 @@ public class ActivityImpl extends CallableImpl implements Activity
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public NotificationChain basicSetOwningOperation (OperationExtension newOwningOperation, NotificationChain msgs)
@@ -188,7 +178,6 @@ public class ActivityImpl extends CallableImpl implements Activity
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setOwningOperation (OperationExtension newOwningOperation)
@@ -197,79 +186,62 @@ public class ActivityImpl extends CallableImpl implements Activity
          || (eContainerFeatureID() != ActivitiesPackage.ACTIVITY__OWNING_OPERATION && newOwningOperation != null))
       {
          if (EcoreUtil.isAncestor(this, newOwningOperation))
-         {
             throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-         }
          NotificationChain msgs = null;
          if (eInternalContainer() != null)
-         {
             msgs = eBasicRemoveFromContainer(msgs);
-         }
          if (newOwningOperation != null)
-         {
             msgs = ((InternalEObject) newOwningOperation).eInverseAdd(this,
                ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, OperationExtension.class, msgs);
-         }
          msgs = basicSetOwningOperation(newOwningOperation, msgs);
          if (msgs != null)
-         {
             msgs.dispatch();
-         }
       }
       else if (eNotificationRequired())
-      {
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY__OWNING_OPERATION,
             newOwningOperation, newOwningOperation));
-      }
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public MatchingStoryNode getPrecondition ()
    {
-      if (this.precondition != null && this.precondition.eIsProxy())
+      if (precondition != null && precondition.eIsProxy())
       {
-         InternalEObject oldPrecondition = (InternalEObject) this.precondition;
-         this.precondition = (MatchingStoryNode) eResolveProxy(oldPrecondition);
-         if (this.precondition != oldPrecondition)
+         InternalEObject oldPrecondition = (InternalEObject) precondition;
+         precondition = (MatchingStoryNode) eResolveProxy(oldPrecondition);
+         if (precondition != oldPrecondition)
          {
             if (eNotificationRequired())
-            {
                eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActivitiesPackage.ACTIVITY__PRECONDITION,
-                  oldPrecondition, this.precondition));
-            }
+                  oldPrecondition, precondition));
          }
       }
-      return this.precondition;
+      return precondition;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public MatchingStoryNode basicGetPrecondition ()
    {
-      return this.precondition;
+      return precondition;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setPrecondition (MatchingStoryNode newPrecondition)
    {
-      MatchingStoryNode oldPrecondition = this.precondition;
-      this.precondition = newPrecondition;
+      MatchingStoryNode oldPrecondition = precondition;
+      precondition = newPrecondition;
       if (eNotificationRequired())
-      {
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY__PRECONDITION,
-            oldPrecondition, this.precondition));
-      }
+            oldPrecondition, precondition));
    }
 
    protected EAnnotation getOwningOperationAnnotation ()
@@ -287,37 +259,34 @@ public class ActivityImpl extends CallableImpl implements Activity
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public EList<ActivityNode> getOwnedActivityNodes ()
    {
-      if (this.ownedActivityNodes == null)
+      if (ownedActivityNodes == null)
       {
-         this.ownedActivityNodes = new EObjectContainmentWithInverseEList.Resolving<ActivityNode>(ActivityNode.class,
-            this, ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE, ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY);
+         ownedActivityNodes = new EObjectContainmentWithInverseEList.Resolving<ActivityNode>(ActivityNode.class, this,
+            ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE, ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY);
       }
-      return this.ownedActivityNodes;
+      return ownedActivityNodes;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public EList<ActivityEdge> getOwnedActivityEdges ()
    {
-      if (this.ownedActivityEdges == null)
+      if (ownedActivityEdges == null)
       {
-         this.ownedActivityEdges = new EObjectContainmentWithInverseEList.Resolving<ActivityEdge>(ActivityEdge.class,
-            this, ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE, ActivitiesPackage.ACTIVITY_EDGE__OWNING_ACTIVITY);
+         ownedActivityEdges = new EObjectContainmentWithInverseEList.Resolving<ActivityEdge>(ActivityEdge.class, this,
+            ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE, ActivitiesPackage.ACTIVITY_EDGE__OWNING_ACTIVITY);
       }
-      return this.ownedActivityEdges;
+      return ownedActivityEdges;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -328,9 +297,7 @@ public class ActivityImpl extends CallableImpl implements Activity
       {
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             if (eInternalContainer() != null)
-            {
                msgs = eBasicRemoveFromContainer(msgs);
-            }
             return basicSetOwningOperation((OperationExtension) otherEnd, msgs);
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedActivityEdges()).basicAdd(otherEnd,
@@ -344,7 +311,6 @@ public class ActivityImpl extends CallableImpl implements Activity
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -364,7 +330,6 @@ public class ActivityImpl extends CallableImpl implements Activity
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -381,7 +346,6 @@ public class ActivityImpl extends CallableImpl implements Activity
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -393,17 +357,13 @@ public class ActivityImpl extends CallableImpl implements Activity
             return getName();
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             if (resolve)
-            {
                return getOwningOperation();
-            }
             return basicGetOwningOperation();
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
             return getOwnedActivityEdges();
          case ActivitiesPackage.ACTIVITY__PRECONDITION:
             if (resolve)
-            {
                return getPrecondition();
-            }
             return basicGetPrecondition();
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
             return getOwnedActivityNodes();
@@ -413,7 +373,6 @@ public class ActivityImpl extends CallableImpl implements Activity
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -445,7 +404,6 @@ public class ActivityImpl extends CallableImpl implements Activity
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -474,7 +432,6 @@ public class ActivityImpl extends CallableImpl implements Activity
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -483,22 +440,21 @@ public class ActivityImpl extends CallableImpl implements Activity
       switch (featureID)
       {
          case ActivitiesPackage.ACTIVITY__NAME:
-            return NAME_EDEFAULT == null ? this.name != null : !NAME_EDEFAULT.equals(this.name);
+            return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
          case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
             return basicGetOwningOperation() != null;
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
-            return this.ownedActivityEdges != null && !this.ownedActivityEdges.isEmpty();
+            return ownedActivityEdges != null && !ownedActivityEdges.isEmpty();
          case ActivitiesPackage.ACTIVITY__PRECONDITION:
-            return this.precondition != null;
+            return precondition != null;
          case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
-            return this.ownedActivityNodes != null && !this.ownedActivityNodes.isEmpty();
+            return ownedActivityNodes != null && !ownedActivityNodes.isEmpty();
       }
       return super.eIsSet(featureID);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -519,7 +475,6 @@ public class ActivityImpl extends CallableImpl implements Activity
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -540,20 +495,17 @@ public class ActivityImpl extends CallableImpl implements Activity
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
    public String toString ()
    {
       if (eIsProxy())
-      {
          return super.toString();
-      }
 
       StringBuffer result = new StringBuffer(super.toString());
       result.append(" (name: ");
-      result.append(this.name);
+      result.append(name);
       result.append(')');
       return result.toString();
    }

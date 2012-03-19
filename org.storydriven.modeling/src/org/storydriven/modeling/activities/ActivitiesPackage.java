@@ -24,6 +24,9 @@ import org.storydriven.modeling.calls.CallsPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package contains everything to model activities: the different kinds of activity nodes and edges as well as guards.
+ * <!-- end-model-doc -->
  * @see org.storydriven.modeling.activities.ActivitiesFactory
  * @model kind="package"
  * @generated

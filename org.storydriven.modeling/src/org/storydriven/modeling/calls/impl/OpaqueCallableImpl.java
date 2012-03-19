@@ -29,28 +29,28 @@ import org.storydriven.modeling.calls.expressions.MethodCallExpression;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getName <em>Name</em>}</li>
- * <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getCallExpression <em>Call Expression</em>}</li>
- * <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getInParameters <em>In Parameter</em>}</li>
- * <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getOutParameters <em>Out Parameter</em>}</li>
+ *   <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getCallExpression <em>Call Expression</em>}</li>
+ *   <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getInParameters <em>In Parameter</em>}</li>
+ *   <li>{@link org.storydriven.modeling.calls.impl.OpaqueCallableImpl#getOutParameters <em>Out Parameter</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 {
    /**
-    * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getName()
     * @generated
     * @ordered
     */
    protected static final String NAME_EDEFAULT = null;
    /**
-    * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getName()
     * @generated
     * @ordered
@@ -59,7 +59,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    protected OpaqueCallableImpl ()
@@ -69,7 +68,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -80,112 +78,97 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public String getName ()
    {
-      return this.name;
+      return name;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setName (String newName)
    {
-      String oldName = this.name;
-      this.name = newName;
+      String oldName = name;
+      name = newName;
       if (eNotificationRequired())
-      {
-         eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.OPAQUE_CALLABLE__NAME, oldName, this.name));
-      }
+         eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.OPAQUE_CALLABLE__NAME, oldName, name));
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
    public EList<EParameter> getInParameters ()
    {
-      if (this.inParameters == null)
+      if (inParameters == null)
       {
-         this.inParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
+         inParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
             CallsPackage.OPAQUE_CALLABLE__IN_PARAMETER);
       }
-      return this.inParameters;
+      return inParameters;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean isSetInParameters ()
    {
-      return this.inParameters != null && !this.inParameters.isEmpty();
+      return inParameters != null && !inParameters.isEmpty();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
    public EList<EParameter> getOutParameters ()
    {
-      if (this.outParameters == null)
+      if (outParameters == null)
       {
-         this.outParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
+         outParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
             CallsPackage.OPAQUE_CALLABLE__OUT_PARAMETER);
       }
-      return this.outParameters;
+      return outParameters;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean isSetOutParameters ()
    {
-      return this.outParameters != null && !this.outParameters.isEmpty();
+      return outParameters != null && !outParameters.isEmpty();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public MethodCallExpression getCallExpression ()
    {
       if (eContainerFeatureID() != CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION)
-      {
          return null;
-      }
       return (MethodCallExpression) eContainer();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public MethodCallExpression basicGetCallExpression ()
    {
       if (eContainerFeatureID() != CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION)
-      {
          return null;
-      }
       return (MethodCallExpression) eInternalContainer();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public NotificationChain basicSetCallExpression (MethodCallExpression newCallExpression, NotificationChain msgs)
@@ -197,7 +180,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setCallExpression (MethodCallExpression newCallExpression)
@@ -206,35 +188,24 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
          || (eContainerFeatureID() != CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION && newCallExpression != null))
       {
          if (EcoreUtil.isAncestor(this, newCallExpression))
-         {
             throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-         }
          NotificationChain msgs = null;
          if (eInternalContainer() != null)
-         {
             msgs = eBasicRemoveFromContainer(msgs);
-         }
          if (newCallExpression != null)
-         {
             msgs = ((InternalEObject) newCallExpression).eInverseAdd(this,
                ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, MethodCallExpression.class, msgs);
-         }
          msgs = basicSetCallExpression(newCallExpression, msgs);
          if (msgs != null)
-         {
             msgs.dispatch();
-         }
       }
       else if (eNotificationRequired())
-      {
          eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION,
             newCallExpression, newCallExpression));
-      }
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean NumberOfOutParams (DiagnosticChain diagnostics, Map<Object, Object> context)
@@ -244,7 +215,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -254,9 +224,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
       {
          case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
             if (eInternalContainer() != null)
-            {
                msgs = eBasicRemoveFromContainer(msgs);
-            }
             return basicSetCallExpression((MethodCallExpression) otherEnd, msgs);
       }
       return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -264,7 +232,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -280,7 +247,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -297,7 +263,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -309,9 +274,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
             return getName();
          case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
             if (resolve)
-            {
                return getCallExpression();
-            }
             return basicGetCallExpression();
       }
       return super.eGet(featureID, resolve, coreType);
@@ -319,7 +282,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -339,7 +301,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -359,7 +320,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -368,7 +328,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
       switch (featureID)
       {
          case CallsPackage.OPAQUE_CALLABLE__NAME:
-            return NAME_EDEFAULT == null ? this.name != null : !NAME_EDEFAULT.equals(this.name);
+            return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
          case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
             return basicGetCallExpression() != null;
       }
@@ -377,7 +337,6 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -394,20 +353,17 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
    public String toString ()
    {
       if (eIsProxy())
-      {
          return super.toString();
-      }
 
       StringBuffer result = new StringBuffer(super.toString());
       result.append(" (name: ");
-      result.append(this.name);
+      result.append(name);
       result.append(')');
       return result.toString();
    }

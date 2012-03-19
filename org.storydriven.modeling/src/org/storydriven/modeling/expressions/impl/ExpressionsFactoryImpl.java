@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.modeling.expressions.*;
 import org.storydriven.modeling.expressions.ArithmeticExpression;
 import org.storydriven.modeling.expressions.ArithmeticOperator;
 import org.storydriven.modeling.expressions.BinaryLogicExpression;
@@ -26,14 +27,13 @@ import org.storydriven.modeling.expressions.TextualExpression;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
  * @generated
  */
 public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsFactory
 {
    /**
-    * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates the default factory implementation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public static ExpressionsFactory init ()
@@ -55,8 +55,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates an instance of the factory.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public ExpressionsFactoryImpl ()
@@ -66,7 +66,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -93,7 +92,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -114,7 +112,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -135,7 +132,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public TextualExpression createTextualExpression ()
@@ -146,7 +142,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public LiteralExpression createLiteralExpression ()
@@ -157,7 +152,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public NotExpression createNotExpression ()
@@ -168,7 +162,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ComparisonExpression createComparisonExpression ()
@@ -179,7 +172,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ArithmeticExpression createArithmeticExpression ()
@@ -190,7 +182,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public BinaryLogicExpression createBinaryLogicExpression ()
@@ -201,23 +192,19 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public LogicOperator createLogicOperatorFromString (EDataType eDataType, String initialValue)
    {
       LogicOperator result = LogicOperator.get(initialValue);
       if (result == null)
-      {
          throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
             + eDataType.getName() + "'");
-      }
       return result;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public String convertLogicOperatorToString (EDataType eDataType, Object instanceValue)
@@ -227,23 +214,19 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ComparingOperator createComparingOperatorFromString (EDataType eDataType, String initialValue)
    {
       ComparingOperator result = ComparingOperator.get(initialValue);
       if (result == null)
-      {
          throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
             + eDataType.getName() + "'");
-      }
       return result;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public String convertComparingOperatorToString (EDataType eDataType, Object instanceValue)
@@ -253,23 +236,19 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ArithmeticOperator createArithmeticOperatorFromString (EDataType eDataType, String initialValue)
    {
       ArithmeticOperator result = ArithmeticOperator.get(initialValue);
       if (result == null)
-      {
          throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
             + eDataType.getName() + "'");
-      }
       return result;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public String convertArithmeticOperatorToString (EDataType eDataType, Object instanceValue)
@@ -279,7 +258,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ExpressionsPackage getExpressionsPackage ()
@@ -289,7 +267,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @deprecated
     * @generated
     */

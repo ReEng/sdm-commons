@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.storydriven.modeling.calls.*;
 import org.storydriven.modeling.calls.Callable;
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.calls.Invocation;
@@ -21,23 +22,21 @@ import org.storydriven.modeling.calls.ParameterExtension;
 
 /**
  * <!-- begin-user-doc --> The <b>Validator</b> for the model. <!-- end-user-doc -->
- * 
  * @see org.storydriven.modeling.calls.CallsPackage
  * @generated
  */
 public class CallsValidator extends EObjectValidator
 {
    /**
-    * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached model package
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public static final CallsValidator INSTANCE = new CallsValidator();
 
    /**
-    * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this
-    * package. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see org.eclipse.emf.common.util.Diagnostic#getSource()
     * @see org.eclipse.emf.common.util.Diagnostic#getCode()
     * @generated
@@ -45,29 +44,29 @@ public class CallsValidator extends EObjectValidator
    public static final String DIAGNOSTIC_SOURCE = "org.storydriven.modeling.calls";
 
    /**
-    * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Number Of Out Params' of 'Opaque Callable'. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Number Of Out Params' of 'Opaque Callable'.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public static final int OPAQUE_CALLABLE__NUMBER_OF_OUT_PARAMS = 1;
 
    /**
-    * A constant with a fixed name that can be used as the base value for additional hand written constants. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * A constant with a fixed name that can be used as the base value for additional hand written constants.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 1;
 
    /**
-    * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
    /**
-    * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates an instance of the switch.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public CallsValidator ()
@@ -76,8 +75,8 @@ public class CallsValidator extends EObjectValidator
    }
 
    /**
-    * Returns the package of this validator switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Returns the package of this validator switch.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -87,8 +86,8 @@ public class CallsValidator extends EObjectValidator
    }
 
    /**
-    * Calls <code>validateXXX</code> for the corresponding classifier of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Calls <code>validateXXX</code> for the corresponding classifier of the model.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -113,7 +112,6 @@ public class CallsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateInvocation (Invocation invocation, DiagnosticChain diagnostics, Map<Object, Object> context)
@@ -123,7 +121,6 @@ public class CallsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateParameterBinding (ParameterBinding parameterBinding, DiagnosticChain diagnostics,
@@ -134,55 +131,36 @@ public class CallsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateOpaqueCallable (OpaqueCallable opaqueCallable, DiagnosticChain diagnostics,
                                           Map<Object, Object> context)
    {
       if (!validate_NoCircularContainment(opaqueCallable, diagnostics, context))
-      {
          return false;
-      }
       boolean result = validate_EveryMultiplicityConforms(opaqueCallable, diagnostics, context);
       if (result || diagnostics != null)
-      {
          result &= validate_EveryDataValueConforms(opaqueCallable, diagnostics, context);
-      }
       if (result || diagnostics != null)
-      {
          result &= validate_EveryReferenceIsContained(opaqueCallable, diagnostics, context);
-      }
       if (result || diagnostics != null)
-      {
          result &= validate_EveryBidirectionalReferenceIsPaired(opaqueCallable, diagnostics, context);
-      }
       if (result || diagnostics != null)
-      {
          result &= validate_EveryProxyResolves(opaqueCallable, diagnostics, context);
-      }
       if (result || diagnostics != null)
-      {
          result &= validate_UniqueID(opaqueCallable, diagnostics, context);
-      }
       if (result || diagnostics != null)
-      {
          result &= validate_EveryKeyUnique(opaqueCallable, diagnostics, context);
-      }
       if (result || diagnostics != null)
-      {
          result &= validate_EveryMapEntryUnique(opaqueCallable, diagnostics, context);
-      }
       if (result || diagnostics != null)
-      {
          result &= validateOpaqueCallable_NumberOfOutParams(opaqueCallable, diagnostics, context);
-      }
       return result;
    }
 
    /**
-    * Validates the NumberOfOutParams constraint of '<em>Opaque Callable</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Validates the NumberOfOutParams constraint of '<em>Opaque Callable</em>'.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public boolean validateOpaqueCallable_NumberOfOutParams (OpaqueCallable opaqueCallable, DiagnosticChain diagnostics,
@@ -193,7 +171,6 @@ public class CallsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateParameterExtension (ParameterExtension parameterExtension, DiagnosticChain diagnostics,
@@ -204,7 +181,6 @@ public class CallsValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateCallable (Callable callable, DiagnosticChain diagnostics, Map<Object, Object> context)
@@ -213,8 +189,8 @@ public class CallsValidator extends EObjectValidator
    }
 
    /**
-    * Returns the resource locator that will be used to fetch messages for this validator's diagnostics. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    @Override

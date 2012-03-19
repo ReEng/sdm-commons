@@ -1273,6 +1273,14 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
                "This package contains all classes for modeling story patterns that may be \r\nembedded into StoryActivityNodes of an Activity."});
       addAnnotation(objectVariableEClass, source, new String[] {"documentation",
             "An ObjectVariable holds a value of a complex type which is defined by an EClass. "});
+      addAnnotation(getObjectVariable_OutgoingLink(), source, new String[] {"documentation",
+            "Represents the link variables whose source is this object variable."});
+      addAnnotation(
+         getObjectVariable_LinkOrderConstraint(),
+         source,
+         new String[] {
+               "documentation",
+               "The LinkConstraints that are imposed on the links of this ObjectVariable. Only makes sense if the ObjectVariable is a collection."});
       addAnnotation(
          getObjectVariable_BindingSemantics(),
          source,
@@ -1284,10 +1292,14 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
          source,
          new String[] {"documentation",
                "The binding operator defines whether this object will be matched, created or destroyed by the story pattern."});
+      addAnnotation(getObjectVariable_AttributeAssignment(), source, new String[] {"documentation",
+            "The AttributeAssignments that have to be executed for this ObjectVariable."});
       addAnnotation(getObjectVariable_Classifier(), source, new String[] {"documentation",
             "The type of this ObjectVariable, given as an EClass."});
       addAnnotation(abstractVariableEClass, source, new String[] {"documentation",
             "Abstract super class for object and primitive variables."});
+      addAnnotation(getAbstractVariable_Pattern(), source, new String[] {"documentation",
+            "Represents the story pattern this variable is contained in."});
       addAnnotation(
          getAbstractVariable_BindingState(),
          source,
@@ -1306,6 +1318,8 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
          new String[] {
                "documentation",
                "All constraints which are defined for this variable. For a successful matching, all constraints for this variable must evaluate to true."});
+      addAnnotation(getAbstractVariable_IncomingLink(), source, new String[] {"documentation",
+            "Represents the link variables whose target is this variable."});
       addAnnotation(bindingStateEEnum, source, new String[] {"documentation",
             "The BindingState defines whether an object or link variable is already bound to a concrete value or not."});
       addAnnotation(
@@ -1355,11 +1369,20 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
          new String[] {
                "documentation",
                "The binding operator defines whether this link will be matched, created or destroyed by the story pattern. The default value ist \"check_only\", i.e., the link will be matched."});
+      addAnnotation(getAbstractLinkVariable_Source(), source, new String[] {"documentation",
+            "The source of the link. This always has to be an object variable."});
+      addAnnotation(getAbstractLinkVariable_SecondLinkConstraint(), source, new String[] {"documentation",
+            "The constraint that refers to this link as the \"second link\"."});
+      addAnnotation(getAbstractLinkVariable_FirstLinkConstraint(), source, new String[] {"documentation",
+            "The constraint that refers to this link as the \"first link\"."});
       addAnnotation(
          getAbstractLinkVariable_BindingState(),
          source,
          new String[] {"documentation",
                "The binding state defines whether the link is already bound or whether a match has to be obtained for it."});
+      addAnnotation(getAbstractLinkVariable_Pattern(), source, new String[] {"documentation",
+            "The story pattern in which the link variable is contained."});
+      addAnnotation(getAbstractLinkVariable_Target(), source, new String[] {"documentation", "The target of the link."});
       addAnnotation(bindingSemanticsEEnum, source, new String[] {"documentation",
             "The binding semantics defines which kind of match will be obtained for the object or link variable."});
       addAnnotation(
@@ -1400,7 +1423,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
          source,
          new String[] {
                "documentation",
-               "Link constraints (formerly known as MultiLinks in old meta-model) constrain the ordering of links of the referencingObject is a collection. This way objects can be required to have a certain position in the collection (FIRST, LAST, INDEX) or a certain ordering relative to each other (DIRECT_SUCCESSOR, INDIRECT_SUCCESSOR). While the first kind of LinkConstraint can be imposed upon a single link, the second kind requires two links that are related to each other (e.g., have the same referencingObject)."});
+               "Link constraints (formerly known as MultiLinks in old meta-model) constrain the ordering of links if the referencingObject is a collection. This way objects can be required to have a certain position in the collection (FIRST, LAST, INDEX) or a certain ordering relative to each other (DIRECT_SUCCESSOR, INDIRECT_SUCCESSOR). While the first kind of LinkConstraint can be imposed upon a single link, the second kind requires two links that are related to each other (e.g., have the same referencingObject)."});
       addAnnotation(
          getLinkConstraint_Index(),
          source,
@@ -1415,6 +1438,23 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
          new String[] {
                "documentation",
                "If the negative attribute is true, the link constraint may not be fulfilled for the complete pattern application to be successful."});
+      addAnnotation(
+         getLinkConstraint_FirstLink(),
+         source,
+         new String[] {
+               "documentation",
+               "The first link that the link constraint refers to. For link constraints that only relate to one link (FIRST, LAST, INDEX) this is the only referenced link."});
+      addAnnotation(
+         getLinkConstraint_ReferencingObject(),
+         source,
+         new String[] {"documentation",
+               "The ObjectVariable to which this LinkContraint is associated. That ObjectVariable has to be a collection."});
+      addAnnotation(
+         getLinkConstraint_SecondLink(),
+         source,
+         new String[] {
+               "documentation",
+               "The second link that the link constraint refers to. Applies only to link constraints that relate two links to each other (DIRECT_SUCCESSOR and INDIRECT_SUCCESSOR). For all other constraints this variable is always null."});
       addAnnotation(
          linkConstraintTypeEEnum,
          source,
@@ -1493,12 +1533,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
          new String[] {
                "documentation",
                "A MatchingPattern is a special kind of story pattern that does not change the underlying graph. Thus, no contained object or link may carry an create or destroy BindingOperator."});
-      addAnnotation(
-         getMatchingPattern__NoModifierInMatchingPattern__DiagnosticChain_Map(),
-         source,
-         new String[] {
-               "documentation",
-               "self.objectVariable->forAll(v:ObjectVariable | v.modifier = Modifier::NONE) and self.linkVariable->forAll(v:LinkVariable | v.modifier = Modifier::NONE)"});
       addAnnotation((getMatchingPattern__NoModifierInMatchingPattern__DiagnosticChain_Map()).getEParameters().get(0),
          source, new String[] {"documentation", "The chain of diagnostics to which problems are to be appended."});
       addAnnotation((getMatchingPattern__NoModifierInMatchingPattern__DiagnosticChain_Map()).getEParameters().get(1),
@@ -1511,12 +1545,33 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
                "Represents a single container, e.g. a Set or List. ContainmentRelations can be used to add or remove objects to or from this container.\r\nEvery Constraint or AttributeAssignment can use the variable as a container (e.g., \"set->size() > 5\")."});
       addAnnotation(storyPatternEClass, source, new String[] {"documentation",
             "A Story Pattern is a graph rewrite rule that may be embedded into a StoryActivityNode\r\nof an Activity."});
+      addAnnotation(getStoryPattern_Variable(), source, new String[] {"documentation",
+            "All the variables that are contained in the StoryPattern."});
       addAnnotation(
          getStoryPattern_Constraint(),
          source,
          new String[] {
                "documentation",
                "All constraints which are defined for this story pattern. For a successful matching, all constraints for this story pattern must evaluate to true."});
+      addAnnotation(getStoryPattern_LinkVariable(), source, new String[] {"documentation",
+            "All the LinkVariables that are contained in this StoryPattern."});
+      addAnnotation(
+         getStoryPattern_ParentPattern(),
+         source,
+         new String[] {"documentation",
+               "If the StoryPattern is a sub pattern, this points to the StoryPattern in which the sub pattern is contained."});
+      addAnnotation(
+         getStoryPattern_ContainedPattern(),
+         source,
+         new String[] {
+               "documentation",
+               "A number of sub patterns that are contained in this StoryPattern. They can be negated or made optional as a whole by setting their binding semantics accordingly."});
+      addAnnotation(
+         getStoryPattern_BindingSemantics(),
+         source,
+         new String[] {
+               "documentation",
+               "The binding semantics of a story pattern express if a pattern as a whole should matched normally (MANDATORY), if it should be NEGATIVE or OPTIONAL. This only makes sense if the StoryPattern is a sub pattern f another StoryPattern. Top-level StoryPatterns should always have the binding semantics MANDATORY."});
    }
 
    /**

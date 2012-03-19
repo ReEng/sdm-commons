@@ -28,20 +28,20 @@ import org.storydriven.modeling.util.GenericTypeListHandler;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.storydriven.modeling.activities.impl.ExceptionVariableImpl#getActivityEdge <em>Activity Edge</em>}</li>
- * <li>{@link org.storydriven.modeling.activities.impl.ExceptionVariableImpl#getName <em>Name</em>}</li>
- * <li>{@link org.storydriven.modeling.activities.impl.ExceptionVariableImpl#getExceptionTypes <em>Exception Type</em>}</li>
- * <li>{@link org.storydriven.modeling.activities.impl.ExceptionVariableImpl#getGenericExceptionTypes <em>Generic Exception Type</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.ExceptionVariableImpl#getActivityEdge <em>Activity Edge</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.ExceptionVariableImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.ExceptionVariableImpl#getExceptionTypes <em>Exception Type</em>}</li>
+ *   <li>{@link org.storydriven.modeling.activities.impl.ExceptionVariableImpl#getGenericExceptionTypes <em>Generic Exception Type</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ExceptionVariableImpl extends VariableImpl implements ExceptionVariable
 {
    /**
-    * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getName()
     * @generated
     * @ordered
@@ -49,8 +49,8 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
    protected static final String NAME_EDEFAULT = null;
 
    /**
-    * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getName()
     * @generated
     * @ordered
@@ -58,8 +58,8 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
    protected String name = NAME_EDEFAULT;
 
    /**
-    * The cached value of the '{@link #getExceptionTypes() <em>Exception Type</em>}' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached value of the '{@link #getExceptionTypes() <em>Exception Type</em>}' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getExceptionTypes()
     * @generated
     * @ordered
@@ -69,8 +69,8 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
    protected GenericTypeListHandler.EClassifiers exceptionTypesHandler;
 
    /**
-    * The cached value of the '{@link #getGenericExceptionTypes() <em>Generic Exception Type</em>}' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached value of the '{@link #getGenericExceptionTypes() <em>Generic Exception Type</em>}' reference list.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see #getGenericExceptionTypes()
     * @generated
     * @ordered
@@ -79,7 +79,6 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    protected ExceptionVariableImpl ()
@@ -89,7 +88,6 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -100,28 +98,24 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public String getName ()
    {
-      return this.name;
+      return name;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setName (String newName)
    {
-      String oldName = this.name;
-      this.name = newName;
+      String oldName = name;
+      name = newName;
       if (eNotificationRequired())
-      {
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.EXCEPTION_VARIABLE__NAME, oldName,
-            this.name));
-      }
+            name));
    }
 
    /**
@@ -188,35 +182,28 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ActivityEdge getActivityEdge ()
    {
       if (eContainerFeatureID() != ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE)
-      {
          return null;
-      }
       return (ActivityEdge) eContainer();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ActivityEdge basicGetActivityEdge ()
    {
       if (eContainerFeatureID() != ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE)
-      {
          return null;
-      }
       return (ActivityEdge) eInternalContainer();
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public NotificationChain basicSetActivityEdge (ActivityEdge newActivityEdge, NotificationChain msgs)
@@ -228,7 +215,6 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public void setActivityEdge (ActivityEdge newActivityEdge)
@@ -237,35 +223,24 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
          || (eContainerFeatureID() != ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE && newActivityEdge != null))
       {
          if (EcoreUtil.isAncestor(this, newActivityEdge))
-         {
             throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-         }
          NotificationChain msgs = null;
          if (eInternalContainer() != null)
-         {
             msgs = eBasicRemoveFromContainer(msgs);
-         }
          if (newActivityEdge != null)
-         {
             msgs = ((InternalEObject) newActivityEdge).eInverseAdd(this,
                ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION, ActivityEdge.class, msgs);
-         }
          msgs = basicSetActivityEdge(newActivityEdge, msgs);
          if (msgs != null)
-         {
             msgs.dispatch();
-         }
       }
       else if (eNotificationRequired())
-      {
          eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE,
             newActivityEdge, newActivityEdge));
-      }
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -275,9 +250,7 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
       {
          case ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE:
             if (eInternalContainer() != null)
-            {
                msgs = eBasicRemoveFromContainer(msgs);
-            }
             return basicSetActivityEdge((ActivityEdge) otherEnd, msgs);
       }
       return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -285,7 +258,6 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -301,7 +273,6 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -318,7 +289,6 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -328,9 +298,7 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
       {
          case ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE:
             if (resolve)
-            {
                return getActivityEdge();
-            }
             return basicGetActivityEdge();
          case ActivitiesPackage.EXCEPTION_VARIABLE__NAME:
             return getName();
@@ -344,7 +312,6 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @SuppressWarnings ("unchecked")
@@ -373,7 +340,6 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -399,7 +365,6 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -410,31 +375,28 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
          case ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE:
             return basicGetActivityEdge() != null;
          case ActivitiesPackage.EXCEPTION_VARIABLE__NAME:
-            return NAME_EDEFAULT == null ? this.name != null : !NAME_EDEFAULT.equals(this.name);
+            return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
          case ActivitiesPackage.EXCEPTION_VARIABLE__EXCEPTION_TYPE:
-            return this.exceptionTypes != null && !this.exceptionTypes.isEmpty();
+            return exceptionTypes != null && !exceptionTypes.isEmpty();
          case ActivitiesPackage.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE:
-            return this.genericExceptionTypes != null && !this.genericExceptionTypes.isEmpty();
+            return genericExceptionTypes != null && !genericExceptionTypes.isEmpty();
       }
       return super.eIsSet(featureID);
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
    public String toString ()
    {
       if (eIsProxy())
-      {
          return super.toString();
-      }
 
       StringBuffer result = new StringBuffer(super.toString());
       result.append(" (name: ");
-      result.append(this.name);
+      result.append(name);
       result.append(')');
       return result.toString();
    }

@@ -29,12 +29,15 @@ import org.storydriven.modeling.calls.expressions.MethodCallExpression;
 public interface OpaqueCallable extends Callable
 {
    /**
-    * Returns the value of the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Name</b></em>' attribute.
+    * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * 
+    * <!-- begin-model-doc -->
+    * The name of the Callable.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Name</em>' attribute.
     * @see #setName(String)
     * @see org.storydriven.modeling.calls.CallsPackage#getOpaqueCallable_Name()
@@ -44,8 +47,8 @@ public interface OpaqueCallable extends Callable
    String getName ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.calls.OpaqueCallable#getName <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Sets the value of the '{@link org.storydriven.modeling.calls.OpaqueCallable#getName <em>Name</em>}' attribute.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @param value the new value of the '<em>Name</em>' attribute.
     * @see #getName()
     * @generated
@@ -53,13 +56,16 @@ public interface OpaqueCallable extends Callable
    void setName (String value);
 
    /**
-    * Returns the value of the '<em><b>Call Expression</b></em>' container reference. It is bidirectional and its opposite is '
-    * {@link org.storydriven.modeling.calls.expressions.MethodCallExpression#getOpaqueCallable <em>Opaque Callable</em>}'. <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Call Expression</b></em>' container reference.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.calls.expressions.MethodCallExpression#getOpaqueCallable <em>Opaque Callable</em>}'.
+    * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Call Expression</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * 
+    * <!-- begin-model-doc -->
+    * An expression that specifies which method should be called by the OpaqueCallable.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Call Expression</em>' container reference.
     * @see #setCallExpression(MethodCallExpression)
     * @see org.storydriven.modeling.calls.CallsPackage#getOpaqueCallable_CallExpression()
@@ -70,9 +76,9 @@ public interface OpaqueCallable extends Callable
    MethodCallExpression getCallExpression ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.calls.OpaqueCallable#getCallExpression <em>Call Expression</em>}' container reference. <!-- begin-user-doc --> <!--
+    * Sets the value of the '{@link org.storydriven.modeling.calls.OpaqueCallable#getCallExpression <em>Call Expression</em>}' container reference.
+    * <!-- begin-user-doc --> <!--
     * end-user-doc -->
-    * 
     * @param value the new value of the '<em>Call Expression</em>' container reference.
     * @see #getCallExpression()
     * @generated

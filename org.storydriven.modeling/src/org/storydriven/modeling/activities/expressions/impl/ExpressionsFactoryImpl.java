@@ -17,14 +17,13 @@ import org.storydriven.modeling.activities.expressions.ExpressionsPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
  * @generated
  */
 public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsFactory
 {
    /**
-    * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates the default factory implementation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public static ExpressionsFactory init ()
@@ -46,8 +45,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
    }
 
    /**
-    * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates an instance of the factory.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public ExpressionsFactoryImpl ()
@@ -57,7 +56,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -74,7 +72,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ExceptionVariableExpression createExceptionVariableExpression ()
@@ -85,7 +82,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ExpressionsPackage getExpressionsPackage ()
@@ -95,7 +91,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @deprecated
     * @generated
     */

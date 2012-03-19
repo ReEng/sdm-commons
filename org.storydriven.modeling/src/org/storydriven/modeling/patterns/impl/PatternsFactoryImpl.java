@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.modeling.patterns.*;
 import org.storydriven.modeling.patterns.AttributeAssignment;
 import org.storydriven.modeling.patterns.BindingOperator;
 import org.storydriven.modeling.patterns.BindingSemantics;
@@ -33,14 +34,13 @@ import org.storydriven.modeling.patterns.StoryPattern;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
  * @generated
  */
 public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 {
    /**
-    * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates the default factory implementation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public static PatternsFactory init ()
@@ -62,8 +62,8 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
    }
 
    /**
-    * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates an instance of the factory.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public PatternsFactoryImpl ()
@@ -73,7 +73,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -112,7 +111,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -135,7 +133,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -158,7 +155,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public AttributeAssignment createAttributeAssignment ()
@@ -169,7 +165,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public LinkConstraint createLinkConstraint ()
@@ -180,7 +175,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ObjectVariable createObjectVariable ()
@@ -191,7 +185,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public Constraint createConstraint ()
@@ -202,7 +195,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public Path createPath ()
@@ -213,7 +205,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public LinkVariable createLinkVariable ()
@@ -224,7 +215,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ContainmentRelation createContainmentRelation ()
@@ -235,7 +225,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public MatchingPattern createMatchingPattern ()
@@ -246,7 +235,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public PrimitiveVariable createPrimitiveVariable ()
@@ -257,7 +245,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ContainerVariable createContainerVariable ()
@@ -268,7 +255,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ObjectSetVariable createObjectSetVariable ()
@@ -279,7 +265,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public StoryPattern createStoryPattern ()
@@ -290,23 +275,19 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public BindingState createBindingStateFromString (EDataType eDataType, String initialValue)
    {
       BindingState result = BindingState.get(initialValue);
       if (result == null)
-      {
          throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
             + eDataType.getName() + "'");
-      }
       return result;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public String convertBindingStateToString (EDataType eDataType, Object instanceValue)
@@ -316,23 +297,19 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public BindingSemantics createBindingSemanticsFromString (EDataType eDataType, String initialValue)
    {
       BindingSemantics result = BindingSemantics.get(initialValue);
       if (result == null)
-      {
          throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
             + eDataType.getName() + "'");
-      }
       return result;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public String convertBindingSemanticsToString (EDataType eDataType, Object instanceValue)
@@ -342,23 +319,19 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public BindingOperator createBindingOperatorFromString (EDataType eDataType, String initialValue)
    {
       BindingOperator result = BindingOperator.get(initialValue);
       if (result == null)
-      {
          throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
             + eDataType.getName() + "'");
-      }
       return result;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public String convertBindingOperatorToString (EDataType eDataType, Object instanceValue)
@@ -368,23 +341,19 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public LinkConstraintType createLinkConstraintTypeFromString (EDataType eDataType, String initialValue)
    {
       LinkConstraintType result = LinkConstraintType.get(initialValue);
       if (result == null)
-      {
          throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
             + eDataType.getName() + "'");
-      }
       return result;
    }
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public String convertLinkConstraintTypeToString (EDataType eDataType, Object instanceValue)
@@ -394,7 +363,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public PatternsPackage getPatternsPackage ()
@@ -404,7 +372,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @deprecated
     * @generated
     */

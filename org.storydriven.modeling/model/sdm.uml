@@ -1303,7 +1303,7 @@ embedded into StoryActivityNodes of an Activity.</body>
         </ownedAttribute>
         <ownedAttribute xmi:id="e4084d63-9d8b-47a7-9d3e-34aeb0b09440" name="outgoingLink" visibility="public" type="70a57767-3c96-4cff-87d3-8391bb039afc" association="639688a5-23e9-4581-98d8-2fcc57a3438b">
           <ownedComment xmi:id="_PMl3sG6eEeGe68i8O7GmYA" annotatedElement="e4084d63-9d8b-47a7-9d3e-34aeb0b09440">
-            <body>The links that originate from this ObjectVariable.</body>
+            <body>Represents the link variables whose source is this object variable.</body>
           </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-VbKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-VrKwEd-DYIlz5ANeHA"/>
@@ -1474,7 +1474,7 @@ The context for contained Constraints and AttributeAssignments is every single o
         <generalization xmi:id="_89NC8LLzEd-uk56s-ldeog" general="_tB8FcLK5Ed-uk56s-ldeog"/>
         <ownedAttribute xmi:id="97f7e21a-6cb3-4e71-a689-faf97d6546e6" name="pattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="71c51c4d-b7d4-44e9-8970-b4d9a946910c">
           <ownedComment xmi:id="_ijnzQG6dEeGe68i8O7GmYA" annotatedElement="97f7e21a-6cb3-4e71-a689-faf97d6546e6">
-            <body>The story pattern in which this AbstractVariable is contained.</body>
+            <body>Represents the story pattern this variable is contained in.</body>
           </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-ULKwEd-DYIlz5ANeHA" value="1"/>
         </ownedAttribute>
@@ -1500,7 +1500,7 @@ The context for contained Constraints and AttributeAssignments is every single o
         </ownedAttribute>
         <ownedAttribute xmi:id="f59aeab8-59c7-4a35-bd9b-c05bda92d924" name="incomingLink" visibility="public" type="70a57767-3c96-4cff-87d3-8391bb039afc" association="efa70337-efe7-457d-8d6a-3aea19469b7a">
           <ownedComment xmi:id="_bdNxQG6dEeGe68i8O7GmYA" annotatedElement="f59aeab8-59c7-4a35-bd9b-c05bda92d924">
-            <body>All the links which have this AbstractVariable as a target.</body>
+            <body>Represents the link variables whose target is this variable.</body>
           </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-WLKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-WbKwEd-DYIlz5ANeHA"/>
@@ -1778,7 +1778,7 @@ Every Constraint or AttributeAssignment can use the variable as a container (e.g
       <generalization xmi:id="_eO2nwBzJEeChOvWwuwx7tQ" general="__xUl0LLyEd-uk56s-ldeog"/>
       <ownedAttribute xmi:id="_ga_IIBzJEeChOvWwuwx7tQ" name="variableName" visibility="public" isReadOnly="true" isDerived="true">
         <ownedComment xmi:id="_-N29MG3CEeGdlstntMEf0g" annotatedElement="_ga_IIBzJEeChOvWwuwx7tQ">
-          <body>The name of the variable.</body>
+          <body>A variable is identified by its variable name.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g8RQQBzJEeChOvWwuwx7tQ"/>

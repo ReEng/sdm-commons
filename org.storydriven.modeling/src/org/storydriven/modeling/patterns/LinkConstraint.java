@@ -14,7 +14,7 @@ import org.storydriven.modeling.ExtendableElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Link constraints (formerly known as MultiLinks in old meta-model) constrain the ordering of links of the referencingObject is a collection. This way objects can be required to have a certain position in the collection (FIRST, LAST, INDEX) or a certain ordering relative to each other (DIRECT_SUCCESSOR, INDIRECT_SUCCESSOR). While the first kind of LinkConstraint can be imposed upon a single link, the second kind requires two links that are related to each other (e.g., have the same referencingObject).
+ * Link constraints (formerly known as MultiLinks in old meta-model) constrain the ordering of links if the referencingObject is a collection. This way objects can be required to have a certain position in the collection (FIRST, LAST, INDEX) or a certain ordering relative to each other (DIRECT_SUCCESSOR, INDIRECT_SUCCESSOR). While the first kind of LinkConstraint can be imposed upon a single link, the second kind requires two links that are related to each other (e.g., have the same referencingObject).
  * <!-- end-model-doc -->
  *
  * <p>
@@ -135,6 +135,9 @@ public interface LinkConstraint extends ExtendableElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The first link that the link constraint refers to. For link constraints that only relate to one link (FIRST, LAST, INDEX) this is the only referenced link.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>First Link</em>' reference.
     * @see #setFirstLink(AbstractLinkVariable)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkConstraint_FirstLink()
@@ -163,6 +166,9 @@ public interface LinkConstraint extends ExtendableElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The ObjectVariable to which this LinkContraint is associated. That ObjectVariable has to be a collection.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Referencing Object</em>' container reference.
     * @see #setReferencingObject(ObjectVariable)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkConstraint_ReferencingObject()
@@ -191,6 +197,9 @@ public interface LinkConstraint extends ExtendableElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The second link that the link constraint refers to. Applies only to link constraints that relate two links to each other (DIRECT_SUCCESSOR and INDIRECT_SUCCESSOR). For all other constraints this variable is always null.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Second Link</em>' reference.
     * @see #setSecondLink(AbstractLinkVariable)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getLinkConstraint_SecondLink()

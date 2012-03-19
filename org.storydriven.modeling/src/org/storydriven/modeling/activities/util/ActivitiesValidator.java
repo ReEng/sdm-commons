@@ -31,23 +31,21 @@ import org.storydriven.modeling.activities.StructuredNode;
 
 /**
  * <!-- begin-user-doc --> The <b>Validator</b> for the model. <!-- end-user-doc -->
- * 
  * @see org.storydriven.modeling.activities.ActivitiesPackage
  * @generated
  */
 public class ActivitiesValidator extends EObjectValidator
 {
    /**
-    * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * The cached model package
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public static final ActivitiesValidator INSTANCE = new ActivitiesValidator();
 
    /**
-    * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this
-    * package. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @see org.eclipse.emf.common.util.Diagnostic#getSource()
     * @see org.eclipse.emf.common.util.Diagnostic#getCode()
     * @generated
@@ -63,22 +61,22 @@ public class ActivitiesValidator extends EObjectValidator
    public static final int OPERATION_EXTENSION__NUMBER_OF_OUT_PARAMS = 1;
 
    /**
-    * A constant with a fixed name that can be used as the base value for additional hand written constants. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * A constant with a fixed name that can be used as the base value for additional hand written constants.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 1;
 
    /**
-    * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
    /**
-    * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates an instance of the switch.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public ActivitiesValidator ()
@@ -87,8 +85,8 @@ public class ActivitiesValidator extends EObjectValidator
    }
 
    /**
-    * Returns the package of this validator switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Returns the package of this validator switch.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -98,8 +96,8 @@ public class ActivitiesValidator extends EObjectValidator
    }
 
    /**
-    * Calls <code>validateXXX</code> for the corresponding classifier of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Calls <code>validateXXX</code> for the corresponding classifier of the model.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    @Override
@@ -144,7 +142,6 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateActivity (Activity activity, DiagnosticChain diagnostics, Map<Object, Object> context)
@@ -154,7 +151,6 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateActivityNode (ActivityNode activityNode, DiagnosticChain diagnostics,
@@ -165,7 +161,6 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateActivityEdge (ActivityEdge activityEdge, DiagnosticChain diagnostics,
@@ -176,7 +171,6 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateExceptionVariable (ExceptionVariable exceptionVariable, DiagnosticChain diagnostics,
@@ -187,7 +181,6 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateStructuredNode (StructuredNode structuredNode, DiagnosticChain diagnostics,
@@ -198,55 +191,36 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateOperationExtension (OperationExtension operationExtension, DiagnosticChain diagnostics,
                                               Map<Object, Object> context)
    {
       if (!validate_NoCircularContainment(operationExtension, diagnostics, context))
-      {
          return false;
-      }
       boolean result = validate_EveryMultiplicityConforms(operationExtension, diagnostics, context);
       if (result || diagnostics != null)
-      {
          result &= validate_EveryDataValueConforms(operationExtension, diagnostics, context);
-      }
       if (result || diagnostics != null)
-      {
          result &= validate_EveryReferenceIsContained(operationExtension, diagnostics, context);
-      }
       if (result || diagnostics != null)
-      {
          result &= validate_EveryBidirectionalReferenceIsPaired(operationExtension, diagnostics, context);
-      }
       if (result || diagnostics != null)
-      {
          result &= validate_EveryProxyResolves(operationExtension, diagnostics, context);
-      }
       if (result || diagnostics != null)
-      {
          result &= validate_UniqueID(operationExtension, diagnostics, context);
-      }
       if (result || diagnostics != null)
-      {
          result &= validate_EveryKeyUnique(operationExtension, diagnostics, context);
-      }
       if (result || diagnostics != null)
-      {
          result &= validate_EveryMapEntryUnique(operationExtension, diagnostics, context);
-      }
       if (result || diagnostics != null)
-      {
          result &= validateOperationExtension_NumberOfOutParams(operationExtension, diagnostics, context);
-      }
       return result;
    }
 
    /**
-    * Validates the NumberOfOutParams constraint of '<em>Operation Extension</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Validates the NumberOfOutParams constraint of '<em>Operation Extension</em>'.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public boolean validateOperationExtension_NumberOfOutParams (OperationExtension operationExtension,
@@ -257,7 +231,6 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateStoryNode (StoryNode storyNode, DiagnosticChain diagnostics, Map<Object, Object> context)
@@ -267,7 +240,6 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateJunctionNode (JunctionNode junctionNode, DiagnosticChain diagnostics,
@@ -278,7 +250,6 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateStartNode (StartNode startNode, DiagnosticChain diagnostics, Map<Object, Object> context)
@@ -288,7 +259,6 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateStatementNode (StatementNode statementNode, DiagnosticChain diagnostics,
@@ -299,7 +269,6 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateStopNode (StopNode stopNode, DiagnosticChain diagnostics, Map<Object, Object> context)
@@ -309,7 +278,6 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateActivityCallNode (ActivityCallNode activityCallNode, DiagnosticChain diagnostics,
@@ -320,7 +288,6 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateMatchingStoryNode (MatchingStoryNode matchingStoryNode, DiagnosticChain diagnostics,
@@ -331,7 +298,6 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateModifyingStoryNode (ModifyingStoryNode modifyingStoryNode, DiagnosticChain diagnostics,
@@ -342,7 +308,6 @@ public class ActivitiesValidator extends EObjectValidator
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public boolean validateEdgeGuard (EdgeGuard edgeGuard, DiagnosticChain diagnostics, Map<Object, Object> context)
@@ -351,8 +316,8 @@ public class ActivitiesValidator extends EObjectValidator
    }
 
    /**
-    * Returns the resource locator that will be used to fetch messages for this validator's diagnostics. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    @Override

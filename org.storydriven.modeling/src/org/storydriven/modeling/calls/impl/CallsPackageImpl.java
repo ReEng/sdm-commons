@@ -547,12 +547,13 @@ public class CallsPackageImpl extends EPackageImpl implements CallsPackage
          new String[] {
                "documentation",
                "An OpaqueCallable represents an external method which is not explicitly modeled (e.g. a method in an external library). Because it is not contained anywhere in the model it is directly referenced by and contained in the MethodCallExpression."});
-      addAnnotation(getOpaqueCallable__NumberOfOutParams__DiagnosticChain_Map(), source, new String[] {"documentation",
-            "self.oclAsType(Callable).out->size() <= 1"});
       addAnnotation((getOpaqueCallable__NumberOfOutParams__DiagnosticChain_Map()).getEParameters().get(0), source,
          new String[] {"documentation", "The chain of diagnostics to which problems are to be appended."});
       addAnnotation((getOpaqueCallable__NumberOfOutParams__DiagnosticChain_Map()).getEParameters().get(1), source,
          new String[] {"documentation", "The cache of context-specific information."});
+      addAnnotation(getOpaqueCallable_Name(), source, new String[] {"documentation", "The name of the Callable."});
+      addAnnotation(getOpaqueCallable_CallExpression(), source, new String[] {"documentation",
+            "An expression that specifies which method should be called by the OpaqueCallable."});
       addAnnotation(parameterExtensionEClass, source, new String[] {"documentation",
             "Represents an EParameter and adds functionality to it, especially beiing subtype of Variable."});
       addAnnotation(

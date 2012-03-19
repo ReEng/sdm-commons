@@ -34,6 +34,9 @@ public interface CommentableElement extends ExtendableElement
     * If the meaning of the '<em>Comment</em>' attribute isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The comment string that can be used to attach arbitrary information to CommentableElements.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Comment</em>' attribute.
     * @see #setComment(String)
     * @see org.storydriven.modeling.SDMPackage#getCommentableElement_Comment()

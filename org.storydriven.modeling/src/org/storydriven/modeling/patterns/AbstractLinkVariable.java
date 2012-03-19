@@ -110,6 +110,9 @@ public interface AbstractLinkVariable extends NamedElement
     * If the meaning of the '<em>Target</em>' reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The target of the link.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Target</em>' reference.
     * @see #setTarget(AbstractVariable)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractLinkVariable_Target()
@@ -139,6 +142,9 @@ public interface AbstractLinkVariable extends NamedElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The constraint that refers to this link as the "second link".
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Second Link Constraint</em>' reference list.
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractLinkVariable_SecondLinkConstraint()
     * @see org.storydriven.modeling.patterns.LinkConstraint#getSecondLink
@@ -157,6 +163,9 @@ public interface AbstractLinkVariable extends NamedElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The constraint that refers to this link as the "first link".
+    * <!-- end-model-doc -->
     * @return the value of the '<em>First Link Constraint</em>' reference list.
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractLinkVariable_FirstLinkConstraint()
     * @see org.storydriven.modeling.patterns.LinkConstraint#getFirstLink
@@ -201,6 +210,9 @@ public interface AbstractLinkVariable extends NamedElement
     * If the meaning of the '<em>Pattern</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The story pattern in which the link variable is contained.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Pattern</em>' container reference.
     * @see #setPattern(StoryPattern)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractLinkVariable_Pattern()
@@ -228,6 +240,9 @@ public interface AbstractLinkVariable extends NamedElement
     * If the meaning of the '<em>Source</em>' reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The source of the link. This always has to be an object variable.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Source</em>' reference.
     * @see #setSource(ObjectVariable)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractLinkVariable_Source()

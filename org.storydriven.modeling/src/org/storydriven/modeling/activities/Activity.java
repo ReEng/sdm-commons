@@ -65,13 +65,13 @@ public interface Activity extends Callable, NamedElement
    EList<ActivityEdge> getOwnedActivityEdges ();
 
    /**
-    * Returns the value of the '<em><b>Owning Operation</b></em>' container reference. It is bidirectional and its opposite is '
-    * {@link org.storydriven.modeling.activities.OperationExtension#getOwnedActivity <em>Owned Activity</em>}'. <!-- begin-user-doc -->
+    * Returns the value of the '<em><b>Owning Operation</b></em>' container reference.
+    * It is bidirectional and its opposite is '{@link org.storydriven.modeling.activities.OperationExtension#getOwnedActivity <em>Owned Activity</em>}'.
+    * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Owning Operation</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * 
     * @return the value of the '<em>Owning Operation</em>' container reference.
     * @see #setOwningOperation(OperationExtension)
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getActivity_OwningOperation()
@@ -82,9 +82,9 @@ public interface Activity extends Callable, NamedElement
    OperationExtension getOwningOperation ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.activities.Activity#getOwningOperation <em>Owning Operation</em>}' container reference. <!-- begin-user-doc --> <!--
+    * Sets the value of the '{@link org.storydriven.modeling.activities.Activity#getOwningOperation <em>Owning Operation</em>}' container reference.
+    * <!-- begin-user-doc --> <!--
     * end-user-doc -->
-    * 
     * @param value the new value of the '<em>Owning Operation</em>' container reference.
     * @see #getOwningOperation()
     * @generated
@@ -105,8 +105,8 @@ public interface Activity extends Callable, NamedElement
    MatchingStoryNode getPrecondition ();
 
    /**
-    * Sets the value of the '{@link org.storydriven.modeling.activities.Activity#getPrecondition <em>Precondition</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Sets the value of the '{@link org.storydriven.modeling.activities.Activity#getPrecondition <em>Precondition</em>}' reference.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @param value the new value of the '<em>Precondition</em>' reference.
     * @see #getPrecondition()
     * @generated

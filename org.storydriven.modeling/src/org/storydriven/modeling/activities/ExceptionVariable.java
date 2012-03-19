@@ -70,6 +70,9 @@ public interface ExceptionVariable extends Variable
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * Allows the use of generics for the declaration of exception types.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Generic Exception Type</em>' reference list.
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getExceptionVariable_GenericExceptionType()
     * @model ordered="false"

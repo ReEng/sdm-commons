@@ -617,11 +617,15 @@ public class SDMPackageImpl extends EPackageImpl implements SDMPackage
             "Abstract super class for an Extension that can be defined for an object."});
       addAnnotation(commentableElementEClass, source, new String[] {"documentation",
             "Abstract super class for all meta-model elements that may carry a comment in form of a string."});
+      addAnnotation(getCommentableElement_Comment(), source, new String[] {"documentation",
+            "The comment string that can be used to attach arbitrary information to CommentableElements."});
       addAnnotation(
          variableEClass,
          source,
          new String[] {"documentation",
                "Represents a variable which can be, for example, an object variable, an attribute, or any other kind of variable."});
+      addAnnotation(getVariable_VariableName(), source, new String[] {"documentation",
+            "A variable is identified by its variable name."});
       addAnnotation(namedElementEClass, source, new String[] {"documentation",
             "Abstract super class for all meta-model elements that carry a name. "});
       addAnnotation(getNamedElement_Name(), source, new String[] {"documentation",

@@ -47,6 +47,9 @@ public interface StoryPattern extends CommentableElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * All the variables that are contained in the StoryPattern.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Variable</em>' containment reference list.
     * @see org.storydriven.modeling.patterns.PatternsPackage#getStoryPattern_Variable()
     * @see org.storydriven.modeling.patterns.AbstractVariable#getPattern
@@ -64,6 +67,9 @@ public interface StoryPattern extends CommentableElement
     * If the meaning of the '<em>Link Variable</em>' containment reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * All the LinkVariables that are contained in this StoryPattern.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Link Variable</em>' containment reference list.
     * @see org.storydriven.modeling.patterns.PatternsPackage#getStoryPattern_LinkVariable()
     * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getPattern
@@ -100,6 +106,9 @@ public interface StoryPattern extends CommentableElement
     * If the meaning of the '<em>Parent Pattern</em>' container reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * If the StoryPattern is a sub pattern, this points to the StoryPattern in which the sub pattern is contained.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Parent Pattern</em>' container reference.
     * @see #setParentPattern(StoryPattern)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getStoryPattern_ParentPattern()
@@ -128,6 +137,9 @@ public interface StoryPattern extends CommentableElement
     * If the meaning of the '<em>Contained Pattern</em>' containment reference list isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * A number of sub patterns that are contained in this StoryPattern. They can be negated or made optional as a whole by setting their binding semantics accordingly.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Contained Pattern</em>' containment reference list.
     * @see org.storydriven.modeling.patterns.PatternsPackage#getStoryPattern_ContainedPattern()
     * @see org.storydriven.modeling.patterns.StoryPattern#getParentPattern
@@ -146,6 +158,9 @@ public interface StoryPattern extends CommentableElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The binding semantics of a story pattern express if a pattern as a whole should matched normally (MANDATORY), if it should be NEGATIVE or OPTIONAL. This only makes sense if the StoryPattern is a sub pattern f another StoryPattern. Top-level StoryPatterns should always have the binding semantics MANDATORY.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Binding Semantics</em>' attribute.
     * @see org.storydriven.modeling.patterns.BindingSemantics
     * @see #setBindingSemantics(BindingSemantics)

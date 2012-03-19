@@ -46,6 +46,9 @@ public interface AbstractVariable extends Variable, NamedElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * Represents the story pattern this variable is contained in.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Pattern</em>' container reference.
     * @see #setPattern(StoryPattern)
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractVariable_Pattern()
@@ -158,6 +161,9 @@ public interface AbstractVariable extends Variable, NamedElement
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * Represents the link variables whose target is this variable.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Incoming Link</em>' reference list.
     * @see org.storydriven.modeling.patterns.PatternsPackage#getAbstractVariable_IncomingLink()
     * @see org.storydriven.modeling.patterns.AbstractLinkVariable#getTarget

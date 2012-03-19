@@ -1019,6 +1019,12 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
    {
       String source = "http://www.eclipse.org/emf/2002/GenModel";
       addAnnotation(
+         this,
+         source,
+         new String[] {
+               "documentation",
+               "This package contains everything to model activities: the different kinds of activity nodes and edges as well as guards."});
+      addAnnotation(
          exceptionVariableEClass,
          source,
          new String[] {
@@ -1030,6 +1036,8 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
             "Specifies the name of the declared exception variable."});
       addAnnotation(getExceptionVariable_ExceptionType(), source, new String[] {"documentation",
             "Specifies the type of the declared exception variable."});
+      addAnnotation(getExceptionVariable_GenericExceptionType(), source, new String[] {"documentation",
+            "Allows the use of generics for the declaration of exception types."});
       addAnnotation(
          activityEdgeEClass,
          source,
@@ -1094,8 +1102,6 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
          new String[] {
                "documentation",
                "An OperationExtension is a stand-in for an EOperation in our model. It is necessary because we cannot change the type EOperation. Thus, OperationExtension points to an EOperation but adds the reference to an Activity that describes the operations behavior."});
-      addAnnotation(getOperationExtension__NumberOfOutParams__DiagnosticChain_Map(), source, new String[] {
-            "documentation", "self.oclAsType(Callable).out->size() <= 1"});
       addAnnotation((getOperationExtension__NumberOfOutParams__DiagnosticChain_Map()).getEParameters().get(0), source,
          new String[] {"documentation", "The chain of diagnostics to which problems are to be appended."});
       addAnnotation((getOperationExtension__NumberOfOutParams__DiagnosticChain_Map()).getEParameters().get(1), source,

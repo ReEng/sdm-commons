@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.modeling.calls.*;
 import org.storydriven.modeling.calls.CallsFactory;
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.calls.OpaqueCallable;
@@ -19,14 +20,13 @@ import org.storydriven.modeling.calls.ParameterExtension;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
  * @generated
  */
 public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory
 {
    /**
-    * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates the default factory implementation.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public static CallsFactory init ()
@@ -48,8 +48,8 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory
    }
 
    /**
-    * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
+    * Creates an instance of the factory.
+    * <!-- begin-user-doc --> <!-- end-user-doc -->
     * @generated
     */
    public CallsFactoryImpl ()
@@ -59,7 +59,6 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    @Override
@@ -80,7 +79,6 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ParameterBinding createParameterBinding ()
@@ -91,7 +89,6 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public OpaqueCallable createOpaqueCallable ()
@@ -102,7 +99,6 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public ParameterExtension createParameterExtension ()
@@ -113,7 +109,6 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @generated
     */
    public CallsPackage getCallsPackage ()
@@ -123,7 +118,6 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory
 
    /**
     * <!-- begin-user-doc --> <!-- end-user-doc -->
-    * 
     * @deprecated
     * @generated
     */
