@@ -46,9 +46,8 @@ The story pattern in Figure \ref{fig:simpleStoryPattern} contains four
 object variables with the names \fe{call}, \fe{interface}, \fe{methodDecl}, and
 \fe{method}. 
 The type of an object variable is only visualized if the
-variable is unbound (cf. Section \ref{sec:StoryPatterns:binding:states}). 
-\todomcp{konkrete syntax fuer bound/unbound variables klaeren}
-For example, the object variable \fe{methodDecl} has the type \fe{Method}.
+variable is unbound or maybe bound (cf. Section
+\ref{sec:StoryPatterns:binding:states}). For example, the object variable \fe{methodDecl} has the type \fe{Method}.
 
 Object variables have binding states, binding operators and binding semantics.
 They are described in Section  \ref{sec:StoryPatterns:binding}.
@@ -107,16 +106,19 @@ A bound variable must have been matched previously.
 For a variable that is specified as maybe bound, a new match will only be
 determined if it has not been bound before. 
 Otherwise it will be treated as a bound variable.
-\todomcp{explain why maybe bound is necessary}
+%\todomcp{explain why maybe bound is necessary}
 The variable scope is limitted by the surrounding activity. 
 That means, a bound variable keeps its binding until the activity ends, unless
 it has been matched again in the meantime.
 An exception is the variable scope inside an each activity node (cf. Section
 \ref{sec:StoryDiagrams:composition}).
 
-Unbound objects are visualized with a label of the form ``name: type'', while
-the type is hidden for bound objects.
-\todomcp{konkrete syntax fuer bound/unbound variables klaeren, s.o.}
+Unbound object variables are visualized with an underlined label of the form
+``name: type'', while the type is hidden for bound object variables as depicted
+in Figure \ref{fig:bindingStatesOverview} a) and b).
+Maybe bound object variables are represented like unbound object variables but
+are marked by a questionmark after the name (cf. Figure
+\ref{fig:bindingStatesOverview} c)).
 
 In a valid, interpretable story pattern, each connected component\footnote{With
 ``connected component'' we mean a subgraph in which each object variable is
@@ -124,8 +126,6 @@ connected with all other object variables via link variables.}
 must contain at least one bound object variable or only created variables. This
 is necessary to avoid a search over the whole underlying object model which probably requires a long runtime.
 
-\todomcp{concrete syntax of maybe bound objects? Suggestions: classifier label
-background dark-gray, or questionmark in front of the classifier}
 
 \begin{figure}[htbp]
   \centering
