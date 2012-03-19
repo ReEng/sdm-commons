@@ -65,6 +65,7 @@ Typically, model-to-model transformations, consistency checks, or more generally
 In both cases the story diagrams can be used to generate executable source code or be executed using an interpreter.
 Besides execution, the formally defined story diagrams can also be analyzed to guarantee certain behavioral properties.
 For example, model checking can be used to check if a safety property is always met (\todoall{example!!!}) or if a critical state (\todoall{example!!!}) can ever be reached. \todomvd{Ich finde hier braucht's keine Beispiele. Wir wollen doch nicht Model Checking erklaeren.}
+\tododt{Ich wollte hier gerne je ein gutes Bsp. für solche Eigenschaften nennen, damit sich besser was darunter vorstellen kann. Keine Diagramme oder so.}
 
 
 %\subsection{The Language Constructs in Story Diagrams (Jan/Dietrich)}\label{sec:StoryDiagrams:composition}
@@ -73,8 +74,8 @@ For example, model checking can be used to check if a safety property is always 
 %  \item Combination of an excerpt of UML 1.5 activity diagrams and story patterns (incl. example)
 %  \item list the major language constructs like activity nodes and edges, guards (concrete syntax, well-formedness, and execution semantics)
 %  \item name our restrictions, e.g., omition of fork and join
-  \item refer to the appendix due to a complete language reference
-  \item mention the grammar for story diagrams (based on grammar in diploma thesis of Thomas Klein \cite{Kle99})?
+  \item \tododt{refer to the appendix due to a complete language reference}
+  \item \tododt{mention the grammar for story diagrams (based on grammar in diploma thesis of Thomas Klein \cite{Kle99})?}
 \end{itemize}
 
 
@@ -106,34 +107,41 @@ Otherwise, the \emph{null} reference is returned which is specified by the keywo
 
 \subsection{Activity Nodes, Activity Edges (Dietrich)}
 
-\todoall{Story Nodes (laut Doku im Meta Modell ist ein
-Story Node ``an activity node containing a story pattern'') werden in Modifying
-und Matching Story Nodes unterteilt. }
-
 A story diagram's control flow is defined by activity nodes and activity edges, similar to UML activity diagrams.
 Except of a few exceptions where an activity node represents a call of another story diagram,
 each node contains a story pattern to specify the corresponding behavior.
-Thus, executing an activity node results in executing the corresponding story pattern.
+Such activity nodes are called \emph{story nodes}.
+Executing a story node results in executing the corresponding story pattern.
 
-In contrast to single story patterns, story patterns contained in activity nodes of a story diagram have another scope.
-Here, you can reuse all object variables declared in a story pattern of a preceding activity node.
+In contrast to single story patterns, story patterns contained in story nodes of a story diagram have another scope.
+Here, you can reuse all object variables declared in a story pattern of a preceding story node.
 For example, in Figure~\ref{fig:simpleStoryDiagram}, the object variable \fe{parentClass} is reused in the following story pattern
 by specifying the variable as a bound variable
 (i.e. the variable does not have to be matched anymore, the object matched in the steps before is used instead).
 
-Executing an activity node means to execute the corresponding story pattern
-which means to find a subgraph with the specified properties (e.g. find objects of a certain type and with certain connections).
-As a consequence, since trying to find such a subgraph can fail, each execution of an activity node can fail.
-To distinguish the cases of a successful activity node execution and its failure,
+Executing a story node means to execute the corresponding story pattern
+which means to find a subgraph with the specified properties (e.g. find objects of a certain type and with certain connections)
+and to perform specified modifications of the found subgraph (e.g. creating or removing objects and links or changing their attribute values).
+
+We distinguish two kinds of story nodes: \emph{modifying story nodes} and \emph{matching story nodes}.
+A matching story node contains a story pattern that only matches a specified object structure, but does not change it.
+A modifying story node is in addition allowed to perform modifications of the matched obejct structure.
+For static analyses of graph transformations described with story diagrams it is helpful to know which tranformations do not modify the host graph
+(the object structure that the transformation is applied on).
+
+As a consequence of story node behavior being defined by story patterns,
+since trying to find a subgraph defined by a story pattern can fail,
+each execution of a story node can fail.
+To distinguish the cases of a successful story node execution and its failure,
 the outgoing activity edges can be provided with the guards \text[success\text] and \text[failure\text].
-The control flow is following the activity edge with the \emph{success} guard in case of a successful activity node execution,
+The control flow is following the activity edge with the \emph{success} guard in case of a successful story node execution,
 i.e. a successful matching of the corresponding story pattern,
 otherwise it follows the activity edge with the \emph{failure} guard.
 If an outgoing activity edge has no guard, it covers both cases, success and failure.
 The guards \text[success\text] and \text[failure\text] can only be used pair-wise.
-The first activity node in Figure~\ref{fig:simpleStoryDiagram} has two outgoing activity edges with these guards.
+The first story node in Figure~\ref{fig:simpleStoryDiagram} has two outgoing activity edges with these guards.
 
-A special activity node is the \emph{for-each} activity node, depicted by a cascading activity node.
+A special story node is the \emph{for-each} activity node, depicted by a cascading activity node.
 The second activity node in Figure~\ref{fig:simpleStoryDiagram} is a \emph{for-each} activity node.
 Such a node represents a loop where the contained story pattern is executed as often as new subgraphs can be matched
 that differ from the previously matched graphs by at least one other matched object.
