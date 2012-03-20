@@ -49,24 +49,53 @@ If for all defined methods story diagrams are specified, the software can be exe
 In this case, story diagrams specify the behavior of objects whose properties are defined by classes.
 Thus, story diagrams have a \emph{this} variable representing an object (class instance) that they belong to.
 This variable can be used as a starting point for the graph matching specified in a story diagram.
-\tododt{add an example}
+
+For example, the class diagram in Figure~\ref{fig:SDWithThisClassDiagram} defines a method \fe{findAttribute} for all \fe{Class} objects.
+This method's behavior is specified by the story diagram in Figure~\ref{fig:SDWithThis}.
+The matching of the object structure specified in the story diagram, in this case,
+starts with the \fe{this} object variable of the type \fe{Class} which is already bound
+to the \fe{Class} object that the \fe{findAttribute} method belongs to.
+Thus, this method tries to find an attribute \fe{a} in the same class with the name given by the method's parameter \fe{text}.
+
+\begin{figure}[htb]
+	\centering
+  \begin{minipage}[t]{.4\textwidth}
+    \centering
+    \includegraphics[scale=1]{SimpleSDFindAttributeClassDiagram} 
+    \caption{Type Model for the Story Diagram in Figure~\ref{fig:SDWithThis}}
+    \label{fig:SDWithThisClassDiagram}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{.55\textwidth}
+    \centering
+    \includegraphics[scale=1]{SimpleSDFindAttribute}
+    \caption{Exemplary Story Diagram With \emph{this} Object Variable}
+    \label{fig:SDWithThis}
+  \end{minipage}
+\end{figure}
 
 Another more flexible way of using story diagrams is to specify any kind of model transformation or operation in a story diagram without sticking this behavior to a certain class.
 In contrast to the previous case, there is no \emph{this} variable that could be used as a starting point for the graph matching.
 All starting nodes for the graph matching have to be provided as arguments of the story diagram call.
-For this purpose, the story diagram in Figure~\ref{fig:simpleStoryDiagram} has two parameters \fe{oldMethod} and \fe{newMethod}.
+For this purpose, in contrast to the story diagram in Figure~\ref{fig:SDWithThis}, the story diagram in Figure~\ref{fig:SDWithThisStatic} has an additional parameter \fe{c}.
 The corresponding arguments of a story diagram call are assumed to be known (bound object variables) and are used as starting points for the graph matching.
 This way, the operations or transformations defined by story diagrams can be used from within any other part of the developed software, like a software library would be used.
 Typically, model-to-model transformations, consistency checks, or more generally speaking, recurring and object-independent operations are defined this way.
-\tododt{add an example}
+
+\begin{figure}[htb]
+	\centering
+  \includegraphics[scale=1]{SimpleSDFindAttributeStatic} 
+  \caption{Exemplary Story Diagram Without \emph{this} Object Variable}
+  \label{fig:SDWithThisStatic}
+\end{figure}
 
 % - enable formal analyses to check/ensure certain behavioral software properties
 
 In both cases the story diagrams can be used to generate executable source code or be executed using an interpreter.
 Besides execution, the formally defined story diagrams can also be analyzed to guarantee certain behavioral properties.
-For example, model checking can be used to check if a safety property is always met (\todoall{example!!!}) or if a critical state (\todoall{example!!!}) can ever be reached. \todomvd{Ich finde hier braucht's keine Beispiele. Wir wollen doch nicht Model Checking erklaeren.}
-\tododt{Ich wollte hier gerne je ein gutes Bsp. für solche Eigenschaften nennen, damit sich besser was darunter vorstellen kann. Keine Diagramme oder so.}
-
+For example, model checking can be used to check if a certain invariant holds
+(e.g.\ all accessible variables are still accessible after refactoring operations)
+or if a critical state can ever be reached (e.g.\ attributes or methods having no parent class after refactoring operations).
 
 %\subsection{The Language Constructs in Story Diagrams (Jan/Dietrich)}\label{sec:StoryDiagrams:composition}
 
