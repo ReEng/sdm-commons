@@ -66,10 +66,29 @@ The type graph is a set of classes and their relations which define all potentia
 These classes and relations are a so-called \emph{type model} or meta-model \cite{Kue06}.
 They are required to specify story patterns.
 
+For example, the class diagram in Figure~\ref{fig:SDExampleClassDiagram} defines the types \fe{Class} and \fe{Attribute} as well as their relations, attributes, and operations.
+The corresponding story diagram in Figure~\ref{fig:SDExampleStoryDiagram} definies the behavior of the \fe{removeAttribute} method defined in the class diagram.
+Here, the story diagram specifies that a class's attribute with the name given by the parameter \fe{text} is to be found in the class and in case of success this attribute is to be removed (\destroy).
+
+\begin{figure}[htb]
+	\centering
+  \begin{minipage}[t]{.4\textwidth}
+    \centering
+    \includegraphics[scale=1]{SimpleSDRemoveAttributeClassDiagram} 
+    \caption{Exemplary Type Model}
+    \label{fig:SDExampleClassDiagram}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{.55\textwidth}
+    \centering
+    \includegraphics[scale=1]{SimpleSDRemoveAttribute}
+    \caption{Exemplary Story Diagram}
+    \label{fig:SDExampleStoryDiagram}
+  \end{minipage}
+\end{figure}
+
 In summary, a story diagram is a special, formally defined UML activity diagram
 that embeds graph transformations, so-called story patterns, in its activity nodes
 to precisely describe run-time behavior by means of graph transformations.
-
-\tododt{Introduce a very simple example from the same domain as our complete example}
 
 %\subsection{Application scenarios (?)} \label{sec:Applications}
