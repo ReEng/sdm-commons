@@ -4,7 +4,9 @@ Story diagrams and story patterns use a mainly graphical syntax.
 Though, some things can compactly be described by text, e.g., restrictions of attribute values to a certain range.
 For this purpose we added a small textual language for expressions to story diagrams
 to cover value comparisons, value assignments, simple arithmetic expressions, etc.
-In the first version of this technical report we restricted the expressions to OCL expressions.
-\todoall{version?}
-\todomvd{Die aktuelle Sprachversion von der OMG ist 2.3.1. Sollten wir nicht die nehmen?}
+In the first version of this technical report we restricted the expressions to OCL expressions\footnote{Currently,
+the OCL tools in Eclipse (\href{http://www.eclipse.org/modeling/mdt/?project=ocl}{http://www.eclipse.org/modeling/mdt/?project=ocl}),
+as far as possible, comply with the OMG OCL standard 2.3 (\href{http://www.omg.org/spec/OCL/2.3/Beta2/PDF}{http://www.omg.org/spec/OCL/2.3/Beta2/PDF}).
+We use these tools to interpret the OCL expressions.
+More details about this issue can be found here:\\ \href{http://www.eclipse.org/projects/project-plan.php?planurl=http://www.eclipse.org/modeling/mdt/ocl/project-info/plan_indigo.xml&component=Eclipse}{http://www.eclipse.org/projects/project-plan.php?planurl=http://www.eclipse.org/modeling/mdt/ocl/project-info/plan\_indigo.xml\&component=Eclipse}}.
 In future, this will be extended to also cover arbitrary other textual expressions that have to be interpreted by a given interpreter.
