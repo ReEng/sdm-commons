@@ -1,5 +1,3 @@
-
-
 \section{Package \bfseries \texttt{modeling}\normalfont}
 % Here comes the package documentation
 \subsection{Package Overview}
@@ -11,7 +9,7 @@ The modeling package is the root package for the SDM meta-model. It defines seve
 			
 		
 % Here a manual modifiable file is included: modeling/graphics.tex
-\input{figures/packages/modeling/graphics}
+\input{figures/A_technical-reference/packages/modeling/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -36,7 +34,10 @@ Abstract super class for all meta-model elements that may carry a comment in for
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+The comment string that can be used to attach arbitrary information to CommentableElements.	
+		
 	
 	\end{description}
 	
@@ -148,7 +149,10 @@ Represents a variable which can be, for example, an object variable, an attribut
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+A variable is identified by its variable name.	
+		
 	
 	\end{description}
 	
@@ -166,12 +170,15 @@ Represents a variable which can be, for example, an object variable, an attribut
 \section{Package \bfseries \texttt{modeling::activities}\normalfont}
 % Here comes the package documentation
 \subsection{Package Overview}
-		\todoib{Documentation missing?}
+	
+			
+This package contains everything to model activities: the different kinds of activity nodes and edges as well as guards.	
+		
 	
 			
 		
 % Here a manual modifiable file is included: modeling_activities/graphics.tex
-\input{figures/packages/modeling_activities/graphics}
+\input{figures/A_technical-reference/packages/modeling_activities/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -448,7 +455,10 @@ Specifies the type of the declared exception variable.
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+Allows the use of generics for the declaration of exception types.	
+		
 	
 	\end{description}
 	
@@ -684,7 +694,7 @@ A structured node is a node that contains several other activities.
 			
 		
 % Here a manual modifiable file is included: modeling_activities_expressions/graphics.tex
-\input{figures/packages/modeling_activities_expressions/graphics}
+\input{figures/A_technical-reference/packages/modeling_activities_expressions/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -719,7 +729,7 @@ from within an activity.
 			
 		
 % Here a manual modifiable file is included: modeling_calls/graphics.tex
-\input{figures/packages/modeling_calls/graphics}
+\input{figures/A_technical-reference/packages/modeling_calls/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -776,7 +786,10 @@ An OpaqueCallable represents an external method which is not explicitly modeled 
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+The name of the Callable.	
+		
 	
 	\end{description}
 	
@@ -788,7 +801,10 @@ see Section~\ref{cls:modeling::calls::expressions::MethodCallExpression} on Page
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+An expression that specifies which method should be called by the OpaqueCallable.	
+		
 	
 	\end{description}
 	
@@ -840,7 +856,7 @@ Represents an EParameter and adds functionality to it, especially beiing subtype
 			
 		
 % Here a manual modifiable file is included: modeling_calls_expressions/graphics.tex
-\input{figures/packages/modeling_calls_expressions/graphics}
+\input{figures/A_technical-reference/packages/modeling_calls_expressions/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -890,7 +906,7 @@ and patterns.
 			
 		
 % Here a manual modifiable file is included: modeling_expressions/graphics.tex
-\input{figures/packages/modeling_expressions/graphics}
+\input{figures/A_technical-reference/packages/modeling_expressions/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -1311,7 +1327,7 @@ embedded into StoryActivityNodes of an Activity.
 			
 		
 % Here a manual modifiable file is included: modeling_patterns/graphics.tex
-\input{figures/packages/modeling_patterns/graphics}
+\input{figures/A_technical-reference/packages/modeling_patterns/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -1373,7 +1389,10 @@ see Section~\ref{cls:modeling::patterns::LinkConstraint} on Page~\pageref{cls:mo
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+The constraint that refers to this link as the "first link".	
+		
 	
 \item[pattern : StoryPattern 	]
 see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:modeling::patterns::StoryPattern}
@@ -1381,7 +1400,10 @@ see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:mode
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+The story pattern in which the link variable is contained.	
+		
 	
 \item[secondLinkConstraint : LinkConstraint 			\symbol{"5B}0..$*$\symbol{"5D}]
 see Section~\ref{cls:modeling::patterns::LinkConstraint} on Page~\pageref{cls:modeling::patterns::LinkConstraint}
@@ -1389,7 +1411,10 @@ see Section~\ref{cls:modeling::patterns::LinkConstraint} on Page~\pageref{cls:mo
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+The constraint that refers to this link as the "second link".	
+		
 	
 \item[source : ObjectVariable 	]
 see Section~\ref{cls:modeling::patterns::ObjectVariable} on Page~\pageref{cls:modeling::patterns::ObjectVariable}
@@ -1397,7 +1422,10 @@ see Section~\ref{cls:modeling::patterns::ObjectVariable} on Page~\pageref{cls:mo
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+The source of the link. This always has to be an object variable.	
+		
 	
 \item[target : AbstractVariable 	]
 see Section~\ref{cls:modeling::patterns::AbstractVariable} on Page~\pageref{cls:modeling::patterns::AbstractVariable}
@@ -1405,7 +1433,10 @@ see Section~\ref{cls:modeling::patterns::AbstractVariable} on Page~\pageref{cls:
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+The target of the link.	
+		
 	
 	\end{description}
 	
@@ -1473,7 +1504,10 @@ see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+Represents the link variables whose target is this variable.	
+		
 	
 \item[pattern : StoryPattern 	]
 see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:modeling::patterns::StoryPattern}
@@ -1481,7 +1515,10 @@ see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:mode
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+Represents the story pattern this variable is contained in.	
+		
 	
 	\end{description}
 	
@@ -1672,7 +1709,7 @@ Specifies the containment of an object in a set (represented by a ContainerVaria
 
 	
 			
-Link constraints (formerly known as MultiLinks in old meta-model) constrain the ordering of links of the referencingObject is a collection. This way objects can be required to have a certain position in the collection (FIRST, LAST, INDEX) or a certain ordering relative to each other (DIRECT\_SUCCESSOR, INDIRECT\_SUCCESSOR). While the first kind of LinkConstraint can be imposed upon a single link, the second kind requires two links that are related to each other (e.g., have the same referencingObject).	
+Link constraints (formerly known as MultiLinks in old meta-model) constrain the ordering of links if the referencingObject is a collection. This way objects can be required to have a certain position in the collection (FIRST, LAST, INDEX) or a certain ordering relative to each other (DIRECT\_SUCCESSOR, INDIRECT\_SUCCESSOR). While the first kind of LinkConstraint can be imposed upon a single link, the second kind requires two links that are related to each other (e.g., have the same referencingObject).	
 		
 	
 
@@ -1724,7 +1761,10 @@ see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+The first link that the link constraint refers to. For link constraints that only relate to one link (FIRST, LAST, INDEX) this is the only referenced link.	
+		
 	
 \item[referencingObject : ObjectVariable 	]
 see Section~\ref{cls:modeling::patterns::ObjectVariable} on Page~\pageref{cls:modeling::patterns::ObjectVariable}
@@ -1732,7 +1772,10 @@ see Section~\ref{cls:modeling::patterns::ObjectVariable} on Page~\pageref{cls:mo
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+The ObjectVariable to which this LinkContraint is associated. That ObjectVariable has to be a collection.	
+		
 	
 \item[secondLink : AbstractLinkVariable 			\symbol{"5B}0..1\symbol{"5D}]
 see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{cls:modeling::patterns::AbstractLinkVariable}
@@ -1740,7 +1783,10 @@ see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+The second link that the link constraint refers to. Applies only to link constraints that relate two links to each other (DIRECT\_SUCCESSOR and INDIRECT\_SUCCESSOR). For all other constraints this variable is always null.	
+		
 	
 	\end{description}
 	
@@ -1885,7 +1931,10 @@ see Section~\ref{cls:modeling::patterns::AttributeAssignment} on Page~\pageref{c
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+The AttributeAssignments that have to be executed for this ObjectVariable.	
+		
 	
 \item[classifier : EClass 	]
 
@@ -1906,7 +1955,10 @@ see Section~\ref{cls:modeling::patterns::LinkConstraint} on Page~\pageref{cls:mo
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+The LinkConstraints that are imposed on the links of this ObjectVariable. Only makes sense if the ObjectVariable is a collection.	
+		
 	
 \item[outgoingLink : AbstractLinkVariable 			\symbol{"5B}0..$*$\symbol{"5D}]
 see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{cls:modeling::patterns::AbstractLinkVariable}
@@ -1914,7 +1966,10 @@ see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+Represents the link variables whose source is this object variable.	
+		
 	
 	\end{description}
 	
@@ -1976,7 +2031,10 @@ see Section~\ref{cls:modeling::patterns::BindingSemantics} on Page~\pageref{cls:
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+The binding semantics of a story pattern express if a pattern as a whole should matched normally (MANDATORY), if it should be NEGATIVE or OPTIONAL. This only makes sense if the StoryPattern is a sub pattern f another StoryPattern. Top-level StoryPatterns should always have the binding semantics MANDATORY.	
+		
 	
 	\end{description}
 	
@@ -1999,7 +2057,10 @@ see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:mode
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+A number of sub patterns that are contained in this StoryPattern. They can be negated or made optional as a whole by setting their binding semantics accordingly.	
+		
 	
 \item[linkVariable : AbstractLinkVariable 			\symbol{"5B}0..$*$\symbol{"5D}]
 see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{cls:modeling::patterns::AbstractLinkVariable}
@@ -2007,7 +2068,10 @@ see Section~\ref{cls:modeling::patterns::AbstractLinkVariable} on Page~\pageref{
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+All the LinkVariables that are contained in this StoryPattern.	
+		
 	
 \item[parentPattern : StoryPattern 			\symbol{"5B}0..1\symbol{"5D}]
 see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:modeling::patterns::StoryPattern}
@@ -2015,7 +2079,10 @@ see Section~\ref{cls:modeling::patterns::StoryPattern} on Page~\pageref{cls:mode
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+If the StoryPattern is a sub pattern, this points to the StoryPattern in which the sub pattern is contained.	
+		
 	
 \item[templateSignature : TemplateSignature 			\symbol{"5B}0..1\symbol{"5D}]
 see Section~\ref{cls:modeling::templates::TemplateSignature} on Page~\pageref{cls:modeling::templates::TemplateSignature}
@@ -2031,7 +2098,10 @@ see Section~\ref{cls:modeling::patterns::AbstractVariable} on Page~\pageref{cls:
 \nopagebreak
 
 
-		\todoib{Documentation missing?}
+	
+			
+All the variables that are contained in the StoryPattern.	
+		
 	
 	\end{description}
 	
@@ -2053,7 +2123,7 @@ see Section~\ref{cls:modeling::patterns::AbstractVariable} on Page~\pageref{cls:
 			
 		
 % Here a manual modifiable file is included: modeling_patterns_expressions/graphics.tex
-\input{figures/packages/modeling_patterns_expressions/graphics}
+\input{figures/A_technical-reference/packages/modeling_patterns_expressions/graphics}
 
 
 \subsection{Detailed Contents Documentation}
@@ -2129,7 +2199,7 @@ Represents the value of a primitive variable, e.g., 5 or "MyName".
 			
 		
 % Here a manual modifiable file is included: modeling_templates/graphics.tex
-\input{figures/packages/modeling_templates/graphics}
+\input{figures/A_technical-reference/packages/modeling_templates/graphics}
 
 
 \subsection{Detailed Contents Documentation}
