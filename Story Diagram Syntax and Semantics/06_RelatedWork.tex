@@ -7,13 +7,14 @@
 \todomvd{This ``Short history of Fujaba'' seems odd here. Maybe we should put it somewhere else?}
 
 Story diagrams have been described first by Fischer et al. \cite{FNTZ00} and Jahnke and Z\"{u}ndorf \cite{JZ98} in 1998.
-The foundations of story diagrams lay in the programmed graph rewriting systems PROGRES \cite{SWZ95} which has been developed at the University of Aachen since 1989.
-Story diagrams (or story flow diagrams, as they have been called in early publications) adapt and enhance the PROGRES approach to a UML-like notation and an object-oriented data model \cite{JZ98}, using an easily comprehensible graphical syntax and well-defined semantics.
+The foundations of story diagrams lie in the programmed graph rewriting systems PROGRES \cite{SWZ95} which has been developed at the University of Aachen since 1989.
+Story diagrams (or story flow diagrams, as they have been called in early publications) adapt and enhance the PROGRES approach to a UML-like notation and an object-oriented data model \cite{JZ98}.
+They have an easily comprehensible graphical syntax and well-defined semantics.
 Z\"{u}ndorf \cite{Zun01} describes the syntax and semantics of story diagrams in detail.
 A graph grammar that formally describes the syntax of the control flow of story diagrams was defined by Klein \cite{Kle99}.
 
 Story diagrams are embedded in a rigorous and systematic software development method called \emph{story-driven modeling} (SDM) \cite{Zun01,DGZ04}.
-While existing approaches like UML focused on the specification of the static structure of software, SDM combines, amongst others, UML class diagrams, UML activity diagrams, and story diagrams to allow completely specifying the structure and behavior of software systems.
+While existing approaches like UML focus on the specification of the static structure of software, SDM combines, amongst others, UML class diagrams, UML activity diagrams, and story diagrams to allow completely specifying the structure and behavior of software systems.
 Furthermore, SDM describes how such a software specification can be derived from requirements.
 First, each use-case in the requirements is refined by a set of sample scenarios defined by so-called \emph{story boards}.
 A story board is a sequence of single snap shots of graph-like object structures, describing changes in these object structures.
@@ -35,7 +36,7 @@ In the following, story diagrams and Fujaba have been modified and enhanced.
 Originally, story diagrams use expressions of the target programming language to define constraints, return values etc.
 I.e., if a story diagram should be compiled into Java code, Java expressions must be used.
 St\"{o}lzel, Zschaler and Geiger \cite{SZG07} integrated OCL into story diagrams, making them more platform-independent.
-They connected Fujaba with the Dresden OCL toolkit, allowing a code generation for story diagrams including the OCL constraints.
+They connected Fujaba with the Dresden OCL toolkit \cite{DresdenOCL}, allowing a code generation for story diagrams including the OCL constraints.
 
 To improve flexibility for the execution of story diagrams, Giese, Hildebrand and Seibel \cite{GHS09} present an interpreter for story diagrams.
 In contrast to executing generated Java code, with this approach generated story diagrams can be executed immediately.
@@ -54,7 +55,7 @@ When creating one link for each of the two qualified association in one story pa
 We discuss this issue in \todojr{Section X}.
 Forth, the set of possible bindings that match in a for-each activity may be extended by this very for-each activity, i.e., the activity changes something that makes new elements match for the for-each condition.
 Thus, we clarify whether we use a \emph{pre-select} or a \emph{fresh matches} semantics for for-each activities in \todojr{Section X}.
-Fifth, the authors propose that the result of a creating can be check in cases where creations may fail, e.g., due to resource constraints.
+Fifth, as creations may fail, e.g., due to resource constraints, the authors propose that a story diagram should be able to react to the result of a creation.
 We mention this in \todojr{Section X}.
 
 The control flow of story diagrams is modeled explicitly.

@@ -27,39 +27,17 @@
   url = {http://doi.acm.org/10.1145/1368088.136820}
 }
 
-@ARTICLE{ATL,
-  author = {Frederic Jouault and Freddy Allilaire and Jean B\'{e}zivin and Ivan
-	Kurtev},
-  title = {{ATL}: A model transformation tool},
-  journal = {Science of Computer Programming},
-  year = {2008},
-  volume = {72},
-  pages = {31 - 39},
-  number = {1-2},
-  doi = {DOI: 10.1016/j.scico.2007.08.002},
-  issn = {0167-6423}
-}
-
-@INPROCEEDINGS{BGS+Z08,
-  author = {Bork, Manuel and Geiger, Leif and Schneider, Christian and Z{\"{u}}ndorf,
-	Albert},
-  title = {Towards Roundtrip Engineering - A Template-Based Reverse Engineering
-	Approach},
-  booktitle = {Model Driven Architecture - Foundations and Applications, Proc. of
-	the 4th European Conference on Model Driven Architecture Foundations
-	and Applications (ECMDA '08), Berlin, Germany},
-  year = {2008},
-  editor = {Schieferdecker, I. and Hartman, A.},
-  volume = {5095},
+@INCOLLECTION{henshin,
+  author = {Arendt, Thorsten and Biermann, Enrico and Jurack, Stefan and Krause,
+	Christian and Taentzer, Gabriele},
+  title = {Henshin: Advanced Concepts and Tools for In-Place {EMF} Model Transformations},
+  booktitle = {Model Driven Engineering Languages and Systems},
+  publisher = {Springer Berlin / Heidelberg},
+  year = {2010},
+  volume = {6394},
   series = {Lecture Notes in Computer Science},
-  pages = {33--47},
-  address = {Berlin / Heidelberg},
-  month = {June},
-  publisher = {Springer},
-  doi = {10.1007/978-3-540-69100-6},
-  isbn = {978-3-540-69095-5},
-  keywords = {Association Detection, Design Recovery, Fujaba, Reverse Engineering,
-	Software Maintenance, static analysis}
+  pages = {121-135},
+  affiliation = {Philipps-Universität Marburg, Germany}
 }
 
 @TECHREPORT{BvDHR11,
@@ -88,6 +66,37 @@
 	concept.}
 }
 
+@INPROCEEDINGS{henshin2,
+  author = {Enrico Biermann and Claudia Ermel and Johann Schmidt and Angeline
+	Warning},
+  title = {Visual Modeling of Controlled {EMF} Model Transformation using {H}enshin},
+  booktitle = {Proceedings of the 4th International Workshop on Graph-Based Tools
+	(GraBaTs 2010)},
+  year = {2010}
+}
+
+@INPROCEEDINGS{BGS+Z08,
+  author = {Bork, Manuel and Geiger, Leif and Schneider, Christian and Z{\"{u}}ndorf,
+	Albert},
+  title = {Towards Roundtrip Engineering - A Template-Based Reverse Engineering
+	Approach},
+  booktitle = {Model Driven Architecture - Foundations and Applications, Proc. of
+	the 4th European Conference on Model Driven Architecture Foundations
+	and Applications (ECMDA '08), Berlin, Germany},
+  year = {2008},
+  editor = {Schieferdecker, I. and Hartman, A.},
+  volume = {5095},
+  series = {Lecture Notes in Computer Science},
+  pages = {33--47},
+  address = {Berlin / Heidelberg},
+  month = {June},
+  publisher = {Springer},
+  doi = {10.1007/978-3-540-69100-6},
+  isbn = {978-3-540-69095-5},
+  keywords = {Association Detection, Design Recovery, Fujaba, Reverse Engineering,
+	Software Maintenance, static analysis}
+}
+
 @ARTICLE{Czarnecki06,
   author = {Czarnecki, K. and Helsen, S.},
   title = {Feature-based Survey of Model Transformation Approaches},
@@ -101,6 +110,16 @@
   issue = {3},
   numpages = {25},
   publisher = {IBM Corp.}
+}
+
+@INPROCEEDINGS{DMT10,
+  author = {von Detten, Markus and Meyer, Matthias and Travkin, Dietrich},
+  title = {{Reverse Engineering with the Reclipse Tool Suite}},
+  booktitle = {Proceedings of the 32nd International Conference on Software Engineering},
+  year = {2010},
+  pages = {299--300},
+  month = may,
+  publisher = {ACM}
 }
 
 @INPROCEEDINGS{DGZ04,
@@ -117,14 +136,10 @@
   url = {http://www.se.eecs.uni-kassel.de/se/fileadmin/se/publications/DGZ04.pdf}
 }
 
-@INPROCEEDINGS{DMT10,
-     author = {von Detten, Markus and Meyer, Matthias and Travkin, Dietrich},
-      month = may,
-      title = {{Reverse Engineering with the Reclipse Tool Suite}},
-  booktitle = {Proceedings of the 32nd International Conference on Software Engineering},
-       year = {2010},
-      pages = {299--300},
-  publisher = {ACM}
+@MISC{xpand,
+  author = {{Eclipse Modeling Project}},
+  title = {{Model To Text (M2T) -- Xpand}},
+  note = {http://www.eclipse.org/modeling/m2t/?project=xpand}
 }
 
 @BOOK{EEPT06,
@@ -136,21 +151,6 @@
   series = {Monographs in Theoretical Computer Science},
   doi = {10.1007/3-540-31188-2},
   isbn = {978-3540311874}
-}
-
-@INCOLLECTION{FNTZ00,
-  author = {Fischer, Thorsten and Niere, J{\"{o}}rg and Torunski, Lars and Z{\"{u}}ndorf,
-	Albert},
-  title = {Story Diagrams: A New Graph Rewrite Language Based on the Unified
-	Modeling Language and Java},
-  booktitle = {TAGT '98 Selected papers},
-  publisher = {Springer},
-  year = {2000},
-  volume = {1764},
-  series = {Lecture Notes in Computer Science (LNCS)},
-  pages = {296-309},
-  isbn = {3-540-67203-6},
-  url = {http://dx.doi.org/10.1007/978-3-540-46464-8_21}
 }
 
 @MASTERSTHESIS{FNT98,
@@ -168,6 +168,21 @@
   keywords = {Fujaba, PB Publication}
 }
 
+@INCOLLECTION{FNTZ00,
+  author = {Fischer, Thorsten and Niere, J{\"{o}}rg and Torunski, Lars and Z{\"{u}}ndorf,
+	Albert},
+  title = {Story Diagrams: A New Graph Rewrite Language Based on the Unified
+	Modeling Language and Java},
+  booktitle = {TAGT '98 Selected papers},
+  publisher = {Springer},
+  year = {2000},
+  volume = {1764},
+  series = {Lecture Notes in Computer Science (LNCS)},
+  pages = {296-309},
+  isbn = {3-540-67203-6},
+  url = {http://dx.doi.org/10.1007/978-3-540-46464-8_21}
+}
+
 @BOOK{Fow99,
   title = {Refactoring: Improving the Design of Existing Code},
   publisher = {Addison-Wesley},
@@ -176,42 +191,6 @@
   address = {Boston, MA, USA},
   isbn = {0-201-48567-2},
   keywords = {Bad Smells, Refactoring}
-}
-
-@TECHREPORT{GB03,
-  author = {Giese, Holger and Burmester, Sven},
-  title = {Real-Time Statechart Semantics},
-  institution = {Software Engineering Group, University of Paderborn},
-  year = {2003},
-  number = {tr-ri-03-239},
-  address = {Germany}
-}
-
-@INPROCEEDINGS{GBD07,
-  author = {Geiger, Leif and Buchmann, Thomas and Dotor, Alexander},
-  title = {{EMF} Code Generation with {Fujaba}},
-  booktitle = {Proceedings of the 5th International Fujaba Days},
-  year = {2007},
-  location = {Kassel, Germany}
-}
-
-@MASTERSTHESIS{Gei02,
-  author = {Geiger, Leif},
-  title = {Design Level Debugging mit {Fujaba}},
-  school = {Technical University of Braunschweig},
-  year = {2002},
-  type = {Bachelor's thesis}
-}
-
-@INPROCEEDINGS{GHH+07b,
-  author = {Giese, Holger and Henkler, Stefan and Hirsch, Martin and Klein, Florian
-	and Spijkerman, Michael},
-  title = {Monitoring of Structural and Temporal Properties},
-  booktitle = {Proc. of the 5th International Fujaba Days 2007, Kassel, Germany},
-  year = {2007},
-  editor = {Geiger, Leif and Giese, Holger and Z{\"{u}}ndorf, Albert},
-  pages = {5--9},
-  month = sep
 }
 
 @BOOK{GHJV95,
@@ -224,29 +203,20 @@
   isbn = {0201633612}
 }
 
-@INPROCEEDINGS{GHS09,
-  author = {Giese, Holger and Hildebrandt, Stephan and Seibel, Andreas},
-  title = {Improved Flexibility and Scalability by Interpreting Story Diagrams},
-  booktitle = {Proceedings of the 8th International Workshop on Graph Transformation
-	and Visual Modeling Techniques (GT-VMT '09)},
-  year = {2009},
-  volume = {18},
-  series = {Electronic Communications of the EASST},
-  url = {http://journal.ub.tu-berlin.de/eceasst/article/view/268/252}
+@MASTERSTHESIS{Gei02,
+  author = {Geiger, Leif},
+  title = {Design Level Debugging mit {Fujaba}},
+  school = {Technical University of Braunschweig},
+  year = {2002},
+  type = {Bachelor's thesis}
 }
 
-@INPROCEEDINGS{GK06a,
-  author = {Giese, Holger and Klein, Florian},
-  title = {Beyond Story Patterns: Story Decision Diagrams},
-  booktitle = {Proc. of the 4th International Fujaba Days 2006, Bayreuth, Germany},
-  year = {2006}
-}
-
-@TECHREPORT{GK06,
-  author = {Giese, Holger and Klein, Florian},
-  title = {Integrated Visual Specification of Structural and Temporal Properties},
-  institution = {Computer Science Department, University of Paderborn},
-  year = {2006}
+@INPROCEEDINGS{GBD07,
+  author = {Geiger, Leif and Buchmann, Thomas and Dotor, Alexander},
+  title = {{EMF} Code Generation with {Fujaba}},
+  booktitle = {Proceedings of the 5th International Fujaba Days},
+  year = {2007},
+  location = {Kassel, Germany}
 }
 
 @INPROCEEDINGS{GSR05,
@@ -262,24 +232,6 @@
   publisher = {University of Paderborn}
 }
 
-@INPROCEEDINGS{GZ02,
-  author = {Geiger, Leif and Z{\"{u}}ndorf, Albert},
-  title = {Design Level Debugging with {Fujaba}},
-  booktitle = {International Workshop on Graph-Based Tools (GraBaTs), Barcelona,
-	Spain},
-  year = {2002}
-}
-
-@ARTICLE{GZ06,
-  author = {Leif Geiger and Albert Z{\"u}ndorf},
-  title = {{eDOBS} - Graphical Debugging for {Eclipse}},
-  journal = {ECEASST},
-  year = {2006},
-  volume = {1},
-  bibsource = {DBLP, http://dblp.uni-trier.de},
-  ee = {http://eceasst.cs.tu-berlin.de/index.php/eceasst/article/view/84}
-}
-
 @ARTICLE{GZ10,
   author = {Leif Geiger and Albert Z{\"u}ndorf},
   title = {Fujaba case studies for {GraBaTs} 2008: lessons learned},
@@ -292,51 +244,91 @@
   ee = {http://dx.doi.org/10.1007/s10009-010-0152-z}
 }
 
-@INCOLLECTION{HE11,
-  author = {Horn, Tassilo and Ebert, J{\"u}rgen},
-  title = {The {GReTL} Transformation Language},
-  booktitle = {Theory and Practice of Model Transformations},
-  publisher = {Springer Berlin / Heidelberg},
-  year = {2011},
-  editor = {Cabot, Jordi and Visser, Eelco},
-  volume = {6707},
-  series = {Lecture Notes in Computer Science},
-  pages = {183-197},
-  affiliation = {Institute for Software Technology, University Koblenz-Landau, Germany},
-  isbn = {978-3-642-21731-9},
-  keyword = {Computer Science}
+@ARTICLE{GZ06,
+  author = {Leif Geiger and Albert Z{\"u}ndorf},
+  title = {{eDOBS} - Graphical Debugging for {Eclipse}},
+  journal = {ECEASST},
+  year = {2006},
+  volume = {1},
+  bibsource = {DBLP, http://dblp.uni-trier.de},
+  ee = {http://eceasst.cs.tu-berlin.de/index.php/eceasst/article/view/84}
 }
 
-@INCOLLECTION{henshin,
-  author = {Arendt, Thorsten and Biermann, Enrico and Jurack, Stefan and Krause,
-	Christian and Taentzer, Gabriele},
-  title = {Henshin: Advanced Concepts and Tools for In-Place {EMF} Model Transformations},
-  booktitle = {Model Driven Engineering Languages and Systems},
-  publisher = {Springer Berlin / Heidelberg},
+@INPROCEEDINGS{GZ02,
+  author = {Geiger, Leif and Z{\"{u}}ndorf, Albert},
+  title = {Design Level Debugging with {Fujaba}},
+  booktitle = {International Workshop on Graph-Based Tools (GraBaTs), Barcelona,
+	Spain},
+  year = {2002}
+}
+
+@TECHREPORT{GB03,
+  author = {Giese, Holger and Burmester, Sven},
+  title = {Real-Time Statechart Semantics},
+  institution = {Software Engineering Group, University of Paderborn},
+  year = {2003},
+  number = {tr-ri-03-239},
+  address = {Germany}
+}
+
+@INPROCEEDINGS{GHH+07b,
+  author = {Giese, Holger and Henkler, Stefan and Hirsch, Martin and Klein, Florian
+	and Spijkerman, Michael},
+  title = {Monitoring of Structural and Temporal Properties},
+  booktitle = {Proc. of the 5th International Fujaba Days 2007, Kassel, Germany},
+  year = {2007},
+  editor = {Geiger, Leif and Giese, Holger and Z{\"{u}}ndorf, Albert},
+  pages = {5--9},
+  month = sep
+}
+
+@INPROCEEDINGS{GHS09,
+  author = {Giese, Holger and Hildebrandt, Stephan and Seibel, Andreas},
+  title = {Improved Flexibility and Scalability by Interpreting Story Diagrams},
+  booktitle = {Proceedings of the 8th International Workshop on Graph Transformation
+	and Visual Modeling Techniques (GT-VMT '09)},
+  year = {2009},
+  volume = {18},
+  series = {Electronic Communications of the EASST},
+  url = {http://journal.ub.tu-berlin.de/eceasst/article/view/268/252}
+}
+
+@TECHREPORT{GK06,
+  author = {Giese, Holger and Klein, Florian},
+  title = {Integrated Visual Specification of Structural and Temporal Properties},
+  institution = {Computer Science Department, University of Paderborn},
+  year = {2006}
+}
+
+@INPROCEEDINGS{GK06a,
+  author = {Giese, Holger and Klein, Florian},
+  title = {Beyond Story Patterns: Story Decision Diagrams},
+  booktitle = {Proc. of the 4th International Fujaba Days 2006, Bayreuth, Germany},
+  year = {2006}
+}
+
+@MANUAL{UML23,
+  title = {Unified Modeling Language (UML) 2.3 Superstructure Specification},
+  author = {Object Management Group},
+  month = may,
   year = {2010},
-  volume = {6394},
-  series = {Lecture Notes in Computer Science},
-  pages = {121-135},
-  affiliation = {Philipps-Universität Marburg, Germany}
+  note = {Document formal/2010-05-05},
+  url = {http://www.omg.org/spec/UML/2.3/}
 }
 
-@INPROCEEDINGS{henshin2,
-  author = {Enrico Biermann and Claudia Ermel and Johann Schmidt and Angeline
-	Warning},
-  title = {Visual Modeling of Controlled {EMF} Model Transformation using {H}enshin},
-  booktitle = {Proceedings of the 4th International Workshop on Graph-Based Tools
-	(GraBaTs 2010)},
-  year = {2010}
+@MANUAL{MOF05,
+  title = {Meta Object Facility (MOF) 2.0 Core Specification},
+  author = {Object Management Group},
+  year = {2005}
 }
 
-@MASTERSTHESIS{Hol08,
-  author = {Holtmann, J{\"{o}}rg},
-  title = {Graphtransformationen f{\"{u}}r komponentenbasierte {S}oftwarearchitekturen},
-  school = {University of Paderborn},
-  year = {2008},
-  type = {Diplomarbeit},
-  month = apr,
-  language = {german}
+@TECHREPORT{HH11b,
+  author = {C. Heinzemann AND S. Henkler},
+  title = {Timed Story Driven Modeling},
+  institution = {Software Engineering Group, Heinz Nixdorf Institute},
+  year = {2011},
+  owner = {Jan Rieke},
+  timestamp = {2012-01-05}
 }
 
 @INPROCEEDINGS{HRvD+11,
@@ -378,6 +370,42 @@
   tags = {transformation system, model transformation}
 }
 
+@MASTERSTHESIS{Hol08,
+  author = {Holtmann, J{\"{o}}rg},
+  title = {Graphtransformationen f{\"{u}}r komponentenbasierte {S}oftwarearchitekturen},
+  school = {University of Paderborn},
+  year = {2008},
+  type = {Diplomarbeit},
+  month = apr,
+  language = {german}
+}
+
+@INCOLLECTION{HE11,
+  author = {Horn, Tassilo and Ebert, J{\"u}rgen},
+  title = {The {GReTL} Transformation Language},
+  booktitle = {Theory and Practice of Model Transformations},
+  publisher = {Springer Berlin / Heidelberg},
+  year = {2011},
+  editor = {Cabot, Jordi and Visser, Eelco},
+  volume = {6707},
+  series = {Lecture Notes in Computer Science},
+  pages = {183-197},
+  affiliation = {Institute for Software Technology, University Koblenz-Landau, Germany},
+  isbn = {978-3-642-21731-9},
+  keyword = {Computer Science}
+}
+
+@INPROCEEDINGS{JZ98,
+  author = {J. H. Jahnke AND A. Z{\"u}ndorf},
+  title = {Specification and Implementation of a Distributed Planning and Information
+	System for Courses based on Story Driven Modeling},
+  booktitle = {Proc. of 9th International Workshop on Software Specification and
+	Design, Ise-Shima, Japan},
+  year = {1998},
+  owner = {Jan Rieke},
+  timestamp = {2012-01-05}
+}
+
 @INPROCEEDINGS{JZ97,
   author = {Jahnke, Jens H. and Z{\"{u}}ndorf, Albert},
   title = {Rewriting poor Design Patterns by good Design Patterns},
@@ -393,14 +421,25 @@
 	static analysis}
 }
 
-@INPROCEEDINGS{KG07a,
-  author = {Klein, Florian and Giese, Holger},
-  title = {Joint Structural and Temporal Property Specification using Timed
-	Story Sequence Diagrams},
-  booktitle = {Proc. of 10th International Conference on Fundamental Approaches
-	to Software Engineering (FASE) 2007, held as part of ETAPS 2007,
-	Lisboa, Portugal, March 24-April 1, 2007},
-  year = {2007}
+@ARTICLE{ATL,
+  author = {Frederic Jouault and Freddy Allilaire and Jean B\'{e}zivin and Ivan
+	Kurtev},
+  title = {{ATL}: A model transformation tool},
+  journal = {Science of Computer Programming},
+  year = {2008},
+  volume = {72},
+  pages = {31 - 39},
+  number = {1-2},
+  doi = {DOI: 10.1016/j.scico.2007.08.002},
+  issn = {0167-6423}
+}
+
+@INPROCEEDINGS{mola,
+  author = {Kalnins, A. and Barzdins, J. and Celms, E.},
+  title = {Model Transformation Language {MOLA}},
+  booktitle = {Proceedings of Model-Driven Architecture: Foundations and Applications
+	(MDAFA) 2004},
+  year = {2004}
 }
 
 @INPROCEEDINGS{Klar07,
@@ -419,6 +458,16 @@
   numpages = {10}
 }
 
+@INPROCEEDINGS{KG07a,
+  author = {Klein, Florian and Giese, Holger},
+  title = {Joint Structural and Temporal Property Specification using Timed
+	Story Sequence Diagrams},
+  booktitle = {Proc. of 10th International Conference on Fundamental Approaches
+	to Software Engineering (FASE) 2007, held as part of ETAPS 2007,
+	Lisboa, Portugal, March 24-April 1, 2007},
+  year = {2007}
+}
+
 @MASTERSTHESIS{Kle99,
   author = {Klein, Thomas},
   title = {{R}ekonstruktion von {UML}-{A}ktivit{\"{a}}ts- und {K}ollaborationsdiagrammen
@@ -430,6 +479,13 @@
   key = {Story diagrams}
 }
 
+@TECHREPORT{KNNZ99,
+  author = {Torsten Klein AND Ulrich Nickel AND J{\"o}rg Niere AND Albert Z{\"u}ndorf},
+  title = {{From UML to Java And Back Again}},
+  institution = {University of Paderborn},
+  year = {1999}
+}
+
 @INPROCEEDINGS{KNNZ00,
   author = {K{\"{o}}hler, Hans J. and Nickel, Ulrich A. and Niere, J{\"{o}}rg
 	and Z{\"{u}}ndorf, Albert},
@@ -439,13 +495,6 @@
   year = {2000},
   pages = {241-251},
   publisher = {ACM Press}
-}
-
-@techreport{KNNZ99,
-  author = {Torsten Klein AND Ulrich Nickel AND J{\"o}rg Niere AND Albert Z{\"u}ndorf},
-  title = {{From UML to Java And Back Again}},
-  institution = {University of Paderborn},
-  year = {1999}
 }
 
 @ARTICLE{Kue06,
@@ -470,12 +519,30 @@
   url = {http://ubdok.uni-paderborn.de/servlets/DocumentServlet?id=11678}
 }
 
-@INPROCEEDINGS{mola,
-  author = {Kalnins, A. and Barzdins, J. and Celms, E.},
-  title = {Model Transformation Language {MOLA}},
-  booktitle = {Proceedings of Model-Driven Architecture: Foundations and Applications
-	(MDAFA) 2004},
-  year = {2004}
+@ARTICLE{MG08,
+  author = {Bart Meyers and Pieter Van Gorp},
+  title = {Towards a Hybrid Transformation Language: Implicit and Explicit Rule
+	Scheduling in Story Diagrams},
+  journal = {Sixth International Fujaba Days},
+  year = {2008},
+  abstract = {Transformation rules can be controlled explicitly using language constructs
+	such as a loop or a conditional. This approach is realized in Fujaba{\textquoteright}s
+	Story Diagrams, in VMTS, MOLA and Progres. Alternatively, transformation
+	rules can be controlled implicitly using a xed strategy. This approach
+	is realized in AGG and AToM3. When modeling transformation systems
+	using one approach exclusively, particular aspects could have been
+	expressed more intuitively using the other approach. Unfortunately,
+	most (if not all) transformation languages do not enable one to model
+	the control of some rules explicitly while leaving the control of
+	other rules unspecied. Therefore, this paper proposes the extension
+	of Story Diagrams with support for implicit rule scheduling. By relying
+	on a UML prole and on higher order transformations, the language
+	construct is not only executable on the MoTMoT tool, but on any tool
+	that supports the standard UML syntax for Fujaba{\textquoteright}s
+	Story Diagrams.},
+  address = {Dresden (Germany)},
+  owner = {Jan Rieke},
+  timestamp = {2012-01-04}
 }
 
 @ARTICLE{Moo09,
@@ -536,11 +603,25 @@
   location = {Orlando, Florida, USA}
 }
 
+@MISC{QVT,
+  author = {{Object Management Group}},
+  title = {{Query/View/Transformation (QVT), Version 1.1}},
+  year = {2011},
+  note = {OMG document formal/2011-01-01}
+}
+
 @MISC{OCL,
   author = {{Object Management Group}},
   title = {{Object Constraint Language (OCL), Version 2.2}},
   year = {2010},
   note = {OMG document formal/2010-02-01}
+}
+
+@MISC{UML,
+  author = {{Object Management Group}},
+  title = {{Unified Modeling Language (UML), Specification, Version 1.4}},
+  year = {2001},
+  note = {OMG document formal/2001-09-67}
 }
 
 @INCOLLECTION{PTH+09,
@@ -556,17 +637,16 @@
   pages = {309-315}
 }
 
-@MISC{QBench,
-  title = {{QBench} Project},
-  year = {2006},
-  note = {http://www.fzi.de/index.php/de/forschung/forschungsbereiche/se/ projekte/abgeschlossene-projekte/135-projekt-qbench}
-}
-
-@MISC{QVT,
-  author = {{Object Management Group}},
-  title = {{Query/View/Transformation (QVT), Version 1.1}},
-  year = {2011},
-  note = {OMG document formal/2011-01-01}
+@MASTERSTHESIS{Rei07,
+  author = {Reineke, Peter},
+  title = {Model checking von {S}tory-{D}iagrammen mittels {GROOVE}},
+  school = {University of Paderborn},
+  year = {2007},
+  type = {Bachelorarbeit},
+  month = jul,
+  language = {german},
+  owner = {Jan Rieke},
+  timestamp = {2012-01-04}
 }
 
 @INCOLLECTION{Ren04a,
@@ -580,15 +660,42 @@
   pages = {479--485}
 }
 
-@BOOK{Roz97,
-  title = {Handbook of Graph Grammars and Computing by Graph Transformation:
-	Vol. I. Foundations},
-  publisher = {World Scientific Publishing Co., Inc.},
-  year = {1997},
-  editor = {Rozenberg, Grzegorz},
-  comment = {Basic definitions on graph transformations and the graphs used for
-	them.},
-  isbn = {98-102288-48}
+@INPROCEEDINGS{SWZ95,
+  author = {Sch\"{u}rr, Andy and Winter, Andreas J. and Z\"{u}ndorf, Albert},
+  title = {Graph Grammar Engineering with PROGRES},
+  booktitle = {Proceedings of the 5th European Software Engineering Conference},
+  year = {1995},
+  pages = {219--234},
+  address = {London, UK},
+  publisher = {Springer-Verlag},
+  acmid = {651492},
+  isbn = {3-540-60406-5},
+  numpages = {16},
+  owner = {Jan Rieke},
+  timestamp = {2012-01-05},
+  url = {http://dl.acm.org/citation.cfm?id=645385.651492}
+}
+
+@INPROCEEDINGS{Sch94,
+  author = {Sch{\"{u}}rr, Andy},
+  title = {Specification of Graph Translators with Triple Graph Grammars},
+  booktitle = {20th International Workshop on Graph-Theoretic Concepts in Computer
+	Science},
+  year = {1994},
+  volume = {903},
+  series = {Lecture Notes in Computer Science (LNCS)},
+  pages = {151--163},
+  publisher = {Springer}
+}
+
+@PHDTHESIS{Sta08,
+  author = {Stallmann, Florian},
+  title = {A Model-Driven Approach to Multi-Agent System Design},
+  school = {Software Engineering Group, University of Paderborn},
+  year = {2008},
+  month = apr,
+  owner = {Jan Rieke},
+  timestamp = {2012-01-12}
 }
 
 @BOOK{SBP+08,
@@ -602,16 +709,13 @@
   isbn = {978-0321331885}
 }
 
-@INPROCEEDINGS{Sch94,
-  author = {Sch{\"{u}}rr, Andy},
-  title = {Specification of Graph Translators with Triple Graph Grammars},
-  booktitle = {20th International Workshop on Graph-Theoretic Concepts in Computer
-	Science},
-  year = {1994},
-  volume = {903},
-  series = {Lecture Notes in Computer Science (LNCS)},
-  pages = {151--163},
-  publisher = {Springer}
+@ARTICLE{SZG07,
+  author = {Mirko St{\"o}lzel and Steffen Zschaler and Leif Geiger},
+  title = {Integrating {OCL} and Model Transformations in {Fujaba}},
+  journal = {ECEASST},
+  year = {2007},
+  ee = {http://journal.ub.tu-berlin.de/eceasst/article/view/41},
+  issn = {1863-2122}
 }
 
 @INPROCEEDINGS{SKS+07,
@@ -642,84 +746,6 @@
   location = {Paderborn}
 }
 
-@ARTICLE{SZG07,
-  author = {Mirko St{\"o}lzel and Steffen Zschaler and Leif Geiger},
-  title = {Integrating {OCL} and Model Transformations in {Fujaba}},
-  journal = {ECEASST},
-  year = {2007},
-  ee = {http://journal.ub.tu-berlin.de/eceasst/article/view/41},
-  issn = {1863-2122}
-}
-
-@INPROCEEDINGS{TMG06,
-  author = {Tichy, Matthias and Meyer, Matthias and Giese, Holger},
-  title = {On Semantic Issues in Story Diagrams},
-  booktitle = {Proceedings of the 4th International Fujaba Days},
-  year = {2006},
-  location = {Bayreuth, Germany}
-}
-
-@PROCEEDINGS{TTC2010,
-  title = {Transformation Tool Contest 2010},
-  year = {2010},
-  editor = {Steffen Mazanek and Arend Rensink and Pieter van Gorp},
-  address = {Malaga, Spain}
-}
-
-@MISC{UML,
-  author = {{Object Management Group}},
-  title = {{Unified Modeling Language (UML), Specification, Version 1.4}},
-  year = {2001},
-  note = {OMG document formal/2001-09-67}
-}
-
-@ARTICLE{viatra,
-  author = {Daniel Varr\'{o} and Andras Balogh},
-  title = {The model transformation language of the {VIATRA2} framework},
-  journal = {Science of Computer Programming},
-  year = {2007},
-  volume = {68},
-  pages = {214 - 234},
-  number = {3},
-  note = {Special Issue on Model Transformation}
-}
-
-@MISC{xpand,
-  author = {{Eclipse Modeling Project}},
-  title = {{Model To Text (M2T) -- Xpand}},
-  note = {http://www.eclipse.org/modeling/m2t/?project=xpand}
-}
-
-@TECHREPORT{ZSW99,
-  author = {Z{\"{u}}ndorf, Albert and Sch{\"{u}}rr, Andy and Winter, Andreas},
-  title = {Story Driven Modeling},
-  institution = {Universitiy of Paderborn},
-  year = {1999},
-  number = {tr-ri-99-211},
-  address = {Paderborn, Germany},
-  url = {http://www.se.eecs.uni-kassel.de/fileadmin/se/publications/tr-ri-99-211.pdf}
-}
-
-@PHDTHESIS{Zun01,
-  author = {Z{\"{u}}ndorf, Albert},
-  title = {Rigorous Object Oriented Software Development},
-  school = {Software Engineering Group, University of Paderborn},
-  year = {2001},
-  type = {Habilitation}
-}
-
-@MASTERSTHESIS{Rei07,
-  author = {Reineke, Peter},
-  title = {Model checking von {S}tory-{D}iagrammen mittels {GROOVE}},
-  school = {University of Paderborn},
-  year = {2007},
-  type = {Bachelorarbeit},
-  month = jul,
-  language = {german},
-  owner = {Jan Rieke},
-  timestamp = {2012-01-04}
-}
-
 @INPROCEEDINGS{THH+08,
   author = {Tichy, Matthias and Henkler, Stefan and Holtmann, J{\"{o}}rg and
 	Oberth{\"{u}}r, Simon},
@@ -734,39 +760,23 @@
   timestamp = {2012-01-04}
 }
 
-@ARTICLE{MG08,
-  author = {Bart Meyers and Pieter Van Gorp},
-  title = {Towards a Hybrid Transformation Language: Implicit and Explicit Rule
-	Scheduling in Story Diagrams},
-  journal = {Sixth International Fujaba Days},
-  year = {2008},
-  abstract = {Transformation rules can be controlled explicitly using language constructs
-	such as a loop or a conditional. This approach is realized in Fujaba{\textquoteright}s
-	Story Diagrams, in VMTS, MOLA and Progres. Alternatively, transformation
-	rules can be controlled implicitly using a xed strategy. This approach
-	is realized in AGG and AToM3. When modeling transformation systems
-	using one approach exclusively, particular aspects could have been
-	expressed more intuitively using the other approach. Unfortunately,
-	most (if not all) transformation languages do not enable one to model
-	the control of some rules explicitly while leaving the control of
-	other rules unspecied. Therefore, this paper proposes the extension
-	of Story Diagrams with support for implicit rule scheduling. By relying
-	on a UML prole and on higher order transformations, the language
-	construct is not only executable on the MoTMoT tool, but on any tool
-	that supports the standard UML syntax for Fujaba{\textquoteright}s
-	Story Diagrams.},
-  address = {Dresden (Germany)},
-  owner = {Jan Rieke},
-  timestamp = {2012-01-04}
+@INPROCEEDINGS{TMG06,
+  author = {Tichy, Matthias and Meyer, Matthias and Giese, Holger},
+  title = {On Semantic Issues in Story Diagrams},
+  booktitle = {Proceedings of the 4th International Fujaba Days},
+  year = {2006},
+  location = {Bayreuth, Germany}
 }
 
-@TECHREPORT{HH11b,
-  author = {C. Heinzemann AND S. Henkler},
-  title = {Timed Story Driven Modeling},
-  institution = {Software Engineering Group, Heinz Nixdorf Institute},
-  year = {2011},
-  owner = {Jan Rieke},
-  timestamp = {2012-01-05}
+@ARTICLE{viatra,
+  author = {Daniel Varr\'{o} and Andras Balogh},
+  title = {The model transformation language of the {VIATRA2} framework},
+  journal = {Science of Computer Programming},
+  year = {2007},
+  volume = {68},
+  pages = {214 - 234},
+  number = {3},
+  note = {Special Issue on Model Transformation}
 }
 
 @MASTERSTHESIS{WW01,
@@ -781,55 +791,54 @@
   timestamp = {2012-01-05}
 }
 
-@INPROCEEDINGS{JZ98,
-  author = {J. H. Jahnke AND A. Z{\"u}ndorf},
-  title = {Specification and Implementation of a Distributed Planning and Information
-	System for Courses based on Story Driven Modeling},
-  booktitle = {Proc. of 9th International Workshop on Software Specification and
-	Design, Ise-Shima, Japan},
-  year = {1998},
+@TECHREPORT{DresdenOCL,
+  author = {Claas Wilke AND Michael Thiele AND Bj�rn Freitag},
+  title = {Dresden {OCL} -- Manual for Installation Use and Development},
+  institution = {TU Dresden},
+  year = {2011},
   owner = {Jan Rieke},
-  timestamp = {2012-01-05}
+  timestamp = {2012.03.21}
 }
 
-@INPROCEEDINGS{SWZ95,
-  author = {Sch\"{u}rr, Andy and Winter, Andreas J. and Z\"{u}ndorf, Albert},
-  title = {Graph Grammar Engineering with PROGRES},
-  booktitle = {Proceedings of the 5th European Software Engineering Conference},
-  year = {1995},
-  pages = {219--234},
-  address = {London, UK},
-  publisher = {Springer-Verlag},
-  acmid = {651492},
-  isbn = {3-540-60406-5},
-  numpages = {16},
-  owner = {Jan Rieke},
-  timestamp = {2012-01-05},
-  url = {http://dl.acm.org/citation.cfm?id=645385.651492}
-}
-
-@MANUAL{MOF05,
-  title = {Meta Object Facility (MOF) 2.0 Core Specification},
-  author = {Object Management Group},
-  year = {2005}
-}
-
-@MANUAL{UML23,
-  title = {Unified Modeling Language (UML) 2.3 Superstructure Specification},
-  author = {Object Management Group},
-  month = may,
-  year = {2010},
-  note = {Document formal/2010-05-05},
-  url = {http://www.omg.org/spec/UML/2.3/}
-}
-
-@PHDTHESIS{Sta08,
-  author = {Stallmann, Florian},
-  title = {A Model-Driven Approach to Multi-Agent System Design},
+@PHDTHESIS{Zun01,
+  author = {Z{\"{u}}ndorf, Albert},
+  title = {Rigorous Object Oriented Software Development},
   school = {Software Engineering Group, University of Paderborn},
-  year = {2008},
-  month = apr,
-  owner = {Jan Rieke},
-  timestamp = {2012-01-12}
+  year = {2001},
+  type = {Habilitation}
+}
+
+@TECHREPORT{ZSW99,
+  author = {Z{\"{u}}ndorf, Albert and Sch{\"{u}}rr, Andy and Winter, Andreas},
+  title = {Story Driven Modeling},
+  institution = {Universitiy of Paderborn},
+  year = {1999},
+  number = {tr-ri-99-211},
+  address = {Paderborn, Germany},
+  url = {http://www.se.eecs.uni-kassel.de/fileadmin/se/publications/tr-ri-99-211.pdf}
+}
+
+@PROCEEDINGS{TTC2010,
+  title = {Transformation Tool Contest 2010},
+  year = {2010},
+  editor = {Steffen Mazanek and Arend Rensink and Pieter van Gorp},
+  address = {Malaga, Spain}
+}
+
+@BOOK{Roz97,
+  title = {Handbook of Graph Grammars and Computing by Graph Transformation:
+	Vol. I. Foundations},
+  publisher = {World Scientific Publishing Co., Inc.},
+  year = {1997},
+  editor = {Rozenberg, Grzegorz},
+  comment = {Basic definitions on graph transformations and the graphs used for
+	them.},
+  isbn = {98-102288-48}
+}
+
+@MISC{QBench,
+  title = {{QBench} Project},
+  year = {2006},
+  note = {http://www.fzi.de/index.php/de/forschung/forschungsbereiche/se/ projekte/abgeschlossene-projekte/135-projekt-qbench}
 }
 
