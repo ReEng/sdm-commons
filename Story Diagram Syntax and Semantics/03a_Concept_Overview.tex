@@ -10,13 +10,13 @@
 %- developed to formalize the description of a software's behavior (UML activity diagrams usually use informal textual descriptions of the tasks to be performed)
 %- motivation: complete specification of a software, structure and behavior, i.e. make the software specification executable (code generation and interpretation)
 
-In model-driven software development, a software model is the key artifact under development.
-It describes the software structure as well as its behavior and 
-can be translated to runnable source code or be interpreted to be executed.
+In model-driven software development, a software model is the key artifact of the development.
+It describes the structure of the software as well as its behavior and 
+can be translated into executable source code or be interpreted to be executed.
 The UML offers notations for the description of the software structure and behavior,
 besides others class diagrams and activity diagrams.
-Since UML activity diagrams use natural language to describe the software's behavior,
-a formal behavioral specification is needed to make the software model executable.
+However, UML activity diagrams use natural language to describe the particular activities, so they are not automatically executable.
+Thus, a formal behavioral specification is needed.
 For that purpose \emph{story diagrams} have been developed \cite{FNTZ00}.
 They refine UML activity diagrams and replace the natural language with a formal language to specify behavior
 and, thus, can be automatically executed.
@@ -28,7 +28,7 @@ and, thus, can be automatically executed.
 
 Story diagrams describe the control flow similar to UML activity diagrams by means of activity nodes and activity edges.
 The behavior of each activity node is described using a graph transformation language called \emph{story patterns}.
-Each activity node embeds a story pattern.
+Each activity node embeds one story pattern.
 A story pattern uses a graphical notation to specify modifications of object structures in object-oriented software systems.
 The modifications are basically creations and removals of objects and their interconnections (links).
 
@@ -39,7 +39,7 @@ The modifications are basically creations and removals of objects and their inte
 To use a simple and familiar notation, story patterns are similar to UML object diagrams.
 A story pattern represents an object structure to be modified and includes annotations specifying which objects and links are to be removed and created.
 Story patterns are a declarative language, since they only specify what to remove and create, but not how and in which order.
-This way the complexity of the behavioral specifications is reduced.
+This way, the complexity of the behavioral specifications is reduced.
 In contrast to the deterministic control flow specified by activity nodes and edges that determine the order of story pattern executions,
 the order of creations and deletions specified by a story pattern is non-deterministic.
 
