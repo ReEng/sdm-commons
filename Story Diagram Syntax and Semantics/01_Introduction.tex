@@ -1,26 +1,34 @@
 \chapter{Introduction (Jan)}
 % Problem Area
-To tackle the complexity of modern technical systems, the engineering of such systems is heavily based on models.
-Models are considered first-class artifacts of the development.
+The high complexity of modern technical systems poses great challenges to the development process of such systems.
+Model-based development approaches are a promising means to tackle this complexity.
+In such a model-based development approach, models are considered first-class artifacts of the development.
 They describe different parts of the system in development, from different viewpoints and on different abstraction levels.
 For instance, models are used to describe the structure and behavior of a software system, improving the overall comprehensibility of the system.
 These models can then be employed to automatically generate code, reducing the risks of implementation errors.
 
-As models evolve during the development process and different models have to be translated into each other and kept consistent, model transformations are a crucial part such a development process.
-Model transformations are used to define in which way models can be changed, e.g., to specify refactoring operations.
+Even if two models have different viewpoints and are used for different purposes, their information may overlap.
+Thus, models have to be translated into each other during such a development process.
+%Moreover, the models evolve during the development.
+To translate between different models and to keep them consistent, model transformations can be applied.
+Model transformations are also used to define in which way models can be changed, e.g., to specify refactoring operations.
 
 Furthermore, model transformations itself can be employed to precisely specify the behavior of a system at run-time.
-If, for example, a system should react to environment changes by reconfiguration, these reconfigurations can be described by model transformations which define how to reconfigure the system.
+If, for example, a system should react to environment changes by reconfiguration, these reconfigurations can be described by model transformations which define how to change the structure of the system.
 They furthermore allow a formal analysis, e.g., to prove that certain properties still hold after applying a transformation.
 
 Story diagrams~\cite{ZSW99,FNTZ00,Zun01} are a powerful visual formalism for specifying model transformation, based on the well-known concept of graph transformation systems.
-They feature declarative parts to specify object patterns which are matched and altered in the source model and combine them with an imperative part to specify the control flow of the transformation execution.
-The concrete syntax of story diagrams extends the concrete syntax of UML activity diagrams.
+They feature declarative parts to specify object patterns which are matched and altered in the source model and combine them with ideas from imperative programming to specify the control flow of the transformation execution.
+The concrete syntax of story diagrams is based on the concrete syntax of UML activity diagrams.
 
 % Problem
-Since their introduction in 1998, several extensions to story diagrams have been proposed.
-Furthermore, some semantic issues have been identified in the original concept~\cite{TMG06}.
-In addition, the main story diagram tool, the Fujaba tool suite, has undergone major redesigns the last years; these redesigns also affected the story diagram implementation.
+Since their introduction in 1998, story diagrams have been successfully applied in a wide range of application scenarios and are used for diverse purposes.
+Furthermore, several extensions to story diagrams have been proposed.
+For instance, Story Decision Diagrams (SDDs) \cite{GK06a} extend story diagrams with features of logics such as quantification to allow expressing complex properties like safety requirements.
+Timed Story Scenario Diagrams (TSSD) \cite{KG07a} are a story-diagram-based notation for the specification of scenarios, integrating structural and temporal aspects.
+
+Besides, some semantic issues have been identified in the original concept~\cite{TMG06}.
+In addition, the main tool for the specification of story diagrams, the Fujaba tool suite, has undergone major redesigns in the last years; these redesigns also affected the story diagram implementation.
 Moreover, new approaches like the Story Diagram Interpreter have emerged.
 
 % Approach
