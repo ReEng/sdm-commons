@@ -4,7 +4,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modeling"
     nsURI="http://ns.storydriven.org/sdm/0.1.0" nsPrefix="sdm">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-    <details key="documentation" value="The modeling package is the root package for the SDM meta-model. It defines several abstract super classes which implement an extension mechanism as well as reoccuring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element."/>
+    <details key="documentation" value="The modeling package is the root package for the story diagram meta-model. It defines several abstract super classes which implement an extension mechanism as well as recurring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element."/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="TypedElement" abstract="true" eSuperTypes="#//ExtendableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -20,7 +20,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExtendableElement" abstract="true" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Abstract base class for the whole SDM model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references."/>
+      <details key="documentation" value="Abstract base class for the whole story diagram model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references."/>
     </eAnnotations>
     <eOperations name="getExtension" ordered="false" lowerBound="1" eType="#//Extension">
       <eParameters name="type" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
@@ -427,6 +427,9 @@
     </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/activities/expressions/0.1.0"
         nsPrefix="sdmae">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This package offers expressions that can be used in activities, e.g., exceptions triggered by activity edges."/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariableExpression" eSuperTypes="#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Represents the value of an exception variable declared as a transition guard (the guard of an activity edge)."/>
@@ -700,6 +703,9 @@
     </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/calls/expressions/0.1.0"
         nsPrefix="sdmce">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This package offers expressions to describe, e.g., method calls and the corresponding arguments."/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="MethodCallExpression" eSuperTypes="#//expressions/Expression #//calls/Invocation">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A MethodCallEpression represents the direct invocation of a method. This can either be a method which is explicitly modeled as an EOperation in a class diagram (referenced by the OperationExtension) or an unmodeled method in an external library (referenced by an OpaqueCallable). Therefore, a MethodCallExpression references either an OperationExtension (indirectly via the callee role between Invocation and Callable) or an OpaqueCallable."/>
@@ -1149,6 +1155,9 @@
     </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://ns.storydriven.org/sdm/patterns/expressions/0.1.0"
         nsPrefix="sdmpe">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This package offers expressions that refer to different kinds of variables like object variables, attributes, etc."/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="AttributeValueExpression" eSuperTypes="#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Represents the value of an object's attribute, e.g. obj.attr for an object obj and an attribute attr."/>
@@ -1199,7 +1208,13 @@
   </eSubpackages>
   <eSubpackages name="templates" nsURI="http://ns.storydriven.org/sdm/templates/0.1.0"
       nsPrefix="sdmt">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package offers classes that enable to define template for story patterns to re-use existing, stucturally similar story patterns in other story patterns. The templates are flexible such that the object variable types can be replaced when a template is used in a certain context."/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="TemplateBinding" eSuperTypes="#//ExtendableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents the binding of a story pattern template's type parameter to a concrete type."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="boundParameter" ordered="false"
           lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bindingExpression" ordered="false"
@@ -1219,6 +1234,9 @@
           lowerBound="1" eType="#//templates/TemplateBinding" eOpposite="#//templates/TemplateBinding/propertyBinding"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TemplateSignature">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class is used to define type parameters for a template that represents a story pattern to be reused. The type parameter is replaced by a concrete type when the template is applied in a story pattern."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="templateBinding" ordered="false"
           upperBound="-1" eType="#//templates/TemplateBinding" containment="true"
           eOpposite="#//templates/TemplateBinding/template"/>

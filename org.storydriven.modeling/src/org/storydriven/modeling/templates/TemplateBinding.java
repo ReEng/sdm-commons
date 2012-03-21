@@ -14,6 +14,10 @@ import org.storydriven.modeling.expressions.Expression;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Template Binding</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This class represents the binding of a story pattern template's type parameter to a concrete type.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

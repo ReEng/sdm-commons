@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Extendable Element</b></em>'. <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Abstract base class for the whole SDM model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references.
+ * Abstract base class for the whole story diagram model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references.
  * <!-- end-model-doc -->
  *
  * <p>

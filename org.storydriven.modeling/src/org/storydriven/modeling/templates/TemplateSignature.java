@@ -14,6 +14,10 @@ import org.storydriven.modeling.patterns.StoryPattern;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Template Signature</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This class is used to define type parameters for a template that represents a story pattern to be reused. The type parameter is replaced by a concrete type when the template is applied in a story pattern.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

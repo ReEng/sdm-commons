@@ -255,6 +255,11 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
    {
       String source = "http://www.eclipse.org/emf/2002/GenModel";
       addAnnotation(
+         this,
+         source,
+         new String[] {"documentation",
+               "This package offers expressions that can be used in activities, e.g., exceptions triggered by activity edges."});
+      addAnnotation(
          exceptionVariableExpressionEClass,
          source,
          new String[] {"documentation",

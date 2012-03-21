@@ -82,13 +82,13 @@
     </nameVisual>
     <bendpoints xmi:id="_O3sSkLL0Ed-uk56s-ldeog" sourceX="160" targetX="222" targetY="-260"/>
     <bendpoints xmi:id="_O3sSkbL0Ed-uk56s-ldeog" sourceX="160" sourceY="260" targetX="222"/>
-    <sourceRole xmi:id="_vj_aMbKzEd-uk56s-ldeog" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#f59aeab8-59c7-4a35-bd9b-c05bda92d924" comments="_bdO_YG6dEeGe68i8O7GmYA" targetConnectionVisual="_bdO_YW6dEeGe68i8O7GmYA" name="incomingLink" navigable="true">
+    <sourceRole xmi:id="_vj_aMbKzEd-uk56s-ldeog" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#f59aeab8-59c7-4a35-bd9b-c05bda92d924" name="incomingLink" navigable="true">
       <modelElement href="sdm.uml#f59aeab8-59c7-4a35-bd9b-c05bda92d924"/>
       <visualProperties xmi:id="_wA7N0LKzEd-uk56s-ldeog" position="5.0,-42.0"/>
       <visibility xmi:id="_vkB2c7KzEd-uk56s-ldeog" label="+"/>
       <cardinality xmi:id="_vkB2crKzEd-uk56s-ldeog" label="*" max="-1"/>
     </sourceRole>
-    <targetRole xmi:id="_vj_aMLKzEd-uk56s-ldeog" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#29ee7390-8b89-420e-99c9-e1179f7cfd54" comments="_KJcjYG6dEeGe68i8O7GmYA" targetConnectionVisual="_KJdKcG6dEeGe68i8O7GmYA" name="target" navigable="true">
+    <targetRole xmi:id="_vj_aMLKzEd-uk56s-ldeog" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#29ee7390-8b89-420e-99c9-e1179f7cfd54" name="target" navigable="true">
       <modelElement href="sdm.uml#29ee7390-8b89-420e-99c9-e1179f7cfd54"/>
       <visualProperties xmi:id="_wBCikLKzEd-uk56s-ldeog" position="87.0,-42.0"/>
       <visibility xmi:id="_vkB2cbKzEd-uk56s-ldeog" label="+"/>
@@ -107,7 +107,7 @@
       <visibility xmi:id="_vkBPYbKzEd-uk56s-ldeog" label="+"/>
       <cardinality xmi:id="_vkBPYLKzEd-uk56s-ldeog" label="*" max="-1"/>
     </sourceRole>
-    <targetRole xmi:id="_vj-zIbKzEd-uk56s-ldeog" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#5e3eecac-3d82-4765-bec0-c98627eefb91" comments="_Q7bNgG6dEeGe68i8O7GmYA" targetConnectionVisual="_Q7bNgW6dEeGe68i8O7GmYA" name="source" navigable="true">
+    <targetRole xmi:id="_vj-zIbKzEd-uk56s-ldeog" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#5e3eecac-3d82-4765-bec0-c98627eefb91" name="source" navigable="true">
       <modelElement href="sdm.uml#5e3eecac-3d82-4765-bec0-c98627eefb91"/>
       <visualProperties xmi:id="_wBDwsbKzEd-uk56s-ldeog" position="7.0,5.0"/>
       <visibility xmi:id="_vkBPY7KzEd-uk56s-ldeog" label="+"/>
@@ -120,7 +120,7 @@
       <visualProperties xmi:id="_wA1uQLKzEd-uk56s-ldeog" position="114.0,-15.0"/>
     </nameVisual>
     <bendpoints xmi:id="_d5v2sLNbEd-vJ9Qpen_Iuw" sourceY="145" targetX="-371"/>
-    <sourceRole xmi:id="_vmIvQrKzEd-uk56s-ldeog" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9" comments="_2q0ngG6cEeGe68i8O7GmYA" targetConnectionVisual="_2q1OkG6cEeGe68i8O7GmYA" name="firstLinkConstraint" navigable="true">
+    <sourceRole xmi:id="_vmIvQrKzEd-uk56s-ldeog" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9" name="firstLinkConstraint" navigable="true">
       <modelElement href="sdm.uml#1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9"/>
       <visualProperties xmi:id="_wA2VULKzEd-uk56s-ldeog" position="2.0,23.0"/>
       <visibility xmi:id="_vmLLgLKzEd-uk56s-ldeog" label="+"/>
@@ -139,7 +139,7 @@
       <visualProperties xmi:id="_wBAtYbKzEd-uk56s-ldeog" position="116.0,2.0"/>
     </nameVisual>
     <bendpoints xmi:id="_d5sMUbNbEd-vJ9Qpen_Iuw" sourceY="149" targetX="-375"/>
-    <sourceRole xmi:id="_vmIIMbKzEd-uk56s-ldeog" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#14426f7e-673a-4457-ab0e-c96c45d95a78" comments="_x10AYG6cEeGe68i8O7GmYA" targetConnectionVisual="_x10AYW6cEeGe68i8O7GmYA" name="secondLinkConstraint" navigable="true">
+    <sourceRole xmi:id="_vmIIMbKzEd-uk56s-ldeog" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#14426f7e-673a-4457-ab0e-c96c45d95a78" name="secondLinkConstraint" navigable="true">
       <modelElement href="sdm.uml#14426f7e-673a-4457-ab0e-c96c45d95a78"/>
       <visualProperties xmi:id="_wBFl4LKzEd-uk56s-ldeog" position="-91.0,24.0"/>
       <visibility xmi:id="_vmJ9YbKzEd-uk56s-ldeog" label="+"/>
@@ -162,7 +162,7 @@
     <nameVisual xmi:id="_vo5vYLKzEd-uk56s-ldeog" text="ContainsVariables">
       <visualProperties xmi:id="_wA704LKzEd-uk56s-ldeog" position="-43.0,-9.0"/>
     </nameVisual>
-    <sourceRole xmi:id="_vo6WcLKzEd-uk56s-ldeog" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#97f7e21a-6cb3-4e71-a689-faf97d6546e6" comments="_ijpBYG6dEeGe68i8O7GmYA" targetConnectionVisual="_ijpocG6dEeGe68i8O7GmYA" name="pattern" navigable="true">
+    <sourceRole xmi:id="_vo6WcLKzEd-uk56s-ldeog" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#97f7e21a-6cb3-4e71-a689-faf97d6546e6" name="pattern" navigable="true">
       <modelElement href="sdm.uml#97f7e21a-6cb3-4e71-a689-faf97d6546e6"/>
       <visualProperties xmi:id="_wA28YLKzEd-uk56s-ldeog" position="7.0,5.0"/>
       <visibility xmi:id="_vo8LorKzEd-uk56s-ldeog" label="+"/>
@@ -2179,12 +2179,12 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_p_LtQG6aEeGe68i8O7GmYA" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_N9vw4W6cEeGe68i8O7GmYA" sourceItem="_N9vw4G6cEeGe68i8O7GmYA" targetItem="_vmIvQ7KzEd-uk56s-ldeog"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_iJ4TAW6cEeGe68i8O7GmYA" sourceItem="_iJ4TAG6cEeGe68i8O7GmYA" targetItem="_vmIvQLKzEd-uk56s-ldeog"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_x10AYW6cEeGe68i8O7GmYA" sourceItem="_x10AYG6cEeGe68i8O7GmYA" targetItem="_vmIIMbKzEd-uk56s-ldeog"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2q1OkG6cEeGe68i8O7GmYA" sourceItem="_2q0ngG6cEeGe68i8O7GmYA" targetItem="_vmIvQrKzEd-uk56s-ldeog"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_KJdKcG6dEeGe68i8O7GmYA" sourceItem="_KJcjYG6dEeGe68i8O7GmYA" targetItem="_vj_aMLKzEd-uk56s-ldeog"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_Q7bNgW6dEeGe68i8O7GmYA" sourceItem="_Q7bNgG6dEeGe68i8O7GmYA" targetItem="_vj-zIbKzEd-uk56s-ldeog"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_bdO_YW6dEeGe68i8O7GmYA" sourceItem="_bdO_YG6dEeGe68i8O7GmYA" targetItem="_vj_aMbKzEd-uk56s-ldeog"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_ijpocG6dEeGe68i8O7GmYA" sourceItem="_ijpBYG6dEeGe68i8O7GmYA" targetItem="_vo6WcLKzEd-uk56s-ldeog"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_x10AYW6cEeGe68i8O7GmYA" sourceItem="_x10AYG6cEeGe68i8O7GmYA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2q1OkG6cEeGe68i8O7GmYA" sourceItem="_2q0ngG6cEeGe68i8O7GmYA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_KJdKcG6dEeGe68i8O7GmYA" sourceItem="_KJcjYG6dEeGe68i8O7GmYA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_Q7bNgW6dEeGe68i8O7GmYA" sourceItem="_Q7bNgG6dEeGe68i8O7GmYA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_bdO_YW6dEeGe68i8O7GmYA" sourceItem="_bdO_YG6dEeGe68i8O7GmYA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_ijpocG6dEeGe68i8O7GmYA" sourceItem="_ijpBYG6dEeGe68i8O7GmYA"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_qIpq8W6dEeGe68i8O7GmYA" sourceItem="_qIpq8G6dEeGe68i8O7GmYA" targetItem="_xI0T5rK8Ed-uk56s-ldeog"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_9BrmcG6dEeGe68i8O7GmYA" sourceItem="_9Bq_YG6dEeGe68i8O7GmYA" targetItem="_vrRG4LKzEd-uk56s-ldeog"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_D4iJgG6eEeGe68i8O7GmYA" sourceItem="_D4hicG6eEeGe68i8O7GmYA" targetItem="_xI0T47K8Ed-uk56s-ldeog"/>
@@ -2193,6 +2193,30 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_3SARYG6eEeGe68i8O7GmYA" sourceItem="_3R_qUG6eEeGe68i8O7GmYA" targetItem="_vo36MbKzEd-uk56s-ldeog"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_g9J50G6fEeGe68i8O7GmYA" sourceItem="_g9JSwG6fEeGe68i8O7GmYA" targetItem="_vo36MLKzEd-uk56s-ldeog"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_tOJKUG6fEeGe68i8O7GmYA" sourceItem="_tOIjQG6fEeGe68i8O7GmYA" targetItem="_vo5vYbKzEd-uk56s-ldeog"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_l5tBEHM5EeGfVbRN8qiL7A" enclosingItem="_ZYlZ8LbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_l5tBEXM5EeGfVbRN8qiL7A" enclosingItem="_ZYlZ8LbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_l5tBEnM5EeGfVbRN8qiL7A" enclosingItem="_ZYlZ8LbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_l5tBE3M5EeGfVbRN8qiL7A" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_l5tBFHM5EeGfVbRN8qiL7A" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_l5tBFXM5EeGfVbRN8qiL7A" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_l5tBFnM5EeGfVbRN8qiL7A" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_l5tBF3M5EeGfVbRN8qiL7A" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_l5tBGHM5EeGfVbRN8qiL7A" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_l5tBGXM5EeGfVbRN8qiL7A" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_l5tBGnM5EeGfVbRN8qiL7A" enclosingItem="_P-OtcLbREd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_l7MO0XM5EeGfVbRN8qiL7A" sourceItem="_l7MO0HM5EeGfVbRN8qiL7A"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_EWCHAHNCEeGfVbRN8qiL7A" enclosingItem="_P-OtcLbREd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_EWCHAXNCEeGfVbRN8qiL7A" enclosingItem="_ZYlZ8LbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_EWCHAnNCEeGfVbRN8qiL7A" enclosingItem="_ZYlZ8LbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_EWCHA3NCEeGfVbRN8qiL7A" enclosingItem="_ZYlZ8LbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_EWCHBHNCEeGfVbRN8qiL7A" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_EWCHBXNCEeGfVbRN8qiL7A" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_EWCHBnNCEeGfVbRN8qiL7A" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_EWCHB3NCEeGfVbRN8qiL7A" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_EWCHCHNCEeGfVbRN8qiL7A" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_EWCHCXNCEeGfVbRN8qiL7A" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_EWCHCnNCEeGfVbRN8qiL7A" enclosingItem="_cWyQcbbPEd-5oaYsE5oIPw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_FAbu4nNCEeGfVbRN8qiL7A" sourceItem="_FAbu4XNCEeGfVbRN8qiL7A" targetItem="_qkA5ILN3Ed-vJ9Qpen_Iuw"/>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_bQ7CQLK2Ed-uk56s-ldeog" abstractModelReference="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier-_ownedComment.0" sourceConnectionVisual="_bQ7pULK2Ed-uk56s-ldeog" text="A classifier is a classification of instances - it describes a set of instances that have features in common. A classifier can specify a generalization hierarchy by referencing its general classifiers.">
     <modelElement href="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier-_ownedComment.0"/>
   </nodes>
@@ -2607,10 +2631,6 @@
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_e-HvUNeuEd-X6q7Ijhs6Xg" sourceConnectionVisual="_e-HvUdeuEd-X6q7Ijhs6Xg" text="Specifies the owning package of this classifier, if any.">
     <modelElement href="pathmap://UML_METAMODELS/UML.metamodel.uml#Type-package-_ownedComment.0"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:PackageVisual" xmi:id="_qkA5ILN3Ed-vJ9Qpen_Iuw" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#_qkASELN3Ed-vJ9Qpen_Iuw" name="templates">
-    <modelElement href="sdm.uml#_qkASELN3Ed-vJ9Qpen_Iuw"/>
-    <visualProperties xmi:id="_qkA5IbN3Ed-vJ9Qpen_Iuw" position="306.0,79.0" size="102.0,59.0"/>
-  </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_Ei_TQG3DEeGdlstntMEf0g" item="_vhgt8bKzEd-uk56s-ldeog" sourceConnectionVisual="_Ei_TQW3DEeGdlstntMEf0g" text="All ActivityEdges entering this activity node.">
     <modelElement href="sdm.uml#_vm-HoJ0REeCuYMafrm1l2g"/>
   </nodes>
@@ -2680,10 +2700,6 @@
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_EjgQoG3DEeGdlstntMEf0g" item="_ZYlZ8LbPEd-5oaYsE5oIPw" sourceConnectionVisual="_EjgQoW3DEeGdlstntMEf0g" text="This package contains all classes for modeling story patterns that may be &#xD;&#xA;embedded into StoryActivityNodes of an Activity.">
     <modelElement href="sdm.uml#_Ue6_sJKyEeCoWcgn2XgBaQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_EjhewW3DEeGdlstntMEf0g" item="_P-OtcLbREd-5oaYsE5oIPw" sourceConnectionVisual="_Ejhewm3DEeGdlstntMEf0g" text="The base package for all expressions which can be used for modeling activities&#xD;&#xA;and patterns.">
-    <modelElement href="sdm.uml#_OScPUJKyEeCoWcgn2XgBaQ"/>
-    <visualProperties xmi:id="_IsK_AG6bEeGe68i8O7GmYA" position="313.0,99.0" size="200.0,150.0"/>
-  </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_Ejis4G3DEeGdlstntMEf0g" sourceConnectionVisual="_Ejis4W3DEeGdlstntMEf0g" text="Abstract super class for all kinds of nodes that may be added to an activity. This class provides the basic functionality of connecting the activity nodes in the activity by ActivityEdges.">
     <modelElement href="sdm.uml#_9fBgwJ0KEeCuYMafrm1l2g"/>
   </nodes>
@@ -2726,7 +2742,7 @@
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_Ej9joG3DEeGdlstntMEf0g" sourceConnectionVisual="_Ej9joW3DEeGdlstntMEf0g" text="Abstract super class for all meta-model elements that may carry a comment in form of a string.">
     <modelElement href="sdm.uml#_XD2fwJxkEeCuYMafrm1l2g"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_EkCcIG3DEeGdlstntMEf0g" sourceConnectionVisual="_EkCcIW3DEeGdlstntMEf0g" text="Abstract base class for the whole SDM model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_EkCcIG3DEeGdlstntMEf0g" sourceConnectionVisual="_EkCcIW3DEeGdlstntMEf0g" text="Abstract base class for the whole story diagram model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references.">
     <modelElement href="sdm.uml#_-S-AEJxjEeCuYMafrm1l2g"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_EkDqQG3DEeGdlstntMEf0g" sourceConnectionVisual="_EkDqQW3DEeGdlstntMEf0g" text="Abstract super class for an Extension that can be defined for an object.">
@@ -2762,18 +2778,11 @@
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_EkgWMG3DEeGdlstntMEf0g" sourceConnectionVisual="_EkgWMW3DEeGdlstntMEf0g" text="The comment string that can be used to attach arbitrary information to CommentableElements.">
     <modelElement href="sdm.uml#_kY5KUG3CEeGdlstntMEf0g"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:PackageVisual" xmi:id="_ZYlZ8LbPEd-5oaYsE5oIPw" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#_ZYPbsLbPEd-5oaYsE5oIPw" comments="_EjgQoG3DEeGdlstntMEf0g" targetConnectionVisual="_EjgQoW3DEeGdlstntMEf0g" containments="_yh9SILbPEd-5oaYsE5oIPw _yiXh0LbPEd-5oaYsE5oIPw _yi_z8LbPEd-5oaYsE5oIPw _yjgKQLbPEd-5oaYsE5oIPw _yj9dQLbPEd-5oaYsE5oIPw _ykisELbPEd-5oaYsE5oIPw _ylCbULbPEd-5oaYsE5oIPw _ylXLcLbPEd-5oaYsE5oIPw _yl1FgLbPEd-5oaYsE5oIPw _ymIngLbPEd-5oaYsE5oIPw __sxMgLwzEd-Ytrd77fw2LA __sxzkLwzEd-Ytrd77fw2LA __sxzkbwzEd-Ytrd77fw2LA __sxzkrwzEd-Ytrd77fw2LA __syaoLwzEd-Ytrd77fw2LA _kB2oArxcEd-HP-M1eWm3kg _kB3PELxcEd-HP-M1eWm3kg _kB3PEbxcEd-HP-M1eWm3kg _kB3PErxcEd-HP-M1eWm3kg _kB3PE7xcEd-HP-M1eWm3kg _J3HHgLxeEd-HP-M1eWm3kg _J3HHgbxeEd-HP-M1eWm3kg _J3HHgrxeEd-HP-M1eWm3kg _J3HHg7xeEd-HP-M1eWm3kg _J3HHhLxeEd-HP-M1eWm3kg _IJ1fALyuEd-tdaRB2Cj3xA _IJ2GELyuEd-tdaRB2Cj3xA _IJ2GEbyuEd-tdaRB2Cj3xA _IJ2GEryuEd-tdaRB2Cj3xA _IJ2tILyuEd-tdaRB2Cj3xA _4GH44LyvEd-eCY_Peu5fFw _4GIf8LyvEd-eCY_Peu5fFw _4GIf8byvEd-eCY_Peu5fFw _4GIf8ryvEd-eCY_Peu5fFw _4GIf87yvEd-eCY_Peu5fFw _ijOu0b0VEd-DQ5q3aRKcIw _ijOu0r0VEd-DQ5q3aRKcIw _ijPV4L0VEd-DQ5q3aRKcIw _ijPV4b0VEd-DQ5q3aRKcIw _ijPV4r0VEd-DQ5q3aRKcIw _c2QXYL01Ed-8i6uUe2B2Qg _c2QXYb01Ed-8i6uUe2B2Qg _c2Q-cL01Ed-8i6uUe2B2Qg _c2Q-cb01Ed-8i6uUe2B2Qg _c2Q-cr01Ed-8i6uUe2B2Qg _qzv6UL8UEd-w-4cu1r3aHQ _qzv6Ub8UEd-w-4cu1r3aHQ _qzv6Ur8UEd-w-4cu1r3aHQ _qzwhYL8UEd-w-4cu1r3aHQ _qzwhYb8UEd-w-4cu1r3aHQ _NrZoIr81Ed-Hl4yGm_24kg _NraPML81Ed-Hl4yGm_24kg _NraPMb81Ed-Hl4yGm_24kg _NraPMr81Ed-Hl4yGm_24kg _NraPM781Ed-Hl4yGm_24kg _63BI0L9EEd-uJduI-git3Q _63BI0b9EEd-uJduI-git3Q _63BI0r9EEd-uJduI-git3Q _63BI079EEd-uJduI-git3Q _63Bv4L9EEd-uJduI-git3Q _e83yIteuEd-X6q7Ijhs6Xg _e83yI9euEd-X6q7Ijhs6Xg _e83yJNeuEd-X6q7Ijhs6Xg _e84ZMNeuEd-X6q7Ijhs6Xg _e84ZMdeuEd-X6q7Ijhs6Xg _rEedI9euEd-X6q7Ijhs6Xg _rEedJNeuEd-X6q7Ijhs6Xg _rEedJdeuEd-X6q7Ijhs6Xg _rEedJteuEd-X6q7Ijhs6Xg _rEfEMNeuEd-X6q7Ijhs6Xg _mx7_ANewEd-X6q7Ijhs6Xg _mx7_AdewEd-X6q7Ijhs6Xg _mx7_AtewEd-X6q7Ijhs6Xg _mx7_A9ewEd-X6q7Ijhs6Xg _mx7_BNewEd-X6q7Ijhs6Xg _EjgQom3DEeGdlstntMEf0g _EjgQo23DEeGdlstntMEf0g _EjgQpG3DEeGdlstntMEf0g _p_IC4G6aEeGe68i8O7GmYA _p_Ip8G6aEeGe68i8O7GmYA _p_Ip8W6aEeGe68i8O7GmYA" name="patterns">
-    <modelElement href="sdm.uml#_ZYPbsLbPEd-5oaYsE5oIPw"/>
-    <visualProperties xmi:id="_ZYlZ8bbPEd-5oaYsE5oIPw" position="423.0,77.0" size="102.0,59.0"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:PackageVisual" xmi:id="_cWyQcbbPEd-5oaYsE5oIPw" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#_cWyQcLbPEd-5oaYsE5oIPw" comments="_HUr-0G3DEeGdlstntMEf0g" targetConnectionVisual="_HUt0AG3DEeGdlstntMEf0g" containments="_pz9nQLbPEd-5oaYsE5oIPw _p0OtALbPEd-5oaYsE5oIPw _p0ekoLbPEd-5oaYsE5oIPw _p0ucQLbPEd-5oaYsE5oIPw _p0-T4LbPEd-5oaYsE5oIPw _p1LvQLbPEd-5oaYsE5oIPw _p1ZxsLbPEd-5oaYsE5oIPw _p1w-ELbPEd-5oaYsE5oIPw __szowLwzEd-Ytrd77fw2LA __szowbwzEd-Ytrd77fw2LA __s0P0LwzEd-Ytrd77fw2LA __s0P0bwzEd-Ytrd77fw2LA __s0P0rwzEd-Ytrd77fw2LA __s0P07wzEd-Ytrd77fw2LA __s024LwzEd-Ytrd77fw2LA _kB32ILxcEd-HP-M1eWm3kg _kB32IbxcEd-HP-M1eWm3kg _kB32IrxcEd-HP-M1eWm3kg _kB32I7xcEd-HP-M1eWm3kg _kB32JLxcEd-HP-M1eWm3kg _kB4dMLxcEd-HP-M1eWm3kg _kB4dMbxcEd-HP-M1eWm3kg _J3HukLxeEd-HP-M1eWm3kg _J3HukbxeEd-HP-M1eWm3kg _J3HukrxeEd-HP-M1eWm3kg _J3Huk7xeEd-HP-M1eWm3kg _J3HulLxeEd-HP-M1eWm3kg _J3HulbxeEd-HP-M1eWm3kg _J3HulrxeEd-HP-M1eWm3kg _IJ2tIbyuEd-tdaRB2Cj3xA _IJ2tIryuEd-tdaRB2Cj3xA _IJ3UMLyuEd-tdaRB2Cj3xA _IJ3UMbyuEd-tdaRB2Cj3xA _IJ3UMryuEd-tdaRB2Cj3xA _IJ3UM7yuEd-tdaRB2Cj3xA _IJ3UNLyuEd-tdaRB2Cj3xA _4GJHALyvEd-eCY_Peu5fFw _4GJHAbyvEd-eCY_Peu5fFw _4GJHAryvEd-eCY_Peu5fFw _4GJuELyvEd-eCY_Peu5fFw _4GJuEbyvEd-eCY_Peu5fFw _4GJuEryvEd-eCY_Peu5fFw _4GJuE7yvEd-eCY_Peu5fFw _ijPV470VEd-DQ5q3aRKcIw _ijP88L0VEd-DQ5q3aRKcIw _ijP88b0VEd-DQ5q3aRKcIw _ijP88r0VEd-DQ5q3aRKcIw _ijP8870VEd-DQ5q3aRKcIw _ijQkAL0VEd-DQ5q3aRKcIw _ijQkAb0VEd-DQ5q3aRKcIw _c2Q-c701Ed-8i6uUe2B2Qg _c2RlgL01Ed-8i6uUe2B2Qg _c2Rlgb01Ed-8i6uUe2B2Qg _c2Rlgr01Ed-8i6uUe2B2Qg _c2Rlg701Ed-8i6uUe2B2Qg _c2RlhL01Ed-8i6uUe2B2Qg _c2SMkL01Ed-8i6uUe2B2Qg _qzwhYr8UEd-w-4cu1r3aHQ _qzxIcL8UEd-w-4cu1r3aHQ _qzxIcb8UEd-w-4cu1r3aHQ _qzxIcr8UEd-w-4cu1r3aHQ _qzxIc78UEd-w-4cu1r3aHQ _qzxIdL8UEd-w-4cu1r3aHQ _qzxIdb8UEd-w-4cu1r3aHQ _Nra2QL81Ed-Hl4yGm_24kg _Nra2Qb81Ed-Hl4yGm_24kg _Nra2Qr81Ed-Hl4yGm_24kg _Nra2Q781Ed-Hl4yGm_24kg _NrbdUL81Ed-Hl4yGm_24kg _NrbdUb81Ed-Hl4yGm_24kg _NrbdUr81Ed-Hl4yGm_24kg _63Bv4b9EEd-uJduI-git3Q _63Bv4r9EEd-uJduI-git3Q _63Bv479EEd-uJduI-git3Q _63CW8L9EEd-uJduI-git3Q _63CW8b9EEd-uJduI-git3Q _63CW8r9EEd-uJduI-git3Q _63CW879EEd-uJduI-git3Q _e84ZMteuEd-X6q7Ijhs6Xg _e84ZM9euEd-X6q7Ijhs6Xg _e84ZNNeuEd-X6q7Ijhs6Xg _e84ZNdeuEd-X6q7Ijhs6Xg _e85AQNeuEd-X6q7Ijhs6Xg _e85AQdeuEd-X6q7Ijhs6Xg _e85AQteuEd-X6q7Ijhs6Xg _rEfEMdeuEd-X6q7Ijhs6Xg _rEfEMteuEd-X6q7Ijhs6Xg _rEfEM9euEd-X6q7Ijhs6Xg _rEfENNeuEd-X6q7Ijhs6Xg _rEfENdeuEd-X6q7Ijhs6Xg _rEfENteuEd-X6q7Ijhs6Xg _rEfEN9euEd-X6q7Ijhs6Xg _mx8mENewEd-X6q7Ijhs6Xg _mx8mEdewEd-X6q7Ijhs6Xg _mx8mEtewEd-X6q7Ijhs6Xg _mx8mE9ewEd-X6q7Ijhs6Xg _mx8mFNewEd-X6q7Ijhs6Xg _mx8mFdewEd-X6q7Ijhs6Xg _mx8mFtewEd-X6q7Ijhs6Xg _Ejg3sG3DEeGdlstntMEf0g _Ejg3sW3DEeGdlstntMEf0g _Ejg3sm3DEeGdlstntMEf0g _Ejg3s23DEeGdlstntMEf0g _Ejg3tG3DEeGdlstntMEf0g _Ejg3tW3DEeGdlstntMEf0g _EjhewG3DEeGdlstntMEf0g _p_J4EG6aEeGe68i8O7GmYA _p_J4EW6aEeGe68i8O7GmYA _p_KfIG6aEeGe68i8O7GmYA _p_KfIW6aEeGe68i8O7GmYA _p_LGMG6aEeGe68i8O7GmYA _p_LGMW6aEeGe68i8O7GmYA _p_LtQG6aEeGe68i8O7GmYA" name="activities">
-    <modelElement href="sdm.uml#_cWyQcLbPEd-5oaYsE5oIPw"/>
-    <visualProperties xmi:id="_cWyQcrbPEd-5oaYsE5oIPw" position="541.0,78.0" size="105.0,56.0"/>
-  </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_HUr-0G3DEeGdlstntMEf0g" item="_cWyQcbbPEd-5oaYsE5oIPw" sourceConnectionVisual="_HUt0AG3DEeGdlstntMEf0g" text="This package contains everything to model activities: the different kinds of activity nodes and edges as well as guards.">
     <modelElement href="sdm.uml#_HUqJoG3DEeGdlstntMEf0g"/>
+    <visualProperties xmi:id="_9wugkHM5EeGfVbRN8qiL7A" position="666.0,98.0" size="200.0,150.0" visible="false"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:PackageVisual" xmi:id="_P-OtcLbREd-5oaYsE5oIPw" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#_gsByQLN1Ed-vJ9Qpen_Iuw" comments="_EjhewW3DEeGdlstntMEf0g" targetConnectionVisual="_Ejhewm3DEeGdlstntMEf0g" containments="__s024bwzEd-Ytrd77fw2LA __s024rwzEd-Ytrd77fw2LA __s1d8LwzEd-Ytrd77fw2LA _kB2A8LxcEd-HP-M1eWm3kg _kB2oALxcEd-HP-M1eWm3kg _kB2oAbxcEd-HP-M1eWm3kg _J3Hul7xeEd-HP-M1eWm3kg _J3HumLxeEd-HP-M1eWm3kg _J3HumbxeEd-HP-M1eWm3kg _IJ37QLyuEd-tdaRB2Cj3xA _IJ37QbyuEd-tdaRB2Cj3xA _IJ37QryuEd-tdaRB2Cj3xA _4GKVILyvEd-eCY_Peu5fFw _4GKVIbyvEd-eCY_Peu5fFw _4GKVIryvEd-eCY_Peu5fFw _ijOHwL0VEd-DQ5q3aRKcIw _ijOHwb0VEd-DQ5q3aRKcIw _ijOu0L0VEd-DQ5q3aRKcIw _c2OiML01Ed-8i6uUe2B2Qg _c2PJQL01Ed-8i6uUe2B2Qg _c2PwUL01Ed-8i6uUe2B2Qg _qzvTQL8UEd-w-4cu1r3aHQ _qzvTQb8UEd-w-4cu1r3aHQ _qzvTQr8UEd-w-4cu1r3aHQ _NrZBEL81Ed-Hl4yGm_24kg _NrZoIL81Ed-Hl4yGm_24kg _NrZoIb81Ed-Hl4yGm_24kg _62_6sL9EEd-uJduI-git3Q _63AhwL9EEd-uJduI-git3Q _63Ahwb9EEd-uJduI-git3Q _e83LENeuEd-X6q7Ijhs6Xg _e83yINeuEd-X6q7Ijhs6Xg _e83yIdeuEd-X6q7Ijhs6Xg _rEedINeuEd-X6q7Ijhs6Xg _rEedIdeuEd-X6q7Ijhs6Xg _rEedIteuEd-X6q7Ijhs6Xg _mx8mF9ewEd-X6q7Ijhs6Xg _mx8mGNewEd-X6q7Ijhs6Xg _mx8mGdewEd-X6q7Ijhs6Xg _Ejhew23DEeGdlstntMEf0g _p_GNsG6aEeGe68i8O7GmYA" name="expressions">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:PackageVisual" xmi:id="_P-OtcLbREd-5oaYsE5oIPw" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#_gsByQLN1Ed-vJ9Qpen_Iuw" comments="_EjhewW3DEeGdlstntMEf0g" targetConnectionVisual="_Ejhewm3DEeGdlstntMEf0g" containments="__s024bwzEd-Ytrd77fw2LA __s024rwzEd-Ytrd77fw2LA __s1d8LwzEd-Ytrd77fw2LA _kB2A8LxcEd-HP-M1eWm3kg _kB2oALxcEd-HP-M1eWm3kg _kB2oAbxcEd-HP-M1eWm3kg _J3Hul7xeEd-HP-M1eWm3kg _J3HumLxeEd-HP-M1eWm3kg _J3HumbxeEd-HP-M1eWm3kg _IJ37QLyuEd-tdaRB2Cj3xA _IJ37QbyuEd-tdaRB2Cj3xA _IJ37QryuEd-tdaRB2Cj3xA _4GKVILyvEd-eCY_Peu5fFw _4GKVIbyvEd-eCY_Peu5fFw _4GKVIryvEd-eCY_Peu5fFw _ijOHwL0VEd-DQ5q3aRKcIw _ijOHwb0VEd-DQ5q3aRKcIw _ijOu0L0VEd-DQ5q3aRKcIw _c2OiML01Ed-8i6uUe2B2Qg _c2PJQL01Ed-8i6uUe2B2Qg _c2PwUL01Ed-8i6uUe2B2Qg _qzvTQL8UEd-w-4cu1r3aHQ _qzvTQb8UEd-w-4cu1r3aHQ _qzvTQr8UEd-w-4cu1r3aHQ _NrZBEL81Ed-Hl4yGm_24kg _NrZoIL81Ed-Hl4yGm_24kg _NrZoIb81Ed-Hl4yGm_24kg _62_6sL9EEd-uJduI-git3Q _63AhwL9EEd-uJduI-git3Q _63Ahwb9EEd-uJduI-git3Q _e83LENeuEd-X6q7Ijhs6Xg _e83yINeuEd-X6q7Ijhs6Xg _e83yIdeuEd-X6q7Ijhs6Xg _rEedINeuEd-X6q7Ijhs6Xg _rEedIdeuEd-X6q7Ijhs6Xg _rEedIteuEd-X6q7Ijhs6Xg _mx8mF9ewEd-X6q7Ijhs6Xg _mx8mGNewEd-X6q7Ijhs6Xg _mx8mGdewEd-X6q7Ijhs6Xg _Ejhew23DEeGdlstntMEf0g _p_GNsG6aEeGe68i8O7GmYA _l5tBGnM5EeGfVbRN8qiL7A _EWCHAHNCEeGfVbRN8qiL7A" name="expressions">
     <modelElement href="sdm.uml#_gsByQLN1Ed-vJ9Qpen_Iuw"/>
     <visualProperties xmi:id="_P-P7kLbREd-5oaYsE5oIPw" position="155.0,79.0" size="138.0,59.0"/>
   </nodes>
@@ -2783,22 +2792,22 @@
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_iJ4TAG6cEeGe68i8O7GmYA" item="_vmIvQLKzEd-uk56s-ldeog" sourceConnectionVisual="_iJ4TAW6cEeGe68i8O7GmYA" text="The second link that the link constraint refers to. Applies only to link constraints that relate two links to each other (DIRECT_SUCCESSOR and INDIRECT_SUCCESSOR). For all other constraints this variable is always null.">
     <modelElement href="sdm.uml#_iJ12wG6cEeGe68i8O7GmYA"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_x10AYG6cEeGe68i8O7GmYA" item="_vmIIMbKzEd-uk56s-ldeog" sourceConnectionVisual="_x10AYW6cEeGe68i8O7GmYA" text="The constraint that refers to this link as the &quot;second link&quot;.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_x10AYG6cEeGe68i8O7GmYA" sourceConnectionVisual="_x10AYW6cEeGe68i8O7GmYA" text="The constraint that refers to this link as the &quot;second link&quot;.">
     <modelElement href="sdm.uml#_x1yyQG6cEeGe68i8O7GmYA"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2q0ngG6cEeGe68i8O7GmYA" item="_vmIvQrKzEd-uk56s-ldeog" sourceConnectionVisual="_2q1OkG6cEeGe68i8O7GmYA" text="The constraint that refers to this link as the &quot;first link&quot;.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2q0ngG6cEeGe68i8O7GmYA" sourceConnectionVisual="_2q1OkG6cEeGe68i8O7GmYA" text="The constraint that refers to this link as the &quot;first link&quot;.">
     <modelElement href="sdm.uml#_2qyyUG6cEeGe68i8O7GmYA"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_KJcjYG6dEeGe68i8O7GmYA" item="_vj_aMLKzEd-uk56s-ldeog" sourceConnectionVisual="_KJdKcG6dEeGe68i8O7GmYA" text="The target of the link.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_KJcjYG6dEeGe68i8O7GmYA" sourceConnectionVisual="_KJdKcG6dEeGe68i8O7GmYA" text="The target of the link.">
     <modelElement href="sdm.uml#_KJbVQG6dEeGe68i8O7GmYA"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_Q7bNgG6dEeGe68i8O7GmYA" item="_vj-zIbKzEd-uk56s-ldeog" sourceConnectionVisual="_Q7bNgW6dEeGe68i8O7GmYA" text="The source of the link. This always has to be an object variable.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_Q7bNgG6dEeGe68i8O7GmYA" sourceConnectionVisual="_Q7bNgW6dEeGe68i8O7GmYA" text="The source of the link. This always has to be an object variable.">
     <modelElement href="sdm.uml#_Q7Z_YG6dEeGe68i8O7GmYA"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_bdO_YG6dEeGe68i8O7GmYA" item="_vj_aMbKzEd-uk56s-ldeog" sourceConnectionVisual="_bdO_YW6dEeGe68i8O7GmYA" text="All the links which have this AbstractVariable as a target.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_bdO_YG6dEeGe68i8O7GmYA" sourceConnectionVisual="_bdO_YW6dEeGe68i8O7GmYA" text="Represents the link variables whose target is this variable.">
     <modelElement href="sdm.uml#_bdNxQG6dEeGe68i8O7GmYA"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_ijpBYG6dEeGe68i8O7GmYA" item="_vo6WcLKzEd-uk56s-ldeog" sourceConnectionVisual="_ijpocG6dEeGe68i8O7GmYA" text="The story pattern in which this AbstractVariable is contained.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_ijpBYG6dEeGe68i8O7GmYA" sourceConnectionVisual="_ijpocG6dEeGe68i8O7GmYA" text="Represents the story pattern this variable is contained in.">
     <modelElement href="sdm.uml#_ijnzQG6dEeGe68i8O7GmYA"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_qIpq8G6dEeGe68i8O7GmYA" item="_xI0T5rK8Ed-uk56s-ldeog" sourceConnectionVisual="_qIpq8W6dEeGe68i8O7GmYA" text="The ObjectVariable to which this LinkContraint is associated. That ObjectVariable has to be a collection.">
@@ -2810,7 +2819,7 @@
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_D4hicG6eEeGe68i8O7GmYA" item="_xI0T47K8Ed-uk56s-ldeog" sourceConnectionVisual="_D4iJgG6eEeGe68i8O7GmYA" text="The LinkConstraints that are imposed on the links of this ObjectVariable. Only makes sense if the ObjectVariable is a collection.">
     <modelElement href="sdm.uml#_D4g7YG6eEeGe68i8O7GmYA"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_PMnF0G6eEeGe68i8O7GmYA" item="_vj-zILKzEd-uk56s-ldeog" sourceConnectionVisual="_PMns4G6eEeGe68i8O7GmYA" text="The links that originate from this ObjectVariable.">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_PMnF0G6eEeGe68i8O7GmYA" item="_vj-zILKzEd-uk56s-ldeog" sourceConnectionVisual="_PMns4G6eEeGe68i8O7GmYA" text="Represents the link variables whose source is this object variable.">
     <modelElement href="sdm.uml#_PMl3sG6eEeGe68i8O7GmYA"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tx2w0G6eEeGe68i8O7GmYA" item="_vok_QLKzEd-uk56s-ldeog" sourceConnectionVisual="_tx3X4G6eEeGe68i8O7GmYA" text="">
@@ -2824,6 +2833,28 @@
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_tOIjQG6fEeGe68i8O7GmYA" item="_vo5vYbKzEd-uk56s-ldeog" sourceConnectionVisual="_tOJKUG6fEeGe68i8O7GmYA" text="All the variables that are contained in the StoryPattern.">
     <modelElement href="sdm.uml#_tOHVIG6fEeGe68i8O7GmYA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_l7MO0HM5EeGfVbRN8qiL7A" sourceConnectionVisual="_l7MO0XM5EeGfVbRN8qiL7A" text="The story pattern in which the link variable is contained.">
+    <modelElement href="sdm.uml#_6Q4vQG6cEeGe68i8O7GmYA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_EjhewW3DEeGdlstntMEf0g" item="_P-OtcLbREd-5oaYsE5oIPw" sourceConnectionVisual="_Ejhewm3DEeGdlstntMEf0g" text="The base package for all expressions which can be used for modeling activities&#xD;&#xA;and patterns.">
+    <modelElement href="sdm.uml#_OScPUJKyEeCoWcgn2XgBaQ"/>
+    <visualProperties xmi:id="_IsK_AG6bEeGe68i8O7GmYA" position="313.0,99.0" size="200.0,150.0" visible="false"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:PackageVisual" xmi:id="_ZYlZ8LbPEd-5oaYsE5oIPw" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#_ZYPbsLbPEd-5oaYsE5oIPw" comments="_EjgQoG3DEeGdlstntMEf0g" targetConnectionVisual="_EjgQoW3DEeGdlstntMEf0g" containments="_yh9SILbPEd-5oaYsE5oIPw _yiXh0LbPEd-5oaYsE5oIPw _yi_z8LbPEd-5oaYsE5oIPw _yjgKQLbPEd-5oaYsE5oIPw _yj9dQLbPEd-5oaYsE5oIPw _ykisELbPEd-5oaYsE5oIPw _ylCbULbPEd-5oaYsE5oIPw _ylXLcLbPEd-5oaYsE5oIPw _yl1FgLbPEd-5oaYsE5oIPw _ymIngLbPEd-5oaYsE5oIPw __sxMgLwzEd-Ytrd77fw2LA __sxzkLwzEd-Ytrd77fw2LA __sxzkbwzEd-Ytrd77fw2LA __sxzkrwzEd-Ytrd77fw2LA __syaoLwzEd-Ytrd77fw2LA _kB2oArxcEd-HP-M1eWm3kg _kB3PELxcEd-HP-M1eWm3kg _kB3PEbxcEd-HP-M1eWm3kg _kB3PErxcEd-HP-M1eWm3kg _kB3PE7xcEd-HP-M1eWm3kg _J3HHgLxeEd-HP-M1eWm3kg _J3HHgbxeEd-HP-M1eWm3kg _J3HHgrxeEd-HP-M1eWm3kg _J3HHg7xeEd-HP-M1eWm3kg _J3HHhLxeEd-HP-M1eWm3kg _IJ1fALyuEd-tdaRB2Cj3xA _IJ2GELyuEd-tdaRB2Cj3xA _IJ2GEbyuEd-tdaRB2Cj3xA _IJ2GEryuEd-tdaRB2Cj3xA _IJ2tILyuEd-tdaRB2Cj3xA _4GH44LyvEd-eCY_Peu5fFw _4GIf8LyvEd-eCY_Peu5fFw _4GIf8byvEd-eCY_Peu5fFw _4GIf8ryvEd-eCY_Peu5fFw _4GIf87yvEd-eCY_Peu5fFw _ijOu0b0VEd-DQ5q3aRKcIw _ijOu0r0VEd-DQ5q3aRKcIw _ijPV4L0VEd-DQ5q3aRKcIw _ijPV4b0VEd-DQ5q3aRKcIw _ijPV4r0VEd-DQ5q3aRKcIw _c2QXYL01Ed-8i6uUe2B2Qg _c2QXYb01Ed-8i6uUe2B2Qg _c2Q-cL01Ed-8i6uUe2B2Qg _c2Q-cb01Ed-8i6uUe2B2Qg _c2Q-cr01Ed-8i6uUe2B2Qg _qzv6UL8UEd-w-4cu1r3aHQ _qzv6Ub8UEd-w-4cu1r3aHQ _qzv6Ur8UEd-w-4cu1r3aHQ _qzwhYL8UEd-w-4cu1r3aHQ _qzwhYb8UEd-w-4cu1r3aHQ _NrZoIr81Ed-Hl4yGm_24kg _NraPML81Ed-Hl4yGm_24kg _NraPMb81Ed-Hl4yGm_24kg _NraPMr81Ed-Hl4yGm_24kg _NraPM781Ed-Hl4yGm_24kg _63BI0L9EEd-uJduI-git3Q _63BI0b9EEd-uJduI-git3Q _63BI0r9EEd-uJduI-git3Q _63BI079EEd-uJduI-git3Q _63Bv4L9EEd-uJduI-git3Q _e83yIteuEd-X6q7Ijhs6Xg _e83yI9euEd-X6q7Ijhs6Xg _e83yJNeuEd-X6q7Ijhs6Xg _e84ZMNeuEd-X6q7Ijhs6Xg _e84ZMdeuEd-X6q7Ijhs6Xg _rEedI9euEd-X6q7Ijhs6Xg _rEedJNeuEd-X6q7Ijhs6Xg _rEedJdeuEd-X6q7Ijhs6Xg _rEedJteuEd-X6q7Ijhs6Xg _rEfEMNeuEd-X6q7Ijhs6Xg _mx7_ANewEd-X6q7Ijhs6Xg _mx7_AdewEd-X6q7Ijhs6Xg _mx7_AtewEd-X6q7Ijhs6Xg _mx7_A9ewEd-X6q7Ijhs6Xg _mx7_BNewEd-X6q7Ijhs6Xg _EjgQom3DEeGdlstntMEf0g _EjgQo23DEeGdlstntMEf0g _EjgQpG3DEeGdlstntMEf0g _p_IC4G6aEeGe68i8O7GmYA _p_Ip8G6aEeGe68i8O7GmYA _p_Ip8W6aEeGe68i8O7GmYA _l5tBEHM5EeGfVbRN8qiL7A _l5tBEXM5EeGfVbRN8qiL7A _l5tBEnM5EeGfVbRN8qiL7A _EWCHAXNCEeGfVbRN8qiL7A _EWCHAnNCEeGfVbRN8qiL7A _EWCHA3NCEeGfVbRN8qiL7A" name="patterns">
+    <modelElement href="sdm.uml#_ZYPbsLbPEd-5oaYsE5oIPw"/>
+    <visualProperties xmi:id="_ZYlZ8bbPEd-5oaYsE5oIPw" position="423.0,77.0" size="102.0,59.0"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:PackageVisual" xmi:id="_cWyQcbbPEd-5oaYsE5oIPw" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#_cWyQcLbPEd-5oaYsE5oIPw" comments="_HUr-0G3DEeGdlstntMEf0g" targetConnectionVisual="_HUt0AG3DEeGdlstntMEf0g" containments="_pz9nQLbPEd-5oaYsE5oIPw _p0OtALbPEd-5oaYsE5oIPw _p0ekoLbPEd-5oaYsE5oIPw _p0ucQLbPEd-5oaYsE5oIPw _p0-T4LbPEd-5oaYsE5oIPw _p1LvQLbPEd-5oaYsE5oIPw _p1ZxsLbPEd-5oaYsE5oIPw _p1w-ELbPEd-5oaYsE5oIPw __szowLwzEd-Ytrd77fw2LA __szowbwzEd-Ytrd77fw2LA __s0P0LwzEd-Ytrd77fw2LA __s0P0bwzEd-Ytrd77fw2LA __s0P0rwzEd-Ytrd77fw2LA __s0P07wzEd-Ytrd77fw2LA __s024LwzEd-Ytrd77fw2LA _kB32ILxcEd-HP-M1eWm3kg _kB32IbxcEd-HP-M1eWm3kg _kB32IrxcEd-HP-M1eWm3kg _kB32I7xcEd-HP-M1eWm3kg _kB32JLxcEd-HP-M1eWm3kg _kB4dMLxcEd-HP-M1eWm3kg _kB4dMbxcEd-HP-M1eWm3kg _J3HukLxeEd-HP-M1eWm3kg _J3HukbxeEd-HP-M1eWm3kg _J3HukrxeEd-HP-M1eWm3kg _J3Huk7xeEd-HP-M1eWm3kg _J3HulLxeEd-HP-M1eWm3kg _J3HulbxeEd-HP-M1eWm3kg _J3HulrxeEd-HP-M1eWm3kg _IJ2tIbyuEd-tdaRB2Cj3xA _IJ2tIryuEd-tdaRB2Cj3xA _IJ3UMLyuEd-tdaRB2Cj3xA _IJ3UMbyuEd-tdaRB2Cj3xA _IJ3UMryuEd-tdaRB2Cj3xA _IJ3UM7yuEd-tdaRB2Cj3xA _IJ3UNLyuEd-tdaRB2Cj3xA _4GJHALyvEd-eCY_Peu5fFw _4GJHAbyvEd-eCY_Peu5fFw _4GJHAryvEd-eCY_Peu5fFw _4GJuELyvEd-eCY_Peu5fFw _4GJuEbyvEd-eCY_Peu5fFw _4GJuEryvEd-eCY_Peu5fFw _4GJuE7yvEd-eCY_Peu5fFw _ijPV470VEd-DQ5q3aRKcIw _ijP88L0VEd-DQ5q3aRKcIw _ijP88b0VEd-DQ5q3aRKcIw _ijP88r0VEd-DQ5q3aRKcIw _ijP8870VEd-DQ5q3aRKcIw _ijQkAL0VEd-DQ5q3aRKcIw _ijQkAb0VEd-DQ5q3aRKcIw _c2Q-c701Ed-8i6uUe2B2Qg _c2RlgL01Ed-8i6uUe2B2Qg _c2Rlgb01Ed-8i6uUe2B2Qg _c2Rlgr01Ed-8i6uUe2B2Qg _c2Rlg701Ed-8i6uUe2B2Qg _c2RlhL01Ed-8i6uUe2B2Qg _c2SMkL01Ed-8i6uUe2B2Qg _qzwhYr8UEd-w-4cu1r3aHQ _qzxIcL8UEd-w-4cu1r3aHQ _qzxIcb8UEd-w-4cu1r3aHQ _qzxIcr8UEd-w-4cu1r3aHQ _qzxIc78UEd-w-4cu1r3aHQ _qzxIdL8UEd-w-4cu1r3aHQ _qzxIdb8UEd-w-4cu1r3aHQ _Nra2QL81Ed-Hl4yGm_24kg _Nra2Qb81Ed-Hl4yGm_24kg _Nra2Qr81Ed-Hl4yGm_24kg _Nra2Q781Ed-Hl4yGm_24kg _NrbdUL81Ed-Hl4yGm_24kg _NrbdUb81Ed-Hl4yGm_24kg _NrbdUr81Ed-Hl4yGm_24kg _63Bv4b9EEd-uJduI-git3Q _63Bv4r9EEd-uJduI-git3Q _63Bv479EEd-uJduI-git3Q _63CW8L9EEd-uJduI-git3Q _63CW8b9EEd-uJduI-git3Q _63CW8r9EEd-uJduI-git3Q _63CW879EEd-uJduI-git3Q _e84ZMteuEd-X6q7Ijhs6Xg _e84ZM9euEd-X6q7Ijhs6Xg _e84ZNNeuEd-X6q7Ijhs6Xg _e84ZNdeuEd-X6q7Ijhs6Xg _e85AQNeuEd-X6q7Ijhs6Xg _e85AQdeuEd-X6q7Ijhs6Xg _e85AQteuEd-X6q7Ijhs6Xg _rEfEMdeuEd-X6q7Ijhs6Xg _rEfEMteuEd-X6q7Ijhs6Xg _rEfEM9euEd-X6q7Ijhs6Xg _rEfENNeuEd-X6q7Ijhs6Xg _rEfENdeuEd-X6q7Ijhs6Xg _rEfENteuEd-X6q7Ijhs6Xg _rEfEN9euEd-X6q7Ijhs6Xg _mx8mENewEd-X6q7Ijhs6Xg _mx8mEdewEd-X6q7Ijhs6Xg _mx8mEtewEd-X6q7Ijhs6Xg _mx8mE9ewEd-X6q7Ijhs6Xg _mx8mFNewEd-X6q7Ijhs6Xg _mx8mFdewEd-X6q7Ijhs6Xg _mx8mFtewEd-X6q7Ijhs6Xg _Ejg3sG3DEeGdlstntMEf0g _Ejg3sW3DEeGdlstntMEf0g _Ejg3sm3DEeGdlstntMEf0g _Ejg3s23DEeGdlstntMEf0g _Ejg3tG3DEeGdlstntMEf0g _Ejg3tW3DEeGdlstntMEf0g _EjhewG3DEeGdlstntMEf0g _p_J4EG6aEeGe68i8O7GmYA _p_J4EW6aEeGe68i8O7GmYA _p_KfIG6aEeGe68i8O7GmYA _p_KfIW6aEeGe68i8O7GmYA _p_LGMG6aEeGe68i8O7GmYA _p_LGMW6aEeGe68i8O7GmYA _p_LtQG6aEeGe68i8O7GmYA _l5tBE3M5EeGfVbRN8qiL7A _l5tBFHM5EeGfVbRN8qiL7A _l5tBFXM5EeGfVbRN8qiL7A _l5tBFnM5EeGfVbRN8qiL7A _l5tBF3M5EeGfVbRN8qiL7A _l5tBGHM5EeGfVbRN8qiL7A _l5tBGXM5EeGfVbRN8qiL7A _EWCHBHNCEeGfVbRN8qiL7A _EWCHBXNCEeGfVbRN8qiL7A _EWCHBnNCEeGfVbRN8qiL7A _EWCHB3NCEeGfVbRN8qiL7A _EWCHCHNCEeGfVbRN8qiL7A _EWCHCXNCEeGfVbRN8qiL7A _EWCHCnNCEeGfVbRN8qiL7A" name="activities">
+    <modelElement href="sdm.uml#_cWyQcLbPEd-5oaYsE5oIPw"/>
+    <visualProperties xmi:id="_cWyQcrbPEd-5oaYsE5oIPw" position="541.0,78.0" size="105.0,56.0"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:PackageVisual" xmi:id="_qkA5ILN3Ed-vJ9Qpen_Iuw" abstractModelReference="platform:/resource/SDMMetaModel/sdm.uml#_qkASELN3Ed-vJ9Qpen_Iuw" comments="_FAbu4XNCEeGfVbRN8qiL7A" targetConnectionVisual="_FAbu4nNCEeGfVbRN8qiL7A" name="templates">
+    <modelElement href="sdm.uml#_qkASELN3Ed-vJ9Qpen_Iuw"/>
+    <visualProperties xmi:id="_qkA5IbN3Ed-vJ9Qpen_Iuw" position="306.0,79.0" size="102.0,59.0"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_FAbu4XNCEeGfVbRN8qiL7A" item="_qkA5ILN3Ed-vJ9Qpen_Iuw" sourceConnectionVisual="_FAbu4nNCEeGfVbRN8qiL7A" text="This package offers classes that enable to define template for story patterns to re-use existing, stucturally similar story patterns in other story patterns. The templates are flexible such that the object variable types can be replaced when a template is used in a certain context.">
+    <modelElement href="sdm.uml#_FAbu4HNCEeGfVbRN8qiL7A"/>
   </nodes>
   <requiredModelsLocators xmi:id="_t7i1sLKzEd-uk56s-ldeog" location="/SDMMetaModel/sdm.uml"/>
 </com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

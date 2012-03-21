@@ -20,6 +20,9 @@ import org.storydriven.modeling.SDMPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package offers classes that enable to define template for story patterns to re-use existing, stucturally similar story patterns in other story patterns. The templates are flexible such that the object variable types can be replaced when a template is used in a certain context.
+ * <!-- end-model-doc -->
  * @see org.storydriven.modeling.templates.TemplatesFactory
  * @model kind="package"
  * @generated

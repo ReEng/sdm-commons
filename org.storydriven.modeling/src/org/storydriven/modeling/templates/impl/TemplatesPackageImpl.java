@@ -407,6 +407,35 @@ public class TemplatesPackageImpl extends EPackageImpl implements TemplatesPacka
          thePatternsPackage.getStoryPattern_TemplateSignature(), "pattern", null, 1, 1, TemplateSignature.class,
          !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
          !IS_DERIVED, !IS_ORDERED);
+
+      // Create annotations
+      // http://www.eclipse.org/emf/2002/GenModel
+      createGenModelAnnotations();
+   }
+
+   /**
+    * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/GenModel</b>.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   protected void createGenModelAnnotations ()
+   {
+      String source = "http://www.eclipse.org/emf/2002/GenModel";
+      addAnnotation(
+         this,
+         source,
+         new String[] {
+               "documentation",
+               "This package offers classes that enable to define template for story patterns to re-use existing, stucturally similar story patterns in other story patterns. The templates are flexible such that the object variable types can be replaced when a template is used in a certain context."});
+      addAnnotation(templateBindingEClass, source, new String[] {"documentation",
+            "This class represents the binding of a story pattern template\'s type parameter to a concrete type."});
+      addAnnotation(
+         templateSignatureEClass,
+         source,
+         new String[] {
+               "documentation",
+               "This class is used to define type parameters for a template that represents a story pattern to be reused. The type parameter is replaced by a concrete type when the template is applied in a story pattern."});
    }
 
 } // TemplatesPackageImpl

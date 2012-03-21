@@ -16,6 +16,7 @@ import org.storydriven.modeling.Extension;
 import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.TypedElement;
 import org.storydriven.modeling.Variable;
+import org.storydriven.modeling.activities.*;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.activities.ActivityCallNode;

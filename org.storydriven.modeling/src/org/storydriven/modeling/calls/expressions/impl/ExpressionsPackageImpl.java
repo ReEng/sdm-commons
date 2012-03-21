@@ -306,6 +306,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
    protected void createGenModelAnnotations ()
    {
       String source = "http://www.eclipse.org/emf/2002/GenModel";
+      addAnnotation(this, source, new String[] {"documentation",
+            "This package offers expressions to describe, e.g., method calls and the corresponding arguments."});
       addAnnotation(
          methodCallExpressionEClass,
          source,

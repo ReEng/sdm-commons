@@ -19,6 +19,9 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package offers expressions to describe, e.g., method calls and the corresponding arguments.
+ * <!-- end-model-doc -->
  * @see org.storydriven.modeling.calls.expressions.ExpressionsFactory
  * @model kind="package"
  * @generated

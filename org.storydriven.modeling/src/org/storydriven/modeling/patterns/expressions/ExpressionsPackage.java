@@ -19,6 +19,9 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package offers expressions that refer to different kinds of variables like object variables, attributes, etc.
+ * <!-- end-model-doc -->
  * @see org.storydriven.modeling.patterns.expressions.ExpressionsFactory
  * @model kind="package"
  * @generated

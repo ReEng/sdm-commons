@@ -19,6 +19,9 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package offers expressions that can be used in activities, e.g., exceptions triggered by activity edges.
+ * <!-- end-model-doc -->
  * @see org.storydriven.modeling.activities.expressions.ExpressionsFactory
  * @model kind="package"
  * @generated

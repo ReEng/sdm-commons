@@ -376,6 +376,11 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
    protected void createGenModelAnnotations ()
    {
       String source = "http://www.eclipse.org/emf/2002/GenModel";
+      addAnnotation(
+         this,
+         source,
+         new String[] {"documentation",
+               "This package offers expressions that refer to different kinds of variables like object variables, attributes, etc."});
       addAnnotation(attributeValueExpressionEClass, source, new String[] {"documentation",
             "Represents the value of an object\'s attribute, e.g. obj.attr for an object obj and an attribute attr."});
       addAnnotation(getAttributeValueExpression_Object(), source, new String[] {"documentation",
