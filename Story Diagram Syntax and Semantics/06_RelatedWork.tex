@@ -93,11 +93,16 @@ However, this is not described in detail here.
 
 
 \section{Applications and Extensions of Story Diagrams (Jan)}
+Giese and Klein extend story patterns to so called Story Decision Diagrams (SDDs) that allow to express complex safety properties \cite{GK06a}.
+Basically, they require story patterns of SDDs to be non-modifying (i.e., no \create or \destroy elements) and add features of logics such as quantification implication, and negation.
+
+Giese and Klein also present Timed Story Scenario Diagrams (TSSDs), which are used to specify structural and temporal properties of systems in an integrated way \cite{KG07a}.
+
+Tichy et al. \cite{THH+08} describe how story diagrams can be used to describe reconfigurations of component-based architectures.
+A transformation language called Component Story Diagrams is used to specify reconfiguration steps.
+This language is transformed to story diagrams that can be executed to perform the actual reconfigurations.
 
 \begin{itemize}
-\item SDDs \cite{GK06a}
-\item TSSDs \cite{KG07a}
-\item Component Story Diagrams and more \cite{THH+08}
 \item Design-level debugging \cite{GZ02,Gei02,GZ06},
 \item code generation \cite{GSR05,GBD07},
 \item reverse engineering \cite{NSW+02,BGS+Z08}, MATE (reverse engineering) \cite{SKS+07,ST08},
@@ -120,51 +125,58 @@ Here, we focus on those solutions that have a reasonable documentation available
 For a more comprehensive overview of transformation approaches see, for example, \cite{Czarnecki06}.
 Current transformation tools can, for instance, be found in \cite{TTC2010}.
 
+\subsection{In-Place Model Transformations}
+
 \emph{Henshin}~\cite{henshin2} is a model transformation language for in-place transformations of EMF-based models.
 It uses pattern-based rewrite rules (called ``transformation rules'') and control-flow-based operational semantics (called ``transformation units'') on top of it.
 Transformation units can also be called by other transformation units, also including parameters.
-Henshin, however, does not provide support for polymorphic dispatching.
+%Henshin, however, does not provide support for polymorphic dispatching.
+
 \emph{MOLA}~\cite{mola} is an in-place model transformation language with graphical syntax similar to story diagrams.
-Transformation rules may consist of multiple matching and modification patterns, and the control flow inside a transformation rule can be specified, with a focus on the loop construct.  
-Furthermore, it also allows calling other transformations rules, but does not support polymorphic dispatching.
+Transformation rules may consist of multiple matching and modification patterns, and the control flow inside a transformation rule can be specified, with a focus on the loop construct.
+Furthermore, it also allows calling other transformations rules. %, but does not support polymorphic dispatching.
 
 \emph{Groove}~\cite{Ren04a} \todomvd{Passt die Referenz? Hab die einfach mal aus dem Aigaion gefischt.} is a graph transformation tool with a focus on analyzing graph transformation systems.
 Its rules consist of single rewrite patterns.
 For instance, given a rule set and a start graph, Groove can explore the graph state space and use this for model checking.
 It also features so called ``control programs'', which allow the user to restrict which rules can be applied and in which order.
+
 \emph{VIATRA}~\cite{viatra}, a textual language, uses abstract state machines to specify the control flow and graph transformation rules for elementary model manipulations.
 It also addresses modularization by reusable patterns that are called from the graph transformation rules. 
 
-Although most of the story-diagram-like transformation languages include means for specifying control flow (including calling other transformation units), none of them supports polymorphic dispatching.
-(Note that in most cases polymorphic dispatching can be emulated using other means, but doing so would result in a more complex and less maintainable rule set.)
+%Although most of the story-diagram-like transformation languages include means for specifying control flow (including calling other transformation units), none of them supports polymorphic dispatching.
+%(Note that in most cases polymorphic dispatching can be emulated using other means, but doing so would result in a more complex and less maintainable rule set.)
 
-However, looking at other transformation language types, there are some approaches that support polymorphic dispatching. 
-For instance, \emph{Xpand}~\cite{xpand}, a model-to-text transformation language based on templates, uses ``polymorphic template invocation'' where the most specialized template available is used.
-However, it only supports single dispatch, i.e., only one parameter is used to determine the used template.   
+%However, looking at other transformation language types, there are some approaches that support polymorphic dispatching. 
+%For instance, \emph{Xpand}~\cite{xpand}, a model-to-text transformation language based on templates, uses ``polymorphic template invocation'' where the most %specialized template available is used.
+%However, it only supports single dispatch, i.e., only one parameter is used to determine the used template.   
 
-Considering exogenous, inter-model transformations, \emph{QVT Operational}~\cite{QVT} is an operational language that also allows polymorphic dispatching by its \fe{disjuncts} keyword.
-A QVT-O mapping operation can declare that a call to it should be dispatched to other mappings.
-In this case, the invocation of that mapping operation results in the execution of the first mapping whose signature fits the concrete parameters and whose \fe{when} clause evaluates to \fe{true}.
-This is a more powerful construct than our solution, as it not only allows dispatching based on the actual type, but arbitrary constraints.
-However, there must be a base rule where all dispatching possibilities are listed;
-in our solution, all signature-compatible transformations with the same name are automatically used in dispatching, allowing a better modularization as well as an easier extension of the rule set.      
-Furthermore, QVT-O is a textual transformation language which may not be well-suited in many cases~\cite{Moo09}.
+\subsection{Exogenous, Inter-Model Transformations}
+
+In general, Story Diagrams can also be used to specify inter-model transformations.
+In this case, a story diagram would contain elements from both the source and the target model.
+If necessary, a trace model could also be created.
+In comparison to dedicated inter-model transformation languages, story diagrams may be more tedious in this application scenario.
+However, when a transformation requires extensive pre-computations or complex distinction of cases, story diagrams are a reasonable alternative.
+
+\emph{QVT Operational}~\cite{QVT} is a operational model transformation language designed for writing unidirectional transformations which is part of the OMG QVT standard. %that also allows polymorphic dispatching by its \fe{disjuncts} keyword.
+%A QVT-O mapping operation can declare that a call to it should be dispatched to other mappings.
+%In this case, the invocation of that mapping operation results in the execution of the first mapping whose signature fits the concrete parameters and whose \fe{when} clause evaluates to \fe{true}.
+%This is a more powerful construct than our solution, as it not only allows dispatching based on the actual type, but arbitrary constraints.
+%However, there must be a base rule where all dispatching possibilities are listed;
+%in our solution, all signature-compatible transformations with the same name are automatically used in dispatching, allowing a better modularization as well as an easier extension of the rule set.      
+However, QVT-O is a textual transformation language which may not be well-suited in many cases~\cite{Moo09}.
 
 In declarative inter-model transformation languages like \emph{Triple Graph Grammars} (TGGs) \cite{Sch94}, the control flow cannot be defined explicitly.
 Instead, the order of the rule application is implicitly defined by preconditions of the transformation rules.
 However, when more than one rule has a fitting precondition, the rule to be applied is selected non-deterministically, dependent on the concrete transformation tool implementation, or by a given rule priority.
-Klar et al. \cite{Klar07} proposed a rule generalization concept with a precedence for the most refined rules, a solution similar to polymorphic dispatching.
+This can make the comprehension of a TGG rule set difficult.
+%Klar et al. \cite{Klar07} proposed a rule generalization concept with a precedence for the most refined rules, a solution similar to polymorphic dispatching.
+
 In \emph{QVT Relations}~\cite{QVT}, which is similar to TGGs, control flow may also be explicitly specified by using \fe{where} clauses.
 
 The \emph{Atlas Transformation Language} (ATL)~\cite{ATL} is a hybrid inter-model transformation language, integrating declarative and operational aspects.
 It is similar to QVT, but only has a textual representation of the transformation rules.
-
-Giese and Klein extend story patterns to so called Story Decision Diagrams (SDDs) that allow to express complex safety properties \cite{GK06a}.
-Second, they present Timed Story Scenario Diagrams (TSSDs) that are used to specify structural and temporal properties of systems in an integrated way \cite{KG07a}.
-
-Tichy et al. \cite{THH+08} describe how story diagrams can be used to describe reconfigurations of component-based architectures.
-A transformation language called Component Story Diagrams is used to specify reconfiguration steps.
-This language is transformed to story diagrams that can be executed to perform the actual reconfigurations.
 
 \section*{Further related work}
 
