@@ -95,11 +95,12 @@ However, this is not described in detail here.
 
 \section{Applications and Extensions of Story Diagrams (Jan)}
 Giese and Klein extend story patterns to so called Story Decision Diagrams (SDDs) that allow to express complex safety properties \cite{GK06a}.
-Basically, they require story patterns of SDDs to be non-modifying (i.e., no \create or \destroy elements) and add features of logics such as quantification implication, and negation.
+Basically, they require story patterns of SDDs to be non-modifying (i.e., no \create or \destroy elements) and add features of logics such as quantification, implication, and negation.
+After the evaluation of such a property, a regular story pattern may be specified which describes a change operation that should be executed.
 
 Giese and Klein also present Timed Story Scenario Diagrams (TSSDs), which are used to specify structural and temporal properties of systems in an integrated way \cite{KG07a}.
 
-Tichy et al. \cite{THH+08} describe how story diagrams can be used to describe reconfigurations of component-based architectures.
+Tichy et al. \cite{THH+08} describe how story diagrams can be used to describe reconfigurations of component-based architectures, as, for instance, in MechatronicUML \cite{EBD+12}.
 A transformation language called Component Story Diagrams is used to specify reconfiguration steps.
 This language is transformed to story diagrams that can be executed to perform the actual reconfigurations.
 
@@ -107,9 +108,8 @@ This language is transformed to story diagrams that can be executed to perform t
 \item Design-level debugging \cite{GZ02,Gei02,GZ06},
 \item code generation \cite{GSR05,GBD07},
 \item reverse engineering \cite{NSW+02,BGS+Z08}, MATE (reverse engineering) \cite{SKS+07,ST08},
-\item Fujaba Real-Time and MechatronicUML,
-\item model checking with Groove,
-\item compositional verification of real-time UML designs,
+\item timed story diagrams,
+\item rechability analysis,
 \item OCL in Fujaba \cite{SZG07},
 \item other applications \cite{KNNZ00,GZ10}
 \end{itemize}
