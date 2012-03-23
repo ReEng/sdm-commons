@@ -77,21 +77,31 @@ Graphs and according graph transformations as introduced in Section \ref{sec:fou
   \label{fig:PetrinetTypeGraph}
 \end{figure}
 
-Therefore, story diagrams are based on typed attributed graph transformations \cite{EEPT06}. Typed attributed graph transformations introduce a type graph and node attributes. The type graph defines different types of nodes and edges and it defines which types of edges are allowed for which type of nodes. Additionally, nodes may carry attributes like, e.g., objects in an object-oriented programming language. Accordingly, the type graph specifies inheritance relations between types of objects which are also known from object oriented programming languages.
+Therefore, story diagrams are based on typed attributed graph transformations \cite{EEPT06}. Typed attributed graph transformations introduce a type graph and node attributes. The type graph defines different types of nodes and edges and it defines which types of edges are allowed for which type of nodes. Additionally, nodes may carry attributes like, e.g., objects in an object-oriented programming language. Moreover, the type graph specifies inheritance relations between types of objects which are also known from object-oriented programming languages.
 
-If the graph transformation transforms a model based on a given type graph into a model based on the same type graph, the transformation is called \emph{endogenous}. Otherwise, i.e., the transformation transforms a model based on a given type graph into a model based on another type graph, the transformation is called \emph{exogenous.} In principle, story diagrams are endogenous graph transformations. By unifying the type graphs of the source model and the target model, story diagrams may also be used to specify exogenous graph transformations.
+We use graph transformations to modify or translate different kinds of models.
+These are specified in a certain languages, often a DSL\footnote{Domain-specific language}.
+Thus, the type graph usually defines the \emph{abstract syntax} of the language used and is part of the corresponding \emph{metamodel} for this language.
+By replacing the type graph (the metamodel) we are able to specify transformations for models specified in various languages.
+
+If a graph transformation transforms a model based on a given type graph into a model based on the same type graph (modification of the model), the transformation is called \emph{endogenous} (also known as \emph{in-place} transformation). Otherwise, i.e., the transformation transforms a model based on a given type graph into a model based on another type graph (translation), the transformation is called \emph{exogenous} (also known as \emph{model-to-model} transformation). In principle, story diagrams are endogenous graph transformations. By combining the type graphs of the source model and the target model, story diagrams may also be used to specify exogenous graph transformations.
+
 
 \section{Type Graphs (Markus)}
 \label{sec:typeGraph}
 
-The type graphs that may be used with story pattern may be created by using an arbitrary metamodeling language. Examples include Ecore \cite{SBP+08}, MOF \cite{MOF05}, and UML \cite{UML23}.
+The type graphs that may be used with story patterns can be created by using an arbitrary metamodeling language. Examples include Ecore \cite{SBP+08}, MOF \cite{MOF05}, and UML \cite{UML23}.
 
-The type graph used in the examples in this report describes the structure of an abstract syntax tree. In particular it is an updated and slightly simplified version of the generalized abstract syntax tree (GAST) metamodel developed in the QBench project \cite{QBench}. The GAST was developed to provide a unified syntax tree model for different programming languages like Java, C, and C++. Figure~\ref{fig:gast-mm} shows an excerpt of that metamodel. Especially some specialized sub classes have been omitted for clarity reasons.
+The type graph used in the examples in this report describes the structure of an abstract syntax tree for programming languages.
+In particular it is an updated and slightly simplified version of the generalized abstract syntax tree (GAST) metamodel developed in the QBench project \cite{QBench}.
+The GAST was developed to provide a unified syntax tree model for different programming languages like Java, C, and C++.
+Figure~\ref{fig:gast-mm} shows an excerpt of that metamodel.
+Especially some specialized subclasses have been omitted for clarity reasons.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\linewidth]{figures/gast-mm}
-  \caption{Type graph of a generalized abstract syntax tree (GAST).}
+  \caption{Type Graph of a Generalized Abstract Syntax Tree (GAST) for Object-Oriented Programming Languages}
   \label{fig:gast-mm}
 \end{figure}
 
