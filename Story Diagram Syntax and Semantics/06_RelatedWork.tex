@@ -100,18 +100,25 @@ After the evaluation of such a property, a regular story pattern may be specifie
 
 Giese and Klein also present Timed Story Scenario Diagrams (TSSDs), which are used to specify structural and temporal properties of systems in an integrated way \cite{KG07a}.
 
-Tichy et al. \cite{THH+08} describe how story diagrams can be used to describe reconfigurations of component-based architectures, as, for instance, in MechatronicUML \cite{EBD+12}.
+Tichy et al. \cite{THH+08} describe how story diagrams can be used to describe reconfigurations of component-based architectures, as, for instance, in MechatronicUML \cite{BBD+12}.
 A transformation language called Component Story Diagrams is used to specify reconfiguration steps.
+Component Story Diagrams use the concrete syntax of components for specifying the reconfiguration operations.
 This language is transformed to story diagrams that can be executed to perform the actual reconfigurations.
 
+Z{\"u}ndorf~\cite{Zue09} proposed a framework for computing the state-space of a specification in terms of story diagrams and an initial instance model. 
+It has been used for model checking the leader election protocol and for a case study presented in~\cite{HSJZ10}.
 
+In~\cite{HH11b}, Heinzemann and Henkler extend story diagrams to timed story diagrams. 
+Timed story diagrams are based on timed graph transformation systems~\cite{EHH+11} that extend graph transformation systems by clocks as known from timed automata~\cite{AD94}. 
+They are used to model time-dependent reconfigurations of an instance model. 
+In~\cite{EHH+11}, they are used as a means to define the semantics of reconfigurations in real-time systems. 
+In~\cite{HSE10}, a framework for reachability analysis on timed story diagrams has been introduced which explores the state-space defined by the timed story diagrams and an initial instance model. 
+It is based on the framework introduced in~\cite{Zue09}.
 
 \begin{itemize}
 \item Design-level debugging \cite{GZ02,Gei02,GZ06},
 \item code generation \cite{GSR05,GBD07},
 \item reverse engineering \cite{NSW+02,BGS+Z08}, MATE (reverse engineering) \cite{SKS+07,ST08},
-\item timed story diagrams \cite{HH11b},
-\item rechability analysis \cite{HSE10},
 \item OCL in Fujaba \cite{SZG07},
 \item other applications \cite{KNNZ00,GZ10}
 \end{itemize}
