@@ -164,43 +164,104 @@ Due to story node behavior being defined by story patterns,
 since trying to find a subgraph defined by a story pattern can fail,
 each execution of a story node can also fail.
 To distinguish the cases of a successful story node execution and its failure,
-the outgoing activity edges can be provided with the guards \text[success\text] and \text[failure\text].
+the outgoing activity edges can be provided with the guards \text[success\text] and \text[failure\text] (see Figure~\ref{fig:SD-decisions} a)).
 The control flow is following the activity edge with the \emph{success} guard in case of a successful story node execution,
 i.e.\ a successful matching of the corresponding story pattern,
 otherwise it follows the activity edge with the \emph{failure} guard.
 If an outgoing activity edge has no guard, it covers both cases, success and failure.
 The guards \text[success\text] and \text[failure\text] can only be used pair-wise (exactly two outgoing activity edges with exactly these two guards).
-The first story node in Figure~\ref{fig:simpleStoryDiagram} (p.~\pageref{fig:simpleStoryDiagram}) uses these guards.
+The first story node in Figure~\ref{fig:simpleStoryDiagram} (p.~\pageref{fig:simpleStoryDiagram}), for example, uses these guards.
 
-Besides \text[success\text] and \text[failure\text] boolean expressions can be used as guards.
-In this case, after execution of an activity node the boolean expression of the outgoing activity edge is evaluated to \emph{true} or \emph{false}.
+\begin{figure}[htb]
+	\centering
+  \begin{minipage}[t]{.5\textwidth}
+    \centering
+    \includegraphics[scale=1]{SD-decision1}
+    \\a)
+    %\caption{a) Matching-Dependent Decision}
+    %\label{fig:SD-decision-success}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{.5\textwidth}
+    \centering
+    \includegraphics[scale=1]{SD-decision3}
+    \\b)
+    %\caption{b) Decision Node}
+    %\label{fig:SD-decision-boolean}
+  \end{minipage}
+%  \hfill
+%  \begin{minipage}[t]{.3\textwidth}
+%    \centering
+%    \includegraphics[scale=1]{SD-decision2}
+%    \\c)
+%    %\caption{c) Boolean Conditions}
+%    %\label{fig:SD-decision-nodes}
+%  \end{minipage}
+  \caption{Examples For Decisions}
+  \label{fig:SD-decisions}
+\end{figure}
+
+Besides \text[success\text] and \text[failure\text] boolean expressions can be used as guards (see Figure~\ref{fig:SD-decisions} b)).
+We use the \emph{decision node} -- depicted as a rhomb -- for decisions that do not depend on a previous story node.
+In this case, the boolean expression of the outgoing activity edge is evaluated to \emph{true} or \emph{false}.
 There can be arbitrarily many outgoing activity edges with boolean guard expressions,
 but the boolean expressions have to mutually exclude each other
 and the corresponding guards have to be combined with an outgoing activity edge with the guard \text[else\text],
 i.e.\ if there is a guard with a boolean expression, there is also an activity edge with the guard \text[else\text].
+The decision node can also be used to merge several control flows into one (several activity edges point to a decision node which has only one outgoing activity edge,
+see Figure~\ref{fig:SD-loops} b)).
 
-\tododt{add a figure for illustration of various boolean guards}
+\begin{figure}[htb]
+	\centering
+  \begin{minipage}[t]{.3\textwidth}
+    \centering
+    \includegraphics[scale=1]{SD-loop3} 
+    \\a)
+    %\caption{a) Each-Time Loop}
+    %\label{fig:SD-loop-for-each}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{.3\textwidth}
+    \centering
+    \includegraphics[scale=1]{SD-loop1}
+    \\b)
+    %\caption{b) Matching-Dependent Loop}
+    %\label{fig:SD-loop-matching}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{.3\textwidth}
+    \centering
+    \includegraphics[scale=1]{SD-loop2}
+    \\c)
+    %\caption{c) Boolean-Condition Loop}
+    %\label{fig:SD-loop-boolean}
+  \end{minipage}
+  \caption{Examples For Loops}
+  \label{fig:SD-loops}
+\end{figure}
 
 Guards can be used to model loops.
-For that purpose we use the guards \text[for each\text] and \text[end\text] in combination which is further explained in the following.
-A special story node is the \emph{for-each} activity node, depicted by a cascading activity node.
-The second activity node in Figure~\ref{fig:simpleStoryDiagram} is a \emph{for-each} activity node.
+For that purpose we use the guards \text[each time\text] and \text[end\text] in combination which is further explained in the following.
+A special story node is the \emph{for-each} activity node, depicted by a cascaded activity node (see Figure~\ref{fig:SD-loops} a)).
+The second activity node in Figure~\ref{fig:simpleStoryDiagram} (p.~\pageref{fig:simpleStoryDiagram}), for example, is a for-each activity node.
 Such a node represents a loop where the contained story pattern is executed as often as new subgraphs can be matched
 that differ from the previously matched graphs by at least one other matched object.
-For example, the story pattern in the \emph{for-each} activity node in Figure~\ref{fig:simpleStoryDiagram}
+The story pattern in the for-each activity node in Figure~\ref{fig:simpleStoryDiagram}
 is matched for each existing pair of a method (object variable \fe{anyMethod}) and corresponding call object (object variable \fe{c}).
 Besides the matching itself, all \emph{destroy} and \emph{create} steps are also executed for each of these matched subgraphs.
 After all these matching steps, the control flow is guided by the outgoing activity edge with the guard \text[end\text].
-Each \emph{for-each} activity node has such an outgoing activity edge.
-In addition, this edge can be combined with another activity edge having the guard \text[for each\text].
-This edge is leading to the activity node (or e.g.\ a sequence of such nodes)
-that is to be executed after each successful execution of the \emph{for-each} activity node.
-In this case, there has to be an activity edge leading back to the \emph{for-each} activity node
-to terminate the specified loop by following the \text[end\text] activity edge.
+Each for-each activity node has such an outgoing activity edge.
 
-\tododt{add a figure for illustration of loops}
+In addition, this edge can be combined with another activity edge having the guard \text[each time\text]
+(see Figure~\ref{fig:SD-loops} a)).
+This edge is optional and can be omitted like in Figure~\ref{fig:simpleStoryDiagram}.
+The \text[each time\text] edge is leading to the activity node (or e.g.\ a sequence of such nodes)
+that is to be executed after each successful execution of the for-each activity node.
+In this case, there has to be an activity edge leading back to the for-each activity node
+to terminate the specified loop by following the \text[end\text] activity edge (see Figure~\ref{fig:SD-loops} a)).
 
-\tododt{add a figure for illustration of decision nodes}
+Alternative ways to describe loops in story diagrams are uses of activity edges pointing to a preceding activity node
+(see Figure~\ref{fig:SD-loops} b) and c)).
 
 \todojr{fresh matches, auch fuer maybe\_bound (Stefan fragen wegen Beispiel)}
 
