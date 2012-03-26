@@ -60,6 +60,8 @@ The control flow of story diagrams is modeled explicitly.
 However, in certain situations, it is useful to only implicitly define the execution order, as it may significantly improve the comprehensibility of a story diagram.
 Thus, Meyers and Van Gorp \cite{MG08} propose to add a new language construct for the non-deterministic selection of a execution order.
 
+In~\cite{Sta08}, Stallmann presents an extension of story patterns which is called \emph{enhanced story pattern}. They extend story patterns by so-called \emph{insets}. Insets carry a qualifier which applies to all object and link variables in the inset. That allows to mark sub-graphs as negative, to specify \emph{and} and \emph{or} conditions on subgraphs and to qualify a subgraph by $\forall$. We will adopt these ideas in future versions of this document.
+
 Becker et al. present means for structuring complex transformations into several independent story diagrams which can be called in a well-defined manner \cite{BvDHR11}.
 They propose inventing explicit call activities which invoke other story diagrams and also support polymorphic dispatching.
 Polymorphic dispatching can also be used for the aforementioned case of non-deterministic execution order.
