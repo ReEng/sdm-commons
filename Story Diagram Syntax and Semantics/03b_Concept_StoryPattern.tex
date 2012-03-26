@@ -10,12 +10,19 @@ Finally, we show the use of object attributes in a story pattern in Section \ref
 \subsection{General Idea [CH]}
 \label{sec:StoryPatterns:storyPattern}
 
-Story patterns are typed attributed graph transformation rules with inheritance on node types (cf. Section \ref{sec:foundations:typedAttrGTS}) that may be embedded into an activity node of a story diagram (cf. Section \ref{sec:StoryDiagrams}). By using a type model as introduced in Section \ref{sec:typeGraph}, story patterns enable inheritance and polymorphism for matching nodes and edges.
+Story patterns are typed attributed graph transformation rules with inheritance on node types (cf. Section \ref{sec:foundations:typedAttrGTS}) that may be embedded into an activity node of a story diagram (cf. Section \ref{sec:StoryDiagrams}).
+ By using a type model as introduced in Section \ref{sec:typeGraph}, story patterns enable inheritance and polymorphism for matching nodes and edges.
 This allows for specifying graph replacement rules for object-oriented models.
 
-The nodes and edges in a story pattern are called object variables and link variables, respectively. As for normal graph transformations, object and link variables are matched to the nodes and edges of the host graph. In contrast to typed attributed graph transformation, story patterns explicitly require to use isomorphic matchings, i.e., two object variables of a story pattern may not be matched to the same node of the host graph.
+The nodes and edges in a story pattern are called object variables and link variables, respectively. 
+As for normal graph transformations, object and link variables are matched to the nodes and edges of the host graph. 
+In contrast to typed attributed graph transformation, story patterns explicitly require to use isomorphic matchings, i.e., two object variables of a story pattern may not be matched to the same node of the host graph.
 
-For enabling a concise notation of the graph transformation, story patterns apply a short-hand notation depicting the left-hand side (LHS) and the right-hand side (RHS) in a single, annotated graph. Nodes and edges being created (or deleted) are annotated with \create (or  \destroy, respectively). Nodes are are preserved by the graph transformation carry no annotation. Then, the LHS consists of all nodes that are preserved and deleted, while the RHS consists of all nodes that are preserved and created. The deletion of nodes follows the single pushout approach.
+For enabling a concise notation of the graph transformation, story patterns apply a short-hand notation depicting the left-hand side (LHS) and the right-hand side (RHS) in a single, annotated graph. 
+Nodes and edges being created (or deleted) are annotated with \create (or  \destroy, respectively). 
+Nodes are are preserved by the graph transformation carry no annotation.
+Then, the LHS consists of all nodes that are preserved and deleted, while the RHS consists of all nodes that are preserved and created. 
+The deletion of nodes follows the single pushout approach.
 
 Figure \ref{fig:simpleStoryPattern} shows an example of a single story pattern that redirects a method call from an old method to a new method.
 
@@ -26,12 +33,24 @@ Figure \ref{fig:simpleStoryPattern} shows an example of a single story pattern t
   \label{fig:simpleStoryPattern}
 \end{figure}
 
-In the example, the nodes \fe{parentClass}, \fe{oldMethod}, and \fe{newMethod} are bound variables, i.e., they already refer to objects of the host graph (cf. Section \ref{sec:StoryPatterns:binding:states}). The nodes \fe{anyMethod} and \fe{call} are unbound. When applying the story pattern, first a match for \fe{anyMethod} and \fe{call} is searched. A possible match will be any method in \fe{parentClass} which contains a call to \fe{oldMethod}. If the matching was successful, the link from \fe{c} to \fe{oldMethod} will be deleted and the link from \fe{c} to \fe{newMethod} will be created.
+In the example, the nodes \fe{parentClass}, \fe{oldMethod}, and \fe{newMethod} are bound variables, i.e., they already refer to objects of the host graph (cf. Section \ref{sec:StoryPatterns:binding:states}).
+The nodes \fe{anyMethod} and \fe{call} are unbound. 
+When applying the story pattern, first a match for \fe{anyMethod} and \fe{call} is searched. 
+A possible match will be any method in \fe{parentClass} which contains a call to \fe{oldMethod}. 
+If the matching was successful, the link from \fe{c} to \fe{oldMethod} will be deleted and the link from \fe{c} to \fe{newMethod} will be created.
 
-In our concrete syntax, the nodes which are not changed by the story pattern are visualized in black. Object and link variables to be destroyed are annotated with \destroy and visualized in red. Objects and links to be created are annotated with \create and visualized in green. An unbound node is labeled by its name and the name of the corresponding type. For bound nodes, we omit the name of the type.
+In our concrete syntax, the nodes which are not changed by the story pattern are visualized in black. 
+Object and link variables to be destroyed are annotated with \destroy and visualized in red. 
+Objects and links to be created are annotated with \create and visualized in green. 
+An unbound node is labeled by its name and the name of the corresponding type. 
+For bound nodes, we omit the name of the type.
 
 In general, the matching process is executed as a three step process:
-first, a matching is searched which uses a bound variable of the story pattern as a starting point. The matching includes all objects and links not to be changed as well as all objects and links annotated with \destroy. If such matching can be obtained, the story pattern is applicable and the execution proceeds. In the second step, all objects and links annotated with \destroy are deleted. Finally, in Step 3 all objects and links annotated with \create are created.
+first, a matching is searched which uses a bound variable of the story pattern as a starting point. 
+The matching includes all objects and links not to be changed as well as all objects and links annotated with \destroy. 
+If such matching can be obtained, the story pattern is applicable and the execution proceeds. 
+In the second step, all objects and links annotated with \destroy are deleted. 
+Finally, in Step 3 all objects and links annotated with \create are created.
 
 \subsection{Objects and Object Variables [MCP]}
 \label{sec:StoryPatterns:objects}
@@ -313,9 +332,14 @@ have no binding state.
 \subsection{Using Object Attributes [CH]}
 \label{sec:StoryPatterns:attributes}
 
-The nodes of our host graph carry attributes. During the application of a story pattern, these attributes can be used twofold. First, attribute constraints can be specified to restrict the attribute values to a certain range thereby restricting the possible matches of a story pattern. Second, attribute values can be changed during the graph rewriting step after a successful matching.
+The nodes of our host graph carry attributes. 
+During the application of a story pattern, these attributes can be used twofold. 
+First, attribute constraints can be specified to restrict the attribute values to a certain range thereby restricting the possible matches of a story pattern. 
+Second, attribute values can be changed during the graph rewriting step after a successful matching.
 
-We use \emph{attribute constraints} to restrict the matching of object variables to nodes of the host graph that have specific attribute values. Thus, attribute constraints are considered to be part of the LHS and do not change the host graph. Figure \ref{fig:objectConstraint} shows an example.
+We use \emph{attribute constraints} to restrict the matching of object variables to nodes of the host graph that have specific attribute values. 
+Thus, attribute constraints are considered to be part of the LHS and do not change the host graph. 
+Figure \ref{fig:objectConstraint} shows an example.
 
 \begin{figure}[htbp]
   \centering
@@ -324,11 +348,18 @@ We use \emph{attribute constraints} to restrict the matching of object variables
   \label{fig:objectConstraint}
 \end{figure}
 
-In the example, we match a method being contained by the class \fe{theClass}. The match is restricted to a method which has the name "getName".
+In the example, we match a method being contained by the class \fe{theClass}. 
+The match is restricted to a method which has the name "getName".
 
-The values of attributes that are not restricted by an attribute constraint are not considered during the matching. Thus, they may have an arbitrary value. In the current version of story patterns, attribute constraints need to be specified using OCL~\cite{OCL}. Besides equality checks, all comparative operations on the attributes of the object supported by OCL can be used as object constraints. 
+The values of attributes that are not restricted by an attribute constraint are not considered during the matching. 
+Thus, they may have an arbitrary value. 
+In the current version of story patterns, attribute constraints need to be specified using OCL~\cite{OCL}. 
+Besides equality checks, all comparative operations on the attributes of the object supported by OCL can be used as object constraints. 
 
-Beside attribute constraints, we may also use \emph{attribute assignments} to change the value of an attribute during the application of a story pattern. Thus, attribute assignments are considered to be part of the RHS. When using attribute assignments, the value of the attribute is not considered while matching the LHS to the host graph. Figure \ref{fig:attributeAssignment} shows an example.
+Beside attribute constraints, we may also use \emph{attribute assignments} to change the value of an attribute during the application of a story pattern. 
+Thus, attribute assignments are considered to be part of the RHS. 
+When using attribute assignments, the value of the attribute is not considered while matching the LHS to the host graph. 
+Figure \ref{fig:attributeAssignment} shows an example.
 
 \begin{figure}[htbp]
   \centering
@@ -337,15 +368,19 @@ Beside attribute constraints, we may also use \emph{attribute assignments} to ch
   \label{fig:attributeAssignment}
 \end{figure}
 
-In the example, the story pattern matches a method in class \fe{theClass} with an arbitrary name. Then, the name of the method is changed to \emph{"getMethodName"}. 
+In the example, the story pattern matches a method in class \fe{theClass} with an arbitrary name. 
+Then, the name of the method is changed to \emph{"getMethodName"}. 
 
 The concrete syntax of an attribute assignment is
 \begin{lstlisting}
  <attributeAssignment> ::= #Attribute.name ':=' OCLExpression
 \end{lstlisting}
-The expression is to be specified using OCL. The type of the return value of the OCL expression must be the same as the type of the attribute. Since the attribute assignment is considered to be part of the RHS, it is visualized in green color.
+The expression is to be specified using OCL. 
+The type of the return value of the OCL expression must be the same as the type of the attribute. 
+Since the attribute assignment is considered to be part of the RHS, it is visualized in green color.
 
-The OCL statements we allow for attribute constraints and attribute assignments must not traverse the references of the object variables. Both may only use the attributes of object variables in the story pattern and arbitrary arithmetic operations on them. 
+The OCL statements we allow for attribute constraints and attribute assignments must not traverse the references of the object variables.
+Both may only use the attributes of object variables in the story pattern and arbitrary arithmetic operations on them. 
 
 
 \ext  %--- Comment this line to include object sets into the document
