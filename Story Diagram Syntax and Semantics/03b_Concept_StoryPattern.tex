@@ -10,8 +10,8 @@ Finally, we show the use of object attributes in a story pattern in Section \ref
 \subsection{General Idea [CH]}
 \label{sec:StoryPatterns:storyPattern}
 
-Story patterns are typed attributed graph transformation rules with inheritance on node types (cf. Section \ref{sec:foundations:typedAttrGTS}) that may be embedded into an activity node of a story diagram (cf. Section \ref{sec:StoryDiagrams}).
- By using a type model as introduced in Section \ref{sec:typeGraph}, story patterns enable inheritance and polymorphism for matching nodes and edges.
+Story patterns are typed attributed graph transformation rules with inheritance on object types (cf. Section \ref{sec:foundations:typedAttrGTS}) that may be embedded into an activity node of a story diagram (cf. Section \ref{sec:StoryDiagrams}).
+ By using a type model as introduced in Section \ref{sec:typeGraph}, story patterns enable inheritance and polymorphism for matching object and link variables.
 This allows for specifying graph replacement rules for object-oriented models.
 
 As for normal graph transformations, object and link variables are matched to the objects and links of the instance model. 
@@ -156,10 +156,10 @@ is necessary to avoid a search over the whole underlying object model which prob
 \label{sec:StoryPatterns:binding:semantics}
 Furthermore, object variables and link variables have binding semantics that
 determine if a variable is mandatory, negative or optional.
-A match for mandatory variables must exist in the given host graph, otherwise
+A match for mandatory variables must exist in the given instance model, otherwise
 the pattern matching fails. 
 In contrast, negative variables constitute so-called negative application
-conditions and must not exist in the host graph. If a variable defined as
+conditions and must not exist in the instance model. If a variable defined as
 negative can be matched during the execution of the story pattern, the pattern
 fails, too. Optional variables may exist. If an optional variable exists, it will be
 bound, but if it does not exist, the story pattern may also be matched
@@ -577,7 +577,7 @@ For optionally created and destroyed links, the same applies to link order const
 \subsubsection{Maybe Links}
 \label{sec:StoryPatterns:specialLinks:maybeLink}
 
-Story pattern are matched by using isomorphic matchings. That means that two object variables in a story pattern may not be matched to the same object of the host graph. A matching which matches two object variables to the same object is, thus, considered to be invalid. In some situations, however, such matchings should be explicitly allowed. Then, the isomorphic matching must be disabled. This may be achieved by connecting the object variables with a maybe link. Figure \ref{fig:maybeLink} shows the concrete syntax of maybe links. 
+Story pattern are matched by using isomorphic matchings. That means that two object variables in a story pattern may not be matched to the same object of the instance model. A matching which matches two object variables to the same object is, thus, considered to be invalid. In some situations, however, such matchings should be explicitly allowed. Then, the isomorphic matching must be disabled. This may be achieved by connecting the object variables with a maybe link. Figure \ref{fig:maybeLink} shows the concrete syntax of maybe links. 
 
 \begin{figure}[htbp]
   \centering
