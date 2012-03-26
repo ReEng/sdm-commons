@@ -14,15 +14,14 @@ Story patterns are typed attributed graph transformation rules with inheritance 
  By using a type model as introduced in Section \ref{sec:typeGraph}, story patterns enable inheritance and polymorphism for matching nodes and edges.
 This allows for specifying graph replacement rules for object-oriented models.
 
-The nodes and edges in a story pattern are called object variables and link variables, respectively. 
-As for normal graph transformations, object and link variables are matched to the nodes and edges of the host graph. 
-In contrast to typed attributed graph transformation, story patterns explicitly require to use isomorphic matchings, i.e., two object variables of a story pattern may not be matched to the same node of the host graph.
+As for normal graph transformations, object and link variables are matched to the objects and links of the instance model. 
+In contrast to typed attributed graph transformation, story patterns explicitly require to use isomorphic matchings, i.e., two object variables of a story pattern may not be matched to the same object of the instance model.
 
 For enabling a concise notation of the graph transformation, story patterns apply a short-hand notation depicting the left-hand side (LHS) and the right-hand side (RHS) in a single, annotated graph. 
-Nodes and edges being created (or deleted) are annotated with \create (or  \destroy, respectively). 
-Nodes are are preserved by the graph transformation carry no annotation.
-Then, the LHS consists of all nodes that are preserved and deleted, while the RHS consists of all nodes that are preserved and created. 
-The deletion of nodes follows the single pushout approach.
+Objects and links being created (or deleted) are annotated with \create (or  \destroy, respectively). 
+Objects which are preserved by the graph transformation carry no annotation.
+Then, the LHS consists of all objects that are preserved and deleted, while the RHS consists of all objects that are preserved and created. 
+The deletion of objects follows the single pushout approach.
 
 Figure \ref{fig:simpleStoryPattern} shows an example of a single story pattern that redirects a method call from an old method to a new method.
 
@@ -33,17 +32,17 @@ Figure \ref{fig:simpleStoryPattern} shows an example of a single story pattern t
   \label{fig:simpleStoryPattern}
 \end{figure}
 
-In the example, the nodes \fe{parentClass}, \fe{oldMethod}, and \fe{newMethod} are bound variables, i.e., they already refer to objects of the host graph (cf. Section \ref{sec:StoryPatterns:binding:states}).
-The nodes \fe{anyMethod} and \fe{call} are unbound. 
+In the example, the object variables \fe{parentClass}, \fe{oldMethod}, and \fe{newMethod} are bound variables, i.e., they already refer to objects of the instance model (cf. Section \ref{sec:StoryPatterns:binding:states}).
+The object variables \fe{anyMethod} and \fe{call} are unbound. 
 When applying the story pattern, first a match for \fe{anyMethod} and \fe{call} is searched. 
 A possible match will be any method in \fe{parentClass} which contains a call to \fe{oldMethod}. 
 If the matching was successful, the link from \fe{c} to \fe{oldMethod} will be deleted and the link from \fe{c} to \fe{newMethod} will be created.
 
-In our concrete syntax, the nodes which are not changed by the story pattern are visualized in black. 
+In our concrete syntax, the object variables which are not changed by the story pattern are visualized in black. 
 Object and link variables to be destroyed are annotated with \destroy and visualized in red. 
 Objects and links to be created are annotated with \create and visualized in green. 
-An unbound node is labeled by its name and the name of the corresponding type. 
-For bound nodes, we omit the name of the type.
+An unbound object variable is labeled by its name and the name of the corresponding type. 
+For bound object variables, we omit the name of the type.
 
 In general, the matching process is executed as a three step process:
 first, a matching is searched which uses a bound variable of the story pattern as a starting point. 
@@ -332,13 +331,13 @@ have no binding state.
 \subsection{Using Object Attributes [CH]}
 \label{sec:StoryPatterns:attributes}
 
-The nodes of our host graph carry attributes. 
+The objects of our instance model carry attributes. 
 During the application of a story pattern, these attributes can be used twofold. 
 First, attribute constraints can be specified to restrict the attribute values to a certain range thereby restricting the possible matches of a story pattern. 
 Second, attribute values can be changed during the graph rewriting step after a successful matching.
 
-We use \emph{attribute constraints} to restrict the matching of object variables to nodes of the host graph that have specific attribute values. 
-Thus, attribute constraints are considered to be part of the LHS and do not change the host graph. 
+We use \emph{attribute constraints} to restrict the matching of object variables to objects of the instance model that have specific attribute values. 
+Thus, attribute constraints are considered to be part of the LHS and do not change the instance model. 
 Figure \ref{fig:objectConstraint} shows an example.
 
 \begin{figure}[htbp]
@@ -358,7 +357,7 @@ Besides equality checks, all comparative operations on the attributes of the obj
 
 Beside attribute constraints, we may also use \emph{attribute assignments} to change the value of an attribute during the application of a story pattern. 
 Thus, attribute assignments are considered to be part of the RHS. 
-When using attribute assignments, the value of the attribute is not considered while matching the LHS to the host graph. 
+When using attribute assignments, the value of the attribute is not considered while matching the LHS to the instance model. 
 Figure \ref{fig:attributeAssignment} shows an example.
 
 \begin{figure}[htbp]
