@@ -65,6 +65,8 @@ deletes edges if one of their source or target nodes is deleted.
 
 In general, matches of graph transformation rules are homomorphisms of the LHS of the rule to the host graph. That allows to match two nodes of the LHS to the same node of the host graph leading to the first situation mentioned above. Such situations may be prevented by using isomorphisms for matching the LHS. Then, each node of the LHS must be matched to a unique node of the host graph. Thus, using isomorphic matchings prevents the first situation when using single pushouts.
 
+In addition to LHS and RHS a graph transformation rule may specify negative application conditions (NAC,~\cite{Roz97}). A NAC is an additional conditions for a successful match. If the subgraph specified by the NAC can be matched into the host graph, then the graph transformation rule must not be applied.
+
 \section{Typed Attributed Graph Transformations (Christian)}
 \label{sec:foundations:typedAttrGTS}
 
@@ -77,15 +79,28 @@ Graphs and according graph transformations as introduced in Section \ref{sec:fou
   \label{fig:PetrinetTypeGraph}
 \end{figure}
 
-Therefore, story diagrams are based on typed attributed graph transformations \cite{EEPT06}. Typed attributed graph transformations introduce a type graph and node attributes. The type graph defines different types of nodes and edges and it defines which types of edges are allowed for which types of nodes. Additionally, nodes may carry attributes like, e.g., objects in an object-oriented programming language. Moreover, the type graph specifies inheritance relations between types of objects, a concept which is also known from object-oriented programming languages.
+Therefore, story diagrams are based on typed attributed graph transformations~\cite{EEPT06}. Typed attributed graph transformations introduce a type graph and node attributes. The type graph defines different types of nodes and edges and it defines which types of edges are allowed for which types of nodes. Additionally, nodes may carry attributes like, e.g., objects in an object-oriented programming language. Moreover, the type graph specifies inheritance relations between types of objects, a concept which is also known from object-oriented programming languages.
 
 We use graph transformations to modify or translate different kinds of models.
 These are specified in a certain language, often a domain-specific language (DSL).
 Thus, the type graph usually defines the \emph{abstract syntax} of the language used and is part of the corresponding \emph{metamodel} for this language.
 By replacing the type graph (the metamodel) we are able to specify transformations for models specified in various languages.
 
+As an example, Figure~\ref{fig:PetrinetTypeGraph} shows a simple metamodel of Petrinets. The \fe{Petrinet} consists of \fe{Nodes} and \fe{Arcs}. An \fe{Arc} connects two nodes which it refers as \fe{source} and \fe{target}. As usual, there exist two types of nodes: \fe{Places} and \fe{Transitions} where \fe{Places} may contain a number of \fe{Tokens}.
+
 The type graphs that may be used with story patterns can be created by using an arbitrary metamodeling language.
-Examples include Ecore \cite{SBP+08}, MOF \cite{MOF05}, and UML \cite{UML23}.
+Examples include Ecore~\cite{SBP+08}, MOF~\cite{MOF05}, and UML~\cite{UML23}.
+
+The modifications of a typed attributed graph is specified by typed attributed graph transformation rules. In these rules, all nodes and edges are typed over the metamodel and the matching needs to respect the types.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=1]{figures/TypedGTRule}
+  \caption{Typed Attributed Graph Transformation Rule}
+  \label{fig:typedGTRule}
+\end{figure}
+
+Figure~\ref{fig:typedGTRule} shows an example of a typed attributed graph transformation rule that specifies the behavior for a sink. In a Petrinet, a sink is a transition which has no outgoing place. Then, the transition consumes tokens without producing new tokens. The rule matches a \fe{Place} with a \fe{Token} in its LHS. Upon application, the \fe{Token} is deleted. The rule, however, may only be applied if the place \fe{p} is connected to a sink which is ensured by the NAC. The NAC specifies a subgraph where \fe{p} is connected to a \fe{Transition} which has an outgoing \fe{Arc} to a \fe{Place}. If such subgraph can be matched, the rule is not applicable. The rule morphisms is indirectly specified by the names of the nodes as proposed in~\cite{EEPT06}.
 
 If a graph transformation transforms a model based on a given type graph into a model based on the same type graph (modification of the model), the transformation is called \emph{endogenous} (also known as \emph{in-place} transformation). Otherwise, i.e., the transformation transforms a model based on a given type graph into a model based on another type graph (translation), the transformation is called \emph{exogenous} (also known as \emph{model-to-model} transformation). In principle, story diagrams are endogenous graph transformations. By combining the type graphs of the source model and the target model, story diagrams may also be used to specify exogenous graph transformations.
 
@@ -94,7 +109,7 @@ If a graph transformation transforms a model based on a given type graph into a 
 \label{sec:typeGraph}
 
 The type graph used in the examples in this report describes the structure of an abstract syntax tree for programming languages.
-In particular, it is an updated and slightly simplified version of the generalized abstract syntax tree (GAST) metamodel developed in the QBench project \cite{QBench}.
+In particular, it is an updated and slightly simplified version of the generalized abstract syntax tree (GAST) metamodel developed in the QBench project~\cite{QBench}.
 The GAST was developed to provide a unified syntax tree model for different programming languages like Java, C, and C++.
 Figure~\ref{fig:gast-mm} shows an excerpt of that metamodel.
 Some specialized subclasses have been omitted for clarity reasons.
