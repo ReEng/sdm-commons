@@ -971,22 +971,21 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_EeZY8LLzEd-uk56s-ldeog" sourceItem="_EeYx5LLzEd-uk56s-ldeog" targetItem="_EeSrQ7LzEd-uk56s-ldeog"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_EeZY8rLzEd-uk56s-ldeog" sourceItem="_EeZY8bLzEd-uk56s-ldeog" targetItem="_EeSrQ7LzEd-uk56s-ldeog"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_EeanEbLzEd-uk56s-ldeog" sourceItem="_EeanELLzEd-uk56s-ldeog" targetItem="_EeTSUbLzEd-uk56s-ldeog"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_HPr00LLzEd-uk56s-ldeog" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_HPoxgLLzEd-uk56s-ldeog" sourceAnchor="75.0,0.0" targetAnchor="0.0,105.0" comments="_rmak4ZxkEeCuYMafrm1l2g" targetConnectionVisual="_rmak4pxkEeCuYMafrm1l2g" source="_8htwULw0Ed-Ytrd77fw2LA" target="_B3eUELw1Ed-Ytrd77fw2LA">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_HPr00LLzEd-uk56s-ldeog" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_HPoxgLLzEd-uk56s-ldeog" sourceAnchor="104.0,16.0" targetAnchor="0.0,15.0" comments="_rmak4ZxkEeCuYMafrm1l2g" targetConnectionVisual="_rmak4pxkEeCuYMafrm1l2g" source="_8htwULw0Ed-Ytrd77fw2LA" target="_B3eUELw1Ed-Ytrd77fw2LA">
     <modelElement href="sdm.uml#_HPoxgLLzEd-uk56s-ldeog"/>
     <visualProperties xmi:id="_HPr00bLzEd-uk56s-ldeog"/>
     <nameVisual xmi:id="_HPr00rLzEd-uk56s-ldeog" text="HasType">
-      <visualProperties xmi:id="_HSJ6ALLzEd-uk56s-ldeog" position="21.0,-8.000000000000028"/>
+      <visualProperties xmi:id="_HSJ6ALLzEd-uk56s-ldeog" position="-24.0,-19.0"/>
     </nameVisual>
-    <bendpoints xmi:id="_Pb_oenM6EeGfVbRN8qiL7A" sourceY="-168" targetX="-146"/>
     <sourceRole xmi:id="_HPsb4LLzEd-uk56s-ldeog" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_HPoxgbLzEd-uk56s-ldeog" name="typedElement">
       <modelElement href="sdm.uml#_HPoxgbLzEd-uk56s-ldeog"/>
-      <visualProperties xmi:id="_HSJS8LLzEd-uk56s-ldeog" position="-96.0,-78.0"/>
+      <visualProperties xmi:id="_HSJS8LLzEd-uk56s-ldeog" position="2.0,-1.0"/>
       <visibility xmi:id="_HPsb4bLzEd-uk56s-ldeog" label="+"/>
       <cardinality xmi:id="_HPsb4rLzEd-uk56s-ldeog" label="*" max="-1"/>
     </sourceRole>
     <targetRole xmi:id="_HPsb47LzEd-uk56s-ldeog" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_HPpYkbLzEd-uk56s-ldeog" derived="true" name="type" navigable="true">
       <modelElement href="sdm.uml#_HPpYkbLzEd-uk56s-ldeog"/>
-      <visualProperties xmi:id="_HSJ6AbLzEd-uk56s-ldeog" position="-13.0,8.0"/>
+      <visualProperties xmi:id="_HSJ6AbLzEd-uk56s-ldeog" position="-47.0,3.0"/>
       <stereotypes xmi:id="_mHiz4Lw1Ed-Ytrd77fw2LA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_mHa4ELw1Ed-Ytrd77fw2LA" name="EReference">
         <modelElement href="sdm.uml#_mHa4ELw1Ed-Ytrd77fw2LA"/>
       </stereotypes>
@@ -994,9 +993,11 @@
       <cardinality xmi:id="_HPsb5bLzEd-uk56s-ldeog" label="0..1" max="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_w3ToILLzEd-uk56s-ldeog" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_w3SaALLzEd-uk56s-ldeog" sourceAnchor="54.0,0.0" targetAnchor="52.0,27.0" subClass="_eTcTELyxEd-eCY_Peu5fFw" superClass="_8htwULw0Ed-Ytrd77fw2LA">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_w3ToILLzEd-uk56s-ldeog" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_w3SaALLzEd-uk56s-ldeog" sourceAnchor="42.0,0.0" targetAnchor="52.0,27.0" subClass="_eTcTELyxEd-eCY_Peu5fFw" superClass="_8htwULw0Ed-Ytrd77fw2LA">
     <modelElement href="sdm.uml#_w3SaALLzEd-uk56s-ldeog"/>
     <visualProperties xmi:id="_w3ToIbLzEd-uk56s-ldeog"/>
+    <bendpoints xmi:id="_NgFI03NPEeG6rN4Q-jjiZQ" sourceY="-30" targetX="-201" targetY="297"/>
+    <bendpoints xmi:id="_NgFI1HNPEeG6rN4Q-jjiZQ" sourceX="201" sourceY="-30" targetY="297"/>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_0MxIELLzEd-uk56s-ldeog" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_0MvS4LLzEd-uk56s-ldeog" sourceAnchor="107.0,0.0" targetAnchor="65.0,0.0" superClass="_eTYBoLyxEd-eCY_Peu5fFw">
     <modelElement href="sdm.uml#_0MvS4LLzEd-uk56s-ldeog"/>
@@ -1640,21 +1641,21 @@
       <cardinality xmi:id="_IcYLgLw1Ed-Ytrd77fw2LA" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_rCRogLw1Ed-Ytrd77fw2LA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_rCMwALw1Ed-Ytrd77fw2LA" sourceAnchor="104.0,14.0" targetAnchor="0.0,36.0" source="_8htwULw0Ed-Ytrd77fw2LA" target="_IcaAsLw1Ed-Ytrd77fw2LA">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_rCRogLw1Ed-Ytrd77fw2LA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_rCMwALw1Ed-Ytrd77fw2LA" sourceAnchor="88.0,27.0" targetAnchor="15.0,0.0" source="_8htwULw0Ed-Ytrd77fw2LA" target="_IcaAsLw1Ed-Ytrd77fw2LA">
     <modelElement href="sdm.uml#_rCMwALw1Ed-Ytrd77fw2LA"/>
     <visualProperties xmi:id="_rCRogbw1Ed-Ytrd77fw2LA"/>
     <nameVisual xmi:id="_rCRogrw1Ed-Ytrd77fw2LA" text="HasGenericType">
-      <visualProperties xmi:id="_rG0KQLw1Ed-Ytrd77fw2LA" position="-47.0,-8.0"/>
+      <visualProperties xmi:id="_rG0KQLw1Ed-Ytrd77fw2LA" position="2.0,-7.0"/>
     </nameVisual>
     <sourceRole xmi:id="_rCRog7w1Ed-Ytrd77fw2LA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_rCNXELw1Ed-Ytrd77fw2LA" name="typedElement">
       <modelElement href="sdm.uml#_rCNXELw1Ed-Ytrd77fw2LA"/>
-      <visualProperties xmi:id="_rGzjMLw1Ed-Ytrd77fw2LA" position="5.0,-44.0"/>
+      <visualProperties xmi:id="_rGzjMLw1Ed-Ytrd77fw2LA" position="-129.0,1.0"/>
       <visibility xmi:id="_rCRohLw1Ed-Ytrd77fw2LA" label="+"/>
       <cardinality xmi:id="_rCRohbw1Ed-Ytrd77fw2LA" label="0..1" max="1"/>
     </sourceRole>
     <targetRole xmi:id="_rCRohrw1Ed-Ytrd77fw2LA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_rCN-Ibw1Ed-Ytrd77fw2LA" aggregationKind="2" name="genericType" navigable="true">
       <modelElement href="sdm.uml#_rCN-Ibw1Ed-Ytrd77fw2LA"/>
-      <visualProperties xmi:id="_rG0xULw1Ed-Ytrd77fw2LA" position="-85.0,8.0"/>
+      <visualProperties xmi:id="_rG0xULw1Ed-Ytrd77fw2LA" position="2.0,-45.0"/>
       <stereotypes xmi:id="_aoMfELxeEd-HP-M1eWm3kg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_aoEjQLxeEd-HP-M1eWm3kg" name="EReference">
         <modelElement href="sdm.uml#_aoEjQLxeEd-HP-M1eWm3kg"/>
       </stereotypes>
@@ -1725,17 +1726,15 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_eTTJILyxEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#__W84QLxZEd-Ytrd77fw2LA" superClass="_eTU-ULyxEd-eCY_Peu5fFw">
     <modelElement href="sdm.uml#__W84QLxZEd-Ytrd77fw2LA"/>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_3qDWALyxEd-eCY_Peu5fFw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_packagedElement.53" sourceAnchor="127.0,0.0" targetAnchor="0.0,34.0" source="_DOQg0Lw1Ed-Ytrd77fw2LA" target="_sQs5sL0VEd-DQ5q3aRKcIw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_3qDWALyxEd-eCY_Peu5fFw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_packagedElement.53" sourceAnchor="139.0,90.0" targetAnchor="0.0,33.0" source="_DOQg0Lw1Ed-Ytrd77fw2LA" target="_sQs5sL0VEd-DQ5q3aRKcIw">
     <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_packagedElement.53"/>
     <nameVisual xmi:id="_3qFLMbyxEd-eCY_Peu5fFw" text="">
-      <visualProperties xmi:id="_3r6-QLyxEd-eCY_Peu5fFw" position="15.0,-8.0"/>
+      <visualProperties xmi:id="_3r6-QLyxEd-eCY_Peu5fFw" position="117.0,-17.0"/>
     </nameVisual>
-    <bendpoints xmi:id="_Pb_ocHM6EeGfVbRN8qiL7A" sourceY="-20" targetX="36" targetY="65"/>
-    <bendpoints xmi:id="_Pb_ocXM6EeGfVbRN8qiL7A" sourceX="-299" sourceY="-20" targetX="-263" targetY="65"/>
-    <bendpoints xmi:id="_Pb_ocnM6EeGfVbRN8qiL7A" sourceX="-299" sourceY="-85" targetX="-263"/>
+    <bendpoints xmi:id="_NgFI2XNPEeG6rN4Q-jjiZQ" sourceY="32" targetX="-284"/>
     <sourceRole xmi:id="_3qFyQLyxEd-eCY_Peu5fFw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-eAnnotations" aggregationKind="2" name="eAnnotations" navigable="true">
       <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-eAnnotations"/>
-      <visualProperties xmi:id="_3r6XMLyxEd-eCY_Peu5fFw" position="-218.0,-12.000000000000114"/>
+      <visualProperties xmi:id="_3r6XMLyxEd-eCY_Peu5fFw" position="148.0,-5.0"/>
       <stereotypes xmi:id="_3qIOgbyxEd-eCY_Peu5fFw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0qsYcEduPJbEsMYXjUQ" name="EReference">
         <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0qsYcEduPJbEsMYXjUQ"/>
       </stereotypes>
@@ -1744,7 +1743,7 @@
     </sourceRole>
     <targetRole xmi:id="_3qFyQbyxEd-eCY_Peu5fFw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-eModelElement" name="eModelElement" navigable="true">
       <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-eModelElement"/>
-      <visualProperties xmi:id="_3r6-QbyxEd-eCY_Peu5fFw" position="-103.0,8.0"/>
+      <visualProperties xmi:id="_3r6-QbyxEd-eCY_Peu5fFw" position="-161.0,2.0"/>
       <stereotypes xmi:id="_3qKDsLyxEd-eCY_Peu5fFw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuJ5ssYcEduPJbEsMYXjUQ" name="EReference">
         <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuJ5ssYcEduPJbEsMYXjUQ"/>
       </stereotypes>
@@ -1752,8 +1751,9 @@
       <cardinality xmi:id="_3qI1kLyxEd-eCY_Peu5fFw" label="0..1" max="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_3qFLMLyxEd-eCY_Peu5fFw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-_generalization.0" sourceAnchor="140.0,0.0" targetAnchor="49.0,67.0" subClass="_DOQg0Lw1Ed-Ytrd77fw2LA" superClass="_sQs5sL0VEd-DQ5q3aRKcIw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_3qFLMLyxEd-eCY_Peu5fFw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-_generalization.0" sourceAnchor="279.0,45.0" targetAnchor="18.0,0.0" subClass="_DOQg0Lw1Ed-Ytrd77fw2LA" superClass="_sQs5sL0VEd-DQ5q3aRKcIw">
     <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-_generalization.0"/>
+    <bendpoints xmi:id="_NgFI2nNPEeG6rN4Q-jjiZQ" sourceX="162" targetY="-44"/>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6eSYMLyxEd-eCY_Peu5fFw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_packagedElement.52" sourceAnchor="0.0,33.0" targetAnchor="81.0,32.0" target="_DOQg0Lw1Ed-Ytrd77fw2LA">
     <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_packagedElement.52"/>
@@ -1835,45 +1835,41 @@
     <bendpoints xmi:id="_3fBW0b0WEd-DQ5q3aRKcIw" sourceY="-23" targetX="-620" targetY="-49"/>
     <bendpoints xmi:id="_3fBW0r0WEd-DQ5q3aRKcIw" sourceX="620" sourceY="-23" targetY="-49"/>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_VubvoLyyEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_VuVpALyyEd-eCY_Peu5fFw" sourceAnchor="0.0,56.0" targetAnchor="140.0,90.0" source="_zYD8YLyxEd-eCY_Peu5fFw" target="_DOQg0Lw1Ed-Ytrd77fw2LA">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_VubvoLyyEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_VuVpALyyEd-eCY_Peu5fFw" sourceAnchor="0.0,56.0" targetAnchor="139.0,0.0" source="_zYD8YLyxEd-eCY_Peu5fFw" target="_DOQg0Lw1Ed-Ytrd77fw2LA">
     <modelElement href="sdm.uml#_VuVpALyyEd-eCY_Peu5fFw"/>
     <visualProperties xmi:id="_VubvobyyEd-eCY_Peu5fFw"/>
     <nameVisual xmi:id="_VubvoryyEd-eCY_Peu5fFw" text="HasAnnotation">
-      <visualProperties xmi:id="_VyNcYLyyEd-eCY_Peu5fFw" position="-48.0,-787.9999999999999"/>
+      <visualProperties xmi:id="_VyNcYLyyEd-eCY_Peu5fFw" position="-98.00000000000006,145.9999999999999"/>
     </nameVisual>
-    <bendpoints xmi:id="_Pb_oc3M6EeGfVbRN8qiL7A" sourceX="-619" targetX="-585" targetY="-773"/>
-    <bendpoints xmi:id="_Pb_odHM6EeGfVbRN8qiL7A" sourceX="-619" sourceY="858" targetX="-585" targetY="85"/>
-    <bendpoints xmi:id="_Pb_odXM6EeGfVbRN8qiL7A" sourceX="-34" sourceY="858" targetY="85"/>
+    <bendpoints xmi:id="_Nf7X0nNPEeG6rN4Q-jjiZQ" sourceX="-360" targetY="-308"/>
     <sourceRole xmi:id="_Vubvo7yyEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_VuWQELyyEd-eCY_Peu5fFw" name="annotatedElement">
       <modelElement href="sdm.uml#_VuWQELyyEd-eCY_Peu5fFw"/>
-      <visualProperties xmi:id="_VyM1ULyyEd-eCY_Peu5fFw" position="-580.0,8.000000000000057"/>
+      <visualProperties xmi:id="_VyM1ULyyEd-eCY_Peu5fFw" position="-129.0,-39.00000000000003"/>
       <visibility xmi:id="_VubvpLyyEd-eCY_Peu5fFw" label="+"/>
       <cardinality xmi:id="_VubvpbyyEd-eCY_Peu5fFw" label="0..1" max="1"/>
     </sourceRole>
     <targetRole xmi:id="_VubvpryyEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_VuXeMLyyEd-eCY_Peu5fFw" aggregationKind="2" name="annotation" navigable="true">
       <modelElement href="sdm.uml#_VuXeMLyyEd-eCY_Peu5fFw"/>
-      <visualProperties xmi:id="_VyODcLyyEd-eCY_Peu5fFw" position="1.9999999999998863,5.0"/>
+      <visualProperties xmi:id="_VyODcLyyEd-eCY_Peu5fFw" position="-75.00000000000006,-44.0"/>
       <visibility xmi:id="_Vubvp7yyEd-eCY_Peu5fFw" label="+"/>
       <cardinality xmi:id="_VubvqLyyEd-eCY_Peu5fFw" label="*" max="-1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_3aKDYLyyEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_3aIOMLyyEd-eCY_Peu5fFw" sourceAnchor="45.0,0.0" targetAnchor="160.0,112.0" subClass="_8htwULw0Ed-Ytrd77fw2LA" superClass="_zYD8YLyxEd-eCY_Peu5fFw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_3aKDYLyyEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_3aIOMLyyEd-eCY_Peu5fFw" sourceAnchor="0.0,15.0" targetAnchor="321.0,15.0" subClass="_8htwULw0Ed-Ytrd77fw2LA" superClass="_zYD8YLyxEd-eCY_Peu5fFw">
     <modelElement href="sdm.uml#_3aIOMLyyEd-eCY_Peu5fFw"/>
     <visualProperties xmi:id="_3aKDYbyyEd-eCY_Peu5fFw"/>
-    <bendpoints xmi:id="_PcJZcHM6EeGfVbRN8qiL7A" sourceY="-43" targetX="287" targetY="30"/>
-    <bendpoints xmi:id="_PcJZcXM6EeGfVbRN8qiL7A" sourceX="-287" sourceY="-43" targetY="30"/>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_3_8RALyyEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_3_6b0LyyEd-eCY_Peu5fFw" sourceAnchor="82.0,0.0" targetAnchor="160.0,112.0" subClass="_eTYBoLyxEd-eCY_Peu5fFw" superClass="_zYD8YLyxEd-eCY_Peu5fFw">
     <modelElement href="sdm.uml#_3_6b0LyyEd-eCY_Peu5fFw"/>
     <visualProperties xmi:id="_3_8RAbyyEd-eCY_Peu5fFw"/>
-    <bendpoints xmi:id="_Pb_oeHM6EeGfVbRN8qiL7A" sourceY="-30" targetX="176" targetY="30"/>
-    <bendpoints xmi:id="_Pb_oeXM6EeGfVbRN8qiL7A" sourceX="-176" sourceY="-30" targetY="30"/>
+    <bendpoints xmi:id="_Nf7X0HNPEeG6rN4Q-jjiZQ" sourceY="-30" targetX="176" targetY="30"/>
+    <bendpoints xmi:id="_Nf7X0XNPEeG6rN4Q-jjiZQ" sourceX="-176" sourceY="-30" targetY="30"/>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_5NH10LyyEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_5NGAoLyyEd-eCY_Peu5fFw" sourceAnchor="163.0,0.0" targetAnchor="160.0,112.0" subClass="_eTU-ULyxEd-eCY_Peu5fFw" superClass="_zYD8YLyxEd-eCY_Peu5fFw">
     <modelElement href="sdm.uml#_5NGAoLyyEd-eCY_Peu5fFw"/>
     <visualProperties xmi:id="_5NH10byyEd-eCY_Peu5fFw"/>
-    <bendpoints xmi:id="_PcJZeXM6EeGfVbRN8qiL7A" sourceY="-102" targetX="53" targetY="30"/>
-    <bendpoints xmi:id="_PcJZenM6EeGfVbRN8qiL7A" sourceX="-53" sourceY="-102" targetY="30"/>
+    <bendpoints xmi:id="_NgFI0XNPEeG6rN4Q-jjiZQ" sourceY="-104" targetX="60" targetY="30"/>
+    <bendpoints xmi:id="_NgFI0nNPEeG6rN4Q-jjiZQ" sourceX="-60" sourceY="-104" targetY="30"/>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_ijOHwL0VEd-DQ5q3aRKcIw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_ijOHwb0VEd-DQ5q3aRKcIw"/>
@@ -1890,15 +1886,17 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_ijP8870VEd-DQ5q3aRKcIw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_ijQkAL0VEd-DQ5q3aRKcIw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_ijQkAb0VEd-DQ5q3aRKcIw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_3o-ZgL0VEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_3o5hAL0VEd-DQ5q3aRKcIw" sourceAnchor="49.0,0.0" targetAnchor="56.0,38.0" source="_sQs5sL0VEd-DQ5q3aRKcIw" target="_va16cL0VEd-DQ5q3aRKcIw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_3o-ZgL0VEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_3o5hAL0VEd-DQ5q3aRKcIw" sourceAnchor="61.0,0.0" targetAnchor="55.0,38.0" source="_sQs5sL0VEd-DQ5q3aRKcIw" target="_va16cL0VEd-DQ5q3aRKcIw">
     <modelElement href="sdm.uml#_3o5hAL0VEd-DQ5q3aRKcIw"/>
     <visualProperties xmi:id="_3o-Zgb0VEd-DQ5q3aRKcIw"/>
     <nameVisual xmi:id="_3o-Zgr0VEd-DQ5q3aRKcIw" text="HasModelExtension">
-      <visualProperties xmi:id="_3u1w8L0VEd-DQ5q3aRKcIw" position="-60.0,91.0"/>
+      <visualProperties xmi:id="_3u1w8L0VEd-DQ5q3aRKcIw" position="-119.0,1.0"/>
     </nameVisual>
+    <bendpoints xmi:id="_NgFI23NPEeG6rN4Q-jjiZQ" sourceY="-74" targetX="84" targetY="165"/>
+    <bendpoints xmi:id="_NgFI3HNPEeG6rN4Q-jjiZQ" sourceX="-84" sourceY="-74" targetY="165"/>
     <sourceRole xmi:id="_3o-Zhr0VEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_3o6vIr0VEd-DQ5q3aRKcIw" derived="true" name="modelBase" navigable="true">
       <modelElement href="sdm.uml#_3o6vIr0VEd-DQ5q3aRKcIw"/>
-      <visualProperties xmi:id="_3u2YAL0VEd-DQ5q3aRKcIw" position="-76.0,-40.0"/>
+      <visualProperties xmi:id="_3u2YAL0VEd-DQ5q3aRKcIw" position="-80.0,-111.0"/>
       <stereotypes xmi:id="_Wg3eQL0XEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_WgqC4L0XEd-DQ5q3aRKcIw" name="EReference">
         <modelElement href="sdm.uml#_WgqC4L0XEd-DQ5q3aRKcIw"/>
       </stereotypes>
@@ -1907,48 +1905,47 @@
     </sourceRole>
     <targetRole xmi:id="_3o-Zg70VEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_3o6IEL0VEd-DQ5q3aRKcIw" aggregationKind="2" derived="true" name="extension">
       <modelElement href="sdm.uml#_3o6IEL0VEd-DQ5q3aRKcIw"/>
-      <visualProperties xmi:id="_3u0i0L0VEd-DQ5q3aRKcIw" position="6.0,207.0"/>
+      <visualProperties xmi:id="_3u0i0L0VEd-DQ5q3aRKcIw" position="-67.0,26.0"/>
       <visibility xmi:id="_3o-ZhL0VEd-DQ5q3aRKcIw" label="+"/>
       <cardinality xmi:id="_3o-Zhb0VEd-DQ5q3aRKcIw" label="*" max="-1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tC3hAL0WEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_tCyogL0WEd-DQ5q3aRKcIw" sourceAnchor="0.0,69.0" targetAnchor="0.0,19.0" source="_zYD8YLyxEd-eCY_Peu5fFw" target="_va16cL0VEd-DQ5q3aRKcIw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tC3hAL0WEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_tCyogL0WEd-DQ5q3aRKcIw" sourceAnchor="0.0,86.0" targetAnchor="25.0,0.0" source="_zYD8YLyxEd-eCY_Peu5fFw" target="_va16cL0VEd-DQ5q3aRKcIw">
     <modelElement href="sdm.uml#_tCyogL0WEd-DQ5q3aRKcIw"/>
     <visualProperties xmi:id="_tC3hAb0WEd-DQ5q3aRKcIw"/>
     <nameVisual xmi:id="_tC3hAr0WEd-DQ5q3aRKcIw" text="HasExtension">
-      <visualProperties xmi:id="_tGJegL0WEd-DQ5q3aRKcIw" position="-46.00000000000006,37.999999999999886"/>
+      <visualProperties xmi:id="_tGJegL0WEd-DQ5q3aRKcIw" position="-88.0,11.000000000000028"/>
     </nameVisual>
-    <bendpoints xmi:id="_Pb_odnM6EeGfVbRN8qiL7A" sourceX="-463" targetX="-373" targetY="-143"/>
-    <bendpoints xmi:id="_Pb_od3M6EeGfVbRN8qiL7A" sourceX="-463" sourceY="143" targetX="-373"/>
+    <bendpoints xmi:id="_NgFI0HNPEeG6rN4Q-jjiZQ" sourceX="-129" targetY="-90"/>
     <sourceRole xmi:id="_tC3hA70WEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_tCyogb0WEd-DQ5q3aRKcIw" name="extendableBase" navigable="true">
       <modelElement href="sdm.uml#_tCyogb0WEd-DQ5q3aRKcIw"/>
-      <visualProperties xmi:id="_tGI3cb0WEd-DQ5q3aRKcIw" position="-459.0,4.999999999999943"/>
+      <visualProperties xmi:id="_tGI3cb0WEd-DQ5q3aRKcIw" position="-117.0,-17.99999999999997"/>
       <visibility xmi:id="_tC3hBL0WEd-DQ5q3aRKcIw" label="+"/>
       <cardinality xmi:id="_tC3hBb0WEd-DQ5q3aRKcIw" label="0..1" max="1"/>
     </sourceRole>
     <targetRole xmi:id="_tC3hBr0WEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_tCzPkr0WEd-DQ5q3aRKcIw" aggregationKind="2" name="extension" navigable="true">
       <modelElement href="sdm.uml#_tCzPkr0WEd-DQ5q3aRKcIw"/>
-      <visualProperties xmi:id="_tGKFkL0WEd-DQ5q3aRKcIw" position="-338.99999999999994,8.0"/>
+      <visualProperties xmi:id="_tGKFkL0WEd-DQ5q3aRKcIw" position="-67.0,-54.0"/>
       <visibility xmi:id="_tC3hB70WEd-DQ5q3aRKcIw" label="+"/>
       <cardinality xmi:id="_tC3hCL0WEd-DQ5q3aRKcIw" label="*" max="-1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_8kqa8L0WEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_8klicL0WEd-DQ5q3aRKcIw" sourceAnchor="69.0,38.0" targetAnchor="0.0,159.0" source="_va16cL0VEd-DQ5q3aRKcIw" target="_3dDn8L0WEd-DQ5q3aRKcIw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_8kqa8L0WEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_8klicL0WEd-DQ5q3aRKcIw" sourceAnchor="111.0,19.0" targetAnchor="22.0,0.0" source="_va16cL0VEd-DQ5q3aRKcIw" target="_3dDn8L0WEd-DQ5q3aRKcIw">
     <modelElement href="sdm.uml#_8klicL0WEd-DQ5q3aRKcIw"/>
     <visualProperties xmi:id="_8kqa8b0WEd-DQ5q3aRKcIw"/>
     <nameVisual xmi:id="_8kqa8r0WEd-DQ5q3aRKcIw" text="HasExtendedObject">
-      <visualProperties xmi:id="_8oQhgL0WEd-DQ5q3aRKcIw" position="109.0,-8.0"/>
+      <visualProperties xmi:id="_8oQhgL0WEd-DQ5q3aRKcIw" position="-61.0,29.0"/>
     </nameVisual>
-    <bendpoints xmi:id="_PcJZdHM6EeGfVbRN8qiL7A" sourceY="202" targetX="-536"/>
+    <bendpoints xmi:id="_NgFI1XNPEeG6rN4Q-jjiZQ" sourceX="85" targetY="-162"/>
     <sourceRole xmi:id="_8krCAL0WEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_8kmJgL0WEd-DQ5q3aRKcIw" name="extension">
       <modelElement href="sdm.uml#_8kmJgL0WEd-DQ5q3aRKcIw"/>
-      <visualProperties xmi:id="_8oPTYL0WEd-DQ5q3aRKcIw" position="5.0,158.0"/>
+      <visualProperties xmi:id="_8oPTYL0WEd-DQ5q3aRKcIw" position="3.0,-19.0"/>
       <visibility xmi:id="_8krCAb0WEd-DQ5q3aRKcIw" label="+"/>
       <cardinality xmi:id="_8krCAr0WEd-DQ5q3aRKcIw" label="*" max="-1"/>
     </sourceRole>
     <targetRole xmi:id="_8krCA70WEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_8kmwkb0WEd-DQ5q3aRKcIw" derived="true" name="base" navigable="true">
       <modelElement href="sdm.uml#_8kmwkb0WEd-DQ5q3aRKcIw"/>
-      <visualProperties xmi:id="_8oQhgb0WEd-DQ5q3aRKcIw" position="-44.0,8.0"/>
+      <visualProperties xmi:id="_8oQhgb0WEd-DQ5q3aRKcIw" position="-41.0,-38.0"/>
       <stereotypes xmi:id="_DQfr4L06Ed-8i6uUe2B2Qg" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_DQedwL06Ed-8i6uUe2B2Qg" name="EReference">
         <modelElement href="sdm.uml#_DQedwL06Ed-8i6uUe2B2Qg"/>
       </stereotypes>
@@ -1962,23 +1959,22 @@
     <bendpoints xmi:id="_SqRAIL0XEd-DQ5q3aRKcIw" sourceY="63" targetX="-613" targetY="172"/>
     <bendpoints xmi:id="_SqRAIb0XEd-DQ5q3aRKcIw" sourceX="613" sourceY="63" targetY="172"/>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_w584kL0cEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_w551QL0cEd-DQ5q3aRKcIw" sourceAnchor="0.0,32.0" targetAnchor="0.0,45.0" source="_va16cL0VEd-DQ5q3aRKcIw" target="_DOQg0Lw1Ed-Ytrd77fw2LA">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_w584kL0cEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_w551QL0cEd-DQ5q3aRKcIw" sourceAnchor="0.0,19.0" targetAnchor="169.0,0.0" source="_va16cL0VEd-DQ5q3aRKcIw" target="_DOQg0Lw1Ed-Ytrd77fw2LA">
     <modelElement href="sdm.uml#_w551QL0cEd-DQ5q3aRKcIw"/>
     <visualProperties xmi:id="_w584kb0cEd-DQ5q3aRKcIw"/>
     <nameVisual xmi:id="_w584kr0cEd-DQ5q3aRKcIw" text="">
-      <visualProperties xmi:id="_w_EpIL0cEd-DQ5q3aRKcIw" position="-8.0,-196.00000000000006"/>
+      <visualProperties xmi:id="_w_EpIL0cEd-DQ5q3aRKcIw" position="2.0,64.0"/>
     </nameVisual>
-    <bendpoints xmi:id="_PcJZdXM6EeGfVbRN8qiL7A" sourceX="-269" targetX="-185" targetY="-559"/>
-    <bendpoints xmi:id="_PcJZdnM6EeGfVbRN8qiL7A" sourceX="-269" sourceY="559" targetX="-185"/>
+    <bendpoints xmi:id="_NgFI1nNPEeG6rN4Q-jjiZQ" sourceX="-176" targetY="-169"/>
     <sourceRole xmi:id="_w584k70cEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_w56cUL0cEd-DQ5q3aRKcIw" name="extension">
       <modelElement href="sdm.uml#_w56cUL0cEd-DQ5q3aRKcIw"/>
-      <visualProperties xmi:id="_w_ECEb0cEd-DQ5q3aRKcIw" position="-263.0,5.0"/>
+      <visualProperties xmi:id="_w_ECEb0cEd-DQ5q3aRKcIw" position="-69.0,-18.0"/>
       <visibility xmi:id="_w584lL0cEd-DQ5q3aRKcIw" label="+"/>
       <cardinality xmi:id="_w584lb0cEd-DQ5q3aRKcIw" label="*" max="-1"/>
     </sourceRole>
     <targetRole xmi:id="_w584lr0cEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_w56cU70cEd-DQ5q3aRKcIw" derived="true" name="owningAnnotation" navigable="true">
       <modelElement href="sdm.uml#_w56cU70cEd-DQ5q3aRKcIw"/>
-      <visualProperties xmi:id="_w_FQML0cEd-DQ5q3aRKcIw" position="-120.00000000000011,8.0"/>
+      <visualProperties xmi:id="_w_FQML0cEd-DQ5q3aRKcIw" position="4.0,-45.0"/>
       <stereotypes xmi:id="_3L9pML0cEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_3L9CIL0cEd-DQ5q3aRKcIw" name="EReference">
         <modelElement href="sdm.uml#_3L9CIL0cEd-DQ5q3aRKcIw"/>
       </stereotypes>
@@ -1989,8 +1985,8 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_Dmq2YL0dEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_DmpoQL0dEd-DQ5q3aRKcIw" sourceAnchor="55.0,0.0" targetAnchor="160.0,112.0" subClass="_va16cL0VEd-DQ5q3aRKcIw" superClass="_zYD8YLyxEd-eCY_Peu5fFw">
     <modelElement href="sdm.uml#_DmpoQL0dEd-DQ5q3aRKcIw"/>
     <visualProperties xmi:id="_Dmq2Yb0dEd-DQ5q3aRKcIw"/>
-    <bendpoints xmi:id="_PcJZd3M6EeGfVbRN8qiL7A" sourceY="-51" targetX="-195" targetY="30"/>
-    <bendpoints xmi:id="_PcJZeHM6EeGfVbRN8qiL7A" sourceX="195" sourceY="-51" targetY="30"/>
+    <bendpoints xmi:id="_NgFI13NPEeG6rN4Q-jjiZQ" sourceY="-34" targetX="-259" targetY="30"/>
+    <bendpoints xmi:id="_NgFI2HNPEeG6rN4Q-jjiZQ" sourceX="259" sourceY="-34" targetY="30"/>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_c2OiML01Ed-8i6uUe2B2Qg"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_c2PJQL01Ed-8i6uUe2B2Qg"/>
@@ -2096,11 +2092,10 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_omAPlteuEd-X6q7Ijhs6Xg"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ContainmentVisual" xmi:id="_omAPl9euEd-X6q7Ijhs6Xg"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_V2zYcSI_EeCMEorpcZtLvw" sourceItem="_V2zYcCI_EeCMEorpcZtLvw" targetItem="_zN-UcbK6Ed-uk56s-ldeog"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_V3GTYCI_EeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_mg81QBzTEeChOvWwuwx7tQ" sourceAnchor="24.0,0.0" targetAnchor="326.0,40.0" subClass="_eTcTELyxEd-eCY_Peu5fFw" superClass="_eTU-ULyxEd-eCY_Peu5fFw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_V3GTYCI_EeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_mg81QBzTEeChOvWwuwx7tQ" sourceAnchor="5.0,0.0" targetAnchor="138.0,54.0" subClass="_eTcTELyxEd-eCY_Peu5fFw" superClass="_eTU-ULyxEd-eCY_Peu5fFw">
     <modelElement href="sdm.uml#_mg81QBzTEeChOvWwuwx7tQ"/>
-    <bendpoints xmi:id="_PcJZe3M6EeGfVbRN8qiL7A" sourceY="-33" targetX="48"/>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_V3GTYiI_EeCMEorpcZtLvw" sourceItem="_V3GTYSI_EeCMEorpcZtLvw" targetItem="_eTcTELyxEd-eCY_Peu5fFw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_V3GTYiI_EeCMEorpcZtLvw" sourceAnchor="0.0,24.0" targetAnchor="71.0,15.0" sourceItem="_V3GTYSI_EeCMEorpcZtLvw" targetItem="_eTcTELyxEd-eCY_Peu5fFw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_V3i_eSI_EeCMEorpcZtLvw" sourceItem="_V3i_eCI_EeCMEorpcZtLvw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_-S-AEpxjEeCuYMafrm1l2g" sourceItem="_-S-AEZxjEeCuYMafrm1l2g" targetItem="_zYD8YLyxEd-eCY_Peu5fFw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_Pj6jcpxkEeCuYMafrm1l2g" sourceItem="_Pj6jcZxkEeCuYMafrm1l2g" targetItem="_va16cL0VEd-DQ5q3aRKcIw"/>
@@ -2144,10 +2139,8 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_hT2E8W3CEeGdlstntMEf0g" sourceItem="_hT2E8G3CEeGdlstntMEf0g"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_hT2sAW3CEeGdlstntMEf0g" sourceItem="_hT2sAG3CEeGdlstntMEf0g"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_kY8NoG3CEeGdlstntMEf0g" sourceItem="_kY7mkG3CEeGdlstntMEf0g" targetItem="_eTU-UryxEd-eCY_Peu5fFw"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_7BXMAG3CEeGdlstntMEf0g" sourceAnchor="118.0,0.0" targetAnchor="52.0,27.0" subClass="_7BiLIG3CEeGdlstntMEf0g" superClass="_8htwULw0Ed-Ytrd77fw2LA">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_7BXMAG3CEeGdlstntMEf0g" sourceAnchor="114.0,0.0" targetAnchor="52.0,27.0" subClass="_7BiLIG3CEeGdlstntMEf0g" superClass="_8htwULw0Ed-Ytrd77fw2LA">
     <modelElement href="sdm.uml#_eO2nwBzJEeChOvWwuwx7tQ"/>
-    <bendpoints xmi:id="_PcJZcnM6EeGfVbRN8qiL7A" sourceY="-30" targetX="627" targetY="65"/>
-    <bendpoints xmi:id="_PcJZc3M6EeGfVbRN8qiL7A" sourceX="-627" sourceY="-30" targetY="65"/>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_7BaPUG3CEeGdlstntMEf0g" sourceItem="_7BZoQG3CEeGdlstntMEf0g" targetItem="_7BiLIG3CEeGdlstntMEf0g"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_-N4yYG3CEeGdlstntMEf0g" sourceAnchor="200.0,75.0" targetAnchor="0.0,8.0" sourceItem="_-N4LUG3CEeGdlstntMEf0g" targetItem="_7BiLIm3CEeGdlstntMEf0g">
@@ -2592,477 +2585,10 @@
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_V3GTYSI_EeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_RcJm8BztEeChOvWwuwx7tQ" item="_eTcTELyxEd-eCY_Peu5fFw" sourceConnectionVisual="_V3GTYiI_EeCMEorpcZtLvw" text="Represents any expression in an embedded textual language, e.g. OCL or Java. An expression's type is dynamically derived by an external mechanism (see TypedElement).">
     <modelElement href="sdm.uml#_RcJm8BztEeChOvWwuwx7tQ"/>
+    <visualProperties xmi:id="_ZkxfMHNOEeG6rN4Q-jjiZQ" position="923.0,464.0" size="200.0,150.0" visible="false"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_V3i_eCI_EeCMEorpcZtLvw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_DgU6YBzvEeChOvWwuwx7tQ" sourceConnectionVisual="_V3i_eSI_EeCMEorpcZtLvw" text="true if subactivity is stopped, but not the whole control flow">
     <modelElement href="sdm.uml#_DgU6YBzvEeChOvWwuwx7tQ"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_IcaAsLw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType" name="EGenericType" associationsIn="_IcDbYLw1Ed-Ytrd77fw2LA _IcECcLw1Ed-Ytrd77fw2LA _IcEpgLw1Ed-Ytrd77fw2LA _IcFQkLw1Ed-Ytrd77fw2LA _IcF3oLw1Ed-Ytrd77fw2LA _rCRogLw1Ed-Ytrd77fw2LA" associationsOut="_IcDbYLw1Ed-Ytrd77fw2LA _IcECcLw1Ed-Ytrd77fw2LA _IcFQkLw1Ed-Ytrd77fw2LA _IcHFwLw1Ed-Ytrd77fw2LA _IcHFwbw1Ed-Ytrd77fw2LA _IcHs0Lw1Ed-Ytrd77fw2LA" generalizations="_6ed-YLyxEd-eCY_Peu5fFw">
-    <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
-    <visualAttributeProperties xmi:id="_IchVcLw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="literalsCompartment"/>
-    <visualAttributeProperties xmi:id="_Ich8gLw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="attributeCompartment"/>
-    <visualAttributeProperties xmi:id="_IcijkLw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="methodCompartment"/>
-    <visualProperties xmi:id="_IcaAsbw1Ed-Ytrd77fw2LA" position="1492.0,282.0" size="-1.0,-1.0"/>
-    <stereotypes xmi:id="_IcaAsrw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQozqsYdEduPJbEsMYXjUQ" name="Metaclass">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQozqsYdEduPJbEsMYXjUQ"/>
-    </stereotypes>
-    <visibility xmi:id="_IcaAs7w1Ed-Ytrd77fw2LA" label="+"/>
-    <attributes xmi:id="_e8v2WNeuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eTypeParameter" name="eTypeParameter">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eTypeParameter"/>
-      <stereotypes xmi:id="_e9dA8teuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0qcYcEduPJbEsMYXjUQ" name="EReference">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0qcYcEduPJbEsMYXjUQ"/>
-      </stereotypes>
-      <visibility xmi:id="_e9dA8deuEd-X6q7Ijhs6Xg" label="+"/>
-      <cardinality xmi:id="_e9dA89euEd-X6q7Ijhs6Xg" label="0..1" max="1"/>
-      <type xmi:id="_e9dA8NeuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#ETypeParameter" name="ETypeParameter">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#ETypeParameter"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_yfr0pGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eUpperBound" name="eUpperBound">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eUpperBound"/>
-      <visualProperties xmi:id="_yfr0pWKOEeCBq7LKLVIv3g" visible="false"/>
-      <stereotypes xmi:id="_JQjZ4nM6EeGfVbRN8qiL7A" name="EReference">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0pcYcEduPJbEsMYXjUQ"/>
-      </stereotypes>
-      <visibility xmi:id="_ygSRmWKOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygSRm2KOEeCBq7LKLVIv3g" label="0..1" max="1"/>
-      <type xmi:id="_ygSRmGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType" name="EGenericType">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_yfr0pmKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eTypeArguments" name="eTypeArguments">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eTypeArguments"/>
-      <visualProperties xmi:id="_yfr0p2KOEeCBq7LKLVIv3g" visible="false"/>
-      <stereotypes xmi:id="_JQjZ43M6EeGfVbRN8qiL7A" name="EReference">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0psYcEduPJbEsMYXjUQ"/>
-      </stereotypes>
-      <visibility xmi:id="_ygSRnWKOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygSRn2KOEeCBq7LKLVIv3g" label="*" max="-1"/>
-      <type xmi:id="_ygSRnGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType" name="EGenericType">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_yfr0qGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eRawType" derived="true" name="eRawType">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eRawType"/>
-      <visualProperties xmi:id="_yfr0qWKOEeCBq7LKLVIv3g" visible="false"/>
-      <stereotypes xmi:id="_JQtK4HM6EeGfVbRN8qiL7A" name="EReference">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0p8YcEduPJbEsMYXjUQ"/>
-      </stereotypes>
-      <visibility xmi:id="_ygSRoWKOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygSRo2KOEeCBq7LKLVIv3g" label="1" max="1" min="1"/>
-      <type xmi:id="_ygSRoGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier" name="EClassifier">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_yfr0qmKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eLowerBound" name="eLowerBound">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eLowerBound"/>
-      <visualProperties xmi:id="_yfr0q2KOEeCBq7LKLVIv3g" visible="false"/>
-      <stereotypes xmi:id="_JQtK4XM6EeGfVbRN8qiL7A" name="EReference">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0qMYcEduPJbEsMYXjUQ"/>
-      </stereotypes>
-      <visibility xmi:id="_ygSRpWKOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygSRp2KOEeCBq7LKLVIv3g" label="0..1" max="1"/>
-      <type xmi:id="_ygSRpGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType" name="EGenericType">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_yfr0rGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eClassifier" name="eClassifier">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eClassifier"/>
-      <visualProperties xmi:id="_yfr0rWKOEeCBq7LKLVIv3g" visible="false"/>
-      <visibility xmi:id="_ygSRqWKOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygSRqmKOEeCBq7LKLVIv3g" label="0..1" max="1"/>
-      <type xmi:id="_ygSRqGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier" name="EClassifier">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_B3eUELw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier" name="EClassifier" abstractClass="true" associationsIn="_HPr00LLzEd-uk56s-ldeog" associationsOut="_EaTdMLw1Ed-Ytrd77fw2LA _IcEpgLw1Ed-Ytrd77fw2LA _IcF3oLw1Ed-Ytrd77fw2LA" subclassedBy="_B3apsLw1Ed-Ytrd77fw2LA">
-    <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
-    <visualAttributeProperties xmi:id="_B3ilgLw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="literalsCompartment"/>
-    <visualAttributeProperties xmi:id="_B3jMkLw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="attributeCompartment"/>
-    <visualAttributeProperties xmi:id="_B3jzoLw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="methodCompartment"/>
-    <visualProperties xmi:id="_B3eUEbw1Ed-Ytrd77fw2LA" position="1252.0,31.0" size="-1.0,-1.0"/>
-    <stereotypes xmi:id="_B3eUErw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQozpMYdEduPJbEsMYXjUQ" name="Metaclass">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQozpMYdEduPJbEsMYXjUQ"/>
-    </stereotypes>
-    <visibility xmi:id="_B3eUE7w1Ed-Ytrd77fw2LA" label="+"/>
-    <attributes xmi:id="_B3eUFLw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-instanceClassName" name="instanceClassName">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-instanceClassName"/>
-      <stereotypes xmi:id="_B3eUFbw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDqcYcEduPJbEsMYXjUQ" name="EAttribute">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDqcYcEduPJbEsMYXjUQ"/>
-      </stereotypes>
-      <visibility xmi:id="_B3eUFrw1Ed-Ytrd77fw2LA" label="+"/>
-      <cardinality xmi:id="_B3e7ILw1Ed-Ytrd77fw2LA" label="0..1" max="1"/>
-      <type xmi:id="_B3e7Ibw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString" name="EString">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_B3e7Irw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-instanceClass" derived="true" name="instanceClass">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-instanceClass"/>
-      <stereotypes xmi:id="_B3e7I7w1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDqsYcEduPJbEsMYXjUQ" name="EAttribute">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDqsYcEduPJbEsMYXjUQ"/>
-      </stereotypes>
-      <visibility xmi:id="_B3e7JLw1Ed-Ytrd77fw2LA" label="+"/>
-      <cardinality xmi:id="_B3e7Jbw1Ed-Ytrd77fw2LA" label="0..1" max="1"/>
-      <type xmi:id="_B3e7Jrw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-EJavaClass_Wildcard" name="EJavaClass_Wildcard">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-EJavaClass_Wildcard"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_B3e7J7w1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-defaultValue" derived="true" name="defaultValue">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-defaultValue"/>
-      <stereotypes xmi:id="_B3e7KLw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDq8YcEduPJbEsMYXjUQ" name="EAttribute">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDq8YcEduPJbEsMYXjUQ"/>
-      </stereotypes>
-      <visibility xmi:id="_B3e7Kbw1Ed-Ytrd77fw2LA" label="+"/>
-      <cardinality xmi:id="_B3e7Krw1Ed-Ytrd77fw2LA" label="0..1" max="1"/>
-      <type xmi:id="_B3e7K7w1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject" name="EJavaObject">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_B3e7LLw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-instanceTypeName" name="instanceTypeName">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-instanceTypeName"/>
-      <stereotypes xmi:id="_B3e7Lbw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDrMYcEduPJbEsMYXjUQ" name="EAttribute">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDrMYcEduPJbEsMYXjUQ"/>
-      </stereotypes>
-      <visibility xmi:id="_B3e7Lrw1Ed-Ytrd77fw2LA" label="+"/>
-      <cardinality xmi:id="_B3e7L7w1Ed-Ytrd77fw2LA" label="0..1" max="1"/>
-      <type xmi:id="_B3e7MLw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString" name="EString">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_e8qWwNeuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-ePackage" name="ePackage">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-ePackage"/>
-      <stereotypes xmi:id="_e9Z9oNeuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0oMYcEduPJbEsMYXjUQ" name="EReference">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0oMYcEduPJbEsMYXjUQ"/>
-      </stereotypes>
-      <visibility xmi:id="_e9ZWkdeuEd-X6q7Ijhs6Xg" label="+"/>
-      <cardinality xmi:id="_e9Z9odeuEd-X6q7Ijhs6Xg" label="0..1" max="1"/>
-      <type xmi:id="_e9ZWkNeuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EPackage" name="EPackage">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EPackage"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_e8qWwdeuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-eTypeParameters" name="eTypeParameters">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-eTypeParameters"/>
-      <visibility xmi:id="_e9Z9o9euEd-X6q7Ijhs6Xg" label="+"/>
-      <cardinality xmi:id="_e9aksNeuEd-X6q7Ijhs6Xg" label="*" max="-1"/>
-      <type xmi:id="_e9Z9oteuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#ETypeParameter" name="ETypeParameter">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#ETypeParameter"/>
-      </type>
-    </attributes>
-    <operations xmi:id="_B3e7Mbw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-isInstance" name="isInstance">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-isInstance"/>
-      <visibility xmi:id="_B3e7Mrw1Ed-Ytrd77fw2LA" label="+"/>
-      <outParameters xmi:id="_B3e7M7w1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-isInstance-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-isInstance-_ownedParameter.0"/>
-        <type xmi:id="_B3e7NLw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean" name="EBoolean">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
-        </type>
-      </outParameters>
-      <parameters xmi:id="_B3e7Nbw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-isInstance-object" name="object">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-isInstance-object"/>
-        <type xmi:id="_B3e7Nrw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject" name="EJavaObject">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
-        </type>
-      </parameters>
-    </operations>
-    <operations xmi:id="_B3e7N7w1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-getClassifierID" name="getClassifierID">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-getClassifierID"/>
-      <visibility xmi:id="_B3e7OLw1Ed-Ytrd77fw2LA" label="+"/>
-      <outParameters xmi:id="_B3e7Obw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-getClassifierID-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-getClassifierID-_ownedParameter.0"/>
-        <type xmi:id="_B3e7Orw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt" name="EInt">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
-        </type>
-      </outParameters>
-    </operations>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_DOQg0Lw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation" name="EAnnotation" associationsIn="_6eSYMLyxEd-eCY_Peu5fFw _6edXULyxEd-eCY_Peu5fFw _6edXUbyxEd-eCY_Peu5fFw _VubvoLyyEd-eCY_Peu5fFw _w584kL0cEd-DQ5q3aRKcIw" associationsOut="_3qDWALyxEd-eCY_Peu5fFw" generalizations="_3qFLMLyxEd-eCY_Peu5fFw">
-    <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
-    <visualAttributeProperties xmi:id="_DOSWALw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="literalsCompartment"/>
-    <visualAttributeProperties xmi:id="_DOSWAbw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="attributeCompartment"/>
-    <visualAttributeProperties xmi:id="_DOS9ELw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="methodCompartment"/>
-    <visualProperties xmi:id="_DOQg0bw1Ed-Ytrd77fw2LA" position="455.0,858.0" size="-1.0,-1.0"/>
-    <stereotypes xmi:id="_DOQg0rw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQozocYdEduPJbEsMYXjUQ" name="Metaclass">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQozocYdEduPJbEsMYXjUQ"/>
-    </stereotypes>
-    <visibility xmi:id="_DOQg07w1Ed-Ytrd77fw2LA" label="+"/>
-    <attributes xmi:id="_DOQg1Lw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-source" name="source">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-source"/>
-      <visibility xmi:id="_DOQg1bw1Ed-Ytrd77fw2LA" label="+"/>
-      <cardinality xmi:id="_DOQg1rw1Ed-Ytrd77fw2LA" label="0..1" max="1"/>
-      <type xmi:id="_DOQg17w1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString" name="EString">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_e8y5oNeuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-details" name="details">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-details"/>
-      <stereotypes xmi:id="_JQtK53M6EeGfVbRN8qiL7A" name="EReference">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuJ5scYcEduPJbEsMYXjUQ"/>
-      </stereotypes>
-      <visibility xmi:id="_e9doA9euEd-X6q7Ijhs6Xg" label="+"/>
-      <cardinality xmi:id="_e9doBdeuEd-X6q7Ijhs6Xg" label="*" max="-1"/>
-      <type xmi:id="_e9doAteuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStringToStringMapEntry" name="EStringToStringMapEntry">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStringToStringMapEntry"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_yf1loGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-eModelElement" name="eModelElement">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-eModelElement"/>
-      <visualProperties xmi:id="_yf1loWKOEeCBq7LKLVIv3g" visible="false"/>
-      <stereotypes xmi:id="_JQtK5nM6EeGfVbRN8qiL7A" name="EReference">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuJ5ssYcEduPJbEsMYXjUQ"/>
-      </stereotypes>
-      <visibility xmi:id="_ygSRrGKOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygSRrmKOEeCBq7LKLVIv3g" label="0..1" max="1"/>
-      <type xmi:id="_ygSRq2KOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement" name="EModelElement">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_yf1lomKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-contents" name="contents">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-contents"/>
-      <visualProperties xmi:id="_yf1lo2KOEeCBq7LKLVIv3g" visible="false"/>
-      <stereotypes xmi:id="_JQtK6HM6EeGfVbRN8qiL7A" name="EReference">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuJ5s8YcEduPJbEsMYXjUQ"/>
-      </stereotypes>
-      <visibility xmi:id="_ygSRsGKOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygSRsmKOEeCBq7LKLVIv3g" label="*" max="-1"/>
-      <type xmi:id="_ygSRr2KOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject" name="EObject">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_yf1lpGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-references" name="references">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-references"/>
-      <visualProperties xmi:id="_yf1lpWKOEeCBq7LKLVIv3g" visible="false"/>
-      <visibility xmi:id="_ygSRtGKOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygSRtWKOEeCBq7LKLVIv3g" label="*" max="-1"/>
-      <type xmi:id="_ygSRs2KOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject" name="EObject">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sQs5sL0VEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement" name="EModelElement" abstractClass="true" associationsIn="_3qDWALyxEd-eCY_Peu5fFw" associationsOut="_3o-ZgL0VEd-DQ5q3aRKcIw" generalizations="_6ed-YbyxEd-eCY_Peu5fFw" subclassedBy="_3qFLMLyxEd-eCY_Peu5fFw">
-    <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement"/>
-    <visualAttributeProperties xmi:id="_sRHwcL0VEd-DQ5q3aRKcIw" collapsed="true" attributeName="literalsCompartment"/>
-    <visualAttributeProperties xmi:id="_sRI-kL0VEd-DQ5q3aRKcIw" collapsed="true" attributeName="attributeCompartment"/>
-    <visualAttributeProperties xmi:id="_sRJloL0VEd-DQ5q3aRKcIw" collapsed="true" attributeName="methodCompartment"/>
-    <visualProperties xmi:id="_sQtgwL0VEd-DQ5q3aRKcIw" position="546.0,739.0" size="97.0,67.0"/>
-    <stereotypes xmi:id="_sQtgwb0VEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQykoMYdEduPJbEsMYXjUQ" name="Metaclass">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQykoMYdEduPJbEsMYXjUQ"/>
-    </stereotypes>
-    <visibility xmi:id="_sQtgwr0VEd-DQ5q3aRKcIw" label="+"/>
-    <attributes xmi:id="_yf1lsmKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-eAnnotations" name="eAnnotations">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-eAnnotations"/>
-      <visualProperties xmi:id="_yf1ls2KOEeCBq7LKLVIv3g" visible="false"/>
-      <stereotypes xmi:id="_JQtK5XM6EeGfVbRN8qiL7A" name="EReference">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0qsYcEduPJbEsMYXjUQ"/>
-      </stereotypes>
-      <visibility xmi:id="_ygbbhWKOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygbbh2KOEeCBq7LKLVIv3g" label="*" max="-1"/>
-      <type xmi:id="_ygbbhGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation" name="EAnnotation">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
-      </type>
-    </attributes>
-    <operations xmi:id="_sQtgw70VEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-getEAnnotation" name="getEAnnotation">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-getEAnnotation"/>
-      <visibility xmi:id="_sQtgxL0VEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_sQtgxb0VEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-getEAnnotation-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-getEAnnotation-_ownedParameter.0"/>
-        <type xmi:id="_sQtgxr0VEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation" name="EAnnotation">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
-        </type>
-      </outParameters>
-      <parameters xmi:id="_sQtgx70VEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-getEAnnotation-source" name="source">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-getEAnnotation-source"/>
-        <type xmi:id="_sQtgyL0VEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString" name="EString">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
-        </type>
-      </parameters>
-    </operations>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_3dDn8L0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject" name="EObject" associationsIn="_8kqa8L0WEd-DQ5q3aRKcIw" associationsOut="_6edXULyxEd-eCY_Peu5fFw _6edXUbyxEd-eCY_Peu5fFw" subclassedBy="_6ed-YLyxEd-eCY_Peu5fFw _6ed-YbyxEd-eCY_Peu5fFw _Sm2fwL0XEd-DQ5q3aRKcIw">
-    <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
-    <visualAttributeProperties xmi:id="_3dOnEL0WEd-DQ5q3aRKcIw" collapsed="true" attributeName="literalsCompartment"/>
-    <visualAttributeProperties xmi:id="_3dPOIL0WEd-DQ5q3aRKcIw" collapsed="true" attributeName="attributeCompartment"/>
-    <visualAttributeProperties xmi:id="_3dPOIb0WEd-DQ5q3aRKcIw" collapsed="true" attributeName="methodCompartment"/>
-    <visualProperties xmi:id="_3dDn8b0WEd-DQ5q3aRKcIw" position="1144.0,393.0" size="-1.0,-1.0"/>
-    <stereotypes xmi:id="_3dDn8r0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQykosYdEduPJbEsMYXjUQ" name="Metaclass">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQykosYdEduPJbEsMYXjUQ"/>
-    </stereotypes>
-    <visibility xmi:id="_3dDn870WEd-DQ5q3aRKcIw" label="+"/>
-    <operations xmi:id="_3dDn9L0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eClass" name="eClass">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eClass"/>
-      <visibility xmi:id="_3dDn9b0WEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_3dDn9r0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eClass-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eClass-_ownedParameter.0"/>
-        <type xmi:id="_3dDn970WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass" name="EClass">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_3dDn-L0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsProxy" name="eIsProxy">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsProxy"/>
-      <visibility xmi:id="_3dDn-b0WEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_3dDn-r0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsProxy-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsProxy-_ownedParameter.0"/>
-        <type xmi:id="_3dDn-70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean" name="EBoolean">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_3dDn_L0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eResource" name="eResource">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eResource"/>
-      <visibility xmi:id="_3dDn_b0WEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_3dDn_r0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eResource-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eResource-_ownedParameter.0"/>
-        <type xmi:id="_3dDn_70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EResource" name="EResource">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EResource"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_3dDoAL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainer" name="eContainer">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainer"/>
-      <visibility xmi:id="_3dDoAb0WEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_3dDoAr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainer-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainer-_ownedParameter.0"/>
-        <type xmi:id="_3dDoA70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject" name="EObject">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_3dDoBL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainingFeature" name="eContainingFeature">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainingFeature"/>
-      <visibility xmi:id="_3dDoBb0WEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_3dDoBr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainingFeature-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainingFeature-_ownedParameter.0"/>
-        <type xmi:id="_3dDoB70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature" name="EStructuralFeature">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_3dDoCL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainmentFeature" name="eContainmentFeature">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainmentFeature"/>
-      <visibility xmi:id="_3dDoCb0WEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_3dDoCr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainmentFeature-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainmentFeature-_ownedParameter.0"/>
-        <type xmi:id="_3dDoC70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EReference" name="EReference">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EReference"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_3dDoDL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContents" name="eContents">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContents"/>
-      <visibility xmi:id="_3dDoDb0WEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_3dDoDr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContents-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContents-_ownedParameter.0"/>
-        <type xmi:id="_3dDoD70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-EEList_EObject" name="EEList_EObject">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-EEList_EObject"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_3dDoEL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eAllContents" name="eAllContents">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eAllContents"/>
-      <visibility xmi:id="_3dDoEb0WEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_3dDoEr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eAllContents-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eAllContents-_ownedParameter.0"/>
-        <type xmi:id="_3dDoE70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-ETreeIterator_EObject" name="ETreeIterator_EObject">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-ETreeIterator_EObject"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_3dDoFL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eCrossReferences" name="eCrossReferences">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eCrossReferences"/>
-      <visibility xmi:id="_3dDoFb0WEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_3dDoFr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eCrossReferences-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eCrossReferences-_ownedParameter.0"/>
-        <type xmi:id="_3dDoF70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-EEList_EObject" name="EEList_EObject">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-EEList_EObject"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_3dDoGL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet" name="eGet">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet"/>
-      <visibility xmi:id="_3dDoGb0WEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_3dDoGr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet-_ownedParameter.0"/>
-        <type xmi:id="_3dDoG70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject" name="EJavaObject">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
-        </type>
-      </outParameters>
-      <parameters xmi:id="_3dDoHL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet-feature" name="feature">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet-feature"/>
-        <type xmi:id="_3dDoHb0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature" name="EStructuralFeature">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature"/>
-        </type>
-      </parameters>
-    </operations>
-    <operations xmi:id="_3dDoHr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1" name="eGet">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1"/>
-      <visibility xmi:id="_3dDoH70WEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_3dDoIL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1-_ownedParameter.0"/>
-        <type xmi:id="_3dDoIb0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject" name="EJavaObject">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
-        </type>
-      </outParameters>
-      <parameters xmi:id="_3dDoIr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1-feature" name="feature">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1-feature"/>
-        <type xmi:id="_3dDoI70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature" name="EStructuralFeature">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature"/>
-        </type>
-      </parameters>
-      <parameters xmi:id="_3dDoJL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1-resolve" name="resolve">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1-resolve"/>
-        <type xmi:id="_3dDoJb0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean" name="EBoolean">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
-        </type>
-      </parameters>
-    </operations>
-    <operations xmi:id="_3dDoJr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet" name="eSet">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet"/>
-      <visibility xmi:id="_3dDoJ70WEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_3dDoKL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet-_ownedParameter.0"/>
-      </outParameters>
-      <parameters xmi:id="_3dDoKb0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet-feature" name="feature">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet-feature"/>
-        <type xmi:id="_3dDoKr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature" name="EStructuralFeature">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature"/>
-        </type>
-      </parameters>
-      <parameters xmi:id="_3dDoK70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet-newValue" name="newValue">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet-newValue"/>
-        <type xmi:id="_3dDoLL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject" name="EJavaObject">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
-        </type>
-      </parameters>
-    </operations>
-    <operations xmi:id="_3dDoLb0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsSet" name="eIsSet">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsSet"/>
-      <visibility xmi:id="_3dDoLr0WEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_3dDoL70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsSet-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsSet-_ownedParameter.0"/>
-        <type xmi:id="_3dDoML0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean" name="EBoolean">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
-        </type>
-      </outParameters>
-      <parameters xmi:id="_3dDoMb0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsSet-feature" name="feature">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsSet-feature"/>
-        <type xmi:id="_3dDoMr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature" name="EStructuralFeature">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature"/>
-        </type>
-      </parameters>
-    </operations>
-    <operations xmi:id="_3dEPAL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eUnset" name="eUnset">
-      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eUnset"/>
-      <visibility xmi:id="_3dEPAb0WEd-DQ5q3aRKcIw" label="+"/>
-      <outParameters xmi:id="_3dEPAr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eUnset-_ownedParameter.0">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eUnset-_ownedParameter.0"/>
-      </outParameters>
-      <parameters xmi:id="_3dEPA70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eUnset-feature" name="feature">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eUnset-feature"/>
-        <type xmi:id="_3dEPBL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature" name="EStructuralFeature">
-          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature"/>
-        </type>
-      </parameters>
-    </operations>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_-S-AEZxjEeCuYMafrm1l2g" item="_zYD8YLyxEd-eCY_Peu5fFw" sourceConnectionVisual="_-S-AEpxjEeCuYMafrm1l2g" text="Abstract base class for the whole story diagram model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references.">
     <modelElement href="sdm.uml#_-S-AEJxjEeCuYMafrm1l2g"/>
@@ -3249,103 +2775,6 @@
     <modelElement href="sdm.uml#_Pj6jcJxkEeCuYMafrm1l2g"/>
     <visualProperties xmi:id="_J3YwYHM6EeGfVbRN8qiL7A" position="670.0,332.0" size="200.0,150.0" visible="false"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_va16cL0VEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_vasJcL0VEd-DQ5q3aRKcIw" comments="_Pj6jcZxkEeCuYMafrm1l2g" targetConnectionVisual="_Pj6jcpxkEeCuYMafrm1l2g" name="Extension" abstractClass="true" associationsIn="_tC3hAL0WEd-DQ5q3aRKcIw _3o-ZgL0VEd-DQ5q3aRKcIw" associationsOut="_8kqa8L0WEd-DQ5q3aRKcIw _w584kL0cEd-DQ5q3aRKcIw" generalizations="_Dmq2YL0dEd-DQ5q3aRKcIw">
-    <modelElement href="sdm.uml#_vasJcL0VEd-DQ5q3aRKcIw"/>
-    <visualProperties xmi:id="_va16cb0VEd-DQ5q3aRKcIw" position="539.0,312.0" size="111.0,38.0"/>
-    <visibility xmi:id="_va16cr0VEd-DQ5q3aRKcIw" label="+"/>
-    <attributes xmi:id="_yf1lpmKOEeCBq7LKLVIv3g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_8kmwkb0WEd-DQ5q3aRKcIw" derived="true" name="base">
-      <modelElement href="sdm.uml#_8kmwkb0WEd-DQ5q3aRKcIw"/>
-      <visualProperties xmi:id="_yf1lp2KOEeCBq7LKLVIv3g" visible="false"/>
-      <stereotypes xmi:id="_JQ274XM6EeGfVbRN8qiL7A" name="EReference">
-        <modelElement href="sdm.uml#_DQedwL06Ed-8i6uUe2B2Qg"/>
-      </stereotypes>
-      <visibility xmi:id="_ygSRt2KOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygSRuWKOEeCBq7LKLVIv3g" label="1" max="1" min="1"/>
-      <type xmi:id="_ygSRtmKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject" name="EObject">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_yf1lqGKOEeCBq7LKLVIv3g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_tCyogb0WEd-DQ5q3aRKcIw" name="extendableBase">
-      <modelElement href="sdm.uml#_tCyogb0WEd-DQ5q3aRKcIw"/>
-      <visualProperties xmi:id="_yf1lqWKOEeCBq7LKLVIv3g" visible="false"/>
-      <visibility xmi:id="_ygSRu2KOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygSRvGKOEeCBq7LKLVIv3g" label="0..1" max="1"/>
-      <type xmi:id="_ygSRumKOEeCBq7LKLVIv3g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_zX-c0LyxEd-eCY_Peu5fFw" name="ExtendableElement">
-        <modelElement href="sdm.uml#_zX-c0LyxEd-eCY_Peu5fFw"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_yf1lqmKOEeCBq7LKLVIv3g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_3o6vIr0VEd-DQ5q3aRKcIw" derived="true" name="modelBase">
-      <modelElement href="sdm.uml#_3o6vIr0VEd-DQ5q3aRKcIw"/>
-      <visualProperties xmi:id="_yf1lq2KOEeCBq7LKLVIv3g" visible="false"/>
-      <stereotypes xmi:id="_JQ274HM6EeGfVbRN8qiL7A" name="EReference">
-        <modelElement href="sdm.uml#_WgqC4L0XEd-DQ5q3aRKcIw"/>
-      </stereotypes>
-      <visibility xmi:id="_ygSRvmKOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygSRwGKOEeCBq7LKLVIv3g" label="0..1" max="1"/>
-      <type xmi:id="_ygSRvWKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement" name="EModelElement">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_yf1lrGKOEeCBq7LKLVIv3g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_w56cU70cEd-DQ5q3aRKcIw" derived="true" name="owningAnnotation">
-      <modelElement href="sdm.uml#_w56cU70cEd-DQ5q3aRKcIw"/>
-      <visualProperties xmi:id="_yf1lrWKOEeCBq7LKLVIv3g" visible="false"/>
-      <stereotypes xmi:id="_JQ274nM6EeGfVbRN8qiL7A" name="EReference">
-        <modelElement href="sdm.uml#_3L9CIL0cEd-DQ5q3aRKcIw"/>
-      </stereotypes>
-      <visibility xmi:id="_ygSRwmKOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygSRxGKOEeCBq7LKLVIv3g" label="0..1" max="1"/>
-      <type xmi:id="_ygSRwWKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation" name="EAnnotation">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_eTU-ULyxEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_e7CFQLLyEd-uk56s-ldeog" comments="_XD2fwZxkEeCuYMafrm1l2g" targetConnectionVisual="_XD2fwpxkEeCuYMafrm1l2g" name="CommentableElement" abstractClass="true" generalizations="_5NH10LyyEd-eCY_Peu5fFw" subclassedBy="_eTTJILyxEd-eCY_Peu5fFw _V3GTYCI_EeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#_e7CFQLLyEd-uk56s-ldeog"/>
-    <visualProperties xmi:id="_eTWzgLyxEd-eCY_Peu5fFw" position="679.0,363.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_eTU-UbyxEd-eCY_Peu5fFw" label="+"/>
-    <attributes xmi:id="_eTU-UryxEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_l9XfkLLyEd-uk56s-ldeog" comments="_kY7mkG3CEeGdlstntMEf0g" targetConnectionVisual="_kY8NoG3CEeGdlstntMEf0g" defaultValue="&quot;no comment provided&quot;" name="comment">
-      <modelElement href="sdm.uml#_l9XfkLLyEd-uk56s-ldeog"/>
-      <visibility xmi:id="_eTU-U7yxEd-eCY_Peu5fFw" label="+"/>
-      <cardinality xmi:id="_eTU-VLyxEd-eCY_Peu5fFw" label="0..1" max="1"/>
-      <type xmi:id="_eTU-VbyxEd-eCY_Peu5fFw" abstractModelReference="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String" name="String">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_eTcTELyxEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" comments="_V3GTYSI_EeCMEorpcZtLvw" targetConnectionVisual="_V3GTYiI_EeCMEorpcZtLvw" name="Expression" abstractClass="true" associationsIn="_bFwzwLK5Ed-uk56s-ldeog _zN9tYLK6Ed-uk56s-ldeog _XMYAALK8Ed-uk56s-ldeog _-GqFsLLwEd-uk56s-ldeog _-z8NALLxEd-uk56s-ldeog _OIVkILLyEd-uk56s-ldeog _WnwngLLyEd-uk56s-ldeog" generalizations="_w3ToILLzEd-uk56s-ldeog _V3GTYCI_EeCMEorpcZtLvw">
-    <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-    <visualProperties xmi:id="_eTqVgLyxEd-eCY_Peu5fFw" position="1029.0,436.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_eTcTEbyxEd-eCY_Peu5fFw" label="+"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_8htwULw0Ed-Ytrd77fw2LA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#__xUl0LLyEd-uk56s-ldeog" comments="_iSlCAJxkEeCuYMafrm1l2g" targetConnectionVisual="_iSlCAZxkEeCuYMafrm1l2g" name="TypedElement" abstractClass="true" associationsOut="_HPr00LLzEd-uk56s-ldeog _rCRogLw1Ed-Ytrd77fw2LA" generalizations="_3aKDYLyyEd-eCY_Peu5fFw" subclassedBy="_w3ToILLzEd-uk56s-ldeog _7BXMAG3CEeGdlstntMEf0g">
-    <modelElement href="sdm.uml#__xUl0LLyEd-uk56s-ldeog"/>
-    <visualProperties xmi:id="_8htwUrw0Ed-Ytrd77fw2LA" position="1031.0,304.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_8htwUbw0Ed-Ytrd77fw2LA" label="+"/>
-    <attributes xmi:id="_yfr0oGKOEeCBq7LKLVIv3g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_HPpYkbLzEd-uk56s-ldeog" derived="true" name="type">
-      <modelElement href="sdm.uml#_HPpYkbLzEd-uk56s-ldeog"/>
-      <visualProperties xmi:id="_yfr0oWKOEeCBq7LKLVIv3g" visible="false"/>
-      <stereotypes xmi:id="_JOUlQnM6EeGfVbRN8qiL7A" name="EReference">
-        <modelElement href="sdm.uml#_mHa4ELw1Ed-Ytrd77fw2LA"/>
-      </stereotypes>
-      <visibility xmi:id="_ygSRkWKOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygSRk2KOEeCBq7LKLVIv3g" label="0..1" max="1"/>
-      <type xmi:id="_ygSRkGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier" name="EClassifier">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_yfr0omKOEeCBq7LKLVIv3g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_rCN-Ibw1Ed-Ytrd77fw2LA" name="genericType">
-      <modelElement href="sdm.uml#_rCN-Ibw1Ed-Ytrd77fw2LA"/>
-      <visualProperties xmi:id="_yfr0o2KOEeCBq7LKLVIv3g" visible="false"/>
-      <stereotypes xmi:id="_JQtK5HM6EeGfVbRN8qiL7A" name="EReference">
-        <modelElement href="sdm.uml#_aoEjQLxeEd-HP-M1eWm3kg"/>
-      </stereotypes>
-      <visibility xmi:id="_ygSRlWKOEeCBq7LKLVIv3g" label="+"/>
-      <cardinality xmi:id="_ygSRl2KOEeCBq7LKLVIv3g" label="0..1" max="1"/>
-      <type xmi:id="_ygSRlGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType" name="EGenericType">
-        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
-      </type>
-    </attributes>
-  </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_eTYBoLyxEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_tB8FcLK5Ed-uk56s-ldeog" comments="_beYKUZxkEeCuYMafrm1l2g" targetConnectionVisual="_beYKUpxkEeCuYMafrm1l2g" name="NamedElement" abstractClass="true" generalizations="_3_8RALyyEd-eCY_Peu5fFw" subclassedBy="_xOflcLK5Ed-uk56s-ldeog _0MxIELLzEd-uk56s-ldeog">
     <modelElement href="sdm.uml#_tB8FcLK5Ed-uk56s-ldeog"/>
     <visualProperties xmi:id="_eTZ20LyxEd-eCY_Peu5fFw" position="883.0,291.0" size="-1.0,-1.0"/>
@@ -3446,9 +2875,596 @@
       </parameters>
     </operations>
   </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_eTU-ULyxEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_e7CFQLLyEd-uk56s-ldeog" comments="_XD2fwZxkEeCuYMafrm1l2g" targetConnectionVisual="_XD2fwpxkEeCuYMafrm1l2g" name="CommentableElement" abstractClass="true" generalizations="_5NH10LyyEd-eCY_Peu5fFw" subclassedBy="_eTTJILyxEd-eCY_Peu5fFw _V3GTYCI_EeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#_e7CFQLLyEd-uk56s-ldeog"/>
+    <visualProperties xmi:id="_eTWzgLyxEd-eCY_Peu5fFw" position="686.0,365.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_eTU-UbyxEd-eCY_Peu5fFw" label="+"/>
+    <attributes xmi:id="_eTU-UryxEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_l9XfkLLyEd-uk56s-ldeog" comments="_kY7mkG3CEeGdlstntMEf0g" targetConnectionVisual="_kY8NoG3CEeGdlstntMEf0g" defaultValue="&quot;no comment provided&quot;" name="comment">
+      <modelElement href="sdm.uml#_l9XfkLLyEd-uk56s-ldeog"/>
+      <visibility xmi:id="_eTU-U7yxEd-eCY_Peu5fFw" label="+"/>
+      <cardinality xmi:id="_eTU-VLyxEd-eCY_Peu5fFw" label="0..1" max="1"/>
+      <type xmi:id="_eTU-VbyxEd-eCY_Peu5fFw" abstractModelReference="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_eTcTELyxEd-eCY_Peu5fFw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" comments="_V3GTYSI_EeCMEorpcZtLvw" targetConnectionVisual="_V3GTYiI_EeCMEorpcZtLvw" name="Expression" abstractClass="true" associationsIn="_bFwzwLK5Ed-uk56s-ldeog _zN9tYLK6Ed-uk56s-ldeog _XMYAALK8Ed-uk56s-ldeog _-GqFsLLwEd-uk56s-ldeog _-z8NALLxEd-uk56s-ldeog _OIVkILLyEd-uk56s-ldeog _WnwngLLyEd-uk56s-ldeog" generalizations="_w3ToILLzEd-uk56s-ldeog _V3GTYCI_EeCMEorpcZtLvw">
+    <modelElement href="sdm.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+    <visualProperties xmi:id="_eTqVgLyxEd-eCY_Peu5fFw" position="819.0,473.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_eTcTEbyxEd-eCY_Peu5fFw" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_3dDn8L0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject" name="EObject" associationsIn="_8kqa8L0WEd-DQ5q3aRKcIw" associationsOut="_6edXULyxEd-eCY_Peu5fFw _6edXUbyxEd-eCY_Peu5fFw" subclassedBy="_6ed-YLyxEd-eCY_Peu5fFw _6ed-YbyxEd-eCY_Peu5fFw _Sm2fwL0XEd-DQ5q3aRKcIw">
+    <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
+    <visualAttributeProperties xmi:id="_3dOnEL0WEd-DQ5q3aRKcIw" collapsed="true" attributeName="literalsCompartment"/>
+    <visualAttributeProperties xmi:id="_3dPOIL0WEd-DQ5q3aRKcIw" collapsed="true" attributeName="attributeCompartment"/>
+    <visualAttributeProperties xmi:id="_3dPOIb0WEd-DQ5q3aRKcIw" collapsed="true" attributeName="methodCompartment"/>
+    <visualProperties xmi:id="_3dDn8b0WEd-DQ5q3aRKcIw" position="649.0,476.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_3dDn8r0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQykosYdEduPJbEsMYXjUQ" name="Metaclass">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQykosYdEduPJbEsMYXjUQ"/>
+    </stereotypes>
+    <visibility xmi:id="_3dDn870WEd-DQ5q3aRKcIw" label="+"/>
+    <operations xmi:id="_3dDn9L0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eClass" name="eClass">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eClass"/>
+      <visualProperties xmi:id="_bQVpIHNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_3dDn9b0WEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_3dDn9r0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eClass-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eClass-_ownedParameter.0"/>
+        <type xmi:id="_3dDn970WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass" name="EClass">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_3dDn-L0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsProxy" name="eIsProxy">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsProxy"/>
+      <visualProperties xmi:id="_bQVpIXNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_3dDn-b0WEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_3dDn-r0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsProxy-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsProxy-_ownedParameter.0"/>
+        <type xmi:id="_3dDn-70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean" name="EBoolean">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_3dDn_L0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eResource" name="eResource">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eResource"/>
+      <visualProperties xmi:id="_bQVpInNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_3dDn_b0WEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_3dDn_r0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eResource-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eResource-_ownedParameter.0"/>
+        <type xmi:id="_3dDn_70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EResource" name="EResource">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EResource"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_3dDoAL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainer" name="eContainer">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainer"/>
+      <visualProperties xmi:id="_bQVpI3NOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_3dDoAb0WEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_3dDoAr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainer-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainer-_ownedParameter.0"/>
+        <type xmi:id="_3dDoA70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject" name="EObject">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_3dDoBL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainingFeature" name="eContainingFeature">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainingFeature"/>
+      <visualProperties xmi:id="_bQVpJHNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_3dDoBb0WEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_3dDoBr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainingFeature-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainingFeature-_ownedParameter.0"/>
+        <type xmi:id="_3dDoB70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature" name="EStructuralFeature">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_3dDoCL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainmentFeature" name="eContainmentFeature">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainmentFeature"/>
+      <visualProperties xmi:id="_bQVpJXNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_3dDoCb0WEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_3dDoCr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainmentFeature-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContainmentFeature-_ownedParameter.0"/>
+        <type xmi:id="_3dDoC70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EReference" name="EReference">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EReference"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_3dDoDL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContents" name="eContents">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContents"/>
+      <visualProperties xmi:id="_bQVpJnNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_3dDoDb0WEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_3dDoDr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContents-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eContents-_ownedParameter.0"/>
+        <type xmi:id="_3dDoD70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-EEList_EObject" name="EEList_EObject">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-EEList_EObject"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_3dDoEL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eAllContents" name="eAllContents">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eAllContents"/>
+      <visualProperties xmi:id="_bQVpJ3NOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_3dDoEb0WEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_3dDoEr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eAllContents-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eAllContents-_ownedParameter.0"/>
+        <type xmi:id="_3dDoE70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-ETreeIterator_EObject" name="ETreeIterator_EObject">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-ETreeIterator_EObject"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_3dDoFL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eCrossReferences" name="eCrossReferences">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eCrossReferences"/>
+      <visualProperties xmi:id="_bQVpKHNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_3dDoFb0WEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_3dDoFr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eCrossReferences-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eCrossReferences-_ownedParameter.0"/>
+        <type xmi:id="_3dDoF70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-EEList_EObject" name="EEList_EObject">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-EEList_EObject"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_3dDoGL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet" name="eGet">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet"/>
+      <visualProperties xmi:id="_bQVpKXNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_3dDoGb0WEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_3dDoGr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet-_ownedParameter.0"/>
+        <type xmi:id="_3dDoG70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject" name="EJavaObject">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_3dDoHL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet-feature" name="feature">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet-feature"/>
+        <type xmi:id="_3dDoHb0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature" name="EStructuralFeature">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_3dDoHr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1" name="eGet">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1"/>
+      <visualProperties xmi:id="_bQVpKnNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_3dDoH70WEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_3dDoIL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1-_ownedParameter.0"/>
+        <type xmi:id="_3dDoIb0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject" name="EJavaObject">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_3dDoIr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1-feature" name="feature">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1-feature"/>
+        <type xmi:id="_3dDoI70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature" name="EStructuralFeature">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_3dDoJL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1-resolve" name="resolve">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eGet.1-resolve"/>
+        <type xmi:id="_3dDoJb0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean" name="EBoolean">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_3dDoJr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet" name="eSet">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet"/>
+      <visualProperties xmi:id="_bQVpK3NOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_3dDoJ70WEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_3dDoKL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet-_ownedParameter.0"/>
+      </outParameters>
+      <parameters xmi:id="_3dDoKb0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet-feature" name="feature">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet-feature"/>
+        <type xmi:id="_3dDoKr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature" name="EStructuralFeature">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_3dDoK70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet-newValue" name="newValue">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eSet-newValue"/>
+        <type xmi:id="_3dDoLL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject" name="EJavaObject">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_3dDoLb0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsSet" name="eIsSet">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsSet"/>
+      <visualProperties xmi:id="_bQVpLHNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_3dDoLr0WEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_3dDoL70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsSet-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsSet-_ownedParameter.0"/>
+        <type xmi:id="_3dDoML0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean" name="EBoolean">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_3dDoMb0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsSet-feature" name="feature">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eIsSet-feature"/>
+        <type xmi:id="_3dDoMr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature" name="EStructuralFeature">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_3dEPAL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eUnset" name="eUnset">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eUnset"/>
+      <visualProperties xmi:id="_bQVpLXNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_3dEPAb0WEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_3dEPAr0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eUnset-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eUnset-_ownedParameter.0"/>
+      </outParameters>
+      <parameters xmi:id="_3dEPA70WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eUnset-feature" name="feature">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject-eUnset-feature"/>
+        <type xmi:id="_3dEPBL0WEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature" name="EStructuralFeature">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_va16cL0VEd-DQ5q3aRKcIw" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_vasJcL0VEd-DQ5q3aRKcIw" comments="_Pj6jcZxkEeCuYMafrm1l2g" targetConnectionVisual="_Pj6jcpxkEeCuYMafrm1l2g" name="Extension" abstractClass="true" associationsIn="_tC3hAL0WEd-DQ5q3aRKcIw _3o-ZgL0VEd-DQ5q3aRKcIw" associationsOut="_8kqa8L0WEd-DQ5q3aRKcIw _w584kL0cEd-DQ5q3aRKcIw" generalizations="_Dmq2YL0dEd-DQ5q3aRKcIw">
+    <modelElement href="sdm.uml#_vasJcL0VEd-DQ5q3aRKcIw"/>
+    <visualProperties xmi:id="_va16cb0VEd-DQ5q3aRKcIw" position="475.0,295.0" size="111.0,38.0"/>
+    <visibility xmi:id="_va16cr0VEd-DQ5q3aRKcIw" label="+"/>
+    <attributes xmi:id="_yf1lpmKOEeCBq7LKLVIv3g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_8kmwkb0WEd-DQ5q3aRKcIw" derived="true" name="base">
+      <modelElement href="sdm.uml#_8kmwkb0WEd-DQ5q3aRKcIw"/>
+      <visualProperties xmi:id="_yf1lp2KOEeCBq7LKLVIv3g" visible="false"/>
+      <stereotypes xmi:id="_KOIFVXNOEeG6rN4Q-jjiZQ" name="EReference">
+        <modelElement href="sdm.uml#_DQedwL06Ed-8i6uUe2B2Qg"/>
+      </stereotypes>
+      <visibility xmi:id="_ygSRt2KOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygSRuWKOEeCBq7LKLVIv3g" label="1" max="1" min="1"/>
+      <type xmi:id="_ygSRtmKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject" name="EObject">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_yf1lqGKOEeCBq7LKLVIv3g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_tCyogb0WEd-DQ5q3aRKcIw" name="extendableBase">
+      <modelElement href="sdm.uml#_tCyogb0WEd-DQ5q3aRKcIw"/>
+      <visualProperties xmi:id="_yf1lqWKOEeCBq7LKLVIv3g" visible="false"/>
+      <visibility xmi:id="_ygSRu2KOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygSRvGKOEeCBq7LKLVIv3g" label="0..1" max="1"/>
+      <type xmi:id="_ygSRumKOEeCBq7LKLVIv3g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_zX-c0LyxEd-eCY_Peu5fFw" name="ExtendableElement">
+        <modelElement href="sdm.uml#_zX-c0LyxEd-eCY_Peu5fFw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_yf1lqmKOEeCBq7LKLVIv3g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_3o6vIr0VEd-DQ5q3aRKcIw" derived="true" name="modelBase">
+      <modelElement href="sdm.uml#_3o6vIr0VEd-DQ5q3aRKcIw"/>
+      <visualProperties xmi:id="_yf1lq2KOEeCBq7LKLVIv3g" visible="false"/>
+      <stereotypes xmi:id="_KOIFVHNOEeG6rN4Q-jjiZQ" name="EReference">
+        <modelElement href="sdm.uml#_WgqC4L0XEd-DQ5q3aRKcIw"/>
+      </stereotypes>
+      <visibility xmi:id="_ygSRvmKOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygSRwGKOEeCBq7LKLVIv3g" label="0..1" max="1"/>
+      <type xmi:id="_ygSRvWKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement" name="EModelElement">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_yf1lrGKOEeCBq7LKLVIv3g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_w56cU70cEd-DQ5q3aRKcIw" derived="true" name="owningAnnotation">
+      <modelElement href="sdm.uml#_w56cU70cEd-DQ5q3aRKcIw"/>
+      <visualProperties xmi:id="_yf1lrWKOEeCBq7LKLVIv3g" visible="false"/>
+      <stereotypes xmi:id="_KOR2UHNOEeG6rN4Q-jjiZQ" name="EReference">
+        <modelElement href="sdm.uml#_3L9CIL0cEd-DQ5q3aRKcIw"/>
+      </stereotypes>
+      <visibility xmi:id="_ygSRwmKOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygSRxGKOEeCBq7LKLVIv3g" label="0..1" max="1"/>
+      <type xmi:id="_ygSRwWKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation" name="EAnnotation">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_DOQg0Lw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation" name="EAnnotation" associationsIn="_6eSYMLyxEd-eCY_Peu5fFw _6edXULyxEd-eCY_Peu5fFw _6edXUbyxEd-eCY_Peu5fFw _VubvoLyyEd-eCY_Peu5fFw _w584kL0cEd-DQ5q3aRKcIw" associationsOut="_3qDWALyxEd-eCY_Peu5fFw" generalizations="_3qFLMLyxEd-eCY_Peu5fFw">
+    <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
+    <visualAttributeProperties xmi:id="_DOSWALw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="literalsCompartment"/>
+    <visualAttributeProperties xmi:id="_DOSWAbw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="attributeCompartment"/>
+    <visualAttributeProperties xmi:id="_DOS9ELw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="methodCompartment"/>
+    <visualProperties xmi:id="_DOQg0bw1Ed-Ytrd77fw2LA" position="130.0,483.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_DOQg0rw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQozocYdEduPJbEsMYXjUQ" name="Metaclass">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQozocYdEduPJbEsMYXjUQ"/>
+    </stereotypes>
+    <visibility xmi:id="_DOQg07w1Ed-Ytrd77fw2LA" label="+"/>
+    <attributes xmi:id="_DOQg1Lw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-source" name="source">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-source"/>
+      <visibility xmi:id="_DOQg1bw1Ed-Ytrd77fw2LA" label="+"/>
+      <cardinality xmi:id="_DOQg1rw1Ed-Ytrd77fw2LA" label="0..1" max="1"/>
+      <type xmi:id="_DOQg17w1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString" name="EString">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_e8y5oNeuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-details" name="details">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-details"/>
+      <stereotypes xmi:id="_KOIFUnNOEeG6rN4Q-jjiZQ" name="EReference">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuJ5scYcEduPJbEsMYXjUQ"/>
+      </stereotypes>
+      <visibility xmi:id="_e9doA9euEd-X6q7Ijhs6Xg" label="+"/>
+      <cardinality xmi:id="_e9doBdeuEd-X6q7Ijhs6Xg" label="*" max="-1"/>
+      <type xmi:id="_e9doAteuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStringToStringMapEntry" name="EStringToStringMapEntry">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStringToStringMapEntry"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_yf1loGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-eModelElement" name="eModelElement">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-eModelElement"/>
+      <visualProperties xmi:id="_yf1loWKOEeCBq7LKLVIv3g" visible="false"/>
+      <stereotypes xmi:id="_KOIFUXNOEeG6rN4Q-jjiZQ" name="EReference">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuJ5ssYcEduPJbEsMYXjUQ"/>
+      </stereotypes>
+      <visibility xmi:id="_ygSRrGKOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygSRrmKOEeCBq7LKLVIv3g" label="0..1" max="1"/>
+      <type xmi:id="_ygSRq2KOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement" name="EModelElement">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_yf1lomKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-contents" name="contents">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-contents"/>
+      <visualProperties xmi:id="_yf1lo2KOEeCBq7LKLVIv3g" visible="false"/>
+      <stereotypes xmi:id="_KOIFU3NOEeG6rN4Q-jjiZQ" name="EReference">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuJ5s8YcEduPJbEsMYXjUQ"/>
+      </stereotypes>
+      <visibility xmi:id="_ygSRsGKOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygSRsmKOEeCBq7LKLVIv3g" label="*" max="-1"/>
+      <type xmi:id="_ygSRr2KOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject" name="EObject">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_yf1lpGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-references" name="references">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation-references"/>
+      <visualProperties xmi:id="_yf1lpWKOEeCBq7LKLVIv3g" visible="false"/>
+      <visibility xmi:id="_ygSRtGKOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygSRtWKOEeCBq7LKLVIv3g" label="*" max="-1"/>
+      <type xmi:id="_ygSRs2KOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject" name="EObject">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sQs5sL0VEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement" name="EModelElement" abstractClass="true" associationsIn="_3qDWALyxEd-eCY_Peu5fFw" associationsOut="_3o-ZgL0VEd-DQ5q3aRKcIw" generalizations="_6ed-YbyxEd-eCY_Peu5fFw" subclassedBy="_3qFLMLyxEd-eCY_Peu5fFw">
+    <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement"/>
+    <visualAttributeProperties xmi:id="_sRHwcL0VEd-DQ5q3aRKcIw" collapsed="true" attributeName="literalsCompartment"/>
+    <visualAttributeProperties xmi:id="_sRI-kL0VEd-DQ5q3aRKcIw" collapsed="true" attributeName="attributeCompartment"/>
+    <visualAttributeProperties xmi:id="_sRJloL0VEd-DQ5q3aRKcIw" collapsed="true" attributeName="methodCompartment"/>
+    <visualProperties xmi:id="_sQtgwL0VEd-DQ5q3aRKcIw" position="553.0,572.0" size="312.0,67.0"/>
+    <stereotypes xmi:id="_sQtgwb0VEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQykoMYdEduPJbEsMYXjUQ" name="Metaclass">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQykoMYdEduPJbEsMYXjUQ"/>
+    </stereotypes>
+    <visibility xmi:id="_sQtgwr0VEd-DQ5q3aRKcIw" label="+"/>
+    <attributes xmi:id="_yf1lsmKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-eAnnotations" name="eAnnotations">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-eAnnotations"/>
+      <visualProperties xmi:id="_yf1ls2KOEeCBq7LKLVIv3g" visible="false"/>
+      <stereotypes xmi:id="_KOIFUHNOEeG6rN4Q-jjiZQ" name="EReference">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0qsYcEduPJbEsMYXjUQ"/>
+      </stereotypes>
+      <visibility xmi:id="_ygbbhWKOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygbbh2KOEeCBq7LKLVIv3g" label="*" max="-1"/>
+      <type xmi:id="_ygbbhGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation" name="EAnnotation">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_sQtgw70VEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-getEAnnotation" name="getEAnnotation">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-getEAnnotation"/>
+      <visibility xmi:id="_sQtgxL0VEd-DQ5q3aRKcIw" label="+"/>
+      <outParameters xmi:id="_sQtgxb0VEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-getEAnnotation-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-getEAnnotation-_ownedParameter.0"/>
+        <type xmi:id="_sQtgxr0VEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation" name="EAnnotation">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_sQtgx70VEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-getEAnnotation-source" name="source">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement-getEAnnotation-source"/>
+        <type xmi:id="_sQtgyL0VEd-DQ5q3aRKcIw" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString" name="EString">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_8htwULw0Ed-Ytrd77fw2LA" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#__xUl0LLyEd-uk56s-ldeog" comments="_iSlCAJxkEeCuYMafrm1l2g" targetConnectionVisual="_iSlCAZxkEeCuYMafrm1l2g" name="TypedElement" abstractClass="true" associationsOut="_HPr00LLzEd-uk56s-ldeog _rCRogLw1Ed-Ytrd77fw2LA" generalizations="_3aKDYLyyEd-eCY_Peu5fFw" subclassedBy="_w3ToILLzEd-uk56s-ldeog _7BXMAG3CEeGdlstntMEf0g">
+    <modelElement href="sdm.uml#__xUl0LLyEd-uk56s-ldeog"/>
+    <visualProperties xmi:id="_8htwUrw0Ed-Ytrd77fw2LA" position="1010.0,119.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_8htwUbw0Ed-Ytrd77fw2LA" label="+"/>
+    <attributes xmi:id="_yfr0oGKOEeCBq7LKLVIv3g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_HPpYkbLzEd-uk56s-ldeog" derived="true" name="type">
+      <modelElement href="sdm.uml#_HPpYkbLzEd-uk56s-ldeog"/>
+      <visualProperties xmi:id="_yfr0oWKOEeCBq7LKLVIv3g" visible="false"/>
+      <stereotypes xmi:id="_KNYecXNOEeG6rN4Q-jjiZQ" name="EReference">
+        <modelElement href="sdm.uml#_mHa4ELw1Ed-Ytrd77fw2LA"/>
+      </stereotypes>
+      <visibility xmi:id="_ygSRkWKOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygSRk2KOEeCBq7LKLVIv3g" label="0..1" max="1"/>
+      <type xmi:id="_ygSRkGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier" name="EClassifier">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_yfr0omKOEeCBq7LKLVIv3g" abstractModelReference="platform:/resource/org.storydriven.modeling/model/sdm.uml#_rCN-Ibw1Ed-Ytrd77fw2LA" name="genericType">
+      <modelElement href="sdm.uml#_rCN-Ibw1Ed-Ytrd77fw2LA"/>
+      <visualProperties xmi:id="_yfr0o2KOEeCBq7LKLVIv3g" visible="false"/>
+      <stereotypes xmi:id="_KN-7Y3NOEeG6rN4Q-jjiZQ" name="EReference">
+        <modelElement href="sdm.uml#_aoEjQLxeEd-HP-M1eWm3kg"/>
+      </stereotypes>
+      <visibility xmi:id="_ygSRlWKOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygSRl2KOEeCBq7LKLVIv3g" label="0..1" max="1"/>
+      <type xmi:id="_ygSRlGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType" name="EGenericType">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_B3eUELw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier" name="EClassifier" abstractClass="true" associationsIn="_HPr00LLzEd-uk56s-ldeog" associationsOut="_EaTdMLw1Ed-Ytrd77fw2LA _IcEpgLw1Ed-Ytrd77fw2LA _IcF3oLw1Ed-Ytrd77fw2LA" subclassedBy="_B3apsLw1Ed-Ytrd77fw2LA">
+    <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
+    <visualAttributeProperties xmi:id="_B3ilgLw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="literalsCompartment"/>
+    <visualAttributeProperties xmi:id="_B3jMkLw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="attributeCompartment"/>
+    <visualAttributeProperties xmi:id="_B3jzoLw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="methodCompartment"/>
+    <visualProperties xmi:id="_B3eUEbw1Ed-Ytrd77fw2LA" position="1267.0,120.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_B3eUErw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQozpMYdEduPJbEsMYXjUQ" name="Metaclass">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQozpMYdEduPJbEsMYXjUQ"/>
+    </stereotypes>
+    <visibility xmi:id="_B3eUE7w1Ed-Ytrd77fw2LA" label="+"/>
+    <attributes xmi:id="_B3eUFLw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-instanceClassName" name="instanceClassName">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-instanceClassName"/>
+      <visualProperties xmi:id="_ctxQcHNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <stereotypes xmi:id="_B3eUFbw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDqcYcEduPJbEsMYXjUQ" name="EAttribute">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDqcYcEduPJbEsMYXjUQ"/>
+      </stereotypes>
+      <visibility xmi:id="_B3eUFrw1Ed-Ytrd77fw2LA" label="+"/>
+      <cardinality xmi:id="_B3e7ILw1Ed-Ytrd77fw2LA" label="0..1" max="1"/>
+      <type xmi:id="_B3e7Ibw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString" name="EString">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_B3e7Irw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-instanceClass" derived="true" name="instanceClass">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-instanceClass"/>
+      <visualProperties xmi:id="_ctxQcXNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <stereotypes xmi:id="_B3e7I7w1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDqsYcEduPJbEsMYXjUQ" name="EAttribute">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDqsYcEduPJbEsMYXjUQ"/>
+      </stereotypes>
+      <visibility xmi:id="_B3e7JLw1Ed-Ytrd77fw2LA" label="+"/>
+      <cardinality xmi:id="_B3e7Jbw1Ed-Ytrd77fw2LA" label="0..1" max="1"/>
+      <type xmi:id="_B3e7Jrw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-EJavaClass_Wildcard" name="EJavaClass_Wildcard">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-EJavaClass_Wildcard"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_B3e7J7w1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-defaultValue" derived="true" name="defaultValue">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-defaultValue"/>
+      <visualProperties xmi:id="_ctxQcnNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <stereotypes xmi:id="_B3e7KLw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDq8YcEduPJbEsMYXjUQ" name="EAttribute">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDq8YcEduPJbEsMYXjUQ"/>
+      </stereotypes>
+      <visibility xmi:id="_B3e7Kbw1Ed-Ytrd77fw2LA" label="+"/>
+      <cardinality xmi:id="_B3e7Krw1Ed-Ytrd77fw2LA" label="0..1" max="1"/>
+      <type xmi:id="_B3e7K7w1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject" name="EJavaObject">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_B3e7LLw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-instanceTypeName" name="instanceTypeName">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-instanceTypeName"/>
+      <visualProperties xmi:id="_ctxQc3NOEeG6rN4Q-jjiZQ" visible="false"/>
+      <stereotypes xmi:id="_B3e7Lbw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDrMYcEduPJbEsMYXjUQ" name="EAttribute">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuTDrMYcEduPJbEsMYXjUQ"/>
+      </stereotypes>
+      <visibility xmi:id="_B3e7Lrw1Ed-Ytrd77fw2LA" label="+"/>
+      <cardinality xmi:id="_B3e7L7w1Ed-Ytrd77fw2LA" label="0..1" max="1"/>
+      <type xmi:id="_B3e7MLw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString" name="EString">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_e8qWwNeuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-ePackage" name="ePackage">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-ePackage"/>
+      <visualProperties xmi:id="_ctxQdHNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <stereotypes xmi:id="_e9Z9oNeuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0oMYcEduPJbEsMYXjUQ" name="EReference">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0oMYcEduPJbEsMYXjUQ"/>
+      </stereotypes>
+      <visibility xmi:id="_e9ZWkdeuEd-X6q7Ijhs6Xg" label="+"/>
+      <cardinality xmi:id="_e9Z9odeuEd-X6q7Ijhs6Xg" label="0..1" max="1"/>
+      <type xmi:id="_e9ZWkNeuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EPackage" name="EPackage">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EPackage"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_e8qWwdeuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-eTypeParameters" name="eTypeParameters">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-eTypeParameters"/>
+      <visualProperties xmi:id="_ctxQdXNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_e9Z9o9euEd-X6q7Ijhs6Xg" label="+"/>
+      <cardinality xmi:id="_e9aksNeuEd-X6q7Ijhs6Xg" label="*" max="-1"/>
+      <type xmi:id="_e9Z9oteuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#ETypeParameter" name="ETypeParameter">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#ETypeParameter"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_B3e7Mbw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-isInstance" name="isInstance">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-isInstance"/>
+      <visualProperties xmi:id="_c7KMMHNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_B3e7Mrw1Ed-Ytrd77fw2LA" label="+"/>
+      <outParameters xmi:id="_B3e7M7w1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-isInstance-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-isInstance-_ownedParameter.0"/>
+        <type xmi:id="_B3e7NLw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean" name="EBoolean">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_B3e7Nbw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-isInstance-object" name="object">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-isInstance-object"/>
+        <type xmi:id="_B3e7Nrw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject" name="EJavaObject">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_B3e7N7w1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-getClassifierID" name="getClassifierID">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-getClassifierID"/>
+      <visualProperties xmi:id="_c7KMMXNOEeG6rN4Q-jjiZQ" visible="false"/>
+      <visibility xmi:id="_B3e7OLw1Ed-Ytrd77fw2LA" label="+"/>
+      <outParameters xmi:id="_B3e7Obw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-getClassifierID-_ownedParameter.0">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier-getClassifierID-_ownedParameter.0"/>
+        <type xmi:id="_B3e7Orw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt" name="EInt">
+          <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_IcaAsLw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType" name="EGenericType" associationsIn="_IcDbYLw1Ed-Ytrd77fw2LA _IcECcLw1Ed-Ytrd77fw2LA _IcEpgLw1Ed-Ytrd77fw2LA _IcFQkLw1Ed-Ytrd77fw2LA _IcF3oLw1Ed-Ytrd77fw2LA _rCRogLw1Ed-Ytrd77fw2LA" associationsOut="_IcDbYLw1Ed-Ytrd77fw2LA _IcECcLw1Ed-Ytrd77fw2LA _IcFQkLw1Ed-Ytrd77fw2LA _IcHFwLw1Ed-Ytrd77fw2LA _IcHFwbw1Ed-Ytrd77fw2LA _IcHs0Lw1Ed-Ytrd77fw2LA" generalizations="_6ed-YLyxEd-eCY_Peu5fFw">
+    <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
+    <visualAttributeProperties xmi:id="_IchVcLw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="literalsCompartment"/>
+    <visualAttributeProperties xmi:id="_Ich8gLw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="attributeCompartment"/>
+    <visualAttributeProperties xmi:id="_IcijkLw1Ed-Ytrd77fw2LA" collapsed="true" attributeName="methodCompartment"/>
+    <visualProperties xmi:id="_IcaAsbw1Ed-Ytrd77fw2LA" position="1083.0,311.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_IcaAsrw1Ed-Ytrd77fw2LA" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQozqsYdEduPJbEsMYXjUQ" name="Metaclass">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_iQozqsYdEduPJbEsMYXjUQ"/>
+    </stereotypes>
+    <visibility xmi:id="_IcaAs7w1Ed-Ytrd77fw2LA" label="+"/>
+    <attributes xmi:id="_e8v2WNeuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eTypeParameter" name="eTypeParameter">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eTypeParameter"/>
+      <stereotypes xmi:id="_e9dA8teuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0qcYcEduPJbEsMYXjUQ" name="EReference">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0qcYcEduPJbEsMYXjUQ"/>
+      </stereotypes>
+      <visibility xmi:id="_e9dA8deuEd-X6q7Ijhs6Xg" label="+"/>
+      <cardinality xmi:id="_e9dA89euEd-X6q7Ijhs6Xg" label="0..1" max="1"/>
+      <type xmi:id="_e9dA8NeuEd-X6q7Ijhs6Xg" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#ETypeParameter" name="ETypeParameter">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#ETypeParameter"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_yfr0pGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eUpperBound" name="eUpperBound">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eUpperBound"/>
+      <visualProperties xmi:id="_yfr0pWKOEeCBq7LKLVIv3g" visible="false"/>
+      <stereotypes xmi:id="_KN1KYXNOEeG6rN4Q-jjiZQ" name="EReference">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0pcYcEduPJbEsMYXjUQ"/>
+      </stereotypes>
+      <visibility xmi:id="_ygSRmWKOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygSRm2KOEeCBq7LKLVIv3g" label="0..1" max="1"/>
+      <type xmi:id="_ygSRmGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType" name="EGenericType">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_yfr0pmKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eTypeArguments" name="eTypeArguments">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eTypeArguments"/>
+      <visualProperties xmi:id="_yfr0p2KOEeCBq7LKLVIv3g" visible="false"/>
+      <stereotypes xmi:id="_KN1KYnNOEeG6rN4Q-jjiZQ" name="EReference">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0psYcEduPJbEsMYXjUQ"/>
+      </stereotypes>
+      <visibility xmi:id="_ygSRnWKOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygSRn2KOEeCBq7LKLVIv3g" label="*" max="-1"/>
+      <type xmi:id="_ygSRnGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType" name="EGenericType">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_yfr0qGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eRawType" derived="true" name="eRawType">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eRawType"/>
+      <visualProperties xmi:id="_yfr0qWKOEeCBq7LKLVIv3g" visible="false"/>
+      <stereotypes xmi:id="_KN1KY3NOEeG6rN4Q-jjiZQ" name="EReference">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0p8YcEduPJbEsMYXjUQ"/>
+      </stereotypes>
+      <visibility xmi:id="_ygSRoWKOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygSRo2KOEeCBq7LKLVIv3g" label="1" max="1" min="1"/>
+      <type xmi:id="_ygSRoGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier" name="EClassifier">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_yfr0qmKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eLowerBound" name="eLowerBound">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eLowerBound"/>
+      <visualProperties xmi:id="_yfr0q2KOEeCBq7LKLVIv3g" visible="false"/>
+      <stereotypes xmi:id="_KN-7YHNOEeG6rN4Q-jjiZQ" name="EReference">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#_uuc0qMYcEduPJbEsMYXjUQ"/>
+      </stereotypes>
+      <visibility xmi:id="_ygSRpWKOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygSRp2KOEeCBq7LKLVIv3g" label="0..1" max="1"/>
+      <type xmi:id="_ygSRpGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType" name="EGenericType">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_yfr0rGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eClassifier" name="eClassifier">
+      <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType-eClassifier"/>
+      <visualProperties xmi:id="_yfr0rWKOEeCBq7LKLVIv3g" visible="false"/>
+      <visibility xmi:id="_ygSRqWKOEeCBq7LKLVIv3g" label="+"/>
+      <cardinality xmi:id="_ygSRqmKOEeCBq7LKLVIv3g" label="0..1" max="1"/>
+      <type xmi:id="_ygSRqGKOEeCBq7LKLVIv3g" abstractModelReference="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier" name="EClassifier">
+        <modelElement href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
+      </type>
+    </attributes>
+  </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_7BiLIG3CEeGdlstntMEf0g" comments="_7BZoQG3CEeGdlstntMEf0g" targetConnectionVisual="_7BaPUG3CEeGdlstntMEf0g" name="Variable" abstractClass="true" generalizations="_7BXMAG3CEeGdlstntMEf0g">
     <modelElement href="sdm.uml#_c2cqYBzJEeChOvWwuwx7tQ"/>
-    <visualProperties xmi:id="_7Cl7EG3CEeGdlstntMEf0g" position="1592.0,426.0" size="-1.0,-1.0"/>
+    <visualProperties xmi:id="_7Cl7EG3CEeGdlstntMEf0g" position="948.0,474.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_7BiLIW3CEeGdlstntMEf0g" label="+"/>
     <attributes xmi:id="_7BiLIm3CEeGdlstntMEf0g" comments="_-N4LUG3CEeGdlstntMEf0g" targetConnectionVisual="_-N4yYG3CEeGdlstntMEf0g" derived="true" name="variableName">
       <modelElement href="sdm.uml#_ga_IIBzJEeChOvWwuwx7tQ"/>
