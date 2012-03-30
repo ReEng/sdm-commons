@@ -1,20 +1,26 @@
 \section{Story Diagrams} \label{sec:StoryDiagrams}
 
-\subsection{General Idea (Dietrich)}
+After explaining the concept of story patterns in Section~\ref{sec:StoryPatterns}, a prerequisite for this section, we explain the story diagrams themselves.
+We give an overview of the general idea in Section~\ref{sec:IdeaStoryDiagrams} and go on with explaining the language constructs in the following sections.
+
+\subsection{General Idea (Dietrich)}\label{sec:IdeaStoryDiagrams}
 
 % - combine activity diagrams and graph transformations as well as imperative, deterministic and declarative, non-deterministic languages to formally and compactly describe software behavior in terms of model transformations using an OO-based, familiar notation
 
 The main idea behind story diagrams is to formalize UML activity diagrams
-to better support model-driven software development
-by means of completely modeling software structure and behavior and making the software model executable.
+to better support model-driven software development.
+This is done by means of completely modeling software structure and behavior and making the software model executable.
 For that purpose, graph transformations, a well-known formalism, were chosen to formally specify behavior and have been combined with UML activity diagrams.
 The result, story diagrams, is a mixture of two languages:
-an imperative, deterministic language for the description of control flow, UML activity diagrams,
+an imperative, deterministic language for the description of control flow, namely UML activity diagrams,
 and a declarative, non-deterministic, object-oriented, graph-transformation-based language for the description of model modifications, so-called story patterns (see Section~\ref{sec:StoryPatterns}).
-Both languages are graphical, formally defined, and use a familiar notation based on UML 1.5 activity diagrams and UML object diagrams with minor modifications.
+Both languages are graphical, formally defined, and use a familiar notation based on UML 1.5 activity diagrams\footnote{Actually,
+we use the notation of UML 1.5 activity diagrams, but already use the terminology of the UML 2 and will add constructs from UML 2 like combined fragments to story diagrams in future.}
+and UML object diagrams with minor modifications.
 
 An exemplary story diagram is illustrated in Figure~\ref{fig:simpleStoryDiagram}.
-This story diagram replaces calls of a given method (\emph{oldMethod}) with calls of another given method (\emph{newMethod}).
+This story diagram takes a graph-based representation (a model of a so-called abstract syntax graph, see Section~\ref{sec:foundations:typedAttrGTS}) of an object-oriented program, e.g., in Java,
+and replaces calls of a given method (\fe{oldMethod}) with calls of another given method (\fe{newMethod}).
 
 \begin{figure}[htb]
   \centering
@@ -30,30 +36,31 @@ The activity edges can carry guards.
 These are either boolean expressions, e.g., checking attribute values of a matched object,
 or guards used to specify decisions on whether a story pattern could be
 matched or not\footnote{A story pattern is successfully matched if for each object and link variable in the pattern corresponding objects and links are found in the instance model (host graph) and all specified constraints are satisfied.}.
-In Figure~\ref{fig:simpleStoryDiagram} the used guards are \text[success\text] (successful matching),
-\text[failure\text] (failed to completely execute a story pattern),
-and \text[end\text] (activity edge points to the first activity node to be executed after a loop).
+In Figure~\ref{fig:simpleStoryDiagram} the used guards are \fe{\text[success\text]} (successful matching),
+\fe{\text[failure\text]} (failed to completely execute a story pattern),
+and \fe{\text[end\text]} (activity edge points to the first activity node to be executed after a loop).
 
 In contrast to ordinary UML activity diagrams, story diagrams, so far, do not model concurrent execution.
-Thus, the language constructs \emph{fork} and \emph{join} are omitted in story diagrams.
+Thus, the language constructs \emph{fork} and \emph{join} are currently not supported in story diagrams.
+We plan to include these concepts in future versions of story diagrams.
 
 %- Story diagrams in MDSD process, 2 worlds: stand-alone transformations and specifications of methods' behavior:
 %  1. alternative (completely modeling software): model classes in class diagrams, specify their methods' behavior in story diagrams, generate executable source code (e.g. Java) or use an interpreter
 %  2. alternative (specify recurring model operations/transformations for a given type of models): model only classes representing the editor's model under development (meta-model), specify modification operations of this model (adding and removing elements, analysis operations, translations to/generation of other models, etc.), need of a software that triggers the specified operations, the operations can be performed using generated code or an interpreter
 %- introduce an example
 
-Basically, there are two slightly different ways of using story diagrams in a model-driven software development process.
+Basically, there are two different ways of using story diagrams in a model-driven software development process:
 
 Originally, story diagrams were used in object-oriented software development to formally specify the behavior of methods that are defined in classes.
 Calling such a method means to execute the story diagram that represents the method's behavior.
-If for all defined methods story diagrams are specified, the software can be executed.
+If for each method specified in a class model there is also a story diagram modeling the method's behavior, the software model can be executed.
 In this case, story diagrams specify the behavior of objects whose properties are defined by classes.
-Thus, story diagrams have a \emph{this} variable representing an object (class instance) that they belong to.
+For that reason, story diagrams have a \emph{this} variable -- similar to the keyword \emph{this} in Java -- representing an object (class instance) that they belong to (a self reference).
 This variable can be used as a starting point for the graph matching specified in a story diagram.
 
 For example, the class diagram in Figure~\ref{fig:SDWithThisClassDiagram} defines a method \fe{findAttribute} for all \fe{Class} objects.
 This method's behavior is specified by the story diagram in Figure~\ref{fig:SDWithThis}.
-The matching of the object structure specified in the story diagram, in this case,
+The matching of the object structure specified in the contained story pattern, in this case,
 starts with the \fe{this} object variable of the type \fe{Class} which is already bound
 to the \fe{Class} object that the \fe{findAttribute} method belongs to.
 Thus, this method tries to find an attribute \fe{a} in the same class with the name given by the method's parameter \fe{text}.
@@ -92,11 +99,11 @@ Typically, model-to-model transformations, consistency checks, or more generally
 
 % - enable formal analyses to check/ensure certain behavioral software properties
 
-In both cases the story diagrams can be used to generate executable source code or be executed using an interpreter.
-Besides execution, the formally defined story diagrams can also be analyzed to guarantee certain behavioral properties.
+In both cases, story diagrams can be used to generate executable source code or be executed using an interpreter.
+Besides execution, the formally defined story diagrams can also be analyzed to guarantee certain behavioral properties \cite{Zue09}.
 For example, model checking can be used to check if a certain invariant holds
-(e.g.\ all accessible variables are still accessible after refactoring operations)
-or if a critical state can ever be reached (e.g.\ attributes or methods having no parent class after refactoring operations).
+(e.g.\, that all accessible variables are still accessible after a refactoring operation)
+or if a critical state can ever be reached (e.g.\, if an attribute or method has no parent class after a refactoring operation which would result in an incorrect program).
 
 A complete description of the story diagrams' abstract syntax is given in the Appendix~\ref{sec-reference}.
 There is also a grammar that determines all feasible story diagrams by constraining their structure.
@@ -105,9 +112,9 @@ The last published version of this grammar can be found in Thomas Klein's diplom
 
 %\subsection{The Language Constructs in Story Diagrams (Jan/Dietrich)}\label{sec:StoryDiagrams:composition}
 
-\subsection{Activities, Activity Parameters and Return Values (Dietrich)}
+\subsection{Activities, Activity Parameters and Return Values (Dietrich)}\label{sec:activities}
 
-Since story diagrams can be seen as special UML activity diagrams, we reused the class names defined by the UML.
+Since story diagrams can be seen as special UML activity diagrams, we reused the class names defined by the UML\footnote{We use the class names from UML 2.}.
 Thus, similar to UML activity diagrams, a story diagram is represented by a so-called activity (class \fe{Activity}).
 
 Each story diagram can have parameters.
@@ -118,15 +125,17 @@ Parameters can be \emph{in} and \emph{out} parameters at the same time.
 The story diagram in Figure~\ref{fig:SDWithThisStatic} has two \emph{in} parameters \fe{c} and \fe{text}
 as well as an unnamed \emph{out} parameter of the type \fe{Attribute}.
 
+\todoall{Shall we allow unnamed out parameters? How is the notation for more than one out parameter (return statement doesn't fit anymore)?}
+
 If a story diagram defines the behavior of a method, the parameters are defined by the corresponding method's signature.
 In this case, the number of \emph{out} parameters is limited to one single parameter and represents the only \emph{return} value of the method and story diagram.
-Besides these parameters there is another implicitly defined parameter \emph{this}
+Besides these parameters, there is another implicitly defined parameter \emph{this}
 which -- similar to Java's \emph{this} keyword -- represents the object that the story diagram belongs to.
 
 In case that a story diagram is not defining a method's behavior, it defines it's own signature explicitly with according \emph{in} and \emph{out} parameters.
 The number of \emph{out} parameters is allowed to be arbitrary in this case and there is no \emph{this} parameter.
 
-The values or objects returned after execution of a story diagram are defined by the expressions in the \emph{stop} activity nodes.
+The values or objects returned after execution of a story diagram are defined by expressions in the \emph{stop} activity nodes.
 For example, the object matched to the object variable \fe{a} is returned by the story diagram in Figure~\ref{fig:SDWithThisStatic} in case of a successful execution.
 Otherwise, the \emph{null} reference is returned which is specified by the keyword \emph{null}.
 
@@ -143,8 +152,8 @@ In contrast to single story patterns, story patterns contained in story nodes of
 Here, you can reuse all object variables declared in a story pattern of a preceding story node.
 For example, in Figure~\ref{fig:simpleStoryDiagram} (p.~\pageref{fig:simpleStoryDiagram}),
 the object variable \fe{parentClass} is reused in the following story pattern
-by specifying the variable as a bound variable
-(i.e.\ the variable does not have to be matched anymore, the object matched in the steps before is used instead).
+by specifying the variable as a bound variable.
+I.e., the variable does not have to be matched anymore, the object matched in the steps before is used instead.
 
 Executing a story node means to execute the corresponding story pattern
 which means to find a subgraph with the specified properties
@@ -154,23 +163,12 @@ and to perform specified modifications of the found subgraph
 
 We distinguish two kinds of story nodes: \emph{modifying story nodes} and \emph{matching story nodes}.
 A matching story node contains a story pattern that only matches a specified object structure, but does not change it.
-A modifying story node is in addition allowed to perform modifications of the matched obejct structure.
-For static analyses of graph transformations described with story diagrams it is helpful to know which tranformations do not modify the host graph (instance model).
+A modifying story node is also allowed to perform modifications of the matched obejct structure.
+For static analyses of graph transformations described with story diagrams
+it is helpful to know which tranformations do not modify the instance model (host graph).
 
 
 \subsection{Decision Nodes, Guards, and Loops (Dietrich \& Jan)}
-
-Due to story node behavior being defined by story patterns,
-since trying to find a subgraph defined by a story pattern can fail,
-each execution of a story node can also fail.
-To distinguish the cases of a successful story node execution and its failure,
-the outgoing activity edges can be provided with the guards \text[success\text] and \text[failure\text] (see Figure~\ref{fig:SD-decisions} a)).
-The control flow is following the activity edge with the \emph{success} guard in case of a successful story node execution,
-i.e.\ a successful matching of the corresponding story pattern,
-otherwise it follows the activity edge with the \emph{failure} guard.
-If an outgoing activity edge has no guard, it covers both cases, success and failure.
-The guards \text[success\text] and \text[failure\text] can only be used pair-wise (exactly two outgoing activity edges with exactly these two guards).
-The first story node in Figure~\ref{fig:simpleStoryDiagram} (p.~\pageref{fig:simpleStoryDiagram}), for example, uses these guards.
 
 \begin{figure}[htb]
 	\centering
@@ -201,21 +199,78 @@ The first story node in Figure~\ref{fig:simpleStoryDiagram} (p.~\pageref{fig:sim
   \label{fig:SD-decisions}
 \end{figure}
 
-Besides \text[success\text] and \text[failure\text] boolean expressions can be used as guards (see Figure~\ref{fig:SD-decisions} b)).
-We use the \emph{decision node} -- depicted as a rhomb -- for decisions that do not depend on a previous story node.
+The behavior of a story node is defined by a story pattern.
+Therefore,
+since trying to find a subgraph defined by a story pattern can fail,
+each execution of a story node can also fail.
+To distinguish the cases of a successful story node execution and its failure,
+the outgoing activity edges can be provided with the guards \fe{\text[success\text]} and \fe{\text[failure\text]} (see Figure~\ref{fig:SD-decisions} a)).
+The control flow is following the activity edge with the \emph{success} guard in case of a successful story node execution,
+i.e.\ a successful matching of the corresponding story pattern.
+Otherwise it follows the activity edge with the \emph{failure} guard.
+If an outgoing activity edge has no guard, it covers both cases, success and failure.
+The guards \fe{\text[success\text]} and \fe{\text[failure\text]} can only be used pair-wise (exactly two outgoing activity edges with exactly these two guards).
+The first story node in Figure~\ref{fig:simpleStoryDiagram} (p.~\pageref{fig:simpleStoryDiagram}), for example, uses these guards.
+
+\begin{figure}[htb]
+	\centering
+  \begin{minipage}[t]{.24\textwidth}
+    \centering
+    \includegraphics[scale=0.9]{SD-simplify1a} 
+    \\a)
+    %\caption{a) Each-Time Loop}
+    %\label{fig:SD-loop-for-each}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{.24\textwidth}
+    \centering
+    \includegraphics[scale=0.9]{SD-simplify1b}
+    \\b)
+    %\caption{b) Matching-Dependent Loop}
+    %\label{fig:SD-loop-matching}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{.24\textwidth}
+    \centering
+    \includegraphics[scale=0.9]{SD-simplify2a}
+    \\c)
+    %\caption{c) Boolean-Condition Loop}
+    %\label{fig:SD-loop-boolean}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{.24\textwidth}
+    \centering
+    \includegraphics[scale=0.9]{SD-simplify2b}
+    \\d)
+    %\caption{c) Boolean-Condition Loop}
+    %\label{fig:SD-loop-boolean}
+  \end{minipage}
+  \caption[Examples For Control Flow Simplifications]{Examples For Control Flow Simplifications: case a) becomes b), case c) becomes d)}
+  \label{fig:SD-simplifications}
+\end{figure}
+
+Besides \fe{\text[success\text]} and \fe{\text[failure\text]}, boolean expressions can be used as guards (see Figure~\ref{fig:SD-decisions} b)).
+We use the \emph{junction node} -- depicted as a rhomb -- for decisions that do not depend on a previous story node.
 In this case, the boolean expression of the outgoing activity edge is evaluated to \emph{true} or \emph{false}.
-There can be arbitrarily many outgoing activity edges with boolean guard expressions,
-but the boolean expressions have to mutually exclude each other
-and the corresponding guards have to be combined with an outgoing activity edge with the guard \text[else\text],
-i.e.\ if there is a guard with a boolean expression, there is also an activity edge with the guard \text[else\text].
-The decision node can also be used to merge several control flows into one (several activity edges point to a decision node which has only one outgoing activity edge,
-see Figure~\ref{fig:SD-loops} b)).
+There can be arbitrarily many outgoing activity edges with boolean guard expressions.
+The boolean expressions have to mutually exclude each other
+and the corresponding guards have to be combined with an outgoing activity edge with the guard \fe{\text[else\text]}.
+I.e., if there is a guard with a boolean expression, there is also an activity edge with the guard \fe{\text[else\text]}.
+
+The junction node can also be used to merge several control flows into one
+(several activity edges point to a junction node which has only one outgoing activity edge,
+see Figure~\ref{fig:SD-simplifications} a)).
+
+In order to simplify the control flow as shown in Figures~\ref{fig:SD-simplifications} a) and c),
+we also allow shortcuts as illustrated in Figures~\ref{fig:SD-simplifications} b) and d).
+The control flow in case b) is equivalent to that in case a).
+The control flows in cases c) and d) are also equivalent to each other.
 
 \begin{figure}[htb]
 	\centering
   \begin{minipage}[t]{.3\textwidth}
     \centering
-    \includegraphics[scale=1]{SD-loop3} 
+    \includegraphics[scale=1]{SD-loop1} 
     \\a)
     %\caption{a) Each-Time Loop}
     %\label{fig:SD-loop-for-each}
@@ -223,7 +278,7 @@ see Figure~\ref{fig:SD-loops} b)).
   \hfill
   \begin{minipage}[t]{.3\textwidth}
     \centering
-    \includegraphics[scale=1]{SD-loop1}
+    \includegraphics[scale=1]{SD-loop2}
     \\b)
     %\caption{b) Matching-Dependent Loop}
     %\label{fig:SD-loop-matching}
@@ -231,7 +286,7 @@ see Figure~\ref{fig:SD-loops} b)).
   \hfill
   \begin{minipage}[t]{.3\textwidth}
     \centering
-    \includegraphics[scale=1]{SD-loop2}
+    \includegraphics[scale=1]{SD-loop3}
     \\c)
     %\caption{c) Boolean-Condition Loop}
     %\label{fig:SD-loop-boolean}
@@ -240,28 +295,28 @@ see Figure~\ref{fig:SD-loops} b)).
   \label{fig:SD-loops}
 \end{figure}
 
-Guards can be used to model loops.
-For that purpose we use the guards \text[each time\text] and \text[end\text] in combination which is further explained in the following.
-A special story node is the \emph{for-each} activity node, depicted by a cascaded activity node (see Figure~\ref{fig:SD-loops} a)).
+Activity edges and guards can be used to model loops as illustrated in Figures~\ref{fig:SD-loops} a) and b).
+But there is an additional construct to model loops which allows to perform the same operations with each occurrence of a certain object structure.
+For that purpose we use a special activity node that we call \emph{for-each} activity node
+and special guards \fe{\text[each time\text]} and \fe{\text[end\text]}.
+
+The for-each activity node is depicted by a cascaded activity node (see Figure~\ref{fig:SD-loops} c)).
 The second activity node in Figure~\ref{fig:simpleStoryDiagram} (p.~\pageref{fig:simpleStoryDiagram}), for example, is a for-each activity node.
 Such a node represents a loop where the contained story pattern is executed as often as new subgraphs can be matched
 that differ from the previously matched graphs by at least one other matched object.
 The story pattern in the for-each activity node in Figure~\ref{fig:simpleStoryDiagram}
 is matched for each existing pair of a method (object variable \fe{anyMethod}) and corresponding call object (object variable \fe{c}).
 Besides the matching itself, all \emph{destroy} and \emph{create} steps are also executed for each of these matched subgraphs.
-After all these matching steps, the control flow is guided by the outgoing activity edge with the guard \text[end\text].
-Each for-each activity node has such an outgoing activity edge.
-
-In addition, this edge can be combined with another activity edge having the guard \text[each time\text]
-(see Figure~\ref{fig:SD-loops} a)).
+In general, after execution of the story pattern in the for-each activity node,
+the control flow follows the activity edge with the guard \fe{\text[each time\text]}, if available (see Figure~\ref{fig:SD-loops} c)).
 This edge is optional and can be omitted like in Figure~\ref{fig:simpleStoryDiagram}.
 The \text[each time\text] edge is leading to the activity node (or e.g.\ a sequence of such nodes)
 that is to be executed after each successful execution of the for-each activity node.
-In this case, there has to be an activity edge leading back to the for-each activity node
-to terminate the specified loop by following the \text[end\text] activity edge (see Figure~\ref{fig:SD-loops} a)).
-
-Alternative ways to describe loops in story diagrams are uses of activity edges pointing to a preceding activity node
-(see Figure~\ref{fig:SD-loops} b) and c)).
+After that, the control flow returns to the for-each activity node in order to match and process the next object structure that can be matched by the for-each activity node.
+If there is an activity edge with the guard \fe{\text[each time\text]}, there has also to be such an activity edge leading back to the for-each activity node.
+This constitutes a loop.
+Finally, the control flow is guided by the activity edge with the guard \fe{\text[end\text]} which leads to the activity node to be executed after the loop.
+Each for-each activity node has such an outgoing \text[end\text] activity edge.
 
 \todojr{fresh matches, auch fuer maybe\_bound: Behält ein maybe\_bound-Knoten ein Binding, was erst im Loop gesetzt wurde? Oder zaehlt dafuer nur, was vor dem Loop schon gebunden war? Letzteres erscheint sinnvoller (Stefan fragen wegen Beispiel)}
 
@@ -270,7 +325,7 @@ Alternative ways to describe loops in story diagrams are uses of activity edges 
 
 Story diagram calls are special nodes in a story diagram which are used to invoke other story diagrams. Similar to method calls, this reduces redundancy and promotes reuse.
 
-As described in the previous sections, a story diagram can have an arbitrary number of in and out parameters. When calling a story diagram, concrete arguments have to be assigned to the in parameters. Consequently, if an object variable named n is bound somewhere in the story diagram, the identifier n can be used to pass this object variable as an argument to a call. Similarly, if the called story diagram has out parameters, those are implicitly bound to their respective names and can be used by specifying object variables of the same name.
+As described in Section~\ref{sec:activities}, a story diagram can have an arbitrary number of in and out parameters. When calling a story diagram, concrete arguments have to be assigned to the in parameters. Consequently, if an object variable named \fe{n} is bound somewhere in the story diagram, the identifier \fe{n} can be used to pass this object variable as an argument to a call. Similarly, if the called story diagram has out parameters, those are implicitly bound to their respective names and can be used by specifying object variables of the same name.
 
 In contrast to QVT \cite{QVT}, we do not explicitly model inout parameters. Instead, we allow the same objects which are passed as in parameters to be also returned as out parameters.
 These objects are not bound again after the call. Instead the binding is preserved and the same object variable is used before and after the call. This is similar to the semantics of a call-by-reference parameter.
@@ -285,7 +340,7 @@ An example of a story diagram call is shown in Figure~\ref{fig:call}.
 \end{center}
 \end{figure}
 
-The first story pattern in Figure~\ref{fig:call}, shows the bound object variable \fe{package}. Two new object variables \fe{class1} and \fe{class2} are bound in that pattern. The next node with the grey background is a story diagram call which is also signified by its label. Beneath the label, the name of the called story diagram is given, in this case \fe{CreateBidirectionalAssociation}. Assume that the called story diagram has two in parameters of the type \fe{Class} and one out parameter of the type \fe{Association}. The two classes that were bound in the first story pattern, \fe{class1} and \fe{class2} are passed to the call as arguments.
+The first story pattern in Figure~\ref{fig:call}, shows the bound object variable \fe{package}. Two new object variables \fe{class1} and \fe{class2} are bound in that pattern. The next node with the grey background is a story diagram call which is also signified by its label \fe{Call}. Beneath the label, the name of the called story diagram is given, in this case \fe{CreateBidirectionalAssociation}. Assume that the called story diagram has two in parameters of the type \fe{Class} and one out parameter of the type \fe{Association}. The two classes that were bound in the first story pattern, \fe{class1} and \fe{class2} are passed to the call as arguments.
 The result of the call is bound to the object variable \fe{assoc}. The type of this variable is determined by the out parameter type, i.e., in this case the type Association.
 
 If a story diagram has no out parameters, the colon and the out parameters names after the parentheses are omitted (see Figure \ref{fig:SDRemoveInterfaceViolation} for an example).
