@@ -9,7 +9,7 @@ rule GenCompartment1 {
 		)
 	to
 		gcout : GM!GenCompartment (
-			listLayout <- false
+			listLayout <- false,
 			canCollapse <- true
 		)
 }

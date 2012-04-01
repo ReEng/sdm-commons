@@ -7,7 +7,6 @@ import java.util.List;
 import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteDrawer;
-import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
@@ -58,6 +57,7 @@ public class SDMPaletteFactory {
 		paletteContainer.add(createJunctionNode4CreationTool());
 		paletteContainer.add(createStructuredNode5CreationTool());
 		paletteContainer.add(createStatementNode6CreationTool());
+		paletteContainer.add(createActivityCallNode7CreationTool());
 		return paletteContainer;
 	}
 
@@ -103,7 +103,7 @@ public class SDMPaletteFactory {
 				Messages.PrimitiveVariableNode3CreationTool_title,
 				Messages.PrimitiveVariableNode3CreationTool_desc,
 				Collections
-						.singletonList(SDMElementTypes.AttributeAssignment_3013));
+						.singletonList(SDMElementTypes.PrimitiveVariable_3014));
 		entry.setId("createPrimitiveVariableNode3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(SDMDiagramEditorPlugin
 				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/PrimitiveVariableNode.gif")); //$NON-NLS-1$
@@ -120,7 +120,7 @@ public class SDMPaletteFactory {
 				Messages.AttributeAssignment4CreationTool_title,
 				Messages.AttributeAssignment4CreationTool_desc,
 				Collections
-						.singletonList(SDMElementTypes.PrimitiveVariable_3014));
+						.singletonList(SDMElementTypes.AttributeAssignment_3013));
 		entry.setId("createAttributeAssignment4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(SDMDiagramEditorPlugin
 				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/AttributeAssignment.gif")); //$NON-NLS-1$
@@ -248,6 +248,23 @@ public class SDMPaletteFactory {
 				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/StatementNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(SDMDiagramEditorPlugin
 				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/StatementNode.gif")); //$NON-NLS-1$
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createActivityCallNode7CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.ActivityCallNode7CreationTool_title,
+				Messages.ActivityCallNode7CreationTool_desc,
+				Collections
+						.singletonList(SDMElementTypes.ActivityCallNode_2008));
+		entry.setId("createActivityCallNode7CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(SDMDiagramEditorPlugin
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/ActivityCallNode.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(SDMDiagramEditorPlugin
+				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/ActivityCallNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 

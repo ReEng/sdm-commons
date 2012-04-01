@@ -20,6 +20,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
+import org.storydriven.modeling.diagram.edit.parts.ActivityCallNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEditPart;
 import org.storydriven.modeling.diagram.edit.parts.JunctionNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.JunctionNodeEditPart;
@@ -55,13 +56,14 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host
 				.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof ActivityEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(6);
+			ArrayList<IElementType> types = new ArrayList<IElementType>(7);
 			types.add(SDMElementTypes.StartNode_2001);
 			types.add(SDMElementTypes.StopNode_2002);
 			types.add(SDMElementTypes.JunctionNode_2003);
 			types.add(SDMElementTypes.StatementNode_2004);
 			types.add(SDMElementTypes.StructuredNode_2005);
 			types.add(SDMElementTypes.ModifyingStoryNode_2007);
+			types.add(SDMElementTypes.ActivityCallNode_2008);
 			return types;
 		}
 		if (editPart instanceof StatementNodeEditPart) {
@@ -146,6 +148,10 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((ModifyingStoryNodeEditPart) sourceEditPart)
 					.getMARelTypesOnSource();
 		}
+		if (sourceEditPart instanceof ActivityCallNodeEditPart) {
+			return ((ActivityCallNodeEditPart) sourceEditPart)
+					.getMARelTypesOnSource();
+		}
 		if (sourceEditPart instanceof JunctionNode2EditPart) {
 			return ((JunctionNode2EditPart) sourceEditPart)
 					.getMARelTypesOnSource();
@@ -202,6 +208,10 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
 			return ((ModifyingStoryNodeEditPart) targetEditPart)
+					.getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ActivityCallNodeEditPart) {
+			return ((ActivityCallNodeEditPart) targetEditPart)
 					.getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof JunctionNode2EditPart) {
@@ -271,6 +281,10 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((ModifyingStoryNodeEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
+		if (sourceEditPart instanceof ActivityCallNodeEditPart) {
+			return ((ActivityCallNodeEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		if (sourceEditPart instanceof JunctionNode2EditPart) {
 			return ((JunctionNode2EditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -331,6 +345,10 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
 			return ((ModifyingStoryNodeEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ActivityCallNodeEditPart) {
+			return ((ActivityCallNodeEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof JunctionNode2EditPart) {
@@ -397,6 +415,10 @@ public class SDMModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof ModifyingStoryNodeEditPart) {
 			return ((ModifyingStoryNodeEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ActivityCallNodeEditPart) {
+			return ((ActivityCallNodeEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof JunctionNode2EditPart) {

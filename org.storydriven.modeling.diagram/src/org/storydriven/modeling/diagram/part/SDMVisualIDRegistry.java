@@ -7,6 +7,9 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.Activity;
+import org.storydriven.modeling.diagram.edit.parts.ActivityCallNodeActivityCallNodeCompartmentEditPart;
+import org.storydriven.modeling.diagram.edit.parts.ActivityCallNodeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.ActivityCallNodeNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEdgeGuardConstraintLabelEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEditPart;
@@ -28,7 +31,6 @@ import org.storydriven.modeling.diagram.edit.parts.ObjectVariableEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableObjectVariableConstraintsCompartmentEditPart;
-import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableBindingOperatorLabelEditPart;
 import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableClassifierLabelEditPart;
 import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableEditPart;
 import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableNameEditPart;
@@ -52,7 +54,6 @@ import org.storydriven.modeling.diagram.edit.parts.StructuredNodeNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartment2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.TextualExpressionEditPart;
-import org.storydriven.modeling.diagram.edit.parts.WrappingLabel2EditPart;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 import org.storydriven.modeling.patterns.PatternsPackage;
 
@@ -187,6 +188,10 @@ public class SDMVisualIDRegistry {
 			if (ActivitiesPackage.eINSTANCE.getModifyingStoryNode()
 					.isSuperTypeOf(domainElement.eClass())) {
 				return ModifyingStoryNodeEditPart.VISUAL_ID;
+			}
+			if (ActivitiesPackage.eINSTANCE.getActivityCallNode()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return ActivityCallNodeEditPart.VISUAL_ID;
 			}
 			break;
 		case StatementNodeStatementNodeCompartmentEditPart.VISUAL_ID:
@@ -325,6 +330,9 @@ public class SDMVisualIDRegistry {
 			if (ModifyingStoryNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ActivityCallNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case StatementNodeEditPart.VISUAL_ID:
 			if (StatementNodeNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -350,6 +358,14 @@ public class SDMVisualIDRegistry {
 				return true;
 			}
 			if (ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActivityCallNodeEditPart.VISUAL_ID:
+			if (ActivityCallNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActivityCallNodeActivityCallNodeCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

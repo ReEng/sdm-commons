@@ -2,6 +2,8 @@ package org.storydriven.modeling.diagram.custom.edit.parts;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
+import org.storydriven.modeling.diagram.edit.parts.ActivityCallNodeActivityCallNodeCompartmentEditPart;
+import org.storydriven.modeling.diagram.edit.parts.ActivityCallNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEdgeGuardConstraintLabelEditPart;
 import org.storydriven.modeling.diagram.edit.parts.AttributeAssignmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeEditPart;
@@ -59,7 +61,12 @@ public class CustomSDMEditPartFactory extends SDMEditPartFactory {
 			 * 	case MatchingStoryNodeEditPart.VISUAL_ID:
 			 *		return new CustomMatchingStoryNodeEditPart(view);
 			 */
-			}	
+			case ActivityCallNodeActivityCallNodeCompartmentEditPart.VISUAL_ID:
+				return new CustomActivityCallNodeActivityCallNodeCompartmentEditPart(view);
+				
+			/*case ActivityCallNodeEditPart.VISUAL_ID:
+				return new CustomActivityCallNodeEditPart(view);*/
+			}
 		}
 		return super.createEditPart(context, model);
 	}

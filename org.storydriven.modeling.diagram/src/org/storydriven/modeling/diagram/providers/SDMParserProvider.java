@@ -13,9 +13,9 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.modeling.SDMPackage;
+import org.storydriven.modeling.diagram.edit.parts.ActivityCallNodeNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeName2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.ModifyingStoryNodeNameEditPart;
-import org.storydriven.modeling.diagram.edit.parts.ObjectVariableBindingOperatorEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StatementNodeName2EditPart;
@@ -92,6 +92,27 @@ public class SDMParserProvider extends AbstractProvider implements
 			modifyingStoryNodeName_5007Parser = parser;
 		}
 		return modifyingStoryNodeName_5007Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser activityCallNodeName_5020Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActivityCallNodeName_5020Parser() {
+		if (activityCallNodeName_5020Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features,
+					editableFeatures);
+			activityCallNodeName_5020Parser = parser;
+		}
+		return activityCallNodeName_5020Parser;
 	}
 
 	/**
@@ -210,6 +231,8 @@ public class SDMParserProvider extends AbstractProvider implements
 			return getStructuredNodeName_5004Parser();
 		case ModifyingStoryNodeNameEditPart.VISUAL_ID:
 			return getModifyingStoryNodeName_5007Parser();
+		case ActivityCallNodeNameEditPart.VISUAL_ID:
+			return getActivityCallNodeName_5020Parser();
 		case StatementNodeName2EditPart.VISUAL_ID:
 			return getStatementNodeName_5002Parser();
 		case StructuredNodeName2EditPart.VISUAL_ID:

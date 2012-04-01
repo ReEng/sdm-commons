@@ -6,6 +6,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
+import org.storydriven.modeling.diagram.edit.commands.ActivityCallNodeCreateCommand;
 import org.storydriven.modeling.diagram.edit.commands.JunctionNodeCreateCommand;
 import org.storydriven.modeling.diagram.edit.commands.ModifyingStoryNodeCreateCommand;
 import org.storydriven.modeling.diagram.edit.commands.StartNodeCreateCommand;
@@ -48,6 +49,9 @@ public class ActivityItemSemanticEditPolicy extends
 		}
 		if (SDMElementTypes.ModifyingStoryNode_2007 == req.getElementType()) {
 			return getGEFWrapper(new ModifyingStoryNodeCreateCommand(req));
+		}
+		if (SDMElementTypes.ActivityCallNode_2008 == req.getElementType()) {
+			return getGEFWrapper(new ActivityCallNodeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

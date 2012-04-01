@@ -16,6 +16,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
 import org.storydriven.modeling.activities.ActivitiesPackage;
+import org.storydriven.modeling.diagram.edit.parts.ActivityCallNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEditPart;
 import org.storydriven.modeling.diagram.edit.parts.AttributeAssignmentEditPart;
@@ -97,8 +98,11 @@ public class SDMElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ActivityCallNode_2008 = getElementType("org.storydriven.modeling.diagram.ActivityCallNode_2008"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
 	public static final IElementType TextualExpression_3015 = getElementType("org.storydriven.modeling.diagram.TextualExpression_3015"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -135,17 +139,14 @@ public class SDMElementTypes {
 	 * @generated
 	 */
 	public static final IElementType AttributeAssignment_3013 = getElementType("org.storydriven.modeling.diagram.AttributeAssignment_3013"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType PrimitiveVariable_3014 = getElementType("org.storydriven.modeling.diagram.PrimitiveVariable_3014"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType ActivityEdge_4001 = getElementType("org.storydriven.modeling.diagram.ActivityEdge_4001"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -283,6 +284,9 @@ public class SDMElementTypes {
 			elements.put(ModifyingStoryNode_2007,
 					ActivitiesPackage.eINSTANCE.getModifyingStoryNode());
 
+			elements.put(ActivityCallNode_2008,
+					ActivitiesPackage.eINSTANCE.getActivityCallNode());
+
 			elements.put(TextualExpression_3015,
 					ExpressionsPackage.eINSTANCE.getTextualExpression());
 
@@ -345,6 +349,7 @@ public class SDMElementTypes {
 			KNOWN_ELEMENT_TYPES.add(StatementNode_2004);
 			KNOWN_ELEMENT_TYPES.add(StructuredNode_2005);
 			KNOWN_ELEMENT_TYPES.add(ModifyingStoryNode_2007);
+			KNOWN_ELEMENT_TYPES.add(ActivityCallNode_2008);
 			KNOWN_ELEMENT_TYPES.add(TextualExpression_3015);
 			KNOWN_ELEMENT_TYPES.add(JunctionNode_3001);
 			KNOWN_ELEMENT_TYPES.add(StartNode_3002);
@@ -381,6 +386,8 @@ public class SDMElementTypes {
 			return StructuredNode_2005;
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return ModifyingStoryNode_2007;
+		case ActivityCallNodeEditPart.VISUAL_ID:
+			return ActivityCallNode_2008;
 		case TextualExpressionEditPart.VISUAL_ID:
 			return TextualExpression_3015;
 		case JunctionNode2EditPart.VISUAL_ID:

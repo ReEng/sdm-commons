@@ -159,6 +159,19 @@
             path="/icons/full/obj16/StatementNode.gif"
             bundle="org.storydriven.modeling.diagram.custom"/>
       </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Activity Call Node"
+          description="create new ActivityCallNode">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="/icons/full/obj16/ActivityCallNode.gif"
+            bundle="org.storydriven.modeling.diagram.custom"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="/icons/full/obj16/ActivityCallNode.gif"
+            bundle="org.storydriven.modeling.diagram.custom"/>
+      </tools>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

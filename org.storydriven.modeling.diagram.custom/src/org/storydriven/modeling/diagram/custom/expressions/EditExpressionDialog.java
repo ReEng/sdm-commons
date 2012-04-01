@@ -140,27 +140,29 @@ public class EditExpressionDialog extends Dialog {
 	@Override
 	protected void okPressed() {
 		setReturnCode(OK);
-		
-		CompoundCommand ccmd = new CompoundCommand();
-		SetCommand cmd = new SetCommand(commandReceiver, 
-										expression, 
-										expression.eClass().getEStructuralFeature("expressionText"), 
-										currentSourceViewer.getDocument().get());
-		ccmd.append(cmd);
-		
-		cmd = new SetCommand(commandReceiver, 
-							expression, 
-							expression.eClass().getEStructuralFeature("language"), 
-							this.getSelectedLanguage());
-		ccmd.append(cmd);
-		
-		cmd = new SetCommand(commandReceiver, 
-				expression, 
-				expression.eClass().getEStructuralFeature("languageVersion"), 
-				this.getSelectedVersion());
-		ccmd.append(cmd);
-		
-		commandReceiver.getCommandStack().execute(ccmd);
+		if (expression!=null){
+			CompoundCommand ccmd = new CompoundCommand();
+			SetCommand cmd = new SetCommand(commandReceiver, 
+											expression, 
+											expression.eClass().getEStructuralFeature("expressionText"), 
+											currentSourceViewer.getDocument().get());
+			ccmd.append(cmd);
+			
+			
+			cmd = new SetCommand(commandReceiver, 
+								expression, 
+								expression.eClass().getEStructuralFeature("language"), 
+								this.getSelectedLanguage());
+			ccmd.append(cmd);
+			
+			cmd = new SetCommand(commandReceiver, 
+					expression, 
+					expression.eClass().getEStructuralFeature("languageVersion"), 
+					this.getSelectedVersion());
+			ccmd.append(cmd);
+			
+			commandReceiver.getCommandStack().execute(ccmd);
+		}
 		this.close();
 	}
 
@@ -250,7 +252,6 @@ public class EditExpressionDialog extends Dialog {
 
 	private void initializeSourceViewers() {
 		sourceViewers = new HashMap<String, ISourceViewer>();
-
 		for (Entry<String, SourceViewerProvider> svpEntry : sourceViewerProviders.entrySet())
 		{
 			ISourceViewer sv = svpEntry.getValue().createSourceViewer(languageEditingArea, 

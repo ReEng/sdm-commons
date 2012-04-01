@@ -319,6 +319,9 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
 			types.add(SDMElementTypes.ActivityEdge_4001);
 		}
+		if (targetEditPart instanceof ActivityCallNodeEditPart) {
+			types.add(SDMElementTypes.ActivityEdge_4001);
+		}
 		if (targetEditPart instanceof JunctionNode2EditPart) {
 			types.add(SDMElementTypes.ActivityEdge_4001);
 		}
@@ -352,6 +355,7 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 			types.add(SDMElementTypes.StatementNode_2004);
 			types.add(SDMElementTypes.StructuredNode_2005);
 			types.add(SDMElementTypes.ModifyingStoryNode_2007);
+			types.add(SDMElementTypes.ActivityCallNode_2008);
 			types.add(SDMElementTypes.JunctionNode_3001);
 			types.add(SDMElementTypes.StartNode_3002);
 			types.add(SDMElementTypes.StopNode_3004);
@@ -383,6 +387,7 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 			types.add(SDMElementTypes.StatementNode_2004);
 			types.add(SDMElementTypes.StructuredNode_2005);
 			types.add(SDMElementTypes.ModifyingStoryNode_2007);
+			types.add(SDMElementTypes.ActivityCallNode_2008);
 			types.add(SDMElementTypes.JunctionNode_3001);
 			types.add(SDMElementTypes.StartNode_3002);
 			types.add(SDMElementTypes.StopNode_3004);

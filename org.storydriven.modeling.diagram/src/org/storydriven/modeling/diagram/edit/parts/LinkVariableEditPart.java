@@ -115,6 +115,7 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements
 	 * @generated
 	 */
 	static final Color THIS_FORE = new Color(null, 0, 0, 0);
+
 	/**
 	 * @generated
 	 */

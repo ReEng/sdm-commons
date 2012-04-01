@@ -22,7 +22,6 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
-import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
@@ -42,6 +41,9 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
+import org.storydriven.modeling.diagram.edit.parts.ActivityCallNodeActivityCallNodeCompartmentEditPart;
+import org.storydriven.modeling.diagram.edit.parts.ActivityCallNodeEditPart;
+import org.storydriven.modeling.diagram.edit.parts.ActivityCallNodeNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEdgeGuardConstraintLabelEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEditPart;
@@ -63,7 +65,6 @@ import org.storydriven.modeling.diagram.edit.parts.ObjectVariableEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ObjectVariableObjectVariableConstraintsCompartmentEditPart;
-import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableBindingOperatorLabelEditPart;
 import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableClassifierLabelEditPart;
 import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableEditPart;
 import org.storydriven.modeling.diagram.edit.parts.PrimitiveVariableNameEditPart;
@@ -87,7 +88,6 @@ import org.storydriven.modeling.diagram.edit.parts.StructuredNodeNameEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartment2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeStructuredNodeCompartmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.TextualExpressionEditPart;
-import org.storydriven.modeling.diagram.edit.parts.WrappingLabel2EditPart;
 import org.storydriven.modeling.diagram.part.SDMVisualIDRegistry;
 
 /**
@@ -183,6 +183,7 @@ public class SDMViewProvider extends AbstractProvider implements IViewProvider {
 				case JunctionNodeEditPart.VISUAL_ID:
 				case StatementNodeEditPart.VISUAL_ID:
 				case StructuredNodeEditPart.VISUAL_ID:
+				case ActivityCallNodeEditPart.VISUAL_ID:
 				case TextualExpressionEditPart.VISUAL_ID:
 				case ModifyingStoryNode2EditPart.VISUAL_ID:
 				case StoryPatternEditPart.VISUAL_ID:
@@ -212,6 +213,7 @@ public class SDMViewProvider extends AbstractProvider implements IViewProvider {
 				|| StatementNodeEditPart.VISUAL_ID == visualID
 				|| StructuredNodeEditPart.VISUAL_ID == visualID
 				|| ModifyingStoryNodeEditPart.VISUAL_ID == visualID
+				|| ActivityCallNodeEditPart.VISUAL_ID == visualID
 				|| TextualExpressionEditPart.VISUAL_ID == visualID
 				|| JunctionNode2EditPart.VISUAL_ID == visualID
 				|| StartNode2EditPart.VISUAL_ID == visualID
@@ -296,6 +298,9 @@ public class SDMViewProvider extends AbstractProvider implements IViewProvider {
 					index, persisted, preferencesHint);
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return createModifyingStoryNode_2007(domainElement, containerView,
+					index, persisted, preferencesHint);
+		case ActivityCallNodeEditPart.VISUAL_ID:
+			return createActivityCallNode_2008(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case TextualExpressionEditPart.VISUAL_ID:
 			return createTextualExpression_3015(domainElement, containerView,
@@ -627,6 +632,57 @@ public class SDMViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
+	public Node createActivityCallNode_2008(EObject domainElement,
+			View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles()
+				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(SDMVisualIDRegistry
+				.getType(ActivityCallNodeEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		Node label5020 = createLabel(node,
+				SDMVisualIDRegistry
+						.getType(ActivityCallNodeNameEditPart.VISUAL_ID));
+		createCompartment(
+				node,
+				SDMVisualIDRegistry
+						.getType(ActivityCallNodeActivityCallNodeCompartmentEditPart.VISUAL_ID),
+				false, false, true, true);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
 	public Node createTextualExpression_3015(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
@@ -946,7 +1002,7 @@ public class SDMViewProvider extends AbstractProvider implements IViewProvider {
 				node,
 				SDMVisualIDRegistry
 						.getType(StoryPatternStoryPatternCompartementEditPart.VISUAL_ID),
-				false, false, false, false);
+				true, false, false, false);
 		return node;
 	}
 

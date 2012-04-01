@@ -252,7 +252,7 @@
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
-                      href="sdm.gmftool#//@palette/@tools.0/@tools.2"/>
+                      href="sdm.gmftool#//@palette/@tools.0/@tools.3"/>
                   <diagramNode
                       href="sdm.gmfgraph#ExpressionLabel"/>
                 </ownedChild>
@@ -293,7 +293,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="sdm.gmftool#//@palette/@tools.0/@tools.3"/>
+                  href="sdm.gmftool#//@palette/@tools.0/@tools.2"/>
               <diagramNode
                   href="sdm.gmfgraph#PrimitiveVariableNode"/>
               <compartments>
@@ -317,6 +317,32 @@
           children="//@nodes.5/@ownedChild/@children.0">
         <compartment
             href="sdm.gmfgraph#ModifyingStoryNodeContentCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model/sdm.ecore#//activities/Activity/ownedActivityNode"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model/sdm.ecore#//activities/ActivityCallNode"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="sdm.gmfgraph#ActivityCallNodeNameLabel"/>
+        <features
+            href="../model/sdm.ecore#//NamedElement/name"/>
+        <editableFeatures
+            href="../model/sdm.ecore#//NamedElement/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="sdm.gmftool#//@palette/@tools.1/@tools.6"/>
+      <diagramNode
+          href="sdm.gmfgraph#ActivityCallNodeNEW"/>
+      <compartments>
+        <compartment
+            href="sdm.gmfgraph#ActivityCallNodeCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>

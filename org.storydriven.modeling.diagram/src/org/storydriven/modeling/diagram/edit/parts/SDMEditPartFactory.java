@@ -58,6 +58,12 @@ public class SDMEditPartFactory implements EditPartFactory {
 			case ModifyingStoryNodeNameEditPart.VISUAL_ID:
 				return new ModifyingStoryNodeNameEditPart(view);
 
+			case ActivityCallNodeEditPart.VISUAL_ID:
+				return new ActivityCallNodeEditPart(view);
+
+			case ActivityCallNodeNameEditPart.VISUAL_ID:
+				return new ActivityCallNodeNameEditPart(view);
+
 			case TextualExpressionEditPart.VISUAL_ID:
 				return new TextualExpressionEditPart(view);
 
@@ -157,6 +163,10 @@ public class SDMEditPartFactory implements EditPartFactory {
 
 			case ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID:
 				return new ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart(
+						view);
+
+			case ActivityCallNodeActivityCallNodeCompartmentEditPart.VISUAL_ID:
+				return new ActivityCallNodeActivityCallNodeCompartmentEditPart(
 						view);
 
 			case ActivityEdgeEditPart.VISUAL_ID:

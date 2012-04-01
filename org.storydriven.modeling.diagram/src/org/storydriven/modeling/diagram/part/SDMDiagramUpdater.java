@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.modeling.activities.ActivitiesPackage;
 import org.storydriven.modeling.activities.Activity;
+import org.storydriven.modeling.activities.ActivityCallNode;
 import org.storydriven.modeling.activities.ActivityEdge;
 import org.storydriven.modeling.activities.ActivityNode;
 import org.storydriven.modeling.activities.JunctionNode;
@@ -21,6 +22,7 @@ import org.storydriven.modeling.activities.StartNode;
 import org.storydriven.modeling.activities.StatementNode;
 import org.storydriven.modeling.activities.StopNode;
 import org.storydriven.modeling.activities.StructuredNode;
+import org.storydriven.modeling.diagram.edit.parts.ActivityCallNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEditPart;
 import org.storydriven.modeling.diagram.edit.parts.AttributeAssignmentEditPart;
@@ -127,6 +129,10 @@ public class SDMDiagramUpdater {
 				continue;
 			}
 			if (visualID == ModifyingStoryNodeEditPart.VISUAL_ID) {
+				result.add(new SDMNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == ActivityCallNodeEditPart.VISUAL_ID) {
 				result.add(new SDMNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -410,6 +416,8 @@ public class SDMDiagramUpdater {
 			return getStructuredNode_2005ContainedLinks(view);
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return getModifyingStoryNode_2007ContainedLinks(view);
+		case ActivityCallNodeEditPart.VISUAL_ID:
+			return getActivityCallNode_2008ContainedLinks(view);
 		case TextualExpressionEditPart.VISUAL_ID:
 			return getTextualExpression_3015ContainedLinks(view);
 		case JunctionNode2EditPart.VISUAL_ID:
@@ -457,6 +465,8 @@ public class SDMDiagramUpdater {
 			return getStructuredNode_2005IncomingLinks(view);
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return getModifyingStoryNode_2007IncomingLinks(view);
+		case ActivityCallNodeEditPart.VISUAL_ID:
+			return getActivityCallNode_2008IncomingLinks(view);
 		case TextualExpressionEditPart.VISUAL_ID:
 			return getTextualExpression_3015IncomingLinks(view);
 		case JunctionNode2EditPart.VISUAL_ID:
@@ -504,6 +514,8 @@ public class SDMDiagramUpdater {
 			return getStructuredNode_2005OutgoingLinks(view);
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return getModifyingStoryNode_2007OutgoingLinks(view);
+		case ActivityCallNodeEditPart.VISUAL_ID:
+			return getActivityCallNode_2008OutgoingLinks(view);
 		case TextualExpressionEditPart.VISUAL_ID:
 			return getTextualExpression_3015OutgoingLinks(view);
 		case JunctionNode2EditPart.VISUAL_ID:
@@ -589,6 +601,14 @@ public class SDMDiagramUpdater {
 	 * @generated
 	 */
 	public static List<SDMLinkDescriptor> getModifyingStoryNode_2007ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMLinkDescriptor> getActivityCallNode_2008ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -777,6 +797,20 @@ public class SDMDiagramUpdater {
 			View view) {
 		ModifyingStoryNode modelElement = (ModifyingStoryNode) view
 				.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMLinkDescriptor> getActivityCallNode_2008IncomingLinks(
+			View view) {
+		ActivityCallNode modelElement = (ActivityCallNode) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
@@ -1000,6 +1034,17 @@ public class SDMDiagramUpdater {
 			View view) {
 		ModifyingStoryNode modelElement = (ModifyingStoryNode) view
 				.getElement();
+		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<SDMLinkDescriptor> getActivityCallNode_2008OutgoingLinks(
+			View view) {
+		ActivityCallNode modelElement = (ActivityCallNode) view.getElement();
 		LinkedList<SDMLinkDescriptor> result = new LinkedList<SDMLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
 		return result;

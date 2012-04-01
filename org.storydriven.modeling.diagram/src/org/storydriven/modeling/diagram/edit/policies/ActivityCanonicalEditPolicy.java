@@ -29,9 +29,9 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.modeling.activities.ActivitiesPackage;
+import org.storydriven.modeling.diagram.edit.parts.ActivityCallNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.ActivityEditPart;
-import org.storydriven.modeling.diagram.edit.parts.AttributeAssignmentEditPart;
 import org.storydriven.modeling.diagram.edit.parts.JunctionNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.JunctionNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.LinkVariableEditPart;
@@ -48,7 +48,6 @@ import org.storydriven.modeling.diagram.edit.parts.StopNodeEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StoryPatternEditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNode2EditPart;
 import org.storydriven.modeling.diagram.edit.parts.StructuredNodeEditPart;
-import org.storydriven.modeling.diagram.edit.parts.TextualExpressionEditPart;
 import org.storydriven.modeling.diagram.part.SDMDiagramUpdater;
 import org.storydriven.modeling.diagram.part.SDMLinkDescriptor;
 import org.storydriven.modeling.diagram.part.SDMNodeDescriptor;
@@ -58,6 +57,18 @@ import org.storydriven.modeling.diagram.part.SDMVisualIDRegistry;
  * @generated
  */
 public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	protected void refreshOnActivate() {
+		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
+		List<?> c = getHost().getChildren();
+		for (int i = 0; i < c.size(); i++) {
+			((EditPart) c.get(i)).activate();
+		}
+		super.refreshOnActivate();
+	}
 
 	/**
 	 * @generated
@@ -102,6 +113,7 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 		case StatementNodeEditPart.VISUAL_ID:
 		case StructuredNodeEditPart.VISUAL_ID:
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
+		case ActivityCallNodeEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -322,6 +334,17 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(SDMDiagramUpdater
 						.getModifyingStoryNode_2007ContainedLinks(view));
+			}
+			if (!domain2NotationMap.containsKey(view.getElement())
+					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+				domain2NotationMap.put(view.getElement(), view);
+			}
+			break;
+		}
+		case ActivityCallNodeEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(SDMDiagramUpdater
+						.getActivityCallNode_2008ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
