@@ -66,7 +66,9 @@ The plug-in \emph{de.mdelab.sdm.interpreter.eclipse} defines an extension point 
 All interpreters extending this extension point are registered automatically by the \emph{EclipseExpressionInterpreterManager}. 
 If the interpreter is not used within Eclipse, \emph{ExpressionInterpreter}s have to be registered explicitly before executing a story diagram.
 
-The abstract class \emph{ExpressionInterpreter} only defines the \emph{evaluateExpression()} method that must be implemented by subclasses such as the \emph{OCLExpressionInterpreter} and the \emph{CallsInterpreter}. The methods performs the execution of the expression, which may have side effects, and has to return a \emph{Variable} with the return type and return value of the expression. In this methods, the current \emph{VariableScope} can also be access and modified.
+The abstract class \emph{ExpressionInterpreter} only defines the \emph{evaluateExpression()} method that must be implemented by subclasses such as the \emph{OCLExpressionInterpreter} and the \emph{CallsInterpreter}. 
+The method performs the execution of the expression, which may have side effects, and has to return a \emph{Variable} with the return type and return value of the expression. 
+In this method, the current \emph{VariableScope} can also be accessed and modified.
 
 The interpreter often needs to access specific properties of story diagram elements, e.g., the name of elements or incoming and outgoing edges of activity nodes.
 While the interpreter core is metamodel-independent, it cannot access these properties directly but needs a facade for that purpose.
@@ -99,6 +101,11 @@ Currently, the \emph{StoryDrivenPatternMatcher} enforces the following semantics
 This implies that a variable can be contained in more than one pattern parts. 
 To implement subpatterns or complex negative application conditions, this semantics has to be modified. 
 But this remains transparent to the basic \emph{PatternPartBasedPatternMatcher}.
+\emph{MatchState}s are used to temporarily store information about the matching state of a pattern part, e.g., the iterator of a link.
+If a match for one pattern part is found, but no match can be found for another pattern part, the first pattern part has to find for the next match.
+To improve performance, it can store the link iterator object in the \emph{MatchState} and continue with that iterator.
+\emph{MatchState} is only an abstract class.
+Subclasses are specific for pattern parts and have to define appropriate attributes.
 
 \emph{PatternPart} defines several abstract methods:
 
@@ -112,16 +119,19 @@ But this remains transparent to the basic \emph{PatternPartBasedPatternMatcher}.
 	This estimate can be based, e.g., on the number of elements contained in the link.
 	If it is currently not possible to match this pattern part (e.g., because all variables of the pattern part are still unbound), \emph{-1} is returned.
 
-	\item \emph{match()} implements the pattern matching for this kind of pattern part. 
+	\item \emph{createMatchState()} creates a \emph{MatchState} object that is by the \emph{match()} operation to store information about the matching process.
+
+	\item \emph{match(MatchState matchState)} implements the pattern matching for this kind of pattern part. 
 	It is called after \emph{calculateMatchingCost()}. 
 	To find a match, at least one variable of the pattern part has to be bound and one unbound. 
 	Then, \emph{match()} tries to find matches for all unbound variables. 
 	This part of the pattern matching algorithm is highly implementation specific. 
-	It is not only different for different metamodels. 
-	It also has to be implemented differently for different kinds of link variables.
+	It is not only different for different metamodels,
+	it also has to be implemented differently for different kinds of link variables.
 	For example, matching an object via an ordinary \emph{LinkVariable} has to be done differently than matching via a \emph{Path} or a \emph{ContainmentRelation}.
 	However, this also allows to exploit certain features of the metamodel to improve execution performance. 
 	For example, \emph{StoryDrivenContainmentRelationPatternPart} uses EMF's \emph{eContainer()} method to navigate containment links in the opposite direction.	
+	The \emph{matchState} parameter can be used to store information about the matching process, e.g., the iterator object of the link.
 	
 	\item \emph{createLinks()} and \emph{createObjects} create those elements of the pattern part, that are marked with \create.
 	
@@ -197,7 +207,7 @@ If the story pattern is executed for the first time, a new \emph{StoryPatternMat
 The pattern matcher is executed with the \emph{DefaultMatchingStrategyWithLog}, which keeps a log of the order in which elements were matched. 
 If a match was found, the next activity node is returned that is connected via a for-each edge. 
 The interpreter executes that node and eventually the control flow returns to the for-each node.
-Now, the existing \emph{StoryPatternMatcher} is reused so that it continues pattern matching where it left of. 
+Now, the existing \emph{StoryPatternMatcher} is reused so that it continues pattern matching where it left off. 
 This time, however, the pattern matcher uses the \emph{LogReproducingMatchingStrategy}. 
 This ensures, that all elements are matched in the same order as the first time. 
 For-each nodes are executed with the \emph{fresh match} semantics. 
@@ -225,6 +235,7 @@ and pattern application (Section~\ref{sec:spm_pattern_application}).
 These steps are executed in the constructor of the pattern matcher, the \emph{findNextMatch()}, and the \emph{applyMatch()} operations respectively.
 \emph{findNextMatch()} can be called successively to return all matches for a story pattern one-by-one.
 These operations are separated, to allow for additional operations between these phases by the user of the pattern matcher.
+The pattern matcher can also be used without the story diagram interpreter to execute a single story pattern.
 
 
 \subsubsection{Initialization and Pattern Analysis}
@@ -251,8 +262,12 @@ This semantics can be different for other metamodels and it can be changed to su
 \subsubsection{Pattern Matching}
 \label{sec:spm_pattern_matching}
 
+\lstset{
+	numbers=left
+}
+
 \begin{figure}
-\begin{verbatim}
+\begin{lstlisting}
 create child variable scope of current variable scope;
 
 bind bound objects;
@@ -286,7 +301,7 @@ do {
 if (match) {
 	merge child variable scope into its parent scope;
 }
-\end{verbatim}
+\end{lstlisting}
 \caption{Overall pattern matching algorithm}
 \label{listing:pattern_matcher_execution}
 \end{figure}
@@ -320,9 +335,9 @@ If matching the pattern part was successful, i.e. \emph{match()} returned true, 
 When all pattern parts have been matched, the matching strategy returns null instead of a pattern part.
 Now, all constraints are checked that are defined for the while story pattern.
 If these conditions are also satisfied, a valid match has been found.
-Now, the child variable scope is merge into its parent scope to persist the match.
+Now, the child variable scope is merged into its parent scope to persist the match.
 
-In case the \emph{match()} operation did not find a match, the last two transaction for matching pattern parts have to be rolled back.
+In case the \emph{match()} operation did not find a match, the last transactions including the one committed in line 13 of Fig.~\ref{listing:pattern_matcher_execution} for matching pattern parts have to be rolled back.
 Of course, this also rolls back all bindings of pattern variables that were performed in the meantime.
 Here, also the second last transaction has to be rolled back because the pattern variable matched in that transaction has now shown to be an invalid match and a new match has to be found for it.
 A roll back is also performed if the constraints defined on the whole story pattern are not satisfied.
@@ -345,12 +360,12 @@ If the pattern matcher would delete links first, it might not be possible to wal
 Then, it would be impossible to delete all cross-references.
 
 Attribute assignment expressions are evaluated at the beginning to support expressions that refer to deleted elements. 
-If attribute assignments would be evaluated at the end, it would no be possible to evaluate expressions with references to deleted elements because these do not exists anymore in the \emph{VariableScope}.
+If attribute assignments would be evaluated at the end, it would not be possible to evaluate expressions with references to deleted elements because these do not exist anymore in the \emph{VariableScope}.
 
 
-\section{Code Generation for Story Diagrams}
-As stated in the introduction of this chapter, a second possibility of executing story diagrams besides interpretation is code generation.
-When story diagrams were originally conceived, this was the first approach to executing them.
-The \fuj Tool Suite \cite{KNNZ99,NNZ00} provided the possibility to generate Java code from the story diagrams that could then be executed.
-This functionality was retained throughout several versions of \fuj and even extended to allow the generation of EMF-compatible code \cite{GBD07}.
-With the creation of the new metamodel for story diagrams \cite{HRvD+11}, this option was discontinued in favour of the interpretation described in Section~\ref{sec:InterpretingStoryDiagrams}.
+%\section{Code Generation for Story Diagrams}
+%As stated in the introduction of this chapter, a second possibility of executing story diagrams besides interpretation is code generation.
+%When story diagrams were originally conceived, this was the first approach to executing them.
+%The \fuj Tool Suite \cite{KNNZ99,NNZ00} provided the possibility to generate Java code from the story diagrams that could then be executed.
+%This functionality was retained throughout several versions of \fuj and even extended to allow the generation of EMF-compatible code \cite{GBD07}.
+%With the creation of the new metamodel for story diagrams \cite{HRvD+11}, this option was discontinued in favour of the interpretation described in Section~\ref{sec:InterpretingStoryDiagrams}.
