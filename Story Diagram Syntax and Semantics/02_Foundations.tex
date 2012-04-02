@@ -1,7 +1,12 @@
 \chapter{Foundations}
 \label{sec:foundations}
 
-This chapter introduces the foundations for working with story diagrams. Since story diagrams are based on graphs and corresponding graph transformations, we introduce the basics of graph transformation in Section \ref{sec:foundations:simpleGTS}. Story diagrams are built on an extension of this simple graph model which is called typed attributed graph transformations (cf.\ Section \ref{sec:foundations:typedAttrGTS}). These are based on so-called type graphs that allow to distinguish different types of nodes and edges. We show an example for such type graph which is used throughout this document in Section \ref{sec:typeGraph}.
+This chapter introduces the foundations for working with story diagrams.
+Since story diagrams are based on graphs and corresponding graph transformations,
+we introduce the basics of graph transformations in Section \ref{sec:foundations:simpleGTS}.
+Story diagrams are built on an extension of this simple graph model which is called typed attributed graph transformations (cf.\ Section \ref{sec:foundations:typedAttrGTS}).
+These are based on so-called type graphs that allow to distinguish different types of nodes and edges.
+We show an example for such type graphs which we use throughout this document in Section \ref{sec:typeGraph}.
 
 \section{Graphs and Graph Transformations (Christian)}
 \label{sec:foundations:simpleGTS}
@@ -63,14 +68,32 @@ such situations and instead requires that connected edges are explicitly
 deleted. The single-pushout approach allows such situations and implicitly
 deletes edges if one of their source or target nodes is deleted.
 
-In general, matches of graph transformation rules are homomorphisms of the LHS of the rule to the host graph. That allows to match two nodes of the LHS to the same node of the host graph leading to the first situation mentioned above. Such situations may be prevented by using isomorphisms for matching the LHS. Then, each node of the LHS must be matched to a unique node of the host graph. Thus, using isomorphic matchings prevents the first situation when using single pushouts.
+In general, matches of graph transformation rules are homomorphisms of the LHS of the rule to the host graph.
+That allows to match two nodes of the LHS to the same node of the host graph leading to the first situation mentioned above.
+Such situations may be prevented by using isomorphisms for matching the LHS. Then, each node of the LHS must be matched to a unique node of the host graph.
+Thus, using isomorphic matchings prevents the first situation when using single-pushouts.
 
-In addition to LHS and RHS a graph transformation rule may specify negative application conditions (NAC,~\cite{Roz97}). A NAC is an additional conditions for a successful match. If the subgraph specified by the NAC can be matched into the host graph, then the graph transformation rule must not be applied.
+In addition to LHS and RHS a graph transformation rule may specify negative application conditions (NAC,~\cite{Roz97}).
+A NAC is an additional condition for a successful match.
+If the subgraph specified by the NAC can be matched into the host graph, then the graph transformation rule must not be applied.
+
+In story diagrams, we use a graph transformation language called \emph{story patterns}.
+A story pattern is a graph transformation rule which is executed on a host graph by identifying a subgraph in the host graph
+that is similar to the one specified in the graph transformation rule
+and then removing and adding the specified nodes and edges.
+The identification of the subgraph for modification is called \emph{graph matching} and includes the \emph{subgraph isomorphism} problem.
+The subgraph isomorphism problem, in general, is \emph{NP-complete} \cite{Epp95}.
+To reduce the problem in the average case, the implemented graph matching approach based on story patterns
+uses a subgraph isomorphism for at least one node as input,
+i.e.\ at least one node in the left-hand side of a graph transformation rule (a story pattern) is already matched to a certain node in the host graph.
+
 
 \section{Typed Attributed Graph Transformations (Christian)}
 \label{sec:foundations:typedAttrGTS}
 
-Graphs and according graph transformations as introduced in Section \ref{sec:foundations:simpleGTS} are a very basic approach to modeling behavior. When using graph transformations for modeling behavior for object-oriented software or as a foundation for defining the semantics of modeling languages, it is necessary to distinguish different types of nodes and edges in a graph in order to give them semantics.
+Graphs and according graph transformations as introduced in Section \ref{sec:foundations:simpleGTS} are a very basic approach to modeling behavior.
+When using graph transformations for modeling behavior for object-oriented software or as a foundation for defining the semantics of modeling languages,
+it is necessary to distinguish different types of nodes and edges in a graph in order to give them semantics.
 
 \begin{figure}[htb]
   \centering
@@ -79,19 +102,33 @@ Graphs and according graph transformations as introduced in Section \ref{sec:fou
   \label{fig:PetrinetTypeGraph}
 \end{figure}
 
-Therefore, story diagrams are based on typed attributed graph transformations~\cite{EEPT06}. Typed attributed graph transformations introduce a type graph and node attributes. The type graph defines different types of nodes and edges and it defines which types of edges are allowed for which types of nodes. Additionally, nodes may carry attributes like, e.g., objects in an object-oriented programming language. Moreover, the type graph specifies inheritance relations between types of objects, a concept which is also known from object-oriented programming languages.
+Therefore, story diagrams -- or more precisely the embedded story patterns -- are based on \emph{typed attributed graph transformations} \cite{EEPT06}.
+Typed attributed graph transformations introduce a \emph{type graph} and node attributes.
+The type graph defines different types of nodes and edges and it defines which types of edges are allowed to be used in combination with which types of nodes.
+Additionally, nodes may carry attributes like, e.g., objects in an object-oriented programming language.
+Moreover, the type graph specifies inheritance relations between types of objects, a concept which is also known from object-oriented programming languages.
 
 We use graph transformations to modify or translate different kinds of models.
-These are specified in a certain language, often a domain-specific language (DSL).
-Thus, the type graph usually defines the \emph{abstract syntax} of the language used and is part of the corresponding \emph{metamodel} for this language.
+We call a model that we want to modify (a host graph) an \emph{instance model}\footnote{Thomas K\"{u}hne calls it \emph{token model} \cite{Kue06}.} (or simply model).
+Instance models are specified in a certain language, often a domain-specific language (DSL)\footnote{The language can be both, textual or graphical.}.
+Thus, the type graph usually defines the \emph{abstract syntax} of the language used and is part of the corresponding \emph{metamodel} \cite{Kue06} for this language.
 By replacing the type graph (the metamodel) we are able to specify transformations for models specified in various languages.
 
-As an example, Figure~\ref{fig:PetrinetTypeGraph} shows a simple metamodel of Petrinets. The \fe{Petrinet} consists of \fe{Nodes} and \fe{Arcs}. An \fe{Arc} connects two nodes which it refers as \fe{source} and \fe{target}. As usual, there exist two types of nodes: \fe{Places} and \fe{Transitions} where \fe{Places} may contain a number of \fe{Tokens}.
+The type graph or the abstract syntax of the language used to describe the instance models
+is, in our case, described by a set of classes and their relations which define all potential instance models.
+These classes and relations constitute a so-called \emph{type model} (the actual type graph).
+An instance model always contains objects and links (nodes and edges) that are instances of the classes and relations defined in the corresponding type model.
 
-The type graphs that may be used with story patterns can be created by using an arbitrary metamodeling language.
+As an example, Figure~\ref{fig:PetrinetTypeGraph} shows a simple metamodel of Petrinets.
+The \fe{Petrinet} consists of \fe{Nodes} and \fe{Arcs}.
+An \fe{Arc} connects two nodes which it refers as \fe{source} and \fe{target}.
+As usual, there exist two types of nodes: \fe{Places} and \fe{Transitions} where \fe{Places} may contain a number of \fe{Tokens}.
+
+The type models that may be used with story patterns can be created by using an arbitrary metamodeling language.
 Examples include Ecore~\cite{SBP+08}, MOF~\cite{MOF05}, and UML~\cite{UML23}.
 
-The modifications of a typed attributed graph is specified by typed attributed graph transformation rules. In these rules, all nodes and edges are typed over the metamodel and the matching needs to respect the types.
+The modifications of a typed attributed graph (an instance model) are specified by typed attributed graph transformation rules (story patterns in our case).
+In these rules, all nodes and edges are typed over the type graph (type model) and the matching needs to respect the types.
 
 \begin{figure}[htb]
   \centering
@@ -100,9 +137,24 @@ The modifications of a typed attributed graph is specified by typed attributed g
   \label{fig:typedGTRule}
 \end{figure}
 
-Figure~\ref{fig:typedGTRule} shows an example of a typed attributed graph transformation rule that specifies the behavior for a sink. In a Petrinet, a sink is a transition which has no outgoing place. Then, the transition consumes tokens without producing new tokens. The rule matches a \fe{Place} with a \fe{Token} in its LHS. Upon application, the \fe{Token} is deleted. The rule, however, may only be applied if the place \fe{p} is connected to a sink which is ensured by the NAC. The NAC specifies a subgraph where \fe{p} is connected to a \fe{Transition} which has an outgoing \fe{Arc} to a \fe{Place}. If such subgraph can be matched, the rule is not applicable. The rule morphisms is indirectly specified by the names of the nodes as proposed in~\cite{EEPT06}.
+Figure~\ref{fig:typedGTRule} shows an example of a typed attributed graph transformation rule\footnote{Here,
+we use the notation common to graph transformations, not story patterns.
+Story patterns are describe in Section~\ref{sec:StoryPatterns}.} that specifies the behavior for a sink.
+In a Petrinet, a sink is a transition which has no outgoing place.
+Then, the transition consumes tokens without producing new tokens.
+The rule matches a \fe{Place} with a \fe{Token} in its LHS.
+Upon application, the \fe{Token} is deleted.
+The rule, however, may only be applied if the place \fe{p} is connected to a sink which is ensured by the NAC.
+The NAC specifies a subgraph where \fe{p} is connected to a \fe{Transition} which has an outgoing \fe{Arc} to a \fe{Place}.
+If such subgraph can be matched, the rule is not applicable.
+The rule morphisms is indirectly specified by the names of the nodes as proposed in~\cite{EEPT06}.
 
-If a graph transformation transforms a model based on a given type graph into a model based on the same type graph (modification of the model), the transformation is called \emph{endogenous} (also known as \emph{in-place} transformation). Otherwise, i.e., the transformation transforms a model based on a given type graph into a model based on another type graph (translation), the transformation is called \emph{exogenous} (also known as \emph{model-to-model} transformation). In principle, story diagrams are endogenous graph transformations. By combining the type graphs of the source model and the target model, story diagrams may also be used to specify exogenous graph transformations.
+If a graph transformation transforms a model based on a given type graph into a model based on the same type graph (modification of the model),
+the transformation is called \emph{endogenous} (also known as \emph{in-place} transformation).
+Otherwise, i.e., the transformation transforms a model based on a given type graph into a model based on another type graph (translation),
+the transformation is called \emph{exogenous} (also known as \emph{model-to-model} transformation).
+In principle, story diagrams are endogenous graph transformations.
+By combining the type graphs of the source model and the target model, story diagrams may also be used to specify exogenous graph transformations.
 
 
 \section{The Type Graph in The Running Example (Markus)}

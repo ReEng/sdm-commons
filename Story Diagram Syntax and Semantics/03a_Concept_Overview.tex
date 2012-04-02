@@ -60,20 +60,17 @@ e.g., it can be checked if certain properties of the object structure to be modi
 
 A story pattern specifies a graph transformation \cite{Roz97}.
 Given a so-called \emph{host graph}, i.e.\ the graph to be modified, a graph transformation removes and creates nodes and edges in the given host graph.
-The host graph is a typed attributed graph, i.e.\ there is a \emph{type graph} determining the types and attributes of the nodes.
-A graph transformation is executed on a host graph by identifying a subgraph in the host graph that is similar to the one specified in the graph transformation
-and then removing and adding the specified nodes and edges.
-The identification of the subgraph for modification is called \emph{graph matching} and includes the \emph{subgraph isomorphism} problem
+The host graph is a typed attributed graph where the graph specified in the graph transformation is searched for (\emph{graph matching}) and modified afterwards
 (see Chapter~\ref{sec:foundations} for more details).
 
 In case of story patterns, the host graph is the object structure or model to be modified, i.e.\ the run-time data of the executed software.
 Thus, we call the host graph's nodes and edges \emph{objects} and \emph{links}
-while the host graph itself is called \emph{instance model}\footnote{Thomas K\"{u}hne calls it \emph{token model} \cite{Kue06}.} (or simply model) in the remainder of the report.
+while the host graph itself is called \emph{instance model} (or simply model) in the remainder of the report.
 The type graph is a set of classes and their relations which define all potential instance models at run-time.
-These classes and relations constitute a so-called \emph{type model} or the \emph{metamodel} \cite{Kue06} of the language used to describe instance models.
+These classes and relations constitute a so-called \emph{type model} (see Chapter~\ref{sec:foundations:typedAttrGTS} for more details).
 Furthermore, we call the nodes and edges in story patterns \emph{object variables} and \emph{link variables}
 since these represent and are matched to objects and links in the instance model.
-The types of these variables are determined by types in a type model which is required to specify story patterns.
+The types of these variables are determined by types in a type model which is a prerequisite to story patterns.
 
 \begin{figure}[htb]
 	\centering
