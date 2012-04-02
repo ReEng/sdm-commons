@@ -21,7 +21,7 @@ For enabling a concise notation of the graph transformation, story patterns appl
 Objects and links being created (or deleted) are annotated with \create (or  \destroy, respectively). 
 Objects which are preserved by the graph transformation carry no annotation.
 Then, the LHS consists of all objects that are preserved and deleted, while the RHS consists of all objects that are preserved and created. 
-The deletion of objects follows the single pushout approach.
+The deletion of objects follows the single pushout approach (cf.\ Section~\ref{sec:foundations:simpleGTS}).
 
 Figure \ref{fig:simpleStoryPattern} shows an example of a single story pattern that redirects a method call from an old method to a new method.
 
@@ -34,38 +34,39 @@ Figure \ref{fig:simpleStoryPattern} shows an example of a single story pattern t
 
 In the example, the object variables \fe{parentClass}, \fe{oldMethod}, and \fe{newMethod} are bound variables, i.e., they already refer to objects of the instance model (cf. Section \ref{sec:StoryPatterns:binding:states}).
 The object variables \fe{anyMethod} and \fe{call} are unbound. 
-When applying the story pattern, first a match for \fe{anyMethod} and \fe{call} is searched. 
+When applying the story pattern, first a match for \fe{anyMethod} and \fe{call} is searched in the instance graph. 
 A possible match will be any method in \fe{parentClass} which contains a call to \fe{oldMethod}. 
-If the matching was successful, the link from \fe{c} to \fe{oldMethod} will be deleted and the link from \fe{c} to \fe{newMethod} will be created.
+If the matching is successful, the link from \fe{c} to \fe{oldMethod} will be deleted and the link from \fe{c} to \fe{newMethod} will be created.
 
-In our concrete syntax, the object variables which are not changed by the story pattern are visualized in black. 
+In our concrete syntax, the object and link variables which are not changed by the story pattern are visualized in black. 
 Object and link variables to be destroyed are annotated with \destroy and visualized in red. 
-Objects and links to be created are annotated with \create and visualized in green. 
-An unbound object variable is labeled by its name and the name of the corresponding type. 
-For bound object variables, we omit the name of the type.
+Object and link variables to be created are annotated with \create and visualized in green. 
+An unbound object variable is labeled with its name and the name of the corresponding type. 
+For bound object variables, we omit the name of the type (e.g.\ \fe{parentClass} in Figure~\ref{fig:simpleStoryPattern}).
 
 In general, the matching process is executed as a three step process:
 first, a matching is searched which uses a bound variable of the story pattern as a starting point. 
 The matching includes all objects and links not to be changed as well as all objects and links annotated with \destroy. 
-If such matching can be obtained, the story pattern is applicable and the execution proceeds. 
+If such a matching can be obtained, the story pattern is applicable and the execution proceeds. 
+Otherwise the execution of the story pattern is aborted.
 In the second step, all objects and links annotated with \destroy are deleted. 
-Finally, in Step 3 all objects and links annotated with \create are created.
+Finally, in Step 3 all objects and links annotated with \create are created and added to the instance graph.
 
 \subsection{Objects and Object Variables [MCP]}
 \label{sec:StoryPatterns:objects}
 
 Object variables represent the objects to be matched in a story pattern.
 The variables are identified by their name.
-The objects are instances of classes of the underlying type graph (cp.
+The objects are instances of classes of the underlying type graph (cf.
 Section \ref{sec:foundations:typedAttrGTS}). Thus, the object variables are typed by classes from this model, i.e.
 EClass.
 
-The story pattern in Figure \ref{fig:simpleStoryPattern} contains four
-object variables with the names \fe{call}, \fe{interface}, \fe{methodDecl}, and
-\fe{method}. 
+The story pattern in Figure \ref{fig:simpleStoryPattern} contains five
+object variables with the names \fe{parentClass}, \fe{oldMethod}, \fe{anyMethod}, \fe{c} and
+\fe{newMethod}. 
 The type of an object variable is only visualized if the
-variable is unbound or maybe bound (cf. Section
-\ref{sec:StoryPatterns:binding:states}). For example, the object variable \fe{methodDecl} has the type \fe{Method}.
+variable is unbound or maybe bound (cf.\ Section
+\ref{sec:StoryPatterns:binding:states}). For example, the object variable \fe{anyMethod} has the type \fe{Method}.
 
 Object variables have binding states, binding operators and binding semantics.
 They are described in Section  \ref{sec:StoryPatterns:binding}.
@@ -116,33 +117,33 @@ bound), binding semantics (mandatory, negative, optional), and binding operators
 \label{sec:StoryPatterns:binding:states}
 An object variable or a link variable can be declared as bound, unbound, or
 maybe bound (i.e. it is unknown if the variable is bound or not). This is
-defined by the binding state. An unbound variable is matched during the
+defined by its binding state. An unbound variable is matched during the
 execution of the containing story pattern. 
-Even if the variable was already matched earlier in the story diagram, the
+Even if a variable of the same name was already matched earlier in the story diagram, the
 pattern matching algorithm is forced to find a new object for this variable.
 A bound variable must have been matched previously. 
 For a variable that is specified as maybe bound, a new match will only be
 determined if it has not been bound before. 
 Otherwise it will be treated as a bound variable.
 %\todomcp{explain why maybe bound is necessary}
-The variable scope is limitted by the surrounding activity. 
+The variable scope is limited by the surrounding activity. 
 That means, a bound variable keeps its binding until the activity ends, unless
-it has been matched again in the meantime.
-An exception is the variable scope inside an each activity node (cf. Section
-\ref{sec:StoryDiagrams:composition}).
+it is matched again in the meantime.
+An exception is the variable scope inside an each activity node (cf.\ Section
+\ref{sec:storydiagrams:activitynodes}).
 
 Unbound object variables are visualized with an underlined label of the form
-``name: type'', while the type is hidden for bound object variables as depicted
+``name: type'' while the type is hidden for bound object variables as depicted
 in Figure \ref{fig:bindingStatesOverview} a) and b).
 Maybe bound object variables are represented like unbound object variables but
-are marked by a questionmark after the name (cf. Figure
+are marked by a question mark after the name (cf.\ Figure
 \ref{fig:bindingStatesOverview} c)).
 
-In a valid, interpretable story pattern, each connected component\footnote{With
+In a valid, executable story pattern, each connected component\footnote{With
 ``connected component'' we mean a subgraph in which each object variable is
-connected with all other object variables via link variables.}
+reachable from all other object variables via link variables.}
 must contain at least one bound object variable or only created variables. This
-is necessary to avoid a search over the whole underlying object model which probably requires a long runtime.
+is necessary to avoid a search over the whole underlying instance model which requires a long runtime in most cases.
 
 
 \begin{figure}[htbp]
@@ -154,7 +155,7 @@ is necessary to avoid a search over the whole underlying object model which prob
 
 \subsubsection{Binding Semantics}
 \label{sec:StoryPatterns:binding:semantics}
-Furthermore, object variables and link variables have binding semantics that
+Object variables and link variables have binding semantics that
 determine if a variable is mandatory, negative or optional.
 A match for mandatory variables must exist in the given instance model, otherwise
 the pattern matching fails. 
@@ -163,39 +164,39 @@ conditions and must not exist in the instance model. If a variable defined as
 negative can be matched during the execution of the story pattern, the pattern
 fails, too. Optional variables may exist. If an optional variable exists, it will be
 bound, but if it does not exist, the story pattern may also be matched
-successfully.
+successfully and execution proceeds.
 
 Negative object variables are visualized crossed-out (cf. Figure
-\ref{fig:bindingSemanticsOverview} b) and optional object variables are
-visualized with a dashed border (cf. Figure \ref{fig:bindingSemanticsOverview} c).
+\ref{fig:bindingSemanticsOverview} b)) and optional object variables are
+visualized with a dashed border (cf.\ Figure \ref{fig:bindingSemanticsOverview} c)).
 The same holds for negative and optional link variables (cf. Figure
-\ref{fig:bindingSemanticsOverview} e+f).
+\ref{fig:bindingSemanticsOverview} e) and f)).
 
 Negative and optional object variables and link variables are not part of a
 connected component.
-This means that optional and negative link variables which do not represent
-valid connections, while optional and negative
+Optional and negative link variables do not represent
+valid connections while optional and negative
 object variables do not represent valid connection points. 
-This means, the graph has to be connected when ignoring optional and negative
+This means, the graph has to be still connected when ignoring optional and negative
 parts. Consequently, regarding the rule that each connected component must
-contain at least one bound object variable (cp. Section
+contain at least one bound object variable (cf.\ Section
 \ref{sec:StoryPatterns:binding:states}), there are situations in which the
-application of negative or optional object variables is not allowed. 
-Figure \ref{fig:negativeObjects} shows example situations for this. 
-For example, case a) is allowed, but case b) is not because in the latter case
-the graph without the negative and optional elements is not connected to at
-least one bound object variable. The case c) is allowed because the object
-variables \fe{a} and \fe{c} are bound, which means that each connected component has at least one bound object variable.
-According to this, case d) is allowed, too, because \fe{a} and \fe{b} are both
-bound. The case e) is not allowed and case f) is allowed.
-The case g) is not allowed since the semantics is the same as in case a).
+use of negative or optional object variables is not allowed. 
+Figure \ref{fig:negativeObjects} shows example situations of this. 
+For example, case a) is allowed but case b) is not because in the latter case
+the graph without the negative and optional elements is not a connected component anymore.
+Case c) is allowed because the object
+variables \fe{a} and \fe{c} are bound which means that each connected component has at least one bound object variable.
+Accordingly, case d) is allowed, too, because \fe{a} and \fe{b} are both
+bound. Case e) is not allowed while Case f) is.
+Case g) is not allowed since the semantics is the same as in case a) due to the single pushout approach of story patterns.
 
 Similar to the application of negative object
 variables, Figure \ref{fig:optionalObjects} shows some examples for the application of optional object variables. 
 While case a) is allowed, case b) is not allowed because in this case the
 shown graph is not connected any more. However, case c) and d) are allowed
 because each connected component contains at least one bound object variable.
-Case e) and f) are allowed.
+Case e) and f) are also allowed.
 
 \begin{figure}[htbp]
   \centering
@@ -224,12 +225,12 @@ Binding operators define whether an element or link is to be created, deleted,
 or just matched (found).
 After all elements that are defined to be deleted or just matched have been
 matched, the model is modified by deleting and creating the elements as
-defined.
+defined (see Section~\ref{sec:StoryPatterns:storyPattern}).
 
 Elements to be created are marked with the
-label \create (cf. Figure \ref{fig:bindingOperatorsOverview} b+e) and elements
-to be deleted are marked with the label \destroy (cf. Figure
-\ref{fig:bindingOperatorsOverview} c+f).
+label \create (cf.\ Figure \ref{fig:bindingOperatorsOverview} b) and e)) and elements
+to be deleted are marked with the label \destroy (cf.\ Figure
+\ref{fig:bindingOperatorsOverview} c) and f)).
 
 \begin{figure}[htbp]
   \centering
@@ -248,7 +249,7 @@ negative or optional variables).
 Binding states, binding semantics and binding operators can be
 arbitrarily combined, but only certain combinations are feasible. 
 Table \ref{tab:bindingCombinations} lists all feasibly binding combinations for
-object variables. As depicted there, bound and maybe bound object variables must not have negative
+object variables. As shown there, bound and maybe bound object variables must not have negative
 or optional binding semantics. As well, the combination of the binding states
 bound or maybe bound and the binding operator create is not allowed.
 
@@ -347,7 +348,7 @@ Figure \ref{fig:objectConstraint} shows an example.
   \label{fig:objectConstraint}
 \end{figure}
 
-In the example, we match a method being contained by the class \fe{theClass}. 
+In the example, we match a method being contained in the class represented by the object variable \fe{theClass}. 
 The match is restricted to a method which has the name "getName".
 
 The values of attributes that are not restricted by an attribute constraint are not considered during the matching. 
@@ -355,7 +356,7 @@ Thus, they may have an arbitrary value.
 In the current version of story patterns, attribute constraints need to be specified using OCL~\cite{OCL}. 
 Besides equality checks, all comparative operations on the attributes of the object supported by OCL can be used as object constraints. 
 
-Beside attribute constraints, we may also use \emph{attribute assignments} to change the value of an attribute during the application of a story pattern. 
+Beside attribute constraints, \emph{attribute assignments} may be used to change the value of an attribute during the application of a story pattern. 
 Thus, attribute assignments are considered to be part of the RHS. 
 When using attribute assignments, the value of the attribute is not considered while matching the LHS to the instance model. 
 Figure \ref{fig:attributeAssignment} shows an example.

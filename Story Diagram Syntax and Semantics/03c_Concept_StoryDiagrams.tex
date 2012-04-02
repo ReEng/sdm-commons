@@ -10,16 +10,16 @@ We give an overview of the general idea in Section~\ref{sec:IdeaStoryDiagrams} a
 The main idea behind story diagrams is to formalize UML activity diagrams
 to better support model-driven software development.
 This is done by means of completely modeling software structure and behavior and making the software model executable.
-For that purpose, graph transformations, a well-known formalism, were chosen to formally specify behavior and have been combined with UML activity diagrams.
+For that purpose, graph transformations were chosen to formally specify behavior and have been combined with UML activity diagrams.
 The result, story diagrams, is a mixture of two languages:
 an imperative, deterministic language for the description of control flow, namely UML activity diagrams,
 and a declarative, non-deterministic, object-oriented, graph-transformation-based language for the description of model modifications, so-called story patterns (see Section~\ref{sec:StoryPatterns}).
 Both languages are graphical, formally defined, and use a familiar notation based on UML 1.5 activity diagrams\footnote{Actually,
-we use the notation of UML 1.5 activity diagrams, but already use the terminology of the UML 2 and will add constructs from UML 2 like combined fragments to story diagrams in future.}
+we use the notation of UML 1.5 activity diagrams, but already use the terminology of the UML 2.}
 and UML object diagrams with minor modifications.
 
 An exemplary story diagram is illustrated in Figure~\ref{fig:simpleStoryDiagram}.
-This story diagram takes a graph-based representation (a model of a so-called abstract syntax graph, see Section~\ref{sec:foundations:typedAttrGTS}) of an object-oriented program, e.g., in Java,
+This story diagram takes a graph-based representation (a model of a so-called abstract syntax graph, see Section~\ref{sec:typeGraph}) of an object-oriented program, e.g., in Java,
 and replaces calls of a given method (\fe{oldMethod}) with calls of another given method (\fe{newMethod}).
 
 \begin{figure}[htb]
@@ -30,8 +30,8 @@ and replaces calls of a given method (\fe{oldMethod}) with calls of another give
 \end{figure}
 
 Like UML activity diagrams, story diagrams model control flow by means of activity nodes and activity edges.
-Each activity node contains a story pattern to formally specify the behavior for this node\footnote{There are
-some few exceptions like activity call nodes which do not contain story patterns to specify the behavior.}.
+Each activity node embeds a story pattern to formally specify the behavior for this node\footnote{There are
+some exceptions like activity call nodes which do not contain story patterns to specify the behavior.}.
 The activity edges can carry guards.
 These are either boolean expressions, e.g., checking attribute values of a matched object,
 or guards used to specify decisions on whether a story pattern could be
@@ -140,7 +140,7 @@ For example, the object matched to the object variable \fe{a} is returned by the
 Otherwise, the \emph{null} reference is returned which is specified by the keyword \emph{null}.
 
 
-\subsection{Activity Nodes, Activity Edges (Dietrich)}
+\subsection{Activity Nodes, Activity Edges (Dietrich)} \label{sec:storydiagrams:activitynodes}
 
 A story diagram's control flow is defined by activity nodes and activity edges, similar to UML activity diagrams.
 Except of a few exceptions where an activity node represents a call of another story diagram,
@@ -318,7 +318,7 @@ This constitutes a loop.
 Finally, the control flow is guided by the activity edge with the guard \fe{\text[end\text]} which leads to the activity node to be executed after the loop.
 Each for-each activity node has such an outgoing \text[end\text] activity edge.
 
-\todojr{fresh matches, auch fuer maybe\_bound: Behält ein maybe\_bound-Knoten ein Binding, was erst im Loop gesetzt wurde? Oder zaehlt dafuer nur, was vor dem Loop schon gebunden war? Letzteres erscheint sinnvoller (Stefan fragen wegen Beispiel)}
+\todojr{fresh matches, auch fuer maybe\_bound: Behï¿½lt ein maybe\_bound-Knoten ein Binding, was erst im Loop gesetzt wurde? Oder zaehlt dafuer nur, was vor dem Loop schon gebunden war? Letzteres erscheint sinnvoller (Stefan fragen wegen Beispiel)}
 
 
 \subsection{Story Diagram Calls (Markus)}
