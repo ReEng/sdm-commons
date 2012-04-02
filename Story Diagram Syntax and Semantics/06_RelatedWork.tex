@@ -1,8 +1,11 @@
 \chapter{Related Work} \label{sec:RelatedWork}
+In this chapter, we give an overview about scientific publications related to story diagrams.
+First, we provide an extensive summary of previous work about story diagrams in Section~\ref{sec:RW_PreviousWork}, including their origins.
+In Section~\ref{sec:RW_Extensions}, we report on extensions and applications of story diagrams.
+Finally, we briefly describe related and similar concepts in the litature in Section~\ref{sec:RW_RelatedWork}.
 
-\todojr{Write overview of the chapter.}
-
-\section{Origins and Previous Work on Story Diagrams (Jan)}
+\section{Origins and Previous Work on Story Diagrams}
+\label{sec:RW_PreviousWork}
 
 Story diagrams have been described first by Fischer et al. \cite{FNTZ00} and Jahnke and Z\"{u}ndorf \cite{JZ98} in 1998.
 The foundations of story diagrams lie in the programmed graph rewriting systems PROGRES \cite{SWZ95} which has been developed at the University of Aachen since 1989.
@@ -44,17 +47,21 @@ As interpreting in general is slower than compiling, the authors implemented a n
 Tichy, Meyer and Giese \cite{TMG06} identified some semantic issues in story diagrams.
 First, when creating more than one element in a story pattern, the order of creation is undefined.
 In general, this is no problem; however, in certain failure situations and when creating links in ordered associations, this may lead to non-deterministic behavior.
-We deal with this issue as described in \todojr{Section X}.
+However, defining a creation order would contradict the declarative nature of story patterns.
+Thus, we decided not to include an explicit creation order.
+However, for the failure case, an exception transition can be defined where it can be explicitly modeled how to deal with the failure.
+To define a link order in an ordered association, \fe{LinkConstraint}s can be used (see Section~\ref{cls:modeling::patterns::LinkConstraint} on Page~\pageref{cls:modeling::patterns::LinkConstraint}).
+(\fe{LinkConstraint}s will be described in detail in later versions of this document.)
 Second, when having a link between two set variables \fe{setA} and \fe{setB}, the intuitive semantics would be to have every set element in \fe{setA} connected to every element in  \fe{setB}.
 However, this is neither supported by the tools nor allowed by the formal semantics described by Z\"{u}ndorf \cite{Zun01}.
-\todojr{describe solution}
+We deal with sets in later versions of this document.
 Third, consider there is a class with two qualified associations (to other classes) that have each other as a qualifier.
 When creating one link for each of the two qualified association in one story pattern, the first association that is created is qualified by the \fe{null} value although it could be qualified using the correct object (considering this is already bound).
-We discuss this issue in \todojr{Section X}.
+We deal with this issue in later versions of this document.
 Forth, the set of possible bindings that match in a for-each activity may be extended by this very for-each activity, i.e., the activity changes something that makes new elements match for the for-each condition.
-Thus, we clarify whether we use a \emph{pre-select} or a \emph{fresh matches} semantics for for-each activities in \todojr{Section X}.
+Thus, we define that we use a \emph{fresh matches} semantics for for-each activities (in contrast to a \emph{pre-select} semantics) in Section~\ref{sec:DecisionNodesEtc}.
 Fifth, as creations may fail, e.g., due to resource constraints, the authors propose that a story diagram should be able to react to the result of a creation.
-We mention this in \todojr{Section X}.
+As mentioned before, an exception transition can be used to deal with such failures.
 
 The control flow of story diagrams is modeled explicitly.
 However, in certain situations, it is useful to only implicitly define the execution order, as it may significantly improve the comprehensibility of a story diagram.
@@ -65,7 +72,8 @@ In~\cite{Sta08}, Stallmann presents an extension of story patterns which is call
 Becker et al. present means for structuring complex transformations into several independent story diagrams which can be called in a well-defined manner \cite{BvDHR11}.
 They propose inventing explicit call activities which invoke other story diagrams and also support polymorphic dispatching.
 Polymorphic dispatching can also be used for the aforementioned case of non-deterministic execution order.
-We adopt this proposal in \todojr{Section X}.
+Calls are described in Section~\ref{sec:Calls}.
+We will give details on the polymorphic dispatching mechanism in story diagrams in later versions of this document.
 
 Until 2010, different branches of story diagrams and of Fujaba were developed, leading to severe difficulties when exchanging data due to incompatibilities.
 In an effort to again unify the different branches, a task force was started in 2010.
@@ -93,7 +101,9 @@ However, this is not described in detail here.
 
 
 
-\section{Applications and Extensions of Story Diagrams (Jan)}
+\section{Applications and Extensions of Story Diagrams}
+\label{sec:RW_Extensions}
+
 Giese and Klein extend story patterns to so called Story Decision Diagrams (SDDs) that allow to express complex safety properties \cite{GK06a}.
 Basically, they require story patterns of SDDs to be non-modifying (i.e., no \create or \destroy elements) and add features of logics such as quantification, implication, and negation.
 After the evaluation of such a property, a regular story pattern may be specified which describes a change operation that should be executed.
@@ -115,16 +125,18 @@ In~\cite{EHH+11}, they are used as a means to define the semantics of reconfigur
 In~\cite{HSE10}, a framework for reachability analysis on timed story diagrams has been introduced which explores the state-space defined by the timed story diagrams and an initial instance model. 
 It is based on the framework introduced in~\cite{Zue09}.
 
-\begin{itemize}
-\item Design-level debugging \cite{GZ02,Gei02,GZ06},
-\item code generation \cite{GSR05,GBD07},
-\item reverse engineering \cite{NSW+02,BGS+Z08}, MATE (reverse engineering) \cite{SKS+07,ST08},
-\item OCL in Fujaba \cite{SZG07},
-\item other applications \cite{KNNZ00,GZ10}
-\end{itemize}
+%\todojr{
+%\begin{itemize}
+%\item Design-level debugging % \cite{GZ02,Gei02,GZ06},
+%\item code generation % \cite{GSR05,GBD07},
+%\item reverse engineering % \cite{NSW+02,BGS+Z08}, MATE (reverse engineering) \cite{SKS+07,ST08},
+%\item OCL in Fujaba % \cite{SZG07},
+%\item other applications % \cite{KNNZ00,GZ10}
+%\end{itemize}
+%}
 
-
-\section{Work Related to Story Diagrams (Jan)}
+\section{Work Related to Story Diagrams}
+\label{sec:RW_RelatedWork}
 
 Model transformation has become an important research topic during the last years.
 Several concepts and tools with different scopes and applications have been proposed.
@@ -188,10 +200,11 @@ In \emph{QVT Relations}~\cite{QVT}, which is similar to TGGs, control flow may a
 The \emph{Atlas Transformation Language} (ATL)~\cite{ATL} is a hybrid inter-model transformation language, integrating declarative and operational aspects.
 It is similar to QVT, but only has a textual representation of the transformation rules.
 
-\section*{Further related work}
-
-\begin{itemize}
-\item AGG
-\item Evtl. Loesungen zu M2M Transformation Aufgabe aus dem Tool Transformation Contest 2010 fuer weiteres Related Work anschauen
-\item GReTL \cite{HE11}
-\end{itemize}
+%\todojr{
+%Further related work:
+%\begin{itemize}
+%\item AGG
+%\item Evtl. Loesungen zu M2M Transformation Aufgabe aus dem Tool Transformation Contest 2010 fuer weiteres Related Work anschauen
+%\item GReTL % \cite{HE11}
+%\end{itemize}
+%}
