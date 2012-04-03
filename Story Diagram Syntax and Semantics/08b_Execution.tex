@@ -1,9 +1,11 @@
 \chapter{Execution of Story Diagrams (Stephan)} \label{sec:Execution}
 
-In general, there are two possibilities to execute models: Executing them directly using an interpreter \cite{GHS09} or generating GPL code, which is either compiled or interpreted. 
+In general, there are two possibilities to execute models: Executing them directly using an interpreter \cite{GHS09} or generating GPL code, which is either compiled or interpreted.
+
 \fuj can generate Java or C code from story diagrams and their accompanying class diagrams. 
 Here, a story diagram describes the behavior of a single method. 
-Therefore, this method and its containing class must be defined first. 
+Therefore, this method and its containing class must be defined first.
+
 Interpreting a story diagram does not impose this restriction.
 In the following sections, we describe the structure and operation principles of an interpreter for story diagrams.
 
@@ -20,7 +22,7 @@ In the following sections, we describe the structure and operation principles of
   \label{fig:interpreter_packages}
 \end{figure}
 
-Figure~\ref{fig:interpreter_packages} shows the package structure of the SDM interpreter.
+Figure~\ref{fig:interpreter_packages} shows the package structure of the story diagram interpreter.
 Currently, there are multiple story diagram metamodels in use that must all be supported by the interpreter. 
 Therefore, the interpreter is divided into a metamodel-independent core (\emph{de.mdelab.sdm.interpreter.core}) and multiple metamodel-dependent extensions (\emph{org.storydriven.modeling.interpreter} and \emph{de.mdelab.sdm.interpreter.sde}). 
 This separation of metamodel-dependent and independent parts allows for easier maintenance of the interpreter. 
@@ -30,9 +32,9 @@ Subclasses in the metamodel-dependent packages replace these generic types with 
 Furthermore, those parts of the interpreter that depend on Eclipse are also separated (\emph{*.eclipse} packages). 
 This allows to use the interpreter in stand-alone applications without Eclipse. 
 In addition, the interpreters for expression languages like OCL are also separated (\emph{de.mdelab.sdm.interpreter.ocl}). 
-The SDM interpreter provides an extension mechanism to add interpreters for other expression languages.
+The story diagram interpreter provides an extension mechanism to add interpreters for other expression languages.
 
-\subsubsection{SDM Interpreter}
+\subsubsection{Story Diagram Interpreter}
 \label{sec:sdm_interpreter}
 
 \begin{figure}[htb]
@@ -43,9 +45,9 @@ The SDM interpreter provides an extension mechanism to add interpreters for othe
 \end{figure}
 
 Figure~\ref{fig:sdm_interpreter} shows the main classes of the interpreter core. 
-\emph{SDMInterpreter} is the abstract superclass of all SDM interpreters. 
+\emph{SDMInterpreter} is the abstract superclass of all story diagram interpreters. 
 It is responsible for the execution of a whole story diagram. 
-\emph{StoryDrivenInterpreter} and \emph{StoryDrivenEclipseInterpreter} inherit from it to implement metamodel specific functionality. 
+\emph{StoryDrivenInterpreter} and \emph{StoryDrivenEclipseInterpreter} inherit from it to implement metamodel-specific functionality. 
 Here, this is mostly limited to defining the concrete types to use in place of the generic types of the superclass and defining constructors with fewer parameters. 
 The \emph{SDMInterpreter} provides the \emph{executeActivity()} method to execute a story diagram.
 
