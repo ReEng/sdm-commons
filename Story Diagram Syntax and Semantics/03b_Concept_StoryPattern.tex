@@ -1,4 +1,5 @@
-\section{Story Patterns (Christian und Marie)} \label{sec:StoryPatterns}
+\section{Story Patterns} 
+\label{sec:StoryPatterns}
 
 In this section, we introduce story patterns in more detail.
 We start by giving the general idea of story patterns in Section \ref{sec:StoryPatterns:storyPattern}.
@@ -7,7 +8,7 @@ and their respective binding semantics in Sections \ref{sec:StoryPatterns:object
 Finally, we show the use of object attributes in a story pattern in Section \ref{sec:StoryPatterns:attributes}.
 
 
-\subsection{General Idea [CH]}
+\subsection{General Idea}
 \label{sec:StoryPatterns:storyPattern}
 
 Story patterns are typed attributed graph transformation rules with inheritance on object types (cf. Section~\ref{sec:foundations:typedAttrGTS}) that can be embedded into an activity node of a story diagram (cf. Section~\ref{sec:StoryDiagrams}).
@@ -17,11 +18,10 @@ This allows for specifying graph replacement rules for object-oriented models.
 Object and link variables are matched to the objects and links of the instance model. 
 In contrast to typed attributed graph transformations, story patterns explicitly require to use isomorphic matchings, i.e., two object variables of a story pattern may not be matched to the same object of the instance model.
 
-\todoch{Absatz neuschreiben}
-For enabling a concise notation of the graph transformation, story patterns apply a short-hand notation depicting the left-hand side (LHS) and the right-hand side (RHS) in a single, annotated graph. 
-Objects and links being created (or deleted) are annotated with \create (or  \destroy, respectively). 
-Objects which are preserved by the graph transformation carry no annotation.
-Consequently, the LHS consists of all objects that are preserved and deleted, while the RHS consists of all objects that are preserved and created. 
+For enabling a concise notation of the graph transformation, story patterns apply a short-hand notation depicting the left-hand side (LHS) and the right-hand side (RHS) in a single, annotated graph using stereotypes.
+In the short-hand notation, we use binding operators for defining the LHS and the RHS. Object and link variables representing objects and links not to be changed by the story pattern carry no stereotype. 
+Object and link variables representing objects to be created (or deleted) are annotated with \create (or  \destroy, respectively). 
+Consequently, the LHS consists of all object and link variables that carry no stereotype or stereotype \destroy. The RHS consists of all object and link variables that carry no stereotype or the stereotype \create.
 The deletion of objects and links follows the single-pushout approach (cf.\ Section~\ref{sec:foundations:simpleGTS}).
 
 Figure \ref{fig:simpleStoryPattern} shows an example of a single story pattern that redirects a method call from an old method to a new method.
@@ -44,16 +44,18 @@ An unbound object variable is labeled with its name and the name of the correspo
 For bound object variables, we omit the name of the type (e.g.\ \fe{parentClass} in Figure~\ref{fig:simpleStoryPattern}).
 
 In general, the matching process is executed as a three step process:
-first, a matching is searched which uses the bound variables of the story pattern as a starting point. 
-The matching includes all objects and links not to be changed as well as all objects and links annotated with \destroy. 
+first, a matching is searched which uses the bound variables of the story pattern as a starting point. The matching associates objects and links of the instance model to all object and link variables of the story pattern. 
+The matching is performed as defined for typed attributed graph transformations and considers all object and link variables of the LHS.
 If a matching can be obtained, the story pattern is applicable and the execution proceeds. 
 Otherwise the execution of the story pattern is aborted.
 In the second step, all objects and links matched to object and link variables annotated with \destroy are deleted. 
 Finally, objects and links are created in the instance model for all variables annotated with \create.
 
-\todoch{Binding Semantiken einfuehren (negative + optional)}
+In general, identifying a matching of a story pattern to an instance model includes the \emph{subgraph isomorphism} problem which is \emph{NP-complete}~\cite{Epp95}. 
+Story patterns aim to reduce the computational complexity of the matching process by using bound variables.
+Therefore, we require at least one bound object variable in each story pattern which is used as a starting point for the matching process.
 
-\subsection{Objects and Object Variables [MCP]}
+\subsection{Objects and Object Variables}
 \label{sec:StoryPatterns:objects}
 
 Object variables in a story pattern represent the objects in an instance model to be matched.
@@ -91,7 +93,7 @@ EStructuralFeature}
 
 
 
-\subsection{Links and Link Variables [MCP]}
+\subsection{Links and Link Variables}
 \label{sec:StoryPatterns:links}
 
 Link variables represent connections between objects and are used to connect
@@ -104,7 +106,7 @@ operators and binding semantics (cf. Section \ref{sec:StoryPatterns:binding}), b
 
 
 
-\subsection{Binding of Variables [MCP]}
+\subsection{Binding of Variables}
 \label{sec:StoryPatterns:binding}
 
 Object variables have binding states (unbound, bound, maybe
@@ -141,8 +143,7 @@ In a valid story pattern, each connected component\footnote{With
 ``connected component'' we mean a subgraph in which each object variable is
 reachable from at least one bound object variable via directed link variables.}
 must contain at least one bound object variable or created variables only. This
-is necessary to avoid a search over the whole underlying instance model which requires a long runtime in most cases.
-\todoch{Laufzeitkram aus Grundlagen}
+is necessary to avoid a search over the whole underlying instance model which requires a long runtime in most cases (cf. Section~\ref{sec:StoryPatterns:storyPattern}).
 
 \begin{figure}[htbp]
   \centering
@@ -324,7 +325,7 @@ variables are given in Table \ref{tab:bindingCombinations_links}. Link variables
 have no binding state.
 
 
-\subsection{Using Object Attributes [CH]}
+\subsection{Using Object Attributes}
 \label{sec:StoryPatterns:attributes}
 
 The objects of our instance model carry attributes. 
