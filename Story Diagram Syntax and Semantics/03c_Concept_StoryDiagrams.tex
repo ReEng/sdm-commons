@@ -326,8 +326,8 @@ Story diagram calls are special nodes in a story diagram which are used to invok
 
 As described in Section~\ref{sec:activities}, a story diagram can have an arbitrary number of in and out parameters. When calling a story diagram, concrete arguments have to be assigned to the in parameters. Consequently, if an object variable named \fe{n} is bound somewhere in the story diagram, the identifier \fe{n} can be used to pass this object variable as an argument to a call. Similarly, if the called story diagram has out parameters, those are implicitly bound to their respective names and can be used by specifying object variables of the same name.
 
-In contrast to QVT \cite{QVT}, we do not explicitly model inout parameters. Instead, we allow the same objects which are passed as in parameters to be also returned as out parameters.
-These objects are not bound again after the call. Instead the binding is preserved and the same object variable is used before and after the call. This is similar to the semantics of a call-by-reference parameter.
+In contrast to QVT \cite{QVT}, we do not allow inout parameters. An object that is passed to a story diagram as an in parameter may not be returned as an out parameter.
+The reason for this the call-by-reference semantics that is assumed for in parameters. If an object that is passed as an in parameter is modified in the called story diagram, those modifications remain after the called story diagram has terminated. The object in question can be used in the calling story diagram after the call but the call may have modified its attributes or its links.
 
 An example of a story diagram call is shown in Figure~\ref{fig:call}.
 
@@ -339,10 +339,10 @@ An example of a story diagram call is shown in Figure~\ref{fig:call}.
 \end{center}
 \end{figure}
 
-The first story pattern in Figure~\ref{fig:call}, shows the bound object variable \fe{package}. Two new object variables \fe{class1} and \fe{class2} are bound in that pattern. The next node with the grey background is a story diagram call which is also signified by its label \fe{Call}. Beneath the label, the name of the called story diagram is given, in this case \fe{CreateBidirectionalAssociation}. Assume that the called story diagram has two in parameters of the type \fe{Class} and one out parameter of the type \fe{Association}. The two classes that were bound in the first story pattern, \fe{class1} and \fe{class2} are passed to the call as arguments.
+The first story pattern in Figure~\ref{fig:call}, shows the bound object variable \fe{package}. Two new object variables \fe{class1} and \fe{class2} are bound in that pattern. The next node with the grey background is a story diagram call which is also signified by its label \fe{Call}. Beneath the label, the name of the called story diagram is given, in this case \fe{CreateBidirectionalAssociation}. Assume that the called story diagram has two in parameters of the type \fe{Class} and one out parameter of the type \fe{Association}. The two classes that were bound in the first story pattern, \fe{class1} and \fe{class2} are passed to the call as arguments. They can be used in the story node after the call without passing the back as out parameters. The modifications carried out by the called story diagram (i.e.\ the creation of the \fe{assoc} object and its connection to \fe{class1} and \fe{class2}) are retained after the call terminates.
 The result of the call is bound to the object variable \fe{assoc}. The type of this variable is determined by the out parameter type, i.e., in this case the type Association.
 
-If a story diagram has no out parameters, the colon and the out parameters names after the parentheses are omitted (see Figure \ref{fig:SDRemoveInterfaceViolation} for an example).
+If a story diagram has no out parameters, the keyword \fe{void} follows the colon instead of the out parameter's names (see Figure \ref{fig:SDRemoveInterfaceViolation} for an example).
 
 %Issues for future versions:
 % method calls
