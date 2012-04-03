@@ -108,19 +108,6 @@ The type graph defines different types of nodes and edges and it defines which t
 Additionally, nodes may carry attributes like, e.g., objects in an object-oriented programming language.
 Moreover, the type graph specifies inheritance relations between types of objects, a concept which is also known from object-oriented programming languages. Thereby, a type graph specifies the structure of all possible graphs.
 
-\todoch{ Meiner Meinung nach gehoeren die nachfolgenden beiden Absaetze hier nicht hin! Entweder eigene Section zu Model Transformations und DSLs in den Foundations oder in die Nutshell integrieren}
-We use graph transformations to modify or translate different kinds of models.
-We call a model that we want to modify (a host graph) an \emph{instance model}\footnote{Thomas K\"{u}hne calls it \emph{token model} \cite{Kue06}.} (or simply model).
-Instance models are specified in a certain language, often a domain-specific language (DSL)\footnote{The language can be both, textual or graphical.}.
-Thus, the type graph usually defines the \emph{abstract syntax} of the language used and is part of the corresponding \emph{metamodel} \cite{Kue06} for this language.
-By replacing the type graph (the metamodel) we are able to specify transformations for models specified in various languages.
-
-The type graph or the abstract syntax of the language used to describe the instance models
-is, in our case, described by a set of classes and their relations which define all potential instance models.
-These classes and relations constitute a so-called \emph{type model} (the actual type graph).
-An instance model always contains objects and links (nodes and edges) that are instances of the classes and relations defined in the corresponding type model.
-
-
 As an example, Figure~\ref{fig:PetrinetTypeGraph} shows a simple type graph for Petrinets.
 The \fe{Petrinet} consists of \fe{Nodes} and \fe{Arcs}.
 An \fe{Arc} connects two nodes which it refers as \fe{source} and \fe{target}.
@@ -149,14 +136,28 @@ The NAC specifies a subgraph where \fe{p} is connected to a \fe{Transition} whic
 If such subgraph can be matched, the rule is not applicable.
 The rule morphisms is indirectly specified by the names of the nodes as proposed in~\cite{EEPT06}.
 
-\todoch{Dieser Absatz sollte auch nicht hier stehen.}
+
+\section{Model Transformations}
+\label{sec:modelTransformation}
+
+A model transformation modifies or translates different kinds of models.
+We use graph transformations to specify model transformations formally.
+In the context of model transformations, the a host graph of a graph transformation is called \emph{instance model}\footnote{Thomas K\"{u}hne calls it \emph{token model} \cite{Kue06}.} (or simply model).
+Instance models are specified in a certain language, often a domain-specific language (DSL)\footnote{The language can be both, textual or graphical.}.
+Thus, the type graph usually defines the \emph{abstract syntax} of the language used and is part of the corresponding \emph{metamodel} \cite{Kue06} for this language.
+By replacing the type graph (the metamodel) we are able to specify transformations for models specified in various languages.
+
+The type graph or the abstract syntax of the language used to describe the instance models
+is, in our case, described by a set of classes and their relations which define all potential instance models.
+These classes and relations constitute a so-called \emph{type model} (the actual type graph).
+An instance model always contains objects and links (nodes and edges) that are instances of the classes and relations defined in the corresponding type model.
+
 If a graph transformation transforms a model based on a given type graph into a model based on the same type graph (modification of the model),
 the transformation is called \emph{endogenous} (also known as \emph{in-place} transformation).
 Otherwise, i.e., the transformation transforms a model based on a given type graph into a model based on another type graph (translation),
 the transformation is called \emph{exogenous} (also known as \emph{model-to-model} transformation).
 In principle, story diagrams are endogenous graph transformations.
 By combining the type graphs of the source model and the target model, story diagrams may also be used to specify exogenous graph transformations.
-
 
 \section{The Type Graph in The Running Example}
 \label{sec:typeGraph}
