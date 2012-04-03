@@ -2,7 +2,7 @@
 
 This chapter presents a complete example of a transformation with story diagrams. The setting of the example is explained in Section \ref{sec:Example:Motivation}. The next section then presents several complex story diagrams that the execute the transformation.
 
-\section{Motivation of the example}
+\section{Motivation of the Example}
 \label{sec:Example:Motivation}
 
 One well-known principle of object-oriented programming says \emph{``Program to an interface, not an implementation.''} \cite{GHJV95}. By only accessing interfaces instead of concrete classes from a given class, that class remains independent of concrete implementations. The accessed class can be exchanged transparently without breaking the program. If this principle is neglected, accidentally or intentionally, this is known as an \emph{interface violation}.
@@ -22,7 +22,7 @@ To this point, the refactoring is very similar to the \emph{Extract Interface} r
 
 A story diagram that removes an interface violation by extending an interface as described above is presented in the following section.
 
-\section{Story diagram: Remove interface violation}
+\section{Story Diagram: Remove Interface Violation}
 
 \begin{figure}[hbtp]
 \centering
@@ -45,7 +45,7 @@ If the cast is in the same statement as the call, activity node 3a is executed: 
 
 Activity node 4 is responsible for adapting all other classes that implement the now changed interface. Thus, the node is a for each node that binds a class which is connected to the \fe{interface} in each iteration. For each of those bindings, the node that is reachable via the \fe{[each time]} transition is executed (see Section \ref{sec:StoryDiagrams}). In this case that is a story diagram call of the story diagram \fe{GenerateMethodStub} which is explained in the following section.
 
-\subsection{Story diagram: Generate method stub}
+\subsection{Story Diagram: Generate Method Stub}
 
 \begin{figure}[hbtp]
 \centering
@@ -60,7 +60,7 @@ The second activity node creates a new \fe{methodStub} in the given \fe{class}. 
 
 Finally, the story diagram \fe{CopyParameters} is called in the story diagram call node. The \fe{method} and the \fe{methodStub} are passed as parameters. The called diagram then copies all parameters from the given \fe{method} to the newly created \fe{methodStub}. It is explained in the following section.
 
-\subsection{Story diagram: Copy parameters} \label{sec:SDCopyParameters}
+\subsection{Story Diagram: Copy Parameters} \label{sec:SDCopyParameters}
 
 The story diagram \fe{CopyParameters} (see Figure~\ref{fig:SDCopyParameters}) copies all the parameters from a \fe{sourceMethod} to a \fe{targetMethod}. Both methods are provided as parameters. The diagram consists of two activity nodes.
 
