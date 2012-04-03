@@ -64,6 +64,9 @@ public interface StoryNode extends ActivityNode
     * If the meaning of the '<em>Story Pattern</em>' reference isn't clear, there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
+    * <!-- begin-model-doc -->
+    * The story pattern that fills this story node.
+    * <!-- end-model-doc -->
     * @return the value of the '<em>Story Pattern</em>' reference.
     * @see org.storydriven.modeling.activities.ActivitiesPackage#getStoryNode_StoryPattern()
     * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"

@@ -423,6 +423,9 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="779bfb46-33f2-49f4-9ad0-8e26ce91a437" name="storyPattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" isReadOnly="true" isDerived="true" isDerivedUnion="true" association="0449f5f3-c15a-402c-882f-1fca689cec32">
+          <ownedComment xmi:id="_Y6ZigH2AEeGtJNphv56odQ" annotatedElement="779bfb46-33f2-49f4-9ad0-8e26ce91a437">
+            <body>The story pattern that fills this story node.</body>
+          </ownedComment>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA1T8bKwEd-DYIlz5ANeHA" value="1"/>
         </ownedAttribute>
       </packagedElement>

@@ -1130,6 +1130,8 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
          new String[] {
                "documentation",
                "Specifies whether just one match should be found for the contained pattern (forEach  = false) or whether all matches should be found (forEach = true)."});
+      addAnnotation(getStoryNode_StoryPattern(), source, new String[] {"documentation",
+            "The story pattern that fills this story node."});
       addAnnotation(structuredNodeEClass, source, new String[] {"documentation",
             "A structured node is a node that contains several other activities."});
       addAnnotation(getStructuredNode_OwnedActivityNode(), source, new String[] {"documentation",

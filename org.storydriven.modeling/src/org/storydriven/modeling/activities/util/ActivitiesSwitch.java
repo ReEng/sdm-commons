@@ -11,6 +11,8 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.Extension;
@@ -36,7 +38,7 @@ import org.storydriven.modeling.calls.Invocation;
  * @see org.storydriven.modeling.activities.ActivitiesPackage
  * @generated
  */
-public class ActivitiesSwitch<T>
+public class ActivitiesSwitch<T> extends Switch<T>
 {
    /**
     * The cached model package
@@ -61,15 +63,17 @@ public class ActivitiesSwitch<T>
    }
 
    /**
-    * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+    * Checks whether this is a switch for the given package.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return the first non-null result returned by a <code>caseXXX</code> call.
+    * @parameter ePackage the package in question.
+    * @return whether this is a switch for the given package.
     * @generated
     */
-   public T doSwitch (EObject theEObject)
+   @Override
+   protected boolean isSwitchFor (EPackage ePackage)
    {
-      return doSwitch(theEObject.eClass(), theEObject);
+      return ePackage == modelPackage;
    }
 
    /**
@@ -79,26 +83,7 @@ public class ActivitiesSwitch<T>
     * @return the first non-null result returned by a <code>caseXXX</code> call.
     * @generated
     */
-   protected T doSwitch (EClass theEClass, EObject theEObject)
-   {
-      if (theEClass.eContainer() == modelPackage)
-      {
-         return doSwitch(theEClass.getClassifierID(), theEObject);
-      }
-      else
-      {
-         List<EClass> eSuperTypes = theEClass.getESuperTypes();
-         return eSuperTypes.isEmpty() ? defaultCase(theEObject) : doSwitch(eSuperTypes.get(0), theEObject);
-      }
-   }
-
-   /**
-    * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @return the first non-null result returned by a <code>caseXXX</code> call.
-    * @generated
-    */
+   @Override
    protected T doSwitch (int classifierID, EObject theEObject)
    {
       switch (classifierID)
@@ -691,6 +676,7 @@ public class ActivitiesSwitch<T>
     * @see #doSwitch(org.eclipse.emf.ecore.EObject)
     * @generated
     */
+   @Override
    public T defaultCase (EObject object)
    {
       return null;
