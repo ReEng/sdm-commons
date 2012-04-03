@@ -125,6 +125,9 @@ A bound variable must have been matched previously.
 For a variable that is specified as maybe bound, a new match will only be
 determined if it has not been bound before. 
 Otherwise it will be treated as a bound variable.
+This is useful, if the same pattern should be used in different contexts, i.e., the bound variable of the pattern differs depending on the context but otherwise the patterns are identical.
+Without maybe bound variables, different patterns would have to be modeled that only differ in which variable is the bound variable of the pattern.
+With maybe bound variables, all variables can be set to maybe bound and the caller specifies a binding for one of them depending on the context.
 %\todomcp{explain why maybe bound is necessary}
 The variable scope is limited by the surrounding activity. 
 That means, a bound variable keeps its binding until the activity ends, unless
