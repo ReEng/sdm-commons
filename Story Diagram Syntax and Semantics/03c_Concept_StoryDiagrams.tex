@@ -327,7 +327,7 @@ Story diagram calls are special nodes in a story diagram which are used to invok
 As described in Section~\ref{sec:activities}, a story diagram can have an arbitrary number of in and out parameters. When calling a story diagram, concrete arguments have to be assigned to the in parameters. Consequently, if an object variable named \fe{n} is bound somewhere in the story diagram, the identifier \fe{n} can be used to pass this object variable as an argument to a call. Similarly, if the called story diagram has out parameters, those are implicitly bound to their respective names and can be used by specifying object variables of the same name.
 
 In contrast to QVT \cite{QVT}, we do not allow inout parameters. An object that is passed to a story diagram as an in parameter may not be returned as an out parameter.
-The reason for this the call-by-reference semantics that is assumed for in parameters. If an object that is passed as an in parameter is modified in the called story diagram, those modifications remain after the called story diagram has terminated. The object in question can be used in the calling story diagram after the call but the call may have modified its attributes or its links.
+The reason for this is the call-by-reference semantics that is assumed for in parameters. If an object that is passed as an in parameter is modified in the called story diagram, those modifications remain after the called story diagram has terminated. The object in question can be used in the calling story diagram after the call but the call may have modified its attributes or its links.
 
 An example of a story diagram call is shown in Figure~\ref{fig:call}.
 
