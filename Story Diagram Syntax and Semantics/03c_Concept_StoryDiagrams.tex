@@ -9,7 +9,7 @@ We give an overview of the general idea in Section~\ref{sec:IdeaStoryDiagrams} a
 
 The main idea behind story diagrams is to formalize UML activity diagrams
 to better support model-driven software development.
-This is done by means of completely modeling software structure and behavior and making the software model executable.
+This is done by not only modeling the software structure, but also completely modeling its behavior and, thus, making the software model executable.
 For that purpose, graph transformations were chosen to formally specify behavior and have been combined with UML activity diagrams.
 The result, story diagrams, is a mixture of two languages:
 an imperative, deterministic language for the description of control flow, namely UML activity diagrams,
@@ -33,10 +33,10 @@ Like UML activity diagrams, story diagrams model control flow by means of activi
 Each activity node embeds a story pattern to formally specify the behavior for this node\footnote{There are
 some exceptions like activity call nodes which do not contain story patterns to specify the behavior.}.
 The activity edges can carry guards.
-These are either boolean expressions, e.g., checking attribute values of a matched object,
-or guards used to specify decisions on whether a story pattern could be
+These are either specified by boolean expressions, e.g., checking attribute values of a matched object,
+or by keywords used to specify decisions on whether a story pattern could be
 matched or not\footnote{A story pattern is successfully matched if for each object and link variable in the pattern corresponding objects and links are found in the instance model (host graph) and all specified constraints are satisfied.}.
-In Figure~\ref{fig:simpleStoryDiagram} the used guards are \fe{\text[success\text]} (successful matching),
+In Figure~\ref{fig:simpleStoryDiagram}, the used guards are \fe{\text[success\text]} (successful execution of a story pattern),
 \fe{\text[failure\text]} (failed to completely execute a story pattern),
 and \fe{\text[end\text]} (activity edge points to the first activity node to be executed after a loop).
 
@@ -49,13 +49,14 @@ We plan to include these concepts in future versions of story diagrams.
 %  2. alternative (specify recurring model operations/transformations for a given type of models): model only classes representing the editor's model under development (meta-model), specify modification operations of this model (adding and removing elements, analysis operations, translations to/generation of other models, etc.), need of a software that triggers the specified operations, the operations can be performed using generated code or an interpreter
 %- introduce an example
 
-Basically, there are two different ways of using story diagrams in a model-driven software development process:
+Basically, there are two different ways of using story diagrams in a model-driven software development process.
 
 Originally, story diagrams were used in object-oriented software development to formally specify the behavior of methods that are defined in classes.
 Calling such a method means to execute the story diagram that represents the method's behavior.
-If there is a story diagram modeling the behavior for each method specified in a class model, the software model can be executed.
+If there is a story diagram that models the behavior for each method specified in a class model,
+the software model completely covers the software's structure and behavior and, thus, can be analyzed and executed.
 In this case, story diagrams specify the behavior of objects whose properties are defined by classes.
-For that reason, those story diagrams have a \emph{this} variable -- similar to the keyword \emph{this} in Java -- representing an object (a class instance) that they belong to (a self reference).
+For that reason, those story diagrams have a \emph{this} variable -- similar to the keyword \emph{this} in Java -- representing the object (a class instance) that they belong to (a self reference).
 This variable can be used as a starting point for the graph matching specified in a story diagram.
 
 For example, the class diagram in Figure~\ref{fig:SDWithThisClassDiagram} defines a method \fe{findAttribute} for all \fe{Class} objects.
@@ -101,9 +102,9 @@ Typically, model-to-model transformations, consistency checks, or more generally
 
 In both cases, story diagrams can be used to generate executable source code or be executed using an interpreter.
 Besides execution, the formally defined story diagrams can also be analyzed to guarantee certain behavioral properties \cite{Mey09,Zue09}.
-For example, model checking can be used to check if a certain invariant holds
-(e.g.\, that all accessible variables are still accessible after a refactoring operation)
-or if a critical state can ever be reached (e.g.\, if an attribute or method has no parent class after a refactoring operation which would result in an incorrect program).
+For example, model checking can be used to check whether a certain invariant holds
+(e.g.\ that all accessible variables are still accessible after a refactoring operation)
+or if a critical state can ever be reached (e.g.\ if an attribute or method has no parent class after a refactoring operation which would result in an incorrect program).
 
 A complete description of the story diagrams' abstract syntax is given in the Appendix~\ref{sec-reference}.
 There is also a grammar that determines all feasible story diagrams by constraining their structure.
@@ -163,7 +164,7 @@ and performing specified modifications of the found subgraph
 We distinguish two kinds of story nodes: \emph{modifying story nodes} and \emph{matching story nodes}.
 A matching story node contains a story pattern that only matches a specified object structure, but does not change it.
 A modifying story node also performs modifications of the matched object structure.
-For static analyses of graph transformations described with story diagrams,
+For static analyses of model transformations described with story diagrams,
 it is helpful to know which tranformations do not modify the instance model.
 
 
@@ -198,7 +199,7 @@ it is helpful to know which tranformations do not modify the instance model.
   \label{fig:SD-decisions}
 \end{figure}
 
-The behavior of a story node is defined by a story pattern.
+The behavior of a story node is defined by its story pattern.
 Therefore,
 since trying to find a subgraph defined by a story pattern can fail,
 each execution of a story node can also fail.
@@ -317,7 +318,7 @@ This constitutes a loop.
 Finally, the control flow is guided by the activity edge with the guard \fe{\text[end\text]} which leads to the activity node to be executed after the loop.
 Each for-each activity node must have such an outgoing \text[end\text] activity edge.
 
-\todojr{fresh matches, auch fuer maybe\_bound: Behaelt ein maybe\_bound-Knoten ein Binding, was erst im Loop gesetzt wurde? Oder zaehlt dafuer nur, was vor dem Loop schon gebunden war? Letzteres erscheint sinnvoller (Stefan fragen wegen Beispiel)}
+\todojr{fresh matches, auch fuer maybe\_bound: Behaelt ein maybe\_bound-Knoten ein Binding, was erst im Loop gesetzt wurde? Oder zaehlt dafuer nur, was vor dem Loop schon gebunden war? Letzteres erscheint sinnvoller (Stephan fragen wegen Beispiel)}
 
 
 \subsection{Story Diagram Calls (Markus)}
@@ -326,7 +327,7 @@ Story diagram calls are special nodes in a story diagram which are used to invok
 
 As described in Section~\ref{sec:activities}, a story diagram can have an arbitrary number of in and out parameters. When calling a story diagram, concrete arguments have to be assigned to the in parameters. Consequently, if an object variable named \fe{n} is bound somewhere in the story diagram, the identifier \fe{n} can be used to pass this object variable as an argument to a call. Similarly, if the called story diagram has out parameters, those are implicitly bound to their respective names and can be used by specifying object variables of the same name.
 
-In contrast to QVT \cite{QVT}, we do not allow inout parameters. An object that is passed to a story diagram as an in parameter may not be returned as an out parameter.
+In contrast to QVT \cite{QVT}, we do not allow in-out parameters. An object that is passed to a story diagram as an in parameter may not be returned as an out parameter.
 The reason for this is the call-by-reference semantics that is assumed for in parameters. If an object that is passed as an in parameter is modified in the called story diagram, those modifications remain after the called story diagram has terminated. The object in question can be used in the calling story diagram after the call but the call may have modified its attributes or its links.
 
 An example of a story diagram call is shown in Figure~\ref{fig:call}.
@@ -339,7 +340,7 @@ An example of a story diagram call is shown in Figure~\ref{fig:call}.
 \end{center}
 \end{figure}
 
-The first story pattern in Figure~\ref{fig:call}, shows the bound object variable \fe{package}. Two new object variables \fe{class1} and \fe{class2} are bound in that pattern. The next node with the grey background is a story diagram call which is also signified by its label \fe{Call}. Beneath the label, the name of the called story diagram is given, in this case \fe{CreateBidirectionalAssociation}. Assume that the called story diagram has two in parameters of the type \fe{Class} and one out parameter of the type \fe{Association}. The two classes that were bound in the first story pattern, \fe{class1} and \fe{class2} are passed to the call as arguments. They can be used in the story node after the call without passing the back as out parameters. The modifications carried out by the called story diagram (i.e.\ the creation of the \fe{assoc} object and its connection to \fe{class1} and \fe{class2}) are retained after the call terminates.
+The first story pattern in Figure~\ref{fig:call} shows the bound object variable \fe{package}. Two new object variables \fe{class1} and \fe{class2} are bound in that pattern. The next node with the grey background is a story diagram call which is also signified by its label \fe{Call}. Beneath the label, the name of the called story diagram is given, in this case \fe{CreateBidirectionalAssociation}. Assume that the called story diagram has two in parameters of the type \fe{Class} and one out parameter of the type \fe{Association}. The two classes that were bound in the first story pattern, \fe{class1} and \fe{class2} are passed to the call as arguments. They can be used in the story node after the call without passing the back as out parameters. The modifications carried out by the called story diagram (i.e.\ the creation of the \fe{assoc} object and its connection to \fe{class1} and \fe{class2}) are retained after the call terminates.
 The result of the call is bound to the object variable \fe{assoc}. The type of this variable is determined by the out parameter type, i.e., in this case the type Association.
 
 If a story diagram has no out parameters, the keyword \fe{void} follows the colon instead of the out parameter's names (see Figure \ref{fig:SDRemoveInterfaceViolation} for an example).

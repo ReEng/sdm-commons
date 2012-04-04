@@ -108,8 +108,8 @@ The type graph defines different types of nodes and edges and it defines which t
 Additionally, nodes may carry attributes like, e.g., objects in an object-oriented programming language.
 Moreover, the type graph specifies inheritance relations between types of objects, a concept which is also known from object-oriented programming languages. Thereby, a type graph specifies the structure of all possible graphs.
 
-As an example, Figure~\ref{fig:PetrinetTypeGraph} shows a simple type graph for Petrinets.
-The \fe{Petrinet} consists of \fe{Nodes} and \fe{Arcs}.
+As an example, Figure~\ref{fig:PetrinetTypeGraph} shows a simple type graph for petrinets.
+A \fe{Petrinet} consists of \fe{Nodes} and \fe{Arcs}.
 An \fe{Arc} connects two nodes which it refers as \fe{source} and \fe{target}.
 As usual, there exist two types of nodes: \fe{Places} and \fe{Transitions} where \fe{Places} may contain a number of \fe{Tokens}.
 
@@ -126,15 +126,15 @@ In these rules, all nodes and edges are typed over the type graph  and the match
   \label{fig:typedGTRule}
 \end{figure}
 
-Figure~\ref{fig:typedGTRule} shows an example of a typed attributed graph transformation rule using a concrete syntax like in~\cite{EEPT06} that specifies the behavior for a sink.
-In a Petrinet, a sink is a transition which has no outgoing place.
+Figure~\ref{fig:typedGTRule} shows an example of a typed attributed graph transformation rule using a concrete syntax as used by Ehrig et al.~\cite{EEPT06} that specifies the behavior for a sink.
+In a petrinet, a sink is a transition which has no outgoing place.
 Then, the transition consumes tokens without producing new tokens.
 The rule matches a \fe{Place} with a \fe{Token} in its LHS.
 Upon application, the \fe{Token} is deleted.
 The rule, however, may only be applied if the place \fe{p} is connected to a sink which is ensured by the NAC.
 The NAC specifies a subgraph where \fe{p} is connected to a \fe{Transition} which has an outgoing \fe{Arc} to a \fe{Place}.
 If such subgraph can be matched, the rule is not applicable.
-The rule morphisms is indirectly specified by the names of the nodes as proposed in~\cite{EEPT06}.
+The rule morphisms is indirectly specified by the names of the nodes as proposed by Ehrig et al.~\cite{EEPT06}.
 
 
 \section{Model Transformations}
@@ -142,7 +142,7 @@ The rule morphisms is indirectly specified by the names of the nodes as proposed
 
 A model transformation modifies or translates different kinds of models.
 We use graph transformations to specify model transformations formally.
-In the context of model transformations, the a host graph of a graph transformation is called \emph{instance model}\footnote{Thomas K\"{u}hne calls it \emph{token model} \cite{Kue06}.} (or simply model).
+In the context of model transformations, the host graph of a graph transformation is called \emph{instance model}\footnote{Thomas K\"{u}hne calls it \emph{token model} \cite{Kue06}.} (or simply model).
 Instance models are specified in a certain language, often a domain-specific language (DSL)\footnote{The language can be both, textual or graphical.}.
 Thus, the type graph usually defines the \emph{abstract syntax} of the language used and is part of the corresponding \emph{metamodel} \cite{Kue06} for this language.
 By replacing the type graph (the metamodel) we are able to specify transformations for models specified in various languages.
@@ -150,7 +150,7 @@ By replacing the type graph (the metamodel) we are able to specify transformatio
 The type graph or the abstract syntax of the language used to describe the instance models
 is, in our case, described by a set of classes and their relations which define all potential instance models.
 These classes and relations constitute a so-called \emph{type model} (the actual type graph).
-An instance model always contains objects and links (nodes and edges) that are instances of the classes and relations defined in the corresponding type model.
+An instance model always contains \emph{objects} and \emph{links} (nodes and edges) that are instances of the classes and relations defined in the corresponding type model.
 
 If a graph transformation transforms a model based on a given type graph into a model based on the same type graph (modification of the model),
 the transformation is called \emph{endogenous} (also known as \emph{in-place} transformation).
