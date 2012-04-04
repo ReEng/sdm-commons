@@ -1,18 +1,20 @@
-\chapter{Conclusions and Future Work (Markus)} \label{sec:Conclusion}
+\chapter{Conclusions and Future Work} \label{sec:Conclusion}
 
-This chapter sums up the report and sketches the future of story diagrams. In addition, we provide an outlook at future versions of this technical report.
 
-\section{Summary}
+In this technical report, we presented a consolidated version of the endogenous, graphical in-place model transformation language story diagrams. 
+Story diagrams combine imperative modeling of control flow using UML Activity Diagrams which a declarative graph rewriting language called story pattern. 
+Story patterns are based on typed attributed graph transformations and  formally define the behavior of the activity nodes of story diagrams. 
+We briefly covered the foundations and explained the most important language concepts and the concrete syntax of, both, story patterns and story diagrams. 
+That includes the idea of story patterns and their usage in story diagrams as well as a concepts for invoking story diagrams from which other story diagrams. 
+We illustrated these concepts with a comprehensive example that showed the application of several story patterns for the purpose of removing an interface violation in a program. 
 
-In this technical report, we presented the endogenous, graphical in-place model transformation language story diagrams. We briefly covered the foundations and explained the most important language concepts, e.g., the idea of story patterns and their concrete syntax or the composition of story diagrams. We illustrated these concepts with a comprehensive example that showed the application of several story patterns for the purpose of removing an interface violation in a program. We also presented a quick survey of related approaches.
+In the past, story diagrams have proven to be useful, both, as a model transformation language and as a language for specifying behavior of object-oriented programs. 
+In the appendix, we provide the description of a reference implementation of an interpreter for story diagrams. It also contains the technical documentation of the current abstract syntax of story diagrams.
 
-The appendix provides the description of a reference implementation of an interpreter for story diagrams. It also contains the technical documentation of the current abstract syntax of story diagrams.
 
-\section{Future Work}
+Work on and with story diagrams will continue in the future. The new metamodel for story diagrams which is described in detail in Appendix~\ref{sec-reference} has been proposed quite recently \cite{HRvD+11}. It will definitely be extended and refined. This ensures that story diagrams will proceed to form the basis of scientific approaches in such diverse fields as reverse engineering \cite{DMT10} or verification of embedded systems \cite{HSE10}.
 
-Work on and with story diagrams will continue in the future. The new metamodel for story diagrams which is described in detail in Appendix~C has been proposed quite recently \cite{HRvD+11}. It will definitely be extended and refined. This ensures that story diagrams will proceed to form the basis of scientific approaches in such diverse fields as reverse engineering \cite{DMT10} or verification of embedded systems \cite{HSE10}.
-
-As for this report, future versions will elaborate on advanced concepts in story diagrams, like the use of sub patterns in story patterns, complex expressions, and the application of templates. It will also contain concise portrayals of the different approaches that build on story patterns.
+Several advanced concepts of story patterns and story diagrams are currently not presented in this report. We refer to the related publications presented in Sections~\ref{sec:RW_PreviousWork} until these concepts have been included in this report. In future versions will elaborate on advanced concepts in story diagrams, like the use of sub patterns in story patterns, complex expressions, and the application of templates. It will also contain concise portrayals of the different approaches that build on story patterns.
 
 \section*{Acknowledgments}
 
