@@ -11,7 +11,7 @@ We show an example for such type graphs which we use throughout this document in
 \section{Graphs and Graph Transformations}
 \label{sec:foundations:simpleGTS}
 
-Graphs consist of nodes and edges where an edge always connects two nodes. Nodes are used to represent objects and edges denote relationships between these objects. In the course of this document, we assume edges to be directed, i.e., they have a source node and a target node. In the most simple case, neither nodes nor edges have a predefined semantics \cite{Roz97}.
+Graphs consist of nodes and edges where an edge always connects two nodes. Nodes are used to represent objects and edges denote relationships between these objects. In the course of this document, we assume edges to be directed, i.e., they have a source node and a target node. In the most simple case, neither nodes nor edges have a predefined semantics~\cite{Roz97}.
 
 \begin{figure}[htbp]
   \centering
@@ -20,7 +20,7 @@ Graphs consist of nodes and edges where an edge always connects two nodes. Nodes
   \label{fig:simpleGraph}
 \end{figure}
 
-Figure \ref{fig:simpleGraph} shows an example of a simple graph with three nodes and four directed edges. The nodes are visualized as circles, the edges are visualized as arrows. An edge may have the same node as a source and target node. Such an edge is called a \emph{self-edge}. 
+Figure~\ref{fig:simpleGraph} shows an example of a simple graph with three nodes and four directed edges. The nodes are visualized as circles, the edges are visualized as arrows. An edge may have the same node as a source and target node. Such an edge is called a \emph{self-edge}. 
 
 \emph{Graph transformation rules} specify allowed modifications of graphs. They consist of a left-hand side (LHS), a right-hand side (RHS), and a so-called rule morphism. Both, the LHS and the RHS are graphs while the rule morphism specifies which nodes of the LHS and RHS are considered to be the same. This information is required for the application of a graph transformation rule to a graph.
 
@@ -31,9 +31,9 @@ Figure \ref{fig:simpleGraph} shows an example of a simple graph with three nodes
   \label{fig:simpleGTRule}
 \end{figure}
 
-Figure \ref{fig:simpleGTRule} shows an example of a graph transformation rule. The LHS contains only one node with a self-edge. The RHS contains two nodes connected by an edge where the right node of the RHS has a self-edge as well. The rule morphism is visualized by the gray, dotted arrow. It specifies that the node of the LHS and the left node of the RHS are considered to be the same.
+Figure~\ref{fig:simpleGTRule} shows an example of a graph transformation rule. The LHS contains only one node with a self-edge. The RHS contains two nodes connected by an edge where the right node of the RHS has a self-edge as well. The rule morphism is visualized by the gray, dotted arrow. It specifies that the node of the LHS and the left node of the RHS are considered to be the same.
 
-The application of a graph transformation rule to a graph is called a \emph{graph transformation} \cite{EEPT06}. The graph on which the rule is to be applied is called the \emph{host graph}.
+The application of a graph transformation rule to a graph is called a \emph{graph transformation}~\cite{EEPT06}. The graph on which the rule is to be applied is called the \emph{host graph}.
 The application of a graph transformation rule to a graph is performed in three steps. In the first step, an occurrence of the LHS of the graph transformation rule in the host graph is searched. Such an occurrence is called a \emph{match} of the graph transformation rule. If a match has been found, the second step is executed in which all nodes and edges that occur in the LHS but not in the RHS are deleted from the host graph. In this step, the rule morphism is used to decide which nodes do not occur in the RHS. In the third step, all nodes and edges that occur in the RHS but not in the LHS are added to the host graph. After the application of the graph transformation rule, there exists a match of the RHS into the host graph.
 
 \begin{figure}[htbp]
@@ -43,7 +43,9 @@ The application of a graph transformation rule to a graph is performed in three 
   \label{fig:GTApplication}
 \end{figure}
 
-Figure \ref{fig:GTApplication} shows an example of a graph transformation that applies the graph transformation rule of Figure \ref{fig:simpleGTRule} to the graph of Figure \ref{fig:simpleGraph}. The matching of the LHS into the host graph is visualized by a gray, dotted line. Then, the graph transformation rule deletes the self-edge from this node. Afterwards, a new node with a self-edge is created and connected to the previously matched node by an edge. The match of the RHS into the host graph after the rule application is again shown by gray, dotted lines.
+Figure~\ref{fig:GTApplication} shows an example of a graph transformation that applies the graph transformation rule of Figure \ref{fig:simpleGTRule} to the graph of Figure~\ref{fig:simpleGraph}. The matching of the LHS into the host graph is visualized by a gray, dotted line. Then, the graph transformation rule deletes the self-edge from this node. Afterwards, a new node with a self-edge is created and connected to the previously matched node by an edge. The match of the RHS into the host graph after the rule application is again shown by gray, dotted lines.
+
+Formally, identifying a matching of a graph transformation rule in a host graph requires to identify a subgraph of the host graph which is isomorphic to the LHS. This is denoted as the \emph{subgraph isomorphism} problem which is known to be \emph{NP-complete}~\cite{Epp95}. 
 
 In the field of algebraic graph transformations, the two most popular approaches for applying a graph transformation rule to a graph are the
 \emph{double-pushout approach} \cite{Roz97} and the \emph{single-pushout
@@ -102,7 +104,7 @@ it is necessary to distinguish different types of nodes and edges in a graph in 
   \label{fig:PetrinetTypeGraph}
 \end{figure}
 
-Therefore, story patterns are based on \emph{typed attributed graph transformations} \cite{EEPT06}.
+Therefore, \emph{typed attributed graph transformations} \cite{EEPT06} have been defined.
 Typed attributed graph transformations introduce a \emph{type graph} and node attributes.
 The type graph defines different types of nodes and edges and it defines which types of edges are allowed to be used in combination with which types of nodes.
 Additionally, nodes may carry attributes like, e.g., objects in an object-oriented programming language.
@@ -113,7 +115,7 @@ A \fe{Petrinet} consists of \fe{Nodes} and \fe{Arcs}.
 An \fe{Arc} connects two nodes which it refers as \fe{source} and \fe{target}.
 As usual, there exist two types of nodes: \fe{Places} and \fe{Transitions} where \fe{Places} may contain a number of \fe{Tokens}.
 
-The type graphs that may be used with story patterns can be created by using an arbitrary metamodeling language.
+The type graphs can be created, e.g., by using an arbitrary metamodeling language.
 Examples include Ecore~\cite{SBP+08}, MOF~\cite{MOF05}, and UML~\cite{UML23}.
 
 The modifications of a typed attributed graph are specified by typed attributed graph transformation rules.

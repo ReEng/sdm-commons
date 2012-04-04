@@ -51,9 +51,8 @@ Otherwise the execution of the story pattern is aborted.
 In the second step, all objects and links matched to object and link variables annotated with \destroy are deleted. 
 Finally, objects and links are created in the instance model for all variables annotated with \create.
 
-In general, identifying a matching of a story pattern to an instance model includes the \emph{subgraph isomorphism} problem which is \emph{NP-complete}~\cite{Epp95}. 
-Story patterns aim to reduce the computational complexity of the matching process by using bound variables.
-Therefore, we require at least one bound object variable in each story pattern which is used as a starting point for the matching process.
+Story patterns aim to reduce the computational complexity of the matching process (cf. Section~\ref{sec:foundations:simpleGTS}) by using bound variables.
+We require at least one bound object variable in each story pattern which is used as a starting point for the matching process.
 
 \subsection{Objects and Object Variables}
 \label{sec:StoryPatterns:objects}
