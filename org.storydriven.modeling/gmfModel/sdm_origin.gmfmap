@@ -7,10 +7,10 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="../model/sdm.ecore#//activities/Activity/ownedActivityNode"/>
+        href="../model/core.ecore#//activities/Activity/ownedActivityNode"/>
     <ownedChild>
       <domainMetaElement
-          href="../model/sdm.ecore#//activities/StartNode"/>
+          href="../model/core.ecore#//activities/StartNode"/>
       <tool
           xsi:type="gmftool:CreationTool"
           href="sdm.gmftool#//@palette/@tools.1/@tools.1"/>
@@ -20,10 +20,10 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../model/sdm.ecore#//activities/Activity/ownedActivityNode"/>
+        href="../model/core.ecore#//activities/Activity/ownedActivityNode"/>
     <ownedChild>
       <domainMetaElement
-          href="../model/sdm.ecore#//activities/StopNode"/>
+          href="../model/core.ecore#//activities/StopNode"/>
       <tool
           xsi:type="gmftool:CreationTool"
           href="sdm.gmftool#//@palette/@tools.1/@tools.2"/>
@@ -33,10 +33,10 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../model/sdm.ecore#//activities/Activity/ownedActivityNode"/>
+        href="../model/core.ecore#//activities/Activity/ownedActivityNode"/>
     <ownedChild>
       <domainMetaElement
-          href="../model/sdm.ecore#//activities/JunctionNode"/>
+          href="../model/core.ecore#//activities/JunctionNode"/>
       <tool
           xsi:type="gmftool:CreationTool"
           href="sdm.gmftool#//@palette/@tools.1/@tools.3"/>
@@ -46,18 +46,18 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../model/sdm.ecore#//activities/Activity/ownedActivityNode"/>
+        href="../model/core.ecore#//activities/Activity/ownedActivityNode"/>
     <ownedChild>
       <domainMetaElement
-          href="../model/sdm.ecore#//activities/StatementNode"/>
+          href="../model/core.ecore#//activities/StatementNode"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
             href="sdm.gmfgraph#StatementNodeNameLabel"/>
         <features
-            href="../model/sdm.ecore#//NamedElement/name"/>
+            href="../model/core.ecore#//NamedElement/name"/>
         <editableFeatures
-            href="../model/sdm.ecore#//NamedElement/name"/>
+            href="../model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -68,10 +68,10 @@
           compartment="//@nodes.3/@ownedChild/@compartments.0"
           referencedChild="//@nodes.3/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="../model/sdm.ecore#//activities/StatementNode/statementExpression"/>
+            href="../model/core.ecore#//activities/StatementNode/statementExpression"/>
         <ownedChild>
           <domainMetaElement
-              href="../model/sdm.ecore#//expressions/TextualExpression"/>
+              href="../model/core.ecore#//expressions/TextualExpression"/>
           <labelMappings>
             <diagramLabel
                 href="sdm.gmfgraph#ExpressionLabel"/>
@@ -89,18 +89,18 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../model/sdm.ecore#//activities/Activity/ownedActivityNode"/>
+        href="../model/core.ecore#//activities/Activity/ownedActivityNode"/>
     <ownedChild>
       <domainMetaElement
-          href="../model/sdm.ecore#//activities/StructuredNode"/>
+          href="../model/core.ecore#//activities/StructuredNode"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
             href="sdm.gmfgraph#StructuredNodeNameLabel"/>
         <features
-            href="../model/sdm.ecore#//NamedElement/name"/>
+            href="../model/core.ecore#//NamedElement/name"/>
         <editableFeatures
-            href="../model/sdm.ecore#//NamedElement/name"/>
+            href="../model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -111,43 +111,43 @@
           compartment="//@nodes.4/@ownedChild/@compartments.0"
           referencedChild="//@nodes.2/@ownedChild">
         <containmentFeature
-            href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
+            href="../model/core.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0"
           referencedChild="//@nodes.0/@ownedChild">
         <containmentFeature
-            href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
+            href="../model/core.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0"
           referencedChild="//@nodes.1/@ownedChild">
         <containmentFeature
-            href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
+            href="../model/core.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0"
           referencedChild="//@nodes.3/@ownedChild">
         <containmentFeature
-            href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
+            href="../model/core.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0"
           referencedChild="//@nodes.4/@ownedChild">
         <containmentFeature
-            href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
+            href="../model/core.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0"
           referencedChild="//@nodes.5/@ownedChild">
         <containmentFeature
-            href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
+            href="../model/core.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0"
           referencedChild="//@nodes.4/@ownedChild">
         <containmentFeature
-            href="../model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
+            href="../model/core.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
       <compartments
           children="//@nodes.4/@ownedChild/@children.0 //@nodes.4/@ownedChild/@children.1 //@nodes.4/@ownedChild/@children.3 //@nodes.4/@ownedChild/@children.2 //@nodes.4/@ownedChild/@children.4 //@nodes.4/@ownedChild/@children.5 //@nodes.4/@ownedChild/@children.6">
@@ -158,23 +158,23 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../model/sdm.ecore#//activities/Activity/ownedActivityNode"/>
+        href="../model/core.ecore#//activities/Activity/ownedActivityNode"/>
     <ownedChild>
       <domainMetaElement
-          href="../model/sdm.ecore#//activities/ModifyingStoryNode"/>
+          href="../model/core.ecore#//activities/ModifyingStoryNode"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers
             xsi:type="gmfmap:ReferenceNewElementSpec">
           <feature
               xsi:type="ecore:EReference"
-              href="../model/sdm.ecore#//activities/ModifyingStoryNode/ownedRule"/>
+              href="../model/core.ecore#//activities/ModifyingStoryNode/ownedRule"/>
           <newElementInitializers>
             <initializers
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
-                  href="../model/sdm.ecore#//CommentableElement/comment"/>
+                  href="../model/core.ecore#//CommentableElement/comment"/>
               <value
                   body="&quot;&quot;"
                   language="literal"/>
@@ -187,9 +187,9 @@
         <diagramLabel
             href="sdm.gmfgraph#ModifyingStoryNodeNameLabel"/>
         <features
-            href="../model/sdm.ecore#//NamedElement/name"/>
+            href="../model/core.ecore#//NamedElement/name"/>
         <editableFeatures
-            href="../model/sdm.ecore#//NamedElement/name"/>
+            href="../model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -200,28 +200,28 @@
           compartment="//@nodes.5/@ownedChild/@compartments.1"
           referencedChild="//@nodes.5/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="../model/sdm.ecore#//activities/ModifyingStoryNode/ownedRule"/>
+            href="../model/core.ecore#//activities/ModifyingStoryNode/ownedRule"/>
         <ownedChild>
           <domainMetaElement
-              href="../model/sdm.ecore#//patterns/StoryPattern"/>
+              href="../model/core.ecore#//patterns/StoryPattern"/>
           <diagramNode
               href="sdm.gmfgraph#StoryPatternNode"/>
           <children
               compartment="//@nodes.5/@ownedChild/@children.0/@ownedChild/@compartments.0"
               referencedChild="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
             <containmentFeature
-                href="../model/sdm.ecore#//patterns/StoryPattern/variable"/>
+                href="../model/core.ecore#//patterns/StoryPattern/variable"/>
             <ownedChild>
               <domainMetaElement
-                  href="../model/sdm.ecore#//patterns/ObjectVariable"/>
+                  href="../model/core.ecore#//patterns/ObjectVariable"/>
               <labelMappings
                   xsi:type="gmfmap:FeatureLabelMapping">
                 <diagramLabel
                     href="sdm.gmfgraph#ObjectVariableNameLabel"/>
                 <features
-                    href="../model/sdm.ecore#//NamedElement/name"/>
+                    href="../model/core.ecore#//NamedElement/name"/>
                 <editableFeatures
-                    href="../model/sdm.ecore#//NamedElement/name"/>
+                    href="../model/core.ecore#//NamedElement/name"/>
               </labelMappings>
               <labelMappings
                   readOnly="true">
@@ -242,10 +242,10 @@
                   compartment="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.1"
                   referencedChild="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
                 <containmentFeature
-                    href="../model/sdm.ecore#//patterns/ObjectVariable/attributeAssignment"/>
+                    href="../model/core.ecore#//patterns/ObjectVariable/attributeAssignment"/>
                 <ownedChild>
                   <domainMetaElement
-                      href="../model/sdm.ecore#//patterns/AttributeAssignment"/>
+                      href="../model/core.ecore#//patterns/AttributeAssignment"/>
                   <labelMappings>
                     <diagramLabel
                         href="sdm.gmfgraph#ExpressionLabel"/>
@@ -272,19 +272,19 @@
               compartment="//@nodes.5/@ownedChild/@children.0/@ownedChild/@compartments.0"
               referencedChild="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild">
             <containmentFeature
-                href="../model/sdm.ecore#//patterns/StoryPattern/variable"/>
+                href="../model/core.ecore#//patterns/StoryPattern/variable"/>
             <ownedChild>
               <domainMetaElement
-                  href="../model/sdm.ecore#//patterns/PrimitiveVariable"/>
+                  href="../model/core.ecore#//patterns/PrimitiveVariable"/>
               <labelMappings
                   xsi:type="gmfmap:FeatureLabelMapping"
                   editPattern="">
                 <diagramLabel
                     href="sdm.gmfgraph#PrimitiveVariableNameLabel"/>
                 <features
-                    href="../model/sdm.ecore#//NamedElement/name"/>
+                    href="../model/core.ecore#//NamedElement/name"/>
                 <editableFeatures
-                    href="../model/sdm.ecore#//NamedElement/name"/>
+                    href="../model/core.ecore#//NamedElement/name"/>
               </labelMappings>
               <labelMappings
                   readOnly="true">
@@ -322,25 +322,25 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../model/sdm.ecore#//activities/Activity/ownedActivityNode"/>
+        href="../model/core.ecore#//activities/Activity/ownedActivityNode"/>
     <ownedChild>
       <domainMetaElement
-          href="../model/sdm.ecore#//activities/ActivityCallNode"/>
+          href="../model/core.ecore#//activities/ActivityCallNode"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
             href="sdm.gmfgraph#ActivityCallNodeNameLabel"/>
         <features
-            href="../model/sdm.ecore#//NamedElement/name"/>
+            href="../model/core.ecore#//NamedElement/name"/>
         <editableFeatures
-            href="../model/sdm.ecore#//NamedElement/name"/>
+            href="../model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
             href="sdm.gmfgraph#ActivityCallNodeCalledActivityNameLabel"/>
         <features
-            href="../model/sdm.ecore#//NamedElement/name"/>
+            href="../model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -351,9 +351,9 @@
           compartment="//@nodes.6/@ownedChild/@compartments.0"
           referencedChild="//@nodes.6/@ownedChild">
         <containmentFeature
-            href="../model/sdm.ecore#//activities/Activity/ownedActivityNode"/>
+            href="../model/core.ecore#//activities/Activity/ownedActivityNode"/>
         <childrenFeature
-            href="../model/sdm.ecore#//activities/ActivityCallNode/calledActivity"/>
+            href="../model/core.ecore#//activities/ActivityCallNode/calledActivity"/>
       </children>
       <compartments
           children="//@nodes.6/@ownedChild/@children.0">
@@ -364,14 +364,14 @@
   </nodes>
   <links>
     <domainMetaElement
-        href="../model/sdm.ecore#//activities/ActivityEdge"/>
+        href="../model/core.ecore#//activities/ActivityEdge"/>
     <labelMappings
         readOnly="true">
       <diagramLabel
           href="sdm.gmfgraph#ActivityEdgeGuardConstraintLabel"/>
     </labelMappings>
     <containmentFeature
-        href="../model/sdm.ecore#//activities/Activity/ownedActivityEdge"/>
+        href="../model/core.ecore#//activities/Activity/ownedActivityEdge"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="sdm.gmftool#//@palette/@tools.1/@tools.0"/>
@@ -379,16 +379,16 @@
         href="sdm.gmfgraph#ActivityEdgeConnection"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../model/sdm.ecore#//activities/ActivityEdge/source"/>
+        href="../model/core.ecore#//activities/ActivityEdge/source"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../model/sdm.ecore#//activities/ActivityEdge/target"/>
+        href="../model/core.ecore#//activities/ActivityEdge/target"/>
   </links>
   <links>
     <domainMetaElement
-        href="../model/sdm.ecore#//patterns/LinkVariable"/>
+        href="../model/core.ecore#//patterns/LinkVariable"/>
     <containmentFeature
-        href="../model/sdm.ecore#//patterns/StoryPattern/linkVariable"/>
+        href="../model/core.ecore#//patterns/StoryPattern/linkVariable"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="sdm.gmftool#//@palette/@tools.0/@tools.4"/>
@@ -396,18 +396,18 @@
         href="sdm.gmfgraph#LinkVariableConnection"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../model/sdm.ecore#//patterns/AbstractLinkVariable/source"/>
+        href="../model/core.ecore#//patterns/AbstractLinkVariable/source"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../model/sdm.ecore#//patterns/AbstractLinkVariable/target"/>
+        href="../model/core.ecore#//patterns/AbstractLinkVariable/target"/>
   </links>
   <diagram>
     <diagramCanvas
         href="sdm.gmfgraph#modeling"/>
     <domainModel
-        href="../model/sdm.ecore#//activities"/>
+        href="../model/core.ecore#//activities"/>
     <domainMetaElement
-        href="../model/sdm.ecore#//activities/Activity"/>
+        href="../model/core.ecore#//activities/Activity"/>
     <palette
         href="sdm.gmftool#//@palette"/>
   </diagram>

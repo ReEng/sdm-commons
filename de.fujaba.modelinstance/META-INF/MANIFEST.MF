@@ -6,7 +6,7 @@ Bundle-Version: 0.2.0.qualifier
 Bundle-ClassPath: .
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.storydriven.modeling;bundle-version="1.0.0"
+Require-Bundle: org.storydriven.core;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: de.fujaba.modelinstance.ModelInstancePlugin
 Export-Package: de.fujaba.modelinstance,

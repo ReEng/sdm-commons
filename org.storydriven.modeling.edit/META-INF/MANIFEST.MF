@@ -17,6 +17,6 @@ Export-Package: org.storydriven.modeling.activities.expressions.provider,
  org.storydriven.modeling.patterns.provider,
  org.storydriven.modeling.provider,
  org.storydriven.modeling.templates.provider
-Require-Bundle: org.storydriven.modeling;bundle-version="[1.0.0,2.0.0)";visibility:=reexport,
+Require-Bundle: org.storydriven.core;bundle-version="[1.0.0,2.0.0)";visibility:=reexport,
  org.eclipse.uml2.common.edit;bundle-version="[1.5.0,2.0.0)";visibility:=reexport
 Bundle-ActivationPolicy: lazy
