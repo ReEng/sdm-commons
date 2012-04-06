@@ -382,9 +382,9 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
     </profileApplication>
   </uml:Package>
   <Ecore:EReference xmi:id="_mHa4ELw1Ed-Ytrd77fw2LA" isTransient="true" isVolatile="true" base_Property="_HPpYkbLzEd-uk56s-ldeog"/>
-  <Ecore:EPackage xmi:id="_zYCZkLw1Ed-Ytrd77fw2LA" base_Package="bd7155bb-4f57-4868-b74a-5672b1eac640" packageName="" nsPrefix="core" nsURI="http://ns.storydriven.org/core/0.2.0" basePackage="org.storydriven" prefix="Core"/>
+  <Ecore:EPackage xmi:id="_zYCZkLw1Ed-Ytrd77fw2LA" base_Package="bd7155bb-4f57-4868-b74a-5672b1eac640" nsPrefix="core" nsURI="http://www.storydriven.org/core/0.2.0" basePackage="org.storydriven" prefix="Core"/>
   <Ecore:EPackage xmi:id="__POC8Lw1Ed-Ytrd77fw2LA" nsPrefix="sdma" nsURI="http://ns.storydriven.org/sdm/activities/0.1.0" basePackage=""/>
-  <Ecore:EPackage xmi:id="_DWk54Lw2Ed-Ytrd77fw2LA" base_Package="_gsByQLN1Ed-vJ9Qpen_Iuw" nsPrefix="sdme" nsURI="http://ns.storydriven.org/sdm/expressions/0.1.0"/>
+  <Ecore:EPackage xmi:id="_DWk54Lw2Ed-Ytrd77fw2LA" base_Package="_gsByQLN1Ed-vJ9Qpen_Iuw" nsPrefix="expr" nsURI="http://www.storydriven.org/core/expressions/0.2.0"/>
   <Ecore:EPackage xmi:id="_tzOfoLxVEd-Ytrd77fw2LA" nsPrefix="sdmp" nsURI="http://ns.storydriven.org/sdm/patterns/0.1.0"/>
   <Ecore:EReference xmi:id="_TmA58LxXEd-Ytrd77fw2LA" isTransient="true"/>
   <Ecore:EPackage xmi:id="_G52pALxaEd-Ytrd77fw2LA" nsPrefix="sdmt" nsURI="http://ns.storydriven.org/sdm/templates/0.1.0"/>

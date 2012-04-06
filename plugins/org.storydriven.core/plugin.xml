@@ -14,11 +14,11 @@
 	<extension point="org.eclipse.emf.ecore.generated_package">
 		<package
 			uri="http://ns.storydriven.org/core/0.2.0"
-			class="org.storydriven.modeling.SDMPackage"
+			class="org.storydriven.core.CorePackage"
 			genModel="model/core.uml.genmodel"/>
 		<package
 			uri="http://ns.storydriven.org/core/expressions/0.2.0"
-			class="org.storydriven.modeling.expressions.ExpressionsPackage"
+			class="org.storydriven.core.expressions.ExpressionsPackage"
 			genModel="model/core.uml.genmodel"/>
 	</extension>
 
