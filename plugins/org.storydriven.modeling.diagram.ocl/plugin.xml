@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
+<?eclipse version="3.5"?>
+
 <plugin>
-   <extension
-         point="org.storydriven.modeling.diagram.custom.expressionSourceViewerExtension">
-      <expressionSourceViewer
-            expressionLanguage="OCL"
-            sourceViewerProvider="org.storydriven.modeling.diagram.ocl.OCLSourceViewerProvider"
-            version="1.0">
-      </expressionSourceViewer>
-   </extension>
-   <extension
-         point="org.storydriven.modeling.expressionLanguagesExtension">
-      <expressionLanguage
-            expressionLanguage="OCL"
-            version="1.0">
-      </expressionLanguage>
-   </extension>
+	<extension point="org.storydriven.modeling.diagram.custom.expressionSourceViewerExtension">
+		<expressionSourceViewer
+			expressionLanguage="OCL"
+			sourceViewerProvider="org.storydriven.modeling.diagram.ocl.OCLSourceViewerProvider"
+			version="1.0"/>
+		</extension>
+
+	<extension point="org.storydriven.core.expressionLanguagesExtension">
+		<expressionLanguage
+			expressionLanguage="OCL"
+			version="1.0">
+		</expressionLanguage>
+	</extension>
 
 </plugin>

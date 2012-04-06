@@ -13,7 +13,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_CFov6LnxEeC8CvP5OVqITA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_CFe-4bnxEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="core.ecore#//expressions/ComparisonExpression"/>
+    <element xmi:type="ecore:EClass" href="../core.ecore#//expressions/ComparisonExpression"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CFe-4rnxEeC8CvP5OVqITA" x="15" y="91"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_CFov6bnxEeC8CvP5OVqITA" type="1001">
@@ -29,7 +29,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_CFov9LnxEeC8CvP5OVqITA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_CFov6rnxEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="core.ecore#//expressions/TextualExpression"/>
+    <element xmi:type="ecore:EClass" href="../core.ecore#//expressions/TextualExpression"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CFov67nxEeC8CvP5OVqITA" x="47" y="170"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_CFov9bnxEeC8CvP5OVqITA" type="1005">
@@ -40,7 +40,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_CFov_LnxEeC8CvP5OVqITA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_CFov9rnxEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EEnum" href="core.ecore#//expressions/ComparingOperator"/>
+    <element xmi:type="ecore:EEnum" href="../core.ecore#//expressions/ComparingOperator"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CFov97nxEeC8CvP5OVqITA" x="15" y="345"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_CFov_bnxEeC8CvP5OVqITA" type="1001">
@@ -56,7 +56,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_CFowCLnxEeC8CvP5OVqITA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_CFov_rnxEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="core.ecore#//expressions/LiteralExpression"/>
+    <element xmi:type="ecore:EClass" href="../core.ecore#//expressions/LiteralExpression"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CFov_7nxEeC8CvP5OVqITA" x="306" y="264"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_CFowCbnxEeC8CvP5OVqITA" type="1001">
@@ -72,30 +72,30 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_CFowFLnxEeC8CvP5OVqITA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_CFowCrnxEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="core.ecore#//expressions/BinaryExpression"/>
+    <element xmi:type="ecore:EClass" href="../core.ecore#//expressions/BinaryExpression"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CFowC7nxEeC8CvP5OVqITA" x="258" y="95" width="224"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_CFowHbnxEeC8CvP5OVqITA" type="1005">
     <children xmi:type="notation:Node" xmi:id="_CFowILnxEeC8CvP5OVqITA" type="4010"/>
     <children xmi:type="notation:Node" xmi:id="_CFowIbnxEeC8CvP5OVqITA" type="5008">
       <children xmi:type="notation:Node" xmi:id="_JvsRkrnxEeC8CvP5OVqITA" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="core.ecore#//expressions/LogicOperator/AND"/>
+        <element xmi:type="ecore:EEnumLiteral" href="../core.ecore#//expressions/LogicOperator/AND"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_JvsRk7nxEeC8CvP5OVqITA"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_JvsRlLnxEeC8CvP5OVqITA" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="core.ecore#//expressions/LogicOperator/OR"/>
+        <element xmi:type="ecore:EEnumLiteral" href="../core.ecore#//expressions/LogicOperator/OR"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_JvsRlbnxEeC8CvP5OVqITA"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_JvsRlrnxEeC8CvP5OVqITA" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="core.ecore#//expressions/LogicOperator/XOR"/>
+        <element xmi:type="ecore:EEnumLiteral" href="../core.ecore#//expressions/LogicOperator/XOR"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_JvsRl7nxEeC8CvP5OVqITA"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_JvsRmLnxEeC8CvP5OVqITA" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="core.ecore#//expressions/LogicOperator/IMPLY"/>
+        <element xmi:type="ecore:EEnumLiteral" href="../core.ecore#//expressions/LogicOperator/IMPLY"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_JvsRmbnxEeC8CvP5OVqITA"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_JvsRmrnxEeC8CvP5OVqITA" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="core.ecore#//expressions/LogicOperator/EQUIVALENT"/>
+        <element xmi:type="ecore:EEnumLiteral" href="../core.ecore#//expressions/LogicOperator/EQUIVALENT"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_JvsRm7nxEeC8CvP5OVqITA"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_CFowIrnxEeC8CvP5OVqITA"/>
@@ -103,7 +103,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_CFowJLnxEeC8CvP5OVqITA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_CFowHrnxEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EEnum" href="core.ecore#//expressions/LogicOperator"/>
+    <element xmi:type="ecore:EEnum" href="../core.ecore#//expressions/LogicOperator"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CFowH7nxEeC8CvP5OVqITA" x="475" y="345"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_CFowJbnxEeC8CvP5OVqITA" type="1001">
@@ -119,7 +119,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_CFowMLnxEeC8CvP5OVqITA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_CFowJrnxEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="core.ecore#//expressions/ArithmeticExpression"/>
+    <element xmi:type="ecore:EClass" href="../core.ecore#//expressions/ArithmeticExpression"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CFowJ7nxEeC8CvP5OVqITA" x="513" y="91"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_CFowMbnxEeC8CvP5OVqITA" type="1001">
@@ -135,7 +135,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_CFowPLnxEeC8CvP5OVqITA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_CFowMrnxEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="core.ecore#//expressions/NotExpression"/>
+    <element xmi:type="ecore:EClass" href="../core.ecore#//expressions/NotExpression"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CFowM7nxEeC8CvP5OVqITA" x="615" y="190"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_CFowPbnxEeC8CvP5OVqITA" type="1001">
@@ -151,7 +151,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_CFowSLnxEeC8CvP5OVqITA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_CFowPrnxEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="core.ecore#//expressions/BinaryLogicExpression"/>
+    <element xmi:type="ecore:EClass" href="../core.ecore#//expressions/BinaryLogicExpression"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CFowP7nxEeC8CvP5OVqITA" x="279" y="15"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_CFowSbnxEeC8CvP5OVqITA" type="1001">
@@ -167,7 +167,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_CFowVLnxEeC8CvP5OVqITA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_CFowSrnxEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="core.ecore#//expressions/Expression"/>
+    <element xmi:type="ecore:EClass" href="../core.ecore#//expressions/Expression"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CFowS7nxEeC8CvP5OVqITA" x="258" y="191" width="219"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_CFowVbnxEeC8CvP5OVqITA" type="1005">
@@ -178,11 +178,11 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_CFowXLnxEeC8CvP5OVqITA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_CFowVrnxEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EEnum" href="core.ecore#//expressions/ArithmeticOperator"/>
+    <element xmi:type="ecore:EEnum" href="../core.ecore#//expressions/ArithmeticOperator"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CFowV7nxEeC8CvP5OVqITA" x="260" y="345"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_JWwqsejYEd-Fwa7sRg6b-g"/>
-  <element xmi:type="ecore:EPackage" href="core.ecore#//expressions"/>
+  <element xmi:type="ecore:EPackage" href="../core.ecore#//expressions"/>
   <edges xmi:type="notation:Edge" xmi:id="_CGFb0LnxEeC8CvP5OVqITA" type="3003" source="_CFe-4LnxEeC8CvP5OVqITA" target="_CFowCbnxEeC8CvP5OVqITA">
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_CGFb0bnxEeC8CvP5OVqITA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_CGFb0rnxEeC8CvP5OVqITA" fontName="Segoe UI"/>
@@ -216,7 +216,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_CGOlxbnxEeC8CvP5OVqITA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_CGOlxrnxEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="core.ecore#//expressions/BinaryExpression/leftExpression"/>
+    <element xmi:type="ecore:EReference" href="../core.ecore#//expressions/BinaryExpression/leftExpression"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CGOlx7nxEeC8CvP5OVqITA" points="[0, 0, 0, -53]$[0, 53, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CG-MpLnxEeC8CvP5OVqITA" id="(0.026785714285714284,1.0116279069767442)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CG-MpbnxEeC8CvP5OVqITA" id="(0.0273972602739726,0.011627906976744186)"/>
@@ -230,7 +230,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_CGOlzbnxEeC8CvP5OVqITA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_CGOlzrnxEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="core.ecore#//expressions/BinaryExpression/rightExpression"/>
+    <element xmi:type="ecore:EReference" href="../core.ecore#//expressions/BinaryExpression/rightExpression"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CGOlz7nxEeC8CvP5OVqITA" points="[0, 0, 0, -53]$[0, 53, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CG-MornxEeC8CvP5OVqITA" id="(0.5178571428571429,0.8372093023255814)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CG-Mo7nxEeC8CvP5OVqITA" id="(0.5114155251141552,0.13953488372093023)"/>
@@ -268,7 +268,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_CGYWwbnxEeC8CvP5OVqITA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_CGYWwrnxEeC8CvP5OVqITA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="core.ecore#//expressions/NotExpression/negatedExpression"/>
+    <element xmi:type="ecore:EReference" href="../core.ecore#//expressions/NotExpression/negatedExpression"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CGYWw7nxEeC8CvP5OVqITA" points="[0, 0, 30, 0]$[-30, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CG-MqLnxEeC8CvP5OVqITA" id="(0.004672897196261682,0.1660205929778343)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CG-MqbnxEeC8CvP5OVqITA" id="(1.0,0.16279069767441862)"/>

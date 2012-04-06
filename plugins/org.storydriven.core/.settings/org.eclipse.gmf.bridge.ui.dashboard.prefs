@@ -1,7 +1,0 @@
-eclipse.preferences.version=1
-gmf_dashboard/domainGenerationModel=platform\:/resource/org.storydriven.core/model/sdm.uml.genmodel
-gmf_dashboard/domainModel=platform\:/resource/org.storydriven.core/model/core.ecore
-gmf_dashboard/generationModel=platform\:/resource/org.storydriven.core/gmfModel/sdm.gmfgen
-gmf_dashboard/graphicalDefinitionModel=platform\:/resource/org.storydriven.core/gmfModel/sdm.gmfgraph
-gmf_dashboard/mappingModel=platform\:/resource/org.storydriven.core/gmfModel/sdm.gmfmap
-gmf_dashboard/toolingDefinitionModel=platform\:/resource/org.storydriven.core/gmfModel/sdm.gmftool
