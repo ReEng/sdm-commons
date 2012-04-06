@@ -7,12 +7,9 @@
 package de.fujaba.modelinstance.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
-import org.storydriven.modeling.provider.SDMEditPlugin;
+import org.storydriven.core.provider.CoreEditPlugin;
 
 /**
  * This is the central singleton for the Modelinstance edit plugin.
@@ -46,8 +43,8 @@ public final class ModelinstanceEditPlugin extends EMFPlugin {
 	public ModelinstanceEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     CoreEditPlugin.INSTANCE,
 		     EcoreEditPlugin.INSTANCE,
-		     SDMEditPlugin.INSTANCE,
 		   });
 	}
 

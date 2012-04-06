@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_LDTCUH9NEeGNztBIPH6FYg" documentation="Edition Context for core GenPackage">
+    <categories xmi:id="_LDUQcH9NEeGNztBIPH6FYg" name="core"/>
+    <model href="platform:/resource/org.storydriven.core/model/core.uml.genmodel#//core"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_LDUQcX9NEeGNztBIPH6FYg" documentation="Edition Context for expressions GenPackage">
+    <categories xmi:id="_LDUQcn9NEeGNztBIPH6FYg" name="expressions">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_LDUQc39NEeGNztBIPH6FYg" name="TextualExpression" views="_LDUQiX9NEeGNztBIPH6FYg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_LDUQdH9NEeGNztBIPH6FYg" name="comment" views="_LDUQi39NEeGNztBIPH6FYg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_LDUQdX9NEeGNztBIPH6FYg" name="expressionText" views="_LDUQjH9NEeGNztBIPH6FYg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/TextualExpression/expressionText"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_LDUQdn9NEeGNztBIPH6FYg" name="language" views="_LDUQjX9NEeGNztBIPH6FYg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/TextualExpression/language"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_LDUQd39NEeGNztBIPH6FYg" name="languageVersion" views="_LDUQjn9NEeGNztBIPH6FYg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/TextualExpression/languageVersion"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/TextualExpression"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_LDUQeH9NEeGNztBIPH6FYg" name="LiteralExpression" views="_LDUQj39NEeGNztBIPH6FYg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_LDUQeX9NEeGNztBIPH6FYg" name="comment" views="_LDUQkX9NEeGNztBIPH6FYg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_LDUQen9NEeGNztBIPH6FYg" name="value" views="_LDUQkn9NEeGNztBIPH6FYg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/LiteralExpression/value"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_LDUQe39NEeGNztBIPH6FYg" name="valueType" views="_LDUQk39NEeGNztBIPH6FYg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/LiteralExpression/valueType"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/LiteralExpression"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_LDUQfH9NEeGNztBIPH6FYg" name="NotExpression" views="_LDUQlH9NEeGNztBIPH6FYg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_LDUQfX9NEeGNztBIPH6FYg" name="comment" views="_LDUQln9NEeGNztBIPH6FYg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/NotExpression"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_LDUQfn9NEeGNztBIPH6FYg" name="ComparisonExpression" views="_LDUQl39NEeGNztBIPH6FYg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_LDUQf39NEeGNztBIPH6FYg" name="comment" views="_LDUQmX9NEeGNztBIPH6FYg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_LDUQgH9NEeGNztBIPH6FYg" name="operator" views="_LDUQmn9NEeGNztBIPH6FYg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/ComparisonExpression/operator"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/ComparisonExpression"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_LDUQgX9NEeGNztBIPH6FYg" name="ArithmeticExpression" views="_LDUQm39NEeGNztBIPH6FYg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_LDUQgn9NEeGNztBIPH6FYg" name="comment" views="_LDUQnX9NEeGNztBIPH6FYg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_LDUQg39NEeGNztBIPH6FYg" name="operator" views="_LDUQnn9NEeGNztBIPH6FYg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/ArithmeticExpression/operator"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/ArithmeticExpression"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_LDUQhH9NEeGNztBIPH6FYg" name="BinaryLogicExpression" views="_LDUQn39NEeGNztBIPH6FYg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_LDUQhX9NEeGNztBIPH6FYg" name="comment" views="_LDUQoX9NEeGNztBIPH6FYg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_LDUQhn9NEeGNztBIPH6FYg" name="operator" views="_LDUQon9NEeGNztBIPH6FYg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/BinaryLogicExpression/operator"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.core/model/core.ecore#//expressions/BinaryLogicExpression"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.storydriven.core/model/core.uml.genmodel#//core/expressions"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_LDUQh39NEeGNztBIPH6FYg" documentation="Views repository for expressions GenPackage" name="expressions">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_LDUQiH9NEeGNztBIPH6FYg" name="expressions">
+      <views xmi:id="_LDUQiX9NEeGNztBIPH6FYg" name="TextualExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_LDUQin9NEeGNztBIPH6FYg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_LDUQi39NEeGNztBIPH6FYg" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_LDUQjH9NEeGNztBIPH6FYg" name="expressionText">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_LDUQjX9NEeGNztBIPH6FYg" name="language">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_LDUQjn9NEeGNztBIPH6FYg" name="languageVersion">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_LDUQj39NEeGNztBIPH6FYg" name="LiteralExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_LDUQkH9NEeGNztBIPH6FYg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_LDUQkX9NEeGNztBIPH6FYg" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_LDUQkn9NEeGNztBIPH6FYg" name="value">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_LDUQk39NEeGNztBIPH6FYg" name="valueType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_LDUQlH9NEeGNztBIPH6FYg" name="NotExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_LDUQlX9NEeGNztBIPH6FYg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_LDUQln9NEeGNztBIPH6FYg" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_LDUQl39NEeGNztBIPH6FYg" name="ComparisonExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_LDUQmH9NEeGNztBIPH6FYg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_LDUQmX9NEeGNztBIPH6FYg" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_LDUQmn9NEeGNztBIPH6FYg" name="operator">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_LDUQm39NEeGNztBIPH6FYg" name="ArithmeticExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_LDUQnH9NEeGNztBIPH6FYg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_LDUQnX9NEeGNztBIPH6FYg" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_LDUQnn9NEeGNztBIPH6FYg" name="operator">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_LDUQn39NEeGNztBIPH6FYg" name="BinaryLogicExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_LDUQoH9NEeGNztBIPH6FYg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_LDUQoX9NEeGNztBIPH6FYg" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_LDUQon9NEeGNztBIPH6FYg" name="operator">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_LDUQo39NEeGNztBIPH6FYg" documentation="Views repository for core GenPackage" name="core">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_LDUQpH9NEeGNztBIPH6FYg" name="core"/>
+  </eef-views:ViewsRepository>
+</xmi:XMI>

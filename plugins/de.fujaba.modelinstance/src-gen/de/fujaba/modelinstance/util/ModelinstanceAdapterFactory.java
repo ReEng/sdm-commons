@@ -7,11 +7,14 @@
 package de.fujaba.modelinstance.util;
 
 import de.fujaba.modelinstance.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+
+import de.fujaba.modelinstance.ModelElementCategory;
+import de.fujaba.modelinstance.ModelinstancePackage;
+import de.fujaba.modelinstance.RootNode;
 
 
 /**

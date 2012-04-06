@@ -7,7 +7,6 @@
 package de.fujaba.modelinstance.util;
 
 import de.fujaba.modelinstance.*;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -15,6 +14,10 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import de.fujaba.modelinstance.ModelElementCategory;
+import de.fujaba.modelinstance.ModelinstancePackage;
+import de.fujaba.modelinstance.RootNode;
 
 
 /**

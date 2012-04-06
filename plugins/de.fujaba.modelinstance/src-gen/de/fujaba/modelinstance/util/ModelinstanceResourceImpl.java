@@ -7,7 +7,6 @@
 package de.fujaba.modelinstance.util;
 
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
 /**

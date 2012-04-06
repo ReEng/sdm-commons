@@ -1,17 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Storydriven Edit-Support (Extended)
-Bundle-SymbolicName: org.storydriven.modeling.edit.eef;singleton:=true
+Bundle-SymbolicName: org.storydriven.core.edit.eef;singleton:=true
 Bundle-Version: 0.2.0.qualifier
 Require-Bundle: org.eclipse.emf.eef.runtime;bundle-version="0.9.1",
- org.storydriven.modeling.edit;visibility:=reexport
-Export-Package: org.storydriven.modeling.activities.expressions.providers,
- org.storydriven.modeling.activities.providers,
- org.storydriven.modeling.calls.expressions.providers,
- org.storydriven.modeling.calls.providers,
- org.storydriven.modeling.expressions.providers,
- org.storydriven.modeling.patterns.expressions.providers,
- org.storydriven.modeling.patterns.providers,
- org.storydriven.modeling.providers,
- org.storydriven.modeling.templates.providers
+ org.storydriven.core.edit;visibility:=reexport
+Export-Package: org.storydriven.core.expressions.providers,
+ org.storydriven.core.providers
 Bundle-Vendor: Fujaba Community made up of Heinz Nixdorf Institute Paderborn, Technische Universität Darmstadt, University of Kassel, Hasso Plattner Institute Potsdam, Yatta Solutions GmbH

@@ -22,11 +22,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.modeling.activities.ActivitiesFactory;
-import org.storydriven.modeling.activities.expressions.ExpressionsFactory;
-import org.storydriven.modeling.calls.CallsFactory;
-import org.storydriven.modeling.patterns.PatternsFactory;
-import org.storydriven.modeling.templates.TemplatesFactory;
+import org.storydriven.core.expressions.ExpressionsFactory;
 
 import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.modelinstance.ModelinstancePackage;
@@ -162,202 +158,32 @@ public class ModelElementCategoryItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ActivitiesFactory.eINSTANCE.createExceptionVariable()));
+				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ActivitiesFactory.eINSTANCE.createActivityEdge()));
+				 ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ActivitiesFactory.eINSTANCE.createActivity()));
+				 ExpressionsFactory.eINSTANCE.createNotExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+				 ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ActivitiesFactory.eINSTANCE.createMatchingStoryNode()));
+				 ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ActivitiesFactory.eINSTANCE.createStructuredNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ActivitiesFactory.eINSTANCE.createJunctionNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ActivitiesFactory.eINSTANCE.createStartNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ActivitiesFactory.eINSTANCE.createStatementNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ActivitiesFactory.eINSTANCE.createStopNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ActivitiesFactory.eINSTANCE.createActivityCallNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ActivitiesFactory.eINSTANCE.createModifyingStoryNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createTextualExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createNotExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createComparisonExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 CallsFactory.eINSTANCE.createParameterBinding()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 CallsFactory.eINSTANCE.createOpaqueCallable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE.createMethodCallExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 org.storydriven.modeling.calls.expressions.ExpressionsFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 PatternsFactory.eINSTANCE.createObjectVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 PatternsFactory.eINSTANCE.createLinkConstraint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 PatternsFactory.eINSTANCE.createObjectSetVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 PatternsFactory.eINSTANCE.createPrimitiveVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 PatternsFactory.eINSTANCE.createPath()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 PatternsFactory.eINSTANCE.createLinkVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 PatternsFactory.eINSTANCE.createContainmentRelation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 PatternsFactory.eINSTANCE.createStoryPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 PatternsFactory.eINSTANCE.createMatchingPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 PatternsFactory.eINSTANCE.createContainerVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 TemplatesFactory.eINSTANCE.createTemplateBinding()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 TemplatesFactory.eINSTANCE.createPropertyBinding()));
+				 ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 	}
 
 	/**

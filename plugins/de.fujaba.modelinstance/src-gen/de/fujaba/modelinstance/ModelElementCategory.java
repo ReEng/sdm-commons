@@ -8,7 +8,7 @@ package de.fujaba.modelinstance;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.modeling.ExtendableElement;
+import org.storydriven.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ import org.storydriven.modeling.ExtendableElement;
 public interface ModelElementCategory extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Model Elements</b></em>' containment reference list.
-	 * The list contents are of type {@link org.storydriven.modeling.ExtendableElement}.
+	 * The list contents are of type {@link org.storydriven.core.ExtendableElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Model Elements</em>' containment reference list isn't clear,

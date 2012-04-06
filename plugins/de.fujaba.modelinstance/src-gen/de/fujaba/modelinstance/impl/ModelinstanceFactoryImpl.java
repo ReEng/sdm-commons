@@ -7,12 +7,16 @@
 package de.fujaba.modelinstance.impl;
 
 import de.fujaba.modelinstance.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.fujaba.modelinstance.ModelElementCategory;
+import de.fujaba.modelinstance.ModelinstanceFactory;
+import de.fujaba.modelinstance.ModelinstancePackage;
+import de.fujaba.modelinstance.RootNode;
 
 
 /**

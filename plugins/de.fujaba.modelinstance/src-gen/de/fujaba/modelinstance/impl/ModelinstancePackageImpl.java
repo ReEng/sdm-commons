@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.storydriven.modeling.SDMPackage;
+import org.storydriven.core.CorePackage;
 
 import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.modelinstance.ModelinstanceFactory;
@@ -90,7 +90,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		isInited = true;
 
 		// Initialize simple dependencies
-		SDMPackage.eINSTANCE.eClass();
+		CorePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theModelinstancePackage.createPackageContents();
@@ -242,7 +242,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 
 		// Obtain other dependent packages
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -256,7 +256,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		initEReference(getRootNode_EcoreDataTypes(), theEcorePackage.getEDataType(), null, "ecoreDataTypes", null, 0, -1, RootNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelElementCategoryEClass, ModelElementCategory.class, "ModelElementCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelElementCategory_ModelElements(), theSDMPackage.getExtendableElement(), null, "modelElements", null, 0, -1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelElementCategory_ModelElements(), theCorePackage.getExtendableElement(), null, "modelElements", null, 0, -1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModelElementCategory_Key(), ecorePackage.getEString(), "key", null, 0, 1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModelElementCategory_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

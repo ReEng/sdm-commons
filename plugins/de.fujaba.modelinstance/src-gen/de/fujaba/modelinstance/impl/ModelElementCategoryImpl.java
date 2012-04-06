@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.modeling.ExtendableElement;
+import org.storydriven.core.ExtendableElement;
 
 import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.modelinstance.ModelInstancePlugin;
