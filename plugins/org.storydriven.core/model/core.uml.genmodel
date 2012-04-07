@@ -69,8 +69,8 @@
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//NamedElement">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//NamedElement/name"/>
     </genClasses>
-    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Expressions" disposableProviderFactory="true"
-        fileExtensions="sd_expressions" ecorePackage="core.ecore#//expressions">
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Expressions" basePackage="org.storydriven.core"
+        disposableProviderFactory="true" fileExtensions="sd_expressions" ecorePackage="core.ecore#//expressions">
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/LogicOperator">
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/LogicOperator/AND"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/LogicOperator/OR"/>

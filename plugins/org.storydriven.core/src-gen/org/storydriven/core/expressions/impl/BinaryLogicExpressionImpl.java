@@ -60,7 +60,7 @@ public class BinaryLogicExpressionImpl extends BinaryExpressionImpl implements
 	 */
 	protected BinaryLogicExpressionImpl() {
 		super();
-	      updateGenericType(EcorePackage.Literals.EBOOLEAN, null);
+		updateGenericType(EcorePackage.Literals.EBOOLEAN, null);
 	}
 
 	/**

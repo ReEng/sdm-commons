@@ -542,7 +542,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 				source,
 				new String[] {
 						"documentation",
-						"The modeling package is the root package for the story diagram meta-model. It defines several abstract super classes which implement an extension mechanism as well as recurring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element." });
+						"The core package is the root package for the storydriven core meta-model. It defines several abstract super classes which implement an extension mechanism as well as recurring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element." });
 		addAnnotation(
 				typedElementEClass,
 				source,

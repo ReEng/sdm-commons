@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EcorePackage;
  * </ul>
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * The modeling package is the root package for the story diagram meta-model. It defines several abstract super classes which implement an extension mechanism as well as recurring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element.
+ * The core package is the root package for the storydriven core meta-model. It defines several abstract super classes which implement an extension mechanism as well as recurring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element.
  * <!-- end-model-doc -->
  * @see org.storydriven.core.CoreFactory
  * @model kind="package"
@@ -1223,11 +1223,11 @@ public interface CorePackage extends EPackage {
 	int NAMED_ELEMENT_OPERATION_COUNT = EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	    * The extension annotation namespace URI.
-	    * <!-- begin-user-doc --> <!-- end-user-doc -->
-	    * @generated NOT
-	    */
-	   String EXTENSION_NS_URI = "http://ns.storydriven.org/sdm/extension";
+	 * The extension annotation namespace URI.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	String EXTENSION_NS_URI = "http://ns.storydriven.org/sdm/extension";
 
 	/**
 	 * Returns the meta object for class '{@link org.storydriven.core.TypedElement <em>Typed Element</em>}'.
