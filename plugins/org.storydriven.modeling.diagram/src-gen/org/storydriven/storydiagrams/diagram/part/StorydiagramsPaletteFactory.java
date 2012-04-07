@@ -73,9 +73,9 @@ public class StorydiagramsPaletteFactory {
 				Messages.ModifyingStoryNode1CreationTool_desc, types);
 		entry.setId("createModifyingStoryNode1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/ModifyingStoryNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/ModifyingStoryNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/ModifyingStoryNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/ModifyingStoryNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -90,9 +90,9 @@ public class StorydiagramsPaletteFactory {
 						.singletonList(StorydiagramsElementTypes.ObjectVariable_3012));
 		entry.setId("createObjectVariableNode2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/ObjectVariableNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/ObjectVariableNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/ObjectVariableNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/ObjectVariableNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -107,9 +107,9 @@ public class StorydiagramsPaletteFactory {
 						.singletonList(StorydiagramsElementTypes.PrimitiveVariable_3014));
 		entry.setId("createPrimitiveVariableNode3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/PrimitiveVariableNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/PrimitiveVariableNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/PrimitiveVariableNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/PrimitiveVariableNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -124,9 +124,9 @@ public class StorydiagramsPaletteFactory {
 						.singletonList(StorydiagramsElementTypes.AttributeAssignment_3013));
 		entry.setId("createAttributeAssignment4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/AttributeAssignment.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/AttributeAssignment.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/AttributeAssignment.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/AttributeAssignment.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -141,9 +141,9 @@ public class StorydiagramsPaletteFactory {
 						.singletonList(StorydiagramsElementTypes.LinkVariable_4002));
 		entry.setId("createLinkVariable5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/LinkVariable.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/LinkVariable.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/LinkVariable.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/LinkVariable.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -158,9 +158,9 @@ public class StorydiagramsPaletteFactory {
 						.singletonList(StorydiagramsElementTypes.ActivityEdge_4001));
 		entry.setId("createActivityEdge1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/ActivityEdge.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/ActivityEdge.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/ActivityEdge.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/ActivityEdge.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -176,9 +176,9 @@ public class StorydiagramsPaletteFactory {
 				Messages.StartNode2CreationTool_desc, types);
 		entry.setId("createStartNode2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/StartNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/StartNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/StartNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/StartNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -194,9 +194,9 @@ public class StorydiagramsPaletteFactory {
 				Messages.StopNode3CreationTool_desc, types);
 		entry.setId("createStopNode3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/StopNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/StopNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/StopNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/StopNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -212,9 +212,9 @@ public class StorydiagramsPaletteFactory {
 				Messages.JunctionNode4CreationTool_desc, types);
 		entry.setId("createJunctionNode4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/JunctionNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/JunctionNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/objects16/JunctionNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/objects16/JunctionNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -230,9 +230,9 @@ public class StorydiagramsPaletteFactory {
 				Messages.StructuredNode5CreationTool_desc, types);
 		entry.setId("createStructuredNode5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/StructuredNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/full/obj16/StructuredNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/StructuredNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/full/obj16/StructuredNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -248,9 +248,9 @@ public class StorydiagramsPaletteFactory {
 				Messages.StatementNode6CreationTool_desc, types);
 		entry.setId("createStatementNode6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/StatementNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/full/obj16/StatementNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/StatementNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/full/obj16/StatementNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -265,9 +265,9 @@ public class StorydiagramsPaletteFactory {
 						.singletonList(StorydiagramsElementTypes.ActivityCallNode_2008));
 		entry.setId("createActivityCallNode7CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/ActivityCallNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/full/obj16/ActivityCallNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(StorydiagramsDiagramEditorPlugin
-				.findImageDescriptor("/org.storydriven.modeling.diagram.custom/icons/full/obj16/ActivityCallNode.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/full/obj16/ActivityCallNode.gif")); //$NON-NLS-1$
 		return entry;
 	}
 

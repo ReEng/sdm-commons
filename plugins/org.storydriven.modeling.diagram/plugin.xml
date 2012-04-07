@@ -119,32 +119,32 @@
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
-            id="org.storydriven.modeling.diagram.general"
-            name="%prefpage.org.storydriven.modeling.diagram.general"
+            id="org.storydriven.storydiagrams.diagram.general"
+            name="%prefpage.org.storydriven.storydiagrams.diagram.general"
             class="org.storydriven.storydiagrams.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            id="org.storydriven.modeling.diagram.appearance"
-            name="%prefpage.org.storydriven.modeling.diagram.appearance"
-            category="org.storydriven.modeling.diagram.general"
+            id="org.storydriven.storydiagrams.diagram.appearance"
+            name="%prefpage.org.storydriven.storydiagrams.diagram.appearance"
+            category="org.storydriven.storydiagrams.diagram.general"
             class="org.storydriven.storydiagrams.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            id="org.storydriven.modeling.diagram.connections"
-            name="%prefpage.org.storydriven.modeling.diagram.connections"
-            category="org.storydriven.modeling.diagram.general"
+            id="org.storydriven.storydiagrams.diagram.connections"
+            name="%prefpage.org.storydriven.storydiagrams.diagram.connections"
+            category="org.storydriven.storydiagrams.diagram.general"
             class="org.storydriven.storydiagrams.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            id="org.storydriven.modeling.diagram.printing"
-            name="%prefpage.org.storydriven.modeling.diagram.printing"
-            category="org.storydriven.modeling.diagram.general"
+            id="org.storydriven.storydiagrams.diagram.printing"
+            name="%prefpage.org.storydriven.storydiagrams.diagram.printing"
+            category="org.storydriven.storydiagrams.diagram.general"
             class="org.storydriven.storydiagrams.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
-            id="org.storydriven.modeling.diagram.rulersAndGrid"
-            name="%prefpage.org.storydriven.modeling.diagram.rulersAndGrid"
-            category="org.storydriven.modeling.diagram.general"
+            id="org.storydriven.storydiagrams.diagram.rulersAndGrid"
+            name="%prefpage.org.storydriven.storydiagrams.diagram.rulersAndGrid"
+            category="org.storydriven.storydiagrams.diagram.general"
             class="org.storydriven.storydiagrams.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>

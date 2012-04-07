@@ -17,11 +17,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/ModifyingStoryNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/ModifyingStoryNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -30,11 +30,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/ObjectVariableNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/ObjectVariableNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -43,11 +43,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/PrimitiveVariableNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/PrimitiveVariableNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -56,11 +56,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/AttributeAssignment.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/AttributeAssignment.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -69,11 +69,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/LinkVariable.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/LinkVariable.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
       </tools>
     </tools>
     <tools
@@ -88,11 +88,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/ActivityEdge.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/ActivityEdge.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -101,11 +101,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/StartNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/StartNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -114,11 +114,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/StopNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/StopNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -127,11 +127,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/JunctionNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/objects16/JunctionNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -140,11 +140,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/full/obj16/StructuredNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/full/obj16/StructuredNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -153,11 +153,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/full/obj16/StatementNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/full/obj16/StatementNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -166,11 +166,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/full/obj16/ActivityCallNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/full/obj16/ActivityCallNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -179,11 +179,11 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/full/obj16/ActivityCallNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
         <largeIcon
             xsi:type="gmftool:BundleImage"
             path="/icons/full/obj16/ActivityCallNode.gif"
-            bundle="org.storydriven.modeling.diagram.custom"/>
+            bundle="org.storydriven.storydiagrams.diagram.custom"/>
       </tools>
     </tools>
   </palette>

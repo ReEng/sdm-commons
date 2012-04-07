@@ -1232,36 +1232,36 @@
             xsi:type="gmfgen:ToolEntry"
             title="Modifying StoryNode"
             description="create new ModifyingStoryNode"
-            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/ModifyingStoryNode.gif"
-            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/ModifyingStoryNode.gif"
+            largeIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/ModifyingStoryNode.gif"
+            smallIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/ModifyingStoryNode.gif"
             genNodes="//@diagram/@childNodes.6 //@diagram/@topLevelNodes.5"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Object Variable Node"
             description="create new ObjectVariableNode"
-            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/ObjectVariableNode.gif"
-            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/ObjectVariableNode.gif"
+            largeIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/ObjectVariableNode.gif"
+            smallIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/ObjectVariableNode.gif"
             genNodes="//@diagram/@childNodes.8"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Primitive Variable Node"
             description="create new PrimitveVariableNode"
-            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/PrimitiveVariableNode.gif"
-            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/PrimitiveVariableNode.gif"
+            largeIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/PrimitiveVariableNode.gif"
+            smallIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/PrimitiveVariableNode.gif"
             genNodes="//@diagram/@childNodes.10"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Attribute Assignment"
             description="create new AttributeAssignment"
-            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/AttributeAssignment.gif"
-            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/AttributeAssignment.gif"
+            largeIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/AttributeAssignment.gif"
+            smallIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/AttributeAssignment.gif"
             genNodes="//@diagram/@childNodes.9"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Link Variable"
             description="Create new LinkVariable"
-            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/LinkVariable.gif"
-            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/LinkVariable.gif"
+            largeIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/LinkVariable.gif"
+            smallIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/LinkVariable.gif"
             genLinks="//@diagram/@links.1"/>
       </groups>
       <groups
@@ -1271,75 +1271,75 @@
             xsi:type="gmfgen:ToolEntry"
             title="Activity Edge"
             description="Create new ActivityEdge"
-            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/ActivityEdge.gif"
-            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/ActivityEdge.gif"
+            largeIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/ActivityEdge.gif"
+            smallIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/ActivityEdge.gif"
             genLinks="//@diagram/@links.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Start Node"
             description="create new StartNode"
-            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/StartNode.gif"
-            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/StartNode.gif"
+            largeIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/StartNode.gif"
+            smallIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/StartNode.gif"
             genNodes="//@diagram/@topLevelNodes.0 //@diagram/@childNodes.2"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Stop Node"
             description="create new StopNode"
-            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/StopNode.gif"
-            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/StopNode.gif"
+            largeIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/StopNode.gif"
+            smallIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/StopNode.gif"
             genNodes="//@diagram/@topLevelNodes.1 //@diagram/@childNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Junction Node"
             description="create new JunctionNode"
-            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/JunctionNode.gif"
-            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/objects16/JunctionNode.gif"
+            largeIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/JunctionNode.gif"
+            smallIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/objects16/JunctionNode.gif"
             genNodes="//@diagram/@topLevelNodes.2 //@diagram/@childNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Structured Node"
             description="create new StructuredNode"
-            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/full/obj16/StructuredNode.gif"
-            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/full/obj16/StructuredNode.gif"
+            largeIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/full/obj16/StructuredNode.gif"
+            smallIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/full/obj16/StructuredNode.gif"
             genNodes="//@diagram/@topLevelNodes.4 //@diagram/@childNodes.5"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Statement Node"
             description="create new StatementNode"
-            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/full/obj16/StatementNode.gif"
-            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/full/obj16/StatementNode.gif"
+            largeIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/full/obj16/StatementNode.gif"
+            smallIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/full/obj16/StatementNode.gif"
             genNodes="//@diagram/@topLevelNodes.3 //@diagram/@childNodes.4"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Activity Call Node"
             description="create new ActivityCallNode"
-            largeIconPath="/org.storydriven.modeling.diagram.custom/icons/full/obj16/ActivityCallNode.gif"
-            smallIconPath="/org.storydriven.modeling.diagram.custom/icons/full/obj16/ActivityCallNode.gif"
+            largeIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/full/obj16/ActivityCallNode.gif"
+            smallIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/full/obj16/ActivityCallNode.gif"
             genNodes="//@diagram/@topLevelNodes.6"/>
       </groups>
     </palette>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="org.storydriven.modeling.diagram.general"
+        iD="org.storydriven.storydiagrams.diagram.general"
         name="SDM Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.storydriven.modeling.diagram.appearance"
+          iD="org.storydriven.storydiagrams.diagram.appearance"
           name="Appearance"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.storydriven.modeling.diagram.connections"
+          iD="org.storydriven.storydiagrams.diagram.connections"
           name="Connections"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.storydriven.modeling.diagram.printing"
+          iD="org.storydriven.storydiagrams.diagram.printing"
           name="Printing"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="org.storydriven.modeling.diagram.rulersAndGrid"
+          iD="org.storydriven.storydiagrams.diagram.rulersAndGrid"
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
     </preferencePages>
