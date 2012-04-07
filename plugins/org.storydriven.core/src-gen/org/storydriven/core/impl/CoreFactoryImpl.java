@@ -9,12 +9,10 @@ package org.storydriven.core.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.storydriven.core.*;
+import org.storydriven.core.CoreFactory;
+import org.storydriven.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->

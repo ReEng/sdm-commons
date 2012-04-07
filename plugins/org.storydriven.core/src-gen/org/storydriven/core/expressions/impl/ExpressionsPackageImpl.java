@@ -7,18 +7,14 @@
 package org.storydriven.core.expressions.impl;
 
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.storydriven.core.CorePackage;
-
 import org.storydriven.core.expressions.ArithmeticExpression;
 import org.storydriven.core.expressions.ArithmeticOperator;
 import org.storydriven.core.expressions.BinaryExpression;
@@ -32,7 +28,6 @@ import org.storydriven.core.expressions.LiteralExpression;
 import org.storydriven.core.expressions.LogicOperator;
 import org.storydriven.core.expressions.NotExpression;
 import org.storydriven.core.expressions.TextualExpression;
-
 import org.storydriven.core.impl.CorePackageImpl;
 
 /**

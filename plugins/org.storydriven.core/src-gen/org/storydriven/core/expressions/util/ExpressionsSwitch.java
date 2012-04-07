@@ -8,14 +8,19 @@ package org.storydriven.core.expressions.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.TypedElement;
-
-import org.storydriven.core.expressions.*;
+import org.storydriven.core.expressions.ArithmeticExpression;
+import org.storydriven.core.expressions.BinaryExpression;
+import org.storydriven.core.expressions.BinaryLogicExpression;
+import org.storydriven.core.expressions.ComparisonExpression;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.ExpressionsPackage;
+import org.storydriven.core.expressions.LiteralExpression;
+import org.storydriven.core.expressions.NotExpression;
+import org.storydriven.core.expressions.TextualExpression;
 
 /**
  * <!-- begin-user-doc -->

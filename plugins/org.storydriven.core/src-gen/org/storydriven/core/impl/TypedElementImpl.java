@@ -8,16 +8,13 @@ package org.storydriven.core.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.EGenericTypeImpl;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.TypedElement;
 
@@ -299,7 +296,7 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 		return false;
 	}
 
-	private NotificationChain basicSetType(EClassifier newType,
+	protected NotificationChain basicSetType(EClassifier newType,
 			NotificationChain msgs) {
 		throw new UnsupportedOperationException();
 	}

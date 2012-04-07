@@ -8,17 +8,14 @@ package org.storydriven.core.expressions.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.LiteralExpression;
-import org.storydriven.core.util.SDMUtil;
+import org.storydriven.core.util.CoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -171,7 +168,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 		EDataType oldValueType = this.valueType;
 		this.valueType = newValueType;
 		NotificationChain msgs = updateGenericType(newValueType, null);
-		SDMUtil.dispatch(msgs, eNotificationRequired() ? new ENotificationImpl(
+		CoreUtil.dispatch(msgs, eNotificationRequired() ? new ENotificationImpl(
 				this, Notification.SET,
 				ExpressionsPackage.LITERAL_EXPRESSION__VALUE_TYPE,
 				oldValueType, this.valueType) : null);

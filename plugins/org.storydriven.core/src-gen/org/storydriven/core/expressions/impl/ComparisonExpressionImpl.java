@@ -7,11 +7,8 @@
 package org.storydriven.core.expressions.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.core.expressions.ComparingOperator;
 import org.storydriven.core.expressions.ComparisonExpression;
 import org.storydriven.core.expressions.ExpressionsPackage;

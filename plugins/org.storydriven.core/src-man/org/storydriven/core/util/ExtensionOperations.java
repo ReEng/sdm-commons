@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.storydriven.core.Extension;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.Extension;
 
 /**
  * @author <a href="mailto:reckord@yatta-solutions.com">Carsten Reckord</a> (original author)

@@ -10,12 +10,19 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.storydriven.core.expressions.*;
+import org.storydriven.core.expressions.ArithmeticExpression;
+import org.storydriven.core.expressions.ArithmeticOperator;
+import org.storydriven.core.expressions.BinaryLogicExpression;
+import org.storydriven.core.expressions.ComparingOperator;
+import org.storydriven.core.expressions.ComparisonExpression;
+import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.ExpressionsPackage;
+import org.storydriven.core.expressions.LiteralExpression;
+import org.storydriven.core.expressions.LogicOperator;
+import org.storydriven.core.expressions.NotExpression;
+import org.storydriven.core.expressions.TextualExpression;
 
 /**
  * <!-- begin-user-doc -->

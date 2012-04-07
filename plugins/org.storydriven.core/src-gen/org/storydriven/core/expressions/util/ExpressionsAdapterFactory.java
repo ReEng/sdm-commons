@@ -8,16 +8,20 @@ package org.storydriven.core.expressions.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.TypedElement;
-
-import org.storydriven.core.expressions.*;
+import org.storydriven.core.expressions.ArithmeticExpression;
+import org.storydriven.core.expressions.BinaryExpression;
+import org.storydriven.core.expressions.BinaryLogicExpression;
+import org.storydriven.core.expressions.ComparisonExpression;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.ExpressionsPackage;
+import org.storydriven.core.expressions.LiteralExpression;
+import org.storydriven.core.expressions.NotExpression;
+import org.storydriven.core.expressions.TextualExpression;
 
 /**
  * <!-- begin-user-doc -->

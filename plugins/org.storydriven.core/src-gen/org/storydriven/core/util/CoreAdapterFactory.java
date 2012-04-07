@@ -8,12 +8,14 @@ package org.storydriven.core.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.storydriven.core.*;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.Extension;
+import org.storydriven.core.NamedElement;
+import org.storydriven.core.TypedElement;
 
 /**
  * <!-- begin-user-doc -->

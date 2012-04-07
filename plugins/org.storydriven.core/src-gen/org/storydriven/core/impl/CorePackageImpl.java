@@ -7,16 +7,13 @@
 package org.storydriven.core.impl;
 
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CoreFactory;
 import org.storydriven.core.CorePackage;
@@ -24,9 +21,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.Extension;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.TypedElement;
-
 import org.storydriven.core.expressions.ExpressionsPackage;
-
 import org.storydriven.core.expressions.impl.ExpressionsPackageImpl;
 
 /**

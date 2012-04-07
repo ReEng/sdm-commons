@@ -7,8 +7,8 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.storydriven.core.Extension;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.Extension;
 
 /**
  * @author <a href="mailto:reckord@yatta-solutions.com">Carsten Reckord</a> (original author)

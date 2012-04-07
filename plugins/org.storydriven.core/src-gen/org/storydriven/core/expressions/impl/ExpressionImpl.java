@@ -7,17 +7,12 @@
 package org.storydriven.core.expressions.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
-
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.ExpressionsPackage;
-
 import org.storydriven.core.impl.TypedElementImpl;
 
 /**
