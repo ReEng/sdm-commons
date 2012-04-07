@@ -15,9 +15,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.storydriven.modeling.activities.presentation.ActivitiesModelWizardID"
+            id="org.storydriven.storydiagrams.activities.presentation.ActivitiesModelWizardID"
             name="%_UI_ActivitiesModelWizard_label"
-            class="org.storydriven.modeling.activities.presentation.ActivitiesModelWizard"
+            class="org.storydriven.storydiagrams.activities.presentation.ActivitiesModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ActivitiesModelFile.gif">
          <description>%_UI_ActivitiesModelWizard_description</description>
@@ -27,12 +27,12 @@
 
    <extension point="org.eclipse.ui.editors">
       <editor
-            id="org.storydriven.modeling.activities.presentation.ActivitiesEditorID"
+            id="org.storydriven.storydiagrams.activities.presentation.ActivitiesEditorID"
             name="%_UI_ActivitiesEditor_label"
             icon="icons/full/obj16/ActivitiesModelFile.gif"
-            extensions="activities"
-            class="org.storydriven.modeling.activities.presentation.ActivitiesEditor"
-            contributorClass="org.storydriven.modeling.activities.presentation.ActivitiesActionBarContributor">
+            extensions="sdm_activities"
+            class="org.storydriven.storydiagrams.activities.presentation.ActivitiesEditor"
+            contributorClass="org.storydriven.storydiagrams.activities.presentation.ActivitiesActionBarContributor">
       </editor>
    </extension>
 
@@ -41,24 +41,24 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.storydriven.modeling.activities.expressions.presentation.ExpressionsModelWizardID"
-            name="%_UI_ExpressionsModelWizard_label"
-            class="org.storydriven.modeling.activities.expressions.presentation.ExpressionsModelWizard"
+            id="org.storydriven.storydiagrams.activities.expressions.presentation.ActivitiesExpressionsModelWizardID"
+            name="%_UI_ActivitiesExpressionsModelWizard_label"
+            class="org.storydriven.storydiagrams.activities.expressions.presentation.ActivitiesExpressionsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ExpressionsModelFile.gif">
-         <description>%_UI_ExpressionsModelWizard_description</description>
+            icon="icons/full/obj16/ActivitiesExpressionsModelFile.gif">
+         <description>%_UI_ActivitiesExpressionsModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
 
    <extension point="org.eclipse.ui.editors">
       <editor
-            id="org.storydriven.modeling.activities.expressions.presentation.ExpressionsEditorID"
-            name="%_UI_ExpressionsEditor_label"
-            icon="icons/full/obj16/ExpressionsModelFile.gif"
-            extensions="expressions"
-            class="org.storydriven.modeling.activities.expressions.presentation.ExpressionsEditor"
-            contributorClass="org.storydriven.modeling.activities.expressions.presentation.ExpressionsActionBarContributor">
+            id="org.storydriven.storydiagrams.activities.expressions.presentation.ActivitiesExpressionsEditorID"
+            name="%_UI_ActivitiesExpressionsEditor_label"
+            icon="icons/full/obj16/ActivitiesExpressionsModelFile.gif"
+            extensions="sd_expressions"
+            class="org.storydriven.storydiagrams.activities.expressions.presentation.ActivitiesExpressionsEditor"
+            contributorClass="org.storydriven.storydiagrams.activities.expressions.presentation.ActivitiesExpressionsActionBarContributor">
       </editor>
    </extension>
 
@@ -67,35 +67,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.storydriven.modeling.expressions.presentation.ExpressionsModelWizardID"
-            name="%_UI_ExpressionsModelWizard_label"
-            class="org.storydriven.modeling.expressions.presentation.ExpressionsModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ExpressionsModelFile.gif">
-         <description>%_UI_ExpressionsModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <editor
-            id="org.storydriven.modeling.expressions.presentation.ExpressionsEditorID"
-            name="%_UI_ExpressionsEditor_label"
-            icon="icons/full/obj16/ExpressionsModelFile.gif"
-            extensions="expressions"
-            class="org.storydriven.modeling.expressions.presentation.ExpressionsEditor"
-            contributorClass="org.storydriven.modeling.expressions.presentation.ExpressionsActionBarContributor">
-      </editor>
-   </extension>
-
-   <extension point="org.eclipse.ui.newWizards">
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="org.storydriven.modeling.calls.presentation.CallsModelWizardID"
+            id="org.storydriven.storydiagrams.calls.presentation.CallsModelWizardID"
             name="%_UI_CallsModelWizard_label"
-            class="org.storydriven.modeling.calls.presentation.CallsModelWizard"
+            class="org.storydriven.storydiagrams.calls.presentation.CallsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/CallsModelFile.gif">
          <description>%_UI_CallsModelWizard_description</description>
@@ -105,12 +79,12 @@
 
    <extension point="org.eclipse.ui.editors">
       <editor
-            id="org.storydriven.modeling.calls.presentation.CallsEditorID"
+            id="org.storydriven.storydiagrams.calls.presentation.CallsEditorID"
             name="%_UI_CallsEditor_label"
             icon="icons/full/obj16/CallsModelFile.gif"
-            extensions="calls"
-            class="org.storydriven.modeling.calls.presentation.CallsEditor"
-            contributorClass="org.storydriven.modeling.calls.presentation.CallsActionBarContributor">
+            extensions="sdm_calls"
+            class="org.storydriven.storydiagrams.calls.presentation.CallsEditor"
+            contributorClass="org.storydriven.storydiagrams.calls.presentation.CallsActionBarContributor">
       </editor>
    </extension>
 
@@ -119,24 +93,24 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.storydriven.modeling.calls.expressions.presentation.ExpressionsModelWizardID"
-            name="%_UI_ExpressionsModelWizard_label"
-            class="org.storydriven.modeling.calls.expressions.presentation.ExpressionsModelWizard"
+            id="org.storydriven.storydiagrams.calls.expressions.presentation.CallsExpressionsModelWizardID"
+            name="%_UI_CallsExpressionsModelWizard_label"
+            class="org.storydriven.storydiagrams.calls.expressions.presentation.CallsExpressionsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ExpressionsModelFile.gif">
-         <description>%_UI_ExpressionsModelWizard_description</description>
+            icon="icons/full/obj16/CallsExpressionsModelFile.gif">
+         <description>%_UI_CallsExpressionsModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
 
    <extension point="org.eclipse.ui.editors">
       <editor
-            id="org.storydriven.modeling.calls.expressions.presentation.ExpressionsEditorID"
-            name="%_UI_ExpressionsEditor_label"
-            icon="icons/full/obj16/ExpressionsModelFile.gif"
-            extensions="expressions"
-            class="org.storydriven.modeling.calls.expressions.presentation.ExpressionsEditor"
-            contributorClass="org.storydriven.modeling.calls.expressions.presentation.ExpressionsActionBarContributor">
+            id="org.storydriven.storydiagrams.calls.expressions.presentation.CallsExpressionsEditorID"
+            name="%_UI_CallsExpressionsEditor_label"
+            icon="icons/full/obj16/CallsExpressionsModelFile.gif"
+            extensions="sd_expressions"
+            class="org.storydriven.storydiagrams.calls.expressions.presentation.CallsExpressionsEditor"
+            contributorClass="org.storydriven.storydiagrams.calls.expressions.presentation.CallsExpressionsActionBarContributor">
       </editor>
    </extension>
 
@@ -145,9 +119,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.storydriven.modeling.patterns.presentation.PatternsModelWizardID"
+            id="org.storydriven.storydiagrams.patterns.presentation.PatternsModelWizardID"
             name="%_UI_PatternsModelWizard_label"
-            class="org.storydriven.modeling.patterns.presentation.PatternsModelWizard"
+            class="org.storydriven.storydiagrams.patterns.presentation.PatternsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/PatternsModelFile.gif">
          <description>%_UI_PatternsModelWizard_description</description>
@@ -157,12 +131,12 @@
 
    <extension point="org.eclipse.ui.editors">
       <editor
-            id="org.storydriven.modeling.patterns.presentation.PatternsEditorID"
+            id="org.storydriven.storydiagrams.patterns.presentation.PatternsEditorID"
             name="%_UI_PatternsEditor_label"
             icon="icons/full/obj16/PatternsModelFile.gif"
-            extensions="patterns"
-            class="org.storydriven.modeling.patterns.presentation.PatternsEditor"
-            contributorClass="org.storydriven.modeling.patterns.presentation.PatternsActionBarContributor">
+            extensions="sdm_patterns"
+            class="org.storydriven.storydiagrams.patterns.presentation.PatternsEditor"
+            contributorClass="org.storydriven.storydiagrams.patterns.presentation.PatternsActionBarContributor">
       </editor>
    </extension>
 
@@ -171,24 +145,24 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.storydriven.modeling.patterns.expressions.presentation.ExpressionsModelWizardID"
-            name="%_UI_ExpressionsModelWizard_label"
-            class="org.storydriven.modeling.patterns.expressions.presentation.ExpressionsModelWizard"
+            id="org.storydriven.storydiagrams.patterns.expressions.presentation.PatternsExpressionsModelWizardID"
+            name="%_UI_PatternsExpressionsModelWizard_label"
+            class="org.storydriven.storydiagrams.patterns.expressions.presentation.PatternsExpressionsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ExpressionsModelFile.gif">
-         <description>%_UI_ExpressionsModelWizard_description</description>
+            icon="icons/full/obj16/PatternsExpressionsModelFile.gif">
+         <description>%_UI_PatternsExpressionsModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
 
    <extension point="org.eclipse.ui.editors">
       <editor
-            id="org.storydriven.modeling.patterns.expressions.presentation.ExpressionsEditorID"
-            name="%_UI_ExpressionsEditor_label"
-            icon="icons/full/obj16/ExpressionsModelFile.gif"
-            extensions="expressions"
-            class="org.storydriven.modeling.patterns.expressions.presentation.ExpressionsEditor"
-            contributorClass="org.storydriven.modeling.patterns.expressions.presentation.ExpressionsActionBarContributor">
+            id="org.storydriven.storydiagrams.patterns.expressions.presentation.PatternsExpressionsEditorID"
+            name="%_UI_PatternsExpressionsEditor_label"
+            icon="icons/full/obj16/PatternsExpressionsModelFile.gif"
+            extensions="sd_expressions"
+            class="org.storydriven.storydiagrams.patterns.expressions.presentation.PatternsExpressionsEditor"
+            contributorClass="org.storydriven.storydiagrams.patterns.expressions.presentation.PatternsExpressionsActionBarContributor">
       </editor>
    </extension>
 
@@ -197,9 +171,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.storydriven.modeling.templates.presentation.TemplatesModelWizardID"
+            id="org.storydriven.storydiagrams.templates.presentation.TemplatesModelWizardID"
             name="%_UI_TemplatesModelWizard_label"
-            class="org.storydriven.modeling.templates.presentation.TemplatesModelWizard"
+            class="org.storydriven.storydiagrams.templates.presentation.TemplatesModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/TemplatesModelFile.gif">
          <description>%_UI_TemplatesModelWizard_description</description>
@@ -209,12 +183,12 @@
 
    <extension point="org.eclipse.ui.editors">
       <editor
-            id="org.storydriven.modeling.templates.presentation.TemplatesEditorID"
+            id="org.storydriven.storydiagrams.templates.presentation.TemplatesEditorID"
             name="%_UI_TemplatesEditor_label"
             icon="icons/full/obj16/TemplatesModelFile.gif"
-            extensions="templates"
-            class="org.storydriven.modeling.templates.presentation.TemplatesEditor"
-            contributorClass="org.storydriven.modeling.templates.presentation.TemplatesActionBarContributor">
+            extensions="sdm_templates"
+            class="org.storydriven.storydiagrams.templates.presentation.TemplatesEditor"
+            contributorClass="org.storydriven.storydiagrams.templates.presentation.TemplatesActionBarContributor">
       </editor>
    </extension>
 

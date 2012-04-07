@@ -1,0 +1,1423 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_hybTEIC1EeGaB-tmtYzH1Q" documentation="Edition Context for storydiagrams GenPackage">
+    <categories xmi:id="_hyoucIC1EeGaB-tmtYzH1Q" name="storydiagrams"/>
+    <model href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.genmodel#//storydiagrams"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_hyoucYC1EeGaB-tmtYzH1Q" documentation="Edition Context for activities GenPackage">
+    <categories xmi:id="_hyoucoC1EeGaB-tmtYzH1Q" name="activities">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hyouc4C1EeGaB-tmtYzH1Q" name="ExceptionVariable" views="_hypWrYC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoudIC1EeGaB-tmtYzH1Q" name="activityEdge" views="_hypWr4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ExceptionVariable/activityEdge"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoudYC1EeGaB-tmtYzH1Q" name="name" views="_hypWsIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ExceptionVariable/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoudoC1EeGaB-tmtYzH1Q" name="exceptionType" views="_hypWsYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ExceptionVariable/exceptionType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoud4C1EeGaB-tmtYzH1Q" name="genericExceptionType" views="_hypWsoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ExceptionVariable/genericExceptionType"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ExceptionVariable"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hyoueIC1EeGaB-tmtYzH1Q" name="ActivityEdge" views="_hypWs4C1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoueYC1EeGaB-tmtYzH1Q" name="target" views="_hypWtYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityEdge/target"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoueoC1EeGaB-tmtYzH1Q" name="source" views="_hypWtoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityEdge/source"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoue4C1EeGaB-tmtYzH1Q" name="owningActivity" views="_hypWt4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityEdge/owningActivity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoufIC1EeGaB-tmtYzH1Q" name="guard" views="_hypWuIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityEdge/guard"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityEdge"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hyoufYC1EeGaB-tmtYzH1Q" name="Activity" views="_hypWuYC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoufoC1EeGaB-tmtYzH1Q" name="comment" views="_hypWu4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouf4C1EeGaB-tmtYzH1Q" name="inParameter" views="_hypWvIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/Callable/inParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyougIC1EeGaB-tmtYzH1Q" name="outParameter" views="_hypWvYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/Callable/outParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyougYC1EeGaB-tmtYzH1Q" name="name" views="_hypWvoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyougoC1EeGaB-tmtYzH1Q" name="owningOperation" views="_hypWv4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity/owningOperation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoug4C1EeGaB-tmtYzH1Q" name="precondition" views="_hypWwIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity/precondition"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hyouhIC1EeGaB-tmtYzH1Q" name="OperationExtension" views="_hypWwYC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouhYC1EeGaB-tmtYzH1Q" name="comment" views="_hypWw4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouhoC1EeGaB-tmtYzH1Q" name="inParameter" views="_hypWxIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/Callable/inParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouh4C1EeGaB-tmtYzH1Q" name="outParameter" views="_hypWxYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/Callable/outParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouiIC1EeGaB-tmtYzH1Q" name="extendableBase" views="_hypWxoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.core/model/core.ecore#//Extension/extendableBase"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/OperationExtension"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hyouiYC1EeGaB-tmtYzH1Q" name="MatchingStoryNode" views="_hypWx4C1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouioC1EeGaB-tmtYzH1Q" name="comment" views="_hypWyYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoui4C1EeGaB-tmtYzH1Q" name="name" views="_hypWyoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoujIC1EeGaB-tmtYzH1Q" name="outgoing" views="_hypWy4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/outgoing"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoujYC1EeGaB-tmtYzH1Q" name="owningActivity" views="_hypWzIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoujoC1EeGaB-tmtYzH1Q" name="owningActivityNode" views="_hypWzYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivityNode"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouj4C1EeGaB-tmtYzH1Q" name="incoming" views="_hypWzoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/incoming"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoukIC1EeGaB-tmtYzH1Q" name="forEach" views="_hypWz4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StoryNode/forEach"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/MatchingStoryNode"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hyoukYC1EeGaB-tmtYzH1Q" name="StructuredNode" views="_hypW0IC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoukoC1EeGaB-tmtYzH1Q" name="comment" views="_hypW0oC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouk4C1EeGaB-tmtYzH1Q" name="name" views="_hypW04C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoulIC1EeGaB-tmtYzH1Q" name="outgoing" views="_hypW1IC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/outgoing"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoulYC1EeGaB-tmtYzH1Q" name="owningActivity" views="_hypW1YC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouloC1EeGaB-tmtYzH1Q" name="owningActivityNode" views="_hypW1oC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivityNode"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoul4C1EeGaB-tmtYzH1Q" name="incoming" views="_hypW14C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/incoming"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StructuredNode"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hyoumIC1EeGaB-tmtYzH1Q" name="JunctionNode" views="_hypW2IC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoumYC1EeGaB-tmtYzH1Q" name="comment" views="_hypW2oC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoumoC1EeGaB-tmtYzH1Q" name="name" views="_hypW24C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoum4C1EeGaB-tmtYzH1Q" name="outgoing" views="_hypW3IC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/outgoing"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyounIC1EeGaB-tmtYzH1Q" name="owningActivity" views="_hypW3YC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyounYC1EeGaB-tmtYzH1Q" name="owningActivityNode" views="_hypW3oC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivityNode"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyounoC1EeGaB-tmtYzH1Q" name="incoming" views="_hypW34C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/incoming"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/JunctionNode"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hyoun4C1EeGaB-tmtYzH1Q" name="StartNode" views="_hypW4IC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouoIC1EeGaB-tmtYzH1Q" name="comment" views="_hypW4oC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouoYC1EeGaB-tmtYzH1Q" name="name" views="_hypW44C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouooC1EeGaB-tmtYzH1Q" name="outgoing" views="_hypW5IC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/outgoing"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouo4C1EeGaB-tmtYzH1Q" name="owningActivity" views="_hypW5YC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoupIC1EeGaB-tmtYzH1Q" name="owningActivityNode" views="_hypW5oC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivityNode"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoupYC1EeGaB-tmtYzH1Q" name="incoming" views="_hypW54C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/incoming"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StartNode"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hyoupoC1EeGaB-tmtYzH1Q" name="StatementNode" views="_hypW6IC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoup4C1EeGaB-tmtYzH1Q" name="comment" views="_hypW6oC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouqIC1EeGaB-tmtYzH1Q" name="name" views="_hypW64C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouqYC1EeGaB-tmtYzH1Q" name="outgoing" views="_hypW7IC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/outgoing"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouqoC1EeGaB-tmtYzH1Q" name="owningActivity" views="_hypW7YC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouq4C1EeGaB-tmtYzH1Q" name="owningActivityNode" views="_hypW7oC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivityNode"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyourIC1EeGaB-tmtYzH1Q" name="incoming" views="_hypW74C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/incoming"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StatementNode"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hyourYC1EeGaB-tmtYzH1Q" name="StopNode" views="_hypW8IC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouroC1EeGaB-tmtYzH1Q" name="comment" views="_hypW8oC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyour4C1EeGaB-tmtYzH1Q" name="name" views="_hypW84C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyousIC1EeGaB-tmtYzH1Q" name="outgoing" views="_hypW9IC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/outgoing"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyousYC1EeGaB-tmtYzH1Q" name="owningActivity" views="_hypW9YC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyousoC1EeGaB-tmtYzH1Q" name="owningActivityNode" views="_hypW9oC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivityNode"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyous4C1EeGaB-tmtYzH1Q" name="incoming" views="_hypW94C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/incoming"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoutIC1EeGaB-tmtYzH1Q" name="flowStopOnly" views="_hypW-IC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode/flowStopOnly"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StopNode"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hyoutYC1EeGaB-tmtYzH1Q" name="ActivityCallNode" views="_hypW-YC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyoutoC1EeGaB-tmtYzH1Q" name="comment" views="_hypW-4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyout4C1EeGaB-tmtYzH1Q" name="name" views="_hypW_IC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouuIC1EeGaB-tmtYzH1Q" name="outgoing" views="_hypW_YC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/outgoing"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouuYC1EeGaB-tmtYzH1Q" name="owningActivity" views="_hypW_oC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouuoC1EeGaB-tmtYzH1Q" name="owningActivityNode" views="_hyp8kIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivityNode"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouu4C1EeGaB-tmtYzH1Q" name="incoming" views="_hyp8kYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/incoming"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouvIC1EeGaB-tmtYzH1Q" name="callee" views="_hyp8koC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/Invocation/callee"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouvYC1EeGaB-tmtYzH1Q" name="calledActivity" views="_hyp8k4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityCallNode/calledActivity"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityCallNode"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hyouvoC1EeGaB-tmtYzH1Q" name="ModifyingStoryNode" views="_hyp8lIC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouv4C1EeGaB-tmtYzH1Q" name="comment" views="_hyp8loC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouwIC1EeGaB-tmtYzH1Q" name="name" views="_hyp8l4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouwYC1EeGaB-tmtYzH1Q" name="outgoing" views="_hyp8mIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/outgoing"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouwoC1EeGaB-tmtYzH1Q" name="owningActivity" views="_hyp8mYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouw4C1EeGaB-tmtYzH1Q" name="owningActivityNode" views="_hyp8moC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/owningActivityNode"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouxIC1EeGaB-tmtYzH1Q" name="incoming" views="_hyp8m4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode/incoming"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouxYC1EeGaB-tmtYzH1Q" name="forEach" views="_hyp8nIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/StoryNode/forEach"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ModifyingStoryNode"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.genmodel#//storydiagrams/activities"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_hyouxoC1EeGaB-tmtYzH1Q" documentation="Edition Context for expressions GenPackage">
+    <categories xmi:id="_hyoux4C1EeGaB-tmtYzH1Q" name="expressions">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hyouyIC1EeGaB-tmtYzH1Q" name="ExceptionVariableExpression" views="_hypWmoC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouyYC1EeGaB-tmtYzH1Q" name="comment" views="_hypWnIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hyouyoC1EeGaB-tmtYzH1Q" name="exceptionVariable" views="_hypWnYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/expressions/ExceptionVariableExpression/exceptionVariable"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/expressions/ExceptionVariableExpression"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.genmodel#//storydiagrams/activities/expressions"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_hyouy4C1EeGaB-tmtYzH1Q" documentation="Edition Context for calls GenPackage">
+    <categories xmi:id="_hypVgIC1EeGaB-tmtYzH1Q" name="calls">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypVgYC1EeGaB-tmtYzH1Q" name="ParameterBinding" views="_hypWB4C1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVgoC1EeGaB-tmtYzH1Q" name="comment" views="_hypWCYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVg4C1EeGaB-tmtYzH1Q" name="parameter" views="_hypWCoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/ParameterBinding/parameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVhIC1EeGaB-tmtYzH1Q" name="invocation" views="_hypWC4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/ParameterBinding/invocation"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/ParameterBinding"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypVhYC1EeGaB-tmtYzH1Q" name="OpaqueCallable" views="_hypWDIC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVhoC1EeGaB-tmtYzH1Q" name="comment" views="_hypWDoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVh4C1EeGaB-tmtYzH1Q" name="inParameter" views="_hypWD4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/Callable/inParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypViIC1EeGaB-tmtYzH1Q" name="outParameter" views="_hypWEIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/Callable/outParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypViYC1EeGaB-tmtYzH1Q" name="name" views="_hypWEYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/OpaqueCallable/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVioC1EeGaB-tmtYzH1Q" name="callExpression" views="_hypWEoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/OpaqueCallable/callExpression"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/OpaqueCallable"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypVi4C1EeGaB-tmtYzH1Q" name="ParameterExtension" views="_hypWE4C1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVjIC1EeGaB-tmtYzH1Q" name="extendableBase" views="_hypWFYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.core/model/core.ecore#//Extension/extendableBase"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/ParameterExtension"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.genmodel#//storydiagrams/calls"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_hypVjYC1EeGaB-tmtYzH1Q" documentation="Edition Context for expressions GenPackage">
+    <categories xmi:id="_hypVjoC1EeGaB-tmtYzH1Q" name="expressions">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypVj4C1EeGaB-tmtYzH1Q" name="MethodCallExpression" views="_hypWGIC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVkIC1EeGaB-tmtYzH1Q" name="comment" views="_hypWGoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVkYC1EeGaB-tmtYzH1Q" name="callee" views="_hypWG4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/Invocation/callee"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/expressions/MethodCallExpression"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypVkoC1EeGaB-tmtYzH1Q" name="ParameterExpression" views="_hypWHIC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVk4C1EeGaB-tmtYzH1Q" name="comment" views="_hypWHoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVlIC1EeGaB-tmtYzH1Q" name="parameter" views="_hypWH4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/expressions/ParameterExpression/parameter"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/expressions/ParameterExpression"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.genmodel#//storydiagrams/calls/expressions"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_hypVlYC1EeGaB-tmtYzH1Q" documentation="Edition Context for patterns GenPackage">
+    <categories xmi:id="_hypVloC1EeGaB-tmtYzH1Q" name="patterns">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypVl4C1EeGaB-tmtYzH1Q" name="ObjectVariable" views="_hypWN4C1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVmIC1EeGaB-tmtYzH1Q" name="name" views="_hypWOYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVmYC1EeGaB-tmtYzH1Q" name="pattern" views="_hypWOoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractVariable/pattern"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVmoC1EeGaB-tmtYzH1Q" name="bindingState" views="_hypWO4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractVariable/bindingState"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVm4C1EeGaB-tmtYzH1Q" name="incomingLink" views="_hypWPIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractVariable/incomingLink"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVnIC1EeGaB-tmtYzH1Q" name="outgoingLink" views="_hypWPYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable/outgoingLink"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVnYC1EeGaB-tmtYzH1Q" name="bindingSemantics" views="_hypWPoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable/bindingSemantics"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVnoC1EeGaB-tmtYzH1Q" name="bindingOperator" views="_hypWP4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable/bindingOperator"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVn4C1EeGaB-tmtYzH1Q" name="classifier" views="_hypWQIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable/classifier"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypVoIC1EeGaB-tmtYzH1Q" name="Constraint" views="_hypWQYC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVoYC1EeGaB-tmtYzH1Q" name="pattern" views="_hypWQ4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/Constraint/pattern"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVooC1EeGaB-tmtYzH1Q" name="objectVariable" views="_hypWRIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/Constraint/objectVariable"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/Constraint"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypVo4C1EeGaB-tmtYzH1Q" name="LinkConstraint" views="_hypWRYC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVpIC1EeGaB-tmtYzH1Q" name="index" views="_hypWR4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/LinkConstraint/index"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVpYC1EeGaB-tmtYzH1Q" name="constraintType" views="_hypWSIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/LinkConstraint/constraintType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVpoC1EeGaB-tmtYzH1Q" name="negative" views="_hypWSYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/LinkConstraint/negative"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVp4C1EeGaB-tmtYzH1Q" name="firstLink" views="_hypWSoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/LinkConstraint/firstLink"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVqIC1EeGaB-tmtYzH1Q" name="referencingObject" views="_hypWS4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/LinkConstraint/referencingObject"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVqYC1EeGaB-tmtYzH1Q" name="secondLink" views="_hypWTIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/LinkConstraint/secondLink"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/LinkConstraint"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypVqoC1EeGaB-tmtYzH1Q" name="AttributeAssignment" views="_hypWTYC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVq4C1EeGaB-tmtYzH1Q" name="attribute" views="_hypWT4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AttributeAssignment/attribute"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVrIC1EeGaB-tmtYzH1Q" name="objectVariable" views="_hypWUIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AttributeAssignment/objectVariable"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AttributeAssignment"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypVrYC1EeGaB-tmtYzH1Q" name="ObjectSetVariable" views="_hypWUYC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVroC1EeGaB-tmtYzH1Q" name="name" views="_hypWU4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVr4C1EeGaB-tmtYzH1Q" name="pattern" views="_hypWVIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractVariable/pattern"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVsIC1EeGaB-tmtYzH1Q" name="bindingState" views="_hypWVYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractVariable/bindingState"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVsYC1EeGaB-tmtYzH1Q" name="incomingLink" views="_hypWVoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractVariable/incomingLink"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVsoC1EeGaB-tmtYzH1Q" name="outgoingLink" views="_hypWV4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable/outgoingLink"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVs4C1EeGaB-tmtYzH1Q" name="bindingSemantics" views="_hypWWIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable/bindingSemantics"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVtIC1EeGaB-tmtYzH1Q" name="bindingOperator" views="_hypWWYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable/bindingOperator"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVtYC1EeGaB-tmtYzH1Q" name="classifier" views="_hypWWoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable/classifier"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectSetVariable"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypVtoC1EeGaB-tmtYzH1Q" name="PrimitiveVariable" views="_hypWW4C1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVt4C1EeGaB-tmtYzH1Q" name="name" views="_hypWXYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVuIC1EeGaB-tmtYzH1Q" name="pattern" views="_hypWXoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractVariable/pattern"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVuYC1EeGaB-tmtYzH1Q" name="bindingState" views="_hypWX4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractVariable/bindingState"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVuoC1EeGaB-tmtYzH1Q" name="incomingLink" views="_hypWYIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractVariable/incomingLink"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVu4C1EeGaB-tmtYzH1Q" name="classifier" views="_hypWYYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/PrimitiveVariable/classifier"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/PrimitiveVariable"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypVvIC1EeGaB-tmtYzH1Q" name="Path" views="_hypWYoC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVvYC1EeGaB-tmtYzH1Q" name="name" views="_hypWZIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVvoC1EeGaB-tmtYzH1Q" name="bindingSemantics" views="_hypWZYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingSemantics"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVv4C1EeGaB-tmtYzH1Q" name="bindingOperator" views="_hypWZoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingOperator"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVwIC1EeGaB-tmtYzH1Q" name="source" views="_hypWZ4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/source"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVwYC1EeGaB-tmtYzH1Q" name="secondLinkConstraint" views="_hypWaIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/secondLinkConstraint"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVwoC1EeGaB-tmtYzH1Q" name="firstLinkConstraint" views="_hypWaYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/firstLinkConstraint"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVw4C1EeGaB-tmtYzH1Q" name="bindingState" views="_hypWaoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVxIC1EeGaB-tmtYzH1Q" name="pattern" views="_hypWa4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/pattern"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVxYC1EeGaB-tmtYzH1Q" name="target" views="_hypWbIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/target"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/Path"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypVxoC1EeGaB-tmtYzH1Q" name="LinkVariable" views="_hypWbYC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVx4C1EeGaB-tmtYzH1Q" name="name" views="_hypWb4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVyIC1EeGaB-tmtYzH1Q" name="bindingSemantics" views="_hypWcIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingSemantics"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVyYC1EeGaB-tmtYzH1Q" name="bindingOperator" views="_hypWcYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingOperator"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVyoC1EeGaB-tmtYzH1Q" name="source" views="_hypWcoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/source"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVy4C1EeGaB-tmtYzH1Q" name="secondLinkConstraint" views="_hypWc4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/secondLinkConstraint"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVzIC1EeGaB-tmtYzH1Q" name="firstLinkConstraint" views="_hypWdIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/firstLinkConstraint"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVzYC1EeGaB-tmtYzH1Q" name="bindingState" views="_hypWdYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVzoC1EeGaB-tmtYzH1Q" name="pattern" views="_hypWdoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/pattern"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypVz4C1EeGaB-tmtYzH1Q" name="target" views="_hypWd4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/target"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV0IC1EeGaB-tmtYzH1Q" name="targetEnd" views="_hypWeIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/LinkVariable/targetEnd"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/LinkVariable"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypV0YC1EeGaB-tmtYzH1Q" name="ContainmentRelation" views="_hypWeYC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV0oC1EeGaB-tmtYzH1Q" name="name" views="_hypWe4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV04C1EeGaB-tmtYzH1Q" name="bindingSemantics" views="_hypWfIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingSemantics"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV1IC1EeGaB-tmtYzH1Q" name="bindingOperator" views="_hypWfYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingOperator"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV1YC1EeGaB-tmtYzH1Q" name="source" views="_hypWfoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/source"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV1oC1EeGaB-tmtYzH1Q" name="secondLinkConstraint" views="_hypWf4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/secondLinkConstraint"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV14C1EeGaB-tmtYzH1Q" name="firstLinkConstraint" views="_hypWgIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/firstLinkConstraint"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV2IC1EeGaB-tmtYzH1Q" name="bindingState" views="_hypWgYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV2YC1EeGaB-tmtYzH1Q" name="pattern" views="_hypWgoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/pattern"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV2oC1EeGaB-tmtYzH1Q" name="target" views="_hypWg4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractLinkVariable/target"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainmentRelation"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypV24C1EeGaB-tmtYzH1Q" name="MatchingPattern" views="_hypWhIC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV3IC1EeGaB-tmtYzH1Q" name="comment" views="_hypWhoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV3YC1EeGaB-tmtYzH1Q" name="parentPattern" views="_hypWh4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/StoryPattern/parentPattern"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV3oC1EeGaB-tmtYzH1Q" name="bindingSemantics" views="_hypWiIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/StoryPattern/bindingSemantics"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/MatchingPattern"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypV34C1EeGaB-tmtYzH1Q" name="ContainerVariable" views="_hypWiYC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV4IC1EeGaB-tmtYzH1Q" name="name" views="_hypWi4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV4YC1EeGaB-tmtYzH1Q" name="pattern" views="_hypWjIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractVariable/pattern"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV4oC1EeGaB-tmtYzH1Q" name="bindingState" views="_hypWjYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractVariable/bindingState"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV44C1EeGaB-tmtYzH1Q" name="incomingLink" views="_hypWjoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/AbstractVariable/incomingLink"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV5IC1EeGaB-tmtYzH1Q" name="outgoingLink" views="_hypWj4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable/outgoingLink"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV5YC1EeGaB-tmtYzH1Q" name="bindingSemantics" views="_hypWkIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable/bindingSemantics"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV5oC1EeGaB-tmtYzH1Q" name="bindingOperator" views="_hypWkYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable/bindingOperator"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV54C1EeGaB-tmtYzH1Q" name="classifier" views="_hypWkoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ObjectVariable/classifier"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/ContainerVariable"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypV6IC1EeGaB-tmtYzH1Q" name="StoryPattern" views="_hypWk4C1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV6YC1EeGaB-tmtYzH1Q" name="comment" views="_hypWlYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV6oC1EeGaB-tmtYzH1Q" name="parentPattern" views="_hypWloC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/StoryPattern/parentPattern"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV64C1EeGaB-tmtYzH1Q" name="bindingSemantics" views="_hypWl4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/StoryPattern/bindingSemantics"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/StoryPattern"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.genmodel#//storydiagrams/patterns"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_hypV7IC1EeGaB-tmtYzH1Q" documentation="Edition Context for expressions GenPackage">
+    <categories xmi:id="_hypV7YC1EeGaB-tmtYzH1Q" name="expressions">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypV7oC1EeGaB-tmtYzH1Q" name="AttributeValueExpression" views="_hypWIoC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV74C1EeGaB-tmtYzH1Q" name="comment" views="_hypWJIC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV8IC1EeGaB-tmtYzH1Q" name="object" views="_hypWJYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/AttributeValueExpression/object"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV8YC1EeGaB-tmtYzH1Q" name="attribute" views="_hypWJoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/AttributeValueExpression/attribute"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/AttributeValueExpression"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypV8oC1EeGaB-tmtYzH1Q" name="ObjectVariableExpression" views="_hypWJ4C1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV84C1EeGaB-tmtYzH1Q" name="comment" views="_hypWKYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV9IC1EeGaB-tmtYzH1Q" name="object" views="_hypWKoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectVariableExpression/object"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectVariableExpression"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypV9YC1EeGaB-tmtYzH1Q" name="ObjectSetSizeExpression" views="_hypWK4C1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV9oC1EeGaB-tmtYzH1Q" name="comment" views="_hypWLYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV94C1EeGaB-tmtYzH1Q" name="set" views="_hypWLoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypV-IC1EeGaB-tmtYzH1Q" name="PrimitiveVariableExpression" views="_hypWL4C1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV-YC1EeGaB-tmtYzH1Q" name="comment" views="_hypWMYC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV-oC1EeGaB-tmtYzH1Q" name="primitiveVariable" views="_hypWMoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/PrimitiveVariableExpression/primitiveVariable"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/expressions/PrimitiveVariableExpression"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.genmodel#//storydiagrams/patterns/expressions"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_hypV-4C1EeGaB-tmtYzH1Q" documentation="Edition Context for templates GenPackage">
+    <categories xmi:id="_hypV_IC1EeGaB-tmtYzH1Q" name="templates">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypV_YC1EeGaB-tmtYzH1Q" name="TemplateBinding" views="_hypWoIC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV_oC1EeGaB-tmtYzH1Q" name="boundParameter" views="_hypWooC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//templates/TemplateBinding/boundParameter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypV_4C1EeGaB-tmtYzH1Q" name="template" views="_hypWo4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//templates/TemplateBinding/template"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//templates/TemplateBinding"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypWAIC1EeGaB-tmtYzH1Q" name="PropertyBinding" views="_hypWpIC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypWAYC1EeGaB-tmtYzH1Q" name="boundProperty" views="_hypWpoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//templates/PropertyBinding/boundProperty"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypWAoC1EeGaB-tmtYzH1Q" name="templateBinding" views="_hypWp4C1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//templates/PropertyBinding/templateBinding"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//templates/PropertyBinding"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_hypWA4C1EeGaB-tmtYzH1Q" name="TemplateSignature" views="_hypWqIC1EeGaB-tmtYzH1Q">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_hypWBIC1EeGaB-tmtYzH1Q" name="pattern" views="_hypWqoC1EeGaB-tmtYzH1Q">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//templates/TemplateSignature/pattern"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.ecore#//templates/TemplateSignature"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.storydriven.storydiagrams/model/storydiagrams.genmodel#//storydiagrams/templates"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_hypWBYC1EeGaB-tmtYzH1Q" documentation="Views repository for calls GenPackage" name="calls">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_hypWBoC1EeGaB-tmtYzH1Q" name="calls">
+      <views xmi:id="_hypWB4C1EeGaB-tmtYzH1Q" name="ParameterBinding">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWCIC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWCYC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWCoC1EeGaB-tmtYzH1Q" name="parameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWC4C1EeGaB-tmtYzH1Q" name="invocation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWDIC1EeGaB-tmtYzH1Q" name="OpaqueCallable">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWDYC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWDoC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWD4C1EeGaB-tmtYzH1Q" name="inParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWEIC1EeGaB-tmtYzH1Q" name="outParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWEYC1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWEoC1EeGaB-tmtYzH1Q" name="callExpression">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWE4C1EeGaB-tmtYzH1Q" name="ParameterExtension">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWFIC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWFYC1EeGaB-tmtYzH1Q" name="extendableBase">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_hypWFoC1EeGaB-tmtYzH1Q" documentation="Views repository for expressions GenPackage" name="expressions">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_hypWF4C1EeGaB-tmtYzH1Q" name="expressions">
+      <views xmi:id="_hypWGIC1EeGaB-tmtYzH1Q" name="MethodCallExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWGYC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWGoC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWG4C1EeGaB-tmtYzH1Q" name="callee">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWHIC1EeGaB-tmtYzH1Q" name="ParameterExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWHYC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWHoC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWH4C1EeGaB-tmtYzH1Q" name="parameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_hypWIIC1EeGaB-tmtYzH1Q" documentation="Views repository for expressions GenPackage" name="expressions">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_hypWIYC1EeGaB-tmtYzH1Q" name="expressions">
+      <views xmi:id="_hypWIoC1EeGaB-tmtYzH1Q" name="AttributeValueExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWI4C1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWJIC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWJYC1EeGaB-tmtYzH1Q" name="object">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWJoC1EeGaB-tmtYzH1Q" name="attribute">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWJ4C1EeGaB-tmtYzH1Q" name="ObjectVariableExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWKIC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWKYC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWKoC1EeGaB-tmtYzH1Q" name="object">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWK4C1EeGaB-tmtYzH1Q" name="ObjectSetSizeExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWLIC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWLYC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWLoC1EeGaB-tmtYzH1Q" name="set">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWL4C1EeGaB-tmtYzH1Q" name="PrimitiveVariableExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWMIC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWMYC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWMoC1EeGaB-tmtYzH1Q" name="primitiveVariable">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_hypWM4C1EeGaB-tmtYzH1Q" documentation="Views repository for storydiagrams GenPackage" name="storydiagrams">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_hypWNIC1EeGaB-tmtYzH1Q" name="storydiagrams"/>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_hypWNYC1EeGaB-tmtYzH1Q" documentation="Views repository for patterns GenPackage" name="patterns">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_hypWNoC1EeGaB-tmtYzH1Q" name="patterns">
+      <views xmi:id="_hypWN4C1EeGaB-tmtYzH1Q" name="ObjectVariable">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWOIC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWOYC1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWOoC1EeGaB-tmtYzH1Q" name="pattern">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWO4C1EeGaB-tmtYzH1Q" name="bindingState">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWPIC1EeGaB-tmtYzH1Q" name="incomingLink">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWPYC1EeGaB-tmtYzH1Q" name="outgoingLink">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWPoC1EeGaB-tmtYzH1Q" name="bindingSemantics">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWP4C1EeGaB-tmtYzH1Q" name="bindingOperator">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWQIC1EeGaB-tmtYzH1Q" name="classifier">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWQYC1EeGaB-tmtYzH1Q" name="Constraint">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWQoC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWQ4C1EeGaB-tmtYzH1Q" name="pattern">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWRIC1EeGaB-tmtYzH1Q" name="objectVariable">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWRYC1EeGaB-tmtYzH1Q" name="LinkConstraint">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWRoC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWR4C1EeGaB-tmtYzH1Q" name="index">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWSIC1EeGaB-tmtYzH1Q" name="constraintType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWSYC1EeGaB-tmtYzH1Q" name="negative">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWSoC1EeGaB-tmtYzH1Q" name="firstLink">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWS4C1EeGaB-tmtYzH1Q" name="referencingObject">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWTIC1EeGaB-tmtYzH1Q" name="secondLink">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWTYC1EeGaB-tmtYzH1Q" name="AttributeAssignment">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWToC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWT4C1EeGaB-tmtYzH1Q" name="attribute">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWUIC1EeGaB-tmtYzH1Q" name="objectVariable">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWUYC1EeGaB-tmtYzH1Q" name="ObjectSetVariable">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWUoC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWU4C1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWVIC1EeGaB-tmtYzH1Q" name="pattern">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWVYC1EeGaB-tmtYzH1Q" name="bindingState">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWVoC1EeGaB-tmtYzH1Q" name="incomingLink">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWV4C1EeGaB-tmtYzH1Q" name="outgoingLink">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWWIC1EeGaB-tmtYzH1Q" name="bindingSemantics">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWWYC1EeGaB-tmtYzH1Q" name="bindingOperator">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWWoC1EeGaB-tmtYzH1Q" name="classifier">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWW4C1EeGaB-tmtYzH1Q" name="PrimitiveVariable">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWXIC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWXYC1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWXoC1EeGaB-tmtYzH1Q" name="pattern">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWX4C1EeGaB-tmtYzH1Q" name="bindingState">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWYIC1EeGaB-tmtYzH1Q" name="incomingLink">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWYYC1EeGaB-tmtYzH1Q" name="classifier">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWYoC1EeGaB-tmtYzH1Q" name="Path">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWY4C1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWZIC1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWZYC1EeGaB-tmtYzH1Q" name="bindingSemantics">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWZoC1EeGaB-tmtYzH1Q" name="bindingOperator">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWZ4C1EeGaB-tmtYzH1Q" name="source">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWaIC1EeGaB-tmtYzH1Q" name="secondLinkConstraint">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWaYC1EeGaB-tmtYzH1Q" name="firstLinkConstraint">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWaoC1EeGaB-tmtYzH1Q" name="bindingState">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWa4C1EeGaB-tmtYzH1Q" name="pattern">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWbIC1EeGaB-tmtYzH1Q" name="target">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWbYC1EeGaB-tmtYzH1Q" name="LinkVariable">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWboC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWb4C1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWcIC1EeGaB-tmtYzH1Q" name="bindingSemantics">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWcYC1EeGaB-tmtYzH1Q" name="bindingOperator">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWcoC1EeGaB-tmtYzH1Q" name="source">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWc4C1EeGaB-tmtYzH1Q" name="secondLinkConstraint">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWdIC1EeGaB-tmtYzH1Q" name="firstLinkConstraint">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWdYC1EeGaB-tmtYzH1Q" name="bindingState">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWdoC1EeGaB-tmtYzH1Q" name="pattern">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWd4C1EeGaB-tmtYzH1Q" name="target">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWeIC1EeGaB-tmtYzH1Q" name="targetEnd">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWeYC1EeGaB-tmtYzH1Q" name="ContainmentRelation">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWeoC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWe4C1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWfIC1EeGaB-tmtYzH1Q" name="bindingSemantics">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWfYC1EeGaB-tmtYzH1Q" name="bindingOperator">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWfoC1EeGaB-tmtYzH1Q" name="source">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWf4C1EeGaB-tmtYzH1Q" name="secondLinkConstraint">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWgIC1EeGaB-tmtYzH1Q" name="firstLinkConstraint">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWgYC1EeGaB-tmtYzH1Q" name="bindingState">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWgoC1EeGaB-tmtYzH1Q" name="pattern">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWg4C1EeGaB-tmtYzH1Q" name="target">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWhIC1EeGaB-tmtYzH1Q" name="MatchingPattern">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWhYC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWhoC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWh4C1EeGaB-tmtYzH1Q" name="parentPattern">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWiIC1EeGaB-tmtYzH1Q" name="bindingSemantics">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWiYC1EeGaB-tmtYzH1Q" name="ContainerVariable">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWioC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWi4C1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWjIC1EeGaB-tmtYzH1Q" name="pattern">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWjYC1EeGaB-tmtYzH1Q" name="bindingState">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWjoC1EeGaB-tmtYzH1Q" name="incomingLink">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWj4C1EeGaB-tmtYzH1Q" name="outgoingLink">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWkIC1EeGaB-tmtYzH1Q" name="bindingSemantics">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWkYC1EeGaB-tmtYzH1Q" name="bindingOperator">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWkoC1EeGaB-tmtYzH1Q" name="classifier">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWk4C1EeGaB-tmtYzH1Q" name="StoryPattern">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWlIC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWlYC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWloC1EeGaB-tmtYzH1Q" name="parentPattern">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWl4C1EeGaB-tmtYzH1Q" name="bindingSemantics">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_hypWmIC1EeGaB-tmtYzH1Q" documentation="Views repository for expressions GenPackage" name="expressions">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_hypWmYC1EeGaB-tmtYzH1Q" name="expressions">
+      <views xmi:id="_hypWmoC1EeGaB-tmtYzH1Q" name="ExceptionVariableExpression">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWm4C1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWnIC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWnYC1EeGaB-tmtYzH1Q" name="exceptionVariable">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_hypWnoC1EeGaB-tmtYzH1Q" documentation="Views repository for templates GenPackage" name="templates">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_hypWn4C1EeGaB-tmtYzH1Q" name="templates">
+      <views xmi:id="_hypWoIC1EeGaB-tmtYzH1Q" name="TemplateBinding">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWoYC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWooC1EeGaB-tmtYzH1Q" name="boundParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWo4C1EeGaB-tmtYzH1Q" name="template">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWpIC1EeGaB-tmtYzH1Q" name="PropertyBinding">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWpYC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWpoC1EeGaB-tmtYzH1Q" name="boundProperty">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWp4C1EeGaB-tmtYzH1Q" name="templateBinding">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWqIC1EeGaB-tmtYzH1Q" name="TemplateSignature">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWqYC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWqoC1EeGaB-tmtYzH1Q" name="pattern">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_hypWq4C1EeGaB-tmtYzH1Q" documentation="Views repository for activities GenPackage" name="activities">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_hypWrIC1EeGaB-tmtYzH1Q" name="activities">
+      <views xmi:id="_hypWrYC1EeGaB-tmtYzH1Q" name="ExceptionVariable">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWroC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWr4C1EeGaB-tmtYzH1Q" name="activityEdge">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWsIC1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWsYC1EeGaB-tmtYzH1Q" name="exceptionType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWsoC1EeGaB-tmtYzH1Q" name="genericExceptionType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWs4C1EeGaB-tmtYzH1Q" name="ActivityEdge">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWtIC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWtYC1EeGaB-tmtYzH1Q" name="target">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWtoC1EeGaB-tmtYzH1Q" name="source">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWt4C1EeGaB-tmtYzH1Q" name="owningActivity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWuIC1EeGaB-tmtYzH1Q" name="guard">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWuYC1EeGaB-tmtYzH1Q" name="Activity">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWuoC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWu4C1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWvIC1EeGaB-tmtYzH1Q" name="inParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWvYC1EeGaB-tmtYzH1Q" name="outParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWvoC1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWv4C1EeGaB-tmtYzH1Q" name="owningOperation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWwIC1EeGaB-tmtYzH1Q" name="precondition">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWwYC1EeGaB-tmtYzH1Q" name="OperationExtension">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWwoC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWw4C1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWxIC1EeGaB-tmtYzH1Q" name="inParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWxYC1EeGaB-tmtYzH1Q" name="outParameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWxoC1EeGaB-tmtYzH1Q" name="extendableBase">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypWx4C1EeGaB-tmtYzH1Q" name="MatchingStoryNode">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypWyIC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWyYC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWyoC1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWy4C1EeGaB-tmtYzH1Q" name="outgoing">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWzIC1EeGaB-tmtYzH1Q" name="owningActivity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWzYC1EeGaB-tmtYzH1Q" name="owningActivityNode">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWzoC1EeGaB-tmtYzH1Q" name="incoming">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypWz4C1EeGaB-tmtYzH1Q" name="forEach">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypW0IC1EeGaB-tmtYzH1Q" name="StructuredNode">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypW0YC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW0oC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW04C1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW1IC1EeGaB-tmtYzH1Q" name="outgoing">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW1YC1EeGaB-tmtYzH1Q" name="owningActivity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW1oC1EeGaB-tmtYzH1Q" name="owningActivityNode">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW14C1EeGaB-tmtYzH1Q" name="incoming">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypW2IC1EeGaB-tmtYzH1Q" name="JunctionNode">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypW2YC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW2oC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW24C1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW3IC1EeGaB-tmtYzH1Q" name="outgoing">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW3YC1EeGaB-tmtYzH1Q" name="owningActivity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW3oC1EeGaB-tmtYzH1Q" name="owningActivityNode">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW34C1EeGaB-tmtYzH1Q" name="incoming">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypW4IC1EeGaB-tmtYzH1Q" name="StartNode">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypW4YC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW4oC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW44C1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW5IC1EeGaB-tmtYzH1Q" name="outgoing">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW5YC1EeGaB-tmtYzH1Q" name="owningActivity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW5oC1EeGaB-tmtYzH1Q" name="owningActivityNode">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW54C1EeGaB-tmtYzH1Q" name="incoming">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypW6IC1EeGaB-tmtYzH1Q" name="StatementNode">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypW6YC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW6oC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW64C1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW7IC1EeGaB-tmtYzH1Q" name="outgoing">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW7YC1EeGaB-tmtYzH1Q" name="owningActivity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW7oC1EeGaB-tmtYzH1Q" name="owningActivityNode">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW74C1EeGaB-tmtYzH1Q" name="incoming">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypW8IC1EeGaB-tmtYzH1Q" name="StopNode">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypW8YC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW8oC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW84C1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW9IC1EeGaB-tmtYzH1Q" name="outgoing">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW9YC1EeGaB-tmtYzH1Q" name="owningActivity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW9oC1EeGaB-tmtYzH1Q" name="owningActivityNode">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW94C1EeGaB-tmtYzH1Q" name="incoming">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW-IC1EeGaB-tmtYzH1Q" name="flowStopOnly">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hypW-YC1EeGaB-tmtYzH1Q" name="ActivityCallNode">
+        <elements xsi:type="eef-views:Container" xmi:id="_hypW-oC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW-4C1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW_IC1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW_YC1EeGaB-tmtYzH1Q" name="outgoing">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hypW_oC1EeGaB-tmtYzH1Q" name="owningActivity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hyp8kIC1EeGaB-tmtYzH1Q" name="owningActivityNode">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hyp8kYC1EeGaB-tmtYzH1Q" name="incoming">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hyp8koC1EeGaB-tmtYzH1Q" name="callee">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hyp8k4C1EeGaB-tmtYzH1Q" name="calledActivity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_hyp8lIC1EeGaB-tmtYzH1Q" name="ModifyingStoryNode">
+        <elements xsi:type="eef-views:Container" xmi:id="_hyp8lYC1EeGaB-tmtYzH1Q" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hyp8loC1EeGaB-tmtYzH1Q" name="comment">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hyp8l4C1EeGaB-tmtYzH1Q" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hyp8mIC1EeGaB-tmtYzH1Q" name="outgoing">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hyp8mYC1EeGaB-tmtYzH1Q" name="owningActivity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hyp8moC1EeGaB-tmtYzH1Q" name="owningActivityNode">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hyp8m4C1EeGaB-tmtYzH1Q" name="incoming">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_hyp8nIC1EeGaB-tmtYzH1Q" name="forEach">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>

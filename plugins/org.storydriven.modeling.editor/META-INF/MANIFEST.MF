@@ -1,27 +1,27 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.storydriven.modeling.editor;singleton:=true
+Bundle-SymbolicName: org.storydriven.storydiagrams.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: org.storydriven.modeling.presentation.SDMEditorPlugin$Implementation
+Bundle-Activator: org.storydriven.storydiagrams.presentation.StorydiagramsEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.storydriven.modeling.activities.expressions.presentation,
- org.storydriven.modeling.activities.presentation,
- org.storydriven.modeling.calls.expressions.presentation,
- org.storydriven.modeling.calls.presentation,
- org.storydriven.modeling.expressions.presentation,
- org.storydriven.modeling.patterns.expressions.presentation,
- org.storydriven.modeling.patterns.presentation,
- org.storydriven.modeling.presentation,
- org.storydriven.modeling.templates.presentation
+Export-Package: org.storydriven.storydiagrams.activities.expressions.presentation,
+ org.storydriven.storydiagrams.activities.presentation,
+ org.storydriven.storydiagrams.calls.expressions.presentation,
+ org.storydriven.storydiagrams.calls.presentation,
+ org.storydriven.storydiagrams.patterns.expressions.presentation,
+ org.storydriven.storydiagrams.patterns.presentation,
+ org.storydriven.storydiagrams.presentation,
+ org.storydriven.storydiagrams.templates.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- org.storydriven.modeling.edit;visibility:=reexport,
+ org.storydriven.storydiagrams.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
+ org.storydriven.core.edit;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

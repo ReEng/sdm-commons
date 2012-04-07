@@ -2,18 +2,18 @@
 <?eclipse version="3.5"?>
 
 <plugin>
-	<extension point="org.storydriven.modeling.diagram.custom.expressionSourceViewerExtension">
+
+	<extension point="org.storydriven.storydiagrams.diagram.custom.expressionSourceViewerExtension">
 		<expressionSourceViewer
 			expressionLanguage="OCL"
 			sourceViewerProvider="org.storydriven.modeling.diagram.ocl.OCLSourceViewerProvider"
 			version="1.0"/>
-		</extension>
+	</extension>
 
 	<extension point="org.storydriven.core.expressionLanguagesExtension">
 		<expressionLanguage
 			expressionLanguage="OCL"
-			version="1.0">
-		</expressionLanguage>
+			version="1.0"/>
 	</extension>
 
 </plugin>

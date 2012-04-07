@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.storydriven.storydiagrams/src-gen"
+    editDirectory="/org.storydriven.storydiagrams.edit/src-gen" editorDirectory="/org.storydriven.storydiagrams.editor/src-gen"
+    modelPluginID="org.storydriven.storydiagrams" modelName="Storydiagrams" testsDirectory="/org.storydriven.storydiagrams.tests/src-gen"
+    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="6.0" suppressGenModelAnnotations="false"
+    copyrightFields="false" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    pluralizedGetters="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="REPORT"/>
+    <details key="DUPLICATE_FEATURES" value="DISCARD"/>
+    <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="DISCARD"/>
+    <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="REDEFINING_PROPERTIES" value="REPORT"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
+    <details key="REDEFINING_OPERATIONS" value="REPORT"/>
+    <details key="DERIVED_FEATURES" value="PROCESS"/>
+    <details key="OPERATION_BODIES" value="IGNORE"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+  </genAnnotations>
+  <foreignModel>storydiagrams.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="Storydiagrams" basePackage="org.storydriven"
+      disposableProviderFactory="true" fileExtensions="sdm" ecorePackage="storydiagrams.ecore#/">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//Variable">
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute storydiagrams.ecore#//Variable/variableName"/>
+    </genClasses>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Activities" basePackage="org.storydriven.storydiagrams"
+        disposableProviderFactory="true" fileExtensions="sdm_activities" ecorePackage="storydiagrams.ecore#//activities">
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="storydiagrams.ecore#//activities/EdgeGuard">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//activities/EdgeGuard/NONE"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//activities/EdgeGuard/SUCCESS"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//activities/EdgeGuard/FAILURE"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//activities/EdgeGuard/EACH_TIME"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//activities/EdgeGuard/END"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//activities/EdgeGuard/ELSE"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//activities/EdgeGuard/BOOL"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//activities/EdgeGuard/EXCEPTION"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//activities/EdgeGuard/FINALLY"/>
+      </genEnums>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/ExceptionVariable">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ExceptionVariable/activityEdge"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//activities/ExceptionVariable/name"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ExceptionVariable/exceptionType"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ExceptionVariable/genericExceptionType"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/ActivityEdge">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityEdge/target"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityEdge/source"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityEdge/owningActivity"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//activities/ActivityEdge/guard"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityEdge/guardExpression"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityEdge/guardException"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//activities/ActivityNode">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityNode/outgoing"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityNode/owningActivity"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityNode/owningActivityNode"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityNode/incoming"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/Activity">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/Activity/owningOperation"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/Activity/ownedActivityEdge"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/Activity/precondition"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/OperationExtension">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/OperationExtension/operation"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/OperationExtension/returnValue"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/OperationExtension/ownedActivity"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="storydiagrams.ecore#//activities/OperationExtension/NumberOfOutParams">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="storydiagrams.ecore#//activities/OperationExtension/NumberOfOutParams/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="storydiagrams.ecore#//activities/OperationExtension/NumberOfOutParams/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/MatchingStoryNode">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/MatchingStoryNode/ownedPattern"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//activities/StoryNode">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//activities/StoryNode/forEach"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/StoryNode/storyPattern"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/StructuredNode">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/StructuredNode/ownedActivityNode"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/JunctionNode"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/StartNode"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/StatementNode">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/StatementNode/statementExpression"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/StopNode">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//activities/StopNode/flowStopOnly"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/StopNode/returnValue"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/StopNode/returnValues"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/ActivityCallNode">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityCallNode/calledActivity"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/ModifyingStoryNode">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ModifyingStoryNode/ownedRule"/>
+      </genClasses>
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="ActivitiesExpressions"
+          basePackage="org.storydriven.storydiagrams.activities" disposableProviderFactory="true"
+          fileExtensions="sd_expressions" ecorePackage="storydiagrams.ecore#//activities/expressions">
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/expressions/ExceptionVariableExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/expressions/ExceptionVariableExpression/exceptionVariable"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Calls" basePackage="org.storydriven.storydiagrams"
+        disposableProviderFactory="true" fileExtensions="sdm_calls" ecorePackage="storydiagrams.ecore#//calls">
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//calls/Invocation">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/Invocation/ownedParameterBindings"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/Invocation/callee"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//calls/ParameterBinding">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/ParameterBinding/valueExpression"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/ParameterBinding/parameter"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/ParameterBinding/invocation"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//calls/OpaqueCallable">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//calls/OpaqueCallable/name"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/OpaqueCallable/callExpression"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="storydiagrams.ecore#//calls/OpaqueCallable/NumberOfOutParams">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="storydiagrams.ecore#//calls/OpaqueCallable/NumberOfOutParams/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="storydiagrams.ecore#//calls/OpaqueCallable/NumberOfOutParams/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//calls/ParameterExtension">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/ParameterExtension/parameter"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//calls/Callable">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/Callable/inParameter"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/Callable/outParameter"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/Callable/containedParameters"/>
+      </genClasses>
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="CallsExpressions"
+          basePackage="org.storydriven.storydiagrams.calls" disposableProviderFactory="true"
+          fileExtensions="sd_expressions" ecorePackage="storydiagrams.ecore#//calls/expressions">
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//calls/expressions/MethodCallExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+              createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/expressions/MethodCallExpression/target"/>
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+              createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/expressions/MethodCallExpression/opaqueCallable"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//calls/expressions/ParameterExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/expressions/ParameterExpression/parameter"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Patterns" basePackage="org.storydriven.storydiagrams"
+        disposableProviderFactory="true" fileExtensions="sdm_patterns" ecorePackage="storydiagrams.ecore#//patterns">
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="storydiagrams.ecore#//patterns/BindingState">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/BindingState/UNBOUND"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/BindingState/BOUND"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/BindingState/MAYBE_BOUND"/>
+      </genEnums>
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="storydiagrams.ecore#//patterns/BindingSemantics">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/BindingSemantics/MANDATORY"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/BindingSemantics/NEGATIVE"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/BindingSemantics/OPTIONAL"/>
+      </genEnums>
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="storydiagrams.ecore#//patterns/BindingOperator">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/BindingOperator/CHECK_ONLY"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/BindingOperator/CREATE"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/BindingOperator/DESTROY"/>
+      </genEnums>
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="storydiagrams.ecore#//patterns/LinkConstraintType">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/LinkConstraintType/FIRST"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/LinkConstraintType/LAST"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/LinkConstraintType/DIRECT_SUCCESSOR"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/LinkConstraintType/INDIRECT_SUCCESSOR"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/LinkConstraintType/INDEX"/>
+      </genEnums>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/ObjectVariable">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/outgoingLink"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/linkOrderConstraint"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/ObjectVariable/bindingSemantics"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/ObjectVariable/bindingOperator"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/attributeAssignment"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/ObjectVariable/classifier"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//patterns/AbstractVariable">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractVariable/pattern"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/AbstractVariable/bindingState"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractVariable/bindingExpression"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractVariable/constraint"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractVariable/incomingLink"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/Constraint">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/Constraint/constraintExpression"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/Constraint/pattern"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/Constraint/objectVariable"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//patterns/AbstractLinkVariable">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingSemantics"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingOperator"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/source"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/secondLinkConstraint"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/firstLinkConstraint"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/pattern"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/target"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/LinkConstraint">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/LinkConstraint/index"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/LinkConstraint/constraintType"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/LinkConstraint/negative"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/LinkConstraint/firstLink"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/LinkConstraint/referencingObject"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/LinkConstraint/secondLink"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/AttributeAssignment">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AttributeAssignment/attribute"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AttributeAssignment/valueExpression"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AttributeAssignment/objectVariable"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/ObjectSetVariable"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/PrimitiveVariable">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/PrimitiveVariable/classifier"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/Path">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/Path/pathExpression"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/LinkVariable">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/LinkVariable/sourceEnd"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/LinkVariable/targetEnd"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/LinkVariable/qualifierExpression"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/ContainmentRelation"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/MatchingPattern">
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="storydiagrams.ecore#//patterns/MatchingPattern/NoModifierInMatchingPattern">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="storydiagrams.ecore#//patterns/MatchingPattern/NoModifierInMatchingPattern/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="storydiagrams.ecore#//patterns/MatchingPattern/NoModifierInMatchingPattern/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/ContainerVariable"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/StoryPattern">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/variable"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/constraint"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/linkVariable"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/parentPattern"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/containedPattern"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/StoryPattern/bindingSemantics"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/templateSignature"/>
+      </genClasses>
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="PatternsExpressions"
+          basePackage="org.storydriven.storydiagrams.patterns" disposableProviderFactory="true"
+          fileExtensions="sd_expressions" ecorePackage="storydiagrams.ecore#//patterns/expressions">
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/expressions/AttributeValueExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/expressions/AttributeValueExpression/object"/>
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/expressions/AttributeValueExpression/attribute"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/expressions/ObjectVariableExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/expressions/ObjectVariableExpression/object"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/expressions/PrimitiveVariableExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/expressions/PrimitiveVariableExpression/primitiveVariable"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Templates" basePackage="org.storydriven.storydiagrams"
+        disposableProviderFactory="true" fileExtensions="sdm_templates" ecorePackage="storydiagrams.ecore#//templates">
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//templates/TemplateBinding">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateBinding/boundParameter"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateBinding/bindingExpression"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateBinding/template"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateBinding/propertyBinding"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//templates/PropertyBinding">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/PropertyBinding/boundProperty"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/PropertyBinding/bindingExpression"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/PropertyBinding/templateBinding"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//templates/TemplateSignature">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateSignature/templateBinding"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateSignature/typeParameter"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateSignature/pattern"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

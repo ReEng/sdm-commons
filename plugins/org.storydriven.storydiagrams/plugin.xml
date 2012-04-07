@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri="http://ns.storydriven.org/core/0.2.0"
+			class="org.storydriven.core.CorePackage"
+			genModel="model/core.uml.genmodel"/>
+		<package
+			uri="http://ns.storydriven.org/core/expressions/0.2.0"
+			class="org.storydriven.core.expressions.ExpressionsPackage"
+			genModel="model/core.uml.genmodel"/>
+	</extension>
+
+</plugin>
