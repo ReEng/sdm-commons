@@ -29,7 +29,7 @@ public class StorydiagramsFactoryImpl extends EFactoryImpl implements Storydiagr
 	 */
 	public static StorydiagramsFactory init() {
 		try {
-			StorydiagramsFactory theStorydiagramsFactory = (StorydiagramsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www..storydriven.org/storydiagrams/0.1.0"); 
+			StorydiagramsFactory theStorydiagramsFactory = (StorydiagramsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/storydiagrams/0.2.0"); 
 			if (theStorydiagramsFactory != null) {
 				return theStorydiagramsFactory;
 			}

@@ -34,7 +34,9 @@ import org.storydriven.storydiagrams.util.StorydiagramsAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StorydiagramsItemProviderAdapterFactory extends StorydiagramsAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class StorydiagramsItemProviderAdapterFactory extends
+		StorydiagramsAdapterFactory implements ComposeableAdapterFactory,
+		IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -89,7 +91,8 @@ public class StorydiagramsItemProviderAdapterFactory extends StorydiagramsAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(
+			ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 

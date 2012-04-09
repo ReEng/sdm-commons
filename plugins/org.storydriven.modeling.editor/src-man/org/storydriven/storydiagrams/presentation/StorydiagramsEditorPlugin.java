@@ -11,6 +11,7 @@ import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.storydriven.core.provider.CoreEditPlugin;
+import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
 
 /**
  * This is the central singleton for the Storydiagrams editor plugin.
@@ -39,12 +40,13 @@ public final class StorydiagramsEditorPlugin extends EMFPlugin {
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public StorydiagramsEditorPlugin() {
 		super
 			(new ResourceLocator [] {
 				CoreEditPlugin.INSTANCE,
+				StorydiagramsEditPlugin.INSTANCE,
 				EcoreEditPlugin.INSTANCE,
 			});
 	}

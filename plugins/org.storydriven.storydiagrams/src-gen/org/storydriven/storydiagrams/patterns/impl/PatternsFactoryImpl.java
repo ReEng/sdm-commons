@@ -46,7 +46,7 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 */
 	public static PatternsFactory init() {
 		try {
-			PatternsFactory thePatternsFactory = (PatternsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www..storydriven.org/storydiagrams/patterns/0.1.0"); 
+			PatternsFactory thePatternsFactory = (PatternsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/storydiagrams/patterns/0.2.0"); 
 			if (thePatternsFactory != null) {
 				return thePatternsFactory;
 			}

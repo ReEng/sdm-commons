@@ -30,7 +30,7 @@ public class ActivitiesExpressionsFactoryImpl extends EFactoryImpl implements Ac
 	 */
 	public static ActivitiesExpressionsFactory init() {
 		try {
-			ActivitiesExpressionsFactory theActivitiesExpressionsFactory = (ActivitiesExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www..storydriven.org/storydiagrams/activities/expressions/0.1.0"); 
+			ActivitiesExpressionsFactory theActivitiesExpressionsFactory = (ActivitiesExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/storydiagrams/activities/expressions/0.2.0"); 
 			if (theActivitiesExpressionsFactory != null) {
 				return theActivitiesExpressionsFactory;
 			}

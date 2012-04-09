@@ -31,7 +31,7 @@ public class CallsExpressionsFactoryImpl extends EFactoryImpl implements CallsEx
 	 */
 	public static CallsExpressionsFactory init() {
 		try {
-			CallsExpressionsFactory theCallsExpressionsFactory = (CallsExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www..storydriven.org/storydiagrams/calls/expressions/0.1.0"); 
+			CallsExpressionsFactory theCallsExpressionsFactory = (CallsExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/storydiagrams/calls/expressions/0.2.0"); 
 			if (theCallsExpressionsFactory != null) {
 				return theCallsExpressionsFactory;
 			}

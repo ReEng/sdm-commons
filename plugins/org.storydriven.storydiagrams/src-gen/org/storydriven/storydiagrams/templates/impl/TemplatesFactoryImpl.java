@@ -32,7 +32,7 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
 	 */
 	public static TemplatesFactory init() {
 		try {
-			TemplatesFactory theTemplatesFactory = (TemplatesFactory)EPackage.Registry.INSTANCE.getEFactory("http://www..storydriven.org/storydiagrams/templates/0.1.0"); 
+			TemplatesFactory theTemplatesFactory = (TemplatesFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/storydiagrams/templates/0.2.0"); 
 			if (theTemplatesFactory != null) {
 				return theTemplatesFactory;
 			}

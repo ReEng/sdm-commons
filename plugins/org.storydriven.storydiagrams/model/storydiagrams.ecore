@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="storydiagrams"
-    nsURI="http://www..storydriven.org/storydiagrams/0.1.0" nsPrefix="sd">
+    nsURI="http://www.storydriven.org/storydiagrams/0.2.0" nsPrefix="sd">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The storydiagram package is the root package for the story diagram meta-model. It defines the type Variable and otherwise is only used to contain more specific sub-packages."/>
   </eAnnotations>
@@ -14,7 +14,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
         volatile="true" transient="true" derived="true"/>
   </eClassifiers>
-  <eSubpackages name="activities" nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0"
+  <eSubpackages name="activities" nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0"
       nsPrefix="sda">
     <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariable" eSuperTypes="#//Variable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -333,7 +333,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eSubpackages name="expressions" nsURI="http://www..storydriven.org/storydiagrams/activities/expressions/0.1.0"
+    <eSubpackages name="expressions" nsURI="http://www.storydriven.org/storydiagrams/activities/expressions/0.2.0"
         nsPrefix="sdae">
       <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariableExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -348,7 +348,7 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
-  <eSubpackages name="calls" nsURI="http://www..storydriven.org/storydiagrams/calls/0.1.0"
+  <eSubpackages name="calls" nsURI="http://www.storydriven.org/storydiagrams/calls/0.2.0"
       nsPrefix="sdc">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package contains all classes for modeling calls to activities and EOperations&#xD;&#xA;from within an activity."/>
@@ -434,7 +434,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eSubpackages name="expressions" nsURI="http://www..storydriven.org/storydiagrams/calls/expressions/0.1.0"
+    <eSubpackages name="expressions" nsURI="http://www.storydriven.org/storydiagrams/calls/expressions/0.2.0"
         nsPrefix="sdce">
       <eClassifiers xsi:type="ecore:EClass" name="MethodCallExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression #//calls/Invocation">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -463,7 +463,7 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
-  <eSubpackages name="patterns" nsURI="http://www..storydriven.org/storydiagrams/patterns/0.1.0"
+  <eSubpackages name="patterns" nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.0"
       nsPrefix="sdp">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package contains all classes for modeling story patterns that may be &#xD;&#xA;embedded into StoryActivityNodes of an Activity."/>
@@ -815,7 +815,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="templateSignature" ordered="false"
           eType="#//templates/TemplateSignature" containment="true" eOpposite="#//templates/TemplateSignature/pattern"/>
     </eClassifiers>
-    <eSubpackages name="expressions" nsURI="http://www..storydriven.org/storydiagrams/patterns/expressions/0.1.0"
+    <eSubpackages name="expressions" nsURI="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.0"
         nsPrefix="sdpe">
       <eClassifiers xsi:type="ecore:EClass" name="AttributeValueExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -865,7 +865,7 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
-  <eSubpackages name="templates" nsURI="http://www..storydriven.org/storydiagrams/templates/0.1.0"
+  <eSubpackages name="templates" nsURI="http://www.storydriven.org/storydiagrams/templates/0.2.0"
       nsPrefix="sdt">
     <eClassifiers xsi:type="ecore:EClass" name="TemplateBinding" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="boundParameter" ordered="false"

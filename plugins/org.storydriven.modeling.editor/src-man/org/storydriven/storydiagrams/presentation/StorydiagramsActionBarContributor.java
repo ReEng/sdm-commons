@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package org.storydriven.storydiagrams.calls.expressions.presentation;
+package org.storydriven.storydiagrams.presentation;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -23,9 +23,7 @@ import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IContributionItem;
 import org.eclipse.jface.action.IContributionManager;
-import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
-import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.action.SubContributionItem;
@@ -37,15 +35,14 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
-import org.storydriven.storydiagrams.presentation.StorydiagramsEditorPlugin;
 
 /**
- * This is the action bar contributor for the CallsExpressions model editor.
+ * This is the action bar contributor for the Patterns model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CallsExpressionsActionBarContributor
+public class StorydiagramsActionBarContributor
 	extends EditingDomainActionBarContributor
 	implements ISelectionChangedListener {
 	/**
@@ -148,63 +145,11 @@ public class CallsExpressionsActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CallsExpressionsActionBarContributor() {
+	public StorydiagramsActionBarContributor() {
 		super(ADDITIONS_LAST_STYLE);
 		loadResourceAction = new LoadResourceAction();
 		validateAction = new ValidateAction();
 		controlAction = new ControlAction();
-	}
-
-	/**
-	 * This adds Separators for editor additions to the tool bar.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void contributeToToolBar(IToolBarManager toolBarManager) {
-		toolBarManager.add(new Separator("callsexpressions-settings"));
-		toolBarManager.add(new Separator("callsexpressions-additions"));
-	}
-
-	/**
-	 * This adds to the menu bar a menu and some separators for editor additions,
-	 * as well as the sub-menus for object creation items.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void contributeToMenu(IMenuManager menuManager) {
-		super.contributeToMenu(menuManager);
-
-		IMenuManager submenuManager = new MenuManager(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_CallsExpressionsEditor_menu"), "org.storydriven.storydiagrams.calls.expressionsMenuID");
-		menuManager.insertAfter("additions", submenuManager);
-		submenuManager.add(new Separator("settings"));
-		submenuManager.add(new Separator("actions"));
-		submenuManager.add(new Separator("additions"));
-		submenuManager.add(new Separator("additions-end"));
-
-		// Prepare for CreateChild item addition or removal.
-		//
-		createChildMenuManager = new MenuManager(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
-		submenuManager.insertBefore("additions", createChildMenuManager);
-
-		// Prepare for CreateSibling item addition or removal.
-		//
-		createSiblingMenuManager = new MenuManager(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
-		submenuManager.insertBefore("additions", createSiblingMenuManager);
-
-		// Force an update because Eclipse hides empty menus now.
-		//
-		submenuManager.addMenuListener
-			(new IMenuListener() {
-				 public void menuAboutToShow(IMenuManager menuManager) {
-					 menuManager.updateAll(true);
-				 }
-			 });
-
-		addGlobalActions(submenuManager);
 	}
 
 	/**

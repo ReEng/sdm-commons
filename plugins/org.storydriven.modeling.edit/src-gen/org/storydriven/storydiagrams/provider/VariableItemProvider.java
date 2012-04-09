@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -35,14 +34,9 @@ import org.storydriven.storydiagrams.calls.CallsFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class VariableItemProvider
-	extends TypedElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class VariableItemProvider extends TypedElementItemProvider implements
+		IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -132,7 +126,8 @@ public class VariableItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add

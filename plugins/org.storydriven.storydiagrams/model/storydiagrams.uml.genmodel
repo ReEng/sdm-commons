@@ -27,13 +27,13 @@
   </genAnnotations>
   <foreignModel>storydiagrams.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="Storydiagrams" basePackage="org.storydriven"
-      disposableProviderFactory="true" fileExtensions="sdm" ecorePackage="storydiagrams.ecore#/">
+      disposableProviderFactory="true" ecorePackage="storydiagrams.ecore#/">
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//Variable">
       <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
           ecoreFeature="ecore:EAttribute storydiagrams.ecore#//Variable/variableName"/>
     </genClasses>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Activities" basePackage="org.storydriven.storydiagrams"
-        disposableProviderFactory="true" fileExtensions="sdm_activities" ecorePackage="storydiagrams.ecore#//activities">
+        disposableProviderFactory="true" ecorePackage="storydiagrams.ecore#//activities">
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="storydiagrams.ecore#//activities/EdgeGuard">
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//activities/EdgeGuard/NONE"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//activities/EdgeGuard/SUCCESS"/>
@@ -135,7 +135,7 @@
       </genClasses>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="ActivitiesExpressions"
           basePackage="org.storydriven.storydiagrams.activities" disposableProviderFactory="true"
-          fileExtensions="sd_expressions" ecorePackage="storydiagrams.ecore#//activities/expressions">
+          ecorePackage="storydiagrams.ecore#//activities/expressions">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/expressions/ExceptionVariableExpression">
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
               propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/expressions/ExceptionVariableExpression/exceptionVariable"/>
@@ -143,7 +143,7 @@
       </nestedGenPackages>
     </nestedGenPackages>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Calls" basePackage="org.storydriven.storydiagrams"
-        disposableProviderFactory="true" fileExtensions="sdm_calls" ecorePackage="storydiagrams.ecore#//calls">
+        disposableProviderFactory="true" ecorePackage="storydiagrams.ecore#//calls">
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//calls/Invocation">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/Invocation/ownedParameterBindings"/>
@@ -181,7 +181,7 @@
       </genClasses>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="CallsExpressions"
           basePackage="org.storydriven.storydiagrams.calls" disposableProviderFactory="true"
-          fileExtensions="sd_expressions" ecorePackage="storydiagrams.ecore#//calls/expressions">
+          ecorePackage="storydiagrams.ecore#//calls/expressions">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//calls/expressions/MethodCallExpression">
           <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
               createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//calls/expressions/MethodCallExpression/target"/>
@@ -195,7 +195,7 @@
       </nestedGenPackages>
     </nestedGenPackages>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Patterns" basePackage="org.storydriven.storydiagrams"
-        disposableProviderFactory="true" fileExtensions="sdm_patterns" ecorePackage="storydiagrams.ecore#//patterns">
+        disposableProviderFactory="true" ecorePackage="storydiagrams.ecore#//patterns">
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="storydiagrams.ecore#//patterns/BindingState">
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/BindingState/UNBOUND"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/BindingState/BOUND"/>
@@ -325,7 +325,7 @@
       </genClasses>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="PatternsExpressions"
           basePackage="org.storydriven.storydiagrams.patterns" disposableProviderFactory="true"
-          fileExtensions="sd_expressions" ecorePackage="storydiagrams.ecore#//patterns/expressions">
+          ecorePackage="storydiagrams.ecore#//patterns/expressions">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/expressions/AttributeValueExpression">
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
               propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/expressions/AttributeValueExpression/object"/>
@@ -347,7 +347,7 @@
       </nestedGenPackages>
     </nestedGenPackages>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Templates" basePackage="org.storydriven.storydiagrams"
-        disposableProviderFactory="true" fileExtensions="sdm_templates" ecorePackage="storydiagrams.ecore#//templates">
+        disposableProviderFactory="true" ecorePackage="storydiagrams.ecore#//templates">
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//templates/TemplateBinding">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//templates/TemplateBinding/boundParameter"/>

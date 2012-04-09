@@ -8,14 +8,7 @@ Bundle-Activator: org.storydriven.storydiagrams.presentation.StorydiagramsEditor
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.storydriven.storydiagrams.activities.expressions.presentation,
- org.storydriven.storydiagrams.activities.presentation,
- org.storydriven.storydiagrams.calls.expressions.presentation,
- org.storydriven.storydiagrams.calls.presentation,
- org.storydriven.storydiagrams.patterns.expressions.presentation,
- org.storydriven.storydiagrams.patterns.presentation,
- org.storydriven.storydiagrams.presentation,
- org.storydriven.storydiagrams.templates.presentation
+Export-Package: org.storydriven.storydiagrams.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.storydriven.storydiagrams.edit;visibility:=reexport,
@@ -23,5 +16,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
  org.storydriven.core.edit;visibility:=reexport,
- org.eclipse.emf.ecore.edit;visibility:=reexport
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
+ org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.200",
+ org.eclipse.emf.eef.runtime;bundle-version="1.0.2"
 Bundle-ActivationPolicy: lazy

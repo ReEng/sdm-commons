@@ -33,7 +33,7 @@ public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements Patt
 	 */
 	public static PatternsExpressionsFactory init() {
 		try {
-			PatternsExpressionsFactory thePatternsExpressionsFactory = (PatternsExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www..storydriven.org/storydiagrams/patterns/expressions/0.1.0"); 
+			PatternsExpressionsFactory thePatternsExpressionsFactory = (PatternsExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.0"); 
 			if (thePatternsExpressionsFactory != null) {
 				return thePatternsExpressionsFactory;
 			}

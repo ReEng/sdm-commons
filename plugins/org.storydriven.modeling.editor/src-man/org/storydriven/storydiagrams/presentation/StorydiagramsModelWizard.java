@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package org.storydriven.storydiagrams.calls.presentation;
+package org.storydriven.storydiagrams.presentation;
 
 
 import java.util.ArrayList;
@@ -59,9 +59,8 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
-import org.storydriven.storydiagrams.calls.CallsFactory;
-import org.storydriven.storydiagrams.calls.CallsPackage;
-import org.storydriven.storydiagrams.presentation.StorydiagramsEditorPlugin;
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
 
 
@@ -71,7 +70,7 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CallsModelWizard extends Wizard implements INewWizard {
+public class StorydiagramsModelWizard extends Wizard implements INewWizard {
 	/**
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->
@@ -79,7 +78,7 @@ public class CallsModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_CallsEditorFilenameExtensions").split("\\s*,\\s*")));
+		Collections.unmodifiableList(Arrays.asList(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_StorydiagramsEditorFilenameExtensions").split("\\s*,\\s*")));
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -88,7 +87,7 @@ public class CallsModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS =
-		StorydiagramsEditorPlugin.INSTANCE.getString("_UI_CallsEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+		StorydiagramsEditorPlugin.INSTANCE.getString("_UI_StorydiagramsEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
@@ -96,7 +95,7 @@ public class CallsModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CallsPackage callsPackage = CallsPackage.eINSTANCE;
+	protected ActivitiesPackage activitiesPackage = ActivitiesPackage.eINSTANCE;
 
 	/**
 	 * This caches an instance of the model factory.
@@ -104,7 +103,7 @@ public class CallsModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CallsFactory callsFactory = callsPackage.getCallsFactory();
+	protected ActivitiesFactory patternsFactory = activitiesPackage.getActivitiesFactory();
 
 	/**
 	 * This is the file creation page.
@@ -112,7 +111,7 @@ public class CallsModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CallsModelWizardNewFileCreationPage newFileCreationPage;
+	protected PatternsModelWizardNewFileCreationPage newFileCreationPage;
 
 	/**
 	 * This is the initial object creation page.
@@ -120,7 +119,7 @@ public class CallsModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CallsModelWizardInitialObjectCreationPage initialObjectCreationPage;
+	protected PatternsModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
 	/**
 	 * Remember the selection during initialization for populating the default container.
@@ -156,19 +155,19 @@ public class CallsModelWizard extends Wizard implements INewWizard {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(StorydiagramsEditorPlugin.INSTANCE.getImage("full/wizban/NewCalls")));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(StorydiagramsEditorPlugin.INSTANCE.getImage("full/wizban/NewStorydiagrams")));
 	}
 
 	/**
 	 * Returns the names of the types that can be created as the root object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected Collection<String> getInitialObjectNames() {
 		if (initialObjectNames == null) {
 			initialObjectNames = new ArrayList<String>();
-			for (EClassifier eClassifier : callsPackage.getEClassifiers()) {
+			for (EClassifier eClassifier : activitiesPackage.getEClassifiers()) {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass)eClassifier;
 					if (!eClass.isAbstract()) {
@@ -188,8 +187,8 @@ public class CallsModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass)callsPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-		EObject rootObject = callsFactory.create(eClass);
+		EClass eClass = (EClass)activitiesPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EObject rootObject = patternsFactory.create(eClass);
 		return rootObject;
 	}
 
@@ -290,14 +289,14 @@ public class CallsModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class CallsModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+	public class PatternsModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
 		/**
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public CallsModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+		public PatternsModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
 			super(pageId, selection);
 		}
 
@@ -337,7 +336,7 @@ public class CallsModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class CallsModelWizardInitialObjectCreationPage extends WizardPage {
+	public class PatternsModelWizardInitialObjectCreationPage extends WizardPage {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -365,7 +364,7 @@ public class CallsModelWizard extends Wizard implements INewWizard {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public CallsModelWizardInitialObjectCreationPage(String pageId) {
+		public PatternsModelWizardInitialObjectCreationPage(String pageId) {
 			super(pageId);
 		}
 
@@ -549,10 +548,10 @@ public class CallsModelWizard extends Wizard implements INewWizard {
 	public void addPages() {
 		// Create a page, set the title, and the initial model file name.
 		//
-		newFileCreationPage = new CallsModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_CallsModelWizard_label"));
-		newFileCreationPage.setDescription(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_CallsModelWizard_description"));
-		newFileCreationPage.setFileName(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_CallsEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		newFileCreationPage = new PatternsModelWizardNewFileCreationPage("Whatever", selection);
+		newFileCreationPage.setTitle(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_StorydiagramsModelWizard_label"));
+		newFileCreationPage.setDescription(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_StorydiagramsModelWizard_description"));
+		newFileCreationPage.setFileName(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_StorydiagramsEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
@@ -578,7 +577,7 @@ public class CallsModelWizard extends Wizard implements INewWizard {
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = StorydiagramsEditorPlugin.INSTANCE.getString("_UI_CallsEditorFilenameDefaultBase");
+					String defaultModelBaseFilename = StorydiagramsEditorPlugin.INSTANCE.getString("_UI_StorydiagramsEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
 					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
@@ -588,8 +587,8 @@ public class CallsModelWizard extends Wizard implements INewWizard {
 				}
 			}
 		}
-		initialObjectCreationPage = new CallsModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_CallsModelWizard_label"));
+		initialObjectCreationPage = new PatternsModelWizardInitialObjectCreationPage("Whatever2");
+		initialObjectCreationPage.setTitle(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_StorydiagramsModelWizard_label"));
 		initialObjectCreationPage.setDescription(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(initialObjectCreationPage);
 	}

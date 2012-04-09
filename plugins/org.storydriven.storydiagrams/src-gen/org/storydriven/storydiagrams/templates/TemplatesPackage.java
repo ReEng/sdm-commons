@@ -41,7 +41,7 @@ public interface TemplatesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www..storydriven.org/storydiagrams/templates/0.1.0";
+	String eNS_URI = "http://www.storydriven.org/storydiagrams/templates/0.2.0";
 
 	/**
 	 * The package namespace name.

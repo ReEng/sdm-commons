@@ -32,7 +32,7 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory {
 	 */
 	public static CallsFactory init() {
 		try {
-			CallsFactory theCallsFactory = (CallsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www..storydriven.org/storydiagrams/calls/0.1.0"); 
+			CallsFactory theCallsFactory = (CallsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/storydiagrams/calls/0.2.0"); 
 			if (theCallsFactory != null) {
 				return theCallsFactory;
 			}

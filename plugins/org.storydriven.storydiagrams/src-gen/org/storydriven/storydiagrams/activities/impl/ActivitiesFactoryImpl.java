@@ -43,7 +43,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 	 */
 	public static ActivitiesFactory init() {
 		try {
-			ActivitiesFactory theActivitiesFactory = (ActivitiesFactory)EPackage.Registry.INSTANCE.getEFactory("http://www..storydriven.org/storydiagrams/activities/0.1.0"); 
+			ActivitiesFactory theActivitiesFactory = (ActivitiesFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/storydiagrams/activities/0.2.0"); 
 			if (theActivitiesFactory != null) {
 				return theActivitiesFactory;
 			}
