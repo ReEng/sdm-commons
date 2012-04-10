@@ -109,7 +109,7 @@ However, this is not described in detail here.
 \section{Applications and Extensions of Story Diagrams}
 \label{sec:RW_Extensions}
 
-In the area of reengineering, Niere et al.\ \cite{NSW+02} had the idea to specify design patterns with a graphical DSL which had strong relations to story patterns. In order to detect the specified patterns in source code, these DSL patterns were translated into story diagrams which were then executed through code generation. Later this approach was implemented in the Reclipse Tool Suite \cite{DMT10}. In follow-up work by Fockel \cite{Foc10}, the generated story diagrams were no longer transformed into executable code but interpreted to allow for easier debugging of the pattern specifications.
+In the area of reengineering, Niere et al.\ \cite{NSW+02} propose to specify design patterns with a graphical DSL which has strong relations to story patterns. In order to detect the specified patterns in source code, these DSL patterns are translated into story diagrams which are then executed through code generation. This approach has first been implemented in \fuj and later in the Reclipse Tool Suite \cite{DMT10}. In follow-up work by Fockel \cite{Foc10}, the generated story diagrams are no longer transformed into executable code but are interpreted to allow for easier debugging of the pattern specifications.
 
 Giese and Klein extend story patterns to so called Story Decision Diagrams (SDDs) that allow to express complex safety properties \cite{GK06a}.
 Basically, they require story patterns of SDDs to be non-modifying (i.e., no \create or \destroy elements) and add features of logics such as quantification, implication, and negation.
@@ -125,7 +125,7 @@ This language is transformed to story diagrams that can be executed to perform t
 Z{\"u}ndorf~\cite{Zue09} proposes a framework for computing the state-space of a specification in terms of story diagrams and an initial instance model. 
 It has been used for model checking the leader election protocol and for a case study presented in~\cite{HSJZ10}.
 
-Meyer \cite{Mey09} adds a few special constructs to story diagrams thereby extending them to transformation diagrams. Some of these extensions, such as multiple out parameters, have been integrated into the story diagrams presented in this report. Meyer uses the transformation diagrams to specify refactorings of object-oriented source code. To verify that certain properties of the code (e.g.\ variable accesses) are preserved by the refactorings, he extends Schilling's approach \cite{Sch06} to proving inductive invariants.
+Meyer \cite{Mey09} adds a few specialized constructs to story diagrams thereby extending them to transformation diagrams. Some of these extensions, such as multiple out parameters, have been integrated into the story diagrams presented in this report (see Section~\ref{sec:activities}). Similar to our complete example (Chapter~\ref{sec:Example}), Meyer uses the transformation diagrams to specify refactorings of object-oriented source code. To verify that certain properties of the code (e.g.\ variable accesses) are preserved by the refactorings, he extends Schilling's approach \cite{Sch06} to proving inductive invariants.
 
 In~\cite{HH11b}, Heinzemann and Henkler extend story diagrams to timed story diagrams. 
 Timed story diagrams are based on timed graph transformation systems~\cite{EHH+11} that extend graph transformation systems by clocks as known from timed automata~\cite{AD94}. 
