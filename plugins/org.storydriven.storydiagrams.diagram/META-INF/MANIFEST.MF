@@ -41,7 +41,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.storydriven.storydiagrams;bundle-version="1.0.0",
  org.storydriven.storydiagrams.edit;bundle-version="1.0.0",
- org.storydriven.storydiagrams.edit.eef;bundle-version="1.0.0",
  org.storydriven.storydiagrams.editor;bundle-version="1.0.0",
  org.storydriven.core.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

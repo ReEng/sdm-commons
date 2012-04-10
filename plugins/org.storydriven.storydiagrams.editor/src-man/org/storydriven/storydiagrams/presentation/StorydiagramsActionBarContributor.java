@@ -37,113 +37,81 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
 /**
- * This is the action bar contributor for the Patterns model editor.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
- * @generated
+ * This is the action bar contributor for the Story Diagram model editor.
  */
-public class StorydiagramsActionBarContributor
-	extends EditingDomainActionBarContributor
-	implements ISelectionChangedListener {
+public class StorydiagramsActionBarContributor extends EditingDomainActionBarContributor implements
+		ISelectionChangedListener {
 	/**
 	 * This keeps track of the active editor.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected IEditorPart activeEditorPart;
 
 	/**
 	 * This keeps track of the current selection provider.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected ISelectionProvider selectionProvider;
 
 	/**
 	 * This action opens the Properties view.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
-	protected IAction showPropertiesViewAction =
-		new Action(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) {
-			@Override
-			public void run() {
-				try {
-					getPage().showView("org.eclipse.ui.views.PropertySheet");
-				}
-				catch (PartInitException exception) {
-					StorydiagramsEditorPlugin.INSTANCE.log(exception);
-				}
+	protected IAction showPropertiesViewAction = new Action(
+			StorydiagramsEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) {
+		@Override
+		public void run() {
+			try {
+				getPage().showView("org.eclipse.ui.views.PropertySheet");
+			} catch (PartInitException exception) {
+				StorydiagramsEditorPlugin.INSTANCE.log(exception);
 			}
-		};
+		}
+	};
 
 	/**
-	 * This action refreshes the viewer of the current editor if the editor
-	 * implements {@link org.eclipse.emf.common.ui.viewer.IViewerProvider}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This action refreshes the viewer of the current editor if the editor implements
+	 * {@link org.eclipse.emf.common.ui.viewer.IViewerProvider}.
 	 */
-	protected IAction refreshViewerAction =
-		new Action(StorydiagramsEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
-			@Override
-			public boolean isEnabled() {
-				return activeEditorPart instanceof IViewerProvider;
-			}
+	protected IAction refreshViewerAction = new Action(
+			StorydiagramsEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
+		@Override
+		public boolean isEnabled() {
+			return activeEditorPart instanceof IViewerProvider;
+		}
 
-			@Override
-			public void run() {
-				if (activeEditorPart instanceof IViewerProvider) {
-					Viewer viewer = ((IViewerProvider)activeEditorPart).getViewer();
-					if (viewer != null) {
-						viewer.refresh();
-					}
+		@Override
+		public void run() {
+			if (activeEditorPart instanceof IViewerProvider) {
+				Viewer viewer = ((IViewerProvider) activeEditorPart).getViewer();
+				if (viewer != null) {
+					viewer.refresh();
 				}
 			}
-		};
+		}
+	};
 
 	/**
 	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateChildAction} corresponding to each descriptor
 	 * generated for the current selection by the item provider.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected Collection<IAction> createChildActions;
 
 	/**
 	 * This is the menu manager into which menu contribution items should be added for CreateChild actions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected IMenuManager createChildMenuManager;
 
 	/**
 	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} corresponding to each descriptor
 	 * generated for the current selection by the item provider.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected Collection<IAction> createSiblingActions;
 
 	/**
 	 * This is the menu manager into which menu contribution items should be added for CreateSibling actions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected IMenuManager createSiblingMenuManager;
 
 	/**
 	 * This creates an instance of the contributor.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public StorydiagramsActionBarContributor() {
 		super(ADDITIONS_LAST_STYLE);
@@ -154,9 +122,6 @@ public class StorydiagramsActionBarContributor
 
 	/**
 	 * When the active editor changes, this remembers the change and registers with it as a selection provider.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public void setActiveEditor(IEditorPart part) {
@@ -164,19 +129,16 @@ public class StorydiagramsActionBarContributor
 		activeEditorPart = part;
 
 		// Switch to the new selection provider.
-		//
 		if (selectionProvider != null) {
 			selectionProvider.removeSelectionChangedListener(this);
 		}
 		if (part == null) {
 			selectionProvider = null;
-		}
-		else {
+		} else {
 			selectionProvider = part.getSite().getSelectionProvider();
 			selectionProvider.addSelectionChangedListener(this);
 
 			// Fake a selection changed event to update the menus.
-			//
 			if (selectionProvider.getSelection() != null) {
 				selectionChanged(new SelectionChangedEvent(selectionProvider, selectionProvider.getSelection()));
 			}
@@ -184,16 +146,12 @@ public class StorydiagramsActionBarContributor
 	}
 
 	/**
-	 * This implements {@link org.eclipse.jface.viewers.ISelectionChangedListener},
-	 * handling {@link org.eclipse.jface.viewers.SelectionChangedEvent}s by querying for the children and siblings
-	 * that can be added to the selected object and updating the menus accordingly.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This implements {@link org.eclipse.jface.viewers.ISelectionChangedListener}, handling
+	 * {@link org.eclipse.jface.viewers.SelectionChangedEvent}s by querying for the children and siblings that can be
+	 * added to the selected object and updating the menus accordingly.
 	 */
 	public void selectionChanged(SelectionChangedEvent event) {
 		// Remove any menu items for old selection.
-		//
 		if (createChildMenuManager != null) {
 			depopulateManager(createChildMenuManager, createChildActions);
 		}
@@ -202,22 +160,20 @@ public class StorydiagramsActionBarContributor
 		}
 
 		// Query the new selection for appropriate new child/sibling descriptors
-		//
 		Collection<?> newChildDescriptors = null;
 		Collection<?> newSiblingDescriptors = null;
 
 		ISelection selection = event.getSelection();
-		if (selection instanceof IStructuredSelection && ((IStructuredSelection)selection).size() == 1) {
-			Object object = ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection && ((IStructuredSelection) selection).size() == 1) {
+			Object object = ((IStructuredSelection) selection).getFirstElement();
 
-			EditingDomain domain = ((IEditingDomainProvider)activeEditorPart).getEditingDomain();
+			EditingDomain domain = ((IEditingDomainProvider) activeEditorPart).getEditingDomain();
 
 			newChildDescriptors = domain.getNewChildDescriptors(object, null);
 			newSiblingDescriptors = domain.getNewChildDescriptors(null, object);
 		}
 
 		// Generate actions for selection; populate and redraw the menus.
-		//
 		createChildActions = generateCreateChildActions(newChildDescriptors, selection);
 		createSiblingActions = generateCreateSiblingActions(newSiblingDescriptors, selection);
 
@@ -232,11 +188,33 @@ public class StorydiagramsActionBarContributor
 	}
 
 	/**
-	 * This generates a {@link org.eclipse.emf.edit.ui.action.CreateChildAction} for each object in <code>descriptors</code>,
-	 * and returns the collection of these actions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This removes from the specified <code>manager</code> all {@link org.eclipse.jface.action.ActionContributionItem}s
+	 * based on the {@link org.eclipse.jface.action.IAction}s contained in the <code>actions</code> collection.
+	 */
+	protected void depopulateManager(IContributionManager manager, Collection<? extends IAction> actions) {
+		if (actions != null) {
+			IContributionItem[] items = manager.getItems();
+			for (int i = 0; i < items.length; i++) {
+				// Look into SubContributionItems
+				IContributionItem contributionItem = items[i];
+				while (contributionItem instanceof SubContributionItem) {
+					contributionItem = ((SubContributionItem) contributionItem).getInnerItem();
+				}
+
+				// Delete the ActionContributionItems with matching action.
+				if (contributionItem instanceof ActionContributionItem) {
+					IAction action = ((ActionContributionItem) contributionItem).getAction();
+					if (actions.contains(action)) {
+						manager.remove(contributionItem);
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * This generates a {@link org.eclipse.emf.edit.ui.action.CreateChildAction} for each object in
+	 * <code>descriptors</code>, and returns the collection of these actions.
 	 */
 	protected Collection<IAction> generateCreateChildActions(Collection<?> descriptors, ISelection selection) {
 		Collection<IAction> actions = new ArrayList<IAction>();
@@ -249,11 +227,8 @@ public class StorydiagramsActionBarContributor
 	}
 
 	/**
-	 * This generates a {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} for each object in <code>descriptors</code>,
-	 * and returns the collection of these actions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This generates a {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} for each object in
+	 * <code>descriptors</code>, and returns the collection of these actions.
 	 */
 	protected Collection<IAction> generateCreateSiblingActions(Collection<?> descriptors, ISelection selection) {
 		Collection<IAction> actions = new ArrayList<IAction>();
@@ -265,64 +240,6 @@ public class StorydiagramsActionBarContributor
 		return actions;
 	}
 
-	/**
-	 * This populates the specified <code>manager</code> with {@link org.eclipse.jface.action.ActionContributionItem}s
-	 * based on the {@link org.eclipse.jface.action.IAction}s contained in the <code>actions</code> collection,
-	 * by inserting them before the specified contribution item <code>contributionID</code>.
-	 * If <code>contributionID</code> is <code>null</code>, they are simply added.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void populateManager(IContributionManager manager, Collection<? extends IAction> actions, String contributionID) {
-		if (actions != null) {
-			for (IAction action : actions) {
-				if (contributionID != null) {
-					manager.insertBefore(contributionID, action);
-				}
-				else {
-					manager.add(action);
-				}
-			}
-		}
-	}
-		
-	/**
-	 * This removes from the specified <code>manager</code> all {@link org.eclipse.jface.action.ActionContributionItem}s
-	 * based on the {@link org.eclipse.jface.action.IAction}s contained in the <code>actions</code> collection.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void depopulateManager(IContributionManager manager, Collection<? extends IAction> actions) {
-		if (actions != null) {
-			IContributionItem[] items = manager.getItems();
-			for (int i = 0; i < items.length; i++) {
-				// Look into SubContributionItems
-				//
-				IContributionItem contributionItem = items[i];
-				while (contributionItem instanceof SubContributionItem) {
-					contributionItem = ((SubContributionItem)contributionItem).getInnerItem();
-				}
-
-				// Delete the ActionContributionItems with matching action.
-				//
-				if (contributionItem instanceof ActionContributionItem) {
-					IAction action = ((ActionContributionItem)contributionItem).getAction();
-					if (actions.contains(action)) {
-						manager.remove(contributionItem);
-					}
-				}
-			}
-		}
-	}
-
-	/**
-	 * This populates the pop-up menu before it appears.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public void menuAboutToShow(IMenuManager menuManager) {
 		super.menuAboutToShow(menuManager);
@@ -338,28 +255,35 @@ public class StorydiagramsActionBarContributor
 	}
 
 	/**
-	 * This inserts global actions before the "additions-end" separator.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This populates the specified <code>manager</code> with {@link org.eclipse.jface.action.ActionContributionItem}s
+	 * based on the {@link org.eclipse.jface.action.IAction}s contained in the <code>actions</code> collection, by
+	 * inserting them before the specified contribution item <code>contributionID</code>. If <code>contributionID</code>
+	 * is <code>null</code>, they are simply added.
 	 */
+	protected void populateManager(IContributionManager manager, Collection<? extends IAction> actions,
+			String contributionID) {
+		if (actions != null) {
+			for (IAction action : actions) {
+				if (contributionID != null) {
+					manager.insertBefore(contributionID, action);
+				} else {
+					manager.add(action);
+				}
+			}
+		}
+	}
+
 	@Override
 	protected void addGlobalActions(IMenuManager menuManager) {
 		menuManager.insertAfter("additions-end", new Separator("ui-actions"));
 		menuManager.insertAfter("ui-actions", showPropertiesViewAction);
 
-		refreshViewerAction.setEnabled(refreshViewerAction.isEnabled());		
+		refreshViewerAction.setEnabled(refreshViewerAction.isEnabled());
 		menuManager.insertAfter("ui-actions", refreshViewerAction);
 
 		super.addGlobalActions(menuManager);
 	}
 
-	/**
-	 * This ensures that a delete action will clean up all references to deleted objects.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	protected boolean removeAllReferencesOnDelete() {
 		return true;
