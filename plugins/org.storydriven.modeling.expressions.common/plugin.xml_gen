@@ -6,7 +6,7 @@
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
        uri = "http://www.storydriven.org/modeling/expressions/common/Expressions" 
-       class = "org.storydriven.modeling.expressions.common.expressions.ExpressionsPackage"
+       class = "org.storydriven.storydiagrams.expressions.common.expressions.ExpressionsPackage"
        genModel = "org/storydriven/modeling/expressions/common/Expressions.genmodel" /> 
 	
   </extension>

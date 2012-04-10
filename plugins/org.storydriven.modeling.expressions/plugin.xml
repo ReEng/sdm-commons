@@ -6,7 +6,7 @@
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
        uri = "http://www.storydriven.org/modeling/expressions/PathExpressions" 
-       class = "org.storydriven.modeling.expressions.pathExpressions.PathExpressionsPackage"
+       class = "org.storydriven.storydiagrams.expressions.pathExpressions.PathExpressionsPackage"
        genModel = "org/storydriven/modeling/expressions/PathExpressions.genmodel" /> 
 	
   </extension>
@@ -16,7 +16,7 @@
    <extension
          point="org.eclipse.emf.ecore.generated_package">
       <package
-            class="org.storydriven.modeling.expressions.pathbridge.PathbridgePackage"
+            class="org.storydriven.storydiagrams.expressions.pathbridge.PathbridgePackage"
             uri="http://www.storydriven.org/modeling/expressions/pathbridge"
        genModel = "org/storydriven/modeling/expressions/model/bridge.genmodel" > 
       </package>
