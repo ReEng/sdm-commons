@@ -277,7 +277,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <metamodelType
                id="org.storydriven.storydiagrams.diagram.Activity_1000"
                name="%metatype.name.Activity_1000"
@@ -287,7 +287,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <metamodelType
                id="org.storydriven.storydiagrams.diagram.StartNode_2001"
                name="%metatype.name.StartNode_2001"
@@ -297,7 +297,7 @@
             <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <metamodelType
                id="org.storydriven.storydiagrams.diagram.StopNode_2002"
                name="%metatype.name.StopNode_2002"
@@ -307,7 +307,7 @@
             <param name="semanticHint" value="2002"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <metamodelType
                id="org.storydriven.storydiagrams.diagram.JunctionNode_2003"
                name="%metatype.name.JunctionNode_2003"
@@ -317,7 +317,7 @@
             <param name="semanticHint" value="2003"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <metamodelType
                id="org.storydriven.storydiagrams.diagram.StatementNode_2004"
                name="%metatype.name.StatementNode_2004"
@@ -327,7 +327,7 @@
             <param name="semanticHint" value="2004"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <metamodelType
                id="org.storydriven.storydiagrams.diagram.StructuredNode_2005"
                name="%metatype.name.StructuredNode_2005"
@@ -337,7 +337,7 @@
             <param name="semanticHint" value="2005"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <specializationType
                id="org.storydriven.storydiagrams.diagram.ModifyingStoryNode_2007"
                name="%metatype.name.ModifyingStoryNode_2007"
@@ -346,7 +346,7 @@
             <param name="semanticHint" value="2007"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <metamodelType
                id="org.storydriven.storydiagrams.diagram.ActivityCallNode_2008"
                name="%metatype.name.ActivityCallNode_2008"
@@ -366,7 +366,7 @@
             <param name="semanticHint" value="3015"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <specializationType
                id="org.storydriven.storydiagrams.diagram.JunctionNode_3001"
                name="%metatype.name.JunctionNode_3001"
@@ -375,7 +375,7 @@
             <param name="semanticHint" value="3001"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <specializationType
                id="org.storydriven.storydiagrams.diagram.StartNode_3002"
                name="%metatype.name.StartNode_3002"
@@ -384,7 +384,7 @@
             <param name="semanticHint" value="3002"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <specializationType
                id="org.storydriven.storydiagrams.diagram.StopNode_3004"
                name="%metatype.name.StopNode_3004"
@@ -393,7 +393,7 @@
             <param name="semanticHint" value="3004"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <specializationType
                id="org.storydriven.storydiagrams.diagram.StatementNode_3003"
                name="%metatype.name.StatementNode_3003"
@@ -402,7 +402,7 @@
             <param name="semanticHint" value="3003"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <specializationType
                id="org.storydriven.storydiagrams.diagram.StructuredNode_3005"
                name="%metatype.name.StructuredNode_3005"
@@ -411,7 +411,7 @@
             <param name="semanticHint" value="3005"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <metamodelType
                id="org.storydriven.storydiagrams.diagram.ModifyingStoryNode_3011"
                name="%metatype.name.ModifyingStoryNode_3011"
@@ -421,7 +421,7 @@
             <param name="semanticHint" value="3011"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/patterns/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.0">
          <metamodelType
                id="org.storydriven.storydiagrams.diagram.StoryPattern_3008"
                name="%metatype.name.StoryPattern_3008"
@@ -431,7 +431,7 @@
             <param name="semanticHint" value="3008"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/patterns/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.0">
          <metamodelType
                id="org.storydriven.storydiagrams.diagram.ObjectVariable_3012"
                name="%metatype.name.ObjectVariable_3012"
@@ -441,7 +441,7 @@
             <param name="semanticHint" value="3012"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/patterns/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.0">
          <metamodelType
                id="org.storydriven.storydiagrams.diagram.AttributeAssignment_3013"
                name="%metatype.name.AttributeAssignment_3013"
@@ -451,7 +451,7 @@
             <param name="semanticHint" value="3013"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/patterns/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.0">
          <metamodelType
                id="org.storydriven.storydiagrams.diagram.PrimitiveVariable_3014"
                name="%metatype.name.PrimitiveVariable_3014"
@@ -461,7 +461,7 @@
             <param name="semanticHint" value="3014"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/activities/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          <metamodelType
                id="org.storydriven.storydiagrams.diagram.ActivityEdge_4001"
                name="%metatype.name.ActivityEdge_4001"
@@ -471,7 +471,7 @@
             <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www..storydriven.org/storydiagrams/patterns/0.1.0">
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.0">
          <metamodelType
                id="org.storydriven.storydiagrams.diagram.LinkVariable_4002"
                name="%metatype.name.LinkVariable_4002"

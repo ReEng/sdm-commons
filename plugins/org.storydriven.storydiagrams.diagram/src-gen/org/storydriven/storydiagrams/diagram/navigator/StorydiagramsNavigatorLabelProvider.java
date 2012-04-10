@@ -118,67 +118,67 @@ public class StorydiagramsNavigatorLabelProvider extends LabelProvider
 		switch (StorydiagramsVisualIDRegistry.getVisualID(view)) {
 		case ObjectVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www..storydriven.org/storydiagrams/patterns/0.1.0?ObjectVariable", StorydiagramsElementTypes.ObjectVariable_3012); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.0?ObjectVariable", StorydiagramsElementTypes.ObjectVariable_3012); //$NON-NLS-1$
 		case StatementNode2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www..storydriven.org/storydiagrams/activities/0.1.0?StatementNode", StorydiagramsElementTypes.StatementNode_3003); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?StatementNode", StorydiagramsElementTypes.StatementNode_3003); //$NON-NLS-1$
 		case StopNode2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www..storydriven.org/storydiagrams/activities/0.1.0?StopNode", StorydiagramsElementTypes.StopNode_3004); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?StopNode", StorydiagramsElementTypes.StopNode_3004); //$NON-NLS-1$
 		case StartNode2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www..storydriven.org/storydiagrams/activities/0.1.0?StartNode", StorydiagramsElementTypes.StartNode_3002); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?StartNode", StorydiagramsElementTypes.StartNode_3002); //$NON-NLS-1$
 		case StartNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www..storydriven.org/storydiagrams/activities/0.1.0?StartNode", StorydiagramsElementTypes.StartNode_2001); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?StartNode", StorydiagramsElementTypes.StartNode_2001); //$NON-NLS-1$
 		case JunctionNode2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www..storydriven.org/storydiagrams/activities/0.1.0?JunctionNode", StorydiagramsElementTypes.JunctionNode_3001); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?JunctionNode", StorydiagramsElementTypes.JunctionNode_3001); //$NON-NLS-1$
 		case TextualExpressionEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.storydriven.org/core/expressions/0.2.0?TextualExpression", StorydiagramsElementTypes.TextualExpression_3015); //$NON-NLS-1$
 		case ModifyingStoryNode2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www..storydriven.org/storydiagrams/activities/0.1.0?ModifyingStoryNode", StorydiagramsElementTypes.ModifyingStoryNode_3011); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?ModifyingStoryNode", StorydiagramsElementTypes.ModifyingStoryNode_3011); //$NON-NLS-1$
 		case ActivityCallNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www..storydriven.org/storydiagrams/activities/0.1.0?ActivityCallNode", StorydiagramsElementTypes.ActivityCallNode_2008); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?ActivityCallNode", StorydiagramsElementTypes.ActivityCallNode_2008); //$NON-NLS-1$
 		case StoryPatternEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www..storydriven.org/storydiagrams/patterns/0.1.0?StoryPattern", StorydiagramsElementTypes.StoryPattern_3008); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.0?StoryPattern", StorydiagramsElementTypes.StoryPattern_3008); //$NON-NLS-1$
 		case ActivityEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http://www..storydriven.org/storydiagrams/activities/0.1.0?Activity", StorydiagramsElementTypes.Activity_1000); //$NON-NLS-1$
+					"Navigator?Diagram?http://www.storydriven.org/storydiagrams/activities/0.2.0?Activity", StorydiagramsElementTypes.Activity_1000); //$NON-NLS-1$
 		case StructuredNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www..storydriven.org/storydiagrams/activities/0.1.0?StructuredNode", StorydiagramsElementTypes.StructuredNode_2005); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?StructuredNode", StorydiagramsElementTypes.StructuredNode_2005); //$NON-NLS-1$
 		case StopNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www..storydriven.org/storydiagrams/activities/0.1.0?StopNode", StorydiagramsElementTypes.StopNode_2002); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?StopNode", StorydiagramsElementTypes.StopNode_2002); //$NON-NLS-1$
 		case StructuredNode2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www..storydriven.org/storydiagrams/activities/0.1.0?StructuredNode", StorydiagramsElementTypes.StructuredNode_3005); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?StructuredNode", StorydiagramsElementTypes.StructuredNode_3005); //$NON-NLS-1$
 		case StatementNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www..storydriven.org/storydiagrams/activities/0.1.0?StatementNode", StorydiagramsElementTypes.StatementNode_2004); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?StatementNode", StorydiagramsElementTypes.StatementNode_2004); //$NON-NLS-1$
 		case PrimitiveVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www..storydriven.org/storydiagrams/patterns/0.1.0?PrimitiveVariable", StorydiagramsElementTypes.PrimitiveVariable_3014); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.0?PrimitiveVariable", StorydiagramsElementTypes.PrimitiveVariable_3014); //$NON-NLS-1$
 		case AttributeAssignmentEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www..storydriven.org/storydiagrams/patterns/0.1.0?AttributeAssignment", StorydiagramsElementTypes.AttributeAssignment_3013); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.0?AttributeAssignment", StorydiagramsElementTypes.AttributeAssignment_3013); //$NON-NLS-1$
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www..storydriven.org/storydiagrams/activities/0.1.0?ActivityEdge", StorydiagramsElementTypes.ActivityEdge_4001); //$NON-NLS-1$
+					"Navigator?Link?http://www.storydriven.org/storydiagrams/activities/0.2.0?ActivityEdge", StorydiagramsElementTypes.ActivityEdge_4001); //$NON-NLS-1$
 		case LinkVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www..storydriven.org/storydiagrams/patterns/0.1.0?LinkVariable", StorydiagramsElementTypes.LinkVariable_4002); //$NON-NLS-1$
+					"Navigator?Link?http://www.storydriven.org/storydiagrams/patterns/0.2.0?LinkVariable", StorydiagramsElementTypes.LinkVariable_4002); //$NON-NLS-1$
 		case JunctionNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www..storydriven.org/storydiagrams/activities/0.1.0?JunctionNode", StorydiagramsElementTypes.JunctionNode_2003); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?JunctionNode", StorydiagramsElementTypes.JunctionNode_2003); //$NON-NLS-1$
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www..storydriven.org/storydiagrams/activities/0.1.0?ModifyingStoryNode", StorydiagramsElementTypes.ModifyingStoryNode_2007); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?ModifyingStoryNode", StorydiagramsElementTypes.ModifyingStoryNode_2007); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}

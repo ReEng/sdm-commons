@@ -242,27 +242,27 @@
             name="activities">
          <child
                class="StartNode"
-               packageNsUri="http://ns.storydriven.org/sdm/activities/0.1.0">
+               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          </child>
          <child
                class="StopNode"
-               packageNsUri="http://ns.storydriven.org/sdm/activities/0.1.0">
+               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          </child>
          <child
                class="JunctionNode"
-               packageNsUri="http://ns.storydriven.org/sdm/activities/0.1.0">
+               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          </child>
          <child
                class="StatementNode"
-               packageNsUri="http://ns.storydriven.org/sdm/activities/0.1.0">
+               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          </child>
          <child
                class="StructuredNode"
-               packageNsUri="http://ns.storydriven.org/sdm/activities/0.1.0">
+               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          </child>
          <child
                class="ModifyingStoryNode"
-               packageNsUri="http://ns.storydriven.org/sdm/activities/0.1.0">
+               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          </child>
       </category>
    </extension>
@@ -276,7 +276,7 @@
             modelElementCategoryKey="org.storydrivening.activities.category"
             modelId="SDM">
          <diagramElement
-               packageNsURI="http://ns.storydriven.org/sdm/activities/0.1.0"
+               packageNsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0"
                className="Activity">
          </diagramElement>
          <node

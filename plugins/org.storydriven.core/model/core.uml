@@ -383,20 +383,13 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
   </uml:Package>
   <Ecore:EReference xmi:id="_mHa4ELw1Ed-Ytrd77fw2LA" isTransient="true" isVolatile="true" base_Property="_HPpYkbLzEd-uk56s-ldeog"/>
   <Ecore:EPackage xmi:id="_zYCZkLw1Ed-Ytrd77fw2LA" base_Package="bd7155bb-4f57-4868-b74a-5672b1eac640" nsPrefix="core" nsURI="http://www.storydriven.org/core/0.2.0" basePackage="org.storydriven" prefix="Core"/>
-  <Ecore:EPackage xmi:id="__POC8Lw1Ed-Ytrd77fw2LA" nsPrefix="sdma" nsURI="http://ns.storydriven.org/sdm/activities/0.1.0" basePackage=""/>
   <Ecore:EPackage xmi:id="_DWk54Lw2Ed-Ytrd77fw2LA" base_Package="_gsByQLN1Ed-vJ9Qpen_Iuw" nsPrefix="expr" nsURI="http://www.storydriven.org/core/expressions/0.2.0"/>
-  <Ecore:EPackage xmi:id="_tzOfoLxVEd-Ytrd77fw2LA" nsPrefix="sdmp" nsURI="http://ns.storydriven.org/sdm/patterns/0.1.0"/>
   <Ecore:EReference xmi:id="_TmA58LxXEd-Ytrd77fw2LA" isTransient="true"/>
-  <Ecore:EPackage xmi:id="_G52pALxaEd-Ytrd77fw2LA" nsPrefix="sdmt" nsURI="http://ns.storydriven.org/sdm/templates/0.1.0"/>
   <Ecore:EReference xmi:id="_aoEjQLxeEd-HP-M1eWm3kg" isUnsettable="true" base_Property="_rCN-Ibw1Ed-Ytrd77fw2LA"/>
   <Ecore:EReference xmi:id="_DyGToLy3Ed-eCY_Peu5fFw"/>
   <Ecore:EReference xmi:id="_WgqC4L0XEd-DQ5q3aRKcIw" isTransient="true" isVolatile="true" isUnsettable="true" base_Property="_3o6vIr0VEd-DQ5q3aRKcIw"/>
   <Ecore:EReference xmi:id="_3L9CIL0cEd-DQ5q3aRKcIw" isTransient="true" isVolatile="true" isUnsettable="true" base_Property="_w56cU70cEd-DQ5q3aRKcIw"/>
   <Ecore:EReference xmi:id="_DQedwL06Ed-8i6uUe2B2Qg" isTransient="true" isVolatile="true" base_Property="_8kmwkb0WEd-DQ5q3aRKcIw"/>
-  <Ecore:EPackage xmi:id="_tGKmABzkEeChOvWwuwx7tQ" nsPrefix="sdmpe" nsURI="http://ns.storydriven.org/sdm/patterns/expressions/0.1.0"/>
-  <Ecore:EPackage xmi:id="_dUpjIBzmEeChOvWwuwx7tQ" nsPrefix="sdmae" nsURI="http://ns.storydriven.org/sdm/activities/expressions/0.1.0"/>
-  <Ecore:EPackage xmi:id="_2xxdwBzmEeChOvWwuwx7tQ" nsPrefix="sdmc" nsURI="http://ns.storydriven.org/sdm/calls/0.1.0"/>
-  <Ecore:EPackage xmi:id="_67GDkBzmEeChOvWwuwx7tQ" nsPrefix="sdmce" nsURI="http://ns.storydriven.org/sdm/calls/expressions/0.1.0"/>
   <Ecore:EReference xmi:id="_UR3SkB1rEeCKeJCjS51luQ" isTransient="true" isVolatile="true"/>
   <Ecore:EReference xmi:id="_8MjQ4B2VEeCKeJCjS51luQ" isTransient="true"/>
   <Ecore:EReference xmi:id="_YZiT8B2qEeCgKe8vMUdTKg" isTransient="true" isVolatile="true" isUnsettable="true" isResolveProxies="false"/>

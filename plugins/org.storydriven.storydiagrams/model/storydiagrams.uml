@@ -1441,7 +1441,6 @@ Every Constraint or AttributeAssignment can use the variable as a container (e.g
   <Ecore:EReference xmi:id="_mHa4ELw1Ed-Ytrd77fw2LA" isTransient="true" isVolatile="true"/>
   <Ecore:EPackage xmi:id="_zYCZkLw1Ed-Ytrd77fw2LA" base_Package="bd7155bb-4f57-4868-b74a-5672b1eac640" nsPrefix="sd" nsURI="http://www.storydriven.org/storydiagrams/0.2.0" basePackage="org.storydriven"/>
   <Ecore:EPackage xmi:id="__POC8Lw1Ed-Ytrd77fw2LA" base_Package="_cWyQcLbPEd-5oaYsE5oIPw" nsPrefix="sda" nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0" basePackage=""/>
-  <Ecore:EPackage xmi:id="_DWk54Lw2Ed-Ytrd77fw2LA" nsPrefix="sdme" nsURI="http://ns.storydriven.org/sdm/expressions/0.1.0"/>
   <Ecore:EPackage xmi:id="_tzOfoLxVEd-Ytrd77fw2LA" base_Package="_ZYPbsLbPEd-5oaYsE5oIPw" nsPrefix="sdp" nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.0"/>
   <Ecore:EReference xmi:id="_TmA58LxXEd-Ytrd77fw2LA" isTransient="true" base_Property="_9Tqc8bK4Ed-uk56s-ldeog"/>
   <Ecore:EPackage xmi:id="_G52pALxaEd-Ytrd77fw2LA" base_Package="_qkASELN3Ed-vJ9Qpen_Iuw" nsPrefix="sdt" nsURI="http://www.storydriven.org/storydiagrams/templates/0.2.0"/>
