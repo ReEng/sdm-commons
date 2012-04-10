@@ -6,8 +6,8 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart;
-import org.storydriven.storydiagrams.patterns.BindingSemantics;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
+
 public class CustomObjectVariableEditPart extends ObjectVariableEditPart {
 
 	public CustomObjectVariableEditPart(View view) {
@@ -35,7 +35,7 @@ public class CustomObjectVariableEditPart extends ObjectVariableEditPart {
 	protected void updateFigure()
 	{
 		ObjectVariable ov = (ObjectVariable) ((View) getModel()).getElement();
-		if( ov.getBindingSemantics() == BindingSemantics.OPTIONAL) {
+		if( ov.getBindingSemantics() == org.storydriven.storydiagrams.patterns.BindingSemantics.OPTIONAL) {
 			RectangleFigure outerRectangle = ((RectangleFigure) ((IFigure) ((RectangleFigure) getFigure().getChildren().get(0))
 																				.getChildren().get(0)).getChildren().get(0));
 			outerRectangle.setLineStyle(Graphics.LINE_DASH);

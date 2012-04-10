@@ -5,6 +5,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.diagram.custom.util.SdmUtility;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableBindingOperatorEditPart;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
+
 public class CustomObjectVariableBindingOperatorLabelEditPart extends
 		ObjectVariableBindingOperatorEditPart {
 	

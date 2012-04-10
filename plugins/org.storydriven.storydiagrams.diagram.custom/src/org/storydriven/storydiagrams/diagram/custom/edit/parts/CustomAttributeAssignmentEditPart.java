@@ -6,6 +6,7 @@ import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.storydiagrams.diagram.custom.SdmDiagramConstants;
 import org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart;
 import org.storydriven.storydiagrams.patterns.AttributeAssignment;
+
 public class CustomAttributeAssignmentEditPart extends AttributeAssignmentEditPart
 {
 

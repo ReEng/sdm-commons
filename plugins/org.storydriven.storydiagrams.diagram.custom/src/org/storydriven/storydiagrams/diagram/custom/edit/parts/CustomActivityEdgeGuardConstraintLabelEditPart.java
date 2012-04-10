@@ -9,6 +9,8 @@ import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.EdgeGuard;
 import org.storydriven.storydiagrams.diagram.custom.util.SdmUtility;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeGuardConstraintLabelEditPart;
+
+
 public class CustomActivityEdgeGuardConstraintLabelEditPart extends ActivityEdgeGuardConstraintLabelEditPart
 {
 

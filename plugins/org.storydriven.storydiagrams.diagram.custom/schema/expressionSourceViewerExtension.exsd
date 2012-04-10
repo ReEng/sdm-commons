@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="org.storydriven.modeling.diagram.custom" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.storydriven.storydiagrams.diagram.custom" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="org.storydriven.modeling.diagram.custom" id="expressionSourceViewerExtension" name="Expression Source Viewer Extension"/>
+         <meta.schema plugin="org.storydriven.storydiagrams.diagram.custom" id="expressionSourceViewerExtension" name="Expression Source Viewer Extension"/>
       </appinfo>
       <documentation>
          The source viewer extension allows to register a customized source viewer for an expression language with the SDM editor. This customized source viewer can provide advanced editing features like syntax highlighting and code completion. The source viewer is integrated into the SDM editor&apos;s expression editing dialog if the user selects the appropriate expression language. If no source viewer is registered for an expression language, a plain text editor is provided by default.
@@ -69,7 +69,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn="org.storydriven.modeling.diagram.custom.SourceViewerProvider:"/>
+                  <meta.attribute kind="java" basedOn="org.storydriven.storydiagrams.diagram.custom.SourceViewerProvider:"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -90,7 +90,7 @@
          <meta.section type="examples"/>
       </appinfo>
       <documentation>
-         For an exmaple, have a look at the org.storydriven.modeling.diagram.custom.ocl plugin.
+         For an exmaple, have a look at the org.storydriven.storydiagrams.diagram.custom.ocl plugin.
       </documentation>
    </annotation>
 

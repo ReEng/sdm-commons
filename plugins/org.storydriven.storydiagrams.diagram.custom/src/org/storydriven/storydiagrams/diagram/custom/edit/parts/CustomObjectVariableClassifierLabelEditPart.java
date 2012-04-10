@@ -8,6 +8,7 @@ import org.storydriven.storydiagrams.diagram.custom.util.SdmUtility;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableClassifierLabelEditPart;
 import org.storydriven.storydiagrams.patterns.BindingState;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
+
 public class CustomObjectVariableClassifierLabelEditPart extends ObjectVariableClassifierLabelEditPart
 {
 

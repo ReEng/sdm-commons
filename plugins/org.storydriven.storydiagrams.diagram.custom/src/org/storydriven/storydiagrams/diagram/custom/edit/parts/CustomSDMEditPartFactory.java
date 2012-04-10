@@ -3,10 +3,14 @@ package org.storydriven.storydiagrams.diagram.custom.edit.parts;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeActivityCallNodeCompartmentEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeGuardConstraintLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableBindingOperatorEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableClassifierLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableNameEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.PrimitiveVariableClassifierLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StopNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StoryPatternEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StorydiagramsEditPartFactory;
@@ -32,14 +36,14 @@ public class CustomSDMEditPartFactory extends StorydiagramsEditPartFactory {
 			case ObjectVariableNameEditPart.VISUAL_ID:
 				return new CustomObjectVariableNameLabelEditPart(view);
 				
-//			case ObjectVariableBindingOperatorEditPart.VISUAL_ID:
-//				return new CustomObjectVariableBindingOperatorLabelEditPart(view);
+			case ObjectVariableBindingOperatorEditPart.VISUAL_ID:
+				return new CustomObjectVariableBindingOperatorLabelEditPart(view);
 				
-//			case ObjectVariableClassifierLabelEditPart.VISUAL_ID:
-//				return new CustomObjectVariableClassifierLabelEditPart(view);
+			case ObjectVariableClassifierLabelEditPart.VISUAL_ID:
+				return new CustomObjectVariableClassifierLabelEditPart(view);
 				
-//			case PrimitiveVariableClassifierLabelEditPart.VISUAL_ID:
-//				return new CustomPrimitiveVariableClassifierLabelEditPart(view);
+			case PrimitiveVariableClassifierLabelEditPart.VISUAL_ID:
+				return new CustomPrimitiveVariableClassifierLabelEditPart(view);
 				
 			case AttributeAssignmentEditPart.VISUAL_ID:
 				return new CustomAttributeAssignmentEditPart(view);
@@ -47,8 +51,8 @@ public class CustomSDMEditPartFactory extends StorydiagramsEditPartFactory {
 			case TextualExpressionEditPart.VISUAL_ID:
 				return new CustomTextualExpressionEditPart(view);
 				
-//			case ActivityEdgeGuardConstraintLabelEditPart.VISUAL_ID:
-//				return new CustomActivityEdgeGuardConstraintLabelEditPart(view);
+			case ActivityEdgeGuardConstraintLabelEditPart.VISUAL_ID:
+				return new CustomActivityEdgeGuardConstraintLabelEditPart(view);
 				
 			case ObjectVariableEditPart.VISUAL_ID:
 				return new CustomObjectVariableEditPart(view);

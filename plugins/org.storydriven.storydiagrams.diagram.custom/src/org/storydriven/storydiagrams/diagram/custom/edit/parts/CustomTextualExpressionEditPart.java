@@ -4,6 +4,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.storydiagrams.diagram.edit.parts.TextualExpressionEditPart;
+
 public class CustomTextualExpressionEditPart extends TextualExpressionEditPart
 {
 

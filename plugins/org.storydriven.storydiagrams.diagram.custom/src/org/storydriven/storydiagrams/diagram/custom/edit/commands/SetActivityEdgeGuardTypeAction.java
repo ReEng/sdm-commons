@@ -16,11 +16,11 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.ui.IObjectActionDelegate;
-import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.TextualExpression;
+import org.storydriven.core.expressions.impl.ExpressionsFactoryImpl;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.EdgeGuard;
-import org.storydriven.storydiagrams.diagram.custom.expressions.EditExpressionDialog;
+import org.storydriven.storydiagrams.diagram.custom.EditExpressionDialog;
 import org.storydriven.storydiagrams.diagram.custom.util.SdmUtility;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeEditPart;
 
@@ -114,7 +114,7 @@ public class SetActivityEdgeGuardTypeAction extends AbstractActionDelegate imple
 			private TextualExpression getExpression() {
 				TextualExpression e = (TextualExpression) activityEdge.getGuardExpression();
 				if(e == null) {
-					e = ExpressionsFactory.eINSTANCE.createTextualExpression();
+					e = ExpressionsFactoryImpl.eINSTANCE.createTextualExpression();
 					activityEdgeEditPart.getEditingDomain()
 								.getCommandStack().execute(new SetCommand(activityEdgeEditPart.getEditingDomain(), 
 																		activityEdge, 

@@ -46,10 +46,10 @@ public class RefreshElementCommand extends AbstractTransactionalCommand {
 		parentView.setVisible(true);
 
 		// from generated DiagramUpdateCommand
-		List editPolicies = CanonicalEditPolicy
+		List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
 			.getRegisteredEditPolicies(rootObject);
-		for (Iterator it = editPolicies.iterator(); it.hasNext(); ) {
-			CanonicalEditPolicy nextEditPolicy = (CanonicalEditPolicy) it.next();
+		for (Iterator<CanonicalEditPolicy> it = editPolicies.iterator(); it.hasNext(); ) {
+			CanonicalEditPolicy nextEditPolicy = it.next();
 			nextEditPolicy.refresh();
 		}
 

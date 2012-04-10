@@ -23,7 +23,7 @@ import org.eclipse.swt.widgets.Composite;
  * 
  * To register a customized SourceViewer with the SDM editor, implement a
  * subclass of SourceViewerProvider and use the expressionSourceViewerExtension
- * of the org.storydriven.modeling.diagram.custom plugin to register it for the
+ * of the org.storydriven.storydiagrams.diagram.custom plugin to register it for the
  * appropriate expression language. If no SourceViewer is registered for an
  * expression language, a plain text field is used to edit it.
  * 
