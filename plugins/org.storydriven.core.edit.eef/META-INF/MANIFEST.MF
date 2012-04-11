@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Storydriven Edit-Support (Extended)
+Bundle-Name: Storydriven Core Edit-Support (Extended)
 Bundle-SymbolicName: org.storydriven.core.edit.eef;singleton:=true
 Bundle-Version: 0.2.0.qualifier
 Require-Bundle: org.eclipse.emf.eef.runtime;bundle-version="0.9.1",
