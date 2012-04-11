@@ -16,7 +16,7 @@ public class StoryPatternObjectNotBoundNotification<StoryPatternObject, Classifi
 	public StoryPatternObjectNotBoundNotification(VariablesScope<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> variablesScope,
 			Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier, StoryPatternObject storyPatternObject)
 	{
-		super(NotificationTypeEnum.STORY_PATTERN_OBJECT_NOT_BOUND, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert storyPatternObject != null;
 
@@ -33,4 +33,11 @@ public class StoryPatternObjectNotBoundNotification<StoryPatternObject, Classifi
 	{
 		return this.getStoryPatternObject();
 	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.STORY_PATTERN_OBJECT_NOT_BOUND;
+	}
+
 }

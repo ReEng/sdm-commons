@@ -16,7 +16,7 @@ public class StoryPatternMatchingSuccessfulNotification<StoryPattern, Classifier
 	public StoryPatternMatchingSuccessfulNotification(VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
 			Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier, StoryPattern storyPattern)
 	{
-		super(NotificationTypeEnum.STORY_PATTERN_MATCHING_SUCCESSFUL, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert storyPattern != null;
 
@@ -32,5 +32,11 @@ public class StoryPatternMatchingSuccessfulNotification<StoryPattern, Classifier
 	public Object getMainStoryDiagramElement()
 	{
 		return this.getStoryPattern();
+	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.STORY_PATTERN_MATCHING_SUCCESSFUL;
 	}
 }

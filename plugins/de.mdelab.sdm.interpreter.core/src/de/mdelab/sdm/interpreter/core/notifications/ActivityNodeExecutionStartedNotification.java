@@ -17,7 +17,7 @@ public class ActivityNodeExecutionStartedNotification<ActivityNode, Classifier> 
 	public ActivityNodeExecutionStartedNotification(VariablesScope<?, ActivityNode, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
 			Notifier<?, ActivityNode, ?, ?, ?, ?, Classifier, ?, ?> notifier, ActivityNode activityNode)
 	{
-		super(NotificationTypeEnum.ACTIVITY_NODE_EXECUTION_STARTED, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert activityNode != null;
 
@@ -34,4 +34,11 @@ public class ActivityNodeExecutionStartedNotification<ActivityNode, Classifier> 
 	{
 		return this.getActivityNode();
 	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.ACTIVITY_NODE_EXECUTION_STARTED;
+	}
+
 }

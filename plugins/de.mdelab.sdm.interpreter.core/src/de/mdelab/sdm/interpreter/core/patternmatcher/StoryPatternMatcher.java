@@ -27,7 +27,7 @@ public abstract class StoryPatternMatcher<Activity, ActivityNode, ActivityEdge, 
 		Notifier<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>
 {
 	private final StoryPattern																																				storyPattern;
-	private VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>						variablesScope;
+	private final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>					variablesScope;
 	private final MetamodelFacadeFactory<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>			facadeFactory;
 	private final ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>	expressionInterpreterManager;
 	private MatchingStrategy<StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>															matchingStrategy;
@@ -65,12 +65,6 @@ public abstract class StoryPatternMatcher<Activity, ActivityNode, ActivityEdge, 
 		return this.variablesScope;
 	}
 
-	protected void setVariablesScope(
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
-	{
-		this.variablesScope = variablesScope;
-	}
-
 	public MetamodelFacadeFactory<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> getFacadeFactory()
 	{
 		return this.facadeFactory;
@@ -102,12 +96,23 @@ public abstract class StoryPatternMatcher<Activity, ActivityNode, ActivityEdge, 
 	public abstract boolean findNextMatch() throws SDMException;
 
 	/**
-	 * Apply the RHS of the story pattern on the variablesScope of the pattern
-	 * matcher.
+	 * Apply the RHS of the story pattern.
+	 * 
+	 * @throws SDMException
+	 */
+	public void applyMatch() throws SDMException
+	{
+		this.applyMatch(this.getVariablesScope());
+	}
+
+	/**
+	 * Apply the RHS of the story pattern based on the provided variablesScope.
 	 * 
 	 * @param variablesScope
 	 * @return
 	 * @throws SDMException
 	 */
-	public abstract void applyMatch() throws SDMException;
+	public abstract void applyMatch(
+			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
+			throws SDMException;
 }

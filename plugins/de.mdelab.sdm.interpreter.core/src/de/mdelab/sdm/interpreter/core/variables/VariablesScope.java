@@ -3,7 +3,6 @@ package de.mdelab.sdm.interpreter.core.variables;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -30,104 +29,51 @@ public class VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, 
 		extends
 		Notifier<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>
 {
-	public static final String																																INTERNAL_VARIABLE_NAME	= "##internalVariable##";
+	public static final String								INTERNAL_VARIABLE_NAME	= "##internalVariable##";
 
-	private final Map<String, Variable<Classifier>>																											variables;
+	private final Map<String, Variable<Classifier>>			variables;
 
-	private final Map<String, Map<String, List<String>>>																									expressionImports;
-
-	private final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>	parentScope;
+	private final Map<String, Map<String, List<String>>>	expressionImports;
 
 	@SuppressWarnings("unchecked")
 	public VariablesScope(
 			NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> notificationEmitter)
 	{
-		this(notificationEmitter, null, Collections.EMPTY_MAP);
+		this(notificationEmitter, Collections.EMPTY_MAP);
 	}
 
 	public VariablesScope(
 			NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> notificationEmitter,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> parentScope,
 			Map<String, Map<String, List<String>>> expressionImports)
 	{
 		super(notificationEmitter);
 
 		this.variables = new HashMap<String, Variable<Classifier>>();
 		this.expressionImports = expressionImports;
-		this.parentScope = parentScope;
 	}
 
-	/**
-	 * Retrieves the variable with the specified name. The variable scope
-	 * hierarchy is walked upwards.
-	 * 
-	 * @param name
-	 * @return
-	 */
 	public Variable<Classifier> getVariable(String name)
 	{
-		Variable<Classifier> variable = this.variables.get(name);
-
-		if (variable == null && this.parentScope != null)
-		{
-			return this.parentScope.getVariable(name);
-		}
-		else
-		{
-			return variable;
-		}
+		return this.variables.get(name);
 	}
 
-	/**
-	 * Checks whether the variable with the specified name exists in this
-	 * variableScope or its parent variableScope.
-	 * 
-	 * @param name
-	 * @return
-	 */
 	public boolean variableExists(String name)
 	{
-		if (this.variables.containsKey(name))
-		{
-			return true;
-		}
-		else if (this.parentScope != null)
-		{
-			return this.parentScope.variableExists(name);
-		}
-		else
-		{
-			return false;
-		}
+		return this.variables.containsKey(name);
 	}
 
-	/**
-	 * Deletes the specified variable from this variable scope but not its
-	 * parent scopes.
-	 * 
-	 * @param name
-	 * @return
-	 */
 	public Variable<Classifier> deleteVariable(String name)
 	{
 		Variable<Classifier> variable = this.variables.remove(name);
 
 		if (variable != null)
 		{
-			getNotificationEmitter().variableDeleted(variable, this);
+			this.getNotificationEmitter().variableDeleted(variable, this);
 		}
 
 		return variable;
 	}
 
-	/**
-	 * Creates a new variable in this variableScope.
-	 * 
-	 * @param name
-	 * @param classifier
-	 * @param value
-	 * @return
-	 */
 	public Variable<Classifier> createVariable(String name, Classifier classifier, Object value)
 	{
 		assert name != null;
@@ -140,30 +86,14 @@ public class VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, 
 
 		this.variables.put(name, variable);
 
-		getNotificationEmitter().variableCreated(variable, this);
+		this.getNotificationEmitter().variableCreated(variable, this);
 
 		return variable;
 	}
 
-	/**
-	 * Returns an unmodifiable collection of all variables of this variableScope
-	 * and its parent scopes.
-	 * 
-	 * @return
-	 */
 	public Collection<Variable<Classifier>> getVariables()
 	{
-		if (this.parentScope == null)
-		{
-			return Collections.unmodifiableCollection(this.variables.values());
-		}
-		else
-		{
-			LinkedList<Variable<Classifier>> variables = new LinkedList<Variable<Classifier>>(this.variables.values());
-			variables.addAll(this.parentScope.getVariables());
-
-			return Collections.unmodifiableCollection(variables);
-		}
+		return this.variables.values();
 	}
 
 	public List<String> getExpressionImports(String expressionLanguage, String expressionLanguageVersion)
@@ -204,35 +134,6 @@ public class VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, 
 
 		variable.setValue(value);
 
-		getNotificationEmitter().variableValueChanged(variable, oldValue, this);
-	}
-
-	public VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> getParentScope()
-	{
-		return this.parentScope;
-	}
-
-	/**
-	 * Merges this scope's variables into the parent scope. The variables are
-	 * removed from this scope.
-	 * 
-	 * @throws NullPointerException
-	 *             if there is no parent scope
-	 */
-	public void mergeIntoParentScope() throws NullPointerException
-	{
-		if (this.parentScope == null)
-		{
-			throw new NullPointerException();
-		}
-		else
-		{
-			for (Variable<Classifier> variable : this.variables.values())
-			{
-				this.parentScope.variables.put(variable.getName(), variable);
-			}
-
-			this.variables.clear();
-		}
+		this.getNotificationEmitter().variableValueChanged(variable, oldValue, this);
 	}
 }

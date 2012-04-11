@@ -16,7 +16,7 @@ public class TraversingActivityEdgeNotification<ActivityEdge, Classifier> extend
 	public TraversingActivityEdgeNotification(VariablesScope<?, ?, ActivityEdge, ?, ?, ?, Classifier, ?, ?> variablesScope,
 			Notifier<?, ?, ActivityEdge, ?, ?, ?, Classifier, ?, ?> notifier, ActivityEdge activityEdge)
 	{
-		super(NotificationTypeEnum.TRAVERSING_ACTIVITY_EDGE, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert activityEdge != null;
 
@@ -32,5 +32,11 @@ public class TraversingActivityEdgeNotification<ActivityEdge, Classifier> extend
 	public Object getMainStoryDiagramElement()
 	{
 		return this.getActivityEdge();
+	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.TRAVERSING_ACTIVITY_EDGE;
 	}
 }

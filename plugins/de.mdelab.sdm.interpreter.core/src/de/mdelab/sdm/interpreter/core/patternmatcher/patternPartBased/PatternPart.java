@@ -3,6 +3,7 @@ package de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased;
 import java.util.Map;
 
 import de.mdelab.sdm.interpreter.core.SDMException;
+import de.mdelab.sdm.interpreter.core.variables.VariablesScope;
 
 /**
  * 
@@ -66,28 +67,19 @@ public abstract class PatternPart<StoryPatternObject, StoryPatternLink, Classifi
 	/**
 	 * Search for a match of the pattern part.
 	 * 
-	 * @param matchState
-	 * 
 	 * @return
 	 * @throws SDMException
 	 */
-	public abstract boolean match(MatchState matchState) throws SDMException;
+	public abstract boolean match() throws SDMException;
 
 	/**
-	 * Create those objects of the pattern part that are marked for creation.
+	 * Create those elements of the pattern part that are marked for creation.
 	 * Attribute assignments are not executed here.
 	 * 
 	 * @throws SDMException
 	 */
-	public abstract void createObjects() throws SDMException;
-
-	/**
-	 * Create those links of the pattern part that are marked for creation.
-	 * 
-	 * @param variablesScope
-	 * @throws SDMException
-	 */
-	public abstract void createLinks() throws SDMException;
+	public abstract void createElements(
+			VariablesScope<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, Expression> variablesScope) throws SDMException;
 
 	/**
 	 * Destroy those objects of the pattern part that are marked for
@@ -97,14 +89,15 @@ public abstract class PatternPart<StoryPatternObject, StoryPatternLink, Classifi
 	 * aware, that a story pattern object may have already been deleted
 	 * previously by an overlapping pattern part.
 	 */
-	public abstract void destroyObjects();
+	public abstract void destroyObjects(
+			VariablesScope<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, Expression> variablesScope);
 
 	/**
-	 * Destroy the links of the pattern part.
+	 * Destroy the link of the pattern part.
 	 * 
 	 * @param deletedObjects
 	 */
-	public abstract void destroyLinks(Map<StoryPatternObject, Object> deletedObjects);
+	public abstract void destroyLink(Map<StoryPatternObject, Object> deletedObjects);
 
 	/**
 	 * Calculate an estimate of the cost of matching this pattern part. If it is
@@ -119,15 +112,6 @@ public abstract class PatternPart<StoryPatternObject, StoryPatternLink, Classifi
 	public abstract int calculateMatchingCost();
 
 	/**
-	 * Create a match state that holds information about the state where the
-	 * matcher left off for this pattern part, e.g., an iterator of an instance
-	 * link.
-	 * 
-	 * @return
-	 */
-	public abstract MatchState createMatchState();
-
-	/**
 	 * Returns the priority of this pattern part when elements are created. This
 	 * is necessary to create links with link constraints in the correct order.
 	 * 0 is the highest priority.
@@ -135,7 +119,7 @@ public abstract class PatternPart<StoryPatternObject, StoryPatternLink, Classifi
 	 * @return
 	 * @throws SDMException
 	 */
-	// public abstract int getCreationPriority() throws SDMException;
+	public abstract int getCreationPriority() throws SDMException;
 
 	/**
 	 * Called by the pattern matcher when the matching phase for the whole story
@@ -143,5 +127,5 @@ public abstract class PatternPart<StoryPatternObject, StoryPatternLink, Classifi
 	 * 
 	 * @throws SDMException
 	 */
-	// public abstract void matchingPhaseFinished() throws SDMException;
+	public abstract void matchingPhaseFinished() throws SDMException;
 }

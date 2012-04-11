@@ -1,7 +1,5 @@
 package de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased;
 
-import java.util.Set;
-
 import de.mdelab.sdm.interpreter.core.facade.MetamodelFacadeFactory;
 import de.mdelab.sdm.interpreter.core.patternmatcher.MatchingStrategy;
 
@@ -30,7 +28,7 @@ public class DefaultMatchingStrategy<StoryPattern, StoryPatternObject, StoryPatt
 
 	@Override
 	public PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> getNextPatternPartForMatching(
-			Set<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>> uncheckedPatternParts)
+			PatternPartBasedMatcher<?, ?, ?, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> patternMatcher)
 	{
 		int lowestCost = PatternPart.MATCHING_NOT_POSSIBLE;
 		int lowestCostOptional = PatternPart.MATCHING_NOT_POSSIBLE;
@@ -42,7 +40,7 @@ public class DefaultMatchingStrategy<StoryPattern, StoryPatternObject, StoryPatt
 		/*
 		 * Look at all unchecked pattern parts.
 		 */
-		for (PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : uncheckedPatternParts)
+		for (PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : patternMatcher.uncheckedPatternParts)
 		{
 			/*
 			 * Calculate matching cost.
@@ -64,7 +62,9 @@ public class DefaultMatchingStrategy<StoryPattern, StoryPatternObject, StoryPatt
 							/*
 							 * The cost can hardly be lower, return immediately.
 							 */
-							return patternPart;
+							lowestCost = 1;
+							cheapestPatternPart = patternPart;
+							break;
 						}
 						else if (cost < lowestCost || cheapestPatternPart == null)
 						{

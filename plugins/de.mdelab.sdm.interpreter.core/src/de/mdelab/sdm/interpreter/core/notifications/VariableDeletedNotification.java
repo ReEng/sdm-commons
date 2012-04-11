@@ -16,11 +16,17 @@ public class VariableDeletedNotification<Classifier> extends InterpreterNotifica
 
 	public VariableDeletedNotification(VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope, Variable<Classifier> variable)
 	{
-		super(NotificationTypeEnum.VARIABLE_DELETED, variablesScope, variablesScope);
+		super(variablesScope, variablesScope);
 
 		assert variable != null;
 
 		this.variable = variable;
+	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.VARIABLE_DELETED;
 	}
 
 	public Variable<Classifier> getVariable()

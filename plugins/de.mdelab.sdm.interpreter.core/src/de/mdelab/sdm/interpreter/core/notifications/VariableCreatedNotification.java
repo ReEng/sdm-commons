@@ -16,11 +16,17 @@ public class VariableCreatedNotification<Classifier> extends InterpreterNotifica
 
 	public VariableCreatedNotification(VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope, Variable<Classifier> variable)
 	{
-		super(NotificationTypeEnum.VARIABLE_CREATED, variablesScope, variablesScope);
+		super(variablesScope, variablesScope);
 
 		assert variable != null;
 
 		this.variable = variable;
+	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.VARIABLE_CREATED;
 	}
 
 	public Variable<Classifier> getVariable()

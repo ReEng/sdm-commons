@@ -29,7 +29,7 @@ public class InstanceLinkCreatedNotification<StoryPatternObject, StoryPatternLin
 			StoryPatternObject sourceStoryPatternObject, StoryPatternObject targetStoryPatternObject, StoryPatternLink link,
 			Object sourceObject, Object targetObject)
 	{
-		super(NotificationTypeEnum.INSTANCE_LINK_CREATED, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert sourceStoryPatternObject != null;
 		assert targetStoryPatternObject != null;
@@ -74,4 +74,11 @@ public class InstanceLinkCreatedNotification<StoryPatternObject, StoryPatternLin
 	{
 		return this.getLink();
 	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.INSTANCE_LINK_CREATED;
+	}
+
 }

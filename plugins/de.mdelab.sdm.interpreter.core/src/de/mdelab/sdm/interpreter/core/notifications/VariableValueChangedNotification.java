@@ -18,12 +18,18 @@ public class VariableValueChangedNotification<Classifier> extends InterpreterNot
 	public VariableValueChangedNotification(VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
 			Variable<Classifier> variable, Object oldValue)
 	{
-		super(NotificationTypeEnum.VARIABLE_VALUE_CHANGED, variablesScope, variablesScope);
+		super(variablesScope, variablesScope);
 
 		assert variable != null;
 
 		this.variable = variable;
 		this.oldValue = oldValue;
+	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.VARIABLE_VALUE_CHANGED;
 	}
 
 	public Variable<Classifier> getVariable()

@@ -17,7 +17,7 @@ public class ActivityExecutionFinishedNotification<Activity, Classifier> extends
 	public ActivityExecutionFinishedNotification(VariablesScope<Activity, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
 			Notifier<Activity, ?, ?, ?, ?, ?, Classifier, ?, ?> notifier, Activity activity)
 	{
-		super(NotificationTypeEnum.ACTIVITY_EXECUTION_FINISHED, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert activity != null;
 
@@ -34,4 +34,11 @@ public class ActivityExecutionFinishedNotification<Activity, Classifier> extends
 	{
 		return this.getActivity();
 	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.ACTIVITY_EXECUTION_FINISHED;
+	}
+
 }

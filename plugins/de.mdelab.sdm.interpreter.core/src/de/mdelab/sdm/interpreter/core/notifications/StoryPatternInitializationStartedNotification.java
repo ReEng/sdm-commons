@@ -16,7 +16,7 @@ public class StoryPatternInitializationStartedNotification<StoryPattern, Classif
 	public StoryPatternInitializationStartedNotification(VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
 			Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier, StoryPattern storyPattern)
 	{
-		super(NotificationTypeEnum.STORY_PATTERN_INITIALIZATION_STARTED, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert storyPattern != null;
 
@@ -33,4 +33,11 @@ public class StoryPatternInitializationStartedNotification<StoryPattern, Classif
 	{
 		return this.getStoryPattern();
 	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.STORY_PATTERN_INITIALIZATION_STARTED;
+	}
+
 }

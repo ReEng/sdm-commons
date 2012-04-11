@@ -19,7 +19,7 @@ public class StoryPatternObjectBindingRevokedNotification<StoryPatternObject, Cl
 			Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier, StoryPatternObject storyPatternObject,
 			Object instanceObject)
 	{
-		super(NotificationTypeEnum.STORY_PATTERN_OBJECT_BINDING_REVOKED, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert storyPatternObject != null;
 		assert instanceObject != null;
@@ -43,4 +43,11 @@ public class StoryPatternObjectBindingRevokedNotification<StoryPatternObject, Cl
 	{
 		return this.getStoryPatternObject();
 	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.STORY_PATTERN_OBJECT_BINDING_REVOKED;
+	}
+
 }

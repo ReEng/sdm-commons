@@ -19,7 +19,7 @@ public class EvaluatedExpressionNotification<Classifier, Expression> extends Int
 	public EvaluatedExpressionNotification(VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, Expression> variablesScope,
 			Notifier<?, ?, ?, ?, ?, ?, Classifier, ?, Expression> notifier, Expression expression, Object result)
 	{
-		super(NotificationTypeEnum.EVALUATED_EXPRESSION, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert expression != null;
 
@@ -42,4 +42,11 @@ public class EvaluatedExpressionNotification<Classifier, Expression> extends Int
 	{
 		return this.getExpression();
 	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.EVALUATED_EXPRESSION;
+	}
+
 }

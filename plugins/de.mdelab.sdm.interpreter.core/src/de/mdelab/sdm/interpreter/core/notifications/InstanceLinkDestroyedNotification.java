@@ -30,7 +30,7 @@ public class InstanceLinkDestroyedNotification<StoryPatternObject, StoryPatternL
 			StoryPatternObject sourceStoryPatternObject, StoryPatternObject targetStoryPatternObject, StoryPatternLink link,
 			Object sourceObject, Object targetObject)
 	{
-		super(NotificationTypeEnum.INSTANCE_LINK_DESTROYED, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert sourceStoryPatternObject != null;
 		assert targetStoryPatternObject != null;
@@ -75,4 +75,11 @@ public class InstanceLinkDestroyedNotification<StoryPatternObject, StoryPatternL
 	{
 		return this.getLink();
 	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.INSTANCE_LINK_DESTROYED;
+	}
+
 }

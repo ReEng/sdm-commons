@@ -19,7 +19,7 @@ public class InstanceObjectDestroyedNotification<StoryPatternObject, Classifier>
 			Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier, StoryPatternObject storyPatternObject,
 			Object instanceObject)
 	{
-		super(NotificationTypeEnum.INSTANCE_OBJECT_DESTROYED, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert storyPatternObject != null;
 		assert instanceObject != null;
@@ -43,4 +43,11 @@ public class InstanceObjectDestroyedNotification<StoryPatternObject, Classifier>
 	{
 		return this.getStoryPatternObject();
 	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.INSTANCE_OBJECT_DESTROYED;
+	}
+
 }

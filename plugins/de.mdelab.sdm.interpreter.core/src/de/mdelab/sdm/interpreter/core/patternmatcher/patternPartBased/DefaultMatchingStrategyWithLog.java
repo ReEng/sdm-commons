@@ -1,7 +1,6 @@
 package de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased;
 
 import java.util.LinkedHashSet;
-import java.util.Set;
 
 import de.mdelab.sdm.interpreter.core.facade.MetamodelFacadeFactory;
 
@@ -36,10 +35,10 @@ public class DefaultMatchingStrategyWithLog<StoryPattern, StoryPatternObject, St
 
 	@Override
 	public PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> getNextPatternPartForMatching(
-			Set<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>> uncheckedPatternParts)
+			PatternPartBasedMatcher<?, ?, ?, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> patternMatcher)
 	{
 		PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart = super
-				.getNextPatternPartForMatching(uncheckedPatternParts);
+				.getNextPatternPartForMatching(patternMatcher);
 
 		if (!this.log.contains(patternPart))
 		{

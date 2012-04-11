@@ -25,7 +25,7 @@ public class TraversingLinkNotification<StoryPatternObject, StoryPatternLink, Cl
 			StoryPatternObject sourceStoryPatternObject, StoryPatternObject targetStoryPatternObject, StoryPatternLink link,
 			Object sourceObject)
 	{
-		super(NotificationTypeEnum.TRAVERSING_LINK, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert sourceStoryPatternObject != null;
 		assert targetStoryPatternObject != null;
@@ -62,5 +62,11 @@ public class TraversingLinkNotification<StoryPatternObject, StoryPatternLink, Cl
 	public Object getMainStoryDiagramElement()
 	{
 		return this.getLink();
+	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.TRAVERSING_LINK;
 	}
 }

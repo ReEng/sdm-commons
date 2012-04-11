@@ -10,7 +10,7 @@ public class StoryPatternConstraintViolatedNotification<StoryPattern, Classifier
 	public StoryPatternConstraintViolatedNotification(VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
 			Notifier<?, ?, ?, ?, ?, ?, Classifier, ?, ?> notifier, Expression constraint, StoryPattern storyPattern)
 	{
-		super(NotificationTypeEnum.STORY_PATTERN_CONSTRAINT_VIOLATED, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		this.constraint = constraint;
 		this.storyPattern = storyPattern;
@@ -31,4 +31,11 @@ public class StoryPatternConstraintViolatedNotification<StoryPattern, Classifier
 	{
 		return this.constraint;
 	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.STORY_PATTERN_CONSTRAINT_VIOLATED;
+	}
+
 }

@@ -43,7 +43,7 @@ public abstract class ExpressionInterpreterManager<Activity, ActivityNode, Activ
 	 * The class loader is needed by some expression interpreters to invoke
 	 * methods via Java reflection.
 	 */
-	private final CompositeClassLoader																																classLoader;
+	private final ClassLoader																																		classLoader;
 
 	public ExpressionInterpreterManager(
 			MetamodelFacadeFactory<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> facadeFactory,
@@ -57,7 +57,7 @@ public abstract class ExpressionInterpreterManager<Activity, ActivityNode, Activ
 		this.facadeFactory = facadeFactory;
 		this.expressionFacade = facadeFactory.getExpressionFacade();
 
-		this.classLoader = new CompositeClassLoader(classLoader);
+		this.classLoader = classLoader;
 
 		this.expressionInterpreters = new ConcurrentHashMap<String, Map<String, ExpressionInterpreter<Expression, Classifier>>>();
 	}
@@ -67,7 +67,7 @@ public abstract class ExpressionInterpreterManager<Activity, ActivityNode, Activ
 		return this.facadeFactory;
 	}
 
-	public CompositeClassLoader getClassLoader()
+	public ClassLoader getClassLoader()
 	{
 		return this.classLoader;
 	}

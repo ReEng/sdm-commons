@@ -19,7 +19,7 @@ public class StoryPatternObjectBoundNotification<StoryPatternObject, Classifier>
 			Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier, StoryPatternObject storyPatternObject,
 			Object instanceObject)
 	{
-		super(NotificationTypeEnum.STORY_PATTERN_OBJECT_BOUND, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert storyPatternObject != null;
 		assert instanceObject != null;
@@ -43,4 +43,11 @@ public class StoryPatternObjectBoundNotification<StoryPatternObject, Classifier>
 	{
 		return this.getStoryPatternObject();
 	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.STORY_PATTERN_OBJECT_BOUND;
+	}
+
 }

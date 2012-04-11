@@ -25,7 +25,7 @@ public class AttributeValueSetNotification<StoryPatternObject, Classifier, Featu
 			Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, Feature, ?> notifier, StoryPatternObject storyPatternObject,
 			Object instanceObject, Feature feature, Object featureValue)
 	{
-		super(NotificationTypeEnum.ATTRIBUTE_VALUE_SET, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert storyPatternObject != null;
 		assert instanceObject != null;
@@ -62,4 +62,11 @@ public class AttributeValueSetNotification<StoryPatternObject, Classifier, Featu
 	{
 		return this.getStoryPatternObject();
 	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.ATTRIBUTE_VALUE_SET;
+	}
+
 }

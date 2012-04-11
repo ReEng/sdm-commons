@@ -27,7 +27,7 @@ public class LinkCheckFailedNotification<StoryPatternObject, StoryPatternLink, C
 			StoryPatternObject sourceStoryPatternObject, StoryPatternObject targetStoryPatternObject, StoryPatternLink link,
 			Object sourceObject, Object targetObject)
 	{
-		super(NotificationTypeEnum.LINK_CHECK_FAILED, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert sourceStoryPatternObject != null;
 		assert targetStoryPatternObject != null;
@@ -72,4 +72,11 @@ public class LinkCheckFailedNotification<StoryPatternObject, StoryPatternLink, C
 	{
 		return this.getLink();
 	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.LINK_CHECK_FAILED;
+	}
+
 }

@@ -16,7 +16,7 @@ public class StoryPatternMatchingFailedNotification<StoryPattern, Classifier> ex
 	public StoryPatternMatchingFailedNotification(VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
 			Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier, StoryPattern storyPattern)
 	{
-		super(NotificationTypeEnum.STORY_PATTERN_MATCHING_FAILED, variablesScope, notifier);
+		super(variablesScope, notifier);
 
 		assert storyPattern != null;
 
@@ -33,4 +33,11 @@ public class StoryPatternMatchingFailedNotification<StoryPattern, Classifier> ex
 	{
 		return this.getStoryPattern();
 	}
+
+	@Override
+	public NotificationTypeEnum getNotificationType()
+	{
+		return NotificationTypeEnum.STORY_PATTERN_MATCHING_FAILED;
+	}
+
 }
