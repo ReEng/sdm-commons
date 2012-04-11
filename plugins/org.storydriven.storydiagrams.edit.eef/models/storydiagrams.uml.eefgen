@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/org.storydriven.storydiagrams.edit.eef/src-gen">
+  <editionContexts basePackage="org.storydriven" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="storydiagrams.uml.components#_AQSTEIQsEeGrv4rWgYmQpg"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.storydiagrams" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="storydiagrams.uml.components#_AQVWYIQsEeGrv4rWgYmQpg"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.storydiagrams.activities" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="storydiagrams.uml.components#_AQWksIQsEeGrv4rWgYmQpg"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.storydiagrams" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="storydiagrams.uml.components#_AQWktYQsEeGrv4rWgYmQpg"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.storydiagrams.calls" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="storydiagrams.uml.components#_AQWkw4QsEeGrv4rWgYmQpg"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.storydiagrams" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="storydiagrams.uml.components#_AQWky4QsEeGrv4rWgYmQpg"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.storydiagrams.patterns" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="storydiagrams.uml.components#_AQXLm4QsEeGrv4rWgYmQpg"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.storydiagrams" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="storydiagrams.uml.components#_AQXLqoQsEeGrv4rWgYmQpg"/>
+  </editionContexts>
+  <viewsRepositories basePackage="org.storydriven.storydiagrams.calls" swtViews="true" formViews="true">
+    <viewsRepository href="storydiagrams.uml.components#_AQXLtIQsEeGrv4rWgYmQpg"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.storydiagrams.patterns.expressions" swtViews="true" formViews="true">
+    <viewsRepository href="storydiagrams.uml.components#_AQaO6IQsEeGrv4rWgYmQpg"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.storydiagrams" swtViews="true" formViews="true">
+    <viewsRepository href="storydiagrams.uml.components#_AQaO-4QsEeGrv4rWgYmQpg"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.storydiagrams.templates" swtViews="true" formViews="true">
+    <viewsRepository href="storydiagrams.uml.components#_AQaO_YQsEeGrv4rWgYmQpg"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.storydiagrams.patterns" swtViews="true" formViews="true">
+    <viewsRepository href="storydiagrams.uml.components#_AQaPCoQsEeGrv4rWgYmQpg"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.storydiagrams.calls.expressions" swtViews="true" formViews="true">
+    <viewsRepository href="storydiagrams.uml.components#_AQa2E4QsEeGrv4rWgYmQpg"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.storydiagrams.activities.expressions" swtViews="true" formViews="true">
+    <viewsRepository href="storydiagrams.uml.components#_AQa2HYQsEeGrv4rWgYmQpg"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.storydiagrams.activities" swtViews="true" formViews="true">
+    <viewsRepository href="storydiagrams.uml.components#_AQa2I4QsEeGrv4rWgYmQpg"/>
+  </viewsRepositories>
+</eef-gen:EEFGenModel>
