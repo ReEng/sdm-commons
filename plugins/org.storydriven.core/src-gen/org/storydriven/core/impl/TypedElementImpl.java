@@ -32,8 +32,7 @@ import org.storydriven.core.TypedElement;
  *
  * @generated
  */
-public abstract class TypedElementImpl extends ExtendableElementImpl implements
-		TypedElement {
+public abstract class TypedElementImpl extends ExtendableElementImpl implements TypedElement {
 	/**
 	 * The cached value of the '{@link #getGenericType() <em>Generic Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -79,8 +78,7 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 	 */
 	public EClassifier getType() {
 		EClassifier type = basicGetType();
-		return type != null && type.eIsProxy() ? (EClassifier) eResolveProxy((InternalEObject) type)
-				: type;
+		return type != null && type.eIsProxy() ? (EClassifier) eResolveProxy((InternalEObject) type) : type;
 	}
 
 	/**
@@ -103,21 +101,16 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 			genericType = (EGenericType) eResolveProxy(oldGenericType);
 			if (genericType != oldGenericType) {
 				InternalEObject newGenericType = (InternalEObject) genericType;
-				NotificationChain msgs = oldGenericType.eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE
-								- CorePackage.TYPED_ELEMENT__GENERIC_TYPE,
-						null, null);
+				NotificationChain msgs = oldGenericType.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- CorePackage.TYPED_ELEMENT__GENERIC_TYPE, null, null);
 				if (newGenericType.eInternalContainer() == null) {
-					msgs = newGenericType.eInverseAdd(this,
-							EOPPOSITE_FEATURE_BASE
-									- CorePackage.TYPED_ELEMENT__GENERIC_TYPE,
-							null, msgs);
+					msgs = newGenericType.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+							- CorePackage.TYPED_ELEMENT__GENERIC_TYPE, null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							CorePackage.TYPED_ELEMENT__GENERIC_TYPE,
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.TYPED_ELEMENT__GENERIC_TYPE,
 							oldGenericType, genericType));
 			}
 		}
@@ -138,15 +131,13 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public NotificationChain basicSetGenericType(EGenericType newGenericType,
-			NotificationChain msgs) {
+	public NotificationChain basicSetGenericType(EGenericType newGenericType, NotificationChain msgs) {
 		if (newGenericType == null) {
 			if (basicGetType() != null) {
 				msgs = basicSetType(null, msgs);
 			}
 		} else {
-			EClassifier newType = ((EGenericTypeImpl) newGenericType)
-					.basicGetERawType();
+			EClassifier newType = ((EGenericTypeImpl) newGenericType).basicGetERawType();
 			if (newType != basicGetType()) {
 				msgs = basicSetType(newType, msgs);
 			}
@@ -154,9 +145,8 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 		EGenericType oldGenericType = this.genericType;
 		this.genericType = newGenericType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, CorePackage.TYPED_ELEMENT__GENERIC_TYPE,
-					oldGenericType, newGenericType);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					CorePackage.TYPED_ELEMENT__GENERIC_TYPE, oldGenericType, newGenericType);
 			if (msgs == null) {
 				msgs = notification;
 			} else {
@@ -212,8 +202,7 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CorePackage.TYPED_ELEMENT__GENERIC_TYPE:
 			return basicUnsetGenericType(msgs);
@@ -296,31 +285,23 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 		return false;
 	}
 
-	protected NotificationChain basicSetType(EClassifier newType,
-			NotificationChain msgs) {
-		throw new UnsupportedOperationException();
-	}
-
-	private NotificationChain internalSetGenericType(
-			EGenericType newGenericType, NotificationChain msgs) {
+	/**
+	 * @generated NOT
+	 */
+	protected NotificationChain internalSetGenericType(EGenericType newGenericType, NotificationChain msgs) {
 		if (newGenericType != this.genericType) {
 			msgs = basicSetGenericType(newGenericType, msgs);
 			if (this.genericType != null) {
-				msgs = ((InternalEObject) this.genericType).eInverseRemove(
-						this, EOPPOSITE_FEATURE_BASE
-								- CorePackage.TYPED_ELEMENT__GENERIC_TYPE,
-						null, msgs);
+				msgs = ((InternalEObject) this.genericType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- CorePackage.TYPED_ELEMENT__GENERIC_TYPE, null, msgs);
 			}
 			if (newGenericType != null) {
-				msgs = ((InternalEObject) newGenericType).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE
-								- CorePackage.TYPED_ELEMENT__GENERIC_TYPE,
-						null, msgs);
+				msgs = ((InternalEObject) newGenericType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+						- CorePackage.TYPED_ELEMENT__GENERIC_TYPE, null, msgs);
 			}
 		} else if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, CorePackage.TYPED_ELEMENT__GENERIC_TYPE,
-					newGenericType, newGenericType);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					CorePackage.TYPED_ELEMENT__GENERIC_TYPE, newGenericType, newGenericType);
 			if (msgs == null) {
 				msgs = notification;
 			} else {
@@ -330,8 +311,17 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 		return msgs;
 	}
 
-	protected NotificationChain updateGenericType(EClassifier newType,
-			NotificationChain msgs) {
+	/**
+	 * @generated NOT
+	 */
+	protected NotificationChain basicSetType(EClassifier newType, NotificationChain msgs) {
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected NotificationChain updateGenericType(EClassifier newType, NotificationChain msgs) {
 		EGenericType newGenericType = null;
 		if (newType != null) {
 			newGenericType = EcoreFactory.eINSTANCE.createEGenericType();
@@ -340,5 +330,4 @@ public abstract class TypedElementImpl extends ExtendableElementImpl implements
 		msgs = internalSetGenericType(newGenericType, msgs);
 		return msgs;
 	}
-
 } //TypedElementImpl

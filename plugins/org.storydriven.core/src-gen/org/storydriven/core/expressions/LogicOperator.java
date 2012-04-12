@@ -156,8 +156,7 @@ public enum LogicOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final LogicOperator[] VALUES_ARRAY = new LogicOperator[] {
-			AND, OR, XOR, IMPLY, EQUIVALENT, };
+	private static final LogicOperator[] VALUES_ARRAY = new LogicOperator[] { AND, OR, XOR, IMPLY, EQUIVALENT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Logic Operator</b></em>' enumerators.
@@ -165,8 +164,7 @@ public enum LogicOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<LogicOperator> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<LogicOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Logic Operator</b></em>' literal with the specified literal value.

@@ -32,8 +32,7 @@ import org.storydriven.core.util.CoreUtil;
  *
  * @generated
  */
-public class LiteralExpressionImpl extends ExpressionImpl implements
-		LiteralExpression {
+public class LiteralExpressionImpl extends ExpressionImpl implements LiteralExpression {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -91,8 +90,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	@Override
 	public EClassifier getType() {
 		EClassifier type = basicGetType();
-		return type != null && type.eIsProxy() ? (EClassifier) eResolveProxy((InternalEObject) type)
-				: type;
+		return type != null && type.eIsProxy() ? (EClassifier) eResolveProxy((InternalEObject) type) : type;
 	}
 
 	/**
@@ -126,9 +124,8 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ExpressionsPackage.LITERAL_EXPRESSION__VALUE, oldValue,
-					value));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.LITERAL_EXPRESSION__VALUE,
+					oldValue, value));
 	}
 
 	/**
@@ -143,8 +140,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 			if (valueType != oldValueType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ExpressionsPackage.LITERAL_EXPRESSION__VALUE_TYPE,
-							oldValueType, valueType));
+							ExpressionsPackage.LITERAL_EXPRESSION__VALUE_TYPE, oldValueType, valueType));
 			}
 		}
 		return valueType;
@@ -168,10 +164,8 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 		EDataType oldValueType = this.valueType;
 		this.valueType = newValueType;
 		NotificationChain msgs = updateGenericType(newValueType, null);
-		CoreUtil.dispatch(msgs, eNotificationRequired() ? new ENotificationImpl(
-				this, Notification.SET,
-				ExpressionsPackage.LITERAL_EXPRESSION__VALUE_TYPE,
-				oldValueType, this.valueType) : null);
+		CoreUtil.dispatch(msgs, eNotificationRequired() ? new ENotificationImpl(this, Notification.SET,
+				ExpressionsPackage.LITERAL_EXPRESSION__VALUE_TYPE, oldValueType, this.valueType) : null);
 	}
 
 	/**
@@ -237,8 +231,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case ExpressionsPackage.LITERAL_EXPRESSION__VALUE:
-			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT
-					.equals(value);
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		case ExpressionsPackage.LITERAL_EXPRESSION__VALUE_TYPE:
 			return valueType != null;
 		}
@@ -269,8 +262,7 @@ public class LiteralExpressionImpl extends ExpressionImpl implements
 	 */
 	@Override
 	public boolean isSetType() {
-		return super.isSetType()
-				|| eIsSet(ExpressionsPackage.LITERAL_EXPRESSION__VALUE_TYPE);
+		return super.isSetType() || eIsSet(ExpressionsPackage.LITERAL_EXPRESSION__VALUE_TYPE);
 	}
 
 } //LiteralExpressionImpl

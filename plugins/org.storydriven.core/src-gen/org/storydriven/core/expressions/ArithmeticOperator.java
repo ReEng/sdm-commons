@@ -180,8 +180,8 @@ public enum ArithmeticOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ArithmeticOperator[] VALUES_ARRAY = new ArithmeticOperator[] {
-			PLUS, MINUS, TIMES, DIVIDE, MODULO, EXP, };
+	private static final ArithmeticOperator[] VALUES_ARRAY = new ArithmeticOperator[] { PLUS, MINUS, TIMES, DIVIDE,
+			MODULO, EXP, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Arithmetic Operator</b></em>' enumerators.
@@ -189,8 +189,7 @@ public enum ArithmeticOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ArithmeticOperator> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ArithmeticOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Arithmetic Operator</b></em>' literal with the specified literal value.

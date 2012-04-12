@@ -27,8 +27,7 @@ import org.storydriven.core.expressions.TextualExpression;
  *
  * @generated
  */
-public class TextualExpressionImpl extends ExpressionImpl implements
-		TextualExpression {
+public class TextualExpressionImpl extends ExpressionImpl implements TextualExpression {
 	/**
 	 * The default value of the '{@link #getExpressionText() <em>Expression Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -127,8 +126,7 @@ public class TextualExpressionImpl extends ExpressionImpl implements
 		expressionText = newExpressionText;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
-					oldExpressionText, expressionText));
+					ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT, oldExpressionText, expressionText));
 	}
 
 	/**
@@ -149,8 +147,7 @@ public class TextualExpressionImpl extends ExpressionImpl implements
 		String oldLanguage = language;
 		language = newLanguage;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE,
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE,
 					oldLanguage, language));
 	}
 
@@ -173,8 +170,7 @@ public class TextualExpressionImpl extends ExpressionImpl implements
 		languageVersion = newLanguageVersion;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
-					oldLanguageVersion, languageVersion));
+					ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION, oldLanguageVersion, languageVersion));
 	}
 
 	/**
@@ -246,14 +242,13 @@ public class TextualExpressionImpl extends ExpressionImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case ExpressionsPackage.TEXTUAL_EXPRESSION__EXPRESSION_TEXT:
-			return EXPRESSION_TEXT_EDEFAULT == null ? expressionText != null
-					: !EXPRESSION_TEXT_EDEFAULT.equals(expressionText);
+			return EXPRESSION_TEXT_EDEFAULT == null ? expressionText != null : !EXPRESSION_TEXT_EDEFAULT
+					.equals(expressionText);
 		case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE:
-			return LANGUAGE_EDEFAULT == null ? language != null
-					: !LANGUAGE_EDEFAULT.equals(language);
+			return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
 		case ExpressionsPackage.TEXTUAL_EXPRESSION__LANGUAGE_VERSION:
-			return LANGUAGE_VERSION_EDEFAULT == null ? languageVersion != null
-					: !LANGUAGE_VERSION_EDEFAULT.equals(languageVersion);
+			return LANGUAGE_VERSION_EDEFAULT == null ? languageVersion != null : !LANGUAGE_VERSION_EDEFAULT
+					.equals(languageVersion);
 		}
 		return super.eIsSet(featureID);
 	}

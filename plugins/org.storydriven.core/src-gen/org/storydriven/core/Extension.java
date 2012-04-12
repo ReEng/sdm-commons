@@ -34,7 +34,10 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Extension extends ExtendableElement {
-	public static final String EXTENSION_SOURCE_URI = "http://ns.storydriven.org/extension";
+	/**
+	 * @generated NOT
+	 */
+	String EXTENSION_SOURCE_URI = "http://www.storydriven.org/core/extension";
 
 	/**
 	 * Returns the value of the '<em><b>Base</b></em>' reference.

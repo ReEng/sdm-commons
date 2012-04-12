@@ -205,9 +205,8 @@ public enum ComparingOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ComparingOperator[] VALUES_ARRAY = new ComparingOperator[] {
-			LESS, LESS_OR_EQUAL, EQUAL, GREATER_OR_EQUAL, GREATER, UNEQUAL,
-			REGULAR_EXPRESSION, };
+	private static final ComparingOperator[] VALUES_ARRAY = new ComparingOperator[] { LESS, LESS_OR_EQUAL, EQUAL,
+			GREATER_OR_EQUAL, GREATER, UNEQUAL, REGULAR_EXPRESSION, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Comparing Operator</b></em>' enumerators.
@@ -215,8 +214,7 @@ public enum ComparingOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ComparingOperator> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ComparingOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Comparing Operator</b></em>' literal with the specified literal value.

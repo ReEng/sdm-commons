@@ -72,28 +72,18 @@ public class NotExpressionImpl extends ExpressionImpl implements NotExpression {
 			negatedExpression = (Expression) eResolveProxy(oldNegatedExpression);
 			if (negatedExpression != oldNegatedExpression) {
 				InternalEObject newNegatedExpression = (InternalEObject) negatedExpression;
-				NotificationChain msgs = oldNegatedExpression
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION,
-								null, null);
+				NotificationChain msgs = oldNegatedExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION, null, null);
 				if (newNegatedExpression.eInternalContainer() == null) {
-					msgs = newNegatedExpression
-							.eInverseAdd(
-									this,
-									EOPPOSITE_FEATURE_BASE
-											- ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION,
-									null, msgs);
+					msgs = newNegatedExpression.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+							- ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION, null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION,
-							oldNegatedExpression, negatedExpression));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION, oldNegatedExpression,
+							negatedExpression));
 			}
 		}
 		return negatedExpression;
@@ -113,15 +103,12 @@ public class NotExpressionImpl extends ExpressionImpl implements NotExpression {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetNegatedExpression(
-			Expression newNegatedExpression, NotificationChain msgs) {
+	public NotificationChain basicSetNegatedExpression(Expression newNegatedExpression, NotificationChain msgs) {
 		Expression oldNegatedExpression = negatedExpression;
 		negatedExpression = newNegatedExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION,
-					oldNegatedExpression, newNegatedExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION, oldNegatedExpression, newNegatedExpression);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -139,26 +126,17 @@ public class NotExpressionImpl extends ExpressionImpl implements NotExpression {
 		if (newNegatedExpression != negatedExpression) {
 			NotificationChain msgs = null;
 			if (negatedExpression != null)
-				msgs = ((InternalEObject) negatedExpression)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject) negatedExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION, null, msgs);
 			if (newNegatedExpression != null)
-				msgs = ((InternalEObject) newNegatedExpression)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject) newNegatedExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+						- ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION, null, msgs);
 			msgs = basicSetNegatedExpression(newNegatedExpression, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION,
-					newNegatedExpression, newNegatedExpression));
+					ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION, newNegatedExpression, newNegatedExpression));
 	}
 
 	/**
@@ -167,8 +145,7 @@ public class NotExpressionImpl extends ExpressionImpl implements NotExpression {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ExpressionsPackage.NOT_EXPRESSION__NEGATED_EXPRESSION:
 			return basicSetNegatedExpression(null, msgs);
@@ -236,6 +213,9 @@ public class NotExpressionImpl extends ExpressionImpl implements NotExpression {
 		return super.eIsSet(featureID);
 	}
 
+	/**
+	 * @generated NOT
+	 */
 	@Override
 	public EClassifier basicGetType() {
 		return EcorePackage.Literals.EBOOLEAN;

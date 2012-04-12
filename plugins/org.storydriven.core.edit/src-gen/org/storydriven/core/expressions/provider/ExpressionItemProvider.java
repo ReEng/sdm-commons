@@ -33,9 +33,8 @@ import org.storydriven.core.provider.TypedElementItemProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExpressionItemProvider extends TypedElementItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ExpressionItemProvider extends TypedElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -70,14 +69,11 @@ public class ExpressionItemProvider extends TypedElementItemProvider implements
 	 */
 	protected void addCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_CommentableElement_comment_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_CommentableElement_comment_feature",
-						"_UI_CommentableElement_type"),
-				CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT, true, false,
+				getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature",
+						"_UI_CommentableElement_type"), CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT, true, false,
 				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -107,8 +103,7 @@ public class ExpressionItemProvider extends TypedElementItemProvider implements
 
 		switch (notification.getFeatureID(Expression.class)) {
 		case ExpressionsPackage.EXPRESSION__COMMENT:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -122,8 +117,7 @@ public class ExpressionItemProvider extends TypedElementItemProvider implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

@@ -8,8 +8,6 @@ package org.storydriven.core.expressions.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.expressions.BinaryLogicExpression;
 import org.storydriven.core.expressions.ExpressionsPackage;
@@ -28,8 +26,7 @@ import org.storydriven.core.expressions.LogicOperator;
  *
  * @generated
  */
-public class BinaryLogicExpressionImpl extends BinaryExpressionImpl implements
-		BinaryLogicExpression {
+public class BinaryLogicExpressionImpl extends BinaryExpressionImpl implements BinaryLogicExpression {
 	/**
 	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -53,11 +50,10 @@ public class BinaryLogicExpressionImpl extends BinaryExpressionImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected BinaryLogicExpressionImpl() {
 		super();
-		updateGenericType(EcorePackage.Literals.EBOOLEAN, null);
 	}
 
 	/**
@@ -88,8 +84,7 @@ public class BinaryLogicExpressionImpl extends BinaryExpressionImpl implements
 		LogicOperator oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ExpressionsPackage.BINARY_LOGIC_EXPRESSION__OPERATOR,
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.BINARY_LOGIC_EXPRESSION__OPERATOR,
 					oldOperator, operator));
 	}
 
@@ -168,8 +163,4 @@ public class BinaryLogicExpressionImpl extends BinaryExpressionImpl implements
 		return result.toString();
 	}
 
-	@Override
-	public EClassifier basicGetType() {
-		return EcorePackage.Literals.EBOOLEAN;
-	}
 } //BinaryLogicExpressionImpl

@@ -1223,13 +1223,6 @@ public interface CorePackage extends EPackage {
 	int NAMED_ELEMENT_OPERATION_COUNT = EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The extension annotation namespace URI.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	String EXTENSION_NS_URI = "http://ns.storydriven.org/sdm/extension";
-
-	/**
 	 * Returns the meta object for class '{@link org.storydriven.core.TypedElement <em>Typed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1476,8 +1469,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TYPED_ELEMENT__GENERIC_TYPE = eINSTANCE
-				.getTypedElement_GenericType();
+		EReference TYPED_ELEMENT__GENERIC_TYPE = eINSTANCE.getTypedElement_GenericType();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.impl.ExtendableElementImpl <em>Extendable Element</em>}' class.
@@ -1495,8 +1487,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENDABLE_ELEMENT__ANNOTATION = eINSTANCE
-				.getExtendableElement_Annotation();
+		EReference EXTENDABLE_ELEMENT__ANNOTATION = eINSTANCE.getExtendableElement_Annotation();
 
 		/**
 		 * The meta object literal for the '<em><b>Extension</b></em>' containment reference list feature.
@@ -1504,8 +1495,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENDABLE_ELEMENT__EXTENSION = eINSTANCE
-				.getExtendableElement_Extension();
+		EReference EXTENDABLE_ELEMENT__EXTENSION = eINSTANCE.getExtendableElement_Extension();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Extension</b></em>' operation.
@@ -1513,8 +1503,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS = eINSTANCE
-				.getExtendableElement__GetExtension__EClass();
+		EOperation EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS = eINSTANCE.getExtendableElement__GetExtension__EClass();
 
 		/**
 		 * The meta object literal for the '<em><b>Provide Extension</b></em>' operation.
@@ -1575,8 +1564,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENSION__OWNING_ANNOTATION = eINSTANCE
-				.getExtension_OwningAnnotation();
+		EReference EXTENSION__OWNING_ANNOTATION = eINSTANCE.getExtension_OwningAnnotation();
 
 		/**
 		 * The meta object literal for the '<em><b>Extendable Base</b></em>' container reference feature.
@@ -1584,8 +1572,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENSION__EXTENDABLE_BASE = eINSTANCE
-				.getExtension_ExtendableBase();
+		EReference EXTENSION__EXTENDABLE_BASE = eINSTANCE.getExtension_ExtendableBase();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.impl.CommentableElementImpl <em>Commentable Element</em>}' class.
@@ -1603,8 +1590,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMENTABLE_ELEMENT__COMMENT = eINSTANCE
-				.getCommentableElement_Comment();
+		EAttribute COMMENTABLE_ELEMENT__COMMENT = eINSTANCE.getCommentableElement_Comment();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.impl.NamedElementImpl <em>Named Element</em>}' class.

@@ -34,9 +34,8 @@ import org.storydriven.core.expressions.util.ExpressionsAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExpressionsItemProviderAdapterFactory extends
-		ExpressionsAdapterFactory implements ComposeableAdapterFactory,
-		IChangeNotifier, IDisposable {
+public class ExpressionsItemProviderAdapterFactory extends ExpressionsAdapterFactory implements
+		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -92,8 +91,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	@Override
 	public Adapter createTextualExpressionAdapter() {
 		if (textualExpressionItemProvider == null) {
-			textualExpressionItemProvider = new TextualExpressionItemProvider(
-					this);
+			textualExpressionItemProvider = new TextualExpressionItemProvider(this);
 		}
 
 		return textualExpressionItemProvider;
@@ -116,8 +114,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	@Override
 	public Adapter createLiteralExpressionAdapter() {
 		if (literalExpressionItemProvider == null) {
-			literalExpressionItemProvider = new LiteralExpressionItemProvider(
-					this);
+			literalExpressionItemProvider = new LiteralExpressionItemProvider(this);
 		}
 
 		return literalExpressionItemProvider;
@@ -163,8 +160,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	@Override
 	public Adapter createComparisonExpressionAdapter() {
 		if (comparisonExpressionItemProvider == null) {
-			comparisonExpressionItemProvider = new ComparisonExpressionItemProvider(
-					this);
+			comparisonExpressionItemProvider = new ComparisonExpressionItemProvider(this);
 		}
 
 		return comparisonExpressionItemProvider;
@@ -187,8 +183,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	@Override
 	public Adapter createArithmeticExpressionAdapter() {
 		if (arithmeticExpressionItemProvider == null) {
-			arithmeticExpressionItemProvider = new ArithmeticExpressionItemProvider(
-					this);
+			arithmeticExpressionItemProvider = new ArithmeticExpressionItemProvider(this);
 		}
 
 		return arithmeticExpressionItemProvider;
@@ -211,8 +206,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	@Override
 	public Adapter createBinaryLogicExpressionAdapter() {
 		if (binaryLogicExpressionItemProvider == null) {
-			binaryLogicExpressionItemProvider = new BinaryLogicExpressionItemProvider(
-					this);
+			binaryLogicExpressionItemProvider = new BinaryLogicExpressionItemProvider(this);
 		}
 
 		return binaryLogicExpressionItemProvider;
@@ -225,8 +219,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -235,8 +228,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -270,8 +262,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}

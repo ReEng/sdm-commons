@@ -64,8 +64,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ExpressionsPackage eINSTANCE = org.storydriven.core.expressions.impl.ExpressionsPackageImpl
-			.init();
+	ExpressionsPackage eINSTANCE = org.storydriven.core.expressions.impl.ExpressionsPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.core.expressions.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -2482,8 +2481,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEXTUAL_EXPRESSION__EXPRESSION_TEXT = eINSTANCE
-				.getTextualExpression_ExpressionText();
+		EAttribute TEXTUAL_EXPRESSION__EXPRESSION_TEXT = eINSTANCE.getTextualExpression_ExpressionText();
 
 		/**
 		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
@@ -2491,8 +2489,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEXTUAL_EXPRESSION__LANGUAGE = eINSTANCE
-				.getTextualExpression_Language();
+		EAttribute TEXTUAL_EXPRESSION__LANGUAGE = eINSTANCE.getTextualExpression_Language();
 
 		/**
 		 * The meta object literal for the '<em><b>Language Version</b></em>' attribute feature.
@@ -2500,8 +2497,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEXTUAL_EXPRESSION__LANGUAGE_VERSION = eINSTANCE
-				.getTextualExpression_LanguageVersion();
+		EAttribute TEXTUAL_EXPRESSION__LANGUAGE_VERSION = eINSTANCE.getTextualExpression_LanguageVersion();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.impl.LiteralExpressionImpl <em>Literal Expression</em>}' class.
@@ -2519,8 +2515,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LITERAL_EXPRESSION__VALUE = eINSTANCE
-				.getLiteralExpression_Value();
+		EAttribute LITERAL_EXPRESSION__VALUE = eINSTANCE.getLiteralExpression_Value();
 
 		/**
 		 * The meta object literal for the '<em><b>Value Type</b></em>' reference feature.
@@ -2528,8 +2523,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LITERAL_EXPRESSION__VALUE_TYPE = eINSTANCE
-				.getLiteralExpression_ValueType();
+		EReference LITERAL_EXPRESSION__VALUE_TYPE = eINSTANCE.getLiteralExpression_ValueType();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.impl.NotExpressionImpl <em>Not Expression</em>}' class.
@@ -2547,8 +2541,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference NOT_EXPRESSION__NEGATED_EXPRESSION = eINSTANCE
-				.getNotExpression_NegatedExpression();
+		EReference NOT_EXPRESSION__NEGATED_EXPRESSION = eINSTANCE.getNotExpression_NegatedExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.impl.BinaryExpressionImpl <em>Binary Expression</em>}' class.
@@ -2566,8 +2559,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_EXPRESSION__LEFT_EXPRESSION = eINSTANCE
-				.getBinaryExpression_LeftExpression();
+		EReference BINARY_EXPRESSION__LEFT_EXPRESSION = eINSTANCE.getBinaryExpression_LeftExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Right Expression</b></em>' containment reference feature.
@@ -2575,8 +2567,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_EXPRESSION__RIGHT_EXPRESSION = eINSTANCE
-				.getBinaryExpression_RightExpression();
+		EReference BINARY_EXPRESSION__RIGHT_EXPRESSION = eINSTANCE.getBinaryExpression_RightExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.impl.ComparisonExpressionImpl <em>Comparison Expression</em>}' class.
@@ -2594,8 +2585,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPARISON_EXPRESSION__OPERATOR = eINSTANCE
-				.getComparisonExpression_Operator();
+		EAttribute COMPARISON_EXPRESSION__OPERATOR = eINSTANCE.getComparisonExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
@@ -2613,8 +2603,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARITHMETIC_EXPRESSION__OPERATOR = eINSTANCE
-				.getArithmeticExpression_Operator();
+		EAttribute ARITHMETIC_EXPRESSION__OPERATOR = eINSTANCE.getArithmeticExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.impl.BinaryLogicExpressionImpl <em>Binary Logic Expression</em>}' class.
@@ -2632,8 +2621,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BINARY_LOGIC_EXPRESSION__OPERATOR = eINSTANCE
-				.getBinaryLogicExpression_Operator();
+		EAttribute BINARY_LOGIC_EXPRESSION__OPERATOR = eINSTANCE.getBinaryLogicExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.LogicOperator <em>Logic Operator</em>}' enum.

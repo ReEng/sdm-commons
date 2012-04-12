@@ -36,8 +36,7 @@ import org.storydriven.core.util.ExtensionOperations;
  *
  * @generated
  */
-public abstract class ExtensionImpl extends ExtendableElementImpl implements
-		Extension {
+public abstract class ExtensionImpl extends ExtendableElementImpl implements Extension {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,8 +63,7 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	 */
 	public EObject getBase() {
 		EObject base = basicGetBase();
-		return base != null && base.eIsProxy() ? eResolveProxy((InternalEObject) base)
-				: base;
+		return base != null && base.eIsProxy() ? eResolveProxy((InternalEObject) base) : base;
 	}
 
 	/**
@@ -134,22 +132,21 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public EAnnotation getOwningAnnotation() {
-		return ExtensionOperations.getOwningAnnotation(this);
+		EAnnotation owningAnnotation = basicGetOwningAnnotation();
+		return owningAnnotation != null && owningAnnotation.eIsProxy() ? (EAnnotation) eResolveProxy((InternalEObject) owningAnnotation)
+				: owningAnnotation;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EAnnotation basicGetOwningAnnotation() {
-		// TODO: implement this method to return the 'Owning Annotation' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return ExtensionOperations.getOwningAnnotation(this);
 	}
 
 	/**
@@ -206,10 +203,8 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetExtendableBase(
-			ExtendableElement newExtendableBase, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newExtendableBase,
-				CorePackage.EXTENSION__EXTENDABLE_BASE, msgs);
+	public NotificationChain basicSetExtendableBase(ExtendableElement newExtendableBase, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newExtendableBase, CorePackage.EXTENSION__EXTENDABLE_BASE, msgs);
 		return msgs;
 	}
 
@@ -222,22 +217,19 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 		if (newExtendableBase != eInternalContainer()
 				|| (eContainerFeatureID() != CorePackage.EXTENSION__EXTENDABLE_BASE && newExtendableBase != null)) {
 			if (EcoreUtil.isAncestor(this, newExtendableBase))
-				throw new IllegalArgumentException(
-						"Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newExtendableBase != null)
 				msgs = ((InternalEObject) newExtendableBase).eInverseAdd(this,
-						CorePackage.EXTENDABLE_ELEMENT__EXTENSION,
-						ExtendableElement.class, msgs);
+						CorePackage.EXTENDABLE_ELEMENT__EXTENSION, ExtendableElement.class, msgs);
 			msgs = basicSetExtendableBase(newExtendableBase, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CorePackage.EXTENSION__EXTENDABLE_BASE, newExtendableBase,
-					newExtendableBase));
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.EXTENSION__EXTENDABLE_BASE,
+					newExtendableBase, newExtendableBase));
 	}
 
 	/**
@@ -246,8 +238,7 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CorePackage.EXTENSION__EXTENDABLE_BASE:
 			if (eInternalContainer() != null)
@@ -263,8 +254,7 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CorePackage.EXTENSION__EXTENDABLE_BASE:
 			return basicSetExtendableBase(null, msgs);
@@ -278,12 +268,10 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(
-			NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case CorePackage.EXTENSION__EXTENDABLE_BASE:
-			return eInternalContainer().eInverseRemove(this,
-					CorePackage.EXTENDABLE_ELEMENT__EXTENSION,
+			return eInternalContainer().eInverseRemove(this, CorePackage.EXTENDABLE_ELEMENT__EXTENSION,
 					ExtendableElement.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -385,8 +373,7 @@ public abstract class ExtensionImpl extends ExtendableElementImpl implements
 	 * @generated
 	 */
 	public boolean isSetBase() {
-		return isSetModelBase()
-				|| eIsSet(CorePackage.EXTENSION__EXTENDABLE_BASE);
+		return isSetModelBase() || eIsSet(CorePackage.EXTENSION__EXTENDABLE_BASE);
 	}
 
 } //ExtensionImpl

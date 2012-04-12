@@ -36,8 +36,7 @@ import org.storydriven.core.Extension;
  *
  * @generated
  */
-public abstract class ExtendableElementImpl extends EObjectImpl implements
-		ExtendableElement {
+public abstract class ExtendableElementImpl extends EObjectImpl implements ExtendableElement {
 	/**
 	 * The cached value of the '{@link #getAnnotations() <em>Annotation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -84,8 +83,7 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	 */
 	public EList<EAnnotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(
-					EAnnotation.class, this,
+			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this,
 					CorePackage.EXTENDABLE_ELEMENT__ANNOTATION);
 		}
 		return annotations;
@@ -98,10 +96,8 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	 */
 	public EList<Extension> getExtensions() {
 		if (extensions == null) {
-			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(
-					Extension.class, this,
-					CorePackage.EXTENDABLE_ELEMENT__EXTENSION,
-					CorePackage.EXTENSION__EXTENDABLE_BASE);
+			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this,
+					CorePackage.EXTENDABLE_ELEMENT__EXTENSION, CorePackage.EXTENSION__EXTENDABLE_BASE);
 		}
 		return extensions;
 	}
@@ -157,12 +153,10 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getExtensions())
-					.basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getExtensions()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -173,15 +167,12 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
-			return ((InternalEList<?>) getAnnotations()).basicRemove(otherEnd,
-					msgs);
+			return ((InternalEList<?>) getAnnotations()).basicRemove(otherEnd, msgs);
 		case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
-			return ((InternalEList<?>) getExtensions()).basicRemove(otherEnd,
-					msgs);
+			return ((InternalEList<?>) getExtensions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -213,8 +204,7 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 		switch (featureID) {
 		case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION:
 			getAnnotations().clear();
-			getAnnotations().addAll(
-					(Collection<? extends EAnnotation>) newValue);
+			getAnnotations().addAll((Collection<? extends EAnnotation>) newValue);
 			return;
 		case CorePackage.EXTENDABLE_ELEMENT__EXTENSION:
 			getExtensions().clear();
@@ -264,8 +254,7 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS:
 			return getExtension((EClass) arguments.get(0));

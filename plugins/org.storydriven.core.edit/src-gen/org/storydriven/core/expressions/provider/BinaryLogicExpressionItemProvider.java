@@ -29,10 +29,9 @@ import org.storydriven.core.expressions.ExpressionsPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class BinaryLogicExpressionItemProvider extends
-		BinaryExpressionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+public class BinaryLogicExpressionItemProvider extends BinaryExpressionItemProvider implements
+		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider,
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -67,16 +66,13 @@ public class BinaryLogicExpressionItemProvider extends
 	 */
 	protected void addOperatorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_BinaryLogicExpression_operator_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_BinaryLogicExpression_operator_feature",
+				getString("_UI_PropertyDescriptor_description", "_UI_BinaryLogicExpression_operator_feature",
 						"_UI_BinaryLogicExpression_type"),
-				ExpressionsPackage.Literals.BINARY_LOGIC_EXPRESSION__OPERATOR,
-				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
+				ExpressionsPackage.Literals.BINARY_LOGIC_EXPRESSION__OPERATOR, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -87,10 +83,7 @@ public class BinaryLogicExpressionItemProvider extends
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"full/obj16/BinaryLogicExpression"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/BinaryLogicExpression"));
 	}
 
 	/**
@@ -119,8 +112,7 @@ public class BinaryLogicExpressionItemProvider extends
 
 		switch (notification.getFeatureID(BinaryLogicExpression.class)) {
 		case ExpressionsPackage.BINARY_LOGIC_EXPRESSION__OPERATOR:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -134,8 +126,7 @@ public class BinaryLogicExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -146,8 +137,7 @@ public class BinaryLogicExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	public String getCreateChildText(Object owner, Object feature,
-			Object child, Collection<?> selection) {
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
 		Object childFeature = feature;
 		Object childObject = child;
 
@@ -155,9 +145,8 @@ public class BinaryLogicExpressionItemProvider extends
 				|| childFeature == ExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION;
 
 		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] {
-					getTypeText(childObject), getFeatureText(childFeature),
-					getTypeText(owner) });
+			return getString("_UI_CreateChild_text2", new Object[] { getTypeText(childObject),
+					getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}

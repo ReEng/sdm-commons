@@ -25,8 +25,7 @@ import org.storydriven.core.CorePackage;
  *
  * @generated
  */
-public abstract class CommentableElementImpl extends ExtendableElementImpl
-		implements CommentableElement {
+public abstract class CommentableElementImpl extends ExtendableElementImpl implements CommentableElement {
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,8 +83,7 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl
 		String oldComment = comment;
 		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CorePackage.COMMENTABLE_ELEMENT__COMMENT, oldComment,
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.COMMENTABLE_ELEMENT__COMMENT, oldComment,
 					comment));
 	}
 
@@ -142,8 +140,7 @@ public abstract class CommentableElementImpl extends ExtendableElementImpl
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case CorePackage.COMMENTABLE_ELEMENT__COMMENT:
-			return COMMENT_EDEFAULT == null ? comment != null
-					: !COMMENT_EDEFAULT.equals(comment);
+			return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 		}
 		return super.eIsSet(featureID);
 	}
