@@ -57,6 +57,7 @@ public interface StoryNode extends ActivityNode {
 
 	/**
 	 * Returns the value of the '<em><b>Story Pattern</b></em>' reference.
+	 * This feature is a derived union.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Story Pattern</em>' reference isn't clear,

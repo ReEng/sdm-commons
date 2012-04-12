@@ -30,9 +30,15 @@ import org.storydriven.storydiagrams.Variable;
  * @model
  * @generated
  */
-public interface ParameterExtension extends Extension, Variable {
+public interface ParameterExtension extends Variable, Extension {
 	/**
 	 * Returns the value of the '<em><b>Parameter</b></em>' reference.
+	 * <p>
+	 * This feature redefines the following features:
+	 * <ul>
+	 *   <li>'{@link org.storydriven.core.Extension#getModelBase() <em>Model Base</em>}'</li>
+	 * </ul>
+	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parameter</em>' reference isn't clear,

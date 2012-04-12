@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.calls.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -30,14 +29,8 @@ import org.storydriven.storydiagrams.calls.OpaqueCallable;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OpaqueCallableItemProvider
-	extends CallableItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class OpaqueCallableItemProvider extends CallableItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -71,19 +64,13 @@ public class OpaqueCallableItemProvider
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OpaqueCallable_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OpaqueCallable_name_feature", "_UI_OpaqueCallable_type"),
-				 CallsPackage.Literals.OPAQUE_CALLABLE__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_OpaqueCallable_name_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_OpaqueCallable_name_feature",
+						"_UI_OpaqueCallable_type"), CallsPackage.Literals.OPAQUE_CALLABLE__NAME, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -105,10 +92,9 @@ public class OpaqueCallableItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((OpaqueCallable)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_OpaqueCallable_type") :
-			getString("_UI_OpaqueCallable_type") + " " + label;
+		String label = ((OpaqueCallable) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_OpaqueCallable_type")
+				: getString("_UI_OpaqueCallable_type") + " " + label;
 	}
 
 	/**
@@ -123,9 +109,9 @@ public class OpaqueCallableItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(OpaqueCallable.class)) {
-			case CallsPackage.OPAQUE_CALLABLE__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case CallsPackage.OPAQUE_CALLABLE__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

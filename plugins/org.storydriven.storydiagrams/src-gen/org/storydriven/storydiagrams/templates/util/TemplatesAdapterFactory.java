@@ -59,7 +59,7 @@ public class TemplatesAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -70,29 +70,32 @@ public class TemplatesAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TemplatesSwitch<Adapter> modelSwitch =
-		new TemplatesSwitch<Adapter>() {
-			@Override
-			public Adapter caseTemplateBinding(TemplateBinding object) {
-				return createTemplateBindingAdapter();
-			}
-			@Override
-			public Adapter casePropertyBinding(PropertyBinding object) {
-				return createPropertyBindingAdapter();
-			}
-			@Override
-			public Adapter caseTemplateSignature(TemplateSignature object) {
-				return createTemplateSignatureAdapter();
-			}
-			@Override
-			public Adapter caseExtendableElement(ExtendableElement object) {
-				return createExtendableElementAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected TemplatesSwitch<Adapter> modelSwitch = new TemplatesSwitch<Adapter>() {
+		@Override
+		public Adapter caseTemplateBinding(TemplateBinding object) {
+			return createTemplateBindingAdapter();
+		}
+
+		@Override
+		public Adapter casePropertyBinding(PropertyBinding object) {
+			return createPropertyBindingAdapter();
+		}
+
+		@Override
+		public Adapter caseTemplateSignature(TemplateSignature object) {
+			return createTemplateSignatureAdapter();
+		}
+
+		@Override
+		public Adapter caseExtendableElement(ExtendableElement object) {
+			return createExtendableElementAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -104,9 +107,8 @@ public class TemplatesAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.templates.TemplateBinding <em>Template Binding</em>}'.

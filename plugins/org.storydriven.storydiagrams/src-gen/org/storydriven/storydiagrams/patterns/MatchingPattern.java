@@ -29,11 +29,10 @@ public interface MatchingPattern extends StoryPattern {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.objectVariable->forAll(v:ObjectVariable | v.modifier = Modifier::NONE) and self.linkVariable->forAll(v:LinkVariable | v.modifier = Modifier::NONE)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.objectVariable->forAll(v:ObjectVariable | v.modifier = Modifier::NONE) and self.linkVariable->forAll(v:LinkVariable | v.modifier = Modifier::NONE)'"
 	 * @generated
 	 */
 	boolean NoModifierInMatchingPattern(DiagnosticChain diagnostics, Map<Object, Object> context);

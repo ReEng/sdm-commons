@@ -6,6 +6,8 @@
  */
 package org.storydriven.storydiagrams.activities.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,36 +16,35 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
-import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.Extension;
+import org.storydriven.core.impl.ExtensionImpl;
+import org.storydriven.core.util.ExtensionOperations;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.OperationExtension;
 import org.storydriven.storydiagrams.activities.util.OperationExtensionOperations;
-import org.storydriven.storydiagrams.calls.impl.CallableImpl;
+import org.storydriven.storydiagrams.calls.Callable;
+import org.storydriven.storydiagrams.calls.CallsPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Operation Extension</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Operation Extension</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl#getBase <em>Base</em>}</li>
- *   <li>{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl#getModelBase <em>Model Base</em>}</li>
- *   <li>{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl#getOwningAnnotation <em>Owning Annotation</em>}</li>
- *   <li>{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl#getExtendableBase <em>Extendable Base</em>}</li>
+ *   <li>{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl#getInParameters <em>In Parameter</em>}</li>
+ *   <li>{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl#getOutParameters <em>Out Parameter</em>}</li>
+ *   <li>{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl#getContainedParameters <em>Contained Parameters</em>}</li>
  *   <li>{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl#getReturnValue <em>Return Value</em>}</li>
  *   <li>{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl#getOwnedActivity <em>Owned Activity</em>}</li>
@@ -52,21 +53,58 @@ import org.storydriven.storydiagrams.calls.impl.CallableImpl;
  *
  * @generated
  */
-public class OperationExtensionImpl extends CallableImpl implements OperationExtension {
+public class OperationExtensionImpl extends ExtensionImpl implements OperationExtension {
+	/**
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
+	/**
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String comment = COMMENT_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getInParameters() <em>In Parameter</em>}' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getInParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EParameter> inParameters;
+	/**
+	 * The cached value of the '{@link #getOutParameters() <em>Out Parameter</em>}' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getOutParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EParameter> outParameters;
+	/**
+	 * The cached value of the '{@link #getContainedParameters() <em>Contained Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getContainedParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EParameter> containedParameters;
 	/**
 	 * The cached value of the '{@link #getReturnValue() <em>Return Value</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getReturnValue()
 	 * @generated
 	 * @ordered
 	 */
 	protected EParameter returnValue;
-
 	/**
 	 * The cached value of the '{@link #getOwnedActivity() <em>Owned Activity</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getOwnedActivity()
 	 * @generated
 	 * @ordered
@@ -74,8 +112,7 @@ public class OperationExtensionImpl extends CallableImpl implements OperationExt
 	protected Activity ownedActivity;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected OperationExtensionImpl() {
@@ -83,8 +120,7 @@ public class OperationExtensionImpl extends CallableImpl implements OperationExt
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -93,545 +129,52 @@ public class OperationExtensionImpl extends CallableImpl implements OperationExt
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getBase() {
-		EObject base = basicGetBase();
-		return base != null && base.eIsProxy() ? eResolveProxy((InternalEObject)base) : base;
+	public String getComment() {
+		return comment;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject basicGetBase() {
-		if (isSetModelBase()) {
-			return basicGetModelBase();
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.OPERATION_EXTENSION__COMMENT,
+					oldComment, comment));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EParameter> getContainedParameters() {
+		if (containedParameters == null) {
+			containedParameters = new EObjectContainmentEList.Resolving<EParameter>(EParameter.class, this,
+					ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS);
 		}
-		ExtendableElement extendableBase = basicGetExtendableBase();			
-		if (extendableBase != null) {
-			return extendableBase;
-		}
-		return null;
+		return containedParameters;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EModelElement getModelBase() {
-		EModelElement modelBase = basicGetModelBase();
-		return modelBase != null && modelBase.eIsProxy() ? (EModelElement)eResolveProxy((InternalEObject)modelBase) : modelBase;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EModelElement basicGetModelBase() {
-		// TODO: implement this method to return the 'Model Base' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setModelBase(EModelElement newModelBase) {
-		// TODO: implement this method to set the 'Model Base' reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetModelBase() {
-		// TODO: implement this method to unset the 'Model Base' reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetModelBase() {
-		// TODO: implement this method to return whether the 'Model Base' reference is set
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation getOwningAnnotation() {
-		EAnnotation owningAnnotation = basicGetOwningAnnotation();
-		return owningAnnotation != null && owningAnnotation.eIsProxy() ? (EAnnotation)eResolveProxy((InternalEObject)owningAnnotation) : owningAnnotation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation basicGetOwningAnnotation() {
-		// TODO: implement this method to return the 'Owning Annotation' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOwningAnnotation(EAnnotation newOwningAnnotation) {
-		// TODO: implement this method to set the 'Owning Annotation' reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetOwningAnnotation() {
-		// TODO: implement this method to unset the 'Owning Annotation' reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetOwningAnnotation() {
-		// TODO: implement this method to return whether the 'Owning Annotation' reference is set
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExtendableElement getExtendableBase() {
-		if (eContainerFeatureID() != ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE) return null;
-		return (ExtendableElement)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExtendableElement basicGetExtendableBase() {
-		if (eContainerFeatureID() != ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE) return null;
-		return (ExtendableElement)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetExtendableBase(ExtendableElement newExtendableBase, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newExtendableBase, ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setExtendableBase(ExtendableElement newExtendableBase) {
-		if (newExtendableBase != eInternalContainer() || (eContainerFeatureID() != ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE && newExtendableBase != null)) {
-			if (EcoreUtil.isAncestor(this, newExtendableBase))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newExtendableBase != null)
-				msgs = ((InternalEObject)newExtendableBase).eInverseAdd(this, CorePackage.EXTENDABLE_ELEMENT__EXTENSION, ExtendableElement.class, msgs);
-			msgs = basicSetExtendableBase(newExtendableBase, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE, newExtendableBase, newExtendableBase));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
-	public EOperation getOperation() {
-		return OperationExtensionOperations.getOperation(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void setOperation(EOperation newOperation) {
-		OperationExtensionOperations.setOperation(this, newOperation);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void unsetOperation() {
-		OperationExtensionOperations.unsetOperation(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean isSetOperation() {
-		return OperationExtensionOperations.isSetOperation(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EParameter getReturnValue() {
-		return returnValue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetReturnValue(EParameter newReturnValue, NotificationChain msgs) {
-		EParameter oldReturnValue = returnValue;
-		returnValue = newReturnValue;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, oldReturnValue, newReturnValue);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setReturnValue(EParameter newReturnValue) {
-		if (newReturnValue != returnValue) {
-			NotificationChain msgs = null;
-			if (returnValue != null)
-				msgs = ((InternalEObject)returnValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, null, msgs);
-			if (newReturnValue != null)
-				msgs = ((InternalEObject)newReturnValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, null, msgs);
-			msgs = basicSetReturnValue(newReturnValue, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, newReturnValue, newReturnValue));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Activity getOwnedActivity() {
-		return ownedActivity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetOwnedActivity(Activity newOwnedActivity, NotificationChain msgs) {
-		Activity oldOwnedActivity = ownedActivity;
-		ownedActivity = newOwnedActivity;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, oldOwnedActivity, newOwnedActivity);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOwnedActivity(Activity newOwnedActivity) {
-		if (newOwnedActivity != ownedActivity) {
-			NotificationChain msgs = null;
-			if (ownedActivity != null)
-				msgs = ((InternalEObject)ownedActivity).eInverseRemove(this, ActivitiesPackage.ACTIVITY__OWNING_OPERATION, Activity.class, msgs);
-			if (newOwnedActivity != null)
-				msgs = ((InternalEObject)newOwnedActivity).eInverseAdd(this, ActivitiesPackage.ACTIVITY__OWNING_OPERATION, Activity.class, msgs);
-			msgs = basicSetOwnedActivity(newOwnedActivity, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, newOwnedActivity, newOwnedActivity));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean NumberOfOutParams(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return OperationExtensionOperations.NumberOfOutParams(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetExtendableBase((ExtendableElement)otherEnd, msgs);
-			case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
-				if (ownedActivity != null)
-					msgs = ((InternalEObject)ownedActivity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, null, msgs);
-				return basicSetOwnedActivity((Activity)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE:
-				return basicSetExtendableBase(null, msgs);
-			case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
-				return basicSetReturnValue(null, msgs);
-			case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
-				return basicSetOwnedActivity(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE:
-				return eInternalContainer().eInverseRemove(this, CorePackage.EXTENDABLE_ELEMENT__EXTENSION, ExtendableElement.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ActivitiesPackage.OPERATION_EXTENSION__BASE:
-				if (resolve) return getBase();
-				return basicGetBase();
-			case ActivitiesPackage.OPERATION_EXTENSION__MODEL_BASE:
-				if (resolve) return getModelBase();
-				return basicGetModelBase();
-			case ActivitiesPackage.OPERATION_EXTENSION__OWNING_ANNOTATION:
-				if (resolve) return getOwningAnnotation();
-				return basicGetOwningAnnotation();
-			case ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE:
-				if (resolve) return getExtendableBase();
-				return basicGetExtendableBase();
-			case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
-				return getOperation();
-			case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
-				return getReturnValue();
-			case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
-				return getOwnedActivity();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ActivitiesPackage.OPERATION_EXTENSION__MODEL_BASE:
-				setModelBase((EModelElement)newValue);
-				return;
-			case ActivitiesPackage.OPERATION_EXTENSION__OWNING_ANNOTATION:
-				setOwningAnnotation((EAnnotation)newValue);
-				return;
-			case ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE:
-				setExtendableBase((ExtendableElement)newValue);
-				return;
-			case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
-				setOperation((EOperation)newValue);
-				return;
-			case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
-				setReturnValue((EParameter)newValue);
-				return;
-			case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
-				setOwnedActivity((Activity)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ActivitiesPackage.OPERATION_EXTENSION__MODEL_BASE:
-				unsetModelBase();
-				return;
-			case ActivitiesPackage.OPERATION_EXTENSION__OWNING_ANNOTATION:
-				unsetOwningAnnotation();
-				return;
-			case ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE:
-				setExtendableBase((ExtendableElement)null);
-				return;
-			case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
-				unsetOperation();
-				return;
-			case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
-				setReturnValue((EParameter)null);
-				return;
-			case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
-				setOwnedActivity((Activity)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ActivitiesPackage.OPERATION_EXTENSION__BASE:
-				return isSetBase();
-			case ActivitiesPackage.OPERATION_EXTENSION__MODEL_BASE:
-				return isSetModelBase();
-			case ActivitiesPackage.OPERATION_EXTENSION__OWNING_ANNOTATION:
-				return isSetOwningAnnotation();
-			case ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE:
-				return basicGetExtendableBase() != null;
-			case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
-				return isSetOperation();
-			case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
-				return returnValue != null;
-			case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
-				return ownedActivity != null;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Extension.class) {
-			switch (derivedFeatureID) {
-				case ActivitiesPackage.OPERATION_EXTENSION__BASE: return CorePackage.EXTENSION__BASE;
-				case ActivitiesPackage.OPERATION_EXTENSION__MODEL_BASE: return CorePackage.EXTENSION__MODEL_BASE;
-				case ActivitiesPackage.OPERATION_EXTENSION__OWNING_ANNOTATION: return CorePackage.EXTENSION__OWNING_ANNOTATION;
-				case ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE: return CorePackage.EXTENSION__EXTENDABLE_BASE;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Extension.class) {
-			switch (baseFeatureID) {
-				case CorePackage.EXTENSION__BASE: return ActivitiesPackage.OPERATION_EXTENSION__BASE;
-				case CorePackage.EXTENSION__MODEL_BASE: return ActivitiesPackage.OPERATION_EXTENSION__MODEL_BASE;
-				case CorePackage.EXTENSION__OWNING_ANNOTATION: return ActivitiesPackage.OPERATION_EXTENSION__OWNING_ANNOTATION;
-				case CorePackage.EXTENSION__EXTENDABLE_BASE: return ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetBase() {
-		return isSetModelBase()
-			|| eIsSet(ActivitiesPackage.OPERATION_EXTENSION__EXTENDABLE_BASE);
-	}
-
 	public EList<EParameter> getInParameters() {
 		final EOperation operation = getOperation();
-		return operation == null ? ECollections.<EParameter> emptyEList()
-				: operation.getEParameters();
+		return operation == null ? ECollections.<EParameter> emptyEList() : operation.getEParameters();
 	}
 
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
 	public EList<EParameter> getOutParameters() {
 		final EOperation operation = getOperation();
 
@@ -641,8 +184,7 @@ public class OperationExtensionImpl extends CallableImpl implements OperationExt
 
 		if (getReturnValue() == null) {
 			final EParameter parameter;
-			parameter = EcorePackage.eINSTANCE.getEcoreFactory()
-					.createEParameter();
+			parameter = EcorePackage.eINSTANCE.getEcoreFactory().createEParameter();
 			setReturnValue(parameter);
 		}
 
@@ -650,7 +192,479 @@ public class OperationExtensionImpl extends CallableImpl implements OperationExt
 			getReturnValue().setEType(operation.getEType());
 		}
 
-		return new BasicEList.UnmodifiableEList<EParameter>(1,
-				new EParameter[] { getReturnValue() });
+		return new BasicEList.UnmodifiableEList<EParameter>(1, new EParameter[] { getReturnValue() });
 	}
-} //OperationExtensionImpl
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public EOperation getOperation() {
+		return OperationExtensionOperations.getOperation(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public void setOperation(EOperation newOperation) {
+		OperationExtensionOperations.setOperation(this, newOperation);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public void unsetOperation() {
+		OperationExtensionOperations.unsetOperation(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public boolean isSetOperation() {
+		return OperationExtensionOperations.isSetOperation(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EParameter getReturnValue() {
+		if (returnValue != null && returnValue.eIsProxy()) {
+			InternalEObject oldReturnValue = (InternalEObject) returnValue;
+			returnValue = (EParameter) eResolveProxy(oldReturnValue);
+			if (returnValue != oldReturnValue) {
+				InternalEObject newReturnValue = (InternalEObject) returnValue;
+				NotificationChain msgs = oldReturnValue.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, null, null);
+				if (newReturnValue.eInternalContainer() == null) {
+					msgs = newReturnValue.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+							- ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, null, msgs);
+				}
+				if (msgs != null)
+					msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, oldReturnValue, returnValue));
+			}
+		}
+		return returnValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EParameter basicGetReturnValue() {
+		return returnValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetReturnValue(EParameter newReturnValue, NotificationChain msgs) {
+		EParameter oldReturnValue = returnValue;
+		returnValue = newReturnValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, oldReturnValue, newReturnValue);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> Only for internal use in this class. UMLLab does not generate correct visibility for some reason... <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReturnValue(EParameter newReturnValue) {
+		if (newReturnValue != returnValue) {
+			NotificationChain msgs = null;
+			if (returnValue != null)
+				msgs = ((InternalEObject) returnValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, null, msgs);
+			if (newReturnValue != null)
+				msgs = ((InternalEObject) newReturnValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+						- ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, null, msgs);
+			msgs = basicSetReturnValue(newReturnValue, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE,
+					newReturnValue, newReturnValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Activity getOwnedActivity() {
+		if (ownedActivity != null && ownedActivity.eIsProxy()) {
+			InternalEObject oldOwnedActivity = (InternalEObject) ownedActivity;
+			ownedActivity = (Activity) eResolveProxy(oldOwnedActivity);
+			if (ownedActivity != oldOwnedActivity) {
+				InternalEObject newOwnedActivity = (InternalEObject) ownedActivity;
+				NotificationChain msgs = oldOwnedActivity.eInverseRemove(this,
+						ActivitiesPackage.ACTIVITY__OWNING_OPERATION, Activity.class, null);
+				if (newOwnedActivity.eInternalContainer() == null) {
+					msgs = newOwnedActivity.eInverseAdd(this, ActivitiesPackage.ACTIVITY__OWNING_OPERATION,
+							Activity.class, msgs);
+				}
+				if (msgs != null)
+					msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, oldOwnedActivity, ownedActivity));
+			}
+		}
+		return ownedActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Activity basicGetOwnedActivity() {
+		return ownedActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOwnedActivity(Activity newOwnedActivity, NotificationChain msgs) {
+		Activity oldOwnedActivity = ownedActivity;
+		ownedActivity = newOwnedActivity;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, oldOwnedActivity, newOwnedActivity);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOwnedActivity(Activity newOwnedActivity) {
+		if (newOwnedActivity != ownedActivity) {
+			NotificationChain msgs = null;
+			if (ownedActivity != null)
+				msgs = ((InternalEObject) ownedActivity).eInverseRemove(this,
+						ActivitiesPackage.ACTIVITY__OWNING_OPERATION, Activity.class, msgs);
+			if (newOwnedActivity != null)
+				msgs = ((InternalEObject) newOwnedActivity).eInverseAdd(this,
+						ActivitiesPackage.ACTIVITY__OWNING_OPERATION, Activity.class, msgs);
+			msgs = basicSetOwnedActivity(newOwnedActivity, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, newOwnedActivity, newOwnedActivity));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean NumberOfOutParams(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return OperationExtensionOperations.NumberOfOutParams(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
+			if (ownedActivity != null)
+				msgs = ((InternalEObject) ownedActivity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, null, msgs);
+			return basicSetOwnedActivity((Activity) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
+			return ((InternalEList<?>) getContainedParameters()).basicRemove(otherEnd, msgs);
+		case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
+			return basicSetReturnValue(null, msgs);
+		case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
+			return basicSetOwnedActivity(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
+			return getComment();
+		case ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETER:
+			return getInParameters();
+		case ActivitiesPackage.OPERATION_EXTENSION__OUT_PARAMETER:
+			return getOutParameters();
+		case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
+			return getContainedParameters();
+		case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
+			return getOperation();
+		case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
+			if (resolve)
+				return getReturnValue();
+			return basicGetReturnValue();
+		case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
+			if (resolve)
+				return getOwnedActivity();
+			return basicGetOwnedActivity();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+		case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
+			setComment((String) newValue);
+			return;
+		case ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETER:
+			getInParameters().clear();
+			getInParameters().addAll((Collection<? extends EParameter>) newValue);
+			return;
+		case ActivitiesPackage.OPERATION_EXTENSION__OUT_PARAMETER:
+			getOutParameters().clear();
+			getOutParameters().addAll((Collection<? extends EParameter>) newValue);
+			return;
+		case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
+			getContainedParameters().clear();
+			getContainedParameters().addAll((Collection<? extends EParameter>) newValue);
+			return;
+		case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
+			setOperation((EOperation) newValue);
+			return;
+		case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
+			setReturnValue((EParameter) newValue);
+			return;
+		case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
+			setOwnedActivity((Activity) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+		case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
+			setComment(COMMENT_EDEFAULT);
+			return;
+		case ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETER:
+			getInParameters().clear();
+			return;
+		case ActivitiesPackage.OPERATION_EXTENSION__OUT_PARAMETER:
+			getOutParameters().clear();
+			return;
+		case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
+			getContainedParameters().clear();
+			return;
+		case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
+			unsetOperation();
+			return;
+		case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
+			setReturnValue((EParameter) null);
+			return;
+		case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
+			setOwnedActivity((Activity) null);
+			return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+		case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
+			return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+		case ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETER:
+			return inParameters != null && !inParameters.isEmpty();
+		case ActivitiesPackage.OPERATION_EXTENSION__OUT_PARAMETER:
+			return outParameters != null && !outParameters.isEmpty();
+		case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
+			return containedParameters != null && !containedParameters.isEmpty();
+		case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
+			return isSetOperation();
+		case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
+			return returnValue != null;
+		case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
+			return ownedActivity != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == CommentableElement.class) {
+			switch (derivedFeatureID) {
+			case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
+				return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == Callable.class) {
+			switch (derivedFeatureID) {
+			case ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETER:
+				return CallsPackage.CALLABLE__IN_PARAMETER;
+			case ActivitiesPackage.OPERATION_EXTENSION__OUT_PARAMETER:
+				return CallsPackage.CALLABLE__OUT_PARAMETER;
+			case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
+				return CallsPackage.CALLABLE__CONTAINED_PARAMETERS;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == CommentableElement.class) {
+			switch (baseFeatureID) {
+			case CorePackage.COMMENTABLE_ELEMENT__COMMENT:
+				return ActivitiesPackage.OPERATION_EXTENSION__COMMENT;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == Callable.class) {
+			switch (baseFeatureID) {
+			case CallsPackage.CALLABLE__IN_PARAMETER:
+				return ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETER;
+			case CallsPackage.CALLABLE__OUT_PARAMETER:
+				return ActivitiesPackage.OPERATION_EXTENSION__OUT_PARAMETER;
+			case CallsPackage.CALLABLE__CONTAINED_PARAMETERS:
+				return ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case ActivitiesPackage.OPERATION_EXTENSION___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP:
+			return NumberOfOutParams((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (comment: ");
+		result.append(comment);
+		result.append(')');
+		return result.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EObject getBase() {
+		return getOperation();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EObject basicGetBase() {
+		return getOperation();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetBase() {
+		return false;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public boolean isSetModelBase() {
+		return ExtensionOperations.isSetModelBase(this);
+	}
+
+} // OperationExtensionImpl

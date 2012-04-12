@@ -33,7 +33,7 @@ import org.storydriven.core.NamedElement;
  * @model abstract="true"
  * @generated
  */
-public interface ActivityNode extends CommentableElement, NamedElement {
+public interface ActivityNode extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Outgoing</b></em>' reference list.
 	 * The list contents are of type {@link org.storydriven.storydiagrams.activities.ActivityEdge}.

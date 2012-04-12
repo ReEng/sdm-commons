@@ -65,11 +65,13 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements P
 	 */
 	public PrimitiveVariable getPrimitiveVariable() {
 		if (primitiveVariable != null && primitiveVariable.eIsProxy()) {
-			InternalEObject oldPrimitiveVariable = (InternalEObject)primitiveVariable;
-			primitiveVariable = (PrimitiveVariable)eResolveProxy(oldPrimitiveVariable);
+			InternalEObject oldPrimitiveVariable = (InternalEObject) primitiveVariable;
+			primitiveVariable = (PrimitiveVariable) eResolveProxy(oldPrimitiveVariable);
 			if (primitiveVariable != oldPrimitiveVariable) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE, oldPrimitiveVariable, primitiveVariable));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE,
+							oldPrimitiveVariable, primitiveVariable));
 			}
 		}
 		return primitiveVariable;
@@ -93,7 +95,9 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements P
 		PrimitiveVariable oldPrimitiveVariable = primitiveVariable;
 		primitiveVariable = newPrimitiveVariable;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE, oldPrimitiveVariable, primitiveVariable));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE, oldPrimitiveVariable,
+					primitiveVariable));
 	}
 
 	/**
@@ -104,9 +108,10 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements P
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
-				if (resolve) return getPrimitiveVariable();
-				return basicGetPrimitiveVariable();
+		case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
+			if (resolve)
+				return getPrimitiveVariable();
+			return basicGetPrimitiveVariable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,9 +124,9 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements P
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
-				setPrimitiveVariable((PrimitiveVariable)newValue);
-				return;
+		case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
+			setPrimitiveVariable((PrimitiveVariable) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -134,9 +139,9 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements P
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
-				setPrimitiveVariable((PrimitiveVariable)null);
-				return;
+		case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
+			setPrimitiveVariable((PrimitiveVariable) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,8 +154,8 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements P
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
-				return primitiveVariable != null;
+		case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE:
+			return primitiveVariable != null;
 		}
 		return super.eIsSet(featureID);
 	}

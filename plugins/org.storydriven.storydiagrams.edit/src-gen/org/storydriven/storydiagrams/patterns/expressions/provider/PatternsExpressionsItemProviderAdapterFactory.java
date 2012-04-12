@@ -34,7 +34,8 @@ import org.storydriven.storydiagrams.patterns.expressions.util.PatternsExpressio
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpressionsAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpressionsAdapterFactory implements
+		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -60,6 +61,38 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeValueExpressionItemProvider attributeValueExpressionItemProvider;
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ObjectVariableExpressionItemProvider objectVariableExpressionItemProvider;
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ObjectSetSizeExpressionItemProvider objectSetSizeExpressionItemProvider;
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PrimitiveVariableExpressionItemProvider primitiveVariableExpressionItemProvider;
+
+	/**
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,12 +107,31 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AttributeValueExpressionItemProvider attributeValueExpressionItemProvider;
+	@Override
+	public Object adapt(Object object, Object type) {
+		if (isFactoryForType(type)) {
+			Object adapter = super.adapt(object, type);
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+				return adapter;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isFactoryForType(Object type) {
+		return supportedTypes.contains(type) || super.isFactoryForType(type);
+	}
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression}.
@@ -97,14 +149,6 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ObjectVariableExpressionItemProvider objectVariableExpressionItemProvider;
-
-	/**
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -120,14 +164,6 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ObjectSetSizeExpressionItemProvider objectSetSizeExpressionItemProvider;
-
-	/**
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,14 +177,6 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 
 		return objectSetSizeExpressionItemProvider;
 	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PrimitiveVariableExpressionItemProvider primitiveVariableExpressionItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression}.
@@ -186,16 +214,6 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isFactoryForType(Object type) {
-		return supportedTypes.contains(type) || super.isFactoryForType(type);
-	}
-
-	/**
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -204,23 +222,6 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	@Override
 	public Adapter adapt(Notifier notifier, Object type) {
 		return super.adapt(notifier, this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
-			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
-				return adapter;
-			}
-		}
-
-		return null;
 	}
 
 	/**
@@ -264,10 +265,14 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	 * @generated
 	 */
 	public void dispose() {
-		if (attributeValueExpressionItemProvider != null) attributeValueExpressionItemProvider.dispose();
-		if (objectVariableExpressionItemProvider != null) objectVariableExpressionItemProvider.dispose();
-		if (objectSetSizeExpressionItemProvider != null) objectSetSizeExpressionItemProvider.dispose();
-		if (primitiveVariableExpressionItemProvider != null) primitiveVariableExpressionItemProvider.dispose();
+		if (attributeValueExpressionItemProvider != null)
+			attributeValueExpressionItemProvider.dispose();
+		if (objectVariableExpressionItemProvider != null)
+			objectVariableExpressionItemProvider.dispose();
+		if (objectSetSizeExpressionItemProvider != null)
+			objectSetSizeExpressionItemProvider.dispose();
+		if (primitiveVariableExpressionItemProvider != null)
+			primitiveVariableExpressionItemProvider.dispose();
 	}
 
 }

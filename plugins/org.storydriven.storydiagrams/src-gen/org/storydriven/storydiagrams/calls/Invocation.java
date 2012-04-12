@@ -44,7 +44,7 @@ public interface Invocation extends CommentableElement {
 	 * @return the value of the '<em>Owned Parameter Bindings</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.calls.CallsPackage#getInvocation_OwnedParameterBindings()
 	 * @see org.storydriven.storydiagrams.calls.ParameterBinding#getInvocation
-	 * @model opposite="invocation" containment="true"
+	 * @model opposite="invocation" containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<ParameterBinding> getOwnedParameterBindings();

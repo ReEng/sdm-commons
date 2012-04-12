@@ -74,7 +74,7 @@ public interface Activity extends Callable, NamedElement {
 	 * @return the value of the '<em>Owned Activity Edge</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.activities.ActivitiesPackage#getActivity_OwnedActivityEdge()
 	 * @see org.storydriven.storydiagrams.activities.ActivityEdge#getOwningActivity
-	 * @model opposite="owningActivity" containment="true"
+	 * @model opposite="owningActivity" containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<ActivityEdge> getOwnedActivityEdges();
@@ -116,7 +116,7 @@ public interface Activity extends Callable, NamedElement {
 	 * @return the value of the '<em>Owned Activity Node</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.activities.ActivitiesPackage#getActivity_OwnedActivityNode()
 	 * @see org.storydriven.storydiagrams.activities.ActivityNode#getOwningActivity
-	 * @model opposite="owningActivity" containment="true" ordered="false"
+	 * @model opposite="owningActivity" containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	EList<ActivityNode> getOwnedActivityNodes();

@@ -90,145 +90,214 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ActivitiesPackage.EXCEPTION_VARIABLE: {
-				ExceptionVariable exceptionVariable = (ExceptionVariable)theEObject;
-				T result = caseExceptionVariable(exceptionVariable);
-				if (result == null) result = caseVariable(exceptionVariable);
-				if (result == null) result = caseTypedElement(exceptionVariable);
-				if (result == null) result = caseExtendableElement(exceptionVariable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActivitiesPackage.ACTIVITY_EDGE: {
-				ActivityEdge activityEdge = (ActivityEdge)theEObject;
-				T result = caseActivityEdge(activityEdge);
-				if (result == null) result = caseExtendableElement(activityEdge);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActivitiesPackage.ACTIVITY_NODE: {
-				ActivityNode activityNode = (ActivityNode)theEObject;
-				T result = caseActivityNode(activityNode);
-				if (result == null) result = caseCommentableElement(activityNode);
-				if (result == null) result = caseNamedElement(activityNode);
-				if (result == null) result = caseExtendableElement(activityNode);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActivitiesPackage.ACTIVITY: {
-				Activity activity = (Activity)theEObject;
-				T result = caseActivity(activity);
-				if (result == null) result = caseCallable(activity);
-				if (result == null) result = caseNamedElement(activity);
-				if (result == null) result = caseCommentableElement(activity);
-				if (result == null) result = caseExtendableElement(activity);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActivitiesPackage.OPERATION_EXTENSION: {
-				OperationExtension operationExtension = (OperationExtension)theEObject;
-				T result = caseOperationExtension(operationExtension);
-				if (result == null) result = caseCallable(operationExtension);
-				if (result == null) result = caseExtension(operationExtension);
-				if (result == null) result = caseCommentableElement(operationExtension);
-				if (result == null) result = caseExtendableElement(operationExtension);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActivitiesPackage.MATCHING_STORY_NODE: {
-				MatchingStoryNode matchingStoryNode = (MatchingStoryNode)theEObject;
-				T result = caseMatchingStoryNode(matchingStoryNode);
-				if (result == null) result = caseStoryNode(matchingStoryNode);
-				if (result == null) result = caseActivityNode(matchingStoryNode);
-				if (result == null) result = caseCommentableElement(matchingStoryNode);
-				if (result == null) result = caseNamedElement(matchingStoryNode);
-				if (result == null) result = caseExtendableElement(matchingStoryNode);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActivitiesPackage.STORY_NODE: {
-				StoryNode storyNode = (StoryNode)theEObject;
-				T result = caseStoryNode(storyNode);
-				if (result == null) result = caseActivityNode(storyNode);
-				if (result == null) result = caseCommentableElement(storyNode);
-				if (result == null) result = caseNamedElement(storyNode);
-				if (result == null) result = caseExtendableElement(storyNode);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActivitiesPackage.STRUCTURED_NODE: {
-				StructuredNode structuredNode = (StructuredNode)theEObject;
-				T result = caseStructuredNode(structuredNode);
-				if (result == null) result = caseActivityNode(structuredNode);
-				if (result == null) result = caseCommentableElement(structuredNode);
-				if (result == null) result = caseNamedElement(structuredNode);
-				if (result == null) result = caseExtendableElement(structuredNode);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActivitiesPackage.JUNCTION_NODE: {
-				JunctionNode junctionNode = (JunctionNode)theEObject;
-				T result = caseJunctionNode(junctionNode);
-				if (result == null) result = caseActivityNode(junctionNode);
-				if (result == null) result = caseCommentableElement(junctionNode);
-				if (result == null) result = caseNamedElement(junctionNode);
-				if (result == null) result = caseExtendableElement(junctionNode);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActivitiesPackage.START_NODE: {
-				StartNode startNode = (StartNode)theEObject;
-				T result = caseStartNode(startNode);
-				if (result == null) result = caseActivityNode(startNode);
-				if (result == null) result = caseCommentableElement(startNode);
-				if (result == null) result = caseNamedElement(startNode);
-				if (result == null) result = caseExtendableElement(startNode);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActivitiesPackage.STATEMENT_NODE: {
-				StatementNode statementNode = (StatementNode)theEObject;
-				T result = caseStatementNode(statementNode);
-				if (result == null) result = caseActivityNode(statementNode);
-				if (result == null) result = caseCommentableElement(statementNode);
-				if (result == null) result = caseNamedElement(statementNode);
-				if (result == null) result = caseExtendableElement(statementNode);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActivitiesPackage.STOP_NODE: {
-				StopNode stopNode = (StopNode)theEObject;
-				T result = caseStopNode(stopNode);
-				if (result == null) result = caseActivityNode(stopNode);
-				if (result == null) result = caseCommentableElement(stopNode);
-				if (result == null) result = caseNamedElement(stopNode);
-				if (result == null) result = caseExtendableElement(stopNode);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActivitiesPackage.ACTIVITY_CALL_NODE: {
-				ActivityCallNode activityCallNode = (ActivityCallNode)theEObject;
-				T result = caseActivityCallNode(activityCallNode);
-				if (result == null) result = caseActivityNode(activityCallNode);
-				if (result == null) result = caseInvocation(activityCallNode);
-				if (result == null) result = caseCommentableElement(activityCallNode);
-				if (result == null) result = caseNamedElement(activityCallNode);
-				if (result == null) result = caseExtendableElement(activityCallNode);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActivitiesPackage.MODIFYING_STORY_NODE: {
-				ModifyingStoryNode modifyingStoryNode = (ModifyingStoryNode)theEObject;
-				T result = caseModifyingStoryNode(modifyingStoryNode);
-				if (result == null) result = caseStoryNode(modifyingStoryNode);
-				if (result == null) result = caseActivityNode(modifyingStoryNode);
-				if (result == null) result = caseCommentableElement(modifyingStoryNode);
-				if (result == null) result = caseNamedElement(modifyingStoryNode);
-				if (result == null) result = caseExtendableElement(modifyingStoryNode);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case ActivitiesPackage.EXCEPTION_VARIABLE: {
+			ExceptionVariable exceptionVariable = (ExceptionVariable) theEObject;
+			T result = caseExceptionVariable(exceptionVariable);
+			if (result == null)
+				result = caseVariable(exceptionVariable);
+			if (result == null)
+				result = caseTypedElement(exceptionVariable);
+			if (result == null)
+				result = caseExtendableElement(exceptionVariable);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ActivitiesPackage.ACTIVITY_EDGE: {
+			ActivityEdge activityEdge = (ActivityEdge) theEObject;
+			T result = caseActivityEdge(activityEdge);
+			if (result == null)
+				result = caseExtendableElement(activityEdge);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ActivitiesPackage.ACTIVITY_NODE: {
+			ActivityNode activityNode = (ActivityNode) theEObject;
+			T result = caseActivityNode(activityNode);
+			if (result == null)
+				result = caseNamedElement(activityNode);
+			if (result == null)
+				result = caseCommentableElement(activityNode);
+			if (result == null)
+				result = caseExtendableElement(activityNode);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ActivitiesPackage.ACTIVITY: {
+			Activity activity = (Activity) theEObject;
+			T result = caseActivity(activity);
+			if (result == null)
+				result = caseCallable(activity);
+			if (result == null)
+				result = caseNamedElement(activity);
+			if (result == null)
+				result = caseCommentableElement(activity);
+			if (result == null)
+				result = caseExtendableElement(activity);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ActivitiesPackage.OPERATION_EXTENSION: {
+			OperationExtension operationExtension = (OperationExtension) theEObject;
+			T result = caseOperationExtension(operationExtension);
+			if (result == null)
+				result = caseExtension(operationExtension);
+			if (result == null)
+				result = caseCallable(operationExtension);
+			if (result == null)
+				result = caseCommentableElement(operationExtension);
+			if (result == null)
+				result = caseExtendableElement(operationExtension);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ActivitiesPackage.MATCHING_STORY_NODE: {
+			MatchingStoryNode matchingStoryNode = (MatchingStoryNode) theEObject;
+			T result = caseMatchingStoryNode(matchingStoryNode);
+			if (result == null)
+				result = caseStoryNode(matchingStoryNode);
+			if (result == null)
+				result = caseActivityNode(matchingStoryNode);
+			if (result == null)
+				result = caseNamedElement(matchingStoryNode);
+			if (result == null)
+				result = caseCommentableElement(matchingStoryNode);
+			if (result == null)
+				result = caseExtendableElement(matchingStoryNode);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ActivitiesPackage.STORY_NODE: {
+			StoryNode storyNode = (StoryNode) theEObject;
+			T result = caseStoryNode(storyNode);
+			if (result == null)
+				result = caseActivityNode(storyNode);
+			if (result == null)
+				result = caseNamedElement(storyNode);
+			if (result == null)
+				result = caseCommentableElement(storyNode);
+			if (result == null)
+				result = caseExtendableElement(storyNode);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ActivitiesPackage.STRUCTURED_NODE: {
+			StructuredNode structuredNode = (StructuredNode) theEObject;
+			T result = caseStructuredNode(structuredNode);
+			if (result == null)
+				result = caseActivityNode(structuredNode);
+			if (result == null)
+				result = caseNamedElement(structuredNode);
+			if (result == null)
+				result = caseCommentableElement(structuredNode);
+			if (result == null)
+				result = caseExtendableElement(structuredNode);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ActivitiesPackage.JUNCTION_NODE: {
+			JunctionNode junctionNode = (JunctionNode) theEObject;
+			T result = caseJunctionNode(junctionNode);
+			if (result == null)
+				result = caseActivityNode(junctionNode);
+			if (result == null)
+				result = caseNamedElement(junctionNode);
+			if (result == null)
+				result = caseCommentableElement(junctionNode);
+			if (result == null)
+				result = caseExtendableElement(junctionNode);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ActivitiesPackage.START_NODE: {
+			StartNode startNode = (StartNode) theEObject;
+			T result = caseStartNode(startNode);
+			if (result == null)
+				result = caseActivityNode(startNode);
+			if (result == null)
+				result = caseNamedElement(startNode);
+			if (result == null)
+				result = caseCommentableElement(startNode);
+			if (result == null)
+				result = caseExtendableElement(startNode);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ActivitiesPackage.STATEMENT_NODE: {
+			StatementNode statementNode = (StatementNode) theEObject;
+			T result = caseStatementNode(statementNode);
+			if (result == null)
+				result = caseActivityNode(statementNode);
+			if (result == null)
+				result = caseNamedElement(statementNode);
+			if (result == null)
+				result = caseCommentableElement(statementNode);
+			if (result == null)
+				result = caseExtendableElement(statementNode);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ActivitiesPackage.STOP_NODE: {
+			StopNode stopNode = (StopNode) theEObject;
+			T result = caseStopNode(stopNode);
+			if (result == null)
+				result = caseActivityNode(stopNode);
+			if (result == null)
+				result = caseNamedElement(stopNode);
+			if (result == null)
+				result = caseCommentableElement(stopNode);
+			if (result == null)
+				result = caseExtendableElement(stopNode);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ActivitiesPackage.ACTIVITY_CALL_NODE: {
+			ActivityCallNode activityCallNode = (ActivityCallNode) theEObject;
+			T result = caseActivityCallNode(activityCallNode);
+			if (result == null)
+				result = caseActivityNode(activityCallNode);
+			if (result == null)
+				result = caseInvocation(activityCallNode);
+			if (result == null)
+				result = caseNamedElement(activityCallNode);
+			if (result == null)
+				result = caseCommentableElement(activityCallNode);
+			if (result == null)
+				result = caseExtendableElement(activityCallNode);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ActivitiesPackage.MODIFYING_STORY_NODE: {
+			ModifyingStoryNode modifyingStoryNode = (ModifyingStoryNode) theEObject;
+			T result = caseModifyingStoryNode(modifyingStoryNode);
+			if (result == null)
+				result = caseStoryNode(modifyingStoryNode);
+			if (result == null)
+				result = caseActivityNode(modifyingStoryNode);
+			if (result == null)
+				result = caseNamedElement(modifyingStoryNode);
+			if (result == null)
+				result = caseCommentableElement(modifyingStoryNode);
+			if (result == null)
+				result = caseExtendableElement(modifyingStoryNode);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

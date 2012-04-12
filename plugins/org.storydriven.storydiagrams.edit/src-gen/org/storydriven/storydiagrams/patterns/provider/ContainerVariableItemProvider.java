@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.patterns.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -26,14 +25,8 @@ import org.storydriven.storydiagrams.patterns.ContainerVariable;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ContainerVariableItemProvider
-	extends ObjectVariableItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ContainerVariableItemProvider extends ObjectVariableItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -78,10 +71,9 @@ public class ContainerVariableItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ContainerVariable)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ContainerVariable_type") :
-			getString("_UI_ContainerVariable_type") + " " + label;
+		String label = ((ContainerVariable) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ContainerVariable_type")
+				: getString("_UI_ContainerVariable_type") + " " + label;
 	}
 
 	/**

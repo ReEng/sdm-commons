@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.calls.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -37,14 +36,8 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CallableItemProvider
-	extends CommentableElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class CallableItemProvider extends CommentableElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -79,19 +72,14 @@ public class CallableItemProvider
 	 * @generated
 	 */
 	protected void addInParameterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Callable_inParameter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Callable_inParameter_feature", "_UI_Callable_type"),
-				 CallsPackage.Literals.CALLABLE__IN_PARAMETER,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Callable_inParameter_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Callable_inParameter_feature",
+								"_UI_Callable_type"), CallsPackage.Literals.CALLABLE__IN_PARAMETER, true, false, true,
+						null, null, null));
 	}
 
 	/**
@@ -101,19 +89,24 @@ public class CallableItemProvider
 	 * @generated
 	 */
 	protected void addOutParameterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Callable_outParameter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Callable_outParameter_feature", "_UI_Callable_type"),
-				 CallsPackage.Literals.CALLABLE__OUT_PARAMETER,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Callable_outParameter_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Callable_outParameter_feature",
+						"_UI_Callable_type"), CallsPackage.Literals.CALLABLE__OUT_PARAMETER, true, false, true, null,
+				null, null));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return StorydiagramsEditPlugin.INSTANCE;
 	}
 
 	/**
@@ -134,19 +127,6 @@ public class CallableItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -154,10 +134,9 @@ public class CallableItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Callable)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Callable_type") :
-			getString("_UI_Callable_type") + " " + label;
+		String label = ((Callable) object).getComment();
+		return label == null || label.length() == 0 ? getString("_UI_Callable_type") : getString("_UI_Callable_type")
+				+ " " + label;
 	}
 
 	/**
@@ -172,11 +151,24 @@ public class CallableItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Callable.class)) {
-			case CallsPackage.CALLABLE__CONTAINED_PARAMETERS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case CallsPackage.CALLABLE__CONTAINED_PARAMETERS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -190,31 +182,14 @@ public class CallableItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				CallsFactory.eINSTANCE.createParameterExtension()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS,
-				 EcoreFactory.eINSTANCE.createEParameter()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return StorydiagramsEditPlugin.INSTANCE;
+		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS,
+				EcoreFactory.eINSTANCE.createEParameter()));
 	}
 
 }

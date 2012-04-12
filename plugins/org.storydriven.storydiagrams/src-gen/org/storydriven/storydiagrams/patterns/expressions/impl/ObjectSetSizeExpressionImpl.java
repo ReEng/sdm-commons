@@ -68,11 +68,12 @@ public class ObjectSetSizeExpressionImpl extends ExpressionImpl implements Objec
 	 */
 	public ObjectSetVariable getSet() {
 		if (set != null && set.eIsProxy()) {
-			InternalEObject oldSet = (InternalEObject)set;
-			set = (ObjectSetVariable)eResolveProxy(oldSet);
+			InternalEObject oldSet = (InternalEObject) set;
+			set = (ObjectSetVariable) eResolveProxy(oldSet);
 			if (set != oldSet) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION__SET, oldSet, set));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION__SET, oldSet, set));
 			}
 		}
 		return set;
@@ -96,7 +97,8 @@ public class ObjectSetSizeExpressionImpl extends ExpressionImpl implements Objec
 		ObjectSetVariable oldSet = set;
 		set = newSet;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION__SET, oldSet, set));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION__SET, oldSet, set));
 	}
 
 	/**
@@ -107,9 +109,10 @@ public class ObjectSetSizeExpressionImpl extends ExpressionImpl implements Objec
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION__SET:
-				if (resolve) return getSet();
-				return basicGetSet();
+		case PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION__SET:
+			if (resolve)
+				return getSet();
+			return basicGetSet();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -122,9 +125,9 @@ public class ObjectSetSizeExpressionImpl extends ExpressionImpl implements Objec
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION__SET:
-				setSet((ObjectSetVariable)newValue);
-				return;
+		case PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION__SET:
+			setSet((ObjectSetVariable) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -137,9 +140,9 @@ public class ObjectSetSizeExpressionImpl extends ExpressionImpl implements Objec
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION__SET:
-				setSet((ObjectSetVariable)null);
-				return;
+		case PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION__SET:
+			setSet((ObjectSetVariable) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -152,8 +155,8 @@ public class ObjectSetSizeExpressionImpl extends ExpressionImpl implements Objec
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION__SET:
-				return set != null;
+		case PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION__SET:
+			return set != null;
 		}
 		return super.eIsSet(featureID);
 	}

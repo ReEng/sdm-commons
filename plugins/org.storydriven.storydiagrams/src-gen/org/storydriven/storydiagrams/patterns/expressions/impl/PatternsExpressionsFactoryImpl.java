@@ -33,12 +33,12 @@ public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements Patt
 	 */
 	public static PatternsExpressionsFactory init() {
 		try {
-			PatternsExpressionsFactory thePatternsExpressionsFactory = (PatternsExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.0"); 
+			PatternsExpressionsFactory thePatternsExpressionsFactory = (PatternsExpressionsFactory) EPackage.Registry.INSTANCE
+					.getEFactory("http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.0");
 			if (thePatternsExpressionsFactory != null) {
 				return thePatternsExpressionsFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new PatternsExpressionsFactoryImpl();
@@ -62,12 +62,16 @@ public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements Patt
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION: return createAttributeValueExpression();
-			case PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION: return createObjectVariableExpression();
-			case PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION: return createObjectSetSizeExpression();
-			case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION: return createPrimitiveVariableExpression();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION:
+			return createAttributeValueExpression();
+		case PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION:
+			return createObjectVariableExpression();
+		case PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION:
+			return createObjectSetSizeExpression();
+		case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION:
+			return createPrimitiveVariableExpression();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -117,7 +121,7 @@ public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements Patt
 	 * @generated
 	 */
 	public PatternsExpressionsPackage getPatternsExpressionsPackage() {
-		return (PatternsExpressionsPackage)getEPackage();
+		return (PatternsExpressionsPackage) getEPackage();
 	}
 
 	/**

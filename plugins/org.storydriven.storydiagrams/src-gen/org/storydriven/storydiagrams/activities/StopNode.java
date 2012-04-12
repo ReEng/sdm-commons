@@ -81,7 +81,7 @@ public interface StopNode extends ActivityNode {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Return Values</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.activities.ActivitiesPackage#getStopNode_ReturnValues()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	EList<Expression> getReturnValues();

@@ -62,7 +62,7 @@ public class CallsExpressionsAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -73,41 +73,47 @@ public class CallsExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CallsExpressionsSwitch<Adapter> modelSwitch =
-		new CallsExpressionsSwitch<Adapter>() {
-			@Override
-			public Adapter caseMethodCallExpression(MethodCallExpression object) {
-				return createMethodCallExpressionAdapter();
-			}
-			@Override
-			public Adapter caseParameterExpression(ParameterExpression object) {
-				return createParameterExpressionAdapter();
-			}
-			@Override
-			public Adapter caseExtendableElement(ExtendableElement object) {
-				return createExtendableElementAdapter();
-			}
-			@Override
-			public Adapter caseTypedElement(TypedElement object) {
-				return createTypedElementAdapter();
-			}
-			@Override
-			public Adapter caseCommentableElement(CommentableElement object) {
-				return createCommentableElementAdapter();
-			}
-			@Override
-			public Adapter caseExpression(Expression object) {
-				return createExpressionAdapter();
-			}
-			@Override
-			public Adapter caseInvocation(Invocation object) {
-				return createInvocationAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected CallsExpressionsSwitch<Adapter> modelSwitch = new CallsExpressionsSwitch<Adapter>() {
+		@Override
+		public Adapter caseMethodCallExpression(MethodCallExpression object) {
+			return createMethodCallExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseParameterExpression(ParameterExpression object) {
+			return createParameterExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseExtendableElement(ExtendableElement object) {
+			return createExtendableElementAdapter();
+		}
+
+		@Override
+		public Adapter caseTypedElement(TypedElement object) {
+			return createTypedElementAdapter();
+		}
+
+		@Override
+		public Adapter caseCommentableElement(CommentableElement object) {
+			return createCommentableElementAdapter();
+		}
+
+		@Override
+		public Adapter caseExpression(Expression object) {
+			return createExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseInvocation(Invocation object) {
+			return createInvocationAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -119,9 +125,8 @@ public class CallsExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.calls.expressions.MethodCallExpression <em>Method Call Expression</em>}'.

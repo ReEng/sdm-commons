@@ -374,7 +374,7 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PwGP4r0pEd-DQ5q3aRKcIw" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PwGP4b0pEd-DQ5q3aRKcIw"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_GemP4RzPEeChOvWwuwx7tQ" name="operation" isDerived="true" association="_GelBwBzPEeChOvWwuwx7tQ">
+        <ownedAttribute xmi:id="_GemP4RzPEeChOvWwuwx7tQ" name="operation" isDerived="true" redefinedProperty="../../org.storydriven.core/model/core.uml#_8kmwkb0WEd-DQ5q3aRKcIw" association="_GelBwBzPEeChOvWwuwx7tQ">
           <ownedComment xmi:id="_4_rEoJ6LEeCWWYky4ZcK-A" annotatedElement="_GemP4RzPEeChOvWwuwx7tQ">
             <body>The EOperation whose behavior is defined by the Activity. The property is derived because the actual value is determined by the utility class OperationsExtensionOperation.</body>
           </ownedComment>
@@ -532,10 +532,10 @@ from within an activity.</body>
           <ownedComment xmi:id="_BEzdsBzwEeChOvWwuwx7tQ" annotatedElement="_fJSk0BzLEeChOvWwuwx7tQ">
             <body>A MethodCallEpression represents the direct invocation of a method. This can either be a method which is explicitly modeled as an EOperation in a class diagram (referenced by the OperationExtension) or an unmodeled method in an external library (referenced by an OpaqueCallable). Therefore, a MethodCallExpression references either an OperationExtension (indirectly via the callee role between Invocation and Callable) or an OpaqueCallable.</body>
           </ownedComment>
-          <generalization xmi:id="_nnfPcBznEeChOvWwuwx7tQ" general="_fdD8wBzIEeChOvWwuwx7tQ"/>
           <generalization xmi:id="_Yt_T0IAVEeG0bvGBO1B13Q">
             <general xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
           </generalization>
+          <generalization xmi:id="_nnfPcBznEeChOvWwuwx7tQ" general="_fdD8wBzIEeChOvWwuwx7tQ"/>
           <ownedAttribute xmi:id="_mEKsQRzLEeChOvWwuwx7tQ" name="target" aggregation="composite" association="_mEJeIBzLEeChOvWwuwx7tQ">
             <ownedComment xmi:id="_Gu3dgBzwEeChOvWwuwx7tQ" annotatedElement="_mEKsQRzLEeChOvWwuwx7tQ">
               <body>A MethodCallExpression references an expression instead of a target object to allow the determination of the call target by an expression. This can be handy when a method should be called e.g. on the return value of another method (as in a.b().c() ). Then the method call of c() would be modeled by a MethodCallExpression with the callExpression a.b(), which again is a MethodCallExpression itself.</body>
@@ -722,7 +722,7 @@ from within an activity.</body>
         <generalization xmi:id="_YVGmIBzJEeChOvWwuwx7tQ">
           <general xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#_vasJcL0VEd-DQ5q3aRKcIw"/>
         </generalization>
-        <ownedAttribute xmi:id="_WMtZcxzNEeChOvWwuwx7tQ" name="parameter" isDerived="true" association="_WMsyYBzNEeChOvWwuwx7tQ">
+        <ownedAttribute xmi:id="_WMtZcxzNEeChOvWwuwx7tQ" name="parameter" isDerived="true" redefinedProperty="../../org.storydriven.core/model/core.uml#_3o6vIr0VEd-DQ5q3aRKcIw" association="_WMsyYBzNEeChOvWwuwx7tQ">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WMuAgRzNEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WMuAgBzNEeChOvWwuwx7tQ"/>
@@ -1118,7 +1118,7 @@ embedded into StoryActivityNodes of an Activity.</body>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-VbKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-VrKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="5f30323f-8a08-46cd-841e-9f1733bc5943" name="classifier" visibility="public" association="8838401c-d86f-4515-8e20-04bad8258657">
+        <ownedAttribute xmi:id="5f30323f-8a08-46cd-841e-9f1733bc5943" name="classifier" visibility="public" subsettedProperty="../../org.storydriven.core/model/core.uml#_HPpYkbLzEd-uk56s-ldeog" association="8838401c-d86f-4515-8e20-04bad8258657">
           <ownedComment xmi:id="_D45vsJ3WEeCuYMafrm1l2g" annotatedElement="5f30323f-8a08-46cd-841e-9f1733bc5943">
             <body>The type of this ObjectVariable, given as an EClass.</body>
           </ownedComment>
@@ -1305,7 +1305,7 @@ The context for contained Constraints and AttributeAssignments is every single o
           <body>Represents a variable that holds a value of a primitive type, e.g. integer, boolean, String.</body>
         </ownedComment>
         <generalization xmi:id="_q1vLgGHwEeCDNuSrVjgXCA" general="_ieKckGHwEeCDNuSrVjgXCA"/>
-        <ownedAttribute xmi:id="_6Kri8mH1EeCDNuSrVjgXCA" name="classifier" association="_6KqU0GH1EeCDNuSrVjgXCA">
+        <ownedAttribute xmi:id="_6Kri8mH1EeCDNuSrVjgXCA" name="classifier" subsettedProperty="../../org.storydriven.core/model/core.uml#_HPpYkbLzEd-uk56s-ldeog" association="_6KqU0GH1EeCDNuSrVjgXCA">
           <ownedComment xmi:id="_yWOagJ6CEeCWWYky4ZcK-A" annotatedElement="_6Kri8mH1EeCDNuSrVjgXCA">
             <body>The type of the primitive variable which must be an EDataType.</body>
           </ownedComment>

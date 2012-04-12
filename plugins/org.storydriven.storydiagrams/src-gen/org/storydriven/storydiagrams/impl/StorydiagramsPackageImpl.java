@@ -82,10 +82,13 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 	 * @generated
 	 */
 	public static StorydiagramsPackage init() {
-		if (isInited) return (StorydiagramsPackage)EPackage.Registry.INSTANCE.getEPackage(StorydiagramsPackage.eNS_URI);
+		if (isInited)
+			return (StorydiagramsPackage) EPackage.Registry.INSTANCE.getEPackage(StorydiagramsPackage.eNS_URI);
 
 		// Obtain or create and register package
-		StorydiagramsPackageImpl theStorydiagramsPackage = (StorydiagramsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof StorydiagramsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new StorydiagramsPackageImpl());
+		StorydiagramsPackageImpl theStorydiagramsPackage = (StorydiagramsPackageImpl) (EPackage.Registry.INSTANCE
+				.get(eNS_URI) instanceof StorydiagramsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+				: new StorydiagramsPackageImpl());
 
 		isInited = true;
 
@@ -93,13 +96,27 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 		CorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);
-		ActivitiesExpressionsPackageImpl theActivitiesExpressionsPackage = (ActivitiesExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesExpressionsPackage.eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesExpressionsPackage.eNS_URI) : ActivitiesExpressionsPackage.eINSTANCE);
-		CallsPackageImpl theCallsPackage = (CallsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI) instanceof CallsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI) : CallsPackage.eINSTANCE);
-		CallsExpressionsPackageImpl theCallsExpressionsPackage = (CallsExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CallsExpressionsPackage.eNS_URI) instanceof CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CallsExpressionsPackage.eNS_URI) : CallsExpressionsPackage.eINSTANCE);
-		PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI) : PatternsPackage.eINSTANCE);
-		PatternsExpressionsPackageImpl thePatternsExpressionsPackage = (PatternsExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternsExpressionsPackage.eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternsExpressionsPackage.eNS_URI) : PatternsExpressionsPackage.eINSTANCE);
-		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI) : TemplatesPackage.eINSTANCE);
+		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);
+		ActivitiesExpressionsPackageImpl theActivitiesExpressionsPackage = (ActivitiesExpressionsPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(ActivitiesExpressionsPackage.eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(ActivitiesExpressionsPackage.eNS_URI) : ActivitiesExpressionsPackage.eINSTANCE);
+		CallsPackageImpl theCallsPackage = (CallsPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(CallsPackage.eNS_URI) instanceof CallsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(CallsPackage.eNS_URI) : CallsPackage.eINSTANCE);
+		CallsExpressionsPackageImpl theCallsExpressionsPackage = (CallsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(CallsExpressionsPackage.eNS_URI) instanceof CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(CallsExpressionsPackage.eNS_URI) : CallsExpressionsPackage.eINSTANCE);
+		PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(PatternsPackage.eNS_URI) : PatternsPackage.eINSTANCE);
+		PatternsExpressionsPackageImpl thePatternsExpressionsPackage = (PatternsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(PatternsExpressionsPackage.eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(PatternsExpressionsPackage.eNS_URI) : PatternsExpressionsPackage.eINSTANCE);
+		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(TemplatesPackage.eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(TemplatesPackage.eNS_URI) : TemplatesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theStorydiagramsPackage.createPackageContents();
@@ -124,7 +141,6 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 		// Mark meta-data to indicate it can't be changed
 		theStorydiagramsPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(StorydiagramsPackage.eNS_URI, theStorydiagramsPackage);
 		return theStorydiagramsPackage;
@@ -145,7 +161,7 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 	 * @generated
 	 */
 	public EAttribute getVariable_VariableName() {
-		return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) variableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -154,7 +170,7 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 	 * @generated
 	 */
 	public StorydiagramsFactory getStorydiagramsFactory() {
-		return (StorydiagramsFactory)getEFactoryInstance();
+		return (StorydiagramsFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -172,7 +188,8 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -195,7 +212,8 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -204,11 +222,14 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
-		CallsPackage theCallsPackage = (CallsPackage)EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
-		PatternsPackage thePatternsPackage = (PatternsPackage)EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI);
-		TemplatesPackage theTemplatesPackage = (TemplatesPackage)EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI);
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage) EPackage.Registry.INSTANCE
+				.getEPackage(ActivitiesPackage.eNS_URI);
+		CallsPackage theCallsPackage = (CallsPackage) EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
+		PatternsPackage thePatternsPackage = (PatternsPackage) EPackage.Registry.INSTANCE
+				.getEPackage(PatternsPackage.eNS_URI);
+		TemplatesPackage theTemplatesPackage = (TemplatesPackage) EPackage.Registry.INSTANCE
+				.getEPackage(TemplatesPackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage) EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theActivitiesPackage);
@@ -223,9 +244,11 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 		// Add supertypes to classes
 		variableEClass.getESuperTypes().add(theCorePackage.getTypedElement());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariable_VariableName(), ecorePackage.getEString(), "variableName", null, 0, 1, Variable.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getVariable_VariableName(), ecorePackage.getEString(), "variableName", null, 0, 1,
+				Variable.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -242,19 +265,18 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 	 * @generated
 	 */
 	protected void createGenModelAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/GenModel";		
-		addAnnotation
-		  (this, 
-		   source, 
-		   new String[] {
-			 "documentation", "The storydiagram package is the root package for the story diagram meta-model. It defines the type Variable and otherwise is only used to contain more specific sub-packages."
-		   });		
-		addAnnotation
-		  (variableEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "Represents a variable which can be, for example, an object variable, an attribute, or any other kind of variable."
-		   });
+		String source = "http://www.eclipse.org/emf/2002/GenModel";
+		addAnnotation(
+				this,
+				source,
+				new String[] {
+						"documentation",
+						"The storydiagram package is the root package for the story diagram meta-model. It defines the type Variable and otherwise is only used to contain more specific sub-packages." });
+		addAnnotation(
+				variableEClass,
+				source,
+				new String[] { "documentation",
+						"Represents a variable which can be, for example, an object variable, an attribute, or any other kind of variable." });
 	}
 
 } //StorydiagramsPackageImpl

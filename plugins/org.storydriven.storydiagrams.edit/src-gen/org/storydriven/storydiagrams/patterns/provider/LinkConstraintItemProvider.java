@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.patterns.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -36,14 +35,8 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LinkConstraintItemProvider
-	extends ExtendableElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class LinkConstraintItemProvider extends ExtendableElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -81,19 +74,13 @@ public class LinkConstraintItemProvider
 	 * @generated
 	 */
 	protected void addIndexPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LinkConstraint_index_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LinkConstraint_index_feature", "_UI_LinkConstraint_type"),
-				 PatternsPackage.Literals.LINK_CONSTRAINT__INDEX,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_LinkConstraint_index_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_LinkConstraint_index_feature",
+						"_UI_LinkConstraint_type"), PatternsPackage.Literals.LINK_CONSTRAINT__INDEX, true, false,
+				false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -103,19 +90,13 @@ public class LinkConstraintItemProvider
 	 * @generated
 	 */
 	protected void addConstraintTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LinkConstraint_constraintType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LinkConstraint_constraintType_feature", "_UI_LinkConstraint_type"),
-				 PatternsPackage.Literals.LINK_CONSTRAINT__CONSTRAINT_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_LinkConstraint_constraintType_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_LinkConstraint_constraintType_feature",
+						"_UI_LinkConstraint_type"), PatternsPackage.Literals.LINK_CONSTRAINT__CONSTRAINT_TYPE, true,
+				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -125,19 +106,13 @@ public class LinkConstraintItemProvider
 	 * @generated
 	 */
 	protected void addNegativePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LinkConstraint_negative_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LinkConstraint_negative_feature", "_UI_LinkConstraint_type"),
-				 PatternsPackage.Literals.LINK_CONSTRAINT__NEGATIVE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_LinkConstraint_negative_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_LinkConstraint_negative_feature",
+						"_UI_LinkConstraint_type"), PatternsPackage.Literals.LINK_CONSTRAINT__NEGATIVE, true, false,
+				false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -147,19 +122,13 @@ public class LinkConstraintItemProvider
 	 * @generated
 	 */
 	protected void addFirstLinkPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LinkConstraint_firstLink_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LinkConstraint_firstLink_feature", "_UI_LinkConstraint_type"),
-				 PatternsPackage.Literals.LINK_CONSTRAINT__FIRST_LINK,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_LinkConstraint_firstLink_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_LinkConstraint_firstLink_feature",
+						"_UI_LinkConstraint_type"), PatternsPackage.Literals.LINK_CONSTRAINT__FIRST_LINK, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -169,19 +138,13 @@ public class LinkConstraintItemProvider
 	 * @generated
 	 */
 	protected void addSecondLinkPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LinkConstraint_secondLink_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LinkConstraint_secondLink_feature", "_UI_LinkConstraint_type"),
-				 PatternsPackage.Literals.LINK_CONSTRAINT__SECOND_LINK,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_LinkConstraint_secondLink_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_LinkConstraint_secondLink_feature",
+						"_UI_LinkConstraint_type"), PatternsPackage.Literals.LINK_CONSTRAINT__SECOND_LINK, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -196,6 +159,17 @@ public class LinkConstraintItemProvider
 	}
 
 	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return StorydiagramsEditPlugin.INSTANCE;
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -203,7 +177,7 @@ public class LinkConstraintItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		LinkConstraint linkConstraint = (LinkConstraint)object;
+		LinkConstraint linkConstraint = (LinkConstraint) object;
 		return getString("_UI_LinkConstraint_type") + " " + linkConstraint.getIndex();
 	}
 
@@ -219,11 +193,11 @@ public class LinkConstraintItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(LinkConstraint.class)) {
-			case PatternsPackage.LINK_CONSTRAINT__INDEX:
-			case PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE:
-			case PatternsPackage.LINK_CONSTRAINT__NEGATIVE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case PatternsPackage.LINK_CONSTRAINT__INDEX:
+		case PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE:
+		case PatternsPackage.LINK_CONSTRAINT__NEGATIVE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -239,26 +213,11 @@ public class LinkConstraintItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return StorydiagramsEditPlugin.INSTANCE;
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
 }

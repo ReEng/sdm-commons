@@ -156,7 +156,7 @@ public interface ActivityEdge extends ExtendableElement {
 	 * @return the value of the '<em>Guard Expression</em>' containment reference.
 	 * @see #setGuardExpression(Expression)
 	 * @see org.storydriven.storydiagrams.activities.ActivitiesPackage#getActivityEdge_GuardExpression()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	Expression getGuardExpression();
@@ -183,7 +183,7 @@ public interface ActivityEdge extends ExtendableElement {
 	 * @return the value of the '<em>Guard Exception</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.activities.ActivitiesPackage#getActivityEdge_GuardException()
 	 * @see org.storydriven.storydiagrams.activities.ExceptionVariable#getActivityEdge
-	 * @model opposite="activityEdge" containment="true"
+	 * @model opposite="activityEdge" containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<ExceptionVariable> getGuardExceptions();

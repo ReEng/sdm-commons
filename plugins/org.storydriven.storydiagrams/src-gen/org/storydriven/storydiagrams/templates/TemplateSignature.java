@@ -43,7 +43,7 @@ public interface TemplateSignature extends EObject {
 	 * @return the value of the '<em>Template Binding</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.templates.TemplatesPackage#getTemplateSignature_TemplateBinding()
 	 * @see org.storydriven.storydiagrams.templates.TemplateBinding#getTemplate
-	 * @model opposite="template" containment="true" ordered="false"
+	 * @model opposite="template" containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	EList<TemplateBinding> getTemplateBindings();
@@ -59,7 +59,7 @@ public interface TemplateSignature extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type Parameter</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.templates.TemplatesPackage#getTemplateSignature_TypeParameter()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	EList<EClassifier> getTypeParameters();

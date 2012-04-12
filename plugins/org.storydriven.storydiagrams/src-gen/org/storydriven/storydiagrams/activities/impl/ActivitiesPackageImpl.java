@@ -6,6 +6,7 @@
  */
 package org.storydriven.storydiagrams.activities.impl;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -202,10 +203,12 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public static ActivitiesPackage init() {
-		if (isInited) return (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
+		if (isInited)
+			return (ActivitiesPackage) EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ActivitiesPackageImpl());
+		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE
+				.get(eNS_URI) : new ActivitiesPackageImpl());
 
 		isInited = true;
 
@@ -213,13 +216,27 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 		CorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		StorydiagramsPackageImpl theStorydiagramsPackage = (StorydiagramsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StorydiagramsPackage.eNS_URI) instanceof StorydiagramsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StorydiagramsPackage.eNS_URI) : StorydiagramsPackage.eINSTANCE);
-		ActivitiesExpressionsPackageImpl theActivitiesExpressionsPackage = (ActivitiesExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesExpressionsPackage.eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesExpressionsPackage.eNS_URI) : ActivitiesExpressionsPackage.eINSTANCE);
-		CallsPackageImpl theCallsPackage = (CallsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI) instanceof CallsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI) : CallsPackage.eINSTANCE);
-		CallsExpressionsPackageImpl theCallsExpressionsPackage = (CallsExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CallsExpressionsPackage.eNS_URI) instanceof CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CallsExpressionsPackage.eNS_URI) : CallsExpressionsPackage.eINSTANCE);
-		PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI) : PatternsPackage.eINSTANCE);
-		PatternsExpressionsPackageImpl thePatternsExpressionsPackage = (PatternsExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternsExpressionsPackage.eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternsExpressionsPackage.eNS_URI) : PatternsExpressionsPackage.eINSTANCE);
-		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI) : TemplatesPackage.eINSTANCE);
+		StorydiagramsPackageImpl theStorydiagramsPackage = (StorydiagramsPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(StorydiagramsPackage.eNS_URI) instanceof StorydiagramsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(StorydiagramsPackage.eNS_URI) : StorydiagramsPackage.eINSTANCE);
+		ActivitiesExpressionsPackageImpl theActivitiesExpressionsPackage = (ActivitiesExpressionsPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(ActivitiesExpressionsPackage.eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(ActivitiesExpressionsPackage.eNS_URI) : ActivitiesExpressionsPackage.eINSTANCE);
+		CallsPackageImpl theCallsPackage = (CallsPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(CallsPackage.eNS_URI) instanceof CallsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(CallsPackage.eNS_URI) : CallsPackage.eINSTANCE);
+		CallsExpressionsPackageImpl theCallsExpressionsPackage = (CallsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(CallsExpressionsPackage.eNS_URI) instanceof CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(CallsExpressionsPackage.eNS_URI) : CallsExpressionsPackage.eINSTANCE);
+		PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(PatternsPackage.eNS_URI) : PatternsPackage.eINSTANCE);
+		PatternsExpressionsPackageImpl thePatternsExpressionsPackage = (PatternsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(PatternsExpressionsPackage.eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(PatternsExpressionsPackage.eNS_URI) : PatternsExpressionsPackage.eINSTANCE);
+		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl) (EPackage.Registry.INSTANCE
+				.getEPackage(TemplatesPackage.eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE
+				.getEPackage(TemplatesPackage.eNS_URI) : TemplatesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theActivitiesPackage.createPackageContents();
@@ -242,18 +259,15 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 		theTemplatesPackage.initializePackageContents();
 
 		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(theActivitiesPackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
-					 return ActivitiesValidator.INSTANCE;
-				 }
-			 });
+		EValidator.Registry.INSTANCE.put(theActivitiesPackage, new EValidator.Descriptor() {
+			public EValidator getEValidator() {
+				return ActivitiesValidator.INSTANCE;
+			}
+		});
 
 		// Mark meta-data to indicate it can't be changed
 		theActivitiesPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ActivitiesPackage.eNS_URI, theActivitiesPackage);
 		return theActivitiesPackage;
@@ -274,7 +288,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getExceptionVariable_ActivityEdge() {
-		return (EReference)exceptionVariableEClass.getEStructuralFeatures().get(0);
+		return (EReference) exceptionVariableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -283,7 +297,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EAttribute getExceptionVariable_Name() {
-		return (EAttribute)exceptionVariableEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) exceptionVariableEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -292,7 +306,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getExceptionVariable_ExceptionType() {
-		return (EReference)exceptionVariableEClass.getEStructuralFeatures().get(2);
+		return (EReference) exceptionVariableEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -301,7 +315,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getExceptionVariable_GenericExceptionType() {
-		return (EReference)exceptionVariableEClass.getEStructuralFeatures().get(3);
+		return (EReference) exceptionVariableEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -319,7 +333,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getActivityEdge_Target() {
-		return (EReference)activityEdgeEClass.getEStructuralFeatures().get(0);
+		return (EReference) activityEdgeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -328,7 +342,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getActivityEdge_Source() {
-		return (EReference)activityEdgeEClass.getEStructuralFeatures().get(1);
+		return (EReference) activityEdgeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -337,7 +351,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getActivityEdge_OwningActivity() {
-		return (EReference)activityEdgeEClass.getEStructuralFeatures().get(2);
+		return (EReference) activityEdgeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -346,7 +360,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EAttribute getActivityEdge_Guard() {
-		return (EAttribute)activityEdgeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) activityEdgeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -355,7 +369,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getActivityEdge_GuardExpression() {
-		return (EReference)activityEdgeEClass.getEStructuralFeatures().get(4);
+		return (EReference) activityEdgeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -364,7 +378,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getActivityEdge_GuardException() {
-		return (EReference)activityEdgeEClass.getEStructuralFeatures().get(5);
+		return (EReference) activityEdgeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -382,7 +396,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getActivityNode_Outgoing() {
-		return (EReference)activityNodeEClass.getEStructuralFeatures().get(0);
+		return (EReference) activityNodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -391,7 +405,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getActivityNode_OwningActivity() {
-		return (EReference)activityNodeEClass.getEStructuralFeatures().get(1);
+		return (EReference) activityNodeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -400,7 +414,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getActivityNode_OwningActivityNode() {
-		return (EReference)activityNodeEClass.getEStructuralFeatures().get(2);
+		return (EReference) activityNodeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -409,7 +423,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getActivityNode_Incoming() {
-		return (EReference)activityNodeEClass.getEStructuralFeatures().get(3);
+		return (EReference) activityNodeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -427,7 +441,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getActivity_OwningOperation() {
-		return (EReference)activityEClass.getEStructuralFeatures().get(0);
+		return (EReference) activityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -436,7 +450,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getActivity_OwnedActivityEdge() {
-		return (EReference)activityEClass.getEStructuralFeatures().get(1);
+		return (EReference) activityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -445,7 +459,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getActivity_Precondition() {
-		return (EReference)activityEClass.getEStructuralFeatures().get(2);
+		return (EReference) activityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -454,7 +468,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getActivity_OwnedActivityNode() {
-		return (EReference)activityEClass.getEStructuralFeatures().get(3);
+		return (EReference) activityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -472,7 +486,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getOperationExtension_Operation() {
-		return (EReference)operationExtensionEClass.getEStructuralFeatures().get(0);
+		return (EReference) operationExtensionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -481,7 +495,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getOperationExtension_ReturnValue() {
-		return (EReference)operationExtensionEClass.getEStructuralFeatures().get(1);
+		return (EReference) operationExtensionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -490,7 +504,16 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getOperationExtension_OwnedActivity() {
-		return (EReference)operationExtensionEClass.getEStructuralFeatures().get(2);
+		return (EReference) operationExtensionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getOperationExtension__NumberOfOutParams__DiagnosticChain_Map() {
+		return operationExtensionEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -508,7 +531,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getMatchingStoryNode_OwnedPattern() {
-		return (EReference)matchingStoryNodeEClass.getEStructuralFeatures().get(0);
+		return (EReference) matchingStoryNodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -526,7 +549,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EAttribute getStoryNode_ForEach() {
-		return (EAttribute)storyNodeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) storyNodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -535,7 +558,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getStoryNode_StoryPattern() {
-		return (EReference)storyNodeEClass.getEStructuralFeatures().get(1);
+		return (EReference) storyNodeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -553,7 +576,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getStructuredNode_OwnedActivityNode() {
-		return (EReference)structuredNodeEClass.getEStructuralFeatures().get(0);
+		return (EReference) structuredNodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -589,7 +612,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getStatementNode_StatementExpression() {
-		return (EReference)statementNodeEClass.getEStructuralFeatures().get(0);
+		return (EReference) statementNodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -607,7 +630,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EAttribute getStopNode_FlowStopOnly() {
-		return (EAttribute)stopNodeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) stopNodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -616,7 +639,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getStopNode_ReturnValue() {
-		return (EReference)stopNodeEClass.getEStructuralFeatures().get(1);
+		return (EReference) stopNodeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -625,7 +648,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getStopNode_ReturnValues() {
-		return (EReference)stopNodeEClass.getEStructuralFeatures().get(2);
+		return (EReference) stopNodeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -643,7 +666,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getActivityCallNode_CalledActivity() {
-		return (EReference)activityCallNodeEClass.getEStructuralFeatures().get(0);
+		return (EReference) activityCallNodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -661,7 +684,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public EReference getModifyingStoryNode_OwnedRule() {
-		return (EReference)modifyingStoryNodeEClass.getEStructuralFeatures().get(0);
+		return (EReference) modifyingStoryNodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -679,7 +702,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public ActivitiesFactory getActivitiesFactory() {
-		return (ActivitiesFactory)getEFactoryInstance();
+		return (ActivitiesFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -697,7 +720,8 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -731,6 +755,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 		createEReference(operationExtensionEClass, OPERATION_EXTENSION__OPERATION);
 		createEReference(operationExtensionEClass, OPERATION_EXTENSION__RETURN_VALUE);
 		createEReference(operationExtensionEClass, OPERATION_EXTENSION__OWNED_ACTIVITY);
+		createEOperation(operationExtensionEClass, OPERATION_EXTENSION___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP);
 
 		matchingStoryNodeEClass = createEClass(MATCHING_STORY_NODE);
 		createEReference(matchingStoryNodeEClass, MATCHING_STORY_NODE__OWNED_PATTERN);
@@ -779,7 +804,8 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -788,13 +814,17 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ActivitiesExpressionsPackage theActivitiesExpressionsPackage = (ActivitiesExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesExpressionsPackage.eNS_URI);
-		StorydiagramsPackage theStorydiagramsPackage = (StorydiagramsPackage)EPackage.Registry.INSTANCE.getEPackage(StorydiagramsPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
-		CallsPackage theCallsPackage = (CallsPackage)EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
-		PatternsPackage thePatternsPackage = (PatternsPackage)EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI);
+		ActivitiesExpressionsPackage theActivitiesExpressionsPackage = (ActivitiesExpressionsPackage) EPackage.Registry.INSTANCE
+				.getEPackage(ActivitiesExpressionsPackage.eNS_URI);
+		StorydiagramsPackage theStorydiagramsPackage = (StorydiagramsPackage) EPackage.Registry.INSTANCE
+				.getEPackage(StorydiagramsPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage) EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage) EPackage.Registry.INSTANCE
+				.getEPackage(ExpressionsPackage.eNS_URI);
+		CallsPackage theCallsPackage = (CallsPackage) EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
+		PatternsPackage thePatternsPackage = (PatternsPackage) EPackage.Registry.INSTANCE
+				.getEPackage(PatternsPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theActivitiesExpressionsPackage);
@@ -806,12 +836,12 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 		// Add supertypes to classes
 		exceptionVariableEClass.getESuperTypes().add(theStorydiagramsPackage.getVariable());
 		activityEdgeEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
-		activityNodeEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		activityNodeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		activityNodeEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		activityEClass.getESuperTypes().add(theCallsPackage.getCallable());
 		activityEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		operationExtensionEClass.getESuperTypes().add(theCallsPackage.getCallable());
 		operationExtensionEClass.getESuperTypes().add(theCorePackage.getExtension());
+		operationExtensionEClass.getESuperTypes().add(theCallsPackage.getCallable());
 		matchingStoryNodeEClass.getESuperTypes().add(this.getStoryNode());
 		storyNodeEClass.getESuperTypes().add(this.getActivityNode());
 		structuredNodeEClass.getESuperTypes().add(this.getActivityNode());
@@ -823,39 +853,89 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 		activityCallNodeEClass.getESuperTypes().add(theCallsPackage.getInvocation());
 		modifyingStoryNodeEClass.getESuperTypes().add(this.getStoryNode());
 
-		// Initialize classes and features; add operations and parameters
-		initEClass(exceptionVariableEClass, ExceptionVariable.class, "ExceptionVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExceptionVariable_ActivityEdge(), this.getActivityEdge(), this.getActivityEdge_GuardException(), "activityEdge", null, 1, 1, ExceptionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getExceptionVariable_Name(), ecorePackage.getEString(), "name", null, 1, 1, ExceptionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getExceptionVariable_ExceptionType(), theEcorePackage.getEClassifier(), null, "exceptionType", null, 0, -1, ExceptionVariable.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getExceptionVariable_GenericExceptionType(), theEcorePackage.getEGenericType(), null, "genericExceptionType", null, 0, -1, ExceptionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		// Initialize classes, features, and operations; add parameters
+		initEClass(exceptionVariableEClass, ExceptionVariable.class, "ExceptionVariable", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExceptionVariable_ActivityEdge(), this.getActivityEdge(),
+				this.getActivityEdge_GuardException(), "activityEdge", null, 1, 1, ExceptionVariable.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getExceptionVariable_Name(), ecorePackage.getEString(), "name", null, 1, 1,
+				ExceptionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
+		initEReference(getExceptionVariable_ExceptionType(), theEcorePackage.getEClassifier(), null, "exceptionType",
+				null, 0, -1, ExceptionVariable.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getExceptionVariable_GenericExceptionType(), theEcorePackage.getEGenericType(), null,
+				"genericExceptionType", null, 0, -1, ExceptionVariable.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(activityEdgeEClass, ActivityEdge.class, "ActivityEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActivityEdge_Target(), this.getActivityNode(), this.getActivityNode_Incoming(), "target", null, 1, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityEdge_Source(), this.getActivityNode(), this.getActivityNode_Outgoing(), "source", null, 1, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityEdge_OwningActivity(), this.getActivity(), this.getActivity_OwnedActivityEdge(), "owningActivity", null, 1, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getActivityEdge_Guard(), this.getEdgeGuard(), "guard", "NONE", 1, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityEdge_GuardExpression(), theExpressionsPackage.getExpression(), null, "guardExpression", null, 0, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityEdge_GuardException(), this.getExceptionVariable(), this.getExceptionVariable_ActivityEdge(), "guardException", null, 0, -1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(activityEdgeEClass, ActivityEdge.class, "ActivityEdge", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActivityEdge_Target(), this.getActivityNode(), this.getActivityNode_Incoming(), "target",
+				null, 1, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityEdge_Source(), this.getActivityNode(), this.getActivityNode_Outgoing(), "source",
+				null, 1, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityEdge_OwningActivity(), this.getActivity(), this.getActivity_OwnedActivityEdge(),
+				"owningActivity", null, 1, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getActivityEdge_Guard(), this.getEdgeGuard(), "guard", "NONE", 1, 1, ActivityEdge.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityEdge_GuardExpression(), theExpressionsPackage.getExpression(), null,
+				"guardExpression", null, 0, 1, ActivityEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityEdge_GuardException(), this.getExceptionVariable(),
+				this.getExceptionVariable_ActivityEdge(), "guardException", null, 0, -1, ActivityEdge.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(activityNodeEClass, ActivityNode.class, "ActivityNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActivityNode_Outgoing(), this.getActivityEdge(), this.getActivityEdge_Source(), "outgoing", null, 0, -1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityNode_OwningActivity(), this.getActivity(), this.getActivity_OwnedActivityNode(), "owningActivity", null, 0, 1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityNode_OwningActivityNode(), this.getStructuredNode(), this.getStructuredNode_OwnedActivityNode(), "owningActivityNode", null, 0, 1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivityNode_Incoming(), this.getActivityEdge(), this.getActivityEdge_Target(), "incoming", null, 0, -1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(activityNodeEClass, ActivityNode.class, "ActivityNode", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActivityNode_Outgoing(), this.getActivityEdge(), this.getActivityEdge_Source(), "outgoing",
+				null, 0, -1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityNode_OwningActivity(), this.getActivity(), this.getActivity_OwnedActivityNode(),
+				"owningActivity", null, 0, 1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityNode_OwningActivityNode(), this.getStructuredNode(),
+				this.getStructuredNode_OwnedActivityNode(), "owningActivityNode", null, 0, 1, ActivityNode.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivityNode_Incoming(), this.getActivityEdge(), this.getActivityEdge_Target(), "incoming",
+				null, 0, -1, ActivityNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActivity_OwningOperation(), this.getOperationExtension(), this.getOperationExtension_OwnedActivity(), "owningOperation", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivity_OwnedActivityEdge(), this.getActivityEdge(), this.getActivityEdge_OwningActivity(), "ownedActivityEdge", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivity_Precondition(), this.getMatchingStoryNode(), null, "precondition", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActivity_OwnedActivityNode(), this.getActivityNode(), this.getActivityNode_OwningActivity(), "ownedActivityNode", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivity_OwningOperation(), this.getOperationExtension(),
+				this.getOperationExtension_OwnedActivity(), "owningOperation", null, 0, 1, Activity.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivity_OwnedActivityEdge(), this.getActivityEdge(), this.getActivityEdge_OwningActivity(),
+				"ownedActivityEdge", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActivity_Precondition(), this.getMatchingStoryNode(), null, "precondition", null, 0, 1,
+				Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActivity_OwnedActivityNode(), this.getActivityNode(), this.getActivityNode_OwningActivity(),
+				"ownedActivityNode", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(operationExtensionEClass, OperationExtension.class, "OperationExtension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOperationExtension_Operation(), theEcorePackage.getEOperation(), null, "operation", null, 0, 1, OperationExtension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getOperationExtension_ReturnValue(), theEcorePackage.getEParameter(), null, "returnValue", null, 0, 1, OperationExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getOperationExtension_OwnedActivity(), this.getActivity(), this.getActivity_OwningOperation(), "ownedActivity", null, 0, 1, OperationExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(operationExtensionEClass, OperationExtension.class, "OperationExtension", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOperationExtension_Operation(), theEcorePackage.getEOperation(), null, "operation", null, 0,
+				1, OperationExtension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getOperationExtension_ReturnValue(), theEcorePackage.getEParameter(), null, "returnValue", null,
+				0, 1, OperationExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getOperationExtension_OwnedActivity(), this.getActivity(), this.getActivity_OwningOperation(),
+				"ownedActivity", null, 0, 1, OperationExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		EOperation op = addEOperation(operationExtensionEClass, ecorePackage.getEBoolean(), "NumberOfOutParams", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getOperationExtension__NumberOfOutParams__DiagnosticChain_Map(),
+				ecorePackage.getEBoolean(), "NumberOfOutParams", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -864,33 +944,61 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(matchingStoryNodeEClass, MatchingStoryNode.class, "MatchingStoryNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMatchingStoryNode_OwnedPattern(), thePatternsPackage.getMatchingPattern(), null, "ownedPattern", null, 1, 1, MatchingStoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(matchingStoryNodeEClass, MatchingStoryNode.class, "MatchingStoryNode", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMatchingStoryNode_OwnedPattern(), thePatternsPackage.getMatchingPattern(), null,
+				"ownedPattern", null, 1, 1, MatchingStoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(storyNodeEClass, StoryNode.class, "StoryNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStoryNode_ForEach(), ecorePackage.getEBoolean(), "forEach", null, 1, 1, StoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getStoryNode_StoryPattern(), thePatternsPackage.getStoryPattern(), null, "storyPattern", null, 1, 1, StoryNode.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEClass(storyNodeEClass, StoryNode.class, "StoryNode", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStoryNode_ForEach(), ecorePackage.getEBoolean(), "forEach", null, 1, 1, StoryNode.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getStoryNode_StoryPattern(), thePatternsPackage.getStoryPattern(), null, "storyPattern", null,
+				1, 1, StoryNode.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
-		initEClass(structuredNodeEClass, StructuredNode.class, "StructuredNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructuredNode_OwnedActivityNode(), this.getActivityNode(), this.getActivityNode_OwningActivityNode(), "ownedActivityNode", null, 0, -1, StructuredNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(structuredNodeEClass, StructuredNode.class, "StructuredNode", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStructuredNode_OwnedActivityNode(), this.getActivityNode(),
+				this.getActivityNode_OwningActivityNode(), "ownedActivityNode", null, 0, -1, StructuredNode.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(junctionNodeEClass, JunctionNode.class, "JunctionNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(junctionNodeEClass, JunctionNode.class, "JunctionNode", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(startNodeEClass, StartNode.class, "StartNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(startNodeEClass, StartNode.class, "StartNode", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(statementNodeEClass, StatementNode.class, "StatementNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStatementNode_StatementExpression(), theExpressionsPackage.getExpression(), null, "statementExpression", null, 1, 1, StatementNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(statementNodeEClass, StatementNode.class, "StatementNode", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStatementNode_StatementExpression(), theExpressionsPackage.getExpression(), null,
+				"statementExpression", null, 1, 1, StatementNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(stopNodeEClass, StopNode.class, "StopNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStopNode_FlowStopOnly(), ecorePackage.getEBoolean(), "flowStopOnly", null, 1, 1, StopNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getStopNode_ReturnValue(), theExpressionsPackage.getExpression(), null, "returnValue", null, 0, 1, StopNode.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getStopNode_ReturnValues(), theExpressionsPackage.getExpression(), null, "returnValues", null, 0, -1, StopNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getStopNode_FlowStopOnly(), ecorePackage.getEBoolean(), "flowStopOnly", null, 1, 1,
+				StopNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
+		initEReference(getStopNode_ReturnValue(), theExpressionsPackage.getExpression(), null, "returnValue", null, 0,
+				1, StopNode.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getStopNode_ReturnValues(), theExpressionsPackage.getExpression(), null, "returnValues", null,
+				0, -1, StopNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(activityCallNodeEClass, ActivityCallNode.class, "ActivityCallNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActivityCallNode_CalledActivity(), this.getActivity(), null, "calledActivity", null, 1, -1, ActivityCallNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(activityCallNodeEClass, ActivityCallNode.class, "ActivityCallNode", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActivityCallNode_CalledActivity(), this.getActivity(), null, "calledActivity", null, 1, -1,
+				ActivityCallNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(modifyingStoryNodeEClass, ModifyingStoryNode.class, "ModifyingStoryNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModifyingStoryNode_OwnedRule(), thePatternsPackage.getStoryPattern(), null, "ownedRule", null, 1, 1, ModifyingStoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(modifyingStoryNodeEClass, ModifyingStoryNode.class, "ModifyingStoryNode", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModifyingStoryNode_OwnedRule(), thePatternsPackage.getStoryPattern(), null, "ownedRule",
+				null, 1, 1, ModifyingStoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(edgeGuardEEnum, EdgeGuard.class, "EdgeGuard");
@@ -907,6 +1015,14 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/GenModel
 		createGenModelAnnotations();
+		// http://www.eclipse.org/uml2/1.1.0/GenModel
+		createGenModel_1Annotations();
+		// redefines
+		createRedefinesAnnotations();
+		// subsets
+		createSubsetsAnnotations();
+		// union
+		createUnionAnnotations();
 	}
 
 	/**
@@ -916,331 +1032,280 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 	 * @generated
 	 */
 	protected void createGenModelAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/GenModel";		
-		addAnnotation
-		  (exceptionVariableEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "Declares a variable representing an Exception that leads to firing a transition (ActivityEdge). Can only be applied to ActivityEdge whose guard is set to EXCEPTION."
-		   });		
-		addAnnotation
-		  (getExceptionVariable_ActivityEdge(), 
-		   source, 
-		   new String[] {
-			 "documentation", "Specifies the transition (activity edge) where the exception variable is declared."
-		   });		
-		addAnnotation
-		  (getExceptionVariable_Name(), 
-		   source, 
-		   new String[] {
-			 "documentation", "Specifies the name of the declared exception variable."
-		   });		
-		addAnnotation
-		  (getExceptionVariable_ExceptionType(), 
-		   source, 
-		   new String[] {
-			 "documentation", "Specifies the type of the declared exception variable."
-		   });		
-		addAnnotation
-		  (activityEdgeEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "The ActivityEdge represents the control flow in an activity. It is a dericted connection from one activity to another one. There exist different kinds of activity edges which are differentiated by the guard attribute."
-		   });		
-		addAnnotation
-		  (getActivityEdge_Target(), 
-		   source, 
-		   new String[] {
-			 "documentation", "The target node of this ActivityEdge."
-		   });		
-		addAnnotation
-		  (getActivityEdge_Source(), 
-		   source, 
-		   new String[] {
-			 "documentation", "The source node of this ActivityEdge."
-		   });		
-		addAnnotation
-		  (getActivityEdge_OwningActivity(), 
-		   source, 
-		   new String[] {
-			 "documentation", "Points to the activity this ActivityEdge is contained in."
-		   });		
-		addAnnotation
-		  (getActivityEdge_Guard(), 
-		   source, 
-		   new String[] {
-			 "documentation", "The guard defines the kind of the activity edge. The possible kinds of guards are specified by the EdgeGuard enum."
-		   });		
-		addAnnotation
-		  (getActivityEdge_GuardExpression(), 
-		   source, 
-		   new String[] {
-			 "documentation", "Points to an expression in case the transition guard is BOOL. The expression has to evaulate to a boolean value."
-		   });		
-		addAnnotation
-		  (getActivityEdge_GuardException(), 
-		   source, 
-		   new String[] {
-			 "documentation", "Declares variables representing the Exceptions that lead to firing this transition."
-		   });		
-		addAnnotation
-		  (activityNodeEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "Abstract super class for all kinds of nodes that may be added to an activity. This class provides the basic functionality of connecting the activity nodes in the activity by ActivityEdges."
-		   });		
-		addAnnotation
-		  (getActivityNode_Outgoing(), 
-		   source, 
-		   new String[] {
-			 "documentation", "All ActivityEdges that leave this activity node. The guards of the outgoing activity edges must be exclusive in order to obtain a well-defined activity."
-		   });		
-		addAnnotation
-		  (getActivityNode_OwningActivity(), 
-		   source, 
-		   new String[] {
-			 "documentation", "Points to the activity this ActivityNode is contained in."
-		   });		
-		addAnnotation
-		  (getActivityNode_OwningActivityNode(), 
-		   source, 
-		   new String[] {
-			 "documentation", "The parent node if this node is contained in a StructuredNode."
-		   });		
-		addAnnotation
-		  (getActivityNode_Incoming(), 
-		   source, 
-		   new String[] {
-			 "documentation", "All ActivityEdges entering this activity node."
-		   });		
-		addAnnotation
-		  (activityEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "The diagram that describes the control flow of an operation. It is used to structure a number story patterns into a stroy diagram. Story patterns are contained in activity nodes which are connected by activity edges. In addition, there are special nodes like start, stop, and juction nodes.  "
-		   });		
-		addAnnotation
-		  (getActivity_OwnedActivityEdge(), 
-		   source, 
-		   new String[] {
-			 "documentation", "All ActivityEdges that are contained in this activity."
-		   });		
-		addAnnotation
-		  (getActivity_Precondition(), 
-		   source, 
-		   new String[] {
-			 "documentation", "References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links."
-		   });		
-		addAnnotation
-		  (getActivity_OwnedActivityNode(), 
-		   source, 
-		   new String[] {
-			 "documentation", "The activity contains all activity nodes via this reference."
-		   });		
-		addAnnotation
-		  (operationExtensionEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "An OperationExtension is a stand-in for an EOperation in our model. It is necessary because we cannot change the type EOperation. Thus, OperationExtension points to an EOperation but adds the reference to an Activity that describes the operations behavior."
-		   });		
-		addAnnotation
-		  (operationExtensionEClass.getEOperations().get(0), 
-		   source, 
-		   new String[] {
-			 "documentation", "self.oclAsType(Callable).out->size() <= 1"
-		   });		
-		addAnnotation
-		  ((operationExtensionEClass.getEOperations().get(0)).getEParameters().get(0), 
-		   source, 
-		   new String[] {
-			 "documentation", "The chain of diagnostics to which problems are to be appended."
-		   });		
-		addAnnotation
-		  ((operationExtensionEClass.getEOperations().get(0)).getEParameters().get(1), 
-		   source, 
-		   new String[] {
-			 "documentation", "The cache of context-specific information."
-		   });		
-		addAnnotation
-		  (getOperationExtension_Operation(), 
-		   source, 
-		   new String[] {
-			 "documentation", "The EOperation whose behavior is defined by the Activity. The property is derived because the actual value is determined by the utility class OperationsExtensionOperation."
-		   });		
-		addAnnotation
-		  (getOperationExtension_ReturnValue(), 
-		   source, 
-		   new String[] {
-			 "documentation", "The return value of the referenced operation."
-		   });		
-		addAnnotation
-		  (matchingStoryNodeEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "A MatchingStoryNode may only contain a MatchingPattern which does not change the graph. I.e., no element contained in this activity carries a create or destroy annotation. Thus, after executing a MatchingStoryNode, the underlying graph is guaranteed to be unchanged."
-		   });		
-		addAnnotation
-		  (getMatchingStoryNode_OwnedPattern(), 
-		   source, 
-		   new String[] {
-			 "documentation", "This MatchingPattern contained in this activity."
-		   });		
-		addAnnotation
-		  (storyNodeEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "An activity node containing a story pattern."
-		   });		
-		addAnnotation
-		  (getStoryNode_ForEach(), 
-		   source, 
-		   new String[] {
-			 "documentation", "Specifies whether just one match should be found for the contained pattern (forEach  = false) or whether all matches should be found (forEach = true)."
-		   });		
-		addAnnotation
-		  (structuredNodeEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "A structured node is a node that contains several other activities."
-		   });		
-		addAnnotation
-		  (getStructuredNode_OwnedActivityNode(), 
-		   source, 
-		   new String[] {
-			 "documentation", "All subnodes which are contained in this structured node."
-		   });		
-		addAnnotation
-		  (edgeGuardEEnum, 
-		   source, 
-		   new String[] {
-			 "documentation", "This enum is used to model different kinds of activity edges. "
-		   });		
-		addAnnotation
-		  (edgeGuardEEnum.getELiterals().get(0), 
-		   source, 
-		   new String[] {
-			 "documentation", "No guard, only one outgoing activity edge of this kind is supported per activity node. If an edge with EdgeGuard NONE is used, it must be the only edge leaving a state."
-		   });		
-		addAnnotation
-		  (edgeGuardEEnum.getELiterals().get(1), 
-		   source, 
-		   new String[] {
-			 "documentation", "Edge will be taken if execution of the souce activity node was successful, e.g., a story pattern was matched successfully. There must be another edge leaving the same node which is of kind FAILURE."
-		   });		
-		addAnnotation
-		  (edgeGuardEEnum.getELiterals().get(2), 
-		   source, 
-		   new String[] {
-			 "documentation", "Edge will be taken if execution of the source activity node was not successful, e.g., a story pattern could not be matched. There must be another edge leaving the same node which is of kind SUCCESS"
-		   });		
-		addAnnotation
-		  (edgeGuardEEnum.getELiterals().get(3), 
-		   source, 
-		   new String[] {
-			 "documentation", "Edge may only leave a StoryNode whose forEach attribute is true. It will be taken for each match that can be identified for the story pattern in the foreach StoryNode. There must be another edge leaving the same node which is of kind END"
-		   });		
-		addAnnotation
-		  (edgeGuardEEnum.getELiterals().get(4), 
-		   source, 
-		   new String[] {
-			 "documentation", "Edge may only leave a StoryNode whose forEach attribute is true. It will be taken if no more fresh matches for the story pattern in the foreach node can be found."
-		   });		
-		addAnnotation
-		  (edgeGuardEEnum.getELiterals().get(5), 
-		   source, 
-		   new String[] {
-			 "documentation", "Complement to the BOOL guard, ELSE may only be used if at least one BOOL activity edge leaves the same state. The edge will be taken if none of the BOOL guards can be evaluated to true"
-		   });		
-		addAnnotation
-		  (edgeGuardEEnum.getELiterals().get(6), 
-		   source, 
-		   new String[] {
-			 "documentation", "An activity edge specifying a boolean guard using variables that have been previously used in the activity. Edge will be taken if the guardExpression of the activity edge evaluates to true. More than one BOOL edge is allowed to leave an activity node."
-		   });		
-		addAnnotation
-		  (edgeGuardEEnum.getELiterals().get(7), 
-		   source, 
-		   new String[] {
-			 "documentation", "An EXCEPTION edge will be taken if an exception of the  type defined by the ExceptionVariable connected to the activity edge occured while executing the source activity node of the edge. More than one edge of kind EXCEPTION is allowed to leave a node."
-		   });		
-		addAnnotation
-		  (edgeGuardEEnum.getELiterals().get(8), 
-		   source, 
-		   new String[] {
-			 "documentation", "An activity edge of kind FINALLY may only leave an activity node that has at least one other outgoing edge of kind EXCEPTION. The finally edge will be taken after the source node has been executed and after, possibly, the EXCEPTION edge has been taken."
-		   });		
-		addAnnotation
-		  (junctionNodeEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "A JunctionNode represents a pseudo-activity which is used for branching and merging the control flow in an activity. It is visualized by a diamond shaped figure."
-		   });		
-		addAnnotation
-		  (startNodeEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "The start node of an activity defines the starting point for the execution of the activity."
-		   });		
-		addAnnotation
-		  (statementNodeEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "A statement node is a node that just contains an expression defining its behavior. In combination with a textual expression, arbitrary souce code might be added by using StatementNodes."
-		   });		
-		addAnnotation
-		  (getStatementNode_StatementExpression(), 
-		   source, 
-		   new String[] {
-			 "documentation", "The expression which defines the behavior of this StatementNode."
-		   });		
-		addAnnotation
-		  (stopNodeEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "At a StopNode, the execution of an activity terminates. If the activity specifies any out-parameters, they have to be bound to a return expression."
-		   });		
-		addAnnotation
-		  (getStopNode_FlowStopOnly(), 
-		   source, 
-		   new String[] {
-			 "documentation", "true if subactivity is stopped, but not the whole control flow"
-		   });		
-		addAnnotation
-		  (getStopNode_ReturnValue(), 
-		   source, 
-		   new String[] {
-			 "documentation", "Convenience method when dealing with activities that implement an EOperation. In this case, only one out parameter is supported. This attributes then returns the first out parameter."
-		   });		
-		addAnnotation
-		  (getStopNode_ReturnValues(), 
-		   source, 
-		   new String[] {
-			 "documentation", "Defines the return values of the activity. These return values will be assigned to the out-parameters."
-		   });		
-		addAnnotation
-		  (activityCallNodeEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "The ActivityCallNode is a special ActivityNode which represents the calling of another story diagram within an activity.\r\nTo support polymorphic dispatching, multiple activities can be assigned to it (all of which must have the same call signature, i.e. matching in and out parameters). All assigned activities are then called in the given order and the first one whose precondition is fulfilled is executed (Chain of Responsibilty)."
-		   });		
-		addAnnotation
-		  (getActivityCallNode_CalledActivity(), 
-		   source, 
-		   new String[] {
-			 "documentation", "References all activities that are to be considered for the polymorphic dispatching of the call. All activities must have the same call signature."
-		   });		
-		addAnnotation
-		  (modifyingStoryNodeEClass, 
-		   source, 
-		   new String[] {
-			 "documentation", "A ModifyingStoryNode contains a story pattern which may change the underlying graph upon execution."
-		   });		
-		addAnnotation
-		  (getModifyingStoryNode_OwnedRule(), 
-		   source, 
-		   new String[] {
-			 "documentation", "The story pattern contained in this ModifyingStoryNode."
-		   });
+		String source = "http://www.eclipse.org/emf/2002/GenModel";
+		addAnnotation(
+				exceptionVariableEClass,
+				source,
+				new String[] {
+						"documentation",
+						"Declares a variable representing an Exception that leads to firing a transition (ActivityEdge). Can only be applied to ActivityEdge whose guard is set to EXCEPTION." });
+		addAnnotation(getExceptionVariable_ActivityEdge(), source, new String[] { "documentation",
+				"Specifies the transition (activity edge) where the exception variable is declared." });
+		addAnnotation(getExceptionVariable_Name(), source, new String[] { "documentation",
+				"Specifies the name of the declared exception variable." });
+		addAnnotation(getExceptionVariable_ExceptionType(), source, new String[] { "documentation",
+				"Specifies the type of the declared exception variable." });
+		addAnnotation(
+				activityEdgeEClass,
+				source,
+				new String[] {
+						"documentation",
+						"The ActivityEdge represents the control flow in an activity. It is a dericted connection from one activity to another one. There exist different kinds of activity edges which are differentiated by the guard attribute." });
+		addAnnotation(getActivityEdge_Target(), source, new String[] { "documentation",
+				"The target node of this ActivityEdge." });
+		addAnnotation(getActivityEdge_Source(), source, new String[] { "documentation",
+				"The source node of this ActivityEdge." });
+		addAnnotation(getActivityEdge_OwningActivity(), source, new String[] { "documentation",
+				"Points to the activity this ActivityEdge is contained in." });
+		addAnnotation(
+				getActivityEdge_Guard(),
+				source,
+				new String[] { "documentation",
+						"The guard defines the kind of the activity edge. The possible kinds of guards are specified by the EdgeGuard enum." });
+		addAnnotation(
+				getActivityEdge_GuardExpression(),
+				source,
+				new String[] { "documentation",
+						"Points to an expression in case the transition guard is BOOL. The expression has to evaulate to a boolean value." });
+		addAnnotation(getActivityEdge_GuardException(), source, new String[] { "documentation",
+				"Declares variables representing the Exceptions that lead to firing this transition." });
+		addAnnotation(
+				activityNodeEClass,
+				source,
+				new String[] {
+						"documentation",
+						"Abstract super class for all kinds of nodes that may be added to an activity. This class provides the basic functionality of connecting the activity nodes in the activity by ActivityEdges." });
+		addAnnotation(
+				getActivityNode_Outgoing(),
+				source,
+				new String[] {
+						"documentation",
+						"All ActivityEdges that leave this activity node. The guards of the outgoing activity edges must be exclusive in order to obtain a well-defined activity." });
+		addAnnotation(getActivityNode_OwningActivity(), source, new String[] { "documentation",
+				"Points to the activity this ActivityNode is contained in." });
+		addAnnotation(getActivityNode_OwningActivityNode(), source, new String[] { "documentation",
+				"The parent node if this node is contained in a StructuredNode." });
+		addAnnotation(getActivityNode_Incoming(), source, new String[] { "documentation",
+				"All ActivityEdges entering this activity node." });
+		addAnnotation(
+				activityEClass,
+				source,
+				new String[] {
+						"documentation",
+						"The diagram that describes the control flow of an operation. It is used to structure a number story patterns into a stroy diagram. Story patterns are contained in activity nodes which are connected by activity edges. In addition, there are special nodes like start, stop, and juction nodes.  " });
+		addAnnotation(getActivity_OwnedActivityEdge(), source, new String[] { "documentation",
+				"All ActivityEdges that are contained in this activity." });
+		addAnnotation(
+				getActivity_Precondition(),
+				source,
+				new String[] {
+						"documentation",
+						"References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links." });
+		addAnnotation(getActivity_OwnedActivityNode(), source, new String[] { "documentation",
+				"The activity contains all activity nodes via this reference." });
+		addAnnotation(
+				operationExtensionEClass,
+				source,
+				new String[] {
+						"documentation",
+						"An OperationExtension is a stand-in for an EOperation in our model. It is necessary because we cannot change the type EOperation. Thus, OperationExtension points to an EOperation but adds the reference to an Activity that describes the operations behavior." });
+		addAnnotation((getOperationExtension__NumberOfOutParams__DiagnosticChain_Map()).getEParameters().get(0),
+				source, new String[] { "documentation",
+						"The chain of diagnostics to which problems are to be appended." });
+		addAnnotation((getOperationExtension__NumberOfOutParams__DiagnosticChain_Map()).getEParameters().get(1),
+				source, new String[] { "documentation", "The cache of context-specific information." });
+		addAnnotation(
+				getOperationExtension_Operation(),
+				source,
+				new String[] {
+						"documentation",
+						"The EOperation whose behavior is defined by the Activity. The property is derived because the actual value is determined by the utility class OperationsExtensionOperation." });
+		addAnnotation(getOperationExtension_ReturnValue(), source, new String[] { "documentation",
+				"The return value of the referenced operation." });
+		addAnnotation(
+				matchingStoryNodeEClass,
+				source,
+				new String[] {
+						"documentation",
+						"A MatchingStoryNode may only contain a MatchingPattern which does not change the graph. I.e., no element contained in this activity carries a create or destroy annotation. Thus, after executing a MatchingStoryNode, the underlying graph is guaranteed to be unchanged." });
+		addAnnotation(getMatchingStoryNode_OwnedPattern(), source, new String[] { "documentation",
+				"This MatchingPattern contained in this activity." });
+		addAnnotation(storyNodeEClass, source, new String[] { "documentation",
+				"An activity node containing a story pattern." });
+		addAnnotation(
+				getStoryNode_ForEach(),
+				source,
+				new String[] {
+						"documentation",
+						"Specifies whether just one match should be found for the contained pattern (forEach  = false) or whether all matches should be found (forEach = true)." });
+		addAnnotation(structuredNodeEClass, source, new String[] { "documentation",
+				"A structured node is a node that contains several other activities." });
+		addAnnotation(getStructuredNode_OwnedActivityNode(), source, new String[] { "documentation",
+				"All subnodes which are contained in this structured node." });
+		addAnnotation(edgeGuardEEnum, source, new String[] { "documentation",
+				"This enum is used to model different kinds of activity edges. " });
+		addAnnotation(
+				edgeGuardEEnum.getELiterals().get(0),
+				source,
+				new String[] {
+						"documentation",
+						"No guard, only one outgoing activity edge of this kind is supported per activity node. If an edge with EdgeGuard NONE is used, it must be the only edge leaving a state." });
+		addAnnotation(
+				edgeGuardEEnum.getELiterals().get(1),
+				source,
+				new String[] {
+						"documentation",
+						"Edge will be taken if execution of the souce activity node was successful, e.g., a story pattern was matched successfully. There must be another edge leaving the same node which is of kind FAILURE." });
+		addAnnotation(
+				edgeGuardEEnum.getELiterals().get(2),
+				source,
+				new String[] {
+						"documentation",
+						"Edge will be taken if execution of the source activity node was not successful, e.g., a story pattern could not be matched. There must be another edge leaving the same node which is of kind SUCCESS" });
+		addAnnotation(
+				edgeGuardEEnum.getELiterals().get(3),
+				source,
+				new String[] {
+						"documentation",
+						"Edge may only leave a StoryNode whose forEach attribute is true. It will be taken for each match that can be identified for the story pattern in the foreach StoryNode. There must be another edge leaving the same node which is of kind END" });
+		addAnnotation(
+				edgeGuardEEnum.getELiterals().get(4),
+				source,
+				new String[] {
+						"documentation",
+						"Edge may only leave a StoryNode whose forEach attribute is true. It will be taken if no more fresh matches for the story pattern in the foreach node can be found." });
+		addAnnotation(
+				edgeGuardEEnum.getELiterals().get(5),
+				source,
+				new String[] {
+						"documentation",
+						"Complement to the BOOL guard, ELSE may only be used if at least one BOOL activity edge leaves the same state. The edge will be taken if none of the BOOL guards can be evaluated to true" });
+		addAnnotation(
+				edgeGuardEEnum.getELiterals().get(6),
+				source,
+				new String[] {
+						"documentation",
+						"An activity edge specifying a boolean guard using variables that have been previously used in the activity. Edge will be taken if the guardExpression of the activity edge evaluates to true. More than one BOOL edge is allowed to leave an activity node." });
+		addAnnotation(
+				edgeGuardEEnum.getELiterals().get(7),
+				source,
+				new String[] {
+						"documentation",
+						"An EXCEPTION edge will be taken if an exception of the  type defined by the ExceptionVariable connected to the activity edge occured while executing the source activity node of the edge. More than one edge of kind EXCEPTION is allowed to leave a node." });
+		addAnnotation(
+				edgeGuardEEnum.getELiterals().get(8),
+				source,
+				new String[] {
+						"documentation",
+						"An activity edge of kind FINALLY may only leave an activity node that has at least one other outgoing edge of kind EXCEPTION. The finally edge will be taken after the source node has been executed and after, possibly, the EXCEPTION edge has been taken." });
+		addAnnotation(
+				junctionNodeEClass,
+				source,
+				new String[] {
+						"documentation",
+						"A JunctionNode represents a pseudo-activity which is used for branching and merging the control flow in an activity. It is visualized by a diamond shaped figure." });
+		addAnnotation(startNodeEClass, source, new String[] { "documentation",
+				"The start node of an activity defines the starting point for the execution of the activity." });
+		addAnnotation(
+				statementNodeEClass,
+				source,
+				new String[] {
+						"documentation",
+						"A statement node is a node that just contains an expression defining its behavior. In combination with a textual expression, arbitrary souce code might be added by using StatementNodes." });
+		addAnnotation(getStatementNode_StatementExpression(), source, new String[] { "documentation",
+				"The expression which defines the behavior of this StatementNode." });
+		addAnnotation(
+				stopNodeEClass,
+				source,
+				new String[] {
+						"documentation",
+						"At a StopNode, the execution of an activity terminates. If the activity specifies any out-parameters, they have to be bound to a return expression." });
+		addAnnotation(getStopNode_FlowStopOnly(), source, new String[] { "documentation",
+				"true if subactivity is stopped, but not the whole control flow" });
+		addAnnotation(
+				getStopNode_ReturnValue(),
+				source,
+				new String[] {
+						"documentation",
+						"Convenience method when dealing with activities that implement an EOperation. In this case, only one out parameter is supported. This attributes then returns the first out parameter." });
+		addAnnotation(
+				getStopNode_ReturnValues(),
+				source,
+				new String[] { "documentation",
+						"Defines the return values of the activity. These return values will be assigned to the out-parameters." });
+		addAnnotation(
+				activityCallNodeEClass,
+				source,
+				new String[] {
+						"documentation",
+						"The ActivityCallNode is a special ActivityNode which represents the calling of another story diagram within an activity.\r\nTo support polymorphic dispatching, multiple activities can be assigned to it (all of which must have the same call signature, i.e. matching in and out parameters). All assigned activities are then called in the given order and the first one whose precondition is fulfilled is executed (Chain of Responsibilty)." });
+		addAnnotation(
+				getActivityCallNode_CalledActivity(),
+				source,
+				new String[] {
+						"documentation",
+						"References all activities that are to be considered for the polymorphic dispatching of the call. All activities must have the same call signature." });
+		addAnnotation(modifyingStoryNodeEClass, source, new String[] { "documentation",
+				"A ModifyingStoryNode contains a story pattern which may change the underlying graph upon execution." });
+		addAnnotation(getModifyingStoryNode_OwnedRule(), source, new String[] { "documentation",
+				"The story pattern contained in this ModifyingStoryNode." });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/1.1.0/GenModel</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGenModel_1Annotations() {
+		String source = "http://www.eclipse.org/uml2/1.1.0/GenModel";
+		addAnnotation(getOperationExtension__NumberOfOutParams__DiagnosticChain_Map(), source, new String[] { "body",
+				"self.oclAsType(Callable).out->size() <= 1" });
+	}
+
+	/**
+	 * Initializes the annotations for <b>redefines</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createRedefinesAnnotations() {
+		String source = "redefines";
+		addAnnotation(getOperationExtension_Operation(), source, new String[] {},
+				new URI[] { URI.createURI(CorePackage.eNS_URI).appendFragment("//Extension/base") });
+	}
+
+	/**
+	 * Initializes the annotations for <b>subsets</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createSubsetsAnnotations() {
+		String source = "subsets";
+		addAnnotation(
+				getMatchingStoryNode_OwnedPattern(),
+				source,
+				new String[] {},
+				new URI[] { URI.createURI(StorydiagramsPackage.eNS_URI).appendFragment(
+						"//activities/StoryNode/storyPattern") });
+		addAnnotation(
+				getModifyingStoryNode_OwnedRule(),
+				source,
+				new String[] {},
+				new URI[] { URI.createURI(StorydiagramsPackage.eNS_URI).appendFragment(
+						"//activities/StoryNode/storyPattern") });
+	}
+
+	/**
+	 * Initializes the annotations for <b>union</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createUnionAnnotations() {
+		String source = "union";
+		addAnnotation(getStoryNode_StoryPattern(), source, new String[] {});
 	}
 
 } //ActivitiesPackageImpl

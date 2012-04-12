@@ -44,7 +44,7 @@ public interface ParameterBinding extends CommentableElement {
 	 * @return the value of the '<em>Value Expression</em>' containment reference.
 	 * @see #setValueExpression(Expression)
 	 * @see org.storydriven.storydiagrams.calls.CallsPackage#getParameterBinding_ValueExpression()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getValueExpression();

@@ -103,12 +103,7 @@ public enum BindingState implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final BindingState[] VALUES_ARRAY =
-		new BindingState[] {
-			UNBOUND,
-			BOUND,
-			MAYBE_BOUND,
-		};
+	private static final BindingState[] VALUES_ARRAY = new BindingState[] { UNBOUND, BOUND, MAYBE_BOUND, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Binding State</b></em>' enumerators.
@@ -158,9 +153,12 @@ public enum BindingState implements Enumerator {
 	 */
 	public static BindingState get(int value) {
 		switch (value) {
-			case UNBOUND_VALUE: return UNBOUND;
-			case BOUND_VALUE: return BOUND;
-			case MAYBE_BOUND_VALUE: return MAYBE_BOUND;
+		case UNBOUND_VALUE:
+			return UNBOUND;
+		case BOUND_VALUE:
+			return BOUND;
+		case MAYBE_BOUND_VALUE:
+			return MAYBE_BOUND;
 		}
 		return null;
 	}
@@ -204,7 +202,7 @@ public enum BindingState implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -213,7 +211,7 @@ public enum BindingState implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -222,7 +220,7 @@ public enum BindingState implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -235,5 +233,5 @@ public enum BindingState implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
+
 } //BindingState

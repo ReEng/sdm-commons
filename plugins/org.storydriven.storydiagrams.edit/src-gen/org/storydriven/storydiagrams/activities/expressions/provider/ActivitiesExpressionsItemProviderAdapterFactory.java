@@ -34,7 +34,8 @@ import org.storydriven.storydiagrams.activities.expressions.util.ActivitiesExpre
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivitiesExpressionsItemProviderAdapterFactory extends ActivitiesExpressionsAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class ActivitiesExpressionsItemProviderAdapterFactory extends ActivitiesExpressionsAdapterFactory implements
+		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -60,6 +61,14 @@ public class ActivitiesExpressionsItemProviderAdapterFactory extends ActivitiesE
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExceptionVariableExpressionItemProvider exceptionVariableExpressionItemProvider;
+
+	/**
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,12 +83,31 @@ public class ActivitiesExpressionsItemProviderAdapterFactory extends ActivitiesE
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExceptionVariableExpressionItemProvider exceptionVariableExpressionItemProvider;
+	@Override
+	public Object adapt(Object object, Object type) {
+		if (isFactoryForType(type)) {
+			Object adapter = super.adapt(object, type);
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+				return adapter;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isFactoryForType(Object type) {
+		return supportedTypes.contains(type) || super.isFactoryForType(type);
+	}
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExpression}.
@@ -117,16 +145,6 @@ public class ActivitiesExpressionsItemProviderAdapterFactory extends ActivitiesE
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isFactoryForType(Object type) {
-		return supportedTypes.contains(type) || super.isFactoryForType(type);
-	}
-
-	/**
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -135,23 +153,6 @@ public class ActivitiesExpressionsItemProviderAdapterFactory extends ActivitiesE
 	@Override
 	public Adapter adapt(Notifier notifier, Object type) {
 		return super.adapt(notifier, this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
-			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
-				return adapter;
-			}
-		}
-
-		return null;
 	}
 
 	/**
@@ -195,7 +196,8 @@ public class ActivitiesExpressionsItemProviderAdapterFactory extends ActivitiesE
 	 * @generated
 	 */
 	public void dispose() {
-		if (exceptionVariableExpressionItemProvider != null) exceptionVariableExpressionItemProvider.dispose();
+		if (exceptionVariableExpressionItemProvider != null)
+			exceptionVariableExpressionItemProvider.dispose();
 	}
 
 }

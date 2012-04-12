@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.templates.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -34,14 +33,8 @@ import org.storydriven.storydiagrams.templates.TemplatesPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplateSignatureItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class TemplateSignatureItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -50,6 +43,28 @@ public class TemplateSignatureItemProvider
 	 */
 	public TemplateSignatureItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
+	}
+
+	/**
+	 * This returns TemplateSignature.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TemplateSignature"));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return StorydiagramsEditPlugin.INSTANCE;
 	}
 
 	/**
@@ -86,30 +101,6 @@ public class TemplateSignatureItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns TemplateSignature.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TemplateSignature"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -132,12 +123,25 @@ public class TemplateSignatureItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TemplateSignature.class)) {
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
+		case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -151,36 +155,17 @@ public class TemplateSignatureItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TEMPLATE_BINDING,
-				 TemplatesFactory.eINSTANCE.createTemplateBinding()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TEMPLATE_BINDING,
+				TemplatesFactory.eINSTANCE.createTemplateBinding()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
-				 EcoreFactory.eINSTANCE.createEClass()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
+				EcoreFactory.eINSTANCE.createEClass()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
-				 EcoreFactory.eINSTANCE.createEDataType()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
+				EcoreFactory.eINSTANCE.createEDataType()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
-				 EcoreFactory.eINSTANCE.createEEnum()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return StorydiagramsEditPlugin.INSTANCE;
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
+				EcoreFactory.eINSTANCE.createEEnum()));
 	}
 
 }

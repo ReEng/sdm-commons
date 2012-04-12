@@ -65,11 +65,12 @@ public class ParameterExpressionImpl extends ExpressionImpl implements Parameter
 	 */
 	public ParameterExtension getParameter() {
 		if (parameter != null && parameter.eIsProxy()) {
-			InternalEObject oldParameter = (InternalEObject)parameter;
-			parameter = (ParameterExtension)eResolveProxy(oldParameter);
+			InternalEObject oldParameter = (InternalEObject) parameter;
+			parameter = (ParameterExtension) eResolveProxy(oldParameter);
 			if (parameter != oldParameter) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER, oldParameter, parameter));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER, oldParameter, parameter));
 			}
 		}
 		return parameter;
@@ -93,7 +94,8 @@ public class ParameterExpressionImpl extends ExpressionImpl implements Parameter
 		ParameterExtension oldParameter = parameter;
 		parameter = newParameter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER, oldParameter, parameter));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER, oldParameter, parameter));
 	}
 
 	/**
@@ -104,9 +106,10 @@ public class ParameterExpressionImpl extends ExpressionImpl implements Parameter
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
-				if (resolve) return getParameter();
-				return basicGetParameter();
+		case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
+			if (resolve)
+				return getParameter();
+			return basicGetParameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,9 +122,9 @@ public class ParameterExpressionImpl extends ExpressionImpl implements Parameter
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
-				setParameter((ParameterExtension)newValue);
-				return;
+		case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
+			setParameter((ParameterExtension) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -134,9 +137,9 @@ public class ParameterExpressionImpl extends ExpressionImpl implements Parameter
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
-				setParameter((ParameterExtension)null);
-				return;
+		case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
+			setParameter((ParameterExtension) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,8 +152,8 @@ public class ParameterExpressionImpl extends ExpressionImpl implements Parameter
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
-				return parameter != null;
+		case CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER:
+			return parameter != null;
 		}
 		return super.eIsSet(featureID);
 	}

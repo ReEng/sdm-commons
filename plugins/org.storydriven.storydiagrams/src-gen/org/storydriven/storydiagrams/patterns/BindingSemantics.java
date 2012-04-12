@@ -103,12 +103,7 @@ public enum BindingSemantics implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final BindingSemantics[] VALUES_ARRAY =
-		new BindingSemantics[] {
-			MANDATORY,
-			NEGATIVE,
-			OPTIONAL,
-		};
+	private static final BindingSemantics[] VALUES_ARRAY = new BindingSemantics[] { MANDATORY, NEGATIVE, OPTIONAL, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Binding Semantics</b></em>' enumerators.
@@ -158,9 +153,12 @@ public enum BindingSemantics implements Enumerator {
 	 */
 	public static BindingSemantics get(int value) {
 		switch (value) {
-			case MANDATORY_VALUE: return MANDATORY;
-			case NEGATIVE_VALUE: return NEGATIVE;
-			case OPTIONAL_VALUE: return OPTIONAL;
+		case MANDATORY_VALUE:
+			return MANDATORY;
+		case NEGATIVE_VALUE:
+			return NEGATIVE;
+		case OPTIONAL_VALUE:
+			return OPTIONAL;
 		}
 		return null;
 	}
@@ -204,7 +202,7 @@ public enum BindingSemantics implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -213,7 +211,7 @@ public enum BindingSemantics implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -222,7 +220,7 @@ public enum BindingSemantics implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -235,5 +233,5 @@ public enum BindingSemantics implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
+
 } //BindingSemantics

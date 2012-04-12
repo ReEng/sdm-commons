@@ -14,14 +14,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.MatchingStoryNode;
 import org.storydriven.storydiagrams.patterns.MatchingPattern;
+import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Matching Story Node</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Matching Story Node</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.storydriven.storydiagrams.activities.impl.MatchingStoryNodeImpl#getStoryPattern <em>Story Pattern</em>}</li>
  *   <li>{@link org.storydriven.storydiagrams.activities.impl.MatchingStoryNodeImpl#getOwnedPattern <em>Owned Pattern</em>}</li>
  * </ul>
  * </p>
@@ -31,8 +31,7 @@ import org.storydriven.storydiagrams.patterns.MatchingPattern;
 public class MatchingStoryNodeImpl extends StoryNodeImpl implements MatchingStoryNode {
 	/**
 	 * The cached value of the '{@link #getOwnedPattern() <em>Owned Pattern</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getOwnedPattern()
 	 * @generated
 	 * @ordered
@@ -40,8 +39,7 @@ public class MatchingStoryNodeImpl extends StoryNodeImpl implements MatchingStor
 	protected MatchingPattern ownedPattern;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected MatchingStoryNodeImpl() {
@@ -49,8 +47,7 @@ public class MatchingStoryNodeImpl extends StoryNodeImpl implements MatchingStor
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -59,118 +56,177 @@ public class MatchingStoryNodeImpl extends StoryNodeImpl implements MatchingStor
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public MatchingPattern getOwnedPattern() {
+		if (ownedPattern != null && ownedPattern.eIsProxy()) {
+			InternalEObject oldOwnedPattern = (InternalEObject) ownedPattern;
+			ownedPattern = (MatchingPattern) eResolveProxy(oldOwnedPattern);
+			if (ownedPattern != oldOwnedPattern) {
+				InternalEObject newOwnedPattern = (InternalEObject) ownedPattern;
+				NotificationChain msgs = oldOwnedPattern.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, null, null);
+				if (newOwnedPattern.eInternalContainer() == null) {
+					msgs = newOwnedPattern.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+							- ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, null, msgs);
+				}
+				if (msgs != null)
+					msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, oldOwnedPattern, ownedPattern));
+			}
+		}
 		return ownedPattern;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MatchingPattern basicGetOwnedPattern() {
+		return ownedPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetOwnedPattern(MatchingPattern newOwnedPattern, NotificationChain msgs) {
 		MatchingPattern oldOwnedPattern = ownedPattern;
 		ownedPattern = newOwnedPattern;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, oldOwnedPattern, newOwnedPattern);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, oldOwnedPattern, newOwnedPattern);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setOwnedPattern(MatchingPattern newOwnedPattern) {
 		if (newOwnedPattern != ownedPattern) {
 			NotificationChain msgs = null;
 			if (ownedPattern != null)
-				msgs = ((InternalEObject)ownedPattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, null, msgs);
+				msgs = ((InternalEObject) ownedPattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, null, msgs);
 			if (newOwnedPattern != null)
-				msgs = ((InternalEObject)newOwnedPattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, null, msgs);
+				msgs = ((InternalEObject) newOwnedPattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+						- ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, null, msgs);
 			msgs = basicSetOwnedPattern(newOwnedPattern, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, newOwnedPattern, newOwnedPattern));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN,
+					newOwnedPattern, newOwnedPattern));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
-				return basicSetOwnedPattern(null, msgs);
+		case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
+			return basicSetOwnedPattern(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
+		case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
+			if (resolve)
 				return getOwnedPattern();
+			return basicGetOwnedPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
-				setOwnedPattern((MatchingPattern)newValue);
-				return;
+		case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
+			setOwnedPattern((MatchingPattern) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
-				setOwnedPattern((MatchingPattern)null);
-				return;
+		case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
+			setOwnedPattern((MatchingPattern) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
-				return ownedPattern != null;
+		case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
+			return ownedPattern != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //MatchingStoryNodeImpl
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StoryPattern getStoryPattern() {
+		StoryPattern storyPattern = basicGetStoryPattern();
+		return storyPattern != null && storyPattern.eIsProxy() ? (StoryPattern) eResolveProxy((InternalEObject) storyPattern)
+				: storyPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StoryPattern basicGetStoryPattern() {
+		if (eIsSet(ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN)) {
+			return basicGetOwnedPattern();
+		}
+		return super.basicGetStoryPattern();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isSetStoryPattern() {
+		return super.isSetStoryPattern() || eIsSet(ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN);
+	}
+
+} // MatchingStoryNodeImpl

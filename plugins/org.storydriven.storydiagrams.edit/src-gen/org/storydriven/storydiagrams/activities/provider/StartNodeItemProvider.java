@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.activities.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -26,14 +25,8 @@ import org.storydriven.storydiagrams.activities.StartNode;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StartNodeItemProvider
-	extends ActivityNodeItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class StartNodeItemProvider extends ActivityNodeItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -78,10 +71,9 @@ public class StartNodeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StartNode)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_StartNode_type") :
-			getString("_UI_StartNode_type") + " " + label;
+		String label = ((StartNode) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_StartNode_type") : getString("_UI_StartNode_type")
+				+ " " + label;
 	}
 
 	/**

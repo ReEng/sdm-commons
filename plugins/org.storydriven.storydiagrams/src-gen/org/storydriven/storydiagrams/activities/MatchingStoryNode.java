@@ -31,6 +31,12 @@ import org.storydriven.storydiagrams.patterns.MatchingPattern;
 public interface MatchingStoryNode extends StoryNode {
 	/**
 	 * Returns the value of the '<em><b>Owned Pattern</b></em>' containment reference.
+	 * <p>
+	 * This feature subsets the following features:
+	 * <ul>
+	 *   <li>'{@link org.storydriven.storydiagrams.activities.StoryNode#getStoryPattern() <em>Story Pattern</em>}'</li>
+	 * </ul>
+	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -39,7 +45,7 @@ public interface MatchingStoryNode extends StoryNode {
 	 * @return the value of the '<em>Owned Pattern</em>' containment reference.
 	 * @see #setOwnedPattern(MatchingPattern)
 	 * @see org.storydriven.storydiagrams.activities.ActivitiesPackage#getMatchingStoryNode_OwnedPattern()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
 	 * @generated
 	 */
 	MatchingPattern getOwnedPattern();

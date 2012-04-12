@@ -34,7 +34,8 @@ import org.storydriven.storydiagrams.calls.util.CallsAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CallsItemProviderAdapterFactory extends CallsAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class CallsItemProviderAdapterFactory extends CallsAdapterFactory implements ComposeableAdapterFactory,
+		IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -60,6 +61,30 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.calls.ParameterBinding} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterBindingItemProvider parameterBindingItemProvider;
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.calls.OpaqueCallable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OpaqueCallableItemProvider opaqueCallableItemProvider;
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.calls.ParameterExtension} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterExtensionItemProvider parameterExtensionItemProvider;
+
+	/**
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,12 +99,31 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.calls.ParameterBinding} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterBindingItemProvider parameterBindingItemProvider;
+	@Override
+	public Object adapt(Object object, Object type) {
+		if (isFactoryForType(type)) {
+			Object adapter = super.adapt(object, type);
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+				return adapter;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isFactoryForType(Object type) {
+		return supportedTypes.contains(type) || super.isFactoryForType(type);
+	}
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.calls.ParameterBinding}.
@@ -97,14 +141,6 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.calls.OpaqueCallable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected OpaqueCallableItemProvider opaqueCallableItemProvider;
-
-	/**
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.calls.OpaqueCallable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,14 +154,6 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 
 		return opaqueCallableItemProvider;
 	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.calls.ParameterExtension} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ParameterExtensionItemProvider parameterExtensionItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.calls.ParameterExtension}.
@@ -163,16 +191,6 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isFactoryForType(Object type) {
-		return supportedTypes.contains(type) || super.isFactoryForType(type);
-	}
-
-	/**
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -181,23 +199,6 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 	@Override
 	public Adapter adapt(Notifier notifier, Object type) {
 		return super.adapt(notifier, this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
-			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
-				return adapter;
-			}
-		}
-
-		return null;
 	}
 
 	/**
@@ -241,9 +242,12 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 	 * @generated
 	 */
 	public void dispose() {
-		if (parameterBindingItemProvider != null) parameterBindingItemProvider.dispose();
-		if (opaqueCallableItemProvider != null) opaqueCallableItemProvider.dispose();
-		if (parameterExtensionItemProvider != null) parameterExtensionItemProvider.dispose();
+		if (parameterBindingItemProvider != null)
+			parameterBindingItemProvider.dispose();
+		if (opaqueCallableItemProvider != null)
+			opaqueCallableItemProvider.dispose();
+		if (parameterExtensionItemProvider != null)
+			parameterExtensionItemProvider.dispose();
 	}
 
 }

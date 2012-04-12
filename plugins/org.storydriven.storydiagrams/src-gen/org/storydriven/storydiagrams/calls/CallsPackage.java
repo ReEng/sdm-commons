@@ -8,9 +8,11 @@ package org.storydriven.storydiagrams.calls;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
+import org.storydriven.storydiagrams.StorydiagramsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -129,6 +131,186 @@ public interface CallsPackage extends EPackage {
 	int INVOCATION_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___ECLASS = CorePackage.COMMENTABLE_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___EIS_PROXY = CorePackage.COMMENTABLE_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___ERESOURCE = CorePackage.COMMENTABLE_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___ECONTAINER = CorePackage.COMMENTABLE_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___ECONTAINING_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___ECONTAINMENT_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___ECONTENTS = CorePackage.COMMENTABLE_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___EALL_CONTENTS = CorePackage.COMMENTABLE_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___ECROSS_REFERENCES = CorePackage.COMMENTABLE_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Invocation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.calls.impl.ParameterBindingImpl <em>Parameter Binding</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -202,6 +384,186 @@ public interface CallsPackage extends EPackage {
 	int PARAMETER_BINDING_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___ECLASS = CorePackage.COMMENTABLE_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___EIS_PROXY = CorePackage.COMMENTABLE_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___ERESOURCE = CorePackage.COMMENTABLE_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___ECONTAINER = CorePackage.COMMENTABLE_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___ECONTAINING_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___ECONTAINMENT_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___ECONTENTS = CorePackage.COMMENTABLE_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___EALL_CONTENTS = CorePackage.COMMENTABLE_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___ECROSS_REFERENCES = CorePackage.COMMENTABLE_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Parameter Binding</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.calls.impl.CallableImpl <em>Callable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -273,6 +635,186 @@ public interface CallsPackage extends EPackage {
 	 * @ordered
 	 */
 	int CALLABLE_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___ECLASS = CorePackage.COMMENTABLE_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___EIS_PROXY = CorePackage.COMMENTABLE_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___ERESOURCE = CorePackage.COMMENTABLE_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___ECONTAINER = CorePackage.COMMENTABLE_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___ECONTAINING_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___ECONTAINMENT_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___ECONTENTS = CorePackage.COMMENTABLE_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___EALL_CONTENTS = CorePackage.COMMENTABLE_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___ECROSS_REFERENCES = CorePackage.COMMENTABLE_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Callable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.calls.impl.OpaqueCallableImpl <em>Opaque Callable</em>}' class.
@@ -366,6 +908,195 @@ public interface CallsPackage extends EPackage {
 	int OPAQUE_CALLABLE_FEATURE_COUNT = CALLABLE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___ECLASS = CALLABLE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___EIS_PROXY = CALLABLE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___ERESOURCE = CALLABLE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___ECONTAINER = CALLABLE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___ECONTAINING_FEATURE = CALLABLE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___ECONTAINMENT_FEATURE = CALLABLE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___ECONTENTS = CALLABLE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___EALL_CONTENTS = CALLABLE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___ECROSS_REFERENCES = CALLABLE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___EGET__ESTRUCTURALFEATURE = CALLABLE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CALLABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___ESET__ESTRUCTURALFEATURE_OBJECT = CALLABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___EIS_SET__ESTRUCTURALFEATURE = CALLABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___EUNSET__ESTRUCTURALFEATURE = CALLABLE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___EINVOKE__EOPERATION_ELIST = CALLABLE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___GET_EXTENSION__ECLASS = CALLABLE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___PROVIDE_EXTENSION__ECLASS = CALLABLE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___GET_ANNOTATION__STRING = CALLABLE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___PROVIDE_ANNOTATION__STRING = CALLABLE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Number Of Out Params</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP = CALLABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Opaque Callable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_CALLABLE_OPERATION_COUNT = CALLABLE_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.calls.impl.ParameterExtensionImpl <em>Parameter Extension</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -382,7 +1113,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+	int PARAMETER_EXTENSION__ANNOTATION = StorydiagramsPackage.VARIABLE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -391,43 +1122,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__EXTENSION = CorePackage.EXTENSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Base</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_EXTENSION__BASE = CorePackage.EXTENSION__BASE;
-
-	/**
-	 * The feature id for the '<em><b>Model Base</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_EXTENSION__MODEL_BASE = CorePackage.EXTENSION__MODEL_BASE;
-
-	/**
-	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_EXTENSION__OWNING_ANNOTATION = CorePackage.EXTENSION__OWNING_ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_EXTENSION__EXTENDABLE_BASE = CorePackage.EXTENSION__EXTENDABLE_BASE;
+	int PARAMETER_EXTENSION__EXTENSION = StorydiagramsPackage.VARIABLE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -436,7 +1131,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__TYPE = CorePackage.EXTENSION_FEATURE_COUNT + 0;
+	int PARAMETER_EXTENSION__TYPE = StorydiagramsPackage.VARIABLE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
@@ -445,7 +1140,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__GENERIC_TYPE = CorePackage.EXTENSION_FEATURE_COUNT + 1;
+	int PARAMETER_EXTENSION__GENERIC_TYPE = StorydiagramsPackage.VARIABLE__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
@@ -454,7 +1149,43 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__VARIABLE_NAME = CorePackage.EXTENSION_FEATURE_COUNT + 2;
+	int PARAMETER_EXTENSION__VARIABLE_NAME = StorydiagramsPackage.VARIABLE__VARIABLE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Base</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION__BASE = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Model Base</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION__MODEL_BASE = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION__OWNING_ANNOTATION = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION__EXTENDABLE_BASE = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -463,7 +1194,7 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION__PARAMETER = CorePackage.EXTENSION_FEATURE_COUNT + 3;
+	int PARAMETER_EXTENSION__PARAMETER = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Extension</em>' class.
@@ -472,8 +1203,187 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXTENSION_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 4;
+	int PARAMETER_EXTENSION_FEATURE_COUNT = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 5;
 
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___ECLASS = StorydiagramsPackage.VARIABLE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___EIS_PROXY = StorydiagramsPackage.VARIABLE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___ERESOURCE = StorydiagramsPackage.VARIABLE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___ECONTAINER = StorydiagramsPackage.VARIABLE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___ECONTAINING_FEATURE = StorydiagramsPackage.VARIABLE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___ECONTAINMENT_FEATURE = StorydiagramsPackage.VARIABLE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___ECONTENTS = StorydiagramsPackage.VARIABLE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___EALL_CONTENTS = StorydiagramsPackage.VARIABLE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___ECROSS_REFERENCES = StorydiagramsPackage.VARIABLE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___EGET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = StorydiagramsPackage.VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT = StorydiagramsPackage.VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___EIS_SET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___EUNSET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___EINVOKE__EOPERATION_ELIST = StorydiagramsPackage.VARIABLE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___GET_EXTENSION__ECLASS = StorydiagramsPackage.VARIABLE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___PROVIDE_EXTENSION__ECLASS = StorydiagramsPackage.VARIABLE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___GET_ANNOTATION__STRING = StorydiagramsPackage.VARIABLE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION___PROVIDE_ANNOTATION__STRING = StorydiagramsPackage.VARIABLE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Parameter Extension</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_EXTENSION_OPERATION_COUNT = StorydiagramsPackage.VARIABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.calls.Invocation <em>Invocation</em>}'.
@@ -581,6 +1491,16 @@ public interface CallsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOpaqueCallable_CallExpression();
+
+	/**
+	 * Returns the meta object for the '{@link org.storydriven.storydiagrams.calls.OpaqueCallable#NumberOfOutParams(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Number Of Out Params</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Number Of Out Params</em>' operation.
+	 * @see org.storydriven.storydiagrams.calls.OpaqueCallable#NumberOfOutParams(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getOpaqueCallable__NumberOfOutParams__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.calls.ParameterExtension <em>Parameter Extension</em>}'.
@@ -753,6 +1673,15 @@ public interface CallsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OPAQUE_CALLABLE__CALL_EXPRESSION = eINSTANCE.getOpaqueCallable_CallExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Number Of Out Params</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OPAQUE_CALLABLE___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getOpaqueCallable__NumberOfOutParams__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.calls.impl.ParameterExtensionImpl <em>Parameter Extension</em>}' class.

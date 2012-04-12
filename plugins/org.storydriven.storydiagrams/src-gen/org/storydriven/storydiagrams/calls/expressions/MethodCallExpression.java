@@ -42,7 +42,7 @@ public interface MethodCallExpression extends Expression, Invocation {
 	 * @return the value of the '<em>Target</em>' containment reference.
 	 * @see #setTarget(Expression)
 	 * @see org.storydriven.storydiagrams.calls.expressions.CallsExpressionsPackage#getMethodCallExpression_Target()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	Expression getTarget();
@@ -69,7 +69,7 @@ public interface MethodCallExpression extends Expression, Invocation {
 	 * @see #setOpaqueCallable(OpaqueCallable)
 	 * @see org.storydriven.storydiagrams.calls.expressions.CallsExpressionsPackage#getMethodCallExpression_OpaqueCallable()
 	 * @see org.storydriven.storydiagrams.calls.OpaqueCallable#getCallExpression
-	 * @model opposite="callExpression" containment="true" ordered="false"
+	 * @model opposite="callExpression" containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	OpaqueCallable getOpaqueCallable();

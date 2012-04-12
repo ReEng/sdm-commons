@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.patterns.expressions.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -34,13 +33,8 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PrimitiveVariableExpressionItemProvider
-	extends ExpressionItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
+public class PrimitiveVariableExpressionItemProvider extends ExpressionItemProvider implements
+		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider,
 		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -75,19 +69,15 @@ public class PrimitiveVariableExpressionItemProvider
 	 * @generated
 	 */
 	protected void addPrimitiveVariablePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PrimitiveVariableExpression_primitiveVariable_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveVariableExpression_primitiveVariable_feature", "_UI_PrimitiveVariableExpression_type"),
-				 PatternsExpressionsPackage.Literals.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_PrimitiveVariableExpression_primitiveVariable_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_PrimitiveVariableExpression_primitiveVariable_feature",
+						"_UI_PrimitiveVariableExpression_type"),
+				PatternsExpressionsPackage.Literals.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -102,6 +92,17 @@ public class PrimitiveVariableExpressionItemProvider
 	}
 
 	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return StorydiagramsEditPlugin.INSTANCE;
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -109,10 +110,9 @@ public class PrimitiveVariableExpressionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PrimitiveVariableExpression)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_PrimitiveVariableExpression_type") :
-			getString("_UI_PrimitiveVariableExpression_type") + " " + label;
+		String label = ((PrimitiveVariableExpression) object).getComment();
+		return label == null || label.length() == 0 ? getString("_UI_PrimitiveVariableExpression_type")
+				: getString("_UI_PrimitiveVariableExpression_type") + " " + label;
 	}
 
 	/**
@@ -139,26 +139,11 @@ public class PrimitiveVariableExpressionItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return StorydiagramsEditPlugin.INSTANCE;
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
 }

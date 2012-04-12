@@ -71,15 +71,19 @@ public class StorydiagramsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case StorydiagramsPackage.VARIABLE: {
-				Variable variable = (Variable)theEObject;
-				T result = caseVariable(variable);
-				if (result == null) result = caseTypedElement(variable);
-				if (result == null) result = caseExtendableElement(variable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case StorydiagramsPackage.VARIABLE: {
+			Variable variable = (Variable) theEObject;
+			T result = caseVariable(variable);
+			if (result == null)
+				result = caseTypedElement(variable);
+			if (result == null)
+				result = caseExtendableElement(variable);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

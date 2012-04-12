@@ -12,9 +12,7 @@ import org.storydriven.storydiagrams.StorydiagramsPackage;
 import org.storydriven.storydiagrams.Variable;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Variable</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Variable</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -27,8 +25,7 @@ import org.storydriven.storydiagrams.Variable;
 public abstract class VariableImpl extends TypedElementImpl implements Variable {
 	/**
 	 * The default value of the '{@link #getVariableName() <em>Variable Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getVariableName()
 	 * @generated
 	 * @ordered
@@ -36,8 +33,7 @@ public abstract class VariableImpl extends TypedElementImpl implements Variable 
 	protected static final String VARIABLE_NAME_EDEFAULT = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected VariableImpl() {
@@ -45,8 +41,7 @@ public abstract class VariableImpl extends TypedElementImpl implements Variable 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -62,31 +57,30 @@ public abstract class VariableImpl extends TypedElementImpl implements Variable 
 	public abstract String getVariableName();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case StorydiagramsPackage.VARIABLE__VARIABLE_NAME:
-				return getVariableName();
+		case StorydiagramsPackage.VARIABLE__VARIABLE_NAME:
+			return getVariableName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case StorydiagramsPackage.VARIABLE__VARIABLE_NAME:
-				return VARIABLE_NAME_EDEFAULT == null ? getVariableName() != null : !VARIABLE_NAME_EDEFAULT.equals(getVariableName());
+		case StorydiagramsPackage.VARIABLE__VARIABLE_NAME:
+			return VARIABLE_NAME_EDEFAULT == null ? getVariableName() != null : !VARIABLE_NAME_EDEFAULT
+					.equals(getVariableName());
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //VariableImpl
+} // VariableImpl

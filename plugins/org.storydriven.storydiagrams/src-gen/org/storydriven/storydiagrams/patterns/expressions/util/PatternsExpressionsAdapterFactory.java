@@ -63,7 +63,7 @@ public class PatternsExpressionsAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -74,45 +74,52 @@ public class PatternsExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PatternsExpressionsSwitch<Adapter> modelSwitch =
-		new PatternsExpressionsSwitch<Adapter>() {
-			@Override
-			public Adapter caseAttributeValueExpression(AttributeValueExpression object) {
-				return createAttributeValueExpressionAdapter();
-			}
-			@Override
-			public Adapter caseObjectVariableExpression(ObjectVariableExpression object) {
-				return createObjectVariableExpressionAdapter();
-			}
-			@Override
-			public Adapter caseObjectSetSizeExpression(ObjectSetSizeExpression object) {
-				return createObjectSetSizeExpressionAdapter();
-			}
-			@Override
-			public Adapter casePrimitiveVariableExpression(PrimitiveVariableExpression object) {
-				return createPrimitiveVariableExpressionAdapter();
-			}
-			@Override
-			public Adapter caseExtendableElement(ExtendableElement object) {
-				return createExtendableElementAdapter();
-			}
-			@Override
-			public Adapter caseTypedElement(TypedElement object) {
-				return createTypedElementAdapter();
-			}
-			@Override
-			public Adapter caseCommentableElement(CommentableElement object) {
-				return createCommentableElementAdapter();
-			}
-			@Override
-			public Adapter caseExpression(Expression object) {
-				return createExpressionAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected PatternsExpressionsSwitch<Adapter> modelSwitch = new PatternsExpressionsSwitch<Adapter>() {
+		@Override
+		public Adapter caseAttributeValueExpression(AttributeValueExpression object) {
+			return createAttributeValueExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseObjectVariableExpression(ObjectVariableExpression object) {
+			return createObjectVariableExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseObjectSetSizeExpression(ObjectSetSizeExpression object) {
+			return createObjectSetSizeExpressionAdapter();
+		}
+
+		@Override
+		public Adapter casePrimitiveVariableExpression(PrimitiveVariableExpression object) {
+			return createPrimitiveVariableExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseExtendableElement(ExtendableElement object) {
+			return createExtendableElementAdapter();
+		}
+
+		@Override
+		public Adapter caseTypedElement(TypedElement object) {
+			return createTypedElementAdapter();
+		}
+
+		@Override
+		public Adapter caseCommentableElement(CommentableElement object) {
+			return createCommentableElementAdapter();
+		}
+
+		@Override
+		public Adapter caseExpression(Expression object) {
+			return createExpressionAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -124,9 +131,8 @@ public class PatternsExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression <em>Attribute Value Expression</em>}'.

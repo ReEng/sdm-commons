@@ -66,7 +66,7 @@ public interface PropertyBinding extends ExtendableElement {
 	 * @return the value of the '<em>Binding Expression</em>' containment reference.
 	 * @see #setBindingExpression(Expression)
 	 * @see org.storydriven.storydiagrams.templates.TemplatesPackage#getPropertyBinding_BindingExpression()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getBindingExpression();

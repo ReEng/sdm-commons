@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.activities.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -36,14 +35,8 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivityItemProvider
-	extends CallableItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ActivityItemProvider extends CallableItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -78,19 +71,13 @@ public class ActivityItemProvider
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_NamedElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 CorePackage.Literals.NAMED_ELEMENT__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_NamedElement_name_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature",
+						"_UI_NamedElement_type"), CorePackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -100,19 +87,35 @@ public class ActivityItemProvider
 	 * @generated
 	 */
 	protected void addPreconditionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Activity_precondition_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Activity_precondition_feature", "_UI_Activity_type"),
-				 ActivitiesPackage.Literals.ACTIVITY__PRECONDITION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Activity_precondition_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Activity_precondition_feature",
+						"_UI_Activity_type"), ActivitiesPackage.Literals.ACTIVITY__PRECONDITION, true, false, true,
+				null, null, null));
+	}
+
+	/**
+	 * This returns Activity.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Activity"));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return StorydiagramsEditPlugin.INSTANCE;
 	}
 
 	/**
@@ -134,30 +137,6 @@ public class ActivityItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns Activity.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Activity"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -165,10 +144,9 @@ public class ActivityItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Activity)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Activity_type") :
-			getString("_UI_Activity_type") + " " + label;
+		String label = ((Activity) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Activity_type") : getString("_UI_Activity_type")
+				+ " " + label;
 	}
 
 	/**
@@ -183,15 +161,28 @@ public class ActivityItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Activity.class)) {
-			case ActivitiesPackage.ACTIVITY__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
-			case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ActivitiesPackage.ACTIVITY__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
+		case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -205,61 +196,32 @@ public class ActivityItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGE,
-				 ActivitiesFactory.eINSTANCE.createActivityEdge()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGE,
+				ActivitiesFactory.eINSTANCE.createActivityEdge()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ActivitiesFactory.eINSTANCE.createMatchingStoryNode()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				ActivitiesFactory.eINSTANCE.createMatchingStoryNode()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ActivitiesFactory.eINSTANCE.createStructuredNode()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				ActivitiesFactory.eINSTANCE.createStructuredNode()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ActivitiesFactory.eINSTANCE.createJunctionNode()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				ActivitiesFactory.eINSTANCE.createJunctionNode()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ActivitiesFactory.eINSTANCE.createStartNode()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				ActivitiesFactory.eINSTANCE.createStartNode()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ActivitiesFactory.eINSTANCE.createStatementNode()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				ActivitiesFactory.eINSTANCE.createStatementNode()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ActivitiesFactory.eINSTANCE.createStopNode()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				ActivitiesFactory.eINSTANCE.createStopNode()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ActivitiesFactory.eINSTANCE.createActivityCallNode()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				ActivitiesFactory.eINSTANCE.createActivityCallNode()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				 ActivitiesFactory.eINSTANCE.createModifyingStoryNode()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return StorydiagramsEditPlugin.INSTANCE;
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				ActivitiesFactory.eINSTANCE.createModifyingStoryNode()));
 	}
 
 }

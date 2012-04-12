@@ -68,7 +68,7 @@ public interface TemplateBinding extends ExtendableElement {
 	 * @return the value of the '<em>Binding Expression</em>' containment reference.
 	 * @see #setBindingExpression(Expression)
 	 * @see org.storydriven.storydiagrams.templates.TemplatesPackage#getTemplateBinding_BindingExpression()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getBindingExpression();
@@ -124,7 +124,7 @@ public interface TemplateBinding extends ExtendableElement {
 	 * @return the value of the '<em>Property Binding</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.templates.TemplatesPackage#getTemplateBinding_PropertyBinding()
 	 * @see org.storydriven.storydiagrams.templates.PropertyBinding#getTemplateBinding
-	 * @model opposite="templateBinding" containment="true" ordered="false"
+	 * @model opposite="templateBinding" containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	EList<PropertyBinding> getPropertyBindings();

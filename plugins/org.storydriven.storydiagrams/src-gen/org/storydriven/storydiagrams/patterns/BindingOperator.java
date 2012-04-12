@@ -103,12 +103,7 @@ public enum BindingOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final BindingOperator[] VALUES_ARRAY =
-		new BindingOperator[] {
-			CHECK_ONLY,
-			CREATE,
-			DESTROY,
-		};
+	private static final BindingOperator[] VALUES_ARRAY = new BindingOperator[] { CHECK_ONLY, CREATE, DESTROY, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Binding Operator</b></em>' enumerators.
@@ -158,9 +153,12 @@ public enum BindingOperator implements Enumerator {
 	 */
 	public static BindingOperator get(int value) {
 		switch (value) {
-			case CHECK_ONLY_VALUE: return CHECK_ONLY;
-			case CREATE_VALUE: return CREATE;
-			case DESTROY_VALUE: return DESTROY;
+		case CHECK_ONLY_VALUE:
+			return CHECK_ONLY;
+		case CREATE_VALUE:
+			return CREATE;
+		case DESTROY_VALUE:
+			return DESTROY;
 		}
 		return null;
 	}
@@ -204,7 +202,7 @@ public enum BindingOperator implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -213,7 +211,7 @@ public enum BindingOperator implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -222,7 +220,7 @@ public enum BindingOperator implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -235,5 +233,5 @@ public enum BindingOperator implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
+
 } //BindingOperator

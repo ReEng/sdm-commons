@@ -87,7 +87,7 @@ public class CallsValidator extends EObjectValidator {
 	 */
 	@Override
 	protected EPackage getEPackage() {
-	  return CallsPackage.eINSTANCE;
+		return CallsPackage.eINSTANCE;
 	}
 
 	/**
@@ -99,18 +99,18 @@ public class CallsValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case CallsPackage.INVOCATION:
-				return validateInvocation((Invocation)value, diagnostics, context);
-			case CallsPackage.PARAMETER_BINDING:
-				return validateParameterBinding((ParameterBinding)value, diagnostics, context);
-			case CallsPackage.OPAQUE_CALLABLE:
-				return validateOpaqueCallable((OpaqueCallable)value, diagnostics, context);
-			case CallsPackage.PARAMETER_EXTENSION:
-				return validateParameterExtension((ParameterExtension)value, diagnostics, context);
-			case CallsPackage.CALLABLE:
-				return validateCallable((Callable)value, diagnostics, context);
-			default:
-				return true;
+		case CallsPackage.INVOCATION:
+			return validateInvocation((Invocation) value, diagnostics, context);
+		case CallsPackage.PARAMETER_BINDING:
+			return validateParameterBinding((ParameterBinding) value, diagnostics, context);
+		case CallsPackage.OPAQUE_CALLABLE:
+			return validateOpaqueCallable((OpaqueCallable) value, diagnostics, context);
+		case CallsPackage.PARAMETER_EXTENSION:
+			return validateParameterExtension((ParameterExtension) value, diagnostics, context);
+		case CallsPackage.CALLABLE:
+			return validateCallable((Callable) value, diagnostics, context);
+		default:
+			return true;
 		}
 	}
 
@@ -128,7 +128,8 @@ public class CallsValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateParameterBinding(ParameterBinding parameterBinding, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateParameterBinding(ParameterBinding parameterBinding, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(parameterBinding, diagnostics, context);
 	}
 
@@ -137,17 +138,27 @@ public class CallsValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateOpaqueCallable(OpaqueCallable opaqueCallable, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(opaqueCallable, diagnostics, context)) return false;
+	public boolean validateOpaqueCallable(OpaqueCallable opaqueCallable, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(opaqueCallable, diagnostics, context))
+			return false;
 		boolean result = validate_EveryMultiplicityConforms(opaqueCallable, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(opaqueCallable, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(opaqueCallable, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(opaqueCallable, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(opaqueCallable, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(opaqueCallable, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(opaqueCallable, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(opaqueCallable, diagnostics, context);
-		if (result || diagnostics != null) result &= validateOpaqueCallable_NumberOfOutParams(opaqueCallable, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(opaqueCallable, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(opaqueCallable, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(opaqueCallable, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(opaqueCallable, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(opaqueCallable, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(opaqueCallable, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(opaqueCallable, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateOpaqueCallable_NumberOfOutParams(opaqueCallable, diagnostics, context);
 		return result;
 	}
 
@@ -157,7 +168,8 @@ public class CallsValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateOpaqueCallable_NumberOfOutParams(OpaqueCallable opaqueCallable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateOpaqueCallable_NumberOfOutParams(OpaqueCallable opaqueCallable, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return opaqueCallable.NumberOfOutParams(diagnostics, context);
 	}
 
@@ -166,7 +178,8 @@ public class CallsValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateParameterExtension(ParameterExtension parameterExtension, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateParameterExtension(ParameterExtension parameterExtension, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(parameterExtension, diagnostics, context);
 	}
 

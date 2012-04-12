@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.activities.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -42,14 +41,8 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivityEdgeItemProvider
-	extends ExtendableElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ActivityEdgeItemProvider extends ExtendableElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -85,19 +78,13 @@ public class ActivityEdgeItemProvider
 	 * @generated
 	 */
 	protected void addTargetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActivityEdge_target_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityEdge_target_feature", "_UI_ActivityEdge_type"),
-				 ActivitiesPackage.Literals.ACTIVITY_EDGE__TARGET,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ActivityEdge_target_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ActivityEdge_target_feature",
+						"_UI_ActivityEdge_type"), ActivitiesPackage.Literals.ACTIVITY_EDGE__TARGET, true, false, true,
+				null, null, null));
 	}
 
 	/**
@@ -107,19 +94,13 @@ public class ActivityEdgeItemProvider
 	 * @generated
 	 */
 	protected void addSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActivityEdge_source_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityEdge_source_feature", "_UI_ActivityEdge_type"),
-				 ActivitiesPackage.Literals.ACTIVITY_EDGE__SOURCE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ActivityEdge_source_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ActivityEdge_source_feature",
+						"_UI_ActivityEdge_type"), ActivitiesPackage.Literals.ACTIVITY_EDGE__SOURCE, true, false, true,
+				null, null, null));
 	}
 
 	/**
@@ -129,19 +110,35 @@ public class ActivityEdgeItemProvider
 	 * @generated
 	 */
 	protected void addGuardPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActivityEdge_guard_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityEdge_guard_feature", "_UI_ActivityEdge_type"),
-				 ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ActivityEdge_guard_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ActivityEdge_guard_feature",
+						"_UI_ActivityEdge_type"), ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This returns ActivityEdge.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ActivityEdge"));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return StorydiagramsEditPlugin.INSTANCE;
 	}
 
 	/**
@@ -163,30 +160,6 @@ public class ActivityEdgeItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns ActivityEdge.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ActivityEdge"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -194,11 +167,10 @@ public class ActivityEdgeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		EdgeGuard labelValue = ((ActivityEdge)object).getGuard();
+		EdgeGuard labelValue = ((ActivityEdge) object).getGuard();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ActivityEdge_type") :
-			getString("_UI_ActivityEdge_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_ActivityEdge_type")
+				: getString("_UI_ActivityEdge_type") + " " + label;
 	}
 
 	/**
@@ -213,15 +185,28 @@ public class ActivityEdgeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ActivityEdge.class)) {
-			case ActivitiesPackage.ACTIVITY_EDGE__GUARD:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXPRESSION:
-			case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ActivitiesPackage.ACTIVITY_EDGE__GUARD:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXPRESSION:
+		case ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -235,96 +220,53 @@ public class ActivityEdgeItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				CallsFactory.eINSTANCE.createParameterExtension()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createNotExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createNotExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXCEPTION,
-				 ActivitiesFactory.eINSTANCE.createExceptionVariable()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return StorydiagramsEditPlugin.INSTANCE;
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXCEPTION,
+				ActivitiesFactory.eINSTANCE.createExceptionVariable()));
 	}
 
 }

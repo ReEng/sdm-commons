@@ -39,7 +39,7 @@ public interface Path extends AbstractLinkVariable {
 	 * @return the value of the '<em>Path Expression</em>' containment reference.
 	 * @see #setPathExpression(Expression)
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getPath_PathExpression()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getPathExpression();

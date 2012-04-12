@@ -76,47 +76,68 @@ public class PatternsExpressionsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION: {
-				AttributeValueExpression attributeValueExpression = (AttributeValueExpression)theEObject;
-				T result = caseAttributeValueExpression(attributeValueExpression);
-				if (result == null) result = caseExpression(attributeValueExpression);
-				if (result == null) result = caseTypedElement(attributeValueExpression);
-				if (result == null) result = caseCommentableElement(attributeValueExpression);
-				if (result == null) result = caseExtendableElement(attributeValueExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION: {
-				ObjectVariableExpression objectVariableExpression = (ObjectVariableExpression)theEObject;
-				T result = caseObjectVariableExpression(objectVariableExpression);
-				if (result == null) result = caseExpression(objectVariableExpression);
-				if (result == null) result = caseTypedElement(objectVariableExpression);
-				if (result == null) result = caseCommentableElement(objectVariableExpression);
-				if (result == null) result = caseExtendableElement(objectVariableExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION: {
-				ObjectSetSizeExpression objectSetSizeExpression = (ObjectSetSizeExpression)theEObject;
-				T result = caseObjectSetSizeExpression(objectSetSizeExpression);
-				if (result == null) result = caseExpression(objectSetSizeExpression);
-				if (result == null) result = caseTypedElement(objectSetSizeExpression);
-				if (result == null) result = caseCommentableElement(objectSetSizeExpression);
-				if (result == null) result = caseExtendableElement(objectSetSizeExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION: {
-				PrimitiveVariableExpression primitiveVariableExpression = (PrimitiveVariableExpression)theEObject;
-				T result = casePrimitiveVariableExpression(primitiveVariableExpression);
-				if (result == null) result = caseExpression(primitiveVariableExpression);
-				if (result == null) result = caseTypedElement(primitiveVariableExpression);
-				if (result == null) result = caseCommentableElement(primitiveVariableExpression);
-				if (result == null) result = caseExtendableElement(primitiveVariableExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION: {
+			AttributeValueExpression attributeValueExpression = (AttributeValueExpression) theEObject;
+			T result = caseAttributeValueExpression(attributeValueExpression);
+			if (result == null)
+				result = caseExpression(attributeValueExpression);
+			if (result == null)
+				result = caseTypedElement(attributeValueExpression);
+			if (result == null)
+				result = caseCommentableElement(attributeValueExpression);
+			if (result == null)
+				result = caseExtendableElement(attributeValueExpression);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION: {
+			ObjectVariableExpression objectVariableExpression = (ObjectVariableExpression) theEObject;
+			T result = caseObjectVariableExpression(objectVariableExpression);
+			if (result == null)
+				result = caseExpression(objectVariableExpression);
+			if (result == null)
+				result = caseTypedElement(objectVariableExpression);
+			if (result == null)
+				result = caseCommentableElement(objectVariableExpression);
+			if (result == null)
+				result = caseExtendableElement(objectVariableExpression);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION: {
+			ObjectSetSizeExpression objectSetSizeExpression = (ObjectSetSizeExpression) theEObject;
+			T result = caseObjectSetSizeExpression(objectSetSizeExpression);
+			if (result == null)
+				result = caseExpression(objectSetSizeExpression);
+			if (result == null)
+				result = caseTypedElement(objectSetSizeExpression);
+			if (result == null)
+				result = caseCommentableElement(objectSetSizeExpression);
+			if (result == null)
+				result = caseExtendableElement(objectSetSizeExpression);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION: {
+			PrimitiveVariableExpression primitiveVariableExpression = (PrimitiveVariableExpression) theEObject;
+			T result = casePrimitiveVariableExpression(primitiveVariableExpression);
+			if (result == null)
+				result = caseExpression(primitiveVariableExpression);
+			if (result == null)
+				result = caseTypedElement(primitiveVariableExpression);
+			if (result == null)
+				result = caseCommentableElement(primitiveVariableExpression);
+			if (result == null)
+				result = caseExtendableElement(primitiveVariableExpression);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.patterns.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -28,14 +27,8 @@ import org.storydriven.storydiagrams.patterns.PrimitiveVariable;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PrimitiveVariableItemProvider
-	extends AbstractVariableItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -69,19 +62,13 @@ public class PrimitiveVariableItemProvider
 	 * @generated
 	 */
 	protected void addClassifierPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PrimitiveVariable_classifier_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveVariable_classifier_feature", "_UI_PrimitiveVariable_type"),
-				 PatternsPackage.Literals.PRIMITIVE_VARIABLE__CLASSIFIER,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_PrimitiveVariable_classifier_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveVariable_classifier_feature",
+						"_UI_PrimitiveVariable_type"), PatternsPackage.Literals.PRIMITIVE_VARIABLE__CLASSIFIER, true,
+				false, true, null, null, null));
 	}
 
 	/**
@@ -103,10 +90,9 @@ public class PrimitiveVariableItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PrimitiveVariable)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_PrimitiveVariable_type") :
-			getString("_UI_PrimitiveVariable_type") + " " + label;
+		String label = ((PrimitiveVariable) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_PrimitiveVariable_type")
+				: getString("_UI_PrimitiveVariable_type") + " " + label;
 	}
 
 	/**

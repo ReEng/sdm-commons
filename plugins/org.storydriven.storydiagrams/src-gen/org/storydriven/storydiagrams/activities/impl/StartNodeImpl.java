@@ -11,9 +11,7 @@ import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.StartNode;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Start Node</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Start Node</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -21,8 +19,7 @@ import org.storydriven.storydiagrams.activities.StartNode;
  */
 public class StartNodeImpl extends ActivityNodeImpl implements StartNode {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected StartNodeImpl() {
@@ -30,8 +27,7 @@ public class StartNodeImpl extends ActivityNodeImpl implements StartNode {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -39,4 +35,4 @@ public class StartNodeImpl extends ActivityNodeImpl implements StartNode {
 		return ActivitiesPackage.Literals.START_NODE;
 	}
 
-} //StartNodeImpl
+} // StartNodeImpl

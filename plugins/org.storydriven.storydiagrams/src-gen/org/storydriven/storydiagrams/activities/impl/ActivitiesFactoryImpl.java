@@ -43,12 +43,12 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 	 */
 	public static ActivitiesFactory init() {
 		try {
-			ActivitiesFactory theActivitiesFactory = (ActivitiesFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/storydiagrams/activities/0.2.0"); 
+			ActivitiesFactory theActivitiesFactory = (ActivitiesFactory) EPackage.Registry.INSTANCE
+					.getEFactory("http://www.storydriven.org/storydiagrams/activities/0.2.0");
 			if (theActivitiesFactory != null) {
 				return theActivitiesFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ActivitiesFactoryImpl();
@@ -72,20 +72,32 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ActivitiesPackage.EXCEPTION_VARIABLE: return createExceptionVariable();
-			case ActivitiesPackage.ACTIVITY_EDGE: return createActivityEdge();
-			case ActivitiesPackage.ACTIVITY: return createActivity();
-			case ActivitiesPackage.OPERATION_EXTENSION: return createOperationExtension();
-			case ActivitiesPackage.MATCHING_STORY_NODE: return createMatchingStoryNode();
-			case ActivitiesPackage.STRUCTURED_NODE: return createStructuredNode();
-			case ActivitiesPackage.JUNCTION_NODE: return createJunctionNode();
-			case ActivitiesPackage.START_NODE: return createStartNode();
-			case ActivitiesPackage.STATEMENT_NODE: return createStatementNode();
-			case ActivitiesPackage.STOP_NODE: return createStopNode();
-			case ActivitiesPackage.ACTIVITY_CALL_NODE: return createActivityCallNode();
-			case ActivitiesPackage.MODIFYING_STORY_NODE: return createModifyingStoryNode();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case ActivitiesPackage.EXCEPTION_VARIABLE:
+			return createExceptionVariable();
+		case ActivitiesPackage.ACTIVITY_EDGE:
+			return createActivityEdge();
+		case ActivitiesPackage.ACTIVITY:
+			return createActivity();
+		case ActivitiesPackage.OPERATION_EXTENSION:
+			return createOperationExtension();
+		case ActivitiesPackage.MATCHING_STORY_NODE:
+			return createMatchingStoryNode();
+		case ActivitiesPackage.STRUCTURED_NODE:
+			return createStructuredNode();
+		case ActivitiesPackage.JUNCTION_NODE:
+			return createJunctionNode();
+		case ActivitiesPackage.START_NODE:
+			return createStartNode();
+		case ActivitiesPackage.STATEMENT_NODE:
+			return createStatementNode();
+		case ActivitiesPackage.STOP_NODE:
+			return createStopNode();
+		case ActivitiesPackage.ACTIVITY_CALL_NODE:
+			return createActivityCallNode();
+		case ActivitiesPackage.MODIFYING_STORY_NODE:
+			return createModifyingStoryNode();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -97,10 +109,10 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case ActivitiesPackage.EDGE_GUARD:
-				return createEdgeGuardFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case ActivitiesPackage.EDGE_GUARD:
+			return createEdgeGuardFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -112,10 +124,10 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case ActivitiesPackage.EDGE_GUARD:
-				return convertEdgeGuardToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case ActivitiesPackage.EDGE_GUARD:
+			return convertEdgeGuardToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -246,7 +258,9 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 	 */
 	public EdgeGuard createEdgeGuardFromString(EDataType eDataType, String initialValue) {
 		EdgeGuard result = EdgeGuard.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
+					+ eDataType.getName() + "'");
 		return result;
 	}
 
@@ -265,7 +279,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 	 * @generated
 	 */
 	public ActivitiesPackage getActivitiesPackage() {
-		return (ActivitiesPackage)getEPackage();
+		return (ActivitiesPackage) getEPackage();
 	}
 
 	/**

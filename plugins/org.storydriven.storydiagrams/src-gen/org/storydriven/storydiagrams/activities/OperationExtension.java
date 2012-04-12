@@ -36,9 +36,15 @@ import org.storydriven.storydiagrams.calls.Callable;
  * @model
  * @generated
  */
-public interface OperationExtension extends Callable, Extension {
+public interface OperationExtension extends Extension, Callable {
 	/**
 	 * Returns the value of the '<em><b>Operation</b></em>' reference.
+	 * <p>
+	 * This feature redefines the following features:
+	 * <ul>
+	 *   <li>'{@link org.storydriven.core.Extension#getBase() <em>Base</em>}'</li>
+	 * </ul>
+	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -99,7 +105,7 @@ public interface OperationExtension extends Callable, Extension {
 	 * @return the value of the '<em>Return Value</em>' containment reference.
 	 * @see #setReturnValue(EParameter)
 	 * @see org.storydriven.storydiagrams.activities.ActivitiesPackage#getOperationExtension_ReturnValue()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	EParameter getReturnValue();
@@ -127,7 +133,7 @@ public interface OperationExtension extends Callable, Extension {
 	 * @see #setOwnedActivity(Activity)
 	 * @see org.storydriven.storydiagrams.activities.ActivitiesPackage#getOperationExtension_OwnedActivity()
 	 * @see org.storydriven.storydiagrams.activities.Activity#getOwningOperation
-	 * @model opposite="owningOperation" containment="true" ordered="false"
+	 * @model opposite="owningOperation" containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	Activity getOwnedActivity();
@@ -146,11 +152,10 @@ public interface OperationExtension extends Callable, Extension {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.oclAsType(Callable).out->size() <= 1
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.oclAsType(Callable).out->size() <= 1'"
 	 * @generated
 	 */
 	boolean NumberOfOutParams(DiagnosticChain diagnostics, Map<Object, Object> context);

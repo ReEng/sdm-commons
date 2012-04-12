@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.patterns.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -26,13 +25,8 @@ import org.storydriven.storydiagrams.patterns.ContainmentRelation;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ContainmentRelationItemProvider
-	extends AbstractLinkVariableItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
+public class ContainmentRelationItemProvider extends AbstractLinkVariableItemProvider implements
+		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider,
 		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -78,10 +72,9 @@ public class ContainmentRelationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ContainmentRelation)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ContainmentRelation_type") :
-			getString("_UI_ContainmentRelation_type") + " " + label;
+		String label = ((ContainmentRelation) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ContainmentRelation_type")
+				: getString("_UI_ContainmentRelation_type") + " " + label;
 	}
 
 	/**

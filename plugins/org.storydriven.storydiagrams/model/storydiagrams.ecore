@@ -84,7 +84,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ActivityNode" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityNode" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract super class for all kinds of nodes that may be added to an activity. This class provides the basic functionality of connecting the activity nodes in the activity by ActivityEdges."/>
       </eAnnotations>
@@ -138,13 +138,13 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationExtension" eSuperTypes="#//calls/Callable ../../org.storydriven.core/model/core.ecore#//Extension">
+    <eClassifiers xsi:type="ecore:EClass" name="OperationExtension" eSuperTypes="../../org.storydriven.core/model/core.ecore#//Extension #//calls/Callable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An OperationExtension is a stand-in for an EOperation in our model. It is necessary because we cannot change the type EOperation. Thus, OperationExtension points to an EOperation but adds the reference to an Activity that describes the operations behavior."/>
       </eAnnotations>
       <eOperations name="NumberOfOutParams" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
         </eAnnotations>
         <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -167,6 +167,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The EOperation whose behavior is defined by the Activity. The property is derived because the actual value is determined by the utility class OperationsExtensionOperation."/>
         </eAnnotations>
+        <eAnnotations source="redefines" references="../../org.storydriven.core/model/core.ecore#//Extension/base"/>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="returnValue" ordered="false"
           eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
@@ -187,6 +188,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This MatchingPattern contained in this activity."/>
         </eAnnotations>
+        <eAnnotations source="subsets" references="#//activities/StoryNode/storyPattern"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StoryNode" abstract="true" eSuperTypes="#//activities/ActivityNode">
@@ -201,7 +203,9 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="storyPattern" ordered="false"
           lowerBound="1" eType="#//patterns/StoryPattern" changeable="false" volatile="true"
-          transient="true" derived="true"/>
+          transient="true" derived="true">
+        <eAnnotations source="union"/>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StructuredNode" eSuperTypes="#//activities/ActivityNode">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -331,6 +335,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The story pattern contained in this ModifyingStoryNode."/>
         </eAnnotations>
+        <eAnnotations source="subsets" references="#//activities/StoryNode/storyPattern"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eSubpackages name="expressions" nsURI="http://www.storydriven.org/storydiagrams/activities/expressions/0.2.0"
@@ -378,9 +383,18 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An OpaqueCallable represents an external method which is not explicitly modeled (e.g. a method in an external library). Because it is not contained anywhere in the model it is directly referenced by and contained in the MethodCallExpression."/>
       </eAnnotations>
+      <eAnnotations source="duplicates">
+        <contents xsi:type="ecore:EReference" name="inParameter" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
+          <eAnnotations source="redefines" references="#//calls/Callable/inParameter"/>
+        </contents>
+        <contents xsi:type="ecore:EReference" name="outParameter" upperBound="-1"
+            eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter">
+          <eAnnotations source="redefines" references="#//calls/Callable/outParameter"/>
+        </contents>
+      </eAnnotations>
       <eOperations name="NumberOfOutParams" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="self.oclAsType(Callable).out->size() &lt;= 1"/>
         </eAnnotations>
         <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -402,13 +416,15 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="callExpression" ordered="false"
           lowerBound="1" eType="#//calls/expressions/MethodCallExpression" eOpposite="#//calls/expressions/MethodCallExpression/opaqueCallable"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ParameterExtension" eSuperTypes="../../org.storydriven.core/model/core.ecore#//Extension #//Variable">
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterExtension" eSuperTypes="#//Variable ../../org.storydriven.core/model/core.ecore#//Extension">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents an EParameter and adds functionality to it, especially beiing subtype of Variable."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" ordered="false"
           eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"
-          volatile="true" transient="true" unsettable="true" derived="true" resolveProxies="false"/>
+          volatile="true" transient="true" unsettable="true" derived="true" resolveProxies="false">
+        <eAnnotations source="redefines" references="../../org.storydriven.core/model/core.ecore#//Extension/modelBase"/>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Callable" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -496,6 +512,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The type of this ObjectVariable, given as an EClass."/>
         </eAnnotations>
+        <eAnnotations source="subsets" references="../../org.storydriven.core/model/core.ecore#//TypedElement/type"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractVariable" abstract="true"
@@ -718,6 +735,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The type of the primitive variable which must be an EDataType."/>
         </eAnnotations>
+        <eAnnotations source="subsets" references="../../org.storydriven.core/model/core.ecore#//TypedElement/type"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Path" eSuperTypes="#//patterns/AbstractLinkVariable">
@@ -767,8 +785,8 @@
         <details key="documentation" value="A MatchingPattern is a special kind of story pattern that does not change the underlying graph. Thus, no contained object or link may carry an create or destroy BindingOperator."/>
       </eAnnotations>
       <eOperations name="NoModifierInMatchingPattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.objectVariable->forAll(v:ObjectVariable | v.modifier = Modifier::NONE) and self.linkVariable->forAll(v:LinkVariable | v.modifier = Modifier::NONE)"/>
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="self.objectVariable->forAll(v:ObjectVariable | v.modifier = Modifier::NONE) and self.linkVariable->forAll(v:LinkVariable | v.modifier = Modifier::NONE)"/>
         </eAnnotations>
         <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

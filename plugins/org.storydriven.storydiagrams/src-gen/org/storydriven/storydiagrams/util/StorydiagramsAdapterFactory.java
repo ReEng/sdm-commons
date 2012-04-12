@@ -58,7 +58,7 @@ public class StorydiagramsAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -69,25 +69,27 @@ public class StorydiagramsAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StorydiagramsSwitch<Adapter> modelSwitch =
-		new StorydiagramsSwitch<Adapter>() {
-			@Override
-			public Adapter caseVariable(Variable object) {
-				return createVariableAdapter();
-			}
-			@Override
-			public Adapter caseExtendableElement(ExtendableElement object) {
-				return createExtendableElementAdapter();
-			}
-			@Override
-			public Adapter caseTypedElement(TypedElement object) {
-				return createTypedElementAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected StorydiagramsSwitch<Adapter> modelSwitch = new StorydiagramsSwitch<Adapter>() {
+		@Override
+		public Adapter caseVariable(Variable object) {
+			return createVariableAdapter();
+		}
+
+		@Override
+		public Adapter caseExtendableElement(ExtendableElement object) {
+			return createExtendableElementAdapter();
+		}
+
+		@Override
+		public Adapter caseTypedElement(TypedElement object) {
+			return createTypedElementAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -99,9 +101,8 @@ public class StorydiagramsAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.Variable <em>Variable</em>}'.

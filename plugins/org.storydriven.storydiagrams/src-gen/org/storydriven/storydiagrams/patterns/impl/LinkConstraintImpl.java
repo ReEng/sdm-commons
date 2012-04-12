@@ -155,7 +155,8 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 		int oldIndex = index;
 		index = newIndex;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__INDEX, oldIndex, index));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__INDEX, oldIndex,
+					index));
 	}
 
 	/**
@@ -176,7 +177,8 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 		LinkConstraintType oldConstraintType = constraintType;
 		constraintType = newConstraintType == null ? CONSTRAINT_TYPE_EDEFAULT : newConstraintType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE, oldConstraintType, constraintType));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE,
+					oldConstraintType, constraintType));
 	}
 
 	/**
@@ -197,7 +199,8 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 		boolean oldNegative = negative;
 		negative = newNegative;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__NEGATIVE, oldNegative, negative));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__NEGATIVE,
+					oldNegative, negative));
 	}
 
 	/**
@@ -207,11 +210,12 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 	 */
 	public AbstractLinkVariable getFirstLink() {
 		if (firstLink != null && firstLink.eIsProxy()) {
-			InternalEObject oldFirstLink = (InternalEObject)firstLink;
-			firstLink = (AbstractLinkVariable)eResolveProxy(oldFirstLink);
+			InternalEObject oldFirstLink = (InternalEObject) firstLink;
+			firstLink = (AbstractLinkVariable) eResolveProxy(oldFirstLink);
 			if (firstLink != oldFirstLink) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternsPackage.LINK_CONSTRAINT__FIRST_LINK, oldFirstLink, firstLink));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							PatternsPackage.LINK_CONSTRAINT__FIRST_LINK, oldFirstLink, firstLink));
 			}
 		}
 		return firstLink;
@@ -235,8 +239,12 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 		AbstractLinkVariable oldFirstLink = firstLink;
 		firstLink = newFirstLink;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__FIRST_LINK, oldFirstLink, newFirstLink);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.LINK_CONSTRAINT__FIRST_LINK, oldFirstLink, newFirstLink);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -250,14 +258,19 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 		if (newFirstLink != firstLink) {
 			NotificationChain msgs = null;
 			if (firstLink != null)
-				msgs = ((InternalEObject)firstLink).eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT, AbstractLinkVariable.class, msgs);
+				msgs = ((InternalEObject) firstLink)
+						.eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT,
+								AbstractLinkVariable.class, msgs);
 			if (newFirstLink != null)
-				msgs = ((InternalEObject)newFirstLink).eInverseAdd(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT, AbstractLinkVariable.class, msgs);
+				msgs = ((InternalEObject) newFirstLink)
+						.eInverseAdd(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT,
+								AbstractLinkVariable.class, msgs);
 			msgs = basicSetFirstLink(newFirstLink, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__FIRST_LINK, newFirstLink, newFirstLink));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__FIRST_LINK,
+					newFirstLink, newFirstLink));
 	}
 
 	/**
@@ -266,8 +279,20 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 	 * @generated
 	 */
 	public ObjectVariable getReferencingObject() {
-		if (eContainerFeatureID() != PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT) return null;
-		return (ObjectVariable)eContainer();
+		if (eContainerFeatureID() != PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT)
+			return null;
+		return (ObjectVariable) eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ObjectVariable basicGetReferencingObject() {
+		if (eContainerFeatureID() != PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT)
+			return null;
+		return (ObjectVariable) eInternalContainer();
 	}
 
 	/**
@@ -276,7 +301,8 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 	 * @generated
 	 */
 	public NotificationChain basicSetReferencingObject(ObjectVariable newReferencingObject, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newReferencingObject, PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newReferencingObject,
+				PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT, msgs);
 		return msgs;
 	}
 
@@ -286,19 +312,22 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 	 * @generated
 	 */
 	public void setReferencingObject(ObjectVariable newReferencingObject) {
-		if (newReferencingObject != eInternalContainer() || (eContainerFeatureID() != PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT && newReferencingObject != null)) {
+		if (newReferencingObject != eInternalContainer()
+				|| (eContainerFeatureID() != PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT && newReferencingObject != null)) {
 			if (EcoreUtil.isAncestor(this, newReferencingObject))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newReferencingObject != null)
-				msgs = ((InternalEObject)newReferencingObject).eInverseAdd(this, PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT, ObjectVariable.class, msgs);
+				msgs = ((InternalEObject) newReferencingObject).eInverseAdd(this,
+						PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT, ObjectVariable.class, msgs);
 			msgs = basicSetReferencingObject(newReferencingObject, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT, newReferencingObject, newReferencingObject));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT,
+					newReferencingObject, newReferencingObject));
 	}
 
 	/**
@@ -308,11 +337,12 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 	 */
 	public AbstractLinkVariable getSecondLink() {
 		if (secondLink != null && secondLink.eIsProxy()) {
-			InternalEObject oldSecondLink = (InternalEObject)secondLink;
-			secondLink = (AbstractLinkVariable)eResolveProxy(oldSecondLink);
+			InternalEObject oldSecondLink = (InternalEObject) secondLink;
+			secondLink = (AbstractLinkVariable) eResolveProxy(oldSecondLink);
 			if (secondLink != oldSecondLink) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternsPackage.LINK_CONSTRAINT__SECOND_LINK, oldSecondLink, secondLink));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							PatternsPackage.LINK_CONSTRAINT__SECOND_LINK, oldSecondLink, secondLink));
 			}
 		}
 		return secondLink;
@@ -336,8 +366,12 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 		AbstractLinkVariable oldSecondLink = secondLink;
 		secondLink = newSecondLink;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__SECOND_LINK, oldSecondLink, newSecondLink);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.LINK_CONSTRAINT__SECOND_LINK, oldSecondLink, newSecondLink);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -351,14 +385,19 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 		if (newSecondLink != secondLink) {
 			NotificationChain msgs = null;
 			if (secondLink != null)
-				msgs = ((InternalEObject)secondLink).eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT, AbstractLinkVariable.class, msgs);
+				msgs = ((InternalEObject) secondLink).eInverseRemove(this,
+						PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT, AbstractLinkVariable.class,
+						msgs);
 			if (newSecondLink != null)
-				msgs = ((InternalEObject)newSecondLink).eInverseAdd(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT, AbstractLinkVariable.class, msgs);
+				msgs = ((InternalEObject) newSecondLink).eInverseAdd(this,
+						PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT, AbstractLinkVariable.class,
+						msgs);
 			msgs = basicSetSecondLink(newSecondLink, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__SECOND_LINK, newSecondLink, newSecondLink));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_CONSTRAINT__SECOND_LINK,
+					newSecondLink, newSecondLink));
 	}
 
 	/**
@@ -369,18 +408,22 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
-				if (firstLink != null)
-					msgs = ((InternalEObject)firstLink).eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT, AbstractLinkVariable.class, msgs);
-				return basicSetFirstLink((AbstractLinkVariable)otherEnd, msgs);
-			case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetReferencingObject((ObjectVariable)otherEnd, msgs);
-			case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
-				if (secondLink != null)
-					msgs = ((InternalEObject)secondLink).eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT, AbstractLinkVariable.class, msgs);
-				return basicSetSecondLink((AbstractLinkVariable)otherEnd, msgs);
+		case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
+			if (firstLink != null)
+				msgs = ((InternalEObject) firstLink)
+						.eInverseRemove(this, PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT,
+								AbstractLinkVariable.class, msgs);
+			return basicSetFirstLink((AbstractLinkVariable) otherEnd, msgs);
+		case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetReferencingObject((ObjectVariable) otherEnd, msgs);
+		case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
+			if (secondLink != null)
+				msgs = ((InternalEObject) secondLink).eInverseRemove(this,
+						PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT, AbstractLinkVariable.class,
+						msgs);
+			return basicSetSecondLink((AbstractLinkVariable) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -393,12 +436,12 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
-				return basicSetFirstLink(null, msgs);
-			case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
-				return basicSetReferencingObject(null, msgs);
-			case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
-				return basicSetSecondLink(null, msgs);
+		case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
+			return basicSetFirstLink(null, msgs);
+		case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
+			return basicSetReferencingObject(null, msgs);
+		case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
+			return basicSetSecondLink(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -411,8 +454,9 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
-				return eInternalContainer().eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT, ObjectVariable.class, msgs);
+		case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
+			return eInternalContainer().eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT,
+					ObjectVariable.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -425,20 +469,24 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PatternsPackage.LINK_CONSTRAINT__INDEX:
-				return getIndex();
-			case PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE:
-				return getConstraintType();
-			case PatternsPackage.LINK_CONSTRAINT__NEGATIVE:
-				return isNegative();
-			case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
-				if (resolve) return getFirstLink();
-				return basicGetFirstLink();
-			case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
+		case PatternsPackage.LINK_CONSTRAINT__INDEX:
+			return getIndex();
+		case PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE:
+			return getConstraintType();
+		case PatternsPackage.LINK_CONSTRAINT__NEGATIVE:
+			return isNegative();
+		case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
+			if (resolve)
+				return getFirstLink();
+			return basicGetFirstLink();
+		case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
+			if (resolve)
 				return getReferencingObject();
-			case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
-				if (resolve) return getSecondLink();
-				return basicGetSecondLink();
+			return basicGetReferencingObject();
+		case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
+			if (resolve)
+				return getSecondLink();
+			return basicGetSecondLink();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -451,24 +499,24 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PatternsPackage.LINK_CONSTRAINT__INDEX:
-				setIndex((Integer)newValue);
-				return;
-			case PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE:
-				setConstraintType((LinkConstraintType)newValue);
-				return;
-			case PatternsPackage.LINK_CONSTRAINT__NEGATIVE:
-				setNegative((Boolean)newValue);
-				return;
-			case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
-				setFirstLink((AbstractLinkVariable)newValue);
-				return;
-			case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
-				setReferencingObject((ObjectVariable)newValue);
-				return;
-			case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
-				setSecondLink((AbstractLinkVariable)newValue);
-				return;
+		case PatternsPackage.LINK_CONSTRAINT__INDEX:
+			setIndex((Integer) newValue);
+			return;
+		case PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE:
+			setConstraintType((LinkConstraintType) newValue);
+			return;
+		case PatternsPackage.LINK_CONSTRAINT__NEGATIVE:
+			setNegative((Boolean) newValue);
+			return;
+		case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
+			setFirstLink((AbstractLinkVariable) newValue);
+			return;
+		case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
+			setReferencingObject((ObjectVariable) newValue);
+			return;
+		case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
+			setSecondLink((AbstractLinkVariable) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -481,24 +529,24 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PatternsPackage.LINK_CONSTRAINT__INDEX:
-				setIndex(INDEX_EDEFAULT);
-				return;
-			case PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE:
-				setConstraintType(CONSTRAINT_TYPE_EDEFAULT);
-				return;
-			case PatternsPackage.LINK_CONSTRAINT__NEGATIVE:
-				setNegative(NEGATIVE_EDEFAULT);
-				return;
-			case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
-				setFirstLink((AbstractLinkVariable)null);
-				return;
-			case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
-				setReferencingObject((ObjectVariable)null);
-				return;
-			case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
-				setSecondLink((AbstractLinkVariable)null);
-				return;
+		case PatternsPackage.LINK_CONSTRAINT__INDEX:
+			setIndex(INDEX_EDEFAULT);
+			return;
+		case PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE:
+			setConstraintType(CONSTRAINT_TYPE_EDEFAULT);
+			return;
+		case PatternsPackage.LINK_CONSTRAINT__NEGATIVE:
+			setNegative(NEGATIVE_EDEFAULT);
+			return;
+		case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
+			setFirstLink((AbstractLinkVariable) null);
+			return;
+		case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
+			setReferencingObject((ObjectVariable) null);
+			return;
+		case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
+			setSecondLink((AbstractLinkVariable) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -511,18 +559,18 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PatternsPackage.LINK_CONSTRAINT__INDEX:
-				return index != INDEX_EDEFAULT;
-			case PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE:
-				return constraintType != CONSTRAINT_TYPE_EDEFAULT;
-			case PatternsPackage.LINK_CONSTRAINT__NEGATIVE:
-				return negative != NEGATIVE_EDEFAULT;
-			case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
-				return firstLink != null;
-			case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
-				return getReferencingObject() != null;
-			case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
-				return secondLink != null;
+		case PatternsPackage.LINK_CONSTRAINT__INDEX:
+			return index != INDEX_EDEFAULT;
+		case PatternsPackage.LINK_CONSTRAINT__CONSTRAINT_TYPE:
+			return constraintType != CONSTRAINT_TYPE_EDEFAULT;
+		case PatternsPackage.LINK_CONSTRAINT__NEGATIVE:
+			return negative != NEGATIVE_EDEFAULT;
+		case PatternsPackage.LINK_CONSTRAINT__FIRST_LINK:
+			return firstLink != null;
+		case PatternsPackage.LINK_CONSTRAINT__REFERENCING_OBJECT:
+			return basicGetReferencingObject() != null;
+		case PatternsPackage.LINK_CONSTRAINT__SECOND_LINK:
+			return secondLink != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -534,7 +582,8 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (index: ");

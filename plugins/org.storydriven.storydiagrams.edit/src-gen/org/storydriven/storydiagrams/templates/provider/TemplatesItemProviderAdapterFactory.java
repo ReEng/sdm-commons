@@ -34,7 +34,8 @@ import org.storydriven.storydiagrams.templates.util.TemplatesAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory implements ComposeableAdapterFactory,
+		IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -60,6 +61,30 @@ public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.templates.TemplateBinding} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TemplateBindingItemProvider templateBindingItemProvider;
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.templates.PropertyBinding} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PropertyBindingItemProvider propertyBindingItemProvider;
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.templates.TemplateSignature} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TemplateSignatureItemProvider templateSignatureItemProvider;
+
+	/**
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,12 +99,31 @@ public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.templates.TemplateBinding} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TemplateBindingItemProvider templateBindingItemProvider;
+	@Override
+	public Object adapt(Object object, Object type) {
+		if (isFactoryForType(type)) {
+			Object adapter = super.adapt(object, type);
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+				return adapter;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isFactoryForType(Object type) {
+		return supportedTypes.contains(type) || super.isFactoryForType(type);
+	}
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.templates.TemplateBinding}.
@@ -97,14 +141,6 @@ public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.templates.PropertyBinding} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PropertyBindingItemProvider propertyBindingItemProvider;
-
-	/**
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.templates.PropertyBinding}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,14 +154,6 @@ public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory
 
 		return propertyBindingItemProvider;
 	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.templates.TemplateSignature} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TemplateSignatureItemProvider templateSignatureItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.templates.TemplateSignature}.
@@ -163,16 +191,6 @@ public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isFactoryForType(Object type) {
-		return supportedTypes.contains(type) || super.isFactoryForType(type);
-	}
-
-	/**
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -181,23 +199,6 @@ public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory
 	@Override
 	public Adapter adapt(Notifier notifier, Object type) {
 		return super.adapt(notifier, this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
-			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
-				return adapter;
-			}
-		}
-
-		return null;
 	}
 
 	/**
@@ -241,9 +242,12 @@ public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
-		if (templateBindingItemProvider != null) templateBindingItemProvider.dispose();
-		if (propertyBindingItemProvider != null) propertyBindingItemProvider.dispose();
-		if (templateSignatureItemProvider != null) templateSignatureItemProvider.dispose();
+		if (templateBindingItemProvider != null)
+			templateBindingItemProvider.dispose();
+		if (propertyBindingItemProvider != null)
+			propertyBindingItemProvider.dispose();
+		if (templateSignatureItemProvider != null)
+			templateSignatureItemProvider.dispose();
 	}
 
 }

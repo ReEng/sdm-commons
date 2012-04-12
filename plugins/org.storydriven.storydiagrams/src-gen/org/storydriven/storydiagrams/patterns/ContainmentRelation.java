@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.patterns;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Containment Relation</b></em>'.

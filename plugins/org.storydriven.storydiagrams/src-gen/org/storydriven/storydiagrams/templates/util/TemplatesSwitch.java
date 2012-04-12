@@ -72,27 +72,33 @@ public class TemplatesSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case TemplatesPackage.TEMPLATE_BINDING: {
-				TemplateBinding templateBinding = (TemplateBinding)theEObject;
-				T result = caseTemplateBinding(templateBinding);
-				if (result == null) result = caseExtendableElement(templateBinding);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TemplatesPackage.PROPERTY_BINDING: {
-				PropertyBinding propertyBinding = (PropertyBinding)theEObject;
-				T result = casePropertyBinding(propertyBinding);
-				if (result == null) result = caseExtendableElement(propertyBinding);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TemplatesPackage.TEMPLATE_SIGNATURE: {
-				TemplateSignature templateSignature = (TemplateSignature)theEObject;
-				T result = caseTemplateSignature(templateSignature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case TemplatesPackage.TEMPLATE_BINDING: {
+			TemplateBinding templateBinding = (TemplateBinding) theEObject;
+			T result = caseTemplateBinding(templateBinding);
+			if (result == null)
+				result = caseExtendableElement(templateBinding);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TemplatesPackage.PROPERTY_BINDING: {
+			PropertyBinding propertyBinding = (PropertyBinding) theEObject;
+			T result = casePropertyBinding(propertyBinding);
+			if (result == null)
+				result = caseExtendableElement(propertyBinding);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TemplatesPackage.TEMPLATE_SIGNATURE: {
+			TemplateSignature templateSignature = (TemplateSignature) theEObject;
+			T result = caseTemplateSignature(templateSignature);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

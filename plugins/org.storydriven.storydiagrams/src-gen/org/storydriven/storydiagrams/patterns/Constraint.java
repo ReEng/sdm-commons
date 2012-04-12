@@ -42,7 +42,7 @@ public interface Constraint extends EObject {
 	 * @return the value of the '<em>Constraint Expression</em>' containment reference.
 	 * @see #setConstraintExpression(Expression)
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getConstraint_ConstraintExpression()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getConstraintExpression();

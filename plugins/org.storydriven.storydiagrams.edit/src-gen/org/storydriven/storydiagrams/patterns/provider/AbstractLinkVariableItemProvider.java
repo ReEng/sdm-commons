@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.patterns.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -36,14 +35,8 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AbstractLinkVariableItemProvider
-	extends NamedElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class AbstractLinkVariableItemProvider extends NamedElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -83,19 +76,14 @@ public class AbstractLinkVariableItemProvider
 	 * @generated
 	 */
 	protected void addBindingSemanticsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractLinkVariable_bindingSemantics_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_bindingSemantics_feature", "_UI_AbstractLinkVariable_type"),
-				 PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_AbstractLinkVariable_bindingSemantics_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_bindingSemantics_feature",
+						"_UI_AbstractLinkVariable_type"),
+				PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -105,19 +93,14 @@ public class AbstractLinkVariableItemProvider
 	 * @generated
 	 */
 	protected void addBindingOperatorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractLinkVariable_bindingOperator_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_bindingOperator_feature", "_UI_AbstractLinkVariable_type"),
-				 PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_AbstractLinkVariable_bindingOperator_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_bindingOperator_feature",
+						"_UI_AbstractLinkVariable_type"),
+				PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -127,19 +110,13 @@ public class AbstractLinkVariableItemProvider
 	 * @generated
 	 */
 	protected void addSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractLinkVariable_source_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_source_feature", "_UI_AbstractLinkVariable_type"),
-				 PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__SOURCE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_AbstractLinkVariable_source_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_source_feature",
+						"_UI_AbstractLinkVariable_type"), PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__SOURCE,
+				true, false, true, null, null, null));
 	}
 
 	/**
@@ -149,19 +126,14 @@ public class AbstractLinkVariableItemProvider
 	 * @generated
 	 */
 	protected void addSecondLinkConstraintPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractLinkVariable_secondLinkConstraint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_secondLinkConstraint_feature", "_UI_AbstractLinkVariable_type"),
-				 PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_AbstractLinkVariable_secondLinkConstraint_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_AbstractLinkVariable_secondLinkConstraint_feature", "_UI_AbstractLinkVariable_type"),
+				PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT, true, false, true, null, null,
+				null));
 	}
 
 	/**
@@ -171,19 +143,14 @@ public class AbstractLinkVariableItemProvider
 	 * @generated
 	 */
 	protected void addFirstLinkConstraintPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractLinkVariable_firstLinkConstraint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_firstLinkConstraint_feature", "_UI_AbstractLinkVariable_type"),
-				 PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_AbstractLinkVariable_firstLinkConstraint_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_firstLinkConstraint_feature",
+						"_UI_AbstractLinkVariable_type"),
+				PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT, true, false, true, null, null,
+				null));
 	}
 
 	/**
@@ -193,19 +160,14 @@ public class AbstractLinkVariableItemProvider
 	 * @generated
 	 */
 	protected void addBindingStatePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractLinkVariable_bindingState_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_bindingState_feature", "_UI_AbstractLinkVariable_type"),
-				 PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__BINDING_STATE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_AbstractLinkVariable_bindingState_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_bindingState_feature",
+						"_UI_AbstractLinkVariable_type"),
+				PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__BINDING_STATE, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -215,19 +177,24 @@ public class AbstractLinkVariableItemProvider
 	 * @generated
 	 */
 	protected void addTargetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractLinkVariable_target_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_target_feature", "_UI_AbstractLinkVariable_type"),
-				 PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__TARGET,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_AbstractLinkVariable_target_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractLinkVariable_target_feature",
+						"_UI_AbstractLinkVariable_type"), PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__TARGET,
+				true, false, true, null, null, null));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return StorydiagramsEditPlugin.INSTANCE;
 	}
 
 	/**
@@ -238,10 +205,9 @@ public class AbstractLinkVariableItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AbstractLinkVariable)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_AbstractLinkVariable_type") :
-			getString("_UI_AbstractLinkVariable_type") + " " + label;
+		String label = ((AbstractLinkVariable) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_AbstractLinkVariable_type")
+				: getString("_UI_AbstractLinkVariable_type") + " " + label;
 	}
 
 	/**
@@ -256,11 +222,11 @@ public class AbstractLinkVariableItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AbstractLinkVariable.class)) {
-			case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS:
-			case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR:
-			case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_STATE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS:
+		case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR:
+		case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_STATE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -276,26 +242,11 @@ public class AbstractLinkVariableItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return StorydiagramsEditPlugin.INSTANCE;
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
 }

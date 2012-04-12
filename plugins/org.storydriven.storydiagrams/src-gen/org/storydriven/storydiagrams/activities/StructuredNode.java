@@ -41,7 +41,7 @@ public interface StructuredNode extends ActivityNode {
 	 * @return the value of the '<em>Owned Activity Node</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.activities.ActivitiesPackage#getStructuredNode_OwnedActivityNode()
 	 * @see org.storydriven.storydiagrams.activities.ActivityNode#getOwningActivityNode
-	 * @model opposite="owningActivityNode" containment="true" ordered="false"
+	 * @model opposite="owningActivityNode" containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	EList<ActivityNode> getOwnedActivityNodes();

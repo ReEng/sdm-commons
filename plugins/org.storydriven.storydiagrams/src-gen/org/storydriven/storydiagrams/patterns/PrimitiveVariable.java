@@ -31,6 +31,12 @@ import org.eclipse.emf.ecore.EDataType;
 public interface PrimitiveVariable extends AbstractVariable {
 	/**
 	 * Returns the value of the '<em><b>Classifier</b></em>' reference.
+	 * <p>
+	 * This feature subsets the following features:
+	 * <ul>
+	 *   <li>'{@link org.storydriven.core.TypedElement#getType() <em>Type</em>}'</li>
+	 * </ul>
+	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

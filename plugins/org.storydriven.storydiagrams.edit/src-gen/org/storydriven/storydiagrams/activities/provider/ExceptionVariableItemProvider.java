@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.activities.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -33,14 +32,8 @@ import org.storydriven.storydiagrams.provider.VariableItemProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExceptionVariableItemProvider
-	extends VariableItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ExceptionVariableItemProvider extends VariableItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -76,19 +69,13 @@ public class ExceptionVariableItemProvider
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ExceptionVariable_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExceptionVariable_name_feature", "_UI_ExceptionVariable_type"),
-				 ActivitiesPackage.Literals.EXCEPTION_VARIABLE__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ExceptionVariable_name_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ExceptionVariable_name_feature",
+						"_UI_ExceptionVariable_type"), ActivitiesPackage.Literals.EXCEPTION_VARIABLE__NAME, true,
+				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -98,19 +85,13 @@ public class ExceptionVariableItemProvider
 	 * @generated
 	 */
 	protected void addExceptionTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ExceptionVariable_exceptionType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExceptionVariable_exceptionType_feature", "_UI_ExceptionVariable_type"),
-				 ActivitiesPackage.Literals.EXCEPTION_VARIABLE__EXCEPTION_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ExceptionVariable_exceptionType_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ExceptionVariable_exceptionType_feature",
+						"_UI_ExceptionVariable_type"), ActivitiesPackage.Literals.EXCEPTION_VARIABLE__EXCEPTION_TYPE,
+				true, false, true, null, null, null));
 	}
 
 	/**
@@ -120,19 +101,14 @@ public class ExceptionVariableItemProvider
 	 * @generated
 	 */
 	protected void addGenericExceptionTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ExceptionVariable_genericExceptionType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExceptionVariable_genericExceptionType_feature", "_UI_ExceptionVariable_type"),
-				 ActivitiesPackage.Literals.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ExceptionVariable_genericExceptionType_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ExceptionVariable_genericExceptionType_feature",
+						"_UI_ExceptionVariable_type"),
+				ActivitiesPackage.Literals.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE, true, false, true, null, null,
+				null));
 	}
 
 	/**
@@ -147,6 +123,17 @@ public class ExceptionVariableItemProvider
 	}
 
 	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return StorydiagramsEditPlugin.INSTANCE;
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -154,10 +141,9 @@ public class ExceptionVariableItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ExceptionVariable)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ExceptionVariable_type") :
-			getString("_UI_ExceptionVariable_type") + " " + label;
+		String label = ((ExceptionVariable) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ExceptionVariable_type")
+				: getString("_UI_ExceptionVariable_type") + " " + label;
 	}
 
 	/**
@@ -172,9 +158,9 @@ public class ExceptionVariableItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ExceptionVariable.class)) {
-			case ActivitiesPackage.EXCEPTION_VARIABLE__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case ActivitiesPackage.EXCEPTION_VARIABLE__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -189,17 +175,6 @@ public class ExceptionVariableItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return StorydiagramsEditPlugin.INSTANCE;
 	}
 
 }

@@ -103,7 +103,7 @@ public interface AbstractVariable extends Variable, NamedElement {
 	 * @return the value of the '<em>Binding Expression</em>' containment reference.
 	 * @see #setBindingExpression(Expression)
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getAbstractVariable_BindingExpression()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	Expression getBindingExpression();
@@ -130,7 +130,7 @@ public interface AbstractVariable extends Variable, NamedElement {
 	 * @return the value of the '<em>Constraint</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getAbstractVariable_Constraint()
 	 * @see org.storydriven.storydiagrams.patterns.Constraint#getObjectVariable
-	 * @model opposite="objectVariable" containment="true"
+	 * @model opposite="objectVariable" containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<Constraint> getConstraints();

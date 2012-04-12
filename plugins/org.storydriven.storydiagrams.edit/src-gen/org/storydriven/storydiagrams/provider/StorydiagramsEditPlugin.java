@@ -35,17 +35,35 @@ public final class StorydiagramsEditPlugin extends EMFPlugin {
 	private static Implementation plugin;
 
 	/**
+	 * The actual implementation of the Eclipse <b>Plugin</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class Implementation extends EclipsePlugin {
+		/**
+		 * Creates an instance.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Implementation() {
+			super();
+
+			// Remember the static instance.
+			//
+			plugin = this;
+		}
+	}
+
+	/**
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public StorydiagramsEditPlugin() {
-		super
-		  (new ResourceLocator [] {
-		     CoreEditPlugin.INSTANCE,
-		     EcoreEditPlugin.INSTANCE,
-		   });
+		super(new ResourceLocator[] { CoreEditPlugin.INSTANCE, EcoreEditPlugin.INSTANCE, });
 	}
 
 	/**
@@ -69,28 +87,6 @@ public final class StorydiagramsEditPlugin extends EMFPlugin {
 	 */
 	public static Implementation getPlugin() {
 		return plugin;
-	}
-
-	/**
-	 * The actual implementation of the Eclipse <b>Plugin</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static class Implementation extends EclipsePlugin {
-		/**
-		 * Creates an instance.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public Implementation() {
-			super();
-
-			// Remember the static instance.
-			//
-			plugin = this;
-		}
 	}
 
 }

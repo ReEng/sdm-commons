@@ -11,9 +11,7 @@ import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.JunctionNode;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Junction Node</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Junction Node</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -21,8 +19,7 @@ import org.storydriven.storydiagrams.activities.JunctionNode;
  */
 public class JunctionNodeImpl extends ActivityNodeImpl implements JunctionNode {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected JunctionNodeImpl() {
@@ -30,8 +27,7 @@ public class JunctionNodeImpl extends ActivityNodeImpl implements JunctionNode {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -39,4 +35,4 @@ public class JunctionNodeImpl extends ActivityNodeImpl implements JunctionNode {
 		return ActivitiesPackage.Literals.JUNCTION_NODE;
 	}
 
-} //JunctionNodeImpl
+} // JunctionNodeImpl

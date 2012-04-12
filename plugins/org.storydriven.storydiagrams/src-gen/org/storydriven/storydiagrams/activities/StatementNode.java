@@ -39,7 +39,7 @@ public interface StatementNode extends ActivityNode {
 	 * @return the value of the '<em>Statement Expression</em>' containment reference.
 	 * @see #setStatementExpression(Expression)
 	 * @see org.storydriven.storydiagrams.activities.ActivitiesPackage#getStatementNode_StatementExpression()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getStatementExpression();

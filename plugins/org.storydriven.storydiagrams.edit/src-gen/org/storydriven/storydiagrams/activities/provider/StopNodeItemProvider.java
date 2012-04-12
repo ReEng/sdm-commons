@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.activities.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -35,14 +34,8 @@ import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFac
  * <!-- end-user-doc -->
  * @generated
  */
-public class StopNodeItemProvider
-	extends ActivityNodeItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class StopNodeItemProvider extends ActivityNodeItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -65,7 +58,6 @@ public class StopNodeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addFlowStopOnlyPropertyDescriptor(object);
-			addReturnValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,41 +69,13 @@ public class StopNodeItemProvider
 	 * @generated
 	 */
 	protected void addFlowStopOnlyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StopNode_flowStopOnly_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StopNode_flowStopOnly_feature", "_UI_StopNode_type"),
-				 ActivitiesPackage.Literals.STOP_NODE__FLOW_STOP_ONLY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Return Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReturnValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StopNode_returnValue_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StopNode_returnValue_feature", "_UI_StopNode_type"),
-				 ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_StopNode_flowStopOnly_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_StopNode_flowStopOnly_feature",
+						"_UI_StopNode_type"), ActivitiesPackage.Literals.STOP_NODE__FLOW_STOP_ONLY, true, false, false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -126,22 +90,10 @@ public class StopNodeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE);
 			childrenFeatures.add(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES);
 		}
 		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -163,10 +115,9 @@ public class StopNodeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StopNode)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_StopNode_type") :
-			getString("_UI_StopNode_type") + " " + label;
+		String label = ((StopNode) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_StopNode_type") : getString("_UI_StopNode_type")
+				+ " " + label;
 	}
 
 	/**
@@ -181,14 +132,28 @@ public class StopNodeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StopNode.class)) {
-			case ActivitiesPackage.STOP_NODE__FLOW_STOP_ONLY:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ActivitiesPackage.STOP_NODE__FLOW_STOP_ONLY:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ActivitiesPackage.STOP_NODE__RETURN_VALUE:
+		case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -202,70 +167,44 @@ public class StopNodeItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
-				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
+				ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
-				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
+				CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
-				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
+				CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
-				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
+				PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
+				PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
+				PatternsExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
-				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
+				PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
-				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
+				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
-				 ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
+				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
-				 ExpressionsFactory.eINSTANCE.createNotExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
+				ExpressionsFactory.eINSTANCE.createNotExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
-				 ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
+				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
-				 ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
+				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
-				 ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUES,
+				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 	}
 
 }

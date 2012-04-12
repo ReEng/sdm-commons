@@ -31,6 +31,12 @@ import org.storydriven.storydiagrams.patterns.StoryPattern;
 public interface ModifyingStoryNode extends StoryNode {
 	/**
 	 * Returns the value of the '<em><b>Owned Rule</b></em>' containment reference.
+	 * <p>
+	 * This feature subsets the following features:
+	 * <ul>
+	 *   <li>'{@link org.storydriven.storydiagrams.activities.StoryNode#getStoryPattern() <em>Story Pattern</em>}'</li>
+	 * </ul>
+	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -39,7 +45,7 @@ public interface ModifyingStoryNode extends StoryNode {
 	 * @return the value of the '<em>Owned Rule</em>' containment reference.
 	 * @see #setOwnedRule(StoryPattern)
 	 * @see org.storydriven.storydiagrams.activities.ActivitiesPackage#getModifyingStoryNode_OwnedRule()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
 	 * @generated
 	 */
 	StoryPattern getOwnedRule();

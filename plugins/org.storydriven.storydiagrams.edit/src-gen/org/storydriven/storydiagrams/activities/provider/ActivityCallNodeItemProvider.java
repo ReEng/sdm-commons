@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.activities.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -32,14 +31,8 @@ import org.storydriven.storydiagrams.calls.CallsPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivityCallNodeItemProvider
-	extends ActivityNodeItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -74,19 +67,14 @@ public class ActivityCallNodeItemProvider
 	 * @generated
 	 */
 	protected void addCalleePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Invocation_callee_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Invocation_callee_feature", "_UI_Invocation_type"),
-				 CallsPackage.Literals.INVOCATION__CALLEE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Invocation_callee_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Invocation_callee_feature",
+								"_UI_Invocation_type"), CallsPackage.Literals.INVOCATION__CALLEE, true, false, true,
+						null, null, null));
 	}
 
 	/**
@@ -96,19 +84,13 @@ public class ActivityCallNodeItemProvider
 	 * @generated
 	 */
 	protected void addCalledActivityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActivityCallNode_calledActivity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityCallNode_calledActivity_feature", "_UI_ActivityCallNode_type"),
-				 ActivitiesPackage.Literals.ACTIVITY_CALL_NODE__CALLED_ACTIVITY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ActivityCallNode_calledActivity_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ActivityCallNode_calledActivity_feature",
+						"_UI_ActivityCallNode_type"), ActivitiesPackage.Literals.ACTIVITY_CALL_NODE__CALLED_ACTIVITY,
+				true, false, true, null, null, null));
 	}
 
 	/**
@@ -126,19 +108,6 @@ public class ActivityCallNodeItemProvider
 			childrenFeatures.add(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS);
 		}
 		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -160,10 +129,9 @@ public class ActivityCallNodeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ActivityCallNode)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ActivityCallNode_type") :
-			getString("_UI_ActivityCallNode_type") + " " + label;
+		String label = ((ActivityCallNode) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ActivityCallNode_type")
+				: getString("_UI_ActivityCallNode_type") + " " + label;
 	}
 
 	/**
@@ -178,11 +146,24 @@ public class ActivityCallNodeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ActivityCallNode.class)) {
-			case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -196,10 +177,8 @@ public class ActivityCallNodeItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
-				 CallsFactory.eINSTANCE.createParameterBinding()));
+		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
+				CallsFactory.eINSTANCE.createParameterBinding()));
 	}
 
 }

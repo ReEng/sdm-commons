@@ -87,134 +87,192 @@ public class PatternsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case PatternsPackage.OBJECT_VARIABLE: {
-				ObjectVariable objectVariable = (ObjectVariable)theEObject;
-				T result = caseObjectVariable(objectVariable);
-				if (result == null) result = caseAbstractVariable(objectVariable);
-				if (result == null) result = caseVariable(objectVariable);
-				if (result == null) result = caseNamedElement(objectVariable);
-				if (result == null) result = caseTypedElement(objectVariable);
-				if (result == null) result = caseExtendableElement(objectVariable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsPackage.ABSTRACT_VARIABLE: {
-				AbstractVariable abstractVariable = (AbstractVariable)theEObject;
-				T result = caseAbstractVariable(abstractVariable);
-				if (result == null) result = caseVariable(abstractVariable);
-				if (result == null) result = caseNamedElement(abstractVariable);
-				if (result == null) result = caseTypedElement(abstractVariable);
-				if (result == null) result = caseExtendableElement(abstractVariable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsPackage.CONSTRAINT: {
-				Constraint constraint = (Constraint)theEObject;
-				T result = caseConstraint(constraint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsPackage.ABSTRACT_LINK_VARIABLE: {
-				AbstractLinkVariable abstractLinkVariable = (AbstractLinkVariable)theEObject;
-				T result = caseAbstractLinkVariable(abstractLinkVariable);
-				if (result == null) result = caseNamedElement(abstractLinkVariable);
-				if (result == null) result = caseExtendableElement(abstractLinkVariable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsPackage.LINK_CONSTRAINT: {
-				LinkConstraint linkConstraint = (LinkConstraint)theEObject;
-				T result = caseLinkConstraint(linkConstraint);
-				if (result == null) result = caseExtendableElement(linkConstraint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsPackage.ATTRIBUTE_ASSIGNMENT: {
-				AttributeAssignment attributeAssignment = (AttributeAssignment)theEObject;
-				T result = caseAttributeAssignment(attributeAssignment);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsPackage.OBJECT_SET_VARIABLE: {
-				ObjectSetVariable objectSetVariable = (ObjectSetVariable)theEObject;
-				T result = caseObjectSetVariable(objectSetVariable);
-				if (result == null) result = caseObjectVariable(objectSetVariable);
-				if (result == null) result = caseAbstractVariable(objectSetVariable);
-				if (result == null) result = caseVariable(objectSetVariable);
-				if (result == null) result = caseNamedElement(objectSetVariable);
-				if (result == null) result = caseTypedElement(objectSetVariable);
-				if (result == null) result = caseExtendableElement(objectSetVariable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsPackage.PRIMITIVE_VARIABLE: {
-				PrimitiveVariable primitiveVariable = (PrimitiveVariable)theEObject;
-				T result = casePrimitiveVariable(primitiveVariable);
-				if (result == null) result = caseAbstractVariable(primitiveVariable);
-				if (result == null) result = caseVariable(primitiveVariable);
-				if (result == null) result = caseNamedElement(primitiveVariable);
-				if (result == null) result = caseTypedElement(primitiveVariable);
-				if (result == null) result = caseExtendableElement(primitiveVariable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsPackage.PATH: {
-				Path path = (Path)theEObject;
-				T result = casePath(path);
-				if (result == null) result = caseAbstractLinkVariable(path);
-				if (result == null) result = caseNamedElement(path);
-				if (result == null) result = caseExtendableElement(path);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsPackage.LINK_VARIABLE: {
-				LinkVariable linkVariable = (LinkVariable)theEObject;
-				T result = caseLinkVariable(linkVariable);
-				if (result == null) result = caseAbstractLinkVariable(linkVariable);
-				if (result == null) result = caseNamedElement(linkVariable);
-				if (result == null) result = caseExtendableElement(linkVariable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsPackage.CONTAINMENT_RELATION: {
-				ContainmentRelation containmentRelation = (ContainmentRelation)theEObject;
-				T result = caseContainmentRelation(containmentRelation);
-				if (result == null) result = caseAbstractLinkVariable(containmentRelation);
-				if (result == null) result = caseNamedElement(containmentRelation);
-				if (result == null) result = caseExtendableElement(containmentRelation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsPackage.MATCHING_PATTERN: {
-				MatchingPattern matchingPattern = (MatchingPattern)theEObject;
-				T result = caseMatchingPattern(matchingPattern);
-				if (result == null) result = caseStoryPattern(matchingPattern);
-				if (result == null) result = caseCommentableElement(matchingPattern);
-				if (result == null) result = caseExtendableElement(matchingPattern);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsPackage.CONTAINER_VARIABLE: {
-				ContainerVariable containerVariable = (ContainerVariable)theEObject;
-				T result = caseContainerVariable(containerVariable);
-				if (result == null) result = caseObjectVariable(containerVariable);
-				if (result == null) result = caseAbstractVariable(containerVariable);
-				if (result == null) result = caseVariable(containerVariable);
-				if (result == null) result = caseNamedElement(containerVariable);
-				if (result == null) result = caseTypedElement(containerVariable);
-				if (result == null) result = caseExtendableElement(containerVariable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PatternsPackage.STORY_PATTERN: {
-				StoryPattern storyPattern = (StoryPattern)theEObject;
-				T result = caseStoryPattern(storyPattern);
-				if (result == null) result = caseCommentableElement(storyPattern);
-				if (result == null) result = caseExtendableElement(storyPattern);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case PatternsPackage.OBJECT_VARIABLE: {
+			ObjectVariable objectVariable = (ObjectVariable) theEObject;
+			T result = caseObjectVariable(objectVariable);
+			if (result == null)
+				result = caseAbstractVariable(objectVariable);
+			if (result == null)
+				result = caseVariable(objectVariable);
+			if (result == null)
+				result = caseNamedElement(objectVariable);
+			if (result == null)
+				result = caseTypedElement(objectVariable);
+			if (result == null)
+				result = caseExtendableElement(objectVariable);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsPackage.ABSTRACT_VARIABLE: {
+			AbstractVariable abstractVariable = (AbstractVariable) theEObject;
+			T result = caseAbstractVariable(abstractVariable);
+			if (result == null)
+				result = caseVariable(abstractVariable);
+			if (result == null)
+				result = caseNamedElement(abstractVariable);
+			if (result == null)
+				result = caseTypedElement(abstractVariable);
+			if (result == null)
+				result = caseExtendableElement(abstractVariable);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsPackage.CONSTRAINT: {
+			Constraint constraint = (Constraint) theEObject;
+			T result = caseConstraint(constraint);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsPackage.ABSTRACT_LINK_VARIABLE: {
+			AbstractLinkVariable abstractLinkVariable = (AbstractLinkVariable) theEObject;
+			T result = caseAbstractLinkVariable(abstractLinkVariable);
+			if (result == null)
+				result = caseNamedElement(abstractLinkVariable);
+			if (result == null)
+				result = caseExtendableElement(abstractLinkVariable);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsPackage.LINK_CONSTRAINT: {
+			LinkConstraint linkConstraint = (LinkConstraint) theEObject;
+			T result = caseLinkConstraint(linkConstraint);
+			if (result == null)
+				result = caseExtendableElement(linkConstraint);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsPackage.ATTRIBUTE_ASSIGNMENT: {
+			AttributeAssignment attributeAssignment = (AttributeAssignment) theEObject;
+			T result = caseAttributeAssignment(attributeAssignment);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsPackage.OBJECT_SET_VARIABLE: {
+			ObjectSetVariable objectSetVariable = (ObjectSetVariable) theEObject;
+			T result = caseObjectSetVariable(objectSetVariable);
+			if (result == null)
+				result = caseObjectVariable(objectSetVariable);
+			if (result == null)
+				result = caseAbstractVariable(objectSetVariable);
+			if (result == null)
+				result = caseVariable(objectSetVariable);
+			if (result == null)
+				result = caseNamedElement(objectSetVariable);
+			if (result == null)
+				result = caseTypedElement(objectSetVariable);
+			if (result == null)
+				result = caseExtendableElement(objectSetVariable);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsPackage.PRIMITIVE_VARIABLE: {
+			PrimitiveVariable primitiveVariable = (PrimitiveVariable) theEObject;
+			T result = casePrimitiveVariable(primitiveVariable);
+			if (result == null)
+				result = caseAbstractVariable(primitiveVariable);
+			if (result == null)
+				result = caseVariable(primitiveVariable);
+			if (result == null)
+				result = caseNamedElement(primitiveVariable);
+			if (result == null)
+				result = caseTypedElement(primitiveVariable);
+			if (result == null)
+				result = caseExtendableElement(primitiveVariable);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsPackage.PATH: {
+			Path path = (Path) theEObject;
+			T result = casePath(path);
+			if (result == null)
+				result = caseAbstractLinkVariable(path);
+			if (result == null)
+				result = caseNamedElement(path);
+			if (result == null)
+				result = caseExtendableElement(path);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsPackage.LINK_VARIABLE: {
+			LinkVariable linkVariable = (LinkVariable) theEObject;
+			T result = caseLinkVariable(linkVariable);
+			if (result == null)
+				result = caseAbstractLinkVariable(linkVariable);
+			if (result == null)
+				result = caseNamedElement(linkVariable);
+			if (result == null)
+				result = caseExtendableElement(linkVariable);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsPackage.CONTAINMENT_RELATION: {
+			ContainmentRelation containmentRelation = (ContainmentRelation) theEObject;
+			T result = caseContainmentRelation(containmentRelation);
+			if (result == null)
+				result = caseAbstractLinkVariable(containmentRelation);
+			if (result == null)
+				result = caseNamedElement(containmentRelation);
+			if (result == null)
+				result = caseExtendableElement(containmentRelation);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsPackage.MATCHING_PATTERN: {
+			MatchingPattern matchingPattern = (MatchingPattern) theEObject;
+			T result = caseMatchingPattern(matchingPattern);
+			if (result == null)
+				result = caseStoryPattern(matchingPattern);
+			if (result == null)
+				result = caseCommentableElement(matchingPattern);
+			if (result == null)
+				result = caseExtendableElement(matchingPattern);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsPackage.CONTAINER_VARIABLE: {
+			ContainerVariable containerVariable = (ContainerVariable) theEObject;
+			T result = caseContainerVariable(containerVariable);
+			if (result == null)
+				result = caseObjectVariable(containerVariable);
+			if (result == null)
+				result = caseAbstractVariable(containerVariable);
+			if (result == null)
+				result = caseVariable(containerVariable);
+			if (result == null)
+				result = caseNamedElement(containerVariable);
+			if (result == null)
+				result = caseTypedElement(containerVariable);
+			if (result == null)
+				result = caseExtendableElement(containerVariable);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsPackage.STORY_PATTERN: {
+			StoryPattern storyPattern = (StoryPattern) theEObject;
+			T result = caseStoryPattern(storyPattern);
+			if (result == null)
+				result = caseCommentableElement(storyPattern);
+			if (result == null)
+				result = caseExtendableElement(storyPattern);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

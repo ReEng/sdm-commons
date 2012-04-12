@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.activities;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Start Node</b></em>'.

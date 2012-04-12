@@ -19,9 +19,7 @@ import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.activities.StructuredNode;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Structured Node</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Structured Node</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -34,16 +32,15 @@ import org.storydriven.storydiagrams.activities.StructuredNode;
 public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNode {
 	/**
 	 * The cached value of the '{@link #getOwnedActivityNodes() <em>Owned Activity Node</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getOwnedActivityNodes()
 	 * @generated
 	 * @ordered
 	 */
 	protected EList<ActivityNode> ownedActivityNodes;
+
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected StructuredNodeImpl() {
@@ -51,8 +48,7 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -61,104 +57,100 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<ActivityNode> getOwnedActivityNodes() {
 		if (ownedActivityNodes == null) {
-			ownedActivityNodes = new EObjectContainmentWithInverseEList<ActivityNode>(ActivityNode.class, this, ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE, ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE);
+			ownedActivityNodes = new EObjectContainmentWithInverseEList.Resolving<ActivityNode>(ActivityNode.class,
+					this, ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+					ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE);
 		}
 		return ownedActivityNodes;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedActivityNodes()).basicAdd(otherEnd, msgs);
+		case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedActivityNodes()).basicAdd(otherEnd,
+					msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-				return ((InternalEList<?>)getOwnedActivityNodes()).basicRemove(otherEnd, msgs);
+		case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
+			return ((InternalEList<?>) getOwnedActivityNodes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-				return getOwnedActivityNodes();
+		case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
+			return getOwnedActivityNodes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-				getOwnedActivityNodes().clear();
-				getOwnedActivityNodes().addAll((Collection<? extends ActivityNode>)newValue);
-				return;
+		case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
+			getOwnedActivityNodes().clear();
+			getOwnedActivityNodes().addAll((Collection<? extends ActivityNode>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-				getOwnedActivityNodes().clear();
-				return;
+		case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
+			getOwnedActivityNodes().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-				return ownedActivityNodes != null && !ownedActivityNodes.isEmpty();
+		case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
+			return ownedActivityNodes != null && !ownedActivityNodes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //StructuredNodeImpl
+} // StructuredNodeImpl

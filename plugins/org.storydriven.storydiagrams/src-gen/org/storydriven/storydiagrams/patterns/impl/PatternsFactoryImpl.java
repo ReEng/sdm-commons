@@ -46,12 +46,12 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 */
 	public static PatternsFactory init() {
 		try {
-			PatternsFactory thePatternsFactory = (PatternsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/storydiagrams/patterns/0.2.0"); 
+			PatternsFactory thePatternsFactory = (PatternsFactory) EPackage.Registry.INSTANCE
+					.getEFactory("http://www.storydriven.org/storydiagrams/patterns/0.2.0");
 			if (thePatternsFactory != null) {
 				return thePatternsFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new PatternsFactoryImpl();
@@ -75,20 +75,32 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case PatternsPackage.OBJECT_VARIABLE: return createObjectVariable();
-			case PatternsPackage.CONSTRAINT: return createConstraint();
-			case PatternsPackage.LINK_CONSTRAINT: return createLinkConstraint();
-			case PatternsPackage.ATTRIBUTE_ASSIGNMENT: return createAttributeAssignment();
-			case PatternsPackage.OBJECT_SET_VARIABLE: return createObjectSetVariable();
-			case PatternsPackage.PRIMITIVE_VARIABLE: return createPrimitiveVariable();
-			case PatternsPackage.PATH: return createPath();
-			case PatternsPackage.LINK_VARIABLE: return createLinkVariable();
-			case PatternsPackage.CONTAINMENT_RELATION: return createContainmentRelation();
-			case PatternsPackage.MATCHING_PATTERN: return createMatchingPattern();
-			case PatternsPackage.CONTAINER_VARIABLE: return createContainerVariable();
-			case PatternsPackage.STORY_PATTERN: return createStoryPattern();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case PatternsPackage.OBJECT_VARIABLE:
+			return createObjectVariable();
+		case PatternsPackage.CONSTRAINT:
+			return createConstraint();
+		case PatternsPackage.LINK_CONSTRAINT:
+			return createLinkConstraint();
+		case PatternsPackage.ATTRIBUTE_ASSIGNMENT:
+			return createAttributeAssignment();
+		case PatternsPackage.OBJECT_SET_VARIABLE:
+			return createObjectSetVariable();
+		case PatternsPackage.PRIMITIVE_VARIABLE:
+			return createPrimitiveVariable();
+		case PatternsPackage.PATH:
+			return createPath();
+		case PatternsPackage.LINK_VARIABLE:
+			return createLinkVariable();
+		case PatternsPackage.CONTAINMENT_RELATION:
+			return createContainmentRelation();
+		case PatternsPackage.MATCHING_PATTERN:
+			return createMatchingPattern();
+		case PatternsPackage.CONTAINER_VARIABLE:
+			return createContainerVariable();
+		case PatternsPackage.STORY_PATTERN:
+			return createStoryPattern();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -100,16 +112,16 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case PatternsPackage.BINDING_STATE:
-				return createBindingStateFromString(eDataType, initialValue);
-			case PatternsPackage.BINDING_SEMANTICS:
-				return createBindingSemanticsFromString(eDataType, initialValue);
-			case PatternsPackage.BINDING_OPERATOR:
-				return createBindingOperatorFromString(eDataType, initialValue);
-			case PatternsPackage.LINK_CONSTRAINT_TYPE:
-				return createLinkConstraintTypeFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case PatternsPackage.BINDING_STATE:
+			return createBindingStateFromString(eDataType, initialValue);
+		case PatternsPackage.BINDING_SEMANTICS:
+			return createBindingSemanticsFromString(eDataType, initialValue);
+		case PatternsPackage.BINDING_OPERATOR:
+			return createBindingOperatorFromString(eDataType, initialValue);
+		case PatternsPackage.LINK_CONSTRAINT_TYPE:
+			return createLinkConstraintTypeFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -121,16 +133,16 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case PatternsPackage.BINDING_STATE:
-				return convertBindingStateToString(eDataType, instanceValue);
-			case PatternsPackage.BINDING_SEMANTICS:
-				return convertBindingSemanticsToString(eDataType, instanceValue);
-			case PatternsPackage.BINDING_OPERATOR:
-				return convertBindingOperatorToString(eDataType, instanceValue);
-			case PatternsPackage.LINK_CONSTRAINT_TYPE:
-				return convertLinkConstraintTypeToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case PatternsPackage.BINDING_STATE:
+			return convertBindingStateToString(eDataType, instanceValue);
+		case PatternsPackage.BINDING_SEMANTICS:
+			return convertBindingSemanticsToString(eDataType, instanceValue);
+		case PatternsPackage.BINDING_OPERATOR:
+			return convertBindingOperatorToString(eDataType, instanceValue);
+		case PatternsPackage.LINK_CONSTRAINT_TYPE:
+			return convertLinkConstraintTypeToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -261,7 +273,9 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 */
 	public BindingState createBindingStateFromString(EDataType eDataType, String initialValue) {
 		BindingState result = BindingState.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
+					+ eDataType.getName() + "'");
 		return result;
 	}
 
@@ -281,7 +295,9 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 */
 	public BindingSemantics createBindingSemanticsFromString(EDataType eDataType, String initialValue) {
 		BindingSemantics result = BindingSemantics.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
+					+ eDataType.getName() + "'");
 		return result;
 	}
 
@@ -301,7 +317,9 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 */
 	public BindingOperator createBindingOperatorFromString(EDataType eDataType, String initialValue) {
 		BindingOperator result = BindingOperator.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
+					+ eDataType.getName() + "'");
 		return result;
 	}
 
@@ -321,7 +339,9 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 */
 	public LinkConstraintType createLinkConstraintTypeFromString(EDataType eDataType, String initialValue) {
 		LinkConstraintType result = LinkConstraintType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
+					+ eDataType.getName() + "'");
 		return result;
 	}
 
@@ -340,7 +360,7 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * @generated
 	 */
 	public PatternsPackage getPatternsPackage() {
-		return (PatternsPackage)getEPackage();
+		return (PatternsPackage) getEPackage();
 	}
 
 	/**

@@ -73,17 +73,23 @@ public class ActivitiesExpressionsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION: {
-				ExceptionVariableExpression exceptionVariableExpression = (ExceptionVariableExpression)theEObject;
-				T result = caseExceptionVariableExpression(exceptionVariableExpression);
-				if (result == null) result = caseExpression(exceptionVariableExpression);
-				if (result == null) result = caseTypedElement(exceptionVariableExpression);
-				if (result == null) result = caseCommentableElement(exceptionVariableExpression);
-				if (result == null) result = caseExtendableElement(exceptionVariableExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION: {
+			ExceptionVariableExpression exceptionVariableExpression = (ExceptionVariableExpression) theEObject;
+			T result = caseExceptionVariableExpression(exceptionVariableExpression);
+			if (result == null)
+				result = caseExpression(exceptionVariableExpression);
+			if (result == null)
+				result = caseTypedElement(exceptionVariableExpression);
+			if (result == null)
+				result = caseCommentableElement(exceptionVariableExpression);
+			if (result == null)
+				result = caseExtendableElement(exceptionVariableExpression);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

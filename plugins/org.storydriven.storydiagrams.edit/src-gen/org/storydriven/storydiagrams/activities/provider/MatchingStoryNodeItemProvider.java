@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.activities.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -30,14 +29,8 @@ import org.storydriven.storydiagrams.patterns.PatternsFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MatchingStoryNodeItemProvider
-	extends StoryNodeItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class MatchingStoryNodeItemProvider extends StoryNodeItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -81,19 +74,6 @@ public class MatchingStoryNodeItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
 	 * This returns MatchingStoryNode.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,10 +92,9 @@ public class MatchingStoryNodeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MatchingStoryNode)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_MatchingStoryNode_type") :
-			getString("_UI_MatchingStoryNode_type") + " " + label;
+		String label = ((MatchingStoryNode) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_MatchingStoryNode_type")
+				: getString("_UI_MatchingStoryNode_type") + " " + label;
 	}
 
 	/**
@@ -130,11 +109,24 @@ public class MatchingStoryNodeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(MatchingStoryNode.class)) {
-			case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -148,10 +140,8 @@ public class MatchingStoryNodeItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ActivitiesPackage.Literals.MATCHING_STORY_NODE__OWNED_PATTERN,
-				 PatternsFactory.eINSTANCE.createMatchingPattern()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.MATCHING_STORY_NODE__OWNED_PATTERN,
+				PatternsFactory.eINSTANCE.createMatchingPattern()));
 	}
 
 }

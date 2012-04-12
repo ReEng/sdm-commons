@@ -15,14 +15,12 @@ import org.storydriven.storydiagrams.activities.StoryNode;
 import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Story Node</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Story Node</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.storydiagrams.activities.impl.StoryNodeImpl#isForEach <em>For Each</em>}</li>
  *   <li>{@link org.storydriven.storydiagrams.activities.impl.StoryNodeImpl#getStoryPattern <em>Story Pattern</em>}</li>
+ *   <li>{@link org.storydriven.storydiagrams.activities.impl.StoryNodeImpl#isForEach <em>For Each</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,8 +29,7 @@ import org.storydriven.storydiagrams.patterns.StoryPattern;
 public abstract class StoryNodeImpl extends ActivityNodeImpl implements StoryNode {
 	/**
 	 * The default value of the '{@link #isForEach() <em>For Each</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isForEach()
 	 * @generated
 	 * @ordered
@@ -41,8 +38,7 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements StoryNod
 
 	/**
 	 * The cached value of the '{@link #isForEach() <em>For Each</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isForEach()
 	 * @generated
 	 * @ordered
@@ -50,8 +46,7 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements StoryNod
 	protected boolean forEach = FOR_EACH_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected StoryNodeImpl() {
@@ -59,8 +54,7 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements StoryNod
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -69,8 +63,7 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements StoryNod
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean isForEach() {
@@ -78,110 +71,103 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements StoryNod
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setForEach(boolean newForEach) {
 		boolean oldForEach = forEach;
 		forEach = newForEach;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.STORY_NODE__FOR_EACH, oldForEach, forEach));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.STORY_NODE__FOR_EACH, oldForEach,
+					forEach));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public StoryPattern getStoryPattern() {
 		StoryPattern storyPattern = basicGetStoryPattern();
-		return storyPattern != null && storyPattern.eIsProxy() ? (StoryPattern)eResolveProxy((InternalEObject)storyPattern) : storyPattern;
+		return storyPattern != null && storyPattern.eIsProxy() ? (StoryPattern) eResolveProxy((InternalEObject) storyPattern)
+				: storyPattern;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public StoryPattern basicGetStoryPattern() {
-		// TODO: implement this method to return the 'Story Pattern' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return null;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActivitiesPackage.STORY_NODE__FOR_EACH:
-				return isForEach();
-			case ActivitiesPackage.STORY_NODE__STORY_PATTERN:
-				if (resolve) return getStoryPattern();
-				return basicGetStoryPattern();
+		case ActivitiesPackage.STORY_NODE__STORY_PATTERN:
+			if (resolve)
+				return getStoryPattern();
+			return basicGetStoryPattern();
+		case ActivitiesPackage.STORY_NODE__FOR_EACH:
+			return isForEach();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActivitiesPackage.STORY_NODE__FOR_EACH:
-				setForEach((Boolean)newValue);
-				return;
+		case ActivitiesPackage.STORY_NODE__FOR_EACH:
+			setForEach((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActivitiesPackage.STORY_NODE__FOR_EACH:
-				setForEach(FOR_EACH_EDEFAULT);
-				return;
+		case ActivitiesPackage.STORY_NODE__FOR_EACH:
+			setForEach(FOR_EACH_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActivitiesPackage.STORY_NODE__FOR_EACH:
-				return forEach != FOR_EACH_EDEFAULT;
-			case ActivitiesPackage.STORY_NODE__STORY_PATTERN:
-				return basicGetStoryPattern() != null;
+		case ActivitiesPackage.STORY_NODE__STORY_PATTERN:
+			return isSetStoryPattern();
+		case ActivitiesPackage.STORY_NODE__FOR_EACH:
+			return forEach != FOR_EACH_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (forEach: ");
@@ -190,4 +176,12 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements StoryNod
 		return result.toString();
 	}
 
-} //StoryNodeImpl
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetStoryPattern() {
+		return false;
+	}
+
+} // StoryNodeImpl

@@ -156,14 +156,8 @@ public enum LinkConstraintType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final LinkConstraintType[] VALUES_ARRAY =
-		new LinkConstraintType[] {
-			FIRST,
-			LAST,
-			DIRECT_SUCCESSOR,
-			INDIRECT_SUCCESSOR,
-			INDEX,
-		};
+	private static final LinkConstraintType[] VALUES_ARRAY = new LinkConstraintType[] { FIRST, LAST, DIRECT_SUCCESSOR,
+			INDIRECT_SUCCESSOR, INDEX, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Link Constraint Type</b></em>' enumerators.
@@ -213,11 +207,16 @@ public enum LinkConstraintType implements Enumerator {
 	 */
 	public static LinkConstraintType get(int value) {
 		switch (value) {
-			case FIRST_VALUE: return FIRST;
-			case LAST_VALUE: return LAST;
-			case DIRECT_SUCCESSOR_VALUE: return DIRECT_SUCCESSOR;
-			case INDIRECT_SUCCESSOR_VALUE: return INDIRECT_SUCCESSOR;
-			case INDEX_VALUE: return INDEX;
+		case FIRST_VALUE:
+			return FIRST;
+		case LAST_VALUE:
+			return LAST;
+		case DIRECT_SUCCESSOR_VALUE:
+			return DIRECT_SUCCESSOR;
+		case INDIRECT_SUCCESSOR_VALUE:
+			return INDIRECT_SUCCESSOR;
+		case INDEX_VALUE:
+			return INDEX;
 		}
 		return null;
 	}
@@ -261,7 +260,7 @@ public enum LinkConstraintType implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -270,7 +269,7 @@ public enum LinkConstraintType implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -279,7 +278,7 @@ public enum LinkConstraintType implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -292,5 +291,5 @@ public enum LinkConstraintType implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
+
 } //LinkConstraintType

@@ -34,7 +34,8 @@ import org.storydriven.storydiagrams.calls.expressions.util.CallsExpressionsAdap
  * <!-- end-user-doc -->
  * @generated
  */
-public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressionsAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressionsAdapterFactory implements
+		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -60,6 +61,22 @@ public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressions
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.calls.expressions.MethodCallExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MethodCallExpressionItemProvider methodCallExpressionItemProvider;
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.calls.expressions.ParameterExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterExpressionItemProvider parameterExpressionItemProvider;
+
+	/**
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,12 +91,31 @@ public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressions
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.calls.expressions.MethodCallExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MethodCallExpressionItemProvider methodCallExpressionItemProvider;
+	@Override
+	public Object adapt(Object object, Object type) {
+		if (isFactoryForType(type)) {
+			Object adapter = super.adapt(object, type);
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+				return adapter;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isFactoryForType(Object type) {
+		return supportedTypes.contains(type) || super.isFactoryForType(type);
+	}
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.calls.expressions.MethodCallExpression}.
@@ -95,14 +131,6 @@ public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressions
 
 		return methodCallExpressionItemProvider;
 	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.calls.expressions.ParameterExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ParameterExpressionItemProvider parameterExpressionItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.calls.expressions.ParameterExpression}.
@@ -140,16 +168,6 @@ public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressions
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isFactoryForType(Object type) {
-		return supportedTypes.contains(type) || super.isFactoryForType(type);
-	}
-
-	/**
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -158,23 +176,6 @@ public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressions
 	@Override
 	public Adapter adapt(Notifier notifier, Object type) {
 		return super.adapt(notifier, this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
-			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
-				return adapter;
-			}
-		}
-
-		return null;
 	}
 
 	/**
@@ -218,8 +219,10 @@ public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressions
 	 * @generated
 	 */
 	public void dispose() {
-		if (methodCallExpressionItemProvider != null) methodCallExpressionItemProvider.dispose();
-		if (parameterExpressionItemProvider != null) parameterExpressionItemProvider.dispose();
+		if (methodCallExpressionItemProvider != null)
+			methodCallExpressionItemProvider.dispose();
+		if (parameterExpressionItemProvider != null)
+			parameterExpressionItemProvider.dispose();
 	}
 
 }

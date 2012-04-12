@@ -32,12 +32,12 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory {
 	 */
 	public static CallsFactory init() {
 		try {
-			CallsFactory theCallsFactory = (CallsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/storydiagrams/calls/0.2.0"); 
+			CallsFactory theCallsFactory = (CallsFactory) EPackage.Registry.INSTANCE
+					.getEFactory("http://www.storydriven.org/storydiagrams/calls/0.2.0");
 			if (theCallsFactory != null) {
 				return theCallsFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new CallsFactoryImpl();
@@ -61,11 +61,14 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CallsPackage.PARAMETER_BINDING: return createParameterBinding();
-			case CallsPackage.OPAQUE_CALLABLE: return createOpaqueCallable();
-			case CallsPackage.PARAMETER_EXTENSION: return createParameterExtension();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case CallsPackage.PARAMETER_BINDING:
+			return createParameterBinding();
+		case CallsPackage.OPAQUE_CALLABLE:
+			return createOpaqueCallable();
+		case CallsPackage.PARAMETER_EXTENSION:
+			return createParameterExtension();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -105,7 +108,7 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory {
 	 * @generated
 	 */
 	public CallsPackage getCallsPackage() {
-		return (CallsPackage)getEPackage();
+		return (CallsPackage) getEPackage();
 	}
 
 	/**

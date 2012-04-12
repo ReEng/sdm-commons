@@ -68,7 +68,7 @@ public interface AttributeAssignment extends EObject {
 	 * @return the value of the '<em>Value Expression</em>' containment reference.
 	 * @see #setValueExpression(Expression)
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getAttributeAssignment_ValueExpression()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Expression getValueExpression();

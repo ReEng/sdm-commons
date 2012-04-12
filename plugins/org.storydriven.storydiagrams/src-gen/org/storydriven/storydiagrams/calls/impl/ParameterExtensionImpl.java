@@ -11,70 +11,38 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.ENamedElement;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.core.CorePackage;
-import org.storydriven.core.TypedElement;
-import org.storydriven.core.impl.ExtensionImpl;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.Extension;
 import org.storydriven.core.util.ExtensionOperations;
-import org.storydriven.storydiagrams.StorydiagramsPackage;
-import org.storydriven.storydiagrams.Variable;
 import org.storydriven.storydiagrams.calls.CallsPackage;
 import org.storydriven.storydiagrams.calls.ParameterExtension;
+import org.storydriven.storydiagrams.impl.VariableImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Parameter Extension</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Parameter Extension</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.storydiagrams.calls.impl.ParameterExtensionImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.storydriven.storydiagrams.calls.impl.ParameterExtensionImpl#getGenericType <em>Generic Type</em>}</li>
- *   <li>{@link org.storydriven.storydiagrams.calls.impl.ParameterExtensionImpl#getVariableName <em>Variable Name</em>}</li>
+ *   <li>{@link org.storydriven.storydiagrams.calls.impl.ParameterExtensionImpl#getBase <em>Base</em>}</li>
+ *   <li>{@link org.storydriven.storydiagrams.calls.impl.ParameterExtensionImpl#getOwningAnnotation <em>Owning Annotation</em>}</li>
+ *   <li>{@link org.storydriven.storydiagrams.calls.impl.ParameterExtensionImpl#getExtendableBase <em>Extendable Base</em>}</li>
  *   <li>{@link org.storydriven.storydiagrams.calls.impl.ParameterExtensionImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ParameterExtensionImpl extends ExtensionImpl implements ParameterExtension {
+public class ParameterExtensionImpl extends VariableImpl implements ParameterExtension {
 	/**
-	 * The cached value of the '{@link #getGenericType() <em>Generic Type</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGenericType()
-	 * @generated
-	 * @ordered
-	 */
-	protected EGenericType genericType;
-
-	/**
-	 * This is true if the Generic Type containment reference has been set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean genericTypeESet;
-
-	/**
-	 * The default value of the '{@link #getVariableName() <em>Variable Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVariableName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VARIABLE_NAME_EDEFAULT = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ParameterExtensionImpl() {
@@ -82,8 +50,7 @@ public class ParameterExtensionImpl extends ExtensionImpl implements ParameterEx
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -92,156 +59,151 @@ public class ParameterExtensionImpl extends ExtensionImpl implements ParameterEx
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClassifier getType() {
-		EClassifier type = basicGetType();
-		return type != null && type.eIsProxy() ? (EClassifier)eResolveProxy((InternalEObject)type) : type;
+	public EModelElement getModelBase() {
+		return getParameter();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
-	public EClassifier basicGetType() {
-		EParameter parameter = getParameter();
-		return parameter == null ? null : parameter.getEType();
+	public EModelElement basicGetModelBase() {
+		return getParameter();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
-	public EGenericType getGenericType() {
-		if (genericType != null && genericType.eIsProxy()) {
-			InternalEObject oldGenericType = (InternalEObject)genericType;
-			genericType = (EGenericType)eResolveProxy(oldGenericType);
-			if (genericType != oldGenericType) {
-				InternalEObject newGenericType = (InternalEObject)genericType;
-				NotificationChain msgs = oldGenericType.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE, null, null);
-				if (newGenericType.eInternalContainer() == null) {
-					msgs = newGenericType.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE, null, msgs);
-				}
-				if (msgs != null) msgs.dispatch();
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE, oldGenericType, genericType));
-			}
-		}
-		return genericType;
+	public void setModelBase(EModelElement newModelBase) {
+		setParameter((EParameter) newModelBase);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
-	public EGenericType basicGetGenericType() {
-		return genericType;
+	public void unsetModelBase() {
+		unsetParameter();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public boolean isSetModelBase() {
+		return isSetParameter();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetGenericType(EGenericType newGenericType, NotificationChain msgs) {
-		EGenericType oldGenericType = genericType;
-		genericType = newGenericType;
-		boolean oldGenericTypeESet = genericTypeESet;
-		genericTypeESet = true;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE, oldGenericType, newGenericType, !oldGenericTypeESet);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+	public EAnnotation getOwningAnnotation() {
+		EAnnotation owningAnnotation = basicGetOwningAnnotation();
+		return owningAnnotation != null && owningAnnotation.eIsProxy() ? (EAnnotation) eResolveProxy((InternalEObject) owningAnnotation)
+				: owningAnnotation;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public EAnnotation basicGetOwningAnnotation() {
+		return ExtensionOperations.getOwningAnnotation(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public void setOwningAnnotation(EAnnotation newOwningAnnotation) {
+		ExtensionOperations.setOwningAnnotation(this, newOwningAnnotation);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public void unsetOwningAnnotation() {
+		ExtensionOperations.unsetOwningAnnotation(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public boolean isSetOwningAnnotation() {
+		return ExtensionOperations.isSetOwningAnnotation(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExtendableElement getExtendableBase() {
+		if (eContainerFeatureID() != CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE)
+			return null;
+		return (ExtendableElement) eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExtendableElement basicGetExtendableBase() {
+		if (eContainerFeatureID() != CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE)
+			return null;
+		return (ExtendableElement) eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetExtendableBase(ExtendableElement newExtendableBase, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newExtendableBase,
+				CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE, msgs);
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGenericType(EGenericType newGenericType) {
-		if (newGenericType != genericType) {
+	public void setExtendableBase(ExtendableElement newExtendableBase) {
+		if (newExtendableBase != eInternalContainer()
+				|| (eContainerFeatureID() != CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE && newExtendableBase != null)) {
+			if (EcoreUtil.isAncestor(this, newExtendableBase))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (genericType != null)
-				msgs = ((InternalEObject)genericType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE, null, msgs);
-			if (newGenericType != null)
-				msgs = ((InternalEObject)newGenericType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE, null, msgs);
-			msgs = basicSetGenericType(newGenericType, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else {
-			boolean oldGenericTypeESet = genericTypeESet;
-			genericTypeESet = true;
-			if (eNotificationRequired())
-				eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE, newGenericType, newGenericType, !oldGenericTypeESet));
-		}
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newExtendableBase != null)
+				msgs = ((InternalEObject) newExtendableBase).eInverseAdd(this,
+						CorePackage.EXTENDABLE_ELEMENT__EXTENSION, ExtendableElement.class, msgs);
+			msgs = basicSetExtendableBase(newExtendableBase, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE,
+					newExtendableBase, newExtendableBase));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicUnsetGenericType(NotificationChain msgs) {
-		EGenericType oldGenericType = genericType;
-		genericType = null;
-		boolean oldGenericTypeESet = genericTypeESet;
-		genericTypeESet = false;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE, oldGenericType, null, oldGenericTypeESet);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetGenericType() {
-		if (genericType != null) {
-			NotificationChain msgs = null;
-			msgs = ((InternalEObject)genericType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE, null, msgs);
-			msgs = basicUnsetGenericType(msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else {
-			boolean oldGenericTypeESet = genericTypeESet;
-			genericTypeESet = false;
-			if (eNotificationRequired())
-				eNotify(new ENotificationImpl(this, Notification.UNSET, CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE, null, null, oldGenericTypeESet));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetGenericType() {
-		return genericTypeESet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public String getVariableName() {
-		ENamedElement namedElement = getParameter();
-		return namedElement == null ? null : namedElement.getName();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public EParameter getParameter() {
@@ -249,8 +211,8 @@ public class ParameterExtensionImpl extends ExtensionImpl implements ParameterEx
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public void setParameter(EParameter newParameter) {
@@ -258,8 +220,8 @@ public class ParameterExtensionImpl extends ExtensionImpl implements ParameterEx
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public void unsetParameter() {
@@ -267,198 +229,240 @@ public class ParameterExtensionImpl extends ExtensionImpl implements ParameterEx
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public boolean isSetParameter() {
 		return ExtensionOperations.isSetModelBase(this);
 	}
 
+	@Override
+	public EClassifier basicGetType() {
+		EParameter parameter = getParameter();
+		return parameter == null ? null : parameter.getEType();
+	}
+
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetExtendableBase((ExtendableElement) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE:
-				return basicUnsetGenericType(msgs);
+		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
+			return basicSetExtendableBase(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
+			return eInternalContainer().eInverseRemove(this, CorePackage.EXTENDABLE_ELEMENT__EXTENSION,
+					ExtendableElement.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CallsPackage.PARAMETER_EXTENSION__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
-			case CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE:
-				if (resolve) return getGenericType();
-				return basicGetGenericType();
-			case CallsPackage.PARAMETER_EXTENSION__VARIABLE_NAME:
-				return getVariableName();
-			case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
-				return getParameter();
+		case CallsPackage.PARAMETER_EXTENSION__BASE:
+			if (resolve)
+				return getBase();
+			return basicGetBase();
+		case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE:
+			if (resolve)
+				return getModelBase();
+			return basicGetModelBase();
+		case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION:
+			if (resolve)
+				return getOwningAnnotation();
+			return basicGetOwningAnnotation();
+		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
+			if (resolve)
+				return getExtendableBase();
+			return basicGetExtendableBase();
+		case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
+			return getParameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE:
-				setGenericType((EGenericType)newValue);
-				return;
-			case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
-				setParameter((EParameter)newValue);
-				return;
+		case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE:
+			setModelBase((EModelElement) newValue);
+			return;
+		case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION:
+			setOwningAnnotation((EAnnotation) newValue);
+			return;
+		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
+			setExtendableBase((ExtendableElement) newValue);
+			return;
+		case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
+			setParameter((EParameter) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE:
-				unsetGenericType();
-				return;
-			case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
-				unsetParameter();
-				return;
+		case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE:
+			unsetModelBase();
+			return;
+		case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION:
+			unsetOwningAnnotation();
+			return;
+		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
+			setExtendableBase((ExtendableElement) null);
+			return;
+		case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
+			unsetParameter();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CallsPackage.PARAMETER_EXTENSION__TYPE:
-				return isSetType();
-			case CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE:
-				return isSetGenericType();
-			case CallsPackage.PARAMETER_EXTENSION__VARIABLE_NAME:
-				return VARIABLE_NAME_EDEFAULT == null ? getVariableName() != null : !VARIABLE_NAME_EDEFAULT.equals(getVariableName());
-			case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
-				return isSetParameter();
+		case CallsPackage.PARAMETER_EXTENSION__BASE:
+			return isSetBase();
+		case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE:
+			return isSetModelBase();
+		case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION:
+			return isSetOwningAnnotation();
+		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
+			return basicGetExtendableBase() != null;
+		case CallsPackage.PARAMETER_EXTENSION__PARAMETER:
+			return isSetParameter();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == TypedElement.class) {
+		if (baseClass == Extension.class) {
 			switch (derivedFeatureID) {
-				case CallsPackage.PARAMETER_EXTENSION__TYPE: return CorePackage.TYPED_ELEMENT__TYPE;
-				case CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE: return CorePackage.TYPED_ELEMENT__GENERIC_TYPE;
-				default: return -1;
-			}
-		}
-		if (baseClass == Variable.class) {
-			switch (derivedFeatureID) {
-				case CallsPackage.PARAMETER_EXTENSION__VARIABLE_NAME: return StorydiagramsPackage.VARIABLE__VARIABLE_NAME;
-				default: return -1;
+			case CallsPackage.PARAMETER_EXTENSION__BASE:
+				return CorePackage.EXTENSION__BASE;
+			case CallsPackage.PARAMETER_EXTENSION__MODEL_BASE:
+				return CorePackage.EXTENSION__MODEL_BASE;
+			case CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION:
+				return CorePackage.EXTENSION__OWNING_ANNOTATION;
+			case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
+				return CorePackage.EXTENSION__EXTENDABLE_BASE;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == TypedElement.class) {
+		if (baseClass == Extension.class) {
 			switch (baseFeatureID) {
-				case CorePackage.TYPED_ELEMENT__TYPE: return CallsPackage.PARAMETER_EXTENSION__TYPE;
-				case CorePackage.TYPED_ELEMENT__GENERIC_TYPE: return CallsPackage.PARAMETER_EXTENSION__GENERIC_TYPE;
-				default: return -1;
-			}
-		}
-		if (baseClass == Variable.class) {
-			switch (baseFeatureID) {
-				case StorydiagramsPackage.VARIABLE__VARIABLE_NAME: return CallsPackage.PARAMETER_EXTENSION__VARIABLE_NAME;
-				default: return -1;
+			case CorePackage.EXTENSION__BASE:
+				return CallsPackage.PARAMETER_EXTENSION__BASE;
+			case CorePackage.EXTENSION__MODEL_BASE:
+				return CallsPackage.PARAMETER_EXTENSION__MODEL_BASE;
+			case CorePackage.EXTENSION__OWNING_ANNOTATION:
+				return CallsPackage.PARAMETER_EXTENSION__OWNING_ANNOTATION;
+			case CorePackage.EXTENSION__EXTENDABLE_BASE:
+				return CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
-	public boolean isSetType() {
-		return false;
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EObject getBase() {
+		EObject base = basicGetBase();
+		return base != null && base.eIsProxy() ? eResolveProxy((InternalEObject) base) : base;
 	}
 
-	@Override
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EObject basicGetBase() {
+		if (isSetModelBase()) {
+			return basicGetModelBase();
+		}
+		ExtendableElement extendableBase = basicGetExtendableBase();
+		if (extendableBase != null) {
+			return extendableBase;
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
 	public boolean isSetBase() {
 		return isSetParameter();
 	}
 
-	@Override
-	public boolean isSetOwningAnnotation() {
-		return ExtensionOperations.isSetOwningAnnotation(this);
+	public String getVariableName() {
+		ENamedElement namedElement = getParameter();
+		return namedElement == null ? null : namedElement.getName();
 	}
 
-	@Override
-	public void unsetOwningAnnotation() {
-		ExtensionOperations.unsetOwningAnnotation(this);
-	}
-
-	@Override
-	public void setOwningAnnotation(EAnnotation newOwningAnnotation) {
-		ExtensionOperations.setOwningAnnotation(this, newOwningAnnotation);
-	}
-
-	@Override
-	public EAnnotation basicGetOwningAnnotation() {
-		return ExtensionOperations.getOwningAnnotation(this);
-	}
-
-	@Override
-	public boolean isSetModelBase() {
-		return isSetParameter();
-	}
-
-	@Override
-	public void unsetModelBase() {
-		unsetParameter();
-	}
-
-	@Override
-	public void setModelBase(EModelElement newModelBase) {
-		setParameter((EParameter) newModelBase);
-	}
-
-	@Override
-	public EModelElement basicGetModelBase() {
-		return getParameter();
-	}
-} //ParameterExtensionImpl
+} // ParameterExtensionImpl

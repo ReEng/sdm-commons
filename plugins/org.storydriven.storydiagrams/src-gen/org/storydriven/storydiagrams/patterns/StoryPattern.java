@@ -51,7 +51,7 @@ public interface StoryPattern extends CommentableElement {
 	 * @return the value of the '<em>Variable</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getStoryPattern_Variable()
 	 * @see org.storydriven.storydiagrams.patterns.AbstractVariable#getPattern
-	 * @model opposite="pattern" containment="true" ordered="false"
+	 * @model opposite="pattern" containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	EList<AbstractVariable> getVariables();
@@ -68,7 +68,7 @@ public interface StoryPattern extends CommentableElement {
 	 * @return the value of the '<em>Constraint</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getStoryPattern_Constraint()
 	 * @see org.storydriven.storydiagrams.patterns.Constraint#getPattern
-	 * @model opposite="pattern" containment="true" ordered="false"
+	 * @model opposite="pattern" containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	EList<Constraint> getConstraints();
@@ -86,7 +86,7 @@ public interface StoryPattern extends CommentableElement {
 	 * @return the value of the '<em>Link Variable</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getStoryPattern_LinkVariable()
 	 * @see org.storydriven.storydiagrams.patterns.AbstractLinkVariable#getPattern
-	 * @model opposite="pattern" containment="true"
+	 * @model opposite="pattern" containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<AbstractLinkVariable> getLinkVariables();
@@ -132,7 +132,7 @@ public interface StoryPattern extends CommentableElement {
 	 * @return the value of the '<em>Contained Pattern</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getStoryPattern_ContainedPattern()
 	 * @see org.storydriven.storydiagrams.patterns.StoryPattern#getParentPattern
-	 * @model opposite="parentPattern" containment="true" ordered="false"
+	 * @model opposite="parentPattern" containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	EList<StoryPattern> getContainedPatterns();
@@ -180,7 +180,7 @@ public interface StoryPattern extends CommentableElement {
 	 * @see #setTemplateSignature(TemplateSignature)
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getStoryPattern_TemplateSignature()
 	 * @see org.storydriven.storydiagrams.templates.TemplateSignature#getPattern
-	 * @model opposite="pattern" containment="true" ordered="false"
+	 * @model opposite="pattern" containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	TemplateSignature getTemplateSignature();

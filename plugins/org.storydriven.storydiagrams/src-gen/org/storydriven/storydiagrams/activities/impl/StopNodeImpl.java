@@ -21,9 +21,7 @@ import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.StopNode;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Stop Node</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Stop Node</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -38,8 +36,7 @@ import org.storydriven.storydiagrams.activities.StopNode;
 public class StopNodeImpl extends ActivityNodeImpl implements StopNode {
 	/**
 	 * The default value of the '{@link #isFlowStopOnly() <em>Flow Stop Only</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isFlowStopOnly()
 	 * @generated
 	 * @ordered
@@ -48,8 +45,7 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode {
 
 	/**
 	 * The cached value of the '{@link #isFlowStopOnly() <em>Flow Stop Only</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isFlowStopOnly()
 	 * @generated
 	 * @ordered
@@ -58,8 +54,7 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode {
 
 	/**
 	 * The cached value of the '{@link #getReturnValues() <em>Return Values</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getReturnValues()
 	 * @generated
 	 * @ordered
@@ -67,8 +62,7 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode {
 	protected EList<Expression> returnValues;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected StopNodeImpl() {
@@ -76,8 +70,7 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -86,8 +79,7 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean isFlowStopOnly() {
@@ -95,31 +87,29 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setFlowStopOnly(boolean newFlowStopOnly) {
 		boolean oldFlowStopOnly = flowStopOnly;
 		flowStopOnly = newFlowStopOnly;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.STOP_NODE__FLOW_STOP_ONLY, oldFlowStopOnly, flowStopOnly));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.STOP_NODE__FLOW_STOP_ONLY,
+					oldFlowStopOnly, flowStopOnly));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Expression getReturnValue() {
 		Expression returnValue = basicGetReturnValue();
-		return returnValue != null && returnValue.eIsProxy() ? (Expression)eResolveProxy((InternalEObject)returnValue) : returnValue;
+		return returnValue != null && returnValue.eIsProxy() ? (Expression) eResolveProxy((InternalEObject) returnValue)
+				: returnValue;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 */
 	public Expression basicGetReturnValue() {
 		// return first parameter from the list if it exists
@@ -131,114 +121,110 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<Expression> getReturnValues() {
 		if (returnValues == null) {
-			returnValues = new EObjectContainmentEList<Expression>(Expression.class, this, ActivitiesPackage.STOP_NODE__RETURN_VALUES);
+			returnValues = new EObjectContainmentEList.Resolving<Expression>(Expression.class, this,
+					ActivitiesPackage.STOP_NODE__RETURN_VALUES);
 		}
 		return returnValues;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
-				return ((InternalEList<?>)getReturnValues()).basicRemove(otherEnd, msgs);
+		case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
+			return ((InternalEList<?>) getReturnValues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActivitiesPackage.STOP_NODE__FLOW_STOP_ONLY:
-				return isFlowStopOnly();
-			case ActivitiesPackage.STOP_NODE__RETURN_VALUE:
-				if (resolve) return getReturnValue();
-				return basicGetReturnValue();
-			case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
-				return getReturnValues();
+		case ActivitiesPackage.STOP_NODE__FLOW_STOP_ONLY:
+			return isFlowStopOnly();
+		case ActivitiesPackage.STOP_NODE__RETURN_VALUE:
+			if (resolve)
+				return getReturnValue();
+			return basicGetReturnValue();
+		case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
+			return getReturnValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActivitiesPackage.STOP_NODE__FLOW_STOP_ONLY:
-				setFlowStopOnly((Boolean)newValue);
-				return;
-			case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
-				getReturnValues().clear();
-				getReturnValues().addAll((Collection<? extends Expression>)newValue);
-				return;
+		case ActivitiesPackage.STOP_NODE__FLOW_STOP_ONLY:
+			setFlowStopOnly((Boolean) newValue);
+			return;
+		case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
+			getReturnValues().clear();
+			getReturnValues().addAll((Collection<? extends Expression>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActivitiesPackage.STOP_NODE__FLOW_STOP_ONLY:
-				setFlowStopOnly(FLOW_STOP_ONLY_EDEFAULT);
-				return;
-			case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
-				getReturnValues().clear();
-				return;
+		case ActivitiesPackage.STOP_NODE__FLOW_STOP_ONLY:
+			setFlowStopOnly(FLOW_STOP_ONLY_EDEFAULT);
+			return;
+		case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
+			getReturnValues().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActivitiesPackage.STOP_NODE__FLOW_STOP_ONLY:
-				return flowStopOnly != FLOW_STOP_ONLY_EDEFAULT;
-			case ActivitiesPackage.STOP_NODE__RETURN_VALUE:
-				return basicGetReturnValue() != null;
-			case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
-				return returnValues != null && !returnValues.isEmpty();
+		case ActivitiesPackage.STOP_NODE__FLOW_STOP_ONLY:
+			return flowStopOnly != FLOW_STOP_ONLY_EDEFAULT;
+		case ActivitiesPackage.STOP_NODE__RETURN_VALUE:
+			return basicGetReturnValue() != null;
+		case ActivitiesPackage.STOP_NODE__RETURN_VALUES:
+			return returnValues != null && !returnValues.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (flowStopOnly: ");
@@ -247,4 +233,4 @@ public class StopNodeImpl extends ActivityNodeImpl implements StopNode {
 		return result.toString();
 	}
 
-} //StopNodeImpl
+} // StopNodeImpl

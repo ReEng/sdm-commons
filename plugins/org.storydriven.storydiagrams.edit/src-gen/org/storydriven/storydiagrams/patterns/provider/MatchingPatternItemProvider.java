@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.patterns.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -26,14 +25,8 @@ import org.storydriven.storydiagrams.patterns.MatchingPattern;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MatchingPatternItemProvider
-	extends StoryPatternItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class MatchingPatternItemProvider extends StoryPatternItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -78,10 +71,9 @@ public class MatchingPatternItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MatchingPattern)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_MatchingPattern_type") :
-			getString("_UI_MatchingPattern_type") + " " + label;
+		String label = ((MatchingPattern) object).getComment();
+		return label == null || label.length() == 0 ? getString("_UI_MatchingPattern_type")
+				: getString("_UI_MatchingPattern_type") + " " + label;
 	}
 
 	/**

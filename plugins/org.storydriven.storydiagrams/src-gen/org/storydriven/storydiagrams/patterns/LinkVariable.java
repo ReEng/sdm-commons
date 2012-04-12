@@ -92,7 +92,7 @@ public interface LinkVariable extends AbstractLinkVariable {
 	 * @return the value of the '<em>Qualifier Expression</em>' containment reference.
 	 * @see #setQualifierExpression(Expression)
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getLinkVariable_QualifierExpression()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" resolveProxies="true" ordered="false"
 	 * @generated
 	 */
 	Expression getQualifierExpression();

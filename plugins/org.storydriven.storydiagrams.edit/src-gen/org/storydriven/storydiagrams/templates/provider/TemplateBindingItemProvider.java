@@ -6,7 +6,6 @@
  */
 package org.storydriven.storydiagrams.templates.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -41,14 +40,8 @@ import org.storydriven.storydiagrams.templates.TemplatesPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplateBindingItemProvider
-	extends ExtendableElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class TemplateBindingItemProvider extends ExtendableElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -82,19 +75,35 @@ public class TemplateBindingItemProvider
 	 * @generated
 	 */
 	protected void addBoundParameterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TemplateBinding_boundParameter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TemplateBinding_boundParameter_feature", "_UI_TemplateBinding_type"),
-				 TemplatesPackage.Literals.TEMPLATE_BINDING__BOUND_PARAMETER,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_TemplateBinding_boundParameter_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_TemplateBinding_boundParameter_feature",
+						"_UI_TemplateBinding_type"), TemplatesPackage.Literals.TEMPLATE_BINDING__BOUND_PARAMETER, true,
+				false, true, null, null, null));
+	}
+
+	/**
+	 * This returns TemplateBinding.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TemplateBinding"));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return StorydiagramsEditPlugin.INSTANCE;
 	}
 
 	/**
@@ -113,30 +122,6 @@ public class TemplateBindingItemProvider
 			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDING);
 		}
 		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns TemplateBinding.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TemplateBinding"));
 	}
 
 	/**
@@ -162,12 +147,25 @@ public class TemplateBindingItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TemplateBinding.class)) {
-			case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
-			case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
+		case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -181,96 +179,53 @@ public class TemplateBindingItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				CallsFactory.eINSTANCE.createParameterExtension()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createObjectSetSizeExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createNotExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createNotExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDING,
-				 TemplatesFactory.eINSTANCE.createPropertyBinding()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return StorydiagramsEditPlugin.INSTANCE;
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDING,
+				TemplatesFactory.eINSTANCE.createPropertyBinding()));
 	}
 
 }

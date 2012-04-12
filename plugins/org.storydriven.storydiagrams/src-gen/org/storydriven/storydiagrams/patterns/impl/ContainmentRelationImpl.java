@@ -11,9 +11,7 @@ import org.storydriven.storydiagrams.patterns.ContainmentRelation;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Containment Relation</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Containment Relation</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -21,8 +19,7 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
  */
 public class ContainmentRelationImpl extends AbstractLinkVariableImpl implements ContainmentRelation {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ContainmentRelationImpl() {
@@ -30,8 +27,7 @@ public class ContainmentRelationImpl extends AbstractLinkVariableImpl implements
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -39,4 +35,4 @@ public class ContainmentRelationImpl extends AbstractLinkVariableImpl implements
 		return PatternsPackage.Literals.CONTAINMENT_RELATION;
 	}
 
-} //ContainmentRelationImpl
+} // ContainmentRelationImpl

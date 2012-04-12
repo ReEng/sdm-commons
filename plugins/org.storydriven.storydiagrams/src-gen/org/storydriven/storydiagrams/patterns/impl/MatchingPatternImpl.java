@@ -6,18 +6,18 @@
  */
 package org.storydriven.storydiagrams.patterns.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.storydriven.storydiagrams.patterns.MatchingPattern;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 import org.storydriven.storydiagrams.patterns.util.MatchingPatternOperations;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Matching Pattern</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Matching Pattern</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -25,8 +25,7 @@ import org.storydriven.storydiagrams.patterns.util.MatchingPatternOperations;
  */
 public class MatchingPatternImpl extends StoryPatternImpl implements MatchingPattern {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected MatchingPatternImpl() {
@@ -34,8 +33,7 @@ public class MatchingPatternImpl extends StoryPatternImpl implements MatchingPat
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -44,12 +42,26 @@ public class MatchingPatternImpl extends StoryPatternImpl implements MatchingPat
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
 	 */
 	public boolean NoModifierInMatchingPattern(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return MatchingPatternOperations.NoModifierInMatchingPattern(this, diagnostics, context);
 	}
 
-} //MatchingPatternImpl
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case PatternsPackage.MATCHING_PATTERN___NO_MODIFIER_IN_MATCHING_PATTERN__DIAGNOSTICCHAIN_MAP:
+			return NoModifierInMatchingPattern((DiagnosticChain) arguments.get(0),
+					(Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+} // MatchingPatternImpl

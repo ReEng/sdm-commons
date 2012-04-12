@@ -75,28 +75,40 @@ public class CallsExpressionsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CallsExpressionsPackage.METHOD_CALL_EXPRESSION: {
-				MethodCallExpression methodCallExpression = (MethodCallExpression)theEObject;
-				T result = caseMethodCallExpression(methodCallExpression);
-				if (result == null) result = caseExpression(methodCallExpression);
-				if (result == null) result = caseInvocation(methodCallExpression);
-				if (result == null) result = caseTypedElement(methodCallExpression);
-				if (result == null) result = caseCommentableElement(methodCallExpression);
-				if (result == null) result = caseExtendableElement(methodCallExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CallsExpressionsPackage.PARAMETER_EXPRESSION: {
-				ParameterExpression parameterExpression = (ParameterExpression)theEObject;
-				T result = caseParameterExpression(parameterExpression);
-				if (result == null) result = caseExpression(parameterExpression);
-				if (result == null) result = caseTypedElement(parameterExpression);
-				if (result == null) result = caseCommentableElement(parameterExpression);
-				if (result == null) result = caseExtendableElement(parameterExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION: {
+			MethodCallExpression methodCallExpression = (MethodCallExpression) theEObject;
+			T result = caseMethodCallExpression(methodCallExpression);
+			if (result == null)
+				result = caseExpression(methodCallExpression);
+			if (result == null)
+				result = caseInvocation(methodCallExpression);
+			if (result == null)
+				result = caseTypedElement(methodCallExpression);
+			if (result == null)
+				result = caseCommentableElement(methodCallExpression);
+			if (result == null)
+				result = caseExtendableElement(methodCallExpression);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CallsExpressionsPackage.PARAMETER_EXPRESSION: {
+			ParameterExpression parameterExpression = (ParameterExpression) theEObject;
+			T result = caseParameterExpression(parameterExpression);
+			if (result == null)
+				result = caseExpression(parameterExpression);
+			if (result == null)
+				result = caseTypedElement(parameterExpression);
+			if (result == null)
+				result = caseCommentableElement(parameterExpression);
+			if (result == null)
+				result = caseExtendableElement(parameterExpression);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

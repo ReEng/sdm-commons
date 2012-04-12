@@ -9,6 +9,7 @@ package org.storydriven.storydiagrams.patterns;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
@@ -185,6 +186,186 @@ public interface PatternsPackage extends EPackage {
 	int ABSTRACT_VARIABLE_FEATURE_COUNT = StorydiagramsPackage.VARIABLE_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___ECLASS = StorydiagramsPackage.VARIABLE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___EIS_PROXY = StorydiagramsPackage.VARIABLE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___ERESOURCE = StorydiagramsPackage.VARIABLE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___ECONTAINER = StorydiagramsPackage.VARIABLE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___ECONTAINING_FEATURE = StorydiagramsPackage.VARIABLE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___ECONTAINMENT_FEATURE = StorydiagramsPackage.VARIABLE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___ECONTENTS = StorydiagramsPackage.VARIABLE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___EALL_CONTENTS = StorydiagramsPackage.VARIABLE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___ECROSS_REFERENCES = StorydiagramsPackage.VARIABLE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = StorydiagramsPackage.VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = StorydiagramsPackage.VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___EUNSET__ESTRUCTURALFEATURE = StorydiagramsPackage.VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___EINVOKE__EOPERATION_ELIST = StorydiagramsPackage.VARIABLE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___GET_EXTENSION__ECLASS = StorydiagramsPackage.VARIABLE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___PROVIDE_EXTENSION__ECLASS = StorydiagramsPackage.VARIABLE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___GET_ANNOTATION__STRING = StorydiagramsPackage.VARIABLE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE___PROVIDE_ANNOTATION__STRING = StorydiagramsPackage.VARIABLE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Abstract Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_VARIABLE_OPERATION_COUNT = StorydiagramsPackage.VARIABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.impl.ObjectVariableImpl <em>Object Variable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -357,6 +538,186 @@ public interface PatternsPackage extends EPackage {
 	int OBJECT_VARIABLE_FEATURE_COUNT = ABSTRACT_VARIABLE_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___ECLASS = ABSTRACT_VARIABLE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___EIS_PROXY = ABSTRACT_VARIABLE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___ERESOURCE = ABSTRACT_VARIABLE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___ECONTAINER = ABSTRACT_VARIABLE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___ECONTAINING_FEATURE = ABSTRACT_VARIABLE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___ECONTAINMENT_FEATURE = ABSTRACT_VARIABLE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___ECONTENTS = ABSTRACT_VARIABLE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___EALL_CONTENTS = ABSTRACT_VARIABLE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___ECROSS_REFERENCES = ABSTRACT_VARIABLE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___EGET__ESTRUCTURALFEATURE = ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = ABSTRACT_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = ABSTRACT_VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___EUNSET__ESTRUCTURALFEATURE = ABSTRACT_VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___EINVOKE__EOPERATION_ELIST = ABSTRACT_VARIABLE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___GET_EXTENSION__ECLASS = ABSTRACT_VARIABLE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___PROVIDE_EXTENSION__ECLASS = ABSTRACT_VARIABLE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___GET_ANNOTATION__STRING = ABSTRACT_VARIABLE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE___PROVIDE_ANNOTATION__STRING = ABSTRACT_VARIABLE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Object Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VARIABLE_OPERATION_COUNT = ABSTRACT_VARIABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.impl.ConstraintImpl <em>Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -401,6 +762,15 @@ public interface PatternsPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONSTRAINT_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.impl.AbstractLinkVariableImpl <em>Abstract Link Variable</em>}' class.
@@ -521,6 +891,186 @@ public interface PatternsPackage extends EPackage {
 	int ABSTRACT_LINK_VARIABLE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___ECLASS = CorePackage.NAMED_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___EIS_PROXY = CorePackage.NAMED_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___ERESOURCE = CorePackage.NAMED_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___ECONTAINER = CorePackage.NAMED_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___ECONTAINING_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___ECONTAINMENT_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___ECONTENTS = CorePackage.NAMED_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___EALL_CONTENTS = CorePackage.NAMED_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___ECROSS_REFERENCES = CorePackage.NAMED_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Abstract Link Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LINK_VARIABLE_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.impl.LinkConstraintImpl <em>Link Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -612,6 +1162,186 @@ public interface PatternsPackage extends EPackage {
 	int LINK_CONSTRAINT_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___ECLASS = CorePackage.EXTENDABLE_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___EIS_PROXY = CorePackage.EXTENDABLE_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___ERESOURCE = CorePackage.EXTENDABLE_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___ECONTAINER = CorePackage.EXTENDABLE_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___ECONTAINING_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___ECONTAINMENT_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___ECONTENTS = CorePackage.EXTENDABLE_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___EALL_CONTENTS = CorePackage.EXTENDABLE_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___ECROSS_REFERENCES = CorePackage.EXTENDABLE_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___GET_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Link Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_CONSTRAINT_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.impl.AttributeAssignmentImpl <em>Attribute Assignment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -656,6 +1386,15 @@ public interface PatternsPackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE_ASSIGNMENT_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Attribute Assignment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ASSIGNMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.impl.ObjectSetVariableImpl <em>Object Set Variable</em>}' class.
@@ -830,6 +1569,186 @@ public interface PatternsPackage extends EPackage {
 	int OBJECT_SET_VARIABLE_FEATURE_COUNT = OBJECT_VARIABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___ECLASS = OBJECT_VARIABLE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___EIS_PROXY = OBJECT_VARIABLE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___ERESOURCE = OBJECT_VARIABLE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___ECONTAINER = OBJECT_VARIABLE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___ECONTAINING_FEATURE = OBJECT_VARIABLE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___ECONTAINMENT_FEATURE = OBJECT_VARIABLE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___ECONTENTS = OBJECT_VARIABLE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___EALL_CONTENTS = OBJECT_VARIABLE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___ECROSS_REFERENCES = OBJECT_VARIABLE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___EGET__ESTRUCTURALFEATURE = OBJECT_VARIABLE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = OBJECT_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = OBJECT_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = OBJECT_VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___EUNSET__ESTRUCTURALFEATURE = OBJECT_VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___EINVOKE__EOPERATION_ELIST = OBJECT_VARIABLE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___GET_EXTENSION__ECLASS = OBJECT_VARIABLE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___PROVIDE_EXTENSION__ECLASS = OBJECT_VARIABLE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___GET_ANNOTATION__STRING = OBJECT_VARIABLE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE___PROVIDE_ANNOTATION__STRING = OBJECT_VARIABLE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Object Set Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_SET_VARIABLE_OPERATION_COUNT = OBJECT_VARIABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.impl.PrimitiveVariableImpl <em>Primitive Variable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -957,6 +1876,186 @@ public interface PatternsPackage extends EPackage {
 	int PRIMITIVE_VARIABLE_FEATURE_COUNT = ABSTRACT_VARIABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___ECLASS = ABSTRACT_VARIABLE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___EIS_PROXY = ABSTRACT_VARIABLE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___ERESOURCE = ABSTRACT_VARIABLE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___ECONTAINER = ABSTRACT_VARIABLE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___ECONTAINING_FEATURE = ABSTRACT_VARIABLE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___ECONTAINMENT_FEATURE = ABSTRACT_VARIABLE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___ECONTENTS = ABSTRACT_VARIABLE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___EALL_CONTENTS = ABSTRACT_VARIABLE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___ECROSS_REFERENCES = ABSTRACT_VARIABLE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___EGET__ESTRUCTURALFEATURE = ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ABSTRACT_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = ABSTRACT_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = ABSTRACT_VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___EUNSET__ESTRUCTURALFEATURE = ABSTRACT_VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___EINVOKE__EOPERATION_ELIST = ABSTRACT_VARIABLE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___GET_EXTENSION__ECLASS = ABSTRACT_VARIABLE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___PROVIDE_EXTENSION__ECLASS = ABSTRACT_VARIABLE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___GET_ANNOTATION__STRING = ABSTRACT_VARIABLE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE___PROVIDE_ANNOTATION__STRING = ABSTRACT_VARIABLE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Primitive Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_VARIABLE_OPERATION_COUNT = ABSTRACT_VARIABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.impl.PathImpl <em>Path</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1082,6 +2181,186 @@ public interface PatternsPackage extends EPackage {
 	 * @ordered
 	 */
 	int PATH_FEATURE_COUNT = ABSTRACT_LINK_VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___ECLASS = ABSTRACT_LINK_VARIABLE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___EIS_PROXY = ABSTRACT_LINK_VARIABLE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___ERESOURCE = ABSTRACT_LINK_VARIABLE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___ECONTAINER = ABSTRACT_LINK_VARIABLE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___ECONTAINING_FEATURE = ABSTRACT_LINK_VARIABLE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___ECONTAINMENT_FEATURE = ABSTRACT_LINK_VARIABLE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___ECONTENTS = ABSTRACT_LINK_VARIABLE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___EALL_CONTENTS = ABSTRACT_LINK_VARIABLE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___ECROSS_REFERENCES = ABSTRACT_LINK_VARIABLE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___EGET__ESTRUCTURALFEATURE = ABSTRACT_LINK_VARIABLE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___EGET__ESTRUCTURALFEATURE_BOOLEAN = ABSTRACT_LINK_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___ESET__ESTRUCTURALFEATURE_OBJECT = ABSTRACT_LINK_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___EIS_SET__ESTRUCTURALFEATURE = ABSTRACT_LINK_VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___EUNSET__ESTRUCTURALFEATURE = ABSTRACT_LINK_VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___EINVOKE__EOPERATION_ELIST = ABSTRACT_LINK_VARIABLE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___GET_EXTENSION__ECLASS = ABSTRACT_LINK_VARIABLE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___PROVIDE_EXTENSION__ECLASS = ABSTRACT_LINK_VARIABLE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___GET_ANNOTATION__STRING = ABSTRACT_LINK_VARIABLE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH___PROVIDE_ANNOTATION__STRING = ABSTRACT_LINK_VARIABLE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_OPERATION_COUNT = ABSTRACT_LINK_VARIABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.impl.LinkVariableImpl <em>Link Variable</em>}' class.
@@ -1229,6 +2508,186 @@ public interface PatternsPackage extends EPackage {
 	int LINK_VARIABLE_FEATURE_COUNT = ABSTRACT_LINK_VARIABLE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___ECLASS = ABSTRACT_LINK_VARIABLE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___EIS_PROXY = ABSTRACT_LINK_VARIABLE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___ERESOURCE = ABSTRACT_LINK_VARIABLE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___ECONTAINER = ABSTRACT_LINK_VARIABLE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___ECONTAINING_FEATURE = ABSTRACT_LINK_VARIABLE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___ECONTAINMENT_FEATURE = ABSTRACT_LINK_VARIABLE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___ECONTENTS = ABSTRACT_LINK_VARIABLE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___EALL_CONTENTS = ABSTRACT_LINK_VARIABLE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___ECROSS_REFERENCES = ABSTRACT_LINK_VARIABLE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___EGET__ESTRUCTURALFEATURE = ABSTRACT_LINK_VARIABLE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ABSTRACT_LINK_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = ABSTRACT_LINK_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = ABSTRACT_LINK_VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___EUNSET__ESTRUCTURALFEATURE = ABSTRACT_LINK_VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___EINVOKE__EOPERATION_ELIST = ABSTRACT_LINK_VARIABLE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___GET_EXTENSION__ECLASS = ABSTRACT_LINK_VARIABLE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___PROVIDE_EXTENSION__ECLASS = ABSTRACT_LINK_VARIABLE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___GET_ANNOTATION__STRING = ABSTRACT_LINK_VARIABLE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE___PROVIDE_ANNOTATION__STRING = ABSTRACT_LINK_VARIABLE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Link Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_VARIABLE_OPERATION_COUNT = ABSTRACT_LINK_VARIABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.impl.ContainmentRelationImpl <em>Containment Relation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1347,6 +2806,186 @@ public interface PatternsPackage extends EPackage {
 	int CONTAINMENT_RELATION_FEATURE_COUNT = ABSTRACT_LINK_VARIABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___ECLASS = ABSTRACT_LINK_VARIABLE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___EIS_PROXY = ABSTRACT_LINK_VARIABLE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___ERESOURCE = ABSTRACT_LINK_VARIABLE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___ECONTAINER = ABSTRACT_LINK_VARIABLE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___ECONTAINING_FEATURE = ABSTRACT_LINK_VARIABLE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___ECONTAINMENT_FEATURE = ABSTRACT_LINK_VARIABLE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___ECONTENTS = ABSTRACT_LINK_VARIABLE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___EALL_CONTENTS = ABSTRACT_LINK_VARIABLE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___ECROSS_REFERENCES = ABSTRACT_LINK_VARIABLE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___EGET__ESTRUCTURALFEATURE = ABSTRACT_LINK_VARIABLE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ABSTRACT_LINK_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___ESET__ESTRUCTURALFEATURE_OBJECT = ABSTRACT_LINK_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___EIS_SET__ESTRUCTURALFEATURE = ABSTRACT_LINK_VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___EUNSET__ESTRUCTURALFEATURE = ABSTRACT_LINK_VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___EINVOKE__EOPERATION_ELIST = ABSTRACT_LINK_VARIABLE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___GET_EXTENSION__ECLASS = ABSTRACT_LINK_VARIABLE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___PROVIDE_EXTENSION__ECLASS = ABSTRACT_LINK_VARIABLE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___GET_ANNOTATION__STRING = ABSTRACT_LINK_VARIABLE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION___PROVIDE_ANNOTATION__STRING = ABSTRACT_LINK_VARIABLE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Containment Relation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT_RELATION_OPERATION_COUNT = ABSTRACT_LINK_VARIABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.impl.StoryPatternImpl <em>Story Pattern</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1456,6 +3095,186 @@ public interface PatternsPackage extends EPackage {
 	int STORY_PATTERN_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___ECLASS = CorePackage.COMMENTABLE_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___EIS_PROXY = CorePackage.COMMENTABLE_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___ERESOURCE = CorePackage.COMMENTABLE_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___ECONTAINER = CorePackage.COMMENTABLE_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___ECONTAINING_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___ECONTAINMENT_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___ECONTENTS = CorePackage.COMMENTABLE_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___EALL_CONTENTS = CorePackage.COMMENTABLE_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___ECROSS_REFERENCES = CorePackage.COMMENTABLE_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Story Pattern</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY_PATTERN_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.impl.MatchingPatternImpl <em>Matching Pattern</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1563,6 +3382,195 @@ public interface PatternsPackage extends EPackage {
 	 * @ordered
 	 */
 	int MATCHING_PATTERN_FEATURE_COUNT = STORY_PATTERN_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___ECLASS = STORY_PATTERN___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___EIS_PROXY = STORY_PATTERN___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___ERESOURCE = STORY_PATTERN___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___ECONTAINER = STORY_PATTERN___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___ECONTAINING_FEATURE = STORY_PATTERN___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___ECONTAINMENT_FEATURE = STORY_PATTERN___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___ECONTENTS = STORY_PATTERN___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___EALL_CONTENTS = STORY_PATTERN___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___ECROSS_REFERENCES = STORY_PATTERN___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___EGET__ESTRUCTURALFEATURE = STORY_PATTERN___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___EGET__ESTRUCTURALFEATURE_BOOLEAN = STORY_PATTERN___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___ESET__ESTRUCTURALFEATURE_OBJECT = STORY_PATTERN___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___EIS_SET__ESTRUCTURALFEATURE = STORY_PATTERN___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___EUNSET__ESTRUCTURALFEATURE = STORY_PATTERN___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___EINVOKE__EOPERATION_ELIST = STORY_PATTERN___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___GET_EXTENSION__ECLASS = STORY_PATTERN___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___PROVIDE_EXTENSION__ECLASS = STORY_PATTERN___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___GET_ANNOTATION__STRING = STORY_PATTERN___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___PROVIDE_ANNOTATION__STRING = STORY_PATTERN___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>No Modifier In Matching Pattern</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN___NO_MODIFIER_IN_MATCHING_PATTERN__DIAGNOSTICCHAIN_MAP = STORY_PATTERN_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Matching Pattern</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHING_PATTERN_OPERATION_COUNT = STORY_PATTERN_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.impl.ContainerVariableImpl <em>Container Variable</em>}' class.
@@ -1737,6 +3745,186 @@ public interface PatternsPackage extends EPackage {
 	int CONTAINER_VARIABLE_FEATURE_COUNT = OBJECT_VARIABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___ECLASS = OBJECT_VARIABLE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___EIS_PROXY = OBJECT_VARIABLE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___ERESOURCE = OBJECT_VARIABLE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___ECONTAINER = OBJECT_VARIABLE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___ECONTAINING_FEATURE = OBJECT_VARIABLE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___ECONTAINMENT_FEATURE = OBJECT_VARIABLE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___ECONTENTS = OBJECT_VARIABLE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___EALL_CONTENTS = OBJECT_VARIABLE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___ECROSS_REFERENCES = OBJECT_VARIABLE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___EGET__ESTRUCTURALFEATURE = OBJECT_VARIABLE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN = OBJECT_VARIABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT = OBJECT_VARIABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___EIS_SET__ESTRUCTURALFEATURE = OBJECT_VARIABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___EUNSET__ESTRUCTURALFEATURE = OBJECT_VARIABLE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___EINVOKE__EOPERATION_ELIST = OBJECT_VARIABLE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___GET_EXTENSION__ECLASS = OBJECT_VARIABLE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___PROVIDE_EXTENSION__ECLASS = OBJECT_VARIABLE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___GET_ANNOTATION__STRING = OBJECT_VARIABLE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE___PROVIDE_ANNOTATION__STRING = OBJECT_VARIABLE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Container Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_VARIABLE_OPERATION_COUNT = OBJECT_VARIABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.BindingState <em>Binding State</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1775,7 +3963,6 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 */
 	int LINK_CONSTRAINT_TYPE = 17;
-
 
 	/**
 	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.patterns.ObjectVariable <em>Object Variable</em>}'.
@@ -2294,6 +4481,16 @@ public interface PatternsPackage extends EPackage {
 	EClass getMatchingPattern();
 
 	/**
+	 * Returns the meta object for the '{@link org.storydriven.storydiagrams.patterns.MatchingPattern#NoModifierInMatchingPattern(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>No Modifier In Matching Pattern</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>No Modifier In Matching Pattern</em>' operation.
+	 * @see org.storydriven.storydiagrams.patterns.MatchingPattern#NoModifierInMatchingPattern(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getMatchingPattern__NoModifierInMatchingPattern__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.patterns.ContainerVariable <em>Container Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2634,7 +4831,8 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT = eINSTANCE.getAbstractLinkVariable_SecondLinkConstraint();
+		EReference ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT = eINSTANCE
+				.getAbstractLinkVariable_SecondLinkConstraint();
 
 		/**
 		 * The meta object literal for the '<em><b>First Link Constraint</b></em>' reference list feature.
@@ -2642,7 +4840,8 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT = eINSTANCE.getAbstractLinkVariable_FirstLinkConstraint();
+		EReference ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT = eINSTANCE
+				.getAbstractLinkVariable_FirstLinkConstraint();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding State</b></em>' attribute feature.
@@ -2859,6 +5058,15 @@ public interface PatternsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MATCHING_PATTERN = eINSTANCE.getMatchingPattern();
+
+		/**
+		 * The meta object literal for the '<em><b>No Modifier In Matching Pattern</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MATCHING_PATTERN___NO_MODIFIER_IN_MATCHING_PATTERN__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getMatchingPattern__NoModifierInMatchingPattern__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.impl.ContainerVariableImpl <em>Container Variable</em>}' class.

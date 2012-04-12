@@ -30,12 +30,12 @@ public class ActivitiesExpressionsFactoryImpl extends EFactoryImpl implements Ac
 	 */
 	public static ActivitiesExpressionsFactory init() {
 		try {
-			ActivitiesExpressionsFactory theActivitiesExpressionsFactory = (ActivitiesExpressionsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/storydiagrams/activities/expressions/0.2.0"); 
+			ActivitiesExpressionsFactory theActivitiesExpressionsFactory = (ActivitiesExpressionsFactory) EPackage.Registry.INSTANCE
+					.getEFactory("http://www.storydriven.org/storydiagrams/activities/expressions/0.2.0");
 			if (theActivitiesExpressionsFactory != null) {
 				return theActivitiesExpressionsFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ActivitiesExpressionsFactoryImpl();
@@ -59,9 +59,10 @@ public class ActivitiesExpressionsFactoryImpl extends EFactoryImpl implements Ac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION: return createExceptionVariableExpression();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION:
+			return createExceptionVariableExpression();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -81,7 +82,7 @@ public class ActivitiesExpressionsFactoryImpl extends EFactoryImpl implements Ac
 	 * @generated
 	 */
 	public ActivitiesExpressionsPackage getActivitiesExpressionsPackage() {
-		return (ActivitiesExpressionsPackage)getEPackage();
+		return (ActivitiesExpressionsPackage) getEPackage();
 	}
 
 	/**

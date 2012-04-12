@@ -66,7 +66,7 @@ public interface ObjectVariable extends AbstractVariable {
 	 * @return the value of the '<em>Link Order Constraint</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getObjectVariable_LinkOrderConstraint()
 	 * @see org.storydriven.storydiagrams.patterns.LinkConstraint#getReferencingObject
-	 * @model opposite="referencingObject" containment="true"
+	 * @model opposite="referencingObject" containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<LinkConstraint> getLinkOrderConstraints();
@@ -142,13 +142,19 @@ public interface ObjectVariable extends AbstractVariable {
 	 * @return the value of the '<em>Attribute Assignment</em>' containment reference list.
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getObjectVariable_AttributeAssignment()
 	 * @see org.storydriven.storydiagrams.patterns.AttributeAssignment#getObjectVariable
-	 * @model opposite="objectVariable" containment="true"
+	 * @model opposite="objectVariable" containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<AttributeAssignment> getAttributeAssignments();
 
 	/**
 	 * Returns the value of the '<em><b>Classifier</b></em>' reference.
+	 * <p>
+	 * This feature subsets the following features:
+	 * <ul>
+	 *   <li>'{@link org.storydriven.core.TypedElement#getType() <em>Type</em>}'</li>
+	 * </ul>
+	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

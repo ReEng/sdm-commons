@@ -78,50 +78,69 @@ public class CallsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CallsPackage.INVOCATION: {
-				Invocation invocation = (Invocation)theEObject;
-				T result = caseInvocation(invocation);
-				if (result == null) result = caseCommentableElement(invocation);
-				if (result == null) result = caseExtendableElement(invocation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CallsPackage.PARAMETER_BINDING: {
-				ParameterBinding parameterBinding = (ParameterBinding)theEObject;
-				T result = caseParameterBinding(parameterBinding);
-				if (result == null) result = caseCommentableElement(parameterBinding);
-				if (result == null) result = caseExtendableElement(parameterBinding);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CallsPackage.OPAQUE_CALLABLE: {
-				OpaqueCallable opaqueCallable = (OpaqueCallable)theEObject;
-				T result = caseOpaqueCallable(opaqueCallable);
-				if (result == null) result = caseCallable(opaqueCallable);
-				if (result == null) result = caseCommentableElement(opaqueCallable);
-				if (result == null) result = caseExtendableElement(opaqueCallable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CallsPackage.PARAMETER_EXTENSION: {
-				ParameterExtension parameterExtension = (ParameterExtension)theEObject;
-				T result = caseParameterExtension(parameterExtension);
-				if (result == null) result = caseExtension(parameterExtension);
-				if (result == null) result = caseVariable(parameterExtension);
-				if (result == null) result = caseTypedElement(parameterExtension);
-				if (result == null) result = caseExtendableElement(parameterExtension);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CallsPackage.CALLABLE: {
-				Callable callable = (Callable)theEObject;
-				T result = caseCallable(callable);
-				if (result == null) result = caseCommentableElement(callable);
-				if (result == null) result = caseExtendableElement(callable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case CallsPackage.INVOCATION: {
+			Invocation invocation = (Invocation) theEObject;
+			T result = caseInvocation(invocation);
+			if (result == null)
+				result = caseCommentableElement(invocation);
+			if (result == null)
+				result = caseExtendableElement(invocation);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CallsPackage.PARAMETER_BINDING: {
+			ParameterBinding parameterBinding = (ParameterBinding) theEObject;
+			T result = caseParameterBinding(parameterBinding);
+			if (result == null)
+				result = caseCommentableElement(parameterBinding);
+			if (result == null)
+				result = caseExtendableElement(parameterBinding);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CallsPackage.OPAQUE_CALLABLE: {
+			OpaqueCallable opaqueCallable = (OpaqueCallable) theEObject;
+			T result = caseOpaqueCallable(opaqueCallable);
+			if (result == null)
+				result = caseCallable(opaqueCallable);
+			if (result == null)
+				result = caseCommentableElement(opaqueCallable);
+			if (result == null)
+				result = caseExtendableElement(opaqueCallable);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CallsPackage.PARAMETER_EXTENSION: {
+			ParameterExtension parameterExtension = (ParameterExtension) theEObject;
+			T result = caseParameterExtension(parameterExtension);
+			if (result == null)
+				result = caseVariable(parameterExtension);
+			if (result == null)
+				result = caseExtension(parameterExtension);
+			if (result == null)
+				result = caseTypedElement(parameterExtension);
+			if (result == null)
+				result = caseExtendableElement(parameterExtension);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CallsPackage.CALLABLE: {
+			Callable callable = (Callable) theEObject;
+			T result = caseCallable(callable);
+			if (result == null)
+				result = caseCommentableElement(callable);
+			if (result == null)
+				result = caseExtendableElement(callable);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

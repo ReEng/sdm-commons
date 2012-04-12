@@ -11,9 +11,7 @@ import org.storydriven.storydiagrams.patterns.ObjectSetVariable;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Object Set Variable</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Object Set Variable</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -21,8 +19,7 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
  */
 public class ObjectSetVariableImpl extends ObjectVariableImpl implements ObjectSetVariable {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ObjectSetVariableImpl() {
@@ -30,8 +27,7 @@ public class ObjectSetVariableImpl extends ObjectVariableImpl implements ObjectS
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -39,4 +35,4 @@ public class ObjectSetVariableImpl extends ObjectVariableImpl implements ObjectS
 		return PatternsPackage.Literals.OBJECT_SET_VARIABLE;
 	}
 
-} //ObjectSetVariableImpl
+} // ObjectSetVariableImpl

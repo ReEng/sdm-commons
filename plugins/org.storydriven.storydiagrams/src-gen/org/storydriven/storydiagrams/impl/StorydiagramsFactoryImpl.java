@@ -29,12 +29,12 @@ public class StorydiagramsFactoryImpl extends EFactoryImpl implements Storydiagr
 	 */
 	public static StorydiagramsFactory init() {
 		try {
-			StorydiagramsFactory theStorydiagramsFactory = (StorydiagramsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.storydriven.org/storydiagrams/0.2.0"); 
+			StorydiagramsFactory theStorydiagramsFactory = (StorydiagramsFactory) EPackage.Registry.INSTANCE
+					.getEFactory("http://www.storydriven.org/storydiagrams/0.2.0");
 			if (theStorydiagramsFactory != null) {
 				return theStorydiagramsFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new StorydiagramsFactoryImpl();
@@ -58,8 +58,8 @@ public class StorydiagramsFactoryImpl extends EFactoryImpl implements Storydiagr
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -69,7 +69,7 @@ public class StorydiagramsFactoryImpl extends EFactoryImpl implements Storydiagr
 	 * @generated
 	 */
 	public StorydiagramsPackage getStorydiagramsPackage() {
-		return (StorydiagramsPackage)getEPackage();
+		return (StorydiagramsPackage) getEPackage();
 	}
 
 	/**

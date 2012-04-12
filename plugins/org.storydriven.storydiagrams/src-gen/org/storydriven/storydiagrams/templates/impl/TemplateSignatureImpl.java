@@ -27,9 +27,7 @@ import org.storydriven.storydiagrams.templates.TemplateSignature;
 import org.storydriven.storydiagrams.templates.TemplatesPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Template Signature</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Template Signature</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -44,8 +42,7 @@ import org.storydriven.storydiagrams.templates.TemplatesPackage;
 public class TemplateSignatureImpl extends EObjectImpl implements TemplateSignature {
 	/**
 	 * The cached value of the '{@link #getTemplateBindings() <em>Template Binding</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTemplateBindings()
 	 * @generated
 	 * @ordered
@@ -54,8 +51,7 @@ public class TemplateSignatureImpl extends EObjectImpl implements TemplateSignat
 
 	/**
 	 * The cached value of the '{@link #getTypeParameters() <em>Type Parameter</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTypeParameters()
 	 * @generated
 	 * @ordered
@@ -63,8 +59,7 @@ public class TemplateSignatureImpl extends EObjectImpl implements TemplateSignat
 	protected EList<EClassifier> typeParameters;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected TemplateSignatureImpl() {
@@ -72,8 +67,7 @@ public class TemplateSignatureImpl extends EObjectImpl implements TemplateSignat
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -82,200 +76,208 @@ public class TemplateSignatureImpl extends EObjectImpl implements TemplateSignat
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<TemplateBinding> getTemplateBindings() {
-		if (templateBindings == null) {
-			templateBindings = new EObjectContainmentWithInverseEList<TemplateBinding>(TemplateBinding.class, this, TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING, TemplatesPackage.TEMPLATE_BINDING__TEMPLATE);
-		}
-		return templateBindings;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<EClassifier> getTypeParameters() {
 		if (typeParameters == null) {
-			typeParameters = new EObjectContainmentEList<EClassifier>(EClassifier.class, this, TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER);
+			typeParameters = new EObjectContainmentEList.Resolving<EClassifier>(EClassifier.class, this,
+					TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER);
 		}
 		return typeParameters;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StoryPattern getPattern() {
-		if (eContainerFeatureID() != TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN) return null;
-		return (StoryPattern)eContainer();
+	public EList<TemplateBinding> getTemplateBindings() {
+		if (templateBindings == null) {
+			templateBindings = new EObjectContainmentWithInverseEList.Resolving<TemplateBinding>(TemplateBinding.class,
+					this, TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING,
+					TemplatesPackage.TEMPLATE_BINDING__TEMPLATE);
+		}
+		return templateBindings;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StoryPattern getPattern() {
+		if (eContainerFeatureID() != TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN)
+			return null;
+		return (StoryPattern) eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StoryPattern basicGetPattern() {
+		if (eContainerFeatureID() != TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN)
+			return null;
+		return (StoryPattern) eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetPattern(StoryPattern newPattern, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newPattern, TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newPattern, TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN, msgs);
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setPattern(StoryPattern newPattern) {
-		if (newPattern != eInternalContainer() || (eContainerFeatureID() != TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN && newPattern != null)) {
+		if (newPattern != eInternalContainer()
+				|| (eContainerFeatureID() != TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN && newPattern != null)) {
 			if (EcoreUtil.isAncestor(this, newPattern))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPattern != null)
-				msgs = ((InternalEObject)newPattern).eInverseAdd(this, PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE, StoryPattern.class, msgs);
+				msgs = ((InternalEObject) newPattern).eInverseAdd(this,
+						PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE, StoryPattern.class, msgs);
 			msgs = basicSetPattern(newPattern, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN, newPattern, newPattern));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN,
+					newPattern, newPattern));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTemplateBindings()).basicAdd(otherEnd, msgs);
-			case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetPattern((StoryPattern)otherEnd, msgs);
+		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTemplateBindings()).basicAdd(otherEnd, msgs);
+		case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetPattern((StoryPattern) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-				return ((InternalEList<?>)getTemplateBindings()).basicRemove(otherEnd, msgs);
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
-				return ((InternalEList<?>)getTypeParameters()).basicRemove(otherEnd, msgs);
-			case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
-				return basicSetPattern(null, msgs);
+		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
+			return ((InternalEList<?>) getTemplateBindings()).basicRemove(otherEnd, msgs);
+		case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
+			return ((InternalEList<?>) getTypeParameters()).basicRemove(otherEnd, msgs);
+		case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
+			return basicSetPattern(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
-				return eInternalContainer().eInverseRemove(this, PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE, StoryPattern.class, msgs);
+		case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
+			return eInternalContainer().eInverseRemove(this, PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE,
+					StoryPattern.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-				return getTemplateBindings();
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
-				return getTypeParameters();
-			case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
+		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
+			return getTemplateBindings();
+		case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
+			return getTypeParameters();
+		case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
+			if (resolve)
 				return getPattern();
+			return basicGetPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-				getTemplateBindings().clear();
-				getTemplateBindings().addAll((Collection<? extends TemplateBinding>)newValue);
-				return;
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
-				getTypeParameters().clear();
-				getTypeParameters().addAll((Collection<? extends EClassifier>)newValue);
-				return;
-			case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
-				setPattern((StoryPattern)newValue);
-				return;
+		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
+			getTemplateBindings().clear();
+			getTemplateBindings().addAll((Collection<? extends TemplateBinding>) newValue);
+			return;
+		case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
+			getTypeParameters().clear();
+			getTypeParameters().addAll((Collection<? extends EClassifier>) newValue);
+			return;
+		case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
+			setPattern((StoryPattern) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-				getTemplateBindings().clear();
-				return;
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
-				getTypeParameters().clear();
-				return;
-			case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
-				setPattern((StoryPattern)null);
-				return;
+		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
+			getTemplateBindings().clear();
+			return;
+		case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
+			getTypeParameters().clear();
+			return;
+		case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
+			setPattern((StoryPattern) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
-				return templateBindings != null && !templateBindings.isEmpty();
-			case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
-				return typeParameters != null && !typeParameters.isEmpty();
-			case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
-				return getPattern() != null;
+		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
+			return templateBindings != null && !templateBindings.isEmpty();
+		case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
+			return typeParameters != null && !typeParameters.isEmpty();
+		case TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN:
+			return basicGetPattern() != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //TemplateSignatureImpl
+} // TemplateSignatureImpl
