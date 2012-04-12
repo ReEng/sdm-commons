@@ -454,11 +454,12 @@ A maybe constraint could allow to match the same objects to both sets.}
 
 
 
-\ext  %--- Comment this line to include special link kinds into the document
-{
+
 \subsection{Special Link Kinds [CH]}
 \label{sec:StoryPatterns:specialLinks}
 
+\ext %--- Comment this line to include paths into the document
+{ 
 \subsubsection{Inclusion Links [CH]}
 \label{sec:StoryPatterns:specialLinks:inclusion}
 
@@ -467,12 +468,20 @@ A maybe constraint could allow to match the same objects to both sets.}
 
 \todoch{Which classifiers are allowed for ContainerVariables? This should not only be the EMF collection types EList and EMap. Does a ContainmentLink need a reference as a type like normal LinkVariables?}
 \tododt{The contaiment links do not need any reference. I would suggest to allow any subtype of java.util.Collection (and java.util.List in case that link order constraints are used), but not java.util.Map! This is something different and needs a key for containment. Maybe we need special containment links for maps that include a key.}
+} %--- End of inclusion links subsection
 
+\ext %--- Comment this line to include paths into the document
+{ 
 \subsubsection{Paths [MCP]}
 \label{sec:StoryPatterns:specialLinks:paths}
+} %--- End of paths subsection
 
+%\ext %--- Comment this line to include link constraints into the
+{  document
 \subsubsection{Link Constraints [CH]}
 \label{sec:StoryPatterns:specialLinks:linkConstraints}
+
+Link constraints specify constraints on the absolute position of an element in an ordered reference (\emph{link position constraints}) and the position of an element relative to another element (\emph{link order constraints}). These constraints are only applicable to link variables that are typed by ordered multi-valued references. All other kinds of links cannot be adorned with link constraints.
 
 \todoch{What is the concrete Syntax for this?}
 
@@ -485,9 +494,6 @@ A maybe constraint could allow to match the same objects to both sets.}
   \label{fig:linkConstraints}
 \end{figure}
 
-Link constraints are only applicable to link variables that reference an ordered to-many reference.
-\todoch{No link constraints for inclusion links.}
-
 \begin{itemize}
   \item FIRST = matches the first element in the list, requires one link variable
   \item LAST = matches the last element in the list, requires one link variable
@@ -497,41 +503,51 @@ Link constraints are only applicable to link variables that reference an ordered
   \item SUCCESSOR = requires two link variables, target of the second one must be located somewhere after the target of the first one in the list
 \end{itemize}
 
-\todojr{We will separate link constraints for single links and those for two links and their order. Stephan will make a suggestion.}
-
-\todoch{Is this semantic description correct/complete?}
-
-\todoall{Stephan: Following is my suggestion for link constraints.}
-
-Link constraints specify constraints on the absolute position of an element in an ordered reference and the position of an element relative to another element. These constraints are only applicable to \emph{LinkVariables} that refer to ordered multi-valued references. Other kinds of links cannot be adorned with link constraints.
 
 \paragraph{Link Position Constraints}
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
 \center
-\includegraphics[width=0.75\columnwidth]{figures/linkPositionConstraint1.png}
+\includegraphics[width=0.75\columnwidth]{figures/LinkPositionConstraintFirst}
 \caption{A \emph{first} link position constraint}
 \label{fig:linkPositionConstraints:linkPositionConstraint1}
 \end{figure}
 
 A link position constraint specifies that the target object of the constrained link has to be the \emph{first} or the \emph{last} element in that reference. For example, in a valid match of the story pattern in Fig.~\ref{fig:linkPositionConstraints:linkPositionConstraint1}, the object matched to \emph{bx} must be also be the first element in the \emph{elements} reference of the object matched to \emph{a}. Link position constraints support only these two positions: \emph{First} and \emph{last}. If a story pattern contains multiple links that refer to the same metamodel reference and have the same source variable, only one of them may have a \emph{first} (or \emph{last}) constraint.
 
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkPositionConstraintLast}
+\caption{A \emph{last} link position constraint}
+\label{fig:linkPositionConstraints:linkPositionConstraint3}
+\end{figure}
+
 When link position constraints are attached to links with \destroy stereotypes, the semantics are identical, even if they are optional. For links with \create stereotype, the link's target element is inserted at the specified position. For optionally created links, the semantics is somewhat different. If the link does not yet exist, it is created. The target element is inserted at the specified position in the reference. If the link does exist but the element is not at the specified position, it is moved.
 
 \todoall{Alternatives: 1. Ignore link position constraints on optional-create links, 2. add target element a second time. For unique references, this has the same effect like moving the element, in case of non-unique references, the element exists twice (or more times) in the list, afterwards.}
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
 \center
-\includegraphics[width=0.75\columnwidth]{figures/linkPositionConstraint2.png}
+\includegraphics[width=0.75\columnwidth]{figures/LinkPositionConstraintNegated}
 \caption{A negative link position constraint}
 \label{fig:linkPositionConstraints:linkPositionConstraint2}
 \end{figure}
 
 A combination with negative links is also straight-forward. In a valid match of the pattern shown in Fig.~\ref{fig:linkPositionConstraints:linkPositionConstraint2}, the match of \emph{bx} must \emph{not} be the first element in the \emph{elements} reference.
 
+The link position constraint in Figure~\ref{fig:linkPositionConstraints:linkPositionConstraint4} creates a new parameter at the last position.
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkPositionConstraintCreate}
+\caption{Link creation and link position constraints}
+\label{fig:linkPositionConstraints:linkPositionConstraint4}
+\end{figure}
+
 \paragraph{Link Order Constraints}
 
-\begin{figure}
+\begin{figure}[htbp]
 \center
 \includegraphics[width=0.4\columnwidth]{figures/linkOrderConstraint1.png}
 \caption{A link order constraint specifies a relative order between two links.}
@@ -548,7 +564,7 @@ It is also possible to have only one of the two related links be destroyed or cr
 
 Link order constraints may not form circles or unsatisfiable story patterns (e.g., where a link is the successor of another but also has a \emph{\{first\}} link position constraint).
 
-\begin{figure}
+\begin{figure}[htbp]
 \center
 \includegraphics[width=0.4\columnwidth]{figures/linkOrderConstraint2.png}
 \caption{A link order constraint with a negative link.}
@@ -557,7 +573,7 @@ Link order constraints may not form circles or unsatisfiable story patterns (e.g
 
 Link order constraints can also be combined with negative link. However, only one of both links may be marked as negative. Otherwise, there would be nothing to relate to. For example, in the story pattern in Fig.~\ref{fig:linkOrderConstraints:linkOrderConstaint2}, \emph{b2} may not be the direct successor of \emph{b1}.
 
-\begin{figure}
+\begin{figure}[htbp]
 \center
 \includegraphics[width=0.6\columnwidth]{figures/linkOrderConstraint3.png}
 \caption{Two link order constraints with a negative link.}
@@ -569,11 +585,12 @@ If there are multiple link order constraints, like in Fig.~\ref{fig:linkOrderCon
 \todoall{This should match the semantics of multiple NACs in a story pattern.}
 
 For optionally created and destroyed links, the same applies to link order constraints like to link position constraints. Optionally destroyed link can be used straight-forwardly. An optionally created link is created if it does not exist, so that the specified order is enforced. If the link does exist but the element is not at an appropriate position, it is moved.
+} %--- End of link constraint subsection
 
 \subsubsection{Maybe Links}
 \label{sec:StoryPatterns:specialLinks:maybeLink}
 
-Story pattern are matched by using isomorphic matchings. That means that two object variables in a story pattern may not be matched to the same object of the instance model. A matching which matches two object variables to the same object is, thus, considered to be invalid. In some situations, however, such matchings should be explicitly allowed. Then, the isomorphic matching must be disabled. This may be achieved by connecting the object variables with a maybe link. Figure \ref{fig:maybeLink} shows the concrete syntax of maybe links. 
+Story patterns are matched by using isomorphic matchings. That means that two object variables in a story pattern may not be matched to the same object of the instance model. A matching which matches two object variables to the same object is, thus, considered to be invalid. In some situations, however, such matchings should be explicitly allowed. Then, the isomorphic matching must be disabled. This may be achieved by connecting the object variables with a maybe link. Figure \ref{fig:maybeLink} shows the concrete syntax of maybe links. 
 
 \begin{figure}[htbp]
   \centering
@@ -583,7 +600,7 @@ Story pattern are matched by using isomorphic matchings. That means that two obj
 \end{figure}
 
 If two object variables are connected by a maybe link, they both must be mandatory or optional. In addition, a maybe link requires the object variables to be matched or destroyed, but not created.  
-} %--- End of special link kinds section
+
 
 
 
