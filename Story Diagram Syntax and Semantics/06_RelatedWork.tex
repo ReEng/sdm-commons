@@ -45,6 +45,8 @@ In contrast to executing generated Java code, with this approach generated story
 This allows, for instance, to create higher-order transformations where story diagrams are created by other story diagrams and can immediately be executed.
 As interpreting in general is slower than compiling, the authors implemented a new dynamic matching policy for their interpreter.
 
+\todoall{Rewrite the following paragraphs with respect to the concepts presented in v0.2.}
+
 Tichy, Meyer and Giese \cite{TMG06} identified some semantic issues in story diagrams.
 First, when creating more than one element in a story pattern, the order of creation is undefined.
 In general, this is no problem; however, in certain failure situations and when creating links in ordered associations, this may lead to non-deterministic behavior.
