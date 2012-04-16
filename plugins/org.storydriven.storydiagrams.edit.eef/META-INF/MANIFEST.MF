@@ -5,6 +5,6 @@ Bundle-SymbolicName: org.storydriven.storydiagrams.edit.eef;singleton:=true
 Bundle-Version: 0.2.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.storydiagrams.edit,
- org.eclipse.emf.eef.runtime;bundle-version="1.0.2"
+ org.eclipse.emf.eef.runtime;bundle-version="1.0.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
