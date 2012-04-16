@@ -18,5 +18,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.core.edit;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.200",
- org.eclipse.emf.eef.runtime;bundle-version="1.0.2"
+ org.eclipse.emf.eef.runtime;bundle-version="1.0.1"
 Bundle-ActivationPolicy: lazy
