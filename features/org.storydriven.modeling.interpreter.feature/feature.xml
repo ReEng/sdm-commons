@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.storydriven.modeling.interpreter.feature"
+      id="org.storydriven.storydiagrams.interpreter.feature"
       label="Storydriven Interpreter"
       version="1.0.0.qualifier"
       provider-name="storydriven.org">
@@ -11,11 +11,18 @@
 
    <requires>
       <import feature="de.mdelab.sdm.interpreter.common.feature" version="1.0.0.qualifier"/>
-      <import feature="org.storydriven.modeling.model.feature" version="1.0.0.qualifier"/>
+      <import feature="org.storydriven.storydiagrams.feature" version="1.0.0.qualifier"/>
    </requires>
 
    <plugin
-         id="org.storydriven.modeling.interpreter.adapter"
+         id="org.storydriven.storydiagrams.interpreter"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.storydiagrams.interpreter.eclipse"
          download-size="0"
          install-size="0"
          version="0.0.0"

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.storydriven.modeling.editor.feature_1.0.0.201202211747.jar" id="org.storydriven.modeling.editor.feature" version="1.0.0.201202211747"/>
-   <feature url="features/org.storydriven.modeling.interpreter.feature_1.0.0.201202211747.jar" id="org.storydriven.modeling.interpreter.feature" version="1.0.0.201202211747"/>
-   <feature url="features/org.storydriven.modeling.model.feature_1.0.0.201202211747.jar" id="org.storydriven.modeling.model.feature" version="1.0.0.201202211747"/>
+   <feature url="features/org.storydriven.core.feature_1.0.0.qualifier.jar" id="org.storydriven.core.feature" version="1.0.0.qualifier"/>
+   <feature url="features/org.storydriven.storydiagrams.editor.feature_1.0.0.qualifier.jar" id="org.storydriven.storydiagrams.editor.feature" version="1.0.0.qualifier"/>
+   <feature url="features/org.storydriven.storydiagrams.feature_1.0.0.qualifier.jar" id="org.storydriven.storydiagrams.feature" version="1.0.0.qualifier"/>
+   <feature url="features/org.storydriven.storydiagrams.interpreter.feature_1.0.0.qualifier.jar" id="org.storydriven.storydiagrams.interpreter.feature" version="1.0.0.qualifier"/>
 </site>

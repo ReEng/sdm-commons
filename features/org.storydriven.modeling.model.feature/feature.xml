@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.storydriven.modeling.model.feature"
-      label="Storydriven Model"
+      id="org.storydriven.storydiagrams.feature"
+      label="Storydriven Storydiagrams"
       version="1.0.0.qualifier"
       provider-name="storydriven.org">
 
@@ -10,9 +10,6 @@
    </license>
 
    <requires>
-      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="compatible"/>
-      <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="compatible"/>
-      <import plugin="org.eclipse.uml2.codegen.ecore" version="1.6.0" match="compatible"/>
       <import plugin="org.antlr.runtime" version="3.2.0" match="compatible"/>
       <import plugin="org.eclipse.xtext" version="2.0.0" match="compatible"/>
       <import plugin="org.eclipse.xtext.util" version="2.0.0" match="compatible"/>
@@ -21,48 +18,53 @@
       <import plugin="org.eclipse.xtext.ui" version="2.0.0" match="compatible"/>
       <import plugin="org.eclipse.xtext.ui.shared" version="2.0.0" match="compatible"/>
       <import plugin="org.apache.log4j"/>
-      <import plugin="org.eclipse.ocl" version="3.0.0" match="compatible"/>
-      <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="compatible"/>
-      <import plugin="org.eclipse.uml2.common.edit" version="1.5.0" match="compatible"/>
+      <import feature="org.storydriven.core.feature" version="1.0.0.qualifier"/>
    </requires>
 
    <plugin
-         id="org.storydriven.modeling"
+         id="org.storydriven.storydiagrams"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.modeling.edit"
+         id="org.storydriven.storydiagrams.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.modeling.expressions"
+         id="org.storydriven.storydiagrams.expressions"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.modeling.expressions.common"
+         id="org.storydriven.storydiagrams.expressions.common"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.modeling.expressions.common.ui"
+         id="org.storydriven.storydiagrams.expressions.common.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.modeling.expressions.ui"
+         id="org.storydriven.storydiagrams.expressions.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.storydiagrams.edit.eef"
          download-size="0"
          install-size="0"
          version="0.0.0"
