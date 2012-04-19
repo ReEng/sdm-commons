@@ -5,8 +5,8 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClassifier;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.interpreter.tests.TestBase;
 
 import de.mdelab.sdm.interpreter.core.SDMException;
@@ -24,7 +24,7 @@ public class MatchingPatternsTests extends TestBase
 	@Override
 	protected String getModelFolder()
 	{
-		return "/org.storydriven.modeling.interpreter.tests/models/patterns/matching/";
+		return "/org.storydriven.storydiagrams.interpreter.tests/models/patterns/matching/";
 	}
 
 	public void testConstraints() throws IOException, SDMException

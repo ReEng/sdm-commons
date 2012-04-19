@@ -6,19 +6,17 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.BindingOperator;
-import org.storydriven.modeling.patterns.ObjectVariable;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.BindingOperator;
+import org.storydriven.storydiagrams.patterns.ObjectVariable;
 
 import de.mdelab.sdm.interpreter.core.SDMException;
-import de.mdelab.sdm.interpreter.core.patternmatcher.ETransactionType;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.EMatchType;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.PatternPart;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.PatternPartBasedMatcher;
 import de.mdelab.sdm.interpreter.core.variables.Variable;
-import de.mdelab.sdm.interpreter.core.variables.VariablesScope;
 
 public abstract class StoryDrivenPatternPart<AV extends AbstractVariable, ALV extends AbstractLinkVariable> extends
 		PatternPart<AbstractVariable, AbstractLinkVariable, EClassifier, Expression>
@@ -87,7 +85,16 @@ public abstract class StoryDrivenPatternPart<AV extends AbstractVariable, ALV ex
 	}
 
 	@Override
-	public void createElements(VariablesScope<?, ?, ?, ?, AbstractVariable, AbstractLinkVariable, EClassifier, ?, Expression> variablesScope)
+	public void createLinks() throws SDMException
+	{
+		if (this.isCreate)
+		{
+			doCreateLink();
+		}
+	}
+
+	@Override
+	public void createObjects() throws SDMException
 	{
 		if (this.isCreate)
 		{
@@ -98,7 +105,7 @@ public abstract class StoryDrivenPatternPart<AV extends AbstractVariable, ALV ex
 			{
 				if (var instanceof ObjectVariable && ((ObjectVariable) var).getBindingOperator() == BindingOperator.CREATE)
 				{
-					if (!variablesScope.variableExists(var.getName()))
+					if (!this.patternMatcher.getVariablesScope().variableExists(var.getName()))
 					{
 						ObjectVariable objectVariable = (ObjectVariable) var;
 
@@ -106,23 +113,28 @@ public abstract class StoryDrivenPatternPart<AV extends AbstractVariable, ALV ex
 
 						EObject eObject = factory.create(objectVariable.getClassifier());
 
-						variablesScope.createVariable(objectVariable.getName(), objectVariable.getClassifier(), eObject);
+						this.patternMatcher.getVariablesScope().createVariable(objectVariable.getName(), objectVariable.getClassifier(),
+								eObject);
 
 						this.patternMatcher.getNotificationEmitter().instanceObjectCreated(var, eObject,
 								this.patternMatcher.getVariablesScope(), this.patternMatcher);
 					}
 				}
 			}
-
-			/*
-			 * Create link
-			 */
-			this.doCreateLink();
 		}
 	}
 
 	@Override
-	public void destroyObjects(VariablesScope<?, ?, ?, ?, AbstractVariable, AbstractLinkVariable, EClassifier, ?, Expression> variablesScope)
+	public void destroyLinks(Map<AbstractVariable, Object> deletedObjects)
+	{
+		if (this.isDestroy)
+		{
+			doDestroyLink(deletedObjects);
+		}
+	}
+
+	@Override
+	public void destroyObjects()
 	{
 		if (this.isDestroy)
 		{
@@ -130,7 +142,7 @@ public abstract class StoryDrivenPatternPart<AV extends AbstractVariable, ALV ex
 			{
 				if (var instanceof ObjectVariable && ((ObjectVariable) var).getBindingOperator() == BindingOperator.DESTROY)
 				{
-					Variable<EClassifier> variable = variablesScope.deleteVariable(var.getName());
+					Variable<EClassifier> variable = this.patternMatcher.getVariablesScope().deleteVariable(var.getName());
 
 					/*
 					 * Variable may be null in case of optional objects and
@@ -154,83 +166,83 @@ public abstract class StoryDrivenPatternPart<AV extends AbstractVariable, ALV ex
 		}
 	}
 
-	protected boolean matchTargetObject(AbstractVariable sourceVar, Object sourceInstanceObject, AbstractVariable targetVar,
-			Object targetObject) throws SDMException
-	{
-		/*
-		 * The targetObject must exist, it must not be bound to another story
-		 * pattern object, the targetSpo must not have been bound to the
-		 * targetObject before, and the type of the targetObject must be
-		 * correct.
-		 */
-		if (targetObject != null && !this.patternMatcher.boundInstanceObjects.contains(targetObject)
-				&& !this.patternMatcher.matchingHistory.get(targetVar).contains(targetObject)
-				&& targetVar.getType().isInstance(targetObject))
-		{
-			int size = this.patternMatcher.matchTransactions.size();
-
-			this.patternMatcher.getVariablesScope().createVariable(targetVar.getName(), targetVar.getType(), targetObject);
-
-			assert this.patternMatcher.unboundSPO.contains(targetVar);
-			assert !this.patternMatcher.boundSPO.contains(targetVar);
-			assert !this.patternMatcher.boundInstanceObjects.contains(targetObject);
-
-			/*
-			 * Transaction for targetSPO
-			 */
-			this.patternMatcher.commitTransaction(targetVar, this.patternMatcher.unboundSPO, this.patternMatcher.boundSPO,
-					ETransactionType.SPO_MATCHED);
-
-			/*
-			 * Transaction for targetObject
-			 */
-			this.patternMatcher.commitTransaction(targetObject, null, this.patternMatcher.boundInstanceObjects,
-					ETransactionType.INSTANCE_OBJECT_MATCHED);
-
-			/*
-			 * Update matchingHistory
-			 */
-			this.patternMatcher.matchingHistory.get(targetVar).add(targetObject);
-
-			this.patternMatcher.getNotificationEmitter().storyPatternObjectBound(targetVar, targetObject,
-					this.patternMatcher.getVariablesScope(), this.patternMatcher);
-
-			/*
-			 * Check links and attributes.
-			 */
-			if (this.patternMatcher.checkStoryPatternObjectConstraints(targetVar, targetObject)
-					&& this.patternMatcher.checkUncheckedPatternParts(targetVar)
-					&& (this.patternMatcher.unboundSPO.isEmpty() || this.patternMatcher
-							.matchStoryPatternInternal(this.patternMatcher.matchTransactions.size())))
-			{
-				assert !this.patternMatcher.unboundSPO.isEmpty() || this.patternMatcher.uncheckedPatternParts.isEmpty();
-
-				return true;
-			}
-			else
-			{
-				this.patternMatcher.getNotificationEmitter().storyPatternObjectBindingRevoked(targetVar, targetObject,
-						this.patternMatcher.getVariablesScope(), this.patternMatcher);
-
-				this.patternMatcher.rollBack(size);
-
-				return false;
-			}
-		}
-		else
-		{
-			return false;
-		}
-	}
-
-	@Override
-	public final void destroyLink(java.util.Map<AbstractVariable, Object> deletedObjects)
-	{
-		if (this.isDestroy)
-		{
-			this.doDestroyLink(deletedObjects);
-		}
-	};
+	// protected boolean matchTargetObject(AbstractVariable sourceVar, Object
+	// sourceInstanceObject, AbstractVariable targetVar,
+	// Object targetObject) throws SDMException
+	// {
+	// /*
+	// * The targetObject must exist, it must not be bound to another story
+	// * pattern object, the targetSpo must not have been bound to the
+	// * targetObject before, and the type of the targetObject must be
+	// * correct.
+	// */
+	// if (targetObject != null &&
+	// !this.patternMatcher.checkIsomorphism(targetObject)
+	// && !this.patternMatcher.checkHistory(targetVar, targetObject) &&
+	// targetVar.getType().isInstance(targetObject))
+	// {
+	// int size = this.patternMatcher.matchTransactions.size();
+	//
+	// this.patternMatcher.getVariablesScope().createVariable(targetVar.getName(),
+	// targetVar.getType(), targetObject);
+	//
+	// assert this.patternMatcher.unboundSPO.contains(targetVar);
+	// assert !this.patternMatcher.boundSPO.contains(targetVar);
+	// assert !this.patternMatcher.boundInstanceObjects.contains(targetObject);
+	//
+	// /*
+	// * Transaction for targetSPO
+	// */
+	// this.patternMatcher.commitTransaction(targetVar,
+	// this.patternMatcher.unboundSPO, this.patternMatcher.boundSPO,
+	// ETransactionType.SPO_MATCHED);
+	//
+	// /*
+	// * Transaction for targetObject
+	// */
+	// this.patternMatcher.commitTransaction(targetObject, null,
+	// this.patternMatcher.boundInstanceObjects,
+	// ETransactionType.INSTANCE_OBJECT_MATCHED);
+	//
+	// /*
+	// * Update matchingHistory
+	// */
+	// this.patternMatcher.matchingHistory.get(targetVar).add(targetObject);
+	//
+	// this.patternMatcher.getNotificationEmitter().storyPatternObjectBound(targetVar,
+	// targetObject,
+	// this.patternMatcher.getVariablesScope(), this.patternMatcher);
+	//
+	// /*
+	// * Check links and attributes.
+	// */
+	// if (this.patternMatcher.checkStoryPatternObjectConstraints(targetVar,
+	// targetObject)
+	// && this.patternMatcher.checkUncheckedPatternParts(targetVar)
+	// && (this.patternMatcher.unboundSPO.isEmpty() || this.patternMatcher
+	// .matchStoryPatternInternal(this.patternMatcher.matchTransactions.size())))
+	// {
+	// assert !this.patternMatcher.unboundSPO.isEmpty() ||
+	// this.patternMatcher.uncheckedPatternParts.isEmpty();
+	//
+	// return true;
+	// }
+	// else
+	// {
+	// this.patternMatcher.getNotificationEmitter().storyPatternObjectBindingRevoked(targetVar,
+	// targetObject,
+	// this.patternMatcher.getVariablesScope(), this.patternMatcher);
+	//
+	// this.patternMatcher.rollBack(size);
+	//
+	// return false;
+	// }
+	// }
+	// else
+	// {
+	// return false;
+	// }
+	// }
 
 	@Override
 	public EMatchType getMatchType()
@@ -243,16 +255,4 @@ public abstract class StoryDrivenPatternPart<AV extends AbstractVariable, ALV ex
 	protected abstract void doCreateLink();
 
 	protected abstract void doDestroyLink(Map<AbstractVariable, Object> deletedObjects);
-
-	@Override
-	public int getCreationPriority() throws SDMException
-	{
-		return 0;
-	}
-
-	@Override
-	public void matchingPhaseFinished() throws SDMException
-	{
-		// Do nothing
-	}
 }

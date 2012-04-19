@@ -3,9 +3,9 @@ package org.storydriven.storydiagrams.interpreter.facade;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.storydriven.modeling.activities.ActivityNode;
-import org.storydriven.modeling.activities.StopNode;
-import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.StopNode;
 
 import de.mdelab.sdm.interpreter.core.SDMInterpreterConstants;
 import de.mdelab.sdm.interpreter.core.facade.IFinalNodeFacade;

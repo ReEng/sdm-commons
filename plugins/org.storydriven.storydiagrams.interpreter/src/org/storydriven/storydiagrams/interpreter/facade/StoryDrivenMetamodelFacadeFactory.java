@@ -2,13 +2,13 @@ package org.storydriven.storydiagrams.interpreter.facade;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.ActivityNode;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.StoryPattern;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 import de.mdelab.sdm.interpreter.core.facade.IActivityEdgeFacade;
 import de.mdelab.sdm.interpreter.core.facade.IActivityFacade;

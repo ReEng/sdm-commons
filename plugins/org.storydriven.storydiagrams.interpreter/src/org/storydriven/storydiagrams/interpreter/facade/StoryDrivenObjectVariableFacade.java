@@ -8,15 +8,15 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.AttributeAssignment;
-import org.storydriven.modeling.patterns.BindingOperator;
-import org.storydriven.modeling.patterns.BindingSemantics;
-import org.storydriven.modeling.patterns.BindingState;
-import org.storydriven.modeling.patterns.Constraint;
-import org.storydriven.modeling.patterns.ObjectVariable;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.AttributeAssignment;
+import org.storydriven.storydiagrams.patterns.BindingOperator;
+import org.storydriven.storydiagrams.patterns.BindingSemantics;
+import org.storydriven.storydiagrams.patterns.BindingState;
+import org.storydriven.storydiagrams.patterns.Constraint;
+import org.storydriven.storydiagrams.patterns.ObjectVariable;
 
 import de.mdelab.sdm.interpreter.core.facade.IStoryPatternObjectFacade;
 

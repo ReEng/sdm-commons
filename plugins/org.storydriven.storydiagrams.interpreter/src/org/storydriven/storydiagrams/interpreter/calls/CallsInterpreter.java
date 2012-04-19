@@ -14,24 +14,24 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.ActivityNode;
-import org.storydriven.modeling.calls.OpaqueCallable;
-import org.storydriven.modeling.calls.ParameterBinding;
-import org.storydriven.modeling.calls.expressions.MethodCallExpression;
-import org.storydriven.modeling.expressions.ArithmeticExpression;
-import org.storydriven.modeling.expressions.BinaryLogicExpression;
-import org.storydriven.modeling.expressions.ComparisonExpression;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.expressions.LiteralExpression;
-import org.storydriven.modeling.expressions.NotExpression;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.StoryPattern;
-import org.storydriven.modeling.patterns.expressions.AttributeValueExpression;
-import org.storydriven.modeling.patterns.expressions.ObjectVariableExpression;
+import org.storydriven.core.expressions.ArithmeticExpression;
+import org.storydriven.core.expressions.BinaryLogicExpression;
+import org.storydriven.core.expressions.ComparisonExpression;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.LiteralExpression;
+import org.storydriven.core.expressions.NotExpression;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.storydriven.storydiagrams.calls.OpaqueCallable;
+import org.storydriven.storydiagrams.calls.ParameterBinding;
+import org.storydriven.storydiagrams.calls.expressions.MethodCallExpression;
 import org.storydriven.storydiagrams.interpreter.StoryDrivenInterpreter;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.StoryPattern;
+import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression;
+import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
 
 import de.mdelab.sdm.interpreter.core.SDMException;
 import de.mdelab.sdm.interpreter.core.SDMInterpreterConstants;
@@ -118,13 +118,13 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 		/*
 		 * Evaluate left expression
 		 */
-		Variable<EClassifier> leftVariable = this.getExpressionInterpreterManager().evaluateExpression(expression.getLeftExpression(),
+		Variable<EClassifier> leftVariable = getExpressionInterpreterManager().evaluateExpression(expression.getLeftExpression(),
 				contextClassifier, contextInstance, variablesScope);
 
 		/*
 		 * Evaluate right expression
 		 */
-		Variable<EClassifier> rightVariable = this.getExpressionInterpreterManager().evaluateExpression(expression.getRightExpression(),
+		Variable<EClassifier> rightVariable = getExpressionInterpreterManager().evaluateExpression(expression.getRightExpression(),
 				contextClassifier, contextInstance, variablesScope);
 
 		/*
@@ -222,7 +222,7 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 		/*
 		 * Evaluate left expression
 		 */
-		Variable<EClassifier> leftVariable = this.getExpressionInterpreterManager().evaluateExpression(expression.getLeftExpression(),
+		Variable<EClassifier> leftVariable = getExpressionInterpreterManager().evaluateExpression(expression.getLeftExpression(),
 				contextClassifier, contextInstance, variablesScope);
 
 		assert leftVariable != null;
@@ -230,7 +230,7 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 		/*
 		 * Evaluate right expression
 		 */
-		Variable<EClassifier> rightVariable = this.getExpressionInterpreterManager().evaluateExpression(expression.getRightExpression(),
+		Variable<EClassifier> rightVariable = getExpressionInterpreterManager().evaluateExpression(expression.getRightExpression(),
 				contextClassifier, contextInstance, variablesScope);
 
 		assert rightVariable != null;
@@ -372,7 +372,7 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 					/*
 					 * Get the value bound to this parameter
 					 */
-					parameterValues[index] = this.getParameterValue(p, expression.getOwnedParameterBindings(), contextClassifier,
+					parameterValues[index] = getParameterValue(p, expression.getOwnedParameterBindings(), contextClassifier,
 							contextInstance, variablesScope);
 					index++;
 				}
@@ -389,7 +389,7 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 				/*
 				 * Get the Class object
 				 */
-				Class<?> clazz = Class.forName(className, true, this.getExpressionInterpreterManager().getClassLoader());
+				Class<?> clazz = Class.forName(className, true, getExpressionInterpreterManager().getClassLoader());
 
 				Method method = clazz.getMethod(methodName, parameterTypes);
 
@@ -400,8 +400,8 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 
 				if (expression.getTarget() != null)
 				{
-					Variable<EClassifier> targetVariable = this.getExpressionInterpreterManager().evaluateExpression(
-							expression.getTarget(), contextClassifier, contextInstance, variablesScope);
+					Variable<EClassifier> targetVariable = getExpressionInterpreterManager().evaluateExpression(expression.getTarget(),
+							contextClassifier, contextInstance, variablesScope);
 
 					assert targetVariable != null;
 
@@ -433,8 +433,8 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 				{
 					assert parameterBinding.getValueExpression() != null;
 
-					Variable<EClassifier> v = this.getExpressionInterpreterManager().evaluateExpression(
-							parameterBinding.getValueExpression(), contextClassifier, contextInstance, variablesScope);
+					Variable<EClassifier> v = getExpressionInterpreterManager().evaluateExpression(parameterBinding.getValueExpression(),
+							contextClassifier, contextInstance, variablesScope);
 
 					assert v != null;
 
@@ -449,8 +449,8 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 				 */
 				if (expression.getTarget() != null)
 				{
-					Variable<EClassifier> targetVariable = this.getExpressionInterpreterManager().evaluateExpression(
-							expression.getTarget(), contextClassifier, contextInstance, variablesScope);
+					Variable<EClassifier> targetVariable = getExpressionInterpreterManager().evaluateExpression(expression.getTarget(),
+							contextClassifier, contextInstance, variablesScope);
 
 					assert targetVariable != null;
 
@@ -465,10 +465,9 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 				 */
 				@SuppressWarnings("unchecked")
 				StoryDrivenInterpreter sdi = new StoryDrivenInterpreter(
-						(ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression>) this
-								.getExpressionInterpreterManager(),
-						(NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression>) this
-								.getExpressionInterpreterManager().getNotificationEmitter());
+						(ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression>) getExpressionInterpreterManager(),
+						(NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression>) getExpressionInterpreterManager()
+								.getNotificationEmitter());
 
 				Map<String, Variable<EClassifier>> returnValues = sdi.executeActivity(activity, parameters);
 
@@ -507,8 +506,8 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 		{
 			if (b.getParameter() == p)
 			{
-				Variable<EClassifier> var = this.getExpressionInterpreterManager().evaluateExpression(b.getValueExpression(),
-						contextClassifier, contextInstance, variablesScope);
+				Variable<EClassifier> var = getExpressionInterpreterManager().evaluateExpression(b.getValueExpression(), contextClassifier,
+						contextInstance, variablesScope);
 
 				assert var != null;
 
@@ -526,13 +525,13 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 		/*
 		 * Evaluate left expression
 		 */
-		Variable<EClassifier> leftVariable = this.getExpressionInterpreterManager().evaluateExpression(expression.getLeftExpression(),
+		Variable<EClassifier> leftVariable = getExpressionInterpreterManager().evaluateExpression(expression.getLeftExpression(),
 				contextClassifier, contextInstance, variablesScope);
 
 		/*
 		 * Evaluate right expression
 		 */
-		Variable<EClassifier> rightVariable = this.getExpressionInterpreterManager().evaluateExpression(expression.getRightExpression(),
+		Variable<EClassifier> rightVariable = getExpressionInterpreterManager().evaluateExpression(expression.getRightExpression(),
 				contextClassifier, contextInstance, variablesScope);
 
 		/*
@@ -637,7 +636,7 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 	{
 		assert expression.getNegatedExpression() != null;
 
-		Variable<EClassifier> result = this.getExpressionInterpreterManager().evaluateExpression(expression.getNegatedExpression(),
+		Variable<EClassifier> result = getExpressionInterpreterManager().evaluateExpression(expression.getNegatedExpression(),
 				contextClassifier, contextInstance, variablesScope);
 
 		assert result.getValue() instanceof Boolean;

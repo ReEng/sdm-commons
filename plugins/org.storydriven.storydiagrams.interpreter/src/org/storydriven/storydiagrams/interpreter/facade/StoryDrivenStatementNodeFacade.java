@@ -3,10 +3,10 @@ package org.storydriven.storydiagrams.interpreter.facade;
 import java.util.Collection;
 import java.util.Collections;
 
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.ActivityNode;
-import org.storydriven.modeling.activities.StatementNode;
-import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.StatementNode;
 
 import de.mdelab.sdm.interpreter.core.facade.IExpressionNodeFacade;
 

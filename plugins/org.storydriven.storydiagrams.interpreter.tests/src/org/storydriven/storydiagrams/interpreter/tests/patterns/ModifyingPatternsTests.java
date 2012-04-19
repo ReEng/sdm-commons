@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.interpreter.tests.TestBase;
 
 import de.mdelab.sdm.interpreter.core.SDMException;
@@ -27,7 +27,7 @@ public class ModifyingPatternsTests extends TestBase
 	@Override
 	protected String getModelFolder()
 	{
-		return "/org.storydriven.modeling.interpreter.tests/models/patterns/modifying/";
+		return "/org.storydriven.storydiagrams.interpreter.tests/models/patterns/modifying/";
 	}
 
 	public void testAttributeAssignment() throws IOException, SDMException

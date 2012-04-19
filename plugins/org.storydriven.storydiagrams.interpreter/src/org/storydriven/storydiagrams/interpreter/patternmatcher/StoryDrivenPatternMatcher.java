@@ -8,19 +8,19 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.ActivityNode;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.ContainmentRelation;
-import org.storydriven.modeling.patterns.LinkVariable;
-import org.storydriven.modeling.patterns.ObjectVariable;
-import org.storydriven.modeling.patterns.Path;
-import org.storydriven.modeling.patterns.PatternsPackage;
-import org.storydriven.modeling.patterns.StoryPattern;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.interpreter.facade.StoryDrivenMetamodelFacadeFactory;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.ContainmentRelation;
+import org.storydriven.storydiagrams.patterns.LinkVariable;
+import org.storydriven.storydiagrams.patterns.ObjectVariable;
+import org.storydriven.storydiagrams.patterns.Path;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
+import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 import de.mdelab.sdm.interpreter.core.SDMException;
 import de.mdelab.sdm.interpreter.core.expressions.ExpressionInterpreterManager;
@@ -67,7 +67,7 @@ public class StoryDrivenPatternMatcher
 	@Override
 	protected Collection<PatternPart<AbstractVariable, AbstractLinkVariable, EClassifier, Expression>> createPatternParts()
 	{
-		List<AbstractLinkVariable> storyPatternLinks = new LinkedList<AbstractLinkVariable>(this.getStoryPattern().getLinkVariables());
+		List<AbstractLinkVariable> storyPatternLinks = new LinkedList<AbstractLinkVariable>(getStoryPattern().getLinkVariables());
 		Collection<PatternPart<AbstractVariable, AbstractLinkVariable, EClassifier, Expression>> patternParts = new HashSet<PatternPart<AbstractVariable, AbstractLinkVariable, EClassifier, Expression>>();
 
 		/*
@@ -107,7 +107,7 @@ public class StoryDrivenPatternMatcher
 		/*
 		 * Create pattern parts for objects that are not connected to any links.
 		 */
-		for (AbstractVariable var : this.getStoryPattern().getVariables())
+		for (AbstractVariable var : getStoryPattern().getVariables())
 		{
 			if (var.getIncomingLinks().isEmpty()
 					&& (!(var instanceof ObjectVariable) || ((ObjectVariable) var).getOutgoingLinks().isEmpty()))

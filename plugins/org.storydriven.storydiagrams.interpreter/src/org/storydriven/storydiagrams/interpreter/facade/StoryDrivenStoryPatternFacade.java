@@ -3,12 +3,12 @@ package org.storydriven.storydiagrams.interpreter.facade;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.storydriven.modeling.activities.StoryNode;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.Constraint;
-import org.storydriven.modeling.patterns.StoryPattern;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.activities.StoryNode;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.Constraint;
+import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 import de.mdelab.sdm.interpreter.core.facade.IStoryPatternFacade;
 

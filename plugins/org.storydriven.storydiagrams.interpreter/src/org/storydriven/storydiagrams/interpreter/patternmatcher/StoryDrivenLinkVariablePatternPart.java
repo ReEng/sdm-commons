@@ -1,22 +1,24 @@
 package org.storydriven.storydiagrams.interpreter.patternmatcher;
 
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.BindingOperator;
-import org.storydriven.modeling.patterns.BindingSemantics;
-import org.storydriven.modeling.patterns.LinkVariable;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.BindingOperator;
+import org.storydriven.storydiagrams.patterns.BindingSemantics;
+import org.storydriven.storydiagrams.patterns.LinkVariable;
 
 import de.mdelab.sdm.interpreter.core.SDMException;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.ECheckResult;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.EMatchType;
+import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.MatchState;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.PatternPartBasedMatcher;
 import de.mdelab.sdm.interpreter.core.variables.Variable;
 import de.mdelab.sdm.interpreter.core.variables.VariablesScope;
@@ -170,8 +172,8 @@ public class StoryDrivenLinkVariablePatternPart extends StoryDrivenPatternPart<A
 		AbstractVariable source = this.link.getSource();
 		AbstractVariable target = this.link.getTarget();
 
-		if (this.link.getBindingOperator() != BindingOperator.CREATE && this.patternMatcher.boundSPO.contains(source)
-				&& this.patternMatcher.boundSPO.contains(target))
+		if (this.link.getBindingOperator() != BindingOperator.CREATE && this.patternMatcher.isBound(source)
+				&& this.patternMatcher.isBound(target))
 		{
 			VariablesScope<?, ?, ?, ?, AbstractVariable, AbstractLinkVariable, EClassifier, ?, Expression> variablesScope = this.patternMatcher
 					.getVariablesScope();
@@ -243,91 +245,74 @@ public class StoryDrivenLinkVariablePatternPart extends StoryDrivenPatternPart<A
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public boolean match() throws SDMException
+	public boolean match(MatchState matchState) throws SDMException
 	{
-		AbstractVariable sourceVar = this.link.getSource();
-		AbstractVariable targetVar = this.link.getTarget();
+		assert matchState instanceof StoryDrivenLinkVariableMatchState;
 
-		assert this.patternMatcher.boundSPO.contains(sourceVar) || this.patternMatcher.boundSPO.contains(targetVar);
-		assert !(this.patternMatcher.boundSPO.contains(sourceVar) && this.patternMatcher.boundSPO.contains(targetVar));
+		StoryDrivenLinkVariableMatchState<Iterator<Object>> ms = (StoryDrivenLinkVariableMatchState<Iterator<Object>>) matchState;
 
-		if (this.patternMatcher.boundSPO.contains(sourceVar))
+		AbstractVariable sourceSpo = this.link.getSource();
+		AbstractVariable targetSpo = this.link.getTarget();
+
+		assert this.patternMatcher.isBound(sourceSpo) || this.patternMatcher.isBound(targetSpo);
+		assert !(this.patternMatcher.isBound(sourceSpo) && this.patternMatcher.isBound(targetSpo));
+
+		/*
+		 * The source object is bound. Search for a match of the target object.
+		 */
+		if (this.patternMatcher.isBound(sourceSpo))
 		{
-			Variable<EClassifier> sourceVariable = this.patternMatcher.getVariablesScope().getVariable(sourceVar.getName());
+			EObject sourceInstanceObject = (EObject) this.patternMatcher.getInstanceObject(sourceSpo);
 
-			assert sourceVariable != null;
-			assert sourceVariable.getValue() instanceof EObject;
-
-			EObject sourceInstanceObject = (EObject) sourceVariable.getValue();
-
-			this.patternMatcher.getNotificationEmitter().traversingLink(this.link, sourceVar, sourceInstanceObject, targetVar,
-					this.patternMatcher.getVariablesScope(), this.patternMatcher);
-
-			if (!this.link.getTargetEnd().isMany())
-			{
-				if (this.matchTargetObject(sourceVar, sourceInstanceObject, targetVar, sourceInstanceObject.eGet(this.link.getTargetEnd())))
-				{
-					return true;
-				}
-			}
-			else
-			{
-				/*
-				 * Find the first target object that matches.
-				 */
-				for (Object targetObject : (Collection<Object>) sourceInstanceObject.eGet(this.link.getTargetEnd()))
-				{
-					if (this.matchTargetObject(sourceVar, sourceInstanceObject, targetVar, targetObject))
-					{
-						return true;
-					}
-				}
-			}
-
-			this.patternMatcher.getNotificationEmitter().storyPatternObjectNotBound(targetVar, this.patternMatcher.getVariablesScope(),
-					this.patternMatcher);
+			return matchTargetObject(ms, sourceSpo, targetSpo, sourceInstanceObject, this.link.getTargetEnd());
 		}
 		else
 		{
 			/*
-			 * Start from the target object
+			 * Start matching from the target object
 			 */
-			sourceVar = this.link.getTarget();
-			targetVar = this.link.getSource();
+			sourceSpo = this.link.getTarget();
+			targetSpo = this.link.getSource();
 
-			Variable<EClassifier> sourceVariable = this.patternMatcher.getVariablesScope().getVariable(sourceVar.getName());
+			EObject sourceInstanceObject = (EObject) this.patternMatcher.getInstanceObject(sourceSpo);
 
-			assert sourceVariable != null;
-			assert sourceVariable.getValue() instanceof EObject;
-
-			EObject sourceInstanceObject = (EObject) sourceVariable.getValue();
-
-			if (this.link.getSourceEnd() != null)
+			if (this.link.getTargetEnd() instanceof EReference)
 			{
-				if (!this.link.getSourceEnd().isMany())
+				EReference eReference = this.link.getTargetEnd();
+
+				/*
+				 * The link's reference has an opposite. Navigate via the
+				 * opposite reference.
+				 */
+				if (eReference.getEOpposite() != null)
 				{
-					if (this.matchTargetObject(sourceVar, sourceInstanceObject, targetVar,
-							sourceInstanceObject.eGet(this.link.getSourceEnd())))
+					return matchTargetObject(ms, sourceSpo, targetSpo, sourceInstanceObject, eReference.getEOpposite());
+				}
+				/*
+				 * The link's reference is a containment.
+				 */
+				else if (eReference.isContainment())
+				{
+					this.patternMatcher.getNotificationEmitter().traversingLink(this.link, sourceSpo, sourceInstanceObject, targetSpo,
+							this.patternMatcher.getVariablesScope(), this.patternMatcher);
+
+					EObject targetInstanceObject = sourceInstanceObject.eContainer();
+
+					if (this.patternMatcher.matchStoryPatternObject(targetSpo, targetInstanceObject)
+							&& (!eReference.isMany() && sourceInstanceObject.eContainer().eGet(eReference) == sourceInstanceObject || eReference
+									.isMany()
+									&& ((Collection<Object>) sourceInstanceObject.eContainer().eGet(eReference))
+											.contains(sourceInstanceObject)))
 					{
+						this.patternMatcher.getNotificationEmitter().storyPatternObjectBound(targetSpo, targetInstanceObject,
+								this.patternMatcher.getVariablesScope(), this.patternMatcher);
+
 						return true;
 					}
 				}
 				else
 				{
-					for (Object targetObject : (Collection<Object>) sourceInstanceObject.eGet(this.link.getSourceEnd()))
-					{
-						if (this.matchTargetObject(sourceVar, sourceInstanceObject, targetVar, targetObject))
-						{
-							return true;
-						}
-					}
-				}
-			}
-			else if (this.link.getTargetEnd().isContainment())
-			{
-				if (this.matchTargetObject(sourceVar, sourceInstanceObject, targetVar, sourceInstanceObject.eContainer()))
-				{
-					return true;
+					throw new UnsupportedOperationException();
 				}
 			}
 			else
@@ -335,7 +320,7 @@ public class StoryDrivenLinkVariablePatternPart extends StoryDrivenPatternPart<A
 				throw new UnsupportedOperationException();
 			}
 
-			this.patternMatcher.getNotificationEmitter().storyPatternObjectNotBound(sourceVar, this.patternMatcher.getVariablesScope(),
+			this.patternMatcher.getNotificationEmitter().storyPatternObjectNotBound(targetSpo, this.patternMatcher.getVariablesScope(),
 					this.patternMatcher);
 		}
 
@@ -346,10 +331,9 @@ public class StoryDrivenLinkVariablePatternPart extends StoryDrivenPatternPart<A
 	@Override
 	public int calculateMatchingCost()
 	{
-		assert !(this.patternMatcher.boundSPO.contains(this.link.getSource()) && this.patternMatcher.boundSPO.contains(this.link
-				.getTarget()));
+		assert !(this.patternMatcher.isBound(this.link.getSource()) && this.patternMatcher.isBound(this.link.getTarget()));
 
-		if (this.patternMatcher.boundSPO.contains(this.link.getSource()))
+		if (this.patternMatcher.isBound(this.link.getSource()))
 		{
 			if (!this.link.getTargetEnd().isMany())
 			{
@@ -366,7 +350,7 @@ public class StoryDrivenLinkVariablePatternPart extends StoryDrivenPatternPart<A
 				return ((Collection<Object>) sourceEObject.eGet(this.link.getTargetEnd())).size();
 			}
 		}
-		else if (this.patternMatcher.boundSPO.contains(this.link.getTarget()))
+		else if (this.patternMatcher.isBound(this.link.getTarget()))
 		{
 			EReference eReference = this.link.getTargetEnd();
 
@@ -408,4 +392,72 @@ public class StoryDrivenLinkVariablePatternPart extends StoryDrivenPatternPart<A
 		}
 	}
 
+	@Override
+	public MatchState createMatchState()
+	{
+		return new StoryDrivenLinkVariableMatchState<Iterator<Object>>();
+	}
+
+	@SuppressWarnings("unchecked")
+	private boolean matchTargetObject(StoryDrivenLinkVariableMatchState<Iterator<Object>> matchState, AbstractVariable sourceSpo,
+			AbstractVariable targetSpo, EObject sourceInstanceObject, EStructuralFeature feature) throws SDMException
+	{
+		assert matchState != null;
+		assert sourceSpo != null;
+		assert targetSpo != null;
+		assert sourceInstanceObject != null;
+		assert feature != null;
+
+		this.patternMatcher.getNotificationEmitter().traversingLink(this.link, sourceSpo, sourceInstanceObject, targetSpo,
+				this.patternMatcher.getVariablesScope(), this.patternMatcher);
+
+		/*
+		 * This is a to-one feature.
+		 */
+		if (!feature.isMany())
+		{
+			Object targetInstanceObject = sourceInstanceObject.eGet(feature);
+
+			if (this.patternMatcher.matchStoryPatternObject(targetSpo, targetInstanceObject))
+			{
+				this.patternMatcher.getNotificationEmitter().storyPatternObjectBound(targetSpo, targetInstanceObject,
+						this.patternMatcher.getVariablesScope(), this.patternMatcher);
+
+				return true;
+			}
+		}
+		/*
+		 * This is a to-many feature.
+		 */
+		else
+		{
+			Iterator<Object> linkIterator = matchState.getLinkIterator();
+
+			if (linkIterator == null || sourceInstanceObject != matchState.getSourceInstanceObject())
+			{
+				linkIterator = ((Collection<Object>) sourceInstanceObject.eGet(feature)).iterator();
+
+				matchState.setLinkIterator(linkIterator);
+				matchState.setSourceInstanceObject(sourceInstanceObject);
+			}
+
+			while (linkIterator.hasNext())
+			{
+				Object targetInstanceObject = linkIterator.next();
+
+				if (this.patternMatcher.matchStoryPatternObject(targetSpo, targetInstanceObject))
+				{
+					this.patternMatcher.getNotificationEmitter().storyPatternObjectBound(targetSpo, targetInstanceObject,
+							this.patternMatcher.getVariablesScope(), this.patternMatcher);
+
+					return true;
+				}
+			}
+		}
+
+		this.patternMatcher.getNotificationEmitter().storyPatternObjectNotBound(targetSpo, this.patternMatcher.getVariablesScope(),
+				this.patternMatcher);
+
+		return false;
+	}
 }

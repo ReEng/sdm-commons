@@ -6,15 +6,16 @@ import java.util.Map;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.BindingOperator;
-import org.storydriven.modeling.patterns.ContainmentRelation;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.BindingOperator;
+import org.storydriven.storydiagrams.patterns.ContainmentRelation;
 
 import de.mdelab.sdm.interpreter.core.SDMException;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.ECheckResult;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.EMatchType;
+import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.MatchState;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.PatternPart;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.PatternPartBasedMatcher;
 import de.mdelab.sdm.interpreter.core.variables.Variable;
@@ -130,7 +131,7 @@ public class StoryDrivenContainmentRelationPatternPart extends StoryDrivenPatter
 	@Override
 	public ECheckResult check() throws SDMException
 	{
-		if (this.patternMatcher.boundSPO.contains(this.link.getSource()) && this.patternMatcher.boundSPO.contains(this.link.getTarget()))
+		if (this.patternMatcher.isBound(this.link.getSource()) && this.patternMatcher.isBound(this.link.getTarget()))
 		{
 			AbstractVariable sourceVar = this.link.getSource();
 			AbstractVariable targetVar = this.link.getTarget();
@@ -177,26 +178,152 @@ public class StoryDrivenContainmentRelationPatternPart extends StoryDrivenPatter
 		}
 	}
 
+	// @Override
+	// public boolean match() throws SDMException
+	// {
+	// AbstractVariable sourceSpo = this.link.getSource();
+	// AbstractVariable targetSpo = this.link.getTarget();
+	//
+	// if (this.patternMatcher.boundSPO.contains(sourceSpo))
+	// {
+	// /*
+	// * Use a tree iterator to search all children of the source object
+	// * for a match for the target object.
+	// */
+	// assert this.patternMatcher.unboundSPO.contains(targetSpo);
+	//
+	// Variable<EClassifier> sourceVariable =
+	// this.patternMatcher.getVariablesScope().getVariable(sourceSpo.getName());
+	//
+	// assert sourceVariable != null;
+	// assert sourceVariable.getValue() instanceof EObject;
+	//
+	// EObject sourceInstanceObject = (EObject) sourceVariable.getValue();
+	//
+	// this.patternMatcher.getNotificationEmitter().traversingLink(this.link,
+	// sourceSpo, sourceInstanceObject, targetSpo,
+	// this.patternMatcher.getVariablesScope(), this.patternMatcher);
+	//
+	// /*
+	// * Find the first target object that matches.
+	// */
+	// TreeIterator<EObject> it = sourceInstanceObject.eAllContents();
+	//
+	// while (it.hasNext())
+	// {
+	// Object targetObject = it.next();
+	//
+	// if (matchTargetObject(sourceSpo, sourceInstanceObject, targetSpo,
+	// targetObject))
+	// {
+	// return true;
+	// }
+	// }
+	//
+	// this.patternMatcher.getNotificationEmitter().storyPatternObjectNotBound(targetSpo,
+	// this.patternMatcher.getVariablesScope(),
+	// this.patternMatcher);
+	// }
+	// else if (this.patternMatcher.boundSPO.contains(targetSpo))
+	// {
+	// /*
+	// * Walk the containment hierarchy upwards from the target object
+	// * until a match for the source object was found or the end of the
+	// * hierarchy was reached.
+	// */
+	// assert this.patternMatcher.unboundSPO.contains(sourceSpo);
+	//
+	// Variable<EClassifier> targetVariable =
+	// this.patternMatcher.getVariablesScope().getVariable(targetSpo.getName());
+	//
+	// assert targetVariable != null;
+	// assert targetVariable.getValue() instanceof EObject;
+	//
+	// EObject targetInstanceObject = (EObject) targetVariable.getValue();
+	//
+	// this.patternMatcher.getNotificationEmitter().traversingLink(this.link,
+	// targetSpo, targetInstanceObject, sourceSpo,
+	// this.patternMatcher.getVariablesScope(), this.patternMatcher);
+	//
+	// /*
+	// * Find the first target object that matches.
+	// */
+	// EObject sourceInstanceObject = targetInstanceObject.eContainer();
+	//
+	// do
+	// {
+	// if (matchTargetObject(targetSpo, targetInstanceObject, sourceSpo,
+	// sourceInstanceObject))
+	// {
+	// return true;
+	// }
+	//
+	// sourceInstanceObject = sourceInstanceObject.eContainer();
+	//
+	// }
+	// while (sourceInstanceObject != null);
+	//
+	// this.patternMatcher.getNotificationEmitter().storyPatternObjectNotBound(sourceSpo,
+	// this.patternMatcher.getVariablesScope(),
+	// this.patternMatcher);
+	// }
+	// else
+	// {
+	// /*
+	// * Should never happen
+	// */
+	// throw new UnsupportedOperationException();
+	// }
+	//
+	// return false;
+	// }
 	@Override
-	public boolean match() throws SDMException
+	public int calculateMatchingCost()
 	{
+		assert !(this.patternMatcher.isBound(this.link.getSource()) && this.patternMatcher.isBound(this.link.getTarget()));
+
+		if (this.patternMatcher.isBound(this.link.getTarget()))
+		{
+			/*
+			 * If the target object is bound, we can go from the target upwards
+			 * to the source using eContainer().
+			 */
+			return 5;
+		}
+		else if (this.patternMatcher.isBound(this.link.getSource()))
+		{
+			/*
+			 * If the source is bound, we have to search all children. We cannot
+			 * provide an exact estimate.
+			 */
+			return Integer.MAX_VALUE;
+		}
+		else
+		{
+			return PatternPart.MATCHING_NOT_POSSIBLE;
+		}
+	}
+
+	@Override
+	public boolean match(MatchState matchState) throws SDMException
+	{
+		assert matchState != null;
+		assert matchState instanceof StoryDrivenContainmentRelationMatchState;
+
+		StoryDrivenContainmentRelationMatchState ms = (StoryDrivenContainmentRelationMatchState) matchState;
+
 		AbstractVariable sourceSpo = this.link.getSource();
 		AbstractVariable targetSpo = this.link.getTarget();
 
-		if (this.patternMatcher.boundSPO.contains(sourceSpo))
+		if (this.patternMatcher.isBound(sourceSpo))
 		{
 			/*
 			 * Use a tree iterator to search all children of the source object
 			 * for a match for the target object.
 			 */
-			assert this.patternMatcher.unboundSPO.contains(targetSpo);
+			assert !this.patternMatcher.isBound(targetSpo);
 
-			Variable<EClassifier> sourceVariable = this.patternMatcher.getVariablesScope().getVariable(sourceSpo.getName());
-
-			assert sourceVariable != null;
-			assert sourceVariable.getValue() instanceof EObject;
-
-			EObject sourceInstanceObject = (EObject) sourceVariable.getValue();
+			EObject sourceInstanceObject = (EObject) this.patternMatcher.getInstanceObject(sourceSpo);
 
 			this.patternMatcher.getNotificationEmitter().traversingLink(this.link, sourceSpo, sourceInstanceObject, targetSpo,
 					this.patternMatcher.getVariablesScope(), this.patternMatcher);
@@ -204,13 +331,21 @@ public class StoryDrivenContainmentRelationPatternPart extends StoryDrivenPatter
 			/*
 			 * Find the first target object that matches.
 			 */
-			TreeIterator<EObject> it = sourceInstanceObject.eAllContents();
+			TreeIterator<EObject> iterator = ms.getLinkIterator();
 
-			while (it.hasNext())
+			if (iterator == null)
 			{
-				Object targetObject = it.next();
+				iterator = sourceInstanceObject.eAllContents();
+				ms.setLinkIterator(iterator);
+				ms.setSourceInstanceObject(sourceInstanceObject);
+				ms.setLastContainer(null);
+			}
 
-				if (this.matchTargetObject(sourceSpo, sourceInstanceObject, targetSpo, targetObject))
+			while (iterator.hasNext())
+			{
+				Object targetObject = iterator.next();
+
+				if (this.patternMatcher.matchStoryPatternObject(targetSpo, targetObject))
 				{
 					return true;
 				}
@@ -219,21 +354,16 @@ public class StoryDrivenContainmentRelationPatternPart extends StoryDrivenPatter
 			this.patternMatcher.getNotificationEmitter().storyPatternObjectNotBound(targetSpo, this.patternMatcher.getVariablesScope(),
 					this.patternMatcher);
 		}
-		else if (this.patternMatcher.boundSPO.contains(targetSpo))
+		else if (this.patternMatcher.isBound(targetSpo))
 		{
 			/*
 			 * Walk the containment hierarchy upwards from the target object
 			 * until a match for the source object was found or the end of the
 			 * hierarchy was reached.
 			 */
-			assert this.patternMatcher.unboundSPO.contains(sourceSpo);
+			assert !this.patternMatcher.isBound(sourceSpo);
 
-			Variable<EClassifier> targetVariable = this.patternMatcher.getVariablesScope().getVariable(targetSpo.getName());
-
-			assert targetVariable != null;
-			assert targetVariable.getValue() instanceof EObject;
-
-			EObject targetInstanceObject = (EObject) targetVariable.getValue();
+			EObject targetInstanceObject = (EObject) this.patternMatcher.getInstanceObject(targetSpo);
 
 			this.patternMatcher.getNotificationEmitter().traversingLink(this.link, targetSpo, targetInstanceObject, sourceSpo,
 					this.patternMatcher.getVariablesScope(), this.patternMatcher);
@@ -241,19 +371,28 @@ public class StoryDrivenContainmentRelationPatternPart extends StoryDrivenPatter
 			/*
 			 * Find the first target object that matches.
 			 */
-			EObject sourceInstanceObject = targetInstanceObject.eContainer();
+			EObject sourceInstanceObject = ms.getLastContainer();
 
-			do
+			if (sourceInstanceObject == null)
 			{
-				if (this.matchTargetObject(targetSpo, targetInstanceObject, sourceSpo, sourceInstanceObject))
+				sourceInstanceObject = targetInstanceObject.eContainer();
+				ms.setLastContainer(sourceInstanceObject);
+				ms.setLinkIterator(null);
+				ms.setSourceInstanceObject(targetInstanceObject);
+			}
+
+			while (sourceInstanceObject != null)
+			{
+				if (this.patternMatcher.matchStoryPatternObject(sourceSpo, sourceInstanceObject))
 				{
+					ms.setLastContainer(sourceInstanceObject);
 					return true;
 				}
 
 				sourceInstanceObject = sourceInstanceObject.eContainer();
-
 			}
-			while (sourceInstanceObject != null);
+
+			ms.setLastContainer(null);
 
 			this.patternMatcher.getNotificationEmitter().storyPatternObjectNotBound(sourceSpo, this.patternMatcher.getVariablesScope(),
 					this.patternMatcher);
@@ -270,30 +409,8 @@ public class StoryDrivenContainmentRelationPatternPart extends StoryDrivenPatter
 	}
 
 	@Override
-	public int calculateMatchingCost()
+	public MatchState createMatchState()
 	{
-		assert !(this.patternMatcher.boundSPO.contains(this.link.getSource()) && this.patternMatcher.boundSPO.contains(this.link
-				.getTarget()));
-
-		if (this.patternMatcher.boundSPO.contains(this.link.getTarget()))
-		{
-			/*
-			 * If the target object is bound, we can go from the target upwards
-			 * to the source using eContainer().
-			 */
-			return 5;
-		}
-		else if (this.patternMatcher.boundSPO.contains(this.link.getSource()))
-		{
-			/*
-			 * If the source is bound, we have to search all children. We cannot
-			 * provide an exact estimate.
-			 */
-			return Integer.MAX_VALUE;
-		}
-		else
-		{
-			return PatternPart.MATCHING_NOT_POSSIBLE;
-		}
+		return new StoryDrivenContainmentRelationMatchState();
 	}
 }

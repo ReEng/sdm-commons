@@ -4,9 +4,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import org.storydriven.modeling.activities.ActivitiesPackage;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityNode;
 
 import de.mdelab.sdm.interpreter.core.facade.IActivityFacade;
 

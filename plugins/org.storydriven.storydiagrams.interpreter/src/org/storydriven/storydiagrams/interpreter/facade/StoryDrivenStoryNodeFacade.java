@@ -1,9 +1,9 @@
 package org.storydriven.storydiagrams.interpreter.facade;
 
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.ActivityNode;
-import org.storydriven.modeling.activities.StoryNode;
-import org.storydriven.modeling.patterns.StoryPattern;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.StoryNode;
+import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 import de.mdelab.sdm.interpreter.core.facade.EForEachSemantics;
 import de.mdelab.sdm.interpreter.core.facade.IStoryNodeFacade;

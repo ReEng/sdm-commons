@@ -3,13 +3,14 @@ package org.storydriven.storydiagrams.interpreter.patternmatcher;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EClassifier;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.AbstractVariable;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
 
 import de.mdelab.sdm.interpreter.core.SDMException;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.ECheckResult;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.EMatchType;
+import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.MatchState;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.PatternPartBasedMatcher;
 
 public class StoryDrivenVariableOnlyPatternPart extends StoryDrivenPatternPart<AbstractVariable, AbstractLinkVariable>
@@ -50,15 +51,21 @@ public class StoryDrivenVariableOnlyPatternPart extends StoryDrivenPatternPart<A
 	}
 
 	@Override
-	public boolean match() throws SDMException
+	public int calculateMatchingCost()
 	{
 		throw new UnsupportedOperationException();
 	}
 
 	@Override
-	public int calculateMatchingCost()
+	public boolean match(MatchState matchState) throws SDMException
 	{
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public MatchState createMatchState()
+	{
+		return null;
 	}
 
 }

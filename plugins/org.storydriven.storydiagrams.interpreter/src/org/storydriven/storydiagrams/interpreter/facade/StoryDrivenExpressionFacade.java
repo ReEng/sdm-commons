@@ -1,7 +1,7 @@
 package org.storydriven.storydiagrams.interpreter.facade;
 
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.expressions.TextualExpression;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.TextualExpression;
 
 import de.mdelab.sdm.interpreter.core.facade.IExpressionFacade;
 

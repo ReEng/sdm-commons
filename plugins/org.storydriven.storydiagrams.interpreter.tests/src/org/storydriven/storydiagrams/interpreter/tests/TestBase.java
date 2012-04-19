@@ -18,10 +18,10 @@ import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.storydriven.modeling.activities.ActivitiesFactory;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityNode;
-import org.storydriven.modeling.activities.OperationExtension;
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.OperationExtension;
 import org.storydriven.storydiagrams.interpreter.eclipse.StoryDrivenEclipseInterpreter;
 import org.storydriven.storydiagrams.interpreter.notifications.StoryDrivenNotificationEmitter;
 import org.storydriven.storydiagrams.interpreter.notifications.StoryDrivenOutputStreamNotificationReceiver;
@@ -80,7 +80,7 @@ public abstract class TestBase extends TestCase
 
 		emitter.addNotificationReceiver(new StoryDrivenOutputStreamNotificationReceiver());
 
-		this.setFixture(new StoryDrivenEclipseInterpreter(this.getClass().getClassLoader(), emitter));
+		setFixture(new StoryDrivenEclipseInterpreter(this.getClass().getClassLoader(), emitter));
 
 	}
 
@@ -93,7 +93,7 @@ public abstract class TestBase extends TestCase
 	@Override
 	protected void tearDown() throws Exception
 	{
-		this.setFixture(null);
+		setFixture(null);
 		// TODO delete created operation extensions
 	}
 
@@ -103,13 +103,13 @@ public abstract class TestBase extends TestCase
 	{
 		ResourceSet rs = new ResourceSetImpl();
 
-		Resource r = rs.createResource(URI.createPlatformPluginURI(this.getModelFolder() + modelName, true));
+		Resource r = rs.createResource(URI.createPlatformPluginURI(getModelFolder() + modelName, true));
 
 		r.load(Collections.EMPTY_MAP);
 
 		Activity activity = (Activity) r.getContents().get(0);
 
-		this.createOperationExtension(activity, modelName);
+		createOperationExtension(activity, modelName);
 
 		return activity;
 	}
@@ -118,7 +118,7 @@ public abstract class TestBase extends TestCase
 	{
 		ResourceSet rs = new ResourceSetImpl();
 
-		Resource r = rs.createResource(URI.createPlatformPluginURI(this.getModelFolder() + modelName, true));
+		Resource r = rs.createResource(URI.createPlatformPluginURI(getModelFolder() + modelName, true));
 
 		r.load(Collections.EMPTY_MAP);
 
@@ -160,9 +160,9 @@ public abstract class TestBase extends TestCase
 	protected Map<String, Variable<EClassifier>> executeActivityNode(ActivityNode activityNode, List<Variable<EClassifier>> parameter)
 			throws SDMException
 	{
-		Map<String, Variable<EClassifier>> vars = this.getFixture().executeActivity((Activity) activityNode.eContainer(), parameter);
+		Map<String, Variable<EClassifier>> vars = getFixture().executeActivity((Activity) activityNode.eContainer(), parameter);
 
-		this.assertNoAdapters(activityNode);
+		assertNoAdapters(activityNode);
 
 		return vars;
 	}
@@ -191,7 +191,7 @@ public abstract class TestBase extends TestCase
 	{
 		System.out.println("\n\n\nExecuting '" + testName + "'.");
 
-		Activity a = this.loadActivityDiagram(testName + ".sdm");
+		Activity a = loadActivityDiagram(testName + ".sdm");
 
 		ActivityNode an = a.getOwnedActivityNodes().get(0);
 

@@ -1,7 +1,7 @@
 package org.storydriven.storydiagrams.interpreter.facade;
 
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityNode;
 
 import de.mdelab.sdm.interpreter.core.facade.IActivityEdgeFacade;
 

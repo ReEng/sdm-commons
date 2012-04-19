@@ -1,8 +1,8 @@
 package org.storydriven.storydiagrams.interpreter.facade;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
 
 import de.mdelab.sdm.interpreter.core.facade.IStoryPatternLinkFacade;
 

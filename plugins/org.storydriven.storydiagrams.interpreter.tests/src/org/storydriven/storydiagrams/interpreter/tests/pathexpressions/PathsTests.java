@@ -1,26 +1,16 @@
 package org.storydriven.storydiagrams.interpreter.tests.pathexpressions;
 
 import java.io.IOException;
-import java.io.StringReader;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.parser.IParseResult;
-import org.eclipse.xtext.parser.IParser;
-import org.eclipse.xtext.parser.antlr.IAntlrParser;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityNode;
-import org.storydriven.modeling.activities.MatchingStoryNode;
-import org.storydriven.modeling.expressions.PathExpressionsStandaloneSetupGenerated;
-import org.storydriven.modeling.expressions.pathExpressions.PathExpression;
-import org.storydriven.modeling.expressions.pathbridge.PathExpressionBridge;
-import org.storydriven.modeling.expressions.pathbridge.PathbridgeFactory;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.Path;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.MatchingStoryNode;
 import org.storydriven.storydiagrams.interpreter.tests.TestBase;
-
-import com.google.inject.Injector;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.Path;
 
 import de.mdelab.sdm.interpreter.core.SDMException;
 import de.mdelab.sdm.interpreter.core.SDMInterpreterConstants;
@@ -37,7 +27,7 @@ public class PathsTests extends TestBase
 	@Override
 	protected String getModelFolder()
 	{
-		return "/org.storydriven.modeling.interpreter.tests/models/patterns/paths/";
+		return "/org.storydriven.storydiagrams.interpreter.tests/models/patterns/paths/";
 	}
 
 	public void testPathImplicit1() throws IOException, SDMException
@@ -46,7 +36,7 @@ public class PathsTests extends TestBase
 
 		// a--b--c
 
-		Activity a = this.loadActivityDiagram("testPathImplicit1.sdm");
+		Activity a = loadActivityDiagram("testPathImplicit1.sdm");
 
 		for (ActivityNode node : a.getOwnedActivityNodes())
 		{
@@ -57,7 +47,7 @@ public class PathsTests extends TestBase
 					if (link instanceof Path)
 					{
 						Path path = (Path) link;
-						this.createPathExpression(path, "-->*");
+						createPathExpression(path, "-->*");
 					}
 				}
 			}
@@ -76,15 +66,21 @@ public class PathsTests extends TestBase
 
 	public void createPathExpression(Path path, String expression)
 	{
-		PathExpressionBridge pathExpressionBridge = PathbridgeFactory.eINSTANCE.createPathExpressionBridge();
-		Injector guiceInjector = new PathExpressionsStandaloneSetupGenerated().createInjectorAndDoEMFRegistration();
-		IParser parser = guiceInjector.getInstance(IAntlrParser.class);
-		IParseResult result = parser.parse(new StringReader(expression));
-		EObject eRoot = result.getRootASTElement();
-		PathExpression root = (PathExpression) eRoot;
+		// PathExpressionBridge pathExpressionBridge =
+		// PathbridgeFactory.eINSTANCE.createPathExpressionBridge();
+		// Injector guiceInjector = new
+		// PathExpressionsStandaloneSetupGenerated().createInjectorAndDoEMFRegistration();
+		// IParser parser = guiceInjector.getInstance(IAntlrParser.class);
+		// IParseResult result = parser.parse(new StringReader(expression));
+		// EObject eRoot = result.getRootASTElement();
+		// PathExpression root = (PathExpression) eRoot;
+		//
+		// pathExpressionBridge.setPathExpression(root);
+		// path.setPathExpression(pathExpressionBridge);
 
-		pathExpressionBridge.setPathExpression(root);
-		path.setPathExpression(pathExpressionBridge);
+		// TODO
+
+		throw new UnsupportedOperationException();
 	}
 
 	public void testPathImplicit2() throws IOException, SDMException
@@ -93,7 +89,7 @@ public class PathsTests extends TestBase
 
 		// a--b--c--c1
 
-		Activity a = this.loadActivityDiagram("testPathImplicit2.sdm");
+		Activity a = loadActivityDiagram("testPathImplicit2.sdm");
 
 		for (ActivityNode node : a.getOwnedActivityNodes())
 		{
@@ -104,7 +100,7 @@ public class PathsTests extends TestBase
 					if (link instanceof Path)
 					{
 						Path path = (Path) link;
-						this.createPathExpression(path, "-->*");
+						createPathExpression(path, "-->*");
 					}
 				}
 			}
@@ -127,7 +123,7 @@ public class PathsTests extends TestBase
 
 		// a--b--b2
 
-		Activity a = this.loadActivityDiagram("testPathImplicitFails.sdm");
+		Activity a = loadActivityDiagram("testPathImplicitFails.sdm");
 
 		for (ActivityNode node : a.getOwnedActivityNodes())
 		{
@@ -138,7 +134,7 @@ public class PathsTests extends TestBase
 					if (link instanceof Path)
 					{
 						Path path = (Path) link;
-						this.createPathExpression(path, "-->*");
+						createPathExpression(path, "-->*");
 					}
 				}
 			}
@@ -161,7 +157,7 @@ public class PathsTests extends TestBase
 
 		// a<>--b<>--c
 
-		Activity a = this.loadActivityDiagram("testPathImplicitContained1.sdm");
+		Activity a = loadActivityDiagram("testPathImplicitContained1.sdm");
 
 		for (ActivityNode node : a.getOwnedActivityNodes())
 		{
@@ -172,7 +168,7 @@ public class PathsTests extends TestBase
 					if (link instanceof Path)
 					{
 						Path path = (Path) link;
-						this.createPathExpression(path, "<>-->*");
+						createPathExpression(path, "<>-->*");
 					}
 				}
 			}
@@ -195,7 +191,7 @@ public class PathsTests extends TestBase
 
 		// a<>--a1<>--a2<>--a3<>--a4
 
-		Activity a = this.loadActivityDiagram("testPathImplicitContained2.sdm");
+		Activity a = loadActivityDiagram("testPathImplicitContained2.sdm");
 
 		for (ActivityNode node : a.getOwnedActivityNodes())
 		{
@@ -206,7 +202,7 @@ public class PathsTests extends TestBase
 					if (link instanceof Path)
 					{
 						Path path = (Path) link;
-						this.createPathExpression(path, "<>-->*");
+						createPathExpression(path, "<>-->*");
 					}
 				}
 			}
@@ -229,7 +225,7 @@ public class PathsTests extends TestBase
 
 		// a<>--b<>--b2
 
-		Activity a = this.loadActivityDiagram("testPathImplicitContainedFails.sdm");
+		Activity a = loadActivityDiagram("testPathImplicitContainedFails.sdm");
 
 		for (ActivityNode node : a.getOwnedActivityNodes())
 		{
@@ -240,7 +236,7 @@ public class PathsTests extends TestBase
 					if (link instanceof Path)
 					{
 						Path path = (Path) link;
-						this.createPathExpression(path, "<>-->*");
+						createPathExpression(path, "<>-->*");
 					}
 				}
 			}
@@ -263,7 +259,7 @@ public class PathsTests extends TestBase
 
 		// a--b--c
 
-		Activity a = this.loadActivityDiagram("testPathExplicit1.sdm");
+		Activity a = loadActivityDiagram("testPathExplicit1.sdm");
 
 		for (ActivityNode node : a.getOwnedActivityNodes())
 		{
@@ -274,7 +270,7 @@ public class PathsTests extends TestBase
 					if (link instanceof Path)
 					{
 						Path path = (Path) link;
-						this.createPathExpression(path, "toOneRef.refToC");
+						createPathExpression(path, "toOneRef.refToC");
 					}
 				}
 			}
@@ -297,7 +293,7 @@ public class PathsTests extends TestBase
 
 		// a<>--a1<>--a2<>--a3<>--a4
 
-		Activity a = this.loadActivityDiagram("testPathExplicit2.sdm");
+		Activity a = loadActivityDiagram("testPathExplicit2.sdm");
 
 		for (ActivityNode node : a.getOwnedActivityNodes())
 		{
@@ -308,7 +304,7 @@ public class PathsTests extends TestBase
 					if (link instanceof Path)
 					{
 						Path path = (Path) link;
-						this.createPathExpression(path, "elements*");
+						createPathExpression(path, "elements*");
 					}
 				}
 			}
@@ -331,7 +327,7 @@ public class PathsTests extends TestBase
 
 		// a--b--b2
 
-		Activity a = this.loadActivityDiagram("testPathExplicitFails.sdm");
+		Activity a = loadActivityDiagram("testPathExplicitFails.sdm");
 
 		for (ActivityNode node : a.getOwnedActivityNodes())
 		{
@@ -342,7 +338,7 @@ public class PathsTests extends TestBase
 					if (link instanceof Path)
 					{
 						Path path = (Path) link;
-						this.createPathExpression(path, "toOneRef*.refToC");
+						createPathExpression(path, "toOneRef*.refToC");
 					}
 				}
 			}
@@ -365,7 +361,7 @@ public class PathsTests extends TestBase
 
 		// a--b--c
 
-		Activity a = this.loadActivityDiagram("testTypeRestrictionsFails.sdm");
+		Activity a = loadActivityDiagram("testTypeRestrictionsFails.sdm");
 
 		for (ActivityNode node : a.getOwnedActivityNodes())
 		{
@@ -376,7 +372,7 @@ public class PathsTests extends TestBase
 					if (link instanceof Path)
 					{
 						Path path = (Path) link;
-						this.createPathExpression(path, "-->[!ClassB]*");
+						createPathExpression(path, "-->[!ClassB]*");
 					}
 				}
 			}
@@ -399,7 +395,7 @@ public class PathsTests extends TestBase
 
 		// a--b--c
 
-		Activity a = this.loadActivityDiagram("testTypeRestrictionsFails.sdm");
+		Activity a = loadActivityDiagram("testTypeRestrictionsFails.sdm");
 
 		for (ActivityNode node : a.getOwnedActivityNodes())
 		{
@@ -410,7 +406,7 @@ public class PathsTests extends TestBase
 					if (link instanceof Path)
 					{
 						Path path = (Path) link;
-						this.createPathExpression(path, "-->[!X]*");
+						createPathExpression(path, "-->[!X]*");
 					}
 				}
 			}
@@ -431,7 +427,7 @@ public class PathsTests extends TestBase
 	{
 		System.out.println("\n\n\nExecuting 'testPathComplex1'.");
 
-		Activity a = this.loadActivityDiagram("testPathComplex.sdm");
+		Activity a = loadActivityDiagram("testPathComplex.sdm");
 
 		for (ActivityNode node : a.getOwnedActivityNodes())
 		{
@@ -442,7 +438,7 @@ public class PathsTests extends TestBase
 					if (link instanceof Path)
 					{
 						Path path = (Path) link;
-						this.createPathExpression(path, "(-->[!ClassC]*|-->[!ClassB]*)");
+						createPathExpression(path, "(-->[!ClassC]*|-->[!ClassB]*)");
 					}
 				}
 			}
@@ -463,7 +459,7 @@ public class PathsTests extends TestBase
 	{
 		System.out.println("\n\n\nExecuting 'testPathComplex2'.");
 
-		Activity a = this.loadActivityDiagram("testPathComplex.sdm");
+		Activity a = loadActivityDiagram("testPathComplex.sdm");
 
 		for (ActivityNode node : a.getOwnedActivityNodes())
 		{
@@ -474,7 +470,7 @@ public class PathsTests extends TestBase
 					if (link instanceof Path)
 					{
 						Path path = (Path) link;
-						this.createPathExpression(path, "(toOneRef[!ClassB]*.elements|toOneRef.refToC.elements[!ClassC]*.toOneRef)");
+						createPathExpression(path, "(toOneRef[!ClassB]*.elements|toOneRef.refToC.elements[!ClassC]*.toOneRef)");
 					}
 				}
 			}

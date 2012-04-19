@@ -5,14 +5,15 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.Path;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.Path;
 
 import de.mdelab.sdm.interpreter.core.SDMException;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.ECheckResult;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.EMatchType;
+import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.MatchState;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.PatternPartBasedMatcher;
 import de.mdelab.sdm.interpreter.core.variables.Variable;
 
@@ -76,7 +77,7 @@ public class StoryDrivenPathPatternPart extends StoryDrivenPatternPart<AbstractV
 	@Override
 	public ECheckResult check() throws SDMException
 	{
-		if (this.patternMatcher.boundSPO.contains(this.link.getSource()) && this.patternMatcher.boundSPO.contains(this.link.getTarget()))
+		if (this.patternMatcher.isBound(this.link.getSource()) && this.patternMatcher.isBound(this.link.getTarget()))
 		{
 			AbstractVariable sourceSpo = this.link.getSource();
 			AbstractVariable targetSpo = this.link.getTarget();
@@ -151,15 +152,15 @@ public class StoryDrivenPathPatternPart extends StoryDrivenPatternPart<AbstractV
 	}
 
 	@Override
-	public boolean match() throws SDMException
+	public boolean match(MatchState matchState) throws SDMException
 	{
 		AbstractVariable sourceVar = this.link.getSource();
 		AbstractVariable targetVar = this.link.getTarget();
 
-		assert this.patternMatcher.boundSPO.contains(sourceVar) || this.patternMatcher.boundSPO.contains(targetVar);
-		assert !(this.patternMatcher.boundSPO.contains(sourceVar) && this.patternMatcher.boundSPO.contains(targetVar));
+		assert this.patternMatcher.isBound(sourceVar) || this.patternMatcher.isBound(targetVar);
+		assert !(this.patternMatcher.isBound(sourceVar) && this.patternMatcher.isBound(targetVar));
 
-		assert this.patternMatcher.boundSPO.contains(sourceVar);
+		assert this.patternMatcher.isBound(sourceVar);
 
 		Variable<EClassifier> sourceVariable = this.patternMatcher.getVariablesScope().getVariable(sourceVar.getName());
 
@@ -187,7 +188,7 @@ public class StoryDrivenPathPatternPart extends StoryDrivenPatternPart<AbstractV
 		{
 			for (Object targetObject : (Collection<Object>) result.getValue())
 			{
-				if (this.matchTargetObject(sourceVar, sourceInstanceObject, targetVar, targetObject))
+				if (this.patternMatcher.matchStoryPatternObject(targetVar, targetObject))
 				{
 					return true;
 				}
@@ -195,7 +196,7 @@ public class StoryDrivenPathPatternPart extends StoryDrivenPatternPart<AbstractV
 		}
 		else
 		{
-			if (result.getValue() != null && this.matchTargetObject(sourceVar, sourceInstanceObject, targetVar, result.getValue()))
+			if (result.getValue() != null && this.patternMatcher.matchStoryPatternObject(targetVar, result.getValue()))
 			{
 				return true;
 			}
@@ -210,10 +211,9 @@ public class StoryDrivenPathPatternPart extends StoryDrivenPatternPart<AbstractV
 	@Override
 	public int calculateMatchingCost()
 	{
-		assert !(this.patternMatcher.boundSPO.contains(this.link.getSource()) && this.patternMatcher.boundSPO.contains(this.link
-				.getTarget()));
+		assert !(this.patternMatcher.isBound(this.link.getSource()) && this.patternMatcher.isBound(this.link.getTarget()));
 
-		if (this.patternMatcher.boundSPO.contains(this.link.getSource()))
+		if (this.patternMatcher.isBound(this.link.getSource()))
 		{
 			/*
 			 * It is probably very difficult to provide a useful matching cost
@@ -225,6 +225,12 @@ public class StoryDrivenPathPatternPart extends StoryDrivenPatternPart<AbstractV
 		{
 			return MATCHING_NOT_POSSIBLE;
 		}
+	}
+
+	@Override
+	public MatchState createMatchState()
+	{
+		return null;
 	}
 
 }

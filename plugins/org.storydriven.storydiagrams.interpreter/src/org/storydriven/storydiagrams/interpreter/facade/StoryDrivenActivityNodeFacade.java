@@ -1,10 +1,10 @@
 package org.storydriven.storydiagrams.interpreter.facade;
 
-import org.storydriven.modeling.activities.ActivityNode;
-import org.storydriven.modeling.activities.JunctionNode;
-import org.storydriven.modeling.activities.StatementNode;
-import org.storydriven.modeling.activities.StopNode;
-import org.storydriven.modeling.activities.StoryNode;
+import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.JunctionNode;
+import org.storydriven.storydiagrams.activities.StatementNode;
+import org.storydriven.storydiagrams.activities.StopNode;
+import org.storydriven.storydiagrams.activities.StoryNode;
 
 import de.mdelab.sdm.interpreter.core.facade.EActivityNodeType;
 import de.mdelab.sdm.interpreter.core.facade.IActivityNodeFacade;

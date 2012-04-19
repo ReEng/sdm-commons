@@ -4,11 +4,11 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.ActivityNode;
-import org.storydriven.modeling.activities.EdgeGuard;
-import org.storydriven.modeling.activities.JunctionNode;
-import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.EdgeGuard;
+import org.storydriven.storydiagrams.activities.JunctionNode;
 
 import de.mdelab.sdm.interpreter.core.facade.IDecisionNodeFacade;
 

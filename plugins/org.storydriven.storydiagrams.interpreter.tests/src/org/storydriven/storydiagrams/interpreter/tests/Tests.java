@@ -1,14 +1,14 @@
 package org.storydriven.storydiagrams.interpreter.tests;
 
+import junit.framework.Test;
+import junit.framework.TestSuite;
+import junit.textui.TestRunner;
+
 import org.storydriven.storydiagrams.interpreter.tests.activities.ActivitiesTests;
 import org.storydriven.storydiagrams.interpreter.tests.calls.CallsTests;
 import org.storydriven.storydiagrams.interpreter.tests.pathexpressions.PathsTests;
 import org.storydriven.storydiagrams.interpreter.tests.patterns.MatchingPatternsTests;
 import org.storydriven.storydiagrams.interpreter.tests.patterns.ModifyingPatternsTests;
-
-import junit.framework.Test;
-import junit.framework.TestSuite;
-import junit.textui.TestRunner;
 
 
 /**
