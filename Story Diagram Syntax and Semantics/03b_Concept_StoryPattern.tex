@@ -388,7 +388,7 @@ explain objectSetVariables, set size expressions
 \todomcp{object sets and binding operators/states/semantics}
 
 \todomcp{If we bind an object set, can we use the bound object in other story pattern? E.g. to insert all elements bound by the object set into a container via a containment link? (See Figure \ref{fig:reuseObjSet}).}
-\tododt{Yes, but I would use another concrete syntax (see Figures~\ref{fig:reuseObjSet1}, \ref{fig:reuseObjSet2}, and \ref{fig:reuseObjSet1}).}
+\tododt{Yes, but I would use another concrete syntax (see Figures~\ref{fig:reuseObjSet1}, \ref{fig:reuseObjSet2}, and \ref{fig:reuseObjSet3}).}
 
 \begin{figure}[p]
 	\begin{minipage}{.45\textwidth}
@@ -460,7 +460,7 @@ A maybe constraint could allow to match the same objects to both sets.}
 
 %\ext %--- Comment this line to include inclusion links into the document
 { 
-\subsubsection{Inclusion Links [CH]}
+\subsubsection{Inclusion Links [DT]}
 \label{sec:StoryPatterns:specialLinks:inclusion}
 
 \todoch{What is the semantics of a containment link? Current understanding: an element is contained in a container. What is the difference to to-many references which are containments?}
@@ -587,7 +587,7 @@ If there are multiple link order constraints, like in Fig.~\ref{fig:linkOrderCon
 For optionally created and destroyed links, the same applies to link order constraints like to link position constraints. Optionally destroyed link can be used straight-forwardly. An optionally created link is created if it does not exist, so that the specified order is enforced. If the link does exist but the element is not at an appropriate position, it is moved.
 } %--- End of link constraint subsection
 
-\subsubsection{Maybe Links}
+\subsubsection{Maybe Links [CH]}
 \label{sec:StoryPatterns:specialLinks:maybeLink}
 
 Story patterns are matched by using isomorphic matchings. That means that two object variables in a story pattern may not be matched to the same object of the instance model. A matching which matches two object variables to the same object is, thus, considered to be invalid. In some situations, however, such matchings should be explicitly allowed. Then, the isomorphic matching must be disabled. This may be achieved by connecting the object variables with a maybe link. Figure \ref{fig:maybeLink} shows the concrete syntax of maybe links. 
