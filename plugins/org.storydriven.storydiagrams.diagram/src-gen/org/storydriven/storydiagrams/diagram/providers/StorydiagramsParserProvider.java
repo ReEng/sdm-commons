@@ -28,8 +28,7 @@ import org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry;
 /**
  * @generated
  */
-public class StorydiagramsParserProvider extends AbstractProvider implements
-		IParserProvider {
+public class StorydiagramsParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
@@ -41,12 +40,9 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 */
 	private IParser getStatementNodeName_5001Parser() {
 		if (statementNodeName_5001Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			statementNodeName_5001Parser = parser;
 		}
 		return statementNodeName_5001Parser;
@@ -55,64 +51,55 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser structuredNodeName_5004Parser;
+	private IParser structuredNodeName_5010Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getStructuredNodeName_5004Parser() {
-		if (structuredNodeName_5004Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
-			structuredNodeName_5004Parser = parser;
+	private IParser getStructuredNodeName_5010Parser() {
+		if (structuredNodeName_5010Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
+			structuredNodeName_5010Parser = parser;
 		}
-		return structuredNodeName_5004Parser;
+		return structuredNodeName_5010Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser modifyingStoryNodeName_5007Parser;
+	private IParser activityCallNodeName_5011Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getModifyingStoryNodeName_5007Parser() {
-		if (modifyingStoryNodeName_5007Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
-			modifyingStoryNodeName_5007Parser = parser;
+	private IParser getActivityCallNodeName_5011Parser() {
+		if (activityCallNodeName_5011Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
+			activityCallNodeName_5011Parser = parser;
 		}
-		return modifyingStoryNodeName_5007Parser;
+		return activityCallNodeName_5011Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser activityCallNodeName_5020Parser;
+	private IParser modifyingStoryNodeName_5012Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getActivityCallNodeName_5020Parser() {
-		if (activityCallNodeName_5020Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
-			activityCallNodeName_5020Parser = parser;
+	private IParser getModifyingStoryNodeName_5012Parser() {
+		if (modifyingStoryNodeName_5012Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
+			modifyingStoryNodeName_5012Parser = parser;
 		}
-		return activityCallNodeName_5020Parser;
+		return modifyingStoryNodeName_5012Parser;
 	}
 
 	/**
@@ -125,12 +112,9 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 */
 	private IParser getStatementNodeName_5002Parser() {
 		if (statementNodeName_5002Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			statementNodeName_5002Parser = parser;
 		}
 		return statementNodeName_5002Parser;
@@ -139,85 +123,73 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser structuredNodeName_5003Parser;
+	private IParser structuredNodeName_5009Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getStructuredNodeName_5003Parser() {
-		if (structuredNodeName_5003Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
-			structuredNodeName_5003Parser = parser;
+	private IParser getStructuredNodeName_5009Parser() {
+		if (structuredNodeName_5009Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
+			structuredNodeName_5009Parser = parser;
 		}
-		return structuredNodeName_5003Parser;
+		return structuredNodeName_5009Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser modifyingStoryNodeName_5010Parser;
+	private IParser modifyingStoryNodeName_5008Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getModifyingStoryNodeName_5010Parser() {
-		if (modifyingStoryNodeName_5010Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
-			modifyingStoryNodeName_5010Parser = parser;
+	private IParser getModifyingStoryNodeName_5008Parser() {
+		if (modifyingStoryNodeName_5008Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
+			modifyingStoryNodeName_5008Parser = parser;
 		}
-		return modifyingStoryNodeName_5010Parser;
+		return modifyingStoryNodeName_5008Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser objectVariableName_5015Parser;
+	private IParser objectVariableName_5003Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getObjectVariableName_5015Parser() {
-		if (objectVariableName_5015Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
-			objectVariableName_5015Parser = parser;
+	private IParser getObjectVariableName_5003Parser() {
+		if (objectVariableName_5003Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
+			objectVariableName_5003Parser = parser;
 		}
-		return objectVariableName_5015Parser;
+		return objectVariableName_5003Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser primitiveVariableName_5018Parser;
+	private IParser primitiveVariableName_5006Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getPrimitiveVariableName_5018Parser() {
-		if (primitiveVariableName_5018Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
-			primitiveVariableName_5018Parser = parser;
+	private IParser getPrimitiveVariableName_5006Parser() {
+		if (primitiveVariableName_5006Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
+			primitiveVariableName_5006Parser = parser;
 		}
-		return primitiveVariableName_5018Parser;
+		return primitiveVariableName_5006Parser;
 	}
 
 	/**
@@ -228,21 +200,21 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 		case StatementNodeNameEditPart.VISUAL_ID:
 			return getStatementNodeName_5001Parser();
 		case StructuredNodeNameEditPart.VISUAL_ID:
-			return getStructuredNodeName_5004Parser();
-		case ModifyingStoryNodeNameEditPart.VISUAL_ID:
-			return getModifyingStoryNodeName_5007Parser();
+			return getStructuredNodeName_5010Parser();
 		case ActivityCallNodeNameEditPart.VISUAL_ID:
-			return getActivityCallNodeName_5020Parser();
+			return getActivityCallNodeName_5011Parser();
+		case ModifyingStoryNodeNameEditPart.VISUAL_ID:
+			return getModifyingStoryNodeName_5012Parser();
 		case StatementNodeName2EditPart.VISUAL_ID:
 			return getStatementNodeName_5002Parser();
 		case StructuredNodeName2EditPart.VISUAL_ID:
-			return getStructuredNodeName_5003Parser();
+			return getStructuredNodeName_5009Parser();
 		case ModifyingStoryNodeName2EditPart.VISUAL_ID:
-			return getModifyingStoryNodeName_5010Parser();
+			return getModifyingStoryNodeName_5008Parser();
 		case ObjectVariableNameEditPart.VISUAL_ID:
-			return getObjectVariableName_5015Parser();
+			return getObjectVariableName_5003Parser();
 		case PrimitiveVariableNameEditPart.VISUAL_ID:
-			return getPrimitiveVariableName_5018Parser();
+			return getPrimitiveVariableName_5006Parser();
 		}
 		return null;
 	}
@@ -251,10 +223,8 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**

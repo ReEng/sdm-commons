@@ -8,11 +8,10 @@ import org.storydriven.storydiagrams.diagram.custom.providers.ResourcesContentPr
 import org.storydriven.storydiagrams.diagram.custom.providers.ResourcesLabelProvider;
 
 public class SelectEClassDialog extends AbstractTreeSelectionDialog<EClass> {
-
 	private Activity activity;
 
 	public SelectEClassDialog() {
-		super("Select Classifier", "Select EClass", "Select the EClass for the Object.");
+		super("Object Classifier", "Select EClass", "Select the EClass for the object variable.");
 	}
 
 	public void setActivity(Activity activity) {
@@ -43,5 +42,4 @@ public class SelectEClassDialog extends AbstractTreeSelectionDialog<EClass> {
 	protected Object getInput() {
 		return activity;
 	}
-
 }

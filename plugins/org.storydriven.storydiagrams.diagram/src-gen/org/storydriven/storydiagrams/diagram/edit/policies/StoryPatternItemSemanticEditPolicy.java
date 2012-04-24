@@ -22,8 +22,7 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class StoryPatternItemSemanticEditPolicy extends
-		StorydiagramsBaseItemSemanticEditPolicy {
+public class StoryPatternItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -37,8 +36,7 @@ public class StoryPatternItemSemanticEditPolicy extends
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
@@ -62,60 +60,45 @@ public class StoryPatternItemSemanticEditPolicy extends
 			Node node = (Node) nit.next();
 			switch (StorydiagramsVisualIDRegistry.getVisualID(node)) {
 			case StoryPatternStoryPatternCompartementEditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit
-						.hasNext();) {
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (StorydiagramsVisualIDRegistry.getVisualID(cnode)) {
 					case ObjectVariableEditPart.VISUAL_ID:
-						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
-								.hasNext();) {
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
-							if (StorydiagramsVisualIDRegistry
-									.getVisualID(incomingLink) == LinkVariableEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										incomingLink.getElement(), false);
+							if (StorydiagramsVisualIDRegistry.getVisualID(incomingLink) == LinkVariableEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										incomingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 								continue;
 							}
 						}
-						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it
-								.hasNext();) {
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
-							if (StorydiagramsVisualIDRegistry
-									.getVisualID(outgoingLink) == LinkVariableEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										outgoingLink.getElement(), false);
+							if (StorydiagramsVisualIDRegistry.getVisualID(outgoingLink) == LinkVariableEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										outgoingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								continue;
 							}
 						}
-						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false))); // directlyOwned: true
+						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode
+								.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case PrimitiveVariableEditPart.VISUAL_ID:
-						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
-								.hasNext();) {
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
-							if (StorydiagramsVisualIDRegistry
-									.getVisualID(incomingLink) == LinkVariableEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										incomingLink.getElement(), false);
+							if (StorydiagramsVisualIDRegistry.getVisualID(incomingLink) == LinkVariableEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										incomingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 								continue;
 							}
 						}
-						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false))); // directlyOwned: true
+						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode
+								.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;

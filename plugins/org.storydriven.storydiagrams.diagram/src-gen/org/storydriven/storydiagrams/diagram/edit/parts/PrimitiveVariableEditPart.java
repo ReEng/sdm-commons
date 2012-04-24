@@ -46,7 +46,7 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3014;
+	public static final int VISUAL_ID = 3011;
 
 	/**
 	 * @generated
@@ -70,8 +70,7 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new PrimitiveVariableItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PrimitiveVariableItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -84,8 +83,7 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -122,23 +120,19 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof PrimitiveVariableNameEditPart) {
-			((PrimitiveVariableNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigurePrimitiveVariableNameLabel());
+			((PrimitiveVariableNameEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getFigurePrimitiveVariableNameLabel());
 			return true;
 		}
 		if (childEditPart instanceof PrimitiveVariableClassifierLabelEditPart) {
-			((PrimitiveVariableClassifierLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigurePrimitiveVariableClassifierLabel());
+			((PrimitiveVariableClassifierLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getFigurePrimitiveVariableClassifierLabel());
 			return true;
 		}
 		if (childEditPart instanceof PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigurePrimitiveVariableConstraintsRectangle();
+			IFigure pane = getPrimaryShape().getFigurePrimitiveVariableConstraintsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(((PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -155,11 +149,9 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigurePrimitiveVariableConstraintsRectangle();
+			IFigure pane = getPrimaryShape().getFigurePrimitiveVariableConstraintsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.remove(((PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -190,8 +182,7 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart) {
-			return getPrimaryShape()
-					.getFigurePrimitiveVariableConstraintsRectangle();
+			return getPrimaryShape().getFigurePrimitiveVariableConstraintsRectangle();
 		}
 		return getContentPane();
 	}
@@ -286,8 +277,7 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(StorydiagramsVisualIDRegistry
-				.getType(PrimitiveVariableNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(PrimitiveVariableNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -305,7 +295,7 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3012);
+			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
 		}
 		return types;
 	}
@@ -335,8 +325,7 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 			this.setLayoutManager(new StackLayout());
 			this.setFill(false);
 			this.setOutline(false);
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 			createContents();
 		}
 
@@ -349,41 +338,33 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 			primitiveVariableContainerRectangle0.setFill(false);
 			primitiveVariableContainerRectangle0.setOutline(false);
 
-			primitiveVariableContainerRectangle0.setBorder(new MarginBorder(
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			primitiveVariableContainerRectangle0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode()
+					.DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 
 			this.add(primitiveVariableContainerRectangle0);
-			primitiveVariableContainerRectangle0
-					.setLayoutManager(new StackLayout());
+			primitiveVariableContainerRectangle0.setLayoutManager(new StackLayout());
 
 			RectangleFigure primitiveVariableRectangle1 = new RectangleFigure();
-			primitiveVariableRectangle1
-					.setForegroundColor(ColorConstants.black);
+			primitiveVariableRectangle1.setForegroundColor(ColorConstants.black);
 
-			primitiveVariableContainerRectangle0
-					.add(primitiveVariableRectangle1);
+			primitiveVariableContainerRectangle0.add(primitiveVariableRectangle1);
 
 			BorderLayout layoutPrimitiveVariableRectangle1 = new BorderLayout();
-			primitiveVariableRectangle1
-					.setLayoutManager(layoutPrimitiveVariableRectangle1);
+			primitiveVariableRectangle1.setLayoutManager(layoutPrimitiveVariableRectangle1);
 
 			RectangleFigure primitiveVariableFigureNameRectangle2 = new RectangleFigure();
 
-			primitiveVariableRectangle1.add(
-					primitiveVariableFigureNameRectangle2, BorderLayout.TOP);
+			primitiveVariableRectangle1.add(primitiveVariableFigureNameRectangle2, BorderLayout.TOP);
 
 			GridLayout layoutPrimitiveVariableFigureNameRectangle2 = new GridLayout();
 			layoutPrimitiveVariableFigureNameRectangle2.numColumns = 1;
 			layoutPrimitiveVariableFigureNameRectangle2.makeColumnsEqualWidth = true;
-			primitiveVariableFigureNameRectangle2
-					.setLayoutManager(layoutPrimitiveVariableFigureNameRectangle2);
+			primitiveVariableFigureNameRectangle2.setLayoutManager(layoutPrimitiveVariableFigureNameRectangle2);
 
 			fFigurePrimitiveVariableNameLabel = new WrappingLabel();
 			fFigurePrimitiveVariableNameLabel.setText("");
 
-			fFigurePrimitiveVariableNameLabel
-					.setFont(FFIGUREPRIMITIVEVARIABLENAMELABEL_FONT);
+			fFigurePrimitiveVariableNameLabel.setFont(FFIGUREPRIMITIVEVARIABLENAMELABEL_FONT);
 
 			GridData constraintFFigurePrimitiveVariableNameLabel = new GridData();
 			constraintFFigurePrimitiveVariableNameLabel.verticalAlignment = GridData.CENTER;
@@ -393,15 +374,13 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 			constraintFFigurePrimitiveVariableNameLabel.verticalSpan = 1;
 			constraintFFigurePrimitiveVariableNameLabel.grabExcessHorizontalSpace = true;
 			constraintFFigurePrimitiveVariableNameLabel.grabExcessVerticalSpace = false;
-			primitiveVariableFigureNameRectangle2.add(
-					fFigurePrimitiveVariableNameLabel,
+			primitiveVariableFigureNameRectangle2.add(fFigurePrimitiveVariableNameLabel,
 					constraintFFigurePrimitiveVariableNameLabel);
 
 			fFigurePrimitiveVariableClassifierLabel = new WrappingLabel();
 			fFigurePrimitiveVariableClassifierLabel.setText("");
 
-			fFigurePrimitiveVariableClassifierLabel
-					.setFont(FFIGUREPRIMITIVEVARIABLECLASSIFIERLABEL_FONT);
+			fFigurePrimitiveVariableClassifierLabel.setFont(FFIGUREPRIMITIVEVARIABLECLASSIFIERLABEL_FONT);
 
 			GridData constraintFFigurePrimitiveVariableClassifierLabel = new GridData();
 			constraintFFigurePrimitiveVariableClassifierLabel.verticalAlignment = GridData.END;
@@ -411,28 +390,23 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 			constraintFFigurePrimitiveVariableClassifierLabel.verticalSpan = 1;
 			constraintFFigurePrimitiveVariableClassifierLabel.grabExcessHorizontalSpace = true;
 			constraintFFigurePrimitiveVariableClassifierLabel.grabExcessVerticalSpace = false;
-			primitiveVariableFigureNameRectangle2.add(
-					fFigurePrimitiveVariableClassifierLabel,
+			primitiveVariableFigureNameRectangle2.add(fFigurePrimitiveVariableClassifierLabel,
 					constraintFFigurePrimitiveVariableClassifierLabel);
 
 			RectangleFigure primitiveVariableFigureBodyRectangle2 = new RectangleFigure();
 			primitiveVariableFigureBodyRectangle2.setFill(false);
 			primitiveVariableFigureBodyRectangle2.setOutline(false);
 
-			primitiveVariableRectangle1.add(
-					primitiveVariableFigureBodyRectangle2, BorderLayout.CENTER);
+			primitiveVariableRectangle1.add(primitiveVariableFigureBodyRectangle2, BorderLayout.CENTER);
 
 			BorderLayout layoutPrimitiveVariableFigureBodyRectangle2 = new BorderLayout();
-			primitiveVariableFigureBodyRectangle2
-					.setLayoutManager(layoutPrimitiveVariableFigureBodyRectangle2);
+			primitiveVariableFigureBodyRectangle2.setLayoutManager(layoutPrimitiveVariableFigureBodyRectangle2);
 
 			fFigurePrimitiveVariableConstraintsRectangle = new RectangleFigure();
 			fFigurePrimitiveVariableConstraintsRectangle.setFill(false);
 			fFigurePrimitiveVariableConstraintsRectangle.setOutline(false);
 
-			primitiveVariableFigureBodyRectangle2.add(
-					fFigurePrimitiveVariableConstraintsRectangle,
-					BorderLayout.TOP);
+			primitiveVariableFigureBodyRectangle2.add(fFigurePrimitiveVariableConstraintsRectangle, BorderLayout.TOP);
 
 		}
 
@@ -462,15 +436,13 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FFIGUREPRIMITIVEVARIABLENAMELABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.BOLD);
+	static final Font FFIGUREPRIMITIVEVARIABLENAMELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
+			.getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 	/**
 	 * @generated
 	 */
-	static final Font FFIGUREPRIMITIVEVARIABLECLASSIFIERLABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.BOLD);
+	static final Font FFIGUREPRIMITIVEVARIABLECLASSIFIERLABEL_FONT = new Font(Display.getCurrent(), Display
+			.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 }

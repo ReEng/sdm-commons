@@ -34,8 +34,7 @@ import org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry;
 /**
  * @generated
  */
-public class StructuredNodeStructuredNodeCompartment2CanonicalEditPolicy extends
-		CanonicalEditPolicy {
+public class StructuredNodeStructuredNodeCompartment2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -53,8 +52,7 @@ public class StructuredNodeStructuredNodeCompartment2CanonicalEditPolicy extends
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return ActivitiesPackage.eINSTANCE
-				.getStructuredNode_OwnedActivityNode();
+		return ActivitiesPackage.eINSTANCE.getStructuredNode_OwnedActivityNode();
 	}
 
 	/**
@@ -65,7 +63,7 @@ public class StructuredNodeStructuredNodeCompartment2CanonicalEditPolicy extends
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<StorydiagramsNodeDescriptor> childDescriptors = StorydiagramsDiagramUpdater
-				.getStructuredNodeStructuredNodeCompartment_7002SemanticChildren(viewObject);
+				.getStructuredNodeStructuredNodeCompartment_7004SemanticChildren(viewObject);
 		for (StorydiagramsNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -75,10 +73,8 @@ public class StructuredNodeStructuredNodeCompartment2CanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
@@ -107,8 +103,7 @@ public class StructuredNodeStructuredNodeCompartment2CanonicalEditPolicy extends
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<StorydiagramsNodeDescriptor> childDescriptors = StorydiagramsDiagramUpdater
-				.getStructuredNodeStructuredNodeCompartment_7002SemanticChildren((View) getHost()
-						.getModel());
+				.getStructuredNodeStructuredNodeCompartment_7004SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -122,11 +117,10 @@ public class StructuredNodeStructuredNodeCompartment2CanonicalEditPolicy extends
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<StorydiagramsNodeDescriptor> descriptorsIterator = childDescriptors
-				.iterator(); descriptorsIterator.hasNext();) {
+		for (Iterator<StorydiagramsNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
+				.hasNext();) {
 			StorydiagramsNodeDescriptor next = descriptorsIterator.next();
-			String hint = StorydiagramsVisualIDRegistry.getType(next
-					.getVisualID());
+			String hint = StorydiagramsVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -152,13 +146,10 @@ public class StructuredNodeStructuredNodeCompartment2CanonicalEditPolicy extends
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
 		for (StorydiagramsNodeDescriptor next : childDescriptors) {
-			String hint = StorydiagramsVisualIDRegistry.getType(next
-					.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+			String hint = StorydiagramsVisualIDRegistry.getType(next.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -167,8 +158,7 @@ public class StructuredNodeStructuredNodeCompartment2CanonicalEditPolicy extends
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
@@ -179,8 +169,7 @@ public class StructuredNodeStructuredNodeCompartment2CanonicalEditPolicy extends
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews, host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

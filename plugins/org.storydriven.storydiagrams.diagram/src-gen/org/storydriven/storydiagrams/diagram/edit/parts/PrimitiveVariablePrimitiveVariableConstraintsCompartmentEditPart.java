@@ -13,19 +13,17 @@ import org.storydriven.storydiagrams.diagram.part.Messages;
 /**
  * @generated
  */
-public class PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart
-		extends ListCompartmentEditPart {
+public class PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7015;
+	public static final int VISUAL_ID = 7010;
 
 	/**
 	 * @generated
 	 */
-	public PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart(
-			View view) {
+	public PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -47,8 +45,7 @@ public class PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
 		return result;
 	}
@@ -58,8 +55,7 @@ public class PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new PrimitiveVariablePrimitiveVariableConstraintsCompartmentItemSemanticEditPolicy());
 	}
 

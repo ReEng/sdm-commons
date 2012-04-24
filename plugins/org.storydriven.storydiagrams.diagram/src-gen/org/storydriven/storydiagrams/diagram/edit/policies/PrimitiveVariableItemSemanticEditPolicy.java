@@ -24,14 +24,13 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class PrimitiveVariableItemSemanticEditPolicy extends
-		StorydiagramsBaseItemSemanticEditPolicy {
+public class PrimitiveVariableItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public PrimitiveVariableItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.PrimitiveVariable_3014);
+		super(StorydiagramsElementTypes.PrimitiveVariable_3011);
 	}
 
 	/**
@@ -39,14 +38,12 @@ public class PrimitiveVariableItemSemanticEditPolicy extends
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
 			if (StorydiagramsVisualIDRegistry.getVisualID(incomingLink) == LinkVariableEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(
-						incomingLink.getElement(), false);
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
@@ -74,8 +71,7 @@ public class PrimitiveVariableItemSemanticEditPolicy extends
 			Node node = (Node) nit.next();
 			switch (StorydiagramsVisualIDRegistry.getVisualID(node)) {
 			case PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit
-						.hasNext();) {
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (StorydiagramsVisualIDRegistry.getVisualID(cnode)) {
 					}
@@ -91,15 +87,13 @@ public class PrimitiveVariableItemSemanticEditPolicy extends
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (StorydiagramsElementTypes.LinkVariable_4002 == req.getElementType()) {
 			return null;
 		}
@@ -109,11 +103,9 @@ public class PrimitiveVariableItemSemanticEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (StorydiagramsElementTypes.LinkVariable_4002 == req.getElementType()) {
-			return getGEFWrapper(new LinkVariableCreateCommand(req,
-					req.getSource(), req.getTarget()));
+			return getGEFWrapper(new LinkVariableCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -124,8 +116,7 @@ public class PrimitiveVariableItemSemanticEditPolicy extends
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(
-			ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case LinkVariableEditPart.VISUAL_ID:
 			return getGEFWrapper(new LinkVariableReorientCommand(req));

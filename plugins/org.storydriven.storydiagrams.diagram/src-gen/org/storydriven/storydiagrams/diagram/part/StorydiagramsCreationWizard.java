@@ -80,8 +80,7 @@ public class StorydiagramsCreationWizard extends Wizard implements INewWizard {
 	/**
 	 * @generated
 	 */
-	public void setOpenNewlyCreatedDiagramEditor(
-			boolean openNewlyCreatedDiagramEditor) {
+	public void setOpenNewlyCreatedDiagramEditor(boolean openNewlyCreatedDiagramEditor) {
 		this.openNewlyCreatedDiagramEditor = openNewlyCreatedDiagramEditor;
 	}
 
@@ -101,33 +100,25 @@ public class StorydiagramsCreationWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public void addPages() {
-		diagramModelFilePage = new StorydiagramsCreationWizardPage(
-				"DiagramModelFile", getSelection(), "storydiagrams_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
-		diagramModelFilePage
-				.setTitle(Messages.StorydiagramsCreationWizard_DiagramModelFilePageTitle);
-		diagramModelFilePage
-				.setDescription(Messages.StorydiagramsCreationWizard_DiagramModelFilePageDescription);
+		diagramModelFilePage = new StorydiagramsCreationWizardPage("DiagramModelFile", getSelection(), "sdm_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
+		diagramModelFilePage.setTitle(Messages.StorydiagramsCreationWizard_DiagramModelFilePageTitle);
+		diagramModelFilePage.setDescription(Messages.StorydiagramsCreationWizard_DiagramModelFilePageDescription);
 		addPage(diagramModelFilePage);
 
-		domainModelFilePage = new StorydiagramsCreationWizardPage(
-				"DomainModelFile", getSelection(), "storydiagrams") { //$NON-NLS-1$ //$NON-NLS-2$
+		domainModelFilePage = new StorydiagramsCreationWizardPage("DomainModelFile", getSelection(), "sdm") { //$NON-NLS-1$ //$NON-NLS-2$
 
 			public void setVisible(boolean visible) {
 				if (visible) {
 					String fileName = diagramModelFilePage.getFileName();
-					fileName = fileName.substring(0, fileName.length()
-							- ".storydiagrams_diagram".length()); //$NON-NLS-1$
-					setFileName(StorydiagramsDiagramEditorUtil
-							.getUniqueFileName(getContainerFullPath(),
-									fileName, "storydiagrams")); //$NON-NLS-1$
+					fileName = fileName.substring(0, fileName.length() - ".sdm_diagram".length()); //$NON-NLS-1$
+					setFileName(StorydiagramsDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName,
+							"sdm")); //$NON-NLS-1$
 				}
 				super.setVisible(visible);
 			}
 		};
-		domainModelFilePage
-				.setTitle(Messages.StorydiagramsCreationWizard_DomainModelFilePageTitle);
-		domainModelFilePage
-				.setDescription(Messages.StorydiagramsCreationWizard_DomainModelFilePageDescription);
+		domainModelFilePage.setTitle(Messages.StorydiagramsCreationWizard_DomainModelFilePageTitle);
+		domainModelFilePage.setDescription(Messages.StorydiagramsCreationWizard_DomainModelFilePageDescription);
 		addPage(domainModelFilePage);
 	}
 
@@ -137,20 +128,15 @@ public class StorydiagramsCreationWizard extends Wizard implements INewWizard {
 	public boolean performFinish() {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
-			protected void execute(IProgressMonitor monitor)
-					throws CoreException, InterruptedException {
-				diagram = StorydiagramsDiagramEditorUtil.createDiagram(
-						diagramModelFilePage.getURI(),
+			protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException {
+				diagram = StorydiagramsDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(),
 						domainModelFilePage.getURI(), monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
 					try {
 						StorydiagramsDiagramEditorUtil.openDiagram(diagram);
 					} catch (PartInitException e) {
-						ErrorDialog
-								.openError(
-										getContainer().getShell(),
-										Messages.StorydiagramsCreationWizardOpenEditorError,
-										null, e.getStatus());
+						ErrorDialog.openError(getContainer().getShell(),
+								Messages.StorydiagramsCreationWizardOpenEditorError, null, e.getStatus());
 					}
 				}
 			}
@@ -161,10 +147,8 @@ public class StorydiagramsCreationWizard extends Wizard implements INewWizard {
 			return false;
 		} catch (InvocationTargetException e) {
 			if (e.getTargetException() instanceof CoreException) {
-				ErrorDialog.openError(getContainer().getShell(),
-						Messages.StorydiagramsCreationWizardCreationError,
-						null,
-						((CoreException) e.getTargetException()).getStatus());
+				ErrorDialog.openError(getContainer().getShell(), Messages.StorydiagramsCreationWizardCreationError,
+						null, ((CoreException) e.getTargetException()).getStatus());
 			} else {
 				StorydiagramsDiagramEditorPlugin.getInstance().logError(
 						"Error creating diagram", e.getTargetException()); //$NON-NLS-1$

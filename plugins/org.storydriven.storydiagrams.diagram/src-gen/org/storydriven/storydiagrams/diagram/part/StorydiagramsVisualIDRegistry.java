@@ -30,7 +30,7 @@ import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableBindingOpe
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableClassifierLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableNameEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableObjectVariableConstraintsCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.PrimitiveVariableClassifierLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.PrimitiveVariableEditPart;
@@ -82,8 +82,7 @@ public class StorydiagramsVisualIDRegistry {
 				return -1;
 			}
 		}
-		return org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry
-				.getVisualID(view.getType());
+		return org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry.getVisualID(view.getType());
 	}
 
 	/**
@@ -108,11 +107,9 @@ public class StorydiagramsVisualIDRegistry {
 		try {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
-			if (Boolean.TRUE.toString().equalsIgnoreCase(
-					Platform.getDebugOption(DEBUG_KEY))) {
+			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
 				StorydiagramsDiagramEditorPlugin.getInstance().logError(
-						"Unable to parse view type as a visualID number: "
-								+ type);
+						"Unable to parse view type as a visualID number: " + type);
 			}
 		}
 		return -1;
@@ -132,8 +129,7 @@ public class StorydiagramsVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (ActivitiesPackage.eINSTANCE.getActivity().isSuperTypeOf(
-				domainElement.eClass())
+		if (ActivitiesPackage.eINSTANCE.getActivity().isSuperTypeOf(domainElement.eClass())
 				&& isDiagram((Activity) domainElement)) {
 			return ActivityEditPart.VISUAL_ID;
 		}
@@ -165,124 +161,98 @@ public class StorydiagramsVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case ActivityEditPart.VISUAL_ID:
-			if (ActivitiesPackage.eINSTANCE.getStartNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getStartNode().isSuperTypeOf(domainElement.eClass())) {
 				return StartNodeEditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getStopNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getStopNode().isSuperTypeOf(domainElement.eClass())) {
 				return StopNodeEditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getJunctionNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getJunctionNode().isSuperTypeOf(domainElement.eClass())) {
 				return JunctionNodeEditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getStatementNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getStatementNode().isSuperTypeOf(domainElement.eClass())) {
 				return StatementNodeEditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getStructuredNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getStructuredNode().isSuperTypeOf(domainElement.eClass())) {
 				return StructuredNodeEditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getModifyingStoryNode()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return ModifyingStoryNodeEditPart.VISUAL_ID;
-			}
-			if (ActivitiesPackage.eINSTANCE.getActivityCallNode()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getActivityCallNode().isSuperTypeOf(domainElement.eClass())) {
 				return ActivityCallNodeEditPart.VISUAL_ID;
+			}
+			if (ActivitiesPackage.eINSTANCE.getModifyingStoryNode().isSuperTypeOf(domainElement.eClass())) {
+				return ModifyingStoryNodeEditPart.VISUAL_ID;
 			}
 			break;
 		case StatementNodeStatementNodeCompartmentEditPart.VISUAL_ID:
-			if (ExpressionsPackage.eINSTANCE.getTextualExpression()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (ExpressionsPackage.eINSTANCE.getTextualExpression().isSuperTypeOf(domainElement.eClass())) {
 				return TextualExpressionEditPart.VISUAL_ID;
 			}
 			break;
 		case StructuredNodeStructuredNodeCompartmentEditPart.VISUAL_ID:
-			if (ActivitiesPackage.eINSTANCE.getJunctionNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getJunctionNode().isSuperTypeOf(domainElement.eClass())) {
 				return JunctionNode2EditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getStartNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getStartNode().isSuperTypeOf(domainElement.eClass())) {
 				return StartNode2EditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getStopNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getStopNode().isSuperTypeOf(domainElement.eClass())) {
 				return StopNode2EditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getStatementNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getStatementNode().isSuperTypeOf(domainElement.eClass())) {
 				return StatementNode2EditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getStructuredNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getStructuredNode().isSuperTypeOf(domainElement.eClass())) {
 				return StructuredNode2EditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getModifyingStoryNode()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getModifyingStoryNode().isSuperTypeOf(domainElement.eClass())) {
 				return ModifyingStoryNode2EditPart.VISUAL_ID;
 			}
 			break;
 		case StatementNodeStatementNodeCompartment2EditPart.VISUAL_ID:
-			if (ExpressionsPackage.eINSTANCE.getTextualExpression()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (ExpressionsPackage.eINSTANCE.getTextualExpression().isSuperTypeOf(domainElement.eClass())) {
 				return TextualExpressionEditPart.VISUAL_ID;
 			}
 			break;
 		case StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID:
-			if (ActivitiesPackage.eINSTANCE.getJunctionNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getJunctionNode().isSuperTypeOf(domainElement.eClass())) {
 				return JunctionNode2EditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getStartNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getStartNode().isSuperTypeOf(domainElement.eClass())) {
 				return StartNode2EditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getStopNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getStopNode().isSuperTypeOf(domainElement.eClass())) {
 				return StopNode2EditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getStatementNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getStatementNode().isSuperTypeOf(domainElement.eClass())) {
 				return StatementNode2EditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getStructuredNode().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getStructuredNode().isSuperTypeOf(domainElement.eClass())) {
 				return StructuredNode2EditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getModifyingStoryNode()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getModifyingStoryNode().isSuperTypeOf(domainElement.eClass())) {
 				return ModifyingStoryNode2EditPart.VISUAL_ID;
 			}
 			break;
 		case ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getStoryPattern().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getStoryPattern().isSuperTypeOf(domainElement.eClass())) {
 				return StoryPatternEditPart.VISUAL_ID;
 			}
 			break;
 		case StoryPatternStoryPatternCompartementEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getObjectVariable().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getObjectVariable().isSuperTypeOf(domainElement.eClass())) {
 				return ObjectVariableEditPart.VISUAL_ID;
 			}
-			if (PatternsPackage.eINSTANCE.getPrimitiveVariable().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getPrimitiveVariable().isSuperTypeOf(domainElement.eClass())) {
 				return PrimitiveVariableEditPart.VISUAL_ID;
 			}
 			break;
-		case ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getAttributeAssignment()
-					.isSuperTypeOf(domainElement.eClass())) {
+		case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
+			if (PatternsPackage.eINSTANCE.getAttributeAssignment().isSuperTypeOf(domainElement.eClass())) {
 				return AttributeAssignmentEditPart.VISUAL_ID;
 			}
 			break;
 		case ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getStoryPattern().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getStoryPattern().isSuperTypeOf(domainElement.eClass())) {
 				return StoryPatternEditPart.VISUAL_ID;
 			}
 			break;
@@ -327,10 +297,10 @@ public class StorydiagramsVisualIDRegistry {
 			if (StructuredNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ModifyingStoryNodeEditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityCallNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ActivityCallNodeEditPart.VISUAL_ID == nodeVisualID) {
+			if (ModifyingStoryNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -350,6 +320,14 @@ public class StorydiagramsVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ActivityCallNodeEditPart.VISUAL_ID:
+			if (ActivityCallNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActivityCallNodeActivityCallNodeCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			if (ModifyingStoryNodeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -358,14 +336,6 @@ public class StorydiagramsVisualIDRegistry {
 				return true;
 			}
 			if (ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ActivityCallNodeEditPart.VISUAL_ID:
-			if (ActivityCallNodeNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ActivityCallNodeActivityCallNodeCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -414,7 +384,7 @@ public class StorydiagramsVisualIDRegistry {
 			if (ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -492,7 +462,7 @@ public class StorydiagramsVisualIDRegistry {
 				return true;
 			}
 			break;
-		case ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart.VISUAL_ID:
+		case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
 			if (AttributeAssignmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -518,12 +488,10 @@ public class StorydiagramsVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (ActivitiesPackage.eINSTANCE.getActivityEdge().isSuperTypeOf(
-				domainElement.eClass())) {
+		if (ActivitiesPackage.eINSTANCE.getActivityEdge().isSuperTypeOf(domainElement.eClass())) {
 			return ActivityEdgeEditPart.VISUAL_ID;
 		}
-		if (PatternsPackage.eINSTANCE.getLinkVariable().isSuperTypeOf(
-				domainElement.eClass())) {
+		if (PatternsPackage.eINSTANCE.getLinkVariable().isSuperTypeOf(domainElement.eClass())) {
 			return LinkVariableEditPart.VISUAL_ID;
 		}
 		return -1;

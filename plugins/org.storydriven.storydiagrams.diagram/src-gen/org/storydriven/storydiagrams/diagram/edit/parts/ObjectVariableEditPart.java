@@ -49,7 +49,7 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3012;
+	public static final int VISUAL_ID = 3009;
 
 	/**
 	 * @generated
@@ -72,11 +72,9 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new ObjectVariableItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ObjectVariableItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -89,8 +87,7 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -127,37 +124,29 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ObjectVariableNameEditPart) {
-			((ObjectVariableNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureObjectVariableNameLabel());
+			((ObjectVariableNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureObjectVariableNameLabel());
 			return true;
 		}
 		if (childEditPart instanceof ObjectVariableBindingOperatorEditPart) {
-			((ObjectVariableBindingOperatorEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureObjectVariableModifierLabel());
+			((ObjectVariableBindingOperatorEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getFigureObjectVariableModifierLabel());
 			return true;
 		}
 		if (childEditPart instanceof ObjectVariableClassifierLabelEditPart) {
-			((ObjectVariableClassifierLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureObjectVariableClassifierLabel());
+			((ObjectVariableClassifierLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getFigureObjectVariableClassifierLabel());
 			return true;
 		}
 		if (childEditPart instanceof ObjectVariableObjectVariableConstraintsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureObjectVariableConstraintsRectangle();
+			IFigure pane = getPrimaryShape().getFigureObjectVariableConstraintsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ObjectVariableObjectVariableConstraintsCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(((ObjectVariableObjectVariableConstraintsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureObjectVariableAttributeAssignmentsRectangle();
+		if (childEditPart instanceof ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureObjectVariableAttributeAssignmentsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(((ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -177,18 +166,15 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof ObjectVariableObjectVariableConstraintsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureObjectVariableConstraintsRectangle();
+			IFigure pane = getPrimaryShape().getFigureObjectVariableConstraintsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((ObjectVariableObjectVariableConstraintsCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.remove(((ObjectVariableObjectVariableConstraintsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureObjectVariableAttributeAssignmentsRectangle();
+		if (childEditPart instanceof ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureObjectVariableAttributeAssignmentsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart) childEditPart)
+			pane.remove(((ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -220,12 +206,10 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof ObjectVariableObjectVariableConstraintsCompartmentEditPart) {
-			return getPrimaryShape()
-					.getFigureObjectVariableConstraintsRectangle();
+			return getPrimaryShape().getFigureObjectVariableConstraintsRectangle();
 		}
-		if (editPart instanceof ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart) {
-			return getPrimaryShape()
-					.getFigureObjectVariableAttributeAssignmentsRectangle();
+		if (editPart instanceof ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart) {
+			return getPrimaryShape().getFigureObjectVariableAttributeAssignmentsRectangle();
 		}
 		return getContentPane();
 	}
@@ -320,8 +304,7 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(StorydiagramsVisualIDRegistry
-				.getType(ObjectVariableNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(ObjectVariableNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -336,8 +319,7 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart) {
 			types.add(StorydiagramsElementTypes.LinkVariable_4002);
@@ -354,8 +336,8 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3012);
-			types.add(StorydiagramsElementTypes.PrimitiveVariable_3014);
+			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
+			types.add(StorydiagramsElementTypes.PrimitiveVariable_3011);
 		}
 		return types;
 	}
@@ -375,7 +357,7 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3012);
+			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
 		}
 		return types;
 	}
@@ -385,14 +367,12 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == StorydiagramsElementTypes.AttributeAssignment_3013) {
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == StorydiagramsElementTypes.AttributeAssignment_3010) {
 				return getChildBySemanticHint(StorydiagramsVisualIDRegistry
-						.getType(ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart.VISUAL_ID));
+						.getType(ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID));
 			}
 		}
 		return super.getTargetEditPart(request);
@@ -431,8 +411,7 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 			this.setLayoutManager(new StackLayout());
 			this.setFill(false);
 			this.setOutline(false);
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 			createContents();
 		}
 
@@ -445,13 +424,11 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 			objectVariableContainerRectangle0.setFill(false);
 			objectVariableContainerRectangle0.setOutline(false);
 
-			objectVariableContainerRectangle0.setBorder(new MarginBorder(
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			objectVariableContainerRectangle0.setBorder(new MarginBorder(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 
 			this.add(objectVariableContainerRectangle0);
-			objectVariableContainerRectangle0
-					.setLayoutManager(new StackLayout());
+			objectVariableContainerRectangle0.setLayoutManager(new StackLayout());
 
 			RectangleFigure objectVariableRectangle1 = new RectangleFigure();
 			objectVariableRectangle1.setForegroundColor(ColorConstants.black);
@@ -459,25 +436,21 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 			objectVariableContainerRectangle0.add(objectVariableRectangle1);
 
 			BorderLayout layoutObjectVariableRectangle1 = new BorderLayout();
-			objectVariableRectangle1
-					.setLayoutManager(layoutObjectVariableRectangle1);
+			objectVariableRectangle1.setLayoutManager(layoutObjectVariableRectangle1);
 
 			RectangleFigure objectVariableFigureNameRectangle2 = new RectangleFigure();
 
-			objectVariableRectangle1.add(objectVariableFigureNameRectangle2,
-					BorderLayout.TOP);
+			objectVariableRectangle1.add(objectVariableFigureNameRectangle2, BorderLayout.TOP);
 
 			GridLayout layoutObjectVariableFigureNameRectangle2 = new GridLayout();
 			layoutObjectVariableFigureNameRectangle2.numColumns = 1;
 			layoutObjectVariableFigureNameRectangle2.makeColumnsEqualWidth = true;
-			objectVariableFigureNameRectangle2
-					.setLayoutManager(layoutObjectVariableFigureNameRectangle2);
+			objectVariableFigureNameRectangle2.setLayoutManager(layoutObjectVariableFigureNameRectangle2);
 
 			fFigureObjectVariableModifierLabel = new WrappingLabel();
 			fFigureObjectVariableModifierLabel.setText("");
 
-			fFigureObjectVariableModifierLabel
-					.setFont(FFIGUREOBJECTVARIABLEMODIFIERLABEL_FONT);
+			fFigureObjectVariableModifierLabel.setFont(FFIGUREOBJECTVARIABLEMODIFIERLABEL_FONT);
 
 			GridData constraintFFigureObjectVariableModifierLabel = new GridData();
 			constraintFFigureObjectVariableModifierLabel.verticalAlignment = GridData.BEGINNING;
@@ -487,15 +460,13 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 			constraintFFigureObjectVariableModifierLabel.verticalSpan = 1;
 			constraintFFigureObjectVariableModifierLabel.grabExcessHorizontalSpace = true;
 			constraintFFigureObjectVariableModifierLabel.grabExcessVerticalSpace = false;
-			objectVariableFigureNameRectangle2.add(
-					fFigureObjectVariableModifierLabel,
+			objectVariableFigureNameRectangle2.add(fFigureObjectVariableModifierLabel,
 					constraintFFigureObjectVariableModifierLabel);
 
 			fFigureObjectVariableNameLabel = new WrappingLabel();
 			fFigureObjectVariableNameLabel.setText("");
 
-			fFigureObjectVariableNameLabel
-					.setFont(FFIGUREOBJECTVARIABLENAMELABEL_FONT);
+			fFigureObjectVariableNameLabel.setFont(FFIGUREOBJECTVARIABLENAMELABEL_FONT);
 
 			GridData constraintFFigureObjectVariableNameLabel = new GridData();
 			constraintFFigureObjectVariableNameLabel.verticalAlignment = GridData.CENTER;
@@ -505,15 +476,13 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 			constraintFFigureObjectVariableNameLabel.verticalSpan = 1;
 			constraintFFigureObjectVariableNameLabel.grabExcessHorizontalSpace = true;
 			constraintFFigureObjectVariableNameLabel.grabExcessVerticalSpace = false;
-			objectVariableFigureNameRectangle2.add(
-					fFigureObjectVariableNameLabel,
+			objectVariableFigureNameRectangle2.add(fFigureObjectVariableNameLabel,
 					constraintFFigureObjectVariableNameLabel);
 
 			fFigureObjectVariableClassifierLabel = new WrappingLabel();
 			fFigureObjectVariableClassifierLabel.setText("");
 
-			fFigureObjectVariableClassifierLabel
-					.setFont(FFIGUREOBJECTVARIABLECLASSIFIERLABEL_FONT);
+			fFigureObjectVariableClassifierLabel.setFont(FFIGUREOBJECTVARIABLECLASSIFIERLABEL_FONT);
 
 			GridData constraintFFigureObjectVariableClassifierLabel = new GridData();
 			constraintFFigureObjectVariableClassifierLabel.verticalAlignment = GridData.END;
@@ -523,36 +492,29 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 			constraintFFigureObjectVariableClassifierLabel.verticalSpan = 1;
 			constraintFFigureObjectVariableClassifierLabel.grabExcessHorizontalSpace = true;
 			constraintFFigureObjectVariableClassifierLabel.grabExcessVerticalSpace = false;
-			objectVariableFigureNameRectangle2.add(
-					fFigureObjectVariableClassifierLabel,
+			objectVariableFigureNameRectangle2.add(fFigureObjectVariableClassifierLabel,
 					constraintFFigureObjectVariableClassifierLabel);
 
 			RectangleFigure objectVariableFigureBodyRectangle2 = new RectangleFigure();
 			objectVariableFigureBodyRectangle2.setFill(false);
 			objectVariableFigureBodyRectangle2.setOutline(false);
 
-			objectVariableRectangle1.add(objectVariableFigureBodyRectangle2,
-					BorderLayout.CENTER);
+			objectVariableRectangle1.add(objectVariableFigureBodyRectangle2, BorderLayout.CENTER);
 
 			BorderLayout layoutObjectVariableFigureBodyRectangle2 = new BorderLayout();
-			objectVariableFigureBodyRectangle2
-					.setLayoutManager(layoutObjectVariableFigureBodyRectangle2);
+			objectVariableFigureBodyRectangle2.setLayoutManager(layoutObjectVariableFigureBodyRectangle2);
 
 			fFigureObjectVariableConstraintsRectangle = new RectangleFigure();
 			fFigureObjectVariableConstraintsRectangle.setFill(false);
 			fFigureObjectVariableConstraintsRectangle.setOutline(false);
 
-			objectVariableFigureBodyRectangle2
-					.add(fFigureObjectVariableConstraintsRectangle,
-							BorderLayout.TOP);
+			objectVariableFigureBodyRectangle2.add(fFigureObjectVariableConstraintsRectangle, BorderLayout.TOP);
 
 			fFigureObjectVariableAttributeAssignmentsRectangle = new RectangleFigure();
 			fFigureObjectVariableAttributeAssignmentsRectangle.setFill(false);
-			fFigureObjectVariableAttributeAssignmentsRectangle
-					.setOutline(false);
+			fFigureObjectVariableAttributeAssignmentsRectangle.setOutline(false);
 
-			objectVariableFigureBodyRectangle2.add(
-					fFigureObjectVariableAttributeAssignmentsRectangle,
+			objectVariableFigureBodyRectangle2.add(fFigureObjectVariableAttributeAssignmentsRectangle,
 					BorderLayout.CENTER);
 
 		}
@@ -597,22 +559,19 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FFIGUREOBJECTVARIABLEMODIFIERLABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.ITALIC);
+	static final Font FFIGUREOBJECTVARIABLEMODIFIERLABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
+			.getSystemFont().getFontData()[0].getName(), 9, SWT.ITALIC);
 
 	/**
 	 * @generated
 	 */
-	static final Font FFIGUREOBJECTVARIABLENAMELABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.BOLD);
+	static final Font FFIGUREOBJECTVARIABLENAMELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
+			.getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 	/**
 	 * @generated
 	 */
-	static final Font FFIGUREOBJECTVARIABLECLASSIFIERLABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.BOLD);
+	static final Font FFIGUREOBJECTVARIABLECLASSIFIERLABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
+			.getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 }

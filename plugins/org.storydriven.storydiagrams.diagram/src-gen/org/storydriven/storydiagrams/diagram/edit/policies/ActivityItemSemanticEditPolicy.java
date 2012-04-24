@@ -18,8 +18,7 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class ActivityItemSemanticEditPolicy extends
-		StorydiagramsBaseItemSemanticEditPolicy {
+public class ActivityItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -41,21 +40,17 @@ public class ActivityItemSemanticEditPolicy extends
 		if (StorydiagramsElementTypes.JunctionNode_2003 == req.getElementType()) {
 			return getGEFWrapper(new JunctionNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.StatementNode_2004 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.StatementNode_2004 == req.getElementType()) {
 			return getGEFWrapper(new StatementNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.StructuredNode_2005 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.StructuredNode_2005 == req.getElementType()) {
 			return getGEFWrapper(new StructuredNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.ModifyingStoryNode_2007 == req
-				.getElementType()) {
-			return getGEFWrapper(new ModifyingStoryNodeCreateCommand(req));
-		}
-		if (StorydiagramsElementTypes.ActivityCallNode_2008 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.ActivityCallNode_2006 == req.getElementType()) {
 			return getGEFWrapper(new ActivityCallNodeCreateCommand(req));
+		}
+		if (StorydiagramsElementTypes.ModifyingStoryNode_2007 == req.getElementType()) {
+			return getGEFWrapper(new ModifyingStoryNodeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -64,26 +59,20 @@ public class ActivityItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost())
-				.getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**
 	 * @generated
 	 */
-	private static class DuplicateAnythingCommand extends
-			DuplicateEObjectsCommand {
+	private static class DuplicateAnythingCommand extends DuplicateEObjectsCommand {
 
 		/**
 		 * @generated
 		 */
-		public DuplicateAnythingCommand(
-				TransactionalEditingDomain editingDomain,
-				DuplicateElementsRequest req) {
-			super(editingDomain, req.getLabel(), req
-					.getElementsToBeDuplicated(), req
-					.getAllDuplicatedElementsMap());
+		public DuplicateAnythingCommand(TransactionalEditingDomain editingDomain, DuplicateElementsRequest req) {
+			super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
 		}
 
 	}

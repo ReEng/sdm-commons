@@ -38,7 +38,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2008;
+	public static final int VISUAL_ID = 2006;
 
 	/**
 	 * @generated
@@ -62,8 +62,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new ActivityCallNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityCallNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -76,8 +75,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -114,9 +112,8 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ActivityCallNodeNameEditPart) {
-			((ActivityCallNodeNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureActivityCallNodeNewName());
+			((ActivityCallNodeNameEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getFigureActivityCallNodeNewName());
 			return true;
 		}
 		return false;
@@ -163,7 +160,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(110, 80);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
 	}
 
@@ -249,8 +246,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(StorydiagramsVisualIDRegistry
-				.getType(ActivityCallNodeNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(ActivityCallNodeNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -265,8 +261,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof StartNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
@@ -283,10 +278,10 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof StructuredNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
+		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart) {
+		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof JunctionNode2EditPart) {
@@ -321,14 +316,14 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.StructuredNode_2005);
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2008);
-			types.add(StorydiagramsElementTypes.JunctionNode_3001);
-			types.add(StorydiagramsElementTypes.StartNode_3002);
+			types.add(StorydiagramsElementTypes.JunctionNode_3002);
+			types.add(StorydiagramsElementTypes.StartNode_3003);
 			types.add(StorydiagramsElementTypes.StopNode_3004);
-			types.add(StorydiagramsElementTypes.StatementNode_3003);
-			types.add(StorydiagramsElementTypes.StructuredNode_3005);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3011);
+			types.add(StorydiagramsElementTypes.StatementNode_3005);
+			types.add(StorydiagramsElementTypes.StructuredNode_3006);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
 		}
 		return types;
 	}
@@ -353,14 +348,14 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.StructuredNode_2005);
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2008);
-			types.add(StorydiagramsElementTypes.JunctionNode_3001);
-			types.add(StorydiagramsElementTypes.StartNode_3002);
+			types.add(StorydiagramsElementTypes.JunctionNode_3002);
+			types.add(StorydiagramsElementTypes.StartNode_3003);
 			types.add(StorydiagramsElementTypes.StopNode_3004);
-			types.add(StorydiagramsElementTypes.StatementNode_3003);
-			types.add(StorydiagramsElementTypes.StructuredNode_3005);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3011);
+			types.add(StorydiagramsElementTypes.StatementNode_3005);
+			types.add(StorydiagramsElementTypes.StructuredNode_3006);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
 		}
 		return types;
 	}
@@ -379,8 +374,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		public ActivityCallNodeFigureNEW() {
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
-					getMapMode().DPtoLP(8)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
 			this.setBackgroundColor(THIS_BACK);
 			createContents();
 		}

@@ -15,7 +15,9 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.storydriven.storydiagrams.diagram.custom,
+ org.storydriven.storydiagrams.diagram.custom.dialogs,
  org.storydriven.storydiagrams.diagram.custom.edit.commands,
  org.storydriven.storydiagrams.diagram.custom.edit.parts,
- org.storydriven.storydiagrams.diagram.custom.providers
+ org.storydriven.storydiagrams.diagram.custom.providers,
+ org.storydriven.storydiagrams.diagram.custom.util
 Bundle-Localization: messages

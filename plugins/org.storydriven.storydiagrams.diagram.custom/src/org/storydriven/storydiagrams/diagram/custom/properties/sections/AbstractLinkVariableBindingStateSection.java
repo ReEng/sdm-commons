@@ -25,12 +25,7 @@ public class AbstractLinkVariableBindingStateSection extends AbstractEEnumRadioS
 
 	@Override
 	protected void notifyChanged(Notification msg) {
-		Object feature = msg.getFeature();
-		if ((PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR.equals(feature) || PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS
-				.equals(feature)) && msg.isTouch()) {
-			// binding operator or semantics changed
-			checkEnabled();
-		}
+		checkEnabled();
 	}
 
 	@Override

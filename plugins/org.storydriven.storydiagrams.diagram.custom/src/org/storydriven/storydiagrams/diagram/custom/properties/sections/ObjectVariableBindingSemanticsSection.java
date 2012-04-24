@@ -31,12 +31,7 @@ public class ObjectVariableBindingSemanticsSection extends AbstractEEnumRadioSec
 
 	@Override
 	protected void notifyChanged(Notification msg) {
-		Object feature = msg.getFeature();
-		if ((PatternsPackage.Literals.OBJECT_VARIABLE__BINDING_OPERATOR.equals(feature) || PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_STATE
-				.equals(feature)) && msg.isTouch()) {
-			// binding state or operator changed
-			checkEnabled();
-		}
+		checkEnabled();
 	}
 
 	protected boolean isEnabled(BindingSemantics semantics) {

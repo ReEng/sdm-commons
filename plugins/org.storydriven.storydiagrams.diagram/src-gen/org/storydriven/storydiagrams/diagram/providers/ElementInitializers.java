@@ -19,30 +19,26 @@ public class ElementInitializers {
 	 */
 	public void init_ModifyingStoryNode_2007(ModifyingStoryNode instance) {
 		try {
-			StoryPattern newInstance_0_0 = PatternsFactory.eINSTANCE
-					.createStoryPattern();
+			StoryPattern newInstance_0_0 = PatternsFactory.eINSTANCE.createStoryPattern();
 			instance.setOwnedRule(newInstance_0_0);
 			newInstance_0_0.setComment("");
 
 		} catch (RuntimeException e) {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError(
-					"Element initialization failed", e); //$NON-NLS-1$						
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
 	/**
 	 * @generated
 	 */
-	public void init_ModifyingStoryNode_3011(ModifyingStoryNode instance) {
+	public void init_ModifyingStoryNode_3007(ModifyingStoryNode instance) {
 		try {
-			StoryPattern newInstance_0_0 = PatternsFactory.eINSTANCE
-					.createStoryPattern();
+			StoryPattern newInstance_0_0 = PatternsFactory.eINSTANCE.createStoryPattern();
 			instance.setOwnedRule(newInstance_0_0);
 			newInstance_0_0.setComment("");
 
 		} catch (RuntimeException e) {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError(
-					"Element initialization failed", e); //$NON-NLS-1$						
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
 
@@ -50,11 +46,9 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = StorydiagramsDiagramEditorPlugin
-				.getInstance().getElementInitializers();
+		ElementInitializers cached = StorydiagramsDiagramEditorPlugin.getInstance().getElementInitializers();
 		if (cached == null) {
-			StorydiagramsDiagramEditorPlugin.getInstance()
-					.setElementInitializers(cached = new ElementInitializers());
+			StorydiagramsDiagramEditorPlugin.getInstance().setElementInitializers(cached = new ElementInitializers());
 		}
 		return cached;
 	}

@@ -36,7 +36,7 @@ public class ActivityPreconditionSection extends AbstractEListComboSection<Match
 
 	@Override
 	protected boolean isShowSearchButton() {
-		return true;
+		return false;
 	}
 
 	@Override

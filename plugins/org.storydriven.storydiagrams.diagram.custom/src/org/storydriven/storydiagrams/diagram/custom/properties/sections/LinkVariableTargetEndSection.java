@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEListComboSection;
+import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
 import org.storydriven.storydiagrams.patterns.LinkVariable;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
@@ -53,7 +54,6 @@ public class LinkVariableTargetEndSection extends AbstractEListComboSection<ERef
 
 	@Override
 	protected String getText(EReference element) {
-		return String.valueOf(element);
-		// return EcoreTextUtil.getText(element);
+		return EcoreTextUtil.getText(element);
 	}
 }

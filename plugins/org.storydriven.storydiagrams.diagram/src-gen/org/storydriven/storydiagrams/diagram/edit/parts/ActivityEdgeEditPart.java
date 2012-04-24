@@ -17,8 +17,7 @@ import org.storydriven.storydiagrams.diagram.edit.policies.ActivityEdgeItemSeman
 /**
  * @generated
  */
-public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements
-		ITreeBranchEditPart {
+public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -37,8 +36,7 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new ActivityEdgeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityEdgeItemSemanticEditPolicy());
 	}
 
 	/**
@@ -46,9 +44,8 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ActivityEdgeGuardConstraintLabelEditPart) {
-			((ActivityEdgeGuardConstraintLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureActivityEdgeGuardFigure());
+			((ActivityEdgeGuardConstraintLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getFigureActivityEdgeGuardFigure());
 			return true;
 		}
 		return false;

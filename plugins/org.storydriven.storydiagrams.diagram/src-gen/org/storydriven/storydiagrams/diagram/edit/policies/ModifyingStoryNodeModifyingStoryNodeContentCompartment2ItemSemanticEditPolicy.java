@@ -8,8 +8,8 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class ModifyingStoryNodeModifyingStoryNodeContentCompartment2ItemSemanticEditPolicy
-		extends StorydiagramsBaseItemSemanticEditPolicy {
+public class ModifyingStoryNodeModifyingStoryNodeContentCompartment2ItemSemanticEditPolicy extends
+		StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated

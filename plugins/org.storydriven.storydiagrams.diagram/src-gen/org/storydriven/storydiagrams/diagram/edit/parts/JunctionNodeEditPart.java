@@ -61,8 +61,7 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new JunctionNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new JunctionNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -75,8 +74,7 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -201,8 +199,7 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof StartNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
@@ -219,10 +216,10 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof StructuredNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
+		if (targetEditPart instanceof ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof ActivityCallNodeEditPart) {
+		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof JunctionNode2EditPart) {
@@ -257,14 +254,14 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.StructuredNode_2005);
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2008);
-			types.add(StorydiagramsElementTypes.JunctionNode_3001);
-			types.add(StorydiagramsElementTypes.StartNode_3002);
+			types.add(StorydiagramsElementTypes.JunctionNode_3002);
+			types.add(StorydiagramsElementTypes.StartNode_3003);
 			types.add(StorydiagramsElementTypes.StopNode_3004);
-			types.add(StorydiagramsElementTypes.StatementNode_3003);
-			types.add(StorydiagramsElementTypes.StructuredNode_3005);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3011);
+			types.add(StorydiagramsElementTypes.StatementNode_3005);
+			types.add(StorydiagramsElementTypes.StructuredNode_3006);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
 		}
 		return types;
 	}
@@ -289,14 +286,14 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.StructuredNode_2005);
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2008);
-			types.add(StorydiagramsElementTypes.JunctionNode_3001);
-			types.add(StorydiagramsElementTypes.StartNode_3002);
+			types.add(StorydiagramsElementTypes.JunctionNode_3002);
+			types.add(StorydiagramsElementTypes.StartNode_3003);
 			types.add(StorydiagramsElementTypes.StopNode_3004);
-			types.add(StorydiagramsElementTypes.StatementNode_3003);
-			types.add(StorydiagramsElementTypes.StructuredNode_3005);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3011);
+			types.add(StorydiagramsElementTypes.StatementNode_3005);
+			types.add(StorydiagramsElementTypes.StructuredNode_3006);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
 		}
 		return types;
 	}
@@ -310,22 +307,15 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		public JunctionNodeFigure() {
-			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode()
-					.DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode()
-					.DPtoLP(20)));
-			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode()
-					.DPtoLP(40)));
-			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
-					.DPtoLP(20)));
+			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(0)));
+			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
+			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(40)));
+			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			this.setFill(true);
 			this.setForegroundColor(ColorConstants.black);
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(40),
-					getMapMode().DPtoLP(40)));
-			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(40),
-					getMapMode().DPtoLP(40)));
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(40),
-					getMapMode().DPtoLP(40)));
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
+			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
 		}
 
 	}

@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.Extension;
+import org.storydriven.core.util.ExtendableElementOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -105,45 +106,37 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements Exten
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Extension getExtension(EClass type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return ExtendableElementOperations.getExtension(this, type);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Extension provideExtension(EClass type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return ExtendableElementOperations.provideExtension(this, type);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EAnnotation getAnnotation(String source) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return ExtendableElementOperations.getAnnotation(this, source);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EAnnotation provideAnnotation(String source) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return ExtendableElementOperations.provideAnnotation(this, source);
 	}
 
 	/**

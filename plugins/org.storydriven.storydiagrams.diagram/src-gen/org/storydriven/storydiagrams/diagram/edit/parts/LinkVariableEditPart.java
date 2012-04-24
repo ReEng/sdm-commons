@@ -16,8 +16,7 @@ import org.storydriven.storydiagrams.diagram.edit.policies.LinkVariableItemSeman
 /**
  * @generated
  */
-public class LinkVariableEditPart extends ConnectionNodeEditPart implements
-		ITreeBranchEditPart {
+public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -36,8 +35,7 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new LinkVariableItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new LinkVariableItemSemanticEditPolicy());
 	}
 
 	/**

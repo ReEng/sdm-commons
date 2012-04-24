@@ -13,8 +13,8 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class StructuredNodeStructuredNodeCompartmentItemSemanticEditPolicy
-		extends StorydiagramsBaseItemSemanticEditPolicy {
+public class StructuredNodeStructuredNodeCompartmentItemSemanticEditPolicy extends
+		StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -27,25 +27,22 @@ public class StructuredNodeStructuredNodeCompartmentItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.JunctionNode_3001 == req.getElementType()) {
+		if (StorydiagramsElementTypes.JunctionNode_3002 == req.getElementType()) {
 			return getGEFWrapper(new JunctionNode2CreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.StartNode_3002 == req.getElementType()) {
+		if (StorydiagramsElementTypes.StartNode_3003 == req.getElementType()) {
 			return getGEFWrapper(new StartNode2CreateCommand(req));
 		}
 		if (StorydiagramsElementTypes.StopNode_3004 == req.getElementType()) {
 			return getGEFWrapper(new StopNode2CreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.StatementNode_3003 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.StatementNode_3005 == req.getElementType()) {
 			return getGEFWrapper(new StatementNode2CreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.StructuredNode_3005 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.StructuredNode_3006 == req.getElementType()) {
 			return getGEFWrapper(new StructuredNode2CreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.ModifyingStoryNode_3011 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.ModifyingStoryNode_3007 == req.getElementType()) {
 			return getGEFWrapper(new ModifyingStoryNode2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

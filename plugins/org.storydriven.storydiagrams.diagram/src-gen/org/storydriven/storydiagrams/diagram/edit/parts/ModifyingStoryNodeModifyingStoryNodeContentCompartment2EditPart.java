@@ -15,19 +15,17 @@ import org.storydriven.storydiagrams.diagram.part.Messages;
 /**
  * @generated
  */
-public class ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart
-		extends ShapeCompartmentEditPart {
+public class ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7007;
+	public static final int VISUAL_ID = 7013;
 
 	/**
 	 * @generated
 	 */
-	public ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart(
-			View view) {
+	public ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart(View view) {
 		super(view);
 	}
 
@@ -42,8 +40,7 @@ public class ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
 		return result;
 	}
@@ -53,15 +50,11 @@ public class ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new ModifyingStoryNodeModifyingStoryNodeContentCompartment2ItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new ModifyingStoryNodeModifyingStoryNodeContentCompartment2CanonicalEditPolicy());
 	}
 

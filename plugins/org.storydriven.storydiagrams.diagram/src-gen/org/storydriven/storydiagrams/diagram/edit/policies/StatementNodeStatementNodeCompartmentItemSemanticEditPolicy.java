@@ -22,8 +22,7 @@ public class StatementNodeStatementNodeCompartmentItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.TextualExpression_3015 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.TextualExpression_3001 == req.getElementType()) {
 			return getGEFWrapper(new TextualExpressionCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

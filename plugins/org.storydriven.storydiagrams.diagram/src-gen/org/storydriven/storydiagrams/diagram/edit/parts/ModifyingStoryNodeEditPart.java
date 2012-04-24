@@ -71,8 +71,7 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new ModifyingStoryNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ModifyingStoryNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -85,8 +84,7 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -123,24 +121,19 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ModifyingStoryNodeNameEditPart) {
-			((ModifyingStoryNodeNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureStoryNodeNameLabel());
+			((ModifyingStoryNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStoryNodeNameLabel());
 			return true;
 		}
 		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureStoryNodeConstraintsRectangle();
+			IFigure pane = getPrimaryShape().getFigureStoryNodeConstraintsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart) childEditPart)
-					.getFigure());
+			pane.add(((ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart) childEditPart).getFigure());
 			return true;
 		}
 		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureStoryNodeContentRectangle();
+			IFigure pane = getPrimaryShape().getFigureStoryNodeContentRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart) childEditPart)
-					.getFigure());
+			pane.add(((ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -154,19 +147,16 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureStoryNodeConstraintsRectangle();
+			IFigure pane = getPrimaryShape().getFigureStoryNodeConstraintsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureStoryNodeContentRectangle();
+			IFigure pane = getPrimaryShape().getFigureStoryNodeContentRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart) childEditPart)
-					.getFigure());
+			pane.remove(((ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -295,8 +285,7 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(StorydiagramsVisualIDRegistry
-				.getType(ModifyingStoryNodeNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(ModifyingStoryNodeNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -311,8 +300,7 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof StartNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
@@ -329,10 +317,10 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof StructuredNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart) {
+		if (targetEditPart instanceof ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof ActivityCallNodeEditPart) {
+		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof JunctionNode2EditPart) {
@@ -367,14 +355,14 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.StructuredNode_2005);
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2008);
-			types.add(StorydiagramsElementTypes.JunctionNode_3001);
-			types.add(StorydiagramsElementTypes.StartNode_3002);
+			types.add(StorydiagramsElementTypes.JunctionNode_3002);
+			types.add(StorydiagramsElementTypes.StartNode_3003);
 			types.add(StorydiagramsElementTypes.StopNode_3004);
-			types.add(StorydiagramsElementTypes.StatementNode_3003);
-			types.add(StorydiagramsElementTypes.StructuredNode_3005);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3011);
+			types.add(StorydiagramsElementTypes.StatementNode_3005);
+			types.add(StorydiagramsElementTypes.StructuredNode_3006);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
 		}
 		return types;
 	}
@@ -399,14 +387,14 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.StructuredNode_2005);
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2008);
-			types.add(StorydiagramsElementTypes.JunctionNode_3001);
-			types.add(StorydiagramsElementTypes.StartNode_3002);
+			types.add(StorydiagramsElementTypes.JunctionNode_3002);
+			types.add(StorydiagramsElementTypes.StartNode_3003);
 			types.add(StorydiagramsElementTypes.StopNode_3004);
-			types.add(StorydiagramsElementTypes.StatementNode_3003);
-			types.add(StorydiagramsElementTypes.StructuredNode_3005);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3011);
+			types.add(StorydiagramsElementTypes.StatementNode_3005);
+			types.add(StorydiagramsElementTypes.StructuredNode_3006);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
 		}
 		return types;
 	}
@@ -434,12 +422,10 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 		 */
 		public StoryNodeFigure() {
 			this.setLayoutManager(new StackLayout());
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16),
-					getMapMode().DPtoLP(16)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
 			this.setFill(false);
 			this.setOutline(false);
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(100),
-					getMapMode().DPtoLP(50)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(100), getMapMode().DPtoLP(50)));
 			createContents();
 		}
 
@@ -452,21 +438,17 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 			storyNodeContainerBack0.setFill(false);
 			storyNodeContainerBack0.setOutline(false);
 
-			storyNodeContainerBack0.setBorder(new MarginBorder(getMapMode()
-					.DPtoLP(10), getMapMode().DPtoLP(10), getMapMode()
-					.DPtoLP(0), getMapMode().DPtoLP(0)));
+			storyNodeContainerBack0.setBorder(new MarginBorder(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 
 			this.add(storyNodeContainerBack0);
 			storyNodeContainerBack0.setLayoutManager(new StackLayout());
 
 			RoundedRectangle storyActionNodeFigureBackRectangle1 = new RoundedRectangle();
-			storyActionNodeFigureBackRectangle1
-					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16),
-							getMapMode().DPtoLP(16)));
-			storyActionNodeFigureBackRectangle1
-					.setForegroundColor(ColorConstants.black);
-			storyActionNodeFigureBackRectangle1
-					.setBackgroundColor(STORYACTIONNODEFIGUREBACKRECTANGLE1_BACK);
+			storyActionNodeFigureBackRectangle1.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode()
+					.DPtoLP(16)));
+			storyActionNodeFigureBackRectangle1.setForegroundColor(ColorConstants.black);
+			storyActionNodeFigureBackRectangle1.setBackgroundColor(STORYACTIONNODEFIGUREBACKRECTANGLE1_BACK);
 
 			storyNodeContainerBack0.add(storyActionNodeFigureBackRectangle1);
 
@@ -474,45 +456,37 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 			storyNodeContainerFront0.setFill(false);
 			storyNodeContainerFront0.setOutline(false);
 
-			storyNodeContainerFront0.setBorder(new MarginBorder(getMapMode()
-					.DPtoLP(0), getMapMode().DPtoLP(0),
+			storyNodeContainerFront0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(10)));
 
 			this.add(storyNodeContainerFront0);
 			storyNodeContainerFront0.setLayoutManager(new StackLayout());
 
 			RoundedRectangle storyNodeFigureFrontRectangle1 = new RoundedRectangle();
-			storyNodeFigureFrontRectangle1.setCornerDimensions(new Dimension(
-					getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
-			storyNodeFigureFrontRectangle1
-					.setForegroundColor(ColorConstants.black);
-			storyNodeFigureFrontRectangle1
-					.setBackgroundColor(STORYNODEFIGUREFRONTRECTANGLE1_BACK);
+			storyNodeFigureFrontRectangle1.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode()
+					.DPtoLP(16)));
+			storyNodeFigureFrontRectangle1.setForegroundColor(ColorConstants.black);
+			storyNodeFigureFrontRectangle1.setBackgroundColor(STORYNODEFIGUREFRONTRECTANGLE1_BACK);
 
 			storyNodeContainerFront0.add(storyNodeFigureFrontRectangle1);
 
 			BorderLayout layoutStoryNodeFigureFrontRectangle1 = new BorderLayout();
-			storyNodeFigureFrontRectangle1
-					.setLayoutManager(layoutStoryNodeFigureFrontRectangle1);
+			storyNodeFigureFrontRectangle1.setLayoutManager(layoutStoryNodeFigureFrontRectangle1);
 
 			RoundedRectangle storyActionNodeFigureTitleRectangle2 = new RoundedRectangle();
-			storyActionNodeFigureTitleRectangle2
-					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16),
-							getMapMode().DPtoLP(16)));
+			storyActionNodeFigureTitleRectangle2.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16),
+					getMapMode().DPtoLP(16)));
 			storyActionNodeFigureTitleRectangle2.setFill(false);
 			storyActionNodeFigureTitleRectangle2.setOutline(false);
-			storyActionNodeFigureTitleRectangle2
-					.setPreferredSize(new Dimension(getMapMode().DPtoLP(100),
-							getMapMode().DPtoLP(30)));
+			storyActionNodeFigureTitleRectangle2.setPreferredSize(new Dimension(getMapMode().DPtoLP(100), getMapMode()
+					.DPtoLP(30)));
 
-			storyNodeFigureFrontRectangle1.add(
-					storyActionNodeFigureTitleRectangle2, BorderLayout.TOP);
+			storyNodeFigureFrontRectangle1.add(storyActionNodeFigureTitleRectangle2, BorderLayout.TOP);
 
 			GridLayout layoutStoryActionNodeFigureTitleRectangle2 = new GridLayout();
 			layoutStoryActionNodeFigureTitleRectangle2.numColumns = 1;
 			layoutStoryActionNodeFigureTitleRectangle2.makeColumnsEqualWidth = true;
-			storyActionNodeFigureTitleRectangle2
-					.setLayoutManager(layoutStoryActionNodeFigureTitleRectangle2);
+			storyActionNodeFigureTitleRectangle2.setLayoutManager(layoutStoryActionNodeFigureTitleRectangle2);
 
 			fFigureStoryNodeNameLabel = new WrappingLabel();
 			fFigureStoryNodeNameLabel.setText("");
@@ -527,40 +501,34 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 			constraintFFigureStoryNodeNameLabel.verticalSpan = 1;
 			constraintFFigureStoryNodeNameLabel.grabExcessHorizontalSpace = true;
 			constraintFFigureStoryNodeNameLabel.grabExcessVerticalSpace = false;
-			storyActionNodeFigureTitleRectangle2.add(fFigureStoryNodeNameLabel,
-					constraintFFigureStoryNodeNameLabel);
+			storyActionNodeFigureTitleRectangle2.add(fFigureStoryNodeNameLabel, constraintFFigureStoryNodeNameLabel);
 
 			RoundedRectangle storyActionNodeContentRectangle2 = new RoundedRectangle();
-			storyActionNodeContentRectangle2.setCornerDimensions(new Dimension(
-					getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
+			storyActionNodeContentRectangle2.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode()
+					.DPtoLP(16)));
 			storyActionNodeContentRectangle2.setFill(false);
 			storyActionNodeContentRectangle2.setOutline(false);
 
-			storyNodeFigureFrontRectangle1.add(
-					storyActionNodeContentRectangle2, BorderLayout.CENTER);
+			storyNodeFigureFrontRectangle1.add(storyActionNodeContentRectangle2, BorderLayout.CENTER);
 
 			BorderLayout layoutStoryActionNodeContentRectangle2 = new BorderLayout();
-			storyActionNodeContentRectangle2
-					.setLayoutManager(layoutStoryActionNodeContentRectangle2);
+			storyActionNodeContentRectangle2.setLayoutManager(layoutStoryActionNodeContentRectangle2);
 
 			fFigureStoryNodeConstraintsRectangle = new RoundedRectangle();
-			fFigureStoryNodeConstraintsRectangle
-					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16),
-							getMapMode().DPtoLP(16)));
+			fFigureStoryNodeConstraintsRectangle.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16),
+					getMapMode().DPtoLP(16)));
 			fFigureStoryNodeConstraintsRectangle.setFill(false);
 			fFigureStoryNodeConstraintsRectangle.setOutline(false);
 
-			storyActionNodeContentRectangle2.add(
-					fFigureStoryNodeConstraintsRectangle, BorderLayout.TOP);
+			storyActionNodeContentRectangle2.add(fFigureStoryNodeConstraintsRectangle, BorderLayout.TOP);
 
 			fFigureStoryNodeContentRectangle = new RoundedRectangle();
-			fFigureStoryNodeContentRectangle.setCornerDimensions(new Dimension(
-					getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
+			fFigureStoryNodeContentRectangle.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode()
+					.DPtoLP(16)));
 			fFigureStoryNodeContentRectangle.setFill(false);
 			fFigureStoryNodeContentRectangle.setOutline(false);
 
-			storyActionNodeContentRectangle2.add(
-					fFigureStoryNodeContentRectangle, BorderLayout.CENTER);
+			storyActionNodeContentRectangle2.add(fFigureStoryNodeContentRectangle, BorderLayout.CENTER);
 
 		}
 
@@ -590,20 +558,17 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Color STORYACTIONNODEFIGUREBACKRECTANGLE1_BACK = new Color(
-			null, 252, 254, 204);
+	static final Color STORYACTIONNODEFIGUREBACKRECTANGLE1_BACK = new Color(null, 252, 254, 204);
 
 	/**
 	 * @generated
 	 */
-	static final Color STORYNODEFIGUREFRONTRECTANGLE1_BACK = new Color(null,
-			252, 254, 204);
+	static final Color STORYNODEFIGUREFRONTRECTANGLE1_BACK = new Color(null, 252, 254, 204);
 
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURESTORYNODENAMELABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 10, SWT.BOLD);
+	static final Font FFIGURESTORYNODENAMELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
+			.getSystemFont().getFontData()[0].getName(), 10, SWT.BOLD);
 
 }

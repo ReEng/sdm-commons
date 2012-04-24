@@ -361,64 +361,20 @@
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs contributorId="org.storydriven.storydiagrams.diagram">
           <propertyTab
-             category="default"
+             category="domain"
              id="core"
              label="Core"/>
           <propertyTab
                 afterTab="core"
-                category="default"
+                category="domain"
                 id="resources"
                 label="Resources"/>
           <propertyTab
                 afterTab="resources"
-                category="default"
+                category="domain"
                 id="documentation"
                 label="Documentation"/>
-         <propertyTab
-               afterTab="documentation"
-               category="default"
-               id="appearance"
-               label="Appearance"/>
-          <propertyTab
-                afterTab="appearance"
-                category="default"
-                id="diagram"
-                label="Diagram"/>
-          <propertyTab
-                afterTab="diagram"
-                category="default"
-                id="raw"
-                label="Raw"/>
       </propertyTabs>
-   </extension>
-
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
-      <propertySections contributorId="org.storydriven.storydiagrams.diagram">
-         <propertySection id="property.section.ConnectorAppearancePropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
-            tab="appearance"/>
-         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
-            tab="appearance"/> 
-         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
-            tab="appearance"/>     
-         <propertySection id="property.section.RulerGridPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
-            tab="diagram"/>     
-         <propertySection
-            id="raw" 
-            tab="raw"
-            class="org.storydriven.storydiagrams.diagram.sheet.StorydiagramsPropertySection">
-            <input type="org.eclipse.gmf.runtime.notation.View"/>
-            <input type="org.eclipse.gef.EditPart"/>
-            <input type="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
-         </propertySection>
-      </propertySections>
    </extension>
 
    <extension
@@ -560,16 +516,16 @@
                tab="documentation">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.StopNodeExpressionSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StopNodeFilter"
-               id="StopNode.expression"
-               tab="core">
-         </propertySection>
-         <propertySection
-               afterSection="StopNode.expression"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.StopNodeFlowStopOnlySection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StopNodeFilter"
                id="StopNode.flowOnly"
+               tab="core">
+         </propertySection>
+         <propertySection
+               afterSection="StopNode.flowOnly"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.StopNodeExpressionSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StopNodeFilter"
+               id="StopNode.expression"
                tab="core">
          </propertySection>
          <propertySection
@@ -723,6 +679,19 @@
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.PathExpressionSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PathFilter"
                id="Path.expression"
+               tab="core">
+         </propertySection>
+         <propertySection
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AttributeAssignmentAttributeSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.AttributeAssignmentFilter"
+               id="AttributeAssignment.attribute"
+               tab="core">
+         </propertySection>
+         <propertySection
+               afterSection="AttributeAssignment.attribute"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AttributeAssignmentExpressionSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.AttributeAssignmentFilter"
+               id="AttributeAssignment.expression"
                tab="core">
          </propertySection>
       </propertySections>

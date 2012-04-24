@@ -5,14 +5,14 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class PrimitiveVariablePrimitiveVariableConstraintsCompartmentItemSemanticEditPolicy
-		extends StorydiagramsBaseItemSemanticEditPolicy {
+public class PrimitiveVariablePrimitiveVariableConstraintsCompartmentItemSemanticEditPolicy extends
+		StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public PrimitiveVariablePrimitiveVariableConstraintsCompartmentItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.PrimitiveVariable_3014);
+		super(StorydiagramsElementTypes.PrimitiveVariable_3011);
 	}
 
 }

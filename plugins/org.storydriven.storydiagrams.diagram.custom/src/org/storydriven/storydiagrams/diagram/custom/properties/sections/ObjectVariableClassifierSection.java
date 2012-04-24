@@ -10,6 +10,7 @@ import org.storydriven.storydiagrams.diagram.custom.dialogs.SelectEClassDialog;
 import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEListComboSection;
 import org.storydriven.storydiagrams.diagram.custom.util.ActivityUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
+import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 public class ObjectVariableClassifierSection extends AbstractEListComboSection<EClass> {
@@ -22,6 +23,7 @@ public class ObjectVariableClassifierSection extends AbstractEListComboSection<E
 	@Override
 	protected void handleSearchButtonClicked() {
 		dialog.setActivity(ActivityUtil.getActivity(getElement()));
+		dialog.setElement(((ObjectVariable) getElement()).getClassifier());
 		if (dialog.open() == Window.OK) {
 			EClass result = dialog.getElement();
 			execute(getFeature(), result);

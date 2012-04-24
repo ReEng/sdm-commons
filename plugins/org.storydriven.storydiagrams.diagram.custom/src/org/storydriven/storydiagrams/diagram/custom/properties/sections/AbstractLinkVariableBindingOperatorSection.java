@@ -20,12 +20,7 @@ public class AbstractLinkVariableBindingOperatorSection extends AbstractEEnumRad
 
 	@Override
 	protected void notifyChanged(Notification msg) {
-		Object feature = msg.getFeature();
-		if ((PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__BINDING_STATE.equals(feature) || PatternsPackage.Literals.ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS
-				.equals(feature)) && msg.isTouch()) {
-			// binding state or semantics changed
-			checkEnabled();
-		}
+		checkEnabled();
 	}
 
 	@Override

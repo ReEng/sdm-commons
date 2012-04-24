@@ -15,8 +15,10 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
@@ -103,12 +105,18 @@ public abstract class AbstractTreeSelectionDialog<T extends EObject> extends Tit
 		elementViewer = new TreeViewer(main, SWT.BORDER | SWT.SINGLE);
 		elementViewer.setLabelProvider(getLabelProvider());
 		elementViewer.setContentProvider(getContentProvider());
+		elementViewer.setComparator(getViewerComparator());
 		viewerFilter = new ElementViewerFilter();
 		elementViewer.addFilter(viewerFilter);
 		elementViewer.setInput(getInput());
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(elementViewer.getControl());
 
 		hookListeners();
+
+		if (element != null) {
+			elementViewer.setExpandedElements(new Object[] { element });
+			elementViewer.setSelection(new StructuredSelection(element), true);
+		}
 
 		checkValidity();
 
@@ -126,6 +134,10 @@ public abstract class AbstractTreeSelectionDialog<T extends EObject> extends Tit
 		super.configureShell(shell);
 
 		shell.setText(shellText);
+	}
+
+	protected ViewerComparator getViewerComparator() {
+		return new ViewerComparator();
 	}
 
 	@Override

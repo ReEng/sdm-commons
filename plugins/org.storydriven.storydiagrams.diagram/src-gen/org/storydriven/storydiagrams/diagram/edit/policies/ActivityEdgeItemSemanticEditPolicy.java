@@ -8,8 +8,7 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class ActivityEdgeItemSemanticEditPolicy extends
-		StorydiagramsBaseItemSemanticEditPolicy {
+public class ActivityEdgeItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated

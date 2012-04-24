@@ -55,8 +55,7 @@ public class StoryPatternEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new StoryPatternItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StoryPatternItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -69,8 +68,7 @@ public class StoryPatternEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -107,11 +105,9 @@ public class StoryPatternEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof StoryPatternStoryPatternCompartementEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureStoryPatternInnerRectangle();
+			IFigure pane = getPrimaryShape().getFigureStoryPatternInnerRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((StoryPatternStoryPatternCompartementEditPart) childEditPart)
-					.getFigure());
+			pane.add(((StoryPatternStoryPatternCompartementEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -122,11 +118,9 @@ public class StoryPatternEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof StoryPatternStoryPatternCompartementEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureStoryPatternInnerRectangle();
+			IFigure pane = getPrimaryShape().getFigureStoryPatternInnerRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((StoryPatternStoryPatternCompartementEditPart) childEditPart)
-					.getFigure());
+			pane.remove(((StoryPatternStoryPatternCompartementEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -262,15 +256,12 @@ public class StoryPatternEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		public StoryPatternFigure() {
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16),
-					getMapMode().DPtoLP(16)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
 			this.setFill(false);
 			this.setOutline(false);
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(50),
-					getMapMode().DPtoLP(50)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(50), getMapMode().DPtoLP(50)));
 
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0)));
 			createContents();
 		}
@@ -281,17 +272,15 @@ public class StoryPatternEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			fFigureStoryPatternInnerRectangle = new RoundedRectangle();
-			fFigureStoryPatternInnerRectangle
-					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16),
-							getMapMode().DPtoLP(16)));
+			fFigureStoryPatternInnerRectangle.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode()
+					.DPtoLP(16)));
 			fFigureStoryPatternInnerRectangle.setFill(false);
 			fFigureStoryPatternInnerRectangle.setOutline(false);
-			fFigureStoryPatternInnerRectangle.setMinimumSize(new Dimension(
-					getMapMode().DPtoLP(50), getMapMode().DPtoLP(50)));
+			fFigureStoryPatternInnerRectangle.setMinimumSize(new Dimension(getMapMode().DPtoLP(50), getMapMode()
+					.DPtoLP(50)));
 
-			fFigureStoryPatternInnerRectangle.setBorder(new MarginBorder(
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			fFigureStoryPatternInnerRectangle.setBorder(new MarginBorder(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 
 			this.add(fFigureStoryPatternInnerRectangle);
 

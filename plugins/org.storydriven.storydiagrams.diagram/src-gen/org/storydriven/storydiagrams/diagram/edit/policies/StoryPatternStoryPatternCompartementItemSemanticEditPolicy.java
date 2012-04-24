@@ -9,8 +9,7 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class StoryPatternStoryPatternCompartementItemSemanticEditPolicy extends
-		StorydiagramsBaseItemSemanticEditPolicy {
+public class StoryPatternStoryPatternCompartementItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -23,12 +22,10 @@ public class StoryPatternStoryPatternCompartementItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.ObjectVariable_3012 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.ObjectVariable_3009 == req.getElementType()) {
 			return getGEFWrapper(new ObjectVariableCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.PrimitiveVariable_3014 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.PrimitiveVariable_3011 == req.getElementType()) {
 			return getGEFWrapper(new PrimitiveVariableCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

@@ -1,27 +1,37 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
+import java.util.Collection;
+import java.util.HashSet;
+
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
 import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
+import org.storydriven.storydiagrams.diagram.custom.ResourceManager;
+import org.storydriven.storydiagrams.diagram.custom.dialogs.SelectActivityDialog;
 import org.storydriven.storydiagrams.diagram.custom.properties.AbstractSection;
 import org.storydriven.storydiagrams.diagram.custom.providers.ActivitiesLabelProvider;
 import org.storydriven.storydiagrams.diagram.custom.providers.CalledActivityBindingsContentProvider;
+import org.storydriven.storydiagrams.diagram.custom.providers.CalledActivityBindingsLabelProvider;
+import org.storydriven.storydiagrams.diagram.custom.util.ActivityUtil;
 
 public class ActivityCallNodeCallsSection extends AbstractSection {
 	private TableViewer activitiesViewer;
@@ -32,6 +42,11 @@ public class ActivityCallNodeCallsSection extends AbstractSection {
 	private Group activitiesGroup;
 	private Button upButton;
 	private Button downButton;
+	private SelectActivityDialog dialog;
+
+	public ActivityCallNodeCallsSection() {
+		dialog = new SelectActivityDialog();
+	}
 
 	@Override
 	public void refresh() {
@@ -100,11 +115,20 @@ public class ActivityCallNodeCallsSection extends AbstractSection {
 
 		Table bindingViewerTable = factory.createTable(bindingGroup, SWT.BORDER | SWT.FULL_SELECTION);
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(bindingViewerTable);
-		bindingViewerTable.setLinesVisible(true);
 
 		bindingsViewer = new TableViewer(bindingViewerTable);
+		bindingViewerTable.setHeaderVisible(true);
+		bindingViewerTable.setLinesVisible(true);
 		bindingsViewer.setContentProvider(new CalledActivityBindingsContentProvider());
-		bindingsViewer.setLabelProvider(new LabelProvider());
+		bindingsViewer.setLabelProvider(new CalledActivityBindingsLabelProvider());
+
+		TableColumn nameColumn = new TableColumn(bindingViewerTable, SWT.LEAD);
+		nameColumn.setText("Parameter");
+		nameColumn.setWidth(200);
+
+		TableColumn bindingColumn = new TableColumn(bindingViewerTable, SWT.LEAD);
+		bindingColumn.setText("Binding");
+		bindingColumn.setWidth(200);
 	}
 
 	@Override
@@ -118,6 +142,23 @@ public class ActivityCallNodeCallsSection extends AbstractSection {
 					if (element instanceof Activity) {
 						bindingsViewer.setInput(element);
 					}
+				}
+			}
+		});
+
+		addButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				// prepare dialog
+				Activity activity = ActivityUtil.getActivity(getElement());
+				Collection<Activity> input = new HashSet<Activity>();
+				input.addAll(ResourceManager.get(activity).getActivities());
+				input.removeAll(getElement().getCalledActivities());
+				dialog.setInput(input);
+
+				if (dialog.open() == Window.OK) {
+					Activity toAdd = dialog.getElement();
+					System.out.println("add " + toAdd + " to called nodes");
 				}
 			}
 		});

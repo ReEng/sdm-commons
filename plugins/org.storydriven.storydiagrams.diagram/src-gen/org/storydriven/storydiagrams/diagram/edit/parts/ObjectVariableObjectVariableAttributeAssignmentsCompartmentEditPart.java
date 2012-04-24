@@ -9,26 +9,24 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.diagram.edit.policies.ObjectVariableObjectVariableAttributeAsignmentsCompartmentCanonicalEditPolicy;
-import org.storydriven.storydiagrams.diagram.edit.policies.ObjectVariableObjectVariableAttributeAsignmentsCompartmentItemSemanticEditPolicy;
+import org.storydriven.storydiagrams.diagram.edit.policies.ObjectVariableObjectVariableAttributeAssignmentsCompartmentCanonicalEditPolicy;
+import org.storydriven.storydiagrams.diagram.edit.policies.ObjectVariableObjectVariableAttributeAssignmentsCompartmentItemSemanticEditPolicy;
 import org.storydriven.storydiagrams.diagram.part.Messages;
 
 /**
  * @generated
  */
-public class ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart
-		extends ListCompartmentEditPart {
+public class ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7014;
+	public static final int VISUAL_ID = 7009;
 
 	/**
 	 * @generated
 	 */
-	public ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart(
-			View view) {
+	public ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -43,15 +41,14 @@ public class ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return Messages.ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart_title;
+		return Messages.ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart_title;
 	}
 
 	/**
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
 		return result;
 	}
@@ -61,16 +58,12 @@ public class ObjectVariableObjectVariableAttributeAsignmentsCompartmentEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new ObjectVariableObjectVariableAttributeAsignmentsCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new ObjectVariableObjectVariableAttributeAsignmentsCompartmentCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new ObjectVariableObjectVariableAttributeAssignmentsCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
+				new ObjectVariableObjectVariableAttributeAssignmentsCompartmentCanonicalEditPolicy());
 	}
 
 	/**

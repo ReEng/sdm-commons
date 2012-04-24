@@ -21,8 +21,7 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class StartNodeItemSemanticEditPolicy extends
-		StorydiagramsBaseItemSemanticEditPolicy {
+public class StartNodeItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -36,14 +35,12 @@ public class StartNodeItemSemanticEditPolicy extends
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
 			if (StorydiagramsVisualIDRegistry.getVisualID(incomingLink) == ActivityEdgeEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(
-						incomingLink.getElement(), false);
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
@@ -52,8 +49,7 @@ public class StartNodeItemSemanticEditPolicy extends
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
 			if (StorydiagramsVisualIDRegistry.getVisualID(outgoingLink) == ActivityEdgeEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(
-						outgoingLink.getElement(), false);
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
@@ -77,18 +73,15 @@ public class StartNodeItemSemanticEditPolicy extends
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (StorydiagramsElementTypes.ActivityEdge_4001 == req.getElementType()) {
-			return getGEFWrapper(new ActivityEdgeCreateCommand(req,
-					req.getSource(), req.getTarget()));
+			return getGEFWrapper(new ActivityEdgeCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -96,11 +89,9 @@ public class StartNodeItemSemanticEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (StorydiagramsElementTypes.ActivityEdge_4001 == req.getElementType()) {
-			return getGEFWrapper(new ActivityEdgeCreateCommand(req,
-					req.getSource(), req.getTarget()));
+			return getGEFWrapper(new ActivityEdgeCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -111,8 +102,7 @@ public class StartNodeItemSemanticEditPolicy extends
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(
-			ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return getGEFWrapper(new ActivityEdgeReorientCommand(req));

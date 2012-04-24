@@ -13,13 +13,12 @@ import org.storydriven.storydiagrams.diagram.part.Messages;
 /**
  * @generated
  */
-public class ActivityCallNodeActivityCallNodeCompartmentEditPart extends
-		ListCompartmentEditPart {
+public class ActivityCallNodeActivityCallNodeCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7018;
+	public static final int VISUAL_ID = 7011;
 
 	/**
 	 * @generated
@@ -46,8 +45,7 @@ public class ActivityCallNodeActivityCallNodeCompartmentEditPart extends
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
 		return result;
 	}
@@ -57,8 +55,7 @@ public class ActivityCallNodeActivityCallNodeCompartmentEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new ActivityCallNodeActivityCallNodeCompartmentItemSemanticEditPolicy());
 	}
 

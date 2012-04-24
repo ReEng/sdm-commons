@@ -44,7 +44,7 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3005;
+	public static final int VISUAL_ID = 3006;
 
 	/**
 	 * @generated
@@ -68,8 +68,7 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new StructuredNode2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StructuredNode2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -82,8 +81,7 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -120,17 +118,14 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof StructuredNodeName2EditPart) {
-			((StructuredNodeName2EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureStructuredNodeNameFigure());
+			((StructuredNodeName2EditPart) childEditPart).setLabel(getPrimaryShape()
+					.getFigureStructuredNodeNameFigure());
 			return true;
 		}
 		if (childEditPart instanceof StructuredNodeStructuredNodeCompartment2EditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureStructuredNodeCompartmentRectangle();
+			IFigure pane = getPrimaryShape().getFigureStructuredNodeCompartmentRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((StructuredNodeStructuredNodeCompartment2EditPart) childEditPart)
-					.getFigure());
+			pane.add(((StructuredNodeStructuredNodeCompartment2EditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -144,11 +139,9 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof StructuredNodeStructuredNodeCompartment2EditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureStructuredNodeCompartmentRectangle();
+			IFigure pane = getPrimaryShape().getFigureStructuredNodeCompartmentRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((StructuredNodeStructuredNodeCompartment2EditPart) childEditPart)
-					.getFigure());
+			pane.remove(((StructuredNodeStructuredNodeCompartment2EditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -179,8 +172,7 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof StructuredNodeStructuredNodeCompartment2EditPart) {
-			return getPrimaryShape()
-					.getFigureStructuredNodeCompartmentRectangle();
+			return getPrimaryShape().getFigureStructuredNodeCompartmentRectangle();
 		}
 		return getContentPane();
 	}
@@ -275,8 +267,7 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(StorydiagramsVisualIDRegistry
-				.getType(StructuredNodeName2EditPart.VISUAL_ID));
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(StructuredNodeName2EditPart.VISUAL_ID));
 	}
 
 	/**
@@ -291,8 +282,7 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof StartNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
@@ -309,10 +299,10 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof StructuredNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
+		if (targetEditPart instanceof ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof ActivityCallNodeEditPart) {
+		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof JunctionNode2EditPart) {
@@ -347,14 +337,14 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.StructuredNode_2005);
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2008);
-			types.add(StorydiagramsElementTypes.JunctionNode_3001);
-			types.add(StorydiagramsElementTypes.StartNode_3002);
+			types.add(StorydiagramsElementTypes.JunctionNode_3002);
+			types.add(StorydiagramsElementTypes.StartNode_3003);
 			types.add(StorydiagramsElementTypes.StopNode_3004);
-			types.add(StorydiagramsElementTypes.StatementNode_3003);
-			types.add(StorydiagramsElementTypes.StructuredNode_3005);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3011);
+			types.add(StorydiagramsElementTypes.StatementNode_3005);
+			types.add(StorydiagramsElementTypes.StructuredNode_3006);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
 		}
 		return types;
 	}
@@ -379,14 +369,14 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.StructuredNode_2005);
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2008);
-			types.add(StorydiagramsElementTypes.JunctionNode_3001);
-			types.add(StorydiagramsElementTypes.StartNode_3002);
+			types.add(StorydiagramsElementTypes.JunctionNode_3002);
+			types.add(StorydiagramsElementTypes.StartNode_3003);
 			types.add(StorydiagramsElementTypes.StopNode_3004);
-			types.add(StorydiagramsElementTypes.StatementNode_3003);
-			types.add(StorydiagramsElementTypes.StructuredNode_3005);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3011);
+			types.add(StorydiagramsElementTypes.StatementNode_3005);
+			types.add(StorydiagramsElementTypes.StructuredNode_3006);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
 		}
 		return types;
 	}
@@ -411,8 +401,7 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 		public StructuredNodeFigure() {
 			this.setLineWidth(3);
 			this.setLineStyle(Graphics.LINE_DASH);
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(110),
-					getMapMode().DPtoLP(150)));
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(110), getMapMode().DPtoLP(150)));
 			createContents();
 		}
 
@@ -424,22 +413,20 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 			RectangleFigure structuredNodeNameRectangle0 = new RectangleFigure();
 			structuredNodeNameRectangle0.setFill(false);
 			structuredNodeNameRectangle0.setLineWidth(0);
-			structuredNodeNameRectangle0.setMaximumSize(new Dimension(
-					getMapMode().DPtoLP(100), getMapMode().DPtoLP(30)));
+			structuredNodeNameRectangle0
+					.setMaximumSize(new Dimension(getMapMode().DPtoLP(100), getMapMode().DPtoLP(30)));
 
 			this.add(structuredNodeNameRectangle0);
 
 			GridLayout layoutStructuredNodeNameRectangle0 = new GridLayout();
 			layoutStructuredNodeNameRectangle0.numColumns = 1;
 			layoutStructuredNodeNameRectangle0.makeColumnsEqualWidth = true;
-			structuredNodeNameRectangle0
-					.setLayoutManager(layoutStructuredNodeNameRectangle0);
+			structuredNodeNameRectangle0.setLayoutManager(layoutStructuredNodeNameRectangle0);
 
 			fFigureStructuredNodeNameFigure = new WrappingLabel();
 			fFigureStructuredNodeNameFigure.setText("");
 
-			fFigureStructuredNodeNameFigure
-					.setFont(FFIGURESTRUCTUREDNODENAMEFIGURE_FONT);
+			fFigureStructuredNodeNameFigure.setFont(FFIGURESTRUCTUREDNODENAMEFIGURE_FONT);
 
 			GridData constraintFFigureStructuredNodeNameFigure = new GridData();
 			constraintFFigureStructuredNodeNameFigure.verticalAlignment = GridData.CENTER;
@@ -449,8 +436,8 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 			constraintFFigureStructuredNodeNameFigure.verticalSpan = 1;
 			constraintFFigureStructuredNodeNameFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureStructuredNodeNameFigure.grabExcessVerticalSpace = false;
-			structuredNodeNameRectangle0.add(fFigureStructuredNodeNameFigure,
-					constraintFFigureStructuredNodeNameFigure);
+			structuredNodeNameRectangle0
+					.add(fFigureStructuredNodeNameFigure, constraintFFigureStructuredNodeNameFigure);
 
 			fFigureStructuredNodeCompartmentRectangle = new RectangleFigure();
 			fFigureStructuredNodeCompartmentRectangle.setFill(false);
@@ -479,8 +466,7 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURESTRUCTUREDNODENAMEFIGURE_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.NORMAL);
+	static final Font FFIGURESTRUCTUREDNODENAMEFIGURE_FONT = new Font(Display.getCurrent(), Display.getDefault()
+			.getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 }
