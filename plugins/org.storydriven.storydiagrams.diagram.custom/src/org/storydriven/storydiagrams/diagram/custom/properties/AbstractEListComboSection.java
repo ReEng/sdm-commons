@@ -1,13 +1,11 @@
 package org.storydriven.storydiagrams.diagram.custom.properties;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.jface.layout.GridDataFactory;
-import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -21,14 +19,14 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
 
 public abstract class AbstractEListComboSection<E> extends AbstractSection {
+	private final Map<Integer, E> map;
+
 	private CLabel label;
 	private Combo combo;
-	private final Map<Integer, E> map;
 	private Button searchButton;
-	private Composite composite;
 
 	public AbstractEListComboSection() {
-		map = new HashMap<Integer, E>();
+		map = new LinkedHashMap<Integer, E>();
 	}
 
 	@Override
@@ -55,28 +53,37 @@ public abstract class AbstractEListComboSection<E> extends AbstractSection {
 
 	protected abstract EStructuralFeature getFeature();
 
+	protected void execute(E value) {
+		execute(getFeature(), value);
+	}
+
 	@Override
 	protected void layoutWidgets(Composite parent) {
-		if (isShowSearchButton()) {
-			GridLayoutFactory.fillDefaults().numColumns(2).margins(0, 0).applyTo(composite);
-			GridDataFactory.fillDefaults().applyTo(searchButton);
-		} else {
-			GridLayoutFactory.fillDefaults().margins(0, 0).applyTo(composite);
-		}
-		GridDataFactory.fillDefaults().grab(true, false).applyTo(combo);
-
 		FormData data = new FormData();
-		data.left = new FormAttachment(0, LABEL_WIDTH);
+
 		data.right = new FormAttachment(100);
-		data.top = new FormAttachment(0);
+		data.top = new FormAttachment(searchButton, 0, SWT.TOP);
+		data.bottom = new FormAttachment(searchButton, 0, SWT.BOTTOM);
+		if (isShowSearchButton()) {
+			searchButton.setLayoutData(data);
+		}
+
+		data = new FormData();
+		data.left = new FormAttachment(0, LABEL_WIDTH);
+		if (isShowSearchButton()) {
+			data.right = new FormAttachment(searchButton);
+		} else {
+			data.right = new FormAttachment(100);
+		}
+		data.top = new FormAttachment(0, 2);
 		data.bottom = new FormAttachment(100);
-		composite.setLayoutData(data);
+		combo.setLayoutData(data);
 
 		data = new FormData();
 		data.left = new FormAttachment(0);
-		data.right = new FormAttachment(composite);
-		data.top = new FormAttachment(composite, 0, SWT.TOP);
-		data.bottom = new FormAttachment(composite, 0, SWT.BOTTOM);
+		data.right = new FormAttachment(combo);
+		data.top = new FormAttachment(combo, 0, SWT.TOP);
+		data.bottom = new FormAttachment(combo, 0, SWT.BOTTOM);
 		label.setLayoutData(data);
 	}
 
@@ -92,9 +99,7 @@ public abstract class AbstractEListComboSection<E> extends AbstractSection {
 	protected void createWidgets(Composite parent, TabbedPropertySheetWidgetFactory factory) {
 		label = factory.createCLabel(parent, getLabelText() + ':', SWT.TRAIL);
 
-		composite = factory.createFlatFormComposite(parent);
-
-		combo = new Combo(composite, SWT.BORDER | SWT.READ_ONLY);
+		combo = new Combo(parent, SWT.BORDER | SWT.READ_ONLY);
 		factory.adapt(combo);
 		combo.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -104,7 +109,7 @@ public abstract class AbstractEListComboSection<E> extends AbstractSection {
 		});
 
 		if (isShowSearchButton()) {
-			searchButton = factory.createButton(composite, "Search", SWT.PUSH);
+			searchButton = factory.createButton(parent, "Search", SWT.PUSH);
 			searchButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_SEARCH));
 			searchButton.addSelectionListener(new SelectionAdapter() {
 				@Override
@@ -125,7 +130,7 @@ public abstract class AbstractEListComboSection<E> extends AbstractSection {
 
 	private int getIndex(Object value) {
 		for (Entry<Integer, E> entry : map.entrySet()) {
-			if (entry.getValue().equals(value)) {
+			if ((entry.getValue() != null && entry.getValue().equals(value)) || entry.getValue() == value) {
 				return entry.getKey();
 			}
 		}

@@ -2,6 +2,7 @@ package org.storydriven.storydiagrams.diagram.custom;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Vector;
@@ -250,6 +251,7 @@ public class EditExpressionDialog extends Dialog {
 
 	private void initializeSourceViewers() {
 		sourceViewers = new HashMap<String, ISourceViewer>();
+		contextInformation = new LinkedHashMap<String, EClassifier>();
 		for (Entry<String, SourceViewerProvider> svpEntry : sourceViewerProviders.entrySet())
 		{
 			ISourceViewer sv = svpEntry.getValue().createSourceViewer(languageEditingArea, 

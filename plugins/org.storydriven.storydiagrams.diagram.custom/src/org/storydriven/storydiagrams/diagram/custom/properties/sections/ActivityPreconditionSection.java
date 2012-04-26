@@ -6,18 +6,29 @@ import java.util.List;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jface.window.Window;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.MatchingStoryNode;
 import org.storydriven.storydiagrams.diagram.custom.ResourceManager;
+import org.storydriven.storydiagrams.diagram.custom.dialogs.SelectActivityPreconditionDialog;
 import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEListComboSection;
 import org.storydriven.storydiagrams.diagram.custom.util.TextUtil;
 
 public class ActivityPreconditionSection extends AbstractEListComboSection<MatchingStoryNode> {
+	private SelectActivityPreconditionDialog dialog;
+
+	public ActivityPreconditionSection() {
+		dialog = new SelectActivityPreconditionDialog();
+	}
+
 	@Override
 	protected List<MatchingStoryNode> getItems() {
 		List<MatchingStoryNode> nodes = new ArrayList<MatchingStoryNode>();
 		List<Activity> activities = ResourceManager.get((Activity) getElement()).getActivities();
+
+		// add null
+		nodes.add(null);
 
 		for (Activity activity : activities) {
 			if (!activity.equals(getElement())) {
@@ -35,13 +46,24 @@ public class ActivityPreconditionSection extends AbstractEListComboSection<Match
 	}
 
 	@Override
-	protected boolean isShowSearchButton() {
-		return false;
+	protected void handleSearchButtonClicked() {
+		dialog.setInput(getEditingDomain().getResourceSet());
+		dialog.setElement(getElement().getPrecondition());
+		if (dialog.open() == Window.OK) {
+			refresh();
+			execute(dialog.getElement());
+			refresh();
+		}
 	}
 
 	@Override
-	protected void handleSearchButtonClicked() {
-		System.out.println("open the dialog");
+	protected Activity getElement() {
+		return (Activity) super.getElement();
+	}
+
+	@Override
+	protected boolean isShowSearchButton() {
+		return true;
 	}
 
 	@Override
@@ -56,6 +78,9 @@ public class ActivityPreconditionSection extends AbstractEListComboSection<Match
 
 	@Override
 	protected String getText(MatchingStoryNode element) {
+		if (element == null) {
+			return EMPTY;
+		}
 		return TextUtil.getText(element);
 	}
 }

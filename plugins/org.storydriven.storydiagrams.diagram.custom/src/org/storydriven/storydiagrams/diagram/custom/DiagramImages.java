@@ -65,6 +65,16 @@ public final class DiagramImages {
 	public static final String PATH = "icons/elements/patterns/Path.png"; //$NON-NLS-1$
 	public static final String PRIMITIVE_VARIABLE = "icons/elements/patterns/PrimitiveVariable.png"; //$NON-NLS-1$
 
+	// banners
+	public static final String BANNER_ADD_EPACKAGE_URI = "icons/banners/add_epackage_uri.png"; //$NON-NLS-1$
+	public static final String BANNER_ADD_EPACKAGE_WORKSPACE = "icons/banners/add_epackage_workspace.png"; //$NON-NLS-1$
+	public static final String BANNER_CONFIGURE_PARAMETER_IN = "icons/banners/configure_in_parameter.png"; //$NON-NLS-1$
+	public static final String BANNER_CONFIGURE_PARAMETER_OUT = "icons/banners/configure_out_parameter.png"; //$NON-NLS-1$
+	public static final String BANNER_LOAD_RESOURCE = "icons/banners/load_resource_workspace.png"; //$NON-NLS-1$
+	public static final String BANNER_SELECT_ECLASS = "icons/banners/select_eclass.png"; //$NON-NLS-1$
+	public static final String BANNER_SELECT_EDATATYPE = "icons/banners/select_edatatype.png"; //$NON-NLS-1$
+	public static final String BANNER_SELECT_PRECONDITION = "icons/banners/select_precondition.png"; //$NON-NLS-1$
+
 	public static Image getImage(String key) {
 		return Activator.getInstance().getImage(key);
 	}

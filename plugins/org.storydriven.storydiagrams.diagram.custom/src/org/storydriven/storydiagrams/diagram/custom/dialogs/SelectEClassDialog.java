@@ -1,9 +1,10 @@
 package org.storydriven.storydiagrams.diagram.custom.dialogs;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.jface.viewers.IBaseLabelProvider;
-import org.eclipse.jface.viewers.IContentProvider;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
 import org.storydriven.storydiagrams.diagram.custom.providers.ResourcesContentProvider;
 import org.storydriven.storydiagrams.diagram.custom.providers.ResourcesLabelProvider;
 
@@ -12,6 +13,7 @@ public class SelectEClassDialog extends AbstractTreeSelectionDialog<EClass> {
 
 	public SelectEClassDialog() {
 		super("Object Classifier", "Select EClass", "Select the EClass for the object variable.");
+		setTitleImage(DiagramImages.getImage(DiagramImages.BANNER_SELECT_ECLASS));
 	}
 
 	public void setActivity(Activity activity) {
@@ -19,22 +21,20 @@ public class SelectEClassDialog extends AbstractTreeSelectionDialog<EClass> {
 	}
 
 	@Override
-	protected String getNoElementErrorMessage() {
+	protected String validate(Object element) {
+		if (element instanceof EClass) {
+			return null;
+		}
 		return "You have to select an EClass!";
 	}
 
 	@Override
-	protected boolean isValid(Object element) {
-		return element instanceof EClass;
-	}
-
-	@Override
-	protected IBaseLabelProvider getLabelProvider() {
+	protected ILabelProvider getLabelProvider() {
 		return new ResourcesLabelProvider();
 	}
 
 	@Override
-	protected IContentProvider getContentProvider() {
+	protected ITreeContentProvider getContentProvider() {
 		return new ResourcesContentProvider();
 	}
 

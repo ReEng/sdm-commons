@@ -66,6 +66,24 @@ public final class TextUtil {
 		return append(new StringBuilder(), activity).toString();
 	}
 
+	public static String getText(MatchingStoryNode element) {
+		if (element == null) {
+			return null;
+		}
+
+		Activity activity = ActivityUtil.getActivity(element);
+
+		StringBuilder builder = new StringBuilder();
+
+		append(builder, activity);
+		builder.append(' ');
+		builder.append(STEREOTYPE_SUFFIX);
+		builder.append(' ');
+		builder.append(element.getName());
+
+		return builder.toString();
+	}
+
 	private static StringBuilder append(StringBuilder builder, Activity activity) {
 
 		builder.append(activity.getName());
@@ -355,9 +373,5 @@ public final class TextUtil {
 
 	private static String getText(TextualExpression expression) {
 		return expression.getExpressionText();
-	}
-
-	public static String getText(MatchingStoryNode element) {
-		return element.getName();
 	}
 }

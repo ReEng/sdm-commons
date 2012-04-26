@@ -2,14 +2,13 @@ package org.storydriven.storydiagrams.diagram.custom.dialogs;
 
 import java.util.Collection;
 
-import org.eclipse.jface.viewers.IBaseLabelProvider;
-import org.eclipse.jface.viewers.IContentProvider;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.diagram.custom.providers.ActivitiesLabelProvider;
 import org.storydriven.storydiagrams.diagram.custom.providers.CalledActivitiesContentProvider;
 
 public class SelectActivityDialog extends AbstractTreeSelectionDialog<Activity> {
-
 	private Collection<Activity> activities;
 
 	public SelectActivityDialog() {
@@ -26,22 +25,20 @@ public class SelectActivityDialog extends AbstractTreeSelectionDialog<Activity> 
 	}
 
 	@Override
-	protected boolean isValid(Object element) {
-		return element instanceof Activity && activities.contains(element);
+	protected String validate(Object element) {
+		if (!activities.contains(element)) {
+			return "You have to select an activity!";
+		}
+		return null;
 	}
 
 	@Override
-	protected String getNoElementErrorMessage() {
-		return "You have to select an activity to be called!";
-	}
-
-	@Override
-	protected IBaseLabelProvider getLabelProvider() {
+	protected ILabelProvider getLabelProvider() {
 		return new ActivitiesLabelProvider();
 	}
 
 	@Override
-	protected IContentProvider getContentProvider() {
+	protected ITreeContentProvider getContentProvider() {
 		return new CalledActivitiesContentProvider();
 	}
 }

@@ -126,6 +126,18 @@ public class Activator extends AbstractUIPlugin {
 		addImage(DiagramImages.OBJECT_VARIABLE);
 		addImage(DiagramImages.PATH);
 		addImage(DiagramImages.PRIMITIVE_VARIABLE);
+
+		// banners
+		addImage(DiagramImages.BANNER_SELECT_ECLASS);
+		addImage(DiagramImages.BANNER_SELECT_EDATATYPE);
+		addImage(DiagramImages.BANNER_ADD_EPACKAGE_URI);
+		addImage(DiagramImages.BANNER_ADD_EPACKAGE_WORKSPACE);
+		addImage(DiagramImages.BANNER_CONFIGURE_PARAMETER_IN);
+		addImage(DiagramImages.BANNER_CONFIGURE_PARAMETER_OUT);
+		addImage(DiagramImages.BANNER_LOAD_RESOURCE);
+		addImage(DiagramImages.BANNER_SELECT_ECLASS);
+		addImage(DiagramImages.BANNER_SELECT_EDATATYPE);
+		addImage(DiagramImages.BANNER_SELECT_PRECONDITION);
 	}
 
 	private void addImage(String path) {

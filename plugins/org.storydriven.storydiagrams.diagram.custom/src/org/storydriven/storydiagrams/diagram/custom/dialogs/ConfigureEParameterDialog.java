@@ -24,6 +24,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.diagram.custom.Activator;
+import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
 import org.storydriven.storydiagrams.diagram.custom.providers.ResourcesContentProvider;
 import org.storydriven.storydiagrams.diagram.custom.providers.ResourcesLabelProvider;
 
@@ -77,6 +78,11 @@ public class ConfigureEParameterDialog extends TitleAreaDialog {
 		getShell().setText(getShellText());
 		setTitle(getTitle());
 		setMessage(getDescription());
+		if (isOutgoing) {
+			setTitleImage(DiagramImages.getImage(DiagramImages.BANNER_CONFIGURE_PARAMETER_OUT));
+		} else {
+			setTitleImage(DiagramImages.getImage(DiagramImages.BANNER_CONFIGURE_PARAMETER_IN));
+		}
 
 		Composite areaComposite = (Composite) super.createDialogArea(parent);
 
