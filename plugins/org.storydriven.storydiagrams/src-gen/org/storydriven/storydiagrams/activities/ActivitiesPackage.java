@@ -4103,6 +4103,428 @@ public interface ActivitiesPackage extends EPackage {
 	int EDGE_GUARD = 14;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * Defines literals for the meta objects that represent
+	 * <ul>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
+	 * </ul>
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ExceptionVariableImpl <em>Exception Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.ExceptionVariableImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getExceptionVariable()
+		 * @generated
+		 */
+		EClass EXCEPTION_VARIABLE = eINSTANCE.getExceptionVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Activity Edge</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXCEPTION_VARIABLE__ACTIVITY_EDGE = eINSTANCE.getExceptionVariable_ActivityEdge();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXCEPTION_VARIABLE__NAME = eINSTANCE.getExceptionVariable_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Exception Type</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXCEPTION_VARIABLE__EXCEPTION_TYPE = eINSTANCE.getExceptionVariable_ExceptionType();
+
+		/**
+		 * The meta object literal for the '<em><b>Generic Exception Type</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE = eINSTANCE.getExceptionVariable_GenericExceptionType();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityEdgeImpl <em>Activity Edge</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivityEdgeImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getActivityEdge()
+		 * @generated
+		 */
+		EClass ACTIVITY_EDGE = eINSTANCE.getActivityEdge();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_EDGE__TARGET = eINSTANCE.getActivityEdge_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_EDGE__SOURCE = eINSTANCE.getActivityEdge_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Owning Activity</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_EDGE__OWNING_ACTIVITY = eINSTANCE.getActivityEdge_OwningActivity();
+
+		/**
+		 * The meta object literal for the '<em><b>Guard</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTIVITY_EDGE__GUARD = eINSTANCE.getActivityEdge_Guard();
+
+		/**
+		 * The meta object literal for the '<em><b>Guard Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_EDGE__GUARD_EXPRESSION = eINSTANCE.getActivityEdge_GuardExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Guard Exception</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_EDGE__GUARD_EXCEPTION = eINSTANCE.getActivityEdge_GuardException();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityNodeImpl <em>Activity Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivityNodeImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getActivityNode()
+		 * @generated
+		 */
+		EClass ACTIVITY_NODE = eINSTANCE.getActivityNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Outgoing</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_NODE__OUTGOING = eINSTANCE.getActivityNode_Outgoing();
+
+		/**
+		 * The meta object literal for the '<em><b>Owning Activity</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_NODE__OWNING_ACTIVITY = eINSTANCE.getActivityNode_OwningActivity();
+
+		/**
+		 * The meta object literal for the '<em><b>Owning Activity Node</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_NODE__OWNING_ACTIVITY_NODE = eINSTANCE.getActivityNode_OwningActivityNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Incoming</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_NODE__INCOMING = eINSTANCE.getActivityNode_Incoming();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityImpl <em>Activity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivityImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getActivity()
+		 * @generated
+		 */
+		EClass ACTIVITY = eINSTANCE.getActivity();
+
+		/**
+		 * The meta object literal for the '<em><b>Owning Operation</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY__OWNING_OPERATION = eINSTANCE.getActivity_OwningOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Owned Activity Edge</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY__OWNED_ACTIVITY_EDGE = eINSTANCE.getActivity_OwnedActivityEdge();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY__PRECONDITION = eINSTANCE.getActivity_Precondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Owned Activity Node</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY__OWNED_ACTIVITY_NODE = eINSTANCE.getActivity_OwnedActivityNode();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl <em>Operation Extension</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getOperationExtension()
+		 * @generated
+		 */
+		EClass OPERATION_EXTENSION = eINSTANCE.getOperationExtension();
+
+		/**
+		 * The meta object literal for the '<em><b>Operation</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION_EXTENSION__OPERATION = eINSTANCE.getOperationExtension_Operation();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION_EXTENSION__RETURN_VALUE = eINSTANCE.getOperationExtension_ReturnValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Owned Activity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION_EXTENSION__OWNED_ACTIVITY = eINSTANCE.getOperationExtension_OwnedActivity();
+
+		/**
+		 * The meta object literal for the '<em><b>Number Of Out Params</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OPERATION_EXTENSION___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getOperationExtension__NumberOfOutParams__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.MatchingStoryNodeImpl <em>Matching Story Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.MatchingStoryNodeImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getMatchingStoryNode()
+		 * @generated
+		 */
+		EClass MATCHING_STORY_NODE = eINSTANCE.getMatchingStoryNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Owned Pattern</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MATCHING_STORY_NODE__OWNED_PATTERN = eINSTANCE.getMatchingStoryNode_OwnedPattern();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StoryNodeImpl <em>Story Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.StoryNodeImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getStoryNode()
+		 * @generated
+		 */
+		EClass STORY_NODE = eINSTANCE.getStoryNode();
+
+		/**
+		 * The meta object literal for the '<em><b>For Each</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STORY_NODE__FOR_EACH = eINSTANCE.getStoryNode_ForEach();
+
+		/**
+		 * The meta object literal for the '<em><b>Story Pattern</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STORY_NODE__STORY_PATTERN = eINSTANCE.getStoryNode_StoryPattern();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StructuredNodeImpl <em>Structured Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.StructuredNodeImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getStructuredNode()
+		 * @generated
+		 */
+		EClass STRUCTURED_NODE = eINSTANCE.getStructuredNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Owned Activity Node</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCTURED_NODE__OWNED_ACTIVITY_NODE = eINSTANCE.getStructuredNode_OwnedActivityNode();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.JunctionNodeImpl <em>Junction Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.JunctionNodeImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getJunctionNode()
+		 * @generated
+		 */
+		EClass JUNCTION_NODE = eINSTANCE.getJunctionNode();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StartNodeImpl <em>Start Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.StartNodeImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getStartNode()
+		 * @generated
+		 */
+		EClass START_NODE = eINSTANCE.getStartNode();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StatementNodeImpl <em>Statement Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.StatementNodeImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getStatementNode()
+		 * @generated
+		 */
+		EClass STATEMENT_NODE = eINSTANCE.getStatementNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Statement Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATEMENT_NODE__STATEMENT_EXPRESSION = eINSTANCE.getStatementNode_StatementExpression();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StopNodeImpl <em>Stop Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.StopNodeImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getStopNode()
+		 * @generated
+		 */
+		EClass STOP_NODE = eINSTANCE.getStopNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Flow Stop Only</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STOP_NODE__FLOW_STOP_ONLY = eINSTANCE.getStopNode_FlowStopOnly();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Value</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STOP_NODE__RETURN_VALUE = eINSTANCE.getStopNode_ReturnValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Values</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STOP_NODE__RETURN_VALUES = eINSTANCE.getStopNode_ReturnValues();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityCallNodeImpl <em>Activity Call Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivityCallNodeImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getActivityCallNode()
+		 * @generated
+		 */
+		EClass ACTIVITY_CALL_NODE = eINSTANCE.getActivityCallNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Called Activity</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_CALL_NODE__CALLED_ACTIVITY = eINSTANCE.getActivityCallNode_CalledActivity();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ModifyingStoryNodeImpl <em>Modifying Story Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.ModifyingStoryNodeImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getModifyingStoryNode()
+		 * @generated
+		 */
+		EClass MODIFYING_STORY_NODE = eINSTANCE.getModifyingStoryNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Owned Rule</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODIFYING_STORY_NODE__OWNED_RULE = eINSTANCE.getModifyingStoryNode_OwnedRule();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.EdgeGuard <em>Edge Guard</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.EdgeGuard
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getEdgeGuard()
+		 * @generated
+		 */
+		EEnum EDGE_GUARD = eINSTANCE.getEdgeGuard();
+
+	}
+
+	/**
 	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.activities.ExceptionVariable <em>Exception Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4611,427 +5033,5 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 */
 	ActivitiesFactory getActivitiesFactory();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * Defines literals for the meta objects that represent
-	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
-	 * </ul>
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	interface Literals {
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ExceptionVariableImpl <em>Exception Variable</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.ExceptionVariableImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getExceptionVariable()
-		 * @generated
-		 */
-		EClass EXCEPTION_VARIABLE = eINSTANCE.getExceptionVariable();
-
-		/**
-		 * The meta object literal for the '<em><b>Activity Edge</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXCEPTION_VARIABLE__ACTIVITY_EDGE = eINSTANCE.getExceptionVariable_ActivityEdge();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EXCEPTION_VARIABLE__NAME = eINSTANCE.getExceptionVariable_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Exception Type</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXCEPTION_VARIABLE__EXCEPTION_TYPE = eINSTANCE.getExceptionVariable_ExceptionType();
-
-		/**
-		 * The meta object literal for the '<em><b>Generic Exception Type</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE = eINSTANCE.getExceptionVariable_GenericExceptionType();
-
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityEdgeImpl <em>Activity Edge</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivityEdgeImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getActivityEdge()
-		 * @generated
-		 */
-		EClass ACTIVITY_EDGE = eINSTANCE.getActivityEdge();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY_EDGE__TARGET = eINSTANCE.getActivityEdge_Target();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY_EDGE__SOURCE = eINSTANCE.getActivityEdge_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Owning Activity</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY_EDGE__OWNING_ACTIVITY = eINSTANCE.getActivityEdge_OwningActivity();
-
-		/**
-		 * The meta object literal for the '<em><b>Guard</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ACTIVITY_EDGE__GUARD = eINSTANCE.getActivityEdge_Guard();
-
-		/**
-		 * The meta object literal for the '<em><b>Guard Expression</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY_EDGE__GUARD_EXPRESSION = eINSTANCE.getActivityEdge_GuardExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Guard Exception</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY_EDGE__GUARD_EXCEPTION = eINSTANCE.getActivityEdge_GuardException();
-
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityNodeImpl <em>Activity Node</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivityNodeImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getActivityNode()
-		 * @generated
-		 */
-		EClass ACTIVITY_NODE = eINSTANCE.getActivityNode();
-
-		/**
-		 * The meta object literal for the '<em><b>Outgoing</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY_NODE__OUTGOING = eINSTANCE.getActivityNode_Outgoing();
-
-		/**
-		 * The meta object literal for the '<em><b>Owning Activity</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY_NODE__OWNING_ACTIVITY = eINSTANCE.getActivityNode_OwningActivity();
-
-		/**
-		 * The meta object literal for the '<em><b>Owning Activity Node</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY_NODE__OWNING_ACTIVITY_NODE = eINSTANCE.getActivityNode_OwningActivityNode();
-
-		/**
-		 * The meta object literal for the '<em><b>Incoming</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY_NODE__INCOMING = eINSTANCE.getActivityNode_Incoming();
-
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityImpl <em>Activity</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivityImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getActivity()
-		 * @generated
-		 */
-		EClass ACTIVITY = eINSTANCE.getActivity();
-
-		/**
-		 * The meta object literal for the '<em><b>Owning Operation</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY__OWNING_OPERATION = eINSTANCE.getActivity_OwningOperation();
-
-		/**
-		 * The meta object literal for the '<em><b>Owned Activity Edge</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY__OWNED_ACTIVITY_EDGE = eINSTANCE.getActivity_OwnedActivityEdge();
-
-		/**
-		 * The meta object literal for the '<em><b>Precondition</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY__PRECONDITION = eINSTANCE.getActivity_Precondition();
-
-		/**
-		 * The meta object literal for the '<em><b>Owned Activity Node</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY__OWNED_ACTIVITY_NODE = eINSTANCE.getActivity_OwnedActivityNode();
-
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl <em>Operation Extension</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getOperationExtension()
-		 * @generated
-		 */
-		EClass OPERATION_EXTENSION = eINSTANCE.getOperationExtension();
-
-		/**
-		 * The meta object literal for the '<em><b>Operation</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION_EXTENSION__OPERATION = eINSTANCE.getOperationExtension_Operation();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Value</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION_EXTENSION__RETURN_VALUE = eINSTANCE.getOperationExtension_ReturnValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Owned Activity</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION_EXTENSION__OWNED_ACTIVITY = eINSTANCE.getOperationExtension_OwnedActivity();
-
-		/**
-		 * The meta object literal for the '<em><b>Number Of Out Params</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation OPERATION_EXTENSION___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getOperationExtension__NumberOfOutParams__DiagnosticChain_Map();
-
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.MatchingStoryNodeImpl <em>Matching Story Node</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.MatchingStoryNodeImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getMatchingStoryNode()
-		 * @generated
-		 */
-		EClass MATCHING_STORY_NODE = eINSTANCE.getMatchingStoryNode();
-
-		/**
-		 * The meta object literal for the '<em><b>Owned Pattern</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MATCHING_STORY_NODE__OWNED_PATTERN = eINSTANCE.getMatchingStoryNode_OwnedPattern();
-
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StoryNodeImpl <em>Story Node</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.StoryNodeImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getStoryNode()
-		 * @generated
-		 */
-		EClass STORY_NODE = eINSTANCE.getStoryNode();
-
-		/**
-		 * The meta object literal for the '<em><b>For Each</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STORY_NODE__FOR_EACH = eINSTANCE.getStoryNode_ForEach();
-
-		/**
-		 * The meta object literal for the '<em><b>Story Pattern</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STORY_NODE__STORY_PATTERN = eINSTANCE.getStoryNode_StoryPattern();
-
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StructuredNodeImpl <em>Structured Node</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.StructuredNodeImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getStructuredNode()
-		 * @generated
-		 */
-		EClass STRUCTURED_NODE = eINSTANCE.getStructuredNode();
-
-		/**
-		 * The meta object literal for the '<em><b>Owned Activity Node</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STRUCTURED_NODE__OWNED_ACTIVITY_NODE = eINSTANCE.getStructuredNode_OwnedActivityNode();
-
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.JunctionNodeImpl <em>Junction Node</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.JunctionNodeImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getJunctionNode()
-		 * @generated
-		 */
-		EClass JUNCTION_NODE = eINSTANCE.getJunctionNode();
-
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StartNodeImpl <em>Start Node</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.StartNodeImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getStartNode()
-		 * @generated
-		 */
-		EClass START_NODE = eINSTANCE.getStartNode();
-
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StatementNodeImpl <em>Statement Node</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.StatementNodeImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getStatementNode()
-		 * @generated
-		 */
-		EClass STATEMENT_NODE = eINSTANCE.getStatementNode();
-
-		/**
-		 * The meta object literal for the '<em><b>Statement Expression</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STATEMENT_NODE__STATEMENT_EXPRESSION = eINSTANCE.getStatementNode_StatementExpression();
-
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StopNodeImpl <em>Stop Node</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.StopNodeImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getStopNode()
-		 * @generated
-		 */
-		EClass STOP_NODE = eINSTANCE.getStopNode();
-
-		/**
-		 * The meta object literal for the '<em><b>Flow Stop Only</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STOP_NODE__FLOW_STOP_ONLY = eINSTANCE.getStopNode_FlowStopOnly();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Value</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STOP_NODE__RETURN_VALUE = eINSTANCE.getStopNode_ReturnValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Values</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STOP_NODE__RETURN_VALUES = eINSTANCE.getStopNode_ReturnValues();
-
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityCallNodeImpl <em>Activity Call Node</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivityCallNodeImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getActivityCallNode()
-		 * @generated
-		 */
-		EClass ACTIVITY_CALL_NODE = eINSTANCE.getActivityCallNode();
-
-		/**
-		 * The meta object literal for the '<em><b>Called Activity</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY_CALL_NODE__CALLED_ACTIVITY = eINSTANCE.getActivityCallNode_CalledActivity();
-
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ModifyingStoryNodeImpl <em>Modifying Story Node</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.ModifyingStoryNodeImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getModifyingStoryNode()
-		 * @generated
-		 */
-		EClass MODIFYING_STORY_NODE = eINSTANCE.getModifyingStoryNode();
-
-		/**
-		 * The meta object literal for the '<em><b>Owned Rule</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODIFYING_STORY_NODE__OWNED_RULE = eINSTANCE.getModifyingStoryNode_OwnedRule();
-
-		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.EdgeGuard <em>Edge Guard</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.EdgeGuard
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getEdgeGuard()
-		 * @generated
-		 */
-		EEnum EDGE_GUARD = eINSTANCE.getEdgeGuard();
-
-	}
 
 } //ActivitiesPackage

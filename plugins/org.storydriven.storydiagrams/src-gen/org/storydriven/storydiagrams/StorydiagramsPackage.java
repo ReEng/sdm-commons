@@ -315,36 +315,6 @@ public interface StorydiagramsPackage extends EPackage {
 	int VARIABLE_OPERATION_COUNT = CorePackage.TYPED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.Variable <em>Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Variable</em>'.
-	 * @see org.storydriven.storydiagrams.Variable
-	 * @generated
-	 */
-	EClass getVariable();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.storydriven.storydiagrams.Variable#getVariableName <em>Variable Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Variable Name</em>'.
-	 * @see org.storydriven.storydiagrams.Variable#getVariableName()
-	 * @see #getVariable()
-	 * @generated
-	 */
-	EAttribute getVariable_VariableName();
-
-	/**
-	 * Returns the factory that creates the instances of the model.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the factory that creates the instances of the model.
-	 * @generated
-	 */
-	StorydiagramsFactory getStorydiagramsFactory();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
@@ -376,5 +346,35 @@ public interface StorydiagramsPackage extends EPackage {
 		EAttribute VARIABLE__VARIABLE_NAME = eINSTANCE.getVariable_VariableName();
 
 	}
+
+	/**
+	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.Variable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Variable</em>'.
+	 * @see org.storydriven.storydiagrams.Variable
+	 * @generated
+	 */
+	EClass getVariable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.storydriven.storydiagrams.Variable#getVariableName <em>Variable Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Variable Name</em>'.
+	 * @see org.storydriven.storydiagrams.Variable#getVariableName()
+	 * @see #getVariable()
+	 * @generated
+	 */
+	EAttribute getVariable_VariableName();
+
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	StorydiagramsFactory getStorydiagramsFactory();
 
 } //StorydiagramsPackage

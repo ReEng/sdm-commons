@@ -426,6 +426,10 @@ public class ActivityParametersSection extends AbstractSection {
 		outParametersViewer.refresh();
 		inParametersViewer.refresh();
 		checkButtonStates();
+
+		// check if the activity is contained in an eOperation -> disable controls
+		inParametersViewer.getControl().setEnabled(false);
+		outParametersViewer.getControl().setEnabled(false);
 	}
 
 	private void checkButtonStates() {

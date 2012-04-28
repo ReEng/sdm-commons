@@ -12,6 +12,7 @@ public final class DiagramImages {
 	public static final String CONTROL_UP = "icons/controls/up.png"; //$NON-NLS-1$
 	public static final String CONTROL_DOWN = "icons/controls/down.png"; //$NON-NLS-1$
 	public static final String CONTROL_SEARCH = "icons/controls/search.png"; //$NON-NLS-1$
+	public static final String CONTROL_WARNING = "icons/controls/warning.png"; //$NON-NLS-1$
 
 	// ecore package
 	public static final String EANNOTATION = "icons/elements/ecore/EAnnotation.png"; //$NON-NLS-1$

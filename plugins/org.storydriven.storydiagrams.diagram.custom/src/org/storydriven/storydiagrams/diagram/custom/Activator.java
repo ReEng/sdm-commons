@@ -75,6 +75,7 @@ public class Activator extends AbstractUIPlugin {
 		addImage(DiagramImages.CONTROL_UP);
 		addImage(DiagramImages.CONTROL_DOWN);
 		addImage(DiagramImages.CONTROL_SEARCH);
+		addImage(DiagramImages.CONTROL_WARNING);
 
 		// ecore package
 		addImage(DiagramImages.EANNOTATION);
