@@ -49,7 +49,7 @@ import org.storydriven.storydiagrams.diagram.custom.properties.AbstractSection;
 import org.storydriven.storydiagrams.diagram.custom.providers.ResourcesContentProvider;
 import org.storydriven.storydiagrams.diagram.custom.providers.ResourcesLabelProvider;
 
-public class ActivityResourcesSection extends AbstractSection {
+public class ActivityTypeModelSection extends AbstractSection {
 	private TreeViewer viewer;
 	private Composite resourcesComposite;
 	private Button addNamespaceButton;
@@ -82,7 +82,7 @@ public class ActivityResourcesSection extends AbstractSection {
 		GridLayoutFactory.fillDefaults().margins(6, 6).applyTo(resourcesComposite);
 
 		// create group
-		Group resourcesGroup = factory.createGroup(resourcesComposite, "Resources");
+		Group resourcesGroup = factory.createGroup(resourcesComposite, "Packages building the Type Model");
 		GridLayoutFactory.fillDefaults().numColumns(2).margins(6, 6).applyTo(resourcesGroup);
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(resourcesGroup);
 

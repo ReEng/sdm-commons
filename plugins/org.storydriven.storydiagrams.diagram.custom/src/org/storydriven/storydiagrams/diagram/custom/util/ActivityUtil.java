@@ -96,4 +96,8 @@ public final class ActivityUtil {
 
 		return null;
 	}
+
+	public static boolean isIndependent(Activity element) {
+		return element.eContainer() == null;
+	}
 }

@@ -367,8 +367,8 @@
           <propertyTab
                 afterTab="core"
                 category="domain"
-                id="resources"
-                label="Resources"/>
+                id="typeModel"
+                label="Type Model"/>
           <propertyTab
                 afterTab="resources"
                 category="domain"
@@ -402,10 +402,10 @@
                tab="core">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityResourcesSection"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityTypeModelSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFilter"
-               id="Activity.resources"
-               tab="resources">
+               id="Activity.typeModel"
+               tab="typeModel">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"

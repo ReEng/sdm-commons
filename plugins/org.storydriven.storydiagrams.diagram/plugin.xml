@@ -593,26 +593,12 @@
       <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
       </menuContribution -->
       <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
-         <command commandId="org.storydriven.storydiagrams.diagram.LoadResourceAction">
-            <visibleWhen>
-               <and>
-                  <with variable="activePartId"><equals value="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"/></with>
-                  <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart"/>
-                  </iterate></with>
-               </and>
-            </visibleWhen>
-         </command>
       </menuContribution>
    </extension>
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
       <category id="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
-      <command id="org.storydriven.storydiagrams.diagram.LoadResourceAction"
-         name="Load Resource"
-         categoryId="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"
-         defaultHandler="org.storydriven.storydiagrams.diagram.part.LoadResourceAction"/>
    </extension>
 
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">

@@ -35,6 +35,7 @@ import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
 import org.storydriven.storydiagrams.diagram.custom.dialogs.ConfigureEParameterDialog;
 import org.storydriven.storydiagrams.diagram.custom.properties.AbstractSection;
 import org.storydriven.storydiagrams.diagram.custom.providers.EParametersLabelProvider;
+import org.storydriven.storydiagrams.diagram.custom.util.ActivityUtil;
 
 public class ActivityParametersSection extends AbstractSection {
 	private ConfigureEParameterDialog configureDialog;
@@ -416,20 +417,36 @@ public class ActivityParametersSection extends AbstractSection {
 
 	@Override
 	public void refresh() {
-		if (getElement() != null) {
+		// check if the activity is contained in an eOperation -> disable controls
+		if (getElement() != null && ActivityUtil.isIndependent(getElement())) {
 			inParametersViewer.setInput(getElement().getInParameters());
 			outParametersViewer.setInput(getElement().getOutParameters());
+
+			inParametersViewer.getControl().setEnabled(true);
+			outParametersViewer.getControl().setEnabled(true);
+
+			checkButtonStates();
 		} else {
 			inParametersViewer.setInput(null);
 			outParametersViewer.setInput(null);
+
+			inParametersViewer.getControl().setEnabled(false);
+			inAddButton.setEnabled(false);
+			inRemoveButton.setEnabled(false);
+			inConfigureButton.setEnabled(false);
+			inUpButton.setEnabled(false);
+			inDownButton.setEnabled(false);
+
+			outParametersViewer.getControl().setEnabled(false);
+			outAddButton.setEnabled(false);
+			outRemoveButton.setEnabled(false);
+			outConfigureButton.setEnabled(false);
+			outUpButton.setEnabled(false);
+			outDownButton.setEnabled(false);
 		}
 		outParametersViewer.refresh();
 		inParametersViewer.refresh();
-		checkButtonStates();
 
-		// check if the activity is contained in an eOperation -> disable controls
-		inParametersViewer.getControl().setEnabled(false);
-		outParametersViewer.getControl().setEnabled(false);
 	}
 
 	private void checkButtonStates() {
