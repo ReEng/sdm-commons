@@ -26,12 +26,16 @@ A refactoring that removes an interface violation by extending an interface as d
 
 \section{Story Diagram: Remove Interface Violation}
 
+\todomvd{Can we somehow introduce a maybe link somewhere?}
+
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=\linewidth]{./figures/SDRemoveInterfaceViolation}
 \caption{Story Diagram: removeInterfaceViolation}
 \label{fig:SDRemoveInterfaceViolation}
 \end{figure}
+
+\todomvd{OCL constraints in story node 1 correct? Is interface the correct context? Can I use method.named to reference the SDs parameter?}
 
 Figure~\ref{fig:SDRemoveInterfaceViolation} shows the story diagram to remove an interface violation. The underlying type graph is the GAST metamodel that was introduced in Section~\ref{sec:typeGraph}. The story diagram consists of five story nodes and two activity calls. This section explains the story diagram step by step.
 
@@ -57,6 +61,8 @@ When no new classes implementing the \fe{interface} can be found, i.e.\ method s
 \caption{Story Diagram: generateMethodStub}
 \label{fig:SDGenerateMethodStub}
 \end{figure}
+
+\todomvd{OCL attribute constraint in story node 1 correct?}
 
 The story diagram \fe{generateMethodStub} is shown in Figure~\ref{fig:SDGenerateMethodStub}. It creates a method which implements a method \fe{methodDecl} in a given \fe{interface}. This is accomplished by two story nodes and one story diagram call. The first node checks if the given \fe{class} contains a \fe{method} with the same name as the given declaration \fe{methodDecl}. The check is performed by the expression \fe{'name = methodDecl.name'}. Since the object variable \fe{method} is negative (crossed-out), the matching of this story node is considered successful if \emph{no} such method exists in the class. In that case the next story node is executed. If a method of the name in question already exists, the execution of the first story node fails and the story diagram terminates.
 
