@@ -43,6 +43,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.storydiagrams;bundle-version="1.0.0",
  org.storydriven.storydiagrams.edit;bundle-version="1.0.0",
  org.storydriven.storydiagrams.editor;bundle-version="1.0.0",
- org.storydriven.core.edit;visibility:=reexport
+ org.storydriven.core.edit;visibility:=reexport,
+ org.eclipse.gmf.runtime.diagram.ui.printing,
+ org.eclipse.gmf.runtime.diagram.ui.printing.render
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

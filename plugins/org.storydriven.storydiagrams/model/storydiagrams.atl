@@ -17,6 +17,16 @@ rule FixGenEditorGenerator {
 		)
 }
 
+-- enable print
+rule EnablePrint {
+	from
+		input_name: GM!GenPlugin
+	to
+		output_name: GM!GenPlugin (
+			printingEnabled <- true
+		)
+}
+
 rule EditRawPropertyTab {
 	from
 		tin: GM!GenPropertyTab (
