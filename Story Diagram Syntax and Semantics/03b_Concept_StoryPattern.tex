@@ -351,7 +351,7 @@ Thus, they may have an arbitrary value.
 In the current version of story patterns, attribute constraints need to be specified using OCL~\cite{OCL}. 
 Besides equality checks, all comparative operations on the attributes of an object supported by OCL can be used as object constraints. 
 
-Beside attribute constraints, \emph{attribute assignments} can be used to change the value of an attribute during the application of a story pattern. 
+Besides attribute constraints, \emph{attribute assignments} can be used to change the value of an attribute during the application of a story pattern. 
 Thus, attribute assignments are considered to be part of the RHS. 
 When using attribute assignments, the value of the attribute is not considered while matching the LHS to the instance model. 
 Figure \ref{fig:attributeAssignment} shows an example.
@@ -362,6 +362,8 @@ Figure \ref{fig:attributeAssignment} shows an example.
   \caption{Using an Attribute Assignment}
   \label{fig:attributeAssignment}
 \end{figure}
+
+\tododt{Cann we also first match a method object with the name "getName" (Fig.~\ref{fig:objectConstraint}) and then modify the attribute value (Fig.~\ref{fig:attributeAssignment}), i.e. combine an attribute constraint and an attribute assignment to the same attribute in the same object variable?}
 
 In the example, the story pattern matches a method with an arbitrary name in the class \fe{theClass}. 
 Then, the name of the method is changed to \emph{"getMethodName"}. 
@@ -390,7 +392,7 @@ explain objectSetVariables, set size expressions
 \todomcp{If we bind an object set, can we use the bound object in other story pattern? E.g. to insert all elements bound by the object set into a container via a containment link? (See Figure \ref{fig:reuseObjSet}).}
 \tododt{Yes, but I would use another concrete syntax (see Figures~\ref{fig:reuseObjSet1}, \ref{fig:reuseObjSet2}, and \ref{fig:reuseObjSet3}).}
 
-\begin{figure}[p]
+\begin{figure}[htbp]
 	\begin{minipage}{.45\textwidth}
 		\centering
 		\includegraphics[scale=.8]{figures/ReuseObjectSet}
@@ -406,7 +408,7 @@ explain objectSetVariables, set size expressions
 	\end{minipage}
 \end{figure}
 
-\begin{figure}[p]
+\begin{figure}[htbp]
 	\begin{minipage}{.45\textwidth}
 		\centering
 		\includegraphics[scale=.8]{figures/ReuseObjectSet2}
@@ -427,7 +429,7 @@ explain objectSetVariables, set size expressions
 \todomcp{All operators for comparison are allowed: <, <=, >, >=, = !=}
 
 
-\begin{figure}[p]
+\begin{figure}[htbp]
 	\begin{minipage}{.45\textwidth}
 		\centering
 		\includegraphics[scale=.8]{figures/ObjectSetSize}
@@ -455,31 +457,62 @@ A maybe constraint could allow to match the same objects to both sets.}
 
 
 
-\subsection{Special Link Kinds [CH]}
-\label{sec:StoryPatterns:specialLinks}
+%\subsection{Special Link Kinds [CH]}
+%\label{sec:StoryPatterns:specialLinks}
 
-%\ext %--- Comment this line to include inclusion links into the document
-{ 
-\subsubsection{Inclusion Links [DT]}
-\label{sec:StoryPatterns:specialLinks:inclusion}
+\subsection{Inclusion Links [DT]}
+\label{sec:StoryPatterns:inclusion}
+
+containment in a set of objects, i.e.\ inclusion link from object set variable to any object (set) variable means that the object set contains the objects.
+
+inclusion links are not typed
+
+inclusion links usable as illustrated in Figure~\ref{fig:InlucionLinks}
+
+Example in Figure~\ref{fig:reuseObjSet2}
+
+object set contains an object;
+object set contains another set of objects?;
+negative, optional, mandatory inclusion links;
+create and destroy with object inclusion links;
+link order constraints with inclusion links?
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.8]{figures/InclusionLinks}
+  \caption{Examples of inclusion links}
+  \label{fig:InlucionLinks}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.8]{figures/InclusionLinksWellFormedness}
+  \caption{Well-formedness of inclusion links}
+  \label{fig:InlucionLinkWellFormedness}
+\end{figure}
+
+feasible combinations as illustrated in Figures~\ref{fig:InlucionLinkWellFormedness}, \ref{fig:negativeObjects}, \ref{fig:optionalObjects}, and in Table~\ref{tab:bindingCombinations_links}
+
+\todoall{Are objects that are matched to object set variables ordered in the corresponding container? Can such containers contain an object several times?}
 
 \todoch{What is the semantics of a containment link? Current understanding: an element is contained in a container. What is the difference to to-many references which are containments?}
 \tododt{Containment links do not correspond to any association or reference. They only describe containments of objects in containers or set nodes.}
 
 \todoch{Which classifiers are allowed for ContainerVariables? This should not only be the EMF collection types EList and EMap. Does a ContainmentLink need a reference as a type like normal LinkVariables?}
 \tododt{The contaiment links do not need any reference. I would suggest to allow any subtype of java.util.Collection (and java.util.List in case that link order constraints are used), but not java.util.Map! This is something different and needs a key for containment. Maybe we need special containment links for maps that include a key.}
-} %--- End of inclusion links subsection
+
 
 %\ext %--- Comment this line to include paths into the document
 { 
-\subsubsection{Paths [MCP]}
-\label{sec:StoryPatterns:specialLinks:paths}
+\subsection{Paths [MCP]}
+\label{sec:StoryPatterns:paths}
 } %--- End of paths subsection
 
 %\ext %--- Comment this line to include link constraints into the
 {  document
-\subsubsection{Link Constraints [CH]}
-\label{sec:StoryPatterns:specialLinks:linkConstraints}
+\subsection{Link Constraints [CH]}
+\label{sec:StoryPatterns:linkConstraints}
 
 Link constraints specify constraints on the absolute position of an element in an ordered reference (\emph{link position constraints}) and the position of an element relative to another element (\emph{link order constraints}). These constraints are only applicable to link variables that are typed by ordered multi-valued references. All other kinds of links cannot be adorned with link constraints.
 
