@@ -450,13 +450,6 @@ Link constraints specify constraints on the absolute position of an element in a
 
 \tododt{I have a suggestion in Figure~\ref{fig:linkConstraints}.}
 
-\begin{figure}[p]
-  \centering
-  \includegraphics[scale=.8]{figures/LinkConstraints1}
-  \caption{Link order constraints FIRST and DIRECT\_SUCCESSOR}
-  \label{fig:linkConstraints}
-\end{figure}
-
 \begin{itemize}
   \item FIRST = matches the first element in the list, requires one link variable
   \item LAST = matches the last element in the list, requires one link variable
@@ -465,6 +458,8 @@ Link constraints specify constraints on the absolute position of an element in a
   \item DIRECT\_SUCCESSOR = requires two link variables, target of the second one must be located directly after the target of the first one in the list
   \item SUCCESSOR = requires two link variables, target of the second one must be located somewhere after the target of the first one in the list
 \end{itemize}
+
+\todoall{Should we add the INDEX constraint again?}
 
 
 \subsubsection{Link Position Constraints}
@@ -622,19 +617,42 @@ to check if all objects in the set \fe{selection} are contained in the set \fe{a
 By means of inclusion links, an object set variable that has been matched to a set of objects
 can be modified afterwards by adding or removing objects.
 Using story diagrams as described in Section~\ref{sec:StoryDiagrams},
-one can, for example, collect a set of \fe{Method} objects in a set \fe{methods} as illustrated in the first story node in Figure~\ref{fig:InclusionLinksExample1}
+one can, for example, collect a set of \fe{Method} objects in a set \fe{methods}
+as illustrated in the first story node in Figure~\ref{fig:InclusionLinksExample1}
 and then add another \fe{Method} object to the same set in a following story node that reuses the previously matched set of objects.
-
-\tododt{Write the remainder of the section}
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[scale=0.9]{figures/InclusionLinksExamples}
+  \includegraphics[scale=0.8]{figures/InclusionLinksExamples}
   \caption{Exemplary Uses of Inclusion Links}
   \label{fig:InlucionLinksExamples}
 \end{figure}
 
-link order constraints with inclusion links?
+Inclusion links can be used in combination with link variables.
+In Figure~\ref{fig:InlucionLinksExamples} we give some examples for possible uses.
+In case a) the story pattern specifies that a \fe{Method} object is to be found which is defined in a class \fe{aClass},
+but is not contained in the object set \fe{methods}.
+Case b) specifies to find a set \fe{sel} of \fe{Method} objects which are contained in the object set \fe{methods}
+and do not have a return type that is a \fe{Class} object.
+The pattern in case c) checks whether a set of objects \fe{all} containes in another set of objects \fe{selection}
+which again contains another set of objects \fe{anotherSelection},
+i.e. \fe{anotherSelection} is a subset of \fe{selection} and \fe{selection} is a subset of \fe{all}.
+The pattern in case d) specifies to find two object sets that are subsets of the set \fe{methods}.
+First, a set \fe{sel1} of \fe{Method} objects which have the return type \fe{type} is to be found in the set \fe{methods}.
+Second, a set \fe{sel2} of \fe{Method} objects which additionaly have no parameters is to be found in the set \fe{sel1}.
+
+
+\subsubsection{Feasible Uses of Inclusion Links}
+\label{sec:StoryPatterns:inclusion:feasible}
+
+The main difference of inclusion links and link variables is that the source of an inclusion link has to be an object set variable.
+
+Inclusion links can be used with all available binding semantics as described in Section~\ref{sec:StoryPatterns:binding:semantics}.
+Consequently, if you replace a negative or optional link in Figures~\ref{fig:negativeObjects} and \ref{fig:optionalObjects}
+with a negative or optional inclusion link, you get the feasible combinations of binding semantics used with inclusion links.
+
+Moreover, you get all feasible combinations of binding operators and inclusion links from
+Table~\ref{tab:bindingCombinations_links} in Section~\ref{sec:StoryPatterns:binding:operators}.
 
 \begin{figure}[htb]
   \centering
@@ -643,9 +661,55 @@ link order constraints with inclusion links?
   \label{fig:InlucionLinkWellFormedness}
 \end{figure}
 
-feasible combinations as illustrated in Figures~\ref{fig:InlucionLinkWellFormedness}, \ref{fig:negativeObjects}, \ref{fig:optionalObjects}, and in Table~\ref{tab:bindingCombinations_links}
+In addition, different combinations of object set variables connected to a bound or unbound variable
+or to a single object variable or an object set variable are feasible as illustrated in Figure~\ref{fig:InlucionLinkWellFormedness}.
 
-\todoall{Are objects that are matched to object set variables ordered in the corresponding container? Can such containers contain an object several times?}
+
+\subsubsection{Set Operations with Inclusion Links}
+\label{sec:StoryPatterns:inclusion:BagsSetsEtc}
+
+\tododt{Write the remainder of the section}
+
+explain subset relation;
+explain semantics of containment for all combinations (bag, set, ordered set, list) in Table~\ref{tab:set_operations_with_inclusion_links};
+all combinations of adding/removing a set to/from another set (bag, set, ordered set, list)
+
+\begin{table}[htbp]
+  \centering
+  \caption{Inclusion Links Between Two Object Set Variables}
+    \begin{tabular}{|l|l|c|l|}
+    \hline
+    \textbf{Containing Set} & \textbf{Contained Set} & \textbf{Binding Operation} & \textbf{Semantics} \\
+    \hline
+    Bag & Bag & CHECK\_ONLY/CREATE/DESTROY & \\
+    Bag & Set &  & \\
+    Bag & Ordered Set &  & \\
+    Bag & List &  & \\
+    Set & Bag &  & \\
+    Set & Set &  & \\
+    Set & Ordered Set &  & \\
+    Set & List &  & \\
+    Ordered Set & Bag &  & \\
+    Ordered Set & Set &  & \\
+    Ordered Set & Ordered Set &  & \\
+    Ordered Set & List &  & \\
+    List & Bag &  & \\
+    List & Set &  & \\
+    List & Ordered Set &  & \\
+    List & List &  & \\
+    \hline
+    \end{tabular}%
+  \label{tab:set_operations_with_inclusion_links}%
+\end{table}%
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=.8]{figures/LinkConstraints1}
+  \caption{Link order constraints FIRST and DIRECT\_SUCCESSOR}
+  \label{fig:linkConstraints}
+\end{figure}
+
+link order constraints with inclusion links like in Figure~\ref{fig:linkConstraints}?
 
 
 %\ext %--- Comment this line to include paths into the document
