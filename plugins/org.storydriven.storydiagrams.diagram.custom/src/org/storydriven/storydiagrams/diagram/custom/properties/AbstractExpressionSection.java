@@ -18,12 +18,14 @@ import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Group;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.core.expressions.util.ExpressionUtils;
 import org.storydriven.storydiagrams.diagram.custom.SourceViewerProvider;
 import org.storydriven.storydiagrams.diagram.custom.util.BoundUtil;
+import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
 
 public abstract class AbstractExpressionSection extends AbstractSection {
 	private static final String EXPRESSION_SOURCE_VIEWER_EXTENSION_POINT_ID = "org.storydriven.storydiagrams.diagram.custom.expressionSourceViewerExtension";
@@ -32,10 +34,11 @@ public abstract class AbstractExpressionSection extends AbstractSection {
 	private static final String EXPRESSION_SOURCE_VIEWER_ATTRIBUTE_NAME = "sourceViewerProvider";
 
 	private static HashMap<String, SourceViewerProvider> sourceViewerProviders;
-	private CLabel label;
 	private SourceViewerProvider provider;
+
+	private Group group;
+	private CLabel typeLabel;
 	protected ISourceViewer viewer;
-	private Composite composite;
 
 	public AbstractExpressionSection() {
 		initializeSourceViewerProviders();
@@ -77,6 +80,7 @@ public abstract class AbstractExpressionSection extends AbstractSection {
 	public void refresh() {
 		Expression expression = getExpression();
 		if (getElement() != null && expression instanceof TextualExpression) {
+			EClassifier classifier = getContextClassifier();
 			String value = ((TextualExpression) expression).getExpressionText();
 
 			if (provider == null) {
@@ -87,8 +91,8 @@ public abstract class AbstractExpressionSection extends AbstractSection {
 				viewer = null;
 			}
 
-			viewer = provider.createSourceViewer(composite, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL,
-					getContextClassifier(), getContextInformation(), value);
+			viewer = provider.createSourceViewer(group, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL, classifier,
+					getContextInformation(), value);
 			GridDataFactory.fillDefaults().grab(true, true).applyTo(viewer.getTextWidget());
 			viewer.addTextListener(new ITextListener() {
 				@Override
@@ -106,9 +110,22 @@ public abstract class AbstractExpressionSection extends AbstractSection {
 					}
 				}
 			});
+
+			typeLabel.setText(getTypeText(classifier));
+
 			provider.setText(value);
-			composite.layout();
+			group.layout();
 		}
+	}
+
+	private String getTypeText(EClassifier classifier) {
+		StringBuilder builder = new StringBuilder();
+
+		builder.append("Expected return type of the following OCL 1.0 constraint: '");
+		builder.append(EcoreTextUtil.getText(classifier));
+		builder.append("'.");
+
+		return builder.toString();
 	}
 
 	protected abstract Expression getExpression();
@@ -136,34 +153,24 @@ public abstract class AbstractExpressionSection extends AbstractSection {
 
 	@Override
 	protected void createWidgets(Composite parent, TabbedPropertySheetWidgetFactory factory) {
-		label = factory.createCLabel(parent, getLabelText() + ':', SWT.TRAIL);
+		group = factory.createGroup(parent, getLabelText());
+		GridLayoutFactory.fillDefaults().margins(6, 6).applyTo(group);
 
-		composite = factory.createFlatFormComposite(parent);
-		GridLayoutFactory.fillDefaults().applyTo(composite);
+		typeLabel = factory.createCLabel(group, EMPTY, SWT.LEAD);
+		GridDataFactory.fillDefaults().grab(true, false).applyTo(typeLabel);
 	}
 
 	protected String getLabelText() {
-		return "Expression";
-	}
-
-	@Override
-	protected void hookWidgetListeners() {
+		return "Textual Expression";
 	}
 
 	@Override
 	protected void layoutWidgets(Composite parent) {
 		FormData data = new FormData();
-		data.left = new FormAttachment(0, LABEL_WIDTH);
+		data.left = new FormAttachment(0);
 		data.right = new FormAttachment(100);
 		data.top = new FormAttachment(0);
 		data.bottom = new FormAttachment(100);
-		composite.setLayoutData(data);
-
-		data = new FormData();
-		data.left = new FormAttachment(0);
-		data.right = new FormAttachment(composite);
-		data.top = new FormAttachment(composite, 0, SWT.TOP);
-		data.bottom = new FormAttachment(composite, 0, SWT.BOTTOM);
-		label.setLayoutData(data);
+		group.setLayoutData(data);
 	}
 }

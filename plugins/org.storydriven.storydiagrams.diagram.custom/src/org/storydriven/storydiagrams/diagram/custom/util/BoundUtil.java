@@ -10,6 +10,7 @@ import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.activities.StoryNode;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.BindingSemantics;
 import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 public final class BoundUtil {
@@ -28,24 +29,18 @@ public final class BoundUtil {
 		return map;
 	}
 
-	public static Map<String, EClassifier> getBoundObjects(ActivityNode node) {
-		Map<String, EClassifier> map = new LinkedHashMap<String, EClassifier>();
-
+	private static void collect(Map<String, EClassifier> map, ActivityNode node) {
 		for (ActivityEdge incoming : node.getIncomings()) {
 			collect(map, incoming);
 		}
 
-		return map;
+		if (node instanceof StoryNode) {
+			collect(map, ((StoryNode) node).getStoryPattern());
+		}
 	}
 
 	private static void collect(Map<String, EClassifier> map, ActivityEdge incoming) {
 		collect(map, incoming.getSource());
-	}
-
-	private static void collect(Map<String, EClassifier> map, ActivityNode node) {
-		if (node instanceof StoryNode) {
-			collect(map, ((StoryNode) node).getStoryPattern());
-		}
 	}
 
 	private static void collect(Map<String, EClassifier> map, StoryPattern pattern) {
@@ -54,16 +49,19 @@ public final class BoundUtil {
 			collect(map, childPattern);
 		}
 
-		// collect object variables
-		for (AbstractVariable variable : pattern.getVariables()) {
-			collect(map, variable);
+		// only collect when they could have been matched
+		if (!BindingSemantics.NEGATIVE.equals(pattern.getBindingSemantics())) {
+			// collect object variables
+			for (AbstractVariable variable : pattern.getVariables()) {
+				collect(map, variable);
+			}
 		}
 	}
 
 	private static void collect(Map<String, EClassifier> map, AbstractVariable variable) {
 		if (variable instanceof TypedElement) {
 			if (map.containsKey(variable.getName())) {
-				System.out.println("the variable name exists already: " + variable.getName());
+				System.err.println("the variable name exists already: " + variable.getName());
 			} else {
 				map.put(variable.getName(), variable.getType());
 			}
