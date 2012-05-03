@@ -1,4 +1,4 @@
-package org.storydriven.modeling.diagram.ocl;
+package org.storydriven.storydiagrams.diagram.ocl;
 
 import org.eclipse.jface.text.TextAttribute;
 import org.eclipse.jface.text.rules.IToken;
@@ -7,11 +7,21 @@ import org.eclipse.jface.text.rules.Token;
 import org.eclipse.jface.text.rules.WordRule;
 import org.eclipse.swt.SWT;
 
-public class OCLKeywordRule extends WordRule
-{
-	private static final String[]	KEYWORDS	=
-												{
-			"package", //$NON-NLS-1$
+public class OCLKeywordRule extends WordRule {
+	private static class OCLKeywordDetector implements IWordDetector {
+
+		@Override
+		public boolean isWordPart(char c) {
+			return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';
+		}
+
+		@Override
+		public boolean isWordStart(char c) {
+			return c == '@' || isWordPart(c);
+		}
+	}
+
+	private static final String[] KEYWORDS = { "package", //$NON-NLS-1$
 			"endpackage", //$NON-NLS-1$
 			"context", //$NON-NLS-1$
 			"inv", //$NON-NLS-1$
@@ -47,31 +57,15 @@ public class OCLKeywordRule extends WordRule
 
 			"attr", //$NON-NLS-1$
 			"oper", //$NON-NLS-1$
-												};
+	};
 
-	OCLKeywordRule()
-	{
+	public OCLKeywordRule() {
 		super(new OCLKeywordDetector());
 
 		IToken token = new Token(new TextAttribute(null, null, SWT.BOLD));
 
-		for (String word : KEYWORDS)
-		{
+		for (String word : KEYWORDS) {
 			addWord(word, token);
-		}
-	}
-
-	private static class OCLKeywordDetector implements IWordDetector
-	{
-
-		public boolean isWordPart(char c)
-		{
-			return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
-		}
-
-		public boolean isWordStart(char c)
-		{
-			return c == '@' || isWordPart(c);
 		}
 	}
 }

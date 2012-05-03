@@ -1,4 +1,4 @@
-package org.storydriven.modeling.diagram.ocl;
+package org.storydriven.storydiagrams.diagram.ocl;
 
 import org.eclipse.jface.text.rules.EndOfLineRule;
 import org.eclipse.jface.text.rules.IPredicateRule;
@@ -7,12 +7,10 @@ import org.eclipse.jface.text.rules.MultiLineRule;
 import org.eclipse.jface.text.rules.RuleBasedPartitionScanner;
 import org.eclipse.jface.text.rules.Token;
 
-public class OCLPartitionScanner extends RuleBasedPartitionScanner
-{
+public class OCLPartitionScanner extends RuleBasedPartitionScanner {
 	public static final String OCL_COMMENT = "__ocl_comment";
 
-	OCLPartitionScanner()
-	{
+	public OCLPartitionScanner() {
 		super();
 
 		IPredicateRule[] rules = new IPredicateRule[2];

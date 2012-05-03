@@ -1,4 +1,4 @@
-package org.storydriven.modeling.diagram.ocl;
+package org.storydriven.storydiagrams.diagram.ocl;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -12,16 +12,19 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.eclipse.ocl.helper.Choice;
+import org.eclipse.ocl.helper.ChoiceKind;
+import org.eclipse.swt.graphics.Image;
+import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
 
 public class OCLCompletionProcessor implements IContentAssistProcessor {
+	private static char[] ACTIVATION = { '.', ':' /* :: */, '>' /* -> */, '^', ' ' };
 	private static char[] NO_CHARS = {};
-	private static IContextInformation[] NO_CONTEXTS = {};
 	private static ICompletionProposal[] NO_COMPLETIONS = {};
 
-	private static char[] ACTIVATION = { '.', ':' /* :: */, '>' /* -> */, '^', ' ' };
+	private static IContextInformation[] NO_CONTEXTS = {};
 
-	public ICompletionProposal[] computeCompletionProposals(ITextViewer viewer,
-			int offset) {
+	@Override
+	public ICompletionProposal[] computeCompletionProposals(ITextViewer viewer, int offset) {
 
 		OCLDocument doc = (OCLDocument) viewer.getDocument();
 
@@ -67,33 +70,10 @@ public class OCLCompletionProcessor implements IContentAssistProcessor {
 
 		List<Choice> choices = doc.getOCLChoices(offset);
 
-		return createCompletions(choices, replacementOffset, offset
-				- replacementOffset);
+		return createCompletions(choices, replacementOffset, offset - replacementOffset);
 	}
 
-	public char[] getCompletionProposalAutoActivationCharacters() {
-		return ACTIVATION;
-	}
-
-	public IContextInformation[] computeContextInformation(ITextViewer viewer,
-			int offset) {
-		return NO_CONTEXTS;
-	}
-
-	public char[] getContextInformationAutoActivationCharacters() {
-		return NO_CHARS;
-	}
-
-	public IContextInformationValidator getContextInformationValidator() {
-		return null;
-	}
-
-	public String getErrorMessage() {
-		return null;
-	}
-
-	private ICompletionProposal[] createCompletions(List<Choice> choices,
-			int replacementOffset, int replacementLength) {
+	private ICompletionProposal[] createCompletions(List<Choice> choices, int replacementOffset, int replacementLength) {
 
 		List<ICompletionProposal> result = new java.util.ArrayList<ICompletionProposal>();
 
@@ -101,8 +81,9 @@ public class OCLCompletionProcessor implements IContentAssistProcessor {
 
 		for (Choice choice : choices) {
 			String text = choice.getName();
-			String display;
 			int cursor;
+			Image image = getImage(choice.getKind());
+			String display;
 
 			switch (choice.getKind()) {
 			case OPERATION:
@@ -125,8 +106,8 @@ public class OCLCompletionProcessor implements IContentAssistProcessor {
 				break;
 			}
 
-			result.add(new CompletionProposal(text, replacementOffset,
-					replacementLength, cursor, null, display, null, null));
+			result.add(new CompletionProposal(text, replacementOffset, replacementLength, cursor, image, display, null,
+					null));
 		}
 
 		return result.toArray(new ICompletionProposal[result.size()]);
@@ -134,6 +115,7 @@ public class OCLCompletionProcessor implements IContentAssistProcessor {
 
 	private void sortChoices(List<Choice> choices) {
 		Collections.sort(choices, new Comparator<Choice>() {
+			@Override
 			public int compare(Choice o1, Choice o2) {
 				int result = rank(o1) - rank(o2);
 
@@ -169,5 +151,60 @@ public class OCLCompletionProcessor implements IContentAssistProcessor {
 				}
 			}
 		});
+	}
+
+	private static Image getImage(ChoiceKind kind) {
+		switch (kind) {
+		case PROPERTY:
+			return DiagramImages.getImage(DiagramImages.EATTRIBUTE);
+		case OPERATION:
+			return DiagramImages.getImage(DiagramImages.EOPERATION);
+		case SIGNAL:
+			System.out.println(kind);
+			return OCLImages.getImage(OCLImages.SIGNAL);
+		case ENUMERATION_LITERAL:
+			return DiagramImages.getImage(DiagramImages.EENUM_LITERAL);
+		case STATE:
+			System.out.println(kind);
+			return OCLImages.getImage(OCLImages.STATE);
+		case TYPE:
+			System.out.println(kind);
+			return OCLImages.getImage(OCLImages.TYPE);
+		case ASSOCIATION_CLASS:
+			System.out.println(kind);
+			return OCLImages.getImage(OCLImages.ASSOCIATION_CLASS);
+		case PACKAGE:
+			return DiagramImages.getImage(DiagramImages.EPACKAGE);
+		case VARIABLE:
+			return OCLImages.getImage(OCLImages.VARIABLE);
+		default:
+			System.out.println(kind);
+			return null;
+		}
+	}
+
+	@Override
+	public IContextInformation[] computeContextInformation(ITextViewer viewer, int offset) {
+		return NO_CONTEXTS;
+	}
+
+	@Override
+	public char[] getCompletionProposalAutoActivationCharacters() {
+		return ACTIVATION;
+	}
+
+	@Override
+	public char[] getContextInformationAutoActivationCharacters() {
+		return NO_CHARS;
+	}
+
+	@Override
+	public IContextInformationValidator getContextInformationValidator() {
+		return null;
+	}
+
+	@Override
+	public String getErrorMessage() {
+		return null;
 	}
 }

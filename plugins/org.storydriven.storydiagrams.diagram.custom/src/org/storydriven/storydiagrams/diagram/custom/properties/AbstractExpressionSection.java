@@ -91,7 +91,7 @@ public abstract class AbstractExpressionSection extends AbstractSection {
 				viewer = null;
 			}
 
-			viewer = provider.createSourceViewer(group, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL, classifier,
+			viewer = provider.createSourceViewer(group, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL, null,
 					getContextInformation(), value);
 			GridDataFactory.fillDefaults().grab(true, true).applyTo(viewer.getTextWidget());
 			viewer.addTextListener(new ITextListener() {
@@ -118,6 +118,10 @@ public abstract class AbstractExpressionSection extends AbstractSection {
 		}
 	}
 
+	protected EClassifier getContextClassifier() {
+		return null;
+	}
+
 	private String getTypeText(EClassifier classifier) {
 		StringBuilder builder = new StringBuilder();
 
@@ -129,10 +133,6 @@ public abstract class AbstractExpressionSection extends AbstractSection {
 	}
 
 	protected abstract Expression getExpression();
-
-	protected EClassifier getContextClassifier() {
-		return null;
-	}
 
 	protected Map<String, EClassifier> getContextInformation() {
 		return BoundUtil.getBoundObjects(getElement());

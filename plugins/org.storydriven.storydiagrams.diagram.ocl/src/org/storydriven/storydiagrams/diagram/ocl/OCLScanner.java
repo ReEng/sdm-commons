@@ -1,4 +1,4 @@
-package org.storydriven.modeling.diagram.ocl;
+package org.storydriven.storydiagrams.diagram.ocl;
 
 import org.eclipse.jface.text.TextAttribute;
 import org.eclipse.jface.text.rules.IRule;
@@ -9,11 +9,9 @@ import org.eclipse.jface.text.rules.SingleLineRule;
 import org.eclipse.jface.text.rules.Token;
 import org.eclipse.jface.text.rules.WhitespaceRule;
 
-public class OCLScanner extends RuleBasedScanner
-{
+public class OCLScanner extends RuleBasedScanner {
 
-	OCLScanner(ColorManager manager, OCLDocument oclDocument)
-	{
+	public OCLScanner(ColorManager manager, OCLDocument oclDocument) {
 		super();
 
 		IToken literal = new Token(new TextAttribute(manager.getColor(ColorManager.LITERAL)));

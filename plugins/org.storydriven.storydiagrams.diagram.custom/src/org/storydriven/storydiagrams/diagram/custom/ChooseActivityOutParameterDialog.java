@@ -68,7 +68,7 @@ public class ChooseActivityOutParameterDialog extends Dialog {
 																	baseIndex + i));
 			}
 		} else if (difference < 0) {
-			int baseIndex = activity.getOutParameters().size();
+//			int baseIndex = activity.getOutParameters().size();
 			for(int i = 0; i < (-difference); i++) {
 				e = ExpressionsFactory.eINSTANCE.createTextualExpression();
 				this.changeCommandReceiver.

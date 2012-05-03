@@ -1,4 +1,4 @@
-package org.storydriven.modeling.diagram.ocl;
+package org.storydriven.storydiagrams.diagram.ocl;
 
 import java.util.Map;
 
@@ -14,37 +14,35 @@ import org.storydriven.storydiagrams.diagram.custom.SourceViewerProvider;
  * @author Stephan Hildebrandt
  * 
  */
-public class OCLSourceViewerProvider extends SourceViewerProvider
-{
-	private OCLSourceViewer	oclSourceViewer	= null;
-	private ColorManager	colorManager	= null;
+public class OCLSourceViewerProvider extends SourceViewerProvider {
+	private OCLSourceViewer oclSourceViewer = null;
+	private ColorManager colorManager = null;
 
 	@Override
 	public ISourceViewer createSourceViewer(Composite parent, int styles, EClassifier contextClassifier,
-			Map<String, EClassifier> contextInformation, String text)
-	{
+			Map<String, EClassifier> contextInformation, String text) {
 		colorManager = new ColorManager();
 
-		oclSourceViewer = new OCLSourceViewer(parent, null, styles, colorManager, contextClassifier, contextInformation, text);
+		oclSourceViewer = new OCLSourceViewer(parent, null, styles, colorManager, contextClassifier,
+				contextInformation, text);
 
 		return oclSourceViewer;
 	}
 
 	@Override
-	public void dispose()
-	{
-		if (colorManager != null)
+	public void dispose() {
+		if (colorManager != null) {
 			colorManager.dispose();
+		}
 	}
 
 	@Override
-	public String getText()
-	{
+	public String getText() {
 		return oclSourceViewer.getDocument().get();
 	}
 
-	public void setText(String text)
-	{
+	@Override
+	public void setText(String text) {
 		oclSourceViewer.getDocument().set(text);
 	}
 }

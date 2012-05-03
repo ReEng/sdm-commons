@@ -1,4 +1,4 @@
-package org.storydriven.modeling.diagram.ocl;
+package org.storydriven.storydiagrams.diagram.ocl;
 
 import java.util.Map;
 
@@ -9,14 +9,14 @@ import org.eclipse.swt.widgets.Display;
 public class ColorManager {
 	public static RGB DEFAULT = new RGB(0, 0, 0);
 
-	public static RGB COMMENT = new RGB(0, 128, 0);
+	public static RGB COMMENT = new RGB(100, 100, 100);
 	public static RGB LITERAL = new RGB(0, 0, 192);
 	public static RGB COLLECTION_TUPLE = new RGB(64, 0, 64);
 
 	public static RGB OUTPUT_ERROR = new RGB(192, 0, 0);
 	public static RGB OUTPUT_RESULTS = new RGB(0, 0, 192);
-	
-	public static RGB KNOWN_VARIABLE = new RGB(128, 0, 0);
+
+	public static RGB KNOWN_VARIABLE = new RGB(0, 160, 0);
 
 	private Map<RGB, Color> colors = new java.util.HashMap<RGB, Color>(10);
 

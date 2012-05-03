@@ -6,7 +6,7 @@
 	<extension point="org.storydriven.storydiagrams.diagram.custom.expressionSourceViewerExtension">
 		<expressionSourceViewer
 			expressionLanguage="OCL"
-			sourceViewerProvider="org.storydriven.modeling.diagram.ocl.OCLSourceViewerProvider"
+			sourceViewerProvider="org.storydriven.storydiagrams.diagram.ocl.OCLSourceViewerProvider"
 			version="1.0"/>
 	</extension>
 
