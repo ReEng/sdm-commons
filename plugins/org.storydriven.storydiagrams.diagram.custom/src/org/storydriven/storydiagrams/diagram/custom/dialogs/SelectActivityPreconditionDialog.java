@@ -14,7 +14,7 @@ public class SelectActivityPreconditionDialog extends AbstractTreeSelectionDialo
 	private ResourceSet resourceSet;
 
 	public SelectActivityPreconditionDialog() {
-		super("shellText", "title", "description");
+		super("Activity Precodition", "Select Activity Precondition", "Select the pattern that must be matched as condition of the activity.");
 		setTitleImage(DiagramImages.getImage(DiagramImages.BANNER_SELECT_PRECONDITION));
 	}
 

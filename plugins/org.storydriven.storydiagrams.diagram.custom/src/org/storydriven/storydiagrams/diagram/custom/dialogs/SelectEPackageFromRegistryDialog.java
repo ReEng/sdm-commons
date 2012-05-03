@@ -31,7 +31,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.storydriven.storydiagrams.diagram.custom.Activator;
-import org.storydriven.storydiagrams.diagram.custom.providers.StringTableLabelProvider;
+import org.storydriven.storydiagrams.diagram.custom.providers.EPackageRegistryLabelProvider;
 
 public class SelectEPackageFromRegistryDialog extends Dialog {
 	private final Collection<String> hiddenUris;
@@ -73,7 +73,7 @@ public class SelectEPackageFromRegistryDialog extends Dialog {
 		final TableViewer viewer = new TableViewer(composite, SWT.BORDER | SWT.FULL_SELECTION | SWT.MULTI);
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(viewer.getControl());
 		viewer.setContentProvider(new ArrayContentProvider());
-		viewer.setLabelProvider(new StringTableLabelProvider());
+		viewer.setLabelProvider(new EPackageRegistryLabelProvider());
 		viewer.setComparator(new ViewerComparator());
 		viewer.addFilter(new ViewerFilter() {
 			@Override

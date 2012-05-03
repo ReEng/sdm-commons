@@ -44,11 +44,17 @@ public class ResultWizardPage extends WizardPage {
 			Map<String, Variable<EClassifier>> results = getWizard().getResults();
 			Variable<EClassifier> result = results.get(SDMInterpreterConstants.RETURN_VALUE_VAR_NAME);
 
+			System.out.println(result.getValue());
 			if (result.getValue() instanceof EObject) {
 				((ResultLabelProvider) resultViewer.getLabelProvider()).setObject((EObject) result.getValue());
 				resultViewer.setInput(result.getValue());
 			}
-			resourceChangedComposite.setVisible(getWizard().getResource().isModified());
+			if (getWizard().getResource() != null) {
+				resourceChangedComposite.setVisible(getWizard().getResource().isModified());
+				getWizard().setSaveResource(true);
+			} else {
+				resourceChangedComposite.setVisible(false);
+			}
 
 			setPageComplete(true);
 		}

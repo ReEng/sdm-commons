@@ -5,7 +5,7 @@ import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
 import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
 
-public class StringTableLabelProvider extends LabelProvider implements ITableLabelProvider {
+public class EPackageRegistryLabelProvider extends LabelProvider implements ITableLabelProvider {
 	@Override
 	public Image getColumnImage(Object element, int index) {
 		return DiagramImages.getImage(DiagramImages.EPACKAGE);

@@ -1,6 +1,7 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
 import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EParameter;
@@ -19,6 +20,8 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.KeyAdapter;
+import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.FormAttachment;
@@ -84,6 +87,15 @@ public class ActivityParametersSection extends AbstractSection {
 			@Override
 			public void doubleClick(DoubleClickEvent e) {
 				configure(false, false, getEParameter(inParametersViewer.getSelection()));
+			}
+		});
+
+		// add delete key listener
+		inParametersViewer.getTable().addKeyListener(new KeyAdapter() {
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.DEL && !inParametersViewer.getSelection().isEmpty()) {
+					remove((IStructuredSelection) inParametersViewer.getSelection(), false);
+				}
 			}
 		});
 
@@ -154,6 +166,15 @@ public class ActivityParametersSection extends AbstractSection {
 			}
 		});
 
+		// add delete key listener
+		outParametersViewer.getTable().addKeyListener(new KeyAdapter() {
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.DEL && !outParametersViewer.getSelection().isEmpty()) {
+					remove((IStructuredSelection) outParametersViewer.getSelection(), true);
+				}
+			}
+		});
+
 		// add parameter
 		outAddButton.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -202,6 +223,160 @@ public class ActivityParametersSection extends AbstractSection {
 				}
 			}
 		});
+	}
+
+	@Override
+	protected void notifyChanged(Notification msg) {
+		refresh();
+	}
+
+	@Override
+	public void refresh() {
+		// check if the activity is contained in an eOperation -> disable controls
+		if (getElement() != null && ActivityUtil.isIndependent(getElement())) {
+			if (inParametersViewer != null && !inParametersViewer.getTable().isDisposed()) {
+				inParametersViewer.getControl().setEnabled(true);
+				inParametersViewer.setInput(getElement().getInParameters());
+			}
+			if (outParametersViewer != null && !outParametersViewer.getTable().isDisposed()) {
+				outParametersViewer.getControl().setEnabled(true);
+				outParametersViewer.setInput(getElement().getOutParameters());
+			}
+
+			checkButtonStates();
+		} else {
+			inParametersViewer.setInput(null);
+			outParametersViewer.setInput(null);
+
+			inParametersViewer.getControl().setEnabled(false);
+			inAddButton.setEnabled(false);
+			inRemoveButton.setEnabled(false);
+			inConfigureButton.setEnabled(false);
+			inUpButton.setEnabled(false);
+			inDownButton.setEnabled(false);
+
+			outParametersViewer.getControl().setEnabled(false);
+			outAddButton.setEnabled(false);
+			outRemoveButton.setEnabled(false);
+			outConfigureButton.setEnabled(false);
+			outUpButton.setEnabled(false);
+			outDownButton.setEnabled(false);
+		}
+	}
+
+	private void checkButtonStates() {
+		// in parameters
+		IStructuredSelection selection = (IStructuredSelection) inParametersViewer.getSelection();
+		if (!selection.isEmpty()) {
+			int count = getElement().getInParameters().size();
+			if (selection.size() == 1) {
+				inConfigureButton.setEnabled(true);
+				int index = getElement().getInParameters().indexOf(selection.getFirstElement());
+				inUpButton.setEnabled(index > 0);
+				inDownButton.setEnabled(index < count - 1);
+			} else {
+				inConfigureButton.setEnabled(false);
+				int minIndex = count;
+				int maxIndex = 0;
+				for (Object element : selection.toArray()) {
+					int currentIndex = getElement().getInParameters().indexOf(element);
+					if (currentIndex > maxIndex) {
+						maxIndex = currentIndex;
+					}
+					if (currentIndex < minIndex) {
+						minIndex = currentIndex;
+					}
+				}
+				inUpButton.setEnabled(minIndex > 0);
+				inDownButton.setEnabled(maxIndex < count - 1);
+			}
+
+			inRemoveButton.setEnabled(true);
+		}
+
+		// out parameters
+		selection = (IStructuredSelection) outParametersViewer.getSelection();
+		if (!selection.isEmpty()) {
+			int count = getElement().getOutParameters().size();
+			if (selection.size() == 1) {
+				outConfigureButton.setEnabled(true);
+				int index = getElement().getOutParameters().indexOf(selection.getFirstElement());
+				outUpButton.setEnabled(index > 0);
+				outDownButton.setEnabled(index < count - 1);
+			} else {
+				outConfigureButton.setEnabled(false);
+				int minIndex = count;
+				int maxIndex = 0;
+				for (Object element : selection.toArray()) {
+					int currentIndex = getElement().getOutParameters().indexOf(element);
+					if (currentIndex > maxIndex) {
+						maxIndex = currentIndex;
+					}
+					if (currentIndex < minIndex) {
+						minIndex = currentIndex;
+					}
+				}
+				outUpButton.setEnabled(minIndex > 0);
+				outDownButton.setEnabled(maxIndex < count - 1);
+			}
+
+			outRemoveButton.setEnabled(true);
+		}
+	}
+
+	private void configure(final boolean isCreating, final boolean isOutgoing, final EParameter eParameter) {
+		// prepare dialog
+		configureDialog.setCreating(isCreating);
+		configureDialog.setOutgoing(isOutgoing);
+		configureDialog.setName(eParameter.getName());
+		configureDialog.setEClassifier(eParameter.getEType());
+		configureDialog.setActivity(getElement());
+
+		int result = configureDialog.open();
+		if (result == Window.OK) {
+			final String name = configureDialog.getName();
+			final EClassifier eClassifier = configureDialog.getEClassifier();
+
+			Command command = new RecordingCommand(getEditingDomain()) {
+				@Override
+				public void doExecute() {
+					eParameter.setName(name);
+					eParameter.setEType(eClassifier);
+					if (isCreating) {
+						getElement().getContainedParameters().add(eParameter);
+
+						// get insertion index
+						EList<EParameter> list;
+						if (isOutgoing) {
+							list = getElement().getOutParameters();
+						} else {
+							list = getElement().getInParameters();
+						}
+
+						int insertionIndex = list.size();
+						if (isCreating) {
+							int index = 0;
+							IStructuredSelection selection = (IStructuredSelection) inParametersViewer.getSelection();
+							for (Object element : selection.toArray()) {
+								int currentIndex = list.indexOf(element) + 1;
+								if (currentIndex > index) {
+									index = currentIndex;
+								}
+							}
+							insertionIndex = index;
+						}
+
+						list.add(insertionIndex, eParameter);
+					}
+				}
+			};
+			execute(command);
+		}
+	}
+
+	@Override
+	protected Activity getElement() {
+		return (Activity) super.getElement();
 	}
 
 	@Override
@@ -320,57 +495,6 @@ public class ActivityParametersSection extends AbstractSection {
 		outParametersViewer.getControl().getParent().setLayoutData(data);
 	}
 
-	private void configure(final boolean isCreating, final boolean isOutgoing, final EParameter eParameter) {
-		// prepare dialog
-		configureDialog.setCreating(isCreating);
-		configureDialog.setOutgoing(isOutgoing);
-		configureDialog.setName(eParameter.getName());
-		configureDialog.setEClassifier(eParameter.getEType());
-		configureDialog.setActivity(getElement());
-
-		int result = configureDialog.open();
-		if (result == Window.OK) {
-			final String name = configureDialog.getName();
-			final EClassifier eClassifier = configureDialog.getEClassifier();
-
-			Command command = new RecordingCommand(getEditingDomain()) {
-				@Override
-				public void doExecute() {
-					eParameter.setName(name);
-					eParameter.setEType(eClassifier);
-					if (isCreating) {
-						getElement().getContainedParameters().add(eParameter);
-
-						// get insertion index
-						EList<EParameter> list;
-						if (isOutgoing) {
-							list = getElement().getOutParameters();
-						} else {
-							list = getElement().getInParameters();
-						}
-
-						int insertionIndex = list.size();
-						if (isCreating) {
-							int index = 0;
-							IStructuredSelection selection = (IStructuredSelection) inParametersViewer.getSelection();
-							for (Object element : selection.toArray()) {
-								int currentIndex = list.indexOf(element) + 1;
-								if (currentIndex > index) {
-									index = currentIndex;
-								}
-							}
-							insertionIndex = index;
-						}
-
-						list.add(insertionIndex, eParameter);
-					}
-				}
-			};
-			execute(command);
-			refresh();
-		}
-	}
-
 	private void move(final IStructuredSelection selection, final boolean isOutgoing, final boolean down) {
 		Command command = new RecordingCommand(getEditingDomain()) {
 			@Override
@@ -397,7 +521,6 @@ public class ActivityParametersSection extends AbstractSection {
 			}
 		};
 		execute(command);
-		refresh();
 	}
 
 	private void remove(final IStructuredSelection selection, final boolean isOutgoing) {
@@ -412,106 +535,6 @@ public class ActivityParametersSection extends AbstractSection {
 			}
 		};
 		execute(command);
-		refresh();
-	}
-
-	@Override
-	public void refresh() {
-		// check if the activity is contained in an eOperation -> disable controls
-		if (getElement() != null && ActivityUtil.isIndependent(getElement())) {
-			inParametersViewer.setInput(getElement().getInParameters());
-			outParametersViewer.setInput(getElement().getOutParameters());
-
-			inParametersViewer.getControl().setEnabled(true);
-			outParametersViewer.getControl().setEnabled(true);
-
-			checkButtonStates();
-		} else {
-			inParametersViewer.setInput(null);
-			outParametersViewer.setInput(null);
-
-			inParametersViewer.getControl().setEnabled(false);
-			inAddButton.setEnabled(false);
-			inRemoveButton.setEnabled(false);
-			inConfigureButton.setEnabled(false);
-			inUpButton.setEnabled(false);
-			inDownButton.setEnabled(false);
-
-			outParametersViewer.getControl().setEnabled(false);
-			outAddButton.setEnabled(false);
-			outRemoveButton.setEnabled(false);
-			outConfigureButton.setEnabled(false);
-			outUpButton.setEnabled(false);
-			outDownButton.setEnabled(false);
-		}
-		outParametersViewer.refresh();
-		inParametersViewer.refresh();
-
-	}
-
-	private void checkButtonStates() {
-		// in parameters
-		IStructuredSelection selection = (IStructuredSelection) inParametersViewer.getSelection();
-		if (!selection.isEmpty()) {
-			int count = getElement().getInParameters().size();
-			if (selection.size() == 1) {
-				inConfigureButton.setEnabled(true);
-				int index = getElement().getInParameters().indexOf(selection.getFirstElement());
-				inUpButton.setEnabled(index > 0);
-				inDownButton.setEnabled(index < count - 1);
-			} else {
-				inConfigureButton.setEnabled(false);
-				int minIndex = count;
-				int maxIndex = 0;
-				for (Object element : selection.toArray()) {
-					int currentIndex = getElement().getInParameters().indexOf(element);
-					if (currentIndex > maxIndex) {
-						maxIndex = currentIndex;
-					}
-					if (currentIndex < minIndex) {
-						minIndex = currentIndex;
-					}
-				}
-				inUpButton.setEnabled(minIndex > 0);
-				inDownButton.setEnabled(maxIndex < count - 1);
-			}
-
-			inRemoveButton.setEnabled(true);
-		}
-
-		// out parameters
-		selection = (IStructuredSelection) outParametersViewer.getSelection();
-		if (!selection.isEmpty()) {
-			int count = getElement().getOutParameters().size();
-			if (selection.size() == 1) {
-				outConfigureButton.setEnabled(true);
-				int index = getElement().getOutParameters().indexOf(selection.getFirstElement());
-				outUpButton.setEnabled(index > 0);
-				outDownButton.setEnabled(index < count - 1);
-			} else {
-				outConfigureButton.setEnabled(false);
-				int minIndex = count;
-				int maxIndex = 0;
-				for (Object element : selection.toArray()) {
-					int currentIndex = getElement().getOutParameters().indexOf(element);
-					if (currentIndex > maxIndex) {
-						maxIndex = currentIndex;
-					}
-					if (currentIndex < minIndex) {
-						minIndex = currentIndex;
-					}
-				}
-				outUpButton.setEnabled(minIndex > 0);
-				outDownButton.setEnabled(maxIndex < count - 1);
-			}
-
-			outRemoveButton.setEnabled(true);
-		}
-	}
-
-	@Override
-	protected Activity getElement() {
-		return (Activity) super.getElement();
 	}
 
 	private static EParameter getEParameter(ISelection selection) {

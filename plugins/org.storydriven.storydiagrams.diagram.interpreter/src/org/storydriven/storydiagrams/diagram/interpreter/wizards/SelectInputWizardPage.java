@@ -169,16 +169,16 @@ public class SelectInputWizardPage extends WizardPage {
 			IResource member = ResourcesPlugin.getWorkspace().getRoot().findMember(path);
 			if (!(member instanceof IFile)) {
 				setErrorMessage("The selected resource does not exist.");
-				return false;
+//				return false;
 			}
 		} else {
-			return false;
+//			return false;
 		}
 
 		// check if resource is loaded
 		if (getWizard().getResource() == null) {
 			setErrorMessage("You have to select a host graph resource.");
-			return false;
+//			return false;
 		}
 
 		setErrorMessage(null);

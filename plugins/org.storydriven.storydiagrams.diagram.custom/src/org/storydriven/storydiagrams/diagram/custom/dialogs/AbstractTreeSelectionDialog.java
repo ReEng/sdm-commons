@@ -253,7 +253,7 @@ public abstract class AbstractTreeSelectionDialog<T extends Object> extends Titl
 
 						String message = String.format("Loading Resource '%1s'...", path);
 						monitor.beginTask(message, IProgressMonitor.UNKNOWN);
-						
+
 						Resource resource = resourceSet.getResource(uri, true);
 						try {
 							resource.load(getLoadOptions(resource));
@@ -271,7 +271,7 @@ public abstract class AbstractTreeSelectionDialog<T extends Object> extends Titl
 				e.printStackTrace();
 			}
 
-			elementViewer.refresh();
+			elementViewer.setInput(getInput());
 		}
 	}
 

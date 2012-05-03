@@ -41,7 +41,9 @@ public class InterpreteWizardPage extends WizardPage {
 
 			getWizard().setResults(null);
 			console.clearConsole();
-			getWizard().getResource().setTrackingModification(true);
+			if (getWizard().getResource() != null) {
+				getWizard().getResource().setTrackingModification(true);
+			}
 
 			try {
 				InterpreterRunnable runnable = new InterpreterRunnable(activity, parameters, console);

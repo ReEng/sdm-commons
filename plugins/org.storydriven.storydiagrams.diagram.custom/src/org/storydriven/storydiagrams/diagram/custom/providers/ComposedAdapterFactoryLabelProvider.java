@@ -1,6 +1,8 @@
 package org.storydriven.storydiagrams.diagram.custom.providers;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory.Descriptor.Registry;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
@@ -29,6 +31,12 @@ public class ComposedAdapterFactoryLabelProvider extends LabelProvider {
 
 	@Override
 	public String getText(Object element) {
+		if (element instanceof Resource) {
+			URI uri = ((Resource) element).getURI();
+			if (uri.isPlatformResource()) {
+				return uri.toPlatformString(true);
+			}
+		}
 		return aflp.getText(element);
 	}
 }

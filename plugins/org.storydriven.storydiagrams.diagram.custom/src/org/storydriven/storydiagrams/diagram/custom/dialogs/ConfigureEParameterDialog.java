@@ -173,15 +173,15 @@ public class ConfigureEParameterDialog extends TitleAreaDialog {
 	private String getDescription() {
 		if (isCreating) {
 			if (isOutgoing) {
-				return "Create Out Parameter";
+				return "Create an out parameter for the activity.";
 			} else {
-				return "Create In Parameter";
+				return "Create an in parameter for the activity.";
 			}
 		} else {
 			if (isOutgoing) {
-				return "Configure Out Parameter";
+				return "Configure out parameter of the activity.";
 			} else {
-				return "Configure In Parameter";
+				return "Configure in parameter of the activity.";
 			}
 		}
 	}
