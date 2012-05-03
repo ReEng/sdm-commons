@@ -463,29 +463,51 @@ A maybe constraint could allow to match the same objects to both sets.}
 \subsection{Inclusion Links [DT]}
 \label{sec:StoryPatterns:inclusion}
 
-containment in a set of objects, i.e.\ inclusion link from object set variable to any object (set) variable means that the object set contains the objects.
+There are cases when you want to add additional objects to a set of objects matched to an object set variable as described in Section~\ref{sec:StoryPatterns:objectsets}.
+Since on object set variable does not explicitly represent a collection object (similar to \texttt{java.util.Collection}),
+we need a way to describe the addition or removal of objects to~/~from such a set as well as checking if an object is included in a set of objects.
+We introduce \emph{inclusion links} for this purpose.
 
-inclusion links are not typed
-
-inclusion links usable as illustrated in Figure~\ref{fig:InlucionLinks}
-
-Example in Figure~\ref{fig:reuseObjSet2}
-
-object set contains an object;
-object set contains another set of objects?;
-negative, optional, mandatory inclusion links;
-create and destroy with object inclusion links;
-link order constraints with inclusion links?
-
-
-\begin{figure}[htbp]
+\begin{figure}[htb]
   \centering
-  \includegraphics[scale=0.8]{figures/InclusionLinks}
-  \caption{Examples of inclusion links}
+  \includegraphics[scale=0.9]{figures/InclusionLinks}
+  \caption{Notation of Inclusion Links}
   \label{fig:InlucionLinks}
 \end{figure}
 
-\begin{figure}[htbp]
+An inclusion link represents a containment relation between two variables in a story pattern.
+It can always be used between an object set variable and another variable to specify that
+an object (or an object set) represented by a variable is contained in an object set represented by an object set variable.
+
+An inclusion link is represented by a line between an object set variable and another object variable as illustrated in Figure~\ref{fig:InlucionLinks} a).
+The circle containing a plus determines which of the two sides of the link is containing the other one.
+In Figure~\ref{fig:InlucionLinks} a), the object set \fe{methods} contains an object \fe{m}.
+
+In contrast to link variables that are typed over an association, inclusion links are not typed at all.
+They only represent a containment of an object in a set of objects.
+But similat to link variables, this relation can be checked to be existent between two matched object variables or be used to match new objects.
+In Figure~\ref{fig:InlucionLinks} a), a \fe{Method} object in the object set \fe{methods} is to be matched (found).
+
+Similar to other links, inclusion links can be used with bound, unbound, or maybe-bound object variables, can be negative or optional, use
+\create\ or \destroy\ stereotypes (see Figure~\ref{fig:InlucionLinks} b) to e)).
+\tododt{explain semantics}
+Furthermore, they can also be used between two object set variables as illustrated in Figure~\ref{fig:InlucionLinks} f)
+to describe that all objects in the set \fe{selection} are contained in the set \fe{all}.
+
+\tododt{Write the remainder of the section}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.9]{figures/InclusionLinksExamples}
+  \caption{Exemplary Uses of Inclusion Links}
+  \label{fig:InlucionLinksExamples}
+\end{figure}
+
+Example in Figure~\ref{fig:reuseObjSet2}
+
+link order constraints with inclusion links?
+
+\begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{figures/InclusionLinksWellFormedness}
   \caption{Well-formedness of inclusion links}
@@ -495,12 +517,6 @@ link order constraints with inclusion links?
 feasible combinations as illustrated in Figures~\ref{fig:InlucionLinkWellFormedness}, \ref{fig:negativeObjects}, \ref{fig:optionalObjects}, and in Table~\ref{tab:bindingCombinations_links}
 
 \todoall{Are objects that are matched to object set variables ordered in the corresponding container? Can such containers contain an object several times?}
-
-\todoch{What is the semantics of a containment link? Current understanding: an element is contained in a container. What is the difference to to-many references which are containments?}
-\tododt{Containment links do not correspond to any association or reference. They only describe containments of objects in containers or set nodes.}
-
-\todoch{Which classifiers are allowed for ContainerVariables? This should not only be the EMF collection types EList and EMap. Does a ContainmentLink need a reference as a type like normal LinkVariables?}
-\tododt{The contaiment links do not need any reference. I would suggest to allow any subtype of java.util.Collection (and java.util.List in case that link order constraints are used), but not java.util.Map! This is something different and needs a key for containment. Maybe we need special containment links for maps that include a key.}
 
 
 %\ext %--- Comment this line to include paths into the document
