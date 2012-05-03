@@ -5,8 +5,6 @@ import java.util.List;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.ISafeRunnable;
-import org.eclipse.core.runtime.SafeRunner;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -23,7 +21,6 @@ import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.modelinstance.ModelInstancePlugin;
 import de.fujaba.modelinstance.ModelinstancePackage;
 import de.fujaba.modelinstance.RootNode;
-import de.fujaba.newwizard.diagrams.IDiagramInformation;
 
 /**
  * Creates a new empty Diagram.

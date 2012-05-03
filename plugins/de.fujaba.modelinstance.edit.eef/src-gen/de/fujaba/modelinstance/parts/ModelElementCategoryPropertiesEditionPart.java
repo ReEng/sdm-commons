@@ -4,8 +4,6 @@
 package de.fujaba.modelinstance.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
 
 
 

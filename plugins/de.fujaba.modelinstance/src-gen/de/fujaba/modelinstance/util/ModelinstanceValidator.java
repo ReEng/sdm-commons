@@ -6,7 +6,6 @@
  */
 package de.fujaba.modelinstance.util;
 
-import de.fujaba.modelinstance.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;

@@ -22,23 +22,6 @@
 			genModel="model/core.uml.genmodel"/>
 	</extension>
 
-	<extension point="org.storydriven.core.expressionLanguagesExtension">
-		<expressionLanguage
-			expressionLanguage="OCL"
-			version="0.1"/>
-	</extension>
 
-	<extension point="org.storydriven.core.expressionLanguagesExtension">
-		<expressionLanguage
-			expressionLanguage="OCL"
-			version="0.2">
-		</expressionLanguage>
-	</extension>
-	<extension point="org.storydriven.core.expressionLanguagesExtension">
-		<expressionLanguage
-			expressionLanguage="Logics"
-			version="0.1">
-		</expressionLanguage>
-	</extension>
 
 </plugin>

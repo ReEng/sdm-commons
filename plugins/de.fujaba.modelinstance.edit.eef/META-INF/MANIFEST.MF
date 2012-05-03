@@ -9,3 +9,4 @@ Require-Bundle: org.eclipse.core.runtime,
  de.fujaba.modelinstance;bundle-version="0.2.0"
 Export-Package: de.fujaba.modelinstance.providers
 Bundle-Vendor: Fujaba Community made up of Heinz Nixdorf Institute Paderborn, Technische Universität Darmstadt, University of Kassel, Hasso Plattner Institute Potsdam, Yatta Solutions GmbH
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
