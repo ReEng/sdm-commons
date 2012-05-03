@@ -1,22 +1,17 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEStringSection;
-import org.storydriven.storydiagrams.patterns.PatternsPackage;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.diagram.custom.properties.AbstractExpressionSection;
+import org.storydriven.storydiagrams.patterns.Path;
 
-public class PathExpressionSection extends AbstractEStringSection {
+public class PathExpressionSection extends AbstractExpressionSection {
 	@Override
-	public boolean shouldUseExtraSpace() {
-		return true;
+	protected Expression getExpression() {
+		return getElement().getPathExpression();
 	}
 
 	@Override
-	protected EStructuralFeature getFeature() {
-		return PatternsPackage.Literals.PATH__PATH_EXPRESSION;
-	}
-
-	@Override
-	protected String getLabelText() {
-		return "Expression";
+	protected Path getElement() {
+		return (Path) super.getElement();
 	}
 }

@@ -243,6 +243,20 @@ public class ParameterBindingEditingSupport extends EditingSupport {
 	}
 
 	@Override
+	protected Object getValue(Object element) {
+		Type type = TypeUtil.getType(element);
+		if (Type.ENUM.equals(type)) {
+			return TypeUtil.getIndex(element, bindings.get(element));
+		} else if (Type.BOOLEAN.equals(type)) {
+			return bindings.get(element);
+		} else if (Type.UNKNOWN.equals(type)) {
+			return bindings.get(element);
+		} else {
+			return String.valueOf(bindings.get(element));
+		}
+	}
+
+	@Override
 	protected boolean canEdit(Object element) {
 		return element instanceof EParameter;
 	}
@@ -278,20 +292,6 @@ public class ParameterBindingEditingSupport extends EditingSupport {
 			return dialogCellEditor;
 		default:
 			return null;
-		}
-	}
-
-	@Override
-	protected Object getValue(Object element) {
-		Type type = TypeUtil.getType(element);
-		if (Type.ENUM.equals(type)) {
-			return TypeUtil.getIndex(element, bindings.get(element));
-		} else if (Type.BOOLEAN.equals(type)) {
-			return bindings.get(element);
-		} else if (Type.UNKNOWN.equals(type)) {
-			return bindings.get(element);
-		} else {
-			return String.valueOf(bindings.get(element));
 		}
 	}
 }

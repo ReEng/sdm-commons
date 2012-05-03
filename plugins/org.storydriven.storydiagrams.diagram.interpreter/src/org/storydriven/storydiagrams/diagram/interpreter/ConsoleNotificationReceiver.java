@@ -188,8 +188,8 @@ public class ConsoleNotificationReceiver implements StoryDrivenNotificationRecei
 
 	private void attributeValueSet(
 			AttributeValueSetNotification<AbstractVariable, EClassifier, EStructuralFeature> notification) {
-		debug("Attribute '%1s.%2s' set to '%3s' ($1s: $4s)", notification.getStoryPatternObject(),
-				notification.getFeature(), notification.getFeatureValue(), notification.getInstanceObject());
+		debug("Attribute '%1s.%2s' set to '%3s' ($4s: $5s)", notification.getStoryPatternObject(),
+				notification.getFeature(), notification.getFeatureValue(), notification.getInstanceObject(),notification.getFeature());
 	}
 
 	private void evaluatedExpression(EvaluatedExpressionNotification<EClassifier, Expression> notification) {
@@ -198,15 +198,17 @@ public class ConsoleNotificationReceiver implements StoryDrivenNotificationRecei
 
 	private void instanceLinkCreated(
 			InstanceLinkCreatedNotification<AbstractVariable, AbstractLinkVariable, EClassifier> notification) {
-		debug("Instance link '%1s' created from '%2s' to '%4s' (%2s: '%3s', %4s: '%5s')", notification.getLink(),
+		debug("Instance link '%1s' created from '%2s' to '%3s' (%4s: '%5s', %6s: '%7s')", notification.getLink(),
 				notification.getSourceStoryPatternObject(), notification.getSourceObject(),
+				notification.getTargetStoryPatternObject(), notification.getTargetObject(),
 				notification.getTargetStoryPatternObject(), notification.getTargetObject());
 	}
 
 	private void instanceLinkDestroyed(
 			InstanceLinkDestroyedNotification<AbstractVariable, AbstractLinkVariable, EClassifier> notification) {
-		debug("Instance link '%1s' destroyed from '%2s' to '%4s' (%2s: '%3s', %4s: '%5s')", notification.getLink(),
+		debug("Instance link '%1s' destroyed from '%2s' to '%3s' (%4s: '%5s', %6s: '%7s')", notification.getLink(),
 				notification.getSourceStoryPatternObject(), notification.getSourceObject(),
+				notification.getTargetStoryPatternObject(), notification.getTargetObject(),
 				notification.getTargetStoryPatternObject(), notification.getTargetObject());
 	}
 

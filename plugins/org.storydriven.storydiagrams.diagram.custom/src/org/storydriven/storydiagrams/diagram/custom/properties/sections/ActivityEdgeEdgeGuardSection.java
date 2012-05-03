@@ -9,7 +9,7 @@ import org.storydriven.storydiagrams.activities.EdgeGuard;
 import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEEnumRadioSection;
 import org.storydriven.storydiagrams.diagram.custom.util.ValidationUtil;
 
-public class ActivityEdgeGuardSection extends AbstractEEnumRadioSection<EdgeGuard> {
+public class ActivityEdgeEdgeGuardSection extends AbstractEEnumRadioSection<EdgeGuard> {
 	@Override
 	protected String getDescription() {
 		return "Edge Guard";

@@ -27,6 +27,10 @@ public abstract class AbstractEStringSection extends AbstractSection {
 			text.setText(EMPTY);
 		}
 	}
+	
+	protected Text getTextWidget() {
+		return text;
+	}
 
 	@Override
 	protected void notifyChanged(Notification msg) {

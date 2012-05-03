@@ -3,7 +3,6 @@ package org.storydriven.storydiagrams.diagram.interpreter.wizards;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.viewers.AbstractTreeViewer;
@@ -26,6 +25,7 @@ public class ResultWizardPage extends WizardPage {
 	private Composite resourceChangedComposite;
 	private TreeViewer resultViewer;
 	private Button saveResourceButton;
+	private ResultLabelProvider labelProvider;
 
 	protected ResultWizardPage() {
 		super(ResultWizardPage.class.getName());
@@ -44,11 +44,9 @@ public class ResultWizardPage extends WizardPage {
 			Map<String, Variable<EClassifier>> results = getWizard().getResults();
 			Variable<EClassifier> result = results.get(SDMInterpreterConstants.RETURN_VALUE_VAR_NAME);
 
-			System.out.println(result.getValue());
-			if (result.getValue() instanceof EObject) {
-				((ResultLabelProvider) resultViewer.getLabelProvider()).setObject((EObject) result.getValue());
-				resultViewer.setInput(result.getValue());
-			}
+			labelProvider.setResult(result);
+			resultViewer.setInput(result);
+
 			if (getWizard().getResource() != null) {
 				resourceChangedComposite.setVisible(getWizard().getResource().isModified());
 				getWizard().setSaveResource(true);
@@ -78,7 +76,8 @@ public class ResultWizardPage extends WizardPage {
 		resultViewer = new TreeViewer(composite, SWT.BORDER | SWT.SINGLE);
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(resultViewer.getControl());
 		resultViewer.setAutoExpandLevel(AbstractTreeViewer.ALL_LEVELS);
-		resultViewer.setLabelProvider(new ResultLabelProvider());
+		labelProvider = new ResultLabelProvider();
+		resultViewer.setLabelProvider(labelProvider);
 		resultViewer.setContentProvider(new ResultContentProvider());
 
 		// resource changed

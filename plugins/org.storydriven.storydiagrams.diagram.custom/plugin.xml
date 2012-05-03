@@ -542,9 +542,15 @@
                tab="documentation">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityEdgeGuardSection"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityEdgeEdgeGuardSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityEdgeFilter"
                id="ActivityEdge.guard"
+               tab="core">
+         </propertySection>
+         <propertySection
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityEdgeGuardExpression"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityEdgeFilter"
+               id="ActivityEdge.expression"
                tab="core">
          </propertySection>
       </propertySections>

@@ -1,22 +1,34 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEStringSection;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.TextualExpression;
+import org.storydriven.storydiagrams.activities.StopNode;
+import org.storydriven.storydiagrams.diagram.custom.properties.AbstractExpressionSection;
 
-public class StopNodeExpressionSection extends AbstractEStringSection {
+public class StopNodeExpressionSection extends AbstractExpressionSection {
+
 	@Override
-	public boolean shouldUseExtraSpace() {
-		return true;
+	protected Expression getExpression() {
+		if (getElement().getReturnValue() == null) {
+			final TextualExpression expression = ExpressionsFactory.eINSTANCE.createTextualExpression();
+			expression.setLanguage("OCL");
+			expression.setLanguageVersion("1.0");
+
+			RecordingCommand command = new RecordingCommand(getEditingDomain()) {
+				@Override
+				protected void doExecute() {
+					getElement().getReturnValues().add(expression);
+				}
+			};
+			execute(command);
+		}
+		return getElement().getReturnValue();
 	}
 
 	@Override
-	protected EStructuralFeature getFeature() {
-		return ActivitiesPackage.Literals.STOP_NODE__RETURN_VALUE;
-	}
-
-	@Override
-	protected String getLabelText() {
-		return "Expression";
+	protected StopNode getElement() {
+		return (StopNode) super.getElement();
 	}
 }

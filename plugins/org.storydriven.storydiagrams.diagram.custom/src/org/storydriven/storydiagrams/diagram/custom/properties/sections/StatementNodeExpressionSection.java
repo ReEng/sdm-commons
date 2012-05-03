@@ -1,22 +1,33 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEStringSection;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.TextualExpression;
+import org.storydriven.storydiagrams.activities.StatementNode;
+import org.storydriven.storydiagrams.diagram.custom.properties.AbstractExpressionSection;
 
-public class StatementNodeExpressionSection extends AbstractEStringSection {
+public class StatementNodeExpressionSection extends AbstractExpressionSection {
 	@Override
-	public boolean shouldUseExtraSpace() {
-		return true;
+	protected Expression getExpression() {
+		if (getElement().getStatementExpression() == null) {
+			final TextualExpression expression = ExpressionsFactory.eINSTANCE.createTextualExpression();
+			expression.setLanguage("OCL");
+			expression.setLanguageVersion("1.0");
+
+			RecordingCommand command = new RecordingCommand(getEditingDomain()) {
+				@Override
+				protected void doExecute() {
+					getElement().setStatementExpression(expression);
+				}
+			};
+			execute(command);
+		}
+		return getElement().getStatementExpression();
 	}
 
 	@Override
-	protected EStructuralFeature getFeature() {
-		return ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION;
-	}
-
-	@Override
-	protected String getLabelText() {
-		return "Expression";
+	protected StatementNode getElement() {
+		return (StatementNode) super.getElement();
 	}
 }
