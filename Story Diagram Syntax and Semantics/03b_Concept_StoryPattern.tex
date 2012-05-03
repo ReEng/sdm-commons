@@ -399,39 +399,14 @@ explain objectSetVariables, set size expressions
 
 \todomcp{object sets and binding operators/states/semantics}
 
-\todomcp{If we bind an object set, can we use the bound object in other story pattern? E.g. to insert all elements bound by the object set into a container via a containment link? (See Figure \ref{fig:reuseObjSet}).}
-\tododt{Yes, but I would use another concrete syntax (see Figures~\ref{fig:reuseObjSet1}, \ref{fig:reuseObjSet2}, and \ref{fig:reuseObjSet3}).}
+\todomcp{If we bind an object set, can we use the bound object in other story pattern? E.g. to insert all elements bound by the object set into a container via a containment link?}
+\tododt{Yes, but I would use another concrete syntax (see Figures~\ref{fig:reuseObjSet1}, \ref{fig:InclusionLinksExample1}).}
 
-\begin{figure}[htbp]
-	\begin{minipage}{.45\textwidth}
+\begin{figure}[htb]
 		\centering
-		\includegraphics[scale=.8]{figures/ReuseObjectSet}
-  	\caption{Reusing Object Sets}
-  	\label{fig:reuseObjSet}
-	\end{minipage}
-  \hfill
-  \begin{minipage}{.45\textwidth}
-  	\centering
 		\includegraphics[scale=.8]{figures/ReuseObjectSet1}
-  	\caption{Reuse objects in a set}
+  	\caption{Reuse Objects in a Set}
   	\label{fig:reuseObjSet1}
-	\end{minipage}
-\end{figure}
-
-\begin{figure}[htbp]
-	\begin{minipage}{.45\textwidth}
-		\centering
-		\includegraphics[scale=.8]{figures/ReuseObjectSet2}
-  	\caption{Add an object to a set}
-  	\label{fig:reuseObjSet2}
-	\end{minipage}
-  \hfill
-  \begin{minipage}{.45\textwidth}
-  	\centering
-		\includegraphics[scale=.8]{figures/ReuseObjectSet3}
-  	\caption{Add all objects from a set to a container}
-  	\label{fig:reuseObjSet3}
-	\end{minipage}
 \end{figure}
 
 \todomcp{An object set contains no ObjectSetSizeExpression and no object is matched into the object set: ObjectSet is interpreted as optional and the matching succeeds.}
@@ -439,7 +414,7 @@ explain objectSetVariables, set size expressions
 \todomcp{All operators for comparison are allowed: <, <=, >, >=, = !=}
 
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\begin{minipage}{.45\textwidth}
 		\centering
 		\includegraphics[scale=.8]{figures/ObjectSetSize}
@@ -492,7 +467,7 @@ Link constraints specify constraints on the absolute position of an element in a
 \end{itemize}
 
 
-\paragraph{Link Position Constraints}
+\subsubsection{Link Position Constraints}
 
 \begin{figure}[htbp]
 \center
@@ -533,7 +508,8 @@ The link position constraint in Figure~\ref{fig:linkPositionConstraints:linkPosi
 \label{fig:linkPositionConstraints:linkPositionConstraint4}
 \end{figure}
 
-\paragraph{Link Order Constraints}
+
+\subsubsection{Link Order Constraints}
 
 \begin{figure}[htbp]
 \center
@@ -580,7 +556,7 @@ For optionally created and destroyed links, the same applies to link order const
 
 Story patterns are matched by using isomorphic matchings. That means that two object variables in a story pattern may not be matched to the same object of the instance model. A matching which matches two object variables to the same object is, thus, considered to be invalid. In some situations, however, such matchings should be explicitly allowed. Then, the isomorphic matching must be disabled. This may be achieved by connecting the object variables with a maybe link. Figure \ref{fig:maybeLink} shows the concrete syntax of maybe links. 
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
   \centering
   \includegraphics[scale=.8]{figures/MaybeLink}
   \caption{Maybe Link allowing two Object Variables to be matched to the same Object}
@@ -595,35 +571,59 @@ If two object variables are connected by a maybe link, they both must be mandato
 \label{sec:StoryPatterns:inclusion}
 
 There are cases when you want to add additional objects to a set of objects matched to an object set variable as described in Section~\ref{sec:StoryPatterns:objectsets}.
-Since on object set variable does not explicitly represent a collection object (similar to \texttt{java.util.Collection}),
+Since on object set variable does not explicitly represent a collection object\footnote{
+We do not expliciltly model collection objects in story diagrams.
+The type of an object set variable is that of the contained objects and not the type of a collection object like \texttt{java.util.Collection}.},
 we need a way to describe the addition or removal of objects to~/~from such a set as well as checking if an object is included in a set of objects.
 We introduce \emph{inclusion links} for this purpose.
 
 \begin{figure}[htb]
-  \centering
-  \includegraphics[scale=0.9]{figures/InclusionLinks}
-  \caption{Notation of Inclusion Links}
-  \label{fig:InlucionLinks}
+	\begin{minipage}{.43\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{figures/InclusionLinks}
+    \caption{Notation of Inclusion Links}
+    \label{fig:InlucionLinks}
+	\end{minipage}
+  \hfill
+  \begin{minipage}{.47\textwidth}
+  	\centering
+		\includegraphics[width=\linewidth]{figures/InclusionLinksExample1}
+    \caption{Add an Object to a Set}
+    \label{fig:InclusionLinksExample1}
+	\end{minipage}
 \end{figure}
 
 An inclusion link represents a containment relation between two variables in a story pattern.
 It can always be used between an object set variable and another variable to specify that
 an object (or an object set) represented by a variable is contained in an object set represented by an object set variable.
-
-An inclusion link is represented by a line between an object set variable and another object variable as illustrated in Figure~\ref{fig:InlucionLinks} a).
+An inclusion link is represented by a line between an object set variable and another object
+variable as illustrated in Figure~\ref{fig:InlucionLinks}~a).
 The circle containing a plus determines which of the two sides of the link is containing the other one.
-In Figure~\ref{fig:InlucionLinks} a), the object set \fe{methods} contains an object \fe{m}.
+In Figure~\ref{fig:InlucionLinks}~a), the object set \fe{methods} contains an object \fe{aMethod}.
 
 In contrast to link variables that are typed over an association, inclusion links are not typed at all.
 They only represent a containment of an object in a set of objects.
-But similat to link variables, this relation can be checked to be existent between two matched object variables or be used to match new objects.
-In Figure~\ref{fig:InlucionLinks} a), a \fe{Method} object in the object set \fe{methods} is to be matched (found).
+But similar to link variables, this relation can be checked to be existent between an object set and an object
+or be used to match new objects.
+While the pattern in Figure~\ref{fig:InlucionLinks} a) specifies to check if the object \fe{aMethod} is contained in the object set \fe{methods},
+the pattern in Figure~\ref{fig:InlucionLinks} b) specifies to match a \fe{Method} object which is contained in the object set \fe{methods}.
 
 Similar to other links, inclusion links can be used with bound, unbound, or maybe-bound object variables, can be negative or optional, use
-\create\ or \destroy\ stereotypes (see Figure~\ref{fig:InlucionLinks} b) to e)).
-\tododt{explain semantics}
-Furthermore, they can also be used between two object set variables as illustrated in Figure~\ref{fig:InlucionLinks} f)
-to describe that all objects in the set \fe{selection} are contained in the set \fe{all}.
+\create\ or \destroy\ stereotypes (see Figure~\ref{fig:InlucionLinks} a) to f)).
+Case c) in Figure~\ref{fig:InlucionLinks} defines that the matching is only successful if no \fe{Method} object can be found in the \fe{methods} set.
+Accordingly, case d) specifies to optionally match a \fe{Method} object contained in the \fe{methods} set
+(see the description of binding semantics in Section~\ref{sec:StoryPatterns:binding:semantics} for details).
+Case e) specifies to specifies to create an inclusion relation between the object \fe{aMethod} and the object set \fe{methods},
+i.e. to add the object \fe{aMethod} to the set \fe{methods}.
+Analogously, case f) specifies to remove the object \fe{aMethod} from the object set \fe{methods}.
+Furthermore, inclusion links can also be used between two object set variables as illustrated in Figure~\ref{fig:InlucionLinks} f)
+to check if all objects in the set \fe{selection} are contained in the set \fe{all}.
+
+By means of inclusion links, an object set variable that has been matched to a set of objects
+can be modified afterwards by adding or removing objects.
+Using story diagrams as described in Section~\ref{sec:StoryDiagrams},
+one can, for example, collect a set of \fe{Method} objects in a set \fe{methods} as illustrated in the first story node in Figure~\ref{fig:InclusionLinksExample1}
+and then add another \fe{Method} object to the same set in a following story node that reuses the previously matched set of objects.
 
 \tododt{Write the remainder of the section}
 
@@ -633,8 +633,6 @@ to describe that all objects in the set \fe{selection} are contained in the set 
   \caption{Exemplary Uses of Inclusion Links}
   \label{fig:InlucionLinksExamples}
 \end{figure}
-
-Example in Figure~\ref{fig:reuseObjSet2}
 
 link order constraints with inclusion links?
 
