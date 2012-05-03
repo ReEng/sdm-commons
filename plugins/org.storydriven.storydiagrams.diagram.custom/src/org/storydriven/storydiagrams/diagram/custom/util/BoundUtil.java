@@ -1,6 +1,5 @@
 package org.storydriven.storydiagrams.diagram.custom.util;
 
-import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -18,19 +17,15 @@ public final class BoundUtil {
 		// hide constructor
 	}
 
-	public static void collect(ActivityEdge incoming) {
-		Map<String, EClassifier> map = new LinkedHashMap<String, EClassifier>();
-		collect(map, incoming.getSource());
-	}
-
 	public static Map<String, EClassifier> getBoundObjects(EObject element) {
+		Map<String, EClassifier> map = new LinkedHashMap<String, EClassifier>();
 		if (element instanceof ActivityNode) {
-			return getBoundObjects((ActivityNode) element);
+			collect(map, (ActivityNode) element);
 		}
 		if (element instanceof ActivityEdge) {
-			return getBoundObjects((ActivityEdge) element);
+			collect(map, (ActivityEdge) element);
 		}
-		return Collections.emptyMap();
+		return map;
 	}
 
 	public static Map<String, EClassifier> getBoundObjects(ActivityNode node) {

@@ -21,11 +21,6 @@ public class ActivityEdgeEdgeGuardSection extends AbstractEEnumRadioSection<Edge
 	}
 
 	@Override
-	protected boolean isVertical() {
-		return true;
-	}
-
-	@Override
 	protected List<EdgeGuard> getValues() {
 		return EdgeGuard.VALUES;
 	}
