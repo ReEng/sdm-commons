@@ -692,15 +692,18 @@ or to a single object variable or an object set variable are feasible as illustr
 
 \tododt{Write the remainder of the section}
 
+\tododt{Do we really need collections that contain an element multiple times?}
+
 explain subset relation;
 explain semantics of containment for all combinations (bag, set, ordered set, list) in Table~\ref{tab:set_operations_with_inclusion_links};
 all combinations of adding/removing a set to/from another set (bag, set, ordered set, list)
 
-CHECK\_ONLY/CREATE/DESTROY
-
 \begin{table}[htbp]
+  \footnotesize
   \centering
+%  \begin{longtable}{|l|l|c|p{4.6cm}|}
   \caption{Inclusion Links Between Two Object Set Variables}
+  \label{tab:set_operations_with_inclusion_links}
     \begin{tabular}{|l|l|c|p{4.6cm}|}
     \hline
     \textbf{Containing Set \fe{A}} & \textbf{Contained Set \fe{B}} & \textbf{Binding Operation} & \textbf{Semantics} \\
@@ -708,16 +711,27 @@ CHECK\_ONLY/CREATE/DESTROY
     Bag & Bag / List & CHECK\_ONLY & Each element in B is contained at least as often in A as in B.\\
     Bag & (Ordered) Set & CHECK\_ONLY & Each element in B is contained at least once in A.\\
     Set & Bag / (Ord.) Set / List & CHECK\_ONLY & Each element in B is contained (once) in A. \\
-    Ordered Set & Bag / Set & CHECK\_ONLY & Each element in B is contained (once) in A. \\
-    Ordered Set & Ordered Set / List & CHECK\_ONLY & Each element in B is contained (once) in A (and has the same order?). \\
-    List & Bag & CHECK\_ONLY & \\
-    List & Set & CHECK\_ONLY & \\
-    List & Ordered Set & CHECK\_ONLY & \\
-    List & List & CHECK\_ONLY & \\
+    Ordered Set & Bag / (Ord.) Set / List & CHECK\_ONLY & Each element in B is contained (once) in A. \\
+    List & Bag / List & CHECK\_ONLY & Each element in B is contained at least as often in A as in B.\\
+    List & (Ordered) Set & CHECK\_ONLY & Each element in B is contained at least once in A.\\
     \hline
-    \end{tabular}%
-  \label{tab:set_operations_with_inclusion_links}%
-\end{table}%
+    Bag & Bag / (Ord.) Set / List & CREATE & Add elements from B to A such that each element in B is at least as often in A as in B.\\
+    Set & Bag / (Ord.) Set / List & CREATE & Add all elements from B to A that are missing in A.\\
+    Ordered Set & Bag / Set & CREATE & Add all elements from B to A that are missing in A to the end of A.\\
+    Ordered Set & Ordered Set / List & CREATE & Add all elements from B to A that are missing in A to the end of A preserving the order of elements in B.\\
+    List & Bag / Set & CREATE & Add all elements from B to A to the end of A.\\
+    List & Ordered Set / List & CREATE & Add all elements from B to A to the end of A preserving the order of elements in B.\\
+    \hline
+    Bag & Bag / List & DESTROY & For each element in B remove as many occurrences of the element in A as it is available in B.\\
+    Bag & (Ordered) Set & DESTROY & Remove all occurrences of elements in B from A.\\
+    Set & Bag / (Ord.) Set / List & DESTROY & Remove all elements in B from A.\\
+    Ordered Set & Bag / (Ord.) Set / List & DESTROY & Remove all elements in B from A, preserve the order of remaining elements in A.\\
+    List & Bag / List & DESTROY & Beginning at the end of the list, for each element in B remove as many occurrences of the element in A as it is available in B, preserve the order of remaining elements in A.\\
+    List & (Ordered) Set & DESTROY & Remove all occurrences of elements in B from A, preserve the order of remaining elements in A.\\
+    \hline
+    \end{tabular}
+%  \end{longtable}
+\end{table}
 
 \begin{figure}[htb]
   \centering
