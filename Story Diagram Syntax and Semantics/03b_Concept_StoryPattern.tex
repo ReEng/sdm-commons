@@ -25,7 +25,7 @@ Consequently, the LHS consists of all object and link variables that carry no st
 The deletion of objects and links follows the single-pushout approach (cf.\ Section~\ref{sec:foundations:simpleGTS}).
 
 Figure \ref{fig:simpleStoryPattern} shows an example of a single story pattern that redirects a method call from an old method to a new method.
-\begin{figure}[htbp]
+\begin{figure}[htb]
   \centering
   \includegraphics[scale=1.0]{figures/SimpleStoryPattern}
   \caption{Example of a Story Pattern}
@@ -54,6 +54,7 @@ Finally, objects and links are created in the instance model for all variables a
 Story patterns aim to reduce the computational complexity of the matching process (cf. Section~\ref{sec:foundations:simpleGTS}) by using bound variables.
 We require at least one bound object variable in each story pattern which is used as a starting point for the matching process.
 
+
 \subsection{Objects and Object Variables}
 \label{sec:StoryPatterns:objects}
 
@@ -79,7 +80,7 @@ object variables; binding expressions for initialization, see figure
 \ref{fig:primitiveVariable}; primitive variables are typed over EDataType; they
 exist to the end of the Activity}
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
   \centering
   \includegraphics[scale=0.6]{figures/PrimitiveVariable}
   \caption{Primitive variable with value assignment}
@@ -117,6 +118,7 @@ Their meaning is described in the following.
 
 \subsubsection{Binding States}
 \label{sec:StoryPatterns:binding:states}
+
 An object variable or a link variable can be declared as \emph{bound}, \emph{unbound}, or
 \emph{maybe bound} (i.e. it is unknown if the variable is bound or not). This is
 defined by its binding state. An unbound variable is matched during the
@@ -144,7 +146,7 @@ reachable from at least one bound object variable via directed link variables.}
 must contain at least one bound object variable or created variables only. This
 is necessary to avoid a search over the whole underlying instance model which requires a long runtime in most cases (cf. Section~\ref{sec:StoryPatterns:storyPattern}).
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
   \centering
   \includegraphics[scale=1.2]{figures/BindingStatesOverview}
   \caption{Binding States for Object Variables}
@@ -194,29 +196,31 @@ shown graph is not connected anymore. However, case c) and d) are allowed
 because each connected component contains at least one bound object variable.
 Cases e) and f) are also allowed.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
   \centering
   \includegraphics[scale=1.2]{figures/BindingSemanticsOverview}
   \caption{Binding Semantics for Object and Link Variables}
   \label{fig:bindingSemanticsOverview}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
   \centering
   \includegraphics[scale=1]{figures/negativeObjects}
   \caption{Negative Application Conditions}
   \label{fig:negativeObjects}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
   \centering
   \includegraphics[scale=1]{figures/optionalObjects}
   \caption{Optional Object and Link Variables}
   \label{fig:optionalObjects}
 \end{figure}
 
+
 \subsubsection{Binding Operators}
 \label{sec:StoryPatterns:binding:operators}
+
 Binding operators define whether an object or link is to be created, deleted,
 or just matched in the instance model.
 After all elements that are defined to be deleted or just matched have been
@@ -228,7 +232,7 @@ stereotype \create (cf.\ Figure \ref{fig:bindingOperatorsOverview} b) and e)) an
 to be deleted are marked with the stereotype \destroy (cf.\ Figure
 \ref{fig:bindingOperatorsOverview} c) and f)).
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
   \centering
   \includegraphics[scale=1.2]{figures/BindingOperatorsOverview}
   \caption{Binding Operators for Object and Link Variables}
@@ -674,29 +678,24 @@ explain subset relation;
 explain semantics of containment for all combinations (bag, set, ordered set, list) in Table~\ref{tab:set_operations_with_inclusion_links};
 all combinations of adding/removing a set to/from another set (bag, set, ordered set, list)
 
+CHECK\_ONLY/CREATE/DESTROY
+
 \begin{table}[htbp]
   \centering
   \caption{Inclusion Links Between Two Object Set Variables}
-    \begin{tabular}{|l|l|c|l|}
+    \begin{tabular}{|l|l|c|p{4.6cm}|}
     \hline
-    \textbf{Containing Set} & \textbf{Contained Set} & \textbf{Binding Operation} & \textbf{Semantics} \\
+    \textbf{Containing Set \fe{A}} & \textbf{Contained Set \fe{B}} & \textbf{Binding Operation} & \textbf{Semantics} \\
     \hline
-    Bag & Bag & CHECK\_ONLY/CREATE/DESTROY & \\
-    Bag & Set &  & \\
-    Bag & Ordered Set &  & \\
-    Bag & List &  & \\
-    Set & Bag &  & \\
-    Set & Set &  & \\
-    Set & Ordered Set &  & \\
-    Set & List &  & \\
-    Ordered Set & Bag &  & \\
-    Ordered Set & Set &  & \\
-    Ordered Set & Ordered Set &  & \\
-    Ordered Set & List &  & \\
-    List & Bag &  & \\
-    List & Set &  & \\
-    List & Ordered Set &  & \\
-    List & List &  & \\
+    Bag & Bag / List & CHECK\_ONLY & Each element in B is contained at least as often in A as in B.\\
+    Bag & (Ordered) Set & CHECK\_ONLY & Each element in B is contained at least once in A.\\
+    Set & Bag / (Ord.) Set / List & CHECK\_ONLY & Each element in B is contained (once) in A. \\
+    Ordered Set & Bag / Set & CHECK\_ONLY & Each element in B is contained (once) in A. \\
+    Ordered Set & Ordered Set / List & CHECK\_ONLY & Each element in B is contained (once) in A (and has the same order?). \\
+    List & Bag & CHECK\_ONLY & \\
+    List & Set & CHECK\_ONLY & \\
+    List & Ordered Set & CHECK\_ONLY & \\
+    List & List & CHECK\_ONLY & \\
     \hline
     \end{tabular}%
   \label{tab:set_operations_with_inclusion_links}%
