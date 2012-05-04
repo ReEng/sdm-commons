@@ -459,51 +459,62 @@ Link constraints specify constraints on the absolute position of an element in a
 %  \item SUCCESSOR = requires two link variables, target of the second one must be located somewhere after the target of the first one in the list
 %\end{itemize}
 
-\todoall{Should we add the INDEX constraint again?}
-\todoch{We discussed this once and decided to remove it. If we add it, we will have problems with OutOfBoundsExceptions if an element with the specified index in not contained in the list. Why do you need it?}
-
 
 \subsubsection{Link Position Constraints}
 \label{sec:StoryPatterns:linkConstraints:posConstraint}
 
+A link position constraint applies to a link variable that is typed by a multi-valued ordered reference. It specifies that the target object of the constrained link has to be the \emph{first} or the \emph{last} element in that reference. Other link position constraints are not supported.
+
+\todoall{Should we add the INDEX constraint again?}
+\todoch{We discussed this once and decided to remove it. If we add it, we will have problems with OutOfBoundsExceptions if an element with the specified index in not contained in the list. Why do you need it?}
+
+Figure~\ref{fig:linkPositionConstraintFirst} shows an example of a link position constraint for matching the first element in a reference. The story pattern matches a \fe{FormalParameter} of the object which is bound to the object variable \fe{method}. The link position constraint \fe{\{first\}} specifies that the first \fe{FormalParameter} needs to be matched.
+
 \begin{figure}[htbp]
 \center
 \includegraphics[width=0.75\columnwidth]{figures/LinkPositionConstraintFirst}
-\caption{A \emph{first} link position constraint}
-\label{fig:linkPositionConstraints:linkPositionConstraint1}
+\caption{A \fe{\{first\}} link position constraint}
+\label{fig:linkPositionConstraintFirst}
 \end{figure}
 
-A link position constraint specifies that the target object of the constrained link has to be the \emph{first} or the \emph{last} element in that reference. For example, in a valid match of the story pattern in Fig.~\ref{fig:linkPositionConstraints:linkPositionConstraint1}, the object matched to \emph{bx} must be also be the first element in the \emph{elements} reference of the object matched to \emph{a}. Link position constraints support only these two positions: \emph{First} and \emph{last}. If a story pattern contains multiple links that refer to the same metamodel reference and have the same source variable, only one of them may have a \emph{first} (or \emph{last}) constraint.
-
+Figure~\ref{fig:linkPositionConstraintLast} shows a similar story pattern which matches the last \fe{FormalParameter} instead of the first one. This is specified by the link position constraint \fe{\{last\}}.
 
 \begin{figure}[htbp]
 \center
 \includegraphics[width=0.75\columnwidth]{figures/LinkPositionConstraintLast}
-\caption{A \emph{last} link position constraint}
-\label{fig:linkPositionConstraints:linkPositionConstraint3}
+\caption{A \fe{\{last\}} link position constraint}
+\label{fig:linkPositionConstraintLast}
 \end{figure}
 
-When link position constraints are attached to links with \destroy stereotypes, the semantics are identical, even if they are optional. For links with \create stereotype, the link's target element is inserted at the specified position. For optionally created links, the semantics is somewhat different. If the link does not yet exist, it is created. The target element is inserted at the specified position in the reference. If the link does exist but the element is not at the specified position, it is moved.
+If multiple link variables originate from the same object variable that refer to the same reference, only one of them may have a \fe{\{first\}} (or \fe{\{last\}}) link position constraint.
 
-\todoall{Alternatives: 1. Ignore link position constraints on optional-create links, 2. add target element a second time. For unique references, this has the same effect like moving the element, in case of non-unique references, the element exists twice (or more times) in the list, afterwards.}
+Link position constraints can be used with all feasible combinations of binding operators and binding semantics according to Table~\ref{tab:bindingCombinations_links}. For now, we discussed the semantics for using link position constraints for link variables with MANDATORY binding semantics and CHECK\_ONLY binding operator. If we use binding operator \create, the object is inserted at the specified position. If we use binding operator \destroy, the object is bound as described before and then deleted.
 
-\begin{figure}[htbp]
-\center
-\includegraphics[width=0.75\columnwidth]{figures/LinkPositionConstraintNegated}
-\caption{A negative link position constraint}
-\label{fig:linkPositionConstraints:linkPositionConstraint2}
-\end{figure}
-
-A combination with negative links is also straight-forward. In a valid match of the pattern shown in Fig.~\ref{fig:linkPositionConstraints:linkPositionConstraint2}, the match of \emph{bx} must \emph{not} be the first element in the \emph{elements} reference.
-
-The link position constraint in Figure~\ref{fig:linkPositionConstraints:linkPositionConstraint4} creates a new parameter at the last position.
+Figure~\ref{fig:linkPositionConstraintCreate} shows an example for using a link position constraint at a link variable with binding operator \create. The link position constraint causes the created \fe{FormalParameter} to be inserted at the last position of the \fe{formalParameters} of \fe{method}.
 
 \begin{figure}[htbp]
 \center
 \includegraphics[width=0.75\columnwidth]{figures/LinkPositionConstraintCreate}
-\caption{Link creation and link position constraints}
-\label{fig:linkPositionConstraints:linkPositionConstraint4}
+\caption{Link Position constraint at a created link.}
+\label{fig:linkPositionConstraintCreate}
 \end{figure}
+
+If an OPTIONAL binding semantics is used, the matching will also be successful if no object at the specified position can be matched. Since we only restrict the position to the first or last position, this case will only apply if the link contains no objects at all. If the link variable additionally has binding operator \destroy, the object bound to the target object variable will be deleted. If the link variable additionally has binding operator \create, we have an optionally created link. If the link does not yet exist, it is created. The target element is inserted at the specified position in the reference. If the link does exist but the element is not at the specified position, it is moved.
+
+\todoall{Alternatives: 1. Ignore link position constraints on optional-create links, 2. add target element a second time. For unique references, this has the same effect like moving the element, in case of non-unique references, the element exists twice (or more times) in the list, afterwards.}
+
+A combination with NEGATIVE binding semantics is also straight-forward. If a link variable is negative and has a \fe{\{first\}} (or \fe{\{last\}}) link position constraint, then the object bound to the target object variable must not be the first (or last) object in the corresponding reference.
+
+Figure~\ref{fig:linkPositionConstraintNegative} shows an example for a negative link with a link position constraint. The \fe{FormalParameter} which is bound to \fe{param} must not be the first \fe{formalParameter} of the method which is bound to \fe{method}.
+
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkPositionConstraintNegated}
+\caption{A negative link with a \fe{\{first\}} link position constraint}
+\label{fig:linkPositionConstraintNegative}
+\end{figure}
+
 
 
 \subsubsection{Link Order Constraints}
