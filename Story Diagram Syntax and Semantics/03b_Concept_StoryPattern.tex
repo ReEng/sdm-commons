@@ -448,25 +448,23 @@ A maybe constraint could allow to match the same objects to both sets.}
 \subsection{Link Constraints [CH]}
 \label{sec:StoryPatterns:linkConstraints}
 
-Link constraints specify constraints on the absolute position of an element in an ordered reference (\emph{link position constraints}) and the position of an element relative to another element (\emph{link order constraints}). These constraints are only applicable to link variables that are typed by ordered multi-valued references. All other kinds of links cannot be adorned with link constraints.
+Link constraints specify constraints on the absolute position of an element in an ordered reference (\emph{link position constraints}, Section~\ref{sec:StoryPatterns:linkConstraints:posConstraint}) or on the position of an element relative to another element (\emph{link order constraints}, Section~\ref{sec:StoryPatterns:linkConstraints:orderConstraint}). These constraints are only applicable to link variables that are typed by ordered multi-valued references. All other kinds of links cannot be adorned with link constraints.
 
-\todoch{What is the concrete Syntax for this?}
-
-\tododt{I have a suggestion in Figure~\ref{fig:linkConstraints}.}
-
-\begin{itemize}
-  \item FIRST = matches the first element in the list, requires one link variable
-  \item LAST = matches the last element in the list, requires one link variable
-%  \item INDEX = matches the element at the specified index, requires one link variable
-%  \todoch{Our lowest index value is 0, not 1.}
-  \item DIRECT\_SUCCESSOR = requires two link variables, target of the second one must be located directly after the target of the first one in the list
-  \item SUCCESSOR = requires two link variables, target of the second one must be located somewhere after the target of the first one in the list
-\end{itemize}
+%\begin{itemize}
+%  \item FIRST = matches the first element in the list, requires one link variable
+%  \item LAST = matches the last element in the list, requires one link variable
+%%  \item INDEX = matches the element at the specified index, requires one link variable
+%%  \todoch{Our lowest index value is 0, not 1.}
+%  \item DIRECT\_SUCCESSOR = requires two link variables, target of the second one must be located directly after the target of the first one in the list
+%  \item SUCCESSOR = requires two link variables, target of the second one must be located somewhere after the target of the first one in the list
+%\end{itemize}
 
 \todoall{Should we add the INDEX constraint again?}
+\todoch{We discussed this once and decided to remove it. If we add it, we will have problems with OutOfBoundsExceptions if an element with the specified index in not contained in the list. Why do you need it?}
 
 
 \subsubsection{Link Position Constraints}
+\label{sec:StoryPatterns:linkConstraints:posConstraint}
 
 \begin{figure}[htbp]
 \center
@@ -509,10 +507,12 @@ The link position constraint in Figure~\ref{fig:linkPositionConstraints:linkPosi
 
 
 \subsubsection{Link Order Constraints}
+\label{sec:StoryPatterns:linkConstraints:orderConstraint}
+
 
 \begin{figure}[htbp]
 \center
-\includegraphics[width=0.4\columnwidth]{figures/linkOrderConstraint1.png}
+\includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessor}
 \caption{A link order constraint specifies a relative order between two links.}
 \label{fig:linkOrderConstraints:linkOrderConstaint1}
 \end{figure}
@@ -523,13 +523,20 @@ Link order constraints can be combined straight-forwardly with \create and \dest
 
 \todoall{Do we want to allow this? This would make the choice, where an element is inserted non-deterministic.}
 
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintSuccessor}
+\caption{A link order constraint specifies a relative order between two links.}
+\label{fig:linkOrderConstraints:linkOrderConstaint1}
+\end{figure}
+
 It is also possible to have only one of the two related links be destroyed or created. Though, it is not possible to create one link and destroy the other.
 
 Link order constraints may not form circles or unsatisfiable story patterns (e.g., where a link is the successor of another but also has a \emph{\{first\}} link position constraint).
 
 \begin{figure}[htbp]
 \center
-\includegraphics[width=0.4\columnwidth]{figures/linkOrderConstraint2.png}
+\includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessorNegative}
 \caption{A link order constraint with a negative link.}
 \label{fig:linkOrderConstraints:linkOrderConstaint2}
 \end{figure}
@@ -538,7 +545,7 @@ Link order constraints can also be combined with negative link. However, only on
 
 \begin{figure}[htbp]
 \center
-\includegraphics[width=0.6\columnwidth]{figures/linkOrderConstraint3.png}
+\includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessorNegative2}
 \caption{Two link order constraints with a negative link.}
 \label{fig:linkOrderConstraints:linkOrderConstaint3}
 \end{figure}
@@ -550,7 +557,7 @@ If there are multiple link order constraints, like in Fig.~\ref{fig:linkOrderCon
 For optionally created and destroyed links, the same applies to link order constraints like to link position constraints. Optionally destroyed link can be used straight-forwardly. An optionally created link is created if it does not exist, so that the specified order is enforced. If the link does exist but the element is not at an appropriate position, it is moved.
 } %--- End of link constraint subsection
 
-\subsubsection{Maybe Links [CH]}
+\subsection{Maybe Links [CH]}
 \label{sec:StoryPatterns:specialLinks:maybeLink}
 
 Story patterns are matched by using isomorphic matchings. That means that two object variables in a story pattern may not be matched to the same object of the instance model. A matching which matches two object variables to the same object is, thus, considered to be invalid. In some situations, however, such matchings should be explicitly allowed. Then, the isomorphic matching must be disabled. This may be achieved by connecting the object variables with a maybe link. Figure \ref{fig:maybeLink} shows the concrete syntax of maybe links. 
