@@ -229,7 +229,7 @@
     <extension point="org.eclipse.ui.commands">
 		<command
 			categoryId="de.fujaba"
-			description="Initialize SDM Diagram"
+			description="Initialize Story Diagram"
 			defaultHandler="org.storydriven.storydiagrams.diagram.custom.part.SDMFujabaDiagramFileAction"
 			id="org.storydriven.storydiagrams.diagram.createDiagram"
 			name="%initDiagramActionLabel">
@@ -270,11 +270,11 @@
    <extension point="de.fujaba.newwizard.diagraminformation">
       <editor
             preferencesHint="org.storydriven.storydiagrams.diagram"
-            editorId="org.storydriven.storydiagrams.diagram.part.SDMDiagramEditorID"
-            editorName="SDM Editor"
-            fileExtension="sdm_diagram"
-            modelElementCategoryKey="org.storydrivening.activities.category"
-            modelId="SDM">
+            editorId="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"
+            editorName="Story Diagram Editor"
+            fileExtension="storydiagrams_diagram"
+            modelElementCategoryKey="org.storydriven.activities.category"
+            modelId="Storydiagrams">
          <diagramElement
                packageNsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0"
                className="Activity">
