@@ -3,6 +3,7 @@ package org.storydriven.storydiagrams.diagram.custom.util;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.View;
+import org.fujaba.commons.figures.ISpecialCharachterConstants;
 import org.storydriven.storydiagrams.activities.EdgeGuard;
 import org.storydriven.storydiagrams.diagram.custom.SdmDiagramConstants;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
@@ -47,11 +48,11 @@ public class SdmUtility {
 		{
 			case CREATE:
 			{
-				return "<<create>>";
+				return ISpecialCharachterConstants.FRENCH_QUOTE_LEFT + "create" + ISpecialCharachterConstants.FRENCH_QUOTE_RIGHT;
 			}
 			case DESTROY:
 			{
-				return "<<destroy>>";
+				return ISpecialCharachterConstants.FRENCH_QUOTE_LEFT + "destroy" + ISpecialCharachterConstants.FRENCH_QUOTE_RIGHT;
 			}
 			default:
 			{

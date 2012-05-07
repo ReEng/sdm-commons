@@ -13,7 +13,7 @@ public class UMLStereotypeFigure extends LabelFigure
 
    public UMLStereotypeFigure(String name)
    {
-      super("\u00ab" + name + "\u00bb");
+      super(ISpecialCharachterConstants.FRENCH_QUOTE_LEFT + name + ISpecialCharachterConstants.FRENCH_QUOTE_RIGHT);
    }
 
 
@@ -23,7 +23,7 @@ public class UMLStereotypeFigure extends LabelFigure
    @Override
    public void setName(String name)
    {
-      super.setName("\u00ab" + name + "\u00bb");
+      super.setName(ISpecialCharachterConstants.FRENCH_QUOTE_LEFT + name + ISpecialCharachterConstants.FRENCH_QUOTE_RIGHT);
    }
 
 }
