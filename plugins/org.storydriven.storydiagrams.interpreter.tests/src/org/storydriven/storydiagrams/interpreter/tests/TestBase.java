@@ -154,7 +154,7 @@ public abstract class TestBase extends TestCase
 
 	protected String getClassModelName()
 	{
-		return "/org.storydriven.modeling.interpreter.adapter.tests/models/testclassmodels/testClassmodel.ecore";
+		return "/org.storydriven.storydiagrams.interpreter.tests/models/testclassmodels/testClassmodel.ecore";
 	}
 
 	protected Map<String, Variable<EClassifier>> executeActivityNode(ActivityNode activityNode, List<Variable<EClassifier>> parameter)

@@ -36,12 +36,11 @@ public class Tests extends TestSuite
 	public static Test suite()
 	{
 		TestSuite suite = new Tests("Tests");
-		suite.addTestSuite(ActivitiesTests.class);
-		suite.addTestSuite(ModifyingPatternsTests.class);
 		suite.addTestSuite(MatchingPatternsTests.class);
-      suite.addTestSuite(PathsTests.class);
-		suite.addTestSuite(CallsTests.class);
-		
+		suite.addTestSuite(ModifyingPatternsTests.class);
+		suite.addTestSuite(ActivitiesTests.class);
+		suite.addTestSuite(CallsTests.class);	
+        suite.addTestSuite(PathsTests.class);		
 		return suite;
 	}
 
