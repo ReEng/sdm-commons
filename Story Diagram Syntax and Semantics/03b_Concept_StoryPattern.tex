@@ -396,10 +396,17 @@ Both may only use the attributes of object variables in the same story pattern a
 
 %\ext  %--- Comment this line to include object sets into the document
 {
-\subsection{Object Sets [MCP]}
+\subsection{Object Collections [MCP]}
 \label{sec:StoryPatterns:objectsets}
 
-explain objectSetVariables, set size expressions
+explain objectSetVariables, explain the different types of collections in Figure~\ref{fig:ObjectSetsTypes} (similar to OCL), set size expressions
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.8]{figures/ObjectSets}
+  \caption{Types of Object Collections}
+  \label{fig:ObjectSetsTypes}
+\end{figure}
 
 \todomcp{object sets and binding operators/states/semantics}
 
@@ -525,10 +532,10 @@ Figure~\ref{fig:linkPositionConstraintNegative} shows an example for a negative 
 \center
 \includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessor}
 \caption{A link order constraint specifies a relative order between two links.}
-\label{fig:linkOrderConstraints:linkOrderConstaint1}
+\label{fig:linkOrderConstraints:linkOrderConstraint1}
 \end{figure}
 
-Link order constraints specify a relative order between two links. In Fig.~\ref{fig:linkOrderConstraints:linkOrderConstaint1}, \emph{b2} must be the immediate successor of \emph{b1} in the \emph{elements} reference (depicted by \emph{\{next\}}). It is also possible to specify that \emph{b2} may be a direct or indirect successor, which is depicted by \emph{\{...\}}. Note, that then there may be multiple possible matches. Which of them is chosen is still non-deterministic.
+Link order constraints specify a relative order between two links. In Fig.~\ref{fig:linkOrderConstraints:linkOrderConstraint1}, \emph{b2} must be the immediate successor of \emph{b1} in the \emph{elements} reference (depicted by \emph{\{next\}}). It is also possible to specify that \emph{b2} may be a direct or indirect successor, which is depicted by \emph{\{...\}}. Note, that then there may be multiple possible matches. Which of them is chosen is still non-deterministic.
 
 Link order constraints can be combined straight-forwardly with \create and \destroy stereotypes. However, the combination with \create is only possible for the \emph{\{next\}} order constraint, not for \emph{\{...\}}. In case of created links, the order in the instance model is enforced accordingly.
 
@@ -538,7 +545,7 @@ Link order constraints can be combined straight-forwardly with \create and \dest
 \center
 \includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintSuccessor}
 \caption{A link order constraint specifies a relative order between two links.}
-\label{fig:linkOrderConstraints:linkOrderConstaint1}
+\label{fig:linkOrderConstraints:linkOrderConstraint2}
 \end{figure}
 
 It is also possible to have only one of the two related links be destroyed or created. Though, it is not possible to create one link and destroy the other.
@@ -549,19 +556,19 @@ Link order constraints may not form circles or unsatisfiable story patterns (e.g
 \center
 \includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessorNegative}
 \caption{A link order constraint with a negative link.}
-\label{fig:linkOrderConstraints:linkOrderConstaint2}
+\label{fig:linkOrderConstraints:linkOrderConstraint3}
 \end{figure}
 
-Link order constraints can also be combined with negative link. However, only one of both links may be marked as negative. Otherwise, there would be nothing to relate to. For example, in the story pattern in Fig.~\ref{fig:linkOrderConstraints:linkOrderConstaint2}, \emph{b2} may not be the direct successor of \emph{b1}.
+Link order constraints can also be combined with negative link. However, only one of both links may be marked as negative. Otherwise, there would be nothing to relate to. For example, in the story pattern in Fig.~\ref{fig:linkOrderConstraints:linkOrderConstraint3}, \emph{b2} may not be the direct successor of \emph{b1}.
 
 \begin{figure}[htbp]
 \center
 \includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessorNegative2}
 \caption{Two link order constraints with a negative link.}
-\label{fig:linkOrderConstraints:linkOrderConstaint3}
+\label{fig:linkOrderConstraints:linkOrderConstraint4}
 \end{figure}
 
-If there are multiple link order constraints, like in Fig.~\ref{fig:linkOrderConstraints:linkOrderConstaint3}, the semantics of the negative link is as follows: \emph{b2} must neither be the direct successor of \emph{b1} nor the direct predecessor of \emph{b3}. If one of both conditions is fulfilled, the pattern does not match.
+If there are multiple link order constraints, like in Fig.~\ref{fig:linkOrderConstraints:linkOrderConstraint4}, the semantics of the negative link is as follows: \emph{b2} must neither be the direct successor of \emph{b1} nor the direct predecessor of \emph{b3}. If one of both conditions is fulfilled, the pattern does not match.
 
 \todoall{This should match the semantics of multiple NACs in a story pattern.}
 
@@ -692,7 +699,7 @@ or to a single object variable or an object set variable are feasible as illustr
 
 \tododt{Write the remainder of the section}
 
-\tododt{Do we really need collections that contain an element multiple times?}
+\tododt{Do we really need collections that contain an element multiple times? Would sets and ordered sets not be enough? Or is it expressive enough to only use lists as in Java?}
 
 explain subset relation;
 explain semantics of containment for all combinations (bag, set, ordered set, list) in Table~\ref{tab:set_operations_with_inclusion_links};
@@ -706,28 +713,36 @@ all combinations of adding/removing a set to/from another set (bag, set, ordered
   \label{tab:set_operations_with_inclusion_links}
     \begin{tabular}{|l|l|c|p{4.6cm}|}
     \hline
-    \textbf{Containing Set \fe{A}} & \textbf{Contained Set \fe{B}} & \textbf{Binding Operation} & \textbf{Semantics} \\
+    \textbf{Type of Set \fe{a}} & \textbf{Type of Set \fe{b}} & \textbf{Binding Operation} & \textbf{Semantics} \\
     \hline
-    Bag & Bag / List & CHECK\_ONLY & Each element in B is contained at least as often in A as in B.\\
-    Bag & (Ordered) Set & CHECK\_ONLY & Each element in B is contained at least once in A.\\
-    Set & Bag / (Ord.) Set / List & CHECK\_ONLY & Each element in B is contained (once) in A. \\
-    Ordered Set & Bag / (Ord.) Set / List & CHECK\_ONLY & Each element in B is contained (once) in A. \\
-    List & Bag / List & CHECK\_ONLY & Each element in B is contained at least as often in A as in B.\\
-    List & (Ordered) Set & CHECK\_ONLY & Each element in B is contained at least once in A.\\
+    \multicolumn{3}{|c|}{
+      \includegraphics[scale=0.8]{figures/InclusionLinksSetsCheck}
+    } & \\
     \hline
-    Bag & Bag / (Ord.) Set / List & CREATE & Add elements from B to A such that each element in B is at least as often in A as in B.\\
-    Set & Bag / (Ord.) Set / List & CREATE & Add all elements from B to A that are missing in A.\\
-    Ordered Set & Bag / Set & CREATE & Add all elements from B to A that are missing in A to the end of A.\\
-    Ordered Set & Ordered Set / List & CREATE & Add all elements from B to A that are missing in A to the end of A preserving the order of elements in B.\\
-    List & Bag / Set & CREATE & Add all elements from B to A to the end of A.\\
-    List & Ordered Set / List & CREATE & Add all elements from B to A to the end of A preserving the order of elements in B.\\
+    Set / Ordered Set & any & CHECK\_ONLY & Each element in \fe{b} is contained (once) in \fe{a}. \\
+    Bag / List & any & CHECK\_ONLY & Each element in \fe{b} is contained at least as often in \fe{a} as in \fe{b}.\\
     \hline
-    Bag & Bag / List & DESTROY & For each element in B remove as many occurrences of the element in A as it is available in B.\\
-    Bag & (Ordered) Set & DESTROY & Remove all occurrences of elements in B from A.\\
-    Set & Bag / (Ord.) Set / List & DESTROY & Remove all elements in B from A.\\
-    Ordered Set & Bag / (Ord.) Set / List & DESTROY & Remove all elements in B from A, preserve the order of remaining elements in A.\\
-    List & Bag / List & DESTROY & Beginning at the end of the list, for each element in B remove as many occurrences of the element in A as it is available in B, preserve the order of remaining elements in A.\\
-    List & (Ordered) Set & DESTROY & Remove all occurrences of elements in B from A, preserve the order of remaining elements in A.\\
+    \multicolumn{3}{|c|}{
+      \includegraphics[scale=0.8]{figures/InclusionLinksSetsCreate}
+    } & \\
+    \hline
+    Set & any & CREATE & Add all elements from \fe{b} to \fe{a} that are missing in \fe{a}.\\
+    Ordered Set & Bag / Set & CREATE & Add all elements from \fe{b} to \fe{a} that are missing in \fe{a} to the end of \fe{a}.\\
+    Ordered Set & Ordered Set / List & CREATE & Add all elements from \fe{b} to \fe{a} that are missing in \fe{a} to the end of \fe{a}, preserving the order of elements in \fe{b}.\\
+    Bag & any & CREATE & Add all elements from \fe{b} to \fe{a}.\\ %Add elements from \fe{b} to \fe{a} such that each element in \fe{b} is at least as often in \fe{a} as in \fe{b}.\\
+    List & Bag / Set & CREATE & Add all elements from \fe{b} to \fe{a} to the end of \fe{a}.\\
+    List & Ordered Set / List & CREATE & Add all elements from \fe{b} to \fe{a} to the end of \fe{a}, preserving the order of elements in \fe{b}.\\
+    \hline
+    \multicolumn{3}{|c|}{
+      \includegraphics[scale=0.8]{figures/InclusionLinksSetsDestroy}
+    } & \\
+    \hline
+    Set & any & DESTROY & Remove all elements in \fe{b} from \fe{a}.\\
+    Ordered Set & any & DESTROY & Remove all elements in \fe{b} from \fe{a}, preserve the order of remaining elements in \fe{a}.\\
+    Bag & Set / Ordered Set & DESTROY & Remove \emph{all} occurrences of elements in \fe{b} from \fe{a}.\\
+    Bag & Bag / List & DESTROY & For each element in \fe{b} remove as many occurrences of the element in \fe{a} as it is available in \fe{b}.\\
+    List & Set / Ordered Set & DESTROY & Remove \emph{all} occurrences of elements in \fe{b} from \fe{a}, preserve the order of remaining elements in \fe{a}.\\
+    List & Bag / List & DESTROY & Beginning at the end of the list, for each element in \fe{b} remove as many occurrences of the element in \fe{a} as it is available in \fe{b}, preserve the order of remaining elements in \fe{a}.\\
     \hline
     \end{tabular}
 %  \end{longtable}
