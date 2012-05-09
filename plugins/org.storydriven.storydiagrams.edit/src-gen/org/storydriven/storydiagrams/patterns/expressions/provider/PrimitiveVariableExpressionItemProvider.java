@@ -88,7 +88,18 @@ public class PrimitiveVariableExpressionItemProvider extends ExpressionItemProvi
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("elements/expressions/PrimitiveVariableExpression.png"));
+		return overlayImage(object,
+				getResourceLocator().getImage("elements/expressions/PrimitiveVariableExpression.png"));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected boolean shouldComposeCreationImage() {
+		return true;
 	}
 
 	/**

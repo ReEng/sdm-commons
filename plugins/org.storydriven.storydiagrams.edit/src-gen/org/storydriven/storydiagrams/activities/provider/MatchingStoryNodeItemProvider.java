@@ -81,12 +81,23 @@ public class MatchingStoryNodeItemProvider extends StoryNodeItemProvider impleme
 	 */
 	@Override
 	public Object getImage(Object object) {
-		if(object instanceof MatchingStoryNode) {
-			if(((MatchingStoryNode) object).isForEach()) {
-				return overlayImage(object, getResourceLocator().getImage("elements/activities/MatchingStoryNode_loop.png"));
+		if (object instanceof MatchingStoryNode) {
+			if (((MatchingStoryNode) object).isForEach()) {
+				return overlayImage(object,
+						getResourceLocator().getImage("elements/activities/MatchingStoryNode_loop.png"));
 			}
 		}
 		return overlayImage(object, getResourceLocator().getImage("elements/activities/MatchingStoryNode.png"));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected boolean shouldComposeCreationImage() {
+		return true;
 	}
 
 	/**

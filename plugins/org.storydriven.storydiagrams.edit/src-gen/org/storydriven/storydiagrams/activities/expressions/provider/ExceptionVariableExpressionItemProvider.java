@@ -88,7 +88,18 @@ public class ExceptionVariableExpressionItemProvider extends ExpressionItemProvi
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("elements/expressions/ExceptionVariableExpression.png"));
+		return overlayImage(object,
+				getResourceLocator().getImage("elements/expressions/ExceptionVariableExpression.png"));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected boolean shouldComposeCreationImage() {
+		return true;
 	}
 
 	/**

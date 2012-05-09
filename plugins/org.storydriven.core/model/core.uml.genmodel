@@ -2,7 +2,7 @@
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.storydriven.core/src-gen"
-    editDirectory="/org.storydriven.core.edit/src-gen" editorDirectory="/org.storydriven.core.editor/src-gen"
+    creationIcons="false" editDirectory="/org.storydriven.core.edit/src-gen" editorDirectory="/org.storydriven.core.editor/src-gen"
     modelPluginID="org.storydriven.core" templateDirectory="" modelName="Core" codeFormatting="true"
     importerID="org.eclipse.uml2.uml.ecore.importer" containmentProxies="true" complianceLevel="6.0"
     suppressGenModelAnnotations="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
@@ -96,17 +96,17 @@
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/ArithmeticOperator/EXP"/>
       </genEnums>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/Expression"/>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="core.ecore#//expressions/TextualExpression">
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/TextualExpression">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/expressionText"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/language"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/languageVersion"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="core.ecore#//expressions/LiteralExpression">
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/LiteralExpression">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/LiteralExpression/value"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference core.ecore#//expressions/LiteralExpression/valueType"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="core.ecore#//expressions/NotExpression">
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/NotExpression">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference core.ecore#//expressions/NotExpression/negatedExpression"/>
       </genClasses>
@@ -116,13 +116,13 @@
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference core.ecore#//expressions/BinaryExpression/rightExpression"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="core.ecore#//expressions/ComparisonExpression">
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/ComparisonExpression">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/ComparisonExpression/operator"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="core.ecore#//expressions/ArithmeticExpression">
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/ArithmeticExpression">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/ArithmeticExpression/operator"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="core.ecore#//expressions/BinaryLogicExpression">
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/BinaryLogicExpression">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/BinaryLogicExpression/operator"/>
       </genClasses>
     </nestedGenPackages>

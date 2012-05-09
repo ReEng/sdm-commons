@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -293,12 +294,20 @@ public class ResourceManager {
 					|| isReferencing(((LinkVariable) element).getTargetEnd(), ePackage);
 		}
 
+		if (element instanceof EParameter) {
+			return isReferencing(((EParameter) element).getEType(), ePackage);
+		}
+
 		if (element instanceof EReference) {
-			isReferencing(((EReference) element).getEContainingClass(), ePackage);
+			return isReferencing(((EReference) element).getEContainingClass(), ePackage);
 		}
 
 		if (element instanceof EClassifier) {
-			return ePackage.equals(((EClassifier) element).getEPackage());
+			return isReferencing(((EClassifier) element).getEPackage(), ePackage);
+		}
+
+		if (element instanceof EPackage) {
+			return ePackage.equals(element);
 		}
 
 		return false;

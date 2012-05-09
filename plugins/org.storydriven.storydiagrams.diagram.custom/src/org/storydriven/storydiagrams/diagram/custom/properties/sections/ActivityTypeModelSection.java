@@ -5,8 +5,7 @@ import java.util.Collection;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
@@ -67,6 +66,13 @@ public class ActivityTypeModelSection extends AbstractSection {
 	}
 
 	@Override
+	public void setInput(IWorkbenchPart part, ISelection selection) {
+		super.setInput(part, selection);
+
+		viewer.setInput(getElement());
+	}
+
+	@Override
 	protected void layoutWidgets(Composite parent) {
 		FormData data = new FormData();
 		data.left = new FormAttachment(0);
@@ -91,6 +97,8 @@ public class ActivityTypeModelSection extends AbstractSection {
 		viewer = new TreeViewer(tree);
 		viewer.setContentProvider(new ResourcesContentProvider());
 		viewer.setLabelProvider(new ResourcesLabelProvider());
+
+		// expand/collapse element
 		viewer.addDoubleClickListener(new IDoubleClickListener() {
 			@Override
 			public void doubleClick(DoubleClickEvent event) {
@@ -99,26 +107,15 @@ public class ActivityTypeModelSection extends AbstractSection {
 				viewer.setExpandedState(element, !expanded);
 			}
 		});
-		viewer.setComparator(new ViewerComparator() {
-			@Override
-			public int category(Object element) {
-				if (element instanceof EPackage) {
-					return -3;
-				}
-				if (element instanceof EDataType) {
-					return -2;
-				}
-				if (element instanceof EClass) {
-					return -1;
-				}
-				return super.category(element);
-			}
-		});
+
+		// sort elements by name
+		viewer.setComparator(new ViewerComparator());
+
+		// filter recursively: Resource + EPackage + EClassifier
 		viewer.addFilter(new ViewerFilter() {
 			@Override
 			public boolean select(Viewer viewer, Object parent, Object element) {
-				if (element instanceof Resource || element instanceof Activity || element instanceof EPackage
-						|| element instanceof EClass || element instanceof EDataType) {
+				if (element instanceof Resource || element instanceof EPackage || element instanceof EClassifier) {
 					return true;
 				}
 
@@ -188,8 +185,8 @@ public class ActivityTypeModelSection extends AbstractSection {
 		addWorkspaceButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				SelectEPackageFromWorkspaceDialog dialog = new SelectEPackageFromWorkspaceDialog(getShell(), getEditingDomain()
-						.getResourceSet());
+				SelectEPackageFromWorkspaceDialog dialog = new SelectEPackageFromWorkspaceDialog(getShell(),
+						getEditingDomain().getResourceSet());
 				if (dialog.open() == Window.OK) {
 					final Collection<EPackage> ePackages = dialog.getEPackages();
 					if (!ePackages.isEmpty()) {
@@ -253,13 +250,6 @@ public class ActivityTypeModelSection extends AbstractSection {
 
 	protected ResourceManager getResourceManager() {
 		return ResourceManager.get((Activity) getElement());
-	}
-
-	@Override
-	public void setInput(IWorkbenchPart part, ISelection selection) {
-		super.setInput(part, selection);
-
-		viewer.setInput(getElement());
 	}
 
 	protected boolean isReferenced(EPackage ePackage) {

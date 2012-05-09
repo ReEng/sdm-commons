@@ -13,6 +13,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -113,6 +114,7 @@ public class ConfigureEParameterDialog extends TitleAreaDialog {
 		typeViewer.setContentProvider(new ResourcesContentProvider());
 		typeViewer.setLabelProvider(new ResourcesLabelProvider());
 		typeViewer.setUseHashlookup(true);
+		typeViewer.setComparator(new ViewerComparator());
 		typeViewer.setInput(activity);
 
 		// name stuff
