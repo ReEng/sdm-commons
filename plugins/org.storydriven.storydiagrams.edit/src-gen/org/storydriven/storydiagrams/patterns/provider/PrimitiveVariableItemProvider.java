@@ -72,14 +72,14 @@ public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider 
 	}
 
 	/**
-	 * This returns PrimitiveVariable.gif.
+	 * This returns PrimitiveVariable.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PrimitiveVariable"));
+		return overlayImage(object, getResourceLocator().getImage("elements/patterns/PrimitiveVariable.png"));
 	}
 
 	/**

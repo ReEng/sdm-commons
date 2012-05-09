@@ -84,14 +84,14 @@ public class PropertyBindingItemProvider extends ExtendableElementItemProvider i
 	}
 
 	/**
-	 * This returns PropertyBinding.gif.
+	 * This returns PropertyBinding.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PropertyBinding"));
+		return overlayImage(object, getResourceLocator().getImage("elements/templates/PropertyBinding.png"));
 	}
 
 	/**

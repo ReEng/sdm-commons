@@ -81,14 +81,14 @@ public class ExceptionVariableExpressionItemProvider extends ExpressionItemProvi
 	}
 
 	/**
-	 * This returns ExceptionVariableExpression.gif.
+	 * This returns ExceptionVariableExpression.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExceptionVariableExpression"));
+		return overlayImage(object, getResourceLocator().getImage("elements/expressions/ExceptionVariableExpression.png"));
 	}
 
 	/**

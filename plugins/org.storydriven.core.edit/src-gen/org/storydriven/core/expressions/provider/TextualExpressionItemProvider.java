@@ -109,14 +109,14 @@ public class TextualExpressionItemProvider extends ExpressionItemProvider implem
 	}
 
 	/**
-	 * This returns TextualExpression.gif.
+	 * This returns TextualExpression.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TextualExpression"));
+		return overlayImage(object, getResourceLocator().getImage("elements/expressions/TextualExpression.png"));
 	}
 
 	/**

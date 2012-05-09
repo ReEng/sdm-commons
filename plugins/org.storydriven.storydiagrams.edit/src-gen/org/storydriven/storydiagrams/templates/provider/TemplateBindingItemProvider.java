@@ -85,14 +85,14 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider i
 	}
 
 	/**
-	 * This returns TemplateBinding.gif.
+	 * This returns TemplateBinding.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TemplateBinding"));
+		return overlayImage(object, getResourceLocator().getImage("elements/templates/TemplateBinding.png"));
 	}
 
 	/**

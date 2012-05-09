@@ -120,14 +120,14 @@ public class ActivityEdgeItemProvider extends ExtendableElementItemProvider impl
 	}
 
 	/**
-	 * This returns ActivityEdge.gif.
+	 * This returns ActivityEdge.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ActivityEdge"));
+		return overlayImage(object, getResourceLocator().getImage("elements/activities/ActivityEdge.png"));
 	}
 
 	/**

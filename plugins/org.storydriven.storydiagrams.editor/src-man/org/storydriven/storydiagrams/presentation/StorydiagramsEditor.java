@@ -59,7 +59,7 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
-import org.eclipse.emf.eef.runtime.ui.notify.OpenWizardOnDoubleClick;
+import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IStatusLineManager;
@@ -104,8 +104,6 @@ import org.eclipse.ui.views.contentoutline.ContentOutlinePage;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
-import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
 import org.storydriven.storydiagrams.activities.expressions.provider.ActivitiesExpressionsItemProviderAdapterFactory;
@@ -121,7 +119,7 @@ import org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAda
  * This is an example of a Patterns model editor.
  */
 public class StorydiagramsEditor extends MultiPageEditorPart implements IEditingDomainProvider, ISelectionProvider,
-		IMenuListener, IViewerProvider, IGotoMarker, ITabbedPropertySheetPageContributor {
+		IMenuListener, IViewerProvider, IGotoMarker {
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
 	 */
@@ -150,7 +148,7 @@ public class StorydiagramsEditor extends MultiPageEditorPart implements IEditing
 	/**
 	 * This is the property sheet page.
 	 */
-	protected TabbedPropertySheetPage propertySheetPage;
+	protected ExtendedPropertySheetPage propertySheetPage;
 
 	/**
 	 * This is the viewer that shadows the selection in the content outline. The parent relation must be correctly
@@ -469,7 +467,6 @@ public class StorydiagramsEditor extends MultiPageEditorPart implements IEditing
 			selectionViewer.setInput(editingDomain.getResourceSet());
 			selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)),
 					true);
-			selectionViewer.addDoubleClickListener(new OpenWizardOnDoubleClick(editingDomain, adapterFactory));
 
 			new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
 
@@ -987,7 +984,8 @@ public class StorydiagramsEditor extends MultiPageEditorPart implements IEditing
 	 */
 	public IPropertySheetPage getPropertySheetPage() {
 		if (propertySheetPage == null || propertySheetPage.getControl().isDisposed()) {
-			propertySheetPage = new TabbedPropertySheetPage(StorydiagramsEditor.this);
+			propertySheetPage = new ExtendedPropertySheetPage(editingDomain);
+			propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(getAdapterFactory()));
 		}
 		return propertySheetPage;
 	}
@@ -1094,11 +1092,6 @@ public class StorydiagramsEditor extends MultiPageEditorPart implements IEditing
 
 	public AdapterFactory getAdapterFactory() {
 		return adapterFactory;
-	}
-
-	@Override
-	public String getContributorId() {
-		return "org.storydriven.storydiagrams.diagram"; //$NON-NLS-1$
 	}
 
 	/**

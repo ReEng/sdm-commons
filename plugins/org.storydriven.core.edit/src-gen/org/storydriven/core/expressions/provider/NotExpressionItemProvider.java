@@ -87,14 +87,14 @@ public class NotExpressionItemProvider extends ExpressionItemProvider implements
 	}
 
 	/**
-	 * This returns NotExpression.gif.
+	 * This returns NotExpression.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/NotExpression"));
+		return overlayImage(object, getResourceLocator().getImage("elements/expressions/NotExpression.png"));
 	}
 
 	/**

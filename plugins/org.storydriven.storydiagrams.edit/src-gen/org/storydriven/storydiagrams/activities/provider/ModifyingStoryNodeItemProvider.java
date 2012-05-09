@@ -74,14 +74,19 @@ public class ModifyingStoryNodeItemProvider extends StoryNodeItemProvider implem
 	}
 
 	/**
-	 * This returns ModifyingStoryNode.gif.
+	 * This returns ModifyingStoryNode.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ModifyingStoryNode"));
+		if(object instanceof ModifyingStoryNode) {
+			if(((ModifyingStoryNode) object).isForEach()) {
+				return overlayImage(object, getResourceLocator().getImage("elements/activities/ModifyingStoryNode_loop.png"));
+			}
+		}
+		return overlayImage(object, getResourceLocator().getImage("elements/activities/ModifyingStoryNode.png"));
 	}
 
 	/**

@@ -78,14 +78,14 @@ public class ParameterExpressionItemProvider extends ExpressionItemProvider impl
 	}
 
 	/**
-	 * This returns ParameterExpression.gif.
+	 * This returns ParameterExpression.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ParameterExpression"));
+		return overlayImage(object, getResourceLocator().getImage("elements/expressions/ParameterExpression.png"));
 	}
 
 	/**

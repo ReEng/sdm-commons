@@ -79,14 +79,14 @@ public class ObjectVariableExpressionItemProvider extends ExpressionItemProvider
 	}
 
 	/**
-	 * This returns ObjectVariableExpression.gif.
+	 * This returns ObjectVariableExpression.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ObjectVariableExpression"));
+		return overlayImage(object, getResourceLocator().getImage("elements/expressions/ObjectVariableExpression.png"));
 	}
 
 	/**

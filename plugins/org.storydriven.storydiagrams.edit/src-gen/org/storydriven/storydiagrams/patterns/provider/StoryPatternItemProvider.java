@@ -83,14 +83,14 @@ public class StoryPatternItemProvider extends CommentableElementItemProvider imp
 	}
 
 	/**
-	 * This returns StoryPattern.gif.
+	 * This returns StoryPattern.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StoryPattern"));
+		return overlayImage(object, getResourceLocator().getImage("elements/patterns/StoryPattern.png"));
 	}
 
 	/**

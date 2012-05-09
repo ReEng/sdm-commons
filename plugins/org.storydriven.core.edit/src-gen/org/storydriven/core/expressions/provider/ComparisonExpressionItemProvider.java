@@ -75,14 +75,14 @@ public class ComparisonExpressionItemProvider extends BinaryExpressionItemProvid
 	}
 
 	/**
-	 * This returns ComparisonExpression.gif.
+	 * This returns ComparisonExpression.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComparisonExpression"));
+		return overlayImage(object, getResourceLocator().getImage("elements/expressions/ComparisonExpression.png"));
 	}
 
 	/**

@@ -75,14 +75,14 @@ public class ArithmeticExpressionItemProvider extends BinaryExpressionItemProvid
 	}
 
 	/**
-	 * This returns ArithmeticExpression.gif.
+	 * This returns ArithmeticExpression.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ArithmeticExpression"));
+		return overlayImage(object, getResourceLocator().getImage("elements/expressions/ArithmeticExpression.png"));
 	}
 
 	/**

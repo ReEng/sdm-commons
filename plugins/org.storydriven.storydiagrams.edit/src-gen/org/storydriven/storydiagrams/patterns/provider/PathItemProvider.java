@@ -77,14 +77,14 @@ public class PathItemProvider extends AbstractLinkVariableItemProvider implement
 	}
 
 	/**
-	 * This returns Path.gif.
+	 * This returns Path.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Path"));
+		return overlayImage(object, getResourceLocator().getImage("elements/patterns/Path.png"));
 	}
 
 	/**

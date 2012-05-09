@@ -74,14 +74,19 @@ public class MatchingStoryNodeItemProvider extends StoryNodeItemProvider impleme
 	}
 
 	/**
-	 * This returns MatchingStoryNode.gif.
+	 * This returns MatchingStoryNode.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/MatchingStoryNode"));
+		if(object instanceof MatchingStoryNode) {
+			if(((MatchingStoryNode) object).isForEach()) {
+				return overlayImage(object, getResourceLocator().getImage("elements/activities/MatchingStoryNode_loop.png"));
+			}
+		}
+		return overlayImage(object, getResourceLocator().getImage("elements/activities/MatchingStoryNode.png"));
 	}
 
 	/**

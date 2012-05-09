@@ -53,14 +53,14 @@ public class MatchingPatternItemProvider extends StoryPatternItemProvider implem
 	}
 
 	/**
-	 * This returns MatchingPattern.gif.
+	 * This returns MatchingPattern.not.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/MatchingPattern"));
+		return overlayImage(object, getResourceLocator().getImage("elements/patterns/MatchingPattern.png"));
 	}
 
 	/**

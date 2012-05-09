@@ -53,14 +53,14 @@ public class StartNodeItemProvider extends ActivityNodeItemProvider implements I
 	}
 
 	/**
-	 * This returns StartNode.gif.
+	 * This returns StartNode.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StartNode"));
+		return overlayImage(object, getResourceLocator().getImage("elements/activities/StartNode.png"));
 	}
 
 	/**

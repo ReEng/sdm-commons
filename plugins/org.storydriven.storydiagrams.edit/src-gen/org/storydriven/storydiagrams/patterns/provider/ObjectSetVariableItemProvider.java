@@ -53,14 +53,14 @@ public class ObjectSetVariableItemProvider extends ObjectVariableItemProvider im
 	}
 
 	/**
-	 * This returns ObjectSetVariable.gif.
+	 * This returns ObjectSetVariable.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ObjectSetVariable"));
+		return overlayImage(object, getResourceLocator().getImage("elements/patterns/ObjectSetVariable.png"));
 	}
 
 	/**

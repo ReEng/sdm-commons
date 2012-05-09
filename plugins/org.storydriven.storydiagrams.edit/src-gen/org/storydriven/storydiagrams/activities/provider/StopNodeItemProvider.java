@@ -97,14 +97,19 @@ public class StopNodeItemProvider extends ActivityNodeItemProvider implements IE
 	}
 
 	/**
-	 * This returns StopNode.gif.
+	 * This returns StopNode.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StopNode"));
+		if(object instanceof StopNode) {
+			if(((StopNode) object).isFlowStopOnly()) {
+				return overlayImage(object, getResourceLocator().getImage("elements/activities/StopNode_flow.png"));
+			}
+		}
+		return overlayImage(object, getResourceLocator().getImage("elements/activities/StopNode.png"));
 	}
 
 	/**

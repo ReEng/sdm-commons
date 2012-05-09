@@ -97,14 +97,14 @@ public class AttributeValueExpressionItemProvider extends ExpressionItemProvider
 	}
 
 	/**
-	 * This returns AttributeValueExpression.gif.
+	 * This returns AttributeValueExpression.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/AttributeValueExpression"));
+		return overlayImage(object, getResourceLocator().getImage("elements/expressions/AttributeValueExpression.png"));
 	}
 
 	/**

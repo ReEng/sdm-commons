@@ -76,14 +76,14 @@ public class BinaryLogicExpressionItemProvider extends BinaryExpressionItemProvi
 	}
 
 	/**
-	 * This returns BinaryLogicExpression.gif.
+	 * This returns BinaryLogicExpression.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/BinaryLogicExpression"));
+		return overlayImage(object, getResourceLocator().getImage("elements/expressions/BinaryLogicExpression.png"));
 	}
 
 	/**

@@ -53,14 +53,14 @@ public class JunctionNodeItemProvider extends ActivityNodeItemProvider implement
 	}
 
 	/**
-	 * This returns JunctionNode.gif.
+	 * This returns JunctionNode.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/JunctionNode"));
+		return overlayImage(object, getResourceLocator().getImage("elements/activities/JunctionNode.png"));
 	}
 
 	/**

@@ -74,14 +74,14 @@ public class StructuredNodeItemProvider extends ActivityNodeItemProvider impleme
 	}
 
 	/**
-	 * This returns StructuredNode.gif.
+	 * This returns StructuredNode.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StructuredNode"));
+		return overlayImage(object, getResourceLocator().getImage("elements/activities/StructuredNode.png"));
 	}
 
 	/**

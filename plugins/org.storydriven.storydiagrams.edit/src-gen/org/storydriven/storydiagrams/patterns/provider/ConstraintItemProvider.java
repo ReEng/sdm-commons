@@ -48,14 +48,14 @@ public class ConstraintItemProvider extends ItemProviderAdapter implements IEdit
 	}
 
 	/**
-	 * This returns Constraint.gif.
+	 * This returns Constraint.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Constraint"));
+		return overlayImage(object, getResourceLocator().getImage("elements/patterns/Constraint.png"));
 	}
 
 	/**

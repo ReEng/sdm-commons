@@ -79,14 +79,14 @@ public class ObjectSetSizeExpressionItemProvider extends ExpressionItemProvider 
 	}
 
 	/**
-	 * This returns ObjectSetSizeExpression.gif.
+	 * This returns ObjectSetSizeExpression.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ObjectSetSizeExpression"));
+		return overlayImage(object, getResourceLocator().getImage("elements/expressions/ObjectSetSizeExpression.png"));
 	}
 
 	/**
