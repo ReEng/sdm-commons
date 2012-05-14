@@ -527,26 +527,44 @@ Figure~\ref{fig:linkPositionConstraintNegative} shows an example for a negative 
 \subsubsection{Link Order Constraints}
 \label{sec:StoryPatterns:linkConstraints:orderConstraint}
 
+Link order constraints specify a relative order between two objects in a multi-valued ordered reference. A link order constraint therefore connects two link variables which we denote as the source link variable and target link variable of the link order constraint. Then, the object matched via the target link variable must either be the \emph{direct successor} or an arbitrary \emph{successor} of the object matched via the source link variable.
+
+Figure~\ref{fig:linkOrderConstraintDirectSuccessor} shows an example of a link order constraint requiring to match two subsequent \fe{FormalParameters} of \fe{method}. Therefore, the two link variables from \fe{method} to \fe{param1} and \fe{param2} are connected by a link order constraint \fe{\{direct\_successor\}}. Then, the object matched to \fe{param2} must be a direct successor of the object matched to \fe{param1}.
 
 \begin{figure}[htbp]
 \center
 \includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessor}
-\caption{A link order constraint specifies a relative order between two links.}
-\label{fig:linkOrderConstraints:linkOrderConstraint1}
+\caption{A link order constraint specifying a \fe{\{direct\_successor\}}.}
+\label{fig:linkOrderConstraintDirectSuccessor}
 \end{figure}
 
-Link order constraints specify a relative order between two links. In Fig.~\ref{fig:linkOrderConstraints:linkOrderConstraint1}, \emph{b2} must be the immediate successor of \emph{b1} in the \emph{elements} reference (depicted by \emph{\{next\}}). It is also possible to specify that \emph{b2} may be a direct or indirect successor, which is depicted by \emph{\{...\}}. Note, that then there may be multiple possible matches. Which of them is chosen is still non-deterministic.
+Figure~\ref{fig:linkOrderConstraintSuccessor} shows an example of a link order constraint requiring to match two \fe{FormalParameters} of \fe{method} where one succeeds the other. Therefore, the two link variables from \fe{method} to \fe{param1} and \fe{param2} are connected by a link order constraint \fe{\{successor\}}. Then, the object matched to \fe{param2} must be an arbitrary successor of the object matched to \fe{param1}. The matching of the successor is non-deterministic. Thus, a matching retrieved for the story pattern in Figure~\ref{fig:linkOrderConstraintDirectSuccessor} is a valid matching for the story pattern in Figure~\ref{fig:linkOrderConstraintSuccessor} as well. A matching retrieved for the story pattern in Figure~\ref{fig:linkOrderConstraintSuccessor}, however, will not be a valid matching for the story pattern in Figure~\ref{fig:linkOrderConstraintDirectSuccessor} in the general case.
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintSuccessor}
+\caption{A link order constraint specifying a \fe{\{successor\}}.}
+\label{fig:linkOrderConstraintSuccessor}
+\end{figure}
+
+\todoch{Discuss binding operators: destroy of source link variable, target link variable or both. create of source link variable, target link variable or both. create and delete for direct successor, only delete for indirect successor}
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessorCreateDelete}
+\caption{Using link order constraints with binding operators \create and \destroy.}
+\label{fig:linkOrderConstraintDirectSuccessorCreateDelete}
+\end{figure}
+
+\todoch{Discuss binding semantics: optional and negative, optional create only for direct successors}
+
+\todoch{Discuss combination with link position constraints: no unsatisfiable combinations, e.g., link variable has link position constraint first and is target link variable of a link position constraint}
+
 
 Link order constraints can be combined straight-forwardly with \create and \destroy stereotypes. However, the combination with \create is only possible for the \emph{\{next\}} order constraint, not for \emph{\{...\}}. In case of created links, the order in the instance model is enforced accordingly.
 
 \todoall{Do we want to allow this? This would make the choice, where an element is inserted non-deterministic.}
 
-\begin{figure}[htbp]
-\center
-\includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintSuccessor}
-\caption{A link order constraint specifies a relative order between two links.}
-\label{fig:linkOrderConstraints:linkOrderConstraint2}
-\end{figure}
 
 It is also possible to have only one of the two related links be destroyed or created. Though, it is not possible to create one link and destroy the other.
 
@@ -556,19 +574,19 @@ Link order constraints may not form circles or unsatisfiable story patterns (e.g
 \center
 \includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessorNegative}
 \caption{A link order constraint with a negative link.}
-\label{fig:linkOrderConstraints:linkOrderConstraint3}
+\label{fig:linkOrderConstraints:linkOrderConstaint2}
 \end{figure}
 
-Link order constraints can also be combined with negative link. However, only one of both links may be marked as negative. Otherwise, there would be nothing to relate to. For example, in the story pattern in Fig.~\ref{fig:linkOrderConstraints:linkOrderConstraint3}, \emph{b2} may not be the direct successor of \emph{b1}.
+Link order constraints can also be combined with negative link. However, only one of both links may be marked as negative. Otherwise, there would be nothing to relate to. For example, in the story pattern in Fig.~\ref{fig:linkOrderConstraints:linkOrderConstaint2}, \emph{b2} may not be the direct successor of \emph{b1}.
 
 \begin{figure}[htbp]
 \center
 \includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessorNegative2}
 \caption{Two link order constraints with a negative link.}
-\label{fig:linkOrderConstraints:linkOrderConstraint4}
+\label{fig:linkOrderConstraints:linkOrderConstaint3}
 \end{figure}
 
-If there are multiple link order constraints, like in Fig.~\ref{fig:linkOrderConstraints:linkOrderConstraint4}, the semantics of the negative link is as follows: \emph{b2} must neither be the direct successor of \emph{b1} nor the direct predecessor of \emph{b3}. If one of both conditions is fulfilled, the pattern does not match.
+If there are multiple link order constraints, like in Fig.~\ref{fig:linkOrderConstraints:linkOrderConstaint3}, the semantics of the negative link is as follows: \emph{b2} must neither be the direct successor of \emph{b1} nor the direct predecessor of \emph{b3}. If one of both conditions is fulfilled, the pattern does not match.
 
 \todoall{This should match the semantics of multiple NACs in a story pattern.}
 
