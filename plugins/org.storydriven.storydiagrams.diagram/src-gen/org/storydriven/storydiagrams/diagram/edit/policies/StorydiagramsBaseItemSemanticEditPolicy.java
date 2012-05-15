@@ -38,8 +38,10 @@ import org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorPlug
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry;
 import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.ContainmentRelation;
 import org.storydriven.storydiagrams.patterns.LinkVariable;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
+import org.storydriven.storydiagrams.patterns.Path;
 import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 /**
@@ -324,6 +326,21 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 		/**
 		 * @generated
 		 */
+		public boolean canCreatePath_4003(StoryPattern container, ObjectVariable source, AbstractVariable target) {
+			return canExistPath_4003(container, null, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateContainmentRelation_4004(StoryPattern container, ObjectVariable source,
+				AbstractVariable target) {
+			return canExistContainmentRelation_4004(container, null, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistActivityEdge_4001(Activity container, ActivityEdge linkInstance, ActivityNode source,
 				ActivityNode target) {
 			return true;
@@ -333,6 +350,22 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 		 * @generated
 		 */
 		public boolean canExistLinkVariable_4002(StoryPattern container, LinkVariable linkInstance,
+				ObjectVariable source, AbstractVariable target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistPath_4003(StoryPattern container, Path linkInstance, ObjectVariable source,
+				AbstractVariable target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistContainmentRelation_4004(StoryPattern container, ContainmentRelation linkInstance,
 				ObjectVariable source, AbstractVariable target) {
 			return true;
 		}

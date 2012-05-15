@@ -15,7 +15,7 @@ public class ModifyingStoryNodeModifyingStoryNodeContentCompartmentItemSemanticE
 	 * @generated
 	 */
 	public ModifyingStoryNodeModifyingStoryNodeContentCompartmentItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.ModifyingStoryNode_3007);
+		super(StorydiagramsElementTypes.ModifyingStoryNode_2007);
 	}
 
 	/**

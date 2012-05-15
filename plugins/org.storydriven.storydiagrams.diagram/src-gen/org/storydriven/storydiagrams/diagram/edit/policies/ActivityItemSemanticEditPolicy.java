@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 import org.storydriven.storydiagrams.diagram.edit.commands.ActivityCallNodeCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.JunctionNodeCreateCommand;
+import org.storydriven.storydiagrams.diagram.edit.commands.MatchingStoryNodeCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.ModifyingStoryNodeCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.StartNodeCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.StatementNodeCreateCommand;
@@ -31,14 +32,14 @@ public class ActivityItemSemanticEditPolicy extends StorydiagramsBaseItemSemanti
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.StartNode_2001 == req.getElementType()) {
-			return getGEFWrapper(new StartNodeCreateCommand(req));
+		if (StorydiagramsElementTypes.ActivityCallNode_2006 == req.getElementType()) {
+			return getGEFWrapper(new ActivityCallNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.StopNode_2002 == req.getElementType()) {
-			return getGEFWrapper(new StopNodeCreateCommand(req));
+		if (StorydiagramsElementTypes.ModifyingStoryNode_2007 == req.getElementType()) {
+			return getGEFWrapper(new ModifyingStoryNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.JunctionNode_2003 == req.getElementType()) {
-			return getGEFWrapper(new JunctionNodeCreateCommand(req));
+		if (StorydiagramsElementTypes.MatchingStoryNode_2008 == req.getElementType()) {
+			return getGEFWrapper(new MatchingStoryNodeCreateCommand(req));
 		}
 		if (StorydiagramsElementTypes.StatementNode_2004 == req.getElementType()) {
 			return getGEFWrapper(new StatementNodeCreateCommand(req));
@@ -46,11 +47,14 @@ public class ActivityItemSemanticEditPolicy extends StorydiagramsBaseItemSemanti
 		if (StorydiagramsElementTypes.StructuredNode_2005 == req.getElementType()) {
 			return getGEFWrapper(new StructuredNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.ActivityCallNode_2006 == req.getElementType()) {
-			return getGEFWrapper(new ActivityCallNodeCreateCommand(req));
+		if (StorydiagramsElementTypes.StartNode_2001 == req.getElementType()) {
+			return getGEFWrapper(new StartNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.ModifyingStoryNode_2007 == req.getElementType()) {
-			return getGEFWrapper(new ModifyingStoryNodeCreateCommand(req));
+		if (StorydiagramsElementTypes.JunctionNode_2003 == req.getElementType()) {
+			return getGEFWrapper(new JunctionNodeCreateCommand(req));
+		}
+		if (StorydiagramsElementTypes.StopNode_2002 == req.getElementType()) {
+			return getGEFWrapper(new StopNodeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

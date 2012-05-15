@@ -11,7 +11,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.swt.graphics.Color;
 import org.storydriven.storydiagrams.diagram.edit.policies.ActivityEdgeItemSemanticEditPolicy;
 
 /**
@@ -115,8 +114,8 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements ITre
 		 * @generated
 		 */
 		public ActivityEdgeFigure() {
-			this.setForegroundColor(THIS_FORE);
-			this.setBackgroundColor(THIS_BACK);
+			this.setForegroundColor(ColorConstants.black);
+			this.setBackgroundColor(ColorConstants.black);
 
 			createContents();
 			setTargetDecoration(createTargetDecoration());
@@ -151,15 +150,5 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements ITre
 		}
 
 	}
-
-	/**
-	 * @generated
-	 */
-	static final Color THIS_FORE = new Color(null, 0, 0, 0);
-
-	/**
-	 * @generated
-	 */
-	static final Color THIS_BACK = new Color(null, 0, 0, 0);
 
 }

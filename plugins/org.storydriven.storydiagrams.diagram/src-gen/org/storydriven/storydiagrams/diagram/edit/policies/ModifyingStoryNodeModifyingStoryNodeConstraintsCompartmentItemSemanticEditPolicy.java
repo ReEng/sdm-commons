@@ -12,7 +12,7 @@ public class ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentItemSeman
 	 * @generated
 	 */
 	public ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.ModifyingStoryNode_3007);
+		super(StorydiagramsElementTypes.ModifyingStoryNode_2007);
 	}
 
 }

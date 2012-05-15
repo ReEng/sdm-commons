@@ -284,13 +284,13 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof StartNodeEditPart) {
+		if (targetEditPart instanceof ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof StopNodeEditPart) {
+		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof JunctionNodeEditPart) {
+		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof StatementNodeEditPart) {
@@ -299,10 +299,13 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof StructuredNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof ActivityCallNodeEditPart) {
+		if (targetEditPart instanceof StartNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
+		if (targetEditPart instanceof JunctionNodeEditPart) {
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+		}
+		if (targetEditPart instanceof StopNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof JunctionNode2EditPart) {
@@ -332,13 +335,14 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
-			types.add(StorydiagramsElementTypes.StartNode_2001);
-			types.add(StorydiagramsElementTypes.StopNode_2002);
-			types.add(StorydiagramsElementTypes.JunctionNode_2003);
-			types.add(StorydiagramsElementTypes.StatementNode_2004);
-			types.add(StorydiagramsElementTypes.StructuredNode_2005);
 			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
+			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
+			types.add(StorydiagramsElementTypes.StatementNode_2004);
+			types.add(StorydiagramsElementTypes.StructuredNode_2005);
+			types.add(StorydiagramsElementTypes.StartNode_2001);
+			types.add(StorydiagramsElementTypes.JunctionNode_2003);
+			types.add(StorydiagramsElementTypes.StopNode_2002);
 			types.add(StorydiagramsElementTypes.JunctionNode_3002);
 			types.add(StorydiagramsElementTypes.StartNode_3003);
 			types.add(StorydiagramsElementTypes.StopNode_3004);
@@ -364,13 +368,14 @@ public class StructuredNode2EditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
-			types.add(StorydiagramsElementTypes.StartNode_2001);
-			types.add(StorydiagramsElementTypes.StopNode_2002);
-			types.add(StorydiagramsElementTypes.JunctionNode_2003);
-			types.add(StorydiagramsElementTypes.StatementNode_2004);
-			types.add(StorydiagramsElementTypes.StructuredNode_2005);
 			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
+			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
+			types.add(StorydiagramsElementTypes.StatementNode_2004);
+			types.add(StorydiagramsElementTypes.StructuredNode_2005);
+			types.add(StorydiagramsElementTypes.StartNode_2001);
+			types.add(StorydiagramsElementTypes.JunctionNode_2003);
+			types.add(StorydiagramsElementTypes.StopNode_2002);
 			types.add(StorydiagramsElementTypes.JunctionNode_3002);
 			types.add(StorydiagramsElementTypes.StartNode_3003);
 			types.add(StorydiagramsElementTypes.StopNode_3004);

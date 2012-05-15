@@ -4,169 +4,106 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <palette
-      title="storydiagrams">
+      title="Story Diagram Palette">
     <tools
         xsi:type="gmftool:ToolGroup"
         title="Activities"
         collapsible="true"
-        active="//@palette/@tools.0">
+        active="//@palette/@tools.0/@tools.1">
       <smallIcon
           xsi:type="gmftool:BundleImage"
-          path="icons/palette/activities.png"
+          path="/icons/palette/activities.png"
           bundle="org.storydriven.storydiagrams.diagram.custom"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Activity Call Node"
-          description="Create New Activity Call Node">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/elements/activities/ActivityCallNode.png"
-            bundle="org.storydriven.storydiagrams.diagram.custom"/>
-      </tools>
+          description="Create New Activity Call Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Modifying Story Node"
-          description="Create New Modifying Story Node">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/elements/activities/ModifyingStoryNode.png"
-            bundle="org.storydriven.storydiagrams.diagram.custom"/>
-      </tools>
+          description="Create New Modifying Story Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Matching Story Node"
-          description="Create New Matching Story Node">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/elements/activities/MatchingStoryNode.png"
-            bundle="org.storydriven.storydiagrams.diagram.custom"/>
-      </tools>
+          description="Create New Matching Story Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Statement Node"
-          description="Create New Statement Node">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/elements/activities/StatementNode.png"
-            bundle="org.storydriven.storydiagrams.diagram.custom"/>
-      </tools>
+          description="Create New Statement Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Structured Node"
-          description="Create New Structured Node">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/elements/activities/StructuredNode.png"
-            bundle="org.storydriven.storydiagrams.diagram.custom"/>
-      </tools>
+          description="Create New Structured Node"/>
       <tools
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Activity Edge"
-          description="Create New Activity Edge">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/elements/activities/ActivityEdge.png"
-            bundle="org.storydriven.storydiagrams.diagram.custom"/>
-      </tools>
+          description="Create New Activity Edge"/>
       <tools
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Start Node"
-          description="Create New Start Node">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/elements/activities/StartNode.png"
-            bundle="org.storydriven.storydiagrams.diagram.custom"/>
-      </tools>
+          description="Create New Start Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Junction Node"
-          description="Create New Junction Node">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/elements/activities/JunctionNode.png"
-            bundle="org.storydriven.storydiagrams.diagram.custom"/>
-      </tools>
+          description="Create New Junction Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Stop Node"
-          description="Create New Stop Node">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/elements/activities/StopNode.png"
-            bundle="org.storydriven.storydiagrams.diagram.custom"/>
-      </tools>
+          description="Create New Stop Node"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
         title="Patterns"
         collapsible="true"
-        active="//@palette/@tools.1">
+        active="//@palette/@tools.1/@tools.0">
       <smallIcon
           xsi:type="gmftool:BundleImage"
-          path="icons/palette/patterns.png"
+          path="/icons/palette/patterns.png"
           bundle="org.storydriven.storydiagrams.diagram.custom"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Object Variable"
-          description="Create New Object Variable">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/elements/patterns/ObjectVariable.png"
-            bundle="org.storydriven.storydiagrams.diagram.custom"/>
-      </tools>
+          description="Create New Object Variable"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Object Set Variable"
+          description="Create New Object Set Variable"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Primitive Variable"
-          description="Create New Primitve Variable">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/elements/patterns/PrimitiveVariable.png"
-            bundle="org.storydriven.storydiagrams.diagram.custom"/>
-      </tools>
+          description="Create New Primitve Variable"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Container Variable"
+          description="Create New Container Variable"/>
       <tools
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Link Variable"
-          description="Create New Link Variable">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/elements/patterns/LinkVariable.png"
-            bundle="org.storydriven.storydiagrams.diagram.custom"/>
-      </tools>
+          description="Create New Link Variable"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Path"
+          description="Create New Path"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Containment Relation"
+          description="Create New Containment Relation"/>
       <tools
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Attribute Assignment"
-          description="Create New Attribute Assignment">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="/icons/elements/patterns/AttributeAssignment.png"
-            bundle="org.storydriven.storydiagrams.diagram.custom"/>
-      </tools>
-    </tools>
-    <tools
-        xsi:type="gmftool:ToolGroup"
-        title="Constraints"
-        collapsible="true">
-      <smallIcon
-          xsi:type="gmftool:BundleImage"
-          path="icons/palette/constraints.png"
-          bundle="org.storydriven.storydiagrams.diagram.custom"/>
+          title="Constraint"
+          description="Create New Constraint"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Attribute Constraint"
-          description="Create New Attribute Constraint">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/palette/constraints.png"
-            bundle="org.storydriven.storydiagrams.diagram.custom"/>
-      </tools>
+          title="Attribute Assignment"
+          description="Create New Attribute Assignment"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

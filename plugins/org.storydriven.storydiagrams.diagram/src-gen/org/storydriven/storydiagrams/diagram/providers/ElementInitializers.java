@@ -1,7 +1,9 @@
 package org.storydriven.storydiagrams.diagram.providers;
 
+import org.storydriven.storydiagrams.activities.MatchingStoryNode;
 import org.storydriven.storydiagrams.activities.ModifyingStoryNode;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorPlugin;
+import org.storydriven.storydiagrams.patterns.MatchingPattern;
 import org.storydriven.storydiagrams.patterns.PatternsFactory;
 import org.storydriven.storydiagrams.patterns.StoryPattern;
 
@@ -21,6 +23,20 @@ public class ElementInitializers {
 		try {
 			StoryPattern newInstance_0_0 = PatternsFactory.eINSTANCE.createStoryPattern();
 			instance.setOwnedRule(newInstance_0_0);
+			newInstance_0_0.setComment("");
+
+		} catch (RuntimeException e) {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_MatchingStoryNode_2008(MatchingStoryNode instance) {
+		try {
+			MatchingPattern newInstance_0_0 = PatternsFactory.eINSTANCE.createMatchingPattern();
+			instance.setOwnedPattern(newInstance_0_0);
 			newInstance_0_0.setComment("");
 
 		} catch (RuntimeException e) {

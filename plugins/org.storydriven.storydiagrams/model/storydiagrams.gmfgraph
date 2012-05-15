@@ -2,15 +2,43 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="modeling">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="Story Diagram">
   <figures
       name="Default">
     <figures
         xsi:type="gmfgraph:PolylineDecoration"
-        name="Arrowhead">
+        name="ArrowDecoration">
       <foregroundColor
           xsi:type="gmfgraph:ConstantColor"
           value="black"/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ContainmentDiamondDecoration">
+      <template/>
+      <template
+          x="-1"
+          y="1"/>
+      <template
+          x="-2"/>
+      <template
+          x="-1"
+          y="-1"/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ContainerEllipseDecoration"
+        fill="false">
+      <template
+          y="1"/>
+      <template
+          x="-2"
+          y="1"/>
+      <template
+          x="-2"
+          y="-1"/>
+      <template
+          y="-1"/>
     </figures>
     <descriptors
         name="StartNodeFigure">
@@ -88,9 +116,11 @@
           name="ActivityEdgeFigure"
           targetDecoration="//@figures.0/@figures.0">
         <foregroundColor
-            xsi:type="gmfgraph:RGBColor"/>
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
         <backgroundColor
-            xsi:type="gmfgraph:RGBColor"/>
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
         <children
             xsi:type="gmfgraph:Label"
             name="ActivityEdgeGuardFigure"/>
@@ -787,28 +817,81 @@
           figure="//@figures.0/@descriptors.13/@actualFigure/@children.0/@children.0/@children.1/@children.0"/>
     </descriptors>
     <descriptors
-        name="LinkVariableFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="LinkVariablePolylineConnection"
-          targetDecoration="//@figures.0/@figures.0">
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"/>
-        <backgroundColor
-            xsi:type="gmfgraph:RGBColor"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="LinkVariableFeature"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
         name="ExpressionFigure">
       <actualFigure
           xsi:type="gmfgraph:Label"
           name="ExpressionFigureLabel"
           text="piep"/>
+    </descriptors>
+    <descriptors
+        name="LinkVariableFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="LinkVariablePolylineConnection">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="LinkVariableSourceEnd"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="LinkVariableOperator"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="LinkVariableTargetEnd"/>
+      </actualFigure>
+      <accessors
+          accessor="getFigureLinkVariableSourceEndFigure"
+          figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureLinkVariableOperatorFigure"
+          figure="//@figures.0/@descriptors.15/@actualFigure/@children.1"/>
+      <accessors
+          accessor="getFigureLinkVariableTargetEndFigure"
+          figure="//@figures.0/@descriptors.15/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors
+        name="PathFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="PathPolylineConnection"
+          targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="lightBlue"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="lightBlue"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="PathDescription"/>
+      </actualFigure>
+      <accessors
+          accessor="getFigurePathDescription"
+          figure="//@figures.0/@descriptors.16/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="ContainmentRelationFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="ContainmentRelationPolylineConnection">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ContainmentRelationOperator"/>
+      </actualFigure>
+      <accessors
+          accessor="getFigureContainmentRelationOperatorFigure"
+          figure="//@figures.0/@descriptors.17/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <nodes
@@ -860,6 +943,12 @@
   <connections
       name="LinkVariableConnection"
       figure="LinkVariableFigure"/>
+  <connections
+      name="PathConnection"
+      figure="PathFigure"/>
+  <connections
+      name="ContainmentRelationConnection"
+      figure="ContainmentRelationFigure"/>
   <compartments
       name="StoryPatternCompartement"
       figure="StoryPatternFigure"
@@ -987,4 +1076,53 @@
       figure="ActivityEdgeFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels
+      name="LinkVariableSourceEndLabel"
+      figure="LinkVariableFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.15/@accessors.0">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="10"
+        y="10"/>
+  </labels>
+  <labels
+      name="LinkVariableOperatorLabel"
+      figure="LinkVariableFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.15/@accessors.1">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="CENTER"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="-10"/>
+  </labels>
+  <labels
+      name="LinkVariableTargetEndLabel"
+      figure="LinkVariableFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.15/@accessors.2">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="10"
+        y="10"/>
+  </labels>
+  <labels
+      name="ContainmentRelationOperatorLabel"
+      figure="ContainmentRelationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.17/@accessors.0">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="CENTER"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="-10"/>
+  </labels>
 </gmfgraph:Canvas>

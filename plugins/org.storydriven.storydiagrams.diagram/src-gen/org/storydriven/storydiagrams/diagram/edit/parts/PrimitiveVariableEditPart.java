@@ -284,8 +284,10 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(StorydiagramsElementTypes.LinkVariable_4002);
+		types.add(StorydiagramsElementTypes.Path_4003);
+		types.add(StorydiagramsElementTypes.ContainmentRelation_4004);
 		return types;
 	}
 
@@ -295,6 +297,10 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
+		} else if (relationshipType == StorydiagramsElementTypes.Path_4003) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
+		} else if (relationshipType == StorydiagramsElementTypes.ContainmentRelation_4004) {
 			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
 		}
 		return types;

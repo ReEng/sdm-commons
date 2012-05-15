@@ -14,9 +14,15 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.storydriven.storydiagrams.diagram.edit.commands.ContainmentRelationCreateCommand;
+import org.storydriven.storydiagrams.diagram.edit.commands.ContainmentRelationReorientCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.LinkVariableCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.LinkVariableReorientCommand;
+import org.storydriven.storydiagrams.diagram.edit.commands.PathCreateCommand;
+import org.storydriven.storydiagrams.diagram.edit.commands.PathReorientCommand;
+import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.PathEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry;
 import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes;
@@ -43,6 +49,18 @@ public class PrimitiveVariableItemSemanticEditPolicy extends StorydiagramsBaseIt
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
 			if (StorydiagramsVisualIDRegistry.getVisualID(incomingLink) == LinkVariableEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (StorydiagramsVisualIDRegistry.getVisualID(incomingLink) == PathEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (StorydiagramsVisualIDRegistry.getVisualID(incomingLink) == ContainmentRelationEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -97,6 +115,12 @@ public class PrimitiveVariableItemSemanticEditPolicy extends StorydiagramsBaseIt
 		if (StorydiagramsElementTypes.LinkVariable_4002 == req.getElementType()) {
 			return null;
 		}
+		if (StorydiagramsElementTypes.Path_4003 == req.getElementType()) {
+			return null;
+		}
+		if (StorydiagramsElementTypes.ContainmentRelation_4004 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -106,6 +130,12 @@ public class PrimitiveVariableItemSemanticEditPolicy extends StorydiagramsBaseIt
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (StorydiagramsElementTypes.LinkVariable_4002 == req.getElementType()) {
 			return getGEFWrapper(new LinkVariableCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (StorydiagramsElementTypes.Path_4003 == req.getElementType()) {
+			return getGEFWrapper(new PathCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (StorydiagramsElementTypes.ContainmentRelation_4004 == req.getElementType()) {
+			return getGEFWrapper(new ContainmentRelationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -120,6 +150,10 @@ public class PrimitiveVariableItemSemanticEditPolicy extends StorydiagramsBaseIt
 		switch (getVisualID(req)) {
 		case LinkVariableEditPart.VISUAL_ID:
 			return getGEFWrapper(new LinkVariableReorientCommand(req));
+		case PathEditPart.VISUAL_ID:
+			return getGEFWrapper(new PathReorientCommand(req));
+		case ContainmentRelationEditPart.VISUAL_ID:
+			return getGEFWrapper(new ContainmentRelationReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

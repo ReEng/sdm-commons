@@ -2,15 +2,13 @@ package org.storydriven.storydiagrams.diagram.edit.parts;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
-import org.eclipse.draw2d.PolylineDecoration;
-import org.eclipse.draw2d.RotatableDecoration;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.swt.graphics.Color;
 import org.storydriven.storydiagrams.diagram.edit.policies.LinkVariableItemSemanticEditPolicy;
 
 /**
@@ -36,6 +34,64 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new LinkVariableItemSemanticEditPolicy());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof LinkVariableSourceEndLabelEditPart) {
+			((LinkVariableSourceEndLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getFigureLinkVariableSourceEndFigure());
+			return true;
+		}
+		if (childEditPart instanceof LinkVariableOperatorLabelEditPart) {
+			((LinkVariableOperatorLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getFigureLinkVariableOperatorFigure());
+			return true;
+		}
+		if (childEditPart instanceof LinkVariableTargetEndLabelEditPart) {
+			((LinkVariableTargetEndLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getFigureLinkVariableTargetEndFigure());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, index);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof LinkVariableSourceEndLabelEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof LinkVariableOperatorLabelEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof LinkVariableTargetEndLabelEditPart) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
 	}
 
 	/**
@@ -66,17 +122,24 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureLinkVariableFeature;
+		private WrappingLabel fFigureLinkVariableSourceEndFigure;
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureLinkVariableOperatorFigure;
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureLinkVariableTargetEndFigure;
 
 		/**
 		 * @generated
 		 */
 		public LinkVariableFigure() {
-			this.setForegroundColor(THIS_FORE);
-			this.setBackgroundColor(THIS_BACK);
+			this.setForegroundColor(ColorConstants.black);
+			this.setBackgroundColor(ColorConstants.black);
 
 			createContents();
-			setTargetDecoration(createTargetDecoration());
 		}
 
 		/**
@@ -84,39 +147,44 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 		 */
 		private void createContents() {
 
-			fFigureLinkVariableFeature = new WrappingLabel();
-			fFigureLinkVariableFeature.setText("");
+			fFigureLinkVariableSourceEndFigure = new WrappingLabel();
+			fFigureLinkVariableSourceEndFigure.setText("");
 
-			this.add(fFigureLinkVariableFeature);
+			this.add(fFigureLinkVariableSourceEndFigure);
+
+			fFigureLinkVariableOperatorFigure = new WrappingLabel();
+			fFigureLinkVariableOperatorFigure.setText("");
+
+			this.add(fFigureLinkVariableOperatorFigure);
+
+			fFigureLinkVariableTargetEndFigure = new WrappingLabel();
+			fFigureLinkVariableTargetEndFigure.setText("");
+
+			this.add(fFigureLinkVariableTargetEndFigure);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		private RotatableDecoration createTargetDecoration() {
-			PolylineDecoration df = new PolylineDecoration();
-			df.setForegroundColor(ColorConstants.black);
-			return df;
+		public WrappingLabel getFigureLinkVariableSourceEndFigure() {
+			return fFigureLinkVariableSourceEndFigure;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureLinkVariableFeature() {
-			return fFigureLinkVariableFeature;
+		public WrappingLabel getFigureLinkVariableOperatorFigure() {
+			return fFigureLinkVariableOperatorFigure;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureLinkVariableTargetEndFigure() {
+			return fFigureLinkVariableTargetEndFigure;
 		}
 
 	}
-
-	/**
-	 * @generated
-	 */
-	static final Color THIS_FORE = new Color(null, 0, 0, 0);
-
-	/**
-	 * @generated
-	 */
-	static final Color THIS_BACK = new Color(null, 0, 0, 0);
 
 }

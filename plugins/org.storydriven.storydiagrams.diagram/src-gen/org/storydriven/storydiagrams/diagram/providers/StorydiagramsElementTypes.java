@@ -21,12 +21,16 @@ import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.JunctionNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MatchingPatternEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.PathEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.PrimitiveVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StartNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StartNodeEditPart;
@@ -74,15 +78,15 @@ public class StorydiagramsElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType StartNode_2001 = getElementType("org.storydriven.storydiagrams.diagram.StartNode_2001"); //$NON-NLS-1$
+	public static final IElementType ActivityCallNode_2006 = getElementType("org.storydriven.storydiagrams.diagram.ActivityCallNode_2006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType StopNode_2002 = getElementType("org.storydriven.storydiagrams.diagram.StopNode_2002"); //$NON-NLS-1$
+	public static final IElementType ModifyingStoryNode_2007 = getElementType("org.storydriven.storydiagrams.diagram.ModifyingStoryNode_2007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType JunctionNode_2003 = getElementType("org.storydriven.storydiagrams.diagram.JunctionNode_2003"); //$NON-NLS-1$
+	public static final IElementType MatchingStoryNode_2008 = getElementType("org.storydriven.storydiagrams.diagram.MatchingStoryNode_2008"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -94,46 +98,15 @@ public class StorydiagramsElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ActivityCallNode_2006 = getElementType("org.storydriven.storydiagrams.diagram.ActivityCallNode_2006"); //$NON-NLS-1$
-
+	public static final IElementType StartNode_2001 = getElementType("org.storydriven.storydiagrams.diagram.StartNode_2001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ModifyingStoryNode_2007 = getElementType("org.storydriven.storydiagrams.diagram.ModifyingStoryNode_2007"); //$NON-NLS-1$
+	public static final IElementType JunctionNode_2003 = getElementType("org.storydriven.storydiagrams.diagram.JunctionNode_2003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType TextualExpression_3001 = getElementType("org.storydriven.storydiagrams.diagram.TextualExpression_3001"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType JunctionNode_3002 = getElementType("org.storydriven.storydiagrams.diagram.JunctionNode_3002"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType StartNode_3003 = getElementType("org.storydriven.storydiagrams.diagram.StartNode_3003"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType StopNode_3004 = getElementType("org.storydriven.storydiagrams.diagram.StopNode_3004"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType StatementNode_3005 = getElementType("org.storydriven.storydiagrams.diagram.StatementNode_3005"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType StructuredNode_3006 = getElementType("org.storydriven.storydiagrams.diagram.StructuredNode_3006"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType ModifyingStoryNode_3007 = getElementType("org.storydriven.storydiagrams.diagram.ModifyingStoryNode_3007"); //$NON-NLS-1$
-
+	public static final IElementType StopNode_2002 = getElementType("org.storydriven.storydiagrams.diagram.StopNode_2002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -142,17 +115,46 @@ public class StorydiagramsElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ObjectVariable_3009 = getElementType("org.storydriven.storydiagrams.diagram.ObjectVariable_3009"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType AttributeAssignment_3010 = getElementType("org.storydriven.storydiagrams.diagram.AttributeAssignment_3010"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType PrimitiveVariable_3011 = getElementType("org.storydriven.storydiagrams.diagram.PrimitiveVariable_3011"); //$NON-NLS-1$
-
+	/**
+	 * @generated
+	 */
+	public static final IElementType MatchingPattern_3012 = getElementType("org.storydriven.storydiagrams.diagram.MatchingPattern_3012"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType TextualExpression_3001 = getElementType("org.storydriven.storydiagrams.diagram.TextualExpression_3001"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType JunctionNode_3002 = getElementType("org.storydriven.storydiagrams.diagram.JunctionNode_3002"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType StartNode_3003 = getElementType("org.storydriven.storydiagrams.diagram.StartNode_3003"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType StopNode_3004 = getElementType("org.storydriven.storydiagrams.diagram.StopNode_3004"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType StatementNode_3005 = getElementType("org.storydriven.storydiagrams.diagram.StatementNode_3005"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType StructuredNode_3006 = getElementType("org.storydriven.storydiagrams.diagram.StructuredNode_3006"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ModifyingStoryNode_3007 = getElementType("org.storydriven.storydiagrams.diagram.ModifyingStoryNode_3007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -161,6 +163,15 @@ public class StorydiagramsElementTypes {
 	 * @generated
 	 */
 	public static final IElementType LinkVariable_4002 = getElementType("org.storydriven.storydiagrams.diagram.LinkVariable_4002"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Path_4003 = getElementType("org.storydriven.storydiagrams.diagram.Path_4003"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ContainmentRelation_4004 = getElementType("org.storydriven.storydiagrams.diagram.ContainmentRelation_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -271,19 +282,31 @@ public class StorydiagramsElementTypes {
 
 			elements.put(Activity_1000, ActivitiesPackage.eINSTANCE.getActivity());
 
-			elements.put(StartNode_2001, ActivitiesPackage.eINSTANCE.getStartNode());
+			elements.put(ActivityCallNode_2006, ActivitiesPackage.eINSTANCE.getActivityCallNode());
 
-			elements.put(StopNode_2002, ActivitiesPackage.eINSTANCE.getStopNode());
+			elements.put(ModifyingStoryNode_2007, ActivitiesPackage.eINSTANCE.getModifyingStoryNode());
 
-			elements.put(JunctionNode_2003, ActivitiesPackage.eINSTANCE.getJunctionNode());
+			elements.put(MatchingStoryNode_2008, ActivitiesPackage.eINSTANCE.getMatchingStoryNode());
 
 			elements.put(StatementNode_2004, ActivitiesPackage.eINSTANCE.getStatementNode());
 
 			elements.put(StructuredNode_2005, ActivitiesPackage.eINSTANCE.getStructuredNode());
 
-			elements.put(ActivityCallNode_2006, ActivitiesPackage.eINSTANCE.getActivityCallNode());
+			elements.put(StartNode_2001, ActivitiesPackage.eINSTANCE.getStartNode());
 
-			elements.put(ModifyingStoryNode_2007, ActivitiesPackage.eINSTANCE.getModifyingStoryNode());
+			elements.put(JunctionNode_2003, ActivitiesPackage.eINSTANCE.getJunctionNode());
+
+			elements.put(StopNode_2002, ActivitiesPackage.eINSTANCE.getStopNode());
+
+			elements.put(StoryPattern_3008, PatternsPackage.eINSTANCE.getStoryPattern());
+
+			elements.put(ObjectVariable_3009, PatternsPackage.eINSTANCE.getObjectVariable());
+
+			elements.put(AttributeAssignment_3010, PatternsPackage.eINSTANCE.getAttributeAssignment());
+
+			elements.put(PrimitiveVariable_3011, PatternsPackage.eINSTANCE.getPrimitiveVariable());
+
+			elements.put(MatchingPattern_3012, PatternsPackage.eINSTANCE.getMatchingPattern());
 
 			elements.put(TextualExpression_3001, ExpressionsPackage.eINSTANCE.getTextualExpression());
 
@@ -299,17 +322,13 @@ public class StorydiagramsElementTypes {
 
 			elements.put(ModifyingStoryNode_3007, ActivitiesPackage.eINSTANCE.getModifyingStoryNode());
 
-			elements.put(StoryPattern_3008, PatternsPackage.eINSTANCE.getStoryPattern());
-
-			elements.put(ObjectVariable_3009, PatternsPackage.eINSTANCE.getObjectVariable());
-
-			elements.put(AttributeAssignment_3010, PatternsPackage.eINSTANCE.getAttributeAssignment());
-
-			elements.put(PrimitiveVariable_3011, PatternsPackage.eINSTANCE.getPrimitiveVariable());
-
 			elements.put(ActivityEdge_4001, ActivitiesPackage.eINSTANCE.getActivityEdge());
 
 			elements.put(LinkVariable_4002, PatternsPackage.eINSTANCE.getLinkVariable());
+
+			elements.put(Path_4003, PatternsPackage.eINSTANCE.getPath());
+
+			elements.put(ContainmentRelation_4004, PatternsPackage.eINSTANCE.getContainmentRelation());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -328,13 +347,19 @@ public class StorydiagramsElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Activity_1000);
-			KNOWN_ELEMENT_TYPES.add(StartNode_2001);
-			KNOWN_ELEMENT_TYPES.add(StopNode_2002);
-			KNOWN_ELEMENT_TYPES.add(JunctionNode_2003);
-			KNOWN_ELEMENT_TYPES.add(StatementNode_2004);
-			KNOWN_ELEMENT_TYPES.add(StructuredNode_2005);
 			KNOWN_ELEMENT_TYPES.add(ActivityCallNode_2006);
 			KNOWN_ELEMENT_TYPES.add(ModifyingStoryNode_2007);
+			KNOWN_ELEMENT_TYPES.add(MatchingStoryNode_2008);
+			KNOWN_ELEMENT_TYPES.add(StatementNode_2004);
+			KNOWN_ELEMENT_TYPES.add(StructuredNode_2005);
+			KNOWN_ELEMENT_TYPES.add(StartNode_2001);
+			KNOWN_ELEMENT_TYPES.add(JunctionNode_2003);
+			KNOWN_ELEMENT_TYPES.add(StopNode_2002);
+			KNOWN_ELEMENT_TYPES.add(StoryPattern_3008);
+			KNOWN_ELEMENT_TYPES.add(ObjectVariable_3009);
+			KNOWN_ELEMENT_TYPES.add(AttributeAssignment_3010);
+			KNOWN_ELEMENT_TYPES.add(PrimitiveVariable_3011);
+			KNOWN_ELEMENT_TYPES.add(MatchingPattern_3012);
 			KNOWN_ELEMENT_TYPES.add(TextualExpression_3001);
 			KNOWN_ELEMENT_TYPES.add(JunctionNode_3002);
 			KNOWN_ELEMENT_TYPES.add(StartNode_3003);
@@ -342,12 +367,10 @@ public class StorydiagramsElementTypes {
 			KNOWN_ELEMENT_TYPES.add(StatementNode_3005);
 			KNOWN_ELEMENT_TYPES.add(StructuredNode_3006);
 			KNOWN_ELEMENT_TYPES.add(ModifyingStoryNode_3007);
-			KNOWN_ELEMENT_TYPES.add(StoryPattern_3008);
-			KNOWN_ELEMENT_TYPES.add(ObjectVariable_3009);
-			KNOWN_ELEMENT_TYPES.add(AttributeAssignment_3010);
-			KNOWN_ELEMENT_TYPES.add(PrimitiveVariable_3011);
 			KNOWN_ELEMENT_TYPES.add(ActivityEdge_4001);
 			KNOWN_ELEMENT_TYPES.add(LinkVariable_4002);
+			KNOWN_ELEMENT_TYPES.add(Path_4003);
+			KNOWN_ELEMENT_TYPES.add(ContainmentRelation_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -359,20 +382,32 @@ public class StorydiagramsElementTypes {
 		switch (visualID) {
 		case ActivityEditPart.VISUAL_ID:
 			return Activity_1000;
-		case StartNodeEditPart.VISUAL_ID:
-			return StartNode_2001;
-		case StopNodeEditPart.VISUAL_ID:
-			return StopNode_2002;
-		case JunctionNodeEditPart.VISUAL_ID:
-			return JunctionNode_2003;
-		case StatementNodeEditPart.VISUAL_ID:
-			return StatementNode_2004;
-		case StructuredNodeEditPart.VISUAL_ID:
-			return StructuredNode_2005;
 		case ActivityCallNodeEditPart.VISUAL_ID:
 			return ActivityCallNode_2006;
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return ModifyingStoryNode_2007;
+		case MatchingStoryNodeEditPart.VISUAL_ID:
+			return MatchingStoryNode_2008;
+		case StatementNodeEditPart.VISUAL_ID:
+			return StatementNode_2004;
+		case StructuredNodeEditPart.VISUAL_ID:
+			return StructuredNode_2005;
+		case StartNodeEditPart.VISUAL_ID:
+			return StartNode_2001;
+		case JunctionNodeEditPart.VISUAL_ID:
+			return JunctionNode_2003;
+		case StopNodeEditPart.VISUAL_ID:
+			return StopNode_2002;
+		case StoryPatternEditPart.VISUAL_ID:
+			return StoryPattern_3008;
+		case ObjectVariableEditPart.VISUAL_ID:
+			return ObjectVariable_3009;
+		case AttributeAssignmentEditPart.VISUAL_ID:
+			return AttributeAssignment_3010;
+		case PrimitiveVariableEditPart.VISUAL_ID:
+			return PrimitiveVariable_3011;
+		case MatchingPatternEditPart.VISUAL_ID:
+			return MatchingPattern_3012;
 		case TextualExpressionEditPart.VISUAL_ID:
 			return TextualExpression_3001;
 		case JunctionNode2EditPart.VISUAL_ID:
@@ -387,18 +422,14 @@ public class StorydiagramsElementTypes {
 			return StructuredNode_3006;
 		case ModifyingStoryNode2EditPart.VISUAL_ID:
 			return ModifyingStoryNode_3007;
-		case StoryPatternEditPart.VISUAL_ID:
-			return StoryPattern_3008;
-		case ObjectVariableEditPart.VISUAL_ID:
-			return ObjectVariable_3009;
-		case AttributeAssignmentEditPart.VISUAL_ID:
-			return AttributeAssignment_3010;
-		case PrimitiveVariableEditPart.VISUAL_ID:
-			return PrimitiveVariable_3011;
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return ActivityEdge_4001;
 		case LinkVariableEditPart.VISUAL_ID:
 			return LinkVariable_4002;
+		case PathEditPart.VISUAL_ID:
+			return Path_4003;
+		case ContainmentRelationEditPart.VISUAL_ID:
+			return ContainmentRelation_4004;
 		}
 		return null;
 	}

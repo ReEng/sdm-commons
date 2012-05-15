@@ -129,3 +129,71 @@ rule GenLinkLabel1 {
 					'ActivityEdgeGuardConstraintLabelItemSemanticEditPolicy'
 		)
 }
+
+rule GenLinkLabel2 {
+	from
+		gllin: GM!GenLinkLabel (
+			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gllin.viewmap.getterName = 'getFigureLinkVariableTargetEndFigure'
+		else
+			false
+		endif
+		)
+	to
+		gllout: GM!GenLinkLabel (
+			editPartClassName <- 'LinkVariableTargetEndLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'LinkVariableTargetEndLabelItemSemanticEditPolicy'
+		)
+}
+
+rule GenLinkLabel3 {
+	from
+		gllin: GM!GenLinkLabel (
+			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gllin.viewmap.getterName = 'getFigureLinkVariableSourceEndFigure'
+		else
+			false
+		endif
+		)
+	to
+		gllout: GM!GenLinkLabel (
+			editPartClassName <- 'LinkVariableSourceEndLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'LinkVariableSourceEndLabelItemSemanticEditPolicy'
+		)
+}
+
+rule GenLinkLabel4 {
+	from
+		gllin: GM!GenLinkLabel (
+			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gllin.viewmap.getterName = 'getFigureLinkVariableOperatorFigure'
+		else
+			false
+		endif
+		)
+	to
+		gllout: GM!GenLinkLabel (
+			editPartClassName <- 'LinkVariableOperatorLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'LinkVariableOperatorLabelItemSemanticEditPolicy'
+		)
+}
+
+rule GenLinkLabel5 {
+	from
+		gllin: GM!GenLinkLabel (
+			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gllin.viewmap.getterName = 'getFigureContainmentRelationOperatorFigure'
+		else
+			false
+		endif
+		)
+	to
+		gllout: GM!GenLinkLabel (
+			editPartClassName <- 'ContainmentRelationOperatorLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'ContainmentRelationOperatorLabelItemSemanticEditPolicy'
+		)
+}

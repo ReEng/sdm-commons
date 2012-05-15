@@ -311,8 +311,10 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(StorydiagramsElementTypes.LinkVariable_4002);
+		types.add(StorydiagramsElementTypes.Path_4003);
+		types.add(StorydiagramsElementTypes.ContainmentRelation_4004);
 		return types;
 	}
 
@@ -327,6 +329,18 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof PrimitiveVariableEditPart) {
 			types.add(StorydiagramsElementTypes.LinkVariable_4002);
 		}
+		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart) {
+			types.add(StorydiagramsElementTypes.Path_4003);
+		}
+		if (targetEditPart instanceof PrimitiveVariableEditPart) {
+			types.add(StorydiagramsElementTypes.Path_4003);
+		}
+		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart) {
+			types.add(StorydiagramsElementTypes.ContainmentRelation_4004);
+		}
+		if (targetEditPart instanceof PrimitiveVariableEditPart) {
+			types.add(StorydiagramsElementTypes.ContainmentRelation_4004);
+		}
 		return types;
 	}
 
@@ -338,6 +352,12 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
 			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
 			types.add(StorydiagramsElementTypes.PrimitiveVariable_3011);
+		} else if (relationshipType == StorydiagramsElementTypes.Path_4003) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
+			types.add(StorydiagramsElementTypes.PrimitiveVariable_3011);
+		} else if (relationshipType == StorydiagramsElementTypes.ContainmentRelation_4004) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
+			types.add(StorydiagramsElementTypes.PrimitiveVariable_3011);
 		}
 		return types;
 	}
@@ -346,8 +366,10 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(StorydiagramsElementTypes.LinkVariable_4002);
+		types.add(StorydiagramsElementTypes.Path_4003);
+		types.add(StorydiagramsElementTypes.ContainmentRelation_4004);
 		return types;
 	}
 
@@ -357,6 +379,10 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
+		} else if (relationshipType == StorydiagramsElementTypes.Path_4003) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
+		} else if (relationshipType == StorydiagramsElementTypes.ContainmentRelation_4004) {
 			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
 		}
 		return types;
