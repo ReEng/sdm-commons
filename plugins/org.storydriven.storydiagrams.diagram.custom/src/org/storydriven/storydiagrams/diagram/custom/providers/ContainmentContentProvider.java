@@ -8,17 +8,17 @@ import org.eclipse.jface.viewers.ITreeContentProvider;
 
 public class ContainmentContentProvider extends ArrayContentProvider implements ITreeContentProvider {
 	@Override
-	public Object[] getElements(Object element) {
-		return getChildren(element);
-	}
-
-	@Override
 	public boolean hasChildren(Object element) {
 		return getChildren(element).length > 0;
 	}
 
 	@Override
 	public Object[] getChildren(Object element) {
+		return getElements(element);
+	}
+
+	@Override
+	public Object[] getElements(Object element) {
 		if (element instanceof ResourceSet) {
 			return super.getElements(((ResourceSet) element).getResources());
 		}
@@ -28,7 +28,7 @@ public class ContainmentContentProvider extends ArrayContentProvider implements 
 		if (element instanceof EObject) {
 			return super.getElements(((EObject) element).eContents());
 		}
-		return new Object[0];
+		return super.getElements(element);
 	}
 
 	@Override

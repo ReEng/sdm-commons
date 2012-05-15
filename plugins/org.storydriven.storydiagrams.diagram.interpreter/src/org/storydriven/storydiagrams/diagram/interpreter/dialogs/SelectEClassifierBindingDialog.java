@@ -76,7 +76,7 @@ public class SelectEClassifierBindingDialog extends AbstractTreeSelectionDialog<
 	}
 
 	@Override
-	protected String validate(Object element) {
+	protected String getErrorMessage(Object element) {
 		if (eClassifier != null && eClassifier.isInstance(element)) {
 			return null;
 		}

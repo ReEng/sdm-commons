@@ -21,7 +21,7 @@ public class SelectEClassDialog extends AbstractTreeSelectionDialog<EClass> {
 	}
 
 	@Override
-	protected String validate(Object element) {
+	protected String getErrorMessage(Object element) {
 		if (element instanceof EClass) {
 			return null;
 		}

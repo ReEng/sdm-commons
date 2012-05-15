@@ -45,7 +45,7 @@ public class SelectActivityDialog extends AbstractTreeSelectionDialog<Activity> 
 	}
 
 	@Override
-	protected String validate(Object element) {
+	protected String getErrorMessage(Object element) {
 		if (ActivityUtil.getActivity(node).equals(element)) {
 			return "You cannot call the activity where the node is contained in!";
 		}

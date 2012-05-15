@@ -53,7 +53,7 @@ public class SelectWorkspaceResourceDialog extends AbstractTreeSelectionDialog<I
 	}
 
 	@Override
-	protected String validate(Object element) {
+	protected String getErrorMessage(Object element) {
 		if (element instanceof IFile) {
 			return null;
 		}

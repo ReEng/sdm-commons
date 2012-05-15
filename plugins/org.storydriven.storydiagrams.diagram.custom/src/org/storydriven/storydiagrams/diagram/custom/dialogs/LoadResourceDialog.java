@@ -69,7 +69,7 @@ public class LoadResourceDialog extends AbstractTreeSelectionDialog<IFile> {
 	}
 
 	@Override
-	protected String validate(Object element) {
+	protected String getErrorMessage(Object element) {
 		if (element instanceof IFile) {
 			return null;
 		}

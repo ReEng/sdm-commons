@@ -287,7 +287,7 @@ public class ParameterBindingEditingSupport extends EditingSupport {
 			return stringCellEditor;
 		case UNKNOWN:
 			dialog.setType(((EParameter) element).getEType());
-			dialog.setElement((EObject) bindings.get(element));
+			dialog.setSelectedElement((EObject) bindings.get(element));
 			dialog.setResource(resource);
 			return dialogCellEditor;
 		default:

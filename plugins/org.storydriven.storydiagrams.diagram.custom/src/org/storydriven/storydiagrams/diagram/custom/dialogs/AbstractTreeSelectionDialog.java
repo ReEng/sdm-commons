@@ -2,6 +2,8 @@ package org.storydriven.storydiagrams.diagram.custom.dialogs;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -16,7 +18,6 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMLParserPoolImpl;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.IDialogSettings;
-import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.jface.layout.GridDataFactory;
@@ -55,36 +56,44 @@ public abstract class AbstractTreeSelectionDialog<T extends Object> extends Titl
 	private String title;
 	private String description;
 
-	private Text filterText;
-
-	private TreeViewer elementViewer;
-
 	private T element;
+	private Collection<T> elements;
+	private Collection<T> hidden;
+
+	private Text filterText;
+	private TreeViewer elementViewer;
 
 	private ElementViewerFilter viewerFilter;
 	private LoadResourceDialog loadDialog;
 	private ResourceSet resourceSet;
 
-	private static class ElementViewerFilter extends ViewerFilter {
+	private class ElementViewerFilter extends ViewerFilter {
 		private String filterText;
 
 		@Override
 		public boolean select(Viewer viewer, Object parent, Object element) {
-			if (filterText != null && !filterText.trim().isEmpty()) {
-				ILabelProvider labelProvider = (ILabelProvider) ((TreeViewer) viewer).getLabelProvider();
-				String elementString = labelProvider.getText(element).toLowerCase();
-				String filterString = filterText.toLowerCase();
+			// check if element is on black list
+			if (hidden == null || !hidden.contains(element)) {
+				// check text filter
+				if (showTextFilter() && filterText != null && !filterText.trim().isEmpty()) {
+					ILabelProvider labelProvider = (ILabelProvider) ((TreeViewer) viewer).getLabelProvider();
+					String elementString = labelProvider.getText(element).toLowerCase();
+					String filterString = filterText.toLowerCase();
 
-				return elementString.contains(filterString);
-			} else {
+					return elementString.contains(filterString);
+				}
 				return true;
 			}
+			return false;
 		}
 
 		public void setFilterText(String filterText) {
 			this.filterText = filterText.toLowerCase();
 		}
+	}
 
+	public AbstractTreeSelectionDialog(String title, String description) {
+		this(title, title, description);
 	}
 
 	public AbstractTreeSelectionDialog(String shellText, String title, String description) {
@@ -96,6 +105,22 @@ public abstract class AbstractTreeSelectionDialog<T extends Object> extends Titl
 		setHelpAvailable(false);
 	}
 
+	public void reset() {
+		element = null;
+		elements = null;
+		hidden = null;
+		if (viewerFilter != null) {
+			viewerFilter.setFilterText(""); //$NON-NLS-1$
+		}
+		if (filterText != null && !filterText.isDisposed()) {
+			filterText.setText(""); //$NON-NLS-1$
+		}
+	}
+
+	public void setHiddenElements(Collection<T> hidden) {
+		this.hidden = hidden;
+	}
+
 	public void setResourceSet(ResourceSet resourceSet) {
 		this.resourceSet = resourceSet;
 	}
@@ -104,8 +129,20 @@ public abstract class AbstractTreeSelectionDialog<T extends Object> extends Titl
 		return element;
 	}
 
-	public void setElement(T element) {
+	public Collection<T> getElements() {
+		return elements;
+	}
+
+	public void setSelectedElement(T element) {
 		this.element = element;
+	}
+
+	protected boolean showTextFilter() {
+		return true;
+	}
+
+	protected boolean isMulti() {
+		return true;
 	}
 
 	@Override
@@ -123,18 +160,23 @@ public abstract class AbstractTreeSelectionDialog<T extends Object> extends Titl
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(mainComposite);
 
 		// filter field
-		filterText = new Text(mainComposite, SWT.LEAD | SWT.BORDER | SWT.SINGLE | SWT.SEARCH | SWT.ICON_SEARCH);
-		GridDataFactory.fillDefaults().grab(true, false).applyTo(filterText);
+		if (showTextFilter()) {
+			filterText = new Text(mainComposite, SWT.LEAD | SWT.BORDER | SWT.SINGLE | SWT.SEARCH | SWT.ICON_SEARCH);
+			GridDataFactory.fillDefaults().grab(true, false).applyTo(filterText);
+		}
 
 		// viewer
-		elementViewer = new TreeViewer(mainComposite, SWT.BORDER | SWT.SINGLE);
+		int style = isMulti() ? SWT.MULTI : SWT.SINGLE;
+		elementViewer = new TreeViewer(mainComposite, SWT.BORDER | style);
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(elementViewer.getControl());
 		elementViewer.setContentProvider(getContentProvider());
 		elementViewer.setLabelProvider(getLabelProvider());
 		elementViewer.setComparator(getViewerComparator());
 
-		viewerFilter = new ElementViewerFilter();
-		elementViewer.addFilter(viewerFilter);
+		if (showTextFilter()) {
+			viewerFilter = new ElementViewerFilter();
+			elementViewer.addFilter(viewerFilter);
+		}
 
 		ViewerFilter customFilter = getViewerFilter();
 		if (customFilter != null) {
@@ -232,7 +274,13 @@ public abstract class AbstractTreeSelectionDialog<T extends Object> extends Titl
 		return true;
 	}
 
-	protected abstract String validate(Object element);
+	protected String getErrorMessage(Object element) {
+		return null;
+	}
+
+	protected String getEmptyMessage() {
+		return "You have to select an element!";
+	}
 
 	private void handleLoadButtonClicked() {
 		if (loadDialog == null) {
@@ -240,7 +288,7 @@ public abstract class AbstractTreeSelectionDialog<T extends Object> extends Titl
 		}
 
 		// prepare dialog
-		loadDialog.setElement(null);
+		loadDialog.setSelectedElement(null);
 		loadDialog.setResourceSet(resourceSet);
 
 		if (loadDialog.open() == Window.OK) {
@@ -328,29 +376,37 @@ public abstract class AbstractTreeSelectionDialog<T extends Object> extends Titl
 	@SuppressWarnings("unchecked")
 	private void checkValidity() {
 		element = null;
+		elements = new ArrayList<T>();
 
 		IStructuredSelection selection = (IStructuredSelection) elementViewer.getSelection();
-		if (selection.size() == 1) {
-			String message = validate(selection.getFirstElement());
-			if (message == null) {
-				element = (T) selection.getFirstElement();
-			}
-
-			// check button state
-			Button okButton = getButton(IDialogConstants.OK_ID);
-			if (okButton != null) {
-				okButton.setEnabled(element != null);
-			}
-
-			// show error message
-			int type;
-			if (element == null) {
-				type = IMessageProvider.ERROR;
+		String error = null;
+		for (Object selected : selection.toArray()) {
+			error = getErrorMessage(selected);
+			if (error == null) {
+				elements.add((T) selected);
+				element = (T) selected;
 			} else {
-				message = description;
-				type = IMessageProvider.NONE;
+				break;
 			}
-			setMessage(message, type);
+		}
+
+		// check for at least one element
+		if (error == null && elements.isEmpty()) {
+			error = getEmptyMessage();
+		}
+
+		// check button state
+		Button okButton = getButton(IDialogConstants.OK_ID);
+		if (okButton != null) {
+			okButton.setEnabled(error == null);
+		}
+
+		// show error message
+		if (error != null) {
+			setErrorMessage(error);
+		} else {
+			setErrorMessage(null);
+			setMessage(description);
 		}
 
 	}

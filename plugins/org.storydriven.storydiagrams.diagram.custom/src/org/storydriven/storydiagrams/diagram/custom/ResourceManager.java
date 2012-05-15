@@ -111,7 +111,7 @@ public class ResourceManager {
 		}
 	}
 
-	private void recollect() {
+	public void recollect() {
 		recollectActivities();
 		recollectEcore();
 	}

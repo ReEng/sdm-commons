@@ -24,7 +24,7 @@ public class ActivityPreconditionSection extends AbstractEListComboSection<Match
 	@Override
 	protected void handleSearchButtonClicked() {
 		dialog.setInput(getEditingDomain().getResourceSet());
-		dialog.setElement(getElement().getPrecondition());
+		dialog.setSelectedElement(getElement().getPrecondition());
 		if (dialog.open() == Window.OK) {
 			execute(dialog.getElement());
 		}

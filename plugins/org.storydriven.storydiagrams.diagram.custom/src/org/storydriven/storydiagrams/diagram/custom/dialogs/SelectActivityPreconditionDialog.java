@@ -65,7 +65,7 @@ public class SelectActivityPreconditionDialog extends AbstractTreeSelectionDialo
 	}
 
 	@Override
-	protected String validate(Object element) {
+	protected String getErrorMessage(Object element) {
 		if (element instanceof MatchingStoryNode) {
 			return null;
 		}

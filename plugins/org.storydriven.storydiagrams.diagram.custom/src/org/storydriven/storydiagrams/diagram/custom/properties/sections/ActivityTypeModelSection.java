@@ -1,9 +1,12 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
 import java.util.Collection;
+import java.util.HashSet;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
@@ -27,6 +30,8 @@ import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.KeyAdapter;
+import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.FormAttachment;
@@ -49,11 +54,70 @@ import org.storydriven.storydiagrams.diagram.custom.providers.ResourcesContentPr
 import org.storydriven.storydiagrams.diagram.custom.providers.ResourcesLabelProvider;
 
 public class ActivityTypeModelSection extends AbstractSection {
+	private SelectEPackageFromWorkspaceDialog addWorkspaceDialog;
+
 	private TreeViewer viewer;
 	private Composite resourcesComposite;
 	private Button addNamespaceButton;
 	private Button addWorkspaceButton;
 	private Button removeEPackageButton;
+
+	private SelectEPackageFromRegistryDialog addRegisteredDialog;
+
+	public ActivityTypeModelSection() {
+		addWorkspaceDialog = new SelectEPackageFromWorkspaceDialog();
+		addRegisteredDialog = new SelectEPackageFromRegistryDialog();
+	}
+
+	@Override
+	public void setInput(IWorkbenchPart part, ISelection selection) {
+		super.setInput(part, selection);
+
+		viewer.setInput(getElement());
+	}
+
+	protected ResourceManager getResourceManager() {
+		return ResourceManager.get(getElement());
+	}
+
+	protected boolean isReferenced(EPackage ePackage) {
+		// go down the containment hierarchy
+		TreeIterator<EObject> it = EcoreUtil.getAllContents(getElement(), true);
+		while (it.hasNext()) {
+			// check element
+			EObject element = it.next();
+			if (ResourceManager.isReferencing(element, ePackage)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private void removeSelected() {
+		final IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
+		final Command command = new RecordingCommand(getEditingDomain()) {
+			@Override
+			protected void doExecute() {
+				for (Object element : selection.toArray()) {
+					if (element instanceof EPackage) {
+						EPackage ePackage = (EPackage) element;
+						Activity activity = (Activity) getElement();
+						EAnnotation annotation = activity.getAnnotation(ResourceManager.SOURCE_TYPES);
+						annotation.getReferences().remove(ePackage);
+						annotation.getDetails().remove(ePackage.getNsURI());
+					}
+				}
+			}
+		};
+		execute(command);
+		ResourceManager.get(getElement()).recollect();
+		viewer.refresh();
+	}
+
+	@Override
+	protected Activity getElement() {
+		return (Activity) super.getElement();
+	}
 
 	@Override
 	public boolean shouldUseExtraSpace() {
@@ -63,13 +127,6 @@ public class ActivityTypeModelSection extends AbstractSection {
 	@Override
 	public void refresh() {
 		viewer.refresh();
-	}
-
-	@Override
-	public void setInput(IWorkbenchPart part, ISelection selection) {
-		super.setInput(part, selection);
-
-		viewer.setInput(getElement());
 	}
 
 	@Override
@@ -153,57 +210,83 @@ public class ActivityTypeModelSection extends AbstractSection {
 		addNamespaceButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				SelectEPackageFromRegistryDialog dialog = new SelectEPackageFromRegistryDialog(getShell());
-				dialog.setFilteredEPackages(getResourceManager().getAllEPackages());
-				if (dialog.open() == Window.OK) {
-					final Collection<String> uris = dialog.getUris();
-					if (!uris.isEmpty()) {
+				addRegisteredDialog.reset();
+				addRegisteredDialog.setHiddenElements(getResourceManager().getAllEPackages());
+
+				if (addRegisteredDialog.open() == Window.OK) {
+					final Collection<EPackage> ePackages = addRegisteredDialog.getElements();
+
+					if (ePackages != null && !ePackages.isEmpty()) {
 						final Command command = new RecordingCommand(getEditingDomain()) {
 							@Override
 							protected void doExecute() {
-								for (String uri : uris) {
-									EPackage ePackage = EPackage.Registry.INSTANCE.getEPackage(uri);
-									if (ePackage != null) {
-										Activity activity = (Activity) getElement();
-										EAnnotation annotation = activity.getAnnotation(ResourceManager.SOURCE_TYPES);
-										if (annotation == null) {
-											annotation = EcoreFactory.eINSTANCE.createEAnnotation();
-											annotation.setSource(ResourceManager.SOURCE_TYPES);
-											activity.getAnnotations().add(annotation);
-										}
-										annotation.getDetails().put(uri, String.valueOf(true));
-									}
+								Activity activity = (Activity) getElement();
+								EAnnotation annotation = activity.getAnnotation(ResourceManager.SOURCE_TYPES);
+								if (annotation == null) {
+									annotation = EcoreFactory.eINSTANCE.createEAnnotation();
+									annotation.setSource(ResourceManager.SOURCE_TYPES);
+									activity.getAnnotations().add(annotation);
+								}
+
+								for (EPackage ePackage : ePackages) {
+									annotation.getDetails().put(ePackage.getNsURI(), String.valueOf(true));
 								}
 							}
 						};
 						execute(command);
+						ResourceManager.get(getElement()).recollect();
 						viewer.refresh();
 					}
 				}
 			}
 		});
+
 		addWorkspaceButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				SelectEPackageFromWorkspaceDialog dialog = new SelectEPackageFromWorkspaceDialog(getShell(),
-						getEditingDomain().getResourceSet());
-				if (dialog.open() == Window.OK) {
-					final Collection<EPackage> ePackages = dialog.getEPackages();
-					if (!ePackages.isEmpty()) {
-						final Command command = new RecordingCommand(getEditingDomain()) {
-							@Override
-							protected void doExecute() {
-								for (EPackage ePackage : ePackages) {
-									if (ePackage != null) {
-										Activity activity = (Activity) getElement();
-										EAnnotation annotation = activity.getAnnotation(ResourceManager.SOURCE_TYPES);
-										annotation.getReferences().add(ePackage);
+				addWorkspaceDialog.reset();
+				if (addWorkspaceDialog.open() == Window.OK) {
+					Collection<IFile> files = addWorkspaceDialog.getElements();
+					if (files != null && !files.isEmpty()) {
+						final Collection<EPackage> ePackages = new HashSet<EPackage>();
+
+						for (IFile file : files) {
+							URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+							Resource resource = getEditingDomain().getResourceSet().getResource(uri, true);
+							if (resource != null) {
+								TreeIterator<Object> it = EcoreUtil.getAllContents(resource, true);
+								while (it.hasNext()) {
+									Object object = it.next();
+									if (object instanceof EPackage) {
+										ePackages.add((EPackage) object);
 									}
 								}
 							}
-						};
-						execute(command);
-						viewer.refresh();
+						}
+
+						if (!ePackages.isEmpty()) {
+							final Command command = new RecordingCommand(getEditingDomain()) {
+								@Override
+								protected void doExecute() {
+									for (EPackage ePackage : ePackages) {
+										if (ePackage != null) {
+											Activity activity = getElement();
+											EAnnotation annotation = activity
+													.getAnnotation(ResourceManager.SOURCE_TYPES);
+											if (annotation == null) {
+												annotation = EcoreFactory.eINSTANCE.createEAnnotation();
+												annotation.setSource(ResourceManager.SOURCE_TYPES);
+												activity.getAnnotations().add(annotation);
+											}
+											annotation.getReferences().add(ePackage);
+										}
+									}
+								}
+							};
+							execute(command);
+							ResourceManager.get(getElement()).recollect();
+							viewer.refresh();
+						}
 					}
 				}
 			}
@@ -212,23 +295,7 @@ public class ActivityTypeModelSection extends AbstractSection {
 		removeEPackageButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				final IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
-				final Command command = new RecordingCommand(getEditingDomain()) {
-					@Override
-					protected void doExecute() {
-						for (Object element : selection.toArray()) {
-							if (element instanceof EPackage) {
-								EPackage ePackage = (EPackage) element;
-								Activity activity = (Activity) getElement();
-								EAnnotation annotation = activity.getAnnotation(ResourceManager.SOURCE_TYPES);
-								annotation.getReferences().remove(ePackage);
-								annotation.getDetails().remove(ePackage.getNsURI());
-							}
-						}
-					}
-				};
-				execute(command);
-				viewer.refresh();
+				removeSelected();
 			}
 		});
 
@@ -238,7 +305,12 @@ public class ActivityTypeModelSection extends AbstractSection {
 				IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
 				boolean removeState = true;
 				for (Object element : selection.toArray()) {
-					if (element instanceof EPackage && isReferenced((EPackage) element)) {
+					if (element instanceof EPackage) {
+						if (isReferenced((EPackage) element)) {
+							removeState = false;
+							break;
+						}
+					} else {
 						removeState = false;
 						break;
 					}
@@ -246,23 +318,15 @@ public class ActivityTypeModelSection extends AbstractSection {
 				removeEPackageButton.setEnabled(removeState);
 			}
 		});
-	}
 
-	protected ResourceManager getResourceManager() {
-		return ResourceManager.get((Activity) getElement());
-	}
-
-	protected boolean isReferenced(EPackage ePackage) {
-		// go down the containment hierarchy
-		TreeIterator<EObject> it = EcoreUtil.getAllContents(getElement(), true);
-		while (it.hasNext()) {
-			// check element
-			EObject element = it.next();
-			if (ResourceManager.isReferencing(element, ePackage)) {
-				return true;
+		viewer.getTree().addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.DEL && removeEPackageButton.isEnabled()) {
+					removeSelected();
+				}
 			}
-		}
-		return false;
+		});
 	}
 
 	protected Shell getShell() {

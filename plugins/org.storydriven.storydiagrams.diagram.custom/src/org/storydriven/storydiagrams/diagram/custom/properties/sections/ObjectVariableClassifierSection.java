@@ -23,7 +23,7 @@ public class ObjectVariableClassifierSection extends AbstractEListComboSection<E
 	@Override
 	protected void handleSearchButtonClicked() {
 		dialog.setActivity(ActivityUtil.getActivity(getElement()));
-		dialog.setElement(((ObjectVariable) getElement()).getClassifier());
+		dialog.setSelectedElement(((ObjectVariable) getElement()).getClassifier());
 		if (dialog.open() == Window.OK) {
 			EClass result = dialog.getElement();
 			execute(getFeature(), result);
