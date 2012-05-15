@@ -3,7 +3,6 @@ package org.storydriven.storydiagrams.diagram.custom.providers;
 import org.eclipse.swt.graphics.Image;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
-import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
 import org.storydriven.storydiagrams.diagram.custom.util.TextUtil;
 
 public class CalledActivitiesLabelProvider extends ComposedAdapterFactoryLabelProvider {
@@ -21,9 +20,8 @@ public class CalledActivitiesLabelProvider extends ComposedAdapterFactoryLabelPr
 	public Image getImage(Object element) {
 		if (element instanceof Activity) {
 			if (node != null && element.equals(node.getCallee())) {
-				return DiagramImages.getImage(DiagramImages.ACTIVITY_CALL_NODE);
+				return super.getImage(node);
 			}
-			return DiagramImages.getImage(DiagramImages.ACTIVITY);
 		}
 		return super.getImage(element);
 	}

@@ -14,6 +14,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.console.TextConsoleViewer;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.diagram.interpreter.util.InterpreterConsole;
+import org.storydriven.storydiagrams.diagram.interpreter.util.InterpreterConsole.StreamType;
 import org.storydriven.storydiagrams.diagram.interpreter.util.InterpreterRunnable;
 
 import de.mdelab.sdm.interpreter.core.variables.Variable;
@@ -41,18 +42,34 @@ public class InterpreteWizardPage extends WizardPage {
 
 			getWizard().setResults(null);
 			console.clearConsole();
+			getWizard().setException(null);
+
 			if (getWizard().getResource() != null) {
 				getWizard().getResource().setTrackingModification(true);
 			}
 
+			Throwable throwable = null;
 			try {
 				InterpreterRunnable runnable = new InterpreterRunnable(activity, parameters, console);
 				getContainer().run(true, true, runnable);
 				getWizard().setResults(runnable.getResults());
 			} catch (InvocationTargetException e) {
+				throwable = e.getCause();
+				if (e.getCause() == null) {
+					throwable = e;
+				}
 				e.printStackTrace();
 			} catch (InterruptedException e) {
+				throwable = e.getCause();
+				if (e.getCause() == null) {
+					throwable = e;
+				}
 				e.printStackTrace();
+			}
+			if (throwable != null) {
+				getWizard().setException(throwable);
+				console.wrap();
+				console.append(StreamType.FAILURE, "An exception occurred during the interpretation!");
 			}
 		}
 	}

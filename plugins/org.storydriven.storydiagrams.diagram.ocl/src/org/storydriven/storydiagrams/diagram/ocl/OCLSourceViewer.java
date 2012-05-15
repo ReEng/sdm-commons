@@ -3,6 +3,7 @@ package org.storydriven.storydiagrams.diagram.ocl;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.text.source.IVerticalRuler;
 import org.eclipse.jface.text.source.SourceViewer;
 import org.eclipse.swt.widgets.Composite;
@@ -19,7 +20,8 @@ public class OCLSourceViewer extends SourceViewer {
 
 		setDocument(oclDocument);
 
+		getTextWidget().setFont(JFaceResources.getTextFont());
+
 		configure(new OCLSourceViewerConfiguration(colorManager, oclDocument));
 	}
-
 }

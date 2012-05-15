@@ -46,12 +46,14 @@
                label="Toggle forEach"
                tooltip="This will toggle the for each attribute of the story node.">
          </action>
+         <!--
          <action
                class="deprecated.MatchingStoryNodeToggleModifyingCommand"
                id="org.storydriven.storydiagrams.diagram.custom.MatchingStoryNodeConvertToModifying"
                label="Toggle Modifying/Matching"
                tooltip="This will toggle whether the storynode is matching or modifying">
          </action>
+         -->
       </objectContribution>
       <objectContribution
             adaptable="false"
@@ -212,7 +214,7 @@
 	         locationURI="popup:de.fujaba?after=additions">
 	      <command
              commandId="org.storydriven.storydiagrams.diagram.createDiagram"
-             icon="icons/objects16/ActivitiesDiagramFile.gif"
+             icon="icons/files/sdm_diagram.png"
              id="org.storydriven.storydiagrams.diagram.createDiagram"
              label="%initDiagramActionLabel"
              style="push">

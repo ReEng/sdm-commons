@@ -6,7 +6,6 @@ import org.eclipse.swt.graphics.Image;
 public final class OCLImages {
 	public static final String SIGNAL = "icons/kind/signal.png"; //$NON-NLS-1$
 	public static final String STATE = "icons/kind/state.png"; //$NON-NLS-1$
-	public static final String TYPE = "icons/kind/type.png"; //$NON-NLS-1$
 	public static final String ASSOCIATION_CLASS = "icons/kind/association_class.png"; //$NON-NLS-1$
 	public static final String VARIABLE = "icons/kind/variable.png"; //$NON-NLS-1$
 

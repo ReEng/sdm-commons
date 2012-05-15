@@ -59,10 +59,10 @@ public class OCLKeywordRule extends WordRule {
 			"oper", //$NON-NLS-1$
 	};
 
-	public OCLKeywordRule() {
+	public OCLKeywordRule(ColorManager manager) {
 		super(new OCLKeywordDetector());
 
-		IToken token = new Token(new TextAttribute(null, null, SWT.BOLD));
+		IToken token = new Token(new TextAttribute(manager.getColor(ColorManager.KEYWORD), null, SWT.BOLD));
 
 		for (String word : KEYWORDS) {
 			addWord(word, token);

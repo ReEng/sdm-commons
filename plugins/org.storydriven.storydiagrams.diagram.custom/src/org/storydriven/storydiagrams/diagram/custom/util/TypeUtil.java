@@ -1,4 +1,4 @@
-package org.storydriven.storydiagrams.diagram.interpreter.util;
+package org.storydriven.storydiagrams.diagram.custom.util;
 
 import java.util.ArrayList;
 import java.util.Collection;

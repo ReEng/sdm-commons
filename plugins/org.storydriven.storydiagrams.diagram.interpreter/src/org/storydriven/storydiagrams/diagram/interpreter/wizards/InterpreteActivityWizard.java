@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.wizard.Wizard;
 import org.storydriven.storydiagrams.activities.Activity;
-import org.storydriven.storydiagrams.diagram.interpreter.util.TypeUtil;
+import org.storydriven.storydiagrams.diagram.custom.util.TypeUtil;
 
 import de.mdelab.sdm.interpreter.core.variables.Variable;
 
@@ -29,6 +29,8 @@ public class InterpreteActivityWizard extends Wizard {
 	private Map<String, Variable<EClassifier>> results;
 
 	private boolean saveResource;
+
+	private Throwable throwable;
 
 	public InterpreteActivityWizard(Activity activity) {
 		resourceSet = new ResourceSetImpl();
@@ -69,6 +71,10 @@ public class InterpreteActivityWizard extends Wizard {
 		setHelpAvailable(false);
 		setWindowTitle("Interpret Activity");
 		setNeedsProgressMonitor(true);
+	}
+
+	public Throwable getThrowable() {
+		return throwable;
 	}
 
 	@Override
@@ -127,5 +133,9 @@ public class InterpreteActivityWizard extends Wizard {
 
 	public void setSaveResource(boolean saveResource) {
 		this.saveResource = saveResource;
+	}
+
+	public void setException(Throwable throwable) {
+		this.throwable = throwable;
 	}
 }

@@ -34,38 +34,6 @@ public final class DiagramImages {
 	public static final String EREFERENCE = "icons/elements/ecore/EReference.png"; //$NON-NLS-1$
 	public static final String ESTRING_TO_STRING_MAP_ENTRY = "icons/elements/ecore/EStringToStringMapEntry.png"; //$NON-NLS-1$
 
-	// activities package
-	public static final String ACTIVITY = "icons/elements/activities/Activity.png"; //$NON-NLS-1$
-	public static final String ACTIVITY_CALL_NODE = "icons/elements/activities/ActivityCallNode.png"; //$NON-NLS-1$
-	public static final String ACTIVITY_EDGE = "icons/elements/activities/ActivityEdge.png"; //$NON-NLS-1$
-	public static final String EXCEPTION_VARIABLE = "icons/elements/activities/ExceptionVariable.png"; //$NON-NLS-1$
-	public static final String JUNCTION_NODE = "icons/elements/activities/JunctionNode.png"; //$NON-NLS-1$
-	public static final String JUNCTION_NODE__DECISION = "icons/elements/activities/JunctionNode_decision.png"; //$NON-NLS-1$
-	public static final String JUNCTION_NODE__MERGE = "icons/elements/activities/JunctionNode_merge.png"; //$NON-NLS-1$
-	public static final String MATCHING_STORY_NODE = "icons/elements/activities/MatchingStoryNode.png"; //$NON-NLS-1$
-	public static final String MATCHING_STORY_NODE__LOOP = "icons/elements/activities/MatchingStoryNode_loop.png"; //$NON-NLS-1$
-	public static final String MODIFYING_STORY_NODE = "icons/elements/activities/ModifyingStoryNode.png"; //$NON-NLS-1$
-	public static final String MODIFYING_STORY_NODE__LOOP = "icons/elements/activities/ModifyingStoryNode_loop.png"; //$NON-NLS-1$
-	public static final String OPERATION_EXTENSION = "icons/elements/activities/OperationExtension.png"; //$NON-NLS-1$
-	public static final String START_NODE = "icons/elements/activities/StartNode.png"; //$NON-NLS-1$
-	public static final String STATEMENT_NODE = "icons/elements/activities/StatementNode.png"; //$NON-NLS-1$
-	public static final String STOP_NODE = "icons/elements/activities/StopNode.png"; //$NON-NLS-1$
-	public static final String STOP_NODE__FLOW = "icons/elements/activities/StopNode_flow.png"; //$NON-NLS-1$
-	public static final String STRUCTURED_NODE = "icons/elements/activities/StructuredNode.png"; //$NON-NLS-1$
-
-	// patterns package
-	public static final String ATTRIBUTE_ASSIGNMENT = "icons/elements/patterns/AttributeAssignment.png"; //$NON-NLS-1$
-	public static final String CONSTRAINT = "icons/elements/patterns/Constraint.png"; //$NON-NLS-1$
-	public static final String CONTAINER_VARIABLE = "icons/elements/patterns/ContainerVariable.png"; //$NON-NLS-1$
-	public static final String CONTAINMENT_RELATION = "icons/elements/patterns/ContainmentRelation.png"; //$NON-NLS-1$
-	public static final String LINK_CONSTRAINT = "icons/elements/patterns/LinkConstraint.png"; //$NON-NLS-1$
-	public static final String LINK_VARIABLE = "icons/elements/patterns/LinkVariable.png"; //$NON-NLS-1$
-	public static final String MATCHING_PATTERN = "icons/elements/patterns/MatchingPattern.png"; //$NON-NLS-1$
-	public static final String OBJECT_SET_VARIABLE = "icons/elements/patterns/ObjectSetVariable.png"; //$NON-NLS-1$
-	public static final String OBJECT_VARIABLE = "icons/elements/patterns/ObjectVariable.png"; //$NON-NLS-1$
-	public static final String PATH = "icons/elements/patterns/Path.png"; //$NON-NLS-1$
-	public static final String PRIMITIVE_VARIABLE = "icons/elements/patterns/PrimitiveVariable.png"; //$NON-NLS-1$
-
 	// banners
 	public static final String BANNER_ADD_EPACKAGE_URI = "icons/banners/add_epackage_uri.png"; //$NON-NLS-1$
 	public static final String BANNER_ADD_EPACKAGE_WORKSPACE = "icons/banners/add_epackage_workspace.png"; //$NON-NLS-1$

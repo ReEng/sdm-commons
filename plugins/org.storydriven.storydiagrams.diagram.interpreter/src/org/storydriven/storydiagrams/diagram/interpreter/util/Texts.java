@@ -57,67 +57,6 @@ public class Texts {
 		// hide constructor
 	}
 
-	private static String get(AttributeAssignment element) {
-		return append(new StringBuilder(), element).toString();
-	}
-
-	private static StringBuilder append(StringBuilder builder, AttributeAssignment element) {
-		if (element.getAttribute() == null) {
-			builder.append(element.getAttribute());
-		} else {
-			builder.append(element.getAttribute().getName());
-		}
-		builder.append(' ');
-		builder.append(':');
-		builder.append('=');
-		builder.append(' ');
-		builder.append(element.getValueExpression());
-
-		return builder;
-	}
-
-	private static String get(EOperation element) {
-		return append(new StringBuilder(), element).toString();
-	}
-
-	private static StringBuilder append(StringBuilder builder, EOperation element) {
-		EClass eContainingClass = element.getEContainingClass();
-		if (eContainingClass != null) {
-			append(builder, eContainingClass);
-			builder.append(':');
-			builder.append(':');
-		}
-
-		builder.append(element.getName());
-
-		EClassifier eType = element.getEType();
-		if (eType != null) {
-			builder.append(':');
-			builder.append(' ');
-			builder.append(eType.getName());
-			builder.append(':');
-			builder.append(' ');
-			append(builder, eType);
-		}
-		return builder;
-	}
-
-	private static String get(EReference element) {
-		return append(new StringBuilder(), element).toString();
-	}
-
-	private static StringBuilder append(StringBuilder builder, EReference eReference) {
-		builder.append(eReference.getName());
-		EClassifier eType = eReference.getEType();
-		if (eType != null) {
-			builder.append(' ');
-			builder.append(':');
-			builder.append(' ');
-			append(builder, eType);
-		}
-		return builder;
-	}
-
 	public static String get(Object element) {
 		// general
 		if (element instanceof String) {
@@ -195,6 +134,9 @@ public class Texts {
 		if (element instanceof Constraint) {
 			return get((Constraint) element);
 		}
+		if (element instanceof AttributeAssignment) {
+			return get((AttributeAssignment) element);
+		}
 
 		// expressions
 		if (element instanceof Expression) {
@@ -208,6 +150,12 @@ public class Texts {
 		if (element instanceof EParameter) {
 			return get((EParameter) element);
 		}
+		if (element instanceof EOperation) {
+			return get((EOperation) element);
+		}
+		if (element instanceof EReference) {
+			return get((EReference) element);
+		}
 
 		// other
 		if (element instanceof EObject) {
@@ -215,98 +163,6 @@ public class Texts {
 		}
 
 		return String.valueOf(element);
-	}
-
-	private static String get(Expression element) {
-		if (element instanceof ComparisonExpression) {
-			return get((ComparisonExpression) element);
-		}
-		if (element instanceof AttributeValueExpression) {
-			return get((AttributeValueExpression) element);
-		}
-		if (element instanceof PrimitiveVariableExpression) {
-			return get((PrimitiveVariableExpression) element);
-		}
-		if (element instanceof LiteralExpression) {
-			return get((LiteralExpression) element);
-		}
-		if (element instanceof TextualExpression) {
-			return get((TextualExpression) element);
-		}
-
-		return String.valueOf(element);
-	}
-
-	private static String get(AttributeValueExpression element) {
-		if (element.getAttribute() != null) {
-			return get(element.getAttribute());
-		} else {
-			return String.valueOf(null);
-		}
-	}
-
-	private static String get(EAttribute element) {
-		return append(new StringBuilder(), element).toString();
-	}
-
-	private static StringBuilder append(StringBuilder builder, EAttribute attribute) {
-		builder.append(attribute.getName());
-		EClassifier eType = attribute.getEType();
-		if (eType != null) {
-			builder.append(' ');
-			builder.append(':');
-			builder.append(' ');
-			append(builder, eType);
-		}
-		return builder;
-	}
-
-	private static String get(PrimitiveVariableExpression element) {
-		if (element.getType() != null) {
-			return get(element.getType());
-		} else {
-			return String.valueOf(null);
-		}
-	}
-
-	private static String get(EClassifier element) {
-		return append(new StringBuilder(), element).toString();
-	}
-
-	private static String get(EParameter element) {
-		StringBuilder builder = new StringBuilder();
-
-		builder.append(element.getName());
-		builder.append(' ');
-		builder.append(':');
-		builder.append(' ');
-		append(builder, element.getEType());
-		return builder.toString();
-	}
-
-	private static StringBuilder append(StringBuilder builder, EClassifier element) {
-		if (element != null) {
-			// append name
-			builder.append(element.getName());
-
-			// append type parameters
-			List<ETypeParameter> typeParameters = element.getETypeParameters();
-			if (!typeParameters.isEmpty()) {
-				builder.append('<');
-				for (int index = 0; index < typeParameters.size(); index++) {
-					builder.append(typeParameters.get(index).getName());
-					if (index < typeParameters.size() - 1) {
-						builder.append(',');
-						builder.append(' ');
-					}
-				}
-				builder.append('>');
-			}
-		} else {
-			builder.append(element);
-		}
-
-		return builder;
 	}
 
 	private static String get(Activity activity) {
@@ -509,6 +365,26 @@ public class Texts {
 		return builder;
 	}
 
+	private static String get(Expression element) {
+		if (element instanceof ComparisonExpression) {
+			return get((ComparisonExpression) element);
+		}
+		if (element instanceof AttributeValueExpression) {
+			return get((AttributeValueExpression) element);
+		}
+		if (element instanceof PrimitiveVariableExpression) {
+			return get((PrimitiveVariableExpression) element);
+		}
+		if (element instanceof LiteralExpression) {
+			return get((LiteralExpression) element);
+		}
+		if (element instanceof TextualExpression) {
+			return get((TextualExpression) element);
+		}
+
+		return String.valueOf(element);
+	}
+
 	private static String get(ComparisonExpression element) {
 		StringBuilder text = new StringBuilder();
 
@@ -540,6 +416,139 @@ public class Texts {
 		default:
 			return builder;
 		}
+	}
+
+	private static String get(AttributeAssignment element) {
+		return append(new StringBuilder(), element).toString();
+	}
+
+	private static StringBuilder append(StringBuilder builder, AttributeAssignment element) {
+		if (element.getAttribute() == null) {
+			builder.append(element.getAttribute());
+		} else {
+			builder.append(element.getAttribute().getName());
+		}
+		builder.append(' ');
+		builder.append(':');
+		builder.append('=');
+		builder.append(' ');
+		builder.append(element.getValueExpression());
+
+		return builder;
+	}
+
+	private static String get(AttributeValueExpression element) {
+		if (element.getAttribute() != null) {
+			return get(element.getAttribute());
+		} else {
+			return String.valueOf(null);
+		}
+	}
+
+	private static String get(EAttribute element) {
+		return append(new StringBuilder(), element).toString();
+	}
+
+	private static StringBuilder append(StringBuilder builder, EAttribute attribute) {
+		builder.append(attribute.getName());
+		EClassifier eType = attribute.getEType();
+		if (eType != null) {
+			builder.append(' ');
+			builder.append(':');
+			builder.append(' ');
+			append(builder, eType);
+		}
+		return builder;
+	}
+
+	private static String get(PrimitiveVariableExpression element) {
+		if (element.getType() != null) {
+			return get(element.getType());
+		} else {
+			return String.valueOf(null);
+		}
+	}
+
+	private static String get(EClassifier element) {
+		return append(new StringBuilder(), element).toString();
+	}
+
+	private static String get(EParameter element) {
+		StringBuilder builder = new StringBuilder();
+
+		builder.append(element.getName());
+		builder.append(' ');
+		builder.append(':');
+		builder.append(' ');
+		append(builder, element.getEType());
+		return builder.toString();
+	}
+
+	private static String get(EOperation element) {
+		return append(new StringBuilder(), element).toString();
+	}
+
+	private static StringBuilder append(StringBuilder builder, EOperation element) {
+		EClass eContainingClass = element.getEContainingClass();
+		if (eContainingClass != null) {
+			append(builder, eContainingClass);
+			builder.append(':');
+			builder.append(':');
+		}
+
+		builder.append(element.getName());
+
+		EClassifier eType = element.getEType();
+		if (eType != null) {
+			builder.append(':');
+			builder.append(' ');
+			builder.append(eType.getName());
+			builder.append(':');
+			builder.append(' ');
+			append(builder, eType);
+		}
+		return builder;
+	}
+
+	private static String get(EReference element) {
+		return append(new StringBuilder(), element).toString();
+	}
+
+	private static StringBuilder append(StringBuilder builder, EReference eReference) {
+		builder.append(eReference.getName());
+		EClassifier eType = eReference.getEType();
+		if (eType != null) {
+			builder.append(' ');
+			builder.append(':');
+			builder.append(' ');
+			append(builder, eType);
+		}
+		return builder;
+	}
+
+	private static StringBuilder append(StringBuilder builder, EClassifier element) {
+		if (element != null) {
+			// append name
+			builder.append(element.getName());
+
+			// append type parameters
+			List<ETypeParameter> typeParameters = element.getETypeParameters();
+			if (!typeParameters.isEmpty()) {
+				builder.append('<');
+				for (int index = 0; index < typeParameters.size(); index++) {
+					builder.append(typeParameters.get(index).getName());
+					if (index < typeParameters.size() - 1) {
+						builder.append(',');
+						builder.append(' ');
+					}
+				}
+				builder.append('>');
+			}
+		} else {
+			builder.append(element);
+		}
+
+		return builder;
 	}
 
 	private static String get(LiteralExpression element) {

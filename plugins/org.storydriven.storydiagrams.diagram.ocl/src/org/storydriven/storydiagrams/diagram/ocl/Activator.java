@@ -67,10 +67,9 @@ public class Activator extends AbstractUIPlugin {
 	}
 
 	private void addImages() {
+		addImage(OCLImages.ASSOCIATION_CLASS);
 		addImage(OCLImages.SIGNAL);
 		addImage(OCLImages.STATE);
-		addImage(OCLImages.TYPE);
-		addImage(OCLImages.ASSOCIATION_CLASS);
 		addImage(OCLImages.VARIABLE);
 	}
 

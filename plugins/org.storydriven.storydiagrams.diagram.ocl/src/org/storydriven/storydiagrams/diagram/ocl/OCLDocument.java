@@ -53,16 +53,10 @@ public class OCLDocument extends Document {
 	 * @return
 	 */
 	private EClassifier getOclType(EClassifier classifier, OCL ocl) {
-		// EInt, EIntegerObject
-		if (EcorePackage.eINSTANCE.getEInt().getInstanceTypeName().equals(classifier.getInstanceTypeName())
-				|| EcorePackage.eINSTANCE.getEIntegerObject().getInstanceTypeName()
-						.equals(classifier.getInstanceTypeName())) {
-			return ocl.getEnvironment().getOCLStandardLibrary().getInteger();
-		}
 		// TODO: Add support for other primitive types.
-		else {
-			return classifier;
-		}
+		// @see org.storydriven.storydiagrams.diagram.custom.util.TypeUtil.getType(classifier) for help
+
+		return classifier;
 	}
 
 	public EClassifier getOCLContext() {
@@ -75,10 +69,8 @@ public class OCLDocument extends Document {
 
 	public List<Choice> getOCLChoices(int offset) {
 		if (contextClassifier == null) {
-			setOCLContext(EcorePackage.eINSTANCE.getEObject());
-
+			setOCLContext(EcorePackage.Literals.EOBJECT);
 			List<Choice> l = getOCLChoices(offset);
-
 			setOCLContext(null);
 
 			return l;

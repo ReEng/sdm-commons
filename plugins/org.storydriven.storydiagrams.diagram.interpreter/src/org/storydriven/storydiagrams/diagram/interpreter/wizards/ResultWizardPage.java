@@ -14,6 +14,7 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Text;
 import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
 import org.storydriven.storydiagrams.diagram.interpreter.providers.ResultContentProvider;
 import org.storydriven.storydiagrams.diagram.interpreter.providers.ResultLabelProvider;
@@ -22,9 +23,14 @@ import de.mdelab.sdm.interpreter.core.SDMInterpreterConstants;
 import de.mdelab.sdm.interpreter.core.variables.Variable;
 
 public class ResultWizardPage extends WizardPage {
+	private Composite resultComposite;
+	private Composite exceptionComposite;
 	private Composite resourceChangedComposite;
+
 	private TreeViewer resultViewer;
+	private Text exceptionText;
 	private Button saveResourceButton;
+
 	private ResultLabelProvider labelProvider;
 
 	protected ResultWizardPage() {
@@ -41,20 +47,38 @@ public class ResultWizardPage extends WizardPage {
 		if (visible) {
 			setPageComplete(false);
 
+			resourceChangedComposite.setVisible(false);
+			saveResourceButton.setSelection(false);
+			getWizard().setSaveResource(false);
+
+			resultViewer.setInput(null);
+			resultComposite.setVisible(false);
+
+			exceptionText.setText(""); //$NON-NLS-1$
+			exceptionComposite.setVisible(false);
+
 			Map<String, Variable<EClassifier>> results = getWizard().getResults();
-			Variable<EClassifier> result = results.get(SDMInterpreterConstants.RETURN_VALUE_VAR_NAME);
+			if (results != null) {
+				Variable<EClassifier> result = results.get(SDMInterpreterConstants.RETURN_VALUE_VAR_NAME);
 
-			labelProvider.setResult(result);
-			resultViewer.setInput(result);
+				labelProvider.setResult(result);
+				resultComposite.setVisible(true);
+				resultViewer.setInput(result);
 
-			if (getWizard().getResource() != null) {
-				resourceChangedComposite.setVisible(getWizard().getResource().isModified());
-				getWizard().setSaveResource(true);
-			} else {
-				resourceChangedComposite.setVisible(false);
+				if (getWizard().getResource() != null) {
+					resourceChangedComposite.setVisible(getWizard().getResource().isModified());
+					saveResourceButton.setSelection(true);
+					getWizard().setSaveResource(true);
+				}
+
+				setPageComplete(true);
 			}
 
-			setPageComplete(true);
+			Throwable throwable = getWizard().getThrowable();
+			if (throwable != null) {
+				exceptionComposite.setVisible(true);
+				exceptionText.setText(String.valueOf(throwable));
+			}
 		}
 	}
 
@@ -68,17 +92,33 @@ public class ResultWizardPage extends WizardPage {
 		Composite composite = new Composite(parent, SWT.NONE);
 		GridLayoutFactory.fillDefaults().margins(6, 6).applyTo(composite);
 
-		// results
-		Label resultLabel = new Label(composite, SWT.LEAD | SWT.WRAP);
+		resultComposite = new Composite(composite, SWT.NONE);
+		GridDataFactory.fillDefaults().grab(true, true).applyTo(resultComposite);
+		GridLayoutFactory.fillDefaults().applyTo(resultComposite);
+
+		Label resultLabel = new Label(resultComposite, SWT.LEAD | SWT.WRAP);
 		GridDataFactory.fillDefaults().grab(true, false).applyTo(resultLabel);
 		resultLabel.setText("The following represents the result of the interpretation.");
 
-		resultViewer = new TreeViewer(composite, SWT.BORDER | SWT.SINGLE);
+		resultViewer = new TreeViewer(resultComposite, SWT.BORDER | SWT.SINGLE);
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(resultViewer.getControl());
 		resultViewer.setAutoExpandLevel(AbstractTreeViewer.ALL_LEVELS);
 		labelProvider = new ResultLabelProvider();
 		resultViewer.setLabelProvider(labelProvider);
 		resultViewer.setContentProvider(new ResultContentProvider());
+
+		// exceptions
+		exceptionComposite = new Composite(composite, SWT.NONE);
+		GridDataFactory.fillDefaults().grab(true, true).applyTo(exceptionComposite);
+		GridLayoutFactory.fillDefaults().applyTo(exceptionComposite);
+
+		Label exceptionLabel = new Label(exceptionComposite, SWT.LEAD | SWT.WRAP);
+		GridDataFactory.fillDefaults().grab(true, false).applyTo(exceptionLabel);
+		exceptionLabel.setText("The following exception occurred during the interpretation.");
+
+		exceptionText = new Text(exceptionComposite, SWT.BORDER | SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
+		GridDataFactory.fillDefaults().grab(true, true).applyTo(exceptionText);
+		exceptionText.setEditable(false);
 
 		// resource changed
 		resourceChangedComposite = new Composite(composite, SWT.NONE);

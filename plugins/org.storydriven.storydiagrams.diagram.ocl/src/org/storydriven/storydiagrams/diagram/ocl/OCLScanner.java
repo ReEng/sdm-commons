@@ -22,7 +22,7 @@ public class OCLScanner extends RuleBasedScanner {
 		rules[0] = new SingleLineRule("'", "'", literal); //$NON-NLS-1$ //$NON-NLS-2$
 
 		// Keyword (and pseudo-keyword) rule
-		rules[1] = new OCLKeywordRule();
+		rules[1] = new OCLKeywordRule(manager);
 
 		// Collection and Tuple Literal rules
 		rules[2] = new OCLCollectionTupleRule(manager, false);

@@ -96,38 +96,6 @@ public class Activator extends AbstractUIPlugin {
 		addImage(DiagramImages.EREFERENCE);
 		addImage(DiagramImages.ESTRING_TO_STRING_MAP_ENTRY);
 
-		// activities package
-		addImage(DiagramImages.ACTIVITY);
-		addImage(DiagramImages.ACTIVITY_CALL_NODE);
-		addImage(DiagramImages.ACTIVITY_EDGE);
-		addImage(DiagramImages.EXCEPTION_VARIABLE);
-		addImage(DiagramImages.JUNCTION_NODE);
-		addImage(DiagramImages.JUNCTION_NODE__DECISION);
-		addImage(DiagramImages.JUNCTION_NODE__MERGE);
-		addImage(DiagramImages.MATCHING_STORY_NODE);
-		addImage(DiagramImages.MATCHING_STORY_NODE__LOOP);
-		addImage(DiagramImages.MODIFYING_STORY_NODE);
-		addImage(DiagramImages.MODIFYING_STORY_NODE__LOOP);
-		addImage(DiagramImages.OPERATION_EXTENSION);
-		addImage(DiagramImages.START_NODE);
-		addImage(DiagramImages.STATEMENT_NODE);
-		addImage(DiagramImages.STOP_NODE);
-		addImage(DiagramImages.STOP_NODE__FLOW);
-		addImage(DiagramImages.STRUCTURED_NODE);
-
-		// patterns package
-		addImage(DiagramImages.ATTRIBUTE_ASSIGNMENT);
-		addImage(DiagramImages.CONSTRAINT);
-		addImage(DiagramImages.CONTAINER_VARIABLE);
-		addImage(DiagramImages.CONTAINMENT_RELATION);
-		addImage(DiagramImages.LINK_CONSTRAINT);
-		addImage(DiagramImages.LINK_VARIABLE);
-		addImage(DiagramImages.MATCHING_PATTERN);
-		addImage(DiagramImages.OBJECT_SET_VARIABLE);
-		addImage(DiagramImages.OBJECT_VARIABLE);
-		addImage(DiagramImages.PATH);
-		addImage(DiagramImages.PRIMITIVE_VARIABLE);
-
 		// banners
 		addImage(DiagramImages.BANNER_SELECT_ECLASS);
 		addImage(DiagramImages.BANNER_SELECT_EDATATYPE);

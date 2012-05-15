@@ -12,7 +12,6 @@ import org.eclipse.swt.graphics.Color;
 
 public class OCLIdentifierRule extends WordRule {
 	private static class OCLKeywordDetector implements IWordDetector {
-
 		@Override
 		public boolean isWordPart(char c) {
 			return isWordStart(c) || c == '$' || c >= '0' && c <= '9';
@@ -24,13 +23,11 @@ public class OCLIdentifierRule extends WordRule {
 		}
 	}
 
-	public static OCLIdentifierRule thisRule;
-
 	public OCLIdentifierRule(ColorManager colorManager, OCLDocument oclDocument) {
 		super(new OCLKeywordDetector(), new Token(new TextAttribute(null)));
 
 		Color color = colorManager.getColor(ColorManager.KNOWN_VARIABLE);
-		Token wordToken = new Token(new TextAttribute(color, null, SWT.BOLD));
+		Token wordToken = new Token(new TextAttribute(color, null, SWT.NORMAL));
 
 		for (Variable<EClassifier, EParameter> variable : oclDocument.getOCLContextInformation()) {
 			addWord(variable.getName(), wordToken);

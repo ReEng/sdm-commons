@@ -17,9 +17,9 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Table;
+import org.storydriven.storydiagrams.diagram.custom.util.TypeUtil;
+import org.storydriven.storydiagrams.diagram.custom.util.TypeUtil.Type;
 import org.storydriven.storydiagrams.diagram.interpreter.dialogs.SelectEClassifierBindingDialog;
-import org.storydriven.storydiagrams.diagram.interpreter.util.TypeUtil;
-import org.storydriven.storydiagrams.diagram.interpreter.util.TypeUtil.Type;
 
 public class ParameterBindingEditingSupport extends EditingSupport {
 	private final Map<EParameter, Object> bindings;
@@ -193,7 +193,7 @@ public class ParameterBindingEditingSupport extends EditingSupport {
 		Object newValue;
 		switch (TypeUtil.getType(element)) {
 		case BOOLEAN:
-			newValue = Boolean.valueOf((String) value);
+			newValue = Boolean.valueOf(String.valueOf(value));
 			break;
 		case BYTE:
 			newValue = Byte.valueOf((String) value);

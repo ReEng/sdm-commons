@@ -2,64 +2,93 @@ package org.storydriven.storydiagrams.diagram.custom.util;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.notation.View;
-import org.fujaba.commons.figures.ISpecialCharachterConstants;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.RGB;
 import org.storydriven.storydiagrams.activities.EdgeGuard;
-import org.storydriven.storydiagrams.diagram.custom.SdmDiagramConstants;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.AttributeAssignment;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
+import org.storydriven.storydiagrams.patterns.ContainmentRelation;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 
-
 public class SdmUtility {
+	private static final String EMPTY = ""; //$NON-NLS-1$
+	public static final String STEREOTYPE_PREFIX = "\u00ab"; //$NON-NLS-1$
+	public static final String STEREOTYPE_SUFFIX = "\u00bb"; //$NON-NLS-1$
 
-	public static void adaptColor(IFigure figure, BindingOperator spMod)
-	{
+	private static final RGB RGB_CHECK = new RGB(0, 0, 0);
+	private static final RGB RGB_CREATE = new RGB(0, 192, 0);
+	private static final RGB RGB_DESTROY = new RGB(192, 0, 0);
 
-		switch (spMod)
-		{
-			case CREATE:
-			{
-				figure.setForegroundColor(SdmDiagramConstants.OPERATOR_CREATE_COLOR);
-				break;
-			}
-			case DESTROY:
-			{
-				figure.setForegroundColor(SdmDiagramConstants.OPERATOR_DESTROY_COLOR);
-				break;
-			}
-			case CHECK_ONLY:
-			{
-				figure.setForegroundColor(SdmDiagramConstants.OPERATOR_NONE_COLOR);
-				break;
-			}
-			default:
-			{
-				figure.setForegroundColor(SdmDiagramConstants.OPERATOR_NONE_COLOR);
-				break;
-			}
+	private SdmUtility() {
+		// hide constructor
+	}
+
+	public static Color getColor(AbstractLinkVariable link) {
+		switch (link.getBindingOperator()) {
+		case CHECK_ONLY:
+			return DiagramColorRegistry.getInstance().getColor(RGB_CHECK);
+		case CREATE:
+			return DiagramColorRegistry.getInstance().getColor(RGB_CREATE);
+		case DESTROY:
+			return DiagramColorRegistry.getInstance().getColor(RGB_DESTROY);
+		default:
+			return null;
 		}
 	}
 
-	public static String adaptObjectVariableModifierText(IGraphicalEditPart editPart)
-	{
+	public static String getOperatorText(AbstractLinkVariable link) {
+		switch (link.getBindingOperator()) {
+		case CHECK_ONLY:
+			return EMPTY;
+		case CREATE:
+			if (link instanceof ContainmentRelation) {
+				return STEREOTYPE_PREFIX + "add" + STEREOTYPE_SUFFIX;
+			}
+			return STEREOTYPE_PREFIX + "create" + STEREOTYPE_SUFFIX;
+		case DESTROY:
+			if (link instanceof ContainmentRelation) {
+				return STEREOTYPE_PREFIX + "remove" + STEREOTYPE_SUFFIX;
+			}
+			return STEREOTYPE_PREFIX + "destroy" + STEREOTYPE_SUFFIX;
+		default:
+			return null;
+		}
+	}
+
+	public static void adaptColor(IFigure figure, BindingOperator spMod) {
+		switch (spMod) {
+		case CREATE:
+			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CREATE));
+			break;
+		case DESTROY:
+			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_DESTROY));
+			break;
+		case CHECK_ONLY:
+			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CHECK));
+			break;
+		default:
+			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CHECK));
+			break;
+		}
+	}
+
+	public static String adaptObjectVariableModifierText(IGraphicalEditPart editPart) {
 		ObjectVariable ov = (ObjectVariable) ((View) editPart.getModel()).getElement();
 
-		switch (ov.getBindingOperator())
-		{
-			case CREATE:
-			{
-				return ISpecialCharachterConstants.FRENCH_QUOTE_LEFT + "create" + ISpecialCharachterConstants.FRENCH_QUOTE_RIGHT;
-			}
-			case DESTROY:
-			{
-				return ISpecialCharachterConstants.FRENCH_QUOTE_LEFT + "destroy" + ISpecialCharachterConstants.FRENCH_QUOTE_RIGHT;
-			}
-			default:
-			{
-				return "";
-			}
+		switch (ov.getBindingOperator()) {
+		case CREATE: {
+			return STEREOTYPE_PREFIX + "create" + STEREOTYPE_SUFFIX;
 		}
-
+		case DESTROY: {
+			return STEREOTYPE_PREFIX + "destroy" + STEREOTYPE_SUFFIX;
+		}
+		default: {
+			return "";
+		}
+		}
 	}
 
 	public static EdgeGuard String2Guard(String text) {
@@ -69,5 +98,8 @@ public class SdmUtility {
 	public static String Guard2String(EdgeGuard guard) {
 		return guard.toString().toLowerCase().replaceAll("_", " ");
 	}
-	
+
+	public static Color getColor(AttributeAssignment element) {
+		return DiagramColorRegistry.getInstance().getColor(RGB_CREATE);
+	}
 }
