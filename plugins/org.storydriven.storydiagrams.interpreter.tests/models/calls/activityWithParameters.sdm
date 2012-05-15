@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.0" xmlns:expr="http://www.storydriven.org/core/expressions/0.2.0" comment="activity with parameters" inParameter="//@containedParameters.0" outParameter="//@containedParameters.1">
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.storydriven.org/core/expressions/0.2.0" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.0" comment="activity with parameters" inParameter="//@containedParameters.0" outParameter="//@containedParameters.1">
+  <annotation source="http://www.storydriven.org/storydiagrams/types">
+    <details key="http://www.eclipse.org/emf/2002/Ecore" value="true"/>
+    <references href="../testclassmodels/testClassmodel.ecore#/"/>
+    <references href="../testclassmodels/testMetamodel.ecore#/"/>
+  </annotation>
   <containedParameters name="param">
     <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </containedParameters>
