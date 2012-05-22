@@ -512,6 +512,8 @@ If an OPTIONAL binding semantics is used, the matching will also be successful i
 
 A combination with NEGATIVE binding semantics is also straight-forward. If a link variable is negative and has a \fe{\{first\}} (or \fe{\{last\}}) link position constraint, then the object bound to the target object variable must not be the first (or last) object in the corresponding reference.
 
+\todoch{How is the semantics of link position constraints on negative links as shown in Figure~\ref{fig:linkPositionConstraintNegative}? Two alternatives: 1) The target object is not the first (or last) element in the reference. That means we negate the link position constraint and not the whole link variable. 2) There exists no link pointing to the first (or last) element. That means we negate the whole link which in turn means that there is no element in the reference and the link position constraint has no effect. I prefer 1) even though it slightly changes the semantics of the negative binding semantics (because it is applied to the link constraint rather than the link itself).}
+
 Figure~\ref{fig:linkPositionConstraintNegative} shows an example for a negative link with a link position constraint. The \fe{FormalParameter} which is bound to \fe{param} must not be the first \fe{formalParameter} of the method which is bound to \fe{method}.
 
 
@@ -589,6 +591,7 @@ Link order constraints can also be combined with negative link. However, only on
 If there are multiple link order constraints, like in Fig.~\ref{fig:linkOrderConstraints:linkOrderConstaint3}, the semantics of the negative link is as follows: \emph{b2} must neither be the direct successor of \emph{b1} nor the direct predecessor of \emph{b3}. If one of both conditions is fulfilled, the pattern does not match.
 
 \todoall{This should match the semantics of multiple NACs in a story pattern.}
+\todoch{Again, we need to discuss the semantics here: The proposal by Stephan suggests that in case of a link order constraint originating from or targeting a negative link variable, we negate the link order constraint rather than the link variable. Is that intended and intuitive? Again, we have two options: 1) Negating the link order constraint, i.e., the element is not the direct successor of the other element. That, again, slightly changes the semantics of a negative link. 2) Negating the link variable, i.e., there exists no element which is the direct successor of another element. This would be the same semantics as a non-negated link variable with link position constraint last. I prefer 1) just as Stephan.}
 
 For optionally created and destroyed links, the same applies to link order constraints like to link position constraints. Optionally destroyed link can be used straight-forwardly. An optionally created link is created if it does not exist, so that the specified order is enforced. If the link does exist but the element is not at an appropriate position, it is moved.
 } %--- End of link constraint subsection
