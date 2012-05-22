@@ -73,7 +73,7 @@ variable is unbound or maybe bound (cf.\ Section
 Object variables have binding states, binding operators and binding semantics which are described in Section  \ref{sec:StoryPatterns:binding}.
 
 
-%\ext %--- Comment this line to include primitive variables into the document
+\ext %--- Comment this line to include primitive variables into the document
 {
 \todomcp{Primitive Variables: concrete syntax like
 object variables; binding expressions for initialization, see figure
@@ -399,7 +399,30 @@ Both may only use the attributes of object variables in the same story pattern a
 \subsection{Object Collections [MCP]}
 \label{sec:StoryPatterns:objectsets}
 
-explain objectSetVariables, explain the different types of collections in Figure~\ref{fig:ObjectSetsTypes} (similar to OCL), set size expressions
+Object collections are special cases of object variables.
+They represent an arbitrary number of objects in an instance model of the same
+type to be matched.
+Thus, object collection has the type ob the objects within the collection.
+
+\todomcp{add a concrete example here}
+
+Matched object collections do not have to be disjoint.
+Thus, isomorphism is not enforced for the content of two or more object
+collections.
+
+There are four different types of collections: bags, sets, ordered sets, and
+lists. Their semantics are similar to collection types in OCL:
+
+\begin{description}
+\item[Bags:] The elements in a bag are not ordered and not unique.
+\item[Sets:] Elements in a set are not ordered, but unique.
+\item[Ordered Sets:] Elements in ordered sets are ordered and unique.
+\item[Lists:] Elements in a list are ordered, but not unique.
+\end{description}
+
+Figure~\ref{fig:ObjectSetsTypes} depicts the four collection types in their
+concrete syntax.
+
 
 \begin{figure}[htb]
   \centering
@@ -408,45 +431,43 @@ explain objectSetVariables, explain the different types of collections in Figure
   \label{fig:ObjectSetsTypes}
 \end{figure}
 
-\todomcp{object sets and binding operators/states/semantics}
+\todomcp{explain object sets and binding operators/states/semantics}
 
-\todomcp{If we bind an object set, can we use the bound object in other story pattern? E.g. to insert all elements bound by the object set into a container via a containment link?}
-\tododt{Yes, but I would use another concrete syntax (see Figures~\ref{fig:reuseObjSet1}, \ref{fig:InclusionLinksExample1}).}
+\todomcp{explain set size expressions (do we change the name?)}
 
-\begin{figure}[htb]
-		\centering
-		\includegraphics[scale=.8]{figures/ReuseObjectSet1}
-  	\caption{Reuse Objects in a Set}
-  	\label{fig:reuseObjSet1}
-\end{figure}
+%\todomcp{If we bind an object set, can we use the bound object in other story
+%pattern? E.g. to insert all elements bound by the object set into a container
+%via a containment link?}
+%\tododt{Yes, but I would use another concrete syntax (see
+%Figures~\ref{fig:reuseObjSet1}, \ref{fig:InclusionLinksExample1}).}
+
+%\begin{figure}[htb]
+%		\centering
+%		\includegraphics[scale=.8]{figures/ReuseObjectSet1}
+%  	\caption{Reuse Objects in a Set}
+%  	\label{fig:reuseObjSet1}
+%\end{figure}
 
 \todomcp{An object set contains no ObjectSetSizeExpression and no object is matched into the object set: ObjectSet is interpreted as optional and the matching succeeds.}
 
 \todomcp{All operators for comparison are allowed: <, <=, >, >=, = !=}
 
-
 \begin{figure}[htb]
-	\begin{minipage}{.45\textwidth}
+	%\begin{minipage}{.45\textwidth}
 		\centering
-		\includegraphics[scale=.8]{figures/ObjectSetSize}
+		\includegraphics[scale=.7]{figures/ObjectSetSize}
   	\caption{Object Set Size}
   	\label{fig:objSetSize}
-	\end{minipage}
-  \hfill
-  \begin{minipage}{.45\textwidth}
-  	\centering
-		\includegraphics[scale=.8]{figures/IsomorphismInObjectSets}
-  	\caption{Isomorphism in Object Sets}
-  	\label{fig:isoObjSet}
-	\end{minipage}
+	%\end{minipage}
+  %\hfill
+  %\begin{minipage}{.45\textwidth}
+  %	\centering
+	%	\includegraphics[scale=.8]{figures/IsomorphismInObjectSets}
+  	%\caption{Isomorphism in Object Sets}
+  	%\label{fig:isoObjSet}
+	%\end{minipage}
 \end{figure}
 
-\todomcp{What happens if one pattern contains two object sets that may possibly contain the same objects. Consider the pattern in Figure \ref{fig:isoObjSet}. If c1 and c2 share the same super classes, su1 and su2 contain the same objects. Is this allowed? Isomorphic matching would normally forbid this.}
-
-\tododt{I would allow this which would comply with our isomorphic matching.
-But in this case it is non-deterministic how the objects are matched to the set nodes (assuming the classes are already bound).
-A maybe constraint could allow to match the same objects to both sets.}
-\todojr{We decided to match set nodes without them having to be disjoint, thus, we do not enforce isomorphism for the content of two or more set variables.}
 }%------ End of object set section
 
 
