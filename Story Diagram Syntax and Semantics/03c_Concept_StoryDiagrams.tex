@@ -165,8 +165,42 @@ We distinguish two kinds of story nodes: \emph{modifying story nodes} and \emph{
 A matching story node contains a story pattern that only matches a specified object structure, but does not change it.
 A modifying story node also performs modifications of the matched object structure.
 For static analyses of model transformations described with story diagrams,
-it is helpful to know which tranformations do not modify the instance model.
+it is helpful to know which transformations do not modify the instance model.
 
+\subsection{Stop Nodes} \label{sec:StopNodes}
+
+The application of a story diagram can succeed or fail.
+Usually, when the matchings are successful and the specified transformations can be carried out, the story diagram is considered to be applied successfully.
+When a matching is unsuccessful somewhere or something unforeseen happens and the application has to be aborted, the story diagram's application is considered to have failed.
+This is comparable to a method call either returning a desired result or returning false or null if something goes wrong.
+
+When one story diagram calls another, the calling story diagram's further execution may depend on the called story diagram's application being successful.
+For example, the calling story diagram might need a return value of the called story diagram or it may only continue in a meaningful way if the called transformation has succeeded.
+Therefore, a means to express and communicate the successful or unsuccessful application of a story diagram is required.
+Story diagrams have success and failure stop nodes for this.
+
+In normal UML activities, the final nodes determine where control flow of the activity ends.
+Story diagrams reuse this concept but they annotate the nodes with either \emph{success} or \emph{failure}.
+Figure~\ref{fig:successAndFailureStopNodes} shows and example.
+
+\begin{figure}[htb]
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{figures/SuccessAndFailureStopNodes}
+  \caption{Example of a success and a failure stop node.}
+  \label{fig:successAndFailureStopNodes}
+\end{center}
+\end{figure}
+
+The upper story node in Figure~\ref{fig:successAndFailureStopNodes} specifies that an attribute of a given class object should be matched.
+The failure activity edge leads to a stop node also labelled with \emph{failure}.
+This indicates that the application of the story diagram went wrong.
+
+If an attribute object can be matched however, the control flow continues via the success activity edge to another story node.
+Finally, it reaches a stop node labelled with \emph{success}.
+This indicates that the story diagram's application is considered to be successful.
+
+\todomvd{Write something about the technical side of the propagation?}
+\todoall{Modify metamodel accordingly.}
 
 \subsection{Decision Nodes, Guards, and Loops}
 \label{sec:DecisionNodesEtc}
