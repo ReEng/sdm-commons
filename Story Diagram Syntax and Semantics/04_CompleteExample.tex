@@ -1,7 +1,5 @@
 \chapter{Complete Example} \label{sec:Example}
 
-\todomvd{Extend example to contain advanced concepts presented in v0.2.}
-
 This chapter presents a complete example of a transformation with story diagrams. The setting of the example is explained in Section \ref{sec:Example:Motivation}. The next section then presents several complex story diagrams that specify the desired transformation.
 
 \section{Motivation of the Example}
@@ -54,7 +52,7 @@ The following story node contains only the two bound, mandatory object variables
 If the cast is in the same statement as the call, story node 4a is executed: The \fe{castStmt} and its access to \fe{B} are deleted. If the cast is not in the same statement as the call that means that the cast is executed at some point before the call and the resulting down-cast object is stored in a temporary variable. In this case, this temporary variable can be deleted along with the accesses to it from the call and the cast statements. Instead, a new variable of the interface type (\fe{IB} in the example) is created and then accessed by the call statement. In both cases, activity node 5 is executed next.
 
 Activity node 5 is responsible for adapting all other classes that implement the now changed interface. Thus, the node is a for-each activity node that binds a class which is connected to the \fe{interface} in each iteration. For each of those bindings, the node that is reachable via the \fe{[each time]} edge is executed (see Section \ref{sec:StoryDiagrams}). In this case that is a story diagram call of the story diagram \fe{generateMethodStub} which is explained in the following section. In contrast to the previous call to \fe{copyParameters}, the called story diagram here can either succeed or fail. If the generation of the method stub fails, the application of the calling diagram is also aborted with a failure.
-\todomvd{This is pretty careless. Normally a roleback mechanism would be needed.}
+\todomvd{This is pretty careless. Normally a rollback mechanism would be needed.}
 
 When no new classes implementing the \fe{interface} can be found, i.e.\ method stubs have been generated for all implementing classes, the story diagram terminates at the success stop node.
 
