@@ -534,7 +534,7 @@ Figure~\ref{fig:linkPositionConstraintCreate} shows an example for using a link 
 \label{fig:linkPositionConstraintCreate}
 \end{figure}
 
-If an OPTIONAL binding semantics is used, the matching will also be successful if no object at the specified position can be matched. Since we only restrict the position to the first or last position, this case will only apply if the link contains no objects at all. If the link variable additionally has binding operator \destroy, the object bound to the target object variable will be deleted. If the link variable additionally has binding operator \create, we have an optionally created link. If the link does not yet exist, it is created. The target element is inserted at the specified position in the reference. If the target element already exists in the reference but at a different position, the semantics of the optional create depends on the kind of the reference. If the reference requires elements to be unique in the reference, the target element is moved to the position specified by the optional create link variable. Otherwise, the element is added a second time at the specified position.
+If an OPTIONAL binding semantics is used, the matching will also be successful if no object at the specified position can be matched. Since we only restrict the position to the first or last position, this case will only apply if the link contains no objects at all. If the link variable additionally has binding operator \destroy, the object bound to the target object variable will be deleted. If the link variable additionally has binding operator \create, we have an optionally created link. If the link does not yet exist, it is created. The target element is inserted at the specified position in the reference. If the target element already exists in the reference but at a different position, the semantics of the optional create depends on the kind of the reference. If the reference requires objects to be unique in the reference, the target element is moved to the position specified by the optional create link variable. Otherwise, the element is added a second time at the specified position.
 
 A combination with NEGATIVE binding semantics is also possible. If a link variable is negative and has a \fe{\{first\}} (or \fe{\{last\}}) link position constraint, then the object bound to the target object variable must not be the first (or last) object in the corresponding reference. That means, we negate the link position constraint rather than the whole link variable which causes a slight change of the NEGATIVE binding semantics of link variables.
 
@@ -575,7 +575,7 @@ Figure~\ref{fig:linkOrderConstraintSuccessor} shows an example of a link order c
 \label{fig:linkOrderConstraintSuccessor}
 \end{figure}
 
-\todoch{Discuss binding operators: destroy of source link variable, target link variable or both. create of source link variable, target link variable or both. create and delete for direct successor, only delete for indirect successor}
+Link order constraints can be applied to links that have a binding operator \create or \destroy. In case of \destroy, the matching is carried out as described before. In case of \create, links corresponding to the link variables are created in the instance model. The target objects are then inserted into the reference at the specified positions. If the source link variable (or target link variable) of the link order constraint has a \create binding operator, then the object is inserted directly before (or after) the object bound via the target (or source) link variable. We also apply this semantics if the link order constraint requires the objects only to be indirect successors to avoid non-determinism.
 
 \begin{figure}[htbp]
 \center
@@ -584,42 +584,54 @@ Figure~\ref{fig:linkOrderConstraintSuccessor} shows an example of a link order c
 \label{fig:linkOrderConstraintDirectSuccessorCreateDelete}
 \end{figure}
 
-\todoch{Discuss binding semantics: optional and negative, optional create only for direct successors}
+Figure~\ref{fig:linkOrderConstraintDirectSuccessorCreateDelete} shows an example for using link order constraints with the binding operators \create and \destroy. The story pattern matches two successive \fe{FormalParameters} of \fe{method} and binds them to the object variables \fe{param2} and \fe{param3}. If the matching was successful, the parameter bound to \fe{param3} is deleted and removed for the reference. Then, a new \fe{FormalParameter} is created and inserted directly before \fe{param2}.
 
-\todoch{Discuss combination with link position constraints: no unsatisfiable combinations, e.g., link variable has link position constraint first and is target link variable of a link position constraint}
+If a link variable with binding operator \create is the target link variable (or source link variable) of several \emph{indirect successor} link order constraints, then after target object of the link variable is inserted directly behind (or before) the object with the highest index. If  multiple link constraints are applied to the same link variable with binding operator \create, enforcing the right-hand side of the story pattern may fail if the link constraints are unsatisfiable for the reference.
 
+If both, the source link variable and the target link variable of the link order constraint, carry a binding operator, both need to carry the same binding operator. If one link variable has a binding operator \create and the other one has \destroy, then the reference for inserting the new object has been deleted before the object can be inserted. Since the semantics in undefined in that case, we forbid this case.
 
-Link order constraints can be combined straight-forwardly with \create and \destroy stereotypes. However, the combination with \create is only possible for the \emph{\{next\}} order constraint, not for \emph{\{...\}}. In case of created links, the order in the instance model is enforced accordingly.
+Link order constraints can be used in combination with an optional binding semantics of the source or target link variable. In case the link variable carries no binding operator or binding operator \destroy, the matching process is performed as described before. If no matching for the optional link variables satisfying the link order constraints can be found, the matching does not fail. If the a link variable carries an optional create, the semantics depends on the kind of reference. If the reference does not contain the object bound to the target link variable, it is added according to the link order constraint. If the reference already contains the target object, but at a position which does not satisfy the link order constraint, then there are two possibilities.  If the reference requires objects to be unique in the reference, the target element is moved to a position specified by the link order constraints. Otherwise, the element is added a second time at a position specified by the link order constraints. In both cases, the rules for inserting an object into a reference as described above for non-optional link variables are applied.
 
-\todoall{Do we want to allow this? This would make the choice, where an element is inserted non-deterministic.}
-
-
-It is also possible to have only one of the two related links be destroyed or created. Though, it is not possible to create one link and destroy the other.
-
-Link order constraints may not form circles or unsatisfiable story patterns (e.g., where a link is the successor of another but also has a \emph{\{first\}} link position constraint).
+Link order constraints may also be used in combination with a negative binding semantics of the source or target link variable. If a negative link variable is the target link variable of a \emph{direct successor} (or \emph{indirect successor}) link order constraint, then the target object must not be located directly after (of indirectly after) the object bound to the source link variable. If a negative link variable is the source link variable of a \emph{direct successor} (or \emph{indirect successor}) link order constraint, then the target object must not be located directly before (of indirectly before) the object bound to the target link variable. That means, we negate the link order constraint rather than the whole link variable if the link variable is the source or target link variable of a link order constraint. That causes a slight change in the definition of the negative binding semantics for link variables.
 
 \begin{figure}[htbp]
 \center
 \includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessorNegative}
 \caption{A link order constraint with a negative link.}
-\label{fig:linkOrderConstraints:linkOrderConstaint2}
+\label{fig:linkOrderConstraintDirectSuccessorNegative}
 \end{figure}
 
-Link order constraints can also be combined with negative link. However, only one of both links may be marked as negative. Otherwise, there would be nothing to relate to. For example, in the story pattern in Fig.~\ref{fig:linkOrderConstraints:linkOrderConstaint2}, \emph{b2} may not be the direct successor of \emph{b1}.
+Figure~\ref{fig:linkOrderConstraintDirectSuccessorNegative} shows an example of a negative link variable which is the target link variable of a \emph{direct successor} link order constraint. In the example, two \fe{FormalParameters} of \fe{method} are to be matched. The object bound to \fe{param1} may be an arbitrary \fe{FormalParameter}. The object variable \fe{param2} may be matched to any \fe{FormalParameter} of \fe{method} except for the \fe{FormalParameter} that is directly located behind the object bound to \fe{param1}.
+
+It is possible to use multiple link order constraints on a negative link. Then, all of the specified conditions need to hold. However, for each link order constraint either the source link variable or the target link variable may be negative, but not both.
 
 \begin{figure}[htbp]
 \center
 \includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessorNegative2}
-\caption{Two link order constraints with a negative link.}
-\label{fig:linkOrderConstraints:linkOrderConstaint3}
+\caption{Applying Multiple Link Order Constraints on a Negative Link Variable}
+\label{fig:linkOrderConstraintDirectSuccessorNegative2}
 \end{figure}
 
-If there are multiple link order constraints, like in Fig.~\ref{fig:linkOrderConstraints:linkOrderConstaint3}, the semantics of the negative link is as follows: \emph{b2} must neither be the direct successor of \emph{b1} nor the direct predecessor of \emph{b3}. If one of both conditions is fulfilled, the pattern does not match.
+Figure~\ref{fig:linkOrderConstraintDirectSuccessorNegative2} shows an example of applying multiple link order constraint to a negative link variable. The story pattern matches three \fe{FormalParameters} of \fe{method}. The matching must fulfill the following conditions which are implied by the negative link variable from \fe{method} to \fe{param2} and the two link order constraints: \fe{param2} must not be an indirect successor of \fe{param1} and \fe{param3} must not be the direct successor of \fe{param2}. If only one of the two conditions is not fulfilled, then the story pattern does not match.
 
-\todoall{This should match the semantics of multiple NACs in a story pattern.}
-\todoch{Again, we need to discuss the semantics here: The proposal by Stephan suggests that in case of a link order constraint originating from or targeting a negative link variable, we negate the link order constraint rather than the link variable. Is that intended and intuitive? Again, we have two options: 1) Negating the link order constraint, i.e., the element is not the direct successor of the other element. That, again, slightly changes the semantics of a negative link. 2) Negating the link variable, i.e., there exists no element which is the direct successor of another element. This would be the same semantics as a non-negated link variable with link position constraint last. I prefer 1) just as Stephan.}
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessorNegative3}
+\caption{Invalid Combination of Link Order Constraints and Negative Link Variables.}
+\label{fig:linkOrderConstraintDirectSuccessorNegative3}
+\end{figure}
 
-For optionally created and destroyed links, the same applies to link order constraints like to link position constraints. Optionally destroyed link can be used straight-forwardly. An optionally created link is created if it does not exist, so that the specified order is enforced. If the link does exist but the element is not at an appropriate position, it is moved.
+Figure~\ref{fig:linkOrderConstraintDirectSuccessorNegative3} shows an example of an invalid combination of negative link variables and link order constraints because both, the source and the target link variable of the link order constraint, are negative. 
+
+Link order constraints may not form circles or unsatisfiable story patterns. An example of an unsatisfiable story pattern is given by Figure~\ref{fig:linkConstraintUnsatisfiablePattern}. In this story pattern, the object bound to \fe{param2} must be the first \fe{FormalParameter} of \fe{method}. At the same time, the link order constraint requires the object bound to \fe{param2} to be the direct successor of the object bound to \fe{param1}. Since this is not possible, the pattern is unsatisfiable and will never match.
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkConstraintUnsatisfiablePattern}
+\caption{Link Constraints causing a Story Pattern to be unsatisfiable.}
+\label{fig:linkConstraintUnsatisfiablePattern}
+\end{figure}
+
 } %--- End of link constraint subsection
 
 \subsection{Maybe Links [CH]}
