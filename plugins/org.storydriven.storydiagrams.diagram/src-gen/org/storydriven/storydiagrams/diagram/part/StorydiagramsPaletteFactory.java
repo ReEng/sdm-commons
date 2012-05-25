@@ -298,10 +298,12 @@ public class StorydiagramsPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createConstraint10CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.Constraint10CreationTool_title,
-				Messages.Constraint10CreationTool_desc, null, null) {
-		};
+		NodeToolEntry entry = new NodeToolEntry(Messages.Constraint10CreationTool_title,
+				Messages.Constraint10CreationTool_desc,
+				Collections.singletonList(StorydiagramsElementTypes.Constraint_3013));
 		entry.setId("createConstraint10CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.Constraint_3013));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 

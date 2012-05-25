@@ -35,14 +35,14 @@ public class ActivityItemSemanticEditPolicy extends StorydiagramsBaseItemSemanti
 		if (StorydiagramsElementTypes.ActivityCallNode_2006 == req.getElementType()) {
 			return getGEFWrapper(new ActivityCallNodeCreateCommand(req));
 		}
+		if (StorydiagramsElementTypes.StatementNode_2004 == req.getElementType()) {
+			return getGEFWrapper(new StatementNodeCreateCommand(req));
+		}
 		if (StorydiagramsElementTypes.ModifyingStoryNode_2007 == req.getElementType()) {
 			return getGEFWrapper(new ModifyingStoryNodeCreateCommand(req));
 		}
 		if (StorydiagramsElementTypes.MatchingStoryNode_2008 == req.getElementType()) {
 			return getGEFWrapper(new MatchingStoryNodeCreateCommand(req));
-		}
-		if (StorydiagramsElementTypes.StatementNode_2004 == req.getElementType()) {
-			return getGEFWrapper(new StatementNodeCreateCommand(req));
 		}
 		if (StorydiagramsElementTypes.StructuredNode_2005 == req.getElementType()) {
 			return getGEFWrapper(new StructuredNodeCreateCommand(req));

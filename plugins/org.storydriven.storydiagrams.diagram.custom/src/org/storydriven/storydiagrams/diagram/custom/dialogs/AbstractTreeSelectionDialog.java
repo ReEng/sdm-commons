@@ -310,12 +310,10 @@ public abstract class AbstractTreeSelectionDialog<T extends Object> extends Titl
 						}
 					}
 				};
-				new ProgressMonitorDialog(getShell()).run(true, true, op);
+				new ProgressMonitorDialog(getShell()).run(true, false, op);
 			} catch (InvocationTargetException e) {
-				// TODO: handle exception
 				e.printStackTrace();
 			} catch (InterruptedException e) {
-				// TODO: handle cancelation
 				e.printStackTrace();
 			}
 

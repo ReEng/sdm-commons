@@ -8,7 +8,9 @@
  */
 package org.storydriven.storydiagrams.diagram.custom.util;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -29,6 +31,8 @@ import org.storydriven.storydiagrams.activities.StartNode;
 import org.storydriven.storydiagrams.activities.StatementNode;
 import org.storydriven.storydiagrams.activities.StopNode;
 import org.storydriven.storydiagrams.activities.StructuredNode;
+import org.storydriven.storydiagrams.calls.Callable;
+import org.storydriven.storydiagrams.calls.ParameterBinding;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
 import org.storydriven.storydiagrams.patterns.AttributeAssignment;
 import org.storydriven.storydiagrams.patterns.BindingState;
@@ -40,8 +44,9 @@ import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpressi
 import org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression;
 
 public final class TextUtil {
-	private static final String STEREOTYPE_PREFIX = "«";
-	private static final String STEREOTYPE_SUFFIX = "»";
+	private static final String STEREOTYPE_PREFIX = "«"; //$NON-NLS-1$
+	private static final String STEREOTYPE_SUFFIX = "»"; //$NON-NLS-1$
+	private static final String EMPTY = ""; //$NON-NLS-1$
 
 	private TextUtil() {
 		// hide constructor
@@ -62,15 +67,7 @@ public final class TextUtil {
 		return builder;
 	}
 
-	public static String getText(Activity activity) {
-		return append(new StringBuilder(), activity).toString();
-	}
-
 	public static String getText(MatchingStoryNode element) {
-		if (element == null) {
-			return null;
-		}
-
 		Activity activity = ActivityUtil.getActivity(element);
 
 		StringBuilder builder = new StringBuilder();
@@ -82,6 +79,22 @@ public final class TextUtil {
 		builder.append(element.getName());
 
 		return builder.toString();
+	}
+
+	public static String getText(Callable callable) {
+
+		if (callable == null) {
+			return EMPTY;
+		}
+		if (callable instanceof Activity) {
+			return getText((Activity) callable);
+		}
+
+		return String.valueOf(callable);
+	}
+
+	public static String getText(Activity activity) {
+		return append(new StringBuilder(), activity).toString();
 	}
 
 	private static StringBuilder append(StringBuilder builder, Activity activity) {
@@ -164,6 +177,7 @@ public final class TextUtil {
 					builder.append(' ');
 				}
 			}
+			return builder.toString();
 		}
 		return null;
 	}
@@ -239,63 +253,49 @@ public final class TextUtil {
 		return STEREOTYPE_PREFIX + text + STEREOTYPE_SUFFIX;
 	}
 
-	public static String getText(AbstractVariable element) {
-		StringBuilder text = new StringBuilder();
+	public static String getText(ActivityCallNode node) {
+		// map parameter -> expression
+		Map<EParameter, Expression> map = new LinkedHashMap<EParameter, Expression>();
+		for (ParameterBinding binding : node.getOwnedParameterBindings()) {
+			map.put(binding.getParameter(), binding.getValueExpression());
+		}
 
-		text.append(element.getName());
+		StringBuilder builder = new StringBuilder();
 
-		if (!element.getBindingState().equals(BindingState.BOUND)) {
-			if (element.getBindingState().equals(BindingState.MAYBE_BOUND)) {
-				text.append("?");
-			}
-			text.append(' ');
-			text.append(':');
-			text.append(' ');
-
-			if (element instanceof ObjectVariable) {
-				EClass type = ((ObjectVariable) element).getClassifier();
-				text.append(EcoreTextUtil.getText(type));
-			} else if (element instanceof PrimitiveVariable) {
-				EDataType type = ((PrimitiveVariable) element).getClassifier();
-				if (type == null) {
-					text.append(type);
-				} else {
-					text.append(type.getName());
-				}
+		// out parameters
+		List<EParameter> out = node.getCallee().getOutParameters();
+		for (int i = 0; i < out.size(); i++) {
+			builder.append(getText(map.get(out.get(i))));
+			if (i < out.size() - 1) {
+				builder.append(',');
+				builder.append(' ');
+			} else {
+				builder.append(' ');
+				builder.append(':');
+				builder.append('=');
+				builder.append(' ');
 			}
 		}
 
-		return text.toString();
-	}
-
-	public static String getText(EdgeGuard guard) {
-		switch (guard) {
-		case BOOL:
-			return "[BOOL]";
-		case EACH_TIME:
-			return "[EACH_TIME]";
-		case ELSE:
-			return "[ELSE]";
-		case END:
-			return "[END]";
-		case EXCEPTION:
-			return "[EXCEPTION]";
-		case FAILURE:
-			return "[FAILURE]";
-		case FINALLY:
-			return "[FINALLY]";
-		case SUCCESS:
-			return "[SUCCESS]";
-		default:
-			return null;
+		if (node.getCallee() instanceof Activity) {
+			builder.append(((Activity) node.getCallee()).getName());
 		}
-	}
 
-	public static String getText(LinkVariable link) {
-		if (link.getTargetEnd() != null) {
-			return link.getTargetEnd().getName();
+		builder.append('(');
+
+		// in parameters
+		List<EParameter> in = node.getCallee().getInParameters();
+		for (int i = 0; i < in.size(); i++) {
+			builder.append(getText(map.get(in.get(i))));
+			if (i < in.size() - 1) {
+				builder.append(',');
+				builder.append(' ');
+			}
 		}
-		return String.valueOf(link.getName());
+
+		builder.append(')');
+
+		return builder.toString();
 	}
 
 	public static String getText(Expression expression) {
@@ -373,5 +373,64 @@ public final class TextUtil {
 
 	private static String getText(TextualExpression expression) {
 		return expression.getExpressionText();
+	}
+
+	public static String getText(AbstractVariable element) {
+		StringBuilder text = new StringBuilder();
+
+		text.append(element.getName());
+
+		if (!element.getBindingState().equals(BindingState.BOUND)) {
+			if (element.getBindingState().equals(BindingState.MAYBE_BOUND)) {
+				text.append("?");
+			}
+			text.append(' ');
+			text.append(':');
+			text.append(' ');
+
+			if (element instanceof ObjectVariable) {
+				EClass type = ((ObjectVariable) element).getClassifier();
+				text.append(EcoreTextUtil.getText(type));
+			} else if (element instanceof PrimitiveVariable) {
+				EDataType type = ((PrimitiveVariable) element).getClassifier();
+				if (type == null) {
+					text.append(type);
+				} else {
+					text.append(type.getName());
+				}
+			}
+		}
+
+		return text.toString();
+	}
+
+	public static String getText(EdgeGuard guard) {
+		switch (guard) {
+		case BOOL:
+			return "[BOOL]";
+		case EACH_TIME:
+			return "[EACH_TIME]";
+		case ELSE:
+			return "[ELSE]";
+		case END:
+			return "[END]";
+		case EXCEPTION:
+			return "[EXCEPTION]";
+		case FAILURE:
+			return "[FAILURE]";
+		case FINALLY:
+			return "[FINALLY]";
+		case SUCCESS:
+			return "[SUCCESS]";
+		default:
+			return null;
+		}
+	}
+
+	public static String getText(LinkVariable link) {
+		if (link.getTargetEnd() != null) {
+			return link.getTargetEnd().getName();
+		}
+		return String.valueOf(link.getName());
 	}
 }

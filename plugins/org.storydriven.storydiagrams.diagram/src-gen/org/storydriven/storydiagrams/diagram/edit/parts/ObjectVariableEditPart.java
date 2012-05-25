@@ -396,6 +396,10 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == StorydiagramsElementTypes.Constraint_3013) {
+				return getChildBySemanticHint(StorydiagramsVisualIDRegistry
+						.getType(ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID));
+			}
 			if (type == StorydiagramsElementTypes.AttributeAssignment_3010) {
 				return getChildBySemanticHint(StorydiagramsVisualIDRegistry
 						.getType(ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID));

@@ -10,11 +10,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.gef.AccessibleEditPart;
-import org.eclipse.gef.DragTracker;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.requests.DirectEditRequest;
-import org.eclipse.gef.requests.SelectionRequest;
 import org.eclipse.gef.tools.DirectEditManager;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
@@ -23,12 +21,9 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ListItemComponentEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
-import org.eclipse.gmf.runtime.diagram.ui.tools.DragEditPartsTrackerEx;
 import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
@@ -43,9 +38,7 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
-import org.storydriven.storydiagrams.diagram.edit.policies.StorydiagramsTextNonResizableEditPolicy;
 import org.storydriven.storydiagrams.diagram.edit.policies.StorydiagramsTextSelectionEditPolicy;
-import org.storydriven.storydiagrams.diagram.edit.policies.TextualExpressionItemSemanticEditPolicy;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry;
 import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes;
 import org.storydriven.storydiagrams.diagram.providers.StorydiagramsParserProvider;
@@ -53,12 +46,12 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsParserProvid
 /**
  * @generated
  */
-public class TextualExpressionEditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class StatementNodeExpressionLabelEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3001;
+	public static final int VISUAL_ID = 5021;
 
 	/**
 	 * @generated
@@ -83,18 +76,8 @@ public class TextualExpressionEditPart extends CompartmentEditPart implements IT
 	/**
 	 * @generated
 	 */
-	public TextualExpressionEditPart(View view) {
+	public StatementNodeExpressionLabelEditPart(View view) {
 		super(view);
-	}
-
-	/**
-	 * @generated
-	 */
-	public DragTracker getDragTracker(Request request) {
-		if (request instanceof SelectionRequest && ((SelectionRequest) request).getLastButtonPressed() == 3) {
-			return null;
-		}
-		return new DragEditPartsTrackerEx(this);
 	}
 
 	/**
@@ -102,10 +85,9 @@ public class TextualExpressionEditPart extends CompartmentEditPart implements IT
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new TextualExpressionItemSemanticEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new StorydiagramsTextNonResizableEditPolicy());
-		installEditPolicy(EditPolicy.COMPONENT_ROLE, new ListItemComponentEditPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new StorydiagramsTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ActivityEditPart.NodeLabelDragPolicy());
 	}
 
 	/**
@@ -155,7 +137,7 @@ public class TextualExpressionEditPart extends CompartmentEditPart implements IT
 	/**
 	 * @generated
 	 */
-	public void setLabel(IFigure figure) {
+	public void setLabel(WrappingLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -236,7 +218,7 @@ public class TextualExpressionEditPart extends CompartmentEditPart implements IT
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return getParser() != null;
+		return false;
 	}
 
 	/**
@@ -293,10 +275,10 @@ public class TextualExpressionEditPart extends CompartmentEditPart implements IT
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.TextualExpression_3001,
+							StorydiagramsElementTypes.StatementNode_3005,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
-									.getType(org.storydriven.storydiagrams.diagram.edit.parts.TextualExpressionEditPart.VISUAL_ID));
+									.getType(org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeExpressionLabelEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -488,7 +470,7 @@ public class TextualExpressionEditPart extends CompartmentEditPart implements IT
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return getPrimaryView();
+		return (View) getModel();
 	}
 
 	/**
@@ -546,30 +528,8 @@ public class TextualExpressionEditPart extends CompartmentEditPart implements IT
 	 * @generated
 	 */
 	protected IFigure createFigure() {
-		IFigure label = createFigurePrim();
-		defaultText = getLabelTextHelper(label);
-		return label;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IFigure createFigurePrim() {
-		return new ExpressionFigure();
-	}
-
-	/**
-	 * @generated
-	 */
-	public class ExpressionFigure extends WrappingLabel {
-
-		/**
-		 * @generated
-		 */
-		public ExpressionFigure() {
-			this.setText("piep");
-		}
-
+		// Parent should assign one using setLabel() method
+		return null;
 	}
 
 }

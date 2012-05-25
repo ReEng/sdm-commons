@@ -109,7 +109,7 @@ public abstract class AbstractEListComboSection<E> extends AbstractSection {
 		});
 
 		if (isShowSearchButton()) {
-			searchButton = factory.createButton(parent, "Search", SWT.PUSH);
+			searchButton = factory.createButton(parent, "Find", SWT.PUSH);
 			searchButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_SEARCH));
 			searchButton.addSelectionListener(new SelectionAdapter() {
 				@Override

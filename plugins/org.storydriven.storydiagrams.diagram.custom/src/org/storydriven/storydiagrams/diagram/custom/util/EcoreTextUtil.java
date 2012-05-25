@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
 
@@ -97,6 +98,24 @@ public class EcoreTextUtil {
 			append(builder, eType);
 		}
 		return builder;
+	}
+
+	public static String getText(EParameter element) {
+		if (element == null) {
+			return String.valueOf(element);
+		}
+
+		StringBuilder builder = new StringBuilder();
+
+		builder.append(element.getName());
+
+		builder.append(' ');
+		builder.append(':');
+		builder.append(' ');
+
+		append(builder, element.getEType());
+
+		return builder.toString();
 	}
 
 	public static StringBuilder append(StringBuilder builder, EClassifier eClassifier) {

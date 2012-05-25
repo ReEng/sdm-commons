@@ -21,6 +21,7 @@ import org.storydriven.storydiagrams.diagram.edit.commands.LinkVariableReorientC
 import org.storydriven.storydiagrams.diagram.edit.commands.PathCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.PathReorientCommand;
 import org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ConstraintEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart;
@@ -115,6 +116,12 @@ public class ObjectVariableItemSemanticEditPolicy extends StorydiagramsBaseItemS
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (StorydiagramsVisualIDRegistry.getVisualID(cnode)) {
+					case ConstraintEditPart.VISUAL_ID:
+						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode
+								.getElement(), false))); // directlyOwned: true
+						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
+						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
+						break;
 					}
 				}
 				break;

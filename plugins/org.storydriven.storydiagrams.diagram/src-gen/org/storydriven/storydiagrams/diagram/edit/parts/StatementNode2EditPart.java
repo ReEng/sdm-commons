@@ -4,13 +4,11 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -21,12 +19,9 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -72,7 +67,6 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StatementNode2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
@@ -124,14 +118,12 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof StatementNodeName2EditPart) {
-			((StatementNodeName2EditPart) childEditPart).setLabel(getPrimaryShape()
-					.getFigureStatementNodeFigureNameLabel());
+			((StatementNodeName2EditPart) childEditPart).setLabel(getPrimaryShape().getStatementNodeNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof StatementNodeStatementNodeCompartment2EditPart) {
-			IFigure pane = getPrimaryShape().getFigureStatementNodeFigureRectangleBody();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((StatementNodeStatementNodeCompartment2EditPart) childEditPart).getFigure());
+		if (childEditPart instanceof StatementNodeExpressionLabelEditPart) {
+			((StatementNodeExpressionLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getStatementNodeExpressionLabel());
 			return true;
 		}
 		return false;
@@ -144,10 +136,7 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof StatementNodeName2EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof StatementNodeStatementNodeCompartment2EditPart) {
-			IFigure pane = getPrimaryShape().getFigureStatementNodeFigureRectangleBody();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((StatementNodeStatementNodeCompartment2EditPart) childEditPart).getFigure());
+		if (childEditPart instanceof StatementNodeExpressionLabelEditPart) {
 			return true;
 		}
 		return false;
@@ -177,9 +166,6 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof StatementNodeStatementNodeCompartment2EditPart) {
-			return getPrimaryShape().getFigureStatementNodeFigureRectangleBody();
-		}
 		return getContentPane();
 	}
 
@@ -293,13 +279,13 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
+		if (targetEditPart instanceof StatementNodeEditPart) {
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+		}
 		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StatementNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof StructuredNodeEditPart) {
@@ -342,9 +328,9 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
 			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
+			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
-			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.StructuredNode_2005);
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
@@ -375,9 +361,9 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
 			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
+			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
-			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.StructuredNode_2005);
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
@@ -395,41 +381,28 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public EditPart getTargetEditPart(Request request) {
-		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
-					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == StorydiagramsElementTypes.TextualExpression_3001) {
-				return getChildBySemanticHint(StorydiagramsVisualIDRegistry
-						.getType(StatementNodeStatementNodeCompartment2EditPart.VISUAL_ID));
-			}
-		}
-		return super.getTargetEditPart(request);
-	}
-
-	/**
-	 * @generated
-	 */
-	public class StatementNodeFigure extends RectangleFigure {
+	public class StatementNodeFigure extends RoundedRectangle {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureStatementNodeFigureNameLabel;
+		private WrappingLabel fStatementNodeNameLabel;
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureStatementNodeFigureRectangleBody;
+		private WrappingLabel fStatementNodeExpressionLabel;
 
 		/**
 		 * @generated
 		 */
 		public StatementNodeFigure() {
 
-			BorderLayout layoutThis = new BorderLayout();
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
 			this.setLayoutManager(layoutThis);
 
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
 			this.setForegroundColor(ColorConstants.black);
 			this.setBackgroundColor(THIS_BACK);
 			createContents();
@@ -440,64 +413,50 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure statementNodeFigureRectangleTitle0 = new RectangleFigure();
-			statementNodeFigureRectangleTitle0.setPreferredSize(new Dimension(getMapMode().DPtoLP(100), getMapMode()
-					.DPtoLP(30)));
+			fStatementNodeNameLabel = new WrappingLabel();
+			fStatementNodeNameLabel.setText("");
 
-			this.add(statementNodeFigureRectangleTitle0, BorderLayout.TOP);
+			fStatementNodeNameLabel.setFont(FSTATEMENTNODENAMELABEL_FONT);
 
-			GridLayout layoutStatementNodeFigureRectangleTitle0 = new GridLayout();
-			layoutStatementNodeFigureRectangleTitle0.numColumns = 1;
-			layoutStatementNodeFigureRectangleTitle0.makeColumnsEqualWidth = true;
-			statementNodeFigureRectangleTitle0.setLayoutManager(layoutStatementNodeFigureRectangleTitle0);
+			GridData constraintFStatementNodeNameLabel = new GridData();
+			constraintFStatementNodeNameLabel.verticalAlignment = GridData.CENTER;
+			constraintFStatementNodeNameLabel.horizontalAlignment = GridData.CENTER;
+			constraintFStatementNodeNameLabel.horizontalIndent = 0;
+			constraintFStatementNodeNameLabel.horizontalSpan = 1;
+			constraintFStatementNodeNameLabel.verticalSpan = 1;
+			constraintFStatementNodeNameLabel.grabExcessHorizontalSpace = true;
+			constraintFStatementNodeNameLabel.grabExcessVerticalSpace = false;
+			this.add(fStatementNodeNameLabel, constraintFStatementNodeNameLabel);
 
-			fFigureStatementNodeFigureNameLabel = new WrappingLabel();
-			fFigureStatementNodeFigureNameLabel.setText("");
+			fStatementNodeExpressionLabel = new WrappingLabel();
+			fStatementNodeExpressionLabel.setText("");
 
-			fFigureStatementNodeFigureNameLabel.setFont(FFIGURESTATEMENTNODEFIGURENAMELABEL_FONT);
+			fStatementNodeExpressionLabel.setFont(FSTATEMENTNODEEXPRESSIONLABEL_FONT);
 
-			GridData constraintFFigureStatementNodeFigureNameLabel = new GridData();
-			constraintFFigureStatementNodeFigureNameLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureStatementNodeFigureNameLabel.horizontalAlignment = GridData.CENTER;
-			constraintFFigureStatementNodeFigureNameLabel.horizontalIndent = 0;
-			constraintFFigureStatementNodeFigureNameLabel.horizontalSpan = 1;
-			constraintFFigureStatementNodeFigureNameLabel.verticalSpan = 1;
-			constraintFFigureStatementNodeFigureNameLabel.grabExcessHorizontalSpace = true;
-			constraintFFigureStatementNodeFigureNameLabel.grabExcessVerticalSpace = false;
-			statementNodeFigureRectangleTitle0.add(fFigureStatementNodeFigureNameLabel,
-					constraintFFigureStatementNodeFigureNameLabel);
-
-			fFigureStatementNodeFigureRectangleBody = new RectangleFigure();
-			fFigureStatementNodeFigureRectangleBody.setPreferredSize(new Dimension(getMapMode().DPtoLP(100),
-					getMapMode().DPtoLP(40)));
-
-			this.add(fFigureStatementNodeFigureRectangleBody, BorderLayout.CENTER);
-
-			FlowLayout layoutFFigureStatementNodeFigureRectangleBody = new FlowLayout();
-			layoutFFigureStatementNodeFigureRectangleBody.setStretchMinorAxis(false);
-			layoutFFigureStatementNodeFigureRectangleBody.setMinorAlignment(FlowLayout.ALIGN_CENTER);
-
-			layoutFFigureStatementNodeFigureRectangleBody.setMajorAlignment(FlowLayout.ALIGN_CENTER);
-			layoutFFigureStatementNodeFigureRectangleBody.setMajorSpacing(0);
-			layoutFFigureStatementNodeFigureRectangleBody.setMinorSpacing(0);
-			layoutFFigureStatementNodeFigureRectangleBody.setHorizontal(true);
-
-			fFigureStatementNodeFigureRectangleBody.setLayoutManager(layoutFFigureStatementNodeFigureRectangleBody);
+			GridData constraintFStatementNodeExpressionLabel = new GridData();
+			constraintFStatementNodeExpressionLabel.verticalAlignment = GridData.CENTER;
+			constraintFStatementNodeExpressionLabel.horizontalAlignment = GridData.CENTER;
+			constraintFStatementNodeExpressionLabel.horizontalIndent = 0;
+			constraintFStatementNodeExpressionLabel.horizontalSpan = 1;
+			constraintFStatementNodeExpressionLabel.verticalSpan = 1;
+			constraintFStatementNodeExpressionLabel.grabExcessHorizontalSpace = true;
+			constraintFStatementNodeExpressionLabel.grabExcessVerticalSpace = false;
+			this.add(fStatementNodeExpressionLabel, constraintFStatementNodeExpressionLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureStatementNodeFigureNameLabel() {
-			return fFigureStatementNodeFigureNameLabel;
+		public WrappingLabel getStatementNodeNameLabel() {
+			return fStatementNodeNameLabel;
 		}
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureStatementNodeFigureRectangleBody() {
-			return fFigureStatementNodeFigureRectangleBody;
+		public WrappingLabel getStatementNodeExpressionLabel() {
+			return fStatementNodeExpressionLabel;
 		}
 
 	}
@@ -505,12 +464,18 @@ public class StatementNode2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Color THIS_BACK = new Color(null, 230, 230, 230);
+	static final Color THIS_BACK = new Color(null, 237, 216, 206);
 
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURESTATEMENTNODEFIGURENAMELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
+	static final Font FSTATEMENTNODENAMELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
 			.getSystemFont().getFontData()[0].getName(), 10, SWT.BOLD);
+
+	/**
+	 * @generated
+	 */
+	static final Font FSTATEMENTNODEEXPRESSIONLABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
+			.getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 }

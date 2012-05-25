@@ -41,243 +41,89 @@
           y="-1"/>
     </figures>
     <descriptors
-        name="StartNodeFigure">
+        name="ActivityCallNodeFigure">
       <actualFigure
-          xsi:type="gmfgraph:Ellipse"
-          name="StartNodeEllipse">
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="ActivityCallNodeRectangle">
+        <layout
+            xsi:type="gmfgraph:GridLayout"/>
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="black"/>
         <backgroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="black"/>
-        <maximumSize
-            dx="15"
-            dy="15"/>
-        <minimumSize
-            dx="15"
-            dy="15"/>
-        <preferredSize
-            dx="15"
-            dy="15"/>
-      </actualFigure>
-    </descriptors>
-    <descriptors
-        name="JunctionNodeFigure">
-      <actualFigure
-          xsi:type="gmfgraph:ScalablePolygon">
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="black"/>
-        <maximumSize
-            dx="40"
-            dy="40"/>
-        <minimumSize
-            dx="40"
-            dy="40"/>
-        <preferredSize
-            dx="40"
-            dy="40"/>
-        <template
-            x="20"/>
-        <template
-            x="40"
-            y="20"/>
-        <template
-            x="20"
-            y="40"/>
-        <template
-            y="20"/>
-      </actualFigure>
-    </descriptors>
-    <descriptors
-        name="StopNodeFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Ellipse"
-          name="StopNodeOuterEllipse">
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="black"/>
-        <maximumSize
-            dx="23"
-            dy="23"/>
-        <minimumSize
-            dx="23"
-            dy="23"/>
-        <preferredSize
-            dx="23"
-            dy="23"/>
-      </actualFigure>
-    </descriptors>
-    <descriptors
-        name="ActivityEdgeFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="ActivityEdgeFigure"
-          targetDecoration="//@figures.0/@figures.0">
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="black"/>
-        <backgroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="black"/>
+            xsi:type="gmfgraph:RGBColor"
+            red="206"
+            green="226"
+            blue="237"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="ActivityEdgeGuardFigure"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
-        name="ActivityCallEdgeFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="ActivityCallEdgeFigure"
-          targetDecoration="//@figures.0/@figures.0">
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"/>
-        <backgroundColor
-            xsi:type="gmfgraph:RGBColor"/>
+            name="ActivityCallNodeNameLabel">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+          <font
+              xsi:type="gmfgraph:BasicFont"
+              height="10"
+              style="BOLD"/>
+        </children>
         <children
             xsi:type="gmfgraph:Label"
-            name="ActivityCallEdgeGuardFigure"/>
+            name="ActivityCallNodeCalleeLabel">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+          <font
+              xsi:type="gmfgraph:BasicFont"/>
+        </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+          accessor="getActivityCallNodeNameLabel"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getActivityCallNodeCalleeLabel"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="StatementNodeFigure">
       <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="StatementNodeFigureRectangle">
+          xsi:type="gmfgraph:RoundedRectangle">
         <layout
-            xsi:type="gmfgraph:BorderLayout"/>
+            xsi:type="gmfgraph:GridLayout"/>
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="black"/>
         <backgroundColor
             xsi:type="gmfgraph:RGBColor"
-            red="230"
-            green="230"
-            blue="230"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="StatementNodeFigureRectangleTitle">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              alignment="BEGINNING"
-              vertical="true"/>
-          <layout
-              xsi:type="gmfgraph:GridLayout"/>
-          <preferredSize
-              dx="100"
-              dy="30"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="StatementNodeFigureNameLabel">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"/>
-            <font
-                xsi:type="gmfgraph:BasicFont"
-                height="10"
-                style="BOLD"/>
-          </children>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="StatementNodeFigureRectangleBody">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              vertical="true"/>
-          <layout
-              xsi:type="gmfgraph:FlowLayout"
-              majorAlignment="FILL"
-              minorAlignment="FILL"
-              majorSpacing="0"
-              minorSpacing="0"/>
-          <preferredSize
-              dx="100"
-              dy="40"/>
-        </children>
-      </actualFigure>
-      <accessors
-          accessor="getFigureStatementNodeFigureNameLabel"
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.0"/>
-      <accessors
-          accessor="getFigureStatementNodeFigureRectangleBody"
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
-    </descriptors>
-    <descriptors
-        name="ActivityCallNodeFigureNEW">
-      <actualFigure
-          xsi:type="gmfgraph:RoundedRectangle"
-          name="ActivityCallNodeNew">
-        <backgroundColor
-            xsi:type="gmfgraph:RGBColor"
-            red="230"
-            green="230"
-            blue="230"/>
+            red="237"
+            green="216"
+            blue="206"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="ActivityCallNodeNewName"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
-        name="CalledActivityNodeFigureNEW">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="CalledActivityNode">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="CalledActivityNameLabel"
-            text="Hallo"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
-        name="StructuredNodeFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="StructuredNodeFigure"
-          lineWidth="3"
-          lineKind="LINE_DASH">
-        <preferredSize
-            dx="110"
-            dy="150"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="StructuredNodeNameRectangle"
-            fill="false"
-            lineWidth="0">
-          <layout
-              xsi:type="gmfgraph:GridLayout"/>
-          <maximumSize
-              dx="100"
-              dy="30"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="StructuredNodeNameFigure">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"/>
-            <font
-                xsi:type="gmfgraph:BasicFont"/>
-          </children>
+            name="StatementNodeNameLabel">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+          <font
+              xsi:type="gmfgraph:BasicFont"
+              height="10"
+              style="BOLD"/>
         </children>
         <children
-            xsi:type="gmfgraph:Rectangle"
-            name="StructuredNodeCompartmentRectangle"
-            fill="false"
-            lineWidth="0"/>
+            xsi:type="gmfgraph:Label"
+            name="StatementNodeExpressionLabel">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+          <font
+              xsi:type="gmfgraph:BasicFont"/>
+        </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.0"/>
+          accessor="getStatementNodeNameLabel"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
+          accessor="getStatementNodeExpressionLabel"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="StoryNodeFigure">
@@ -414,13 +260,183 @@
       </actualFigure>
       <accessors
           accessor="getFigureStoryNodeNameLabel"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.1/@children.0/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.0/@children.0/@children.0"/>
       <accessors
           accessor="getFigureStoryNodeConstraintsRectangle"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.1/@children.0/@children.1/@children.0"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.0/@children.1/@children.0"/>
       <accessors
           accessor="getFigureStoryNodeContentRectangle"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.1/@children.0/@children.1/@children.1"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.0/@children.1/@children.1"/>
+    </descriptors>
+    <descriptors
+        name="StructuredNodeFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="StructuredNodeFigure"
+          lineWidth="3"
+          lineKind="LINE_DASH">
+        <preferredSize
+            dx="110"
+            dy="150"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="StructuredNodeNameRectangle"
+            fill="false"
+            lineWidth="0">
+          <layout
+              xsi:type="gmfgraph:GridLayout"/>
+          <maximumSize
+              dx="100"
+              dy="30"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="StructuredNodeNameFigure">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"/>
+            <font
+                xsi:type="gmfgraph:BasicFont"/>
+          </children>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="StructuredNodeCompartmentRectangle"
+            fill="false"
+            lineWidth="0"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors
+        name="ActivityEdgeFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="ActivityEdgeFigure"
+          targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ActivityEdgeGuardFigure"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="StartNodeFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="StartNodeFigureContainerRectangle"
+          outline="false"
+          fill="false">
+        <layout
+            xsi:type="gmfgraph:GridLayout"
+            equalWidth="false"/>
+        <children
+            xsi:type="gmfgraph:Ellipse"
+            name="StartNodeEllipse">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"/>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <maximumSize
+              dx="15"
+              dy="15"/>
+          <minimumSize
+              dx="15"
+              dy="15"/>
+          <preferredSize
+              dx="15"
+              dy="15"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="StartNodeSignatureLabel">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+        </children>
+      </actualFigure>
+      <accessors
+          accessor="getStartNodeSignatureLabel"
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors
+        name="JunctionNodeFigure">
+      <actualFigure
+          xsi:type="gmfgraph:ScalablePolygon">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <maximumSize
+            dx="40"
+            dy="40"/>
+        <minimumSize
+            dx="40"
+            dy="40"/>
+        <preferredSize
+            dx="40"
+            dy="40"/>
+        <template
+            x="20"/>
+        <template
+            x="40"
+            y="20"/>
+        <template
+            x="20"
+            y="40"/>
+        <template
+            y="20"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="StopNodeFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="StopNodeFigureContainerRectangle"
+          outline="false">
+        <layout
+            xsi:type="gmfgraph:GridLayout"
+            equalWidth="false"/>
+        <children
+            xsi:type="gmfgraph:Ellipse"
+            name="StopNodeOuterEllipse">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"/>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <maximumSize
+              dx="23"
+              dy="23"/>
+          <minimumSize
+              dx="23"
+              dy="23"/>
+          <preferredSize
+              dx="23"
+              dy="23"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="StopNodeSignatureLabel">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+        </children>
+      </actualFigure>
+      <accessors
+          accessor="getStopNodeSignatureLabel"
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="StoryPatternFigure">
@@ -449,7 +465,24 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="ActivityCallEdgeFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="ActivityCallEdgeFigure"
+          targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
+        <backgroundColor
+            xsi:type="gmfgraph:RGBColor"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ActivityCallEdgeGuardFigure"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="DebugFigure">
@@ -716,15 +749,15 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0/@children.0/@children.0/@children.1"/>
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0/@children.0/@children.0/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0/@children.0/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0/@children.0/@children.0/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0/@children.0/@children.0/@children.2"/>
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0/@children.0/@children.0/@children.2"/>
       <accessors
-          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0/@children.0/@children.1/@children.0"/>
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0/@children.0/@children.1/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0/@children.0/@children.1/@children.1"/>
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0/@children.0/@children.1/@children.1"/>
     </descriptors>
     <descriptors
         name="PrimitiveVariableFigure">
@@ -810,18 +843,17 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.13/@actualFigure/@children.0/@children.0/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0/@children.0/@children.0/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.13/@actualFigure/@children.0/@children.0/@children.0/@children.1"/>
+          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0/@children.0/@children.0/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.13/@actualFigure/@children.0/@children.0/@children.1/@children.0"/>
+          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0/@children.0/@children.1/@children.0"/>
     </descriptors>
     <descriptors
         name="ExpressionFigure">
       <actualFigure
           xsi:type="gmfgraph:Label"
-          name="ExpressionFigureLabel"
-          text="piep"/>
+          name="ExpressionFigureLabel"/>
     </descriptors>
     <descriptors
         name="LinkVariableFigure">
@@ -846,13 +878,13 @@
       </actualFigure>
       <accessors
           accessor="getFigureLinkVariableSourceEndFigure"
-          figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
       <accessors
           accessor="getFigureLinkVariableOperatorFigure"
-          figure="//@figures.0/@descriptors.15/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.14/@actualFigure/@children.1"/>
       <accessors
           accessor="getFigureLinkVariableTargetEndFigure"
-          figure="//@figures.0/@descriptors.15/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.14/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors
         name="PathFigure">
@@ -872,7 +904,7 @@
       </actualFigure>
       <accessors
           accessor="getFigurePathDescription"
-          figure="//@figures.0/@descriptors.16/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="ContainmentRelationFigure">
@@ -891,43 +923,56 @@
       </actualFigure>
       <accessors
           accessor="getFigureContainmentRelationOperatorFigure"
-          figure="//@figures.0/@descriptors.17/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.16/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="TTEEMMPP">
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          name="StartNodeEllipse">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <maximumSize
+            dx="15"
+            dy="15"/>
+        <minimumSize
+            dx="15"
+            dy="15"/>
+        <preferredSize
+            dx="15"
+            dy="15"/>
+      </actualFigure>
     </descriptors>
   </figures>
   <nodes
-      name="StartNode"
+      name="ActivityCallNodeNode"
+      figure="ActivityCallNodeFigure"/>
+  <nodes
+      name="ModifyingStoryNodeNode"
+      figure="StoryNodeFigure"/>
+  <nodes
+      name="MatchingStoryNodeNode"
+      figure="StoryNodeFigure"/>
+  <nodes
+      name="StatementNodeNode"
+      figure="StatementNodeFigure"/>
+  <nodes
+      name="StructuredNodeNode"
+      figure="StructuredNodeFigure"/>
+  <nodes
+      name="StartNodeNode"
       figure="StartNodeFigure"
       resizeConstraint="NONE"/>
   <nodes
-      name="ExpressionNode"
-      figure="ExpressionFigure"/>
-  <nodes
-      name="DebugNode"
-      figure="DebugFigure"/>
-  <nodes
-      name="StopNode"
-      figure="StopNodeFigure"/>
-  <nodes
-      name="JunctionNode"
+      name="JunctionNodeNode"
       figure="JunctionNodeFigure"/>
   <nodes
-      name="StructuredNode"
-      figure="StructuredNodeFigure"/>
-  <nodes
-      name="StatementNode"
-      figure="StatementNodeFigure"/>
-  <nodes
-      name="ActivityCallNodeNEW"
-      figure="ActivityCallNodeFigureNEW"/>
-  <nodes
-      name="CalledActivityNode"
-      figure="CalledActivityNodeFigureNEW"/>
-  <nodes
-      name="MatchingStoryNode"
-      figure="StoryNodeFigure"/>
-  <nodes
-      name="ModifyingStoryNode"
-      figure="StoryNodeFigure"/>
+      name="StopNodeNode"
+      figure="StopNodeFigure"/>
   <nodes
       name="StoryPatternNode"
       figure="StoryPatternFigure"/>
@@ -935,8 +980,14 @@
       name="ObjectVariableNode"
       figure="ObjectVariableFigure"/>
   <nodes
+      name="ObjectSetVariableNode"
+      figure="ObjectVariableFigure"/>
+  <nodes
       name="PrimitiveVariableNode"
       figure="PrimitiveVariableFigure"/>
+  <nodes
+      name="ContainerVariableNode"
+      figure="ObjectVariableFigure"/>
   <connections
       name="ActivityEdgeConnection"
       figure="ActivityEdgeFigure"/>
@@ -950,114 +1001,125 @@
       name="ContainmentRelationConnection"
       figure="ContainmentRelationFigure"/>
   <compartments
+      name="StatementNodeCompartment"
+      figure="StatementNodeFigure"
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <compartments
       name="StoryPatternCompartement"
       figure="StoryPatternFigure"
-      accessor="//@figures.0/@descriptors.10/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <compartments
       name="MatchingStoryNodeConstraintsCompartment"
       figure="StoryNodeFigure"
-      accessor="//@figures.0/@descriptors.9/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <compartments
       name="MatchingStoryNodeContentCompartment"
       figure="StoryNodeFigure"
-      accessor="//@figures.0/@descriptors.9/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.2"/>
   <compartments
       name="ModifyingStoryNodeConstraintsCompartment"
       figure="StoryNodeFigure"
-      accessor="//@figures.0/@descriptors.9/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <compartments
       name="ModifyingStoryNodeContentCompartment"
       figure="StoryNodeFigure"
-      accessor="//@figures.0/@descriptors.9/@accessors.2"/>
-  <compartments
-      name="StatementNodeCompartment"
-      figure="StatementNodeFigure"
-      accessor="//@figures.0/@descriptors.5/@accessors.1"/>
-  <compartments
-      name="ActivityCallNodeCompartment"
-      figure="CalledActivityNodeFigureNEW"/>
-  <compartments
-      name="CalledActivityNodeCompartment"
-      figure="CalledActivityNodeFigureNEW"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.2"/>
   <compartments
       name="StructuredNodeCompartment"
       figure="StructuredNodeFigure"
-      accessor="//@figures.0/@descriptors.8/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.3/@accessors.1"/>
   <compartments
       name="ObjectVariableConstraintsCompartment"
       figure="ObjectVariableFigure"
-      accessor="//@figures.0/@descriptors.12/@accessors.3"/>
+      accessor="//@figures.0/@descriptors.11/@accessors.3"/>
   <compartments
       name="ObjectVariableAttributeAssignmentsCompartment"
       figure="ObjectVariableFigure"
-      accessor="//@figures.0/@descriptors.12/@accessors.4"/>
+      accessor="//@figures.0/@descriptors.11/@accessors.4"/>
   <compartments
       name="PrimitiveVariableConstraintsCompartment"
       figure="PrimitiveVariableFigure"
-      accessor="//@figures.0/@descriptors.13/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.12/@accessors.2"/>
+  <labels
+      name="ActivityCallNodeNameLabel"
+      figure="ActivityCallNodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels
+      name="ActivityCallNodeCalleeLabel"
+      figure="ActivityCallNodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels
       name="StatementNodeNameLabel"
       figure="StatementNodeFigure"
       elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels
+      name="StatementNodeExpressionLabel"
+      figure="StatementNodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <labels
+      name="StartNodeSignatureLabel"
+      figure="StartNodeFigure"
+      elementIcon="false"
       accessor="//@figures.0/@descriptors.5/@accessors.0"/>
   <labels
-      name="ActivityCallNodeNameLabel"
-      figure="ActivityCallNodeFigureNEW"
+      name="StopNodeSignatureLabel"
+      figure="StopNodeFigure"
+      affixedParentSide="NSEW"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.6/@accessors.0"/>
-  <labels
-      name="ActivityCallNodeCalledActivityNameLabel"
-      figure="CalledActivityNodeFigureNEW"
-      elementIcon="false"/>
+      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
   <labels
       name="StructuredNodeNameLabel"
       figure="StructuredNodeFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
   <labels
       name="MatchingStoryNodeNameLabel"
       figure="StoryNodeFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels
       name="ModifyingStoryNodeNameLabel"
       figure="StoryNodeFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels
       name="StoryPatternNameLabel"
       figure="StoryPatternFigure"/>
   <labels
       name="StoryPatternConstraintLabel"
       figure="StoryPatternFigure"
-      accessor="//@figures.0/@descriptors.10/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <labels
       name="ObjectVariableNameLabel"
       figure="ObjectVariableFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.12/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.11/@accessors.0"/>
   <labels
       name="ObjectVariableClassifierLabel"
       figure="ObjectVariableFigure"
       resizeConstraint="NONE"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.12/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.11/@accessors.2"/>
   <labels
       name="ObjectVariableBindingOperatorLabel"
       figure="ObjectVariableFigure"
       resizeConstraint="NONE"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.12/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.11/@accessors.1"/>
   <labels
       name="PrimitiveVariableNameLabel"
       figure="PrimitiveVariableFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.13/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.12/@accessors.0"/>
   <labels
       name="PrimitveVariableClassifierLabel"
       figure="PrimitiveVariableFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.13/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.12/@accessors.1"/>
   <labels
       name="PrimitiveVariableBindingOperatorLabel"
       figure="PrimitiveVariableFigure"
@@ -1068,19 +1130,19 @@
       resizeConstraint="NONE"
       elementIcon="false"/>
   <labels
-      name="ActivityCallEdgeLabel"
+      name="ActivityEdgeCallLabel"
       figure="ActivityEdgeFigure"
       elementIcon="false"/>
   <labels
       name="ActivityEdgeGuardConstraintLabel"
       figure="ActivityEdgeFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.4/@accessors.0"/>
   <labels
       name="LinkVariableSourceEndLabel"
       figure="LinkVariableFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.15/@accessors.0">
+      accessor="//@figures.0/@descriptors.14/@accessors.0">
     <facets
         xsi:type="gmfgraph:AlignmentFacet"/>
     <facets
@@ -1092,7 +1154,7 @@
       name="LinkVariableOperatorLabel"
       figure="LinkVariableFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.15/@accessors.1">
+      accessor="//@figures.0/@descriptors.14/@accessors.1">
     <facets
         xsi:type="gmfgraph:AlignmentFacet"
         alignment="CENTER"/>
@@ -1104,7 +1166,7 @@
       name="LinkVariableTargetEndLabel"
       figure="LinkVariableFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.15/@accessors.2">
+      accessor="//@figures.0/@descriptors.14/@accessors.2">
     <facets
         xsi:type="gmfgraph:AlignmentFacet"
         alignment="END"/>
@@ -1117,7 +1179,7 @@
       name="ContainmentRelationOperatorLabel"
       figure="ContainmentRelationFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.17/@accessors.0">
+      accessor="//@figures.0/@descriptors.16/@accessors.0">
     <facets
         xsi:type="gmfgraph:AlignmentFacet"
         alignment="CENTER"/>

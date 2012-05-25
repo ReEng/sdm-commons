@@ -52,6 +52,24 @@ public class StorydiagramsParserProvider extends AbstractProvider implements IPa
 	/**
 	 * @generated
 	 */
+	private IParser statementNodeName_5001Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStatementNodeName_5001Parser() {
+		if (statementNodeName_5001Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
+			statementNodeName_5001Parser = parser;
+		}
+		return statementNodeName_5001Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser modifyingStoryNodeName_5012Parser;
 
 	/**
@@ -83,24 +101,6 @@ public class StorydiagramsParserProvider extends AbstractProvider implements IPa
 			matchingStoryNodeName_5018Parser = parser;
 		}
 		return matchingStoryNodeName_5018Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser statementNodeName_5001Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getStatementNodeName_5001Parser() {
-		if (statementNodeName_5001Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
-			statementNodeName_5001Parser = parser;
-		}
-		return statementNodeName_5001Parser;
 	}
 
 	/**
@@ -218,12 +218,12 @@ public class StorydiagramsParserProvider extends AbstractProvider implements IPa
 		switch (visualID) {
 		case ActivityCallNodeNameEditPart.VISUAL_ID:
 			return getActivityCallNodeName_5011Parser();
+		case StatementNodeNameEditPart.VISUAL_ID:
+			return getStatementNodeName_5001Parser();
 		case ModifyingStoryNodeNameEditPart.VISUAL_ID:
 			return getModifyingStoryNodeName_5012Parser();
 		case MatchingStoryNodeNameEditPart.VISUAL_ID:
 			return getMatchingStoryNodeName_5018Parser();
-		case StatementNodeNameEditPart.VISUAL_ID:
-			return getStatementNodeName_5001Parser();
 		case StructuredNodeNameEditPart.VISUAL_ID:
 			return getStructuredNodeName_5010Parser();
 		case ObjectVariableNameEditPart.VISUAL_ID:

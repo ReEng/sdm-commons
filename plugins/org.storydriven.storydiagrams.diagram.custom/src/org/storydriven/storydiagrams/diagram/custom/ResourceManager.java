@@ -14,7 +14,6 @@ import java.util.Map;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
-import org.eclipse.emf.common.util.BasicEMap.Entry;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
@@ -87,20 +86,7 @@ public class ResourceManager {
 		resourceSetAdapter = new AdapterImpl() {
 			@Override
 			public void notifyChanged(Notification msg) {
-				if (msg.getNewValue() instanceof Resource || msg.getOldValue() instanceof Resource) {
-					// resource has been loaded
-					recollectActivities();
-				} else if (msg.getNewValue() instanceof Entry<?, ?> || msg.getOldValue() instanceof Entry<?, ?>) {
-					// entry has been added or deleted on annotation
-					recollectEcore();
-				} else if (msg.getNewValue() instanceof EAnnotation || msg.getOldValue() instanceof EAnnotation) {
-					// annotation has been added or deleted
-					EAnnotation annotation = activity.getAnnotation(SOURCE_TYPES);
-					if (annotation != null) {
-						annotation.eAdapters().add(resourceSetAdapter);
-					}
-					recollectEcore();
-				}
+				recollect();
 			}
 		};
 		activity.eResource().getResourceSet().eAdapters().add(resourceSetAdapter);

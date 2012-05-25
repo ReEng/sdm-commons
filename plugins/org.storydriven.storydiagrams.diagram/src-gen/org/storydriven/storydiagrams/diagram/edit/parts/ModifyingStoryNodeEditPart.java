@@ -305,13 +305,13 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
+		if (targetEditPart instanceof StatementNodeEditPart) {
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+		}
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StatementNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof StructuredNodeEditPart) {
@@ -354,9 +354,9 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
 			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
+			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
-			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.StructuredNode_2005);
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
@@ -387,9 +387,9 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
 			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
+			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
-			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.StructuredNode_2005);
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);

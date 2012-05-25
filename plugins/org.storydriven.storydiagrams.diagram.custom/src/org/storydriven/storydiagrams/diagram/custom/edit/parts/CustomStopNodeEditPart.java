@@ -20,13 +20,24 @@ public class CustomStopNodeEditPart extends StopNodeEditPart {
 	public CustomStopNodeEditPart(View view) {
 		super(view);
 	}
-	
+
+	@Override
+	public void refresh() {
+		super.refresh();
+		updateFigure();
+	}
+
+	@Override
+	protected void handleNotificationEvent(Notification event) {
+		super.handleNotificationEvent(event);
+		updateFigure();
+	}
+
 	private void updateFigure() {
-		
 		StopNode stopnode = (StopNode) ((View) getModel()).getElement();
-		Ellipse primaryEllipse = ((Ellipse) getPrimaryShape());
+		Ellipse primaryEllipse = (Ellipse) getPrimaryShape().getChildren().get(0);
 		if (stopnode.isFlowStopOnly()) {
-			
+
 			primaryEllipse.removeAll();
 			primaryEllipse.setLayoutManager(new StackLayout());
 
@@ -44,24 +55,20 @@ public class CustomStopNodeEditPart extends StopNodeEditPart {
 			flowFinalNodeBackSlash0.setLineWidth(1);
 			flowFinalNodeBackSlash0.setForegroundColor(ColorConstants.black);
 
-			primaryEllipse.add(flowFinalNodeBackSlash0);			
-		}
-		else {
+			primaryEllipse.add(flowFinalNodeBackSlash0);
+		} else {
 			primaryEllipse.removeAll();
-			
+
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
 			layoutThis.makeColumnsEqualWidth = true;
 			primaryEllipse.setLayoutManager(layoutThis);
-			
+
 			Ellipse stopNodeInnerEllipse0 = new Ellipse();
 			stopNodeInnerEllipse0.setBackgroundColor(ColorConstants.black);
-			stopNodeInnerEllipse0.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(15), getMapMode().DPtoLP(15)));
-			stopNodeInnerEllipse0.setMaximumSize(new Dimension(getMapMode()
-					.DPtoLP(15), getMapMode().DPtoLP(15)));
-			stopNodeInnerEllipse0.setMinimumSize(new Dimension(getMapMode()
-					.DPtoLP(15), getMapMode().DPtoLP(15)));
+			stopNodeInnerEllipse0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			stopNodeInnerEllipse0.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			stopNodeInnerEllipse0.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 
 			GridData constraintStopNodeInnerEllipse0 = new GridData();
 			constraintStopNodeInnerEllipse0.verticalAlignment = GridData.CENTER;
@@ -71,26 +78,14 @@ public class CustomStopNodeEditPart extends StopNodeEditPart {
 			constraintStopNodeInnerEllipse0.verticalSpan = 1;
 			constraintStopNodeInnerEllipse0.grabExcessHorizontalSpace = true;
 			constraintStopNodeInnerEllipse0.grabExcessVerticalSpace = true;
-			
+
 			primaryEllipse.add(stopNodeInnerEllipse0, constraintStopNodeInnerEllipse0);
 		}
 	}
-	
-	@Override
-	protected void handleNotificationEvent(Notification event) {
-		super.handleNotificationEvent(event);
-		updateFigure();
-	}
-	
+
 	@Override
 	public EditPolicy getPrimaryDragEditPolicy() {
-	  return new NonResizableEditPolicyEx(); 
-	}
-	
-	@Override 
-	public void refresh() {
-		super.refresh();
-		updateFigure();
+		return new NonResizableEditPolicyEx();
 	}
 
 }

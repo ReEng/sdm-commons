@@ -41,13 +41,14 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
-import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeActivityCallNodeCompartmentEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeCalleeLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeNameEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeGuardConstraintLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ConstraintEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationOperatorLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.JunctionNode2EditPart;
@@ -83,14 +84,15 @@ import org.storydriven.storydiagrams.diagram.edit.parts.PrimitiveVariableNameEdi
 import org.storydriven.storydiagrams.diagram.edit.parts.PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StartNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StartNodeEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.StartNodeSignatureLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StatementNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeExpressionLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeName2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeNameEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeStatementNodeCompartment2EditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeStatementNodeCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StopNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StopNodeEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.StopNodeSignatureLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StoryPatternEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StoryPatternStoryPatternCompartementEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StructuredNode2EditPart;
@@ -99,7 +101,6 @@ import org.storydriven.storydiagrams.diagram.edit.parts.StructuredNodeName2EditP
 import org.storydriven.storydiagrams.diagram.edit.parts.StructuredNodeNameEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StructuredNodeStructuredNodeCompartment2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StructuredNodeStructuredNodeCompartmentEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.TextualExpressionEditPart;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry;
 
 /**
@@ -186,16 +187,16 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 				}
 				switch (visualID) {
 				case ActivityCallNodeEditPart.VISUAL_ID:
+				case StatementNodeEditPart.VISUAL_ID:
 				case ModifyingStoryNodeEditPart.VISUAL_ID:
 				case MatchingStoryNodeEditPart.VISUAL_ID:
-				case StatementNodeEditPart.VISUAL_ID:
 				case StructuredNodeEditPart.VISUAL_ID:
 				case StoryPatternEditPart.VISUAL_ID:
 				case ObjectVariableEditPart.VISUAL_ID:
 				case AttributeAssignmentEditPart.VISUAL_ID:
+				case ConstraintEditPart.VISUAL_ID:
 				case PrimitiveVariableEditPart.VISUAL_ID:
 				case MatchingPatternEditPart.VISUAL_ID:
-				case TextualExpressionEditPart.VISUAL_ID:
 				case JunctionNode2EditPart.VISUAL_ID:
 				case StartNode2EditPart.VISUAL_ID:
 				case StopNode2EditPart.VISUAL_ID:
@@ -216,13 +217,13 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 				}
 			}
 		}
-		return ActivityCallNodeEditPart.VISUAL_ID == visualID || ModifyingStoryNodeEditPart.VISUAL_ID == visualID
-				|| MatchingStoryNodeEditPart.VISUAL_ID == visualID || StatementNodeEditPart.VISUAL_ID == visualID
+		return ActivityCallNodeEditPart.VISUAL_ID == visualID || StatementNodeEditPart.VISUAL_ID == visualID
+				|| ModifyingStoryNodeEditPart.VISUAL_ID == visualID || MatchingStoryNodeEditPart.VISUAL_ID == visualID
 				|| StructuredNodeEditPart.VISUAL_ID == visualID || StartNodeEditPart.VISUAL_ID == visualID
 				|| JunctionNodeEditPart.VISUAL_ID == visualID || StopNodeEditPart.VISUAL_ID == visualID
 				|| StoryPatternEditPart.VISUAL_ID == visualID || ObjectVariableEditPart.VISUAL_ID == visualID
-				|| AttributeAssignmentEditPart.VISUAL_ID == visualID || PrimitiveVariableEditPart.VISUAL_ID == visualID
-				|| MatchingPatternEditPart.VISUAL_ID == visualID || TextualExpressionEditPart.VISUAL_ID == visualID
+				|| AttributeAssignmentEditPart.VISUAL_ID == visualID || ConstraintEditPart.VISUAL_ID == visualID
+				|| PrimitiveVariableEditPart.VISUAL_ID == visualID || MatchingPatternEditPart.VISUAL_ID == visualID
 				|| JunctionNode2EditPart.VISUAL_ID == visualID || StartNode2EditPart.VISUAL_ID == visualID
 				|| StopNode2EditPart.VISUAL_ID == visualID || StatementNode2EditPart.VISUAL_ID == visualID
 				|| StructuredNode2EditPart.VISUAL_ID == visualID || ModifyingStoryNode2EditPart.VISUAL_ID == visualID;
@@ -275,12 +276,12 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 		switch (visualID) {
 		case ActivityCallNodeEditPart.VISUAL_ID:
 			return createActivityCallNode_2006(domainElement, containerView, index, persisted, preferencesHint);
+		case StatementNodeEditPart.VISUAL_ID:
+			return createStatementNode_2004(domainElement, containerView, index, persisted, preferencesHint);
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 			return createModifyingStoryNode_2007(domainElement, containerView, index, persisted, preferencesHint);
 		case MatchingStoryNodeEditPart.VISUAL_ID:
 			return createMatchingStoryNode_2008(domainElement, containerView, index, persisted, preferencesHint);
-		case StatementNodeEditPart.VISUAL_ID:
-			return createStatementNode_2004(domainElement, containerView, index, persisted, preferencesHint);
 		case StructuredNodeEditPart.VISUAL_ID:
 			return createStructuredNode_2005(domainElement, containerView, index, persisted, preferencesHint);
 		case StartNodeEditPart.VISUAL_ID:
@@ -295,12 +296,12 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 			return createObjectVariable_3009(domainElement, containerView, index, persisted, preferencesHint);
 		case AttributeAssignmentEditPart.VISUAL_ID:
 			return createAttributeAssignment_3010(domainElement, containerView, index, persisted, preferencesHint);
+		case ConstraintEditPart.VISUAL_ID:
+			return createConstraint_3013(domainElement, containerView, index, persisted, preferencesHint);
 		case PrimitiveVariableEditPart.VISUAL_ID:
 			return createPrimitiveVariable_3011(domainElement, containerView, index, persisted, preferencesHint);
 		case MatchingPatternEditPart.VISUAL_ID:
 			return createMatchingPattern_3012(domainElement, containerView, index, persisted, preferencesHint);
-		case TextualExpressionEditPart.VISUAL_ID:
-			return createTextualExpression_3001(domainElement, containerView, index, persisted, preferencesHint);
 		case JunctionNode2EditPart.VISUAL_ID:
 			return createJunctionNode_3002(domainElement, containerView, index, persisted, preferencesHint);
 		case StartNode2EditPart.VISUAL_ID:
@@ -351,7 +352,6 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 		Node node = NotationFactory.eINSTANCE.createNode();
 		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
 		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(StorydiagramsVisualIDRegistry.getType(ActivityCallNodeEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -359,11 +359,6 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 		stampShortcut(containerView, node);
 		// initializeFromPreferences 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
-
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
-				IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
-				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
 			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
@@ -377,9 +372,40 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 		}
 		Node label5011 = createLabel(node,
 				StorydiagramsVisualIDRegistry.getType(ActivityCallNodeNameEditPart.VISUAL_ID));
-		createCompartment(node,
-				StorydiagramsVisualIDRegistry.getType(ActivityCallNodeActivityCallNodeCompartmentEditPart.VISUAL_ID),
-				false, false, true, true);
+		Node label5019 = createLabel(node,
+				StorydiagramsVisualIDRegistry.getType(ActivityCallNodeCalleeLabelEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createStatementNode_2004(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(StorydiagramsVisualIDRegistry.getType(StatementNodeEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Node label5001 = createLabel(node, StorydiagramsVisualIDRegistry.getType(StatementNodeNameEditPart.VISUAL_ID));
+		Node label5020 = createLabel(node,
+				StorydiagramsVisualIDRegistry.getType(StatementNodeExpressionLabelEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -478,39 +504,6 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 	/**
 	 * @generated
 	 */
-	public Node createStatementNode_2004(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(StorydiagramsVisualIDRegistry.getType(StatementNodeEditPart.VISUAL_ID));
-		ViewUtil.insertChildView(containerView, node, index, persisted);
-		node.setElement(domainElement);
-		stampShortcut(containerView, node);
-		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
-		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
-		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
-			nodeFontStyle.setFontName(fontData.getName());
-			nodeFontStyle.setFontHeight(fontData.getHeight());
-			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
-			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
-					IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
-		}
-		Node label5001 = createLabel(node, StorydiagramsVisualIDRegistry.getType(StatementNodeNameEditPart.VISUAL_ID));
-		createCompartment(node,
-				StorydiagramsVisualIDRegistry.getType(StatementNodeStatementNodeCompartmentEditPart.VISUAL_ID), false,
-				false, true, true);
-		return node;
-	}
-
-	/**
-	 * @generated
-	 */
 	public Node createStructuredNode_2005(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -553,9 +546,7 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 	 */
 	public Node createStartNode_2001(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(StorydiagramsVisualIDRegistry.getType(StartNodeEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -563,6 +554,11 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 		stampShortcut(containerView, node);
 		// initializeFromPreferences 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
 			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
@@ -574,6 +570,12 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 					IPreferenceConstants.PREF_FONT_COLOR);
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5023 = createLabel(node,
+				StorydiagramsVisualIDRegistry.getType(StartNodeSignatureLabelEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -616,10 +618,7 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 	 */
 	public Node createStopNode_2002(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFillStyle());
+		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(StorydiagramsVisualIDRegistry.getType(StopNodeEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -627,6 +626,11 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 		stampShortcut(containerView, node);
 		// initializeFromPreferences 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
 			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
@@ -642,6 +646,8 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5025 = createLabel(node,
+				StorydiagramsVisualIDRegistry.getType(StopNodeSignatureLabelEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -747,6 +753,19 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 	/**
 	 * @generated
 	 */
+	public Node createConstraint_3013(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		node.setType(StorydiagramsVisualIDRegistry.getType(ConstraintEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
 	public Node createPrimitiveVariable_3011(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -828,19 +847,6 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 	/**
 	 * @generated
 	 */
-	public Node createTextualExpression_3001(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
-		node.setType(StorydiagramsVisualIDRegistry.getType(TextualExpressionEditPart.VISUAL_ID));
-		ViewUtil.insertChildView(containerView, node, index, persisted);
-		node.setElement(domainElement);
-		return node;
-	}
-
-	/**
-	 * @generated
-	 */
 	public Node createJunctionNode_3002(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -876,44 +882,18 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 	 */
 	public Node createStartNode_3003(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(StorydiagramsVisualIDRegistry.getType(StartNode2EditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
-		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
-		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
-			nodeFontStyle.setFontName(fontData.getName());
-			nodeFontStyle.setFontHeight(fontData.getHeight());
-			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
-			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
-					IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
-		}
-		return node;
-	}
 
-	/**
-	 * @generated
-	 */
-	public Node createStopNode_3004(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFillStyle());
-		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(StorydiagramsVisualIDRegistry.getType(StopNode2EditPart.VISUAL_ID));
-		ViewUtil.insertChildView(containerView, node, index, persisted);
-		node.setElement(domainElement);
-		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (nodeFontStyle != null) {
 			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
@@ -929,6 +909,45 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5022 = createLabel(node,
+				StorydiagramsVisualIDRegistry.getType(StartNodeSignatureLabelEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createStopNode_3004(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(StorydiagramsVisualIDRegistry.getType(StopNode2EditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5024 = createLabel(node,
+				StorydiagramsVisualIDRegistry.getType(StopNodeSignatureLabelEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -958,9 +977,8 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
 		Node label5002 = createLabel(node, StorydiagramsVisualIDRegistry.getType(StatementNodeName2EditPart.VISUAL_ID));
-		createCompartment(node,
-				StorydiagramsVisualIDRegistry.getType(StatementNodeStatementNodeCompartment2EditPart.VISUAL_ID), false,
-				false, true, true);
+		Node label5021 = createLabel(node,
+				StorydiagramsVisualIDRegistry.getType(StatementNodeExpressionLabelEditPart.VISUAL_ID));
 		return node;
 	}
 

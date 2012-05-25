@@ -4,6 +4,7 @@
 module storydiagrams;
 create OUT: GM refining IN: GM;
 
+-- fix source folder, file extensions
 rule FixGenEditorGenerator {
 	from
 		gegin: GM!GenEditorGenerator (
@@ -27,6 +28,7 @@ rule EnablePrint {
 		)
 }
 
+-- raw property tab
 rule EditRawPropertyTab {
 	from
 		tin: GM!GenPropertyTab (
@@ -39,6 +41,78 @@ rule EditRawPropertyTab {
 		)
 }
 
+-- make wrapping label edit parts have stable names
+rule ActivityCallNodeCalleeLabel {
+	from
+		gnlin: GM!GenNodeLabel (
+			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gnlin.viewmap.getterName = 'getActivityCallNodeCalleeLabel'
+		else
+			false
+		endif
+		)
+	to
+		gnlout: GM!GenNodeLabel (
+			editPartClassName <- 'ActivityCallNodeCalleeLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'ActivityCallNodeCalleeLabelItemSemanticEditPolicy'
+		)
+}
+
+rule StatementNodeExpressionLabel {
+	from
+		gnlin: GM!GenNodeLabel (
+			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gnlin.viewmap.getterName = 'getStatementNodeExpressionLabel'
+		else
+			false
+		endif
+		)
+	to
+		gnlout: GM!GenNodeLabel (
+			editPartClassName <- 'StatementNodeExpressionLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'StatementNodeExpressionLabelItemSemanticEditPolicy'
+		)
+}
+
+rule StartNodeSignatureLabel {
+	from
+		gnlin: GM!GenNodeLabel (
+			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gnlin.viewmap.getterName = 'getStartNodeSignatureLabel'
+		else
+			false
+		endif
+		)
+	to
+		gnlout: GM!GenNodeLabel (
+			editPartClassName <- 'StartNodeSignatureLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'StartNodeSignatureLabelItemSemanticEditPolicy'
+		)
+}
+
+rule StopNodeSignatureLabel {
+	from
+		gnlin: GM!GenNodeLabel (
+			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gnlin.viewmap.getterName = 'getStopNodeSignatureLabel'
+		else
+			false
+		endif
+		)
+	to
+		gnlout: GM!GenNodeLabel (
+			editPartClassName <- 'StopNodeSignatureLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'StopNodeSignatureLabelItemSemanticEditPolicy'
+		)
+}
+
+-- ##################################################################
+-- unstructured
+-- ##################################################################
 rule GenCompartment1 {
 	from
 		gcin: GM!GenCompartment (

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
@@ -25,7 +28,10 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
 import org.storydriven.storydiagrams.diagram.edit.policies.ActivityCallNodeItemSemanticEditPolicy;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry;
 import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes;
@@ -97,14 +103,14 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new ActivityCallNodeFigureNEW();
+		return primaryShape = new ActivityCallNodeFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public ActivityCallNodeFigureNEW getPrimaryShape() {
-		return (ActivityCallNodeFigureNEW) primaryShape;
+	public ActivityCallNodeFigure getPrimaryShape() {
+		return (ActivityCallNodeFigure) primaryShape;
 	}
 
 	/**
@@ -112,8 +118,12 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ActivityCallNodeNameEditPart) {
-			((ActivityCallNodeNameEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getFigureActivityCallNodeNewName());
+			((ActivityCallNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getActivityCallNodeNameLabel());
+			return true;
+		}
+		if (childEditPart instanceof ActivityCallNodeCalleeLabelEditPart) {
+			((ActivityCallNodeCalleeLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getActivityCallNodeCalleeLabel());
 			return true;
 		}
 		return false;
@@ -124,6 +134,9 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ActivityCallNodeNameEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof ActivityCallNodeCalleeLabelEditPart) {
 			return true;
 		}
 		return false;
@@ -266,13 +279,13 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
+		if (targetEditPart instanceof StatementNodeEditPart) {
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+		}
 		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StatementNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof StructuredNodeEditPart) {
@@ -315,9 +328,9 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
 			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
+			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
-			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.StructuredNode_2005);
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
@@ -348,9 +361,9 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
 			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
+			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
-			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.StructuredNode_2005);
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
@@ -368,18 +381,29 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ActivityCallNodeFigureNEW extends RoundedRectangle {
+	public class ActivityCallNodeFigure extends RoundedRectangle {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureActivityCallNodeNewName;
+		private WrappingLabel fActivityCallNodeNameLabel;
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fActivityCallNodeCalleeLabel;
 
 		/**
 		 * @generated
 		 */
-		public ActivityCallNodeFigureNEW() {
+		public ActivityCallNodeFigure() {
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
+			this.setLayoutManager(layoutThis);
+
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
+			this.setForegroundColor(ColorConstants.black);
 			this.setBackgroundColor(THIS_BACK);
 			createContents();
 		}
@@ -389,18 +413,50 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureActivityCallNodeNewName = new WrappingLabel();
-			fFigureActivityCallNodeNewName.setText("");
+			fActivityCallNodeNameLabel = new WrappingLabel();
+			fActivityCallNodeNameLabel.setText("");
 
-			this.add(fFigureActivityCallNodeNewName);
+			fActivityCallNodeNameLabel.setFont(FACTIVITYCALLNODENAMELABEL_FONT);
+
+			GridData constraintFActivityCallNodeNameLabel = new GridData();
+			constraintFActivityCallNodeNameLabel.verticalAlignment = GridData.CENTER;
+			constraintFActivityCallNodeNameLabel.horizontalAlignment = GridData.CENTER;
+			constraintFActivityCallNodeNameLabel.horizontalIndent = 0;
+			constraintFActivityCallNodeNameLabel.horizontalSpan = 1;
+			constraintFActivityCallNodeNameLabel.verticalSpan = 1;
+			constraintFActivityCallNodeNameLabel.grabExcessHorizontalSpace = true;
+			constraintFActivityCallNodeNameLabel.grabExcessVerticalSpace = false;
+			this.add(fActivityCallNodeNameLabel, constraintFActivityCallNodeNameLabel);
+
+			fActivityCallNodeCalleeLabel = new WrappingLabel();
+			fActivityCallNodeCalleeLabel.setText("");
+
+			fActivityCallNodeCalleeLabel.setFont(FACTIVITYCALLNODECALLEELABEL_FONT);
+
+			GridData constraintFActivityCallNodeCalleeLabel = new GridData();
+			constraintFActivityCallNodeCalleeLabel.verticalAlignment = GridData.CENTER;
+			constraintFActivityCallNodeCalleeLabel.horizontalAlignment = GridData.CENTER;
+			constraintFActivityCallNodeCalleeLabel.horizontalIndent = 0;
+			constraintFActivityCallNodeCalleeLabel.horizontalSpan = 1;
+			constraintFActivityCallNodeCalleeLabel.verticalSpan = 1;
+			constraintFActivityCallNodeCalleeLabel.grabExcessHorizontalSpace = true;
+			constraintFActivityCallNodeCalleeLabel.grabExcessVerticalSpace = false;
+			this.add(fActivityCallNodeCalleeLabel, constraintFActivityCallNodeCalleeLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureActivityCallNodeNewName() {
-			return fFigureActivityCallNodeNewName;
+		public WrappingLabel getActivityCallNodeNameLabel() {
+			return fActivityCallNodeNameLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getActivityCallNodeCalleeLabel() {
+			return fActivityCallNodeCalleeLabel;
 		}
 
 	}
@@ -408,6 +464,18 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Color THIS_BACK = new Color(null, 230, 230, 230);
+	static final Color THIS_BACK = new Color(null, 206, 226, 237);
+
+	/**
+	 * @generated
+	 */
+	static final Font FACTIVITYCALLNODENAMELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
+			.getSystemFont().getFontData()[0].getName(), 10, SWT.BOLD);
+
+	/**
+	 * @generated
+	 */
+	static final Font FACTIVITYCALLNODECALLEELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
+			.getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 }

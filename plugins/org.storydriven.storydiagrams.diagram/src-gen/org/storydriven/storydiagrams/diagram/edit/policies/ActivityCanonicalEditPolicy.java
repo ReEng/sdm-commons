@@ -110,9 +110,9 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 		int visualID = StorydiagramsVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
 		case ActivityCallNodeEditPart.VISUAL_ID:
+		case StatementNodeEditPart.VISUAL_ID:
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 		case MatchingStoryNodeEditPart.VISUAL_ID:
-		case StatementNodeEditPart.VISUAL_ID:
 		case StructuredNodeEditPart.VISUAL_ID:
 		case StartNodeEditPart.VISUAL_ID:
 		case JunctionNodeEditPart.VISUAL_ID:
@@ -272,6 +272,15 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 			}
 			break;
 		}
+		case StatementNodeEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(StorydiagramsDiagramUpdater.getStatementNode_2004ContainedLinks(view));
+			}
+			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+				domain2NotationMap.put(view.getElement(), view);
+			}
+			break;
+		}
 		case ModifyingStoryNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(StorydiagramsDiagramUpdater.getModifyingStoryNode_2007ContainedLinks(view));
@@ -284,15 +293,6 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 		case MatchingStoryNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(StorydiagramsDiagramUpdater.getMatchingStoryNode_2008ContainedLinks(view));
-			}
-			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
-			break;
-		}
-		case StatementNodeEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getStatementNode_2004ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
 				domain2NotationMap.put(view.getElement(), view);

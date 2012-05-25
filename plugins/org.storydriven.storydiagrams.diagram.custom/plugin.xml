@@ -423,9 +423,16 @@
          </propertySection>
          <propertySection
                afterSection="ActivityCallNode.name"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityCallNodeCallsSection"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityCallNodeCalleeSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityCallNodeFilter"
-               id="ActivityCallNode.calledActivities"
+               id="ActivityCallNode.callee"
+               tab="core">
+         </propertySection>
+         <propertySection
+               afterSection="ActivityCallNode.callee"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityCallNodeArgumentsSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityCallNodeFilter"
+               id="ActivityCallNode.arguments"
                tab="core">
          </propertySection>
          <propertySection
@@ -701,6 +708,12 @@
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AttributeAssignmentExpressionSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.AttributeAssignmentFilter"
                id="AttributeAssignment.expression"
+               tab="core">
+         </propertySection>
+         <propertySection
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ConstraintExpressionSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ConstraintFilter"
+               id="Constraint.expression"
                tab="core">
          </propertySection>
       </propertySections>

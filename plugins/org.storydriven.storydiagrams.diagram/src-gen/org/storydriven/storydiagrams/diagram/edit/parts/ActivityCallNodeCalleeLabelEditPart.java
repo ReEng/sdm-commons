@@ -46,12 +46,12 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsParserProvid
 /**
  * @generated
  */
-public class ActivityCallNodeNameEditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class ActivityCallNodeCalleeLabelEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5011;
+	public static final int VISUAL_ID = 5019;
 
 	/**
 	 * @generated
@@ -76,7 +76,7 @@ public class ActivityCallNodeNameEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public ActivityCallNodeNameEditPart(View view) {
+	public ActivityCallNodeCalleeLabelEditPart(View view) {
 		super(view);
 	}
 
@@ -218,7 +218,7 @@ public class ActivityCallNodeNameEditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return getParser() != null;
+		return false;
 	}
 
 	/**
@@ -278,7 +278,7 @@ public class ActivityCallNodeNameEditPart extends CompartmentEditPart implements
 							StorydiagramsElementTypes.ActivityCallNode_2006,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
-									.getType(org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeNameEditPart.VISUAL_ID));
+									.getType(org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeCalleeLabelEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
