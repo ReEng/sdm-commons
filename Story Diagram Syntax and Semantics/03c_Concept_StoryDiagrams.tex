@@ -141,7 +141,8 @@ This is specified by the expression \fe{attr := a} which represents an assignmen
 Otherwise, an empty reference is returned which is specified by the keyword \fe{null}.
 This notation is taken from Matthias Meyer \cite{Mey09}.
 
-\subsection{Activity Nodes, Activity Edges} \label{sec:storydiagrams:activitynodes}
+\subsection{Activity Nodes, Activity Edges} 
+\label{sec:storydiagrams:activitynodes}
 
 A story diagram's control flow is defined by activity nodes and activity edges, similar to UML activities.
 Except for the cases where an activity node represents a call of another story diagram,
@@ -355,6 +356,26 @@ Each for-each activity node must have such an outgoing \text[end\text] activity 
 
 \todojr{fresh matches, auch fuer maybe\_bound: Behaelt ein maybe\_bound-Knoten ein Binding, was erst im Loop gesetzt wurde? Oder zaehlt dafuer nur, was vor dem Loop schon gebunden war? Letzteres erscheint sinnvoller (Stephan fragen wegen Beispiel)}
 
+\subsection{Propagation of Matchings}
+\label{sec:storydiagrams:propagation}
+
+The control flow specified by the activities edges determines how matchings of story patterns are propagated through the activity. An initial matching associating objects of the instance model with object variables is established by the input parameters of the activity. In a story pattern inside a story node, we refer to matched objects by using bound variables. Then, the story pattern inside a story node is matched. If the matching process was successful, the matching is extended by the objects which were newly matched by the story pattern and is propagated via the \emph{success} activity edge to the next activity node. If the matching process was not successful, the matching is not changed and the original matching which was passed to the activity node is propagated along the \emph{failure} activity edge.
+
+In case of a loop, the matching which is propagated into the for-each activity node is extended by the matching of the story pattern which is contained in this activity. If the matching is successful, the extended matching is propagated along the \emph{each time} activity edge. After the control flow returns to the for-each activity node, the matching is reset to the matching that originally entered the for-each activity node. As a consequence, in any case the matching which is propagated into the for-each activity node is propagated down the \emph{end} activity edge. Objects and links created throughout the loop, however, remain in instance model.
+
+\todoch{Do you all agree with that semantics? Jan and I do ;-).}
+
+\begin{figure}[htbp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{figures/PropagationOfMatchingsExample}
+  \caption{Propagation of Matchings through a Story Diagram}
+  \label{fig:propagation}
+\end{center}
+\end{figure}
+
+Figure~\ref{fig:propagation} gives an example for the propagation of matchings. The initial matching consists of two objects of type \fe{Package} which are bound to the input parameters \fe{p1} and \fe{p2}. This matching is passed to the for-each activity node \fe{A}. In this activity, the story pattern tries to match a class in the package bound to \fe{c1}. For each class that is found, the matching is extending by the corresponding class and propagated along the \emph{each time} activity edge to the activity node \fe{B}. In \fe{B}, the object variable \fe{c} is unbound. Thus, a new matching for \fe{c} is to be obtained. If the story pattern is matched successfully, the matching that is propagated down the activity edge to \fe{C} consists of the two packages as well as a class contained in the package bound to \fe{p2}. If the story pattern in \fe{B} cannot be matched, then the matching is propagated unchanged. Then the matching in \fe{C} contains the two packages as well as a class which is contained in the package bound to \fe{p1}. If the control flow reaches the for-each activity node \fe{A} again, then the matching is reduced to the two packages bound to \fe{p1} and \fe{p2}. If the for-each activity node \fe{A} is left via the \emph{end} activity edge, exactly that matching is propagated.
+
+If the control flow reaches a stop node, only objects that are contained in the matching which is propagated to the stop node may be returned. The use of decision nodes in combination with activity edges having a boolean guard does not change the propagation of matchings. The boolean condition at the edge only defines where the matching is propagated.
 
 \subsection{Story Diagram Calls}
 \label{sec:Calls}
