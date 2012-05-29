@@ -3,8 +3,8 @@ package de.fujaba.newwizard.diagrams;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * A validator that can test, if the given object is a valid Diagram Element for
- * the Editor.
+ * A validator that can test, if the given object is a valid diagram element or
+ * top level element for the Editor.
  * 
  * @author bingo
  * 

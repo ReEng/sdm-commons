@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 /**
  * Datastructure that represents the information provided by an extension of
- * "de.fujaba.newwizard.diagraminformation" for a given editorId.
+ * "de.fujaba.newwizard.diagraminformation".
  * 
  * @author bingo
  * 

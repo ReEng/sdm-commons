@@ -15,5 +15,6 @@ Export-Package: de.fujaba.newwizard,
  de.fujaba.newwizard.commands,
  de.fujaba.newwizard.diagrams,
  de.fujaba.newwizard.diagrams.pages,
+ de.fujaba.newwizard.initializer,
  de.fujaba.newwizard.ui.commands
 Bundle-Vendor: Fujaba Community made up of Heinz Nixdorf Institute Paderborn, Technische Universität Darmstadt, University of Kassel, Hasso Plattner Institute Potsdam, Yatta Solutions GmbH

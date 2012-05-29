@@ -2,6 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="de.fujaba.newwizard.diagraminformation" name="DiagramInformation" schema="schema/de.fujaba.newwizard.diagraminformation.exsd"/>
+   <extension-point id="de.fujaba.newwizard.modelinitializer" name="de.fujaba.newwizard.modelinitializer" schema="schema/de.fujaba.newwizard.modelinitializer.exsd"/>
   <extension point="org.eclipse.ui.newWizards" >
     <category name="Fujaba" id="de.fujaba" />
     <category name="Diagrams" id="de.fujaba.diagrams"

@@ -82,46 +82,9 @@ public class FujabaModelNewWizard extends Wizard implements INewWizard {
 	 */
 	@Override
 	public boolean performFinish() {
-
-		LinkedList<IFile> affectedFiles = new LinkedList<IFile>();
 		IFile domainModelFile = domainModelFilePage.createNewFile();
-		DiagramEditorUtil.setCharset(domainModelFile);
-		affectedFiles.add(domainModelFile);
-		URI diagramModelURI = URI.createPlatformResourceURI(domainModelFile
-				.getFullPath().toString(), true);
-		ResourceSet resourceSet = editingDomain.getResourceSet();
-		final Resource domainModelResource = resourceSet
-				.createResource(diagramModelURI);
-
-		final RootNode rootNode = ModelinstanceFactory.eINSTANCE
-				.createRootNode();
-
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(
-				editingDomain, "InitDiagramCommand", affectedFiles) {
-
-			@Override
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
-					throws ExecutionException {
-
-				domainModelResource.getContents().add(rootNode);
-
-				return CommandResult.newOKCommandResult();
-			}
-		};
-
-		try {
-			OperationHistoryFactory.getOperationHistory().execute(command,
-					new NullProgressMonitor(), null);
-			domainModelResource.save(DiagramEditorUtil.getSaveOptions());
-
-		} catch (ExecutionException e) {
-			FujabaNewwizardPlugin.getDefault().logError(
-					"Unable to create model.", e); //$NON-NLS-1$
-		} catch (IOException ex) {
-			FujabaNewwizardPlugin.getDefault().logError(
-					"Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
-		}
+		FujabaNewwizardPlugin.getDefault().createModel(domainModelFile,
+				editingDomain);
 		return true;
 	}
 
