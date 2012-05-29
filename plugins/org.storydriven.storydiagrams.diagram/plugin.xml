@@ -164,7 +164,7 @@
       <viewProvider class="org.storydriven.storydiagrams.diagram.providers.StorydiagramsViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Storydiagrams"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2006,2004,2007,2008,2005,2001,2003,2002,3008,3009,3010,3013,3011,3012,3002,3003,3004,3005,3006,3007"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2006,2004,2007,2008,2005,2001,2003,2002,3008,3009,3010,3013,3011,3014,3012,3002,3003,3004,3005,3006,3007"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004"/>
       </viewProvider>
    </extension>
@@ -177,13 +177,13 @@
             <method name="getType()" value="Storydiagrams"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2006,2004,2007,2008,2005,2001,2003,2002,3008,3009,3010,3013,3011,3012,3002,3003,3004,3005,3006,3007"/>
+            <method name="getType()" value="2006,2004,2007,2008,2005,2001,2003,2002,3008,3009,3010,3013,3011,3014,3012,3002,3003,3004,3005,3006,3007"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4002,4003,4004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5011,5019,5001,5020,5012,5018,5010,5023,5025,5003,5004,5005,5006,5007,5022,5024,5002,5021,5009,5008"/>
+            <method name="getType()" value="5011,5019,5001,5020,5012,5018,5010,5023,5025,5003,5004,5005,5006,5007,5026,5022,5024,5002,5021,5009,5008"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7012,7013,7007,7008,7009,7010,7014,7015,7016,7002,7004,7005,7006"/>
@@ -364,6 +364,16 @@
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.0">
          <metamodelType
+               id="org.storydriven.storydiagrams.diagram.ObjectSetVariable_3014"
+               name="%metatype.name.ObjectSetVariable_3014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ObjectSetVariable"
+               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ObjectSetVariableEditHelper">
+            <param name="semanticHint" value="3014"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.0">
+         <metamodelType
                id="org.storydriven.storydiagrams.diagram.MatchingPattern_3012"
                name="%metatype.name.MatchingPattern_3012"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -495,6 +505,7 @@
          <elementType ref="org.storydriven.storydiagrams.diagram.AttributeAssignment_3010"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.Constraint_3013"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.PrimitiveVariable_3011"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.ObjectSetVariable_3014"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.MatchingPattern_3012"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.JunctionNode_3002"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.StartNode_3003"/>

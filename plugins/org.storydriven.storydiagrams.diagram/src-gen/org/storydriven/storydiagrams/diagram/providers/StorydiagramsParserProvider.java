@@ -14,6 +14,7 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.core.CorePackage;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeNameEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableNameLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeNameEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeName2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeNameEditPart;
@@ -160,6 +161,24 @@ public class StorydiagramsParserProvider extends AbstractProvider implements IPa
 	/**
 	 * @generated
 	 */
+	private IParser objectSetVariableName_5026Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getObjectSetVariableName_5026Parser() {
+		if (objectSetVariableName_5026Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
+			objectSetVariableName_5026Parser = parser;
+		}
+		return objectSetVariableName_5026Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser statementNodeName_5002Parser;
 
 	/**
@@ -230,6 +249,8 @@ public class StorydiagramsParserProvider extends AbstractProvider implements IPa
 			return getObjectVariableName_5003Parser();
 		case PrimitiveVariableNameEditPart.VISUAL_ID:
 			return getPrimitiveVariableName_5006Parser();
+		case CollectionVariableNameLabelEditPart.VISUAL_ID:
+			return getObjectSetVariableName_5026Parser();
 		case StatementNodeName2EditPart.VISUAL_ID:
 			return getStatementNodeName_5002Parser();
 		case StructuredNodeName2EditPart.VISUAL_ID:

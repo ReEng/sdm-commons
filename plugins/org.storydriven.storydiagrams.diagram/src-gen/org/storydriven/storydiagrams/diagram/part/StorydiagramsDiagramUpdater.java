@@ -40,6 +40,7 @@ import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNode2EditP
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ObjectSetVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableObjectVariableConstraintsCompartmentEditPart;
@@ -64,6 +65,7 @@ import org.storydriven.storydiagrams.patterns.Constraint;
 import org.storydriven.storydiagrams.patterns.ContainmentRelation;
 import org.storydriven.storydiagrams.patterns.LinkVariable;
 import org.storydriven.storydiagrams.patterns.MatchingPattern;
+import org.storydriven.storydiagrams.patterns.ObjectSetVariable;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.Path;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
@@ -198,6 +200,10 @@ public class StorydiagramsDiagramUpdater {
 				continue;
 			}
 			if (visualID == PrimitiveVariableEditPart.VISUAL_ID) {
+				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == ObjectSetVariableEditPart.VISUAL_ID) {
 				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -455,6 +461,8 @@ public class StorydiagramsDiagramUpdater {
 			return getConstraint_3013ContainedLinks(view);
 		case PrimitiveVariableEditPart.VISUAL_ID:
 			return getPrimitiveVariable_3011ContainedLinks(view);
+		case ObjectSetVariableEditPart.VISUAL_ID:
+			return getObjectSetVariable_3014ContainedLinks(view);
 		case MatchingPatternEditPart.VISUAL_ID:
 			return getMatchingPattern_3012ContainedLinks(view);
 		case JunctionNode2EditPart.VISUAL_ID:
@@ -512,6 +520,8 @@ public class StorydiagramsDiagramUpdater {
 			return getConstraint_3013IncomingLinks(view);
 		case PrimitiveVariableEditPart.VISUAL_ID:
 			return getPrimitiveVariable_3011IncomingLinks(view);
+		case ObjectSetVariableEditPart.VISUAL_ID:
+			return getObjectSetVariable_3014IncomingLinks(view);
 		case MatchingPatternEditPart.VISUAL_ID:
 			return getMatchingPattern_3012IncomingLinks(view);
 		case JunctionNode2EditPart.VISUAL_ID:
@@ -569,6 +579,8 @@ public class StorydiagramsDiagramUpdater {
 			return getConstraint_3013OutgoingLinks(view);
 		case PrimitiveVariableEditPart.VISUAL_ID:
 			return getPrimitiveVariable_3011OutgoingLinks(view);
+		case ObjectSetVariableEditPart.VISUAL_ID:
+			return getObjectSetVariable_3014OutgoingLinks(view);
 		case MatchingPatternEditPart.VISUAL_ID:
 			return getMatchingPattern_3012OutgoingLinks(view);
 		case JunctionNode2EditPart.VISUAL_ID:
@@ -698,6 +710,13 @@ public class StorydiagramsDiagramUpdater {
 	 * @generated
 	 */
 	public static List<StorydiagramsLinkDescriptor> getPrimitiveVariable_3011ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<StorydiagramsLinkDescriptor> getObjectSetVariable_3014ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -919,6 +938,20 @@ public class StorydiagramsDiagramUpdater {
 	 */
 	public static List<StorydiagramsLinkDescriptor> getPrimitiveVariable_3011IncomingLinks(View view) {
 		PrimitiveVariable modelElement = (PrimitiveVariable) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
+				.eResource().getResourceSet().getResources());
+		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkVariable_4002(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Path_4003(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ContainmentRelation_4004(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<StorydiagramsLinkDescriptor> getObjectSetVariable_3014IncomingLinks(View view) {
+		ObjectSetVariable modelElement = (ObjectSetVariable) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
 				.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
@@ -1153,6 +1186,18 @@ public class StorydiagramsDiagramUpdater {
 	 */
 	public static List<StorydiagramsLinkDescriptor> getPrimitiveVariable_3011OutgoingLinks(View view) {
 		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<StorydiagramsLinkDescriptor> getObjectSetVariable_3014OutgoingLinks(View view) {
+		ObjectSetVariable modelElement = (ObjectSetVariable) view.getElement();
+		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkVariable_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Path_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ContainmentRelation_4004(modelElement));
+		return result;
 	}
 
 	/**

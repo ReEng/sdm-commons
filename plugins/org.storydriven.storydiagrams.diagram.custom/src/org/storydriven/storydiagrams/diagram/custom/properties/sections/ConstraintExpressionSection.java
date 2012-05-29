@@ -28,7 +28,14 @@ public class ConstraintExpressionSection extends AbstractExpressionSection {
 		}
 		return getElement().getConstraintExpression();
 	}
+	@Override
+	protected void postUpdate() {
+		Expression expression = getElement().getConstraintExpression();
 
+		// TODO: ugly
+		getElement().setConstraintExpression(null);
+		getElement().setConstraintExpression(expression);
+	}
 	@Override
 	protected EClassifier getContextClassifier() {
 		AbstractVariable variable = getElement().getObjectVariable();

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.jface.viewers.CellEditor;
@@ -29,7 +30,9 @@ import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
+import org.storydriven.storydiagrams.calls.Callable;
 import org.storydriven.storydiagrams.calls.CallsFactory;
+import org.storydriven.storydiagrams.calls.CallsPackage;
 import org.storydriven.storydiagrams.calls.ParameterBinding;
 import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
 import org.storydriven.storydiagrams.diagram.custom.EditExpressionDialog;
@@ -54,6 +57,13 @@ public class ActivityCallNodeArgumentsSection extends AbstractSection {
 		super.setInput(part, selection);
 
 		viewer.setInput(getInput());
+	}
+
+	@Override
+	protected void notifyChanged(Notification msg) {
+		if (msg.getFeature() != null && msg.getFeature().equals(CallsPackage.Literals.INVOCATION__CALLEE)) {
+			viewer.setInput(getInput());
+		}
 	}
 
 	private Object getInput() {
@@ -180,6 +190,15 @@ public class ActivityCallNodeArgumentsSection extends AbstractSection {
 			@Override
 			protected void setValue(Object element, Object value) {
 				viewer.refresh();
+				RecordingCommand command = new RecordingCommand(getEditingDomain()) {
+					@Override
+					protected void doExecute() {
+						Callable callee = getElement().getCallee();
+						getElement().setCallee(null);
+						getElement().setCallee(callee);
+					}
+				};
+				execute(command);
 			}
 
 			@Override

@@ -225,8 +225,32 @@
               </compartments>
             </ownedChild>
           </children>
+          <children
+              compartment="//@nodes.2/@ownedChild/@children.0/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild">
+            <containmentFeature
+                href="storydiagrams.ecore#//patterns/StoryPattern/variable"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="storydiagrams.ecore#//patterns/ObjectSetVariable"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="storydiagrams.gmfgraph#CollectionVariableNameLabel"/>
+                <features
+                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                <editableFeatures
+                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="storydiagrams.gmftool#//@palette/@tools.1/@tools.1"/>
+              <diagramNode
+                  href="storydiagrams.gmfgraph#CollectionVariableNode"/>
+            </ownedChild>
+          </children>
           <compartments
-              children="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1">
+              children="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.2/@ownedChild/@children.0/@ownedChild/@children.2">
             <compartment
                 href="storydiagrams.gmfgraph#StoryPatternCompartement"/>
           </compartments>

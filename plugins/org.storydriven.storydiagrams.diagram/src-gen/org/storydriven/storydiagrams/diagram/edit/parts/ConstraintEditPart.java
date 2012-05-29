@@ -552,21 +552,7 @@ public class ConstraintEditPart extends CompartmentEditPart implements ITextAwar
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new ExpressionFigure();
-	}
-
-	/**
-	 * @generated
-	 */
-	public class ExpressionFigure extends WrappingLabel {
-
-		/**
-		 * @generated
-		 */
-		public ExpressionFigure() {
-			this.setText("");
-		}
-
+		return new WrappingLabel();
 	}
 
 }

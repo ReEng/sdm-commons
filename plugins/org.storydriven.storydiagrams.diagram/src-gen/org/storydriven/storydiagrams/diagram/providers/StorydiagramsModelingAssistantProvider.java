@@ -31,6 +31,7 @@ import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNode2EditP
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ObjectSetVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.PrimitiveVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StartNode2EditPart;
@@ -81,9 +82,10 @@ public class StorydiagramsModelingAssistantProvider extends ModelingAssistantPro
 			return types;
 		}
 		if (editPart instanceof StoryPatternStoryPatternCompartementEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+			ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
 			types.add(StorydiagramsElementTypes.PrimitiveVariable_3011);
+			types.add(StorydiagramsElementTypes.ObjectSetVariable_3014);
 			return types;
 		}
 		if (editPart instanceof MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart) {
@@ -157,6 +159,9 @@ public class StorydiagramsModelingAssistantProvider extends ModelingAssistantPro
 		if (sourceEditPart instanceof ObjectVariableEditPart) {
 			return ((ObjectVariableEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
+		if (sourceEditPart instanceof ObjectSetVariableEditPart) {
+			return ((ObjectSetVariableEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		if (sourceEditPart instanceof JunctionNode2EditPart) {
 			return ((JunctionNode2EditPart) sourceEditPart).getMARelTypesOnSource();
 		}
@@ -213,6 +218,9 @@ public class StorydiagramsModelingAssistantProvider extends ModelingAssistantPro
 		if (targetEditPart instanceof PrimitiveVariableEditPart) {
 			return ((PrimitiveVariableEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
+		if (targetEditPart instanceof ObjectSetVariableEditPart) {
+			return ((ObjectSetVariableEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		if (targetEditPart instanceof JunctionNode2EditPart) {
 			return ((JunctionNode2EditPart) targetEditPart).getMARelTypesOnTarget();
 		}
@@ -266,6 +274,9 @@ public class StorydiagramsModelingAssistantProvider extends ModelingAssistantPro
 		}
 		if (sourceEditPart instanceof ObjectVariableEditPart) {
 			return ((ObjectVariableEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ObjectSetVariableEditPart) {
+			return ((ObjectSetVariableEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof JunctionNode2EditPart) {
 			return ((JunctionNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -323,6 +334,9 @@ public class StorydiagramsModelingAssistantProvider extends ModelingAssistantPro
 		if (targetEditPart instanceof PrimitiveVariableEditPart) {
 			return ((PrimitiveVariableEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof ObjectSetVariableEditPart) {
+			return ((ObjectSetVariableEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof JunctionNode2EditPart) {
 			return ((JunctionNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
@@ -375,6 +389,9 @@ public class StorydiagramsModelingAssistantProvider extends ModelingAssistantPro
 		}
 		if (sourceEditPart instanceof ObjectVariableEditPart) {
 			return ((ObjectVariableEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ObjectSetVariableEditPart) {
+			return ((ObjectSetVariableEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof JunctionNode2EditPart) {
 			return ((JunctionNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);

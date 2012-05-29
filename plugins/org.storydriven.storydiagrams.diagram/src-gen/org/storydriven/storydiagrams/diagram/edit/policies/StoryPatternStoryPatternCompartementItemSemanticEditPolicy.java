@@ -2,6 +2,7 @@ package org.storydriven.storydiagrams.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.storydriven.storydiagrams.diagram.edit.commands.ObjectSetVariableCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.ObjectVariableCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.PrimitiveVariableCreateCommand;
 import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes;
@@ -27,6 +28,9 @@ public class StoryPatternStoryPatternCompartementItemSemanticEditPolicy extends 
 		}
 		if (StorydiagramsElementTypes.PrimitiveVariable_3011 == req.getElementType()) {
 			return getGEFWrapper(new PrimitiveVariableCreateCommand(req));
+		}
+		if (StorydiagramsElementTypes.ObjectSetVariable_3014 == req.getElementType()) {
+			return getGEFWrapper(new ObjectSetVariableCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

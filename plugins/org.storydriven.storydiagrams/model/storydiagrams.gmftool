@@ -52,8 +52,12 @@
           description="Create New Junction Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Stop Node"
-          description="Create New Stop Node"/>
+          title="Activity Final Node"
+          description="Create New Activity Final Node"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Flow Final Node"
+          description="Create New Flow Final Node"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
@@ -70,8 +74,8 @@
           description="Create New Object Variable"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Object Set Variable"
-          description="Create New Object Set Variable"/>
+          title="Collection Variable"
+          description="Create New Collection Variable"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Primitive Variable"

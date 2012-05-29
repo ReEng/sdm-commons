@@ -638,13 +638,6 @@
          </propertySection>
          <propertySection
                afterSection="LinkVariable.bindingSemantics"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingStateSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.LinkVariableFilter"
-               id="LinkVariable.bindingState"
-               tab="core">
-         </propertySection>
-         <propertySection
-               afterSection="LinkVariable.bindingState"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingOperatorSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.LinkVariableFilter"
                id="LinkVariable.bindingOperator"
@@ -658,13 +651,6 @@
          </propertySection>
          <propertySection
                afterSection="ContainmentRelation.bindingSemantics"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingStateSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ContainmentRelationFilter"
-               id="ContainmentRelation.bindingState"
-               tab="core">
-         </propertySection>
-         <propertySection
-               afterSection="ContainmentRelation.bindingState"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingOperatorSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ContainmentRelationFilter"
                id="ContainmentRelation.bindingOperator"
@@ -678,13 +664,6 @@
          </propertySection>
          <propertySection
                afterSection="Path.bindingSemantics"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingStateSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PathFilter"
-               id="Path.bindingState"
-               tab="core">
-         </propertySection>
-         <propertySection
-               afterSection="Path.bindingState"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingOperatorSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PathFilter"
                id="Path.bindingOperator"

@@ -29,6 +29,7 @@ import org.storydriven.storydiagrams.diagram.edit.parts.MatchingPatternEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ObjectSetVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.PathEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.PrimitiveVariableEditPart;
@@ -122,11 +123,14 @@ public class StorydiagramsElementTypes {
 	 * @generated
 	 */
 	public static final IElementType Constraint_3013 = getElementType("org.storydriven.storydiagrams.diagram.Constraint_3013"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType PrimitiveVariable_3011 = getElementType("org.storydriven.storydiagrams.diagram.PrimitiveVariable_3011"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ObjectSetVariable_3014 = getElementType("org.storydriven.storydiagrams.diagram.ObjectSetVariable_3014"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -307,6 +311,8 @@ public class StorydiagramsElementTypes {
 
 			elements.put(PrimitiveVariable_3011, PatternsPackage.eINSTANCE.getPrimitiveVariable());
 
+			elements.put(ObjectSetVariable_3014, PatternsPackage.eINSTANCE.getObjectSetVariable());
+
 			elements.put(MatchingPattern_3012, PatternsPackage.eINSTANCE.getMatchingPattern());
 
 			elements.put(JunctionNode_3002, ActivitiesPackage.eINSTANCE.getJunctionNode());
@@ -359,6 +365,7 @@ public class StorydiagramsElementTypes {
 			KNOWN_ELEMENT_TYPES.add(AttributeAssignment_3010);
 			KNOWN_ELEMENT_TYPES.add(Constraint_3013);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveVariable_3011);
+			KNOWN_ELEMENT_TYPES.add(ObjectSetVariable_3014);
 			KNOWN_ELEMENT_TYPES.add(MatchingPattern_3012);
 			KNOWN_ELEMENT_TYPES.add(JunctionNode_3002);
 			KNOWN_ELEMENT_TYPES.add(StartNode_3003);
@@ -407,6 +414,8 @@ public class StorydiagramsElementTypes {
 			return Constraint_3013;
 		case PrimitiveVariableEditPart.VISUAL_ID:
 			return PrimitiveVariable_3011;
+		case ObjectSetVariableEditPart.VISUAL_ID:
+			return ObjectSetVariable_3014;
 		case MatchingPatternEditPart.VISUAL_ID:
 			return MatchingPattern_3012;
 		case JunctionNode2EditPart.VISUAL_ID:

@@ -107,16 +107,18 @@ public class ResourceManager {
 
 		// search for activities
 		EClassifier type = ActivitiesPackage.Literals.ACTIVITY;
-		ResourceSet resourceSet = activity.eResource().getResourceSet();
-		for (Resource resource : resourceSet.getResources()) {
-			for (EObject element : getReachableObjectsOfType(resource, type)) {
-				if (element instanceof Activity && !activities.contains(element)) {
-					activities.add((Activity) element);
+		if (activity != null && activity.eResource() != null && activity.eResource().getResourceSet() != null) {
+			ResourceSet resourceSet = activity.eResource().getResourceSet();
+			for (Resource resource : resourceSet.getResources()) {
+				for (EObject element : getReachableObjectsOfType(resource, type)) {
+					if (element instanceof Activity && !activities.contains(element)) {
+						activities.add((Activity) element);
+					}
 				}
 			}
-		}
 
-		Collections.sort(activities, COMPARATOR_STORIES);
+			Collections.sort(activities, COMPARATOR_STORIES);
+		}
 	}
 
 	private static Collection<EObject> getReachableObjectsOfType(Resource resource, EClassifier type) {

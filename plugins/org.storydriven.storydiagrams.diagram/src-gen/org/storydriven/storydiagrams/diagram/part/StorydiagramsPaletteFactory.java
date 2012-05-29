@@ -47,7 +47,8 @@ public class StorydiagramsPaletteFactory {
 		paletteContainer.add(new PaletteSeparator());
 		paletteContainer.add(createStartNode9CreationTool());
 		paletteContainer.add(createJunctionNode10CreationTool());
-		paletteContainer.add(createStopNode11CreationTool());
+		paletteContainer.add(createActivityFinalNode11CreationTool());
+		paletteContainer.add(createFlowFinalNode12CreationTool());
 		return paletteContainer;
 	}
 
@@ -61,7 +62,7 @@ public class StorydiagramsPaletteFactory {
 		paletteContainer.setSmallIcon(StorydiagramsDiagramEditorPlugin
 				.findImageDescriptor("/org.storydriven.storydiagrams.diagram.custom/icons/palette/patterns.png")); //$NON-NLS-1$
 		paletteContainer.add(createObjectVariable1CreationTool());
-		paletteContainer.add(createObjectSetVariable2CreationTool());
+		paletteContainer.add(createCollectionVariable2CreationTool());
 		paletteContainer.add(createPrimitiveVariable3CreationTool());
 		paletteContainer.add(createContainerVariable4CreationTool());
 		paletteContainer.add(new PaletteSeparator());
@@ -194,15 +195,26 @@ public class StorydiagramsPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStopNode11CreationTool() {
+	private ToolEntry createActivityFinalNode11CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(StorydiagramsElementTypes.StopNode_3004);
 		types.add(StorydiagramsElementTypes.StopNode_2002);
-		NodeToolEntry entry = new NodeToolEntry(Messages.StopNode11CreationTool_title,
-				Messages.StopNode11CreationTool_desc, types);
-		entry.setId("createStopNode11CreationTool"); //$NON-NLS-1$
+		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityFinalNode11CreationTool_title,
+				Messages.ActivityFinalNode11CreationTool_desc, types);
+		entry.setId("createActivityFinalNode11CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.StopNode_3004));
 		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createFlowFinalNode12CreationTool() {
+		ToolEntry entry = new ToolEntry(Messages.FlowFinalNode12CreationTool_title,
+				Messages.FlowFinalNode12CreationTool_desc, null, null) {
+		};
+		entry.setId("createFlowFinalNode12CreationTool"); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -222,11 +234,14 @@ public class StorydiagramsPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createObjectSetVariable2CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.ObjectSetVariable2CreationTool_title,
-				Messages.ObjectSetVariable2CreationTool_desc, null, null) {
-		};
-		entry.setId("createObjectSetVariable2CreationTool"); //$NON-NLS-1$
+	private ToolEntry createCollectionVariable2CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(Messages.CollectionVariable2CreationTool_title,
+				Messages.CollectionVariable2CreationTool_desc,
+				Collections.singletonList(StorydiagramsElementTypes.ObjectSetVariable_3014));
+		entry.setId("createCollectionVariable2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(StorydiagramsElementTypes
+				.getImageDescriptor(StorydiagramsElementTypes.ObjectSetVariable_3014));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 

@@ -12,6 +12,7 @@ import org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableOperatorLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableSourceEndLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableTargetEndLabelEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableBindingOperatorEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableClassifierLabelEditPart;
@@ -44,6 +45,9 @@ public class CustomSDMEditPartFactory extends StorydiagramsEditPartFactory {
 			switch (StorydiagramsVisualIDRegistry.getVisualID(view)) {
 			case StopNodeEditPart.VISUAL_ID:
 				return new CustomStopNodeEditPart(view);
+
+			case MatchingStoryNodeEditPart.VISUAL_ID:
+				return new CustomMatchingStoryNodeEditPart(view);
 
 			case ModifyingStoryNodeEditPart.VISUAL_ID:
 				return new CustomModifyingStoryNodeEditPart(view);

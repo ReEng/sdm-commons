@@ -298,10 +298,13 @@ public class PrimitiveVariableEditPart extends ShapeNodeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
 			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
+			types.add(StorydiagramsElementTypes.ObjectSetVariable_3014);
 		} else if (relationshipType == StorydiagramsElementTypes.Path_4003) {
 			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
+			types.add(StorydiagramsElementTypes.ObjectSetVariable_3014);
 		} else if (relationshipType == StorydiagramsElementTypes.ContainmentRelation_4004) {
 			types.add(StorydiagramsElementTypes.ObjectVariable_3009);
+			types.add(StorydiagramsElementTypes.ObjectSetVariable_3014);
 		}
 		return types;
 	}

@@ -14,6 +14,7 @@ import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeGuardConstraintLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableNameLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ConstraintEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationOperatorLabelEditPart;
@@ -37,6 +38,7 @@ import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeModify
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeName2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeNameEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ObjectSetVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableBindingOperatorEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableClassifierLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart;
@@ -209,6 +211,9 @@ public class StorydiagramsVisualIDRegistry {
 			}
 			if (PatternsPackage.eINSTANCE.getPrimitiveVariable().isSuperTypeOf(domainElement.eClass())) {
 				return PrimitiveVariableEditPart.VISUAL_ID;
+			}
+			if (PatternsPackage.eINSTANCE.getObjectSetVariable().isSuperTypeOf(domainElement.eClass())) {
+				return ObjectSetVariableEditPart.VISUAL_ID;
 			}
 			break;
 		case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
@@ -419,6 +424,11 @@ public class StorydiagramsVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ObjectSetVariableEditPart.VISUAL_ID:
+			if (CollectionVariableNameLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case MatchingPatternEditPart.VISUAL_ID:
 			if (MatchingPatternStoryPatternCompartementEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -471,6 +481,9 @@ public class StorydiagramsVisualIDRegistry {
 				return true;
 			}
 			if (PrimitiveVariableEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ObjectSetVariableEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

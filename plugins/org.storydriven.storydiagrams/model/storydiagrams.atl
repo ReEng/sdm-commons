@@ -42,6 +42,23 @@ rule EditRawPropertyTab {
 }
 
 -- make wrapping label edit parts have stable names
+rule CollectionVariableNameLabel {
+	from
+		gnlin: GM!GenNodeLabel (
+			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gnlin.viewmap.getterName = 'getCollectionVariableNameLabel'
+		else
+			false
+		endif
+		)
+	to
+		gnlout: GM!GenNodeLabel (
+			editPartClassName <- 'CollectionVariableNameLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'CollectionVariableNameLabelItemSemanticEditPolicy'
+		)
+}
+
 rule ActivityCallNodeCalleeLabel {
 	from
 		gnlin: GM!GenNodeLabel (

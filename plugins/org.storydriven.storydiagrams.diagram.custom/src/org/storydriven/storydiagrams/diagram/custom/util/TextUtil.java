@@ -254,48 +254,51 @@ public final class TextUtil {
 	}
 
 	public static String getText(ActivityCallNode node) {
-		// map parameter -> expression
-		Map<EParameter, Expression> map = new LinkedHashMap<EParameter, Expression>();
-		for (ParameterBinding binding : node.getOwnedParameterBindings()) {
-			map.put(binding.getParameter(), binding.getValueExpression());
-		}
-
-		StringBuilder builder = new StringBuilder();
-
-		// out parameters
-		List<EParameter> out = node.getCallee().getOutParameters();
-		for (int i = 0; i < out.size(); i++) {
-			builder.append(getText(map.get(out.get(i))));
-			if (i < out.size() - 1) {
-				builder.append(',');
-				builder.append(' ');
-			} else {
-				builder.append(' ');
-				builder.append(':');
-				builder.append('=');
-				builder.append(' ');
+		if (node.getCallee() != null) {
+			// map parameter -> expression
+			Map<EParameter, Expression> map = new LinkedHashMap<EParameter, Expression>();
+			for (ParameterBinding binding : node.getOwnedParameterBindings()) {
+				map.put(binding.getParameter(), binding.getValueExpression());
 			}
-		}
 
-		if (node.getCallee() instanceof Activity) {
-			builder.append(((Activity) node.getCallee()).getName());
-		}
+			StringBuilder builder = new StringBuilder();
 
-		builder.append('(');
-
-		// in parameters
-		List<EParameter> in = node.getCallee().getInParameters();
-		for (int i = 0; i < in.size(); i++) {
-			builder.append(getText(map.get(in.get(i))));
-			if (i < in.size() - 1) {
-				builder.append(',');
-				builder.append(' ');
+			// out parameters
+			List<EParameter> out = node.getCallee().getOutParameters();
+			for (int i = 0; i < out.size(); i++) {
+				builder.append(getText(map.get(out.get(i))));
+				if (i < out.size() - 1) {
+					builder.append(',');
+					builder.append(' ');
+				} else {
+					builder.append(' ');
+					builder.append(':');
+					builder.append('=');
+					builder.append(' ');
+				}
 			}
+
+			if (node.getCallee() instanceof Activity) {
+				builder.append(((Activity) node.getCallee()).getName());
+			}
+
+			builder.append('(');
+
+			// in parameters
+			List<EParameter> in = node.getCallee().getInParameters();
+			for (int i = 0; i < in.size(); i++) {
+				builder.append(getText(map.get(in.get(i))));
+				if (i < in.size() - 1) {
+					builder.append(',');
+					builder.append(' ');
+				}
+			}
+
+			builder.append(')');
+
+			return builder.toString();
 		}
-
-		builder.append(')');
-
-		return builder.toString();
+		return STEREOTYPE_PREFIX + "no callee" + STEREOTYPE_SUFFIX;
 	}
 
 	public static String getText(Expression expression) {

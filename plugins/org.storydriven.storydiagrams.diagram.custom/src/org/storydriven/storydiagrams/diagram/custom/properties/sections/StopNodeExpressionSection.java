@@ -40,6 +40,14 @@ public class StopNodeExpressionSection extends AbstractExpressionSection {
 
 		return super.getContextClassifier();
 	}
+	@Override
+	protected void postUpdate() {
+		Expression expression = getElement().getReturnValue();
+
+		// TODO: ugly
+		getElement().getReturnValues().remove(expression);
+		getElement().getReturnValues().add(expression);
+	}
 
 	@Override
 	protected StopNode getElement() {

@@ -105,7 +105,7 @@ public class LinkVariableSourceEndLabelEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	public int getKeyPoint() {
-		return ConnectionLocator.SOURCE;
+		return ConnectionLocator.TARGET;
 	}
 
 	/**

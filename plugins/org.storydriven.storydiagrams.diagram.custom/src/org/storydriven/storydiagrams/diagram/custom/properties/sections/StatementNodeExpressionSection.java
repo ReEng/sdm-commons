@@ -30,4 +30,13 @@ public class StatementNodeExpressionSection extends AbstractExpressionSection {
 	protected StatementNode getElement() {
 		return (StatementNode) super.getElement();
 	}
+
+	@Override
+	protected void postUpdate() {
+		Expression expression = getElement().getStatementExpression();
+
+		// TODO: ugly
+		getElement().setStatementExpression(null);
+		getElement().setStatementExpression(expression);
+	}
 }

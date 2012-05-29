@@ -13,7 +13,6 @@ public class CustomActivityCallNodeCalleeLabelEditPart extends ActivityCallNodeC
 
 	@Override
 	protected void handleNotificationEvent(Notification event) {
-		System.out.println(event);
 		updateFigure();
 		super.handleNotificationEvent(event);
 	}
