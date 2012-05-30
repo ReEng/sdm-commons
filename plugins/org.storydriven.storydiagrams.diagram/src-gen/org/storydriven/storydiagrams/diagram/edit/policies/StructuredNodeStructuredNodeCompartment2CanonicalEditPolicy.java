@@ -21,7 +21,9 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.JunctionNode2EditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StartNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StatementNode2EditPart;
@@ -83,12 +85,14 @@ public class StructuredNodeStructuredNodeCompartment2CanonicalEditPolicy extends
 	private boolean isMyDiagramElement(View view) {
 		int visualID = StorydiagramsVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
-		case JunctionNode2EditPart.VISUAL_ID:
-		case StartNode2EditPart.VISUAL_ID:
-		case StopNode2EditPart.VISUAL_ID:
+		case ActivityCallNode2EditPart.VISUAL_ID:
+		case ModifyingStoryNode2EditPart.VISUAL_ID:
+		case MatchingStoryNode2EditPart.VISUAL_ID:
 		case StatementNode2EditPart.VISUAL_ID:
 		case StructuredNode2EditPart.VISUAL_ID:
-		case ModifyingStoryNode2EditPart.VISUAL_ID:
+		case StartNode2EditPart.VISUAL_ID:
+		case JunctionNode2EditPart.VISUAL_ID:
+		case StopNode2EditPart.VISUAL_ID:
 			return true;
 		}
 		return false;

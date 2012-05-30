@@ -1,46 +1,25 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.transaction.RecordingCommand;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.ExpressionsFactory;
-import org.storydriven.core.expressions.TextualExpression;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractExpressionSection;
-import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.diagram.custom.properties.AbstractExtendedExpressionSection;
 import org.storydriven.storydiagrams.patterns.Constraint;
-import org.storydriven.storydiagrams.patterns.ObjectVariable;
 
-public class ConstraintExpressionSection extends AbstractExpressionSection {
+public class ConstraintExpressionSection extends AbstractExtendedExpressionSection {
 	@Override
 	protected Expression getExpression() {
-		if (getElement().getConstraintExpression() == null) {
-			final TextualExpression expression = ExpressionsFactory.eINSTANCE.createTextualExpression();
-			expression.setLanguage("OCL");
-			expression.setLanguageVersion("1.0");
-
-			RecordingCommand command = new RecordingCommand(getEditingDomain()) {
-				@Override
-				protected void doExecute() {
-					getElement().setConstraintExpression(expression);
-				}
-			};
-			execute(command);
-		}
 		return getElement().getConstraintExpression();
 	}
-	@Override
-	protected void postUpdate() {
-		Expression expression = getElement().getConstraintExpression();
 
-		// TODO: ugly
-		getElement().setConstraintExpression(null);
+	@Override
+	protected void setExpression(Expression expression) {
 		getElement().setConstraintExpression(expression);
 	}
+
 	@Override
 	protected EClassifier getContextClassifier() {
-		AbstractVariable variable = getElement().getObjectVariable();
-		if (variable instanceof ObjectVariable) {
-			return ((ObjectVariable) variable).getClassifier();
+		if (getElement().getObjectVariable() != null) {
+			return getElement().getObjectVariable().getType();
 		}
 		return super.getContextClassifier();
 	}
@@ -48,5 +27,10 @@ public class ConstraintExpressionSection extends AbstractExpressionSection {
 	@Override
 	protected Constraint getElement() {
 		return (Constraint) super.getElement();
+	}
+
+	@Override
+	protected String getLabelText() {
+		return "Constraint Expression";
 	}
 }

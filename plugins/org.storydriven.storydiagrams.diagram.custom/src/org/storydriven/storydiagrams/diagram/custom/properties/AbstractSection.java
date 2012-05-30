@@ -12,6 +12,8 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
@@ -176,6 +178,6 @@ public abstract class AbstractSection implements ISection {
 	}
 
 	protected final void refreshTitleBar() {
-		page.refresh();
+		page.labelProviderChanged(new LabelProviderChangedEvent(new LabelProvider()));
 	}
 }

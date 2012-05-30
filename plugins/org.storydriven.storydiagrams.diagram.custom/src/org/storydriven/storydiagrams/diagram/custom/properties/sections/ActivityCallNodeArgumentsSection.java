@@ -62,7 +62,9 @@ public class ActivityCallNodeArgumentsSection extends AbstractSection {
 	@Override
 	protected void notifyChanged(Notification msg) {
 		if (msg.getFeature() != null && msg.getFeature().equals(CallsPackage.Literals.INVOCATION__CALLEE)) {
-			viewer.setInput(getInput());
+			if (viewer != null && !viewer.getControl().isDisposed()) {
+				viewer.setInput(getInput());
+			}
 		}
 	}
 

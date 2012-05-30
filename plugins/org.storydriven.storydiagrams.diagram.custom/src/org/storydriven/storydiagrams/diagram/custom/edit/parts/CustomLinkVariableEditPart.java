@@ -6,14 +6,33 @@ import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.storydriven.storydiagrams.diagram.custom.util.SdmUtility;
 import org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableEditPart;
+import org.storydriven.storydiagrams.patterns.BindingSemantics;
 import org.storydriven.storydiagrams.patterns.LinkVariable;
 
 public class CustomLinkVariableEditPart extends LinkVariableEditPart {
+	private PolygonDecoration cross;
+
 	public CustomLinkVariableEditPart(View view) {
 		super(view);
+
+		// prepare cross
+		PointList pl = new PointList();
+		pl.addPoint(-2, -2);
+		pl.addPoint(0, 0);
+		pl.addPoint(2, -2);
+		pl.addPoint(0, 0);
+		pl.addPoint(2, 2);
+		pl.addPoint(0, 0);
+		pl.addPoint(-2, 2);
+		pl.addPoint(0, 0);
+
+		cross = new PolygonDecoration();
+		cross.setTemplate(pl);
+		cross.setScale(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1));
 	}
 
 	@Override
@@ -45,7 +64,23 @@ public class CustomLinkVariableEditPart extends LinkVariableEditPart {
 			sourceDecoration = createSourceDecoration(color);
 		}
 		getPrimaryShape().setSourceDecoration(sourceDecoration);
+
+		// color
 		getPrimaryShape().setForegroundColor(color);
+
+		// line style
+		if (BindingSemantics.OPTIONAL.equals(link.getBindingSemantics())) {
+			getPrimaryShape().setLineStyle(SWT.LINE_DASH);
+		} else {
+			getPrimaryShape().setLineStyle(SWT.LINE_SOLID);
+		}
+
+		if (BindingSemantics.NEGATIVE.equals(link.getBindingSemantics())) {
+//			getPrimaryShape().add(cross);
+		} else if (getPrimaryShape().getChildren().contains(cross)) {
+//			getPrimaryShape().remove(cross);
+		}
+
 	}
 
 	private RotatableDecoration createTargetDecoration(Color color) {

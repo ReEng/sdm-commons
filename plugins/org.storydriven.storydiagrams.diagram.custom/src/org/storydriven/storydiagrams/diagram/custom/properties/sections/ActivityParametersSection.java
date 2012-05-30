@@ -123,6 +123,7 @@ public class ActivityParametersSection extends AbstractSection {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				configure(false, false, getEParameter(inParametersViewer.getSelection()));
+				inParametersViewer.refresh();
 			}
 		});
 
@@ -230,6 +231,57 @@ public class ActivityParametersSection extends AbstractSection {
 		refresh();
 	}
 
+	private void configure(final boolean isCreating, final boolean isOutgoing, final EParameter eParameter) {
+		// prepare dialog
+		configureDialog.setCreating(isCreating);
+		configureDialog.setOutgoing(isOutgoing);
+		configureDialog.setName(eParameter.getName());
+		configureDialog.setEClassifier(eParameter.getEType());
+		configureDialog.setActivity(getElement());
+
+		int result = configureDialog.open();
+		if (result == Window.OK) {
+			final String name = configureDialog.getName();
+			final EClassifier eClassifier = configureDialog.getEClassifier();
+
+			Command command = new RecordingCommand(getEditingDomain()) {
+				@Override
+				public void doExecute() {
+					eParameter.setName(name);
+					eParameter.setEType(eClassifier);
+					if (isCreating) {
+						getElement().getContainedParameters().add(eParameter);
+
+						// get insertion index
+						EList<EParameter> list;
+						if (isOutgoing) {
+							list = getElement().getOutParameters();
+						} else {
+							list = getElement().getInParameters();
+						}
+
+						int insertionIndex = list.size();
+						if (isCreating) {
+							int index = 0;
+							IStructuredSelection selection = (IStructuredSelection) inParametersViewer.getSelection();
+							for (Object element : selection.toArray()) {
+								int currentIndex = list.indexOf(element) + 1;
+								if (currentIndex > index) {
+									index = currentIndex;
+								}
+							}
+							insertionIndex = index;
+						}
+
+						list.add(insertionIndex, eParameter);
+					}
+				}
+			};
+			execute(command);
+			refresh();
+		}
+	}
+
 	@Override
 	public void refresh() {
 		// check if the activity is contained in an eOperation -> disable controls
@@ -321,56 +373,6 @@ public class ActivityParametersSection extends AbstractSection {
 			}
 
 			outRemoveButton.setEnabled(true);
-		}
-	}
-
-	private void configure(final boolean isCreating, final boolean isOutgoing, final EParameter eParameter) {
-		// prepare dialog
-		configureDialog.setCreating(isCreating);
-		configureDialog.setOutgoing(isOutgoing);
-		configureDialog.setName(eParameter.getName());
-		configureDialog.setEClassifier(eParameter.getEType());
-		configureDialog.setActivity(getElement());
-
-		int result = configureDialog.open();
-		if (result == Window.OK) {
-			final String name = configureDialog.getName();
-			final EClassifier eClassifier = configureDialog.getEClassifier();
-
-			Command command = new RecordingCommand(getEditingDomain()) {
-				@Override
-				public void doExecute() {
-					eParameter.setName(name);
-					eParameter.setEType(eClassifier);
-					if (isCreating) {
-						getElement().getContainedParameters().add(eParameter);
-
-						// get insertion index
-						EList<EParameter> list;
-						if (isOutgoing) {
-							list = getElement().getOutParameters();
-						} else {
-							list = getElement().getInParameters();
-						}
-
-						int insertionIndex = list.size();
-						if (isCreating) {
-							int index = 0;
-							IStructuredSelection selection = (IStructuredSelection) inParametersViewer.getSelection();
-							for (Object element : selection.toArray()) {
-								int currentIndex = list.indexOf(element) + 1;
-								if (currentIndex > index) {
-									index = currentIndex;
-								}
-							}
-							insertionIndex = index;
-						}
-
-						list.add(insertionIndex, eParameter);
-					}
-				}
-			};
-			execute(command);
 		}
 	}
 

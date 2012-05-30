@@ -17,22 +17,22 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.diagram.edit.commands.ActivityEdgeCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.ActivityEdgeReorientCommand;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.StoryPatternEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MatchingPatternEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry;
 import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes;
 
 /**
  * @generated
  */
-public class ModifyingStoryNodeItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
+public class MatchingStoryNode2ItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public ModifyingStoryNodeItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.ModifyingStoryNode_2007);
+	public MatchingStoryNode2ItemSemanticEditPolicy() {
+		super(StorydiagramsElementTypes.MatchingStoryNode_3017);
 	}
 
 	/**
@@ -81,23 +81,23 @@ public class ModifyingStoryNodeItemSemanticEditPolicy extends StorydiagramsBaseI
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
 			switch (StorydiagramsVisualIDRegistry.getVisualID(node)) {
-			case ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID:
+			case MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (StorydiagramsVisualIDRegistry.getVisualID(cnode)) {
-					case StoryPatternEditPart.VISUAL_ID:
+					}
+				}
+				break;
+			case MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart.VISUAL_ID:
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
+					Node cnode = (Node) cit.next();
+					switch (StorydiagramsVisualIDRegistry.getVisualID(cnode)) {
+					case MatchingPatternEditPart.VISUAL_ID:
 						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode
 								.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
-					}
-				}
-				break;
-			case ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
-					Node cnode = (Node) cit.next();
-					switch (StorydiagramsVisualIDRegistry.getVisualID(cnode)) {
 					}
 				}
 				break;

@@ -5,12 +5,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.ScalablePolygonShape;
+import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -21,23 +22,29 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
-import org.storydriven.storydiagrams.diagram.edit.policies.JunctionNodeItemSemanticEditPolicy;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
+import org.storydriven.storydiagrams.diagram.edit.policies.ActivityCallNode2ItemSemanticEditPolicy;
+import org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry;
 import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes;
 
 /**
  * @generated
  */
-public class JunctionNodeEditPart extends ShapeNodeEditPart {
+public class ActivityCallNode2EditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2003;
+	public static final int VISUAL_ID = 3016;
 
 	/**
 	 * @generated
@@ -52,7 +59,7 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public JunctionNodeEditPart(View view) {
+	public ActivityCallNode2EditPart(View view) {
 		super(view);
 	}
 
@@ -61,7 +68,7 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new JunctionNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityCallNode2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -96,14 +103,70 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new JunctionNodeFigure();
+		return primaryShape = new ActivityCallNodeFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public JunctionNodeFigure getPrimaryShape() {
-		return (JunctionNodeFigure) primaryShape;
+	public ActivityCallNodeFigure getPrimaryShape() {
+		return (ActivityCallNodeFigure) primaryShape;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof ActivityCallNodeName2EditPart) {
+			((ActivityCallNodeName2EditPart) childEditPart).setLabel(getPrimaryShape().getActivityCallNodeNameLabel());
+			return true;
+		}
+		if (childEditPart instanceof ActivityCallNodeCalleeLabelEditPart) {
+			((ActivityCallNodeCalleeLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getActivityCallNodeCalleeLabel());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof ActivityCallNodeName2EditPart) {
+			return true;
+		}
+		if (childEditPart instanceof ActivityCallNodeCalleeLabelEditPart) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		return getContentPane();
 	}
 
 	/**
@@ -138,6 +201,11 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
+		if (nodeShape.getLayoutManager() == null) {
+			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+			layout.setSpacing(5);
+			nodeShape.setLayoutManager(layout);
+		}
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
@@ -190,6 +258,13 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(ActivityCallNodeName2EditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
@@ -219,13 +294,13 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof StartNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart) {
+		if (targetEditPart instanceof JunctionNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof StopNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof ActivityCallNode2EditPart) {
+		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNode2EditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof ModifyingStoryNode2EditPart) {
@@ -316,23 +391,101 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class JunctionNodeFigure extends ScalablePolygonShape {
+	public class ActivityCallNodeFigure extends RoundedRectangle {
 
 		/**
 		 * @generated
 		 */
-		public JunctionNodeFigure() {
-			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
-			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(40)));
-			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
-			this.setFill(true);
+		private WrappingLabel fActivityCallNodeNameLabel;
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fActivityCallNodeCalleeLabel;
+
+		/**
+		 * @generated
+		 */
+		public ActivityCallNodeFigure() {
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
+			this.setLayoutManager(layoutThis);
+
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
 			this.setForegroundColor(ColorConstants.black);
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
-			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
+			this.setBackgroundColor(THIS_BACK);
+			createContents();
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			fActivityCallNodeNameLabel = new WrappingLabel();
+			fActivityCallNodeNameLabel.setText("");
+
+			fActivityCallNodeNameLabel.setFont(FACTIVITYCALLNODENAMELABEL_FONT);
+
+			GridData constraintFActivityCallNodeNameLabel = new GridData();
+			constraintFActivityCallNodeNameLabel.verticalAlignment = GridData.CENTER;
+			constraintFActivityCallNodeNameLabel.horizontalAlignment = GridData.CENTER;
+			constraintFActivityCallNodeNameLabel.horizontalIndent = 0;
+			constraintFActivityCallNodeNameLabel.horizontalSpan = 1;
+			constraintFActivityCallNodeNameLabel.verticalSpan = 1;
+			constraintFActivityCallNodeNameLabel.grabExcessHorizontalSpace = true;
+			constraintFActivityCallNodeNameLabel.grabExcessVerticalSpace = false;
+			this.add(fActivityCallNodeNameLabel, constraintFActivityCallNodeNameLabel);
+
+			fActivityCallNodeCalleeLabel = new WrappingLabel();
+			fActivityCallNodeCalleeLabel.setText("");
+
+			fActivityCallNodeCalleeLabel.setFont(FACTIVITYCALLNODECALLEELABEL_FONT);
+
+			GridData constraintFActivityCallNodeCalleeLabel = new GridData();
+			constraintFActivityCallNodeCalleeLabel.verticalAlignment = GridData.CENTER;
+			constraintFActivityCallNodeCalleeLabel.horizontalAlignment = GridData.CENTER;
+			constraintFActivityCallNodeCalleeLabel.horizontalIndent = 0;
+			constraintFActivityCallNodeCalleeLabel.horizontalSpan = 1;
+			constraintFActivityCallNodeCalleeLabel.verticalSpan = 1;
+			constraintFActivityCallNodeCalleeLabel.grabExcessHorizontalSpace = true;
+			constraintFActivityCallNodeCalleeLabel.grabExcessVerticalSpace = false;
+			this.add(fActivityCallNodeCalleeLabel, constraintFActivityCallNodeCalleeLabel);
+
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getActivityCallNodeNameLabel() {
+			return fActivityCallNodeNameLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getActivityCallNodeCalleeLabel() {
+			return fActivityCallNodeCalleeLabel;
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Color THIS_BACK = new Color(null, 206, 226, 237);
+
+	/**
+	 * @generated
+	 */
+	static final Font FACTIVITYCALLNODENAMELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
+			.getSystemFont().getFontData()[0].getName(), 10, SWT.BOLD);
+
+	/**
+	 * @generated
+	 */
+	static final Font FACTIVITYCALLNODECALLEELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
+			.getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 }

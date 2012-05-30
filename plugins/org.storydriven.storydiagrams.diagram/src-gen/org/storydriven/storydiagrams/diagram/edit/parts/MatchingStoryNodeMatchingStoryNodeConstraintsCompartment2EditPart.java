@@ -7,23 +7,23 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.diagram.edit.policies.ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentItemSemanticEditPolicy;
+import org.storydriven.storydiagrams.diagram.edit.policies.MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2ItemSemanticEditPolicy;
 import org.storydriven.storydiagrams.diagram.part.Messages;
 
 /**
  * @generated
  */
-public class ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart extends ListCompartmentEditPart {
+public class MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7018;
+	public static final int VISUAL_ID = 7020;
 
 	/**
 	 * @generated
 	 */
-	public ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart(View view) {
+	public MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart(View view) {
 		super(view);
 	}
 
@@ -38,7 +38,7 @@ public class ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart 
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return Messages.ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart_title;
+		return Messages.MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart_title;
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart 
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentItemSemanticEditPolicy());
+				new MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2ItemSemanticEditPolicy());
 	}
 
 	/**

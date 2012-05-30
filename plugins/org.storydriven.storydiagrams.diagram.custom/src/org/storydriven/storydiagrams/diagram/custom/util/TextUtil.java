@@ -12,27 +12,31 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EParameter;
+import org.storydriven.core.expressions.ArithmeticExpression;
+import org.storydriven.core.expressions.ArithmeticOperator;
+import org.storydriven.core.expressions.BinaryLogicExpression;
 import org.storydriven.core.expressions.ComparingOperator;
 import org.storydriven.core.expressions.ComparisonExpression;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.LiteralExpression;
+import org.storydriven.core.expressions.LogicOperator;
+import org.storydriven.core.expressions.NotExpression;
 import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
-import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.activities.EdgeGuard;
 import org.storydriven.storydiagrams.activities.MatchingStoryNode;
-import org.storydriven.storydiagrams.activities.ModifyingStoryNode;
 import org.storydriven.storydiagrams.activities.StartNode;
-import org.storydriven.storydiagrams.activities.StatementNode;
 import org.storydriven.storydiagrams.activities.StopNode;
-import org.storydriven.storydiagrams.activities.StructuredNode;
+import org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExpression;
 import org.storydriven.storydiagrams.calls.Callable;
+import org.storydriven.storydiagrams.calls.OpaqueCallable;
 import org.storydriven.storydiagrams.calls.ParameterBinding;
+import org.storydriven.storydiagrams.calls.ParameterExtension;
+import org.storydriven.storydiagrams.calls.expressions.MethodCallExpression;
+import org.storydriven.storydiagrams.calls.expressions.ParameterExpression;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
 import org.storydriven.storydiagrams.patterns.AttributeAssignment;
 import org.storydriven.storydiagrams.patterns.BindingState;
@@ -41,6 +45,8 @@ import org.storydriven.storydiagrams.patterns.LinkVariable;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.PrimitiveVariable;
 import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression;
+import org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression;
+import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
 import org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression;
 
 public final class TextUtil {
@@ -139,25 +145,6 @@ public final class TextUtil {
 		return builder;
 	}
 
-	public static String getText(AttributeAssignment element) {
-		return append(new StringBuilder(), element).toString();
-	}
-
-	private static StringBuilder append(StringBuilder builder, AttributeAssignment element) {
-		if (element.getAttribute() == null) {
-			builder.append(element.getAttribute());
-		} else {
-			builder.append(element.getAttribute().getName());
-		}
-		builder.append(' ');
-		builder.append(':');
-		builder.append('=');
-		builder.append(' ');
-		builder.append(element.getValueExpression());
-
-		return builder;
-	}
-
 	public static String getText(Constraint element) {
 		return append(new StringBuilder(), element).toString();
 	}
@@ -180,77 +167,6 @@ public final class TextUtil {
 			return builder.toString();
 		}
 		return null;
-	}
-
-	private static StringBuilder append(StringBuilder builder, Expression expression) {
-		if (expression instanceof AttributeValueExpression) {
-			AttributeValueExpression ave = (AttributeValueExpression) expression;
-			if (ave.getAttribute() != null) {
-				builder.append(ave.getAttribute().getName());
-			} else {
-				builder.append(ave.getAttribute());
-			}
-		} else if (expression instanceof LiteralExpression) {
-			LiteralExpression le = (LiteralExpression) expression;
-			builder.append(le.getValue());
-		} else if (expression instanceof TextualExpression) {
-			TextualExpression te = (TextualExpression) expression;
-			builder.append(te.getExpressionText());
-		} else if (expression instanceof ComparisonExpression) {
-			append(builder, ((ComparisonExpression) expression).getLeftExpression());
-			builder.append(' ');
-			append(builder, ((ComparisonExpression) expression).getOperator());
-			builder.append(' ');
-			append(builder, ((ComparisonExpression) expression).getRightExpression());
-		} else {
-			builder.append(expression);
-		}
-
-		return builder;
-	}
-
-	private static StringBuilder append(StringBuilder builder, ComparingOperator operator) {
-		switch (operator) {
-		case EQUAL:
-			return builder.append('=');
-		case GREATER:
-			return builder.append('>');
-		case GREATER_OR_EQUAL:
-			return builder.append('X');
-		case LESS:
-			return builder.append('<');
-		case LESS_OR_EQUAL:
-			return builder.append('X');
-		case REGULAR_EXPRESSION:
-			return builder.append('X');
-		case UNEQUAL:
-			return builder.append('X');
-		default:
-			return builder;
-		}
-	}
-
-	public static String getStereotype(ActivityNode element) {
-		if (element instanceof ActivityCallNode) {
-			return wrapStereotype("call");
-		}
-		if (element instanceof ModifyingStoryNode) {
-			return wrapStereotype("story");
-		}
-		if (element instanceof MatchingStoryNode) {
-			return wrapStereotype("match");
-		}
-		if (element instanceof StatementNode) {
-			return wrapStereotype("statement");
-		}
-		if (element instanceof StructuredNode) {
-			return wrapStereotype("structure");
-		}
-		return null;
-	}
-
-	public static String wrapStereotype(String text) {
-		return STEREOTYPE_PREFIX + text + STEREOTYPE_SUFFIX;
 	}
 
 	public static String getText(ActivityCallNode node) {
@@ -302,109 +218,321 @@ public final class TextUtil {
 	}
 
 	public static String getText(Expression expression) {
-		if (expression instanceof ComparisonExpression) {
-			return getText((ComparisonExpression) expression);
+		return append(new StringBuilder(), expression).toString();
+	}
+
+	private static StringBuilder append(StringBuilder builder, Expression expression) {
+		if (expression == null) {
+			return builder.append(expression);
 		}
-		if (expression instanceof AttributeValueExpression) {
-			return getText((AttributeValueExpression) expression);
-		}
-		if (expression instanceof PrimitiveVariableExpression) {
-			return getText((PrimitiveVariableExpression) expression);
-		}
+
+		boolean isRoot = expression.eContainer() instanceof Constraint;
+		boolean isNegated = expression.eContainer() instanceof NotExpression;
+
+		// literal expression
 		if (expression instanceof LiteralExpression) {
-			return getText((LiteralExpression) expression);
+			LiteralExpression le = (LiteralExpression) expression;
+			String value = le.getValue();
+			Object realValue = TypeUtil.getParsedValue(le.getValueType(), value);
+
+			if (realValue == null) {
+				// value could not be parsed
+				builder.append('"');
+				builder.append(value);
+				builder.append('"');
+			} else {
+				builder.append(String.valueOf(realValue));
+			}
+
+			return builder;
 		}
+
+		// textual expression
 		if (expression instanceof TextualExpression) {
-			return getText((TextualExpression) expression);
+			TextualExpression te = (TextualExpression) expression;
+
+			if (isRoot) {
+				return builder.append(te.getExpressionText());
+			}
+
+			builder.append('{');
+			builder.append(' ');
+			builder.append(te.getExpressionText());
+			builder.append(' ');
+			builder.append('}');
+
+			return builder;
 		}
 
-		return String.valueOf(expression);
+		// not expression
+		if (expression instanceof NotExpression) {
+			NotExpression ne = (NotExpression) expression;
+
+			builder.append("not");
+			builder.append('(');
+			append(builder, ne.getNegatedExpression());
+			builder.append(')');
+
+			return builder;
+		}
+
+		// arithmetic expression
+		if (expression instanceof ArithmeticExpression) {
+			ArithmeticExpression ae = (ArithmeticExpression) expression;
+
+			if (!isRoot && !isNegated) {
+				builder.append('(');
+			}
+
+			append(builder, ae.getLeftExpression());
+			builder.append(' ');
+			append(builder, ae.getOperator());
+			builder.append(' ');
+			append(builder, ae.getRightExpression());
+
+			if (!isRoot && !isNegated) {
+				builder.append(')');
+			}
+
+			return builder;
+		}
+
+		// logic expression
+		if (expression instanceof BinaryLogicExpression) {
+			BinaryLogicExpression ble = (BinaryLogicExpression) expression;
+
+			if (!isRoot && !isNegated) {
+				builder.append('(');
+			}
+
+			append(builder, ble.getLeftExpression());
+			builder.append(' ');
+			append(builder, ble.getOperator());
+			builder.append(' ');
+			append(builder, ble.getRightExpression());
+
+			if (!isRoot && !isNegated) {
+				builder.append(')');
+			}
+
+			return builder;
+		}
+
+		// comparison expression
+		if (expression instanceof ComparisonExpression) {
+			ComparisonExpression ce = (ComparisonExpression) expression;
+
+			if (!isRoot && !isNegated) {
+				builder.append('(');
+			}
+
+			append(builder, ce.getLeftExpression());
+			builder.append(' ');
+			append(builder, ce.getOperator());
+			builder.append(' ');
+			append(builder, ce.getRightExpression());
+
+			if (!isRoot && !isNegated) {
+				builder.append(')');
+			}
+			return builder;
+		}
+
+		// object variable expression
+		if (expression instanceof ObjectVariableExpression) {
+			ObjectVariableExpression ove = (ObjectVariableExpression) expression;
+			if (ove.getObject() == null) {
+				return builder.append(ove.getObject());
+			}
+			return builder.append(((ObjectVariableExpression) expression).getObject().getName());
+		}
+
+		// primitive variable expression
+		if (expression instanceof PrimitiveVariableExpression) {
+			PrimitiveVariableExpression ove = (PrimitiveVariableExpression) expression;
+			if (ove.getPrimitiveVariable() == null) {
+				return builder.append(ove.getPrimitiveVariable());
+			}
+			return builder.append(((PrimitiveVariableExpression) expression).getPrimitiveVariable().getName());
+		}
+
+		// attribute value expression
+		if (expression instanceof AttributeValueExpression) {
+			AttributeValueExpression ave = (AttributeValueExpression) expression;
+			if (ave.getAttribute() == null) {
+				return builder.append(ave.getAttribute());
+			}
+			return builder.append(ave.getAttribute().getName());
+		}
+
+		// method call expression
+		if (expression instanceof MethodCallExpression) {
+			// TODO: check for usable string representation
+			MethodCallExpression mce = (MethodCallExpression) expression;
+			return append(builder, mce.getOpaqueCallable());
+		}
+
+		// method call expression
+		if (expression instanceof ParameterExpression) {
+			ParameterExpression pe = (ParameterExpression) expression;
+
+			return append(builder, pe.getParameter());
+		}
+
+		// collection size expression
+		if (expression instanceof ObjectSetSizeExpression) {
+			ObjectSetSizeExpression cse = (ObjectSetSizeExpression) expression;
+
+			if (cse.getSet() == null) {
+				return builder.append(cse.getSet());
+			}
+
+			return builder.append(cse.getSet().getName());
+		}
+
+		// exception variable expression
+		if (expression instanceof ExceptionVariableExpression) {
+			ExceptionVariableExpression eve = (ExceptionVariableExpression) expression;
+
+			if (eve.getExceptionVariable() == null) {
+				return builder.append(eve.getExceptionVariable());
+			}
+
+			return builder.append(eve.getExceptionVariable().getName());
+		}
+
+		return builder.append(expression);
 	}
 
-	private static String getText(ComparisonExpression expression) {
-		StringBuilder text = new StringBuilder();
-
-		text.append(getText(expression.getLeftExpression()));
-		text.append(" ");
-		text.append(getText(expression.getOperator()));
-		text.append(" ");
-		text.append(getText(expression.getRightExpression()));
-
-		return text.toString();
+	public static String getText(ArithmeticOperator operator) {
+		return append(new StringBuilder(), operator).toString();
 	}
 
-	private static String getText(ComparingOperator operator) {
+	private static StringBuilder append(StringBuilder builder, ArithmeticOperator operator) {
+		switch (operator) {
+		case PLUS:
+			return builder.append('+');
+		case MINUS:
+			return builder.append('-');
+		case TIMES:
+			return builder.append('*');
+		case DIVIDE:
+			return builder.append('/');
+		case MODULO:
+			return builder.append('%');
+		case EXP:
+			return builder.append('^');
+		default:
+			return builder.append(operator);
+		}
+	}
+
+	public static String getText(LogicOperator operator) {
+		return append(new StringBuilder(), operator).toString();
+	}
+
+	private static StringBuilder append(StringBuilder builder, LogicOperator operator) {
+		switch (operator) {
+		case AND:
+			return builder.append("AND");
+		case EQUIVALENT:
+			return builder.append("EQUIV");
+		case IMPLY:
+			return builder.append("IMPLY");
+		case OR:
+			return builder.append("OR");
+		case XOR:
+			return builder.append("XOR");
+		default:
+			return builder.append(operator);
+		}
+	}
+
+	public static String getText(ComparingOperator operator) {
+		return append(new StringBuilder(), operator).toString();
+	}
+
+	private static StringBuilder append(StringBuilder builder, ComparingOperator operator) {
 		switch (operator) {
 		case EQUAL:
-			return "=";
+			return builder.append('=');
 		case GREATER:
-			return ">";
+			return builder.append('>');
 		case GREATER_OR_EQUAL:
-			return ">=";
+			return builder.append("\u2265");
 		case LESS:
-			return "<";
+			return builder.append('<');
 		case LESS_OR_EQUAL:
-			return "<=";
+			return builder.append("\u2264");
 		case REGULAR_EXPRESSION:
-			return "RegEx";
+			return builder.append("regex");
 		case UNEQUAL:
-			return "!=";
+			return builder.append("\u2260");
 		default:
-			return "UNKNOWN_OPERATOR";
+			return builder;
 		}
 	}
 
-	private static String getText(AttributeValueExpression expression) {
-		if (expression.getAttribute() != null) {
-			return EcoreTextUtil.getText(expression.getAttribute());
+	private static StringBuilder append(StringBuilder builder, OpaqueCallable callable) {
+		if (callable == null) {
+			return builder.append(callable);
+		}
+
+		builder.append(callable.getName());
+
+		return builder;
+	}
+
+	private static StringBuilder append(StringBuilder builder, ParameterExtension parameter) {
+		if (parameter == null) {
+			return builder.append(parameter);
+		}
+
+		return EcoreTextUtil.append(builder, parameter.getParameter());
+	}
+
+	public static String getText(AttributeAssignment element) {
+		return append(new StringBuilder(), element).toString();
+	}
+
+	private static StringBuilder append(StringBuilder builder, AttributeAssignment element) {
+		if (element.getAttribute() == null) {
+			builder.append(element.getAttribute());
 		} else {
-			return String.valueOf(null);
+			builder.append(element.getAttribute().getName());
 		}
-	}
+		builder.append(' ');
+		builder.append(':');
+		builder.append('=');
+		builder.append(' ');
+		builder.append(element.getValueExpression());
 
-	private static String getText(PrimitiveVariableExpression expression) {
-		if (expression.getType() != null) {
-			return EcoreTextUtil.getText(expression.getType());
-		} else {
-			return String.valueOf(null);
-		}
-	}
-
-	private static String getText(LiteralExpression expression) {
-		return expression.getValue();
-	}
-
-	private static String getText(TextualExpression expression) {
-		return expression.getExpressionText();
+		return builder;
 	}
 
 	public static String getText(AbstractVariable element) {
-		StringBuilder text = new StringBuilder();
+		return append(new StringBuilder(), element).toString();
+	}
 
-		text.append(element.getName());
+	private static StringBuilder append(StringBuilder builder, AbstractVariable element) {
+		builder.append(element.getName());
 
-		if (!element.getBindingState().equals(BindingState.BOUND)) {
-			if (element.getBindingState().equals(BindingState.MAYBE_BOUND)) {
-				text.append("?");
+		if (!BindingState.BOUND.equals(element.getBindingState())) {
+			if (BindingState.MAYBE_BOUND.equals(element.getBindingState())) {
+				builder.append('?');
 			}
-			text.append(' ');
-			text.append(':');
-			text.append(' ');
+			builder.append(' ');
+			builder.append(':');
+			builder.append(' ');
 
 			if (element instanceof ObjectVariable) {
-				EClass type = ((ObjectVariable) element).getClassifier();
-				text.append(EcoreTextUtil.getText(type));
+				EcoreTextUtil.append(builder, ((ObjectVariable) element).getClassifier());
 			} else if (element instanceof PrimitiveVariable) {
-				EDataType type = ((PrimitiveVariable) element).getClassifier();
-				if (type == null) {
-					text.append(type);
-				} else {
-					text.append(type.getName());
-				}
+				EcoreTextUtil.append(builder, ((PrimitiveVariable) element).getClassifier());
 			}
 		}
 
-		return text.toString();
+		return builder;
 	}
 
 	public static String getText(EdgeGuard guard) {

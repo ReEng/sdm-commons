@@ -20,7 +20,7 @@ public class ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart ext
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7006;
+	public static final int VISUAL_ID = 7005;
 
 	/**
 	 * @generated

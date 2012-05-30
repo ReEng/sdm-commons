@@ -225,32 +225,8 @@
               </compartments>
             </ownedChild>
           </children>
-          <children
-              compartment="//@nodes.2/@ownedChild/@children.0/@ownedChild/@compartments.0"
-              referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild">
-            <containmentFeature
-                href="storydiagrams.ecore#//patterns/StoryPattern/variable"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="storydiagrams.ecore#//patterns/ObjectSetVariable"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="storydiagrams.gmfgraph#CollectionVariableNameLabel"/>
-                <features
-                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                <editableFeatures
-                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="storydiagrams.gmftool#//@palette/@tools.1/@tools.1"/>
-              <diagramNode
-                  href="storydiagrams.gmfgraph#CollectionVariableNode"/>
-            </ownedChild>
-          </children>
           <compartments
-              children="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.2/@ownedChild/@children.0/@ownedChild/@children.2">
+              children="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0">
             <compartment
                 href="storydiagrams.gmfgraph#StoryPatternCompartement"/>
           </compartments>
@@ -322,19 +298,15 @@
               referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
             <containmentFeature
                 href="storydiagrams.ecore#//patterns/StoryPattern/variable"/>
-            <childrenFeature
-                href="storydiagrams.ecore#//patterns/StoryPattern/variable"/>
           </children>
           <children
               compartment="//@nodes.3/@ownedChild/@children.0/@ownedChild/@compartments.0"
               referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild">
             <containmentFeature
                 href="storydiagrams.ecore#//patterns/StoryPattern/variable"/>
-            <childrenFeature
-                href="storydiagrams.ecore#//patterns/StoryPattern/variable"/>
           </children>
           <compartments
-              children="//@nodes.3/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.3/@ownedChild/@children.0/@ownedChild/@children.1">
+              children="//@nodes.3/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.3/@ownedChild/@children.0/@ownedChild/@children.0">
             <compartment
                 href="storydiagrams.gmfgraph#StoryPatternCompartement"/>
           </compartments>
@@ -373,19 +345,19 @@
           href="storydiagrams.gmfgraph#StructuredNodeNode"/>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0"
-          referencedChild="//@nodes.6/@ownedChild">
+          referencedChild="//@nodes.0/@ownedChild">
         <containmentFeature
             href="storydiagrams.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0"
-          referencedChild="//@nodes.5/@ownedChild">
+          referencedChild="//@nodes.2/@ownedChild">
         <containmentFeature
             href="storydiagrams.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0"
-          referencedChild="//@nodes.7/@ownedChild">
+          referencedChild="//@nodes.3/@ownedChild">
         <containmentFeature
             href="storydiagrams.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
@@ -403,18 +375,24 @@
       </children>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0"
-          referencedChild="//@nodes.2/@ownedChild">
+          referencedChild="//@nodes.5/@ownedChild">
         <containmentFeature
             href="storydiagrams.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0"
-          referencedChild="//@nodes.4/@ownedChild">
+          referencedChild="//@nodes.6/@ownedChild">
+        <containmentFeature
+            href="storydiagrams.ecore#//activities/StructuredNode/ownedActivityNode"/>
+      </children>
+      <children
+          compartment="//@nodes.4/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.7/@ownedChild">
         <containmentFeature
             href="storydiagrams.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </children>
       <compartments
-          children="//@nodes.4/@ownedChild/@children.0 //@nodes.4/@ownedChild/@children.1 //@nodes.4/@ownedChild/@children.3 //@nodes.4/@ownedChild/@children.2 //@nodes.4/@ownedChild/@children.4 //@nodes.4/@ownedChild/@children.5 //@nodes.4/@ownedChild/@children.6">
+          children="//@nodes.4/@ownedChild/@children.6 //@nodes.4/@ownedChild/@children.5 //@nodes.4/@ownedChild/@children.3 //@nodes.4/@ownedChild/@children.7 //@nodes.4/@ownedChild/@children.4 //@nodes.4/@ownedChild/@children.1 //@nodes.4/@ownedChild/@children.0 //@nodes.4/@ownedChild/@children.2">
         <compartment
             href="storydiagrams.gmfgraph#StructuredNodeCompartment"/>
       </compartments>

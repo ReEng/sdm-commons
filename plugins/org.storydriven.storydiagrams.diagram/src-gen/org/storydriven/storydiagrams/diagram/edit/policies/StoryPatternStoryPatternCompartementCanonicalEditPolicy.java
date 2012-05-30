@@ -20,7 +20,6 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.diagram.edit.parts.ObjectSetVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.PrimitiveVariableEditPart;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramUpdater;
@@ -79,8 +78,7 @@ public class StoryPatternStoryPatternCompartementCanonicalEditPolicy extends Can
 	 */
 	private boolean isMyDiagramElement(View view) {
 		int visualID = StorydiagramsVisualIDRegistry.getVisualID(view);
-		return visualID == ObjectVariableEditPart.VISUAL_ID || visualID == PrimitiveVariableEditPart.VISUAL_ID
-				|| visualID == ObjectSetVariableEditPart.VISUAL_ID;
+		return visualID == ObjectVariableEditPart.VISUAL_ID || visualID == PrimitiveVariableEditPart.VISUAL_ID;
 	}
 
 	/**

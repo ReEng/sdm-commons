@@ -8,24 +8,24 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.diagram.edit.policies.ModifyingStoryNodeModifyingStoryNodeContentCompartmentCanonicalEditPolicy;
-import org.storydriven.storydiagrams.diagram.edit.policies.ModifyingStoryNodeModifyingStoryNodeContentCompartmentItemSemanticEditPolicy;
+import org.storydriven.storydiagrams.diagram.edit.policies.MatchingStoryNodeMatchingStoryNodeContentCompartment2CanonicalEditPolicy;
+import org.storydriven.storydiagrams.diagram.edit.policies.MatchingStoryNodeMatchingStoryNodeContentCompartment2ItemSemanticEditPolicy;
 import org.storydriven.storydiagrams.diagram.part.Messages;
 
 /**
  * @generated
  */
-public class ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart extends ShapeCompartmentEditPart {
+public class MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7012;
+	public static final int VISUAL_ID = 7021;
 
 	/**
 	 * @generated
 	 */
-	public ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart(View view) {
+	public MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart(View view) {
 		super(view);
 	}
 
@@ -33,7 +33,7 @@ public class ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart exte
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return Messages.ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart_title;
+		return Messages.MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart_title;
 	}
 
 	/**
@@ -51,11 +51,11 @@ public class ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart exte
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new ModifyingStoryNodeModifyingStoryNodeContentCompartmentItemSemanticEditPolicy());
+				new MatchingStoryNodeMatchingStoryNodeContentCompartment2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
-				new ModifyingStoryNodeModifyingStoryNodeContentCompartmentCanonicalEditPolicy());
+				new MatchingStoryNodeMatchingStoryNodeContentCompartment2CanonicalEditPolicy());
 	}
 
 	/**

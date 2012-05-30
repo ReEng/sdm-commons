@@ -23,6 +23,7 @@ import org.storydriven.storydiagrams.activities.StartNode;
 import org.storydriven.storydiagrams.activities.StatementNode;
 import org.storydriven.storydiagrams.activities.StopNode;
 import org.storydriven.storydiagrams.activities.StructuredNode;
+import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart;
@@ -34,13 +35,14 @@ import org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingPatternEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingPatternStoryPatternCompartementEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.ObjectSetVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableObjectVariableConstraintsCompartmentEditPart;
@@ -65,7 +67,6 @@ import org.storydriven.storydiagrams.patterns.Constraint;
 import org.storydriven.storydiagrams.patterns.ContainmentRelation;
 import org.storydriven.storydiagrams.patterns.LinkVariable;
 import org.storydriven.storydiagrams.patterns.MatchingPattern;
-import org.storydriven.storydiagrams.patterns.ObjectSetVariable;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.Path;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
@@ -85,7 +86,7 @@ public class StorydiagramsDiagramUpdater {
 		case ActivityEditPart.VISUAL_ID:
 			return getActivity_1000SemanticChildren(view);
 		case ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID:
-			return getModifyingStoryNodeModifyingStoryNodeContentCompartment_7013SemanticChildren(view);
+			return getModifyingStoryNodeModifyingStoryNodeContentCompartment_7012SemanticChildren(view);
 		case StoryPatternStoryPatternCompartementEditPart.VISUAL_ID:
 			return getStoryPatternStoryPatternCompartement_7007SemanticChildren(view);
 		case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
@@ -98,10 +99,12 @@ public class StorydiagramsDiagramUpdater {
 			return getMatchingPatternStoryPatternCompartement_7016SemanticChildren(view);
 		case StructuredNodeStructuredNodeCompartmentEditPart.VISUAL_ID:
 			return getStructuredNodeStructuredNodeCompartment_7002SemanticChildren(view);
+		case ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID:
+			return getModifyingStoryNodeModifyingStoryNodeContentCompartment_7005SemanticChildren(view);
+		case MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart.VISUAL_ID:
+			return getMatchingStoryNodeMatchingStoryNodeContentCompartment_7021SemanticChildren(view);
 		case StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID:
 			return getStructuredNodeStructuredNodeCompartment_7004SemanticChildren(view);
-		case ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID:
-			return getModifyingStoryNodeModifyingStoryNodeContentCompartment_7006SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -157,7 +160,7 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsNodeDescriptor> getModifyingStoryNodeModifyingStoryNodeContentCompartment_7013SemanticChildren(
+	public static List<StorydiagramsNodeDescriptor> getModifyingStoryNodeModifyingStoryNodeContentCompartment_7012SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -200,10 +203,6 @@ public class StorydiagramsDiagramUpdater {
 				continue;
 			}
 			if (visualID == PrimitiveVariableEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
-				continue;
-			}
-			if (visualID == ObjectSetVariableEditPart.VISUAL_ID) {
 				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -331,15 +330,15 @@ public class StorydiagramsDiagramUpdater {
 		for (Iterator<?> it = modelElement.getOwnedActivityNodes().iterator(); it.hasNext();) {
 			ActivityNode childElement = (ActivityNode) it.next();
 			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == JunctionNode2EditPart.VISUAL_ID) {
+			if (visualID == ActivityCallNode2EditPart.VISUAL_ID) {
 				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == StartNode2EditPart.VISUAL_ID) {
+			if (visualID == ModifyingStoryNode2EditPart.VISUAL_ID) {
 				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == StopNode2EditPart.VISUAL_ID) {
+			if (visualID == MatchingStoryNode2EditPart.VISUAL_ID) {
 				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -351,9 +350,65 @@ public class StorydiagramsDiagramUpdater {
 				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == ModifyingStoryNode2EditPart.VISUAL_ID) {
+			if (visualID == StartNode2EditPart.VISUAL_ID) {
 				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
 				continue;
+			}
+			if (visualID == JunctionNode2EditPart.VISUAL_ID) {
+				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StopNode2EditPart.VISUAL_ID) {
+				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<StorydiagramsNodeDescriptor> getModifyingStoryNodeModifyingStoryNodeContentCompartment_7005SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		ModifyingStoryNode modelElement = (ModifyingStoryNode) containerView.getElement();
+		LinkedList<StorydiagramsNodeDescriptor> result = new LinkedList<StorydiagramsNodeDescriptor>();
+		{
+			StoryPattern childElement = modelElement.getOwnedRule();
+			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == StoryPatternEditPart.VISUAL_ID) {
+				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<StorydiagramsNodeDescriptor> getMatchingStoryNodeMatchingStoryNodeContentCompartment_7021SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		MatchingStoryNode modelElement = (MatchingStoryNode) containerView.getElement();
+		LinkedList<StorydiagramsNodeDescriptor> result = new LinkedList<StorydiagramsNodeDescriptor>();
+		{
+			MatchingPattern childElement = modelElement.getOwnedPattern();
+			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == MatchingPatternEditPart.VISUAL_ID) {
+				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
 			}
 		}
 		return result;
@@ -376,15 +431,15 @@ public class StorydiagramsDiagramUpdater {
 		for (Iterator<?> it = modelElement.getOwnedActivityNodes().iterator(); it.hasNext();) {
 			ActivityNode childElement = (ActivityNode) it.next();
 			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == JunctionNode2EditPart.VISUAL_ID) {
+			if (visualID == ActivityCallNode2EditPart.VISUAL_ID) {
 				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == StartNode2EditPart.VISUAL_ID) {
+			if (visualID == ModifyingStoryNode2EditPart.VISUAL_ID) {
 				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == StopNode2EditPart.VISUAL_ID) {
+			if (visualID == MatchingStoryNode2EditPart.VISUAL_ID) {
 				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -396,33 +451,17 @@ public class StorydiagramsDiagramUpdater {
 				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == ModifyingStoryNode2EditPart.VISUAL_ID) {
+			if (visualID == StartNode2EditPart.VISUAL_ID) {
 				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
 				continue;
 			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<StorydiagramsNodeDescriptor> getModifyingStoryNodeModifyingStoryNodeContentCompartment_7006SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		ModifyingStoryNode modelElement = (ModifyingStoryNode) containerView.getElement();
-		LinkedList<StorydiagramsNodeDescriptor> result = new LinkedList<StorydiagramsNodeDescriptor>();
-		{
-			StoryPattern childElement = modelElement.getOwnedRule();
-			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == StoryPatternEditPart.VISUAL_ID) {
+			if (visualID == JunctionNode2EditPart.VISUAL_ID) {
 				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StopNode2EditPart.VISUAL_ID) {
+				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				continue;
 			}
 		}
 		return result;
@@ -461,22 +500,24 @@ public class StorydiagramsDiagramUpdater {
 			return getConstraint_3013ContainedLinks(view);
 		case PrimitiveVariableEditPart.VISUAL_ID:
 			return getPrimitiveVariable_3011ContainedLinks(view);
-		case ObjectSetVariableEditPart.VISUAL_ID:
-			return getObjectSetVariable_3014ContainedLinks(view);
 		case MatchingPatternEditPart.VISUAL_ID:
 			return getMatchingPattern_3012ContainedLinks(view);
-		case JunctionNode2EditPart.VISUAL_ID:
-			return getJunctionNode_3002ContainedLinks(view);
-		case StartNode2EditPart.VISUAL_ID:
-			return getStartNode_3003ContainedLinks(view);
-		case StopNode2EditPart.VISUAL_ID:
-			return getStopNode_3004ContainedLinks(view);
+		case ActivityCallNode2EditPart.VISUAL_ID:
+			return getActivityCallNode_3016ContainedLinks(view);
+		case ModifyingStoryNode2EditPart.VISUAL_ID:
+			return getModifyingStoryNode_3007ContainedLinks(view);
+		case MatchingStoryNode2EditPart.VISUAL_ID:
+			return getMatchingStoryNode_3017ContainedLinks(view);
 		case StatementNode2EditPart.VISUAL_ID:
 			return getStatementNode_3005ContainedLinks(view);
 		case StructuredNode2EditPart.VISUAL_ID:
 			return getStructuredNode_3006ContainedLinks(view);
-		case ModifyingStoryNode2EditPart.VISUAL_ID:
-			return getModifyingStoryNode_3007ContainedLinks(view);
+		case StartNode2EditPart.VISUAL_ID:
+			return getStartNode_3003ContainedLinks(view);
+		case JunctionNode2EditPart.VISUAL_ID:
+			return getJunctionNode_3002ContainedLinks(view);
+		case StopNode2EditPart.VISUAL_ID:
+			return getStopNode_3004ContainedLinks(view);
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return getActivityEdge_4001ContainedLinks(view);
 		case LinkVariableEditPart.VISUAL_ID:
@@ -520,22 +561,24 @@ public class StorydiagramsDiagramUpdater {
 			return getConstraint_3013IncomingLinks(view);
 		case PrimitiveVariableEditPart.VISUAL_ID:
 			return getPrimitiveVariable_3011IncomingLinks(view);
-		case ObjectSetVariableEditPart.VISUAL_ID:
-			return getObjectSetVariable_3014IncomingLinks(view);
 		case MatchingPatternEditPart.VISUAL_ID:
 			return getMatchingPattern_3012IncomingLinks(view);
-		case JunctionNode2EditPart.VISUAL_ID:
-			return getJunctionNode_3002IncomingLinks(view);
-		case StartNode2EditPart.VISUAL_ID:
-			return getStartNode_3003IncomingLinks(view);
-		case StopNode2EditPart.VISUAL_ID:
-			return getStopNode_3004IncomingLinks(view);
+		case ActivityCallNode2EditPart.VISUAL_ID:
+			return getActivityCallNode_3016IncomingLinks(view);
+		case ModifyingStoryNode2EditPart.VISUAL_ID:
+			return getModifyingStoryNode_3007IncomingLinks(view);
+		case MatchingStoryNode2EditPart.VISUAL_ID:
+			return getMatchingStoryNode_3017IncomingLinks(view);
 		case StatementNode2EditPart.VISUAL_ID:
 			return getStatementNode_3005IncomingLinks(view);
 		case StructuredNode2EditPart.VISUAL_ID:
 			return getStructuredNode_3006IncomingLinks(view);
-		case ModifyingStoryNode2EditPart.VISUAL_ID:
-			return getModifyingStoryNode_3007IncomingLinks(view);
+		case StartNode2EditPart.VISUAL_ID:
+			return getStartNode_3003IncomingLinks(view);
+		case JunctionNode2EditPart.VISUAL_ID:
+			return getJunctionNode_3002IncomingLinks(view);
+		case StopNode2EditPart.VISUAL_ID:
+			return getStopNode_3004IncomingLinks(view);
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return getActivityEdge_4001IncomingLinks(view);
 		case LinkVariableEditPart.VISUAL_ID:
@@ -579,22 +622,24 @@ public class StorydiagramsDiagramUpdater {
 			return getConstraint_3013OutgoingLinks(view);
 		case PrimitiveVariableEditPart.VISUAL_ID:
 			return getPrimitiveVariable_3011OutgoingLinks(view);
-		case ObjectSetVariableEditPart.VISUAL_ID:
-			return getObjectSetVariable_3014OutgoingLinks(view);
 		case MatchingPatternEditPart.VISUAL_ID:
 			return getMatchingPattern_3012OutgoingLinks(view);
-		case JunctionNode2EditPart.VISUAL_ID:
-			return getJunctionNode_3002OutgoingLinks(view);
-		case StartNode2EditPart.VISUAL_ID:
-			return getStartNode_3003OutgoingLinks(view);
-		case StopNode2EditPart.VISUAL_ID:
-			return getStopNode_3004OutgoingLinks(view);
+		case ActivityCallNode2EditPart.VISUAL_ID:
+			return getActivityCallNode_3016OutgoingLinks(view);
+		case ModifyingStoryNode2EditPart.VISUAL_ID:
+			return getModifyingStoryNode_3007OutgoingLinks(view);
+		case MatchingStoryNode2EditPart.VISUAL_ID:
+			return getMatchingStoryNode_3017OutgoingLinks(view);
 		case StatementNode2EditPart.VISUAL_ID:
 			return getStatementNode_3005OutgoingLinks(view);
 		case StructuredNode2EditPart.VISUAL_ID:
 			return getStructuredNode_3006OutgoingLinks(view);
-		case ModifyingStoryNode2EditPart.VISUAL_ID:
-			return getModifyingStoryNode_3007OutgoingLinks(view);
+		case StartNode2EditPart.VISUAL_ID:
+			return getStartNode_3003OutgoingLinks(view);
+		case JunctionNode2EditPart.VISUAL_ID:
+			return getJunctionNode_3002OutgoingLinks(view);
+		case StopNode2EditPart.VISUAL_ID:
+			return getStopNode_3004OutgoingLinks(view);
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return getActivityEdge_4001OutgoingLinks(view);
 		case LinkVariableEditPart.VISUAL_ID:
@@ -716,13 +761,6 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getObjectSetVariable_3014ContainedLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List<StorydiagramsLinkDescriptor> getMatchingPattern_3012ContainedLinks(View view) {
 		MatchingPattern modelElement = (MatchingPattern) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
@@ -735,21 +773,21 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getJunctionNode_3002ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getActivityCallNode_3016ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getStartNode_3003ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getModifyingStoryNode_3007ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getStopNode_3004ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getMatchingStoryNode_3017ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -770,7 +808,21 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getModifyingStoryNode_3007ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getStartNode_3003ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<StorydiagramsLinkDescriptor> getJunctionNode_3002ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<StorydiagramsLinkDescriptor> getStopNode_3004ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -950,20 +1002,6 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getObjectSetVariable_3014IncomingLinks(View view) {
-		ObjectSetVariable modelElement = (ObjectSetVariable) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
-				.eResource().getResourceSet().getResources());
-		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_LinkVariable_4002(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Path_4003(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_ContainmentRelation_4004(modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List<StorydiagramsLinkDescriptor> getMatchingPattern_3012IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
@@ -971,8 +1009,8 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getJunctionNode_3002IncomingLinks(View view) {
-		JunctionNode modelElement = (JunctionNode) view.getElement();
+	public static List<StorydiagramsLinkDescriptor> getActivityCallNode_3016IncomingLinks(View view) {
+		ActivityCallNode modelElement = (ActivityCallNode) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
 				.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
@@ -983,8 +1021,8 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getStartNode_3003IncomingLinks(View view) {
-		StartNode modelElement = (StartNode) view.getElement();
+	public static List<StorydiagramsLinkDescriptor> getModifyingStoryNode_3007IncomingLinks(View view) {
+		ModifyingStoryNode modelElement = (ModifyingStoryNode) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
 				.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
@@ -995,8 +1033,8 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getStopNode_3004IncomingLinks(View view) {
-		StopNode modelElement = (StopNode) view.getElement();
+	public static List<StorydiagramsLinkDescriptor> getMatchingStoryNode_3017IncomingLinks(View view) {
+		MatchingStoryNode modelElement = (MatchingStoryNode) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
 				.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
@@ -1031,8 +1069,32 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getModifyingStoryNode_3007IncomingLinks(View view) {
-		ModifyingStoryNode modelElement = (ModifyingStoryNode) view.getElement();
+	public static List<StorydiagramsLinkDescriptor> getStartNode_3003IncomingLinks(View view) {
+		StartNode modelElement = (StartNode) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
+				.eResource().getResourceSet().getResources());
+		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<StorydiagramsLinkDescriptor> getJunctionNode_3002IncomingLinks(View view) {
+		JunctionNode modelElement = (JunctionNode) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
+				.eResource().getResourceSet().getResources());
+		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<StorydiagramsLinkDescriptor> getStopNode_3004IncomingLinks(View view) {
+		StopNode modelElement = (StopNode) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
 				.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
@@ -1191,18 +1253,6 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getObjectSetVariable_3014OutgoingLinks(View view) {
-		ObjectSetVariable modelElement = (ObjectSetVariable) view.getElement();
-		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_LinkVariable_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Path_4003(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_ContainmentRelation_4004(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List<StorydiagramsLinkDescriptor> getMatchingPattern_3012OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
@@ -1210,8 +1260,8 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getJunctionNode_3002OutgoingLinks(View view) {
-		JunctionNode modelElement = (JunctionNode) view.getElement();
+	public static List<StorydiagramsLinkDescriptor> getActivityCallNode_3016OutgoingLinks(View view) {
+		ActivityCallNode modelElement = (ActivityCallNode) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
 		return result;
@@ -1220,8 +1270,8 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getStartNode_3003OutgoingLinks(View view) {
-		StartNode modelElement = (StartNode) view.getElement();
+	public static List<StorydiagramsLinkDescriptor> getModifyingStoryNode_3007OutgoingLinks(View view) {
+		ModifyingStoryNode modelElement = (ModifyingStoryNode) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
 		return result;
@@ -1230,8 +1280,8 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getStopNode_3004OutgoingLinks(View view) {
-		StopNode modelElement = (StopNode) view.getElement();
+	public static List<StorydiagramsLinkDescriptor> getMatchingStoryNode_3017OutgoingLinks(View view) {
+		MatchingStoryNode modelElement = (MatchingStoryNode) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
 		return result;
@@ -1260,8 +1310,28 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getModifyingStoryNode_3007OutgoingLinks(View view) {
-		ModifyingStoryNode modelElement = (ModifyingStoryNode) view.getElement();
+	public static List<StorydiagramsLinkDescriptor> getStartNode_3003OutgoingLinks(View view) {
+		StartNode modelElement = (StartNode) view.getElement();
+		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<StorydiagramsLinkDescriptor> getJunctionNode_3002OutgoingLinks(View view) {
+		JunctionNode modelElement = (JunctionNode) view.getElement();
+		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<StorydiagramsLinkDescriptor> getStopNode_3004OutgoingLinks(View view) {
+		StopNode modelElement = (StopNode) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
 		return result;

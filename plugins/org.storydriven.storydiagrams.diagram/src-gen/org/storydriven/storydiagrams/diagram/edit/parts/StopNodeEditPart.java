@@ -290,13 +290,13 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.StopNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof JunctionNode2EditPart) {
+		if (targetEditPart instanceof ActivityCallNode2EditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof StartNode2EditPart) {
+		if (targetEditPart instanceof ModifyingStoryNode2EditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof StopNode2EditPart) {
+		if (targetEditPart instanceof MatchingStoryNode2EditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof StatementNode2EditPart) {
@@ -305,7 +305,13 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof StructuredNode2EditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof ModifyingStoryNode2EditPart) {
+		if (targetEditPart instanceof StartNode2EditPart) {
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+		}
+		if (targetEditPart instanceof JunctionNode2EditPart) {
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+		}
+		if (targetEditPart instanceof StopNode2EditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		return types;
@@ -325,12 +331,14 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StopNode_2002);
-			types.add(StorydiagramsElementTypes.JunctionNode_3002);
-			types.add(StorydiagramsElementTypes.StartNode_3003);
-			types.add(StorydiagramsElementTypes.StopNode_3004);
+			types.add(StorydiagramsElementTypes.ActivityCallNode_3016);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
+			types.add(StorydiagramsElementTypes.MatchingStoryNode_3017);
 			types.add(StorydiagramsElementTypes.StatementNode_3005);
 			types.add(StorydiagramsElementTypes.StructuredNode_3006);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
+			types.add(StorydiagramsElementTypes.StartNode_3003);
+			types.add(StorydiagramsElementTypes.JunctionNode_3002);
+			types.add(StorydiagramsElementTypes.StopNode_3004);
 		}
 		return types;
 	}
@@ -358,12 +366,14 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StopNode_2002);
-			types.add(StorydiagramsElementTypes.JunctionNode_3002);
-			types.add(StorydiagramsElementTypes.StartNode_3003);
-			types.add(StorydiagramsElementTypes.StopNode_3004);
+			types.add(StorydiagramsElementTypes.ActivityCallNode_3016);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
+			types.add(StorydiagramsElementTypes.MatchingStoryNode_3017);
 			types.add(StorydiagramsElementTypes.StatementNode_3005);
 			types.add(StorydiagramsElementTypes.StructuredNode_3006);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
+			types.add(StorydiagramsElementTypes.StartNode_3003);
+			types.add(StorydiagramsElementTypes.JunctionNode_3002);
+			types.add(StorydiagramsElementTypes.StopNode_3004);
 		}
 		return types;
 	}

@@ -7,14 +7,15 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeCalleeLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeName2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeNameEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeGuardConstraintLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableNameLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ConstraintEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationOperatorLabelEditPart;
@@ -26,9 +27,13 @@ import org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableSourceEndLab
 import org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableTargetEndLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingPatternEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingPatternStoryPatternCompartementEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeMatchingStoryNodeConstraintsCompartmentEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeName2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeNameEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart;
@@ -38,7 +43,6 @@ import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeModify
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeName2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeNameEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.ObjectSetVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableBindingOperatorEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableClassifierLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart;
@@ -212,9 +216,6 @@ public class StorydiagramsVisualIDRegistry {
 			if (PatternsPackage.eINSTANCE.getPrimitiveVariable().isSuperTypeOf(domainElement.eClass())) {
 				return PrimitiveVariableEditPart.VISUAL_ID;
 			}
-			if (PatternsPackage.eINSTANCE.getObjectSetVariable().isSuperTypeOf(domainElement.eClass())) {
-				return ObjectSetVariableEditPart.VISUAL_ID;
-			}
 			break;
 		case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
 			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
@@ -240,14 +241,14 @@ public class StorydiagramsVisualIDRegistry {
 			}
 			break;
 		case StructuredNodeStructuredNodeCompartmentEditPart.VISUAL_ID:
-			if (ActivitiesPackage.eINSTANCE.getJunctionNode().isSuperTypeOf(domainElement.eClass())) {
-				return JunctionNode2EditPart.VISUAL_ID;
+			if (ActivitiesPackage.eINSTANCE.getActivityCallNode().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityCallNode2EditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getStartNode().isSuperTypeOf(domainElement.eClass())) {
-				return StartNode2EditPart.VISUAL_ID;
+			if (ActivitiesPackage.eINSTANCE.getModifyingStoryNode().isSuperTypeOf(domainElement.eClass())) {
+				return ModifyingStoryNode2EditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getStopNode().isSuperTypeOf(domainElement.eClass())) {
-				return StopNode2EditPart.VISUAL_ID;
+			if (ActivitiesPackage.eINSTANCE.getMatchingStoryNode().isSuperTypeOf(domainElement.eClass())) {
+				return MatchingStoryNode2EditPart.VISUAL_ID;
 			}
 			if (ActivitiesPackage.eINSTANCE.getStatementNode().isSuperTypeOf(domainElement.eClass())) {
 				return StatementNode2EditPart.VISUAL_ID;
@@ -255,33 +256,50 @@ public class StorydiagramsVisualIDRegistry {
 			if (ActivitiesPackage.eINSTANCE.getStructuredNode().isSuperTypeOf(domainElement.eClass())) {
 				return StructuredNode2EditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getModifyingStoryNode().isSuperTypeOf(domainElement.eClass())) {
-				return ModifyingStoryNode2EditPart.VISUAL_ID;
-			}
-			break;
-		case StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID:
-			if (ActivitiesPackage.eINSTANCE.getJunctionNode().isSuperTypeOf(domainElement.eClass())) {
-				return JunctionNode2EditPart.VISUAL_ID;
-			}
 			if (ActivitiesPackage.eINSTANCE.getStartNode().isSuperTypeOf(domainElement.eClass())) {
 				return StartNode2EditPart.VISUAL_ID;
 			}
+			if (ActivitiesPackage.eINSTANCE.getJunctionNode().isSuperTypeOf(domainElement.eClass())) {
+				return JunctionNode2EditPart.VISUAL_ID;
+			}
 			if (ActivitiesPackage.eINSTANCE.getStopNode().isSuperTypeOf(domainElement.eClass())) {
 				return StopNode2EditPart.VISUAL_ID;
-			}
-			if (ActivitiesPackage.eINSTANCE.getStatementNode().isSuperTypeOf(domainElement.eClass())) {
-				return StatementNode2EditPart.VISUAL_ID;
-			}
-			if (ActivitiesPackage.eINSTANCE.getStructuredNode().isSuperTypeOf(domainElement.eClass())) {
-				return StructuredNode2EditPart.VISUAL_ID;
-			}
-			if (ActivitiesPackage.eINSTANCE.getModifyingStoryNode().isSuperTypeOf(domainElement.eClass())) {
-				return ModifyingStoryNode2EditPart.VISUAL_ID;
 			}
 			break;
 		case ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID:
 			if (PatternsPackage.eINSTANCE.getStoryPattern().isSuperTypeOf(domainElement.eClass())) {
 				return StoryPatternEditPart.VISUAL_ID;
+			}
+			break;
+		case MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart.VISUAL_ID:
+			if (PatternsPackage.eINSTANCE.getMatchingPattern().isSuperTypeOf(domainElement.eClass())) {
+				return MatchingPatternEditPart.VISUAL_ID;
+			}
+			break;
+		case StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID:
+			if (ActivitiesPackage.eINSTANCE.getActivityCallNode().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityCallNode2EditPart.VISUAL_ID;
+			}
+			if (ActivitiesPackage.eINSTANCE.getModifyingStoryNode().isSuperTypeOf(domainElement.eClass())) {
+				return ModifyingStoryNode2EditPart.VISUAL_ID;
+			}
+			if (ActivitiesPackage.eINSTANCE.getMatchingStoryNode().isSuperTypeOf(domainElement.eClass())) {
+				return MatchingStoryNode2EditPart.VISUAL_ID;
+			}
+			if (ActivitiesPackage.eINSTANCE.getStatementNode().isSuperTypeOf(domainElement.eClass())) {
+				return StatementNode2EditPart.VISUAL_ID;
+			}
+			if (ActivitiesPackage.eINSTANCE.getStructuredNode().isSuperTypeOf(domainElement.eClass())) {
+				return StructuredNode2EditPart.VISUAL_ID;
+			}
+			if (ActivitiesPackage.eINSTANCE.getStartNode().isSuperTypeOf(domainElement.eClass())) {
+				return StartNode2EditPart.VISUAL_ID;
+			}
+			if (ActivitiesPackage.eINSTANCE.getJunctionNode().isSuperTypeOf(domainElement.eClass())) {
+				return JunctionNode2EditPart.VISUAL_ID;
+			}
+			if (ActivitiesPackage.eINSTANCE.getStopNode().isSuperTypeOf(domainElement.eClass())) {
+				return StopNode2EditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -355,10 +373,10 @@ public class StorydiagramsVisualIDRegistry {
 			if (ModifyingStoryNodeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -424,23 +442,38 @@ public class StorydiagramsVisualIDRegistry {
 				return true;
 			}
 			break;
-		case ObjectSetVariableEditPart.VISUAL_ID:
-			if (CollectionVariableNameLabelEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case MatchingPatternEditPart.VISUAL_ID:
 			if (MatchingPatternStoryPatternCompartementEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case StartNode2EditPart.VISUAL_ID:
-			if (StartNodeSignatureLabelEditPart.VISUAL_ID == nodeVisualID) {
+		case ActivityCallNode2EditPart.VISUAL_ID:
+			if (ActivityCallNodeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActivityCallNodeCalleeLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case StopNode2EditPart.VISUAL_ID:
-			if (StopNodeSignatureLabelEditPart.VISUAL_ID == nodeVisualID) {
+		case ModifyingStoryNode2EditPart.VISUAL_ID:
+			if (ModifyingStoryNodeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case MatchingStoryNode2EditPart.VISUAL_ID:
+			if (MatchingStoryNodeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -460,14 +493,13 @@ public class StorydiagramsVisualIDRegistry {
 				return true;
 			}
 			break;
-		case ModifyingStoryNode2EditPart.VISUAL_ID:
-			if (ModifyingStoryNodeName2EditPart.VISUAL_ID == nodeVisualID) {
+		case StartNode2EditPart.VISUAL_ID:
+			if (StartNodeSignatureLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+			break;
+		case StopNode2EditPart.VISUAL_ID:
+			if (StopNodeSignatureLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -481,9 +513,6 @@ public class StorydiagramsVisualIDRegistry {
 				return true;
 			}
 			if (PrimitiveVariableEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ObjectSetVariableEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -511,13 +540,13 @@ public class StorydiagramsVisualIDRegistry {
 			}
 			break;
 		case StructuredNodeStructuredNodeCompartmentEditPart.VISUAL_ID:
-			if (JunctionNode2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityCallNode2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (StartNode2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ModifyingStoryNode2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (StopNode2EditPart.VISUAL_ID == nodeVisualID) {
+			if (MatchingStoryNode2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (StatementNode2EditPart.VISUAL_ID == nodeVisualID) {
@@ -526,32 +555,49 @@ public class StorydiagramsVisualIDRegistry {
 			if (StructuredNode2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ModifyingStoryNode2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID:
-			if (JunctionNode2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			if (StartNode2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (JunctionNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (StopNode2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (StatementNode2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (StructuredNode2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ModifyingStoryNode2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID:
 			if (StoryPatternEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart.VISUAL_ID:
+			if (MatchingPatternEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID:
+			if (ActivityCallNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ModifyingStoryNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (MatchingStoryNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StatementNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StructuredNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StartNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (JunctionNode2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StopNode2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

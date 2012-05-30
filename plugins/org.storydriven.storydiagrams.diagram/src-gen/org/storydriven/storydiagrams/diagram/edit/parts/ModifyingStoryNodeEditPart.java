@@ -124,16 +124,16 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 			((ModifyingStoryNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStoryNodeNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureStoryNodeConstraintsRectangle();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart) childEditPart).getFigure());
-			return true;
-		}
 		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStoryNodeContentRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureStoryNodeConstraintsRectangle();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -146,17 +146,17 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof ModifyingStoryNodeNameEditPart) {
 			return true;
 		}
+		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureStoryNodeContentRectangle();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) childEditPart).getFigure());
+			return true;
+		}
 		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStoryNodeConstraintsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart) childEditPart)
 					.getFigure());
-			return true;
-		}
-		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureStoryNodeContentRectangle();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -186,11 +186,11 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart) {
-			return getPrimaryShape().getFigureStoryNodeConstraintsRectangle();
-		}
 		if (editPart instanceof ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) {
 			return getPrimaryShape().getFigureStoryNodeContentRectangle();
+		}
+		if (editPart instanceof ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart) {
+			return getPrimaryShape().getFigureStoryNodeConstraintsRectangle();
 		}
 		return getContentPane();
 	}
@@ -326,13 +326,13 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof StopNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof JunctionNode2EditPart) {
+		if (targetEditPart instanceof ActivityCallNode2EditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof StartNode2EditPart) {
+		if (targetEditPart instanceof ModifyingStoryNode2EditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof StopNode2EditPart) {
+		if (targetEditPart instanceof MatchingStoryNode2EditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof StatementNode2EditPart) {
@@ -341,7 +341,13 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof StructuredNode2EditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof ModifyingStoryNode2EditPart) {
+		if (targetEditPart instanceof StartNode2EditPart) {
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+		}
+		if (targetEditPart instanceof JunctionNode2EditPart) {
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+		}
+		if (targetEditPart instanceof StopNode2EditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		return types;
@@ -361,12 +367,14 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StopNode_2002);
-			types.add(StorydiagramsElementTypes.JunctionNode_3002);
-			types.add(StorydiagramsElementTypes.StartNode_3003);
-			types.add(StorydiagramsElementTypes.StopNode_3004);
+			types.add(StorydiagramsElementTypes.ActivityCallNode_3016);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
+			types.add(StorydiagramsElementTypes.MatchingStoryNode_3017);
 			types.add(StorydiagramsElementTypes.StatementNode_3005);
 			types.add(StorydiagramsElementTypes.StructuredNode_3006);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
+			types.add(StorydiagramsElementTypes.StartNode_3003);
+			types.add(StorydiagramsElementTypes.JunctionNode_3002);
+			types.add(StorydiagramsElementTypes.StopNode_3004);
 		}
 		return types;
 	}
@@ -394,12 +402,14 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StopNode_2002);
-			types.add(StorydiagramsElementTypes.JunctionNode_3002);
-			types.add(StorydiagramsElementTypes.StartNode_3003);
-			types.add(StorydiagramsElementTypes.StopNode_3004);
+			types.add(StorydiagramsElementTypes.ActivityCallNode_3016);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
+			types.add(StorydiagramsElementTypes.MatchingStoryNode_3017);
 			types.add(StorydiagramsElementTypes.StatementNode_3005);
 			types.add(StorydiagramsElementTypes.StructuredNode_3006);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
+			types.add(StorydiagramsElementTypes.StartNode_3003);
+			types.add(StorydiagramsElementTypes.JunctionNode_3002);
+			types.add(StorydiagramsElementTypes.StopNode_3004);
 		}
 		return types;
 	}

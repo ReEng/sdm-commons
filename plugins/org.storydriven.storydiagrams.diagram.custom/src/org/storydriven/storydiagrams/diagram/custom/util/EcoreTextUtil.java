@@ -157,4 +157,8 @@ public class EcoreTextUtil {
 
 		return builder;
 	}
+
+	public static StringBuilder append(StringBuilder builder, EParameter parameter) {
+		return builder.append(parameter.getName());
+	}
 }

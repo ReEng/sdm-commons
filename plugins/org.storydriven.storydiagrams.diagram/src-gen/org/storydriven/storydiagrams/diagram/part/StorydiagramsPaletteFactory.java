@@ -79,9 +79,11 @@ public class StorydiagramsPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createActivityCallNode1CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
+		types.add(StorydiagramsElementTypes.ActivityCallNode_3016);
 		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityCallNode1CreationTool_title,
-				Messages.ActivityCallNode1CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.ActivityCallNode_2006));
+				Messages.ActivityCallNode1CreationTool_desc, types);
 		entry.setId("createActivityCallNode1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsElementTypes
 				.getImageDescriptor(StorydiagramsElementTypes.ActivityCallNode_2006));
@@ -109,9 +111,11 @@ public class StorydiagramsPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createMatchingStoryNode3CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
+		types.add(StorydiagramsElementTypes.MatchingStoryNode_3017);
 		NodeToolEntry entry = new NodeToolEntry(Messages.MatchingStoryNode3CreationTool_title,
-				Messages.MatchingStoryNode3CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.MatchingStoryNode_2008));
+				Messages.MatchingStoryNode3CreationTool_desc, types);
 		entry.setId("createMatchingStoryNode3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsElementTypes
 				.getImageDescriptor(StorydiagramsElementTypes.MatchingStoryNode_2008));
@@ -235,13 +239,10 @@ public class StorydiagramsPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createCollectionVariable2CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(Messages.CollectionVariable2CreationTool_title,
-				Messages.CollectionVariable2CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.ObjectSetVariable_3014));
+		ToolEntry entry = new ToolEntry(Messages.CollectionVariable2CreationTool_title,
+				Messages.CollectionVariable2CreationTool_desc, null, null) {
+		};
 		entry.setId("createCollectionVariable2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes
-				.getImageDescriptor(StorydiagramsElementTypes.ObjectSetVariable_3014));
-		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
