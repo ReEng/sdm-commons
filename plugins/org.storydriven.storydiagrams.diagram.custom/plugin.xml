@@ -430,9 +430,16 @@
          </propertySection>
          <propertySection
                afterSection="ActivityCallNode.callee"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityCallNodeArgumentsSection"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityCallNodeInArgumentsSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityCallNodeFilter"
-               id="ActivityCallNode.arguments"
+               id="ActivityCallNode.in"
+               tab="core">
+         </propertySection>
+         <propertySection
+               afterSection="ActivityCallNode.in"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityCallNodeOutArgumentsSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityCallNodeFilter"
+               id="ActivityCallNode.out"
                tab="core">
          </propertySection>
          <propertySection

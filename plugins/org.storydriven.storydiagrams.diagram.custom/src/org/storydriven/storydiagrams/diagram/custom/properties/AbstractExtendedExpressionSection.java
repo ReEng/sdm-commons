@@ -8,6 +8,7 @@ import java.util.Map;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -68,6 +69,7 @@ import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.TextUtil;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.PrimitiveVariable;
+import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
 import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPackage;
@@ -105,6 +107,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 	private Composite comparisonPC;
 	private Composite arithmeticPC;
 	private Composite logicPC;
+	private Composite attributePC;
 	private Combo logicOperatorCombo;
 	private Combo arithmeticOperatorCombo;
 	private Combo comparisonOperatorCombo;
@@ -114,17 +117,22 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 	private Map<String, EDataType> literalTypes;
 	private Map<String, ObjectVariable> objectVariables;
 	private Map<String, PrimitiveVariable> primitiveVariables;
+	private Map<String, EAttribute> attributes;
 
 	private ComposedAdapterFactoryLabelProvider labelProvider;
 	private Combo oveVariableCombo;
 	private Composite ovePC;
 	private Composite pvePC;
 	private Combo pveVariableCombo;
+	private Combo attributesObjectCombo;
+	private Combo attributesCombo;
 
 	public AbstractExtendedExpressionSection() {
 		literalTypes = new LinkedHashMap<String, EDataType>();
 		objectVariables = new LinkedHashMap<String, ObjectVariable>();
 		primitiveVariables = new LinkedHashMap<String, PrimitiveVariable>();
+		attributes = new LinkedHashMap<String, EAttribute>();
+
 		initializeSourceViewerProviders();
 	}
 
@@ -450,6 +458,38 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 				}
 			});
 		}
+
+		// attribute value expression
+		{
+			attributePC = factory.createFlatFormComposite(treePropertiesComposite);
+			GridLayoutFactory.fillDefaults().numColumns(2).applyTo(attributePC);
+
+			// object variable
+			factory.createLabel(attributePC, "Variable:", SWT.TRAIL);
+			attributesObjectCombo = new Combo(attributePC, SWT.READ_ONLY);
+			factory.adapt(attributesObjectCombo);
+			GridDataFactory.fillDefaults().grab(true, false).applyTo(attributesObjectCombo);
+			attributesObjectCombo.addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					changeProperty(PatternsExpressionsPackage.Literals.ATTRIBUTE_VALUE_EXPRESSION__OBJECT,
+							objectVariables.get(attributesObjectCombo.getText()));
+				}
+			});
+
+			// attribute
+			factory.createLabel(attributePC, "Attribute:", SWT.TRAIL);
+			attributesCombo = new Combo(attributePC, SWT.READ_ONLY);
+			factory.adapt(attributesCombo);
+			GridDataFactory.fillDefaults().grab(true, false).applyTo(attributesCombo);
+			attributesCombo.addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					changeProperty(PatternsExpressionsPackage.Literals.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE,
+							attributes.get(attributesCombo.getText()));
+				}
+			});
+		}
 	}
 
 	protected abstract void setExpression(Expression expression);
@@ -674,6 +714,23 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 				pveVariableCombo.select(index);
 
 				control = pvePC;
+			} else if (selected instanceof AttributeValueExpression) {
+				AttributeValueExpression ave = (AttributeValueExpression) selected;
+
+				// TODO: set object variables
+				String[] items = getObjectVariableItems();
+				int index = getObjectVariableIndex(ave.getObject());
+
+				attributesObjectCombo.setItems(items);
+				attributesObjectCombo.select(index);
+
+				items = getAttributeItems(ave.getObject());
+				index = getAttributeIndex(ave.getAttribute());
+
+				attributesCombo.setItems(items);
+				attributesCombo.select(index);
+
+				control = attributePC;
 			}
 		}
 		properties.topControl = control;
@@ -756,6 +813,34 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 		int index = 0;
 		for (PrimitiveVariable check : primitiveVariables.values()) {
 			if (check.equals(variable)) {
+				return index;
+			}
+			index++;
+		}
+
+		return -1;
+	}
+
+	private String[] getAttributeItems(ObjectVariable variable) {
+		// clear
+		attributes.clear();
+
+		if (variable != null && variable.getClassifier() != null) {
+			// collect them
+			for (EAttribute attribute : variable.getClassifier().getEAllAttributes()) {
+				String key = attribute.getName();
+				attributes.put(key, attribute);
+			}
+
+			return attributes.keySet().toArray(new String[attributes.keySet().size()]);
+		}
+		return new String[0];
+	}
+
+	private int getAttributeIndex(EAttribute attribute) {
+		int index = 0;
+		for (EAttribute check : attributes.values()) {
+			if (check.equals(attribute)) {
 				return index;
 			}
 			index++;

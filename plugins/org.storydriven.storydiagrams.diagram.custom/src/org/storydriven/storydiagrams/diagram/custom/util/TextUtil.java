@@ -226,7 +226,7 @@ public final class TextUtil {
 			return builder.append(expression);
 		}
 
-		boolean isRoot = expression.eContainer() instanceof Constraint;
+		boolean isRoot = !(expression.eContainer() instanceof Expression);
 		boolean isNegated = expression.eContainer() instanceof NotExpression;
 
 		// literal expression
@@ -359,10 +359,18 @@ public final class TextUtil {
 		// attribute value expression
 		if (expression instanceof AttributeValueExpression) {
 			AttributeValueExpression ave = (AttributeValueExpression) expression;
-			if (ave.getAttribute() == null) {
-				return builder.append(ave.getAttribute());
+			if (ave.getObject() == null) {
+				builder.append(ave.getObject());
+			} else {
+				builder.append(ave.getObject().getName());
 			}
-			return builder.append(ave.getAttribute().getName());
+			builder.append('.');
+			if (ave.getAttribute() == null) {
+				builder.append(ave.getAttribute());
+			} else {
+				builder.append(ave.getAttribute().getName());
+			}
+			return builder;
 		}
 
 		// method call expression
