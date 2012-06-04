@@ -124,16 +124,16 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 			((ModifyingStoryNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStoryNodeNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureStoryNodeContentRectangle();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) childEditPart).getFigure());
-			return true;
-		}
 		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStoryNodeConstraintsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureStoryNodeContentRectangle();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -146,17 +146,17 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof ModifyingStoryNodeNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureStoryNodeContentRectangle();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) childEditPart).getFigure());
-			return true;
-		}
 		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStoryNodeConstraintsRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart) childEditPart)
 					.getFigure());
+			return true;
+		}
+		if (childEditPart instanceof ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureStoryNodeContentRectangle();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -186,11 +186,11 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) {
-			return getPrimaryShape().getFigureStoryNodeContentRectangle();
-		}
 		if (editPart instanceof ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart) {
 			return getPrimaryShape().getFigureStoryNodeConstraintsRectangle();
+		}
+		if (editPart instanceof ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart) {
+			return getPrimaryShape().getFigureStoryNodeContentRectangle();
 		}
 		return getContentPane();
 	}

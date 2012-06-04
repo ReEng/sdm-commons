@@ -58,7 +58,7 @@ public class ModifyingStoryNodeModifyingStoryNodeContentCompartment2CanonicalEdi
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<StorydiagramsNodeDescriptor> childDescriptors = StorydiagramsDiagramUpdater
-				.getModifyingStoryNodeModifyingStoryNodeContentCompartment_7005SemanticChildren(viewObject);
+				.getModifyingStoryNodeModifyingStoryNodeContentCompartment_7019SemanticChildren(viewObject);
 		for (StorydiagramsNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -88,7 +88,7 @@ public class ModifyingStoryNodeModifyingStoryNodeContentCompartment2CanonicalEdi
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<StorydiagramsNodeDescriptor> childDescriptors = StorydiagramsDiagramUpdater
-				.getModifyingStoryNodeModifyingStoryNodeContentCompartment_7005SemanticChildren((View) getHost()
+				.getModifyingStoryNodeModifyingStoryNodeContentCompartment_7019SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

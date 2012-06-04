@@ -121,43 +121,45 @@ public final class TypeUtil {
 		if (element instanceof EClassifier) {
 			EClassifier eClassifier = (EClassifier) element;
 
-			if (boolean.class.isAssignableFrom(eClassifier.getInstanceClass())
-					|| Boolean.class.isAssignableFrom(eClassifier.getInstanceClass())) {
-				return Type.BOOLEAN;
-			}
-			if (byte.class.isAssignableFrom(eClassifier.getInstanceClass())
-					|| Byte.class.isAssignableFrom(eClassifier.getInstanceClass())) {
-				return Type.BYTE;
-			}
-			if (short.class.isAssignableFrom(eClassifier.getInstanceClass())
-					|| Short.class.isAssignableFrom(eClassifier.getInstanceClass())) {
-				return Type.SHORT;
-			}
-			if (char.class.isAssignableFrom(eClassifier.getInstanceClass())
-					|| Character.class.isAssignableFrom(eClassifier.getInstanceClass())) {
-				return Type.CHAR;
-			}
-			if (int.class.isAssignableFrom(eClassifier.getInstanceClass())
-					|| Integer.class.isAssignableFrom(eClassifier.getInstanceClass())) {
-				return Type.INTEGER;
-			}
-			if (float.class.isAssignableFrom(eClassifier.getInstanceClass())
-					|| Float.class.isAssignableFrom(eClassifier.getInstanceClass())) {
-				return Type.FLOAT;
-			}
-			if (long.class.isAssignableFrom(eClassifier.getInstanceClass())
-					|| Long.class.isAssignableFrom(eClassifier.getInstanceClass())) {
-				return Type.LONG;
-			}
-			if (double.class.isAssignableFrom(eClassifier.getInstanceClass())
-					|| Double.class.isAssignableFrom(eClassifier.getInstanceClass())) {
-				return Type.DOUBLE;
-			}
-			if (String.class.isAssignableFrom(eClassifier.getInstanceClass())) {
-				return Type.STRING;
-			}
-			if (eClassifier instanceof EEnum) {
-				return Type.ENUM;
+			if (eClassifier.getInstanceClass() != null) {
+				if (boolean.class.isAssignableFrom(eClassifier.getInstanceClass())
+						|| Boolean.class.isAssignableFrom(eClassifier.getInstanceClass())) {
+					return Type.BOOLEAN;
+				}
+				if (byte.class.isAssignableFrom(eClassifier.getInstanceClass())
+						|| Byte.class.isAssignableFrom(eClassifier.getInstanceClass())) {
+					return Type.BYTE;
+				}
+				if (short.class.isAssignableFrom(eClassifier.getInstanceClass())
+						|| Short.class.isAssignableFrom(eClassifier.getInstanceClass())) {
+					return Type.SHORT;
+				}
+				if (char.class.isAssignableFrom(eClassifier.getInstanceClass())
+						|| Character.class.isAssignableFrom(eClassifier.getInstanceClass())) {
+					return Type.CHAR;
+				}
+				if (int.class.isAssignableFrom(eClassifier.getInstanceClass())
+						|| Integer.class.isAssignableFrom(eClassifier.getInstanceClass())) {
+					return Type.INTEGER;
+				}
+				if (float.class.isAssignableFrom(eClassifier.getInstanceClass())
+						|| Float.class.isAssignableFrom(eClassifier.getInstanceClass())) {
+					return Type.FLOAT;
+				}
+				if (long.class.isAssignableFrom(eClassifier.getInstanceClass())
+						|| Long.class.isAssignableFrom(eClassifier.getInstanceClass())) {
+					return Type.LONG;
+				}
+				if (double.class.isAssignableFrom(eClassifier.getInstanceClass())
+						|| Double.class.isAssignableFrom(eClassifier.getInstanceClass())) {
+					return Type.DOUBLE;
+				}
+				if (String.class.isAssignableFrom(eClassifier.getInstanceClass())) {
+					return Type.STRING;
+				}
+				if (eClassifier instanceof EEnum) {
+					return Type.ENUM;
+				}
 			}
 		}
 

@@ -174,7 +174,7 @@
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
-                      href="storydiagrams.gmftool#//@palette/@tools.1/@tools.9"/>
+                      href="storydiagrams.gmftool#//@palette/@tools.1/@tools.8"/>
                   <diagramNode
                       href="storydiagrams.gmfgraph#ExpressionLabel"/>
                 </ownedChild>
@@ -491,7 +491,7 @@
         href="storydiagrams.ecore#//patterns/StoryPattern/linkVariable"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="storydiagrams.gmftool#//@palette/@tools.1/@tools.5"/>
+        href="storydiagrams.gmftool#//@palette/@tools.1/@tools.4"/>
     <diagramLink
         href="storydiagrams.gmfgraph#LinkVariableConnection"/>
     <sourceMetaFeature
@@ -530,7 +530,7 @@
         href="storydiagrams.ecore#//patterns/StoryPattern/linkVariable"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="storydiagrams.gmftool#//@palette/@tools.1/@tools.7"/>
+        href="storydiagrams.gmftool#//@palette/@tools.1/@tools.5"/>
     <diagramLink
         href="storydiagrams.gmfgraph#ContainmentRelationConnection"/>
     <sourceMetaFeature

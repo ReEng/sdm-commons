@@ -81,6 +81,13 @@ public class ModifyingStoryNode2ItemSemanticEditPolicy extends StorydiagramsBase
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
 			switch (StorydiagramsVisualIDRegistry.getVisualID(node)) {
+			case ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID:
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
+					Node cnode = (Node) cit.next();
+					switch (StorydiagramsVisualIDRegistry.getVisualID(cnode)) {
+					}
+				}
+				break;
 			case ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
@@ -91,13 +98,6 @@ public class ModifyingStoryNode2ItemSemanticEditPolicy extends StorydiagramsBase
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
-					}
-				}
-				break;
-			case ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
-					Node cnode = (Node) cit.next();
-					switch (StorydiagramsVisualIDRegistry.getVisualID(cnode)) {
 					}
 				}
 				break;

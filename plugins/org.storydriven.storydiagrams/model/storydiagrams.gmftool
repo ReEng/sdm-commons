@@ -44,8 +44,8 @@
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Start Node"
-          description="Create New Start Node"/>
+          title="Initial Node"
+          description="Create New Initial Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Junction Node"
@@ -81,10 +81,6 @@
           title="Primitive Variable"
           description="Create New Primitve Variable"/>
       <tools
-          xsi:type="gmftool:CreationTool"
-          title="Container Variable"
-          description="Create New Container Variable"/>
-      <tools
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -92,18 +88,20 @@
           description="Create New Link Variable"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Path"
-          description="Create New Path"/>
+          title="Inclusion Link"
+          description="Create New Inclusion Link"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Containment Relation"
-          description="Create New Containment Relation"/>
+          title="Path"
+          description="Create New Path"/>
       <tools
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Constraint"
           description="Create New Constraint"/>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Attribute Assignment"

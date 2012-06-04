@@ -313,12 +313,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StartNode9CreationTool_title;
+	public static String InitialNode9CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StartNode9CreationTool_desc;
+	public static String InitialNode9CreationTool_desc;
 
 	/**
 	 * @generated
@@ -383,22 +383,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ContainerVariable4CreationTool_title;
+	public static String LinkVariable5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ContainerVariable4CreationTool_desc;
+	public static String LinkVariable5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String LinkVariable6CreationTool_title;
+	public static String InclusionLink6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String LinkVariable6CreationTool_desc;
+	public static String InclusionLink6CreationTool_desc;
 
 	/**
 	 * @generated
@@ -413,22 +413,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ContainmentRelation8CreationTool_title;
+	public static String Constraint9CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ContainmentRelation8CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Constraint10CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Constraint10CreationTool_desc;
+	public static String Constraint9CreationTool_desc;
 
 	/**
 	 * @generated

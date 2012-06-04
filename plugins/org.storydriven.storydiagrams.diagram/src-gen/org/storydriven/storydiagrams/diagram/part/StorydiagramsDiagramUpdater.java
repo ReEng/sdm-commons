@@ -86,7 +86,7 @@ public class StorydiagramsDiagramUpdater {
 		case ActivityEditPart.VISUAL_ID:
 			return getActivity_1000SemanticChildren(view);
 		case ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID:
-			return getModifyingStoryNodeModifyingStoryNodeContentCompartment_7012SemanticChildren(view);
+			return getModifyingStoryNodeModifyingStoryNodeContentCompartment_7018SemanticChildren(view);
 		case StoryPatternStoryPatternCompartementEditPart.VISUAL_ID:
 			return getStoryPatternStoryPatternCompartement_7007SemanticChildren(view);
 		case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
@@ -100,7 +100,7 @@ public class StorydiagramsDiagramUpdater {
 		case StructuredNodeStructuredNodeCompartmentEditPart.VISUAL_ID:
 			return getStructuredNodeStructuredNodeCompartment_7002SemanticChildren(view);
 		case ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID:
-			return getModifyingStoryNodeModifyingStoryNodeContentCompartment_7005SemanticChildren(view);
+			return getModifyingStoryNodeModifyingStoryNodeContentCompartment_7019SemanticChildren(view);
 		case MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart.VISUAL_ID:
 			return getMatchingStoryNodeMatchingStoryNodeContentCompartment_7021SemanticChildren(view);
 		case StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID:
@@ -160,7 +160,7 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsNodeDescriptor> getModifyingStoryNodeModifyingStoryNodeContentCompartment_7012SemanticChildren(
+	public static List<StorydiagramsNodeDescriptor> getModifyingStoryNodeModifyingStoryNodeContentCompartment_7018SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -369,7 +369,7 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsNodeDescriptor> getModifyingStoryNodeModifyingStoryNodeContentCompartment_7005SemanticChildren(
+	public static List<StorydiagramsNodeDescriptor> getModifyingStoryNodeModifyingStoryNodeContentCompartment_7019SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();

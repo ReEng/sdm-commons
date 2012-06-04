@@ -5,7 +5,7 @@
     <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ActivityEditHelper"/>
     <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement href="storydiagrams.uml.genmodel#//storydiagrams/activities/Activity"/>
-    <childNodes visualID="3008" editPartClassName="StoryPatternEditPart" itemSemanticEditPolicyClassName="StoryPatternItemSemanticEditPolicy" canonicalEditPolicyClassName="StoryPatternCanonicalEditPolicy" compartments="//@diagram/@compartments.2" graphicalNodeEditPolicyClassName="StoryPatternGraphicalNodeEditPolicy" createCommandClassName="StoryPatternCreateCommand" containers="//@diagram/@compartments.0 //@diagram/@compartments.10">
+    <childNodes visualID="3008" editPartClassName="StoryPatternEditPart" itemSemanticEditPolicyClassName="StoryPatternItemSemanticEditPolicy" canonicalEditPolicyClassName="StoryPatternCanonicalEditPolicy" compartments="//@diagram/@compartments.2" graphicalNodeEditPolicyClassName="StoryPatternGraphicalNodeEditPolicy" createCommandClassName="StoryPatternCreateCommand" containers="//@diagram/@compartments.1 //@diagram/@compartments.11">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="StoryPatternEditHelper"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="StoryPatternFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StoryPatternFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RoundedRectangle fFigureStoryPatternInnerRectangle; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StoryPatternFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;this.setFill(false);&#xA;this.setOutline(false);&#xA;this.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(50)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureStoryPatternInnerRectangle = new org.eclipse.draw2d.RoundedRectangle();&#xA;fFigureStoryPatternInnerRectangle.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;fFigureStoryPatternInnerRectangle.setFill(false);&#xA;fFigureStoryPatternInnerRectangle.setOutline(false);&#xA;fFigureStoryPatternInnerRectangle.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(50)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;fFigureStoryPatternInnerRectangle.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;this.add(fFigureStoryPatternInnerRectangle);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RoundedRectangle getFigureStoryPatternInnerRectangle() {&#xA;&#x9;&#x9;return fFigureStoryPatternInnerRectangle;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
@@ -569,13 +569,13 @@
         <modelFacet parser="//@labelParsers/@implementations.1"/>
       </labels>
     </links>
-    <compartments visualID="7012" editPartClassName="ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart" itemSemanticEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeContentCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeContentCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="ModifyingStoryNodeContentCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@topLevelNodes.2" listLayout="false">
-      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureStoryNodeContentRectangle" figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
-    </compartments>
-    <compartments visualID="7018" editPartClassName="ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart" itemSemanticEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentCanonicalEditPolicy" title="ModifyingStoryNodeConstraintsCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@topLevelNodes.2">
+    <compartments visualID="7012" editPartClassName="ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart" itemSemanticEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentCanonicalEditPolicy" title="ModifyingStoryNodeConstraintsCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@topLevelNodes.2">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureStoryNodeConstraintsRectangle" figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
+    </compartments>
+    <compartments visualID="7018" editPartClassName="ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart" itemSemanticEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeContentCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeContentCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="ModifyingStoryNodeContentCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@topLevelNodes.2" listLayout="false">
+      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureStoryNodeContentRectangle" figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
     </compartments>
     <compartments visualID="7007" editPartClassName="StoryPatternStoryPatternCompartementEditPart" itemSemanticEditPolicyClassName="StoryPatternStoryPatternCompartementItemSemanticEditPolicy" canonicalEditPolicyClassName="StoryPatternStoryPatternCompartementCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.4" title="StoryPatternCompartement" needsTitle="false" node="//@diagram/@childNodes.0" listLayout="false">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -609,13 +609,13 @@
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureStructuredNodeCompartmentRectangle" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
-    <compartments visualID="7005" editPartClassName="ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart" itemSemanticEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeContentCompartment2ItemSemanticEditPolicy" canonicalEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeContentCompartment2CanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="ModifyingStoryNodeContentCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@childNodes.7" listLayout="false">
-      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureStoryNodeContentRectangle" figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
-    </compartments>
-    <compartments visualID="7019" editPartClassName="ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart" itemSemanticEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2ItemSemanticEditPolicy" canonicalEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2CanonicalEditPolicy" title="ModifyingStoryNodeConstraintsCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@childNodes.7">
+    <compartments visualID="7005" editPartClassName="ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart" itemSemanticEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2ItemSemanticEditPolicy" canonicalEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2CanonicalEditPolicy" title="ModifyingStoryNodeConstraintsCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@childNodes.7">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureStoryNodeConstraintsRectangle" figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
+    </compartments>
+    <compartments visualID="7019" editPartClassName="ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart" itemSemanticEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeContentCompartment2ItemSemanticEditPolicy" canonicalEditPolicyClassName="ModifyingStoryNodeModifyingStoryNodeContentCompartment2CanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="ModifyingStoryNodeContentCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@childNodes.7" listLayout="false">
+      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureStoryNodeContentRectangle" figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
     </compartments>
     <compartments visualID="7020" editPartClassName="MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart" itemSemanticEditPolicyClassName="MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2ItemSemanticEditPolicy" canonicalEditPolicyClassName="MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2CanonicalEditPolicy" title="MatchingStoryNodeConstraintsCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@childNodes.8">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -639,7 +639,7 @@
         <entries xsi:type="gmfgen:Separator"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Activity Edge" description="Create New Activity Edge" genLinks="//@diagram/@links.0"/>
         <entries xsi:type="gmfgen:Separator"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Start Node" description="Create New Start Node" genNodes="//@diagram/@childNodes.11 //@diagram/@topLevelNodes.5"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Initial Node" description="Create New Initial Node" genNodes="//@diagram/@childNodes.11 //@diagram/@topLevelNodes.5"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Junction Node" description="Create New Junction Node" genNodes="//@diagram/@childNodes.12 //@diagram/@topLevelNodes.6"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Activity Final Node" description="Create New Activity Final Node" genNodes="//@diagram/@childNodes.13 //@diagram/@topLevelNodes.7"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Flow Final Node" description="Create New Flow Final Node"/>
@@ -648,13 +648,13 @@
         <entries xsi:type="gmfgen:ToolEntry" title="Object Variable" description="Create New Object Variable" default="true" genNodes="//@diagram/@childNodes.1"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Collection Variable" description="Create New Collection Variable"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Primitive Variable" description="Create New Primitve Variable" genNodes="//@diagram/@childNodes.4"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Container Variable" description="Create New Container Variable"/>
         <entries xsi:type="gmfgen:Separator"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Link Variable" description="Create New Link Variable" genLinks="//@diagram/@links.1"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Inclusion Link" description="Create New Inclusion Link" genLinks="//@diagram/@links.3"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Path" description="Create New Path" genLinks="//@diagram/@links.2"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Containment Relation" description="Create New Containment Relation" genLinks="//@diagram/@links.3"/>
         <entries xsi:type="gmfgen:Separator"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Constraint" description="Create New Constraint" genNodes="//@diagram/@childNodes.3"/>
+        <entries xsi:type="gmfgen:Separator"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Attribute Assignment" description="Create New Attribute Assignment" genNodes="//@diagram/@childNodes.2"/>
       </groups>
     </palette>

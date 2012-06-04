@@ -45,7 +45,7 @@ public class StorydiagramsPaletteFactory {
 		paletteContainer.add(new PaletteSeparator());
 		paletteContainer.add(createActivityEdge7CreationTool());
 		paletteContainer.add(new PaletteSeparator());
-		paletteContainer.add(createStartNode9CreationTool());
+		paletteContainer.add(createInitialNode9CreationTool());
 		paletteContainer.add(createJunctionNode10CreationTool());
 		paletteContainer.add(createActivityFinalNode11CreationTool());
 		paletteContainer.add(createFlowFinalNode12CreationTool());
@@ -64,13 +64,13 @@ public class StorydiagramsPaletteFactory {
 		paletteContainer.add(createObjectVariable1CreationTool());
 		paletteContainer.add(createCollectionVariable2CreationTool());
 		paletteContainer.add(createPrimitiveVariable3CreationTool());
-		paletteContainer.add(createContainerVariable4CreationTool());
 		paletteContainer.add(new PaletteSeparator());
-		paletteContainer.add(createLinkVariable6CreationTool());
+		paletteContainer.add(createLinkVariable5CreationTool());
+		paletteContainer.add(createInclusionLink6CreationTool());
 		paletteContainer.add(createPath7CreationTool());
-		paletteContainer.add(createContainmentRelation8CreationTool());
 		paletteContainer.add(new PaletteSeparator());
-		paletteContainer.add(createConstraint10CreationTool());
+		paletteContainer.add(createConstraint9CreationTool());
+		paletteContainer.add(new PaletteSeparator());
 		paletteContainer.add(createAttributeAssignment11CreationTool());
 		return paletteContainer;
 	}
@@ -169,13 +169,13 @@ public class StorydiagramsPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStartNode9CreationTool() {
+	private ToolEntry createInitialNode9CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(StorydiagramsElementTypes.StartNode_3003);
 		types.add(StorydiagramsElementTypes.StartNode_2001);
-		NodeToolEntry entry = new NodeToolEntry(Messages.StartNode9CreationTool_title,
-				Messages.StartNode9CreationTool_desc, types);
-		entry.setId("createStartNode9CreationTool"); //$NON-NLS-1$
+		NodeToolEntry entry = new NodeToolEntry(Messages.InitialNode9CreationTool_title,
+				Messages.InitialNode9CreationTool_desc, types);
+		entry.setId("createInitialNode9CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.StartNode_3003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -263,23 +263,26 @@ public class StorydiagramsPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createContainerVariable4CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.ContainerVariable4CreationTool_title,
-				Messages.ContainerVariable4CreationTool_desc, null, null) {
-		};
-		entry.setId("createContainerVariable4CreationTool"); //$NON-NLS-1$
+	private ToolEntry createLinkVariable5CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(Messages.LinkVariable5CreationTool_title,
+				Messages.LinkVariable5CreationTool_desc,
+				Collections.singletonList(StorydiagramsElementTypes.LinkVariable_4002));
+		entry.setId("createLinkVariable5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.LinkVariable_4002));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createLinkVariable6CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(Messages.LinkVariable6CreationTool_title,
-				Messages.LinkVariable6CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.LinkVariable_4002));
-		entry.setId("createLinkVariable6CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.LinkVariable_4002));
+	private ToolEntry createInclusionLink6CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(Messages.InclusionLink6CreationTool_title,
+				Messages.InclusionLink6CreationTool_desc,
+				Collections.singletonList(StorydiagramsElementTypes.ContainmentRelation_4004));
+		entry.setId("createInclusionLink6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(StorydiagramsElementTypes
+				.getImageDescriptor(StorydiagramsElementTypes.ContainmentRelation_4004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -299,25 +302,11 @@ public class StorydiagramsPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createContainmentRelation8CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(Messages.ContainmentRelation8CreationTool_title,
-				Messages.ContainmentRelation8CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.ContainmentRelation_4004));
-		entry.setId("createContainmentRelation8CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes
-				.getImageDescriptor(StorydiagramsElementTypes.ContainmentRelation_4004));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createConstraint10CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(Messages.Constraint10CreationTool_title,
-				Messages.Constraint10CreationTool_desc,
+	private ToolEntry createConstraint9CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(Messages.Constraint9CreationTool_title,
+				Messages.Constraint9CreationTool_desc,
 				Collections.singletonList(StorydiagramsElementTypes.Constraint_3013));
-		entry.setId("createConstraint10CreationTool"); //$NON-NLS-1$
+		entry.setId("createConstraint9CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.Constraint_3013));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;

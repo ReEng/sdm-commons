@@ -123,87 +123,87 @@ public class StorydiagramsNavigatorLabelProvider extends LabelProvider implement
 	 */
 	public Image getImage(View view) {
 		switch (StorydiagramsVisualIDRegistry.getVisualID(view)) {
-		case ActivityCallNodeEditPart.VISUAL_ID:
+		case PathEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?ActivityCallNode", StorydiagramsElementTypes.ActivityCallNode_2006); //$NON-NLS-1$
-		case MatchingStoryNode2EditPart.VISUAL_ID:
+					"Navigator?Link?http://www.storydriven.org/storydiagrams/patterns/0.2.0?Path", StorydiagramsElementTypes.Path_4003); //$NON-NLS-1$
+		case StructuredNode2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?MatchingStoryNode", StorydiagramsElementTypes.MatchingStoryNode_3017); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?StructuredNode", StorydiagramsElementTypes.StructuredNode_3006); //$NON-NLS-1$
+		case PrimitiveVariableEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.0?PrimitiveVariable", StorydiagramsElementTypes.PrimitiveVariable_3011); //$NON-NLS-1$
+		case ActivityEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Diagram?http://www.storydriven.org/storydiagrams/activities/0.2.0?Activity", StorydiagramsElementTypes.Activity_1000); //$NON-NLS-1$
+		case StopNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?StopNode", StorydiagramsElementTypes.StopNode_2002); //$NON-NLS-1$
+		case StartNode2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?StartNode", StorydiagramsElementTypes.StartNode_3003); //$NON-NLS-1$
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.storydriven.org/storydiagrams/activities/0.2.0?ActivityEdge", StorydiagramsElementTypes.ActivityEdge_4001); //$NON-NLS-1$
 		case MatchingPatternEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.0?MatchingPattern", StorydiagramsElementTypes.MatchingPattern_3012); //$NON-NLS-1$
-		case ActivityEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Diagram?http://www.storydriven.org/storydiagrams/activities/0.2.0?Activity", StorydiagramsElementTypes.Activity_1000); //$NON-NLS-1$
-		case LinkVariableEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.storydriven.org/storydiagrams/patterns/0.2.0?LinkVariable", StorydiagramsElementTypes.LinkVariable_4002); //$NON-NLS-1$
-		case StoryPatternEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.0?StoryPattern", StorydiagramsElementTypes.StoryPattern_3008); //$NON-NLS-1$
-		case AttributeAssignmentEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.0?AttributeAssignment", StorydiagramsElementTypes.AttributeAssignment_3010); //$NON-NLS-1$
-		case ContainmentRelationEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.storydriven.org/storydiagrams/patterns/0.2.0?ContainmentRelation", StorydiagramsElementTypes.ContainmentRelation_4004); //$NON-NLS-1$
-		case ModifyingStoryNode2EditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?ModifyingStoryNode", StorydiagramsElementTypes.ModifyingStoryNode_3007); //$NON-NLS-1$
-		case PrimitiveVariableEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.0?PrimitiveVariable", StorydiagramsElementTypes.PrimitiveVariable_3011); //$NON-NLS-1$
-		case ModifyingStoryNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?ModifyingStoryNode", StorydiagramsElementTypes.ModifyingStoryNode_2007); //$NON-NLS-1$
-		case StopNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?StopNode", StorydiagramsElementTypes.StopNode_2002); //$NON-NLS-1$
-		case StopNode2EditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?StopNode", StorydiagramsElementTypes.StopNode_3004); //$NON-NLS-1$
-		case StructuredNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?StructuredNode", StorydiagramsElementTypes.StructuredNode_2005); //$NON-NLS-1$
-		case JunctionNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?JunctionNode", StorydiagramsElementTypes.JunctionNode_2003); //$NON-NLS-1$
-		case StatementNode2EditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?StatementNode", StorydiagramsElementTypes.StatementNode_3005); //$NON-NLS-1$
-		case StartNode2EditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?StartNode", StorydiagramsElementTypes.StartNode_3003); //$NON-NLS-1$
-		case MatchingStoryNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?MatchingStoryNode", StorydiagramsElementTypes.MatchingStoryNode_2008); //$NON-NLS-1$
-		case ActivityCallNode2EditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?ActivityCallNode", StorydiagramsElementTypes.ActivityCallNode_3016); //$NON-NLS-1$
-		case StatementNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?StatementNode", StorydiagramsElementTypes.StatementNode_2004); //$NON-NLS-1$
-		case PathEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.storydriven.org/storydiagrams/patterns/0.2.0?Path", StorydiagramsElementTypes.Path_4003); //$NON-NLS-1$
 		case StartNodeEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?StartNode", StorydiagramsElementTypes.StartNode_2001); //$NON-NLS-1$
-		case ConstraintEditPart.VISUAL_ID:
+		case ActivityCallNode2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.0?Constraint", StorydiagramsElementTypes.Constraint_3013); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?ActivityCallNode", StorydiagramsElementTypes.ActivityCallNode_3016); //$NON-NLS-1$
+		case JunctionNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?JunctionNode", StorydiagramsElementTypes.JunctionNode_2003); //$NON-NLS-1$
 		case ObjectVariableEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.0?ObjectVariable", StorydiagramsElementTypes.ObjectVariable_3009); //$NON-NLS-1$
+		case StoryPatternEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.0?StoryPattern", StorydiagramsElementTypes.StoryPattern_3008); //$NON-NLS-1$
+		case StatementNode2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?StatementNode", StorydiagramsElementTypes.StatementNode_3005); //$NON-NLS-1$
+		case ContainmentRelationEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.storydriven.org/storydiagrams/patterns/0.2.0?ContainmentRelation", StorydiagramsElementTypes.ContainmentRelation_4004); //$NON-NLS-1$
+		case LinkVariableEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.storydriven.org/storydiagrams/patterns/0.2.0?LinkVariable", StorydiagramsElementTypes.LinkVariable_4002); //$NON-NLS-1$
+		case ConstraintEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.0?Constraint", StorydiagramsElementTypes.Constraint_3013); //$NON-NLS-1$
+		case StructuredNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?StructuredNode", StorydiagramsElementTypes.StructuredNode_2005); //$NON-NLS-1$
+		case ActivityCallNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?ActivityCallNode", StorydiagramsElementTypes.ActivityCallNode_2006); //$NON-NLS-1$
+		case StatementNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?StatementNode", StorydiagramsElementTypes.StatementNode_2004); //$NON-NLS-1$
+		case MatchingStoryNode2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?MatchingStoryNode", StorydiagramsElementTypes.MatchingStoryNode_3017); //$NON-NLS-1$
+		case AttributeAssignmentEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.0?AttributeAssignment", StorydiagramsElementTypes.AttributeAssignment_3010); //$NON-NLS-1$
+		case StopNode2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?StopNode", StorydiagramsElementTypes.StopNode_3004); //$NON-NLS-1$
 		case JunctionNode2EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?JunctionNode", StorydiagramsElementTypes.JunctionNode_3002); //$NON-NLS-1$
-		case StructuredNode2EditPart.VISUAL_ID:
+		case ModifyingStoryNode2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?StructuredNode", StorydiagramsElementTypes.StructuredNode_3006); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/activities/0.2.0?ModifyingStoryNode", StorydiagramsElementTypes.ModifyingStoryNode_3007); //$NON-NLS-1$
+		case MatchingStoryNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?MatchingStoryNode", StorydiagramsElementTypes.MatchingStoryNode_2008); //$NON-NLS-1$
+		case ModifyingStoryNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.0?ModifyingStoryNode", StorydiagramsElementTypes.ModifyingStoryNode_2007); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -254,60 +254,60 @@ public class StorydiagramsNavigatorLabelProvider extends LabelProvider implement
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (StorydiagramsVisualIDRegistry.getVisualID(view)) {
-		case ActivityCallNodeEditPart.VISUAL_ID:
-			return getActivityCallNode_2006Text(view);
-		case MatchingStoryNode2EditPart.VISUAL_ID:
-			return getMatchingStoryNode_3017Text(view);
+		case PathEditPart.VISUAL_ID:
+			return getPath_4003Text(view);
+		case StructuredNode2EditPart.VISUAL_ID:
+			return getStructuredNode_3006Text(view);
+		case PrimitiveVariableEditPart.VISUAL_ID:
+			return getPrimitiveVariable_3011Text(view);
+		case ActivityEditPart.VISUAL_ID:
+			return getActivity_1000Text(view);
+		case StopNodeEditPart.VISUAL_ID:
+			return getStopNode_2002Text(view);
+		case StartNode2EditPart.VISUAL_ID:
+			return getStartNode_3003Text(view);
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return getActivityEdge_4001Text(view);
 		case MatchingPatternEditPart.VISUAL_ID:
 			return getMatchingPattern_3012Text(view);
-		case ActivityEditPart.VISUAL_ID:
-			return getActivity_1000Text(view);
-		case LinkVariableEditPart.VISUAL_ID:
-			return getLinkVariable_4002Text(view);
-		case StoryPatternEditPart.VISUAL_ID:
-			return getStoryPattern_3008Text(view);
-		case AttributeAssignmentEditPart.VISUAL_ID:
-			return getAttributeAssignment_3010Text(view);
-		case ContainmentRelationEditPart.VISUAL_ID:
-			return getContainmentRelation_4004Text(view);
-		case ModifyingStoryNode2EditPart.VISUAL_ID:
-			return getModifyingStoryNode_3007Text(view);
-		case PrimitiveVariableEditPart.VISUAL_ID:
-			return getPrimitiveVariable_3011Text(view);
-		case ModifyingStoryNodeEditPart.VISUAL_ID:
-			return getModifyingStoryNode_2007Text(view);
-		case StopNodeEditPart.VISUAL_ID:
-			return getStopNode_2002Text(view);
-		case StopNode2EditPart.VISUAL_ID:
-			return getStopNode_3004Text(view);
-		case StructuredNodeEditPart.VISUAL_ID:
-			return getStructuredNode_2005Text(view);
-		case JunctionNodeEditPart.VISUAL_ID:
-			return getJunctionNode_2003Text(view);
-		case StatementNode2EditPart.VISUAL_ID:
-			return getStatementNode_3005Text(view);
-		case StartNode2EditPart.VISUAL_ID:
-			return getStartNode_3003Text(view);
-		case MatchingStoryNodeEditPart.VISUAL_ID:
-			return getMatchingStoryNode_2008Text(view);
-		case ActivityCallNode2EditPart.VISUAL_ID:
-			return getActivityCallNode_3016Text(view);
-		case StatementNodeEditPart.VISUAL_ID:
-			return getStatementNode_2004Text(view);
-		case PathEditPart.VISUAL_ID:
-			return getPath_4003Text(view);
 		case StartNodeEditPart.VISUAL_ID:
 			return getStartNode_2001Text(view);
-		case ConstraintEditPart.VISUAL_ID:
-			return getConstraint_3013Text(view);
+		case ActivityCallNode2EditPart.VISUAL_ID:
+			return getActivityCallNode_3016Text(view);
+		case JunctionNodeEditPart.VISUAL_ID:
+			return getJunctionNode_2003Text(view);
 		case ObjectVariableEditPart.VISUAL_ID:
 			return getObjectVariable_3009Text(view);
+		case StoryPatternEditPart.VISUAL_ID:
+			return getStoryPattern_3008Text(view);
+		case StatementNode2EditPart.VISUAL_ID:
+			return getStatementNode_3005Text(view);
+		case ContainmentRelationEditPart.VISUAL_ID:
+			return getContainmentRelation_4004Text(view);
+		case LinkVariableEditPart.VISUAL_ID:
+			return getLinkVariable_4002Text(view);
+		case ConstraintEditPart.VISUAL_ID:
+			return getConstraint_3013Text(view);
+		case StructuredNodeEditPart.VISUAL_ID:
+			return getStructuredNode_2005Text(view);
+		case ActivityCallNodeEditPart.VISUAL_ID:
+			return getActivityCallNode_2006Text(view);
+		case StatementNodeEditPart.VISUAL_ID:
+			return getStatementNode_2004Text(view);
+		case MatchingStoryNode2EditPart.VISUAL_ID:
+			return getMatchingStoryNode_3017Text(view);
+		case AttributeAssignmentEditPart.VISUAL_ID:
+			return getAttributeAssignment_3010Text(view);
+		case StopNode2EditPart.VISUAL_ID:
+			return getStopNode_3004Text(view);
 		case JunctionNode2EditPart.VISUAL_ID:
 			return getJunctionNode_3002Text(view);
-		case StructuredNode2EditPart.VISUAL_ID:
-			return getStructuredNode_3006Text(view);
+		case ModifyingStoryNode2EditPart.VISUAL_ID:
+			return getModifyingStoryNode_3007Text(view);
+		case MatchingStoryNodeEditPart.VISUAL_ID:
+			return getMatchingStoryNode_2008Text(view);
+		case ModifyingStoryNodeEditPart.VISUAL_ID:
+			return getModifyingStoryNode_2007Text(view);
 		}
 		return getUnknownElementText(view);
 	}

@@ -373,10 +373,10 @@ public class StorydiagramsVisualIDRegistry {
 			if (ModifyingStoryNodeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+			if (ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -459,10 +459,10 @@ public class StorydiagramsVisualIDRegistry {
 			if (ModifyingStoryNodeName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

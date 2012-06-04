@@ -459,12 +459,12 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 				StorydiagramsVisualIDRegistry.getType(ModifyingStoryNodeNameEditPart.VISUAL_ID));
 		createCompartment(node,
 				StorydiagramsVisualIDRegistry
-						.getType(ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID), false,
-				false, false, false);
-		createCompartment(node,
-				StorydiagramsVisualIDRegistry
 						.getType(ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart.VISUAL_ID), false,
 				false, true, true);
+		createCompartment(node,
+				StorydiagramsVisualIDRegistry
+						.getType(ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID), false,
+				false, false, false);
 		return node;
 	}
 
@@ -925,12 +925,12 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 				StorydiagramsVisualIDRegistry.getType(ModifyingStoryNodeName2EditPart.VISUAL_ID));
 		createCompartment(node,
 				StorydiagramsVisualIDRegistry
-						.getType(ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID), false,
-				false, false, false);
-		createCompartment(node,
-				StorydiagramsVisualIDRegistry
 						.getType(ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID), false,
 				false, true, true);
+		createCompartment(node,
+				StorydiagramsVisualIDRegistry
+						.getType(ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID), false,
+				false, false, false);
 		return node;
 	}
 
