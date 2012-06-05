@@ -177,11 +177,12 @@ When a matching is unsuccessful somewhere or something unforeseen happens and th
 This is comparable to a method call either returning a desired result or returning false or null if something goes wrong.
 
 \tododt{I would remove or replace this first paragraph.
-In my opinion, the success and failure node are not necessarily dependent on the success or failure of some pattern matchings or transformations.
+In my opinion, the success and failure of story diagrams are not necessarily dependent on the success or failure of some pattern matchings or transformations in the same story diagram.
 In Figure~\ref{fig:successAndFailureStopNodes} one could also model that the story diagram is considered to be successfully executed if the matching in the first story pattern fails.
-Thus, success and failure of a story diagram is like a boolean out parameter describing if the operation described by a story diagram is considered to be successful.
-In which case it is successful is defined by the developer, not the story diagram language.
-I would point out that the success of a story diagram is not directly dependent on the successful execution of all contained story patterns.}
+Thus, success or failure of a story diagram is used like an implicitly declared boolean out parameter describing if the operation described by a story diagram is considered to be successful.
+In which case it is successful is specified by the developer, not by the story diagrams language.
+I would point out that the success of a story diagram is not directly dependent on the successful execution of all contained story patterns.
+In cotnrast, the success and failure of story patterns are defined by the language.}
 
 When one story diagram calls another, the calling story diagram's further execution may depend on the called story diagram's application being successful.
 For example, the calling story diagram might need a return value of the called story diagram or it may only continue in a meaningful way if the called transformation has succeeded.
@@ -218,6 +219,14 @@ The behavior of a story node is defined by its story pattern.
 Therefore,
 since trying to find a subgraph defined by a story pattern can fail,
 each execution of a story node can also fail.
+\tododt{Where is the meaning of failure described exactly? Should it be here or in the story patterns section?
+Does success of a story pattern execution mean that there was a successful matching only, independly of the succeeding transformations,
+or does it mean that the graph transformation (if available) could also be executed (was executable without contradictions, exceptions not considered)?
+I think, success should include the transformation and we should, if possible, check
+if a modifying story pattern can perform its modifications after a successful matching \emph{before} actually modifying the host graph
+(check if all variables are matched and if there are contradictions).
+Someone has to describe that in the story patterns section or here.}
+
 To distinguish the cases of a successful story node execution and its failure,
 the outgoing activity edges can be provided with the guards \fe{\text[success\text]} and \fe{\text[failure\text]} (see Figure~\ref{fig:SD-decisions} a)).
 The control flow is following the activity edge with the \emph{success} guard in case of a successful story node execution,
@@ -372,16 +381,22 @@ The control flow specified by the activities edges determines how matchings of s
 In case of a loop, the matching which is propagated into the for-each activity node is extended by the matching of the story pattern which is contained in this activity. If the matching is successful, the extended matching is propagated along the \emph{each time} activity edge. After the control flow returns to the for-each activity node, the matching is reset to the matching that originally entered the for-each activity node. As a consequence, in any case the matching which is propagated into the for-each activity node is propagated down the \emph{end} activity edge. Objects and links created throughout the loop, however, remain in instance model.
 
 \todoch{Do you all agree with that semantics? Jan and I do ;-).}
-\tododt{I disagree with the propagation in loops.
-To enable recursion, I would allow to overwrite the matching that is passed to the for-each activity node.
-Consequently, the matching that is passed through the each-time edge is furhter propagated to the following activity nodes
-and finally to the for-each node again (following the control flow).
-In Figure~\ref{fig:propagation}, \fe{p1} could be overwritten in activity node B or C,
-thus, the new matching (not the original one) is passed through the end edge.
-The question is if all variables declared in the activity nodes that are reached via the each-time edge
-are still visible in the activity node reached via the end edge.
-I would say, they are only visible within the loop,
-similar to local variables in the scope of a loop in Java which are not visible outside the loop.}
+\tododt{I disagree with the matching propagation in loops.
+I would like to allow objects matched in a loop iteration to be reused in the next iteration (e.g.\ for moving a pointer in a list during a search).
+To be more precise, I would like that the matching for all variables passed to the for-each node is updated during loop iteration and is available in the next iteration.
+The same variables with their latest values should be passed through the end activity edge.
+During a single loop iteration, the matching is extended by variables newly declared in the loop,
+but these are not visible in the next loop iteration and should not be passed through the end activity edge.
+This would comply with local variables in the scope of a loop in Java which are not visible outside the loop or in the next loop iteration
+if they were not already declared previous to the loop.
+For example in Figure~\ref{fig:propagation},
+\fe{p1} and \fe{p2} are declared previous to the for-each activity node.
+Thus, they are passed to the for-each node, their matchings are updated during the loop iterations, passed through all loop iterations
+and eventually passed with their latest matchings through the end activity edge.
+In contrast, the object variable \fe{c} is not passed through the end activity edge,
+since it was not available previous to the loop, i.e.\ not passed to the for-each activity node.
+I would also allow to overwrite the matching that is passed to the for-each activity node and thus allow to match a new object, e.g.\ to the object variable \fe{p1}.
+I also talked about this with Jan and we agreed.}
 
 \begin{figure}[htbp]
 \begin{center}
