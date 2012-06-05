@@ -694,7 +694,7 @@ We introduce \emph{inclusion links} for this purpose.
   \begin{minipage}{.47\textwidth}
   	\centering
 		\includegraphics[width=\linewidth]{figures/InclusionLinksExample1}
-    \caption{Add an Object to a Set}
+    \caption{Add an Object to a Collection}
     \label{fig:InclusionLinksExample1}
 	\end{minipage}
 \end{figure}
@@ -765,7 +765,7 @@ with a negative or optional inclusion link, you get the feasible combinations of
 Moreover, you get all feasible combinations of binding operators and inclusion links from
 Table~\ref{tab:bindingCombinations_links} in Section~\ref{sec:StoryPatterns:binding:operators}.
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
   \centering
   \includegraphics[scale=0.8]{figures/InclusionLinksWellFormedness}
   \caption{Well-formedness of inclusion links}
@@ -779,17 +779,62 @@ to a single object variable or a collection variable are feasible as illustrated
 \subsubsection{Collection Operations with Inclusion Links}
 \label{sec:StoryPatterns:inclusion:BagsSetsEtc}
 
-\tododt{Write the remainder of the section}
+Inclusion links cannot only be used between a collection variable and a single object variable
+as shown in Figure~\ref{fig:InlucionLinks} (p.~\pageref{fig:InlucionLinks}),
+but also between two collection variables as shown in Figure~\ref{fig:InlucionLinkCollections}.
+The semantics for this case are explained in the following.
 
-explain subset relation;
-explain semantics of containment for all combinations (ordered set, list) in Table~\ref{tab:set_operations_with_inclusion_links};
-all combinations of adding/removing a collection to/from another collection (ordered set, list)
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.8]{figures/InclusionLinksSetsCheck}
+  \caption{Inclusion Link Between Two Collections}
+  \label{fig:InlucionLinkCollections}
+\end{figure}
+
+An inclusion link between two collection variables represents a containment relation between two sets of objects, i.e.\ between two collections.
+In case of the illustration in Figure~\ref{fig:InlucionLinkCollections},
+the collection \fe{b} depicts a subset of the set represented by the collection \fe{a} (mathematically $b \subseteq a$).
+Interpreting the Figure~\ref{fig:InlucionLinkCollections} as a story pattern,
+it describes to check if the elements in collection \fe{b} are also contained in the collection \fe{a}.
+
+In Section~\ref{sec:StoryPatterns:objectsets} we introduced different types of collection variables.
+We distinguish between ordered sets and lists.
+Sets contain an element mostly once (\emph{unique} property) while lists can contain an element arbitrarily often.
+Consequently, the inclusion links between different types of collection variables have different semantics,
+which are described in Table~\ref{tab:set_operations_with_inclusion_links}.
+The first two columns determine the type of the collections \fe{a} and \fe{b}.
+The third column determines if the inclusion link is to be checked, created or removed.
+The last column describes the semantics.
+
+The main difference in the semantics of inclusion links stems from the unique or non-unique property of the collections.
+If \fe{a} is a set and the binding operator is \fe{CHECK\_ONLY}, we only have to check if all objects in \fe{b} are contained (once) in \fe{a}
+(mathematically $a \supseteq b$).
+In contrast, if \fe{a} is a list (which can contain the same object arbitrarily often),
+we have to ensure that the objects in \fe{b} are not only contained at least once in \fe{a},
+but also at least as often as in \fe{b}.
+Otherwise, the matching of the story pattern would fail.
+
+An inclusion link with the binding operator \create\ describes to add all objects from \fe{b} to \fe{a}.
+If \fe{a} is a set, we only add each object from \fe{b} to \fe{a} if \fe{a} does not already contain it (remember that sets contain each object mostly once).
+Since we only have ordered sets, we have to regard the order of the objects in the collections.
+We add the objects from \fe{b} to the end of \fe{a} and keep the same order as they had in \fe{b}.
+If \fe{a} is a list, we do a similar adding operation, but we add the objects from \fe{b} as often to \fe{a} as they are in \fe{b}.
+This can be seen as a concatenation of two lists or the union of two sets (mathematically $a \cup b$).
+
+The binding operator \destroy\ used with an inclusion link and two collections as illustrated in Table~\ref{tab:set_operations_with_inclusion_links}
+describes to remove all elements contained in \fe{b} from the collection \fe{a}.
+If \fe{a} is a set, we just remove all occurrences of the objects in \fe{b} from \fe{a} and preserve the order of the remaining elements in \fe{a}.
+If \fe{a} is a list and \fe{b} is a set, we do quite the same.
+Even if an object contained in \fe{b} is contained more than once in \fe{a}, we remove all of its occurrences in \fe{a}.
+This comes close to the mathematical relative complement operation (mathematically $a \setminus b$).
+If both, \fe{a} and \fe{b} are lists, we only remove as many occurrences of the objects in \fe{b} from \fe{a} as they are available in \fe{b}.
+Furthermore, we remove them starting at the beginning of the list \fe{a}.
 
 \begin{table}[htbp]
-  \footnotesize
+%  \footnotesize
   \centering
 %  \begin{longtable}{|l|l|c|p{4.6cm}|}
-  \caption{Inclusion Links Between Two Object Set Variables}
+  \caption{Inclusion Links Between Two Collection Variables}
   \label{tab:set_operations_with_inclusion_links}
     \begin{tabular}{|l|l|c|p{4.6cm}|}
     \hline
@@ -799,30 +844,23 @@ all combinations of adding/removing a collection to/from another collection (ord
       \includegraphics[scale=0.8]{figures/InclusionLinksSetsCheck}
     } & \\
     \hline
-    Set / Ordered Set & any & CHECK\_ONLY & Each element in \fe{b} is contained (once) in \fe{a}. \\
-    Bag / List & any & CHECK\_ONLY & Each element in \fe{b} is contained at least as often in \fe{a} as in \fe{b}.\\
+    Ordered Set & any & CHECK\_ONLY & Each element in \fe{b} is contained (once) in \fe{a}. \\[0.5em]
+    List & any & CHECK\_ONLY & Each element in \fe{b} is contained at least as often in \fe{a} as in \fe{b}.\\
     \hline
     \multicolumn{3}{|c}{
       \includegraphics[scale=0.8]{figures/InclusionLinksSetsCreate}
     } & \\
     \hline
-    Set & any & CREATE & Add all elements from \fe{b} to \fe{a} that are missing in \fe{a}.\\
-    Ordered Set & Bag / Set & CREATE & Add all elements from \fe{b} to \fe{a} that are missing in \fe{a} to the end of \fe{a}.\\
-    Ordered Set & Ordered Set / List & CREATE & Add all elements from \fe{b} to \fe{a} that are missing in \fe{a} to the end of \fe{a}, preserving the order of elements in \fe{b}.\\
-    Bag & any & CREATE & Add all elements from \fe{b} to \fe{a}.\\ %Add elements from \fe{b} to \fe{a} such that each element in \fe{b} is at least as often in \fe{a} as in \fe{b}.\\
-    List & Bag / Set & CREATE & Add all elements from \fe{b} to \fe{a} to the end of \fe{a}.\\
-    List & Ordered Set / List & CREATE & Add all elements from \fe{b} to \fe{a} to the end of \fe{a}, preserving the order of elements in \fe{b}.\\
+    Ordered Set & any & CREATE & Add all elements from \fe{b} to \fe{a} that are missing in \fe{a} to the end of \fe{a}, preserving the order of elements in \fe{b}.\\[0.5em]
+    List & any & CREATE & Add all elements from \fe{b} to \fe{a} to the end of \fe{a}, preserving the order of elements in \fe{b}.\\
     \hline
     \multicolumn{3}{|c}{
       \includegraphics[scale=0.8]{figures/InclusionLinksSetsDestroy}
     } & \\
     \hline
-    Set & any & DESTROY & Remove all elements in \fe{b} from \fe{a}.\\
-    Ordered Set & any & DESTROY & Remove all elements in \fe{b} from \fe{a}, preserve the order of remaining elements in \fe{a}.\\
-    Bag & Set / Ordered Set & DESTROY & Remove \emph{all} occurrences of elements in \fe{b} from \fe{a}.\\
-    Bag & Bag / List & DESTROY & For each element in \fe{b} remove as many occurrences of the element in \fe{a} as it is available in \fe{b}.\\
-    List & Set / Ordered Set & DESTROY & Remove \emph{all} occurrences of elements in \fe{b} from \fe{a}, preserve the order of remaining elements in \fe{a}.\\
-    List & Bag / List & DESTROY & Beginning at the end of the list, for each element in \fe{b} remove as many occurrences of the element in \fe{a} as it is available in \fe{b}, preserve the order of remaining elements in \fe{a}.\\
+    Ordered Set & any & DESTROY & Remove all elements in \fe{b} from \fe{a}, preserve the order of remaining elements in \fe{a}.\\[0.5em]
+    List & Ordered Set & DESTROY & Remove \emph{all} occurrences of elements contained in \fe{b} from \fe{a}, preserve the order of remaining elements in \fe{a}.\\[0.5em]
+    List & List & DESTROY & Starting at the beginning of the list \fe{a}, for each element in \fe{b} remove as many occurrences of the element in \fe{a} as it is available in \fe{b}, preserve the order of remaining elements in \fe{a}.\\
     \hline
     \end{tabular}
 %  \end{longtable}
@@ -831,11 +869,21 @@ all combinations of adding/removing a collection to/from another collection (ord
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=.8]{figures/LinkConstraints1}
-  \caption{Link order constraints FIRST and DIRECT\_SUCCESSOR}
-  \label{fig:linkConstraints}
+  \caption{Inclusion Links With Link Order Constraints}
+  \label{fig:collectionsLinkConstraints}
 \end{figure}
 
-link order constraints with inclusion links like in Figure~\ref{fig:linkConstraints}?
+Similar to the link constraints described in Section~\ref{sec:StoryPatterns:linkConstraints}, these can also be used with inclusion links.
+An exemplary use is illustrated in the story diagram in Figure~\ref{fig:collectionsLinkConstraints}.
+We will explain story diagrams in more detail in Section~\ref{sec:StoryDiagrams}.
+Here, the story diagram describes the sequential execution of two story patterns.
+
+In the first story pattern (the upper one), a set of \fe{Method} objects is collected from a given class \fe{myClass} and stored in the collection \fe{methods}.
+In the next story pattern, a superclass of \fe{myClass}, a method in this superclass and the first method in the collection \fe{methods} are matched.
+In case of a successful matching the newly matched method \fe{new} is added to the collection \fe{methods}.
+The link constraint \fe{\text\{next\text\}} determines to add this method to the ordered collection in such a way
+that the method \fe{new} directly follows the method \fe{first} in the collection \fe{methods}.
+
 
 
 %\ext %--- Comment this line to include paths into the document
