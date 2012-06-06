@@ -209,6 +209,14 @@ If an attribute object can be matched however, the control flow continues via th
 Finally, it reaches a final node labelled with \emph{success}.
 This indicates that the story diagram's application is considered to be successful.
 
+While the execution of a story diagram is aborted upon reaching a failure final node, the effects of the execution up to this point are not reversed.
+All modifications, e.g., object creations and deletions persist.
+The developer of a story diagram has to keep this in mind when specifying a transformation.
+If these side effects of failed story diagram applications are undesired, the story diagram has to be designed such that it is only aborted if no modifications already took place.
+Another way would be to explicitly specify activity nodes which undo the modifications before going to the failure final node.
+
+\todomvd{We could think about a rollback mechanism for later versions.}
+
 \todomvd{Write something about the technical side of the propagation?}
 \todoall{Modify metamodel accordingly.}
 
