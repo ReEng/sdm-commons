@@ -391,19 +391,18 @@ Both may only use the attributes of object variables in the same story pattern a
 
 %\ext  %--- Comment this line to include object sets into the document
 {
-\subsection{Object Collections [MCP]}
+\subsection{Collection Variables [MCP]}
 \label{sec:StoryPatterns:objectsets}
 
-Object collections are special cases of object variables.
+Collection variables are special cases of object variables.
 They represent an arbitrary number of objects in an instance model of the same
 type to be matched.
-Thus, object collection has the type ob the objects within the collection.
+Thus, a collection variable has the type of the objects within the collection.
 
 \todomcp{add a concrete example here}
 
-Matched object collections do not have to be disjoint.
-Thus, isomorphism is not enforced for the content of two or more object
-collections.
+Matched collection variables do not have to be disjoint.
+Thus, isomorphism is not enforced for the content of two or more collection variables.
 
 There are four different types of collections: bags, sets, ordered sets, and
 lists. Their semantics are similar to collection types in OCL:
@@ -422,16 +421,17 @@ concrete syntax.
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{figures/ObjectSets}
-  \caption{Types of Object Collections}
+  \caption{Types of collection variables}
   \label{fig:ObjectSetsTypes}
 \end{figure}
 
 \tododt{We will only keep ordered sets and lists. Unordered sets and bags are omitted.}
 
-\todomcp{explain object sets and binding operators/states/semantics}
+\todomcp{explain collection variables and binding operators/states/semantics}
 
 \todomcp{explain set size expressions (do we change the name?)}
 \tododt{We should call the formerly known ObjectSetSizeExpression simply CollectionSizeExpression.}
+\todomvd{According to the meeting on May, 25th, set size expressions are omitted in v0.2. We can use OCL instead.}
 
 %\todomcp{If we bind an object set, can we use the bound object in other story
 %pattern? E.g. to insert all elements bound by the object set into a container
@@ -446,7 +446,7 @@ concrete syntax.
 %  	\label{fig:reuseObjSet1}
 %\end{figure}
 
-\todomcp{An object set contains no ObjectSetSizeExpression and no object is matched into the object set: ObjectSet is interpreted as optional and the matching succeeds.}
+\todomcp{A collection variable contains no ObjectSetSizeExpression and no object is matched into the object set: collection variable is interpreted as optional and the matching succeeds.}
 \tododt{We still should add an attribute to \fe{CollectionVariable} to distinguish the cases where at least one object should be matched or any number of objects including zero should be matched.
 Stephan also wanted this expressiveness.}
 

@@ -37,7 +37,7 @@ Figure~\ref{fig:SDRemoveInterfaceViolation} shows the story diagram to remove an
 
 The story diagram has five in-parameters: \fe{call}, \fe{interface}, \fe{method}, \fe{castStmt}, and \fe{accessedMethodOwner}. \fe{call} represents the statement that calls the method in the concrete class (the call of \fe{m3} in \fe{m1}). \fe{interface} is the interface that will be extended (\fe{IB} in the example). \fe{method} is the method that is currently not declared in the interface (\fe{m3()}). \fe{castStmt} refers to the statement that down-casts the interface type to the concrete class type (i.e., the statement \fe{B b = (B) ib;}). Finally, \fe{accessedMethodOwner} is the class that contains the called \fe{method} (\fe{B} in the example). The story diagram has no out parameter.
 
-The first story node (after the start node) checks if a method with the same name as the \fe{accessedMethod} already exists in the \fe{interface}.
+The first story node (after the initial node) checks if a method with the same name as the \fe{accessedMethod} already exists in the \fe{interface}.
 This is accomplished by matching all methods of the interface in the set object \fe{interfaceMethods}.
 Then the pattern constraint ensures that none of these methods has the same name as the parameter \fe{method}. \footnote{There are, of course other ways of checking this constraint, e.g., similar to story node~1 in Figure~\ref{fig:SDGenerateMethodStub}. The check here, however, allowed us to show an application of a non-trivial pattern constraint in combination with a set object.}
 If this is not the case, i.e.\ if a method of the name in question already exists in the interface, the application of the story diagram fails.
@@ -54,7 +54,7 @@ If the cast is in the same statement as the call, story node 4a is executed: The
 Activity node 5 is responsible for adapting all other classes that implement the now changed interface. Thus, the node is a for-each activity node that binds a class which is connected to the \fe{interface} in each iteration. For each of those bindings, the node that is reachable via the \fe{[each time]} edge is executed (see Section \ref{sec:StoryDiagrams}). In this case that is a story diagram call of the story diagram \fe{generateMethodStub} which is explained in the following section. In contrast to the previous call to \fe{copyParameters}, the called story diagram here can either succeed or fail. If the generation of the method stub fails, the application of the calling diagram is also aborted with a failure.
 \todomvd{This is pretty careless. Normally a rollback mechanism would be needed.}
 
-When no new classes implementing the \fe{interface} can be found, i.e.\ method stubs have been generated for all implementing classes, the story diagram terminates at the success stop node.
+When no new classes implementing the \fe{interface} can be found, i.e.\ method stubs have been generated for all implementing classes, the story diagram terminates at the success final node.
 
 \subsection{Story Diagram: Generate Method Stub}
 
@@ -65,7 +65,7 @@ When no new classes implementing the \fe{interface} can be found, i.e.\ method s
 \label{fig:SDGenerateMethodStub}
 \end{figure}
 
-The story diagram \fe{generateMethodStub} is shown in Figure~\ref{fig:SDGenerateMethodStub}. It creates a method which implements a method \fe{methodDecl} in a given \fe{interface}. This is accomplished by two story nodes and one story diagram call. The first node checks if the given \fe{class} contains a \fe{method} with the same name as the given declaration \fe{methodDecl}. The check is performed by the attribute constraint \fe{'name = methodDecl.name'}. Since the object variable \fe{method} is negative (crossed-out), the matching of this story node is considered successful if \emph{no} such method exists in the class. In that case the next story node is executed. If a method of the name in question already exists, the execution of the first story node fails and the story diagram terminates at the failure stop node.
+The story diagram \fe{generateMethodStub} is shown in Figure~\ref{fig:SDGenerateMethodStub}. It creates a method which implements a method \fe{methodDecl} in a given \fe{interface}. This is accomplished by two story nodes and one story diagram call. The first node checks if the given \fe{class} contains a \fe{method} with the same name as the given declaration \fe{methodDecl}. The check is performed by the attribute constraint \fe{'name = methodDecl.name'}. Since the object variable \fe{method} is negative (crossed-out), the matching of this story node is considered successful if \emph{no} such method exists in the class. In that case the next story node is executed. If a method of the name in question already exists, the execution of the first story node fails and the story diagram terminates at the failure final node.
 
 The second story node creates a new \fe{methodStub} in the given \fe{class}. The visibility of this method is set to public and its name is set to the name of the method declaration as signified by the expression \fe{'name := methodDecl.name'}. The correct return type for the method is set by creating a \fe{newTypeAccess} from the \fe{methodStub} to the \fe{returnType} that was passed to this story diagram as a parameter.
 

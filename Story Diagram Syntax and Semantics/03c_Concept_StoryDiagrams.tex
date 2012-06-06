@@ -169,7 +169,7 @@ A modifying story node also performs modifications of the matched object structu
 For static analyses of model transformations described with story diagrams,
 it is helpful to know which transformations do not modify the instance model.
 
-\subsection{Stop Nodes} \label{sec:StopNodes}
+\subsection{Activity Final Nodes} \label{sec:StopNodes}
 
 The application of a story diagram can succeed or fail.
 Usually, when the matchings are successful and the specified transformations can be carried out, the story diagram is considered to be applied successfully.
@@ -182,12 +182,12 @@ In Figure~\ref{fig:successAndFailureStopNodes} one could also model that the sto
 Thus, success or failure of a story diagram is used like an implicitly declared boolean out parameter describing if the operation described by a story diagram is considered to be successful.
 In which case it is successful is specified by the developer, not by the story diagrams language.
 I would point out that the success of a story diagram is not directly dependent on the successful execution of all contained story patterns.
-In cotnrast, the success and failure of story patterns are defined by the language.}
+In contrast, the success and failure of story patterns are defined by the language.}
 
 When one story diagram calls another, the calling story diagram's further execution may depend on the called story diagram's application being successful.
 For example, the calling story diagram might need a return value of the called story diagram or it may only continue in a meaningful way if the called transformation has succeeded.
 Therefore, a means to express and communicate the successful or unsuccessful application of a story diagram is required.
-Story diagrams have success and failure stop nodes for this.
+Story diagrams have success and failure final nodes for this.
 
 In normal UML activities, the final nodes determine where control flow of the activity ends.
 Story diagrams reuse this concept but they annotate the nodes with either \emph{success} or \emph{failure}.
@@ -196,17 +196,17 @@ Figure~\ref{fig:successAndFailureStopNodes} shows and example.
 \begin{figure}[htb]
 \begin{center}
   \includegraphics[width=0.7\textwidth]{figures/SuccessAndFailureStopNodes}
-  \caption{Example of a success and a failure stop node.}
+  \caption{Example of a success and a failure final node.}
   \label{fig:successAndFailureStopNodes}
 \end{center}
 \end{figure}
 
 The upper story node in Figure~\ref{fig:successAndFailureStopNodes} specifies that an attribute of a given class object should be matched.
-The failure activity edge leads to a stop node also labelled with \emph{failure}.
+The failure activity edge leads to a final node also labelled with \emph{failure}.
 This indicates that the application of the story diagram went wrong.
 
 If an attribute object can be matched however, the control flow continues via the success activity edge to another story node.
-Finally, it reaches a stop node labelled with \emph{success}.
+Finally, it reaches a final node labelled with \emph{success}.
 This indicates that the story diagram's application is considered to be successful.
 
 \todomvd{Write something about the technical side of the propagation?}
@@ -408,7 +408,7 @@ I also talked about this with Jan and we agreed.}
 
 Figure~\ref{fig:propagation} gives an example for the propagation of matchings. The initial matching consists of two objects of type \fe{Package} which are bound to the input parameters \fe{p1} and \fe{p2}. This matching is passed to the for-each activity node \fe{A}. In this activity, the story pattern tries to match a class in the package bound to \fe{c1}. For each class that is found, the matching is extending by the corresponding class and propagated along the \emph{each time} activity edge to the activity node \fe{B}. In \fe{B}, the object variable \fe{c} is unbound. Thus, a new matching for \fe{c} is to be obtained. If the story pattern is matched successfully, the matching that is propagated down the activity edge to \fe{C} consists of the two packages as well as a class contained in the package bound to \fe{p2}. If the story pattern in \fe{B} cannot be matched, then the matching is propagated unchanged. Then the matching in \fe{C} contains the two packages as well as a class which is contained in the package bound to \fe{p1}. If the control flow reaches the for-each activity node \fe{A} again, then the matching is reduced to the two packages bound to \fe{p1} and \fe{p2}. If the for-each activity node \fe{A} is left via the \emph{end} activity edge, exactly that matching is propagated.
 
-If the control flow reaches a stop node, only objects that are contained in the matching which is propagated to the stop node may be returned. The use of decision nodes in combination with activity edges having a boolean guard does not change the propagation of matchings. The boolean condition at the edge only defines where the matching is propagated.
+If the control flow reaches a final node, only objects that are contained in the matching which is propagated to the final node may be returned. The use of decision nodes in combination with activity edges having a boolean guard does not change the propagation of matchings. The boolean condition at the edge only defines where the matching is propagated.
 
 \subsection{Story Diagram Calls}
 \label{sec:Calls}
