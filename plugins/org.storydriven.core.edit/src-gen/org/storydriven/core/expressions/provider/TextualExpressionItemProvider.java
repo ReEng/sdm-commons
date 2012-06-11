@@ -133,13 +133,29 @@ public class TextualExpressionItemProvider extends ExpressionItemProvider implem
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TextualExpression) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_TextualExpression_type")
-				: getString("_UI_TextualExpression_type") + " " + label;
+		TextualExpression textualExpression = (TextualExpression) object;
+
+		StringBuffer buffer = new StringBuffer();
+		buffer.append(getString("_UI_TextualExpression_type"));
+		
+		
+		String language = textualExpression.getLanguage();
+		if (language != null) {
+			buffer.append(' ');
+			buffer.append(language);
+		}
+		
+		String languageVersion = textualExpression.getLanguageVersion();
+		if (languageVersion != null) {
+			buffer.append(' ');
+			buffer.append(languageVersion);
+		}
+
+		return buffer.toString();
 	}
 
 	/**
