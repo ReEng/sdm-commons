@@ -397,46 +397,61 @@ Both may only use the attributes of object variables in the same story pattern a
 %\ext  %--- Comment this line to include object sets into the document
 {
 \subsection{Collection Variables [MCP]}
-\label{sec:StoryPatterns:objectsets}
+\label{sec:StoryPatterns:collectionvariables}
 
 Collection variables are special cases of object variables.
 They represent an arbitrary number of objects in an instance model of the same
 type to be matched.
 Thus, a collection variable has the type of the objects within the collection.
 
-\todomcp{add a concrete example here}
+Figure~\ref{fig:CollectionVariableExample} depicts an example story pattern that
+contains a collection variable \fe{methods}. During the matching, all
+methods in the class that is bound to the object variable \fe{myClass} are
+bound to the collection variable \fe{methods}.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.9]{figures/CollectionVariableExample}
+  \caption{Collection Variable Example}
+  \label{fig:CollectionVariableExample}
+\end{figure}
+
+The elements in collection variables are always ordered and the collections can
+be specified as unique or not unique. This leads to two different
+types of collections: ordered sets and lists. Their semantics are similar to collection types in OCL: Elements in
+ordered sets are ordered and unique. Elements in a list are ordered, but not
+unique.
+
+Figure~\ref{fig:CollectionVariableTypes} depicts the two collection types in their
+concrete syntax.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.8]{figures/CollectionVariables}
+  \caption{Types of collection variables}
+  \label{fig:CollectionVariableTypes}
+\end{figure}
+
 
 Matched collection variables do not have to be disjoint.
 Thus, isomorphism is not enforced for the content of two or more collection variables.
 
-There are four different types of collections: bags, sets, ordered sets, and
-lists. Their semantics are similar to collection types in OCL:
+Furthermore, the collection represented by a collection variable can be empty.
+This means, a collection variables is considered to be optional in a matching.
+Additionally, object contraints can be used to specify the allowed size of
+the collection using OCL.
 
-\begin{description}
-\item[Bags:] The elements in a bag are not ordered and not unique.
-\item[Sets:] Elements in a set are not ordered, but unique.
-\item[Ordered Sets:] Elements in ordered sets are ordered and unique.
-\item[Lists:] Elements in a list are ordered, but not unique.
-\end{description}
+According to this, the binding semantics for collection variables have to be
+mandatory, i.e., negative or optional collection variables are not allowed.
+Furthermore, collection variables in combination with a create binding operator
+are not allowed: collection variables can only be used in combination with the
+binding operators check only or destroy.
 
-Figure~\ref{fig:ObjectSetsTypes} depicts the four collection types in their
-concrete syntax.
-
-
-\begin{figure}[htb]
-  \centering
-  \includegraphics[scale=0.8]{figures/ObjectSets}
-  \caption{Types of collection variables}
-  \label{fig:ObjectSetsTypes}
-\end{figure}
-
-\tododt{We will only keep ordered sets and lists. Unordered sets and bags are omitted.}
-
-\todomcp{explain collection variables and binding operators/states/semantics}
-
-\todomcp{explain set size expressions (do we change the name?)}
-\tododt{We should call the formerly known ObjectSetSizeExpression simply CollectionSizeExpression.}
-\todomvd{According to the meeting on May, 25th, set size expressions are omitted in v0.2. We can use OCL instead.}
+%\todomcp{explain set size expressions (do we change the name?)}
+%\tododt{We should call the formerly known ObjectSetSizeExpression simply
+%CollectionSizeExpression.}
+%\todomvd{According to the meeting on May, 25th, set size expressions are
+%omitted in v0.2. We can use OCL instead.}
 
 %\todomcp{If we bind an object set, can we use the bound object in other story
 %pattern? E.g. to insert all elements bound by the object set into a container
@@ -449,13 +464,14 @@ concrete syntax.
 %		\includegraphics[scale=.8]{figures/ReuseObjectSet1}
 %  	\caption{Reuse Objects in a Set}
 %  	\label{fig:reuseObjSet1}
-%\end{figure}
+%\end{figure} 
 
-\todomcp{A collection variable contains no ObjectSetSizeExpression and no object is matched into the object set: collection variable is interpreted as optional and the matching succeeds.}
-\tododt{We still should add an attribute to \fe{CollectionVariable} to distinguish the cases where at least one object should be matched or any number of objects including zero should be matched.
-Stephan also wanted this expressiveness.}
+%\todomcp{A collection variable contains no ObjectSetSizeExpression and no
+%object is matched into the object set: collection variable is interpreted as
+%optional and the matching succeeds.} 
+\tododt{We still should add an attribute to \fe{CollectionVariable} to distinguish the cases where at least one object should be matched or any number of objects including zero should be matched. Stephan also wanted this expressiveness.}
 
-\todomcp{All operators for comparison are allowed: <, <=, >, >=, = !=}
+%\todomcp{All operators for comparison are allowed: <, <=, >, >=, = !=}
 
 \begin{figure}[htb]
 	%\begin{minipage}{.45\textwidth}
@@ -684,12 +700,13 @@ If two object variables are connected by a maybe link, they both must be mandato
 \subsection{Inclusion Links [DT]}
 \label{sec:StoryPatterns:inclusion}
 
-There are cases when you want to add additional objects to a set of objects matched to a collection variable as described in Section~\ref{sec:StoryPatterns:objectsets}.
+There are cases when you want to add additional objects to a set of objects matched to a collection variable as described in Section~\ref{sec:StoryPatterns:collectionvariables}.
 Since a collection variable does not explicitly represent a collection object in the sense of Java\footnote{
 We do not expliciltly model collection objects in story diagrams.
-The type of a collection variable is that of the contained objects and not the type of a collection object like \texttt{java.util.Collection}.},
-we need a way to describe the addition or removal of objects to or from such an object collection as well as checking if an object is included in an object collection.
-We introduce \emph{inclusion links} for this purpose.
+The type of a collection variable is that of the contained objects and not the
+type of a collection object like \texttt{java.util.Collection}. \todomcp{move
+this to Section~\ref{sec:StoryPatterns:collectionvariables}?}}, we need a way to describe the addition or removal of
+objects to or from such an object collection as well as checking if an object is included in an object collection. We introduce \emph{inclusion links} for this purpose.
 
 \begin{figure}[htb]
 	\begin{minipage}{.43\textwidth}
