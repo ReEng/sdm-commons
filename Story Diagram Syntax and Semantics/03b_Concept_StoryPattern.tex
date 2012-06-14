@@ -396,7 +396,7 @@ Both may only use the attributes of object variables in the same story pattern a
 
 %\ext  %--- Comment this line to include object sets into the document
 {
-\subsection{Collection Variables [MCP]}
+\subsection{Collection Variables}
 \label{sec:StoryPatterns:collectionvariables}
 
 Collection variables are special cases of object variables.
@@ -492,7 +492,7 @@ binding operators ``check only'' or \destroy.
 
 %\ext  %--- Comment this line to include pattern constraints into the document
 {
-\subsection{Pattern Constraints [CH]}
+\subsection{Pattern Constraints}
 
 A pattern constraint defines an additional condition for a match that is evaluated and the end of the matching step, i.e., it is evaluated after all object and link variables have been matched. Since it is a condition, it needs to evaluate to true or false. If the pattern constraint is evaluated to true, then the match for the story pattern is valid. If the pattern constraint is evaluated to false, then the match is rejected.
 
@@ -512,7 +512,7 @@ Figure~\ref{fig:patternConstraint} gives an example for the concrete syntax of a
 
 %\ext %--- Comment this line to include link constraints into the
 {
-\subsection{Link Constraints [CH]}
+\subsection{Link Constraints}
 \label{sec:StoryPatterns:linkConstraints}
 
 Link constraints specify constraints on the absolute position of an element in an ordered reference (\emph{link position constraints}, Section~\ref{sec:StoryPatterns:linkConstraints:posConstraint}) or on the position of an element relative to another element (\emph{link order constraints}, Section~\ref{sec:StoryPatterns:linkConstraints:orderConstraint}). These constraints are only applicable to link variables that are typed by ordered multi-valued references. All other kinds of links cannot be adorned with link constraints.
@@ -671,7 +671,7 @@ By supporting sequences of link order constraints (cf. Figure~\ref{fig:linkOrder
 
 } %--- End of link constraint subsection
 
-\subsection{Maybe Links [CH]}
+\subsection{Maybe Links}
 \label{sec:StoryPatterns:specialLinks:maybeLink}
 
 Story patterns are matched by using isomorphic matchings. 
@@ -703,7 +703,7 @@ If two object variables are connected by a maybe link, they both must be mandato
 
 
 
-\subsection{Inclusion Links [DT]}
+\subsection{Inclusion Links}
 \label{sec:StoryPatterns:inclusion}
 
 There are cases when you want to add additional objects to a set of objects matched to a collection variable as described in Section~\ref{sec:StoryPatterns:collectionvariables}.
