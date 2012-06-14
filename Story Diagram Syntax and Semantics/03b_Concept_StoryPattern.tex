@@ -533,9 +533,7 @@ Link constraints specify constraints on the absolute position of an element in a
 
 A link position constraint applies to a link variable that is typed by a multi-valued ordered reference. It specifies that the target object of the constrained link has to be the \emph{first} or the \emph{last} element in that reference. Other link position constraints are not supported. 
 
-\todoch{Does anybody know a publication which explains the index constraint? In Alberts Habil, there are no index links.}
-\tododt{Maybe you'll find it here: \cite{WW01_ag}. At least the link order constraints -- formerly known as multi links -- are described here including their concrete syntax.}
-The \emph{index} link constraint which was available in earlier versions of story diagrams~\cite{•} is no longer supported. 
+The \emph{index} link constraint which was available in earlier versions of story diagrams~\cite{WW01_ag} is no longer supported. 
 It was used to match an element which is located at a specific position in a multi-valued reference. 
 However, that causes that upon creation of multiple elements it is not precisely defined where they are inserted into the list. 
 In addition, the index may cause \emph{OutOfBounds} exceptions if the modeler specifies an invalid index.
@@ -662,7 +660,6 @@ Figure~\ref{fig:linkOrderConstraintDirectSuccessorNegative3} shows an example of
 
 Link order constraints may not form circles or unsatisfiable story patterns. An example of an unsatisfiable story pattern is given by Figure~\ref{fig:linkConstraintUnsatisfiablePattern}. In this story pattern, the object bound to \fe{param2} must be the first \fe{FormalParameter} of \fe{method}. At the same time, the link order constraint requires the object bound to \fe{param2} to be the direct successor of the object bound to \fe{param1}. Since this is not possible, the pattern is unsatisfiable and will never match.
 
-\tododt{Should we refer to \cite{TMG06} and explain if or how we solve the issues discussed there in Section 3.1.3 (see Figure~2)?}
 
 \begin{figure}[htbp]
 \center
@@ -670,6 +667,8 @@ Link order constraints may not form circles or unsatisfiable story patterns. An 
 \caption{Link Constraints causing a Story Pattern to be unsatisfiable.}
 \label{fig:linkConstraintUnsatisfiablePattern}
 \end{figure}
+
+By supporting sequences of link order constraints (cf. Figure~\ref{fig:linkOrderConstraintDirectSuccessorCreateDelete}) and combinations of link position and link order constraints, we extend story patterns and their semantics as proposed by Tichy et. al.~\cite{TMG06}. The general semantical issue that the insertion into an ordered reference is non-deterministic remain, but may be explicitly solved using the link constraints introduced in this section. 
 
 } %--- End of link constraint subsection
 
