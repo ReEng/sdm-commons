@@ -676,12 +676,20 @@ Link order constraints may not form circles or unsatisfiable story patterns. An 
 \subsection{Maybe Links [CH]}
 \label{sec:StoryPatterns:specialLinks:maybeLink}
 
-Story patterns are matched by using isomorphic matchings. That means that two object variables in a story pattern may not be matched to the same object of the instance model. A matching which matches two object variables to the same object is, thus, considered to be invalid. In some situations, however, such matchings should be explicitly allowed. Then, the isomorphic matching must be disabled. This is achieved by connecting the object variables with a maybe link. Figure \ref{fig:maybeLink} shows the concrete syntax of maybe links. 
+Story patterns are matched by using isomorphic matchings. 
+That means that two object variables in a story pattern may not be matched to the same object of the instance model. 
+A matching which matches two object variables to the same object is, thus, considered to be invalid. 
+In some situations, however, it should be explicitly allowed to match the same object to two different object variables inside the same story pattern. 
+Then, the isomorphic matching must be disabled for the two corresponding object variables. 
+This is achieved by connecting the object variables with a maybe link. 
+Then, a matching \emph{may} assign the same object to the object variables connected by the maybe link, but it also may assign different objects to the variables.
+For all other object variables, the isomorphism condition is enforced.
 
-\tododt{Please clarify the semantics of a \emph{maybe} link.
-It allows two object variables to be matched to the same object.
-For all aother variables an isomorphic matching is performed.
-I would also emphasize \emph{maybe}.}
+
+%\tododt{Please clarify the semantics of a \emph{maybe} link.
+%It allows two object variables to be matched to the same object.
+%For all aother variables an isomorphic matching is performed.
+%I would also emphasize \emph{maybe}.}
 
 \begin{figure}[htb]
   \centering
@@ -690,7 +698,7 @@ I would also emphasize \emph{maybe}.}
   \label{fig:maybeLink}
 \end{figure}
 
-In Figure~\ref{fig:maybeLink}, the object variables \fe{c1} and \fe{c2} are connected with a maybe link.
+Figure \ref{fig:maybeLink} shows the concrete syntax of maybe links. The object variables \fe{c1} and \fe{c2} are connected with a maybe link which is visualized by a dotted line labeled with \fe{\{same\}}.
 The matching of the story patterns is successful if either two classes - one containing a method and one containing an attribute - can be matched in the instance graph \emph{or} if only one class containing a method \emph{and} an attribute can be matched.
 
 If two object variables are connected by a maybe link, they both must be mandatory or optional. In addition, a maybe link requires the object variables to be matched or destroyed, but not created.  
