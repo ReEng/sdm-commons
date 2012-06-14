@@ -400,8 +400,7 @@ Both may only use the attributes of object variables in the same story pattern a
 \label{sec:StoryPatterns:collectionvariables}
 
 Collection variables are special cases of object variables.
-They represent an arbitrary number of objects in an instance model of the same
-type to be matched.
+They represent an arbitrary number of objects in an instance model that are of the same type.
 Thus, a collection variable has the type of the objects within the collection.
 
 Figure~\ref{fig:CollectionVariableExample} depicts an example story pattern that
@@ -416,36 +415,36 @@ bound to the collection variable \fe{methods}.
   \label{fig:CollectionVariableExample}
 \end{figure}
 
-The elements in collection variables are always ordered and the collections can
-be specified as unique or not unique. This leads to two different
-types of collections: ordered sets and lists. Their semantics are similar to collection types in OCL: Elements in
-ordered sets are ordered and unique. Elements in a list are ordered, but not
+The elements in collection variables are always ordered.
+Collections can be specified to only contain unique elements or to allow the same element to be contained multiple times.
+This leads to two different types of collections: ordered sets and lists.
+Their semantics are similar to collection types in OCL: Elements in
+ordered sets are ordered and unique. Elements in a list are ordered, but not necessarily
 unique.
 
-Figure~\ref{fig:CollectionVariableTypes} depicts the two collection types in their
-concrete syntax.
+Figure~\ref{fig:CollectionVariableTypes} depicts the concrete syntax of the two collection types.
 
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{figures/CollectionVariables}
-  \caption{Types of collection variables}
+  \caption{Types of collection variables: Ordered Set and List}
   \label{fig:CollectionVariableTypes}
 \end{figure}
 
 
-Matched collection variables do not have to be disjoint.
+Two matched collection variables in the same story pattern do not have to be disjoint.
 Thus, isomorphism is not enforced for the content of two or more collection variables.
 
 Furthermore, the collection represented by a collection variable can be empty.
 This means, a collection variables is considered to be optional in a matching.
-Additionally, object contraints can be used to specify the allowed size of
+Additionally, object constraints can be used to specify the allowed size of
 the collection using OCL.
 
-According to this, the binding semantics for collection variables have to be
-mandatory, i.e., negative or optional collection variables are not allowed.
-Furthermore, collection variables in combination with a create binding operator
+As the matching of collection variables is implicitly optional, their binding semantics cannot be set to ``optional'', explicitly.
+Negative collection variables are not allowed.
+Furthermore, collection variables in combination with a \create binding operator
 are not allowed: collection variables can only be used in combination with the
-binding operators check only or destroy.
+binding operators ``check only'' or \destroy.
 
 %\todomcp{explain set size expressions (do we change the name?)}
 %\tododt{We should call the formerly known ObjectSetSizeExpression simply

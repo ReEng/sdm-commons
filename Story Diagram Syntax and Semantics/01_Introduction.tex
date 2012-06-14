@@ -39,9 +39,17 @@ We provide definitions for the abstract and the concrete syntax as well as the s
 %Evaluation
 As an example, we show how story diagrams can be used to specify refactoring operations on structural software models like class diagrams.
 
-\todoall{Point out changes compared to v0.1.}
+\section{Extensions since the previous version}
+Compared to v0.1 of this report, the current version contains a number of additions.
+This section briefly summarizes these extensions for readers that are familiar with the previous report.
 
-% Structure
+It introduces \emph{collection variables} which allow the specification of sets of object variables which have the same type (Section~\ref{sec:StoryPatterns:collectionvariables}).
+\emph{Inclusion links} can be used to add and remove single object variables from a given object collection (Section~\ref{sec:StoryPatterns:inclusion}).
+\emph{Link constraints} can be used to specify the order in which elements are reference by a multi reference (Section~\ref{sec:StoryPatterns:linkConstraints}).
+Furthermore, \fe{maybe links} can now be used to circumvent the isomorphic matching for certain object variables (\ref{sec:StoryPatterns:specialLinks:maybeLink}).
+Finally, the complete example in Chapter~\ref{sec:Example} has been extended to contain examples of most of these additions.
+
+\section{Structure}
 The following chapter introduces important foundations like graph transformations that are necessary for the understanding of story diagrams.
 Chapter~\ref{sec:Concepts} then describes the concepts used in story patterns by explaining their abstract and concrete syntax as well as the semantics.
 Chapter~\ref{sec:Example} gives a complex example by illustrating the specification of a refactoring operation with story diagrams.
