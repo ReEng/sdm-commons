@@ -8,11 +8,11 @@
   <genPackages prefix="Modelinstance" basePackage="de.fujaba" resource="XMI" disposableProviderFactory="true"
       ecorePackage="modelinstance.ecore#/">
     <genClasses ecoreClass="modelinstance.ecore#//RootNode">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modelinstance.ecore#//RootNode/categories"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference modelinstance.ecore#//RootNode/categories"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference modelinstance.ecore#//RootNode/ecoreDataTypes"/>
     </genClasses>
     <genClasses ecoreClass="modelinstance.ecore#//ModelElementCategory">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modelinstance.ecore#//ModelElementCategory/modelElements"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference modelinstance.ecore#//ModelElementCategory/modelElements"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute modelinstance.ecore#//ModelElementCategory/key"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute modelinstance.ecore#//ModelElementCategory/name"/>
       <genOperations ecoreOperation="modelinstance.ecore#//ModelElementCategory/isValidElement">
