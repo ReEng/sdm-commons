@@ -7,14 +7,14 @@ We give an overview of the general idea in Section~\ref{sec:IdeaStoryDiagrams} a
 
 % - combine activity diagrams and graph transformations as well as imperative, deterministic and declarative, non-deterministic languages to formally and compactly describe software behavior in terms of model transformations using an OO-based, familiar notation
 
-The main idea behind story diagrams is to formalize UML activity diagrams
+The main idea behind story diagrams is to formalize UML activities
 to better support model-driven software development.
 This is done by not only modeling the software structure, but also completely modeling its behavior and, thus, making the software model executable.
-For that purpose, graph transformations were chosen to formally specify behavior and have been combined with UML activity diagrams.
+For that purpose, graph transformations were chosen to formally specify behavior and have been combined with UML activities.
 The result, story diagrams, is a mixture of two languages:
-an imperative, deterministic language for the description of control flow, namely UML activity diagrams,
+an imperative, deterministic language for the description of control flow, namely UML activities,
 and a declarative, non-deterministic, object-oriented, graph-transformation-based language for the description of model modifications, so-called story patterns (see Section~\ref{sec:StoryPatterns}).
-Both languages are graphical, formally defined, and use a familiar notation based on UML 1.5 activity diagrams\footnote{Actually,
+Both languages are graphical, formally defined, and use a familiar notation based on UML activities\footnote{Actually,
 we use the notation of UML 1.5 activity diagrams, but already use the terminology of the UML 2.}
 and UML object diagrams with minor modifications.
 
@@ -29,7 +29,7 @@ and replaces calls of a given method (\fe{oldMethod}) with calls of another give
   \label{fig:simpleStoryDiagram}
 \end{figure}
 
-Like UML activity diagrams, story diagrams model control flow by means of activity nodes and activity edges.
+Like UML activities, story diagrams model control flow by means of activity nodes and activity edges.
 Each activity node embeds a story pattern to formally specify the behavior for this node\footnote{There are
 some exceptions like activity call nodes which do not contain story patterns to specify the behavior.}.
 The activity edges can carry guards.
@@ -40,7 +40,7 @@ In Figure~\ref{fig:simpleStoryDiagram}, the used guards are \fe{\text[success\te
 \fe{\text[failure\text]} (failed to completely execute a story pattern),
 and \fe{\text[end\text]} (activity edge points to the first activity node to be executed after a loop).
 
-In contrast to ordinary UML activity diagrams, story diagrams, so far, do not model concurrent execution.
+In contrast to ordinary UML activities, story diagrams, so far, do not model concurrent execution.
 Thus, the language constructs \emph{fork} and \emph{join} are currently not supported in story diagrams.
 We plan to include these concepts in future versions of story diagrams.
 
@@ -115,8 +115,8 @@ The latest version of this grammar can be found in Thomas Klein's diploma thesis
 
 \subsection{Activities, Activity Parameters and Return Values}\label{sec:activities}
 
-Since story diagrams can be seen as special UML activity diagrams, we reused the class names defined by the UML 2.
-Thus, similar to UML activity diagrams, a story diagram is represented by a so-called activity (class \fe{Activity}).
+Since story diagrams can be seen as special UML activities, we reused the class names defined by the UML 2.
+Thus, similar to UML activities, a story diagram is represented by a so-called activity (class \fe{Activity}).
 
 Each story diagram can have parameters.
 We distinguish \emph{in} and \emph{out} parameters,
