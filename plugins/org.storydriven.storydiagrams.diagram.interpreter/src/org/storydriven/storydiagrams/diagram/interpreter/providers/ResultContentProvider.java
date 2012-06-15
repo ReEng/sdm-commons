@@ -9,6 +9,8 @@ import org.eclipse.jface.viewers.ITreeContentProvider;
 import de.mdelab.sdm.interpreter.core.variables.Variable;
 
 public class ResultContentProvider extends ArrayContentProvider implements ITreeContentProvider {
+	private Variable<?> variable;
+
 	@Override
 	public boolean hasChildren(Object element) {
 		return getChildren(element).length > 0;
@@ -19,7 +21,7 @@ public class ResultContentProvider extends ArrayContentProvider implements ITree
 		if (element instanceof EClass) {
 			return super.getElements(((EClass) element).getEAllAttributes());
 		}
-		if (element instanceof EAttribute) {
+		if (element instanceof EAttribute && !variable.getValue().equals(element)) {
 			return new Object[0];
 		}
 		if (element instanceof EObject) {
@@ -31,7 +33,7 @@ public class ResultContentProvider extends ArrayContentProvider implements ITree
 	@Override
 	public Object[] getElements(Object element) {
 		if (element instanceof Variable<?>) {
-			Variable<?> variable = (Variable<?>) element;
+			variable = (Variable<?>) element;
 			if (variable.getValue() != null) {
 				return new Object[] { variable.getValue() };
 			}

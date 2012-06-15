@@ -47,6 +47,7 @@ import de.mdelab.sdm.interpreter.core.notifications.TraversingLinkNotification;
 import de.mdelab.sdm.interpreter.core.notifications.VariableCreatedNotification;
 import de.mdelab.sdm.interpreter.core.notifications.VariableDeletedNotification;
 import de.mdelab.sdm.interpreter.core.notifications.VariableValueChangedNotification;
+import de.mdelab.sdm.interpreter.core.variables.Variable;
 
 /**
  * This notification receiver appends received notifications to the provided StyledText.
@@ -66,69 +67,35 @@ public class ConsoleNotificationReceiver implements StoryDrivenNotificationRecei
 	@Override
 	public void notifyChanged(InterpreterNotification<EClassifier> notification) {
 		switch (notification.getNotificationType()) {
+		case ACTIVITY_EXECUTION_STARTED:
+			startActivity((ActivityExecutionStartedNotification<Activity, EClassifier>) notification);
+			indent++;
+			break;
 		case ACTIVITY_EXECUTION_FINISHED:
 			indent--;
-			activityExecutionFinished((ActivityExecutionFinishedNotification<Activity, EClassifier>) notification);
+			finishActivity((ActivityExecutionFinishedNotification<Activity, EClassifier>) notification);
 			break;
-		case ACTIVITY_EXECUTION_STARTED:
-			activityExecutionStarted((ActivityExecutionStartedNotification<Activity, EClassifier>) notification);
+
+		case ACTIVITY_NODE_EXECUTION_STARTED:
+			startActivityNode((ActivityNodeExecutionStartedNotification<ActivityNode, EClassifier>) notification);
 			indent++;
 			break;
 		case ACTIVITY_NODE_EXECUTION_FINISHED:
 			indent--;
-			activityNodeExecutionFinished((ActivityNodeExecutionFinishedNotification<ActivityNode, EClassifier>) notification);
+			finishActivityNode((ActivityNodeExecutionFinishedNotification<ActivityNode, EClassifier>) notification);
 			break;
-		case ACTIVITY_NODE_EXECUTION_STARTED:
-			activityNodeExecutionStarted((ActivityNodeExecutionStartedNotification<ActivityNode, EClassifier>) notification);
-			indent++;
+
+		case TRAVERSING_ACTIVITY_EDGE:
+			traverseActivityEdge((TraversingActivityEdgeNotification<ActivityEdge, EClassifier>) notification);
 			break;
-		case ATTRIBUTE_VALUE_SET:
-			attributeValueSet((AttributeValueSetNotification<AbstractVariable, EClassifier, EStructuralFeature>) notification);
-			break;
-		case EVALUATED_EXPRESSION:
-			indent--;
-			evaluatedExpression((EvaluatedExpressionNotification<EClassifier, Expression>) notification);
-			break;
-		case EVALUATING_EXPRESSION:
-			evaluatingExpression((EvaluatingExpressionNotification<EClassifier, Expression>) notification);
-			indent++;
-			break;
-		case INSTANCE_LINK_CREATED:
-			instanceLinkCreated((InstanceLinkCreatedNotification<AbstractVariable, AbstractLinkVariable, EClassifier>) notification);
-			break;
-		case INSTANCE_LINK_DESTROYED:
-			instanceLinkDestroyed((InstanceLinkDestroyedNotification<AbstractVariable, AbstractLinkVariable, EClassifier>) notification);
-			break;
-		case INSTANCE_OBJECT_CREATED:
-			instanceObjectCreated((InstanceObjectCreatedNotification<AbstractVariable, EClassifier>) notification);
-			break;
-		case INSTANCE_OBJECT_DESTROYED:
-			instanceObjectDestroyed((InstanceObjectDestroyedNotification<AbstractVariable, EClassifier>) notification);
-			break;
-		case LINK_CHECK_FAILED:
-			linkCheckFailed((LinkCheckFailedNotification<AbstractVariable, AbstractLinkVariable, EClassifier>) notification);
-			break;
-		case LINK_CHECK_SUCCESSFUL:
-			linkCheckSuccessful((LinkCheckSuccessfulNotification<AbstractVariable, AbstractLinkVariable, EClassifier>) notification);
-			break;
-		case STORY_PATTERN_APPLICATION_FINISHED:
-			indent--;
-			storyPatternApplicationFinished((StoryPatternApplicationFinishedNotification<StoryPattern, EClassifier>) notification);
-			break;
-		case STORY_PATTERN_APPLICATION_STARTED:
-			storyPatternApplicationStarted((StoryPatternApplicationStartedNotification<StoryPattern, EClassifier>) notification);
+
+		case STORY_PATTERN_INITIALIZATION_STARTED:
+			storyPatternInitializationStarted((StoryPatternInitializationStartedNotification<StoryPattern, EClassifier>) notification);
 			indent++;
 			break;
 		case STORY_PATTERN_INITIALIZATION_FINISHED:
 			indent--;
 			storyPatternInitializationFinished((StoryPatternInitializationFinishedNotification<StoryPattern, EClassifier>) notification);
-			break;
-		case STORY_PATTERN_INITIALIZATION_STARTED:
-			storyPatternInitializationStarted((StoryPatternInitializationStartedNotification<StoryPattern, EClassifier>) notification);
-			indent++;
-			break;
-		case STORY_PATTERN_MATCHING_FAILED:
-			storyPatternMatchingFailed((StoryPatternMatchingFailedNotification<StoryPattern, EClassifier>) notification);
 			break;
 		case STORY_PATTERN_MATCHING_STARTED:
 			storyPatternMatchingStarted((StoryPatternMatchingStartedNotification<StoryPattern, EClassifier>) notification);
@@ -136,236 +103,268 @@ public class ConsoleNotificationReceiver implements StoryDrivenNotificationRecei
 		case STORY_PATTERN_MATCHING_SUCCESSFUL:
 			storyPatternMatchingSuccessful((StoryPatternMatchingSuccessfulNotification<StoryPattern, EClassifier>) notification);
 			break;
+		case STORY_PATTERN_MATCHING_FAILED:
+			storyPatternMatchingFailed((StoryPatternMatchingFailedNotification<StoryPattern, EClassifier>) notification);
+			break;
+		case STORY_PATTERN_APPLICATION_STARTED:
+			storyPatternApplicationStarted((StoryPatternApplicationStartedNotification<StoryPattern, EClassifier>) notification);
+			indent++;
+			break;
+		case STORY_PATTERN_APPLICATION_FINISHED:
+			indent--;
+			storyPatternApplicationFinished((StoryPatternApplicationFinishedNotification<StoryPattern, EClassifier>) notification);
+			break;
+
+		case ATTRIBUTE_VALUE_SET:
+			attributeValueSet((AttributeValueSetNotification<AbstractVariable, EClassifier, EStructuralFeature>) notification);
+			break;
+
+		case INSTANCE_OBJECT_CREATED:
+			createdInstance((InstanceObjectCreatedNotification<AbstractVariable, EClassifier>) notification);
+			break;
+		case INSTANCE_OBJECT_DESTROYED:
+			destroyedInstance((InstanceObjectDestroyedNotification<AbstractVariable, EClassifier>) notification);
+			break;
+
+		case INSTANCE_LINK_CREATED:
+			createdInstance((InstanceLinkCreatedNotification<AbstractVariable, AbstractLinkVariable, EClassifier>) notification);
+			break;
+		case INSTANCE_LINK_DESTROYED:
+			destroyedInstance((InstanceLinkDestroyedNotification<AbstractVariable, AbstractLinkVariable, EClassifier>) notification);
+			break;
+
+		case LINK_CHECK_SUCCESSFUL:
+			linkChecked((LinkCheckSuccessfulNotification<AbstractVariable, AbstractLinkVariable, EClassifier>) notification);
+			break;
+		case LINK_CHECK_FAILED:
+			linkFailed((LinkCheckFailedNotification<AbstractVariable, AbstractLinkVariable, EClassifier>) notification);
+			break;
+
 		case STORY_PATTERN_OBJECT_BINDING_REVOKED:
-			storyPatternObjectBindingRevoked((StoryPatternObjectBindingRevokedNotification<AbstractVariable, EClassifier>) notification);
+			boundRevoked((StoryPatternObjectBindingRevokedNotification<AbstractVariable, EClassifier>) notification);
 			break;
 		case STORY_PATTERN_OBJECT_BOUND:
-			storyPatternObjectBound((StoryPatternObjectBoundNotification<AbstractVariable, EClassifier>) notification);
+			bound((StoryPatternObjectBoundNotification<AbstractVariable, EClassifier>) notification);
 			break;
 		case STORY_PATTERN_OBJECT_NOT_BOUND:
-			storyPatternObjectNotBound((StoryPatternObjectNotBoundNotification<AbstractVariable, EClassifier>) notification);
+			boundNot((StoryPatternObjectNotBoundNotification<AbstractVariable, EClassifier>) notification);
 			break;
-		case TRAVERSING_ACTIVITY_EDGE:
-			traversingActivityEdge((TraversingActivityEdgeNotification<ActivityEdge, EClassifier>) notification);
-			break;
+
 		case TRAVERSING_LINK:
-			traversingLink((TraversingLinkNotification<AbstractVariable, AbstractLinkVariable, EClassifier>) notification);
+			traverseLink((TraversingLinkNotification<AbstractVariable, AbstractLinkVariable, EClassifier>) notification);
 			break;
+
 		case VARIABLE_CREATED:
 			variableCreated((VariableCreatedNotification<EClassifier>) notification);
+			break;
+		case VARIABLE_VALUE_CHANGED:
+			variableChanged((VariableValueChangedNotification<EClassifier>) notification);
 			break;
 		case VARIABLE_DELETED:
 			variableDeleted((VariableDeletedNotification<EClassifier>) notification);
 			break;
-		case VARIABLE_VALUE_CHANGED:
-			variableValueChanged((VariableValueChangedNotification<EClassifier>) notification);
+
+		case EVALUATING_EXPRESSION:
+			startExpression((EvaluatingExpressionNotification<EClassifier, Expression>) notification);
+			indent++;
 			break;
+		case EVALUATED_EXPRESSION:
+			indent--;
+			finishExpression((EvaluatedExpressionNotification<EClassifier, Expression>) notification);
+			break;
+
 		case STORY_PATTERN_CONSTRAINT_HOLDS:
-			storyPatternConstraintHolds((StoryPatternConstraintHoldsNotification<StoryPattern, EClassifier, Expression>) notification);
+			constraintHolds((StoryPatternConstraintHoldsNotification<StoryPattern, EClassifier, Expression>) notification);
 			break;
 		case STORY_PATTERN_CONSTRAINT_VIOLATED:
-			storyPatternConstraintViolated((StoryPatternConstraintViolatedNotification<StoryPattern, EClassifier, Expression>) notification);
+			constraintViolated((StoryPatternConstraintViolatedNotification<StoryPattern, EClassifier, Expression>) notification);
 			break;
 		case STORY_PATTERN_OBJECT_CONSTRAINT_HOLDS:
-			storyPatternObjectConstraintHolds((StoryPatternObjectConstraintHoldsNotification<AbstractVariable, EClassifier, Expression>) notification);
+			constraintHolds((StoryPatternObjectConstraintHoldsNotification<AbstractVariable, EClassifier, Expression>) notification);
 			break;
 		case STORY_PATTERN_OBJECT_CONSTRAINT_VIOLATED:
-			storyPatternObjectConstraintViolated((StoryPatternObjectConstraintViolatedNotification<AbstractVariable, EClassifier, Expression>) notification);
+			constraintViolated((StoryPatternObjectConstraintViolatedNotification<AbstractVariable, EClassifier, Expression>) notification);
 			break;
 		default:
 			throw new UnsupportedOperationException();
 		}
 	}
 
-	private void activityExecutionFinished(ActivityExecutionFinishedNotification<Activity, EClassifier> notification) {
-		debug("Finished execution of %1s.", notification.getActivity());
+	private void startActivity(ActivityExecutionStartedNotification<Activity, EClassifier> notification) {
+		debug("Starting execution of %1s...", notification.getActivity());
 	}
 
-	private void activityNodeExecutionFinished(
-			ActivityNodeExecutionFinishedNotification<ActivityNode, EClassifier> notification) {
-		debug("Finished execution of %1s.", notification.getActivityNode());
-	}
-
-	private void attributeValueSet(
-			AttributeValueSetNotification<AbstractVariable, EClassifier, EStructuralFeature> notification) {
-		debug("Attribute '%1s.%2s' set to '%3s' ($4s: $5s)", notification.getStoryPatternObject(),
-				notification.getFeature(), notification.getFeatureValue(), notification.getInstanceObject(),notification.getFeature());
-	}
-
-	private void evaluatedExpression(EvaluatedExpressionNotification<EClassifier, Expression> notification) {
-		debug("Evaluated expression '%1s' to '%2s'.", notification.getExpression(), notification.getResult());
-	}
-
-	private void instanceLinkCreated(
-			InstanceLinkCreatedNotification<AbstractVariable, AbstractLinkVariable, EClassifier> notification) {
-		debug("Instance link '%1s' created from '%2s' to '%3s' (%4s: '%5s', %6s: '%7s')", notification.getLink(),
-				notification.getSourceStoryPatternObject(), notification.getSourceObject(),
-				notification.getTargetStoryPatternObject(), notification.getTargetObject(),
-				notification.getTargetStoryPatternObject(), notification.getTargetObject());
-	}
-
-	private void instanceLinkDestroyed(
-			InstanceLinkDestroyedNotification<AbstractVariable, AbstractLinkVariable, EClassifier> notification) {
-		debug("Instance link '%1s' destroyed from '%2s' to '%3s' (%4s: '%5s', %6s: '%7s')", notification.getLink(),
-				notification.getSourceStoryPatternObject(), notification.getSourceObject(),
-				notification.getTargetStoryPatternObject(), notification.getTargetObject(),
-				notification.getTargetStoryPatternObject(), notification.getTargetObject());
-	}
-
-	private void instanceObjectCreated(InstanceObjectCreatedNotification<AbstractVariable, EClassifier> notification) {
-		debug("Instance object created for '" + notification.getStoryPatternObject() + "': "
-				+ notification.getInstanceObject());
-	}
-
-	private void instanceObjectDestroyed(InstanceObjectDestroyedNotification<AbstractVariable, EClassifier> notification) {
-		debug("Instance object destroyed for '" + notification.getStoryPatternObject() + "': "
-				+ notification.getInstanceObject());
-	};
-
-	private void storyPatternApplicationFinished(
-			StoryPatternApplicationFinishedNotification<StoryPattern, EClassifier> notification) {
-		debug("Finished application of %1s.", notification.getStoryPattern());
-
-	}
-
-	private void storyPatternInitializationFinished(
-			StoryPatternInitializationFinishedNotification<StoryPattern, EClassifier> notification) {
-		debug("Finished initialization of story pattern '%1s'", notification.getStoryPattern());
+	private void startActivityNode(ActivityNodeExecutionStartedNotification<ActivityNode, EClassifier> notification) {
+		wrap();
+		debug("Starting execution of %1s...", notification.getActivityNode());
 	}
 
 	private void storyPatternInitializationStarted(
 			StoryPatternInitializationStartedNotification<StoryPattern, EClassifier> notification) {
-		debug("Starting initialization of story pattern '%1s'.", notification.getStoryPattern());
+		debug("Starting initialization of %1s...", notification.getStoryPattern());
 	}
 
-	private void variableCreated(VariableCreatedNotification<EClassifier> notification) {
-		debug("Created variable %1s : %2s = %3s.", notification.getVariable().getName(), notification.getVariable()
-				.getClassifier(), notification.getVariable().getValue());
-	};
-
-	private void variableDeleted(VariableDeletedNotification<EClassifier> notification) {
-		debug("Deleted variable '%1s'.", notification.getVariable().getName());
-	};
-
-	private void variableValueChanged(VariableValueChangedNotification<EClassifier> notification) {
-		debug("Variable value changed: %1s: %2s -> %3s", notification.getVariable().getName(),
-				notification.getOldValue(), notification.getVariable().getValue());
-	}
-
-	private void activityExecutionStarted(ActivityExecutionStartedNotification<Activity, EClassifier> notification) {
-		info("Starting execution of %1s...", notification.getActivity());
-	}
-
-	private void activityNodeExecutionStarted(
-			ActivityNodeExecutionStartedNotification<ActivityNode, EClassifier> notification) {
+	private void storyPatternMatchingStarted(
+			StoryPatternMatchingStartedNotification<StoryPattern, EClassifier> notification) {
 		wrap();
-		info("Starting execution of %1s...", notification.getActivityNode());
-	}
-
-	private void evaluatingExpression(EvaluatingExpressionNotification<EClassifier, Expression> notification) {
-		info("Evaluating expression '%1s'...", notification.getExpression());
+		debug("Starting matching of %1s...", notification.getStoryPattern());
 	}
 
 	private void storyPatternApplicationStarted(
 			StoryPatternApplicationStartedNotification<StoryPattern, EClassifier> notification) {
 		wrap();
-		info("Starting application of %1s...", notification.getStoryPattern());
+		debug("Starting application of %1s...", notification.getStoryPattern());
 	}
 
-	private void storyPatternMatchingStarted(
-			StoryPatternMatchingStartedNotification<StoryPattern, EClassifier> notification) {
-		info("Starting matching of %1s...", notification.getStoryPattern());
+	private void variableChanged(VariableValueChangedNotification<EClassifier> notification) {
+		debug("Variable value changed: %1s: %2s -> %3s", notification.getVariable().getName(),
+				notification.getOldValue(), notification.getVariable().getValue());
 	}
 
-	private void traversingActivityEdge(TraversingActivityEdgeNotification<ActivityEdge, EClassifier> notification) {
+	private void startExpression(EvaluatingExpressionNotification<EClassifier, Expression> notification) {
+		debug("Starting evaluation of expression '%1s'...", notification.getExpression());
+	}
+
+	private void finishActivity(ActivityExecutionFinishedNotification<Activity, EClassifier> notification) {
+		info("Finished execution of %1s.", notification.getActivity());
+	};
+
+	private void finishActivityNode(ActivityNodeExecutionFinishedNotification<ActivityNode, EClassifier> notification) {
+		info("Finished execution of %1s.", notification.getActivityNode());
+	}
+
+	private void traverseActivityEdge(TraversingActivityEdgeNotification<ActivityEdge, EClassifier> notification) {
 		ActivityEdge edge = notification.getActivityEdge();
 		wrap();
-		info("Traversing %1s from %2s to %3s...", edge, edge.getSource(), edge.getTarget());
+		info("Traversing %1s...", edge);
 	}
 
-	private void traversingLink(
+	private void storyPatternInitializationFinished(
+			StoryPatternInitializationFinishedNotification<StoryPattern, EClassifier> notification) {
+		info("Finished initialization of %1s.", notification.getStoryPattern());
+	}
+
+	private void storyPatternMatchingSuccessful(
+			StoryPatternMatchingSuccessfulNotification<StoryPattern, EClassifier> notification) {
+		info("Finished matching of %1s successfully.", notification.getStoryPattern());
+	};
+
+	private void storyPatternApplicationFinished(
+			StoryPatternApplicationFinishedNotification<StoryPattern, EClassifier> notification) {
+		info("Finished application of %1s.", notification.getStoryPattern());
+
+	};
+
+	private void linkChecked(
+			LinkCheckSuccessfulNotification<AbstractVariable, AbstractLinkVariable, EClassifier> notification) {
+		info("Link check successful: '%1s' from '%2s' to '%3s' (source: '%4s', target: '%5s').",
+				notification.getLink(), notification.getSourceStoryPatternObject(),
+				notification.getTargetStoryPatternObject(), notification.getSourceObject(),
+				notification.getTargetObject());
+	}
+
+	private void boundNot(StoryPatternObjectNotBoundNotification<AbstractVariable, EClassifier> notification) {
+		info("Could not bind %1s.", notification.getStoryPatternObject());
+	}
+
+	private void traverseLink(
 			TraversingLinkNotification<AbstractVariable, AbstractLinkVariable, EClassifier> notification) {
 		wrap();
-		info("Traversing link '%1s' from '%2s' to '%3s'...", notification.getLink(),
-				notification.getSourceStoryPatternObject(), notification.getTargetStoryPatternObject());
+		info("Traversing link %1s...", notification.getLink());
 		wrap();
 	}
 
-	private void storyPatternObjectBound(StoryPatternObjectBoundNotification<AbstractVariable, EClassifier> notification) {
-		wrap();
-		succeeded("Bound story pattern object '%1s' to '%2s'.", notification.getStoryPatternObject(),
-				notification.getInstanceObject());
+	private void finishExpression(EvaluatedExpressionNotification<EClassifier, Expression> notification) {
+		info("Finished evaluation of expression '%1s' := %2s.", notification.getExpression(), notification.getResult());
+	}
+
+	private void constraintHolds(
+			StoryPatternConstraintHoldsNotification<StoryPattern, EClassifier, Expression> notification) {
+		info("Constraint '%1s' holds on %2s.", notification.getConstraint(), notification.getStoryPattern());
 	}
 
 	private void wrap() {
 		console.wrap();
 	}
 
-	private void linkCheckFailed(
+	private void storyPatternMatchingFailed(
+			StoryPatternMatchingFailedNotification<StoryPattern, EClassifier> notification) {
+		fail("Matching of %1s failed.", notification.getStoryPattern());
+	}
+
+	private void destroyedInstance(InstanceObjectDestroyedNotification<AbstractVariable, EClassifier> notification) {
+		fail("Destroyed instance of %1s := %2s.", notification.getStoryPatternObject(),
+				notification.getInstanceObject());
+	}
+
+	private void destroyedInstance(
+			InstanceLinkDestroyedNotification<AbstractVariable, AbstractLinkVariable, EClassifier> notification) {
+		fail("Destroyed instance link %1s (%2s to %3s).", notification.getLink(), notification.getSourceObject(),
+				notification.getTargetObject());
+	}
+
+	private void linkFailed(
 			LinkCheckFailedNotification<AbstractVariable, AbstractLinkVariable, EClassifier> notification) {
-		failed("Link check failed: '%1s' from '%2s' to '%3s' (source: '%4s', target: '%5s').", notification.getLink(),
+		fail("Link check failed: '%1s' from '%2s' to '%3s' (source: '%4s', target: '%5s').", notification.getLink(),
 				notification.getSourceStoryPatternObject(), notification.getTargetStoryPatternObject(),
 				notification.getSourceObject(), notification.getTargetObject());
 	}
 
-	private void storyPatternMatchingFailed(
-			StoryPatternMatchingFailedNotification<StoryPattern, EClassifier> notification) {
-		failed("Matching of story pattern '%1s' failed.", notification.getStoryPattern());
+	private void boundRevoked(StoryPatternObjectBindingRevokedNotification<AbstractVariable, EClassifier> notification) {
+		fail("Binding revoked for %1s. Was bound to '%2s'.", notification.getStoryPatternObject(),
+				notification.getInstanceObject());
 	}
 
-	private void storyPatternObjectBindingRevoked(
-			StoryPatternObjectBindingRevokedNotification<AbstractVariable, EClassifier> notification) {
-		failed("Binding revoked for story pattern object '%1s', was bound to '%2s'.",
-				notification.getStoryPatternObject(), notification.getInstanceObject());
+	private void variableDeleted(VariableDeletedNotification<EClassifier> notification) {
+		fail("Deleted variable '%1s'.", notification.getVariable().getName());
 	}
 
-	private void storyPatternObjectNotBound(
-			StoryPatternObjectNotBoundNotification<AbstractVariable, EClassifier> notification) {
-		failed("Could not bind object variable '%1s'.", notification.getStoryPatternObject());
-	}
-
-	private void storyPatternConstraintViolated(
+	private void constraintViolated(
 			StoryPatternConstraintViolatedNotification<StoryPattern, EClassifier, Expression> notification) {
-		failed("Constraint '%1s' is violated on story pattern '%2s'.", notification.getConstraint(),
-				notification.getStoryPattern());
+		fail("Constraint '%1s' is violated on %2s.", notification.getConstraint(), notification.getStoryPattern());
 	}
 
-	private void storyPatternObjectConstraintViolated(
+	private void constraintViolated(
 			StoryPatternObjectConstraintViolatedNotification<AbstractVariable, EClassifier, Expression> notification) {
-		failed("Constraint '%1s' is violated on story pattern object '%2s'.", notification.getConstraint(),
-				notification.getStoryPatternObject());
+		fail("Constraint '%1s' is violated on %2s.", notification.getConstraint(), notification.getStoryPatternObject());
 	}
 
-	private void linkCheckSuccessful(
-			LinkCheckSuccessfulNotification<AbstractVariable, AbstractLinkVariable, EClassifier> notification) {
-		succeeded("Link check successful: '%1s' from '%2s' to '%3s' (source: '%4s', target: '%5s').",
-				notification.getLink(), notification.getSourceStoryPatternObject(),
-				notification.getTargetStoryPatternObject(), notification.getSourceObject(),
+	private void attributeValueSet(
+			AttributeValueSetNotification<AbstractVariable, EClassifier, EStructuralFeature> notification) {
+		success("Set attribute %1s.%2s := %3s", notification.getStoryPatternObject().getName(), notification
+				.getFeature().getName(), notification.getFeatureValue());
+	}
+
+	private void createdInstance(InstanceObjectCreatedNotification<AbstractVariable, EClassifier> notification) {
+		success("Created instance for %1s := %2s.", notification.getStoryPatternObject(),
+				notification.getInstanceObject());
+	}
+
+	private void createdInstance(
+			InstanceLinkCreatedNotification<AbstractVariable, AbstractLinkVariable, EClassifier> notification) {
+		success("Created instance link %1s (%2s to %3s).", notification.getLink(), notification.getSourceObject(),
 				notification.getTargetObject());
 	}
 
-	private void storyPatternMatchingSuccessful(
-			StoryPatternMatchingSuccessfulNotification<StoryPattern, EClassifier> notification) {
-		succeeded("Matching of story pattern '%1s' succeeded.", notification.getStoryPattern());
+	private void bound(StoryPatternObjectBoundNotification<AbstractVariable, EClassifier> notification) {
+		success("Bound %1s to %2s.", notification.getStoryPatternObject(), notification.getInstanceObject());
 	}
 
-	private void storyPatternConstraintHolds(
-			StoryPatternConstraintHoldsNotification<StoryPattern, EClassifier, Expression> notification) {
-		succeeded("Constraint '%1s' holds on story pattern '%2s'.", notification.getConstraint(),
-				notification.getStoryPattern());
+	private void variableCreated(VariableCreatedNotification<EClassifier> notification) {
+		Variable<EClassifier> variable = notification.getVariable();
+		success("Created variable '%1s' := %2s.", variable.getName(), variable.getValue());
 	}
 
-	private void storyPatternObjectConstraintHolds(
+	private void constraintHolds(
 			StoryPatternObjectConstraintHoldsNotification<AbstractVariable, EClassifier, Expression> notification) {
-		succeeded("Constraint '%1s' holds on story pattern object '%2s'.", notification.getConstraint(),
-				notification.getStoryPatternObject());
+		success("Constraint '%1s' holds on %2s.", notification.getConstraint(), notification.getStoryPatternObject());
 	}
 
 	private void debug(String format, Object... args) {
 		append(StreamType.DEBUG, format, args);
 	}
 
-	private void failed(String format, Object... args) {
+	private void fail(String format, Object... args) {
 		append(StreamType.FAILURE, format, args);
 	}
 
@@ -373,7 +372,7 @@ public class ConsoleNotificationReceiver implements StoryDrivenNotificationRecei
 		append(StreamType.INFO, format, args);
 	}
 
-	private void succeeded(String format, Object... args) {
+	private void success(String format, Object... args) {
 		append(StreamType.SUCCESS, format, args);
 	}
 

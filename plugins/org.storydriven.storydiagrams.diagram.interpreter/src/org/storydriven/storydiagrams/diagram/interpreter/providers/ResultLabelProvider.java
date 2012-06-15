@@ -16,7 +16,7 @@ public class ResultLabelProvider extends ComposedAdapterFactoryLabelProvider {
 
 	@Override
 	public String getText(Object element) {
-		if (element instanceof EAttribute) {
+		if (element instanceof EAttribute && variable != null && !element.equals(variable.getValue())) {
 			StringBuilder builder = new StringBuilder();
 
 			builder.append(Texts.get(element));
@@ -38,7 +38,7 @@ public class ResultLabelProvider extends ComposedAdapterFactoryLabelProvider {
 		}
 
 		if (element instanceof EObject) {
-			return Texts.get(element);
+			return Texts.get(element).toString();
 		}
 
 		if (variable != null) {

@@ -108,7 +108,7 @@ public class SelectInputWizardPage extends WizardPage {
 
 			@Override
 			public String getText(Object element) {
-				return Texts.get(element);
+				return Texts.get(element).toString();
 			}
 		});
 
