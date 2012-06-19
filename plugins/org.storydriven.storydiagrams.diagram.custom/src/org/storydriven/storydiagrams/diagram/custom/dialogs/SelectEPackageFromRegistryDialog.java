@@ -33,23 +33,28 @@ public class SelectEPackageFromRegistryDialog extends AbstractTreeSelectionDialo
 	@Override
 	protected ITreeContentProvider getContentProvider() {
 		return new ContainmentContentProvider() {
+			private Object[] cached;
+
 			@Override
 			public Object[] getElements(Object element) {
-				Registry reg = EPackage.Registry.INSTANCE;
-				Collection<EPackage> ePackages = new HashSet<EPackage>();
-				for (Object child : super.getElements(element)) {
-					if (reg.containsKey(child)) {
-						try {
-							ePackages.add(reg.getEPackage((String) child));
-						} catch (Exception e) {
-							e.printStackTrace();
-							System.out.println("Exception ignored during resolving of EPackage with namespace URI "
-									+ child);
+				if (cached == null) {
+					Registry reg = EPackage.Registry.INSTANCE;
+					Collection<EPackage> all = new HashSet<EPackage>();
+					for (Object child : super.getElements(element)) {
+						if (reg.containsKey(child)) {
+							try {
+								all.add(reg.getEPackage((String) child));
+							} catch (Exception e) {
+								e.printStackTrace();
+								System.out.println("Exception ignored during resolving of EPackage with namespace URI "
+										+ child);
+							}
 						}
 					}
+					cached = all.toArray(new Object[all.size()]);
 				}
 
-				return ePackages.toArray(new Object[ePackages.size()]);
+				return cached;
 			}
 
 			@Override
