@@ -1,7 +1,9 @@
 package org.storydriven.storydiagrams.diagram.custom.util;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -30,15 +32,16 @@ public final class BoundUtil {
 
 	public static Map<String, EClassifier> getBoundObjects(EObject element) {
 		Map<String, EClassifier> map = new LinkedHashMap<String, EClassifier>();
+		Collection<ActivityNode> visited = new HashSet<ActivityNode>();
 
 		// collect from activity node
 		if (element instanceof ActivityNode) {
-			collect(map, (ActivityNode) element);
+			collect(visited, map, (ActivityNode) element);
 		}
 
 		// collect from activity edge
 		if (element instanceof ActivityEdge) {
-			collect(map, (ActivityEdge) element);
+			collect(visited, map, (ActivityEdge) element);
 		}
 
 		// collect from activity
@@ -50,15 +53,19 @@ public final class BoundUtil {
 		return map;
 	}
 
-	private static void collect(Map<String, EClassifier> map, ActivityNode node) {
-		// collect from story node
-		if (node instanceof StoryNode) {
-			collect(map, ((StoryNode) node).getStoryPattern());
-		}
+	private static void collect(Collection<ActivityNode> visited, Map<String, EClassifier> map, ActivityNode node) {
+		if (!visited.contains(node)) {
+			visited.add(node);
 
-		// collect antecedents
-		for (ActivityEdge incoming : node.getIncomings()) {
-			collect(map, incoming);
+			// collect from story node
+			if (node instanceof StoryNode) {
+				collect(map, ((StoryNode) node).getStoryPattern());
+			}
+
+			// collect antecedents
+			for (ActivityEdge incoming : node.getIncomings()) {
+				collect(visited, map, incoming);
+			}
 		}
 	}
 
@@ -106,8 +113,10 @@ public final class BoundUtil {
 		}
 	}
 
-	private static void collect(Map<String, EClassifier> map, ActivityEdge incoming) {
-		collect(map, incoming.getSource());
+	private static void collect(Collection<ActivityNode> visited, Map<String, EClassifier> map, ActivityEdge edge) {
+		if (!visited.contains(edge)) {
+			collect(visited, map, edge.getSource());
+		}
 	}
 
 	public static List<ObjectVariable> getAllObjectVariables(Activity activity) {
