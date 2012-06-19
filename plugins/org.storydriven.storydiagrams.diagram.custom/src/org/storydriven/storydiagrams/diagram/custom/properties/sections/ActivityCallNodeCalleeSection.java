@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.jface.window.Window;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
@@ -34,6 +35,23 @@ public class ActivityCallNodeCalleeSection extends AbstractEListComboSection<Cal
 				refresh();
 			}
 		}
+	}
+
+	@Override
+	protected void execute(EStructuralFeature feature, final Object value) {
+		super.execute(feature, value);
+
+		// add to called activities
+		RecordingCommand command = new RecordingCommand(getEditingDomain()) {
+			@Override
+			protected void doExecute() {
+				getElement().getCalledActivities().clear();
+				if (value instanceof Activity) {
+					getElement().getCalledActivities().add((Activity) value);
+				}
+			}
+		};
+		execute(command);
 	}
 
 	@Override

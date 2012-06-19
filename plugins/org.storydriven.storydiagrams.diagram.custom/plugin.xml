@@ -565,7 +565,7 @@
          </propertySection>
          <propertySection
                afterSection="ActivityEdge.guard"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityEdgeGuardExpression"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityEdgeGuardExpressionSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityEdgeFilter"
                id="ActivityEdge.expression"
                tab="core">

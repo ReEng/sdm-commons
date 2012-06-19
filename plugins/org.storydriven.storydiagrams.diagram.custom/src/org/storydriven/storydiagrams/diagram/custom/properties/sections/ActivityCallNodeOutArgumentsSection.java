@@ -17,7 +17,6 @@ import org.eclipse.jface.viewers.EditingSupport;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
-import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.FormAttachment;
@@ -28,8 +27,6 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.ExpressionsFactory;
-import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
 import org.storydriven.storydiagrams.calls.Callable;
 import org.storydriven.storydiagrams.calls.CallsFactory;
@@ -74,31 +71,6 @@ public class ActivityCallNodeOutArgumentsSection extends AbstractSection {
 		}
 
 		return getElement().getCallee().getOutParameters();
-	}
-
-	private TextualExpression getExpression(final EParameter element) {
-		Expression expression = getBinding(element).getValueExpression();
-		if (expression instanceof TextualExpression) {
-			return (TextualExpression) expression;
-		}
-
-		if (expression == null) {
-			final TextualExpression newExpression = ExpressionsFactory.eINSTANCE.createTextualExpression();
-			newExpression.setLanguage("OCL");
-			newExpression.setLanguageVersion("1.0");
-
-			RecordingCommand command = new RecordingCommand(getEditingDomain()) {
-				@Override
-				protected void doExecute() {
-					getBinding(element).setValueExpression(newExpression);
-				}
-			};
-			execute(command);
-
-			return newExpression;
-		}
-
-		return null;
 	}
 
 	private ParameterBinding getBinding(EParameter parameter) {
