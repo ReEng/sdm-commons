@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
@@ -34,12 +35,16 @@ public class SelectEPackageFromRegistryDialog extends AbstractTreeSelectionDialo
 		return new ContainmentContentProvider() {
 			@Override
 			public Object[] getElements(Object element) {
+				Registry reg = EPackage.Registry.INSTANCE;
 				Collection<EPackage> ePackages = new HashSet<EPackage>();
 				for (Object child : super.getElements(element)) {
-					if (child instanceof String) {
-						Object pack = EPackage.Registry.INSTANCE.get(child);
-						if (pack instanceof EPackage) {
-							ePackages.add((EPackage) pack);
+					if (reg.containsKey(child)) {
+						try {
+							ePackages.add(reg.getEPackage((String) child));
+						} catch (Exception e) {
+							e.printStackTrace();
+							System.out.println("Exception ignored during resolving of EPackage with namespace URI "
+									+ child);
 						}
 					}
 				}
