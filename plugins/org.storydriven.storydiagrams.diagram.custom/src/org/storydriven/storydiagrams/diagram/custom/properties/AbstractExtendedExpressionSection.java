@@ -316,7 +316,10 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 		textualItem.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				internalSetExpression(ExpressionsFactory.eINSTANCE.createTextualExpression());
+				TextualExpression expression = ExpressionsFactory.eINSTANCE.createTextualExpression();
+				expression.setLanguage("OCL");
+				expression.setLanguageVersion("1.0");
+				internalSetExpression(expression);
 			}
 		});
 	}
