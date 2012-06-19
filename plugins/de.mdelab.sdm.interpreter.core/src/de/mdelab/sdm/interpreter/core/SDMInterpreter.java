@@ -278,7 +278,7 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 
 		switch (unspecificActivityNodeFacade.getActivityNodeType(node))
 		{
-			case UNSPECIFIC:
+			case NON_EXECUTABLE_NODE:
 
 				getNotificationEmitter().activityNodeExecutionStarted(node, variablesScope, this);
 
@@ -306,6 +306,10 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 
 			case STATEMENT_NODE:
 				nextNode = this.executeStatementNode(node, variablesScope);
+				break;
+
+			case CUSTOM_NODE:
+				nextNode = this.executeCustomNode(node, variablesScope);
 				break;
 
 			default:
@@ -569,4 +573,18 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 			StoryPattern storyPattern,
 			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
 			throws SDMException;
+
+	/**
+	 * Execute an activity node specific to a particular metamodel.
+	 * 
+	 * @param node
+	 *            The node to execute.
+	 * @param variablesScope
+	 *            The current variables scope.
+	 * @return The next node to execute.
+	 */
+	protected abstract ActivityNode executeCustomNode(
+			ActivityNode node,
+			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope);
+
 }

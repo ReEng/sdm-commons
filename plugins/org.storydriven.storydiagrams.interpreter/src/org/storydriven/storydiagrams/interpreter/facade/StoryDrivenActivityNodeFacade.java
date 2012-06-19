@@ -2,6 +2,7 @@ package org.storydriven.storydiagrams.interpreter.facade;
 
 import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.activities.JunctionNode;
+import org.storydriven.storydiagrams.activities.StartNode;
 import org.storydriven.storydiagrams.activities.StatementNode;
 import org.storydriven.storydiagrams.activities.StopNode;
 import org.storydriven.storydiagrams.activities.StoryNode;
@@ -32,9 +33,16 @@ public abstract class StoryDrivenActivityNodeFacade implements IActivityNodeFaca
 		{
 			return EActivityNodeType.ACTIVITY_FINAL_NODE;
 		}
+		else if (activityNode instanceof StartNode)
+		{
+			return EActivityNodeType.NON_EXECUTABLE_NODE;
+		}
 		else
 		{
-			return EActivityNodeType.UNSPECIFIC;
+			throw new UnsupportedOperationException(
+					"Activity nodes of type '"
+							+ activityNode.eClass().getName()
+							+ "' are not yet supported. Extend the getActivityNodeType() operation in StoryDrivenActivityNodeFacade to return CUSTOM_NODE for this node type and provide an appropriate implementation in StoryDrivenInterpreter.executeCustomNode() to execute these nodes.");
 		}
 	}
 

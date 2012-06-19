@@ -46,4 +46,13 @@ public class StoryDrivenInterpreter
 		return new StoryDrivenPatternMatcher(storyPattern, variablesScope, getExpressionInterpreterManager(), getNotificationEmitter());
 	}
 
+	@Override
+	protected ActivityNode executeCustomNode(
+			ActivityNode node,
+			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> variablesScope)
+	{
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException();
+	}
+
 }
