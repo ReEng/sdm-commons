@@ -68,7 +68,49 @@ public final class TextUtil {
 		if (operation != null) {
 			EcoreTextUtil.append(builder, operation);
 		} else {
-			append(builder, activity);
+			builder.append(activity.getName());
+
+			// in parameters
+			builder.append('(');
+			List<EParameter> in = activity.getInParameters();
+			if (!in.isEmpty()) {
+				for (int i = 0; i < in.size(); i++) {
+					builder.append(in.get(i).getName());
+					builder.append(':');
+					builder.append(' ');
+					EcoreTextUtil.append(builder, in.get(i).getEType());
+					if (i < in.size() - 1) {
+						builder.append(',');
+						builder.append(' ');
+					}
+				}
+			}
+			builder.append(')');
+			builder.append(':');
+			builder.append(' ');
+
+			// out parameters
+			List<EParameter> out = activity.getOutParameters();
+			if (out.isEmpty()) {
+				builder.append("void");
+			} else {
+				if (out.size() > 1) {
+					builder.append('<');
+				}
+				for (int i = 0; i < out.size(); i++) {
+					builder.append(out.get(i).getName());
+					builder.append(':');
+					builder.append(' ');
+					EcoreTextUtil.append(builder, out.get(i).getEType());
+					if (i < out.size() - 1) {
+						builder.append(',');
+						builder.append(' ');
+					}
+				}
+				if (out.size() > 1) {
+					builder.append('>');
+				}
+			}
 		}
 		return builder;
 	}
