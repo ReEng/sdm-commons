@@ -36,7 +36,12 @@ public class SelectEPackageFromRegistryDialog extends AbstractTreeSelectionDialo
 			public Object[] getElements(Object element) {
 				Collection<EPackage> ePackages = new HashSet<EPackage>();
 				for (Object child : super.getElements(element)) {
-					ePackages.add(EPackage.Registry.INSTANCE.getEPackage((String) child));
+					if (child instanceof String) {
+						Object pack = EPackage.Registry.INSTANCE.get(child);
+						if (pack instanceof EPackage) {
+							ePackages.add((EPackage) pack);
+						}
+					}
 				}
 
 				return ePackages.toArray(new Object[ePackages.size()]);
