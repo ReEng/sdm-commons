@@ -221,7 +221,7 @@ The interpreter executes that node and eventually the control flow returns to th
 Now, the existing \emph{StoryPatternMatcher} is reused so that it continues pattern matching where it left off. 
 This time, however, the pattern matcher uses the \emph{LogReproducingMatchingStrategy}. 
 This ensures, that all elements are matched in the same order as the first time. 
-For-each nodes are executed with the \emph{fresh match} semantics. 
+For-each nodes are executed with the \emph{fresh matching} semantics (cf. Section~\ref{sec:DecisionNodesEtc}). 
 After a match was found, the story pattern's side effects are executed immediately. 
 Then, the next match is sought. 
 Side-effects may influence subsequent matches, they may create new matches or eliminate existing ones. 
@@ -233,7 +233,7 @@ Therefore, the \emph{DefaultMatchingStrategyWithLog} is used in the first iterat
 The stored mapping between the \emph{StoryNode} and the pattern matcher is discarded after the last loop iteration. 
 If the story diagram's control flow returns to the for-each node again, the pattern matching process starts anew.
 
-In addition to the \emph{fresh match} semantics, it is also possible to add other execution semantics for for-each nodes, e.g., \emph{pre-select}, which searches for all matches before executing side-effects.
+In addition to the \emph{fresh matching} semantics, it is also possible to add other execution semantics for for-each nodes, e.g., \emph{pre-select}, which searches for all matches before executing side-effects.
 
 
 \subsection{Interpreting Story Patterns}
