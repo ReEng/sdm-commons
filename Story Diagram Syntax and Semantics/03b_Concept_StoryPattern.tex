@@ -374,8 +374,6 @@ Figure \ref{fig:attributeAssignment} shows an example.
   \label{fig:attributeAssignment}
 \end{figure}
 
-\tododt{Cann we also first match a method object with the name "getName" (Fig.~\ref{fig:objectConstraint}) and then modify the attribute value (Fig.~\ref{fig:attributeAssignment}), i.e. combine an attribute constraint and an attribute assignment to the same attribute in the same object variable?}
-
 In the example, the story pattern matches a method with an arbitrary name in the class \fe{theClass}. 
 Then, the name of the method is changed to \emph{"getMethodName"}. 
 
@@ -386,6 +384,17 @@ The concrete syntax of an attribute assignment is
 The expression is to be specified using OCL. 
 The type of the return value of the OCL expression must be assignable to the type of the attribute. 
 Since the attribute value is changed as part of the RHS, the assignment is visualized in green color.
+
+Story patterns also enable to use both, an attribute constraint and an attributed assignment for the same attribute inside one object variable. Then, the attribute constraint is used during the matching step. The attribute value of the object matched to the corresponding object variable is then changed as specified by the attribute assignment while enforcing the RHS.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=1]{figures/AttributeConstraintAndAssignment}
+  \caption{Using an Attribute Constraint and an Attribute Assignment on the Same Attribute}
+  \label{fig:attributeConstraintAndAssignment}
+\end{figure}
+
+Figure~\ref{fig:attributeConstraintAndAssignment} combines the story patterns of Figure~\ref{fig:objectConstraint} and~\ref{fig:attributeAssignment}. The story pattern matches an object of type \fe{Method} which has the name \fe{getName}. If the matching was successful, the name of the object bound to \fe{method} is set to \fe{getMethodName} as defined by the attribute assignment.
 
 The OCL statements we allow for attribute constraints and attribute assignments must not traverse the references of the object variables.
 Both may only use the attributes of object variables in the same story pattern and arbitrary arithmetic, comparing, and logical operations on them. 
