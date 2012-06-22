@@ -482,9 +482,6 @@ binding operators ``check only'' or \destroy.
 
 }%------ End of collection variable section
 
-%\ext  %--- Comment this line to include pattern constraints into the document
-{
-\subsection{Pattern Constraints}
 
 A pattern constraint defines an additional condition for a match that is evaluated and the end of the matching step, i.e., it is evaluated after all object and link variables have been matched. Since it is a condition, it needs to evaluate to true or false. If the pattern constraint is evaluated to true, then the match for the story pattern is valid. If the pattern constraint is evaluated to false, then the match is rejected.
 
@@ -912,6 +909,219 @@ In the next story pattern, a superclass of \fe{myClass}, a method in this superc
 In case of a successful matching the newly matched method \fe{new} is added to the collection \fe{methods}.
 The link constraint \fe{\text\{next\text\}} determines to add this method to the ordered collection in such a way
 that the method \fe{new} directly follows the method \fe{first} in the collection \fe{methods}.
+
+
+
+%\ext  %--- Comment this line to include pattern constraints into the document
+{
+\subsection{Pattern Constraints}
+
+A pattern constraint defines an additional condition for a match that is evaluated and the end of the matching step, i.e., it is evaluated after all object and link variables have been matched. Since it is a condition, it needs to evaluate to true or false. If the pattern constraint is evaluated to true, then the match for the story pattern is valid. If the pattern constraint is evaluated to false, then the match is rejected.
+
+A pattern constraint may use all object variables that are used in the same story pattern. Object variables are referred by their name. The pattern constraint may traverse the references of the objects bound to a particular object variable and access the attributes of the corresponding object. In the current version of story diagrams, we only support to use OCL for specifying pattern constraints. Then, the OCL constraint uses the name of the object variables to refer to objects and may use all features of OCL to access references and attributes of the corresponding objects.
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.6\columnwidth]{figures/PatternConstraint}
+\caption{Example of a Pattern Constraint}
+\label{fig:patternConstraint}
+\end{figure}
+
+Figure~\ref{fig:patternConstraint} gives an example for the concrete syntax of a pattern constraint. The story pattern has two bound object variables \fe{class} and \fe{method} of types \fe{GASTClass} and \fe{Method}, respectively. The pattern constraint is visualized as a label containing the OCL constraint. In the example, the OCL constraints specifies that all methods of \fe{class} need to have a name which is different from the name of \fe{method}. In addition, the story pattern matches all methods of \fe{class} in the object set \fe{classMethods}. The matching of the story pattern is successful only if the pattern constraint is fulfilled.
+
+} %--- End of pattern constraints section
+
+
+%\ext %--- Comment this line to include link constraints into the
+{
+\subsection{Link Constraints}
+\label{sec:StoryPatterns:linkConstraints}
+
+Link constraints specify constraints on the absolute position of an element in an ordered reference (\emph{link position constraints}, Section~\ref{sec:StoryPatterns:linkConstraints:posConstraint}) or on the position of an element relative to another element (\emph{link order constraints}, Section~\ref{sec:StoryPatterns:linkConstraints:orderConstraint}). These constraints are only applicable to link variables that are typed by ordered multi-valued references. All other kinds of links cannot be adorned with link constraints.
+
+%\begin{itemize}
+%  \item FIRST = matches the first element in the list, requires one link variable
+%  \item LAST = matches the last element in the list, requires one link variable
+%%  \item INDEX = matches the element at the specified index, requires one link variable
+%%  \todoch{Our lowest index value is 0, not 1.}
+%  \item DIRECT\_SUCCESSOR = requires two link variables, target of the second one must be located directly after the target of the first one in the list
+%  \item SUCCESSOR = requires two link variables, target of the second one must be located somewhere after the target of the first one in the list
+%\end{itemize}
+
+
+\subsubsection{Link Position Constraints}
+\label{sec:StoryPatterns:linkConstraints:posConstraint}
+
+A link position constraint applies to a link variable that is typed by a multi-valued ordered reference. It specifies that the target object of the constrained link has to be the \emph{first} or the \emph{last} element in that reference. Other link position constraints are not supported. 
+
+The \emph{index} link constraint which was available in earlier versions of story diagrams~\cite{WW01_ag} is no longer supported. 
+It was used to match an element which is located at a specific position in a multi-valued reference. 
+However, that causes that upon creation of multiple elements it is not precisely defined where they are inserted into the list. 
+In addition, the index may cause \emph{OutOfBounds} exceptions if the modeler specifies an invalid index.
+
+Figure~\ref{fig:linkPositionConstraintFirst} shows an example of a link position constraint for matching the first element in a reference. The story pattern matches a \fe{FormalParameter} of the object which is bound to the object variable \fe{method}. The link position constraint \fe{\{first\}} specifies that the first \fe{FormalParameter} needs to be matched.
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkPositionConstraintFirst}
+\caption{A \fe{\{first\}} link position constraint}
+\label{fig:linkPositionConstraintFirst}
+\end{figure}
+
+Figure~\ref{fig:linkPositionConstraintLast} shows a similar story pattern which matches the last \fe{FormalParameter} instead of the first one. This is specified by the link position constraint \fe{\{last\}}.
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkPositionConstraintLast}
+\caption{A \fe{\{last\}} link position constraint}
+\label{fig:linkPositionConstraintLast}
+\end{figure}
+
+If multiple link variables originate from the same object variable that refer to the same reference, only one of them may have a \fe{\{first\}} (or \fe{\{last\}}) link position constraint.
+
+Link position constraints can be used with all feasible combinations of binding operators and binding semantics according to Table~\ref{tab:bindingCombinations_links}. For now, we discussed the semantics for using link position constraints for link variables with MANDATORY binding semantics and CHECK\_ONLY binding operator. If we use binding operator \create, the object is inserted at the specified position. If we use binding operator \destroy, the object is bound as described before and then deleted.
+
+Figure~\ref{fig:linkPositionConstraintCreate} shows an example for using a link position constraint at a link variable with binding operator \create. The link position constraint causes the created \fe{FormalParameter} to be inserted at the last position of the \fe{formalParameters} of \fe{method}.
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkPositionConstraintCreate}
+\caption{Link Position constraint at a created link.}
+\label{fig:linkPositionConstraintCreate}
+\end{figure}
+
+If an OPTIONAL binding semantics is used, the matching will also be successful if no object at the specified position can be matched. Since we only restrict the position to the first or last position, this case will only apply if the link contains no objects at all. If the link variable additionally has binding operator \destroy, the object bound to the target object variable will be deleted. If the link variable additionally has binding operator \create, we have an optionally created link. If the link does not yet exist, it is created. The target element is inserted at the specified position in the reference. If the target element already exists in the reference but at a different position, the semantics of the optional create depends on the kind of the reference. If the reference requires objects to be unique in the reference, the target element is moved to the position specified by the optional create link variable. Otherwise, the element is added a second time at the specified position.
+
+A combination with NEGATIVE binding semantics is also possible. If a link variable is negative and has a \fe{\{first\}} (or \fe{\{last\}}) link position constraint, then the object bound to the target object variable must not be the first (or last) object in the corresponding reference. That means, we negate the link position constraint rather than the whole link variable which causes a slight change of the NEGATIVE binding semantics of link variables.
+
+%\todoch{How is the semantics of link position constraints on negative links as shown in Figure~\ref{fig:linkPositionConstraintNegative}? Two alternatives: 1) The target object is not the first (or last) element in the reference. That means we negate the link position constraint and not the whole link variable. 2) There exists no link pointing to the first (or last) element. That means we negate the whole link which in turn means that there is no element in the reference and the link position constraint has no effect. I prefer 1) even though it slightly changes the semantics of the negative binding semantics (because it is applied to the link constraint rather than the link itself).}
+
+Figure~\ref{fig:linkPositionConstraintNegative} shows an example for a negative link with a link position constraint. The \fe{FormalParameter} which is bound to \fe{param} must not be the first \fe{formalParameter} of the method which is bound to \fe{method}.
+
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkPositionConstraintNegated}
+\caption{A negative link with a \fe{\{first\}} link position constraint}
+\label{fig:linkPositionConstraintNegative}
+\end{figure}
+
+
+
+\subsubsection{Link Order Constraints}
+\label{sec:StoryPatterns:linkConstraints:orderConstraint}
+
+Link order constraints specify a relative order between two objects in a multi-valued ordered reference. A link order constraint therefore connects two link variables which we denote as the source link variable and target link variable of the link order constraint. Then, the object matched via the target link variable must either be the \emph{direct successor} or an  \emph{arbitrary successor} of the object matched via the source link variable.
+
+Figure~\ref{fig:linkOrderConstraintDirectSuccessor} shows an example of a link order constraint requiring to match two subsequent \fe{FormalParameters} of \fe{method}. Therefore, the two link variables from \fe{method} to \fe{param1} and \fe{param2} are connected by a link order constraint \fe{\{next\}}. Then, the object matched to \fe{param2} must be a direct successor of the object matched to \fe{param1}.
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessor}
+\caption{A link order constraint specifying a \fe{\{direct\_successor\}}.}
+\label{fig:linkOrderConstraintDirectSuccessor}
+\end{figure}
+
+Figure~\ref{fig:linkOrderConstraintSuccessor} shows an example of a link order constraint requiring to match two \fe{FormalParameters} of \fe{method} where one succeeds the other. Therefore, the two link variables from \fe{method} to \fe{param1} and \fe{param2} are connected by a link order constraint \fe{\{successor\}}. Then, the object matched to \fe{param2} must be an arbitrary successor of the object matched to \fe{param1}. The matching of the successor is non-deterministic. Thus, a matching retrieved for the story pattern in Figure~\ref{fig:linkOrderConstraintDirectSuccessor} is a valid matching for the story pattern in Figure~\ref{fig:linkOrderConstraintSuccessor} as well. A matching retrieved for the story pattern in Figure~\ref{fig:linkOrderConstraintSuccessor}, however, will not be a valid matching for the story pattern in Figure~\ref{fig:linkOrderConstraintDirectSuccessor} in the general case.
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintSuccessor}
+\caption{A link order constraint specifying a \fe{\{successor\}}.}
+\label{fig:linkOrderConstraintSuccessor}
+\end{figure}
+
+Link order constraints can be applied to links that have a binding operator \create or \destroy. In case of \destroy, the matching is carried out as described before. In case of \create, links corresponding to the link variables are created in the instance model. The target objects are then inserted into the reference at the specified positions. If the source link variable (or target link variable) of the link order constraint has a \create binding operator, then the object is inserted directly before (or after) the object bound via the target (or source) link variable. We also apply this semantics if the link order constraint requires the objects only to be indirect successors to avoid non-determinism.
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessorCreateDelete}
+\caption{Using link order constraints with binding operators \create and \destroy.}
+\label{fig:linkOrderConstraintDirectSuccessorCreateDelete}
+\end{figure}
+
+Figure~\ref{fig:linkOrderConstraintDirectSuccessorCreateDelete} shows an example for using link order constraints with the binding operators \create and \destroy. The story pattern matches two successive \fe{FormalParameters} of \fe{method} and binds them to the object variables \fe{param2} and \fe{param3}. If the matching was successful, the parameter bound to \fe{param3} is deleted and removed for the reference. Then, a new \fe{FormalParameter} is created and inserted directly before \fe{param2}.
+
+If a link variable with binding operator \create is the target link variable (or source link variable) of several \emph{indirect successor} link order constraints, then after target object of the link variable is inserted directly behind (or before) the object with the highest index. If  multiple link constraints are applied to the same link variable with binding operator \create, enforcing the right-hand side of the story pattern may fail if the link constraints are unsatisfiable for the reference.
+
+If both, the source link variable and the target link variable of the link order constraint, carry a binding operator, both need to carry the same binding operator. If one link variable has a binding operator \create and the other one has \destroy, then the reference for inserting the new object has been deleted before the object can be inserted. Since the semantics in undefined in that case, we forbid this case.
+
+Link order constraints can be used in combination with an optional binding semantics of the source or target link variable. In case the link variable carries no binding operator or binding operator \destroy, the matching process is performed as described before. If no matching for the optional link variables satisfying the link order constraints can be found, the matching does not fail. If the a link variable carries an optional create, the semantics depends on the kind of reference. If the reference does not contain the object bound to the target link variable, it is added according to the link order constraint. If the reference already contains the target object, but at a position which does not satisfy the link order constraint, then there are two possibilities.  If the reference requires objects to be unique in the reference, the target element is moved to a position specified by the link order constraints. Otherwise, the element is added a second time at a position specified by the link order constraints. In both cases, the rules for inserting an object into a reference as described above for non-optional link variables are applied.
+
+Link order constraints may also be used in combination with a negative binding semantics of the source or target link variable. If a negative link variable is the target link variable of a \emph{direct successor} (or \emph{indirect successor}) link order constraint, then the target object must not be located directly after (of indirectly after) the object bound to the source link variable. If a negative link variable is the source link variable of a \emph{direct successor} (or \emph{indirect successor}) link order constraint, then the target object must not be located directly before (of indirectly before) the object bound to the target link variable. That means, we negate the link order constraint rather than the whole link variable if the link variable is the source or target link variable of a link order constraint. That causes a slight change in the definition of the negative binding semantics for link variables.
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessorNegative}
+\caption{A link order constraint with a negative link.}
+\label{fig:linkOrderConstraintDirectSuccessorNegative}
+\end{figure}
+
+Figure~\ref{fig:linkOrderConstraintDirectSuccessorNegative} shows an example of a negative link variable which is the target link variable of a \emph{direct successor} link order constraint. In the example, two \fe{FormalParameters} of \fe{method} are to be matched. The object bound to \fe{param1} may be an arbitrary \fe{FormalParameter}. The object variable \fe{param2} may be matched to any \fe{FormalParameter} of \fe{method} except for the \fe{FormalParameter} that is directly located behind the object bound to \fe{param1}.
+
+It is possible to use multiple link order constraints on a negative link. Then, all of the specified conditions need to hold. However, for each link order constraint either the source link variable or the target link variable may be negative, but not both.
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessorNegative2}
+\caption{Applying Multiple Link Order Constraints on a Negative Link Variable}
+\label{fig:linkOrderConstraintDirectSuccessorNegative2}
+\end{figure}
+
+Figure~\ref{fig:linkOrderConstraintDirectSuccessorNegative2} shows an example of applying multiple link order constraint to a negative link variable. The story pattern matches three \fe{FormalParameters} of \fe{method}. The matching must fulfill the following conditions which are implied by the negative link variable from \fe{method} to \fe{param2} and the two link order constraints: \fe{param2} must not be an indirect successor of \fe{param1} and \fe{param3} must not be the direct successor of \fe{param2}. If only one of the two conditions is not fulfilled, then the story pattern does not match.
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkOrderConstraintDirectSuccessorNegative3}
+\caption{Invalid Combination of Link Order Constraints and Negative Link Variables.}
+\label{fig:linkOrderConstraintDirectSuccessorNegative3}
+\end{figure}
+
+Figure~\ref{fig:linkOrderConstraintDirectSuccessorNegative3} shows an example of an invalid combination of negative link variables and link order constraints because both, the source and the target link variable of the link order constraint, are negative. 
+
+Link order constraints may not form circles or unsatisfiable story patterns. An example of an unsatisfiable story pattern is given by Figure~\ref{fig:linkConstraintUnsatisfiablePattern}. In this story pattern, the object bound to \fe{param2} must be the first \fe{FormalParameter} of \fe{method}. At the same time, the link order constraint requires the object bound to \fe{param2} to be the direct successor of the object bound to \fe{param1}. Since this is not possible, the pattern is unsatisfiable and will never match.
+
+
+\begin{figure}[htbp]
+\center
+\includegraphics[width=0.75\columnwidth]{figures/LinkConstraintUnsatisfiablePattern}
+\caption{Link Constraints causing a Story Pattern to be unsatisfiable.}
+\label{fig:linkConstraintUnsatisfiablePattern}
+\end{figure}
+
+By supporting sequences of link order constraints (cf. Figure~\ref{fig:linkOrderConstraintDirectSuccessorCreateDelete}) and combinations of link position and link order constraints, we extend story patterns and their semantics as proposed by Tichy et. al.~\cite{TMG06}. The general semantical issue that the insertion into an ordered reference is non-deterministic remain, but may be explicitly solved using the link constraints introduced in this section. 
+
+} %--- End of link constraint subsection
+
+\subsection{Maybe Links}
+\label{sec:StoryPatterns:specialLinks:maybeLink}
+
+Story patterns are matched by using isomorphic matchings. 
+That means that two object variables in a story pattern may not be matched to the same object of the instance model. 
+A matching which matches two object variables to the same object is, thus, considered to be invalid. 
+In some situations, however, it should be explicitly allowed to match the same object to two different object variables inside the same story pattern. 
+Then, the isomorphic matching must be disabled for the two corresponding object variables. 
+This is achieved by connecting the object variables with a maybe link. 
+Then, a matching \emph{may} assign the same object to the object variables connected by the maybe link, but it also may assign different objects to the variables.
+For all other object variables, the isomorphism condition is enforced.
+
+
+%\tododt{Please clarify the semantics of a \emph{maybe} link.
+%It allows two object variables to be matched to the same object.
+%For all aother variables an isomorphic matching is performed.
+%I would also emphasize \emph{maybe}.}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=.8]{figures/MaybeLink}
+  \caption{Maybe Link allowing two Object Variables to be matched to the same Object}
+  \label{fig:maybeLink}
+\end{figure}
+
+Figure \ref{fig:maybeLink} shows the concrete syntax of maybe links. The object variables \fe{c1} and \fe{c2} are connected with a maybe link which is visualized by a dotted line labeled with \fe{\{same\}}.
+The matching of the story patterns is successful if either two classes - one containing a method and one containing an attribute - can be matched in the instance graph \emph{or} if only one class containing a method \emph{and} an attribute can be matched.
+
+If two object variables are connected by a maybe link, they both must be mandatory or optional. In addition, a maybe link requires the object variables to be matched or destroyed, but not created.  
 
 
 
