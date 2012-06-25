@@ -410,7 +410,9 @@ Both may only use the attributes of object variables in the same story pattern a
 
 Collection variables are special cases of object variables.
 They represent an arbitrary number of objects in an instance model that are of the same type.
-Thus, a collection variable has the type of the objects within the collection.
+Thus, a collection variable has the type of the objects within the collection\footnote{We do not
+explicitly model collection objects in story diagrams. The type of a collection variable is that of the contained objects and not the type of a collection object like 
+\texttt{java.util.Collection}}.
 
 Figure~\ref{fig:CollectionVariableExample} depicts an example story pattern that
 contains a collection variable \fe{methods}. During the matching, all
@@ -443,10 +445,11 @@ Figure~\ref{fig:CollectionVariableTypes} depicts the concrete syntax of the two 
 
 Two matched collection variables in the same story pattern do not have to be disjoint.
 Thus, isomorphism is not enforced for the content of two or more collection variables.
+Link variables between two collection variables are not allowed.
 
-Furthermore, the collection represented by a collection variable can be empty.
-This means, a collection variables is considered to be optional in a matching.
-Additionally, object constraints can be used to specify the allowed size of
+An attribute determines if the collection represented by a collection variable can be empty. 
+If this is the case, a collection variables is considered to be optional in a
+matching. Additionally, object constraints can be used to specify the allowed size of
 the collection using OCL.
 
 As the matching of collection variables is implicitly optional, their binding semantics cannot be set to ``optional'', explicitly.
@@ -477,7 +480,10 @@ binding operators ``check only'' or \destroy.
 %\todomcp{A collection variable contains no ObjectSetSizeExpression and no
 %object is matched into the object set: collection variable is interpreted as
 %optional and the matching succeeds.} 
-\tododt{We still should add an attribute to \fe{CollectionVariable} to distinguish the cases where at least one object should be matched or any number of objects including zero should be matched. Stephan also wanted this expressiveness.}
+%\tododt{We still should add an attribute to \fe{CollectionVariable} to
+%distinguish the cases where at least one object should be matched or any number
+%of objects including zero should be matched. Stephan also wanted this
+%expressiveness.}
 
 
 }%------ End of collection variable section
@@ -704,11 +710,8 @@ If two object variables are connected by a maybe link, they both must be mandato
 \label{sec:StoryPatterns:inclusion}
 
 There are cases when you want to add additional objects to a set of objects matched to a collection variable as described in Section~\ref{sec:StoryPatterns:collectionvariables}.
-Since a collection variable does not explicitly represent a collection object in the sense of Java\footnote{
-We do not expliciltly model collection objects in story diagrams.
-The type of a collection variable is that of the contained objects and not the
-type of a collection object like \texttt{java.util.Collection}. \todomcp{move
-this to Section~\ref{sec:StoryPatterns:collectionvariables}?}}, we need a way to describe the addition or removal of
+Since a collection variable does not explicitly represent a collection object in
+the sense of Java (as described in Section~\ref{sec:StoryPatterns:collectionvariables}, we need a way to describe the addition or removal of
 objects to or from such an object collection as well as checking if an object is included in an object collection. We introduce \emph{inclusion links} for this purpose.
 
 \begin{figure}[htb]
