@@ -26,7 +26,8 @@ import org.storydriven.core.expressions.ExpressionsPackage;
  *
  * @generated
  */
-public class ArithmeticExpressionImpl extends BinaryExpressionImpl implements ArithmeticExpression {
+public class ArithmeticExpressionImpl extends BinaryExpressionImpl implements
+		ArithmeticExpression {
 	/**
 	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,7 +85,8 @@ public class ArithmeticExpressionImpl extends BinaryExpressionImpl implements Ar
 		ArithmeticOperator oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.ARITHMETIC_EXPRESSION__OPERATOR,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ExpressionsPackage.ARITHMETIC_EXPRESSION__OPERATOR,
 					oldOperator, operator));
 	}
 

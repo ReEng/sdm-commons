@@ -13,7 +13,7 @@
 
 	<extension point="org.eclipse.emf.ecore.generated_package">
 		<package
-			uri="http://www.storydriven.org/core/0.2.0"
+			uri="http://www.storydriven.org/core/0.2.7"
 			class="org.storydriven.core.CorePackage"
 			genModel="model/core.uml.genmodel"/>
 		<package

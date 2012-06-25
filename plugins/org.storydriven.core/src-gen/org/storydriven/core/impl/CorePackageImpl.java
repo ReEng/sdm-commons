@@ -106,10 +106,12 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 */
 	public static CorePackage init() {
 		if (isInited)
-			return (CorePackage) EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+			return (CorePackage) EPackage.Registry.INSTANCE
+					.getEPackage(CorePackage.eNS_URI);
 
 		// Obtain or create and register package
-		CorePackageImpl theCorePackage = (CorePackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE
+		CorePackageImpl theCorePackage = (CorePackageImpl) (EPackage.Registry.INSTANCE
+				.get(eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE
 				.get(eNS_URI) : new CorePackageImpl());
 
 		isInited = true;
@@ -120,7 +122,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Obtain or create and register interdependencies
 		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
+				.getEPackage(ExpressionsPackage.eNS_URI)
+				: ExpressionsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCorePackage.createPackageContents();
@@ -180,7 +183,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	public EReference getExtendableElement_Annotation() {
-		return (EReference) extendableElementEClass.getEStructuralFeatures().get(0);
+		return (EReference) extendableElementEClass.getEStructuralFeatures()
+				.get(0);
 	}
 
 	/**
@@ -189,7 +193,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	public EReference getExtendableElement_Extension() {
-		return (EReference) extendableElementEClass.getEStructuralFeatures().get(1);
+		return (EReference) extendableElementEClass.getEStructuralFeatures()
+				.get(1);
 	}
 
 	/**
@@ -288,7 +293,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	public EAttribute getCommentableElement_Comment() {
-		return (EAttribute) commentableElementEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) commentableElementEClass.getEStructuralFeatures()
+				.get(0);
 	}
 
 	/**
@@ -343,12 +349,17 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEReference(typedElementEClass, TYPED_ELEMENT__GENERIC_TYPE);
 
 		extendableElementEClass = createEClass(EXTENDABLE_ELEMENT);
-		createEReference(extendableElementEClass, EXTENDABLE_ELEMENT__ANNOTATION);
+		createEReference(extendableElementEClass,
+				EXTENDABLE_ELEMENT__ANNOTATION);
 		createEReference(extendableElementEClass, EXTENDABLE_ELEMENT__EXTENSION);
-		createEOperation(extendableElementEClass, EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS);
-		createEOperation(extendableElementEClass, EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS);
-		createEOperation(extendableElementEClass, EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING);
-		createEOperation(extendableElementEClass, EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING);
+		createEOperation(extendableElementEClass,
+				EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS);
+		createEOperation(extendableElementEClass,
+				EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS);
+		createEOperation(extendableElementEClass,
+				EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING);
+		createEOperation(extendableElementEClass,
+				EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING);
 
 		extensionEClass = createEClass(EXTENSION);
 		createEReference(extensionEClass, EXTENSION__BASE);
@@ -390,7 +401,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Obtain other dependent packages
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage) EPackage.Registry.INSTANCE
 				.getEPackage(ExpressionsPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE
+				.getEPackage(EcorePackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theExpressionsPackage);
@@ -401,72 +413,104 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		// Add supertypes to classes
 		typedElementEClass.getESuperTypes().add(this.getExtendableElement());
-		extendableElementEClass.getESuperTypes().add(theEcorePackage.getEObject());
+		extendableElementEClass.getESuperTypes().add(
+				theEcorePackage.getEObject());
 		extensionEClass.getESuperTypes().add(this.getExtendableElement());
-		commentableElementEClass.getESuperTypes().add(this.getExtendableElement());
+		commentableElementEClass.getESuperTypes().add(
+				this.getExtendableElement());
 		namedElementEClass.getESuperTypes().add(this.getExtendableElement());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(typedElementEClass, TypedElement.class, "TypedElement", IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(typedElementEClass, TypedElement.class, "TypedElement",
+				IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTypedElement_Type(),
+				theEcorePackage.getEClassifier(), null, "type", null, 0, 1,
+				TypedElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				IS_DERIVED, !IS_ORDERED);
+		initEReference(getTypedElement_GenericType(),
+				theEcorePackage.getEGenericType(), null, "genericType", null,
+				0, 1, TypedElement.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(extendableElementEClass, ExtendableElement.class,
+				"ExtendableElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTypedElement_Type(), theEcorePackage.getEClassifier(), null, "type", null, 0, 1,
-				TypedElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getTypedElement_GenericType(), theEcorePackage.getEGenericType(), null, "genericType", null, 0,
-				1, TypedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getExtendableElement_Annotation(),
+				theEcorePackage.getEAnnotation(), null, "annotation", null, 0,
+				-1, ExtendableElement.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getExtendableElement_Extension(), this.getExtension(),
+				this.getExtension_ExtendableBase(), "extension", null, 0, -1,
+				ExtendableElement.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(extendableElementEClass, ExtendableElement.class, "ExtendableElement", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExtendableElement_Annotation(), theEcorePackage.getEAnnotation(), null, "annotation", null,
-				0, -1, ExtendableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getExtendableElement_Extension(), this.getExtension(), this.getExtension_ExtendableBase(),
-				"extension", null, 0, -1, ExtendableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		EOperation op = initEOperation(getExtendableElement__GetExtension__EClass(), this.getExtension(),
-				"getExtension", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theEcorePackage.getEClass(), "type", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getExtendableElement__ProvideExtension__EClass(), this.getExtension(), "provideExtension",
-				1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theEcorePackage.getEClass(), "type", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getExtendableElement__GetAnnotation__String(), theEcorePackage.getEAnnotation(),
-				"getAnnotation", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "source", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getExtendableElement__ProvideAnnotation__String(), theEcorePackage.getEAnnotation(),
-				"provideAnnotation", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "source", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(extensionEClass, Extension.class, "Extension", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExtension_Base(), theEcorePackage.getEObject(), null, "base", null, 1, 1, Extension.class,
-				IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getExtension_ModelBase(), theEcorePackage.getEModelElement(), null, "modelBase", null, 0, 1,
-				Extension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getExtension_OwningAnnotation(), theEcorePackage.getEAnnotation(), null, "owningAnnotation",
-				null, 0, 1, Extension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getExtension_ExtendableBase(), this.getExtendableElement(),
-				this.getExtendableElement_Extension(), "extendableBase", null, 0, 1, Extension.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+		EOperation op = initEOperation(
+				getExtendableElement__GetExtension__EClass(),
+				this.getExtension(), "getExtension", 1, 1, IS_UNIQUE,
+				!IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEClass(), "type", 1, 1, IS_UNIQUE,
 				!IS_ORDERED);
 
-		initEClass(commentableElementEClass, CommentableElement.class, "CommentableElement", IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCommentableElement_Comment(), ecorePackage.getEString(), "comment",
-				"\"no comment provided\"", 0, 1, CommentableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		op = initEOperation(getExtendableElement__ProvideExtension__EClass(),
+				this.getExtension(), "provideExtension", 1, 1, IS_UNIQUE,
+				!IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEClass(), "type", 1, 1, IS_UNIQUE,
+				!IS_ORDERED);
 
-		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE,
+		op = initEOperation(getExtendableElement__GetAnnotation__String(),
+				theEcorePackage.getEAnnotation(), "getAnnotation", 1, 1,
+				IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "source", 1, 1, IS_UNIQUE,
+				!IS_ORDERED);
+
+		op = initEOperation(getExtendableElement__ProvideAnnotation__String(),
+				theEcorePackage.getEAnnotation(), "provideAnnotation", 1, 1,
+				IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "source", 1, 1, IS_UNIQUE,
+				!IS_ORDERED);
+
+		initEClass(extensionEClass, Extension.class, "Extension", IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExtension_Base(), theEcorePackage.getEObject(), null,
+				"base", null, 1, 1, Extension.class, IS_TRANSIENT, IS_VOLATILE,
+				!IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getExtension_ModelBase(),
+				theEcorePackage.getEModelElement(), null, "modelBase", null, 0,
+				1, Extension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE,
+				IS_DERIVED, !IS_ORDERED);
+		initEReference(getExtension_OwningAnnotation(),
+				theEcorePackage.getEAnnotation(), null, "owningAnnotation",
+				null, 0, 1, Extension.class, IS_TRANSIENT, IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getExtension_ExtendableBase(),
+				this.getExtendableElement(),
+				this.getExtendableElement_Extension(), "extendableBase", null,
+				0, 1, Extension.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(commentableElementEClass, CommentableElement.class,
+				"CommentableElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCommentableElement_Comment(),
+				ecorePackage.getEString(), "comment",
+				"\"no comment provided\"", 0, 1, CommentableElement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(namedElementEClass, NamedElement.class, "NamedElement",
+				IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(),
+				"name", null, 1, 1, NamedElement.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -497,7 +541,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		addAnnotation(
 				typedElementEClass,
 				source,
-				new String[] { "documentation",
+				new String[] {
+						"documentation",
 						"Abstract super class for all meta-model elements that are typed by means of an EClassifier or an EGenericType." });
 		addAnnotation(
 				extendableElementEClass,
@@ -505,16 +550,31 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 				new String[] {
 						"documentation",
 						"Abstract base class for the whole story diagram model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references." });
-		addAnnotation(extensionEClass, source, new String[] { "documentation",
-				"Abstract super class for an Extension that can be defined for an object." });
-		addAnnotation(commentableElementEClass, source, new String[] { "documentation",
-				"Abstract super class for all meta-model elements that may carry a comment in form of a string." });
-		addAnnotation(getCommentableElement_Comment(), source, new String[] { "documentation",
-				"The comment string that can be used to attach arbitrary information to CommentableElements." });
-		addAnnotation(namedElementEClass, source, new String[] { "documentation",
-				"Abstract super class for all meta-model elements that carry a name. " });
-		addAnnotation(getNamedElement_Name(), source, new String[] { "documentation",
-				"The name attribute of a meta-model element." });
+		addAnnotation(
+				extensionEClass,
+				source,
+				new String[] { "documentation",
+						"Abstract super class for an Extension that can be defined for an object." });
+		addAnnotation(
+				commentableElementEClass,
+				source,
+				new String[] {
+						"documentation",
+						"Abstract super class for all meta-model elements that may carry a comment in form of a string." });
+		addAnnotation(
+				getCommentableElement_Comment(),
+				source,
+				new String[] {
+						"documentation",
+						"The comment string that can be used to attach arbitrary information to CommentableElements." });
+		addAnnotation(
+				namedElementEClass,
+				source,
+				new String[] { "documentation",
+						"Abstract super class for all meta-model elements that carry a name. " });
+		addAnnotation(getNamedElement_Name(), source,
+				new String[] { "documentation",
+						"The name attribute of a meta-model element." });
 	}
 
 	/**
@@ -537,10 +597,18 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 */
 	protected void createSubsetsAnnotations() {
 		String source = "subsets";
-		addAnnotation(getExtension_ModelBase(), source, new String[] {}, new URI[] { URI.createURI(eNS_URI)
-				.appendFragment("//Extension/base") });
-		addAnnotation(getExtension_ExtendableBase(), source, new String[] {}, new URI[] { URI.createURI(eNS_URI)
-				.appendFragment("//Extension/base") });
+		addAnnotation(
+				getExtension_ModelBase(),
+				source,
+				new String[] {},
+				new URI[] { URI.createURI(eNS_URI).appendFragment(
+						"//Extension/base") });
+		addAnnotation(
+				getExtension_ExtendableBase(),
+				source,
+				new String[] {},
+				new URI[] { URI.createURI(eNS_URI).appendFragment(
+						"//Extension/base") });
 	}
 
 } //CorePackageImpl

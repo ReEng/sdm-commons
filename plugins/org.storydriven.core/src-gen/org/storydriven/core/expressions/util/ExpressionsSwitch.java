@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.TypedElement;
+import org.storydriven.core.expressions.*;
 import org.storydriven.core.expressions.ArithmeticExpression;
 import org.storydriven.core.expressions.BinaryExpression;
 import org.storydriven.core.expressions.BinaryLogicExpression;

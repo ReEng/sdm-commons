@@ -28,7 +28,8 @@ import org.storydriven.core.impl.TypedElementImpl;
  *
  * @generated
  */
-public abstract class ExpressionImpl extends TypedElementImpl implements Expression {
+public abstract class ExpressionImpl extends TypedElementImpl implements
+		Expression {
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -86,8 +87,8 @@ public abstract class ExpressionImpl extends TypedElementImpl implements Express
 		String oldComment = comment;
 		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.EXPRESSION__COMMENT, oldComment,
-					comment));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ExpressionsPackage.EXPRESSION__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -143,7 +144,8 @@ public abstract class ExpressionImpl extends TypedElementImpl implements Express
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case ExpressionsPackage.EXPRESSION__COMMENT:
-			return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			return COMMENT_EDEFAULT == null ? comment != null
+					: !COMMENT_EDEFAULT.equals(comment);
 		}
 		return super.eIsSet(featureID);
 	}
