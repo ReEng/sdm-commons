@@ -6,7 +6,7 @@
   <!-- EEF extensions -->
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://www.fujaba.de/modelinstance/0.2.4"
+            uri="http://www.fujaba.de/modelinstance/0.2.7"
             class="de.fujaba.modelinstance.providers.ModelinstanceEEFAdapterFactory"
             supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>

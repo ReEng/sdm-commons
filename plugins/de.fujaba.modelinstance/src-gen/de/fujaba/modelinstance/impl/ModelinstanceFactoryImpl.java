@@ -6,6 +6,7 @@
  */
 package de.fujaba.modelinstance.impl;
 
+import de.fujaba.modelinstance.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -33,7 +34,7 @@ public class ModelinstanceFactoryImpl extends EFactoryImpl implements Modelinsta
 	 */
 	public static ModelinstanceFactory init() {
 		try {
-			ModelinstanceFactory theModelinstanceFactory = (ModelinstanceFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/modelinstance/0.2.4"); 
+			ModelinstanceFactory theModelinstanceFactory = (ModelinstanceFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/modelinstance/0.2.7"); 
 			if (theModelinstanceFactory != null) {
 				return theModelinstanceFactory;
 			}
