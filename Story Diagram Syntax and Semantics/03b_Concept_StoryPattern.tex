@@ -709,10 +709,15 @@ If two object variables are connected by a maybe link, they both must be mandato
 \subsection{Inclusion Links}
 \label{sec:StoryPatterns:inclusion}
 
-There are cases when you want to add additional objects to a set of objects matched to a collection variable as described in Section~\ref{sec:StoryPatterns:collectionvariables}.
+There are cases when you want to add additional objects to a set of objects matched to a collection variable
+as described in Section~\ref{sec:StoryPatterns:collectionvariables}.
+For example, when collecting all methods in a class hierarchy that comply to a certain method signature,
+you would go through all classes in the hierarchy and add complying methods step by step.
 Since a collection variable does not explicitly represent a collection object in
-the sense of Java (as described in Section~\ref{sec:StoryPatterns:collectionvariables}, we need a way to describe the addition or removal of
-objects to or from such an object collection as well as checking if an object is included in an object collection. We introduce \emph{inclusion links} for this purpose.
+the sense of Java (as described in Section~\ref{sec:StoryPatterns:collectionvariables},
+we need a way to describe the addition or removal ofobjects to or from such an object collection
+as well as checking if an object is included in an object collection.
+We introduce \emph{inclusion links} for this purpose.
 
 \begin{figure}[htb]
 	\begin{minipage}{.43\textwidth}
@@ -731,7 +736,7 @@ objects to or from such an object collection as well as checking if an object is
 \end{figure}
 
 An inclusion link represents a containment relation between two variables in a story pattern.
-It can always be used between a collection variable and another variable to specify that
+It can be used between a collection variable and another variable to specify that
 an object (or a set of objects) represented by a variable is contained in an object set represented by a collection variable.
 An inclusion link is represented by a line between a collection variable and another object
 variable as illustrated in Figure~\ref{fig:InlucionLinks}~a).
@@ -745,8 +750,8 @@ or be used to match new objects.
 While the pattern in Figure~\ref{fig:InlucionLinks} a) specifies to check if the object \fe{aMethod} is contained in the collection \fe{methods},
 the pattern in Figure~\ref{fig:InlucionLinks} b) specifies to match a \fe{Method} object which is contained in the collection \fe{methods}.
 
-Similar to other links, inclusion links can be used with bound, unbound, or maybe-bound object variables, can be negative or optional, use
-\create\ or \destroy\ stereotypes (see Figure~\ref{fig:InlucionLinks} a) to f)).
+Similar to other links, inclusion links can be used with object variables that are bound, unbound, or maybe-bound.
+Inclusion links can also be negative or optional and can be combined with \create\ or \destroy\ stereotypes (see Figure~\ref{fig:InlucionLinks} a) to f)).
 Case c) in Figure~\ref{fig:InlucionLinks} defines that the matching is only successful if no \fe{Method} object can be found in the \fe{methods} collection.
 Accordingly, case d) specifies to optionally match a \fe{Method} object contained in the \fe{methods} collection
 (see the description of binding semantics in Section~\ref{sec:StoryPatterns:binding:semantics} for details).
@@ -773,7 +778,7 @@ and then add another \fe{Method} object to the same collection in a following st
 Inclusion links can be used in combination with link variables.
 In Figure~\ref{fig:InlucionLinksExamples} we give some examples for possible uses.
 In case a) the story pattern specifies that a \fe{Method} object is to be found which is defined in a class \fe{aClass},
-but is not contained in the collection \fe{methods}.
+but which is not contained in the collection \fe{methods}.
 Case b) specifies to find a collection \fe{sel} of \fe{Method} objects which are contained in the collection \fe{methods}
 and do not have a return type that is a \fe{Class} object.
 The pattern in case c) checks whether a set of objects described by the collection \fe{all} contains another set of objects described by the collection \fe{selection}
@@ -787,11 +792,13 @@ Second, a collection \fe{sel2} of \fe{Method} objects which additionaly have no 
 \subsubsection{Feasible Uses of Inclusion Links}
 \label{sec:StoryPatterns:inclusion:feasible}
 
-The main difference of inclusion links and link variables is that the source of an inclusion link has to be a collection variable.
+Inclusion links can be used exactly like link variables except that the source of an inclusion link has to be a collection variable.
 
 Inclusion links can be used with all available binding semantics as described in Section~\ref{sec:StoryPatterns:binding:semantics}.
-Consequently, if you replace a negative or optional link in Figures~\ref{fig:negativeObjects} and \ref{fig:optionalObjects}
-with a negative or optional inclusion link, you get the feasible combinations of binding semantics used with inclusion links.
+Consequently, if you replace a negative or optional link variable in Figures~\ref{fig:negativeObjects} and \ref{fig:optionalObjects}
+with a negative or optional inclusion link
+(independent of the inclusion link's direction and assuming that an inlucion link's source is a collection variable),
+you get the feasible combinations of binding semantics used with inclusion links.
 
 Moreover, you get all feasible combinations of binding operators and inclusion links from
 Table~\ref{tab:bindingCombinations_links} in Section~\ref{sec:StoryPatterns:binding:operators}.
@@ -828,7 +835,7 @@ the collection \fe{b} depicts a subset of the set represented by the collection 
 Interpreting the Figure~\ref{fig:InlucionLinkCollections} as a story pattern,
 it describes to check if the elements in collection \fe{b} are also contained in the collection \fe{a}.
 
-In Section~\ref{sec:StoryPatterns:objectsets} we introduced different types of collection variables.
+In Section~\ref{sec:StoryPatterns:collectionvariables} we introduced different types of collection variables.
 We distinguish between ordered sets and lists.
 Sets contain an element mostly once (\emph{unique} property) while lists can contain an element arbitrarily often.
 Consequently, the inclusion links between different types of collection variables have different semantics,
@@ -843,22 +850,23 @@ If \fe{a} is a set and the binding operator is \fe{CHECK\_ONLY}, we only have to
 In contrast, if \fe{a} is a list (which can contain the same object arbitrarily often),
 we have to ensure that the objects in \fe{b} are not only contained at least once in \fe{a},
 but also at least as often as in \fe{b}.
-Otherwise, the matching of the story pattern would fail.
+If, for example, \fe{b} contains an element \fe{x} twice, then \fe{a} has to contain \fe{x} at least twice, too.
+Otherwise, the matching of the story pattern fails.
 
 An inclusion link with the binding operator \create\ describes to add all objects from \fe{b} to \fe{a}.
-If \fe{a} is a set, we only add each object from \fe{b} to \fe{a} if \fe{a} does not already contain it (remember that sets contain each object mostly once).
+If \fe{a} is a set, we only add each object from \fe{b} to \fe{a} if \fe{a} does not already contain it. %(remember that sets contain each object mostly once).
 Since we only have ordered sets, we have to regard the order of the objects in the collections.
 We add the objects from \fe{b} to the end of \fe{a} and keep the same order as they had in \fe{b}.
 If \fe{a} is a list, we do a similar adding operation, but we add the objects from \fe{b} as often to \fe{a} as they are in \fe{b}.
-This can be seen as a concatenation of two lists or the union of two sets (mathematically $a \cup b$).
+This can be seen as a concatenation of two lists or as the union of two sets (mathematically $a \cup b$).
 
 The binding operator \destroy\ used with an inclusion link and two collections as illustrated in Table~\ref{tab:set_operations_with_inclusion_links}
 describes to remove all elements contained in \fe{b} from the collection \fe{a}.
 If \fe{a} is a set, we just remove all occurrences of the objects in \fe{b} from \fe{a} and preserve the order of the remaining elements in \fe{a}.
 If \fe{a} is a list and \fe{b} is a set, we do quite the same.
-Even if an object contained in \fe{b} is contained more than once in \fe{a}, we remove all of its occurrences in \fe{a}.
+If an object contained in \fe{b} is contained more than once in \fe{a}, we remove all of its occurrences in \fe{a}.
 This comes close to the mathematical relative complement operation (mathematically $a \setminus b$).
-If both, \fe{a} and \fe{b} are lists, we only remove as many occurrences of the objects in \fe{b} from \fe{a} as they are available in \fe{b}.
+If both, \fe{a} and \fe{b} are lists, we only remove as many occurrences of the objects in \fe{b} from \fe{a} as these are available in \fe{b}.
 Furthermore, we remove them starting at the beginning of the list \fe{a}.
 
 \begin{table}[htbp]
@@ -883,7 +891,7 @@ Furthermore, we remove them starting at the beginning of the list \fe{a}.
     } & \\
     \hline
     Ordered Set & any & CREATE & Add all elements from \fe{b} to \fe{a} that are missing in \fe{a} to the end of \fe{a}, preserving the order of elements in \fe{b}.\\[0.5em]
-    List & any & CREATE & Add all elements from \fe{b} to \fe{a} to the end of \fe{a}, preserving the order of elements in \fe{b}.\\
+    List & any & CREATE & Add all elements from \fe{b} to the end of \fe{a}, preserving the order of elements in \fe{b}.\\
     \hline
     \multicolumn{3}{|c}{
       \includegraphics[scale=0.8]{figures/InclusionLinksSetsDestroy}
@@ -897,14 +905,16 @@ Furthermore, we remove them starting at the beginning of the list \fe{a}.
 %  \end{longtable}
 \end{table}
 
+\tododt{Move this section about link constraints in combination with inclusion links to Section~\ref{sec:StoryPatterns:linkConstraints}?}
+
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=.8]{figures/LinkConstraints1}
-  \caption{Inclusion Links With Link Order Constraints}
+  \caption{Inclusion Links With Link Constraints}
   \label{fig:collectionsLinkConstraints}
 \end{figure}
 
-Similar to the link constraints described in Section~\ref{sec:StoryPatterns:linkConstraints}, these can also be used with inclusion links.
+Similar to the link constraints described in Section~\ref{sec:StoryPatterns:linkConstraints}, link constraints can also be used with inclusion links.
 An exemplary use is illustrated in the story diagram in Figure~\ref{fig:collectionsLinkConstraints}.
 We will explain story diagrams in more detail in Section~\ref{sec:StoryDiagrams}.
 Here, the story diagram describes the sequential execution of two story patterns.
