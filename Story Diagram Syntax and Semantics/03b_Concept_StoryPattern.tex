@@ -41,7 +41,7 @@ In the concrete syntax of story patterns, the object and link variables represen
 Object and link variables representing objects and links to be destroyed are annotated with \destroy and visualized in red. 
 Object and link variables representing objects and links to be created are annotated with \create and visualized in green. 
 An unbound object variable is labeled with its name and the name of the corresponding type. 
-For bound object variables, we omit the name of the type (e.g.\ \fe{parentClass} in Figure~\ref{fig:simpleStoryPattern}).
+For bound object variables, we omit the name of the type (e.g., \fe{parentClass} in Figure~\ref{fig:simpleStoryPattern}).
 
 In general, the matching process is executed as a three step process:
 first, a matching is searched which uses the bound variables of the story pattern as a starting point. The matching associates objects and links of the instance model to all object and link variables of the story pattern. 
@@ -121,7 +121,7 @@ Their meaning is described in the following.
 \label{sec:StoryPatterns:binding:states}
 
 An object variable or a link variable can be declared as \emph{bound}, \emph{unbound}, or
-\emph{maybe bound} (i.e. it is unknown if the variable is bound or not). This is
+\emph{maybe bound} (i.e., it is unknown if the variable is bound or not). This is
 defined by its binding state. An unbound variable is matched during the
 execution of the containing story pattern. 
 A bound variable must have been matched previously. 
@@ -465,7 +465,7 @@ binding operators ``check only'' or \destroy.
 %omitted in v0.2. We can use OCL instead.}
 
 %\todomcp{If we bind an object set, can we use the bound object in other story
-%pattern? E.g. to insert all elements bound by the object set into a container
+%pattern? E.g., to insert all elements bound by the object set into a container
 %via a containment link?}
 %\tododt{Yes, but I would use another concrete syntax (see
 %Figures~\ref{fig:reuseObjSet1}, \ref{fig:InclusionLinksExample1}).}
@@ -756,7 +756,7 @@ Case c) in Figure~\ref{fig:InlucionLinks} defines that the matching is only succ
 Accordingly, case d) specifies to optionally match a \fe{Method} object contained in the \fe{methods} collection
 (see the description of binding semantics in Section~\ref{sec:StoryPatterns:binding:semantics} for details).
 Case e) specifies to create an inclusion relation between the object \fe{aMethod} and the collection \fe{methods},
-i.e.\ to add the object \fe{aMethod} to the collection \fe{methods}.
+i.e., to add the object \fe{aMethod} to the collection \fe{methods}.
 Analogously, case f) specifies to remove the object \fe{aMethod} from the collection \fe{methods}.
 Furthermore, inclusion links can also be used between two collection variables as illustrated in Figure~\ref{fig:InlucionLinks} f)
 to check if all objects in the collection \fe{selection} are contained in the collection \fe{all}.
@@ -783,7 +783,7 @@ Case b) specifies to find a collection \fe{sel} of \fe{Method} objects which are
 and do not have a return type that is a \fe{Class} object.
 The pattern in case c) checks whether a set of objects described by the collection \fe{all} contains another set of objects described by the collection \fe{selection}
 which in turn contains another set of objects described by the collection \fe{anotherSelection},
-i.e.\ \fe{anotherSelection} is a subset of \fe{selection} and \fe{selection} is a subset of \fe{all}.
+i.e., \fe{anotherSelection} is a subset of \fe{selection} and \fe{selection} is a subset of \fe{all}.
 The pattern in case d) specifies to find two object sets that are subsets of another set.
 First, a collection \fe{sel1} of \fe{Method} objects which have the return type \fe{type} is to be found in the collection \fe{methods}.
 Second, a collection \fe{sel2} of \fe{Method} objects which additionaly have no parameters is to be found in the collection \fe{sel1}.
@@ -829,7 +829,7 @@ The semantics for this case are explained in the following.
   \label{fig:InlucionLinkCollections}
 \end{figure}
 
-An inclusion link between two collection variables represents a containment relation between two sets of objects, i.e.\ between two collections.
+An inclusion link between two collection variables represents a containment relation between two sets of objects, i.e., between two collections.
 In case of the illustration in Figure~\ref{fig:InlucionLinkCollections},
 the collection \fe{b} depicts a subset of the set represented by the collection \fe{a} (mathematically $b \subseteq a$).
 Interpreting the Figure~\ref{fig:InlucionLinkCollections} as a story pattern,
@@ -1192,7 +1192,7 @@ These are only used in SDDs and TSSDs which are constraint languages.
   \label{fig:subPatternHierarchies}
 \end{figure}
 
-\todomcp{How deep may patterns be nested? What is the semantics of alternating binding semantics of sub-patterns, e.g. negative in optional in negative and so on.}
+\todomcp{How deep may patterns be nested? What is the semantics of alternating binding semantics of sub-patterns, e.g., negative in optional in negative and so on.}
 \tododt{I would prefer to allow arbitrarily deep nestings and would suggest to interpret the fragments in the order from outside to inside. Example (see Figure~\ref{fig:subPatternHierarchies}): You match a super class \emph{superClass} of \emph{myClass} and ensure that \emph{superClass} has no attribute. Then you you match all methods \emph{new} (outer set fragment) that have no class as their type (enclosed NAC fragment). Now you match for each of these methods all parameters (enclosed set fragment) that have \emph{myClass} as their type. Furthermore, you try to find a path from the matched \emph{new} method to a return statement (optional fragment).}
 
 } %--- End of pattern fragment section

@@ -45,7 +45,7 @@ Thus, the language constructs \emph{fork} and \emph{join} are currently not supp
 We plan to include these concepts in future versions of story diagrams.
 
 %- Story diagrams in MDSD process, 2 worlds: stand-alone transformations and specifications of methods' behavior:
-%  1. alternative (completely modeling software): model classes in class diagrams, specify their methods' behavior in story diagrams, generate executable source code (e.g. Java) or use an interpreter
+%  1. alternative (completely modeling software): model classes in class diagrams, specify their methods' behavior in story diagrams, generate executable source code (e.g., Java) or use an interpreter
 %  2. alternative (specify recurring model operations/transformations for a given type of models): model only classes representing the editor's model under development (meta-model), specify modification operations of this model (adding and removing elements, analysis operations, translations to/generation of other models, etc.), need of a software that triggers the specified operations, the operations can be performed using generated code or an interpreter
 %- introduce an example
 
@@ -103,8 +103,8 @@ Typically, model-to-model transformations, consistency checks, or more generally
 In both cases, story diagrams can be used to generate executable source code or be executed using an interpreter.
 Besides execution, the formally defined story diagrams can also be analyzed to guarantee certain behavioral properties \cite{Mey09,Zue09}.
 For example, model checking can be used to check whether a certain invariant holds
-(e.g.\ that all accessible variables are still accessible after a refactoring operation)
-or if a critical state can ever be reached (e.g.\ if an attribute or method has no parent class after a refactoring operation which would result in an incorrect program).
+(e.g., that all accessible variables are still accessible after a refactoring operation)
+or if a critical state can ever be reached (e.g., if an attribute or method has no parent class after a refactoring operation which would result in an incorrect program).
 
 A complete description of the story diagrams' abstract syntax is given in the Appendix~\ref{sec-reference}.
 There is also a grammar that determines all feasible story diagrams by constraining their structure.
@@ -120,7 +120,7 @@ Thus, similar to UML activities, a story diagram is represented by a so-called a
 
 Each story diagram can have parameters.
 We distinguish \emph{in} and \emph{out} parameters,
-i.e.\ parameters representing arguments given when a story diagram is called (\emph{in})
+i.e., parameters representing arguments given when a story diagram is called (\emph{in})
 and parameters representing return values (\emph{out}).
 Parameters are either \emph{in} or \emph{out} parameters.
 %Parameters can be \emph{in} and \emph{out} parameters at the same time.
@@ -158,13 +158,13 @@ In contrast to single story patterns, story patterns contained in story nodes of
 Here, you can reuse all object variables declared in the story patterns of preceding story nodes.
 For example, in Figure~\ref{fig:simpleStoryDiagram} (p.~\pageref{fig:simpleStoryDiagram}),
 the object variable \fe{parentClass} is reused in the second story pattern
-by specifying the variable as a bound variable, i.e.\ the variable does not have to be matched anymore.
+by specifying the variable as a bound variable, i.e., the variable does not have to be matched anymore.
 
 Executing a story node means executing the corresponding story pattern
 which, in turn, means finding a subgraph with the specified properties
-(e.g.\ finding objects of a certain type, with certain attribute values, and with certain connections)
+(e.g., finding objects of a certain type, with certain attribute values, and with certain connections)
 and performing specified modifications of the found subgraph
-(e.g.\ creating or removing objects and links or changing their attribute values).
+(e.g., creating or removing objects and links or changing their attribute values).
 
 We distinguish two kinds of story nodes: \emph{modifying story nodes} and \emph{matching story nodes}.
 A matching story node contains a story pattern that only matches a specified object structure, but does not change it.
@@ -241,7 +241,7 @@ Someone has to describe that in the story patterns section or here.}
 To distinguish the cases of a successful story node execution and its failure,
 the outgoing activity edges can be provided with the guards \fe{\text[success\text]} and \fe{\text[failure\text]} (see Figure~\ref{fig:SD-decisions} a)).
 The control flow is following the activity edge with the \emph{success} guard in case of a successful story node execution,
-i.e.\ a successful matching of the corresponding story pattern.
+i.e., a successful matching of the corresponding story pattern.
 Otherwise it follows the activity edge with the \emph{failure} guard.
 If an outgoing activity edge has no guard, it covers both cases, success and failure.
 The guards \fe{\text[success\text]} and \fe{\text[failure\text]} can only be used pair-wise (exactly two outgoing activity edges with exactly these two guards).
@@ -385,7 +385,7 @@ Each for-each activity node must have such an outgoing \text[end\text] activity 
 \subsection{Propagation of Matchings}
 \label{sec:storydiagrams:propagation}
 
-The control flow specified by the activity edges determines how matchings of story patterns are propagated through the story diagram. An initial matching associating objects of the instance model with object variables is established by the input parameters of the story diagram. In a story pattern inside a story node, we refer to matched objects by using bound variables. Then, the story pattern inside a story node is matched. If the matching process was successful, the matching is extended by the objects which were newly matched by the story pattern and is propagated via the \emph{success} activity edge to the next activity node. If the matching process was not successful, the matching is not changed and the original matching which was passed to the activity node is propagated along the \emph{failure} activity edge. The matching process includes both, the matching step and the modification step. If a match could be obtained, but the modification step fails, e.g. due to unsatisfiable link constraints (cf. Section~\ref{sec:StoryPatterns:linkConstraints}), the story pattern is also considered to be failed and the story node is left via the \emph{failure} activity edge. If a story pattern failed, it also does not change the instance model.
+The control flow specified by the activity edges determines how matchings of story patterns are propagated through the story diagram. An initial matching associating objects of the instance model with object variables is established by the input parameters of the story diagram. In a story pattern inside a story node, we refer to matched objects by using bound variables. Then, the story pattern inside a story node is matched. If the matching process was successful, the matching is extended by the objects which were newly matched by the story pattern and is propagated via the \emph{success} activity edge to the next activity node. If the matching process was not successful, the matching is not changed and the original matching which was passed to the activity node is propagated along the \emph{failure} activity edge. The matching process includes both, the matching step and the modification step. If a match could be obtained, but the modification step fails, e.g., due to unsatisfiable link constraints (cf. Section~\ref{sec:StoryPatterns:linkConstraints}), the story pattern is also considered to be failed and the story node is left via the \emph{failure} activity edge. If a story pattern failed, it also does not change the instance model.
 
 In case of a loop, the matching which is propagated into the for-each activity node is extended by the matching of the story pattern which is contained in this activity node. If the matching is successful, the extended matching is propagated along the \emph{each time} activity edge. The matching may then be extended and changed by the subsequent activity nodes forming the loop body. If the control flow returns to the for-each activity node, the matching needs to be restricted to the object variables that were initially passed to the for-each activity node. That has two basic consequences. First, if a variable which was part of the matching that was initially provided to the for-each activity node has been changed to another object (by using its name in an \emph{unbound} node), that change is preserved for the next iteration. Second, if a variable which was not part of the matching that was initially provided to the for-each activity node has been bound in the loop, it is removed from the matching for the next iteration. As a result, the matching which is propagated down the \emph{end} activity edge only contains those object variables which were initially passed to the for-each activity node. The object variables, however, may be bound to different objects after executing the loop. Objects and links created throughout the loop remain in instance model although the object variables they were bound to are no longer visible in the matching. That semantics corresponds to the semantics of loops in programming languages as, e.g., Java. 
 \todojr{Ich denke nicht, dass wir maybe\_bound hier noch explizit erwaehnen muessen. Das ist eigentlich klar.}
@@ -420,7 +420,7 @@ An example of a story diagram call is shown in Figure~\ref{fig:call}.
 \end{center}
 \end{figure}
 
-The first story pattern in Figure~\ref{fig:call} shows the bound object variable \fe{package}. Two new object variables \fe{class1} and \fe{class2} are bound in that pattern. The next node with the grey background is a story diagram call which is also signified by its label \fe{Call}. Beneath the label, the name of the called story diagram is given, in this case \fe{CreateBidirectionalAssociation}. Assume that the called story diagram has two in parameters of the type \fe{Class} and one out parameter of the type \fe{Association}. The two classes that were bound in the first story pattern, \fe{class1} and \fe{class2} are passed to the call as arguments. They can be used in the story node after the call without passing the back as out parameters. The modifications carried out by the called story diagram (i.e.\ the creation of the \fe{assoc} object and its connection to \fe{class1} and \fe{class2}) are retained after the call terminates.
+The first story pattern in Figure~\ref{fig:call} shows the bound object variable \fe{package}. Two new object variables \fe{class1} and \fe{class2} are bound in that pattern. The next node with the grey background is a story diagram call which is also signified by its label \fe{Call}. Beneath the label, the name of the called story diagram is given, in this case \fe{CreateBidirectionalAssociation}. Assume that the called story diagram has two in parameters of the type \fe{Class} and one out parameter of the type \fe{Association}. The two classes that were bound in the first story pattern, \fe{class1} and \fe{class2} are passed to the call as arguments. They can be used in the story node after the call without passing the back as out parameters. The modifications carried out by the called story diagram (i.e., the creation of the \fe{assoc} object and its connection to \fe{class1} and \fe{class2}) are retained after the call terminates.
 The result of the call is bound to the object variable \fe{assoc}. The type of this variable is determined by the out parameter type, i.e., in this case the type Association.
 
 If a story diagram has no out parameters, the keyword \fe{void} follows the colon instead of the out parameter's names (see Figure \ref{fig:SDRemoveInterfaceViolation} for an example).
