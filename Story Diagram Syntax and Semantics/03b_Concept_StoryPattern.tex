@@ -483,6 +483,8 @@ binding operators ``check only'' or \destroy.
 }%------ End of collection variable section
 
 
+\tododt{It seems, the following paragraphs were moved to Section~\ref{sec:PatternConstraints}.}
+
 A pattern constraint defines an additional condition for a match that is evaluated and the end of the matching step, i.e., it is evaluated after all object and link variables have been matched. Since it is a condition, it needs to evaluate to true or false. If the pattern constraint is evaluated to true, then the match for the story pattern is valid. If the pattern constraint is evaluated to false, then the match is rejected.
 
 A pattern constraint may use all object variables that are used in the same story pattern. Object variables are referred by their name. The pattern constraint may traverse the references of the objects bound to a particular object variable and access the attributes of the corresponding object. In the current version of story diagrams, we only support to use OCL for specifying pattern constraints. Then, the OCL constraint uses the name of the object variables to refer to objects and may use all features of OCL to access references and attributes of the corresponding objects.
@@ -496,7 +498,7 @@ A pattern constraint may use all object variables that are used in the same stor
 
 Figure~\ref{fig:patternConstraint} gives an example for the concrete syntax of a pattern constraint. The story pattern has two bound object variables \fe{class} and \fe{method} of types \fe{GASTClass} and \fe{Method}, respectively. The pattern constraint is visualized as a label containing the OCL constraint. In the example, the OCL constraints specifies that all methods of \fe{class} need to have a name which is different from the name of \fe{method}. In addition, the story pattern matches all methods of \fe{class} in the object set \fe{classMethods}. The matching of the story pattern is successful only if the pattern constraint is fulfilled.
 
-} %--- End of pattern constraints section
+%} %--- End of pattern constraints section
 
 
 %\ext %--- Comment this line to include link constraints into the
@@ -915,6 +917,7 @@ that the method \fe{new} directly follows the method \fe{first} in the collectio
 %\ext  %--- Comment this line to include pattern constraints into the document
 {
 \subsection{Pattern Constraints}
+\label{sec:PatternConstraints}
 
 A pattern constraint defines an additional condition for a match that is evaluated and the end of the matching step, i.e., it is evaluated after all object and link variables have been matched. Since it is a condition, it needs to evaluate to true or false. If the pattern constraint is evaluated to true, then the match for the story pattern is valid. If the pattern constraint is evaluated to false, then the match is rejected.
 
@@ -926,6 +929,8 @@ A pattern constraint may use all object variables that are used in the same stor
 \caption{Example of a Pattern Constraint}
 \label{fig:patternConstraint}
 \end{figure}
+
+\tododt{Should the constraint in Figure~\ref{fig:patternConstraint} not be classMethods->forAll(name <> method.name)? Otherwise the constraint does not check the matched methods in \fe{classMethods}.}
 
 Figure~\ref{fig:patternConstraint} gives an example for the concrete syntax of a pattern constraint. The story pattern has two bound object variables \fe{class} and \fe{method} of types \fe{GASTClass} and \fe{Method}, respectively. The pattern constraint is visualized as a label containing the OCL constraint. In the example, the OCL constraints specifies that all methods of \fe{class} need to have a name which is different from the name of \fe{method}. In addition, the story pattern matches all methods of \fe{class} in the object set \fe{classMethods}. The matching of the story pattern is successful only if the pattern constraint is fulfilled.
 
