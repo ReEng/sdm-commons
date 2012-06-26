@@ -16,7 +16,7 @@ A well-known principle of object-oriented programming says \emph{``Program to an
 
 In Figure~\ref{fig:InterfaceViolationExample}, a simple example of an interface violation is depicted. The classes \fe{A} and \fe{B} implement the interfaces \fe{IA} and \fe{IB}, respectively. Following the design principle ``Program to an interface, not an implementation'', the classes are expected to interact through their interfaces. However, \fe{A} calls the method \fe{m3()} from \fe{B} because \fe{m3()} is not provided by the interface \fe{IB}. \fe{A} down-casts the object \fe{ib} to the concrete type \fe{B} in order to access \fe{m3()}. This intentional bypassing of the interface \fe{IB} is an interface violation.
 
-There are several possibilities to remove an interface violation from a program. A trivial solution would be to delete the downcast and the call from the implementation of \fe{m1}. This would, of course, remove the interface violation but also change the program behavior. A more sensible solution which will be used in this chapter is the extension of the interface \fe{IB} to contain the method declaration of \fe{m3}. By adding this declaration to \fe{IB}, the class \fe{A} can call \fe{m3} via the interface. The downcast becomes unnecessary and can be removed. At the same time, the behaviour of \fe{m1} is preserved.
+There are several possibilities to remove an interface violation from a program. A trivial solution would be to delete the downcast and the call from the implementation of \fe{m1}. This would, of course, remove the interface violation but also change the program behavior. A more reasonable solution which will be used in this chapter is the extension of the interface \fe{IB} such that it contains the method declaration of \fe{m3}. By adding this declaration to \fe{IB}, the class \fe{A} can call \fe{m3} via the interface. The downcast becomes unnecessary and can be removed. At the same time, the behaviour of \fe{m1} is preserved.
 
 To this point, the refactoring is very similar to the \emph{Extract Interface} refactoring described by Fowler \cite{Fow99}. Extending an existing interface, however, is a little more complicated as there may already be other classes that implement \fe{IB}. If \fe{m3} is added to \fe{IB}, those other implementing classes all have to be extended by a (possibly empty) method implementation of \fe{m3} in order to remain compilable.
 
@@ -24,51 +24,35 @@ A refactoring that removes an interface violation by extending an interface as d
 
 \section{Story Diagram: Remove Interface Violation}
 
-\todomvd{Can we somehow introduce a maybe link somewhere?}
-
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=\linewidth]{./figures/SDRemoveInterfaceViolation}
-\caption{Story Diagram: removeInterfaceViolation}
+\caption{Story Diagram: \fe{removeInterfaceViolation}}
 \label{fig:SDRemoveInterfaceViolation}
 \end{figure}
 
 Figure~\ref{fig:SDRemoveInterfaceViolation} shows the story diagram to remove an interface violation. The underlying type graph is the GAST metamodel that was introduced in Section~\ref{sec:typeGraph}. The story diagram consists of six story nodes and two activity calls. This section explains the story diagram step by step.
 
-The story diagram has five in-parameters: \fe{call}, \fe{interface}, \fe{method}, \fe{castStmt}, and \fe{accessedMethodOwner}. \fe{call} represents the statement that calls the method in the concrete class (the call of \fe{m3} in \fe{m1}). \fe{interface} is the interface that will be extended (\fe{IB} in the example). \fe{method} is the method that is currently not declared in the interface (\fe{m3()}). \fe{castStmt} refers to the statement that down-casts the interface type to the concrete class type (i.e., the statement \fe{B b = (B) ib;}). Finally, \fe{accessedMethodOwner} is the class that contains the called \fe{method} (\fe{B} in the example). The story diagram has no out parameter.
+The story diagram has four in-parameters: \fe{call}, \fe{interface}, \fe{castStmt}, and \fe{accessedMethodOwner}. \fe{call} represents the interface violation, i.e., the statement that calls the method in the concrete class (the call of \fe{m3} in \fe{m1}). \fe{interface} is the interface that will be extended (\fe{IB} in the example). \fe{castStmt} refers to the statement that down-casts the interface type to the concrete class type (i.e., the statement \fe{B b = (B) ib;}). Finally, \fe{accessedMethodOwner} is the class that contains the called \fe{method} (\fe{B} in the example). The story diagram has no out parameter.
 
 The first story node (after the initial node) checks if a method with the same name as the \fe{accessedMethod} already exists in the \fe{interface}.
 This is accomplished by matching all methods of the interface in the set object \fe{interfaceMethods}.
-Then the pattern constraint ensures that none of these methods has the same name as the parameter \fe{method}. \footnote{There are, of course other ways of checking this constraint, e.g., similar to story node~1 in Figure~\ref{fig:SDGenerateMethodStub}. The check here, however, allowed us to show an application of a non-trivial pattern constraint in combination with a set object.}
+Then the pattern constraint ensures that none of these methods has the same name as the parameter \fe{method}\footnote{There are, of course other ways of checking this constraint, e.g., similar to story node~1 in Figure~\ref{fig:SDGenerateMethodStub}. The check here, however, allows us to show an application of a non-trivial pattern constraint in combination with a set object.}.
 If this is not the case, i.e.\ if a method of the name in question already exists in the interface, the application of the story diagram fails.
-Otherwise, the control flow continues via the activity edge labelled with \emph{[success]}.
+Otherwise, the control flow continues via the activity edge labelled with \fe{[success]}.
 
-The second story node creates a method declaration in the interface (\fe{methodDecl}). This new method declaration is declared as public (attribute assignment \fe{visibility := PUBLIC}) and abstract (attribute assignment \fe{abstract := true}). The declaration receives the same name as the formerly called method (attribute assignment \fe{name := method.name}, \fe{m3} in the example). The new method declaration is added to the methods of the \fe{interface} by creating a \fe{method} link between \fe{interface} and \fe{methodDecl}. It is also added to the previously matched set \fe{interfaceMethods} by creating a corresponding inclusion link. The target accessed by the \fe{call} is changed by deleting the link between \fe{call} and \fe{method} and recreating it between \fe{call} and \fe{methodDecl}. The return type of the method is set by creating a new object \fe{typeAccessNew} of the type \fe{DeclarationTypeAccess} and connecting it to \fe{methodDecl}. It points to the same \fe{GASTType} as the old declaration type access of the \fe{method}.
+The second story node creates a method declaration in the \fe{interface} (\fe{methodDecl}). This new method declaration is declared as public (attribute assignment \fe{visibility := PUBLIC}) and abstract (attribute assignment \fe{abstract := true}). The declaration receives the same name as the formerly called \fe{method} (attribute assignment \fe{name := method.name}, \fe{m3} in the example). The new method declaration is added to the methods of the \fe{interface} by creating a \fe{method} link between \fe{interface} and \fe{methodDecl}. It is also added to the previously matched set \fe{interfaceMethods} by creating a corresponding inclusion link. The target accessed by the \fe{call} is changed by deleting the link between \fe{call} and \fe{method} and recreating it between \fe{call} and \fe{methodDecl}. The return type of the method is set by creating a new object \fe{typeAccessNew} of the type \fe{DeclarationTypeAccess} and connecting it to \fe{methodDecl}. It points to the same \fe{GASTType} as the old declaration type access of the \fe{method}.
 
 The next node is an activity call node. It calls the story diagram \fe{copyParameters} which is described in detail in Section~\ref{sec:SDCopyParameters}. This story diagram is responsible for copying all the parameters of the formerly called \fe{method} to the newly created declaration \fe{methodDecl}.
 
-The following story node contains only the two bound, mandatory object variables \fe{castStmt} and \fe{call}. Its responsibility is to try and match the link \fe{accesses} between those object variables. If the link exists that means that the cast and the call are part of the same statement. In that case the matching of the story node is successful and the control flow continues along the transition labelled with \emph{[success]} to story node 4a. If the matching fails, i.e., the link does not exist and the cast and the call are therefore not part of the same statement, the story node is left via the \emph{[failure]} transition. This distinction is necessary because the effort to remove the cast statement is much greater if the cast is not done in the same statement as the call (compare story nodes 4a and 4b).
+The following story node contains only the two bound, mandatory object variables \fe{castStmt} and \fe{call}. Its responsibility is to try and match the link \fe{accesses} between those object variables. If the link exists, the cast and the call are part of the same statement. In that case, the matching of the story node is successful and the control flow continues along the transition labelled with \emph{[success]} to story node 4a. If the matching fails, i.e., the link does not exist and the cast and the call are therefore not part of the same statement, the story node is left via the \emph{[failure]} transition. This distinction is necessary because the effort to remove the cast statement is much greater if the cast is not done in the same statement as the call (compare story nodes 4a and 4b).
 
-If the cast is in the same statement as the call, story node 4a is executed: The \fe{castStmt} and its access to \fe{B} are deleted. If the cast is not in the same statement as the call that means that the cast is executed at some point before the call and the resulting down-cast object is stored in a temporary variable. In this case, this temporary variable can be deleted along with the accesses to it from the call and the cast statements. Instead, a new variable of the interface type (\fe{IB} in the example) is created and then accessed by the call statement. In both cases, activity node 5 is executed next.
+If the cast is in the same statement as the call, story node 4a is executed: The \fe{castStmt} and its access to \fe{B} are deleted. If the cast is not in the same statement as the call that means that the cast is executed at some point before the call and the resulting down-cast object is stored in a temporary variable. In this case, this temporary variable can be deleted along with the accesses to it from the call and the cast statements. Instead, a new variable of the interface type (\fe{IB} in the example) is created and then accessed by the call statement (4b)\footnote{Although this example is more complex than the other story diagrams shown in this report, it is still slightly simplified. For example, the story diagram only considers a local variable to be the target of the type cast. Other cases like fields, global variables, or parameters are neglected here. Moreover, the possibility that the variable is accessed in other parts of the method is not considered here.}. In both cases, activity node 5 is executed next.
 
-Activity node 5 is responsible for adapting all other classes that implement the now changed interface. Thus, the node is a for-each activity node that binds a class which is connected to the \fe{interface} in each iteration. For each of those bindings, the node that is reachable via the \fe{[each time]} edge is executed (see Section \ref{sec:StoryDiagrams}). In this case that is a story diagram call of the story diagram \fe{generateMethodStub} which is explained in the following section. In contrast to the previous call to \fe{copyParameters}, the called story diagram here can either succeed or fail. If the generation of the method stub fails, the application of the calling diagram is also aborted with a failure.
+Activity node 5 is responsible for adapting all other classes that implement the now changed interface. Thus, the node is a for-each activity node that binds a class which is connected to the \fe{interface} in each iteration. For each of those bindings, the node that is reachable via the \fe{[each time]} edge is executed (see Section \ref{sec:StoryDiagrams}). In this case, that is a story diagram call of the story diagram \fe{generateMethodStub} which is explained in the following section. In contrast to the previous call to \fe{copyParameters}, the called story diagram here can either succeed or fail. If the generation of the method stub fails, the application of the calling diagram is also aborted with a failure.
 
 When no new classes implementing the \fe{interface} can be found, i.e.\ method stubs have been generated for all implementing classes, the story diagram terminates at the success final node.
 
-\subsection{Story Diagram: Generate Method Stub}
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=0.9\linewidth]{./figures/SDGenerateMethodStub}
-\caption{Story Diagram: generateMethodStub}
-\label{fig:SDGenerateMethodStub}
-\end{figure}
-
-The story diagram \fe{generateMethodStub} is shown in Figure~\ref{fig:SDGenerateMethodStub}. It creates a method which implements a method \fe{methodDecl} in a given \fe{interface}. This is accomplished by two story nodes and one story diagram call. The first node checks if the given \fe{class} contains a \fe{method} with the same name as the given declaration \fe{methodDecl}. The check is performed by the attribute constraint \fe{'name = methodDecl.name'}. Since the object variable \fe{method} is negative (crossed-out), the matching of this story node is considered successful if \emph{no} such method exists in the class. In that case the next story node is executed. If a method of the name in question already exists, the execution of the first story node fails and the story diagram terminates at the failure final node.
-
-The second story node creates a new \fe{methodStub} in the given \fe{class}. The visibility of this method is set to public and its name is set to the name of the method declaration as signified by the expression \fe{'name := methodDecl.name'}. The correct return type for the method is set by creating a \fe{newTypeAccess} from the \fe{methodStub} to the \fe{returnType} that was passed to this story diagram as a parameter.
-
-Finally, the story diagram \fe{CopyParameters} is called in the story diagram call node. The \fe{method} and the \fe{methodStub} are passed as parameters. The called diagram then copies all parameters from the given \fe{method} to the newly created \fe{methodStub}. It is explained in the following section.
 
 \subsection{Story Diagram: Copy Parameters} \label{sec:SDCopyParameters}
 
@@ -77,8 +61,24 @@ The story diagram \fe{copyParameters} (see Figure~\ref{fig:SDCopyParameters}) co
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=0.9\linewidth]{./figures/SDCopyParameters}
-\caption{Story Diagram: copyParameters}
+\caption{Story Diagram: \fe{copyParameters}}
 \label{fig:SDCopyParameters}
 \end{figure}
 
 The first activity node is a for-each activity node. It successively binds all formal parameters of the given \fe{sourceMethod} to the object variable \fe{param}. Each time a new parameter is bound, the second node is executed. There, a new formal parameter \fe{newParam} is created in the \fe{targetMethod}. Its name is set to the same name as the original parameter's by the expression \fe{'name := param.name'}. The type is also set accordingly by binding the \fe{type} of \fe{param}. Then, a new access to that type is created and connected to \fe{newParam}. The \fe{newParam} is inserted at the last position in the list of parameters as indicated by the link position constraint \fe{{\{last\}}} at the new \fe{formalParameters} link.
+
+
+\subsection{Story Diagram: Generate Method Stub}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.7\linewidth]{./figures/SDGenerateMethodStub}
+\caption{Story Diagram: \fe{generateMethodStub}}
+\label{fig:SDGenerateMethodStub}
+\end{figure}
+
+The story diagram \fe{generateMethodStub} is shown in Figure~\ref{fig:SDGenerateMethodStub}. It creates a \fe{method} which implements a method \fe{methodDecl} from an interface. This is accomplished by two story nodes and one story diagram call. The first node checks if the given \fe{class} contains a \fe{method} with the same name as the given declaration \fe{methodDecl}. The check is performed by the attribute constraint \fe{'name = methodDecl.name'}. Since the object variable \fe{method} is negative (crossed-out), the matching of this story node is considered successful if \emph{no} such method exists in the class. In that case the next story node is executed. If a method of the name in question already exists, the execution of the first story node fails and the story diagram terminates at the failure final node.
+
+The second story node creates a new \fe{methodStub} in the given \fe{class}. The visibility of this method is set to public and its name is set to the name of the method declaration as signified by the expression \fe{'name := methodDecl.name'}. The correct return type for the method is set by creating a \fe{newTypeAccess} from the \fe{methodStub} to the \fe{returnType} that is also accessed by the \fe{methodDecl}.
+
+Finally, the story diagram \fe{CopyParameters} is called in the story diagram call node. The \fe{methodDecl} and the \fe{methodStub} are passed as parameters. The called diagram then copies all parameters from the given \fe{method} to the newly created \fe{methodStub} as explained in Section~\ref{sec:SDCopyParameters}.
