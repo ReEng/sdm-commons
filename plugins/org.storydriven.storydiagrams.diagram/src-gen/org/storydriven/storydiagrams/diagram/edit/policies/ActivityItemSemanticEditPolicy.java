@@ -13,7 +13,6 @@ import org.storydriven.storydiagrams.diagram.edit.commands.ModifyingStoryNodeCre
 import org.storydriven.storydiagrams.diagram.edit.commands.StartNodeCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.StatementNodeCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.StopNodeCreateCommand;
-import org.storydriven.storydiagrams.diagram.edit.commands.StructuredNodeCreateCommand;
 import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes;
 
 /**
@@ -43,9 +42,6 @@ public class ActivityItemSemanticEditPolicy extends StorydiagramsBaseItemSemanti
 		}
 		if (StorydiagramsElementTypes.MatchingStoryNode_2008 == req.getElementType()) {
 			return getGEFWrapper(new MatchingStoryNodeCreateCommand(req));
-		}
-		if (StorydiagramsElementTypes.StructuredNode_2005 == req.getElementType()) {
-			return getGEFWrapper(new StructuredNodeCreateCommand(req));
 		}
 		if (StorydiagramsElementTypes.StartNode_2001 == req.getElementType()) {
 			return getGEFWrapper(new StartNodeCreateCommand(req));

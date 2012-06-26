@@ -220,8 +220,12 @@ public class ActivityCallNodeOutArgumentsSection extends AbstractSection {
 					ObjectVariableExpression expression = PatternsExpressionsFactory.eINSTANCE
 							.createObjectVariableExpression();
 					expression.setObject(var);
-					expressions.put(var.getName(), expression);
-					names.add(var.getName());
+					String key = var.getName();
+					if (key == null) {
+						key = "";
+					}
+					expressions.put(key, expression);
+					names.add(key);
 				}
 
 				// add primitive variabes
@@ -229,8 +233,12 @@ public class ActivityCallNodeOutArgumentsSection extends AbstractSection {
 					PrimitiveVariableExpression expression = PatternsExpressionsFactory.eINSTANCE
 							.createPrimitiveVariableExpression();
 					expression.setPrimitiveVariable(var);
-					expressions.put(var.getName(), expression);
-					names.add(var.getName());
+					String key = var.getName();
+					if (key == null) {
+						key = "";
+					}
+					expressions.put(key, expression);
+					names.add(key);
 				}
 
 				String[] items = names.toArray(new String[names.size()]);

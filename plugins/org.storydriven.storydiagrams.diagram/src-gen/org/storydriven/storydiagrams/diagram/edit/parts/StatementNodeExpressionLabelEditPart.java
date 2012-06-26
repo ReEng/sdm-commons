@@ -51,7 +51,7 @@ public class StatementNodeExpressionLabelEditPart extends CompartmentEditPart im
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5021;
+	public static final int VISUAL_ID = 5020;
 
 	/**
 	 * @generated
@@ -275,7 +275,7 @@ public class StatementNodeExpressionLabelEditPart extends CompartmentEditPart im
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.StatementNode_3005,
+							StorydiagramsElementTypes.StatementNode_2004,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
 									.getType(org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeExpressionLabelEditPart.VISUAL_ID));
@@ -470,7 +470,7 @@ public class StatementNodeExpressionLabelEditPart extends CompartmentEditPart im
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View) getModel();
+		return getPrimaryView();
 	}
 
 	/**

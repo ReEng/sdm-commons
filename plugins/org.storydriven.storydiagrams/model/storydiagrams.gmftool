@@ -31,10 +31,6 @@
           title="Statement Node"
           description="Create New Statement Node"/>
       <tools
-          xsi:type="gmftool:CreationTool"
-          title="Structured Node"
-          description="Create New Structured Node"/>
-      <tools
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -77,10 +73,6 @@
           title="Collection Variable"
           description="Create New Collection Variable"/>
       <tools
-          xsi:type="gmftool:CreationTool"
-          title="Primitive Variable"
-          description="Create New Primitve Variable"/>
-      <tools
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -92,8 +84,8 @@
           description="Create New Inclusion Link"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Path"
-          description="Create New Path"/>
+          title="Maybe Link"
+          description="Create New Maybe Link"/>
       <tools
           xsi:type="gmftool:PaletteSeparator"/>
       <tools

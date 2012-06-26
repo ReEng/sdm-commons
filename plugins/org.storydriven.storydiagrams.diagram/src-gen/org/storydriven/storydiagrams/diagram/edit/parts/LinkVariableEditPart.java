@@ -42,17 +42,17 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof LinkVariableSourceEndLabelEditPart) {
 			((LinkVariableSourceEndLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getFigureLinkVariableSourceEndFigure());
+					.getLinkVariableSourceEndFigure());
 			return true;
 		}
 		if (childEditPart instanceof LinkVariableOperatorLabelEditPart) {
 			((LinkVariableOperatorLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getFigureLinkVariableOperatorFigure());
+					.getLinkVariableOperatorFigure());
 			return true;
 		}
 		if (childEditPart instanceof LinkVariableTargetEndLabelEditPart) {
 			((LinkVariableTargetEndLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getFigureLinkVariableTargetEndFigure());
+					.getLinkVariableTargetEndFigure());
 			return true;
 		}
 		return false;
@@ -104,38 +104,38 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 	 */
 
 	protected Connection createConnectionFigure() {
-		return new LinkVariableFigure();
+		return new LinkVariableFigureDescriptor();
 	}
 
 	/**
 	 * @generated
 	 */
-	public LinkVariableFigure getPrimaryShape() {
-		return (LinkVariableFigure) getFigure();
+	public LinkVariableFigureDescriptor getPrimaryShape() {
+		return (LinkVariableFigureDescriptor) getFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public class LinkVariableFigure extends PolylineConnectionEx {
+	public class LinkVariableFigureDescriptor extends PolylineConnectionEx {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureLinkVariableSourceEndFigure;
+		private WrappingLabel fLinkVariableSourceEndFigure;
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureLinkVariableOperatorFigure;
+		private WrappingLabel fLinkVariableOperatorFigure;
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureLinkVariableTargetEndFigure;
+		private WrappingLabel fLinkVariableTargetEndFigure;
 
 		/**
 		 * @generated
 		 */
-		public LinkVariableFigure() {
+		public LinkVariableFigureDescriptor() {
 			this.setForegroundColor(ColorConstants.black);
 			this.setBackgroundColor(ColorConstants.black);
 
@@ -147,42 +147,42 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 		 */
 		private void createContents() {
 
-			fFigureLinkVariableSourceEndFigure = new WrappingLabel();
-			fFigureLinkVariableSourceEndFigure.setText("");
+			fLinkVariableSourceEndFigure = new WrappingLabel();
+			fLinkVariableSourceEndFigure.setText("");
 
-			this.add(fFigureLinkVariableSourceEndFigure);
+			this.add(fLinkVariableSourceEndFigure);
 
-			fFigureLinkVariableOperatorFigure = new WrappingLabel();
-			fFigureLinkVariableOperatorFigure.setText("");
+			fLinkVariableOperatorFigure = new WrappingLabel();
+			fLinkVariableOperatorFigure.setText("");
 
-			this.add(fFigureLinkVariableOperatorFigure);
+			this.add(fLinkVariableOperatorFigure);
 
-			fFigureLinkVariableTargetEndFigure = new WrappingLabel();
-			fFigureLinkVariableTargetEndFigure.setText("");
+			fLinkVariableTargetEndFigure = new WrappingLabel();
+			fLinkVariableTargetEndFigure.setText("");
 
-			this.add(fFigureLinkVariableTargetEndFigure);
+			this.add(fLinkVariableTargetEndFigure);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureLinkVariableSourceEndFigure() {
-			return fFigureLinkVariableSourceEndFigure;
+		public WrappingLabel getLinkVariableSourceEndFigure() {
+			return fLinkVariableSourceEndFigure;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureLinkVariableOperatorFigure() {
-			return fFigureLinkVariableOperatorFigure;
+		public WrappingLabel getLinkVariableOperatorFigure() {
+			return fLinkVariableOperatorFigure;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureLinkVariableTargetEndFigure() {
-			return fFigureLinkVariableTargetEndFigure;
+		public WrappingLabel getLinkVariableTargetEndFigure() {
+			return fLinkVariableTargetEndFigure;
 		}
 
 	}

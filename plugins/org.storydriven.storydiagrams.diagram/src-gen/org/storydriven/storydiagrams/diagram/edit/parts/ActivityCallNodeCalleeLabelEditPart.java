@@ -51,7 +51,7 @@ public class ActivityCallNodeCalleeLabelEditPart extends CompartmentEditPart imp
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5028;
+	public static final int VISUAL_ID = 5019;
 
 	/**
 	 * @generated
@@ -275,7 +275,7 @@ public class ActivityCallNodeCalleeLabelEditPart extends CompartmentEditPart imp
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.ActivityCallNode_3016,
+							StorydiagramsElementTypes.ActivityCallNode_2006,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
 									.getType(org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeCalleeLabelEditPart.VISUAL_ID));
@@ -470,7 +470,7 @@ public class ActivityCallNodeCalleeLabelEditPart extends CompartmentEditPart imp
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View) getModel();
+		return getPrimaryView();
 	}
 
 	/**

@@ -4,9 +4,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.activities.StartNode;
 import org.storydriven.storydiagrams.diagram.custom.util.TextUtil;
-import org.storydriven.storydiagrams.diagram.edit.parts.StartNodeSignatureLabelEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeLabelEditPart;
 
-public class CustomStartNodeSignatureLabelEditPart extends StartNodeSignatureLabelEditPart {
+public class CustomStartNodeSignatureLabelEditPart extends InitialNodeLabelEditPart {
 	public CustomStartNodeSignatureLabelEditPart(View view) {
 		super(view);
 	}

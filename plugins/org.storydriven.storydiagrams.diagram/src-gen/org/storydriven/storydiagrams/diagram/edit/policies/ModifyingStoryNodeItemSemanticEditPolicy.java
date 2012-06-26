@@ -17,8 +17,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.diagram.edit.commands.ActivityEdgeCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.ActivityEdgeReorientCommand;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeStoryNodePatternCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StoryPatternEditPart;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry;
 import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes;
@@ -81,14 +80,7 @@ public class ModifyingStoryNodeItemSemanticEditPolicy extends StorydiagramsBaseI
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
 			switch (StorydiagramsVisualIDRegistry.getVisualID(node)) {
-			case ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
-					Node cnode = (Node) cit.next();
-					switch (StorydiagramsVisualIDRegistry.getVisualID(cnode)) {
-					}
-				}
-				break;
-			case ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID:
+			case ModifyingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (StorydiagramsVisualIDRegistry.getVisualID(cnode)) {

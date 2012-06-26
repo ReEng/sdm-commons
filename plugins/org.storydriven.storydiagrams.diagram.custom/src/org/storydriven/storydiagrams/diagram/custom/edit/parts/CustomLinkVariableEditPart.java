@@ -76,9 +76,9 @@ public class CustomLinkVariableEditPart extends LinkVariableEditPart {
 		}
 
 		if (BindingSemantics.NEGATIVE.equals(link.getBindingSemantics())) {
-//			getPrimaryShape().add(cross);
+			// getPrimaryShape().add(cross);
 		} else if (getPrimaryShape().getChildren().contains(cross)) {
-//			getPrimaryShape().remove(cross);
+			// getPrimaryShape().remove(cross);
 		}
 
 	}

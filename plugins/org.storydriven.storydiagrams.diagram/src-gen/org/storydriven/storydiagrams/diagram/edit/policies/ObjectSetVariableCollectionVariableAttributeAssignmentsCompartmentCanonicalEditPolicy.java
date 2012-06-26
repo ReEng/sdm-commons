@@ -20,16 +20,17 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.diagram.edit.parts.TextualExpressionEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramUpdater;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsNodeDescriptor;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 /**
  * @generated
  */
-public class StatementNodeStatementNodeCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
+public class ObjectSetVariableCollectionVariableAttributeAssignmentsCompartmentCanonicalEditPolicy extends
+		CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -47,7 +48,7 @@ public class StatementNodeStatementNodeCompartmentCanonicalEditPolicy extends Ca
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return ActivitiesPackage.eINSTANCE.getStatementNode_StatementExpression();
+		return PatternsPackage.eINSTANCE.getObjectVariable_AttributeAssignment();
 	}
 
 	/**
@@ -58,7 +59,7 @@ public class StatementNodeStatementNodeCompartmentCanonicalEditPolicy extends Ca
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<StorydiagramsNodeDescriptor> childDescriptors = StorydiagramsDiagramUpdater
-				.getStatementNodeStatementNodeCompartment_7001SemanticChildren(viewObject);
+				.getObjectSetVariableCollectionVariableAttributeAssignmentsCompartment_7023SemanticChildren(viewObject);
 		for (StorydiagramsNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -76,7 +77,7 @@ public class StatementNodeStatementNodeCompartmentCanonicalEditPolicy extends Ca
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return TextualExpressionEditPart.VISUAL_ID == StorydiagramsVisualIDRegistry.getVisualID(view);
+		return AttributeAssignmentEditPart.VISUAL_ID == StorydiagramsVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
@@ -88,7 +89,8 @@ public class StatementNodeStatementNodeCompartmentCanonicalEditPolicy extends Ca
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<StorydiagramsNodeDescriptor> childDescriptors = StorydiagramsDiagramUpdater
-				.getStatementNodeStatementNodeCompartment_7001SemanticChildren((View) getHost().getModel());
+				.getObjectSetVariableCollectionVariableAttributeAssignmentsCompartment_7023SemanticChildren((View) getHost()
+						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();

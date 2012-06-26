@@ -2,28 +2,28 @@ package org.storydriven.storydiagrams.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-import org.storydriven.storydiagrams.diagram.edit.commands.TextualExpressionCreateCommand;
+import org.storydriven.storydiagrams.diagram.edit.commands.Constraint2CreateCommand;
 import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes;
 
 /**
  * @generated
  */
-public class StatementNodeStatementNodeCompartment2ItemSemanticEditPolicy extends
+public class MatchingPatternStoryPatternConstraintsCompartmentItemSemanticEditPolicy extends
 		StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public StatementNodeStatementNodeCompartment2ItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.StatementNode_3005);
+	public MatchingPatternStoryPatternConstraintsCompartmentItemSemanticEditPolicy() {
+		super(StorydiagramsElementTypes.MatchingPattern_3012);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.TextualExpression_3001 == req.getElementType()) {
-			return getGEFWrapper(new TextualExpressionCreateCommand(req));
+		if (StorydiagramsElementTypes.Constraint_3017 == req.getElementType()) {
+			return getGEFWrapper(new Constraint2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

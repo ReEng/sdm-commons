@@ -263,7 +263,7 @@ public final class TextUtil {
 		return append(new StringBuilder(), expression).toString();
 	}
 
-	private static StringBuilder append(StringBuilder builder, Expression expression) {
+	public static StringBuilder append(StringBuilder builder, Expression expression) {
 		if (expression == null) {
 			return builder.append(expression);
 		}

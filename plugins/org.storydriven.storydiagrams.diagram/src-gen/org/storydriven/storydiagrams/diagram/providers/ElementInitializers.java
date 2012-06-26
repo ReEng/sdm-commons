@@ -47,34 +47,6 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ModifyingStoryNode_3007(ModifyingStoryNode instance) {
-		try {
-			StoryPattern newInstance_0_0 = PatternsFactory.eINSTANCE.createStoryPattern();
-			instance.setOwnedRule(newInstance_0_0);
-			newInstance_0_0.setComment("");
-
-		} catch (RuntimeException e) {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public void init_MatchingStoryNode_3017(MatchingStoryNode instance) {
-		try {
-			MatchingPattern newInstance_0_0 = PatternsFactory.eINSTANCE.createMatchingPattern();
-			instance.setOwnedPattern(newInstance_0_0);
-			newInstance_0_0.setComment("");
-
-		} catch (RuntimeException e) {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
-		}
-	}
-
-	/**
-	 * @generated
-	 */
 	public static ElementInitializers getInstance() {
 		ElementInitializers cached = StorydiagramsDiagramEditorPlugin.getInstance().getElementInitializers();
 		if (cached == null) {

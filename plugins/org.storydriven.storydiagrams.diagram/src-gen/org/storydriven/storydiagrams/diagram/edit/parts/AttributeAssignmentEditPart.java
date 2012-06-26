@@ -555,7 +555,7 @@ public class AttributeAssignmentEditPart extends CompartmentEditPart implements 
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrappingLabel();
+		return new Label();
 	}
 
 }

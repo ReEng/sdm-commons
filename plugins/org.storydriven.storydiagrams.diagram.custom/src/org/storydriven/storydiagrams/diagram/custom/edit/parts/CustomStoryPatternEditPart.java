@@ -9,23 +9,21 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.diagram.edit.parts.StoryPatternEditPart;
 
 public class CustomStoryPatternEditPart extends StoryPatternEditPart {
-
 	public CustomStoryPatternEditPart(View view) {
 		super(view);
-		
-		EditPolicy newPolicy = new NonResizableEditPolicy() {
+
+		EditPolicy resizePolicy = new NonResizableEditPolicy() {
 			@Override
 			protected Command getMoveCommand(ChangeBoundsRequest request) {
 				return UnexecutableCommand.INSTANCE;
 			}
-			
+
 			@Override
 			public boolean isDragAllowed() {
 				return false;
 			}
 		};
-		
-		this.installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, newPolicy);
-	}
 
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, resizePolicy);
+	}
 }

@@ -110,7 +110,7 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(22, 22);
 		return result;
 	}
 
@@ -213,9 +213,6 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof StructuredNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
 		if (targetEditPart instanceof StartNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
@@ -223,30 +220,6 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof StopNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof ActivityCallNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof ModifyingStoryNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof MatchingStoryNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StatementNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StructuredNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StartNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof JunctionNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StopNode2EditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		return types;
@@ -262,18 +235,9 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
-			types.add(StorydiagramsElementTypes.StructuredNode_2005);
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StopNode_2002);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_3016);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_3017);
-			types.add(StorydiagramsElementTypes.StatementNode_3005);
-			types.add(StorydiagramsElementTypes.StructuredNode_3006);
-			types.add(StorydiagramsElementTypes.StartNode_3003);
-			types.add(StorydiagramsElementTypes.JunctionNode_3002);
-			types.add(StorydiagramsElementTypes.StopNode_3004);
 		}
 		return types;
 	}
@@ -297,18 +261,9 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
-			types.add(StorydiagramsElementTypes.StructuredNode_2005);
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StopNode_2002);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_3016);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_3017);
-			types.add(StorydiagramsElementTypes.StatementNode_3005);
-			types.add(StorydiagramsElementTypes.StructuredNode_3006);
-			types.add(StorydiagramsElementTypes.StartNode_3003);
-			types.add(StorydiagramsElementTypes.JunctionNode_3002);
-			types.add(StorydiagramsElementTypes.StopNode_3004);
 		}
 		return types;
 	}
@@ -322,15 +277,15 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		public JunctionNodeFigure() {
-			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
-			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(40)));
-			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
+			this.addPoint(new Point(getMapMode().DPtoLP(11), getMapMode().DPtoLP(0)));
+			this.addPoint(new Point(getMapMode().DPtoLP(22), getMapMode().DPtoLP(11)));
+			this.addPoint(new Point(getMapMode().DPtoLP(11), getMapMode().DPtoLP(22)));
+			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(11)));
 			this.setFill(true);
 			this.setForegroundColor(ColorConstants.black);
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
-			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(22), getMapMode().DPtoLP(22)));
+			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(22), getMapMode().DPtoLP(22)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(22), getMapMode().DPtoLP(22)));
 		}
 
 	}

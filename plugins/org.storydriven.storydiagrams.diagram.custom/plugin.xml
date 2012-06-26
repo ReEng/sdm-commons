@@ -4,13 +4,155 @@
 
    <extension-point id="expressionSourceViewerExtension" name="Expression Source Viewer Extension" schema="schema/expressionSourceViewerExtension.exsd"/>
 
+    <extension point="de.fujaba.modelinstance.modelelementcategory">
+      <category
+            key="org.storydrivening.activities.category"
+            name="activities">
+         <child
+               class="StartNode"
+               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
+         </child>
+         <child
+               class="StopNode"
+               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
+         </child>
+         <child
+               class="JunctionNode"
+               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
+         </child>
+         <child
+               class="StatementNode"
+               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
+         </child>
+         <child
+               class="StructuredNode"
+               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
+         </child>
+         <child
+               class="ModifyingStoryNode"
+               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
+         </child>
+      </category>
+   </extension>
+
+   <extension point="de.fujaba.newwizard.diagraminformation">
+      <editor
+            preferencesHint="org.storydriven.storydiagrams.diagram"
+            editorId="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"
+            editorName="Story Diagram Editor"
+            fileExtension="storydiagrams_diagram"
+            modelElementCategoryKey="org.storydriven.activities.category"
+            modelId="Storydiagrams">
+         <diagramElement
+               packageNsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0"
+               className="Activity">
+         </diagramElement>
+         <node
+               domainElement="StartNode"
+               semanticHint="2001">
+         </node>
+         <node
+               domainElement="StopNode"
+               semanticHint="2002">
+         </node>
+         <node
+               domainElement="JunctionNode"
+               semanticHint="2003">
+         </node>
+         <node
+               domainElement="StatementNode"
+               semanticHint="2004">
+         </node>
+         <node
+               domainElement="StructuredNode"
+               semanticHint="2005">
+         </node>
+         <node
+               domainElement="ModifyingStoryNode"
+               semanticHint="2007">
+         </node>
+         <node
+               domainElement="TextualExpression"
+               semanticHint="3015">
+         </node>
+         <node
+               domainElement="JunctionNode"
+               semanticHint="3001">
+         </node>
+         <node
+               domainElement="StartNode"
+               semanticHint="3002">
+         </node>
+         <node
+               domainElement="StopNode"
+               semanticHint="3004">
+         </node>
+         <node
+               domainElement="StatementNode"
+               semanticHint="3003">
+         </node>
+         <node
+               domainElement="StructuredNode"
+               semanticHint="3005">
+         </node>
+         <node
+               domainElement="ModifyingStoryNode"
+               semanticHint="3011">
+         </node>
+         <node
+               domainElement="StoryPattern"
+               semanticHint="3008">
+         </node>
+         <node
+               domainElement="ObjectVariable"
+               semanticHint="3012">
+         </node>
+         <node
+               domainElement="AttributeAssignment"
+               semanticHint="3013">
+         </node>
+         <node
+               domainElement="PrimitiveVariable"
+               semanticHint="3014">
+         </node>
+      </editor>
+   </extension>
+
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="org.storydriven.storydiagrams.diagram.custom.providers.CustomSDMEditPartProvider">
+            class="org.storydriven.storydiagrams.diagram.custom.providers.CustomStorydiagramsEditPartProvider">
          <Priority
-               name="Low">
+               name="Medium">
          </Priority>
       </editpartProvider>
+   </extension>
+   
+	<extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
+		<layoutProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.TopDownProvider">
+			<Priority name="High"></Priority>
+		</layoutProvider>
+	</extension> 
+
+    <extension point="org.eclipse.ui.commands">
+		<command
+			categoryId="de.fujaba"
+			description="Initialize Story Diagram"
+			defaultHandler="org.storydriven.storydiagrams.diagram.custom.part.SDMFujabaDiagramFileAction"
+			id="org.storydriven.storydiagrams.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
+   <extension id="creation-wizard" point="org.eclipse.ui.newWizards">
+      <wizard
+            category="de.fujaba/de.fujaba.diagrams"
+            class="org.storydriven.storydiagrams.diagram.custom.part.CustomActivityDiagramCreationWizard"
+            id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
+            name="Activity Diagram">
+         <description>
+            Creates a new Activity Diagram.
+         </description>
+      </wizard>
    </extension>
 
    <extension point="org.eclipse.ui.popupMenus">
@@ -196,18 +338,6 @@
       </objectContribution>
    </extension>
 
-   <extension id="creation-wizard" point="org.eclipse.ui.newWizards">
-      <wizard
-            category="de.fujaba/de.fujaba.diagrams"
-            class="org.storydriven.storydiagrams.diagram.custom.part.CustomActivityDiagramCreationWizard"
-            id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
-            name="Activity Diagram">
-         <description>
-            Creates a new Activity Diagram.
-         </description>
-      </wizard>
-   </extension>
-
     <extension point="org.eclipse.ui.menus">
 	   <menuContribution
 	         allPopups="false"
@@ -227,130 +357,6 @@
 	      </command>
 	   </menuContribution>
 	</extension>
-
-    <extension point="org.eclipse.ui.commands">
-		<command
-			categoryId="de.fujaba"
-			description="Initialize Story Diagram"
-			defaultHandler="org.storydriven.storydiagrams.diagram.custom.part.SDMFujabaDiagramFileAction"
-			id="org.storydriven.storydiagrams.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
-
-    <extension point="de.fujaba.modelinstance.modelelementcategory">
-      <category
-            key="org.storydrivening.activities.category"
-            name="activities">
-         <child
-               class="StartNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="StopNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="JunctionNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="StatementNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="StructuredNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="ModifyingStoryNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-      </category>
-   </extension>
-
-   <extension point="de.fujaba.newwizard.diagraminformation">
-      <editor
-            preferencesHint="org.storydriven.storydiagrams.diagram"
-            editorId="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"
-            editorName="Story Diagram Editor"
-            fileExtension="storydiagrams_diagram"
-            modelElementCategoryKey="org.storydriven.activities.category"
-            modelId="Storydiagrams">
-         <diagramElement
-               packageNsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0"
-               className="Activity">
-         </diagramElement>
-         <node
-               domainElement="StartNode"
-               semanticHint="2001">
-         </node>
-         <node
-               domainElement="StopNode"
-               semanticHint="2002">
-         </node>
-         <node
-               domainElement="JunctionNode"
-               semanticHint="2003">
-         </node>
-         <node
-               domainElement="StatementNode"
-               semanticHint="2004">
-         </node>
-         <node
-               domainElement="StructuredNode"
-               semanticHint="2005">
-         </node>
-         <node
-               domainElement="ModifyingStoryNode"
-               semanticHint="2007">
-         </node>
-         <node
-               domainElement="TextualExpression"
-               semanticHint="3015">
-         </node>
-         <node
-               domainElement="JunctionNode"
-               semanticHint="3001">
-         </node>
-         <node
-               domainElement="StartNode"
-               semanticHint="3002">
-         </node>
-         <node
-               domainElement="StopNode"
-               semanticHint="3004">
-         </node>
-         <node
-               domainElement="StatementNode"
-               semanticHint="3003">
-         </node>
-         <node
-               domainElement="StructuredNode"
-               semanticHint="3005">
-         </node>
-         <node
-               domainElement="ModifyingStoryNode"
-               semanticHint="3011">
-         </node>
-         <node
-               domainElement="StoryPattern"
-               semanticHint="3008">
-         </node>
-         <node
-               domainElement="ObjectVariable"
-               semanticHint="3012">
-         </node>
-         <node
-               domainElement="AttributeAssignment"
-               semanticHint="3013">
-         </node>
-         <node
-               domainElement="PrimitiveVariable"
-               semanticHint="3014">
-         </node>
-      </editor>
-   </extension>
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
@@ -530,12 +536,6 @@
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.JunctionNodeFilter"
                id="JunctionNode.comment"
                tab="documentation">
-         </propertySection>
-         <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.StopNodeFlowStopOnlySection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StopNodeFilter"
-               id="StopNode.flowOnly"
-               tab="core">
          </propertySection>
          <propertySection
                afterSection="StopNode.flowOnly"

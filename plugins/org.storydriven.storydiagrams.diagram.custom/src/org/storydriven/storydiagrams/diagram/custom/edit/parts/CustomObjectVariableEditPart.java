@@ -17,21 +17,21 @@ public class CustomObjectVariableEditPart extends ObjectVariableEditPart {
 	}
 
 	@Override
+	protected void refreshVisuals() {
+		super.refreshVisuals();
+		updateMainFigure();
+	}
+
+	@Override
 	protected void handleNotificationEvent(Notification notification) {
 		if (notification.getNotifier() instanceof ObjectVariable) {
-			updateFigure();
+			updateMainFigure();
 		}
 
 		super.handleNotificationEvent(notification);
 	}
 
-	@Override
-	protected void refreshVisuals() {
-		super.refreshVisuals();
-		updateFigure();
-	}
-
-	private void updateFigure() {
+	private void updateMainFigure() {
 		ObjectVariable ov = (ObjectVariable) ((View) getModel()).getElement();
 
 		int style = Graphics.LINE_SOLID;

@@ -778,6 +778,9 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 		// collect them
 		for (ObjectVariable variable : variables) {
 			String key = variable.getName();
+			if (key == null) {
+				key = "";
+			}
 			objectVariables.put(key, variable);
 		}
 
@@ -806,6 +809,9 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 		// collect them
 		for (PrimitiveVariable variable : variables) {
 			String key = variable.getName();
+			if (key == null) {
+				key = "";
+			}
 			primitiveVariables.put(key, variable);
 		}
 

@@ -101,22 +101,22 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new StopNodeFigure();
+		return primaryShape = new ActivityFinalNodeFigureDescriptor();
 	}
 
 	/**
 	 * @generated
 	 */
-	public StopNodeFigure getPrimaryShape() {
-		return (StopNodeFigure) primaryShape;
+	public ActivityFinalNodeFigureDescriptor getPrimaryShape() {
+		return (ActivityFinalNodeFigureDescriptor) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof StopNodeSignatureLabelEditPart) {
-			((StopNodeSignatureLabelEditPart) childEditPart).setLabel(getPrimaryShape().getStopNodeSignatureLabel());
+		if (childEditPart instanceof ActivityFinalNodeLabelEditPart) {
+			((ActivityFinalNodeLabelEditPart) childEditPart).setLabel(getPrimaryShape().getActivityFinalNodeLabel());
 			return true;
 		}
 		return false;
@@ -126,7 +126,7 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof StopNodeSignatureLabelEditPart) {
+		if (childEditPart instanceof ActivityFinalNodeLabelEditPart) {
 			return true;
 		}
 		return false;
@@ -249,7 +249,7 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(StopNodeSignatureLabelEditPart.VISUAL_ID));
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(ActivityFinalNodeLabelEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -278,9 +278,6 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof StructuredNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
 		if (targetEditPart instanceof StartNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
@@ -288,30 +285,6 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.StopNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof ActivityCallNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof ModifyingStoryNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof MatchingStoryNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StatementNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StructuredNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StartNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof JunctionNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StopNode2EditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		return types;
@@ -327,18 +300,9 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
-			types.add(StorydiagramsElementTypes.StructuredNode_2005);
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StopNode_2002);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_3016);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_3017);
-			types.add(StorydiagramsElementTypes.StatementNode_3005);
-			types.add(StorydiagramsElementTypes.StructuredNode_3006);
-			types.add(StorydiagramsElementTypes.StartNode_3003);
-			types.add(StorydiagramsElementTypes.JunctionNode_3002);
-			types.add(StorydiagramsElementTypes.StopNode_3004);
 		}
 		return types;
 	}
@@ -362,18 +326,9 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
-			types.add(StorydiagramsElementTypes.StructuredNode_2005);
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StopNode_2002);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_3016);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_3017);
-			types.add(StorydiagramsElementTypes.StatementNode_3005);
-			types.add(StorydiagramsElementTypes.StructuredNode_3006);
-			types.add(StorydiagramsElementTypes.StartNode_3003);
-			types.add(StorydiagramsElementTypes.JunctionNode_3002);
-			types.add(StorydiagramsElementTypes.StopNode_3004);
 		}
 		return types;
 	}
@@ -381,17 +336,17 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class StopNodeFigure extends RectangleFigure {
+	public class ActivityFinalNodeFigureDescriptor extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fStopNodeSignatureLabel;
+		private WrappingLabel fActivityFinalNodeLabel;
 
 		/**
 		 * @generated
 		 */
-		public StopNodeFigure() {
+		public ActivityFinalNodeFigureDescriptor() {
 
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
@@ -407,42 +362,42 @@ public class StopNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			Ellipse stopNodeOuterEllipse0 = new Ellipse();
-			stopNodeOuterEllipse0.setForegroundColor(ColorConstants.black);
-			stopNodeOuterEllipse0.setPreferredSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
-			stopNodeOuterEllipse0.setMaximumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
-			stopNodeOuterEllipse0.setMinimumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			Ellipse activityFinalNodeEllipse0 = new Ellipse();
+			activityFinalNodeEllipse0.setForegroundColor(ColorConstants.black);
+			activityFinalNodeEllipse0.setPreferredSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			activityFinalNodeEllipse0.setMaximumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			activityFinalNodeEllipse0.setMinimumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
 
-			GridData constraintStopNodeOuterEllipse0 = new GridData();
-			constraintStopNodeOuterEllipse0.verticalAlignment = GridData.CENTER;
-			constraintStopNodeOuterEllipse0.horizontalAlignment = GridData.CENTER;
-			constraintStopNodeOuterEllipse0.horizontalIndent = 0;
-			constraintStopNodeOuterEllipse0.horizontalSpan = 1;
-			constraintStopNodeOuterEllipse0.verticalSpan = 1;
-			constraintStopNodeOuterEllipse0.grabExcessHorizontalSpace = false;
-			constraintStopNodeOuterEllipse0.grabExcessVerticalSpace = false;
-			this.add(stopNodeOuterEllipse0, constraintStopNodeOuterEllipse0);
+			GridData constraintActivityFinalNodeEllipse0 = new GridData();
+			constraintActivityFinalNodeEllipse0.verticalAlignment = GridData.CENTER;
+			constraintActivityFinalNodeEllipse0.horizontalAlignment = GridData.CENTER;
+			constraintActivityFinalNodeEllipse0.horizontalIndent = 0;
+			constraintActivityFinalNodeEllipse0.horizontalSpan = 1;
+			constraintActivityFinalNodeEllipse0.verticalSpan = 1;
+			constraintActivityFinalNodeEllipse0.grabExcessHorizontalSpace = false;
+			constraintActivityFinalNodeEllipse0.grabExcessVerticalSpace = false;
+			this.add(activityFinalNodeEllipse0, constraintActivityFinalNodeEllipse0);
 
-			fStopNodeSignatureLabel = new WrappingLabel();
-			fStopNodeSignatureLabel.setText("");
+			fActivityFinalNodeLabel = new WrappingLabel();
+			fActivityFinalNodeLabel.setText("");
 
-			GridData constraintFStopNodeSignatureLabel = new GridData();
-			constraintFStopNodeSignatureLabel.verticalAlignment = GridData.CENTER;
-			constraintFStopNodeSignatureLabel.horizontalAlignment = GridData.CENTER;
-			constraintFStopNodeSignatureLabel.horizontalIndent = 0;
-			constraintFStopNodeSignatureLabel.horizontalSpan = 1;
-			constraintFStopNodeSignatureLabel.verticalSpan = 1;
-			constraintFStopNodeSignatureLabel.grabExcessHorizontalSpace = true;
-			constraintFStopNodeSignatureLabel.grabExcessVerticalSpace = false;
-			this.add(fStopNodeSignatureLabel, constraintFStopNodeSignatureLabel);
+			GridData constraintFActivityFinalNodeLabel = new GridData();
+			constraintFActivityFinalNodeLabel.verticalAlignment = GridData.CENTER;
+			constraintFActivityFinalNodeLabel.horizontalAlignment = GridData.CENTER;
+			constraintFActivityFinalNodeLabel.horizontalIndent = 0;
+			constraintFActivityFinalNodeLabel.horizontalSpan = 1;
+			constraintFActivityFinalNodeLabel.verticalSpan = 1;
+			constraintFActivityFinalNodeLabel.grabExcessHorizontalSpace = true;
+			constraintFActivityFinalNodeLabel.grabExcessVerticalSpace = false;
+			this.add(fActivityFinalNodeLabel, constraintFActivityFinalNodeLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getStopNodeSignatureLabel() {
-			return fStopNodeSignatureLabel;
+		public WrappingLabel getActivityFinalNodeLabel() {
+			return fActivityFinalNodeLabel;
 		}
 
 	}

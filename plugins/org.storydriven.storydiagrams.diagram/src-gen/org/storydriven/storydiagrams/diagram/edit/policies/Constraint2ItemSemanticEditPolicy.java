@@ -12,13 +12,13 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class TextualExpressionItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
+public class Constraint2ItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public TextualExpressionItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.TextualExpression_3001);
+	public Constraint2ItemSemanticEditPolicy() {
+		super(StorydiagramsElementTypes.Constraint_3017);
 	}
 
 	/**

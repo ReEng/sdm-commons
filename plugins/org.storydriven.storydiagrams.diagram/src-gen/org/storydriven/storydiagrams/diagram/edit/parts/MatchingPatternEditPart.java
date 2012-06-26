@@ -1,5 +1,6 @@
 package org.storydriven.storydiagrams.diagram.edit.parts;
 
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RoundedRectangle;
@@ -13,15 +14,21 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.storydriven.storydiagrams.diagram.edit.policies.MatchingPatternItemSemanticEditPolicy;
+import org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry;
+import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes;
 
 /**
  * @generated
@@ -54,6 +61,7 @@ public class MatchingPatternEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new MatchingPatternItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
@@ -90,24 +98,30 @@ public class MatchingPatternEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new StoryPatternFigure();
+		return primaryShape = new StoryPatternFigureDescriptor();
 	}
 
 	/**
 	 * @generated
 	 */
-	public StoryPatternFigure getPrimaryShape() {
-		return (StoryPatternFigure) primaryShape;
+	public StoryPatternFigureDescriptor getPrimaryShape() {
+		return (StoryPatternFigureDescriptor) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof MatchingPatternStoryPatternCompartementEditPart) {
-			IFigure pane = getPrimaryShape().getFigureStoryPatternInnerRectangle();
+		if (childEditPart instanceof MatchingPatternStoryPatternContentCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getStoryPatternContentRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((MatchingPatternStoryPatternCompartementEditPart) childEditPart).getFigure());
+			pane.add(((MatchingPatternStoryPatternContentCompartmentEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof MatchingPatternStoryPatternConstraintsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getStoryPatternConstraintsRectangle();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((MatchingPatternStoryPatternConstraintsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -117,10 +131,16 @@ public class MatchingPatternEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof MatchingPatternStoryPatternCompartementEditPart) {
-			IFigure pane = getPrimaryShape().getFigureStoryPatternInnerRectangle();
+		if (childEditPart instanceof MatchingPatternStoryPatternContentCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getStoryPatternContentRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((MatchingPatternStoryPatternCompartementEditPart) childEditPart).getFigure());
+			pane.remove(((MatchingPatternStoryPatternContentCompartmentEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof MatchingPatternStoryPatternConstraintsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getStoryPatternConstraintsRectangle();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((MatchingPatternStoryPatternConstraintsCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -150,8 +170,11 @@ public class MatchingPatternEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof MatchingPatternStoryPatternCompartementEditPart) {
-			return getPrimaryShape().getFigureStoryPatternInnerRectangle();
+		if (editPart instanceof MatchingPatternStoryPatternContentCompartmentEditPart) {
+			return getPrimaryShape().getStoryPatternContentRectangle();
+		}
+		if (editPart instanceof MatchingPatternStoryPatternConstraintsCompartmentEditPart) {
+			return getPrimaryShape().getStoryPatternConstraintsRectangle();
 		}
 		return getContentPane();
 	}
@@ -245,21 +268,45 @@ public class MatchingPatternEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class StoryPatternFigure extends RoundedRectangle {
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
+					.getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			if (type == StorydiagramsElementTypes.Constraint_3017) {
+				return getChildBySemanticHint(StorydiagramsVisualIDRegistry
+						.getType(MatchingPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
+	}
+
+	/**
+	 * @generated
+	 */
+	public class StoryPatternFigureDescriptor extends RoundedRectangle {
 
 		/**
 		 * @generated
 		 */
-		private RoundedRectangle fFigureStoryPatternInnerRectangle;
+		private RoundedRectangle fStoryPatternContentRectangle;
+		/**
+		 * @generated
+		 */
+		private RoundedRectangle fStoryPatternConstraintsRectangle;
 
 		/**
 		 * @generated
 		 */
-		public StoryPatternFigure() {
+		public StoryPatternFigureDescriptor() {
+
+			BorderLayout layoutThis = new BorderLayout();
+			this.setLayoutManager(layoutThis);
+
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
 			this.setFill(false);
 			this.setOutline(false);
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(50), getMapMode().DPtoLP(50)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(100), getMapMode().DPtoLP(65)));
 
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0)));
@@ -271,26 +318,46 @@ public class MatchingPatternEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureStoryPatternInnerRectangle = new RoundedRectangle();
-			fFigureStoryPatternInnerRectangle.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode()
+			fStoryPatternContentRectangle = new RoundedRectangle();
+			fStoryPatternContentRectangle.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode()
 					.DPtoLP(16)));
-			fFigureStoryPatternInnerRectangle.setFill(false);
-			fFigureStoryPatternInnerRectangle.setOutline(false);
-			fFigureStoryPatternInnerRectangle.setMinimumSize(new Dimension(getMapMode().DPtoLP(50), getMapMode()
+			fStoryPatternContentRectangle.setFill(false);
+			fStoryPatternContentRectangle.setOutline(false);
+			fStoryPatternContentRectangle.setMinimumSize(new Dimension(getMapMode().DPtoLP(100), getMapMode()
 					.DPtoLP(50)));
 
-			fFigureStoryPatternInnerRectangle.setBorder(new MarginBorder(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			fStoryPatternContentRectangle.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 
-			this.add(fFigureStoryPatternInnerRectangle);
+			this.add(fStoryPatternContentRectangle, BorderLayout.CENTER);
+
+			fStoryPatternConstraintsRectangle = new RoundedRectangle();
+			fStoryPatternConstraintsRectangle.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode()
+					.DPtoLP(16)));
+			fStoryPatternConstraintsRectangle.setFill(false);
+			fStoryPatternConstraintsRectangle.setOutline(false);
+			fStoryPatternConstraintsRectangle.setMinimumSize(new Dimension(getMapMode().DPtoLP(100), getMapMode()
+					.DPtoLP(15)));
+
+			fStoryPatternConstraintsRectangle.setBorder(new MarginBorder(getMapMode().DPtoLP(4),
+					getMapMode().DPtoLP(4), getMapMode().DPtoLP(4), getMapMode().DPtoLP(4)));
+
+			this.add(fStoryPatternConstraintsRectangle, BorderLayout.BOTTOM);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public RoundedRectangle getFigureStoryPatternInnerRectangle() {
-			return fFigureStoryPatternInnerRectangle;
+		public RoundedRectangle getStoryPatternContentRectangle() {
+			return fStoryPatternContentRectangle;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RoundedRectangle getStoryPatternConstraintsRectangle() {
+			return fStoryPatternConstraintsRectangle;
 		}
 
 	}

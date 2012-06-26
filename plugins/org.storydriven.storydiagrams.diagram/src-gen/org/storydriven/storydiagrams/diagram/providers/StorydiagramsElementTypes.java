@@ -16,33 +16,24 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.Constraint2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ConstraintEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.JunctionNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingPatternEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ObjectSetVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.PathEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.PrimitiveVariableEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.StartNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StartNodeEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.StatementNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.StopNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StopNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StoryPatternEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.StructuredNode2EditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.StructuredNodeEditPart;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorPlugin;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
@@ -95,10 +86,6 @@ public class StorydiagramsElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType StructuredNode_2005 = getElementType("org.storydriven.storydiagrams.diagram.StructuredNode_2005"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
 	public static final IElementType StartNode_2001 = getElementType("org.storydriven.storydiagrams.diagram.StartNode_2001"); //$NON-NLS-1$
 	/**
 	 * @generated
@@ -127,43 +114,15 @@ public class StorydiagramsElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType PrimitiveVariable_3011 = getElementType("org.storydriven.storydiagrams.diagram.PrimitiveVariable_3011"); //$NON-NLS-1$
+	public static final IElementType ObjectSetVariable_3018 = getElementType("org.storydriven.storydiagrams.diagram.ObjectSetVariable_3018"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Constraint_3017 = getElementType("org.storydriven.storydiagrams.diagram.Constraint_3017"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType MatchingPattern_3012 = getElementType("org.storydriven.storydiagrams.diagram.MatchingPattern_3012"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType ActivityCallNode_3016 = getElementType("org.storydriven.storydiagrams.diagram.ActivityCallNode_3016"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType ModifyingStoryNode_3007 = getElementType("org.storydriven.storydiagrams.diagram.ModifyingStoryNode_3007"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType MatchingStoryNode_3017 = getElementType("org.storydriven.storydiagrams.diagram.MatchingStoryNode_3017"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType StatementNode_3005 = getElementType("org.storydriven.storydiagrams.diagram.StatementNode_3005"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType StructuredNode_3006 = getElementType("org.storydriven.storydiagrams.diagram.StructuredNode_3006"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType StartNode_3003 = getElementType("org.storydriven.storydiagrams.diagram.StartNode_3003"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType JunctionNode_3002 = getElementType("org.storydriven.storydiagrams.diagram.JunctionNode_3002"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType StopNode_3004 = getElementType("org.storydriven.storydiagrams.diagram.StopNode_3004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -172,10 +131,6 @@ public class StorydiagramsElementTypes {
 	 * @generated
 	 */
 	public static final IElementType LinkVariable_4002 = getElementType("org.storydriven.storydiagrams.diagram.LinkVariable_4002"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType Path_4003 = getElementType("org.storydriven.storydiagrams.diagram.Path_4003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -298,8 +253,6 @@ public class StorydiagramsElementTypes {
 
 			elements.put(MatchingStoryNode_2008, ActivitiesPackage.eINSTANCE.getMatchingStoryNode());
 
-			elements.put(StructuredNode_2005, ActivitiesPackage.eINSTANCE.getStructuredNode());
-
 			elements.put(StartNode_2001, ActivitiesPackage.eINSTANCE.getStartNode());
 
 			elements.put(JunctionNode_2003, ActivitiesPackage.eINSTANCE.getJunctionNode());
@@ -314,31 +267,15 @@ public class StorydiagramsElementTypes {
 
 			elements.put(Constraint_3013, PatternsPackage.eINSTANCE.getConstraint());
 
-			elements.put(PrimitiveVariable_3011, PatternsPackage.eINSTANCE.getPrimitiveVariable());
+			elements.put(ObjectSetVariable_3018, PatternsPackage.eINSTANCE.getObjectSetVariable());
+
+			elements.put(Constraint_3017, PatternsPackage.eINSTANCE.getConstraint());
 
 			elements.put(MatchingPattern_3012, PatternsPackage.eINSTANCE.getMatchingPattern());
-
-			elements.put(ActivityCallNode_3016, ActivitiesPackage.eINSTANCE.getActivityCallNode());
-
-			elements.put(ModifyingStoryNode_3007, ActivitiesPackage.eINSTANCE.getModifyingStoryNode());
-
-			elements.put(MatchingStoryNode_3017, ActivitiesPackage.eINSTANCE.getMatchingStoryNode());
-
-			elements.put(StatementNode_3005, ActivitiesPackage.eINSTANCE.getStatementNode());
-
-			elements.put(StructuredNode_3006, ActivitiesPackage.eINSTANCE.getStructuredNode());
-
-			elements.put(StartNode_3003, ActivitiesPackage.eINSTANCE.getStartNode());
-
-			elements.put(JunctionNode_3002, ActivitiesPackage.eINSTANCE.getJunctionNode());
-
-			elements.put(StopNode_3004, ActivitiesPackage.eINSTANCE.getStopNode());
 
 			elements.put(ActivityEdge_4001, ActivitiesPackage.eINSTANCE.getActivityEdge());
 
 			elements.put(LinkVariable_4002, PatternsPackage.eINSTANCE.getLinkVariable());
-
-			elements.put(Path_4003, PatternsPackage.eINSTANCE.getPath());
 
 			elements.put(ContainmentRelation_4004, PatternsPackage.eINSTANCE.getContainmentRelation());
 		}
@@ -363,7 +300,6 @@ public class StorydiagramsElementTypes {
 			KNOWN_ELEMENT_TYPES.add(StatementNode_2004);
 			KNOWN_ELEMENT_TYPES.add(ModifyingStoryNode_2007);
 			KNOWN_ELEMENT_TYPES.add(MatchingStoryNode_2008);
-			KNOWN_ELEMENT_TYPES.add(StructuredNode_2005);
 			KNOWN_ELEMENT_TYPES.add(StartNode_2001);
 			KNOWN_ELEMENT_TYPES.add(JunctionNode_2003);
 			KNOWN_ELEMENT_TYPES.add(StopNode_2002);
@@ -371,19 +307,11 @@ public class StorydiagramsElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ObjectVariable_3009);
 			KNOWN_ELEMENT_TYPES.add(AttributeAssignment_3010);
 			KNOWN_ELEMENT_TYPES.add(Constraint_3013);
-			KNOWN_ELEMENT_TYPES.add(PrimitiveVariable_3011);
+			KNOWN_ELEMENT_TYPES.add(ObjectSetVariable_3018);
+			KNOWN_ELEMENT_TYPES.add(Constraint_3017);
 			KNOWN_ELEMENT_TYPES.add(MatchingPattern_3012);
-			KNOWN_ELEMENT_TYPES.add(ActivityCallNode_3016);
-			KNOWN_ELEMENT_TYPES.add(ModifyingStoryNode_3007);
-			KNOWN_ELEMENT_TYPES.add(MatchingStoryNode_3017);
-			KNOWN_ELEMENT_TYPES.add(StatementNode_3005);
-			KNOWN_ELEMENT_TYPES.add(StructuredNode_3006);
-			KNOWN_ELEMENT_TYPES.add(StartNode_3003);
-			KNOWN_ELEMENT_TYPES.add(JunctionNode_3002);
-			KNOWN_ELEMENT_TYPES.add(StopNode_3004);
 			KNOWN_ELEMENT_TYPES.add(ActivityEdge_4001);
 			KNOWN_ELEMENT_TYPES.add(LinkVariable_4002);
-			KNOWN_ELEMENT_TYPES.add(Path_4003);
 			KNOWN_ELEMENT_TYPES.add(ContainmentRelation_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -404,8 +332,6 @@ public class StorydiagramsElementTypes {
 			return ModifyingStoryNode_2007;
 		case MatchingStoryNodeEditPart.VISUAL_ID:
 			return MatchingStoryNode_2008;
-		case StructuredNodeEditPart.VISUAL_ID:
-			return StructuredNode_2005;
 		case StartNodeEditPart.VISUAL_ID:
 			return StartNode_2001;
 		case JunctionNodeEditPart.VISUAL_ID:
@@ -420,32 +346,16 @@ public class StorydiagramsElementTypes {
 			return AttributeAssignment_3010;
 		case ConstraintEditPart.VISUAL_ID:
 			return Constraint_3013;
-		case PrimitiveVariableEditPart.VISUAL_ID:
-			return PrimitiveVariable_3011;
+		case ObjectSetVariableEditPart.VISUAL_ID:
+			return ObjectSetVariable_3018;
+		case Constraint2EditPart.VISUAL_ID:
+			return Constraint_3017;
 		case MatchingPatternEditPart.VISUAL_ID:
 			return MatchingPattern_3012;
-		case ActivityCallNode2EditPart.VISUAL_ID:
-			return ActivityCallNode_3016;
-		case ModifyingStoryNode2EditPart.VISUAL_ID:
-			return ModifyingStoryNode_3007;
-		case MatchingStoryNode2EditPart.VISUAL_ID:
-			return MatchingStoryNode_3017;
-		case StatementNode2EditPart.VISUAL_ID:
-			return StatementNode_3005;
-		case StructuredNode2EditPart.VISUAL_ID:
-			return StructuredNode_3006;
-		case StartNode2EditPart.VISUAL_ID:
-			return StartNode_3003;
-		case JunctionNode2EditPart.VISUAL_ID:
-			return JunctionNode_3002;
-		case StopNode2EditPart.VISUAL_ID:
-			return StopNode_3004;
 		case ActivityEdgeEditPart.VISUAL_ID:
 			return ActivityEdge_4001;
 		case LinkVariableEditPart.VISUAL_ID:
 			return LinkVariable_4002;
-		case PathEditPart.VISUAL_ID:
-			return Path_4003;
 		case ContainmentRelationEditPart.VISUAL_ID:
 			return ContainmentRelation_4004;
 		}

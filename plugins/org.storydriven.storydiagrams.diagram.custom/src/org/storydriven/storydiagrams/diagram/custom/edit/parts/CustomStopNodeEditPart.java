@@ -13,6 +13,7 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableEditPolicyEx;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.activities.StopNode;
+import org.storydriven.storydiagrams.diagram.custom.util.TextUtil;
 import org.storydriven.storydiagrams.diagram.edit.parts.StopNodeEditPart;
 
 public class CustomStopNodeEditPart extends StopNodeEditPart {
@@ -81,6 +82,8 @@ public class CustomStopNodeEditPart extends StopNodeEditPart {
 
 			primaryEllipse.add(stopNodeInnerEllipse0, constraintStopNodeInnerEllipse0);
 		}
+
+		getPrimaryShape().getActivityFinalNodeLabel().setText(TextUtil.getText(stopnode));
 	}
 
 	@Override

@@ -103,14 +103,14 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new ActivityCallNodeFigure();
+		return primaryShape = new ActivityCallNodeFigureDescriptor();
 	}
 
 	/**
 	 * @generated
 	 */
-	public ActivityCallNodeFigure getPrimaryShape() {
-		return (ActivityCallNodeFigure) primaryShape;
+	public ActivityCallNodeFigureDescriptor getPrimaryShape() {
+		return (ActivityCallNodeFigureDescriptor) primaryShape;
 	}
 
 	/**
@@ -288,9 +288,6 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof StructuredNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
 		if (targetEditPart instanceof StartNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
@@ -298,30 +295,6 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof StopNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof ActivityCallNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof ModifyingStoryNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof MatchingStoryNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StatementNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StructuredNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StartNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof JunctionNode2EditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StopNode2EditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		return types;
@@ -337,18 +310,9 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
-			types.add(StorydiagramsElementTypes.StructuredNode_2005);
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StopNode_2002);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_3016);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_3017);
-			types.add(StorydiagramsElementTypes.StatementNode_3005);
-			types.add(StorydiagramsElementTypes.StructuredNode_3006);
-			types.add(StorydiagramsElementTypes.StartNode_3003);
-			types.add(StorydiagramsElementTypes.JunctionNode_3002);
-			types.add(StorydiagramsElementTypes.StopNode_3004);
 		}
 		return types;
 	}
@@ -372,18 +336,9 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.StatementNode_2004);
 			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
-			types.add(StorydiagramsElementTypes.StructuredNode_2005);
 			types.add(StorydiagramsElementTypes.StartNode_2001);
 			types.add(StorydiagramsElementTypes.JunctionNode_2003);
 			types.add(StorydiagramsElementTypes.StopNode_2002);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_3016);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_3007);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_3017);
-			types.add(StorydiagramsElementTypes.StatementNode_3005);
-			types.add(StorydiagramsElementTypes.StructuredNode_3006);
-			types.add(StorydiagramsElementTypes.StartNode_3003);
-			types.add(StorydiagramsElementTypes.JunctionNode_3002);
-			types.add(StorydiagramsElementTypes.StopNode_3004);
 		}
 		return types;
 	}
@@ -391,7 +346,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ActivityCallNodeFigure extends RoundedRectangle {
+	public class ActivityCallNodeFigureDescriptor extends RoundedRectangle {
 
 		/**
 		 * @generated
@@ -405,7 +360,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public ActivityCallNodeFigure() {
+		public ActivityCallNodeFigureDescriptor() {
 
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
@@ -440,8 +395,6 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 
 			fActivityCallNodeCalleeLabel = new WrappingLabel();
 			fActivityCallNodeCalleeLabel.setText("");
-
-			fActivityCallNodeCalleeLabel.setFont(FACTIVITYCALLNODECALLEELABEL_FONT);
 
 			GridData constraintFActivityCallNodeCalleeLabel = new GridData();
 			constraintFActivityCallNodeCalleeLabel.verticalAlignment = GridData.CENTER;
@@ -481,11 +434,5 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 */
 	static final Font FACTIVITYCALLNODENAMELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
 			.getSystemFont().getFontData()[0].getName(), 10, SWT.BOLD);
-
-	/**
-	 * @generated
-	 */
-	static final Font FACTIVITYCALLNODECALLEELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
-			.getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 }

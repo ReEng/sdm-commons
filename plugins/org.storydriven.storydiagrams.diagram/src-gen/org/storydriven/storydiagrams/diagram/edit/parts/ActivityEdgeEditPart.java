@@ -42,9 +42,8 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements ITre
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ActivityEdgeGuardConstraintLabelEditPart) {
-			((ActivityEdgeGuardConstraintLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getFigureActivityEdgeGuardFigure());
+		if (childEditPart instanceof ActivityEdgeGuardLabelEditPart) {
+			((ActivityEdgeGuardLabelEditPart) childEditPart).setLabel(getPrimaryShape().getActivityEdgeGuardLabel());
 			return true;
 		}
 		return false;
@@ -64,7 +63,7 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements ITre
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ActivityEdgeGuardConstraintLabelEditPart) {
+		if (childEditPart instanceof ActivityEdgeGuardLabelEditPart) {
 			return true;
 		}
 		return false;
@@ -108,7 +107,7 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements ITre
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureActivityEdgeGuardFigure;
+		private WrappingLabel fActivityEdgeGuardLabel;
 
 		/**
 		 * @generated
@@ -126,10 +125,10 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements ITre
 		 */
 		private void createContents() {
 
-			fFigureActivityEdgeGuardFigure = new WrappingLabel();
-			fFigureActivityEdgeGuardFigure.setText("");
+			fActivityEdgeGuardLabel = new WrappingLabel();
+			fActivityEdgeGuardLabel.setText("");
 
-			this.add(fFigureActivityEdgeGuardFigure);
+			this.add(fActivityEdgeGuardLabel);
 
 		}
 
@@ -145,8 +144,8 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements ITre
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureActivityEdgeGuardFigure() {
-			return fFigureActivityEdgeGuardFigure;
+		public WrappingLabel getActivityEdgeGuardLabel() {
+			return fActivityEdgeGuardLabel;
 		}
 
 	}

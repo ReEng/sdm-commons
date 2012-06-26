@@ -42,7 +42,7 @@ public class ContainmentRelationEditPart extends ConnectionNodeEditPart implemen
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ContainmentRelationOperatorLabelEditPart) {
 			((ContainmentRelationOperatorLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getFigureContainmentRelationOperatorFigure());
+					.getContainmentRelationOperatorFigure());
 			return true;
 		}
 		return false;
@@ -88,30 +88,30 @@ public class ContainmentRelationEditPart extends ConnectionNodeEditPart implemen
 	 */
 
 	protected Connection createConnectionFigure() {
-		return new ContainmentRelationFigure();
+		return new InclusionLinkFigureDescriptor();
 	}
 
 	/**
 	 * @generated
 	 */
-	public ContainmentRelationFigure getPrimaryShape() {
-		return (ContainmentRelationFigure) getFigure();
+	public InclusionLinkFigureDescriptor getPrimaryShape() {
+		return (InclusionLinkFigureDescriptor) getFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public class ContainmentRelationFigure extends PolylineConnectionEx {
+	public class InclusionLinkFigureDescriptor extends PolylineConnectionEx {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureContainmentRelationOperatorFigure;
+		private WrappingLabel fContainmentRelationOperatorFigure;
 
 		/**
 		 * @generated
 		 */
-		public ContainmentRelationFigure() {
+		public InclusionLinkFigureDescriptor() {
 			this.setForegroundColor(ColorConstants.black);
 			this.setBackgroundColor(ColorConstants.black);
 
@@ -123,18 +123,18 @@ public class ContainmentRelationEditPart extends ConnectionNodeEditPart implemen
 		 */
 		private void createContents() {
 
-			fFigureContainmentRelationOperatorFigure = new WrappingLabel();
-			fFigureContainmentRelationOperatorFigure.setText("");
+			fContainmentRelationOperatorFigure = new WrappingLabel();
+			fContainmentRelationOperatorFigure.setText("");
 
-			this.add(fFigureContainmentRelationOperatorFigure);
+			this.add(fContainmentRelationOperatorFigure);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureContainmentRelationOperatorFigure() {
-			return fFigureContainmentRelationOperatorFigure;
+		public WrappingLabel getContainmentRelationOperatorFigure() {
+			return fContainmentRelationOperatorFigure;
 		}
 
 	}

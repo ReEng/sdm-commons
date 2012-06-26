@@ -29,31 +29,21 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.JunctionNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingPatternEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.ObjectSetVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.PathEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.PrimitiveVariableEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.StartNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StartNodeEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.StatementNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.StopNode2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StopNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StoryPatternEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.StructuredNode2EditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.StructuredNodeEditPart;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramUpdater;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsLinkDescriptor;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsNodeDescriptor;
@@ -115,7 +105,6 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 		case StatementNodeEditPart.VISUAL_ID:
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
 		case MatchingStoryNodeEditPart.VISUAL_ID:
-		case StructuredNodeEditPart.VISUAL_ID:
 		case StartNodeEditPart.VISUAL_ID:
 		case JunctionNodeEditPart.VISUAL_ID:
 		case StopNodeEditPart.VISUAL_ID:
@@ -301,15 +290,6 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 			}
 			break;
 		}
-		case StructuredNodeEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getStructuredNode_2005ContainedLinks(view));
-			}
-			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
-			break;
-		}
 		case StartNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(StorydiagramsDiagramUpdater.getStartNode_2001ContainedLinks(view));
@@ -355,9 +335,9 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 			}
 			break;
 		}
-		case PrimitiveVariableEditPart.VISUAL_ID: {
+		case ObjectSetVariableEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getPrimitiveVariable_3011ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getObjectSetVariable_3018ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
 				domain2NotationMap.put(view.getElement(), view);
@@ -367,78 +347,6 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 		case MatchingPatternEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(StorydiagramsDiagramUpdater.getMatchingPattern_3012ContainedLinks(view));
-			}
-			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
-			break;
-		}
-		case ActivityCallNode2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getActivityCallNode_3016ContainedLinks(view));
-			}
-			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
-			break;
-		}
-		case ModifyingStoryNode2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getModifyingStoryNode_3007ContainedLinks(view));
-			}
-			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
-			break;
-		}
-		case MatchingStoryNode2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getMatchingStoryNode_3017ContainedLinks(view));
-			}
-			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
-			break;
-		}
-		case StatementNode2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getStatementNode_3005ContainedLinks(view));
-			}
-			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
-			break;
-		}
-		case StructuredNode2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getStructuredNode_3006ContainedLinks(view));
-			}
-			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
-			break;
-		}
-		case StartNode2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getStartNode_3003ContainedLinks(view));
-			}
-			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
-			break;
-		}
-		case JunctionNode2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getJunctionNode_3002ContainedLinks(view));
-			}
-			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
-			break;
-		}
-		case StopNode2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getStopNode_3004ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
 				domain2NotationMap.put(view.getElement(), view);
@@ -457,15 +365,6 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 		case LinkVariableEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(StorydiagramsDiagramUpdater.getLinkVariable_4002ContainedLinks(view));
-			}
-			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
-			break;
-		}
-		case PathEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getPath_4003ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
 				domain2NotationMap.put(view.getElement(), view);

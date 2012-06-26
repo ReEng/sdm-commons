@@ -37,12 +37,17 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			case ActivityCallNodeNameEditPart.VISUAL_ID:
 				return new ActivityCallNodeNameEditPart(view);
 
+			case ActivityCallNodeCalleeLabelEditPart.VISUAL_ID:
+				return new ActivityCallNodeCalleeLabelEditPart(view);
 
 			case StatementNodeEditPart.VISUAL_ID:
 				return new StatementNodeEditPart(view);
 
 			case StatementNodeNameEditPart.VISUAL_ID:
 				return new StatementNodeNameEditPart(view);
+
+			case StatementNodeExpressionLabelEditPart.VISUAL_ID:
+				return new StatementNodeExpressionLabelEditPart(view);
 
 			case ModifyingStoryNodeEditPart.VISUAL_ID:
 				return new ModifyingStoryNodeEditPart(view);
@@ -56,14 +61,11 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			case MatchingStoryNodeNameEditPart.VISUAL_ID:
 				return new MatchingStoryNodeNameEditPart(view);
 
-			case StructuredNodeEditPart.VISUAL_ID:
-				return new StructuredNodeEditPart(view);
-
-			case StructuredNodeNameEditPart.VISUAL_ID:
-				return new StructuredNodeNameEditPart(view);
-
 			case StartNodeEditPart.VISUAL_ID:
 				return new StartNodeEditPart(view);
+
+			case InitialNodeLabelEditPart.VISUAL_ID:
+				return new InitialNodeLabelEditPart(view);
 
 			case JunctionNodeEditPart.VISUAL_ID:
 				return new JunctionNodeEditPart(view);
@@ -71,20 +73,23 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			case StopNodeEditPart.VISUAL_ID:
 				return new StopNodeEditPart(view);
 
+			case ActivityFinalNodeLabelEditPart.VISUAL_ID:
+				return new ActivityFinalNodeLabelEditPart(view);
+
 			case StoryPatternEditPart.VISUAL_ID:
 				return new StoryPatternEditPart(view);
 
 			case ObjectVariableEditPart.VISUAL_ID:
 				return new ObjectVariableEditPart(view);
 
+			case ObjectVariableOperatorEditPart.VISUAL_ID:
+				return new ObjectVariableOperatorEditPart(view);
+
 			case ObjectVariableNameEditPart.VISUAL_ID:
 				return new ObjectVariableNameEditPart(view);
 
-			case ObjectVariableBindingOperatorEditPart.VISUAL_ID:
-				return new ObjectVariableBindingOperatorEditPart(view);
-
-			case ObjectVariableClassifierLabelEditPart.VISUAL_ID:
-				return new ObjectVariableClassifierLabelEditPart(view);
+			case ObjectVariableTypeLabelEditPart.VISUAL_ID:
+				return new ObjectVariableTypeLabelEditPart(view);
 
 			case AttributeAssignmentEditPart.VISUAL_ID:
 				return new AttributeAssignmentEditPart(view);
@@ -92,77 +97,32 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			case ConstraintEditPart.VISUAL_ID:
 				return new ConstraintEditPart(view);
 
-			case PrimitiveVariableEditPart.VISUAL_ID:
-				return new PrimitiveVariableEditPart(view);
+			case ObjectSetVariableEditPart.VISUAL_ID:
+				return new ObjectSetVariableEditPart(view);
 
-			case PrimitiveVariableNameEditPart.VISUAL_ID:
-				return new PrimitiveVariableNameEditPart(view);
+			case WrappingLabel7EditPart.VISUAL_ID:
+				return new WrappingLabel7EditPart(view);
 
-			case PrimitiveVariableClassifierLabelEditPart.VISUAL_ID:
-				return new PrimitiveVariableClassifierLabelEditPart(view);
+			case CollectionVariableNameLabelEditPart.VISUAL_ID:
+				return new CollectionVariableNameLabelEditPart(view);
+
+			case WrappingLabel8EditPart.VISUAL_ID:
+				return new WrappingLabel8EditPart(view);
+
+			case Constraint2EditPart.VISUAL_ID:
+				return new Constraint2EditPart(view);
 
 			case MatchingPatternEditPart.VISUAL_ID:
 				return new MatchingPatternEditPart(view);
 
-			case ActivityCallNode2EditPart.VISUAL_ID:
-				return new ActivityCallNode2EditPart(view);
+			case ModifyingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
+				return new ModifyingStoryNodeStoryNodePatternCompartmentEditPart(view);
 
-			case ActivityCallNodeName2EditPart.VISUAL_ID:
-				return new ActivityCallNodeName2EditPart(view);
+			case StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
+				return new StoryPatternStoryPatternContentCompartmentEditPart(view);
 
-			case ActivityCallNodeCalleeLabelEditPart.VISUAL_ID:
-				return new ActivityCallNodeCalleeLabelEditPart(view);
-
-			case ModifyingStoryNode2EditPart.VISUAL_ID:
-				return new ModifyingStoryNode2EditPart(view);
-
-			case ModifyingStoryNodeName2EditPart.VISUAL_ID:
-				return new ModifyingStoryNodeName2EditPart(view);
-
-			case MatchingStoryNode2EditPart.VISUAL_ID:
-				return new MatchingStoryNode2EditPart(view);
-
-			case MatchingStoryNodeName2EditPart.VISUAL_ID:
-				return new MatchingStoryNodeName2EditPart(view);
-
-			case StatementNode2EditPart.VISUAL_ID:
-				return new StatementNode2EditPart(view);
-
-			case StatementNodeName2EditPart.VISUAL_ID:
-				return new StatementNodeName2EditPart(view);
-
-			case StatementNodeExpressionLabelEditPart.VISUAL_ID:
-				return new StatementNodeExpressionLabelEditPart(view);
-
-			case StructuredNode2EditPart.VISUAL_ID:
-				return new StructuredNode2EditPart(view);
-
-			case StructuredNodeName2EditPart.VISUAL_ID:
-				return new StructuredNodeName2EditPart(view);
-
-			case StartNode2EditPart.VISUAL_ID:
-				return new StartNode2EditPart(view);
-
-			case StartNodeSignatureLabelEditPart.VISUAL_ID:
-				return new StartNodeSignatureLabelEditPart(view);
-
-			case JunctionNode2EditPart.VISUAL_ID:
-				return new JunctionNode2EditPart(view);
-
-			case StopNode2EditPart.VISUAL_ID:
-				return new StopNode2EditPart(view);
-
-			case StopNodeSignatureLabelEditPart.VISUAL_ID:
-				return new StopNodeSignatureLabelEditPart(view);
-
-			case ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart.VISUAL_ID:
-				return new ModifyingStoryNodeModifyingStoryNodeConstraintsCompartmentEditPart(view);
-
-			case ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart.VISUAL_ID:
-				return new ModifyingStoryNodeModifyingStoryNodeContentCompartmentEditPart(view);
-
-			case StoryPatternStoryPatternCompartementEditPart.VISUAL_ID:
-				return new StoryPatternStoryPatternCompartementEditPart(view);
+			case StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
+				return new StoryPatternStoryPatternConstraintsCompartmentEditPart(view);
 
 			case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
 				return new ObjectVariableObjectVariableConstraintsCompartmentEditPart(view);
@@ -170,41 +130,26 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
 				return new ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart(view);
 
-			case PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart.VISUAL_ID:
-				return new PrimitiveVariablePrimitiveVariableConstraintsCompartmentEditPart(view);
+			case ObjectSetVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID:
+				return new ObjectSetVariableCollectionVariableConstraintsCompartmentEditPart(view);
 
-			case MatchingStoryNodeMatchingStoryNodeConstraintsCompartmentEditPart.VISUAL_ID:
-				return new MatchingStoryNodeMatchingStoryNodeConstraintsCompartmentEditPart(view);
+			case ObjectSetVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
+				return new ObjectSetVariableCollectionVariableAttributeAssignmentsCompartmentEditPart(view);
 
-			case MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart.VISUAL_ID:
-				return new MatchingStoryNodeMatchingStoryNodeContentCompartmentEditPart(view);
+			case MatchingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
+				return new MatchingStoryNodeStoryNodePatternCompartmentEditPart(view);
 
-			case MatchingPatternStoryPatternCompartementEditPart.VISUAL_ID:
-				return new MatchingPatternStoryPatternCompartementEditPart(view);
+			case MatchingPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
+				return new MatchingPatternStoryPatternContentCompartmentEditPart(view);
 
-			case StructuredNodeStructuredNodeCompartmentEditPart.VISUAL_ID:
-				return new StructuredNodeStructuredNodeCompartmentEditPart(view);
-
-			case ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID:
-				return new ModifyingStoryNodeModifyingStoryNodeConstraintsCompartment2EditPart(view);
-
-			case ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart.VISUAL_ID:
-				return new ModifyingStoryNodeModifyingStoryNodeContentCompartment2EditPart(view);
-
-			case MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart.VISUAL_ID:
-				return new MatchingStoryNodeMatchingStoryNodeConstraintsCompartment2EditPart(view);
-
-			case MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart.VISUAL_ID:
-				return new MatchingStoryNodeMatchingStoryNodeContentCompartment2EditPart(view);
-
-			case StructuredNodeStructuredNodeCompartment2EditPart.VISUAL_ID:
-				return new StructuredNodeStructuredNodeCompartment2EditPart(view);
+			case MatchingPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
+				return new MatchingPatternStoryPatternConstraintsCompartmentEditPart(view);
 
 			case ActivityEdgeEditPart.VISUAL_ID:
 				return new ActivityEdgeEditPart(view);
 
-			case ActivityEdgeGuardConstraintLabelEditPart.VISUAL_ID:
-				return new ActivityEdgeGuardConstraintLabelEditPart(view);
+			case ActivityEdgeGuardLabelEditPart.VISUAL_ID:
+				return new ActivityEdgeGuardLabelEditPart(view);
 
 			case LinkVariableEditPart.VISUAL_ID:
 				return new LinkVariableEditPart(view);
@@ -217,9 +162,6 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 
 			case LinkVariableTargetEndLabelEditPart.VISUAL_ID:
 				return new LinkVariableTargetEndLabelEditPart(view);
-
-			case PathEditPart.VISUAL_ID:
-				return new PathEditPart(view);
 
 			case ContainmentRelationEditPart.VISUAL_ID:
 				return new ContainmentRelationEditPart(view);
