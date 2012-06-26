@@ -186,9 +186,9 @@ The following description of the classes in the type graph is based on \cite{Tra
 \item[Package] Similar to packages in Java, the \fe{Package} element provides name spaces and visibilities. A \fe{Package} element can contain other packages, classes, global variables, and functions.
 \item[GASTType] The \fe{GASTType} element represents data types like primitive data types and classes. The attribute \fe{qualifiedName} contains the unique, fully qualified name of the type.
 \item[GASTClass] Classes are represented by the element \fe{GASTClass} in the GAST and are a sub type of the \fe{GASTType}. A \fe{GASTClass} holds references to its methods, attributes, and inner classes. A \fe{GASTClass} can be assigned to a \fe{Package}.
-\item[Function] \fe{Function} is the super type for all executable operations. In addition to a name attribute, a \fe{Function} can have a number of local variables and formal parameters. The return type of a \fe{Function} is determined by its \fe{DeclarationTypeAccess}, a sub class of \fe{Access}. A \fe{Function} always contains a block statement which, in turn, can contain other statements.
+\item[Function] \fe{Function} is the super type for all executable operations. In addition to attributes for its name, visibility and abstractness, a \fe{Function} can have a number of local variables and formal parameters. The return type of a \fe{Function} is determined by its \fe{DeclarationTypeAccess}, a sub class of \fe{Access}. A \fe{Function} always contains a block statement which, in turn, can contain other statements.
 \item[GlobalFunction] A \fe{GlobalFunction} element represents a globally accessible operation, i.e., an operation that does not belong to a class. It can be assigned to a name space defined by a package. For example, C functions are represented by \fe{GlobalFunctions}.
-\item[Method] Functions that belong to a class are represented by \fe{Method} elements, a sub type of \fe{Function}.
+\item[Method] Functions that belong to a class are represented by \fe{Method} elements, a sub type of \fe{Function}. They can reference methods which they override by means of the \fe{overriddenMember} association.
 \item[Variable] \fe{Variable} is a super type for all kinds of variables. A \fe{Variable} always has a name and a type.
 \item[LocalVariable] \fe{LocalVariables} are variables that are contained in a \fe{Function}.
 \item[FormalParameter] \fe{FormalParameters} are variables that represent the parameters of a \fe{Function}.
@@ -199,4 +199,7 @@ The following description of the classes in the type graph is based on \cite{Tra
 \item[Access] An \fe{Access} represents the use of a \fe{Variable} or a \fe{Function}. It always belongs to a certain \fe{Statement}.
 \item[FunctionAccess] A \fe{FunctionAccess} represents the use of a \fe{Function} in a \fe{Statement} and therefore references the accessed \fe{Funtion} element.
 \item[VariableAccess] A \fe{VariableAccess} represents the use of a \fe{Variable} in a \fe{Statement} and therefore references the accessed \fe{Variable} element.
+\item[DeclarationTypeAccess] The return type of a method can be specified by a \fe{DeclarationTypeAccess}. It points to the \fe{GASTClass} which specifies the return type.
+\item[CastTypeAccess] A \fe{CastTypeAccess} specifies the target type of a type cast. It can occur, for example, in a \fe{Statement}.
+\item[InheritanceTypeAccess] An \fe{InheritanceTypeAccess} is used to reflect the inheritance relationships of a \fe{GASTClass}. A class can have arbitrarily many \fe{InheritanceTypeAccesses} but each of these accesses has only one target \fe{GASTType}.
 \end{description}
