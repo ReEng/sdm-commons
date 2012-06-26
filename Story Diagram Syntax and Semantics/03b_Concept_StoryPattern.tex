@@ -851,29 +851,33 @@ The third column determines if the inclusion link is to be checked, created or r
 The last column describes the semantics.
 
 The main difference in the semantics of inclusion links stems from the unique or non-unique property of the collections.
-If \fe{a} is a set and the binding operator is \fe{CHECK\_ONLY}, we only have to check if all objects in \fe{b} are contained (once) in \fe{a}
+If \fe{a} is a set and the binding operator is \fe{CHECK\_ONLY}, the execution of a story pattern
+only checks if all objects in \fe{b} are contained (once) in \fe{a}
 (mathematically $a \supseteq b$).
 In contrast, if \fe{a} is a list (which can contain the same object arbitrarily often),
-we have to ensure that the objects in \fe{b} are not only contained at least once in \fe{a},
+the story pattern execution ensures that the objects in \fe{b} are not only contained at least once in \fe{a},
 but also at least as often as in \fe{b}.
 If, for example, \fe{b} contains an element \fe{x} twice, then \fe{a} has to contain \fe{x} at least twice, too.
 Otherwise, the matching of the story pattern fails.
 
 An inclusion link with the binding operator \create\ describes to add all objects from \fe{b} to \fe{a}.
-If \fe{a} is a set, we only add each object from \fe{b} to \fe{a} if \fe{a} does not already contain it. %(remember that sets contain each object mostly once).
-Since we only have ordered sets, we have to regard the order of the objects in the collections.
-We add the objects from \fe{b} to the end of \fe{a} and keep the same order as they had in \fe{b}.
-If \fe{a} is a list, we do a similar adding operation, but we add the objects from \fe{b} as often to \fe{a} as they are in \fe{b}.
+If \fe{a} is a set, the story pattern execution only adds each object from \fe{b} to \fe{a}
+if \fe{a} does not already contain it. %(remember that sets contain each object mostly once).
+Since story patterns only have ordered sets, the order of the objects in the collections have to be regarded.
+The story pattern execution adds the objects from \fe{b} to the end of \fe{a} and keeps the same order as they had in \fe{b}.
+If \fe{a} is a list, a similar adding operation is performed,
+the objects from \fe{b} are added as often to \fe{a} as they are in \fe{b}.
 This can be seen as a concatenation of two lists or as the union of two sets (mathematically $a \cup b$).
 
 The binding operator \destroy\ used with an inclusion link and two collections as illustrated in Table~\ref{tab:set_operations_with_inclusion_links}
 describes to remove all elements contained in \fe{b} from the collection \fe{a}.
-If \fe{a} is a set, we just remove all occurrences of the objects in \fe{b} from \fe{a} and preserve the order of the remaining elements in \fe{a}.
-If \fe{a} is a list and \fe{b} is a set, we do quite the same.
-If an object contained in \fe{b} is contained more than once in \fe{a}, we remove all of its occurrences in \fe{a}.
+If \fe{a} is a set, all occurrences of the objects in \fe{b} are removed from \fe{a} and the order of the remaining elements in \fe{a} is preserved.
+If \fe{a} is a list and \fe{b} is a set, quite the same is done.
+If an object contained in \fe{b} is contained more than once in \fe{a}, all of its occurrences in \fe{a} are removed.
 This comes close to the mathematical relative complement operation (mathematically $a \setminus b$).
-If both, \fe{a} and \fe{b} are lists, we only remove as many occurrences of the objects in \fe{b} from \fe{a} as these are available in \fe{b}.
-Furthermore, we remove them starting at the beginning of the list \fe{a}.
+If both, \fe{a} and \fe{b} are lists,
+only as many occurrences of the objects in \fe{b} are removed from \fe{a} as these are available in \fe{b}.
+Furthermore, the removal starts at the beginning of the list \fe{a}.
 
 \begin{table}[htbp]
 %  \footnotesize
