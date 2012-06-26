@@ -21,7 +21,7 @@ In contrast to typed attributed graph transformations, story patterns explicitly
 For enabling a concise notation of the graph transformation, story patterns apply a short-hand notation depicting the left-hand side (LHS) and the right-hand side (RHS) in a single, annotated graph using stereotypes.
 In the short-hand notation, we use binding operators for defining the LHS and the RHS. Object and link variables representing objects and links not to be changed by the story pattern carry no stereotype. 
 Object and link variables representing objects to be created (or deleted) are annotated with \create (or  \destroy, respectively). 
-Consequently, the LHS consists of all object and link variables that carry no stereotype or stereotype \destroy. The RHS consists of all object and link variables that carry no stereotype or the stereotype \create.
+Consequently, the LHS consists of all object and link variables that carry no stereotype or the stereotype \destroy. The RHS consists of all object and link variables that carry no stereotype or the stereotype \create.
 The deletion of objects and links follows the single-pushout approach (cf.\ Section~\ref{sec:foundations:simpleGTS}).
 
 Figure \ref{fig:simpleStoryPattern} shows an example of a single story pattern that redirects a method call from an old method to a new method.
@@ -47,10 +47,12 @@ In general, the matching process is executed as a three step process:
 first, a matching is searched which uses the bound variables of the story pattern as a starting point. The matching associates objects and links of the instance model to all object and link variables of the story pattern. 
 The matching is performed as defined for typed attributed graph transformations and considers all object and link variables of the LHS.
 If a matching can be obtained, the story pattern is applicable and the execution proceeds. 
-\tododt{What happens if the modification operations are contradictory (see Section~\ref{sec:DecisionNodesEtc})?}
 Otherwise the execution of the story pattern is aborted.
 In the second step, all objects and links matched to object and link variables annotated with \destroy are deleted. 
 Finally, objects and links are created in the instance model for all variables annotated with \create.
+
+When the matching of a story pattern is successful, the specified modifications are always executed. If the matching step fails, no modifications are executed and thus the story patterns has no side effects.
+There are a few corner cases when the specified modification is infeasible due to contradictory constraints (see Section~\ref{sec:StoryPatterns:linkConstraints:orderConstraint}). In this case, the execution of the story pattern is aborted with an exception.
 
 Story patterns aim to reduce the computational complexity of the matching process (cf. Section~\ref{sec:foundations:simpleGTS}) by using bound variables.
 We require at least one bound object variable in each story pattern which is used as a starting point for the matching process.

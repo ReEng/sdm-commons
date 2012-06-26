@@ -173,27 +173,11 @@ For static analyses of model transformations described with story diagrams,
 it is helpful to know which transformations do not modify the instance model.
 
 \subsection{Activity Final Nodes} \label{sec:StopNodes}
-
-The application of a story diagram can succeed or fail.
-Usually, when the matchings are successful and the specified transformations can be carried out, the story diagram is considered to be applied successfully.
-When a matching is unsuccessful somewhere or something unforeseen happens and the application has to be aborted, the story diagram's application is considered to have failed.
-This is comparable to a method call either returning a desired result or returning false or null if something goes wrong.
-
-\tododt{I would remove or replace this first paragraph.
-In my opinion, the success and failure of story diagrams are not necessarily dependent on the success or failure of some pattern matchings or transformations in the same story diagram.
-In Figure~\ref{fig:successAndFailureStopNodes} one could also model that the story diagram is considered to be successfully executed if the matching in the first story pattern fails.
-Thus, success or failure of a story diagram is used like an implicitly declared boolean out parameter describing if the operation described by a story diagram is considered to be successful.
-In which case it is successful is specified by the developer, not by the story diagrams language.
-I would point out that the success of a story diagram is not directly dependent on the successful execution of all contained story patterns.
-In contrast, the success and failure of story patterns are defined by the language.}
-
-When one story diagram calls another, the calling story diagram's further execution may depend on the called story diagram's application being successful.
-For example, the calling story diagram might need a return value of the called story diagram or it may only continue in a meaningful way if the called transformation has succeeded.
-Therefore, a means to express and communicate the successful or unsuccessful application of a story diagram is required.
-Story diagrams have success and failure final nodes for this.
-
 In normal UML activities, the final nodes determine where control flow of the activity ends.
 Story diagrams reuse this concept but they annotate the nodes with either \emph{success} or \emph{failure}.
+When the control flow of a story diagram reaches a success final node, the application of that story pattern is considered to be successful.
+In contrast, reaching a failure final node indicates that the transformation is considered to be unsuccessful.
+
 Figure~\ref{fig:successAndFailureStopNodes} shows and example.
 
 \begin{figure}[htb]
@@ -205,23 +189,28 @@ Figure~\ref{fig:successAndFailureStopNodes} shows and example.
 \end{figure}
 
 The upper story node in Figure~\ref{fig:successAndFailureStopNodes} specifies that an attribute of a given class object should be matched.
-The failure activity edge leads to a final node also labelled with \emph{failure}.
+The failure activity edge leads to a final node also labeled with \emph{failure}.
 This indicates that the application of the story diagram went wrong.
 
 If an attribute object can be matched however, the control flow continues via the success activity edge to another story node.
 Finally, it reaches a final node labelled with \emph{success}.
 This indicates that the story diagram's application is considered to be successful.
+Thus, success or failure of a story diagram can be used like an implicitly declared boolean out parameter describing if the operation described by a story diagram is considered to be successful.
 
-While the execution of a story diagram is aborted upon reaching a failure final node, the effects of the execution up to this point are not reversed.
+While the execution of a story diagram is aborted upon reaching a failure final node, the effects of the execution up to this point are not reversed automatically.
 All modifications, e.g., object creations and deletions persist.
 The developer of a story diagram has to keep this in mind when specifying a transformation.
 If these side effects of failed story diagram applications are undesired, the story diagram has to be designed such that it is only aborted if no modifications already took place.
 Another way would be to explicitly specify activity nodes which undo the modifications before going to the failure final node.
 
-\todomvd{We could think about a rollback mechanism for later versions.}
+Note that for story patterns, the success or failure is defined by the language.
+When the matching of a story pattern is successful, then the specified modifications can be carried out and the whole story pattern is considered to be successful.
+Similarly an unsuccessful matching always means a failure of the whole story pattern.
 
-\todomvd{Write something about the technical side of the propagation?}
-\todoall{Modify metamodel accordingly.}
+For whole story diagrams, the interpretation of its success or failure can be specified by the developer.
+The success of a story diagram is not necessarily dependent on the success of all its constituent story nodes.
+For example, in the Figure~\ref{fig:successAndFailureStopNodes}, the labels of the final nodes could also be reversed.
+In that case, the whole story diagram would be considered to be successful if the first story node failed, i.e., if \emph{no} attribute could be matched in the class.
 
 \subsection{Decision Nodes, Guards, and Loops}
 \label{sec:DecisionNodesEtc}
@@ -425,11 +414,18 @@ The result of the call is bound to the object variable \fe{assoc}. The type of t
 
 If a story diagram has no out parameters, the keyword \fe{void} follows the colon instead of the out parameter's names (see Figure \ref{fig:SDRemoveInterfaceViolation} for an example).
 
+When one story diagram calls another, the calling story diagram's further execution may depend on the successful application of the called story diagram's.
+For example, the calling story diagram might need a return value of the called story diagram or it may only continue in a meaningful way if the called transformation has succeeded.
+Story diagrams have success and failure final nodes for this (see Section~\ref{sec:StopNodes}).
+When the execution of a called story diagram ends at a success stop node, then the call is left via the edge labeled with \fe{[success]}.
+Otherwise, the \fe{[failure]} edge is taken.
+
+
 %Issues for future versions:
 % method calls
 % polymorphic calls
 
-%\ext
+\ext
 {
 \subsection{Exception Handling}
 }
