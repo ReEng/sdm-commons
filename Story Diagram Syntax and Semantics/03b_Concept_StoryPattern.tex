@@ -98,8 +98,10 @@ EStructuralFeature}
 \label{sec:StoryPatterns:links}
 
 Link variables represent connections between objects and are used to connect
-different object variables. A link variable is typed over a reference of the underlying
-type graph.
+different object variables.
+A link variable is typed over a reference of the underlying type graph.
+\tododt{The typing should be described more precisely.
+The link variable is typed over one or two corresponding \fe{EReferences} that conceptually represent a uni-directional or bi-directional association.}
 
 Like object variables, link variables also have binding
 operators and binding semantics (cf. Section \ref{sec:StoryPatterns:binding}), but no binding state.
@@ -745,7 +747,9 @@ variable as illustrated in Figure~\ref{fig:InlucionLinks}~a).
 The circle containing a plus determines which of the two sides of the link is containing the other one.
 In Figure~\ref{fig:InlucionLinks}~a), the collection \fe{methods} contains an object \fe{aMethod}.
 
-In contrast to link variables that are typed over an association, inclusion links are not typed at all.
+In contrast to link variables that are typed over an association,
+\tododt{In fact, these are one or two references.}
+inclusion links are not typed at all.
 They only represent a containment of an object in a collection of objects.
 But similar to link variables, this relation can be checked to be existent between a collection and an object
 or be used to match new objects.
