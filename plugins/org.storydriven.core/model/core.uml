@@ -382,7 +382,7 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
     </profileApplication>
   </uml:Package>
   <Ecore:EReference xmi:id="_mHa4ELw1Ed-Ytrd77fw2LA" isTransient="true" isVolatile="true" base_Property="_HPpYkbLzEd-uk56s-ldeog"/>
-  <Ecore:EPackage xmi:id="_zYCZkLw1Ed-Ytrd77fw2LA" base_Package="bd7155bb-4f57-4868-b74a-5672b1eac640" nsPrefix="core" nsURI="http://www.storydriven.org/core/0.2.0" basePackage="org.storydriven" prefix="Core"/>
+  <Ecore:EPackage xmi:id="_zYCZkLw1Ed-Ytrd77fw2LA" base_Package="bd7155bb-4f57-4868-b74a-5672b1eac640" nsPrefix="core" nsURI="http://www.storydriven.org/core/0.2.7" basePackage="org.storydriven" prefix="Core"/>
   <Ecore:EPackage xmi:id="_DWk54Lw2Ed-Ytrd77fw2LA" base_Package="_gsByQLN1Ed-vJ9Qpen_Iuw" nsPrefix="expr" nsURI="http://www.storydriven.org/core/expressions/0.2.0"/>
   <Ecore:EReference xmi:id="_TmA58LxXEd-Ytrd77fw2LA" isTransient="true"/>
   <Ecore:EReference xmi:id="_aoEjQLxeEd-HP-M1eWm3kg" isUnsettable="true" base_Property="_rCN-Ibw1Ed-Ytrd77fw2LA"/>

@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="storydiagrams"
-    nsURI="http://www.storydriven.org/storydiagrams/0.2.0" nsPrefix="sd">
+    nsURI="http://www.storydriven.org/storydiagrams/0.2.1" nsPrefix="sd">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The storydiagram package is the root package for the story diagram meta-model. It defines the type Variable and otherwise is only used to contain more specific sub-packages."/>
   </eAnnotations>
@@ -14,7 +14,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
         volatile="true" transient="true" derived="true"/>
   </eClassifiers>
-  <eSubpackages name="activities" nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0"
+  <eSubpackages name="activities" nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1"
       nsPrefix="sda">
     <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariable" eSuperTypes="#//Variable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -273,7 +273,7 @@
         <details key="documentation" value="A JunctionNode represents a pseudo-activity which is used for branching and merging the control flow in an activity. It is visualized by a diamond shaped figure."/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StartNode" eSuperTypes="#//activities/ActivityNode">
+    <eClassifiers xsi:type="ecore:EClass" name="InitialNode" eSuperTypes="#//activities/ActivityNode">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The start node of an activity defines the starting point for the execution of the activity."/>
       </eAnnotations>
@@ -290,16 +290,10 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StopNode" eSuperTypes="#//activities/ActivityNode">
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityFinalNode" eSuperTypes="#//activities/ActivityNode">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="At a StopNode, the execution of an activity terminates. If the activity specifies any out-parameters, they have to be bound to a return expression."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="flowStopOnly" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="true if subactivity is stopped, but not the whole control flow"/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="returnValue" ordered="false"
           eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
           changeable="false" volatile="true" transient="true" derived="true">
@@ -314,6 +308,9 @@
           <details key="documentation" value="Defines the return values of the activity. These return values will be assigned to the out-parameters."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="success" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ActivityCallNode" eSuperTypes="#//activities/ActivityNode #//calls/Invocation">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -338,6 +335,7 @@
         <eAnnotations source="subsets" references="#//activities/StoryNode/storyPattern"/>
       </eStructuralFeatures>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FlowFinalNode" eSuperTypes="#//activities/ActivityFinalNode"/>
     <eSubpackages name="expressions" nsURI="http://www.storydriven.org/storydiagrams/activities/expressions/0.2.0"
         nsPrefix="sdae">
       <eClassifiers xsi:type="ecore:EClass" name="ExceptionVariableExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
@@ -479,7 +477,7 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
-  <eSubpackages name="patterns" nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.0"
+  <eSubpackages name="patterns" nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1"
       nsPrefix="sdp">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package contains all classes for modeling story patterns that may be &#xD;&#xA;embedded into StoryActivityNodes of an Activity."/>
@@ -611,12 +609,6 @@
           ordered="false" upperBound="-1" eType="#//patterns/LinkConstraint" eOpposite="#//patterns/LinkConstraint/secondLink"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="firstLinkConstraint"
           ordered="false" upperBound="-1" eType="#//patterns/LinkConstraint" eOpposite="#//patterns/LinkConstraint/firstLink"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" ordered="false"
-          lowerBound="1" eType="#//patterns/BindingState" defaultValueLiteral="UNBOUND">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The binding state defines whether the link is already bound or whether a match has to be obtained for it."/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" ordered="false"
           lowerBound="1" eType="#//patterns/StoryPattern" eOpposite="#//patterns/StoryPattern/linkVariable"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
@@ -721,10 +713,12 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="objectVariable" ordered="false"
           lowerBound="1" eType="#//patterns/ObjectVariable" eOpposite="#//patterns/ObjectVariable/attributeAssignment"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ObjectSetVariable" eSuperTypes="#//patterns/ObjectVariable">
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionVariable" eSuperTypes="#//patterns/ObjectVariable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents a set of objects of the same type that are represented by a single node.&#xD;&#xA;The context for contained Constraints and AttributeAssignments is every single object in the set. E.g., if the constraint is &quot;name = 'abc'&quot;, only objects with that name are matched and added to the set. The use of the binding operator &quot;CREATE&quot; is not defined for ObjectSetVariables, i.e., the sets can only be matched and deleted."/>
       </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maybeEmpty" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PrimitiveVariable" eSuperTypes="#//patterns/AbstractVariable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -775,7 +769,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ContainmentRelation" eSuperTypes="#//patterns/AbstractLinkVariable">
+    <eClassifiers xsi:type="ecore:EClass" name="InclusionLink" eSuperTypes="#//patterns/AbstractLinkVariable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Specifies the containment of an object in a set (represented by a ContainerVariable). Will be displayed by a line having a circle with a plus inside at the end of the container (the source end of the link). A create modifier specifies that the object will be added to the container, delete that it will be removed, and none that it will be checked to be contained."/>
       </eAnnotations>
@@ -804,11 +798,7 @@
         </eParameters>
       </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ContainerVariable" eSuperTypes="#//patterns/ObjectVariable">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Represents a single container, e.g. a Set or List. ContainmentRelations can be used to add or remove objects to or from this container.&#xD;&#xA;Every Constraint or AttributeAssignment can use the variable as a container (e.g., &quot;set->size() > 5&quot;)."/>
-      </eAnnotations>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MaybeLink" eSuperTypes="#//patterns/AbstractLinkVariable"/>
     <eClassifiers xsi:type="ecore:EClass" name="StoryPattern" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A Story Pattern is a graph rewrite rule that may be embedded into a StoryActivityNode&#xD;&#xA;of an Activity."/>
@@ -833,7 +823,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="templateSignature" ordered="false"
           eType="#//templates/TemplateSignature" containment="true" eOpposite="#//templates/TemplateSignature/pattern"/>
     </eClassifiers>
-    <eSubpackages name="expressions" nsURI="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.0"
+    <eSubpackages name="expressions" nsURI="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1"
         nsPrefix="sdpe">
       <eClassifiers xsi:type="ecore:EClass" name="AttributeValueExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -863,12 +853,12 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ObjectSetSizeExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+      <eClassifiers xsi:type="ecore:EClass" name="CollectionSizeExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Represents the number of elements in the set of objects that is represented by an object set variable. For example, if you have an object set variable mySet, then this expression would represent something like mySet.size(). The expression can be used to constrain the pattern application, e.g., to only a apply the pattern when at least two objects can be matched for the set."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="set" ordered="false"
-            lowerBound="1" eType="#//patterns/ObjectSetVariable">
+            lowerBound="1" eType="#//patterns/CollectionVariable">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Specifies the object set variable whose number of set elements is to be represented by this expression."/>
           </eAnnotations>

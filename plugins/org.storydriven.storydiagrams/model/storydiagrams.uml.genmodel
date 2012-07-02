@@ -117,17 +117,17 @@
             createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/StructuredNode/ownedActivityNode"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//activities/JunctionNode"/>
-      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//activities/StartNode"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/InitialNode"/>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//activities/StatementNode">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/StatementNode/statementExpression"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//activities/StopNode">
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//activities/StopNode/flowStopOnly"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/ActivityFinalNode">
+        <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityFinalNode/returnValue"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/StopNode/returnValue"/>
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/StopNode/returnValues"/>
+            createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ActivityFinalNode/returnValues"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//activities/ActivityFinalNode/success"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//activities/ActivityCallNode">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -137,6 +137,7 @@
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//activities/ModifyingStoryNode/ownedRule"/>
       </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//activities/FlowFinalNode"/>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="ActivitiesExpressions"
           basePackage="org.storydriven.storydiagrams.activities" disposableProviderFactory="true"
           ecorePackage="storydiagrams.ecore#//activities/expressions" resourceInterfaces="true"
@@ -265,7 +266,6 @@
             propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/secondLinkConstraint"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/firstLinkConstraint"/>
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/AbstractLinkVariable/bindingState"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
             createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AbstractLinkVariable/pattern"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -290,7 +290,9 @@
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
             createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AttributeAssignment/objectVariable"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//patterns/ObjectSetVariable"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/CollectionVariable">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/CollectionVariable/maybeEmpty"/>
+      </genClasses>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//patterns/PrimitiveVariable">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/PrimitiveVariable/classifier"/>
@@ -307,14 +309,14 @@
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/LinkVariable/qualifierExpression"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//patterns/ContainmentRelation"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/InclusionLink"/>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//patterns/MatchingPattern">
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="storydiagrams.ecore#//patterns/MatchingPattern/NoModifierInMatchingPattern">
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="storydiagrams.ecore#//patterns/MatchingPattern/NoModifierInMatchingPattern/diagnostics"/>
           <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="storydiagrams.ecore#//patterns/MatchingPattern/NoModifierInMatchingPattern/context"/>
         </genOperations>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//patterns/ContainerVariable"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/MaybeLink"/>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//patterns/StoryPattern">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/StoryPattern/variable"/>
@@ -344,9 +346,9 @@
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
               propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/expressions/ObjectVariableExpression/object"/>
         </genClasses>
-        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression">
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression">
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-              propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/expressions/ObjectSetSizeExpression/set"/>
+              propertySortChoices="true" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/expressions/CollectionSizeExpression/set"/>
         </genClasses>
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//patterns/expressions/PrimitiveVariableExpression">
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
