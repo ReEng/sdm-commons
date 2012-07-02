@@ -105,15 +105,46 @@ A link variable is typed over one or two corresponding \fe{EReferences} that
 conceptually represent a uni-directional (only one \fe{EReference}) or a
 bi-directional (two \fe{EReferences}) association in the underlying type graph.
 
+Figure~\ref{fig:associationBetweenObjects} a) shows an exemplary type graph
+with an association between the classes \fe{Method} and \fe{GASTType}.
+Technically, this association corresponds to two \fe{EReferences} \fe{methods}
+and \fe{parameterTypes}.
+Figure~\ref{fig:associationBetweenObjects} b) shows a story pattern with a link
+variable typed via this association.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.9]{figures/AssociationBetweenObjects}
+  \caption{An association between objects}
+  \label{fig:associationBetweenObjects}
+\end{figure}
+
 If two object variables are connected via two link variables that refer to the
-same reference, the objects in the underlying model have to be connected twice.
-However, this is not possible for unique references. 
+same reference, the target object in the underlying model has to be contained
+twice in the source model. 
+However, this is not possible for unique references.
+
+An example for this is shown in Figure~\ref{fig:twoLinksBetweenObjects}.
+The upper part of the figure shows an excerpt of a type graph and the lower part
+shows an exemplary story pattern with two object variables and two link variable
+between them. The semantics is that a method \fe{method} has two parameters of
+the same type \fe{string}. 
+The same holds for bidirectional link variables as depicted in
+Figure~\ref{fig:associationBetweenObjects} c). 
+
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.8]{figures/TwoLinksBetweenObjects}
+  \caption{Two link variables between objects}
+  \label{fig:twoLinksBetweenObjects}
+\end{figure}
+
+
 
 Like object variables, link variables also have binding
 operators and binding semantics (cf. Section \ref{sec:StoryPatterns:binding}),
 but no binding state because link variables are bound implicitely.
-
-
 
 
 \subsection{Binding of Variables}
