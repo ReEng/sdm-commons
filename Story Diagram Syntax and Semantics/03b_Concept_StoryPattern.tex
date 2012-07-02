@@ -101,12 +101,17 @@ EStructuralFeature}
 
 Link variables represent connections between objects and are used to connect
 different object variables.
-A link variable is typed over a reference of the underlying type graph.
-\tododt{The typing should be described more precisely.
-The link variable is typed over one or two corresponding \fe{EReferences} that conceptually represent a uni-directional or bi-directional association.}
+A link variable is typed over one or two corresponding \fe{EReferences} that
+conceptually represent a uni-directional (only one \fe{EReference}) or a
+bi-directional (two \fe{EReferences}) association in the underlying type graph.
+
+If two object variables are connected via two link variables that refer to the
+same reference, the objects in the underlying model have to be connected twice.
+However, this is not possible for unique references. 
 
 Like object variables, link variables also have binding
-operators and binding semantics (cf. Section \ref{sec:StoryPatterns:binding}), but no binding state.
+operators and binding semantics (cf. Section \ref{sec:StoryPatterns:binding}),
+but no binding state because link variables are bound implicitely.
 
 
 
