@@ -938,9 +938,7 @@ A pattern constraint may use all object variables that are used in the same stor
 \label{fig:patternConstraint}
 \end{figure}
 
-\tododt{Should the constraint in Figure~\ref{fig:patternConstraint} not be classMethods->forAll(name <> method.name)? Otherwise the constraint does not check the matched methods in \fe{classMethods}.}
-
-Figure~\ref{fig:patternConstraint} gives an example for the concrete syntax of a pattern constraint. The story pattern has two bound object variables \fe{class} and \fe{method} of types \fe{GASTClass} and \fe{Method}, respectively. The pattern constraint is visualized as a label containing the OCL constraint. In the example, the OCL constraints specifies that all methods of \fe{class} need to have a name which is different from the name of \fe{method}. In addition, the story pattern matches all methods of \fe{class} in the object set \fe{classMethods}. The matching of the story pattern is successful only if the pattern constraint is fulfilled.
+Figure~\ref{fig:patternConstraint} gives an example for the concrete syntax of a pattern constraint. The story pattern has two bound object variables \fe{class} and \fe{method} of types \fe{GASTClass} and \fe{Method}, respectively. The story pattern matches all methods of \fe{class} in the object set \fe{classMethods}. The pattern constraint is visualized as a label containing the OCL constraint. In the example, the OCL constraint specifies that all \fe{classMethods} need to have a name which is different from the name of \fe{method}. The matching of the story pattern is successful only if the pattern constraint is fulfilled.
 
 } %--- End of pattern constraints section
 
