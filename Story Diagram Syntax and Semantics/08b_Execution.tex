@@ -24,7 +24,8 @@ In the following sections, we describe the structure and operation principles of
 
 Figure~\ref{fig:interpreter_packages} shows the package structure of the story diagram interpreter.
 Currently, there are multiple story diagram metamodels in use that must all be supported by the interpreter. 
-Therefore, the interpreter is divided into a metamodel-independent core (\emph{de.mdelab.sdm.interpreter.core}) and multiple metamodel-dependent extensions (\emph{org.storydriven.modeling.interpreter} and \emph{de.mdelab.sdm.interpreter.sde}). 
+Therefore, the interpreter is divided into a metamodel-independent core (\emph{de.mdelab.sdm.interpreter.core}) and multiple metamodel-dependent extensions (\emph{org.storydriven.storydiagrams.interpreter} and \emph{de.mdelab.sdm.interpreter.sde}). 
+The extension \emph{org.storydriven.storydiagrams.interpreter} is responsible for the metamodel described in this paper.
 This separation of metamodel-dependent and independent parts allows for easier maintenance of the interpreter. 
 The classes of the core package define a quite extensive list of generic type parameters (not shown in the subsequent class diagrams), e.g., for activity nodes, classifiers, or features. 
 Subclasses in the metamodel-dependent packages replace these generic types with the concrete types defined in the respective metamodel.
@@ -66,7 +67,7 @@ The \emph{SDMInterpreter} maintains multiple \emph{VariableScope}s, one for each
 
 The \emph{ExpressionInterpreterManager} is responsible for managing the interpreters for expression languages and delegating the evaluation of an expression to the appropriate \emph{ExpressionInterpreter}. 
 The \emph{evaluateExpression()} method is provided for that purpose. 
-Subclasses of \emph{ExpressionInterpreter}s have to be registered at the \emph{ExpressionInterpreterManager} via the \emph{registerExpressionInterpreter()} method before expressions of that language can be handled, e.g., the \emph{OCLExpressionInterpreter} has to be registerd for OCL expressions before OCL expressions in a story diagram can be evaluated.
+Subclasses of \emph{ExpressionInterpreter}s have to be registered at the \emph{ExpressionInterpreterManager} via the \emph{registerExpressionInterpreter()} method before expressions of that language can be handled, e.g., the \emph{OCLExpressionInterpreter} has to be registered for OCL expressions before OCL expressions in a story diagram can be evaluated.
 Similarly, the \emph{CallsInterpreter} is registered for Calls.
 The \emph{EclipseExpressionInterpreterManager} performs this registration automatically. 
 The plug-in \emph{de.mdelab.sdm.interpreter.eclipse} defines an extension point for \emph{ExpressionInterpreter}s. 
