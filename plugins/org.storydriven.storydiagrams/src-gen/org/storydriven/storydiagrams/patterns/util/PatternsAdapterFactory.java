@@ -15,6 +15,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.TypedElement;
 import org.storydriven.storydiagrams.Variable;
+import org.storydriven.storydiagrams.patterns.*;
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
 import org.storydriven.storydiagrams.patterns.AttributeAssignment;
@@ -117,8 +118,8 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseObjectSetVariable(ObjectSetVariable object) {
-			return createObjectSetVariableAdapter();
+		public Adapter caseCollectionVariable(CollectionVariable object) {
+			return createCollectionVariableAdapter();
 		}
 
 		@Override
@@ -137,8 +138,8 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseContainmentRelation(ContainmentRelation object) {
-			return createContainmentRelationAdapter();
+		public Adapter caseInclusionLink(InclusionLink object) {
+			return createInclusionLinkAdapter();
 		}
 
 		@Override
@@ -147,8 +148,8 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseContainerVariable(ContainerVariable object) {
-			return createContainerVariableAdapter();
+		public Adapter caseMaybeLink(MaybeLink object) {
+			return createMaybeLinkAdapter();
 		}
 
 		@Override
@@ -285,16 +286,16 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.ObjectSetVariable <em>Object Set Variable</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.CollectionVariable <em>Collection Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.patterns.ObjectSetVariable
+	 * @see org.storydriven.storydiagrams.patterns.CollectionVariable
 	 * @generated
 	 */
-	public Adapter createObjectSetVariableAdapter() {
+	public Adapter createCollectionVariableAdapter() {
 		return null;
 	}
 
@@ -341,16 +342,16 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.ContainmentRelation <em>Containment Relation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.InclusionLink <em>Inclusion Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.patterns.ContainmentRelation
+	 * @see org.storydriven.storydiagrams.patterns.InclusionLink
 	 * @generated
 	 */
-	public Adapter createContainmentRelationAdapter() {
+	public Adapter createInclusionLinkAdapter() {
 		return null;
 	}
 
@@ -369,16 +370,16 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.ContainerVariable <em>Container Variable</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.MaybeLink <em>Maybe Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.patterns.ContainerVariable
+	 * @see org.storydriven.storydiagrams.patterns.MaybeLink
 	 * @generated
 	 */
-	public Adapter createContainerVariableAdapter() {
+	public Adapter createMaybeLinkAdapter() {
 		return null;
 	}
 

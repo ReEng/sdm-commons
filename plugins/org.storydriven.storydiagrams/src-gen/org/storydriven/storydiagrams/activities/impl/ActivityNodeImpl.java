@@ -41,7 +41,8 @@ import org.storydriven.storydiagrams.activities.StructuredNode;
  *
  * @generated
  */
-public abstract class ActivityNodeImpl extends NamedElementImpl implements ActivityNode {
+public abstract class ActivityNodeImpl extends NamedElementImpl implements
+		ActivityNode {
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -115,7 +116,8 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
 		String oldComment = comment;
 		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY_NODE__COMMENT, oldComment,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ActivitiesPackage.ACTIVITY_NODE__COMMENT, oldComment,
 					comment));
 	}
 
@@ -125,8 +127,10 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
 	 */
 	public EList<ActivityEdge> getIncomings() {
 		if (incomings == null) {
-			incomings = new EObjectWithInverseResolvingEList<ActivityEdge>(ActivityEdge.class, this,
-					ActivitiesPackage.ACTIVITY_NODE__INCOMING, ActivitiesPackage.ACTIVITY_EDGE__TARGET);
+			incomings = new EObjectWithInverseResolvingEList<ActivityEdge>(
+					ActivityEdge.class, this,
+					ActivitiesPackage.ACTIVITY_NODE__INCOMING,
+					ActivitiesPackage.ACTIVITY_EDGE__TARGET);
 		}
 		return incomings;
 	}
@@ -137,8 +141,10 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
 	 */
 	public EList<ActivityEdge> getOutgoings() {
 		if (outgoings == null) {
-			outgoings = new EObjectWithInverseResolvingEList<ActivityEdge>(ActivityEdge.class, this,
-					ActivitiesPackage.ACTIVITY_NODE__OUTGOING, ActivitiesPackage.ACTIVITY_EDGE__SOURCE);
+			outgoings = new EObjectWithInverseResolvingEList<ActivityEdge>(
+					ActivityEdge.class, this,
+					ActivitiesPackage.ACTIVITY_NODE__OUTGOING,
+					ActivitiesPackage.ACTIVITY_EDGE__SOURCE);
 		}
 		return outgoings;
 	}
@@ -167,7 +173,8 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOwningActivityNode(StructuredNode newOwningActivityNode, NotificationChain msgs) {
+	public NotificationChain basicSetOwningActivityNode(
+			StructuredNode newOwningActivityNode, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject) newOwningActivityNode,
 				ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE, msgs);
 		return msgs;
@@ -181,19 +188,23 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
 		if (newOwningActivityNode != eInternalContainer()
 				|| (eContainerFeatureID() != ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE && newOwningActivityNode != null)) {
 			if (EcoreUtil.isAncestor(this, newOwningActivityNode))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException(
+						"Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newOwningActivityNode != null)
-				msgs = ((InternalEObject) newOwningActivityNode).eInverseAdd(this,
-						ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE, StructuredNode.class, msgs);
+				msgs = ((InternalEObject) newOwningActivityNode).eInverseAdd(
+						this,
+						ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+						StructuredNode.class, msgs);
 			msgs = basicSetOwningActivityNode(newOwningActivityNode, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE, newOwningActivityNode, newOwningActivityNode));
+					ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE,
+					newOwningActivityNode, newOwningActivityNode));
 	}
 
 	/**
@@ -220,7 +231,8 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOwningActivity(Activity newOwningActivity, NotificationChain msgs) {
+	public NotificationChain basicSetOwningActivity(Activity newOwningActivity,
+			NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject) newOwningActivity,
 				ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY, msgs);
 		return msgs;
@@ -234,18 +246,21 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
 		if (newOwningActivity != eInternalContainer()
 				|| (eContainerFeatureID() != ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY && newOwningActivity != null)) {
 			if (EcoreUtil.isAncestor(this, newOwningActivity))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException(
+						"Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newOwningActivity != null)
 				msgs = ((InternalEObject) newOwningActivity).eInverseAdd(this,
-						ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE, Activity.class, msgs);
+						ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE,
+						Activity.class, msgs);
 			msgs = basicSetOwningActivity(newOwningActivity, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY,
 					newOwningActivity, newOwningActivity));
 	}
 
@@ -255,10 +270,12 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.ACTIVITY_NODE__OUTGOING:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOutgoings()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOutgoings())
+					.basicAdd(otherEnd, msgs);
 		case ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
@@ -268,7 +285,8 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetOwningActivityNode((StructuredNode) otherEnd, msgs);
 		case ActivitiesPackage.ACTIVITY_NODE__INCOMING:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getIncomings()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getIncomings())
+					.basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -278,16 +296,19 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.ACTIVITY_NODE__OUTGOING:
-			return ((InternalEList<?>) getOutgoings()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getOutgoings()).basicRemove(otherEnd,
+					msgs);
 		case ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY:
 			return basicSetOwningActivity(null, msgs);
 		case ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE:
 			return basicSetOwningActivityNode(null, msgs);
 		case ActivitiesPackage.ACTIVITY_NODE__INCOMING:
-			return ((InternalEList<?>) getIncomings()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getIncomings()).basicRemove(otherEnd,
+					msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -297,13 +318,16 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(
+			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY:
-			return eInternalContainer().eInverseRemove(this, ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE,
+			return eInternalContainer().eInverseRemove(this,
+					ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE,
 					Activity.class, msgs);
 		case ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE:
-			return eInternalContainer().eInverseRemove(this, ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+			return eInternalContainer().eInverseRemove(this,
+					ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
 					StructuredNode.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -347,7 +371,8 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
 			return;
 		case ActivitiesPackage.ACTIVITY_NODE__OUTGOING:
 			getOutgoings().clear();
-			getOutgoings().addAll((Collection<? extends ActivityEdge>) newValue);
+			getOutgoings()
+					.addAll((Collection<? extends ActivityEdge>) newValue);
 			return;
 		case ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY:
 			setOwningActivity((Activity) newValue);
@@ -357,7 +382,8 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
 			return;
 		case ActivitiesPackage.ACTIVITY_NODE__INCOMING:
 			getIncomings().clear();
-			getIncomings().addAll((Collection<? extends ActivityEdge>) newValue);
+			getIncomings()
+					.addAll((Collection<? extends ActivityEdge>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -397,7 +423,8 @@ public abstract class ActivityNodeImpl extends NamedElementImpl implements Activ
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case ActivitiesPackage.ACTIVITY_NODE__COMMENT:
-			return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			return COMMENT_EDEFAULT == null ? comment != null
+					: !COMMENT_EDEFAULT.equals(comment);
 		case ActivitiesPackage.ACTIVITY_NODE__OUTGOING:
 			return outgoings != null && !outgoings.isEmpty();
 		case ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY:

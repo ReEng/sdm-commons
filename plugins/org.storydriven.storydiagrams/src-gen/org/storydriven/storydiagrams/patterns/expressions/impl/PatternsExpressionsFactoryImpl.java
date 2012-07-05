@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.storydiagrams.patterns.expressions.*;
 import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
@@ -24,7 +25,8 @@ import org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpre
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements PatternsExpressionsFactory {
+public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements
+		PatternsExpressionsFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -34,7 +36,7 @@ public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements Patt
 	public static PatternsExpressionsFactory init() {
 		try {
 			PatternsExpressionsFactory thePatternsExpressionsFactory = (PatternsExpressionsFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.0");
+					.getEFactory("http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1");
 			if (thePatternsExpressionsFactory != null) {
 				return thePatternsExpressionsFactory;
 			}
@@ -66,12 +68,13 @@ public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements Patt
 			return createAttributeValueExpression();
 		case PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION:
 			return createObjectVariableExpression();
-		case PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION:
-			return createObjectSetSizeExpression();
+		case PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION:
+			return createCollectionSizeExpression();
 		case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION:
 			return createPrimitiveVariableExpression();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName()
+					+ "' is not a valid classifier");
 		}
 	}
 
@@ -100,9 +103,9 @@ public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements Patt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ObjectSetSizeExpression createObjectSetSizeExpression() {
-		ObjectSetSizeExpressionImpl objectSetSizeExpression = new ObjectSetSizeExpressionImpl();
-		return objectSetSizeExpression;
+	public CollectionSizeExpression createCollectionSizeExpression() {
+		CollectionSizeExpressionImpl collectionSizeExpression = new CollectionSizeExpressionImpl();
+		return collectionSizeExpression;
 	}
 
 	/**

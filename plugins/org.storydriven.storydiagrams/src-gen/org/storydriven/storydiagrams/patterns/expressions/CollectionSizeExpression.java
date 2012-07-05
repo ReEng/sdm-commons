@@ -7,11 +7,12 @@
 package org.storydriven.storydiagrams.patterns.expressions;
 
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.storydiagrams.patterns.ObjectSetVariable;
+
+import org.storydriven.storydiagrams.patterns.CollectionVariable;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Object Set Size Expression</b></em>'.
+ * A representation of the model object '<em><b>Collection Size Expression</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -21,15 +22,15 @@ import org.storydriven.storydiagrams.patterns.ObjectSetVariable;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression#getSet <em>Set</em>}</li>
+ *   <li>{@link org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression#getSet <em>Set</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPackage#getObjectSetSizeExpression()
+ * @see org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPackage#getCollectionSizeExpression()
  * @model
  * @generated
  */
-public interface ObjectSetSizeExpression extends Expression {
+public interface CollectionSizeExpression extends Expression {
 	/**
 	 * Returns the value of the '<em><b>Set</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -38,21 +39,21 @@ public interface ObjectSetSizeExpression extends Expression {
 	 * Specifies the object set variable whose number of set elements is to be represented by this expression.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Set</em>' reference.
-	 * @see #setSet(ObjectSetVariable)
-	 * @see org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPackage#getObjectSetSizeExpression_Set()
+	 * @see #setSet(CollectionVariable)
+	 * @see org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPackage#getCollectionSizeExpression_Set()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	ObjectSetVariable getSet();
+	CollectionVariable getSet();
 
 	/**
-	 * Sets the value of the '{@link org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression#getSet <em>Set</em>}' reference.
+	 * Sets the value of the '{@link org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression#getSet <em>Set</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Set</em>' reference.
 	 * @see #getSet()
 	 * @generated
 	 */
-	void setSet(ObjectSetVariable value);
+	void setSet(CollectionVariable value);
 
-} // ObjectSetSizeExpression
+} // CollectionSizeExpression

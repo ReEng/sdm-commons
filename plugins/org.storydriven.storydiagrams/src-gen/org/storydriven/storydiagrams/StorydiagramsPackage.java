@@ -44,7 +44,7 @@ public interface StorydiagramsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.storydriven.org/storydiagrams/0.2.0";
+	String eNS_URI = "http://www.storydriven.org/storydiagrams/0.2.1";
 
 	/**
 	 * The package namespace name.
@@ -68,7 +68,8 @@ public interface StorydiagramsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	StorydiagramsPackage eINSTANCE = org.storydriven.storydiagrams.impl.StorydiagramsPackageImpl.init();
+	StorydiagramsPackage eINSTANCE = org.storydriven.storydiagrams.impl.StorydiagramsPackageImpl
+			.init();
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.impl.VariableImpl <em>Variable</em>}' class.
@@ -343,7 +344,8 @@ public interface StorydiagramsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VARIABLE__VARIABLE_NAME = eINSTANCE.getVariable_VariableName();
+		EAttribute VARIABLE__VARIABLE_NAME = eINSTANCE
+				.getVariable_VariableName();
 
 	}
 

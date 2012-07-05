@@ -25,6 +25,7 @@ import org.storydriven.storydiagrams.calls.impl.CallsPackageImpl;
 import org.storydriven.storydiagrams.impl.StorydiagramsPackageImpl;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression;
+import org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
 import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
@@ -40,7 +41,8 @@ import org.storydriven.storydiagrams.templates.impl.TemplatesPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternsExpressionsPackageImpl extends EPackageImpl implements PatternsExpressionsPackage {
+public class PatternsExpressionsPackageImpl extends EPackageImpl implements
+		PatternsExpressionsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -60,7 +62,7 @@ public class PatternsExpressionsPackageImpl extends EPackageImpl implements Patt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass objectSetSizeExpressionEClass = null;
+	private EClass collectionSizeExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,8 +116,8 @@ public class PatternsExpressionsPackageImpl extends EPackageImpl implements Patt
 
 		// Obtain or create and register package
 		PatternsExpressionsPackageImpl thePatternsExpressionsPackage = (PatternsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-				: new PatternsExpressionsPackageImpl());
+				.get(eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
+				.get(eNS_URI) : new PatternsExpressionsPackageImpl());
 
 		isInited = true;
 
@@ -125,25 +127,31 @@ public class PatternsExpressionsPackageImpl extends EPackageImpl implements Patt
 		// Obtain or create and register interdependencies
 		StorydiagramsPackageImpl theStorydiagramsPackage = (StorydiagramsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(StorydiagramsPackage.eNS_URI) instanceof StorydiagramsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(StorydiagramsPackage.eNS_URI) : StorydiagramsPackage.eINSTANCE);
+				.getEPackage(StorydiagramsPackage.eNS_URI)
+				: StorydiagramsPackage.eINSTANCE);
 		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);
+				.getEPackage(ActivitiesPackage.eNS_URI)
+				: ActivitiesPackage.eINSTANCE);
 		ActivitiesExpressionsPackageImpl theActivitiesExpressionsPackage = (ActivitiesExpressionsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(ActivitiesExpressionsPackage.eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ActivitiesExpressionsPackage.eNS_URI) : ActivitiesExpressionsPackage.eINSTANCE);
+				.getEPackage(ActivitiesExpressionsPackage.eNS_URI)
+				: ActivitiesExpressionsPackage.eINSTANCE);
 		CallsPackageImpl theCallsPackage = (CallsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(CallsPackage.eNS_URI) instanceof CallsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(CallsPackage.eNS_URI) : CallsPackage.eINSTANCE);
 		CallsExpressionsPackageImpl theCallsExpressionsPackage = (CallsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(CallsExpressionsPackage.eNS_URI) instanceof CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(CallsExpressionsPackage.eNS_URI) : CallsExpressionsPackage.eINSTANCE);
+				.getEPackage(CallsExpressionsPackage.eNS_URI)
+				: CallsExpressionsPackage.eINSTANCE);
 		PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(PatternsPackage.eNS_URI) : PatternsPackage.eINSTANCE);
+				.getEPackage(PatternsPackage.eNS_URI)
+				: PatternsPackage.eINSTANCE);
 		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(TemplatesPackage.eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(TemplatesPackage.eNS_URI) : TemplatesPackage.eINSTANCE);
+				.getEPackage(TemplatesPackage.eNS_URI)
+				: TemplatesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thePatternsExpressionsPackage.createPackageContents();
@@ -169,7 +177,8 @@ public class PatternsExpressionsPackageImpl extends EPackageImpl implements Patt
 		thePatternsExpressionsPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(PatternsExpressionsPackage.eNS_URI, thePatternsExpressionsPackage);
+		EPackage.Registry.INSTANCE.put(PatternsExpressionsPackage.eNS_URI,
+				thePatternsExpressionsPackage);
 		return thePatternsExpressionsPackage;
 	}
 
@@ -188,7 +197,8 @@ public class PatternsExpressionsPackageImpl extends EPackageImpl implements Patt
 	 * @generated
 	 */
 	public EReference getAttributeValueExpression_Object() {
-		return (EReference) attributeValueExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) attributeValueExpressionEClass
+				.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -197,7 +207,8 @@ public class PatternsExpressionsPackageImpl extends EPackageImpl implements Patt
 	 * @generated
 	 */
 	public EReference getAttributeValueExpression_Attribute() {
-		return (EReference) attributeValueExpressionEClass.getEStructuralFeatures().get(1);
+		return (EReference) attributeValueExpressionEClass
+				.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -215,7 +226,8 @@ public class PatternsExpressionsPackageImpl extends EPackageImpl implements Patt
 	 * @generated
 	 */
 	public EReference getObjectVariableExpression_Object() {
-		return (EReference) objectVariableExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) objectVariableExpressionEClass
+				.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -223,8 +235,8 @@ public class PatternsExpressionsPackageImpl extends EPackageImpl implements Patt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getObjectSetSizeExpression() {
-		return objectSetSizeExpressionEClass;
+	public EClass getCollectionSizeExpression() {
+		return collectionSizeExpressionEClass;
 	}
 
 	/**
@@ -232,8 +244,9 @@ public class PatternsExpressionsPackageImpl extends EPackageImpl implements Patt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getObjectSetSizeExpression_Set() {
-		return (EReference) objectSetSizeExpressionEClass.getEStructuralFeatures().get(0);
+	public EReference getCollectionSizeExpression_Set() {
+		return (EReference) collectionSizeExpressionEClass
+				.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -251,7 +264,8 @@ public class PatternsExpressionsPackageImpl extends EPackageImpl implements Patt
 	 * @generated
 	 */
 	public EReference getPrimitiveVariableExpression_PrimitiveVariable() {
-		return (EReference) primitiveVariableExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) primitiveVariableExpressionEClass
+				.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -284,17 +298,22 @@ public class PatternsExpressionsPackageImpl extends EPackageImpl implements Patt
 
 		// Create classes and their features
 		attributeValueExpressionEClass = createEClass(ATTRIBUTE_VALUE_EXPRESSION);
-		createEReference(attributeValueExpressionEClass, ATTRIBUTE_VALUE_EXPRESSION__OBJECT);
-		createEReference(attributeValueExpressionEClass, ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE);
+		createEReference(attributeValueExpressionEClass,
+				ATTRIBUTE_VALUE_EXPRESSION__OBJECT);
+		createEReference(attributeValueExpressionEClass,
+				ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE);
 
 		objectVariableExpressionEClass = createEClass(OBJECT_VARIABLE_EXPRESSION);
-		createEReference(objectVariableExpressionEClass, OBJECT_VARIABLE_EXPRESSION__OBJECT);
+		createEReference(objectVariableExpressionEClass,
+				OBJECT_VARIABLE_EXPRESSION__OBJECT);
 
-		objectSetSizeExpressionEClass = createEClass(OBJECT_SET_SIZE_EXPRESSION);
-		createEReference(objectSetSizeExpressionEClass, OBJECT_SET_SIZE_EXPRESSION__SET);
+		collectionSizeExpressionEClass = createEClass(COLLECTION_SIZE_EXPRESSION);
+		createEReference(collectionSizeExpressionEClass,
+				COLLECTION_SIZE_EXPRESSION__SET);
 
 		primitiveVariableExpressionEClass = createEClass(PRIMITIVE_VARIABLE_EXPRESSION);
-		createEReference(primitiveVariableExpressionEClass, PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE);
+		createEReference(primitiveVariableExpressionEClass,
+				PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE);
 	}
 
 	/**
@@ -326,45 +345,66 @@ public class PatternsExpressionsPackageImpl extends EPackageImpl implements Patt
 				.getEPackage(ExpressionsPackage.eNS_URI);
 		PatternsPackage thePatternsPackage = (PatternsPackage) EPackage.Registry.INSTANCE
 				.getEPackage(PatternsPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE
+				.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		attributeValueExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		objectVariableExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		objectSetSizeExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		primitiveVariableExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		attributeValueExpressionEClass.getESuperTypes().add(
+				theExpressionsPackage.getExpression());
+		objectVariableExpressionEClass.getESuperTypes().add(
+				theExpressionsPackage.getExpression());
+		collectionSizeExpressionEClass.getESuperTypes().add(
+				theExpressionsPackage.getExpression());
+		primitiveVariableExpressionEClass.getESuperTypes().add(
+				theExpressionsPackage.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(attributeValueExpressionEClass, AttributeValueExpression.class, "AttributeValueExpression",
+		initEClass(attributeValueExpressionEClass,
+				AttributeValueExpression.class, "AttributeValueExpression",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttributeValueExpression_Object(), thePatternsPackage.getObjectVariable(), null, "object",
-				null, 1, 1, AttributeValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getAttributeValueExpression_Attribute(), theEcorePackage.getEAttribute(), null, "attribute",
-				null, 1, 1, AttributeValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAttributeValueExpression_Object(),
+				thePatternsPackage.getObjectVariable(), null, "object", null,
+				1, 1, AttributeValueExpression.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAttributeValueExpression_Attribute(),
+				theEcorePackage.getEAttribute(), null, "attribute", null, 1, 1,
+				AttributeValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(objectVariableExpressionEClass, ObjectVariableExpression.class, "ObjectVariableExpression",
+		initEClass(objectVariableExpressionEClass,
+				ObjectVariableExpression.class, "ObjectVariableExpression",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getObjectVariableExpression_Object(), thePatternsPackage.getObjectVariable(), null, "object",
-				null, 1, 1, ObjectVariableExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getObjectVariableExpression_Object(),
+				thePatternsPackage.getObjectVariable(), null, "object", null,
+				1, 1, ObjectVariableExpression.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(objectSetSizeExpressionEClass, ObjectSetSizeExpression.class, "ObjectSetSizeExpression",
+		initEClass(collectionSizeExpressionEClass,
+				CollectionSizeExpression.class, "CollectionSizeExpression",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getObjectSetSizeExpression_Set(), thePatternsPackage.getObjectSetVariable(), null, "set", null,
-				1, 1, ObjectSetSizeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getCollectionSizeExpression_Set(),
+				thePatternsPackage.getCollectionVariable(), null, "set", null,
+				1, 1, CollectionSizeExpression.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(primitiveVariableExpressionEClass, PrimitiveVariableExpression.class, "PrimitiveVariableExpression",
-				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPrimitiveVariableExpression_PrimitiveVariable(), thePatternsPackage.getPrimitiveVariable(),
-				null, "primitiveVariable", null, 1, 1, PrimitiveVariableExpression.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(primitiveVariableExpressionEClass,
+				PrimitiveVariableExpression.class,
+				"PrimitiveVariableExpression", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPrimitiveVariableExpression_PrimitiveVariable(),
+				thePatternsPackage.getPrimitiveVariable(), null,
+				"primitiveVariable", null, 1, 1,
+				PrimitiveVariableExpression.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/GenModel
@@ -382,29 +422,50 @@ public class PatternsExpressionsPackageImpl extends EPackageImpl implements Patt
 		addAnnotation(
 				attributeValueExpressionEClass,
 				source,
-				new String[] { "documentation",
+				new String[] {
+						"documentation",
 						"Represents the value of an object\'s attribute, e.g. obj.attr for an object obj and an attribute attr." });
-		addAnnotation(getAttributeValueExpression_Object(), source, new String[] { "documentation",
-				"Specifies the object variable whose attribute value is represented by this expression." });
-		addAnnotation(getAttributeValueExpression_Attribute(), source, new String[] { "documentation",
-				"Specifies the object\'s attribute whose attribute value is represented by this expression." });
-		addAnnotation(objectVariableExpressionEClass, source, new String[] { "documentation",
-				"Represents the reference to an object in an expression, i.e. the value of an object variable." });
-		addAnnotation(getObjectVariableExpression_Object(), source, new String[] { "documentation",
-				"Specifies the object variable that holds the reference to be represented by this expression." });
 		addAnnotation(
-				objectSetSizeExpressionEClass,
+				getAttributeValueExpression_Object(),
+				source,
+				new String[] {
+						"documentation",
+						"Specifies the object variable whose attribute value is represented by this expression." });
+		addAnnotation(
+				getAttributeValueExpression_Attribute(),
+				source,
+				new String[] {
+						"documentation",
+						"Specifies the object\'s attribute whose attribute value is represented by this expression." });
+		addAnnotation(
+				objectVariableExpressionEClass,
+				source,
+				new String[] {
+						"documentation",
+						"Represents the reference to an object in an expression, i.e. the value of an object variable." });
+		addAnnotation(
+				getObjectVariableExpression_Object(),
+				source,
+				new String[] {
+						"documentation",
+						"Specifies the object variable that holds the reference to be represented by this expression." });
+		addAnnotation(
+				collectionSizeExpressionEClass,
 				source,
 				new String[] {
 						"documentation",
 						"Represents the number of elements in the set of objects that is represented by an object set variable. For example, if you have an object set variable mySet, then this expression would represent something like mySet.size(). The expression can be used to constrain the pattern application, e.g., to only a apply the pattern when at least two objects can be matched for the set." });
 		addAnnotation(
-				getObjectSetSizeExpression_Set(),
+				getCollectionSizeExpression_Set(),
+				source,
+				new String[] {
+						"documentation",
+						"Specifies the object set variable whose number of set elements is to be represented by this expression." });
+		addAnnotation(
+				primitiveVariableExpressionEClass,
 				source,
 				new String[] { "documentation",
-						"Specifies the object set variable whose number of set elements is to be represented by this expression." });
-		addAnnotation(primitiveVariableExpressionEClass, source, new String[] { "documentation",
-				"Represents the value of a primitive variable, e.g., 5 or \"MyName\"." });
+						"Represents the value of a primitive variable, e.g., 5 or \"MyName\"." });
 	}
 
 } //PatternsExpressionsPackageImpl

@@ -16,6 +16,7 @@ import org.storydriven.core.Extension;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.TypedElement;
 import org.storydriven.storydiagrams.Variable;
+import org.storydriven.storydiagrams.activities.*;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
@@ -135,8 +136,8 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseStartNode(StartNode object) {
-			return createStartNodeAdapter();
+		public Adapter caseInitialNode(InitialNode object) {
+			return createInitialNodeAdapter();
 		}
 
 		@Override
@@ -145,8 +146,8 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseStopNode(StopNode object) {
-			return createStopNodeAdapter();
+		public Adapter caseActivityFinalNode(ActivityFinalNode object) {
+			return createActivityFinalNodeAdapter();
 		}
 
 		@Override
@@ -157,6 +158,11 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseModifyingStoryNode(ModifyingStoryNode object) {
 			return createModifyingStoryNodeAdapter();
+		}
+
+		@Override
+		public Adapter caseFlowFinalNode(FlowFinalNode object) {
+			return createFlowFinalNodeAdapter();
 		}
 
 		@Override
@@ -345,16 +351,16 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.activities.StartNode <em>Start Node</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.activities.InitialNode <em>Initial Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.activities.StartNode
+	 * @see org.storydriven.storydiagrams.activities.InitialNode
 	 * @generated
 	 */
-	public Adapter createStartNodeAdapter() {
+	public Adapter createInitialNodeAdapter() {
 		return null;
 	}
 
@@ -373,16 +379,16 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.activities.StopNode <em>Stop Node</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.activities.ActivityFinalNode <em>Activity Final Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.activities.StopNode
+	 * @see org.storydriven.storydiagrams.activities.ActivityFinalNode
 	 * @generated
 	 */
-	public Adapter createStopNodeAdapter() {
+	public Adapter createActivityFinalNodeAdapter() {
 		return null;
 	}
 
@@ -411,6 +417,20 @@ public class ActivitiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createModifyingStoryNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.activities.FlowFinalNode <em>Flow Final Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.storydiagrams.activities.FlowFinalNode
+	 * @generated
+	 */
+	public Adapter createFlowFinalNodeAdapter() {
 		return null;
 	}
 

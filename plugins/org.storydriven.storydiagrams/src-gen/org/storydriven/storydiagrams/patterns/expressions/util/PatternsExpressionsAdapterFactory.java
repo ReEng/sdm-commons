@@ -14,6 +14,7 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.TypedElement;
 import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.patterns.expressions.*;
 import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
@@ -76,22 +77,26 @@ public class PatternsExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected PatternsExpressionsSwitch<Adapter> modelSwitch = new PatternsExpressionsSwitch<Adapter>() {
 		@Override
-		public Adapter caseAttributeValueExpression(AttributeValueExpression object) {
+		public Adapter caseAttributeValueExpression(
+				AttributeValueExpression object) {
 			return createAttributeValueExpressionAdapter();
 		}
 
 		@Override
-		public Adapter caseObjectVariableExpression(ObjectVariableExpression object) {
+		public Adapter caseObjectVariableExpression(
+				ObjectVariableExpression object) {
 			return createObjectVariableExpressionAdapter();
 		}
 
 		@Override
-		public Adapter caseObjectSetSizeExpression(ObjectSetSizeExpression object) {
-			return createObjectSetSizeExpressionAdapter();
+		public Adapter caseCollectionSizeExpression(
+				CollectionSizeExpression object) {
+			return createCollectionSizeExpressionAdapter();
 		}
 
 		@Override
-		public Adapter casePrimitiveVariableExpression(PrimitiveVariableExpression object) {
+		public Adapter casePrimitiveVariableExpression(
+				PrimitiveVariableExpression object) {
 			return createPrimitiveVariableExpressionAdapter();
 		}
 
@@ -163,16 +168,16 @@ public class PatternsExpressionsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression <em>Object Set Size Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression <em>Collection Size Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression
+	 * @see org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression
 	 * @generated
 	 */
-	public Adapter createObjectSetSizeExpressionAdapter() {
+	public Adapter createCollectionSizeExpressionAdapter() {
 		return null;
 	}
 

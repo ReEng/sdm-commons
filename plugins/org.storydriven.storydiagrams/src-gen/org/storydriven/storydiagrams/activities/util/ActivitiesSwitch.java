@@ -15,6 +15,7 @@ import org.storydriven.core.Extension;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.TypedElement;
 import org.storydriven.storydiagrams.Variable;
+import org.storydriven.storydiagrams.activities.*;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
@@ -217,17 +218,17 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ActivitiesPackage.START_NODE: {
-			StartNode startNode = (StartNode) theEObject;
-			T result = caseStartNode(startNode);
+		case ActivitiesPackage.INITIAL_NODE: {
+			InitialNode initialNode = (InitialNode) theEObject;
+			T result = caseInitialNode(initialNode);
 			if (result == null)
-				result = caseActivityNode(startNode);
+				result = caseActivityNode(initialNode);
 			if (result == null)
-				result = caseNamedElement(startNode);
+				result = caseNamedElement(initialNode);
 			if (result == null)
-				result = caseCommentableElement(startNode);
+				result = caseCommentableElement(initialNode);
 			if (result == null)
-				result = caseExtendableElement(startNode);
+				result = caseExtendableElement(initialNode);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -247,17 +248,17 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ActivitiesPackage.STOP_NODE: {
-			StopNode stopNode = (StopNode) theEObject;
-			T result = caseStopNode(stopNode);
+		case ActivitiesPackage.ACTIVITY_FINAL_NODE: {
+			ActivityFinalNode activityFinalNode = (ActivityFinalNode) theEObject;
+			T result = caseActivityFinalNode(activityFinalNode);
 			if (result == null)
-				result = caseActivityNode(stopNode);
+				result = caseActivityNode(activityFinalNode);
 			if (result == null)
-				result = caseNamedElement(stopNode);
+				result = caseNamedElement(activityFinalNode);
 			if (result == null)
-				result = caseCommentableElement(stopNode);
+				result = caseCommentableElement(activityFinalNode);
 			if (result == null)
-				result = caseExtendableElement(stopNode);
+				result = caseExtendableElement(activityFinalNode);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -292,6 +293,23 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 				result = caseCommentableElement(modifyingStoryNode);
 			if (result == null)
 				result = caseExtendableElement(modifyingStoryNode);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ActivitiesPackage.FLOW_FINAL_NODE: {
+			FlowFinalNode flowFinalNode = (FlowFinalNode) theEObject;
+			T result = caseFlowFinalNode(flowFinalNode);
+			if (result == null)
+				result = caseActivityFinalNode(flowFinalNode);
+			if (result == null)
+				result = caseActivityNode(flowFinalNode);
+			if (result == null)
+				result = caseNamedElement(flowFinalNode);
+			if (result == null)
+				result = caseCommentableElement(flowFinalNode);
+			if (result == null)
+				result = caseExtendableElement(flowFinalNode);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -437,17 +455,17 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Start Node</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Initial Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Start Node</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Initial Node</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseStartNode(StartNode object) {
+	public T caseInitialNode(InitialNode object) {
 		return null;
 	}
 
@@ -467,17 +485,17 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Stop Node</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Activity Final Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Stop Node</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Activity Final Node</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseStopNode(StopNode object) {
+	public T caseActivityFinalNode(ActivityFinalNode object) {
 		return null;
 	}
 
@@ -508,6 +526,21 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseModifyingStoryNode(ModifyingStoryNode object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Flow Final Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Flow Final Node</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFlowFinalNode(FlowFinalNode object) {
 		return null;
 	}
 

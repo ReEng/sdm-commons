@@ -684,7 +684,8 @@ public interface CallsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference METHOD_CALL_EXPRESSION__TARGET = eINSTANCE.getMethodCallExpression_Target();
+		EReference METHOD_CALL_EXPRESSION__TARGET = eINSTANCE
+				.getMethodCallExpression_Target();
 
 		/**
 		 * The meta object literal for the '<em><b>Opaque Callable</b></em>' containment reference feature.
@@ -692,7 +693,8 @@ public interface CallsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE = eINSTANCE.getMethodCallExpression_OpaqueCallable();
+		EReference METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE = eINSTANCE
+				.getMethodCallExpression_OpaqueCallable();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.calls.expressions.impl.ParameterExpressionImpl <em>Parameter Expression</em>}' class.
@@ -710,7 +712,8 @@ public interface CallsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PARAMETER_EXPRESSION__PARAMETER = eINSTANCE.getParameterExpression_Parameter();
+		EReference PARAMETER_EXPRESSION__PARAMETER = eINSTANCE
+				.getParameterExpression_Parameter();
 
 	}
 

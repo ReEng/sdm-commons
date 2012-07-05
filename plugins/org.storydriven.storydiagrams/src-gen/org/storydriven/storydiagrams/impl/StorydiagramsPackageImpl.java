@@ -35,7 +35,8 @@ import org.storydriven.storydiagrams.templates.impl.TemplatesPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StorydiagramsPackageImpl extends EPackageImpl implements StorydiagramsPackage {
+public class StorydiagramsPackageImpl extends EPackageImpl implements
+		StorydiagramsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,12 +84,13 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 	 */
 	public static StorydiagramsPackage init() {
 		if (isInited)
-			return (StorydiagramsPackage) EPackage.Registry.INSTANCE.getEPackage(StorydiagramsPackage.eNS_URI);
+			return (StorydiagramsPackage) EPackage.Registry.INSTANCE
+					.getEPackage(StorydiagramsPackage.eNS_URI);
 
 		// Obtain or create and register package
 		StorydiagramsPackageImpl theStorydiagramsPackage = (StorydiagramsPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof StorydiagramsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-				: new StorydiagramsPackageImpl());
+				.get(eNS_URI) instanceof StorydiagramsPackageImpl ? EPackage.Registry.INSTANCE
+				.get(eNS_URI) : new StorydiagramsPackageImpl());
 
 		isInited = true;
 
@@ -98,25 +100,31 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 		// Obtain or create and register interdependencies
 		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);
+				.getEPackage(ActivitiesPackage.eNS_URI)
+				: ActivitiesPackage.eINSTANCE);
 		ActivitiesExpressionsPackageImpl theActivitiesExpressionsPackage = (ActivitiesExpressionsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(ActivitiesExpressionsPackage.eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ActivitiesExpressionsPackage.eNS_URI) : ActivitiesExpressionsPackage.eINSTANCE);
+				.getEPackage(ActivitiesExpressionsPackage.eNS_URI)
+				: ActivitiesExpressionsPackage.eINSTANCE);
 		CallsPackageImpl theCallsPackage = (CallsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(CallsPackage.eNS_URI) instanceof CallsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(CallsPackage.eNS_URI) : CallsPackage.eINSTANCE);
 		CallsExpressionsPackageImpl theCallsExpressionsPackage = (CallsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(CallsExpressionsPackage.eNS_URI) instanceof CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(CallsExpressionsPackage.eNS_URI) : CallsExpressionsPackage.eINSTANCE);
+				.getEPackage(CallsExpressionsPackage.eNS_URI)
+				: CallsExpressionsPackage.eINSTANCE);
 		PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(PatternsPackage.eNS_URI) : PatternsPackage.eINSTANCE);
+				.getEPackage(PatternsPackage.eNS_URI)
+				: PatternsPackage.eINSTANCE);
 		PatternsExpressionsPackageImpl thePatternsExpressionsPackage = (PatternsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(PatternsExpressionsPackage.eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(PatternsExpressionsPackage.eNS_URI) : PatternsExpressionsPackage.eINSTANCE);
+				.getEPackage(PatternsExpressionsPackage.eNS_URI)
+				: PatternsExpressionsPackage.eINSTANCE);
 		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(TemplatesPackage.eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(TemplatesPackage.eNS_URI) : TemplatesPackage.eINSTANCE);
+				.getEPackage(TemplatesPackage.eNS_URI)
+				: TemplatesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theStorydiagramsPackage.createPackageContents();
@@ -142,7 +150,8 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 		theStorydiagramsPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(StorydiagramsPackage.eNS_URI, theStorydiagramsPackage);
+		EPackage.Registry.INSTANCE.put(StorydiagramsPackage.eNS_URI,
+				theStorydiagramsPackage);
 		return theStorydiagramsPackage;
 	}
 
@@ -224,12 +233,14 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 		// Obtain other dependent packages
 		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage) EPackage.Registry.INSTANCE
 				.getEPackage(ActivitiesPackage.eNS_URI);
-		CallsPackage theCallsPackage = (CallsPackage) EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
+		CallsPackage theCallsPackage = (CallsPackage) EPackage.Registry.INSTANCE
+				.getEPackage(CallsPackage.eNS_URI);
 		PatternsPackage thePatternsPackage = (PatternsPackage) EPackage.Registry.INSTANCE
 				.getEPackage(PatternsPackage.eNS_URI);
 		TemplatesPackage theTemplatesPackage = (TemplatesPackage) EPackage.Registry.INSTANCE
 				.getEPackage(TemplatesPackage.eNS_URI);
-		CorePackage theCorePackage = (CorePackage) EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage) EPackage.Registry.INSTANCE
+				.getEPackage(CorePackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theActivitiesPackage);
@@ -245,9 +256,11 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 		variableEClass.getESuperTypes().add(theCorePackage.getTypedElement());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariable_VariableName(), ecorePackage.getEString(), "variableName", null, 0, 1,
-				Variable.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVariable_VariableName(), ecorePackage.getEString(),
+				"variableName", null, 0, 1, Variable.class, IS_TRANSIENT,
+				IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
@@ -275,7 +288,8 @@ public class StorydiagramsPackageImpl extends EPackageImpl implements Storydiagr
 		addAnnotation(
 				variableEClass,
 				source,
-				new String[] { "documentation",
+				new String[] {
+						"documentation",
 						"Represents a variable which can be, for example, an object variable, an attribute, or any other kind of variable." });
 	}
 

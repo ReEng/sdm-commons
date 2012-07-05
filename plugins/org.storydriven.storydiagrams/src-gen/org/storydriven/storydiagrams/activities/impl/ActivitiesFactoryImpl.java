@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.storydiagrams.activities.*;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
@@ -34,7 +35,8 @@ import org.storydriven.storydiagrams.activities.StructuredNode;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFactory {
+public class ActivitiesFactoryImpl extends EFactoryImpl implements
+		ActivitiesFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -44,7 +46,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 	public static ActivitiesFactory init() {
 		try {
 			ActivitiesFactory theActivitiesFactory = (ActivitiesFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.storydriven.org/storydiagrams/activities/0.2.0");
+					.getEFactory("http://www.storydriven.org/storydiagrams/activities/0.2.1");
 			if (theActivitiesFactory != null) {
 				return theActivitiesFactory;
 			}
@@ -86,18 +88,21 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 			return createStructuredNode();
 		case ActivitiesPackage.JUNCTION_NODE:
 			return createJunctionNode();
-		case ActivitiesPackage.START_NODE:
-			return createStartNode();
+		case ActivitiesPackage.INITIAL_NODE:
+			return createInitialNode();
 		case ActivitiesPackage.STATEMENT_NODE:
 			return createStatementNode();
-		case ActivitiesPackage.STOP_NODE:
-			return createStopNode();
+		case ActivitiesPackage.ACTIVITY_FINAL_NODE:
+			return createActivityFinalNode();
 		case ActivitiesPackage.ACTIVITY_CALL_NODE:
 			return createActivityCallNode();
 		case ActivitiesPackage.MODIFYING_STORY_NODE:
 			return createModifyingStoryNode();
+		case ActivitiesPackage.FLOW_FINAL_NODE:
+			return createFlowFinalNode();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName()
+					+ "' is not a valid classifier");
 		}
 	}
 
@@ -112,7 +117,8 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 		case ActivitiesPackage.EDGE_GUARD:
 			return createEdgeGuardFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '"
+					+ eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -127,7 +133,8 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 		case ActivitiesPackage.EDGE_GUARD:
 			return convertEdgeGuardToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '"
+					+ eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -206,9 +213,9 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StartNode createStartNode() {
-		StartNodeImpl startNode = new StartNodeImpl();
-		return startNode;
+	public InitialNode createInitialNode() {
+		InitialNodeImpl initialNode = new InitialNodeImpl();
+		return initialNode;
 	}
 
 	/**
@@ -226,9 +233,9 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StopNode createStopNode() {
-		StopNodeImpl stopNode = new StopNodeImpl();
-		return stopNode;
+	public ActivityFinalNode createActivityFinalNode() {
+		ActivityFinalNodeImpl activityFinalNode = new ActivityFinalNodeImpl();
+		return activityFinalNode;
 	}
 
 	/**
@@ -256,11 +263,23 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EdgeGuard createEdgeGuardFromString(EDataType eDataType, String initialValue) {
+	public FlowFinalNode createFlowFinalNode() {
+		FlowFinalNodeImpl flowFinalNode = new FlowFinalNodeImpl();
+		return flowFinalNode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EdgeGuard createEdgeGuardFromString(EDataType eDataType,
+			String initialValue) {
 		EdgeGuard result = EdgeGuard.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
-					+ eDataType.getName() + "'");
+			throw new IllegalArgumentException("The value '" + initialValue
+					+ "' is not a valid enumerator of '" + eDataType.getName()
+					+ "'");
 		return result;
 	}
 
@@ -269,7 +288,8 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertEdgeGuardToString(EDataType eDataType, Object instanceValue) {
+	public String convertEdgeGuardToString(EDataType eDataType,
+			Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

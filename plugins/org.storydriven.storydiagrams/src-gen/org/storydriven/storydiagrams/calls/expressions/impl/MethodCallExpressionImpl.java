@@ -43,7 +43,8 @@ import org.storydriven.storydiagrams.calls.expressions.MethodCallExpression;
  *
  * @generated
  */
-public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCallExpression {
+public class MethodCallExpressionImpl extends ExpressionImpl implements
+		MethodCallExpression {
 	/**
 	 * The cached value of the '{@link #getOwnedParameterBindings() <em>Owned Parameter Bindings</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -104,7 +105,8 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 	public EList<ParameterBinding> getOwnedParameterBindings() {
 		if (ownedParameterBindings == null) {
 			ownedParameterBindings = new EObjectContainmentWithInverseEList.Resolving<ParameterBinding>(
-					ParameterBinding.class, this,
+					ParameterBinding.class,
+					this,
 					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS,
 					CallsPackage.PARAMETER_BINDING__INVOCATION);
 		}
@@ -121,8 +123,11 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 			callee = (Callable) eResolveProxy(oldCallee);
 			if (callee != oldCallee) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							CallsExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE, oldCallee, callee));
+					eNotify(new ENotificationImpl(
+							this,
+							Notification.RESOLVE,
+							CallsExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE,
+							oldCallee, callee));
 			}
 		}
 		return callee;
@@ -145,7 +150,8 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 		callee = newCallee;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE, oldCallee, callee));
+					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE,
+					oldCallee, callee));
 	}
 
 	/**
@@ -158,17 +164,28 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 			target = (Expression) eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				InternalEObject newTarget = (InternalEObject) target;
-				NotificationChain msgs = oldTarget.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET, null, null);
+				NotificationChain msgs = oldTarget
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET,
+								null, null);
 				if (newTarget.eInternalContainer() == null) {
-					msgs = newTarget.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-							- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET, null, msgs);
+					msgs = newTarget
+							.eInverseAdd(
+									this,
+									EOPPOSITE_FEATURE_BASE
+											- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET,
+									null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET, oldTarget, target));
+					eNotify(new ENotificationImpl(
+							this,
+							Notification.RESOLVE,
+							CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET,
+							oldTarget, target));
 			}
 		}
 		return target;
@@ -186,12 +203,15 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTarget(Expression newTarget, NotificationChain msgs) {
+	public NotificationChain basicSetTarget(Expression newTarget,
+			NotificationChain msgs) {
 		Expression oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET, oldTarget, newTarget);
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET,
+					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET,
+					oldTarget, newTarget);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -208,17 +228,26 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 		if (newTarget != target) {
 			NotificationChain msgs = null;
 			if (target != null)
-				msgs = ((InternalEObject) target).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET, null, msgs);
+				msgs = ((InternalEObject) target)
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET,
+								null, msgs);
 			if (newTarget != null)
-				msgs = ((InternalEObject) newTarget).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET, null, msgs);
+				msgs = ((InternalEObject) newTarget)
+						.eInverseAdd(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET,
+								null, msgs);
 			msgs = basicSetTarget(newTarget, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET, newTarget, newTarget));
+					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET,
+					newTarget, newTarget));
 	}
 
 	/**
@@ -232,17 +261,21 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 			if (opaqueCallable != oldOpaqueCallable) {
 				InternalEObject newOpaqueCallable = (InternalEObject) opaqueCallable;
 				NotificationChain msgs = oldOpaqueCallable.eInverseRemove(this,
-						CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION, OpaqueCallable.class, null);
+						CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION,
+						OpaqueCallable.class, null);
 				if (newOpaqueCallable.eInternalContainer() == null) {
-					msgs = newOpaqueCallable.eInverseAdd(this, CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION,
+					msgs = newOpaqueCallable.eInverseAdd(this,
+							CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION,
 							OpaqueCallable.class, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, oldOpaqueCallable,
-							opaqueCallable));
+					eNotify(new ENotificationImpl(
+							this,
+							Notification.RESOLVE,
+							CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,
+							oldOpaqueCallable, opaqueCallable));
 			}
 		}
 		return opaqueCallable;
@@ -260,13 +293,16 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOpaqueCallable(OpaqueCallable newOpaqueCallable, NotificationChain msgs) {
+	public NotificationChain basicSetOpaqueCallable(
+			OpaqueCallable newOpaqueCallable, NotificationChain msgs) {
 		OpaqueCallable oldOpaqueCallable = opaqueCallable;
 		opaqueCallable = newOpaqueCallable;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, oldOpaqueCallable,
-					newOpaqueCallable);
+			ENotificationImpl notification = new ENotificationImpl(
+					this,
+					Notification.SET,
+					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,
+					oldOpaqueCallable, newOpaqueCallable);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -284,17 +320,21 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 			NotificationChain msgs = null;
 			if (opaqueCallable != null)
 				msgs = ((InternalEObject) opaqueCallable).eInverseRemove(this,
-						CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION, OpaqueCallable.class, msgs);
+						CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION,
+						OpaqueCallable.class, msgs);
 			if (newOpaqueCallable != null)
 				msgs = ((InternalEObject) newOpaqueCallable).eInverseAdd(this,
-						CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION, OpaqueCallable.class, msgs);
+						CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION,
+						OpaqueCallable.class, msgs);
 			msgs = basicSetOpaqueCallable(newOpaqueCallable, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, newOpaqueCallable,
-					newOpaqueCallable));
+			eNotify(new ENotificationImpl(
+					this,
+					Notification.SET,
+					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,
+					newOpaqueCallable, newOpaqueCallable));
 	}
 
 	protected EParameter getReturnParameter() {
@@ -319,7 +359,8 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 	@Override
 	public EGenericType basicGetGenericType() {
 		EParameter returnParameter = getReturnParameter();
-		return returnParameter == null ? null : returnParameter.getEGenericType();
+		return returnParameter == null ? null : returnParameter
+				.getEGenericType();
 	}
 
 	/**
@@ -328,15 +369,20 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedParameterBindings()).basicAdd(otherEnd,
-					msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedParameterBindings())
+					.basicAdd(otherEnd, msgs);
 		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
 			if (opaqueCallable != null)
-				msgs = ((InternalEObject) opaqueCallable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, null, msgs);
+				msgs = ((InternalEObject) opaqueCallable)
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,
+								null, msgs);
 			return basicSetOpaqueCallable((OpaqueCallable) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -347,10 +393,12 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
-			return ((InternalEList<?>) getOwnedParameterBindings()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getOwnedParameterBindings())
+					.basicRemove(otherEnd, msgs);
 		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET:
 			return basicSetTarget(null, msgs);
 		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
@@ -394,7 +442,8 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 		switch (featureID) {
 		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
 			getOwnedParameterBindings().clear();
-			getOwnedParameterBindings().addAll((Collection<? extends ParameterBinding>) newValue);
+			getOwnedParameterBindings().addAll(
+					(Collection<? extends ParameterBinding>) newValue);
 			return;
 		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE:
 			setCallee((Callable) newValue);
@@ -440,7 +489,8 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
-			return ownedParameterBindings != null && !ownedParameterBindings.isEmpty();
+			return ownedParameterBindings != null
+					&& !ownedParameterBindings.isEmpty();
 		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE:
 			return callee != null;
 		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET:

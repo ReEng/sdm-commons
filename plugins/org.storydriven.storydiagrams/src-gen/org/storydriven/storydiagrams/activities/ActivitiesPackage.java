@@ -46,7 +46,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.storydriven.org/storydiagrams/activities/0.2.0";
+	String eNS_URI = "http://www.storydriven.org/storydiagrams/activities/0.2.1";
 
 	/**
 	 * The package namespace name.
@@ -62,7 +62,8 @@ public interface ActivitiesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ActivitiesPackage eINSTANCE = org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl.init();
+	ActivitiesPackage eINSTANCE = org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl
+			.init();
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.activities.impl.ExceptionVariableImpl <em>Exception Variable</em>}' class.
@@ -2648,14 +2649,14 @@ public interface ActivitiesPackage extends EPackage {
 	int JUNCTION_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.storydriven.storydiagrams.activities.impl.StartNodeImpl <em>Start Node</em>}' class.
+	 * The meta object id for the '{@link org.storydriven.storydiagrams.activities.impl.InitialNodeImpl <em>Initial Node</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.storydriven.storydiagrams.activities.impl.StartNodeImpl
-	 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getStartNode()
+	 * @see org.storydriven.storydiagrams.activities.impl.InitialNodeImpl
+	 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getInitialNode()
 	 * @generated
 	 */
-	int START_NODE = 9;
+	int INITIAL_NODE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2664,7 +2665,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+	int INITIAL_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -2673,7 +2674,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+	int INITIAL_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2682,7 +2683,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE__NAME = ACTIVITY_NODE__NAME;
+	int INITIAL_NODE__NAME = ACTIVITY_NODE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -2691,7 +2692,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
+	int INITIAL_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -2700,7 +2701,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
+	int INITIAL_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
@@ -2709,7 +2710,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
+	int INITIAL_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
 
 	/**
 	 * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
@@ -2718,7 +2719,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
+	int INITIAL_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
@@ -2727,16 +2728,16 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
+	int INITIAL_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
 
 	/**
-	 * The number of structural features of the '<em>Start Node</em>' class.
+	 * The number of structural features of the '<em>Initial Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 0;
+	int INITIAL_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2745,7 +2746,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
+	int INITIAL_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -2754,7 +2755,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
+	int INITIAL_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -2763,7 +2764,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
+	int INITIAL_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -2772,7 +2773,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
+	int INITIAL_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -2781,7 +2782,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
+	int INITIAL_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -2790,7 +2791,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
+	int INITIAL_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -2799,7 +2800,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
+	int INITIAL_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -2808,7 +2809,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
+	int INITIAL_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -2817,7 +2818,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
+	int INITIAL_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -2826,7 +2827,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
+	int INITIAL_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -2835,7 +2836,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int INITIAL_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -2844,7 +2845,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int INITIAL_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -2853,7 +2854,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
+	int INITIAL_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -2862,7 +2863,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
+	int INITIAL_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -2871,7 +2872,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
+	int INITIAL_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -2880,7 +2881,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
+	int INITIAL_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -2889,7 +2890,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
+	int INITIAL_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -2898,7 +2899,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
+	int INITIAL_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -2907,16 +2908,16 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
+	int INITIAL_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
 
 	/**
-	 * The number of operations of the '<em>Start Node</em>' class.
+	 * The number of operations of the '<em>Initial Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int START_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
+	int INITIAL_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.activities.impl.StatementNodeImpl <em>Statement Node</em>}' class.
@@ -3199,14 +3200,14 @@ public interface ActivitiesPackage extends EPackage {
 	int STATEMENT_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.storydriven.storydiagrams.activities.impl.StopNodeImpl <em>Stop Node</em>}' class.
+	 * The meta object id for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityFinalNodeImpl <em>Activity Final Node</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.storydriven.storydiagrams.activities.impl.StopNodeImpl
-	 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getStopNode()
+	 * @see org.storydriven.storydiagrams.activities.impl.ActivityFinalNodeImpl
+	 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getActivityFinalNode()
 	 * @generated
 	 */
-	int STOP_NODE = 11;
+	int ACTIVITY_FINAL_NODE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -3215,7 +3216,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
+	int ACTIVITY_FINAL_NODE__ANNOTATION = ACTIVITY_NODE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -3224,7 +3225,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
+	int ACTIVITY_FINAL_NODE__EXTENSION = ACTIVITY_NODE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3233,7 +3234,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE__NAME = ACTIVITY_NODE__NAME;
+	int ACTIVITY_FINAL_NODE__NAME = ACTIVITY_NODE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -3242,7 +3243,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
+	int ACTIVITY_FINAL_NODE__COMMENT = ACTIVITY_NODE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -3251,7 +3252,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
+	int ACTIVITY_FINAL_NODE__OUTGOING = ACTIVITY_NODE__OUTGOING;
 
 	/**
 	 * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
@@ -3260,7 +3261,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
+	int ACTIVITY_FINAL_NODE__OWNING_ACTIVITY = ACTIVITY_NODE__OWNING_ACTIVITY;
 
 	/**
 	 * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
@@ -3269,7 +3270,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
+	int ACTIVITY_FINAL_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_NODE__OWNING_ACTIVITY_NODE;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
@@ -3278,16 +3279,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
-
-	/**
-	 * The feature id for the '<em><b>Flow Stop Only</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STOP_NODE__FLOW_STOP_ONLY = ACTIVITY_NODE_FEATURE_COUNT + 0;
+	int ACTIVITY_FINAL_NODE__INCOMING = ACTIVITY_NODE__INCOMING;
 
 	/**
 	 * The feature id for the '<em><b>Return Value</b></em>' reference.
@@ -3296,7 +3288,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE__RETURN_VALUE = ACTIVITY_NODE_FEATURE_COUNT + 1;
+	int ACTIVITY_FINAL_NODE__RETURN_VALUE = ACTIVITY_NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Return Values</b></em>' containment reference list.
@@ -3305,16 +3297,25 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE__RETURN_VALUES = ACTIVITY_NODE_FEATURE_COUNT + 2;
+	int ACTIVITY_FINAL_NODE__RETURN_VALUES = ACTIVITY_NODE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Stop Node</em>' class.
+	 * The feature id for the '<em><b>Success</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 3;
+	int ACTIVITY_FINAL_NODE__SUCCESS = ACTIVITY_NODE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Activity Final Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_FINAL_NODE_FEATURE_COUNT = ACTIVITY_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -3323,7 +3324,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
+	int ACTIVITY_FINAL_NODE___ECLASS = ACTIVITY_NODE___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -3332,7 +3333,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
+	int ACTIVITY_FINAL_NODE___EIS_PROXY = ACTIVITY_NODE___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -3341,7 +3342,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
+	int ACTIVITY_FINAL_NODE___ERESOURCE = ACTIVITY_NODE___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -3350,7 +3351,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
+	int ACTIVITY_FINAL_NODE___ECONTAINER = ACTIVITY_NODE___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -3359,7 +3360,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
+	int ACTIVITY_FINAL_NODE___ECONTAINING_FEATURE = ACTIVITY_NODE___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -3368,7 +3369,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
+	int ACTIVITY_FINAL_NODE___ECONTAINMENT_FEATURE = ACTIVITY_NODE___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -3377,7 +3378,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
+	int ACTIVITY_FINAL_NODE___ECONTENTS = ACTIVITY_NODE___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -3386,7 +3387,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
+	int ACTIVITY_FINAL_NODE___EALL_CONTENTS = ACTIVITY_NODE___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -3395,7 +3396,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
+	int ACTIVITY_FINAL_NODE___ECROSS_REFERENCES = ACTIVITY_NODE___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3404,7 +3405,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
+	int ACTIVITY_FINAL_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3413,7 +3414,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int ACTIVITY_FINAL_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -3422,7 +3423,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int ACTIVITY_FINAL_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -3431,7 +3432,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
+	int ACTIVITY_FINAL_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -3440,7 +3441,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
+	int ACTIVITY_FINAL_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_NODE___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -3449,7 +3450,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
+	int ACTIVITY_FINAL_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_NODE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -3458,7 +3459,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
+	int ACTIVITY_FINAL_NODE___GET_EXTENSION__ECLASS = ACTIVITY_NODE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -3467,7 +3468,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
+	int ACTIVITY_FINAL_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_NODE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -3476,7 +3477,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
+	int ACTIVITY_FINAL_NODE___GET_ANNOTATION__STRING = ACTIVITY_NODE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -3485,16 +3486,16 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
+	int ACTIVITY_FINAL_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_NODE___PROVIDE_ANNOTATION__STRING;
 
 	/**
-	 * The number of operations of the '<em>Stop Node</em>' class.
+	 * The number of operations of the '<em>Activity Final Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
+	int ACTIVITY_FINAL_NODE_OPERATION_COUNT = ACTIVITY_NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityCallNodeImpl <em>Activity Call Node</em>}' class.
@@ -4093,6 +4094,304 @@ public interface ActivitiesPackage extends EPackage {
 	int MODIFYING_STORY_NODE_OPERATION_COUNT = STORY_NODE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.storydriven.storydiagrams.activities.impl.FlowFinalNodeImpl <em>Flow Final Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.storydriven.storydiagrams.activities.impl.FlowFinalNodeImpl
+	 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getFlowFinalNode()
+	 * @generated
+	 */
+	int FLOW_FINAL_NODE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE__ANNOTATION = ACTIVITY_FINAL_NODE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE__EXTENSION = ACTIVITY_FINAL_NODE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE__NAME = ACTIVITY_FINAL_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE__COMMENT = ACTIVITY_FINAL_NODE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE__OUTGOING = ACTIVITY_FINAL_NODE__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Owning Activity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE__OWNING_ACTIVITY = ACTIVITY_FINAL_NODE__OWNING_ACTIVITY;
+
+	/**
+	 * The feature id for the '<em><b>Owning Activity Node</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE__OWNING_ACTIVITY_NODE = ACTIVITY_FINAL_NODE__OWNING_ACTIVITY_NODE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE__INCOMING = ACTIVITY_FINAL_NODE__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Return Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE__RETURN_VALUE = ACTIVITY_FINAL_NODE__RETURN_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Return Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE__RETURN_VALUES = ACTIVITY_FINAL_NODE__RETURN_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Success</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE__SUCCESS = ACTIVITY_FINAL_NODE__SUCCESS;
+
+	/**
+	 * The number of structural features of the '<em>Flow Final Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE_FEATURE_COUNT = ACTIVITY_FINAL_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___ECLASS = ACTIVITY_FINAL_NODE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___EIS_PROXY = ACTIVITY_FINAL_NODE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___ERESOURCE = ACTIVITY_FINAL_NODE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___ECONTAINER = ACTIVITY_FINAL_NODE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___ECONTAINING_FEATURE = ACTIVITY_FINAL_NODE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___ECONTAINMENT_FEATURE = ACTIVITY_FINAL_NODE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___ECONTENTS = ACTIVITY_FINAL_NODE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___EALL_CONTENTS = ACTIVITY_FINAL_NODE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___ECROSS_REFERENCES = ACTIVITY_FINAL_NODE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___EGET__ESTRUCTURALFEATURE = ACTIVITY_FINAL_NODE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ACTIVITY_FINAL_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = ACTIVITY_FINAL_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___EIS_SET__ESTRUCTURALFEATURE = ACTIVITY_FINAL_NODE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___EUNSET__ESTRUCTURALFEATURE = ACTIVITY_FINAL_NODE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___EINVOKE__EOPERATION_ELIST = ACTIVITY_FINAL_NODE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___GET_EXTENSION__ECLASS = ACTIVITY_FINAL_NODE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___PROVIDE_EXTENSION__ECLASS = ACTIVITY_FINAL_NODE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___GET_ANNOTATION__STRING = ACTIVITY_FINAL_NODE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE___PROVIDE_ANNOTATION__STRING = ACTIVITY_FINAL_NODE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Flow Final Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_FINAL_NODE_OPERATION_COUNT = ACTIVITY_FINAL_NODE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.activities.EdgeGuard <em>Edge Guard</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4100,7 +4399,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getEdgeGuard()
 	 * @generated
 	 */
-	int EDGE_GUARD = 14;
+	int EDGE_GUARD = 15;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -4131,7 +4430,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXCEPTION_VARIABLE__ACTIVITY_EDGE = eINSTANCE.getExceptionVariable_ActivityEdge();
+		EReference EXCEPTION_VARIABLE__ACTIVITY_EDGE = eINSTANCE
+				.getExceptionVariable_ActivityEdge();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -4139,7 +4439,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EXCEPTION_VARIABLE__NAME = eINSTANCE.getExceptionVariable_Name();
+		EAttribute EXCEPTION_VARIABLE__NAME = eINSTANCE
+				.getExceptionVariable_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Exception Type</b></em>' reference list feature.
@@ -4147,7 +4448,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXCEPTION_VARIABLE__EXCEPTION_TYPE = eINSTANCE.getExceptionVariable_ExceptionType();
+		EReference EXCEPTION_VARIABLE__EXCEPTION_TYPE = eINSTANCE
+				.getExceptionVariable_ExceptionType();
 
 		/**
 		 * The meta object literal for the '<em><b>Generic Exception Type</b></em>' reference list feature.
@@ -4155,7 +4457,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE = eINSTANCE.getExceptionVariable_GenericExceptionType();
+		EReference EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE = eINSTANCE
+				.getExceptionVariable_GenericExceptionType();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityEdgeImpl <em>Activity Edge</em>}' class.
@@ -4189,7 +4492,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_EDGE__OWNING_ACTIVITY = eINSTANCE.getActivityEdge_OwningActivity();
+		EReference ACTIVITY_EDGE__OWNING_ACTIVITY = eINSTANCE
+				.getActivityEdge_OwningActivity();
 
 		/**
 		 * The meta object literal for the '<em><b>Guard</b></em>' attribute feature.
@@ -4205,7 +4509,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_EDGE__GUARD_EXPRESSION = eINSTANCE.getActivityEdge_GuardExpression();
+		EReference ACTIVITY_EDGE__GUARD_EXPRESSION = eINSTANCE
+				.getActivityEdge_GuardExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Guard Exception</b></em>' containment reference list feature.
@@ -4213,7 +4518,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_EDGE__GUARD_EXCEPTION = eINSTANCE.getActivityEdge_GuardException();
+		EReference ACTIVITY_EDGE__GUARD_EXCEPTION = eINSTANCE
+				.getActivityEdge_GuardException();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityNodeImpl <em>Activity Node</em>}' class.
@@ -4231,7 +4537,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_NODE__OUTGOING = eINSTANCE.getActivityNode_Outgoing();
+		EReference ACTIVITY_NODE__OUTGOING = eINSTANCE
+				.getActivityNode_Outgoing();
 
 		/**
 		 * The meta object literal for the '<em><b>Owning Activity</b></em>' container reference feature.
@@ -4239,7 +4546,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_NODE__OWNING_ACTIVITY = eINSTANCE.getActivityNode_OwningActivity();
+		EReference ACTIVITY_NODE__OWNING_ACTIVITY = eINSTANCE
+				.getActivityNode_OwningActivity();
 
 		/**
 		 * The meta object literal for the '<em><b>Owning Activity Node</b></em>' container reference feature.
@@ -4247,7 +4555,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_NODE__OWNING_ACTIVITY_NODE = eINSTANCE.getActivityNode_OwningActivityNode();
+		EReference ACTIVITY_NODE__OWNING_ACTIVITY_NODE = eINSTANCE
+				.getActivityNode_OwningActivityNode();
 
 		/**
 		 * The meta object literal for the '<em><b>Incoming</b></em>' reference list feature.
@@ -4255,7 +4564,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_NODE__INCOMING = eINSTANCE.getActivityNode_Incoming();
+		EReference ACTIVITY_NODE__INCOMING = eINSTANCE
+				.getActivityNode_Incoming();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityImpl <em>Activity</em>}' class.
@@ -4273,7 +4583,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY__OWNING_OPERATION = eINSTANCE.getActivity_OwningOperation();
+		EReference ACTIVITY__OWNING_OPERATION = eINSTANCE
+				.getActivity_OwningOperation();
 
 		/**
 		 * The meta object literal for the '<em><b>Owned Activity Edge</b></em>' containment reference list feature.
@@ -4281,7 +4592,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY__OWNED_ACTIVITY_EDGE = eINSTANCE.getActivity_OwnedActivityEdge();
+		EReference ACTIVITY__OWNED_ACTIVITY_EDGE = eINSTANCE
+				.getActivity_OwnedActivityEdge();
 
 		/**
 		 * The meta object literal for the '<em><b>Precondition</b></em>' reference feature.
@@ -4289,7 +4601,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY__PRECONDITION = eINSTANCE.getActivity_Precondition();
+		EReference ACTIVITY__PRECONDITION = eINSTANCE
+				.getActivity_Precondition();
 
 		/**
 		 * The meta object literal for the '<em><b>Owned Activity Node</b></em>' containment reference list feature.
@@ -4297,7 +4610,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY__OWNED_ACTIVITY_NODE = eINSTANCE.getActivity_OwnedActivityNode();
+		EReference ACTIVITY__OWNED_ACTIVITY_NODE = eINSTANCE
+				.getActivity_OwnedActivityNode();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl <em>Operation Extension</em>}' class.
@@ -4315,7 +4629,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPERATION_EXTENSION__OPERATION = eINSTANCE.getOperationExtension_Operation();
+		EReference OPERATION_EXTENSION__OPERATION = eINSTANCE
+				.getOperationExtension_Operation();
 
 		/**
 		 * The meta object literal for the '<em><b>Return Value</b></em>' containment reference feature.
@@ -4323,7 +4638,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPERATION_EXTENSION__RETURN_VALUE = eINSTANCE.getOperationExtension_ReturnValue();
+		EReference OPERATION_EXTENSION__RETURN_VALUE = eINSTANCE
+				.getOperationExtension_ReturnValue();
 
 		/**
 		 * The meta object literal for the '<em><b>Owned Activity</b></em>' containment reference feature.
@@ -4331,7 +4647,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPERATION_EXTENSION__OWNED_ACTIVITY = eINSTANCE.getOperationExtension_OwnedActivity();
+		EReference OPERATION_EXTENSION__OWNED_ACTIVITY = eINSTANCE
+				.getOperationExtension_OwnedActivity();
 
 		/**
 		 * The meta object literal for the '<em><b>Number Of Out Params</b></em>' operation.
@@ -4358,7 +4675,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MATCHING_STORY_NODE__OWNED_PATTERN = eINSTANCE.getMatchingStoryNode_OwnedPattern();
+		EReference MATCHING_STORY_NODE__OWNED_PATTERN = eINSTANCE
+				.getMatchingStoryNode_OwnedPattern();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StoryNodeImpl <em>Story Node</em>}' class.
@@ -4384,7 +4702,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_NODE__STORY_PATTERN = eINSTANCE.getStoryNode_StoryPattern();
+		EReference STORY_NODE__STORY_PATTERN = eINSTANCE
+				.getStoryNode_StoryPattern();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StructuredNodeImpl <em>Structured Node</em>}' class.
@@ -4402,7 +4721,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STRUCTURED_NODE__OWNED_ACTIVITY_NODE = eINSTANCE.getStructuredNode_OwnedActivityNode();
+		EReference STRUCTURED_NODE__OWNED_ACTIVITY_NODE = eINSTANCE
+				.getStructuredNode_OwnedActivityNode();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.JunctionNodeImpl <em>Junction Node</em>}' class.
@@ -4415,14 +4735,14 @@ public interface ActivitiesPackage extends EPackage {
 		EClass JUNCTION_NODE = eINSTANCE.getJunctionNode();
 
 		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StartNodeImpl <em>Start Node</em>}' class.
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.InitialNodeImpl <em>Initial Node</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.StartNodeImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getStartNode()
+		 * @see org.storydriven.storydiagrams.activities.impl.InitialNodeImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getInitialNode()
 		 * @generated
 		 */
-		EClass START_NODE = eINSTANCE.getStartNode();
+		EClass INITIAL_NODE = eINSTANCE.getInitialNode();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StatementNodeImpl <em>Statement Node</em>}' class.
@@ -4440,25 +4760,18 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATEMENT_NODE__STATEMENT_EXPRESSION = eINSTANCE.getStatementNode_StatementExpression();
+		EReference STATEMENT_NODE__STATEMENT_EXPRESSION = eINSTANCE
+				.getStatementNode_StatementExpression();
 
 		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StopNodeImpl <em>Stop Node</em>}' class.
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityFinalNodeImpl <em>Activity Final Node</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.activities.impl.StopNodeImpl
-		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getStopNode()
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivityFinalNodeImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getActivityFinalNode()
 		 * @generated
 		 */
-		EClass STOP_NODE = eINSTANCE.getStopNode();
-
-		/**
-		 * The meta object literal for the '<em><b>Flow Stop Only</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STOP_NODE__FLOW_STOP_ONLY = eINSTANCE.getStopNode_FlowStopOnly();
+		EClass ACTIVITY_FINAL_NODE = eINSTANCE.getActivityFinalNode();
 
 		/**
 		 * The meta object literal for the '<em><b>Return Value</b></em>' reference feature.
@@ -4466,7 +4779,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STOP_NODE__RETURN_VALUE = eINSTANCE.getStopNode_ReturnValue();
+		EReference ACTIVITY_FINAL_NODE__RETURN_VALUE = eINSTANCE
+				.getActivityFinalNode_ReturnValue();
 
 		/**
 		 * The meta object literal for the '<em><b>Return Values</b></em>' containment reference list feature.
@@ -4474,7 +4788,17 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STOP_NODE__RETURN_VALUES = eINSTANCE.getStopNode_ReturnValues();
+		EReference ACTIVITY_FINAL_NODE__RETURN_VALUES = eINSTANCE
+				.getActivityFinalNode_ReturnValues();
+
+		/**
+		 * The meta object literal for the '<em><b>Success</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTIVITY_FINAL_NODE__SUCCESS = eINSTANCE
+				.getActivityFinalNode_Success();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityCallNodeImpl <em>Activity Call Node</em>}' class.
@@ -4492,7 +4816,8 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_CALL_NODE__CALLED_ACTIVITY = eINSTANCE.getActivityCallNode_CalledActivity();
+		EReference ACTIVITY_CALL_NODE__CALLED_ACTIVITY = eINSTANCE
+				.getActivityCallNode_CalledActivity();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ModifyingStoryNodeImpl <em>Modifying Story Node</em>}' class.
@@ -4510,7 +4835,18 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MODIFYING_STORY_NODE__OWNED_RULE = eINSTANCE.getModifyingStoryNode_OwnedRule();
+		EReference MODIFYING_STORY_NODE__OWNED_RULE = eINSTANCE
+				.getModifyingStoryNode_OwnedRule();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.FlowFinalNodeImpl <em>Flow Final Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.activities.impl.FlowFinalNodeImpl
+		 * @see org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl#getFlowFinalNode()
+		 * @generated
+		 */
+		EClass FLOW_FINAL_NODE = eINSTANCE.getFlowFinalNode();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.EdgeGuard <em>Edge Guard</em>}' enum.
@@ -4900,14 +5236,14 @@ public interface ActivitiesPackage extends EPackage {
 	EClass getJunctionNode();
 
 	/**
-	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.activities.StartNode <em>Start Node</em>}'.
+	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.activities.InitialNode <em>Initial Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Start Node</em>'.
-	 * @see org.storydriven.storydiagrams.activities.StartNode
+	 * @return the meta object for class '<em>Initial Node</em>'.
+	 * @see org.storydriven.storydiagrams.activities.InitialNode
 	 * @generated
 	 */
-	EClass getStartNode();
+	EClass getInitialNode();
 
 	/**
 	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.activities.StatementNode <em>Statement Node</em>}'.
@@ -4931,47 +5267,47 @@ public interface ActivitiesPackage extends EPackage {
 	EReference getStatementNode_StatementExpression();
 
 	/**
-	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.activities.StopNode <em>Stop Node</em>}'.
+	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.activities.ActivityFinalNode <em>Activity Final Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Stop Node</em>'.
-	 * @see org.storydriven.storydiagrams.activities.StopNode
+	 * @return the meta object for class '<em>Activity Final Node</em>'.
+	 * @see org.storydriven.storydiagrams.activities.ActivityFinalNode
 	 * @generated
 	 */
-	EClass getStopNode();
+	EClass getActivityFinalNode();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.storydriven.storydiagrams.activities.StopNode#isFlowStopOnly <em>Flow Stop Only</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Flow Stop Only</em>'.
-	 * @see org.storydriven.storydiagrams.activities.StopNode#isFlowStopOnly()
-	 * @see #getStopNode()
-	 * @generated
-	 */
-	EAttribute getStopNode_FlowStopOnly();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.storydriven.storydiagrams.activities.StopNode#getReturnValue <em>Return Value</em>}'.
+	 * Returns the meta object for the reference '{@link org.storydriven.storydiagrams.activities.ActivityFinalNode#getReturnValue <em>Return Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Return Value</em>'.
-	 * @see org.storydriven.storydiagrams.activities.StopNode#getReturnValue()
-	 * @see #getStopNode()
+	 * @see org.storydriven.storydiagrams.activities.ActivityFinalNode#getReturnValue()
+	 * @see #getActivityFinalNode()
 	 * @generated
 	 */
-	EReference getStopNode_ReturnValue();
+	EReference getActivityFinalNode_ReturnValue();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.storydriven.storydiagrams.activities.StopNode#getReturnValues <em>Return Values</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.storydriven.storydiagrams.activities.ActivityFinalNode#getReturnValues <em>Return Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Return Values</em>'.
-	 * @see org.storydriven.storydiagrams.activities.StopNode#getReturnValues()
-	 * @see #getStopNode()
+	 * @see org.storydriven.storydiagrams.activities.ActivityFinalNode#getReturnValues()
+	 * @see #getActivityFinalNode()
 	 * @generated
 	 */
-	EReference getStopNode_ReturnValues();
+	EReference getActivityFinalNode_ReturnValues();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.storydriven.storydiagrams.activities.ActivityFinalNode#isSuccess <em>Success</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Success</em>'.
+	 * @see org.storydriven.storydiagrams.activities.ActivityFinalNode#isSuccess()
+	 * @see #getActivityFinalNode()
+	 * @generated
+	 */
+	EAttribute getActivityFinalNode_Success();
 
 	/**
 	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.activities.ActivityCallNode <em>Activity Call Node</em>}'.
@@ -5014,6 +5350,16 @@ public interface ActivitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getModifyingStoryNode_OwnedRule();
+
+	/**
+	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.activities.FlowFinalNode <em>Flow Final Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Flow Final Node</em>'.
+	 * @see org.storydriven.storydiagrams.activities.FlowFinalNode
+	 * @generated
+	 */
+	EClass getFlowFinalNode();
 
 	/**
 	 * Returns the meta object for enum '{@link org.storydriven.storydiagrams.activities.EdgeGuard <em>Edge Guard</em>}'.

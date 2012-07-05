@@ -26,7 +26,6 @@ import org.storydriven.core.NamedElement;
  *   <li>{@link org.storydriven.storydiagrams.patterns.AbstractLinkVariable#getSource <em>Source</em>}</li>
  *   <li>{@link org.storydriven.storydiagrams.patterns.AbstractLinkVariable#getSecondLinkConstraints <em>Second Link Constraint</em>}</li>
  *   <li>{@link org.storydriven.storydiagrams.patterns.AbstractLinkVariable#getFirstLinkConstraints <em>First Link Constraint</em>}</li>
- *   <li>{@link org.storydriven.storydiagrams.patterns.AbstractLinkVariable#getBindingState <em>Binding State</em>}</li>
  *   <li>{@link org.storydriven.storydiagrams.patterns.AbstractLinkVariable#getPattern <em>Pattern</em>}</li>
  *   <li>{@link org.storydriven.storydiagrams.patterns.AbstractLinkVariable#getTarget <em>Target</em>}</li>
  * </ul>
@@ -158,35 +157,6 @@ public interface AbstractLinkVariable extends NamedElement {
 	 * @generated
 	 */
 	EList<LinkConstraint> getFirstLinkConstraints();
-
-	/**
-	 * Returns the value of the '<em><b>Binding State</b></em>' attribute.
-	 * The default value is <code>"UNBOUND"</code>.
-	 * The literals are from the enumeration {@link org.storydriven.storydiagrams.patterns.BindingState}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The binding state defines whether the link is already bound or whether a match has to be obtained for it.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Binding State</em>' attribute.
-	 * @see org.storydriven.storydiagrams.patterns.BindingState
-	 * @see #setBindingState(BindingState)
-	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getAbstractLinkVariable_BindingState()
-	 * @model default="UNBOUND" required="true" ordered="false"
-	 * @generated
-	 */
-	BindingState getBindingState();
-
-	/**
-	 * Sets the value of the '{@link org.storydriven.storydiagrams.patterns.AbstractLinkVariable#getBindingState <em>Binding State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Binding State</em>' attribute.
-	 * @see org.storydriven.storydiagrams.patterns.BindingState
-	 * @see #getBindingState()
-	 * @generated
-	 */
-	void setBindingState(BindingState value);
 
 	/**
 	 * Returns the value of the '<em><b>Pattern</b></em>' container reference.

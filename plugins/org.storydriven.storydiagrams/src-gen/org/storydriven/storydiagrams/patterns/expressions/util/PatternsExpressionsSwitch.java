@@ -13,6 +13,7 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.TypedElement;
 import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.patterns.expressions.*;
 import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
@@ -106,17 +107,17 @@ public class PatternsExpressionsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case PatternsExpressionsPackage.OBJECT_SET_SIZE_EXPRESSION: {
-			ObjectSetSizeExpression objectSetSizeExpression = (ObjectSetSizeExpression) theEObject;
-			T result = caseObjectSetSizeExpression(objectSetSizeExpression);
+		case PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION: {
+			CollectionSizeExpression collectionSizeExpression = (CollectionSizeExpression) theEObject;
+			T result = caseCollectionSizeExpression(collectionSizeExpression);
 			if (result == null)
-				result = caseExpression(objectSetSizeExpression);
+				result = caseExpression(collectionSizeExpression);
 			if (result == null)
-				result = caseTypedElement(objectSetSizeExpression);
+				result = caseTypedElement(collectionSizeExpression);
 			if (result == null)
-				result = caseCommentableElement(objectSetSizeExpression);
+				result = caseCommentableElement(collectionSizeExpression);
 			if (result == null)
-				result = caseExtendableElement(objectSetSizeExpression);
+				result = caseExtendableElement(collectionSizeExpression);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -172,17 +173,17 @@ public class PatternsExpressionsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Object Set Size Expression</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Collection Size Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Object Set Size Expression</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Collection Size Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseObjectSetSizeExpression(ObjectSetSizeExpression object) {
+	public T caseCollectionSizeExpression(CollectionSizeExpression object) {
 		return null;
 	}
 

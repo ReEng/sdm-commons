@@ -14,6 +14,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.TypedElement;
 import org.storydriven.storydiagrams.Variable;
+import org.storydriven.storydiagrams.patterns.*;
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
 import org.storydriven.storydiagrams.patterns.AttributeAssignment;
@@ -153,21 +154,21 @@ public class PatternsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case PatternsPackage.OBJECT_SET_VARIABLE: {
-			ObjectSetVariable objectSetVariable = (ObjectSetVariable) theEObject;
-			T result = caseObjectSetVariable(objectSetVariable);
+		case PatternsPackage.COLLECTION_VARIABLE: {
+			CollectionVariable collectionVariable = (CollectionVariable) theEObject;
+			T result = caseCollectionVariable(collectionVariable);
 			if (result == null)
-				result = caseObjectVariable(objectSetVariable);
+				result = caseObjectVariable(collectionVariable);
 			if (result == null)
-				result = caseAbstractVariable(objectSetVariable);
+				result = caseAbstractVariable(collectionVariable);
 			if (result == null)
-				result = caseVariable(objectSetVariable);
+				result = caseVariable(collectionVariable);
 			if (result == null)
-				result = caseNamedElement(objectSetVariable);
+				result = caseNamedElement(collectionVariable);
 			if (result == null)
-				result = caseTypedElement(objectSetVariable);
+				result = caseTypedElement(collectionVariable);
 			if (result == null)
-				result = caseExtendableElement(objectSetVariable);
+				result = caseExtendableElement(collectionVariable);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -215,15 +216,15 @@ public class PatternsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case PatternsPackage.CONTAINMENT_RELATION: {
-			ContainmentRelation containmentRelation = (ContainmentRelation) theEObject;
-			T result = caseContainmentRelation(containmentRelation);
+		case PatternsPackage.INCLUSION_LINK: {
+			InclusionLink inclusionLink = (InclusionLink) theEObject;
+			T result = caseInclusionLink(inclusionLink);
 			if (result == null)
-				result = caseAbstractLinkVariable(containmentRelation);
+				result = caseAbstractLinkVariable(inclusionLink);
 			if (result == null)
-				result = caseNamedElement(containmentRelation);
+				result = caseNamedElement(inclusionLink);
 			if (result == null)
-				result = caseExtendableElement(containmentRelation);
+				result = caseExtendableElement(inclusionLink);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -241,21 +242,15 @@ public class PatternsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case PatternsPackage.CONTAINER_VARIABLE: {
-			ContainerVariable containerVariable = (ContainerVariable) theEObject;
-			T result = caseContainerVariable(containerVariable);
+		case PatternsPackage.MAYBE_LINK: {
+			MaybeLink maybeLink = (MaybeLink) theEObject;
+			T result = caseMaybeLink(maybeLink);
 			if (result == null)
-				result = caseObjectVariable(containerVariable);
+				result = caseAbstractLinkVariable(maybeLink);
 			if (result == null)
-				result = caseAbstractVariable(containerVariable);
+				result = caseNamedElement(maybeLink);
 			if (result == null)
-				result = caseVariable(containerVariable);
-			if (result == null)
-				result = caseNamedElement(containerVariable);
-			if (result == null)
-				result = caseTypedElement(containerVariable);
-			if (result == null)
-				result = caseExtendableElement(containerVariable);
+				result = caseExtendableElement(maybeLink);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -367,17 +362,17 @@ public class PatternsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Object Set Variable</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Collection Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Object Set Variable</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Collection Variable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseObjectSetVariable(ObjectSetVariable object) {
+	public T caseCollectionVariable(CollectionVariable object) {
 		return null;
 	}
 
@@ -427,17 +422,17 @@ public class PatternsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Containment Relation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Inclusion Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Containment Relation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Inclusion Link</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseContainmentRelation(ContainmentRelation object) {
+	public T caseInclusionLink(InclusionLink object) {
 		return null;
 	}
 
@@ -457,17 +452,17 @@ public class PatternsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Container Variable</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Maybe Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Container Variable</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Maybe Link</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseContainerVariable(ContainerVariable object) {
+	public T caseMaybeLink(MaybeLink object) {
 		return null;
 	}
 

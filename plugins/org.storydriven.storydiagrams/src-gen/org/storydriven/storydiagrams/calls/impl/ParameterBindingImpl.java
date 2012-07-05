@@ -32,7 +32,8 @@ import org.storydriven.storydiagrams.calls.ParameterBinding;
  *
  * @generated
  */
-public class ParameterBindingImpl extends CommentableElementImpl implements ParameterBinding {
+public class ParameterBindingImpl extends CommentableElementImpl implements
+		ParameterBinding {
 	/**
 	 * The cached value of the '{@link #getValueExpression() <em>Value Expression</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -78,17 +79,26 @@ public class ParameterBindingImpl extends CommentableElementImpl implements Para
 			valueExpression = (Expression) eResolveProxy(oldValueExpression);
 			if (valueExpression != oldValueExpression) {
 				InternalEObject newValueExpression = (InternalEObject) valueExpression;
-				NotificationChain msgs = oldValueExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION, null, null);
+				NotificationChain msgs = oldValueExpression
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
+								null, null);
 				if (newValueExpression.eInternalContainer() == null) {
-					msgs = newValueExpression.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-							- CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION, null, msgs);
+					msgs = newValueExpression
+							.eInverseAdd(
+									this,
+									EOPPOSITE_FEATURE_BASE
+											- CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
+									null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION, oldValueExpression, valueExpression));
+							CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
+							oldValueExpression, valueExpression));
 			}
 		}
 		return valueExpression;
@@ -106,12 +116,15 @@ public class ParameterBindingImpl extends CommentableElementImpl implements Para
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetValueExpression(Expression newValueExpression, NotificationChain msgs) {
+	public NotificationChain basicSetValueExpression(
+			Expression newValueExpression, NotificationChain msgs) {
 		Expression oldValueExpression = valueExpression;
 		valueExpression = newValueExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION, oldValueExpression, newValueExpression);
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET,
+					CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
+					oldValueExpression, newValueExpression);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -128,16 +141,25 @@ public class ParameterBindingImpl extends CommentableElementImpl implements Para
 		if (newValueExpression != valueExpression) {
 			NotificationChain msgs = null;
 			if (valueExpression != null)
-				msgs = ((InternalEObject) valueExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject) valueExpression)
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
+								null, msgs);
 			if (newValueExpression != null)
-				msgs = ((InternalEObject) newValueExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject) newValueExpression)
+						.eInverseAdd(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
+								null, msgs);
 			msgs = basicSetValueExpression(newValueExpression, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION,
 					newValueExpression, newValueExpression));
 	}
 
@@ -152,7 +174,8 @@ public class ParameterBindingImpl extends CommentableElementImpl implements Para
 			if (parameter != oldParameter) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							CallsPackage.PARAMETER_BINDING__PARAMETER, oldParameter, parameter));
+							CallsPackage.PARAMETER_BINDING__PARAMETER,
+							oldParameter, parameter));
 			}
 		}
 		return parameter;
@@ -174,8 +197,9 @@ public class ParameterBindingImpl extends CommentableElementImpl implements Para
 		EParameter oldParameter = parameter;
 		parameter = newParameter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.PARAMETER_BINDING__PARAMETER,
-					oldParameter, parameter));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					CallsPackage.PARAMETER_BINDING__PARAMETER, oldParameter,
+					parameter));
 	}
 
 	/**
@@ -202,8 +226,10 @@ public class ParameterBindingImpl extends CommentableElementImpl implements Para
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetInvocation(Invocation newInvocation, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newInvocation, CallsPackage.PARAMETER_BINDING__INVOCATION, msgs);
+	public NotificationChain basicSetInvocation(Invocation newInvocation,
+			NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newInvocation,
+				CallsPackage.PARAMETER_BINDING__INVOCATION, msgs);
 		return msgs;
 	}
 
@@ -215,19 +241,22 @@ public class ParameterBindingImpl extends CommentableElementImpl implements Para
 		if (newInvocation != eInternalContainer()
 				|| (eContainerFeatureID() != CallsPackage.PARAMETER_BINDING__INVOCATION && newInvocation != null)) {
 			if (EcoreUtil.isAncestor(this, newInvocation))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException(
+						"Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newInvocation != null)
 				msgs = ((InternalEObject) newInvocation).eInverseAdd(this,
-						CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS, Invocation.class, msgs);
+						CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS,
+						Invocation.class, msgs);
 			msgs = basicSetInvocation(newInvocation, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.PARAMETER_BINDING__INVOCATION,
-					newInvocation, newInvocation));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					CallsPackage.PARAMETER_BINDING__INVOCATION, newInvocation,
+					newInvocation));
 	}
 
 	/**
@@ -235,7 +264,8 @@ public class ParameterBindingImpl extends CommentableElementImpl implements Para
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CallsPackage.PARAMETER_BINDING__INVOCATION:
 			if (eInternalContainer() != null)
@@ -250,7 +280,8 @@ public class ParameterBindingImpl extends CommentableElementImpl implements Para
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION:
 			return basicSetValueExpression(null, msgs);
@@ -265,10 +296,12 @@ public class ParameterBindingImpl extends CommentableElementImpl implements Para
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(
+			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case CallsPackage.PARAMETER_BINDING__INVOCATION:
-			return eInternalContainer().eInverseRemove(this, CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS,
+			return eInternalContainer().eInverseRemove(this,
+					CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS,
 					Invocation.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);

@@ -38,7 +38,8 @@ import org.storydriven.storydiagrams.calls.ParameterBinding;
  *
  * @generated
  */
-public class ActivityCallNodeImpl extends ActivityNodeImpl implements ActivityCallNode {
+public class ActivityCallNodeImpl extends ActivityNodeImpl implements
+		ActivityCallNode {
 	/**
 	 * The cached value of the '{@link #getOwnedParameterBindings() <em>Owned Parameter Bindings</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -90,7 +91,9 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements ActivityCa
 	public EList<ParameterBinding> getOwnedParameterBindings() {
 		if (ownedParameterBindings == null) {
 			ownedParameterBindings = new EObjectContainmentWithInverseEList.Resolving<ParameterBinding>(
-					ParameterBinding.class, this, ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS,
+					ParameterBinding.class,
+					this,
+					ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS,
 					CallsPackage.PARAMETER_BINDING__INVOCATION);
 		}
 		return ownedParameterBindings;
@@ -107,7 +110,8 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements ActivityCa
 			if (callee != oldCallee) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE, oldCallee, callee));
+							ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE,
+							oldCallee, callee));
 			}
 		}
 		return callee;
@@ -129,8 +133,9 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements ActivityCa
 		Callable oldCallee = callee;
 		callee = newCallee;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE,
-					oldCallee, callee));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE, oldCallee,
+					callee));
 	}
 
 	/**
@@ -139,7 +144,8 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements ActivityCa
 	 */
 	public EList<Activity> getCalledActivities() {
 		if (calledActivities == null) {
-			calledActivities = new EObjectResolvingEList<Activity>(Activity.class, this,
+			calledActivities = new EObjectResolvingEList<Activity>(
+					Activity.class, this,
 					ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY);
 		}
 		return calledActivities;
@@ -151,11 +157,12 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements ActivityCa
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedParameterBindings()).basicAdd(otherEnd,
-					msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedParameterBindings())
+					.basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -165,10 +172,12 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements ActivityCa
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
-			return ((InternalEList<?>) getOwnedParameterBindings()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getOwnedParameterBindings())
+					.basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -202,14 +211,16 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements ActivityCa
 		switch (featureID) {
 		case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
 			getOwnedParameterBindings().clear();
-			getOwnedParameterBindings().addAll((Collection<? extends ParameterBinding>) newValue);
+			getOwnedParameterBindings().addAll(
+					(Collection<? extends ParameterBinding>) newValue);
 			return;
 		case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
 			setCallee((Callable) newValue);
 			return;
 		case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY:
 			getCalledActivities().clear();
-			getCalledActivities().addAll((Collection<? extends Activity>) newValue);
+			getCalledActivities().addAll(
+					(Collection<? extends Activity>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,7 +254,8 @@ public class ActivityCallNodeImpl extends ActivityNodeImpl implements ActivityCa
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
-			return ownedParameterBindings != null && !ownedParameterBindings.isEmpty();
+			return ownedParameterBindings != null
+					&& !ownedParameterBindings.isEmpty();
 		case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLEE:
 			return callee != null;
 		case ActivitiesPackage.ACTIVITY_CALL_NODE__CALLED_ACTIVITY:

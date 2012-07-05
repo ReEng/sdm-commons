@@ -77,8 +77,8 @@ public abstract class VariableImpl extends TypedElementImpl implements Variable 
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case StorydiagramsPackage.VARIABLE__VARIABLE_NAME:
-			return VARIABLE_NAME_EDEFAULT == null ? getVariableName() != null : !VARIABLE_NAME_EDEFAULT
-					.equals(getVariableName());
+			return VARIABLE_NAME_EDEFAULT == null ? getVariableName() != null
+					: !VARIABLE_NAME_EDEFAULT.equals(getVariableName());
 		}
 		return super.eIsSet(featureID);
 	}

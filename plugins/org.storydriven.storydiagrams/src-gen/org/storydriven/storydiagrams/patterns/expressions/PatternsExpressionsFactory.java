@@ -45,13 +45,13 @@ public interface PatternsExpressionsFactory extends EFactory {
 	ObjectVariableExpression createObjectVariableExpression();
 
 	/**
-	 * Returns a new object of class '<em>Object Set Size Expression</em>'.
+	 * Returns a new object of class '<em>Collection Size Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Object Set Size Expression</em>'.
+	 * @return a new object of class '<em>Collection Size Expression</em>'.
 	 * @generated
 	 */
-	ObjectSetSizeExpression createObjectSetSizeExpression();
+	CollectionSizeExpression createCollectionSizeExpression();
 
 	/**
 	 * Returns a new object of class '<em>Primitive Variable Expression</em>'.

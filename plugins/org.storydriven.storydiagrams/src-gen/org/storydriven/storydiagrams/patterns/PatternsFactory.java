@@ -23,7 +23,8 @@ public interface PatternsFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	PatternsFactory eINSTANCE = org.storydriven.storydiagrams.patterns.impl.PatternsFactoryImpl.init();
+	PatternsFactory eINSTANCE = org.storydriven.storydiagrams.patterns.impl.PatternsFactoryImpl
+			.init();
 
 	/**
 	 * Returns a new object of class '<em>Object Variable</em>'.
@@ -62,13 +63,13 @@ public interface PatternsFactory extends EFactory {
 	AttributeAssignment createAttributeAssignment();
 
 	/**
-	 * Returns a new object of class '<em>Object Set Variable</em>'.
+	 * Returns a new object of class '<em>Collection Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Object Set Variable</em>'.
+	 * @return a new object of class '<em>Collection Variable</em>'.
 	 * @generated
 	 */
-	ObjectSetVariable createObjectSetVariable();
+	CollectionVariable createCollectionVariable();
 
 	/**
 	 * Returns a new object of class '<em>Primitive Variable</em>'.
@@ -98,13 +99,13 @@ public interface PatternsFactory extends EFactory {
 	LinkVariable createLinkVariable();
 
 	/**
-	 * Returns a new object of class '<em>Containment Relation</em>'.
+	 * Returns a new object of class '<em>Inclusion Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Containment Relation</em>'.
+	 * @return a new object of class '<em>Inclusion Link</em>'.
 	 * @generated
 	 */
-	ContainmentRelation createContainmentRelation();
+	InclusionLink createInclusionLink();
 
 	/**
 	 * Returns a new object of class '<em>Matching Pattern</em>'.
@@ -116,13 +117,13 @@ public interface PatternsFactory extends EFactory {
 	MatchingPattern createMatchingPattern();
 
 	/**
-	 * Returns a new object of class '<em>Container Variable</em>'.
+	 * Returns a new object of class '<em>Maybe Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Container Variable</em>'.
+	 * @return a new object of class '<em>Maybe Link</em>'.
 	 * @generated
 	 */
-	ContainerVariable createContainerVariable();
+	MaybeLink createMaybeLink();
 
 	/**
 	 * Returns a new object of class '<em>Story Pattern</em>'.

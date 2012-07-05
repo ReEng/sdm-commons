@@ -28,7 +28,8 @@ import org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExp
  *
  * @generated
  */
-public class ExceptionVariableExpressionImpl extends ExpressionImpl implements ExceptionVariableExpression {
+public class ExceptionVariableExpressionImpl extends ExpressionImpl implements
+		ExceptionVariableExpression {
 	/**
 	 * The cached value of the '{@link #getExceptionVariable() <em>Exception Variable</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -65,7 +66,9 @@ public class ExceptionVariableExpressionImpl extends ExpressionImpl implements E
 			exceptionVariable = (ExceptionVariable) eResolveProxy(oldExceptionVariable);
 			if (exceptionVariable != oldExceptionVariable) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+					eNotify(new ENotificationImpl(
+							this,
+							Notification.RESOLVE,
 							ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE,
 							oldExceptionVariable, exceptionVariable));
 			}
@@ -89,7 +92,9 @@ public class ExceptionVariableExpressionImpl extends ExpressionImpl implements E
 		ExceptionVariable oldExceptionVariable = exceptionVariable;
 		exceptionVariable = newExceptionVariable;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
+			eNotify(new ENotificationImpl(
+					this,
+					Notification.SET,
 					ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE,
 					oldExceptionVariable, exceptionVariable));
 	}
@@ -103,7 +108,8 @@ public class ExceptionVariableExpressionImpl extends ExpressionImpl implements E
 	@Override
 	public EGenericType basicGetGenericType() {
 		ExceptionVariable exceptionVariable = getExceptionVariable();
-		return exceptionVariable == null ? null : exceptionVariable.getGenericType();
+		return exceptionVariable == null ? null : exceptionVariable
+				.getGenericType();
 	}
 
 	/**

@@ -41,7 +41,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.0";
+	String eNS_URI = "http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1";
 
 	/**
 	 * The package namespace name.
@@ -576,14 +576,14 @@ public interface PatternsExpressionsPackage extends EPackage {
 	int OBJECT_VARIABLE_EXPRESSION_OPERATION_COUNT = ExpressionsPackage.EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.expressions.impl.ObjectSetSizeExpressionImpl <em>Object Set Size Expression</em>}' class.
+	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.expressions.impl.CollectionSizeExpressionImpl <em>Collection Size Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.storydriven.storydiagrams.patterns.expressions.impl.ObjectSetSizeExpressionImpl
-	 * @see org.storydriven.storydiagrams.patterns.expressions.impl.PatternsExpressionsPackageImpl#getObjectSetSizeExpression()
+	 * @see org.storydriven.storydiagrams.patterns.expressions.impl.CollectionSizeExpressionImpl
+	 * @see org.storydriven.storydiagrams.patterns.expressions.impl.PatternsExpressionsPackageImpl#getCollectionSizeExpression()
 	 * @generated
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION = 2;
+	int COLLECTION_SIZE_EXPRESSION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -592,7 +592,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int COLLECTION_SIZE_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -601,7 +601,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int COLLECTION_SIZE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -610,7 +610,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
+	int COLLECTION_SIZE_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
@@ -619,7 +619,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
+	int COLLECTION_SIZE_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -628,7 +628,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
+	int COLLECTION_SIZE_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Set</b></em>' reference.
@@ -637,16 +637,16 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION__SET = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+	int COLLECTION_SIZE_EXPRESSION__SET = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Object Set Size Expression</em>' class.
+	 * The number of structural features of the '<em>Collection Size Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+	int COLLECTION_SIZE_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -655,7 +655,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___ECLASS = ExpressionsPackage.EXPRESSION___ECLASS;
+	int COLLECTION_SIZE_EXPRESSION___ECLASS = ExpressionsPackage.EXPRESSION___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -664,7 +664,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___EIS_PROXY = ExpressionsPackage.EXPRESSION___EIS_PROXY;
+	int COLLECTION_SIZE_EXPRESSION___EIS_PROXY = ExpressionsPackage.EXPRESSION___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -673,7 +673,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___ERESOURCE = ExpressionsPackage.EXPRESSION___ERESOURCE;
+	int COLLECTION_SIZE_EXPRESSION___ERESOURCE = ExpressionsPackage.EXPRESSION___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -682,7 +682,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___ECONTAINER = ExpressionsPackage.EXPRESSION___ECONTAINER;
+	int COLLECTION_SIZE_EXPRESSION___ECONTAINER = ExpressionsPackage.EXPRESSION___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -691,7 +691,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___ECONTAINING_FEATURE = ExpressionsPackage.EXPRESSION___ECONTAINING_FEATURE;
+	int COLLECTION_SIZE_EXPRESSION___ECONTAINING_FEATURE = ExpressionsPackage.EXPRESSION___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -700,7 +700,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___ECONTAINMENT_FEATURE = ExpressionsPackage.EXPRESSION___ECONTAINMENT_FEATURE;
+	int COLLECTION_SIZE_EXPRESSION___ECONTAINMENT_FEATURE = ExpressionsPackage.EXPRESSION___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -709,7 +709,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___ECONTENTS = ExpressionsPackage.EXPRESSION___ECONTENTS;
+	int COLLECTION_SIZE_EXPRESSION___ECONTENTS = ExpressionsPackage.EXPRESSION___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -718,7 +718,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___EALL_CONTENTS = ExpressionsPackage.EXPRESSION___EALL_CONTENTS;
+	int COLLECTION_SIZE_EXPRESSION___EALL_CONTENTS = ExpressionsPackage.EXPRESSION___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -727,7 +727,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___ECROSS_REFERENCES = ExpressionsPackage.EXPRESSION___ECROSS_REFERENCES;
+	int COLLECTION_SIZE_EXPRESSION___ECROSS_REFERENCES = ExpressionsPackage.EXPRESSION___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -736,7 +736,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int COLLECTION_SIZE_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -745,7 +745,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int COLLECTION_SIZE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -754,7 +754,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int COLLECTION_SIZE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -763,7 +763,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int COLLECTION_SIZE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -772,7 +772,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int COLLECTION_SIZE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -781,7 +781,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int COLLECTION_SIZE_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -790,7 +790,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___GET_EXTENSION__ECLASS = ExpressionsPackage.EXPRESSION___GET_EXTENSION__ECLASS;
+	int COLLECTION_SIZE_EXPRESSION___GET_EXTENSION__ECLASS = ExpressionsPackage.EXPRESSION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -799,7 +799,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___PROVIDE_EXTENSION__ECLASS = ExpressionsPackage.EXPRESSION___PROVIDE_EXTENSION__ECLASS;
+	int COLLECTION_SIZE_EXPRESSION___PROVIDE_EXTENSION__ECLASS = ExpressionsPackage.EXPRESSION___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -808,7 +808,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___GET_ANNOTATION__STRING = ExpressionsPackage.EXPRESSION___GET_ANNOTATION__STRING;
+	int COLLECTION_SIZE_EXPRESSION___GET_ANNOTATION__STRING = ExpressionsPackage.EXPRESSION___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -817,16 +817,16 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION___PROVIDE_ANNOTATION__STRING = ExpressionsPackage.EXPRESSION___PROVIDE_ANNOTATION__STRING;
+	int COLLECTION_SIZE_EXPRESSION___PROVIDE_ANNOTATION__STRING = ExpressionsPackage.EXPRESSION___PROVIDE_ANNOTATION__STRING;
 
 	/**
-	 * The number of operations of the '<em>Object Set Size Expression</em>' class.
+	 * The number of operations of the '<em>Collection Size Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_SET_SIZE_EXPRESSION_OPERATION_COUNT = ExpressionsPackage.EXPRESSION_OPERATION_COUNT + 0;
+	int COLLECTION_SIZE_EXPRESSION_OPERATION_COUNT = ExpressionsPackage.EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.expressions.impl.PrimitiveVariableExpressionImpl <em>Primitive Variable Expression</em>}' class.
@@ -1135,25 +1135,25 @@ public interface PatternsExpressionsPackage extends EPackage {
 	EReference getObjectVariableExpression_Object();
 
 	/**
-	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression <em>Object Set Size Expression</em>}'.
+	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression <em>Collection Size Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Object Set Size Expression</em>'.
-	 * @see org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression
+	 * @return the meta object for class '<em>Collection Size Expression</em>'.
+	 * @see org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression
 	 * @generated
 	 */
-	EClass getObjectSetSizeExpression();
+	EClass getCollectionSizeExpression();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression#getSet <em>Set</em>}'.
+	 * Returns the meta object for the reference '{@link org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression#getSet <em>Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Set</em>'.
-	 * @see org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression#getSet()
-	 * @see #getObjectSetSizeExpression()
+	 * @see org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression#getSet()
+	 * @see #getCollectionSizeExpression()
 	 * @generated
 	 */
-	EReference getObjectSetSizeExpression_Set();
+	EReference getCollectionSizeExpression_Set();
 
 	/**
 	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression <em>Primitive Variable Expression</em>}'.
@@ -1206,7 +1206,8 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * @see org.storydriven.storydiagrams.patterns.expressions.impl.PatternsExpressionsPackageImpl#getAttributeValueExpression()
 		 * @generated
 		 */
-		EClass ATTRIBUTE_VALUE_EXPRESSION = eINSTANCE.getAttributeValueExpression();
+		EClass ATTRIBUTE_VALUE_EXPRESSION = eINSTANCE
+				.getAttributeValueExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Object</b></em>' reference feature.
@@ -1214,7 +1215,8 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_VALUE_EXPRESSION__OBJECT = eINSTANCE.getAttributeValueExpression_Object();
+		EReference ATTRIBUTE_VALUE_EXPRESSION__OBJECT = eINSTANCE
+				.getAttributeValueExpression_Object();
 
 		/**
 		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
@@ -1222,7 +1224,8 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE = eINSTANCE.getAttributeValueExpression_Attribute();
+		EReference ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE = eINSTANCE
+				.getAttributeValueExpression_Attribute();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.expressions.impl.ObjectVariableExpressionImpl <em>Object Variable Expression</em>}' class.
@@ -1232,7 +1235,8 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * @see org.storydriven.storydiagrams.patterns.expressions.impl.PatternsExpressionsPackageImpl#getObjectVariableExpression()
 		 * @generated
 		 */
-		EClass OBJECT_VARIABLE_EXPRESSION = eINSTANCE.getObjectVariableExpression();
+		EClass OBJECT_VARIABLE_EXPRESSION = eINSTANCE
+				.getObjectVariableExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Object</b></em>' reference feature.
@@ -1240,17 +1244,19 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_VARIABLE_EXPRESSION__OBJECT = eINSTANCE.getObjectVariableExpression_Object();
+		EReference OBJECT_VARIABLE_EXPRESSION__OBJECT = eINSTANCE
+				.getObjectVariableExpression_Object();
 
 		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.expressions.impl.ObjectSetSizeExpressionImpl <em>Object Set Size Expression</em>}' class.
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.expressions.impl.CollectionSizeExpressionImpl <em>Collection Size Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.patterns.expressions.impl.ObjectSetSizeExpressionImpl
-		 * @see org.storydriven.storydiagrams.patterns.expressions.impl.PatternsExpressionsPackageImpl#getObjectSetSizeExpression()
+		 * @see org.storydriven.storydiagrams.patterns.expressions.impl.CollectionSizeExpressionImpl
+		 * @see org.storydriven.storydiagrams.patterns.expressions.impl.PatternsExpressionsPackageImpl#getCollectionSizeExpression()
 		 * @generated
 		 */
-		EClass OBJECT_SET_SIZE_EXPRESSION = eINSTANCE.getObjectSetSizeExpression();
+		EClass COLLECTION_SIZE_EXPRESSION = eINSTANCE
+				.getCollectionSizeExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Set</b></em>' reference feature.
@@ -1258,7 +1264,8 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_SET_SIZE_EXPRESSION__SET = eINSTANCE.getObjectSetSizeExpression_Set();
+		EReference COLLECTION_SIZE_EXPRESSION__SET = eINSTANCE
+				.getCollectionSizeExpression_Set();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.expressions.impl.PrimitiveVariableExpressionImpl <em>Primitive Variable Expression</em>}' class.
@@ -1268,7 +1275,8 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * @see org.storydriven.storydiagrams.patterns.expressions.impl.PatternsExpressionsPackageImpl#getPrimitiveVariableExpression()
 		 * @generated
 		 */
-		EClass PRIMITIVE_VARIABLE_EXPRESSION = eINSTANCE.getPrimitiveVariableExpression();
+		EClass PRIMITIVE_VARIABLE_EXPRESSION = eINSTANCE
+				.getPrimitiveVariableExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Primitive Variable</b></em>' reference feature.

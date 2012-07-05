@@ -17,7 +17,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
  * @see org.storydriven.storydiagrams.util.StorydiagramsResourceImpl
  * @generated
  */
-public class StorydiagramsResourceFactoryImpl extends ResourceFactoryImpl implements StorydiagramsResource.Factory {
+public class StorydiagramsResourceFactoryImpl extends ResourceFactoryImpl
+		implements StorydiagramsResource.Factory {
 	/**
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->

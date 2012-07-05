@@ -38,7 +38,6 @@ import org.storydriven.storydiagrams.patterns.StoryPattern;
  *   <li>{@link org.storydriven.storydiagrams.patterns.impl.AbstractLinkVariableImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.storydriven.storydiagrams.patterns.impl.AbstractLinkVariableImpl#getSecondLinkConstraints <em>Second Link Constraint</em>}</li>
  *   <li>{@link org.storydriven.storydiagrams.patterns.impl.AbstractLinkVariableImpl#getFirstLinkConstraints <em>First Link Constraint</em>}</li>
- *   <li>{@link org.storydriven.storydiagrams.patterns.impl.AbstractLinkVariableImpl#getBindingState <em>Binding State</em>}</li>
  *   <li>{@link org.storydriven.storydiagrams.patterns.impl.AbstractLinkVariableImpl#getPattern <em>Pattern</em>}</li>
  *   <li>{@link org.storydriven.storydiagrams.patterns.impl.AbstractLinkVariableImpl#getTarget <em>Target</em>}</li>
  * </ul>
@@ -46,7 +45,8 @@ import org.storydriven.storydiagrams.patterns.StoryPattern;
  *
  * @generated
  */
-public abstract class AbstractLinkVariableImpl extends NamedElementImpl implements AbstractLinkVariable {
+public abstract class AbstractLinkVariableImpl extends NamedElementImpl
+		implements AbstractLinkVariable {
 	/**
 	 * The default value of the '{@link #getBindingSemantics() <em>Binding Semantics</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -113,24 +113,6 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 	protected EList<LinkConstraint> firstLinkConstraints;
 
 	/**
-	 * The default value of the '{@link #getBindingState() <em>Binding State</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getBindingState()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BindingState BINDING_STATE_EDEFAULT = BindingState.UNBOUND;
-
-	/**
-	 * The cached value of the '{@link #getBindingState() <em>Binding State</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getBindingState()
-	 * @generated
-	 * @ordered
-	 */
-	protected BindingState bindingState = BINDING_STATE_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTarget()
@@ -170,10 +152,12 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 	 */
 	public void setBindingSemantics(BindingSemantics newBindingSemantics) {
 		BindingSemantics oldBindingSemantics = bindingSemantics;
-		bindingSemantics = newBindingSemantics == null ? BINDING_SEMANTICS_EDEFAULT : newBindingSemantics;
+		bindingSemantics = newBindingSemantics == null ? BINDING_SEMANTICS_EDEFAULT
+				: newBindingSemantics;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS, oldBindingSemantics, bindingSemantics));
+					PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS,
+					oldBindingSemantics, bindingSemantics));
 	}
 
 	/**
@@ -190,10 +174,12 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 	 */
 	public void setBindingOperator(BindingOperator newBindingOperator) {
 		BindingOperator oldBindingOperator = bindingOperator;
-		bindingOperator = newBindingOperator == null ? BINDING_OPERATOR_EDEFAULT : newBindingOperator;
+		bindingOperator = newBindingOperator == null ? BINDING_OPERATOR_EDEFAULT
+				: newBindingOperator;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR, oldBindingOperator, bindingOperator));
+					PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR,
+					oldBindingOperator, bindingOperator));
 	}
 
 	/**
@@ -207,7 +193,8 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 			if (target != oldTarget) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET, oldTarget, target));
+							PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET,
+							oldTarget, target));
 			}
 		}
 		return target;
@@ -226,12 +213,15 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTarget(AbstractVariable newTarget, NotificationChain msgs) {
+	public NotificationChain basicSetTarget(AbstractVariable newTarget,
+			NotificationChain msgs) {
 		AbstractVariable oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET, oldTarget, newTarget);
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET,
+					PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET, oldTarget,
+					newTarget);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -250,16 +240,19 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 			NotificationChain msgs = null;
 			if (target != null)
 				msgs = ((InternalEObject) target).eInverseRemove(this,
-						PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK, AbstractVariable.class, msgs);
+						PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK,
+						AbstractVariable.class, msgs);
 			if (newTarget != null)
 				msgs = ((InternalEObject) newTarget).eInverseAdd(this,
-						PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK, AbstractVariable.class, msgs);
+						PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK,
+						AbstractVariable.class, msgs);
 			msgs = basicSetTarget(newTarget, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET,
-					newTarget, newTarget));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET, newTarget,
+					newTarget));
 	}
 
 	/**
@@ -269,7 +262,9 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 	 */
 	public EList<LinkConstraint> getSecondLinkConstraints() {
 		if (secondLinkConstraints == null) {
-			secondLinkConstraints = new EObjectWithInverseResolvingEList<LinkConstraint>(LinkConstraint.class, this,
+			secondLinkConstraints = new EObjectWithInverseResolvingEList<LinkConstraint>(
+					LinkConstraint.class,
+					this,
 					PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT,
 					PatternsPackage.LINK_CONSTRAINT__SECOND_LINK);
 		}
@@ -283,31 +278,13 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 	 */
 	public EList<LinkConstraint> getFirstLinkConstraints() {
 		if (firstLinkConstraints == null) {
-			firstLinkConstraints = new EObjectWithInverseResolvingEList<LinkConstraint>(LinkConstraint.class, this,
+			firstLinkConstraints = new EObjectWithInverseResolvingEList<LinkConstraint>(
+					LinkConstraint.class,
+					this,
 					PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT,
 					PatternsPackage.LINK_CONSTRAINT__FIRST_LINK);
 		}
 		return firstLinkConstraints;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BindingState getBindingState() {
-		return bindingState;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBindingState(BindingState newBindingState) {
-		BindingState oldBindingState = bindingState;
-		bindingState = newBindingState == null ? BINDING_STATE_EDEFAULT : newBindingState;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_STATE, oldBindingState, bindingState));
 	}
 
 	/**
@@ -334,8 +311,10 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPattern(StoryPattern newPattern, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newPattern, PatternsPackage.ABSTRACT_LINK_VARIABLE__PATTERN, msgs);
+	public NotificationChain basicSetPattern(StoryPattern newPattern,
+			NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newPattern,
+				PatternsPackage.ABSTRACT_LINK_VARIABLE__PATTERN, msgs);
 		return msgs;
 	}
 
@@ -347,18 +326,21 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 		if (newPattern != eInternalContainer()
 				|| (eContainerFeatureID() != PatternsPackage.ABSTRACT_LINK_VARIABLE__PATTERN && newPattern != null)) {
 			if (EcoreUtil.isAncestor(this, newPattern))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException(
+						"Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPattern != null)
-				msgs = ((InternalEObject) newPattern).eInverseAdd(this, PatternsPackage.STORY_PATTERN__LINK_VARIABLE,
+				msgs = ((InternalEObject) newPattern).eInverseAdd(this,
+						PatternsPackage.STORY_PATTERN__LINK_VARIABLE,
 						StoryPattern.class, msgs);
 			msgs = basicSetPattern(newPattern, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.ABSTRACT_LINK_VARIABLE__PATTERN,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.ABSTRACT_LINK_VARIABLE__PATTERN,
 					newPattern, newPattern));
 	}
 
@@ -373,7 +355,8 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 			if (source != oldSource) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PatternsPackage.ABSTRACT_LINK_VARIABLE__SOURCE, oldSource, source));
+							PatternsPackage.ABSTRACT_LINK_VARIABLE__SOURCE,
+							oldSource, source));
 			}
 		}
 		return source;
@@ -391,12 +374,15 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSource(ObjectVariable newSource, NotificationChain msgs) {
+	public NotificationChain basicSetSource(ObjectVariable newSource,
+			NotificationChain msgs) {
 		ObjectVariable oldSource = source;
 		source = newSource;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ABSTRACT_LINK_VARIABLE__SOURCE, oldSource, newSource);
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET,
+					PatternsPackage.ABSTRACT_LINK_VARIABLE__SOURCE, oldSource,
+					newSource);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -413,17 +399,20 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 		if (newSource != source) {
 			NotificationChain msgs = null;
 			if (source != null)
-				msgs = ((InternalEObject) source).eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK,
+				msgs = ((InternalEObject) source).eInverseRemove(this,
+						PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK,
 						ObjectVariable.class, msgs);
 			if (newSource != null)
-				msgs = ((InternalEObject) newSource).eInverseAdd(this, PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK,
+				msgs = ((InternalEObject) newSource).eInverseAdd(this,
+						PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK,
 						ObjectVariable.class, msgs);
 			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.ABSTRACT_LINK_VARIABLE__SOURCE,
-					newSource, newSource));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.ABSTRACT_LINK_VARIABLE__SOURCE, newSource,
+					newSource));
 	}
 
 	/**
@@ -432,19 +421,21 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__SOURCE:
 			if (source != null)
-				msgs = ((InternalEObject) source).eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK,
+				msgs = ((InternalEObject) source).eInverseRemove(this,
+						PatternsPackage.OBJECT_VARIABLE__OUTGOING_LINK,
 						ObjectVariable.class, msgs);
 			return basicSetSource((ObjectVariable) otherEnd, msgs);
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSecondLinkConstraints()).basicAdd(otherEnd,
-					msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSecondLinkConstraints())
+					.basicAdd(otherEnd, msgs);
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFirstLinkConstraints()).basicAdd(otherEnd,
-					msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFirstLinkConstraints())
+					.basicAdd(otherEnd, msgs);
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__PATTERN:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
@@ -452,7 +443,8 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET:
 			if (target != null)
 				msgs = ((InternalEObject) target).eInverseRemove(this,
-						PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK, AbstractVariable.class, msgs);
+						PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK,
+						AbstractVariable.class, msgs);
 			return basicSetTarget((AbstractVariable) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -463,14 +455,17 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__SOURCE:
 			return basicSetSource(null, msgs);
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT:
-			return ((InternalEList<?>) getSecondLinkConstraints()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getSecondLinkConstraints()).basicRemove(
+					otherEnd, msgs);
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT:
-			return ((InternalEList<?>) getFirstLinkConstraints()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getFirstLinkConstraints()).basicRemove(
+					otherEnd, msgs);
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__PATTERN:
 			return basicSetPattern(null, msgs);
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET:
@@ -484,10 +479,12 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(
+			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__PATTERN:
-			return eInternalContainer().eInverseRemove(this, PatternsPackage.STORY_PATTERN__LINK_VARIABLE,
+			return eInternalContainer().eInverseRemove(this,
+					PatternsPackage.STORY_PATTERN__LINK_VARIABLE,
 					StoryPattern.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -512,8 +509,6 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 			return getSecondLinkConstraints();
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT:
 			return getFirstLinkConstraints();
-		case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_STATE:
-			return getBindingState();
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__PATTERN:
 			if (resolve)
 				return getPattern();
@@ -545,14 +540,13 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 			return;
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT:
 			getSecondLinkConstraints().clear();
-			getSecondLinkConstraints().addAll((Collection<? extends LinkConstraint>) newValue);
+			getSecondLinkConstraints().addAll(
+					(Collection<? extends LinkConstraint>) newValue);
 			return;
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT:
 			getFirstLinkConstraints().clear();
-			getFirstLinkConstraints().addAll((Collection<? extends LinkConstraint>) newValue);
-			return;
-		case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_STATE:
-			setBindingState((BindingState) newValue);
+			getFirstLinkConstraints().addAll(
+					(Collection<? extends LinkConstraint>) newValue);
 			return;
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__PATTERN:
 			setPattern((StoryPattern) newValue);
@@ -586,9 +580,6 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT:
 			getFirstLinkConstraints().clear();
 			return;
-		case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_STATE:
-			setBindingState(BINDING_STATE_EDEFAULT);
-			return;
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__PATTERN:
 			setPattern((StoryPattern) null);
 			return;
@@ -613,11 +604,11 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__SOURCE:
 			return source != null;
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__SECOND_LINK_CONSTRAINT:
-			return secondLinkConstraints != null && !secondLinkConstraints.isEmpty();
+			return secondLinkConstraints != null
+					&& !secondLinkConstraints.isEmpty();
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__FIRST_LINK_CONSTRAINT:
-			return firstLinkConstraints != null && !firstLinkConstraints.isEmpty();
-		case PatternsPackage.ABSTRACT_LINK_VARIABLE__BINDING_STATE:
-			return bindingState != BINDING_STATE_EDEFAULT;
+			return firstLinkConstraints != null
+					&& !firstLinkConstraints.isEmpty();
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__PATTERN:
 			return basicGetPattern() != null;
 		case PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET:
@@ -640,8 +631,6 @@ public abstract class AbstractLinkVariableImpl extends NamedElementImpl implemen
 		result.append(bindingSemantics);
 		result.append(", bindingOperator: ");
 		result.append(bindingOperator);
-		result.append(", bindingState: ");
-		result.append(bindingState);
 		result.append(')');
 		return result.toString();
 	}

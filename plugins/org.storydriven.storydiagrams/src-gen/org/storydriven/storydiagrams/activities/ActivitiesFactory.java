@@ -23,7 +23,8 @@ public interface ActivitiesFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ActivitiesFactory eINSTANCE = org.storydriven.storydiagrams.activities.impl.ActivitiesFactoryImpl.init();
+	ActivitiesFactory eINSTANCE = org.storydriven.storydiagrams.activities.impl.ActivitiesFactoryImpl
+			.init();
 
 	/**
 	 * Returns a new object of class '<em>Exception Variable</em>'.
@@ -89,13 +90,13 @@ public interface ActivitiesFactory extends EFactory {
 	JunctionNode createJunctionNode();
 
 	/**
-	 * Returns a new object of class '<em>Start Node</em>'.
+	 * Returns a new object of class '<em>Initial Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Start Node</em>'.
+	 * @return a new object of class '<em>Initial Node</em>'.
 	 * @generated
 	 */
-	StartNode createStartNode();
+	InitialNode createInitialNode();
 
 	/**
 	 * Returns a new object of class '<em>Statement Node</em>'.
@@ -107,13 +108,13 @@ public interface ActivitiesFactory extends EFactory {
 	StatementNode createStatementNode();
 
 	/**
-	 * Returns a new object of class '<em>Stop Node</em>'.
+	 * Returns a new object of class '<em>Activity Final Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Stop Node</em>'.
+	 * @return a new object of class '<em>Activity Final Node</em>'.
 	 * @generated
 	 */
-	StopNode createStopNode();
+	ActivityFinalNode createActivityFinalNode();
 
 	/**
 	 * Returns a new object of class '<em>Activity Call Node</em>'.
@@ -132,6 +133,15 @@ public interface ActivitiesFactory extends EFactory {
 	 * @generated
 	 */
 	ModifyingStoryNode createModifyingStoryNode();
+
+	/**
+	 * Returns a new object of class '<em>Flow Final Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Flow Final Node</em>'.
+	 * @generated
+	 */
+	FlowFinalNode createFlowFinalNode();
 
 	/**
 	 * Returns the package supported by this factory.

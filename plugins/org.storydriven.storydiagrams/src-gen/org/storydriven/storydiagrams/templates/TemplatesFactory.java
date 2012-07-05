@@ -23,7 +23,8 @@ public interface TemplatesFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	TemplatesFactory eINSTANCE = org.storydriven.storydiagrams.templates.impl.TemplatesFactoryImpl.init();
+	TemplatesFactory eINSTANCE = org.storydriven.storydiagrams.templates.impl.TemplatesFactoryImpl
+			.init();
 
 	/**
 	 * Returns a new object of class '<em>Template Binding</em>'.

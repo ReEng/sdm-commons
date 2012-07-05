@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.TypedElement;
+import org.storydriven.storydiagrams.*;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 import org.storydriven.storydiagrams.Variable;
 
