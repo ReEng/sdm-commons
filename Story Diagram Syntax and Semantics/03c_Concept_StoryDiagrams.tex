@@ -219,13 +219,6 @@ The behavior of a story node is defined by its story pattern.
 Therefore,
 since trying to find a subgraph defined by a story pattern can fail,
 each execution of a story node can also fail.
-\tododt{Where is the meaning of failure described exactly? Should it be here or in the story patterns section?
-Does success of a story pattern execution mean that there was a successful matching only, independly of the succeeding transformations,
-or does it mean that the graph transformation (if available) could also be executed (was executable without contradictions, exceptions not considered)?
-I think, success should include the transformation and we should, if possible, check
-if a modifying story pattern can perform its modifications after a successful matching \emph{before} actually modifying the host graph
-(check if all variables are matched and if there are contradictions).
-Someone has to describe that in the story patterns section or here.}
 
 To distinguish the cases of a successful story node execution and its failure,
 the outgoing activity edges can be provided with the guards \fe{\text[success\text]} and \fe{\text[failure\text]} (see Figure~\ref{fig:SD-decisions} a)).

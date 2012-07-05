@@ -566,9 +566,7 @@ variable as illustrated in Figure~\ref{fig:InlucionLinks}~a).
 The circle containing a plus determines which of the two sides of the link is containing the other one.
 In Figure~\ref{fig:InlucionLinks}~a), the collection \fe{methods} contains an object \fe{aMethod}.
 
-In contrast to link variables that are typed over an association,
-\tododt{In fact, these are one or two references.}
-inclusion links are not typed at all.
+In contrast to link variables that are typed over an association, inclusion links are not typed at all.
 They only represent a containment of an object in a collection of objects.
 But similar to link variables, this relation can be checked to be existent between a collection and an object
 or be used to match new objects.
@@ -958,7 +956,6 @@ If two object variables are connected by a maybe link, they both must be mandato
 \label{sec:PatternConstraints}
 
 A pattern constraint defines an additional condition for a match that is evaluated and the end of the matching step, i.e., it is evaluated after all object and link variables have been matched. Since it is a condition, it needs to evaluate to true or false. If the pattern constraint is evaluated to true, then the match for the story pattern is valid. If the pattern constraint is evaluated to false, then the match is rejected.
-\todoall{Also mention that rejecting the match does lead to backtracking to find a new match where this pattern constraint is satisfied. I.e. we go through all isomorphic matches to find one that satisfies the pattern constraint. But in case of the example in Figure~\ref{fig:patternConstraint} there is no backtracking due to the collection variable (there is no other match and we do not try to match subsets of the methods in the class).}
 
 A pattern constraint may use all object variables that are used in the same story pattern. Object variables are referred by their name. The pattern constraint may traverse the references of the objects bound to a particular object variable and access the attributes of the corresponding object. In the current version of story diagrams, we only support to use OCL for specifying pattern constraints. Then, the OCL constraint uses the name of the object variables to refer to objects and may use all features of OCL to access references and attributes of the corresponding objects.
 
