@@ -27,8 +27,9 @@ import org.storydriven.storydiagrams.patterns.PrimitiveVariable;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -63,11 +64,14 @@ public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider 
 	 */
 	protected void addClassifierPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_PrimitiveVariable_classifier_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveVariable_classifier_feature",
-						"_UI_PrimitiveVariable_type"), PatternsPackage.Literals.PRIMITIVE_VARIABLE__CLASSIFIER, true,
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_PrimitiveVariable_classifier_feature",
+						"_UI_PrimitiveVariable_type"),
+				PatternsPackage.Literals.PRIMITIVE_VARIABLE__CLASSIFIER, true,
 				false, true, null, null, null));
 	}
 
@@ -79,7 +83,10 @@ public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider 
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("elements/patterns/PrimitiveVariable.png"));
+		return overlayImage(
+				object,
+				getResourceLocator().getImage(
+						"elements/patterns/PrimitiveVariable.png"));
 	}
 
 	/**
@@ -126,7 +133,8 @@ public class PrimitiveVariableItemProvider extends AbstractVariableItemProvider 
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

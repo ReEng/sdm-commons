@@ -11,21 +11,27 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.storydriven.storydiagrams.patterns.MatchingPattern;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import org.storydriven.storydiagrams.patterns.CollectionVariable;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 /**
- * This is the item provider adapter for a {@link org.storydriven.storydiagrams.patterns.MatchingPattern} object.
+ * This is the item provider adapter for a {@link org.storydriven.storydiagrams.patterns.CollectionVariable} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MatchingPatternItemProvider extends StoryPatternItemProvider
+public class CollectionVariableItemProvider extends ObjectVariableItemProvider
 		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
@@ -34,7 +40,7 @@ public class MatchingPatternItemProvider extends StoryPatternItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MatchingPatternItemProvider(AdapterFactory adapterFactory) {
+	public CollectionVariableItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -49,22 +55,41 @@ public class MatchingPatternItemProvider extends StoryPatternItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addMaybeEmptyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns MatchingPattern.not.
+	 * This adds a property descriptor for the Maybe Empty feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
+	 */
+	protected void addMaybeEmptyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_CollectionVariable_maybeEmpty_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_CollectionVariable_maybeEmpty_feature",
+						"_UI_CollectionVariable_type"),
+				PatternsPackage.Literals.COLLECTION_VARIABLE__MAYBE_EMPTY,
+				true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				null, null));
+	}
+
+	/**
+	 * This returns CollectionVariable.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/patterns/MatchingPattern.png"));
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/CollectionVariable"));
 	}
 
 	/**
@@ -85,9 +110,9 @@ public class MatchingPatternItemProvider extends StoryPatternItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MatchingPattern) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_MatchingPattern_type")
-				: getString("_UI_MatchingPattern_type") + " " + label;
+		String label = ((CollectionVariable) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_CollectionVariable_type")
+				: getString("_UI_CollectionVariable_type") + " " + label;
 	}
 
 	/**
@@ -100,6 +125,13 @@ public class MatchingPatternItemProvider extends StoryPatternItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(CollectionVariable.class)) {
+		case PatternsPackage.COLLECTION_VARIABLE__MAYBE_EMPTY:
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), false, true));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 

@@ -30,8 +30,9 @@ import org.storydriven.storydiagrams.activities.StoryNode;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StoryNodeItemProvider extends ActivityNodeItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class StoryNodeItemProvider extends ActivityNodeItemProvider implements
+		IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -66,11 +67,14 @@ public class StoryNodeItemProvider extends ActivityNodeItemProvider implements I
 	 */
 	protected void addForEachPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
 				getString("_UI_StoryNode_forEach_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_StoryNode_forEach_feature", "_UI_StoryNode_type"),
-				ActivitiesPackage.Literals.STORY_NODE__FOR_EACH, true, false, false,
-				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_StoryNode_forEach_feature", "_UI_StoryNode_type"),
+				ActivitiesPackage.Literals.STORY_NODE__FOR_EACH, true, false,
+				false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -82,10 +86,12 @@ public class StoryNodeItemProvider extends ActivityNodeItemProvider implements I
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActivitiesPackage.Literals.STORY_NODE__STORY_PATTERN);
+			childrenFeatures
+					.add(ActivitiesPackage.Literals.STORY_NODE__STORY_PATTERN);
 		}
 		return childrenFeatures;
 	}
@@ -122,8 +128,8 @@ public class StoryNodeItemProvider extends ActivityNodeItemProvider implements I
 	@Override
 	public String getText(Object object) {
 		String label = ((StoryNode) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_StoryNode_type") : getString("_UI_StoryNode_type")
-				+ " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_StoryNode_type")
+				: getString("_UI_StoryNode_type") + " " + label;
 	}
 
 	/**
@@ -139,10 +145,12 @@ public class StoryNodeItemProvider extends ActivityNodeItemProvider implements I
 
 		switch (notification.getFeatureID(StoryNode.class)) {
 		case ActivitiesPackage.STORY_NODE__FOR_EACH:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), false, true));
 			return;
 		case ActivitiesPackage.STORY_NODE__STORY_PATTERN:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -156,7 +164,8 @@ public class StoryNodeItemProvider extends ActivityNodeItemProvider implements I
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

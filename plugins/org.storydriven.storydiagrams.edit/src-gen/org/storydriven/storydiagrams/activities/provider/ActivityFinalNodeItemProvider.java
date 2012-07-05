@@ -4,15 +4,16 @@
  *
  * $Id$
  */
-package org.storydriven.storydiagrams.templates.provider;
+package org.storydriven.storydiagrams.activities.provider;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -20,26 +21,27 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
+
 import org.storydriven.core.expressions.ExpressionsFactory;
-import org.storydriven.core.provider.ExtendableElementItemProvider;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+
+import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
+
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
+
 import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
+
 import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
-import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
-import org.storydriven.storydiagrams.templates.PropertyBinding;
-import org.storydriven.storydiagrams.templates.TemplatesPackage;
 
 /**
- * This is the item provider adapter for a {@link org.storydriven.storydiagrams.templates.PropertyBinding} object.
+ * This is the item provider adapter for a {@link org.storydriven.storydiagrams.activities.ActivityFinalNode} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropertyBindingItemProvider extends ExtendableElementItemProvider
+public class ActivityFinalNodeItemProvider extends ActivityNodeItemProvider
 		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
@@ -48,7 +50,7 @@ public class PropertyBindingItemProvider extends ExtendableElementItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyBindingItemProvider(AdapterFactory adapterFactory) {
+	public ActivityFinalNodeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,63 +65,49 @@ public class PropertyBindingItemProvider extends ExtendableElementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addBoundPropertyPropertyDescriptor(object);
+			addReturnValuePropertyDescriptor(object);
+			addSuccessPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Bound Property feature.
+	 * This adds a property descriptor for the Return Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addBoundPropertyPropertyDescriptor(Object object) {
+	protected void addReturnValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_PropertyBinding_boundProperty_feature"),
+				getString("_UI_ActivityFinalNode_returnValue_feature"),
 				getString("_UI_PropertyDescriptor_description",
-						"_UI_PropertyBinding_boundProperty_feature",
-						"_UI_PropertyBinding_type"),
-				TemplatesPackage.Literals.PROPERTY_BINDING__BOUND_PROPERTY,
-				true, false, true, null, null, null));
+						"_UI_ActivityFinalNode_returnValue_feature",
+						"_UI_ActivityFinalNode_type"),
+				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUE,
+				false, false, false, null, null, null));
 	}
 
 	/**
-	 * This returns PropertyBinding.png.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/templates/PropertyBinding.png"));
-	}
-
-	/**
+	 * This adds a property descriptor for the Success feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return StorydiagramsEditPlugin.INSTANCE;
+	protected void addSuccessPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ActivityFinalNode_success_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_ActivityFinalNode_success_feature",
+						"_UI_ActivityFinalNode_type"),
+				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__SUCCESS, true,
+				false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
+				null));
 	}
 
 	/**
@@ -136,40 +124,9 @@ public class PropertyBindingItemProvider extends ExtendableElementItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures
-					.add(TemplatesPackage.Literals.PROPERTY_BINDING__BINDING_EXPRESSION);
+					.add(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES);
 		}
 		return childrenFeatures;
-	}
-
-	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getText(Object object) {
-		return getString("_UI_PropertyBinding_type");
-	}
-
-	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update any cached
-	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void notifyChanged(Notification notification) {
-		updateChildren(notification);
-
-		switch (notification.getFeatureID(PropertyBinding.class)) {
-		case TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
-		}
-		super.notifyChanged(notification);
 	}
 
 	/**
@@ -186,6 +143,65 @@ public class PropertyBindingItemProvider extends ExtendableElementItemProvider
 	}
 
 	/**
+	 * This returns ActivityFinalNode.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/ActivityFinalNode"));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected boolean shouldComposeCreationImage() {
+		return true;
+	}
+
+	/**
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getText(Object object) {
+		String label = ((ActivityFinalNode) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ActivityFinalNode_type")
+				: getString("_UI_ActivityFinalNode_type") + " " + label;
+	}
+
+	/**
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void notifyChanged(Notification notification) {
+		updateChildren(notification);
+
+		switch (notification.getFeatureID(ActivityFinalNode.class)) {
+		case ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS:
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), false, true));
+			return;
+		case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
+			return;
+		}
+		super.notifyChanged(notification);
+	}
+
+	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
@@ -198,70 +214,62 @@ public class PropertyBindingItemProvider extends ExtendableElementItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.PROPERTY_BINDING__BINDING_EXPRESSION,
+				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
 				ActivitiesExpressionsFactory.eINSTANCE
 						.createExceptionVariableExpression()));
 
 		newChildDescriptors
 				.add(createChildParameter(
-						TemplatesPackage.Literals.PROPERTY_BINDING__BINDING_EXPRESSION,
+						ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
 						CallsExpressionsFactory.eINSTANCE
 								.createMethodCallExpression()));
 
 		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.PROPERTY_BINDING__BINDING_EXPRESSION,
+				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
 				CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
 		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.PROPERTY_BINDING__BINDING_EXPRESSION,
+				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
 				PatternsExpressionsFactory.eINSTANCE
 						.createAttributeValueExpression()));
 
 		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.PROPERTY_BINDING__BINDING_EXPRESSION,
+				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
 				PatternsExpressionsFactory.eINSTANCE
 						.createObjectVariableExpression()));
 
 		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.PROPERTY_BINDING__BINDING_EXPRESSION,
+				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
 				PatternsExpressionsFactory.eINSTANCE
 						.createCollectionSizeExpression()));
 
 		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.PROPERTY_BINDING__BINDING_EXPRESSION,
+				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
 				PatternsExpressionsFactory.eINSTANCE
 						.createPrimitiveVariableExpression()));
 
 		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.PROPERTY_BINDING__BINDING_EXPRESSION,
+				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
 				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.PROPERTY_BINDING__BINDING_EXPRESSION,
+				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
 				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.PROPERTY_BINDING__BINDING_EXPRESSION,
+				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
 				ExpressionsFactory.eINSTANCE.createNotExpression()));
 
 		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.PROPERTY_BINDING__BINDING_EXPRESSION,
+				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
 				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.PROPERTY_BINDING__BINDING_EXPRESSION,
+				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
 				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.PROPERTY_BINDING__BINDING_EXPRESSION,
+				ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
 				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 	}
 

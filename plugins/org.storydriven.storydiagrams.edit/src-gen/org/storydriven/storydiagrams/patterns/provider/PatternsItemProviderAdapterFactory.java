@@ -34,8 +34,8 @@ import org.storydriven.storydiagrams.patterns.util.PatternsAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory implements ComposeableAdapterFactory,
-		IChangeNotifier, IDisposable {
+public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -93,14 +93,6 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	protected AttributeAssignmentItemProvider attributeAssignmentItemProvider;
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.ObjectSetVariable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ObjectSetVariableItemProvider objectSetVariableItemProvider;
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.PrimitiveVariable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -125,28 +117,12 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	protected LinkVariableItemProvider linkVariableItemProvider;
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.ContainmentRelation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ContainmentRelationItemProvider containmentRelationItemProvider;
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.MatchingPattern} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected MatchingPatternItemProvider matchingPatternItemProvider;
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.ContainerVariable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ContainerVariableItemProvider containerVariableItemProvider;
 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.StoryPattern} instances.
@@ -179,7 +155,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>)
+					|| (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -251,25 +228,35 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	@Override
 	public Adapter createAttributeAssignmentAdapter() {
 		if (attributeAssignmentItemProvider == null) {
-			attributeAssignmentItemProvider = new AttributeAssignmentItemProvider(this);
+			attributeAssignmentItemProvider = new AttributeAssignmentItemProvider(
+					this);
 		}
 
 		return attributeAssignmentItemProvider;
 	}
 
 	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.ObjectSetVariable}.
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.CollectionVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CollectionVariableItemProvider collectionVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.CollectionVariable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createObjectSetVariableAdapter() {
-		if (objectSetVariableItemProvider == null) {
-			objectSetVariableItemProvider = new ObjectSetVariableItemProvider(this);
+	public Adapter createCollectionVariableAdapter() {
+		if (collectionVariableItemProvider == null) {
+			collectionVariableItemProvider = new CollectionVariableItemProvider(
+					this);
 		}
 
-		return objectSetVariableItemProvider;
+		return collectionVariableItemProvider;
 	}
 
 	/**
@@ -281,7 +268,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	@Override
 	public Adapter createPrimitiveVariableAdapter() {
 		if (primitiveVariableItemProvider == null) {
-			primitiveVariableItemProvider = new PrimitiveVariableItemProvider(this);
+			primitiveVariableItemProvider = new PrimitiveVariableItemProvider(
+					this);
 		}
 
 		return primitiveVariableItemProvider;
@@ -318,18 +306,26 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	}
 
 	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.ContainmentRelation}.
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.InclusionLink} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InclusionLinkItemProvider inclusionLinkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.InclusionLink}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createContainmentRelationAdapter() {
-		if (containmentRelationItemProvider == null) {
-			containmentRelationItemProvider = new ContainmentRelationItemProvider(this);
+	public Adapter createInclusionLinkAdapter() {
+		if (inclusionLinkItemProvider == null) {
+			inclusionLinkItemProvider = new InclusionLinkItemProvider(this);
 		}
 
-		return containmentRelationItemProvider;
+		return inclusionLinkItemProvider;
 	}
 
 	/**
@@ -348,18 +344,26 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	}
 
 	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.ContainerVariable}.
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.MaybeLink} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MaybeLinkItemProvider maybeLinkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.MaybeLink}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createContainerVariableAdapter() {
-		if (containerVariableItemProvider == null) {
-			containerVariableItemProvider = new ContainerVariableItemProvider(this);
+	public Adapter createMaybeLinkAdapter() {
+		if (maybeLinkItemProvider == null) {
+			maybeLinkItemProvider = new MaybeLinkItemProvider(this);
 		}
 
-		return containerVariableItemProvider;
+		return maybeLinkItemProvider;
 	}
 
 	/**
@@ -384,7 +388,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory
+				.getRootAdapterFactory();
 	}
 
 	/**
@@ -393,7 +398,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(
+			ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -457,20 +463,20 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 			linkConstraintItemProvider.dispose();
 		if (attributeAssignmentItemProvider != null)
 			attributeAssignmentItemProvider.dispose();
-		if (objectSetVariableItemProvider != null)
-			objectSetVariableItemProvider.dispose();
+		if (collectionVariableItemProvider != null)
+			collectionVariableItemProvider.dispose();
 		if (primitiveVariableItemProvider != null)
 			primitiveVariableItemProvider.dispose();
 		if (pathItemProvider != null)
 			pathItemProvider.dispose();
 		if (linkVariableItemProvider != null)
 			linkVariableItemProvider.dispose();
-		if (containmentRelationItemProvider != null)
-			containmentRelationItemProvider.dispose();
+		if (inclusionLinkItemProvider != null)
+			inclusionLinkItemProvider.dispose();
 		if (matchingPatternItemProvider != null)
 			matchingPatternItemProvider.dispose();
-		if (containerVariableItemProvider != null)
-			containerVariableItemProvider.dispose();
+		if (maybeLinkItemProvider != null)
+			maybeLinkItemProvider.dispose();
 		if (storyPatternItemProvider != null)
 			storyPatternItemProvider.dispose();
 	}

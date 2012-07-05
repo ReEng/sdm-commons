@@ -34,8 +34,9 @@ import org.storydriven.storydiagrams.patterns.expressions.util.PatternsExpressio
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpressionsAdapterFactory implements
-		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class PatternsExpressionsItemProviderAdapterFactory extends
+		PatternsExpressionsAdapterFactory implements ComposeableAdapterFactory,
+		IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -77,14 +78,6 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	protected ObjectVariableExpressionItemProvider objectVariableExpressionItemProvider;
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ObjectSetSizeExpressionItemProvider objectSetSizeExpressionItemProvider;
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,7 +108,8 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>)
+					|| (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -142,7 +136,8 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	@Override
 	public Adapter createAttributeValueExpressionAdapter() {
 		if (attributeValueExpressionItemProvider == null) {
-			attributeValueExpressionItemProvider = new AttributeValueExpressionItemProvider(this);
+			attributeValueExpressionItemProvider = new AttributeValueExpressionItemProvider(
+					this);
 		}
 
 		return attributeValueExpressionItemProvider;
@@ -157,25 +152,35 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	@Override
 	public Adapter createObjectVariableExpressionAdapter() {
 		if (objectVariableExpressionItemProvider == null) {
-			objectVariableExpressionItemProvider = new ObjectVariableExpressionItemProvider(this);
+			objectVariableExpressionItemProvider = new ObjectVariableExpressionItemProvider(
+					this);
 		}
 
 		return objectVariableExpressionItemProvider;
 	}
 
 	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression}.
+	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CollectionSizeExpressionItemProvider collectionSizeExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createObjectSetSizeExpressionAdapter() {
-		if (objectSetSizeExpressionItemProvider == null) {
-			objectSetSizeExpressionItemProvider = new ObjectSetSizeExpressionItemProvider(this);
+	public Adapter createCollectionSizeExpressionAdapter() {
+		if (collectionSizeExpressionItemProvider == null) {
+			collectionSizeExpressionItemProvider = new CollectionSizeExpressionItemProvider(
+					this);
 		}
 
-		return objectSetSizeExpressionItemProvider;
+		return collectionSizeExpressionItemProvider;
 	}
 
 	/**
@@ -187,7 +192,8 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	@Override
 	public Adapter createPrimitiveVariableExpressionAdapter() {
 		if (primitiveVariableExpressionItemProvider == null) {
-			primitiveVariableExpressionItemProvider = new PrimitiveVariableExpressionItemProvider(this);
+			primitiveVariableExpressionItemProvider = new PrimitiveVariableExpressionItemProvider(
+					this);
 		}
 
 		return primitiveVariableExpressionItemProvider;
@@ -200,7 +206,8 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory
+				.getRootAdapterFactory();
 	}
 
 	/**
@@ -209,7 +216,8 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(
+			ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -269,8 +277,8 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 			attributeValueExpressionItemProvider.dispose();
 		if (objectVariableExpressionItemProvider != null)
 			objectVariableExpressionItemProvider.dispose();
-		if (objectSetSizeExpressionItemProvider != null)
-			objectSetSizeExpressionItemProvider.dispose();
+		if (collectionSizeExpressionItemProvider != null)
+			collectionSizeExpressionItemProvider.dispose();
 		if (primitiveVariableExpressionItemProvider != null)
 			primitiveVariableExpressionItemProvider.dispose();
 	}

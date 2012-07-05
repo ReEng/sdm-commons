@@ -33,8 +33,9 @@ import org.storydriven.storydiagrams.templates.TemplatesPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplateSignatureItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class TemplateSignatureItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -53,7 +54,10 @@ public class TemplateSignatureItemProvider extends ItemProviderAdapter implement
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("elements/templates/TemplateSignature.png"));
+		return overlayImage(
+				object,
+				getResourceLocator().getImage(
+						"elements/templates/TemplateSignature.png"));
 	}
 
 	/**
@@ -101,11 +105,14 @@ public class TemplateSignatureItemProvider extends ItemProviderAdapter implement
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TEMPLATE_BINDING);
-			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER);
+			childrenFeatures
+					.add(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TEMPLATE_BINDING);
+			childrenFeatures
+					.add(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER);
 		}
 		return childrenFeatures;
 	}
@@ -135,7 +142,8 @@ public class TemplateSignatureItemProvider extends ItemProviderAdapter implement
 		switch (notification.getFeatureID(TemplateSignature.class)) {
 		case TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING:
 		case TemplatesPackage.TEMPLATE_SIGNATURE__TYPE_PARAMETER:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -162,19 +170,24 @@ public class TemplateSignatureItemProvider extends ItemProviderAdapter implement
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TEMPLATE_BINDING,
+		newChildDescriptors.add(createChildParameter(
+				TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TEMPLATE_BINDING,
 				TemplatesFactory.eINSTANCE.createTemplateBinding()));
 
-		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
+		newChildDescriptors.add(createChildParameter(
+				TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
 				EcoreFactory.eINSTANCE.createEClass()));
 
-		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
+		newChildDescriptors.add(createChildParameter(
+				TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
 				EcoreFactory.eINSTANCE.createEDataType()));
 
-		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
+		newChildDescriptors.add(createChildParameter(
+				TemplatesPackage.Literals.TEMPLATE_SIGNATURE__TYPE_PARAMETER,
 				EcoreFactory.eINSTANCE.createEEnum()));
 	}
 

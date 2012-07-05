@@ -35,8 +35,9 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivityItemProvider extends CallableItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ActivityItemProvider extends CallableItemProvider implements
+		IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -72,11 +73,14 @@ public class ActivityItemProvider extends CallableItemProvider implements IEditi
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_NamedElement_name_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature",
-						"_UI_NamedElement_type"), CorePackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_NamedElement_name_feature",
+						"_UI_NamedElement_type"),
+				CorePackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -88,12 +92,15 @@ public class ActivityItemProvider extends CallableItemProvider implements IEditi
 	 */
 	protected void addPreconditionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_Activity_precondition_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Activity_precondition_feature",
-						"_UI_Activity_type"), ActivitiesPackage.Literals.ACTIVITY__PRECONDITION, true, false, true,
-				null, null, null));
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Activity_precondition_feature",
+						"_UI_Activity_type"),
+				ActivitiesPackage.Literals.ACTIVITY__PRECONDITION, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -104,7 +111,10 @@ public class ActivityItemProvider extends CallableItemProvider implements IEditi
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("elements/activities/Activity.png"));
+		return overlayImage(
+				object,
+				getResourceLocator().getImage(
+						"elements/activities/Activity.png"));
 	}
 
 	/**
@@ -137,11 +147,14 @@ public class ActivityItemProvider extends CallableItemProvider implements IEditi
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGE);
-			childrenFeatures.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE);
+			childrenFeatures
+					.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGE);
+			childrenFeatures
+					.add(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE);
 		}
 		return childrenFeatures;
 	}
@@ -155,8 +168,8 @@ public class ActivityItemProvider extends CallableItemProvider implements IEditi
 	@Override
 	public String getText(Object object) {
 		String label = ((Activity) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Activity_type") : getString("_UI_Activity_type")
-				+ " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Activity_type")
+				: getString("_UI_Activity_type") + " " + label;
 	}
 
 	/**
@@ -172,11 +185,13 @@ public class ActivityItemProvider extends CallableItemProvider implements IEditi
 
 		switch (notification.getFeatureID(Activity.class)) {
 		case ActivitiesPackage.ACTIVITY__NAME:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), false, true));
 			return;
 		case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
 		case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -203,35 +218,49 @@ public class ActivityItemProvider extends CallableItemProvider implements IEditi
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_EDGE,
 				ActivitiesFactory.eINSTANCE.createActivityEdge()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
 				ActivitiesFactory.eINSTANCE.createMatchingStoryNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
 				ActivitiesFactory.eINSTANCE.createStructuredNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
 				ActivitiesFactory.eINSTANCE.createJunctionNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				ActivitiesFactory.eINSTANCE.createStartNode()));
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				ActivitiesFactory.eINSTANCE.createInitialNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
 				ActivitiesFactory.eINSTANCE.createStatementNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
-				ActivitiesFactory.eINSTANCE.createStopNode()));
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				ActivitiesFactory.eINSTANCE.createActivityFinalNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
 				ActivitiesFactory.eINSTANCE.createActivityCallNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
 				ActivitiesFactory.eINSTANCE.createModifyingStoryNode()));
+
+		newChildDescriptors.add(createChildParameter(
+				ActivitiesPackage.Literals.ACTIVITY__OWNED_ACTIVITY_NODE,
+				ActivitiesFactory.eINSTANCE.createFlowFinalNode()));
 	}
 
 }

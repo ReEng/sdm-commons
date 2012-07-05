@@ -31,8 +31,9 @@ import org.storydriven.storydiagrams.provider.VariableItemProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ParameterExtensionItemProvider extends VariableItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ParameterExtensionItemProvider extends VariableItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -70,10 +71,14 @@ public class ParameterExtensionItemProvider extends VariableItemProvider impleme
 	 */
 	protected void addBasePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
 				getString("_UI_Extension_base_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Extension_base_feature", "_UI_Extension_type"),
-				CorePackage.Literals.EXTENSION__BASE, false, false, false, null, null, null));
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Extension_base_feature", "_UI_Extension_type"),
+				CorePackage.Literals.EXTENSION__BASE, false, false, false,
+				null, null, null));
 	}
 
 	/**
@@ -85,12 +90,15 @@ public class ParameterExtensionItemProvider extends VariableItemProvider impleme
 	protected void addModelBasePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
 						getResourceLocator(),
 						getString("_UI_Extension_modelBase_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Extension_modelBase_feature",
-								"_UI_Extension_type"), CorePackage.Literals.EXTENSION__MODEL_BASE, true, false, true,
-						null, null, null));
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_Extension_modelBase_feature",
+								"_UI_Extension_type"),
+						CorePackage.Literals.EXTENSION__MODEL_BASE, true,
+						false, true, null, null, null));
 	}
 
 	/**
@@ -101,12 +109,15 @@ public class ParameterExtensionItemProvider extends VariableItemProvider impleme
 	 */
 	protected void addOwningAnnotationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_Extension_owningAnnotation_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Extension_owningAnnotation_feature",
-						"_UI_Extension_type"), CorePackage.Literals.EXTENSION__OWNING_ANNOTATION, true, false, true,
-				null, null, null));
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Extension_owningAnnotation_feature",
+						"_UI_Extension_type"),
+				CorePackage.Literals.EXTENSION__OWNING_ANNOTATION, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -117,11 +128,14 @@ public class ParameterExtensionItemProvider extends VariableItemProvider impleme
 	 */
 	protected void addParameterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_ParameterExtension_parameter_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ParameterExtension_parameter_feature",
-						"_UI_ParameterExtension_type"), CallsPackage.Literals.PARAMETER_EXTENSION__PARAMETER, true,
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_ParameterExtension_parameter_feature",
+						"_UI_ParameterExtension_type"),
+				CallsPackage.Literals.PARAMETER_EXTENSION__PARAMETER, true,
 				false, true, null, null, null));
 	}
 
@@ -133,7 +147,10 @@ public class ParameterExtensionItemProvider extends VariableItemProvider impleme
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("elements/calls/ParameterExtension.png"));
+		return overlayImage(
+				object,
+				getResourceLocator().getImage(
+						"elements/calls/ParameterExtension.png"));
 	}
 
 	/**
@@ -191,7 +208,8 @@ public class ParameterExtensionItemProvider extends VariableItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
