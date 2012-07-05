@@ -379,30 +379,30 @@ have no binding state.
 
 The objects of our instance model carry attributes. 
 During the application of a story pattern, these attributes can be used twofold. 
-First, attribute constraints can be specified to restrict the attribute values to a certain range, thereby restricting the possible matches of a story pattern. 
+First, object constraints can be specified to restrict the attribute values to a certain range, thereby restricting the possible matches of a story pattern. 
 Second, attribute values can be changed during the graph rewriting step after a successful matching.
 
-We use \emph{attribute constraints} to restrict the matching of object variables to objects of the instance model that have specific attribute values. 
-Thus, attribute constraints are considered to be part of the LHS and do not change the instance model. 
-The attribute constraints of an object variable are checked directly after matching the object variable. 
+We use \emph{object constraints} to restrict the matching of object variables to objects of the instance model that have specific attribute values. 
+Thus, object constraints are considered to be part of the LHS and do not change the instance model. 
+The object constraints of an object variable are checked directly after matching the object variable. 
 Figure \ref{fig:objectConstraint} shows an example.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=1]{figures/ObjectConstraint}
-  \caption{Matching Pattern with an Attribute Constraint}
+  \caption{Matching Pattern with an Object Constraint}
   \label{fig:objectConstraint}
 \end{figure}
 
 In the example, we match a method being contained in the class represented by the object variable \fe{theClass}. 
 The match is restricted to a method which has the name "getName".
 
-The values of attributes that are not restricted by an attribute constraint are not considered during the matching. 
+The values of attributes that are not restricted by an object constraint are not considered during the matching. 
 Thus, they may have an arbitrary value. 
-In the current version of story patterns, attribute constraints need to be specified using OCL~\cite{OCL}. 
+In the current version of story patterns, object constraints need to be specified using OCL~\cite{OCL}. 
 Besides equality checks, all comparative operations on the attributes of an object supported by OCL can be used as object constraints. 
 
-Besides attribute constraints, \emph{attribute assignments} can be used to change the value of an attribute during the application of a story pattern. 
+Besides object constraints, \emph{attribute assignments} can be used to change the value of an attribute during the application of a story pattern. 
 Thus, attribute assignments are considered to be part of the RHS. 
 When using attribute assignments, the value of the attribute is not considered while matching the LHS to the instance model. 
 Figure \ref{fig:attributeAssignment} shows an example.
@@ -425,18 +425,18 @@ The expression is to be specified using OCL.
 The type of the return value of the OCL expression must be assignable to the type of the attribute. 
 Since the attribute value is changed as part of the RHS, the assignment is visualized in green color.
 
-Story patterns also enable to use both, an attribute constraint and an attributed assignment for the same attribute inside one object variable. Then, the attribute constraint is used during the matching step. The attribute value of the object matched to the corresponding object variable is then changed as specified by the attribute assignment while enforcing the RHS.
+Story patterns also enable to use both, an object constraint and an attributed assignment for the same attribute inside one object variable. Then, the object constraint is used during the matching step. The attribute value of the object matched to the corresponding object variable is then changed as specified by the attribute assignment while enforcing the RHS.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[scale=1]{figures/AttributeConstraintAndAssignment}
-  \caption{Using an Attribute Constraint and an Attribute Assignment on the Same Attribute}
+  \caption{Using an Object Constraint and an Attribute Assignment on the Same Attribute}
   \label{fig:attributeConstraintAndAssignment}
 \end{figure}
 
 Figure~\ref{fig:attributeConstraintAndAssignment} combines the story patterns of Figure~\ref{fig:objectConstraint} and~\ref{fig:attributeAssignment}. The story pattern matches an object of type \fe{Method} which has the name \fe{getName}. If the matching was successful, the name of the object bound to \fe{method} is set to \fe{getMethodName} as defined by the attribute assignment.
 
-The OCL statements we allow for attribute constraints and attribute assignments must not traverse the references of the object variables.
+The OCL statements we allow for object constraints and attribute assignments must not traverse the references of the object variables.
 Both may only use the attributes of object variables in the same story pattern and arbitrary arithmetic, comparing, and logical operations on them. 
 
 
