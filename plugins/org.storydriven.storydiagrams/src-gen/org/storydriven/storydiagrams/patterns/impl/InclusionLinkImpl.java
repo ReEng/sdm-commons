@@ -7,7 +7,6 @@
 package org.storydriven.storydiagrams.patterns.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.storydriven.storydiagrams.patterns.InclusionLink;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 

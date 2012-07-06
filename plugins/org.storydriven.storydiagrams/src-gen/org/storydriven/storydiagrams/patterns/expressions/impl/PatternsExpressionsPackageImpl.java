@@ -26,7 +26,6 @@ import org.storydriven.storydiagrams.impl.StorydiagramsPackageImpl;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression;
 import org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression;
-import org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
 import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPackage;
