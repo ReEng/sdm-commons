@@ -185,7 +185,7 @@
                 href="storydiagrams.ecore#//patterns/StoryPattern/variable"/>
             <ownedChild>
               <domainMetaElement
-                  href="storydiagrams.ecore#//patterns/ObjectSetVariable"/>
+                  href="storydiagrams.ecore#//patterns/CollectionVariable"/>
               <labelMappings
                   readOnly="true">
                 <diagramLabel
@@ -362,7 +362,7 @@
         href="storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
     <ownedChild>
       <domainMetaElement
-          href="storydiagrams.ecore#//activities/StartNode"/>
+          href="storydiagrams.ecore#//activities/InitialNode"/>
       <labelMappings
           readOnly="true">
         <diagramLabel
@@ -393,7 +393,7 @@
         href="storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
     <ownedChild>
       <domainMetaElement
-          href="storydiagrams.ecore#//activities/StopNode"/>
+          href="storydiagrams.ecore#//activities/ActivityFinalNode"/>
       <labelMappings
           readOnly="true">
         <diagramLabel
@@ -462,7 +462,7 @@
   </links>
   <links>
     <domainMetaElement
-        href="storydiagrams.ecore#//patterns/ContainmentRelation"/>
+        href="storydiagrams.ecore#//patterns/InclusionLink"/>
     <labelMappings
         readOnly="true">
       <diagramLabel
