@@ -44,7 +44,7 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2004;
+	public static final int VISUAL_ID = 2010;
 
 	/**
 	 * @generated
@@ -68,7 +68,8 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StatementNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new StatementNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -81,7 +82,8 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child
+						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -118,11 +120,12 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof StatementNodeNameEditPart) {
-			((StatementNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getStatementNodeNameLabel());
+			((StatementNodeNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getStatementNodeNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof StatementNodeExpressionLabelEditPart) {
-			((StatementNodeExpressionLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+		if (childEditPart instanceof WrappingLabel2EditPart) {
+			((WrappingLabel2EditPart) childEditPart).setLabel(getPrimaryShape()
 					.getStatementNodeExpressionLabel());
 			return true;
 		}
@@ -136,7 +139,7 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof StatementNodeNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof StatementNodeExpressionLabelEditPart) {
+		if (childEditPart instanceof WrappingLabel2EditPart) {
 			return true;
 		}
 		return false;
@@ -259,7 +262,8 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(StatementNodeNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry
+				.getType(StatementNodeNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -267,35 +271,36 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+		types.add(StorydiagramsElementTypes.ActivityEdge_4005);
 		return types;
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
+	public List<IElementType> getMARelTypesOnSourceAndTarget(
+			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ActivityCallNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
 		}
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
 		}
 		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
 		}
 		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
 		}
-		if (targetEditPart instanceof StartNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+		if (targetEditPart instanceof InitialNodeEditPart) {
+			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
 		}
 		if (targetEditPart instanceof JunctionNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
 		}
-		if (targetEditPart instanceof StopNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
+			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
 		}
 		return types;
 	}
@@ -305,14 +310,14 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
-			types.add(StorydiagramsElementTypes.StatementNode_2004);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
-			types.add(StorydiagramsElementTypes.StartNode_2001);
-			types.add(StorydiagramsElementTypes.JunctionNode_2003);
-			types.add(StorydiagramsElementTypes.StopNode_2002);
+		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4005) {
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2009);
+			types.add(StorydiagramsElementTypes.StatementNode_2010);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2011);
+			types.add(StorydiagramsElementTypes.MatchingStoryNode_2012);
+			types.add(StorydiagramsElementTypes.InitialNode_2013);
+			types.add(StorydiagramsElementTypes.JunctionNode_2014);
+			types.add(StorydiagramsElementTypes.ActivityFinalNode_2015);
 		}
 		return types;
 	}
@@ -322,7 +327,7 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
+		types.add(StorydiagramsElementTypes.ActivityEdge_4005);
 		return types;
 	}
 
@@ -331,14 +336,14 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2006);
-			types.add(StorydiagramsElementTypes.StatementNode_2004);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2007);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_2008);
-			types.add(StorydiagramsElementTypes.StartNode_2001);
-			types.add(StorydiagramsElementTypes.JunctionNode_2003);
-			types.add(StorydiagramsElementTypes.StopNode_2002);
+		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4005) {
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2009);
+			types.add(StorydiagramsElementTypes.StatementNode_2010);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2011);
+			types.add(StorydiagramsElementTypes.MatchingStoryNode_2012);
+			types.add(StorydiagramsElementTypes.InitialNode_2013);
+			types.add(StorydiagramsElementTypes.JunctionNode_2014);
+			types.add(StorydiagramsElementTypes.ActivityFinalNode_2015);
 		}
 		return types;
 	}
@@ -367,7 +372,8 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 			layoutThis.makeColumnsEqualWidth = true;
 			this.setLayoutManager(layoutThis);
 
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
+					getMapMode().DPtoLP(8)));
 			this.setForegroundColor(ColorConstants.black);
 			this.setBackgroundColor(THIS_BACK);
 			createContents();
@@ -404,7 +410,8 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 			constraintFStatementNodeExpressionLabel.verticalSpan = 1;
 			constraintFStatementNodeExpressionLabel.grabExcessHorizontalSpace = true;
 			constraintFStatementNodeExpressionLabel.grabExcessVerticalSpace = false;
-			this.add(fStatementNodeExpressionLabel, constraintFStatementNodeExpressionLabel);
+			this.add(fStatementNodeExpressionLabel,
+					constraintFStatementNodeExpressionLabel);
 
 		}
 
@@ -432,7 +439,8 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FSTATEMENTNODENAMELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
-			.getSystemFont().getFontData()[0].getName(), 10, SWT.BOLD);
+	static final Font FSTATEMENTNODENAMELABEL_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 10, SWT.BOLD);
 
 }

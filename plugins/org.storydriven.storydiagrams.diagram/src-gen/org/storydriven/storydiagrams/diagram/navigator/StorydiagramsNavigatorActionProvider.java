@@ -69,10 +69,12 @@ public class StorydiagramsNavigatorActionProvider extends CommonActionProvider {
 		if (!myContribute) {
 			return;
 		}
-		IStructuredSelection selection = (IStructuredSelection) getContext().getSelection();
+		IStructuredSelection selection = (IStructuredSelection) getContext()
+				.getSelection();
 		myOpenDiagramAction.selectionChanged(selection);
 		if (myOpenDiagramAction.isEnabled()) {
-			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN, myOpenDiagramAction);
+			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN,
+					myOpenDiagramAction);
 		}
 	}
 
@@ -113,13 +115,17 @@ public class StorydiagramsNavigatorActionProvider extends CommonActionProvider {
 			if (selection.size() == 1) {
 				Object selectedElement = selection.getFirstElement();
 				if (selectedElement instanceof StorydiagramsNavigatorItem) {
-					selectedElement = ((StorydiagramsNavigatorItem) selectedElement).getView();
+					selectedElement = ((StorydiagramsNavigatorItem) selectedElement)
+							.getView();
 				} else if (selectedElement instanceof IAdaptable) {
-					selectedElement = ((IAdaptable) selectedElement).getAdapter(View.class);
+					selectedElement = ((IAdaptable) selectedElement)
+							.getAdapter(View.class);
 				}
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
-					if (ActivityEditPart.MODEL_ID.equals(StorydiagramsVisualIDRegistry.getModelID(diagram))) {
+					if (ActivityEditPart.MODEL_ID
+							.equals(StorydiagramsVisualIDRegistry
+									.getModelID(diagram))) {
 						myDiagram = diagram;
 					}
 				}
@@ -140,7 +146,8 @@ public class StorydiagramsNavigatorActionProvider extends CommonActionProvider {
 			try {
 				page.openEditor(editorInput, StorydiagramsDiagramEditor.ID);
 			} catch (PartInitException e) {
-				StorydiagramsDiagramEditorPlugin.getInstance().logError("Exception while openning diagram", e); //$NON-NLS-1$
+				StorydiagramsDiagramEditorPlugin.getInstance().logError(
+						"Exception while openning diagram", e); //$NON-NLS-1$
 			}
 		}
 
@@ -151,14 +158,16 @@ public class StorydiagramsNavigatorActionProvider extends CommonActionProvider {
 			Resource diagramResource = diagram.eResource();
 			for (EObject nextEObject : diagramResource.getContents()) {
 				if (nextEObject == diagram) {
-					return new FileEditorInput(WorkspaceSynchronizer.getFile(diagramResource));
+					return new FileEditorInput(
+							WorkspaceSynchronizer.getFile(diagramResource));
 				}
 				if (nextEObject instanceof Diagram) {
 					break;
 				}
 			}
 			URI uri = EcoreUtil.getURI(diagram);
-			String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
+			String editorName = uri.lastSegment() + '#'
+					+ diagram.eResource().getContents().indexOf(diagram);
 			IEditorInput editorInput = new URIEditorInput(uri, editorName);
 			return editorInput;
 		}

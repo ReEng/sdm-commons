@@ -16,17 +16,19 @@ import org.storydriven.storydiagrams.diagram.part.Messages;
 /**
  * @generated
  */
-public class ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart extends ListCompartmentEditPart {
+public class ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart
+		extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7009;
+	public static final int VISUAL_ID = 7029;
 
 	/**
 	 * @generated
 	 */
-	public ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart(View view) {
+	public ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart(
+			View view) {
 		super(view);
 	}
 
@@ -48,7 +50,8 @@ public class ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
+				.createFigure();
 		result.setTitleVisibility(false);
 		return result;
 	}
@@ -58,11 +61,15 @@ public class ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(
+				EditPolicyRoles.SEMANTIC_ROLE,
 				new ObjectVariableObjectVariableAttributeAssignmentsCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicy());
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
+				new DragDropEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CANONICAL_ROLE,
 				new ObjectVariableObjectVariableAttributeAssignmentsCompartmentCanonicalEditPolicy());
 	}
 

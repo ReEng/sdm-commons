@@ -8,13 +8,14 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class ContainmentRelationItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
+public class InclusionLinkItemSemanticEditPolicy extends
+		StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public ContainmentRelationItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.ContainmentRelation_4004);
+	public InclusionLinkItemSemanticEditPolicy() {
+		super(StorydiagramsElementTypes.InclusionLink_4007);
 	}
 
 	/**

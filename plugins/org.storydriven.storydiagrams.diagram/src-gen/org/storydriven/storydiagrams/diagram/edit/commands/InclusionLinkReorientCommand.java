@@ -9,14 +9,14 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.storydriven.storydiagrams.diagram.edit.policies.StorydiagramsBaseItemSemanticEditPolicy;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
-import org.storydriven.storydiagrams.patterns.ContainmentRelation;
+import org.storydriven.storydiagrams.patterns.InclusionLink;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 /**
  * @generated
  */
-public class ContainmentRelationReorientCommand extends EditElementCommand {
+public class InclusionLinkReorientCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -36,7 +36,7 @@ public class ContainmentRelationReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public ContainmentRelationReorientCommand(ReorientRelationshipRequest request) {
+	public InclusionLinkReorientCommand(ReorientRelationshipRequest request) {
 		super(request.getLabel(), request.getRelationship(), request);
 		reorientDirection = request.getDirection();
 		oldEnd = request.getOldRelationshipEnd();
@@ -47,7 +47,7 @@ public class ContainmentRelationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof ContainmentRelation) {
+		if (false == getElementToEdit() instanceof InclusionLink) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -71,8 +71,9 @@ public class ContainmentRelationReorientCommand extends EditElementCommand {
 			return false;
 		}
 		StoryPattern container = (StoryPattern) getLink().eContainer();
-		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canExistContainmentRelation_4004(container,
-				getLink(), getNewSource(), target);
+		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints()
+				.canExistInclusionLink_4007(container, getLink(),
+						getNewSource(), target);
 	}
 
 	/**
@@ -87,16 +88,19 @@ public class ContainmentRelationReorientCommand extends EditElementCommand {
 			return false;
 		}
 		StoryPattern container = (StoryPattern) getLink().eContainer();
-		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canExistContainmentRelation_4004(container,
-				getLink(), source, getNewTarget());
+		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints()
+				.canExistInclusionLink_4007(container, getLink(), source,
+						getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
+			IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException(
+					"Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();
@@ -126,8 +130,8 @@ public class ContainmentRelationReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected ContainmentRelation getLink() {
-		return (ContainmentRelation) getElementToEdit();
+	protected InclusionLink getLink() {
+		return (InclusionLink) getElementToEdit();
 	}
 
 	/**

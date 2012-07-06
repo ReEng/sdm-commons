@@ -14,7 +14,8 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class StorydiagramsSheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
+public class StorydiagramsSheetLabelProvider extends BaseLabelProvider
+		implements ILabelProvider {
 
 	/**
 	 * @generated
@@ -70,7 +71,8 @@ public class StorydiagramsSheetLabelProvider extends BaseLabelProvider implement
 			if (etype != null) {
 				return etype;
 			}
-			view = view.eContainer() instanceof View ? (View) view.eContainer() : null;
+			view = view.eContainer() instanceof View ? (View) view.eContainer()
+					: null;
 		}
 		return null;
 	}

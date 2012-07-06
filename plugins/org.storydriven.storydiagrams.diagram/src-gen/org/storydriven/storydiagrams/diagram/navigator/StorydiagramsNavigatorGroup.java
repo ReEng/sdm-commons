@@ -6,7 +6,8 @@ import java.util.LinkedList;
 /**
  * @generated
  */
-public class StorydiagramsNavigatorGroup extends StorydiagramsAbstractNavigatorItem {
+public class StorydiagramsNavigatorGroup extends
+		StorydiagramsAbstractNavigatorItem {
 
 	/**
 	 * @generated

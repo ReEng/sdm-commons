@@ -9,22 +9,23 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.diagram.edit.policies.ContainmentRelationItemSemanticEditPolicy;
+import org.storydriven.storydiagrams.diagram.edit.policies.InclusionLinkItemSemanticEditPolicy;
 
 /**
  * @generated
  */
-public class ContainmentRelationEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class InclusionLinkEditPart extends ConnectionNodeEditPart implements
+		ITreeBranchEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4004;
+	public static final int VISUAL_ID = 4007;
 
 	/**
 	 * @generated
 	 */
-	public ContainmentRelationEditPart(View view) {
+	public InclusionLinkEditPart(View view) {
 		super(view);
 	}
 
@@ -33,16 +34,18 @@ public class ContainmentRelationEditPart extends ConnectionNodeEditPart implemen
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ContainmentRelationItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new InclusionLinkItemSemanticEditPolicy());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ContainmentRelationOperatorLabelEditPart) {
-			((ContainmentRelationOperatorLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getContainmentRelationOperatorFigure());
+		if (childEditPart instanceof WrappingLabel13EditPart) {
+			((WrappingLabel13EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getContainmentRelationOperatorFigure());
 			return true;
 		}
 		return false;
@@ -62,7 +65,7 @@ public class ContainmentRelationEditPart extends ConnectionNodeEditPart implemen
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ContainmentRelationOperatorLabelEditPart) {
+		if (childEditPart instanceof WrappingLabel13EditPart) {
 			return true;
 		}
 		return false;

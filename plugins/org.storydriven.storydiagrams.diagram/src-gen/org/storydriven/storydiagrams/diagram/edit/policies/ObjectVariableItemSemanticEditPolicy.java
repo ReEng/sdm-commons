@@ -14,13 +14,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.diagram.edit.commands.ContainmentRelationCreateCommand;
-import org.storydriven.storydiagrams.diagram.edit.commands.ContainmentRelationReorientCommand;
+import org.storydriven.storydiagrams.diagram.edit.commands.InclusionLinkCreateCommand;
+import org.storydriven.storydiagrams.diagram.edit.commands.InclusionLinkReorientCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.LinkVariableCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.LinkVariableReorientCommand;
 import org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ConstraintEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.InclusionLinkEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableObjectVariableConstraintsCompartmentEditPart;
@@ -30,13 +30,14 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class ObjectVariableItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
+public class ObjectVariableItemSemanticEditPolicy extends
+		StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ObjectVariableItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.ObjectVariable_3009);
+		super(StorydiagramsElementTypes.ObjectVariable_3020);
 	}
 
 	/**
@@ -44,18 +45,21 @@ public class ObjectVariableItemSemanticEditPolicy extends StorydiagramsBaseItemS
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
+				getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
 			if (StorydiagramsVisualIDRegistry.getVisualID(incomingLink) == LinkVariableEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				DestroyElementRequest r = new DestroyElementRequest(
+						incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (StorydiagramsVisualIDRegistry.getVisualID(incomingLink) == ContainmentRelationEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+			if (StorydiagramsVisualIDRegistry.getVisualID(incomingLink) == InclusionLinkEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(
+						incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
@@ -64,13 +68,15 @@ public class ObjectVariableItemSemanticEditPolicy extends StorydiagramsBaseItemS
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
 			if (StorydiagramsVisualIDRegistry.getVisualID(outgoingLink) == LinkVariableEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+				DestroyElementRequest r = new DestroyElementRequest(
+						outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (StorydiagramsVisualIDRegistry.getVisualID(outgoingLink) == ContainmentRelationEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+			if (StorydiagramsVisualIDRegistry.getVisualID(outgoingLink) == InclusionLinkEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(
+						outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
@@ -98,12 +104,14 @@ public class ObjectVariableItemSemanticEditPolicy extends StorydiagramsBaseItemS
 			Node node = (Node) nit.next();
 			switch (StorydiagramsVisualIDRegistry.getVisualID(node)) {
 			case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
+				for (Iterator<?> cit = node.getChildren().iterator(); cit
+						.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (StorydiagramsVisualIDRegistry.getVisualID(cnode)) {
 					case ConstraintEditPart.VISUAL_ID:
-						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode
-								.getElement(), false))); // directlyOwned: true
+						cmd.add(new DestroyElementCommand(
+								new DestroyElementRequest(getEditingDomain(),
+										cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
@@ -111,12 +119,14 @@ public class ObjectVariableItemSemanticEditPolicy extends StorydiagramsBaseItemS
 				}
 				break;
 			case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
+				for (Iterator<?> cit = node.getChildren().iterator(); cit
+						.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (StorydiagramsVisualIDRegistry.getVisualID(cnode)) {
 					case AttributeAssignmentEditPart.VISUAL_ID:
-						cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), cnode
-								.getElement(), false))); // directlyOwned: true
+						cmd.add(new DestroyElementCommand(
+								new DestroyElementRequest(getEditingDomain(),
+										cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
@@ -133,18 +143,23 @@ public class ObjectVariableItemSemanticEditPolicy extends StorydiagramsBaseItemS
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super.getCreateRelationshipCommand(req);
+		return command != null ? command : super
+				.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (StorydiagramsElementTypes.LinkVariable_4002 == req.getElementType()) {
-			return getGEFWrapper(new LinkVariableCreateCommand(req, req.getSource(), req.getTarget()));
+	protected Command getStartCreateRelationshipCommand(
+			CreateRelationshipRequest req) {
+		if (StorydiagramsElementTypes.LinkVariable_4006 == req.getElementType()) {
+			return getGEFWrapper(new LinkVariableCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
-		if (StorydiagramsElementTypes.ContainmentRelation_4004 == req.getElementType()) {
-			return getGEFWrapper(new ContainmentRelationCreateCommand(req, req.getSource(), req.getTarget()));
+		if (StorydiagramsElementTypes.InclusionLink_4007 == req
+				.getElementType()) {
+			return getGEFWrapper(new InclusionLinkCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -152,12 +167,16 @@ public class ObjectVariableItemSemanticEditPolicy extends StorydiagramsBaseItemS
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (StorydiagramsElementTypes.LinkVariable_4002 == req.getElementType()) {
-			return getGEFWrapper(new LinkVariableCreateCommand(req, req.getSource(), req.getTarget()));
+	protected Command getCompleteCreateRelationshipCommand(
+			CreateRelationshipRequest req) {
+		if (StorydiagramsElementTypes.LinkVariable_4006 == req.getElementType()) {
+			return getGEFWrapper(new LinkVariableCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
-		if (StorydiagramsElementTypes.ContainmentRelation_4004 == req.getElementType()) {
-			return getGEFWrapper(new ContainmentRelationCreateCommand(req, req.getSource(), req.getTarget()));
+		if (StorydiagramsElementTypes.InclusionLink_4007 == req
+				.getElementType()) {
+			return getGEFWrapper(new InclusionLinkCreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -168,12 +187,13 @@ public class ObjectVariableItemSemanticEditPolicy extends StorydiagramsBaseItemS
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommand(
+			ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case LinkVariableEditPart.VISUAL_ID:
 			return getGEFWrapper(new LinkVariableReorientCommand(req));
-		case ContainmentRelationEditPart.VISUAL_ID:
-			return getGEFWrapper(new ContainmentRelationReorientCommand(req));
+		case InclusionLinkEditPart.VISUAL_ID:
+			return getGEFWrapper(new InclusionLinkReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

@@ -121,7 +121,8 @@ public class StorydiagramsEditPartProvider extends AbstractEditPartProvider {
 	public synchronized boolean provides(IOperation operation) {
 		if (operation instanceof CreateGraphicEditPartOperation) {
 			View view = ((IEditPartOperation) operation).getView();
-			if (!ActivityEditPart.MODEL_ID.equals(StorydiagramsVisualIDRegistry.getModelID(view))) {
+			if (!ActivityEditPart.MODEL_ID.equals(StorydiagramsVisualIDRegistry
+					.getModelID(view))) {
 				return false;
 			}
 			if (isAllowCaching() && getCachedPart(view) != null) {

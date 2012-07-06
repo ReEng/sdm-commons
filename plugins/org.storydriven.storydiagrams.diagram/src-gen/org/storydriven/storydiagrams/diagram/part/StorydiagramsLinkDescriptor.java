@@ -28,7 +28,8 @@ public class StorydiagramsLinkDescriptor extends StorydiagramsNodeDescriptor {
 	/**
 	 * @generated
 	 */
-	private StorydiagramsLinkDescriptor(EObject source, EObject destination, EObject linkElement, int linkVID) {
+	private StorydiagramsLinkDescriptor(EObject source, EObject destination,
+			EObject linkElement, int linkVID) {
 		super(linkElement, linkVID);
 		mySource = source;
 		myDestination = destination;
@@ -37,7 +38,8 @@ public class StorydiagramsLinkDescriptor extends StorydiagramsNodeDescriptor {
 	/**
 	 * @generated
 	 */
-	public StorydiagramsLinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
+	public StorydiagramsLinkDescriptor(EObject source, EObject destination,
+			IElementType elementType, int linkVID) {
 		this(source, destination, (EObject) null, linkVID);
 		final IElementType elementTypeCopy = elementType;
 		mySemanticAdapter = new IAdaptable() {
@@ -53,8 +55,8 @@ public class StorydiagramsLinkDescriptor extends StorydiagramsNodeDescriptor {
 	/**
 	 * @generated
 	 */
-	public StorydiagramsLinkDescriptor(EObject source, EObject destination, EObject linkElement,
-			IElementType elementType, int linkVID) {
+	public StorydiagramsLinkDescriptor(EObject source, EObject destination,
+			EObject linkElement, IElementType elementType, int linkVID) {
 		this(source, destination, linkElement, linkVID);
 		final IElementType elementTypeCopy = elementType;
 		mySemanticAdapter = new EObjectAdapter(linkElement) {

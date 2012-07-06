@@ -12,13 +12,14 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class Constraint2ItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
+public class Constraint2ItemSemanticEditPolicy extends
+		StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public Constraint2ItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.Constraint_3017);
+		super(StorydiagramsElementTypes.Constraint_3024);
 	}
 
 	/**
@@ -26,7 +27,8 @@ public class Constraint2ItemSemanticEditPolicy extends StorydiagramsBaseItemSema
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
+				getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {

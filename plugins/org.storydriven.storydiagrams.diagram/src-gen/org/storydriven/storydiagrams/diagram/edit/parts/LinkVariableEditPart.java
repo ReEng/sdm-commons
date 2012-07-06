@@ -14,12 +14,13 @@ import org.storydriven.storydiagrams.diagram.edit.policies.LinkVariableItemSeman
 /**
  * @generated
  */
-public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class LinkVariableEditPart extends ConnectionNodeEditPart implements
+		ITreeBranchEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4002;
+	public static final int VISUAL_ID = 4006;
 
 	/**
 	 * @generated
@@ -33,26 +34,29 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new LinkVariableItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new LinkVariableItemSemanticEditPolicy());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof LinkVariableSourceEndLabelEditPart) {
-			((LinkVariableSourceEndLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getLinkVariableSourceEndFigure());
+		if (childEditPart instanceof WrappingLabel10EditPart) {
+			((WrappingLabel10EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getLinkVariableSourceEndFigure());
 			return true;
 		}
-		if (childEditPart instanceof LinkVariableOperatorLabelEditPart) {
-			((LinkVariableOperatorLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getLinkVariableOperatorFigure());
+		if (childEditPart instanceof WrappingLabel11EditPart) {
+			((WrappingLabel11EditPart) childEditPart)
+					.setLabel(getPrimaryShape().getLinkVariableOperatorFigure());
 			return true;
 		}
-		if (childEditPart instanceof LinkVariableTargetEndLabelEditPart) {
-			((LinkVariableTargetEndLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getLinkVariableTargetEndFigure());
+		if (childEditPart instanceof WrappingLabel12EditPart) {
+			((WrappingLabel12EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getLinkVariableTargetEndFigure());
 			return true;
 		}
 		return false;
@@ -72,13 +76,13 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof LinkVariableSourceEndLabelEditPart) {
+		if (childEditPart instanceof WrappingLabel10EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof LinkVariableOperatorLabelEditPart) {
+		if (childEditPart instanceof WrappingLabel11EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof LinkVariableTargetEndLabelEditPart) {
+		if (childEditPart instanceof WrappingLabel12EditPart) {
 			return true;
 		}
 		return false;

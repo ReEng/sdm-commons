@@ -45,7 +45,8 @@ import org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorIte
 /**
  * @generated
  */
-public class StorydiagramsDiagramEditor extends DiagramDocumentEditor implements IGotoMarker {
+public class StorydiagramsDiagramEditor extends DiagramDocumentEditor implements
+		IGotoMarker {
 
 	/**
 	 * @generated
@@ -113,8 +114,10 @@ public class StorydiagramsDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
-			return StorydiagramsDiagramEditorPlugin.getInstance().getDocumentProvider();
+		if (input instanceof IFileEditorInput
+				|| input instanceof URIEditorInput) {
+			return StorydiagramsDiagramEditorPlugin.getInstance()
+					.getDocumentProvider();
 		}
 		return super.getDocumentProvider(input);
 	}
@@ -123,7 +126,8 @@ public class StorydiagramsDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	public TransactionalEditingDomain getEditingDomain() {
-		IDocument document = getEditorInput() != null ? getDocumentProvider().getDocument(getEditorInput()) : null;
+		IDocument document = getEditorInput() != null ? getDocumentProvider()
+				.getDocument(getEditorInput()) : null;
 		if (document instanceof IDiagramDocument) {
 			return ((IDiagramDocument) document).getEditingDomain();
 		}
@@ -134,8 +138,10 @@ public class StorydiagramsDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	protected void setDocumentProvider(IEditorInput input) {
-		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
-			setDocumentProvider(StorydiagramsDiagramEditorPlugin.getInstance().getDocumentProvider());
+		if (input instanceof IFileEditorInput
+				|| input instanceof URIEditorInput) {
+			setDocumentProvider(StorydiagramsDiagramEditorPlugin.getInstance()
+					.getDocumentProvider());
 		} else {
 			super.setDocumentProvider(input);
 		}
@@ -169,7 +175,8 @@ public class StorydiagramsDiagramEditor extends DiagramDocumentEditor implements
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
 		SaveAsDialog dialog = new SaveAsDialog(shell);
-		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input).getFile() : null;
+		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input)
+				.getFile() : null;
 		if (original != null) {
 			dialog.setOriginalFile(original);
 		}
@@ -180,7 +187,9 @@ public class StorydiagramsDiagramEditor extends DiagramDocumentEditor implements
 			return;
 		}
 		if (provider.isDeleted(input) && original != null) {
-			String message = NLS.bind(Messages.StorydiagramsDiagramEditor_SavingDeletedFile, original.getName());
+			String message = NLS.bind(
+					Messages.StorydiagramsDiagramEditor_SavingDeletedFile,
+					original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
 		}
@@ -201,12 +210,15 @@ public class StorydiagramsDiagramEditor extends DiagramDocumentEditor implements
 		IFile file = workspaceRoot.getFile(filePath);
 		final IEditorInput newInput = new FileEditorInput(file);
 		// Check if the editor is already open
-		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor().getEditorMatchingStrategy();
-		IEditorReference[] editorRefs = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
+		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor()
+				.getEditorMatchingStrategy();
+		IEditorReference[] editorRefs = PlatformUI.getWorkbench()
+				.getActiveWorkbenchWindow().getActivePage()
 				.getEditorReferences();
 		for (int i = 0; i < editorRefs.length; i++) {
 			if (matchingStrategy.matches(editorRefs[i], newInput)) {
-				MessageDialog.openWarning(shell, Messages.StorydiagramsDiagramEditor_SaveAsErrorTitle,
+				MessageDialog.openWarning(shell,
+						Messages.StorydiagramsDiagramEditor_SaveAsErrorTitle,
 						Messages.StorydiagramsDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
@@ -214,14 +226,17 @@ public class StorydiagramsDiagramEditor extends DiagramDocumentEditor implements
 		boolean success = false;
 		try {
 			provider.aboutToChange(newInput);
-			getDocumentProvider(newInput).saveDocument(progressMonitor, newInput,
+			getDocumentProvider(newInput).saveDocument(progressMonitor,
+					newInput,
 					getDocumentProvider().getDocument(getEditorInput()), true);
 			success = true;
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
 			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				ErrorDialog.openError(shell, Messages.StorydiagramsDiagramEditor_SaveErrorTitle,
-						Messages.StorydiagramsDiagramEditor_SaveErrorMessage, x.getStatus());
+				ErrorDialog.openError(shell,
+						Messages.StorydiagramsDiagramEditor_SaveErrorTitle,
+						Messages.StorydiagramsDiagramEditor_SaveErrorMessage,
+						x.getStatus());
 			}
 		} finally {
 			provider.changed(newInput);
@@ -255,7 +270,8 @@ public class StorydiagramsDiagramEditor extends DiagramDocumentEditor implements
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			StorydiagramsNavigatorItem item = new StorydiagramsNavigatorItem(diagram, file, false);
+			StorydiagramsNavigatorItem item = new StorydiagramsNavigatorItem(
+					diagram, file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -266,10 +282,11 @@ public class StorydiagramsDiagramEditor extends DiagramDocumentEditor implements
 	 */
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
-		DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(this,
-				getDiagramGraphicalViewer());
+		DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(
+				this, getDiagramGraphicalViewer());
 		getDiagramGraphicalViewer().setContextMenu(provider);
-		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
+		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU,
+				provider, getDiagramGraphicalViewer());
 	}
 
 }

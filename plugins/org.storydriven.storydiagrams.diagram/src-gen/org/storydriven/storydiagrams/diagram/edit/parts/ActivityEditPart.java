@@ -42,15 +42,18 @@ public class ActivityEditPart extends DiagramEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActivityCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new ActivityItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
+				new ActivityCanonicalEditPolicy());
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 
 	/**
 	 * @generated
 	 */
-	/*package-local*/static class NodeLabelDragPolicy extends NonResizableEditPolicy {
+	/*package-local*/static class NodeLabelDragPolicy extends
+			NonResizableEditPolicy {
 
 		/**
 		 * @generated
@@ -80,7 +83,8 @@ public class ActivityEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	/*package-local*/static class LinkLabelDragPolicy extends NonResizableLabelEditPolicy {
+	/*package-local*/static class LinkLabelDragPolicy extends
+			NonResizableLabelEditPolicy {
 
 		/**
 		 * @generated

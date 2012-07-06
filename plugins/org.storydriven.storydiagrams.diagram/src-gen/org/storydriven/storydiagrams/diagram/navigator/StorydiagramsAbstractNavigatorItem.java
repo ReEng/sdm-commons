@@ -20,20 +20,23 @@ public abstract class StorydiagramsAbstractNavigatorItem extends PlatformObject 
 				return "org.storydriven.storydiagrams.diagram"; //$NON-NLS-1$
 			}
 		};
-		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
+		Platform.getAdapterManager().registerAdapters(
+				new IAdapterFactory() {
 
-			public Object getAdapter(Object adaptableObject, Class adapterType) {
-				if (adaptableObject instanceof org.storydriven.storydiagrams.diagram.navigator.StorydiagramsAbstractNavigatorItem
-						&& adapterType == ITabbedPropertySheetPageContributor.class) {
-					return propertySheetPageContributor;
-				}
-				return null;
-			}
+					public Object getAdapter(Object adaptableObject,
+							Class adapterType) {
+						if (adaptableObject instanceof org.storydriven.storydiagrams.diagram.navigator.StorydiagramsAbstractNavigatorItem
+								&& adapterType == ITabbedPropertySheetPageContributor.class) {
+							return propertySheetPageContributor;
+						}
+						return null;
+					}
 
-			public Class[] getAdapterList() {
-				return supportedTypes;
-			}
-		}, org.storydriven.storydiagrams.diagram.navigator.StorydiagramsAbstractNavigatorItem.class);
+					public Class[] getAdapterList() {
+						return supportedTypes;
+					}
+				},
+				org.storydriven.storydiagrams.diagram.navigator.StorydiagramsAbstractNavigatorItem.class);
 	}
 
 	/**

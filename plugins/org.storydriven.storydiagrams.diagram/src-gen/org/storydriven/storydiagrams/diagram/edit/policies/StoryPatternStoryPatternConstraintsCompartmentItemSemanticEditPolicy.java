@@ -8,21 +8,21 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class StoryPatternStoryPatternConstraintsCompartmentItemSemanticEditPolicy extends
-		StorydiagramsBaseItemSemanticEditPolicy {
+public class StoryPatternStoryPatternConstraintsCompartmentItemSemanticEditPolicy
+		extends StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public StoryPatternStoryPatternConstraintsCompartmentItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.StoryPattern_3008);
+		super(StorydiagramsElementTypes.StoryPattern_3019);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.Constraint_3017 == req.getElementType()) {
+		if (StorydiagramsElementTypes.Constraint_3024 == req.getElementType()) {
 			return getGEFWrapper(new Constraint2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

@@ -9,28 +9,32 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class StorydiagramsNavigatorItem extends StorydiagramsAbstractNavigatorItem {
+public class StorydiagramsNavigatorItem extends
+		StorydiagramsAbstractNavigatorItem {
 
 	/**
 	 * @generated
 	 */
 	static {
 		final Class[] supportedTypes = new Class[] { View.class, EObject.class };
-		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
+		Platform.getAdapterManager().registerAdapters(
+				new IAdapterFactory() {
 
-			public Object getAdapter(Object adaptableObject, Class adapterType) {
-				if (adaptableObject instanceof org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorItem
-						&& (adapterType == View.class || adapterType == EObject.class)) {
-					return ((org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorItem) adaptableObject)
-							.getView();
-				}
-				return null;
-			}
+					public Object getAdapter(Object adaptableObject,
+							Class adapterType) {
+						if (adaptableObject instanceof org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorItem
+								&& (adapterType == View.class || adapterType == EObject.class)) {
+							return ((org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorItem) adaptableObject)
+									.getView();
+						}
+						return null;
+					}
 
-			public Class[] getAdapterList() {
-				return supportedTypes;
-			}
-		}, org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorItem.class);
+					public Class[] getAdapterList() {
+						return supportedTypes;
+					}
+				},
+				org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorItem.class);
 	}
 
 	/**
@@ -71,9 +75,11 @@ public class StorydiagramsNavigatorItem extends StorydiagramsAbstractNavigatorIt
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorItem) {
-			return EcoreUtil.getURI(getView()).equals(
-					EcoreUtil.getURI(((org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorItem) obj)
-							.getView()));
+			return EcoreUtil
+					.getURI(getView())
+					.equals(EcoreUtil
+							.getURI(((org.storydriven.storydiagrams.diagram.navigator.StorydiagramsNavigatorItem) obj)
+									.getView()));
 		}
 		return super.equals(obj);
 	}

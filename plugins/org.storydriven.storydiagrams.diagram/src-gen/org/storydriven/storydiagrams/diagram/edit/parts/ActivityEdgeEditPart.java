@@ -16,12 +16,13 @@ import org.storydriven.storydiagrams.diagram.edit.policies.ActivityEdgeItemSeman
 /**
  * @generated
  */
-public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements
+		ITreeBranchEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4001;
+	public static final int VISUAL_ID = 4005;
 
 	/**
 	 * @generated
@@ -35,15 +36,17 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements ITre
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityEdgeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new ActivityEdgeItemSemanticEditPolicy());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ActivityEdgeGuardLabelEditPart) {
-			((ActivityEdgeGuardLabelEditPart) childEditPart).setLabel(getPrimaryShape().getActivityEdgeGuardLabel());
+		if (childEditPart instanceof WrappingLabel9EditPart) {
+			((WrappingLabel9EditPart) childEditPart).setLabel(getPrimaryShape()
+					.getActivityEdgeGuardLabel());
 			return true;
 		}
 		return false;
@@ -63,7 +66,7 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements ITre
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ActivityEdgeGuardLabelEditPart) {
+		if (childEditPart instanceof WrappingLabel9EditPart) {
 			return true;
 		}
 		return false;

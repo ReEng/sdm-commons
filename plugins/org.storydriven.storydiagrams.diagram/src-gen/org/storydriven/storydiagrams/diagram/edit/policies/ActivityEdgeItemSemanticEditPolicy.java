@@ -8,13 +8,14 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class ActivityEdgeItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
+public class ActivityEdgeItemSemanticEditPolicy extends
+		StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ActivityEdgeItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.ActivityEdge_4001);
+		super(StorydiagramsElementTypes.ActivityEdge_4005);
 	}
 
 	/**
