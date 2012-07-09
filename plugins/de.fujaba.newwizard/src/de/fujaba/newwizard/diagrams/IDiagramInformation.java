@@ -31,6 +31,6 @@ public interface IDiagramInformation {
 	 * Gets a map from domainElement to semanticHint.
 	 * @return a map from domainElement to semanticHint.
 	 */
-	Map<String, String> getNodes();
+	Map<String, String> getTopLevelNodes();
 
 }

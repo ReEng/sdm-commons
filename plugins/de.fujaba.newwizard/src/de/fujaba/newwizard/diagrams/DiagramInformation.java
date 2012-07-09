@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EPackage;
  */
 public class DiagramInformation implements IDiagramInformation {
 
-	private Map<String, String> nodes;
+	private Map<String, String> topLevelNodes;
 
 	private String preferencesHint;
 
@@ -54,13 +54,13 @@ public class DiagramInformation implements IDiagramInformation {
 					.getAttribute("className");
 		}
 
-		nodes = new HashMap<String, String>();
-		IConfigurationElement[] nodeChildren = configurationElement
-				.getChildren("node");
-		for (IConfigurationElement node : nodeChildren) {
+		topLevelNodes = new HashMap<String, String>();
+		IConfigurationElement[] tlnElements = configurationElement
+				.getChildren("topLevelNode");
+		for (IConfigurationElement node : tlnElements) {
 			String domainElement = node.getAttribute("domainElement");
 			String semanticHint = node.getAttribute("semanticHint");
-			nodes.put(domainElement, semanticHint);
+			topLevelNodes.put(domainElement, semanticHint);
 		}
 	}
 
@@ -95,8 +95,8 @@ public class DiagramInformation implements IDiagramInformation {
 	}
 
 	@Override
-	public Map<String, String> getNodes() {
-		return nodes;
+	public Map<String, String> getTopLevelNodes() {
+		return topLevelNodes;
 	}
 
 	@Override

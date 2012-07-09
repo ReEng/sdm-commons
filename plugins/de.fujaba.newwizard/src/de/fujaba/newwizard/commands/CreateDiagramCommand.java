@@ -151,7 +151,7 @@ public class CreateDiagramCommand extends AbstractTransactionalCommand {
 	private CreateViewRequest getCreatePersistedViewsRequest(Diagram diagram,
 			Collection<EObject> elements) {
 		List<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>();
-		Map<String, String> nodes = diagramInformation.getNodes();
+		Map<String, String> nodes = diagramInformation.getTopLevelNodes();
 		for (EObject element : elements) {
 			String hint = nodes.get(element.eClass().getName());
 			if (hint != null) {

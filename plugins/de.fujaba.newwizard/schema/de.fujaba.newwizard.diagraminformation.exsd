@@ -51,7 +51,7 @@
       <complexType>
          <choice minOccurs="1" maxOccurs="unbounded">
             <element ref="diagramElement"/>
-            <element ref="node" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="topLevelNode" minOccurs="0" maxOccurs="unbounded"/>
          </choice>
          <attribute name="preferencesHint" type="string" use="required">
             <annotation>
@@ -122,12 +122,12 @@
       </complexType>
    </element>
 
-   <element name="node">
+   <element name="topLevelNode">
       <annotation>
          <documentation>
-            A mapping from a domain element to its visual id.
+            A mapping from a topLevelNode to its visual id.
 
-It can be used for example to create views for a domain element.
+It can be used to create views for a domain element.
          </documentation>
       </annotation>
       <complexType>
