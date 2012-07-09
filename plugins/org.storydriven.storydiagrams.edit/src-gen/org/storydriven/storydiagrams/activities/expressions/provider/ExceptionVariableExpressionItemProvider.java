@@ -33,10 +33,9 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExceptionVariableExpressionItemProvider extends
-		ExpressionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+public class ExceptionVariableExpressionItemProvider extends ExpressionItemProvider implements
+		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider,
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -70,18 +69,15 @@ public class ExceptionVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	protected void addExceptionVariablePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_ExceptionVariableExpression_exceptionVariable_feature"),
-						getString(
-								"_UI_PropertyDescriptor_description",
-								"_UI_ExceptionVariableExpression_exceptionVariable_feature",
-								"_UI_ExceptionVariableExpression_type"),
-						ActivitiesExpressionsPackage.Literals.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE,
-						true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ExceptionVariableExpression_exceptionVariable_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_ExceptionVariableExpression_exceptionVariable_feature",
+						"_UI_ExceptionVariableExpression_type"),
+				ActivitiesExpressionsPackage.Literals.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -92,10 +88,8 @@ public class ExceptionVariableExpressionItemProvider extends
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/expressions/ExceptionVariableExpression.png"));
+		return overlayImage(object,
+				getResourceLocator().getImage("elements/expressions/ExceptionVariableExpression.png"));
 	}
 
 	/**
@@ -129,8 +123,7 @@ public class ExceptionVariableExpressionItemProvider extends
 	public String getText(Object object) {
 		String label = ((ExceptionVariableExpression) object).getComment();
 		return label == null || label.length() == 0 ? getString("_UI_ExceptionVariableExpression_type")
-				: getString("_UI_ExceptionVariableExpression_type") + " "
-						+ label;
+				: getString("_UI_ExceptionVariableExpression_type") + " " + label;
 	}
 
 	/**
@@ -154,16 +147,13 @@ public class ExceptionVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 

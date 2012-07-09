@@ -89,24 +89,6 @@ public interface ActivitiesExpressionsPackage extends EPackage {
 	int EXCEPTION_VARIABLE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXCEPTION_VARIABLE_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXCEPTION_VARIABLE_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -364,8 +346,7 @@ public interface ActivitiesExpressionsPackage extends EPackage {
 		 * @see org.storydriven.storydiagrams.activities.expressions.impl.ActivitiesExpressionsPackageImpl#getExceptionVariableExpression()
 		 * @generated
 		 */
-		EClass EXCEPTION_VARIABLE_EXPRESSION = eINSTANCE
-				.getExceptionVariableExpression();
+		EClass EXCEPTION_VARIABLE_EXPRESSION = eINSTANCE.getExceptionVariableExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Exception Variable</b></em>' reference feature.

@@ -23,6 +23,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
@@ -228,19 +229,28 @@ public class MethodCallExpressionItemProvider extends ExpressionItemProvider imp
 				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+				CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-				ExpressionsFactory.eINSTANCE.createNotExpression()));
+				CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
 
 		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+				CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
 
 		newChildDescriptors.add(createChildParameter(
 				CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,

@@ -35,9 +35,8 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivityNodeItemProvider extends NamedElementItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ActivityNodeItemProvider extends NamedElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -74,14 +73,11 @@ public class ActivityNodeItemProvider extends NamedElementItemProvider
 	 */
 	protected void addCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_CommentableElement_comment_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_CommentableElement_comment_feature",
-						"_UI_CommentableElement_type"),
-				CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT, true, false,
+				getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature",
+						"_UI_CommentableElement_type"), CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT, true, false,
 				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -93,15 +89,12 @@ public class ActivityNodeItemProvider extends NamedElementItemProvider
 	 */
 	protected void addOutgoingPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_ActivityNode_outgoing_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ActivityNode_outgoing_feature",
-						"_UI_ActivityNode_type"),
-				ActivitiesPackage.Literals.ACTIVITY_NODE__OUTGOING, true,
-				false, true, null, null, null));
+				getString("_UI_PropertyDescriptor_description", "_UI_ActivityNode_outgoing_feature",
+						"_UI_ActivityNode_type"), ActivitiesPackage.Literals.ACTIVITY_NODE__OUTGOING, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -112,15 +105,12 @@ public class ActivityNodeItemProvider extends NamedElementItemProvider
 	 */
 	protected void addIncomingPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_ActivityNode_incoming_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ActivityNode_incoming_feature",
-						"_UI_ActivityNode_type"),
-				ActivitiesPackage.Literals.ACTIVITY_NODE__INCOMING, true,
-				false, true, null, null, null));
+				getString("_UI_PropertyDescriptor_description", "_UI_ActivityNode_incoming_feature",
+						"_UI_ActivityNode_type"), ActivitiesPackage.Literals.ACTIVITY_NODE__INCOMING, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -170,8 +160,7 @@ public class ActivityNodeItemProvider extends NamedElementItemProvider
 
 		switch (notification.getFeatureID(ActivityNode.class)) {
 		case ActivitiesPackage.ACTIVITY_NODE__COMMENT:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -185,16 +174,13 @@ public class ActivityNodeItemProvider extends NamedElementItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 

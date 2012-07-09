@@ -33,10 +33,8 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ObjectVariableExpressionItemProvider extends
-		ExpressionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+public class ObjectVariableExpressionItemProvider extends ExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -70,17 +68,14 @@ public class ObjectVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	protected void addObjectPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_ObjectVariableExpression_object_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_ObjectVariableExpression_object_feature",
-								"_UI_ObjectVariableExpression_type"),
-						PatternsExpressionsPackage.Literals.OBJECT_VARIABLE_EXPRESSION__OBJECT,
-						true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ObjectVariableExpression_object_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ObjectVariableExpression_object_feature",
+						"_UI_ObjectVariableExpression_type"),
+				PatternsExpressionsPackage.Literals.OBJECT_VARIABLE_EXPRESSION__OBJECT, true, false, true, null, null,
+				null));
 	}
 
 	/**
@@ -91,10 +86,7 @@ public class ObjectVariableExpressionItemProvider extends
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/expressions/ObjectVariableExpression.png"));
+		return overlayImage(object, getResourceLocator().getImage("elements/expressions/ObjectVariableExpression.png"));
 	}
 
 	/**
@@ -152,16 +144,13 @@ public class ObjectVariableExpressionItemProvider extends
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 

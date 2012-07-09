@@ -11,9 +11,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.TypedElement;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.storydiagrams.activities.expressions.*;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsPackage;
 import org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExpression;
 
@@ -80,8 +78,6 @@ public class ActivitiesExpressionsSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseExpression(exceptionVariableExpression);
 			if (result == null)
-				result = caseTypedElement(exceptionVariableExpression);
-			if (result == null)
 				result = caseCommentableElement(exceptionVariableExpression);
 			if (result == null)
 				result = caseExtendableElement(exceptionVariableExpression);
@@ -121,21 +117,6 @@ public class ActivitiesExpressionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExtendableElement(ExtendableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Typed Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Typed Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTypedElement(TypedElement object) {
 		return null;
 	}
 

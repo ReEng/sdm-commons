@@ -11,16 +11,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.TypedElement;
-import org.storydriven.core.expressions.*;
-import org.storydriven.core.expressions.ArithmeticExpression;
-import org.storydriven.core.expressions.BinaryExpression;
-import org.storydriven.core.expressions.BinaryLogicExpression;
-import org.storydriven.core.expressions.ComparisonExpression;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.ExpressionsPackage;
-import org.storydriven.core.expressions.LiteralExpression;
-import org.storydriven.core.expressions.NotExpression;
 import org.storydriven.core.expressions.TextualExpression;
 
 /**
@@ -84,8 +76,6 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 			Expression expression = (Expression) theEObject;
 			T result = caseExpression(expression);
 			if (result == null)
-				result = caseTypedElement(expression);
-			if (result == null)
 				result = caseCommentableElement(expression);
 			if (result == null)
 				result = caseExtendableElement(expression);
@@ -99,107 +89,9 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseExpression(textualExpression);
 			if (result == null)
-				result = caseTypedElement(textualExpression);
-			if (result == null)
 				result = caseCommentableElement(textualExpression);
 			if (result == null)
 				result = caseExtendableElement(textualExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case ExpressionsPackage.LITERAL_EXPRESSION: {
-			LiteralExpression literalExpression = (LiteralExpression) theEObject;
-			T result = caseLiteralExpression(literalExpression);
-			if (result == null)
-				result = caseExpression(literalExpression);
-			if (result == null)
-				result = caseTypedElement(literalExpression);
-			if (result == null)
-				result = caseCommentableElement(literalExpression);
-			if (result == null)
-				result = caseExtendableElement(literalExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case ExpressionsPackage.NOT_EXPRESSION: {
-			NotExpression notExpression = (NotExpression) theEObject;
-			T result = caseNotExpression(notExpression);
-			if (result == null)
-				result = caseExpression(notExpression);
-			if (result == null)
-				result = caseTypedElement(notExpression);
-			if (result == null)
-				result = caseCommentableElement(notExpression);
-			if (result == null)
-				result = caseExtendableElement(notExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case ExpressionsPackage.BINARY_EXPRESSION: {
-			BinaryExpression binaryExpression = (BinaryExpression) theEObject;
-			T result = caseBinaryExpression(binaryExpression);
-			if (result == null)
-				result = caseExpression(binaryExpression);
-			if (result == null)
-				result = caseTypedElement(binaryExpression);
-			if (result == null)
-				result = caseCommentableElement(binaryExpression);
-			if (result == null)
-				result = caseExtendableElement(binaryExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case ExpressionsPackage.COMPARISON_EXPRESSION: {
-			ComparisonExpression comparisonExpression = (ComparisonExpression) theEObject;
-			T result = caseComparisonExpression(comparisonExpression);
-			if (result == null)
-				result = caseBinaryExpression(comparisonExpression);
-			if (result == null)
-				result = caseExpression(comparisonExpression);
-			if (result == null)
-				result = caseTypedElement(comparisonExpression);
-			if (result == null)
-				result = caseCommentableElement(comparisonExpression);
-			if (result == null)
-				result = caseExtendableElement(comparisonExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case ExpressionsPackage.ARITHMETIC_EXPRESSION: {
-			ArithmeticExpression arithmeticExpression = (ArithmeticExpression) theEObject;
-			T result = caseArithmeticExpression(arithmeticExpression);
-			if (result == null)
-				result = caseBinaryExpression(arithmeticExpression);
-			if (result == null)
-				result = caseExpression(arithmeticExpression);
-			if (result == null)
-				result = caseTypedElement(arithmeticExpression);
-			if (result == null)
-				result = caseCommentableElement(arithmeticExpression);
-			if (result == null)
-				result = caseExtendableElement(arithmeticExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case ExpressionsPackage.BINARY_LOGIC_EXPRESSION: {
-			BinaryLogicExpression binaryLogicExpression = (BinaryLogicExpression) theEObject;
-			T result = caseBinaryLogicExpression(binaryLogicExpression);
-			if (result == null)
-				result = caseBinaryExpression(binaryLogicExpression);
-			if (result == null)
-				result = caseExpression(binaryLogicExpression);
-			if (result == null)
-				result = caseTypedElement(binaryLogicExpression);
-			if (result == null)
-				result = caseCommentableElement(binaryLogicExpression);
-			if (result == null)
-				result = caseExtendableElement(binaryLogicExpression);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -240,96 +132,6 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Literal Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Literal Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLiteralExpression(LiteralExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Not Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Not Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNotExpression(NotExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Binary Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Binary Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBinaryExpression(BinaryExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Comparison Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Comparison Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseComparisonExpression(ComparisonExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Arithmetic Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Arithmetic Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseArithmeticExpression(ArithmeticExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Binary Logic Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Binary Logic Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBinaryLogicExpression(BinaryLogicExpression object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -341,21 +143,6 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExtendableElement(ExtendableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Typed Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Typed Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTypedElement(TypedElement object) {
 		return null;
 	}
 

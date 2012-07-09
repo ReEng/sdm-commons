@@ -1005,7 +1005,7 @@ public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPac
 		initEReference(getActivityFinalNode_ReturnValues(), theExpressionsPackage.getExpression(), null,
 				"returnValues", null, 0, -1, ActivityFinalNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getActivityFinalNode_Success(), theEcorePackage.getEBoolean(), "success", "true", 1, 1,
+		initEAttribute(getActivityFinalNode_Success(), ecorePackage.getEBoolean(), "success", "true", 1, 1,
 				ActivityFinalNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, !IS_ORDERED);
 

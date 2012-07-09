@@ -90,51 +90,10 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The base package for all expressions which can be used for modeling activities&#xD;&#xA;and patterns."/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//TypedElement #//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents any expression in an embedded textual language, e.g. OCL or Java. An expression's type is dynamically derived by an external mechanism (see TypedElement)."/>
       </eAnnotations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="LogicOperator">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Defines the operators for binary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression."/>
-      </eAnnotations>
-      <eLiterals name="AND"/>
-      <eLiterals name="OR" value="1"/>
-      <eLiterals name="XOR" value="2"/>
-      <eLiterals name="IMPLY" value="3"/>
-      <eLiterals name="EQUIVALENT" value="4"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="ComparingOperator">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Defines the operators for comparing expressions."/>
-      </eAnnotations>
-      <eLiterals name="LESS"/>
-      <eLiterals name="LESS_OR_EQUAL" value="1"/>
-      <eLiterals name="EQUAL" value="2"/>
-      <eLiterals name="GREATER_OR_EQUAL" value="3"/>
-      <eLiterals name="GREATER" value="4"/>
-      <eLiterals name="UNEQUAL" value="5"/>
-      <eLiterals name="REGULAR_EXPRESSION" value="6">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="For comparison of a String with a regular expression."/>
-        </eAnnotations>
-      </eLiterals>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="ArithmeticOperator">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Defines the operators for arithmetic expressions."/>
-      </eAnnotations>
-      <eLiterals name="PLUS"/>
-      <eLiterals name="MINUS" value="1"/>
-      <eLiterals name="TIMES" value="2"/>
-      <eLiterals name="DIVIDE" value="3"/>
-      <eLiterals name="MODULO" value="4"/>
-      <eLiterals name="EXP" value="5">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="For formulas like a^b."/>
-        </eAnnotations>
-      </eLiterals>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TextualExpression" eSuperTypes="#//expressions/Expression">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -159,85 +118,128 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="LiteralExpression" eSuperTypes="#//expressions/Expression">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Represents any literal, i.e. a value whose type is an EDataType. Literals are, for example, 5, 3.14, 'c', &quot;text&quot;, true."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eSubpackages name="common" nsURI="http://www.storydriven.org/core/expressions/common/0.2.0"
+        nsPrefix="sdmec">
+      <eClassifiers xsi:type="ecore:EEnum" name="LogicOperator">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="String representation of the value, e.g. &quot;5&quot;, &quot;3.14&quot;, &quot;c&quot;, &quot;text&quot;, or &quot;true&quot;."/>
+          <details key="documentation" value="Defines the operators for binary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression."/>
         </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="valueType" ordered="false"
-          lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType">
+        <eLiterals name="AND"/>
+        <eLiterals name="OR" value="1"/>
+        <eLiterals name="XOR" value="2"/>
+        <eLiterals name="IMPLY" value="3"/>
+        <eLiterals name="EQUIVALENT" value="4"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="ComparingOperator">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The literal's type, e.g. EInt, EString, etc."/>
+          <details key="documentation" value="Defines the operators for comparing expressions."/>
         </eAnnotations>
-        <eAnnotations source="subsets" references="#//TypedElement/type"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="NotExpression" eSuperTypes="#//expressions/Expression">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Represents a negated expression, e.g. NOT (a &lt; 5)."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="negatedExpression" ordered="false"
-          lowerBound="1" eType="#//expressions/Expression" containment="true">
+        <eLiterals name="LESS"/>
+        <eLiterals name="LESS_OR_EQUAL" value="1"/>
+        <eLiterals name="EQUAL" value="2"/>
+        <eLiterals name="GREATER_OR_EQUAL" value="3"/>
+        <eLiterals name="GREATER" value="4"/>
+        <eLiterals name="UNEQUAL" value="5"/>
+        <eLiterals name="REGULAR_EXPRESSION" value="6">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="For comparison of a String with a regular expression."/>
+          </eAnnotations>
+        </eLiterals>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="ArithmeticOperator">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represents the operand of a NotExpression, e.g. a &lt; 5 in NOT (a &lt; 5)."/>
+          <details key="documentation" value="Defines the operators for arithmetic expressions."/>
         </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" abstract="true"
-        eSuperTypes="#//expressions/Expression">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Represents any binary expression like v &lt; 5 or x + 7."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="leftExpression" ordered="false"
-          lowerBound="1" eType="#//expressions/Expression" containment="true">
+        <eLiterals name="PLUS"/>
+        <eLiterals name="MINUS" value="1"/>
+        <eLiterals name="TIMES" value="2"/>
+        <eLiterals name="DIVIDE" value="3"/>
+        <eLiterals name="MODULO" value="4"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="LiteralExpression" eSuperTypes="#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represents the first operand of a binary expression, e.g. x in the expression x &lt; 5."/>
+          <details key="documentation" value="Represents any literal, i.e. a value whose type is an EDataType. Literals are, for example, 5, 3.14, 'c', &quot;text&quot;, true."/>
         </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="rightExpression" ordered="false"
-          lowerBound="1" eType="#//expressions/Expression" containment="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="String representation of the value, e.g. &quot;5&quot;, &quot;3.14&quot;, &quot;c&quot;, &quot;text&quot;, or &quot;true&quot;."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" eSuperTypes="#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represents the second operand of a binary expression, e.g. 5 in the expression x &lt; 5."/>
+          <details key="documentation" value="Represents a negated expression, e.g. NOT (a &lt; 5)."/>
         </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ComparisonExpression" eSuperTypes="#//expressions/BinaryExpression">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Represents comparing expressions like a &lt; 5 or a >= 7."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
-          lowerBound="1" eType="#//expressions/ComparingOperator">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="enclosedExpression"
+            ordered="false" lowerBound="1" eType="#//expressions/Expression" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represents the operand of a NotExpression, e.g. a &lt; 5 in NOT (a &lt; 5)."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+            eType="#//expressions/common/UnaryOperator" defaultValueLiteral=""/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" abstract="true"
+          eSuperTypes="#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Specifies the expression's comparing operator, e.g. &lt;, >=, !=."/>
+          <details key="documentation" value="Represents any binary expression like v &lt; 5 or x + 7."/>
         </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ArithmeticExpression" eSuperTypes="#//expressions/BinaryExpression">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Represents arithmetic expressions like a + 5 or a * 7."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
-          lowerBound="1" eType="#//expressions/ArithmeticOperator">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="leftExpression" ordered="false"
+            lowerBound="1" eType="#//expressions/Expression" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represents the first operand of a binary expression, e.g. x in the expression x &lt; 5."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rightExpression" ordered="false"
+            lowerBound="1" eType="#//expressions/Expression" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represents the second operand of a binary expression, e.g. 5 in the expression x &lt; 5."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ComparisonExpression" eSuperTypes="#//expressions/common/BinaryExpression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Specifies the expression's arithmetic operator, e.g. +, -, *, /, or MODULO."/>
+          <details key="documentation" value="Represents comparing expressions like a &lt; 5 or a >= 7."/>
         </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="BinaryLogicExpression" eSuperTypes="#//expressions/BinaryExpression">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Represents binary, logic expressions like a AND b and a OR b."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
-          lowerBound="1" eType="#//expressions/LogicOperator">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
+            lowerBound="1" eType="#//expressions/common/ComparingOperator">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the expression's comparing operator, e.g. &lt;, >=, !=."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ArithmeticExpression" eSuperTypes="#//expressions/common/BinaryExpression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Specifies the expression's logic operator, e.g. AND, OR, or XOR."/>
+          <details key="documentation" value="Represents arithmetic expressions like a + 5 or a * 7."/>
         </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
+            lowerBound="1" eType="#//expressions/common/ArithmeticOperator">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the expression's arithmetic operator, e.g. +, -, *, /, or MODULO."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="LogicExpression" eSuperTypes="#//expressions/common/BinaryExpression">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents binary, logic expressions like a AND b and a OR b."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
+            lowerBound="1" eType="#//expressions/common/LogicOperator">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the expression's logic operator, e.g. AND, OR, or XOR."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="BooleanLiteralExpression" eSuperTypes="#//expressions/common/LiteralExpression"/>
+      <eClassifiers xsi:type="ecore:EClass" name="IntegerLiteralExpression" eSuperTypes="#//expressions/common/LiteralExpression"/>
+      <eClassifiers xsi:type="ecore:EClass" name="DoubleLiteralExpression" eSuperTypes="#//expressions/common/LiteralExpression"/>
+      <eClassifiers xsi:type="ecore:EClass" name="StringLiteralExpression" eSuperTypes="#//expressions/common/LiteralExpression"/>
+      <eClassifiers xsi:type="ecore:EEnum" name="UnaryOperator">
+        <eLiterals name="NOT"/>
+        <eLiterals name="PLUS" value="1"/>
+        <eLiterals name="MINUS" value="2"/>
+      </eClassifiers>
+    </eSubpackages>
   </eSubpackages>
 </ecore:EPackage>

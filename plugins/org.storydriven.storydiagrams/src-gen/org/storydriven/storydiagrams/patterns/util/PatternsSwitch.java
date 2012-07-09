@@ -241,17 +241,6 @@ public class PatternsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case PatternsPackage.STORY_PATTERN: {
-			StoryPattern storyPattern = (StoryPattern) theEObject;
-			T result = caseStoryPattern(storyPattern);
-			if (result == null)
-				result = caseCommentableElement(storyPattern);
-			if (result == null)
-				result = caseExtendableElement(storyPattern);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case PatternsPackage.MAYBE_LINK: {
 			MaybeLink maybeLink = (MaybeLink) theEObject;
 			T result = caseMaybeLink(maybeLink);
@@ -261,6 +250,17 @@ public class PatternsSwitch<T> extends Switch<T> {
 				result = caseNamedElement(maybeLink);
 			if (result == null)
 				result = caseExtendableElement(maybeLink);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PatternsPackage.STORY_PATTERN: {
+			StoryPattern storyPattern = (StoryPattern) theEObject;
+			T result = caseStoryPattern(storyPattern);
+			if (result == null)
+				result = caseCommentableElement(storyPattern);
+			if (result == null)
+				result = caseExtendableElement(storyPattern);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;

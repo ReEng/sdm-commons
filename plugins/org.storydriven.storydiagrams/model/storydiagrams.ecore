@@ -689,7 +689,7 @@
       </eAnnotations>
       <eLiterals name="FIRST"/>
       <eLiterals name="LAST" value="1"/>
-      <eLiterals name="DIRECT_SUCCESSOR" value="2"/>
+      <eLiterals name="NEXT" value="2" literal="NEXT"/>
       <eLiterals name="INDIRECT_SUCCESSOR" value="3"/>
       <eLiterals name="INDEX" value="4"/>
     </eClassifiers>
@@ -717,8 +717,11 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents a set of objects of the same type that are represented by a single node.&#xD;&#xA;The context for contained Constraints and AttributeAssignments is every single object in the set. E.g., if the constraint is &quot;name = 'abc'&quot;, only objects with that name are matched and added to the set. The use of the binding operator &quot;CREATE&quot; is not defined for ObjectSetVariables, i.e., the sets can only be matched and deleted."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maybeEmpty" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="atLeastOne" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="unique" lowerBound="1"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+          defaultValueLiteral=""/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PrimitiveVariable" eSuperTypes="#//patterns/AbstractVariable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

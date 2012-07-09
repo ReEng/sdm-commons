@@ -24,8 +24,7 @@ import org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpre
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements
-		PatternsExpressionsFactory {
+public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements PatternsExpressionsFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -72,8 +71,7 @@ public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements
 		case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION:
 			return createPrimitiveVariableExpression();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 

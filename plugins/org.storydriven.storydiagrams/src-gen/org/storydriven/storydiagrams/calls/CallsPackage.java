@@ -64,8 +64,7 @@ public interface CallsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	CallsPackage eINSTANCE = org.storydriven.storydiagrams.calls.impl.CallsPackageImpl
-			.init();
+	CallsPackage eINSTANCE = org.storydriven.storydiagrams.calls.impl.CallsPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.calls.impl.InvocationImpl <em>Invocation</em>}' class.
@@ -1605,8 +1604,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INVOCATION__OWNED_PARAMETER_BINDINGS = eINSTANCE
-				.getInvocation_OwnedParameterBindings();
+		EReference INVOCATION__OWNED_PARAMETER_BINDINGS = eINSTANCE.getInvocation_OwnedParameterBindings();
 
 		/**
 		 * The meta object literal for the '<em><b>Callee</b></em>' reference feature.
@@ -1632,8 +1630,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PARAMETER_BINDING__VALUE_EXPRESSION = eINSTANCE
-				.getParameterBinding_ValueExpression();
+		EReference PARAMETER_BINDING__VALUE_EXPRESSION = eINSTANCE.getParameterBinding_ValueExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameter</b></em>' reference feature.
@@ -1641,8 +1638,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PARAMETER_BINDING__PARAMETER = eINSTANCE
-				.getParameterBinding_Parameter();
+		EReference PARAMETER_BINDING__PARAMETER = eINSTANCE.getParameterBinding_Parameter();
 
 		/**
 		 * The meta object literal for the '<em><b>Invocation</b></em>' container reference feature.
@@ -1650,8 +1646,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PARAMETER_BINDING__INVOCATION = eINSTANCE
-				.getParameterBinding_Invocation();
+		EReference PARAMETER_BINDING__INVOCATION = eINSTANCE.getParameterBinding_Invocation();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.calls.impl.OpaqueCallableImpl <em>Opaque Callable</em>}' class.
@@ -1677,8 +1672,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPAQUE_CALLABLE__CALL_EXPRESSION = eINSTANCE
-				.getOpaqueCallable_CallExpression();
+		EReference OPAQUE_CALLABLE__CALL_EXPRESSION = eINSTANCE.getOpaqueCallable_CallExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Number Of Out Params</b></em>' operation.
@@ -1705,8 +1699,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PARAMETER_EXTENSION__PARAMETER = eINSTANCE
-				.getParameterExtension_Parameter();
+		EReference PARAMETER_EXTENSION__PARAMETER = eINSTANCE.getParameterExtension_Parameter();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.calls.impl.CallableImpl <em>Callable</em>}' class.
@@ -1732,8 +1725,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CALLABLE__OUT_PARAMETER = eINSTANCE
-				.getCallable_OutParameter();
+		EReference CALLABLE__OUT_PARAMETER = eINSTANCE.getCallable_OutParameter();
 
 		/**
 		 * The meta object literal for the '<em><b>Contained Parameters</b></em>' containment reference list feature.
@@ -1741,8 +1733,7 @@ public interface CallsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CALLABLE__CONTAINED_PARAMETERS = eINSTANCE
-				.getCallable_ContainedParameters();
+		EReference CALLABLE__CONTAINED_PARAMETERS = eINSTANCE.getCallable_ContainedParameters();
 
 	}
 

@@ -8,8 +8,6 @@ package org.storydriven.storydiagrams.patterns.expressions.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
@@ -30,8 +28,7 @@ import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPac
  *
  * @generated
  */
-public class ObjectVariableExpressionImpl extends ExpressionImpl implements
-		ObjectVariableExpression {
+public class ObjectVariableExpressionImpl extends ExpressionImpl implements ObjectVariableExpression {
 	/**
 	 * The cached value of the '{@link #getObject() <em>Object</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -72,11 +69,8 @@ public class ObjectVariableExpressionImpl extends ExpressionImpl implements
 			object = (ObjectVariable) eResolveProxy(oldObject);
 			if (object != oldObject) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT,
-							oldObject, object));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT, oldObject, object));
 			}
 		}
 		return object;
@@ -100,11 +94,8 @@ public class ObjectVariableExpressionImpl extends ExpressionImpl implements
 		ObjectVariable oldObject = object;
 		object = newObject;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT,
-					oldObject, object));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT, oldObject, object));
 	}
 
 	/**
@@ -167,16 +158,5 @@ public class ObjectVariableExpressionImpl extends ExpressionImpl implements
 		return super.eIsSet(featureID);
 	}
 
-	@Override
-	public EClassifier basicGetType() {
-		ObjectVariable object = getObject();
-		return object == null ? null : object.getType();
-	}
-
-	@Override
-	public EGenericType basicGetGenericType() {
-		ObjectVariable object = getObject();
-		return object == null ? null : object.getGenericType();
-	}
 
 } //ObjectVariableExpressionImpl

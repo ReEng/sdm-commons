@@ -54,7 +54,7 @@ public class ActivityImpl extends CallableImpl implements Activity {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = "";
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -127,8 +127,7 @@ public class ActivityImpl extends CallableImpl implements Activity {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActivitiesPackage.ACTIVITY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY__NAME, oldName, name));
 	}
 
 	/**
@@ -161,10 +160,9 @@ public class ActivityImpl extends CallableImpl implements Activity {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOwningOperation(
-			OperationExtension newOwningOperation, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newOwningOperation,
-				ActivitiesPackage.ACTIVITY__OWNING_OPERATION, msgs);
+	public NotificationChain basicSetOwningOperation(OperationExtension newOwningOperation, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newOwningOperation, ActivitiesPackage.ACTIVITY__OWNING_OPERATION,
+				msgs);
 		return msgs;
 	}
 
@@ -176,21 +174,18 @@ public class ActivityImpl extends CallableImpl implements Activity {
 		if (newOwningOperation != eInternalContainer()
 				|| (eContainerFeatureID() != ActivitiesPackage.ACTIVITY__OWNING_OPERATION && newOwningOperation != null)) {
 			if (EcoreUtil.isAncestor(this, newOwningOperation))
-				throw new IllegalArgumentException(
-						"Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newOwningOperation != null)
 				msgs = ((InternalEObject) newOwningOperation).eInverseAdd(this,
-						ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY,
-						OperationExtension.class, msgs);
+						ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, OperationExtension.class, msgs);
 			msgs = basicSetOwningOperation(newOwningOperation, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActivitiesPackage.ACTIVITY__OWNING_OPERATION,
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY__OWNING_OPERATION,
 					newOwningOperation, newOwningOperation));
 	}
 
@@ -204,8 +199,7 @@ public class ActivityImpl extends CallableImpl implements Activity {
 			precondition = (MatchingStoryNode) eResolveProxy(oldPrecondition);
 			if (precondition != oldPrecondition) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ActivitiesPackage.ACTIVITY__PRECONDITION,
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActivitiesPackage.ACTIVITY__PRECONDITION,
 							oldPrecondition, precondition));
 			}
 		}
@@ -228,9 +222,8 @@ public class ActivityImpl extends CallableImpl implements Activity {
 		MatchingStoryNode oldPrecondition = precondition;
 		precondition = newPrecondition;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActivitiesPackage.ACTIVITY__PRECONDITION, oldPrecondition,
-					precondition));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY__PRECONDITION,
+					oldPrecondition, precondition));
 	}
 
 	protected EAnnotation getOwningOperationAnnotation() {
@@ -249,9 +242,8 @@ public class ActivityImpl extends CallableImpl implements Activity {
 	 */
 	public EList<ActivityNode> getOwnedActivityNodes() {
 		if (ownedActivityNodes == null) {
-			ownedActivityNodes = new EObjectContainmentWithInverseEList.Resolving<ActivityNode>(
-					ActivityNode.class, this,
-					ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE,
+			ownedActivityNodes = new EObjectContainmentWithInverseEList.Resolving<ActivityNode>(ActivityNode.class,
+					this, ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE,
 					ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY);
 		}
 		return ownedActivityNodes;
@@ -263,9 +255,8 @@ public class ActivityImpl extends CallableImpl implements Activity {
 	 */
 	public EList<ActivityEdge> getOwnedActivityEdges() {
 		if (ownedActivityEdges == null) {
-			ownedActivityEdges = new EObjectContainmentWithInverseEList.Resolving<ActivityEdge>(
-					ActivityEdge.class, this,
-					ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE,
+			ownedActivityEdges = new EObjectContainmentWithInverseEList.Resolving<ActivityEdge>(ActivityEdge.class,
+					this, ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE,
 					ActivitiesPackage.ACTIVITY_EDGE__OWNING_ACTIVITY);
 		}
 		return ownedActivityEdges;
@@ -277,19 +268,18 @@ public class ActivityImpl extends CallableImpl implements Activity {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetOwningOperation((OperationExtension) otherEnd, msgs);
 		case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedActivityEdges())
-					.basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedActivityEdges()).basicAdd(otherEnd,
+					msgs);
 		case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedActivityNodes())
-					.basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedActivityNodes()).basicAdd(otherEnd,
+					msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -299,17 +289,14 @@ public class ActivityImpl extends CallableImpl implements Activity {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
 			return basicSetOwningOperation(null, msgs);
 		case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
-			return ((InternalEList<?>) getOwnedActivityEdges()).basicRemove(
-					otherEnd, msgs);
+			return ((InternalEList<?>) getOwnedActivityEdges()).basicRemove(otherEnd, msgs);
 		case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
-			return ((InternalEList<?>) getOwnedActivityNodes()).basicRemove(
-					otherEnd, msgs);
+			return ((InternalEList<?>) getOwnedActivityNodes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -319,12 +306,10 @@ public class ActivityImpl extends CallableImpl implements Activity {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(
-			NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
-			return eInternalContainer().eInverseRemove(this,
-					ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY,
+			return eInternalContainer().eInverseRemove(this, ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY,
 					OperationExtension.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -371,16 +356,14 @@ public class ActivityImpl extends CallableImpl implements Activity {
 			return;
 		case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:
 			getOwnedActivityEdges().clear();
-			getOwnedActivityEdges().addAll(
-					(Collection<? extends ActivityEdge>) newValue);
+			getOwnedActivityEdges().addAll((Collection<? extends ActivityEdge>) newValue);
 			return;
 		case ActivitiesPackage.ACTIVITY__PRECONDITION:
 			setPrecondition((MatchingStoryNode) newValue);
 			return;
 		case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_NODE:
 			getOwnedActivityNodes().clear();
-			getOwnedActivityNodes().addAll(
-					(Collection<? extends ActivityNode>) newValue);
+			getOwnedActivityNodes().addAll((Collection<? extends ActivityNode>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -420,8 +403,7 @@ public class ActivityImpl extends CallableImpl implements Activity {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case ActivitiesPackage.ACTIVITY__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
-					.equals(name);
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case ActivitiesPackage.ACTIVITY__OWNING_OPERATION:
 			return basicGetOwningOperation() != null;
 		case ActivitiesPackage.ACTIVITY__OWNED_ACTIVITY_EDGE:

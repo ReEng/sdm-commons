@@ -24,6 +24,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
@@ -123,7 +124,7 @@ public class ActivityEdgeItemProvider extends ExtendableElementItemProvider impl
 	 * This returns ActivityEdge.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
@@ -261,19 +262,28 @@ public class ActivityEdgeItemProvider extends ExtendableElementItemProvider impl
 				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+				CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createNotExpression()));
+				CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+				CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXCEPTION,
 				ActivitiesFactory.eINSTANCE.createExceptionVariable()));

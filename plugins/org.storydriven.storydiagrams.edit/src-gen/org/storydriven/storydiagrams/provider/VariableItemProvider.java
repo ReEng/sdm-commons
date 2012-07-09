@@ -35,9 +35,8 @@ import org.storydriven.storydiagrams.calls.CallsFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class VariableItemProvider extends TypedElementItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class VariableItemProvider extends TypedElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -72,16 +71,12 @@ public class VariableItemProvider extends TypedElementItemProvider implements
 	 */
 	protected void addVariableNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_Variable_variableName_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Variable_variableName_feature",
-						"_UI_Variable_type"),
-				StorydiagramsPackage.Literals.VARIABLE__VARIABLE_NAME, true,
-				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				null));
+				getString("_UI_PropertyDescriptor_description", "_UI_Variable_variableName_feature",
+						"_UI_Variable_type"), StorydiagramsPackage.Literals.VARIABLE__VARIABLE_NAME, true, false,
+				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -114,8 +109,8 @@ public class VariableItemProvider extends TypedElementItemProvider implements
 	@Override
 	public String getText(Object object) {
 		String label = ((Variable) object).getVariableName();
-		return label == null || label.length() == 0 ? getString("_UI_Variable_type")
-				: getString("_UI_Variable_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Variable_type") : getString("_UI_Variable_type")
+				+ " " + label;
 	}
 
 	/**
@@ -131,8 +126,7 @@ public class VariableItemProvider extends TypedElementItemProvider implements
 
 		switch (notification.getFeatureID(Variable.class)) {
 		case StorydiagramsPackage.VARIABLE__VARIABLE_NAME:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -146,16 +140,13 @@ public class VariableItemProvider extends TypedElementItemProvider implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 

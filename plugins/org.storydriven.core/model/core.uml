@@ -36,77 +36,163 @@
         <body>The base package for all expressions which can be used for modeling activities&#xD;
 and patterns.</body>
       </ownedComment>
-      <packagedElement xmi:type="uml:Association" xmi:id="_YsG4QBzGEeChOvWwuwx7tQ" name="HasValueType" memberEnd="_YsG4QRzGEeChOvWwuwx7tQ _YsHfUhzGEeChOvWwuwx7tQ">
-        <ownedEnd xmi:id="_YsG4QRzGEeChOvWwuwx7tQ" name="literalExpression" type="_-CqUcBzFEeChOvWwuwx7tQ" association="_YsG4QBzGEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YsHfURzGEeChOvWwuwx7tQ" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YsHfUBzGEeChOvWwuwx7tQ"/>
-        </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_fy_bYBzGEeChOvWwuwx7tQ" name="HasLeftExpression" memberEnd="_fzACcBzGEeChOvWwuwx7tQ _fzApgRzGEeChOvWwuwx7tQ">
-        <ownedEnd xmi:id="_fzACcBzGEeChOvWwuwx7tQ" name="revLeftExpression" type="__7WUYBzFEeChOvWwuwx7tQ" association="_fy_bYBzGEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fzApgBzGEeChOvWwuwx7tQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fzACcRzGEeChOvWwuwx7tQ"/>
-        </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_kicNEBzGEeChOvWwuwx7tQ" name="HasRightExpression" memberEnd="_kic0IBzGEeChOvWwuwx7tQ _kidbMRzGEeChOvWwuwx7tQ">
-        <ownedEnd xmi:id="_kic0IBzGEeChOvWwuwx7tQ" name="revRightExpression" type="__7WUYBzFEeChOvWwuwx7tQ" association="_kicNEBzGEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kidbMBzGEeChOvWwuwx7tQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kic0IRzGEeChOvWwuwx7tQ"/>
-        </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_qyt4UBzGEeChOvWwuwx7tQ" name="HasNegatedExpression" memberEnd="_qyt4URzGEeChOvWwuwx7tQ _qyufYhzGEeChOvWwuwx7tQ">
-        <ownedEnd xmi:id="_qyt4URzGEeChOvWwuwx7tQ" name="revNegatedExpression" type="__NYbIBzFEeChOvWwuwx7tQ" association="_qyt4UBzGEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qyufYRzGEeChOvWwuwx7tQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qyufYBzGEeChOvWwuwx7tQ"/>
-        </ownedEnd>
-      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression" isAbstract="true">
         <ownedComment xmi:id="_RcJm8BztEeChOvWwuwx7tQ" annotatedElement="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58">
           <body>Represents any expression in an embedded textual language, e.g. OCL or Java. An expression's type is dynamically derived by an external mechanism (see TypedElement).</body>
         </ownedComment>
-        <generalization xmi:id="_w3SaALLzEd-uk56s-ldeog" general="__xUl0LLyEd-uk56s-ldeog"/>
         <generalization xmi:id="_mg81QBzTEeChOvWwuwx7tQ" general="_e7CFQLLyEd-uk56s-ldeog"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_Zu35oBzCEeChOvWwuwx7tQ" name="LogicOperator">
-        <ownedComment xmi:id="_-IZ60BzrEeChOvWwuwx7tQ" annotatedElement="_Zu35oBzCEeChOvWwuwx7tQ">
-          <body>Defines the operators for binary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression.</body>
-        </ownedComment>
-        <ownedLiteral xmi:id="_oMKiQBzFEeChOvWwuwx7tQ" name="AND"/>
-        <ownedLiteral xmi:id="_ovlYYBzFEeChOvWwuwx7tQ" name="OR"/>
-        <ownedLiteral xmi:id="_pU6TABzFEeChOvWwuwx7tQ" name="XOR"/>
-        <ownedLiteral xmi:id="_WYUSQCR9EeCZkonQmyNaoA" name="IMPLY"/>
-        <ownedLiteral xmi:id="_eVlq0CR9EeCZkonQmyNaoA" name="EQUIVALENT"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_jmhM0BzFEeChOvWwuwx7tQ" name="ComparingOperator">
-        <ownedComment xmi:id="_CgmDEBzsEeChOvWwuwx7tQ" annotatedElement="_jmhM0BzFEeChOvWwuwx7tQ">
-          <body>Defines the operators for comparing expressions.</body>
-        </ownedComment>
-        <ownedLiteral xmi:id="_qIrSQBzFEeChOvWwuwx7tQ" name="LESS"/>
-        <ownedLiteral xmi:id="_qrJGIBzFEeChOvWwuwx7tQ" name="LESS_OR_EQUAL"/>
-        <ownedLiteral xmi:id="_rpdvkBzFEeChOvWwuwx7tQ" name="EQUAL"/>
-        <ownedLiteral xmi:id="_sxMzsBzFEeChOvWwuwx7tQ" name="GREATER_OR_EQUAL"/>
-        <ownedLiteral xmi:id="_uv7xQBzFEeChOvWwuwx7tQ" name="GREATER"/>
-        <ownedLiteral xmi:id="_wcn8kBzFEeChOvWwuwx7tQ" name="UNEQUAL"/>
-        <ownedLiteral xmi:id="_kXV5sHSREeCw_4Cp_HQS5Q" name="REGULAR_EXPRESSION">
-          <ownedComment xmi:id="__xY0AHSREeCw_4Cp_HQS5Q" annotatedElement="_kXV5sHSREeCw_4Cp_HQS5Q">
-            <body>For comparison of a String with a regular expression.</body>
+      <packagedElement xmi:type="uml:Package" xmi:id="_8yfvIMmbEeG1Tu0kxZC-sQ" name="common">
+        <packagedElement xmi:type="uml:Enumeration" xmi:id="_Zu35oBzCEeChOvWwuwx7tQ" name="LogicOperator">
+          <ownedComment xmi:id="_-IZ60BzrEeChOvWwuwx7tQ" annotatedElement="_Zu35oBzCEeChOvWwuwx7tQ">
+            <body>Defines the operators for binary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression.</body>
           </ownedComment>
-        </ownedLiteral>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_k4Jz0BzFEeChOvWwuwx7tQ" name="ArithmeticOperator">
-        <ownedComment xmi:id="_HsybIBzsEeChOvWwuwx7tQ" annotatedElement="_k4Jz0BzFEeChOvWwuwx7tQ">
-          <body>Defines the operators for arithmetic expressions.</body>
-        </ownedComment>
-        <ownedLiteral xmi:id="_0XPYABzFEeChOvWwuwx7tQ" name="PLUS"/>
-        <ownedLiteral xmi:id="_1hsY8BzFEeChOvWwuwx7tQ" name="MINUS"/>
-        <ownedLiteral xmi:id="_24udUBzFEeChOvWwuwx7tQ" name="TIMES"/>
-        <ownedLiteral xmi:id="_3y_tMBzFEeChOvWwuwx7tQ" name="DIVIDE"/>
-        <ownedLiteral xmi:id="_4jt_gBzFEeChOvWwuwx7tQ" name="MODULO"/>
-        <ownedLiteral xmi:id="_hNz1ICR9EeCZkonQmyNaoA" name="EXP">
-          <ownedComment xmi:id="_QhTG4XSSEeCw_4Cp_HQS5Q" annotatedElement="_hNz1ICR9EeCZkonQmyNaoA">
-            <body>For formulas like a^b.</body>
+          <ownedLiteral xmi:id="_oMKiQBzFEeChOvWwuwx7tQ" name="AND"/>
+          <ownedLiteral xmi:id="_ovlYYBzFEeChOvWwuwx7tQ" name="OR"/>
+          <ownedLiteral xmi:id="_pU6TABzFEeChOvWwuwx7tQ" name="XOR"/>
+          <ownedLiteral xmi:id="_WYUSQCR9EeCZkonQmyNaoA" name="IMPLY"/>
+          <ownedLiteral xmi:id="_eVlq0CR9EeCZkonQmyNaoA" name="EQUIVALENT"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Enumeration" xmi:id="_jmhM0BzFEeChOvWwuwx7tQ" name="ComparingOperator">
+          <ownedComment xmi:id="_CgmDEBzsEeChOvWwuwx7tQ" annotatedElement="_jmhM0BzFEeChOvWwuwx7tQ">
+            <body>Defines the operators for comparing expressions.</body>
           </ownedComment>
-        </ownedLiteral>
+          <ownedLiteral xmi:id="_qIrSQBzFEeChOvWwuwx7tQ" name="LESS"/>
+          <ownedLiteral xmi:id="_qrJGIBzFEeChOvWwuwx7tQ" name="LESS_OR_EQUAL"/>
+          <ownedLiteral xmi:id="_rpdvkBzFEeChOvWwuwx7tQ" name="EQUAL"/>
+          <ownedLiteral xmi:id="_sxMzsBzFEeChOvWwuwx7tQ" name="GREATER_OR_EQUAL"/>
+          <ownedLiteral xmi:id="_uv7xQBzFEeChOvWwuwx7tQ" name="GREATER"/>
+          <ownedLiteral xmi:id="_wcn8kBzFEeChOvWwuwx7tQ" name="UNEQUAL"/>
+          <ownedLiteral xmi:id="_kXV5sHSREeCw_4Cp_HQS5Q" name="REGULAR_EXPRESSION">
+            <ownedComment xmi:id="__xY0AHSREeCw_4Cp_HQS5Q" annotatedElement="_kXV5sHSREeCw_4Cp_HQS5Q">
+              <body>For comparison of a String with a regular expression.</body>
+            </ownedComment>
+          </ownedLiteral>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Enumeration" xmi:id="_k4Jz0BzFEeChOvWwuwx7tQ" name="ArithmeticOperator">
+          <ownedComment xmi:id="_HsybIBzsEeChOvWwuwx7tQ" annotatedElement="_k4Jz0BzFEeChOvWwuwx7tQ">
+            <body>Defines the operators for arithmetic expressions.</body>
+          </ownedComment>
+          <ownedLiteral xmi:id="_0XPYABzFEeChOvWwuwx7tQ" name="PLUS"/>
+          <ownedLiteral xmi:id="_1hsY8BzFEeChOvWwuwx7tQ" name="MINUS"/>
+          <ownedLiteral xmi:id="_24udUBzFEeChOvWwuwx7tQ" name="TIMES"/>
+          <ownedLiteral xmi:id="_3y_tMBzFEeChOvWwuwx7tQ" name="DIVIDE"/>
+          <ownedLiteral xmi:id="_4jt_gBzFEeChOvWwuwx7tQ" name="MODULO"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Enumeration" xmi:id="_49SisMmcEeG1Tu0kxZC-sQ" name="UnaryOperator">
+          <ownedLiteral xmi:id="_49Sis8mcEeG1Tu0kxZC-sQ" name="NOT"/>
+          <ownedLiteral xmi:id="_49SitMmcEeG1Tu0kxZC-sQ" name="PLUS"/>
+          <ownedLiteral xmi:id="_49SitsmcEeG1Tu0kxZC-sQ" name="MINUS"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="__NYbIBzFEeChOvWwuwx7tQ" name="UnaryExpression">
+          <ownedComment xmi:id="_6Ss_IBzsEeChOvWwuwx7tQ" annotatedElement="__NYbIBzFEeChOvWwuwx7tQ">
+            <body>Represents a negated expression, e.g. NOT (a &lt; 5).</body>
+          </ownedComment>
+          <generalization xmi:id="_E5V4YBzGEeChOvWwuwx7tQ" general="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+          <ownedAttribute xmi:id="_qyufYhzGEeChOvWwuwx7tQ" name="enclosedExpression" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_qyt4UBzGEeChOvWwuwx7tQ">
+            <ownedComment xmi:id="_8zvYgBzsEeChOvWwuwx7tQ" annotatedElement="_qyufYhzGEeChOvWwuwx7tQ">
+              <body>Represents the operand of a NotExpression, e.g. a &lt; 5 in NOT (a &lt; 5).</body>
+            </ownedComment>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qyvGcRzGEeChOvWwuwx7tQ" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qyvGcBzGEeChOvWwuwx7tQ" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="__7WUYBzFEeChOvWwuwx7tQ" name="BinaryExpression" isAbstract="true">
+          <ownedComment xmi:id="_wS2DwBzsEeChOvWwuwx7tQ" annotatedElement="__7WUYBzFEeChOvWwuwx7tQ">
+            <body>Represents any binary expression like v &lt; 5 or x + 7.</body>
+          </ownedComment>
+          <generalization xmi:id="_FiXnQBzGEeChOvWwuwx7tQ" general="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+          <ownedAttribute xmi:id="_fzApgRzGEeChOvWwuwx7tQ" name="leftExpression" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_fy_bYBzGEeChOvWwuwx7tQ">
+            <ownedComment xmi:id="_0Amu8BzsEeChOvWwuwx7tQ" annotatedElement="_fzApgRzGEeChOvWwuwx7tQ">
+              <body>Represents the first operand of a binary expression, e.g. x in the expression x &lt; 5.</body>
+            </ownedComment>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fzBQkBzGEeChOvWwuwx7tQ" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fzApghzGEeChOvWwuwx7tQ" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_kidbMRzGEeChOvWwuwx7tQ" name="rightExpression" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_kicNEBzGEeChOvWwuwx7tQ">
+            <ownedComment xmi:id="_2SGQcBzsEeChOvWwuwx7tQ" annotatedElement="_kidbMRzGEeChOvWwuwx7tQ">
+              <body>Represents the second operand of a binary expression, e.g. 5 in the expression x &lt; 5.</body>
+            </ownedComment>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kieCQBzGEeChOvWwuwx7tQ" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kidbMhzGEeChOvWwuwx7tQ" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_AsdoQBzGEeChOvWwuwx7tQ" name="ComparisonExpression">
+          <ownedComment xmi:id="_G3lcARztEeChOvWwuwx7tQ" annotatedElement="_AsdoQBzGEeChOvWwuwx7tQ">
+            <body>Represents comparing expressions like a &lt; 5 or a >= 7.</body>
+          </ownedComment>
+          <generalization xmi:id="_GCstIBzGEeChOvWwuwx7tQ" general="__7WUYBzFEeChOvWwuwx7tQ"/>
+          <ownedAttribute xmi:id="_-nSPABzGEeChOvWwuwx7tQ" name="operator" visibility="public" type="_jmhM0BzFEeChOvWwuwx7tQ">
+            <ownedComment xmi:id="_JOfB8BztEeChOvWwuwx7tQ" annotatedElement="_-nSPABzGEeChOvWwuwx7tQ">
+              <body>Specifies the expression's comparing operator, e.g. &lt;, >=, !=.</body>
+            </ownedComment>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_BrHB0BzGEeChOvWwuwx7tQ" name="ArithmeticExpression">
+          <ownedComment xmi:id="_LtcXsBztEeChOvWwuwx7tQ" annotatedElement="_BrHB0BzGEeChOvWwuwx7tQ">
+            <body>Represents arithmetic expressions like a + 5 or a * 7.</body>
+          </ownedComment>
+          <generalization xmi:id="_Gm-e4BzGEeChOvWwuwx7tQ" general="__7WUYBzFEeChOvWwuwx7tQ"/>
+          <ownedAttribute xmi:id="_CBUF4BzHEeChOvWwuwx7tQ" name="operator" visibility="public" type="_k4Jz0BzFEeChOvWwuwx7tQ">
+            <ownedComment xmi:id="_PJZhMhztEeChOvWwuwx7tQ" annotatedElement="_CBUF4BzHEeChOvWwuwx7tQ">
+              <body>Specifies the expression's arithmetic operator, e.g. +, -, *, /, or MODULO.</body>
+            </ownedComment>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_IG29QBzGEeChOvWwuwx7tQ" name="LogicExpression">
+          <ownedComment xmi:id="__2U_wBzsEeChOvWwuwx7tQ" annotatedElement="_IG29QBzGEeChOvWwuwx7tQ">
+            <body>Represents binary, logic expressions like a AND b and a OR b.</body>
+          </ownedComment>
+          <generalization xmi:id="_JofIEBzGEeChOvWwuwx7tQ" general="__7WUYBzFEeChOvWwuwx7tQ"/>
+          <ownedAttribute xmi:id="_47_gIBzGEeChOvWwuwx7tQ" name="operator" visibility="public" type="_Zu35oBzCEeChOvWwuwx7tQ">
+            <ownedComment xmi:id="_CxeiQhztEeChOvWwuwx7tQ" annotatedElement="_47_gIBzGEeChOvWwuwx7tQ">
+              <body>Specifies the expression's logic operator, e.g. AND, OR, or XOR.</body>
+            </ownedComment>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_-CqUcBzFEeChOvWwuwx7tQ" name="LiteralExpression" isAbstract="true">
+          <ownedComment xmi:id="_eopS4BzsEeChOvWwuwx7tQ" annotatedElement="_-CqUcBzFEeChOvWwuwx7tQ">
+            <body>Represents any literal, i.e. a value whose type is an EDataType. Literals are, for example, 5, 3.14, 'c', &quot;text&quot;, true.</body>
+          </ownedComment>
+          <generalization xmi:id="_EVxRQBzGEeChOvWwuwx7tQ" general="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+          <ownedAttribute xmi:id="_WCApgBzGEeChOvWwuwx7tQ" name="value" visibility="public">
+            <ownedComment xmi:id="_k2J-ABzsEeChOvWwuwx7tQ" annotatedElement="_WCApgBzGEeChOvWwuwx7tQ">
+              <body>String representation of the value, e.g. &quot;5&quot;, &quot;3.14&quot;, &quot;c&quot;, &quot;text&quot;, or &quot;true&quot;.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bcLzMBzGEeChOvWwuwx7tQ"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_WF_zsMmcEeG1Tu0kxZC-sQ" name="BooleanLiteralExpression">
+          <generalization xmi:id="_eH7CwMmcEeG1Tu0kxZC-sQ" general="_-CqUcBzFEeChOvWwuwx7tQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_hKdmsMmcEeG1Tu0kxZC-sQ" name="IntegerLiteralExpression">
+          <generalization xmi:id="_hKeNwMmcEeG1Tu0kxZC-sQ" general="_-CqUcBzFEeChOvWwuwx7tQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_hUDAgMmcEeG1Tu0kxZC-sQ" name="DoubleLiteralExpression">
+          <generalization xmi:id="_hUDAgcmcEeG1Tu0kxZC-sQ" general="_-CqUcBzFEeChOvWwuwx7tQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_hd0nkMmcEeG1Tu0kxZC-sQ" name="StringLiteralExpression">
+          <generalization xmi:id="_hd0nkcmcEeG1Tu0kxZC-sQ" general="_-CqUcBzFEeChOvWwuwx7tQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_fy_bYBzGEeChOvWwuwx7tQ" name="HasLeftExpression" memberEnd="_fzACcBzGEeChOvWwuwx7tQ _fzApgRzGEeChOvWwuwx7tQ">
+          <ownedEnd xmi:id="_fzACcBzGEeChOvWwuwx7tQ" name="revLeftExpression" type="__7WUYBzFEeChOvWwuwx7tQ" association="_fy_bYBzGEeChOvWwuwx7tQ">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fzApgBzGEeChOvWwuwx7tQ" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fzACcRzGEeChOvWwuwx7tQ"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_kicNEBzGEeChOvWwuwx7tQ" name="HasRightExpression" memberEnd="_kic0IBzGEeChOvWwuwx7tQ _kidbMRzGEeChOvWwuwx7tQ">
+          <ownedEnd xmi:id="_kic0IBzGEeChOvWwuwx7tQ" name="revRightExpression" type="__7WUYBzFEeChOvWwuwx7tQ" association="_kicNEBzGEeChOvWwuwx7tQ">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kidbMBzGEeChOvWwuwx7tQ" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kic0IRzGEeChOvWwuwx7tQ"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_qyt4UBzGEeChOvWwuwx7tQ" name="HasEnclosedExpression" memberEnd="_qyt4URzGEeChOvWwuwx7tQ _qyufYhzGEeChOvWwuwx7tQ">
+          <ownedEnd xmi:id="_qyt4URzGEeChOvWwuwx7tQ" name="revEnclosedExpression" type="__NYbIBzFEeChOvWwuwx7tQ" association="_qyt4UBzGEeChOvWwuwx7tQ">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qyufYRzGEeChOvWwuwx7tQ" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qyufYBzGEeChOvWwuwx7tQ"/>
+          </ownedEnd>
+        </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_8-3VIBzFEeChOvWwuwx7tQ" name="TextualExpression">
         <ownedComment xmi:id="_ROhQEBzsEeChOvWwuwx7tQ" annotatedElement="_8-3VIBzFEeChOvWwuwx7tQ">
@@ -132,93 +218,6 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
           </ownedComment>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLtGUBzGEeChOvWwuwx7tQ"/>
-        </ownedAttribute>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_-CqUcBzFEeChOvWwuwx7tQ" name="LiteralExpression">
-        <ownedComment xmi:id="_eopS4BzsEeChOvWwuwx7tQ" annotatedElement="_-CqUcBzFEeChOvWwuwx7tQ">
-          <body>Represents any literal, i.e. a value whose type is an EDataType. Literals are, for example, 5, 3.14, 'c', &quot;text&quot;, true.</body>
-        </ownedComment>
-        <generalization xmi:id="_EVxRQBzGEeChOvWwuwx7tQ" general="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-        <ownedAttribute xmi:id="_WCApgBzGEeChOvWwuwx7tQ" name="value" visibility="public">
-          <ownedComment xmi:id="_k2J-ABzsEeChOvWwuwx7tQ" annotatedElement="_WCApgBzGEeChOvWwuwx7tQ">
-            <body>String representation of the value, e.g. &quot;5&quot;, &quot;3.14&quot;, &quot;c&quot;, &quot;text&quot;, or &quot;true&quot;.</body>
-          </ownedComment>
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bcLzMBzGEeChOvWwuwx7tQ"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_YsHfUhzGEeChOvWwuwx7tQ" name="valueType" subsettedProperty="_HPpYkbLzEd-uk56s-ldeog" association="_YsG4QBzGEeChOvWwuwx7tQ">
-          <ownedComment xmi:id="_qc6LIBzsEeChOvWwuwx7tQ" annotatedElement="_YsHfUhzGEeChOvWwuwx7tQ">
-            <body>The literal's type, e.g. EInt, EString, etc.</body>
-          </ownedComment>
-          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EDataType"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YsIGYRzGEeChOvWwuwx7tQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YsIGYBzGEeChOvWwuwx7tQ" value="1"/>
-        </ownedAttribute>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="__NYbIBzFEeChOvWwuwx7tQ" name="NotExpression">
-        <ownedComment xmi:id="_6Ss_IBzsEeChOvWwuwx7tQ" annotatedElement="__NYbIBzFEeChOvWwuwx7tQ">
-          <body>Represents a negated expression, e.g. NOT (a &lt; 5).</body>
-        </ownedComment>
-        <generalization xmi:id="_E5V4YBzGEeChOvWwuwx7tQ" general="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-        <ownedAttribute xmi:id="_qyufYhzGEeChOvWwuwx7tQ" name="negatedExpression" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_qyt4UBzGEeChOvWwuwx7tQ">
-          <ownedComment xmi:id="_8zvYgBzsEeChOvWwuwx7tQ" annotatedElement="_qyufYhzGEeChOvWwuwx7tQ">
-            <body>Represents the operand of a NotExpression, e.g. a &lt; 5 in NOT (a &lt; 5).</body>
-          </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qyvGcRzGEeChOvWwuwx7tQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qyvGcBzGEeChOvWwuwx7tQ" value="1"/>
-        </ownedAttribute>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="__7WUYBzFEeChOvWwuwx7tQ" name="BinaryExpression" isAbstract="true">
-        <ownedComment xmi:id="_wS2DwBzsEeChOvWwuwx7tQ" annotatedElement="__7WUYBzFEeChOvWwuwx7tQ">
-          <body>Represents any binary expression like v &lt; 5 or x + 7.</body>
-        </ownedComment>
-        <generalization xmi:id="_FiXnQBzGEeChOvWwuwx7tQ" general="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-        <ownedAttribute xmi:id="_fzApgRzGEeChOvWwuwx7tQ" name="leftExpression" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_fy_bYBzGEeChOvWwuwx7tQ">
-          <ownedComment xmi:id="_0Amu8BzsEeChOvWwuwx7tQ" annotatedElement="_fzApgRzGEeChOvWwuwx7tQ">
-            <body>Represents the first operand of a binary expression, e.g. x in the expression x &lt; 5.</body>
-          </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fzBQkBzGEeChOvWwuwx7tQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fzApghzGEeChOvWwuwx7tQ" value="1"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_kidbMRzGEeChOvWwuwx7tQ" name="rightExpression" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_kicNEBzGEeChOvWwuwx7tQ">
-          <ownedComment xmi:id="_2SGQcBzsEeChOvWwuwx7tQ" annotatedElement="_kidbMRzGEeChOvWwuwx7tQ">
-            <body>Represents the second operand of a binary expression, e.g. 5 in the expression x &lt; 5.</body>
-          </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kieCQBzGEeChOvWwuwx7tQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kidbMhzGEeChOvWwuwx7tQ" value="1"/>
-        </ownedAttribute>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_AsdoQBzGEeChOvWwuwx7tQ" name="ComparisonExpression">
-        <ownedComment xmi:id="_G3lcARztEeChOvWwuwx7tQ" annotatedElement="_AsdoQBzGEeChOvWwuwx7tQ">
-          <body>Represents comparing expressions like a &lt; 5 or a >= 7.</body>
-        </ownedComment>
-        <generalization xmi:id="_GCstIBzGEeChOvWwuwx7tQ" general="__7WUYBzFEeChOvWwuwx7tQ"/>
-        <ownedAttribute xmi:id="_-nSPABzGEeChOvWwuwx7tQ" name="operator" visibility="public" type="_jmhM0BzFEeChOvWwuwx7tQ">
-          <ownedComment xmi:id="_JOfB8BztEeChOvWwuwx7tQ" annotatedElement="_-nSPABzGEeChOvWwuwx7tQ">
-            <body>Specifies the expression's comparing operator, e.g. &lt;, >=, !=.</body>
-          </ownedComment>
-        </ownedAttribute>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_BrHB0BzGEeChOvWwuwx7tQ" name="ArithmeticExpression">
-        <ownedComment xmi:id="_LtcXsBztEeChOvWwuwx7tQ" annotatedElement="_BrHB0BzGEeChOvWwuwx7tQ">
-          <body>Represents arithmetic expressions like a + 5 or a * 7.</body>
-        </ownedComment>
-        <generalization xmi:id="_Gm-e4BzGEeChOvWwuwx7tQ" general="__7WUYBzFEeChOvWwuwx7tQ"/>
-        <ownedAttribute xmi:id="_CBUF4BzHEeChOvWwuwx7tQ" name="operator" visibility="public" type="_k4Jz0BzFEeChOvWwuwx7tQ">
-          <ownedComment xmi:id="_PJZhMhztEeChOvWwuwx7tQ" annotatedElement="_CBUF4BzHEeChOvWwuwx7tQ">
-            <body>Specifies the expression's arithmetic operator, e.g. +, -, *, /, or MODULO.</body>
-          </ownedComment>
-        </ownedAttribute>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_IG29QBzGEeChOvWwuwx7tQ" name="BinaryLogicExpression">
-        <ownedComment xmi:id="__2U_wBzsEeChOvWwuwx7tQ" annotatedElement="_IG29QBzGEeChOvWwuwx7tQ">
-          <body>Represents binary, logic expressions like a AND b and a OR b.</body>
-        </ownedComment>
-        <generalization xmi:id="_JofIEBzGEeChOvWwuwx7tQ" general="__7WUYBzFEeChOvWwuwx7tQ"/>
-        <ownedAttribute xmi:id="_47_gIBzGEeChOvWwuwx7tQ" name="operator" visibility="public" type="_Zu35oBzCEeChOvWwuwx7tQ">
-          <ownedComment xmi:id="_CxeiQhztEeChOvWwuwx7tQ" annotatedElement="_47_gIBzGEeChOvWwuwx7tQ">
-            <body>Specifies the expression's logic operator, e.g. AND, OR, or XOR.</body>
-          </ownedComment>
         </ownedAttribute>
       </packagedElement>
     </packagedElement>
@@ -384,6 +383,7 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
   <Ecore:EReference xmi:id="_mHa4ELw1Ed-Ytrd77fw2LA" isTransient="true" isVolatile="true" base_Property="_HPpYkbLzEd-uk56s-ldeog"/>
   <Ecore:EPackage xmi:id="_zYCZkLw1Ed-Ytrd77fw2LA" base_Package="bd7155bb-4f57-4868-b74a-5672b1eac640" nsPrefix="core" nsURI="http://www.storydriven.org/core/0.2.7" basePackage="org.storydriven" prefix="Core"/>
   <Ecore:EPackage xmi:id="_DWk54Lw2Ed-Ytrd77fw2LA" base_Package="_gsByQLN1Ed-vJ9Qpen_Iuw" nsPrefix="expr" nsURI="http://www.storydriven.org/core/expressions/0.2.0"/>
+  <Ecore:EPackage xmi:id="_8yfvIMmbEeG1Tu0kxZC-sA" base_Package="_8yfvIMmbEeG1Tu0kxZC-sQ" nsPrefix="sdcec" nsURI="http://www.storydriven.org/core/expressions/common/0.2.0"/>
   <Ecore:EReference xmi:id="_TmA58LxXEd-Ytrd77fw2LA" isTransient="true"/>
   <Ecore:EReference xmi:id="_aoEjQLxeEd-HP-M1eWm3kg" isUnsettable="true" base_Property="_rCN-Ibw1Ed-Ytrd77fw2LA"/>
   <Ecore:EReference xmi:id="_DyGToLy3Ed-eCY_Peu5fFw"/>

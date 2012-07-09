@@ -34,9 +34,8 @@ import org.storydriven.storydiagrams.calls.expressions.util.CallsExpressionsAdap
  * <!-- end-user-doc -->
  * @generated
  */
-public class CallsExpressionsItemProviderAdapterFactory extends
-		CallsExpressionsAdapterFactory implements ComposeableAdapterFactory,
-		IChangeNotifier, IDisposable {
+public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressionsAdapterFactory implements
+		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -100,8 +99,7 @@ public class CallsExpressionsItemProviderAdapterFactory extends
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -123,13 +121,12 @@ public class CallsExpressionsItemProviderAdapterFactory extends
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.calls.expressions.MethodCallExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createMethodCallExpressionAdapter() {
 		if (methodCallExpressionItemProvider == null) {
-			methodCallExpressionItemProvider = new MethodCallExpressionItemProvider(
-					this);
+			methodCallExpressionItemProvider = new CustomMethodCallExpressionItemProvider(this);
 		}
 
 		return methodCallExpressionItemProvider;
@@ -139,13 +136,12 @@ public class CallsExpressionsItemProviderAdapterFactory extends
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.calls.expressions.ParameterExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createParameterExpressionAdapter() {
 		if (parameterExpressionItemProvider == null) {
-			parameterExpressionItemProvider = new ParameterExpressionItemProvider(
-					this);
+			parameterExpressionItemProvider = new CustomParameterExpressionItemProvider(this);
 		}
 
 		return parameterExpressionItemProvider;
@@ -158,8 +154,7 @@ public class CallsExpressionsItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -168,8 +163,7 @@ public class CallsExpressionsItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 

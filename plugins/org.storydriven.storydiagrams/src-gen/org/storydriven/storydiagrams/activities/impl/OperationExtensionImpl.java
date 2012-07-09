@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
@@ -54,8 +53,7 @@ import org.storydriven.storydiagrams.calls.CallsPackage;
  *
  * @generated
  */
-public class OperationExtensionImpl extends ExtensionImpl implements
-		OperationExtension {
+public class OperationExtensionImpl extends ExtensionImpl implements OperationExtension {
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -146,9 +144,8 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 		String oldComment = comment;
 		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActivitiesPackage.OPERATION_EXTENSION__COMMENT, oldComment,
-					comment));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.OPERATION_EXTENSION__COMMENT,
+					oldComment, comment));
 	}
 
 	/**
@@ -157,8 +154,7 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	 */
 	public EList<EParameter> getContainedParameters() {
 		if (containedParameters == null) {
-			containedParameters = new EObjectContainmentEList.Resolving<EParameter>(
-					EParameter.class, this,
+			containedParameters = new EObjectContainmentEList.Resolving<EParameter>(EParameter.class, this,
 					ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS);
 		}
 		return containedParameters;
@@ -171,8 +167,7 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	 */
 	public EList<EParameter> getInParameters() {
 		final EOperation operation = getOperation();
-		return operation == null ? ECollections.<EParameter> emptyEList()
-				: operation.getEParameters();
+		return operation == null ? ECollections.<EParameter> emptyEList() : operation.getEParameters();
 	}
 
 	/**
@@ -189,8 +184,7 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 
 		if (getReturnValue() == null) {
 			final EParameter parameter;
-			parameter = EcorePackage.eINSTANCE.getEcoreFactory()
-					.createEParameter();
+			parameter = EcorePackage.eINSTANCE.getEcoreFactory().createEParameter();
 			setReturnValue(parameter);
 		}
 
@@ -198,8 +192,7 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 			getReturnValue().setEType(operation.getEType());
 		}
 
-		return new BasicEList.UnmodifiableEList<EParameter>(1,
-				new EParameter[] { getReturnValue() });
+		return new BasicEList.UnmodifiableEList<EParameter>(1, new EParameter[] { getReturnValue() });
 	}
 
 	/**
@@ -248,28 +241,17 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 			returnValue = (EParameter) eResolveProxy(oldReturnValue);
 			if (returnValue != oldReturnValue) {
 				InternalEObject newReturnValue = (InternalEObject) returnValue;
-				NotificationChain msgs = oldReturnValue
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE,
-								null, null);
+				NotificationChain msgs = oldReturnValue.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, null, null);
 				if (newReturnValue.eInternalContainer() == null) {
-					msgs = newReturnValue
-							.eInverseAdd(
-									this,
-									EOPPOSITE_FEATURE_BASE
-											- ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE,
-									null, msgs);
+					msgs = newReturnValue.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+							- ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE,
-							oldReturnValue, returnValue));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, oldReturnValue, returnValue));
 			}
 		}
 		return returnValue;
@@ -287,15 +269,12 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetReturnValue(EParameter newReturnValue,
-			NotificationChain msgs) {
+	public NotificationChain basicSetReturnValue(EParameter newReturnValue, NotificationChain msgs) {
 		EParameter oldReturnValue = returnValue;
 		returnValue = newReturnValue;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE,
-					oldReturnValue, newReturnValue);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, oldReturnValue, newReturnValue);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -312,25 +291,16 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 		if (newReturnValue != returnValue) {
 			NotificationChain msgs = null;
 			if (returnValue != null)
-				msgs = ((InternalEObject) returnValue)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE,
-								null, msgs);
+				msgs = ((InternalEObject) returnValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, null, msgs);
 			if (newReturnValue != null)
-				msgs = ((InternalEObject) newReturnValue)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE,
-								null, msgs);
+				msgs = ((InternalEObject) newReturnValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+						- ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE, null, msgs);
 			msgs = basicSetReturnValue(newReturnValue, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE,
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE,
 					newReturnValue, newReturnValue));
 	}
 
@@ -345,21 +315,16 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 			if (ownedActivity != oldOwnedActivity) {
 				InternalEObject newOwnedActivity = (InternalEObject) ownedActivity;
 				NotificationChain msgs = oldOwnedActivity.eInverseRemove(this,
-						ActivitiesPackage.ACTIVITY__OWNING_OPERATION,
-						Activity.class, null);
+						ActivitiesPackage.ACTIVITY__OWNING_OPERATION, Activity.class, null);
 				if (newOwnedActivity.eInternalContainer() == null) {
-					msgs = newOwnedActivity.eInverseAdd(this,
-							ActivitiesPackage.ACTIVITY__OWNING_OPERATION,
+					msgs = newOwnedActivity.eInverseAdd(this, ActivitiesPackage.ACTIVITY__OWNING_OPERATION,
 							Activity.class, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY,
-							oldOwnedActivity, ownedActivity));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, oldOwnedActivity, ownedActivity));
 			}
 		}
 		return ownedActivity;
@@ -377,15 +342,12 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOwnedActivity(Activity newOwnedActivity,
-			NotificationChain msgs) {
+	public NotificationChain basicSetOwnedActivity(Activity newOwnedActivity, NotificationChain msgs) {
 		Activity oldOwnedActivity = ownedActivity;
 		ownedActivity = newOwnedActivity;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY,
-					oldOwnedActivity, newOwnedActivity);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, oldOwnedActivity, newOwnedActivity);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -403,29 +365,24 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 			NotificationChain msgs = null;
 			if (ownedActivity != null)
 				msgs = ((InternalEObject) ownedActivity).eInverseRemove(this,
-						ActivitiesPackage.ACTIVITY__OWNING_OPERATION,
-						Activity.class, msgs);
+						ActivitiesPackage.ACTIVITY__OWNING_OPERATION, Activity.class, msgs);
 			if (newOwnedActivity != null)
 				msgs = ((InternalEObject) newOwnedActivity).eInverseAdd(this,
-						ActivitiesPackage.ACTIVITY__OWNING_OPERATION,
-						Activity.class, msgs);
+						ActivitiesPackage.ACTIVITY__OWNING_OPERATION, Activity.class, msgs);
 			msgs = basicSetOwnedActivity(newOwnedActivity, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY,
-					newOwnedActivity, newOwnedActivity));
+					ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, newOwnedActivity, newOwnedActivity));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean NumberOfOutParams(DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		return OperationExtensionOperations.NumberOfOutParams(this,
-				diagnostics, context);
+	public boolean NumberOfOutParams(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return OperationExtensionOperations.NumberOfOutParams(this, diagnostics, context);
 	}
 
 	/**
@@ -433,17 +390,12 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
 			if (ownedActivity != null)
-				msgs = ((InternalEObject) ownedActivity)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY,
-								null, msgs);
+				msgs = ((InternalEObject) ownedActivity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY, null, msgs);
 			return basicSetOwnedActivity((Activity) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -454,12 +406,10 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
-			return ((InternalEList<?>) getContainedParameters()).basicRemove(
-					otherEnd, msgs);
+			return ((InternalEList<?>) getContainedParameters()).basicRemove(otherEnd, msgs);
 		case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
 			return basicSetReturnValue(null, msgs);
 		case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
@@ -510,18 +460,15 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 			return;
 		case ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETER:
 			getInParameters().clear();
-			getInParameters().addAll(
-					(Collection<? extends EParameter>) newValue);
+			getInParameters().addAll((Collection<? extends EParameter>) newValue);
 			return;
 		case ActivitiesPackage.OPERATION_EXTENSION__OUT_PARAMETER:
 			getOutParameters().clear();
-			getOutParameters().addAll(
-					(Collection<? extends EParameter>) newValue);
+			getOutParameters().addAll((Collection<? extends EParameter>) newValue);
 			return;
 		case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
 			getContainedParameters().clear();
-			getContainedParameters().addAll(
-					(Collection<? extends EParameter>) newValue);
+			getContainedParameters().addAll((Collection<? extends EParameter>) newValue);
 			return;
 		case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
 			setOperation((EOperation) newValue);
@@ -576,15 +523,13 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
-			return COMMENT_EDEFAULT == null ? comment != null
-					: !COMMENT_EDEFAULT.equals(comment);
+			return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 		case ActivitiesPackage.OPERATION_EXTENSION__IN_PARAMETER:
 			return inParameters != null && !inParameters.isEmpty();
 		case ActivitiesPackage.OPERATION_EXTENSION__OUT_PARAMETER:
 			return outParameters != null && !outParameters.isEmpty();
 		case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
-			return containedParameters != null
-					&& !containedParameters.isEmpty();
+			return containedParameters != null && !containedParameters.isEmpty();
 		case ActivitiesPackage.OPERATION_EXTENSION__OPERATION:
 			return isSetOperation();
 		case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
@@ -659,12 +604,10 @@ public class OperationExtensionImpl extends ExtensionImpl implements
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case ActivitiesPackage.OPERATION_EXTENSION___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP:
-			return NumberOfOutParams((DiagnosticChain) arguments.get(0),
-					(Map<Object, Object>) arguments.get(1));
+			return NumberOfOutParams((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

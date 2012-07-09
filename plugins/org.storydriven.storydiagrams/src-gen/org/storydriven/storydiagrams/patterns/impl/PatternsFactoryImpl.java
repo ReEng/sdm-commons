@@ -47,7 +47,7 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	public static PatternsFactory init() {
 		try {
 			PatternsFactory thePatternsFactory = (PatternsFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.storydriven.org/storydiagrams/patterns/0.2.0");
+					.getEFactory("http://www.storydriven.org/storydiagrams/patterns/0.2.1");
 			if (thePatternsFactory != null) {
 				return thePatternsFactory;
 			}
@@ -95,10 +95,10 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 			return createInclusionLink();
 		case PatternsPackage.MATCHING_PATTERN:
 			return createMatchingPattern();
-		case PatternsPackage.STORY_PATTERN:
-			return createStoryPattern();
 		case PatternsPackage.MAYBE_LINK:
 			return createMaybeLink();
+		case PatternsPackage.STORY_PATTERN:
+			return createStoryPattern();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

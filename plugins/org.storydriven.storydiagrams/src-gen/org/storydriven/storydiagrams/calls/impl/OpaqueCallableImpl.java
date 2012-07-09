@@ -97,8 +97,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsPackage.OPAQUE_CALLABLE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.OPAQUE_CALLABLE__NAME, oldName, name));
 	}
 
 	/**
@@ -108,8 +107,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 	@Override
 	public EList<EParameter> getInParameters() {
 		if (inParameters == null) {
-			inParameters = new EObjectResolvingEList<EParameter>(
-					EParameter.class, this,
+			inParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
 					CallsPackage.OPAQUE_CALLABLE__IN_PARAMETER);
 		}
 		return inParameters;
@@ -130,8 +128,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 	@Override
 	public EList<EParameter> getOutParameters() {
 		if (outParameters == null) {
-			outParameters = new EObjectResolvingEList<EParameter>(
-					EParameter.class, this,
+			outParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
 					CallsPackage.OPAQUE_CALLABLE__OUT_PARAMETER);
 		}
 		return outParameters;
@@ -188,10 +185,9 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCallExpression(
-			MethodCallExpression newCallExpression, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newCallExpression,
-				CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION, msgs);
+	public NotificationChain basicSetCallExpression(MethodCallExpression newCallExpression, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newCallExpression, CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION,
+				msgs);
 		return msgs;
 	}
 
@@ -203,23 +199,19 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 		if (newCallExpression != eInternalContainer()
 				|| (eContainerFeatureID() != CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION && newCallExpression != null)) {
 			if (EcoreUtil.isAncestor(this, newCallExpression))
-				throw new IllegalArgumentException(
-						"Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newCallExpression != null)
-				msgs = ((InternalEObject) newCallExpression)
-						.eInverseAdd(
-								this,
-								CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,
-								MethodCallExpression.class, msgs);
+				msgs = ((InternalEObject) newCallExpression).eInverseAdd(this,
+						CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, MethodCallExpression.class,
+						msgs);
 			msgs = basicSetCallExpression(newCallExpression, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION,
+			eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION,
 					newCallExpression, newCallExpression));
 	}
 
@@ -227,8 +219,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean NumberOfOutParams(DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
+	public boolean NumberOfOutParams(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (NUMBER_OF_OUT_PARAMS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CallsPackage.Literals.OPAQUE_CALLABLE);
@@ -236,23 +227,15 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 				NUMBER_OF_OUT_PARAMS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper
 						.createInvariant(NUMBER_OF_OUT_PARAMS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			} catch (ParserException pe) {
-				throw new UnsupportedOperationException(
-						pe.getLocalizedMessage());
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(
-				NUMBER_OF_OUT_PARAMS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(
-				this)) {
+		if (!EOCL_ENV.createQuery(NUMBER_OF_OUT_PARAMS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(this)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR,
-						CallsValidator.DIAGNOSTIC_SOURCE,
-						CallsValidator.OPAQUE_CALLABLE__NUMBER_OF_OUT_PARAMS,
-						EcorePlugin.INSTANCE.getString(
+				diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, CallsValidator.DIAGNOSTIC_SOURCE,
+						CallsValidator.OPAQUE_CALLABLE__NUMBER_OF_OUT_PARAMS, EcorePlugin.INSTANCE.getString(
 								"_UI_GenericInvariant_diagnostic",
-								new Object[] {
-										"NumberOfOutParams",
-										EObjectValidator.getObjectLabel(this,
-												context) }),
+								new Object[] { "NumberOfOutParams", EObjectValidator.getObjectLabel(this, context) }),
 						new Object[] { this }));
 			}
 			return false;
@@ -265,8 +248,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
 			if (eInternalContainer() != null)
@@ -281,8 +263,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
 			return basicSetCallExpression(null, msgs);
@@ -295,15 +276,11 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(
-			NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
-			return eInternalContainer()
-					.eInverseRemove(
-							this,
-							CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,
-							MethodCallExpression.class, msgs);
+			return eInternalContainer().eInverseRemove(this,
+					CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE, MethodCallExpression.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -367,8 +344,7 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case CallsPackage.OPAQUE_CALLABLE__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
-					.equals(name);
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case CallsPackage.OPAQUE_CALLABLE__CALL_EXPRESSION:
 			return basicGetCallExpression() != null;
 		}
@@ -381,12 +357,10 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case CallsPackage.OPAQUE_CALLABLE___NUMBER_OF_OUT_PARAMS__DIAGNOSTICCHAIN_MAP:
-			return NumberOfOutParams((DiagnosticChain) arguments.get(0),
-					(Map<Object, Object>) arguments.get(1));
+			return NumberOfOutParams((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -129,12 +129,12 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createAttributeValueExpressionAdapter() {
 		if (attributeValueExpressionItemProvider == null) {
-			attributeValueExpressionItemProvider = new AttributeValueExpressionItemProvider(this);
+			attributeValueExpressionItemProvider = new CustomAttributeValueExpressionItemProvider(this);
 		}
 
 		return attributeValueExpressionItemProvider;
@@ -144,12 +144,12 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createObjectVariableExpressionAdapter() {
 		if (objectVariableExpressionItemProvider == null) {
-			objectVariableExpressionItemProvider = new ObjectVariableExpressionItemProvider(this);
+			objectVariableExpressionItemProvider = new CustomObjectVariableExpressionItemProvider(this);
 		}
 
 		return objectVariableExpressionItemProvider;
@@ -167,12 +167,12 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createCollectionSizeExpressionAdapter() {
 		if (collectionSizeExpressionItemProvider == null) {
-			collectionSizeExpressionItemProvider = new CollectionSizeExpressionItemProvider(this);
+			collectionSizeExpressionItemProvider = new CustomCollectionSizeExpressionItemProvider(this);
 		}
 
 		return collectionSizeExpressionItemProvider;
@@ -182,12 +182,12 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createPrimitiveVariableExpressionAdapter() {
 		if (primitiveVariableExpressionItemProvider == null) {
-			primitiveVariableExpressionItemProvider = new PrimitiveVariableExpressionItemProvider(this);
+			primitiveVariableExpressionItemProvider = new CustomPrimitiveVariableExpressionItemProvider(this);
 		}
 
 		return primitiveVariableExpressionItemProvider;

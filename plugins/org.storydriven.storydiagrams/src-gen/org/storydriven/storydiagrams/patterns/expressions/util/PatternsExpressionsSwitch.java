@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.TypedElement;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression;
 import org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression;
@@ -82,8 +81,6 @@ public class PatternsExpressionsSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseExpression(attributeValueExpression);
 			if (result == null)
-				result = caseTypedElement(attributeValueExpression);
-			if (result == null)
 				result = caseCommentableElement(attributeValueExpression);
 			if (result == null)
 				result = caseExtendableElement(attributeValueExpression);
@@ -96,8 +93,6 @@ public class PatternsExpressionsSwitch<T> extends Switch<T> {
 			T result = caseObjectVariableExpression(objectVariableExpression);
 			if (result == null)
 				result = caseExpression(objectVariableExpression);
-			if (result == null)
-				result = caseTypedElement(objectVariableExpression);
 			if (result == null)
 				result = caseCommentableElement(objectVariableExpression);
 			if (result == null)
@@ -112,8 +107,6 @@ public class PatternsExpressionsSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseExpression(collectionSizeExpression);
 			if (result == null)
-				result = caseTypedElement(collectionSizeExpression);
-			if (result == null)
 				result = caseCommentableElement(collectionSizeExpression);
 			if (result == null)
 				result = caseExtendableElement(collectionSizeExpression);
@@ -126,8 +119,6 @@ public class PatternsExpressionsSwitch<T> extends Switch<T> {
 			T result = casePrimitiveVariableExpression(primitiveVariableExpression);
 			if (result == null)
 				result = caseExpression(primitiveVariableExpression);
-			if (result == null)
-				result = caseTypedElement(primitiveVariableExpression);
 			if (result == null)
 				result = caseCommentableElement(primitiveVariableExpression);
 			if (result == null)
@@ -213,21 +204,6 @@ public class PatternsExpressionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExtendableElement(ExtendableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Typed Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Typed Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTypedElement(TypedElement object) {
 		return null;
 	}
 

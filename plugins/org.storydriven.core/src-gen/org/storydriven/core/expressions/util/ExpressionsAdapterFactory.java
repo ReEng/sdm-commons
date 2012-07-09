@@ -12,16 +12,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.TypedElement;
-import org.storydriven.core.expressions.*;
-import org.storydriven.core.expressions.ArithmeticExpression;
-import org.storydriven.core.expressions.BinaryExpression;
-import org.storydriven.core.expressions.BinaryLogicExpression;
-import org.storydriven.core.expressions.ComparisonExpression;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.ExpressionsPackage;
-import org.storydriven.core.expressions.LiteralExpression;
-import org.storydriven.core.expressions.NotExpression;
 import org.storydriven.core.expressions.TextualExpression;
 
 /**
@@ -90,43 +82,8 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseLiteralExpression(LiteralExpression object) {
-			return createLiteralExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseNotExpression(NotExpression object) {
-			return createNotExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseBinaryExpression(BinaryExpression object) {
-			return createBinaryExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseComparisonExpression(ComparisonExpression object) {
-			return createComparisonExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseArithmeticExpression(ArithmeticExpression object) {
-			return createArithmeticExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseBinaryLogicExpression(BinaryLogicExpression object) {
-			return createBinaryLogicExpressionAdapter();
-		}
-
-		@Override
 		public Adapter caseExtendableElement(ExtendableElement object) {
 			return createExtendableElementAdapter();
-		}
-
-		@Override
-		public Adapter caseTypedElement(TypedElement object) {
-			return createTypedElementAdapter();
 		}
 
 		@Override
@@ -182,90 +139,6 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.LiteralExpression <em>Literal Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.expressions.LiteralExpression
-	 * @generated
-	 */
-	public Adapter createLiteralExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.NotExpression <em>Not Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.expressions.NotExpression
-	 * @generated
-	 */
-	public Adapter createNotExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.BinaryExpression <em>Binary Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.expressions.BinaryExpression
-	 * @generated
-	 */
-	public Adapter createBinaryExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.ComparisonExpression <em>Comparison Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.expressions.ComparisonExpression
-	 * @generated
-	 */
-	public Adapter createComparisonExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.ArithmeticExpression <em>Arithmetic Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.expressions.ArithmeticExpression
-	 * @generated
-	 */
-	public Adapter createArithmeticExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.BinaryLogicExpression <em>Binary Logic Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.expressions.BinaryLogicExpression
-	 * @generated
-	 */
-	public Adapter createBinaryLogicExpressionAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.core.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -276,20 +149,6 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExtendableElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.TypedElement <em>Typed Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.TypedElement
-	 * @generated
-	 */
-	public Adapter createTypedElementAdapter() {
 		return null;
 	}
 

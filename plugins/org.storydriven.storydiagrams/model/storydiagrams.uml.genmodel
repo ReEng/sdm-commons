@@ -222,7 +222,7 @@
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="storydiagrams.ecore#//patterns/LinkConstraintType">
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/LinkConstraintType/FIRST"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/LinkConstraintType/LAST"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/LinkConstraintType/DIRECT_SUCCESSOR"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/LinkConstraintType/NEXT"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/LinkConstraintType/INDIRECT_SUCCESSOR"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="storydiagrams.ecore#//patterns/LinkConstraintType/INDEX"/>
       </genEnums>
@@ -291,7 +291,8 @@
             createChild="false" ecoreFeature="ecore:EReference storydiagrams.ecore#//patterns/AttributeAssignment/objectVariable"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="storydiagrams.ecore#//patterns/CollectionVariable">
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/CollectionVariable/maybeEmpty"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/CollectionVariable/atLeastOne"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute storydiagrams.ecore#//patterns/CollectionVariable/unique"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="storydiagrams.ecore#//patterns/PrimitiveVariable">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

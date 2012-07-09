@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.storydriven.storydiagrams.*;
 import org.storydriven.storydiagrams.StorydiagramsFactory;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 
@@ -21,8 +20,7 @@ import org.storydriven.storydiagrams.StorydiagramsPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StorydiagramsFactoryImpl extends EFactoryImpl implements
-		StorydiagramsFactory {
+public class StorydiagramsFactoryImpl extends EFactoryImpl implements StorydiagramsFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -61,8 +59,7 @@ public class StorydiagramsFactoryImpl extends EFactoryImpl implements
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 

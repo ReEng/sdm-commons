@@ -14,16 +14,17 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EParameter;
-import org.storydriven.core.expressions.ArithmeticExpression;
-import org.storydriven.core.expressions.ArithmeticOperator;
-import org.storydriven.core.expressions.BinaryLogicExpression;
-import org.storydriven.core.expressions.ComparingOperator;
-import org.storydriven.core.expressions.ComparisonExpression;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.LiteralExpression;
-import org.storydriven.core.expressions.LogicOperator;
-import org.storydriven.core.expressions.NotExpression;
 import org.storydriven.core.expressions.TextualExpression;
+import org.storydriven.core.expressions.common.ArithmeticExpression;
+import org.storydriven.core.expressions.common.ArithmeticOperator;
+import org.storydriven.core.expressions.common.ComparingOperator;
+import org.storydriven.core.expressions.common.ComparisonExpression;
+import org.storydriven.core.expressions.common.LiteralExpression;
+import org.storydriven.core.expressions.common.LogicExpression;
+import org.storydriven.core.expressions.common.LogicOperator;
+import org.storydriven.core.expressions.common.StringLiteralExpression;
+import org.storydriven.core.expressions.common.UnaryExpression;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
 import org.storydriven.storydiagrams.activities.ActivityFinalNode;
@@ -269,21 +270,20 @@ public final class TextUtil {
 		}
 
 		boolean isRoot = !(expression.eContainer() instanceof Expression);
-		boolean isNegated = expression.eContainer() instanceof NotExpression;
+		boolean isNegated = expression.eContainer() instanceof UnaryExpression;
 
 		// literal expression
 		if (expression instanceof LiteralExpression) {
 			LiteralExpression le = (LiteralExpression) expression;
 			String value = le.getValue();
-			Object realValue = TypeUtil.getParsedValue(le.getValueType(), value);
 
-			if (realValue == null) {
-				// value could not be parsed
+			if (expression instanceof StringLiteralExpression) {
+				// string
 				builder.append('"');
 				builder.append(value);
 				builder.append('"');
 			} else {
-				builder.append(String.valueOf(realValue));
+				builder.append(value);
 			}
 
 			return builder;
@@ -307,12 +307,12 @@ public final class TextUtil {
 		}
 
 		// not expression
-		if (expression instanceof NotExpression) {
-			NotExpression ne = (NotExpression) expression;
+		if (expression instanceof UnaryExpression) {
+			UnaryExpression ne = (UnaryExpression) expression;
 
 			builder.append("not");
 			builder.append('(');
-			append(builder, ne.getNegatedExpression());
+			append(builder, ne.getEnclosedExpression());
 			builder.append(')');
 
 			return builder;
@@ -340,8 +340,8 @@ public final class TextUtil {
 		}
 
 		// logic expression
-		if (expression instanceof BinaryLogicExpression) {
-			BinaryLogicExpression ble = (BinaryLogicExpression) expression;
+		if (expression instanceof LogicExpression) {
+			LogicExpression ble = (LogicExpression) expression;
 
 			if (!isRoot && !isNegated) {
 				builder.append('(');
@@ -470,8 +470,6 @@ public final class TextUtil {
 			return builder.append('/');
 		case MODULO:
 			return builder.append('%');
-		case EXP:
-			return builder.append('^');
 		default:
 			return builder.append(operator);
 		}

@@ -57,8 +57,7 @@ public interface TemplatesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	TemplatesPackage eINSTANCE = org.storydriven.storydiagrams.templates.impl.TemplatesPackageImpl
-			.init();
+	TemplatesPackage eINSTANCE = org.storydriven.storydiagrams.templates.impl.TemplatesPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.templates.impl.TemplateBindingImpl <em>Template Binding</em>}' class.
@@ -790,8 +789,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_BINDING__BOUND_PARAMETER = eINSTANCE
-				.getTemplateBinding_BoundParameter();
+		EReference TEMPLATE_BINDING__BOUND_PARAMETER = eINSTANCE.getTemplateBinding_BoundParameter();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Expression</b></em>' containment reference feature.
@@ -799,8 +797,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_BINDING__BINDING_EXPRESSION = eINSTANCE
-				.getTemplateBinding_BindingExpression();
+		EReference TEMPLATE_BINDING__BINDING_EXPRESSION = eINSTANCE.getTemplateBinding_BindingExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Template</b></em>' container reference feature.
@@ -808,8 +805,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_BINDING__TEMPLATE = eINSTANCE
-				.getTemplateBinding_Template();
+		EReference TEMPLATE_BINDING__TEMPLATE = eINSTANCE.getTemplateBinding_Template();
 
 		/**
 		 * The meta object literal for the '<em><b>Property Binding</b></em>' containment reference list feature.
@@ -817,8 +813,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_BINDING__PROPERTY_BINDING = eINSTANCE
-				.getTemplateBinding_PropertyBinding();
+		EReference TEMPLATE_BINDING__PROPERTY_BINDING = eINSTANCE.getTemplateBinding_PropertyBinding();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.templates.impl.PropertyBindingImpl <em>Property Binding</em>}' class.
@@ -836,8 +831,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROPERTY_BINDING__BOUND_PROPERTY = eINSTANCE
-				.getPropertyBinding_BoundProperty();
+		EReference PROPERTY_BINDING__BOUND_PROPERTY = eINSTANCE.getPropertyBinding_BoundProperty();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Expression</b></em>' containment reference feature.
@@ -845,8 +839,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROPERTY_BINDING__BINDING_EXPRESSION = eINSTANCE
-				.getPropertyBinding_BindingExpression();
+		EReference PROPERTY_BINDING__BINDING_EXPRESSION = eINSTANCE.getPropertyBinding_BindingExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Template Binding</b></em>' container reference feature.
@@ -854,8 +847,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROPERTY_BINDING__TEMPLATE_BINDING = eINSTANCE
-				.getPropertyBinding_TemplateBinding();
+		EReference PROPERTY_BINDING__TEMPLATE_BINDING = eINSTANCE.getPropertyBinding_TemplateBinding();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.templates.impl.TemplateSignatureImpl <em>Template Signature</em>}' class.
@@ -873,8 +865,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_SIGNATURE__TEMPLATE_BINDING = eINSTANCE
-				.getTemplateSignature_TemplateBinding();
+		EReference TEMPLATE_SIGNATURE__TEMPLATE_BINDING = eINSTANCE.getTemplateSignature_TemplateBinding();
 
 		/**
 		 * The meta object literal for the '<em><b>Type Parameter</b></em>' containment reference list feature.
@@ -882,8 +873,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_SIGNATURE__TYPE_PARAMETER = eINSTANCE
-				.getTemplateSignature_TypeParameter();
+		EReference TEMPLATE_SIGNATURE__TYPE_PARAMETER = eINSTANCE.getTemplateSignature_TypeParameter();
 
 		/**
 		 * The meta object literal for the '<em><b>Pattern</b></em>' container reference feature.
@@ -891,8 +881,7 @@ public interface TemplatesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEMPLATE_SIGNATURE__PATTERN = eINSTANCE
-				.getTemplateSignature_Pattern();
+		EReference TEMPLATE_SIGNATURE__PATTERN = eINSTANCE.getTemplateSignature_Pattern();
 
 	}
 

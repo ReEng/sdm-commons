@@ -147,13 +147,13 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseStoryPattern(StoryPattern object) {
-			return createStoryPatternAdapter();
+		public Adapter caseMaybeLink(MaybeLink object) {
+			return createMaybeLinkAdapter();
 		}
 
 		@Override
-		public Adapter caseMaybeLink(MaybeLink object) {
-			return createMaybeLinkAdapter();
+		public Adapter caseStoryPattern(StoryPattern object) {
+			return createStoryPatternAdapter();
 		}
 
 		@Override

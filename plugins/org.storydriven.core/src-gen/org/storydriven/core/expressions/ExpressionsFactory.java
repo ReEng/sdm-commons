@@ -23,8 +23,7 @@ public interface ExpressionsFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ExpressionsFactory eINSTANCE = org.storydriven.core.expressions.impl.ExpressionsFactoryImpl
-			.init();
+	ExpressionsFactory eINSTANCE = org.storydriven.core.expressions.impl.ExpressionsFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Textual Expression</em>'.
@@ -34,51 +33,6 @@ public interface ExpressionsFactory extends EFactory {
 	 * @generated
 	 */
 	TextualExpression createTextualExpression();
-
-	/**
-	 * Returns a new object of class '<em>Literal Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Literal Expression</em>'.
-	 * @generated
-	 */
-	LiteralExpression createLiteralExpression();
-
-	/**
-	 * Returns a new object of class '<em>Not Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Not Expression</em>'.
-	 * @generated
-	 */
-	NotExpression createNotExpression();
-
-	/**
-	 * Returns a new object of class '<em>Comparison Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Comparison Expression</em>'.
-	 * @generated
-	 */
-	ComparisonExpression createComparisonExpression();
-
-	/**
-	 * Returns a new object of class '<em>Arithmetic Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Arithmetic Expression</em>'.
-	 * @generated
-	 */
-	ArithmeticExpression createArithmeticExpression();
-
-	/**
-	 * Returns a new object of class '<em>Binary Logic Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Binary Logic Expression</em>'.
-	 * @generated
-	 */
-	BinaryLogicExpression createBinaryLogicExpression();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -8,7 +8,8 @@ Bundle-Activator: org.storydriven.core.provider.CoreEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.storydriven.core.expressions.provider,
+Export-Package: org.storydriven.core.expressions.common.provider,
+ org.storydriven.core.expressions.provider,
  org.storydriven.core.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.core;visibility:=reexport,

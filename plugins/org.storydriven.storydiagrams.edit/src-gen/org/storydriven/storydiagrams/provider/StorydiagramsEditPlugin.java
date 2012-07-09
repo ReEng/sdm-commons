@@ -63,8 +63,7 @@ public final class StorydiagramsEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public StorydiagramsEditPlugin() {
-		super(new ResourceLocator[] { CoreEditPlugin.INSTANCE,
-				EcoreEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] { CoreEditPlugin.INSTANCE, EcoreEditPlugin.INSTANCE, });
 	}
 
 	/**

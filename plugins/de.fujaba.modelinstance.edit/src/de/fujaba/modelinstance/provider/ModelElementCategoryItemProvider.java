@@ -24,6 +24,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 
 import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.modelinstance.ModelinstancePackage;
@@ -187,27 +188,42 @@ public class ModelElementCategoryItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+						CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ExpressionsFactory.eINSTANCE.createNotExpression()));
+						CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+						CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+						CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+						CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
+						CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
+						CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
+						CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
 	}
 
 	/**

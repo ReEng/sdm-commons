@@ -7,22 +7,12 @@
 package org.storydriven.core.expressions.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.storydriven.core.expressions.*;
-import org.storydriven.core.expressions.ArithmeticExpression;
-import org.storydriven.core.expressions.ArithmeticOperator;
-import org.storydriven.core.expressions.BinaryLogicExpression;
-import org.storydriven.core.expressions.ComparingOperator;
-import org.storydriven.core.expressions.ComparisonExpression;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.ExpressionsPackage;
-import org.storydriven.core.expressions.LiteralExpression;
-import org.storydriven.core.expressions.LogicOperator;
-import org.storydriven.core.expressions.NotExpression;
 import org.storydriven.core.expressions.TextualExpression;
 
 /**
@@ -31,8 +21,7 @@ import org.storydriven.core.expressions.TextualExpression;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExpressionsFactoryImpl extends EFactoryImpl implements
-		ExpressionsFactory {
+public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -72,59 +61,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements
 		switch (eClass.getClassifierID()) {
 		case ExpressionsPackage.TEXTUAL_EXPRESSION:
 			return createTextualExpression();
-		case ExpressionsPackage.LITERAL_EXPRESSION:
-			return createLiteralExpression();
-		case ExpressionsPackage.NOT_EXPRESSION:
-			return createNotExpression();
-		case ExpressionsPackage.COMPARISON_EXPRESSION:
-			return createComparisonExpression();
-		case ExpressionsPackage.ARITHMETIC_EXPRESSION:
-			return createArithmeticExpression();
-		case ExpressionsPackage.BINARY_LOGIC_EXPRESSION:
-			return createBinaryLogicExpression();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-		case ExpressionsPackage.LOGIC_OPERATOR:
-			return createLogicOperatorFromString(eDataType, initialValue);
-		case ExpressionsPackage.COMPARING_OPERATOR:
-			return createComparingOperatorFromString(eDataType, initialValue);
-		case ExpressionsPackage.ARITHMETIC_OPERATOR:
-			return createArithmeticOperatorFromString(eDataType, initialValue);
-		default:
-			throw new IllegalArgumentException("The datatype '"
-					+ eDataType.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-		case ExpressionsPackage.LOGIC_OPERATOR:
-			return convertLogicOperatorToString(eDataType, instanceValue);
-		case ExpressionsPackage.COMPARING_OPERATOR:
-			return convertComparingOperatorToString(eDataType, instanceValue);
-		case ExpressionsPackage.ARITHMETIC_OPERATOR:
-			return convertArithmeticOperatorToString(eDataType, instanceValue);
-		default:
-			throw new IllegalArgumentException("The datatype '"
-					+ eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -136,131 +74,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements
 	public TextualExpression createTextualExpression() {
 		TextualExpressionImpl textualExpression = new TextualExpressionImpl();
 		return textualExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LiteralExpression createLiteralExpression() {
-		LiteralExpressionImpl literalExpression = new LiteralExpressionImpl();
-		return literalExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotExpression createNotExpression() {
-		NotExpressionImpl notExpression = new NotExpressionImpl();
-		return notExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ComparisonExpression createComparisonExpression() {
-		ComparisonExpressionImpl comparisonExpression = new ComparisonExpressionImpl();
-		return comparisonExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ArithmeticExpression createArithmeticExpression() {
-		ArithmeticExpressionImpl arithmeticExpression = new ArithmeticExpressionImpl();
-		return arithmeticExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BinaryLogicExpression createBinaryLogicExpression() {
-		BinaryLogicExpressionImpl binaryLogicExpression = new BinaryLogicExpressionImpl();
-		return binaryLogicExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LogicOperator createLogicOperatorFromString(EDataType eDataType,
-			String initialValue) {
-		LogicOperator result = LogicOperator.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue
-					+ "' is not a valid enumerator of '" + eDataType.getName()
-					+ "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertLogicOperatorToString(EDataType eDataType,
-			Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ComparingOperator createComparingOperatorFromString(
-			EDataType eDataType, String initialValue) {
-		ComparingOperator result = ComparingOperator.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue
-					+ "' is not a valid enumerator of '" + eDataType.getName()
-					+ "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertComparingOperatorToString(EDataType eDataType,
-			Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ArithmeticOperator createArithmeticOperatorFromString(
-			EDataType eDataType, String initialValue) {
-		ArithmeticOperator result = ArithmeticOperator.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue
-					+ "' is not a valid enumerator of '" + eDataType.getName()
-					+ "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertArithmeticOperatorToString(EDataType eDataType,
-			Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

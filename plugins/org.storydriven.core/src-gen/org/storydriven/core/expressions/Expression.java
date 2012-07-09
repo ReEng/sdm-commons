@@ -7,7 +7,6 @@
 package org.storydriven.core.expressions;
 
 import org.storydriven.core.CommentableElement;
-import org.storydriven.core.TypedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,5 +22,5 @@ import org.storydriven.core.TypedElement;
  * @model abstract="true"
  * @generated
  */
-public interface Expression extends TypedElement, CommentableElement {
+public interface Expression extends CommentableElement {
 } // Expression

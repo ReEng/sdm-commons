@@ -29,9 +29,8 @@ import org.storydriven.storydiagrams.patterns.PatternsFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModifyingStoryNodeItemProvider extends StoryNodeItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ModifyingStoryNodeItemProvider extends StoryNodeItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -66,12 +65,10 @@ public class ModifyingStoryNodeItemProvider extends StoryNodeItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(ActivitiesPackage.Literals.MODIFYING_STORY_NODE__OWNED_RULE);
+			childrenFeatures.add(ActivitiesPackage.Literals.MODIFYING_STORY_NODE__OWNED_RULE);
 		}
 		return childrenFeatures;
 	}
@@ -86,17 +83,11 @@ public class ModifyingStoryNodeItemProvider extends StoryNodeItemProvider
 	public Object getImage(Object object) {
 		if (object instanceof ModifyingStoryNode) {
 			if (((ModifyingStoryNode) object).isForEach()) {
-				return overlayImage(
-						object,
-						getResourceLocator()
-								.getImage(
-										"elements/activities/ModifyingStoryNode_loop.png"));
+				return overlayImage(object,
+						getResourceLocator().getImage("elements/activities/ModifyingStoryNode_loop.png"));
 			}
 		}
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/activities/ModifyingStoryNode.png"));
+		return overlayImage(object, getResourceLocator().getImage("elements/activities/ModifyingStoryNode.png"));
 	}
 
 	/**
@@ -135,8 +126,7 @@ public class ModifyingStoryNodeItemProvider extends StoryNodeItemProvider
 
 		switch (notification.getFeatureID(ModifyingStoryNode.class)) {
 		case ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -163,16 +153,13 @@ public class ModifyingStoryNodeItemProvider extends StoryNodeItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.MODIFYING_STORY_NODE__OWNED_RULE,
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.MODIFYING_STORY_NODE__OWNED_RULE,
 				PatternsFactory.eINSTANCE.createStoryPattern()));
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.MODIFYING_STORY_NODE__OWNED_RULE,
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.MODIFYING_STORY_NODE__OWNED_RULE,
 				PatternsFactory.eINSTANCE.createMatchingPattern()));
 	}
 

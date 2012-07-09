@@ -9,7 +9,6 @@ package org.storydriven.core.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.storydriven.core.*;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.ExtendableElement;
@@ -74,11 +73,11 @@ public class CoreSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case CorePackage.TYPED_ELEMENT: {
-			TypedElement typedElement = (TypedElement) theEObject;
-			T result = caseTypedElement(typedElement);
+		case CorePackage.COMMENTABLE_ELEMENT: {
+			CommentableElement commentableElement = (CommentableElement) theEObject;
+			T result = caseCommentableElement(commentableElement);
 			if (result == null)
-				result = caseExtendableElement(typedElement);
+				result = caseExtendableElement(commentableElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -99,20 +98,20 @@ public class CoreSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case CorePackage.COMMENTABLE_ELEMENT: {
-			CommentableElement commentableElement = (CommentableElement) theEObject;
-			T result = caseCommentableElement(commentableElement);
-			if (result == null)
-				result = caseExtendableElement(commentableElement);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case CorePackage.NAMED_ELEMENT: {
 			NamedElement namedElement = (NamedElement) theEObject;
 			T result = caseNamedElement(namedElement);
 			if (result == null)
 				result = caseExtendableElement(namedElement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CorePackage.TYPED_ELEMENT: {
+			TypedElement typedElement = (TypedElement) theEObject;
+			T result = caseTypedElement(typedElement);
+			if (result == null)
+				result = caseExtendableElement(typedElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;

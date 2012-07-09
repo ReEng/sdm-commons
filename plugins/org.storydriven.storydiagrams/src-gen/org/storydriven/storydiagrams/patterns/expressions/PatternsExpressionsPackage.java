@@ -89,24 +89,6 @@ public interface PatternsExpressionsPackage extends EPackage {
 	int ATTRIBUTE_VALUE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_VALUE_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_VALUE_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -351,24 +333,6 @@ public interface PatternsExpressionsPackage extends EPackage {
 	int OBJECT_VARIABLE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_VARIABLE_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_VARIABLE_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -604,24 +568,6 @@ public interface PatternsExpressionsPackage extends EPackage {
 	int COLLECTION_SIZE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTION_SIZE_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTION_SIZE_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -855,24 +801,6 @@ public interface PatternsExpressionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int PRIMITIVE_VARIABLE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIMITIVE_VARIABLE_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIMITIVE_VARIABLE_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.

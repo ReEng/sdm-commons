@@ -29,9 +29,8 @@ import org.storydriven.storydiagrams.patterns.PatternsFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MatchingStoryNodeItemProvider extends StoryNodeItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class MatchingStoryNodeItemProvider extends StoryNodeItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -66,12 +65,10 @@ public class MatchingStoryNodeItemProvider extends StoryNodeItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(ActivitiesPackage.Literals.MATCHING_STORY_NODE__OWNED_PATTERN);
+			childrenFeatures.add(ActivitiesPackage.Literals.MATCHING_STORY_NODE__OWNED_PATTERN);
 		}
 		return childrenFeatures;
 	}
@@ -86,17 +83,11 @@ public class MatchingStoryNodeItemProvider extends StoryNodeItemProvider
 	public Object getImage(Object object) {
 		if (object instanceof MatchingStoryNode) {
 			if (((MatchingStoryNode) object).isForEach()) {
-				return overlayImage(
-						object,
-						getResourceLocator()
-								.getImage(
-										"elements/activities/MatchingStoryNode_loop.png"));
+				return overlayImage(object,
+						getResourceLocator().getImage("elements/activities/MatchingStoryNode_loop.png"));
 			}
 		}
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/activities/MatchingStoryNode.png"));
+		return overlayImage(object, getResourceLocator().getImage("elements/activities/MatchingStoryNode.png"));
 	}
 
 	/**
@@ -135,8 +126,7 @@ public class MatchingStoryNodeItemProvider extends StoryNodeItemProvider
 
 		switch (notification.getFeatureID(MatchingStoryNode.class)) {
 		case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -163,12 +153,10 @@ public class MatchingStoryNodeItemProvider extends StoryNodeItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.MATCHING_STORY_NODE__OWNED_PATTERN,
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.MATCHING_STORY_NODE__OWNED_PATTERN,
 				PatternsFactory.eINSTANCE.createMatchingPattern()));
 	}
 

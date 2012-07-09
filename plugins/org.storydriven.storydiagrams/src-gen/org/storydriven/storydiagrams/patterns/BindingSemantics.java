@@ -103,8 +103,7 @@ public enum BindingSemantics implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final BindingSemantics[] VALUES_ARRAY = new BindingSemantics[] {
-			MANDATORY, NEGATIVE, OPTIONAL, };
+	private static final BindingSemantics[] VALUES_ARRAY = new BindingSemantics[] { MANDATORY, NEGATIVE, OPTIONAL, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Binding Semantics</b></em>' enumerators.
@@ -112,8 +111,7 @@ public enum BindingSemantics implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<BindingSemantics> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<BindingSemantics> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Binding Semantics</b></em>' literal with the specified literal value.

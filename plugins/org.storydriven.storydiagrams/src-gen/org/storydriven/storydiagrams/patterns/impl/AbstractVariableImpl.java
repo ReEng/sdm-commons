@@ -45,8 +45,7 @@ import org.storydriven.storydiagrams.patterns.StoryPattern;
  *
  * @generated
  */
-public abstract class AbstractVariableImpl extends VariableImpl implements
-		AbstractVariable {
+public abstract class AbstractVariableImpl extends VariableImpl implements AbstractVariable {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -54,7 +53,7 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = "";
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -143,8 +142,8 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ABSTRACT_VARIABLE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.ABSTRACT_VARIABLE__NAME, oldName,
+					name));
 	}
 
 	/**
@@ -171,10 +170,8 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPattern(StoryPattern newPattern,
-			NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newPattern,
-				PatternsPackage.ABSTRACT_VARIABLE__PATTERN, msgs);
+	public NotificationChain basicSetPattern(StoryPattern newPattern, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newPattern, PatternsPackage.ABSTRACT_VARIABLE__PATTERN, msgs);
 		return msgs;
 	}
 
@@ -186,22 +183,19 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 		if (newPattern != eInternalContainer()
 				|| (eContainerFeatureID() != PatternsPackage.ABSTRACT_VARIABLE__PATTERN && newPattern != null)) {
 			if (EcoreUtil.isAncestor(this, newPattern))
-				throw new IllegalArgumentException(
-						"Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPattern != null)
-				msgs = ((InternalEObject) newPattern).eInverseAdd(this,
-						PatternsPackage.STORY_PATTERN__VARIABLE,
+				msgs = ((InternalEObject) newPattern).eInverseAdd(this, PatternsPackage.STORY_PATTERN__VARIABLE,
 						StoryPattern.class, msgs);
 			msgs = basicSetPattern(newPattern, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ABSTRACT_VARIABLE__PATTERN, newPattern,
-					newPattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.ABSTRACT_VARIABLE__PATTERN,
+					newPattern, newPattern));
 	}
 
 	/**
@@ -218,11 +212,9 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 	 */
 	public void setBindingState(BindingState newBindingState) {
 		BindingState oldBindingState = bindingState;
-		bindingState = newBindingState == null ? BINDING_STATE_EDEFAULT
-				: newBindingState;
+		bindingState = newBindingState == null ? BINDING_STATE_EDEFAULT : newBindingState;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ABSTRACT_VARIABLE__BINDING_STATE,
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.ABSTRACT_VARIABLE__BINDING_STATE,
 					oldBindingState, bindingState));
 	}
 
@@ -236,28 +228,18 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 			bindingExpression = (Expression) eResolveProxy(oldBindingExpression);
 			if (bindingExpression != oldBindingExpression) {
 				InternalEObject newBindingExpression = (InternalEObject) bindingExpression;
-				NotificationChain msgs = oldBindingExpression
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-								null, null);
+				NotificationChain msgs = oldBindingExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION, null, null);
 				if (newBindingExpression.eInternalContainer() == null) {
-					msgs = newBindingExpression
-							.eInverseAdd(
-									this,
-									EOPPOSITE_FEATURE_BASE
-											- PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-									null, msgs);
+					msgs = newBindingExpression.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+							- PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION, null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-							oldBindingExpression, bindingExpression));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION, oldBindingExpression,
+							bindingExpression));
 			}
 		}
 		return bindingExpression;
@@ -275,15 +257,12 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBindingExpression(
-			Expression newBindingExpression, NotificationChain msgs) {
+	public NotificationChain basicSetBindingExpression(Expression newBindingExpression, NotificationChain msgs) {
 		Expression oldBindingExpression = bindingExpression;
 		bindingExpression = newBindingExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-					oldBindingExpression, newBindingExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION, oldBindingExpression, newBindingExpression);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -300,26 +279,17 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 		if (newBindingExpression != bindingExpression) {
 			NotificationChain msgs = null;
 			if (bindingExpression != null)
-				msgs = ((InternalEObject) bindingExpression)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject) bindingExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION, null, msgs);
 			if (newBindingExpression != null)
-				msgs = ((InternalEObject) newBindingExpression)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject) newBindingExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+						- PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION, null, msgs);
 			msgs = basicSetBindingExpression(newBindingExpression, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-					newBindingExpression, newBindingExpression));
+					PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION, newBindingExpression, newBindingExpression));
 	}
 
 	/**
@@ -328,10 +298,8 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 	 */
 	public EList<Constraint> getConstraints() {
 		if (constraints == null) {
-			constraints = new EObjectContainmentWithInverseEList.Resolving<Constraint>(
-					Constraint.class, this,
-					PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT,
-					PatternsPackage.CONSTRAINT__OBJECT_VARIABLE);
+			constraints = new EObjectContainmentWithInverseEList.Resolving<Constraint>(Constraint.class, this,
+					PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT, PatternsPackage.CONSTRAINT__OBJECT_VARIABLE);
 		}
 		return constraints;
 	}
@@ -342,9 +310,8 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 	 */
 	public EList<AbstractLinkVariable> getIncomingLinks() {
 		if (incomingLinks == null) {
-			incomingLinks = new EObjectWithInverseResolvingEList<AbstractLinkVariable>(
-					AbstractLinkVariable.class, this,
-					PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK,
+			incomingLinks = new EObjectWithInverseResolvingEList<AbstractLinkVariable>(AbstractLinkVariable.class,
+					this, PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK,
 					PatternsPackage.ABSTRACT_LINK_VARIABLE__TARGET);
 		}
 		return incomingLinks;
@@ -356,19 +323,16 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case PatternsPackage.ABSTRACT_VARIABLE__PATTERN:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetPattern((StoryPattern) otherEnd, msgs);
 		case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getConstraints())
-					.basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getConstraints()).basicAdd(otherEnd, msgs);
 		case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getIncomingLinks())
-					.basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getIncomingLinks()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -378,19 +342,16 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case PatternsPackage.ABSTRACT_VARIABLE__PATTERN:
 			return basicSetPattern(null, msgs);
 		case PatternsPackage.ABSTRACT_VARIABLE__BINDING_EXPRESSION:
 			return basicSetBindingExpression(null, msgs);
 		case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT:
-			return ((InternalEList<?>) getConstraints()).basicRemove(otherEnd,
-					msgs);
+			return ((InternalEList<?>) getConstraints()).basicRemove(otherEnd, msgs);
 		case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK:
-			return ((InternalEList<?>) getIncomingLinks()).basicRemove(
-					otherEnd, msgs);
+			return ((InternalEList<?>) getIncomingLinks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -400,12 +361,10 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(
-			NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case PatternsPackage.ABSTRACT_VARIABLE__PATTERN:
-			return eInternalContainer().eInverseRemove(this,
-					PatternsPackage.STORY_PATTERN__VARIABLE,
+			return eInternalContainer().eInverseRemove(this, PatternsPackage.STORY_PATTERN__VARIABLE,
 					StoryPattern.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -460,13 +419,11 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 			return;
 		case PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT:
 			getConstraints().clear();
-			getConstraints()
-					.addAll((Collection<? extends Constraint>) newValue);
+			getConstraints().addAll((Collection<? extends Constraint>) newValue);
 			return;
 		case PatternsPackage.ABSTRACT_VARIABLE__INCOMING_LINK:
 			getIncomingLinks().clear();
-			getIncomingLinks().addAll(
-					(Collection<? extends AbstractLinkVariable>) newValue);
+			getIncomingLinks().addAll((Collection<? extends AbstractLinkVariable>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -509,8 +466,7 @@ public abstract class AbstractVariableImpl extends VariableImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case PatternsPackage.ABSTRACT_VARIABLE__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
-					.equals(name);
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case PatternsPackage.ABSTRACT_VARIABLE__PATTERN:
 			return basicGetPattern() != null;
 		case PatternsPackage.ABSTRACT_VARIABLE__BINDING_STATE:

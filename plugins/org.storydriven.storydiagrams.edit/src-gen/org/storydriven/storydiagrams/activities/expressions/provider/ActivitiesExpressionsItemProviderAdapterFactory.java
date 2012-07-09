@@ -34,8 +34,7 @@ import org.storydriven.storydiagrams.activities.expressions.util.ActivitiesExpre
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivitiesExpressionsItemProviderAdapterFactory extends
-		ActivitiesExpressionsAdapterFactory implements
+public class ActivitiesExpressionsItemProviderAdapterFactory extends ActivitiesExpressionsAdapterFactory implements
 		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
@@ -92,8 +91,7 @@ public class ActivitiesExpressionsItemProviderAdapterFactory extends
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -115,13 +113,12 @@ public class ActivitiesExpressionsItemProviderAdapterFactory extends
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createExceptionVariableExpressionAdapter() {
 		if (exceptionVariableExpressionItemProvider == null) {
-			exceptionVariableExpressionItemProvider = new ExceptionVariableExpressionItemProvider(
-					this);
+			exceptionVariableExpressionItemProvider = new CustomExceptionVariableExpressionItemProvider(this);
 		}
 
 		return exceptionVariableExpressionItemProvider;
@@ -134,8 +131,7 @@ public class ActivitiesExpressionsItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -144,8 +140,7 @@ public class ActivitiesExpressionsItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 

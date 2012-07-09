@@ -46,23 +46,21 @@ public enum LinkConstraintType implements Enumerator {
 	LAST(1, "LAST", "LAST"),
 
 	/**
-	 * The '<em><b>DIRECT SUCCESSOR</b></em>' literal object.
+	 * The '<em><b>NEXT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #DIRECT_SUCCESSOR_VALUE
+	 * @see #NEXT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	DIRECT_SUCCESSOR(2, "DIRECT_SUCCESSOR", "DIRECT_SUCCESSOR"),
-
-	/**
-	 * The '<em><b>INDIRECT SUCCESSOR</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #INDIRECT_SUCCESSOR_VALUE
-	 * @generated
-	 * @ordered
-	 */
+	NEXT(2, "NEXT", "NEXT"), /**
+								 * The '<em><b>INDIRECT SUCCESSOR</b></em>' literal object.
+								 * <!-- begin-user-doc -->
+								 * <!-- end-user-doc -->
+								 * @see #INDIRECT_SUCCESSOR_VALUE
+								 * @generated
+								 * @ordered
+								 */
 	INDIRECT_SUCCESSOR(3, "INDIRECT_SUCCESSOR", "INDIRECT_SUCCESSOR"),
 
 	/**
@@ -106,19 +104,19 @@ public enum LinkConstraintType implements Enumerator {
 	public static final int LAST_VALUE = 1;
 
 	/**
-	 * The '<em><b>DIRECT SUCCESSOR</b></em>' literal value.
+	 * The '<em><b>NEXT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>DIRECT SUCCESSOR</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>NEXT</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DIRECT_SUCCESSOR
+	 * @see #NEXT
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DIRECT_SUCCESSOR_VALUE = 2;
+	public static final int NEXT_VALUE = 2;
 
 	/**
 	 * The '<em><b>INDIRECT SUCCESSOR</b></em>' literal value.
@@ -156,8 +154,8 @@ public enum LinkConstraintType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final LinkConstraintType[] VALUES_ARRAY = new LinkConstraintType[] {
-			FIRST, LAST, DIRECT_SUCCESSOR, INDIRECT_SUCCESSOR, INDEX, };
+	private static final LinkConstraintType[] VALUES_ARRAY = new LinkConstraintType[] { FIRST, LAST, NEXT,
+			INDIRECT_SUCCESSOR, INDEX, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Link Constraint Type</b></em>' enumerators.
@@ -165,8 +163,7 @@ public enum LinkConstraintType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<LinkConstraintType> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<LinkConstraintType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Link Constraint Type</b></em>' literal with the specified literal value.
@@ -212,8 +209,8 @@ public enum LinkConstraintType implements Enumerator {
 			return FIRST;
 		case LAST_VALUE:
 			return LAST;
-		case DIRECT_SUCCESSOR_VALUE:
-			return DIRECT_SUCCESSOR;
+		case NEXT_VALUE:
+			return NEXT;
 		case INDIRECT_SUCCESSOR_VALUE:
 			return INDIRECT_SUCCESSOR;
 		case INDEX_VALUE:

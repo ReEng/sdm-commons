@@ -89,24 +89,6 @@ public interface CallsExpressionsPackage extends EPackage {
 	int METHOD_CALL_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int METHOD_CALL_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int METHOD_CALL_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -367,24 +349,6 @@ public interface CallsExpressionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETER_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -684,8 +648,7 @@ public interface CallsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference METHOD_CALL_EXPRESSION__TARGET = eINSTANCE
-				.getMethodCallExpression_Target();
+		EReference METHOD_CALL_EXPRESSION__TARGET = eINSTANCE.getMethodCallExpression_Target();
 
 		/**
 		 * The meta object literal for the '<em><b>Opaque Callable</b></em>' containment reference feature.
@@ -693,8 +656,7 @@ public interface CallsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE = eINSTANCE
-				.getMethodCallExpression_OpaqueCallable();
+		EReference METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE = eINSTANCE.getMethodCallExpression_OpaqueCallable();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.calls.expressions.impl.ParameterExpressionImpl <em>Parameter Expression</em>}' class.
@@ -712,8 +674,7 @@ public interface CallsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PARAMETER_EXPRESSION__PARAMETER = eINSTANCE
-				.getParameterExpression_Parameter();
+		EReference PARAMETER_EXPRESSION__PARAMETER = eINSTANCE.getParameterExpression_Parameter();
 
 	}
 

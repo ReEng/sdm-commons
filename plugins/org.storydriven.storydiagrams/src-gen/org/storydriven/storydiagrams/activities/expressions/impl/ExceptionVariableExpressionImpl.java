@@ -8,8 +8,6 @@ package org.storydriven.storydiagrams.activities.expressions.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
@@ -28,8 +26,7 @@ import org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExp
  *
  * @generated
  */
-public class ExceptionVariableExpressionImpl extends ExpressionImpl implements
-		ExceptionVariableExpression {
+public class ExceptionVariableExpressionImpl extends ExpressionImpl implements ExceptionVariableExpression {
 	/**
 	 * The cached value of the '{@link #getExceptionVariable() <em>Exception Variable</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -66,9 +63,7 @@ public class ExceptionVariableExpressionImpl extends ExpressionImpl implements
 			exceptionVariable = (ExceptionVariable) eResolveProxy(oldExceptionVariable);
 			if (exceptionVariable != oldExceptionVariable) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
 							ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE,
 							oldExceptionVariable, exceptionVariable));
 			}
@@ -92,25 +87,11 @@ public class ExceptionVariableExpressionImpl extends ExpressionImpl implements
 		ExceptionVariable oldExceptionVariable = exceptionVariable;
 		exceptionVariable = newExceptionVariable;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
+			eNotify(new ENotificationImpl(this, Notification.SET,
 					ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE,
 					oldExceptionVariable, exceptionVariable));
 	}
 
-	@Override
-	public EClassifier basicGetType() {
-		ExceptionVariable exceptionVariable = getExceptionVariable();
-		return exceptionVariable == null ? null : exceptionVariable.getType();
-	}
-
-	@Override
-	public EGenericType basicGetGenericType() {
-		ExceptionVariable exceptionVariable = getExceptionVariable();
-		return exceptionVariable == null ? null : exceptionVariable
-				.getGenericType();
-	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

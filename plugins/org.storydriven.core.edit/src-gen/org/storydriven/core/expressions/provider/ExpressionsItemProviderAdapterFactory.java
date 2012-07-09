@@ -34,9 +34,8 @@ import org.storydriven.core.expressions.util.ExpressionsAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExpressionsItemProviderAdapterFactory extends
-		ExpressionsAdapterFactory implements ComposeableAdapterFactory,
-		IChangeNotifier, IDisposable {
+public class ExpressionsItemProviderAdapterFactory extends ExpressionsAdapterFactory implements
+		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -87,135 +86,15 @@ public class ExpressionsItemProviderAdapterFactory extends
 	 * This creates an adapter for a {@link org.storydriven.core.expressions.TextualExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createTextualExpressionAdapter() {
 		if (textualExpressionItemProvider == null) {
-			textualExpressionItemProvider = new TextualExpressionItemProvider(
-					this);
+			textualExpressionItemProvider = new CustomTextualExpressionItemProvider(this);
 		}
 
 		return textualExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.LiteralExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected LiteralExpressionItemProvider literalExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.LiteralExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createLiteralExpressionAdapter() {
-		if (literalExpressionItemProvider == null) {
-			literalExpressionItemProvider = new LiteralExpressionItemProvider(
-					this);
-		}
-
-		return literalExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.NotExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected NotExpressionItemProvider notExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.NotExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createNotExpressionAdapter() {
-		if (notExpressionItemProvider == null) {
-			notExpressionItemProvider = new NotExpressionItemProvider(this);
-		}
-
-		return notExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.ComparisonExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ComparisonExpressionItemProvider comparisonExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.ComparisonExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createComparisonExpressionAdapter() {
-		if (comparisonExpressionItemProvider == null) {
-			comparisonExpressionItemProvider = new ComparisonExpressionItemProvider(
-					this);
-		}
-
-		return comparisonExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.ArithmeticExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ArithmeticExpressionItemProvider arithmeticExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.ArithmeticExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createArithmeticExpressionAdapter() {
-		if (arithmeticExpressionItemProvider == null) {
-			arithmeticExpressionItemProvider = new ArithmeticExpressionItemProvider(
-					this);
-		}
-
-		return arithmeticExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.BinaryLogicExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BinaryLogicExpressionItemProvider binaryLogicExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.BinaryLogicExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBinaryLogicExpressionAdapter() {
-		if (binaryLogicExpressionItemProvider == null) {
-			binaryLogicExpressionItemProvider = new BinaryLogicExpressionItemProvider(
-					this);
-		}
-
-		return binaryLogicExpressionItemProvider;
 	}
 
 	/**
@@ -225,8 +104,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -235,8 +113,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -270,8 +147,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -322,16 +198,6 @@ public class ExpressionsItemProviderAdapterFactory extends
 	public void dispose() {
 		if (textualExpressionItemProvider != null)
 			textualExpressionItemProvider.dispose();
-		if (literalExpressionItemProvider != null)
-			literalExpressionItemProvider.dispose();
-		if (notExpressionItemProvider != null)
-			notExpressionItemProvider.dispose();
-		if (comparisonExpressionItemProvider != null)
-			comparisonExpressionItemProvider.dispose();
-		if (arithmeticExpressionItemProvider != null)
-			arithmeticExpressionItemProvider.dispose();
-		if (binaryLogicExpressionItemProvider != null)
-			binaryLogicExpressionItemProvider.dispose();
 	}
 
 }

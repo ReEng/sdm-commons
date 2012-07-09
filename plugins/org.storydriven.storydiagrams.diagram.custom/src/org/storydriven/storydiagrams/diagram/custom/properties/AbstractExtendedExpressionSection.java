@@ -10,7 +10,6 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -42,30 +41,29 @@ import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
-import org.storydriven.core.expressions.ArithmeticExpression;
-import org.storydriven.core.expressions.ArithmeticOperator;
-import org.storydriven.core.expressions.BinaryExpression;
-import org.storydriven.core.expressions.BinaryLogicExpression;
-import org.storydriven.core.expressions.ComparingOperator;
-import org.storydriven.core.expressions.ComparisonExpression;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.ExpressionsFactory;
-import org.storydriven.core.expressions.ExpressionsPackage;
-import org.storydriven.core.expressions.LiteralExpression;
-import org.storydriven.core.expressions.LogicOperator;
-import org.storydriven.core.expressions.NotExpression;
 import org.storydriven.core.expressions.TextualExpression;
+import org.storydriven.core.expressions.common.ArithmeticExpression;
+import org.storydriven.core.expressions.common.ArithmeticOperator;
+import org.storydriven.core.expressions.common.BinaryExpression;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
+import org.storydriven.core.expressions.common.CommonExpressionsPackage;
+import org.storydriven.core.expressions.common.ComparingOperator;
+import org.storydriven.core.expressions.common.ComparisonExpression;
+import org.storydriven.core.expressions.common.LiteralExpression;
+import org.storydriven.core.expressions.common.LogicExpression;
+import org.storydriven.core.expressions.common.LogicOperator;
+import org.storydriven.core.expressions.common.UnaryExpression;
 import org.storydriven.core.expressions.util.ExpressionUtils;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
 import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
 import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
-import org.storydriven.storydiagrams.diagram.custom.ResourceManager;
 import org.storydriven.storydiagrams.diagram.custom.SourceViewerProvider;
 import org.storydriven.storydiagrams.diagram.custom.providers.ComposedAdapterFactoryLabelProvider;
 import org.storydriven.storydiagrams.diagram.custom.providers.ContainmentContentProvider;
 import org.storydriven.storydiagrams.diagram.custom.util.ActivityUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.BoundUtil;
-import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.TextUtil;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.PrimitiveVariable;
@@ -112,9 +110,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 	private Combo arithmeticOperatorCombo;
 	private Combo comparisonOperatorCombo;
 	private Text literalValueText;
-	private Combo literalTypeCombo;
 
-	private Map<String, EDataType> literalTypes;
 	private Map<String, ObjectVariable> objectVariables;
 	private Map<String, PrimitiveVariable> primitiveVariables;
 	private Map<String, EAttribute> attributes;
@@ -128,7 +124,6 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 	private Combo attributesCombo;
 
 	public AbstractExtendedExpressionSection() {
-		literalTypes = new LinkedHashMap<String, EDataType>();
 		objectVariables = new LinkedHashMap<String, ObjectVariable>();
 		primitiveVariables = new LinkedHashMap<String, PrimitiveVariable>();
 		attributes = new LinkedHashMap<String, EAttribute>();
@@ -202,9 +197,9 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 						builder.append(TextUtil.getText(((ArithmeticExpression) element).getOperator()));
 					} else if (element instanceof ComparisonExpression) {
 						builder.append(TextUtil.getText(((ComparisonExpression) element).getOperator()));
-					} else if (element instanceof BinaryLogicExpression) {
-						builder.append(TextUtil.getText(((BinaryLogicExpression) element).getOperator()));
-					} else if (element instanceof NotExpression) {
+					} else if (element instanceof LogicExpression) {
+						builder.append(TextUtil.getText(((LogicExpression) element).getOperator()));
+					} else if (element instanceof UnaryExpression) {
 						// nothing
 					} else if (element instanceof Expression) {
 						builder.append(TextUtil.getText((Expression) element));
@@ -268,7 +263,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 		comparisonButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				internalSetExpression(ExpressionsFactory.eINSTANCE.createComparisonExpression());
+				internalSetExpression(CommonExpressionsFactory.eINSTANCE.createComparisonExpression());
 			}
 		});
 
@@ -292,7 +287,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 		logicButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				internalSetExpression(ExpressionsFactory.eINSTANCE.createBinaryLogicExpression());
+				internalSetExpression(CommonExpressionsFactory.eINSTANCE.createLogicExpression());
 			}
 		});
 
@@ -300,15 +295,36 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 		arithmeticButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				internalSetExpression(ExpressionsFactory.eINSTANCE.createArithmeticExpression());
+				internalSetExpression(CommonExpressionsFactory.eINSTANCE.createArithmeticExpression());
 			}
 		});
 
-		Button literalButton = factory.createButton(createComposite, "Literal Expression", SWT.PUSH);
-		literalButton.addSelectionListener(new SelectionAdapter() {
+		Button booleanLiteralButton = factory.createButton(createComposite, "Boolean Literal Expression", SWT.PUSH);
+		booleanLiteralButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				internalSetExpression(ExpressionsFactory.eINSTANCE.createLiteralExpression());
+				internalSetExpression(CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression());
+			}
+		});
+		Button integerLiteralButton = factory.createButton(createComposite, "Integer Literal Expression", SWT.PUSH);
+		integerLiteralButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				internalSetExpression(CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression());
+			}
+		});
+		Button doubleLiteralButton = factory.createButton(createComposite, "Double Literal Expression", SWT.PUSH);
+		doubleLiteralButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				internalSetExpression(CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression());
+			}
+		});
+		Button stringLiteralButton = factory.createButton(createComposite, "String Literal Expression", SWT.PUSH);
+		stringLiteralButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				internalSetExpression(CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression());
 			}
 		});
 
@@ -333,24 +349,13 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 			literalPC = factory.createFlatFormComposite(treePropertiesComposite);
 			GridLayoutFactory.fillDefaults().numColumns(2).applyTo(literalPC);
 
-			factory.createLabel(literalPC, "Type:", SWT.TRAIL);
-			literalTypeCombo = new Combo(literalPC, SWT.READ_ONLY);
-			factory.adapt(literalTypeCombo);
-			GridDataFactory.fillDefaults().grab(true, false).applyTo(literalTypeCombo);
-			literalTypeCombo.addSelectionListener(new SelectionAdapter() {
-				@Override
-				public void widgetSelected(SelectionEvent e) {
-					changeProperty(ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE_TYPE,
-							literalTypes.get(literalTypeCombo.getText()));
-				}
-			});
-
 			factory.createLabel(literalPC, "Value:", SWT.TRAIL);
 			literalValueText = factory.createText(literalPC, EMPTY, SWT.BORDER | SWT.SINGLE);
 			literalValueText.addModifyListener(new ModifyListener() {
 				@Override
 				public void modifyText(ModifyEvent e) {
-					changeProperty(ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE, literalValueText.getText());
+					changeProperty(CommonExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE,
+							literalValueText.getText());
 				}
 			});
 			GridDataFactory.fillDefaults().grab(true, false).applyTo(literalValueText);
@@ -374,7 +379,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					Object value = ComparingOperator.get(comparisonOperatorCombo.getSelectionIndex());
-					changeProperty(ExpressionsPackage.Literals.COMPARISON_EXPRESSION__OPERATOR, value);
+					changeProperty(CommonExpressionsPackage.Literals.COMPARISON_EXPRESSION__OPERATOR, value);
 				}
 			});
 		}
@@ -397,7 +402,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					Object value = ArithmeticOperator.get(arithmeticOperatorCombo.getSelectionIndex());
-					changeProperty(ExpressionsPackage.Literals.ARITHMETIC_EXPRESSION__OPERATOR, value);
+					changeProperty(CommonExpressionsPackage.Literals.ARITHMETIC_EXPRESSION__OPERATOR, value);
 				}
 			});
 		}
@@ -420,7 +425,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					Object value = LogicOperator.get(logicOperatorCombo.getSelectionIndex());
-					changeProperty(ExpressionsPackage.Literals.BINARY_LOGIC_EXPRESSION__OPERATOR, value);
+					changeProperty(CommonExpressionsPackage.Literals.LOGIC_EXPRESSION__OPERATOR, value);
 				}
 			});
 		}
@@ -675,12 +680,6 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 				String value = le.getValue();
 				literalValueText.setText(value == null ? EMPTY : value);
 
-				String[] items = getLiteralTypeItems();
-				int index = getLiteralTypeIndex(le.getValueType());
-
-				literalTypeCombo.setItems(items);
-				literalTypeCombo.select(index);
-
 				control = literalPC;
 			} else if (selected instanceof ComparisonExpression) {
 				ComparisonExpression ce = (ComparisonExpression) selected;
@@ -692,8 +691,8 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 				arithmeticOperatorCombo.select(ae.getOperator().ordinal());
 
 				control = arithmeticPC;
-			} else if (selected instanceof BinaryLogicExpression) {
-				BinaryLogicExpression le = (BinaryLogicExpression) selected;
+			} else if (selected instanceof LogicExpression) {
+				LogicExpression le = (LogicExpression) selected;
 				logicOperatorCombo.select(le.getOperator().ordinal());
 
 				control = logicPC;
@@ -738,34 +737,6 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 		}
 		properties.topControl = control;
 		treePropertiesComposite.layout();
-	}
-
-	private String[] getLiteralTypeItems() {
-		// clear
-		literalTypes.clear();
-
-		// get available types
-		ResourceManager manager = ResourceManager.get(ActivityUtil.getActivity(getElement()));
-
-		// collect them
-		for (EDataType type : manager.getEDataTypes()) {
-			String key = EcoreTextUtil.getQualifiedText(type);
-			literalTypes.put(key, type);
-		}
-
-		return literalTypes.keySet().toArray(new String[literalTypes.keySet().size()]);
-	}
-
-	private int getLiteralTypeIndex(EDataType type) {
-		int index = 0;
-		for (EDataType check : literalTypes.values()) {
-			if (check.equals(type)) {
-				return index;
-			}
-			index++;
-		}
-
-		return -1;
 	}
 
 	private String[] getObjectVariableItems() {
@@ -902,19 +873,19 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 				BinaryExpression be = (BinaryExpression) element;
 				if (be.getLeftExpression() == null) {
 					String prefix = "Left";
-					EStructuralFeature feature = ExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION;
+					EStructuralFeature feature = CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION;
 
 					createMenuItems(menu, feature, prefix);
 				}
 
 				if (be.getRightExpression() == null) {
 					String prefix = "Right";
-					EStructuralFeature feature = ExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION;
+					EStructuralFeature feature = CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION;
 
 					createMenuItems(menu, feature, prefix);
 				}
-			} else if (element instanceof NotExpression) {
-				EStructuralFeature feature = ExpressionsPackage.Literals.NOT_EXPRESSION__NEGATED_EXPRESSION;
+			} else if (element instanceof UnaryExpression) {
+				EStructuralFeature feature = CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION;
 
 				createMenuItems(menu, feature, null);
 			}
@@ -944,11 +915,14 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 
 	private void createMenuItems(Menu menu, final EStructuralFeature feature, String prefix) {
 		// core
-		createMenuItem(menu, feature, ExpressionsFactory.eINSTANCE.createArithmeticExpression(), prefix);
-		createMenuItem(menu, feature, ExpressionsFactory.eINSTANCE.createBinaryLogicExpression(), prefix);
-		createMenuItem(menu, feature, ExpressionsFactory.eINSTANCE.createComparisonExpression(), prefix);
-		createMenuItem(menu, feature, ExpressionsFactory.eINSTANCE.createLiteralExpression(), prefix);
-		createMenuItem(menu, feature, ExpressionsFactory.eINSTANCE.createNotExpression(), prefix);
+		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createArithmeticExpression(), prefix);
+		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createLogicExpression(), prefix);
+		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createComparisonExpression(), prefix);
+		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createUnaryExpression(), prefix);
+		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression(), prefix);
+		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression(), prefix);
+		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression(), prefix);
+		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression(), prefix);
 
 		// calls
 		new MenuItem(menu, SWT.SEPARATOR);

@@ -136,10 +136,10 @@ public class PatternsValidator extends EObjectValidator {
 			return validateInclusionLink((InclusionLink) value, diagnostics, context);
 		case PatternsPackage.MATCHING_PATTERN:
 			return validateMatchingPattern((MatchingPattern) value, diagnostics, context);
-		case PatternsPackage.STORY_PATTERN:
-			return validateStoryPattern((StoryPattern) value, diagnostics, context);
 		case PatternsPackage.MAYBE_LINK:
 			return validateMaybeLink((MaybeLink) value, diagnostics, context);
+		case PatternsPackage.STORY_PATTERN:
+			return validateStoryPattern((StoryPattern) value, diagnostics, context);
 		case PatternsPackage.BINDING_STATE:
 			return validateBindingState((BindingState) value, diagnostics, context);
 		case PatternsPackage.BINDING_SEMANTICS:

@@ -103,8 +103,7 @@ public enum BindingState implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final BindingState[] VALUES_ARRAY = new BindingState[] {
-			UNBOUND, BOUND, MAYBE_BOUND, };
+	private static final BindingState[] VALUES_ARRAY = new BindingState[] { UNBOUND, BOUND, MAYBE_BOUND, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Binding State</b></em>' enumerators.
@@ -112,8 +111,7 @@ public enum BindingState implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<BindingState> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<BindingState> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Binding State</b></em>' literal with the specified literal value.

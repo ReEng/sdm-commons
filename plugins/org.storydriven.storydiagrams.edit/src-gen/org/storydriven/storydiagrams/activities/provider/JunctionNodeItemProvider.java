@@ -25,9 +25,8 @@ import org.storydriven.storydiagrams.activities.JunctionNode;
  * <!-- end-user-doc -->
  * @generated
  */
-public class JunctionNodeItemProvider extends ActivityNodeItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class JunctionNodeItemProvider extends ActivityNodeItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -61,10 +60,7 @@ public class JunctionNodeItemProvider extends ActivityNodeItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/activities/JunctionNode.png"));
+		return overlayImage(object, getResourceLocator().getImage("elements/activities/JunctionNode.png"));
 	}
 
 	/**
@@ -111,8 +107,7 @@ public class JunctionNodeItemProvider extends ActivityNodeItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

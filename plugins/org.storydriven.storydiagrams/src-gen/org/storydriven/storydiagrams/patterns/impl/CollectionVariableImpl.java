@@ -19,7 +19,8 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.storydiagrams.patterns.impl.CollectionVariableImpl#isMaybeEmpty <em>Maybe Empty</em>}</li>
+ *   <li>{@link org.storydriven.storydiagrams.patterns.impl.CollectionVariableImpl#isAtLeastOne <em>At Least One</em>}</li>
+ *   <li>{@link org.storydriven.storydiagrams.patterns.impl.CollectionVariableImpl#isUnique <em>Unique</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,24 +28,44 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
  */
 public class CollectionVariableImpl extends ObjectVariableImpl implements CollectionVariable {
 	/**
-	 * The default value of the '{@link #isMaybeEmpty() <em>Maybe Empty</em>}' attribute.
+	 * The default value of the '{@link #isAtLeastOne() <em>At Least One</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isMaybeEmpty()
+	 * @see #isAtLeastOne()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean MAYBE_EMPTY_EDEFAULT = false;
+	protected static final boolean AT_LEAST_ONE_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isMaybeEmpty() <em>Maybe Empty</em>}' attribute.
+	 * The cached value of the '{@link #isAtLeastOne() <em>At Least One</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isMaybeEmpty()
+	 * @see #isAtLeastOne()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean maybeEmpty = MAYBE_EMPTY_EDEFAULT;
+	protected boolean atLeastOne = AT_LEAST_ONE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isUnique() <em>Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUnique()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean UNIQUE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isUnique() <em>Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUnique()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean unique = UNIQUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,8 +91,8 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements Collec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isMaybeEmpty() {
-		return maybeEmpty;
+	public boolean isAtLeastOne() {
+		return atLeastOne;
 	}
 
 	/**
@@ -79,12 +100,34 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements Collec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMaybeEmpty(boolean newMaybeEmpty) {
-		boolean oldMaybeEmpty = maybeEmpty;
-		maybeEmpty = newMaybeEmpty;
+	public void setAtLeastOne(boolean newAtLeastOne) {
+		boolean oldAtLeastOne = atLeastOne;
+		atLeastOne = newAtLeastOne;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.COLLECTION_VARIABLE__MAYBE_EMPTY,
-					oldMaybeEmpty, maybeEmpty));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE,
+					oldAtLeastOne, atLeastOne));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isUnique() {
+		return unique;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUnique(boolean newUnique) {
+		boolean oldUnique = unique;
+		unique = newUnique;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.COLLECTION_VARIABLE__UNIQUE,
+					oldUnique, unique));
 	}
 
 	/**
@@ -95,8 +138,10 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements Collec
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PatternsPackage.COLLECTION_VARIABLE__MAYBE_EMPTY:
-			return isMaybeEmpty();
+		case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
+			return isAtLeastOne();
+		case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
+			return isUnique();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -109,8 +154,11 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements Collec
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PatternsPackage.COLLECTION_VARIABLE__MAYBE_EMPTY:
-			setMaybeEmpty((Boolean) newValue);
+		case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
+			setAtLeastOne((Boolean) newValue);
+			return;
+		case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
+			setUnique((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -124,8 +172,11 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements Collec
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PatternsPackage.COLLECTION_VARIABLE__MAYBE_EMPTY:
-			setMaybeEmpty(MAYBE_EMPTY_EDEFAULT);
+		case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
+			setAtLeastOne(AT_LEAST_ONE_EDEFAULT);
+			return;
+		case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
+			setUnique(UNIQUE_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -139,8 +190,10 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements Collec
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PatternsPackage.COLLECTION_VARIABLE__MAYBE_EMPTY:
-			return maybeEmpty != MAYBE_EMPTY_EDEFAULT;
+		case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
+			return atLeastOne != AT_LEAST_ONE_EDEFAULT;
+		case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
+			return unique != UNIQUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,8 +209,10 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements Collec
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (maybeEmpty: ");
-		result.append(maybeEmpty);
+		result.append(" (atLeastOne: ");
+		result.append(atLeastOne);
+		result.append(", unique: ");
+		result.append(unique);
 		result.append(')');
 		return result.toString();
 	}

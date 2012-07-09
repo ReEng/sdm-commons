@@ -27,8 +27,7 @@ import org.storydriven.storydiagrams.patterns.StoryPattern;
  *
  * @generated
  */
-public class ModifyingStoryNodeImpl extends StoryNodeImpl implements
-		ModifyingStoryNode {
+public class ModifyingStoryNodeImpl extends StoryNodeImpl implements ModifyingStoryNode {
 	/**
 	 * The cached value of the '{@link #getOwnedRule() <em>Owned Rule</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -65,26 +64,17 @@ public class ModifyingStoryNodeImpl extends StoryNodeImpl implements
 			ownedRule = (StoryPattern) eResolveProxy(oldOwnedRule);
 			if (ownedRule != oldOwnedRule) {
 				InternalEObject newOwnedRule = (InternalEObject) ownedRule;
-				NotificationChain msgs = oldOwnedRule
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE,
-								null, null);
+				NotificationChain msgs = oldOwnedRule.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE, null, null);
 				if (newOwnedRule.eInternalContainer() == null) {
-					msgs = newOwnedRule
-							.eInverseAdd(
-									this,
-									EOPPOSITE_FEATURE_BASE
-											- ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE,
-									null, msgs);
+					msgs = newOwnedRule.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+							- ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE, null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE,
-							oldOwnedRule, ownedRule));
+							ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE, oldOwnedRule, ownedRule));
 			}
 		}
 		return ownedRule;
@@ -102,15 +92,12 @@ public class ModifyingStoryNodeImpl extends StoryNodeImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOwnedRule(StoryPattern newOwnedRule,
-			NotificationChain msgs) {
+	public NotificationChain basicSetOwnedRule(StoryPattern newOwnedRule, NotificationChain msgs) {
 		StoryPattern oldOwnedRule = ownedRule;
 		ownedRule = newOwnedRule;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE,
-					oldOwnedRule, newOwnedRule);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE, oldOwnedRule, newOwnedRule);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -127,25 +114,16 @@ public class ModifyingStoryNodeImpl extends StoryNodeImpl implements
 		if (newOwnedRule != ownedRule) {
 			NotificationChain msgs = null;
 			if (ownedRule != null)
-				msgs = ((InternalEObject) ownedRule)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE,
-								null, msgs);
+				msgs = ((InternalEObject) ownedRule).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE, null, msgs);
 			if (newOwnedRule != null)
-				msgs = ((InternalEObject) newOwnedRule)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE,
-								null, msgs);
+				msgs = ((InternalEObject) newOwnedRule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+						- ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE, null, msgs);
 			msgs = basicSetOwnedRule(newOwnedRule, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE,
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE,
 					newOwnedRule, newOwnedRule));
 	}
 
@@ -154,8 +132,7 @@ public class ModifyingStoryNodeImpl extends StoryNodeImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE:
 			return basicSetOwnedRule(null, msgs);
@@ -248,8 +225,7 @@ public class ModifyingStoryNodeImpl extends StoryNodeImpl implements
 	 */
 	@Override
 	public boolean isSetStoryPattern() {
-		return super.isSetStoryPattern()
-				|| eIsSet(ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE);
+		return super.isSetStoryPattern() || eIsSet(ActivitiesPackage.MODIFYING_STORY_NODE__OWNED_RULE);
 	}
 
 } // ModifyingStoryNodeImpl

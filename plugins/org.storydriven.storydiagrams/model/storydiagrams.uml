@@ -1086,7 +1086,7 @@ embedded into StoryActivityNodes of an Activity.</body>
         </ownedComment>
         <ownedLiteral xmi:id="3e98d7e7-7724-45bb-8c67-8d82ed5585a5" name="FIRST"/>
         <ownedLiteral xmi:id="8f57045a-f941-41ce-96da-4990a7cf1706" name="LAST"/>
-        <ownedLiteral xmi:id="52dff23f-69db-4dc6-99f8-93989817c514" name="DIRECT_SUCCESSOR"/>
+        <ownedLiteral xmi:id="52dff23f-69db-4dc6-99f8-93989817c514" name="NEXT"/>
         <ownedLiteral xmi:id="8bc8df63-74a4-49ca-8b2f-b7e1728bece1" name="INDIRECT_SUCCESSOR"/>
         <ownedLiteral xmi:id="6d2dda9b-0699-4bf5-be1a-30d9009257f0" name="INDEX"/>
       </packagedElement>
@@ -1260,7 +1260,10 @@ of an Activity.</body>
 The context for contained Constraints and AttributeAssignments is every single object in the set. E.g., if the constraint is &quot;name = 'abc'&quot;, only objects with that name are matched and added to the set. The use of the binding operator &quot;CREATE&quot; is not defined for ObjectSetVariables, i.e., the sets can only be matched and deleted.</body>
         </ownedComment>
         <generalization xmi:id="_ndnGQBzdEeChOvWwuwx7tQ" general="c0f72d07-a643-4da9-859b-d95cfca69eee"/>
-        <ownedAttribute xmi:id="_exgk0MQWEeGqEt-DwK0LOA" name="maybeEmpty">
+        <ownedAttribute xmi:id="_exgk0MQWEeGqEt-DwK0LOA" name="atLeastOne">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Zcr4IMmbEeG1Tu0kxZC-sQ" name="unique">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedAttribute>
       </packagedElement>

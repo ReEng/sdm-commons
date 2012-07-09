@@ -32,8 +32,7 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
  *
  * @generated
  */
-public class AttributeAssignmentImpl extends EObjectImpl implements
-		AttributeAssignment {
+public class AttributeAssignmentImpl extends EObjectImpl implements AttributeAssignment {
 	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -93,8 +92,7 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetObjectVariable(
-			ObjectVariable newObjectVariable, NotificationChain msgs) {
+	public NotificationChain basicSetObjectVariable(ObjectVariable newObjectVariable, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject) newObjectVariable,
 				PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE, msgs);
 		return msgs;
@@ -108,22 +106,19 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 		if (newObjectVariable != eInternalContainer()
 				|| (eContainerFeatureID() != PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE && newObjectVariable != null)) {
 			if (EcoreUtil.isAncestor(this, newObjectVariable))
-				throw new IllegalArgumentException(
-						"Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newObjectVariable != null)
 				msgs = ((InternalEObject) newObjectVariable).eInverseAdd(this,
-						PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT,
-						ObjectVariable.class, msgs);
+						PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT, ObjectVariable.class, msgs);
 			msgs = basicSetObjectVariable(newObjectVariable, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE,
-					newObjectVariable, newObjectVariable));
+					PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE, newObjectVariable, newObjectVariable));
 	}
 
 	/**
@@ -137,8 +132,7 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 			if (attribute != oldAttribute) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE,
-							oldAttribute, attribute));
+							PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE, oldAttribute, attribute));
 			}
 		}
 		return attribute;
@@ -160,8 +154,7 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 		EAttribute oldAttribute = attribute;
 		attribute = newAttribute;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE,
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.ATTRIBUTE_ASSIGNMENT__ATTRIBUTE,
 					oldAttribute, attribute));
 	}
 
@@ -175,28 +168,17 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 			valueExpression = (Expression) eResolveProxy(oldValueExpression);
 			if (valueExpression != oldValueExpression) {
 				InternalEObject newValueExpression = (InternalEObject) valueExpression;
-				NotificationChain msgs = oldValueExpression
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-								null, null);
+				NotificationChain msgs = oldValueExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION, null, null);
 				if (newValueExpression.eInternalContainer() == null) {
-					msgs = newValueExpression
-							.eInverseAdd(
-									this,
-									EOPPOSITE_FEATURE_BASE
-											- PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-									null, msgs);
+					msgs = newValueExpression.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+							- PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION, null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-							oldValueExpression, valueExpression));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION, oldValueExpression, valueExpression));
 			}
 		}
 		return valueExpression;
@@ -214,15 +196,12 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetValueExpression(
-			Expression newValueExpression, NotificationChain msgs) {
+	public NotificationChain basicSetValueExpression(Expression newValueExpression, NotificationChain msgs) {
 		Expression oldValueExpression = valueExpression;
 		valueExpression = newValueExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-					oldValueExpression, newValueExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION, oldValueExpression, newValueExpression);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -239,26 +218,17 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 		if (newValueExpression != valueExpression) {
 			NotificationChain msgs = null;
 			if (valueExpression != null)
-				msgs = ((InternalEObject) valueExpression)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject) valueExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION, null, msgs);
 			if (newValueExpression != null)
-				msgs = ((InternalEObject) newValueExpression)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-								null, msgs);
+				msgs = ((InternalEObject) newValueExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+						- PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION, null, msgs);
 			msgs = basicSetValueExpression(newValueExpression, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION,
-					newValueExpression, newValueExpression));
+					PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION, newValueExpression, newValueExpression));
 	}
 
 	/**
@@ -266,8 +236,7 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
 			if (eInternalContainer() != null)
@@ -282,8 +251,7 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION:
 			return basicSetValueExpression(null, msgs);
@@ -298,12 +266,10 @@ public class AttributeAssignmentImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(
-			NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case PatternsPackage.ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE:
-			return eInternalContainer().eInverseRemove(this,
-					PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT,
+			return eInternalContainer().eInverseRemove(this, PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT,
 					ObjectVariable.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);

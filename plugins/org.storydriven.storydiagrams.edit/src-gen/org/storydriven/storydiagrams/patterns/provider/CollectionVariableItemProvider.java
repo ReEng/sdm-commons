@@ -52,25 +52,42 @@ public class CollectionVariableItemProvider extends ObjectVariableItemProvider i
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMaybeEmptyPropertyDescriptor(object);
+			addAtLeastOnePropertyDescriptor(object);
+			addUniquePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Maybe Empty feature.
+	 * This adds a property descriptor for the At Least One feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMaybeEmptyPropertyDescriptor(Object object) {
+	protected void addAtLeastOnePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_CollectionVariable_maybeEmpty_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_CollectionVariable_maybeEmpty_feature",
-						"_UI_CollectionVariable_type"), PatternsPackage.Literals.COLLECTION_VARIABLE__MAYBE_EMPTY,
+				getString("_UI_CollectionVariable_atLeastOne_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_CollectionVariable_atLeastOne_feature",
+						"_UI_CollectionVariable_type"), PatternsPackage.Literals.COLLECTION_VARIABLE__AT_LEAST_ONE,
 				true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Unique feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUniquePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_CollectionVariable_unique_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_CollectionVariable_unique_feature",
+						"_UI_CollectionVariable_type"), PatternsPackage.Literals.COLLECTION_VARIABLE__UNIQUE, true,
+				false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -119,7 +136,8 @@ public class CollectionVariableItemProvider extends ObjectVariableItemProvider i
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CollectionVariable.class)) {
-		case PatternsPackage.COLLECTION_VARIABLE__MAYBE_EMPTY:
+		case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
+		case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

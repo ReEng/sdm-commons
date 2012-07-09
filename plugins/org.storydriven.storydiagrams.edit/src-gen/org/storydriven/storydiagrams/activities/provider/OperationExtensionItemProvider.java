@@ -38,9 +38,8 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OperationExtensionItemProvider extends ExtensionItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class OperationExtensionItemProvider extends ExtensionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -78,14 +77,11 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider
 	 */
 	protected void addCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_CommentableElement_comment_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_CommentableElement_comment_feature",
-						"_UI_CommentableElement_type"),
-				CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT, true, false,
+				getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature",
+						"_UI_CommentableElement_type"), CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT, true, false,
 				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -98,15 +94,12 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider
 	protected void addInParameterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
+						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 						getResourceLocator(),
 						getString("_UI_Callable_inParameter_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_Callable_inParameter_feature",
-								"_UI_Callable_type"),
-						CallsPackage.Literals.CALLABLE__IN_PARAMETER, true,
-						false, true, null, null, null));
+						getString("_UI_PropertyDescriptor_description", "_UI_Callable_inParameter_feature",
+								"_UI_Callable_type"), CallsPackage.Literals.CALLABLE__IN_PARAMETER, true, false, true,
+						null, null, null));
 	}
 
 	/**
@@ -117,15 +110,12 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider
 	 */
 	protected void addOutParameterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_Callable_outParameter_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Callable_outParameter_feature",
-						"_UI_Callable_type"),
-				CallsPackage.Literals.CALLABLE__OUT_PARAMETER, true, false,
-				true, null, null, null));
+				getString("_UI_PropertyDescriptor_description", "_UI_Callable_outParameter_feature",
+						"_UI_Callable_type"), CallsPackage.Literals.CALLABLE__OUT_PARAMETER, true, false, true, null,
+				null, null));
 	}
 
 	/**
@@ -136,14 +126,11 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider
 	 */
 	protected void addOperationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_OperationExtension_operation_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_OperationExtension_operation_feature",
-						"_UI_OperationExtension_type"),
-				ActivitiesPackage.Literals.OPERATION_EXTENSION__OPERATION,
+				getString("_UI_PropertyDescriptor_description", "_UI_OperationExtension_operation_feature",
+						"_UI_OperationExtension_type"), ActivitiesPackage.Literals.OPERATION_EXTENSION__OPERATION,
 				true, false, true, null, null, null));
 	}
 
@@ -155,10 +142,7 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/activities/OperationExtension.png"));
+		return overlayImage(object, getResourceLocator().getImage("elements/activities/OperationExtension.png"));
 	}
 
 	/**
@@ -191,16 +175,12 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
-			childrenFeatures
-					.add(ActivitiesPackage.Literals.OPERATION_EXTENSION__RETURN_VALUE);
-			childrenFeatures
-					.add(ActivitiesPackage.Literals.OPERATION_EXTENSION__OWNED_ACTIVITY);
+			childrenFeatures.add(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
+			childrenFeatures.add(ActivitiesPackage.Literals.OPERATION_EXTENSION__RETURN_VALUE);
+			childrenFeatures.add(ActivitiesPackage.Literals.OPERATION_EXTENSION__OWNED_ACTIVITY);
 		}
 		return childrenFeatures;
 	}
@@ -231,14 +211,12 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider
 
 		switch (notification.getFeatureID(OperationExtension.class)) {
 		case ActivitiesPackage.OPERATION_EXTENSION__COMMENT:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case ActivitiesPackage.OPERATION_EXTENSION__CONTAINED_PARAMETERS:
 		case ActivitiesPackage.OPERATION_EXTENSION__RETURN_VALUE:
 		case ActivitiesPackage.OPERATION_EXTENSION__OWNED_ACTIVITY:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -251,8 +229,7 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getCreateChildText(Object owner, Object feature,
-			Object child, Collection<?> selection) {
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
 		Object childFeature = feature;
 		Object childObject = child;
 
@@ -260,9 +237,8 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider
 				|| childFeature == ActivitiesPackage.Literals.OPERATION_EXTENSION__RETURN_VALUE;
 
 		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] {
-					getTypeText(childObject), getFeatureText(childFeature),
-					getTypeText(owner) });
+			return getString("_UI_CreateChild_text2", new Object[] { getTypeText(childObject),
+					getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}
@@ -288,28 +264,22 @@ public class OperationExtensionItemProvider extends ExtensionItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				CallsFactory.eINSTANCE.createParameterExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS,
+		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS,
 				EcoreFactory.eINSTANCE.createEParameter()));
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.OPERATION_EXTENSION__RETURN_VALUE,
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.OPERATION_EXTENSION__RETURN_VALUE,
 				EcoreFactory.eINSTANCE.createEParameter()));
 
-		newChildDescriptors.add(createChildParameter(
-				ActivitiesPackage.Literals.OPERATION_EXTENSION__OWNED_ACTIVITY,
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.OPERATION_EXTENSION__OWNED_ACTIVITY,
 				ActivitiesFactory.eINSTANCE.createActivity()));
 	}
 

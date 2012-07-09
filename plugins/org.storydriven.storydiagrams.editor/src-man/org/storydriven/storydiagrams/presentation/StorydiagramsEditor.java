@@ -106,14 +106,14 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
 import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.activities.expressions.provider.CustomActivitiesExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.activities.provider.CustomActivitiesItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.calls.expressions.provider.CustomCallsExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.calls.provider.CustomCallsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.patterns.expressions.provider.CustomPatternsExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.patterns.provider.CustomPatternsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.activities.expressions.provider.ActivitiesExpressionsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.activities.provider.ActivitiesItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.calls.provider.CallsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.patterns.provider.PatternsItemProviderAdapterFactory;
 import org.storydriven.storydiagrams.provider.StorydiagramsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.templates.provider.CustomTemplatesItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory;
 
 /**
  * This is an example of a Patterns model editor.
@@ -407,13 +407,13 @@ public class StorydiagramsEditor extends MultiPageEditorPart implements IEditing
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new StorydiagramsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new CustomActivitiesItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new CustomActivitiesExpressionsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new CustomCallsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new CustomCallsExpressionsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new CustomPatternsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new CustomPatternsExpressionsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new CustomTemplatesItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ActivitiesItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ActivitiesExpressionsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new CallsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new CallsExpressionsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new PatternsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new PatternsExpressionsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new TemplatesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new CoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ExpressionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());

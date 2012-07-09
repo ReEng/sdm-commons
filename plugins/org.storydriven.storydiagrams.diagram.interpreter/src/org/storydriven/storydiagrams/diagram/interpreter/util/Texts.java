@@ -5,26 +5,27 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.storydriven.core.NamedElement;
-import org.storydriven.core.expressions.ArithmeticExpression;
-import org.storydriven.core.expressions.ArithmeticOperator;
-import org.storydriven.core.expressions.BinaryLogicExpression;
-import org.storydriven.core.expressions.ComparingOperator;
-import org.storydriven.core.expressions.ComparisonExpression;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.LiteralExpression;
-import org.storydriven.core.expressions.LogicOperator;
-import org.storydriven.core.expressions.NotExpression;
 import org.storydriven.core.expressions.TextualExpression;
+import org.storydriven.core.expressions.common.ArithmeticExpression;
+import org.storydriven.core.expressions.common.ArithmeticOperator;
+import org.storydriven.core.expressions.common.ComparingOperator;
+import org.storydriven.core.expressions.common.ComparisonExpression;
+import org.storydriven.core.expressions.common.LiteralExpression;
+import org.storydriven.core.expressions.common.LogicExpression;
+import org.storydriven.core.expressions.common.LogicOperator;
+import org.storydriven.core.expressions.common.StringLiteralExpression;
+import org.storydriven.core.expressions.common.UnaryExpression;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
 import org.storydriven.storydiagrams.activities.EdgeGuard;
+import org.storydriven.storydiagrams.activities.InitialNode;
 import org.storydriven.storydiagrams.activities.JunctionNode;
 import org.storydriven.storydiagrams.activities.MatchingStoryNode;
 import org.storydriven.storydiagrams.activities.ModifyingStoryNode;
-import org.storydriven.storydiagrams.activities.InitialNode;
 import org.storydriven.storydiagrams.activities.StatementNode;
-import org.storydriven.storydiagrams.activities.ActivityFinalNode;
 import org.storydriven.storydiagrams.activities.StructuredNode;
 import org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExpression;
 import org.storydriven.storydiagrams.calls.OpaqueCallable;
@@ -33,10 +34,9 @@ import org.storydriven.storydiagrams.calls.expressions.MethodCallExpression;
 import org.storydriven.storydiagrams.calls.expressions.ParameterExpression;
 import org.storydriven.storydiagrams.diagram.custom.providers.ComposedAdapterFactoryLabelProvider;
 import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
-import org.storydriven.storydiagrams.diagram.custom.util.TypeUtil;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
-import org.storydriven.storydiagrams.patterns.LinkVariable;
 import org.storydriven.storydiagrams.patterns.CollectionVariable;
+import org.storydriven.storydiagrams.patterns.LinkVariable;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.PrimitiveVariable;
 import org.storydriven.storydiagrams.patterns.StoryPattern;
@@ -245,21 +245,20 @@ public class Texts {
 		}
 
 		boolean isRoot = !(expression.eContainer() instanceof Expression);
-		boolean isNegated = expression.eContainer() instanceof NotExpression;
+		boolean isNegated = expression.eContainer() instanceof UnaryExpression;
 
 		// literal expression
 		if (expression instanceof LiteralExpression) {
 			LiteralExpression le = (LiteralExpression) expression;
 			String value = le.getValue();
-			Object realValue = TypeUtil.getParsedValue(le.getValueType(), value);
 
-			if (realValue == null) {
+			if (le instanceof StringLiteralExpression) {
 				// value could not be parsed
 				builder.append('"');
 				builder.append(value);
 				builder.append('"');
 			} else {
-				builder.append(String.valueOf(realValue));
+				builder.append(value);
 			}
 
 			return builder;
@@ -283,12 +282,12 @@ public class Texts {
 		}
 
 		// not expression
-		if (expression instanceof NotExpression) {
-			NotExpression ne = (NotExpression) expression;
+		if (expression instanceof UnaryExpression) {
+			UnaryExpression ne = (UnaryExpression) expression;
 
 			builder.append("not");
 			builder.append('(');
-			append(builder, ne.getNegatedExpression());
+			append(builder, ne.getEnclosedExpression());
 			builder.append(')');
 
 			return builder;
@@ -316,8 +315,8 @@ public class Texts {
 		}
 
 		// logic expression
-		if (expression instanceof BinaryLogicExpression) {
-			BinaryLogicExpression ble = (BinaryLogicExpression) expression;
+		if (expression instanceof LogicExpression) {
+			LogicExpression ble = (LogicExpression) expression;
 
 			if (!isRoot && !isNegated) {
 				builder.append('(');
@@ -442,8 +441,6 @@ public class Texts {
 			return builder.append('/');
 		case MODULO:
 			return builder.append('%');
-		case EXP:
-			return builder.append('^');
 		default:
 			return builder.append(operator);
 		}

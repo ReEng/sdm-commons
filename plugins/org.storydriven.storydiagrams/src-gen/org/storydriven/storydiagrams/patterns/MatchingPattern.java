@@ -35,7 +35,6 @@ public interface MatchingPattern extends StoryPattern {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.objectVariable->forAll(v:ObjectVariable | v.modifier = Modifier::NONE) and self.linkVariable->forAll(v:LinkVariable | v.modifier = Modifier::NONE)'"
 	 * @generated
 	 */
-	boolean NoModifierInMatchingPattern(DiagnosticChain diagnostics,
-			Map<Object, Object> context);
+	boolean NoModifierInMatchingPattern(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // MatchingPattern

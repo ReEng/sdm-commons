@@ -22,6 +22,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.ActivityFinalNode;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
@@ -217,19 +218,28 @@ public class ActivityFinalNodeItemProvider extends ActivityNodeItemProvider impl
 				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+				CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				ExpressionsFactory.eINSTANCE.createNotExpression()));
+				CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+				CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
+				CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
 	}
 
 }

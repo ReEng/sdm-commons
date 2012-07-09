@@ -22,16 +22,16 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.activities.expressions.provider.CustomActivitiesExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.activities.provider.CustomActivitiesItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.calls.expressions.provider.CustomCallsExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.calls.provider.CustomCallsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.activities.expressions.provider.ActivitiesExpressionsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.activities.provider.ActivitiesItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.calls.provider.CallsItemProviderAdapterFactory;
 import org.storydriven.storydiagrams.diagram.edit.policies.StorydiagramsBaseItemSemanticEditPolicy;
 import org.storydriven.storydiagrams.diagram.providers.ElementInitializers;
-import org.storydriven.storydiagrams.patterns.expressions.provider.CustomPatternsExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.patterns.provider.CustomPatternsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.patterns.provider.PatternsItemProviderAdapterFactory;
 import org.storydriven.storydiagrams.provider.StorydiagramsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.templates.provider.CustomTemplatesItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory;
 
 /**
  * @generated
@@ -122,13 +122,13 @@ public class StorydiagramsDiagramEditorPlugin extends AbstractUIPlugin {
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
 		factories.add(new StorydiagramsItemProviderAdapterFactory());
-		factories.add(new CustomActivitiesItemProviderAdapterFactory());
-		factories.add(new CustomActivitiesExpressionsItemProviderAdapterFactory());
-		factories.add(new CustomCallsItemProviderAdapterFactory());
-		factories.add(new CustomCallsExpressionsItemProviderAdapterFactory());
-		factories.add(new CustomPatternsItemProviderAdapterFactory());
-		factories.add(new CustomPatternsExpressionsItemProviderAdapterFactory());
-		factories.add(new CustomTemplatesItemProviderAdapterFactory());
+		factories.add(new ActivitiesItemProviderAdapterFactory());
+		factories.add(new ActivitiesExpressionsItemProviderAdapterFactory());
+		factories.add(new CallsItemProviderAdapterFactory());
+		factories.add(new CallsExpressionsItemProviderAdapterFactory());
+		factories.add(new PatternsItemProviderAdapterFactory());
+		factories.add(new PatternsExpressionsItemProviderAdapterFactory());
+		factories.add(new TemplatesItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());

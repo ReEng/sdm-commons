@@ -14,12 +14,16 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
-import org.storydriven.core.expressions.ArithmeticExpression;
-import org.storydriven.core.expressions.BinaryLogicExpression;
-import org.storydriven.core.expressions.ComparisonExpression;
+import org.storydriven.core.expressions.common.ArithmeticExpression;
+import org.storydriven.core.expressions.common.BooleanLiteralExpression;
+import org.storydriven.core.expressions.common.DoubleLiteralExpression;
+import org.storydriven.core.expressions.common.IntegerLiteralExpression;
+import org.storydriven.core.expressions.common.LogicExpression;
+import org.storydriven.core.expressions.common.ComparisonExpression;
+import org.storydriven.core.expressions.common.StringLiteralExpression;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.LiteralExpression;
-import org.storydriven.core.expressions.NotExpression;
+import org.storydriven.core.expressions.common.LiteralExpression;
+import org.storydriven.core.expressions.common.UnaryExpression;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.ActivityNode;
@@ -79,9 +83,9 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 		{
 			return this.evaluate((AttributeValueExpression) expression, contextClassifier, contextInstance, variablesScope);
 		}
-		else if (expression instanceof BinaryLogicExpression)
+		else if (expression instanceof LogicExpression)
 		{
-			return this.evaluate((BinaryLogicExpression) expression, contextClassifier, contextInstance, variablesScope);
+			return this.evaluate((LogicExpression) expression, contextClassifier, contextInstance, variablesScope);
 		}
 		else if (expression instanceof ComparisonExpression)
 		{
@@ -95,9 +99,9 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 		{
 			return this.evaluate((MethodCallExpression) expression, contextClassifier, contextInstance, variablesScope);
 		}
-		else if (expression instanceof NotExpression)
+		else if (expression instanceof UnaryExpression)
 		{
-			return this.evaluate((NotExpression) expression, contextClassifier, contextInstance, variablesScope);
+			return this.evaluate((UnaryExpression) expression, contextClassifier, contextInstance, variablesScope);
 		}
 		else if (expression instanceof ObjectVariableExpression)
 		{
@@ -165,11 +169,6 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 				result = operand1.remainder(operand2);
 				break;
 			}
-			case EXP:
-			{
-				result = operand1.pow(operand2.intValueExact());
-				break;
-			}
 			default:
 			{
 				throw new UnsupportedOperationException();
@@ -216,7 +215,7 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 		return new Variable<EClassifier>(SDMInterpreterConstants.INTERNAL_VAR_NAME, classifier, finalResult);
 	}
 
-	private Variable<EClassifier> evaluate(BinaryLogicExpression expression, EClassifier contextClassifier, Object contextInstance,
+	private Variable<EClassifier> evaluate(LogicExpression expression, EClassifier contextClassifier, Object contextInstance,
 			VariablesScope<?, ?, ?, ?, ?, ?, EClassifier, ?, Expression> variablesScope) throws SDMException
 	{
 		/*
@@ -327,7 +326,8 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 
 		if (var == null)
 		{
-			var = new Variable<EClassifier>(SDMInterpreterConstants.INTERNAL_VAR_NAME, expression.getType(), null);
+			EClassifier type = expression.getObject().getType();
+			var = new Variable<EClassifier>(SDMInterpreterConstants.INTERNAL_VAR_NAME, type, null);
 		}
 
 		return var;
@@ -620,23 +620,36 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 	{
 		assert expression.getValue() != null;
 		assert !"".equals(expression.getValue());
-		assert expression.getValueType() != null;
 
+		// get type
+		EDataType type = null;
+		if(expression instanceof BooleanLiteralExpression) {
+			type = EcorePackage.Literals.EBOOLEAN;
+		} else if(expression instanceof IntegerLiteralExpression) {
+			type = EcorePackage.Literals.EINT;
+		} else if(expression instanceof DoubleLiteralExpression) {
+			type = EcorePackage.Literals.EDOUBLE;
+		} else if(expression instanceof StringLiteralExpression) {
+			type = EcorePackage.Literals.ESTRING;
+		}
+		
+		assert type != null;
+		
 		/*
 		 * Let EcoreFactory create an Object of the appropriate primitive type
 		 */
-		Object value = expression.getValueType().getEPackage().getEFactoryInstance()
-				.createFromString(expression.getValueType(), expression.getValue());
+		Object value = type.getEPackage().getEFactoryInstance()
+				.createFromString(type, expression.getValue());
 
-		return new Variable<EClassifier>(SDMInterpreterConstants.INTERNAL_VAR_NAME, expression.getValueType(), value);
+		return new Variable<EClassifier>(SDMInterpreterConstants.INTERNAL_VAR_NAME, type, value);
 	}
 
-	private Variable<EClassifier> evaluate(NotExpression expression, EClassifier contextClassifier, Object contextInstance,
+	private Variable<EClassifier> evaluate(UnaryExpression expression, EClassifier contextClassifier, Object contextInstance,
 			VariablesScope<?, ?, ?, ?, ?, ?, EClassifier, ?, Expression> variablesScope) throws SDMException
 	{
-		assert expression.getNegatedExpression() != null;
+		assert expression.getEnclosedExpression() != null;
 
-		Variable<EClassifier> result = getExpressionInterpreterManager().evaluateExpression(expression.getNegatedExpression(),
+		Variable<EClassifier> result = getExpressionInterpreterManager().evaluateExpression(expression.getEnclosedExpression(),
 				contextClassifier, contextInstance, variablesScope);
 
 		assert result.getValue() instanceof Boolean;

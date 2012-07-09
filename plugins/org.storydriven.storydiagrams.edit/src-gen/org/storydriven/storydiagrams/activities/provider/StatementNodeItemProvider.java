@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.StatementNode;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
@@ -178,19 +179,28 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider implemen
 				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+				CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createNotExpression()));
+				CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+				CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
 	}
 
 }

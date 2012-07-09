@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.storydriven.core.*;
 import org.storydriven.core.CoreFactory;
 import org.storydriven.core.CorePackage;
 
@@ -60,8 +59,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 

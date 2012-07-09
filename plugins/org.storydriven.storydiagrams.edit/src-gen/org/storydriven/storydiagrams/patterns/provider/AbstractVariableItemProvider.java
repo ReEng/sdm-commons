@@ -24,6 +24,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
 import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
@@ -242,19 +243,28 @@ public class AbstractVariableItemProvider extends VariableItemProvider implement
 				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+				CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createNotExpression()));
+				CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
+				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
 
 		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
+				CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
+
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
 
 		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__CONSTRAINT,
 				PatternsFactory.eINSTANCE.createConstraint()));

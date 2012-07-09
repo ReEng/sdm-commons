@@ -1551,13 +1551,22 @@ public interface PatternsPackage extends EPackage {
 	int COLLECTION_VARIABLE__CLASSIFIER = OBJECT_VARIABLE__CLASSIFIER;
 
 	/**
-	 * The feature id for the '<em><b>Maybe Empty</b></em>' attribute.
+	 * The feature id for the '<em><b>At Least One</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_VARIABLE__MAYBE_EMPTY = OBJECT_VARIABLE_FEATURE_COUNT + 0;
+	int COLLECTION_VARIABLE__AT_LEAST_ONE = OBJECT_VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Unique</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_VARIABLE__UNIQUE = OBJECT_VARIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Collection Variable</em>' class.
@@ -1566,7 +1575,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_VARIABLE_FEATURE_COUNT = OBJECT_VARIABLE_FEATURE_COUNT + 1;
+	int COLLECTION_VARIABLE_FEATURE_COUNT = OBJECT_VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2966,7 +2975,7 @@ public interface PatternsPackage extends EPackage {
 	 * @see org.storydriven.storydiagrams.patterns.impl.PatternsPackageImpl#getStoryPattern()
 	 * @generated
 	 */
-	int STORY_PATTERN = 12;
+	int STORY_PATTERN = 13;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -3553,7 +3562,7 @@ public interface PatternsPackage extends EPackage {
 	 * @see org.storydriven.storydiagrams.patterns.impl.PatternsPackageImpl#getMaybeLink()
 	 * @generated
 	 */
-	int MAYBE_LINK = 13;
+	int MAYBE_LINK = 12;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -4275,15 +4284,26 @@ public interface PatternsPackage extends EPackage {
 	EClass getCollectionVariable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.storydriven.storydiagrams.patterns.CollectionVariable#isMaybeEmpty <em>Maybe Empty</em>}'.
+	 * Returns the meta object for the attribute '{@link org.storydriven.storydiagrams.patterns.CollectionVariable#isAtLeastOne <em>At Least One</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Maybe Empty</em>'.
-	 * @see org.storydriven.storydiagrams.patterns.CollectionVariable#isMaybeEmpty()
+	 * @return the meta object for the attribute '<em>At Least One</em>'.
+	 * @see org.storydriven.storydiagrams.patterns.CollectionVariable#isAtLeastOne()
 	 * @see #getCollectionVariable()
 	 * @generated
 	 */
-	EAttribute getCollectionVariable_MaybeEmpty();
+	EAttribute getCollectionVariable_AtLeastOne();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.storydriven.storydiagrams.patterns.CollectionVariable#isUnique <em>Unique</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Unique</em>'.
+	 * @see org.storydriven.storydiagrams.patterns.CollectionVariable#isUnique()
+	 * @see #getCollectionVariable()
+	 * @generated
+	 */
+	EAttribute getCollectionVariable_Unique();
 
 	/**
 	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.patterns.PrimitiveVariable <em>Primitive Variable</em>}'.
@@ -4872,12 +4892,20 @@ public interface PatternsPackage extends EPackage {
 		EClass COLLECTION_VARIABLE = eINSTANCE.getCollectionVariable();
 
 		/**
-		 * The meta object literal for the '<em><b>Maybe Empty</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>At Least One</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COLLECTION_VARIABLE__MAYBE_EMPTY = eINSTANCE.getCollectionVariable_MaybeEmpty();
+		EAttribute COLLECTION_VARIABLE__AT_LEAST_ONE = eINSTANCE.getCollectionVariable_AtLeastOne();
+
+		/**
+		 * The meta object literal for the '<em><b>Unique</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COLLECTION_VARIABLE__UNIQUE = eINSTANCE.getCollectionVariable_Unique();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.impl.PrimitiveVariableImpl <em>Primitive Variable</em>}' class.

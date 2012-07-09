@@ -19,7 +19,8 @@ package org.storydriven.storydiagrams.patterns;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.storydriven.storydiagrams.patterns.CollectionVariable#isMaybeEmpty <em>Maybe Empty</em>}</li>
+ *   <li>{@link org.storydriven.storydiagrams.patterns.CollectionVariable#isAtLeastOne <em>At Least One</em>}</li>
+ *   <li>{@link org.storydriven.storydiagrams.patterns.CollectionVariable#isUnique <em>Unique</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,29 +30,55 @@ package org.storydriven.storydiagrams.patterns;
  */
 public interface CollectionVariable extends ObjectVariable {
 	/**
-	 * Returns the value of the '<em><b>Maybe Empty</b></em>' attribute.
+	 * Returns the value of the '<em><b>At Least One</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Maybe Empty</em>' attribute isn't clear,
+	 * If the meaning of the '<em>At Least One</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Maybe Empty</em>' attribute.
-	 * @see #setMaybeEmpty(boolean)
-	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getCollectionVariable_MaybeEmpty()
+	 * @return the value of the '<em>At Least One</em>' attribute.
+	 * @see #setAtLeastOne(boolean)
+	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getCollectionVariable_AtLeastOne()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	boolean isMaybeEmpty();
+	boolean isAtLeastOne();
 
 	/**
-	 * Sets the value of the '{@link org.storydriven.storydiagrams.patterns.CollectionVariable#isMaybeEmpty <em>Maybe Empty</em>}' attribute.
+	 * Sets the value of the '{@link org.storydriven.storydiagrams.patterns.CollectionVariable#isAtLeastOne <em>At Least One</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Maybe Empty</em>' attribute.
-	 * @see #isMaybeEmpty()
+	 * @param value the new value of the '<em>At Least One</em>' attribute.
+	 * @see #isAtLeastOne()
 	 * @generated
 	 */
-	void setMaybeEmpty(boolean value);
+	void setAtLeastOne(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Unique</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Unique</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Unique</em>' attribute.
+	 * @see #setUnique(boolean)
+	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getCollectionVariable_Unique()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isUnique();
+
+	/**
+	 * Sets the value of the '{@link org.storydriven.storydiagrams.patterns.CollectionVariable#isUnique <em>Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Unique</em>' attribute.
+	 * @see #isUnique()
+	 * @generated
+	 */
+	void setUnique(boolean value);
 
 } // CollectionVariable

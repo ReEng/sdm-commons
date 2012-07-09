@@ -177,12 +177,12 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.ObjectVariable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createObjectVariableAdapter() {
 		if (objectVariableItemProvider == null) {
-			objectVariableItemProvider = new ObjectVariableItemProvider(this);
+			objectVariableItemProvider = new CustomObjectVariableItemProvider(this);
 		}
 
 		return objectVariableItemProvider;
@@ -192,12 +192,12 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.Constraint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createConstraintAdapter() {
 		if (constraintItemProvider == null) {
-			constraintItemProvider = new ConstraintItemProvider(this);
+			constraintItemProvider = new CustomConstraintItemProvider(this);
 		}
 
 		return constraintItemProvider;
@@ -207,12 +207,12 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.LinkConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createLinkConstraintAdapter() {
 		if (linkConstraintItemProvider == null) {
-			linkConstraintItemProvider = new LinkConstraintItemProvider(this);
+			linkConstraintItemProvider = new CustomLinkConstraintItemProvider(this);
 		}
 
 		return linkConstraintItemProvider;
@@ -222,12 +222,12 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.AttributeAssignment}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createAttributeAssignmentAdapter() {
 		if (attributeAssignmentItemProvider == null) {
-			attributeAssignmentItemProvider = new AttributeAssignmentItemProvider(this);
+			attributeAssignmentItemProvider = new CustomAttributeAssignmentItemProvider(this);
 		}
 
 		return attributeAssignmentItemProvider;
@@ -245,12 +245,12 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.CollectionVariable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createCollectionVariableAdapter() {
 		if (collectionVariableItemProvider == null) {
-			collectionVariableItemProvider = new CollectionVariableItemProvider(this);
+			collectionVariableItemProvider = new CustomCollectionVariableItemProvider(this);
 		}
 
 		return collectionVariableItemProvider;
@@ -260,12 +260,12 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.PrimitiveVariable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createPrimitiveVariableAdapter() {
 		if (primitiveVariableItemProvider == null) {
-			primitiveVariableItemProvider = new PrimitiveVariableItemProvider(this);
+			primitiveVariableItemProvider = new CustomPrimitiveVariableItemProvider(this);
 		}
 
 		return primitiveVariableItemProvider;
@@ -275,12 +275,12 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.Path}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createPathAdapter() {
 		if (pathItemProvider == null) {
-			pathItemProvider = new PathItemProvider(this);
+			pathItemProvider = new CustomPathItemProvider(this);
 		}
 
 		return pathItemProvider;
@@ -290,12 +290,12 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.LinkVariable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createLinkVariableAdapter() {
 		if (linkVariableItemProvider == null) {
-			linkVariableItemProvider = new LinkVariableItemProvider(this);
+			linkVariableItemProvider = new CustomLinkVariableItemProvider(this);
 		}
 
 		return linkVariableItemProvider;
@@ -313,12 +313,12 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.InclusionLink}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createInclusionLinkAdapter() {
 		if (inclusionLinkItemProvider == null) {
-			inclusionLinkItemProvider = new InclusionLinkItemProvider(this);
+			inclusionLinkItemProvider = new CustomInclusionLinkItemProvider(this);
 		}
 
 		return inclusionLinkItemProvider;
@@ -328,12 +328,12 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.MatchingPattern}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createMatchingPatternAdapter() {
 		if (matchingPatternItemProvider == null) {
-			matchingPatternItemProvider = new MatchingPatternItemProvider(this);
+			matchingPatternItemProvider = new CustomMatchingPatternItemProvider(this);
 		}
 
 		return matchingPatternItemProvider;
@@ -351,12 +351,12 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.MaybeLink}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createMaybeLinkAdapter() {
 		if (maybeLinkItemProvider == null) {
-			maybeLinkItemProvider = new MaybeLinkItemProvider(this);
+			maybeLinkItemProvider = new CustomMaybeLinkItemProvider(this);
 		}
 
 		return maybeLinkItemProvider;
@@ -366,12 +366,12 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.StoryPattern}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createStoryPatternAdapter() {
 		if (storyPatternItemProvider == null) {
-			storyPatternItemProvider = new StoryPatternItemProvider(this);
+			storyPatternItemProvider = new CustomStoryPatternItemProvider(this);
 		}
 
 		return storyPatternItemProvider;

@@ -12,9 +12,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.TypedElement;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.storydiagrams.activities.expressions.*;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsPackage;
 import org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExpression;
 
@@ -74,19 +72,13 @@ public class ActivitiesExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected ActivitiesExpressionsSwitch<Adapter> modelSwitch = new ActivitiesExpressionsSwitch<Adapter>() {
 		@Override
-		public Adapter caseExceptionVariableExpression(
-				ExceptionVariableExpression object) {
+		public Adapter caseExceptionVariableExpression(ExceptionVariableExpression object) {
 			return createExceptionVariableExpressionAdapter();
 		}
 
 		@Override
 		public Adapter caseExtendableElement(ExtendableElement object) {
 			return createExtendableElementAdapter();
-		}
-
-		@Override
-		public Adapter caseTypedElement(TypedElement object) {
-			return createTypedElementAdapter();
 		}
 
 		@Override
@@ -143,20 +135,6 @@ public class ActivitiesExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExtendableElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.TypedElement <em>Typed Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.TypedElement
-	 * @generated
-	 */
-	public Adapter createTypedElementAdapter() {
 		return null;
 	}
 

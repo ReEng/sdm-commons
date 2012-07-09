@@ -635,8 +635,17 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionVariable_MaybeEmpty() {
+	public EAttribute getCollectionVariable_AtLeastOne() {
 		return (EAttribute) collectionVariableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCollectionVariable_Unique() {
+		return (EAttribute) collectionVariableEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -927,7 +936,8 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 		createEReference(attributeAssignmentEClass, ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE);
 
 		collectionVariableEClass = createEClass(COLLECTION_VARIABLE);
-		createEAttribute(collectionVariableEClass, COLLECTION_VARIABLE__MAYBE_EMPTY);
+		createEAttribute(collectionVariableEClass, COLLECTION_VARIABLE__AT_LEAST_ONE);
+		createEAttribute(collectionVariableEClass, COLLECTION_VARIABLE__UNIQUE);
 
 		primitiveVariableEClass = createEClass(PRIMITIVE_VARIABLE);
 		createEReference(primitiveVariableEClass, PRIMITIVE_VARIABLE__CLASSIFIER);
@@ -945,6 +955,8 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 		matchingPatternEClass = createEClass(MATCHING_PATTERN);
 		createEOperation(matchingPatternEClass, MATCHING_PATTERN___NO_MODIFIER_IN_MATCHING_PATTERN__DIAGNOSTICCHAIN_MAP);
 
+		maybeLinkEClass = createEClass(MAYBE_LINK);
+
 		storyPatternEClass = createEClass(STORY_PATTERN);
 		createEReference(storyPatternEClass, STORY_PATTERN__VARIABLE);
 		createEReference(storyPatternEClass, STORY_PATTERN__CONSTRAINT);
@@ -953,8 +965,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 		createEReference(storyPatternEClass, STORY_PATTERN__CONTAINED_PATTERN);
 		createEAttribute(storyPatternEClass, STORY_PATTERN__BINDING_SEMANTICS);
 		createEReference(storyPatternEClass, STORY_PATTERN__TEMPLATE_SIGNATURE);
-
-		maybeLinkEClass = createEClass(MAYBE_LINK);
 
 		// Create enums
 		bindingStateEEnum = createEEnum(BINDING_STATE);
@@ -1018,8 +1028,8 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 		linkVariableEClass.getESuperTypes().add(this.getAbstractLinkVariable());
 		inclusionLinkEClass.getESuperTypes().add(this.getAbstractLinkVariable());
 		matchingPatternEClass.getESuperTypes().add(this.getStoryPattern());
-		storyPatternEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		maybeLinkEClass.getESuperTypes().add(this.getAbstractLinkVariable());
+		storyPatternEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(objectVariableEClass, ObjectVariable.class, "ObjectVariable", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1110,9 +1120,9 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLinkConstraint_Index(), ecorePackage.getEInt(), "index", null, 1, 1, LinkConstraint.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getLinkConstraint_ConstraintType(), this.getLinkConstraintType(), "constraintType",
-				"DIRECT_SUCCESSOR", 1, 1, LinkConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getLinkConstraint_ConstraintType(), this.getLinkConstraintType(), "constraintType", "NEXT", 1,
+				1, LinkConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLinkConstraint_Negative(), ecorePackage.getEBoolean(), "negative", null, 1, 1,
 				LinkConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, !IS_ORDERED);
@@ -1144,7 +1154,10 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 
 		initEClass(collectionVariableEClass, CollectionVariable.class, "CollectionVariable", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCollectionVariable_MaybeEmpty(), theEcorePackage.getEBoolean(), "maybeEmpty", null, 1, 1,
+		initEAttribute(getCollectionVariable_AtLeastOne(), ecorePackage.getEBoolean(), "atLeastOne", null, 1, 1,
+				CollectionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCollectionVariable_Unique(), ecorePackage.getEBoolean(), "unique", null, 1, 1,
 				CollectionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -1187,6 +1200,9 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(maybeLinkEClass, MaybeLink.class, "MaybeLink", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(storyPatternEClass, StoryPattern.class, "StoryPattern", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStoryPattern_Variable(), this.getAbstractVariable(), this.getAbstractVariable_Pattern(),
@@ -1215,9 +1231,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 				StoryPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(maybeLinkEClass, MaybeLink.class, "MaybeLink", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-
 		// Initialize enums and add enum literals
 		initEEnum(bindingStateEEnum, BindingState.class, "BindingState");
 		addEEnumLiteral(bindingStateEEnum, BindingState.UNBOUND);
@@ -1237,7 +1250,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 		initEEnum(linkConstraintTypeEEnum, LinkConstraintType.class, "LinkConstraintType");
 		addEEnumLiteral(linkConstraintTypeEEnum, LinkConstraintType.FIRST);
 		addEEnumLiteral(linkConstraintTypeEEnum, LinkConstraintType.LAST);
-		addEEnumLiteral(linkConstraintTypeEEnum, LinkConstraintType.DIRECT_SUCCESSOR);
+		addEEnumLiteral(linkConstraintTypeEEnum, LinkConstraintType.NEXT);
 		addEEnumLiteral(linkConstraintTypeEEnum, LinkConstraintType.INDIRECT_SUCCESSOR);
 		addEEnumLiteral(linkConstraintTypeEEnum, LinkConstraintType.INDEX);
 

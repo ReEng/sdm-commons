@@ -185,12 +185,12 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.ExceptionVariable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createExceptionVariableAdapter() {
 		if (exceptionVariableItemProvider == null) {
-			exceptionVariableItemProvider = new ExceptionVariableItemProvider(this);
+			exceptionVariableItemProvider = new CustomExceptionVariableItemProvider(this);
 		}
 
 		return exceptionVariableItemProvider;
@@ -200,12 +200,12 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.ActivityEdge}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createActivityEdgeAdapter() {
 		if (activityEdgeItemProvider == null) {
-			activityEdgeItemProvider = new ActivityEdgeItemProvider(this);
+			activityEdgeItemProvider = new CustomActivityEdgeItemProvider(this);
 		}
 
 		return activityEdgeItemProvider;
@@ -215,12 +215,12 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.Activity}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createActivityAdapter() {
 		if (activityItemProvider == null) {
-			activityItemProvider = new ActivityItemProvider(this);
+			activityItemProvider = new CustomActivityItemProvider(this);
 		}
 
 		return activityItemProvider;
@@ -230,12 +230,12 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.OperationExtension}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createOperationExtensionAdapter() {
 		if (operationExtensionItemProvider == null) {
-			operationExtensionItemProvider = new OperationExtensionItemProvider(this);
+			operationExtensionItemProvider = new CustomOperationExtensionItemProvider(this);
 		}
 
 		return operationExtensionItemProvider;
@@ -245,12 +245,12 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.MatchingStoryNode}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createMatchingStoryNodeAdapter() {
 		if (matchingStoryNodeItemProvider == null) {
-			matchingStoryNodeItemProvider = new MatchingStoryNodeItemProvider(this);
+			matchingStoryNodeItemProvider = new CustomMatchingStoryNodeItemProvider(this);
 		}
 
 		return matchingStoryNodeItemProvider;
@@ -260,12 +260,12 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.StructuredNode}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createStructuredNodeAdapter() {
 		if (structuredNodeItemProvider == null) {
-			structuredNodeItemProvider = new StructuredNodeItemProvider(this);
+			structuredNodeItemProvider = new CustomStructuredNodeItemProvider(this);
 		}
 
 		return structuredNodeItemProvider;
@@ -275,12 +275,12 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.JunctionNode}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createJunctionNodeAdapter() {
 		if (junctionNodeItemProvider == null) {
-			junctionNodeItemProvider = new JunctionNodeItemProvider(this);
+			junctionNodeItemProvider = new CustomJunctionNodeItemProvider(this);
 		}
 
 		return junctionNodeItemProvider;
@@ -298,12 +298,12 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.InitialNode}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createInitialNodeAdapter() {
 		if (initialNodeItemProvider == null) {
-			initialNodeItemProvider = new InitialNodeItemProvider(this);
+			initialNodeItemProvider = new CustomInitialNodeItemProvider(this);
 		}
 
 		return initialNodeItemProvider;
@@ -313,12 +313,12 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.StatementNode}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createStatementNodeAdapter() {
 		if (statementNodeItemProvider == null) {
-			statementNodeItemProvider = new StatementNodeItemProvider(this);
+			statementNodeItemProvider = new CustomStatementNodeItemProvider(this);
 		}
 
 		return statementNodeItemProvider;
@@ -336,12 +336,12 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.ActivityFinalNode}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createActivityFinalNodeAdapter() {
 		if (activityFinalNodeItemProvider == null) {
-			activityFinalNodeItemProvider = new ActivityFinalNodeItemProvider(this);
+			activityFinalNodeItemProvider = new CustomActivityFinalNodeItemProvider(this);
 		}
 
 		return activityFinalNodeItemProvider;
@@ -351,12 +351,12 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.ActivityCallNode}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createActivityCallNodeAdapter() {
 		if (activityCallNodeItemProvider == null) {
-			activityCallNodeItemProvider = new ActivityCallNodeItemProvider(this);
+			activityCallNodeItemProvider = new CustomActivityCallNodeItemProvider(this);
 		}
 
 		return activityCallNodeItemProvider;
@@ -366,12 +366,12 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.ModifyingStoryNode}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createModifyingStoryNodeAdapter() {
 		if (modifyingStoryNodeItemProvider == null) {
-			modifyingStoryNodeItemProvider = new ModifyingStoryNodeItemProvider(this);
+			modifyingStoryNodeItemProvider = new CustomModifyingStoryNodeItemProvider(this);
 		}
 
 		return modifyingStoryNodeItemProvider;
@@ -389,12 +389,12 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * This creates an adapter for a {@link org.storydriven.storydiagrams.activities.FlowFinalNode}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Adapter createFlowFinalNodeAdapter() {
 		if (flowFinalNodeItemProvider == null) {
-			flowFinalNodeItemProvider = new FlowFinalNodeItemProvider(this);
+			flowFinalNodeItemProvider = new CustomFlowFinalNodeItemProvider(this);
 		}
 
 		return flowFinalNodeItemProvider;

@@ -31,9 +31,8 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ObjectVariableItemProvider extends AbstractVariableItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ObjectVariableItemProvider extends AbstractVariableItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -71,14 +70,11 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider
 	 */
 	protected void addOutgoingLinkPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_ObjectVariable_outgoingLink_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ObjectVariable_outgoingLink_feature",
-						"_UI_ObjectVariable_type"),
-				PatternsPackage.Literals.OBJECT_VARIABLE__OUTGOING_LINK, true,
+				getString("_UI_PropertyDescriptor_description", "_UI_ObjectVariable_outgoingLink_feature",
+						"_UI_ObjectVariable_type"), PatternsPackage.Literals.OBJECT_VARIABLE__OUTGOING_LINK, true,
 				false, true, null, null, null));
 	}
 
@@ -90,16 +86,12 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider
 	 */
 	protected void addBindingSemanticsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_ObjectVariable_bindingSemantics_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ObjectVariable_bindingSemantics_feature",
-						"_UI_ObjectVariable_type"),
-				PatternsPackage.Literals.OBJECT_VARIABLE__BINDING_SEMANTICS,
-				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
+				getString("_UI_PropertyDescriptor_description", "_UI_ObjectVariable_bindingSemantics_feature",
+						"_UI_ObjectVariable_type"), PatternsPackage.Literals.OBJECT_VARIABLE__BINDING_SEMANTICS, true,
+				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -110,16 +102,12 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider
 	 */
 	protected void addBindingOperatorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_ObjectVariable_bindingOperator_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ObjectVariable_bindingOperator_feature",
-						"_UI_ObjectVariable_type"),
-				PatternsPackage.Literals.OBJECT_VARIABLE__BINDING_OPERATOR,
-				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
+				getString("_UI_PropertyDescriptor_description", "_UI_ObjectVariable_bindingOperator_feature",
+						"_UI_ObjectVariable_type"), PatternsPackage.Literals.OBJECT_VARIABLE__BINDING_OPERATOR, true,
+				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -130,15 +118,12 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider
 	 */
 	protected void addClassifierPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_ObjectVariable_classifier_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ObjectVariable_classifier_feature",
-						"_UI_ObjectVariable_type"),
-				PatternsPackage.Literals.OBJECT_VARIABLE__CLASSIFIER, true,
-				false, true, null, null, null));
+				getString("_UI_PropertyDescriptor_description", "_UI_ObjectVariable_classifier_feature",
+						"_UI_ObjectVariable_type"), PatternsPackage.Literals.OBJECT_VARIABLE__CLASSIFIER, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -150,14 +135,11 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(PatternsPackage.Literals.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT);
-			childrenFeatures
-					.add(PatternsPackage.Literals.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT);
+			childrenFeatures.add(PatternsPackage.Literals.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT);
+			childrenFeatures.add(PatternsPackage.Literals.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT);
 		}
 		return childrenFeatures;
 	}
@@ -170,10 +152,7 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/patterns/ObjectVariable.png"));
+		return overlayImage(object, getResourceLocator().getImage("elements/patterns/ObjectVariable.png"));
 	}
 
 	/**
@@ -213,13 +192,11 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider
 		switch (notification.getFeatureID(ObjectVariable.class)) {
 		case PatternsPackage.OBJECT_VARIABLE__BINDING_SEMANTICS:
 		case PatternsPackage.OBJECT_VARIABLE__BINDING_OPERATOR:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case PatternsPackage.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT:
 		case PatternsPackage.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -246,17 +223,13 @@ public class ObjectVariableItemProvider extends AbstractVariableItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT,
-						PatternsFactory.eINSTANCE.createLinkConstraint()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT,
+				PatternsFactory.eINSTANCE.createLinkConstraint()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT,
 				PatternsFactory.eINSTANCE.createAttributeAssignment()));
 	}
 

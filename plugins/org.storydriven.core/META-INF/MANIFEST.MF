@@ -9,6 +9,9 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.storydriven.core,
  org.storydriven.core.expressions,
+ org.storydriven.core.expressions.common,
+ org.storydriven.core.expressions.common.impl,
+ org.storydriven.core.expressions.common.util,
  org.storydriven.core.expressions.impl,
  org.storydriven.core.expressions.util,
  org.storydriven.core.impl,

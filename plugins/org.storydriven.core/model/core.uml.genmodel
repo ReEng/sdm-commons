@@ -29,11 +29,8 @@
   <genPackages xsi:type="genmodel:GenPackage" prefix="Core" basePackage="org.storydriven"
       disposableProviderFactory="true" multipleEditorPages="false" generateModelWizard="false"
       fileExtensions="sd_core" ecorePackage="core.ecore#/">
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//TypedElement">
-      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference core.ecore#//TypedElement/type"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference core.ecore#//TypedElement/genericType"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//CommentableElement">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//CommentableElement/comment"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//ExtendableElement">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -63,68 +60,80 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EReference core.ecore#//Extension/extendableBase"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//CommentableElement">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//CommentableElement/comment"/>
-    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//NamedElement">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//NamedElement/name"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//TypedElement">
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference core.ecore#//TypedElement/type"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference core.ecore#//TypedElement/genericType"/>
+    </genClasses>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Expressions" basePackage="org.storydriven.core"
         disposableProviderFactory="true" fileExtensions="sd_expressions" ecorePackage="core.ecore#//expressions">
-      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/LogicOperator">
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/LogicOperator/AND"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/LogicOperator/OR"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/LogicOperator/XOR"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/LogicOperator/IMPLY"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/LogicOperator/EQUIVALENT"/>
-      </genEnums>
-      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/ComparingOperator">
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/ComparingOperator/LESS"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/ComparingOperator/LESS_OR_EQUAL"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/ComparingOperator/EQUAL"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/ComparingOperator/GREATER_OR_EQUAL"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/ComparingOperator/GREATER"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/ComparingOperator/UNEQUAL"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/ComparingOperator/REGULAR_EXPRESSION"/>
-      </genEnums>
-      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/ArithmeticOperator">
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/ArithmeticOperator/PLUS"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/ArithmeticOperator/MINUS"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/ArithmeticOperator/TIMES"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/ArithmeticOperator/DIVIDE"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/ArithmeticOperator/MODULO"/>
-        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/ArithmeticOperator/EXP"/>
-      </genEnums>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/Expression"/>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/TextualExpression">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/expressionText"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/language"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/languageVersion"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/LiteralExpression">
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/LiteralExpression/value"/>
-        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-            propertySortChoices="true" ecoreFeature="ecore:EReference core.ecore#//expressions/LiteralExpression/valueType"/>
-      </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/NotExpression">
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference core.ecore#//expressions/NotExpression/negatedExpression"/>
-      </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/BinaryExpression">
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference core.ecore#//expressions/BinaryExpression/leftExpression"/>
-        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference core.ecore#//expressions/BinaryExpression/rightExpression"/>
-      </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/ComparisonExpression">
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/ComparisonExpression/operator"/>
-      </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/ArithmeticExpression">
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/ArithmeticExpression/operator"/>
-      </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/BinaryLogicExpression">
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/BinaryLogicExpression/operator"/>
-      </genClasses>
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="CommonExpressions"
+          disposableProviderFactory="true" ecorePackage="core.ecore#//expressions/common">
+        <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/common/LogicOperator">
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/LogicOperator/AND"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/LogicOperator/OR"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/LogicOperator/XOR"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/LogicOperator/IMPLY"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/LogicOperator/EQUIVALENT"/>
+        </genEnums>
+        <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/common/ComparingOperator">
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/ComparingOperator/LESS"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/ComparingOperator/LESS_OR_EQUAL"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/ComparingOperator/EQUAL"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/ComparingOperator/GREATER_OR_EQUAL"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/ComparingOperator/GREATER"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/ComparingOperator/UNEQUAL"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/ComparingOperator/REGULAR_EXPRESSION"/>
+        </genEnums>
+        <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/common/ArithmeticOperator">
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/ArithmeticOperator/PLUS"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/ArithmeticOperator/MINUS"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/ArithmeticOperator/TIMES"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/ArithmeticOperator/DIVIDE"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/ArithmeticOperator/MODULO"/>
+        </genEnums>
+        <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/common/UnaryOperator">
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/UnaryOperator/NOT"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/UnaryOperator/PLUS"/>
+          <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/UnaryOperator/MINUS"/>
+        </genEnums>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/UnaryExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+              createChild="true" ecoreFeature="ecore:EReference core.ecore#//expressions/common/UnaryExpression/enclosedExpression"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/BinaryExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+              createChild="true" ecoreFeature="ecore:EReference core.ecore#//expressions/common/BinaryExpression/leftExpression"/>
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+              createChild="true" ecoreFeature="ecore:EReference core.ecore#//expressions/common/BinaryExpression/rightExpression"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/ComparisonExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/common/ComparisonExpression/operator"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/ArithmeticExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/common/ArithmeticExpression/operator"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/LogicExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/common/LogicExpression/operator"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/LiteralExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/common/LiteralExpression/value"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/BooleanLiteralExpression"/>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/IntegerLiteralExpression"/>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/DoubleLiteralExpression"/>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/StringLiteralExpression"/>
+      </nestedGenPackages>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
