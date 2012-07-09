@@ -19,7 +19,8 @@ import org.storydriven.core.expressions.common.CommonExpressionsPackage;
  *
  * @generated
  */
-public class BooleanLiteralExpressionImpl extends LiteralExpressionImpl implements BooleanLiteralExpression {
+public class BooleanLiteralExpressionImpl extends LiteralExpressionImpl
+		implements BooleanLiteralExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -19,7 +19,8 @@ import org.storydriven.core.expressions.common.StringLiteralExpression;
  *
  * @generated
  */
-public class StringLiteralExpressionImpl extends LiteralExpressionImpl implements StringLiteralExpression {
+public class StringLiteralExpressionImpl extends LiteralExpressionImpl
+		implements StringLiteralExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

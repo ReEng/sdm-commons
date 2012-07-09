@@ -25,9 +25,10 @@ import org.storydriven.core.expressions.common.DoubleLiteralExpression;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DoubleLiteralExpressionItemProvider extends LiteralExpressionItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider,
-		IItemPropertySource {
+public class DoubleLiteralExpressionItemProvider extends
+		LiteralExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -97,7 +98,8 @@ public class DoubleLiteralExpressionItemProvider extends LiteralExpressionItemPr
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

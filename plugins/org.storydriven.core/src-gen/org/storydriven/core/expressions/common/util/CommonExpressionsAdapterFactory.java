@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.common.*;
 import org.storydriven.core.expressions.common.ArithmeticExpression;
 import org.storydriven.core.expressions.common.BinaryExpression;
 import org.storydriven.core.expressions.common.BooleanLiteralExpression;
@@ -111,22 +112,26 @@ public class CommonExpressionsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseBooleanLiteralExpression(BooleanLiteralExpression object) {
+		public Adapter caseBooleanLiteralExpression(
+				BooleanLiteralExpression object) {
 			return createBooleanLiteralExpressionAdapter();
 		}
 
 		@Override
-		public Adapter caseIntegerLiteralExpression(IntegerLiteralExpression object) {
+		public Adapter caseIntegerLiteralExpression(
+				IntegerLiteralExpression object) {
 			return createIntegerLiteralExpressionAdapter();
 		}
 
 		@Override
-		public Adapter caseDoubleLiteralExpression(DoubleLiteralExpression object) {
+		public Adapter caseDoubleLiteralExpression(
+				DoubleLiteralExpression object) {
 			return createDoubleLiteralExpressionAdapter();
 		}
 
 		@Override
-		public Adapter caseStringLiteralExpression(StringLiteralExpression object) {
+		public Adapter caseStringLiteralExpression(
+				StringLiteralExpression object) {
 			return createStringLiteralExpressionAdapter();
 		}
 

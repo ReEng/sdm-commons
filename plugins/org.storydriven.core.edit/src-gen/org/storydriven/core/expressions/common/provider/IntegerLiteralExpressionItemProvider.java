@@ -25,9 +25,10 @@ import org.storydriven.core.expressions.common.IntegerLiteralExpression;
  * <!-- end-user-doc -->
  * @generated
  */
-public class IntegerLiteralExpressionItemProvider extends LiteralExpressionItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider,
-		IItemPropertySource {
+public class IntegerLiteralExpressionItemProvider extends
+		LiteralExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -97,7 +98,8 @@ public class IntegerLiteralExpressionItemProvider extends LiteralExpressionItemP
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

@@ -103,7 +103,8 @@ public enum UnaryOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final UnaryOperator[] VALUES_ARRAY = new UnaryOperator[] { NOT, PLUS, MINUS, };
+	private static final UnaryOperator[] VALUES_ARRAY = new UnaryOperator[] {
+			NOT, PLUS, MINUS, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Unary Operator</b></em>' enumerators.
@@ -111,7 +112,8 @@ public enum UnaryOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<UnaryOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<UnaryOperator> VALUES = Collections
+			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Unary Operator</b></em>' literal with the specified literal value.

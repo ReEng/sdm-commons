@@ -2772,7 +2772,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNARY_EXPRESSION__ENCLOSED_EXPRESSION = eINSTANCE.getUnaryExpression_EnclosedExpression();
+		EReference UNARY_EXPRESSION__ENCLOSED_EXPRESSION = eINSTANCE
+				.getUnaryExpression_EnclosedExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.impl.BinaryExpressionImpl <em>Binary Expression</em>}' class.
@@ -2790,7 +2791,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_EXPRESSION__LEFT_EXPRESSION = eINSTANCE.getBinaryExpression_LeftExpression();
+		EReference BINARY_EXPRESSION__LEFT_EXPRESSION = eINSTANCE
+				.getBinaryExpression_LeftExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Right Expression</b></em>' containment reference feature.
@@ -2798,7 +2800,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_EXPRESSION__RIGHT_EXPRESSION = eINSTANCE.getBinaryExpression_RightExpression();
+		EReference BINARY_EXPRESSION__RIGHT_EXPRESSION = eINSTANCE
+				.getBinaryExpression_RightExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.impl.ComparisonExpressionImpl <em>Comparison Expression</em>}' class.
@@ -2816,7 +2819,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPARISON_EXPRESSION__OPERATOR = eINSTANCE.getComparisonExpression_Operator();
+		EAttribute COMPARISON_EXPRESSION__OPERATOR = eINSTANCE
+				.getComparisonExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
@@ -2834,7 +2838,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARITHMETIC_EXPRESSION__OPERATOR = eINSTANCE.getArithmeticExpression_Operator();
+		EAttribute ARITHMETIC_EXPRESSION__OPERATOR = eINSTANCE
+				.getArithmeticExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.impl.LogicExpressionImpl <em>Logic Expression</em>}' class.
@@ -2852,7 +2857,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LOGIC_EXPRESSION__OPERATOR = eINSTANCE.getLogicExpression_Operator();
+		EAttribute LOGIC_EXPRESSION__OPERATOR = eINSTANCE
+				.getLogicExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.impl.LiteralExpressionImpl <em>Literal Expression</em>}' class.
@@ -2870,7 +2876,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LITERAL_EXPRESSION__VALUE = eINSTANCE.getLiteralExpression_Value();
+		EAttribute LITERAL_EXPRESSION__VALUE = eINSTANCE
+				.getLiteralExpression_Value();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.impl.BooleanLiteralExpressionImpl <em>Boolean Literal Expression</em>}' class.
@@ -2880,7 +2887,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * @see org.storydriven.core.expressions.common.impl.CommonExpressionsPackageImpl#getBooleanLiteralExpression()
 		 * @generated
 		 */
-		EClass BOOLEAN_LITERAL_EXPRESSION = eINSTANCE.getBooleanLiteralExpression();
+		EClass BOOLEAN_LITERAL_EXPRESSION = eINSTANCE
+				.getBooleanLiteralExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.impl.IntegerLiteralExpressionImpl <em>Integer Literal Expression</em>}' class.
@@ -2890,7 +2898,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * @see org.storydriven.core.expressions.common.impl.CommonExpressionsPackageImpl#getIntegerLiteralExpression()
 		 * @generated
 		 */
-		EClass INTEGER_LITERAL_EXPRESSION = eINSTANCE.getIntegerLiteralExpression();
+		EClass INTEGER_LITERAL_EXPRESSION = eINSTANCE
+				.getIntegerLiteralExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.impl.DoubleLiteralExpressionImpl <em>Double Literal Expression</em>}' class.
@@ -2900,7 +2909,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * @see org.storydriven.core.expressions.common.impl.CommonExpressionsPackageImpl#getDoubleLiteralExpression()
 		 * @generated
 		 */
-		EClass DOUBLE_LITERAL_EXPRESSION = eINSTANCE.getDoubleLiteralExpression();
+		EClass DOUBLE_LITERAL_EXPRESSION = eINSTANCE
+				.getDoubleLiteralExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.impl.StringLiteralExpressionImpl <em>String Literal Expression</em>}' class.
@@ -2910,7 +2920,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * @see org.storydriven.core.expressions.common.impl.CommonExpressionsPackageImpl#getStringLiteralExpression()
 		 * @generated
 		 */
-		EClass STRING_LITERAL_EXPRESSION = eINSTANCE.getStringLiteralExpression();
+		EClass STRING_LITERAL_EXPRESSION = eINSTANCE
+				.getStringLiteralExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.LogicOperator <em>Logic Operator</em>}' enum.

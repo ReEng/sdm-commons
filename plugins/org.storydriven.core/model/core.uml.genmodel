@@ -78,7 +78,8 @@
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/TextualExpression/languageVersion"/>
       </genClasses>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="CommonExpressions"
-          disposableProviderFactory="true" ecorePackage="core.ecore#//expressions/common">
+          basePackage="org.storydriven.core.expressions" disposableProviderFactory="true"
+          ecorePackage="core.ecore#//expressions/common">
         <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//expressions/common/LogicOperator">
           <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/LogicOperator/AND"/>
           <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="core.ecore#//expressions/common/LogicOperator/OR"/>

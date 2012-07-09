@@ -19,7 +19,8 @@ import org.storydriven.core.expressions.common.IntegerLiteralExpression;
  *
  * @generated
  */
-public class IntegerLiteralExpressionImpl extends LiteralExpressionImpl implements IntegerLiteralExpression {
+public class IntegerLiteralExpressionImpl extends LiteralExpressionImpl
+		implements IntegerLiteralExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.core.expressions.common.*;
 import org.storydriven.core.expressions.common.ArithmeticExpression;
 import org.storydriven.core.expressions.common.ArithmeticOperator;
 import org.storydriven.core.expressions.common.BooleanLiteralExpression;
@@ -33,7 +34,8 @@ import org.storydriven.core.expressions.common.UnaryOperator;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CommonExpressionsFactoryImpl extends EFactoryImpl implements CommonExpressionsFactory {
+public class CommonExpressionsFactoryImpl extends EFactoryImpl implements
+		CommonExpressionsFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -88,7 +90,8 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements Common
 		case CommonExpressionsPackage.STRING_LITERAL_EXPRESSION:
 			return createStringLiteralExpression();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName()
+					+ "' is not a valid classifier");
 		}
 	}
 
@@ -109,7 +112,8 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements Common
 		case CommonExpressionsPackage.UNARY_OPERATOR:
 			return createUnaryOperatorFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '"
+					+ eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -130,7 +134,8 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements Common
 		case CommonExpressionsPackage.UNARY_OPERATOR:
 			return convertUnaryOperatorToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '"
+					+ eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -219,11 +224,13 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements Common
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LogicOperator createLogicOperatorFromString(EDataType eDataType, String initialValue) {
+	public LogicOperator createLogicOperatorFromString(EDataType eDataType,
+			String initialValue) {
 		LogicOperator result = LogicOperator.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
-					+ eDataType.getName() + "'");
+			throw new IllegalArgumentException("The value '" + initialValue
+					+ "' is not a valid enumerator of '" + eDataType.getName()
+					+ "'");
 		return result;
 	}
 
@@ -232,7 +239,8 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements Common
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertLogicOperatorToString(EDataType eDataType, Object instanceValue) {
+	public String convertLogicOperatorToString(EDataType eDataType,
+			Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -241,11 +249,13 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements Common
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComparingOperator createComparingOperatorFromString(EDataType eDataType, String initialValue) {
+	public ComparingOperator createComparingOperatorFromString(
+			EDataType eDataType, String initialValue) {
 		ComparingOperator result = ComparingOperator.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
-					+ eDataType.getName() + "'");
+			throw new IllegalArgumentException("The value '" + initialValue
+					+ "' is not a valid enumerator of '" + eDataType.getName()
+					+ "'");
 		return result;
 	}
 
@@ -254,7 +264,8 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements Common
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertComparingOperatorToString(EDataType eDataType, Object instanceValue) {
+	public String convertComparingOperatorToString(EDataType eDataType,
+			Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -263,11 +274,13 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements Common
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArithmeticOperator createArithmeticOperatorFromString(EDataType eDataType, String initialValue) {
+	public ArithmeticOperator createArithmeticOperatorFromString(
+			EDataType eDataType, String initialValue) {
 		ArithmeticOperator result = ArithmeticOperator.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
-					+ eDataType.getName() + "'");
+			throw new IllegalArgumentException("The value '" + initialValue
+					+ "' is not a valid enumerator of '" + eDataType.getName()
+					+ "'");
 		return result;
 	}
 
@@ -276,7 +289,8 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements Common
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertArithmeticOperatorToString(EDataType eDataType, Object instanceValue) {
+	public String convertArithmeticOperatorToString(EDataType eDataType,
+			Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -285,11 +299,13 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements Common
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnaryOperator createUnaryOperatorFromString(EDataType eDataType, String initialValue) {
+	public UnaryOperator createUnaryOperatorFromString(EDataType eDataType,
+			String initialValue) {
 		UnaryOperator result = UnaryOperator.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
-					+ eDataType.getName() + "'");
+			throw new IllegalArgumentException("The value '" + initialValue
+					+ "' is not a valid enumerator of '" + eDataType.getName()
+					+ "'");
 		return result;
 	}
 
@@ -298,7 +314,8 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements Common
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertUnaryOperatorToString(EDataType eDataType, Object instanceValue) {
+	public String convertUnaryOperatorToString(EDataType eDataType,
+			Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

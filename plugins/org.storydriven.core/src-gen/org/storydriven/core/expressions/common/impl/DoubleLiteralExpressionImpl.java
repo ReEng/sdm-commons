@@ -19,7 +19,8 @@ import org.storydriven.core.expressions.common.DoubleLiteralExpression;
  *
  * @generated
  */
-public class DoubleLiteralExpressionImpl extends LiteralExpressionImpl implements DoubleLiteralExpression {
+public class DoubleLiteralExpressionImpl extends LiteralExpressionImpl
+		implements DoubleLiteralExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
