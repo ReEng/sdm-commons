@@ -34,9 +34,8 @@ import org.storydriven.storydiagrams.patterns.expressions.util.PatternsExpressio
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternsExpressionsItemProviderAdapterFactory extends
-		PatternsExpressionsAdapterFactory implements ComposeableAdapterFactory,
-		IChangeNotifier, IDisposable {
+public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpressionsAdapterFactory implements
+		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -108,8 +107,7 @@ public class PatternsExpressionsItemProviderAdapterFactory extends
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -136,8 +134,7 @@ public class PatternsExpressionsItemProviderAdapterFactory extends
 	@Override
 	public Adapter createAttributeValueExpressionAdapter() {
 		if (attributeValueExpressionItemProvider == null) {
-			attributeValueExpressionItemProvider = new AttributeValueExpressionItemProvider(
-					this);
+			attributeValueExpressionItemProvider = new AttributeValueExpressionItemProvider(this);
 		}
 
 		return attributeValueExpressionItemProvider;
@@ -152,8 +149,7 @@ public class PatternsExpressionsItemProviderAdapterFactory extends
 	@Override
 	public Adapter createObjectVariableExpressionAdapter() {
 		if (objectVariableExpressionItemProvider == null) {
-			objectVariableExpressionItemProvider = new ObjectVariableExpressionItemProvider(
-					this);
+			objectVariableExpressionItemProvider = new ObjectVariableExpressionItemProvider(this);
 		}
 
 		return objectVariableExpressionItemProvider;
@@ -176,8 +172,7 @@ public class PatternsExpressionsItemProviderAdapterFactory extends
 	@Override
 	public Adapter createCollectionSizeExpressionAdapter() {
 		if (collectionSizeExpressionItemProvider == null) {
-			collectionSizeExpressionItemProvider = new CollectionSizeExpressionItemProvider(
-					this);
+			collectionSizeExpressionItemProvider = new CollectionSizeExpressionItemProvider(this);
 		}
 
 		return collectionSizeExpressionItemProvider;
@@ -192,8 +187,7 @@ public class PatternsExpressionsItemProviderAdapterFactory extends
 	@Override
 	public Adapter createPrimitiveVariableExpressionAdapter() {
 		if (primitiveVariableExpressionItemProvider == null) {
-			primitiveVariableExpressionItemProvider = new PrimitiveVariableExpressionItemProvider(
-					this);
+			primitiveVariableExpressionItemProvider = new PrimitiveVariableExpressionItemProvider(this);
 		}
 
 		return primitiveVariableExpressionItemProvider;
@@ -206,8 +200,7 @@ public class PatternsExpressionsItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -216,8 +209,7 @@ public class PatternsExpressionsItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 

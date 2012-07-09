@@ -12,21 +12,21 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.storydriven.storydiagrams.activities.*;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
 import org.storydriven.storydiagrams.activities.EdgeGuard;
 import org.storydriven.storydiagrams.activities.ExceptionVariable;
+import org.storydriven.storydiagrams.activities.FlowFinalNode;
+import org.storydriven.storydiagrams.activities.InitialNode;
 import org.storydriven.storydiagrams.activities.JunctionNode;
 import org.storydriven.storydiagrams.activities.MatchingStoryNode;
 import org.storydriven.storydiagrams.activities.ModifyingStoryNode;
 import org.storydriven.storydiagrams.activities.OperationExtension;
-import org.storydriven.storydiagrams.activities.StartNode;
 import org.storydriven.storydiagrams.activities.StatementNode;
-import org.storydriven.storydiagrams.activities.StopNode;
 import org.storydriven.storydiagrams.activities.StructuredNode;
 
 /**
@@ -35,8 +35,7 @@ import org.storydriven.storydiagrams.activities.StructuredNode;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivitiesFactoryImpl extends EFactoryImpl implements
-		ActivitiesFactory {
+public class ActivitiesFactoryImpl extends EFactoryImpl implements ActivitiesFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -46,7 +45,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements
 	public static ActivitiesFactory init() {
 		try {
 			ActivitiesFactory theActivitiesFactory = (ActivitiesFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.storydriven.org/storydiagrams/activities/0.2.1");
+					.getEFactory("http://www.storydriven.org/storydiagrams/activities/0.2.0");
 			if (theActivitiesFactory != null) {
 				return theActivitiesFactory;
 			}
@@ -101,8 +100,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements
 		case ActivitiesPackage.FLOW_FINAL_NODE:
 			return createFlowFinalNode();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -117,8 +115,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements
 		case ActivitiesPackage.EDGE_GUARD:
 			return createEdgeGuardFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException("The datatype '"
-					+ eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -133,8 +130,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements
 		case ActivitiesPackage.EDGE_GUARD:
 			return convertEdgeGuardToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException("The datatype '"
-					+ eDataType.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -273,13 +269,11 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EdgeGuard createEdgeGuardFromString(EDataType eDataType,
-			String initialValue) {
+	public EdgeGuard createEdgeGuardFromString(EDataType eDataType, String initialValue) {
 		EdgeGuard result = EdgeGuard.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue
-					+ "' is not a valid enumerator of '" + eDataType.getName()
-					+ "'");
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
+					+ eDataType.getName() + "'");
 		return result;
 	}
 
@@ -288,8 +282,7 @@ public class ActivitiesFactoryImpl extends EFactoryImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertEdgeGuardToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertEdgeGuardToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

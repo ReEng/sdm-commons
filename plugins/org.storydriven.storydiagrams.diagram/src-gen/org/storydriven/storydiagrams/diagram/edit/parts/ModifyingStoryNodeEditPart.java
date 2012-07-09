@@ -71,8 +71,7 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new ModifyingStoryNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ModifyingStoryNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -85,8 +84,7 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -123,15 +121,13 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ModifyingStoryNodeNameEditPart) {
-			((ModifyingStoryNodeNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getStoryNodeNameLabel());
+			((ModifyingStoryNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getStoryNodeNameLabel());
 			return true;
 		}
 		if (childEditPart instanceof ModifyingStoryNodeStoryNodePatternCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getStoryNodePatternRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ModifyingStoryNodeStoryNodePatternCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(((ModifyingStoryNodeStoryNodePatternCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -147,8 +143,7 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof ModifyingStoryNodeStoryNodePatternCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getStoryNodePatternRectangle();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((ModifyingStoryNodeStoryNodePatternCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.remove(((ModifyingStoryNodeStoryNodePatternCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -274,8 +269,7 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(StorydiagramsVisualIDRegistry
-				.getType(ModifyingStoryNodeNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(ModifyingStoryNodeNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -290,8 +284,7 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
@@ -379,12 +372,10 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 		 */
 		public StoryNodeFigureDescriptor() {
 			this.setLayoutManager(new StackLayout());
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16),
-					getMapMode().DPtoLP(16)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
 			this.setFill(false);
 			this.setOutline(false);
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(100),
-					getMapMode().DPtoLP(50)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(100), getMapMode().DPtoLP(50)));
 			createContents();
 		}
 
@@ -397,20 +388,17 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 			storyNodeShadeContainerRectangle0.setFill(false);
 			storyNodeShadeContainerRectangle0.setOutline(false);
 
-			storyNodeShadeContainerRectangle0.setBorder(new MarginBorder(
-					getMapMode().DPtoLP(10), getMapMode().DPtoLP(10),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			storyNodeShadeContainerRectangle0.setBorder(new MarginBorder(getMapMode().DPtoLP(10), getMapMode().DPtoLP(
+					10), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 
 			this.add(storyNodeShadeContainerRectangle0);
-			storyNodeShadeContainerRectangle0
-					.setLayoutManager(new StackLayout());
+			storyNodeShadeContainerRectangle0.setLayoutManager(new StackLayout());
 
 			RoundedRectangle storyNodeShadeRectangle1 = new RoundedRectangle();
-			storyNodeShadeRectangle1.setCornerDimensions(new Dimension(
-					getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
-			storyNodeShadeRectangle1.setForegroundColor(ColorConstants.black);
 			storyNodeShadeRectangle1
-					.setBackgroundColor(STORYNODESHADERECTANGLE1_BACK);
+					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
+			storyNodeShadeRectangle1.setForegroundColor(ColorConstants.black);
+			storyNodeShadeRectangle1.setBackgroundColor(STORYNODESHADERECTANGLE1_BACK);
 
 			storyNodeShadeContainerRectangle0.add(storyNodeShadeRectangle1);
 
@@ -418,43 +406,36 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 			storyNodeContentContainerRectangle0.setFill(false);
 			storyNodeContentContainerRectangle0.setOutline(false);
 
-			storyNodeContentContainerRectangle0.setBorder(new MarginBorder(
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(10), getMapMode().DPtoLP(10)));
+			storyNodeContentContainerRectangle0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(
+					0), getMapMode().DPtoLP(10), getMapMode().DPtoLP(10)));
 
 			this.add(storyNodeContentContainerRectangle0);
-			storyNodeContentContainerRectangle0
-					.setLayoutManager(new StackLayout());
+			storyNodeContentContainerRectangle0.setLayoutManager(new StackLayout());
 
 			RoundedRectangle storyNodeContentRectangle1 = new RoundedRectangle();
-			storyNodeContentRectangle1.setCornerDimensions(new Dimension(
-					getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
+			storyNodeContentRectangle1.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(
+					16)));
 			storyNodeContentRectangle1.setForegroundColor(ColorConstants.black);
-			storyNodeContentRectangle1
-					.setBackgroundColor(STORYNODECONTENTRECTANGLE1_BACK);
+			storyNodeContentRectangle1.setBackgroundColor(STORYNODECONTENTRECTANGLE1_BACK);
 
 			storyNodeContentContainerRectangle0.add(storyNodeContentRectangle1);
 
 			BorderLayout layoutStoryNodeContentRectangle1 = new BorderLayout();
-			storyNodeContentRectangle1
-					.setLayoutManager(layoutStoryNodeContentRectangle1);
+			storyNodeContentRectangle1.setLayoutManager(layoutStoryNodeContentRectangle1);
 
 			RoundedRectangle storyNodeNameRectangle2 = new RoundedRectangle();
-			storyNodeNameRectangle2.setCornerDimensions(new Dimension(
-					getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
+			storyNodeNameRectangle2
+					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
 			storyNodeNameRectangle2.setFill(false);
 			storyNodeNameRectangle2.setOutline(false);
-			storyNodeNameRectangle2.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(100), getMapMode().DPtoLP(30)));
+			storyNodeNameRectangle2.setPreferredSize(new Dimension(getMapMode().DPtoLP(100), getMapMode().DPtoLP(30)));
 
-			storyNodeContentRectangle1.add(storyNodeNameRectangle2,
-					BorderLayout.TOP);
+			storyNodeContentRectangle1.add(storyNodeNameRectangle2, BorderLayout.TOP);
 
 			GridLayout layoutStoryNodeNameRectangle2 = new GridLayout();
 			layoutStoryNodeNameRectangle2.numColumns = 1;
 			layoutStoryNodeNameRectangle2.makeColumnsEqualWidth = true;
-			storyNodeNameRectangle2
-					.setLayoutManager(layoutStoryNodeNameRectangle2);
+			storyNodeNameRectangle2.setLayoutManager(layoutStoryNodeNameRectangle2);
 
 			fStoryNodeNameLabel = new WrappingLabel();
 			fStoryNodeNameLabel.setText("");
@@ -469,31 +450,26 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 			constraintFStoryNodeNameLabel.verticalSpan = 1;
 			constraintFStoryNodeNameLabel.grabExcessHorizontalSpace = true;
 			constraintFStoryNodeNameLabel.grabExcessVerticalSpace = false;
-			storyNodeNameRectangle2.add(fStoryNodeNameLabel,
-					constraintFStoryNodeNameLabel);
+			storyNodeNameRectangle2.add(fStoryNodeNameLabel, constraintFStoryNodeNameLabel);
 
 			RoundedRectangle storyNodePatternContainerRectangle2 = new RoundedRectangle();
-			storyNodePatternContainerRectangle2
-					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16),
-							getMapMode().DPtoLP(16)));
+			storyNodePatternContainerRectangle2.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode()
+					.DPtoLP(16)));
 			storyNodePatternContainerRectangle2.setFill(false);
 			storyNodePatternContainerRectangle2.setOutline(false);
 
-			storyNodeContentRectangle1.add(storyNodePatternContainerRectangle2,
-					BorderLayout.CENTER);
+			storyNodeContentRectangle1.add(storyNodePatternContainerRectangle2, BorderLayout.CENTER);
 
 			BorderLayout layoutStoryNodePatternContainerRectangle2 = new BorderLayout();
-			storyNodePatternContainerRectangle2
-					.setLayoutManager(layoutStoryNodePatternContainerRectangle2);
+			storyNodePatternContainerRectangle2.setLayoutManager(layoutStoryNodePatternContainerRectangle2);
 
 			fStoryNodePatternRectangle = new RoundedRectangle();
-			fStoryNodePatternRectangle.setCornerDimensions(new Dimension(
-					getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
+			fStoryNodePatternRectangle.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(
+					16)));
 			fStoryNodePatternRectangle.setFill(false);
 			fStoryNodePatternRectangle.setOutline(false);
 
-			storyNodePatternContainerRectangle2.add(fStoryNodePatternRectangle,
-					BorderLayout.CENTER);
+			storyNodePatternContainerRectangle2.add(fStoryNodePatternRectangle, BorderLayout.CENTER);
 
 		}
 
@@ -516,20 +492,17 @@ public class ModifyingStoryNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Color STORYNODESHADERECTANGLE1_BACK = new Color(null, 252,
-			254, 204);
+	static final Color STORYNODESHADERECTANGLE1_BACK = new Color(null, 252, 254, 204);
 
 	/**
 	 * @generated
 	 */
-	static final Color STORYNODECONTENTRECTANGLE1_BACK = new Color(null, 252,
-			254, 204);
+	static final Color STORYNODECONTENTRECTANGLE1_BACK = new Color(null, 252, 254, 204);
 
 	/**
 	 * @generated
 	 */
-	static final Font FSTORYNODENAMELABEL_FONT = new Font(Display.getCurrent(),
-			Display.getDefault().getSystemFont().getFontData()[0].getName(),
-			10, SWT.BOLD);
+	static final Font FSTORYNODENAMELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont()
+			.getFontData()[0].getName(), 10, SWT.BOLD);
 
 }

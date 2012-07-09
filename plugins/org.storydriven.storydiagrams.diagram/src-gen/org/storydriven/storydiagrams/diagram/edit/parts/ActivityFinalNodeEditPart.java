@@ -66,8 +66,7 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new ActivityFinalNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityFinalNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -80,8 +79,7 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -117,9 +115,8 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof WrappingLabel4EditPart) {
-			((WrappingLabel4EditPart) childEditPart).setLabel(getPrimaryShape()
-					.getActivityFinalNodeLabel());
+		if (childEditPart instanceof ActivityFinalNodeLabelEditPart) {
+			((ActivityFinalNodeLabelEditPart) childEditPart).setLabel(getPrimaryShape().getActivityFinalNodeLabel());
 			return true;
 		}
 		return false;
@@ -129,7 +126,7 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof WrappingLabel4EditPart) {
+		if (childEditPart instanceof ActivityFinalNodeLabelEditPart) {
 			return true;
 		}
 		return false;
@@ -252,8 +249,7 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(StorydiagramsVisualIDRegistry
-				.getType(WrappingLabel4EditPart.VISUAL_ID));
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(ActivityFinalNodeLabelEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -268,8 +264,7 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
@@ -369,12 +364,9 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart {
 
 			Ellipse activityFinalNodeEllipse0 = new Ellipse();
 			activityFinalNodeEllipse0.setForegroundColor(ColorConstants.black);
-			activityFinalNodeEllipse0.setPreferredSize(new Dimension(
-					getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
-			activityFinalNodeEllipse0.setMaximumSize(new Dimension(getMapMode()
-					.DPtoLP(23), getMapMode().DPtoLP(23)));
-			activityFinalNodeEllipse0.setMinimumSize(new Dimension(getMapMode()
-					.DPtoLP(23), getMapMode().DPtoLP(23)));
+			activityFinalNodeEllipse0.setPreferredSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			activityFinalNodeEllipse0.setMaximumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			activityFinalNodeEllipse0.setMinimumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
 
 			GridData constraintActivityFinalNodeEllipse0 = new GridData();
 			constraintActivityFinalNodeEllipse0.verticalAlignment = GridData.CENTER;
@@ -384,8 +376,7 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart {
 			constraintActivityFinalNodeEllipse0.verticalSpan = 1;
 			constraintActivityFinalNodeEllipse0.grabExcessHorizontalSpace = false;
 			constraintActivityFinalNodeEllipse0.grabExcessVerticalSpace = false;
-			this.add(activityFinalNodeEllipse0,
-					constraintActivityFinalNodeEllipse0);
+			this.add(activityFinalNodeEllipse0, constraintActivityFinalNodeEllipse0);
 
 			fActivityFinalNodeLabel = new WrappingLabel();
 			fActivityFinalNodeLabel.setText("");

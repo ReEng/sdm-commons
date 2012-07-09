@@ -68,8 +68,7 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new StatementNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StatementNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -82,8 +81,7 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -120,12 +118,11 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof StatementNodeNameEditPart) {
-			((StatementNodeNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getStatementNodeNameLabel());
+			((StatementNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getStatementNodeNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof WrappingLabel2EditPart) {
-			((WrappingLabel2EditPart) childEditPart).setLabel(getPrimaryShape()
+		if (childEditPart instanceof StatementNodeExpressionLabelEditPart) {
+			((StatementNodeExpressionLabelEditPart) childEditPart).setLabel(getPrimaryShape()
 					.getStatementNodeExpressionLabel());
 			return true;
 		}
@@ -139,7 +136,7 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof StatementNodeNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof WrappingLabel2EditPart) {
+		if (childEditPart instanceof StatementNodeExpressionLabelEditPart) {
 			return true;
 		}
 		return false;
@@ -262,8 +259,7 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(StorydiagramsVisualIDRegistry
-				.getType(StatementNodeNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(StatementNodeNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -278,8 +274,7 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
@@ -372,8 +367,7 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 			layoutThis.makeColumnsEqualWidth = true;
 			this.setLayoutManager(layoutThis);
 
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
-					getMapMode().DPtoLP(8)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
 			this.setForegroundColor(ColorConstants.black);
 			this.setBackgroundColor(THIS_BACK);
 			createContents();
@@ -410,8 +404,7 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 			constraintFStatementNodeExpressionLabel.verticalSpan = 1;
 			constraintFStatementNodeExpressionLabel.grabExcessHorizontalSpace = true;
 			constraintFStatementNodeExpressionLabel.grabExcessVerticalSpace = false;
-			this.add(fStatementNodeExpressionLabel,
-					constraintFStatementNodeExpressionLabel);
+			this.add(fStatementNodeExpressionLabel, constraintFStatementNodeExpressionLabel);
 
 		}
 
@@ -439,8 +432,7 @@ public class StatementNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FSTATEMENTNODENAMELABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 10, SWT.BOLD);
+	static final Font FSTATEMENTNODENAMELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
+			.getSystemFont().getFontData()[0].getName(), 10, SWT.BOLD);
 
 }

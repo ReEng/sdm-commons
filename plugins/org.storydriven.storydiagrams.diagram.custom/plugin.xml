@@ -9,11 +9,11 @@
             key="org.storydrivening.activities.category"
             name="activities">
          <child
-               class="StartNode"
+               class="InitialNode"
                packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          </child>
          <child
-               class="StopNode"
+               class="ActivityFinalNode"
                packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
          </child>
          <child
@@ -48,11 +48,11 @@
                className="Activity">
          </diagramElement>
          <node
-               domainElement="StartNode"
+               domainElement="InitialNode"
                semanticHint="2001">
          </node>
          <node
-               domainElement="StopNode"
+               domainElement="ActivityFinalNode"
                semanticHint="2002">
          </node>
          <node
@@ -80,11 +80,11 @@
                semanticHint="3001">
          </node>
          <node
-               domainElement="StartNode"
+               domainElement="InitialNode"
                semanticHint="3002">
          </node>
          <node
-               domainElement="StopNode"
+               domainElement="ActivityFinalNode"
                semanticHint="3004">
          </node>
          <node
@@ -158,11 +158,11 @@
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
             adaptable="false"
-            id="org.storydriven.storydiagrams.diagram.custom.StopNodeContribution"
-            objectClass="org.storydriven.storydiagrams.diagram.edit.parts.StopNodeEditPart">
+            id="org.storydriven.storydiagrams.diagram.custom.ActivityFinalNodeContribution"
+            objectClass="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart">
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.StopNodeToggleFlowCommand"
-               id="org.storydriven.storydiagrams.diagram.custom.StopNodeToggleFlowCommand"
+               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.ActivityFinalNodeToggleFlowCommand"
+               id="org.storydriven.storydiagrams.diagram.custom.ActivityFinalNodeToggleFlowCommand"
                label="Toggle end flow Attribute"
                tooltip="This will toggle they isKey Attribute of the Attribute.">
          </action>
@@ -327,11 +327,11 @@
       </objectContribution>
       <objectContribution
             adaptable="false"
-            id="org.storydriven.storydiagrams.diagram.custom.expressions.StopNodeReturnExpression"
-            objectClass="org.storydriven.storydiagrams.diagram.edit.parts.StopNodeEditPart">
+            id="org.storydriven.storydiagrams.diagram.custom.expressions.ActivityFinalNodeReturnExpression"
+            objectClass="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart">
          <action
-               class="org.storydriven.storydiagrams.diagram.custom.EditStopNodeReturnExpressionAction"
-               id="org.storydriven.storydiagrams.diagram.custom.expressions.EditStopNodeReturnExpression"
+               class="org.storydriven.storydiagrams.diagram.custom.EditActivityFinalNodeReturnExpressionAction"
+               id="org.storydriven.storydiagrams.diagram.custom.expressions.EditActivityFinalNodeReturnExpression"
                label="Edit Return Value Expression"
                tooltip="This will toggle whether the storynode is matching or modifying">
          </action>
@@ -513,15 +513,15 @@
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StartNodeFilter"
-               id="StartNode.name"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.InitialNodeFilter"
+               id="InitialNode.name"
                tab="documentation">
          </propertySection>
          <propertySection
-               afterSection="StartNode.name"
+               afterSection="InitialNode.name"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StartNodeFilter"
-               id="StartNode.comment"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.InitialNodeFilter"
+               id="InitialNode.comment"
                tab="documentation">
          </propertySection>
          <propertySection
@@ -538,23 +538,23 @@
                tab="documentation">
          </propertySection>
          <propertySection
-               afterSection="StopNode.flowOnly"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.StopNodeExpressionSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StopNodeFilter"
-               id="StopNode.expression"
+               afterSection="ActivityFinalNode.flowOnly"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityFinalNodeExpressionSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFinalNodeFilter"
+               id="ActivityFinalNode.expression"
                tab="core">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StopNodeFilter"
-               id="StopNode.name"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFinalNodeFilter"
+               id="ActivityFinalNode.name"
                tab="documentation">
          </propertySection>
          <propertySection
-               afterSection="StopNode.name"
+               afterSection="ActivityFinalNode.name"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StopNodeFilter"
-               id="StopNode.comment"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFinalNodeFilter"
+               id="ActivityFinalNode.comment"
                tab="documentation">
          </propertySection>
          <propertySection
@@ -652,15 +652,15 @@
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingSemanticsSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ContainmentRelationFilter"
-               id="ContainmentRelation.bindingSemantics"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.InclusionLinkFilter"
+               id="InclusionLink.bindingSemantics"
                tab="core">
          </propertySection>
          <propertySection
-               afterSection="ContainmentRelation.bindingSemantics"
+               afterSection="InclusionLink.bindingSemantics"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingOperatorSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ContainmentRelationFilter"
-               id="ContainmentRelation.bindingOperator"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.InclusionLinkFilter"
+               id="InclusionLink.bindingOperator"
                tab="core">
          </propertySection>
          <propertySection

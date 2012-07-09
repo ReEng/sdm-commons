@@ -15,8 +15,7 @@ import org.storydriven.storydiagrams.diagram.part.Messages;
 /**
  * @generated
  */
-public class MatchingPatternStoryPatternContentCompartmentEditPart extends
-		ShapeCompartmentEditPart {
+public class MatchingPatternStoryPatternContentCompartmentEditPart extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -41,8 +40,7 @@ public class MatchingPatternStoryPatternContentCompartmentEditPart extends
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
 		return result;
 	}
@@ -52,15 +50,11 @@ public class MatchingPatternStoryPatternContentCompartmentEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new MatchingPatternStoryPatternContentCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new MatchingPatternStoryPatternContentCompartmentCanonicalEditPolicy());
 	}
 

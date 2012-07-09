@@ -11,15 +11,13 @@ import org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorPlug
 /**
  * @generated
  */
-public class StorydiagramsDomainNavigatorLabelProvider implements
-		ICommonLabelProvider {
+public class StorydiagramsDomainNavigatorLabelProvider implements ICommonLabelProvider {
 
 	/**
 	 * @generated
 	 */
 	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(
-			StorydiagramsDiagramEditorPlugin.getInstance()
-					.getItemProvidersAdapterFactory());
+			StorydiagramsDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -32,9 +30,7 @@ public class StorydiagramsDomainNavigatorLabelProvider implements
 	 */
 	public Image getImage(Object element) {
 		if (element instanceof StorydiagramsDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getImage(((StorydiagramsDomainNavigatorItem) element)
-							.getEObject());
+			return myAdapterFactoryLabelProvider.getImage(((StorydiagramsDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}
@@ -44,9 +40,7 @@ public class StorydiagramsDomainNavigatorLabelProvider implements
 	 */
 	public String getText(Object element) {
 		if (element instanceof StorydiagramsDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getText(((StorydiagramsDomainNavigatorItem) element)
-							.getEObject());
+			return myAdapterFactoryLabelProvider.getText(((StorydiagramsDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}

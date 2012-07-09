@@ -21,8 +21,7 @@ public class StorydiagramsCreationWizardPage extends WizardNewFileCreationPage {
 	/**
 	 * @generated
 	 */
-	public StorydiagramsCreationWizardPage(String pageName,
-			IStructuredSelection selection, String fileExtension) {
+	public StorydiagramsCreationWizardPage(String pageName, IStructuredSelection selection, String fileExtension) {
 		super(pageName, selection);
 		this.fileExtension = fileExtension;
 	}
@@ -63,8 +62,8 @@ public class StorydiagramsCreationWizardPage extends WizardNewFileCreationPage {
 	 */
 	public void createControl(Composite parent) {
 		super.createControl(parent);
-		setFileName(StorydiagramsDiagramEditorUtil.getUniqueFileName(
-				getContainerFullPath(), getFileName(), getExtension()));
+		setFileName(StorydiagramsDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), getFileName(),
+				getExtension()));
 		setPageComplete(validatePage());
 	}
 
@@ -76,11 +75,8 @@ public class StorydiagramsCreationWizardPage extends WizardNewFileCreationPage {
 			return false;
 		}
 		String extension = getExtension();
-		if (extension != null
-				&& !getFilePath().toString().endsWith("." + extension)) {
-			setErrorMessage(NLS.bind(
-					Messages.StorydiagramsCreationWizardPageExtensionError,
-					extension));
+		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
+			setErrorMessage(NLS.bind(Messages.StorydiagramsCreationWizardPageExtensionError, extension));
 			return false;
 		}
 		return true;

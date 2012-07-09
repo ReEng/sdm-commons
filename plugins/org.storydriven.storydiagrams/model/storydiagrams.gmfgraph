@@ -736,6 +736,27 @@
           accessor="getContainmentRelationOperatorFigure"
           figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
     </descriptors>
+    <descriptors
+        name="MaybeLinkFigureDescriptor">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="MaybeLinkPolylineConnection"
+          lineKind="LINE_DASH">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MaybeLinkLabel"
+            text="{same?}"/>
+      </actualFigure>
+      <accessors
+          accessor="getMaybeLinkLabel"
+          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+    </descriptors>
   </figures>
   <figures
       name="DEPRECIATED">
@@ -1296,6 +1317,9 @@
   <connections
       name="ContainmentRelationConnection"
       figure="InclusionLinkFigureDescriptor"/>
+  <connections
+      name="MaybeLinkConnection"
+      figure="MaybeLinkFigureDescriptor"/>
   <compartments
       name="StoryNodePatternCompartment"
       figure="StoryNodeFigureDescriptor"
@@ -1448,5 +1472,17 @@
     <facets
         xsi:type="gmfgraph:LabelOffsetFacet"
         y="-10"/>
+  </labels>
+  <labels
+      name="MaybeLinkLabel"
+      figure="MaybeLinkFigureDescriptor"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.12/@accessors.0">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="CENTER"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="-1"/>
   </labels>
 </gmfgraph:Canvas>

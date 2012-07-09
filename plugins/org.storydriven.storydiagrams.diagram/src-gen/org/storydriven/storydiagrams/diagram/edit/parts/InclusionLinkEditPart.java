@@ -14,8 +14,7 @@ import org.storydriven.storydiagrams.diagram.edit.policies.InclusionLinkItemSema
 /**
  * @generated
  */
-public class InclusionLinkEditPart extends ConnectionNodeEditPart implements
-		ITreeBranchEditPart {
+public class InclusionLinkEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -34,18 +33,16 @@ public class InclusionLinkEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new InclusionLinkItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InclusionLinkItemSemanticEditPolicy());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof WrappingLabel13EditPart) {
-			((WrappingLabel13EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getContainmentRelationOperatorFigure());
+		if (childEditPart instanceof ContainmentRelationOperatorLabelEditPart) {
+			((ContainmentRelationOperatorLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getContainmentRelationOperatorFigure());
 			return true;
 		}
 		return false;
@@ -65,7 +62,7 @@ public class InclusionLinkEditPart extends ConnectionNodeEditPart implements
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof WrappingLabel13EditPart) {
+		if (childEditPart instanceof ContainmentRelationOperatorLabelEditPart) {
 			return true;
 		}
 		return false;

@@ -3,7 +3,7 @@ package org.storydriven.storydiagrams.diagram.custom.util;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.activities.EdgeGuard;
-import org.storydriven.storydiagrams.activities.StartNode;
+import org.storydriven.storydiagrams.activities.InitialNode;
 import org.storydriven.storydiagrams.activities.StoryNode;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
@@ -15,7 +15,7 @@ public class ValidationUtil {
 		ActivityNode source = edge.getSource();
 
 		// only allow [none] for start node
-		if (source instanceof StartNode) {
+		if (source instanceof InitialNode) {
 			return EdgeGuard.NONE.equals(guard);
 		}
 
@@ -89,7 +89,7 @@ public class ValidationUtil {
 		}
 	}
 
-	public static boolean isValidLink(BindingState state, BindingSemantics semantics, BindingOperator operator) {
+	public static boolean isValidLink(BindingSemantics semantics, BindingOperator operator) {
 		switch (semantics) {
 		case NEGATIVE:
 			switch (operator) {

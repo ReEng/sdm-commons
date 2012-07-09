@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.EOperation;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.InitialNode;
 import org.storydriven.storydiagrams.activities.OperationExtension;
-import org.storydriven.storydiagrams.activities.StartNode;
 
 public final class ActivityUtil {
 	private ActivityUtil() {
@@ -59,10 +59,10 @@ public final class ActivityUtil {
 		return 0;
 	}
 
-	public static StartNode getStartNode(Activity activity) {
+	public static InitialNode getInitialNode(Activity activity) {
 		for (ActivityNode node : activity.getOwnedActivityNodes()) {
-			if (node instanceof StartNode) {
-				return (StartNode) node;
+			if (node instanceof InitialNode) {
+				return (InitialNode) node;
 			}
 		}
 		return null;

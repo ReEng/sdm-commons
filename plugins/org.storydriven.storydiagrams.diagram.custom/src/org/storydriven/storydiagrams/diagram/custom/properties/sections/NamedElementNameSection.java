@@ -5,7 +5,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.core.CorePackage;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityNode;
-import org.storydriven.storydiagrams.activities.StartNode;
+import org.storydriven.storydiagrams.activities.InitialNode;
 import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEStringSection;
 
 public class NamedElementNameSection extends AbstractEStringSection {
@@ -23,7 +23,7 @@ public class NamedElementNameSection extends AbstractEStringSection {
 		// refresh start node label
 		if (getElement() instanceof Activity) {
 			for (ActivityNode node : ((Activity) getElement()).getOwnedActivityNodes()) {
-				if (node instanceof StartNode) {
+				if (node instanceof InitialNode) {
 //					node.eNotify(new NotificationImpl(Notification.SET, null, ((Activity) getElement()).getName()));
 				}
 			}

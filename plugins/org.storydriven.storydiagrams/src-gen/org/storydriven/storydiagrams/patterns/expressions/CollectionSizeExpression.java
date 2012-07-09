@@ -7,7 +7,6 @@
 package org.storydriven.storydiagrams.patterns.expressions;
 
 import org.storydriven.core.expressions.Expression;
-
 import org.storydriven.storydiagrams.patterns.CollectionVariable;
 
 /**

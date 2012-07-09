@@ -16,8 +16,8 @@ import org.storydriven.storydiagrams.diagram.part.Messages;
 /**
  * @generated
  */
-public class CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart
-		extends ListCompartmentEditPart {
+public class CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart extends
+		ListCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -27,8 +27,7 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	/**
 	 * @generated
 	 */
-	public CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart(
-			View view) {
+	public CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart(View view) {
 		super(view);
 	}
 
@@ -50,8 +49,7 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	 * @generated
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
-				.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
 		return result;
 	}
@@ -61,15 +59,11 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new CollectionVariableCollectionVariableAttributeAssignmentsCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new CollectionVariableCollectionVariableAttributeAssignmentsCompartmentCanonicalEditPolicy());
 	}
 

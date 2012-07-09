@@ -37,8 +37,8 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			case ActivityCallNodeNameEditPart.VISUAL_ID:
 				return new ActivityCallNodeNameEditPart(view);
 
-			case WrappingLabelEditPart.VISUAL_ID:
-				return new WrappingLabelEditPart(view);
+			case ActivityCallNodeCalleeLabelEditPart.VISUAL_ID:
+				return new ActivityCallNodeCalleeLabelEditPart(view);
 
 			case StatementNodeEditPart.VISUAL_ID:
 				return new StatementNodeEditPart(view);
@@ -46,8 +46,8 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			case StatementNodeNameEditPart.VISUAL_ID:
 				return new StatementNodeNameEditPart(view);
 
-			case WrappingLabel2EditPart.VISUAL_ID:
-				return new WrappingLabel2EditPart(view);
+			case StatementNodeExpressionLabelEditPart.VISUAL_ID:
+				return new StatementNodeExpressionLabelEditPart(view);
 
 			case ModifyingStoryNodeEditPart.VISUAL_ID:
 				return new ModifyingStoryNodeEditPart(view);
@@ -64,8 +64,8 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			case InitialNodeEditPart.VISUAL_ID:
 				return new InitialNodeEditPart(view);
 
-			case WrappingLabel3EditPart.VISUAL_ID:
-				return new WrappingLabel3EditPart(view);
+			case InitialNodeLabelEditPart.VISUAL_ID:
+				return new InitialNodeLabelEditPart(view);
 
 			case JunctionNodeEditPart.VISUAL_ID:
 				return new JunctionNodeEditPart(view);
@@ -73,8 +73,8 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			case ActivityFinalNodeEditPart.VISUAL_ID:
 				return new ActivityFinalNodeEditPart(view);
 
-			case WrappingLabel4EditPart.VISUAL_ID:
-				return new WrappingLabel4EditPart(view);
+			case ActivityFinalNodeLabelEditPart.VISUAL_ID:
+				return new ActivityFinalNodeLabelEditPart(view);
 
 			case StoryPatternEditPart.VISUAL_ID:
 				return new StoryPatternEditPart(view);
@@ -82,14 +82,14 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			case ObjectVariableEditPart.VISUAL_ID:
 				return new ObjectVariableEditPart(view);
 
-			case WrappingLabel5EditPart.VISUAL_ID:
-				return new WrappingLabel5EditPart(view);
+			case ObjectVariableOperatorEditPart.VISUAL_ID:
+				return new ObjectVariableOperatorEditPart(view);
 
 			case ObjectVariableNameEditPart.VISUAL_ID:
 				return new ObjectVariableNameEditPart(view);
 
-			case WrappingLabel6EditPart.VISUAL_ID:
-				return new WrappingLabel6EditPart(view);
+			case ObjectVariableTypeLabelEditPart.VISUAL_ID:
+				return new ObjectVariableTypeLabelEditPart(view);
 
 			case AttributeAssignmentEditPart.VISUAL_ID:
 				return new AttributeAssignmentEditPart(view);
@@ -103,8 +103,8 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			case WrappingLabel7EditPart.VISUAL_ID:
 				return new WrappingLabel7EditPart(view);
 
-			case CollectionVariableNameEditPart.VISUAL_ID:
-				return new CollectionVariableNameEditPart(view);
+			case CollectionVariableNameLabelEditPart.VISUAL_ID:
+				return new CollectionVariableNameLabelEditPart(view);
 
 			case WrappingLabel8EditPart.VISUAL_ID:
 				return new WrappingLabel8EditPart(view);
@@ -116,68 +116,64 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 				return new MatchingPatternEditPart(view);
 
 			case ModifyingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
-				return new ModifyingStoryNodeStoryNodePatternCompartmentEditPart(
-						view);
+				return new ModifyingStoryNodeStoryNodePatternCompartmentEditPart(view);
 
 			case StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-				return new StoryPatternStoryPatternContentCompartmentEditPart(
-						view);
+				return new StoryPatternStoryPatternContentCompartmentEditPart(view);
 
 			case StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
-				return new StoryPatternStoryPatternConstraintsCompartmentEditPart(
-						view);
+				return new StoryPatternStoryPatternConstraintsCompartmentEditPart(view);
 
 			case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
-				return new ObjectVariableObjectVariableConstraintsCompartmentEditPart(
-						view);
+				return new ObjectVariableObjectVariableConstraintsCompartmentEditPart(view);
 
 			case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-				return new ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart(
-						view);
+				return new ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart(view);
 
 			case CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID:
-				return new CollectionVariableCollectionVariableConstraintsCompartmentEditPart(
-						view);
+				return new CollectionVariableCollectionVariableConstraintsCompartmentEditPart(view);
 
 			case CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-				return new CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart(
-						view);
+				return new CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart(view);
 
 			case MatchingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
-				return new MatchingStoryNodeStoryNodePatternCompartmentEditPart(
-						view);
+				return new MatchingStoryNodeStoryNodePatternCompartmentEditPart(view);
 
 			case MatchingPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-				return new MatchingPatternStoryPatternContentCompartmentEditPart(
-						view);
+				return new MatchingPatternStoryPatternContentCompartmentEditPart(view);
 
 			case MatchingPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
-				return new MatchingPatternStoryPatternConstraintsCompartmentEditPart(
-						view);
+				return new MatchingPatternStoryPatternConstraintsCompartmentEditPart(view);
 
 			case ActivityEdgeEditPart.VISUAL_ID:
 				return new ActivityEdgeEditPart(view);
 
-			case WrappingLabel9EditPart.VISUAL_ID:
-				return new WrappingLabel9EditPart(view);
+			case ActivityEdgeGuardLabelEditPart.VISUAL_ID:
+				return new ActivityEdgeGuardLabelEditPart(view);
 
 			case LinkVariableEditPart.VISUAL_ID:
 				return new LinkVariableEditPart(view);
 
-			case WrappingLabel10EditPart.VISUAL_ID:
-				return new WrappingLabel10EditPart(view);
+			case LinkVariableSourceEndLabelEditPart.VISUAL_ID:
+				return new LinkVariableSourceEndLabelEditPart(view);
 
-			case WrappingLabel11EditPart.VISUAL_ID:
-				return new WrappingLabel11EditPart(view);
+			case LinkVariableOperatorLabelEditPart.VISUAL_ID:
+				return new LinkVariableOperatorLabelEditPart(view);
 
-			case WrappingLabel12EditPart.VISUAL_ID:
-				return new WrappingLabel12EditPart(view);
+			case LinkVariableTargetEndLabelEditPart.VISUAL_ID:
+				return new LinkVariableTargetEndLabelEditPart(view);
 
 			case InclusionLinkEditPart.VISUAL_ID:
 				return new InclusionLinkEditPart(view);
 
-			case WrappingLabel13EditPart.VISUAL_ID:
-				return new WrappingLabel13EditPart(view);
+			case ContainmentRelationOperatorLabelEditPart.VISUAL_ID:
+				return new ContainmentRelationOperatorLabelEditPart(view);
+
+			case MaybeLinkEditPart.VISUAL_ID:
+				return new MaybeLinkEditPart(view);
+
+			case WrappingLabel14EditPart.VISUAL_ID:
+				return new WrappingLabel14EditPart(view);
 
 			}
 		}
@@ -195,8 +191,7 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static CellEditorLocator getTextCellEditorLocator(
-			ITextAwareEditPart source) {
+	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
 		if (source.getFigure() instanceof WrappingLabel)
 			return new TextCellEditorLocator((WrappingLabel) source.getFigure());
 		else {
@@ -236,15 +231,11 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			Rectangle rect = getWrapLabel().getTextBounds().getCopy();
 			getWrapLabel().translateToAbsolute(rect);
 			if (!text.getFont().isDisposed()) {
-				if (getWrapLabel().isTextWrapOn()
-						&& getWrapLabel().getText().length() > 0) {
-					rect.setSize(new Dimension(text.computeSize(rect.width,
-							SWT.DEFAULT)));
+				if (getWrapLabel().isTextWrapOn() && getWrapLabel().getText().length() > 0) {
+					rect.setSize(new Dimension(text.computeSize(rect.width, SWT.DEFAULT)));
 				} else {
-					int avr = FigureUtilities.getFontMetrics(text.getFont())
-							.getAverageCharWidth();
-					rect.setSize(new Dimension(text.computeSize(SWT.DEFAULT,
-							SWT.DEFAULT)).expand(avr * 2, 0));
+					int avr = FigureUtilities.getFontMetrics(text.getFont()).getAverageCharWidth();
+					rect.setSize(new Dimension(text.computeSize(SWT.DEFAULT, SWT.DEFAULT)).expand(avr * 2, 0));
 				}
 			}
 			if (!rect.equals(new Rectangle(text.getBounds()))) {
@@ -285,10 +276,8 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			Rectangle rect = getLabel().getTextBounds().getCopy();
 			getLabel().translateToAbsolute(rect);
 			if (!text.getFont().isDisposed()) {
-				int avr = FigureUtilities.getFontMetrics(text.getFont())
-						.getAverageCharWidth();
-				rect.setSize(new Dimension(text.computeSize(SWT.DEFAULT,
-						SWT.DEFAULT)).expand(avr * 2, 0));
+				int avr = FigureUtilities.getFontMetrics(text.getFont()).getAverageCharWidth();
+				rect.setSize(new Dimension(text.computeSize(SWT.DEFAULT, SWT.DEFAULT)).expand(avr * 2, 0));
 			}
 			if (!rect.equals(new Rectangle(text.getBounds()))) {
 				text.setBounds(rect.x, rect.y, rect.width, rect.height);

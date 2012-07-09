@@ -65,8 +65,7 @@ public interface PatternsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	PatternsPackage eINSTANCE = org.storydriven.storydiagrams.patterns.impl.PatternsPackageImpl
-			.init();
+	PatternsPackage eINSTANCE = org.storydriven.storydiagrams.patterns.impl.PatternsPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.patterns.impl.AbstractVariableImpl <em>Abstract Variable</em>}' class.
@@ -2967,7 +2966,7 @@ public interface PatternsPackage extends EPackage {
 	 * @see org.storydriven.storydiagrams.patterns.impl.PatternsPackageImpl#getStoryPattern()
 	 * @generated
 	 */
-	int STORY_PATTERN = 13;
+	int STORY_PATTERN = 12;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -3554,7 +3553,7 @@ public interface PatternsPackage extends EPackage {
 	 * @see org.storydriven.storydiagrams.patterns.impl.PatternsPackageImpl#getMaybeLink()
 	 * @generated
 	 */
-	int MAYBE_LINK = 12;
+	int MAYBE_LINK = 13;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -4402,16 +4401,6 @@ public interface PatternsPackage extends EPackage {
 	EOperation getMatchingPattern__NoModifierInMatchingPattern__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.patterns.MaybeLink <em>Maybe Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Maybe Link</em>'.
-	 * @see org.storydriven.storydiagrams.patterns.MaybeLink
-	 * @generated
-	 */
-	EClass getMaybeLink();
-
-	/**
 	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.patterns.StoryPattern <em>Story Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4499,6 +4488,16 @@ public interface PatternsPackage extends EPackage {
 	EReference getStoryPattern_TemplateSignature();
 
 	/**
+	 * Returns the meta object for class '{@link org.storydriven.storydiagrams.patterns.MaybeLink <em>Maybe Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Maybe Link</em>'.
+	 * @see org.storydriven.storydiagrams.patterns.MaybeLink
+	 * @generated
+	 */
+	EClass getMaybeLink();
+
+	/**
 	 * Returns the meta object for enum '{@link org.storydriven.storydiagrams.patterns.BindingState <em>Binding State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4576,8 +4575,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_VARIABLE__OUTGOING_LINK = eINSTANCE
-				.getObjectVariable_OutgoingLink();
+		EReference OBJECT_VARIABLE__OUTGOING_LINK = eINSTANCE.getObjectVariable_OutgoingLink();
 
 		/**
 		 * The meta object literal for the '<em><b>Link Order Constraint</b></em>' containment reference list feature.
@@ -4585,8 +4583,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT = eINSTANCE
-				.getObjectVariable_LinkOrderConstraint();
+		EReference OBJECT_VARIABLE__LINK_ORDER_CONSTRAINT = eINSTANCE.getObjectVariable_LinkOrderConstraint();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Semantics</b></em>' attribute feature.
@@ -4594,8 +4591,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OBJECT_VARIABLE__BINDING_SEMANTICS = eINSTANCE
-				.getObjectVariable_BindingSemantics();
+		EAttribute OBJECT_VARIABLE__BINDING_SEMANTICS = eINSTANCE.getObjectVariable_BindingSemantics();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Operator</b></em>' attribute feature.
@@ -4603,8 +4599,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OBJECT_VARIABLE__BINDING_OPERATOR = eINSTANCE
-				.getObjectVariable_BindingOperator();
+		EAttribute OBJECT_VARIABLE__BINDING_OPERATOR = eINSTANCE.getObjectVariable_BindingOperator();
 
 		/**
 		 * The meta object literal for the '<em><b>Attribute Assignment</b></em>' containment reference list feature.
@@ -4612,8 +4607,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT = eINSTANCE
-				.getObjectVariable_AttributeAssignment();
+		EReference OBJECT_VARIABLE__ATTRIBUTE_ASSIGNMENT = eINSTANCE.getObjectVariable_AttributeAssignment();
 
 		/**
 		 * The meta object literal for the '<em><b>Classifier</b></em>' reference feature.
@@ -4621,8 +4615,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_VARIABLE__CLASSIFIER = eINSTANCE
-				.getObjectVariable_Classifier();
+		EReference OBJECT_VARIABLE__CLASSIFIER = eINSTANCE.getObjectVariable_Classifier();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.impl.AbstractVariableImpl <em>Abstract Variable</em>}' class.
@@ -4640,8 +4633,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_VARIABLE__PATTERN = eINSTANCE
-				.getAbstractVariable_Pattern();
+		EReference ABSTRACT_VARIABLE__PATTERN = eINSTANCE.getAbstractVariable_Pattern();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding State</b></em>' attribute feature.
@@ -4649,8 +4641,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ABSTRACT_VARIABLE__BINDING_STATE = eINSTANCE
-				.getAbstractVariable_BindingState();
+		EAttribute ABSTRACT_VARIABLE__BINDING_STATE = eINSTANCE.getAbstractVariable_BindingState();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Expression</b></em>' containment reference feature.
@@ -4658,8 +4649,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_VARIABLE__BINDING_EXPRESSION = eINSTANCE
-				.getAbstractVariable_BindingExpression();
+		EReference ABSTRACT_VARIABLE__BINDING_EXPRESSION = eINSTANCE.getAbstractVariable_BindingExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Constraint</b></em>' containment reference list feature.
@@ -4667,8 +4657,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_VARIABLE__CONSTRAINT = eINSTANCE
-				.getAbstractVariable_Constraint();
+		EReference ABSTRACT_VARIABLE__CONSTRAINT = eINSTANCE.getAbstractVariable_Constraint();
 
 		/**
 		 * The meta object literal for the '<em><b>Incoming Link</b></em>' reference list feature.
@@ -4676,8 +4665,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_VARIABLE__INCOMING_LINK = eINSTANCE
-				.getAbstractVariable_IncomingLink();
+		EReference ABSTRACT_VARIABLE__INCOMING_LINK = eINSTANCE.getAbstractVariable_IncomingLink();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -4695,8 +4683,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONSTRAINT__CONSTRAINT_EXPRESSION = eINSTANCE
-				.getConstraint_ConstraintExpression();
+		EReference CONSTRAINT__CONSTRAINT_EXPRESSION = eINSTANCE.getConstraint_ConstraintExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Pattern</b></em>' container reference feature.
@@ -4712,8 +4699,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONSTRAINT__OBJECT_VARIABLE = eINSTANCE
-				.getConstraint_ObjectVariable();
+		EReference CONSTRAINT__OBJECT_VARIABLE = eINSTANCE.getConstraint_ObjectVariable();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.impl.AbstractLinkVariableImpl <em>Abstract Link Variable</em>}' class.
@@ -4731,8 +4717,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS = eINSTANCE
-				.getAbstractLinkVariable_BindingSemantics();
+		EAttribute ABSTRACT_LINK_VARIABLE__BINDING_SEMANTICS = eINSTANCE.getAbstractLinkVariable_BindingSemantics();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Operator</b></em>' attribute feature.
@@ -4740,8 +4725,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR = eINSTANCE
-				.getAbstractLinkVariable_BindingOperator();
+		EAttribute ABSTRACT_LINK_VARIABLE__BINDING_OPERATOR = eINSTANCE.getAbstractLinkVariable_BindingOperator();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -4749,8 +4733,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_LINK_VARIABLE__SOURCE = eINSTANCE
-				.getAbstractLinkVariable_Source();
+		EReference ABSTRACT_LINK_VARIABLE__SOURCE = eINSTANCE.getAbstractLinkVariable_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Second Link Constraint</b></em>' reference list feature.
@@ -4776,8 +4759,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_LINK_VARIABLE__PATTERN = eINSTANCE
-				.getAbstractLinkVariable_Pattern();
+		EReference ABSTRACT_LINK_VARIABLE__PATTERN = eINSTANCE.getAbstractLinkVariable_Pattern();
 
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -4785,8 +4767,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_LINK_VARIABLE__TARGET = eINSTANCE
-				.getAbstractLinkVariable_Target();
+		EReference ABSTRACT_LINK_VARIABLE__TARGET = eINSTANCE.getAbstractLinkVariable_Target();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.impl.LinkConstraintImpl <em>Link Constraint</em>}' class.
@@ -4812,8 +4793,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LINK_CONSTRAINT__CONSTRAINT_TYPE = eINSTANCE
-				.getLinkConstraint_ConstraintType();
+		EAttribute LINK_CONSTRAINT__CONSTRAINT_TYPE = eINSTANCE.getLinkConstraint_ConstraintType();
 
 		/**
 		 * The meta object literal for the '<em><b>Negative</b></em>' attribute feature.
@@ -4821,8 +4801,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LINK_CONSTRAINT__NEGATIVE = eINSTANCE
-				.getLinkConstraint_Negative();
+		EAttribute LINK_CONSTRAINT__NEGATIVE = eINSTANCE.getLinkConstraint_Negative();
 
 		/**
 		 * The meta object literal for the '<em><b>First Link</b></em>' reference feature.
@@ -4830,8 +4809,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK_CONSTRAINT__FIRST_LINK = eINSTANCE
-				.getLinkConstraint_FirstLink();
+		EReference LINK_CONSTRAINT__FIRST_LINK = eINSTANCE.getLinkConstraint_FirstLink();
 
 		/**
 		 * The meta object literal for the '<em><b>Referencing Object</b></em>' container reference feature.
@@ -4839,8 +4817,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK_CONSTRAINT__REFERENCING_OBJECT = eINSTANCE
-				.getLinkConstraint_ReferencingObject();
+		EReference LINK_CONSTRAINT__REFERENCING_OBJECT = eINSTANCE.getLinkConstraint_ReferencingObject();
 
 		/**
 		 * The meta object literal for the '<em><b>Second Link</b></em>' reference feature.
@@ -4848,8 +4825,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK_CONSTRAINT__SECOND_LINK = eINSTANCE
-				.getLinkConstraint_SecondLink();
+		EReference LINK_CONSTRAINT__SECOND_LINK = eINSTANCE.getLinkConstraint_SecondLink();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.impl.AttributeAssignmentImpl <em>Attribute Assignment</em>}' class.
@@ -4867,8 +4843,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_ASSIGNMENT__ATTRIBUTE = eINSTANCE
-				.getAttributeAssignment_Attribute();
+		EReference ATTRIBUTE_ASSIGNMENT__ATTRIBUTE = eINSTANCE.getAttributeAssignment_Attribute();
 
 		/**
 		 * The meta object literal for the '<em><b>Value Expression</b></em>' containment reference feature.
@@ -4876,8 +4851,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION = eINSTANCE
-				.getAttributeAssignment_ValueExpression();
+		EReference ATTRIBUTE_ASSIGNMENT__VALUE_EXPRESSION = eINSTANCE.getAttributeAssignment_ValueExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Object Variable</b></em>' container reference feature.
@@ -4885,8 +4859,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE = eINSTANCE
-				.getAttributeAssignment_ObjectVariable();
+		EReference ATTRIBUTE_ASSIGNMENT__OBJECT_VARIABLE = eINSTANCE.getAttributeAssignment_ObjectVariable();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.impl.CollectionVariableImpl <em>Collection Variable</em>}' class.
@@ -4904,8 +4877,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COLLECTION_VARIABLE__MAYBE_EMPTY = eINSTANCE
-				.getCollectionVariable_MaybeEmpty();
+		EAttribute COLLECTION_VARIABLE__MAYBE_EMPTY = eINSTANCE.getCollectionVariable_MaybeEmpty();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.impl.PrimitiveVariableImpl <em>Primitive Variable</em>}' class.
@@ -4923,8 +4895,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PRIMITIVE_VARIABLE__CLASSIFIER = eINSTANCE
-				.getPrimitiveVariable_Classifier();
+		EReference PRIMITIVE_VARIABLE__CLASSIFIER = eINSTANCE.getPrimitiveVariable_Classifier();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.impl.PathImpl <em>Path</em>}' class.
@@ -4960,8 +4931,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK_VARIABLE__SOURCE_END = eINSTANCE
-				.getLinkVariable_SourceEnd();
+		EReference LINK_VARIABLE__SOURCE_END = eINSTANCE.getLinkVariable_SourceEnd();
 
 		/**
 		 * The meta object literal for the '<em><b>Target End</b></em>' reference feature.
@@ -4969,8 +4939,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK_VARIABLE__TARGET_END = eINSTANCE
-				.getLinkVariable_TargetEnd();
+		EReference LINK_VARIABLE__TARGET_END = eINSTANCE.getLinkVariable_TargetEnd();
 
 		/**
 		 * The meta object literal for the '<em><b>Qualifier Expression</b></em>' containment reference feature.
@@ -4978,8 +4947,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK_VARIABLE__QUALIFIER_EXPRESSION = eINSTANCE
-				.getLinkVariable_QualifierExpression();
+		EReference LINK_VARIABLE__QUALIFIER_EXPRESSION = eINSTANCE.getLinkVariable_QualifierExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.impl.InclusionLinkImpl <em>Inclusion Link</em>}' class.
@@ -5011,16 +4979,6 @@ public interface PatternsPackage extends EPackage {
 				.getMatchingPattern__NoModifierInMatchingPattern__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.impl.MaybeLinkImpl <em>Maybe Link</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.storydriven.storydiagrams.patterns.impl.MaybeLinkImpl
-		 * @see org.storydriven.storydiagrams.patterns.impl.PatternsPackageImpl#getMaybeLink()
-		 * @generated
-		 */
-		EClass MAYBE_LINK = eINSTANCE.getMaybeLink();
-
-		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.impl.StoryPatternImpl <em>Story Pattern</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5036,8 +4994,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_PATTERN__VARIABLE = eINSTANCE
-				.getStoryPattern_Variable();
+		EReference STORY_PATTERN__VARIABLE = eINSTANCE.getStoryPattern_Variable();
 
 		/**
 		 * The meta object literal for the '<em><b>Constraint</b></em>' containment reference list feature.
@@ -5045,8 +5002,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_PATTERN__CONSTRAINT = eINSTANCE
-				.getStoryPattern_Constraint();
+		EReference STORY_PATTERN__CONSTRAINT = eINSTANCE.getStoryPattern_Constraint();
 
 		/**
 		 * The meta object literal for the '<em><b>Link Variable</b></em>' containment reference list feature.
@@ -5054,8 +5010,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_PATTERN__LINK_VARIABLE = eINSTANCE
-				.getStoryPattern_LinkVariable();
+		EReference STORY_PATTERN__LINK_VARIABLE = eINSTANCE.getStoryPattern_LinkVariable();
 
 		/**
 		 * The meta object literal for the '<em><b>Parent Pattern</b></em>' container reference feature.
@@ -5063,8 +5018,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_PATTERN__PARENT_PATTERN = eINSTANCE
-				.getStoryPattern_ParentPattern();
+		EReference STORY_PATTERN__PARENT_PATTERN = eINSTANCE.getStoryPattern_ParentPattern();
 
 		/**
 		 * The meta object literal for the '<em><b>Contained Pattern</b></em>' containment reference list feature.
@@ -5072,8 +5026,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_PATTERN__CONTAINED_PATTERN = eINSTANCE
-				.getStoryPattern_ContainedPattern();
+		EReference STORY_PATTERN__CONTAINED_PATTERN = eINSTANCE.getStoryPattern_ContainedPattern();
 
 		/**
 		 * The meta object literal for the '<em><b>Binding Semantics</b></em>' attribute feature.
@@ -5081,8 +5034,7 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STORY_PATTERN__BINDING_SEMANTICS = eINSTANCE
-				.getStoryPattern_BindingSemantics();
+		EAttribute STORY_PATTERN__BINDING_SEMANTICS = eINSTANCE.getStoryPattern_BindingSemantics();
 
 		/**
 		 * The meta object literal for the '<em><b>Template Signature</b></em>' containment reference feature.
@@ -5090,8 +5042,17 @@ public interface PatternsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_PATTERN__TEMPLATE_SIGNATURE = eINSTANCE
-				.getStoryPattern_TemplateSignature();
+		EReference STORY_PATTERN__TEMPLATE_SIGNATURE = eINSTANCE.getStoryPattern_TemplateSignature();
+
+		/**
+		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.impl.MaybeLinkImpl <em>Maybe Link</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.storydriven.storydiagrams.patterns.impl.MaybeLinkImpl
+		 * @see org.storydriven.storydiagrams.patterns.impl.PatternsPackageImpl#getMaybeLink()
+		 * @generated
+		 */
+		EClass MAYBE_LINK = eINSTANCE.getMaybeLink();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.BindingState <em>Binding State</em>}' enum.

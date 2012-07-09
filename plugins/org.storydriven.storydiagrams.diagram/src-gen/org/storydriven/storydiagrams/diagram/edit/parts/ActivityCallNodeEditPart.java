@@ -68,8 +68,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new ActivityCallNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityCallNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -82,8 +81,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -120,12 +118,11 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ActivityCallNodeNameEditPart) {
-			((ActivityCallNodeNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getActivityCallNodeNameLabel());
+			((ActivityCallNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getActivityCallNodeNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof WrappingLabelEditPart) {
-			((WrappingLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+		if (childEditPart instanceof ActivityCallNodeCalleeLabelEditPart) {
+			((ActivityCallNodeCalleeLabelEditPart) childEditPart).setLabel(getPrimaryShape()
 					.getActivityCallNodeCalleeLabel());
 			return true;
 		}
@@ -139,7 +136,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof ActivityCallNodeNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof WrappingLabelEditPart) {
+		if (childEditPart instanceof ActivityCallNodeCalleeLabelEditPart) {
 			return true;
 		}
 		return false;
@@ -262,8 +259,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(StorydiagramsVisualIDRegistry
-				.getType(ActivityCallNodeNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(ActivityCallNodeNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -278,8 +274,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
@@ -372,8 +367,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 			layoutThis.makeColumnsEqualWidth = true;
 			this.setLayoutManager(layoutThis);
 
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
-					getMapMode().DPtoLP(8)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
 			this.setForegroundColor(ColorConstants.black);
 			this.setBackgroundColor(THIS_BACK);
 			createContents();
@@ -397,8 +391,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 			constraintFActivityCallNodeNameLabel.verticalSpan = 1;
 			constraintFActivityCallNodeNameLabel.grabExcessHorizontalSpace = true;
 			constraintFActivityCallNodeNameLabel.grabExcessVerticalSpace = false;
-			this.add(fActivityCallNodeNameLabel,
-					constraintFActivityCallNodeNameLabel);
+			this.add(fActivityCallNodeNameLabel, constraintFActivityCallNodeNameLabel);
 
 			fActivityCallNodeCalleeLabel = new WrappingLabel();
 			fActivityCallNodeCalleeLabel.setText("");
@@ -411,8 +404,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 			constraintFActivityCallNodeCalleeLabel.verticalSpan = 1;
 			constraintFActivityCallNodeCalleeLabel.grabExcessHorizontalSpace = true;
 			constraintFActivityCallNodeCalleeLabel.grabExcessVerticalSpace = false;
-			this.add(fActivityCallNodeCalleeLabel,
-					constraintFActivityCallNodeCalleeLabel);
+			this.add(fActivityCallNodeCalleeLabel, constraintFActivityCallNodeCalleeLabel);
 
 		}
 
@@ -440,8 +432,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FACTIVITYCALLNODENAMELABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 10, SWT.BOLD);
+	static final Font FACTIVITYCALLNODENAMELABEL_FONT = new Font(Display.getCurrent(), Display.getDefault()
+			.getSystemFont().getFontData()[0].getName(), 10, SWT.BOLD);
 
 }

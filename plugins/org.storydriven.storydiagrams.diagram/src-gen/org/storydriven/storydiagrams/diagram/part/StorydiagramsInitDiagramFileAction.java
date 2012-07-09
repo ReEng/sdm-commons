@@ -22,8 +22,7 @@ import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart;
 /**
  * @generated
  */
-public class StorydiagramsInitDiagramFileAction implements
-		IObjectActionDelegate {
+public class StorydiagramsInitDiagramFileAction implements IObjectActionDelegate {
 
 	/**
 	 * @generated
@@ -48,14 +47,11 @@ public class StorydiagramsInitDiagramFileAction implements
 	public void selectionChanged(IAction action, ISelection selection) {
 		domainModelURI = null;
 		action.setEnabled(false);
-		if (selection instanceof IStructuredSelection == false
-				|| selection.isEmpty()) {
+		if (selection instanceof IStructuredSelection == false || selection.isEmpty()) {
 			return;
 		}
-		IFile file = (IFile) ((IStructuredSelection) selection)
-				.getFirstElement();
-		domainModelURI = URI.createPlatformResourceURI(file.getFullPath()
-				.toString(), true);
+		IFile file = (IFile) ((IStructuredSelection) selection).getFirstElement();
+		domainModelURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 		action.setEnabled(true);
 	}
 
@@ -70,28 +66,22 @@ public class StorydiagramsInitDiagramFileAction implements
 	 * @generated
 	 */
 	public void run(IAction action) {
-		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
-				.createEditingDomain();
+		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		ResourceSet resourceSet = editingDomain.getResourceSet();
 		EObject diagramRoot = null;
 		try {
 			Resource resource = resourceSet.getResource(domainModelURI, true);
 			diagramRoot = (EObject) resource.getContents().get(0);
 		} catch (WrappedException ex) {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError(
-					"Unable to load resource: " + domainModelURI, ex); //$NON-NLS-1$
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Unable to load resource: " + domainModelURI, ex); //$NON-NLS-1$
 		}
 		if (diagramRoot == null) {
-			MessageDialog.openError(getShell(),
-					Messages.InitDiagramFile_ResourceErrorDialogTitle,
+			MessageDialog.openError(getShell(), Messages.InitDiagramFile_ResourceErrorDialogTitle,
 					Messages.InitDiagramFile_ResourceErrorDialogMessage);
 			return;
 		}
-		Wizard wizard = new StorydiagramsNewDiagramFileWizard(domainModelURI,
-				diagramRoot, editingDomain);
-		wizard.setWindowTitle(NLS.bind(Messages.InitDiagramFile_WizardTitle,
-				ActivityEditPart.MODEL_ID));
-		StorydiagramsDiagramEditorUtil.runWizard(getShell(), wizard,
-				"InitDiagramFile"); //$NON-NLS-1$
+		Wizard wizard = new StorydiagramsNewDiagramFileWizard(domainModelURI, diagramRoot, editingDomain);
+		wizard.setWindowTitle(NLS.bind(Messages.InitDiagramFile_WizardTitle, ActivityEditPart.MODEL_ID));
+		StorydiagramsDiagramEditorUtil.runWizard(getShell(), wizard, "InitDiagramFile"); //$NON-NLS-1$
 	}
 }

@@ -241,6 +241,17 @@ public class PatternsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case PatternsPackage.STORY_PATTERN: {
+			StoryPattern storyPattern = (StoryPattern) theEObject;
+			T result = caseStoryPattern(storyPattern);
+			if (result == null)
+				result = caseCommentableElement(storyPattern);
+			if (result == null)
+				result = caseExtendableElement(storyPattern);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case PatternsPackage.MAYBE_LINK: {
 			MaybeLink maybeLink = (MaybeLink) theEObject;
 			T result = caseMaybeLink(maybeLink);
@@ -250,17 +261,6 @@ public class PatternsSwitch<T> extends Switch<T> {
 				result = caseNamedElement(maybeLink);
 			if (result == null)
 				result = caseExtendableElement(maybeLink);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case PatternsPackage.STORY_PATTERN: {
-			StoryPattern storyPattern = (StoryPattern) theEObject;
-			T result = caseStoryPattern(storyPattern);
-			if (result == null)
-				result = caseCommentableElement(storyPattern);
-			if (result == null)
-				result = caseExtendableElement(storyPattern);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -451,21 +451,6 @@ public class PatternsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Maybe Link</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Maybe Link</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMaybeLink(MaybeLink object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Story Pattern</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -477,6 +462,21 @@ public class PatternsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStoryPattern(StoryPattern object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Maybe Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Maybe Link</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMaybeLink(MaybeLink object) {
 		return null;
 	}
 

@@ -482,6 +482,28 @@
         xsi:type="ecore:EReference"
         href="storydiagrams.ecore#//patterns/AbstractLinkVariable/target"/>
   </links>
+  <links>
+    <domainMetaElement
+        href="storydiagrams.ecore#//patterns/MaybeLink"/>
+    <labelMappings
+        readOnly="true">
+      <diagramLabel
+          href="storydiagrams.gmfgraph#MaybeLinkLabel"/>
+    </labelMappings>
+    <containmentFeature
+        href="storydiagrams.ecore#//patterns/StoryPattern/linkVariable"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="storydiagrams.gmftool#//@palette/@tools.1/@tools.5"/>
+    <diagramLink
+        href="storydiagrams.gmfgraph#MaybeLinkConnection"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="storydiagrams.ecore#//patterns/AbstractLinkVariable/source"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="storydiagrams.ecore#//patterns/AbstractLinkVariable/target"/>
+  </links>
   <diagram>
     <diagramCanvas
         href="storydiagrams.gmfgraph#Story Diagram"/>

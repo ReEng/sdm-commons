@@ -52,7 +52,7 @@ public class ActivityEdgeGuardLabelEditPart extends LabelEditPart implements ITe
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6001;
+	public static final int VISUAL_ID = 6006;
 
 	/**
 	 * @generated
@@ -293,7 +293,7 @@ public class ActivityEdgeGuardLabelEditPart extends LabelEditPart implements ITe
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.ActivityEdge_4001,
+							StorydiagramsElementTypes.ActivityEdge_4005,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
 									.getType(org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeGuardLabelEditPart.VISUAL_ID));

@@ -9,7 +9,6 @@ import org.storydriven.storydiagrams.diagram.custom.util.ValidationUtil;
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
-import org.storydriven.storydiagrams.patterns.BindingState;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 public class AbstractLinkVariableBindingOperatorSection extends AbstractEEnumRadioSection<BindingOperator> {
@@ -28,9 +27,8 @@ public class AbstractLinkVariableBindingOperatorSection extends AbstractEEnumRad
 		if (getElement() instanceof AbstractLinkVariable) {
 			AbstractLinkVariable variable = (AbstractLinkVariable) getElement();
 			BindingSemantics semantics = variable.getBindingSemantics();
-			BindingState state = variable.getBindingState();
 
-			return ValidationUtil.isValidLink(state, semantics, operator);
+			return ValidationUtil.isValidLink(semantics, operator);
 		}
 
 		return true;

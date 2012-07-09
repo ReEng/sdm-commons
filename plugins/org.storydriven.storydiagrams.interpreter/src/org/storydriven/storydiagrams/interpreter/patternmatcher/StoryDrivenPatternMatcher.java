@@ -15,7 +15,7 @@ import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.interpreter.facade.StoryDrivenMetamodelFacadeFactory;
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
-import org.storydriven.storydiagrams.patterns.ContainmentRelation;
+import org.storydriven.storydiagrams.patterns.InclusionLink;
 import org.storydriven.storydiagrams.patterns.LinkVariable;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.Path;
@@ -86,9 +86,9 @@ public class StoryDrivenPatternMatcher
 			{
 				part = new StoryDrivenLinkVariablePatternPart(this, (LinkVariable) link);
 			}
-			else if (linkEClass == PatternsPackage.Literals.CONTAINMENT_RELATION)
+			else if (linkEClass == PatternsPackage.Literals.INCLUSION_LINK)
 			{
-				part = new StoryDrivenContainmentRelationPatternPart(this, (ContainmentRelation) link);
+				part = new StoryDrivenInclusionLinkPatternPart(this, (InclusionLink) link);
 			}
 			else if (linkEClass == PatternsPackage.Literals.PATH)
 			{

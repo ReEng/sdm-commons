@@ -32,9 +32,8 @@ import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFac
  * <!-- end-user-doc -->
  * @generated
  */
-public class PathItemProvider extends AbstractLinkVariableItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class PathItemProvider extends AbstractLinkVariableItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -69,12 +68,10 @@ public class PathItemProvider extends AbstractLinkVariableItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(PatternsPackage.Literals.PATH__PATH_EXPRESSION);
+			childrenFeatures.add(PatternsPackage.Literals.PATH__PATH_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -87,8 +84,7 @@ public class PathItemProvider extends AbstractLinkVariableItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("elements/patterns/Path.png"));
+		return overlayImage(object, getResourceLocator().getImage("elements/patterns/Path.png"));
 	}
 
 	/**
@@ -110,8 +106,8 @@ public class PathItemProvider extends AbstractLinkVariableItemProvider
 	@Override
 	public String getText(Object object) {
 		String label = ((Path) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Path_type")
-				: getString("_UI_Path_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Path_type") : getString("_UI_Path_type") + " "
+				+ label;
 	}
 
 	/**
@@ -127,8 +123,7 @@ public class PathItemProvider extends AbstractLinkVariableItemProvider
 
 		switch (notification.getFeatureID(Path.class)) {
 		case PatternsPackage.PATH__PATH_EXPRESSION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -155,67 +150,46 @@ public class PathItemProvider extends AbstractLinkVariableItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.PATH__PATH_EXPRESSION,
-				ActivitiesExpressionsFactory.eINSTANCE
-						.createExceptionVariableExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
+				ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.PATH__PATH_EXPRESSION,
-						CallsExpressionsFactory.eINSTANCE
-								.createMethodCallExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
+				CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.PATH__PATH_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
 				CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.PATH__PATH_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createAttributeValueExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.PATH__PATH_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createObjectVariableExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.PATH__PATH_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createCollectionSizeExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.PATH__PATH_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createPrimitiveVariableExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.PATH__PATH_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.PATH__PATH_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.PATH__PATH_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createNotExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.PATH__PATH_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.PATH__PATH_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.PATH__PATH_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 	}
 

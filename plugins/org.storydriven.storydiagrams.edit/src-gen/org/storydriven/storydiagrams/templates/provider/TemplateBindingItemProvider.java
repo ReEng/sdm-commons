@@ -40,9 +40,8 @@ import org.storydriven.storydiagrams.templates.TemplatesPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplateBindingItemProvider extends ExtendableElementItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class TemplateBindingItemProvider extends ExtendableElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -77,15 +76,12 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider
 	 */
 	protected void addBoundParameterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_TemplateBinding_boundParameter_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_TemplateBinding_boundParameter_feature",
-						"_UI_TemplateBinding_type"),
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BOUND_PARAMETER,
-				true, false, true, null, null, null));
+				getString("_UI_PropertyDescriptor_description", "_UI_TemplateBinding_boundParameter_feature",
+						"_UI_TemplateBinding_type"), TemplatesPackage.Literals.TEMPLATE_BINDING__BOUND_PARAMETER, true,
+				false, true, null, null, null));
 	}
 
 	/**
@@ -96,10 +92,7 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/templates/TemplateBinding.png"));
+		return overlayImage(object, getResourceLocator().getImage("elements/templates/TemplateBinding.png"));
 	}
 
 	/**
@@ -132,14 +125,11 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION);
-			childrenFeatures
-					.add(TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDING);
+			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION);
+			childrenFeatures.add(TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDING);
 		}
 		return childrenFeatures;
 	}
@@ -169,8 +159,7 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider
 		switch (notification.getFeatureID(TemplateBinding.class)) {
 		case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
 		case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -197,79 +186,55 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				CallsFactory.eINSTANCE.createParameterExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				ActivitiesExpressionsFactory.eINSTANCE
-						.createExceptionVariableExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-						CallsExpressionsFactory.eINSTANCE
-								.createMethodCallExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
 				CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createAttributeValueExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createObjectVariableExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createCollectionSizeExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createPrimitiveVariableExpression()));
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createNotExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDING,
+		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDING,
 				TemplatesFactory.eINSTANCE.createPropertyBinding()));
 	}
 

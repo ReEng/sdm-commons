@@ -33,9 +33,8 @@ import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFac
  * <!-- end-user-doc -->
  * @generated
  */
-public class LinkVariableItemProvider extends AbstractLinkVariableItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class LinkVariableItemProvider extends AbstractLinkVariableItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -71,15 +70,12 @@ public class LinkVariableItemProvider extends AbstractLinkVariableItemProvider
 	 */
 	protected void addSourceEndPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_LinkVariable_sourceEnd_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_LinkVariable_sourceEnd_feature",
-						"_UI_LinkVariable_type"),
-				PatternsPackage.Literals.LINK_VARIABLE__SOURCE_END, true,
-				false, true, null, null, null));
+				getString("_UI_PropertyDescriptor_description", "_UI_LinkVariable_sourceEnd_feature",
+						"_UI_LinkVariable_type"), PatternsPackage.Literals.LINK_VARIABLE__SOURCE_END, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -90,15 +86,12 @@ public class LinkVariableItemProvider extends AbstractLinkVariableItemProvider
 	 */
 	protected void addTargetEndPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_LinkVariable_targetEnd_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_LinkVariable_targetEnd_feature",
-						"_UI_LinkVariable_type"),
-				PatternsPackage.Literals.LINK_VARIABLE__TARGET_END, true,
-				false, true, null, null, null));
+				getString("_UI_PropertyDescriptor_description", "_UI_LinkVariable_targetEnd_feature",
+						"_UI_LinkVariable_type"), PatternsPackage.Literals.LINK_VARIABLE__TARGET_END, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -110,12 +103,10 @@ public class LinkVariableItemProvider extends AbstractLinkVariableItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION);
+			childrenFeatures.add(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -128,10 +119,7 @@ public class LinkVariableItemProvider extends AbstractLinkVariableItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/patterns/LinkVariable.png"));
+		return overlayImage(object, getResourceLocator().getImage("elements/patterns/LinkVariable.png"));
 	}
 
 	/**
@@ -170,8 +158,7 @@ public class LinkVariableItemProvider extends AbstractLinkVariableItemProvider
 
 		switch (notification.getFeatureID(LinkVariable.class)) {
 		case PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -198,67 +185,46 @@ public class LinkVariableItemProvider extends AbstractLinkVariableItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-				ActivitiesExpressionsFactory.eINSTANCE
-						.createExceptionVariableExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+				ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-						CallsExpressionsFactory.eINSTANCE
-								.createMethodCallExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+				CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
 				CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createAttributeValueExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createObjectVariableExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createCollectionSizeExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createPrimitiveVariableExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createNotExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 	}
 

@@ -32,9 +32,8 @@ import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFac
  * <!-- end-user-doc -->
  * @generated
  */
-public class StatementNodeItemProvider extends ActivityNodeItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class StatementNodeItemProvider extends ActivityNodeItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -69,12 +68,10 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION);
+			childrenFeatures.add(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -87,10 +84,7 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/activities/StatementNode.png"));
+		return overlayImage(object, getResourceLocator().getImage("elements/activities/StatementNode.png"));
 	}
 
 	/**
@@ -129,8 +123,7 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider
 
 		switch (notification.getFeatureID(StatementNode.class)) {
 		case ActivitiesPackage.STATEMENT_NODE__STATEMENT_EXPRESSION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -157,84 +150,47 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						ActivitiesExpressionsFactory.eINSTANCE
-								.createExceptionVariableExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						CallsExpressionsFactory.eINSTANCE
-								.createMethodCallExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						CallsExpressionsFactory.eINSTANCE
-								.createParameterExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						PatternsExpressionsFactory.eINSTANCE
-								.createAttributeValueExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						PatternsExpressionsFactory.eINSTANCE
-								.createObjectVariableExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						PatternsExpressionsFactory.eINSTANCE
-								.createCollectionSizeExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						PatternsExpressionsFactory.eINSTANCE
-								.createPrimitiveVariableExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						ExpressionsFactory.eINSTANCE.createNotExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createNotExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						ExpressionsFactory.eINSTANCE
-								.createComparisonExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						ExpressionsFactory.eINSTANCE
-								.createArithmeticExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-						ExpressionsFactory.eINSTANCE
-								.createBinaryLogicExpression()));
+		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 	}
 
 }

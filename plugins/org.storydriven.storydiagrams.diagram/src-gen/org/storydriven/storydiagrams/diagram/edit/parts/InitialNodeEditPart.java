@@ -68,8 +68,7 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new InitialNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InitialNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -82,8 +81,7 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -119,9 +117,8 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof WrappingLabel3EditPart) {
-			((WrappingLabel3EditPart) childEditPart).setLabel(getPrimaryShape()
-					.getInitialNodeLabel());
+		if (childEditPart instanceof InitialNodeLabelEditPart) {
+			((InitialNodeLabelEditPart) childEditPart).setLabel(getPrimaryShape().getInitialNodeLabel());
 			return true;
 		}
 		return false;
@@ -131,7 +128,7 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof WrappingLabel3EditPart) {
+		if (childEditPart instanceof InitialNodeLabelEditPart) {
 			return true;
 		}
 		return false;
@@ -266,8 +263,7 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(StorydiagramsVisualIDRegistry
-				.getType(WrappingLabel3EditPart.VISUAL_ID));
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(InitialNodeLabelEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -282,8 +278,7 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
@@ -385,12 +380,9 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 			Ellipse startNodeEllipse0 = new Ellipse();
 			startNodeEllipse0.setForegroundColor(ColorConstants.black);
 			startNodeEllipse0.setBackgroundColor(ColorConstants.black);
-			startNodeEllipse0.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(15), getMapMode().DPtoLP(15)));
-			startNodeEllipse0.setMaximumSize(new Dimension(getMapMode().DPtoLP(
-					15), getMapMode().DPtoLP(15)));
-			startNodeEllipse0.setMinimumSize(new Dimension(getMapMode().DPtoLP(
-					15), getMapMode().DPtoLP(15)));
+			startNodeEllipse0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			startNodeEllipse0.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			startNodeEllipse0.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 
 			GridData constraintStartNodeEllipse0 = new GridData();
 			constraintStartNodeEllipse0.verticalAlignment = GridData.CENTER;

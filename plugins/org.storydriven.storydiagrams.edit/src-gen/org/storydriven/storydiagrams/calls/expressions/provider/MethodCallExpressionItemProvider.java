@@ -40,9 +40,8 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MethodCallExpressionItemProvider extends ExpressionItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class MethodCallExpressionItemProvider extends ExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -78,15 +77,12 @@ public class MethodCallExpressionItemProvider extends ExpressionItemProvider
 	protected void addCalleePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
+						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 						getResourceLocator(),
 						getString("_UI_Invocation_callee_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_Invocation_callee_feature",
-								"_UI_Invocation_type"),
-						CallsPackage.Literals.INVOCATION__CALLEE, true, false,
-						true, null, null, null));
+						getString("_UI_PropertyDescriptor_description", "_UI_Invocation_callee_feature",
+								"_UI_Invocation_type"), CallsPackage.Literals.INVOCATION__CALLEE, true, false, true,
+						null, null, null));
 	}
 
 	/**
@@ -97,10 +93,7 @@ public class MethodCallExpressionItemProvider extends ExpressionItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/expressions/MethodCallExpression.png"));
+		return overlayImage(object, getResourceLocator().getImage("elements/expressions/MethodCallExpression.png"));
 	}
 
 	/**
@@ -133,16 +126,12 @@ public class MethodCallExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS);
-			childrenFeatures
-					.add(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET);
-			childrenFeatures
-					.add(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE);
+			childrenFeatures.add(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS);
+			childrenFeatures.add(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET);
+			childrenFeatures.add(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE);
 		}
 		return childrenFeatures;
 	}
@@ -175,8 +164,7 @@ public class MethodCallExpressionItemProvider extends ExpressionItemProvider
 		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
 		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET:
 		case CallsExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -203,101 +191,60 @@ public class MethodCallExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				CallsFactory.eINSTANCE.createParameterExtension()));
 
-		newChildDescriptors.add(createChildParameter(
-				CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
+		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
 				CallsFactory.eINSTANCE.createParameterBinding()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-						CallsExpressionsFactory.eINSTANCE
-								.createMethodCallExpression()));
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-						CallsExpressionsFactory.eINSTANCE
-								.createParameterExpression()));
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-						ActivitiesExpressionsFactory.eINSTANCE
-								.createExceptionVariableExpression()));
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-						PatternsExpressionsFactory.eINSTANCE
-								.createAttributeValueExpression()));
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-						PatternsExpressionsFactory.eINSTANCE
-								.createObjectVariableExpression()));
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-						PatternsExpressionsFactory.eINSTANCE
-								.createCollectionSizeExpression()));
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-						PatternsExpressionsFactory.eINSTANCE
-								.createPrimitiveVariableExpression()));
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-						ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-						ExpressionsFactory.eINSTANCE.createLiteralExpression()));
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-						ExpressionsFactory.eINSTANCE.createNotExpression()));
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				ExpressionsFactory.eINSTANCE.createNotExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-						ExpressionsFactory.eINSTANCE
-								.createComparisonExpression()));
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-						ExpressionsFactory.eINSTANCE
-								.createArithmeticExpression()));
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-						ExpressionsFactory.eINSTANCE
-								.createBinaryLogicExpression()));
+		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
+				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,
-						CallsFactory.eINSTANCE.createOpaqueCallable()));
+		newChildDescriptors.add(createChildParameter(
+				CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,
+				CallsFactory.eINSTANCE.createOpaqueCallable()));
 	}
 
 }

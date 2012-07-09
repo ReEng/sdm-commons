@@ -12,8 +12,7 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class AttributeAssignmentItemSemanticEditPolicy extends
-		StorydiagramsBaseItemSemanticEditPolicy {
+public class AttributeAssignmentItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -27,8 +26,7 @@ public class AttributeAssignmentItemSemanticEditPolicy extends
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {

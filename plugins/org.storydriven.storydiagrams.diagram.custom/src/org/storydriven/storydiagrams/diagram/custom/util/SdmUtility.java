@@ -10,7 +10,7 @@ import org.storydriven.storydiagrams.activities.EdgeGuard;
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.AttributeAssignment;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
-import org.storydriven.storydiagrams.patterns.ContainmentRelation;
+import org.storydriven.storydiagrams.patterns.InclusionLink;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 
 public class SdmUtility {
@@ -44,12 +44,12 @@ public class SdmUtility {
 		case CHECK_ONLY:
 			return EMPTY;
 		case CREATE:
-			if (link instanceof ContainmentRelation) {
+			if (link instanceof InclusionLink) {
 				return STEREOTYPE_PREFIX + "add" + STEREOTYPE_SUFFIX;
 			}
 			return STEREOTYPE_PREFIX + "create" + STEREOTYPE_SUFFIX;
 		case DESTROY:
-			if (link instanceof ContainmentRelation) {
+			if (link instanceof InclusionLink) {
 				return STEREOTYPE_PREFIX + "remove" + STEREOTYPE_SUFFIX;
 			}
 			return STEREOTYPE_PREFIX + "destroy" + STEREOTYPE_SUFFIX;

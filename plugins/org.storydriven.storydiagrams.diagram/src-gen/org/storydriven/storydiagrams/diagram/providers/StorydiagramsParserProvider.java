@@ -14,7 +14,7 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.core.CorePackage;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeNameEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableNameEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableNameLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeNameEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeNameEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableNameEditPart;
@@ -25,8 +25,7 @@ import org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry;
 /**
  * @generated
  */
-public class StorydiagramsParserProvider extends AbstractProvider implements
-		IParserProvider {
+public class StorydiagramsParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
@@ -38,12 +37,9 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 */
 	private IParser getActivityCallNodeName_5032Parser() {
 		if (activityCallNodeName_5032Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			activityCallNodeName_5032Parser = parser;
 		}
 		return activityCallNodeName_5032Parser;
@@ -59,12 +55,9 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 */
 	private IParser getStatementNodeName_5034Parser() {
 		if (statementNodeName_5034Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			statementNodeName_5034Parser = parser;
 		}
 		return statementNodeName_5034Parser;
@@ -80,12 +73,9 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 */
 	private IParser getModifyingStoryNodeName_5042Parser() {
 		if (modifyingStoryNodeName_5042Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			modifyingStoryNodeName_5042Parser = parser;
 		}
 		return modifyingStoryNodeName_5042Parser;
@@ -101,12 +91,9 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 */
 	private IParser getMatchingStoryNodeName_5043Parser() {
 		if (matchingStoryNodeName_5043Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			matchingStoryNodeName_5043Parser = parser;
 		}
 		return matchingStoryNodeName_5043Parser;
@@ -122,12 +109,9 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 */
 	private IParser getObjectVariableName_5037Parser() {
 		if (objectVariableName_5037Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			objectVariableName_5037Parser = parser;
 		}
 		return objectVariableName_5037Parser;
@@ -143,12 +127,9 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCollectionVariableName_5040Parser() {
 		if (collectionVariableName_5040Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features,
-					editableFeatures);
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
 			collectionVariableName_5040Parser = parser;
 		}
 		return collectionVariableName_5040Parser;
@@ -169,7 +150,7 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 			return getMatchingStoryNodeName_5043Parser();
 		case ObjectVariableNameEditPart.VISUAL_ID:
 			return getObjectVariableName_5037Parser();
-		case CollectionVariableNameEditPart.VISUAL_ID:
+		case CollectionVariableNameLabelEditPart.VISUAL_ID:
 			return getCollectionVariableName_5040Parser();
 		}
 		return null;
@@ -179,10 +160,8 @@ public class StorydiagramsParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**

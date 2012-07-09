@@ -25,8 +25,7 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
  *
  * @generated
  */
-public class CollectionVariableImpl extends ObjectVariableImpl implements
-		CollectionVariable {
+public class CollectionVariableImpl extends ObjectVariableImpl implements CollectionVariable {
 	/**
 	 * The default value of the '{@link #isMaybeEmpty() <em>Maybe Empty</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,8 +83,7 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements
 		boolean oldMaybeEmpty = maybeEmpty;
 		maybeEmpty = newMaybeEmpty;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.COLLECTION_VARIABLE__MAYBE_EMPTY,
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.COLLECTION_VARIABLE__MAYBE_EMPTY,
 					oldMaybeEmpty, maybeEmpty));
 	}
 

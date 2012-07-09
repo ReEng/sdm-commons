@@ -11,14 +11,12 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.storydriven.storydiagrams.patterns.MaybeLink;
 
 /**
@@ -27,9 +25,8 @@ import org.storydriven.storydiagrams.patterns.MaybeLink;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MaybeLinkItemProvider extends AbstractLinkVariableItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class MaybeLinkItemProvider extends AbstractLinkVariableItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -63,8 +60,7 @@ public class MaybeLinkItemProvider extends AbstractLinkVariableItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/MaybeLink"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/MaybeLink"));
 	}
 
 	/**
@@ -86,8 +82,8 @@ public class MaybeLinkItemProvider extends AbstractLinkVariableItemProvider
 	@Override
 	public String getText(Object object) {
 		String label = ((MaybeLink) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_MaybeLink_type")
-				: getString("_UI_MaybeLink_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_MaybeLink_type") : getString("_UI_MaybeLink_type")
+				+ " " + label;
 	}
 
 	/**
@@ -111,8 +107,7 @@ public class MaybeLinkItemProvider extends AbstractLinkVariableItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

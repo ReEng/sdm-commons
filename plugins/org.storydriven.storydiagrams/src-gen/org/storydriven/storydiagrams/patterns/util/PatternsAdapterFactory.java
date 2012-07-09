@@ -147,13 +147,13 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseMaybeLink(MaybeLink object) {
-			return createMaybeLinkAdapter();
+		public Adapter caseStoryPattern(StoryPattern object) {
+			return createStoryPatternAdapter();
 		}
 
 		@Override
-		public Adapter caseStoryPattern(StoryPattern object) {
-			return createStoryPatternAdapter();
+		public Adapter caseMaybeLink(MaybeLink object) {
+			return createMaybeLinkAdapter();
 		}
 
 		@Override
@@ -369,20 +369,6 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.MaybeLink <em>Maybe Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.storydiagrams.patterns.MaybeLink
-	 * @generated
-	 */
-	public Adapter createMaybeLinkAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.StoryPattern <em>Story Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -393,6 +379,20 @@ public class PatternsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStoryPatternAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.patterns.MaybeLink <em>Maybe Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.storydiagrams.patterns.MaybeLink
+	 * @generated
+	 */
+	public Adapter createMaybeLinkAdapter() {
 		return null;
 	}
 

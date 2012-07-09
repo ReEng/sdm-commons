@@ -27,11 +27,11 @@ public class CustomStorydiagramsEditPartFactory extends StorydiagramsEditPartFac
 			case CustomConstraintEditPart.VISUAL_ID:
 				return new CustomConstraintEditPart(view);
 
-			case CustomContainmentRelationEditPart.VISUAL_ID:
-				return new CustomContainmentRelationEditPart(view);
+			case CustomInclusionLinkEditPart.VISUAL_ID:
+				return new CustomInclusionLinkEditPart(view);
 
-			case CustomContainmentRelationOperatorLabelEditPart.VISUAL_ID:
-				return new CustomContainmentRelationOperatorLabelEditPart(view);
+			case CustomInclusionLinkOperatorLabelEditPart.VISUAL_ID:
+				return new CustomInclusionLinkOperatorLabelEditPart(view);
 
 			case CustomJunctionNodeEditPart.VISUAL_ID:
 				return new CustomJunctionNodeEditPart(view);
@@ -78,20 +78,20 @@ public class CustomStorydiagramsEditPartFactory extends StorydiagramsEditPartFac
 			case CustomObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
 				return new CustomObjectVariableAttributeAssignmentsCompartmentEditPart(view);
 
-			case CustomStartNodeEditPart.VISUAL_ID:
-				return new CustomStartNodeEditPart(view);
+			case CustomInitialNodeEditPart.VISUAL_ID:
+				return new CustomInitialNodeEditPart(view);
 
-			case CustomStartNodeSignatureLabelEditPart.VISUAL_ID:
-				return new CustomStartNodeSignatureLabelEditPart(view);
+			case CustomInitialNodeSignatureLabelEditPart.VISUAL_ID:
+				return new CustomInitialNodeSignatureLabelEditPart(view);
 
 			case CustomStatementNodeExpressionLabelEditPart.VISUAL_ID:
 				return new CustomStatementNodeExpressionLabelEditPart(view);
 
-			case CustomStopNodeEditPart.VISUAL_ID:
-				return new CustomStopNodeEditPart(view);
+			case CustomActivityFinalNodeEditPart.VISUAL_ID:
+				return new CustomActivityFinalNodeEditPart(view);
 
-			case CustomStopNodeSignatureLabelEditPart.VISUAL_ID:
-				return new CustomStopNodeSignatureLabelEditPart(view);
+			case CustomActivityFinalNodeSignatureLabelEditPart.VISUAL_ID:
+				return new CustomActivityFinalNodeSignatureLabelEditPart(view);
 
 			case CustomStoryPatternContentCompartmentEditPart.VISUAL_ID:
 				return new CustomStoryPatternContentCompartmentEditPart(view);

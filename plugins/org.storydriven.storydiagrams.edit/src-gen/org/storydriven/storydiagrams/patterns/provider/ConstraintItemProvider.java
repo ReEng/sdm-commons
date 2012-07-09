@@ -35,9 +35,8 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConstraintItemProvider extends ItemProviderAdapter implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ConstraintItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -56,10 +55,7 @@ public class ConstraintItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/patterns/Constraint.png"));
+		return overlayImage(object, getResourceLocator().getImage("elements/patterns/Constraint.png"));
 	}
 
 	/**
@@ -107,12 +103,10 @@ public class ConstraintItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION);
+			childrenFeatures.add(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -141,8 +135,7 @@ public class ConstraintItemProvider extends ItemProviderAdapter implements
 
 		switch (notification.getFeatureID(Constraint.class)) {
 		case PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -169,67 +162,46 @@ public class ConstraintItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
-				ActivitiesExpressionsFactory.eINSTANCE
-						.createExceptionVariableExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
+				ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
-						CallsExpressionsFactory.eINSTANCE
-								.createMethodCallExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
+				CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
 				CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createAttributeValueExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createObjectVariableExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createCollectionSizeExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE
-						.createPrimitiveVariableExpression()));
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createNotExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors.add(createChildParameter(
-				PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.CONSTRAINT__CONSTRAINT_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createBinaryLogicExpression()));
 	}
 

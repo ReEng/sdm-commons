@@ -51,7 +51,7 @@ public class ActivityFinalNodeLabelEditPart extends CompartmentEditPart implemen
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5025;
+	public static final int VISUAL_ID = 5045;
 
 	/**
 	 * @generated
@@ -275,7 +275,7 @@ public class ActivityFinalNodeLabelEditPart extends CompartmentEditPart implemen
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.StopNode_2002,
+							StorydiagramsElementTypes.ActivityFinalNode_2015,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
 									.getType(org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeLabelEditPart.VISUAL_ID));

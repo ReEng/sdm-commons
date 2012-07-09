@@ -51,7 +51,7 @@ public class CollectionVariableNameLabelEditPart extends CompartmentEditPart imp
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5030;
+	public static final int VISUAL_ID = 5040;
 
 	/**
 	 * @generated
@@ -275,7 +275,7 @@ public class CollectionVariableNameLabelEditPart extends CompartmentEditPart imp
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.ObjectSetVariable_3018,
+							StorydiagramsElementTypes.CollectionVariable_3023,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
 									.getType(org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableNameLabelEditPart.VISUAL_ID));

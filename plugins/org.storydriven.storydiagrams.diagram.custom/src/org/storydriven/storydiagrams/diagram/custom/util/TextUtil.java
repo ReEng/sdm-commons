@@ -26,10 +26,10 @@ import org.storydriven.core.expressions.NotExpression;
 import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
 import org.storydriven.storydiagrams.activities.EdgeGuard;
+import org.storydriven.storydiagrams.activities.InitialNode;
 import org.storydriven.storydiagrams.activities.MatchingStoryNode;
-import org.storydriven.storydiagrams.activities.StartNode;
-import org.storydriven.storydiagrams.activities.StopNode;
 import org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExpression;
 import org.storydriven.storydiagrams.calls.Callable;
 import org.storydriven.storydiagrams.calls.OpaqueCallable;
@@ -45,7 +45,7 @@ import org.storydriven.storydiagrams.patterns.LinkVariable;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.PrimitiveVariable;
 import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression;
-import org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression;
+import org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
 import org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression;
 
@@ -58,12 +58,12 @@ public final class TextUtil {
 		// hide constructor
 	}
 
-	public static String getText(StartNode startNode) {
-		return append(new StringBuilder(), startNode).toString();
+	public static String getText(InitialNode InitialNode) {
+		return append(new StringBuilder(), InitialNode).toString();
 	}
 
-	private static StringBuilder append(StringBuilder builder, StartNode startNode) {
-		Activity activity = ActivityUtil.getActivity(startNode);
+	private static StringBuilder append(StringBuilder builder, InitialNode InitialNode) {
+		Activity activity = ActivityUtil.getActivity(InitialNode);
 		EOperation operation = ActivityUtil.getEOperation(activity);
 		if (operation != null) {
 			EcoreTextUtil.append(builder, operation);
@@ -195,10 +195,10 @@ public final class TextUtil {
 		return append(builder, element.getConstraintExpression());
 	}
 
-	public static String getText(StopNode stopNode) {
-		if (!stopNode.getReturnValues().isEmpty()) {
+	public static String getText(ActivityFinalNode ActivityFinalNode) {
+		if (!ActivityFinalNode.getReturnValues().isEmpty()) {
 			StringBuilder builder = new StringBuilder();
-			List<Expression> values = stopNode.getReturnValues();
+			List<Expression> values = ActivityFinalNode.getReturnValues();
 			for (int i = 0; i < values.size(); i++) {
 				append(builder, values.get(i));
 				if (i < values.size() - 1) {
@@ -430,8 +430,8 @@ public final class TextUtil {
 		}
 
 		// collection size expression
-		if (expression instanceof ObjectSetSizeExpression) {
-			ObjectSetSizeExpression cse = (ObjectSetSizeExpression) expression;
+		if (expression instanceof CollectionSizeExpression) {
+			CollectionSizeExpression cse = (CollectionSizeExpression) expression;
 
 			if (cse.getSet() == null) {
 				return builder.append(cse.getSet());

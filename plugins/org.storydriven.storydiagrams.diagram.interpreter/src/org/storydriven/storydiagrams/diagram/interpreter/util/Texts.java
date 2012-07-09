@@ -22,9 +22,9 @@ import org.storydriven.storydiagrams.activities.EdgeGuard;
 import org.storydriven.storydiagrams.activities.JunctionNode;
 import org.storydriven.storydiagrams.activities.MatchingStoryNode;
 import org.storydriven.storydiagrams.activities.ModifyingStoryNode;
-import org.storydriven.storydiagrams.activities.StartNode;
+import org.storydriven.storydiagrams.activities.InitialNode;
 import org.storydriven.storydiagrams.activities.StatementNode;
-import org.storydriven.storydiagrams.activities.StopNode;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
 import org.storydriven.storydiagrams.activities.StructuredNode;
 import org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExpression;
 import org.storydriven.storydiagrams.calls.OpaqueCallable;
@@ -36,12 +36,12 @@ import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.TypeUtil;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
 import org.storydriven.storydiagrams.patterns.LinkVariable;
-import org.storydriven.storydiagrams.patterns.ObjectSetVariable;
+import org.storydriven.storydiagrams.patterns.CollectionVariable;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.PrimitiveVariable;
 import org.storydriven.storydiagrams.patterns.StoryPattern;
 import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression;
-import org.storydriven.storydiagrams.patterns.expressions.ObjectSetSizeExpression;
+import org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
 import org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression;
 
@@ -78,14 +78,14 @@ public class Texts {
 		if (element instanceof ActivityEdge) {
 			return append(builder, (ActivityEdge) element);
 		}
-		if (element instanceof StartNode) {
-			return append(builder, (StartNode) element, "Initial Node");
+		if (element instanceof InitialNode) {
+			return append(builder, (InitialNode) element, "Initial Node");
 		}
 		if (element instanceof JunctionNode) {
 			return append(builder, (JunctionNode) element, "Junction Node");
 		}
-		if (element instanceof StopNode) {
-			return append(builder, (StopNode) element);
+		if (element instanceof ActivityFinalNode) {
+			return append(builder, (ActivityFinalNode) element);
 		}
 
 		// expressions
@@ -99,7 +99,7 @@ public class Texts {
 		}
 
 		if (element instanceof ObjectVariable) {
-			if (element instanceof ObjectSetVariable) {
+			if (element instanceof CollectionVariable) {
 				return append(builder, (ObjectVariable) element, "Collection Variable");
 			}
 			return append(builder, (ObjectVariable) element, "Object Variable");
@@ -164,7 +164,7 @@ public class Texts {
 		return append(builder, element, "Activity Call Node");
 	}
 
-	private static StringBuilder append(StringBuilder builder, StopNode element) {
+	private static StringBuilder append(StringBuilder builder, ActivityFinalNode element) {
 		append(builder, element, "Stop Node");
 		return builder;
 	}
@@ -204,7 +204,7 @@ public class Texts {
 	}
 
 	private static StringBuilder append(StringBuilder builder, ObjectVariable element) {
-		if (element instanceof ObjectSetVariable) {
+		if (element instanceof CollectionVariable) {
 			append(builder, element, "Collection Variable");
 		} else {
 			append(builder, element, "Object Variable");
@@ -406,8 +406,8 @@ public class Texts {
 		}
 
 		// collection size expression
-		if (expression instanceof ObjectSetSizeExpression) {
-			ObjectSetSizeExpression cse = (ObjectSetSizeExpression) expression;
+		if (expression instanceof CollectionSizeExpression) {
+			CollectionSizeExpression cse = (CollectionSizeExpression) expression;
 
 			if (cse.getSet() == null) {
 				return builder.append(cse.getSet());

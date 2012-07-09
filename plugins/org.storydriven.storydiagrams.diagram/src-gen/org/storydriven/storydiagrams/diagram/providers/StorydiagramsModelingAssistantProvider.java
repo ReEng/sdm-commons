@@ -42,15 +42,13 @@ import org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorPlug
 /**
  * @generated
  */
-public class StorydiagramsModelingAssistantProvider extends
-		ModelingAssistantProvider {
+public class StorydiagramsModelingAssistantProvider extends ModelingAssistantProvider {
 
 	/**
 	 * @generated
 	 */
 	public List getTypesForPopupBar(IAdaptable host) {
-		IGraphicalEditPart editPart = (IGraphicalEditPart) host
-				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof ActivityEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(7);
 			types.add(StorydiagramsElementTypes.ActivityCallNode_2009);
@@ -113,43 +111,33 @@ public class StorydiagramsModelingAssistantProvider extends
 	 * @generated
 	 */
 	public List getRelTypesOnSource(IAdaptable source) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		if (sourceEditPart instanceof ActivityCallNodeEditPart) {
-			return ((ActivityCallNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
+			return ((ActivityCallNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof StatementNodeEditPart) {
-			return ((StatementNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
+			return ((StatementNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof ModifyingStoryNodeEditPart) {
-			return ((ModifyingStoryNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
+			return ((ModifyingStoryNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof MatchingStoryNodeEditPart) {
-			return ((MatchingStoryNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
+			return ((MatchingStoryNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof InitialNodeEditPart) {
-			return ((InitialNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
+			return ((InitialNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof JunctionNodeEditPart) {
-			return ((JunctionNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
+			return ((JunctionNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof ActivityFinalNodeEditPart) {
-			return ((ActivityFinalNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
+			return ((ActivityFinalNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof ObjectVariableEditPart) {
-			return ((ObjectVariableEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
+			return ((ObjectVariableEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof CollectionVariableEditPart) {
-			return ((CollectionVariableEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
+			return ((CollectionVariableEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -158,43 +146,33 @@ public class StorydiagramsModelingAssistantProvider extends
 	 * @generated
 	 */
 	public List getRelTypesOnTarget(IAdaptable target) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		if (targetEditPart instanceof ActivityCallNodeEditPart) {
-			return ((ActivityCallNodeEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
+			return ((ActivityCallNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof StatementNodeEditPart) {
-			return ((StatementNodeEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
+			return ((StatementNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
-			return ((ModifyingStoryNodeEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
+			return ((ModifyingStoryNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
-			return ((MatchingStoryNodeEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
+			return ((MatchingStoryNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof InitialNodeEditPart) {
-			return ((InitialNodeEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
+			return ((InitialNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof JunctionNodeEditPart) {
-			return ((JunctionNodeEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
+			return ((JunctionNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
-			return ((ActivityFinalNodeEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
+			return ((ActivityFinalNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof ObjectVariableEditPart) {
-			return ((ObjectVariableEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
+			return ((ObjectVariableEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof CollectionVariableEditPart) {
-			return ((CollectionVariableEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
+			return ((CollectionVariableEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -202,47 +180,35 @@ public class StorydiagramsModelingAssistantProvider extends
 	/**
 	 * @generated
 	 */
-	public List getRelTypesOnSourceAndTarget(IAdaptable source,
-			IAdaptable target) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
+	public List getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		if (sourceEditPart instanceof ActivityCallNodeEditPart) {
-			return ((ActivityCallNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
+			return ((ActivityCallNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof StatementNodeEditPart) {
-			return ((StatementNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
+			return ((StatementNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof ModifyingStoryNodeEditPart) {
-			return ((ModifyingStoryNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
+			return ((ModifyingStoryNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof MatchingStoryNodeEditPart) {
-			return ((MatchingStoryNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
+			return ((MatchingStoryNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof InitialNodeEditPart) {
-			return ((InitialNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
+			return ((InitialNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof JunctionNodeEditPart) {
-			return ((JunctionNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
+			return ((JunctionNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof ActivityFinalNodeEditPart) {
-			return ((ActivityFinalNodeEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
+			return ((ActivityFinalNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof ObjectVariableEditPart) {
-			return ((ObjectVariableEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
+			return ((ObjectVariableEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof CollectionVariableEditPart) {
-			return ((CollectionVariableEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
+			return ((CollectionVariableEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -250,45 +216,34 @@ public class StorydiagramsModelingAssistantProvider extends
 	/**
 	 * @generated
 	 */
-	public List getTypesForSource(IAdaptable target,
-			IElementType relationshipType) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
+	public List getTypesForSource(IAdaptable target, IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		if (targetEditPart instanceof ActivityCallNodeEditPart) {
-			return ((ActivityCallNodeEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
+			return ((ActivityCallNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof StatementNodeEditPart) {
-			return ((StatementNodeEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
+			return ((StatementNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
-			return ((ModifyingStoryNodeEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
+			return ((ModifyingStoryNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
-			return ((MatchingStoryNodeEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
+			return ((MatchingStoryNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof InitialNodeEditPart) {
-			return ((InitialNodeEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
+			return ((InitialNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof JunctionNodeEditPart) {
-			return ((JunctionNodeEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
+			return ((JunctionNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
-			return ((ActivityFinalNodeEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
+			return ((ActivityFinalNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof ObjectVariableEditPart) {
-			return ((ObjectVariableEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
+			return ((ObjectVariableEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof CollectionVariableEditPart) {
-			return ((CollectionVariableEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
+			return ((CollectionVariableEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -296,45 +251,34 @@ public class StorydiagramsModelingAssistantProvider extends
 	/**
 	 * @generated
 	 */
-	public List getTypesForTarget(IAdaptable source,
-			IElementType relationshipType) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
+	public List getTypesForTarget(IAdaptable source, IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		if (sourceEditPart instanceof ActivityCallNodeEditPart) {
-			return ((ActivityCallNodeEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
+			return ((ActivityCallNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof StatementNodeEditPart) {
-			return ((StatementNodeEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
+			return ((StatementNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ModifyingStoryNodeEditPart) {
-			return ((ModifyingStoryNodeEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
+			return ((ModifyingStoryNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof MatchingStoryNodeEditPart) {
-			return ((MatchingStoryNodeEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
+			return ((MatchingStoryNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof InitialNodeEditPart) {
-			return ((InitialNodeEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
+			return ((InitialNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof JunctionNodeEditPart) {
-			return ((JunctionNodeEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
+			return ((JunctionNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ActivityFinalNodeEditPart) {
-			return ((ActivityFinalNodeEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
+			return ((ActivityFinalNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ObjectVariableEditPart) {
-			return ((ObjectVariableEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
+			return ((ObjectVariableEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof CollectionVariableEditPart) {
-			return ((CollectionVariableEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
+			return ((CollectionVariableEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -342,19 +286,15 @@ public class StorydiagramsModelingAssistantProvider extends
 	/**
 	 * @generated
 	 */
-	public EObject selectExistingElementForSource(IAdaptable target,
-			IElementType relationshipType) {
-		return selectExistingElement(target,
-				getTypesForSource(target, relationshipType));
+	public EObject selectExistingElementForSource(IAdaptable target, IElementType relationshipType) {
+		return selectExistingElement(target, getTypesForSource(target, relationshipType));
 	}
 
 	/**
 	 * @generated
 	 */
-	public EObject selectExistingElementForTarget(IAdaptable source,
-			IElementType relationshipType) {
-		return selectExistingElement(source,
-				getTypesForTarget(source, relationshipType));
+	public EObject selectExistingElementForTarget(IAdaptable source, IElementType relationshipType) {
+		return selectExistingElement(source, getTypesForTarget(source, relationshipType));
 	}
 
 	/**
@@ -364,15 +304,13 @@ public class StorydiagramsModelingAssistantProvider extends
 		if (types.isEmpty()) {
 			return null;
 		}
-		IGraphicalEditPart editPart = (IGraphicalEditPart) host
-				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
 		if (editPart == null) {
 			return null;
 		}
 		Diagram diagram = (Diagram) editPart.getRoot().getContents().getModel();
 		HashSet<EObject> elements = new HashSet<EObject>();
-		for (Iterator<EObject> it = diagram.getElement().eAllContents(); it
-				.hasNext();) {
+		for (Iterator<EObject> it = diagram.getElement().eAllContents(); it.hasNext();) {
 			EObject element = it.next();
 			if (isApplicableElement(element, types)) {
 				elements.add(element);
@@ -381,16 +319,14 @@ public class StorydiagramsModelingAssistantProvider extends
 		if (elements.isEmpty()) {
 			return null;
 		}
-		return selectElement((EObject[]) elements.toArray(new EObject[elements
-				.size()]));
+		return selectElement((EObject[]) elements.toArray(new EObject[elements.size()]));
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean isApplicableElement(EObject element, Collection types) {
-		IElementType type = ElementTypeRegistry.getInstance().getElementType(
-				element);
+		IElementType type = ElementTypeRegistry.getInstance().getElementType(element);
 		return types.contains(type);
 	}
 
@@ -399,11 +335,9 @@ public class StorydiagramsModelingAssistantProvider extends
 	 */
 	protected EObject selectElement(EObject[] elements) {
 		Shell shell = Display.getCurrent().getActiveShell();
-		ILabelProvider labelProvider = new AdapterFactoryLabelProvider(
-				StorydiagramsDiagramEditorPlugin.getInstance()
-						.getItemProvidersAdapterFactory());
-		ElementListSelectionDialog dialog = new ElementListSelectionDialog(
-				shell, labelProvider);
+		ILabelProvider labelProvider = new AdapterFactoryLabelProvider(StorydiagramsDiagramEditorPlugin.getInstance()
+				.getItemProvidersAdapterFactory());
+		ElementListSelectionDialog dialog = new ElementListSelectionDialog(shell, labelProvider);
 		dialog.setMessage(Messages.StorydiagramsModelingAssistantProviderMessage);
 		dialog.setTitle(Messages.StorydiagramsModelingAssistantProviderTitle);
 		dialog.setMultipleSelection(false);

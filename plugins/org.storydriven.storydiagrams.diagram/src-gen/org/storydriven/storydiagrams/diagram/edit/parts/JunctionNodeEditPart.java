@@ -61,8 +61,7 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new JunctionNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new JunctionNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -75,8 +74,7 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -201,8 +199,7 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ActivityCallNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
@@ -280,22 +277,15 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		public JunctionNodeFigure() {
-			this.addPoint(new Point(getMapMode().DPtoLP(11), getMapMode()
-					.DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(22), getMapMode()
-					.DPtoLP(11)));
-			this.addPoint(new Point(getMapMode().DPtoLP(11), getMapMode()
-					.DPtoLP(22)));
-			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
-					.DPtoLP(11)));
+			this.addPoint(new Point(getMapMode().DPtoLP(11), getMapMode().DPtoLP(0)));
+			this.addPoint(new Point(getMapMode().DPtoLP(22), getMapMode().DPtoLP(11)));
+			this.addPoint(new Point(getMapMode().DPtoLP(11), getMapMode().DPtoLP(22)));
+			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(11)));
 			this.setFill(true);
 			this.setForegroundColor(ColorConstants.black);
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(22),
-					getMapMode().DPtoLP(22)));
-			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(22),
-					getMapMode().DPtoLP(22)));
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(22),
-					getMapMode().DPtoLP(22)));
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(22), getMapMode().DPtoLP(22)));
+			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(22), getMapMode().DPtoLP(22)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(22), getMapMode().DPtoLP(22)));
 		}
 
 	}

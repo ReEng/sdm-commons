@@ -12,7 +12,7 @@
 
 	<extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
 		<factory
-            uri="http://www.storydriven.org/storydiagrams/0.2.0"
+            uri="http://www.storydriven.org/storydiagrams/0.2.1"
             class="org.storydriven.storydiagrams.provider.StorydiagramsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -21,8 +21,8 @@
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
 		<factory
-            class="org.storydriven.storydiagrams.activities.provider.ActivitiesItemProviderAdapterFactory"
-            uri="http://www.storydriven.org/storydiagrams/activities/0.2.0"
+            class="org.storydriven.storydiagrams.activities.provider.CustomActivitiesItemProviderAdapterFactory"
+            uri="http://www.storydriven.org/storydiagrams/activities/0.2.1"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -30,7 +30,7 @@
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
 		<factory
-            class="org.storydriven.storydiagrams.activities.expressions.provider.ActivitiesExpressionsItemProviderAdapterFactory"
+            class="org.storydriven.storydiagrams.activities.expressions.provider.CustomActivitiesExpressionsItemProviderAdapterFactory"
             uri="http://www.storydriven.org/storydiagrams/activities/expressions/0.2.0"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -39,7 +39,7 @@
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
 		<factory
-            class="org.storydriven.storydiagrams.calls.provider.CallsItemProviderAdapterFactory"
+            class="org.storydriven.storydiagrams.calls.provider.CustomCallsItemProviderAdapterFactory"
             uri="http://www.storydriven.org/storydiagrams/calls/0.2.0"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -48,7 +48,7 @@
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
 		<factory
-            class="org.storydriven.storydiagrams.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory"
+            class="org.storydriven.storydiagrams.calls.expressions.provider.CustomCallsExpressionsItemProviderAdapterFactory"
             uri="http://www.storydriven.org/storydiagrams/calls/expressions/0.2.0"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -57,8 +57,8 @@
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
 		<factory
-            class="org.storydriven.storydiagrams.patterns.provider.PatternsItemProviderAdapterFactory"
-            uri="http://www.storydriven.org/storydiagrams/patterns/0.2.0"
+            class="org.storydriven.storydiagrams.patterns.provider.CustomPatternsItemProviderAdapterFactory"
+            uri="http://www.storydriven.org/storydiagrams/patterns/0.2.1"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -66,8 +66,8 @@
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
 		<factory
-            class="org.storydriven.storydiagrams.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory"
-            uri="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.0"
+            class="org.storydriven.storydiagrams.patterns.expressions.provider.CustomPatternsExpressionsItemProviderAdapterFactory"
+            uri="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -75,7 +75,7 @@
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
 		<factory
-            class="org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory"
+            class="org.storydriven.storydiagrams.templates.provider.CustomTemplatesItemProviderAdapterFactory"
             uri="http://www.storydriven.org/storydiagrams/templates/0.2.0"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

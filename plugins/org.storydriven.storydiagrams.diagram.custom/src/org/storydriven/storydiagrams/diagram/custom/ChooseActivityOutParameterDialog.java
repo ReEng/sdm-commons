@@ -23,12 +23,12 @@ import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.storydiagrams.activities.Activity;
-import org.storydriven.storydiagrams.activities.StopNode;
-import org.storydriven.storydiagrams.diagram.edit.parts.StopNodeEditPart;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
+import org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart;
 /**
  * 
  * This dialog provides buttons to choose which Out Parameter should be edited. It depends on information about
- * the diagramResource and the stopNode which expressions should be edited. It uses the EditExpressionDialog to edit the expression.
+ * the diagramResource and the ActivityFinalNode which expressions should be edited. It uses the EditExpressionDialog to edit the expression.
  * The mapping of expresssions and Out Parameters depends on the order and number of expressions.
  *
  * @author Patrick Rein (pre)
@@ -43,10 +43,10 @@ public class ChooseActivityOutParameterDialog extends Dialog {
 	
 	protected EList<EParameter> parameterList;
 	protected Map<Button, Integer> buttonDictionary;
-	private StopNode stopNode;
+	private ActivityFinalNode ActivityFinalNode;
 	private Activity activity;
 	private TransactionalEditingDomain changeCommandReceiver;
-	private StopNodeEditPart editPart;
+	private ActivityFinalNodeEditPart editPart;
 	
 	public ChooseActivityOutParameterDialog(Shell parent) {
 		super(parent);
@@ -54,16 +54,16 @@ public class ChooseActivityOutParameterDialog extends Dialog {
 
 	@Override
 	public int open() {
-		Integer difference = activity.getOutParameters().size() - this.stopNode.getReturnValues().size();
+		Integer difference = activity.getOutParameters().size() - this.ActivityFinalNode.getReturnValues().size();
 		TextualExpression e = null;
 		if(difference > 0) {
-			int baseIndex = this.stopNode.getReturnValues().size();
+			int baseIndex = this.ActivityFinalNode.getReturnValues().size();
 			for(int i = 0; i < difference; i++) {
 				e = ExpressionsFactory.eINSTANCE.createTextualExpression();
 				this.changeCommandReceiver.
 							getCommandStack().execute(new AddCommand(this.editPart.getEditingDomain(), 
-																	this.stopNode, 
-																	this.stopNode.eClass().getEStructuralFeature("returnValues"),
+																	this.ActivityFinalNode, 
+																	this.ActivityFinalNode.eClass().getEStructuralFeature("returnValues"),
 																	e,
 																	baseIndex + i));
 			}
@@ -73,9 +73,9 @@ public class ChooseActivityOutParameterDialog extends Dialog {
 				e = ExpressionsFactory.eINSTANCE.createTextualExpression();
 				this.changeCommandReceiver.
 							getCommandStack().execute(new RemoveCommand(this.editPart.getEditingDomain(), 
-																	this.stopNode, 
-																	this.stopNode.eClass().getEStructuralFeature("returnValues"),
-																	this.stopNode.getReturnValues().get(i)));
+																	this.ActivityFinalNode, 
+																	this.ActivityFinalNode.eClass().getEStructuralFeature("returnValues"),
+																	this.ActivityFinalNode.getReturnValues().get(i)));
 			}
 		}
 		return super.open();
@@ -154,8 +154,8 @@ public class ChooseActivityOutParameterDialog extends Dialog {
 			expressionDialog.setChangeAttributeCommand(null, changeCommandReceiver);
 			if(expressionDialog.open() == Window.OK) {
 				AddCommand ac = new AddCommand(this.editPart.getEditingDomain(), 
-						this.stopNode, 
-						this.stopNode.eClass().getEStructuralFeature("returnValues"),
+						this.ActivityFinalNode, 
+						this.ActivityFinalNode.eClass().getEStructuralFeature("returnValues"),
 						expressionDialog.getExpression(),
 						parameterIndex);
 				
@@ -174,17 +174,17 @@ public class ChooseActivityOutParameterDialog extends Dialog {
 		this.changeCommandReceiver = changeCommandReceiver;
 	}
 
-	public void setEditPart(StopNodeEditPart stopNodeEP) {
-		this.editPart = stopNodeEP;
+	public void setEditPart(ActivityFinalNodeEditPart ActivityFinalNodeEP) {
+		this.editPart = ActivityFinalNodeEP;
 	}
 	
 	protected TextualExpression getExpression(int index) {
-		EList<Expression> el = this.stopNode.getReturnValues();
+		EList<Expression> el = this.ActivityFinalNode.getReturnValues();
 		return (TextualExpression) el.get(index);
 	}
 
-	public void setNode(StopNode model) {
-		this.stopNode = model;
+	public void setNode(ActivityFinalNode model) {
+		this.ActivityFinalNode = model;
 	}
 	
 	public void setActivity(Activity activity) {

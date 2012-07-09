@@ -20,7 +20,7 @@ public class StoryDrivenActivityFacade implements IActivityFacade<Activity, Acti
 
 		for (ActivityNode n : activity.getOwnedActivityNodes())
 		{
-			if (n.eClass() == ActivitiesPackage.Literals.START_NODE)
+			if (n.eClass() == ActivitiesPackage.Literals.INITIAL_NODE)
 			{
 				return n;
 			}

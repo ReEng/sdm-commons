@@ -18,8 +18,7 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class ActivityItemSemanticEditPolicy extends
-		StorydiagramsBaseItemSemanticEditPolicy {
+public class ActivityItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -32,20 +31,16 @@ public class ActivityItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.ActivityCallNode_2009 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.ActivityCallNode_2009 == req.getElementType()) {
 			return getGEFWrapper(new ActivityCallNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.StatementNode_2010 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.StatementNode_2010 == req.getElementType()) {
 			return getGEFWrapper(new StatementNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.ModifyingStoryNode_2011 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.ModifyingStoryNode_2011 == req.getElementType()) {
 			return getGEFWrapper(new ModifyingStoryNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.MatchingStoryNode_2012 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.MatchingStoryNode_2012 == req.getElementType()) {
 			return getGEFWrapper(new MatchingStoryNodeCreateCommand(req));
 		}
 		if (StorydiagramsElementTypes.InitialNode_2013 == req.getElementType()) {
@@ -54,8 +49,7 @@ public class ActivityItemSemanticEditPolicy extends
 		if (StorydiagramsElementTypes.JunctionNode_2014 == req.getElementType()) {
 			return getGEFWrapper(new JunctionNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.ActivityFinalNode_2015 == req
-				.getElementType()) {
+		if (StorydiagramsElementTypes.ActivityFinalNode_2015 == req.getElementType()) {
 			return getGEFWrapper(new ActivityFinalNodeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
@@ -65,26 +59,20 @@ public class ActivityItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost())
-				.getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**
 	 * @generated
 	 */
-	private static class DuplicateAnythingCommand extends
-			DuplicateEObjectsCommand {
+	private static class DuplicateAnythingCommand extends DuplicateEObjectsCommand {
 
 		/**
 		 * @generated
 		 */
-		public DuplicateAnythingCommand(
-				TransactionalEditingDomain editingDomain,
-				DuplicateElementsRequest req) {
-			super(editingDomain, req.getLabel(), req
-					.getElementsToBeDuplicated(), req
-					.getAllDuplicatedElementsMap());
+		public DuplicateAnythingCommand(TransactionalEditingDomain editingDomain, DuplicateElementsRequest req) {
+			super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
 		}
 
 	}

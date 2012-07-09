@@ -107,7 +107,7 @@ public class StoryDrivenMetamodelFacadeFactory
 	@Override
 	protected IFinalNodeFacade<ActivityNode, Expression> createFinalNodeFacade()
 	{
-		return new StoryDrivenStopNodeFacade();
+		return new StoryDrivenActivityFinalNodeFacade();
 	}
 
 	@Override

@@ -19,8 +19,7 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
  *
  * @generated
  */
-public class MaybeLinkImpl extends AbstractLinkVariableImpl implements
-		MaybeLink {
+public class MaybeLinkImpl extends AbstractLinkVariableImpl implements MaybeLink {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

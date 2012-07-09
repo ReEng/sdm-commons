@@ -34,8 +34,8 @@ import org.storydriven.storydiagrams.patterns.util.PatternsAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory
-		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory implements ComposeableAdapterFactory,
+		IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -155,8 +155,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -228,8 +227,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory
 	@Override
 	public Adapter createAttributeAssignmentAdapter() {
 		if (attributeAssignmentItemProvider == null) {
-			attributeAssignmentItemProvider = new AttributeAssignmentItemProvider(
-					this);
+			attributeAssignmentItemProvider = new AttributeAssignmentItemProvider(this);
 		}
 
 		return attributeAssignmentItemProvider;
@@ -252,8 +250,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory
 	@Override
 	public Adapter createCollectionVariableAdapter() {
 		if (collectionVariableItemProvider == null) {
-			collectionVariableItemProvider = new CollectionVariableItemProvider(
-					this);
+			collectionVariableItemProvider = new CollectionVariableItemProvider(this);
 		}
 
 		return collectionVariableItemProvider;
@@ -268,8 +265,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory
 	@Override
 	public Adapter createPrimitiveVariableAdapter() {
 		if (primitiveVariableItemProvider == null) {
-			primitiveVariableItemProvider = new PrimitiveVariableItemProvider(
-					this);
+			primitiveVariableItemProvider = new PrimitiveVariableItemProvider(this);
 		}
 
 		return primitiveVariableItemProvider;
@@ -388,8 +384,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -398,8 +393,7 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 

@@ -12,13 +12,13 @@
 
 	<extension point="org.eclipse.emf.ecore.generated_package">
 		<package
-			uri="http://www.storydriven.org/storydiagrams/0.2.0"
+			uri="http://www.storydriven.org/storydiagrams/0.2.1"
 			class="org.storydriven.storydiagrams.StorydiagramsPackage"
 			genModel="model/storydiagrams.uml.genmodel"/>
 		<package
 			class="org.storydriven.storydiagrams.activities.ActivitiesPackage"
 			genModel="model/storydiagrams.uml.genmodel"
-			uri="http://www.storydriven.org/storydiagrams/activities/0.2.0"/>
+			uri="http://www.storydriven.org/storydiagrams/activities/0.2.1"/>
 		<package
 			class="org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsPackage"
 			genModel="model/storydiagrams.uml.genmodel"
@@ -34,11 +34,11 @@
 		<package
 			class="org.storydriven.storydiagrams.patterns.PatternsPackage"
 			genModel="model/storydiagrams.uml.genmodel"
-			uri="http://www.storydriven.org/storydiagrams/patterns/0.2.0"/>
+			uri="http://www.storydriven.org/storydiagrams/patterns/0.2.1"/>
 		<package
 			class="org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPackage"
 			genModel="model/storydiagrams.uml.genmodel"
-			uri="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.0"/>
+			uri="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1"/>
 		<package
 			class="org.storydriven.storydiagrams.templates.TemplatesPackage"
 			genModel="model/storydiagrams.uml.genmodel"

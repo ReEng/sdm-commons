@@ -23,8 +23,7 @@ public interface PatternsFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	PatternsFactory eINSTANCE = org.storydriven.storydiagrams.patterns.impl.PatternsFactoryImpl
-			.init();
+	PatternsFactory eINSTANCE = org.storydriven.storydiagrams.patterns.impl.PatternsFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Object Variable</em>'.
@@ -117,15 +116,6 @@ public interface PatternsFactory extends EFactory {
 	MatchingPattern createMatchingPattern();
 
 	/**
-	 * Returns a new object of class '<em>Maybe Link</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Maybe Link</em>'.
-	 * @generated
-	 */
-	MaybeLink createMaybeLink();
-
-	/**
 	 * Returns a new object of class '<em>Story Pattern</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -133,6 +123,15 @@ public interface PatternsFactory extends EFactory {
 	 * @generated
 	 */
 	StoryPattern createStoryPattern();
+
+	/**
+	 * Returns a new object of class '<em>Maybe Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Maybe Link</em>'.
+	 * @generated
+	 */
+	MaybeLink createMaybeLink();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -51,7 +51,7 @@ public class ActivityCallNodeCalleeLabelEditPart extends CompartmentEditPart imp
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5019;
+	public static final int VISUAL_ID = 5033;
 
 	/**
 	 * @generated
@@ -275,7 +275,7 @@ public class ActivityCallNodeCalleeLabelEditPart extends CompartmentEditPart imp
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.ActivityCallNode_2006,
+							StorydiagramsElementTypes.ActivityCallNode_2009,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
 									.getType(org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeCalleeLabelEditPart.VISUAL_ID));

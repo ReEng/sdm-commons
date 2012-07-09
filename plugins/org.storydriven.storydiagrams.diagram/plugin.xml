@@ -182,10 +182,6 @@
              id="property.tab.DiagramPropertySection"
              label="%tab.diagram"/>
           <propertyTab
-             category="domain"
-             id="property.tab.domain"
-             label="%tab.domain"/>
-          <propertyTab
              category="extra"
              id="property.tab.raw"
              label="%tab.raw"/>
@@ -216,14 +212,6 @@
             tab="property.tab.DiagramPropertySection">
          </propertySection>     
          <propertySection
-            id="property.section.domain" 
-            tab="property.tab.domain"
-            class="org.storydriven.storydiagrams.diagram.sheet.StorydiagramsPropertySection">
-            <input type="org.eclipse.gmf.runtime.notation.View"/>
-            <input type="org.eclipse.gef.EditPart"/>
-            <input type="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
-         </propertySection>
-         <propertySection
             id="property.section.raw" 
             tab="property.tab.raw"
             class="org.storydriven.storydiagrams.diagram.sheet.StorydiagramsPropertySection">
@@ -240,7 +228,7 @@
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Storydiagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2009,2010,2011,2012,2013,2014,2015,3019,3020,3021,3022,3023,3024,3025"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006,4007"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006,4007,4008"/>
       </viewProvider>
    </extension>
 
@@ -255,7 +243,7 @@
             <method name="getType()" value="2009,2010,2011,2012,2013,2014,2015,3019,3020,3021,3022,3023,3024,3025"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4005,4006,4007"/>
+            <method name="getType()" value="4005,4006,4007,4008"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5032,5033,5034,5035,5042,5043,5044,5045,5036,5037,5038,5039,5040,5041"/>
@@ -478,6 +466,16 @@
             <param name="semanticHint" value="4007"/>
          </metamodelType>
       </metamodel>
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
+         <metamodelType
+               id="org.storydriven.storydiagrams.diagram.MaybeLink_4008"
+               name="%metatype.name.MaybeLink_4008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MaybeLink"
+               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.MaybeLinkEditHelper">
+            <param name="semanticHint" value="4008"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -508,6 +506,7 @@
          <elementType ref="org.storydriven.storydiagrams.diagram.ActivityEdge_4005"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.LinkVariable_4006"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.InclusionLink_4007"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.MaybeLink_4008"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

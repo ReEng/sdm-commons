@@ -958,7 +958,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 		// patterns
 		new MenuItem(menu, SWT.SEPARATOR);
 		createMenuItem(menu, feature, PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression(), prefix);
-		createMenuItem(menu, feature, PatternsExpressionsFactory.eINSTANCE.createObjectSetSizeExpression(), prefix);
+		createMenuItem(menu, feature, PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression(), prefix);
 		createMenuItem(menu, feature, PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression(), prefix);
 		createMenuItem(menu, feature, PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression(), prefix);
 

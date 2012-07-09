@@ -7,7 +7,6 @@
 package org.storydriven.storydiagrams.activities;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.core.expressions.Expression;
 
 /**

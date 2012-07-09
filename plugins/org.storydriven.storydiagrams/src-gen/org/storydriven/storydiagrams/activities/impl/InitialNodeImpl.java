@@ -7,7 +7,6 @@
 package org.storydriven.storydiagrams.activities.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.InitialNode;
 

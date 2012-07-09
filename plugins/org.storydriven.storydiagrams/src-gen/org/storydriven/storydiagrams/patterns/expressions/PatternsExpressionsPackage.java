@@ -1206,8 +1206,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * @see org.storydriven.storydiagrams.patterns.expressions.impl.PatternsExpressionsPackageImpl#getAttributeValueExpression()
 		 * @generated
 		 */
-		EClass ATTRIBUTE_VALUE_EXPRESSION = eINSTANCE
-				.getAttributeValueExpression();
+		EClass ATTRIBUTE_VALUE_EXPRESSION = eINSTANCE.getAttributeValueExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Object</b></em>' reference feature.
@@ -1215,8 +1214,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_VALUE_EXPRESSION__OBJECT = eINSTANCE
-				.getAttributeValueExpression_Object();
+		EReference ATTRIBUTE_VALUE_EXPRESSION__OBJECT = eINSTANCE.getAttributeValueExpression_Object();
 
 		/**
 		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
@@ -1224,8 +1222,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE = eINSTANCE
-				.getAttributeValueExpression_Attribute();
+		EReference ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE = eINSTANCE.getAttributeValueExpression_Attribute();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.expressions.impl.ObjectVariableExpressionImpl <em>Object Variable Expression</em>}' class.
@@ -1235,8 +1232,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * @see org.storydriven.storydiagrams.patterns.expressions.impl.PatternsExpressionsPackageImpl#getObjectVariableExpression()
 		 * @generated
 		 */
-		EClass OBJECT_VARIABLE_EXPRESSION = eINSTANCE
-				.getObjectVariableExpression();
+		EClass OBJECT_VARIABLE_EXPRESSION = eINSTANCE.getObjectVariableExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Object</b></em>' reference feature.
@@ -1244,8 +1240,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OBJECT_VARIABLE_EXPRESSION__OBJECT = eINSTANCE
-				.getObjectVariableExpression_Object();
+		EReference OBJECT_VARIABLE_EXPRESSION__OBJECT = eINSTANCE.getObjectVariableExpression_Object();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.expressions.impl.CollectionSizeExpressionImpl <em>Collection Size Expression</em>}' class.
@@ -1255,8 +1250,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * @see org.storydriven.storydiagrams.patterns.expressions.impl.PatternsExpressionsPackageImpl#getCollectionSizeExpression()
 		 * @generated
 		 */
-		EClass COLLECTION_SIZE_EXPRESSION = eINSTANCE
-				.getCollectionSizeExpression();
+		EClass COLLECTION_SIZE_EXPRESSION = eINSTANCE.getCollectionSizeExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Set</b></em>' reference feature.
@@ -1264,8 +1258,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COLLECTION_SIZE_EXPRESSION__SET = eINSTANCE
-				.getCollectionSizeExpression_Set();
+		EReference COLLECTION_SIZE_EXPRESSION__SET = eINSTANCE.getCollectionSizeExpression_Set();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.patterns.expressions.impl.PrimitiveVariableExpressionImpl <em>Primitive Variable Expression</em>}' class.
@@ -1275,8 +1268,7 @@ public interface PatternsExpressionsPackage extends EPackage {
 		 * @see org.storydriven.storydiagrams.patterns.expressions.impl.PatternsExpressionsPackageImpl#getPrimitiveVariableExpression()
 		 * @generated
 		 */
-		EClass PRIMITIVE_VARIABLE_EXPRESSION = eINSTANCE
-				.getPrimitiveVariableExpression();
+		EClass PRIMITIVE_VARIABLE_EXPRESSION = eINSTANCE.getPrimitiveVariableExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Primitive Variable</b></em>' reference feature.

@@ -2,9 +2,9 @@ package org.storydriven.storydiagrams.interpreter.facade;
 
 import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.activities.JunctionNode;
-import org.storydriven.storydiagrams.activities.StartNode;
+import org.storydriven.storydiagrams.activities.InitialNode;
 import org.storydriven.storydiagrams.activities.StatementNode;
-import org.storydriven.storydiagrams.activities.StopNode;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
 import org.storydriven.storydiagrams.activities.StoryNode;
 
 import de.mdelab.sdm.interpreter.core.facade.EActivityNodeType;
@@ -29,11 +29,11 @@ public abstract class StoryDrivenActivityNodeFacade implements IActivityNodeFaca
 		{
 			return EActivityNodeType.DECISION_NODE;
 		}
-		else if (activityNode instanceof StopNode)
+		else if (activityNode instanceof ActivityFinalNode)
 		{
 			return EActivityNodeType.ACTIVITY_FINAL_NODE;
 		}
-		else if (activityNode instanceof StartNode)
+		else if (activityNode instanceof InitialNode)
 		{
 			return EActivityNodeType.NON_EXECUTABLE_NODE;
 		}

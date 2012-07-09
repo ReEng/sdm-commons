@@ -7,11 +7,11 @@ import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.diagram.edit.parts.ObjectSetVariableEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableEditPart;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
-import org.storydriven.storydiagrams.patterns.ObjectSetVariable;
+import org.storydriven.storydiagrams.patterns.CollectionVariable;
 
-public class CustomCollectionVariableEditPart extends ObjectSetVariableEditPart {
+public class CustomCollectionVariableEditPart extends CollectionVariableEditPart {
 	public CustomCollectionVariableEditPart(View view) {
 		super(view);
 		System.out.println("CustomCollectionVariableEditPart");
@@ -19,7 +19,7 @@ public class CustomCollectionVariableEditPart extends ObjectSetVariableEditPart 
 
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
-		if (notification.getNotifier() instanceof ObjectSetVariable) {
+		if (notification.getNotifier() instanceof CollectionVariable) {
 			updateFigure();
 		}
 
@@ -33,7 +33,7 @@ public class CustomCollectionVariableEditPart extends ObjectSetVariableEditPart 
 	}
 
 	private void updateFigure() {
-		ObjectSetVariable ov = (ObjectSetVariable) ((View) getModel()).getElement();
+		CollectionVariable ov = (CollectionVariable) ((View) getModel()).getElement();
 
 		int style = Graphics.LINE_SOLID;
 		if (BindingSemantics.OPTIONAL.equals(ov.getBindingSemantics())) {
