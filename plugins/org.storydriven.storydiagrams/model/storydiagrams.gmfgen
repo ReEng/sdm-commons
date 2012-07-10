@@ -285,6 +285,16 @@
         <modelFacet parser="//@labelParsers/@implementations.1"/>
       </labels>
     </topLevelNodes>
+    <topLevelNodes visualID="2016" editPartClassName="FlowFinalNodeEditPart" itemSemanticEditPolicyClassName="FlowFinalNodeItemSemanticEditPolicy" canonicalEditPolicyClassName="FlowFinalNodeCanonicalEditPolicy" graphicalNodeEditPolicyClassName="FlowFinalNodeGraphicalNodeEditPolicy" createCommandClassName="FlowFinalNodeCreateCommand">
+      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="FlowFinalNodeEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="FlowFinalNodeFigureDescriptor" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class FlowFinalNodeFigureDescriptor extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFlowFinalNodeLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public FlowFinalNodeFigureDescriptor() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.Ellipse flowFinalNodeEllipse0 = new org.eclipse.draw2d.Ellipse();&#xA;&#x9;flowFinalNodeEllipse0.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;flowFinalNodeEllipse0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23)&#xA;, getMapMode().DPtoLP(23)&#xA;));&#xA;flowFinalNodeEllipse0.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23)&#xA;, getMapMode().DPtoLP(23)&#xA;));&#xA;flowFinalNodeEllipse0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(23)&#xA;, getMapMode().DPtoLP(23)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFlowFinalNodeEllipse0 = new org.eclipse.draw2d.GridData();&#xA;constraintFlowFinalNodeEllipse0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFlowFinalNodeEllipse0.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFlowFinalNodeEllipse0.horizontalIndent = 0;&#xA;constraintFlowFinalNodeEllipse0.horizontalSpan = 1;&#xA;constraintFlowFinalNodeEllipse0.verticalSpan = 1;&#xA;constraintFlowFinalNodeEllipse0.grabExcessHorizontalSpace = false;&#xA;constraintFlowFinalNodeEllipse0.grabExcessVerticalSpace = false;&#xA;this.add(flowFinalNodeEllipse0, constraintFlowFinalNodeEllipse0);&#xA;&#xA;&#xA;&#xA;&#xA;fFlowFinalNodeLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFlowFinalNodeLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFlowFinalNodeLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFlowFinalNodeLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFlowFinalNodeLabel.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFlowFinalNodeLabel.horizontalIndent = 0;&#xA;constraintFFlowFinalNodeLabel.horizontalSpan = 1;&#xA;constraintFFlowFinalNodeLabel.verticalSpan = 1;&#xA;constraintFFlowFinalNodeLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFlowFinalNodeLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFlowFinalNodeLabel, constraintFFlowFinalNodeLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFlowFinalNodeLabel() {&#xA;&#x9;&#x9;return fFlowFinalNodeLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/FlowFinalNode"/>
+        <containmentMetaFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+        <childMetaFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+      </modelFacet>
+    </topLevelNodes>
     <links visualID="4005" editPartClassName="ActivityEdgeEditPart" itemSemanticEditPolicyClassName="ActivityEdgeItemSemanticEditPolicy" createCommandClassName="ActivityEdgeCreateCommand" reorientCommandClassName="ActivityEdgeReorientCommand">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ActivityEdgeEditHelper"/>
@@ -435,7 +445,7 @@
         <entries xsi:type="gmfgen:ToolEntry" title="Initial Node" description="Create New Initial Node" genNodes="//@diagram/@topLevelNodes.4"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Junction Node" description="Create New Junction Node" genNodes="//@diagram/@topLevelNodes.5"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Activity Final Node" description="Create New Activity Final Node" genNodes="//@diagram/@topLevelNodes.6"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Flow Final Node" description="Create New Flow Final Node"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Flow Final Node" description="Create New Flow Final Node" genNodes="//@diagram/@topLevelNodes.7"/>
       </groups>
       <groups title="Patterns" smallIconPath="/org.storydriven.storydiagrams.diagram.custom/icons/palette/patterns.png" collapse="true">
         <entries xsi:type="gmfgen:ToolEntry" title="Object Variable" description="Create New Object Variable" default="true" genNodes="//@diagram/@childNodes.1"/>
@@ -483,6 +493,7 @@
     <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.4"/>
     <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.5"/>
     <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.6"/>
+    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.7"/>
     <childReferences parent="//@diagram" child="//@diagram/@links.0" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.0" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
@@ -498,6 +509,8 @@
     <childReferences parent="//@diagram/@topLevelNodes.5" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.6" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@topLevelNodes.6" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.7" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@topLevelNodes.7" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.0" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@links.0" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.1" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
@@ -512,6 +525,8 @@
     <childReferences parent="//@diagram/@topLevelNodes.5" child="//@diagram/@links.0" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.6" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@topLevelNodes.6" child="//@diagram/@links.0" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.7" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@topLevelNodes.7" child="//@diagram/@links.0" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram" child="//@diagram/@links.1" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.1" child="//@diagram/@childNodes.1" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@childNodes.1" child="//@diagram/@links.1" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>

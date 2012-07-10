@@ -17,43 +17,43 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="Activity Call Node"
-          description="Create New Activity Call Node"/>
+          description="Create Activity Call Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Modifying Story Node"
-          description="Create New Modifying Story Node"/>
+          description="Create Modifying Story Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Matching Story Node"
-          description="Create New Matching Story Node"/>
+          description="Create Matching Story Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Statement Node"
-          description="Create New Statement Node"/>
+          description="Create Statement Node"/>
       <tools
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Activity Edge"
-          description="Create New Activity Edge"/>
+          description="Create Activity Edge"/>
       <tools
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Initial Node"
-          description="Create New Initial Node"/>
+          description="Create Initial Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Junction Node"
-          description="Create New Junction Node"/>
+          description="Create Junction Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Activity Final Node"
-          description="Create New Activity Final Node"/>
+          description="Create Activity Final Node"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Flow Final Node"
-          description="Create New Flow Final Node"/>
+          description="Create Flow Final Node"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
@@ -67,37 +67,41 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="Object Variable"
-          description="Create New Object Variable"/>
+          description="Create Object Variable"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Collection Variable"
-          description="Create New Collection Variable"/>
+          description="Create Collection Variable"/>
       <tools
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Link Variable"
-          description="Create New Link Variable"/>
+          description="Create Link Variable"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Inclusion Link"
-          description="Create New Inclusion Link"/>
+          description="Create Inclusion Link"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Maybe Link"
-          description="Create New Maybe Link"/>
+          description="Create Maybe Link"/>
       <tools
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Constraint"
-          description="Create New Constraint"/>
+          description="Create Constraint"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Link Constraint"
+          description="Create Link Constraint"/>
       <tools
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Attribute Assignment"
-          description="Create New Attribute Assignment"/>
+          description="Create Attribute Assignment"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

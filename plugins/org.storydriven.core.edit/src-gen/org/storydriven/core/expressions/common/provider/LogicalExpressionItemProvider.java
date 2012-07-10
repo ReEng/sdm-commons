@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -20,25 +21,25 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.storydriven.core.expressions.common.CommonExpressionsPackage;
-import org.storydriven.core.expressions.common.LogicExpression;
+import org.storydriven.core.expressions.common.LogicalExpression;
 
 /**
- * This is the item provider adapter for a {@link org.storydriven.core.expressions.common.LogicExpression} object.
+ * This is the item provider adapter for a {@link org.storydriven.core.expressions.common.LogicalExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class LogicExpressionItemProvider extends BinaryExpressionItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class LogicalExpressionItemProvider extends BinaryExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LogicExpressionItemProvider(AdapterFactory adapterFactory) {
+	public LogicalExpressionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -66,16 +67,23 @@ public class LogicExpressionItemProvider extends BinaryExpressionItemProvider
 	 */
 	protected void addOperatorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_LogicExpression_operator_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_LogicExpression_operator_feature",
-						"_UI_LogicExpression_type"),
-				CommonExpressionsPackage.Literals.LOGIC_EXPRESSION__OPERATOR,
-				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
+				getString("_UI_LogicalExpression_operator_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_LogicalExpression_operator_feature",
+						"_UI_LogicalExpression_type"), CommonExpressionsPackage.Literals.LOGICAL_EXPRESSION__OPERATOR,
+				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This returns LogicalExpression.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/LogicalExpression"));
 	}
 
 	/**
@@ -96,9 +104,9 @@ public class LogicExpressionItemProvider extends BinaryExpressionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((LogicExpression) object).getComment();
-		return label == null || label.length() == 0 ? getString("_UI_LogicExpression_type")
-				: getString("_UI_LogicExpression_type") + " " + label;
+		String label = ((LogicalExpression) object).getComment();
+		return label == null || label.length() == 0 ? getString("_UI_LogicalExpression_type")
+				: getString("_UI_LogicalExpression_type") + " " + label;
 	}
 
 	/**
@@ -112,10 +120,9 @@ public class LogicExpressionItemProvider extends BinaryExpressionItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(LogicExpression.class)) {
-		case CommonExpressionsPackage.LOGIC_EXPRESSION__OPERATOR:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+		switch (notification.getFeatureID(LogicalExpression.class)) {
+		case CommonExpressionsPackage.LOGICAL_EXPRESSION__OPERATOR:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -129,8 +136,7 @@ public class LogicExpressionItemProvider extends BinaryExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -141,8 +147,7 @@ public class LogicExpressionItemProvider extends BinaryExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getCreateChildText(Object owner, Object feature,
-			Object child, Collection<?> selection) {
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
 		Object childFeature = feature;
 		Object childObject = child;
 
@@ -150,9 +155,8 @@ public class LogicExpressionItemProvider extends BinaryExpressionItemProvider
 				|| childFeature == CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION;
 
 		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] {
-					getTypeText(childObject), getFeatureText(childFeature),
-					getTypeText(owner) });
+			return getString("_UI_CreateChild_text2", new Object[] { getTypeText(childObject),
+					getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}

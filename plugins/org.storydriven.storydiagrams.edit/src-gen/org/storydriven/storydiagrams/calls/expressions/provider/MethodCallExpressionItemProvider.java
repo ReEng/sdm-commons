@@ -238,19 +238,10 @@ public class MethodCallExpressionItemProvider extends ExpressionItemProvider imp
 				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-				CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-				CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-				CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-				CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-				CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add(createChildParameter(
 				CallsExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE,

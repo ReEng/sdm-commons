@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 import org.storydriven.storydiagrams.diagram.edit.commands.ActivityCallNodeCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.ActivityFinalNodeCreateCommand;
+import org.storydriven.storydiagrams.diagram.edit.commands.FlowFinalNodeCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.InitialNodeCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.JunctionNodeCreateCommand;
 import org.storydriven.storydiagrams.diagram.edit.commands.MatchingStoryNodeCreateCommand;
@@ -51,6 +52,9 @@ public class ActivityItemSemanticEditPolicy extends StorydiagramsBaseItemSemanti
 		}
 		if (StorydiagramsElementTypes.ActivityFinalNode_2015 == req.getElementType()) {
 			return getGEFWrapper(new ActivityFinalNodeCreateCommand(req));
+		}
+		if (StorydiagramsElementTypes.FlowFinalNode_2016 == req.getElementType()) {
+			return getGEFWrapper(new FlowFinalNodeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

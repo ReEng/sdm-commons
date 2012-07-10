@@ -54,49 +54,22 @@ public interface CommonExpressionsFactory extends EFactory {
 	ArithmeticExpression createArithmeticExpression();
 
 	/**
-	 * Returns a new object of class '<em>Logic Expression</em>'.
+	 * Returns a new object of class '<em>Logical Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Logic Expression</em>'.
+	 * @return a new object of class '<em>Logical Expression</em>'.
 	 * @generated
 	 */
-	LogicExpression createLogicExpression();
+	LogicalExpression createLogicalExpression();
 
 	/**
-	 * Returns a new object of class '<em>Boolean Literal Expression</em>'.
+	 * Returns a new object of class '<em>Literal Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Boolean Literal Expression</em>'.
+	 * @return a new object of class '<em>Literal Expression</em>'.
 	 * @generated
 	 */
-	BooleanLiteralExpression createBooleanLiteralExpression();
-
-	/**
-	 * Returns a new object of class '<em>Integer Literal Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Integer Literal Expression</em>'.
-	 * @generated
-	 */
-	IntegerLiteralExpression createIntegerLiteralExpression();
-
-	/**
-	 * Returns a new object of class '<em>Double Literal Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Double Literal Expression</em>'.
-	 * @generated
-	 */
-	DoubleLiteralExpression createDoubleLiteralExpression();
-
-	/**
-	 * Returns a new object of class '<em>String Literal Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>String Literal Expression</em>'.
-	 * @generated
-	 */
-	StringLiteralExpression createStringLiteralExpression();
+	LiteralExpression createLiteralExpression();
 
 	/**
 	 * Returns the package supported by this factory.

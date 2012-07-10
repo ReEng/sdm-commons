@@ -34,9 +34,8 @@ import org.storydriven.core.expressions.common.util.CommonExpressionsAdapterFact
  * <!-- end-user-doc -->
  * @generated
  */
-public class CommonExpressionsItemProviderAdapterFactory extends
-		CommonExpressionsAdapterFactory implements ComposeableAdapterFactory,
-		IChangeNotifier, IDisposable {
+public class CommonExpressionsItemProviderAdapterFactory extends CommonExpressionsAdapterFactory implements
+		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -92,8 +91,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	@Override
 	public Adapter createUnaryExpressionAdapter() {
 		if (unaryExpressionItemProvider == null) {
-			unaryExpressionItemProvider = new CustomUnaryExpressionItemProvider(
-					this);
+			unaryExpressionItemProvider = new CustomUnaryExpressionItemProvider(this);
 		}
 
 		return unaryExpressionItemProvider;
@@ -116,8 +114,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	@Override
 	public Adapter createComparisonExpressionAdapter() {
 		if (comparisonExpressionItemProvider == null) {
-			comparisonExpressionItemProvider = new CustomComparisonExpressionItemProvider(
-					this);
+			comparisonExpressionItemProvider = new CustomComparisonExpressionItemProvider(this);
 		}
 
 		return comparisonExpressionItemProvider;
@@ -140,20 +137,43 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	@Override
 	public Adapter createArithmeticExpressionAdapter() {
 		if (arithmeticExpressionItemProvider == null) {
-			arithmeticExpressionItemProvider = new CustomArithmeticExpressionItemProvider(
-					this);
+			arithmeticExpressionItemProvider = new CustomArithmeticExpressionItemProvider(this);
 		}
 
 		return arithmeticExpressionItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.common.LogicExpression} instances.
+	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.common.LogicalExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LogicExpressionItemProvider logicExpressionItemProvider;
+	protected LogicalExpressionItemProvider logicalExpressionItemProvider;
+
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.common.LiteralExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LiteralExpressionItemProvider literalExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.storydriven.core.expressions.common.LiteralExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public Adapter createLiteralExpressionAdapter() {
+		if (literalExpressionItemProvider == null) {
+			literalExpressionItemProvider = new CustomLiteralExpressionItemProvider(this);
+		}
+
+		return literalExpressionItemProvider;
+	}
 
 	/**
 	 * This creates an adapter for a {@link org.storydriven.core.expressions.common.LogicExpression}.
@@ -162,109 +182,12 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	 * @generated NOT
 	 */
 	@Override
-	public Adapter createLogicExpressionAdapter() {
-		if (logicExpressionItemProvider == null) {
-			logicExpressionItemProvider = new CustomLogicExpressionItemProvider(
-					this);
+	public Adapter createLogicalExpressionAdapter() {
+		if (logicalExpressionItemProvider == null) {
+			logicalExpressionItemProvider = new CustomLogicalExpressionItemProvider(this);
 		}
 
-		return logicExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.common.BooleanLiteralExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BooleanLiteralExpressionItemProvider booleanLiteralExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.common.BooleanLiteralExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createBooleanLiteralExpressionAdapter() {
-		if (booleanLiteralExpressionItemProvider == null) {
-			booleanLiteralExpressionItemProvider = new CustomBooleanLiteralExpressionItemProvider(
-					this);
-		}
-
-		return booleanLiteralExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.common.IntegerLiteralExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IntegerLiteralExpressionItemProvider integerLiteralExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.common.IntegerLiteralExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createIntegerLiteralExpressionAdapter() {
-		if (integerLiteralExpressionItemProvider == null) {
-			integerLiteralExpressionItemProvider = new CustomIntegerLiteralExpressionItemProvider(
-					this);
-		}
-
-		return integerLiteralExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.common.DoubleLiteralExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DoubleLiteralExpressionItemProvider doubleLiteralExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.common.DoubleLiteralExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createDoubleLiteralExpressionAdapter() {
-		if (doubleLiteralExpressionItemProvider == null) {
-			doubleLiteralExpressionItemProvider = new CustomDoubleLiteralExpressionItemProvider(
-					this);
-		}
-
-		return doubleLiteralExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.common.StringLiteralExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StringLiteralExpressionItemProvider stringLiteralExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.storydriven.core.expressions.common.StringLiteralExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createStringLiteralExpressionAdapter() {
-		if (stringLiteralExpressionItemProvider == null) {
-			stringLiteralExpressionItemProvider = new CustomStringLiteralExpressionItemProvider(
-					this);
-		}
-
-		return stringLiteralExpressionItemProvider;
+		return logicalExpressionItemProvider;
 	}
 
 	/**
@@ -274,8 +197,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -284,8 +206,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -319,8 +240,7 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -375,16 +295,10 @@ public class CommonExpressionsItemProviderAdapterFactory extends
 			comparisonExpressionItemProvider.dispose();
 		if (arithmeticExpressionItemProvider != null)
 			arithmeticExpressionItemProvider.dispose();
-		if (logicExpressionItemProvider != null)
-			logicExpressionItemProvider.dispose();
-		if (booleanLiteralExpressionItemProvider != null)
-			booleanLiteralExpressionItemProvider.dispose();
-		if (integerLiteralExpressionItemProvider != null)
-			integerLiteralExpressionItemProvider.dispose();
-		if (doubleLiteralExpressionItemProvider != null)
-			doubleLiteralExpressionItemProvider.dispose();
-		if (stringLiteralExpressionItemProvider != null)
-			stringLiteralExpressionItemProvider.dispose();
+		if (logicalExpressionItemProvider != null)
+			logicalExpressionItemProvider.dispose();
+		if (literalExpressionItemProvider != null)
+			literalExpressionItemProvider.dispose();
 	}
 
 }

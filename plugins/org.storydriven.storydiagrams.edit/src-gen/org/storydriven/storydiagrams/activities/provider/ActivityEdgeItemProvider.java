@@ -121,17 +121,6 @@ public class ActivityEdgeItemProvider extends ExtendableElementItemProvider impl
 	}
 
 	/**
-	 * This returns ActivityEdge.png.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("elements/activities/ActivityEdge.png"));
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -271,19 +260,10 @@ public class ActivityEdgeItemProvider extends ExtendableElementItemProvider impl
 				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_EDGE__GUARD_EXCEPTION,
 				ActivitiesFactory.eINSTANCE.createExceptionVariable()));

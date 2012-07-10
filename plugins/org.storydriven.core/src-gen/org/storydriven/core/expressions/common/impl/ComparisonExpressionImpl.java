@@ -26,8 +26,7 @@ import org.storydriven.core.expressions.common.ComparisonExpression;
  *
  * @generated
  */
-public class ComparisonExpressionImpl extends BinaryExpressionImpl implements
-		ComparisonExpression {
+public class ComparisonExpressionImpl extends BinaryExpressionImpl implements ComparisonExpression {
 	/**
 	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -86,8 +85,7 @@ public class ComparisonExpressionImpl extends BinaryExpressionImpl implements
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					CommonExpressionsPackage.COMPARISON_EXPRESSION__OPERATOR,
-					oldOperator, operator));
+					CommonExpressionsPackage.COMPARISON_EXPRESSION__OPERATOR, oldOperator, operator));
 	}
 
 	/**

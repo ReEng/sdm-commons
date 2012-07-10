@@ -66,7 +66,7 @@ public class LinkConstraintImpl extends ExtendableElementImpl implements LinkCon
 	 * @generated
 	 * @ordered
 	 */
-	protected static final LinkConstraintType CONSTRAINT_TYPE_EDEFAULT = LinkConstraintType.NEXT;
+	protected static final LinkConstraintType CONSTRAINT_TYPE_EDEFAULT = LinkConstraintType.FIRST;
 
 	/**
 	 * The cached value of the '{@link #getConstraintType() <em>Constraint Type</em>}' attribute.

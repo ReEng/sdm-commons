@@ -12,9 +12,8 @@ import org.storydriven.core.expressions.common.ArithmeticOperator;
 import org.storydriven.core.expressions.common.ComparingOperator;
 import org.storydriven.core.expressions.common.ComparisonExpression;
 import org.storydriven.core.expressions.common.LiteralExpression;
-import org.storydriven.core.expressions.common.LogicExpression;
 import org.storydriven.core.expressions.common.LogicOperator;
-import org.storydriven.core.expressions.common.StringLiteralExpression;
+import org.storydriven.core.expressions.common.LogicalExpression;
 import org.storydriven.core.expressions.common.UnaryExpression;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
@@ -250,16 +249,8 @@ public class Texts {
 		// literal expression
 		if (expression instanceof LiteralExpression) {
 			LiteralExpression le = (LiteralExpression) expression;
-			String value = le.getValue();
 
-			if (le instanceof StringLiteralExpression) {
-				// value could not be parsed
-				builder.append('"');
-				builder.append(value);
-				builder.append('"');
-			} else {
-				builder.append(value);
-			}
+			builder.append(le.getValue());
 
 			return builder;
 		}
@@ -315,8 +306,8 @@ public class Texts {
 		}
 
 		// logic expression
-		if (expression instanceof LogicExpression) {
-			LogicExpression ble = (LogicExpression) expression;
+		if (expression instanceof LogicalExpression) {
+			LogicalExpression ble = (LogicalExpression) expression;
 
 			if (!isRoot && !isNegated) {
 				builder.append('(');

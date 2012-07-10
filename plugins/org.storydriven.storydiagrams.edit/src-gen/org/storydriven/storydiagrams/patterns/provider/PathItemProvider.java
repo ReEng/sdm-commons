@@ -188,19 +188,10 @@ public class PathItemProvider extends AbstractLinkVariableItemProvider implement
 				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.PATH__PATH_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
 }

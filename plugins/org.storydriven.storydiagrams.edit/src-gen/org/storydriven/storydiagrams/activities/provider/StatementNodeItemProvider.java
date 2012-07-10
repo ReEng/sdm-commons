@@ -188,19 +188,10 @@ public class StatementNodeItemProvider extends ActivityNodeItemProvider implemen
 				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STATEMENT_NODE__STATEMENT_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
 }

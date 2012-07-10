@@ -20,6 +20,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
+import org.storydriven.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
 import org.storydriven.storydiagrams.activities.expressions.provider.ActivitiesExpressionsItemProviderAdapterFactory;
@@ -131,6 +132,7 @@ public class StorydiagramsDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new TemplatesItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
+		factories.add(new CommonExpressionsItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());

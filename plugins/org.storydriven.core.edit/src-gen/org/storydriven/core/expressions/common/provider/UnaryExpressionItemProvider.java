@@ -13,12 +13,14 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
@@ -33,9 +35,8 @@ import org.storydriven.core.provider.CoreEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class UnaryExpressionItemProvider extends ExpressionItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class UnaryExpressionItemProvider extends ExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -57,8 +58,25 @@ public class UnaryExpressionItemProvider extends ExpressionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOperatorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Operator feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOperatorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_UnaryExpression_operator_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_UnaryExpression_operator_feature",
+						"_UI_UnaryExpression_type"), CommonExpressionsPackage.Literals.UNARY_EXPRESSION__OPERATOR,
+				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -70,12 +88,10 @@ public class UnaryExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION);
+			childrenFeatures.add(CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -128,9 +144,11 @@ public class UnaryExpressionItemProvider extends ExpressionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnaryExpression.class)) {
+		case CommonExpressionsPackage.UNARY_EXPRESSION__OPERATOR:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		case CommonExpressionsPackage.UNARY_EXPRESSION__ENCLOSED_EXPRESSION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -144,62 +162,32 @@ public class UnaryExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createUnaryExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createComparisonExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createArithmeticExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createLogicExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createBooleanLiteralExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createIntegerLiteralExpression()));
-
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createDoubleLiteralExpression()));
-
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createStringLiteralExpression()));
-
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
-						ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.UNARY_EXPRESSION__ENCLOSED_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 	}
 
 	/**

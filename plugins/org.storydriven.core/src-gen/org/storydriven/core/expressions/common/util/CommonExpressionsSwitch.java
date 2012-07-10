@@ -12,17 +12,12 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.common.*;
 import org.storydriven.core.expressions.common.ArithmeticExpression;
 import org.storydriven.core.expressions.common.BinaryExpression;
-import org.storydriven.core.expressions.common.BooleanLiteralExpression;
 import org.storydriven.core.expressions.common.CommonExpressionsPackage;
 import org.storydriven.core.expressions.common.ComparisonExpression;
-import org.storydriven.core.expressions.common.DoubleLiteralExpression;
-import org.storydriven.core.expressions.common.IntegerLiteralExpression;
 import org.storydriven.core.expressions.common.LiteralExpression;
-import org.storydriven.core.expressions.common.LogicExpression;
-import org.storydriven.core.expressions.common.StringLiteralExpression;
+import org.storydriven.core.expressions.common.LogicalExpression;
 import org.storydriven.core.expressions.common.UnaryExpression;
 
 /**
@@ -138,17 +133,17 @@ public class CommonExpressionsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case CommonExpressionsPackage.LOGIC_EXPRESSION: {
-			LogicExpression logicExpression = (LogicExpression) theEObject;
-			T result = caseLogicExpression(logicExpression);
+		case CommonExpressionsPackage.LOGICAL_EXPRESSION: {
+			LogicalExpression logicalExpression = (LogicalExpression) theEObject;
+			T result = caseLogicalExpression(logicalExpression);
 			if (result == null)
-				result = caseBinaryExpression(logicExpression);
+				result = caseBinaryExpression(logicalExpression);
 			if (result == null)
-				result = caseExpression(logicExpression);
+				result = caseExpression(logicalExpression);
 			if (result == null)
-				result = caseCommentableElement(logicExpression);
+				result = caseCommentableElement(logicalExpression);
 			if (result == null)
-				result = caseExtendableElement(logicExpression);
+				result = caseExtendableElement(logicalExpression);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -162,66 +157,6 @@ public class CommonExpressionsSwitch<T> extends Switch<T> {
 				result = caseCommentableElement(literalExpression);
 			if (result == null)
 				result = caseExtendableElement(literalExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CommonExpressionsPackage.BOOLEAN_LITERAL_EXPRESSION: {
-			BooleanLiteralExpression booleanLiteralExpression = (BooleanLiteralExpression) theEObject;
-			T result = caseBooleanLiteralExpression(booleanLiteralExpression);
-			if (result == null)
-				result = caseLiteralExpression(booleanLiteralExpression);
-			if (result == null)
-				result = caseExpression(booleanLiteralExpression);
-			if (result == null)
-				result = caseCommentableElement(booleanLiteralExpression);
-			if (result == null)
-				result = caseExtendableElement(booleanLiteralExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CommonExpressionsPackage.INTEGER_LITERAL_EXPRESSION: {
-			IntegerLiteralExpression integerLiteralExpression = (IntegerLiteralExpression) theEObject;
-			T result = caseIntegerLiteralExpression(integerLiteralExpression);
-			if (result == null)
-				result = caseLiteralExpression(integerLiteralExpression);
-			if (result == null)
-				result = caseExpression(integerLiteralExpression);
-			if (result == null)
-				result = caseCommentableElement(integerLiteralExpression);
-			if (result == null)
-				result = caseExtendableElement(integerLiteralExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CommonExpressionsPackage.DOUBLE_LITERAL_EXPRESSION: {
-			DoubleLiteralExpression doubleLiteralExpression = (DoubleLiteralExpression) theEObject;
-			T result = caseDoubleLiteralExpression(doubleLiteralExpression);
-			if (result == null)
-				result = caseLiteralExpression(doubleLiteralExpression);
-			if (result == null)
-				result = caseExpression(doubleLiteralExpression);
-			if (result == null)
-				result = caseCommentableElement(doubleLiteralExpression);
-			if (result == null)
-				result = caseExtendableElement(doubleLiteralExpression);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CommonExpressionsPackage.STRING_LITERAL_EXPRESSION: {
-			StringLiteralExpression stringLiteralExpression = (StringLiteralExpression) theEObject;
-			T result = caseStringLiteralExpression(stringLiteralExpression);
-			if (result == null)
-				result = caseLiteralExpression(stringLiteralExpression);
-			if (result == null)
-				result = caseExpression(stringLiteralExpression);
-			if (result == null)
-				result = caseCommentableElement(stringLiteralExpression);
-			if (result == null)
-				result = caseExtendableElement(stringLiteralExpression);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -292,17 +227,17 @@ public class CommonExpressionsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Logic Expression</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Logical Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Logic Expression</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Logical Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLogicExpression(LogicExpression object) {
+	public T caseLogicalExpression(LogicalExpression object) {
 		return null;
 	}
 
@@ -318,66 +253,6 @@ public class CommonExpressionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLiteralExpression(LiteralExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Boolean Literal Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Boolean Literal Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBooleanLiteralExpression(BooleanLiteralExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Integer Literal Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Integer Literal Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIntegerLiteralExpression(IntegerLiteralExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Double Literal Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Double Literal Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDoubleLiteralExpression(DoubleLiteralExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>String Literal Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>String Literal Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStringLiteralExpression(StringLiteralExpression object) {
 		return null;
 	}
 

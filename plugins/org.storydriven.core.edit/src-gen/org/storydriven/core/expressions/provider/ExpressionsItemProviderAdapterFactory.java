@@ -34,9 +34,8 @@ import org.storydriven.core.expressions.util.ExpressionsAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExpressionsItemProviderAdapterFactory extends
-		ExpressionsAdapterFactory implements ComposeableAdapterFactory,
-		IChangeNotifier, IDisposable {
+public class ExpressionsItemProviderAdapterFactory extends ExpressionsAdapterFactory implements
+		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -92,8 +91,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	@Override
 	public Adapter createTextualExpressionAdapter() {
 		if (textualExpressionItemProvider == null) {
-			textualExpressionItemProvider = new CustomTextualExpressionItemProvider(
-					this);
+			textualExpressionItemProvider = new CustomTextualExpressionItemProvider(this);
 		}
 
 		return textualExpressionItemProvider;
@@ -106,8 +104,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -116,8 +113,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -151,8 +147,7 @@ public class ExpressionsItemProviderAdapterFactory extends
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}

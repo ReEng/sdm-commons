@@ -25,7 +25,7 @@ import org.storydriven.core.expressions.Expression;
  * </p>
  *
  * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getLiteralExpression()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface LiteralExpression extends Expression {

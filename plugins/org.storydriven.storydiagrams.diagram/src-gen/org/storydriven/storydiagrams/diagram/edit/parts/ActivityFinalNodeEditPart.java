@@ -287,6 +287,9 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
 		}
+		if (targetEditPart instanceof FlowFinalNodeEditPart) {
+			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+		}
 		return types;
 	}
 
@@ -303,6 +306,7 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.InitialNode_2013);
 			types.add(StorydiagramsElementTypes.JunctionNode_2014);
 			types.add(StorydiagramsElementTypes.ActivityFinalNode_2015);
+			types.add(StorydiagramsElementTypes.FlowFinalNode_2016);
 		}
 		return types;
 	}
@@ -329,6 +333,7 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.InitialNode_2013);
 			types.add(StorydiagramsElementTypes.JunctionNode_2014);
 			types.add(StorydiagramsElementTypes.ActivityFinalNode_2015);
+			types.add(StorydiagramsElementTypes.FlowFinalNode_2016);
 		}
 		return types;
 	}

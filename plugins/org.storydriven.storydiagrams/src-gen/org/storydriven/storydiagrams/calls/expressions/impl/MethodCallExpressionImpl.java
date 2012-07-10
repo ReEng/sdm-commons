@@ -308,7 +308,6 @@ public class MethodCallExpressionImpl extends ExpressionImpl implements MethodCa
 		return returnParameter;
 	}
 
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated

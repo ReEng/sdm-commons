@@ -57,6 +57,7 @@ public interface CollectionVariable extends ObjectVariable {
 
 	/**
 	 * Returns the value of the '<em><b>Unique</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Unique</em>' attribute isn't clear,
@@ -66,7 +67,7 @@ public interface CollectionVariable extends ObjectVariable {
 	 * @return the value of the '<em>Unique</em>' attribute.
 	 * @see #setUnique(boolean)
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getCollectionVariable_Unique()
-	 * @model required="true" ordered="false"
+	 * @model default="" required="true"
 	 * @generated
 	 */
 	boolean isUnique();

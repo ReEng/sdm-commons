@@ -20,8 +20,7 @@ import org.storydriven.core.impl.CommentableElementImpl;
  *
  * @generated
  */
-public abstract class ExpressionImpl extends CommentableElementImpl implements
-		Expression {
+public abstract class ExpressionImpl extends CommentableElementImpl implements Expression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -5,12 +5,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Ellipse;
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.ScalablePolygonShape;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -21,23 +23,24 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.storydriven.storydiagrams.diagram.edit.policies.JunctionNodeItemSemanticEditPolicy;
+import org.storydriven.storydiagrams.diagram.edit.policies.FlowFinalNodeItemSemanticEditPolicy;
 import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes;
 
 /**
  * @generated
  */
-public class JunctionNodeEditPart extends ShapeNodeEditPart {
+public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2014;
+	public static final int VISUAL_ID = 2016;
 
 	/**
 	 * @generated
@@ -52,7 +55,7 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public JunctionNodeEditPart(View view) {
+	public FlowFinalNodeEditPart(View view) {
 		super(view);
 	}
 
@@ -61,7 +64,7 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new JunctionNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new FlowFinalNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -96,21 +99,21 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new JunctionNodeFigure();
+		return primaryShape = new FlowFinalNodeFigureDescriptor();
 	}
 
 	/**
 	 * @generated
 	 */
-	public JunctionNodeFigure getPrimaryShape() {
-		return (JunctionNodeFigure) primaryShape;
+	public FlowFinalNodeFigureDescriptor getPrimaryShape() {
+		return (FlowFinalNodeFigureDescriptor) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(22, 22);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
 	}
 
@@ -216,13 +219,13 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof InitialNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
 		}
-		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart) {
+		if (targetEditPart instanceof JunctionNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
 		}
-		if (targetEditPart instanceof FlowFinalNodeEditPart) {
+		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
 		}
 		return types;
@@ -276,21 +279,68 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class JunctionNodeFigure extends ScalablePolygonShape {
+	public class FlowFinalNodeFigureDescriptor extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		public JunctionNodeFigure() {
-			this.addPoint(new Point(getMapMode().DPtoLP(11), getMapMode().DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(22), getMapMode().DPtoLP(11)));
-			this.addPoint(new Point(getMapMode().DPtoLP(11), getMapMode().DPtoLP(22)));
-			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(11)));
-			this.setFill(true);
-			this.setForegroundColor(ColorConstants.black);
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(22), getMapMode().DPtoLP(22)));
-			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(22), getMapMode().DPtoLP(22)));
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(22), getMapMode().DPtoLP(22)));
+		private WrappingLabel fFlowFinalNodeLabel;
+
+		/**
+		 * @generated
+		 */
+		public FlowFinalNodeFigureDescriptor() {
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = false;
+			this.setLayoutManager(layoutThis);
+
+			this.setOutline(false);
+			createContents();
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			Ellipse flowFinalNodeEllipse0 = new Ellipse();
+			flowFinalNodeEllipse0.setForegroundColor(ColorConstants.black);
+			flowFinalNodeEllipse0.setPreferredSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			flowFinalNodeEllipse0.setMaximumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			flowFinalNodeEllipse0.setMinimumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+
+			GridData constraintFlowFinalNodeEllipse0 = new GridData();
+			constraintFlowFinalNodeEllipse0.verticalAlignment = GridData.CENTER;
+			constraintFlowFinalNodeEllipse0.horizontalAlignment = GridData.CENTER;
+			constraintFlowFinalNodeEllipse0.horizontalIndent = 0;
+			constraintFlowFinalNodeEllipse0.horizontalSpan = 1;
+			constraintFlowFinalNodeEllipse0.verticalSpan = 1;
+			constraintFlowFinalNodeEllipse0.grabExcessHorizontalSpace = false;
+			constraintFlowFinalNodeEllipse0.grabExcessVerticalSpace = false;
+			this.add(flowFinalNodeEllipse0, constraintFlowFinalNodeEllipse0);
+
+			fFlowFinalNodeLabel = new WrappingLabel();
+			fFlowFinalNodeLabel.setText("");
+
+			GridData constraintFFlowFinalNodeLabel = new GridData();
+			constraintFFlowFinalNodeLabel.verticalAlignment = GridData.CENTER;
+			constraintFFlowFinalNodeLabel.horizontalAlignment = GridData.CENTER;
+			constraintFFlowFinalNodeLabel.horizontalIndent = 0;
+			constraintFFlowFinalNodeLabel.horizontalSpan = 1;
+			constraintFFlowFinalNodeLabel.verticalSpan = 1;
+			constraintFFlowFinalNodeLabel.grabExcessHorizontalSpace = true;
+			constraintFFlowFinalNodeLabel.grabExcessVerticalSpace = false;
+			this.add(fFlowFinalNodeLabel, constraintFFlowFinalNodeLabel);
+
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFlowFinalNodeLabel() {
+			return fFlowFinalNodeLabel;
 		}
 
 	}

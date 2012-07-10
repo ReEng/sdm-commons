@@ -62,8 +62,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ExpressionsPackage eINSTANCE = org.storydriven.core.expressions.impl.ExpressionsPackageImpl
-			.init();
+	ExpressionsPackage eINSTANCE = org.storydriven.core.expressions.impl.ExpressionsPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.core.expressions.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -646,8 +645,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEXTUAL_EXPRESSION__EXPRESSION_TEXT = eINSTANCE
-				.getTextualExpression_ExpressionText();
+		EAttribute TEXTUAL_EXPRESSION__EXPRESSION_TEXT = eINSTANCE.getTextualExpression_ExpressionText();
 
 		/**
 		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
@@ -655,8 +653,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEXTUAL_EXPRESSION__LANGUAGE = eINSTANCE
-				.getTextualExpression_Language();
+		EAttribute TEXTUAL_EXPRESSION__LANGUAGE = eINSTANCE.getTextualExpression_Language();
 
 		/**
 		 * The meta object literal for the '<em><b>Language Version</b></em>' attribute feature.
@@ -664,8 +661,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEXTUAL_EXPRESSION__LANGUAGE_VERSION = eINSTANCE
-				.getTextualExpression_LanguageVersion();
+		EAttribute TEXTUAL_EXPRESSION__LANGUAGE_VERSION = eINSTANCE.getTextualExpression_LanguageVersion();
 
 	}
 

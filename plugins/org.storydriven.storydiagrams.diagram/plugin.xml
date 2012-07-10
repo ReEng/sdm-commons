@@ -227,7 +227,7 @@
       <viewProvider class="org.storydriven.storydiagrams.diagram.providers.StorydiagramsViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Storydiagrams"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2009,2010,2011,2012,2013,2014,2015,3019,3020,3021,3022,3023,3024,3025"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2009,2010,2011,2012,2013,2014,2015,2016,3019,3020,3021,3022,3023,3024,3025"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006,4007,4008"/>
       </viewProvider>
    </extension>
@@ -240,7 +240,7 @@
             <method name="getType()" value="Storydiagrams"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2009,2010,2011,2012,2013,2014,2015,3019,3020,3021,3022,3023,3024,3025"/>
+            <method name="getType()" value="2009,2010,2011,2012,2013,2014,2015,2016,3019,3020,3021,3022,3023,3024,3025"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4005,4006,4007,4008"/>
@@ -267,7 +267,8 @@
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeEditPart" id="InitialNode_2013"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart" id="JunctionNode_2014"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart" id="ActivityFinalNode_2015"/>
-         <context elements="Activity_1000,ActivityCallNode_2009,StatementNode_2010,ModifyingStoryNode_2011,MatchingStoryNode_2012,InitialNode_2013,JunctionNode_2014,ActivityFinalNode_2015"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart" id="FlowFinalNode_2016"/>
+         <context elements="Activity_1000,ActivityCallNode_2009,StatementNode_2010,ModifyingStoryNode_2011,MatchingStoryNode_2012,InitialNode_2013,JunctionNode_2014,ActivityFinalNode_2015,FlowFinalNode_2016"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -365,6 +366,16 @@
                eclass="ActivityFinalNode"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ActivityFinalNodeEditHelper">
             <param name="semanticHint" value="2015"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
+         <metamodelType
+               id="org.storydriven.storydiagrams.diagram.FlowFinalNode_2016"
+               name="%metatype.name.FlowFinalNode_2016"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="FlowFinalNode"
+               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.FlowFinalNodeEditHelper">
+            <param name="semanticHint" value="2016"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
@@ -496,6 +507,7 @@
          <elementType ref="org.storydriven.storydiagrams.diagram.InitialNode_2013"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.JunctionNode_2014"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.ActivityFinalNode_2015"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.FlowFinalNode_2016"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.StoryPattern_3019"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.ObjectVariable_3020"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.AttributeAssignment_3021"/>

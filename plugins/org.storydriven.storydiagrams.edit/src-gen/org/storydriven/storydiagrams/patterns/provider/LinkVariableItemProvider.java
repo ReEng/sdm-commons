@@ -223,19 +223,10 @@ public class LinkVariableItemProvider extends AbstractLinkVariableItemProvider i
 				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.LINK_VARIABLE__QUALIFIER_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
 }

@@ -76,6 +76,9 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			case ActivityFinalNodeLabelEditPart.VISUAL_ID:
 				return new ActivityFinalNodeLabelEditPart(view);
 
+			case FlowFinalNodeEditPart.VISUAL_ID:
+				return new FlowFinalNodeEditPart(view);
+
 			case StoryPatternEditPart.VISUAL_ID:
 				return new StoryPatternEditPart(view);
 

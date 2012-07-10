@@ -229,19 +229,10 @@ public class ParameterBindingItemProvider extends CommentableElementItemProvider
 				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
 }

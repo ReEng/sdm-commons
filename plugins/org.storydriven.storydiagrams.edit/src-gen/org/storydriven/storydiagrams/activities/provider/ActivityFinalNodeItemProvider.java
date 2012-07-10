@@ -227,19 +227,10 @@ public class ActivityFinalNodeItemProvider extends ActivityNodeItemProvider impl
 				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__RETURN_VALUES,
-				CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
 }

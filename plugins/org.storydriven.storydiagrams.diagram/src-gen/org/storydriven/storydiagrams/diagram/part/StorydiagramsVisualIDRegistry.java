@@ -23,6 +23,7 @@ import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableNameLa
 import org.storydriven.storydiagrams.diagram.edit.parts.Constraint2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ConstraintEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationOperatorLabelEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InclusionLinkEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeLabelEditPart;
@@ -183,6 +184,9 @@ public class StorydiagramsVisualIDRegistry {
 			if (ActivitiesPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
 				return ActivityFinalNodeEditPart.VISUAL_ID;
 			}
+			if (ActivitiesPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
+				return FlowFinalNodeEditPart.VISUAL_ID;
+			}
 			break;
 		case ModifyingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
 			if (PatternsPackage.eINSTANCE.getStoryPattern().isSuperTypeOf(domainElement.eClass())) {
@@ -285,6 +289,9 @@ public class StorydiagramsVisualIDRegistry {
 				return true;
 			}
 			if (ActivityFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (FlowFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

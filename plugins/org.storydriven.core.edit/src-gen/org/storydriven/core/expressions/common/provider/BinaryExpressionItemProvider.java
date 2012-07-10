@@ -33,9 +33,8 @@ import org.storydriven.core.provider.CoreEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class BinaryExpressionItemProvider extends ExpressionItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class BinaryExpressionItemProvider extends ExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -70,14 +69,11 @@ public class BinaryExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION);
-			childrenFeatures
-					.add(CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION);
+			childrenFeatures.add(CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION);
+			childrenFeatures.add(CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -132,8 +128,7 @@ public class BinaryExpressionItemProvider extends ExpressionItemProvider
 		switch (notification.getFeatureID(BinaryExpression.class)) {
 		case CommonExpressionsPackage.BINARY_EXPRESSION__LEFT_EXPRESSION:
 		case CommonExpressionsPackage.BINARY_EXPRESSION__RIGHT_EXPRESSION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -147,115 +142,56 @@ public class BinaryExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createUnaryExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createComparisonExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createArithmeticExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createLogicExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createBooleanLiteralExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createIntegerLiteralExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createDoubleLiteralExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createStringLiteralExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__LEFT_EXPRESSION,
-						ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createUnaryExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createComparisonExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
+				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createArithmeticExpression()));
-
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createLogicExpression()));
-
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createBooleanLiteralExpression()));
-
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createIntegerLiteralExpression()));
-
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createDoubleLiteralExpression()));
-
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
-						CommonExpressionsFactory.eINSTANCE
-								.createStringLiteralExpression()));
-
-		newChildDescriptors
-				.add(createChildParameter(
-						CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
-						ExpressionsFactory.eINSTANCE.createTextualExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION,
+				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 	}
 
 	/**
@@ -265,8 +201,7 @@ public class BinaryExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getCreateChildText(Object owner, Object feature,
-			Object child, Collection<?> selection) {
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
 		Object childFeature = feature;
 		Object childObject = child;
 
@@ -274,9 +209,8 @@ public class BinaryExpressionItemProvider extends ExpressionItemProvider
 				|| childFeature == CommonExpressionsPackage.Literals.BINARY_EXPRESSION__RIGHT_EXPRESSION;
 
 		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] {
-					getTypeText(childObject), getFeatureText(childFeature),
-					getTypeText(owner) });
+			return getString("_UI_CreateChild_text2", new Object[] { getTypeText(childObject),
+					getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}

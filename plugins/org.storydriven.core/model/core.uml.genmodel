@@ -111,6 +111,7 @@
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/UnaryExpression">
           <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
               createChild="true" ecoreFeature="ecore:EReference core.ecore#//expressions/common/UnaryExpression/enclosedExpression"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/common/UnaryExpression/operator"/>
         </genClasses>
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/BinaryExpression">
           <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -124,16 +125,12 @@
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/ArithmeticExpression">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/common/ArithmeticExpression/operator"/>
         </genClasses>
-        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/LogicExpression">
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/common/LogicExpression/operator"/>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/LogicalExpression">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/common/LogicalExpression/operator"/>
         </genClasses>
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/LiteralExpression">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//expressions/common/LiteralExpression/value"/>
         </genClasses>
-        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/BooleanLiteralExpression"/>
-        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/IntegerLiteralExpression"/>
-        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/DoubleLiteralExpression"/>
-        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="core.ecore#//expressions/common/StringLiteralExpression"/>
       </nestedGenPackages>
     </nestedGenPackages>
   </genPackages>

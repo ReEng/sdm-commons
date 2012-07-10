@@ -158,5 +158,4 @@ public class ObjectVariableExpressionImpl extends ExpressionImpl implements Obje
 		return super.eIsSet(featureID);
 	}
 
-
 } //ObjectVariableExpressionImpl

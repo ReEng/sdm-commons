@@ -8,7 +8,7 @@ package org.storydriven.core.expressions.common;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Logic Expression</b></em>'.
+ * A representation of the model object '<em><b>Logical Expression</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -18,15 +18,15 @@ package org.storydriven.core.expressions.common;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.storydriven.core.expressions.common.LogicExpression#getOperator <em>Operator</em>}</li>
+ *   <li>{@link org.storydriven.core.expressions.common.LogicalExpression#getOperator <em>Operator</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getLogicExpression()
+ * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getLogicalExpression()
  * @model
  * @generated
  */
-public interface LogicExpression extends BinaryExpression {
+public interface LogicalExpression extends BinaryExpression {
 	/**
 	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.storydriven.core.expressions.common.LogicOperator}.
@@ -38,14 +38,14 @@ public interface LogicExpression extends BinaryExpression {
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see org.storydriven.core.expressions.common.LogicOperator
 	 * @see #setOperator(LogicOperator)
-	 * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getLogicExpression_Operator()
+	 * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getLogicalExpression_Operator()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	LogicOperator getOperator();
 
 	/**
-	 * Sets the value of the '{@link org.storydriven.core.expressions.common.LogicExpression#getOperator <em>Operator</em>}' attribute.
+	 * Sets the value of the '{@link org.storydriven.core.expressions.common.LogicalExpression#getOperator <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Operator</em>' attribute.
@@ -55,4 +55,4 @@ public interface LogicExpression extends BinaryExpression {
 	 */
 	void setOperator(LogicOperator value);
 
-} // LogicExpression
+} // LogicalExpression

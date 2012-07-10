@@ -15,12 +15,8 @@ import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.storydriven.core.expressions.common.ArithmeticExpression;
-import org.storydriven.core.expressions.common.BooleanLiteralExpression;
-import org.storydriven.core.expressions.common.DoubleLiteralExpression;
-import org.storydriven.core.expressions.common.IntegerLiteralExpression;
-import org.storydriven.core.expressions.common.LogicExpression;
+import org.storydriven.core.expressions.common.LogicalExpression;
 import org.storydriven.core.expressions.common.ComparisonExpression;
-import org.storydriven.core.expressions.common.StringLiteralExpression;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.common.LiteralExpression;
 import org.storydriven.core.expressions.common.UnaryExpression;
@@ -83,9 +79,9 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 		{
 			return this.evaluate((AttributeValueExpression) expression, contextClassifier, contextInstance, variablesScope);
 		}
-		else if (expression instanceof LogicExpression)
+		else if (expression instanceof LogicalExpression)
 		{
-			return this.evaluate((LogicExpression) expression, contextClassifier, contextInstance, variablesScope);
+			return this.evaluate((LogicalExpression) expression, contextClassifier, contextInstance, variablesScope);
 		}
 		else if (expression instanceof ComparisonExpression)
 		{
@@ -215,7 +211,7 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 		return new Variable<EClassifier>(SDMInterpreterConstants.INTERNAL_VAR_NAME, classifier, finalResult);
 	}
 
-	private Variable<EClassifier> evaluate(LogicExpression expression, EClassifier contextClassifier, Object contextInstance,
+	private Variable<EClassifier> evaluate(LogicalExpression expression, EClassifier contextClassifier, Object contextInstance,
 			VariablesScope<?, ?, ?, ?, ?, ?, EClassifier, ?, Expression> variablesScope) throws SDMException
 	{
 		/*
@@ -621,20 +617,10 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 		assert expression.getValue() != null;
 		assert !"".equals(expression.getValue());
 
-		// get type
-		EDataType type = null;
-		if(expression instanceof BooleanLiteralExpression) {
-			type = EcorePackage.Literals.EBOOLEAN;
-		} else if(expression instanceof IntegerLiteralExpression) {
-			type = EcorePackage.Literals.EINT;
-		} else if(expression instanceof DoubleLiteralExpression) {
-			type = EcorePackage.Literals.EDOUBLE;
-		} else if(expression instanceof StringLiteralExpression) {
-			type = EcorePackage.Literals.ESTRING;
-		}
 		
-		assert type != null;
-		
+		// TODO: we need a parser for literal expressions!
+		System.err.println("the literal expression is ALWAYS seen as String!!!");
+		EDataType type = EcorePackage.Literals.ESTRING;
 		/*
 		 * Let EcoreFactory create an Object of the appropriate primitive type
 		 */

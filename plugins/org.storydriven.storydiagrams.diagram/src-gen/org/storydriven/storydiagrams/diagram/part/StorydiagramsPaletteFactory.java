@@ -185,10 +185,12 @@ public class StorydiagramsPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createFlowFinalNode11CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.FlowFinalNode11CreationTool_title,
-				Messages.FlowFinalNode11CreationTool_desc, null, null) {
-		};
+		NodeToolEntry entry = new NodeToolEntry(Messages.FlowFinalNode11CreationTool_title,
+				Messages.FlowFinalNode11CreationTool_desc,
+				Collections.singletonList(StorydiagramsElementTypes.FlowFinalNode_2016));
 		entry.setId("createFlowFinalNode11CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.FlowFinalNode_2016));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 

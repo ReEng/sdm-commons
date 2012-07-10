@@ -230,19 +230,10 @@ public class TemplateBindingItemProvider extends ExtendableElementItemProvider i
 				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__BINDING_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add(createChildParameter(TemplatesPackage.Literals.TEMPLATE_BINDING__PROPERTY_BINDING,
 				TemplatesFactory.eINSTANCE.createPropertyBinding()));

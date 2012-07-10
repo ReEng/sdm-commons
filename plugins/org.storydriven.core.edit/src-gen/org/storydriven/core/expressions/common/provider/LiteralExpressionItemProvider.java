@@ -32,9 +32,8 @@ import org.storydriven.core.provider.CoreEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LiteralExpressionItemProvider extends ExpressionItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class LiteralExpressionItemProvider extends ExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -69,16 +68,12 @@ public class LiteralExpressionItemProvider extends ExpressionItemProvider
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_LiteralExpression_value_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_LiteralExpression_value_feature",
-						"_UI_LiteralExpression_type"),
-				CommonExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE,
-				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
+				getString("_UI_PropertyDescriptor_description", "_UI_LiteralExpression_value_feature",
+						"_UI_LiteralExpression_type"), CommonExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE,
+				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -117,8 +112,7 @@ public class LiteralExpressionItemProvider extends ExpressionItemProvider
 
 		switch (notification.getFeatureID(LiteralExpression.class)) {
 		case CommonExpressionsPackage.LITERAL_EXPRESSION__VALUE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -132,8 +126,7 @@ public class LiteralExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

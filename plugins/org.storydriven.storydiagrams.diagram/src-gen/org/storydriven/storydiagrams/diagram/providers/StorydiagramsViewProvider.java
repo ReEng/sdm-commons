@@ -57,6 +57,7 @@ import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableNameLa
 import org.storydriven.storydiagrams.diagram.edit.parts.Constraint2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ConstraintEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationOperatorLabelEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InclusionLinkEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeLabelEditPart;
@@ -182,6 +183,7 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 				case InitialNodeEditPart.VISUAL_ID:
 				case JunctionNodeEditPart.VISUAL_ID:
 				case ActivityFinalNodeEditPart.VISUAL_ID:
+				case FlowFinalNodeEditPart.VISUAL_ID:
 				case StoryPatternEditPart.VISUAL_ID:
 				case ObjectVariableEditPart.VISUAL_ID:
 				case AttributeAssignmentEditPart.VISUAL_ID:
@@ -203,10 +205,11 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 		return ActivityCallNodeEditPart.VISUAL_ID == visualID || StatementNodeEditPart.VISUAL_ID == visualID
 				|| ModifyingStoryNodeEditPart.VISUAL_ID == visualID || MatchingStoryNodeEditPart.VISUAL_ID == visualID
 				|| InitialNodeEditPart.VISUAL_ID == visualID || JunctionNodeEditPart.VISUAL_ID == visualID
-				|| ActivityFinalNodeEditPart.VISUAL_ID == visualID || StoryPatternEditPart.VISUAL_ID == visualID
-				|| ObjectVariableEditPart.VISUAL_ID == visualID || AttributeAssignmentEditPart.VISUAL_ID == visualID
-				|| ConstraintEditPart.VISUAL_ID == visualID || CollectionVariableEditPart.VISUAL_ID == visualID
-				|| Constraint2EditPart.VISUAL_ID == visualID || MatchingPatternEditPart.VISUAL_ID == visualID;
+				|| ActivityFinalNodeEditPart.VISUAL_ID == visualID || FlowFinalNodeEditPart.VISUAL_ID == visualID
+				|| StoryPatternEditPart.VISUAL_ID == visualID || ObjectVariableEditPart.VISUAL_ID == visualID
+				|| AttributeAssignmentEditPart.VISUAL_ID == visualID || ConstraintEditPart.VISUAL_ID == visualID
+				|| CollectionVariableEditPart.VISUAL_ID == visualID || Constraint2EditPart.VISUAL_ID == visualID
+				|| MatchingPatternEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -268,6 +271,8 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 			return createJunctionNode_2014(domainElement, containerView, index, persisted, preferencesHint);
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 			return createActivityFinalNode_2015(domainElement, containerView, index, persisted, preferencesHint);
+		case FlowFinalNodeEditPart.VISUAL_ID:
+			return createFlowFinalNode_2016(domainElement, containerView, index, persisted, preferencesHint);
 		case StoryPatternEditPart.VISUAL_ID:
 			return createStoryPattern_3019(domainElement, containerView, index, persisted, preferencesHint);
 		case ObjectVariableEditPart.VISUAL_ID:
@@ -565,6 +570,42 @@ public class StorydiagramsViewProvider extends AbstractProvider implements IView
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5045 = createLabel(node,
 				StorydiagramsVisualIDRegistry.getType(ActivityFinalNodeLabelEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createFlowFinalNode_2016(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(StorydiagramsVisualIDRegistry.getType(FlowFinalNodeEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		return node;
 	}
 

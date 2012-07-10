@@ -96,6 +96,9 @@ and patterns.</body>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qyvGcRzGEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qyvGcBzGEeChOvWwuwx7tQ" value="1"/>
           </ownedAttribute>
+          <ownedAttribute xmi:id="_MIj-sMqjEeGgOMYaYaWlnQ" name="operator" type="_49SisMmcEeG1Tu0kxZC-sQ" isOrdered="true">
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_gyny8MqjEeGgOMYaYaWlnQ" value=""/>
+          </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="__7WUYBzFEeChOvWwuwx7tQ" name="BinaryExpression" isAbstract="true">
           <ownedComment xmi:id="_wS2DwBzsEeChOvWwuwx7tQ" annotatedElement="__7WUYBzFEeChOvWwuwx7tQ">
@@ -139,7 +142,7 @@ and patterns.</body>
             </ownedComment>
           </ownedAttribute>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_IG29QBzGEeChOvWwuwx7tQ" name="LogicExpression">
+        <packagedElement xmi:type="uml:Class" xmi:id="_IG29QBzGEeChOvWwuwx7tQ" name="LogicalExpression">
           <ownedComment xmi:id="__2U_wBzsEeChOvWwuwx7tQ" annotatedElement="_IG29QBzGEeChOvWwuwx7tQ">
             <body>Represents binary, logic expressions like a AND b and a OR b.</body>
           </ownedComment>
@@ -150,7 +153,7 @@ and patterns.</body>
             </ownedComment>
           </ownedAttribute>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_-CqUcBzFEeChOvWwuwx7tQ" name="LiteralExpression" isAbstract="true">
+        <packagedElement xmi:type="uml:Class" xmi:id="_-CqUcBzFEeChOvWwuwx7tQ" name="LiteralExpression">
           <ownedComment xmi:id="_eopS4BzsEeChOvWwuwx7tQ" annotatedElement="_-CqUcBzFEeChOvWwuwx7tQ">
             <body>Represents any literal, i.e. a value whose type is an EDataType. Literals are, for example, 5, 3.14, 'c', &quot;text&quot;, true.</body>
           </ownedComment>
@@ -162,18 +165,6 @@ and patterns.</body>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bcLzMBzGEeChOvWwuwx7tQ"/>
           </ownedAttribute>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_WF_zsMmcEeG1Tu0kxZC-sQ" name="BooleanLiteralExpression">
-          <generalization xmi:id="_eH7CwMmcEeG1Tu0kxZC-sQ" general="_-CqUcBzFEeChOvWwuwx7tQ"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_hKdmsMmcEeG1Tu0kxZC-sQ" name="IntegerLiteralExpression">
-          <generalization xmi:id="_hKeNwMmcEeG1Tu0kxZC-sQ" general="_-CqUcBzFEeChOvWwuwx7tQ"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_hUDAgMmcEeG1Tu0kxZC-sQ" name="DoubleLiteralExpression">
-          <generalization xmi:id="_hUDAgcmcEeG1Tu0kxZC-sQ" general="_-CqUcBzFEeChOvWwuwx7tQ"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_hd0nkMmcEeG1Tu0kxZC-sQ" name="StringLiteralExpression">
-          <generalization xmi:id="_hd0nkcmcEeG1Tu0kxZC-sQ" general="_-CqUcBzFEeChOvWwuwx7tQ"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_fy_bYBzGEeChOvWwuwx7tQ" name="HasLeftExpression" memberEnd="_fzACcBzGEeChOvWwuwx7tQ _fzApgRzGEeChOvWwuwx7tQ">
           <ownedEnd xmi:id="_fzACcBzGEeChOvWwuwx7tQ" name="revLeftExpression" type="__7WUYBzFEeChOvWwuwx7tQ" association="_fy_bYBzGEeChOvWwuwx7tQ">

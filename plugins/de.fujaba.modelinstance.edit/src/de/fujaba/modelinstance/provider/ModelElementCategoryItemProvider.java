@@ -188,22 +188,7 @@ public class ModelElementCategoryItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-						CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-						CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-						CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-						CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+						CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -223,7 +208,7 @@ public class ModelElementCategoryItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-						CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+						CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 	}
 
 	/**

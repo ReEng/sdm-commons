@@ -61,7 +61,7 @@ public interface LinkConstraint extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Constraint Type</b></em>' attribute.
-	 * The default value is <code>"NEXT"</code>.
+	 * The default value is <code>"DIRECT_SUCCESSOR"</code>.
 	 * The literals are from the enumeration {@link org.storydriven.storydiagrams.patterns.LinkConstraintType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -72,7 +72,7 @@ public interface LinkConstraint extends ExtendableElement {
 	 * @see org.storydriven.storydiagrams.patterns.LinkConstraintType
 	 * @see #setConstraintType(LinkConstraintType)
 	 * @see org.storydriven.storydiagrams.patterns.PatternsPackage#getLinkConstraint_ConstraintType()
-	 * @model default="NEXT" required="true" ordered="false"
+	 * @model default="DIRECT_SUCCESSOR" required="true" ordered="false"
 	 * @generated
 	 */
 	LinkConstraintType getConstraintType();

@@ -24,6 +24,7 @@ import org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditP
 import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.Constraint2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ConstraintEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InclusionLinkEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart;
@@ -96,6 +97,11 @@ public class StorydiagramsElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ActivityFinalNode_2015 = getElementType("org.storydriven.storydiagrams.diagram.ActivityFinalNode_2015"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType FlowFinalNode_2016 = getElementType("org.storydriven.storydiagrams.diagram.FlowFinalNode_2016"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -264,6 +270,8 @@ public class StorydiagramsElementTypes {
 
 			elements.put(ActivityFinalNode_2015, ActivitiesPackage.eINSTANCE.getActivityFinalNode());
 
+			elements.put(FlowFinalNode_2016, ActivitiesPackage.eINSTANCE.getFlowFinalNode());
+
 			elements.put(StoryPattern_3019, PatternsPackage.eINSTANCE.getStoryPattern());
 
 			elements.put(ObjectVariable_3020, PatternsPackage.eINSTANCE.getObjectVariable());
@@ -310,6 +318,7 @@ public class StorydiagramsElementTypes {
 			KNOWN_ELEMENT_TYPES.add(InitialNode_2013);
 			KNOWN_ELEMENT_TYPES.add(JunctionNode_2014);
 			KNOWN_ELEMENT_TYPES.add(ActivityFinalNode_2015);
+			KNOWN_ELEMENT_TYPES.add(FlowFinalNode_2016);
 			KNOWN_ELEMENT_TYPES.add(StoryPattern_3019);
 			KNOWN_ELEMENT_TYPES.add(ObjectVariable_3020);
 			KNOWN_ELEMENT_TYPES.add(AttributeAssignment_3021);
@@ -346,6 +355,8 @@ public class StorydiagramsElementTypes {
 			return JunctionNode_2014;
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 			return ActivityFinalNode_2015;
+		case FlowFinalNodeEditPart.VISUAL_ID:
+			return FlowFinalNode_2016;
 		case StoryPatternEditPart.VISUAL_ID:
 			return StoryPattern_3019;
 		case ObjectVariableEditPart.VISUAL_ID:

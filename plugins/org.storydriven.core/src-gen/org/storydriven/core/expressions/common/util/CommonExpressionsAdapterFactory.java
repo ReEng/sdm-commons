@@ -13,17 +13,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.common.*;
 import org.storydriven.core.expressions.common.ArithmeticExpression;
 import org.storydriven.core.expressions.common.BinaryExpression;
-import org.storydriven.core.expressions.common.BooleanLiteralExpression;
 import org.storydriven.core.expressions.common.CommonExpressionsPackage;
 import org.storydriven.core.expressions.common.ComparisonExpression;
-import org.storydriven.core.expressions.common.DoubleLiteralExpression;
-import org.storydriven.core.expressions.common.IntegerLiteralExpression;
 import org.storydriven.core.expressions.common.LiteralExpression;
-import org.storydriven.core.expressions.common.LogicExpression;
-import org.storydriven.core.expressions.common.StringLiteralExpression;
+import org.storydriven.core.expressions.common.LogicalExpression;
 import org.storydriven.core.expressions.common.UnaryExpression;
 
 /**
@@ -102,37 +97,13 @@ public class CommonExpressionsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseLogicExpression(LogicExpression object) {
-			return createLogicExpressionAdapter();
+		public Adapter caseLogicalExpression(LogicalExpression object) {
+			return createLogicalExpressionAdapter();
 		}
 
 		@Override
 		public Adapter caseLiteralExpression(LiteralExpression object) {
 			return createLiteralExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseBooleanLiteralExpression(
-				BooleanLiteralExpression object) {
-			return createBooleanLiteralExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseIntegerLiteralExpression(
-				IntegerLiteralExpression object) {
-			return createIntegerLiteralExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseDoubleLiteralExpression(
-				DoubleLiteralExpression object) {
-			return createDoubleLiteralExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseStringLiteralExpression(
-				StringLiteralExpression object) {
-			return createStringLiteralExpressionAdapter();
 		}
 
 		@Override
@@ -226,16 +197,16 @@ public class CommonExpressionsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.common.LogicExpression <em>Logic Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.common.LogicalExpression <em>Logical Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.storydriven.core.expressions.common.LogicExpression
+	 * @see org.storydriven.core.expressions.common.LogicalExpression
 	 * @generated
 	 */
-	public Adapter createLogicExpressionAdapter() {
+	public Adapter createLogicalExpressionAdapter() {
 		return null;
 	}
 
@@ -250,62 +221,6 @@ public class CommonExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLiteralExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.common.BooleanLiteralExpression <em>Boolean Literal Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.expressions.common.BooleanLiteralExpression
-	 * @generated
-	 */
-	public Adapter createBooleanLiteralExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.common.IntegerLiteralExpression <em>Integer Literal Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.expressions.common.IntegerLiteralExpression
-	 * @generated
-	 */
-	public Adapter createIntegerLiteralExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.common.DoubleLiteralExpression <em>Double Literal Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.expressions.common.DoubleLiteralExpression
-	 * @generated
-	 */
-	public Adapter createDoubleLiteralExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.common.StringLiteralExpression <em>String Literal Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.expressions.common.StringLiteralExpression
-	 * @generated
-	 */
-	public Adapter createStringLiteralExpressionAdapter() {
 		return null;
 	}
 

@@ -10,24 +10,23 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.expressions.common.CommonExpressionsPackage;
-import org.storydriven.core.expressions.common.LogicExpression;
 import org.storydriven.core.expressions.common.LogicOperator;
+import org.storydriven.core.expressions.common.LogicalExpression;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Logic Expression</b></em>'.
+ * An implementation of the model object '<em><b>Logical Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.storydriven.core.expressions.common.impl.LogicExpressionImpl#getOperator <em>Operator</em>}</li>
+ *   <li>{@link org.storydriven.core.expressions.common.impl.LogicalExpressionImpl#getOperator <em>Operator</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class LogicExpressionImpl extends BinaryExpressionImpl implements
-		LogicExpression {
+public class LogicalExpressionImpl extends BinaryExpressionImpl implements LogicalExpression {
 	/**
 	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -53,7 +52,7 @@ public class LogicExpressionImpl extends BinaryExpressionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LogicExpressionImpl() {
+	protected LogicalExpressionImpl() {
 		super();
 	}
 
@@ -64,7 +63,7 @@ public class LogicExpressionImpl extends BinaryExpressionImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CommonExpressionsPackage.Literals.LOGIC_EXPRESSION;
+		return CommonExpressionsPackage.Literals.LOGICAL_EXPRESSION;
 	}
 
 	/**
@@ -86,8 +85,7 @@ public class LogicExpressionImpl extends BinaryExpressionImpl implements
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					CommonExpressionsPackage.LOGIC_EXPRESSION__OPERATOR,
-					oldOperator, operator));
+					CommonExpressionsPackage.LOGICAL_EXPRESSION__OPERATOR, oldOperator, operator));
 	}
 
 	/**
@@ -98,7 +96,7 @@ public class LogicExpressionImpl extends BinaryExpressionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CommonExpressionsPackage.LOGIC_EXPRESSION__OPERATOR:
+		case CommonExpressionsPackage.LOGICAL_EXPRESSION__OPERATOR:
 			return getOperator();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -112,7 +110,7 @@ public class LogicExpressionImpl extends BinaryExpressionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CommonExpressionsPackage.LOGIC_EXPRESSION__OPERATOR:
+		case CommonExpressionsPackage.LOGICAL_EXPRESSION__OPERATOR:
 			setOperator((LogicOperator) newValue);
 			return;
 		}
@@ -127,7 +125,7 @@ public class LogicExpressionImpl extends BinaryExpressionImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CommonExpressionsPackage.LOGIC_EXPRESSION__OPERATOR:
+		case CommonExpressionsPackage.LOGICAL_EXPRESSION__OPERATOR:
 			setOperator(OPERATOR_EDEFAULT);
 			return;
 		}
@@ -142,7 +140,7 @@ public class LogicExpressionImpl extends BinaryExpressionImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CommonExpressionsPackage.LOGIC_EXPRESSION__OPERATOR:
+		case CommonExpressionsPackage.LOGICAL_EXPRESSION__OPERATOR:
 			return operator != OPERATOR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -165,4 +163,4 @@ public class LogicExpressionImpl extends BinaryExpressionImpl implements
 		return result.toString();
 	}
 
-} //LogicExpressionImpl
+} //LogicalExpressionImpl

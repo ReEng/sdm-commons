@@ -52,7 +52,7 @@ import org.storydriven.core.expressions.common.CommonExpressionsPackage;
 import org.storydriven.core.expressions.common.ComparingOperator;
 import org.storydriven.core.expressions.common.ComparisonExpression;
 import org.storydriven.core.expressions.common.LiteralExpression;
-import org.storydriven.core.expressions.common.LogicExpression;
+import org.storydriven.core.expressions.common.LogicalExpression;
 import org.storydriven.core.expressions.common.LogicOperator;
 import org.storydriven.core.expressions.common.UnaryExpression;
 import org.storydriven.core.expressions.util.ExpressionUtils;
@@ -197,8 +197,8 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 						builder.append(TextUtil.getText(((ArithmeticExpression) element).getOperator()));
 					} else if (element instanceof ComparisonExpression) {
 						builder.append(TextUtil.getText(((ComparisonExpression) element).getOperator()));
-					} else if (element instanceof LogicExpression) {
-						builder.append(TextUtil.getText(((LogicExpression) element).getOperator()));
+					} else if (element instanceof LogicalExpression) {
+						builder.append(TextUtil.getText(((LogicalExpression) element).getOperator()));
 					} else if (element instanceof UnaryExpression) {
 						// nothing
 					} else if (element instanceof Expression) {
@@ -287,7 +287,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 		logicButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				internalSetExpression(CommonExpressionsFactory.eINSTANCE.createLogicExpression());
+				internalSetExpression(CommonExpressionsFactory.eINSTANCE.createLogicalExpression());
 			}
 		});
 
@@ -299,32 +299,11 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 			}
 		});
 
-		Button booleanLiteralButton = factory.createButton(createComposite, "Boolean Literal Expression", SWT.PUSH);
-		booleanLiteralButton.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				internalSetExpression(CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression());
-			}
-		});
-		Button integerLiteralButton = factory.createButton(createComposite, "Integer Literal Expression", SWT.PUSH);
-		integerLiteralButton.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				internalSetExpression(CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression());
-			}
-		});
-		Button doubleLiteralButton = factory.createButton(createComposite, "Double Literal Expression", SWT.PUSH);
-		doubleLiteralButton.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				internalSetExpression(CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression());
-			}
-		});
-		Button stringLiteralButton = factory.createButton(createComposite, "String Literal Expression", SWT.PUSH);
+		Button stringLiteralButton = factory.createButton(createComposite, "Literal Expression", SWT.PUSH);
 		stringLiteralButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				internalSetExpression(CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression());
+				internalSetExpression(CommonExpressionsFactory.eINSTANCE.createLiteralExpression());
 			}
 		});
 
@@ -425,7 +404,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					Object value = LogicOperator.get(logicOperatorCombo.getSelectionIndex());
-					changeProperty(CommonExpressionsPackage.Literals.LOGIC_EXPRESSION__OPERATOR, value);
+					changeProperty(CommonExpressionsPackage.Literals.LOGICAL_EXPRESSION__OPERATOR, value);
 				}
 			});
 		}
@@ -691,8 +670,8 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 				arithmeticOperatorCombo.select(ae.getOperator().ordinal());
 
 				control = arithmeticPC;
-			} else if (selected instanceof LogicExpression) {
-				LogicExpression le = (LogicExpression) selected;
+			} else if (selected instanceof LogicalExpression) {
+				LogicalExpression le = (LogicalExpression) selected;
 				logicOperatorCombo.select(le.getOperator().ordinal());
 
 				control = logicPC;
@@ -916,13 +895,10 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 	private void createMenuItems(Menu menu, final EStructuralFeature feature, String prefix) {
 		// core
 		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createArithmeticExpression(), prefix);
-		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createLogicExpression(), prefix);
+		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createLogicalExpression(), prefix);
 		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createComparisonExpression(), prefix);
 		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createUnaryExpression(), prefix);
-		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression(), prefix);
-		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression(), prefix);
-		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression(), prefix);
-		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression(), prefix);
+		createMenuItem(menu, feature, CommonExpressionsFactory.eINSTANCE.createLiteralExpression(), prefix);
 
 		// calls
 		new MenuItem(menu, SWT.SEPARATOR);

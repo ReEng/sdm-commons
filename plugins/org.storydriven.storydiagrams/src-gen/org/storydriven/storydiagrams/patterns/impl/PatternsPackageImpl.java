@@ -1120,9 +1120,9 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLinkConstraint_Index(), ecorePackage.getEInt(), "index", null, 1, 1, LinkConstraint.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getLinkConstraint_ConstraintType(), this.getLinkConstraintType(), "constraintType", "NEXT", 1,
-				1, LinkConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getLinkConstraint_ConstraintType(), this.getLinkConstraintType(), "constraintType",
+				"DIRECT_SUCCESSOR", 1, 1, LinkConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLinkConstraint_Negative(), ecorePackage.getEBoolean(), "negative", null, 1, 1,
 				LinkConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, !IS_ORDERED);
@@ -1157,9 +1157,9 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 		initEAttribute(getCollectionVariable_AtLeastOne(), ecorePackage.getEBoolean(), "atLeastOne", null, 1, 1,
 				CollectionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCollectionVariable_Unique(), ecorePackage.getEBoolean(), "unique", null, 1, 1,
+		initEAttribute(getCollectionVariable_Unique(), theEcorePackage.getEBoolean(), "unique", "", 1, 1,
 				CollectionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(primitiveVariableEClass, PrimitiveVariable.class, "PrimitiveVariable", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

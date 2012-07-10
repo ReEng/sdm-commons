@@ -508,6 +508,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_FlowFinalNode_2016_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_FlowFinalNode_2016_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ObjectVariable_3020_incominglinks;
 
 	/**

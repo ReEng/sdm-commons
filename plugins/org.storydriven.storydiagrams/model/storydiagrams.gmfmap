@@ -155,7 +155,7 @@
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
-                      href="storydiagrams.gmftool#//@palette/@tools.1/@tools.9"/>
+                      href="storydiagrams.gmftool#//@palette/@tools.1/@tools.10"/>
                   <diagramNode
                       href="storydiagrams.gmfgraph#ExpressionLabel"/>
                 </ownedChild>
@@ -404,6 +404,19 @@
           href="storydiagrams.gmftool#//@palette/@tools.0/@tools.9"/>
       <diagramNode
           href="storydiagrams.gmfgraph#ActivityFinalNodeNode"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
+    <ownedChild>
+      <domainMetaElement
+          href="storydiagrams.ecore#//activities/FlowFinalNode"/>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="storydiagrams.gmftool#//@palette/@tools.0/@tools.10"/>
+      <diagramNode
+          href="storydiagrams.gmfgraph#FlowFinalNodeNode"/>
     </ownedChild>
   </nodes>
   <links>

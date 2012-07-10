@@ -380,6 +380,45 @@
           figure="//@figures.0/@descriptors.6/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
+        name="FlowFinalNodeFigureDescriptor">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="FlowFinalNodeContainerRectangle"
+          outline="false">
+        <layout
+            xsi:type="gmfgraph:GridLayout"
+            equalWidth="false"/>
+        <children
+            xsi:type="gmfgraph:Ellipse"
+            name="FlowFinalNodeEllipse">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"/>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <maximumSize
+              dx="23"
+              dy="23"/>
+          <minimumSize
+              dx="23"
+              dy="23"/>
+          <preferredSize
+              dx="23"
+              dy="23"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="FlowFinalNodeLabel">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+        </children>
+      </actualFigure>
+      <accessors
+          accessor="getFlowFinalNodeLabel"
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors
         name="StoryPatternFigureDescriptor">
       <actualFigure
           xsi:type="gmfgraph:RoundedRectangle"
@@ -433,10 +472,10 @@
       </actualFigure>
       <accessors
           accessor="getStoryPatternContentRectangle"
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
       <accessors
           accessor="getStoryPatternConstraintsRectangle"
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="ObjectVariableFigureDescriptor">
@@ -544,19 +583,19 @@
       </actualFigure>
       <accessors
           accessor="getObjectVariableOperatorLabel"
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.0/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0/@children.0/@children.0/@children.0"/>
       <accessors
           accessor="getObjectVariableNameLabel"
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.0/@children.0/@children.1"/>
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0/@children.0/@children.0/@children.1"/>
       <accessors
           accessor="getObjectVariableTypeLabel"
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.0/@children.0/@children.2"/>
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0/@children.0/@children.0/@children.2"/>
       <accessors
           accessor="getObjectVariableConstraintsRectangle"
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.0/@children.1/@children.0"/>
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0/@children.0/@children.1/@children.0"/>
       <accessors
           accessor="getObjectVariableAttributeAssignmentsRectangle"
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.0/@children.1/@children.1"/>
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0/@children.0/@children.1/@children.1"/>
     </descriptors>
     <descriptors
         name="CollectionVariableFigureDescriptor">
@@ -672,19 +711,19 @@
       </actualFigure>
       <accessors
           accessor="getCollectionVariableNameLabel"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.1/@children.0/@children.1"/>
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.1/@children.0/@children.1"/>
       <accessors
           accessor="getCollectionVariableOperatorLabel"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.1/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.1/@children.0/@children.0"/>
       <accessors
           accessor="getCollectionVariableTypeLabel"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.1/@children.0/@children.2"/>
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.1/@children.0/@children.2"/>
       <accessors
           accessor="getCollectionVariableConstraintsRectangle"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.1/@children.1/@children.0"/>
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.1/@children.1/@children.0"/>
       <accessors
           accessor="getCollectionVariableAttributeAssignmentsRectangle"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.1/@children.1/@children.1"/>
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.1/@children.1/@children.1"/>
     </descriptors>
     <descriptors
         name="LinkVariableFigureDescriptor">
@@ -709,13 +748,13 @@
       </actualFigure>
       <accessors
           accessor="getLinkVariableSourceEndFigure"
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
       <accessors
           accessor="getLinkVariableOperatorFigure"
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.1"/>
       <accessors
           accessor="getLinkVariableTargetEndFigure"
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors
         name="InclusionLinkFigureDescriptor">
@@ -734,7 +773,7 @@
       </actualFigure>
       <accessors
           accessor="getContainmentRelationOperatorFigure"
-          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="MaybeLinkFigureDescriptor">
@@ -755,7 +794,7 @@
       </actualFigure>
       <accessors
           accessor="getMaybeLinkLabel"
-          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <figures
@@ -1300,6 +1339,9 @@
       name="ActivityFinalNodeNode"
       figure="ActivityFinalNodeFigureDescriptor"/>
   <nodes
+      name="FlowFinalNodeNode"
+      figure="FlowFinalNodeFigureDescriptor"/>
+  <nodes
       name="StoryPatternNode"
       figure="StoryPatternFigureDescriptor"/>
   <nodes
@@ -1327,27 +1369,27 @@
   <compartments
       name="StoryPatternContentCompartment"
       figure="StoryPatternFigureDescriptor"
-      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <compartments
       name="StoryPatternConstraintsCompartment"
       figure="StoryPatternFigureDescriptor"
-      accessor="//@figures.0/@descriptors.7/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.8/@accessors.1"/>
   <compartments
       name="ObjectVariableConstraintsCompartment"
       figure="ObjectVariableFigureDescriptor"
-      accessor="//@figures.0/@descriptors.8/@accessors.3"/>
+      accessor="//@figures.0/@descriptors.9/@accessors.3"/>
   <compartments
       name="ObjectVariableAttributeAssignmentsCompartment"
       figure="ObjectVariableFigureDescriptor"
-      accessor="//@figures.0/@descriptors.8/@accessors.4"/>
+      accessor="//@figures.0/@descriptors.9/@accessors.4"/>
   <compartments
       name="CollectionVariableConstraintsCompartment"
       figure="CollectionVariableFigureDescriptor"
-      accessor="//@figures.0/@descriptors.9/@accessors.3"/>
+      accessor="//@figures.0/@descriptors.10/@accessors.3"/>
   <compartments
       name="CollectionVariableAttributeAssignmentsCompartment"
       figure="CollectionVariableFigureDescriptor"
-      accessor="//@figures.0/@descriptors.9/@accessors.4"/>
+      accessor="//@figures.0/@descriptors.10/@accessors.4"/>
   <labels
       name="ActivityCallNodeNameLabel"
       figure="ActivityCallNodeFigureDescriptor"
@@ -1393,36 +1435,36 @@
       name="ObjectVariableNameLabel"
       figure="ObjectVariableFigureDescriptor"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.8/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.9/@accessors.1"/>
   <labels
       name="ObjectVariableTypeLabel"
       figure="ObjectVariableFigureDescriptor"
       resizeConstraint="NONE"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.8/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.9/@accessors.2"/>
   <labels
       name="ObjectVariableOperatorLabel"
       figure="ObjectVariableFigureDescriptor"
       resizeConstraint="NONE"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.9/@accessors.0"/>
   <labels
       name="CollectionVariableNameLabel"
       figure="CollectionVariableFigureDescriptor"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.10/@accessors.0"/>
   <labels
       name="CollectionVariableTypeLabel"
       figure="CollectionVariableFigureDescriptor"
       resizeConstraint="NONE"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.9/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.10/@accessors.2"/>
   <labels
       name="CollectionVariableOperatorLabel"
       figure="CollectionVariableFigureDescriptor"
       resizeConstraint="NONE"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.9/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.10/@accessors.1"/>
   <labels
       name="ExpressionLabel"
       resizeConstraint="NONE"
@@ -1431,7 +1473,7 @@
       name="LinkVariableSourceEndLabel"
       figure="LinkVariableFigureDescriptor"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.10/@accessors.0">
+      accessor="//@figures.0/@descriptors.11/@accessors.0">
     <facets
         xsi:type="gmfgraph:LabelOffsetFacet"
         x="10"
@@ -1444,7 +1486,7 @@
       name="LinkVariableOperatorLabel"
       figure="LinkVariableFigureDescriptor"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.10/@accessors.1">
+      accessor="//@figures.0/@descriptors.11/@accessors.1">
     <facets
         xsi:type="gmfgraph:LabelOffsetFacet"
         y="-10"/>
@@ -1453,7 +1495,7 @@
       name="LinkVariableTargetEndLabel"
       figure="LinkVariableFigureDescriptor"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.10/@accessors.2">
+      accessor="//@figures.0/@descriptors.11/@accessors.2">
     <facets
         xsi:type="gmfgraph:LabelOffsetFacet"
         x="10"
@@ -1465,7 +1507,7 @@
       name="ContainmentRelationOperatorLabel"
       figure="InclusionLinkFigureDescriptor"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.11/@accessors.0">
+      accessor="//@figures.0/@descriptors.12/@accessors.0">
     <facets
         xsi:type="gmfgraph:AlignmentFacet"
         alignment="CENTER"/>
@@ -1477,7 +1519,7 @@
       name="MaybeLinkLabel"
       figure="MaybeLinkFigureDescriptor"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.12/@accessors.0">
+      accessor="//@figures.0/@descriptors.13/@accessors.0">
     <facets
         xsi:type="gmfgraph:AlignmentFacet"
         alignment="CENTER"/>

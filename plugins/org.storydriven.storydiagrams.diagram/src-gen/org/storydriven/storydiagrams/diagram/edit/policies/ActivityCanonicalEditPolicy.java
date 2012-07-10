@@ -34,6 +34,7 @@ import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEdgeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InclusionLinkEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart;
@@ -109,6 +110,7 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 		case InitialNodeEditPart.VISUAL_ID:
 		case JunctionNodeEditPart.VISUAL_ID:
 		case ActivityFinalNodeEditPart.VISUAL_ID:
+		case FlowFinalNodeEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -312,6 +314,15 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ActivityFinalNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(StorydiagramsDiagramUpdater.getActivityFinalNode_2015ContainedLinks(view));
+			}
+			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+				domain2NotationMap.put(view.getElement(), view);
+			}
+			break;
+		}
+		case FlowFinalNodeEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(StorydiagramsDiagramUpdater.getFlowFinalNode_2016ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
 				domain2NotationMap.put(view.getElement(), view);

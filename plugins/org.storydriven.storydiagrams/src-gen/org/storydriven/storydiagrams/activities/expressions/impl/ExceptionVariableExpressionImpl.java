@@ -92,7 +92,6 @@ public class ExceptionVariableExpressionImpl extends ExpressionImpl implements E
 					oldExceptionVariable, exceptionVariable));
 	}
 
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated

@@ -252,19 +252,10 @@ public class AbstractVariableItemProvider extends VariableItemProvider implement
 				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createLogicExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createBooleanLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createIntegerLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createDoubleLiteralExpression()));
-
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__BINDING_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createStringLiteralExpression()));
+				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.ABSTRACT_VARIABLE__CONSTRAINT,
 				PatternsFactory.eINSTANCE.createConstraint()));
