@@ -6,7 +6,7 @@
     complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
   <foreignModel>modelinstance.ecore</foreignModel>
   <genPackages prefix="Modelinstance" basePackage="de.fujaba" resource="XMI" disposableProviderFactory="true"
-      ecorePackage="modelinstance.ecore#/">
+      fileExtensions="fujaba" ecorePackage="modelinstance.ecore#/">
     <genClasses ecoreClass="modelinstance.ecore#//RootNode">
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference modelinstance.ecore#//RootNode/categories"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference modelinstance.ecore#//RootNode/ecoreDataTypes"/>
