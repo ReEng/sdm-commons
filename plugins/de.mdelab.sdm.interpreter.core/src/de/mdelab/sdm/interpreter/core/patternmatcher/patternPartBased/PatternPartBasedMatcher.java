@@ -93,7 +93,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * transactions are put on this stack. Transactions are rolled back in case
 	 * of backtracking.
 	 */
-	private final Stack<MatchTransaction>																					matchingStack;
+	public final Stack<MatchTransaction>																					matchingStack;
 
 	/*
 	 * This map stores information, which story pattern object is contained in
@@ -131,7 +131,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	{
 		super(storyPattern, variablesScope, matchingStrategy, facadeFactory, expressionInterpreterManager, notificationEmitter);
 
-		getNotificationEmitter().storyPatternInitializationStarted(getStoryPattern(), getVariablesScope(), this);
+		this.getNotificationEmitter().storyPatternInitializationStarted(this.getStoryPattern(), this.getVariablesScope(), this);
 
 		this.spFacade = facadeFactory.getStoryPatternFacade();
 		this.spoFacade = facadeFactory.getStoryPatternObjectFacade();
@@ -155,7 +155,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 
 		this.initializePatternParts();
 
-		getNotificationEmitter().storyPatternInitializationFinished(getStoryPattern(), getVariablesScope(), this);
+		this.getNotificationEmitter().storyPatternInitializationFinished(this.getStoryPattern(), this.getVariablesScope(), this);
 	}
 
 	protected void initializePatternParts() throws SDMException
@@ -210,18 +210,19 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	@Override
 	public boolean findNextMatch() throws SDMException
 	{
-		getNotificationEmitter().storyPatternMatchingStarted(getStoryPattern(), getVariablesScope(), this);
+		this.getNotificationEmitter().storyPatternMatchingStarted(this.getStoryPattern(), this.getVariablesScope(), this);
 
 		/*
 		 * create a clone of the current variable scope
 		 */
-		VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> mainVariableScope = getVariablesScope();
+		VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> mainVariableScope = this
+				.getVariablesScope();
 
 		@SuppressWarnings("unchecked")
 		VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> workingVariableScope = new VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>(
-				getNotificationEmitter(), mainVariableScope, Collections.EMPTY_MAP);
+				this.getNotificationEmitter(), mainVariableScope, Collections.EMPTY_MAP);
 
-		setVariablesScope(workingVariableScope);
+		this.setVariablesScope(workingVariableScope);
 
 		/*
 		 * If the matching stack is not empty, a match has already been found in
@@ -248,9 +249,9 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 			/*
 			 * if match found merge working variableScope into mainVariableScope
 			 */
-			getVariablesScope().mergeIntoParentScope();
+			this.getVariablesScope().mergeIntoParentScope();
 
-			setVariablesScope(mainVariableScope);
+			this.setVariablesScope(mainVariableScope);
 
 			/*
 			 * discard all match states, modifications to the instance model
@@ -258,15 +259,15 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 			 */
 			this.patternPartMatchStates.clear();
 
-			getNotificationEmitter().storyPatternMatchingSuccessful(getStoryPattern(), getVariablesScope(), this);
+			this.getNotificationEmitter().storyPatternMatchingSuccessful(this.getStoryPattern(), this.getVariablesScope(), this);
 
 			return true;
 		}
 		else
 		{
-			setVariablesScope(mainVariableScope);
+			this.setVariablesScope(mainVariableScope);
 
-			getNotificationEmitter().storyPatternMatchingFailed(getStoryPattern(), getVariablesScope(), this);
+			this.getNotificationEmitter().storyPatternMatchingFailed(this.getStoryPattern(), this.getVariablesScope(), this);
 
 			return false;
 		}
@@ -295,7 +296,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				/*
 				 * Check if a variable exists with that name
 				 */
-				bound = getVariablesScope().variableExists(this.spoFacade.getName(spo));
+				bound = this.getVariablesScope().variableExists(this.spoFacade.getName(spo));
 			}
 
 			if (bound)
@@ -312,8 +313,8 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 					/*
 					 * Evaluate the expression
 					 */
-					Variable<Classifier> result = getExpressionInterpreterManager().evaluateExpression(
-							this.spoFacade.getAssignmentExpression(spo), null, null, getVariablesScope());
+					Variable<Classifier> result = this.getExpressionInterpreterManager().evaluateExpression(
+							this.spoFacade.getAssignmentExpression(spo), null, null, this.getVariablesScope());
 
 					if (result != null)
 					{
@@ -321,7 +322,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 						 * Create a new variable with the name and classifier of
 						 * the story pattern object
 						 */
-						variable = getVariablesScope().createVariable(this.spoFacade.getName(spo), this.spoFacade.getClassifier(spo),
+						variable = this.getVariablesScope().createVariable(this.spoFacade.getName(spo), this.spoFacade.getClassifier(spo),
 								result.getValue());
 					}
 					else
@@ -332,14 +333,14 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				}
 				else
 				{
-					variable = getVariablesScope().getVariable(this.spoFacade.getName(spo));
+					variable = this.getVariablesScope().getVariable(this.spoFacade.getName(spo));
 
 					if (variable == null)
 					{
 						/*
 						 * There is no variable with that name.
 						 */
-						getNotificationEmitter().storyPatternObjectNotBound(spo, getVariablesScope(), this);
+						this.getNotificationEmitter().storyPatternObjectNotBound(spo, this.getVariablesScope(), this);
 
 						return false;
 					}
@@ -361,7 +362,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 					matchStoryPatternObjectTransaction.commit();
 					this.matchingStack.push(matchStoryPatternObjectTransaction);
 
-					getNotificationEmitter().storyPatternObjectBound(spo, variable.getValue(), getVariablesScope(), this);
+					this.getNotificationEmitter().storyPatternObjectBound(spo, variable.getValue(), this.getVariablesScope(), this);
 				}
 				else
 				{
@@ -369,7 +370,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 					 * Constraints are not satisfied or instance object already
 					 * bound.
 					 */
-					getNotificationEmitter().storyPatternObjectNotBound(spo, getVariablesScope(), this);
+					this.getNotificationEmitter().storyPatternObjectNotBound(spo, this.getVariablesScope(), this);
 
 					return false;
 				}
@@ -379,7 +380,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				/*
 				 * Delete existing variables of unbound story pattern objects
 				 */
-				getVariablesScope().deleteVariable(this.spoFacade.getName(spo));
+				this.getVariablesScope().deleteVariable(this.spoFacade.getName(spo));
 			}
 		}
 
@@ -403,7 +404,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 			{
 				MatchStoryPatternObjectTransaction<StoryPatternObject> mt = (MatchStoryPatternObjectTransaction<StoryPatternObject>) matchTransaction;
 
-				Variable<Classifier> variable = getVariablesScope().getVariable(this.spoFacade.getName(mt.getStoryPatternObject()));
+				Variable<Classifier> variable = this.getVariablesScope().getVariable(this.spoFacade.getName(mt.getStoryPatternObject()));
 
 				/*
 				 * Check that the variable still exists, check that the instance
@@ -446,7 +447,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				 */
 				for (StoryPatternObject spo : mt.getPatternPart().getStoryPatternObjects())
 				{
-					if (!getVariablesScope().variableExists(this.spoFacade.getName(spo)))
+					if (!this.getVariablesScope().variableExists(this.spoFacade.getName(spo)))
 					{
 						variablesExist = false;
 						break;
@@ -486,7 +487,8 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	{
 		boolean match = true;
 
-		MatchingStrategy<StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> matchingStrategy = getMatchingStrategy();
+		MatchingStrategy<StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> matchingStrategy = this
+				.getMatchingStrategy();
 
 		do
 		{
@@ -602,18 +604,18 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 
 		for (Expression constraint : this.spoFacade.getConstraints(spo))
 		{
-			Variable<Classifier> result = getExpressionInterpreterManager().evaluateExpression(constraint,
-					this.spoFacade.getClassifier(spo), instanceObject, getVariablesScope());
+			Variable<Classifier> result = this.getExpressionInterpreterManager().evaluateExpression(constraint,
+					this.spoFacade.getClassifier(spo), instanceObject, this.getVariablesScope());
 
 			if (result.getValue() != Boolean.TRUE)
 			{
-				getNotificationEmitter().storyPatternObjectConstraintViolated(constraint, spo, getVariablesScope(), this);
+				this.getNotificationEmitter().storyPatternObjectConstraintViolated(constraint, spo, this.getVariablesScope(), this);
 
 				return false;
 			}
 			else
 			{
-				getNotificationEmitter().storyPatternObjectConstraintHolds(constraint, spo, getVariablesScope(), this);
+				this.getNotificationEmitter().storyPatternObjectConstraintHolds(constraint, spo, this.getVariablesScope(), this);
 			}
 		}
 
@@ -629,19 +631,22 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 */
 	protected boolean checkStoryPatternConstraints() throws SDMException
 	{
-		for (Expression constraint : this.spFacade.getConstraints(getStoryPattern()))
+		for (Expression constraint : this.spFacade.getConstraints(this.getStoryPattern()))
 		{
-			Variable<Classifier> result = getExpressionInterpreterManager().evaluateExpression(constraint, null, null, getVariablesScope());
+			Variable<Classifier> result = this.getExpressionInterpreterManager().evaluateExpression(constraint, null, null,
+					this.getVariablesScope());
 
 			if (result.getValue() != Boolean.TRUE)
 			{
-				getNotificationEmitter().storyPatternConstraintViolated(constraint, getStoryPattern(), getVariablesScope(), this);
+				this.getNotificationEmitter().storyPatternConstraintViolated(constraint, this.getStoryPattern(), this.getVariablesScope(),
+						this);
 
 				return false;
 			}
 			else
 			{
-				getNotificationEmitter().storyPatternConstraintHolds(constraint, getStoryPattern(), getVariablesScope(), this);
+				this.getNotificationEmitter().storyPatternConstraintHolds(constraint, this.getStoryPattern(), this.getVariablesScope(),
+						this);
 			}
 		}
 
@@ -714,6 +719,8 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		assert this.unboundSPO.contains(storyPatternObject);
 		assert !this.boundSPO.contains(storyPatternObject);
 
+		int stackSize = this.matchingStack.size();
+
 		if (instanceObject != null && this.checkIsomorphism(instanceObject)
 				&& this.checkTypeConformance(this.spoFacade.getClassifier(storyPatternObject), instanceObject)
 				&& this.checkHistory(storyPatternObject, instanceObject))
@@ -734,7 +741,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 			/*
 			 * create variable
 			 */
-			getVariablesScope().createVariable(this.spoFacade.getName(storyPatternObject),
+			this.getVariablesScope().createVariable(this.spoFacade.getName(storyPatternObject),
 					this.spoFacade.getClassifier(storyPatternObject), instanceObject);
 
 			if (this.checkUncheckedPatternParts(storyPatternObject)
@@ -749,11 +756,14 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				 */
 				this.rollBack(matchStoryPatternObjectTransaction);
 
+				assert stackSize == this.matchingStack.size();
+
 				return false;
 			}
 		}
 		else
 		{
+			assert stackSize == this.matchingStack.size();
 			return false;
 		}
 	}
@@ -784,10 +794,10 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				 * scope but not its parent scope. If the variable only exists
 				 * in the parent scope, it is not deleted.
 				 */
-				getVariablesScope().deleteVariable(this.spoFacade.getName(mspot.getStoryPatternObject()));
+				this.getVariablesScope().deleteVariable(this.spoFacade.getName(mspot.getStoryPatternObject()));
 
-				getNotificationEmitter().storyPatternObjectBindingRevoked(mspot.getStoryPatternObject(), mspot.getInstanceObject(),
-						getVariablesScope(), this);
+				this.getNotificationEmitter().storyPatternObjectBindingRevoked(mspot.getStoryPatternObject(), mspot.getInstanceObject(),
+						this.getVariablesScope(), this);
 
 				/*
 				 * Delete the matching history of all other unbound story
@@ -838,6 +848,20 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 */
 	public void rollBackLastMatchTransaction()
 	{
+		this.rollBack(this.matchingStack.peek());
+	}
+
+	/**
+	 * Roll back all match transactions on the matching stack up to the last
+	 * MatchStoryPatternObjectTransaction.
+	 */
+	public void rollBackLastMatchStoryPatternObjectTransaction()
+	{
+		while (!(this.matchingStack.peek() instanceof MatchStoryPatternObjectTransaction<?>))
+		{
+			this.rollBack(this.matchingStack.peek());
+		}
+
 		this.rollBack(this.matchingStack.peek());
 	}
 
@@ -957,22 +981,22 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 */
 	public Object getInstanceObject(StoryPatternObject storyPatternObject)
 	{
-		assert getVariablesScope().variableExists(this.spoFacade.getName(storyPatternObject));
+		assert this.getVariablesScope().variableExists(this.spoFacade.getName(storyPatternObject));
 
-		return getVariablesScope().getVariable(this.spoFacade.getName(storyPatternObject)).getValue();
+		return this.getVariablesScope().getVariable(this.spoFacade.getName(storyPatternObject)).getValue();
 	}
 
 	@Override
 	public void applyMatch() throws SDMException
 	{
-		getNotificationEmitter().storyPatternApplicationStarted(getStoryPattern(), getVariablesScope(), this);
+		this.getNotificationEmitter().storyPatternApplicationStarted(this.getStoryPattern(), this.getVariablesScope(), this);
 
 		/*
 		 * First, calculate the values of attribute assignments. This is
 		 * necessary to allow to reference deleted objects in assignments.
 		 */
-		Collection<AttributeAssignmentTuple> assignments = this.calculateNewAttributeValues(this.spFacade
-				.getStoryPatternObjects(getStoryPattern()));
+		Collection<AttributeAssignmentTuple> assignments = this.calculateNewAttributeValues(this.spFacade.getStoryPatternObjects(this
+				.getStoryPattern()));
 
 		/*
 		 * Delete objects
@@ -989,7 +1013,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		 */
 		this.assignAttributeValues(assignments);
 
-		getNotificationEmitter().storyPatternApplicationFinished(getStoryPattern(), getVariablesScope(), this);
+		this.getNotificationEmitter().storyPatternApplicationFinished(this.getStoryPattern(), this.getVariablesScope(), this);
 	}
 
 	/**
@@ -1024,7 +1048,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 			{
 				for (Entry<Feature, Expression> entry : map.entrySet())
 				{
-					Variable<Classifier> spoVariable = getVariablesScope().getVariable(this.spoFacade.getName(spo));
+					Variable<Classifier> spoVariable = this.getVariablesScope().getVariable(this.spoFacade.getName(spo));
 
 					assert spoVariable != null || this.spoFacade.isCreate(spo);
 
@@ -1032,13 +1056,13 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 
 					if (spoVariable == null)
 					{
-						attributeValueVariable = getExpressionInterpreterManager().evaluateExpression(entry.getValue(), null, null,
-								getVariablesScope());
+						attributeValueVariable = this.getExpressionInterpreterManager().evaluateExpression(entry.getValue(), null, null,
+								this.getVariablesScope());
 					}
 					else
 					{
-						attributeValueVariable = getExpressionInterpreterManager().evaluateExpression(entry.getValue(),
-								this.spoFacade.getClassifier(spo), spoVariable.getValue(), getVariablesScope());
+						attributeValueVariable = this.getExpressionInterpreterManager().evaluateExpression(entry.getValue(),
+								this.spoFacade.getClassifier(spo), spoVariable.getValue(), this.getVariablesScope());
 
 					}
 
@@ -1074,7 +1098,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		{
 			if (this.spoFacade.isDestroy(spo))
 			{
-				Variable<Classifier> variable = getVariablesScope().getVariable(this.spoFacade.getName(spo));
+				Variable<Classifier> variable = this.getVariablesScope().getVariable(this.spoFacade.getName(spo));
 
 				assert variable != null;
 
@@ -1116,7 +1140,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		{
 			if (this.spoFacade.isCreate(spo) && !this.spoFacade.isOptional(spo))
 			{
-				getVariablesScope().deleteVariable(this.spoFacade.getName(spo));
+				this.getVariablesScope().deleteVariable(this.spoFacade.getName(spo));
 			}
 		}
 
@@ -1145,14 +1169,14 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 			/*
 			 * Get the instance object
 			 */
-			Variable<Classifier> variable = getVariablesScope().getVariable(this.spoFacade.getName(at.storyPatternObject));
+			Variable<Classifier> variable = this.getVariablesScope().getVariable(this.spoFacade.getName(at.storyPatternObject));
 
 			assert variable != null;
 
 			this.instanceFacade.setAttributeValue(variable.getValue(), at.feature, at.newValue);
 
-			getNotificationEmitter().attributeValueSet(at.storyPatternObject, variable.getValue(), at.feature, at.newValue,
-					getVariablesScope(), this);
+			this.getNotificationEmitter().attributeValueSet(at.storyPatternObject, variable.getValue(), at.feature, at.newValue,
+					this.getVariablesScope(), this);
 		}
 	}
 
