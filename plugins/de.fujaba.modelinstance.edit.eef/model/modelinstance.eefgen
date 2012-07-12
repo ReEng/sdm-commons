@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/de.fujaba.modelinstance.edit.eef/src-gen">
-  <editionContexts basePackage="de.fujaba" descriptorsGenericPropertiesViews="true">
-    <PropertiesEditionContext href="modelinstance.components#_KDxmwFYTEeGJ4qlxiuPyww"/>
-  </editionContexts>
-  <viewsRepositories basePackage="de.fujaba.modelinstance" swtViews="true" formViews="true">
-    <viewsRepository href="modelinstance.components#_KDyN11YTEeGJ4qlxiuPyww"/>
-  </viewsRepositories>
-</eef-gen:EEFGenModel>
