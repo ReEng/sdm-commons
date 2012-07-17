@@ -1,0 +1,102 @@
+
+@GenModel(copyrightText="<copyright>\n\tCopyright 2012 by storydriven.org and others. All rights reserved. This program and its materials are made\n\tavailable under the terms of the Eclipse Public License v1.0 which is referenced in this distribution.\n\n\tContributors:\n\t\tAljoscha Hark <aljoscha@aljoschability.com> - Initial code\n\n</copyright>\n\n$Id$",
+editPlugin="org.storydriven.storydiagrams.interpreter.tests.model", editDirectory="/org.storydriven.storydiagrams.interpreter.tests.model/src-edit",
+providerPackageSuffix="edit", complianceLevel="6.0", suppressEMFModelTags="true", nonNLSMarkers="true", codeFormatting="true",
+creationIcons="false", resource="XMI", updateClasspath="false", bundleManifest="false")
+@Ecore(nsURI="http://www.storydriven.org/storydiagrams/tests")
+package org.storydriven.storydiagrams.tests
+
+abstract class Named
+{
+	String [1] name = ""
+}
+
+@GenModel(image="false")
+class Project extends Named
+{
+	contains Package [] packages opposite project
+}
+
+@GenModel(image="false")
+class Package extends Named
+{
+	container Project project opposite packages
+	container Package parent opposite children
+	contains Package [] children opposite parent
+	contains Type [] types opposite ^package
+}
+
+abstract class Type extends Named
+{
+	container Package ^package opposite types
+	refers Typed [] usages opposite ^type
+	Visibility [1] visibility
+	boolean [1] ^abstract = "false"
+	boolean [1] final = "false"
+	contains Field [] fields opposite ^container
+	contains Method [] methods opposite ^container
+}
+
+@GenModel(image="false")
+class Interface extends Type
+{
+}
+
+@GenModel(image="false")
+class Class extends Type
+{
+}
+
+@GenModel(image="false")
+class Enum extends Type
+{
+}
+
+abstract class Typed extends Named
+{
+	refers Type [1] ^type opposite usages
+}
+
+abstract class Member extends Typed
+{
+	Visibility [1] visibility
+	boolean [1] ^abstract = "false"
+	boolean [1] final = "false"
+}
+
+@GenModel(image="false")
+class Field extends Member
+{
+	container Type [1] ^container opposite fields
+	contains Statement [1] statement opposite field
+}
+
+@GenModel(image="false")
+class Method extends Member
+{
+	container Type [1] ^container opposite methods
+	contains Parameter [] parameters opposite method
+	contains Statement [] statements opposite method
+}
+
+@GenModel(image="false")
+class Parameter extends Typed
+{
+	container Method [1] method opposite parameters
+}
+
+@GenModel(image="false")
+class Statement
+{
+	container Method method opposite statements
+	container Field field opposite statement
+	String [1] value
+}
+
+enum Visibility
+{
+	PRIVATE
+	PROTECTED
+	DEFAULT
+	PUBLIC
+}

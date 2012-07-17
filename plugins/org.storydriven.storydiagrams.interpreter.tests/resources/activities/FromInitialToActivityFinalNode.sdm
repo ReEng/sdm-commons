@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expr="http://www.storydriven.org/core/expressions/0.2.0" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" name="simpliest">
+  <annotation source="http://www.storydriven.org/storydiagrams/types">
+    <details key="http://www.storydriven.org/core/0.2.7" value="true"/>
+    <details key="http://www.storydriven.org/core/expressions/0.2.0" value="true"/>
+    <details key="http://www.storydriven.org/core/expressions/common/0.2.0" value="true"/>
+    <details key="http://www.storydriven.org/storydiagrams/0.2.1" value="true"/>
+    <details key="http://www.storydriven.org/storydiagrams/activities/0.2.1" value="true"/>
+    <details key="http://www.storydriven.org/storydiagrams/activities/expressions/0.2.0" value="true"/>
+    <details key="http://www.storydriven.org/storydiagrams/calls/0.2.0" value="true"/>
+    <details key="http://www.storydriven.org/storydiagrams/calls/expressions/0.2.0" value="true"/>
+    <details key="http://www.storydriven.org/storydiagrams/patterns/0.2.1" value="true"/>
+    <details key="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1" value="true"/>
+    <details key="http://www.storydriven.org/storydiagrams/templates/0.2.0" value="true"/>
+    <details key="http://www.storydriven.org/storydiagrams/tests" value="true"/>
+  </annotation>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.0"/>
+  <ownedActivityNode xsi:type="sda:InitialNode" outgoing="//@ownedActivityEdge.0"/>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" incoming="//@ownedActivityEdge.0">
+    <returnValues xsi:type="expr:TextualExpression" expressionText="true" language="OCL" languageVersion="1.0"/>
+  </ownedActivityNode>
+</sda:Activity>

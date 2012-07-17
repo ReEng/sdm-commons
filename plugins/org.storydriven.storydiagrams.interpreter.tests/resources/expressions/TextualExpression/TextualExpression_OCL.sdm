@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.storydriven.org/core/expressions/0.2.0" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" outParameter="//@containedParameters.0" name="testTextualExpression_OCL">
+  <annotation source="http://www.storydriven.org/storydiagrams/types">
+    <details key="http://www.eclipse.org/emf/2002/Ecore" value="true"/>
+  </annotation>
+  <containedParameters name="r">
+    <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </containedParameters>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.0"/>
+  <ownedActivityNode xsi:type="sda:InitialNode" outgoing="//@ownedActivityEdge.0"/>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" incoming="//@ownedActivityEdge.0">
+    <returnValues xsi:type="expr:TextualExpression" expressionText="true" language="OCL" languageVersion="1.0"/>
+  </ownedActivityNode>
+</sda:Activity>

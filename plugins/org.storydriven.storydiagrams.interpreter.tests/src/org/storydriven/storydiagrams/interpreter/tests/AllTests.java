@@ -1,48 +1,24 @@
 package org.storydriven.storydiagrams.interpreter.tests;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
-import junit.textui.TestRunner;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
+import org.storydriven.storydiagrams.interpreter.tests.activities.ActivityTests;
+import org.storydriven.storydiagrams.interpreter.tests.expressions.ArithmeticExpressionTests;
+import org.storydriven.storydiagrams.interpreter.tests.expressions.ComparisonExpressionTests;
+import org.storydriven.storydiagrams.interpreter.tests.expressions.LiteralExpressionTests;
+import org.storydriven.storydiagrams.interpreter.tests.expressions.LogicalExpressionTests;
+import org.storydriven.storydiagrams.interpreter.tests.expressions.MethodCallExpressionTests;
+import org.storydriven.storydiagrams.interpreter.tests.expressions.TextualExpressionTests;
+import org.storydriven.storydiagrams.interpreter.tests.expressions.UnaryExpressionTests;
+import org.storydriven.storydiagrams.interpreter.tests.patterns.MatchingPatternTests;
+import org.storydriven.storydiagrams.interpreter.tests.patterns.ModifyingPatternTests;
 
-/**
- * <!-- begin-user-doc --> A test suite for the '<em><b>Sde</b></em>' model.
- * <!-- end-user-doc -->
- * 
- * @generated
- */
-public class AllTests extends TestSuite
-{
+@RunWith(Suite.class)
+@SuiteClasses({ ActivityTests.class, MatchingPatternTests.class, TextualExpressionTests.class,
+		ArithmeticExpressionTests.class, ComparisonExpressionTests.class, LiteralExpressionTests.class,
+		LogicalExpressionTests.class, UnaryExpressionTests.class, MethodCallExpressionTests.class,
+		ModifyingPatternTests.class })
+public class AllTests {
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public static void main(String[] args)
-	{
-		TestRunner.run(suite());
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public static Test suite()
-	{
-		TestSuite suite = new AllTests("Tests");
-		suite.addTest(Tests.suite());
-		return suite;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public AllTests(String name)
-	{
-		super(name);
-	}
-
-} // AllTests
+}

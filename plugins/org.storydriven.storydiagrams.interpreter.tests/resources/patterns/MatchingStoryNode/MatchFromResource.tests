@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tests="http://www.storydriven.org/storydiagrams/tests" name="Project">
+  <packages name="tests">
+    <types xsi:type="tests:Class" name="A">
+      <methods name="doExecute" type="//@packages.0/@types.1"/>
+    </types>
+    <types xsi:type="tests:Class" name="void" visibility="PUBLIC"/>
+  </packages>
+</tests:Project>

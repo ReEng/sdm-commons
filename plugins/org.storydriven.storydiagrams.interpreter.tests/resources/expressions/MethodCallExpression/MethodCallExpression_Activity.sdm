@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdce="http://www.storydriven.org/storydiagrams/calls/expressions/0.2.0" xmlns:expr="http://www.storydriven.org/core/expressions/0.2.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.2.0" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
+    <annotation source="http://www.storydriven.org/storydiagrams/types">
+    <details key="http://www.eclipse.org/emf/2002/Ecore" value="true"/>
+  </annotation>
+  <ownedActivityEdge target="//@ownedActivityNode.2" source="//@ownedActivityNode.0"/>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.2"/>
+  <ownedActivityNode xsi:type="sda:InitialNode" outgoing="//@ownedActivityEdge.0"/>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" incoming="//@ownedActivityEdge.1">
+    <returnValues xsi:type="sdcec:ComparisonExpression" operator="EQUAL">
+      <leftExpression xsi:type="expr:TextualExpression" expressionText="true" language="OCL" languageVersion="1.0"/>
+      <rightExpression xsi:type="sdce:MethodCallExpression">
+        <callee xsi:type="sda:Activity" href="../LiteralExpression/LiteralExpression__Boolean_TRUE.sdm#/"/>
+      </rightExpression>
+    </returnValues>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="create object" outgoing="//@ownedActivityEdge.1" incoming="//@ownedActivityEdge.0">
+    <ownedRule comment="">
+      <variable xsi:type="sdp:PrimitiveVariable" name="myString" bindingState="BOUND">
+        <bindingExpression xsi:type="expr:TextualExpression" expressionText="'Hello'" language="OCL" languageVersion="1.0"/>
+        <classifier href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </variable>
+    </ownedRule>
+  </ownedActivityNode>
+</sda:Activity>

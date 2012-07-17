@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expr="http://www.storydriven.org/core/expressions/0.2.0" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.2.0" name="testComparisonExpression_LESS">
+  <annotation source="http://www.storydriven.org/storydiagrams/types">
+    <details key="http://www.eclipse.org/emf/2002/Ecore" value="true"/>
+  </annotation>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.0"/>
+  <ownedActivityNode xsi:type="sda:InitialNode" outgoing="//@ownedActivityEdge.0"/>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" incoming="//@ownedActivityEdge.0">
+    <returnValues xsi:type="sdcec:ComparisonExpression">
+      <leftExpression xsi:type="expr:TextualExpression" expressionText="41" language="OCL" languageVersion="1.0"/>
+      <rightExpression xsi:type="expr:TextualExpression" expressionText="42" language="OCL" languageVersion="1.0"/>
+    </returnValues>
+  </ownedActivityNode>
+</sda:Activity>

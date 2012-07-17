@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.2.0" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
+  <annotation source="http://www.storydriven.org/storydiagrams/types">
+    <details key="http://www.eclipse.org/emf/2002/Ecore" value="true"/>
+    <details key="http://www.storydriven.org/storydiagrams/tests" value="true"/>
+  </annotation>
+  <ownedActivityEdge target="//@ownedActivityNode.3" source="//@ownedActivityNode.0"/>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.3" guard="SUCCESS"/>
+  <ownedActivityEdge target="//@ownedActivityNode.2" source="//@ownedActivityNode.3" guard="FAILURE"/>
+  <ownedActivityNode xsi:type="sda:InitialNode" outgoing="//@ownedActivityEdge.0"/>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="stopTrue" incoming="//@ownedActivityEdge.1">
+    <returnValues xsi:type="sdcec:LiteralExpression" value="true"/>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="stopFalse" incoming="//@ownedActivityEdge.2">
+    <returnValues xsi:type="sdcec:LiteralExpression" value="false"/>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:MatchingStoryNode" name="match" outgoing="//@ownedActivityEdge.1 //@ownedActivityEdge.2" incoming="//@ownedActivityEdge.0">
+    <ownedPattern>
+      <variable xsi:type="sdp:ObjectVariable" name="var" bindingSemantics="OPTIONAL">
+        <classifier href="http://www.storydriven.org/storydiagrams/tests#//Class"/>
+      </variable>
+    </ownedPattern>
+  </ownedActivityNode>
+</sda:Activity>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.1" xmlns:sdpe="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1" outParameter="//@containedParameters.0" name="testActivityCallNode_callee">
+  <annotation source="http://www.storydriven.org/storydiagrams/types">
+    <details key="http://www.eclipse.org/emf/2002/Ecore" value="true"/>
+    <details key="http://www.storydriven.org/storydiagrams/tests" value="true"/>
+  </annotation>
+  <containedParameters name="returnValue">
+    <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/storydiagrams/tests#//Class"/>
+  </containedParameters>
+  <ownedActivityEdge target="//@ownedActivityNode.2" source="//@ownedActivityNode.0"/>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.2"/>
+  <ownedActivityNode xsi:type="sda:InitialNode" name="" outgoing="//@ownedActivityEdge.0"/>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="" incoming="//@ownedActivityEdge.1">
+    <returnValues xsi:type="sdpe:ObjectVariableExpression" object="//@ownedActivityNode.2/@ownedRule/@variable.0"/>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="create objects" outgoing="//@ownedActivityEdge.1" incoming="//@ownedActivityEdge.0">
+    <ownedRule>
+      <variable xsi:type="sdp:ObjectVariable" name="c" outgoingLink="//@ownedActivityNode.2/@ownedRule/@linkVariable.0" bindingOperator="CREATE">
+        <classifier href="http://www.storydriven.org/storydiagrams/tests#//Class"/>
+      </variable>
+      <variable xsi:type="sdp:ObjectVariable" name="m" incomingLink="//@ownedActivityNode.2/@ownedRule/@linkVariable.0" bindingOperator="CREATE">
+        <classifier href="http://www.storydriven.org/storydiagrams/tests#//Method"/>
+      </variable>
+      <linkVariable xsi:type="sdp:LinkVariable" name="" bindingOperator="CREATE" source="//@ownedActivityNode.2/@ownedRule/@variable.0" target="//@ownedActivityNode.2/@ownedRule/@variable.1">
+        <targetEnd href="http://www.storydriven.org/storydiagrams/tests#//Type/methods"/>
+      </linkVariable>
+    </ownedRule>
+  </ownedActivityNode>
+</sda:Activity>

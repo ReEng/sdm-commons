@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdce="http://www.storydriven.org/storydiagrams/calls/expressions/0.2.0" xmlns:expr="http://www.storydriven.org/core/expressions/0.2.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.2.0">
+    <annotation source="http://www.storydriven.org/storydiagrams/types">
+    <details key="http://www.eclipse.org/emf/2002/Ecore" value="true"/>
+  </annotation>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.0"/>
+  <ownedActivityNode xsi:type="sda:InitialNode" outgoing="//@ownedActivityEdge.0"/>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" incoming="//@ownedActivityEdge.0">
+    <returnValues xsi:type="sdcec:ComparisonExpression" operator="EQUAL">
+      <leftExpression xsi:type="expr:TextualExpression" expressionText="5" language="OCL" languageVersion="1.0"/>
+      <rightExpression xsi:type="sdce:MethodCallExpression" callee="//@ownedActivityNode.1/@returnValue/@rightExpression/@opaqueCallable">
+        <target xsi:type="expr:TextualExpression" expressionText="'Hello'" language="OCL" languageVersion="1.0"/>
+        <opaqueCallable name="java.lang.String.length" outParameter="//@ownedActivityNode.1/@returnValue/@rightExpression/@opaqueCallable/@containedParameters.0">
+          <containedParameters name="return">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          </containedParameters>
+        </opaqueCallable>
+      </rightExpression>
+    </returnValues>
+  </ownedActivityNode>
+</sda:Activity>

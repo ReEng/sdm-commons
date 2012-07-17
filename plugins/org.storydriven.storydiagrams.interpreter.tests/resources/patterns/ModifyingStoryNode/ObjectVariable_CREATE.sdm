@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.1" xmlns:sdpe="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1">
+  <annotation source="http://www.storydriven.org/storydiagrams/types">
+    <details key="http://www.eclipse.org/emf/2002/Ecore" value="true"/>
+    <details key="http://www.storydriven.org/storydiagrams/tests" value="true"/>
+  </annotation>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.0"/>
+  <ownedActivityEdge target="//@ownedActivityNode.2" source="//@ownedActivityNode.1"/>
+  <ownedActivityNode xsi:type="sda:InitialNode" outgoing="//@ownedActivityEdge.0"/>
+  <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="create element" outgoing="//@ownedActivityEdge.1" incoming="//@ownedActivityEdge.0">
+    <ownedRule>
+      <variable xsi:type="sdp:ObjectVariable" name="v" bindingOperator="CREATE">
+        <classifier href="http://www.storydriven.org/storydiagrams/tests#//Class"/>
+      </variable>
+    </ownedRule>
+  </ownedActivityNode>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" incoming="//@ownedActivityEdge.1">
+    <returnValues xsi:type="sdpe:ObjectVariableExpression" object="//@ownedActivityNode.1/@ownedRule/@variable.0"/>
+  </ownedActivityNode>
+</sda:Activity>
