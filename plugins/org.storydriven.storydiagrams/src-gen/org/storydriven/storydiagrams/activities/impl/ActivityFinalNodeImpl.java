@@ -99,13 +99,14 @@ public class ActivityFinalNodeImpl extends ActivityNodeImpl implements ActivityF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Expression basicGetReturnValue() {
-		// TODO: implement this method to return the 'Return Value' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// return first expression
+		for (Expression expression : getReturnValues()) {
+			return expression;
+		}
+		return null;
 	}
 
 	/**

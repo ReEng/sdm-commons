@@ -2,7 +2,7 @@
 @GenModel(copyrightText="<copyright>\n\tCopyright 2012 by storydriven.org and others. All rights reserved. This program and its materials are made\n\tavailable under the terms of the Eclipse Public License v1.0 which is referenced in this distribution.\n\n\tContributors:\n\t\tAljoscha Hark <aljoscha@aljoschability.com> - Initial code\n\n</copyright>\n\n$Id$",
 editPlugin="org.storydriven.storydiagrams.interpreter.tests.model", editDirectory="/org.storydriven.storydiagrams.interpreter.tests.model/src-edit",
 providerPackageSuffix="edit", complianceLevel="6.0", suppressEMFModelTags="true", nonNLSMarkers="true", codeFormatting="true",
-creationIcons="false", resource="XMI", updateClasspath="false", bundleManifest="false")
+creationIcons="false", resource="XMI", updateClasspath="false", bundleManifest="false", runtimeVersion="2.7")
 @Ecore(nsURI="http://www.storydriven.org/storydiagrams/tests")
 package org.storydriven.storydiagrams.tests
 
