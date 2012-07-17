@@ -120,7 +120,7 @@ public class ActivityCallNodeOutArgumentsSection extends AbstractSection {
 
 	@Override
 	protected void createWidgets(Composite parent, TabbedPropertySheetWidgetFactory factory) {
-		label = factory.createLabel(parent, "Out Parameter" + ':', SWT.TRAIL);
+		label = factory.createLabel(parent, "Return Value Bindings" + ':', SWT.TRAIL);
 
 		final Table table = factory.createTable(parent, SWT.BORDER | SWT.FULL_SELECTION);
 		table.setHeaderVisible(true);

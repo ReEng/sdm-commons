@@ -154,7 +154,7 @@ public class ActivityCallNodeInArgumentsSection extends AbstractSection {
 
 	@Override
 	protected void createWidgets(Composite parent, TabbedPropertySheetWidgetFactory factory) {
-		label = factory.createLabel(parent, "In Parameter" + ':', SWT.TRAIL);
+		label = factory.createLabel(parent, "Arguments" + ':', SWT.TRAIL);
 
 		final Table table = factory.createTable(parent, SWT.BORDER | SWT.FULL_SELECTION);
 		table.setHeaderVisible(true);

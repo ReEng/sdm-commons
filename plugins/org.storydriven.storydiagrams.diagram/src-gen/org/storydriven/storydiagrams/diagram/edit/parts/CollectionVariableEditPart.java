@@ -49,7 +49,7 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3005;
+	public static final int VISUAL_ID = 3002;
 
 	/**
 	 * @generated
@@ -327,22 +327,22 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof ObjectVariableEditPart) {
-			types.add(StorydiagramsElementTypes.LinkVariable_4002);
-		}
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableEditPart) {
 			types.add(StorydiagramsElementTypes.LinkVariable_4002);
 		}
 		if (targetEditPart instanceof ObjectVariableEditPart) {
-			types.add(StorydiagramsElementTypes.InclusionLink_4003);
+			types.add(StorydiagramsElementTypes.LinkVariable_4002);
 		}
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableEditPart) {
 			types.add(StorydiagramsElementTypes.InclusionLink_4003);
 		}
 		if (targetEditPart instanceof ObjectVariableEditPart) {
+			types.add(StorydiagramsElementTypes.InclusionLink_4003);
+		}
+		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableEditPart) {
 			types.add(StorydiagramsElementTypes.MaybeLink_4004);
 		}
-		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableEditPart) {
+		if (targetEditPart instanceof ObjectVariableEditPart) {
 			types.add(StorydiagramsElementTypes.MaybeLink_4004);
 		}
 		return types;
@@ -354,14 +354,14 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3002);
+			types.add(StorydiagramsElementTypes.ObjectVariable_3005);
 		} else if (relationshipType == StorydiagramsElementTypes.InclusionLink_4003) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3002);
+			types.add(StorydiagramsElementTypes.ObjectVariable_3005);
 		} else if (relationshipType == StorydiagramsElementTypes.MaybeLink_4004) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3002);
+			types.add(StorydiagramsElementTypes.ObjectVariable_3005);
 		}
 		return types;
 	}
@@ -383,14 +383,14 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3002);
+			types.add(StorydiagramsElementTypes.ObjectVariable_3005);
 		} else if (relationshipType == StorydiagramsElementTypes.InclusionLink_4003) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3002);
+			types.add(StorydiagramsElementTypes.ObjectVariable_3005);
 		} else if (relationshipType == StorydiagramsElementTypes.MaybeLink_4004) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3002);
+			types.add(StorydiagramsElementTypes.ObjectVariable_3005);
 		}
 		return types;
 	}

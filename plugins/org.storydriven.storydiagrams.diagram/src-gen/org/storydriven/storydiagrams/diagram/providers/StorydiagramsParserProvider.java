@@ -102,37 +102,37 @@ public class StorydiagramsParserProvider extends AbstractProvider implements IPa
 	/**
 	 * @generated
 	 */
-	private IParser objectVariableName_5006Parser;
+	private IParser collectionVariableName_5006Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getObjectVariableName_5006Parser() {
-		if (objectVariableName_5006Parser == null) {
+	private IParser getCollectionVariableName_5006Parser() {
+		if (collectionVariableName_5006Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
-			objectVariableName_5006Parser = parser;
+			collectionVariableName_5006Parser = parser;
 		}
-		return objectVariableName_5006Parser;
+		return collectionVariableName_5006Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser collectionVariableName_5009Parser;
+	private IParser objectVariableName_5009Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getCollectionVariableName_5009Parser() {
-		if (collectionVariableName_5009Parser == null) {
+	private IParser getObjectVariableName_5009Parser() {
+		if (objectVariableName_5009Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features, editableFeatures);
-			collectionVariableName_5009Parser = parser;
+			objectVariableName_5009Parser = parser;
 		}
-		return collectionVariableName_5009Parser;
+		return objectVariableName_5009Parser;
 	}
 
 	/**
@@ -148,10 +148,10 @@ public class StorydiagramsParserProvider extends AbstractProvider implements IPa
 			return getModifyingStoryNodeName_5011Parser();
 		case MatchingStoryNodeNameEditPart.VISUAL_ID:
 			return getMatchingStoryNodeName_5012Parser();
-		case ObjectVariableNameEditPart.VISUAL_ID:
-			return getObjectVariableName_5006Parser();
 		case CollectionVariableNameLabelEditPart.VISUAL_ID:
-			return getCollectionVariableName_5009Parser();
+			return getCollectionVariableName_5006Parser();
+		case ObjectVariableNameEditPart.VISUAL_ID:
+			return getObjectVariableName_5009Parser();
 		}
 		return null;
 	}

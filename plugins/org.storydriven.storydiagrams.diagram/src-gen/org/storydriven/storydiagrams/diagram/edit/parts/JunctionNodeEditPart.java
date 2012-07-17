@@ -219,10 +219,10 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
+		if (targetEditPart instanceof FlowFinalNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof FlowFinalNodeEditPart) {
+		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		return types;
@@ -240,8 +240,8 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
 			types.add(StorydiagramsElementTypes.InitialNode_2005);
 			types.add(StorydiagramsElementTypes.JunctionNode_2006);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2007);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2008);
+			types.add(StorydiagramsElementTypes.FlowFinalNode_2007);
+			types.add(StorydiagramsElementTypes.ActivityFinalNode_2008);
 		}
 		return types;
 	}
@@ -267,8 +267,8 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
 			types.add(StorydiagramsElementTypes.InitialNode_2005);
 			types.add(StorydiagramsElementTypes.JunctionNode_2006);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2007);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2008);
+			types.add(StorydiagramsElementTypes.FlowFinalNode_2007);
+			types.add(StorydiagramsElementTypes.ActivityFinalNode_2008);
 		}
 		return types;
 	}

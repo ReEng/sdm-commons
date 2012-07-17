@@ -27,7 +27,7 @@ public class FlowFinalNodeItemSemanticEditPolicy extends StorydiagramsBaseItemSe
 	 * @generated
 	 */
 	public FlowFinalNodeItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.FlowFinalNode_2008);
+		super(StorydiagramsElementTypes.FlowFinalNode_2007);
 	}
 
 	/**

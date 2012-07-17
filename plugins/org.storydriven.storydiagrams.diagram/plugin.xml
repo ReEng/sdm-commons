@@ -266,9 +266,9 @@
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart" id="MatchingStoryNode_2004"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeEditPart" id="InitialNode_2005"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart" id="JunctionNode_2006"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart" id="ActivityFinalNode_2007"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart" id="FlowFinalNode_2008"/>
-         <context elements="Activity_1000,ActivityCallNode_2001,StatementNode_2002,ModifyingStoryNode_2003,MatchingStoryNode_2004,InitialNode_2005,JunctionNode_2006,ActivityFinalNode_2007,FlowFinalNode_2008"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart" id="FlowFinalNode_2007"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart" id="ActivityFinalNode_2008"/>
+         <context elements="Activity_1000,ActivityCallNode_2001,StatementNode_2002,ModifyingStoryNode_2003,MatchingStoryNode_2004,InitialNode_2005,JunctionNode_2006,FlowFinalNode_2007,ActivityFinalNode_2008"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -360,21 +360,21 @@
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.ActivityFinalNode_2007"
-               name="%metatype.name.ActivityFinalNode_2007"
+               id="org.storydriven.storydiagrams.diagram.FlowFinalNode_2007"
+               name="%metatype.name.FlowFinalNode_2007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ActivityFinalNode"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ActivityFinalNodeEditHelper">
+               eclass="FlowFinalNode"
+               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.FlowFinalNodeEditHelper">
             <param name="semanticHint" value="2007"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.FlowFinalNode_2008"
-               name="%metatype.name.FlowFinalNode_2008"
+               id="org.storydriven.storydiagrams.diagram.ActivityFinalNode_2008"
+               name="%metatype.name.ActivityFinalNode_2008"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="FlowFinalNode"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.FlowFinalNodeEditHelper">
+               eclass="ActivityFinalNode"
+               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ActivityFinalNodeEditHelper">
             <param name="semanticHint" value="2008"/>
          </metamodelType>
       </metamodel>
@@ -390,11 +390,11 @@
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.ObjectVariable_3002"
-               name="%metatype.name.ObjectVariable_3002"
+               id="org.storydriven.storydiagrams.diagram.CollectionVariable_3002"
+               name="%metatype.name.CollectionVariable_3002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ObjectVariable"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ObjectVariableEditHelper">
+               eclass="CollectionVariable"
+               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.CollectionVariableEditHelper">
             <param name="semanticHint" value="3002"/>
          </metamodelType>
       </metamodel>
@@ -420,11 +420,11 @@
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.CollectionVariable_3005"
-               name="%metatype.name.CollectionVariable_3005"
+               id="org.storydriven.storydiagrams.diagram.ObjectVariable_3005"
+               name="%metatype.name.ObjectVariable_3005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="CollectionVariable"
-               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.CollectionVariableEditHelper">
+               eclass="ObjectVariable"
+               edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ObjectVariableEditHelper">
             <param name="semanticHint" value="3005"/>
          </metamodelType>
       </metamodel>
@@ -506,13 +506,13 @@
          <elementType ref="org.storydriven.storydiagrams.diagram.MatchingStoryNode_2004"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.InitialNode_2005"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.JunctionNode_2006"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.ActivityFinalNode_2007"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.FlowFinalNode_2008"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.FlowFinalNode_2007"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.ActivityFinalNode_2008"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.StoryPattern_3001"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.ObjectVariable_3002"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.CollectionVariable_3002"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.AttributeAssignment_3003"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.Constraint_3004"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.CollectionVariable_3005"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.ObjectVariable_3005"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.Constraint_3006"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.MatchingPattern_3007"/>
          <elementType ref="org.storydriven.storydiagrams.diagram.ActivityEdge_4001"/>

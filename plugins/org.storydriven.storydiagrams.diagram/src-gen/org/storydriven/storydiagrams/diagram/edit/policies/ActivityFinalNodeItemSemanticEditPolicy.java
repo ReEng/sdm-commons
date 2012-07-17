@@ -27,7 +27,7 @@ public class ActivityFinalNodeItemSemanticEditPolicy extends StorydiagramsBaseIt
 	 * @generated
 	 */
 	public ActivityFinalNodeItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.ActivityFinalNode_2007);
+		super(StorydiagramsElementTypes.ActivityFinalNode_2008);
 	}
 
 	/**

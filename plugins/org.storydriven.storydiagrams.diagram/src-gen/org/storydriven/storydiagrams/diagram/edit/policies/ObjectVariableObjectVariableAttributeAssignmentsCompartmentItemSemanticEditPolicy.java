@@ -15,7 +15,7 @@ public class ObjectVariableObjectVariableAttributeAssignmentsCompartmentItemSema
 	 * @generated
 	 */
 	public ObjectVariableObjectVariableAttributeAssignmentsCompartmentItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.ObjectVariable_3002);
+		super(StorydiagramsElementTypes.ObjectVariable_3005);
 	}
 
 	/**

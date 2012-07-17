@@ -275,7 +275,7 @@ public class ActivityFinalNodeLabelEditPart extends CompartmentEditPart implemen
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.ActivityFinalNode_2007,
+							StorydiagramsElementTypes.ActivityFinalNode_2008,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
 									.getType(org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeLabelEditPart.VISUAL_ID));

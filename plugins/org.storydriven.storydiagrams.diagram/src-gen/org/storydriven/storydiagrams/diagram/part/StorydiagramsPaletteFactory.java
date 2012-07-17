@@ -174,10 +174,10 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createActivityFinalNode10CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityFinalNode10CreationTool_title,
 				Messages.ActivityFinalNode10CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.ActivityFinalNode_2007));
+				Collections.singletonList(StorydiagramsElementTypes.ActivityFinalNode_2008));
 		entry.setId("createActivityFinalNode10CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsElementTypes
-				.getImageDescriptor(StorydiagramsElementTypes.ActivityFinalNode_2007));
+				.getImageDescriptor(StorydiagramsElementTypes.ActivityFinalNode_2008));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -188,9 +188,9 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createFlowFinalNode11CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(Messages.FlowFinalNode11CreationTool_title,
 				Messages.FlowFinalNode11CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.FlowFinalNode_2008));
+				Collections.singletonList(StorydiagramsElementTypes.FlowFinalNode_2007));
 		entry.setId("createFlowFinalNode11CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.FlowFinalNode_2008));
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.FlowFinalNode_2007));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -201,9 +201,9 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createObjectVariable1CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(Messages.ObjectVariable1CreationTool_title,
 				Messages.ObjectVariable1CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.ObjectVariable_3002));
+				Collections.singletonList(StorydiagramsElementTypes.ObjectVariable_3005));
 		entry.setId("createObjectVariable1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.ObjectVariable_3002));
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.ObjectVariable_3005));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -214,10 +214,10 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createCollectionVariable2CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(Messages.CollectionVariable2CreationTool_title,
 				Messages.CollectionVariable2CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.CollectionVariable_3005));
+				Collections.singletonList(StorydiagramsElementTypes.CollectionVariable_3002));
 		entry.setId("createCollectionVariable2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsElementTypes
-				.getImageDescriptor(StorydiagramsElementTypes.CollectionVariable_3005));
+				.getImageDescriptor(StorydiagramsElementTypes.CollectionVariable_3002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

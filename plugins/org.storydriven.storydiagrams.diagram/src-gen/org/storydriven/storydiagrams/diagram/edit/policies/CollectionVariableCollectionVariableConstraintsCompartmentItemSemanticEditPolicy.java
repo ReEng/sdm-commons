@@ -15,7 +15,7 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentItemSeman
 	 * @generated
 	 */
 	public CollectionVariableCollectionVariableConstraintsCompartmentItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.CollectionVariable_3005);
+		super(StorydiagramsElementTypes.CollectionVariable_3002);
 	}
 
 	/**

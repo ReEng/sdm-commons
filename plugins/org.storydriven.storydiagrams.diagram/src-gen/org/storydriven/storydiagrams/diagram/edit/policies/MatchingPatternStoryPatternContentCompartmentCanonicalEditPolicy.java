@@ -78,7 +78,7 @@ public class MatchingPatternStoryPatternContentCompartmentCanonicalEditPolicy ex
 	 */
 	private boolean isMyDiagramElement(View view) {
 		int visualID = StorydiagramsVisualIDRegistry.getVisualID(view);
-		return visualID == ObjectVariableEditPart.VISUAL_ID || visualID == CollectionVariableEditPart.VISUAL_ID;
+		return visualID == CollectionVariableEditPart.VISUAL_ID || visualID == ObjectVariableEditPart.VISUAL_ID;
 	}
 
 	/**

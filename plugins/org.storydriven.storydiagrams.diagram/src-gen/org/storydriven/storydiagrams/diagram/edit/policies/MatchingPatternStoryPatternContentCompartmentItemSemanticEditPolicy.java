@@ -23,11 +23,11 @@ public class MatchingPatternStoryPatternContentCompartmentItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.ObjectVariable_3002 == req.getElementType()) {
-			return getGEFWrapper(new ObjectVariableCreateCommand(req));
-		}
-		if (StorydiagramsElementTypes.CollectionVariable_3005 == req.getElementType()) {
+		if (StorydiagramsElementTypes.CollectionVariable_3002 == req.getElementType()) {
 			return getGEFWrapper(new CollectionVariableCreateCommand(req));
+		}
+		if (StorydiagramsElementTypes.ObjectVariable_3005 == req.getElementType()) {
+			return getGEFWrapper(new ObjectVariableCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

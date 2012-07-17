@@ -109,8 +109,8 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 		case MatchingStoryNodeEditPart.VISUAL_ID:
 		case InitialNodeEditPart.VISUAL_ID:
 		case JunctionNodeEditPart.VISUAL_ID:
-		case ActivityFinalNodeEditPart.VISUAL_ID:
 		case FlowFinalNodeEditPart.VISUAL_ID:
+		case ActivityFinalNodeEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -311,18 +311,18 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 			}
 			break;
 		}
-		case ActivityFinalNodeEditPart.VISUAL_ID: {
+		case FlowFinalNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getActivityFinalNode_2007ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getFlowFinalNode_2007ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
 				domain2NotationMap.put(view.getElement(), view);
 			}
 			break;
 		}
-		case FlowFinalNodeEditPart.VISUAL_ID: {
+		case ActivityFinalNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getFlowFinalNode_2008ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getActivityFinalNode_2008ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
 				domain2NotationMap.put(view.getElement(), view);
@@ -338,18 +338,18 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 			}
 			break;
 		}
-		case ObjectVariableEditPart.VISUAL_ID: {
+		case CollectionVariableEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getObjectVariable_3002ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getCollectionVariable_3002ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
 				domain2NotationMap.put(view.getElement(), view);
 			}
 			break;
 		}
-		case CollectionVariableEditPart.VISUAL_ID: {
+		case ObjectVariableEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(StorydiagramsDiagramUpdater.getCollectionVariable_3005ContainedLinks(view));
+				result.addAll(StorydiagramsDiagramUpdater.getObjectVariable_3005ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
 				domain2NotationMap.put(view.getElement(), view);

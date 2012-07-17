@@ -51,7 +51,7 @@ public class ObjectVariableOperatorEditPart extends CompartmentEditPart implemen
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5005;
+	public static final int VISUAL_ID = 5008;
 
 	/**
 	 * @generated
@@ -275,7 +275,7 @@ public class ObjectVariableOperatorEditPart extends CompartmentEditPart implemen
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.ObjectVariable_3002,
+							StorydiagramsElementTypes.ObjectVariable_3005,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
 									.getType(org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableOperatorEditPart.VISUAL_ID));

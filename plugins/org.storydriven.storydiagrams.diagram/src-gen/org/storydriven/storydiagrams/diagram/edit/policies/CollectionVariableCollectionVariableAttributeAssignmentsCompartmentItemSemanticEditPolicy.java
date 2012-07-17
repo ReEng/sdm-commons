@@ -15,7 +15,7 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	 * @generated
 	 */
 	public CollectionVariableCollectionVariableAttributeAssignmentsCompartmentItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.CollectionVariable_3005);
+		super(StorydiagramsElementTypes.CollectionVariable_3002);
 	}
 
 	/**

@@ -15,7 +15,7 @@ public class ObjectVariableObjectVariableConstraintsCompartmentItemSemanticEditP
 	 * @generated
 	 */
 	public ObjectVariableObjectVariableConstraintsCompartmentItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.ObjectVariable_3002);
+		super(StorydiagramsElementTypes.ObjectVariable_3005);
 	}
 
 	/**

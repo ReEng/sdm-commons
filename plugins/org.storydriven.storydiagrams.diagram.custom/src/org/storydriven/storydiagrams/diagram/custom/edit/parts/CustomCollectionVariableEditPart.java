@@ -14,7 +14,6 @@ import org.storydriven.storydiagrams.patterns.CollectionVariable;
 public class CustomCollectionVariableEditPart extends CollectionVariableEditPart {
 	public CustomCollectionVariableEditPart(View view) {
 		super(view);
-		System.out.println("CustomCollectionVariableEditPart");
 	}
 
 	@Override

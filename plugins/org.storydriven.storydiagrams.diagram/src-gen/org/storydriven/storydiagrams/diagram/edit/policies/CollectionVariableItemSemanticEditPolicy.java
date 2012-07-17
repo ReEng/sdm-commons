@@ -39,7 +39,7 @@ public class CollectionVariableItemSemanticEditPolicy extends StorydiagramsBaseI
 	 * @generated
 	 */
 	public CollectionVariableItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.CollectionVariable_3005);
+		super(StorydiagramsElementTypes.CollectionVariable_3002);
 	}
 
 	/**

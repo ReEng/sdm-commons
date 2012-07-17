@@ -96,11 +96,11 @@ public class StorydiagramsElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ActivityFinalNode_2007 = getElementType("org.storydriven.storydiagrams.diagram.ActivityFinalNode_2007"); //$NON-NLS-1$
+	public static final IElementType FlowFinalNode_2007 = getElementType("org.storydriven.storydiagrams.diagram.FlowFinalNode_2007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType FlowFinalNode_2008 = getElementType("org.storydriven.storydiagrams.diagram.FlowFinalNode_2008"); //$NON-NLS-1$
+	public static final IElementType ActivityFinalNode_2008 = getElementType("org.storydriven.storydiagrams.diagram.ActivityFinalNode_2008"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -108,7 +108,7 @@ public class StorydiagramsElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ObjectVariable_3002 = getElementType("org.storydriven.storydiagrams.diagram.ObjectVariable_3002"); //$NON-NLS-1$
+	public static final IElementType CollectionVariable_3002 = getElementType("org.storydriven.storydiagrams.diagram.CollectionVariable_3002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -120,7 +120,7 @@ public class StorydiagramsElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType CollectionVariable_3005 = getElementType("org.storydriven.storydiagrams.diagram.CollectionVariable_3005"); //$NON-NLS-1$
+	public static final IElementType ObjectVariable_3005 = getElementType("org.storydriven.storydiagrams.diagram.ObjectVariable_3005"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -267,19 +267,19 @@ public class StorydiagramsElementTypes {
 
 			elements.put(JunctionNode_2006, ActivitiesPackage.eINSTANCE.getJunctionNode());
 
-			elements.put(ActivityFinalNode_2007, ActivitiesPackage.eINSTANCE.getActivityFinalNode());
+			elements.put(FlowFinalNode_2007, ActivitiesPackage.eINSTANCE.getFlowFinalNode());
 
-			elements.put(FlowFinalNode_2008, ActivitiesPackage.eINSTANCE.getFlowFinalNode());
+			elements.put(ActivityFinalNode_2008, ActivitiesPackage.eINSTANCE.getActivityFinalNode());
 
 			elements.put(StoryPattern_3001, PatternsPackage.eINSTANCE.getStoryPattern());
 
-			elements.put(ObjectVariable_3002, PatternsPackage.eINSTANCE.getObjectVariable());
+			elements.put(CollectionVariable_3002, PatternsPackage.eINSTANCE.getCollectionVariable());
 
 			elements.put(AttributeAssignment_3003, PatternsPackage.eINSTANCE.getAttributeAssignment());
 
 			elements.put(Constraint_3004, PatternsPackage.eINSTANCE.getConstraint());
 
-			elements.put(CollectionVariable_3005, PatternsPackage.eINSTANCE.getCollectionVariable());
+			elements.put(ObjectVariable_3005, PatternsPackage.eINSTANCE.getObjectVariable());
 
 			elements.put(Constraint_3006, PatternsPackage.eINSTANCE.getConstraint());
 
@@ -316,13 +316,13 @@ public class StorydiagramsElementTypes {
 			KNOWN_ELEMENT_TYPES.add(MatchingStoryNode_2004);
 			KNOWN_ELEMENT_TYPES.add(InitialNode_2005);
 			KNOWN_ELEMENT_TYPES.add(JunctionNode_2006);
-			KNOWN_ELEMENT_TYPES.add(ActivityFinalNode_2007);
-			KNOWN_ELEMENT_TYPES.add(FlowFinalNode_2008);
+			KNOWN_ELEMENT_TYPES.add(FlowFinalNode_2007);
+			KNOWN_ELEMENT_TYPES.add(ActivityFinalNode_2008);
 			KNOWN_ELEMENT_TYPES.add(StoryPattern_3001);
-			KNOWN_ELEMENT_TYPES.add(ObjectVariable_3002);
+			KNOWN_ELEMENT_TYPES.add(CollectionVariable_3002);
 			KNOWN_ELEMENT_TYPES.add(AttributeAssignment_3003);
 			KNOWN_ELEMENT_TYPES.add(Constraint_3004);
-			KNOWN_ELEMENT_TYPES.add(CollectionVariable_3005);
+			KNOWN_ELEMENT_TYPES.add(ObjectVariable_3005);
 			KNOWN_ELEMENT_TYPES.add(Constraint_3006);
 			KNOWN_ELEMENT_TYPES.add(MatchingPattern_3007);
 			KNOWN_ELEMENT_TYPES.add(ActivityEdge_4001);
@@ -352,20 +352,20 @@ public class StorydiagramsElementTypes {
 			return InitialNode_2005;
 		case JunctionNodeEditPart.VISUAL_ID:
 			return JunctionNode_2006;
-		case ActivityFinalNodeEditPart.VISUAL_ID:
-			return ActivityFinalNode_2007;
 		case FlowFinalNodeEditPart.VISUAL_ID:
-			return FlowFinalNode_2008;
+			return FlowFinalNode_2007;
+		case ActivityFinalNodeEditPart.VISUAL_ID:
+			return ActivityFinalNode_2008;
 		case StoryPatternEditPart.VISUAL_ID:
 			return StoryPattern_3001;
-		case ObjectVariableEditPart.VISUAL_ID:
-			return ObjectVariable_3002;
+		case CollectionVariableEditPart.VISUAL_ID:
+			return CollectionVariable_3002;
 		case AttributeAssignmentEditPart.VISUAL_ID:
 			return AttributeAssignment_3003;
 		case ConstraintEditPart.VISUAL_ID:
 			return Constraint_3004;
-		case CollectionVariableEditPart.VISUAL_ID:
-			return CollectionVariable_3005;
+		case ObjectVariableEditPart.VISUAL_ID:
+			return ObjectVariable_3005;
 		case Constraint2EditPart.VISUAL_ID:
 			return Constraint_3006;
 		case MatchingPatternEditPart.VISUAL_ID:

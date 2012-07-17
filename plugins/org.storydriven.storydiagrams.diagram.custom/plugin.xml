@@ -389,6 +389,7 @@
    </extension>
 
    <extension
+         id="activities"
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
             contributorId="org.storydriven.storydiagrams.diagram">
@@ -515,6 +516,19 @@
                tab="documentation">
          </propertySection>
          <propertySection
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityEdgeEdgeGuardSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityEdgeFilter"
+               id="ActivityEdge.guard"
+               tab="general">
+         </propertySection>
+         <propertySection
+               afterSection="ActivityEdge.guard"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityEdgeGuardExpressionSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityEdgeFilter"
+               id="ActivityEdge.expression"
+               tab="general">
+         </propertySection>
+         <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.InitialNodeFilter"
                id="InitialNode.name"
@@ -541,7 +555,13 @@
                tab="documentation">
          </propertySection>
          <propertySection
-               afterSection="ActivityFinalNode.flowOnly"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityFinalNodeSuccessSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFinalNodeFilter"
+               id="ActivityFinalNode.success"
+               tab="general">
+         </propertySection>
+         <propertySection
+               afterSection="ActivityFinalNode.success"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityFinalNodeExpressionSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFinalNodeFilter"
                id="ActivityFinalNode.expression"
@@ -561,21 +581,22 @@
                tab="documentation">
          </propertySection>
          <propertySection
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityEdgeEdgeGuardSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityEdgeFilter"
-               id="ActivityEdge.guard"
-               tab="general">
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.FlowFinalNodeFilter"
+               id="FlowFinalNode.name"
+               tab="documentation">
          </propertySection>
          <propertySection
-               afterSection="ActivityEdge.guard"
-               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityEdgeGuardExpressionSection"
-               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityEdgeFilter"
-               id="ActivityEdge.expression"
-               tab="general">
+               afterSection="FlowFinalNode.name"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.FlowFinalNodeFilter"
+               id="FlowFinalNode.comment"
+               tab="documentation">
          </propertySection>
       </propertySections>
    </extension>
    <extension
+         id="org.storydriven.storydiagrams.patterns"
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
             contributorId="org.storydriven.storydiagrams.diagram">
@@ -611,6 +632,20 @@
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ObjectVariableBindingOperatorSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ObjectVariableFilter"
                id="ObjectVariable.bindingOperator"
+               tab="general">
+         </propertySection>
+         <propertySection
+               afterSection="ObjectVariable.bindingOperator"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CollectionVariableUniqueSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.CollectionVariableFilter"
+               id="CollectionVariable.unique"
+               tab="general">
+         </propertySection>
+         <propertySection
+               afterSection="CollectionVariable.unique"
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CollectionVariableAtLeastOneSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.CollectionVariableFilter"
+               id="CollectionVariable.atLeastOne"
                tab="general">
          </propertySection>
          <propertySection

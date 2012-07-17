@@ -50,11 +50,11 @@ public class ActivityItemSemanticEditPolicy extends StorydiagramsBaseItemSemanti
 		if (StorydiagramsElementTypes.JunctionNode_2006 == req.getElementType()) {
 			return getGEFWrapper(new JunctionNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.ActivityFinalNode_2007 == req.getElementType()) {
-			return getGEFWrapper(new ActivityFinalNodeCreateCommand(req));
-		}
-		if (StorydiagramsElementTypes.FlowFinalNode_2008 == req.getElementType()) {
+		if (StorydiagramsElementTypes.FlowFinalNode_2007 == req.getElementType()) {
 			return getGEFWrapper(new FlowFinalNodeCreateCommand(req));
+		}
+		if (StorydiagramsElementTypes.ActivityFinalNode_2008 == req.getElementType()) {
+			return getGEFWrapper(new ActivityFinalNodeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

@@ -116,75 +116,6 @@
                 href="storydiagrams.ecore#//patterns/StoryPattern/variable"/>
             <ownedChild>
               <domainMetaElement
-                  href="storydiagrams.ecore#//patterns/ObjectVariable"/>
-              <labelMappings
-                  readOnly="true">
-                <diagramLabel
-                    href="storydiagrams.gmfgraph#ObjectVariableOperatorLabel"/>
-              </labelMappings>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="storydiagrams.gmfgraph#ObjectVariableNameLabel"/>
-                <features
-                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                <editableFeatures
-                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-              </labelMappings>
-              <labelMappings
-                  readOnly="true">
-                <diagramLabel
-                    href="storydiagrams.gmfgraph#ObjectVariableTypeLabel"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="storydiagrams.gmftool#//@palette/@tools.1/@tools.0"/>
-              <diagramNode
-                  href="storydiagrams.gmfgraph#ObjectVariableNode"/>
-              <children
-                  compartment="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.1"
-                  referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
-                <containmentFeature
-                    href="storydiagrams.ecore#//patterns/ObjectVariable/attributeAssignment"/>
-                <ownedChild>
-                  <domainMetaElement
-                      href="storydiagrams.ecore#//patterns/AttributeAssignment"/>
-                  <labelMappings>
-                    <diagramLabel
-                        href="storydiagrams.gmfgraph#ExpressionLabel"/>
-                  </labelMappings>
-                  <tool
-                      xsi:type="gmftool:CreationTool"
-                      href="storydiagrams.gmftool#//@palette/@tools.1/@tools.10"/>
-                  <diagramNode
-                      href="storydiagrams.gmfgraph#ExpressionLabel"/>
-                </ownedChild>
-              </children>
-              <children
-                  compartment="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.0"
-                  referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild">
-                <containmentFeature
-                    href="storydiagrams.ecore#//patterns/AbstractVariable/constraint"/>
-              </children>
-              <compartments
-                  children="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1">
-                <compartment
-                    href="storydiagrams.gmfgraph#ObjectVariableConstraintsCompartment"/>
-              </compartments>
-              <compartments
-                  children="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0">
-                <compartment
-                    href="storydiagrams.gmfgraph#ObjectVariableAttributeAssignmentsCompartment"/>
-              </compartments>
-            </ownedChild>
-          </children>
-          <children
-              compartment="//@nodes.2/@ownedChild/@children.0/@ownedChild/@compartments.0"
-              referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild">
-            <containmentFeature
-                href="storydiagrams.ecore#//patterns/StoryPattern/variable"/>
-            <ownedChild>
-              <domainMetaElement
                   href="storydiagrams.ecore#//patterns/CollectionVariable"/>
               <labelMappings
                   readOnly="true">
@@ -211,10 +142,79 @@
               <diagramNode
                   href="storydiagrams.gmfgraph#CollectionVariableNode"/>
               <children
-                  compartment="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.1"
-                  referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
+                  compartment="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.1"
+                  referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild">
                 <containmentFeature
                     href="storydiagrams.ecore#//patterns/ObjectVariable/attributeAssignment"/>
+              </children>
+              <children
+                  compartment="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild">
+                <containmentFeature
+                    href="storydiagrams.ecore#//patterns/AbstractVariable/constraint"/>
+              </children>
+              <compartments
+                  children="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1">
+                <compartment
+                    href="storydiagrams.gmfgraph#CollectionVariableConstraintsCompartment"/>
+              </compartments>
+              <compartments
+                  children="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0">
+                <compartment
+                    href="storydiagrams.gmfgraph#CollectionVariableAttributeAssignmentsCompartment"/>
+              </compartments>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.2/@ownedChild/@children.0/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild">
+            <containmentFeature
+                href="storydiagrams.ecore#//patterns/StoryPattern/variable"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="storydiagrams.ecore#//patterns/ObjectVariable"/>
+              <labelMappings
+                  readOnly="true">
+                <diagramLabel
+                    href="storydiagrams.gmfgraph#ObjectVariableOperatorLabel"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="storydiagrams.gmfgraph#ObjectVariableNameLabel"/>
+                <features
+                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                <editableFeatures
+                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <labelMappings
+                  readOnly="true">
+                <diagramLabel
+                    href="storydiagrams.gmfgraph#ObjectVariableTypeLabel"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="storydiagrams.gmftool#//@palette/@tools.1/@tools.0"/>
+              <diagramNode
+                  href="storydiagrams.gmfgraph#ObjectVariableNode"/>
+              <children
+                  compartment="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.1"
+                  referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild">
+                <containmentFeature
+                    href="storydiagrams.ecore#//patterns/ObjectVariable/attributeAssignment"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="storydiagrams.ecore#//patterns/AttributeAssignment"/>
+                  <labelMappings>
+                    <diagramLabel
+                        href="storydiagrams.gmfgraph#ExpressionLabel"/>
+                  </labelMappings>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="storydiagrams.gmftool#//@palette/@tools.1/@tools.10"/>
+                  <diagramNode
+                      href="storydiagrams.gmfgraph#ExpressionLabel"/>
+                </ownedChild>
               </children>
               <children
                   compartment="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0"
@@ -225,12 +225,12 @@
               <compartments
                   children="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1">
                 <compartment
-                    href="storydiagrams.gmfgraph#CollectionVariableConstraintsCompartment"/>
+                    href="storydiagrams.gmfgraph#ObjectVariableConstraintsCompartment"/>
               </compartments>
               <compartments
                   children="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0">
                 <compartment
-                    href="storydiagrams.gmfgraph#CollectionVariableAttributeAssignmentsCompartment"/>
+                    href="storydiagrams.gmfgraph#ObjectVariableAttributeAssignmentsCompartment"/>
               </compartments>
             </ownedChild>
           </children>
@@ -253,7 +253,7 @@
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1">
+              children="//@nodes.2/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.2/@ownedChild/@children.0/@ownedChild/@children.0">
             <compartment
                 href="storydiagrams.gmfgraph#StoryPatternContentCompartment"/>
           </compartments>
@@ -339,7 +339,7 @@
                 href="storydiagrams.ecore#//patterns/StoryPattern/constraint"/>
           </children>
           <compartments
-              children="//@nodes.3/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.3/@ownedChild/@children.0/@ownedChild/@children.1">
+              children="//@nodes.3/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.3/@ownedChild/@children.0/@ownedChild/@children.0">
             <compartment
                 href="storydiagrams.gmfgraph#StoryPatternContentCompartment"/>
           </compartments>
@@ -393,6 +393,19 @@
         href="storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
     <ownedChild>
       <domainMetaElement
+          href="storydiagrams.ecore#//activities/FlowFinalNode"/>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="storydiagrams.gmftool#//@palette/@tools.0/@tools.10"/>
+      <diagramNode
+          href="storydiagrams.gmfgraph#FlowFinalNodeNode"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
+    <ownedChild>
+      <domainMetaElement
           href="storydiagrams.ecore#//activities/ActivityFinalNode"/>
       <labelMappings
           readOnly="true">
@@ -404,19 +417,6 @@
           href="storydiagrams.gmftool#//@palette/@tools.0/@tools.9"/>
       <diagramNode
           href="storydiagrams.gmfgraph#ActivityFinalNodeNode"/>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature
-        href="storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
-    <ownedChild>
-      <domainMetaElement
-          href="storydiagrams.ecore#//activities/FlowFinalNode"/>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="storydiagrams.gmftool#//@palette/@tools.0/@tools.10"/>
-      <diagramNode
-          href="storydiagrams.gmfgraph#FlowFinalNodeNode"/>
     </ownedChild>
   </nodes>
   <links>

@@ -402,7 +402,26 @@
             dy="23"/>
         <children
             xsi:type="gmfgraph:Polyline"
-            name="crossNWSE"/>
+            name="crossNWSE">
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <template/>
+          <template
+              x="23"
+              y="23"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Polyline"
+            name="crossSWNE">
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <template
+              y="23"/>
+          <template
+              x="23"/>
+        </children>
       </actualFigure>
     </descriptors>
     <descriptors
@@ -1327,7 +1346,8 @@
       figure="ActivityFinalNodeFigureDescriptor"/>
   <nodes
       name="FlowFinalNodeNode"
-      figure="FlowFinalNodeFigureDescriptor"/>
+      figure="FlowFinalNodeFigureDescriptor"
+      resizeConstraint="NONE"/>
   <nodes
       name="StoryPatternNode"
       figure="StoryPatternFigureDescriptor"/>

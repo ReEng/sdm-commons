@@ -8,13 +8,16 @@ import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PolylineShape;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gef.editpolicies.ResizableEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -36,7 +39,7 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2008;
+	public static final int VISUAL_ID = 2007;
 
 	/**
 	 * @generated
@@ -102,6 +105,18 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(23, 23);
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPolicy getPrimaryDragEditPolicy() {
+		EditPolicy result = super.getPrimaryDragEditPolicy();
+		if (result instanceof ResizableEditPolicy) {
+			ResizableEditPolicy ep = (ResizableEditPolicy) result;
+			ep.setResizeDirections(PositionConstants.NONE);
+		}
 		return result;
 	}
 
@@ -210,10 +225,10 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof JunctionNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
+		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
-		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart) {
+		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
 			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		return types;
@@ -231,8 +246,8 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
 			types.add(StorydiagramsElementTypes.InitialNode_2005);
 			types.add(StorydiagramsElementTypes.JunctionNode_2006);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2007);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2008);
+			types.add(StorydiagramsElementTypes.FlowFinalNode_2007);
+			types.add(StorydiagramsElementTypes.ActivityFinalNode_2008);
 		}
 		return types;
 	}
@@ -258,8 +273,8 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
 			types.add(StorydiagramsElementTypes.InitialNode_2005);
 			types.add(StorydiagramsElementTypes.JunctionNode_2006);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2007);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2008);
+			types.add(StorydiagramsElementTypes.FlowFinalNode_2007);
+			types.add(StorydiagramsElementTypes.ActivityFinalNode_2008);
 		}
 		return types;
 	}
@@ -288,8 +303,18 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			PolylineShape crossNWSE0 = new PolylineShape();
+			crossNWSE0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+			crossNWSE0.addPoint(new Point(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			crossNWSE0.setForegroundColor(ColorConstants.black);
 
 			this.add(crossNWSE0);
+
+			PolylineShape crossSWNE0 = new PolylineShape();
+			crossSWNE0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(23)));
+			crossSWNE0.addPoint(new Point(getMapMode().DPtoLP(23), getMapMode().DPtoLP(0)));
+			crossSWNE0.setForegroundColor(ColorConstants.black);
+
+			this.add(crossSWNE0);
 
 		}
 

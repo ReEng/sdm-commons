@@ -181,11 +181,11 @@ public class StorydiagramsVisualIDRegistry {
 			if (ActivitiesPackage.eINSTANCE.getJunctionNode().isSuperTypeOf(domainElement.eClass())) {
 				return JunctionNodeEditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
-				return ActivityFinalNodeEditPart.VISUAL_ID;
-			}
 			if (ActivitiesPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
 				return FlowFinalNodeEditPart.VISUAL_ID;
+			}
+			if (ActivitiesPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityFinalNodeEditPart.VISUAL_ID;
 			}
 			break;
 		case ModifyingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
@@ -194,26 +194,16 @@ public class StorydiagramsVisualIDRegistry {
 			}
 			break;
 		case StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getObjectVariable().isSuperTypeOf(domainElement.eClass())) {
-				return ObjectVariableEditPart.VISUAL_ID;
-			}
 			if (PatternsPackage.eINSTANCE.getCollectionVariable().isSuperTypeOf(domainElement.eClass())) {
 				return CollectionVariableEditPart.VISUAL_ID;
+			}
+			if (PatternsPackage.eINSTANCE.getObjectVariable().isSuperTypeOf(domainElement.eClass())) {
+				return ObjectVariableEditPart.VISUAL_ID;
 			}
 			break;
 		case StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
 			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
 				return Constraint2EditPart.VISUAL_ID;
-			}
-			break;
-		case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
-				return ConstraintEditPart.VISUAL_ID;
-			}
-			break;
-		case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getAttributeAssignment().isSuperTypeOf(domainElement.eClass())) {
-				return AttributeAssignmentEditPart.VISUAL_ID;
 			}
 			break;
 		case CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID:
@@ -226,17 +216,27 @@ public class StorydiagramsVisualIDRegistry {
 				return AttributeAssignmentEditPart.VISUAL_ID;
 			}
 			break;
+		case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
+			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return ConstraintEditPart.VISUAL_ID;
+			}
+			break;
+		case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
+			if (PatternsPackage.eINSTANCE.getAttributeAssignment().isSuperTypeOf(domainElement.eClass())) {
+				return AttributeAssignmentEditPart.VISUAL_ID;
+			}
+			break;
 		case MatchingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
 			if (PatternsPackage.eINSTANCE.getMatchingPattern().isSuperTypeOf(domainElement.eClass())) {
 				return MatchingPatternEditPart.VISUAL_ID;
 			}
 			break;
 		case MatchingPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getObjectVariable().isSuperTypeOf(domainElement.eClass())) {
-				return ObjectVariableEditPart.VISUAL_ID;
-			}
 			if (PatternsPackage.eINSTANCE.getCollectionVariable().isSuperTypeOf(domainElement.eClass())) {
 				return CollectionVariableEditPart.VISUAL_ID;
+			}
+			if (PatternsPackage.eINSTANCE.getObjectVariable().isSuperTypeOf(domainElement.eClass())) {
+				return ObjectVariableEditPart.VISUAL_ID;
 			}
 			break;
 		case MatchingPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
@@ -288,10 +288,10 @@ public class StorydiagramsVisualIDRegistry {
 			if (JunctionNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ActivityFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
+			if (FlowFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (FlowFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -345,23 +345,6 @@ public class StorydiagramsVisualIDRegistry {
 				return true;
 			}
 			break;
-		case ObjectVariableEditPart.VISUAL_ID:
-			if (ObjectVariableOperatorEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ObjectVariableNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ObjectVariableTypeLabelEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case CollectionVariableEditPart.VISUAL_ID:
 			if (CollectionVariableOperatorLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -379,6 +362,23 @@ public class StorydiagramsVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ObjectVariableEditPart.VISUAL_ID:
+			if (ObjectVariableOperatorEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ObjectVariableNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ObjectVariableTypeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case MatchingPatternEditPart.VISUAL_ID:
 			if (MatchingPatternStoryPatternContentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -393,25 +393,15 @@ public class StorydiagramsVisualIDRegistry {
 			}
 			break;
 		case StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-			if (ObjectVariableEditPart.VISUAL_ID == nodeVisualID) {
+			if (CollectionVariableEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (CollectionVariableEditPart.VISUAL_ID == nodeVisualID) {
+			if (ObjectVariableEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
 			if (Constraint2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
-			if (ConstraintEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-			if (AttributeAssignmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -425,16 +415,26 @@ public class StorydiagramsVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
+			if (ConstraintEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
+			if (AttributeAssignmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case MatchingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
 			if (MatchingPatternEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case MatchingPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-			if (ObjectVariableEditPart.VISUAL_ID == nodeVisualID) {
+			if (CollectionVariableEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (CollectionVariableEditPart.VISUAL_ID == nodeVisualID) {
+			if (ObjectVariableEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
