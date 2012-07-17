@@ -56,9 +56,10 @@ public class ActivityCallNodeCalleeSection extends AbstractEListComboSection<Cal
 
 	@Override
 	protected List<Callable> getItems() {
-		Activity activity = ActivityUtil.getActivity(getElement());
-
 		List<Callable> items = new ArrayList<Callable>();
+		items.add(null);
+
+		Activity activity = ActivityUtil.getActivity(getElement());
 		items.addAll(ResourceManager.get(activity).getActivities());
 
 		return items;

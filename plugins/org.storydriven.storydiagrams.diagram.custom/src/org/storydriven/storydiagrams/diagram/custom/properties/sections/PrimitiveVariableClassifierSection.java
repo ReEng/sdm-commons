@@ -1,5 +1,6 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EDataType;
@@ -13,7 +14,12 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
 public class PrimitiveVariableClassifierSection extends AbstractEListComboSection<EDataType> {
 	@Override
 	protected List<EDataType> getItems() {
-		return ResourceManager.get(ActivityUtil.getActivity(getElement())).getEDataTypes();
+		List<EDataType> items = new ArrayList<EDataType>();
+		items.add(null);
+
+		items.addAll(ResourceManager.get(ActivityUtil.getActivity(getElement())).getEDataTypes());
+
+		return items;
 	}
 
 	@Override

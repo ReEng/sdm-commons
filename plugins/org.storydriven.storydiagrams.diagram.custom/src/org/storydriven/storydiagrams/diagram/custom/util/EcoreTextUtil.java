@@ -13,6 +13,10 @@ import org.eclipse.emf.ecore.ETypeParameter;
 
 public class EcoreTextUtil {
 	public static String getQualifiedText(EClassifier eClassifier) {
+		if (eClassifier == null) {
+			return ""; //$NON-NLS-1$
+		}
+
 		StringBuilder builder = new StringBuilder();
 
 		append(builder, eClassifier);
@@ -39,6 +43,9 @@ public class EcoreTextUtil {
 	}
 
 	public static String getText(EAttribute eAttribute) {
+		if (eAttribute == null) {
+			return "";
+		}
 		return append(new StringBuilder(), eAttribute).toString();
 	}
 
@@ -63,6 +70,9 @@ public class EcoreTextUtil {
 	}
 
 	private static StringBuilder append(StringBuilder builder, EReference eReference) {
+		if (eReference == null) {
+			return builder.append(""); //$NON-NLS-1$
+		}
 		builder.append(eReference.getName());
 		EClassifier eType = eReference.getEType();
 		if (eType != null) {

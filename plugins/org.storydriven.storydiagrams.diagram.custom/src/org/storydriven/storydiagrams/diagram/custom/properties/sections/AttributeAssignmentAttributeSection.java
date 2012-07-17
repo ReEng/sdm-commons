@@ -1,6 +1,6 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -14,11 +14,14 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
 public class AttributeAssignmentAttributeSection extends AbstractEListComboSection<EAttribute> {
 	@Override
 	protected List<EAttribute> getItems() {
+		List<EAttribute> items = new ArrayList<EAttribute>();
+		items.add(null);
+
 		EClass classifier = getElement().getObjectVariable().getClassifier();
 		if (classifier != null) {
-			return classifier.getEAllAttributes();
+			items.addAll(classifier.getEAllAttributes());
 		}
-		return Collections.emptyList();
+		return items;
 	}
 
 	@Override

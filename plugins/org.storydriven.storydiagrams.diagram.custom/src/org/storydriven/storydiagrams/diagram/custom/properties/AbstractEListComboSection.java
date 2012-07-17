@@ -43,11 +43,7 @@ public abstract class AbstractEListComboSection<E> extends AbstractSection {
 		combo.setItems(itemTexts);
 		if (getElement() != null) {
 			Object value = getElement().eGet(getFeature());
-			if (value != null) {
-				combo.select(getIndex(value));
-			}
-		} else {
-			combo.select(-1);
+			combo.select(getIndex(value));
 		}
 	}
 

@@ -1,5 +1,6 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
@@ -38,7 +39,10 @@ public class ObjectVariableClassifierSection extends AbstractEListComboSection<E
 
 	@Override
 	protected List<EClass> getItems() {
-		return ResourceManager.get(ActivityUtil.getActivity(getElement())).getEClasses();
+		List<EClass> items = new ArrayList<EClass>();
+		items.add(null);
+		items.addAll(ResourceManager.get(ActivityUtil.getActivity(getElement())).getEClasses());
+		return items;
 	}
 
 	@Override

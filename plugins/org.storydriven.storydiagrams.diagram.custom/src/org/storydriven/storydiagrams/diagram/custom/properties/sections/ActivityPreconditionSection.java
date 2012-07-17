@@ -39,8 +39,6 @@ public class ActivityPreconditionSection extends AbstractEListComboSection<Match
 	@Override
 	protected List<MatchingStoryNode> getItems() {
 		List<MatchingStoryNode> nodes = new ArrayList<MatchingStoryNode>();
-
-		// add null
 		nodes.add(null);
 
 		TreeIterator<Object> it = EcoreUtil.getAllContents(getEditingDomain().getResourceSet(), true);
