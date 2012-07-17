@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.storydriven.core.expressions.common.ArithmeticExpression;
 import org.storydriven.core.expressions.common.LogicalExpression;
@@ -617,15 +618,50 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 		assert expression.getValue() != null;
 		assert !"".equals(expression.getValue());
 
-		
-		// TODO: we need a parser for literal expressions!
-		System.err.println("the literal expression is ALWAYS seen as String!!!");
-		EDataType type = EcorePackage.Literals.ESTRING;
-		/*
-		 * Let EcoreFactory create an Object of the appropriate primitive type
-		 */
-		Object value = type.getEPackage().getEFactoryInstance()
-				.createFromString(type, expression.getValue());
+		// TODO: implement better parser for literal expressions?
+		EDataType type = null;
+		Object value = null;
+
+		// BOOLEAN
+		type = EcorePackage.Literals.EBOOLEAN;
+		try {
+			value = EcoreFactory.eINSTANCE.createFromString(type, expression.getValue());
+		} catch (IllegalArgumentException e) {
+			// nothing?
+		}
+
+		// INTEGER
+		if (value == null) {
+			type = EcorePackage.Literals.EINT;
+			try {
+				value = EcoreFactory.eINSTANCE.createFromString(type, expression.getValue());
+			} catch (IllegalArgumentException e) {
+				// nothing?
+			}
+		}
+
+		// DECIMAL
+		if (value == null) {
+			type = EcorePackage.Literals.EBIG_DECIMAL;
+			try {
+				value = EcoreFactory.eINSTANCE.createFromString(type, expression.getValue());
+			} catch (IllegalArgumentException e) {
+				// nothing?
+			}
+		}
+
+		// STRING
+		if (value == null) {
+			String v = expression.getValue();
+			// TODO: REGEX?
+			if ((v.startsWith("'") && v.endsWith("'")) || (v.startsWith("\"") && v.endsWith("\""))) {
+				type = EcorePackage.Literals.ESTRING;
+				value = EcoreFactory.eINSTANCE.createFromString(type, v.substring(1, v.length() - 1));
+			}
+		}
+
+		assert type != null;
+		assert value != null;
 
 		return new Variable<EClassifier>(SDMInterpreterConstants.INTERNAL_VAR_NAME, type, value);
 	}
