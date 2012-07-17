@@ -382,41 +382,28 @@
     <descriptors
         name="FlowFinalNodeFigureDescriptor">
       <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="FlowFinalNodeContainerRectangle"
-          outline="false">
+          xsi:type="gmfgraph:Ellipse"
+          name="FlowFinalNodeEllipse">
         <layout
-            xsi:type="gmfgraph:GridLayout"
-            equalWidth="false"/>
+            xsi:type="gmfgraph:XYLayout"/>
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"/>
+        <maximumSize
+            dx="23"
+            dy="23"/>
+        <minimumSize
+            dx="23"
+            dy="23"/>
+        <preferredSize
+            dx="23"
+            dy="23"/>
         <children
-            xsi:type="gmfgraph:Ellipse"
-            name="FlowFinalNodeEllipse">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"/>
-          <foregroundColor
-              xsi:type="gmfgraph:ConstantColor"
-              value="black"/>
-          <maximumSize
-              dx="23"
-              dy="23"/>
-          <minimumSize
-              dx="23"
-              dy="23"/>
-          <preferredSize
-              dx="23"
-              dy="23"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="FlowFinalNodeLabel">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"/>
-        </children>
+            xsi:type="gmfgraph:Polyline"
+            name="crossNWSE"/>
       </actualFigure>
-      <accessors
-          accessor="getFlowFinalNodeLabel"
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="StoryPatternFigureDescriptor">
@@ -747,13 +734,13 @@
             name="LinkVariableTargetEnd"/>
       </actualFigure>
       <accessors
-          accessor="getLinkVariableSourceEndFigure"
+          accessor="getLinkVariableSourceEndLabel"
           figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
       <accessors
-          accessor="getLinkVariableOperatorFigure"
+          accessor="getLinkVariableOperatorLabel"
           figure="//@figures.0/@descriptors.11/@actualFigure/@children.1"/>
       <accessors
-          accessor="getLinkVariableTargetEndFigure"
+          accessor="getLinkVariableTargetEndLabel"
           figure="//@figures.0/@descriptors.11/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors
@@ -769,10 +756,10 @@
             value="black"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="ContainmentRelationOperator"/>
+            name="InclusionLinkLabel"/>
       </actualFigure>
       <accessors
-          accessor="getContainmentRelationOperatorFigure"
+          accessor="getInclusionLinkLabel"
           figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
@@ -1504,7 +1491,7 @@
         xsi:type="gmfgraph:AlignmentFacet"/>
   </labels>
   <labels
-      name="ContainmentRelationOperatorLabel"
+      name="InclusionLinkLabel"
       figure="InclusionLinkFigureDescriptor"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.12/@accessors.0">

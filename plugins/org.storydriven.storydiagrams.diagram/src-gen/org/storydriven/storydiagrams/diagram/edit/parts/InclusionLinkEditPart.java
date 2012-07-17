@@ -19,7 +19,7 @@ public class InclusionLinkEditPart extends ConnectionNodeEditPart implements ITr
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4007;
+	public static final int VISUAL_ID = 4003;
 
 	/**
 	 * @generated
@@ -40,9 +40,8 @@ public class InclusionLinkEditPart extends ConnectionNodeEditPart implements ITr
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ContainmentRelationOperatorLabelEditPart) {
-			((ContainmentRelationOperatorLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getContainmentRelationOperatorFigure());
+		if (childEditPart instanceof InclusionLinkLabelEditPart) {
+			((InclusionLinkLabelEditPart) childEditPart).setLabel(getPrimaryShape().getInclusionLinkLabel());
 			return true;
 		}
 		return false;
@@ -62,7 +61,7 @@ public class InclusionLinkEditPart extends ConnectionNodeEditPart implements ITr
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ContainmentRelationOperatorLabelEditPart) {
+		if (childEditPart instanceof InclusionLinkLabelEditPart) {
 			return true;
 		}
 		return false;
@@ -106,7 +105,7 @@ public class InclusionLinkEditPart extends ConnectionNodeEditPart implements ITr
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fContainmentRelationOperatorFigure;
+		private WrappingLabel fInclusionLinkLabel;
 
 		/**
 		 * @generated
@@ -123,18 +122,18 @@ public class InclusionLinkEditPart extends ConnectionNodeEditPart implements ITr
 		 */
 		private void createContents() {
 
-			fContainmentRelationOperatorFigure = new WrappingLabel();
-			fContainmentRelationOperatorFigure.setText("");
+			fInclusionLinkLabel = new WrappingLabel();
+			fInclusionLinkLabel.setText("");
 
-			this.add(fContainmentRelationOperatorFigure);
+			this.add(fInclusionLinkLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getContainmentRelationOperatorFigure() {
-			return fContainmentRelationOperatorFigure;
+		public WrappingLabel getInclusionLinkLabel() {
+			return fInclusionLinkLabel;
 		}
 
 	}

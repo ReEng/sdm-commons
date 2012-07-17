@@ -21,7 +21,7 @@ public class CollectionVariableCollectionVariableConstraintsCompartmentEditPart 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7030;
+	public static final int VISUAL_ID = 7006;
 
 	/**
 	 * @generated

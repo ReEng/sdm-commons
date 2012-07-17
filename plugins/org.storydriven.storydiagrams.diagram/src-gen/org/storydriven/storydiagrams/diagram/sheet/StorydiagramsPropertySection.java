@@ -10,7 +10,9 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.ui.provider.PropertySource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AdvancedPropertySection;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IWorkbenchPart;
@@ -54,6 +56,20 @@ public class StorydiagramsPropertySection extends AdvancedPropertySection implem
 	 * @generated
 	 */
 	protected Object transformSelection(Object selected) {
+
+		if (selected instanceof EditPart) {
+			Object model = ((EditPart) selected).getModel();
+			return model instanceof View ? ((View) model).getElement() : null;
+		}
+		if (selected instanceof View) {
+			return ((View) selected).getElement();
+		}
+		if (selected instanceof IAdaptable) {
+			View view = (View) ((IAdaptable) selected).getAdapter(View.class);
+			if (view != null) {
+				return view.getElement();
+			}
+		}
 		return selected;
 	}
 

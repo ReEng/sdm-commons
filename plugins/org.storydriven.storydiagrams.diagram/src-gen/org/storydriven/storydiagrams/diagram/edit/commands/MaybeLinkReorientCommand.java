@@ -71,7 +71,7 @@ public class MaybeLinkReorientCommand extends EditElementCommand {
 			return false;
 		}
 		StoryPattern container = (StoryPattern) getLink().eContainer();
-		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canExistMaybeLink_4008(container,
+		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canExistMaybeLink_4004(container,
 				getLink(), getNewSource(), target);
 	}
 
@@ -87,7 +87,7 @@ public class MaybeLinkReorientCommand extends EditElementCommand {
 			return false;
 		}
 		StoryPattern container = (StoryPattern) getLink().eContainer();
-		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canExistMaybeLink_4008(container,
+		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canExistMaybeLink_4004(container,
 				getLink(), source, getNewTarget());
 	}
 

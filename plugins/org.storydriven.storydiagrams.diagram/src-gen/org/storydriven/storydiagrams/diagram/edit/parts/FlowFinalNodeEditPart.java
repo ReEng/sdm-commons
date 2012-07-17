@@ -6,24 +6,20 @@ import java.util.List;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Ellipse;
-import org.eclipse.draw2d.GridData;
-import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.PolylineShape;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.Request;
-import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
-import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableShapeEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -40,7 +36,7 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2016;
+	public static final int VISUAL_ID = 2008;
 
 	/**
 	 * @generated
@@ -74,22 +70,14 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
+		XYLayoutEditPolicy lep = new XYLayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = super.createChildEditPolicy(child);
 				if (result == null) {
-					result = new NonResizableEditPolicy();
+					return new ResizableShapeEditPolicy();
 				}
 				return result;
-			}
-
-			protected Command getMoveChildrenCommand(Request request) {
-				return null;
-			}
-
-			protected Command getCreateCommand(CreateRequest request) {
-				return null;
 			}
 		};
 		return lep;
@@ -113,7 +101,7 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(23, 23);
 		return result;
 	}
 
@@ -195,7 +183,7 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		return types;
 	}
 
@@ -205,28 +193,28 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ActivityCallNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof StatementNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof InitialNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof JunctionNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		return types;
 	}
@@ -236,15 +224,15 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4005) {
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2009);
-			types.add(StorydiagramsElementTypes.StatementNode_2010);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2011);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_2012);
-			types.add(StorydiagramsElementTypes.InitialNode_2013);
-			types.add(StorydiagramsElementTypes.JunctionNode_2014);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2015);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2016);
+		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);
+			types.add(StorydiagramsElementTypes.StatementNode_2002);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2003);
+			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
+			types.add(StorydiagramsElementTypes.InitialNode_2005);
+			types.add(StorydiagramsElementTypes.JunctionNode_2006);
+			types.add(StorydiagramsElementTypes.ActivityFinalNode_2007);
+			types.add(StorydiagramsElementTypes.FlowFinalNode_2008);
 		}
 		return types;
 	}
@@ -254,7 +242,7 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		return types;
 	}
 
@@ -263,15 +251,15 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4005) {
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2009);
-			types.add(StorydiagramsElementTypes.StatementNode_2010);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2011);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_2012);
-			types.add(StorydiagramsElementTypes.InitialNode_2013);
-			types.add(StorydiagramsElementTypes.JunctionNode_2014);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2015);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2016);
+		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);
+			types.add(StorydiagramsElementTypes.StatementNode_2002);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2003);
+			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
+			types.add(StorydiagramsElementTypes.InitialNode_2005);
+			types.add(StorydiagramsElementTypes.JunctionNode_2006);
+			types.add(StorydiagramsElementTypes.ActivityFinalNode_2007);
+			types.add(StorydiagramsElementTypes.FlowFinalNode_2008);
 		}
 		return types;
 	}
@@ -279,24 +267,18 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class FlowFinalNodeFigureDescriptor extends RectangleFigure {
-
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFlowFinalNodeLabel;
+	public class FlowFinalNodeFigureDescriptor extends Ellipse {
 
 		/**
 		 * @generated
 		 */
 		public FlowFinalNodeFigureDescriptor() {
-
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = false;
-			this.setLayoutManager(layoutThis);
-
-			this.setOutline(false);
+			this.setLayoutManager(new XYLayout());
+			this.setForegroundColor(ColorConstants.black);
+			this.setBackgroundColor(ColorConstants.white);
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
 			createContents();
 		}
 
@@ -305,42 +287,10 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			Ellipse flowFinalNodeEllipse0 = new Ellipse();
-			flowFinalNodeEllipse0.setForegroundColor(ColorConstants.black);
-			flowFinalNodeEllipse0.setPreferredSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
-			flowFinalNodeEllipse0.setMaximumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
-			flowFinalNodeEllipse0.setMinimumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			PolylineShape crossNWSE0 = new PolylineShape();
 
-			GridData constraintFlowFinalNodeEllipse0 = new GridData();
-			constraintFlowFinalNodeEllipse0.verticalAlignment = GridData.CENTER;
-			constraintFlowFinalNodeEllipse0.horizontalAlignment = GridData.CENTER;
-			constraintFlowFinalNodeEllipse0.horizontalIndent = 0;
-			constraintFlowFinalNodeEllipse0.horizontalSpan = 1;
-			constraintFlowFinalNodeEllipse0.verticalSpan = 1;
-			constraintFlowFinalNodeEllipse0.grabExcessHorizontalSpace = false;
-			constraintFlowFinalNodeEllipse0.grabExcessVerticalSpace = false;
-			this.add(flowFinalNodeEllipse0, constraintFlowFinalNodeEllipse0);
+			this.add(crossNWSE0);
 
-			fFlowFinalNodeLabel = new WrappingLabel();
-			fFlowFinalNodeLabel.setText("");
-
-			GridData constraintFFlowFinalNodeLabel = new GridData();
-			constraintFFlowFinalNodeLabel.verticalAlignment = GridData.CENTER;
-			constraintFFlowFinalNodeLabel.horizontalAlignment = GridData.CENTER;
-			constraintFFlowFinalNodeLabel.horizontalIndent = 0;
-			constraintFFlowFinalNodeLabel.horizontalSpan = 1;
-			constraintFFlowFinalNodeLabel.verticalSpan = 1;
-			constraintFFlowFinalNodeLabel.grabExcessHorizontalSpace = true;
-			constraintFFlowFinalNodeLabel.grabExcessVerticalSpace = false;
-			this.add(fFlowFinalNodeLabel, constraintFFlowFinalNodeLabel);
-
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFlowFinalNodeLabel() {
-			return fFlowFinalNodeLabel;
 		}
 
 	}

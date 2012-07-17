@@ -68,7 +68,7 @@ public class InclusionLinkCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canCreateInclusionLink_4007(getContainer(),
+		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canCreateInclusionLink_4003(getContainer(),
 				getSource(), getTarget());
 	}
 

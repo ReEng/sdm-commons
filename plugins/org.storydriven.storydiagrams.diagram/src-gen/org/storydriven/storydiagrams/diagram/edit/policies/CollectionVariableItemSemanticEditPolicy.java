@@ -39,7 +39,7 @@ public class CollectionVariableItemSemanticEditPolicy extends StorydiagramsBaseI
 	 * @generated
 	 */
 	public CollectionVariableItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.CollectionVariable_3023);
+		super(StorydiagramsElementTypes.CollectionVariable_3005);
 	}
 
 	/**
@@ -155,13 +155,13 @@ public class CollectionVariableItemSemanticEditPolicy extends StorydiagramsBaseI
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (StorydiagramsElementTypes.LinkVariable_4006 == req.getElementType()) {
+		if (StorydiagramsElementTypes.LinkVariable_4002 == req.getElementType()) {
 			return getGEFWrapper(new LinkVariableCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (StorydiagramsElementTypes.InclusionLink_4007 == req.getElementType()) {
+		if (StorydiagramsElementTypes.InclusionLink_4003 == req.getElementType()) {
 			return getGEFWrapper(new InclusionLinkCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (StorydiagramsElementTypes.MaybeLink_4008 == req.getElementType()) {
+		if (StorydiagramsElementTypes.MaybeLink_4004 == req.getElementType()) {
 			return getGEFWrapper(new MaybeLinkCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -171,13 +171,13 @@ public class CollectionVariableItemSemanticEditPolicy extends StorydiagramsBaseI
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (StorydiagramsElementTypes.LinkVariable_4006 == req.getElementType()) {
+		if (StorydiagramsElementTypes.LinkVariable_4002 == req.getElementType()) {
 			return getGEFWrapper(new LinkVariableCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (StorydiagramsElementTypes.InclusionLink_4007 == req.getElementType()) {
+		if (StorydiagramsElementTypes.InclusionLink_4003 == req.getElementType()) {
 			return getGEFWrapper(new InclusionLinkCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (StorydiagramsElementTypes.MaybeLink_4008 == req.getElementType()) {
+		if (StorydiagramsElementTypes.MaybeLink_4004 == req.getElementType()) {
 			return getGEFWrapper(new MaybeLinkCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;

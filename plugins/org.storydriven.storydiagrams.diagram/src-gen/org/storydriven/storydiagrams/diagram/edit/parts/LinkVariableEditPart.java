@@ -19,7 +19,7 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4006;
+	public static final int VISUAL_ID = 4002;
 
 	/**
 	 * @generated
@@ -42,17 +42,17 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof LinkVariableSourceEndLabelEditPart) {
 			((LinkVariableSourceEndLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getLinkVariableSourceEndFigure());
+					.getLinkVariableSourceEndLabel());
 			return true;
 		}
 		if (childEditPart instanceof LinkVariableOperatorLabelEditPart) {
 			((LinkVariableOperatorLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getLinkVariableOperatorFigure());
+					.getLinkVariableOperatorLabel());
 			return true;
 		}
 		if (childEditPart instanceof LinkVariableTargetEndLabelEditPart) {
 			((LinkVariableTargetEndLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getLinkVariableTargetEndFigure());
+					.getLinkVariableTargetEndLabel());
 			return true;
 		}
 		return false;
@@ -122,15 +122,15 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fLinkVariableSourceEndFigure;
+		private WrappingLabel fLinkVariableSourceEndLabel;
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fLinkVariableOperatorFigure;
+		private WrappingLabel fLinkVariableOperatorLabel;
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fLinkVariableTargetEndFigure;
+		private WrappingLabel fLinkVariableTargetEndLabel;
 
 		/**
 		 * @generated
@@ -147,42 +147,42 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 		 */
 		private void createContents() {
 
-			fLinkVariableSourceEndFigure = new WrappingLabel();
-			fLinkVariableSourceEndFigure.setText("");
+			fLinkVariableSourceEndLabel = new WrappingLabel();
+			fLinkVariableSourceEndLabel.setText("");
 
-			this.add(fLinkVariableSourceEndFigure);
+			this.add(fLinkVariableSourceEndLabel);
 
-			fLinkVariableOperatorFigure = new WrappingLabel();
-			fLinkVariableOperatorFigure.setText("");
+			fLinkVariableOperatorLabel = new WrappingLabel();
+			fLinkVariableOperatorLabel.setText("");
 
-			this.add(fLinkVariableOperatorFigure);
+			this.add(fLinkVariableOperatorLabel);
 
-			fLinkVariableTargetEndFigure = new WrappingLabel();
-			fLinkVariableTargetEndFigure.setText("");
+			fLinkVariableTargetEndLabel = new WrappingLabel();
+			fLinkVariableTargetEndLabel.setText("");
 
-			this.add(fLinkVariableTargetEndFigure);
+			this.add(fLinkVariableTargetEndLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getLinkVariableSourceEndFigure() {
-			return fLinkVariableSourceEndFigure;
+		public WrappingLabel getLinkVariableSourceEndLabel() {
+			return fLinkVariableSourceEndLabel;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getLinkVariableOperatorFigure() {
-			return fLinkVariableOperatorFigure;
+		public WrappingLabel getLinkVariableOperatorLabel() {
+			return fLinkVariableOperatorLabel;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getLinkVariableTargetEndFigure() {
-			return fLinkVariableTargetEndFigure;
+		public WrappingLabel getLinkVariableTargetEndLabel() {
+			return fLinkVariableTargetEndLabel;
 		}
 
 	}

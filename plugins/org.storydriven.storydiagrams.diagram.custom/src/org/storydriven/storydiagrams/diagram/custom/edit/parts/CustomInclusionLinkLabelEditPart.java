@@ -5,11 +5,11 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.diagram.custom.util.SdmUtility;
-import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationOperatorLabelEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.InclusionLinkLabelEditPart;
 import org.storydriven.storydiagrams.patterns.InclusionLink;
 
-public class CustomInclusionLinkOperatorLabelEditPart extends ContainmentRelationOperatorLabelEditPart {
-	public CustomInclusionLinkOperatorLabelEditPart(View view) {
+public class CustomInclusionLinkLabelEditPart extends InclusionLinkLabelEditPart {
+	public CustomInclusionLinkLabelEditPart(View view) {
 		super(view);
 	}
 

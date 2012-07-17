@@ -479,7 +479,7 @@
     <labelMappings
         readOnly="true">
       <diagramLabel
-          href="storydiagrams.gmfgraph#ContainmentRelationOperatorLabel"/>
+          href="storydiagrams.gmfgraph#InclusionLinkLabel"/>
     </labelMappings>
     <containmentFeature
         href="storydiagrams.ecore#//patterns/StoryPattern/linkVariable"/>

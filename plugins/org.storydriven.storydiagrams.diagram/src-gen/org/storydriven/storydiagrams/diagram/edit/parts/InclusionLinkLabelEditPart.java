@@ -47,12 +47,12 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsParserProvid
 /**
  * @generated
  */
-public class WrappingLabel14EditPart extends LabelEditPart implements ITextAwareEditPart {
+public class InclusionLinkLabelEditPart extends LabelEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6011;
+	public static final int VISUAL_ID = 6005;
 
 	/**
 	 * @generated
@@ -80,14 +80,14 @@ public class WrappingLabel14EditPart extends LabelEditPart implements ITextAware
 	static {
 		registerSnapBackPosition(
 				StorydiagramsVisualIDRegistry
-						.getType(org.storydriven.storydiagrams.diagram.edit.parts.WrappingLabel14EditPart.VISUAL_ID),
-				new Point(0, -1));
+						.getType(org.storydriven.storydiagrams.diagram.edit.parts.InclusionLinkLabelEditPart.VISUAL_ID),
+				new Point(0, -10));
 	}
 
 	/**
 	 * @generated
 	 */
-	public WrappingLabel14EditPart(View view) {
+	public InclusionLinkLabelEditPart(View view) {
 		super(view);
 	}
 
@@ -293,10 +293,10 @@ public class WrappingLabel14EditPart extends LabelEditPart implements ITextAware
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.MaybeLink_4008,
+							StorydiagramsElementTypes.InclusionLink_4003,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
-									.getType(org.storydriven.storydiagrams.diagram.edit.parts.WrappingLabel14EditPart.VISUAL_ID));
+									.getType(org.storydriven.storydiagrams.diagram.edit.parts.InclusionLinkLabelEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

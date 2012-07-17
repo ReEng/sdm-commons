@@ -20,7 +20,7 @@ public class StoryPatternStoryPatternContentCompartmentEditPart extends ShapeCom
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7026;
+	public static final int VISUAL_ID = 7002;
 
 	/**
 	 * @generated

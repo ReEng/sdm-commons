@@ -16,17 +16,17 @@ public class MatchingPatternStoryPatternContentCompartmentItemSemanticEditPolicy
 	 * @generated
 	 */
 	public MatchingPatternStoryPatternContentCompartmentItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.MatchingPattern_3025);
+		super(StorydiagramsElementTypes.MatchingPattern_3007);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.ObjectVariable_3020 == req.getElementType()) {
+		if (StorydiagramsElementTypes.ObjectVariable_3002 == req.getElementType()) {
 			return getGEFWrapper(new ObjectVariableCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.CollectionVariable_3023 == req.getElementType()) {
+		if (StorydiagramsElementTypes.CollectionVariable_3005 == req.getElementType()) {
 			return getGEFWrapper(new CollectionVariableCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

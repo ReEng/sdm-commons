@@ -52,58 +52,58 @@ public class StorydiagramsModelingAssistantProvider extends ModelingAssistantPro
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof ActivityEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(8);
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2009);
-			types.add(StorydiagramsElementTypes.StatementNode_2010);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2011);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_2012);
-			types.add(StorydiagramsElementTypes.InitialNode_2013);
-			types.add(StorydiagramsElementTypes.JunctionNode_2014);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2015);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2016);
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);
+			types.add(StorydiagramsElementTypes.StatementNode_2002);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2003);
+			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
+			types.add(StorydiagramsElementTypes.InitialNode_2005);
+			types.add(StorydiagramsElementTypes.JunctionNode_2006);
+			types.add(StorydiagramsElementTypes.ActivityFinalNode_2007);
+			types.add(StorydiagramsElementTypes.FlowFinalNode_2008);
 			return types;
 		}
 		if (editPart instanceof StoryPatternEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-			types.add(StorydiagramsElementTypes.Constraint_3024);
+			types.add(StorydiagramsElementTypes.Constraint_3006);
 			return types;
 		}
 		if (editPart instanceof ObjectVariableEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-			types.add(StorydiagramsElementTypes.Constraint_3022);
-			types.add(StorydiagramsElementTypes.AttributeAssignment_3021);
+			types.add(StorydiagramsElementTypes.Constraint_3004);
+			types.add(StorydiagramsElementTypes.AttributeAssignment_3003);
 			return types;
 		}
 		if (editPart instanceof CollectionVariableEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-			types.add(StorydiagramsElementTypes.Constraint_3022);
-			types.add(StorydiagramsElementTypes.AttributeAssignment_3021);
+			types.add(StorydiagramsElementTypes.Constraint_3004);
+			types.add(StorydiagramsElementTypes.AttributeAssignment_3003);
 			return types;
 		}
 		if (editPart instanceof MatchingPatternEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-			types.add(StorydiagramsElementTypes.Constraint_3024);
+			types.add(StorydiagramsElementTypes.Constraint_3006);
 			return types;
 		}
 		if (editPart instanceof ModifyingStoryNodeStoryNodePatternCompartmentEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-			types.add(StorydiagramsElementTypes.StoryPattern_3019);
+			types.add(StorydiagramsElementTypes.StoryPattern_3001);
 			return types;
 		}
 		if (editPart instanceof StoryPatternStoryPatternContentCompartmentEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-			types.add(StorydiagramsElementTypes.ObjectVariable_3020);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3023);
+			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
 			return types;
 		}
 		if (editPart instanceof MatchingStoryNodeStoryNodePatternCompartmentEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-			types.add(StorydiagramsElementTypes.MatchingPattern_3025);
+			types.add(StorydiagramsElementTypes.MatchingPattern_3007);
 			return types;
 		}
 		if (editPart instanceof MatchingPatternStoryPatternContentCompartmentEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-			types.add(StorydiagramsElementTypes.ObjectVariable_3020);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3023);
+			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
 			return types;
 		}
 		return Collections.EMPTY_LIST;

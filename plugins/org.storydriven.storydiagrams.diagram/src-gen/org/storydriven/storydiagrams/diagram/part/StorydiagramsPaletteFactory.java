@@ -68,8 +68,9 @@ public class StorydiagramsPaletteFactory {
 		paletteContainer.add(createMaybeLink6CreationTool());
 		paletteContainer.add(new PaletteSeparator());
 		paletteContainer.add(createConstraint8CreationTool());
+		paletteContainer.add(createLinkConstraint9CreationTool());
 		paletteContainer.add(new PaletteSeparator());
-		paletteContainer.add(createAttributeAssignment10CreationTool());
+		paletteContainer.add(createAttributeAssignment11CreationTool());
 		return paletteContainer;
 	}
 
@@ -79,10 +80,10 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createActivityCallNode1CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityCallNode1CreationTool_title,
 				Messages.ActivityCallNode1CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.ActivityCallNode_2009));
+				Collections.singletonList(StorydiagramsElementTypes.ActivityCallNode_2001));
 		entry.setId("createActivityCallNode1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsElementTypes
-				.getImageDescriptor(StorydiagramsElementTypes.ActivityCallNode_2009));
+				.getImageDescriptor(StorydiagramsElementTypes.ActivityCallNode_2001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -93,10 +94,10 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createModifyingStoryNode2CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(Messages.ModifyingStoryNode2CreationTool_title,
 				Messages.ModifyingStoryNode2CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.ModifyingStoryNode_2011));
+				Collections.singletonList(StorydiagramsElementTypes.ModifyingStoryNode_2003));
 		entry.setId("createModifyingStoryNode2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsElementTypes
-				.getImageDescriptor(StorydiagramsElementTypes.ModifyingStoryNode_2011));
+				.getImageDescriptor(StorydiagramsElementTypes.ModifyingStoryNode_2003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -107,10 +108,10 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createMatchingStoryNode3CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(Messages.MatchingStoryNode3CreationTool_title,
 				Messages.MatchingStoryNode3CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.MatchingStoryNode_2012));
+				Collections.singletonList(StorydiagramsElementTypes.MatchingStoryNode_2004));
 		entry.setId("createMatchingStoryNode3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsElementTypes
-				.getImageDescriptor(StorydiagramsElementTypes.MatchingStoryNode_2012));
+				.getImageDescriptor(StorydiagramsElementTypes.MatchingStoryNode_2004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -121,9 +122,9 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createStatementNode4CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(Messages.StatementNode4CreationTool_title,
 				Messages.StatementNode4CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.StatementNode_2010));
+				Collections.singletonList(StorydiagramsElementTypes.StatementNode_2002));
 		entry.setId("createStatementNode4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.StatementNode_2010));
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.StatementNode_2002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -134,9 +135,9 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createActivityEdge6CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(Messages.ActivityEdge6CreationTool_title,
 				Messages.ActivityEdge6CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.ActivityEdge_4005));
+				Collections.singletonList(StorydiagramsElementTypes.ActivityEdge_4001));
 		entry.setId("createActivityEdge6CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.ActivityEdge_4005));
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.ActivityEdge_4001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -147,9 +148,9 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createInitialNode8CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(Messages.InitialNode8CreationTool_title,
 				Messages.InitialNode8CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.InitialNode_2013));
+				Collections.singletonList(StorydiagramsElementTypes.InitialNode_2005));
 		entry.setId("createInitialNode8CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.InitialNode_2013));
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.InitialNode_2005));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -160,9 +161,9 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createJunctionNode9CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(Messages.JunctionNode9CreationTool_title,
 				Messages.JunctionNode9CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.JunctionNode_2014));
+				Collections.singletonList(StorydiagramsElementTypes.JunctionNode_2006));
 		entry.setId("createJunctionNode9CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.JunctionNode_2014));
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.JunctionNode_2006));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -173,10 +174,10 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createActivityFinalNode10CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityFinalNode10CreationTool_title,
 				Messages.ActivityFinalNode10CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.ActivityFinalNode_2015));
+				Collections.singletonList(StorydiagramsElementTypes.ActivityFinalNode_2007));
 		entry.setId("createActivityFinalNode10CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsElementTypes
-				.getImageDescriptor(StorydiagramsElementTypes.ActivityFinalNode_2015));
+				.getImageDescriptor(StorydiagramsElementTypes.ActivityFinalNode_2007));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -187,9 +188,9 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createFlowFinalNode11CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(Messages.FlowFinalNode11CreationTool_title,
 				Messages.FlowFinalNode11CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.FlowFinalNode_2016));
+				Collections.singletonList(StorydiagramsElementTypes.FlowFinalNode_2008));
 		entry.setId("createFlowFinalNode11CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.FlowFinalNode_2016));
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.FlowFinalNode_2008));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -200,9 +201,9 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createObjectVariable1CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(Messages.ObjectVariable1CreationTool_title,
 				Messages.ObjectVariable1CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.ObjectVariable_3020));
+				Collections.singletonList(StorydiagramsElementTypes.ObjectVariable_3002));
 		entry.setId("createObjectVariable1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.ObjectVariable_3020));
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.ObjectVariable_3002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -213,10 +214,10 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createCollectionVariable2CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(Messages.CollectionVariable2CreationTool_title,
 				Messages.CollectionVariable2CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.CollectionVariable_3023));
+				Collections.singletonList(StorydiagramsElementTypes.CollectionVariable_3005));
 		entry.setId("createCollectionVariable2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsElementTypes
-				.getImageDescriptor(StorydiagramsElementTypes.CollectionVariable_3023));
+				.getImageDescriptor(StorydiagramsElementTypes.CollectionVariable_3005));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -227,9 +228,9 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createLinkVariable4CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(Messages.LinkVariable4CreationTool_title,
 				Messages.LinkVariable4CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.LinkVariable_4006));
+				Collections.singletonList(StorydiagramsElementTypes.LinkVariable_4002));
 		entry.setId("createLinkVariable4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.LinkVariable_4006));
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.LinkVariable_4002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -240,9 +241,9 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createInclusionLink5CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(Messages.InclusionLink5CreationTool_title,
 				Messages.InclusionLink5CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.InclusionLink_4007));
+				Collections.singletonList(StorydiagramsElementTypes.InclusionLink_4003));
 		entry.setId("createInclusionLink5CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.InclusionLink_4007));
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.InclusionLink_4003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -253,9 +254,9 @@ public class StorydiagramsPaletteFactory {
 	private ToolEntry createMaybeLink6CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(Messages.MaybeLink6CreationTool_title,
 				Messages.MaybeLink6CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.MaybeLink_4008));
+				Collections.singletonList(StorydiagramsElementTypes.MaybeLink_4004));
 		entry.setId("createMaybeLink6CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.MaybeLink_4008));
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.MaybeLink_4004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -265,12 +266,12 @@ public class StorydiagramsPaletteFactory {
 	 */
 	private ToolEntry createConstraint8CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(StorydiagramsElementTypes.Constraint_3022);
-		types.add(StorydiagramsElementTypes.Constraint_3024);
+		types.add(StorydiagramsElementTypes.Constraint_3004);
+		types.add(StorydiagramsElementTypes.Constraint_3006);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Constraint8CreationTool_title,
 				Messages.Constraint8CreationTool_desc, types);
 		entry.setId("createConstraint8CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.Constraint_3022));
+		entry.setSmallIcon(StorydiagramsElementTypes.getImageDescriptor(StorydiagramsElementTypes.Constraint_3004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -278,13 +279,24 @@ public class StorydiagramsPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createAttributeAssignment10CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(Messages.AttributeAssignment10CreationTool_title,
-				Messages.AttributeAssignment10CreationTool_desc,
-				Collections.singletonList(StorydiagramsElementTypes.AttributeAssignment_3021));
-		entry.setId("createAttributeAssignment10CreationTool"); //$NON-NLS-1$
+	private ToolEntry createLinkConstraint9CreationTool() {
+		ToolEntry entry = new ToolEntry(Messages.LinkConstraint9CreationTool_title,
+				Messages.LinkConstraint9CreationTool_desc, null, null) {
+		};
+		entry.setId("createLinkConstraint9CreationTool"); //$NON-NLS-1$
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createAttributeAssignment11CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(Messages.AttributeAssignment11CreationTool_title,
+				Messages.AttributeAssignment11CreationTool_desc,
+				Collections.singletonList(StorydiagramsElementTypes.AttributeAssignment_3003));
+		entry.setId("createAttributeAssignment11CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(StorydiagramsElementTypes
-				.getImageDescriptor(StorydiagramsElementTypes.AttributeAssignment_3021));
+				.getImageDescriptor(StorydiagramsElementTypes.AttributeAssignment_3003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

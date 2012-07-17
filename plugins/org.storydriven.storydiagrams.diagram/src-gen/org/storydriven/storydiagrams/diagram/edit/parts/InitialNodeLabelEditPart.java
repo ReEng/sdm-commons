@@ -51,7 +51,7 @@ public class InitialNodeLabelEditPart extends CompartmentEditPart implements ITe
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5044;
+	public static final int VISUAL_ID = 5013;
 
 	/**
 	 * @generated
@@ -275,7 +275,7 @@ public class InitialNodeLabelEditPart extends CompartmentEditPart implements ITe
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.InitialNode_2013,
+							StorydiagramsElementTypes.InitialNode_2005,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
 									.getType(org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeLabelEditPart.VISUAL_ID));

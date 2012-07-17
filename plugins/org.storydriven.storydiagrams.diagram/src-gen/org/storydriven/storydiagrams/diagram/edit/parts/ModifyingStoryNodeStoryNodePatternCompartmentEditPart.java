@@ -20,7 +20,7 @@ public class ModifyingStoryNodeStoryNodePatternCompartmentEditPart extends Shape
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7025;
+	public static final int VISUAL_ID = 7001;
 
 	/**
 	 * @generated

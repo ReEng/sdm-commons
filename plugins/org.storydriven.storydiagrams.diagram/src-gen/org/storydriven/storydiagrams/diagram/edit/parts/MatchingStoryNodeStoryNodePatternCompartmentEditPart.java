@@ -20,7 +20,7 @@ public class MatchingStoryNodeStoryNodePatternCompartmentEditPart extends ShapeC
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7032;
+	public static final int VISUAL_ID = 7008;
 
 	/**
 	 * @generated

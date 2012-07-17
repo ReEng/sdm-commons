@@ -32,28 +32,28 @@ public class ActivityItemSemanticEditPolicy extends StorydiagramsBaseItemSemanti
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.ActivityCallNode_2009 == req.getElementType()) {
+		if (StorydiagramsElementTypes.ActivityCallNode_2001 == req.getElementType()) {
 			return getGEFWrapper(new ActivityCallNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.StatementNode_2010 == req.getElementType()) {
+		if (StorydiagramsElementTypes.StatementNode_2002 == req.getElementType()) {
 			return getGEFWrapper(new StatementNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.ModifyingStoryNode_2011 == req.getElementType()) {
+		if (StorydiagramsElementTypes.ModifyingStoryNode_2003 == req.getElementType()) {
 			return getGEFWrapper(new ModifyingStoryNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.MatchingStoryNode_2012 == req.getElementType()) {
+		if (StorydiagramsElementTypes.MatchingStoryNode_2004 == req.getElementType()) {
 			return getGEFWrapper(new MatchingStoryNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.InitialNode_2013 == req.getElementType()) {
+		if (StorydiagramsElementTypes.InitialNode_2005 == req.getElementType()) {
 			return getGEFWrapper(new InitialNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.JunctionNode_2014 == req.getElementType()) {
+		if (StorydiagramsElementTypes.JunctionNode_2006 == req.getElementType()) {
 			return getGEFWrapper(new JunctionNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.ActivityFinalNode_2015 == req.getElementType()) {
+		if (StorydiagramsElementTypes.ActivityFinalNode_2007 == req.getElementType()) {
 			return getGEFWrapper(new ActivityFinalNodeCreateCommand(req));
 		}
-		if (StorydiagramsElementTypes.FlowFinalNode_2016 == req.getElementType()) {
+		if (StorydiagramsElementTypes.FlowFinalNode_2008 == req.getElementType()) {
 			return getGEFWrapper(new FlowFinalNodeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

@@ -57,7 +57,7 @@ public class ModifyingStoryNodeCreateCommand extends EditElementCommand {
 		Activity owner = (Activity) getElementToEdit();
 		owner.getOwnedActivityNodes().add(newElement);
 
-		ElementInitializers.getInstance().init_ModifyingStoryNode_2011(newElement);
+		ElementInitializers.getInstance().init_ModifyingStoryNode_2003(newElement);
 
 		doConfigure(newElement, monitor, info);
 

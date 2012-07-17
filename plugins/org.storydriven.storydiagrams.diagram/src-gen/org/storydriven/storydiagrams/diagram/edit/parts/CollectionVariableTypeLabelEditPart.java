@@ -46,12 +46,12 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsParserProvid
 /**
  * @generated
  */
-public class WrappingLabel7EditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class CollectionVariableTypeLabelEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5039;
+	public static final int VISUAL_ID = 5010;
 
 	/**
 	 * @generated
@@ -76,7 +76,7 @@ public class WrappingLabel7EditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
-	public WrappingLabel7EditPart(View view) {
+	public CollectionVariableTypeLabelEditPart(View view) {
 		super(view);
 	}
 
@@ -275,10 +275,10 @@ public class WrappingLabel7EditPart extends CompartmentEditPart implements IText
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.CollectionVariable_3023,
+							StorydiagramsElementTypes.CollectionVariable_3005,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
-									.getType(org.storydriven.storydiagrams.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));
+									.getType(org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableTypeLabelEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

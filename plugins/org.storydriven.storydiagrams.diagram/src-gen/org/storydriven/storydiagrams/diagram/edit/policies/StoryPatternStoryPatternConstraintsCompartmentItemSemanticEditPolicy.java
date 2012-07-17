@@ -15,14 +15,14 @@ public class StoryPatternStoryPatternConstraintsCompartmentItemSemanticEditPolic
 	 * @generated
 	 */
 	public StoryPatternStoryPatternConstraintsCompartmentItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.StoryPattern_3019);
+		super(StorydiagramsElementTypes.StoryPattern_3001);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.Constraint_3024 == req.getElementType()) {
+		if (StorydiagramsElementTypes.Constraint_3006 == req.getElementType()) {
 			return getGEFWrapper(new Constraint2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

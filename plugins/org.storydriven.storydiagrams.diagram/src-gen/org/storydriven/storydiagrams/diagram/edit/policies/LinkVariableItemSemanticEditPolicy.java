@@ -14,7 +14,7 @@ public class LinkVariableItemSemanticEditPolicy extends StorydiagramsBaseItemSem
 	 * @generated
 	 */
 	public LinkVariableItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.LinkVariable_4006);
+		super(StorydiagramsElementTypes.LinkVariable_4002);
 	}
 
 	/**

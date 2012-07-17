@@ -72,80 +72,79 @@ public class StorydiagramsElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ActivityCallNode_2009 = getElementType("org.storydriven.storydiagrams.diagram.ActivityCallNode_2009"); //$NON-NLS-1$
+	public static final IElementType ActivityCallNode_2001 = getElementType("org.storydriven.storydiagrams.diagram.ActivityCallNode_2001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType StatementNode_2010 = getElementType("org.storydriven.storydiagrams.diagram.StatementNode_2010"); //$NON-NLS-1$
+	public static final IElementType StatementNode_2002 = getElementType("org.storydriven.storydiagrams.diagram.StatementNode_2002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ModifyingStoryNode_2011 = getElementType("org.storydriven.storydiagrams.diagram.ModifyingStoryNode_2011"); //$NON-NLS-1$
+	public static final IElementType ModifyingStoryNode_2003 = getElementType("org.storydriven.storydiagrams.diagram.ModifyingStoryNode_2003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MatchingStoryNode_2012 = getElementType("org.storydriven.storydiagrams.diagram.MatchingStoryNode_2012"); //$NON-NLS-1$
+	public static final IElementType MatchingStoryNode_2004 = getElementType("org.storydriven.storydiagrams.diagram.MatchingStoryNode_2004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType InitialNode_2013 = getElementType("org.storydriven.storydiagrams.diagram.InitialNode_2013"); //$NON-NLS-1$
+	public static final IElementType InitialNode_2005 = getElementType("org.storydriven.storydiagrams.diagram.InitialNode_2005"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType JunctionNode_2014 = getElementType("org.storydriven.storydiagrams.diagram.JunctionNode_2014"); //$NON-NLS-1$
+	public static final IElementType JunctionNode_2006 = getElementType("org.storydriven.storydiagrams.diagram.JunctionNode_2006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ActivityFinalNode_2015 = getElementType("org.storydriven.storydiagrams.diagram.ActivityFinalNode_2015"); //$NON-NLS-1$
+	public static final IElementType ActivityFinalNode_2007 = getElementType("org.storydriven.storydiagrams.diagram.ActivityFinalNode_2007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType FlowFinalNode_2016 = getElementType("org.storydriven.storydiagrams.diagram.FlowFinalNode_2016"); //$NON-NLS-1$
-
+	public static final IElementType FlowFinalNode_2008 = getElementType("org.storydriven.storydiagrams.diagram.FlowFinalNode_2008"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType StoryPattern_3019 = getElementType("org.storydriven.storydiagrams.diagram.StoryPattern_3019"); //$NON-NLS-1$
+	public static final IElementType StoryPattern_3001 = getElementType("org.storydriven.storydiagrams.diagram.StoryPattern_3001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ObjectVariable_3020 = getElementType("org.storydriven.storydiagrams.diagram.ObjectVariable_3020"); //$NON-NLS-1$
+	public static final IElementType ObjectVariable_3002 = getElementType("org.storydriven.storydiagrams.diagram.ObjectVariable_3002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType AttributeAssignment_3021 = getElementType("org.storydriven.storydiagrams.diagram.AttributeAssignment_3021"); //$NON-NLS-1$
+	public static final IElementType AttributeAssignment_3003 = getElementType("org.storydriven.storydiagrams.diagram.AttributeAssignment_3003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Constraint_3022 = getElementType("org.storydriven.storydiagrams.diagram.Constraint_3022"); //$NON-NLS-1$
+	public static final IElementType Constraint_3004 = getElementType("org.storydriven.storydiagrams.diagram.Constraint_3004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CollectionVariable_3023 = getElementType("org.storydriven.storydiagrams.diagram.CollectionVariable_3023"); //$NON-NLS-1$
+	public static final IElementType CollectionVariable_3005 = getElementType("org.storydriven.storydiagrams.diagram.CollectionVariable_3005"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Constraint_3024 = getElementType("org.storydriven.storydiagrams.diagram.Constraint_3024"); //$NON-NLS-1$
+	public static final IElementType Constraint_3006 = getElementType("org.storydriven.storydiagrams.diagram.Constraint_3006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MatchingPattern_3025 = getElementType("org.storydriven.storydiagrams.diagram.MatchingPattern_3025"); //$NON-NLS-1$
+	public static final IElementType MatchingPattern_3007 = getElementType("org.storydriven.storydiagrams.diagram.MatchingPattern_3007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ActivityEdge_4005 = getElementType("org.storydriven.storydiagrams.diagram.ActivityEdge_4005"); //$NON-NLS-1$
+	public static final IElementType ActivityEdge_4001 = getElementType("org.storydriven.storydiagrams.diagram.ActivityEdge_4001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LinkVariable_4006 = getElementType("org.storydriven.storydiagrams.diagram.LinkVariable_4006"); //$NON-NLS-1$
+	public static final IElementType LinkVariable_4002 = getElementType("org.storydriven.storydiagrams.diagram.LinkVariable_4002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType InclusionLink_4007 = getElementType("org.storydriven.storydiagrams.diagram.InclusionLink_4007"); //$NON-NLS-1$
+	public static final IElementType InclusionLink_4003 = getElementType("org.storydriven.storydiagrams.diagram.InclusionLink_4003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MaybeLink_4008 = getElementType("org.storydriven.storydiagrams.diagram.MaybeLink_4008"); //$NON-NLS-1$
+	public static final IElementType MaybeLink_4004 = getElementType("org.storydriven.storydiagrams.diagram.MaybeLink_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -256,43 +255,43 @@ public class StorydiagramsElementTypes {
 
 			elements.put(Activity_1000, ActivitiesPackage.eINSTANCE.getActivity());
 
-			elements.put(ActivityCallNode_2009, ActivitiesPackage.eINSTANCE.getActivityCallNode());
+			elements.put(ActivityCallNode_2001, ActivitiesPackage.eINSTANCE.getActivityCallNode());
 
-			elements.put(StatementNode_2010, ActivitiesPackage.eINSTANCE.getStatementNode());
+			elements.put(StatementNode_2002, ActivitiesPackage.eINSTANCE.getStatementNode());
 
-			elements.put(ModifyingStoryNode_2011, ActivitiesPackage.eINSTANCE.getModifyingStoryNode());
+			elements.put(ModifyingStoryNode_2003, ActivitiesPackage.eINSTANCE.getModifyingStoryNode());
 
-			elements.put(MatchingStoryNode_2012, ActivitiesPackage.eINSTANCE.getMatchingStoryNode());
+			elements.put(MatchingStoryNode_2004, ActivitiesPackage.eINSTANCE.getMatchingStoryNode());
 
-			elements.put(InitialNode_2013, ActivitiesPackage.eINSTANCE.getInitialNode());
+			elements.put(InitialNode_2005, ActivitiesPackage.eINSTANCE.getInitialNode());
 
-			elements.put(JunctionNode_2014, ActivitiesPackage.eINSTANCE.getJunctionNode());
+			elements.put(JunctionNode_2006, ActivitiesPackage.eINSTANCE.getJunctionNode());
 
-			elements.put(ActivityFinalNode_2015, ActivitiesPackage.eINSTANCE.getActivityFinalNode());
+			elements.put(ActivityFinalNode_2007, ActivitiesPackage.eINSTANCE.getActivityFinalNode());
 
-			elements.put(FlowFinalNode_2016, ActivitiesPackage.eINSTANCE.getFlowFinalNode());
+			elements.put(FlowFinalNode_2008, ActivitiesPackage.eINSTANCE.getFlowFinalNode());
 
-			elements.put(StoryPattern_3019, PatternsPackage.eINSTANCE.getStoryPattern());
+			elements.put(StoryPattern_3001, PatternsPackage.eINSTANCE.getStoryPattern());
 
-			elements.put(ObjectVariable_3020, PatternsPackage.eINSTANCE.getObjectVariable());
+			elements.put(ObjectVariable_3002, PatternsPackage.eINSTANCE.getObjectVariable());
 
-			elements.put(AttributeAssignment_3021, PatternsPackage.eINSTANCE.getAttributeAssignment());
+			elements.put(AttributeAssignment_3003, PatternsPackage.eINSTANCE.getAttributeAssignment());
 
-			elements.put(Constraint_3022, PatternsPackage.eINSTANCE.getConstraint());
+			elements.put(Constraint_3004, PatternsPackage.eINSTANCE.getConstraint());
 
-			elements.put(CollectionVariable_3023, PatternsPackage.eINSTANCE.getCollectionVariable());
+			elements.put(CollectionVariable_3005, PatternsPackage.eINSTANCE.getCollectionVariable());
 
-			elements.put(Constraint_3024, PatternsPackage.eINSTANCE.getConstraint());
+			elements.put(Constraint_3006, PatternsPackage.eINSTANCE.getConstraint());
 
-			elements.put(MatchingPattern_3025, PatternsPackage.eINSTANCE.getMatchingPattern());
+			elements.put(MatchingPattern_3007, PatternsPackage.eINSTANCE.getMatchingPattern());
 
-			elements.put(ActivityEdge_4005, ActivitiesPackage.eINSTANCE.getActivityEdge());
+			elements.put(ActivityEdge_4001, ActivitiesPackage.eINSTANCE.getActivityEdge());
 
-			elements.put(LinkVariable_4006, PatternsPackage.eINSTANCE.getLinkVariable());
+			elements.put(LinkVariable_4002, PatternsPackage.eINSTANCE.getLinkVariable());
 
-			elements.put(InclusionLink_4007, PatternsPackage.eINSTANCE.getInclusionLink());
+			elements.put(InclusionLink_4003, PatternsPackage.eINSTANCE.getInclusionLink());
 
-			elements.put(MaybeLink_4008, PatternsPackage.eINSTANCE.getMaybeLink());
+			elements.put(MaybeLink_4004, PatternsPackage.eINSTANCE.getMaybeLink());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -311,25 +310,25 @@ public class StorydiagramsElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Activity_1000);
-			KNOWN_ELEMENT_TYPES.add(ActivityCallNode_2009);
-			KNOWN_ELEMENT_TYPES.add(StatementNode_2010);
-			KNOWN_ELEMENT_TYPES.add(ModifyingStoryNode_2011);
-			KNOWN_ELEMENT_TYPES.add(MatchingStoryNode_2012);
-			KNOWN_ELEMENT_TYPES.add(InitialNode_2013);
-			KNOWN_ELEMENT_TYPES.add(JunctionNode_2014);
-			KNOWN_ELEMENT_TYPES.add(ActivityFinalNode_2015);
-			KNOWN_ELEMENT_TYPES.add(FlowFinalNode_2016);
-			KNOWN_ELEMENT_TYPES.add(StoryPattern_3019);
-			KNOWN_ELEMENT_TYPES.add(ObjectVariable_3020);
-			KNOWN_ELEMENT_TYPES.add(AttributeAssignment_3021);
-			KNOWN_ELEMENT_TYPES.add(Constraint_3022);
-			KNOWN_ELEMENT_TYPES.add(CollectionVariable_3023);
-			KNOWN_ELEMENT_TYPES.add(Constraint_3024);
-			KNOWN_ELEMENT_TYPES.add(MatchingPattern_3025);
-			KNOWN_ELEMENT_TYPES.add(ActivityEdge_4005);
-			KNOWN_ELEMENT_TYPES.add(LinkVariable_4006);
-			KNOWN_ELEMENT_TYPES.add(InclusionLink_4007);
-			KNOWN_ELEMENT_TYPES.add(MaybeLink_4008);
+			KNOWN_ELEMENT_TYPES.add(ActivityCallNode_2001);
+			KNOWN_ELEMENT_TYPES.add(StatementNode_2002);
+			KNOWN_ELEMENT_TYPES.add(ModifyingStoryNode_2003);
+			KNOWN_ELEMENT_TYPES.add(MatchingStoryNode_2004);
+			KNOWN_ELEMENT_TYPES.add(InitialNode_2005);
+			KNOWN_ELEMENT_TYPES.add(JunctionNode_2006);
+			KNOWN_ELEMENT_TYPES.add(ActivityFinalNode_2007);
+			KNOWN_ELEMENT_TYPES.add(FlowFinalNode_2008);
+			KNOWN_ELEMENT_TYPES.add(StoryPattern_3001);
+			KNOWN_ELEMENT_TYPES.add(ObjectVariable_3002);
+			KNOWN_ELEMENT_TYPES.add(AttributeAssignment_3003);
+			KNOWN_ELEMENT_TYPES.add(Constraint_3004);
+			KNOWN_ELEMENT_TYPES.add(CollectionVariable_3005);
+			KNOWN_ELEMENT_TYPES.add(Constraint_3006);
+			KNOWN_ELEMENT_TYPES.add(MatchingPattern_3007);
+			KNOWN_ELEMENT_TYPES.add(ActivityEdge_4001);
+			KNOWN_ELEMENT_TYPES.add(LinkVariable_4002);
+			KNOWN_ELEMENT_TYPES.add(InclusionLink_4003);
+			KNOWN_ELEMENT_TYPES.add(MaybeLink_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -342,43 +341,43 @@ public class StorydiagramsElementTypes {
 		case ActivityEditPart.VISUAL_ID:
 			return Activity_1000;
 		case ActivityCallNodeEditPart.VISUAL_ID:
-			return ActivityCallNode_2009;
+			return ActivityCallNode_2001;
 		case StatementNodeEditPart.VISUAL_ID:
-			return StatementNode_2010;
+			return StatementNode_2002;
 		case ModifyingStoryNodeEditPart.VISUAL_ID:
-			return ModifyingStoryNode_2011;
+			return ModifyingStoryNode_2003;
 		case MatchingStoryNodeEditPart.VISUAL_ID:
-			return MatchingStoryNode_2012;
+			return MatchingStoryNode_2004;
 		case InitialNodeEditPart.VISUAL_ID:
-			return InitialNode_2013;
+			return InitialNode_2005;
 		case JunctionNodeEditPart.VISUAL_ID:
-			return JunctionNode_2014;
+			return JunctionNode_2006;
 		case ActivityFinalNodeEditPart.VISUAL_ID:
-			return ActivityFinalNode_2015;
+			return ActivityFinalNode_2007;
 		case FlowFinalNodeEditPart.VISUAL_ID:
-			return FlowFinalNode_2016;
+			return FlowFinalNode_2008;
 		case StoryPatternEditPart.VISUAL_ID:
-			return StoryPattern_3019;
+			return StoryPattern_3001;
 		case ObjectVariableEditPart.VISUAL_ID:
-			return ObjectVariable_3020;
+			return ObjectVariable_3002;
 		case AttributeAssignmentEditPart.VISUAL_ID:
-			return AttributeAssignment_3021;
+			return AttributeAssignment_3003;
 		case ConstraintEditPart.VISUAL_ID:
-			return Constraint_3022;
+			return Constraint_3004;
 		case CollectionVariableEditPart.VISUAL_ID:
-			return CollectionVariable_3023;
+			return CollectionVariable_3005;
 		case Constraint2EditPart.VISUAL_ID:
-			return Constraint_3024;
+			return Constraint_3006;
 		case MatchingPatternEditPart.VISUAL_ID:
-			return MatchingPattern_3025;
+			return MatchingPattern_3007;
 		case ActivityEdgeEditPart.VISUAL_ID:
-			return ActivityEdge_4005;
+			return ActivityEdge_4001;
 		case LinkVariableEditPart.VISUAL_ID:
-			return LinkVariable_4006;
+			return LinkVariable_4002;
 		case InclusionLinkEditPart.VISUAL_ID:
-			return InclusionLink_4007;
+			return InclusionLink_4003;
 		case MaybeLinkEditPart.VISUAL_ID:
-			return MaybeLink_4008;
+			return MaybeLink_4004;
 		}
 		return null;
 	}

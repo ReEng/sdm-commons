@@ -11,7 +11,7 @@ public class StorydiagramsNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 7036;
+	private static final int GROUP_CATEGORY = 7012;
 
 	/**
 	 * @generated

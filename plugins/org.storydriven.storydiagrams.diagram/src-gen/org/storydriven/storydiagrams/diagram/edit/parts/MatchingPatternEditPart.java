@@ -38,7 +38,7 @@ public class MatchingPatternEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3025;
+	public static final int VISUAL_ID = 3007;
 
 	/**
 	 * @generated
@@ -273,7 +273,7 @@ public class MatchingPatternEditPart extends ShapeNodeEditPart {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == StorydiagramsElementTypes.Constraint_3024) {
+			if (type == StorydiagramsElementTypes.Constraint_3006) {
 				return getChildBySemanticHint(StorydiagramsVisualIDRegistry
 						.getType(MatchingPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID));
 			}

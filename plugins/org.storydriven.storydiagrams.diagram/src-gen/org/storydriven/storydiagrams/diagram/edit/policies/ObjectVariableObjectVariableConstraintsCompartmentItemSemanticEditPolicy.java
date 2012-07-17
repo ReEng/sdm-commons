@@ -15,14 +15,14 @@ public class ObjectVariableObjectVariableConstraintsCompartmentItemSemanticEditP
 	 * @generated
 	 */
 	public ObjectVariableObjectVariableConstraintsCompartmentItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.ObjectVariable_3020);
+		super(StorydiagramsElementTypes.ObjectVariable_3002);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.Constraint_3022 == req.getElementType()) {
+		if (StorydiagramsElementTypes.Constraint_3004 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

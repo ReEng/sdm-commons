@@ -67,7 +67,7 @@ public class ActivityEdgeCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canCreateActivityEdge_4005(getContainer(),
+		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canCreateActivityEdge_4001(getContainer(),
 				getSource(), getTarget());
 	}
 

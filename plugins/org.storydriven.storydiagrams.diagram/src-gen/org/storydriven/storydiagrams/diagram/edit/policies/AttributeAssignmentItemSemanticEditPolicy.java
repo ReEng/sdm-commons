@@ -18,7 +18,7 @@ public class AttributeAssignmentItemSemanticEditPolicy extends StorydiagramsBase
 	 * @generated
 	 */
 	public AttributeAssignmentItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.AttributeAssignment_3021);
+		super(StorydiagramsElementTypes.AttributeAssignment_3003);
 	}
 
 	/**

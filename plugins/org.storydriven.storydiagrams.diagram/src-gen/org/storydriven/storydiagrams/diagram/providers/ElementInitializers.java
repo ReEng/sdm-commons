@@ -19,7 +19,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ModifyingStoryNode_2011(ModifyingStoryNode instance) {
+	public void init_ModifyingStoryNode_2003(ModifyingStoryNode instance) {
 		try {
 			StoryPattern newInstance_0_0 = PatternsFactory.eINSTANCE.createStoryPattern();
 			instance.setOwnedRule(newInstance_0_0);
@@ -33,7 +33,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_MatchingStoryNode_2012(MatchingStoryNode instance) {
+	public void init_MatchingStoryNode_2004(MatchingStoryNode instance) {
 		try {
 			MatchingPattern newInstance_0_0 = PatternsFactory.eINSTANCE.createMatchingPattern();
 			instance.setOwnedPattern(newInstance_0_0);

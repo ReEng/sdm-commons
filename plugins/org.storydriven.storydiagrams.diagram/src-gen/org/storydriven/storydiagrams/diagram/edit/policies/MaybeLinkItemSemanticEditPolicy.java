@@ -14,7 +14,7 @@ public class MaybeLinkItemSemanticEditPolicy extends StorydiagramsBaseItemSemant
 	 * @generated
 	 */
 	public MaybeLinkItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.MaybeLink_4008);
+		super(StorydiagramsElementTypes.MaybeLink_4004);
 	}
 
 	/**

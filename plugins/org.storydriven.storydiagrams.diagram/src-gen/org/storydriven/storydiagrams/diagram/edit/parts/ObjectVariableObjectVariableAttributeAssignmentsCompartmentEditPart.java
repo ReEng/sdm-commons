@@ -21,7 +21,7 @@ public class ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7029;
+	public static final int VISUAL_ID = 7005;
 
 	/**
 	 * @generated

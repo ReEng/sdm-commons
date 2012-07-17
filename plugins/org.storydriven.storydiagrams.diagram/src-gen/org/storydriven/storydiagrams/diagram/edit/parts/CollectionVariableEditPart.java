@@ -49,7 +49,7 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3023;
+	public static final int VISUAL_ID = 3005;
 
 	/**
 	 * @generated
@@ -123,8 +123,9 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof WrappingLabel7EditPart) {
-			((WrappingLabel7EditPart) childEditPart).setLabel(getPrimaryShape().getCollectionVariableOperatorLabel());
+		if (childEditPart instanceof CollectionVariableOperatorLabelEditPart) {
+			((CollectionVariableOperatorLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getCollectionVariableOperatorLabel());
 			return true;
 		}
 		if (childEditPart instanceof CollectionVariableNameLabelEditPart) {
@@ -132,8 +133,9 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 					.getCollectionVariableNameLabel());
 			return true;
 		}
-		if (childEditPart instanceof WrappingLabel8EditPart) {
-			((WrappingLabel8EditPart) childEditPart).setLabel(getPrimaryShape().getCollectionVariableTypeLabel());
+		if (childEditPart instanceof CollectionVariableTypeLabelEditPart) {
+			((CollectionVariableTypeLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getCollectionVariableTypeLabel());
 			return true;
 		}
 		if (childEditPart instanceof CollectionVariableCollectionVariableConstraintsCompartmentEditPart) {
@@ -156,13 +158,13 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof WrappingLabel7EditPart) {
+		if (childEditPart instanceof CollectionVariableOperatorLabelEditPart) {
 			return true;
 		}
 		if (childEditPart instanceof CollectionVariableNameLabelEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof WrappingLabel8EditPart) {
+		if (childEditPart instanceof CollectionVariableTypeLabelEditPart) {
 			return true;
 		}
 		if (childEditPart instanceof CollectionVariableCollectionVariableConstraintsCompartmentEditPart) {
@@ -305,7 +307,8 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(WrappingLabel7EditPart.VISUAL_ID));
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry
+				.getType(CollectionVariableOperatorLabelEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -313,9 +316,9 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(StorydiagramsElementTypes.LinkVariable_4006);
-		types.add(StorydiagramsElementTypes.InclusionLink_4007);
-		types.add(StorydiagramsElementTypes.MaybeLink_4008);
+		types.add(StorydiagramsElementTypes.LinkVariable_4002);
+		types.add(StorydiagramsElementTypes.InclusionLink_4003);
+		types.add(StorydiagramsElementTypes.MaybeLink_4004);
 		return types;
 	}
 
@@ -325,22 +328,22 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ObjectVariableEditPart) {
-			types.add(StorydiagramsElementTypes.LinkVariable_4006);
+			types.add(StorydiagramsElementTypes.LinkVariable_4002);
 		}
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableEditPart) {
-			types.add(StorydiagramsElementTypes.LinkVariable_4006);
+			types.add(StorydiagramsElementTypes.LinkVariable_4002);
 		}
 		if (targetEditPart instanceof ObjectVariableEditPart) {
-			types.add(StorydiagramsElementTypes.InclusionLink_4007);
+			types.add(StorydiagramsElementTypes.InclusionLink_4003);
 		}
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableEditPart) {
-			types.add(StorydiagramsElementTypes.InclusionLink_4007);
+			types.add(StorydiagramsElementTypes.InclusionLink_4003);
 		}
 		if (targetEditPart instanceof ObjectVariableEditPart) {
-			types.add(StorydiagramsElementTypes.MaybeLink_4008);
+			types.add(StorydiagramsElementTypes.MaybeLink_4004);
 		}
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableEditPart) {
-			types.add(StorydiagramsElementTypes.MaybeLink_4008);
+			types.add(StorydiagramsElementTypes.MaybeLink_4004);
 		}
 		return types;
 	}
@@ -350,15 +353,15 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4006) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3020);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3023);
-		} else if (relationshipType == StorydiagramsElementTypes.InclusionLink_4007) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3020);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3023);
-		} else if (relationshipType == StorydiagramsElementTypes.MaybeLink_4008) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3020);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3023);
+		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
+		} else if (relationshipType == StorydiagramsElementTypes.InclusionLink_4003) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
+		} else if (relationshipType == StorydiagramsElementTypes.MaybeLink_4004) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
 		}
 		return types;
 	}
@@ -368,9 +371,9 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(StorydiagramsElementTypes.LinkVariable_4006);
-		types.add(StorydiagramsElementTypes.InclusionLink_4007);
-		types.add(StorydiagramsElementTypes.MaybeLink_4008);
+		types.add(StorydiagramsElementTypes.LinkVariable_4002);
+		types.add(StorydiagramsElementTypes.InclusionLink_4003);
+		types.add(StorydiagramsElementTypes.MaybeLink_4004);
 		return types;
 	}
 
@@ -379,15 +382,15 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4006) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3020);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3023);
-		} else if (relationshipType == StorydiagramsElementTypes.InclusionLink_4007) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3020);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3023);
-		} else if (relationshipType == StorydiagramsElementTypes.MaybeLink_4008) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3020);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3023);
+		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
+		} else if (relationshipType == StorydiagramsElementTypes.InclusionLink_4003) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
+		} else if (relationshipType == StorydiagramsElementTypes.MaybeLink_4004) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
 		}
 		return types;
 	}
@@ -400,11 +403,11 @@ public class CollectionVariableEditPart extends ShapeNodeEditPart {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == StorydiagramsElementTypes.Constraint_3022) {
+			if (type == StorydiagramsElementTypes.Constraint_3004) {
 				return getChildBySemanticHint(StorydiagramsVisualIDRegistry
 						.getType(CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID));
 			}
-			if (type == StorydiagramsElementTypes.AttributeAssignment_3021) {
+			if (type == StorydiagramsElementTypes.AttributeAssignment_3003) {
 				return getChildBySemanticHint(StorydiagramsVisualIDRegistry
 						.getType(CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID));
 			}

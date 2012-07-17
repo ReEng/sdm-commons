@@ -14,7 +14,7 @@ public class ActivityEdgeItemSemanticEditPolicy extends StorydiagramsBaseItemSem
 	 * @generated
 	 */
 	public ActivityEdgeItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.ActivityEdge_4005);
+		super(StorydiagramsElementTypes.ActivityEdge_4001);
 	}
 
 	/**

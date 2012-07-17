@@ -20,11 +20,13 @@ import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableCollec
 import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableCollectionVariableConstraintsCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableNameLabelEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableOperatorLabelEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableTypeLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.Constraint2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ConstraintEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationOperatorLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InclusionLinkEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.InclusionLinkLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart;
@@ -39,6 +41,7 @@ import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPar
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeNameEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeStoryNodePatternCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MaybeLinkEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MaybeLinkLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeNameEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeStoryNodePatternCompartmentEditPart;
@@ -54,9 +57,6 @@ import org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeNameEditPar
 import org.storydriven.storydiagrams.diagram.edit.parts.StoryPatternEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StoryPatternStoryPatternConstraintsCompartmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StoryPatternStoryPatternContentCompartmentEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.WrappingLabel14EditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.WrappingLabel7EditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.WrappingLabel8EditPart;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 /**
@@ -363,13 +363,13 @@ public class StorydiagramsVisualIDRegistry {
 			}
 			break;
 		case CollectionVariableEditPart.VISUAL_ID:
-			if (WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
+			if (CollectionVariableOperatorLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (CollectionVariableNameLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (WrappingLabel8EditPart.VISUAL_ID == nodeVisualID) {
+			if (CollectionVariableTypeLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
@@ -460,12 +460,12 @@ public class StorydiagramsVisualIDRegistry {
 			}
 			break;
 		case InclusionLinkEditPart.VISUAL_ID:
-			if (ContainmentRelationOperatorLabelEditPart.VISUAL_ID == nodeVisualID) {
+			if (InclusionLinkLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case MaybeLinkEditPart.VISUAL_ID:
-			if (WrappingLabel14EditPart.VISUAL_ID == nodeVisualID) {
+			if (MaybeLinkLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

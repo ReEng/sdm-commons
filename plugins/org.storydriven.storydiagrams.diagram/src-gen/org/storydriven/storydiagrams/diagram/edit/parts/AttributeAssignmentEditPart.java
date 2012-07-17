@@ -58,7 +58,7 @@ public class AttributeAssignmentEditPart extends CompartmentEditPart implements 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3021;
+	public static final int VISUAL_ID = 3003;
 
 	/**
 	 * @generated
@@ -293,7 +293,7 @@ public class AttributeAssignmentEditPart extends CompartmentEditPart implements 
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.AttributeAssignment_3021,
+							StorydiagramsElementTypes.AttributeAssignment_3003,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
 									.getType(org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart.VISUAL_ID));

@@ -70,7 +70,7 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Activity container = (Activity) getLink().eContainer();
-		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canExistActivityEdge_4005(container,
+		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canExistActivityEdge_4001(container,
 				getLink(), getNewSource(), target);
 	}
 
@@ -86,7 +86,7 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Activity container = (Activity) getLink().eContainer();
-		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canExistActivityEdge_4005(container,
+		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canExistActivityEdge_4001(container,
 				getLink(), source, getNewTarget());
 	}
 

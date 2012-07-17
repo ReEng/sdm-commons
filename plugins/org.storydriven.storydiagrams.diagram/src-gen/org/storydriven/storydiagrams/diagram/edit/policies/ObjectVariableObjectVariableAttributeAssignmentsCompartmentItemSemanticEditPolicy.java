@@ -15,14 +15,14 @@ public class ObjectVariableObjectVariableAttributeAssignmentsCompartmentItemSema
 	 * @generated
 	 */
 	public ObjectVariableObjectVariableAttributeAssignmentsCompartmentItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.ObjectVariable_3020);
+		super(StorydiagramsElementTypes.ObjectVariable_3002);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.AttributeAssignment_3021 == req.getElementType()) {
+		if (StorydiagramsElementTypes.AttributeAssignment_3003 == req.getElementType()) {
 			return getGEFWrapper(new AttributeAssignmentCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

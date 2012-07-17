@@ -68,7 +68,7 @@ public class MaybeLinkCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canCreateMaybeLink_4008(getContainer(),
+		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canCreateMaybeLink_4004(getContainer(),
 				getSource(), getTarget());
 	}
 

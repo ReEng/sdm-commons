@@ -31,7 +31,7 @@ public class ModifyingStoryNodeItemSemanticEditPolicy extends StorydiagramsBaseI
 	 * @generated
 	 */
 	public ModifyingStoryNodeItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.ModifyingStoryNode_2011);
+		super(StorydiagramsElementTypes.ModifyingStoryNode_2003);
 	}
 
 	/**
@@ -110,7 +110,7 @@ public class ModifyingStoryNodeItemSemanticEditPolicy extends StorydiagramsBaseI
 	 * @generated
 	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (StorydiagramsElementTypes.ActivityEdge_4005 == req.getElementType()) {
+		if (StorydiagramsElementTypes.ActivityEdge_4001 == req.getElementType()) {
 			return getGEFWrapper(new ActivityEdgeCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -120,7 +120,7 @@ public class ModifyingStoryNodeItemSemanticEditPolicy extends StorydiagramsBaseI
 	 * @generated
 	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (StorydiagramsElementTypes.ActivityEdge_4005 == req.getElementType()) {
+		if (StorydiagramsElementTypes.ActivityEdge_4001 == req.getElementType()) {
 			return getGEFWrapper(new ActivityEdgeCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;

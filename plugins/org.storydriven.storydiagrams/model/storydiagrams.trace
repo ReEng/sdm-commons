@@ -3,164 +3,164 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
   <nodeTraces
-      visualID="2009"
+      visualID="2001"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'ActivityCallNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')">
     <nodeLabelTraces
-        visualID="5032"
+        visualID="5001"
         queryText="true"/>
     <nodeLabelTraces
-        visualID="5033"
+        visualID="5002"
         queryText="true"/>
   </nodeTraces>
   <nodeTraces
-      visualID="2010"
+      visualID="2002"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'StatementNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')">
     <nodeLabelTraces
-        visualID="5034"
+        visualID="5003"
         queryText="true"/>
     <nodeLabelTraces
-        visualID="5035"
+        visualID="5004"
         queryText="true"/>
   </nodeTraces>
   <nodeTraces
-      visualID="2011"
+      visualID="2003"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'ModifyingStoryNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')">
     <nodeLabelTraces
-        visualID="5042"
+        visualID="5011"
         queryText="true"/>
     <compartmentTraces
-        visualID="7025"
+        visualID="7001"
         queryText="true"/>
   </nodeTraces>
   <nodeTraces
-      visualID="2012"
+      visualID="2004"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'MatchingStoryNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')">
     <nodeLabelTraces
-        visualID="5043"
+        visualID="5012"
         queryText="true"/>
     <compartmentTraces
-        visualID="7032"
+        visualID="7008"
         queryText="true"/>
   </nodeTraces>
   <nodeTraces
-      visualID="2013"
+      visualID="2005"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'InitialNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')">
     <nodeLabelTraces
-        visualID="5044"
+        visualID="5013"
         queryText="true"/>
   </nodeTraces>
   <nodeTraces
-      visualID="2014"
+      visualID="2006"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'JunctionNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')"/>
   <nodeTraces
-      visualID="2015"
+      visualID="2007"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'ActivityFinalNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')">
     <nodeLabelTraces
-        visualID="5045"
+        visualID="5014"
         queryText="true"/>
   </nodeTraces>
   <nodeTraces
-      visualID="2016"
+      visualID="2008"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'FlowFinalNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'Activity') and _containmentMF_.name = 'ownedActivityNode')"/>
   <childNodeTraces
-      visualID="3019"
+      visualID="3001"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'StoryPattern') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'ModifyingStoryNode') and _containmentMF_.name = 'ownedRule')">
     <compartmentTraces
-        visualID="7026"
+        visualID="7002"
         queryText="true"/>
     <compartmentTraces
-        visualID="7027"
+        visualID="7003"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3020"
+      visualID="3002"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'ObjectVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'StoryPattern') and _containmentMF_.name = 'variable')">
     <nodeLabelTraces
-        visualID="5036"
+        visualID="5005"
         queryText="true"/>
     <nodeLabelTraces
-        visualID="5037"
+        visualID="5006"
         queryText="true"/>
     <nodeLabelTraces
-        visualID="5038"
+        visualID="5007"
         queryText="true"/>
     <compartmentTraces
-        visualID="7028"
+        visualID="7004"
         queryText="true"/>
     <compartmentTraces
-        visualID="7029"
+        visualID="7005"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3021"
+      visualID="3003"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'AttributeAssignment') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'ObjectVariable') and _containmentMF_.name = 'attributeAssignment')"/>
   <childNodeTraces
-      visualID="3022"
+      visualID="3004"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'Constraint') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'AbstractVariable') and _containmentMF_.name = 'constraint')"/>
   <childNodeTraces
-      visualID="3023"
+      visualID="3005"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'CollectionVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'StoryPattern') and _containmentMF_.name = 'variable')">
     <nodeLabelTraces
-        visualID="5039"
+        visualID="5008"
         queryText="true"/>
     <nodeLabelTraces
-        visualID="5040"
+        visualID="5009"
         queryText="true"/>
     <nodeLabelTraces
-        visualID="5041"
+        visualID="5010"
         queryText="true"/>
     <compartmentTraces
-        visualID="7030"
+        visualID="7006"
         queryText="true"/>
     <compartmentTraces
-        visualID="7031"
+        visualID="7007"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3024"
+      visualID="3006"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'Constraint') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'StoryPattern') and _containmentMF_.name = 'constraint')"/>
   <childNodeTraces
-      visualID="3025"
+      visualID="3007"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'MatchingPattern') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'MatchingStoryNode') and _containmentMF_.name = 'ownedPattern')">
     <compartmentTraces
-        visualID="7033"
+        visualID="7009"
         queryText="true"/>
     <compartmentTraces
-        visualID="7034"
+        visualID="7010"
         queryText="true"/>
   </childNodeTraces>
   <linkTraces
-      visualID="4005"
+      visualID="4001"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/activities/0.2.1' and _eClass_.name = 'ActivityEdge')">
     <linkLabelTraces
-        visualID="6006"
+        visualID="6001"
         queryText="true"/>
   </linkTraces>
   <linkTraces
-      visualID="4006"
+      visualID="4002"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'LinkVariable')">
     <linkLabelTraces
-        visualID="6007"
+        visualID="6002"
         queryText="true"/>
     <linkLabelTraces
-        visualID="6008"
+        visualID="6003"
         queryText="true"/>
     <linkLabelTraces
-        visualID="6009"
+        visualID="6004"
         queryText="true"/>
   </linkTraces>
   <linkTraces
-      visualID="4007"
+      visualID="4003"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'InclusionLink')">
     <linkLabelTraces
-        visualID="6010"
+        visualID="6005"
         queryText="true"/>
   </linkTraces>
   <linkTraces
-      visualID="4008"
+      visualID="4004"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.storydriven.org/storydiagrams/patterns/0.2.1' and _eClass_.name = 'MaybeLink')">
     <linkLabelTraces
-        visualID="6011"
+        visualID="6006"
         queryText="true"/>
   </linkTraces>
 </trace:TraceModel>

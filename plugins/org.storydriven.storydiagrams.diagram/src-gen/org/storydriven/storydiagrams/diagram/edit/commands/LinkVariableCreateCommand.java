@@ -68,7 +68,7 @@ public class LinkVariableCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canCreateLinkVariable_4006(getContainer(),
+		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canCreateLinkVariable_4002(getContainer(),
 				getSource(), getTarget());
 	}
 

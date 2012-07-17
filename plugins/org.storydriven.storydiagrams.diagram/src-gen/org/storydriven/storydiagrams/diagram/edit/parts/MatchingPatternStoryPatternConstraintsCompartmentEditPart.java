@@ -21,7 +21,7 @@ public class MatchingPatternStoryPatternConstraintsCompartmentEditPart extends L
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7034;
+	public static final int VISUAL_ID = 7010;
 
 	/**
 	 * @generated

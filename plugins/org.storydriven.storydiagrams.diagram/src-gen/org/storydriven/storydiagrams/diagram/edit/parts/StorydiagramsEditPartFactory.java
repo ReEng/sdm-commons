@@ -103,14 +103,14 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			case CollectionVariableEditPart.VISUAL_ID:
 				return new CollectionVariableEditPart(view);
 
-			case WrappingLabel7EditPart.VISUAL_ID:
-				return new WrappingLabel7EditPart(view);
+			case CollectionVariableOperatorLabelEditPart.VISUAL_ID:
+				return new CollectionVariableOperatorLabelEditPart(view);
 
 			case CollectionVariableNameLabelEditPart.VISUAL_ID:
 				return new CollectionVariableNameLabelEditPart(view);
 
-			case WrappingLabel8EditPart.VISUAL_ID:
-				return new WrappingLabel8EditPart(view);
+			case CollectionVariableTypeLabelEditPart.VISUAL_ID:
+				return new CollectionVariableTypeLabelEditPart(view);
 
 			case Constraint2EditPart.VISUAL_ID:
 				return new Constraint2EditPart(view);
@@ -169,14 +169,14 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 			case InclusionLinkEditPart.VISUAL_ID:
 				return new InclusionLinkEditPart(view);
 
-			case ContainmentRelationOperatorLabelEditPart.VISUAL_ID:
-				return new ContainmentRelationOperatorLabelEditPart(view);
+			case InclusionLinkLabelEditPart.VISUAL_ID:
+				return new InclusionLinkLabelEditPart(view);
 
 			case MaybeLinkEditPart.VISUAL_ID:
 				return new MaybeLinkEditPart(view);
 
-			case WrappingLabel14EditPart.VISUAL_ID:
-				return new WrappingLabel14EditPart(view);
+			case MaybeLinkLabelEditPart.VISUAL_ID:
+				return new MaybeLinkLabelEditPart(view);
 
 			}
 		}

@@ -57,7 +57,7 @@ public class MatchingStoryNodeCreateCommand extends EditElementCommand {
 		Activity owner = (Activity) getElementToEdit();
 		owner.getOwnedActivityNodes().add(newElement);
 
-		ElementInitializers.getInstance().init_MatchingStoryNode_2012(newElement);
+		ElementInitializers.getInstance().init_MatchingStoryNode_2004(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -3,6 +3,7 @@ package org.storydriven.storydiagrams.diagram.edit.parts;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.draw2d.ConnectionLocator;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
@@ -18,9 +19,9 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
@@ -46,12 +47,12 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsParserProvid
 /**
  * @generated
  */
-public class WrappingLabel8EditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class MaybeLinkLabelEditPart extends LabelEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5041;
+	public static final int VISUAL_ID = 6006;
 
 	/**
 	 * @generated
@@ -76,7 +77,17 @@ public class WrappingLabel8EditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
-	public WrappingLabel8EditPart(View view) {
+	static {
+		registerSnapBackPosition(
+				StorydiagramsVisualIDRegistry
+						.getType(org.storydriven.storydiagrams.diagram.edit.parts.MaybeLinkLabelEditPart.VISUAL_ID),
+				new Point(0, -1));
+	}
+
+	/**
+	 * @generated
+	 */
+	public MaybeLinkLabelEditPart(View view) {
 		super(view);
 	}
 
@@ -85,9 +96,16 @@ public class WrappingLabel8EditPart extends CompartmentEditPart implements IText
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new StorydiagramsTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ActivityEditPart.NodeLabelDragPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new StorydiagramsTextSelectionEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ActivityEditPart.LinkLabelDragPolicy());
+	}
+
+	/**
+	 * @generated
+	 */
+	public int getKeyPoint() {
+		return ConnectionLocator.MIDDLE;
 	}
 
 	/**
@@ -275,10 +293,10 @@ public class WrappingLabel8EditPart extends CompartmentEditPart implements IText
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.CollectionVariable_3023,
+							StorydiagramsElementTypes.MaybeLink_4004,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
-									.getType(org.storydriven.storydiagrams.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
+									.getType(org.storydriven.storydiagrams.diagram.edit.parts.MaybeLinkLabelEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -470,23 +488,7 @@ public class WrappingLabel8EditPart extends CompartmentEditPart implements IText
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View) getModel();
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addNotationalListeners() {
-		super.addNotationalListeners();
-		addListenerFilter("PrimaryView", this, getPrimaryView()); //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void removeNotationalListeners() {
-		super.removeNotationalListeners();
-		removeListenerFilter("PrimaryView"); //$NON-NLS-1$
+		return getPrimaryView();
 	}
 
 	/**

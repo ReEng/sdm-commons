@@ -30,8 +30,8 @@ public class CustomStorydiagramsEditPartFactory extends StorydiagramsEditPartFac
 			case CustomInclusionLinkEditPart.VISUAL_ID:
 				return new CustomInclusionLinkEditPart(view);
 
-			case CustomInclusionLinkOperatorLabelEditPart.VISUAL_ID:
-				return new CustomInclusionLinkOperatorLabelEditPart(view);
+			case CustomInclusionLinkLabelEditPart.VISUAL_ID:
+				return new CustomInclusionLinkLabelEditPart(view);
 
 			case CustomJunctionNodeEditPart.VISUAL_ID:
 				return new CustomJunctionNodeEditPart(view);

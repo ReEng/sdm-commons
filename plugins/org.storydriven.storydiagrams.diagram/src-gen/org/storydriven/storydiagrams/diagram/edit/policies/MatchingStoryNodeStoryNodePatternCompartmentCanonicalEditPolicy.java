@@ -58,7 +58,7 @@ public class MatchingStoryNodeStoryNodePatternCompartmentCanonicalEditPolicy ext
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<StorydiagramsNodeDescriptor> childDescriptors = StorydiagramsDiagramUpdater
-				.getMatchingStoryNodeStoryNodePatternCompartment_7032SemanticChildren(viewObject);
+				.getMatchingStoryNodeStoryNodePatternCompartment_7008SemanticChildren(viewObject);
 		for (StorydiagramsNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -88,7 +88,7 @@ public class MatchingStoryNodeStoryNodePatternCompartmentCanonicalEditPolicy ext
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<StorydiagramsNodeDescriptor> childDescriptors = StorydiagramsDiagramUpdater
-				.getMatchingStoryNodeStoryNodePatternCompartment_7032SemanticChildren((View) getHost().getModel());
+				.getMatchingStoryNodeStoryNodePatternCompartment_7008SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();

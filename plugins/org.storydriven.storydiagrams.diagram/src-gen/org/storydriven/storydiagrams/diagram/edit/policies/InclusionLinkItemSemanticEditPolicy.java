@@ -14,7 +14,7 @@ public class InclusionLinkItemSemanticEditPolicy extends StorydiagramsBaseItemSe
 	 * @generated
 	 */
 	public InclusionLinkItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.InclusionLink_4007);
+		super(StorydiagramsElementTypes.InclusionLink_4003);
 	}
 
 	/**

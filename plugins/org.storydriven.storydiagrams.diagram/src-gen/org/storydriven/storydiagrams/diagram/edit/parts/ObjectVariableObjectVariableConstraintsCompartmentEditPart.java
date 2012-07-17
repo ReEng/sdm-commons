@@ -21,7 +21,7 @@ public class ObjectVariableObjectVariableConstraintsCompartmentEditPart extends 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7028;
+	public static final int VISUAL_ID = 7004;
 
 	/**
 	 * @generated

@@ -32,7 +32,7 @@ public class MatchingPatternItemSemanticEditPolicy extends StorydiagramsBaseItem
 	 * @generated
 	 */
 	public MatchingPatternItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.MatchingPattern_3025);
+		super(StorydiagramsElementTypes.MatchingPattern_3007);
 	}
 
 	/**

@@ -18,7 +18,7 @@ public class Constraint2ItemSemanticEditPolicy extends StorydiagramsBaseItemSema
 	 * @generated
 	 */
 	public Constraint2ItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.Constraint_3024);
+		super(StorydiagramsElementTypes.Constraint_3006);
 	}
 
 	/**

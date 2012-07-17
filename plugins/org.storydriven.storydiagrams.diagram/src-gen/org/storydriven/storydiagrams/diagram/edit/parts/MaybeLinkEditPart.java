@@ -20,7 +20,7 @@ public class MaybeLinkEditPart extends ConnectionNodeEditPart implements ITreeBr
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4008;
+	public static final int VISUAL_ID = 4004;
 
 	/**
 	 * @generated
@@ -41,8 +41,8 @@ public class MaybeLinkEditPart extends ConnectionNodeEditPart implements ITreeBr
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof WrappingLabel14EditPart) {
-			((WrappingLabel14EditPart) childEditPart).setLabel(getPrimaryShape().getMaybeLinkLabel());
+		if (childEditPart instanceof MaybeLinkLabelEditPart) {
+			((MaybeLinkLabelEditPart) childEditPart).setLabel(getPrimaryShape().getMaybeLinkLabel());
 			return true;
 		}
 		return false;
@@ -62,7 +62,7 @@ public class MaybeLinkEditPart extends ConnectionNodeEditPart implements ITreeBr
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof WrappingLabel14EditPart) {
+		if (childEditPart instanceof MaybeLinkLabelEditPart) {
 			return true;
 		}
 		return false;

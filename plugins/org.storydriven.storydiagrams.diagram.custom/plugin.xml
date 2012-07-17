@@ -6,8 +6,8 @@
 
     <extension point="de.fujaba.modelinstance.modelelementcategory">
       <category
-            key="org.storydrivening.activities.category"
-            name="activities">
+            key="org.storydriven.storydiagrams.category"
+            name="storydiagrams">
          <child
                class="InitialNode"
                packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
@@ -41,80 +41,80 @@
             editorId="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"
             editorName="Story Diagram Editor"
             fileExtension="storydiagrams_diagram"
-            modelElementCategoryKey="org.storydriven.activities.category"
+            modelElementCategoryKey="org.storydriven.storydiagrams.category"
             modelId="Storydiagrams">
          <diagramElement
-               packageNsURI="http://www.storydriven.org/storydiagrams/activities/0.2.0"
+               packageNsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1"
                className="Activity">
          </diagramElement>
-         <node
+         <topLevelNode
                domainElement="InitialNode"
                semanticHint="2001">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="ActivityFinalNode"
                semanticHint="2002">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="JunctionNode"
                semanticHint="2003">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="StatementNode"
                semanticHint="2004">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="StructuredNode"
                semanticHint="2005">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="ModifyingStoryNode"
                semanticHint="2007">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="TextualExpression"
                semanticHint="3015">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="JunctionNode"
                semanticHint="3001">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="InitialNode"
                semanticHint="3002">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="ActivityFinalNode"
                semanticHint="3004">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="StatementNode"
                semanticHint="3003">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="StructuredNode"
                semanticHint="3005">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="ModifyingStoryNode"
                semanticHint="3011">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="StoryPattern"
                semanticHint="3008">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="ObjectVariable"
                semanticHint="3012">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="AttributeAssignment"
                semanticHint="3013">
-         </node>
-         <node
+         </topLevelNode>
+         <topLevelNode
                domainElement="PrimitiveVariable"
                semanticHint="3014">
-         </node>
+         </topLevelNode>
       </editor>
    </extension>
 
@@ -362,7 +362,10 @@
       <propertyContributor
             contributorId="org.storydriven.storydiagrams.diagram"
             labelProvider="org.storydriven.storydiagrams.diagram.custom.properties.StorydiagramsPropertiesLabelProvider">
-         <propertyCategory category="default"/>
+         <propertyCategory category="domain"/>
+         <propertyCategory
+               category="diagram">
+         </propertyCategory>
       </propertyContributor>
    </extension>
 
@@ -370,15 +373,15 @@
       <propertyTabs contributorId="org.storydriven.storydiagrams.diagram">
           <propertyTab
              category="domain"
-             id="core"
-             label="Core"/>
+             id="general"
+             label="General"/>
           <propertyTab
-                afterTab="core"
+                afterTab="general"
                 category="domain"
-                id="typeModel"
+                id="types"
                 label="Type Model"/>
           <propertyTab
-                afterTab="resources"
+                afterTab="types"
                 category="domain"
                 id="documentation"
                 label="Documentation"/>
@@ -393,27 +396,27 @@
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFilter"
                id="Activity.name"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="Activity.name"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityPreconditionSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFilter"
                id="Activity.precondition"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="Activity.precondition"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityParametersSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFilter"
                id="Activity.parameters"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityTypeModelSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFilter"
                id="Activity.typeModel"
-               tab="typeModel">
+               tab="types">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
@@ -425,28 +428,28 @@
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityCallNodeFilter"
                id="ActivityCallNode.name"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="ActivityCallNode.name"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityCallNodeCalleeSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityCallNodeFilter"
                id="ActivityCallNode.callee"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="ActivityCallNode.callee"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityCallNodeInArgumentsSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityCallNodeFilter"
                id="ActivityCallNode.in"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="ActivityCallNode.in"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityCallNodeOutArgumentsSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityCallNodeFilter"
                id="ActivityCallNode.out"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
@@ -458,21 +461,21 @@
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StoryNodeFilter"
                id="StoryNode.name"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="StoryNode.name"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.StoryNodeBindingSemanticsSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StoryNodeFilter"
                id="StoryNode.bindingSemantics"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="StoryNode.bindingSemantics"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.StoryNodeForEachSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StoryNodeFilter"
                id="StoryNode.forEach"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
@@ -484,14 +487,14 @@
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StatementNodeFilter"
                id="StatementNode.name"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="StatementNode.name"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.StatementNodeExpressionSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StatementNodeFilter"
                id="StatementNode.expression"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
@@ -503,7 +506,7 @@
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.StructuredNodeFilter"
                id="StructuredNode.name"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.CommentableElementCommentSection"
@@ -542,7 +545,7 @@
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityFinalNodeExpressionSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFinalNodeFilter"
                id="ActivityFinalNode.expression"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
@@ -561,14 +564,14 @@
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityEdgeEdgeGuardSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityEdgeFilter"
                id="ActivityEdge.guard"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="ActivityEdge.guard"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ActivityEdgeGuardExpressionSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityEdgeFilter"
                id="ActivityEdge.expression"
-               tab="core">
+               tab="general">
          </propertySection>
       </propertySections>
    </extension>
@@ -580,127 +583,127 @@
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ObjectVariableFilter"
                id="ObjectVariable.name"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="ObjectVariable.name"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ObjectVariableClassifierSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ObjectVariableFilter"
                id="ObjectVariable.classifier"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="ObjectVariable.classifier"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ObjectVariableBindingSemanticsSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ObjectVariableFilter"
                id="ObjectVariable.bindingSemantics"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="ObjectVariable.classifier"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractVariableBindingStateSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ObjectVariableFilter"
                id="ObjectVariable.bindingState"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="ObjectVariable.bindingSemantics"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ObjectVariableBindingOperatorSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ObjectVariableFilter"
                id="ObjectVariable.bindingOperator"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PrimitiveVariableFilter"
                id="PrimitiveVariable.name"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="PrimitiveVariable.name"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.PrimitiveVariableClassifierSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PrimitiveVariableFilter"
                id="PrimitiveVariable.classifier"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="PrimitiveVariable.classifier"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractVariableBindingStateSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PrimitiveVariableFilter"
                id="PrimitiveVariable.bindingState"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.LinkVariableTargetEndSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.LinkVariableFilter"
                id="LinkVariable.targetEnd"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="LinkVariable.targetEnd"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingSemanticsSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.LinkVariableFilter"
                id="LinkVariable.bindingSemantics"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="LinkVariable.bindingSemantics"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingOperatorSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.LinkVariableFilter"
                id="LinkVariable.bindingOperator"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingSemanticsSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.InclusionLinkFilter"
                id="InclusionLink.bindingSemantics"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="InclusionLink.bindingSemantics"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingOperatorSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.InclusionLinkFilter"
                id="InclusionLink.bindingOperator"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingSemanticsSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PathFilter"
                id="Path.bindingSemantics"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="Path.bindingSemantics"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AbstractLinkVariableBindingOperatorSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PathFilter"
                id="Path.bindingOperator"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="Path.bindingOperator"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.PathExpressionSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.PathFilter"
                id="Path.expression"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AttributeAssignmentAttributeSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.AttributeAssignmentFilter"
                id="AttributeAssignment.attribute"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                afterSection="AttributeAssignment.attribute"
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.AttributeAssignmentExpressionSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.AttributeAssignmentFilter"
                id="AttributeAssignment.expression"
-               tab="core">
+               tab="general">
          </propertySection>
          <propertySection
                class="org.storydriven.storydiagrams.diagram.custom.properties.sections.ConstraintExpressionSection"
                filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ConstraintFilter"
                id="Constraint.expression"
-               tab="core">
+               tab="general">
          </propertySection>
       </propertySections>
    </extension>

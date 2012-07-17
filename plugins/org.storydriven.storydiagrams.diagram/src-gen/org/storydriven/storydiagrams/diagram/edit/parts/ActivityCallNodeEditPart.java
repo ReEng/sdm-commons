@@ -44,7 +44,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2009;
+	public static final int VISUAL_ID = 2001;
 
 	/**
 	 * @generated
@@ -267,7 +267,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		return types;
 	}
 
@@ -277,28 +277,28 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof StatementNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof InitialNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof JunctionNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		if (targetEditPart instanceof FlowFinalNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		}
 		return types;
 	}
@@ -308,15 +308,15 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4005) {
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2009);
-			types.add(StorydiagramsElementTypes.StatementNode_2010);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2011);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_2012);
-			types.add(StorydiagramsElementTypes.InitialNode_2013);
-			types.add(StorydiagramsElementTypes.JunctionNode_2014);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2015);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2016);
+		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);
+			types.add(StorydiagramsElementTypes.StatementNode_2002);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2003);
+			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
+			types.add(StorydiagramsElementTypes.InitialNode_2005);
+			types.add(StorydiagramsElementTypes.JunctionNode_2006);
+			types.add(StorydiagramsElementTypes.ActivityFinalNode_2007);
+			types.add(StorydiagramsElementTypes.FlowFinalNode_2008);
 		}
 		return types;
 	}
@@ -326,7 +326,7 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(StorydiagramsElementTypes.ActivityEdge_4005);
+		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
 		return types;
 	}
 
@@ -335,15 +335,15 @@ public class ActivityCallNodeEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4005) {
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2009);
-			types.add(StorydiagramsElementTypes.StatementNode_2010);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2011);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_2012);
-			types.add(StorydiagramsElementTypes.InitialNode_2013);
-			types.add(StorydiagramsElementTypes.JunctionNode_2014);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2015);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2016);
+		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
+			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);
+			types.add(StorydiagramsElementTypes.StatementNode_2002);
+			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2003);
+			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
+			types.add(StorydiagramsElementTypes.InitialNode_2005);
+			types.add(StorydiagramsElementTypes.JunctionNode_2006);
+			types.add(StorydiagramsElementTypes.ActivityFinalNode_2007);
+			types.add(StorydiagramsElementTypes.FlowFinalNode_2008);
 		}
 		return types;
 	}

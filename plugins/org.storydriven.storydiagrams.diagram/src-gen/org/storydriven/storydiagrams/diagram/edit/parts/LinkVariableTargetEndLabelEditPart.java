@@ -52,7 +52,7 @@ public class LinkVariableTargetEndLabelEditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6009;
+	public static final int VISUAL_ID = 6004;
 
 	/**
 	 * @generated
@@ -293,7 +293,7 @@ public class LinkVariableTargetEndLabelEditPart extends LabelEditPart implements
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.LinkVariable_4006,
+							StorydiagramsElementTypes.LinkVariable_4002,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
 									.getType(org.storydriven.storydiagrams.diagram.edit.parts.LinkVariableTargetEndLabelEditPart.VISUAL_ID));

@@ -182,9 +182,9 @@
              id="property.tab.DiagramPropertySection"
              label="%tab.diagram"/>
           <propertyTab
-             category="extra"
-             id="property.tab.raw"
-             label="%tab.raw"/>
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
       </propertyTabs>
    </extension>
 
@@ -212,8 +212,8 @@
             tab="property.tab.DiagramPropertySection">
          </propertySection>     
          <propertySection
-            id="property.section.raw" 
-            tab="property.tab.raw"
+            id="property.section.domain" 
+            tab="property.tab.domain"
             class="org.storydriven.storydiagrams.diagram.sheet.StorydiagramsPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
@@ -227,8 +227,8 @@
       <viewProvider class="org.storydriven.storydiagrams.diagram.providers.StorydiagramsViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Storydiagrams"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2009,2010,2011,2012,2013,2014,2015,2016,3019,3020,3021,3022,3023,3024,3025"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006,4007,4008"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008,3001,3002,3003,3004,3005,3006,3007"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004"/>
       </viewProvider>
    </extension>
 
@@ -240,16 +240,16 @@
             <method name="getType()" value="Storydiagrams"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2009,2010,2011,2012,2013,2014,2015,2016,3019,3020,3021,3022,3023,3024,3025"/>
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,3001,3002,3003,3004,3005,3006,3007"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4005,4006,4007,4008"/>
+            <method name="getType()" value="4001,4002,4003,4004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5032,5033,5034,5035,5042,5043,5044,5045,5036,5037,5038,5039,5040,5041"/>
+            <method name="getType()" value="5001,5002,5003,5004,5011,5012,5013,5014,5005,5006,5007,5008,5009,5010"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7025,7026,7027,7028,7029,7030,7031,7032,7033,7034"/>
+            <method name="getType()" value="7001,7002,7003,7004,7005,7006,7007,7008,7009,7010"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -260,15 +260,15 @@
       <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.StorydiagramsModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart" id="Activity_1000"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart" id="ActivityCallNode_2009"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeEditPart" id="StatementNode_2010"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart" id="ModifyingStoryNode_2011"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart" id="MatchingStoryNode_2012"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeEditPart" id="InitialNode_2013"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart" id="JunctionNode_2014"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart" id="ActivityFinalNode_2015"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart" id="FlowFinalNode_2016"/>
-         <context elements="Activity_1000,ActivityCallNode_2009,StatementNode_2010,ModifyingStoryNode_2011,MatchingStoryNode_2012,InitialNode_2013,JunctionNode_2014,ActivityFinalNode_2015,FlowFinalNode_2016"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart" id="ActivityCallNode_2001"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeEditPart" id="StatementNode_2002"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart" id="ModifyingStoryNode_2003"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart" id="MatchingStoryNode_2004"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeEditPart" id="InitialNode_2005"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart" id="JunctionNode_2006"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart" id="ActivityFinalNode_2007"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart" id="FlowFinalNode_2008"/>
+         <context elements="Activity_1000,ActivityCallNode_2001,StatementNode_2002,ModifyingStoryNode_2003,MatchingStoryNode_2004,InitialNode_2005,JunctionNode_2006,ActivityFinalNode_2007,FlowFinalNode_2008"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -300,191 +300,191 @@
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.ActivityCallNode_2009"
-               name="%metatype.name.ActivityCallNode_2009"
+               id="org.storydriven.storydiagrams.diagram.ActivityCallNode_2001"
+               name="%metatype.name.ActivityCallNode_2001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ActivityCallNode"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ActivityCallNodeEditHelper">
-            <param name="semanticHint" value="2009"/>
+            <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.StatementNode_2010"
-               name="%metatype.name.StatementNode_2010"
+               id="org.storydriven.storydiagrams.diagram.StatementNode_2002"
+               name="%metatype.name.StatementNode_2002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StatementNode"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.StatementNodeEditHelper">
-            <param name="semanticHint" value="2010"/>
+            <param name="semanticHint" value="2002"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.ModifyingStoryNode_2011"
-               name="%metatype.name.ModifyingStoryNode_2011"
+               id="org.storydriven.storydiagrams.diagram.ModifyingStoryNode_2003"
+               name="%metatype.name.ModifyingStoryNode_2003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ModifyingStoryNode"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ModifyingStoryNodeEditHelper">
-            <param name="semanticHint" value="2011"/>
+            <param name="semanticHint" value="2003"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.MatchingStoryNode_2012"
-               name="%metatype.name.MatchingStoryNode_2012"
+               id="org.storydriven.storydiagrams.diagram.MatchingStoryNode_2004"
+               name="%metatype.name.MatchingStoryNode_2004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MatchingStoryNode"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.MatchingStoryNodeEditHelper">
-            <param name="semanticHint" value="2012"/>
+            <param name="semanticHint" value="2004"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.InitialNode_2013"
-               name="%metatype.name.InitialNode_2013"
+               id="org.storydriven.storydiagrams.diagram.InitialNode_2005"
+               name="%metatype.name.InitialNode_2005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="InitialNode"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.InitialNodeEditHelper">
-            <param name="semanticHint" value="2013"/>
+            <param name="semanticHint" value="2005"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.JunctionNode_2014"
-               name="%metatype.name.JunctionNode_2014"
+               id="org.storydriven.storydiagrams.diagram.JunctionNode_2006"
+               name="%metatype.name.JunctionNode_2006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="JunctionNode"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.JunctionNodeEditHelper">
-            <param name="semanticHint" value="2014"/>
+            <param name="semanticHint" value="2006"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.ActivityFinalNode_2015"
-               name="%metatype.name.ActivityFinalNode_2015"
+               id="org.storydriven.storydiagrams.diagram.ActivityFinalNode_2007"
+               name="%metatype.name.ActivityFinalNode_2007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ActivityFinalNode"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ActivityFinalNodeEditHelper">
-            <param name="semanticHint" value="2015"/>
+            <param name="semanticHint" value="2007"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.FlowFinalNode_2016"
-               name="%metatype.name.FlowFinalNode_2016"
+               id="org.storydriven.storydiagrams.diagram.FlowFinalNode_2008"
+               name="%metatype.name.FlowFinalNode_2008"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="FlowFinalNode"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.FlowFinalNodeEditHelper">
-            <param name="semanticHint" value="2016"/>
+            <param name="semanticHint" value="2008"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.StoryPattern_3019"
-               name="%metatype.name.StoryPattern_3019"
+               id="org.storydriven.storydiagrams.diagram.StoryPattern_3001"
+               name="%metatype.name.StoryPattern_3001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StoryPattern"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.StoryPatternEditHelper">
-            <param name="semanticHint" value="3019"/>
+            <param name="semanticHint" value="3001"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.ObjectVariable_3020"
-               name="%metatype.name.ObjectVariable_3020"
+               id="org.storydriven.storydiagrams.diagram.ObjectVariable_3002"
+               name="%metatype.name.ObjectVariable_3002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ObjectVariable"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ObjectVariableEditHelper">
-            <param name="semanticHint" value="3020"/>
+            <param name="semanticHint" value="3002"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.AttributeAssignment_3021"
-               name="%metatype.name.AttributeAssignment_3021"
+               id="org.storydriven.storydiagrams.diagram.AttributeAssignment_3003"
+               name="%metatype.name.AttributeAssignment_3003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="AttributeAssignment"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.AttributeAssignmentEditHelper">
-            <param name="semanticHint" value="3021"/>
+            <param name="semanticHint" value="3003"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.Constraint_3022"
-               name="%metatype.name.Constraint_3022"
+               id="org.storydriven.storydiagrams.diagram.Constraint_3004"
+               name="%metatype.name.Constraint_3004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Constraint"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ConstraintEditHelper">
-            <param name="semanticHint" value="3022"/>
+            <param name="semanticHint" value="3004"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.CollectionVariable_3023"
-               name="%metatype.name.CollectionVariable_3023"
+               id="org.storydriven.storydiagrams.diagram.CollectionVariable_3005"
+               name="%metatype.name.CollectionVariable_3005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="CollectionVariable"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.CollectionVariableEditHelper">
-            <param name="semanticHint" value="3023"/>
+            <param name="semanticHint" value="3005"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
          <specializationType
-               id="org.storydriven.storydiagrams.diagram.Constraint_3024"
-               name="%metatype.name.Constraint_3024"
+               id="org.storydriven.storydiagrams.diagram.Constraint_3006"
+               name="%metatype.name.Constraint_3006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.storydriven.storydiagrams.diagram.Constraint_3022"/>
-            <param name="semanticHint" value="3024"/>
+            <specializes id="org.storydriven.storydiagrams.diagram.Constraint_3004"/>
+            <param name="semanticHint" value="3006"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.MatchingPattern_3025"
-               name="%metatype.name.MatchingPattern_3025"
+               id="org.storydriven.storydiagrams.diagram.MatchingPattern_3007"
+               name="%metatype.name.MatchingPattern_3007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MatchingPattern"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.MatchingPatternEditHelper">
-            <param name="semanticHint" value="3025"/>
+            <param name="semanticHint" value="3007"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.ActivityEdge_4005"
-               name="%metatype.name.ActivityEdge_4005"
+               id="org.storydriven.storydiagrams.diagram.ActivityEdge_4001"
+               name="%metatype.name.ActivityEdge_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ActivityEdge"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.ActivityEdgeEditHelper">
-            <param name="semanticHint" value="4005"/>
+            <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.LinkVariable_4006"
-               name="%metatype.name.LinkVariable_4006"
+               id="org.storydriven.storydiagrams.diagram.LinkVariable_4002"
+               name="%metatype.name.LinkVariable_4002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="LinkVariable"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.LinkVariableEditHelper">
-            <param name="semanticHint" value="4006"/>
+            <param name="semanticHint" value="4002"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.InclusionLink_4007"
-               name="%metatype.name.InclusionLink_4007"
+               id="org.storydriven.storydiagrams.diagram.InclusionLink_4003"
+               name="%metatype.name.InclusionLink_4003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="InclusionLink"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.InclusionLinkEditHelper">
-            <param name="semanticHint" value="4007"/>
+            <param name="semanticHint" value="4003"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
          <metamodelType
-               id="org.storydriven.storydiagrams.diagram.MaybeLink_4008"
-               name="%metatype.name.MaybeLink_4008"
+               id="org.storydriven.storydiagrams.diagram.MaybeLink_4004"
+               name="%metatype.name.MaybeLink_4004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MaybeLink"
                edithelper="org.storydriven.storydiagrams.diagram.edit.helpers.MaybeLinkEditHelper">
-            <param name="semanticHint" value="4008"/>
+            <param name="semanticHint" value="4004"/>
          </metamodelType>
       </metamodel>
    </extension>
@@ -500,25 +500,25 @@
       </clientContext> 
       <binding context="org.storydriven.storydiagrams.diagram.TypeContext">
          <elementType ref="org.storydriven.storydiagrams.diagram.Activity_1000"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.ActivityCallNode_2009"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.StatementNode_2010"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.ModifyingStoryNode_2011"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.MatchingStoryNode_2012"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.InitialNode_2013"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.JunctionNode_2014"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.ActivityFinalNode_2015"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.FlowFinalNode_2016"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.StoryPattern_3019"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.ObjectVariable_3020"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.AttributeAssignment_3021"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.Constraint_3022"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.CollectionVariable_3023"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.Constraint_3024"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.MatchingPattern_3025"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.ActivityEdge_4005"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.LinkVariable_4006"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.InclusionLink_4007"/>
-         <elementType ref="org.storydriven.storydiagrams.diagram.MaybeLink_4008"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.ActivityCallNode_2001"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.StatementNode_2002"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.ModifyingStoryNode_2003"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.MatchingStoryNode_2004"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.InitialNode_2005"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.JunctionNode_2006"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.ActivityFinalNode_2007"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.FlowFinalNode_2008"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.StoryPattern_3001"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.ObjectVariable_3002"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.AttributeAssignment_3003"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.Constraint_3004"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.CollectionVariable_3005"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.Constraint_3006"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.MatchingPattern_3007"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.ActivityEdge_4001"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.LinkVariable_4002"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.InclusionLink_4003"/>
+         <elementType ref="org.storydriven.storydiagrams.diagram.MaybeLink_4004"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -660,32 +660,9 @@
       </menuContribution>
       <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
       </menuContribution -->
-      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
-         <command commandId="org.storydriven.storydiagrams.diagram.LoadResourceAction">
-            <visibleWhen>
-               <and>
-                  <with variable="activePartId"><equals value="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"/></with>
-                  <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart"/>
-                  </iterate></with>
-               </and>
-            </visibleWhen>
-         </command>
-      </menuContribution>
    </extension>
 
-   <extension point="org.eclipse.ui.commands" id="menu-commands">
-      <?gmfgen generated="true"?>
-      <category id="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
-      <command id="org.storydriven.storydiagrams.diagram.LoadResourceAction"
-         name="Load Resource"
-         categoryId="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"
-         defaultHandler="org.storydriven.storydiagrams.diagram.part.LoadResourceAction"/>
-   </extension>
 
-   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
-      <?gmfgen generated="true"?>
-   </extension>
 
    <!-- optionally, specify keybindings -->
 </plugin>

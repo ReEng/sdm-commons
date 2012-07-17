@@ -27,11 +27,12 @@ import org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPar
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableOperatorLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.Constraint2EditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ConstraintEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.ContainmentRelationOperatorLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InclusionLinkEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.InclusionLinkLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart;
@@ -41,6 +42,7 @@ import org.storydriven.storydiagrams.diagram.edit.parts.MatchingPatternEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeNameEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.MaybeLinkEditPart;
+import org.storydriven.storydiagrams.diagram.edit.parts.MaybeLinkLabelEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeNameEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart;
@@ -48,8 +50,6 @@ import org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableOperatorEd
 import org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeNameEditPart;
 import org.storydriven.storydiagrams.diagram.edit.parts.StoryPatternEditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.WrappingLabel14EditPart;
-import org.storydriven.storydiagrams.diagram.edit.parts.WrappingLabel7EditPart;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorPlugin;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry;
 import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes;
@@ -111,66 +111,66 @@ public class StorydiagramsNavigatorLabelProvider extends LabelProvider implement
 	 */
 	public Image getImage(View view) {
 		switch (StorydiagramsVisualIDRegistry.getVisualID(view)) {
-		case ModifyingStoryNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?ModifyingStoryNode", StorydiagramsElementTypes.ModifyingStoryNode_2011); //$NON-NLS-1$
-		case AttributeAssignmentEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?AttributeAssignment", StorydiagramsElementTypes.AttributeAssignment_3021); //$NON-NLS-1$
-		case ActivityEdgeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.storydriven.org/storydiagrams/activities/0.2.1?ActivityEdge", StorydiagramsElementTypes.ActivityEdge_4005); //$NON-NLS-1$
 		case Constraint2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?Constraint", StorydiagramsElementTypes.Constraint_3024); //$NON-NLS-1$
-		case ObjectVariableEditPart.VISUAL_ID:
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?Constraint", StorydiagramsElementTypes.Constraint_3006); //$NON-NLS-1$
+		case StatementNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?ObjectVariable", StorydiagramsElementTypes.ObjectVariable_3020); //$NON-NLS-1$
-		case LinkVariableEditPart.VISUAL_ID:
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?StatementNode", StorydiagramsElementTypes.StatementNode_2002); //$NON-NLS-1$
+		case AttributeAssignmentEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.storydriven.org/storydiagrams/patterns/0.2.1?LinkVariable", StorydiagramsElementTypes.LinkVariable_4006); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?AttributeAssignment", StorydiagramsElementTypes.AttributeAssignment_3003); //$NON-NLS-1$
+		case JunctionNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?JunctionNode", StorydiagramsElementTypes.JunctionNode_2006); //$NON-NLS-1$
 		case StoryPatternEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?StoryPattern", StorydiagramsElementTypes.StoryPattern_3019); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?StoryPattern", StorydiagramsElementTypes.StoryPattern_3001); //$NON-NLS-1$
+		case MaybeLinkEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.storydriven.org/storydiagrams/patterns/0.2.1?MaybeLink", StorydiagramsElementTypes.MaybeLink_4004); //$NON-NLS-1$
+		case ActivityCallNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?ActivityCallNode", StorydiagramsElementTypes.ActivityCallNode_2001); //$NON-NLS-1$
+		case InclusionLinkEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.storydriven.org/storydiagrams/patterns/0.2.1?InclusionLink", StorydiagramsElementTypes.InclusionLink_4003); //$NON-NLS-1$
+		case CollectionVariableEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?CollectionVariable", StorydiagramsElementTypes.CollectionVariable_3005); //$NON-NLS-1$
 		case ActivityEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Diagram?http://www.storydriven.org/storydiagrams/activities/0.2.1?Activity", StorydiagramsElementTypes.Activity_1000); //$NON-NLS-1$
-		case MatchingPatternEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?MatchingPattern", StorydiagramsElementTypes.MatchingPattern_3025); //$NON-NLS-1$
-		case ActivityCallNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?ActivityCallNode", StorydiagramsElementTypes.ActivityCallNode_2009); //$NON-NLS-1$
-		case FlowFinalNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?FlowFinalNode", StorydiagramsElementTypes.FlowFinalNode_2016); //$NON-NLS-1$
-		case MatchingStoryNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?MatchingStoryNode", StorydiagramsElementTypes.MatchingStoryNode_2012); //$NON-NLS-1$
-		case CollectionVariableEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?CollectionVariable", StorydiagramsElementTypes.CollectionVariable_3023); //$NON-NLS-1$
-		case JunctionNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?JunctionNode", StorydiagramsElementTypes.JunctionNode_2014); //$NON-NLS-1$
-		case InitialNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?InitialNode", StorydiagramsElementTypes.InitialNode_2013); //$NON-NLS-1$
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?ActivityFinalNode", StorydiagramsElementTypes.ActivityFinalNode_2015); //$NON-NLS-1$
-		case MaybeLinkEditPart.VISUAL_ID:
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?ActivityFinalNode", StorydiagramsElementTypes.ActivityFinalNode_2007); //$NON-NLS-1$
+		case LinkVariableEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.storydriven.org/storydiagrams/patterns/0.2.1?MaybeLink", StorydiagramsElementTypes.MaybeLink_4008); //$NON-NLS-1$
-		case InclusionLinkEditPart.VISUAL_ID:
+					"Navigator?Link?http://www.storydriven.org/storydiagrams/patterns/0.2.1?LinkVariable", StorydiagramsElementTypes.LinkVariable_4002); //$NON-NLS-1$
+		case MatchingPatternEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.storydriven.org/storydiagrams/patterns/0.2.1?InclusionLink", StorydiagramsElementTypes.InclusionLink_4007); //$NON-NLS-1$
-		case StatementNodeEditPart.VISUAL_ID:
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?MatchingPattern", StorydiagramsElementTypes.MatchingPattern_3007); //$NON-NLS-1$
+		case MatchingStoryNodeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?StatementNode", StorydiagramsElementTypes.StatementNode_2010); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?MatchingStoryNode", StorydiagramsElementTypes.MatchingStoryNode_2004); //$NON-NLS-1$
+		case ModifyingStoryNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?ModifyingStoryNode", StorydiagramsElementTypes.ModifyingStoryNode_2003); //$NON-NLS-1$
+		case ObjectVariableEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?ObjectVariable", StorydiagramsElementTypes.ObjectVariable_3002); //$NON-NLS-1$
+		case InitialNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?InitialNode", StorydiagramsElementTypes.InitialNode_2005); //$NON-NLS-1$
+		case ActivityEdgeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.storydriven.org/storydiagrams/activities/0.2.1?ActivityEdge", StorydiagramsElementTypes.ActivityEdge_4001); //$NON-NLS-1$
 		case ConstraintEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?Constraint", StorydiagramsElementTypes.Constraint_3022); //$NON-NLS-1$
+					"Navigator?Node?http://www.storydriven.org/storydiagrams/patterns/0.2.1?Constraint", StorydiagramsElementTypes.Constraint_3004); //$NON-NLS-1$
+		case FlowFinalNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.storydriven.org/storydiagrams/activities/0.2.1?FlowFinalNode", StorydiagramsElementTypes.FlowFinalNode_2008); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -221,46 +221,46 @@ public class StorydiagramsNavigatorLabelProvider extends LabelProvider implement
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (StorydiagramsVisualIDRegistry.getVisualID(view)) {
-		case ModifyingStoryNodeEditPart.VISUAL_ID:
-			return getModifyingStoryNode_2011Text(view);
-		case AttributeAssignmentEditPart.VISUAL_ID:
-			return getAttributeAssignment_3021Text(view);
-		case ActivityEdgeEditPart.VISUAL_ID:
-			return getActivityEdge_4005Text(view);
 		case Constraint2EditPart.VISUAL_ID:
-			return getConstraint_3024Text(view);
-		case ObjectVariableEditPart.VISUAL_ID:
-			return getObjectVariable_3020Text(view);
-		case LinkVariableEditPart.VISUAL_ID:
-			return getLinkVariable_4006Text(view);
+			return getConstraint_3006Text(view);
+		case StatementNodeEditPart.VISUAL_ID:
+			return getStatementNode_2002Text(view);
+		case AttributeAssignmentEditPart.VISUAL_ID:
+			return getAttributeAssignment_3003Text(view);
+		case JunctionNodeEditPart.VISUAL_ID:
+			return getJunctionNode_2006Text(view);
 		case StoryPatternEditPart.VISUAL_ID:
-			return getStoryPattern_3019Text(view);
+			return getStoryPattern_3001Text(view);
+		case MaybeLinkEditPart.VISUAL_ID:
+			return getMaybeLink_4004Text(view);
+		case ActivityCallNodeEditPart.VISUAL_ID:
+			return getActivityCallNode_2001Text(view);
+		case InclusionLinkEditPart.VISUAL_ID:
+			return getInclusionLink_4003Text(view);
+		case CollectionVariableEditPart.VISUAL_ID:
+			return getCollectionVariable_3005Text(view);
 		case ActivityEditPart.VISUAL_ID:
 			return getActivity_1000Text(view);
-		case MatchingPatternEditPart.VISUAL_ID:
-			return getMatchingPattern_3025Text(view);
-		case ActivityCallNodeEditPart.VISUAL_ID:
-			return getActivityCallNode_2009Text(view);
-		case FlowFinalNodeEditPart.VISUAL_ID:
-			return getFlowFinalNode_2016Text(view);
-		case MatchingStoryNodeEditPart.VISUAL_ID:
-			return getMatchingStoryNode_2012Text(view);
-		case CollectionVariableEditPart.VISUAL_ID:
-			return getCollectionVariable_3023Text(view);
-		case JunctionNodeEditPart.VISUAL_ID:
-			return getJunctionNode_2014Text(view);
-		case InitialNodeEditPart.VISUAL_ID:
-			return getInitialNode_2013Text(view);
 		case ActivityFinalNodeEditPart.VISUAL_ID:
-			return getActivityFinalNode_2015Text(view);
-		case MaybeLinkEditPart.VISUAL_ID:
-			return getMaybeLink_4008Text(view);
-		case InclusionLinkEditPart.VISUAL_ID:
-			return getInclusionLink_4007Text(view);
-		case StatementNodeEditPart.VISUAL_ID:
-			return getStatementNode_2010Text(view);
+			return getActivityFinalNode_2007Text(view);
+		case LinkVariableEditPart.VISUAL_ID:
+			return getLinkVariable_4002Text(view);
+		case MatchingPatternEditPart.VISUAL_ID:
+			return getMatchingPattern_3007Text(view);
+		case MatchingStoryNodeEditPart.VISUAL_ID:
+			return getMatchingStoryNode_2004Text(view);
+		case ModifyingStoryNodeEditPart.VISUAL_ID:
+			return getModifyingStoryNode_2003Text(view);
+		case ObjectVariableEditPart.VISUAL_ID:
+			return getObjectVariable_3002Text(view);
+		case InitialNodeEditPart.VISUAL_ID:
+			return getInitialNode_2005Text(view);
+		case ActivityEdgeEditPart.VISUAL_ID:
+			return getActivityEdge_4001Text(view);
 		case ConstraintEditPart.VISUAL_ID:
-			return getConstraint_3022Text(view);
+			return getConstraint_3004Text(view);
+		case FlowFinalNodeEditPart.VISUAL_ID:
+			return getFlowFinalNode_2008Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -268,137 +268,139 @@ public class StorydiagramsNavigatorLabelProvider extends LabelProvider implement
 	/**
 	 * @generated
 	 */
-	private String getMatchingPattern_3025Text(View view) {
-		MatchingPattern domainModelElement = (MatchingPattern) view.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getComment();
-		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 3025); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getJunctionNode_2014Text(View view) {
-		JunctionNode domainModelElement = (JunctionNode) view.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
-		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 2014); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getStatementNode_2010Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.StatementNode_2010,
-				view.getElement() != null ? view.getElement() : view,
-				StorydiagramsVisualIDRegistry.getType(StatementNodeNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5034); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getInclusionLink_4007Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.InclusionLink_4007,
-				view.getElement() != null ? view.getElement() : view,
-				StorydiagramsVisualIDRegistry.getType(ContainmentRelationOperatorLabelEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6010); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getActivityCallNode_2009Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.ActivityCallNode_2009,
-				view.getElement() != null ? view.getElement() : view,
-				StorydiagramsVisualIDRegistry.getType(ActivityCallNodeNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5032); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getFlowFinalNode_2016Text(View view) {
-		FlowFinalNode domainModelElement = (FlowFinalNode) view.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
-		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 2016); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getObjectVariable_3020Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.ObjectVariable_3020,
-				view.getElement() != null ? view.getElement() : view,
-				StorydiagramsVisualIDRegistry.getType(ObjectVariableOperatorEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5036); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getAttributeAssignment_3021Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.AttributeAssignment_3021,
-				view.getElement() != null ? view.getElement() : view,
-				StorydiagramsVisualIDRegistry.getType(AttributeAssignmentEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3021); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getConstraint_3024Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.Constraint_3024,
+	private String getConstraint_3006Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.Constraint_3006,
 				view.getElement() != null ? view.getElement() : view,
 				StorydiagramsVisualIDRegistry.getType(Constraint2EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3024); //$NON-NLS-1$
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3006); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getStatementNode_2002Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.StatementNode_2002,
+				view.getElement() != null ? view.getElement() : view,
+				StorydiagramsVisualIDRegistry.getType(StatementNodeNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5003); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAttributeAssignment_3003Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.AttributeAssignment_3003,
+				view.getElement() != null ? view.getElement() : view,
+				StorydiagramsVisualIDRegistry.getType(AttributeAssignmentEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3003); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getJunctionNode_2006Text(View view) {
+		JunctionNode domainModelElement = (JunctionNode) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError(
+					"No domain element for view with visualID = " + 2006); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getStoryPattern_3001Text(View view) {
+		StoryPattern domainModelElement = (StoryPattern) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getComment();
+		} else {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError(
+					"No domain element for view with visualID = " + 3001); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getMaybeLink_4004Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.MaybeLink_4004,
+				view.getElement() != null ? view.getElement() : view,
+				StorydiagramsVisualIDRegistry.getType(MaybeLinkLabelEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6006); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getActivityCallNode_2001Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.ActivityCallNode_2001,
+				view.getElement() != null ? view.getElement() : view,
+				StorydiagramsVisualIDRegistry.getType(ActivityCallNodeNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5001); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getInclusionLink_4003Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.InclusionLink_4003,
+				view.getElement() != null ? view.getElement() : view,
+				StorydiagramsVisualIDRegistry.getType(InclusionLinkLabelEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6005); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getCollectionVariable_3005Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.CollectionVariable_3005,
+				view.getElement() != null ? view.getElement() : view,
+				StorydiagramsVisualIDRegistry.getType(CollectionVariableOperatorLabelEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5008); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -420,47 +422,15 @@ public class StorydiagramsNavigatorLabelProvider extends LabelProvider implement
 	/**
 	 * @generated
 	 */
-	private String getConstraint_3022Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.Constraint_3022,
-				view.getElement() != null ? view.getElement() : view,
-				StorydiagramsVisualIDRegistry.getType(ConstraintEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3022); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getInitialNode_2013Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.InitialNode_2013,
-				view.getElement() != null ? view.getElement() : view,
-				StorydiagramsVisualIDRegistry.getType(InitialNodeLabelEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5044); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getActivityFinalNode_2015Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.ActivityFinalNode_2015,
+	private String getActivityFinalNode_2007Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.ActivityFinalNode_2007,
 				view.getElement() != null ? view.getElement() : view,
 				StorydiagramsVisualIDRegistry.getType(ActivityFinalNodeLabelEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5045); //$NON-NLS-1$
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5014); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -468,47 +438,15 @@ public class StorydiagramsNavigatorLabelProvider extends LabelProvider implement
 	/**
 	 * @generated
 	 */
-	private String getMaybeLink_4008Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.MaybeLink_4008,
-				view.getElement() != null ? view.getElement() : view,
-				StorydiagramsVisualIDRegistry.getType(WrappingLabel14EditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6011); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getActivityEdge_4005Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.ActivityEdge_4005,
-				view.getElement() != null ? view.getElement() : view,
-				StorydiagramsVisualIDRegistry.getType(ActivityEdgeGuardLabelEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6006); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getLinkVariable_4006Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.LinkVariable_4006,
+	private String getLinkVariable_4002Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.LinkVariable_4002,
 				view.getElement() != null ? view.getElement() : view,
 				StorydiagramsVisualIDRegistry.getType(LinkVariableSourceEndLabelEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6007); //$NON-NLS-1$
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -516,45 +454,13 @@ public class StorydiagramsNavigatorLabelProvider extends LabelProvider implement
 	/**
 	 * @generated
 	 */
-	private String getCollectionVariable_3023Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.CollectionVariable_3023,
-				view.getElement() != null ? view.getElement() : view,
-				StorydiagramsVisualIDRegistry.getType(WrappingLabel7EditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5039); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getModifyingStoryNode_2011Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.ModifyingStoryNode_2011,
-				view.getElement() != null ? view.getElement() : view,
-				StorydiagramsVisualIDRegistry.getType(ModifyingStoryNodeNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5042); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getStoryPattern_3019Text(View view) {
-		StoryPattern domainModelElement = (StoryPattern) view.getElement();
+	private String getMatchingPattern_3007Text(View view) {
+		MatchingPattern domainModelElement = (MatchingPattern) view.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getComment();
 		} else {
 			StorydiagramsDiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 3019); //$NON-NLS-1$
+					"No domain element for view with visualID = " + 3007); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -562,15 +468,109 @@ public class StorydiagramsNavigatorLabelProvider extends LabelProvider implement
 	/**
 	 * @generated
 	 */
-	private String getMatchingStoryNode_2012Text(View view) {
-		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.MatchingStoryNode_2012,
+	private String getMatchingStoryNode_2004Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.MatchingStoryNode_2004,
 				view.getElement() != null ? view.getElement() : view,
 				StorydiagramsVisualIDRegistry.getType(MatchingStoryNodeNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5043); //$NON-NLS-1$
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5012); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getModifyingStoryNode_2003Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.ModifyingStoryNode_2003,
+				view.getElement() != null ? view.getElement() : view,
+				StorydiagramsVisualIDRegistry.getType(ModifyingStoryNodeNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5011); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getObjectVariable_3002Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.ObjectVariable_3002,
+				view.getElement() != null ? view.getElement() : view,
+				StorydiagramsVisualIDRegistry.getType(ObjectVariableOperatorEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5005); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getInitialNode_2005Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.InitialNode_2005,
+				view.getElement() != null ? view.getElement() : view,
+				StorydiagramsVisualIDRegistry.getType(InitialNodeLabelEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5013); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getActivityEdge_4001Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.ActivityEdge_4001,
+				view.getElement() != null ? view.getElement() : view,
+				StorydiagramsVisualIDRegistry.getType(ActivityEdgeGuardLabelEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6001); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getConstraint_3004Text(View view) {
+		IParser parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.Constraint_3004,
+				view.getElement() != null ? view.getElement() : view,
+				StorydiagramsVisualIDRegistry.getType(ConstraintEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3004); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getFlowFinalNode_2008Text(View view) {
+		FlowFinalNode domainModelElement = (FlowFinalNode) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			StorydiagramsDiagramEditorPlugin.getInstance().logError(
+					"No domain element for view with visualID = " + 2008); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

@@ -21,7 +21,7 @@ public class StoryPatternStoryPatternConstraintsCompartmentEditPart extends List
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7027;
+	public static final int VISUAL_ID = 7003;
 
 	/**
 	 * @generated

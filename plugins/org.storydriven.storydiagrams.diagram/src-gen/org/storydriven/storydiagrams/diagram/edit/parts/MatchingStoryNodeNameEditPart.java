@@ -51,7 +51,7 @@ public class MatchingStoryNodeNameEditPart extends CompartmentEditPart implement
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5043;
+	public static final int VISUAL_ID = 5012;
 
 	/**
 	 * @generated
@@ -275,7 +275,7 @@ public class MatchingStoryNodeNameEditPart extends CompartmentEditPart implement
 		if (parser == null) {
 			parser = StorydiagramsParserProvider
 					.getParser(
-							StorydiagramsElementTypes.MatchingStoryNode_2012,
+							StorydiagramsElementTypes.MatchingStoryNode_2004,
 							getParserElement(),
 							StorydiagramsVisualIDRegistry
 									.getType(org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeNameEditPart.VISUAL_ID));

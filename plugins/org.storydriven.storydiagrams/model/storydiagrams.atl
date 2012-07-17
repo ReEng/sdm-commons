@@ -1,3 +1,4 @@
+-- @atlcompiler atl2010
 -- @nsURI GM=http://www.eclipse.org/gmf/2009/GenModel
 
 
@@ -18,30 +19,70 @@ rule FixGenEditorGenerator {
 		)
 }
 
--- enable print
-rule EnablePrint {
+-- fix metadata, enable print
+rule FixGenPlugin {
 	from
 		input_name: GM!GenPlugin
 	to
 		output_name: GM!GenPlugin (
+			name <- 'Story Diagram Editor',
+			provider <- 'www.storydriven.org',
+			version <- '0.2.0.qualifier',
 			printingEnabled <- true
 		)
 }
 
--- raw property tab
-rule EditRawPropertyTab {
+-- delete context menu
+rule DeleteContextMenu {
 	from
-		tin: GM!GenPropertyTab (
-			tin.iD = 'domain'
+		cin: GM!GenContextMenu
+	to
+		drop
+}
+
+-- delete default property sheet
+--rule DeletePropertySheet {
+--	from
+--		pin: GM!GenPropertySheet
+--	to
+--		drop
+--}
+
+-- make wrapping label edit parts have stable names
+rule ActivityCallNodeCalleeLabel {
+	from
+		gnlin: GM!GenNodeLabel (
+			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gnlin.viewmap.getterName = 'getActivityCallNodeCalleeLabel'
+		else
+			false
+		endif
 		)
 	to
-		tout: GM!GenPropertyTab (
-			iD <- 'raw',
-			label <- 'Raw'
+		gnlout: GM!GenNodeLabel (
+			editPartClassName <- 'ActivityCallNodeCalleeLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'ActivityCallNodeCalleeLabelItemSemanticEditPolicy'
 		)
 }
 
--- make wrapping label edit parts have stable names
+rule CollectionVariableOperatorLabel {
+	from
+		gnlin: GM!GenNodeLabel (
+			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gnlin.viewmap.getterName = 'getCollectionVariableOperatorLabel'
+		else
+			false
+		endif
+		)
+	to
+		gnlout: GM!GenNodeLabel (
+			editPartClassName <- 'CollectionVariableOperatorLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'CollectionVariableOperatorItemSemanticEditPolicy'
+		)
+}
+
 rule CollectionVariableNameLabel {
 	from
 		gnlin: GM!GenNodeLabel (
@@ -59,20 +100,20 @@ rule CollectionVariableNameLabel {
 		)
 }
 
-rule ActivityCallNodeCalleeLabel {
+rule CollectionVariableTypeLabel {
 	from
 		gnlin: GM!GenNodeLabel (
 			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
-			gnlin.viewmap.getterName = 'getActivityCallNodeCalleeLabel'
+			gnlin.viewmap.getterName = 'getCollectionVariableTypeLabel'
 		else
 			false
 		endif
 		)
 	to
 		gnlout: GM!GenNodeLabel (
-			editPartClassName <- 'ActivityCallNodeCalleeLabelEditPart',
+			editPartClassName <- 'CollectionVariableTypeLabelEditPart',
 			itemSemanticEditPolicyClassName <-
-					'ActivityCallNodeCalleeLabelItemSemanticEditPolicy'
+					'CollectionVariableTypeLabelItemSemanticEditPolicy'
 		)
 }
 
@@ -93,7 +134,7 @@ rule StatementNodeExpressionLabel {
 		)
 }
 
-rule StartNodeSignatureLabel {
+rule InitialNodeLabel {
 	from
 		gnlin: GM!GenNodeLabel (
 			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
@@ -109,7 +150,7 @@ rule StartNodeSignatureLabel {
 		)
 }
 
-rule StopNodeSignatureLabel {
+rule ActivityFinalNodeLabel {
 	from
 		gnlin: GM!GenNodeLabel (
 			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
@@ -125,9 +166,143 @@ rule StopNodeSignatureLabel {
 		)
 }
 
--- ##################################################################
--- unstructured
--- ##################################################################
+rule ObjectVariableOperatorLabel {
+	from
+		gnlin: GM!GenNodeLabel (
+			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gnlin.viewmap.getterName = 'getObjectVariableOperatorLabel'
+		else
+			false
+		endif
+		)
+	to
+		gnlout: GM!GenNodeLabel (
+			editPartClassName <- 'ObjectVariableOperatorEditPart',
+			itemSemanticEditPolicyClassName <-
+					'ObjectVariableOperatorItemSemanticEditPolicy'
+		)
+}
+
+rule ObjectVariableTypeLabel {
+	from
+		gnlin: GM!GenNodeLabel (
+			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gnlin.viewmap.getterName = 'getObjectVariableTypeLabel'
+		else
+			false
+		endif
+		)
+	to
+		gnlout: GM!GenNodeLabel (
+			editPartClassName <- 'ObjectVariableTypeLabelEditPart',
+			itemSemanticEditPolicyClassName <- 'ObjectVariableTypeItemSemanticEditPolicy'
+		)
+}
+
+-- GenLinkLabel
+rule MaybeLinkLabel {
+	from
+		gnlin: GM!GenLinkLabel (
+			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+				gnlin.viewmap.getterName = 'getMaybeLinkLabel'
+			else
+				false
+			endif
+		)
+	to
+		gnlout: GM!GenLinkLabel (
+			editPartClassName <- 'MaybeLinkLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'MaybeLinkItemSemanticEditPolicy'
+		)
+}
+
+rule ActivityEdgeGuardLabel {
+	from
+		gllin: GM!GenLinkLabel (
+			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gllin.viewmap.getterName = 'getActivityEdgeGuardLabel'
+		else
+			false
+		endif
+		)
+	to
+		gllout: GM!GenLinkLabel (
+			editPartClassName <- 'ActivityEdgeGuardLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'ActivityEdgeGuardLabelItemSemanticEditPolicy'
+		)
+}
+
+rule LinkVariableTargetEndLabel {
+	from
+		gllin: GM!GenLinkLabel (
+			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gllin.viewmap.getterName = 'getLinkVariableTargetEndLabel'
+		else
+			false
+		endif
+		)
+	to
+		gllout: GM!GenLinkLabel (
+			editPartClassName <- 'LinkVariableTargetEndLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'LinkVariableTargetEndLabelItemSemanticEditPolicy'
+		)
+}
+
+rule LinkVariableSourceEndLabel {
+	from
+		gllin: GM!GenLinkLabel (
+			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gllin.viewmap.getterName = 'getLinkVariableSourceEndLabel'
+		else
+			false
+		endif
+		)
+	to
+		gllout: GM!GenLinkLabel (
+			editPartClassName <- 'LinkVariableSourceEndLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'LinkVariableSourceEndLabelItemSemanticEditPolicy'
+		)
+}
+
+rule LinkVariableOperatorLabel {
+	from
+		gllin: GM!GenLinkLabel (
+			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gllin.viewmap.getterName = 'getLinkVariableOperatorLabel'
+		else
+			false
+		endif
+		)
+	to
+		gllout: GM!GenLinkLabel (
+			editPartClassName <- 'LinkVariableOperatorLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'LinkVariableOperatorLabelItemSemanticEditPolicy'
+		)
+}
+
+rule InclusionLinkLabel {
+	from
+		gllin: GM!GenLinkLabel (
+			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
+			gllin.viewmap.getterName = 'getInclusionLinkLabel'
+		else
+			false
+		endif
+		)
+	to
+		gllout: GM!GenLinkLabel (
+			editPartClassName <- 'InclusionLinkLabelEditPart',
+			itemSemanticEditPolicyClassName <-
+					'InclusionLinkLabelItemSemanticEditPolicy'
+		)
+}
+
+-- make compartment edit parts have stable names
 rule GenCompartment1 {
 	from
 		gcin: GM!GenCompartment (
@@ -148,123 +323,5 @@ rule GenCompartment2 {
 	to
 		gcout: GM!GenCompartment (
 			listLayout <- false
-		)
-}
-
-rule GenNodeLabel1 {
-	from
-		gnlin: GM!GenNodeLabel (
-			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
-			gnlin.viewmap.getterName = 'getObjectVariableOperatorLabel'
-		else
-			false
-		endif
-		)
-	to
-		gnlout: GM!GenNodeLabel (
-			editPartClassName <- 'ObjectVariableOperatorEditPart',
-			itemSemanticEditPolicyClassName <-
-					'ObjectVariableOperatorItemSemanticEditPolicy'
-		)
-}
-
-rule GenNodeLabel2 {
-	from
-		gnlin: GM!GenNodeLabel (
-			if (gnlin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
-			gnlin.viewmap.getterName = 'getObjectVariableTypeLabel'
-		else
-			false
-		endif
-		)
-	to
-		gnlout: GM!GenNodeLabel (
-			editPartClassName <- 'ObjectVariableTypeLabelEditPart',
-			itemSemanticEditPolicyClassName <- 'ObjectVariableTypeItemSemanticEditPolicy'
-		)
-}
-
-rule GenLinkLabel1 {
-	from
-		gllin: GM!GenLinkLabel (
-			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
-			gllin.viewmap.getterName = 'getActivityEdgeGuardLabel'
-		else
-			false
-		endif
-		)
-	to
-		gllout: GM!GenLinkLabel (
-			editPartClassName <- 'ActivityEdgeGuardLabelEditPart',
-			itemSemanticEditPolicyClassName <-
-					'ActivityEdgeGuardLabelItemSemanticEditPolicy'
-		)
-}
-
-rule GenLinkLabel2 {
-	from
-		gllin: GM!GenLinkLabel (
-			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
-			gllin.viewmap.getterName = 'getLinkVariableTargetEndFigure'
-		else
-			false
-		endif
-		)
-	to
-		gllout: GM!GenLinkLabel (
-			editPartClassName <- 'LinkVariableTargetEndLabelEditPart',
-			itemSemanticEditPolicyClassName <-
-					'LinkVariableTargetEndLabelItemSemanticEditPolicy'
-		)
-}
-
-rule GenLinkLabel3 {
-	from
-		gllin: GM!GenLinkLabel (
-			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
-			gllin.viewmap.getterName = 'getLinkVariableSourceEndFigure'
-		else
-			false
-		endif
-		)
-	to
-		gllout: GM!GenLinkLabel (
-			editPartClassName <- 'LinkVariableSourceEndLabelEditPart',
-			itemSemanticEditPolicyClassName <-
-					'LinkVariableSourceEndLabelItemSemanticEditPolicy'
-		)
-}
-
-rule GenLinkLabel4 {
-	from
-		gllin: GM!GenLinkLabel (
-			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
-			gllin.viewmap.getterName = 'getLinkVariableOperatorFigure'
-		else
-			false
-		endif
-		)
-	to
-		gllout: GM!GenLinkLabel (
-			editPartClassName <- 'LinkVariableOperatorLabelEditPart',
-			itemSemanticEditPolicyClassName <-
-					'LinkVariableOperatorLabelItemSemanticEditPolicy'
-		)
-}
-
-rule GenLinkLabel5 {
-	from
-		gllin: GM!GenLinkLabel (
-			if (gllin.viewmap.oclIsKindOf(GM!ParentAssignedViewmap)) then
-			gllin.viewmap.getterName = 'getContainmentRelationOperatorFigure'
-		else
-			false
-		endif
-		)
-	to
-		gllout: GM!GenLinkLabel (
-			editPartClassName <- 'ContainmentRelationOperatorLabelEditPart',
-			itemSemanticEditPolicyClassName <-
-					'ContainmentRelationOperatorLabelItemSemanticEditPolicy'
 		)
 }

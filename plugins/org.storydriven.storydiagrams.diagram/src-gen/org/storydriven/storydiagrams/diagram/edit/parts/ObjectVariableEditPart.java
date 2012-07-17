@@ -49,7 +49,7 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3020;
+	public static final int VISUAL_ID = 3002;
 
 	/**
 	 * @generated
@@ -311,9 +311,9 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(StorydiagramsElementTypes.LinkVariable_4006);
-		types.add(StorydiagramsElementTypes.InclusionLink_4007);
-		types.add(StorydiagramsElementTypes.MaybeLink_4008);
+		types.add(StorydiagramsElementTypes.LinkVariable_4002);
+		types.add(StorydiagramsElementTypes.InclusionLink_4003);
+		types.add(StorydiagramsElementTypes.MaybeLink_4004);
 		return types;
 	}
 
@@ -323,22 +323,22 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart) {
-			types.add(StorydiagramsElementTypes.LinkVariable_4006);
+			types.add(StorydiagramsElementTypes.LinkVariable_4002);
 		}
 		if (targetEditPart instanceof CollectionVariableEditPart) {
-			types.add(StorydiagramsElementTypes.LinkVariable_4006);
+			types.add(StorydiagramsElementTypes.LinkVariable_4002);
 		}
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart) {
-			types.add(StorydiagramsElementTypes.InclusionLink_4007);
+			types.add(StorydiagramsElementTypes.InclusionLink_4003);
 		}
 		if (targetEditPart instanceof CollectionVariableEditPart) {
-			types.add(StorydiagramsElementTypes.InclusionLink_4007);
+			types.add(StorydiagramsElementTypes.InclusionLink_4003);
 		}
 		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart) {
-			types.add(StorydiagramsElementTypes.MaybeLink_4008);
+			types.add(StorydiagramsElementTypes.MaybeLink_4004);
 		}
 		if (targetEditPart instanceof CollectionVariableEditPart) {
-			types.add(StorydiagramsElementTypes.MaybeLink_4008);
+			types.add(StorydiagramsElementTypes.MaybeLink_4004);
 		}
 		return types;
 	}
@@ -348,15 +348,15 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4006) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3020);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3023);
-		} else if (relationshipType == StorydiagramsElementTypes.InclusionLink_4007) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3020);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3023);
-		} else if (relationshipType == StorydiagramsElementTypes.MaybeLink_4008) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3020);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3023);
+		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
+		} else if (relationshipType == StorydiagramsElementTypes.InclusionLink_4003) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
+		} else if (relationshipType == StorydiagramsElementTypes.MaybeLink_4004) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
 		}
 		return types;
 	}
@@ -366,9 +366,9 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(StorydiagramsElementTypes.LinkVariable_4006);
-		types.add(StorydiagramsElementTypes.InclusionLink_4007);
-		types.add(StorydiagramsElementTypes.MaybeLink_4008);
+		types.add(StorydiagramsElementTypes.LinkVariable_4002);
+		types.add(StorydiagramsElementTypes.InclusionLink_4003);
+		types.add(StorydiagramsElementTypes.MaybeLink_4004);
 		return types;
 	}
 
@@ -377,15 +377,15 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4006) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3020);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3023);
-		} else if (relationshipType == StorydiagramsElementTypes.InclusionLink_4007) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3020);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3023);
-		} else if (relationshipType == StorydiagramsElementTypes.MaybeLink_4008) {
-			types.add(StorydiagramsElementTypes.ObjectVariable_3020);
-			types.add(StorydiagramsElementTypes.CollectionVariable_3023);
+		if (relationshipType == StorydiagramsElementTypes.LinkVariable_4002) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
+		} else if (relationshipType == StorydiagramsElementTypes.InclusionLink_4003) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
+		} else if (relationshipType == StorydiagramsElementTypes.MaybeLink_4004) {
+			types.add(StorydiagramsElementTypes.ObjectVariable_3002);
+			types.add(StorydiagramsElementTypes.CollectionVariable_3005);
 		}
 		return types;
 	}
@@ -398,11 +398,11 @@ public class ObjectVariableEditPart extends ShapeNodeEditPart {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == StorydiagramsElementTypes.Constraint_3022) {
+			if (type == StorydiagramsElementTypes.Constraint_3004) {
 				return getChildBySemanticHint(StorydiagramsVisualIDRegistry
 						.getType(ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID));
 			}
-			if (type == StorydiagramsElementTypes.AttributeAssignment_3021) {
+			if (type == StorydiagramsElementTypes.AttributeAssignment_3003) {
 				return getChildBySemanticHint(StorydiagramsVisualIDRegistry
 						.getType(ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID));
 			}

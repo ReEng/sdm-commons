@@ -15,14 +15,14 @@ public class CollectionVariableCollectionVariableAttributeAssignmentsCompartment
 	 * @generated
 	 */
 	public CollectionVariableCollectionVariableAttributeAssignmentsCompartmentItemSemanticEditPolicy() {
-		super(StorydiagramsElementTypes.CollectionVariable_3023);
+		super(StorydiagramsElementTypes.CollectionVariable_3005);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (StorydiagramsElementTypes.AttributeAssignment_3021 == req.getElementType()) {
+		if (StorydiagramsElementTypes.AttributeAssignment_3003 == req.getElementType()) {
 			return getGEFWrapper(new AttributeAssignmentCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

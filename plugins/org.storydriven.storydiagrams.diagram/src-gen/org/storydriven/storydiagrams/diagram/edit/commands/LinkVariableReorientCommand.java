@@ -71,7 +71,7 @@ public class LinkVariableReorientCommand extends EditElementCommand {
 			return false;
 		}
 		StoryPattern container = (StoryPattern) getLink().eContainer();
-		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canExistLinkVariable_4006(container,
+		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canExistLinkVariable_4002(container,
 				getLink(), getNewSource(), target);
 	}
 
@@ -87,7 +87,7 @@ public class LinkVariableReorientCommand extends EditElementCommand {
 			return false;
 		}
 		StoryPattern container = (StoryPattern) getLink().eContainer();
-		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canExistLinkVariable_4006(container,
+		return StorydiagramsBaseItemSemanticEditPolicy.getLinkConstraints().canExistLinkVariable_4002(container,
 				getLink(), source, getNewTarget());
 	}
 

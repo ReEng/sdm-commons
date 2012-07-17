@@ -58,7 +58,7 @@ public class ConstraintEditPart extends CompartmentEditPart implements ITextAwar
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3022;
+	public static final int VISUAL_ID = 3004;
 
 	/**
 	 * @generated
@@ -291,7 +291,7 @@ public class ConstraintEditPart extends CompartmentEditPart implements ITextAwar
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.Constraint_3022,
+			parser = StorydiagramsParserProvider.getParser(StorydiagramsElementTypes.Constraint_3004,
 					getParserElement(), StorydiagramsVisualIDRegistry
 							.getType(org.storydriven.storydiagrams.diagram.edit.parts.ConstraintEditPart.VISUAL_ID));
 		}

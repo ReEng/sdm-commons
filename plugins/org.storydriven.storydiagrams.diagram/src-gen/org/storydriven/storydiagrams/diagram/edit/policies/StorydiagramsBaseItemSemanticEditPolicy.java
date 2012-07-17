@@ -312,36 +312,36 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateActivityEdge_4005(Activity container, ActivityNode source, ActivityNode target) {
-			return canExistActivityEdge_4005(container, null, source, target);
+		public boolean canCreateActivityEdge_4001(Activity container, ActivityNode source, ActivityNode target) {
+			return canExistActivityEdge_4001(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateLinkVariable_4006(StoryPattern container, ObjectVariable source, AbstractVariable target) {
-			return canExistLinkVariable_4006(container, null, source, target);
+		public boolean canCreateLinkVariable_4002(StoryPattern container, ObjectVariable source, AbstractVariable target) {
+			return canExistLinkVariable_4002(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateInclusionLink_4007(StoryPattern container, ObjectVariable source,
+		public boolean canCreateInclusionLink_4003(StoryPattern container, ObjectVariable source,
 				AbstractVariable target) {
-			return canExistInclusionLink_4007(container, null, source, target);
+			return canExistInclusionLink_4003(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateMaybeLink_4008(StoryPattern container, ObjectVariable source, AbstractVariable target) {
-			return canExistMaybeLink_4008(container, null, source, target);
+		public boolean canCreateMaybeLink_4004(StoryPattern container, ObjectVariable source, AbstractVariable target) {
+			return canExistMaybeLink_4004(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistActivityEdge_4005(Activity container, ActivityEdge linkInstance, ActivityNode source,
+		public boolean canExistActivityEdge_4001(Activity container, ActivityEdge linkInstance, ActivityNode source,
 				ActivityNode target) {
 			return true;
 		}
@@ -349,7 +349,7 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 		/**
 		 * @generated
 		 */
-		public boolean canExistLinkVariable_4006(StoryPattern container, LinkVariable linkInstance,
+		public boolean canExistLinkVariable_4002(StoryPattern container, LinkVariable linkInstance,
 				ObjectVariable source, AbstractVariable target) {
 			return true;
 		}
@@ -357,7 +357,7 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 		/**
 		 * @generated
 		 */
-		public boolean canExistInclusionLink_4007(StoryPattern container, InclusionLink linkInstance,
+		public boolean canExistInclusionLink_4003(StoryPattern container, InclusionLink linkInstance,
 				ObjectVariable source, AbstractVariable target) {
 			return true;
 		}
@@ -365,7 +365,7 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 		/**
 		 * @generated
 		 */
-		public boolean canExistMaybeLink_4008(StoryPattern container, MaybeLink linkInstance, ObjectVariable source,
+		public boolean canExistMaybeLink_4004(StoryPattern container, MaybeLink linkInstance, ObjectVariable source,
 				AbstractVariable target) {
 			return true;
 		}
