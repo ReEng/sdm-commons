@@ -1,7 +1,7 @@
 package de.mdelab.sdm.interpreter.core;
 
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -130,7 +130,8 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 	 *             If something goes wrong during the execution, e.g., due to
 	 *             erroneous story diagrams or expressions.
 	 */
-	public Map<String, Variable<Classifier>> executeActivity(Activity activity, List<Variable<Classifier>> parameters) throws SDMException
+	public Map<String, Variable<Classifier>> executeActivity(Activity activity, Collection<Variable<Classifier>> parameters)
+			throws SDMException
 	{
 		if (activity == null)
 		{
