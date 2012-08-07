@@ -19,29 +19,29 @@ import org.eclipse.emf.ecore.EFactory;
 public interface PathbridgeFactory extends EFactory
 {
    /**
-    * The singleton instance of the factory.
-    * <!-- begin-user-doc -->
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @generated
-    */
+	 * @generated
+	 */
    PathbridgeFactory eINSTANCE = org.storydriven.storydiagrams.expressions.pathbridge.impl.PathbridgeFactoryImpl.init();
 
    /**
-    * Returns a new object of class '<em>Path Expression Bridge</em>'.
-    * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Path Expression Bridge</em>'.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return a new object of class '<em>Path Expression Bridge</em>'.
-    * @generated
-    */
+	 * @return a new object of class '<em>Path Expression Bridge</em>'.
+	 * @generated
+	 */
    PathExpressionBridge createPathExpressionBridge();
 
    /**
-    * Returns the package supported by this factory.
-    * <!-- begin-user-doc -->
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @return the package supported by this factory.
-    * @generated
-    */
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
    PathbridgePackage getPathbridgePackage();
 
 } //PathbridgeFactory

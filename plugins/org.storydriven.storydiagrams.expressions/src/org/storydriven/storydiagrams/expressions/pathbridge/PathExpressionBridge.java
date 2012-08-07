@@ -28,29 +28,29 @@ import org.storydriven.storydiagrams.expressions.pathExpressions.PathExpression;
 public interface PathExpressionBridge extends Expression
 {
    /**
-    * Returns the value of the '<em><b>Path Expression</b></em>' containment reference.
-    * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Path Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Path Expression</em>' containment reference isn't clear,
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-    * @return the value of the '<em>Path Expression</em>' containment reference.
-    * @see #setPathExpression(PathExpression)
-    * @see org.storydriven.storydiagrams.expressions.pathbridge.PathbridgePackage#getPathExpressionBridge_PathExpression()
-    * @model containment="true"
-    * @generated
-    */
+	 * @return the value of the '<em>Path Expression</em>' containment reference.
+	 * @see #setPathExpression(PathExpression)
+	 * @see org.storydriven.storydiagrams.expressions.pathbridge.PathbridgePackage#getPathExpressionBridge_PathExpression()
+	 * @model containment="true"
+	 * @generated
+	 */
    PathExpression getPathExpression();
 
    /**
-    * Sets the value of the '{@link org.storydriven.storydiagrams.expressions.pathbridge.PathExpressionBridge#getPathExpression <em>Path Expression</em>}' containment reference.
-    * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.storydriven.storydiagrams.expressions.pathbridge.PathExpressionBridge#getPathExpression <em>Path Expression</em>}' containment reference.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @param value the new value of the '<em>Path Expression</em>' containment reference.
-    * @see #getPathExpression()
-    * @generated
-    */
+	 * @param value the new value of the '<em>Path Expression</em>' containment reference.
+	 * @see #getPathExpression()
+	 * @generated
+	 */
    void setPathExpression(PathExpression value);
 
 } // PathExpressionBridge
