@@ -2,11 +2,11 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Fujaba-Model Edit-Support (Extended)
 Bundle-SymbolicName: de.fujaba.modelinstance.edit.eef;singleton:=true
-Bundle-Version: 0.2.0.qualifier
+Bundle-Version: 0.3.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.emf.eef.runtime;bundle-version="0.9.1",
- de.fujaba.modelinstance;bundle-version="0.2.0"
+ de.fujaba.modelinstance;bundle-version="0.3.0"
 Export-Package: de.fujaba.modelinstance.providers
 Bundle-Vendor: Fujaba Community made up of Heinz Nixdorf Institute Paderborn, Technische Universität Darmstadt, University of Kassel, Hasso Plattner Institute Potsdam, Yatta Solutions GmbH
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
