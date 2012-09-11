@@ -513,6 +513,8 @@ public class CommonExpressionsPackageImpl extends EPackageImpl implements Common
 		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.NOT);
 		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.PLUS);
 		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.MINUS);
+		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.INCREMENT);
+		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.DECREMENT);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/GenModel
@@ -539,10 +541,12 @@ public class CommonExpressionsPackageImpl extends EPackageImpl implements Common
 				"For comparison of a String with a regular expression." });
 		addAnnotation(arithmeticOperatorEEnum, source, new String[] { "documentation",
 				"Defines the operators for arithmetic expressions." });
-		addAnnotation(unaryExpressionEClass, source, new String[] { "documentation",
-				"Represents a negated expression, e.g. NOT (a < 5)." });
+		addAnnotation(unaryExpressionEClass, source,
+				new String[] { "documentation", "Represents an unary expression." });
 		addAnnotation(getUnaryExpression_EnclosedExpression(), source, new String[] { "documentation",
 				"Represents the operand of a NotExpression, e.g. a < 5 in NOT (a < 5)." });
+		addAnnotation(getUnaryExpression_Operator(), source, new String[] { "documentation",
+				"Represents the operator of the expression." });
 		addAnnotation(binaryExpressionEClass, source, new String[] { "documentation",
 				"Represents any binary expression like v < 5 or x + 7." });
 		addAnnotation(getBinaryExpression_LeftExpression(), source, new String[] { "documentation",

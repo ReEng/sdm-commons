@@ -14,7 +14,7 @@ import org.storydriven.core.expressions.Expression;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Represents a negated expression, e.g. NOT (a < 5).
+ * Represents an unary expression.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -65,6 +65,9 @@ public interface UnaryExpression extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Represents the operator of the expression.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see org.storydriven.core.expressions.common.UnaryOperator
 	 * @see #setOperator(UnaryOperator)

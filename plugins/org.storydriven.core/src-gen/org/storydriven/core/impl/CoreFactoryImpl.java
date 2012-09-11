@@ -30,7 +30,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public static CoreFactory init() {
 		try {
 			CoreFactory theCoreFactory = (CoreFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.storydriven.org/core/0.2.7");
+					.getEFactory("http://www.storydriven.org/core/0.2.8");
 			if (theCoreFactory != null) {
 				return theCoreFactory;
 			}

@@ -47,7 +47,7 @@ public interface CorePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.storydriven.org/core/0.2.7";
+	String eNS_URI = "http://www.storydriven.org/core/0.2.8";
 
 	/**
 	 * The package namespace name.

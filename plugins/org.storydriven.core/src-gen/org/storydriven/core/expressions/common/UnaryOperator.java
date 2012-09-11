@@ -50,7 +50,23 @@ public enum UnaryOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MINUS(2, "MINUS", "MINUS");
+	MINUS(2, "MINUS", "MINUS"), /**
+								 * The '<em><b>INCREMENT</b></em>' literal object.
+								 * <!-- begin-user-doc -->
+								 * <!-- end-user-doc -->
+								 * @see #INCREMENT_VALUE
+								 * @generated
+								 * @ordered
+								 */
+	INCREMENT(3, "INCREMENT", "INCREMENT"), /**
+											 * The '<em><b>DECREMENT</b></em>' literal object.
+											 * <!-- begin-user-doc -->
+											 * <!-- end-user-doc -->
+											 * @see #DECREMENT_VALUE
+											 * @generated
+											 * @ordered
+											 */
+	DECREMENT(4, "DECREMENT", "DECREMENT");
 
 	/**
 	 * The '<em><b>NOT</b></em>' literal value.
@@ -98,12 +114,42 @@ public enum UnaryOperator implements Enumerator {
 	public static final int MINUS_VALUE = 2;
 
 	/**
+	 * The '<em><b>INCREMENT</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>INCREMENT</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #INCREMENT
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int INCREMENT_VALUE = 3;
+
+	/**
+	 * The '<em><b>DECREMENT</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>DECREMENT</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #DECREMENT
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DECREMENT_VALUE = 4;
+
+	/**
 	 * An array of all the '<em><b>Unary Operator</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final UnaryOperator[] VALUES_ARRAY = new UnaryOperator[] { NOT, PLUS, MINUS, };
+	private static final UnaryOperator[] VALUES_ARRAY = new UnaryOperator[] { NOT, PLUS, MINUS, INCREMENT, DECREMENT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Unary Operator</b></em>' enumerators.
@@ -159,6 +205,10 @@ public enum UnaryOperator implements Enumerator {
 			return PLUS;
 		case MINUS_VALUE:
 			return MINUS;
+		case INCREMENT_VALUE:
+			return INCREMENT;
+		case DECREMENT_VALUE:
+			return DECREMENT;
 		}
 		return null;
 	}

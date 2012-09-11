@@ -11,7 +11,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,7 +20,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.storydriven.core.expressions.common.CommonExpressionsPackage;
 import org.storydriven.core.expressions.common.LogicalExpression;
 
@@ -73,17 +71,6 @@ public class LogicalExpressionItemProvider extends BinaryExpressionItemProvider 
 				getString("_UI_PropertyDescriptor_description", "_UI_LogicalExpression_operator_feature",
 						"_UI_LogicalExpression_type"), CommonExpressionsPackage.Literals.LOGICAL_EXPRESSION__OPERATOR,
 				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This returns LogicalExpression.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/LogicalExpression"));
 	}
 
 	/**

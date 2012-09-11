@@ -151,7 +151,6 @@ public class CommonExpressionsItemProviderAdapterFactory extends CommonExpressio
 	 */
 	protected LogicalExpressionItemProvider logicalExpressionItemProvider;
 
-
 	/**
 	 * This keeps track of the one adapter used for all {@link org.storydriven.core.expressions.common.LiteralExpression} instances.
 	 * <!-- begin-user-doc -->

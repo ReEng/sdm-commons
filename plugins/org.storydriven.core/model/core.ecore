@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="core"
-    nsURI="http://www.storydriven.org/core/0.2.7" nsPrefix="core">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="core" nsURI="http://www.storydriven.org/core/0.2.8" nsPrefix="core">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The core package is the root package for the storydriven core meta-model. It defines several abstract super classes which implement an extension mechanism as well as recurring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element."/>
   </eAnnotations>
@@ -160,10 +158,12 @@
         <eLiterals name="NOT"/>
         <eLiterals name="PLUS" value="1"/>
         <eLiterals name="MINUS" value="2"/>
+        <eLiterals name="INCREMENT" value="3"/>
+        <eLiterals name="DECREMENT" value="4"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" eSuperTypes="#//expressions/Expression">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represents a negated expression, e.g. NOT (a &lt; 5)."/>
+          <details key="documentation" value="Represents an unary expression."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="enclosedExpression"
             ordered="false" lowerBound="1" eType="#//expressions/Expression" containment="true">
@@ -172,7 +172,11 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
-            eType="#//expressions/common/UnaryOperator" defaultValueLiteral=""/>
+            eType="#//expressions/common/UnaryOperator" defaultValueLiteral="">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represents the operator of the expression."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" abstract="true"
           eSuperTypes="#//expressions/Expression">
