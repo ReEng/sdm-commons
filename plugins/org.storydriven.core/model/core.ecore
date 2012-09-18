@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="core" nsURI="http://www.storydriven.org/core/0.2.8" nsPrefix="core">
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="core"
+    nsURI="http://www.storydriven.org/core/0.3.1" nsPrefix="core">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The core package is the root package for the storydriven core meta-model. It defines several abstract super classes which implement an extension mechanism as well as recurring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element."/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/edapt">
+    <details key="historyURI" value="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="CommentableElement" abstract="true"
       eSuperTypes="#//ExtendableElement">
@@ -83,7 +88,7 @@
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EGenericType"
         unsettable="true" containment="true"/>
   </eClassifiers>
-  <eSubpackages name="expressions" nsURI="http://www.storydriven.org/core/expressions/0.2.0"
+  <eSubpackages name="expressions" nsURI="http://www.storydriven.org/core/expressions/0.3.1"
       nsPrefix="expr">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The base package for all expressions which can be used for modeling activities&#xD;&#xA;and patterns."/>
@@ -116,7 +121,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eSubpackages name="common" nsURI="http://www.storydriven.org/core/expressions/common/0.2.0"
+    <eSubpackages name="common" nsURI="http://www.storydriven.org/core/expressions/common/0.3.1"
         nsPrefix="sdcec">
       <eClassifiers xsi:type="ecore:EEnum" name="LogicOperator">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
