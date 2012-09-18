@@ -29,8 +29,9 @@ import org.storydriven.storydiagrams.activities.StructuredNode;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StructuredNodeItemProvider extends ActivityNodeItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class StructuredNodeItemProvider extends ActivityNodeItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -65,10 +66,12 @@ public class StructuredNodeItemProvider extends ActivityNodeItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE);
+			childrenFeatures
+					.add(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE);
 		}
 		return childrenFeatures;
 	}
@@ -81,7 +84,10 @@ public class StructuredNodeItemProvider extends ActivityNodeItemProvider impleme
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("elements/activities/StructuredNode.png"));
+		return overlayImage(
+				object,
+				getResourceLocator().getImage(
+						"elements/activities/StructuredNode.png"));
 	}
 
 	/**
@@ -120,7 +126,8 @@ public class StructuredNodeItemProvider extends ActivityNodeItemProvider impleme
 
 		switch (notification.getFeatureID(StructuredNode.class)) {
 		case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -147,35 +154,54 @@ public class StructuredNodeItemProvider extends ActivityNodeItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
-				ActivitiesFactory.eINSTANCE.createMatchingStoryNode()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+						ActivitiesFactory.eINSTANCE.createMatchingStoryNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
-				ActivitiesFactory.eINSTANCE.createStructuredNode()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+						ActivitiesFactory.eINSTANCE.createStructuredNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
-				ActivitiesFactory.eINSTANCE.createJunctionNode()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+						ActivitiesFactory.eINSTANCE.createJunctionNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
-				ActivitiesFactory.eINSTANCE.createInitialNode()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+						ActivitiesFactory.eINSTANCE.createInitialNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
-				ActivitiesFactory.eINSTANCE.createStatementNode()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+						ActivitiesFactory.eINSTANCE.createStatementNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
-				ActivitiesFactory.eINSTANCE.createActivityFinalNode()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+						ActivitiesFactory.eINSTANCE.createActivityFinalNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
-				ActivitiesFactory.eINSTANCE.createActivityCallNode()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+						ActivitiesFactory.eINSTANCE.createActivityCallNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
-				ActivitiesFactory.eINSTANCE.createModifyingStoryNode()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+						ActivitiesFactory.eINSTANCE.createModifyingStoryNode()));
 
-		newChildDescriptors.add(createChildParameter(ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
-				ActivitiesFactory.eINSTANCE.createFlowFinalNode()));
+		newChildDescriptors
+				.add(createChildParameter(
+						ActivitiesPackage.Literals.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+						ActivitiesFactory.eINSTANCE.createFlowFinalNode()));
 	}
 
 }

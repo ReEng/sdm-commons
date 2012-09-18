@@ -34,7 +34,8 @@ import org.storydriven.storydiagrams.activities.expressions.util.ActivitiesExpre
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivitiesExpressionsItemProviderAdapterFactory extends ActivitiesExpressionsAdapterFactory implements
+public class ActivitiesExpressionsItemProviderAdapterFactory extends
+		ActivitiesExpressionsAdapterFactory implements
 		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
@@ -91,7 +92,8 @@ public class ActivitiesExpressionsItemProviderAdapterFactory extends ActivitiesE
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>)
+					|| (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -118,7 +120,8 @@ public class ActivitiesExpressionsItemProviderAdapterFactory extends ActivitiesE
 	@Override
 	public Adapter createExceptionVariableExpressionAdapter() {
 		if (exceptionVariableExpressionItemProvider == null) {
-			exceptionVariableExpressionItemProvider = new CustomExceptionVariableExpressionItemProvider(this);
+			exceptionVariableExpressionItemProvider = new CustomExceptionVariableExpressionItemProvider(
+					this);
 		}
 
 		return exceptionVariableExpressionItemProvider;
@@ -131,7 +134,8 @@ public class ActivitiesExpressionsItemProviderAdapterFactory extends ActivitiesE
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory
+				.getRootAdapterFactory();
 	}
 
 	/**
@@ -140,7 +144,8 @@ public class ActivitiesExpressionsItemProviderAdapterFactory extends ActivitiesE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(
+			ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 

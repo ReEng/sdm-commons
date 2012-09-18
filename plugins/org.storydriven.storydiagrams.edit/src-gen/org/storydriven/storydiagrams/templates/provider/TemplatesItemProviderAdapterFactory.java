@@ -34,7 +34,8 @@ import org.storydriven.storydiagrams.templates.util.TemplatesAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory implements ComposeableAdapterFactory,
+public class TemplatesItemProviderAdapterFactory extends
+		TemplatesAdapterFactory implements ComposeableAdapterFactory,
 		IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
@@ -107,7 +108,8 @@ public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>)
+					|| (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -134,7 +136,8 @@ public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory
 	@Override
 	public Adapter createTemplateBindingAdapter() {
 		if (templateBindingItemProvider == null) {
-			templateBindingItemProvider = new CustomTemplateBindingItemProvider(this);
+			templateBindingItemProvider = new CustomTemplateBindingItemProvider(
+					this);
 		}
 
 		return templateBindingItemProvider;
@@ -149,7 +152,8 @@ public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory
 	@Override
 	public Adapter createPropertyBindingAdapter() {
 		if (propertyBindingItemProvider == null) {
-			propertyBindingItemProvider = new CustomPropertyBindingItemProvider(this);
+			propertyBindingItemProvider = new CustomPropertyBindingItemProvider(
+					this);
 		}
 
 		return propertyBindingItemProvider;
@@ -164,7 +168,8 @@ public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory
 	@Override
 	public Adapter createTemplateSignatureAdapter() {
 		if (templateSignatureItemProvider == null) {
-			templateSignatureItemProvider = new CustomTemplateSignatureItemProvider(this);
+			templateSignatureItemProvider = new CustomTemplateSignatureItemProvider(
+					this);
 		}
 
 		return templateSignatureItemProvider;
@@ -177,7 +182,8 @@ public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory
+				.getRootAdapterFactory();
 	}
 
 	/**
@@ -186,7 +192,8 @@ public class TemplatesItemProviderAdapterFactory extends TemplatesAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(
+			ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 

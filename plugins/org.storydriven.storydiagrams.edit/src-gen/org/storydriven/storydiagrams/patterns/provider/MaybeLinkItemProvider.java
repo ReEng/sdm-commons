@@ -25,8 +25,9 @@ import org.storydriven.storydiagrams.patterns.MaybeLink;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MaybeLinkItemProvider extends AbstractLinkVariableItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class MaybeLinkItemProvider extends AbstractLinkVariableItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -53,17 +54,6 @@ public class MaybeLinkItemProvider extends AbstractLinkVariableItemProvider impl
 	}
 
 	/**
-	 * This returns MaybeLink.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/MaybeLink"));
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -82,8 +72,8 @@ public class MaybeLinkItemProvider extends AbstractLinkVariableItemProvider impl
 	@Override
 	public String getText(Object object) {
 		String label = ((MaybeLink) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_MaybeLink_type") : getString("_UI_MaybeLink_type")
-				+ " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_MaybeLink_type")
+				: getString("_UI_MaybeLink_type") + " " + label;
 	}
 
 	/**
@@ -107,7 +97,8 @@ public class MaybeLinkItemProvider extends AbstractLinkVariableItemProvider impl
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

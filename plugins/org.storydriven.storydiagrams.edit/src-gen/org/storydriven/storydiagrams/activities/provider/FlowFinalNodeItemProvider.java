@@ -25,8 +25,9 @@ import org.storydriven.storydiagrams.activities.FlowFinalNode;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FlowFinalNodeItemProvider extends ActivityFinalNodeItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class FlowFinalNodeItemProvider extends ActivityFinalNodeItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,7 +61,10 @@ public class FlowFinalNodeItemProvider extends ActivityFinalNodeItemProvider imp
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("elements/activities/StopNode_flow.png"));
+		return overlayImage(
+				object,
+				getResourceLocator().getImage(
+						"elements/activities/StopNode_flow.png"));
 	}
 
 	/**
@@ -107,7 +111,8 @@ public class FlowFinalNodeItemProvider extends ActivityFinalNodeItemProvider imp
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

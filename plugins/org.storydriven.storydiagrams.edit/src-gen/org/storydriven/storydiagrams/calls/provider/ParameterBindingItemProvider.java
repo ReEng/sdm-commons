@@ -40,8 +40,10 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ParameterBindingItemProvider extends CommentableElementItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ParameterBindingItemProvider extends
+		CommentableElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -76,12 +78,15 @@ public class ParameterBindingItemProvider extends CommentableElementItemProvider
 	 */
 	protected void addParameterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_ParameterBinding_parameter_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ParameterBinding_parameter_feature",
-						"_UI_ParameterBinding_type"), CallsPackage.Literals.PARAMETER_BINDING__PARAMETER, true, false,
-				true, null, null, null));
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_ParameterBinding_parameter_feature",
+						"_UI_ParameterBinding_type"),
+				CallsPackage.Literals.PARAMETER_BINDING__PARAMETER, true,
+				false, true, null, null, null));
 	}
 
 	/**
@@ -92,7 +97,10 @@ public class ParameterBindingItemProvider extends CommentableElementItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("elements/calls/ParameterBinding.png"));
+		return overlayImage(
+				object,
+				getResourceLocator().getImage(
+						"elements/calls/ParameterBinding.png"));
 	}
 
 	/**
@@ -125,10 +133,12 @@ public class ParameterBindingItemProvider extends CommentableElementItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION);
+			childrenFeatures
+					.add(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -159,7 +169,8 @@ public class ParameterBindingItemProvider extends CommentableElementItemProvider
 
 		switch (notification.getFeatureID(ParameterBinding.class)) {
 		case CallsPackage.PARAMETER_BINDING__VALUE_EXPRESSION:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -186,52 +197,79 @@ public class ParameterBindingItemProvider extends CommentableElementItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(
+				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				CallsFactory.eINSTANCE.createParameterExtension()));
 
-		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(
+				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+				ActivitiesExpressionsFactory.eINSTANCE
+						.createExceptionVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+						CallsExpressionsFactory.eINSTANCE
+								.createMethodCallExpression()));
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(
+				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
 				CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE
+						.createAttributeValueExpression()));
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE
+						.createObjectVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE
+						.createCollectionSizeExpression()));
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
+		newChildDescriptors.add(createChildParameter(
+				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+				PatternsExpressionsFactory.eINSTANCE
+						.createPrimitiveVariableExpression()));
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(
+				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
 				ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(
+				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
 				CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+						CommonExpressionsFactory.eINSTANCE
+								.createComparisonExpression()));
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+		newChildDescriptors
+				.add(createChildParameter(
+						CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+						CommonExpressionsFactory.eINSTANCE
+								.createArithmeticExpression()));
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(
+				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
 				CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+		newChildDescriptors.add(createChildParameter(
+				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
 				CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 

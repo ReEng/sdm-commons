@@ -38,8 +38,9 @@ import org.storydriven.storydiagrams.templates.TemplatesFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StoryPatternItemProvider extends CommentableElementItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class StoryPatternItemProvider extends CommentableElementItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -74,12 +75,16 @@ public class StoryPatternItemProvider extends CommentableElementItemProvider imp
 	 */
 	protected void addBindingSemanticsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_StoryPattern_bindingSemantics_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_StoryPattern_bindingSemantics_feature",
-						"_UI_StoryPattern_type"), PatternsPackage.Literals.STORY_PATTERN__BINDING_SEMANTICS, true,
-				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_StoryPattern_bindingSemantics_feature",
+						"_UI_StoryPattern_type"),
+				PatternsPackage.Literals.STORY_PATTERN__BINDING_SEMANTICS,
+				true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
@@ -90,7 +95,10 @@ public class StoryPatternItemProvider extends CommentableElementItemProvider imp
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("elements/patterns/StoryPattern.png"));
+		return overlayImage(
+				object,
+				getResourceLocator().getImage(
+						"elements/patterns/StoryPattern.png"));
 	}
 
 	/**
@@ -123,14 +131,20 @@ public class StoryPatternItemProvider extends CommentableElementItemProvider imp
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PatternsPackage.Literals.STORY_PATTERN__VARIABLE);
-			childrenFeatures.add(PatternsPackage.Literals.STORY_PATTERN__CONSTRAINT);
-			childrenFeatures.add(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE);
-			childrenFeatures.add(PatternsPackage.Literals.STORY_PATTERN__CONTAINED_PATTERN);
-			childrenFeatures.add(PatternsPackage.Literals.STORY_PATTERN__TEMPLATE_SIGNATURE);
+			childrenFeatures
+					.add(PatternsPackage.Literals.STORY_PATTERN__VARIABLE);
+			childrenFeatures
+					.add(PatternsPackage.Literals.STORY_PATTERN__CONSTRAINT);
+			childrenFeatures
+					.add(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE);
+			childrenFeatures
+					.add(PatternsPackage.Literals.STORY_PATTERN__CONTAINED_PATTERN);
+			childrenFeatures
+					.add(PatternsPackage.Literals.STORY_PATTERN__TEMPLATE_SIGNATURE);
 		}
 		return childrenFeatures;
 	}
@@ -161,14 +175,16 @@ public class StoryPatternItemProvider extends CommentableElementItemProvider imp
 
 		switch (notification.getFeatureID(StoryPattern.class)) {
 		case PatternsPackage.STORY_PATTERN__BINDING_SEMANTICS:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), false, true));
 			return;
 		case PatternsPackage.STORY_PATTERN__VARIABLE:
 		case PatternsPackage.STORY_PATTERN__CONSTRAINT:
 		case PatternsPackage.STORY_PATTERN__LINK_VARIABLE:
 		case PatternsPackage.STORY_PATTERN__CONTAINED_PATTERN:
 		case PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -195,46 +211,60 @@ public class StoryPatternItemProvider extends CommentableElementItemProvider imp
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(
+				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(
+				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				CallsFactory.eINSTANCE.createParameterExtension()));
 
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.STORY_PATTERN__VARIABLE,
+		newChildDescriptors.add(createChildParameter(
+				PatternsPackage.Literals.STORY_PATTERN__VARIABLE,
 				PatternsFactory.eINSTANCE.createObjectVariable()));
 
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.STORY_PATTERN__VARIABLE,
+		newChildDescriptors.add(createChildParameter(
+				PatternsPackage.Literals.STORY_PATTERN__VARIABLE,
 				PatternsFactory.eINSTANCE.createCollectionVariable()));
 
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.STORY_PATTERN__VARIABLE,
+		newChildDescriptors.add(createChildParameter(
+				PatternsPackage.Literals.STORY_PATTERN__VARIABLE,
 				PatternsFactory.eINSTANCE.createPrimitiveVariable()));
 
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.STORY_PATTERN__CONSTRAINT,
+		newChildDescriptors.add(createChildParameter(
+				PatternsPackage.Literals.STORY_PATTERN__CONSTRAINT,
 				PatternsFactory.eINSTANCE.createConstraint()));
 
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE,
+		newChildDescriptors.add(createChildParameter(
+				PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE,
 				PatternsFactory.eINSTANCE.createPath()));
 
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE,
+		newChildDescriptors.add(createChildParameter(
+				PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE,
 				PatternsFactory.eINSTANCE.createLinkVariable()));
 
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE,
+		newChildDescriptors.add(createChildParameter(
+				PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE,
 				PatternsFactory.eINSTANCE.createInclusionLink()));
 
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE,
+		newChildDescriptors.add(createChildParameter(
+				PatternsPackage.Literals.STORY_PATTERN__LINK_VARIABLE,
 				PatternsFactory.eINSTANCE.createMaybeLink()));
 
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.STORY_PATTERN__CONTAINED_PATTERN,
+		newChildDescriptors.add(createChildParameter(
+				PatternsPackage.Literals.STORY_PATTERN__CONTAINED_PATTERN,
 				PatternsFactory.eINSTANCE.createStoryPattern()));
 
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.STORY_PATTERN__CONTAINED_PATTERN,
+		newChildDescriptors.add(createChildParameter(
+				PatternsPackage.Literals.STORY_PATTERN__CONTAINED_PATTERN,
 				PatternsFactory.eINSTANCE.createMatchingPattern()));
 
-		newChildDescriptors.add(createChildParameter(PatternsPackage.Literals.STORY_PATTERN__TEMPLATE_SIGNATURE,
+		newChildDescriptors.add(createChildParameter(
+				PatternsPackage.Literals.STORY_PATTERN__TEMPLATE_SIGNATURE,
 				TemplatesFactory.eINSTANCE.createTemplateSignature()));
 	}
 

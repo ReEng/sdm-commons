@@ -25,8 +25,9 @@ import org.storydriven.storydiagrams.patterns.InclusionLink;
  * <!-- end-user-doc -->
  * @generated
  */
-public class InclusionLinkItemProvider extends AbstractLinkVariableItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class InclusionLinkItemProvider extends AbstractLinkVariableItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -50,17 +51,6 @@ public class InclusionLinkItemProvider extends AbstractLinkVariableItemProvider 
 
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This returns InclusionLink.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/InclusionLink"));
 	}
 
 	/**
@@ -107,7 +97,8 @@ public class InclusionLinkItemProvider extends AbstractLinkVariableItemProvider 
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

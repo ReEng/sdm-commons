@@ -31,8 +31,9 @@ import org.storydriven.storydiagrams.calls.CallsPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -69,12 +70,15 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 	protected void addCalleePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
 						getResourceLocator(),
 						getString("_UI_Invocation_callee_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Invocation_callee_feature",
-								"_UI_Invocation_type"), CallsPackage.Literals.INVOCATION__CALLEE, true, false, true,
-						null, null, null));
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_Invocation_callee_feature",
+								"_UI_Invocation_type"),
+						CallsPackage.Literals.INVOCATION__CALLEE, true, false,
+						true, null, null, null));
 	}
 
 	/**
@@ -85,11 +89,14 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 	 */
 	protected void addCalledActivityPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_ActivityCallNode_calledActivity_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ActivityCallNode_calledActivity_feature",
-						"_UI_ActivityCallNode_type"), ActivitiesPackage.Literals.ACTIVITY_CALL_NODE__CALLED_ACTIVITY,
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_ActivityCallNode_calledActivity_feature",
+						"_UI_ActivityCallNode_type"),
+				ActivitiesPackage.Literals.ACTIVITY_CALL_NODE__CALLED_ACTIVITY,
 				true, false, true, null, null, null));
 	}
 
@@ -102,10 +109,12 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS);
+			childrenFeatures
+					.add(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS);
 		}
 		return childrenFeatures;
 	}
@@ -118,7 +127,10 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("elements/activities/ActivityCallNode.png"));
+		return overlayImage(
+				object,
+				getResourceLocator().getImage(
+						"elements/activities/ActivityCallNode.png"));
 	}
 
 	/**
@@ -157,7 +169,8 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 
 		switch (notification.getFeatureID(ActivityCallNode.class)) {
 		case ActivitiesPackage.ACTIVITY_CALL_NODE__OWNED_PARAMETER_BINDINGS:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -184,10 +197,12 @@ public class ActivityCallNodeItemProvider extends ActivityNodeItemProvider imple
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
+		newChildDescriptors.add(createChildParameter(
+				CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
 				CallsFactory.eINSTANCE.createParameterBinding()));
 	}
 

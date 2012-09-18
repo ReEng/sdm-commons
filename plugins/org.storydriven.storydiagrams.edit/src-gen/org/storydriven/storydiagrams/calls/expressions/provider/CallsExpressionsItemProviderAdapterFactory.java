@@ -34,8 +34,9 @@ import org.storydriven.storydiagrams.calls.expressions.util.CallsExpressionsAdap
  * <!-- end-user-doc -->
  * @generated
  */
-public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressionsAdapterFactory implements
-		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class CallsExpressionsItemProviderAdapterFactory extends
+		CallsExpressionsAdapterFactory implements ComposeableAdapterFactory,
+		IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -99,7 +100,8 @@ public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressions
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>)
+					|| (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -126,7 +128,8 @@ public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressions
 	@Override
 	public Adapter createMethodCallExpressionAdapter() {
 		if (methodCallExpressionItemProvider == null) {
-			methodCallExpressionItemProvider = new CustomMethodCallExpressionItemProvider(this);
+			methodCallExpressionItemProvider = new CustomMethodCallExpressionItemProvider(
+					this);
 		}
 
 		return methodCallExpressionItemProvider;
@@ -141,7 +144,8 @@ public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressions
 	@Override
 	public Adapter createParameterExpressionAdapter() {
 		if (parameterExpressionItemProvider == null) {
-			parameterExpressionItemProvider = new CustomParameterExpressionItemProvider(this);
+			parameterExpressionItemProvider = new CustomParameterExpressionItemProvider(
+					this);
 		}
 
 		return parameterExpressionItemProvider;
@@ -154,7 +158,8 @@ public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressions
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory
+				.getRootAdapterFactory();
 	}
 
 	/**
@@ -163,7 +168,8 @@ public class CallsExpressionsItemProviderAdapterFactory extends CallsExpressions
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(
+			ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 

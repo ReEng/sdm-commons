@@ -34,8 +34,8 @@ import org.storydriven.storydiagrams.calls.util.CallsAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CallsItemProviderAdapterFactory extends CallsAdapterFactory implements ComposeableAdapterFactory,
-		IChangeNotifier, IDisposable {
+public class CallsItemProviderAdapterFactory extends CallsAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -107,7 +107,8 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>)
+					|| (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -134,7 +135,8 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 	@Override
 	public Adapter createParameterBindingAdapter() {
 		if (parameterBindingItemProvider == null) {
-			parameterBindingItemProvider = new CustomParameterBindingItemProvider(this);
+			parameterBindingItemProvider = new CustomParameterBindingItemProvider(
+					this);
 		}
 
 		return parameterBindingItemProvider;
@@ -149,7 +151,8 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 	@Override
 	public Adapter createOpaqueCallableAdapter() {
 		if (opaqueCallableItemProvider == null) {
-			opaqueCallableItemProvider = new CustomOpaqueCallableItemProvider(this);
+			opaqueCallableItemProvider = new CustomOpaqueCallableItemProvider(
+					this);
 		}
 
 		return opaqueCallableItemProvider;
@@ -164,7 +167,8 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 	@Override
 	public Adapter createParameterExtensionAdapter() {
 		if (parameterExtensionItemProvider == null) {
-			parameterExtensionItemProvider = new CustomParameterExtensionItemProvider(this);
+			parameterExtensionItemProvider = new CustomParameterExtensionItemProvider(
+					this);
 		}
 
 		return parameterExtensionItemProvider;
@@ -177,7 +181,8 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory
+				.getRootAdapterFactory();
 	}
 
 	/**
@@ -186,7 +191,8 @@ public class CallsItemProviderAdapterFactory extends CallsAdapterFactory impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(
+			ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 

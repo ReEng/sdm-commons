@@ -34,8 +34,9 @@ import org.storydriven.storydiagrams.activities.util.ActivitiesAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFactory implements
-		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class ActivitiesItemProviderAdapterFactory extends
+		ActivitiesAdapterFactory implements ComposeableAdapterFactory,
+		IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -163,7 +164,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>)
+					|| (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -190,7 +192,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	@Override
 	public Adapter createExceptionVariableAdapter() {
 		if (exceptionVariableItemProvider == null) {
-			exceptionVariableItemProvider = new CustomExceptionVariableItemProvider(this);
+			exceptionVariableItemProvider = new CustomExceptionVariableItemProvider(
+					this);
 		}
 
 		return exceptionVariableItemProvider;
@@ -235,7 +238,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	@Override
 	public Adapter createOperationExtensionAdapter() {
 		if (operationExtensionItemProvider == null) {
-			operationExtensionItemProvider = new CustomOperationExtensionItemProvider(this);
+			operationExtensionItemProvider = new CustomOperationExtensionItemProvider(
+					this);
 		}
 
 		return operationExtensionItemProvider;
@@ -250,7 +254,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	@Override
 	public Adapter createMatchingStoryNodeAdapter() {
 		if (matchingStoryNodeItemProvider == null) {
-			matchingStoryNodeItemProvider = new CustomMatchingStoryNodeItemProvider(this);
+			matchingStoryNodeItemProvider = new CustomMatchingStoryNodeItemProvider(
+					this);
 		}
 
 		return matchingStoryNodeItemProvider;
@@ -265,7 +270,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	@Override
 	public Adapter createStructuredNodeAdapter() {
 		if (structuredNodeItemProvider == null) {
-			structuredNodeItemProvider = new CustomStructuredNodeItemProvider(this);
+			structuredNodeItemProvider = new CustomStructuredNodeItemProvider(
+					this);
 		}
 
 		return structuredNodeItemProvider;
@@ -318,7 +324,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	@Override
 	public Adapter createStatementNodeAdapter() {
 		if (statementNodeItemProvider == null) {
-			statementNodeItemProvider = new CustomStatementNodeItemProvider(this);
+			statementNodeItemProvider = new CustomStatementNodeItemProvider(
+					this);
 		}
 
 		return statementNodeItemProvider;
@@ -341,7 +348,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	@Override
 	public Adapter createActivityFinalNodeAdapter() {
 		if (activityFinalNodeItemProvider == null) {
-			activityFinalNodeItemProvider = new CustomActivityFinalNodeItemProvider(this);
+			activityFinalNodeItemProvider = new CustomActivityFinalNodeItemProvider(
+					this);
 		}
 
 		return activityFinalNodeItemProvider;
@@ -356,7 +364,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	@Override
 	public Adapter createActivityCallNodeAdapter() {
 		if (activityCallNodeItemProvider == null) {
-			activityCallNodeItemProvider = new CustomActivityCallNodeItemProvider(this);
+			activityCallNodeItemProvider = new CustomActivityCallNodeItemProvider(
+					this);
 		}
 
 		return activityCallNodeItemProvider;
@@ -371,7 +380,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	@Override
 	public Adapter createModifyingStoryNodeAdapter() {
 		if (modifyingStoryNodeItemProvider == null) {
-			modifyingStoryNodeItemProvider = new CustomModifyingStoryNodeItemProvider(this);
+			modifyingStoryNodeItemProvider = new CustomModifyingStoryNodeItemProvider(
+					this);
 		}
 
 		return modifyingStoryNodeItemProvider;
@@ -394,7 +404,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	@Override
 	public Adapter createFlowFinalNodeAdapter() {
 		if (flowFinalNodeItemProvider == null) {
-			flowFinalNodeItemProvider = new CustomFlowFinalNodeItemProvider(this);
+			flowFinalNodeItemProvider = new CustomFlowFinalNodeItemProvider(
+					this);
 		}
 
 		return flowFinalNodeItemProvider;
@@ -407,7 +418,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory
+				.getRootAdapterFactory();
 	}
 
 	/**
@@ -416,7 +428,8 @@ public class ActivitiesItemProviderAdapterFactory extends ActivitiesAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(
+			ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 

@@ -34,8 +34,9 @@ import org.storydriven.storydiagrams.patterns.expressions.util.PatternsExpressio
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpressionsAdapterFactory implements
-		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class PatternsExpressionsItemProviderAdapterFactory extends
+		PatternsExpressionsAdapterFactory implements ComposeableAdapterFactory,
+		IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -107,7 +108,8 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>)
+					|| (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -134,7 +136,8 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	@Override
 	public Adapter createAttributeValueExpressionAdapter() {
 		if (attributeValueExpressionItemProvider == null) {
-			attributeValueExpressionItemProvider = new CustomAttributeValueExpressionItemProvider(this);
+			attributeValueExpressionItemProvider = new CustomAttributeValueExpressionItemProvider(
+					this);
 		}
 
 		return attributeValueExpressionItemProvider;
@@ -149,7 +152,8 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	@Override
 	public Adapter createObjectVariableExpressionAdapter() {
 		if (objectVariableExpressionItemProvider == null) {
-			objectVariableExpressionItemProvider = new CustomObjectVariableExpressionItemProvider(this);
+			objectVariableExpressionItemProvider = new CustomObjectVariableExpressionItemProvider(
+					this);
 		}
 
 		return objectVariableExpressionItemProvider;
@@ -172,7 +176,8 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	@Override
 	public Adapter createCollectionSizeExpressionAdapter() {
 		if (collectionSizeExpressionItemProvider == null) {
-			collectionSizeExpressionItemProvider = new CustomCollectionSizeExpressionItemProvider(this);
+			collectionSizeExpressionItemProvider = new CustomCollectionSizeExpressionItemProvider(
+					this);
 		}
 
 		return collectionSizeExpressionItemProvider;
@@ -187,7 +192,8 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	@Override
 	public Adapter createPrimitiveVariableExpressionAdapter() {
 		if (primitiveVariableExpressionItemProvider == null) {
-			primitiveVariableExpressionItemProvider = new CustomPrimitiveVariableExpressionItemProvider(this);
+			primitiveVariableExpressionItemProvider = new CustomPrimitiveVariableExpressionItemProvider(
+					this);
 		}
 
 		return primitiveVariableExpressionItemProvider;
@@ -200,7 +206,8 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory
+				.getRootAdapterFactory();
 	}
 
 	/**
@@ -209,7 +216,8 @@ public class PatternsExpressionsItemProviderAdapterFactory extends PatternsExpre
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(
+			ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 

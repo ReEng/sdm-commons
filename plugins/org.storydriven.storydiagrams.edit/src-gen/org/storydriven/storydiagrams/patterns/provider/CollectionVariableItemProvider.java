@@ -29,8 +29,9 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CollectionVariableItemProvider extends ObjectVariableItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class CollectionVariableItemProvider extends ObjectVariableItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -66,12 +67,16 @@ public class CollectionVariableItemProvider extends ObjectVariableItemProvider i
 	 */
 	protected void addAtLeastOnePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_CollectionVariable_atLeastOne_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_CollectionVariable_atLeastOne_feature",
-						"_UI_CollectionVariable_type"), PatternsPackage.Literals.COLLECTION_VARIABLE__AT_LEAST_ONE,
-				true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_CollectionVariable_atLeastOne_feature",
+						"_UI_CollectionVariable_type"),
+				PatternsPackage.Literals.COLLECTION_VARIABLE__AT_LEAST_ONE,
+				true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
@@ -82,12 +87,16 @@ public class CollectionVariableItemProvider extends ObjectVariableItemProvider i
 	 */
 	protected void addUniquePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_CollectionVariable_unique_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_CollectionVariable_unique_feature",
-						"_UI_CollectionVariable_type"), PatternsPackage.Literals.COLLECTION_VARIABLE__UNIQUE, true,
-				false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_CollectionVariable_unique_feature",
+						"_UI_CollectionVariable_type"),
+				PatternsPackage.Literals.COLLECTION_VARIABLE__UNIQUE, true,
+				false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
+				null));
 	}
 
 	/**
@@ -98,7 +107,10 @@ public class CollectionVariableItemProvider extends ObjectVariableItemProvider i
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("elements/patterns/ObjectSetVariable.png"));
+		return overlayImage(
+				object,
+				getResourceLocator().getImage(
+						"elements/patterns/ObjectSetVariable.png"));
 	}
 
 	/**
@@ -138,7 +150,8 @@ public class CollectionVariableItemProvider extends ObjectVariableItemProvider i
 		switch (notification.getFeatureID(CollectionVariable.class)) {
 		case PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE:
 		case PatternsPackage.COLLECTION_VARIABLE__UNIQUE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -152,7 +165,8 @@ public class CollectionVariableItemProvider extends ObjectVariableItemProvider i
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

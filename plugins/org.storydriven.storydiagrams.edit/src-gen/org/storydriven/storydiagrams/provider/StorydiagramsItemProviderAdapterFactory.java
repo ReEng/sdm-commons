@@ -40,8 +40,9 @@ import org.storydriven.storydiagrams.util.StorydiagramsAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StorydiagramsItemProviderAdapterFactory extends StorydiagramsAdapterFactory implements
-		ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+public class StorydiagramsItemProviderAdapterFactory extends
+		StorydiagramsAdapterFactory implements ComposeableAdapterFactory,
+		IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -98,7 +99,8 @@ public class StorydiagramsItemProviderAdapterFactory extends StorydiagramsAdapte
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>)
+					|| (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -120,8 +122,10 @@ public class StorydiagramsItemProviderAdapterFactory extends StorydiagramsAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
-		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
+	public Collection<?> getNewChildDescriptors(Object object,
+			EditingDomain editingDomain) {
+		return childCreationExtenderManager.getNewChildDescriptors(object,
+				editingDomain);
 	}
 
 	/**
@@ -150,7 +154,8 @@ public class StorydiagramsItemProviderAdapterFactory extends StorydiagramsAdapte
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory
+				.getRootAdapterFactory();
 	}
 
 	/**
@@ -159,7 +164,8 @@ public class StorydiagramsItemProviderAdapterFactory extends StorydiagramsAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(
+			ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 

@@ -34,8 +34,8 @@ import org.storydriven.storydiagrams.patterns.util.PatternsAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory implements ComposeableAdapterFactory,
-		IChangeNotifier, IDisposable {
+public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -155,7 +155,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>)
+					|| (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -182,7 +183,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	@Override
 	public Adapter createObjectVariableAdapter() {
 		if (objectVariableItemProvider == null) {
-			objectVariableItemProvider = new CustomObjectVariableItemProvider(this);
+			objectVariableItemProvider = new CustomObjectVariableItemProvider(
+					this);
 		}
 
 		return objectVariableItemProvider;
@@ -212,7 +214,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	@Override
 	public Adapter createLinkConstraintAdapter() {
 		if (linkConstraintItemProvider == null) {
-			linkConstraintItemProvider = new CustomLinkConstraintItemProvider(this);
+			linkConstraintItemProvider = new CustomLinkConstraintItemProvider(
+					this);
 		}
 
 		return linkConstraintItemProvider;
@@ -227,7 +230,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	@Override
 	public Adapter createAttributeAssignmentAdapter() {
 		if (attributeAssignmentItemProvider == null) {
-			attributeAssignmentItemProvider = new CustomAttributeAssignmentItemProvider(this);
+			attributeAssignmentItemProvider = new CustomAttributeAssignmentItemProvider(
+					this);
 		}
 
 		return attributeAssignmentItemProvider;
@@ -250,7 +254,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	@Override
 	public Adapter createCollectionVariableAdapter() {
 		if (collectionVariableItemProvider == null) {
-			collectionVariableItemProvider = new CustomCollectionVariableItemProvider(this);
+			collectionVariableItemProvider = new CustomCollectionVariableItemProvider(
+					this);
 		}
 
 		return collectionVariableItemProvider;
@@ -265,7 +270,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	@Override
 	public Adapter createPrimitiveVariableAdapter() {
 		if (primitiveVariableItemProvider == null) {
-			primitiveVariableItemProvider = new CustomPrimitiveVariableItemProvider(this);
+			primitiveVariableItemProvider = new CustomPrimitiveVariableItemProvider(
+					this);
 		}
 
 		return primitiveVariableItemProvider;
@@ -318,7 +324,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	@Override
 	public Adapter createInclusionLinkAdapter() {
 		if (inclusionLinkItemProvider == null) {
-			inclusionLinkItemProvider = new CustomInclusionLinkItemProvider(this);
+			inclusionLinkItemProvider = new CustomInclusionLinkItemProvider(
+					this);
 		}
 
 		return inclusionLinkItemProvider;
@@ -333,7 +340,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	@Override
 	public Adapter createMatchingPatternAdapter() {
 		if (matchingPatternItemProvider == null) {
-			matchingPatternItemProvider = new CustomMatchingPatternItemProvider(this);
+			matchingPatternItemProvider = new CustomMatchingPatternItemProvider(
+					this);
 		}
 
 		return matchingPatternItemProvider;
@@ -384,7 +392,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory
+				.getRootAdapterFactory();
 	}
 
 	/**
@@ -393,7 +402,8 @@ public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(
+			ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 

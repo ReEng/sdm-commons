@@ -33,8 +33,10 @@ import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CollectionSizeExpressionItemProvider extends ExpressionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class CollectionSizeExpressionItemProvider extends
+		ExpressionItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -68,25 +70,17 @@ public class CollectionSizeExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	protected void addSetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_CollectionSizeExpression_set_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_CollectionSizeExpression_set_feature",
-						"_UI_CollectionSizeExpression_type"),
-				PatternsExpressionsPackage.Literals.COLLECTION_SIZE_EXPRESSION__SET, true, false, true, null, null,
-				null));
-	}
-
-	/**
-	 * This returns CollectionSizeExpression.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CollectionSizeExpression"));
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_CollectionSizeExpression_set_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_CollectionSizeExpression_set_feature",
+								"_UI_CollectionSizeExpression_type"),
+						PatternsExpressionsPackage.Literals.COLLECTION_SIZE_EXPRESSION__SET,
+						true, false, true, null, null, null));
 	}
 
 	/**
@@ -133,13 +127,16 @@ public class CollectionSizeExpressionItemProvider extends ExpressionItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(
+				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
-		newChildDescriptors.add(createChildParameter(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+		newChildDescriptors.add(createChildParameter(
+				CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
