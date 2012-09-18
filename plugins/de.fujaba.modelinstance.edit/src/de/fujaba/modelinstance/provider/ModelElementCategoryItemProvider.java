@@ -188,27 +188,27 @@ public class ModelElementCategoryItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-						CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-						CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-						CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-						CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-						CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
 	/**

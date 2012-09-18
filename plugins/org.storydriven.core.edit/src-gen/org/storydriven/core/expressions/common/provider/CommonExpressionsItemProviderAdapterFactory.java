@@ -34,8 +34,9 @@ import org.storydriven.core.expressions.common.util.CommonExpressionsAdapterFact
  * <!-- end-user-doc -->
  * @generated
  */
-public class CommonExpressionsItemProviderAdapterFactory extends CommonExpressionsAdapterFactory implements
-		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class CommonExpressionsItemProviderAdapterFactory extends
+		CommonExpressionsAdapterFactory implements ComposeableAdapterFactory,
+		IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -91,7 +92,8 @@ public class CommonExpressionsItemProviderAdapterFactory extends CommonExpressio
 	@Override
 	public Adapter createUnaryExpressionAdapter() {
 		if (unaryExpressionItemProvider == null) {
-			unaryExpressionItemProvider = new CustomUnaryExpressionItemProvider(this);
+			unaryExpressionItemProvider = new CustomUnaryExpressionItemProvider(
+					this);
 		}
 
 		return unaryExpressionItemProvider;
@@ -114,7 +116,8 @@ public class CommonExpressionsItemProviderAdapterFactory extends CommonExpressio
 	@Override
 	public Adapter createComparisonExpressionAdapter() {
 		if (comparisonExpressionItemProvider == null) {
-			comparisonExpressionItemProvider = new CustomComparisonExpressionItemProvider(this);
+			comparisonExpressionItemProvider = new CustomComparisonExpressionItemProvider(
+					this);
 		}
 
 		return comparisonExpressionItemProvider;
@@ -137,7 +140,8 @@ public class CommonExpressionsItemProviderAdapterFactory extends CommonExpressio
 	@Override
 	public Adapter createArithmeticExpressionAdapter() {
 		if (arithmeticExpressionItemProvider == null) {
-			arithmeticExpressionItemProvider = new CustomArithmeticExpressionItemProvider(this);
+			arithmeticExpressionItemProvider = new CustomArithmeticExpressionItemProvider(
+					this);
 		}
 
 		return arithmeticExpressionItemProvider;
@@ -168,7 +172,8 @@ public class CommonExpressionsItemProviderAdapterFactory extends CommonExpressio
 	@Override
 	public Adapter createLiteralExpressionAdapter() {
 		if (literalExpressionItemProvider == null) {
-			literalExpressionItemProvider = new CustomLiteralExpressionItemProvider(this);
+			literalExpressionItemProvider = new CustomLiteralExpressionItemProvider(
+					this);
 		}
 
 		return literalExpressionItemProvider;
@@ -183,7 +188,8 @@ public class CommonExpressionsItemProviderAdapterFactory extends CommonExpressio
 	@Override
 	public Adapter createLogicalExpressionAdapter() {
 		if (logicalExpressionItemProvider == null) {
-			logicalExpressionItemProvider = new CustomLogicalExpressionItemProvider(this);
+			logicalExpressionItemProvider = new CustomLogicalExpressionItemProvider(
+					this);
 		}
 
 		return logicalExpressionItemProvider;
@@ -196,7 +202,8 @@ public class CommonExpressionsItemProviderAdapterFactory extends CommonExpressio
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory
+				.getRootAdapterFactory();
 	}
 
 	/**
@@ -205,7 +212,8 @@ public class CommonExpressionsItemProviderAdapterFactory extends CommonExpressio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(
+			ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -239,7 +247,8 @@ public class CommonExpressionsItemProviderAdapterFactory extends CommonExpressio
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>)
+					|| (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}

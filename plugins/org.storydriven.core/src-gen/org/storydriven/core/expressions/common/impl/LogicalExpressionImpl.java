@@ -26,7 +26,8 @@ import org.storydriven.core.expressions.common.LogicalExpression;
  *
  * @generated
  */
-public class LogicalExpressionImpl extends BinaryExpressionImpl implements LogicalExpression {
+public class LogicalExpressionImpl extends BinaryExpressionImpl implements
+		LogicalExpression {
 	/**
 	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -85,7 +86,8 @@ public class LogicalExpressionImpl extends BinaryExpressionImpl implements Logic
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					CommonExpressionsPackage.LOGICAL_EXPRESSION__OPERATOR, oldOperator, operator));
+					CommonExpressionsPackage.LOGICAL_EXPRESSION__OPERATOR,
+					oldOperator, operator));
 	}
 
 	/**

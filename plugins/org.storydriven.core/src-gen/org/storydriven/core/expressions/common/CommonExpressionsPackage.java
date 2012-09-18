@@ -44,7 +44,7 @@ public interface CommonExpressionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.storydriven.org/core/expressions/common/0.2.0";
+	String eNS_URI = "http://www.storydriven.org/core/expressions/common/0.3.1";
 
 	/**
 	 * The package namespace name.
@@ -1812,7 +1812,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNARY_EXPRESSION__ENCLOSED_EXPRESSION = eINSTANCE.getUnaryExpression_EnclosedExpression();
+		EReference UNARY_EXPRESSION__ENCLOSED_EXPRESSION = eINSTANCE
+				.getUnaryExpression_EnclosedExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
@@ -1820,7 +1821,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute UNARY_EXPRESSION__OPERATOR = eINSTANCE.getUnaryExpression_Operator();
+		EAttribute UNARY_EXPRESSION__OPERATOR = eINSTANCE
+				.getUnaryExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.impl.BinaryExpressionImpl <em>Binary Expression</em>}' class.
@@ -1838,7 +1840,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_EXPRESSION__LEFT_EXPRESSION = eINSTANCE.getBinaryExpression_LeftExpression();
+		EReference BINARY_EXPRESSION__LEFT_EXPRESSION = eINSTANCE
+				.getBinaryExpression_LeftExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Right Expression</b></em>' containment reference feature.
@@ -1846,7 +1849,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_EXPRESSION__RIGHT_EXPRESSION = eINSTANCE.getBinaryExpression_RightExpression();
+		EReference BINARY_EXPRESSION__RIGHT_EXPRESSION = eINSTANCE
+				.getBinaryExpression_RightExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.impl.ComparisonExpressionImpl <em>Comparison Expression</em>}' class.
@@ -1864,7 +1868,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPARISON_EXPRESSION__OPERATOR = eINSTANCE.getComparisonExpression_Operator();
+		EAttribute COMPARISON_EXPRESSION__OPERATOR = eINSTANCE
+				.getComparisonExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
@@ -1882,7 +1887,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARITHMETIC_EXPRESSION__OPERATOR = eINSTANCE.getArithmeticExpression_Operator();
+		EAttribute ARITHMETIC_EXPRESSION__OPERATOR = eINSTANCE
+				.getArithmeticExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.impl.LogicalExpressionImpl <em>Logical Expression</em>}' class.
@@ -1900,7 +1906,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LOGICAL_EXPRESSION__OPERATOR = eINSTANCE.getLogicalExpression_Operator();
+		EAttribute LOGICAL_EXPRESSION__OPERATOR = eINSTANCE
+				.getLogicalExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.impl.LiteralExpressionImpl <em>Literal Expression</em>}' class.
@@ -1918,7 +1925,8 @@ public interface CommonExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LITERAL_EXPRESSION__VALUE = eINSTANCE.getLiteralExpression_Value();
+		EAttribute LITERAL_EXPRESSION__VALUE = eINSTANCE
+				.getLiteralExpression_Value();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.core.expressions.common.LogicOperator <em>Logic Operator</em>}' enum.

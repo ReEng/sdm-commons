@@ -23,7 +23,8 @@ public interface ExpressionsFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ExpressionsFactory eINSTANCE = org.storydriven.core.expressions.impl.ExpressionsFactoryImpl.init();
+	ExpressionsFactory eINSTANCE = org.storydriven.core.expressions.impl.ExpressionsFactoryImpl
+			.init();
 
 	/**
 	 * Returns a new object of class '<em>Textual Expression</em>'.

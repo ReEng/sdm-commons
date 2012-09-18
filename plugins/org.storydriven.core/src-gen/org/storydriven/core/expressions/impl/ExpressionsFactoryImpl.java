@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.core.expressions.*;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.TextualExpression;
@@ -21,7 +22,8 @@ import org.storydriven.core.expressions.TextualExpression;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsFactory {
+public class ExpressionsFactoryImpl extends EFactoryImpl implements
+		ExpressionsFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -31,7 +33,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	public static ExpressionsFactory init() {
 		try {
 			ExpressionsFactory theExpressionsFactory = (ExpressionsFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.storydriven.org/core/expressions/0.2.0");
+					.getEFactory("http://www.storydriven.org/core/expressions/0.3.1");
 			if (theExpressionsFactory != null) {
 				return theExpressionsFactory;
 			}
@@ -62,7 +64,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 		case ExpressionsPackage.TEXTUAL_EXPRESSION:
 			return createTextualExpression();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName()
+					+ "' is not a valid classifier");
 		}
 	}
 
