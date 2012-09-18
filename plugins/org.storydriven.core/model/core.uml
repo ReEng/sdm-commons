@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
   <uml:Package xmi:id="bd7155bb-4f57-4868-b74a-5672b1eac640" name="core">
+    <eAnnotations xmi:id="_KMsFMAGIEeKcNe_rV4OWfA" source="http://www.eclipse.org/edapt">
+      <details xmi:id="_KMssQAGIEeKcNe_rV4OWfA" key="historyURI" value="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
+    </eAnnotations>
     <ownedComment xmi:id="_2szqgJxkEeCuYMafrm1l2g" annotatedElement="bd7155bb-4f57-4868-b74a-5672b1eac640">
       <body>The core package is the root package for the storydriven core meta-model. It defines several abstract super classes which implement an extension mechanism as well as recurring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element.</body>
     </ownedComment>
@@ -372,9 +375,9 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
     </profileApplication>
   </uml:Package>
   <Ecore:EReference xmi:id="_mHa4ELw1Ed-Ytrd77fw2LA" isTransient="true" isVolatile="true" base_Property="_HPpYkbLzEd-uk56s-ldeog"/>
-  <Ecore:EPackage xmi:id="_zYCZkLw1Ed-Ytrd77fw2LA" base_Package="bd7155bb-4f57-4868-b74a-5672b1eac640" nsPrefix="core" nsURI="http://www.storydriven.org/core/0.2.7" basePackage="org.storydriven" prefix="Core"/>
-  <Ecore:EPackage xmi:id="_DWk54Lw2Ed-Ytrd77fw2LA" base_Package="_gsByQLN1Ed-vJ9Qpen_Iuw" nsPrefix="expr" nsURI="http://www.storydriven.org/core/expressions/0.2.0"/>
-  <Ecore:EPackage xmi:id="_8yfvIMmbEeG1Tu0kxZC-sA" base_Package="_8yfvIMmbEeG1Tu0kxZC-sQ" nsPrefix="sdcec" nsURI="http://www.storydriven.org/core/expressions/common/0.2.0"/>
+  <Ecore:EPackage xmi:id="_zYCZkLw1Ed-Ytrd77fw2LA" base_Package="bd7155bb-4f57-4868-b74a-5672b1eac640" nsPrefix="core" nsURI="http://www.storydriven.org/core/0.3.1" basePackage="org.storydriven" prefix="Core"/>
+  <Ecore:EPackage xmi:id="_DWk54Lw2Ed-Ytrd77fw2LA" base_Package="_gsByQLN1Ed-vJ9Qpen_Iuw" nsPrefix="expr" nsURI="http://www.storydriven.org/core/expressions/0.3.1"/>
+  <Ecore:EPackage xmi:id="_8yfvIMmbEeG1Tu0kxZC-sA" base_Package="_8yfvIMmbEeG1Tu0kxZC-sQ" packageName="" nsPrefix="sdcec" nsURI="http://www.storydriven.org/core/expressions/common/0.3.1"/>
   <Ecore:EReference xmi:id="_TmA58LxXEd-Ytrd77fw2LA" isTransient="true"/>
   <Ecore:EReference xmi:id="_aoEjQLxeEd-HP-M1eWm3kg" isUnsettable="true" base_Property="_rCN-Ibw1Ed-Ytrd77fw2LA"/>
   <Ecore:EReference xmi:id="_DyGToLy3Ed-eCY_Peu5fFw"/>
