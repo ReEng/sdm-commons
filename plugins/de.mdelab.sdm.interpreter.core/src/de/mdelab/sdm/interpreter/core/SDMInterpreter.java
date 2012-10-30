@@ -583,9 +583,11 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 	 * @param variablesScope
 	 *            The current variables scope.
 	 * @return The next node to execute.
+	 * @throws SDMException
 	 */
 	protected abstract ActivityNode executeCustomNode(
 			ActivityNode node,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope);
+			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
+			throws SDMException;
 
 }
