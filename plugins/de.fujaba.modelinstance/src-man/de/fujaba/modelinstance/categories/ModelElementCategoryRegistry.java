@@ -158,9 +158,11 @@ public class ModelElementCategoryRegistry {
 		}
 		Collection<QualifiedClassName> qualifiedClassNames = getAllowedClasses()
 				.get(categoryKey);
-		for (QualifiedClassName qualifiedClassName : qualifiedClassNames) {
-			if (hasType(modelElement, qualifiedClassName)) {
-				return true;
+		if (qualifiedClassNames != null) {
+			for (QualifiedClassName qualifiedClassName : qualifiedClassNames) {
+				if (hasType(modelElement, qualifiedClassName)) {
+					return true;
+				}
 			}
 		}
 		return false;
