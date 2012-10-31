@@ -156,8 +156,9 @@ public class ModelElementCategoryRegistry {
 		if (categoryKey == null || modelElement == null) {
 			return false;
 		}
-		for (QualifiedClassName qualifiedClassName : getAllowedClasses().get(
-				categoryKey)) {
+		Collection<QualifiedClassName> qualifiedClassNames = getAllowedClasses()
+				.get(categoryKey);
+		for (QualifiedClassName qualifiedClassName : qualifiedClassNames) {
 			if (hasType(modelElement, qualifiedClassName)) {
 				return true;
 			}
