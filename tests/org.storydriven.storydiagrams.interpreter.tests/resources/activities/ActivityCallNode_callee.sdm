@@ -15,7 +15,7 @@
   </ownedActivityNode>
   <ownedActivityNode xsi:type="sda:ModifyingStoryNode" name="create objects" outgoing="//@ownedActivityEdge.1" incoming="//@ownedActivityEdge.0">
     <ownedRule>
-      <variable xsi:type="sdp:ObjectVariable" name="c" outgoingLink="//@ownedActivityNode.2/@ownedRule/@linkVariable.0" bindingOperator="CREATE">
+      <variable xsi:type="sdp:ObjectVariable" name="returnValue" bindingState="BOUND" outgoingLink="//@ownedActivityNode.2/@ownedRule/@linkVariable.0">
         <classifier href="http://www.storydriven.org/storydiagrams/tests#//Class"/>
       </variable>
       <variable xsi:type="sdp:ObjectVariable" name="m" incomingLink="//@ownedActivityNode.2/@ownedRule/@linkVariable.0" bindingOperator="CREATE">

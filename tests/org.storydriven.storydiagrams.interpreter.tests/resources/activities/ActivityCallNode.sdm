@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.1" xmlns:sdpe="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1" name="testActivityCallNode">
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.1" xmlns:sdpe="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1" name="testActivityCallNode">
   <annotation source="http://www.storydriven.org/storydiagrams/types">
     <details key="http://www.eclipse.org/emf/2002/Ecore" value="true"/>
     <details key="http://www.storydriven.org/storydiagrams/tests" value="true"/>
@@ -30,14 +30,18 @@
       </variable>
     </ownedRule>
   </ownedActivityNode>
-  <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="stopTrue" incoming="//@ownedActivityEdge.2"/>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="stopTrue" incoming="//@ownedActivityEdge.2">
+    <returnValues xsi:type="expr:TextualExpression" expressionText="true" language="OCL" languageVersion="1.0"/>
+  </ownedActivityNode>
   <ownedActivityNode xsi:type="sda:ActivityCallNode" outgoing="//@ownedActivityEdge.1" incoming="//@ownedActivityEdge.3">
     <ownedParameterBindings>
-      <valueExpression xsi:type="sdpe:ObjectVariableExpression" object="//@ownedActivityNode.0/@ownedPattern/@variable.0"/>
+      <valueExpression xsi:type="sdpe:ObjectVariableExpression" object="//@ownedActivityNode.2/@ownedRule/@variable.0"/>
       <parameter href="ActivityCallNode_callee.sdm#//@containedParameters.0"/>
     </ownedParameterBindings>
     <callee xsi:type="sda:Activity" href="ActivityCallNode_callee.sdm#/"/>
     <calledActivity href="ActivityCallNode_callee.sdm#/"/>
   </ownedActivityNode>
-  <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="stopFalse" incoming="//@ownedActivityEdge.4"/>
+  <ownedActivityNode xsi:type="sda:ActivityFinalNode" name="stopFalse" incoming="//@ownedActivityEdge.4">
+    <returnValues xsi:type="expr:TextualExpression" expressionText="false" language="OCL" languageVersion="1.0"/>
+  </ownedActivityNode>
 </sda:Activity>

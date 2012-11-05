@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.interpreter.tests.AbstractTests;
@@ -14,6 +15,7 @@ import org.storydriven.storydiagrams.interpreter.tests.AbstractTests;
 import de.mdelab.sdm.interpreter.core.variables.Variable;
 
 public class ActivityTests extends AbstractTests {
+
 	@Test
 	public void testFromInitialToActivityFinalNode() {
 		assertResultTrue(getActivity("FromInitialToActivityFinalNode.sdm"));
@@ -42,13 +44,13 @@ public class ActivityTests extends AbstractTests {
 	public void testStoryNodeForEach() {
 		assertResultTrue(getActivity("StoryNodeForEach.sdm"));
 	}
-
+	
 	@Test
 	public void testActivityCallNodeCallee() {
 		Map<String, Variable<EClassifier>> result = execute(getActivity("ActivityCallNode_callee.sdm"));
 
 		// check if there is a (correct) element returned
-		result.get(RESULT).getClassifier().getName().equals("Class");
+		assertTrue(result.get(RESULT).getClassifier().getName().equals("Class"));
 	}
 
 	@Test
