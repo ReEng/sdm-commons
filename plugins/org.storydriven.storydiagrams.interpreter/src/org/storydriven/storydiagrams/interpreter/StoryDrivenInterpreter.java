@@ -76,10 +76,17 @@ public class StoryDrivenInterpreter
 						.getValue()));
 			}
 
+			assert !activityCallNode.getCalledActivities().isEmpty();
+
 			/*
 			 * TODO: implement polymorphic dispatch to select most suitable
 			 * activity
 			 */
+			if (activityCallNode.getCalledActivities().size() > 1)
+			{
+				throw new UnsupportedOperationException("Polymorphic dispatch for ActivityCallNodes is not yet implemented.");
+			}
+
 			final Activity activity = activityCallNode.getCalledActivities().get(0);
 
 			final StoryDrivenInterpreter sdi = new StoryDrivenInterpreter(this.getExpressionInterpreterManager(),
