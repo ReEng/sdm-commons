@@ -33,58 +33,61 @@ public class StoryDrivenInterpreter
 {
 
 	public StoryDrivenInterpreter(
-			ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> expressionInterpreterManager)
+			final ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> expressionInterpreterManager)
 	{
 		this(expressionInterpreterManager, null);
 	}
 
 	public StoryDrivenInterpreter(
-			ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> expressionInterpreterManager,
-			NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> notificationEmitter)
+			final ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> expressionInterpreterManager,
+			final NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> notificationEmitter)
 	{
 		super(StoryDrivenMetamodelFacadeFactory.INSTANCE, expressionInterpreterManager, notificationEmitter);
 	}
 
 	@Override
 	protected StoryPatternMatcher<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> createStoryPatternMatcher(
-			StoryPattern storyPattern,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> variablesScope)
+			final StoryPattern storyPattern,
+			final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> variablesScope)
 			throws SDMException
 	{
-		return new StoryDrivenPatternMatcher(storyPattern, variablesScope, getExpressionInterpreterManager(), getNotificationEmitter());
+		return new StoryDrivenPatternMatcher(storyPattern, variablesScope, this.getExpressionInterpreterManager(),
+				this.getNotificationEmitter());
 	}
 
 	@Override
 	protected ActivityNode executeCustomNode(
-			ActivityNode node,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> variablesScope)
+			final ActivityNode node,
+			final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> variablesScope)
 			throws SDMException
 	{
 		if (node instanceof ActivityCallNode)
 		{
-			ActivityCallNode activityCallNode = (ActivityCallNode) node;
+			final ActivityCallNode activityCallNode = (ActivityCallNode) node;
 
 			assert !activityCallNode.getCalledActivities().isEmpty();
 
-			Collection<Variable<EClassifier>> parameters = new ArrayList<Variable<EClassifier>>();
+			final Collection<Variable<EClassifier>> parameters = new ArrayList<Variable<EClassifier>>();
 
-			for (ParameterBinding pb : activityCallNode.getOwnedParameterBindings())
+			for (final ParameterBinding pb : activityCallNode.getOwnedParameterBindings())
 			{
-				parameters.add(new Variable<EClassifier>(pb.getParameter().getName(), pb.getParameter().getEType(),
-						getExpressionInterpreterManager().evaluateExpression(pb.getValueExpression(), null, null, variablesScope)));
+				parameters.add(new Variable<EClassifier>(pb.getParameter().getName(), pb.getParameter().getEType(), this
+						.getExpressionInterpreterManager().evaluateExpression(pb.getValueExpression(), null, null, variablesScope)
+						.getValue()));
 			}
 
 			/*
 			 * TODO: implement polymorphic dispatch to select most suitable
 			 * activity
 			 */
-			Activity activity = activityCallNode.getCalledActivities().get(0);
+			final Activity activity = activityCallNode.getCalledActivities().get(0);
 
-			StoryDrivenInterpreter sdi = new StoryDrivenInterpreter(getExpressionInterpreterManager(), getNotificationEmitter());
+			final StoryDrivenInterpreter sdi = new StoryDrivenInterpreter(this.getExpressionInterpreterManager(),
+					this.getNotificationEmitter());
 
-			Map<String, Variable<EClassifier>> returnValues = sdi.executeActivity(activity, parameters);
+			final Map<String, Variable<EClassifier>> returnValues = sdi.executeActivity(activity, parameters);
 
-			for (EParameter param : activity.getOutParameters())
+			for (final EParameter param : activity.getOutParameters())
 			{
 				variablesScope.createVariable(param.getName(), param.getEType(), returnValues.get(param.getName()));
 			}
