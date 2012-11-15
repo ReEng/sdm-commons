@@ -1,6 +1,8 @@
 package de.mdelab.sdm.interpreter.core.notifications;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import de.mdelab.sdm.interpreter.core.variables.Variable;
@@ -33,27 +35,27 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		this.notificationReceivers = new HashSet<NotificationReceiver<Classifier>>();
 	}
 
-	public void addNotificationReceiver(NotificationReceiver<Classifier> notificationReceiver)
+	public void addNotificationReceiver(final NotificationReceiver<Classifier> notificationReceiver)
 	{
 		this.notificationReceivers.add(notificationReceiver);
 	}
 
-	public void removeNotificationReceiver(NotificationReceiver<Classifier> notificationReceiver)
+	public void removeNotificationReceiver(final NotificationReceiver<Classifier> notificationReceiver)
 	{
 		this.notificationReceivers.remove(notificationReceiver);
 	}
 
-	protected void sendNotifications(InterpreterNotification<Classifier> notification)
+	protected void sendNotifications(final InterpreterNotification<Classifier> notification)
 	{
-		for (NotificationReceiver<Classifier> notificationReceiver : this.notificationReceivers)
+		for (final NotificationReceiver<Classifier> notificationReceiver : this.notificationReceivers)
 		{
 			notificationReceiver.notifyChanged(notification);
 		}
 	}
 
-	public void storyPatternObjectBound(StoryPatternObject storyPatternObject, Object instanceObject,
-			VariablesScope<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier)
+	public void storyPatternObjectBound(final StoryPatternObject storyPatternObject, final Object instanceObject,
+			final VariablesScope<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -62,9 +64,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void storyPatternObjectNotBound(StoryPatternObject storyPatternObject,
-			VariablesScope<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier)
+	public void storyPatternObjectNotBound(final StoryPatternObject storyPatternObject,
+			final VariablesScope<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -73,9 +75,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void storyPatternObjectBindingRevoked(StoryPatternObject storyPatternObject, Object instanceObject,
-			VariablesScope<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier)
+	public void storyPatternObjectBindingRevoked(final StoryPatternObject storyPatternObject, final Object instanceObject,
+			final VariablesScope<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -84,10 +86,10 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void linkCheckSuccessful(StoryPatternObject sourceStoryPatternObject, Object sourceObject, StoryPatternLink link,
-			StoryPatternObject targetStoryPatternObject, Object targetObject,
-			VariablesScope<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> notifier)
+	public void linkCheckSuccessful(final StoryPatternObject sourceStoryPatternObject, final Object sourceObject,
+			final StoryPatternLink link, final StoryPatternObject targetStoryPatternObject, final Object targetObject,
+			final VariablesScope<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -96,10 +98,10 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void linkCheckFailed(StoryPatternObject sourceStoryPatternObject, Object sourceObject, StoryPatternLink link,
-			StoryPatternObject targetStoryPatternObject, Object targetObject,
-			VariablesScope<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> notifier)
+	public void linkCheckFailed(final StoryPatternObject sourceStoryPatternObject, final Object sourceObject, final StoryPatternLink link,
+			final StoryPatternObject targetStoryPatternObject, final Object targetObject,
+			final VariablesScope<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -108,9 +110,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void storyPatternInitializationStarted(StoryPattern storyPattern,
-			VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier)
+	public void storyPatternInitializationStarted(final StoryPattern storyPattern,
+			final VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -119,9 +121,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void storyPatternInitializationFinished(StoryPattern storyPattern,
-			VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier)
+	public void storyPatternInitializationFinished(final StoryPattern storyPattern,
+			final VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -130,9 +132,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void storyPatternMatchingStarted(StoryPattern storyPattern,
-			VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier)
+	public void storyPatternMatchingStarted(final StoryPattern storyPattern,
+			final VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -141,9 +143,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void storyPatternMatchingSuccessful(StoryPattern storyPattern,
-			VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier)
+	public void storyPatternMatchingSuccessful(final StoryPattern storyPattern,
+			final VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -152,9 +154,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void storyPatternMatchingFailed(StoryPattern storyPattern,
-			VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier)
+	public void storyPatternMatchingFailed(final StoryPattern storyPattern,
+			final VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -163,9 +165,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void storyPatternApplicationStarted(StoryPattern storyPattern,
-			VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier)
+	public void storyPatternApplicationStarted(final StoryPattern storyPattern,
+			final VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -174,9 +176,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void storyPatternApplicationFinished(StoryPattern storyPattern,
-			VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier)
+	public void storyPatternApplicationFinished(final StoryPattern storyPattern,
+			final VariablesScope<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -185,9 +187,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void instanceObjectCreated(StoryPatternObject storyPatternObject, Object instanceObject,
-			VariablesScope<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier)
+	public void instanceObjectCreated(final StoryPatternObject storyPatternObject, final Object instanceObject,
+			final VariablesScope<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -196,9 +198,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void instanceObjectDestroyed(StoryPatternObject storyPatternObject, Object instanceObject,
-			VariablesScope<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier)
+	public void instanceObjectDestroyed(final StoryPatternObject storyPatternObject, final Object instanceObject,
+			final VariablesScope<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -207,10 +209,10 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void instanceLinkCreated(StoryPatternObject sourceStoryPatternObject, Object sourceObject, StoryPatternLink link,
-			StoryPatternObject targetStoryPatternObject, Object targetObject,
-			VariablesScope<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> notifier)
+	public void instanceLinkCreated(final StoryPatternObject sourceStoryPatternObject, final Object sourceObject,
+			final StoryPatternLink link, final StoryPatternObject targetStoryPatternObject, final Object targetObject,
+			final VariablesScope<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -219,10 +221,10 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void instanceLinkDestroyed(StoryPatternObject sourceStoryPatternObject, Object sourceObject, StoryPatternLink link,
-			StoryPatternObject targetStoryPatternObject, Object targetObject,
-			VariablesScope<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> notifier)
+	public void instanceLinkDestroyed(final StoryPatternObject sourceStoryPatternObject, final Object sourceObject,
+			final StoryPatternLink link, final StoryPatternObject targetStoryPatternObject, final Object targetObject,
+			final VariablesScope<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -231,10 +233,10 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void traversingLink(StoryPatternLink link, StoryPatternObject sourceStoryPatternObject, Object sourceObject,
-			StoryPatternObject targetStoryPatternObject,
-			VariablesScope<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> notifier)
+	public void traversingLink(final StoryPatternLink link, final StoryPatternObject sourceStoryPatternObject, final Object sourceObject,
+			final StoryPatternObject targetStoryPatternObject,
+			final VariablesScope<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, ?, StoryPatternObject, StoryPatternLink, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -243,9 +245,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void attributeValueSet(StoryPatternObject storyPatternObject, Object instanceObject, Feature feature, Object featureValue,
-			VariablesScope<?, ?, ?, ?, StoryPatternObject, ?, Classifier, Feature, ?> variablesScope,
-			Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, Feature, ?> notifier)
+	public void attributeValueSet(final StoryPatternObject storyPatternObject, final Object instanceObject, final Feature feature,
+			final Object featureValue, final VariablesScope<?, ?, ?, ?, StoryPatternObject, ?, Classifier, Feature, ?> variablesScope,
+			final Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, Feature, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -254,8 +256,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void evaluatingExpression(Expression expression, VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, Expression> variablesScope,
-			Notifier<?, ?, ?, ?, ?, ?, Classifier, ?, Expression> notifier)
+	public void evaluatingExpression(final Expression expression,
+			final VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, Expression> variablesScope,
+			final Notifier<?, ?, ?, ?, ?, ?, Classifier, ?, Expression> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -263,9 +266,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void evaluatedExpression(Expression expression, Object result,
-			VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, Expression> variablesScope,
-			Notifier<?, ?, ?, ?, ?, ?, Classifier, ?, Expression> notifier)
+	public void evaluatedExpression(final Expression expression, final Object result,
+			final VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, Expression> variablesScope,
+			final Notifier<?, ?, ?, ?, ?, ?, Classifier, ?, Expression> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -273,27 +276,31 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void activityExecutionStarted(Activity activity, VariablesScope<Activity, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<Activity, ?, ?, ?, ?, ?, Classifier, ?, ?> notifier)
+	public void activityExecutionStarted(final Activity activity, final Collection<Variable<Classifier>> parameters,
+			final VariablesScope<Activity, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<Activity, ?, ?, ?, ?, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
-			this.sendNotifications(new ActivityExecutionStartedNotification<Activity, Classifier>(variablesScope, notifier, activity));
+			this.sendNotifications(new ActivityExecutionStartedNotification<Activity, Classifier>(variablesScope, notifier, activity,
+					parameters));
 		}
 	}
 
-	public void activityExecutionFinished(Activity activity, VariablesScope<Activity, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<Activity, ?, ?, ?, ?, ?, Classifier, ?, ?> notifier)
+	public void activityExecutionFinished(final Activity activity, final Map<String, Variable<Classifier>> returnValues,
+			final VariablesScope<Activity, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<Activity, ?, ?, ?, ?, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
-			this.sendNotifications(new ActivityExecutionFinishedNotification<Activity, Classifier>(variablesScope, notifier, activity));
+			this.sendNotifications(new ActivityExecutionFinishedNotification<Activity, Classifier>(variablesScope, notifier, activity,
+					returnValues));
 		}
 	}
 
-	public void activityNodeExecutionStarted(ActivityNode activityNode,
-			VariablesScope<?, ActivityNode, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ActivityNode, ?, ?, ?, ?, Classifier, ?, ?> notifier)
+	public void activityNodeExecutionStarted(final ActivityNode activityNode,
+			final VariablesScope<?, ActivityNode, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ActivityNode, ?, ?, ?, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -302,9 +309,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void activityNodeExecutionFinished(ActivityNode activityNode,
-			VariablesScope<?, ActivityNode, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ActivityNode, ?, ?, ?, ?, Classifier, ?, ?> notifier)
+	public void activityNodeExecutionFinished(final ActivityNode activityNode,
+			final VariablesScope<?, ActivityNode, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ActivityNode, ?, ?, ?, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -313,9 +320,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void traversingActivityEdge(ActivityEdge activityEdge,
-			VariablesScope<?, ?, ActivityEdge, ?, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ActivityEdge, ?, ?, ?, Classifier, ?, ?> notifier)
+	public void traversingActivityEdge(final ActivityEdge activityEdge,
+			final VariablesScope<?, ?, ActivityEdge, ?, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ActivityEdge, ?, ?, ?, Classifier, ?, ?> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -323,7 +330,7 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void variableCreated(Variable<Classifier> variable, VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope)
+	public void variableCreated(final Variable<Classifier> variable, final VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -331,7 +338,7 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void variableDeleted(Variable<Classifier> variable, VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope)
+	public void variableDeleted(final Variable<Classifier> variable, final VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -339,8 +346,8 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void variableValueChanged(Variable<Classifier> variable, Object oldValue,
-			VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope)
+	public void variableValueChanged(final Variable<Classifier> variable, final Object oldValue,
+			final VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -348,9 +355,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void storyPatternConstraintHolds(Expression constraint, StoryPattern storyPattern,
-			VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, Expression> notifier)
+	public void storyPatternConstraintHolds(final Expression constraint, final StoryPattern storyPattern,
+			final VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, Expression> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -359,9 +366,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void storyPatternConstraintViolated(Expression constraint, StoryPattern storyPattern,
-			VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, Expression> notifier)
+	public void storyPatternConstraintViolated(final Expression constraint, final StoryPattern storyPattern,
+			final VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, StoryPattern, ?, ?, Classifier, ?, Expression> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -370,9 +377,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void storyPatternObjectConstraintHolds(Expression constraint, StoryPatternObject storyPatternObject,
-			VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, Expression> notifier)
+	public void storyPatternObjectConstraintHolds(final Expression constraint, final StoryPatternObject storyPatternObject,
+			final VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, Expression> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
@@ -381,9 +388,9 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 		}
 	}
 
-	public void storyPatternObjectConstraintViolated(Expression constraint, StoryPatternObject storyPatternObject,
-			VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
-			Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, Expression> notifier)
+	public void storyPatternObjectConstraintViolated(final Expression constraint, final StoryPatternObject storyPatternObject,
+			final VariablesScope<?, ?, ?, ?, ?, ?, Classifier, ?, ?> variablesScope,
+			final Notifier<?, ?, ?, ?, StoryPatternObject, ?, Classifier, ?, Expression> notifier)
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{

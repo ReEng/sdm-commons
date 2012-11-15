@@ -76,9 +76,9 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 	private final Map<StoryPattern, StoryPatternMatcher<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>>	storyPatternMatchers;
 
 	public SDMInterpreter(
-			MetamodelFacadeFactory<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> facadeFactory,
-			ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> expressionInterpreterManager,
-			NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> notificationEmitter)
+			final MetamodelFacadeFactory<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> facadeFactory,
+			final ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> expressionInterpreterManager,
+			final NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> notificationEmitter)
 	{
 		super(notificationEmitter);
 
@@ -130,7 +130,7 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 	 *             If something goes wrong during the execution, e.g., due to
 	 *             erroneous story diagrams or expressions.
 	 */
-	public Map<String, Variable<Classifier>> executeActivity(Activity activity, Collection<Variable<Classifier>> parameters)
+	public Map<String, Variable<Classifier>> executeActivity(final Activity activity, final Collection<Variable<Classifier>> parameters)
 			throws SDMException
 	{
 		if (activity == null)
@@ -138,22 +138,22 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 			throw new SDMException("activity is null.");
 		}
 
-		IActivityFacade<Activity, ActivityNode> activityFacade = this.facadeFactory.getActivityFacade();
+		final IActivityFacade<Activity, ActivityNode> activityFacade = this.facadeFactory.getActivityFacade();
 
 		/*
 		 * Create the root variable scope
 		 */
-		VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variableScope = new VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>(
-				getNotificationEmitter(), null, activityFacade.getExpressionImports(activity));
+		final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variableScope = new VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>(
+				this.getNotificationEmitter(), null, activityFacade.getExpressionImports(activity));
 
-		getNotificationEmitter().activityExecutionStarted(activity, variableScope, this);
+		this.getNotificationEmitter().activityExecutionStarted(activity, parameters, variableScope, this);
 
 		/*
 		 * create variables for parameters
 		 */
 		if (parameters != null)
 		{
-			for (Variable<Classifier> variable : parameters)
+			for (final Variable<Classifier> variable : parameters)
 			{
 				assert variable.getName() != null;
 				assert !"".equals(variable.getName());
@@ -190,7 +190,7 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 			{
 				n = this.executeActivityNode(lastNode, this.variableScopes.get(lastNode));
 			}
-			catch (AbortInterpretationException e)
+			catch (final AbortInterpretationException e)
 			{
 				/*
 				 * If this is not the target interpreter that should catch the
@@ -222,11 +222,11 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 		/*
 		 * Create the map of return values
 		 */
-		Map<String, Variable<Classifier>> returnValues = new HashMap<String, Variable<Classifier>>();
+		final Map<String, Variable<Classifier>> returnValues = new HashMap<String, Variable<Classifier>>();
 
-		for (Variable<Classifier> var : variableScope.getVariables())
+		for (final Variable<Classifier> var : variableScope.getVariables())
 		{
-			Variable<Classifier> v = new Variable<Classifier>(var.getName(), var.getClassifier(), var.getValue());
+			final Variable<Classifier> v = new Variable<Classifier>(var.getName(), var.getClassifier(), var.getValue());
 
 			returnValues.put(v.getName(), v);
 		}
@@ -234,22 +234,23 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 		/*
 		 * Evaluate expression for outgoing parameters
 		 */
-		Map<String, Expression> outParameterExpressions = this.facadeFactory.getFinalNodeFacade().getOutParameterExpressions(lastNode);
+		final Map<String, Expression> outParameterExpressions = this.facadeFactory.getFinalNodeFacade()
+				.getOutParameterExpressions(lastNode);
 
 		if (outParameterExpressions != null)
 		{
-			for (Entry<String, Expression> entry : outParameterExpressions.entrySet())
+			for (final Entry<String, Expression> entry : outParameterExpressions.entrySet())
 			{
-				Variable<Classifier> result = this.getExpressionInterpreterManager().evaluateExpression(entry.getValue(), null, null,
+				final Variable<Classifier> result = this.getExpressionInterpreterManager().evaluateExpression(entry.getValue(), null, null,
 						variableScope);
 
-				Variable<Classifier> resultVar = new Variable<Classifier>(entry.getKey(), result.getClassifier(), result.getValue());
+				final Variable<Classifier> resultVar = new Variable<Classifier>(entry.getKey(), result.getClassifier(), result.getValue());
 
 				returnValues.put(resultVar.getName(), resultVar);
 			}
 		}
 
-		getNotificationEmitter().activityExecutionFinished(activity, variableScope, this);
+		this.getNotificationEmitter().activityExecutionFinished(activity, returnValues, variableScope, this);
 
 		return returnValues;
 	}
@@ -265,14 +266,14 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 	 * @throws SDMException
 	 */
 	protected ActivityNode executeActivityNode(
-			ActivityNode node,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
+			final ActivityNode node,
+			final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
 			throws SDMException
 	{
 		assert node != null;
 		assert variablesScope != null;
 
-		IUnspecificActivityNodeFacade<ActivityNode, ActivityEdge> unspecificActivityNodeFacade = this.facadeFactory
+		final IUnspecificActivityNodeFacade<ActivityNode, ActivityEdge> unspecificActivityNodeFacade = this.facadeFactory
 				.getUnspecificActivityNodeFacade();
 
 		ActivityNode nextNode = null;
@@ -281,11 +282,11 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 		{
 			case NON_EXECUTABLE_NODE:
 
-				getNotificationEmitter().activityNodeExecutionStarted(node, variablesScope, this);
+				this.getNotificationEmitter().activityNodeExecutionStarted(node, variablesScope, this);
 
-				ActivityEdge nextEdge = unspecificActivityNodeFacade.getNextActivityEdge(node);
+				final ActivityEdge nextEdge = unspecificActivityNodeFacade.getNextActivityEdge(node);
 
-				getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
+				this.getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
 
 				nextNode = this.executeActivityEdge(nextEdge, variablesScope);
 
@@ -301,8 +302,8 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 
 			case ACTIVITY_FINAL_NODE:
 			case FLOW_FINAL_NODE:
-				getNotificationEmitter().activityNodeExecutionStarted(node, variablesScope, this);
-				getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
+				this.getNotificationEmitter().activityNodeExecutionStarted(node, variablesScope, this);
+				this.getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
 				return null;
 
 			case STATEMENT_NODE:
@@ -328,31 +329,31 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 	}
 
 	protected ActivityNode executeStatementNode(
-			ActivityNode node,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
+			final ActivityNode node,
+			final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
 			throws SDMException
 	{
-		getNotificationEmitter().activityNodeExecutionStarted(node, variablesScope, this);
+		this.getNotificationEmitter().activityNodeExecutionStarted(node, variablesScope, this);
 
-		IExpressionNodeFacade<ActivityNode, ActivityEdge, Expression> expressionNodeFacade = this.getFacadeFactory()
+		final IExpressionNodeFacade<ActivityNode, ActivityEdge, Expression> expressionNodeFacade = this.getFacadeFactory()
 				.getExpressionNodeFacade();
 
 		/*
 		 * Evaluate expressions
 		 */
-		for (Expression expression : expressionNodeFacade.getExpressions(node))
+		for (final Expression expression : expressionNodeFacade.getExpressions(node))
 		{
 			this.getExpressionInterpreterManager().evaluateExpression(expression, null, null, variablesScope);
 		}
 
-		getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
+		this.getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
 
 		return this.executeActivityEdge(expressionNodeFacade.getNextActivityEdge(node), variablesScope);
 	}
 
 	protected ActivityNode executeStoryNode(
-			ActivityNode node,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
+			final ActivityNode node,
+			final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
 			throws SDMException
 	{
 		switch (this.facadeFactory.getStoryNodeFacade().getForEachSemantics(node))
@@ -369,25 +370,25 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 	}
 
 	protected ActivityNode executeSingleMatchStoryNode(
-			ActivityNode node,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
+			final ActivityNode node,
+			final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
 			throws SDMException
 	{
-		getNotificationEmitter().activityNodeExecutionStarted(node, variablesScope, this);
+		this.getNotificationEmitter().activityNodeExecutionStarted(node, variablesScope, this);
 
-		StoryPatternMatcher<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> storyPatternMatcher = this
+		final StoryPatternMatcher<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> storyPatternMatcher = this
 				.createStoryPatternMatcher(this.facadeFactory.getStoryNodeFacade().getStoryPattern(node), variablesScope);
 
-		boolean success = storyPatternMatcher.findNextMatch();
+		final boolean success = storyPatternMatcher.findNextMatch();
 
 		if (success)
 		{
 			storyPatternMatcher.applyMatch();
 		}
 
-		IStoryNodeFacade<ActivityNode, ActivityEdge, StoryPattern> storyNodeFacade = this.facadeFactory.getStoryNodeFacade();
+		final IStoryNodeFacade<ActivityNode, ActivityEdge, StoryPattern> storyNodeFacade = this.facadeFactory.getStoryNodeFacade();
 
-		getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
+		this.getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
 
 		ActivityEdge nextEdge;
 
@@ -404,19 +405,19 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 	}
 
 	protected ActivityNode executeForEachFreshMatchStoryNode(
-			ActivityNode node,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
+			final ActivityNode node,
+			final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
 			throws SDMException
 	{
-		getNotificationEmitter().activityNodeExecutionStarted(node, variablesScope, this);
+		this.getNotificationEmitter().activityNodeExecutionStarted(node, variablesScope, this);
 
-		IStoryNodeFacade<ActivityNode, ActivityEdge, StoryPattern> storyNodeFacade = this.facadeFactory.getStoryNodeFacade();
+		final IStoryNodeFacade<ActivityNode, ActivityEdge, StoryPattern> storyNodeFacade = this.facadeFactory.getStoryNodeFacade();
 
 		/*
 		 * Check if there is already a story pattern matcher for this foreach
 		 * node
 		 */
-		StoryPattern storyPattern = storyNodeFacade.getStoryPattern(node);
+		final StoryPattern storyPattern = storyNodeFacade.getStoryPattern(node);
 
 		StoryPatternMatcher<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> storyPatternMatcher = this.storyPatternMatchers
 				.get(storyPattern);
@@ -433,7 +434,7 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 			 * For the first run, the pattern matcher has to use a matching
 			 * strategy that produces a log.
 			 */
-			DefaultMatchingStrategyWithLog<StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> matchingStrategy = new DefaultMatchingStrategyWithLog<StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>(
+			final DefaultMatchingStrategyWithLog<StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> matchingStrategy = new DefaultMatchingStrategyWithLog<StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>(
 					this.facadeFactory);
 
 			storyPatternMatcher.setMatchingStrategy(matchingStrategy);
@@ -462,7 +463,7 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 		{
 			storyPatternMatcher.applyMatch();
 
-			getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
+			this.getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
 
 			nextEdge = storyNodeFacade.getSuccessNextEdge(node);
 
@@ -473,7 +474,7 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 		}
 		else
 		{
-			getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
+			this.getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
 
 			nextEdge = storyNodeFacade.getFailureNextEdge(node);
 			nextNode = this.executeActivityEdge(nextEdge, variablesScope);
@@ -489,35 +490,36 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 	}
 
 	protected ActivityNode executeActivityEdge(
-			ActivityEdge nextEdge,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
+			final ActivityEdge nextEdge,
+			final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
 	{
-		IActivityEdgeFacade<ActivityNode, ActivityEdge> activityEdgeFacade = this.facadeFactory.getActivityEdgeFacade();
+		final IActivityEdgeFacade<ActivityNode, ActivityEdge> activityEdgeFacade = this.facadeFactory.getActivityEdgeFacade();
 
-		getNotificationEmitter().traversingActivityEdge(nextEdge, variablesScope, this);
+		this.getNotificationEmitter().traversingActivityEdge(nextEdge, variablesScope, this);
 
-		ActivityNode nextNode = activityEdgeFacade.getTarget(nextEdge);
+		final ActivityNode nextNode = activityEdgeFacade.getTarget(nextEdge);
 
 		return nextNode;
 	}
 
 	protected ActivityNode executeDecisionNode(
-			ActivityNode node,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
+			final ActivityNode node,
+			final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope)
 			throws SDMException
 	{
-		getNotificationEmitter().activityNodeExecutionStarted(node, variablesScope, this);
+		this.getNotificationEmitter().activityNodeExecutionStarted(node, variablesScope, this);
 
-		IDecisionNodeFacade<ActivityNode, ActivityEdge, Expression> decisionNodeFacade = this.getFacadeFactory().getDecisionNodeFacade();
+		final IDecisionNodeFacade<ActivityNode, ActivityEdge, Expression> decisionNodeFacade = this.getFacadeFactory()
+				.getDecisionNodeFacade();
 
 		ActivityEdge nextEdge = null;
 
 		/*
 		 * Evaluate expressions
 		 */
-		for (Entry<Expression, ActivityEdge> entry : decisionNodeFacade.getConditionalNextEdges(node).entrySet())
+		for (final Entry<Expression, ActivityEdge> entry : decisionNodeFacade.getConditionalNextEdges(node).entrySet())
 		{
-			Variable<Classifier> result = this.getExpressionInterpreterManager().evaluateExpression(entry.getKey(), null, null,
+			final Variable<Classifier> result = this.getExpressionInterpreterManager().evaluateExpression(entry.getKey(), null, null,
 					variablesScope);
 
 			assert result != null;
@@ -529,7 +531,7 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 			}
 		}
 
-		getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
+		this.getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
 
 		/*
 		 * No expression is true, execute else
@@ -547,7 +549,7 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 	 * 
 	 * @param nextNode
 	 */
-	public void setNextNode(ActivityNode nextNode)
+	public void setNextNode(final ActivityNode nextNode)
 	{
 		this.nextNode = nextNode;
 	}
