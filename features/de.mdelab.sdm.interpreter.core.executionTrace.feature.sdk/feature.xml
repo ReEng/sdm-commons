@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="de.mdelab.sdm.interpreter.core.executionTrace.feature.sdk"
-      label="MDELab SDM Interpreter Core Feature SDK"
+      label="ExecutionTrace Metamodel and Adapter for Story Diagrams SDK"
       version="1.0.0.qualifier"
       provider-name="MDELab.de">
 
