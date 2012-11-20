@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Metamodel and Adapter for ExecutionTraces of Story Diagrams
+Bundle-SymbolicName: de.mdelab.sdm.interpreter.core.executionTrace;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: MDELab.de
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.mdelab.sdm.interpreter.core.executionTrace,
+ de.mdelab.sdm.interpreter.core.executionTrace.impl,
+ de.mdelab.sdm.interpreter.core.executionTrace.util
+Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ de.mdelab.sdm.interpreter.core;bundle-version="1.0.0";visibility:=reexport
+Bundle-ActivationPolicy: lazy

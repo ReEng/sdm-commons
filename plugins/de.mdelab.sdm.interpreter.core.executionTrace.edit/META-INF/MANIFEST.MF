@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ExecutionTrace Edit Support
+Bundle-SymbolicName: de.mdelab.sdm.interpreter.core.executionTrace.edit;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: de.mdelab.sdm.interpreter.core.executionTrace.provider.ExecutionTraceEditPlugin$Implementation
+Bundle-Vendor: MDELab.de
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.mdelab.sdm.interpreter.core.executionTrace.provider
+Require-Bundle: org.eclipse.core.runtime,
+ de.mdelab.sdm.interpreter.core.executionTrace;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

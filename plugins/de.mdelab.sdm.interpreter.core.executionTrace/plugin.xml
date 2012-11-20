@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.mdelab.de/sdm/interpreter/core/executionTrace/1.0"
+            class="de.mdelab.sdm.interpreter.core.executionTrace.ExecutionTracePackage"
+            genModel="model/executionTrace.genmodel"/>
+   </extension>
+
+</plugin>

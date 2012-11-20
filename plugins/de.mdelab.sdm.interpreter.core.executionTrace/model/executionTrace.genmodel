@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.mdelab.sdm.interpreter.core.executionTrace/src-gen"
+    creationSubmenus="true" editDirectory="/de.mdelab.sdm.interpreter.core.executionTrace.edit/src-gen"
+    editorDirectory="/de.mdelab.sdm.interpreter.core.executionTrace.editor/src-gen"
+    modelPluginID="de.mdelab.sdm.interpreter.core.executionTrace" modelName="ExecutionTrace"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    suppressGenModelAnnotations="false" copyrightFields="false" optimizedHasChildren="true"
+    tableProviders="true" colorProviders="true" fontProviders="true" runtimeVersion="2.7"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>executionTrace.ecore</foreignModel>
+  <genPackages prefix="ExecutionTrace" basePackage="de.mdelab.sdm.interpreter.core"
+      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="executionTrace.ecore#/">
+    <genClasses ecoreClass="executionTrace.ecore#//MapEntry">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//MapEntry/KeyType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//MapEntry/ValueType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//MapEntry/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//MapEntry/value"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//ExecutionTrace">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference executionTrace.ecore#//ExecutionTrace/executions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//ExecutionTrace/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//ExecutionTrace/totalExecutionTime"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//ExecutionTrace/totalExecutionTimeMsec"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="executionTrace.ecore#//Execution">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//Execution/executionStartedTimeStamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//Execution/executionFinishedTimeStamp"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//Execution/executionTime"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//Execution/executionTimeMsec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference executionTrace.ecore#//Execution/elements"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference executionTrace.ecore#//Execution/container"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//ActivityExecution">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//ActivityExecution/ActivityType"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//ActivityExecution/activity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference executionTrace.ecore#//ActivityExecution/inParameterValues"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference executionTrace.ecore#//ActivityExecution/outParameterValues"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//ActivityNodeExecution">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//ActivityNodeExecution/ActivityNodeType"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//ActivityNodeExecution/activityNode"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//ActivityEdgeTraversal">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//ActivityEdgeTraversal/ActivityEdgeType"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//ActivityEdgeTraversal/activityEdge"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="executionTrace.ecore#//StoryPatternExecution">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternExecution/StoryPatternType"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//StoryPatternExecution/storyPattern"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//StoryPatternInitialization">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternInitialization/StoryPatternType"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//StoryPatternMatching">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternMatching/StoryPatternType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//StoryPatternMatching/successful"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//StoryPatternApplication">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternApplication/StoryPatternType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="executionTrace.ecore#//StoryPatternObjectExecution">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternObjectExecution/StoryPatternObjectType"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//StoryPatternObjectExecution/storyPatternObject"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//StoryPatternObjectBound">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternObjectBound/StoryPatternObjectType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//StoryPatternObjectBound/value"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//StoryPatternObjectNotBound">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternObjectNotBound/StoryPatternObjectType"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//StoryPatternObjectBindingRevoked">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternObjectBindingRevoked/StoryPatternObjectType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//StoryPatternObjectBindingRevoked/previousValue"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="executionTrace.ecore#//StoryPatternLinkExecution">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternLinkExecution/StoryPatternLinkType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternLinkExecution/StoryPatternObjectType"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//StoryPatternLinkExecution/storyPatternLink"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//StoryPatternLinkExecution/sourceStoryPatternObject"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//StoryPatternLinkExecution/targetStoryPatternObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//StoryPatternLinkExecution/sourceObject"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//TraversingLink">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//TraversingLink/StoryPatternLinkType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//TraversingLink/StoryPatternObjectType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="executionTrace.ecore#//LinkCheck">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//LinkCheck/StoryPatternLinkType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//LinkCheck/StoryPatternObjectType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//LinkCheck/targetObject"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//LinkCheckSuccessful">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//LinkCheckSuccessful/StoryPatternLinkType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//LinkCheckSuccessful/StoryPatternObjectType"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//LinkCheckFailed">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//LinkCheckFailed/StoryPatternLinkType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//LinkCheckFailed/StoryPatternObjectType"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//ExpressionEvaluation">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//ExpressionEvaluation/ExpressionType"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//ExpressionEvaluation/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//ExpressionEvaluation/result"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="executionTrace.ecore#//InstanceObjectModification">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//InstanceObjectModification/StoryPatternObjectType"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//InstanceObjectModification/storyPatternObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//InstanceObjectModification/instanceObject"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//InstanceObjectCreation">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//InstanceObjectCreation/StoryPatternObjectType"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//InstanceObjectDeletion">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//InstanceObjectDeletion/StoryPatternObjectType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="executionTrace.ecore#//InstanceLinkModification">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//InstanceLinkModification/StoryPatternLinkType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//InstanceLinkModification/StoryPatternObjectType"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//InstanceLinkModification/storyPatternLink"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//InstanceLinkModification/sourceStoryPatternObject"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//InstanceLinkModification/targetStoryPatternObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//InstanceLinkModification/sourceInstanceObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//InstanceLinkModification/targetInstanceObject"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//InstanceLinkCreation">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//InstanceLinkCreation/StoryPatternLinkType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//InstanceLinkCreation/StoryPatternObjectType"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//InstanceLinkDeletion">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//InstanceLinkDeletion/StoryPatternLinkType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//InstanceLinkDeletion/StoryPatternObjectType"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//AttributeValueSet">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//AttributeValueSet/StoryPatternObjectType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//AttributeValueSet/FeatureType"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//AttributeValueSet/storyPatternObject"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//AttributeValueSet/feature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//AttributeValueSet/instanceObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//AttributeValueSet/newValue"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="executionTrace.ecore#//VariableModification">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//VariableModification/ClassifierType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//VariableModification/variableName"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//VariableModification/classifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//VariableModification/value"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//VariableCreated">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//VariableCreated/ClassifierType"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//VariableDeleted">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//VariableDeleted/ClassifierType"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//VariableChanged">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//VariableChanged/ClassifierType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute executionTrace.ecore#//VariableChanged/oldValue"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="executionTrace.ecore#//StoryPatternObjectConstraintEvaluation">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternObjectConstraintEvaluation/StoryPatternObjectType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternObjectConstraintEvaluation/ExpressionType"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//StoryPatternObjectConstraintEvaluation/constraint"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//StoryPatternObjectConstraintHolds">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternObjectConstraintHolds/StoryPatternObjectType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternObjectConstraintHolds/ExpressionType"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//StoryPatternObjectConstraintViolated">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternObjectConstraintViolated/StoryPatternObjectType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternObjectConstraintViolated/ExpressionType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="executionTrace.ecore#//StoryPatternConstraintEvaluation">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternConstraintEvaluation/StoryPatternType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternConstraintEvaluation/ExpressionType"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference executionTrace.ecore#//StoryPatternConstraintEvaluation/constraint"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//StoryPatternConstraintHolds">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternConstraintHolds/StoryPatternType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternConstraintHolds/ExpressionType"/>
+    </genClasses>
+    <genClasses ecoreClass="executionTrace.ecore#//StoryPatternConstraintViolated">
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternConstraintViolated/StoryPatternType"/>
+      <genTypeParameters ecoreTypeParameter="executionTrace.ecore#//StoryPatternConstraintViolated/ExpressionType"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
