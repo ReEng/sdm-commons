@@ -37,6 +37,11 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 
 	public void addNotificationReceiver(final NotificationReceiver<Classifier> notificationReceiver)
 	{
+		if (notificationReceiver == null)
+		{
+			throw new NullPointerException("notificationReceiver may not be null");
+		}
+
 		this.notificationReceivers.add(notificationReceiver);
 	}
 
