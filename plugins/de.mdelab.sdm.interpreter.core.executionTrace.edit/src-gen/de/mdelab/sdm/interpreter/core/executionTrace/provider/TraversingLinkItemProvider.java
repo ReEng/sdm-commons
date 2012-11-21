@@ -2,14 +2,13 @@
  */
 package de.mdelab.sdm.interpreter.core.executionTrace.provider;
 
-import de.mdelab.sdm.interpreter.core.executionTrace.TraversingLink;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.edit.EMFEditPlugin;
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemFontProvider;
@@ -22,10 +21,13 @@ import org.eclipse.emf.edit.provider.ITableItemFontProvider;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import de.mdelab.sdm.interpreter.core.executionTrace.TraversingLink;
+
 /**
- * This is the item provider adapter for a {@link de.mdelab.sdm.interpreter.core.executionTrace.TraversingLink} object.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * This is the item provider adapter for a
+ * {@link de.mdelab.sdm.interpreter.core.executionTrace.TraversingLink} object.
+ * <!-- begin-user-doc --> <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class TraversingLinkItemProvider extends StoryPatternLinkExecutionItemProvider implements IEditingDomainItemProvider,
@@ -33,81 +35,97 @@ public class TraversingLinkItemProvider extends StoryPatternLinkExecutionItemPro
 		ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider
 {
 	/**
-	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This constructs an instance from a factory and a notifier. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public TraversingLinkItemProvider(AdapterFactory adapterFactory)
+	public TraversingLinkItemProvider(final AdapterFactory adapterFactory)
 	{
 		super(adapterFactory);
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns the property descriptors for the adapted class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object)
 	{
-		if (itemPropertyDescriptors == null)
+		if (this.itemPropertyDescriptors == null)
 		{
 			super.getPropertyDescriptors(object);
 
 		}
-		return itemPropertyDescriptors;
+		return this.itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns TraversingLink.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns TraversingLink.gif. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
+	public Object getImage(final Object object)
 	{
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TraversingLink"));
+		return this.overlayImage(object, this.getResourceLocator().getImage("full/obj16/TraversingLink"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @generated not
 	 */
 	@Override
-	public String getText(Object object)
+	public String getText(final Object object)
 	{
-		TraversingLink<?, ?> traversingLink = (TraversingLink<?, ?>) object;
-		return getString("_UI_TraversingLink_type") + " " + traversingLink.getExecutionStartedTimeStamp();
+		String label = this.getString("_UI_TraversingLink_type") + " ";
+
+		final TraversingLink<?, ?> traversingLink = (TraversingLink<?, ?>) object;
+
+		final ComposedAdapterFactory factory = new ComposedAdapterFactory(EMFEditPlugin.getComposedAdapterFactoryDescriptorRegistry());
+
+		if (traversingLink.getStoryPatternLink() != null)
+		{
+			label += ((IItemLabelProvider) factory.adapt(traversingLink.getStoryPatternLink(), IItemLabelProvider.class))
+					.getText(traversingLink.getStoryPatternLink());
+		}
+		else
+		{
+			label += "[null]";
+		}
+
+		return label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update any cached
-	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This handles model notifications by calling {@link #updateChildren} to
+	 * update any cached children and by creating a viewer notification, which
+	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
+	public void notifyChanged(final Notification notification)
 	{
-		updateChildren(notification);
+		this.updateChildren(notification);
 		super.notifyChanged(notification);
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
+	 * describing the children that can be created under this object. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
+	protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object)
 	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
