@@ -467,7 +467,7 @@ public class ExecutionTraceNotificationReceiver<ActivityType, ActivityNodeType, 
 		final StoryPatternObjectBindingRevoked<StoryPatternObjectType> s = ExecutionTraceFactory.eINSTANCE
 				.createStoryPatternObjectBindingRevoked();
 		s.setExecutionStartedTimeStamp(System.nanoTime());
-		s.setExecutionFinishedTimeStamp(s.getExecutionFinishedTimeStamp());
+		s.setExecutionFinishedTimeStamp(s.getExecutionStartedTimeStamp());
 		s.setStoryPatternObject(notification.getStoryPatternObject());
 		s.setPreviousValue(notification.getInstanceObject().toString());
 
