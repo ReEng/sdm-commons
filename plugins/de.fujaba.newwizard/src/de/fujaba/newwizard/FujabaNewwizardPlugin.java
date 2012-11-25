@@ -15,9 +15,11 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.ISafeRunnable;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.RegistryFactory;
+import org.eclipse.core.runtime.SafeRunner;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.ui.internal.WorkbenchPlugin;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -88,7 +91,6 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 			for (IConfigurationElement element : config) {
 				Object object = null;
 				try {
-					// TODO: Use SafeRunner, as described in online tutorial.
 					object = element.createExecutableExtension("initializer");
 					if (object instanceof IModelInitializer) {
 						modelInitializers.add((IModelInitializer) object);
@@ -254,10 +256,21 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 		}
 	}
 
-	private void initializeModel(RootNode rootNode) {
-		// TODO: Use SafeRunner, as described in online tutorial.
-		for (IModelInitializer initializer : getModelInitializers()) {
-			initializer.initialize(rootNode);
+	private void initializeModel(final RootNode rootNode) {
+		for (final IModelInitializer initializer : getModelInitializers()) {
+			SafeRunner.run(new ISafeRunnable() {
+
+				@Override
+				public void handleException(Throwable exception) {
+					// TODO Log exception
+				}
+
+				@Override
+				public void run() throws Exception {
+					initializer.initialize(rootNode);
+				}
+				
+			});
 		}
 	}
 
