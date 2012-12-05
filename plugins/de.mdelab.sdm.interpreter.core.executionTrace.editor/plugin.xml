@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.mdelab.sdm.interpreter.core.executionTrace.presentation.ExecutionTraceModelWizardID"
+            name="%_UI_ExecutionTraceModelWizard_label"
+            class="de.mdelab.sdm.interpreter.core.executionTrace.presentation.ExecutionTraceModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ExecutionTraceModelFile.gif">
+         <description>%_UI_ExecutionTraceModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="de.mdelab.sdm.interpreter.core.executionTrace.presentation.ExecutionTraceEditorID"
+            name="%_UI_ExecutionTraceEditor_label"
+            icon="icons/full/obj16/ExecutionTraceModelFile.gif"
+            extensions="executiontrace"
+            class="de.mdelab.sdm.interpreter.core.executionTrace.presentation.ExecutionTraceEditor"
+            contributorClass="de.mdelab.sdm.interpreter.core.executionTrace.presentation.ExecutionTraceActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
