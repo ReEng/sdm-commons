@@ -296,7 +296,7 @@ public class ActivityParametersSection extends AbstractSection {
 			}
 
 			checkButtonStates();
-		} else {
+		} else if (!inParametersViewer.getControl().isDisposed()) {
 			inParametersViewer.setInput(null);
 			outParametersViewer.setInput(null);
 

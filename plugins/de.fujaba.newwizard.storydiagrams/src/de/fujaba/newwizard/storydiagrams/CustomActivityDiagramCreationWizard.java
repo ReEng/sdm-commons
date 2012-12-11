@@ -1,4 +1,5 @@
-package org.storydriven.storydiagrams.diagram.custom.part;
+package de.fujaba.newwizard.storydiagrams;
+
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.IStructuredSelection;

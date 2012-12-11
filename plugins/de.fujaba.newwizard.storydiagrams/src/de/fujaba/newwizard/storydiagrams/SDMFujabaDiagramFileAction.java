@@ -1,4 +1,5 @@
-package org.storydriven.storydiagrams.diagram.custom.part;
+package de.fujaba.newwizard.storydiagrams;
+
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;

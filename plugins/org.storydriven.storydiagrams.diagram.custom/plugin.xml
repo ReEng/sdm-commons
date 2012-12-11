@@ -4,120 +4,6 @@
 
    <extension-point id="expressionSourceViewerExtension" name="Expression Source Viewer Extension" schema="schema/expressionSourceViewerExtension.exsd"/>
 
-    <extension point="de.fujaba.modelinstance.modelelementcategory">
-      <category
-            key="org.storydriven.storydiagrams.category"
-            name="storydiagrams">
-         <child
-               class="InitialNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="ActivityFinalNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="JunctionNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="StatementNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="StructuredNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="ModifyingStoryNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-      </category>
-   </extension>
-
-   <extension point="de.fujaba.newwizard.diagraminformation">
-      <editor
-            preferencesHint="org.storydriven.storydiagrams.diagram"
-            editorId="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"
-            editorName="Story Diagram Editor"
-            fileExtension="storydiagrams_diagram"
-            modelElementCategoryKey="org.storydriven.storydiagrams.category"
-            modelId="Storydiagrams">
-         <diagramElement
-               packageNsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1"
-               className="Activity">
-         </diagramElement>
-         <topLevelNode
-               domainElement="InitialNode"
-               semanticHint="2001">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="ActivityFinalNode"
-               semanticHint="2002">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="JunctionNode"
-               semanticHint="2003">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="StatementNode"
-               semanticHint="2004">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="StructuredNode"
-               semanticHint="2005">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="ModifyingStoryNode"
-               semanticHint="2007">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="TextualExpression"
-               semanticHint="3015">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="JunctionNode"
-               semanticHint="3001">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="InitialNode"
-               semanticHint="3002">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="ActivityFinalNode"
-               semanticHint="3004">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="StatementNode"
-               semanticHint="3003">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="StructuredNode"
-               semanticHint="3005">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="ModifyingStoryNode"
-               semanticHint="3011">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="StoryPattern"
-               semanticHint="3008">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="ObjectVariable"
-               semanticHint="3012">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="AttributeAssignment"
-               semanticHint="3013">
-         </topLevelNode>
-         <topLevelNode
-               domainElement="PrimitiveVariable"
-               semanticHint="3014">
-         </topLevelNode>
-      </editor>
-   </extension>
-
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
             class="org.storydriven.storydiagrams.diagram.custom.providers.CustomStorydiagramsEditPartProvider">
@@ -132,28 +18,6 @@
 			<Priority name="High"></Priority>
 		</layoutProvider>
 	</extension> 
-
-    <extension point="org.eclipse.ui.commands">
-		<command
-			categoryId="de.fujaba"
-			description="Initialize Story Diagram"
-			defaultHandler="org.storydriven.storydiagrams.diagram.custom.part.SDMFujabaDiagramFileAction"
-			id="org.storydriven.storydiagrams.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
-
-   <extension id="creation-wizard" point="org.eclipse.ui.newWizards">
-      <wizard
-            category="de.fujaba/de.fujaba.diagrams"
-            class="org.storydriven.storydiagrams.diagram.custom.part.CustomActivityDiagramCreationWizard"
-            id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
-            name="Activity Diagram">
-         <description>
-            Creates a new Activity Diagram.
-         </description>
-      </wizard>
-   </extension>
 
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
@@ -337,26 +201,6 @@
          </action>
       </objectContribution>
    </extension>
-
-    <extension point="org.eclipse.ui.menus">
-	   <menuContribution
-	         allPopups="false"
-	         locationURI="popup:de.fujaba?after=additions">
-	      <command
-             commandId="org.storydriven.storydiagrams.diagram.createDiagram"
-             icon="icons/files/sdm_diagram.png"
-             id="org.storydriven.storydiagrams.diagram.createDiagram"
-             label="%initDiagramActionLabel"
-             style="push">
-	         <visibleWhen
-	               checkEnabled="false">
-	            <reference
-	                  definitionId="de.fujaba.expression.fujabafile">
-	            </reference>
-	         </visibleWhen>
-	      </command>
-	   </menuContribution>
-	</extension>
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor

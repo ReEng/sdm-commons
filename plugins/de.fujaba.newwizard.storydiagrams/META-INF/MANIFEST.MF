@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Fujaba
+Bundle-SymbolicName: de.fujaba.newwizard.storydiagrams;singleton:=true
+Bundle-Version: 0.3.0.qualifier
+Bundle-Vendor: University of Paderborn
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-Localization: messages
+Require-Bundle: de.fujaba.newwizard;bundle-version="0.3.1",
+ de.fujaba.modelinstance;bundle-version="0.3.1",
+ de.fujaba.modelinstance.edit;bundle-version="0.3.1",
+ org.storydriven.storydiagrams.diagram.custom;bundle-version="1.0.0",
+ org.storydriven.core;bundle-version="1.0.0",
+ org.storydriven.core.edit;bundle-version="1.0.0",
+ org.storydriven.storydiagrams;bundle-version="1.0.0",
+ org.storydriven.storydiagrams.diagram;bundle-version="0.2.0",
+ org.storydriven.storydiagrams.edit;bundle-version="1.0.0",
+ org.storydriven.storydiagrams.editor;bundle-version="1.0.0"
