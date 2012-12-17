@@ -185,6 +185,7 @@ public class OperationExtensionImpl extends ExtensionImpl implements OperationEx
 		if (getReturnValue() == null) {
 			final EParameter parameter;
 			parameter = EcorePackage.eINSTANCE.getEcoreFactory().createEParameter();
+			parameter.setName("returnValue");
 			setReturnValue(parameter);
 		}
 

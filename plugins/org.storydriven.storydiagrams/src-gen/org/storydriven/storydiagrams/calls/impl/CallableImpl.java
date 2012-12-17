@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.CommentableElementImpl;
+import org.storydriven.storydiagrams.activities.OperationExtension;
 import org.storydriven.storydiagrams.calls.Callable;
 import org.storydriven.storydiagrams.calls.CallsPackage;
 
@@ -90,9 +91,13 @@ public abstract class CallableImpl extends CommentableElementImpl implements Cal
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<EParameter> getInParameters() {
+		if(eContainer() instanceof OperationExtension) {
+			return ((OperationExtension) eContainer()).getInParameters();
+		}
+
 		if (inParameters == null) {
 			inParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
 					CallsPackage.CALLABLE__IN_PARAMETER);
@@ -102,9 +107,13 @@ public abstract class CallableImpl extends CommentableElementImpl implements Cal
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<EParameter> getOutParameters() {
+		if(eContainer() instanceof OperationExtension) {
+			return ((OperationExtension) eContainer()).getOutParameters();
+		}
+
 		if (outParameters == null) {
 			outParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
 					CallsPackage.CALLABLE__OUT_PARAMETER);
