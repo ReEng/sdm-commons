@@ -48,6 +48,10 @@ public class CreateEmptyDiagramCommand extends AbstractTransactionalCommand {
 		this.modelId = modelId;
 		this.modelElementCategoryKey = modelElementCategoryKey;
 		
+		if (diagramElementClass == null) {
+			throw new NullPointerException("Diagram Editor must specify diagram element class by providing an Extension (hint: Regenerate diagram editor)");
+		}
+		
 		diagramElement = null;
 		if (!ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY.isSuperTypeOf(diagramElementClass)) {
 			diagramElement = EcoreUtil.create(diagramElementClass);
