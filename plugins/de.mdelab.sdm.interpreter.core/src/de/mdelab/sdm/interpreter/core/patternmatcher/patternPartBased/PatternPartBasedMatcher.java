@@ -121,12 +121,12 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @throws SDMException
 	 */
 	public PatternPartBasedMatcher(
-			StoryPattern storyPattern,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope,
-			MatchingStrategy<StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> matchingStrategy,
-			MetamodelFacadeFactory<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> facadeFactory,
-			ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> expressionInterpreterManager,
-			NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> notificationEmitter)
+			final StoryPattern storyPattern,
+			final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> variablesScope,
+			final MatchingStrategy<StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> matchingStrategy,
+			final MetamodelFacadeFactory<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> facadeFactory,
+			final ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> expressionInterpreterManager,
+			final NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> notificationEmitter)
 			throws SDMException
 	{
 		super(storyPattern, variablesScope, matchingStrategy, facadeFactory, expressionInterpreterManager, notificationEmitter);
@@ -163,12 +163,13 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		/*
 		 * Split the story pattern into pattern parts.
 		 */
-		Collection<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>> patternParts = this.createPatternParts();
+		final Collection<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>> patternParts = this
+				.createPatternParts();
 
 		/*
 		 * Check each pattern part.
 		 */
-		for (PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : patternParts)
+		for (final PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : patternParts)
 		{
 			/*
 			 * add pattern part to uncheckedPatternParts
@@ -179,7 +180,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 			 * Maintain the spoToPatternParts map. This is map is needed to
 			 * analyze overlapping pattern parts.
 			 */
-			for (StoryPatternObject spo : patternPart.getStoryPatternObjects())
+			for (final StoryPatternObject spo : patternPart.getStoryPatternObjects())
 			{
 				List<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>> list = this.spoToPatternPartsMap.get(spo);
 
@@ -215,11 +216,11 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		/*
 		 * create a clone of the current variable scope
 		 */
-		VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> mainVariableScope = this
+		final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> mainVariableScope = this
 				.getVariablesScope();
 
 		@SuppressWarnings("unchecked")
-		VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> workingVariableScope = new VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>(
+		final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> workingVariableScope = new VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>(
 				this.getNotificationEmitter(), mainVariableScope, Collections.EMPTY_MAP);
 
 		this.setVariablesScope(workingVariableScope);
@@ -287,7 +288,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		/*
 		 * analyze all story pattern objects
 		 */
-		for (StoryPatternObject spo : new HashSet<StoryPatternObject>(this.unboundSPO))
+		for (final StoryPatternObject spo : new HashSet<StoryPatternObject>(this.unboundSPO))
 		{
 			boolean bound = this.spoFacade.isBound(spo);
 
@@ -304,7 +305,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				/*
 				 * Check if there is an assignment expression
 				 */
-				Expression assignmentExpression = this.spoFacade.getAssignmentExpression(spo);
+				final Expression assignmentExpression = this.spoFacade.getAssignmentExpression(spo);
 
 				Variable<Classifier> variable = null;
 
@@ -313,7 +314,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 					/*
 					 * Evaluate the expression
 					 */
-					Variable<Classifier> result = this.getExpressionInterpreterManager().evaluateExpression(
+					final Variable<Classifier> result = this.getExpressionInterpreterManager().evaluateExpression(
 							this.spoFacade.getAssignmentExpression(spo), null, null, this.getVariablesScope());
 
 					if (result != null)
@@ -351,13 +352,13 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				 * of the story pattern object, check isomorphism condition and
 				 * object constraints
 				 */
-				if (this.checkTypeConformance(this.spoFacade.getClassifier(spo), variable.getValue())
+				if (variable.getValue() != null && this.checkTypeConformance(this.spoFacade.getClassifier(spo), variable.getValue())
 						&& this.checkIsomorphism(variable.getValue()) && this.checkStoryPatternObjectConstraints(spo, variable.getValue()))
 				{
 					/*
 					 * push matchSpoTransaction onto stack
 					 */
-					MatchStoryPatternObjectTransaction<StoryPatternObject> matchStoryPatternObjectTransaction = new MatchStoryPatternObjectTransaction<StoryPatternObject>(
+					final MatchStoryPatternObjectTransaction<StoryPatternObject> matchStoryPatternObjectTransaction = new MatchStoryPatternObjectTransaction<StoryPatternObject>(
 							spo, variable.getValue(), this.unboundSPO, this.boundSPO, this.boundInstanceObjects);
 					matchStoryPatternObjectTransaction.commit();
 					this.matchingStack.push(matchStoryPatternObjectTransaction);
@@ -398,13 +399,14 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	@SuppressWarnings("unchecked")
 	private void rollBackInvalidStackElements() throws SDMException
 	{
-		for (MatchTransaction matchTransaction : this.matchingStack)
+		for (final MatchTransaction matchTransaction : this.matchingStack)
 		{
 			if (matchTransaction instanceof MatchStoryPatternObjectTransaction)
 			{
-				MatchStoryPatternObjectTransaction<StoryPatternObject> mt = (MatchStoryPatternObjectTransaction<StoryPatternObject>) matchTransaction;
+				final MatchStoryPatternObjectTransaction<StoryPatternObject> mt = (MatchStoryPatternObjectTransaction<StoryPatternObject>) matchTransaction;
 
-				Variable<Classifier> variable = this.getVariablesScope().getVariable(this.spoFacade.getName(mt.getStoryPatternObject()));
+				final Variable<Classifier> variable = this.getVariablesScope().getVariable(
+						this.spoFacade.getName(mt.getStoryPatternObject()));
 
 				/*
 				 * Check that the variable still exists, check that the instance
@@ -436,7 +438,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 			}
 			else if (matchTransaction instanceof MatchPatternPartTransaction || matchTransaction instanceof CheckPatternPartTransaction)
 			{
-				PatternPartTransaction<StoryPatternObject, StoryPatternLink, Classifier, Expression> mt = (PatternPartTransaction<StoryPatternObject, StoryPatternLink, Classifier, Expression>) matchTransaction;
+				final PatternPartTransaction<StoryPatternObject, StoryPatternLink, Classifier, Expression> mt = (PatternPartTransaction<StoryPatternObject, StoryPatternLink, Classifier, Expression>) matchTransaction;
 
 				boolean variablesExist = true;
 
@@ -445,7 +447,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				 * this pattern part. Otherwise, the check may throw an
 				 * exception.
 				 */
-				for (StoryPatternObject spo : mt.getPatternPart().getStoryPatternObjects())
+				for (final StoryPatternObject spo : mt.getPatternPart().getStoryPatternObjects())
 				{
 					if (!this.getVariablesScope().variableExists(this.spoFacade.getName(spo)))
 					{
@@ -487,7 +489,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	{
 		boolean match = true;
 
-		MatchingStrategy<StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> matchingStrategy = this
+		final MatchingStrategy<StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> matchingStrategy = this
 				.getMatchingStrategy();
 
 		do
@@ -499,7 +501,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				/*
 				 * Commit transaction
 				 */
-				MatchPatternPartTransaction<StoryPatternObject, StoryPatternLink, Classifier, Expression> matchPatternPartTransaction = new MatchPatternPartTransaction<StoryPatternObject, StoryPatternLink, Classifier, Expression>(
+				final MatchPatternPartTransaction<StoryPatternObject, StoryPatternLink, Classifier, Expression> matchPatternPartTransaction = new MatchPatternPartTransaction<StoryPatternObject, StoryPatternLink, Classifier, Expression>(
 						nextPatternPart, this.uncheckedPatternParts, this.checkedPatternParts);
 				matchPatternPartTransaction.commit();
 				this.matchingStack.push(matchPatternPartTransaction);
@@ -598,13 +600,13 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @return
 	 * @throws SDMException
 	 */
-	public boolean checkStoryPatternObjectConstraints(StoryPatternObject spo, Object instanceObject) throws SDMException
+	public boolean checkStoryPatternObjectConstraints(final StoryPatternObject spo, final Object instanceObject) throws SDMException
 	{
 		assert spo != null;
 
-		for (Expression constraint : this.spoFacade.getConstraints(spo))
+		for (final Expression constraint : this.spoFacade.getConstraints(spo))
 		{
-			Variable<Classifier> result = this.getExpressionInterpreterManager().evaluateExpression(constraint,
+			final Variable<Classifier> result = this.getExpressionInterpreterManager().evaluateExpression(constraint,
 					this.spoFacade.getClassifier(spo), instanceObject, this.getVariablesScope());
 
 			if (result.getValue() != Boolean.TRUE)
@@ -631,9 +633,9 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 */
 	protected boolean checkStoryPatternConstraints() throws SDMException
 	{
-		for (Expression constraint : this.spFacade.getConstraints(this.getStoryPattern()))
+		for (final Expression constraint : this.spFacade.getConstraints(this.getStoryPattern()))
 		{
-			Variable<Classifier> result = this.getExpressionInterpreterManager().evaluateExpression(constraint, null, null,
+			final Variable<Classifier> result = this.getExpressionInterpreterManager().evaluateExpression(constraint, null, null,
 					this.getVariablesScope());
 
 			if (result.getValue() != Boolean.TRUE)
@@ -660,7 +662,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @return true if instanceObject is not already bound to another story
 	 *         pattern object.
 	 */
-	public boolean checkIsomorphism(Object instanceObject)
+	public boolean checkIsomorphism(final Object instanceObject)
 	{
 		assert instanceObject != null;
 
@@ -674,7 +676,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @return true if instanceObject is an instance of the specified
 	 *         classifier.
 	 */
-	public boolean checkTypeConformance(Classifier classifier, Object instanceObject)
+	public boolean checkTypeConformance(final Classifier classifier, final Object instanceObject)
 	{
 		assert classifier != null;
 		assert instanceObject != null;
@@ -690,7 +692,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @param instanceObject
 	 * @return
 	 */
-	public boolean checkHistory(StoryPatternObject storyPatternObject, Object instanceObject)
+	public boolean checkHistory(final StoryPatternObject storyPatternObject, final Object instanceObject)
 	{
 		assert storyPatternObject != null;
 		assert instanceObject != null;
@@ -712,14 +714,14 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @return
 	 * @throws SDMException
 	 */
-	public boolean matchStoryPatternObject(StoryPatternObject storyPatternObject, Object instanceObject) throws SDMException
+	public boolean matchStoryPatternObject(final StoryPatternObject storyPatternObject, final Object instanceObject) throws SDMException
 	{
 		assert storyPatternObject != null;
 
 		assert this.unboundSPO.contains(storyPatternObject);
 		assert !this.boundSPO.contains(storyPatternObject);
 
-		int stackSize = this.matchingStack.size();
+		final int stackSize = this.matchingStack.size();
 
 		if (instanceObject != null && this.checkIsomorphism(instanceObject)
 				&& this.checkTypeConformance(this.spoFacade.getClassifier(storyPatternObject), instanceObject)
@@ -728,7 +730,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 			/*
 			 * push matchSpoTransaction onto stack
 			 */
-			MatchStoryPatternObjectTransaction<StoryPatternObject> matchStoryPatternObjectTransaction = new MatchStoryPatternObjectTransaction<StoryPatternObject>(
+			final MatchStoryPatternObjectTransaction<StoryPatternObject> matchStoryPatternObjectTransaction = new MatchStoryPatternObjectTransaction<StoryPatternObject>(
 					storyPatternObject, instanceObject, this.unboundSPO, this.boundSPO, this.boundInstanceObjects);
 			matchStoryPatternObjectTransaction.commit();
 			this.matchingStack.push(matchStoryPatternObjectTransaction);
@@ -774,7 +776,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * 
 	 * @param matchTransaction
 	 */
-	public void rollBack(MatchTransaction matchTransaction)
+	public void rollBack(final MatchTransaction matchTransaction)
 	{
 		assert matchTransaction != null;
 
@@ -787,7 +789,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 			if (mt instanceof MatchStoryPatternObjectTransaction)
 			{
 				@SuppressWarnings("unchecked")
-				MatchStoryPatternObjectTransaction<StoryPatternObject> mspot = (MatchStoryPatternObjectTransaction<StoryPatternObject>) mt;
+				final MatchStoryPatternObjectTransaction<StoryPatternObject> mspot = (MatchStoryPatternObjectTransaction<StoryPatternObject>) mt;
 
 				/*
 				 * Delete the corresponding variable from the current variable
@@ -805,7 +807,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				 * transaction so that the current story pattern object is not
 				 * yet contained in unboundSPO.
 				 */
-				for (StoryPatternObject s : this.unboundSPO)
+				for (final StoryPatternObject s : this.unboundSPO)
 				{
 					this.matchingHistory.get(s).clear();
 				}
@@ -823,7 +825,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	{
 		for (int i = this.matchingStack.size() - 1; i >= 0; i--)
 		{
-			MatchTransaction mt = this.matchingStack.get(i);
+			final MatchTransaction mt = this.matchingStack.get(i);
 
 			this.rollBack(mt);
 
@@ -875,7 +877,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @return
 	 * @throws SDMException
 	 */
-	private ECheckResult checkPatternPart(PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart)
+	private ECheckResult checkPatternPart(final PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart)
 			throws SDMException
 	{
 		assert patternPart != null;
@@ -898,12 +900,14 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				case FAIL:
 					result = ECheckResult.OK;
 					break;
+				default:
+					break;
 			}
 		}
 
 		if (result == ECheckResult.OK)
 		{
-			CheckPatternPartTransaction<StoryPatternObject, StoryPatternLink, Classifier, Expression> checkPatternPartTransaction = new CheckPatternPartTransaction<StoryPatternObject, StoryPatternLink, Classifier, Expression>(
+			final CheckPatternPartTransaction<StoryPatternObject, StoryPatternLink, Classifier, Expression> checkPatternPartTransaction = new CheckPatternPartTransaction<StoryPatternObject, StoryPatternLink, Classifier, Expression>(
 					patternPart, this.uncheckedPatternParts, this.checkedPatternParts);
 			checkPatternPartTransaction.commit();
 
@@ -923,9 +927,9 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @return
 	 * @throws SDMException
 	 */
-	private boolean checkUncheckedPatternParts(StoryPatternObject storyPatternObject) throws SDMException
+	private boolean checkUncheckedPatternParts(final StoryPatternObject storyPatternObject) throws SDMException
 	{
-		for (PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : this.spoToPatternPartsMap
+		for (final PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : this.spoToPatternPartsMap
 				.get(storyPatternObject))
 		{
 			if (this.uncheckedPatternParts.contains(patternPart) && this.checkPatternPart(patternPart) == ECheckResult.FAIL)
@@ -948,7 +952,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 */
 	private boolean checkAllUncheckedPatternParts() throws SDMException
 	{
-		for (PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : new ArrayList<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>>(
+		for (final PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : new ArrayList<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>>(
 				this.uncheckedPatternParts))
 		{
 			if (this.checkPatternPart(patternPart) == ECheckResult.FAIL)
@@ -967,7 +971,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @param source
 	 * @return
 	 */
-	public boolean isBound(StoryPatternObject storyPatternObject)
+	public boolean isBound(final StoryPatternObject storyPatternObject)
 	{
 		return this.boundSPO.contains(storyPatternObject);
 	}
@@ -979,7 +983,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @param storyPatternObject
 	 * @return
 	 */
-	public Object getInstanceObject(StoryPatternObject storyPatternObject)
+	public Object getInstanceObject(final StoryPatternObject storyPatternObject)
 	{
 		assert this.getVariablesScope().variableExists(this.spoFacade.getName(storyPatternObject));
 
@@ -995,7 +999,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		 * First, calculate the values of attribute assignments. This is
 		 * necessary to allow to reference deleted objects in assignments.
 		 */
-		Collection<AttributeAssignmentTuple> assignments = this.calculateNewAttributeValues(this.spFacade.getStoryPatternObjects(this
+		final Collection<AttributeAssignmentTuple> assignments = this.calculateNewAttributeValues(this.spFacade.getStoryPatternObjects(this
 				.getStoryPattern()));
 
 		/*
@@ -1035,20 +1039,20 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @return
 	 * @throws SDMException
 	 */
-	protected Collection<AttributeAssignmentTuple> calculateNewAttributeValues(Collection<StoryPatternObject> storyPatternObjects)
+	protected Collection<AttributeAssignmentTuple> calculateNewAttributeValues(final Collection<StoryPatternObject> storyPatternObjects)
 			throws SDMException
 	{
-		Collection<AttributeAssignmentTuple> returnValues = new LinkedList<AttributeAssignmentTuple>();
+		final Collection<AttributeAssignmentTuple> returnValues = new LinkedList<AttributeAssignmentTuple>();
 
-		for (StoryPatternObject spo : storyPatternObjects)
+		for (final StoryPatternObject spo : storyPatternObjects)
 		{
-			Map<Feature, Expression> map = this.spoFacade.getAttributeAssignments(spo);
+			final Map<Feature, Expression> map = this.spoFacade.getAttributeAssignments(spo);
 
 			if (map != null)
 			{
-				for (Entry<Feature, Expression> entry : map.entrySet())
+				for (final Entry<Feature, Expression> entry : map.entrySet())
 				{
-					Variable<Classifier> spoVariable = this.getVariablesScope().getVariable(this.spoFacade.getName(spo));
+					final Variable<Classifier> spoVariable = this.getVariablesScope().getVariable(this.spoFacade.getName(spo));
 
 					assert spoVariable != null || this.spoFacade.isCreate(spo);
 
@@ -1068,7 +1072,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 
 					assert attributeValueVariable != null;
 
-					AttributeAssignmentTuple at = new AttributeAssignmentTuple();
+					final AttributeAssignmentTuple at = new AttributeAssignmentTuple();
 					at.storyPatternObject = spo;
 					at.feature = entry.getKey();
 					at.newValue = attributeValueVariable.getValue();
@@ -1092,13 +1096,13 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		 * This map contains a mapping of deleted story patterns objects to
 		 * their instance objects.
 		 */
-		Map<StoryPatternObject, Object> deletedObjects = new HashMap<StoryPatternObject, Object>();
+		final Map<StoryPatternObject, Object> deletedObjects = new HashMap<StoryPatternObject, Object>();
 
-		for (StoryPatternObject spo : this.boundSPO)
+		for (final StoryPatternObject spo : this.boundSPO)
 		{
 			if (this.spoFacade.isDestroy(spo))
 			{
-				Variable<Classifier> variable = this.getVariablesScope().getVariable(this.spoFacade.getName(spo));
+				final Variable<Classifier> variable = this.getVariablesScope().getVariable(this.spoFacade.getName(spo));
 
 				assert variable != null;
 
@@ -1109,7 +1113,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		/*
 		 * First destroy story pattern objects
 		 */
-		for (PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : this.checkedPatternParts)
+		for (final PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : this.checkedPatternParts)
 		{
 			patternPart.destroyObjects();
 		}
@@ -1117,7 +1121,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		/*
 		 * Now destroy links
 		 */
-		for (PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : this.checkedPatternParts)
+		for (final PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : this.checkedPatternParts)
 		{
 			patternPart.destroyLinks(deletedObjects);
 		}
@@ -1136,7 +1140,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		 * story pattern object is set to optional-create and the variable
 		 * exists, do not delete it.
 		 */
-		for (StoryPatternObject spo : this.spoToPatternPartsMap.keySet())
+		for (final StoryPatternObject spo : this.spoToPatternPartsMap.keySet())
 		{
 			if (this.spoFacade.isCreate(spo) && !this.spoFacade.isOptional(spo))
 			{
@@ -1147,7 +1151,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		/*
 		 * Now, create objects
 		 */
-		for (PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : this.checkedPatternParts)
+		for (final PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : this.checkedPatternParts)
 		{
 			patternPart.createObjects();
 			patternPart.createLinks();
@@ -1162,14 +1166,14 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * 
 	 * @throws SDMException
 	 */
-	protected void assignAttributeValues(Collection<AttributeAssignmentTuple> assignments) throws SDMException
+	protected void assignAttributeValues(final Collection<AttributeAssignmentTuple> assignments) throws SDMException
 	{
-		for (AttributeAssignmentTuple at : assignments)
+		for (final AttributeAssignmentTuple at : assignments)
 		{
 			/*
 			 * Get the instance object
 			 */
-			Variable<Classifier> variable = this.getVariablesScope().getVariable(this.spoFacade.getName(at.storyPatternObject));
+			final Variable<Classifier> variable = this.getVariablesScope().getVariable(this.spoFacade.getName(at.storyPatternObject));
 
 			assert variable != null;
 
