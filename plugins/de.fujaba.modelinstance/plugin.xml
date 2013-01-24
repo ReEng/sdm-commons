@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse version="3.0"?>
 
 <!--
@@ -7,24 +7,22 @@
 
  $Id$
 -->
-
 <plugin>
-   <extension-point id="modelelementcategory" name="modelelementcategory" schema="schema/modelelementcategory.exsd"/>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <package
-            class="de.fujaba.modelinstance.ModelinstancePackage"
-            genModel="model/modelinstance.genmodel"
-            uri="http://www.fujaba.de/modelinstance/0.3.15">
-      </package>
-   </extension>
-   
-   <extension point="org.eclipse.emf.ecore.extension_parser">
-   <parser type="fujaba"
-      class="de.fujaba.modelinstance.util.ModelinstanceResourceFactoryImpl">
+<extension-point id="modelelementcategory" name="modelelementcategory" schema="schema/modelelementcategory.exsd"/>
+<extension-point id="version" name="version" schema="schema/version.exsd"/>
+<extension point="org.eclipse.emf.ecore.extension_parser">
+   <parser class="de.fujaba.modelinstance.util.ModelinstanceResourceFactoryImpl" type="fujaba">
    </parser>
 </extension>
 
-   
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <?emfgen generated="true"?>
+      <package class="de.fujaba.modelinstance.ModelinstancePackage" genModel="model/modelinstance.genmodel" uri="http://www.fujaba.de/modelinstance/0.3.15"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <?emfgen generated="true"?>
+      <parser class="de.fujaba.modelinstance.util.ModelinstanceResourceFactoryImpl" type="fujaba"/>
+   </extension>
 
 </plugin>
