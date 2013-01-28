@@ -92,6 +92,7 @@ public class CreateDiagramCommand extends AbstractTransactionalCommand {
 		if (!ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY
 				.isSuperTypeOf(diagramElementClass)) {
 			diagramElement = EcoreUtil.create(diagramElementClass);
+			FujabaNewwizardPlugin.getDefault().initializeModel(diagramElement);
 		}
 
 		

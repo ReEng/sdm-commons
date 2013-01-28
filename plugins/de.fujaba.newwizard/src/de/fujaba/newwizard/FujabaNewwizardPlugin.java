@@ -22,12 +22,12 @@ import org.eclipse.core.runtime.RegistryFactory;
 import org.eclipse.core.runtime.SafeRunner;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
-import org.eclipse.ui.internal.WorkbenchPlugin;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -104,6 +104,17 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 		}
 		return modelInitializers;
 	}
+
+	private Collection<IModelInitializer> getModelInitializers(EObject object) {
+		List<IModelInitializer> initializers = new ArrayList<IModelInitializer>();
+		for (IModelInitializer initializer : getModelInitializers()) {
+			if (initializer.supports(object)) {
+				initializers.add(initializer);
+			}
+		}
+		return initializers;
+	}
+
 
 	/*
 	 * (non-Javadoc)
@@ -256,8 +267,8 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 		}
 	}
 
-	private void initializeModel(final RootNode rootNode) {
-		for (final IModelInitializer initializer : getModelInitializers()) {
+	public void initializeModel(final EObject object) {
+		for (final IModelInitializer initializer : getModelInitializers(object)) {
 			SafeRunner.run(new ISafeRunnable() {
 
 				@Override
@@ -267,11 +278,10 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 
 				@Override
 				public void run() throws Exception {
-					initializer.initialize(rootNode);
+					initializer.initialize(object);
 				}
 				
 			});
 		}
 	}
-
 }

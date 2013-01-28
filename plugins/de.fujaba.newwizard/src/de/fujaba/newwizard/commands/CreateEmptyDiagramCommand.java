@@ -21,6 +21,7 @@ import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.modelinstance.ModelInstancePlugin;
 import de.fujaba.modelinstance.ModelinstancePackage;
 import de.fujaba.modelinstance.RootNode;
+import de.fujaba.newwizard.FujabaNewwizardPlugin;
 
 /**
  * Creates a new empty Diagram.
@@ -55,6 +56,7 @@ public class CreateEmptyDiagramCommand extends AbstractTransactionalCommand {
 		diagramElement = null;
 		if (!ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY.isSuperTypeOf(diagramElementClass)) {
 			diagramElement = EcoreUtil.create(diagramElementClass);
+			FujabaNewwizardPlugin.getDefault().initializeModel(diagramElement);
 		}
 	}
 

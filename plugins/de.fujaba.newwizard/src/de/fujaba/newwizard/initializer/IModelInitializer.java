@@ -1,6 +1,6 @@
 package de.fujaba.newwizard.initializer;
 
-import de.fujaba.modelinstance.RootNode;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * Interface that can be overridden to initialize a Fujaba Model after the
@@ -12,10 +12,19 @@ import de.fujaba.modelinstance.RootNode;
 public interface IModelInitializer {
 
 	/**
-	 * Initializes the RootNode (e.g. adds categories to it).
+	 * Can be asked if the given object is supported for initialization.
 	 * 
-	 * @param rootNode
-	 *            The RootNode to initialize.
+	 * @param object
+	 *            The object in question.
+	 * @return <code>true</code>, if the object can be initialized.
 	 */
-	void initialize(RootNode rootNode);
+	boolean supports(EObject object);
+
+	/**
+	 * Initializes the object.
+	 * 
+	 * @param object
+	 *            The object to initialize.
+	 */
+	void initialize(EObject object);
 }
