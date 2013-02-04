@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+<copyright>
+	Copyright 2013 by storydriven.org and others. All rights reserved. This
+	program and its materials are made available under the terms of the Eclipse
+	Public License v1.0 which is referenced inside the distribution.
+
+	Contributors:
+		Development Team <sdm-commons-dev@googlegroups.com> - Initial code
+
+</copyright>
+-->
+<site>
+   <feature url="features/org.storydriven.core.feature_1.0.1.qualifier.jar" id="org.storydriven.core.feature" version="1.0.1.qualifier">
+      <category name="org.storydriven.category"/>
+   </feature>
+   <feature url="features/org.storydriven.storydiagrams.feature_1.0.1.qualifier.jar" id="org.storydriven.storydiagrams.feature" version="1.0.1.qualifier">
+      <category name="org.storydriven.category"/>
+   </feature>
+   <feature url="features/org.storydriven.storydiagrams.editor.feature_1.0.1.qualifier.jar" id="org.storydriven.storydiagrams.editor.feature" version="1.0.1.qualifier">
+      <category name="org.storydriven.category"/>
+   </feature>
+   <feature url="features/org.storydriven.storydiagrams.interpreter.feature_1.0.1.qualifier.jar" id="org.storydriven.storydiagrams.interpreter.feature" version="1.0.1.qualifier">
+      <category name="org.storydriven.category"/>
+   </feature>
+   <feature url="features/org.storydriven.storydiagrams.diagram.feature_1.0.1.qualifier.jar" id="org.storydriven.storydiagrams.diagram.feature" version="1.0.1.qualifier">
+      <category name="org.storydriven.category"/>
+   </feature>
+   <category-def name="org.storydriven.category" label="Story Diagram Tooling"/>
+</site>

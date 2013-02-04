@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.5"?>
-
 <!--
- <copyright>
- </copyright>
+<copyright>
+	Copyright 2013 by storydriven.org and others. All rights reserved. This
+	program and its materials are made available under the terms of the Eclipse
+	Public License v1.0 which is referenced inside the distribution.
 
- $Id$
+	Contributors:
+		Development Team <sdm-commons-dev@googlegroups.com> - Initial code
+
+</copyright>
 -->
-
 <plugin>
 	<extension-point id="expressionLanguagesExtension" name="Expression Languages Extension" schema="schema/expressionLanguagesExtension.exsd"/>
 
@@ -20,13 +23,10 @@
 			uri="http://www.storydriven.org/core/expressions/0.3.1"
 			class="org.storydriven.core.expressions.ExpressionsPackage"
 			genModel="model/core.uml.genmodel"/>
-  <package
-        class="org.storydriven.core.expressions.common.CommonExpressionsPackage"
-        genModel="model/core.uml.genmodel"
-        uri="http://www.storydriven.org/core/expressions/common/0.3.1">
-  </package>
+		<package
+			class="org.storydriven.core.expressions.common.CommonExpressionsPackage"
+			genModel="model/core.uml.genmodel"
+			uri="http://www.storydriven.org/core/expressions/common/0.3.1"/>
 	</extension>
-
-
 
 </plugin>

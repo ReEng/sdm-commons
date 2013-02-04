@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+<copyright>
+	Copyright 2013 by storydriven.org and others. All rights reserved. This
+	program and its materials are made available under the terms of the Eclipse
+	Public License v1.0 which is referenced inside the distribution.
+
+	Contributors:
+		Development Team <sdm-commons-dev@googlegroups.com> - Initial code
+
+</copyright>
+-->
+<feature
+      id="org.storydriven.storydiagrams.diagram.feature"
+      label="Story Diagram Tooling: Diagram Editor"
+      version="1.0.1.qualifier"
+      provider-name="storydriven.org">
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.core.expressions"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="org.eclipse.ui.navigator.resources"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.core"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.commands.core"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.ui.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers.ide"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.render"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
+      <import plugin="org.eclipse.draw2d"/>
+      <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
+      <import plugin="org.storydriven.core"/>
+      <import plugin="org.eclipse.emf.ecore.edit"/>
+      <import plugin="org.eclipse.gef"/>
+      <import plugin="org.eclipse.ocl.ecore"/>
+      <import plugin="org.storydriven.core.edit"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.2" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams.diagram" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface" version="3.6.1" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams.diagram.custom" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ocl.ecore" version="3.0.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.text" version="3.6.1" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.core" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.common.core" version="1.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.common.ui" version="1.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.core" version="1.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor" version="1.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edit.ui" version="2.7.0" match="greaterOrEqual"/>
+      <import feature="org.storydriven.core.feature" version="1.0.1.qualifier"/>
+      <import feature="org.storydriven.storydiagrams.editor.feature" version="1.0.1.qualifier"/>
+      <import feature="org.storydriven.storydiagrams.feature" version="1.0.1.qualifier"/>
+      <import feature="org.storydriven.storydiagrams.interpreter.feature" version="1.0.1.qualifier"/>
+      <import plugin="org.storydriven.storydiagrams" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams.edit" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams.editor" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams" version="0.2.0" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams.interpreter.core" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams.interpreter.eclipse" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams.diagram.custom" version="0.2.0" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams.diagram" version="0.2.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.storydriven.storydiagrams.diagram"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.storydiagrams.diagram.custom"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.storydiagrams.diagram.ocl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.storydiagrams.diagram.interpreter"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+<copyright>
+	Copyright 2013 by storydriven.org and others. All rights reserved. This
+	program and its materials are made available under the terms of the Eclipse
+	Public License v1.0 which is referenced inside the distribution.
+
+	Contributors:
+		Development Team <sdm-commons-dev@googlegroups.com> - Initial code
+
+</copyright>
+-->
 <feature
       id="org.storydriven.storydiagrams.interpreter.feature"
-      label="Storydriven Interpreter"
-      version="1.0.0.qualifier"
+      label="Story Diagram Tooling: Interpreter"
+      version="1.0.1.qualifier"
       provider-name="storydriven.org">
 
-   <license url="http://www.eclipse.org/legal/epl-v10.html">
-      Eclipse Public License
-   </license>
-
    <requires>
-      <import feature="de.mdelab.sdm.interpreter.common.feature" version="1.0.0.qualifier"/>
-      <import feature="org.storydriven.storydiagrams.feature" version="1.0.0.qualifier"/>
+      <import feature="org.storydriven.core.feature" version="1.0.1.qualifier"/>
+      <import feature="org.storydriven.storydiagrams.feature" version="1.0.1.qualifier"/>
+      <import plugin="org.storydriven.storydiagrams.interpreter.core" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="de.mdelab.sdm.interpreter.core.eclipse" version="1.0.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
-         id="org.storydriven.storydiagrams.interpreter"
+         id="org.storydriven.storydiagrams.interpreter.core"
          download-size="0"
          install-size="0"
          version="0.0.0"

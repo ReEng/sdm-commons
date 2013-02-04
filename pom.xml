@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!--
+<copyright>
+	Copyright 2013 by storydriven.org and others. All rights reserved. This
+	program and its materials are made available under the terms of the Eclipse
+	Public License v1.0 which is referenced inside the distribution.
+
+	Contributors:
+		Development Team <sdm-commons-dev@googlegroups.com> - Initial code
+
+</copyright>
+-->
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.storydriven</groupId>
+	<artifactId>org.storydriven.master</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<tycho-version>0.16.0</tycho-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<modules>
+		<module>plugins/org.storydriven.core</module>
+		<module>plugins/org.storydriven.core.edit</module>
+		<module>plugins/org.storydriven.storydiagrams</module>
+		<module>plugins/org.storydriven.storydiagrams.edit</module>
+		<module>plugins/org.storydriven.storydiagrams.editor</module>
+		<module>plugins/org.storydriven.storydiagrams.diagram</module>
+		<module>plugins/org.storydriven.storydiagrams.diagram.ocl</module>
+		<module>plugins/org.storydriven.storydiagrams.diagram.custom</module>
+		<module>plugins/org.storydriven.storydiagrams.interpreter.core</module>
+		<module>plugins/org.storydriven.storydiagrams.interpreter.eclipse</module>
+		<module>plugins/org.storydriven.storydiagrams.diagram.interpreter</module>
+
+		<module>features/org.storydriven.core.feature</module>
+		<module>features/org.storydriven.storydiagrams.feature</module>
+		<module>features/org.storydriven.storydiagrams.editor.feature</module>
+		<module>features/org.storydriven.storydiagrams.interpreter.feature</module>
+		<module>features/org.storydriven.storydiagrams.diagram.feature</module>
+
+		<module>repositories/org.storydriven.repository.main</module>
+	</modules>
+
+	<repositories>
+		<!-- add Indigo repository to resolve basic dependencies -->
+		<repository>
+			<id>Indigo</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/indigo</url>
+		</repository>
+
+		<!-- add Juno repository to resolve basic dependencies -->
+		<repository>
+			<id>Juno</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/juno</url>
+		</repository>
+
+		<!-- add MDELab repository to resolve interpreter dependencies -->
+		<repository>
+			<id>mdelab.de</id>
+			<layout>p2</layout>
+			<url>http://www.hpi.uni-potsdam.de/giese/gforge/mdelab/update-site/sdm</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!-- enable tycho build extension -->
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<!-- enable build environments -->
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<environments>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

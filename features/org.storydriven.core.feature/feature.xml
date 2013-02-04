@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+<copyright>
+	Copyright 2013 by storydriven.org and others. All rights reserved. This
+	program and its materials are made available under the terms of the Eclipse
+	Public License v1.0 which is referenced inside the distribution.
+
+	Contributors:
+		Development Team <sdm-commons-dev@googlegroups.com> - Initial code
+
+</copyright>
+-->
 <feature
       id="org.storydriven.core.feature"
-      label="Storydriven Core"
-      version="1.0.0.qualifier"
+      label="Story Diagram Tooling: Core Model"
+      version="1.0.1.qualifier"
       provider-name="storydriven.org">
 
    <requires>
@@ -15,7 +26,6 @@
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
       <import plugin="org.eclipse.uml2.common.edit"/>
-      <import plugin="org.eclipse.emf.eef.runtime" version="0.9.1" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -27,13 +37,6 @@
 
    <plugin
          id="org.storydriven.core.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.storydriven.core.edit.eef"
          download-size="0"
          install-size="0"
          version="0.0.0"

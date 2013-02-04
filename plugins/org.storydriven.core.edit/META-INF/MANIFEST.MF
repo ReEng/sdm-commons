@@ -1,20 +1,19 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-Vendor: %providerName
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.storydriven.core.edit;singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
-Bundle-Activator: org.storydriven.core.provider.CoreEditPlugin$Implementation
-Bundle-Vendor: %providerName
-Bundle-Localization: plugin
+Bundle-Version: 1.0.1.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.storydriven.core.expressions.common.provider,
- org.storydriven.core.expressions.provider,
- org.storydriven.core.provider
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.storydriven.core.provider.CoreEditPlugin$Implementation
 Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.core;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.uml2.common.edit;visibility:=reexport
-Bundle-ActivationPolicy: lazy
+Export-Package: org.storydriven.core.expressions.common.provider,
+ org.storydriven.core.expressions.provider,
+ org.storydriven.core.provider

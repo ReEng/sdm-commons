@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Export-Package: org.storydriven.storydiagrams.interpreter,org.storydri
+ ven.storydiagrams.interpreter.calls,org.storydriven.storydiagrams.int
+ erpreter.expressions,org.storydriven.storydiagrams.interpreter.facade
+ ,org.storydriven.storydiagrams.interpreter.notifications,org.storydri
+ ven.storydiagrams.interpreter.patternmatcher
+Require-Bundle: de.mdelab.sdm.interpreter.core;bundle-version="1.0.0";
+ visibility:=reexport,org.storydriven.core;bundle-version="1.0.1";visi
+ bility:=reexport,org.storydriven.storydiagrams;bundle-version="1.0.1"
+ ;visibility:=reexport
+Bundle-Vendor: %providerName
+Bundle-Version: 1.0.1.201302042332
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.storydriven.storydiagrams.interpreter.core;si
+ ngleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

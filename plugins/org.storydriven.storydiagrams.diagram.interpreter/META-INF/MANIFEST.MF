@@ -1,14 +1,17 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Storydriven Story Diagrams Interpreter User Interface
+Bundle-Localization: plugin
+Bundle-Vendor: %providerName
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.storydriven.storydiagrams.diagram.interpreter;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.storydriven.storydiagrams.internal.diagram.interpreter.Activator
-Bundle-Vendor: storydriven.org
 Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.storydiagrams;bundle-version="0.2.0",
- org.storydriven.storydiagrams.interpreter;bundle-version="1.0.0",
- org.storydriven.storydiagrams.interpreter.eclipse;bundle-version="1.0.0",
+ org.storydriven.storydiagrams.interpreter.core;bundle-version="0.3.0",
+ org.storydriven.storydiagrams.interpreter.eclipse;bundle-version="0.3.0",
  org.eclipse.ui;bundle-version="3.7.0",
  org.storydriven.storydiagrams.diagram.custom;bundle-version="0.2.0",
  org.storydriven.storydiagrams.diagram;bundle-version="0.2.0",
@@ -19,5 +22,3 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.ide;bundle-version="3.7.0",
  org.eclipse.gmf.runtime.diagram.ui.resources.editor;bundle-version="1.4.1",
  org.eclipse.emf.edit.ui;bundle-version="2.7.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-ActivationPolicy: lazy

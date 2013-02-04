@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+<copyright>
+	Copyright 2013 by storydriven.org and others. All rights reserved. This
+	program and its materials are made available under the terms of the Eclipse
+	Public License v1.0 which is referenced inside the distribution.
+
+	Contributors:
+		Development Team <sdm-commons-dev@googlegroups.com> - Initial code
+
+</copyright>
+-->
 <feature
       id="org.storydriven.storydiagrams.feature"
-      label="Storydriven Storydiagrams"
-      version="1.0.0.qualifier"
+      label="Story Diagram Tooling: Model"
+      version="1.0.1.qualifier"
       provider-name="storydriven.org">
 
-   <license url="http://www.eclipse.org/legal/epl-v10.html">
-      Eclipse Public License
-   </license>
-
    <requires>
-      <import plugin="org.antlr.runtime" version="3.2.0" match="compatible"/>
-      <import plugin="org.eclipse.xtext" version="2.0.0" match="compatible"/>
-      <import plugin="org.eclipse.xtext.util" version="2.0.0" match="compatible"/>
-      <import plugin="org.eclipse.xtext.xtend2" version="2.0.0" match="compatible"/>
-      <import plugin="org.eclipse.xtext.builder" version="2.0.0" match="compatible"/>
-      <import plugin="org.eclipse.xtext.ui" version="2.0.0" match="compatible"/>
-      <import plugin="org.eclipse.xtext.ui.shared" version="2.0.0" match="compatible"/>
-      <import plugin="org.apache.log4j"/>
-      <import feature="org.storydriven.core.feature" version="1.0.0.qualifier"/>
+      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="compatible"/>
+      <import plugin="org.eclipse.uml2.codegen.ecore" version="1.6.0" match="compatible"/>
+      <import plugin="org.eclipse.ocl" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="compatible"/>
+      <import plugin="org.storydriven.core" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.storydriven.core.edit"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.ecore.edit"/>
+      <import plugin="org.eclipse.uml2.common.edit"/>
+      <import feature="org.storydriven.core.feature" version="1.0.1.qualifier"/>
    </requires>
 
    <plugin
@@ -30,41 +40,6 @@
 
    <plugin
          id="org.storydriven.storydiagrams.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.storydriven.storydiagrams.expressions"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.storydriven.storydiagrams.expressions.common"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.storydriven.storydiagrams.expressions.common.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.storydriven.storydiagrams.expressions.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.storydriven.storydiagrams.edit.eef"
          download-size="0"
          install-size="0"
          version="0.0.0"
