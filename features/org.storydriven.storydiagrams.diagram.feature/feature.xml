@@ -16,6 +16,10 @@
       version="1.0.1.qualifier"
       provider-name="storydriven.org">
 
+   <description url="http://www.storydriven.org">
+      This feature contains the GMF based diagram editor to edit story diagrams graphically.
+   </description>
+
    <requires>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.core.resources"/>

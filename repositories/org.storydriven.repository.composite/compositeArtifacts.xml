@@ -11,11 +11,11 @@
 </copyright>
 -->
 <?compositeMetadataRepository version="1.0.0"?>
-<repository name="Story Diagram Update Site"
+<repository name="Story Diagram Tooling Update Site"
 	type="org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository"
 	version="1.0.0">
 	<children size="2">
-		<child location="sdm"/>
+		<child location="site"/>
 		<child location="http://www.hpi.uni-potsdam.de/giese/gforge/mdelab/update-site/sdm"/>
 	</children>
 </repository>

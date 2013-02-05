@@ -7,10 +7,23 @@ This section should contain a user guide for the available story diagram tools.
 
 
 \subsection{Installation Using the Eclipse Update Site -- Users}
+For the developed plug-ins an installation of Eclipse is required. Currently the Indigo (3.7 SR2) and Juno (3.8 SR1 or 4.2 SR1) releases are supported. You can download an appropriate package from \url{www.eclipse.org} specifically for your environment -- the ``Modeling Tools'' package is recommended because it has already many required features integrated, which otherwise would have to be installed afterwards.
 
+When you started your Eclipse instance, you can install the current release of the story diagram model, editor and interpreter from our Eclipse Update Site.
+
+\begin{enumerate}
+	\item Copy our update site URL \url{http://dsd-serv.upb.de/svn/updatesites/trunk/storydriven}
+	\item Select \emph{Help} $\rightarrow$ \emph{Install New Software\ldots} from the Eclipse main menu.
+	\item Select \emph{Add\ldots}, insert a proper name and paste the copied URL into the \emph{Location} field.
+	\item Select the features that you want to install and finish the wizard.
+\end{enumerate}
+
+Restart your Eclipse instance afterwards to finish the installation.
 
 \subsection{Getting the Source Code From Repository -- Developers}
+The complete source code is available in the Subversion repository on Google Code which can be reached by visiting \url[www.storydriven.org]{http://www.storydriven.org} and navigating to the \emph{Source} tab.
 
+We use Apache Maven\footnote{\url{http://maven.apache.org}} in combination with Tycho\footnote{\url{http://eclipse.org/tycho}} to build the plug-ins. Beside the possibility to build the sources from the command line by calling \texttt{mvn clean install}, you can also use the \emph{m2e} plug-in for eclipse and run builds from within your eclipse instance. The main \texttt{pom.xml} is directly inside the \texttt{trunk} folder of the repository.
 
 \section{Getting Started -- User Interface}
 

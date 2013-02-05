@@ -16,6 +16,10 @@
       version="1.0.1.qualifier"
       provider-name="storydriven.org">
 
+   <description url="http://www.storydriven.org">
+      This feature contains the basic EMF editor to edit story diagram models in a tree structure.
+   </description>
+
    <requires>
       <import feature="org.storydriven.storydiagrams.feature" version="1.0.1.qualifier"/>
       <import plugin="org.eclipse.core.resources"/>

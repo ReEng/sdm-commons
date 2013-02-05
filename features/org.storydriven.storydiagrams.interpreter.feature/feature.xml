@@ -16,6 +16,10 @@
       version="1.0.1.qualifier"
       provider-name="storydriven.org">
 
+   <description url="http://www.storydriven.org">
+      This feature contains the specific plug-ins to integrate the story diagram model into the core interpreter.
+   </description>
+
    <requires>
       <import feature="org.storydriven.core.feature" version="1.0.1.qualifier"/>
       <import feature="org.storydriven.storydiagrams.feature" version="1.0.1.qualifier"/>

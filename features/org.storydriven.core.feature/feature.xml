@@ -16,6 +16,12 @@
       version="1.0.1.qualifier"
       provider-name="storydriven.org">
 
+   <description url="http://www.storydriven.org">
+      This feature contains the core model including the base classes for the actual story diagram model as well as the model for common expressions (arithmetic, logical, ...).
+
+      It also contains the EMF editing support for those elements.
+   </description>
+
    <requires>
       <import plugin="org.eclipse.core.runtime" version="3.6.0" match="compatible"/>
       <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="compatible"/>
