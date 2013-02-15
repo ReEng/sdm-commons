@@ -13,7 +13,7 @@ public class StoryDrivenStoryNodeFacade extends StoryDrivenActivityNodeFacade im
 {
 
 	@Override
-	public StoryPattern getStoryPattern(ActivityNode activityNode)
+	public StoryPattern getStoryPattern(final ActivityNode activityNode)
 	{
 		assert activityNode != null;
 		assert activityNode instanceof StoryNode;
@@ -22,7 +22,7 @@ public class StoryDrivenStoryNodeFacade extends StoryDrivenActivityNodeFacade im
 	}
 
 	@Override
-	public EForEachSemantics getForEachSemantics(ActivityNode activityNode)
+	public EForEachSemantics getForEachSemantics(final ActivityNode activityNode)
 	{
 		assert activityNode != null;
 		assert activityNode instanceof StoryNode;
@@ -38,7 +38,7 @@ public class StoryDrivenStoryNodeFacade extends StoryDrivenActivityNodeFacade im
 	}
 
 	@Override
-	public ActivityEdge getSuccessNextEdge(ActivityNode activityNode)
+	public ActivityEdge getSuccessNextEdge(final ActivityNode activityNode)
 	{
 		assert activityNode != null;
 		assert activityNode instanceof StoryNode;
@@ -51,7 +51,7 @@ public class StoryDrivenStoryNodeFacade extends StoryDrivenActivityNodeFacade im
 		}
 		else
 		{
-			for (ActivityEdge edge : activityNode.getOutgoings())
+			for (final ActivityEdge edge : activityNode.getOutgoings())
 			{
 				switch (edge.getGuard())
 				{
@@ -59,7 +59,7 @@ public class StoryDrivenStoryNodeFacade extends StoryDrivenActivityNodeFacade im
 					case EACH_TIME:
 						return edge;
 					default:
-						return null;
+						break;
 				}
 			}
 
@@ -68,7 +68,7 @@ public class StoryDrivenStoryNodeFacade extends StoryDrivenActivityNodeFacade im
 	}
 
 	@Override
-	public ActivityEdge getFailureNextEdge(ActivityNode activityNode)
+	public ActivityEdge getFailureNextEdge(final ActivityNode activityNode)
 	{
 		assert activityNode != null;
 		assert activityNode instanceof StoryNode;
@@ -81,7 +81,7 @@ public class StoryDrivenStoryNodeFacade extends StoryDrivenActivityNodeFacade im
 		}
 		else
 		{
-			for (ActivityEdge edge : activityNode.getOutgoings())
+			for (final ActivityEdge edge : activityNode.getOutgoings())
 			{
 				switch (edge.getGuard())
 				{
@@ -89,7 +89,7 @@ public class StoryDrivenStoryNodeFacade extends StoryDrivenActivityNodeFacade im
 					case END:
 						return edge;
 					default:
-						return null;
+						break;
 				}
 			}
 
