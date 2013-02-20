@@ -10,7 +10,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
+import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.ocl.OCLInput;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.OCL;
@@ -50,7 +50,7 @@ public class OCLExpressionInterpreter<Expression> extends ExpressionInterpreter<
 	 * @return
 	 * @throws SDMException
 	 */
-	private OCL getOCL(VariablesScope<?, ?, ?, ?, ?, ?, EClassifier, ?, Expression> variablesScope) throws SDMException
+	private OCL getOCL(final VariablesScope<?, ?, ?, ?, ?, ?, EClassifier, ?, Expression> variablesScope) throws SDMException
 	{
 		OCL ocl = this.usedOCLs.get(variablesScope);
 
@@ -59,18 +59,18 @@ public class OCLExpressionInterpreter<Expression> extends ExpressionInterpreter<
 			ocl = OCL.newInstance(new CustomOCLEnvironmentFactory(variablesScope));
 			this.usedOCLs.put(variablesScope, ocl);
 
-			for (String importURI : variablesScope.getExpressionImports(OCLExpressionInterpreterConstants.OCL_LANGUAGE_NAME,
+			for (final String importURI : variablesScope.getExpressionImports(OCLExpressionInterpreterConstants.OCL_LANGUAGE_NAME,
 					OCLExpressionInterpreterConstants.OCL_LANGUAGE_VERSION))
 			{
 				try
 				{
-					ocl.parse(new OCLInput(ExtensibleURIConverterImpl.INSTANCE.createInputStream(URI.createURI(importURI))));
+					ocl.parse(new OCLInput(URIConverter.INSTANCE.createInputStream(URI.createURI(importURI))));
 				}
-				catch (ParserException e)
+				catch (final ParserException e)
 				{
 					throw new SDMException("Could not parse imported URI '" + importURI + "'.", e);
 				}
-				catch (IOException e)
+				catch (final IOException e)
 				{
 					throw new SDMException("Could not parse imported URI '" + importURI + "'.", e);
 				}
@@ -81,14 +81,16 @@ public class OCLExpressionInterpreter<Expression> extends ExpressionInterpreter<
 	}
 
 	@Override
-	public Variable<EClassifier> evaluateExpression(Expression expression, EClassifier contextClassifier, Object contextInstance,
-			VariablesScope<?, ?, ?, ?, ?, ?, EClassifier, ?, Expression> variablesScope) throws SDMException
+	public Variable<EClassifier> evaluateExpression(final Expression expression, final EClassifier contextClassifier,
+			final Object contextInstance, final VariablesScope<?, ?, ?, ?, ?, ?, EClassifier, ?, Expression> variablesScope)
+			throws SDMException
 	{
-		IExpressionFacade<Expression> expressionFacade = this.getExpressionInterpreterManager().getFacadeFactory().getExpressionFacade();
+		final IExpressionFacade<Expression> expressionFacade = this.getExpressionInterpreterManager().getFacadeFactory()
+				.getExpressionFacade();
 
 		OCLExpression oclExpression = null;
 
-		Object expressionAST = expressionFacade.getExpressionAST(expression);
+		final Object expressionAST = expressionFacade.getExpressionAST(expression);
 
 		if (expressionAST == null)
 		{
@@ -99,7 +101,7 @@ public class OCLExpressionInterpreter<Expression> extends ExpressionInterpreter<
 			{
 				oclExpression = this.parseExpression(expressionFacade.getExpressionString(expression), contextClassifier, variablesScope);
 			}
-			catch (ParserException e)
+			catch (final ParserException e)
 			{
 				throw new SDMException("Could not parse OCL expression '" + expressionFacade.getExpressionString(expression) + "': "
 						+ e.getMessage(), e);
@@ -117,7 +119,7 @@ public class OCLExpressionInterpreter<Expression> extends ExpressionInterpreter<
 			oclExpression = (OCLExpression) expressionAST;
 		}
 
-		OCL ocl = this.getOCL(variablesScope);
+		final OCL ocl = this.getOCL(variablesScope);
 
 		Object result = null;
 
@@ -125,7 +127,7 @@ public class OCLExpressionInterpreter<Expression> extends ExpressionInterpreter<
 		{
 			result = ocl.evaluate(contextInstance, oclExpression);
 		}
-		catch (IllegalArgumentException ex)
+		catch (final IllegalArgumentException ex)
 		{
 			throw new SDMException("The OCL expression '" + expressionFacade.getExpressionString(expression) + "' could not be evaluated.",
 					ex);
@@ -141,8 +143,17 @@ public class OCLExpressionInterpreter<Expression> extends ExpressionInterpreter<
 					+ "' was evaluated to an invalid result.");
 		}
 
-		return new Variable<EClassifier>(VariablesScope.INTERNAL_VARIABLE_NAME, this.getEcoreStandardType(oclExpression.getType(), ocl),
-				result);
+		if (oclExpression.getType() != null)
+		{
+			return new Variable<EClassifier>(VariablesScope.INTERNAL_VARIABLE_NAME,
+					this.getEcoreStandardType(oclExpression.getType(), ocl), result);
+		}
+		else
+		{
+			assert result == null;
+
+			return new Variable<EClassifier>(VariablesScope.INTERNAL_VARIABLE_NAME, EcorePackage.Literals.EJAVA_OBJECT, null);
+		}
 	}
 
 	/**
@@ -152,12 +163,12 @@ public class OCLExpressionInterpreter<Expression> extends ExpressionInterpreter<
 	 * @param ocl
 	 * @return
 	 */
-	protected EClassifier getEcoreStandardType(EClassifier oclType, OCL ocl)
+	protected EClassifier getEcoreStandardType(final EClassifier oclType, final OCL ocl)
 	{
 		/*
 		 * TODO: Extend this list.
 		 */
-		OCLStandardLibrary<EClassifier> oclStandardLibrary = ocl.getEnvironment().getOCLStandardLibrary();
+		final OCLStandardLibrary<EClassifier> oclStandardLibrary = ocl.getEnvironment().getOCLStandardLibrary();
 
 		if (oclType == oclStandardLibrary.getBoolean())
 		{
@@ -197,8 +208,8 @@ public class OCLExpressionInterpreter<Expression> extends ExpressionInterpreter<
 	 * @throws ParserException
 	 * @throws SDMException
 	 */
-	private OCLExpression parseExpression(String expressionString, EClassifier contextClassifier,
-			VariablesScope<?, ?, ?, ?, ?, ?, EClassifier, ?, Expression> variablesScope) throws ParserException, SDMException
+	private OCLExpression parseExpression(final String expressionString, EClassifier contextClassifier,
+			final VariablesScope<?, ?, ?, ?, ?, ?, EClassifier, ?, Expression> variablesScope) throws ParserException, SDMException
 	{
 		if (contextClassifier == null)
 		{
@@ -211,13 +222,13 @@ public class OCLExpressionInterpreter<Expression> extends ExpressionInterpreter<
 			contextClassifier = EcorePackage.Literals.EOBJECT;
 		}
 
-		OCL ocl = this.getOCL(variablesScope);
+		final OCL ocl = this.getOCL(variablesScope);
 
 		if (ocl.getExtentMap() == null)
 		{
-			List<EObject> contextObjects = new LinkedList<EObject>();
+			final List<EObject> contextObjects = new LinkedList<EObject>();
 
-			for (Variable<EClassifier> v : variablesScope.getVariables())
+			for (final Variable<EClassifier> v : variablesScope.getVariables())
 			{
 				if (v.getValue() instanceof EObject)
 				{
@@ -229,7 +240,7 @@ public class OCLExpressionInterpreter<Expression> extends ExpressionInterpreter<
 			ocl.setExtentMap(new MultiResourceLazyExtentMap(contextObjects));
 		}
 
-		Helper helper = ocl.createOCLHelper();
+		final Helper helper = ocl.createOCLHelper();
 
 		helper.setContext(contextClassifier);
 
