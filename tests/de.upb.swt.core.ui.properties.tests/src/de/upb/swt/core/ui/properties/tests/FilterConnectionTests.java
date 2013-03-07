@@ -1,0 +1,69 @@
+package de.upb.swt.core.ui.properties.tests;
+
+import static org.junit.Assert.assertTrue;
+
+import org.eclipse.draw2d.Connection;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.gef.EditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart;
+import org.eclipse.gmf.runtime.notation.NotationFactory;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.viewers.IFilter;
+import org.eclipse.jface.viewers.StructuredSelection;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import de.upb.swt.core.ui.properties.filters.AbstractFilter;
+
+public class FilterConnectionTests {
+	private EObject element;
+	private IFilter filter;
+
+	private EditPart editPart;
+
+	@Before
+	public void initialize() {
+		// create element
+		element = EcoreFactory.eINSTANCE.createEReference();
+
+		// create filter
+		filter = new AbstractFilter() {
+			@Override
+			protected boolean select(EObject element) {
+				return FilterConnectionTests.this.element.equals(element);
+			}
+		};
+
+		// create view
+		View view = NotationFactory.eINSTANCE.createEdge();
+		view.setElement(element);
+
+		// create edit part
+		editPart = new ConnectionEditPart(view) {
+			@Override
+			protected Connection createConnectionFigure() {
+				return null;
+			}
+		};
+	}
+
+	@Test
+	public void testElement() {
+		assertTrue(filter.select(new StructuredSelection(element)));
+	}
+
+	@Test
+	public void testEditPart() {
+		assertTrue(filter.select(new StructuredSelection(editPart)));
+	}
+
+	@After
+	public void dispose() {
+		filter = null;
+
+		editPart = null;
+		element = null;
+	}
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.upb.swt.core.ui.properties.tests.model/src-gen"
+    creationIcons="false" editDirectory="/de.upb.swt.core.ui.properties.tests.model.edit/src-gen"
+    editorDirectory="/de.upb.swt.core.ui.properties.tests.model.editor/src-gen" modelPluginID="de.upb.swt.core.ui.properties.tests.model"
+    modelName="Model" updateClasspath="false" nonNLSMarkers="true" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" testsDirectory="/de.upb.swt.core.ui.properties.tests.model.tests/src-gen"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    operationReflection="true">
+  <foreignModel>model.ecore</foreignModel>
+  <genPackages prefix="Model" basePackage="de.upb.swt.core.ui.properties.tests" disposableProviderFactory="true"
+      multipleEditorPages="false" fileExtensions="protemo" ecorePackage="model.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//EnumLiterals">
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//EnumLiterals/FIRST"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//EnumLiterals/SECOND"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//EnumLiterals/THIRD"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="model.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Container">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Container/types"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Container/references"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Type">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference model.ecore#//Type/container"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Type/attributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Type/outgoing"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Type/incoming"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Reference">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference model.ecore#//Reference/container"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Reference/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Reference/target"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="model.ecore#//Attribute">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference model.ecore#//Attribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//BooleanAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BooleanAttribute/booleanValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BooleanAttribute/booleanObjectValue"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//EnumAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//EnumAttribute/literal"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//IntegerAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//IntegerAttribute/byteValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//IntegerAttribute/byteObjectValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//IntegerAttribute/shortValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//IntegerAttribute/shortObjectValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//IntegerAttribute/intValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//IntegerAttribute/integerObjectValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//IntegerAttribute/longValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//IntegerAttribute/longObjectValue"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//DecimalAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//DecimalAttribute/floatValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//DecimalAttribute/floatObjectValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//DecimalAttribute/doubleValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//DecimalAttribute/doubleObjectValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//DecimalAttribute/bigDecimalValue"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//StringAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//StringAttribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//DataTypeAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//DataTypeAttribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//TypeAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//TypeAttribute/referencedType"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Properties
+Bundle-SymbolicName: de.upb.swt.core.ui.properties.tests.model.ui.properties;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: University of Paderborn
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Require-Bundle: de.upb.swt.core;bundle-version="0.1.0",
+ de.upb.swt.core.ui;bundle-version="0.1.0",
+ de.upb.swt.core.ui.properties;bundle-version="0.1.0",
+ de.upb.swt.core.ui.properties.tests.model;bundle-version="0.1.0",
+ org.eclipse.ui.views.properties.tabbed

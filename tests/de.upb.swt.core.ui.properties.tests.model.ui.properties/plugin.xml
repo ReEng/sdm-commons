@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="de.upb.swt.core.ui.properties.tests.diagram">
+         <propertyTab
+               category="domain"
+               id="tabs.model"
+               label="Model">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections contributorId="de.upb.swt.core.ui.properties.tests.diagram">
+         <propertySection
+               class="de.upb.swt.core.ui.properties.tests.model.ui.properties.sections.NamedElementNameSection"
+               filter="de.upb.swt.core.ui.properties.tests.model.ui.properties.filters.NamedElementFilter"
+               id="NamedElement.name"
+               tab="tabs.model"/>
+         <propertySection
+               class="de.upb.swt.core.ui.properties.tests.model.ui.properties.sections.BooleanAttributeBooleanSection"
+               filter="de.upb.swt.core.ui.properties.tests.model.ui.properties.filters.BooleanAttributeFilter"
+               id="BooleanAttribute.boolean"
+               tab="tabs.model"/>
+         <propertySection
+               class="de.upb.swt.core.ui.properties.tests.model.ui.properties.sections.BooleanAttributeBooleanObjectSection"
+               filter="de.upb.swt.core.ui.properties.tests.model.ui.properties.filters.BooleanAttributeFilter"
+               id="BooleanAttribute.booleanObject"
+               tab="tabs.model"/>
+         <propertySection
+               class="de.upb.swt.core.ui.properties.tests.model.ui.properties.sections.StringAttributeValueSection"
+               filter="de.upb.swt.core.ui.properties.tests.model.ui.properties.filters.StringAttributeFilter"
+               id="StringAttribute.value"
+               tab="tabs.model"/>
+         <propertySection
+               class="de.upb.swt.core.ui.properties.tests.model.ui.properties.sections.EnumAttributeLiteralsNameSection"
+               filter="de.upb.swt.core.ui.properties.tests.model.ui.properties.filters.EnumAttributeFilter"
+               id="EnumAttribute.literal"
+               tab="tabs.model"/>
+         <propertySection
+               class="de.upb.swt.core.ui.properties.tests.model.ui.properties.sections.TypeAttributeReferencedTypeSection"
+               filter="de.upb.swt.core.ui.properties.tests.model.ui.properties.filters.TypeAttributeFilter"
+               id="TypeAttribute.referencedType"
+               tab="tabs.model"/>
+      </propertySections>
+   </extension>
+
+</plugin>

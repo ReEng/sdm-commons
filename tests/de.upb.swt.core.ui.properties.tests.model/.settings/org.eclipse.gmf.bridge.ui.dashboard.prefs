@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/de.upb.swt.core.ui.properties.tests.model/model/model.genmodel
+gmf_dashboard/domainModel=platform\:/resource/de.upb.swt.core.ui.properties.tests.model/model/model.ecore
+gmf_dashboard/generationModel=platform\:/resource/de.upb.swt.core.ui.properties.tests.model/model/model.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/de.upb.swt.core.ui.properties.tests.model/model/model.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/de.upb.swt.core.ui.properties.tests.model/model/model.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/de.upb.swt.core.ui.properties.tests.model/model/model.gmftool

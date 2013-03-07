@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="model">
+  <figures name="Default">
+    <descriptors name="TypeFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="TypeFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="TypeNameFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ReferenceFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ReferenceFigure">
+        <children xsi:type="gmfgraph:Label" name="ReferenceNameFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="BooleanAttributeFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="BooleanAttributeFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="BooleanAttributeNameFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="BooleanAttributeBooleanValueFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="BooleanAttributeBooleanObjectValueFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="EnumAttributeFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="EnumAttributeFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="EnumAttributeNameFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="EnumAttributeLiteralFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="IntegerAttributeFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="IntegerAttributeFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="IntegerAttributeNameFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="IntegerAttributeByteValueFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="IntegerAttributeByteObjectValueFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="IntegerAttributeShortValueFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="IntegerAttributeShortObjectValueFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="IntegerAttributeIntValueFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="IntegerAttributeIntegerObjectValueFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="IntegerAttributeLongValueFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="IntegerAttributeLongObjectValueFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.4/@actualFigure/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.4/@actualFigure/@children.2"/>
+      <accessors figure="//@figures.0/@descriptors.4/@actualFigure/@children.3"/>
+      <accessors figure="//@figures.0/@descriptors.4/@actualFigure/@children.4"/>
+      <accessors figure="//@figures.0/@descriptors.4/@actualFigure/@children.5"/>
+      <accessors figure="//@figures.0/@descriptors.4/@actualFigure/@children.6"/>
+      <accessors figure="//@figures.0/@descriptors.4/@actualFigure/@children.7"/>
+      <accessors figure="//@figures.0/@descriptors.4/@actualFigure/@children.8"/>
+    </descriptors>
+    <descriptors name="DecimalAttributeFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="DecimalAttributeFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="DecimalAttributeNameFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="DecimalAttributeFloatValueFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="DecimalAttributeFloatObjectValueFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="DecimalAttributeDoubleValueFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="DecimalAttributeDoubleObjectValueFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="DecimalAttributeBigDecimalValueFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.5/@actualFigure/@children.2"/>
+      <accessors figure="//@figures.0/@descriptors.5/@actualFigure/@children.3"/>
+      <accessors figure="//@figures.0/@descriptors.5/@actualFigure/@children.4"/>
+      <accessors figure="//@figures.0/@descriptors.5/@actualFigure/@children.5"/>
+    </descriptors>
+    <descriptors name="StringAttributeFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="StringAttributeFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="StringAttributeNameFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="StringAttributeValueFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.6/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="DataTypeAttributeFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="DataTypeAttributeFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="DataTypeAttributeNameFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="DataTypeAttributeValueFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.7/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="TypeAttributeFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="TypeAttributeFigure">
+        <children xsi:type="gmfgraph:Label" name="TypeAttributeNameFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+    </descriptors>
+  </figures>
+  <nodes name="Type" figure="TypeFigure"/>
+  <nodes name="BooleanAttribute" figure="BooleanAttributeFigure"/>
+  <nodes name="EnumAttribute" figure="EnumAttributeFigure"/>
+  <nodes name="IntegerAttribute" figure="IntegerAttributeFigure"/>
+  <nodes name="DecimalAttribute" figure="DecimalAttributeFigure"/>
+  <nodes name="StringAttribute" figure="StringAttributeFigure"/>
+  <nodes name="DataTypeAttribute" figure="DataTypeAttributeFigure"/>
+  <connections name="Reference" figure="ReferenceFigure"/>
+  <labels name="TypeName" figure="TypeFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="ReferenceName" figure="ReferenceFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="BooleanAttributeName" figure="BooleanAttributeFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="BooleanAttributeBooleanValue" figure="BooleanAttributeFigure" accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+  <labels name="BooleanAttributeBooleanObjectValue" figure="BooleanAttributeFigure" accessor="//@figures.0/@descriptors.2/@accessors.2"/>
+  <labels name="EnumAttributeName" figure="EnumAttributeFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="EnumAttributeLiteral" figure="EnumAttributeFigure" accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+  <labels name="IntegerAttributeName" figure="IntegerAttributeFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels name="IntegerAttributeByteValue" figure="IntegerAttributeFigure" accessor="//@figures.0/@descriptors.4/@accessors.1"/>
+  <labels name="IntegerAttributeByteObjectValue" figure="IntegerAttributeFigure" accessor="//@figures.0/@descriptors.4/@accessors.2"/>
+  <labels name="IntegerAttributeShortValue" figure="IntegerAttributeFigure" accessor="//@figures.0/@descriptors.4/@accessors.3"/>
+  <labels name="IntegerAttributeShortObjectValue" figure="IntegerAttributeFigure" accessor="//@figures.0/@descriptors.4/@accessors.4"/>
+  <labels name="IntegerAttributeIntValue" figure="IntegerAttributeFigure" accessor="//@figures.0/@descriptors.4/@accessors.5"/>
+  <labels name="IntegerAttributeIntegerObjectValue" figure="IntegerAttributeFigure" accessor="//@figures.0/@descriptors.4/@accessors.6"/>
+  <labels name="IntegerAttributeLongValue" figure="IntegerAttributeFigure" accessor="//@figures.0/@descriptors.4/@accessors.7"/>
+  <labels name="IntegerAttributeLongObjectValue" figure="IntegerAttributeFigure" accessor="//@figures.0/@descriptors.4/@accessors.8"/>
+  <labels name="DecimalAttributeName" figure="DecimalAttributeFigure" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+  <labels name="DecimalAttributeFloatValue" figure="DecimalAttributeFigure" accessor="//@figures.0/@descriptors.5/@accessors.1"/>
+  <labels name="DecimalAttributeFloatObjectValue" figure="DecimalAttributeFigure" accessor="//@figures.0/@descriptors.5/@accessors.2"/>
+  <labels name="DecimalAttributeDoubleValue" figure="DecimalAttributeFigure" accessor="//@figures.0/@descriptors.5/@accessors.3"/>
+  <labels name="DecimalAttributeDoubleObjectValue" figure="DecimalAttributeFigure" accessor="//@figures.0/@descriptors.5/@accessors.4"/>
+  <labels name="DecimalAttributeBigDecimalValue" figure="DecimalAttributeFigure" accessor="//@figures.0/@descriptors.5/@accessors.5"/>
+  <labels name="StringAttributeName" figure="StringAttributeFigure" accessor="//@figures.0/@descriptors.6/@accessors.0"/>
+  <labels name="StringAttributeValue" figure="StringAttributeFigure" accessor="//@figures.0/@descriptors.6/@accessors.1"/>
+  <labels name="DataTypeAttributeName" figure="DataTypeAttributeFigure" accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+  <labels name="DataTypeAttributeValue" figure="DataTypeAttributeFigure" accessor="//@figures.0/@descriptors.7/@accessors.1"/>
+  <labels name="TypeAttributeName" figure="TypeAttributeFigure" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+</gmfgraph:Canvas>
