@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OCL Support
+Bundle-SymbolicName: org.storydriven.core.ocl;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: University of Paderborn
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.ocl.ecore;bundle-version="3.2.0",
+ org.storydriven.core;bundle-version="1.0.1",
+ org.storydriven.core.ui;bundle-version="0.1.0",
+ org.eclipse.ui;bundle-version="3.103.0",
+ org.eclipse.jface.text;bundle-version="3.8.1",
+ de.upb.swt.core;bundle-version="0.1.0",
+ de.upb.swt.core.ui;bundle-version="0.1.0"

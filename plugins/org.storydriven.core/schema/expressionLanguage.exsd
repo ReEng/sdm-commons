@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="org.storydriven.core.ui" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.storydriven.core" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="org.storydriven.core.ui" id="expressionEditor" name="Expression Editor"/>
+         <meta.schema plugin="org.storydriven.core" id="expressionLanguage" name="Expression Language"/>
       </appinfo>
       <documentation>
-         [Enter description of this extension point.]
+         Plugins can extend this extension point to register a new expression language with the story diagram meta model.
       </documentation>
    </annotation>
 
@@ -18,7 +18,7 @@
       </annotation>
       <complexType>
          <sequence minOccurs="1" maxOccurs="unbounded">
-            <element ref="editor"/>
+            <element ref="language"/>
          </sequence>
          <attribute name="point" type="string" use="required">
             <annotation>
@@ -47,32 +47,19 @@
       </complexType>
    </element>
 
-   <element name="editor">
+   <element name="language">
       <complexType>
-         <attribute name="class" type="string" use="required">
+         <attribute name="name" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The name of the expression language.
                </documentation>
-               <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.storydriven.core.ui.IExpressionEditor"/>
-               </appinfo>
             </annotation>
          </attribute>
-         <attribute name="language" type="string" use="required">
+         <attribute name="version" type="string" use="required">
             <annotation>
                <documentation>
-                  
-               </documentation>
-               <appinfo>
-                  <meta.attribute kind="identifier" basedOn="org.storydriven.core.expressionLanguage/language/@name"/>
-               </appinfo>
-            </annotation>
-         </attribute>
-         <attribute name="version" type="string">
-            <annotation>
-               <documentation>
-                  
+                  The supported version of the expression language.
                </documentation>
             </annotation>
          </attribute>

@@ -24,7 +24,7 @@ public class ExpressionEditorUtil {
 		if (editors == null) {
 			editors = new HashMap<String, IExpressionEditor>();
 
-			// TODO: read them
+			// read them
 			IConfigurationElement[] configurationElements = Platform
 					.getExtensionRegistry().getConfigurationElementsFor(
 							IExpressionEditor.ID_EXTENSION);
@@ -44,8 +44,6 @@ public class ExpressionEditorUtil {
 					e.printStackTrace();
 				}
 			}
-
-			System.out.println(editors);
 		}
 		return editors;
 	}

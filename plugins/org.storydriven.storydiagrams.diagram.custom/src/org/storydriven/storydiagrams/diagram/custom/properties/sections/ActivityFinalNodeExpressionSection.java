@@ -17,7 +17,7 @@ public class ActivityFinalNodeExpressionSection extends AbstractExpressionSectio
 		if (getElement().getReturnValue() == null) {
 			final TextualExpression expression = ExpressionsFactory.eINSTANCE.createTextualExpression();
 			expression.setLanguage("OCL");
-			expression.setLanguageVersion("1.0");
+			expression.setLanguageVersion("3.0");
 
 			RecordingCommand command = new RecordingCommand(getEditingDomain()) {
 				@Override

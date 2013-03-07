@@ -12,7 +12,7 @@
 </copyright>
 -->
 <plugin>
-	<extension-point id="expressionLanguagesExtension" name="Expression Languages Extension" schema="schema/expressionLanguagesExtension.exsd"/>
+ <extension-point id="expressionLanguage" name="Expression Language" schema="schema/expressionLanguage.exsd"/>
 
 	<extension point="org.eclipse.emf.ecore.generated_package">
 		<package
