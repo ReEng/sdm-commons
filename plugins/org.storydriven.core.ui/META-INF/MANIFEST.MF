@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: UI
+Bundle-SymbolicName: org.storydriven.core.ui;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: University of Paderborn
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.storydriven.core;bundle-version="1.0.1"
+Export-Package: org.storydriven.core.ui,
+ org.storydriven.core.ui.util
