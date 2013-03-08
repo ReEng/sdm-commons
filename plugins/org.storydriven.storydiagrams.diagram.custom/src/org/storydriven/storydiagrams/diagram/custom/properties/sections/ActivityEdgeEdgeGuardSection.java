@@ -6,12 +6,13 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.EdgeGuard;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEEnumRadioSection;
 import org.storydriven.storydiagrams.diagram.custom.util.ValidationUtil;
 
-public class ActivityEdgeEdgeGuardSection extends AbstractEEnumRadioSection<EdgeGuard> {
+import de.upb.swt.core.ui.properties.sections.AbstractRadioGroupSection;
+
+public class ActivityEdgeEdgeGuardSection extends AbstractRadioGroupSection<EdgeGuard> {
 	@Override
-	protected String getDescription() {
+	protected String getLabelText() {
 		return "Edge Guard";
 	}
 

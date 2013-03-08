@@ -14,6 +14,7 @@ import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
@@ -229,6 +230,7 @@ public abstract class AbstractPropertySection implements ISection {
 	 */
 	protected final void execute(final Command command) {
 		getEditingDomain().getCommandStack().execute(command);
+		postExecute();
 	}
 
 	/**
@@ -238,6 +240,10 @@ public abstract class AbstractPropertySection implements ISection {
 	 */
 	protected final EditingDomain getEditingDomain() {
 		return editingDomain;
+	}
+
+	protected void postExecute() {
+		// nothing here
 	}
 
 	/**
@@ -342,7 +348,7 @@ public abstract class AbstractPropertySection implements ISection {
 	 */
 	protected final void refreshTitle() {
 		if (page != null) {
-			page.labelProviderChanged(null);
+			page.labelProviderChanged(new LabelProviderChangedEvent(null));
 		}
 	}
 }

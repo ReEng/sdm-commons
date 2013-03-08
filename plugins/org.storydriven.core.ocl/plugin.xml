@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension
-         point="org.storydriven.core.ui.expressionEditor">
-      <editor
-            class="org.storydriven.core.ui.ocl.editor.OclExpressionEditor"
-            language="OCL" version="3.0">
-      </editor>
+	<extension point="org.storydriven.core.expressionLanguage">
+		<language
+			name="OCL"
+			version="1.0"/>
    </extension>
-   <extension
-         point="org.storydriven.core.expressionLanguage">
-      <language
-            name="OCL"
-            version="3.0">
-      </language>
-   </extension>
-
+  
+	<extension point="org.storydriven.core.ui.expressionEditor">
+		<editor
+			class="org.storydriven.core.ui.ocl.editor.OclExpressionEditor"
+			language="OCL" version="1.0"/>
+	</extension>
 </plugin>

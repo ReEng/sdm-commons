@@ -16,8 +16,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
-import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.command.SetCommand;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.swt.SWT;
@@ -37,6 +38,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.core.expressions.util.ExpressionUtils;
 import org.storydriven.storydiagrams.activities.Activity;
@@ -70,239 +72,13 @@ public class EditExpressionDialog extends Dialog {
 
 	private EClassifier contextClassifier;
 	private EClassifier expectedReturnType;
-	private TransactionalEditingDomain editingDomain;
+	private EditingDomain editingDomain;
 	private String originalText;
 	private TextualExpression expression;
 	private Activity activity;
 	private Map<String, EClassifier> contextInformation;
 
 	private Composite languageEditingArea;
-
-	public EditExpressionDialog(Shell parent) {
-		super(parent);
-		initializeSourceViewerProviders();
-	}
-
-	private void initializeSourceViewerProviders() {
-
-		// This method accesses the extension point instead of using ExpressionUtils because this particular extension
-		// point
-		// belongs to the .modeling.diagram.custom package. ExpressionUtils provides access to the extension point in
-		// .modeling
-		if (Platform.getExtensionRegistry() != null) {
-			sourceViewerProviders = new HashMap<String, SourceViewerProvider>();
-
-			IConfigurationElement[] configurationElements = Platform.getExtensionRegistry()
-					.getConfigurationElementsFor(EXPRESSION_SOURCE_VIEWER_EXTENSION_POINT_ID);
-
-			for (IConfigurationElement configurationElement : configurationElements) {
-				String s = configurationElement.getAttribute(EXPRESSION_LANGUAGES_LANGUAGE_ATTRIBUTE_NAME);
-				String v = configurationElement.getAttribute(EXPRESSION_LANGUAGES_VERSION_ATTRIBUTE_NAME);
-
-				if ((s != null && !("".equals(s))) && (v != null && !("".equals(v)))) {
-					try {
-						sourceViewerProviders.put(s.concat(v), (SourceViewerProvider) configurationElement
-								.createExecutableExtension(EXPRESSION_SOURCE_VIEWER_ATTRIBUTE_NAME));
-					} catch (CoreException e) {
-						// Skip it but show error message
-						e.printStackTrace();
-					}
-				}
-			}
-		}
-
-		for (String aLanguage : ExpressionUtils.getAvailableExpressionLanguages()) {
-			for (String aVersion : ExpressionUtils.getAvailableExpressionLanguageVersions(aLanguage)) {
-				if (!sourceViewerProviders.containsKey(aLanguage.concat(aVersion))) {
-					sourceViewerProviders.put(aLanguage.concat(aVersion), new SourceViewerProvider());
-				}
-			}
-		}
-	}
-
-	@Override
-	public void create() {
-		super.create();
-	}
-
-	@Override
-	public boolean close() {
-		this.disposeSourceViewerProviders();
-		return super.close();
-	}
-
-	@Override
-	protected void okPressed() {
-		if (expression != null) {
-			RecordingCommand command = new RecordingCommand(editingDomain) {
-				@Override
-				protected void doExecute() {
-					expression.setLanguage(getSelectedLanguage());
-					expression.setLanguageVersion(getSelectedVersion());
-					expression.setExpressionText(currentSourceViewer.getDocument().get());
-				}
-			};
-
-			editingDomain.getCommandStack().execute(command);
-		}
-		super.okPressed();
-	}
-
-	private String getSelectedVersion() {
-		return languageChoosingWidget.getSelectedVersion();
-	}
-
-	private String getSelectedLanguage() {
-		return languageChoosingWidget.getSelectedLanguage();
-	}
-
-	/**
-	 * @see org.eclipse.jface.dialogs.Dialog# createDialogArea(org.eclipse.swt.widgets.Composite)
-	 */
-	protected Control createDialogArea(Composite parent) {
-
-		this.getShell().setText(DIALOG_TITLE);
-
-		Composite composite = (Composite) super.createDialogArea(parent);
-		composite.setLayout(new RowLayout(SWT.VERTICAL));
-
-		if (ExpressionUtils.getAmountLanguages() <= RADIO_BUTTON_THRESHOLD_LANGUAGES
-				&& ExpressionUtils.getMaximumAmountVersions() <= RADIO_BUTTON_THRESHOLD_VERSIONS) {
-			languageChoosingWidget = new LanguageSelectionRadioWidget(composite, SWT.NONE);
-		} else {
-			languageChoosingWidget = new LanguageSelectionComboWidget(composite, SWT.NONE);
-		}
-
-		populateLanguageChoosingWidget(languageChoosingWidget);
-
-		LanguageSelectedListener listener = new LanguageSelectedListener() {
-			@Override
-			public void languageSelected(LanguageSelectedEvent event) {
-				changeSourceViewerTo(event.language, event.version);
-			}
-
-			@Override
-			public void noLanguageSelected() {
-				changeToDefaultSourceViewer();
-			}
-		};
-
-		languageChoosingWidget.addLanguageSelectedListener(listener);
-
-		Composite expectedReturnArea = new Composite(composite, SWT.NONE);
-		expectedReturnArea.setLayout(new RowLayout());
-		Label expectedReturnLabel = new Label(expectedReturnArea, SWT.NONE);
-		expectedReturnLabel.setText("Expected return Value:");
-		Label expectedReturnValueLabel = new Label(expectedReturnArea, SWT.NONE);
-		expectedReturnValueLabel.setText(this.getExpectedReturnString());
-
-		languageEditingArea = new Composite(composite, SWT.NONE);
-		languageEditingArea.setLayout(new StackLayout());
-		languageEditingArea.setLayoutData(new RowData(DIALOG_WIDTH, SOURCEVIEWER_HEIGHT));
-
-		initializeSourceViewers();
-		composite.layout(false);
-		languageEditingArea.layout(false);
-
-		adjustDefaultSourceViewer();
-
-		return composite;
-	}
-
-	private void populateLanguageChoosingWidget(LanguageSelectionWidget alanguageChoosingWidget) {
-		for (String aLanguage : ExpressionUtils.getAvailableExpressionLanguages()) {
-			for (String aVersion : ExpressionUtils.getAvailableExpressionLanguageVersions(aLanguage)) {
-				alanguageChoosingWidget.addLanguageWithVersion(aLanguage, aVersion);
-			}
-		}
-	}
-
-	private void adjustDefaultSourceViewer() {
-		if (ExpressionUtils.getAvailableExpressionLanguages().contains(DEFAULT_LANGUAGE)) {
-			String availableVersion = ExpressionUtils.getAvailableExpressionLanguageVersions(DEFAULT_LANGUAGE).get(0);
-			languageChoosingWidget.setSelectedLanguage(DEFAULT_LANGUAGE, availableVersion);
-			changeSourceViewerTo(DEFAULT_LANGUAGE, availableVersion);
-		}
-	}
-
-	private void initializeSourceViewers() {
-		sourceViewers = new HashMap<String, ISourceViewer>();
-		if (contextInformation == null) {
-			contextInformation = new LinkedHashMap<String, EClassifier>();
-		}
-		for (Entry<String, SourceViewerProvider> svpEntry : sourceViewerProviders.entrySet()) {
-			ISourceViewer sv = svpEntry.getValue().createSourceViewer(languageEditingArea,
-					SWT.BORDER | SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL, contextClassifier, contextInformation,
-					originalText);
-			sourceViewers.put(svpEntry.getKey(), sv);
-
-			sv.getTextWidget().setVisible(false);
-		}
-
-		defaultSourceViewer = new SourceViewerProvider().createSourceViewer(languageEditingArea, SWT.BORDER | SWT.MULTI
-				| SWT.H_SCROLL | SWT.V_SCROLL, contextClassifier, contextInformation, originalText);
-		currentSourceViewer = defaultSourceViewer;
-		currentSourceViewer.getTextWidget().setVisible(true);
-		((StackLayout) languageEditingArea.getLayout()).topControl = currentSourceViewer.getTextWidget();
-
-		languageEditingArea.layout();
-	}
-
-	private void disposeSourceViewerProviders() {
-		for (SourceViewerProvider svp : sourceViewerProviders.values()) {
-			svp.dispose();
-		}
-	}
-
-	private void changeSourceViewerTo(String language, String version) {
-		changeSourceViewerTo(language.concat(version));
-	}
-
-	private void changeSourceViewerTo(String languageKey) {
-		if (sourceViewers.containsKey(languageKey)) {
-			placeSourceViewer(sourceViewers.get(languageKey));
-		} else {
-			changeToDefaultSourceViewer();
-		}
-	}
-
-	private void changeToDefaultSourceViewer() {
-		placeSourceViewer(defaultSourceViewer);
-	}
-
-	private void placeSourceViewer(ISourceViewer nextSourceViewer) {
-		String text = currentSourceViewer.getDocument().get();
-		nextSourceViewer.getDocument().set(text);
-		currentSourceViewer.getTextWidget().setVisible(false);
-
-		((StackLayout) languageEditingArea.getLayout()).topControl = nextSourceViewer.getTextWidget();
-		nextSourceViewer.getTextWidget().setVisible(true);
-		currentSourceViewer = nextSourceViewer;
-		languageEditingArea.layout();
-	}
-
-	private String getExpectedReturnString() {
-		return (this.expectedReturnType != null) ? this.expectedReturnType.getName() : "null";
-	}
-
-	public void setExpectedReturnType(EClassifier classifier) {
-		this.expectedReturnType = classifier;
-	}
-
-	public void setChangeAttributeCommand(Command changeAttributeCommand,
-			TransactionalEditingDomain transactionalEditingDomain) {
-
-		this.editingDomain = transactionalEditingDomain;
-	}
-
-	public void setContextInformation(Map<String, EClassifier> contextInformation) {
-		this.contextInformation = contextInformation;
-	}
-
-	public void setExpression(TextualExpression expression) {
-		this.expression = expression;
-		this.originalText = expression.getExpressionText();
-	}
 
 	public interface LanguageSelectionWidget {
 		public abstract void addLanguageSelectedListener(LanguageSelectedListener listener);
@@ -432,10 +208,17 @@ public class EditExpressionDialog extends Dialog {
 
 		}
 
-		private void noLanguageSelected() {
-			for (LanguageSelectedListener listener : this.languageSelectedListeners) {
-				listener.noLanguageSelected();
-			}
+		/**
+		 * Sets the selected Language of the widget if it is already registered. If not nothing happens. Furthermore
+		 * this does not trigger a languageSelectedEvent.
+		 */
+		@Override
+		public void setSelectedLanguage(String language, String version) {
+			int index = searchStringInCombo(languageCombo, language);
+			languageCombo.select(index);
+
+			index = searchStringInCombo(versionCombo, version);
+			languageCombo.select(index);
 		}
 
 		@Override
@@ -448,17 +231,10 @@ public class EditExpressionDialog extends Dialog {
 			languageDirectory.get(language).add(version);
 		}
 
-		/**
-		 * Sets the selected Language of the widget if it is already registered. If not nothing happens.
-		 * Furthermore this does not trigger a languageSelectedEvent.
-		 */
-		@Override
-		public void setSelectedLanguage(String language, String version) {
-			int index = searchStringInCombo(languageCombo, language);
-			languageCombo.select(index);
-
-			index = searchStringInCombo(versionCombo, version);
-			languageCombo.select(index);
+		private void noLanguageSelected() {
+			for (LanguageSelectedListener listener : this.languageSelectedListeners) {
+				listener.noLanguageSelected();
+			}
 		}
 
 		private int searchStringInCombo(Combo aCombo, String searchString) {
@@ -536,6 +312,18 @@ public class EditExpressionDialog extends Dialog {
 		}
 
 		@Override
+		public void setSelectedLanguage(String language, String version) {
+			Button searchedButton = buttonList.keySet().iterator().next();
+			for (Button aButton : buttonList.keySet()) {
+				if (buttonList.get(aButton)[0].equals(language) && buttonList.get(aButton)[1].equals(version)) {
+					searchedButton = aButton;
+				}
+				aButton.setSelection(false);
+			}
+			searchedButton.setSelection(true);
+		}
+
+		@Override
 		public void addLanguageWithVersion(String language, String version) {
 			if (!languageDirectory.containsKey(language)) {
 				languageDirectory.put(language, new Vector<String>());
@@ -566,18 +354,6 @@ public class EditExpressionDialog extends Dialog {
 		}
 
 		@Override
-		public void setSelectedLanguage(String language, String version) {
-			Button searchedButton = buttonList.keySet().iterator().next();
-			for (Button aButton : buttonList.keySet()) {
-				if (buttonList.get(aButton)[0].equals(language) && buttonList.get(aButton)[1].equals(version)) {
-					searchedButton = aButton;
-				}
-				aButton.setSelection(false);
-			}
-			searchedButton.setSelection(true);
-		}
-
-		@Override
 		public String getSelectedLanguage() {
 			return getInfoOfSelectedButton(0);
 		}
@@ -599,8 +375,228 @@ public class EditExpressionDialog extends Dialog {
 
 	}
 
+	public EditExpressionDialog(Shell parent) {
+		super(parent);
+		initializeSourceViewerProviders();
+	}
+
+	private void initializeSourceViewerProviders() {
+
+		// This method accesses the extension point instead of using ExpressionUtils because this particular extension
+		// point
+		// belongs to the .modeling.diagram.custom package. ExpressionUtils provides access to the extension point in
+		// .modeling
+		if (Platform.getExtensionRegistry() != null) {
+			sourceViewerProviders = new HashMap<String, SourceViewerProvider>();
+
+			IConfigurationElement[] configurationElements = Platform.getExtensionRegistry()
+					.getConfigurationElementsFor(EXPRESSION_SOURCE_VIEWER_EXTENSION_POINT_ID);
+
+			for (IConfigurationElement configurationElement : configurationElements) {
+				String s = configurationElement.getAttribute(EXPRESSION_LANGUAGES_LANGUAGE_ATTRIBUTE_NAME);
+				String v = configurationElement.getAttribute(EXPRESSION_LANGUAGES_VERSION_ATTRIBUTE_NAME);
+
+				if ((s != null && !("".equals(s))) && (v != null && !("".equals(v)))) {
+					try {
+						sourceViewerProviders.put(s.concat(v), (SourceViewerProvider) configurationElement
+								.createExecutableExtension(EXPRESSION_SOURCE_VIEWER_ATTRIBUTE_NAME));
+					} catch (CoreException e) {
+						// Skip it but show error message
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+
+		for (String aLanguage : ExpressionUtils.getAvailableExpressionLanguages()) {
+			for (String aVersion : ExpressionUtils.getAvailableExpressionLanguageVersions(aLanguage)) {
+				if (!sourceViewerProviders.containsKey(aLanguage.concat(aVersion))) {
+					sourceViewerProviders.put(aLanguage.concat(aVersion), new SourceViewerProvider());
+				}
+			}
+		}
+	}
+
+	@Override
+	public void create() {
+		super.create();
+	}
+
+	@Override
+	public boolean close() {
+		this.disposeSourceViewerProviders();
+		return super.close();
+	}
+
+	public void setExpectedReturnType(EClassifier classifier) {
+		this.expectedReturnType = classifier;
+	}
+
+	public void setChangeAttributeCommand(Command changeAttributeCommand, EditingDomain transactionalEditingDomain) {
+
+		this.editingDomain = transactionalEditingDomain;
+	}
+
+	public void setContextInformation(Map<String, EClassifier> contextInformation) {
+		this.contextInformation = contextInformation;
+	}
+
+	public void setExpression(TextualExpression expression) {
+		this.expression = expression;
+		this.originalText = expression.getExpressionText();
+	}
+
 	public void setActivity(Activity activity) {
 		this.activity = activity;
+	}
+
+	public Expression getExpression() {
+		return expression;
+	}
+
+	/**
+	 * @see org.eclipse.jface.dialogs.Dialog# createDialogArea(org.eclipse.swt.widgets.Composite)
+	 */
+	protected Control createDialogArea(Composite parent) {
+
+		this.getShell().setText(DIALOG_TITLE);
+
+		Composite composite = (Composite) super.createDialogArea(parent);
+		composite.setLayout(new RowLayout(SWT.VERTICAL));
+
+		if (ExpressionUtils.getAmountLanguages() <= RADIO_BUTTON_THRESHOLD_LANGUAGES
+				&& ExpressionUtils.getMaximumAmountVersions() <= RADIO_BUTTON_THRESHOLD_VERSIONS) {
+			languageChoosingWidget = new LanguageSelectionRadioWidget(composite, SWT.NONE);
+		} else {
+			languageChoosingWidget = new LanguageSelectionComboWidget(composite, SWT.NONE);
+		}
+
+		populateLanguageChoosingWidget(languageChoosingWidget);
+
+		LanguageSelectedListener listener = new LanguageSelectedListener() {
+			@Override
+			public void languageSelected(LanguageSelectedEvent event) {
+				changeSourceViewerTo(event.language, event.version);
+			}
+
+			@Override
+			public void noLanguageSelected() {
+				changeToDefaultSourceViewer();
+			}
+		};
+
+		languageChoosingWidget.addLanguageSelectedListener(listener);
+
+		Composite expectedReturnArea = new Composite(composite, SWT.NONE);
+		expectedReturnArea.setLayout(new RowLayout());
+		Label expectedReturnLabel = new Label(expectedReturnArea, SWT.NONE);
+		expectedReturnLabel.setText("Expected return Value:");
+		Label expectedReturnValueLabel = new Label(expectedReturnArea, SWT.NONE);
+		expectedReturnValueLabel.setText(this.getExpectedReturnString());
+
+		languageEditingArea = new Composite(composite, SWT.NONE);
+		languageEditingArea.setLayout(new StackLayout());
+		languageEditingArea.setLayoutData(new RowData(DIALOG_WIDTH, SOURCEVIEWER_HEIGHT));
+
+		initializeSourceViewers();
+		composite.layout(false);
+		languageEditingArea.layout(false);
+
+		adjustDefaultSourceViewer();
+
+		return composite;
+	}
+
+	private void populateLanguageChoosingWidget(LanguageSelectionWidget alanguageChoosingWidget) {
+		for (String aLanguage : ExpressionUtils.getAvailableExpressionLanguages()) {
+			for (String aVersion : ExpressionUtils.getAvailableExpressionLanguageVersions(aLanguage)) {
+				alanguageChoosingWidget.addLanguageWithVersion(aLanguage, aVersion);
+			}
+		}
+	}
+
+	private void initializeSourceViewers() {
+		sourceViewers = new HashMap<String, ISourceViewer>();
+		if (contextInformation == null) {
+			contextInformation = new LinkedHashMap<String, EClassifier>();
+		}
+		for (Entry<String, SourceViewerProvider> svpEntry : sourceViewerProviders.entrySet()) {
+			ISourceViewer sv = svpEntry.getValue().createSourceViewer(languageEditingArea,
+					SWT.BORDER | SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL, contextClassifier, contextInformation,
+					originalText);
+			sourceViewers.put(svpEntry.getKey(), sv);
+
+			sv.getTextWidget().setVisible(false);
+		}
+
+		defaultSourceViewer = new SourceViewerProvider().createSourceViewer(languageEditingArea, SWT.BORDER | SWT.MULTI
+				| SWT.H_SCROLL | SWT.V_SCROLL, contextClassifier, contextInformation, originalText);
+		currentSourceViewer = defaultSourceViewer;
+		currentSourceViewer.getTextWidget().setVisible(true);
+		((StackLayout) languageEditingArea.getLayout()).topControl = currentSourceViewer.getTextWidget();
+
+		languageEditingArea.layout();
+	}
+
+	private void adjustDefaultSourceViewer() {
+		if (ExpressionUtils.getAvailableExpressionLanguages().contains(DEFAULT_LANGUAGE)) {
+			String availableVersion = ExpressionUtils.getAvailableExpressionLanguageVersions(DEFAULT_LANGUAGE).get(0);
+			languageChoosingWidget.setSelectedLanguage(DEFAULT_LANGUAGE, availableVersion);
+			changeSourceViewerTo(DEFAULT_LANGUAGE, availableVersion);
+		}
+	}
+
+	private void changeSourceViewerTo(String language, String version) {
+		changeSourceViewerTo(language.concat(version));
+	}
+
+	private void changeSourceViewerTo(String languageKey) {
+		if (sourceViewers.containsKey(languageKey)) {
+			placeSourceViewer(sourceViewers.get(languageKey));
+		} else {
+			changeToDefaultSourceViewer();
+		}
+	}
+
+	private void changeToDefaultSourceViewer() {
+		placeSourceViewer(defaultSourceViewer);
+	}
+
+	private void placeSourceViewer(ISourceViewer nextSourceViewer) {
+		String text = currentSourceViewer.getDocument().get();
+		nextSourceViewer.getDocument().set(text);
+		currentSourceViewer.getTextWidget().setVisible(false);
+
+		((StackLayout) languageEditingArea.getLayout()).topControl = nextSourceViewer.getTextWidget();
+		nextSourceViewer.getTextWidget().setVisible(true);
+		currentSourceViewer = nextSourceViewer;
+		languageEditingArea.layout();
+	}
+
+	@Override
+	protected void okPressed() {
+		if (expression != null) {
+			EStructuralFeature feature = ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE;
+			Command command = SetCommand.create(editingDomain, expression, feature, getSelectedLanguage());
+
+			feature = ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION;
+			command.chain(SetCommand.create(editingDomain, expression, feature, getSelectedVersion()));
+
+			feature = ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT;
+			command.chain(SetCommand
+					.create(editingDomain, expression, feature, currentSourceViewer.getDocument().get()));
+
+			editingDomain.getCommandStack().execute(command);
+		}
+		super.okPressed();
+	}
+
+	private String getSelectedLanguage() {
+		return languageChoosingWidget.getSelectedLanguage();
+	}
+
+	private String getSelectedVersion() {
+		return languageChoosingWidget.getSelectedVersion();
 	}
 
 	protected Map<String, EClassifier> getContextInformation() {
@@ -625,8 +621,7 @@ public class EditExpressionDialog extends Dialog {
 			}
 
 			/*
-			 * Variables created in story patterns and
-			 * VariableDeclarationActions
+			 * Variables created in story patterns and VariableDeclarationActions
 			 */
 			TreeIterator<EObject> it = activity.eAllContents();
 
@@ -646,7 +641,13 @@ public class EditExpressionDialog extends Dialog {
 		return contextInfos;
 	}
 
-	public Expression getExpression() {
-		return expression;
+	private void disposeSourceViewerProviders() {
+		for (SourceViewerProvider svp : sourceViewerProviders.values()) {
+			svp.dispose();
+		}
+	}
+
+	private String getExpectedReturnString() {
+		return (this.expectedReturnType != null) ? this.expectedReturnType.getName() : "null";
 	}
 }

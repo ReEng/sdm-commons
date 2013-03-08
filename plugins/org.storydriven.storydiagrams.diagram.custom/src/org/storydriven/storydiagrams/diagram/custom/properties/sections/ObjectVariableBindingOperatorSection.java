@@ -2,9 +2,7 @@ package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
 import java.util.List;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEEnumRadioSection;
 import org.storydriven.storydiagrams.diagram.custom.util.ValidationUtil;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
@@ -12,9 +10,17 @@ import org.storydriven.storydiagrams.patterns.BindingState;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
-public class ObjectVariableBindingOperatorSection extends AbstractEEnumRadioSection<BindingOperator> {
+import de.upb.swt.core.ui.properties.sections.AbstractRadioGroupSection;
+
+public class ObjectVariableBindingOperatorSection extends AbstractRadioGroupSection<BindingOperator> {
 	@Override
-	protected String getDescription() {
+	public void refresh() {
+		super.refresh();
+		checkEnabled();
+	}
+
+	@Override
+	protected String getLabelText() {
 		return "Binding Operator";
 	}
 
@@ -26,11 +32,6 @@ public class ObjectVariableBindingOperatorSection extends AbstractEEnumRadioSect
 	@Override
 	protected List<BindingOperator> getValues() {
 		return BindingOperator.VALUES;
-	}
-
-	@Override
-	protected void notifyChanged(Notification msg) {
-		checkEnabled();
 	}
 
 	protected boolean isEnabled(BindingOperator operator) {

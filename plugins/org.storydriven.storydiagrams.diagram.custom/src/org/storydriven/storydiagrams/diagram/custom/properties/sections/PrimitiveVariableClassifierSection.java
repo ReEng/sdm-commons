@@ -6,12 +6,13 @@ import java.util.List;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.storydiagrams.diagram.custom.ResourceManager;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEListComboSection;
 import org.storydriven.storydiagrams.diagram.custom.util.ActivityUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
-public class PrimitiveVariableClassifierSection extends AbstractEListComboSection<EDataType> {
+import de.upb.swt.core.ui.properties.sections.AbstractComboSection;
+
+public class PrimitiveVariableClassifierSection extends AbstractComboSection<EDataType> {
 	@Override
 	protected List<EDataType> getItems() {
 		List<EDataType> items = new ArrayList<EDataType>();

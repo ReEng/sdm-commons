@@ -3,55 +3,29 @@ package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.edit.command.AddCommand;
+import org.eclipse.emf.edit.command.RemoveCommand;
+import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.jface.window.Window;
+import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
 import org.storydriven.storydiagrams.calls.Callable;
 import org.storydriven.storydiagrams.calls.CallsPackage;
 import org.storydriven.storydiagrams.diagram.custom.ResourceManager;
 import org.storydriven.storydiagrams.diagram.custom.dialogs.SelectActivityDialog;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEListComboSection;
 import org.storydriven.storydiagrams.diagram.custom.util.ActivityUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.TextUtil;
 
-public class ActivityCallNodeCalleeSection extends AbstractEListComboSection<Callable> {
+import de.upb.swt.core.ui.properties.sections.AbstractComboSection;
+
+public class ActivityCallNodeCalleeSection extends AbstractComboSection<Callable> {
 	private SelectActivityDialog dialog;
 
 	public ActivityCallNodeCalleeSection() {
 		dialog = new SelectActivityDialog();
-	}
-
-	@Override
-	protected void handleSearchButtonClicked() {
-		// prepare dialog
-		dialog.setActivityCallNode(getElement());
-
-		if (dialog.open() == Window.OK) {
-			final Activity call = dialog.getElement();
-			if (call != null) {
-				execute(call);
-				refresh();
-			}
-		}
-	}
-
-	@Override
-	protected void execute(EStructuralFeature feature, final Object value) {
-		super.execute(feature, value);
-
-		// add to called activities
-		RecordingCommand command = new RecordingCommand(getEditingDomain()) {
-			@Override
-			protected void doExecute() {
-				getElement().getCalledActivities().clear();
-				if (value instanceof Activity) {
-					getElement().getCalledActivities().add((Activity) value);
-				}
-			}
-		};
-		execute(command);
 	}
 
 	@Override
@@ -66,6 +40,28 @@ public class ActivityCallNodeCalleeSection extends AbstractEListComboSection<Cal
 	}
 
 	@Override
+	protected void handleButtonClicked() {
+		// prepare dialog
+		dialog.setActivityCallNode(getElement());
+
+		if (dialog.open() == Window.OK) {
+			final Activity call = dialog.getElement();
+			if (call != null) {
+				ActivityCallNode owner = getElement();
+				EStructuralFeature feature = getFeature();
+
+				Command command = SetCommand.create(getEditingDomain(), owner, feature, call);
+
+				feature = ActivitiesPackage.Literals.ACTIVITY_CALL_NODE__CALLED_ACTIVITY;
+				command.chain(RemoveCommand.create(getEditingDomain(), owner, feature, owner.getCalledActivities()));
+				command.chain(AddCommand.create(getEditingDomain(), owner, feature, call));
+
+				refresh();
+			}
+		}
+	}
+
+	@Override
 	protected ActivityCallNode getElement() {
 		return (ActivityCallNode) super.getElement();
 	}
@@ -76,7 +72,7 @@ public class ActivityCallNodeCalleeSection extends AbstractEListComboSection<Cal
 	}
 
 	@Override
-	protected boolean isShowSearchButton() {
+	protected boolean shouldShowButton() {
 		return true;
 	}
 

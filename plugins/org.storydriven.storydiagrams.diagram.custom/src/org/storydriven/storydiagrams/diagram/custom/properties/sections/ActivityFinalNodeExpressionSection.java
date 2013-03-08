@@ -2,6 +2,7 @@ package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.TextualExpression;
@@ -19,7 +20,7 @@ public class ActivityFinalNodeExpressionSection extends AbstractExpressionSectio
 			expression.setLanguage("OCL");
 			expression.setLanguageVersion("3.0");
 
-			RecordingCommand command = new RecordingCommand(getEditingDomain()) {
+			RecordingCommand command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 				@Override
 				protected void doExecute() {
 					getElement().getReturnValues().add(expression);
@@ -40,6 +41,7 @@ public class ActivityFinalNodeExpressionSection extends AbstractExpressionSectio
 
 		return super.getContextClassifier();
 	}
+
 	@Override
 	protected void postUpdate() {
 		Expression expression = getElement().getReturnValue();

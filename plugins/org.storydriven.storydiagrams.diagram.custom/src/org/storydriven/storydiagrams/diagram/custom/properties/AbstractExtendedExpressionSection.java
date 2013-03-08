@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.text.ITextListener;
@@ -73,7 +74,9 @@ import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFac
 import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPackage;
 import org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression;
 
-public abstract class AbstractExtendedExpressionSection extends AbstractSection {
+import de.upb.swt.core.ui.properties.sections.AbstractPropertySection;
+
+public abstract class AbstractExtendedExpressionSection extends AbstractPropertySection {
 	private static final String EXPRESSION_SOURCE_VIEWER_EXTENSION_POINT_ID = "org.storydriven.storydiagrams.diagram.custom.expressionSourceViewerExtension";
 	private static final String EXPRESSION_LANGUAGES_LANGUAGE_ATTRIBUTE_NAME = "expressionLanguage";
 	private static final String EXPRESSION_LANGUAGES_VERSION_ATTRIBUTE_NAME = "version";
@@ -506,7 +509,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 	}
 
 	@Override
-	protected void layoutWidgets(Composite parent) {
+	protected void layoutWidgets() {
 		// group
 		GridLayoutFactory.fillDefaults().margins(6, 6).applyTo(group);
 
@@ -530,7 +533,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 
 	private void removeExpression() {
 		if (getExpression() != null) {
-			RecordingCommand command = new RecordingCommand(getEditingDomain()) {
+			RecordingCommand command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 				@Override
 				protected void doExecute() {
 					EcoreUtil.delete(getExpression(), true);
@@ -543,7 +546,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 	}
 
 	private void internalSetExpression(final Expression expression) {
-		RecordingCommand command = new RecordingCommand(getEditingDomain()) {
+		RecordingCommand command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 			@Override
 			protected void doExecute() {
 				setExpression(expression);
@@ -555,7 +558,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 	}
 
 	private void remove() {
-		RecordingCommand command = new RecordingCommand(getEditingDomain()) {
+		RecordingCommand command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 			@Override
 			protected void doExecute() {
 				IStructuredSelection selection = (IStructuredSelection) treeViewer.getSelection();
@@ -602,7 +605,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 				public void textChanged(TextEvent event) {
 					final Expression expression = getExpression();
 					if (expression instanceof TextualExpression) {
-						RecordingCommand command = new RecordingCommand(getEditingDomain()) {
+						RecordingCommand command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 							@Override
 							protected void doExecute() {
 								((TextualExpression) expression).setExpressionText(sourceViewer.getDocument().get());
@@ -813,7 +816,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 		if (selection.size() == 1) {
 			final Object selected = selection.getFirstElement();
 			if (selected instanceof EObject) {
-				RecordingCommand command = new RecordingCommand(getEditingDomain()) {
+				RecordingCommand command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 					@Override
 					protected void doExecute() {
 						((EObject) selected).eSet(feature, value);
@@ -829,7 +832,7 @@ public abstract class AbstractExtendedExpressionSection extends AbstractSection 
 	}
 
 	private void refreshExpression() {
-		RecordingCommand command = new RecordingCommand(getEditingDomain()) {
+		RecordingCommand command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 			protected void doExecute() {
 				Expression expression = getExpression();
 				setExpression(null);

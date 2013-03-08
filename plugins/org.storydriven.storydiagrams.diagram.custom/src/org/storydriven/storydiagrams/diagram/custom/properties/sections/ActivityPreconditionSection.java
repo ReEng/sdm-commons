@@ -11,10 +11,11 @@ import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.MatchingStoryNode;
 import org.storydriven.storydiagrams.diagram.custom.dialogs.SelectActivityPreconditionDialog;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEListComboSection;
 import org.storydriven.storydiagrams.diagram.custom.util.TextUtil;
 
-public class ActivityPreconditionSection extends AbstractEListComboSection<MatchingStoryNode> {
+import de.upb.swt.core.ui.properties.sections.AbstractComboSection;
+
+public class ActivityPreconditionSection extends AbstractComboSection<MatchingStoryNode> {
 	private SelectActivityPreconditionDialog dialog;
 
 	public ActivityPreconditionSection() {
@@ -22,11 +23,11 @@ public class ActivityPreconditionSection extends AbstractEListComboSection<Match
 	}
 
 	@Override
-	protected void handleSearchButtonClicked() {
+	protected void handleButtonClicked() {
 		dialog.setInput(getEditingDomain().getResourceSet());
 		dialog.setSelectedElement(getElement().getPrecondition());
 		if (dialog.open() == Window.OK) {
-			execute(dialog.getElement());
+			set(dialog.getElement());
 		}
 		refresh();
 	}
@@ -53,7 +54,7 @@ public class ActivityPreconditionSection extends AbstractEListComboSection<Match
 	}
 
 	@Override
-	protected boolean isShowSearchButton() {
+	protected boolean shouldShowButton() {
 		return true;
 	}
 

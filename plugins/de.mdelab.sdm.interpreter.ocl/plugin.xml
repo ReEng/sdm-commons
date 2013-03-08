@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension
-         point="de.mdelab.sdm.interpreter.core.eclipse.expressionInterpreterExtension">
-      <expressionInterpreter
-            expressionInterpreterClass="de.mdelab.sdm.interpreter.ocl.OCLExpressionInterpreter"
-            expressionLanguage="OCL"
-            expressionLanguageVersion="1.0">
-      </expressionInterpreter>
-   </extension>
-
+	<extension point="de.mdelab.sdm.interpreter.core.eclipse.expressionInterpreterExtension">
+		<expressionInterpreter
+			expressionInterpreterClass="de.mdelab.sdm.interpreter.ocl.OCLExpressionInterpreter"
+			expressionLanguage="OCL"
+			expressionLanguageVersion="1.0"/>
+	</extension>
 </plugin>

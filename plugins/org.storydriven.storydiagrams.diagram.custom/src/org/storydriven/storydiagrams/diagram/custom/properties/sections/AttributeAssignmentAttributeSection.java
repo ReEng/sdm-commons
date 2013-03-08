@@ -6,12 +6,13 @@ import java.util.List;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEListComboSection;
 import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
 import org.storydriven.storydiagrams.patterns.AttributeAssignment;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
-public class AttributeAssignmentAttributeSection extends AbstractEListComboSection<EAttribute> {
+import de.upb.swt.core.ui.properties.sections.AbstractComboSection;
+
+public class AttributeAssignmentAttributeSection extends AbstractComboSection<EAttribute> {
 	@Override
 	protected List<EAttribute> getItems() {
 		List<EAttribute> items = new ArrayList<EAttribute>();

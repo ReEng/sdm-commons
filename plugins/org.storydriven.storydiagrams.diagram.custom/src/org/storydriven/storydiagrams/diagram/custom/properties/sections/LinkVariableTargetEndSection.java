@@ -6,18 +6,19 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEListComboSection;
 import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
 import org.storydriven.storydiagrams.patterns.LinkVariable;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
-public class LinkVariableTargetEndSection extends AbstractEListComboSection<EReference> {
+import de.upb.swt.core.ui.properties.sections.AbstractComboSection;
+
+public class LinkVariableTargetEndSection extends AbstractComboSection<EReference> {
 	@Override
 	protected List<EReference> getItems() {
 		List<EReference> result = new ArrayList<EReference>();
 		result.add(null);
-		
+
 		if (getElement().getTarget() instanceof ObjectVariable) {
 			EClass sourceClassifier = getElement().getSource().getClassifier();
 			EClass targetClassifier = ((ObjectVariable) getElement().getTarget()).getClassifier();

@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.viewers.ArrayContentProvider;
@@ -36,11 +37,12 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
 import org.storydriven.storydiagrams.diagram.custom.dialogs.ConfigureEParameterDialog;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractSection;
 import org.storydriven.storydiagrams.diagram.custom.providers.EParametersLabelProvider;
 import org.storydriven.storydiagrams.diagram.custom.util.ActivityUtil;
 
-public class ActivityParametersSection extends AbstractSection {
+import de.upb.swt.core.ui.properties.sections.AbstractPropertySection;
+
+public class ActivityParametersSection extends AbstractPropertySection {
 	private ConfigureEParameterDialog configureDialog;
 
 	private TableViewer inParametersViewer;
@@ -227,8 +229,125 @@ public class ActivityParametersSection extends AbstractSection {
 	}
 
 	@Override
-	protected void notifyChanged(Notification msg) {
-		refresh();
+	protected boolean shouldRefresh(Notification msg) {
+		// TODO: possibly too aggressive
+		return true;
+	}
+
+	@Override
+	protected void createWidgets(Composite parent, TabbedPropertySheetWidgetFactory factory) {
+		// input group
+		Group inParametersGroup = factory.createGroup(parent, "In Parameters");
+		GridLayoutFactory.fillDefaults().margins(6, 6).numColumns(2).applyTo(inParametersGroup);
+
+		// add, remove, configure controls
+		Composite inControlsComposite = factory.createFlatFormComposite(inParametersGroup);
+		GridLayoutFactory.fillDefaults().spacing(0, 0).margins(0, 0).numColumns(3).applyTo(inControlsComposite);
+		GridDataFactory.fillDefaults().grab(true, false).align(SWT.TRAIL, SWT.FILL).applyTo(inControlsComposite);
+
+		factory.createFlatFormComposite(inParametersGroup);
+
+		inAddButton = factory.createButton(inControlsComposite, EMPTY, SWT.PUSH);
+		inAddButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_ADD));
+		inAddButton.setToolTipText("Add In Parameter");
+
+		inRemoveButton = factory.createButton(inControlsComposite, EMPTY, SWT.PUSH);
+		inRemoveButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_REMOVE));
+		inRemoveButton.setToolTipText("Remove Selected In Parameters");
+		inRemoveButton.setEnabled(false);
+
+		inConfigureButton = factory.createButton(inControlsComposite, EMPTY, SWT.PUSH);
+		inConfigureButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_CONFIGURE));
+		inConfigureButton.setToolTipText("Configure Selected In Parameter");
+		inConfigureButton.setEnabled(false);
+
+		// input table
+		Table inParametersTable = factory.createTable(inParametersGroup, SWT.BORDER | SWT.MULTI | SWT.FULL_SELECTION);
+		inParametersTable.setLinesVisible(true);
+		GridDataFactory.fillDefaults().grab(true, true).applyTo(inParametersTable);
+
+		inParametersViewer = new TableViewer(inParametersTable);
+		inParametersViewer.setContentProvider(new ArrayContentProvider());
+		inParametersViewer.setLabelProvider(new EParametersLabelProvider());
+
+		// up, down controls
+		Composite inUpDownControlsComposite = factory.createFlatFormComposite(inParametersGroup);
+		GridLayoutFactory.fillDefaults().spacing(0, 6).margins(0, 0).applyTo(inUpDownControlsComposite);
+
+		inUpButton = factory.createButton(inUpDownControlsComposite, EMPTY, SWT.PUSH);
+		inUpButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_UP));
+		inUpButton.setToolTipText("Move Parameter Up");
+		inUpButton.setEnabled(false);
+
+		inDownButton = factory.createButton(inUpDownControlsComposite, "", SWT.PUSH);
+		inDownButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_DOWN));
+		inDownButton.setToolTipText("Move Parameter Down");
+		inDownButton.setEnabled(false);
+
+		// output group
+		Group outParametersGroup = factory.createGroup(parent, "Out Parameters");
+		GridLayoutFactory.fillDefaults().margins(6, 6).numColumns(2).applyTo(outParametersGroup);
+
+		// add, remove, configure controls
+		Composite outControlsComposite = factory.createFlatFormComposite(outParametersGroup);
+		GridLayoutFactory.fillDefaults().spacing(0, 0).margins(0, 0).numColumns(4).applyTo(outControlsComposite);
+		GridDataFactory.fillDefaults().grab(true, false).align(SWT.TRAIL, SWT.FILL).applyTo(outControlsComposite);
+
+		factory.createFlatFormComposite(outParametersGroup);
+
+		outAddButton = factory.createButton(outControlsComposite, EMPTY, SWT.PUSH);
+		outAddButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_ADD));
+		outAddButton.setToolTipText("Add Out Parameter");
+
+		outRemoveButton = factory.createButton(outControlsComposite, EMPTY, SWT.PUSH);
+		outRemoveButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_REMOVE));
+		outRemoveButton.setToolTipText("Remove Selected Out Parameters");
+		outRemoveButton.setEnabled(false);
+
+		outConfigureButton = factory.createButton(outControlsComposite, EMPTY, SWT.PUSH);
+		outConfigureButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_CONFIGURE));
+		outConfigureButton.setToolTipText("Configure Selected Out Parameter");
+		outConfigureButton.setEnabled(false);
+
+		// output table
+		Table outParametersTable = factory.createTable(outParametersGroup, SWT.BORDER | SWT.MULTI | SWT.FULL_SELECTION);
+		outParametersTable.setLinesVisible(true);
+		GridDataFactory.fillDefaults().grab(true, true).applyTo(outParametersTable);
+
+		outParametersViewer = new TableViewer(outParametersTable);
+		outParametersViewer.setContentProvider(new ArrayContentProvider());
+		outParametersViewer.setLabelProvider(new EParametersLabelProvider(true));
+
+		// up, down controls
+		Composite outUpDownControlsComposite = factory.createFlatFormComposite(outParametersGroup);
+		GridLayoutFactory.fillDefaults().spacing(0, 6).margins(0, 0).applyTo(outUpDownControlsComposite);
+
+		outUpButton = factory.createButton(outUpDownControlsComposite, EMPTY, SWT.PUSH);
+		outUpButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_UP));
+		outUpButton.setToolTipText("Move Parameter Up");
+		outUpButton.setEnabled(false);
+
+		outDownButton = factory.createButton(outUpDownControlsComposite, EMPTY, SWT.PUSH);
+		outDownButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_DOWN));
+		outDownButton.setToolTipText("Move Parameter Down");
+		outDownButton.setEnabled(false);
+	}
+
+	@Override
+	protected void layoutWidgets() {
+		FormData data = new FormData();
+		data.left = new FormAttachment(0);
+		data.right = new FormAttachment(50, -6);
+		data.top = new FormAttachment(0);
+		data.bottom = new FormAttachment(100);
+		inParametersViewer.getControl().getParent().setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(50, 6);
+		data.right = new FormAttachment(100);
+		data.top = new FormAttachment(0);
+		data.bottom = new FormAttachment(100);
+		outParametersViewer.getControl().getParent().setLayoutData(data);
 	}
 
 	private void configure(final boolean isCreating, final boolean isOutgoing, final EParameter eParameter) {
@@ -244,7 +363,7 @@ public class ActivityParametersSection extends AbstractSection {
 			final String name = configureDialog.getName();
 			final EClassifier eClassifier = configureDialog.getEClassifier();
 
-			Command command = new RecordingCommand(getEditingDomain()) {
+			Command command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 				@Override
 				public void doExecute() {
 					eParameter.setName(name);
@@ -381,124 +500,8 @@ public class ActivityParametersSection extends AbstractSection {
 		return (Activity) super.getElement();
 	}
 
-	@Override
-	protected void createWidgets(Composite parent, TabbedPropertySheetWidgetFactory factory) {
-		// input group
-		Group inParametersGroup = factory.createGroup(parent, "In Parameters");
-		GridLayoutFactory.fillDefaults().margins(6, 6).numColumns(2).applyTo(inParametersGroup);
-
-		// add, remove, configure controls
-		Composite inControlsComposite = factory.createFlatFormComposite(inParametersGroup);
-		GridLayoutFactory.fillDefaults().spacing(0, 0).margins(0, 0).numColumns(3).applyTo(inControlsComposite);
-		GridDataFactory.fillDefaults().grab(true, false).align(SWT.TRAIL, SWT.FILL).applyTo(inControlsComposite);
-
-		factory.createFlatFormComposite(inParametersGroup);
-
-		inAddButton = factory.createButton(inControlsComposite, EMPTY, SWT.PUSH);
-		inAddButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_ADD));
-		inAddButton.setToolTipText("Add In Parameter");
-
-		inRemoveButton = factory.createButton(inControlsComposite, EMPTY, SWT.PUSH);
-		inRemoveButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_REMOVE));
-		inRemoveButton.setToolTipText("Remove Selected In Parameters");
-		inRemoveButton.setEnabled(false);
-
-		inConfigureButton = factory.createButton(inControlsComposite, EMPTY, SWT.PUSH);
-		inConfigureButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_CONFIGURE));
-		inConfigureButton.setToolTipText("Configure Selected In Parameter");
-		inConfigureButton.setEnabled(false);
-
-		// input table
-		Table inParametersTable = factory.createTable(inParametersGroup, SWT.BORDER | SWT.MULTI | SWT.FULL_SELECTION);
-		inParametersTable.setLinesVisible(true);
-		GridDataFactory.fillDefaults().grab(true, true).applyTo(inParametersTable);
-
-		inParametersViewer = new TableViewer(inParametersTable);
-		inParametersViewer.setContentProvider(new ArrayContentProvider());
-		inParametersViewer.setLabelProvider(new EParametersLabelProvider());
-
-		// up, down controls
-		Composite inUpDownControlsComposite = factory.createFlatFormComposite(inParametersGroup);
-		GridLayoutFactory.fillDefaults().spacing(0, 6).margins(0, 0).applyTo(inUpDownControlsComposite);
-
-		inUpButton = factory.createButton(inUpDownControlsComposite, EMPTY, SWT.PUSH);
-		inUpButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_UP));
-		inUpButton.setToolTipText("Move Parameter Up");
-		inUpButton.setEnabled(false);
-
-		inDownButton = factory.createButton(inUpDownControlsComposite, "", SWT.PUSH);
-		inDownButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_DOWN));
-		inDownButton.setToolTipText("Move Parameter Down");
-		inDownButton.setEnabled(false);
-
-		// output group
-		Group outParametersGroup = factory.createGroup(parent, "Out Parameters");
-		GridLayoutFactory.fillDefaults().margins(6, 6).numColumns(2).applyTo(outParametersGroup);
-
-		// add, remove, configure controls
-		Composite outControlsComposite = factory.createFlatFormComposite(outParametersGroup);
-		GridLayoutFactory.fillDefaults().spacing(0, 0).margins(0, 0).numColumns(4).applyTo(outControlsComposite);
-		GridDataFactory.fillDefaults().grab(true, false).align(SWT.TRAIL, SWT.FILL).applyTo(outControlsComposite);
-
-		factory.createFlatFormComposite(outParametersGroup);
-
-		outAddButton = factory.createButton(outControlsComposite, EMPTY, SWT.PUSH);
-		outAddButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_ADD));
-		outAddButton.setToolTipText("Add Out Parameter");
-
-		outRemoveButton = factory.createButton(outControlsComposite, EMPTY, SWT.PUSH);
-		outRemoveButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_REMOVE));
-		outRemoveButton.setToolTipText("Remove Selected Out Parameters");
-		outRemoveButton.setEnabled(false);
-
-		outConfigureButton = factory.createButton(outControlsComposite, EMPTY, SWT.PUSH);
-		outConfigureButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_CONFIGURE));
-		outConfigureButton.setToolTipText("Configure Selected Out Parameter");
-		outConfigureButton.setEnabled(false);
-
-		// output table
-		Table outParametersTable = factory.createTable(outParametersGroup, SWT.BORDER | SWT.MULTI | SWT.FULL_SELECTION);
-		outParametersTable.setLinesVisible(true);
-		GridDataFactory.fillDefaults().grab(true, true).applyTo(outParametersTable);
-
-		outParametersViewer = new TableViewer(outParametersTable);
-		outParametersViewer.setContentProvider(new ArrayContentProvider());
-		outParametersViewer.setLabelProvider(new EParametersLabelProvider(true));
-
-		// up, down controls
-		Composite outUpDownControlsComposite = factory.createFlatFormComposite(outParametersGroup);
-		GridLayoutFactory.fillDefaults().spacing(0, 6).margins(0, 0).applyTo(outUpDownControlsComposite);
-
-		outUpButton = factory.createButton(outUpDownControlsComposite, EMPTY, SWT.PUSH);
-		outUpButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_UP));
-		outUpButton.setToolTipText("Move Parameter Up");
-		outUpButton.setEnabled(false);
-
-		outDownButton = factory.createButton(outUpDownControlsComposite, EMPTY, SWT.PUSH);
-		outDownButton.setImage(DiagramImages.getImage(DiagramImages.CONTROL_DOWN));
-		outDownButton.setToolTipText("Move Parameter Down");
-		outDownButton.setEnabled(false);
-	}
-
-	@Override
-	protected void layoutWidgets(Composite parent) {
-		FormData data = new FormData();
-		data.left = new FormAttachment(0);
-		data.right = new FormAttachment(50, -6);
-		data.top = new FormAttachment(0);
-		data.bottom = new FormAttachment(100);
-		inParametersViewer.getControl().getParent().setLayoutData(data);
-
-		data = new FormData();
-		data.left = new FormAttachment(50, 6);
-		data.right = new FormAttachment(100);
-		data.top = new FormAttachment(0);
-		data.bottom = new FormAttachment(100);
-		outParametersViewer.getControl().getParent().setLayoutData(data);
-	}
-
 	private void move(final IStructuredSelection selection, final boolean isOutgoing, final boolean down) {
-		Command command = new RecordingCommand(getEditingDomain()) {
+		Command command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 			@Override
 			public void doExecute() {
 				EList<EParameter> list;
@@ -526,7 +529,7 @@ public class ActivityParametersSection extends AbstractSection {
 	}
 
 	private void remove(final IStructuredSelection selection, final boolean isOutgoing) {
-		Command command = new RecordingCommand(getEditingDomain()) {
+		Command command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 			@Override
 			public void doExecute() {
 				for (Object element : selection.toArray()) {

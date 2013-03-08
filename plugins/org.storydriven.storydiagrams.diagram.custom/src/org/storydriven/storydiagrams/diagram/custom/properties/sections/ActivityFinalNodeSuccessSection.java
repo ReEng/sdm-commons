@@ -2,16 +2,17 @@ package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEBooleanSection;
 
-public class ActivityFinalNodeSuccessSection extends AbstractEBooleanSection {
+import de.upb.swt.core.ui.properties.sections.AbstractCheckboxSection;
+
+public class ActivityFinalNodeSuccessSection extends AbstractCheckboxSection {
 	@Override
 	protected EStructuralFeature getFeature() {
 		return ActivitiesPackage.Literals.ACTIVITY_FINAL_NODE__SUCCESS;
 	}
 
 	@Override
-	protected String getButtonText() {
+	protected String getLabelText() {
 		return "Success";
 	}
 }

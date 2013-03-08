@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.viewers.DoubleClickEvent;
@@ -49,11 +50,12 @@ import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
 import org.storydriven.storydiagrams.diagram.custom.ResourceManager;
 import org.storydriven.storydiagrams.diagram.custom.dialogs.SelectEPackageFromRegistryDialog;
 import org.storydriven.storydiagrams.diagram.custom.dialogs.SelectEPackageFromWorkspaceDialog;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractSection;
 import org.storydriven.storydiagrams.diagram.custom.providers.ResourcesContentProvider;
 import org.storydriven.storydiagrams.diagram.custom.providers.ResourcesLabelProvider;
 
-public class ActivityTypeModelSection extends AbstractSection {
+import de.upb.swt.core.ui.properties.sections.AbstractPropertySection;
+
+public class ActivityTypeModelSection extends AbstractPropertySection {
 	private SelectEPackageFromWorkspaceDialog addWorkspaceDialog;
 
 	private TreeViewer viewer;
@@ -95,7 +97,7 @@ public class ActivityTypeModelSection extends AbstractSection {
 
 	private void removeSelected() {
 		final IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
-		final Command command = new RecordingCommand(getEditingDomain()) {
+		final Command command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 			@Override
 			protected void doExecute() {
 				for (Object element : selection.toArray()) {
@@ -130,7 +132,7 @@ public class ActivityTypeModelSection extends AbstractSection {
 	}
 
 	@Override
-	protected void layoutWidgets(Composite parent) {
+	protected void layoutWidgets() {
 		FormData data = new FormData();
 		data.left = new FormAttachment(0);
 		data.right = new FormAttachment(100);
@@ -217,7 +219,7 @@ public class ActivityTypeModelSection extends AbstractSection {
 					final Collection<EPackage> ePackages = addRegisteredDialog.getElements();
 
 					if (ePackages != null && !ePackages.isEmpty()) {
-						final Command command = new RecordingCommand(getEditingDomain()) {
+						final Command command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 							@Override
 							protected void doExecute() {
 								Activity activity = (Activity) getElement();
@@ -265,7 +267,8 @@ public class ActivityTypeModelSection extends AbstractSection {
 						}
 
 						if (!ePackages.isEmpty()) {
-							final Command command = new RecordingCommand(getEditingDomain()) {
+							final Command command = new RecordingCommand(
+									(TransactionalEditingDomain) getEditingDomain()) {
 								@Override
 								protected void doExecute() {
 									for (EPackage ePackage : ePackages) {

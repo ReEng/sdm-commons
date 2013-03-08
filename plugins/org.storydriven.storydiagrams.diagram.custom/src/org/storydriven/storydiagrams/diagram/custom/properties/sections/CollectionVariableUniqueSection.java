@@ -1,17 +1,18 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEBooleanSection;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
-public class CollectionVariableUniqueSection extends AbstractEBooleanSection {
+import de.upb.swt.core.ui.properties.sections.AbstractCheckboxSection;
+
+public class CollectionVariableUniqueSection extends AbstractCheckboxSection {
 	@Override
 	protected EStructuralFeature getFeature() {
 		return PatternsPackage.Literals.COLLECTION_VARIABLE__UNIQUE;
 	}
 
 	@Override
-	protected String getButtonText() {
+	protected String getLabelText() {
 		return "Unique Elements";
 	}
 }

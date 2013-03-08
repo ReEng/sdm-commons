@@ -1,6 +1,7 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
 import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.TextualExpression;
@@ -13,9 +14,9 @@ public class StatementNodeExpressionSection extends AbstractExpressionSection {
 		if (getElement().getStatementExpression() == null) {
 			final TextualExpression expression = ExpressionsFactory.eINSTANCE.createTextualExpression();
 			expression.setLanguage("OCL");
-			expression.setLanguageVersion("1.0");
+			expression.setLanguageVersion("3.0");
 
-			RecordingCommand command = new RecordingCommand(getEditingDomain()) {
+			RecordingCommand command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 				@Override
 				protected void doExecute() {
 					getElement().setStatementExpression(expression);

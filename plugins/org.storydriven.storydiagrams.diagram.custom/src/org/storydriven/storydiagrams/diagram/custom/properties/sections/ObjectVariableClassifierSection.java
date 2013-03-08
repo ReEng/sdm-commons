@@ -8,13 +8,14 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jface.window.Window;
 import org.storydriven.storydiagrams.diagram.custom.ResourceManager;
 import org.storydriven.storydiagrams.diagram.custom.dialogs.SelectEClassDialog;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEListComboSection;
 import org.storydriven.storydiagrams.diagram.custom.util.ActivityUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
-public class ObjectVariableClassifierSection extends AbstractEListComboSection<EClass> {
+import de.upb.swt.core.ui.properties.sections.AbstractComboSection;
+
+public class ObjectVariableClassifierSection extends AbstractComboSection<EClass> {
 	private SelectEClassDialog dialog;
 
 	public ObjectVariableClassifierSection() {
@@ -22,12 +23,12 @@ public class ObjectVariableClassifierSection extends AbstractEListComboSection<E
 	}
 
 	@Override
-	protected void handleSearchButtonClicked() {
+	protected void handleButtonClicked() {
 		dialog.setActivity(ActivityUtil.getActivity(getElement()));
 		dialog.setSelectedElement(((ObjectVariable) getElement()).getClassifier());
 		if (dialog.open() == Window.OK) {
 			EClass result = dialog.getElement();
-			execute(getFeature(), result);
+			set(result);
 			refresh();
 		}
 	}
@@ -51,7 +52,7 @@ public class ObjectVariableClassifierSection extends AbstractEListComboSection<E
 	}
 
 	@Override
-	protected boolean isShowSearchButton() {
+	protected boolean shouldShowButton() {
 		return true;
 	}
 

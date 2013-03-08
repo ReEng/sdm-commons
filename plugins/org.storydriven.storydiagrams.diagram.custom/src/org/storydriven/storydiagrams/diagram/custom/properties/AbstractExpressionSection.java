@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.text.ITextListener;
@@ -23,7 +24,9 @@ import org.storydriven.core.ui.util.ExpressionEditorUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.BoundUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
 
-public abstract class AbstractExpressionSection extends AbstractSection {
+import de.upb.swt.core.ui.properties.sections.AbstractPropertySection;
+
+public abstract class AbstractExpressionSection extends AbstractPropertySection {
 	private IExpressionEditor provider;
 
 	private Group group;
@@ -34,8 +37,7 @@ public abstract class AbstractExpressionSection extends AbstractSection {
 	public void refresh() {
 		Expression expression = getExpression();
 		if (getElement() != null && expression instanceof TextualExpression) {
-			provider = ExpressionEditorUtil
-					.getEditor((TextualExpression) expression);
+			provider = ExpressionEditorUtil.getEditor((TextualExpression) expression);
 
 			EClassifier classifier = getContextClassifier();
 			String value = ((TextualExpression) expression).getExpressionText();
@@ -45,23 +47,18 @@ public abstract class AbstractExpressionSection extends AbstractSection {
 				viewer = null;
 			}
 
-			viewer = provider.createSourceViewer(group, SWT.BORDER
-					| SWT.V_SCROLL | SWT.H_SCROLL, classifier,
+			viewer = provider.createSourceViewer(group, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL, classifier,
 					getContextInformation(), value);
-			GridDataFactory.fillDefaults().grab(true, true)
-					.applyTo(viewer.getTextWidget());
+			GridDataFactory.fillDefaults().grab(true, true).applyTo(viewer.getTextWidget());
 			viewer.addTextListener(new ITextListener() {
 				@Override
 				public void textChanged(TextEvent event) {
 					final Expression expression = getExpression();
 					if (expression instanceof TextualExpression) {
-						RecordingCommand command = new RecordingCommand(
-								getEditingDomain()) {
+						RecordingCommand command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 							@Override
 							protected void doExecute() {
-								((TextualExpression) expression)
-										.setExpressionText(viewer.getDocument()
-												.get());
+								((TextualExpression) expression).setExpressionText(viewer.getDocument().get());
 								postUpdate();
 							}
 						};
@@ -115,8 +112,7 @@ public abstract class AbstractExpressionSection extends AbstractSection {
 	}
 
 	@Override
-	protected void createWidgets(Composite parent,
-			TabbedPropertySheetWidgetFactory factory) {
+	protected void createWidgets(Composite parent, TabbedPropertySheetWidgetFactory factory) {
 		group = factory.createGroup(parent, getLabelText());
 		GridLayoutFactory.fillDefaults().margins(6, 6).applyTo(group);
 
@@ -133,7 +129,7 @@ public abstract class AbstractExpressionSection extends AbstractSection {
 	}
 
 	@Override
-	protected void layoutWidgets(Composite parent) {
+	protected void layoutWidgets() {
 		FormData data = new FormData();
 		data.left = new FormAttachment(0);
 		data.right = new FormAttachment(100);

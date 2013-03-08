@@ -2,9 +2,7 @@ package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
 import java.util.List;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEEnumRadioSection;
 import org.storydriven.storydiagrams.diagram.custom.util.ValidationUtil;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
@@ -12,10 +10,17 @@ import org.storydriven.storydiagrams.patterns.BindingState;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
-public class ObjectVariableBindingSemanticsSection extends AbstractEEnumRadioSection<BindingSemantics> {
+import de.upb.swt.core.ui.properties.sections.AbstractRadioGroupSection;
+
+public class ObjectVariableBindingSemanticsSection extends AbstractRadioGroupSection<BindingSemantics> {
+	@Override
+	public void refresh() {
+		super.refresh();
+		checkEnabled();
+	}
 
 	@Override
-	protected String getDescription() {
+	protected String getLabelText() {
 		return "Binding Semantics";
 	}
 
@@ -27,11 +32,6 @@ public class ObjectVariableBindingSemanticsSection extends AbstractEEnumRadioSec
 	@Override
 	protected List<BindingSemantics> getValues() {
 		return BindingSemantics.VALUES;
-	}
-
-	@Override
-	protected void notifyChanged(Notification msg) {
-		checkEnabled();
 	}
 
 	protected boolean isEnabled(BindingSemantics semantics) {

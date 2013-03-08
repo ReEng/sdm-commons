@@ -5,13 +5,14 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.storydiagrams.activities.StoryNode;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEEnumRadioSection;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
-public class StoryNodeBindingSemanticsSection extends AbstractEEnumRadioSection<BindingSemantics> {
+import de.upb.swt.core.ui.properties.sections.AbstractRadioGroupSection;
+
+public class StoryNodeBindingSemanticsSection extends AbstractRadioGroupSection<BindingSemantics> {
 	@Override
-	protected String getDescription() {
+	protected String getLabelText() {
 		return "Binding Semantics";
 	}
 

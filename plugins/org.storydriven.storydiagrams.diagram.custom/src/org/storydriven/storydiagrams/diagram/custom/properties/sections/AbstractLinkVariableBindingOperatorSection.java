@@ -2,24 +2,26 @@ package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
 import java.util.List;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEEnumRadioSection;
 import org.storydriven.storydiagrams.diagram.custom.util.ValidationUtil;
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
-public class AbstractLinkVariableBindingOperatorSection extends AbstractEEnumRadioSection<BindingOperator> {
+import de.upb.swt.core.ui.properties.sections.AbstractRadioGroupSection;
+
+public class AbstractLinkVariableBindingOperatorSection extends AbstractRadioGroupSection<BindingOperator> {
 	@Override
-	protected String getDescription() {
-		return "Binding Operator";
+	public void refresh() {
+		super.refresh();
+
+		checkEnabled();
 	}
 
 	@Override
-	protected void notifyChanged(Notification msg) {
-		checkEnabled();
+	protected String getLabelText() {
+		return "Binding Operator";
 	}
 
 	@Override

@@ -1,24 +1,23 @@
 package org.storydriven.storydiagrams.diagram.custom.properties.sections;
 
-import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractEBooleanSection;
 
-public class StoryNodeForEachSection extends AbstractEBooleanSection {
-	@Override
-	protected void execute(Command command) {
-		super.execute(command);
-		refreshTitleBar();
-	}
+import de.upb.swt.core.ui.properties.sections.AbstractCheckboxSection;
 
+public class StoryNodeForEachSection extends AbstractCheckboxSection {
 	@Override
-	protected String getButtonText() {
-		return "For Each Node";
+	protected void postExecute() {
+		refreshTitle();
 	}
 
 	@Override
 	protected EStructuralFeature getFeature() {
 		return ActivitiesPackage.Literals.STORY_NODE__FOR_EACH;
+	}
+
+	@Override
+	protected String getLabelText() {
+		return "For Each Node";
 	}
 }
