@@ -352,7 +352,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				 * of the story pattern object, check isomorphism condition and
 				 * object constraints
 				 */
-				if (variable.getValue() != null && this.checkTypeConformance(this.spoFacade.getClassifier(spo), variable.getValue())
+				if ((variable.getValue() != null) && this.checkTypeConformance(this.spoFacade.getClassifier(spo), variable.getValue())
 						&& this.checkIsomorphism(variable.getValue()) && this.checkStoryPatternObjectConstraints(spo, variable.getValue()))
 				{
 					/*
@@ -414,8 +414,8 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				 * value, check isomorphism, check that object constraints still
 				 * hold
 				 */
-				if (variable == null
-						|| !(variable.getValue() == mt.getInstanceObject() && this.checkStoryPatternObjectConstraints(
+				if ((variable == null)
+						|| !((variable.getValue() == mt.getInstanceObject()) && this.checkStoryPatternObjectConstraints(
 								mt.getStoryPatternObject(), mt.getInstanceObject())))
 				{
 					/*
@@ -436,7 +436,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 					break;
 				}
 			}
-			else if (matchTransaction instanceof MatchPatternPartTransaction || matchTransaction instanceof CheckPatternPartTransaction)
+			else if ((matchTransaction instanceof MatchPatternPartTransaction) || (matchTransaction instanceof CheckPatternPartTransaction))
 			{
 				final PatternPartTransaction<StoryPatternObject, StoryPatternLink, Classifier, Expression> mt = (PatternPartTransaction<StoryPatternObject, StoryPatternLink, Classifier, Expression>) matchTransaction;
 
@@ -459,7 +459,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				/*
 				 * Check the pattern part
 				 */
-				if (!variablesExist || mt.getPatternPart().check() != ECheckResult.OK)
+				if (!variablesExist || (mt.getPatternPart().check() != ECheckResult.OK))
 				{
 					/*
 					 * roll back before match transaction
@@ -723,7 +723,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 
 		final int stackSize = this.matchingStack.size();
 
-		if (instanceObject != null && this.checkIsomorphism(instanceObject)
+		if ((instanceObject != null) && this.checkIsomorphism(instanceObject)
 				&& this.checkTypeConformance(this.spoFacade.getClassifier(storyPatternObject), instanceObject)
 				&& this.checkHistory(storyPatternObject, instanceObject))
 		{
@@ -782,7 +782,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 
 		MatchTransaction mt = null;
 
-		while (!this.matchingStack.isEmpty() && mt != matchTransaction)
+		while (!this.matchingStack.isEmpty() && (mt != matchTransaction))
 		{
 			mt = this.matchingStack.pop();
 
@@ -887,22 +887,41 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		result = patternPart.check();
 
 		/*
-		 * If this is a negative pattern part, invert the result.
+		 * If this is a negative pattern part, invert the result. If this is an
+		 * optional pattern part and the check result is FAIL, change it to OK.
 		 */
-		if (patternPart.getMatchType() == EMatchType.NEGATIVE)
+		switch (patternPart.getMatchType())
 		{
-			switch (result)
+			case NEGATIVE:
 			{
-				case OK:
-					result = ECheckResult.FAIL;
-					break;
+				switch (result)
+				{
+					case OK:
+						result = ECheckResult.FAIL;
+						break;
 
-				case FAIL:
-					result = ECheckResult.OK;
-					break;
-				default:
-					break;
+					case FAIL:
+						result = ECheckResult.OK;
+						break;
+					default:
+						break;
+				}
+				break;
 			}
+			case OPTIONAL:
+			{
+				switch (result)
+				{
+					case OK:
+					case UNKNOWN:
+						break;
+					case FAIL:
+						result = ECheckResult.OK;
+						break;
+				}
+			}
+			default:
+				break;
 		}
 
 		if (result == ECheckResult.OK)
@@ -932,7 +951,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		for (final PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : this.spoToPatternPartsMap
 				.get(storyPatternObject))
 		{
-			if (this.uncheckedPatternParts.contains(patternPart) && this.checkPatternPart(patternPart) == ECheckResult.FAIL)
+			if (this.uncheckedPatternParts.contains(patternPart) && (this.checkPatternPart(patternPart) == ECheckResult.FAIL))
 			{
 				return false;
 			}
@@ -1054,7 +1073,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 				{
 					final Variable<Classifier> spoVariable = this.getVariablesScope().getVariable(this.spoFacade.getName(spo));
 
-					assert spoVariable != null || this.spoFacade.isCreate(spo);
+					assert (spoVariable != null) || this.spoFacade.isCreate(spo);
 
 					Variable<Classifier> attributeValueVariable = null;
 
