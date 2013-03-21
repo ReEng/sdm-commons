@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expr="http://www.storydriven.org/core/expressions/0.2.0" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" name="simpliest">
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" name="simpliest">
   <annotation source="http://www.storydriven.org/storydiagrams/types">
     <details key="http://www.storydriven.org/core/0.2.7" value="true"/>
-    <details key="http://www.storydriven.org/core/expressions/0.2.0" value="true"/>
-    <details key="http://www.storydriven.org/core/expressions/common/0.2.0" value="true"/>
+    <details key="http://www.storydriven.org/core/expressions/0.3.1" value="true"/>
+    <details key="http://www.storydriven.org/core/expressions/common/0.3.1" value="true"/>
     <details key="http://www.storydriven.org/storydiagrams/0.2.1" value="true"/>
     <details key="http://www.storydriven.org/storydiagrams/activities/0.2.1" value="true"/>
     <details key="http://www.storydriven.org/storydiagrams/activities/expressions/0.2.0" value="true"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdce="http://www.storydriven.org/storydiagrams/calls/expressions/0.2.0" xmlns:expr="http://www.storydriven.org/core/expressions/0.2.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.2.0">
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdce="http://www.storydriven.org/storydiagrams/calls/expressions/0.2.0" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1">
     <annotation source="http://www.storydriven.org/storydiagrams/types">
     <details key="http://www.eclipse.org/emf/2002/Ecore" value="true"/>
   </annotation><ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.0"/>
