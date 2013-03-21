@@ -15,6 +15,7 @@ import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.interpreter.facade.StoryDrivenMetamodelFacadeFactory;
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.BindingSemantics;
 import org.storydriven.storydiagrams.patterns.InclusionLink;
 import org.storydriven.storydiagrams.patterns.LinkVariable;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
@@ -38,10 +39,10 @@ public class StoryDrivenPatternMatcher
 {
 
 	public StoryDrivenPatternMatcher(
-			StoryPattern storyPattern,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> variablesScope,
-			ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> expressionInterpreterManager,
-			NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> notificationEmitter)
+			final StoryPattern storyPattern,
+			final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> variablesScope,
+			final ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> expressionInterpreterManager,
+			final NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> notificationEmitter)
 			throws SDMException
 	{
 		this(
@@ -53,12 +54,12 @@ public class StoryDrivenPatternMatcher
 	}
 
 	public StoryDrivenPatternMatcher(
-			StoryPattern storyPattern,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> variablesScope,
-			MatchingStrategy<StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> matchingStrategy,
-			MetamodelFacadeFactory<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> facadeFactory,
-			ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> expressionInterpreterManager,
-			NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> notificationEmitter)
+			final StoryPattern storyPattern,
+			final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> variablesScope,
+			final MatchingStrategy<StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> matchingStrategy,
+			final MetamodelFacadeFactory<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> facadeFactory,
+			final ExpressionInterpreterManager<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> expressionInterpreterManager,
+			final NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, AbstractVariable, AbstractLinkVariable, EClassifier, EStructuralFeature, Expression> notificationEmitter)
 			throws SDMException
 	{
 		super(storyPattern, variablesScope, matchingStrategy, facadeFactory, expressionInterpreterManager, notificationEmitter);
@@ -67,8 +68,8 @@ public class StoryDrivenPatternMatcher
 	@Override
 	protected Collection<PatternPart<AbstractVariable, AbstractLinkVariable, EClassifier, Expression>> createPatternParts()
 	{
-		List<AbstractLinkVariable> storyPatternLinks = new LinkedList<AbstractLinkVariable>(getStoryPattern().getLinkVariables());
-		Collection<PatternPart<AbstractVariable, AbstractLinkVariable, EClassifier, Expression>> patternParts = new HashSet<PatternPart<AbstractVariable, AbstractLinkVariable, EClassifier, Expression>>();
+		final List<AbstractLinkVariable> storyPatternLinks = new LinkedList<AbstractLinkVariable>(this.getStoryPattern().getLinkVariables());
+		final Collection<PatternPart<AbstractVariable, AbstractLinkVariable, EClassifier, Expression>> patternParts = new HashSet<PatternPart<AbstractVariable, AbstractLinkVariable, EClassifier, Expression>>();
 
 		/*
 		 * Create pattern parts for story pattern links and objects connected to
@@ -76,9 +77,9 @@ public class StoryDrivenPatternMatcher
 		 */
 		while (!storyPatternLinks.isEmpty())
 		{
-			AbstractLinkVariable link = storyPatternLinks.remove(0);
+			final AbstractLinkVariable link = storyPatternLinks.remove(0);
 
-			EClass linkEClass = link.eClass();
+			final EClass linkEClass = link.eClass();
 
 			StoryDrivenPatternPart<AbstractVariable, ? extends AbstractLinkVariable> part = null;
 
@@ -101,18 +102,23 @@ public class StoryDrivenPatternMatcher
 
 			assert part != null;
 
+			if (link.getBindingSemantics() == BindingSemantics.NEGATIVE)
+			{
+				part = new StoryDrivenNACPatternPart(this, part);
+			}
+
 			patternParts.add(part);
 		}
 
 		/*
 		 * Create pattern parts for objects that are not connected to any links.
 		 */
-		for (AbstractVariable var : getStoryPattern().getVariables())
+		for (final AbstractVariable var : this.getStoryPattern().getVariables())
 		{
 			if (var.getIncomingLinks().isEmpty()
 					&& (!(var instanceof ObjectVariable) || ((ObjectVariable) var).getOutgoingLinks().isEmpty()))
 			{
-				StoryDrivenVariableOnlyPatternPart part = new StoryDrivenVariableOnlyPatternPart(this, var);
+				final StoryDrivenVariableOnlyPatternPart part = new StoryDrivenVariableOnlyPatternPart(this, var);
 
 				patternParts.add(part);
 			}
