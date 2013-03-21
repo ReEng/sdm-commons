@@ -23,14 +23,14 @@ public class DefaultMatchingStrategy<StoryPattern, StoryPatternObject, StoryPatt
 		MatchingStrategy<StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>
 {
 	public DefaultMatchingStrategy(
-			MetamodelFacadeFactory<?, ?, ?, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> facadeFactory)
+			final MetamodelFacadeFactory<?, ?, ?, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> facadeFactory)
 	{
 		super(facadeFactory);
 	}
 
 	@Override
 	public PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> getNextPatternPartForMatching(
-			Set<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>> uncheckedPatternParts)
+			final Set<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>> uncheckedPatternParts)
 	{
 		int lowestCost = PatternPart.MATCHING_NOT_POSSIBLE;
 		int lowestCostOptional = PatternPart.MATCHING_NOT_POSSIBLE;
@@ -42,7 +42,7 @@ public class DefaultMatchingStrategy<StoryPattern, StoryPatternObject, StoryPatt
 		/*
 		 * Look at all unchecked pattern parts.
 		 */
-		for (PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : uncheckedPatternParts)
+		for (final PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : uncheckedPatternParts)
 		{
 			/*
 			 * Calculate matching cost.
@@ -58,7 +58,7 @@ public class DefaultMatchingStrategy<StoryPattern, StoryPatternObject, StoryPatt
 				switch (patternPart.getMatchType())
 				{
 					case MANDATORY:
-					case NEGATIVE:
+						// case NEGATIVE:
 						if (cost == 1)
 						{
 							/*
@@ -66,7 +66,7 @@ public class DefaultMatchingStrategy<StoryPattern, StoryPatternObject, StoryPatt
 							 */
 							return patternPart;
 						}
-						else if (cost < lowestCost || cheapestPatternPart == null)
+						else if ((cost < lowestCost) || (cheapestPatternPart == null))
 						{
 							/*
 							 * keep this pattern part if it is cheaper
@@ -76,7 +76,7 @@ public class DefaultMatchingStrategy<StoryPattern, StoryPatternObject, StoryPatt
 						}
 						break;
 					case OPTIONAL:
-						if (cost < lowestCostOptional || cheapestPatternPartOptional == null)
+						if ((cost < lowestCostOptional) || (cheapestPatternPartOptional == null))
 						{
 							lowestCostOptional = cost;
 							cheapestPatternPartOptional = patternPart;

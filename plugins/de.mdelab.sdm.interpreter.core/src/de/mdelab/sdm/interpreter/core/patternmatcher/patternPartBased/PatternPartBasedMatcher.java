@@ -538,15 +538,15 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 						match = true;
 						break;
 
-					case NEGATIVE:
-						/*
-						 * Invert match, so the matching process continues if no
-						 * match was found. Note: If a match was found, a
-						 * corresponding variable was likely created. However,
-						 * this is rolled back subsequently.
-						 */
-						match = !match;
-						break;
+				// case NEGATIVE:
+				/*
+				 * Invert match, so the matching process continues if no match
+				 * was found. Note: If a match was found, a corresponding
+				 * variable was likely created. However, this is rolled back
+				 * subsequently.
+				 */
+				// match = !match;
+				// break;
 				}
 
 				if (!match)
@@ -892,22 +892,22 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		 */
 		switch (patternPart.getMatchType())
 		{
-			case NEGATIVE:
-			{
-				switch (result)
-				{
-					case OK:
-						result = ECheckResult.FAIL;
-						break;
-
-					case FAIL:
-						result = ECheckResult.OK;
-						break;
-					default:
-						break;
-				}
-				break;
-			}
+		// case NEGATIVE:
+		// {
+		// switch (result)
+		// {
+		// case OK:
+		// result = ECheckResult.FAIL;
+		// break;
+		//
+		// case FAIL:
+		// result = ECheckResult.OK;
+		// break;
+		// default:
+		// break;
+		// }
+		// break;
+		// }
 			case OPTIONAL:
 			{
 				switch (result)

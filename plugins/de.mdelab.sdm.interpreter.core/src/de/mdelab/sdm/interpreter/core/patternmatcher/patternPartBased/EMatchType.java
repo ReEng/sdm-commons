@@ -22,5 +22,5 @@ public enum EMatchType
 	/*
 	 * A match must not be found for the element.
 	 */
-	NEGATIVE
+	// NEGATIVE
 }
