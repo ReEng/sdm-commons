@@ -51,61 +51,61 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		StoryPatternMatcher<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>
 {
 
-	private final IStoryPatternObjectFacade<StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>			spoFacade;
-	private final IStoryPatternFacade<StoryPattern, StoryPatternObject, StoryPatternLink, Expression>						spFacade;
-	private final IClassifierFacade<Classifier>																				classifierFacade;
-	private final IInstanceFacade<StoryPatternLink, Classifier, Feature, Expression>										instanceFacade;
+	protected final IStoryPatternObjectFacade<StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression>			spoFacade;
+	protected final IStoryPatternFacade<StoryPattern, StoryPatternObject, StoryPatternLink, Expression>							spFacade;
+	protected final IClassifierFacade<Classifier>																				classifierFacade;
+	protected final IInstanceFacade<StoryPatternLink, Classifier, Feature, Expression>											instanceFacade;
 
 	/*
 	 * The matching history stores information about which story pattern object
 	 * was bound to which instance object.
 	 */
-	private final Map<StoryPatternObject, Set<Object>>																		matchingHistory;
+	protected final Map<StoryPatternObject, Set<Object>>																		matchingHistory;
 
 	/*
 	 * The story pattern objects that are already bound to an instance object.
 	 */
-	private final Set<StoryPatternObject>																					boundSPO;
+	protected final Set<StoryPatternObject>																						boundSPO;
 
 	/*
 	 * The story pattern objects that are still unbound.
 	 */
-	private final Set<StoryPatternObject>																					unboundSPO;
+	protected final Set<StoryPatternObject>																						unboundSPO;
 
 	/*
 	 * Those pattern parts that are already checked.
 	 */
-	private final Set<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>>							checkedPatternParts;
+	protected final Set<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>>								checkedPatternParts;
 
 	/*
 	 * Those pattern parts that still need to be checked or matched.
 	 */
-	private final Set<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>>							uncheckedPatternParts;
+	protected final Set<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>>								uncheckedPatternParts;
 
 	/*
 	 * The instance objects, to which a story pattern object is already bound.
 	 * This is necessary to ensure isomorphism.
 	 */
-	private final Set<Object>																								boundInstanceObjects;
+	protected final Set<Object>																									boundInstanceObjects;
 
 	/*
 	 * All changes on the above sets are wrapped in transactions. The
 	 * transactions are put on this stack. Transactions are rolled back in case
 	 * of backtracking.
 	 */
-	public final Stack<MatchTransaction>																					matchingStack;
+	public final Stack<MatchTransaction>																						matchingStack;
 
 	/*
 	 * This map stores information, which story pattern object is contained in
 	 * which pattern part. This is needed later on to find overlapping pattern
 	 * parts.
 	 */
-	private final Map<StoryPatternObject, List<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>>>	spoToPatternPartsMap;
+	protected final Map<StoryPatternObject, List<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>>>	spoToPatternPartsMap;
 
 	/*
 	 * The match states of the pattern parts.
 	 */
-	private final Map<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>, MatchState>				patternPartMatchStates;
+	protected final Map<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>, MatchState>					patternPartMatchStates;
 
 	/**
 	 * Create a new PatternPartBasedMatcher and initialize it with the provided
@@ -283,7 +283,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @return false if there can be no match for this pattern, true otherwise.
 	 * @throws SDMException
 	 */
-	private boolean analyzeStoryPatternObjects() throws SDMException
+	protected boolean analyzeStoryPatternObjects() throws SDMException
 	{
 		/*
 		 * analyze all story pattern objects
@@ -397,7 +397,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @throws SDMException
 	 */
 	@SuppressWarnings("unchecked")
-	private void rollBackInvalidStackElements() throws SDMException
+	protected void rollBackInvalidStackElements() throws SDMException
 	{
 		for (final MatchTransaction matchTransaction : this.matchingStack)
 		{
@@ -485,7 +485,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		}
 	}
 
-	private boolean findNextMatchForPattern() throws SDMException
+	protected boolean findNextMatchForPattern() throws SDMException
 	{
 		boolean match = true;
 
@@ -877,7 +877,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @return
 	 * @throws SDMException
 	 */
-	private ECheckResult checkPatternPart(final PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart)
+	protected ECheckResult checkPatternPart(final PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart)
 			throws SDMException
 	{
 		assert patternPart != null;
@@ -946,7 +946,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @return
 	 * @throws SDMException
 	 */
-	private boolean checkUncheckedPatternParts(final StoryPatternObject storyPatternObject) throws SDMException
+	protected boolean checkUncheckedPatternParts(final StoryPatternObject storyPatternObject) throws SDMException
 	{
 		for (final PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : this.spoToPatternPartsMap
 				.get(storyPatternObject))
@@ -969,7 +969,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 	 * @return
 	 * @throws SDMException
 	 */
-	private boolean checkAllUncheckedPatternParts() throws SDMException
+	protected boolean checkAllUncheckedPatternParts() throws SDMException
 	{
 		for (final PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart : new ArrayList<PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression>>(
 				this.uncheckedPatternParts))
