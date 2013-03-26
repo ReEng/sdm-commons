@@ -609,15 +609,15 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 			final Variable<Classifier> result = this.getExpressionInterpreterManager().evaluateExpression(constraint,
 					this.spoFacade.getClassifier(spo), instanceObject, this.getVariablesScope());
 
-			if (result.getValue() != Boolean.TRUE)
+			if ((Boolean) result.getValue())
+			{
+				this.getNotificationEmitter().storyPatternObjectConstraintHolds(constraint, spo, this.getVariablesScope(), this);
+			}
+			else
 			{
 				this.getNotificationEmitter().storyPatternObjectConstraintViolated(constraint, spo, this.getVariablesScope(), this);
 
 				return false;
-			}
-			else
-			{
-				this.getNotificationEmitter().storyPatternObjectConstraintHolds(constraint, spo, this.getVariablesScope(), this);
 			}
 		}
 
