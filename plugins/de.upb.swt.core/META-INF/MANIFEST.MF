@@ -5,6 +5,7 @@ Bundle-SymbolicName: de.upb.swt.core;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: University of Paderborn
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.upb.swt.core.runtime
+Export-Package: de.upb.swt.core.runtime,
+ de.upb.swt.core.util
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.7.0"
 Bundle-ActivationPolicy: lazy
