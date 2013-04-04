@@ -5,18 +5,22 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.ExpandBar;
+import org.eclipse.swt.widgets.ExpandItem;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
@@ -26,18 +30,22 @@ import de.upb.swt.core.ui.properties.util.State;
 public abstract class AbstractGroupSection extends
 		AbstractFeaturePropertySection {
 	private List<AbstractFeaturePropertySection> sections = new ArrayList<AbstractFeaturePropertySection>();
+	protected boolean useCheckbox = true;
 	protected Label label;
 	protected Button checkbox;
 	protected Group group;
-	protected Label icon;
 	protected int offset = 6;
 
+	public AbstractGroupSection() {
+		useCheckbox = getFeature().getLowerBound() == 0;// getFeature().isUnsettable();
+	}
+
 	public void addSection(AbstractFeaturePropertySection section) {
-//		EClassifier classifier = getFeature().getEType();
-//		Assert.isTrue(classifier instanceof EClass);
-//		EClass clazz = (EClass) classifier;
-//		Assert.isTrue(clazz.getEAllStructuralFeatures().contains(
-//				section.getFeature()));
+		// EClassifier classifier = getFeature().getEType();
+		// Assert.isTrue(classifier instanceof EClass);
+		// EClass clazz = (EClass) classifier;
+		// Assert.isTrue(clazz.getEAllStructuralFeatures().contains(
+		// section.getFeature()));
 		sections.add(section);
 	}
 
@@ -54,7 +62,9 @@ public abstract class AbstractGroupSection extends
 	}
 
 	private void setSelection(Object value) {
-		checkbox.setSelection(value != null);
+		if (checkbox != null) {
+			checkbox.setSelection(value != null);
+		}
 	}
 
 	private boolean isReady() {
@@ -62,27 +72,38 @@ public abstract class AbstractGroupSection extends
 	}
 
 	private boolean hasChanged() {
-		boolean oldValue = checkbox.getSelection();
+		boolean oldValue = true;
+		if (checkbox != null) {
+			oldValue = checkbox.getSelection();
+		}
 		boolean newValue = getValue() != null;
 		return oldValue != newValue;
 	}
 
 	private void validate() {
-		Object value = getValue();
-		decorateImage(icon, validate(value));
+		Object object = getValue();
+		boolean isSet = checkbox == null || checkbox.getSelection();
+		if (object == null && isSet) {
+			EClassifier classifier = getFeature().getEType();
+			object = EcoreUtil.create((EClass) classifier);
+		}
+		if (object != null && !isSet) {
+			object = null;
+		}
+		set(object);
 
-		group.setVisible(value != null);
+		group.setVisible(object != null);
 
 		// Set selection of children
-		if (value != null) {
-			ISelection selection = new StructuredSelection(value);
+		if (object != null) {
+			ISelection selection = new StructuredSelection(object);
 			for (AbstractPropertySection section : sections) {
 				section.setInput(null, selection);
 				section.refresh();
 			}
 		}
-		
-		
+		layoutWidgets();
+		revalidateLayout(group);
 	}
 
 	protected State validate(Object value) {
@@ -111,20 +132,31 @@ public abstract class AbstractGroupSection extends
 	@Override
 	protected void createWidgets(Composite parent,
 			TabbedPropertySheetWidgetFactory factory) {
-		checkbox = factory.createButton(parent, getCheckboxText(), SWT.CHECK);
+		if (useCheckbox) {
+			String checkboxText = getCheckboxText();
+			checkbox = factory.createButton(parent, checkboxText, SWT.CHECK);
+		}
+
 		group = factory.createGroup(parent, "");
-		icon = factory.createLabel(parent, EMPTY);
-		icon.setToolTipText(getHelpText());
 
 		String labelText = getLabelText() + ':';
 		label = factory.createLabel(parent, labelText, SWT.TRAIL);
 
-		group.setLayout(new FillLayout(SWT.VERTICAL));
+		GridLayout layout = new GridLayout(1, true);
+		layout.marginLeft = layout.marginRight = 0;
+		layout.marginTop = layout.marginBottom = 0;
+		layout.marginHeight = layout.marginWidth = 0;
+		group.setLayout(layout);
 		for (AbstractPropertySection section : sections) {
 			section.createControls(group, getPage());
 		}
+		for (Control child : group.getChildren()) {
+			child.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false));
+		}
 
-		group.setVisible(false);
+		if (useCheckbox) {
+			group.setVisible(false);
+		}
 	}
 
 	protected abstract String getLabelText();
@@ -135,22 +167,14 @@ public abstract class AbstractGroupSection extends
 
 	@Override
 	protected void hookWidgetListeners() {
-		checkbox.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				EObject object = null;
-				if (checkbox.getSelection()) {
-					EClassifier classifier = getFeature().getEType();
-
-					// TODO: Create object if necessary
-					object = EcoreUtil.create((EClass) classifier);
-
+		if (checkbox != null) {
+			checkbox.addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					validate();
 				}
-				set(object);
-
-				validate();
-			}
-		});
+			});
+		}
 	}
 
 	@Override
@@ -159,31 +183,56 @@ public abstract class AbstractGroupSection extends
 		FormData data = new FormData();
 		data.left = new FormAttachment(0, WIDTH_LABEL);
 		data.right = new FormAttachment(100, -(16 + SIZE_MARGIN * 3));
-		data.top = new FormAttachment(offset);
-		data.bottom = new FormAttachment(100);
+		data.top = new FormAttachment(label, offset, SWT.TOP);
+		if (group.isVisible()) {
+			data.bottom = new FormAttachment(100);
+		} else {
+			data.bottom = new FormAttachment(0);
+		}
 		group.setLayoutData(data);
 
 		// checkbox control
-		data = new FormData();
-		data.left = new FormAttachment(group, 16, SWT.LEFT);
-		data.top = new FormAttachment(group, -offset, SWT.TOP);
-		checkbox.setLayoutData(data);
-
-		// help icon
-		data = new FormData();
-		data.left = new FormAttachment(group, SIZE_MARGIN * 2, SWT.RIGHT);
-		data.right = new FormAttachment(100, -SIZE_MARGIN);
-		data.top = new FormAttachment(group, 0, SWT.TOP);
-		data.bottom = new FormAttachment(group, 0, SWT.BOTTOM);
-		icon.setLayoutData(data);
-
+		if (useCheckbox) {
+			data = new FormData();
+			data.left = new FormAttachment(0, WIDTH_LABEL + 16);
+			data.top = new FormAttachment(offset);
+			checkbox.setLayoutData(data);
+		}
 		// label
 		data = new FormData();
 		data.left = new FormAttachment(0);
-		data.right = new FormAttachment(group, -SIZE_MARGIN);
-		data.top = new FormAttachment(offset - 2);
-		data.bottom = new FormAttachment(group, 0, SWT.BOTTOM);
+		data.right = new FormAttachment(0, WIDTH_LABEL);
+		data.top = new FormAttachment(offset);
+		data.bottom = new FormAttachment(100);
 		label.setLayoutData(data);
 	}
+	public static void revalidateLayout (Control control) {
 
+		Control c = control;
+		do {
+			if (c instanceof ExpandBar) {
+				ExpandBar expandBar = (ExpandBar) c;
+				for (ExpandItem expandItem : expandBar.getItems()) {
+					expandItem
+						.setHeight(expandItem.getControl().computeSize(expandBar.getSize().x, SWT.DEFAULT, true).y);
+				}
+			}
+			c = c.getParent();
+
+		} while (c != null && c.getParent() != null && !(c instanceof ScrolledComposite));
+
+		if (c instanceof ScrolledComposite) {
+			ScrolledComposite scrolledComposite = (ScrolledComposite) c;
+			if (scrolledComposite.getExpandHorizontal() || scrolledComposite.getExpandVertical()) {
+				scrolledComposite
+					.setMinSize(scrolledComposite.getContent().computeSize(SWT.DEFAULT, SWT.DEFAULT, true));
+			} else {
+				scrolledComposite.getContent().pack(true);
+			}
+		}
+		if (c instanceof Composite) {
+			Composite composite = (Composite) c;
+			composite.layout(true, true);
+		}
+	}
 }
