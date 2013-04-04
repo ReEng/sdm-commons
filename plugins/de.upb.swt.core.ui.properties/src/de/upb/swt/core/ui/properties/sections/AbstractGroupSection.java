@@ -55,10 +55,30 @@ public abstract class AbstractGroupSection extends
 
 	@Override
 	public void refresh() {
-		if (isReady() && hasChanged()) {
-			setSelection(getValue());
+		if (!isReady()) {
+			return;
+		}
+		Object object = getValue();
+
+		if (hasChanged()) {
+			setSelection(object);
 			validate();
 		}
+		object = getValue();
+
+		group.setVisible(object != null);
+		layoutWidgets();
+
+		// Set selection of children
+		if (object != null) {
+			ISelection selection = new StructuredSelection(object);
+			for (AbstractPropertySection section : sections) {
+				section.setInput(null, selection);
+				section.refresh();
+			}
+		}
+		revalidateLayout(group);
+
 	}
 
 	private void setSelection(Object value) {
@@ -92,18 +112,6 @@ public abstract class AbstractGroupSection extends
 		}
 		set(object);
 
-		group.setVisible(object != null);
-
-		// Set selection of children
-		if (object != null) {
-			ISelection selection = new StructuredSelection(object);
-			for (AbstractPropertySection section : sections) {
-				section.setInput(null, selection);
-				section.refresh();
-			}
-		}
-		layoutWidgets();
-		revalidateLayout(group);
 	}
 
 	protected State validate(Object value) {
@@ -183,7 +191,7 @@ public abstract class AbstractGroupSection extends
 		FormData data = new FormData();
 		data.left = new FormAttachment(0, WIDTH_LABEL);
 		data.right = new FormAttachment(100, -(16 + SIZE_MARGIN * 3));
-		data.top = new FormAttachment(label, offset, SWT.TOP);
+		data.top = new FormAttachment(0, 2 * offset);
 		if (group.isVisible()) {
 			data.bottom = new FormAttachment(100);
 		} else {
@@ -195,37 +203,40 @@ public abstract class AbstractGroupSection extends
 		if (useCheckbox) {
 			data = new FormData();
 			data.left = new FormAttachment(0, WIDTH_LABEL + 16);
-			data.top = new FormAttachment(offset);
+			data.top = new FormAttachment(0, offset);
 			checkbox.setLayoutData(data);
 		}
 		// label
 		data = new FormData();
 		data.left = new FormAttachment(0);
 		data.right = new FormAttachment(0, WIDTH_LABEL);
-		data.top = new FormAttachment(offset);
+		data.top = new FormAttachment(0, offset);
 		data.bottom = new FormAttachment(100);
 		label.setLayoutData(data);
 	}
-	public static void revalidateLayout (Control control) {
+
+	public static void revalidateLayout(Control control) {
 
 		Control c = control;
 		do {
 			if (c instanceof ExpandBar) {
 				ExpandBar expandBar = (ExpandBar) c;
 				for (ExpandItem expandItem : expandBar.getItems()) {
-					expandItem
-						.setHeight(expandItem.getControl().computeSize(expandBar.getSize().x, SWT.DEFAULT, true).y);
+					expandItem.setHeight(expandItem.getControl().computeSize(
+							expandBar.getSize().x, SWT.DEFAULT, true).y);
 				}
 			}
 			c = c.getParent();
 
-		} while (c != null && c.getParent() != null && !(c instanceof ScrolledComposite));
+		} while (c != null && c.getParent() != null
+				&& !(c instanceof ScrolledComposite));
 
 		if (c instanceof ScrolledComposite) {
 			ScrolledComposite scrolledComposite = (ScrolledComposite) c;
-			if (scrolledComposite.getExpandHorizontal() || scrolledComposite.getExpandVertical()) {
-				scrolledComposite
-					.setMinSize(scrolledComposite.getContent().computeSize(SWT.DEFAULT, SWT.DEFAULT, true));
+			if (scrolledComposite.getExpandHorizontal()
+					|| scrolledComposite.getExpandVertical()) {
+				scrolledComposite.setMinSize(scrolledComposite.getContent()
+						.computeSize(SWT.DEFAULT, SWT.DEFAULT, true));
 			} else {
 				scrolledComposite.getContent().pack(true);
 			}
