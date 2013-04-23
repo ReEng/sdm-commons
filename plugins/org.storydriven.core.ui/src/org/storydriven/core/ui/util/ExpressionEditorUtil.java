@@ -6,7 +6,6 @@ import java.util.Map;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
-import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.core.ui.IExpressionEditor;
 
 public class ExpressionEditorUtil {
@@ -46,10 +45,5 @@ public class ExpressionEditorUtil {
 			}
 		}
 		return editors;
-	}
-
-	public static IExpressionEditor getEditor(TextualExpression expression) {
-		return getEditor(expression.getLanguage(),
-				expression.getLanguageVersion());
 	}
 }

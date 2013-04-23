@@ -37,7 +37,10 @@ public abstract class AbstractExpressionSection extends AbstractPropertySection 
 	public void refresh() {
 		Expression expression = getExpression();
 		if (getElement() != null && expression instanceof TextualExpression) {
-			provider = ExpressionEditorUtil.getEditor((TextualExpression) expression);
+			
+			TextualExpression textualExpression = (TextualExpression) expression;
+			provider = ExpressionEditorUtil.getEditor(textualExpression.getLanguage(),
+					textualExpression.getLanguageVersion());
 
 			EClassifier classifier = getContextClassifier();
 			String value = ((TextualExpression) expression).getExpressionText();
