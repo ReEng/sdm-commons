@@ -18,6 +18,7 @@ public class CoreImages {
 	public static final String FIND = "icons/find.png"; //$NON-NLS-1$
 
 	public static final String ADD = "icons/add.png"; //$NON-NLS-1$
+	public static final String EDIT = "icons/edit.png"; //$NON-NLS-1$
 	public static final String REMOVE = "icons/remove.png"; //$NON-NLS-1$
 
 	public static final String UP = "icons/up.png"; //$NON-NLS-1$

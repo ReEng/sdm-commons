@@ -34,6 +34,7 @@ public class Activator extends AbstractActivator {
 		addImage(CoreImages.FIND);
 
 		addImage(CoreImages.ADD);
+		addImage(CoreImages.EDIT);
 		addImage(CoreImages.REMOVE);
 
 		addImage(CoreImages.UP);
