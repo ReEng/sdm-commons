@@ -43,6 +43,7 @@ import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.core.expressions.util.ExpressionUtils;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.patterns.ObjectVariable;
+import org.storydriven.storydiagrams.ui.SourceViewerProvider;
 
 public class EditExpressionDialog extends Dialog {
 

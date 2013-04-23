@@ -5,7 +5,7 @@ import java.util.Map;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.swt.widgets.Composite;
-import org.storydriven.storydiagrams.diagram.custom.SourceViewerProvider;
+import org.storydriven.storydiagrams.ui.SourceViewerProvider;
 
 /**
  * Customized source viewer provider for OCL. Note: Most of the other classes in

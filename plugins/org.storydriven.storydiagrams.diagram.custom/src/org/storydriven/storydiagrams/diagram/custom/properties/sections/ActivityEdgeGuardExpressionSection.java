@@ -4,7 +4,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
-import org.storydriven.storydiagrams.diagram.custom.properties.AbstractExtendedExpressionSection;
+import org.storydriven.storydiagrams.ui.properties.AbstractExtendedExpressionSection;
 
 public class ActivityEdgeGuardExpressionSection extends AbstractExtendedExpressionSection {
 	@Override

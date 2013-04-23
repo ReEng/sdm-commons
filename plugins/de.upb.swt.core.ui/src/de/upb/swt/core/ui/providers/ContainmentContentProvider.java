@@ -1,4 +1,4 @@
-package org.storydriven.storydiagrams.diagram.custom.providers;
+package de.upb.swt.core.ui.providers;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;

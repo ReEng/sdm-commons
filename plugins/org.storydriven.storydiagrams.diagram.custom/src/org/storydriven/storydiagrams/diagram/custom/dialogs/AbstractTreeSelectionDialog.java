@@ -48,8 +48,9 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.PlatformUI;
 import org.storydriven.storydiagrams.diagram.custom.Activator;
-import org.storydriven.storydiagrams.diagram.custom.providers.ComposedAdapterFactoryLabelProvider;
-import org.storydriven.storydiagrams.diagram.custom.providers.ContainmentContentProvider;
+
+import de.upb.swt.core.ui.providers.ComposedAdapterFactoryLabelProvider;
+import de.upb.swt.core.ui.providers.ContainmentContentProvider;
 
 public abstract class AbstractTreeSelectionDialog<T extends Object> extends TitleAreaDialog {
 	private String shellText;

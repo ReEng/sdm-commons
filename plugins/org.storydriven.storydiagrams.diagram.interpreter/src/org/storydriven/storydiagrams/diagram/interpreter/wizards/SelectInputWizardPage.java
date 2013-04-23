@@ -35,12 +35,12 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
-import org.storydriven.storydiagrams.diagram.custom.providers.ComposedAdapterFactoryLabelProvider;
 import org.storydriven.storydiagrams.diagram.interpreter.ParameterBindingEditingSupport;
 import org.storydriven.storydiagrams.diagram.interpreter.dialogs.SelectWorkspaceResourceDialog;
 import org.storydriven.storydiagrams.diagram.interpreter.util.Texts;
 
 import de.mdelab.sdm.interpreter.core.variables.Variable;
+import de.upb.swt.core.ui.providers.ComposedAdapterFactoryLabelProvider;
 
 public class SelectInputWizardPage extends WizardPage {
 	private ParameterBindingEditingSupport editingSupport;

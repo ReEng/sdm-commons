@@ -8,8 +8,9 @@ import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
-import org.storydriven.storydiagrams.diagram.custom.providers.ComposedAdapterFactoryLabelProvider;
-import org.storydriven.storydiagrams.diagram.custom.providers.ContainmentContentProvider;
+
+import de.upb.swt.core.ui.providers.ComposedAdapterFactoryLabelProvider;
+import de.upb.swt.core.ui.providers.ContainmentContentProvider;
 
 public class SelectEPackageFromRegistryDialog extends AbstractTreeSelectionDialog<EPackage> {
 	private static final String TITLE = "Add Registered Packages";

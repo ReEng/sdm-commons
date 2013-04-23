@@ -31,7 +31,6 @@ import org.storydriven.storydiagrams.calls.OpaqueCallable;
 import org.storydriven.storydiagrams.calls.ParameterExtension;
 import org.storydriven.storydiagrams.calls.expressions.MethodCallExpression;
 import org.storydriven.storydiagrams.calls.expressions.ParameterExpression;
-import org.storydriven.storydiagrams.diagram.custom.providers.ComposedAdapterFactoryLabelProvider;
 import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
 import org.storydriven.storydiagrams.patterns.CollectionVariable;
@@ -43,6 +42,8 @@ import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpressi
 import org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
 import org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression;
+
+import de.upb.swt.core.ui.providers.ComposedAdapterFactoryLabelProvider;
 
 public class Texts {
 	private static final ComposedAdapterFactoryLabelProvider AFLP = new ComposedAdapterFactoryLabelProvider();

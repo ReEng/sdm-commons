@@ -8,7 +8,7 @@ import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.jface.text.source.SourceViewer;
 import org.eclipse.jface.text.source.SourceViewerConfiguration;
 import org.eclipse.swt.widgets.Composite;
-import org.storydriven.storydiagrams.diagram.custom.SourceViewerProvider;
+import org.storydriven.storydiagrams.ui.SourceViewerProvider;
 
 public class logics01ViewerProvider extends SourceViewerProvider {
 

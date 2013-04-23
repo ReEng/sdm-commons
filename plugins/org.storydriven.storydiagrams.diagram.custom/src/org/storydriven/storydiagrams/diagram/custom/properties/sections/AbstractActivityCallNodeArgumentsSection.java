@@ -41,13 +41,13 @@ import org.storydriven.storydiagrams.calls.CallsPackage;
 import org.storydriven.storydiagrams.calls.ParameterBinding;
 import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
 import org.storydriven.storydiagrams.diagram.custom.EditExpressionDialog;
-import org.storydriven.storydiagrams.diagram.custom.providers.ContainmentContentProvider;
 import org.storydriven.storydiagrams.diagram.custom.util.ActivityUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.BoundUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
 import org.storydriven.storydiagrams.diagram.custom.util.TextUtil;
 
 import de.upb.swt.core.ui.properties.sections.AbstractPropertySection;
+import de.upb.swt.core.ui.providers.ContainmentContentProvider;
 
 public abstract class AbstractActivityCallNodeArgumentsSection extends AbstractPropertySection {
 	private EditExpressionDialog dialog;

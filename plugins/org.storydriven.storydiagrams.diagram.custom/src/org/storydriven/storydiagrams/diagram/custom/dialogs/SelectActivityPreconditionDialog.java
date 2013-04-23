@@ -8,7 +8,8 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.storydriven.storydiagrams.activities.MatchingStoryNode;
 import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
-import org.storydriven.storydiagrams.diagram.custom.providers.ComposedAdapterFactoryLabelProvider;
+
+import de.upb.swt.core.ui.providers.ComposedAdapterFactoryLabelProvider;
 
 public class SelectActivityPreconditionDialog extends AbstractTreeSelectionDialog<MatchingStoryNode> {
 	private ResourceSet resourceSet;

@@ -5,6 +5,8 @@ import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
 import org.storydriven.storydiagrams.diagram.custom.util.TextUtil;
 
+import de.upb.swt.core.ui.providers.ComposedAdapterFactoryLabelProvider;
+
 public class CalledActivitiesLabelProvider extends ComposedAdapterFactoryLabelProvider {
 	private ActivityCallNode node;
 

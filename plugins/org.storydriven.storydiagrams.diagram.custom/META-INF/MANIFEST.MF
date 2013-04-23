@@ -19,7 +19,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.core.ui;bundle-version="0.1.0",
  de.upb.swt.core;bundle-version="0.1.0",
  de.upb.swt.core.ui;bundle-version="0.1.0",
- de.upb.swt.core.ui.properties;bundle-version="0.1.0"
+ de.upb.swt.core.ui.properties;bundle-version="0.1.0",
+ org.storydriven.storydiagrams.ui;bundle-version="1.0.0"
 Export-Package: org.storydriven.storydiagrams.diagram.custom,
  org.storydriven.storydiagrams.diagram.custom.dialogs,
  org.storydriven.storydiagrams.diagram.custom.edit.commands,

@@ -2,10 +2,10 @@ package org.storydriven.storydiagrams.diagram.interpreter.providers;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.storydiagrams.diagram.custom.providers.ComposedAdapterFactoryLabelProvider;
 import org.storydriven.storydiagrams.diagram.interpreter.util.Texts;
 
 import de.mdelab.sdm.interpreter.core.variables.Variable;
+import de.upb.swt.core.ui.providers.ComposedAdapterFactoryLabelProvider;
 
 public class ResultLabelProvider extends ComposedAdapterFactoryLabelProvider {
 	private Variable<?> variable;
