@@ -27,6 +27,7 @@ import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.calls.OpaqueCallable;
 import org.storydriven.storydiagrams.calls.ParameterBinding;
 import org.storydriven.storydiagrams.calls.expressions.MethodCallExpression;
+import org.storydriven.storydiagrams.calls.expressions.ParameterExpression;
 import org.storydriven.storydiagrams.interpreter.StoryDrivenInterpreter;
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
@@ -104,13 +105,33 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 		{
 			return this.evaluate((ObjectVariableExpression) expression, contextClassifier, contextInstance, variablesScope);
 		}
+		else if (expression instanceof ParameterExpression)
+		{
+		   return this.evaluate((ParameterExpression) expression, contextClassifier, contextInstance, variablesScope);
+		}
 		else
 		{
 			throw new UnsupportedOperationException();
 		}
 	}
 
-	private Variable<EClassifier> evaluate(ArithmeticExpression expression, EClassifier contextClassifier, Object contextInstance,
+	private Variable<EClassifier> evaluate(ParameterExpression expression, EClassifier contextClassifier,
+         Object contextInstance, VariablesScope<?, ?, ?, ?, ?, ?, EClassifier, ?, Expression> variablesScope)
+   {
+	   String name = expression.getParameter().getVariableName();
+
+      Variable<EClassifier> var = variablesScope.getVariable(name);
+
+      if (var == null)
+      {
+         EClassifier type = expression.getParameter().getType();
+         var = new Variable<EClassifier>(SDMInterpreterConstants.INTERNAL_VAR_NAME, type, null);
+      }
+
+      return var;
+   }
+
+   private Variable<EClassifier> evaluate(ArithmeticExpression expression, EClassifier contextClassifier, Object contextInstance,
 			VariablesScope<?, ?, ?, ?, ?, ?, EClassifier, ?, Expression> variablesScope) throws SDMException
 	{
 		assert expression.getLeftExpression() != null;
