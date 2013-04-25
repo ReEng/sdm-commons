@@ -7,7 +7,7 @@ Bundle-SymbolicName: org.storydriven.storydiagrams.diagram.interpreter;singleton
 Bundle-Version: 1.0.1.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-Bundle-Activator: org.storydriven.storydiagrams.internal.diagram.interpreter.Activator
+Bundle-Activator: org.storydriven.storydiagrams.diagram.interpreter.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.storydiagrams;bundle-version="0.2.0",
  org.storydriven.storydiagrams.interpreter.core;bundle-version="0.3.0",

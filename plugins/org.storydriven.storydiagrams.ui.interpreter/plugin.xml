@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+<!--
+<copyright>
+	Copyright 2013 by storydriven.org and others. All rights reserved. This
+	program and its materials are made available under the terms of the Eclipse
+	Public License v1.0 which is referenced inside the distribution.
+
+	Contributors:
+		Aljoscha Hark <aljoschability@gmail.com> - Initial code
+
+</copyright>
+-->
+<plugin>
+	<extension point="org.eclipse.ui.commands">
+		<command
+			defaultHandler="org.storydriven.storydiagrams.ui.interpreter.StartInterpreterHandler"
+			id="org.storydriven.storydiagrams.ui.interpreter.StartInterpreterCommand"
+			name="Interprete Activity..."/>
+	</extension>
+
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			allPopups="false"
+			locationURI="menu:org.eclipse.ui.main.menu">
+			<menu label="Story Diagram">
+				<command
+					commandId="org.storydriven.storydiagrams.ui.interpreter.StartInterpreterCommand"
+					label="Interprete Activity..."
+					style="push">
+				</command>
+			</menu>
+		</menuContribution>
+	</extension>
+</plugin>

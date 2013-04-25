@@ -5,6 +5,7 @@ import java.util.Map;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.CheckboxCellEditor;
 import org.eclipse.jface.viewers.ComboBoxCellEditor;
@@ -35,12 +36,13 @@ public class ParameterBindingEditingSupport extends EditingSupport {
 	private TextCellEditor floatCellEditor;
 	private TextCellEditor intCellEditor;
 	private TextCellEditor longCellEditor;
-	private Resource resource;
+	private ResourceSet resource;
 	private TextCellEditor shortCellEditor;
 
 	private TextCellEditor stringCellEditor;
 
-	public ParameterBindingEditingSupport(TableViewer viewer, Map<EParameter, Object> bindings) {
+	public ParameterBindingEditingSupport(TableViewer viewer,
+			Map<EParameter, Object> bindings) {
 		super(viewer);
 
 		this.bindings = bindings;
@@ -157,7 +159,8 @@ public class ParameterBindingEditingSupport extends EditingSupport {
 		});
 
 		// enum
-		enumCellEditor = new ComboBoxCellEditor(getTable(), new String[0], SWT.READ_ONLY);
+		enumCellEditor = new ComboBoxCellEditor(getTable(), new String[0],
+				SWT.READ_ONLY);
 
 		// String
 		stringCellEditor = new TextCellEditor(getTable());
@@ -238,8 +241,8 @@ public class ParameterBindingEditingSupport extends EditingSupport {
 		return (TableViewer) super.getViewer();
 	}
 
-	public void setResource(Resource resource) {
-		this.resource = resource;
+	public void setResource(ResourceSet resourceSet) {
+		this.resource = resourceSet;
 	}
 
 	@Override

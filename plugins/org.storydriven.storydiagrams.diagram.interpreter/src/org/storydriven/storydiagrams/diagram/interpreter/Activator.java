@@ -1,4 +1,4 @@
-package org.storydriven.storydiagrams.internal.diagram.interpreter;
+package org.storydriven.storydiagrams.diagram.interpreter;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;

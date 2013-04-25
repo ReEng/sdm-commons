@@ -2,6 +2,7 @@ package org.storydriven.storydiagrams.diagram.interpreter.providers;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 
@@ -18,6 +19,9 @@ public class ResourceContentProvider extends ArrayContentProvider implements ITr
 
 	@Override
 	public Object[] getChildren(Object element) {
+		if (element instanceof ResourceSet) {
+			return super.getElements(((ResourceSet) element).getResources());
+		}
 		if (element instanceof Resource) {
 			return super.getElements(((Resource) element).getContents());
 		}

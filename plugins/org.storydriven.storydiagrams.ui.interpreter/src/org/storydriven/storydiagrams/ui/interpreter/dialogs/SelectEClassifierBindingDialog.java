@@ -1,32 +1,27 @@
-package org.storydriven.storydiagrams.diagram.interpreter.dialogs;
+package org.storydriven.storydiagrams.ui.interpreter.dialogs;
 
-import org.eclipse.emf.common.notify.AdapterFactory;
+import java.text.MessageFormat;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
-import org.eclipse.emf.edit.provider.ComposedAdapterFactory.Descriptor.Registry;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.storydriven.storydiagrams.diagram.custom.dialogs.AbstractTreeSelectionDialog;
-import org.storydriven.storydiagrams.diagram.interpreter.providers.ResourceContentProvider;
-import org.storydriven.storydiagrams.diagram.interpreter.util.Texts;
+import org.storydriven.storydiagrams.ui.interpreter.ResourcesContentProvider;
+import org.storydriven.storydiagrams.ui.interpreter.ResourcesLabelProvider;
+import org.storydriven.storydiagrams.ui.interpreter.util.TextUtil;
+import org.storydriven.storydiagrams.ui.interpreter.wizards.IEPackageController;
 
-public class SelectEClassifierBindingDialog extends
-		AbstractTreeSelectionDialog<EObject> {
+public class SelectEClassifierBindingDialog extends AbstractTreeSelectionDialog<EObject> {
 	private EClassifier eClassifier;
-	private ResourceSet resourceSet;
+	private IEPackageController controller;
 
-	public SelectEClassifierBindingDialog() {
-		super("shellText", "title", "description");
-	}
+	public SelectEClassifierBindingDialog(IEPackageController controller) {
+		super("Parameter Binding", "Select Parameter Binding",
+				"Select the element that should be injected as parameter value.");
 
-	public void setResource(ResourceSet resourceSet) {
-		this.resourceSet = resourceSet;
+		this.controller = controller;
 	}
 
 	public void setType(EClassifier eClassifier) {
@@ -35,19 +30,17 @@ public class SelectEClassifierBindingDialog extends
 
 	@Override
 	protected ITreeContentProvider getContentProvider() {
-		return new ResourceContentProvider();
+		return new ResourcesContentProvider(controller.getAdapterFactory());
 	}
 
 	@Override
 	protected Object getInput() {
-		return resourceSet;
+		return controller.getAddedResources();
 	}
 
 	@Override
 	protected ILabelProvider getLabelProvider() {
-		Registry registry = ComposedAdapterFactory.Descriptor.Registry.INSTANCE;
-		AdapterFactory adapterFactory = new ComposedAdapterFactory(registry);
-		return new AdapterFactoryLabelProvider(adapterFactory);
+		return new ResourcesLabelProvider(controller.getAdapterFactory());
 	}
 
 	@Override
@@ -82,7 +75,7 @@ public class SelectEClassifierBindingDialog extends
 		if (eClassifier != null && eClassifier.isInstance(element)) {
 			return null;
 		}
-		return String.format("You have to select an element of the type %1s.",
-				Texts.get(eClassifier));
+		String pattern = "Select an element of the type {0}.";
+		return MessageFormat.format(pattern, TextUtil.getText(eClassifier));
 	}
 }
