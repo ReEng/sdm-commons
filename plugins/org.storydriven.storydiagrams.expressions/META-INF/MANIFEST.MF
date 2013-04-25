@@ -11,8 +11,7 @@ Require-Bundle: org.storydriven.core;bundle-version="[1.0.0,2.0.0)";visibility:=
  org.eclipse.emf.mwe2.launch;bundle-version="[2.0.0,3.0.0)";resolution:=optional,
  org.eclipse.xtext;bundle-version="[2.0.0,3.0.0)",
  org.eclipse.xtext.generator;bundle-version="[2.0.0,3.0.0)";resolution:=optional,
- org.eclipse.xtext.util;bundle-version="[2.0.0,3.0.0)",
- org.eclipse.xtext.xtend2;bundle-version="[2.0.0,3.0.0)"
+ org.eclipse.xtext.util;bundle-version="[2.0.0,3.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.storydriven.storydiagrams.expressions,
  org.storydriven.storydiagrams.expressions.parseTreeConstruction,
