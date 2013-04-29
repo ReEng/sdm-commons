@@ -21,6 +21,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.tabbed.ISection;
@@ -53,6 +54,17 @@ public abstract class AbstractPropertySection implements ISection {
 			public void notifyChanged(Notification msg) {
 				if (shouldRefresh(msg)) {
 					refresh();
+					if (Display.getCurrent() == null) {
+						// execute refresh() in the SWT ui thread
+						Display.getDefault().asyncExec(new Runnable() {
+							@Override
+							public void run() {
+								refresh();
+							}
+						});
+					} else {
+						refresh();
+					}
 				}
 			}
 		};
