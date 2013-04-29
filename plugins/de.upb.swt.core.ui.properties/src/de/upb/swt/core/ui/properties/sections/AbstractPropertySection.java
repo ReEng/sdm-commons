@@ -53,7 +53,6 @@ public abstract class AbstractPropertySection implements ISection {
 			@Override
 			public void notifyChanged(Notification msg) {
 				if (shouldRefresh(msg)) {
-					refresh();
 					if (Display.getCurrent() == null) {
 						// execute refresh() in the SWT ui thread
 						Display.getDefault().asyncExec(new Runnable() {
