@@ -252,6 +252,10 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 
 		this.getNotificationEmitter().activityExecutionFinished(activity, returnValues, variableScope, this);
 
+		this.variableScopes.clear();
+		
+		this.storyPatternMatchers.clear();
+		
 		return returnValues;
 	}
 
