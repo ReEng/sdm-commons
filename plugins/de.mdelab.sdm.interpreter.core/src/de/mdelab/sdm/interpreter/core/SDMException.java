@@ -11,30 +11,13 @@ public class SDMException extends Exception
 {
 	private static final long	serialVersionUID	= 4051161944125615443L;
 
-	private String				message				= "";
-	private Exception			innerException		= null;
-
-	public SDMException(String message)
+	public SDMException(final String message)
 	{
-		this.message = message;
+		super(message);
 	}
 
-	public SDMException(String message, Exception innerException)
+	public SDMException(final String message, final Exception innerException)
 	{
-		this.message = message;
-		this.innerException = innerException;
-	}
-
-	@Override
-	public String toString()
-	{
-		if (this.innerException == null)
-		{
-			return this.message;
-		}
-		else
-		{
-			return this.message + "\nInnerException:\n" + this.innerException.toString();
-		}
+		super(message, innerException);
 	}
 }

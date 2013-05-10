@@ -34,6 +34,10 @@ import de.mdelab.sdm.interpreter.ocl.environment.MultiResourceLazyExtentMap;
 public class OCLExpressionInterpreter<Expression> extends ExpressionInterpreter<Expression, EClassifier>
 {
 
+	private OCL																previousOCL;
+
+	private VariablesScope<?, ?, ?, ?, ?, ?, EClassifier, ?, Expression>	previousVariableScope;
+
 	public OCLExpressionInterpreter()
 	{
 	}
@@ -48,26 +52,50 @@ public class OCLExpressionInterpreter<Expression> extends ExpressionInterpreter<
 	 */
 	private OCL getOCL(final VariablesScope<?, ?, ?, ?, ?, ?, EClassifier, ?, Expression> variablesScope) throws SDMException
 	{
-		final OCL ocl = OCL.newInstance(new CustomOCLEnvironmentFactory(variablesScope));
-
-		for (final String importURI : variablesScope.getExpressionImports(OCLExpressionInterpreterConstants.OCL_LANGUAGE_NAME,
-				OCLExpressionInterpreterConstants.OCL_LANGUAGE_VERSION))
+		if (this.previousOCL != null && this.previousVariableScope == variablesScope)
 		{
-			try
-			{
-				ocl.parse(new OCLInput(URIConverter.INSTANCE.createInputStream(URI.createURI(importURI))));
-			}
-			catch (final ParserException e)
-			{
-				throw new SDMException("Could not parse imported URI '" + importURI + "'.", e);
-			}
-			catch (final IOException e)
-			{
-				throw new SDMException("Could not parse imported URI '" + importURI + "'.", e);
-			}
+			return this.previousOCL;
 		}
+		else
+		{
+			final OCL ocl = OCL.newInstance(new CustomOCLEnvironmentFactory(variablesScope));
 
-		return ocl;
+			for (final String importURI : variablesScope.getExpressionImports(OCLExpressionInterpreterConstants.OCL_LANGUAGE_NAME,
+					OCLExpressionInterpreterConstants.OCL_LANGUAGE_VERSION))
+			{
+				try
+				{
+					ocl.parse(new OCLInput(URIConverter.INSTANCE.createInputStream(URI.createURI(importURI))));
+				}
+				catch (final ParserException e)
+				{
+					throw new SDMException("Could not parse imported URI '" + importURI + "'.", e);
+				}
+				catch (final IOException e)
+				{
+					throw new SDMException("Could not parse imported URI '" + importURI + "'.", e);
+				}
+			}
+
+			final List<EObject> contextObjects = new LinkedList<EObject>();
+
+			for (final Variable<EClassifier> v : variablesScope.getVariables())
+			{
+				if (v.getValue() instanceof EObject)
+				{
+					contextObjects.add((EObject) v.getValue());
+				}
+
+			}
+
+			ocl.setExtentMap(new MultiResourceLazyExtentMap(contextObjects));
+
+			this.previousOCL = ocl;
+
+			this.previousVariableScope = variablesScope;
+
+			return ocl;
+		}
 	}
 
 	@Override
@@ -212,22 +240,6 @@ public class OCLExpressionInterpreter<Expression> extends ExpressionInterpreter<
 			 * Therefore, the context is set to EObject.
 			 */
 			contextClassifier = EcorePackage.Literals.EOBJECT;
-		}
-
-		if (ocl.getExtentMap() == null)
-		{
-			final List<EObject> contextObjects = new LinkedList<EObject>();
-
-			for (final Variable<EClassifier> v : variablesScope.getVariables())
-			{
-				if (v.getValue() instanceof EObject)
-				{
-					contextObjects.add((EObject) v.getValue());
-				}
-
-			}
-
-			ocl.setExtentMap(new MultiResourceLazyExtentMap(contextObjects));
 		}
 
 		final Helper helper = ocl.createOCLHelper();
