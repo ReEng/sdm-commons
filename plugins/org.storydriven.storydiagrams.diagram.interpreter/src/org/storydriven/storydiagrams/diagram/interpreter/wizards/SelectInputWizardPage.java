@@ -250,7 +250,7 @@ public class SelectInputWizardPage extends WizardPage {
 					}
 				}
 
-				editingSupport.setResource(getWizard().getResource());
+				editingSupport.setResource(getWizard().getResource().getResourceSet());
 				setPageComplete(isValid());
 			}
 		});
