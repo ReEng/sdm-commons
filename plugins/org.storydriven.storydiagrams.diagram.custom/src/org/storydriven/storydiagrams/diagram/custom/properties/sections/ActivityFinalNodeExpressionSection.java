@@ -47,8 +47,9 @@ public class ActivityFinalNodeExpressionSection extends AbstractExpressionSectio
 		Expression expression = getElement().getReturnValue();
 
 		// TODO: ugly
-		getElement().getReturnValues().remove(expression);
-		getElement().getReturnValues().add(expression);
+		// TODO: IMHO, the code below produces infinite loop exceptions because setting the expression should trigger the postUpdate, again! After removing that lines, the editor works more stable. (ChrisH)
+		//getElement().getReturnValues().remove(expression);
+		//getElement().getReturnValues().add(expression);
 	}
 
 	@Override
