@@ -25,7 +25,6 @@ public class ActivityExecutionStartedNotification<Activity, Classifier> extends 
 		super(NotificationTypeEnum.ACTIVITY_EXECUTION_STARTED, variablesScope, notifier);
 
 		assert activity != null;
-		assert parameters != null;
 
 		this.activity = activity;
 		this.parameters = parameters;
