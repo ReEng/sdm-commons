@@ -40,15 +40,15 @@ public class VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, 
 
 	@SuppressWarnings("unchecked")
 	public VariablesScope(
-			NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> notificationEmitter)
+			final NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> notificationEmitter)
 	{
 		this(notificationEmitter, null, Collections.EMPTY_MAP);
 	}
 
 	public VariablesScope(
-			NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> notificationEmitter,
-			VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> parentScope,
-			Map<String, Map<String, List<String>>> expressionImports)
+			final NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> notificationEmitter,
+			final VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> parentScope,
+			final Map<String, Map<String, List<String>>> expressionImports)
 	{
 		super(notificationEmitter);
 
@@ -64,11 +64,11 @@ public class VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, 
 	 * @param name
 	 * @return
 	 */
-	public Variable<Classifier> getVariable(String name)
+	public Variable<Classifier> getVariable(final String name)
 	{
-		Variable<Classifier> variable = this.variables.get(name);
+		final Variable<Classifier> variable = this.variables.get(name);
 
-		if (variable == null && this.parentScope != null)
+		if ((variable == null) && (this.parentScope != null))
 		{
 			return this.parentScope.getVariable(name);
 		}
@@ -85,7 +85,7 @@ public class VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, 
 	 * @param name
 	 * @return
 	 */
-	public boolean variableExists(String name)
+	public boolean variableExists(final String name)
 	{
 		if (this.variables.containsKey(name))
 		{
@@ -108,13 +108,13 @@ public class VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, 
 	 * @param name
 	 * @return
 	 */
-	public Variable<Classifier> deleteVariable(String name)
+	public Variable<Classifier> deleteVariable(final String name)
 	{
-		Variable<Classifier> variable = this.variables.remove(name);
+		final Variable<Classifier> variable = this.variables.remove(name);
 
 		if (variable != null)
 		{
-			getNotificationEmitter().variableDeleted(variable, this);
+			this.getNotificationEmitter().variableDeleted(variable, this);
 		}
 
 		return variable;
@@ -128,7 +128,7 @@ public class VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, 
 	 * @param value
 	 * @return
 	 */
-	public Variable<Classifier> createVariable(String name, Classifier classifier, Object value)
+	public Variable<Classifier> createVariable(final String name, final Classifier classifier, final Object value)
 	{
 		assert name != null;
 		assert !"".equals(name);
@@ -136,11 +136,11 @@ public class VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, 
 
 		this.deleteVariable(name);
 
-		Variable<Classifier> variable = new Variable<Classifier>(name, classifier, value);
+		final Variable<Classifier> variable = new Variable<Classifier>(name, classifier, value);
 
 		this.variables.put(name, variable);
 
-		getNotificationEmitter().variableCreated(variable, this);
+		this.getNotificationEmitter().variableCreated(variable, this);
 
 		return variable;
 	}
@@ -159,25 +159,25 @@ public class VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, 
 		}
 		else
 		{
-			LinkedList<Variable<Classifier>> variables = new LinkedList<Variable<Classifier>>(this.variables.values());
+			final LinkedList<Variable<Classifier>> variables = new LinkedList<Variable<Classifier>>(this.variables.values());
 			variables.addAll(this.parentScope.getVariables());
 
 			return Collections.unmodifiableCollection(variables);
 		}
 	}
 
-	public List<String> getExpressionImports(String expressionLanguage, String expressionLanguageVersion)
+	public List<String> getExpressionImports(final String expressionLanguage, final String expressionLanguageVersion)
 	{
 		assert expressionLanguage != null;
 		assert expressionLanguageVersion != null;
 		assert !"".equals(expressionLanguage);
 		assert !"".equals(expressionLanguageVersion);
 
-		Map<String, List<String>> m1 = this.expressionImports.get(expressionLanguage);
+		final Map<String, List<String>> m1 = this.expressionImports.get(expressionLanguage);
 
 		if (m1 != null)
 		{
-			List<String> m2 = m1.get(expressionLanguageVersion);
+			final List<String> m2 = m1.get(expressionLanguageVersion);
 
 			if (m2 != null)
 			{
@@ -194,17 +194,24 @@ public class VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, 
 	 * @param name
 	 * @param value
 	 */
-	public void changeVariableValue(String name, Object value)
+	public void changeVariableValue(final String name, final Object value)
 	{
 		assert this.variableExists(name);
 
-		Variable<Classifier> variable = this.variables.get(name);
+		if (this.variables.containsKey(name))
+		{
+			final Variable<Classifier> variable = this.variables.get(name);
 
-		Object oldValue = variable.getValue();
+			final Object oldValue = variable.getValue();
 
-		variable.setValue(value);
+			variable.setValue(value);
 
-		getNotificationEmitter().variableValueChanged(variable, oldValue, this);
+			this.getNotificationEmitter().variableValueChanged(variable, oldValue, this);
+		}
+		else
+		{
+			this.parentScope.changeVariableValue(name, value);
+		}
 	}
 
 	public VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, StoryPatternObject, StoryPatternLink, Classifier, Feature, Expression> getParentScope()
@@ -227,7 +234,7 @@ public class VariablesScope<Activity, ActivityNode, ActivityEdge, StoryPattern, 
 		}
 		else
 		{
-			for (Variable<Classifier> variable : this.variables.values())
+			for (final Variable<Classifier> variable : this.variables.values())
 			{
 				this.parentScope.variables.put(variable.getName(), variable);
 			}

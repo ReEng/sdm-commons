@@ -209,7 +209,7 @@ public class NotificationEmitter<Activity, ActivityNode, ActivityEdge, StoryPatt
 	{
 		if (!this.notificationReceivers.isEmpty())
 		{
-			this.sendNotifications(new InstanceObjectCreatedNotification<StoryPatternObject, Classifier>(variablesScope, notifier,
+			this.sendNotifications(new InstanceObjectDestroyedNotification<StoryPatternObject, Classifier>(variablesScope, notifier,
 					storyPatternObject, instanceObject));
 		}
 	}
