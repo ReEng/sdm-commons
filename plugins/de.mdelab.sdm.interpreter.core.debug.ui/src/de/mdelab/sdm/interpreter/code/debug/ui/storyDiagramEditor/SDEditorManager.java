@@ -4,7 +4,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.ui.IEditorInput;
 
-import de.hpi.sam.storyDiagramEcore.NamedElement;
 import de.mdelab.sdm.interpreter.code.debug.ui.SDDebugTarget;
 import de.mdelab.sdm.interpreter.core.notifications.NotificationTypeEnum;
 
@@ -18,7 +17,7 @@ public abstract class SDEditorManager<StoryDiagramElement extends EObject>
 	private final Color									FAILED_COLOR		= new Color(null, 255, 44, 0);		// red
 	private final Color									VISITED_COLOR		= new Color(null, 42, 144, 244);	// blue
 
-	public SDEditorManager(SDDebugTarget<StoryDiagramElement, ?> debugTarget)
+	public SDEditorManager(final SDDebugTarget<StoryDiagramElement, ?> debugTarget)
 	{
 		this.debugTarget = debugTarget;
 	}
@@ -29,10 +28,10 @@ public abstract class SDEditorManager<StoryDiagramElement extends EObject>
 	}
 
 	public abstract void highlightStoryDiagramElement(final StoryDiagramElement element, final NotificationTypeEnum notification);
-	
-	public abstract void focusDiagramElement(NamedElement element);
 
-	protected Color getColorForNotification(NotificationTypeEnum notification)
+	public abstract void focusDiagramElement(StoryDiagramElement element);
+
+	protected Color getColorForNotification(final NotificationTypeEnum notification)
 	{
 		switch (notification)
 		{

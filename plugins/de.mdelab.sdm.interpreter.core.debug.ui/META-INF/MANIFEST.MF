@@ -8,7 +8,6 @@ Bundle-Vendor: MDELab.de
 Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
  org.eclipse.ui;bundle-version="3.6.2";visibility:=reexport,
  org.eclipse.debug.core;bundle-version="3.6.0";visibility:=reexport,
- de.hpi.sam.storyDiagramEcore;bundle-version="2.3.3",
  org.eclipse.debug.ui;bundle-version="3.6.3";visibility:=reexport,
  de.mdelab.sdm.interpreter.core.debug.client;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.emf;bundle-version="2.6.0";visibility:=reexport,
