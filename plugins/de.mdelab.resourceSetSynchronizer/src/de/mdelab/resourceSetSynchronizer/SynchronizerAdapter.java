@@ -120,7 +120,7 @@ public class SynchronizerAdapter extends EContentAdapter
 
 	private boolean									forwardNotifications;
 
-	public SynchronizerAdapter(ResourceSet resourceSet, int serverPort)
+	public SynchronizerAdapter(final ResourceSet resourceSet, final int serverPort)
 	{
 		this(resourceSet, serverPort, new SynchronizerCommandExecutor());
 	}
@@ -136,7 +136,7 @@ public class SynchronizerAdapter extends EContentAdapter
 	 *            The port on which the adapter will listen for incoming
 	 *            messages.
 	 */
-	public SynchronizerAdapter(ResourceSet resourceSet, int serverPort, ISynchronizerCommandExecutor commandExecutor)
+	public SynchronizerAdapter(final ResourceSet resourceSet, final int serverPort, final ISynchronizerCommandExecutor commandExecutor)
 	{
 		assert resourceSet != null;
 		assert serverPort > 1024;
@@ -187,7 +187,7 @@ public class SynchronizerAdapter extends EContentAdapter
 		resourceSet.eAdapters().add(this);
 	}
 
-	public void addResourceFilter(IResourceFilter resourceFilter)
+	public void addResourceFilter(final IResourceFilter resourceFilter)
 	{
 		this.resourceFilters.add(resourceFilter);
 	}
@@ -197,7 +197,7 @@ public class SynchronizerAdapter extends EContentAdapter
 		return this.resourceFilters;
 	}
 
-	public void removeResourceFilter(IResourceFilter resourceFilter)
+	public void removeResourceFilter(final IResourceFilter resourceFilter)
 	{
 		this.resourceFilters.remove(resourceFilter);
 	}
@@ -231,7 +231,7 @@ public class SynchronizerAdapter extends EContentAdapter
 	 *            The port of the remote synchronizer adapter.
 	 * @throws Exception
 	 */
-	public void connect(String address, int port) throws Exception
+	public void connect(final String address, final int port) throws Exception
 	{
 		assert address != null;
 		assert !"".equals(address);
@@ -250,15 +250,15 @@ public class SynchronizerAdapter extends EContentAdapter
 		/*
 		 * Connect to all other synchronizer adapters of this group
 		 */
-		Map<String, String> synchronizerAdapters = new GetConnectedSynchronizerAdaptersRequest(synchronizationProtocol, this).send();
+		final Map<String, String> synchronizerAdapters = new GetConnectedSynchronizerAdaptersRequest(synchronizationProtocol, this).send();
 
-		for (Entry<String, String> entry : synchronizerAdapters.entrySet())
+		for (final Entry<String, String> entry : synchronizerAdapters.entrySet())
 		{
 			this.registerAtServer(entry.getValue());
 		}
 	}
 
-	private SignalProtocol<Object> registerAtServer(String remoteAddress) throws Exception
+	private SignalProtocol<Object> registerAtServer(final String remoteAddress) throws Exception
 	{
 		this.logger.info("registerAtServer(" + remoteAddress + ")");
 
@@ -267,7 +267,7 @@ public class SynchronizerAdapter extends EContentAdapter
 		 */
 		final SignalProtocol<Object> synchronizationProtocol = this.createSynchronizationProtocol();
 
-		IConnector connector = TCPUtil.getConnector(this.synchronizationProtocolContainer, remoteAddress);
+		final IConnector connector = TCPUtil.getConnector(this.synchronizationProtocolContainer, remoteAddress);
 		synchronizationProtocol.open(connector);
 
 		/*
@@ -300,7 +300,7 @@ public class SynchronizerAdapter extends EContentAdapter
 			this.getResourceSet().eAdapters().remove(this);
 			this.resourceSet = null;
 
-			for (SignalProtocol<?> protocol : this.protocols.values())
+			for (final SignalProtocol<?> protocol : this.protocols.values())
 			{
 				new DisconnectClientRequest(protocol, this).send();
 			}
@@ -349,7 +349,7 @@ public class SynchronizerAdapter extends EContentAdapter
 	 * @param remotePort
 	 *            The remote adapter's server port.
 	 */
-	public void registerClient(String remoteAdapterUUID, String remoteAddress, int remotePort)
+	public void registerClient(final String remoteAdapterUUID, final String remoteAddress, final int remotePort)
 	{
 		assert remoteAdapterUUID != null;
 		assert !"".equals(remoteAdapterUUID);
@@ -359,9 +359,9 @@ public class SynchronizerAdapter extends EContentAdapter
 
 		this.logger.info("registerClient(" + remoteAdapterUUID + ", " + remoteAddress + ", " + remotePort + ")");
 
-		SignalProtocol<Object> protocol = this.createSynchronizationProtocol();
+		final SignalProtocol<Object> protocol = this.createSynchronizationProtocol();
 
-		IConnector connector = TCPUtil.getConnector(this.synchronizationProtocolContainer, remoteAddress + ":" + remotePort);
+		final IConnector connector = TCPUtil.getConnector(this.synchronizationProtocolContainer, remoteAddress + ":" + remotePort);
 		protocol.open(connector);
 
 		assert protocol.isClient();
@@ -381,7 +381,7 @@ public class SynchronizerAdapter extends EContentAdapter
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void notifyChanged(Notification notification)
+	public void notifyChanged(final Notification notification)
 	{
 		try
 		{
@@ -400,7 +400,7 @@ public class SynchronizerAdapter extends EContentAdapter
 				/*
 				 * Inform all connected adapters
 				 */
-				for (Entry<String, SignalProtocol<?>> entry : this.protocols.entrySet())
+				for (final Entry<String, SignalProtocol<?>> entry : this.protocols.entrySet())
 				{
 					this.logger.debug("forwarding notification to '" + entry.getKey() + "'...");
 
@@ -513,62 +513,68 @@ public class SynchronizerAdapter extends EContentAdapter
 						assert notification.getFeature() != null;
 						assert notification.getFeature() instanceof EStructuralFeature;
 
-						switch (notification.getEventType())
+						final EStructuralFeature feature = (EStructuralFeature) notification.getFeature();
+
+						if (feature.isChangeable() && !feature.isDerived() && !feature.isTransient())
 						{
-							case Notification.ADD:
+							switch (notification.getEventType())
 							{
-								new ObjectAddedToFeatureRequest(entry.getValue(), this, (EObject) notification.getNotifier(),
-										(EStructuralFeature) notification.getFeature(), notification.getNewValue(),
-										notification.getPosition()).send();
+								case Notification.ADD:
+								{
+									new ObjectAddedToFeatureRequest(entry.getValue(), this, (EObject) notification.getNotifier(),
+											(EStructuralFeature) notification.getFeature(), notification.getNewValue(),
+											notification.getPosition()).send();
 
-								break;
-							}
+									break;
+								}
 
-							case Notification.ADD_MANY:
-							{
-								new ObjectsAddedToFeatureRequest(entry.getValue(), this, (EObject) notification.getNotifier(),
-										(EStructuralFeature) notification.getFeature(), (List<Object>) notification.getNewValue(),
-										notification.getPosition()).send();
+								case Notification.ADD_MANY:
+								{
+									new ObjectsAddedToFeatureRequest(entry.getValue(), this, (EObject) notification.getNotifier(),
+											(EStructuralFeature) notification.getFeature(), (List<Object>) notification.getNewValue(),
+											notification.getPosition()).send();
 
-								break;
-							}
+									break;
+								}
 
-							case Notification.REMOVE:
-							{
-								new ObjectRemovedFromFeatureRequest(entry.getValue(), this, (EObject) notification.getNotifier(),
-										(EStructuralFeature) notification.getFeature(), notification.getOldValue()).send();
+								case Notification.REMOVE:
+								{
+									new ObjectRemovedFromFeatureRequest(entry.getValue(), this, (EObject) notification.getNotifier(),
+											(EStructuralFeature) notification.getFeature(), notification.getOldValue()).send();
 
-								break;
-							}
+									break;
+								}
 
-							case Notification.REMOVE_MANY:
-							{
-								new ObjectsRemovedFromFeatureRequest(entry.getValue(), this, (EObject) notification.getNotifier(),
-										(EStructuralFeature) notification.getFeature(), (List<Object>) notification.getOldValue()).send();
+								case Notification.REMOVE_MANY:
+								{
+									new ObjectsRemovedFromFeatureRequest(entry.getValue(), this, (EObject) notification.getNotifier(),
+											(EStructuralFeature) notification.getFeature(), (List<Object>) notification.getOldValue())
+											.send();
 
-								break;
-							}
+									break;
+								}
 
-							case Notification.SET:
-							{
-								new FeatureSetRequest(entry.getValue(), this, (EObject) notification.getNotifier(),
-										(EStructuralFeature) notification.getFeature(), notification.getNewValue(),
-										notification.getOldValue()).send();
+								case Notification.SET:
+								{
+									new FeatureSetRequest(entry.getValue(), this, (EObject) notification.getNotifier(),
+											(EStructuralFeature) notification.getFeature(), notification.getNewValue(),
+											notification.getOldValue()).send();
 
-								break;
-							}
+									break;
+								}
 
-							case Notification.UNSET:
-							{
-								new FeatureUnsetRequest(entry.getValue(), this, (EObject) notification.getNotifier(),
-										(EStructuralFeature) notification.getFeature()).send();
+								case Notification.UNSET:
+								{
+									new FeatureUnsetRequest(entry.getValue(), this, (EObject) notification.getNotifier(),
+											(EStructuralFeature) notification.getFeature()).send();
 
-								break;
-							}
+									break;
+								}
 
-							default:
-							{
-								throw new UnsupportedOperationException();
+								default:
+								{
+									throw new UnsupportedOperationException();
+								}
 							}
 						}
 					}
@@ -576,13 +582,13 @@ public class SynchronizerAdapter extends EContentAdapter
 
 			}
 		}
-		catch (Exception e)
+		catch (final Exception e)
 		{
 			throw new RuntimeException(e);
 		}
 	}
 
-	private boolean synchronizeNotification(Notification notification)
+	private boolean synchronizeNotification(final Notification notification)
 	{
 		/*
 		 * Ask all filters whether the notification should be synchronized.
@@ -630,11 +636,11 @@ public class SynchronizerAdapter extends EContentAdapter
 		}
 	}
 
-	public boolean isSynchronizeResource(Resource resource)
+	public boolean isSynchronizeResource(final Resource resource)
 	{
 		assert resource != null;
 
-		for (IResourceFilter filter : this.resourceFilters)
+		for (final IResourceFilter filter : this.resourceFilters)
 		{
 			if (!filter.synchronizeResource(resource))
 			{
@@ -652,7 +658,7 @@ public class SynchronizerAdapter extends EContentAdapter
 	 *            The UUID of the other adapter.
 	 * @return The protocol object that connects to the specified adapter.
 	 */
-	public SignalProtocol<?> getProtocol(String remoteAdapterUUID)
+	public SignalProtocol<?> getProtocol(final String remoteAdapterUUID)
 	{
 		assert this.protocols.containsKey(remoteAdapterUUID);
 
@@ -674,11 +680,11 @@ public class SynchronizerAdapter extends EContentAdapter
 		return this.remoteAdapterAddresses;
 	}
 
-	public void disconnect(String remoteAdapterUUID)
+	public void disconnect(final String remoteAdapterUUID)
 	{
 		this.logger.info("disconnect(" + remoteAdapterUUID + ")");
 
-		SignalProtocol<?> protocol = this.protocols.remove(remoteAdapterUUID);
+		final SignalProtocol<?> protocol = this.protocols.remove(remoteAdapterUUID);
 
 		assert protocol != null;
 
@@ -709,7 +715,7 @@ public class SynchronizerAdapter extends EContentAdapter
 		return this.forwardNotifications;
 	}
 
-	public synchronized void setForwardNotifications(boolean forwardNotifications)
+	public synchronized void setForwardNotifications(final boolean forwardNotifications)
 	{
 		this.forwardNotifications = forwardNotifications;
 	}
