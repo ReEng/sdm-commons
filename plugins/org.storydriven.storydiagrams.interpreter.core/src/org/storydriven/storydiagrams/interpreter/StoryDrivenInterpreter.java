@@ -96,7 +96,7 @@ public class StoryDrivenInterpreter
 
 			for (final EParameter param : activity.getOutParameters())
 			{
-				variablesScope.createVariable(param.getName(), param.getEType(), returnValues.get(param.getName()));
+				variablesScope.createVariable(param.getName(), param.getEType(), returnValues.get(param.getName()).getValue());
 			}
 
 			assert node.getOutgoings().size() == 1;
