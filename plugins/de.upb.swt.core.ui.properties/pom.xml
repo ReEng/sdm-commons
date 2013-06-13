@@ -5,9 +5,9 @@
 	<packaging>eclipse-plugin</packaging>
 	<version>0.1.0-SNAPSHOT</version>
 	<parent>
-		<groupId>org.storydriven</groupId>
-		<artifactId>org.storydriven.master</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
-		<relativePath>../..</relativePath>
+		<groupId>de.upb.swt.core</groupId>
+		<artifactId>de.upb.swt.core.parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>../../releng/de.upb.swt.core.parent</relativePath>
 	</parent>
 </project>

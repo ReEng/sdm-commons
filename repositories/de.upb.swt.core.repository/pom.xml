@@ -1,8 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!--
+<copyright>
+	Copyright 2013 by storydriven.org and others. All rights reserved. This
+	program and its materials are made available under the terms of the Eclipse
+	Public License v1.0 which is referenced inside the distribution.
+
+	Contributors:
+		Aljoscha Hark <aljoschability@gmail.com> - Initial code
+
+</copyright>
+-->
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>de.upb.swt.core</artifactId>
-	<packaging>eclipse-plugin</packaging>
+	<artifactId>de.upb.swt.core.repository</artifactId>
+	<packaging>eclipse-repository</packaging>
 	<parent>
 		<groupId>de.upb.swt.core</groupId>
 		<artifactId>de.upb.swt.core.parent</artifactId>
