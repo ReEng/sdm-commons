@@ -166,7 +166,7 @@ public abstract class AbstractActivator extends AbstractCoreActivator implements
 		getImageRegistry().put(key, descriptor);
 	}
 
-	private ImageRegistry getImageRegistry() {
+	protected ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry(getDisplay());
 			imageRegistry.put(null, ImageDescriptor.getMissingImageDescriptor());
