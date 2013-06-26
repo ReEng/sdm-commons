@@ -33,16 +33,9 @@
 	</modules>
 
 	<repositories>
-		<!-- add Indigo repository to resolve basic dependencies -->
+		<!-- basic eclipse dependencies -->
 		<repository>
-			<id>Indigo</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/indigo</url>
-		</repository>
-
-		<!-- add Juno repository to resolve basic dependencies -->
-		<repository>
-			<id>Juno</id>
+			<id>eclipse-juno</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/juno</url>
 		</repository>
