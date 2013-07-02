@@ -76,16 +76,18 @@ public abstract class SDInstanceGraphEditor extends EcoreEditor
 
 							// Try to select the affected objects.
 							//
-							Command mostRecentCommand = ((CommandStack) event.getSource()).getMostRecentCommand();
+							final Command mostRecentCommand = ((CommandStack) event.getSource()).getMostRecentCommand();
 							if (mostRecentCommand != null)
 							{
 								SDInstanceGraphEditor.this.setSelectionToViewer(mostRecentCommand.getAffectedObjects());
 							}
-							if (SDInstanceGraphEditor.this.propertySheetPage != null
-									&& !SDInstanceGraphEditor.this.propertySheetPage.getControl().isDisposed())
-							{
-								SDInstanceGraphEditor.this.propertySheetPage.refresh();
-							}
+							// if (SDInstanceGraphEditor.this.propertySheetPage
+							// != null
+							// &&
+							// !SDInstanceGraphEditor.this.propertySheetPage.getControl().isDisposed())
+							// {
+							// SDInstanceGraphEditor.this.propertySheetPage.refresh();
+							// }
 						}
 					});
 				}
@@ -156,7 +158,7 @@ public abstract class SDInstanceGraphEditor extends EcoreEditor
 		return false;
 	}
 
-	public void setReadOnly(boolean readOnly)
+	public void setReadOnly(final boolean readOnly)
 	{
 		/*
 		 * Display.getDefault().syncExec(new Runnable()
@@ -168,7 +170,7 @@ public abstract class SDInstanceGraphEditor extends EcoreEditor
 			/*
 			 * Save all changeable resources and set them to readonly
 			 */
-			for (Entry<Resource, Boolean> entry : this.editingDomain.getResourceToReadOnlyMap().entrySet())
+			for (final Entry<Resource, Boolean> entry : this.editingDomain.getResourceToReadOnlyMap().entrySet())
 			{
 				if (!entry.getValue())
 				{
@@ -182,7 +184,7 @@ public abstract class SDInstanceGraphEditor extends EcoreEditor
 		{
 			if (this.changeableResources != null)
 			{
-				for (Resource r : this.changeableResources)
+				for (final Resource r : this.changeableResources)
 				{
 					this.editingDomain.getResourceToReadOnlyMap().put(r, false);
 				}
