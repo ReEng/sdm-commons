@@ -4,7 +4,7 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
-import org.eclipse.emf.ecore.resource.Resource;
+
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.CheckboxCellEditor;
