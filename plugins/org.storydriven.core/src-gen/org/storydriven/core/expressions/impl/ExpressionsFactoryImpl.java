@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.core.expressions.*;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.TextualExpression;
@@ -32,7 +33,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements
 	public static ExpressionsFactory init() {
 		try {
 			ExpressionsFactory theExpressionsFactory = (ExpressionsFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.storydriven.org/core/expressions/0.3.1");
+					.getEFactory(ExpressionsPackage.eNS_URI);
 			if (theExpressionsFactory != null) {
 				return theExpressionsFactory;
 			}

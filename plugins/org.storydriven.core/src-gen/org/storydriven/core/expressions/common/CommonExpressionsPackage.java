@@ -27,6 +27,7 @@ import org.storydriven.core.expressions.ExpressionsPackage;
  * <!-- end-user-doc -->
  * @see org.storydriven.core.expressions.common.CommonExpressionsFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface CommonExpressionsPackage extends EPackage {

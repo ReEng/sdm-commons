@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
-  <uml:Package xmi:id="bd7155bb-4f57-4868-b74a-5672b1eac640" name="core">
-    <eAnnotations xmi:id="_KMsFMAGIEeKcNe_rV4OWfA" source="http://www.eclipse.org/edapt">
-      <details xmi:id="_KMssQAGIEeKcNe_rV4OWfA" key="historyURI" value="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Package xmi:id="bd7155bb-4f57-4868-b74a-5672b1eac640" name="core" URI="http://www.storydriven.org/core/0.3.1">
+    <eAnnotations xmi:id="_FUZsMP6iEeKEltuBERatIQ" source="http://www.eclipse.org/emf/2002/Ecore">
+      <details xmi:id="_Ju790P6iEeKEltuBERatIQ" key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details xmi:id="_LV4tgP6iEeKEltuBERatIQ" key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details xmi:id="_NnPFEP6iEeKEltuBERatIQ" key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
     <ownedComment xmi:id="_2szqgJxkEeCuYMafrm1l2g" annotatedElement="bd7155bb-4f57-4868-b74a-5672b1eac640">
       <body>The core package is the root package for the storydriven core meta-model. It defines several abstract super classes which implement an extension mechanism as well as recurring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element.</body>
@@ -34,7 +36,12 @@
     <elementImport xmi:id="_lO86YbLyEd-uk56s-ldeog">
       <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
     </elementImport>
-    <packagedElement xmi:type="uml:Package" xmi:id="_gsByQLN1Ed-vJ9Qpen_Iuw" name="expressions">
+    <packagedElement xmi:type="uml:Package" xmi:id="_gsByQLN1Ed-vJ9Qpen_Iuw" name="expressions" URI="http://www.storydriven.org/core/expressions/0.3.1">
+      <eAnnotations xmi:id="_SnRQcP6iEeKEltuBERatIQ" source="http://www.eclipse.org/emf/2002/Ecore">
+        <details xmi:id="_SnRQcf6iEeKEltuBERatIQ" key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+        <details xmi:id="_SnRQcv6iEeKEltuBERatIQ" key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+        <details xmi:id="_SnRQc_6iEeKEltuBERatIQ" key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      </eAnnotations>
       <ownedComment xmi:id="_OScPUJKyEeCoWcgn2XgBaQ" annotatedElement="_gsByQLN1Ed-vJ9Qpen_Iuw">
         <body>The base package for all expressions which can be used for modeling activities&#xD;
 and patterns.</body>
@@ -45,7 +52,12 @@ and patterns.</body>
         </ownedComment>
         <generalization xmi:id="_mg81QBzTEeChOvWwuwx7tQ" general="_e7CFQLLyEd-uk56s-ldeog"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Package" xmi:id="_8yfvIMmbEeG1Tu0kxZC-sQ" name="common">
+      <packagedElement xmi:type="uml:Package" xmi:id="_8yfvIMmbEeG1Tu0kxZC-sQ" name="common" URI="http://www.storydriven.org/core/expressions/common/0.3.1">
+        <eAnnotations xmi:id="_T4pYwP6iEeKEltuBERatIQ" source="http://www.eclipse.org/emf/2002/Ecore">
+          <details xmi:id="_T4pYwf6iEeKEltuBERatIQ" key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+          <details xmi:id="_T4pYwv6iEeKEltuBERatIQ" key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+          <details xmi:id="_T4pYw_6iEeKEltuBERatIQ" key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+        </eAnnotations>
         <packagedElement xmi:type="uml:Enumeration" xmi:id="_Zu35oBzCEeChOvWwuwx7tQ" name="LogicOperator">
           <ownedComment xmi:id="_-IZ60BzrEeChOvWwuwx7tQ" annotatedElement="_Zu35oBzCEeChOvWwuwx7tQ">
             <body>Defines the operators for binary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression.</body>
@@ -96,8 +108,8 @@ and patterns.</body>
             <ownedComment xmi:id="_8zvYgBzsEeChOvWwuwx7tQ" annotatedElement="_qyufYhzGEeChOvWwuwx7tQ">
               <body>Represents the operand of a NotExpression, e.g. a &lt; 5 in NOT (a &lt; 5).</body>
             </ownedComment>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qyvGcRzGEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qyvGcBzGEeChOvWwuwx7tQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qyvGcRzGEeChOvWwuwx7tQ" value="1"/>
           </ownedAttribute>
           <ownedAttribute xmi:id="_MIj-sMqjEeGgOMYaYaWlnQ" name="operator" type="_49SisMmcEeG1Tu0kxZC-sQ" isOrdered="true">
             <defaultValue xmi:type="uml:LiteralString" xmi:id="_gyny8MqjEeGgOMYaYaWlnQ" value=""/>
@@ -112,15 +124,15 @@ and patterns.</body>
             <ownedComment xmi:id="_0Amu8BzsEeChOvWwuwx7tQ" annotatedElement="_fzApgRzGEeChOvWwuwx7tQ">
               <body>Represents the first operand of a binary expression, e.g. x in the expression x &lt; 5.</body>
             </ownedComment>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fzBQkBzGEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fzApghzGEeChOvWwuwx7tQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fzBQkBzGEeChOvWwuwx7tQ" value="1"/>
           </ownedAttribute>
           <ownedAttribute xmi:id="_kidbMRzGEeChOvWwuwx7tQ" name="rightExpression" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_kicNEBzGEeChOvWwuwx7tQ">
             <ownedComment xmi:id="_2SGQcBzsEeChOvWwuwx7tQ" annotatedElement="_kidbMRzGEeChOvWwuwx7tQ">
               <body>Represents the second operand of a binary expression, e.g. 5 in the expression x &lt; 5.</body>
             </ownedComment>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kieCQBzGEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kidbMhzGEeChOvWwuwx7tQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kieCQBzGEeChOvWwuwx7tQ" value="1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_AsdoQBzGEeChOvWwuwx7tQ" name="ComparisonExpression">
@@ -171,20 +183,20 @@ and patterns.</body>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_fy_bYBzGEeChOvWwuwx7tQ" name="HasLeftExpression" memberEnd="_fzACcBzGEeChOvWwuwx7tQ _fzApgRzGEeChOvWwuwx7tQ">
           <ownedEnd xmi:id="_fzACcBzGEeChOvWwuwx7tQ" name="revLeftExpression" type="__7WUYBzFEeChOvWwuwx7tQ" association="_fy_bYBzGEeChOvWwuwx7tQ">
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fzApgBzGEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fzACcRzGEeChOvWwuwx7tQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fzApgBzGEeChOvWwuwx7tQ" value="1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_kicNEBzGEeChOvWwuwx7tQ" name="HasRightExpression" memberEnd="_kic0IBzGEeChOvWwuwx7tQ _kidbMRzGEeChOvWwuwx7tQ">
           <ownedEnd xmi:id="_kic0IBzGEeChOvWwuwx7tQ" name="revRightExpression" type="__7WUYBzFEeChOvWwuwx7tQ" association="_kicNEBzGEeChOvWwuwx7tQ">
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kidbMBzGEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kic0IRzGEeChOvWwuwx7tQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kidbMBzGEeChOvWwuwx7tQ" value="1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_qyt4UBzGEeChOvWwuwx7tQ" name="HasEnclosedExpression" memberEnd="_qyt4URzGEeChOvWwuwx7tQ _qyufYhzGEeChOvWwuwx7tQ">
           <ownedEnd xmi:id="_qyt4URzGEeChOvWwuwx7tQ" name="revEnclosedExpression" type="__NYbIBzFEeChOvWwuwx7tQ" association="_qyt4UBzGEeChOvWwuwx7tQ">
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qyufYRzGEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qyufYBzGEeChOvWwuwx7tQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qyufYRzGEeChOvWwuwx7tQ" value="1"/>
           </ownedEnd>
         </packagedElement>
       </packagedElement>
@@ -220,39 +232,39 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
         <body>The EClassifier this model element is typed over.</body>
       </ownedComment>
       <ownedEnd xmi:id="_HPoxgbLzEd-uk56s-ldeog" name="typedElement" visibility="public" type="__xUl0LLyEd-uk56s-ldeog" association="_HPoxgLLzEd-uk56s-ldeog">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HPpYkLLzEd-uk56s-ldeog" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HPoxgrLzEd-uk56s-ldeog"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HPpYkLLzEd-uk56s-ldeog" value="*"/>
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_rCMwALw1Ed-Ytrd77fw2LA" name="HasGenericType" memberEnd="_rCNXELw1Ed-Ytrd77fw2LA _rCN-Ibw1Ed-Ytrd77fw2LA">
       <ownedEnd xmi:id="_rCNXELw1Ed-Ytrd77fw2LA" name="typedElement" type="__xUl0LLyEd-uk56s-ldeog" association="_rCMwALw1Ed-Ytrd77fw2LA">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rCN-ILw1Ed-Ytrd77fw2LA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rCNXEbw1Ed-Ytrd77fw2LA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rCN-ILw1Ed-Ytrd77fw2LA" value="1"/>
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_3o5hAL0VEd-DQ5q3aRKcIw" name="HasModelExtension" memberEnd="_3o6vIr0VEd-DQ5q3aRKcIw _3o6IEL0VEd-DQ5q3aRKcIw">
-      <ownedEnd xmi:id="_3o6IEL0VEd-DQ5q3aRKcIw" name="extension" type="_vasJcL0VEd-DQ5q3aRKcIw" isDerived="true" aggregation="composite" association="_3o5hAL0VEd-DQ5q3aRKcIw">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3o6vIb0VEd-DQ5q3aRKcIw" value="*"/>
+      <ownedEnd xmi:id="_3o6IEL0VEd-DQ5q3aRKcIw" name="extension" type="_vasJcL0VEd-DQ5q3aRKcIw" aggregation="composite" isDerived="true" association="_3o5hAL0VEd-DQ5q3aRKcIw">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3o6vIL0VEd-DQ5q3aRKcIw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3o6vIb0VEd-DQ5q3aRKcIw" value="*"/>
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_tCyogL0WEd-DQ5q3aRKcIw" name="HasExtension" memberEnd="_tCyogb0WEd-DQ5q3aRKcIw _tCzPkr0WEd-DQ5q3aRKcIw"/>
     <packagedElement xmi:type="uml:Association" xmi:id="_8klicL0WEd-DQ5q3aRKcIw" name="HasExtendedObject" memberEnd="_8kmJgL0WEd-DQ5q3aRKcIw _8kmwkb0WEd-DQ5q3aRKcIw">
       <ownedEnd xmi:id="_8kmJgL0WEd-DQ5q3aRKcIw" name="extension" type="_vasJcL0VEd-DQ5q3aRKcIw" association="_8klicL0WEd-DQ5q3aRKcIw">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8kmwkL0WEd-DQ5q3aRKcIw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8kmJgb0WEd-DQ5q3aRKcIw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8kmwkL0WEd-DQ5q3aRKcIw" value="*"/>
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_w551QL0cEd-DQ5q3aRKcIw" name="" memberEnd="_w56cUL0cEd-DQ5q3aRKcIw _w56cU70cEd-DQ5q3aRKcIw">
       <ownedEnd xmi:id="_w56cUL0cEd-DQ5q3aRKcIw" name="extension" type="_vasJcL0VEd-DQ5q3aRKcIw" association="_w551QL0cEd-DQ5q3aRKcIw">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_w56cUr0cEd-DQ5q3aRKcIw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_w56cUb0cEd-DQ5q3aRKcIw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_w56cUr0cEd-DQ5q3aRKcIw" value="*"/>
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_VuVpALyyEd-eCY_Peu5fFw" name="HasAnnotation" memberEnd="_VuWQELyyEd-eCY_Peu5fFw _VuXeMLyyEd-eCY_Peu5fFw">
       <ownedEnd xmi:id="_VuWQELyyEd-eCY_Peu5fFw" name="annotatedElement" type="_zX-c0LyxEd-eCY_Peu5fFw" association="_VuVpALyyEd-eCY_Peu5fFw">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VuW3IbyyEd-eCY_Peu5fFw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VuW3ILyyEd-eCY_Peu5fFw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VuW3IbyyEd-eCY_Peu5fFw" value="1"/>
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_tB8FcLK5Ed-uk56s-ldeog" name="NamedElement" isAbstract="true">
@@ -288,13 +300,13 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
       <generalization xmi:id="_3aIOMLyyEd-eCY_Peu5fFw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
       <ownedAttribute xmi:id="_HPpYkbLzEd-uk56s-ldeog" name="type" isReadOnly="true" isDerived="true" isDerivedUnion="true" association="_HPoxgLLzEd-uk56s-ldeog">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HPpYk7LzEd-uk56s-ldeog" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HPpYkrLzEd-uk56s-ldeog"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HPpYk7LzEd-uk56s-ldeog" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_rCN-Ibw1Ed-Ytrd77fw2LA" name="genericType" aggregation="composite" association="_rCMwALw1Ed-Ytrd77fw2LA">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rCOlMLw1Ed-Ytrd77fw2LA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rCN-Irw1Ed-Ytrd77fw2LA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rCOlMLw1Ed-Ytrd77fw2LA" value="1"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_zX-c0LyxEd-eCY_Peu5fFw" name="ExtendableElement" isAbstract="true">
@@ -306,12 +318,12 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
       </generalization>
       <ownedAttribute xmi:id="_VuXeMLyyEd-eCY_Peu5fFw" name="annotation" aggregation="composite" association="_VuVpALyyEd-eCY_Peu5fFw">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VuYFQLyyEd-eCY_Peu5fFw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VuXeMbyyEd-eCY_Peu5fFw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VuYFQLyyEd-eCY_Peu5fFw" value="*"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_tCzPkr0WEd-DQ5q3aRKcIw" name="extension" type="_vasJcL0VEd-DQ5q3aRKcIw" aggregation="composite" association="_tCyogL0WEd-DQ5q3aRKcIw">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tCz2ob0WEd-DQ5q3aRKcIw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tCz2oL0WEd-DQ5q3aRKcIw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tCz2ob0WEd-DQ5q3aRKcIw" value="*"/>
       </ownedAttribute>
       <ownedOperation xmi:id="_uRFyML0XEd-DQ5q3aRKcIw" name="getExtension" visibility="public">
         <ownedParameter xmi:id="_uRFyMb0XEd-DQ5q3aRKcIw" type="_vasJcL0VEd-DQ5q3aRKcIw" direction="return"/>
@@ -349,22 +361,22 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
       <generalization xmi:id="_DmpoQL0dEd-DQ5q3aRKcIw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
       <ownedAttribute xmi:id="_8kmwkb0WEd-DQ5q3aRKcIw" name="base" isReadOnly="true" isDerived="true" isDerivedUnion="true" association="_8klicL0WEd-DQ5q3aRKcIw">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8knXob0WEd-DQ5q3aRKcIw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8knXoL0WEd-DQ5q3aRKcIw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8knXob0WEd-DQ5q3aRKcIw" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_tCyogb0WEd-DQ5q3aRKcIw" name="extendableBase" type="_zX-c0LyxEd-eCY_Peu5fFw" subsettedProperty="_8kmwkb0WEd-DQ5q3aRKcIw" association="_tCyogL0WEd-DQ5q3aRKcIw">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tCzPkb0WEd-DQ5q3aRKcIw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tCzPkL0WEd-DQ5q3aRKcIw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tCzPkb0WEd-DQ5q3aRKcIw" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_3o6vIr0VEd-DQ5q3aRKcIw" name="modelBase" isDerived="true" subsettedProperty="_8kmwkb0WEd-DQ5q3aRKcIw" association="_3o5hAL0VEd-DQ5q3aRKcIw">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3o7WML0VEd-DQ5q3aRKcIw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3o6vI70VEd-DQ5q3aRKcIw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3o7WML0VEd-DQ5q3aRKcIw" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_w56cU70cEd-DQ5q3aRKcIw" name="owningAnnotation" isDerived="true" association="_w551QL0cEd-DQ5q3aRKcIw">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_w57DYL0cEd-DQ5q3aRKcIw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_w56cVL0cEd-DQ5q3aRKcIw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_w57DYL0cEd-DQ5q3aRKcIw" value="1"/>
       </ownedAttribute>
     </packagedElement>
     <profileApplication xmi:id="_kwI8ELw1Ed-Ytrd77fw2LA">

@@ -278,6 +278,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/GenModel
 		createGenModelAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
 	}
 
 	/**
@@ -321,6 +323,22 @@ public class ExpressionsPackageImpl extends EPackageImpl implements
 				new String[] {
 						"documentation",
 						"String representation of the used language\'s version. The format is <Major>.<Minor>[.<Revision>[.<Build>]]\r\nExamples: 1.4 or 3.0.1 or 1.0.2.20101208." });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation(this, source, new String[] { "invocationDelegates",
+				"http://www.eclipse.org/emf/2002/Ecore/OCL",
+				"settingDelegates",
+				"http://www.eclipse.org/emf/2002/Ecore/OCL",
+				"validationDelegates",
+				"http://www.eclipse.org/emf/2002/Ecore/OCL" });
 	}
 
 } //ExpressionsPackageImpl

@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EcorePackage;
  * <!-- end-model-doc -->
  * @see org.storydriven.core.CoreFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/edapt historyURI='../../de.uni_paderborn.fujaba.muml.model/model/muml.history'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface CorePackage extends EPackage {

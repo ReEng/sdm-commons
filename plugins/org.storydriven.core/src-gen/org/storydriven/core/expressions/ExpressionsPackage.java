@@ -29,6 +29,7 @@ import org.storydriven.core.CorePackage;
  * <!-- end-model-doc -->
  * @see org.storydriven.core.expressions.ExpressionsFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface ExpressionsPackage extends EPackage {
