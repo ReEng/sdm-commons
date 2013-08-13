@@ -145,7 +145,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="ComparingOperator">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Defines the operators for comparing expressions."/>
+          <details key="documentation" value="Defines the operators for comparing expressions. The operators LESS, LESS_OR_EQUAL, EQUAL,&#xD;&#xA;GREATER_OR_EQUAL, GREATER, and UNEQUAL have their usual semantics.&#xD;&#xA;The operator REGULAR_EXPRESSION enables to compare a String contained in the&#xD;&#xA;left hand side of a ComparisonExpression with a regular expression contained in the &#xD;&#xA;right hand side of the ComparisonExpression."/>
         </eAnnotations>
         <eLiterals name="LESS"/>
         <eLiterals name="LESS_OR_EQUAL" value="1"/>

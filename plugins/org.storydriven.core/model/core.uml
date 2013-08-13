@@ -70,7 +70,11 @@ and patterns.</body>
         </packagedElement>
         <packagedElement xmi:type="uml:Enumeration" xmi:id="_jmhM0BzFEeChOvWwuwx7tQ" name="ComparingOperator">
           <ownedComment xmi:id="_CgmDEBzsEeChOvWwuwx7tQ" annotatedElement="_jmhM0BzFEeChOvWwuwx7tQ">
-            <body>Defines the operators for comparing expressions.</body>
+            <body>Defines the operators for comparing expressions. The operators LESS, LESS_OR_EQUAL, EQUAL,&#xD;
+GREATER_OR_EQUAL, GREATER, and UNEQUAL have their usual semantics.&#xD;
+The operator REGULAR_EXPRESSION enables to compare a String contained in the&#xD;
+left hand side of a ComparisonExpression with a regular expression contained in the &#xD;
+right hand side of the ComparisonExpression.</body>
           </ownedComment>
           <ownedLiteral xmi:id="_qIrSQBzFEeChOvWwuwx7tQ" name="LESS"/>
           <ownedLiteral xmi:id="_qrJGIBzFEeChOvWwuwx7tQ" name="LESS_OR_EQUAL"/>

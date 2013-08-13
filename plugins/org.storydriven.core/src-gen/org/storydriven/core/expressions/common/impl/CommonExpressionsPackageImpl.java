@@ -602,9 +602,12 @@ public class CommonExpressionsPackageImpl extends EPackageImpl implements
 				new String[] {
 						"documentation",
 						"Defines the operators for binary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression." });
-		addAnnotation(comparingOperatorEEnum, source, new String[] {
-				"documentation",
-				"Defines the operators for comparing expressions." });
+		addAnnotation(
+				comparingOperatorEEnum,
+				source,
+				new String[] {
+						"documentation",
+						"Defines the operators for comparing expressions. The operators LESS, LESS_OR_EQUAL, EQUAL,\r\nGREATER_OR_EQUAL, GREATER, and UNEQUAL have their usual semantics.\r\nThe operator REGULAR_EXPRESSION enables to compare a String contained in the\r\nleft hand side of a ComparisonExpression with a regular expression contained in the \r\nright hand side of the ComparisonExpression." });
 		addAnnotation(
 				comparingOperatorEEnum.getELiterals().get(6),
 				source,

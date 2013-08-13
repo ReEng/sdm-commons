@@ -18,7 +18,11 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * Defines the operators for comparing expressions.
+ * Defines the operators for comparing expressions. The operators LESS, LESS_OR_EQUAL, EQUAL,
+ * GREATER_OR_EQUAL, GREATER, and UNEQUAL have their usual semantics.
+ * The operator REGULAR_EXPRESSION enables to compare a String contained in the
+ * left hand side of a ComparisonExpression with a regular expression contained in the 
+ * right hand side of the ComparisonExpression.
  * <!-- end-model-doc -->
  * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getComparingOperator()
  * @model
