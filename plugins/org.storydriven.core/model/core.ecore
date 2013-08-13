@@ -171,7 +171,6 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="UnaryOperator">
         <eLiterals name="NOT"/>
-        <eLiterals name="PLUS" value="1"/>
         <eLiterals name="MINUS" value="2"/>
         <eLiterals name="INCREMENT" value="3"/>
         <eLiterals name="DECREMENT" value="4"/>

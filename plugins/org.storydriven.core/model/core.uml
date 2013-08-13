@@ -100,8 +100,9 @@ right hand side of the ComparisonExpression.</body>
         </packagedElement>
         <packagedElement xmi:type="uml:Enumeration" xmi:id="_49SisMmcEeG1Tu0kxZC-sQ" name="UnaryOperator">
           <ownedLiteral xmi:id="_49Sis8mcEeG1Tu0kxZC-sQ" name="NOT"/>
-          <ownedLiteral xmi:id="_49SitMmcEeG1Tu0kxZC-sQ" name="PLUS"/>
           <ownedLiteral xmi:id="_49SitsmcEeG1Tu0kxZC-sQ" name="MINUS"/>
+          <ownedLiteral xmi:id="_Qvz48AQbEeO9Vob5fqZqmQ" name="INCREMENT"/>
+          <ownedLiteral xmi:id="_Tolc4AQbEeO9Vob5fqZqmQ" name="DECREMENT"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="__NYbIBzFEeChOvWwuwx7tQ" name="UnaryExpression">
           <ownedComment xmi:id="_6Ss_IBzsEeChOvWwuwx7tQ" annotatedElement="__NYbIBzFEeChOvWwuwx7tQ">

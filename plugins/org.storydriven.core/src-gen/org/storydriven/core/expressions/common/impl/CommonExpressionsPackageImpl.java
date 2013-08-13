@@ -560,7 +560,6 @@ public class CommonExpressionsPackageImpl extends EPackageImpl implements
 
 		initEEnum(unaryOperatorEEnum, UnaryOperator.class, "UnaryOperator");
 		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.NOT);
-		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.PLUS);
 		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.MINUS);
 		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.INCREMENT);
 		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.DECREMENT);
