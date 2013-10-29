@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
-  <uml:Package xmi:id="bd7155bb-4f57-4868-b74a-5672b1eac640" name="storydiagrams">
-    <eAnnotations xmi:id="_YMUBwAGIEeKcNe_rV4OWfA" source="http://www.eclipse.org/edapt">
-      <details xmi:id="_YMUBwQGIEeKcNe_rV4OWfA" key="historyURI" value="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
-    </eAnnotations>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Package xmi:id="bd7155bb-4f57-4868-b74a-5672b1eac640" name="storydiagrams" URI="http://www.storydriven.org/storydiagrams/0.2.1">
     <ownedComment xmi:id="_2szqgJxkEeCuYMafrm1l2g" annotatedElement="bd7155bb-4f57-4868-b74a-5672b1eac640">
       <body>The storydiagram package is the root package for the story diagram meta-model. It defines the type Variable and otherwise is only used to contain more specific sub-packages.</body>
     </ownedComment>
@@ -37,8 +34,8 @@
     <packageImport xmi:id="_nUiA0IChEeG0bvGBO1B13Q">
       <importedPackage href="../../org.storydriven.core/model/core.uml#bd7155bb-4f57-4868-b74a-5672b1eac640"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Package" xmi:id="_cWyQcLbPEd-5oaYsE5oIPw" name="activities">
-      <packagedElement xmi:type="uml:Package" xmi:id="_pULnUBzSEeChOvWwuwx7tQ" name="expressions">
+    <packagedElement xmi:type="uml:Package" xmi:id="_cWyQcLbPEd-5oaYsE5oIPw" name="activities" URI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
+      <packagedElement xmi:type="uml:Package" xmi:id="_pULnUBzSEeChOvWwuwx7tQ" name="expressions" URI="http://www.storydriven.org/storydiagrams/activities/expressions/0.2.0">
         <packagedElement xmi:type="uml:Class" xmi:id="_s-xCsBzSEeChOvWwuwx7tQ" name="ExceptionVariableExpression">
           <ownedComment xmi:id="_fQB7oBzvEeChOvWwuwx7tQ" annotatedElement="_s-xCsBzSEeChOvWwuwx7tQ">
             <body>Represents the value of an exception variable declared as a transition guard (the guard of an activity edge).</body>
@@ -50,28 +47,28 @@
             <ownedComment xmi:id="_h5rechzvEeChOvWwuwx7tQ" annotatedElement="_3JLBMhzSEeChOvWwuwx7tQ">
               <body>Specifies the exception variable that this expression refers to. If you have an activity edge that catches an exception e, then this expression can represent the reference e.</body>
             </ownedComment>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3JLBNBzSEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3JLBMxzSEeChOvWwuwx7tQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3JLBNBzSEeChOvWwuwx7tQ" value="1"/>
           </ownedAttribute>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="a0ea066c-e9db-4626-bb5b-e4bf75c4f4d4" name="ContainsActivityNode" memberEnd="c38d6d26-77ad-489b-aef2-755014fcadb9 02f6324e-2986-4092-83b5-05c92533ca68"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_WnuLQLLyEd-uk56s-ldeog" name="HasReturnValue" memberEnd="_WnuLQbLyEd-uk56s-ldeog _WnuyUbLyEd-uk56s-ldeog">
         <ownedEnd xmi:id="_WnuLQbLyEd-uk56s-ldeog" name="owningStopNode" visibility="public" type="68a71c0d-6c71-4b10-90a5-bad7e5e02981" association="_WnuLQLLyEd-uk56s-ldeog">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WnuyULLyEd-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WnuLQrLyEd-uk56s-ldeog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WnuyULLyEd-uk56s-ldeog" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_OIR5wLLyEd-uk56s-ldeog" name="ContainsStatementExpression" memberEnd="_OIR5wbLyEd-uk56s-ldeog _OISg0rLyEd-uk56s-ldeog">
         <ownedEnd xmi:id="_OIR5wbLyEd-uk56s-ldeog" name="owningStatementNode" visibility="public" type="09ce4f32-4ea3-459e-8d03-555250a5780e" association="_OIR5wLLyEd-uk56s-ldeog">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OISg0bLyEd-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OISg0LLyEd-uk56s-ldeog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OISg0bLyEd-uk56s-ldeog" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_zN6DALK6Ed-uk56s-ldeog" name="ContainsGuardExpression" memberEnd="_zN6qELK6Ed-uk56s-ldeog _zN7RIbK6Ed-uk56s-ldeog">
         <ownedEnd xmi:id="_zN6qELK6Ed-uk56s-ldeog" name="owningActivityEdge" visibility="public" type="39579588-fb90-4211-b314-2c5bc4ee2403" association="_zN6DALK6Ed-uk56s-ldeog">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zN7RILK6Ed-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zN6qEbK6Ed-uk56s-ldeog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zN7RILK6Ed-uk56s-ldeog" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="049ea66d-1cf5-479f-a776-09368326162d" name="ContainsChildNode" memberEnd="6c403dc1-70f7-4f30-b878-4934c90b223b 1269373e-d6c3-43b3-96b3-343306cf98fc"/>
@@ -81,45 +78,45 @@
       <packagedElement xmi:type="uml:Association" xmi:id="_kUNHUBzHEeChOvWwuwx7tQ" name="ContainsActivityEdge" memberEnd="_kUNHURzHEeChOvWwuwx7tQ _kUOVcBzHEeChOvWwuwx7tQ"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_BzfP0BzIEeChOvWwuwx7tQ" name="HasPrecondition" memberEnd="_Bzf24BzIEeChOvWwuwx7tQ _Bzgd8RzIEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_Bzf24BzIEeChOvWwuwx7tQ" name="activity" type="1f15de3e-b6d4-423a-b56b-04cc037e043c" association="_BzfP0BzIEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Bzgd8BzIEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Bzf24RzIEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Bzgd8BzIEeChOvWwuwx7tQ" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_GelBwBzPEeChOvWwuwx7tQ" name="" memberEnd="_Gelo0BzPEeChOvWwuwx7tQ _GemP4RzPEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_Gelo0BzPEeChOvWwuwx7tQ" name="operationExtension" type="_DxIjgL0pEd-DQ5q3aRKcIw" association="_GelBwBzPEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GemP4BzPEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Gelo0RzPEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GemP4BzPEeChOvWwuwx7tQ" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_ttgfYBzPEeChOvWwuwx7tQ" name="ContainsGuardException" memberEnd="_tthGcBzPEeChOvWwuwx7tQ _tthtgBzPEeChOvWwuwx7tQ"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_v4GSMBzQEeChOvWwuwx7tQ" name="" memberEnd="_v4G5QBzQEeChOvWwuwx7tQ _v4HgUBzQEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_v4G5QBzQEeChOvWwuwx7tQ" name="exceptionVariable" type="_n9AgYBzPEeChOvWwuwx7tQ" association="_v4GSMBzQEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v4G5QhzQEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v4G5QRzQEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v4G5QhzQEeChOvWwuwx7tQ" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_IrZMsBzREeChOvWwuwx7tQ" name="HasCalledActivity" memberEnd="_IrZzwBzREeChOvWwuwx7tQ _Iraa0BzREeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_IrZzwBzREeChOvWwuwx7tQ" name="activityCallNode" type="_dV0p0BzQEeChOvWwuwx7tQ" association="_IrZMsBzREeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IrZzwhzREeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IrZzwRzREeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IrZzwhzREeChOvWwuwx7tQ" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_yU0W0BzREeChOvWwuwx7tQ" name="ContainsMatchingPattern" memberEnd="_yU094BzREeChOvWwuwx7tQ _yU1k8RzREeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_yU094BzREeChOvWwuwx7tQ" name="owningMatchingNode" type="_fD_b0BzQEeChOvWwuwx7tQ" subsettedProperty="7598794a-4329-46cc-b279-182cd7103938" association="_yU0W0BzREeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yU1k8BzREeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yU094RzREeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yU1k8BzREeChOvWwuwx7tQ" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_L3NL8BzSEeChOvWwuwx7tQ" name="ContainsModifyingPattern" memberEnd="_L3NzABzSEeChOvWwuwx7tQ _L3OaERzSEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_L3NzABzSEeChOvWwuwx7tQ" name="owningModifyingNode" type="_gDYcQBzQEeChOvWwuwx7tQ" subsettedProperty="7598794a-4329-46cc-b279-182cd7103938" association="_L3NL8BzSEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_L3OaEBzSEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_L3NzARzSEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_L3OaEBzSEeChOvWwuwx7tQ" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_3JKaIBzSEeChOvWwuwx7tQ" name="" memberEnd="_3JKaIRzSEeChOvWwuwx7tQ _3JLBMhzSEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_3JKaIRzSEeChOvWwuwx7tQ" name="exceptionVariableExpression" type="_s-xCsBzSEeChOvWwuwx7tQ" association="_3JKaIBzSEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3JLBMRzSEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3JLBMBzSEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3JLBMRzSEeChOvWwuwx7tQ" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="1f15de3e-b6d4-423a-b56b-04cc037e043c" name="Activity">
@@ -137,26 +134,26 @@
           <ownedComment xmi:id="_Sl1TsJ0REeCuYMafrm1l2g" annotatedElement="c38d6d26-77ad-489b-aef2-755014fcadb9">
             <body>The activity contains all activity nodes via this reference.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OAyQoLKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OAyQobKwEd-DYIlz5ANeHA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OAyQoLKwEd-DYIlz5ANeHA" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_PwFo0L0pEd-DQ5q3aRKcIw" name="owningOperation" type="_DxIjgL0pEd-DQ5q3aRKcIw" association="_PwFBwL0pEd-DQ5q3aRKcIw">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PwFo0r0pEd-DQ5q3aRKcIw" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PwFo0b0pEd-DQ5q3aRKcIw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PwFo0r0pEd-DQ5q3aRKcIw" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_kUOVcBzHEeChOvWwuwx7tQ" name="ownedActivityEdge" type="39579588-fb90-4211-b314-2c5bc4ee2403" isOrdered="true" aggregation="composite" association="_kUNHUBzHEeChOvWwuwx7tQ">
           <ownedComment xmi:id="_7gi9sJ0REeCuYMafrm1l2g" annotatedElement="_kUOVcBzHEeChOvWwuwx7tQ">
             <body>All ActivityEdges that are contained in this activity.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kUOVchzHEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kUOVcRzHEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kUOVchzHEeChOvWwuwx7tQ" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_Bzgd8RzIEeChOvWwuwx7tQ" name="precondition" type="_fD_b0BzQEeChOvWwuwx7tQ" association="_BzfP0BzIEeChOvWwuwx7tQ">
           <ownedComment xmi:id="_0aPsEBzuEeChOvWwuwx7tQ" annotatedElement="_Bzgd8RzIEeChOvWwuwx7tQ">
             <body>References a story node which represents the precondition for the execution of the activity. I.e., the activity is executed, iff the object structure in the story node can be matched. Obviously the referenced story node may only contain black (i.e., non-create and non-destroy) objects and links.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BzhFARzIEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BzhFABzIEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BzhFARzIEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="39579588-fb90-4211-b314-2c5bc4ee2403" name="ActivityEdge">
@@ -187,22 +184,22 @@
             <body>Points to an expression in case the transition guard is BOOL. The expression has to evaulate to a boolean value.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zN74MLK6Ed-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zN7RIrK6Ed-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zN74MLK6Ed-uk56s-ldeog" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_kUNHURzHEeChOvWwuwx7tQ" name="owningActivity" type="1f15de3e-b6d4-423a-b56b-04cc037e043c" association="_kUNHUBzHEeChOvWwuwx7tQ">
           <ownedComment xmi:id="_2h4EQJ0REeCuYMafrm1l2g" annotatedElement="_kUNHURzHEeChOvWwuwx7tQ">
             <body>Points to the activity this ActivityEdge is contained in.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kUNuYRzHEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kUNuYBzHEeChOvWwuwx7tQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kUNuYRzHEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_tthtgBzPEeChOvWwuwx7tQ" name="guardException" type="_n9AgYBzPEeChOvWwuwx7tQ" isOrdered="true" aggregation="composite" association="_ttgfYBzPEeChOvWwuwx7tQ">
           <ownedComment xmi:id="_-FissBzuEeChOvWwuwx7tQ" annotatedElement="_tthtgBzPEeChOvWwuwx7tQ">
             <body>Declares variables representing the Exceptions that lead to firing this transition.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tthtghzPEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tthtgRzPEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tthtghzPEeChOvWwuwx7tQ" value="*"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="0ef98ed0-902e-4764-91ad-f76566d6f80e" name="ActivityNode" isAbstract="true">
@@ -219,15 +216,15 @@
           <ownedComment xmi:id="_vm-HoJ0REeCuYMafrm1l2g" annotatedElement="29056c96-b146-4262-acbe-9f82ad541768">
             <body>All ActivityEdges entering this activity node.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OAxCgLKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OAxCgbKwEd-DYIlz5ANeHA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OAxCgLKwEd-DYIlz5ANeHA" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="8cee2d74-0dce-4164-bad1-b56bc8d97577" name="outgoing" visibility="public" type="39579588-fb90-4211-b314-2c5bc4ee2403" association="87a955bf-4e1d-40c5-bc6d-13f0e9c10b26">
           <ownedComment xmi:id="_oF14gJ0REeCuYMafrm1l2g" annotatedElement="8cee2d74-0dce-4164-bad1-b56bc8d97577">
             <body>All ActivityEdges that leave this activity node. The guards of the outgoing activity edges must be exclusive in order to obtain a well-defined activity.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OAxpkLKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OAxpkbKwEd-DYIlz5ANeHA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OAxpkLKwEd-DYIlz5ANeHA" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="02f6324e-2986-4092-83b5-05c92533ca68" name="owningActivity" visibility="public" type="1f15de3e-b6d4-423a-b56b-04cc037e043c" association="a0ea066c-e9db-4626-bb5b-e4bf75c4f4d4">
           <ownedComment xmi:id="_crgjMJ0REeCuYMafrm1l2g" annotatedElement="02f6324e-2986-4092-83b5-05c92533ca68">
@@ -264,8 +261,8 @@
             <body>The expression which defines the behavior of this StatementNode.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OITH4bLyEd-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OITH4LLyEd-uk56s-ldeog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OITH4bLyEd-uk56s-ldeog" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="68a71c0d-6c71-4b10-90a5-bad7e5e02981" name="ActivityFinalNode">
@@ -273,21 +270,21 @@
           <body>At a StopNode, the execution of an activity terminates. If the activity specifies any out-parameters, they have to be bound to a return expression.</body>
         </ownedComment>
         <generalization xmi:id="_OBD9cbKwEd-DYIlz5ANeHA" general="0ef98ed0-902e-4764-91ad-f76566d6f80e"/>
-        <ownedAttribute xmi:id="_WnuyUbLyEd-uk56s-ldeog" name="returnValue" isReadOnly="true" isDerived="true" aggregation="composite" association="_WnuLQLLyEd-uk56s-ldeog">
+        <ownedAttribute xmi:id="_WnuyUbLyEd-uk56s-ldeog" name="returnValue" isReadOnly="true" aggregation="composite" isDerived="true" association="_WnuLQLLyEd-uk56s-ldeog">
           <ownedComment xmi:id="_5InT0J1PEeCuYMafrm1l2g" annotatedElement="_WnuyUbLyEd-uk56s-ldeog">
             <body>Convenience method when dealing with activities that implement an EOperation. In this case, only one out parameter is supported. This attributes then returns the first out parameter.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WnuyU7LyEd-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WnuyUrLyEd-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WnuyU7LyEd-uk56s-ldeog" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_27rV8IYIEeCsDOrao2DJIA" name="returnValues" aggregation="composite">
           <ownedComment xmi:id="_a5oMsJ1PEeCuYMafrm1l2g" annotatedElement="_27rV8IYIEeCsDOrao2DJIA">
             <body>Defines the return values of the activity. These return values will be assigned to the out-parameters.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_27rV8YYIEeCsDOrao2DJIA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_27rV8oYIEeCsDOrao2DJIA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_27rV8YYIEeCsDOrao2DJIA" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_IyXXgMQXEeGqEt-DwK0LOA" name="success">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
@@ -303,8 +300,8 @@
           <ownedComment xmi:id="_y9aAsJ1NEeCuYMafrm1l2g" annotatedElement="1269373e-d6c3-43b3-96b3-343306cf98fc">
             <body>All subnodes which are contained in this structured node.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA_sALKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA_sAbKwEd-DYIlz5ANeHA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA_sALKwEd-DYIlz5ANeHA" value="*"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="44d391e1-c2ec-4500-ac0c-d87b9a9804c1" name="EdgeGuard">
@@ -372,16 +369,16 @@
         </generalization>
         <generalization xmi:id="_ru4E8BzOEeChOvWwuwx7tQ" general="_gfdN4BzIEeChOvWwuwx7tQ"/>
         <ownedAttribute xmi:id="_PwGP4L0pEd-DQ5q3aRKcIw" name="ownedActivity" type="1f15de3e-b6d4-423a-b56b-04cc037e043c" aggregation="composite" association="_PwFBwL0pEd-DQ5q3aRKcIw">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PwGP4r0pEd-DQ5q3aRKcIw" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PwGP4b0pEd-DQ5q3aRKcIw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PwGP4r0pEd-DQ5q3aRKcIw" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_GemP4RzPEeChOvWwuwx7tQ" name="operation" isDerived="true" association="_GelBwBzPEeChOvWwuwx7tQ">
           <ownedComment xmi:id="_4_rEoJ6LEeCWWYky4ZcK-A" annotatedElement="_GemP4RzPEeChOvWwuwx7tQ">
             <body>The EOperation whose behavior is defined by the Activity. The property is derived because the actual value is determined by the utility class OperationsExtensionOperation.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EOperation"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GemP4xzPEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GemP4hzPEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GemP4xzPEeChOvWwuwx7tQ" value="1"/>
           <redefinedProperty href="../../org.storydriven.core/model/core.uml#_8kmwkb0WEd-DQ5q3aRKcIw"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_HGPW1FPGEeCU3puq44liRg" name="returnValue" visibility="public" aggregation="composite" association="_HGPW0FPGEeCU3puq44liRg">
@@ -389,8 +386,8 @@
             <body>The return value of the referenced operation.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HGPW1lPGEeCU3puq44liRg" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HGPW1VPGEeCU3puq44liRg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HGPW1lPGEeCU3puq44liRg" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_n9AgYBzPEeChOvWwuwx7tQ" name="ExceptionVariable">
@@ -402,8 +399,8 @@
           <ownedComment xmi:id="_aTH8wBzvEeChOvWwuwx7tQ" annotatedElement="_tthGcBzPEeChOvWwuwx7tQ">
             <body>Specifies the transition (activity edge) where the exception variable is declared.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tthGchzPEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tthGcRzPEeChOvWwuwx7tQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tthGchzPEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_pnXT8BzQEeChOvWwuwx7tQ" name="name" visibility="public">
           <ownedComment xmi:id="_USZJYhzvEeChOvWwuwx7tQ" annotatedElement="_pnXT8BzQEeChOvWwuwx7tQ">
@@ -416,13 +413,13 @@
             <body>Specifies the type of the declared exception variable.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v4HgUhzQEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v4HgURzQEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v4HgUhzQEeChOvWwuwx7tQ" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_ErDjsB2VEeCKeJCjS51luQ" name="genericExceptionType" association="_ErCVkB2VEeCKeJCjS51luQ">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ErDjsh2VEeCKeJCjS51luQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ErDjsR2VEeCKeJCjS51luQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ErDjsh2VEeCKeJCjS51luQ" value="*"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="9f08ef2b-883b-486d-9dfd-53a9300410fa" name="StoryNode" isAbstract="true">
@@ -451,8 +448,8 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
           <ownedComment xmi:id="_KLkqYBzvEeChOvWwuwx7tQ" annotatedElement="_Iraa0BzREeChOvWwuwx7tQ">
             <body>References all activities that are to be considered for the polymorphic dispatching of the call. All activities must have the same call signature.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Iraa0hzREeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Iraa0RzREeChOvWwuwx7tQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Iraa0hzREeChOvWwuwx7tQ" value="*"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_fD_b0BzQEeChOvWwuwx7tQ" name="MatchingStoryNode">
@@ -464,8 +461,8 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
           <ownedComment xmi:id="_iBn_kJ1OEeCuYMafrm1l2g" annotatedElement="_yU1k8RzREeChOvWwuwx7tQ">
             <body>This MatchingPattern contained in this activity.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yU2MABzREeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yU1k8hzREeChOvWwuwx7tQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yU2MABzREeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_gDYcQBzQEeChOvWwuwx7tQ" name="ModifyingStoryNode">
@@ -477,8 +474,8 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
           <ownedComment xmi:id="_odIqcJ1OEeCuYMafrm1l2g" annotatedElement="_L3OaERzSEeChOvWwuwx7tQ">
             <body>The story pattern contained in this ModifyingStoryNode.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_L3PBIBzSEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_L3OaEhzSEeChOvWwuwx7tQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_L3PBIBzSEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_TZ-hUMQVEeGqEt-DwK0LOA" name="FlowFinalNode">
@@ -486,8 +483,8 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_ErCVkB2VEeCKeJCjS51luQ" name="" memberEnd="_ErC8oB2VEeCKeJCjS51luQ _ErDjsB2VEeCKeJCjS51luQ">
         <ownedEnd xmi:id="_ErC8oB2VEeCKeJCjS51luQ" name="exceptionVariable" type="_n9AgYBzPEeChOvWwuwx7tQ" association="_ErCVkB2VEeCKeJCjS51luQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ErC8oh2VEeCKeJCjS51luQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ErC8oR2VEeCKeJCjS51luQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ErC8oh2VEeCKeJCjS51luQ" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_HGPW0FPGEeCU3puq44liRg" name="outParameter" memberEnd="_HGPW0VPGEeCU3puq44liRg _HGPW1FPGEeCU3puq44liRg">
@@ -495,12 +492,12 @@ To support polymorphic dispatching, multiple activities can be assigned to it (a
           <body>Direct reference for return value of an operation. Allows EParameter to be contained in the OperationExtension.</body>
         </ownedComment>
         <ownedEnd xmi:id="_HGPW0VPGEeCU3puq44liRg" name="operationExtension" type="_DxIjgL0pEd-DQ5q3aRKcIw" association="_HGPW0FPGEeCU3puq44liRg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HGPW01PGEeCU3puq44liRg" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HGPW0lPGEeCU3puq44liRg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HGPW01PGEeCU3puq44liRg" value="1"/>
         </ownedEnd>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_Y55xwBzIEeChOvWwuwx7tQ" name="calls">
+    <packagedElement xmi:type="uml:Package" xmi:id="_Y55xwBzIEeChOvWwuwx7tQ" name="calls" URI="http://www.storydriven.org/storydiagrams/calls/0.2.0">
       <ownedComment xmi:id="_uksrMJKxEeCoWcgn2XgBaQ" annotatedElement="_Y55xwBzIEeChOvWwuwx7tQ">
         <body>This package contains all classes for modeling calls to activities and EOperations&#xD;
 from within an activity.</body>
@@ -532,7 +529,7 @@ from within an activity.</body>
       <elementImport xmi:id="_07yLQB2QEeCKeJCjS51luQ">
         <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </elementImport>
-      <packagedElement xmi:type="uml:Package" xmi:id="_d2YS0BzIEeChOvWwuwx7tQ" name="expressions">
+      <packagedElement xmi:type="uml:Package" xmi:id="_d2YS0BzIEeChOvWwuwx7tQ" name="expressions" URI="http://www.storydriven.org/storydiagrams/calls/expressions/0.2.0">
         <packagedElement xmi:type="uml:Class" xmi:id="_fJSk0BzLEeChOvWwuwx7tQ" name="MethodCallExpression">
           <ownedComment xmi:id="_BEzdsBzwEeChOvWwuwx7tQ" annotatedElement="_fJSk0BzLEeChOvWwuwx7tQ">
             <body>A MethodCallEpression represents the direct invocation of a method. This can either be a method which is explicitly modeled as an EOperation in a class diagram (referenced by the OperationExtension) or an unmodeled method in an external library (referenced by an OpaqueCallable). Therefore, a MethodCallExpression references either an OperationExtension (indirectly via the callee role between Invocation and Callable) or an OpaqueCallable.</body>
@@ -546,28 +543,28 @@ from within an activity.</body>
               <body>A MethodCallExpression references an expression instead of a target object to allow the determination of the call target by an expression. This can be handy when a method should be called e.g. on the return value of another method (as in a.b().c() ). Then the method call of c() would be modeled by a MethodCallExpression with the callExpression a.b(), which again is a MethodCallExpression itself.</body>
             </ownedComment>
             <type xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mELTUBzLEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mEKsQhzLEeChOvWwuwx7tQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mELTUBzLEeChOvWwuwx7tQ" value="1"/>
           </ownedAttribute>
           <ownedAttribute xmi:id="_9V4fQRzLEeChOvWwuwx7tQ" name="opaqueCallable" type="_iEEbQBzIEeChOvWwuwx7tQ" aggregation="composite" association="_9V3RIBzLEeChOvWwuwx7tQ">
             <ownedComment xmi:id="_DCocUBzwEeChOvWwuwx7tQ" annotatedElement="_9V4fQRzLEeChOvWwuwx7tQ">
               <body>This containment reference is a helper construct because the OpaqueCallable has to be contained somewhere. A MethodCallExpression (being an Invocation) could also reference an OpaqueCallable (being a Callable) via the callee reference but then the OpaqueCallable would not be contained anywhere in the model.</body>
             </ownedComment>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9V5GURzLEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9V5GUBzLEeChOvWwuwx7tQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9V5GURzLEeChOvWwuwx7tQ" value="1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_mEJeIBzLEeChOvWwuwx7tQ" name="ContainsTarget" memberEnd="_mEKFMBzLEeChOvWwuwx7tQ _mEKsQRzLEeChOvWwuwx7tQ">
           <ownedEnd xmi:id="_mEKFMBzLEeChOvWwuwx7tQ" name="methodCallExpression" type="_fJSk0BzLEeChOvWwuwx7tQ" association="_mEJeIBzLEeChOvWwuwx7tQ">
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mEKsQBzLEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mEKFMRzLEeChOvWwuwx7tQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mEKsQBzLEeChOvWwuwx7tQ" value="1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_9V3RIBzLEeChOvWwuwx7tQ" name="ContainsOpaqueCallable" memberEnd="_9V34MBzLEeChOvWwuwx7tQ _9V4fQRzLEeChOvWwuwx7tQ"/>
         <packagedElement xmi:type="uml:Association" xmi:id="_WxbLYD3PEeCkabonkEk6JQ" name="parameter" memberEnd="_WxcZgD3PEeCkabonkEk6JQ _WxdAkj3PEeCkabonkEk6JQ">
           <ownedEnd xmi:id="_WxcZgD3PEeCkabonkEk6JQ" name="parameterExpression" type="_AS2FgD3PEeCkabonkEk6JQ" association="_WxbLYD3PEeCkabonkEk6JQ">
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WxdAkT3PEeCkabonkEk6JQ" value="*"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WxdAkD3PEeCkabonkEk6JQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WxdAkT3PEeCkabonkEk6JQ" value="*"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_AS2FgD3PEeCkabonkEk6JQ" name="ParameterExpression">
@@ -578,46 +575,46 @@ from within an activity.</body>
             <general xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
           </generalization>
           <ownedAttribute xmi:id="_WxdAkj3PEeCkabonkEk6JQ" name="parameter" type="_jIVUoBzIEeChOvWwuwx7tQ" association="_WxbLYD3PEeCkabonkEk6JQ">
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WxdnoT3PEeCkabonkEk6JQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WxdnoD3PEeCkabonkEk6JQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WxdnoT3PEeCkabonkEk6JQ" value="1"/>
           </ownedAttribute>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_KDmvEBzMEeChOvWwuwx7tQ" name="ContainsParameterBindings" memberEnd="_KDnWIBzMEeChOvWwuwx7tQ _KDn9MBzMEeChOvWwuwx7tQ"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_Sj4uEBzMEeChOvWwuwx7tQ" name="HasCallee" memberEnd="_Sj5VIBzMEeChOvWwuwx7tQ _Sj58MRzMEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_Sj5VIBzMEeChOvWwuwx7tQ" name="invocation" type="_fdD8wBzIEeChOvWwuwx7tQ" association="_Sj4uEBzMEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Sj58MBzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Sj5VIRzMEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Sj58MBzMEeChOvWwuwx7tQ" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_bGHN0BzMEeChOvWwuwx7tQ" name="HasInParameter" memberEnd="_bGH04BzMEeChOvWwuwx7tQ _bGIb8RzMEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_bGH04BzMEeChOvWwuwx7tQ" name="revInParameter" type="_gfdN4BzIEeChOvWwuwx7tQ" association="_bGHN0BzMEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bGIb8BzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bGH04RzMEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bGIb8BzMEeChOvWwuwx7tQ" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_eWHmABzMEeChOvWwuwx7tQ" name="HasOutParameter" memberEnd="_eWINEBzMEeChOvWwuwx7tQ _eWJbMBzMEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_eWINEBzMEeChOvWwuwx7tQ" name="revOutParameter" type="_gfdN4BzIEeChOvWwuwx7tQ" association="_eWHmABzMEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eWI0IRzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eWI0IBzMEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eWI0IRzMEeChOvWwuwx7tQ" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_rv_xMBzMEeChOvWwuwx7tQ" name="ContainsValueExpression" memberEnd="_rv_xMRzMEeChOvWwuwx7tQ _rwAYQhzMEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_rv_xMRzMEeChOvWwuwx7tQ" name="parameterBinding" type="_hCbYEBzIEeChOvWwuwx7tQ" association="_rv_xMBzMEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rwAYQRzMEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rwAYQBzMEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rwAYQRzMEeChOvWwuwx7tQ" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_Gcx84BzNEeChOvWwuwx7tQ" name="HasParameter" memberEnd="_Gcx84RzNEeChOvWwuwx7tQ _Gcyj8hzNEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_Gcx84RzNEeChOvWwuwx7tQ" name="parameterBinding" type="_hCbYEBzIEeChOvWwuwx7tQ" association="_Gcx84BzNEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Gcyj8RzNEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Gcyj8BzNEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Gcyj8RzNEeChOvWwuwx7tQ" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_WMsyYBzNEeChOvWwuwx7tQ" name="HasParameter" memberEnd="_WMtZcBzNEeChOvWwuwx7tQ _WMtZcxzNEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_WMtZcBzNEeChOvWwuwx7tQ" name="parameterExtension" type="_jIVUoBzIEeChOvWwuwx7tQ" association="_WMsyYBzNEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WMtZchzNEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WMtZcRzNEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WMtZchzNEeChOvWwuwx7tQ" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_fdD8wBzIEeChOvWwuwx7tQ" name="Invocation" isAbstract="true">
@@ -628,12 +625,12 @@ from within an activity.</body>
           <general xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#_e7CFQLLyEd-uk56s-ldeog"/>
         </generalization>
         <ownedAttribute xmi:id="_KDn9MBzMEeChOvWwuwx7tQ" name="ownedParameterBindings" type="_hCbYEBzIEeChOvWwuwx7tQ" isOrdered="true" aggregation="composite" association="_KDmvEBzMEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KDn9MhzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KDn9MRzMEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KDn9MhzMEeChOvWwuwx7tQ" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_Sj58MRzMEeChOvWwuwx7tQ" name="callee" type="_gfdN4BzIEeChOvWwuwx7tQ" association="_Sj4uEBzMEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Sj58MxzMEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Sj58MhzMEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Sj58MxzMEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_gfdN4BzIEeChOvWwuwx7tQ" name="Callable" isAbstract="true">
@@ -648,24 +645,24 @@ from within an activity.</body>
             <body>The ordered set of in parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bGJDABzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bGIb8hzMEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bGJDABzMEeChOvWwuwx7tQ" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_eWJbMBzMEeChOvWwuwx7tQ" name="outParameter" isOrdered="true" association="_eWHmABzMEeChOvWwuwx7tQ">
           <ownedComment xmi:id="_041zMJ28EeCuYMafrm1l2g" annotatedElement="_eWJbMBzMEeChOvWwuwx7tQ">
             <body>The ordered set of out parameters of this Callable. The parameters will not be contained in this reference, if parameters have to be contained in the callable, they also have to be added to the containedParameters reference.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eWJbMhzMEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eWJbMRzMEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eWJbMhzMEeChOvWwuwx7tQ" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_UxWXoGZsEeCjFI7iCZKgmw" name="containedParameters" isOrdered="true" aggregation="composite" association="_QpRvAGZsEeCjFI7iCZKgmw">
           <ownedComment xmi:id="_oiaCAJ28EeCuYMafrm1l2g" annotatedElement="_UxWXoGZsEeCjFI7iCZKgmw">
             <body>This reference is used to contain the parameters of a Callable if they are not already contained in another container. If the parameter is contained in another container as it is the case for parameters of a EOperation, they must not be added to this container!</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_X54O0GZsEeCjFI7iCZKgmw" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YOoW0GZsEeCjFI7iCZKgmw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_X54O0GZsEeCjFI7iCZKgmw" value="*"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_hCbYEBzIEeChOvWwuwx7tQ" name="ParameterBinding">
@@ -676,18 +673,18 @@ from within an activity.</body>
           <general xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#_e7CFQLLyEd-uk56s-ldeog"/>
         </generalization>
         <ownedAttribute xmi:id="_KDnWIBzMEeChOvWwuwx7tQ" name="invocation" type="_fdD8wBzIEeChOvWwuwx7tQ" association="_KDmvEBzMEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KDnWIhzMEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KDnWIRzMEeChOvWwuwx7tQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KDnWIhzMEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_rwAYQhzMEeChOvWwuwx7tQ" name="valueExpression" aggregation="composite" association="_rv_xMBzMEeChOvWwuwx7tQ">
           <type xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rwA_URzMEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rwA_UBzMEeChOvWwuwx7tQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rwA_URzMEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_Gcyj8hzNEeChOvWwuwx7tQ" name="parameter" association="_Gcx84BzNEeChOvWwuwx7tQ">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GczLARzNEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GczLABzNEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GczLARzNEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_iEEbQBzIEeChOvWwuwx7tQ" name="OpaqueCallable">
@@ -702,21 +699,21 @@ from within an activity.</body>
         </ownedRule>
         <generalization xmi:id="_Us_3ABzJEeChOvWwuwx7tQ" general="_gfdN4BzIEeChOvWwuwx7tQ"/>
         <ownedAttribute xmi:id="_9V34MBzLEeChOvWwuwx7tQ" name="callExpression" type="_fJSk0BzLEeChOvWwuwx7tQ" association="_9V3RIBzLEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9V4fQBzLEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9V34MRzLEeChOvWwuwx7tQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9V4fQBzLEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_tDyJACrdEeCrkKoGytJPbg" name="name" visibility="public">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_xZ_UQSrdEeCrkKoGytJPbg" name="inParameter" redefinedProperty="_bGIb8RzMEeChOvWwuwx7tQ" association="_xZ9fECrdEeCrkKoGytJPbg">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xZ_7USrdEeCrkKoGytJPbg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xZ_7UCrdEeCrkKoGytJPbg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xZ_7USrdEeCrkKoGytJPbg" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_HTvZUirfEeCrkKoGytJPbg" name="outParameter" redefinedProperty="_eWJbMBzMEeChOvWwuwx7tQ" association="_HTuLMCrfEeCrkKoGytJPbg">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HTwAYSrfEeCrkKoGytJPbg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HTwAYCrfEeCrkKoGytJPbg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HTwAYSrfEeCrkKoGytJPbg" value="*"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_jIVUoBzIEeChOvWwuwx7tQ" name="ParameterExtension">
@@ -729,21 +726,21 @@ from within an activity.</body>
         </generalization>
         <ownedAttribute xmi:id="_WMtZcxzNEeChOvWwuwx7tQ" name="parameter" isDerived="true" association="_WMsyYBzNEeChOvWwuwx7tQ">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EParameter"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WMuAgRzNEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WMuAgBzNEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WMuAgRzNEeChOvWwuwx7tQ" value="1"/>
           <redefinedProperty href="../../org.storydriven.core/model/core.uml#_3o6vIr0VEd-DQ5q3aRKcIw"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_xZ9fECrdEeCrkKoGytJPbg" name="OpaqueCallableContainsIn" memberEnd="_xZ-tMCrdEeCrkKoGytJPbg _xZ_UQSrdEeCrkKoGytJPbg">
         <ownedEnd xmi:id="_xZ-tMCrdEeCrkKoGytJPbg" name="revInParameter" type="_iEEbQBzIEeChOvWwuwx7tQ" association="_xZ9fECrdEeCrkKoGytJPbg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xZ_UQCrdEeCrkKoGytJPbg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xZ-tMSrdEeCrkKoGytJPbg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xZ_UQCrdEeCrkKoGytJPbg" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_HTuLMCrfEeCrkKoGytJPbg" name="OpaqueCallableContainsOut" memberEnd="_HTuyQCrfEeCrkKoGytJPbg _HTvZUirfEeCrkKoGytJPbg">
         <ownedEnd xmi:id="_HTuyQCrfEeCrkKoGytJPbg" name="revOutParameter" type="_iEEbQBzIEeChOvWwuwx7tQ" association="_HTuLMCrfEeCrkKoGytJPbg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HTvZUSrfEeCrkKoGytJPbg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HTvZUCrfEeCrkKoGytJPbg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HTvZUSrfEeCrkKoGytJPbg" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_QpRvAGZsEeCjFI7iCZKgmw" name="ContainsParameter" memberEnd="_UxWXoGZsEeCjFI7iCZKgmw _QpRvAWZsEeCjFI7iCZKgmw">
@@ -751,17 +748,17 @@ from within an activity.</body>
           <body>All parameters in this list are contained within the callable. This reference may only be used if the parameters of the callable are not yet contained in another object. For an EOperationExtension, the parameters are contained in the respective EOperation and, thus, this reference will contain no elements. For an activity that is not associated with an EOperation, this reference contains all parameters of the activity (inParameters and outParameters).</body>
         </ownedComment>
         <ownedEnd xmi:id="_QpRvAWZsEeCjFI7iCZKgmw" name="revContainedParameters" type="_gfdN4BzIEeChOvWwuwx7tQ" association="_QpRvAGZsEeCjFI7iCZKgmw">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QpRvAmZsEeCjFI7iCZKgmw" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QpRvA2ZsEeCjFI7iCZKgmw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QpRvAmZsEeCjFI7iCZKgmw" value="*"/>
         </ownedEnd>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_ZYPbsLbPEd-5oaYsE5oIPw" name="patterns">
+    <packagedElement xmi:type="uml:Package" xmi:id="_ZYPbsLbPEd-5oaYsE5oIPw" name="patterns" URI="http://www.storydriven.org/storydiagrams/patterns/0.2.1">
       <ownedComment xmi:id="_Ue6_sJKyEeCoWcgn2XgBaQ" annotatedElement="_ZYPbsLbPEd-5oaYsE5oIPw">
         <body>This package contains all classes for modeling story patterns that may be &#xD;
 embedded into StoryActivityNodes of an Activity.</body>
       </ownedComment>
-      <packagedElement xmi:type="uml:Package" xmi:id="_qb_GcBzeEeChOvWwuwx7tQ" name="expressions">
+      <packagedElement xmi:type="uml:Package" xmi:id="_qb_GcBzeEeChOvWwuwx7tQ" name="expressions" URI="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1">
         <packagedElement xmi:type="uml:Class" xmi:id="_sliM4BzeEeChOvWwuwx7tQ" name="AttributeValueExpression">
           <ownedComment xmi:id="_BiPSgBzuEeChOvWwuwx7tQ" annotatedElement="_sliM4BzeEeChOvWwuwx7tQ">
             <body>Represents the value of an object's attribute, e.g. obj.attr for an object obj and an attribute attr.</body>
@@ -773,16 +770,16 @@ embedded into StoryActivityNodes of an Activity.</body>
             <ownedComment xmi:id="_GzuaQBzuEeChOvWwuwx7tQ" annotatedElement="_8JaxgRzeEeChOvWwuwx7tQ">
               <body>Specifies the object variable whose attribute value is represented by this expression.</body>
             </ownedComment>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8JaxgxzeEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8JaxghzeEeChOvWwuwx7tQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8JaxgxzeEeChOvWwuwx7tQ" value="1"/>
           </ownedAttribute>
           <ownedAttribute xmi:id="_8pXc5BzeEeChOvWwuwx7tQ" name="attribute" association="_8pXc4BzeEeChOvWwuwx7tQ">
             <ownedComment xmi:id="_JipeoBzuEeChOvWwuwx7tQ" annotatedElement="_8pXc5BzeEeChOvWwuwx7tQ">
               <body>Specifies the object's attribute whose attribute value is represented by this expression.</body>
             </ownedComment>
             <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAttribute"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8pYD8RzeEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8pYD8BzeEeChOvWwuwx7tQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8pYD8RzeEeChOvWwuwx7tQ" value="1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_t26VMBzeEeChOvWwuwx7tQ" name="ObjectVariableExpression">
@@ -796,8 +793,8 @@ embedded into StoryActivityNodes of an Activity.</body>
             <ownedComment xmi:id="_TlQMABzuEeChOvWwuwx7tQ" annotatedElement="_Li6EARzfEeChOvWwuwx7tQ">
               <body>Specifies the object variable that holds the reference to be represented by this expression.</body>
             </ownedComment>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Li6EAxzfEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Li6EAhzfEeChOvWwuwx7tQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Li6EAxzfEeChOvWwuwx7tQ" value="1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_vG7yoBzeEeChOvWwuwx7tQ" name="CollectionSizeExpression">
@@ -811,32 +808,32 @@ embedded into StoryActivityNodes of an Activity.</body>
             <ownedComment xmi:id="_Zjwx0BzuEeChOvWwuwx7tQ" annotatedElement="_UBahYhzfEeChOvWwuwx7tQ">
               <body>Specifies the object set variable whose number of set elements is to be represented by this expression.</body>
             </ownedComment>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UBbIcRzfEeChOvWwuwx7tQ" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UBbIcBzfEeChOvWwuwx7tQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UBbIcRzfEeChOvWwuwx7tQ" value="1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_8JZjYBzeEeChOvWwuwx7tQ" name="HasObject" memberEnd="_8JaKcBzeEeChOvWwuwx7tQ _8JaxgRzeEeChOvWwuwx7tQ">
           <ownedEnd xmi:id="_8JaKcBzeEeChOvWwuwx7tQ" name="attributeValueExpression" type="_sliM4BzeEeChOvWwuwx7tQ" association="_8JZjYBzeEeChOvWwuwx7tQ">
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8JaxgBzeEeChOvWwuwx7tQ" value="*"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8JaKcRzeEeChOvWwuwx7tQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8JaxgBzeEeChOvWwuwx7tQ" value="*"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_8pXc4BzeEeChOvWwuwx7tQ" name="HasAttribute" memberEnd="_8pXc4RzeEeChOvWwuwx7tQ _8pXc5BzeEeChOvWwuwx7tQ">
           <ownedEnd xmi:id="_8pXc4RzeEeChOvWwuwx7tQ" name="attributeValueExpression" type="_sliM4BzeEeChOvWwuwx7tQ" association="_8pXc4BzeEeChOvWwuwx7tQ">
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8pXc4xzeEeChOvWwuwx7tQ" value="*"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8pXc4hzeEeChOvWwuwx7tQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8pXc4xzeEeChOvWwuwx7tQ" value="*"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_Li5c8BzfEeChOvWwuwx7tQ" name="ExpressionHasObject" memberEnd="_Li5c8RzfEeChOvWwuwx7tQ _Li6EARzfEeChOvWwuwx7tQ">
           <ownedEnd xmi:id="_Li5c8RzfEeChOvWwuwx7tQ" name="objectVariableExpression" type="_t26VMBzeEeChOvWwuwx7tQ" association="_Li5c8BzfEeChOvWwuwx7tQ">
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Li6EABzfEeChOvWwuwx7tQ" value="*"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Li5c8hzfEeChOvWwuwx7tQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Li6EABzfEeChOvWwuwx7tQ" value="*"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_UBZ6UBzfEeChOvWwuwx7tQ" name="HasSet" memberEnd="_UBZ6URzfEeChOvWwuwx7tQ _UBahYhzfEeChOvWwuwx7tQ">
           <ownedEnd xmi:id="_UBZ6URzfEeChOvWwuwx7tQ" name="objectSetSizeExpression" type="_vG7yoBzeEeChOvWwuwx7tQ" association="_UBZ6UBzfEeChOvWwuwx7tQ">
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UBahYRzfEeChOvWwuwx7tQ" value="*"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UBahYBzfEeChOvWwuwx7tQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UBahYRzfEeChOvWwuwx7tQ" value="*"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_W3fMwGKSEeCBq7LKLVIv3g" name="PrimitiveVariableExpression">
@@ -847,14 +844,14 @@ embedded into StoryActivityNodes of an Activity.</body>
             <general xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
           </generalization>
           <ownedAttribute xmi:id="_lFF68WKSEeCBq7LKLVIv3g" name="primitiveVariable" type="_p6mY8GHwEeCDNuSrVjgXCA" association="_lE8J8GKSEeCBq7LKLVIv3g">
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lFF682KSEeCBq7LKLVIv3g" value="1"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lFF68mKSEeCBq7LKLVIv3g" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lFF682KSEeCBq7LKLVIv3g" value="1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_lE8J8GKSEeCBq7LKLVIv3g" name="" memberEnd="_lE8J8WKSEeCBq7LKLVIv3g _lFF68WKSEeCBq7LKLVIv3g">
           <ownedEnd xmi:id="_lE8J8WKSEeCBq7LKLVIv3g" name="primitiveVariableExpression" type="_W3fMwGKSEeCBq7LKLVIv3g" association="_lE8J8GKSEeCBq7LKLVIv3g">
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lFF68GKSEeCBq7LKLVIv3g" value="*"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lE8J8mKSEeCBq7LKLVIv3g"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lFF68GKSEeCBq7LKLVIv3g" value="*"/>
           </ownedEnd>
         </packagedElement>
       </packagedElement>
@@ -865,36 +862,36 @@ embedded into StoryActivityNodes of an Activity.</body>
       <packagedElement xmi:type="uml:Association" xmi:id="efa70337-efe7-457d-8d6a-3aea19469b7a" name="HasTargetObject" memberEnd="f59aeab8-59c7-4a35-bd9b-c05bda92d924 29ee7390-8b89-420e-99c9-e1179f7cfd54"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_XMUVoLK8Ed-uk56s-ldeog" name="ContainsRangeExpression" memberEnd="_XMU8sLK8Ed-uk56s-ldeog _XMVjwLK8Ed-uk56s-ldeog">
         <ownedEnd xmi:id="_XMU8sLK8Ed-uk56s-ldeog" name="owningLink" visibility="public" type="_jap9QBzUEeChOvWwuwx7tQ" association="_XMUVoLK8Ed-uk56s-ldeog">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XMU8srK8Ed-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XMU8sbK8Ed-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XMU8srK8Ed-uk56s-ldeog" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_-z37kLLxEd-uk56s-ldeog" name="ContainsPathExpression" memberEnd="_-z4ioLLxEd-uk56s-ldeog _-z5JsbLxEd-uk56s-ldeog">
         <ownedEnd xmi:id="_-z4ioLLxEd-uk56s-ldeog" name="owningPath" visibility="public" type="5bfa886f-6bb7-4920-98ce-b9512d3dd595" association="_-z37kLLxEd-uk56s-ldeog">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-z5JsLLxEd-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-z4iobLxEd-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-z5JsLLxEd-uk56s-ldeog" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_-GmbULLwEd-uk56s-ldeog" name="HasBindingExpression" memberEnd="_-GnCYLLwEd-uk56s-ldeog _-GnpcLLwEd-uk56s-ldeog">
         <ownedEnd xmi:id="_-GnCYLLwEd-uk56s-ldeog" name="owningObject" visibility="public" type="_ieKckGHwEeCDNuSrVjgXCA" association="_-GmbULLwEd-uk56s-ldeog">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-GnCYrLwEd-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-GnCYbLwEd-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-GnCYrLwEd-uk56s-ldeog" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="9b10acef-9c32-4f56-8abd-1d56ed027e13" name="ContainsAttributeExpression" memberEnd="0494208f-7471-4bfe-8c33-9a7bd40c3425 1d75eb5a-c292-4676-951a-809ab4091e6b"/>
       <packagedElement xmi:type="uml:Association" xmi:id="71c51c4d-b7d4-44e9-8970-b4d9a946910c" name="ContainsVariables" memberEnd="97f7e21a-6cb3-4e71-a689-faf97d6546e6 5999b52c-f7c5-4bc4-87ad-ef18581fea6a"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_bFtJYLK5Ed-uk56s-ldeog" name="HasValue" memberEnd="_bFtJYbK5Ed-uk56s-ldeog _bFtwcrK5Ed-uk56s-ldeog">
         <ownedEnd xmi:id="_bFtJYbK5Ed-uk56s-ldeog" name="attributeExpression" visibility="public" type="79151c76-8e24-4f76-8143-e713373a8b68" association="_bFtJYLK5Ed-uk56s-ldeog">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bFtwcbK5Ed-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bFtwcLK5Ed-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bFtwcbK5Ed-uk56s-ldeog" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_qIMWsLLxEd-uk56s-ldeog" name="ContainsConstraints" memberEnd="_qIM9wLLxEd-uk56s-ldeog _qINk0bLxEd-uk56s-ldeog"/>
       <packagedElement xmi:type="uml:Association" xmi:id="d99eb2d4-772b-4044-a9f4-a61accff7475" name="ContainsChildPattern" memberEnd="7ce0a38c-81f6-4c40-9a4a-941e9e84f02a 406d03a7-91d4-450d-baa7-ee449e9f282c"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_a2nPYLK3Ed-uk56s-ldeog" name="BindsProperty" memberEnd="_a2n2cLK3Ed-uk56s-ldeog _a2odgLK3Ed-uk56s-ldeog">
         <ownedEnd xmi:id="_a2n2cLK3Ed-uk56s-ldeog" name="attributeExpression" type="79151c76-8e24-4f76-8143-e713373a8b68" association="_a2nPYLK3Ed-uk56s-ldeog">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a2n2crK3Ed-uk56s-ldeog" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a2n2cbK3Ed-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a2n2crK3Ed-uk56s-ldeog" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="0449f5f3-c15a-402c-882f-1fca689cec32" name="ContainsObjectPattern" memberEnd="7598794a-4329-46cc-b279-182cd7103938 779bfb46-33f2-49f4-9ad0-8e26ce91a437">
@@ -904,26 +901,26 @@ embedded into StoryActivityNodes of an Activity.</body>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_9TpO0LK4Ed-uk56s-ldeog" name="HasSourceEnd" memberEnd="_9Tp14LK4Ed-uk56s-ldeog _9Tqc8bK4Ed-uk56s-ldeog">
         <ownedEnd xmi:id="_9Tp14LK4Ed-uk56s-ldeog" name="link" visibility="public" type="_jap9QBzUEeChOvWwuwx7tQ" association="_9TpO0LK4Ed-uk56s-ldeog">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9Tqc8LK4Ed-uk56s-ldeog" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9Tp14bK4Ed-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9Tqc8LK4Ed-uk56s-ldeog" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="__qOEoLK4Ed-uk56s-ldeog" name="HasTargetEnd" memberEnd="__qOrsLK4Ed-uk56s-ldeog __qOrs7K4Ed-uk56s-ldeog">
         <ownedEnd xmi:id="__qOrsLK4Ed-uk56s-ldeog" name="link" visibility="public" type="_jap9QBzUEeChOvWwuwx7tQ" association="__qOEoLK4Ed-uk56s-ldeog">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__qOrsrK4Ed-uk56s-ldeog" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__qOrsbK4Ed-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__qOrsrK4Ed-uk56s-ldeog" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="8838401c-d86f-4515-8e20-04bad8258657" name="InstanceOfClass" memberEnd="fa4d8b80-7cd0-440a-9805-cfd849281017 5f30323f-8a08-46cd-841e-9f1733bc5943">
         <ownedEnd xmi:id="fa4d8b80-7cd0-440a-9805-cfd849281017" name="obj" visibility="public" type="c0f72d07-a643-4da9-859b-d95cfca69eee" association="8838401c-d86f-4515-8e20-04bad8258657">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OBBhMrKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OBBhM7KwEd-DYIlz5ANeHA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OBBhMrKwEd-DYIlz5ANeHA" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_ETLDsBzbEeChOvWwuwx7tQ" name="ContainsConstraintExpression" memberEnd="_ETLqwBzbEeChOvWwuwx7tQ _ETMR0hzbEeChOvWwuwx7tQ">
         <ownedEnd xmi:id="_ETLqwBzbEeChOvWwuwx7tQ" name="owningConstraint" type="_82J4gBzaEeChOvWwuwx7tQ" association="_ETLDsBzbEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ETMR0RzbEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ETMR0BzbEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ETMR0RzbEeChOvWwuwx7tQ" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_IIEcMBzcEeChOvWwuwx7tQ" name="ContainsLinkVariables" memberEnd="_IIFDQBzcEeChOvWwuwx7tQ _IIFqUBzcEeChOvWwuwx7tQ"/>
@@ -939,16 +936,16 @@ embedded into StoryActivityNodes of an Activity.</body>
             <body>The attribute whose value is set. It has to be an attribute of the objectVariable that contains the AttributeAssignment.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAttribute"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a2odgrK3Ed-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a2odgbK3Ed-uk56s-ldeog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a2odgrK3Ed-uk56s-ldeog" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_bFtwcrK5Ed-uk56s-ldeog" name="valueExpression" aggregation="composite" association="_bFtJYLK5Ed-uk56s-ldeog">
           <ownedComment xmi:id="_r1MZoJ6GEeCWWYky4ZcK-A" annotatedElement="_bFtwcrK5Ed-uk56s-ldeog">
             <body>The expression that determines the new value that is given to the attribute.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bFuXgbK5Ed-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bFuXgLK5Ed-uk56s-ldeog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bFuXgbK5Ed-uk56s-ldeog" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="37d4c959-090c-411e-b62f-a01a5acd650c" name="BindingState">
@@ -1017,16 +1014,16 @@ embedded into StoryActivityNodes of an Activity.</body>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA8BprKwEd-DYIlz5ANeHA" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="14426f7e-673a-4457-ab0e-c96c45d95a78" name="secondLinkConstraint" visibility="public" type="8fd71d27-94c0-49d5-9902-a26156244424" association="5589daf2-a2cb-4afa-bb02-2da37d5af801">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA8osLKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA8osbKwEd-DYIlz5ANeHA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA8osLKwEd-DYIlz5ANeHA" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="1dd0d43b-bfd3-4a0a-bd27-7b1de855f3e9" name="firstLinkConstraint" visibility="public" type="8fd71d27-94c0-49d5-9902-a26156244424" association="7614aedb-dfa3-426e-9c26-73a44d2ddb96">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA8os7KwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA8otLKwEd-DYIlz5ANeHA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA8os7KwEd-DYIlz5ANeHA" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_IIFDQBzcEeChOvWwuwx7tQ" name="pattern" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="_IIEcMBzcEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IIFDQhzcEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IIFDQRzcEeChOvWwuwx7tQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IIFDQhzcEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="74737b3a-1725-4fee-b753-d7458eda7189" name="BindingOperator">
@@ -1079,8 +1076,8 @@ embedded into StoryActivityNodes of an Activity.</body>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_STI1QCehEeCn77wMTjBpqg"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_xIx3obK8Ed-uk56s-ldeog" name="referencingObject" type="c0f72d07-a643-4da9-859b-d95cfca69eee" association="_xIwpgLK8Ed-uk56s-ldeog">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xIx3o7K8Ed-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xIx3orK8Ed-uk56s-ldeog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xIx3o7K8Ed-uk56s-ldeog" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="6e7cf16b-d8d7-4794-8fca-703d94b69494" name="LinkConstraintType">
@@ -1111,12 +1108,12 @@ embedded into StoryActivityNodes of an Activity.</body>
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_KXj1oLL8Ed-uk56s-ldeog" instance="888dbb97-a420-4e27-bfb0-f5b3de6da65b"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="1d75eb5a-c292-4676-951a-809ab4091e6b" name="attributeAssignment" visibility="public" type="79151c76-8e24-4f76-8143-e713373a8b68" isOrdered="true" aggregation="composite" association="9b10acef-9c32-4f56-8abd-1d56ed027e13">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-UrKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-U7KwEd-DYIlz5ANeHA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-UrKwEd-DYIlz5ANeHA" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="e4084d63-9d8b-47a7-9d3e-34aeb0b09440" name="outgoingLink" visibility="public" type="70a57767-3c96-4cff-87d3-8391bb039afc" association="639688a5-23e9-4581-98d8-2fcc57a3438b">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-VbKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-VrKwEd-DYIlz5ANeHA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-VbKwEd-DYIlz5ANeHA" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="5f30323f-8a08-46cd-841e-9f1733bc5943" name="classifier" visibility="public" association="8838401c-d86f-4515-8e20-04bad8258657">
           <ownedComment xmi:id="_D45vsJ3WEeCuYMafrm1l2g" annotatedElement="5f30323f-8a08-46cd-841e-9f1733bc5943">
@@ -1126,8 +1123,8 @@ embedded into StoryActivityNodes of an Activity.</body>
           <subsettedProperty href="../../org.storydriven.core/model/core.uml#_HPpYkbLzEd-uk56s-ldeog"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_xIxQkLK8Ed-uk56s-ldeog" name="linkOrderConstraint" type="8fd71d27-94c0-49d5-9902-a26156244424" isOrdered="true" aggregation="composite" association="_xIwpgLK8Ed-uk56s-ldeog">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xIx3oLK8Ed-uk56s-ldeog" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xIxQkbK8Ed-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xIx3oLK8Ed-uk56s-ldeog" value="*"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="762a7829-3f0c-4d56-9644-9e12504ce2f4" name="StoryPattern">
@@ -1139,15 +1136,15 @@ of an Activity.</body>
           <general xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#_e7CFQLLyEd-uk56s-ldeog"/>
         </generalization>
         <ownedAttribute xmi:id="5999b52c-f7c5-4bc4-87ad-ef18581fea6a" name="variable" visibility="public" type="_ieKckGHwEeCDNuSrVjgXCA" aggregation="composite" association="71c51c4d-b7d4-44e9-8970-b4d9a946910c">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA1T87KwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA1T9LKwEd-DYIlz5ANeHA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA1T87KwEd-DYIlz5ANeHA" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="7ce0a38c-81f6-4c40-9a4a-941e9e84f02a" name="parentPattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="d99eb2d4-772b-4044-a9f4-a61accff7475">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA17BLKwEd-DYIlz5ANeHA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="406d03a7-91d4-450d-baa7-ee449e9f282c" name="containedPattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" aggregation="composite" association="d99eb2d4-772b-4044-a9f4-a61accff7475">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA17BrKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA17B7KwEd-DYIlz5ANeHA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA17BrKwEd-DYIlz5ANeHA" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="530fdd45-f95d-43dc-8501-8c4dd824bc24" name="bindingSemantics" visibility="public" type="5d5c7278-e6e7-4956-ab18-44332c8cc462">
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_Lp6OULL8Ed-uk56s-ldeog" instance="fa270781-e8e1-4379-ada0-d421ab1217e0"/>
@@ -1156,16 +1153,16 @@ of an Activity.</body>
           <ownedComment xmi:id="_rsw70J3VEeCuYMafrm1l2g" annotatedElement="_qINk0bLxEd-uk56s-ldeog">
             <body>All constraints which are defined for this story pattern. For a successful matching, all constraints for this story pattern must evaluate to true.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qIOL4LLxEd-uk56s-ldeog" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qINk0rLxEd-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qIOL4LLxEd-uk56s-ldeog" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_IIFqUBzcEeChOvWwuwx7tQ" name="linkVariable" type="70a57767-3c96-4cff-87d3-8391bb039afc" isOrdered="true" aggregation="composite" association="_IIEcMBzcEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IIFqUhzcEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IIFqURzcEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IIFqUhzcEeChOvWwuwx7tQ" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_atA-EBzcEeChOvWwuwx7tQ" name="templateSignature" type="__NCHYLN-Ed-vJ9Qpen_Iuw" aggregation="composite" association="_as_v8BzcEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_atA-EhzcEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_atA-ERzcEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_atA-EhzcEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="5bfa886f-6bb7-4920-98ce-b9512d3dd595" name="Path">
@@ -1178,8 +1175,8 @@ of an Activity.</body>
             <body>The path expression constrains the matching of the path variable during pattern application. It can determine which links may be matched when and how many times to reach the target object of the path from the source object.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-z5wwLLxEd-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-z5JsrLxEd-uk56s-ldeog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-z5wwLLxEd-uk56s-ldeog" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_jap9QBzUEeChOvWwuwx7tQ" name="LinkVariable">
@@ -1192,24 +1189,24 @@ of an Activity.</body>
             <body>The source end of a link variable can only be determined when the link is typed over a bi-directional association. In this case, it points to the &quot;reverse&quot; direction of the association. If the reference is only uni-directional, the source end is null. The value of this attribute is derived automatically.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EReference"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9TrEALK4Ed-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9Tqc8rK4Ed-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9TrEALK4Ed-uk56s-ldeog" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="__qOrs7K4Ed-uk56s-ldeog" name="targetEnd" association="__qOEoLK4Ed-uk56s-ldeog">
           <ownedComment xmi:id="_R1uOoJ6AEeCWWYky4ZcK-A" annotatedElement="__qOrs7K4Ed-uk56s-ldeog">
             <body>The target end points to the reference that types this direction of the link (the &quot;normal&quot; direction). This link end must be set always.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EReference"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__qOrtbK4Ed-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__qOrtLK4Ed-uk56s-ldeog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__qOrtbK4Ed-uk56s-ldeog" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_XMVjwLK8Ed-uk56s-ldeog" name="qualifierExpression" visibility="public" aggregation="composite" association="_XMUVoLK8Ed-uk56s-ldeog">
           <ownedComment xmi:id="_PEaIIJ6BEeCWWYky4ZcK-A" annotatedElement="_XMVjwLK8Ed-uk56s-ldeog">
             <body>If a link is typed over a qualified reference, a qualifier determines the key under which the object reachable via the link is stored. Because the qualifier can be set by an expression, it can either be a simple string or something more complex, e.g., a call like &quot;object.getName()&quot;.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XMVjwrK8Ed-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XMVjwbK8Ed-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XMVjwrK8Ed-uk56s-ldeog" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_82J4gBzaEeChOvWwuwx7tQ" name="Constraint">
@@ -1221,22 +1218,22 @@ of an Activity.</body>
             <body>The constraintExpression defines the concrete condition of this constraint.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ETM44RzbEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ETM44BzbEeChOvWwuwx7tQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ETM44RzbEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_Q53MgBzdEeChOvWwuwx7tQ" name="objectVariable" type="_ieKckGHwEeCDNuSrVjgXCA" association="_Q52lcBzdEeChOvWwuwx7tQ">
           <ownedComment xmi:id="_i0vyQJ3VEeCuYMafrm1l2g" annotatedElement="_Q53MgBzdEeChOvWwuwx7tQ">
             <body>The object variable this constraint applies to.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q53zkBzdEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q53MgRzdEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q53zkBzdEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_qIM9wLLxEd-uk56s-ldeog" name="pattern" visibility="public" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="_qIMWsLLxEd-uk56s-ldeog">
           <ownedComment xmi:id="_vdCIcJ3VEeCuYMafrm1l2g" annotatedElement="_qIM9wLLxEd-uk56s-ldeog">
             <body>The story pattern this constraint applies to.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qINk0LLxEd-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qIM9wbLxEd-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qINk0LLxEd-uk56s-ldeog" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_-k2O8BzaEeChOvWwuwx7tQ" name="InclusionLink">
@@ -1292,19 +1289,19 @@ The context for contained Constraints and AttributeAssignments is every single o
             <body>A binding expression can be used to bind a variable in a different way than just by pattern matching. This way, for example, the return value of a call can be bound to a variable.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-GnpcrLwEd-uk56s-ldeog" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-GnpcbLwEd-uk56s-ldeog"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-GnpcrLwEd-uk56s-ldeog" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_Q53zkRzdEeChOvWwuwx7tQ" name="constraint" type="_82J4gBzaEeChOvWwuwx7tQ" isOrdered="true" aggregation="composite" association="_Q52lcBzdEeChOvWwuwx7tQ">
           <ownedComment xmi:id="_lDRfUJ3VEeCuYMafrm1l2g" annotatedElement="_Q53zkRzdEeChOvWwuwx7tQ">
             <body>All constraints which are defined for this variable. For a successful matching, all constraints for this variable must evaluate to true.</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q54aoRzdEeChOvWwuwx7tQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q54aoBzdEeChOvWwuwx7tQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q54aoRzdEeChOvWwuwx7tQ" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="f59aeab8-59c7-4a35-bd9b-c05bda92d924" name="incomingLink" visibility="public" type="70a57767-3c96-4cff-87d3-8391bb039afc" association="efa70337-efe7-457d-8d6a-3aea19469b7a">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-WLKwEd-DYIlz5ANeHA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OA4-WbKwEd-DYIlz5ANeHA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OA4-WLKwEd-DYIlz5ANeHA" value="*"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_p6mY8GHwEeCDNuSrVjgXCA" name="PrimitiveVariable">
@@ -1317,8 +1314,8 @@ The context for contained Constraints and AttributeAssignments is every single o
             <body>The type of the primitive variable which must be an EDataType.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EDataType"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6KsKAWH1EeCDNuSrVjgXCA" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6KsKAGH1EeCDNuSrVjgXCA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6KsKAWH1EeCDNuSrVjgXCA" value="1"/>
           <subsettedProperty href="../../org.storydriven.core/model/core.uml#_HPpYkbLzEd-uk56s-ldeog"/>
         </ownedAttribute>
       </packagedElement>
@@ -1327,57 +1324,57 @@ The context for contained Constraints and AttributeAssignments is every single o
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_6KqU0GH1EeCDNuSrVjgXCA" name="" memberEnd="_6Kq74GH1EeCDNuSrVjgXCA _6Kri8mH1EeCDNuSrVjgXCA">
         <ownedEnd xmi:id="_6Kq74GH1EeCDNuSrVjgXCA" name="primitiveVariable" type="_p6mY8GHwEeCDNuSrVjgXCA" association="_6KqU0GH1EeCDNuSrVjgXCA">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6Kri8WH1EeCDNuSrVjgXCA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6Kri8GH1EeCDNuSrVjgXCA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6Kri8WH1EeCDNuSrVjgXCA" value="*"/>
         </ownedEnd>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_qkASELN3Ed-vJ9Qpen_Iuw" name="templates">
+    <packagedElement xmi:type="uml:Package" xmi:id="_qkASELN3Ed-vJ9Qpen_Iuw" name="templates" URI="http://www.storydriven.org/storydiagrams/templates/0.2.0">
       <packagedElement xmi:type="uml:Association" xmi:id="_x1sesLSCEd-aT6TTUjOdjg" name="ContainsTypeParameter" memberEnd="_x1uT4LSCEd-aT6TTUjOdjg _x1u68bSCEd-aT6TTUjOdjg">
         <ownedEnd xmi:id="_x1uT4LSCEd-aT6TTUjOdjg" name="owningTemplate" type="__NCHYLN-Ed-vJ9Qpen_Iuw" association="_x1sesLSCEd-aT6TTUjOdjg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_x1u68LSCEd-aT6TTUjOdjg" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_x1uT4bSCEd-aT6TTUjOdjg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_x1u68LSCEd-aT6TTUjOdjg" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_Rv-qALSDEd-aT6TTUjOdjg" name="HasBoundParameter" memberEnd="_Rv_RELSDEd-aT6TTUjOdjg _Rv_4IrSDEd-aT6TTUjOdjg">
         <ownedEnd xmi:id="_Rv_RELSDEd-aT6TTUjOdjg" name="templateBinding" type="_B4qMALSDEd-aT6TTUjOdjg" association="_Rv-qALSDEd-aT6TTUjOdjg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rv_4IbSDEd-aT6TTUjOdjg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rv_4ILSDEd-aT6TTUjOdjg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rv_4IbSDEd-aT6TTUjOdjg" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_jNiGALSDEd-aT6TTUjOdjg" name="" memberEnd="_jNitELSDEd-aT6TTUjOdjg _jNjUILSDEd-aT6TTUjOdjg">
         <ownedEnd xmi:id="_jNitELSDEd-aT6TTUjOdjg" name="templateBinding" type="_B4qMALSDEd-aT6TTUjOdjg" association="_jNiGALSDEd-aT6TTUjOdjg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jNitErSDEd-aT6TTUjOdjg" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jNitEbSDEd-aT6TTUjOdjg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jNitErSDEd-aT6TTUjOdjg" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_NL8BoLSEEd-aT6TTUjOdjg" name="ContainsBinding" memberEnd="_NL8BobSEEd-aT6TTUjOdjg _NL9PwLSEEd-aT6TTUjOdjg"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_i_w6ULSEEd-aT6TTUjOdjg" name="HasBoundProperty" memberEnd="_i_w6UbSEEd-aT6TTUjOdjg _i_xhYrSEEd-aT6TTUjOdjg">
         <ownedEnd xmi:id="_i_w6UbSEEd-aT6TTUjOdjg" name="propertyBinding" type="_DYqJsLSEEd-aT6TTUjOdjg" association="_i_w6ULSEEd-aT6TTUjOdjg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_i_xhYbSEEd-aT6TTUjOdjg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_i_xhYLSEEd-aT6TTUjOdjg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_i_xhYbSEEd-aT6TTUjOdjg" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_roqp0LSEEd-aT6TTUjOdjg" name="" memberEnd="_rorQ4LSEEd-aT6TTUjOdjg _ror38bSEEd-aT6TTUjOdjg"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_uDV8gLSEEd-aT6TTUjOdjg" name="" memberEnd="_uDWjkLSEEd-aT6TTUjOdjg _uDXKobSEEd-aT6TTUjOdjg">
         <ownedEnd xmi:id="_uDWjkLSEEd-aT6TTUjOdjg" name="propertyBinding" type="_DYqJsLSEEd-aT6TTUjOdjg" association="_uDV8gLSEEd-aT6TTUjOdjg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uDXKoLSEEd-aT6TTUjOdjg" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uDWjkbSEEd-aT6TTUjOdjg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uDXKoLSEEd-aT6TTUjOdjg" value="1"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="__NCHYLN-Ed-vJ9Qpen_Iuw" name="TemplateSignature">
         <ownedAttribute xmi:id="_x1u68bSCEd-aT6TTUjOdjg" name="typeParameter" aggregation="composite" association="_x1sesLSCEd-aT6TTUjOdjg">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_x1wJEbSCEd-aT6TTUjOdjg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_x1wJELSCEd-aT6TTUjOdjg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_x1wJEbSCEd-aT6TTUjOdjg" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_NL9PwLSEEd-aT6TTUjOdjg" name="templateBinding" type="_B4qMALSDEd-aT6TTUjOdjg" aggregation="composite" association="_NL8BoLSEEd-aT6TTUjOdjg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NL9PwrSEEd-aT6TTUjOdjg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NL9PwbSEEd-aT6TTUjOdjg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NL9PwrSEEd-aT6TTUjOdjg" value="*"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_atAXABzcEeChOvWwuwx7tQ" name="pattern" type="762a7829-3f0c-4d56-9644-9e12504ce2f4" association="_as_v8BzcEeChOvWwuwx7tQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_atAXAhzcEeChOvWwuwx7tQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_atAXARzcEeChOvWwuwx7tQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_atAXAhzcEeChOvWwuwx7tQ" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_B4qMALSDEd-aT6TTUjOdjg" name="TemplateBinding">
@@ -1386,21 +1383,21 @@ The context for contained Constraints and AttributeAssignments is every single o
         </generalization>
         <ownedAttribute xmi:id="_Rv_4IrSDEd-aT6TTUjOdjg" name="boundParameter" association="_Rv-qALSDEd-aT6TTUjOdjg">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RwAfMLSDEd-aT6TTUjOdjg" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rv_4I7SDEd-aT6TTUjOdjg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RwAfMLSDEd-aT6TTUjOdjg" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_jNjUILSDEd-aT6TTUjOdjg" name="bindingExpression" aggregation="composite" association="_jNiGALSDEd-aT6TTUjOdjg">
           <type xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jNj7MLSDEd-aT6TTUjOdjg" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jNjUIbSDEd-aT6TTUjOdjg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jNj7MLSDEd-aT6TTUjOdjg" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_NL8BobSEEd-aT6TTUjOdjg" name="template" type="__NCHYLN-Ed-vJ9Qpen_Iuw" association="_NL8BoLSEEd-aT6TTUjOdjg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NL8osbSEEd-aT6TTUjOdjg" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NL8osLSEEd-aT6TTUjOdjg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NL8osbSEEd-aT6TTUjOdjg" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_ror38bSEEd-aT6TTUjOdjg" name="propertyBinding" type="_DYqJsLSEEd-aT6TTUjOdjg" aggregation="composite" association="_roqp0LSEEd-aT6TTUjOdjg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rosfALSEEd-aT6TTUjOdjg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ror38rSEEd-aT6TTUjOdjg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rosfALSEEd-aT6TTUjOdjg" value="*"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_DYqJsLSEEd-aT6TTUjOdjg" name="PropertyBinding">
@@ -1409,17 +1406,17 @@ The context for contained Constraints and AttributeAssignments is every single o
         </generalization>
         <ownedAttribute xmi:id="_i_xhYrSEEd-aT6TTUjOdjg" name="boundProperty" association="_i_w6ULSEEd-aT6TTUjOdjg">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStructuralFeature"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_i_yIcbSEEd-aT6TTUjOdjg" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_i_yIcLSEEd-aT6TTUjOdjg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_i_yIcbSEEd-aT6TTUjOdjg" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_rorQ4LSEEd-aT6TTUjOdjg" name="templateBinding" type="_B4qMALSDEd-aT6TTUjOdjg" association="_roqp0LSEEd-aT6TTUjOdjg">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ror38LSEEd-aT6TTUjOdjg" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rorQ4bSEEd-aT6TTUjOdjg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ror38LSEEd-aT6TTUjOdjg" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_uDXKobSEEd-aT6TTUjOdjg" name="bindingExpression" aggregation="composite" association="_uDV8gLSEEd-aT6TTUjOdjg">
           <type xmi:type="uml:Class" href="../../org.storydriven.core/model/core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uDXxsbSEEd-aT6TTUjOdjg" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uDXxsLSEEd-aT6TTUjOdjg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uDXxsbSEEd-aT6TTUjOdjg" value="1"/>
         </ownedAttribute>
       </packagedElement>
     </packagedElement>

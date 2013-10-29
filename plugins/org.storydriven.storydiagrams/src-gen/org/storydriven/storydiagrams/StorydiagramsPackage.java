@@ -27,7 +27,6 @@ import org.storydriven.core.CorePackage;
  * <!-- end-model-doc -->
  * @see org.storydriven.storydiagrams.StorydiagramsFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/edapt historyURI='../../de.uni_paderborn.fujaba.muml.model/model/muml.history'"
  * @generated
  */
 public interface StorydiagramsPackage extends EPackage {
