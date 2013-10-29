@@ -331,18 +331,27 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tCz2ob0WEd-DQ5q3aRKcIw" value="*"/>
       </ownedAttribute>
       <ownedOperation xmi:id="_uRFyML0XEd-DQ5q3aRKcIw" name="getExtension" visibility="public">
+        <eAnnotations xmi:id="_crHFoDZVEeOIDrJNYFm1ig" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:id="_dpgAgDZVEeOIDrJNYFm1ig" key="body" value="return ExtendableElementOperations.getExtension(this, type);"/>
+        </eAnnotations>
         <ownedParameter xmi:id="_uRFyMb0XEd-DQ5q3aRKcIw" type="_vasJcL0VEd-DQ5q3aRKcIw" direction="return"/>
         <ownedParameter xmi:id="_uRJckL0XEd-DQ5q3aRKcIw" name="type">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:id="_27xDUL0XEd-DQ5q3aRKcIw" name="provideExtension" visibility="public">
+        <eAnnotations xmi:id="_2qV84DZXEeOIDrJNYFm1ig" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:id="_2qV84TZXEeOIDrJNYFm1ig" key="body" value="return ExtendableElementOperations.provideExtension(this, type);"/>
+        </eAnnotations>
         <ownedParameter xmi:id="_27xDUb0XEd-DQ5q3aRKcIw" type="_vasJcL0VEd-DQ5q3aRKcIw" direction="return"/>
         <ownedParameter xmi:id="_27xDUr0XEd-DQ5q3aRKcIw" name="type">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:id="_Vmj8sL0YEd-DQ5q3aRKcIw" name="getAnnotation">
+        <eAnnotations xmi:id="_61aPIDZXEeOIDrJNYFm1ig" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:id="_61a2MDZXEeOIDrJNYFm1ig" key="body" value="return ExtendableElementOperations.getAnnotation(this, source);"/>
+        </eAnnotations>
         <ownedParameter xmi:id="_Vmj8sb0YEd-DQ5q3aRKcIw" direction="return">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
         </ownedParameter>
@@ -351,6 +360,9 @@ Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:id="_YyxaAL0YEd-DQ5q3aRKcIw" name="provideAnnotation">
+        <eAnnotations xmi:id="_-3dIQDZXEeOIDrJNYFm1ig" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:id="_-3dIQTZXEeOIDrJNYFm1ig" key="body" value="return ExtendableElementOperations.provideAnnotation(this, source);"/>
+        </eAnnotations>
         <ownedParameter xmi:id="_YyxaAb0YEd-DQ5q3aRKcIw" direction="return">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
         </ownedParameter>

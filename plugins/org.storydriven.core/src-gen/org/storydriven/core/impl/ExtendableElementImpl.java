@@ -110,7 +110,7 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public Extension getExtension(EClass type) {
 		return ExtendableElementOperations.getExtension(this, type);
@@ -119,7 +119,7 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public Extension provideExtension(EClass type) {
 		return ExtendableElementOperations.provideExtension(this, type);
@@ -128,7 +128,7 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public EAnnotation getAnnotation(String source) {
 		return ExtendableElementOperations.getAnnotation(this, source);
@@ -137,7 +137,7 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public EAnnotation provideAnnotation(String source) {
 		return ExtendableElementOperations.provideAnnotation(this, source);

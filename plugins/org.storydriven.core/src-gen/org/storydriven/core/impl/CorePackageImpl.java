@@ -567,6 +567,26 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 						"documentation",
 						"Abstract base class for the whole story diagram model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references." });
 		addAnnotation(
+				getExtendableElement__GetExtension__EClass(),
+				source,
+				new String[] { "body",
+						"return ExtendableElementOperations.getExtension(this, type);" });
+		addAnnotation(
+				getExtendableElement__ProvideExtension__EClass(),
+				source,
+				new String[] { "body",
+						"return ExtendableElementOperations.provideExtension(this, type);" });
+		addAnnotation(
+				getExtendableElement__GetAnnotation__String(),
+				source,
+				new String[] { "body",
+						"return ExtendableElementOperations.getAnnotation(this, source);" });
+		addAnnotation(
+				getExtendableElement__ProvideAnnotation__String(),
+				source,
+				new String[] { "body",
+						"return ExtendableElementOperations.provideAnnotation(this, source);" });
+		addAnnotation(
 				extensionEClass,
 				source,
 				new String[] { "documentation",

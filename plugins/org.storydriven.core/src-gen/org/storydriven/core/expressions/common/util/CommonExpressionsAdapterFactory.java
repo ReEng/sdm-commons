@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.common.*;
 import org.storydriven.core.expressions.common.ArithmeticExpression;
 import org.storydriven.core.expressions.common.BinaryExpression;
 import org.storydriven.core.expressions.common.CommonExpressionsPackage;

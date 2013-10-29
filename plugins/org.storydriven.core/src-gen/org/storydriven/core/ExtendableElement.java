@@ -71,6 +71,7 @@ public interface ExtendableElement extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false" typeRequired="true" typeOrdered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ExtendableElementOperations.getExtension(this, type);'"
 	 * @generated
 	 */
 	Extension getExtension(EClass type);
@@ -79,6 +80,7 @@ public interface ExtendableElement extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false" typeRequired="true" typeOrdered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ExtendableElementOperations.provideExtension(this, type);'"
 	 * @generated
 	 */
 	Extension provideExtension(EClass type);
@@ -87,6 +89,7 @@ public interface ExtendableElement extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false" sourceRequired="true" sourceOrdered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ExtendableElementOperations.getAnnotation(this, source);'"
 	 * @generated
 	 */
 	EAnnotation getAnnotation(String source);
@@ -95,6 +98,7 @@ public interface ExtendableElement extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false" sourceRequired="true" sourceOrdered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return ExtendableElementOperations.provideAnnotation(this, source);'"
 	 * @generated
 	 */
 	EAnnotation provideAnnotation(String source);
