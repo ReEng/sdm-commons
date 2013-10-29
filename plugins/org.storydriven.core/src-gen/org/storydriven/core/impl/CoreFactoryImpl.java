@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.core.*;
 import org.storydriven.core.CoreFactory;
 import org.storydriven.core.CorePackage;
 
@@ -30,7 +31,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public static CoreFactory init() {
 		try {
 			CoreFactory theCoreFactory = (CoreFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.storydriven.org/core/0.3.1");
+					.getEFactory(CorePackage.eNS_URI);
 			if (theCoreFactory != null) {
 				return theCoreFactory;
 			}

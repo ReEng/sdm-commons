@@ -477,7 +477,7 @@ public class CommonExpressionsPackageImpl extends EPackageImpl implements
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				!IS_ORDERED);
 		initEAttribute(getUnaryExpression_Operator(), this.getUnaryOperator(),
-				"operator", "", 1, 1, UnaryExpression.class, !IS_TRANSIENT,
+				"operator", null, 1, 1, UnaryExpression.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 

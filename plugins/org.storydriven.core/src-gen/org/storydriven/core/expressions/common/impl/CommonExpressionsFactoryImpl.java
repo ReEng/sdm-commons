@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.core.expressions.common.*;
 import org.storydriven.core.expressions.common.ArithmeticExpression;
 import org.storydriven.core.expressions.common.ArithmeticOperator;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
@@ -41,7 +42,7 @@ public class CommonExpressionsFactoryImpl extends EFactoryImpl implements
 	public static CommonExpressionsFactory init() {
 		try {
 			CommonExpressionsFactory theCommonExpressionsFactory = (CommonExpressionsFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.storydriven.org/core/expressions/common/0.3.1");
+					.getEFactory(CommonExpressionsPackage.eNS_URI);
 			if (theCommonExpressionsFactory != null) {
 				return theCommonExpressionsFactory;
 			}

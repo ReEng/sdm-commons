@@ -198,7 +198,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
-            eType="#//expressions/common/UnaryOperator" defaultValueLiteral="">
+            eType="#//expressions/common/UnaryOperator">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Represents the operator of the expression."/>
           </eAnnotations>

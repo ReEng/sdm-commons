@@ -57,7 +57,6 @@ public interface UnaryExpression extends Expression {
 
 	/**
 	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
-	 * The default value is <code>""</code>.
 	 * The literals are from the enumeration {@link org.storydriven.core.expressions.common.UnaryOperator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -72,7 +71,7 @@ public interface UnaryExpression extends Expression {
 	 * @see org.storydriven.core.expressions.common.UnaryOperator
 	 * @see #setOperator(UnaryOperator)
 	 * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getUnaryExpression_Operator()
-	 * @model default="" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	UnaryOperator getOperator();
