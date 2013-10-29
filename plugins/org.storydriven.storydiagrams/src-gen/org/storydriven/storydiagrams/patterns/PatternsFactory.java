@@ -23,7 +23,8 @@ public interface PatternsFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	PatternsFactory eINSTANCE = org.storydriven.storydiagrams.patterns.impl.PatternsFactoryImpl.init();
+	PatternsFactory eINSTANCE = org.storydriven.storydiagrams.patterns.impl.PatternsFactoryImpl
+			.init();
 
 	/**
 	 * Returns a new object of class '<em>Object Variable</em>'.

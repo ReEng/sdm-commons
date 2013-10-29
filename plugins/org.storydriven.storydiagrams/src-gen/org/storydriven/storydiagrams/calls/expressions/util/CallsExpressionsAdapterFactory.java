@@ -14,6 +14,7 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.storydiagrams.calls.Invocation;
+import org.storydriven.storydiagrams.calls.expressions.*;
 import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsPackage;
 import org.storydriven.storydiagrams.calls.expressions.MethodCallExpression;
 import org.storydriven.storydiagrams.calls.expressions.ParameterExpression;

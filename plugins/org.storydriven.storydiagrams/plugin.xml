@@ -46,4 +46,82 @@
 			genModel="model/storydiagrams.uml.genmodel"
 			uri="http://www.storydriven.org/storydiagrams/templates/0.2.0"/>
 	</extension>
+
+   <extension point="org.eclipse.emf.ecore.content_parser">
+      <!-- @generated storydiagrams.uml -->
+      <parser
+            contentTypeIdentifier="org.storydriven.storydiagrams"
+            class="org.storydriven.storydiagrams.util.StorydiagramsResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <!-- @generated storydiagrams.uml -->
+      <content-type
+            base-type="org.eclipse.emf.ecore.xmi"
+            file-extensions="storydiagrams"
+            id="org.storydriven.storydiagrams"
+            name="%_UI_Storydiagrams_content_type"
+            priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://www.storydriven.org/storydiagrams/0.2.1"/>
+            <parameter name="kind" value="xmi"/>
+         </describer>
+      </content-type>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams.uml -->
+      <package
+            uri="http://www.storydriven.org/storydiagrams/activities/0.2.1"
+            class="org.storydriven.storydiagrams.activities.ActivitiesPackage"
+            genModel="model/storydiagrams.uml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams.uml -->
+      <package
+            uri="http://www.storydriven.org/storydiagrams/activities/expressions/0.2.0"
+            class="org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsPackage"
+            genModel="model/storydiagrams.uml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams.uml -->
+      <package
+            uri="http://www.storydriven.org/storydiagrams/calls/0.2.0"
+            class="org.storydriven.storydiagrams.calls.CallsPackage"
+            genModel="model/storydiagrams.uml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams.uml -->
+      <package
+            uri="http://www.storydriven.org/storydiagrams/calls/expressions/0.2.0"
+            class="org.storydriven.storydiagrams.calls.expressions.CallsExpressionsPackage"
+            genModel="model/storydiagrams.uml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams.uml -->
+      <package
+            uri="http://www.storydriven.org/storydiagrams/patterns/0.2.1"
+            class="org.storydriven.storydiagrams.patterns.PatternsPackage"
+            genModel="model/storydiagrams.uml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams.uml -->
+      <package
+            uri="http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1"
+            class="org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPackage"
+            genModel="model/storydiagrams.uml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated storydiagrams.uml -->
+      <package
+            uri="http://www.storydriven.org/storydiagrams/templates/0.2.0"
+            class="org.storydriven.storydiagrams.templates.TemplatesPackage"
+            genModel="model/storydiagrams.uml.genmodel"/>
+   </extension>
 </plugin>

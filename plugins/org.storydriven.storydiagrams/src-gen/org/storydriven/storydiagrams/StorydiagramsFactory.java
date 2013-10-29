@@ -23,7 +23,8 @@ public interface StorydiagramsFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	StorydiagramsFactory eINSTANCE = org.storydriven.storydiagrams.impl.StorydiagramsFactoryImpl.init();
+	StorydiagramsFactory eINSTANCE = org.storydriven.storydiagrams.impl.StorydiagramsFactoryImpl
+			.init();
 
 	/**
 	 * Returns the package supported by this factory.

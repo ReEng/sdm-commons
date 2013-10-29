@@ -19,7 +19,8 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
  *
  * @generated
  */
-public class InclusionLinkImpl extends AbstractLinkVariableImpl implements InclusionLink {
+public class InclusionLinkImpl extends AbstractLinkVariableImpl implements
+		InclusionLink {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -15,6 +15,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.TypedElement;
 import org.storydriven.storydiagrams.Variable;
+import org.storydriven.storydiagrams.patterns.*;
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
 import org.storydriven.storydiagrams.patterns.AttributeAssignment;

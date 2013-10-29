@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.storydiagrams.calls.expressions.*;
 import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
 import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsPackage;
 import org.storydriven.storydiagrams.calls.expressions.MethodCallExpression;
@@ -22,7 +23,8 @@ import org.storydriven.storydiagrams.calls.expressions.ParameterExpression;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CallsExpressionsFactoryImpl extends EFactoryImpl implements CallsExpressionsFactory {
+public class CallsExpressionsFactoryImpl extends EFactoryImpl implements
+		CallsExpressionsFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -32,7 +34,7 @@ public class CallsExpressionsFactoryImpl extends EFactoryImpl implements CallsEx
 	public static CallsExpressionsFactory init() {
 		try {
 			CallsExpressionsFactory theCallsExpressionsFactory = (CallsExpressionsFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.storydriven.org/storydiagrams/calls/expressions/0.2.0");
+					.getEFactory(CallsExpressionsPackage.eNS_URI);
 			if (theCallsExpressionsFactory != null) {
 				return theCallsExpressionsFactory;
 			}
@@ -65,7 +67,8 @@ public class CallsExpressionsFactoryImpl extends EFactoryImpl implements CallsEx
 		case CallsExpressionsPackage.PARAMETER_EXPRESSION:
 			return createParameterExpression();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName()
+					+ "' is not a valid classifier");
 		}
 	}
 

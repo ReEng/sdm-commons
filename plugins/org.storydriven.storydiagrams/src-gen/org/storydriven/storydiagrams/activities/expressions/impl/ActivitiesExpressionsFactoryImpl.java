@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.storydiagrams.activities.expressions.*;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsPackage;
 import org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExpression;
@@ -21,7 +22,8 @@ import org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExp
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivitiesExpressionsFactoryImpl extends EFactoryImpl implements ActivitiesExpressionsFactory {
+public class ActivitiesExpressionsFactoryImpl extends EFactoryImpl implements
+		ActivitiesExpressionsFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -31,7 +33,7 @@ public class ActivitiesExpressionsFactoryImpl extends EFactoryImpl implements Ac
 	public static ActivitiesExpressionsFactory init() {
 		try {
 			ActivitiesExpressionsFactory theActivitiesExpressionsFactory = (ActivitiesExpressionsFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.storydriven.org/storydiagrams/activities/expressions/0.2.0");
+					.getEFactory(ActivitiesExpressionsPackage.eNS_URI);
 			if (theActivitiesExpressionsFactory != null) {
 				return theActivitiesExpressionsFactory;
 			}
@@ -62,7 +64,8 @@ public class ActivitiesExpressionsFactoryImpl extends EFactoryImpl implements Ac
 		case ActivitiesExpressionsPackage.EXCEPTION_VARIABLE_EXPRESSION:
 			return createExceptionVariableExpression();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName()
+					+ "' is not a valid classifier");
 		}
 	}
 

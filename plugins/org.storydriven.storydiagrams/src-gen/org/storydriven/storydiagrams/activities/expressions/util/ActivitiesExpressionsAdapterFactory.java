@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.activities.expressions.*;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsPackage;
 import org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExpression;
 
@@ -72,7 +73,8 @@ public class ActivitiesExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected ActivitiesExpressionsSwitch<Adapter> modelSwitch = new ActivitiesExpressionsSwitch<Adapter>() {
 		@Override
-		public Adapter caseExceptionVariableExpression(ExceptionVariableExpression object) {
+		public Adapter caseExceptionVariableExpression(
+				ExceptionVariableExpression object) {
 			return createExceptionVariableExpressionAdapter();
 		}
 

@@ -23,7 +23,8 @@ import org.storydriven.storydiagrams.patterns.util.MatchingPatternOperations;
  *
  * @generated
  */
-public class MatchingPatternImpl extends StoryPatternImpl implements MatchingPattern {
+public class MatchingPatternImpl extends StoryPatternImpl implements
+		MatchingPattern {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -45,8 +46,10 @@ public class MatchingPatternImpl extends StoryPatternImpl implements MatchingPat
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean NoModifierInMatchingPattern(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MatchingPatternOperations.NoModifierInMatchingPattern(this, diagnostics, context);
+	public boolean NoModifierInMatchingPattern(DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return MatchingPatternOperations.NoModifierInMatchingPattern(this,
+				diagnostics, context);
 	}
 
 	/**
@@ -55,10 +58,12 @@ public class MatchingPatternImpl extends StoryPatternImpl implements MatchingPat
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments)
+			throws InvocationTargetException {
 		switch (operationID) {
 		case PatternsPackage.MATCHING_PATTERN___NO_MODIFIER_IN_MATCHING_PATTERN__DIAGNOSTICCHAIN_MAP:
-			return NoModifierInMatchingPattern((DiagnosticChain) arguments.get(0),
+			return NoModifierInMatchingPattern(
+					(DiagnosticChain) arguments.get(0),
 					(Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

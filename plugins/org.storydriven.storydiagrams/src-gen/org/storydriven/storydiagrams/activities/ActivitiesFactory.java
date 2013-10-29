@@ -23,7 +23,8 @@ public interface ActivitiesFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ActivitiesFactory eINSTANCE = org.storydriven.storydiagrams.activities.impl.ActivitiesFactoryImpl.init();
+	ActivitiesFactory eINSTANCE = org.storydriven.storydiagrams.activities.impl.ActivitiesFactoryImpl
+			.init();
 
 	/**
 	 * Returns a new object of class '<em>Exception Variable</em>'.

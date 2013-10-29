@@ -44,7 +44,8 @@ import org.storydriven.storydiagrams.templates.TemplatesPackage;
  *
  * @generated
  */
-public class StoryPatternImpl extends CommentableElementImpl implements StoryPattern {
+public class StoryPatternImpl extends CommentableElementImpl implements
+		StoryPattern {
 	/**
 	 * The cached value of the '{@link #getVariables() <em>Variable</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -135,8 +136,10 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 	 */
 	public EList<AbstractVariable> getVariables() {
 		if (variables == null) {
-			variables = new EObjectContainmentWithInverseEList.Resolving<AbstractVariable>(AbstractVariable.class,
-					this, PatternsPackage.STORY_PATTERN__VARIABLE, PatternsPackage.ABSTRACT_VARIABLE__PATTERN);
+			variables = new EObjectContainmentWithInverseEList.Resolving<AbstractVariable>(
+					AbstractVariable.class, this,
+					PatternsPackage.STORY_PATTERN__VARIABLE,
+					PatternsPackage.ABSTRACT_VARIABLE__PATTERN);
 		}
 		return variables;
 	}
@@ -148,7 +151,8 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 	public EList<AbstractLinkVariable> getLinkVariables() {
 		if (linkVariables == null) {
 			linkVariables = new EObjectContainmentWithInverseEList.Resolving<AbstractLinkVariable>(
-					AbstractLinkVariable.class, this, PatternsPackage.STORY_PATTERN__LINK_VARIABLE,
+					AbstractLinkVariable.class, this,
+					PatternsPackage.STORY_PATTERN__LINK_VARIABLE,
 					PatternsPackage.ABSTRACT_LINK_VARIABLE__PATTERN);
 		}
 		return linkVariables;
@@ -160,8 +164,10 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 	 */
 	public EList<Constraint> getConstraints() {
 		if (constraints == null) {
-			constraints = new EObjectContainmentWithInverseEList.Resolving<Constraint>(Constraint.class, this,
-					PatternsPackage.STORY_PATTERN__CONSTRAINT, PatternsPackage.CONSTRAINT__PATTERN);
+			constraints = new EObjectContainmentWithInverseEList.Resolving<Constraint>(
+					Constraint.class, this,
+					PatternsPackage.STORY_PATTERN__CONSTRAINT,
+					PatternsPackage.CONSTRAINT__PATTERN);
 		}
 		return constraints;
 	}
@@ -190,9 +196,10 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetParentPattern(StoryPattern newParentPattern, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newParentPattern, PatternsPackage.STORY_PATTERN__PARENT_PATTERN,
-				msgs);
+	public NotificationChain basicSetParentPattern(
+			StoryPattern newParentPattern, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newParentPattern,
+				PatternsPackage.STORY_PATTERN__PARENT_PATTERN, msgs);
 		return msgs;
 	}
 
@@ -204,18 +211,21 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 		if (newParentPattern != eInternalContainer()
 				|| (eContainerFeatureID() != PatternsPackage.STORY_PATTERN__PARENT_PATTERN && newParentPattern != null)) {
 			if (EcoreUtil.isAncestor(this, newParentPattern))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException(
+						"Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newParentPattern != null)
 				msgs = ((InternalEObject) newParentPattern).eInverseAdd(this,
-						PatternsPackage.STORY_PATTERN__CONTAINED_PATTERN, StoryPattern.class, msgs);
+						PatternsPackage.STORY_PATTERN__CONTAINED_PATTERN,
+						StoryPattern.class, msgs);
 			msgs = basicSetParentPattern(newParentPattern, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.STORY_PATTERN__PARENT_PATTERN,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.STORY_PATTERN__PARENT_PATTERN,
 					newParentPattern, newParentPattern));
 	}
 
@@ -225,8 +235,9 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 	 */
 	public EList<StoryPattern> getContainedPatterns() {
 		if (containedPatterns == null) {
-			containedPatterns = new EObjectContainmentWithInverseEList.Resolving<StoryPattern>(StoryPattern.class,
-					this, PatternsPackage.STORY_PATTERN__CONTAINED_PATTERN,
+			containedPatterns = new EObjectContainmentWithInverseEList.Resolving<StoryPattern>(
+					StoryPattern.class, this,
+					PatternsPackage.STORY_PATTERN__CONTAINED_PATTERN,
 					PatternsPackage.STORY_PATTERN__PARENT_PATTERN);
 		}
 		return containedPatterns;
@@ -248,9 +259,11 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 	 */
 	public void setBindingSemantics(BindingSemantics newBindingSemantics) {
 		BindingSemantics oldBindingSemantics = bindingSemantics;
-		bindingSemantics = newBindingSemantics == null ? BINDING_SEMANTICS_EDEFAULT : newBindingSemantics;
+		bindingSemantics = newBindingSemantics == null ? BINDING_SEMANTICS_EDEFAULT
+				: newBindingSemantics;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.STORY_PATTERN__BINDING_SEMANTICS,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.STORY_PATTERN__BINDING_SEMANTICS,
 					oldBindingSemantics, bindingSemantics));
 	}
 
@@ -264,17 +277,20 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 			templateSignature = (TemplateSignature) eResolveProxy(oldTemplateSignature);
 			if (templateSignature != oldTemplateSignature) {
 				InternalEObject newTemplateSignature = (InternalEObject) templateSignature;
-				NotificationChain msgs = oldTemplateSignature.eInverseRemove(this,
-						TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN, TemplateSignature.class, null);
+				NotificationChain msgs = oldTemplateSignature.eInverseRemove(
+						this, TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN,
+						TemplateSignature.class, null);
 				if (newTemplateSignature.eInternalContainer() == null) {
-					msgs = newTemplateSignature.eInverseAdd(this, TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN,
+					msgs = newTemplateSignature.eInverseAdd(this,
+							TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN,
 							TemplateSignature.class, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE, oldTemplateSignature, templateSignature));
+							PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE,
+							oldTemplateSignature, templateSignature));
 			}
 		}
 		return templateSignature;
@@ -292,12 +308,15 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTemplateSignature(TemplateSignature newTemplateSignature, NotificationChain msgs) {
+	public NotificationChain basicSetTemplateSignature(
+			TemplateSignature newTemplateSignature, NotificationChain msgs) {
 		TemplateSignature oldTemplateSignature = templateSignature;
 		templateSignature = newTemplateSignature;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE, oldTemplateSignature, newTemplateSignature);
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET,
+					PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE,
+					oldTemplateSignature, newTemplateSignature);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -314,16 +333,19 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 		if (newTemplateSignature != templateSignature) {
 			NotificationChain msgs = null;
 			if (templateSignature != null)
-				msgs = ((InternalEObject) templateSignature).eInverseRemove(this,
-						TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN, TemplateSignature.class, msgs);
+				msgs = ((InternalEObject) templateSignature).eInverseRemove(
+						this, TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN,
+						TemplateSignature.class, msgs);
 			if (newTemplateSignature != null)
-				msgs = ((InternalEObject) newTemplateSignature).eInverseAdd(this,
-						TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN, TemplateSignature.class, msgs);
+				msgs = ((InternalEObject) newTemplateSignature).eInverseAdd(
+						this, TemplatesPackage.TEMPLATE_SIGNATURE__PATTERN,
+						TemplateSignature.class, msgs);
 			msgs = basicSetTemplateSignature(newTemplateSignature, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE,
 					newTemplateSignature, newTemplateSignature));
 	}
 
@@ -333,14 +355,18 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case PatternsPackage.STORY_PATTERN__VARIABLE:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getVariables()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getVariables())
+					.basicAdd(otherEnd, msgs);
 		case PatternsPackage.STORY_PATTERN__CONSTRAINT:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getConstraints()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getConstraints())
+					.basicAdd(otherEnd, msgs);
 		case PatternsPackage.STORY_PATTERN__LINK_VARIABLE:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getLinkVariables()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getLinkVariables())
+					.basicAdd(otherEnd, msgs);
 		case PatternsPackage.STORY_PATTERN__PARENT_PATTERN:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
@@ -350,8 +376,12 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 					.basicAdd(otherEnd, msgs);
 		case PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE:
 			if (templateSignature != null)
-				msgs = ((InternalEObject) templateSignature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE, null, msgs);
+				msgs = ((InternalEObject) templateSignature)
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE,
+								null, msgs);
 			return basicSetTemplateSignature((TemplateSignature) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -362,18 +392,23 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case PatternsPackage.STORY_PATTERN__VARIABLE:
-			return ((InternalEList<?>) getVariables()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getVariables()).basicRemove(otherEnd,
+					msgs);
 		case PatternsPackage.STORY_PATTERN__CONSTRAINT:
-			return ((InternalEList<?>) getConstraints()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getConstraints()).basicRemove(otherEnd,
+					msgs);
 		case PatternsPackage.STORY_PATTERN__LINK_VARIABLE:
-			return ((InternalEList<?>) getLinkVariables()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getLinkVariables()).basicRemove(
+					otherEnd, msgs);
 		case PatternsPackage.STORY_PATTERN__PARENT_PATTERN:
 			return basicSetParentPattern(null, msgs);
 		case PatternsPackage.STORY_PATTERN__CONTAINED_PATTERN:
-			return ((InternalEList<?>) getContainedPatterns()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getContainedPatterns()).basicRemove(
+					otherEnd, msgs);
 		case PatternsPackage.STORY_PATTERN__TEMPLATE_SIGNATURE:
 			return basicSetTemplateSignature(null, msgs);
 		}
@@ -385,10 +420,12 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(
+			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case PatternsPackage.STORY_PATTERN__PARENT_PATTERN:
-			return eInternalContainer().eInverseRemove(this, PatternsPackage.STORY_PATTERN__CONTAINED_PATTERN,
+			return eInternalContainer().eInverseRemove(this,
+					PatternsPackage.STORY_PATTERN__CONTAINED_PATTERN,
 					StoryPattern.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -433,22 +470,26 @@ public class StoryPatternImpl extends CommentableElementImpl implements StoryPat
 		switch (featureID) {
 		case PatternsPackage.STORY_PATTERN__VARIABLE:
 			getVariables().clear();
-			getVariables().addAll((Collection<? extends AbstractVariable>) newValue);
+			getVariables().addAll(
+					(Collection<? extends AbstractVariable>) newValue);
 			return;
 		case PatternsPackage.STORY_PATTERN__CONSTRAINT:
 			getConstraints().clear();
-			getConstraints().addAll((Collection<? extends Constraint>) newValue);
+			getConstraints()
+					.addAll((Collection<? extends Constraint>) newValue);
 			return;
 		case PatternsPackage.STORY_PATTERN__LINK_VARIABLE:
 			getLinkVariables().clear();
-			getLinkVariables().addAll((Collection<? extends AbstractLinkVariable>) newValue);
+			getLinkVariables().addAll(
+					(Collection<? extends AbstractLinkVariable>) newValue);
 			return;
 		case PatternsPackage.STORY_PATTERN__PARENT_PATTERN:
 			setParentPattern((StoryPattern) newValue);
 			return;
 		case PatternsPackage.STORY_PATTERN__CONTAINED_PATTERN:
 			getContainedPatterns().clear();
-			getContainedPatterns().addAll((Collection<? extends StoryPattern>) newValue);
+			getContainedPatterns().addAll(
+					(Collection<? extends StoryPattern>) newValue);
 			return;
 		case PatternsPackage.STORY_PATTERN__BINDING_SEMANTICS:
 			setBindingSemantics((BindingSemantics) newValue);

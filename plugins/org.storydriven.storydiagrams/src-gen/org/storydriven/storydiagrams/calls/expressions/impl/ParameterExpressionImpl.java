@@ -28,7 +28,8 @@ import org.storydriven.storydiagrams.calls.expressions.ParameterExpression;
  *
  * @generated
  */
-public class ParameterExpressionImpl extends ExpressionImpl implements ParameterExpression {
+public class ParameterExpressionImpl extends ExpressionImpl implements
+		ParameterExpression {
 	/**
 	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -69,8 +70,11 @@ public class ParameterExpressionImpl extends ExpressionImpl implements Parameter
 			parameter = (ParameterExtension) eResolveProxy(oldParameter);
 			if (parameter != oldParameter) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER, oldParameter, parameter));
+					eNotify(new ENotificationImpl(
+							this,
+							Notification.RESOLVE,
+							CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER,
+							oldParameter, parameter));
 			}
 		}
 		return parameter;
@@ -95,7 +99,8 @@ public class ParameterExpressionImpl extends ExpressionImpl implements Parameter
 		parameter = newParameter;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER, oldParameter, parameter));
+					CallsExpressionsPackage.PARAMETER_EXPRESSION__PARAMETER,
+					oldParameter, parameter));
 	}
 
 	/**

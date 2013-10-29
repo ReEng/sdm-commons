@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.core.util.GenericTypeListHandler;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
@@ -37,7 +38,8 @@ import org.storydriven.storydiagrams.impl.VariableImpl;
  *
  * @generated
  */
-public class ExceptionVariableImpl extends VariableImpl implements ExceptionVariable {
+public class ExceptionVariableImpl extends VariableImpl implements
+		ExceptionVariable {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -109,8 +111,8 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.EXCEPTION_VARIABLE__NAME, oldName,
-					name));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ActivitiesPackage.EXCEPTION_VARIABLE__NAME, oldName, name));
 	}
 
 	/**
@@ -121,7 +123,8 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 	public EList<EClassifier> getExceptionTypes() {
 		if (this.exceptionTypes == null) {
 			if (this.exceptionTypesHandler == null) {
-				this.exceptionTypesHandler = new GenericTypeListHandler.EClassifiers(this,
+				this.exceptionTypesHandler = new GenericTypeListHandler.EClassifiers(
+						this,
 						ActivitiesPackage.Literals.EXCEPTION_VARIABLE__EXCEPTION_TYPE,
 						ActivitiesPackage.Literals.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE);
 			}
@@ -138,11 +141,13 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 	public EList<EGenericType> getGenericExceptionTypes() {
 		if (this.genericExceptionTypes == null) {
 			if (this.exceptionTypesHandler == null) {
-				this.exceptionTypesHandler = new GenericTypeListHandler.EClassifiers(this,
+				this.exceptionTypesHandler = new GenericTypeListHandler.EClassifiers(
+						this,
 						ActivitiesPackage.Literals.EXCEPTION_VARIABLE__EXCEPTION_TYPE,
 						ActivitiesPackage.Literals.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE);
 			}
-			this.genericExceptionTypes = this.exceptionTypesHandler.getGenericTypes();
+			this.genericExceptionTypes = this.exceptionTypesHandler
+					.getGenericTypes();
 		}
 		return this.genericExceptionTypes;
 	}
@@ -159,7 +164,8 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 	@Override
 	public EGenericType basicGetGenericType() {
 		if (this.exceptionTypesHandler != null) {
-			EList<EGenericType> types = this.exceptionTypesHandler.getGenericTypes();
+			EList<EGenericType> types = this.exceptionTypesHandler
+					.getGenericTypes();
 			return types.size() == 1 ? types.get(0) : null;
 		}
 		return super.basicGetGenericType();
@@ -189,7 +195,8 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetActivityEdge(ActivityEdge newActivityEdge, NotificationChain msgs) {
+	public NotificationChain basicSetActivityEdge(ActivityEdge newActivityEdge,
+			NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject) newActivityEdge,
 				ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE, msgs);
 		return msgs;
@@ -203,18 +210,21 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 		if (newActivityEdge != eInternalContainer()
 				|| (eContainerFeatureID() != ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE && newActivityEdge != null)) {
 			if (EcoreUtil.isAncestor(this, newActivityEdge))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException(
+						"Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newActivityEdge != null)
 				msgs = ((InternalEObject) newActivityEdge).eInverseAdd(this,
-						ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION, ActivityEdge.class, msgs);
+						ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION,
+						ActivityEdge.class, msgs);
 			msgs = basicSetActivityEdge(newActivityEdge, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE,
 					newActivityEdge, newActivityEdge));
 	}
 
@@ -223,7 +233,8 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE:
 			if (eInternalContainer() != null)
@@ -238,7 +249,8 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE:
 			return basicSetActivityEdge(null, msgs);
@@ -251,10 +263,12 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(
+			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE:
-			return eInternalContainer().eInverseRemove(this, ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION,
+			return eInternalContainer().eInverseRemove(this,
+					ActivitiesPackage.ACTIVITY_EDGE__GUARD_EXCEPTION,
 					ActivityEdge.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -297,11 +311,13 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 			return;
 		case ActivitiesPackage.EXCEPTION_VARIABLE__EXCEPTION_TYPE:
 			getExceptionTypes().clear();
-			getExceptionTypes().addAll((Collection<? extends EClassifier>) newValue);
+			getExceptionTypes().addAll(
+					(Collection<? extends EClassifier>) newValue);
 			return;
 		case ActivitiesPackage.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE:
 			getGenericExceptionTypes().clear();
-			getGenericExceptionTypes().addAll((Collection<? extends EGenericType>) newValue);
+			getGenericExceptionTypes().addAll(
+					(Collection<? extends EGenericType>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -340,11 +356,13 @@ public class ExceptionVariableImpl extends VariableImpl implements ExceptionVari
 		case ActivitiesPackage.EXCEPTION_VARIABLE__ACTIVITY_EDGE:
 			return basicGetActivityEdge() != null;
 		case ActivitiesPackage.EXCEPTION_VARIABLE__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
+					.equals(name);
 		case ActivitiesPackage.EXCEPTION_VARIABLE__EXCEPTION_TYPE:
 			return exceptionTypes != null && !exceptionTypes.isEmpty();
 		case ActivitiesPackage.EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE:
-			return genericExceptionTypes != null && !genericExceptionTypes.isEmpty();
+			return genericExceptionTypes != null
+					&& !genericExceptionTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

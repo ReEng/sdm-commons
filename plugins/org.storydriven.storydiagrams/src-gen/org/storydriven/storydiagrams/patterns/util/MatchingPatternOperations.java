@@ -80,7 +80,8 @@ public class MatchingPatternOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static boolean NoModifierInMatchingPattern(MatchingPattern matchingPattern, DiagnosticChain diagnostics,
+	public static boolean NoModifierInMatchingPattern(
+			MatchingPattern matchingPattern, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		if (NO_MODIFIER_IN_MATCHING_PATTERN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
@@ -89,20 +90,30 @@ public class MatchingPatternOperations {
 				NO_MODIFIER_IN_MATCHING_PATTERN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper
 						.createInvariant(NO_MODIFIER_IN_MATCHING_PATTERN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			} catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+				throw new UnsupportedOperationException(
+						pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(NO_MODIFIER_IN_MATCHING_PATTERN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(
-				matchingPattern)) {
+		if (!EOCL_ENV
+				.createQuery(
+						NO_MODIFIER_IN_MATCHING_PATTERN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV)
+				.check(matchingPattern)) {
 			if (diagnostics != null) {
-				diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, PatternsValidator.DIAGNOSTIC_SOURCE,
-						PatternsValidator.MATCHING_PATTERN__NO_MODIFIER_IN_MATCHING_PATTERN,
-						org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
-								"_UI_GenericInvariant_diagnostic",
-								new Object[] {
-										"NoModifierInMatchingPattern",
-										org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(matchingPattern,
-												context) }), new Object[] { matchingPattern }));
+				diagnostics
+						.add(new BasicDiagnostic(
+								Diagnostic.ERROR,
+								PatternsValidator.DIAGNOSTIC_SOURCE,
+								PatternsValidator.MATCHING_PATTERN__NO_MODIFIER_IN_MATCHING_PATTERN,
+								org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE
+										.getString(
+												"_UI_GenericInvariant_diagnostic",
+												new Object[] {
+														"NoModifierInMatchingPattern",
+														org.eclipse.emf.ecore.util.EObjectValidator
+																.getObjectLabel(
+																		matchingPattern,
+																		context) }),
+								new Object[] { matchingPattern }));
 			}
 			return false;
 		}

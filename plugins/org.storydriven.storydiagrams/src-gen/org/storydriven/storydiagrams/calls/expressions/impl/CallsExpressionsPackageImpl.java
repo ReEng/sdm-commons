@@ -37,7 +37,8 @@ import org.storydriven.storydiagrams.templates.impl.TemplatesPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CallsExpressionsPackageImpl extends EPackageImpl implements CallsExpressionsPackage {
+public class CallsExpressionsPackageImpl extends EPackageImpl implements
+		CallsExpressionsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,12 +93,13 @@ public class CallsExpressionsPackageImpl extends EPackageImpl implements CallsEx
 	 */
 	public static CallsExpressionsPackage init() {
 		if (isInited)
-			return (CallsExpressionsPackage) EPackage.Registry.INSTANCE.getEPackage(CallsExpressionsPackage.eNS_URI);
+			return (CallsExpressionsPackage) EPackage.Registry.INSTANCE
+					.getEPackage(CallsExpressionsPackage.eNS_URI);
 
 		// Obtain or create and register package
 		CallsExpressionsPackageImpl theCallsExpressionsPackage = (CallsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-				: new CallsExpressionsPackageImpl());
+				.get(eNS_URI) instanceof CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
+				.get(eNS_URI) : new CallsExpressionsPackageImpl());
 
 		isInited = true;
 
@@ -107,25 +109,31 @@ public class CallsExpressionsPackageImpl extends EPackageImpl implements CallsEx
 		// Obtain or create and register interdependencies
 		StorydiagramsPackageImpl theStorydiagramsPackage = (StorydiagramsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(StorydiagramsPackage.eNS_URI) instanceof StorydiagramsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(StorydiagramsPackage.eNS_URI) : StorydiagramsPackage.eINSTANCE);
+				.getEPackage(StorydiagramsPackage.eNS_URI)
+				: StorydiagramsPackage.eINSTANCE);
 		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);
+				.getEPackage(ActivitiesPackage.eNS_URI)
+				: ActivitiesPackage.eINSTANCE);
 		ActivitiesExpressionsPackageImpl theActivitiesExpressionsPackage = (ActivitiesExpressionsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(ActivitiesExpressionsPackage.eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ActivitiesExpressionsPackage.eNS_URI) : ActivitiesExpressionsPackage.eINSTANCE);
+				.getEPackage(ActivitiesExpressionsPackage.eNS_URI)
+				: ActivitiesExpressionsPackage.eINSTANCE);
 		CallsPackageImpl theCallsPackage = (CallsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(CallsPackage.eNS_URI) instanceof CallsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(CallsPackage.eNS_URI) : CallsPackage.eINSTANCE);
 		PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(PatternsPackage.eNS_URI) : PatternsPackage.eINSTANCE);
+				.getEPackage(PatternsPackage.eNS_URI)
+				: PatternsPackage.eINSTANCE);
 		PatternsExpressionsPackageImpl thePatternsExpressionsPackage = (PatternsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(PatternsExpressionsPackage.eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(PatternsExpressionsPackage.eNS_URI) : PatternsExpressionsPackage.eINSTANCE);
+				.getEPackage(PatternsExpressionsPackage.eNS_URI)
+				: PatternsExpressionsPackage.eINSTANCE);
 		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(TemplatesPackage.eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(TemplatesPackage.eNS_URI) : TemplatesPackage.eINSTANCE);
+				.getEPackage(TemplatesPackage.eNS_URI)
+				: TemplatesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCallsExpressionsPackage.createPackageContents();
@@ -151,7 +159,8 @@ public class CallsExpressionsPackageImpl extends EPackageImpl implements CallsEx
 		theCallsExpressionsPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(CallsExpressionsPackage.eNS_URI, theCallsExpressionsPackage);
+		EPackage.Registry.INSTANCE.put(CallsExpressionsPackage.eNS_URI,
+				theCallsExpressionsPackage);
 		return theCallsExpressionsPackage;
 	}
 
@@ -170,7 +179,8 @@ public class CallsExpressionsPackageImpl extends EPackageImpl implements CallsEx
 	 * @generated
 	 */
 	public EReference getMethodCallExpression_Target() {
-		return (EReference) methodCallExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) methodCallExpressionEClass.getEStructuralFeatures()
+				.get(0);
 	}
 
 	/**
@@ -179,7 +189,8 @@ public class CallsExpressionsPackageImpl extends EPackageImpl implements CallsEx
 	 * @generated
 	 */
 	public EReference getMethodCallExpression_OpaqueCallable() {
-		return (EReference) methodCallExpressionEClass.getEStructuralFeatures().get(1);
+		return (EReference) methodCallExpressionEClass.getEStructuralFeatures()
+				.get(1);
 	}
 
 	/**
@@ -197,7 +208,8 @@ public class CallsExpressionsPackageImpl extends EPackageImpl implements CallsEx
 	 * @generated
 	 */
 	public EReference getParameterExpression_Parameter() {
-		return (EReference) parameterExpressionEClass.getEStructuralFeatures().get(0);
+		return (EReference) parameterExpressionEClass.getEStructuralFeatures()
+				.get(0);
 	}
 
 	/**
@@ -230,11 +242,14 @@ public class CallsExpressionsPackageImpl extends EPackageImpl implements CallsEx
 
 		// Create classes and their features
 		methodCallExpressionEClass = createEClass(METHOD_CALL_EXPRESSION);
-		createEReference(methodCallExpressionEClass, METHOD_CALL_EXPRESSION__TARGET);
-		createEReference(methodCallExpressionEClass, METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE);
+		createEReference(methodCallExpressionEClass,
+				METHOD_CALL_EXPRESSION__TARGET);
+		createEReference(methodCallExpressionEClass,
+				METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE);
 
 		parameterExpressionEClass = createEClass(PARAMETER_EXPRESSION);
-		createEReference(parameterExpressionEClass, PARAMETER_EXPRESSION__PARAMETER);
+		createEReference(parameterExpressionEClass,
+				PARAMETER_EXPRESSION__PARAMETER);
 	}
 
 	/**
@@ -264,33 +279,46 @@ public class CallsExpressionsPackageImpl extends EPackageImpl implements CallsEx
 		// Obtain other dependent packages
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage) EPackage.Registry.INSTANCE
 				.getEPackage(ExpressionsPackage.eNS_URI);
-		CallsPackage theCallsPackage = (CallsPackage) EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
+		CallsPackage theCallsPackage = (CallsPackage) EPackage.Registry.INSTANCE
+				.getEPackage(CallsPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		methodCallExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		methodCallExpressionEClass.getESuperTypes().add(theCallsPackage.getInvocation());
-		parameterExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		methodCallExpressionEClass.getESuperTypes().add(
+				theExpressionsPackage.getExpression());
+		methodCallExpressionEClass.getESuperTypes().add(
+				theCallsPackage.getInvocation());
+		parameterExpressionEClass.getESuperTypes().add(
+				theExpressionsPackage.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(methodCallExpressionEClass, MethodCallExpression.class, "MethodCallExpression", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMethodCallExpression_Target(), theExpressionsPackage.getExpression(), null, "target", null,
-				0, 1, MethodCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getMethodCallExpression_OpaqueCallable(), theCallsPackage.getOpaqueCallable(),
-				theCallsPackage.getOpaqueCallable_CallExpression(), "opaqueCallable", null, 0, 1,
-				MethodCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(methodCallExpressionEClass, MethodCallExpression.class,
+				"MethodCallExpression", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMethodCallExpression_Target(),
+				theExpressionsPackage.getExpression(), null, "target", null, 0,
+				1, MethodCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMethodCallExpression_OpaqueCallable(),
+				theCallsPackage.getOpaqueCallable(),
+				theCallsPackage.getOpaqueCallable_CallExpression(),
+				"opaqueCallable", null, 0, 1, MethodCallExpression.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 
-		initEClass(parameterExpressionEClass, ParameterExpression.class, "ParameterExpression", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getParameterExpression_Parameter(), theCallsPackage.getParameterExtension(), null, "parameter",
-				null, 0, 1, ParameterExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(parameterExpressionEClass, ParameterExpression.class,
+				"ParameterExpression", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParameterExpression_Parameter(),
+				theCallsPackage.getParameterExtension(), null, "parameter",
+				null, 0, 1, ParameterExpression.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/GenModel
@@ -323,8 +351,12 @@ public class CallsExpressionsPackageImpl extends EPackageImpl implements CallsEx
 				new String[] {
 						"documentation",
 						"This containment reference is a helper construct because the OpaqueCallable has to be contained somewhere. A MethodCallExpression (being an Invocation) could also reference an OpaqueCallable (being a Callable) via the callee reference but then the OpaqueCallable would not be contained anywhere in the model." });
-		addAnnotation(parameterExpressionEClass, source, new String[] { "documentation",
-				"An Expressions that represents a parameter value, e.g. the value of an Activity\'s parameter." });
+		addAnnotation(
+				parameterExpressionEClass,
+				source,
+				new String[] {
+						"documentation",
+						"An Expressions that represents a parameter value, e.g. the value of an Activity\'s parameter." });
 	}
 
 } //CallsExpressionsPackageImpl

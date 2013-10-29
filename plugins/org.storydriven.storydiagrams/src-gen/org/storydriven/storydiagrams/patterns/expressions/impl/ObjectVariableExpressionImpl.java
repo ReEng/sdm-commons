@@ -28,7 +28,8 @@ import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPac
  *
  * @generated
  */
-public class ObjectVariableExpressionImpl extends ExpressionImpl implements ObjectVariableExpression {
+public class ObjectVariableExpressionImpl extends ExpressionImpl implements
+		ObjectVariableExpression {
 	/**
 	 * The cached value of the '{@link #getObject() <em>Object</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -69,8 +70,11 @@ public class ObjectVariableExpressionImpl extends ExpressionImpl implements Obje
 			object = (ObjectVariable) eResolveProxy(oldObject);
 			if (object != oldObject) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT, oldObject, object));
+					eNotify(new ENotificationImpl(
+							this,
+							Notification.RESOLVE,
+							PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT,
+							oldObject, object));
 			}
 		}
 		return object;
@@ -94,8 +98,11 @@ public class ObjectVariableExpressionImpl extends ExpressionImpl implements Obje
 		ObjectVariable oldObject = object;
 		object = newObject;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT, oldObject, object));
+			eNotify(new ENotificationImpl(
+					this,
+					Notification.SET,
+					PatternsExpressionsPackage.OBJECT_VARIABLE_EXPRESSION__OBJECT,
+					oldObject, object));
 	}
 
 	/**

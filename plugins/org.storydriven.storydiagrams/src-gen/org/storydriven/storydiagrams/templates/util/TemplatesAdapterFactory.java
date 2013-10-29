@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.ExtendableElement;
+import org.storydriven.storydiagrams.templates.*;
 import org.storydriven.storydiagrams.templates.PropertyBinding;
 import org.storydriven.storydiagrams.templates.TemplateBinding;
 import org.storydriven.storydiagrams.templates.TemplateSignature;

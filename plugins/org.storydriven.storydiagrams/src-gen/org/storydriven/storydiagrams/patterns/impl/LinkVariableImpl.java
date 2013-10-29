@@ -29,7 +29,8 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
  *
  * @generated
  */
-public class LinkVariableImpl extends AbstractLinkVariableImpl implements LinkVariable {
+public class LinkVariableImpl extends AbstractLinkVariableImpl implements
+		LinkVariable {
 
 	/**
 	 * The cached value of the '{@link #getTargetEnd() <em>Target End</em>}' reference.
@@ -91,7 +92,8 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements LinkVa
 	 * @generated NOT
 	 */
 	public void setSourceEnd(EReference newSourceEnd) {
-		EReference newTargetEnd = newSourceEnd == null ? null : newSourceEnd.getEOpposite();
+		EReference newTargetEnd = newSourceEnd == null ? null : newSourceEnd
+				.getEOpposite();
 		if (newTargetEnd == null && newSourceEnd != null) {
 			throw new IllegalArgumentException();
 		}
@@ -113,7 +115,8 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements LinkVa
 			if (targetEnd != oldTargetEnd) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PatternsPackage.LINK_VARIABLE__TARGET_END, oldTargetEnd, targetEnd));
+							PatternsPackage.LINK_VARIABLE__TARGET_END,
+							oldTargetEnd, targetEnd));
 			}
 		}
 		return targetEnd;
@@ -127,11 +130,14 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements LinkVa
 		return targetEnd;
 	}
 
-	protected NotificationChain basicSetSourceEnd(EReference newSourceEnd, NotificationChain msgs) {
+	protected NotificationChain basicSetSourceEnd(EReference newSourceEnd,
+			NotificationChain msgs) {
 		EReference oldSourceEnd = getSourceEnd();
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.LINK_VARIABLE__SOURCE_END, oldSourceEnd, newSourceEnd);
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET,
+					PatternsPackage.LINK_VARIABLE__SOURCE_END, oldSourceEnd,
+					newSourceEnd);
 			if (msgs == null) {
 				msgs = notification;
 			} else {
@@ -148,7 +154,8 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements LinkVa
 	 */
 	public void setTargetEnd(EReference newTargetEnd) {
 		NotificationChain notification = basicSetTargetEnd(newTargetEnd, null);
-		EReference newSourceEnd = newTargetEnd == null ? null : newTargetEnd.getEOpposite();
+		EReference newSourceEnd = newTargetEnd == null ? null : newTargetEnd
+				.getEOpposite();
 		notification = basicSetSourceEnd(newSourceEnd, notification);
 		if (notification != null) {
 			notification.dispatch();
@@ -165,18 +172,28 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements LinkVa
 			qualifierExpression = (Expression) eResolveProxy(oldQualifierExpression);
 			if (qualifierExpression != oldQualifierExpression) {
 				InternalEObject newQualifierExpression = (InternalEObject) qualifierExpression;
-				NotificationChain msgs = oldQualifierExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION, null, null);
+				NotificationChain msgs = oldQualifierExpression
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+								null, null);
 				if (newQualifierExpression.eInternalContainer() == null) {
-					msgs = newQualifierExpression.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-							- PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION, null, msgs);
+					msgs = newQualifierExpression
+							.eInverseAdd(
+									this,
+									EOPPOSITE_FEATURE_BASE
+											- PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+									null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION, oldQualifierExpression,
-							qualifierExpression));
+					eNotify(new ENotificationImpl(
+							this,
+							Notification.RESOLVE,
+							PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+							oldQualifierExpression, qualifierExpression));
 			}
 		}
 		return qualifierExpression;
@@ -194,12 +211,15 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements LinkVa
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQualifierExpression(Expression newQualifierExpression, NotificationChain msgs) {
+	public NotificationChain basicSetQualifierExpression(
+			Expression newQualifierExpression, NotificationChain msgs) {
 		Expression oldQualifierExpression = qualifierExpression;
 		qualifierExpression = newQualifierExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION, oldQualifierExpression, newQualifierExpression);
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET,
+					PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+					oldQualifierExpression, newQualifierExpression);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -216,16 +236,25 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements LinkVa
 		if (newQualifierExpression != qualifierExpression) {
 			NotificationChain msgs = null;
 			if (qualifierExpression != null)
-				msgs = ((InternalEObject) qualifierExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject) qualifierExpression)
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+								null, msgs);
 			if (newQualifierExpression != null)
-				msgs = ((InternalEObject) newQualifierExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject) newQualifierExpression)
+						.eInverseAdd(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+								null, msgs);
 			msgs = basicSetQualifierExpression(newQualifierExpression, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION,
 					newQualifierExpression, newQualifierExpression));
 	}
 
@@ -234,7 +263,8 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements LinkVa
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION:
 			return basicSetQualifierExpression(null, msgs);
@@ -322,12 +352,15 @@ public class LinkVariableImpl extends AbstractLinkVariableImpl implements LinkVa
 		return super.eIsSet(featureID);
 	}
 
-	protected NotificationChain basicSetTargetEnd(EReference newTargetEnd, NotificationChain msgs) {
+	protected NotificationChain basicSetTargetEnd(EReference newTargetEnd,
+			NotificationChain msgs) {
 		EReference oldTargetEnd = this.targetEnd;
 		this.targetEnd = newTargetEnd;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.LINK_VARIABLE__TARGET_END, oldTargetEnd, this.targetEnd);
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET,
+					PatternsPackage.LINK_VARIABLE__TARGET_END, oldTargetEnd,
+					this.targetEnd);
 			if (msgs == null) {
 				msgs = notification;
 			} else {

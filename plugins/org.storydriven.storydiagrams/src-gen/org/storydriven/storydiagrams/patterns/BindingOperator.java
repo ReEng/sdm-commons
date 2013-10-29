@@ -103,7 +103,8 @@ public enum BindingOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final BindingOperator[] VALUES_ARRAY = new BindingOperator[] { CHECK_ONLY, CREATE, DESTROY, };
+	private static final BindingOperator[] VALUES_ARRAY = new BindingOperator[] {
+			CHECK_ONLY, CREATE, DESTROY, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Binding Operator</b></em>' enumerators.
@@ -111,7 +112,8 @@ public enum BindingOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<BindingOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<BindingOperator> VALUES = Collections
+			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Binding Operator</b></em>' literal with the specified literal value.

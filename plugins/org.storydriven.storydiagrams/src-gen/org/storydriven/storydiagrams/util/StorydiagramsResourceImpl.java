@@ -16,7 +16,8 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
  * @see org.storydriven.storydiagrams.util.StorydiagramsResourceFactoryImpl
  * @generated
  */
-public class StorydiagramsResourceImpl extends XMIResourceImpl implements StorydiagramsResource {
+public class StorydiagramsResourceImpl extends XMIResourceImpl implements
+		StorydiagramsResource {
 	/**
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->

@@ -63,16 +63,21 @@ public class PathImpl extends AbstractLinkVariableImpl implements Path {
 			pathExpression = (Expression) eResolveProxy(oldPathExpression);
 			if (pathExpression != oldPathExpression) {
 				InternalEObject newPathExpression = (InternalEObject) pathExpression;
-				NotificationChain msgs = oldPathExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- PatternsPackage.PATH__PATH_EXPRESSION, null, null);
+				NotificationChain msgs = oldPathExpression.eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE
+								- PatternsPackage.PATH__PATH_EXPRESSION, null,
+						null);
 				if (newPathExpression.eInternalContainer() == null) {
-					msgs = newPathExpression.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-							- PatternsPackage.PATH__PATH_EXPRESSION, null, msgs);
+					msgs = newPathExpression.eInverseAdd(this,
+							EOPPOSITE_FEATURE_BASE
+									- PatternsPackage.PATH__PATH_EXPRESSION,
+							null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternsPackage.PATH__PATH_EXPRESSION,
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							PatternsPackage.PATH__PATH_EXPRESSION,
 							oldPathExpression, pathExpression));
 			}
 		}
@@ -91,12 +96,14 @@ public class PathImpl extends AbstractLinkVariableImpl implements Path {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPathExpression(Expression newPathExpression, NotificationChain msgs) {
+	public NotificationChain basicSetPathExpression(
+			Expression newPathExpression, NotificationChain msgs) {
 		Expression oldPathExpression = pathExpression;
 		pathExpression = newPathExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.PATH__PATH_EXPRESSION, oldPathExpression, newPathExpression);
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET, PatternsPackage.PATH__PATH_EXPRESSION,
+					oldPathExpression, newPathExpression);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -113,17 +120,22 @@ public class PathImpl extends AbstractLinkVariableImpl implements Path {
 		if (newPathExpression != pathExpression) {
 			NotificationChain msgs = null;
 			if (pathExpression != null)
-				msgs = ((InternalEObject) pathExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- PatternsPackage.PATH__PATH_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject) pathExpression).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE
+								- PatternsPackage.PATH__PATH_EXPRESSION, null,
+						msgs);
 			if (newPathExpression != null)
-				msgs = ((InternalEObject) newPathExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- PatternsPackage.PATH__PATH_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject) newPathExpression).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE
+								- PatternsPackage.PATH__PATH_EXPRESSION, null,
+						msgs);
 			msgs = basicSetPathExpression(newPathExpression, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.PATH__PATH_EXPRESSION,
-					newPathExpression, newPathExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.PATH__PATH_EXPRESSION, newPathExpression,
+					newPathExpression));
 	}
 
 	/**
@@ -131,7 +143,8 @@ public class PathImpl extends AbstractLinkVariableImpl implements Path {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case PatternsPackage.PATH__PATH_EXPRESSION:
 			return basicSetPathExpression(null, msgs);

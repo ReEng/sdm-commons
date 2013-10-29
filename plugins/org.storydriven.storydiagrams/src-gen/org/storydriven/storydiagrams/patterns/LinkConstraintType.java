@@ -154,8 +154,8 @@ public enum LinkConstraintType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final LinkConstraintType[] VALUES_ARRAY = new LinkConstraintType[] { FIRST, LAST, NEXT,
-			INDIRECT_SUCCESSOR, INDEX, };
+	private static final LinkConstraintType[] VALUES_ARRAY = new LinkConstraintType[] {
+			FIRST, LAST, NEXT, INDIRECT_SUCCESSOR, INDEX, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Link Constraint Type</b></em>' enumerators.
@@ -163,7 +163,8 @@ public enum LinkConstraintType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<LinkConstraintType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<LinkConstraintType> VALUES = Collections
+			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Link Constraint Type</b></em>' literal with the specified literal value.

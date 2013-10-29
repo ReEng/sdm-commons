@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.activities.expressions.*;
 import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsPackage;
 import org.storydriven.storydiagrams.activities.expressions.ExceptionVariableExpression;
 

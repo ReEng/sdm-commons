@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.patterns.expressions.*;
 import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression;
 import org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
@@ -75,22 +76,26 @@ public class PatternsExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected PatternsExpressionsSwitch<Adapter> modelSwitch = new PatternsExpressionsSwitch<Adapter>() {
 		@Override
-		public Adapter caseAttributeValueExpression(AttributeValueExpression object) {
+		public Adapter caseAttributeValueExpression(
+				AttributeValueExpression object) {
 			return createAttributeValueExpressionAdapter();
 		}
 
 		@Override
-		public Adapter caseObjectVariableExpression(ObjectVariableExpression object) {
+		public Adapter caseObjectVariableExpression(
+				ObjectVariableExpression object) {
 			return createObjectVariableExpressionAdapter();
 		}
 
 		@Override
-		public Adapter caseCollectionSizeExpression(CollectionSizeExpression object) {
+		public Adapter caseCollectionSizeExpression(
+				CollectionSizeExpression object) {
 			return createCollectionSizeExpressionAdapter();
 		}
 
 		@Override
-		public Adapter casePrimitiveVariableExpression(PrimitiveVariableExpression object) {
+		public Adapter casePrimitiveVariableExpression(
+				PrimitiveVariableExpression object) {
 			return createPrimitiveVariableExpressionAdapter();
 		}
 

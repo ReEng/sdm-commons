@@ -39,7 +39,8 @@ import org.storydriven.storydiagrams.templates.TemplatesPackage;
  *
  * @generated
  */
-public class TemplateBindingImpl extends ExtendableElementImpl implements TemplateBinding {
+public class TemplateBindingImpl extends ExtendableElementImpl implements
+		TemplateBinding {
 	/**
 	 * The cached value of the '{@link #getBoundParameter() <em>Bound Parameter</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -95,7 +96,8 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements Templa
 			if (boundParameter != oldBoundParameter) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER, oldBoundParameter, boundParameter));
+							TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER,
+							oldBoundParameter, boundParameter));
 			}
 		}
 		return boundParameter;
@@ -117,7 +119,8 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements Templa
 		EClassifier oldBoundParameter = boundParameter;
 		boundParameter = newBoundParameter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					TemplatesPackage.TEMPLATE_BINDING__BOUND_PARAMETER,
 					oldBoundParameter, boundParameter));
 	}
 
@@ -131,18 +134,28 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements Templa
 			bindingExpression = (Expression) eResolveProxy(oldBindingExpression);
 			if (bindingExpression != oldBindingExpression) {
 				InternalEObject newBindingExpression = (InternalEObject) bindingExpression;
-				NotificationChain msgs = oldBindingExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION, null, null);
+				NotificationChain msgs = oldBindingExpression
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION,
+								null, null);
 				if (newBindingExpression.eInternalContainer() == null) {
-					msgs = newBindingExpression.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-							- TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION, null, msgs);
+					msgs = newBindingExpression
+							.eInverseAdd(
+									this,
+									EOPPOSITE_FEATURE_BASE
+											- TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION,
+									null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION, oldBindingExpression,
-							bindingExpression));
+					eNotify(new ENotificationImpl(
+							this,
+							Notification.RESOLVE,
+							TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION,
+							oldBindingExpression, bindingExpression));
 			}
 		}
 		return bindingExpression;
@@ -160,12 +173,15 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements Templa
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBindingExpression(Expression newBindingExpression, NotificationChain msgs) {
+	public NotificationChain basicSetBindingExpression(
+			Expression newBindingExpression, NotificationChain msgs) {
 		Expression oldBindingExpression = bindingExpression;
 		bindingExpression = newBindingExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION, oldBindingExpression, newBindingExpression);
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET,
+					TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION,
+					oldBindingExpression, newBindingExpression);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -182,17 +198,26 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements Templa
 		if (newBindingExpression != bindingExpression) {
 			NotificationChain msgs = null;
 			if (bindingExpression != null)
-				msgs = ((InternalEObject) bindingExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject) bindingExpression)
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION,
+								null, msgs);
 			if (newBindingExpression != null)
-				msgs = ((InternalEObject) newBindingExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject) newBindingExpression)
+						.eInverseAdd(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION,
+								null, msgs);
 			msgs = basicSetBindingExpression(newBindingExpression, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION, newBindingExpression, newBindingExpression));
+					TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION,
+					newBindingExpression, newBindingExpression));
 	}
 
 	/**
@@ -201,8 +226,9 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements Templa
 	 */
 	public EList<PropertyBinding> getPropertyBindings() {
 		if (propertyBindings == null) {
-			propertyBindings = new EObjectContainmentWithInverseEList.Resolving<PropertyBinding>(PropertyBinding.class,
-					this, TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING,
+			propertyBindings = new EObjectContainmentWithInverseEList.Resolving<PropertyBinding>(
+					PropertyBinding.class, this,
+					TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING,
 					TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING);
 		}
 		return propertyBindings;
@@ -232,8 +258,10 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements Templa
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTemplate(TemplateSignature newTemplate, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newTemplate, TemplatesPackage.TEMPLATE_BINDING__TEMPLATE, msgs);
+	public NotificationChain basicSetTemplate(TemplateSignature newTemplate,
+			NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newTemplate,
+				TemplatesPackage.TEMPLATE_BINDING__TEMPLATE, msgs);
 		return msgs;
 	}
 
@@ -245,19 +273,22 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements Templa
 		if (newTemplate != eInternalContainer()
 				|| (eContainerFeatureID() != TemplatesPackage.TEMPLATE_BINDING__TEMPLATE && newTemplate != null)) {
 			if (EcoreUtil.isAncestor(this, newTemplate))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException(
+						"Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newTemplate != null)
 				msgs = ((InternalEObject) newTemplate).eInverseAdd(this,
-						TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING, TemplateSignature.class, msgs);
+						TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING,
+						TemplateSignature.class, msgs);
 			msgs = basicSetTemplate(newTemplate, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.TEMPLATE_BINDING__TEMPLATE,
-					newTemplate, newTemplate));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					TemplatesPackage.TEMPLATE_BINDING__TEMPLATE, newTemplate,
+					newTemplate));
 	}
 
 	/**
@@ -266,14 +297,16 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements Templa
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetTemplate((TemplateSignature) otherEnd, msgs);
 		case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPropertyBindings()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPropertyBindings())
+					.basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -283,14 +316,16 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements Templa
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TemplatesPackage.TEMPLATE_BINDING__BINDING_EXPRESSION:
 			return basicSetBindingExpression(null, msgs);
 		case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
 			return basicSetTemplate(null, msgs);
 		case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
-			return ((InternalEList<?>) getPropertyBindings()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getPropertyBindings()).basicRemove(
+					otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -300,10 +335,12 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements Templa
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(
+			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case TemplatesPackage.TEMPLATE_BINDING__TEMPLATE:
-			return eInternalContainer().eInverseRemove(this, TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING,
+			return eInternalContainer().eInverseRemove(this,
+					TemplatesPackage.TEMPLATE_SIGNATURE__TEMPLATE_BINDING,
 					TemplateSignature.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -353,7 +390,8 @@ public class TemplateBindingImpl extends ExtendableElementImpl implements Templa
 			return;
 		case TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING:
 			getPropertyBindings().clear();
-			getPropertyBindings().addAll((Collection<? extends PropertyBinding>) newValue);
+			getPropertyBindings().addAll(
+					(Collection<? extends PropertyBinding>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

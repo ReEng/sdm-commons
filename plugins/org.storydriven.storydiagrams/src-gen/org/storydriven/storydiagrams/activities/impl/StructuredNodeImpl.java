@@ -29,7 +29,8 @@ import org.storydriven.storydiagrams.activities.StructuredNode;
  *
  * @generated
  */
-public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNode {
+public class StructuredNodeImpl extends ActivityNodeImpl implements
+		StructuredNode {
 	/**
 	 * The cached value of the '{@link #getOwnedActivityNodes() <em>Owned Activity Node</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -62,8 +63,9 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
 	 */
 	public EList<ActivityNode> getOwnedActivityNodes() {
 		if (ownedActivityNodes == null) {
-			ownedActivityNodes = new EObjectContainmentWithInverseEList.Resolving<ActivityNode>(ActivityNode.class,
-					this, ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
+			ownedActivityNodes = new EObjectContainmentWithInverseEList.Resolving<ActivityNode>(
+					ActivityNode.class, this,
+					ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE,
 					ActivitiesPackage.ACTIVITY_NODE__OWNING_ACTIVITY_NODE);
 		}
 		return ownedActivityNodes;
@@ -75,11 +77,12 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedActivityNodes()).basicAdd(otherEnd,
-					msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedActivityNodes())
+					.basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -89,10 +92,12 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
-			return ((InternalEList<?>) getOwnedActivityNodes()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getOwnedActivityNodes()).basicRemove(
+					otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -120,7 +125,8 @@ public class StructuredNodeImpl extends ActivityNodeImpl implements StructuredNo
 		switch (featureID) {
 		case ActivitiesPackage.STRUCTURED_NODE__OWNED_ACTIVITY_NODE:
 			getOwnedActivityNodes().clear();
-			getOwnedActivityNodes().addAll((Collection<? extends ActivityNode>) newValue);
+			getOwnedActivityNodes().addAll(
+					(Collection<? extends ActivityNode>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

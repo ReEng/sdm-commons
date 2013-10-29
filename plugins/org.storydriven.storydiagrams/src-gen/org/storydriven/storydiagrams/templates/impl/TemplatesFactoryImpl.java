@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.storydiagrams.templates.*;
 import org.storydriven.storydiagrams.templates.PropertyBinding;
 import org.storydriven.storydiagrams.templates.TemplateBinding;
 import org.storydriven.storydiagrams.templates.TemplateSignature;
@@ -23,7 +24,8 @@ import org.storydriven.storydiagrams.templates.TemplatesPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFactory {
+public class TemplatesFactoryImpl extends EFactoryImpl implements
+		TemplatesFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -33,7 +35,7 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
 	public static TemplatesFactory init() {
 		try {
 			TemplatesFactory theTemplatesFactory = (TemplatesFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.storydriven.org/storydiagrams/templates/0.2.0");
+					.getEFactory(TemplatesPackage.eNS_URI);
 			if (theTemplatesFactory != null) {
 				return theTemplatesFactory;
 			}
@@ -68,7 +70,8 @@ public class TemplatesFactoryImpl extends EFactoryImpl implements TemplatesFacto
 		case TemplatesPackage.TEMPLATE_SIGNATURE:
 			return createTemplateSignature();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName()
+					+ "' is not a valid classifier");
 		}
 	}
 

@@ -69,18 +69,26 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 			constraintExpression = (Expression) eResolveProxy(oldConstraintExpression);
 			if (constraintExpression != oldConstraintExpression) {
 				InternalEObject newConstraintExpression = (InternalEObject) constraintExpression;
-				NotificationChain msgs = oldConstraintExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION, null, null);
+				NotificationChain msgs = oldConstraintExpression
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION,
+								null, null);
 				if (newConstraintExpression.eInternalContainer() == null) {
-					msgs = newConstraintExpression.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-							- PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION, null, msgs);
+					msgs = newConstraintExpression
+							.eInverseAdd(
+									this,
+									EOPPOSITE_FEATURE_BASE
+											- PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION,
+									null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION, oldConstraintExpression,
-							constraintExpression));
+							PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION,
+							oldConstraintExpression, constraintExpression));
 			}
 		}
 		return constraintExpression;
@@ -98,12 +106,15 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetConstraintExpression(Expression newConstraintExpression, NotificationChain msgs) {
+	public NotificationChain basicSetConstraintExpression(
+			Expression newConstraintExpression, NotificationChain msgs) {
 		Expression oldConstraintExpression = constraintExpression;
 		constraintExpression = newConstraintExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION, oldConstraintExpression, newConstraintExpression);
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET,
+					PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION,
+					oldConstraintExpression, newConstraintExpression);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -120,16 +131,25 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 		if (newConstraintExpression != constraintExpression) {
 			NotificationChain msgs = null;
 			if (constraintExpression != null)
-				msgs = ((InternalEObject) constraintExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject) constraintExpression)
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION,
+								null, msgs);
 			if (newConstraintExpression != null)
-				msgs = ((InternalEObject) newConstraintExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject) newConstraintExpression)
+						.eInverseAdd(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION,
+								null, msgs);
 			msgs = basicSetConstraintExpression(newConstraintExpression, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION,
 					newConstraintExpression, newConstraintExpression));
 	}
 
@@ -157,8 +177,10 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPattern(StoryPattern newPattern, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newPattern, PatternsPackage.CONSTRAINT__PATTERN, msgs);
+	public NotificationChain basicSetPattern(StoryPattern newPattern,
+			NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newPattern,
+				PatternsPackage.CONSTRAINT__PATTERN, msgs);
 		return msgs;
 	}
 
@@ -170,19 +192,21 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 		if (newPattern != eInternalContainer()
 				|| (eContainerFeatureID() != PatternsPackage.CONSTRAINT__PATTERN && newPattern != null)) {
 			if (EcoreUtil.isAncestor(this, newPattern))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException(
+						"Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPattern != null)
-				msgs = ((InternalEObject) newPattern).eInverseAdd(this, PatternsPackage.STORY_PATTERN__CONSTRAINT,
+				msgs = ((InternalEObject) newPattern).eInverseAdd(this,
+						PatternsPackage.STORY_PATTERN__CONSTRAINT,
 						StoryPattern.class, msgs);
 			msgs = basicSetPattern(newPattern, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.CONSTRAINT__PATTERN, newPattern,
-					newPattern));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.CONSTRAINT__PATTERN, newPattern, newPattern));
 	}
 
 	/**
@@ -210,9 +234,10 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetObjectVariable(AbstractVariable newObjectVariable, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newObjectVariable, PatternsPackage.CONSTRAINT__OBJECT_VARIABLE,
-				msgs);
+	public NotificationChain basicSetObjectVariable(
+			AbstractVariable newObjectVariable, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newObjectVariable,
+				PatternsPackage.CONSTRAINT__OBJECT_VARIABLE, msgs);
 		return msgs;
 	}
 
@@ -225,18 +250,21 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 		if (newObjectVariable != eInternalContainer()
 				|| (eContainerFeatureID() != PatternsPackage.CONSTRAINT__OBJECT_VARIABLE && newObjectVariable != null)) {
 			if (EcoreUtil.isAncestor(this, newObjectVariable))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException(
+						"Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newObjectVariable != null)
 				msgs = ((InternalEObject) newObjectVariable).eInverseAdd(this,
-						PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT, AbstractVariable.class, msgs);
+						PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT,
+						AbstractVariable.class, msgs);
 			msgs = basicSetObjectVariable(newObjectVariable, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.CONSTRAINT__OBJECT_VARIABLE,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsPackage.CONSTRAINT__OBJECT_VARIABLE,
 					newObjectVariable, newObjectVariable));
 	}
 
@@ -245,7 +273,8 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case PatternsPackage.CONSTRAINT__PATTERN:
 			if (eInternalContainer() != null)
@@ -264,7 +293,8 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case PatternsPackage.CONSTRAINT__CONSTRAINT_EXPRESSION:
 			return basicSetConstraintExpression(null, msgs);
@@ -281,13 +311,16 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(
+			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case PatternsPackage.CONSTRAINT__PATTERN:
-			return eInternalContainer().eInverseRemove(this, PatternsPackage.STORY_PATTERN__CONSTRAINT,
+			return eInternalContainer().eInverseRemove(this,
+					PatternsPackage.STORY_PATTERN__CONSTRAINT,
 					StoryPattern.class, msgs);
 		case PatternsPackage.CONSTRAINT__OBJECT_VARIABLE:
-			return eInternalContainer().eInverseRemove(this, PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT,
+			return eInternalContainer().eInverseRemove(this,
+					PatternsPackage.ABSTRACT_VARIABLE__CONSTRAINT,
 					AbstractVariable.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);

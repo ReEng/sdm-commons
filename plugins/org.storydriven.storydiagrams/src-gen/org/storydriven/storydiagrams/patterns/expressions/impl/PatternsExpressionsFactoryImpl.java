@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.storydriven.storydiagrams.patterns.expressions.*;
 import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression;
 import org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression;
 import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
@@ -24,7 +25,8 @@ import org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpre
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements PatternsExpressionsFactory {
+public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements
+		PatternsExpressionsFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -34,7 +36,7 @@ public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements Patt
 	public static PatternsExpressionsFactory init() {
 		try {
 			PatternsExpressionsFactory thePatternsExpressionsFactory = (PatternsExpressionsFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.storydriven.org/storydiagrams/patterns/expressions/0.2.1");
+					.getEFactory(PatternsExpressionsPackage.eNS_URI);
 			if (thePatternsExpressionsFactory != null) {
 				return thePatternsExpressionsFactory;
 			}
@@ -71,7 +73,8 @@ public class PatternsExpressionsFactoryImpl extends EFactoryImpl implements Patt
 		case PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION:
 			return createPrimitiveVariableExpression();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName()
+					+ "' is not a valid classifier");
 		}
 	}
 

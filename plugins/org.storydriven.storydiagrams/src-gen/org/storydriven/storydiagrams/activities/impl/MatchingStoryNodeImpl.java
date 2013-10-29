@@ -28,7 +28,8 @@ import org.storydriven.storydiagrams.patterns.StoryPattern;
  *
  * @generated
  */
-public class MatchingStoryNodeImpl extends StoryNodeImpl implements MatchingStoryNode {
+public class MatchingStoryNodeImpl extends StoryNodeImpl implements
+		MatchingStoryNode {
 	/**
 	 * The cached value of the '{@link #getOwnedPattern() <em>Owned Pattern</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -65,17 +66,28 @@ public class MatchingStoryNodeImpl extends StoryNodeImpl implements MatchingStor
 			ownedPattern = (MatchingPattern) eResolveProxy(oldOwnedPattern);
 			if (ownedPattern != oldOwnedPattern) {
 				InternalEObject newOwnedPattern = (InternalEObject) ownedPattern;
-				NotificationChain msgs = oldOwnedPattern.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, null, null);
+				NotificationChain msgs = oldOwnedPattern
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN,
+								null, null);
 				if (newOwnedPattern.eInternalContainer() == null) {
-					msgs = newOwnedPattern.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-							- ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, null, msgs);
+					msgs = newOwnedPattern
+							.eInverseAdd(
+									this,
+									EOPPOSITE_FEATURE_BASE
+											- ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN,
+									null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, oldOwnedPattern, ownedPattern));
+					eNotify(new ENotificationImpl(
+							this,
+							Notification.RESOLVE,
+							ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN,
+							oldOwnedPattern, ownedPattern));
 			}
 		}
 		return ownedPattern;
@@ -93,12 +105,15 @@ public class MatchingStoryNodeImpl extends StoryNodeImpl implements MatchingStor
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOwnedPattern(MatchingPattern newOwnedPattern, NotificationChain msgs) {
+	public NotificationChain basicSetOwnedPattern(
+			MatchingPattern newOwnedPattern, NotificationChain msgs) {
 		MatchingPattern oldOwnedPattern = ownedPattern;
 		ownedPattern = newOwnedPattern;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, oldOwnedPattern, newOwnedPattern);
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET,
+					ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN,
+					oldOwnedPattern, newOwnedPattern);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -115,16 +130,25 @@ public class MatchingStoryNodeImpl extends StoryNodeImpl implements MatchingStor
 		if (newOwnedPattern != ownedPattern) {
 			NotificationChain msgs = null;
 			if (ownedPattern != null)
-				msgs = ((InternalEObject) ownedPattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, null, msgs);
+				msgs = ((InternalEObject) ownedPattern)
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN,
+								null, msgs);
 			if (newOwnedPattern != null)
-				msgs = ((InternalEObject) newOwnedPattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN, null, msgs);
+				msgs = ((InternalEObject) newOwnedPattern)
+						.eInverseAdd(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN,
+								null, msgs);
 			msgs = basicSetOwnedPattern(newOwnedPattern, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN,
 					newOwnedPattern, newOwnedPattern));
 	}
 
@@ -133,7 +157,8 @@ public class MatchingStoryNodeImpl extends StoryNodeImpl implements MatchingStor
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
 			return basicSetOwnedPattern(null, msgs);
@@ -191,6 +216,8 @@ public class MatchingStoryNodeImpl extends StoryNodeImpl implements MatchingStor
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case ActivitiesPackage.MATCHING_STORY_NODE__STORY_PATTERN:
+			return isSetStoryPattern();
 		case ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN:
 			return ownedPattern != null;
 		}
@@ -226,7 +253,8 @@ public class MatchingStoryNodeImpl extends StoryNodeImpl implements MatchingStor
 	 */
 	@Override
 	public boolean isSetStoryPattern() {
-		return super.isSetStoryPattern() || eIsSet(ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN);
+		return super.isSetStoryPattern()
+				|| eIsSet(ActivitiesPackage.MATCHING_STORY_NODE__OWNED_PATTERN);
 	}
 
 } // MatchingStoryNodeImpl

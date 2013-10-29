@@ -247,8 +247,8 @@ public enum EdgeGuard implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final EdgeGuard[] VALUES_ARRAY = new EdgeGuard[] { NONE, SUCCESS, FAILURE, EACH_TIME, END, ELSE,
-			BOOL, EXCEPTION, FINALLY, };
+	private static final EdgeGuard[] VALUES_ARRAY = new EdgeGuard[] { NONE,
+			SUCCESS, FAILURE, EACH_TIME, END, ELSE, BOOL, EXCEPTION, FINALLY, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Edge Guard</b></em>' enumerators.
@@ -256,7 +256,8 @@ public enum EdgeGuard implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<EdgeGuard> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<EdgeGuard> VALUES = Collections
+			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Edge Guard</b></em>' literal with the specified literal value.

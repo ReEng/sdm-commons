@@ -346,7 +346,8 @@ public interface ActivitiesExpressionsPackage extends EPackage {
 		 * @see org.storydriven.storydiagrams.activities.expressions.impl.ActivitiesExpressionsPackageImpl#getExceptionVariableExpression()
 		 * @generated
 		 */
-		EClass EXCEPTION_VARIABLE_EXPRESSION = eINSTANCE.getExceptionVariableExpression();
+		EClass EXCEPTION_VARIABLE_EXPRESSION = eINSTANCE
+				.getExceptionVariableExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Exception Variable</b></em>' reference feature.

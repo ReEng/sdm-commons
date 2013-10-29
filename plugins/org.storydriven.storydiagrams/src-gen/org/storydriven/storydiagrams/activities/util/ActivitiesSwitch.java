@@ -15,6 +15,7 @@ import org.storydriven.core.Extension;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.TypedElement;
 import org.storydriven.storydiagrams.Variable;
+import org.storydriven.storydiagrams.activities.*;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;

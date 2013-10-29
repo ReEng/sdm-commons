@@ -32,7 +32,8 @@ import org.storydriven.storydiagrams.templates.TemplatesPackage;
  *
  * @generated
  */
-public class PropertyBindingImpl extends ExtendableElementImpl implements PropertyBinding {
+public class PropertyBindingImpl extends ExtendableElementImpl implements
+		PropertyBinding {
 	/**
 	 * The cached value of the '{@link #getBoundProperty() <em>Bound Property</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -79,7 +80,8 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 			if (boundProperty != oldBoundProperty) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							TemplatesPackage.PROPERTY_BINDING__BOUND_PROPERTY, oldBoundProperty, boundProperty));
+							TemplatesPackage.PROPERTY_BINDING__BOUND_PROPERTY,
+							oldBoundProperty, boundProperty));
 			}
 		}
 		return boundProperty;
@@ -101,7 +103,8 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 		EStructuralFeature oldBoundProperty = boundProperty;
 		boundProperty = newBoundProperty;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.PROPERTY_BINDING__BOUND_PROPERTY,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					TemplatesPackage.PROPERTY_BINDING__BOUND_PROPERTY,
 					oldBoundProperty, boundProperty));
 	}
 
@@ -115,18 +118,28 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 			bindingExpression = (Expression) eResolveProxy(oldBindingExpression);
 			if (bindingExpression != oldBindingExpression) {
 				InternalEObject newBindingExpression = (InternalEObject) bindingExpression;
-				NotificationChain msgs = oldBindingExpression.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION, null, null);
+				NotificationChain msgs = oldBindingExpression
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION,
+								null, null);
 				if (newBindingExpression.eInternalContainer() == null) {
-					msgs = newBindingExpression.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-							- TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION, null, msgs);
+					msgs = newBindingExpression
+							.eInverseAdd(
+									this,
+									EOPPOSITE_FEATURE_BASE
+											- TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION,
+									null, msgs);
 				}
 				if (msgs != null)
 					msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION, oldBindingExpression,
-							bindingExpression));
+					eNotify(new ENotificationImpl(
+							this,
+							Notification.RESOLVE,
+							TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION,
+							oldBindingExpression, bindingExpression));
 			}
 		}
 		return bindingExpression;
@@ -144,12 +157,15 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBindingExpression(Expression newBindingExpression, NotificationChain msgs) {
+	public NotificationChain basicSetBindingExpression(
+			Expression newBindingExpression, NotificationChain msgs) {
 		Expression oldBindingExpression = bindingExpression;
 		bindingExpression = newBindingExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION, oldBindingExpression, newBindingExpression);
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET,
+					TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION,
+					oldBindingExpression, newBindingExpression);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -166,17 +182,26 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 		if (newBindingExpression != bindingExpression) {
 			NotificationChain msgs = null;
 			if (bindingExpression != null)
-				msgs = ((InternalEObject) bindingExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject) bindingExpression)
+						.eInverseRemove(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION,
+								null, msgs);
 			if (newBindingExpression != null)
-				msgs = ((InternalEObject) newBindingExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject) newBindingExpression)
+						.eInverseAdd(
+								this,
+								EOPPOSITE_FEATURE_BASE
+										- TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION,
+								null, msgs);
 			msgs = basicSetBindingExpression(newBindingExpression, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION, newBindingExpression, newBindingExpression));
+					TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION,
+					newBindingExpression, newBindingExpression));
 	}
 
 	/**
@@ -203,7 +228,8 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTemplateBinding(TemplateBinding newTemplateBinding, NotificationChain msgs) {
+	public NotificationChain basicSetTemplateBinding(
+			TemplateBinding newTemplateBinding, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject) newTemplateBinding,
 				TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING, msgs);
 		return msgs;
@@ -217,18 +243,21 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 		if (newTemplateBinding != eInternalContainer()
 				|| (eContainerFeatureID() != TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING && newTemplateBinding != null)) {
 			if (EcoreUtil.isAncestor(this, newTemplateBinding))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException(
+						"Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newTemplateBinding != null)
 				msgs = ((InternalEObject) newTemplateBinding).eInverseAdd(this,
-						TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING, TemplateBinding.class, msgs);
+						TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING,
+						TemplateBinding.class, msgs);
 			msgs = basicSetTemplateBinding(newTemplateBinding, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING,
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING,
 					newTemplateBinding, newTemplateBinding));
 	}
 
@@ -237,7 +266,8 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING:
 			if (eInternalContainer() != null)
@@ -252,7 +282,8 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TemplatesPackage.PROPERTY_BINDING__BINDING_EXPRESSION:
 			return basicSetBindingExpression(null, msgs);
@@ -267,10 +298,12 @@ public class PropertyBindingImpl extends ExtendableElementImpl implements Proper
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(
+			NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case TemplatesPackage.PROPERTY_BINDING__TEMPLATE_BINDING:
-			return eInternalContainer().eInverseRemove(this, TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING,
+			return eInternalContainer().eInverseRemove(this,
+					TemplatesPackage.TEMPLATE_BINDING__PROPERTY_BINDING,
 					TemplateBinding.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);

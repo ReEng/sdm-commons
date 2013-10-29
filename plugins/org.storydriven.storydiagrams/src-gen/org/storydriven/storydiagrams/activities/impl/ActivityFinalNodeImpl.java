@@ -35,7 +35,8 @@ import org.storydriven.storydiagrams.activities.ActivityFinalNode;
  *
  * @generated
  */
-public class ActivityFinalNodeImpl extends ActivityNodeImpl implements ActivityFinalNode {
+public class ActivityFinalNodeImpl extends ActivityNodeImpl implements
+		ActivityFinalNode {
 	/**
 	 * The cached value of the '{@link #getReturnValues() <em>Return Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -116,7 +117,8 @@ public class ActivityFinalNodeImpl extends ActivityNodeImpl implements ActivityF
 	 */
 	public EList<Expression> getReturnValues() {
 		if (returnValues == null) {
-			returnValues = new EObjectContainmentEList.Resolving<Expression>(Expression.class, this,
+			returnValues = new EObjectContainmentEList.Resolving<Expression>(
+					Expression.class, this,
 					ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES);
 		}
 		return returnValues;
@@ -140,8 +142,9 @@ public class ActivityFinalNodeImpl extends ActivityNodeImpl implements ActivityF
 		boolean oldSuccess = success;
 		success = newSuccess;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS,
-					oldSuccess, success));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS, oldSuccess,
+					success));
 	}
 
 	/**
@@ -150,10 +153,12 @@ public class ActivityFinalNodeImpl extends ActivityNodeImpl implements ActivityF
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
-			return ((InternalEList<?>) getReturnValues()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getReturnValues()).basicRemove(otherEnd,
+					msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -189,7 +194,8 @@ public class ActivityFinalNodeImpl extends ActivityNodeImpl implements ActivityF
 		switch (featureID) {
 		case ActivitiesPackage.ACTIVITY_FINAL_NODE__RETURN_VALUES:
 			getReturnValues().clear();
-			getReturnValues().addAll((Collection<? extends Expression>) newValue);
+			getReturnValues().addAll(
+					(Collection<? extends Expression>) newValue);
 			return;
 		case ActivitiesPackage.ACTIVITY_FINAL_NODE__SUCCESS:
 			setSuccess((Boolean) newValue);
