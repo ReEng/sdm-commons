@@ -183,7 +183,7 @@ right hand side of the ComparisonExpression.</body>
               <body>String representation of the value, e.g. &quot;5&quot;, &quot;3.14&quot;, &quot;c&quot;, &quot;text&quot;, or &quot;true&quot;.</body>
             </ownedComment>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bcLzMBzGEeChOvWwuwx7tQ"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bcLzMBzGEeChOvWwuwx7tQ" value="1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_fy_bYBzGEeChOvWwuwx7tQ" name="HasLeftExpression" memberEnd="_fzACcBzGEeChOvWwuwx7tQ _fzApgRzGEeChOvWwuwx7tQ">

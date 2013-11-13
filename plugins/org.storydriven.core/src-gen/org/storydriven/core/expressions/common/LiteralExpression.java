@@ -39,7 +39,7 @@ public interface LiteralExpression extends Expression {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.storydriven.core.expressions.common.CommonExpressionsPackage#getLiteralExpression_Value()
-	 * @model ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getValue();

@@ -260,7 +260,7 @@
           <details key="documentation" value="Represents any literal, i.e. a value whose type is an EDataType. Literals are, for example, 5, 3.14, 'c', &quot;text&quot;, true."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="String representation of the value, e.g. &quot;5&quot;, &quot;3.14&quot;, &quot;c&quot;, &quot;text&quot;, or &quot;true&quot;."/>
           </eAnnotations>
