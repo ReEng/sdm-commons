@@ -132,8 +132,4 @@ This Agreement is governed by the laws of the State of New York and the intellec
          version="0.0.0"
          unpack="false"/>
 
-   <includes
-         id="de.mdelab.sdm.interpreter.core.feature.source"
-         version="0.0.0"/>
-
 </feature>
