@@ -21,7 +21,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExtendableElement" abstract="true" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendableElement" abstract="true" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EObject">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Abstract base class for the whole story diagram model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references."/>
     </eAnnotations>
@@ -29,28 +29,28 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="return ExtendableElementOperations.getExtension(this, type);"/>
       </eAnnotations>
-      <eParameters name="type" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+      <eParameters name="type" ordered="false" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
     </eOperations>
     <eOperations name="provideExtension" ordered="false" lowerBound="1" eType="#//Extension">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="return ExtendableElementOperations.provideExtension(this, type);"/>
       </eAnnotations>
-      <eParameters name="type" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+      <eParameters name="type" ordered="false" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
     </eOperations>
-    <eOperations name="getAnnotation" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAnnotation">
+    <eOperations name="getAnnotation" ordered="false" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="return ExtendableElementOperations.getAnnotation(this, source);"/>
       </eAnnotations>
       <eParameters name="source" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="provideAnnotation" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAnnotation">
+    <eOperations name="provideAnnotation" ordered="false" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="return ExtendableElementOperations.provideAnnotation(this, source);"/>
       </eAnnotations>
       <eParameters name="source" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="annotation" ordered="false"
-        upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAnnotation"
+        upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="extension" ordered="false"
         upperBound="-1" eType="#//Extension" containment="true" eOpposite="#//Extension/extendableBase"/>
@@ -60,18 +60,18 @@
       <details key="documentation" value="Abstract super class for an Extension that can be defined for an object."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="base" ordered="false" lowerBound="1"
-        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"
-        changeable="false" volatile="true" transient="true" derived="true">
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" changeable="false"
+        volatile="true" transient="true" derived="true">
       <eAnnotations source="union"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="modelBase" ordered="false"
-        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EModelElement"
         volatile="true" transient="true" unsettable="true" derived="true">
       <eAnnotations source="subsets" references="#//Extension/base"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="owningAnnotation" ordered="false"
-        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAnnotation"
-        volatile="true" transient="true" unsettable="true" derived="true"/>
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAnnotation" volatile="true"
+        transient="true" unsettable="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="extendableBase" ordered="false"
         eType="#//ExtendableElement" eOpposite="#//ExtendableElement/extension">
       <eAnnotations source="subsets" references="#//Extension/base"/>
@@ -92,12 +92,12 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Abstract super class for all meta-model elements that are typed by means of an EClassifier or an EGenericType."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClassifier"
         changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="union"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="genericType" ordered="false"
-        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EGenericType"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EGenericType"
         unsettable="true" containment="true"/>
   </eClassifiers>
   <eSubpackages name="expressions" nsURI="http://www.storydriven.org/core/expressions/0.3.1"
