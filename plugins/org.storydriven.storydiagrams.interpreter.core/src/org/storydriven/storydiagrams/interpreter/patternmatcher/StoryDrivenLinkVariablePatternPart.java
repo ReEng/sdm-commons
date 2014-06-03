@@ -4,16 +4,21 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.StorydiagramsPackage;
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
 import org.storydriven.storydiagrams.patterns.LinkVariable;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
+import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPackage;
 
 import de.mdelab.sdm.interpreter.core.SDMException;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.ECheckResult;
@@ -97,7 +102,11 @@ public class StoryDrivenLinkVariablePatternPart extends StoryDrivenPatternPart<A
 		}
 		else
 		{
-			((Collection<Object>) sourceEObject.eGet(this.link.getTargetEnd())).add(targetVariable.getValue());
+			if (!this.link.eIsSet(PatternsPackage.eINSTANCE.getLinkVariable_QualifierExpression())) {
+				((Collection<Object>) sourceEObject.eGet(this.link.getTargetEnd())).add(targetVariable.getValue());
+			} else {
+				throw new UnsupportedOperationException("Qualified links not yet implemented in interpreter.");
+			}
 		}
 
 		this.patternMatcher.getNotificationEmitter().instanceLinkCreated(this.link.getSource(), sourceEObject, this.link,
