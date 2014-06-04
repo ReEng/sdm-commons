@@ -1,26 +1,30 @@
 package org.storydriven.storydiagrams.interpreter.patternmatcher;
 
+import java.util.AbstractMap;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.storydiagrams.StorydiagramsPackage;
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
 import org.storydriven.storydiagrams.patterns.LinkVariable;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
-import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPackage;
 
 import de.mdelab.sdm.interpreter.core.SDMException;
+import de.mdelab.sdm.interpreter.core.expressions.ExpressionInterpreterManager;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.ECheckResult;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.EMatchType;
 import de.mdelab.sdm.interpreter.core.patternmatcher.patternPartBased.MatchState;
@@ -105,7 +109,21 @@ public class StoryDrivenLinkVariablePatternPart extends StoryDrivenPatternPart<A
 			if (!this.link.eIsSet(PatternsPackage.eINSTANCE.getLinkVariable_QualifierExpression())) {
 				((Collection<Object>) sourceEObject.eGet(this.link.getTargetEnd())).add(targetVariable.getValue());
 			} else {
-				throw new UnsupportedOperationException("Qualified links not yet implemented in interpreter.");
+				ExpressionInterpreterManager<?, ?, ?, ?, AbstractVariable, AbstractLinkVariable, EClassifier, ?, Expression> expressionManager = this.patternMatcher.getExpressionInterpreterManager();
+				try {
+					Variable<EClassifier> qualifier = expressionManager.evaluateExpression(this.link.getQualifierExpression(), null, null, this.patternMatcher.getVariablesScope());
+					EcoreEMap<String, EList<EObject>> map = (EcoreEMap<String, EList<EObject>>) sourceEObject.eGet(this.link.getTargetEnd());
+					BasicEList<EObject> list = null;
+					if (map.contains((String) qualifier.getValue())){
+						list = (BasicEList<EObject>) map.get((String) qualifier.getValue());
+					} else {
+						list = new BasicEList<EObject>();
+					}
+					list.add((EObject)targetVariable.getValue());
+					map.put((String) qualifier.getValue(),list);
+				} catch (SDMException e) {
+					throw new RuntimeException(e);
+				}
 			}
 		}
 
@@ -447,7 +465,14 @@ public class StoryDrivenLinkVariablePatternPart extends StoryDrivenPatternPart<A
 
 			if ((linkIterator == null) || (sourceInstanceObject != matchState.getSourceInstanceObject()))
 			{
-				linkIterator = ((Collection<Object>) sourceInstanceObject.eGet(feature)).iterator();
+				if (this.link.eIsSet(PatternsPackage.eINSTANCE.getLinkVariable_QualifierExpression())) {
+					Variable<EClassifier> quantifier = this.patternMatcher.getExpressionInterpreterManager().evaluateExpression(this.link.getQualifierExpression(), null, null, this.patternMatcher.getVariablesScope());
+					EcoreEMap<String, EList<EObject>> map = (EcoreEMap<String, EList<EObject>>)sourceInstanceObject.eGet(feature);
+					Object targetInstanceObject = map.get((String)quantifier.getValue());
+					linkIterator = ((EList)targetInstanceObject).iterator();
+				} else { 
+					linkIterator = ((Collection<Object>) sourceInstanceObject.eGet(feature)).iterator();
+				}
 
 				matchState.setLinkIterator(linkIterator);
 				matchState.setSourceInstanceObject(sourceInstanceObject);
@@ -455,8 +480,8 @@ public class StoryDrivenLinkVariablePatternPart extends StoryDrivenPatternPart<A
 
 			while (linkIterator.hasNext())
 			{
-				final Object targetInstanceObject = linkIterator.next();
-
+				Object targetInstanceObject = linkIterator.next();
+				
 				if (this.patternMatcher.matchStoryPatternObject(targetSpo, targetInstanceObject))
 				{
 					this.patternMatcher.getNotificationEmitter().storyPatternObjectBound(targetSpo, targetInstanceObject,
