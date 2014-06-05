@@ -489,7 +489,7 @@ public class CallsInterpreter extends ExpressionInterpreter<Expression, EClassif
 
 				Map<String, Variable<EClassifier>> returnValues = sdi.executeActivity(activity, parameters);
 
-				Variable<EClassifier> returnVariable = returnValues.get(SDMInterpreterConstants.RETURN_VALUE_VAR_NAME);
+				Variable<EClassifier> returnVariable = returnValues.get(activity.getOutParameters().get(0).getName());
 
 				if (returnVariable != null)
 				{

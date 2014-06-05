@@ -9,11 +9,6 @@ package de.mdelab.sdm.interpreter.core;
 public interface SDMInterpreterConstants
 {
 	/*
-	 * Name of the return variable of the activity.
-	 */
-	public static final String	RETURN_VALUE_VAR_NAME				= "##return_value";
-
-	/*
 	 * Default name of internal variables.
 	 */
 	public static final String	INTERNAL_VAR_NAME					= "##internal_variable";

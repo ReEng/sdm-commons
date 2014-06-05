@@ -231,9 +231,11 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		 * new match can be found. This is the case for for-each nodes after the
 		 * first iteration.
 		 */
+		boolean secondRun = false; 
 		if (!this.matchingStack.isEmpty())
 		{
 			this.rollBackLastMatchPatternPartTransaction();
+			secondRun = true;
 		}
 
 		/*
@@ -245,7 +247,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		/*
 		 * Analyze all story pattern objects
 		 */
-		if (this.analyzeStoryPatternObjects() && this.checkAllUncheckedPatternParts() && this.findNextMatchForPattern())
+		if (this.analyzeStoryPatternObjects() && this.checkAllUncheckedPatternParts() && !(this.uncheckedPatternParts.size() == 0 && secondRun) && this.findNextMatchForPattern())
 		{
 			/*
 			 * if match found merge working variableScope into mainVariableScope

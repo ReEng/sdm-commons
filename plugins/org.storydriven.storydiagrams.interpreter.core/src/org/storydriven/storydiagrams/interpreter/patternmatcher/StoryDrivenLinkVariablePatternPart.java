@@ -469,6 +469,9 @@ public class StoryDrivenLinkVariablePatternPart extends StoryDrivenPatternPart<A
 					Variable<EClassifier> quantifier = this.patternMatcher.getExpressionInterpreterManager().evaluateExpression(this.link.getQualifierExpression(), null, null, this.patternMatcher.getVariablesScope());
 					EcoreEMap<String, EList<EObject>> map = (EcoreEMap<String, EList<EObject>>)sourceInstanceObject.eGet(feature);
 					Object targetInstanceObject = map.get((String)quantifier.getValue());
+					if (targetInstanceObject == null) {
+						targetInstanceObject = new BasicEList();
+					}
 					linkIterator = ((EList)targetInstanceObject).iterator();
 				} else { 
 					linkIterator = ((Collection<Object>) sourceInstanceObject.eGet(feature)).iterator();

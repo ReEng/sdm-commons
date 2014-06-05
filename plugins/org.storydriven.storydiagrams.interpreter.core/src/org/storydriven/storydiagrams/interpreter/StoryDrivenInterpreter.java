@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.storydiagrams.activities.Activity;
@@ -18,6 +17,8 @@ import org.storydriven.storydiagrams.interpreter.patternmatcher.StoryDrivenPatte
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
 import org.storydriven.storydiagrams.patterns.AbstractVariable;
 import org.storydriven.storydiagrams.patterns.StoryPattern;
+import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
+import org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression;
 
 import de.mdelab.sdm.interpreter.core.SDMException;
 import de.mdelab.sdm.interpreter.core.SDMInterpreter;
@@ -69,13 +70,6 @@ public class StoryDrivenInterpreter
 
 			final Collection<Variable<EClassifier>> parameters = new ArrayList<Variable<EClassifier>>();
 
-			for (final ParameterBinding pb : activityCallNode.getOwnedParameterBindings())
-			{
-				parameters.add(new Variable<EClassifier>(pb.getParameter().getName(), pb.getParameter().getEType(), this
-						.getExpressionInterpreterManager().evaluateExpression(pb.getValueExpression(), null, null, variablesScope)
-						.getValue()));
-			}
-
 			assert !activityCallNode.getCalledActivities().isEmpty();
 
 			/*
@@ -89,16 +83,61 @@ public class StoryDrivenInterpreter
 
 			final Activity activity = activityCallNode.getCalledActivities().get(0);
 
+			for (final ParameterBinding pb : activityCallNode.getOwnedParameterBindings())
+			{
+				if (!activity.getOutParameters().contains(pb.getParameter())) {
+					parameters.add(new Variable<EClassifier>(pb.getParameter().getName(), pb.getParameter().getEType(), this
+							.getExpressionInterpreterManager().evaluateExpression(pb.getValueExpression(), null, null, variablesScope)
+							.getValue()));
+				}
+			}
+			
 			final StoryDrivenInterpreter sdi = new StoryDrivenInterpreter(this.getExpressionInterpreterManager(),
 					this.getNotificationEmitter());
 
 			final Map<String, Variable<EClassifier>> returnValues = sdi.executeActivity(activity, parameters);
 
-			for (final EParameter param : activity.getOutParameters())
-			{
-				variablesScope.createVariable(param.getName(), param.getEType(), returnValues.get(param.getName()).getValue());
+			assert activity.getOutParameters().size() <= 1;
+			//FIXME for outParameters > 1
+			//for (final EParameter param : activity.getOutParameters())
+			//{
+			//	variablesScope.createVariable(param.getName(), param.getEType(), returnValues.get(param.getName()).getValue());
+			//}
+			
+			if (activity.getOutParameters().size() == 1) {
+			
+				for (final ParameterBinding pb : activityCallNode.getOwnedParameterBindings())
+				{
+					if (activity.getOutParameters().contains(pb.getParameter())) {
+						assert pb.getValueExpression() instanceof ObjectVariableExpression ||
+							pb.getValueExpression() instanceof PrimitiveVariableExpression;
+						
+						assert returnValues.containsKey(pb.getParameter().getName());
+						
+						String variableName = null;
+						if (pb.getValueExpression() instanceof ObjectVariableExpression) {
+							variableName = ((ObjectVariableExpression)pb.getValueExpression()).getObject().getVariableName();
+						} else {
+							variableName = ((PrimitiveVariableExpression)pb.getValueExpression()).getPrimitiveVariable().getVariableName();
+						}
+						
+						if (variablesScope.variableExists(variableName)) {
+							variablesScope.changeVariableValue(
+								variableName,
+								returnValues.get(pb.getParameter().getName()).getValue());
+						} else {
+							variablesScope.createVariable(
+									variableName,
+									pb.getParameter().getEType(),
+									returnValues.get(pb.getParameter().getName()).getValue());
+							
+						}
+						break;
+					}
+				}
+				
 			}
-
+			
 			assert node.getOutgoings().size() == 1;
 			assert node.getOutgoings().get(0).getTarget() != null;
 

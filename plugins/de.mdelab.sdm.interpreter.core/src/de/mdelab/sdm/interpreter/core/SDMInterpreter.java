@@ -224,12 +224,13 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 		 */
 		final Map<String, Variable<Classifier>> returnValues = new HashMap<String, Variable<Classifier>>();
 
-		for (final Variable<Classifier> var : variableScope.getVariables())
-		{
-			final Variable<Classifier> v = new Variable<Classifier>(var.getName(), var.getClassifier(), var.getValue());
-
-			returnValues.put(v.getName(), v);
-		}
+		// WTF? Should not be here, I guess... remove if it works without
+//		for (final Variable<Classifier> var : variableScope.getVariables())
+//		{
+//			final Variable<Classifier> v = new Variable<Classifier>(var.getName(), var.getClassifier(), var.getValue());
+//
+//			returnValues.put(v.getName(), v);
+//		}
 
 		/*
 		 * Evaluate expression for outgoing parameters
@@ -481,6 +482,9 @@ public abstract class SDMInterpreter<Activity, ActivityNode, ActivityEdge, Story
 			this.getNotificationEmitter().activityNodeExecutionFinished(node, variablesScope, this);
 
 			nextEdge = storyNodeFacade.getFailureNextEdge(node);
+			if (nextEdge == null) {
+				throw new SDMException("Missing outgoing link to next node from "+node.toString());
+			}
 			nextNode = this.executeActivityEdge(nextEdge, variablesScope);
 
 			/*

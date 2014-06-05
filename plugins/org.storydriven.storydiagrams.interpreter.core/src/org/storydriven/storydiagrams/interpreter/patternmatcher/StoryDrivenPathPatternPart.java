@@ -179,8 +179,11 @@ public class StoryDrivenPathPatternPart extends StoryDrivenPatternPart<AbstractV
 		/*
 		 * TODO Here, the path must be evaluated. Result must be either a single
 		 * object or a collection of objects.
+		 * 
 		 */
-
+		if (1==1)
+			throw new UnsupportedOperationException("Path not implemented yet");
+		
 		assert result != null;
 
 		this.patternMatcher.getNotificationEmitter().traversingLink(this.link, sourceVar, sourceInstanceObject, targetVar,

@@ -65,7 +65,7 @@
       <?gmfgen generated="true"?>
       <objectContribution
             id="org.storydriven.storydiagrams.diagram.InitDiagram"
-            nameFilter="*.sdm"
+            nameFilter="*.ecore"
             objectClass="org.eclipse.core.resources.IFile">
          <action
                label="%initDiagramActionLabel"
