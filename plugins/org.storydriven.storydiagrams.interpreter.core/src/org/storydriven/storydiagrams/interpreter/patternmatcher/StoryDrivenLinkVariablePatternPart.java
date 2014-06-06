@@ -1,19 +1,16 @@
 package org.storydriven.storydiagrams.interpreter.patternmatcher;
 
-import java.util.AbstractMap;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
@@ -109,18 +106,20 @@ public class StoryDrivenLinkVariablePatternPart extends StoryDrivenPatternPart<A
 			if (!this.link.eIsSet(PatternsPackage.eINSTANCE.getLinkVariable_QualifierExpression())) {
 				((Collection<Object>) sourceEObject.eGet(this.link.getTargetEnd())).add(targetVariable.getValue());
 			} else {
-				ExpressionInterpreterManager<?, ?, ?, ?, AbstractVariable, AbstractLinkVariable, EClassifier, ?, Expression> expressionManager = this.patternMatcher.getExpressionInterpreterManager();
+				final ExpressionInterpreterManager<?, ?, ?, ?, AbstractVariable, AbstractLinkVariable, EClassifier, ?, Expression> expressionManager = this.patternMatcher.getExpressionInterpreterManager();
 				try {
-					Variable<EClassifier> qualifier = expressionManager.evaluateExpression(this.link.getQualifierExpression(), null, null, this.patternMatcher.getVariablesScope());
-					EcoreEMap<String, EList<EObject>> map = (EcoreEMap<String, EList<EObject>>) sourceEObject.eGet(this.link.getTargetEnd());
-					BasicEList<EObject> list = null;
-					if (map.contains((String) qualifier.getValue())){
-						list = (BasicEList<EObject>) map.get((String) qualifier.getValue());
-					} else {
-						list = new BasicEList<EObject>();
+					final Variable<EClassifier> qualifierVariable = expressionManager.evaluateExpression(this.link.getQualifierExpression(), null, null, this.patternMatcher.getVariablesScope());
+					
+					assert qualifierVariable.getValue() instanceof String;
+					
+					final String qualifier = (String)qualifierVariable.getValue();
+					
+					final EcoreEMap<String, EList<EObject>> map = (EcoreEMap<String, EList<EObject>>) sourceEObject.eGet(this.link.getTargetEnd());
+					if (!map.containsKey(qualifier)){
+						map.put(qualifier,new BasicEList<EObject>());
 					}
+					final EList<EObject> list = (EList<EObject>) map.get(qualifier);
 					list.add((EObject)targetVariable.getValue());
-					map.put((String) qualifier.getValue(),list);
 				} catch (SDMException e) {
 					throw new RuntimeException(e);
 				}
@@ -240,19 +239,51 @@ public class StoryDrivenLinkVariablePatternPart extends StoryDrivenPatternPart<A
 				}
 				else
 				{
-					if (((Collection<Object>) sourceInstanceObject.eGet(eStructuralFeature)).contains(targetInstanceObject))
-					{
-						this.patternMatcher.getNotificationEmitter().linkCheckSuccessful(source, sourceInstanceObject, this.link, target,
-								targetInstanceObject, variablesScope, this.patternMatcher);
-
-						return ECheckResult.OK;
-					}
-					else
-					{
-						this.patternMatcher.getNotificationEmitter().linkCheckFailed(source, sourceInstanceObject, this.link, target,
-								targetInstanceObject, variablesScope, this.patternMatcher);
-
-						return ECheckResult.FAIL;
+					if (!this.link.eIsSet(PatternsPackage.eINSTANCE.getLinkVariable_QualifierExpression())) {
+						
+						if (((Collection<Object>) sourceInstanceObject.eGet(eStructuralFeature)).contains(targetInstanceObject))
+						{
+							this.patternMatcher.getNotificationEmitter().linkCheckSuccessful(source, sourceInstanceObject, this.link, target,
+									targetInstanceObject, variablesScope, this.patternMatcher);
+	
+							return ECheckResult.OK;
+						}
+						else
+						{
+							this.patternMatcher.getNotificationEmitter().linkCheckFailed(source, sourceInstanceObject, this.link, target,
+									targetInstanceObject, variablesScope, this.patternMatcher);
+	
+							return ECheckResult.FAIL;
+						}
+						
+					} else {
+						final ExpressionInterpreterManager<?, ?, ?, ?, AbstractVariable, AbstractLinkVariable, EClassifier, ?, Expression> expressionManager = 
+								this.patternMatcher.getExpressionInterpreterManager();
+						try {
+							final Variable<EClassifier> qualifierVariable = expressionManager.evaluateExpression(this.link.getQualifierExpression(), null, null, this.patternMatcher.getVariablesScope());
+							
+							assert qualifierVariable.getValue() instanceof String;
+							
+							final String qualifier = (String)qualifierVariable.getValue();
+							
+							final EcoreEMap<String, EList<EObject>> map = (EcoreEMap<String, EList<EObject>>) sourceInstanceObject.eGet(this.link.getTargetEnd());
+							if (map.containsKey(qualifier)){
+								final EList<EObject> list = (EList<EObject>) map.get(qualifier);
+								if (list.contains(targetInstanceObject))
+								{
+									this.patternMatcher.getNotificationEmitter().linkCheckSuccessful(source, sourceInstanceObject, this.link, target,
+											targetInstanceObject, variablesScope, this.patternMatcher);
+			
+									return ECheckResult.OK;
+								}
+							}
+							this.patternMatcher.getNotificationEmitter().linkCheckFailed(source, sourceInstanceObject, this.link, target,
+									targetInstanceObject, variablesScope, this.patternMatcher);
+	
+							return ECheckResult.FAIL;
+						} catch (SDMException e) {
+							throw new RuntimeException(e);
+						}
 					}
 				}
 			}
@@ -466,13 +497,18 @@ public class StoryDrivenLinkVariablePatternPart extends StoryDrivenPatternPart<A
 			if ((linkIterator == null) || (sourceInstanceObject != matchState.getSourceInstanceObject()))
 			{
 				if (this.link.eIsSet(PatternsPackage.eINSTANCE.getLinkVariable_QualifierExpression())) {
-					Variable<EClassifier> quantifier = this.patternMatcher.getExpressionInterpreterManager().evaluateExpression(this.link.getQualifierExpression(), null, null, this.patternMatcher.getVariablesScope());
-					EcoreEMap<String, EList<EObject>> map = (EcoreEMap<String, EList<EObject>>)sourceInstanceObject.eGet(feature);
-					Object targetInstanceObject = map.get((String)quantifier.getValue());
+					final Variable<EClassifier> qualifierVariable = this.patternMatcher.getExpressionInterpreterManager().evaluateExpression(this.link.getQualifierExpression(), null, null, this.patternMatcher.getVariablesScope());
+					
+					assert qualifierVariable.getValue() instanceof String;
+					
+					final String qualifier = (String) qualifierVariable.getValue();
+					
+					EMap<String, EList<Object>> map = (EMap<String, EList<Object>>)sourceInstanceObject.eGet(feature);
+					EList<Object> targetInstanceObject = map.get(qualifier);
 					if (targetInstanceObject == null) {
-						targetInstanceObject = new BasicEList();
+						targetInstanceObject = new BasicEList<Object>();
 					}
-					linkIterator = ((EList)targetInstanceObject).iterator();
+					linkIterator = targetInstanceObject.iterator();
 				} else { 
 					linkIterator = ((Collection<Object>) sourceInstanceObject.eGet(feature)).iterator();
 				}
