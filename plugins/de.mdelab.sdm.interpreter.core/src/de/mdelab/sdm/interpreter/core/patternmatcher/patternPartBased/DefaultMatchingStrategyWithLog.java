@@ -41,7 +41,7 @@ public class DefaultMatchingStrategyWithLog<StoryPattern, StoryPatternObject, St
 		PatternPart<StoryPatternObject, StoryPatternLink, Classifier, Expression> patternPart = super
 				.getNextPatternPartForMatching(uncheckedPatternParts);
 
-		if (!this.log.contains(patternPart))
+		if (patternPart != null && !this.log.contains(patternPart))
 		{
 			this.log.add(patternPart);
 		}

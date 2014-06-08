@@ -247,7 +247,7 @@ public abstract class PatternPartBasedMatcher<Activity, ActivityNode, ActivityEd
 		/*
 		 * Analyze all story pattern objects
 		 */
-		if (this.analyzeStoryPatternObjects() && this.checkAllUncheckedPatternParts() && !(this.uncheckedPatternParts.size() == 0 && secondRun) && this.findNextMatchForPattern())
+		if (this.analyzeStoryPatternObjects() && this.checkAllUncheckedPatternParts() && (this.unboundSPO.size() != 0 || !secondRun) && this.findNextMatchForPattern())
 		{
 			/*
 			 * if match found merge working variableScope into mainVariableScope

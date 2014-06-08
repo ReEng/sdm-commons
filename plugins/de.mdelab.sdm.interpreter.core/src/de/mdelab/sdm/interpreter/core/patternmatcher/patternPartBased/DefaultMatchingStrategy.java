@@ -85,6 +85,10 @@ public class DefaultMatchingStrategy<StoryPattern, StoryPatternObject, StoryPatt
 				}
 			}
 		}
+		
+		if (uncheckedPatternParts.size() > 0 && cheapestPatternPart == null && cheapestPatternPartOptional == null) {
+			throw new UnsupportedOperationException("Unmatched pattern parts exist but none of them can be matched next.");
+		}
 
 		if (cheapestPatternPart != null)
 		{
