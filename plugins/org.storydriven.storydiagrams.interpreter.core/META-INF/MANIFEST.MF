@@ -8,7 +8,9 @@ Bundle-Version: 1.0.1.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: de.mdelab.sdm.interpreter.core;bundle-version="1.0.0";visibility:=reexport,
  org.storydriven.core;bundle-version="1.0.1";visibility:=reexport,
- org.storydriven.storydiagrams;bundle-version="1.0.1";visibility:=reexport
+ org.storydriven.storydiagrams;bundle-version="1.0.1";visibility:=reexport,
+ org.storydriven.storydiagrams.expressions,
+ org.eclipse.emf.ecore
 Export-Package: org.storydriven.storydiagrams.interpreter,
  org.storydriven.storydiagrams.interpreter.calls,
  org.storydriven.storydiagrams.interpreter.expressions,
