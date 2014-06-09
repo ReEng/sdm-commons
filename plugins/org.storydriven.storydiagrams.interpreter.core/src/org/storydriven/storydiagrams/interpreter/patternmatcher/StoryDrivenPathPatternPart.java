@@ -1,6 +1,7 @@
 package org.storydriven.storydiagrams.interpreter.patternmatcher;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -198,16 +199,16 @@ public class StoryDrivenPathPatternPart extends
 		final EObject sourceInstanceObject = (EObject) sourceVariable
 				.getValue();
 
+		this.patternMatcher.getNotificationEmitter().traversingLink(this.link,
+				sourceVar, sourceInstanceObject, targetVar,
+				this.patternMatcher.getVariablesScope(), this.patternMatcher);
+
 		/*
 		 * Evaluate link expression
 		 */
 		final Variable<EClassifier> result = applyPathMatching(sourceInstanceObject);
 
 		assert result != null;
-
-		this.patternMatcher.getNotificationEmitter().traversingLink(this.link,
-				sourceVar, sourceInstanceObject, targetVar,
-				this.patternMatcher.getVariablesScope(), this.patternMatcher);
 
 		if (result.getValue() instanceof Collection<?>) {
 			for (final Object targetObject : (Collection<Object>) result
@@ -277,7 +278,7 @@ public class StoryDrivenPathPatternPart extends
 			results.addAll(tmp);
 		}
 
-		return new Variable<EClassifier>(this.link.getName(), null ,results);
+		return new Variable<EClassifier>(this.link.getName() == null ? "path" : this.link.getName(), this.link.getTarget().getType(), results);
 	}
 
 	private List<EObject> applySearchForPathAlternative(
@@ -287,9 +288,9 @@ public class StoryDrivenPathPatternPart extends
 	      final List<EObject> results = new LinkedList<EObject>();
 	      final List<EObject> visited = new LinkedList<EObject>();
 	      final LinkedList<EObject> queue = new LinkedList<EObject>();
+	      List<EObject> reached = Collections.emptyList();
 	      
 	      queue.offer(sourceObject);
-	      List<EObject> reached = new LinkedList<EObject>();
 	      for(final org.storydriven.storydiagrams.expressions.pathExpressions.PathSegment segment : pa.getSegments())
 	      {
 	         //do this for every link segment and fill the queue with reached node from last iteration
@@ -310,38 +311,37 @@ public class StoryDrivenPathPatternPart extends
 			List<EObject> visited,
 			LinkedList<EObject> queue,
 			org.storydriven.storydiagrams.expressions.pathExpressions.PathSegment segment) {
-	      
-		final List<EObject> intermediateResult = new LinkedList<EObject>();
-	      final RepeatOperator operator = segment.getRepeatOperator(); 
 
-	      // *-operator means the nodes themselves are part are reached nodes themselves
-	      if(operator == RepeatOperator.ARBITRARY)
-	      { 
-	         intermediateResult.addAll(queue);
-	      }
-	      
-	      // +-operator
-	      while(!queue.isEmpty())
-	      {
-	         EObject node = queue.pop();
-	         
-	         //check neighbors via specified link type
-	         List<EObject> neighbors = getNodeNeighbors(node, segment);
-	         for(EObject neighbor : neighbors)
-	         {
-	            if(!visited.contains(neighbor))
-	            {
-	               //NO_REPEAT: don't search for nodes reachable from the reached nodes
-	               if(operator != RepeatOperator.NO_REPEAT)
-	               {
-	                  queue.offer(neighbor);
-	               }
-	               visited.add(neighbor);
-	               intermediateResult.add(neighbor);
-	            }
-	         }
-	      }
-	      return intermediateResult;
+		final List<EObject> intermediateResult = new LinkedList<EObject>();
+		final RepeatOperator operator = segment.getRepeatOperator();
+
+		// *-operator means the nodes themselves are part are reached nodes
+		// themselves
+		if (operator == RepeatOperator.ARBITRARY) {
+			intermediateResult.addAll(queue);
+		}
+
+		// +-operator
+		while (!queue.isEmpty()) {
+			EObject node = queue.pop();
+			if (!visited.contains(node)) {
+				visited.add(node);
+
+				// check neighbors via specified link type
+				List<EObject> neighbors = getNodeNeighbors(node, segment);
+				for (EObject neighbor : neighbors) {
+					if (!visited.contains(neighbor)) {
+						// NO_REPEAT: don't search for nodes reachable from the
+						// reached nodes
+						if (operator != RepeatOperator.NO_REPEAT) {
+							queue.offer(neighbor);
+						}
+						intermediateResult.add(neighbor);
+					}
+				}
+			}
+		}
+		return intermediateResult;
 	}
 
 	private List<EObject> getNodeNeighbors(EObject node, PathSegment segment) {
@@ -388,7 +388,9 @@ public class StoryDrivenPathPatternPart extends
 		if (ref.isMany()) {
 			targets.addAll((List<EObject>) node.eGet(ref));
 		} else {
-			targets.add((EObject) node.eGet(ref));
+			if (node.eIsSet(ref)) {
+				targets.add((EObject) node.eGet(ref));
+			}
 		}
 		for (final EObject target : targets) {
 			int chkResult = checkTypeRestrictions(desc, target);
