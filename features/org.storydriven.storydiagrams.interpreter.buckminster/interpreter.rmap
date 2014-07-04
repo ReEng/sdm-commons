@@ -30,5 +30,13 @@
     </rm:provider>
   </rm:searchPath>
   
+  <rm:searchPath name="localresources">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local">
+      <rm:uri format="file:///{0}/{1}/">
+        <bc:propertyRef key="workspace.root"/>
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>  
 
 </rm:rmap>
