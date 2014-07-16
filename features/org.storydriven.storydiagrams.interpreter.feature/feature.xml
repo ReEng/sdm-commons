@@ -21,10 +21,15 @@
    </description>
 
    <requires>
-      <import feature="org.storydriven.core.feature" version="1.0.1.qualifier"/>
-      <import feature="org.storydriven.storydiagrams.feature" version="1.0.1.qualifier"/>
       <import plugin="org.storydriven.storydiagrams.interpreter.core" version="1.0.1" match="greaterOrEqual"/>
       <import plugin="de.mdelab.sdm.interpreter.core.eclipse" version="1.0.0" match="greaterOrEqual"/>
+      <import feature="org.storydriven.core.feature" version="1.0.1.qualifier"/>
+      <import feature="org.storydriven.storydiagrams.feature" version="1.0.1.qualifier"/>
+      <import plugin="de.mdelab.sdm.interpreter.core" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.core" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams.expressions"/>
+      <import plugin="org.eclipse.emf.ecore"/>
    </requires>
 
    <plugin
