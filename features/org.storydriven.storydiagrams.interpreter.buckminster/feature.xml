@@ -32,6 +32,14 @@
          id="org.storydriven.storydiagrams.buckminster"
          version="0.0.0"/>
 
+   <includes
+         id="org.storydriven.storydiagrams.editor.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.storydriven.storydiagrams.diagram.feature"
+         version="0.0.0"/>
+
    <plugin
          id="org.storydriven.storydiagrams.interpreter.tests"
          download-size="0"
