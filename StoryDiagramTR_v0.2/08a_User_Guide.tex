@@ -1,0 +1,103 @@
+\chapter{User Guide}\label{sec:UserGuide}
+	
+This section should contain a user guide for the available story diagram tools.
+
+
+\section{Installation}
+
+
+\subsection{Installation Using the Eclipse Update Site -- Users}
+
+
+\subsection{Getting the Source Code From Repository -- Developers}
+
+
+\section{Getting Started -- User Interface}
+
+\subsection{Story Diagram Editor}
+
+\subsection{Story Diagram Interpreter (Stephan)}
+
+The story diagram interpreter is split into a core and a metamodel-specific connector. For more details, see Sect.~\ref{sec:InterpretingStoryDiagrams}. In addition, the interpreter can be used inside Eclipse, which is the easiest way, or stand-alone without Eclipse, which requires some additional steps.
+
+\subsubsection{Using the interpreter in Eclipse}
+
+To use the interpreter in Eclipse in your own code, simply create a new instance of \emph{StoryDrivenEclipseInterpreter} and execute its \emph{executeActivity} operation. The \emph{ClassLoader} parameter is required to allow executing Java operations via reflection in Story Diagrams.
+
+\begin{verbatim}
+//Get the activity to execute
+Activity activity = ...;
+
+//Compile the list of parameters of the activity
+List<Variable<EClassifier>> parameters = ...;
+
+//Create the interpreter
+StoryDrivenEclipseInterpreter interpreter = 
+  new StoryDrivenEclipseInterpreter(getClass().getClassLoader());
+	
+//Execute the activity
+interpreter.executeActivity(activity, parameters);
+\end{verbatim}
+
+The interpreter also provides a notification mechanism. Clients can register a \emph{NotificationReceiver} at the interpreter to be informed of all
+relevant execution steps. This interface defines a \emph{notifyChanged} method that receives all kinds of \emph{InterpreterNotifications}.
+\emph{StoryDrivenOutputStreamNotificationReceiver} is an example implementation of \emph{NotificationReceiver} that writes all notifications
+to an output stream (or \emph{System.out} if none specified.).
+
+\begin{verbatim}
+//Create the interpreter like above
+StoryDrivenEclipseInterpreter interpreter = 
+  new StoryDrivenEclipseInterpreter(getClass().getClassLoader());
+
+//Register a NotificationReceiver
+interpreter.getNotificationEmitter().addNotificationReceiver(
+  new StoryDrivenOutputStreamNotificationReceiver());
+\end{verbatim}
+
+\subsubsection{Using the interpreter without Eclipse}
+
+If the interpreter is used without Eclipse, two things have to be noted. 
+First, while the SDM metamodel is based on EMF, the initialization normally done by EMF automatically, has to be performed manually. 
+This is done by accessing the metamodel package's \emph{eINSTANCE} field and registering the appropriate resource factory. 
+This is also required for all other EMF-based metamodels that are used in the application.
+
+\begin{verbatim}
+//Create a ResourceSet.
+ResourceSet resourceSet = new ResourceSetImpl();
+
+//Register the XMIResourceFactory as the default resource 
+//factory for *.sdm files.
+resourceSet.getResourceFactoryRegistry().
+  getExtensionsToFactoryMap.put("sdm", 
+  new XMIResourceFactoryImpl());
+
+//Register the org.storydriven.core.CorePackage package 
+//with its nsURI in the package registry.
+resourceSet.getPackageRegistry().
+  put(CorePackage.eNS_URI, CorePackage.eINSTANCE);
+
+//Register all the meta model packages that you will 
+//use with their nsURIs in the package registry.
+resourceSet.getPackageRegistry().
+  put(YourPackage.eNS_URI, YourPackage.eINSTANCE);
+\end{verbatim}
+
+Second, all expression interpreters responsible for evaluating expressions in a story diagram (e.g., OCL expressions) have to be registered manually with the SDM interpreter.
+
+\begin{verbatim}
+//Create the expression interpreter manager
+StoryDrivenExpressionInterpreterManager 
+  expressionInterpreterManager = 
+  new StoryDrivenExpressionInterpreterManager(
+  getClass().getClassLoader());
+	
+//Register expression interpreters for specific expression 
+//languages
+expressionInterpreterManager.registerExpressionInterpreter(
+  new OCLExpressionInterpreter<Expression>(), "OCL", "1.0");
+
+//Create the interpreter and execute the story diagram
+StoryDrivenInterpreter interpreter = 
+  new StoryDrivenInterpreter(expressionInterpreterManager);
+\end{verbatim}
+

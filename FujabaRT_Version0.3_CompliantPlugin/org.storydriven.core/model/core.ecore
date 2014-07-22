@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="core"
+    nsURI="http://www.storydriven.org/core/0.2.7" nsPrefix="core">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="The core package is the root package for the storydriven core meta-model. It defines several abstract super classes which implement an extension mechanism as well as recurring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element."/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="CommentableElement" abstract="true"
+      eSuperTypes="#//ExtendableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract super class for all meta-model elements that may carry a comment in form of a string."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="&quot;no comment provided&quot;">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The comment string that can be used to attach arbitrary information to CommentableElements."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendableElement" abstract="true" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract base class for the whole story diagram model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references."/>
+    </eAnnotations>
+    <eOperations name="getExtension" ordered="false" lowerBound="1" eType="#//Extension">
+      <eParameters name="type" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    </eOperations>
+    <eOperations name="provideExtension" ordered="false" lowerBound="1" eType="#//Extension">
+      <eParameters name="type" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    </eOperations>
+    <eOperations name="getAnnotation" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAnnotation">
+      <eParameters name="source" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="provideAnnotation" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAnnotation">
+      <eParameters name="source" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotation" ordered="false"
+        upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAnnotation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extension" ordered="false"
+        upperBound="-1" eType="#//Extension" containment="true" eOpposite="#//Extension/extendableBase"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Extension" abstract="true" eSuperTypes="#//ExtendableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract super class for an Extension that can be defined for an object."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base" ordered="false" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelBase" ordered="false"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement"
+        volatile="true" transient="true" unsettable="true" derived="true">
+      <eAnnotations source="subsets" references="#//Extension/base"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningAnnotation" ordered="false"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAnnotation"
+        volatile="true" transient="true" unsettable="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extendableBase" ordered="false"
+        eType="#//ExtendableElement" eOpposite="#//ExtendableElement/extension">
+      <eAnnotations source="subsets" references="#//Extension/base"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//ExtendableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract super class for all meta-model elements that carry a name. "/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The name attribute of a meta-model element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedElement" abstract="true" eSuperTypes="#//ExtendableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract super class for all meta-model elements that are typed by means of an EClassifier or an EGenericType."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genericType" ordered="false"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EGenericType"
+        unsettable="true" containment="true"/>
+  </eClassifiers>
+  <eSubpackages name="expressions" nsURI="http://www.storydriven.org/core/expressions/0.2.0"
+      nsPrefix="expr">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The base package for all expressions which can be used for modeling activities&#xD;&#xA;and patterns."/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents any expression in an embedded textual language, e.g. OCL or Java. An expression's type is dynamically derived by an external mechanism (see TypedElement)."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TextualExpression" eSuperTypes="#//expressions/Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents any expression in a textual language embedded into Story Diagrams, e.g. OCL or Java ."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="expressionText" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Holds the expression, e.g. in OCL or Java."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="String representation of the used language which has to be unique. Examples are OCL and Java."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="languageVersion" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="String representation of the used language's version. The format is &lt;Major>.&lt;Minor>[.&lt;Revision>[.&lt;Build>]]&#xD;&#xA;Examples: 1.4 or 3.0.1 or 1.0.2.20101208."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eSubpackages name="common" nsURI="http://www.storydriven.org/core/expressions/common/0.2.0"
+        nsPrefix="sdcec">
+      <eClassifiers xsi:type="ecore:EEnum" name="LogicOperator">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Defines the operators for binary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression."/>
+        </eAnnotations>
+        <eLiterals name="AND"/>
+        <eLiterals name="OR" value="1"/>
+        <eLiterals name="XOR" value="2"/>
+        <eLiterals name="IMPLY" value="3"/>
+        <eLiterals name="EQUIVALENT" value="4"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="ComparingOperator">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Defines the operators for comparing expressions."/>
+        </eAnnotations>
+        <eLiterals name="LESS"/>
+        <eLiterals name="LESS_OR_EQUAL" value="1"/>
+        <eLiterals name="EQUAL" value="2"/>
+        <eLiterals name="GREATER_OR_EQUAL" value="3"/>
+        <eLiterals name="GREATER" value="4"/>
+        <eLiterals name="UNEQUAL" value="5"/>
+        <eLiterals name="REGULAR_EXPRESSION" value="6">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="For comparison of a String with a regular expression."/>
+          </eAnnotations>
+        </eLiterals>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="ArithmeticOperator">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Defines the operators for arithmetic expressions."/>
+        </eAnnotations>
+        <eLiterals name="PLUS"/>
+        <eLiterals name="MINUS" value="1"/>
+        <eLiterals name="TIMES" value="2"/>
+        <eLiterals name="DIVIDE" value="3"/>
+        <eLiterals name="MODULO" value="4"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="UnaryOperator">
+        <eLiterals name="NOT"/>
+        <eLiterals name="PLUS" value="1"/>
+        <eLiterals name="MINUS" value="2"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" eSuperTypes="#//expressions/Expression">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents a negated expression, e.g. NOT (a &lt; 5)."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="enclosedExpression"
+            ordered="false" lowerBound="1" eType="#//expressions/Expression" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represents the operand of a NotExpression, e.g. a &lt; 5 in NOT (a &lt; 5)."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+            eType="#//expressions/common/UnaryOperator" defaultValueLiteral=""/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" abstract="true"
+          eSuperTypes="#//expressions/Expression">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents any binary expression like v &lt; 5 or x + 7."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="leftExpression" ordered="false"
+            lowerBound="1" eType="#//expressions/Expression" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represents the first operand of a binary expression, e.g. x in the expression x &lt; 5."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rightExpression" ordered="false"
+            lowerBound="1" eType="#//expressions/Expression" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represents the second operand of a binary expression, e.g. 5 in the expression x &lt; 5."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ComparisonExpression" eSuperTypes="#//expressions/common/BinaryExpression">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents comparing expressions like a &lt; 5 or a >= 7."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
+            lowerBound="1" eType="#//expressions/common/ComparingOperator">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the expression's comparing operator, e.g. &lt;, >=, !=."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ArithmeticExpression" eSuperTypes="#//expressions/common/BinaryExpression">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents arithmetic expressions like a + 5 or a * 7."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
+            lowerBound="1" eType="#//expressions/common/ArithmeticOperator">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the expression's arithmetic operator, e.g. +, -, *, /, or MODULO."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="LogicalExpression" eSuperTypes="#//expressions/common/BinaryExpression">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents binary, logic expressions like a AND b and a OR b."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
+            lowerBound="1" eType="#//expressions/common/LogicOperator">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the expression's logic operator, e.g. AND, OR, or XOR."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="LiteralExpression" eSuperTypes="#//expressions/Expression">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Represents any literal, i.e. a value whose type is an EDataType. Literals are, for example, 5, 3.14, 'c', &quot;text&quot;, true."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="String representation of the value, e.g. &quot;5&quot;, &quot;3.14&quot;, &quot;c&quot;, &quot;text&quot;, or &quot;true&quot;."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>

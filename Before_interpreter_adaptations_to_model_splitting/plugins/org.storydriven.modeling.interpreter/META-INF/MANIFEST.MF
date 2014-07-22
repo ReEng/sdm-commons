@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Interpreter
+Bundle-SymbolicName: org.storydriven.modeling.interpreter;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: de.mdelab.sdm.interpreter.core;bundle-version="1.0.0";visibility:=reexport,
+ org.storydriven.core;bundle-version="1.0.0",
+ org.storydriven.storydiagrams;bundle-version="1.0.0"
+Export-Package: org.storydriven.modeling.interpreter,
+ org.storydriven.modeling.interpreter.calls,
+ org.storydriven.modeling.interpreter.facade,
+ org.storydriven.modeling.interpreter.notifications,
+ org.storydriven.modeling.interpreter.patternmatcher

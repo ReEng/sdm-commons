@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.storydriven.modeling.interpreter.feature"
+      label="Storydriven Interpreter"
+      version="1.0.0.qualifier"
+      provider-name="storydriven.org">
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      Eclipse Public License
+   </license>
+
+   <requires>
+      <import feature="de.mdelab.sdm.interpreter.common.feature" version="1.0.0.qualifier"/>
+      <import feature="org.storydriven.modeling.model.feature" version="1.0.0.qualifier"/>
+   </requires>
+
+   <plugin
+         id="org.storydriven.modeling.interpreter.adapter"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,58 @@
+\chapter{Introduction}
+% Problem Area
+The high complexity of modern technical systems poses great challenges to their development process.
+Model-based development approaches are a promising means to tackle this complexity.
+In such a model-based development approach, models are considered to be first-class artifacts of the development.
+They describe different parts of the system in development from different viewpoints and on different abstraction levels.
+For instance, models are used to describe the structure and behavior of a software system, improving the overall comprehensibility of the system.
+These models can then be employed to automatically generate code, reducing the risks of implementation errors.
+
+Even if two models have different viewpoints and are used for different purposes, their information may overlap.
+Thus, models have to be translated into each other during such a development process.
+%Moreover, the models evolve during the development.
+To translate between different models and to keep them consistent, model transformations can be applied.
+Model transformations are also used to define in which way models can be changed, e.g., to specify refactoring operations.
+
+Furthermore, model transformations themselves can be employed to precisely specify the behavior of a system at run-time.
+If, for example, a system should react to environment changes by reconfiguration, these reconfigurations can be described by model transformations which define how to change the structure of the system.
+They furthermore allow a formal analysis, e.g., to prove that certain properties still hold after applying a transformation.
+
+Story diagrams~\cite{ZSW99,FNTZ00,Zun01} are a powerful visual formalism for specifying model transformations, based on the well-known concept of graph transformation systems.
+They feature declarative parts to specify object patterns which are matched and altered in the source model and combine them with ideas from imperative programming to specify the control flow of the transformation execution.
+The concrete syntax of story diagrams is based on the concrete syntax of UML activities.
+
+% Problem
+Since their introduction in 1998, story diagrams have been successfully applied in a wide range of application scenarios and are now used for diverse purposes.
+Furthermore, several extensions to story diagrams have been proposed.
+For instance, Story Decision Diagrams (SDDs) \cite{GK06a} extend story diagrams with features of first-order-logic such as quantification to allow the expression of complex properties like safety requirements.
+Timed Story Scenario Diagrams (TSSD) \cite{KG07a} on the other hand are a story-diagram-based notation for the specification of scenarios, integrating structural and temporal aspects.
+
+Besides, some semantic issues have been identified in the original concept~\cite{TMG06}.
+In addition, the main tool for the specification of story diagrams, the \fuj tool suite, has undergone major redesigns in the last years; these redesigns also affected the story diagram implementation.
+Moreover, new approaches like the Story Diagram Interpreter have emerged.
+
+% Approach
+In this technical report, we seek to provide a complete reference to the syntax and semantics of story diagrams.
+It consolidates previous publications in a single document.
+We provide definitions for the abstract and the concrete syntax as well as the semantics of story diagrams.
+
+%Evaluation
+As an example, we show how story diagrams can be used to specify refactoring operations on structural software models like class diagrams.
+
+\section{Extensions since the previous version}
+Compared to v0.1 of this report, the current version contains a number of additions.
+This section briefly summarizes these extensions for readers that are familiar with the previous report.
+
+It introduces \emph{collection variables} which allow the specification of sets of object variables which have the same type (Section~\ref{sec:StoryPatterns:collectionvariables}).
+\emph{Inclusion links} can be used to add and remove single object variables from a given object collection (Section~\ref{sec:StoryPatterns:inclusion}).
+\emph{Link constraints} can be used to specify the order in which elements are reference by a multi reference (Section~\ref{sec:StoryPatterns:linkConstraints}).
+Furthermore, \fe{maybe links} can now be used to circumvent the isomorphic matching for certain object variables (\ref{sec:StoryPatterns:specialLinks:maybeLink}).
+Finally, the complete example in Chapter~\ref{sec:Example} has been extended to contain examples of most of these additions.
+
+\section{Structure}
+The following chapter introduces important foundations like graph transformations that are necessary for the understanding of story diagrams.
+Chapter~\ref{sec:Concepts} then describes the concepts used in story patterns by explaining their abstract and concrete syntax as well as the semantics.
+Chapter~\ref{sec:Example} gives a complex example by illustrating the specification of a refactoring operation with story diagrams.
+Related work is discussed in Chapter~\ref{sec:RelatedWork} while Section~\ref{sec:Conclusion} concludes the main part of the report.
+Appendix~\ref{sec:Execution} deals with the execution of story diagrams by interpretation.
+Finally, Appendix~\ref{sec-reference} contains the technical reference that documents the current metamodel for story diagrams in detail.

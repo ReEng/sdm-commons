@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SDM Expressions
+Bundle-Vendor: www.storydriven.org
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.storydriven.modeling.expressions; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.storydriven.modeling;bundle-version="[1.0.0,2.0.0)";visibility:=reexport,
+ org.antlr.runtime;bundle-version="[3.2.0,4.0.0)";visibility:=reexport,
+ org.eclipse.emf.mwe2.launch;bundle-version="[2.0.0,3.0.0)";resolution:=optional,
+ org.eclipse.xtext;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.xtext.generator;bundle-version="[2.0.0,3.0.0)";resolution:=optional,
+ org.eclipse.xtext.util;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.xtext.xtend2;bundle-version="[2.0.0,3.0.0)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.storydriven.modeling.expressions,
+ org.storydriven.modeling.expressions.parseTreeConstruction,
+ org.storydriven.modeling.expressions.parser.antlr,
+ org.storydriven.modeling.expressions.parser.antlr.internal,
+ org.storydriven.modeling.expressions.pathExpressions,
+ org.storydriven.modeling.expressions.pathExpressions.impl,
+ org.storydriven.modeling.expressions.pathExpressions.util,
+ org.storydriven.modeling.expressions.pathbridge,
+ org.storydriven.modeling.expressions.services,
+ org.storydriven.modeling.expressions.validation,
+ org.storydriven.modeling.expressions.scoping,
+ org.storydriven.modeling.expressions.formatting
+

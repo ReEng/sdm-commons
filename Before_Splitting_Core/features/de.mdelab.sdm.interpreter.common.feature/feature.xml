@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.mdelab.sdm.interpreter.common.feature"
+      label="MDELab SDM Interpreter Core Feature"
+      version="1.0.0.qualifier"
+      provider-name="MDELab.de">
+
+   <description url="http://www.mdelab.de">
+      This feature contains the SDM interpreter core. A binding for a concrete metamodel is required to execute story diagrams.
+   </description>
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      Eclipse Public License
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="de.mdelab.sdm.interpreter.common" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ocl.ecore" version="3.0.1" match="greaterOrEqual"/>
+      <import plugin="de.mdelab.sdm.interpreter.common.eclipse" version="1.0.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="de.mdelab.sdm.interpreter.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.mdelab.sdm.interpreter.common.eclipse"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.mdelab.sdm.interpreter.ocl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

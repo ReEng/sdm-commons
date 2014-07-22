@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_KDxmwFYTEeGJ4qlxiuPyww" documentation="Edition Context for modelinstance GenPackage">
+    <categories xmi:id="_KDyN0FYTEeGJ4qlxiuPyww" name="modelinstance">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_KDyN0VYTEeGJ4qlxiuPyww" name="RootNode" views="_KDy04VYTEeGJ4qlxiuPyww">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_KDyN0lYTEeGJ4qlxiuPyww" name="categories" views="_KDy041YTEeGJ4qlxiuPyww">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_KDyN01YTEeGJ4qlxiuPyww" name="ecoreDataTypes" views="_KDy05FYTEeGJ4qlxiuPyww">
+          <model xsi:type="ecore:EReference" href="platform:/resource/de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/ecoreDataTypes"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_KDyN1FYTEeGJ4qlxiuPyww" name="ModelElementCategory" views="_KDy05VYTEeGJ4qlxiuPyww">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_KDyN1VYTEeGJ4qlxiuPyww" name="key" views="_KDy051YTEeGJ4qlxiuPyww">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_KDyN1lYTEeGJ4qlxiuPyww" name="name" views="_KDy06FYTEeGJ4qlxiuPyww">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_KDyN11YTEeGJ4qlxiuPyww" documentation="Views repository for modelinstance GenPackage" name="modelinstance">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_KDy04FYTEeGJ4qlxiuPyww" name="modelinstance">
+      <views xmi:id="_KDy04VYTEeGJ4qlxiuPyww" name="RootNode">
+        <elements xsi:type="eef-views:Container" xmi:id="_KDy04lYTEeGJ4qlxiuPyww" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_KDy041YTEeGJ4qlxiuPyww" name="categories">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_KDy05FYTEeGJ4qlxiuPyww" name="ecoreDataTypes">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_KDy05VYTEeGJ4qlxiuPyww" name="ModelElementCategory">
+        <elements xsi:type="eef-views:Container" xmi:id="_KDy05lYTEeGJ4qlxiuPyww" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_KDy051YTEeGJ4qlxiuPyww" name="key">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_KDy06FYTEeGJ4qlxiuPyww" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>

@@ -1,0 +1,107 @@
+\section{Story Diagrams and Story Patterns in a Nutshell} \label{sec:Overview}
+
+%- model-driven software development, raise abstraction level and use models instead of code as the key artifact
+%- specify structure and behavior of the software under development, make the models runnable/executable
+%- UML offers notations for description of software structure and development, esp. class and activity diagrams
+%- activity diagrams are too informal to be automatically executed (natural language used)
+%- we replaced the informal activity descriptions with formal descriptions of operations on object structures and developed a new formal language called story diagrams
+
+%- story diagrams are special UML activity diagrams
+%- developed to formalize the description of a software's behavior (UML activity diagrams usually use informal textual descriptions of the tasks to be performed)
+%- motivation: complete specification of a software, structure and behavior, i.e. make the software specification executable (code generation and interpretation)
+
+In model-driven software development, a software model is the key artifact of the development.
+It describes the software's structure as well as its behavior and 
+can be translated into executable source code or be interpreted to be executed.
+The UML offers notations for the description of the software structure and behavior,
+besides others class diagrams and activities.
+However, since UML activities use natural language in the activity nodes to describe the particular activities, they are not automatically executable.
+Thus, a formal behavioral specification is needed.
+For that purpose, \emph{story diagrams} have been developed \cite{FNTZ00,Zun01}.
+They are based on UML activities \cite{UML23} and replace the natural language with a formal language to specify behavior
+and, thus, can be automatically executed.
+
+A story diagram specifies a \emph{model transformation}.
+In terms of the classification of model transformation languages proposed by Czarnecki and Helsen \cite{Czarnecki06},
+story diagrams are an endogenous, in-place transformation language (see also Section~\ref{sec:foundations:typedAttrGTS}).
+
+%- motivation: (formally) describe modifications of object structures for object-oriented software systems
+%- use a graphical notation to specify operations on object structures (object structure modifications), OO world
+%- each operation describes a modification of a given object structure, basically the modifactions are creations and removals of objects and their interconnections
+%- graphically describe the object structure to be modified, mark the elements to be created and those to be removed
+
+Story diagrams describe the control flow similar to UML activities by means of activity nodes and activity edges.
+The behavior of each activity node is described using a graph transformation language called \emph{story patterns}.
+Each activity node embeds one story pattern.
+A story pattern uses a graphical notation to specify modifications of object structures in object-oriented software systems.
+The modifications are basically creations and removals of objects and their interconnections (links).
+
+%- motivation: use an appropriate, familiar, and simple notation for object structure modifications; we use a notation similar to UML object diagrams
+%- motivation: declaratively describe the operations in activity nodes, thus, reduce complexity (avoid describing how to perform the operations)
+%- motivation: keep determinism to a certain extent to specify the conditions for and the order of object structure modifications
+
+Using a simple and familiar notation, story patterns are similar to UML object diagrams (see the embedded story pattern in Figure~\ref{fig:SDExampleStoryDiagram}).
+A story pattern represents an object structure that is to be modified.
+It includes annotations specifying which objects and links are to be removed and created.
+Story patterns are a declarative language since they only specify what to remove and create but not how to do it and in which order.
+This way, the complexity of the behavioral specifications is reduced.
+In contrast to the deterministic control flow specified by activity nodes and edges which determine the order of story pattern executions,
+the order of creations and deletions specified by a story pattern is non-deterministic.
+
+%- motivation: base the specification on a well-known formalism (for execution and analyses)
+%- story diagrams use graph transformations in their activity nodes (well-known formalism, exhaust the given theories for analyses and execution)
+
+Story patterns are based on the well-known formalism of \emph{graph transformation systems} and the corresponding theory \cite{Roz97}.
+Thus, precise analyses of the operations described by story patterns are possible,
+e.g., it can be checked if certain properties of the object structure to be modified remain after the structure's modification \cite{Sch06,Mey09}.
+
+%- given a so called host graph (an object structure or model), story diagrams describe the graph's modifications by means of creating or removing nodes and edges (objects and links)
+%- the host graph, in our case, is a typed attributed graph, i.e. we have a graph to be modified (object structure, token model) and a corresponding type graph (type model or meta-model) describing the types and properties of the objects in our host graph
+%- a graph transformation is executed by identifying a subgraph in the host graph which corresponds to the graph specified in the transformation (matching, subgraph isomorphism), removing nodes and links that are marked to be removed, and creating new nodes and links that are marked to be created
+
+A story pattern specifies a \emph{graph transformation rule} \cite{Roz97} (see Section~\ref{sec:foundations:simpleGTS}).
+Given a so-called \emph{host graph}, i.e.\ the graph to be modified, a graph transformation removes and creates nodes and edges in the given host graph.
+The host graph is a typed attributed graph where the graph specified in the graph transformation is searched for (\emph{graph matching}) and modified afterwards
+(see Chapter~\ref{sec:foundations} for more details).
+
+In case of story patterns, the host graph is the object structure or model to be modified, i.e.\ the run-time data of the executed software.
+Thus, we call the host graph's nodes and edges \emph{objects} and \emph{links}
+while the host graph itself is called \emph{instance model} (or simply model) in the remainder of the report.
+The type graph is a set of classes and their relations which define all potential instance models at run-time.
+These classes and relations constitute a so-called \emph{type model} (see Section~\ref{sec:modelTransformation}).
+Furthermore, we call the nodes and edges in story patterns \emph{object variables} and \emph{link variables}
+since these represent and are matched to objects and links in the instance model.
+The types of these variables are determined by types in a type model which is a prerequisite to story patterns.
+
+\begin{figure}[htb]
+	\centering
+  \begin{minipage}[t]{.4\textwidth}
+    \centering
+    \includegraphics[scale=1]{SimpleSDRemoveAttributeClassDiagram} 
+    \caption{Exemplary Type Model}
+    \label{fig:SDExampleClassDiagram}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{.55\textwidth}
+    \centering
+    \includegraphics[scale=1]{SimpleSDRemoveAttribute}
+    \caption{Exemplary Story Diagram}
+    \label{fig:SDExampleStoryDiagram}
+  \end{minipage}
+\end{figure}
+
+For example, the class diagram in Figure~\ref{fig:SDExampleClassDiagram} defines the types \fe{Class} and \fe{Attribute} as well as their relations, attributes, and operations.
+The corresponding story diagram in Figure~\ref{fig:SDExampleStoryDiagram} defines the behavior of the \fe{removeAttribute} method defined in the class diagram.
+Here, the story diagram specifies that a class's attribute with the name given by the parameter \fe{text} is to be found in the instance model and in case of success this attribute is to be removed (\destroy).
+
+Graph matching includes the \emph{subgraph isomorphism} problem which is known to be \emph{NP-complete} \cite{Epp95}.
+To reduce the problem in the average case, the implemented graph matching approach for story patterns
+uses a subgraph isomorphism for at least one node as input,
+i.e.\ at least one node in the left-hand side of a graph transformation rule (object variable in a story pattern)
+is already matched to a certain node in the host graph (object in an instance model).
+
+In summary, a story diagram is a special, formally defined UML activity
+that embeds graph transformation rules, so-called story patterns, in its activity nodes
+to precisely describe run-time behavior by means of graph transformations.
+
+%\subsection{Application scenarios (?)} \label{sec:Applications}

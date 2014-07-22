@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Package xmi:id="bd7155bb-4f57-4868-b74a-5672b1eac640" name="core">
+    <ownedComment xmi:id="_2szqgJxkEeCuYMafrm1l2g" annotatedElement="bd7155bb-4f57-4868-b74a-5672b1eac640">
+      <body>The core package is the root package for the storydriven core meta-model. It defines several abstract super classes which implement an extension mechanism as well as recurring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element.</body>
+    </ownedComment>
+    <elementImport xmi:id="_lO7FMLLyEd-uk56s-ldeog">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <elementImport xmi:id="_lO7sQLLyEd-uk56s-ldeog">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_lO7sQbLyEd-uk56s-ldeog">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_lO8TULLyEd-uk56s-ldeog">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_lO8TUbLyEd-uk56s-ldeog">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_lO8TUrLyEd-uk56s-ldeog">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_lO8TU7LyEd-uk56s-ldeog">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_lO86YLLyEd-uk56s-ldeog">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_lO86YbLyEd-uk56s-ldeog">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_gsByQLN1Ed-vJ9Qpen_Iuw" name="expressions">
+      <ownedComment xmi:id="_OScPUJKyEeCoWcgn2XgBaQ" annotatedElement="_gsByQLN1Ed-vJ9Qpen_Iuw">
+        <body>The base package for all expressions which can be used for modeling activities&#xD;
+and patterns.</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Class" xmi:id="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" name="Expression" isAbstract="true">
+        <ownedComment xmi:id="_RcJm8BztEeChOvWwuwx7tQ" annotatedElement="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58">
+          <body>Represents any expression in an embedded textual language, e.g. OCL or Java. An expression's type is dynamically derived by an external mechanism (see TypedElement).</body>
+        </ownedComment>
+        <generalization xmi:id="_mg81QBzTEeChOvWwuwx7tQ" general="_e7CFQLLyEd-uk56s-ldeog"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_8yfvIMmbEeG1Tu0kxZC-sQ" name="common">
+        <packagedElement xmi:type="uml:Enumeration" xmi:id="_Zu35oBzCEeChOvWwuwx7tQ" name="LogicOperator">
+          <ownedComment xmi:id="_-IZ60BzrEeChOvWwuwx7tQ" annotatedElement="_Zu35oBzCEeChOvWwuwx7tQ">
+            <body>Defines the operators for binary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression.</body>
+          </ownedComment>
+          <ownedLiteral xmi:id="_oMKiQBzFEeChOvWwuwx7tQ" name="AND"/>
+          <ownedLiteral xmi:id="_ovlYYBzFEeChOvWwuwx7tQ" name="OR"/>
+          <ownedLiteral xmi:id="_pU6TABzFEeChOvWwuwx7tQ" name="XOR"/>
+          <ownedLiteral xmi:id="_WYUSQCR9EeCZkonQmyNaoA" name="IMPLY"/>
+          <ownedLiteral xmi:id="_eVlq0CR9EeCZkonQmyNaoA" name="EQUIVALENT"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Enumeration" xmi:id="_jmhM0BzFEeChOvWwuwx7tQ" name="ComparingOperator">
+          <ownedComment xmi:id="_CgmDEBzsEeChOvWwuwx7tQ" annotatedElement="_jmhM0BzFEeChOvWwuwx7tQ">
+            <body>Defines the operators for comparing expressions.</body>
+          </ownedComment>
+          <ownedLiteral xmi:id="_qIrSQBzFEeChOvWwuwx7tQ" name="LESS"/>
+          <ownedLiteral xmi:id="_qrJGIBzFEeChOvWwuwx7tQ" name="LESS_OR_EQUAL"/>
+          <ownedLiteral xmi:id="_rpdvkBzFEeChOvWwuwx7tQ" name="EQUAL"/>
+          <ownedLiteral xmi:id="_sxMzsBzFEeChOvWwuwx7tQ" name="GREATER_OR_EQUAL"/>
+          <ownedLiteral xmi:id="_uv7xQBzFEeChOvWwuwx7tQ" name="GREATER"/>
+          <ownedLiteral xmi:id="_wcn8kBzFEeChOvWwuwx7tQ" name="UNEQUAL"/>
+          <ownedLiteral xmi:id="_kXV5sHSREeCw_4Cp_HQS5Q" name="REGULAR_EXPRESSION">
+            <ownedComment xmi:id="__xY0AHSREeCw_4Cp_HQS5Q" annotatedElement="_kXV5sHSREeCw_4Cp_HQS5Q">
+              <body>For comparison of a String with a regular expression.</body>
+            </ownedComment>
+          </ownedLiteral>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Enumeration" xmi:id="_k4Jz0BzFEeChOvWwuwx7tQ" name="ArithmeticOperator">
+          <ownedComment xmi:id="_HsybIBzsEeChOvWwuwx7tQ" annotatedElement="_k4Jz0BzFEeChOvWwuwx7tQ">
+            <body>Defines the operators for arithmetic expressions.</body>
+          </ownedComment>
+          <ownedLiteral xmi:id="_0XPYABzFEeChOvWwuwx7tQ" name="PLUS"/>
+          <ownedLiteral xmi:id="_1hsY8BzFEeChOvWwuwx7tQ" name="MINUS"/>
+          <ownedLiteral xmi:id="_24udUBzFEeChOvWwuwx7tQ" name="TIMES"/>
+          <ownedLiteral xmi:id="_3y_tMBzFEeChOvWwuwx7tQ" name="DIVIDE"/>
+          <ownedLiteral xmi:id="_4jt_gBzFEeChOvWwuwx7tQ" name="MODULO"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Enumeration" xmi:id="_49SisMmcEeG1Tu0kxZC-sQ" name="UnaryOperator">
+          <ownedLiteral xmi:id="_49Sis8mcEeG1Tu0kxZC-sQ" name="NOT"/>
+          <ownedLiteral xmi:id="_49SitMmcEeG1Tu0kxZC-sQ" name="PLUS"/>
+          <ownedLiteral xmi:id="_49SitsmcEeG1Tu0kxZC-sQ" name="MINUS"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="__NYbIBzFEeChOvWwuwx7tQ" name="UnaryExpression">
+          <ownedComment xmi:id="_6Ss_IBzsEeChOvWwuwx7tQ" annotatedElement="__NYbIBzFEeChOvWwuwx7tQ">
+            <body>Represents a negated expression, e.g. NOT (a &lt; 5).</body>
+          </ownedComment>
+          <generalization xmi:id="_E5V4YBzGEeChOvWwuwx7tQ" general="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+          <ownedAttribute xmi:id="_qyufYhzGEeChOvWwuwx7tQ" name="enclosedExpression" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_qyt4UBzGEeChOvWwuwx7tQ">
+            <ownedComment xmi:id="_8zvYgBzsEeChOvWwuwx7tQ" annotatedElement="_qyufYhzGEeChOvWwuwx7tQ">
+              <body>Represents the operand of a NotExpression, e.g. a &lt; 5 in NOT (a &lt; 5).</body>
+            </ownedComment>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qyvGcRzGEeChOvWwuwx7tQ" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qyvGcBzGEeChOvWwuwx7tQ" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_MIj-sMqjEeGgOMYaYaWlnQ" name="operator" type="_49SisMmcEeG1Tu0kxZC-sQ" isOrdered="true">
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_gyny8MqjEeGgOMYaYaWlnQ" value=""/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="__7WUYBzFEeChOvWwuwx7tQ" name="BinaryExpression" isAbstract="true">
+          <ownedComment xmi:id="_wS2DwBzsEeChOvWwuwx7tQ" annotatedElement="__7WUYBzFEeChOvWwuwx7tQ">
+            <body>Represents any binary expression like v &lt; 5 or x + 7.</body>
+          </ownedComment>
+          <generalization xmi:id="_FiXnQBzGEeChOvWwuwx7tQ" general="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+          <ownedAttribute xmi:id="_fzApgRzGEeChOvWwuwx7tQ" name="leftExpression" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_fy_bYBzGEeChOvWwuwx7tQ">
+            <ownedComment xmi:id="_0Amu8BzsEeChOvWwuwx7tQ" annotatedElement="_fzApgRzGEeChOvWwuwx7tQ">
+              <body>Represents the first operand of a binary expression, e.g. x in the expression x &lt; 5.</body>
+            </ownedComment>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fzBQkBzGEeChOvWwuwx7tQ" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fzApghzGEeChOvWwuwx7tQ" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_kidbMRzGEeChOvWwuwx7tQ" name="rightExpression" type="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58" aggregation="composite" association="_kicNEBzGEeChOvWwuwx7tQ">
+            <ownedComment xmi:id="_2SGQcBzsEeChOvWwuwx7tQ" annotatedElement="_kidbMRzGEeChOvWwuwx7tQ">
+              <body>Represents the second operand of a binary expression, e.g. 5 in the expression x &lt; 5.</body>
+            </ownedComment>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kieCQBzGEeChOvWwuwx7tQ" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kidbMhzGEeChOvWwuwx7tQ" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_AsdoQBzGEeChOvWwuwx7tQ" name="ComparisonExpression">
+          <ownedComment xmi:id="_G3lcARztEeChOvWwuwx7tQ" annotatedElement="_AsdoQBzGEeChOvWwuwx7tQ">
+            <body>Represents comparing expressions like a &lt; 5 or a >= 7.</body>
+          </ownedComment>
+          <generalization xmi:id="_GCstIBzGEeChOvWwuwx7tQ" general="__7WUYBzFEeChOvWwuwx7tQ"/>
+          <ownedAttribute xmi:id="_-nSPABzGEeChOvWwuwx7tQ" name="operator" visibility="public" type="_jmhM0BzFEeChOvWwuwx7tQ">
+            <ownedComment xmi:id="_JOfB8BztEeChOvWwuwx7tQ" annotatedElement="_-nSPABzGEeChOvWwuwx7tQ">
+              <body>Specifies the expression's comparing operator, e.g. &lt;, >=, !=.</body>
+            </ownedComment>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_BrHB0BzGEeChOvWwuwx7tQ" name="ArithmeticExpression">
+          <ownedComment xmi:id="_LtcXsBztEeChOvWwuwx7tQ" annotatedElement="_BrHB0BzGEeChOvWwuwx7tQ">
+            <body>Represents arithmetic expressions like a + 5 or a * 7.</body>
+          </ownedComment>
+          <generalization xmi:id="_Gm-e4BzGEeChOvWwuwx7tQ" general="__7WUYBzFEeChOvWwuwx7tQ"/>
+          <ownedAttribute xmi:id="_CBUF4BzHEeChOvWwuwx7tQ" name="operator" visibility="public" type="_k4Jz0BzFEeChOvWwuwx7tQ">
+            <ownedComment xmi:id="_PJZhMhztEeChOvWwuwx7tQ" annotatedElement="_CBUF4BzHEeChOvWwuwx7tQ">
+              <body>Specifies the expression's arithmetic operator, e.g. +, -, *, /, or MODULO.</body>
+            </ownedComment>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_IG29QBzGEeChOvWwuwx7tQ" name="LogicalExpression">
+          <ownedComment xmi:id="__2U_wBzsEeChOvWwuwx7tQ" annotatedElement="_IG29QBzGEeChOvWwuwx7tQ">
+            <body>Represents binary, logic expressions like a AND b and a OR b.</body>
+          </ownedComment>
+          <generalization xmi:id="_JofIEBzGEeChOvWwuwx7tQ" general="__7WUYBzFEeChOvWwuwx7tQ"/>
+          <ownedAttribute xmi:id="_47_gIBzGEeChOvWwuwx7tQ" name="operator" visibility="public" type="_Zu35oBzCEeChOvWwuwx7tQ">
+            <ownedComment xmi:id="_CxeiQhztEeChOvWwuwx7tQ" annotatedElement="_47_gIBzGEeChOvWwuwx7tQ">
+              <body>Specifies the expression's logic operator, e.g. AND, OR, or XOR.</body>
+            </ownedComment>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_-CqUcBzFEeChOvWwuwx7tQ" name="LiteralExpression">
+          <ownedComment xmi:id="_eopS4BzsEeChOvWwuwx7tQ" annotatedElement="_-CqUcBzFEeChOvWwuwx7tQ">
+            <body>Represents any literal, i.e. a value whose type is an EDataType. Literals are, for example, 5, 3.14, 'c', &quot;text&quot;, true.</body>
+          </ownedComment>
+          <generalization xmi:id="_EVxRQBzGEeChOvWwuwx7tQ" general="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+          <ownedAttribute xmi:id="_WCApgBzGEeChOvWwuwx7tQ" name="value" visibility="public">
+            <ownedComment xmi:id="_k2J-ABzsEeChOvWwuwx7tQ" annotatedElement="_WCApgBzGEeChOvWwuwx7tQ">
+              <body>String representation of the value, e.g. &quot;5&quot;, &quot;3.14&quot;, &quot;c&quot;, &quot;text&quot;, or &quot;true&quot;.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bcLzMBzGEeChOvWwuwx7tQ"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_fy_bYBzGEeChOvWwuwx7tQ" name="HasLeftExpression" memberEnd="_fzACcBzGEeChOvWwuwx7tQ _fzApgRzGEeChOvWwuwx7tQ">
+          <ownedEnd xmi:id="_fzACcBzGEeChOvWwuwx7tQ" name="revLeftExpression" type="__7WUYBzFEeChOvWwuwx7tQ" association="_fy_bYBzGEeChOvWwuwx7tQ">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fzApgBzGEeChOvWwuwx7tQ" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fzACcRzGEeChOvWwuwx7tQ"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_kicNEBzGEeChOvWwuwx7tQ" name="HasRightExpression" memberEnd="_kic0IBzGEeChOvWwuwx7tQ _kidbMRzGEeChOvWwuwx7tQ">
+          <ownedEnd xmi:id="_kic0IBzGEeChOvWwuwx7tQ" name="revRightExpression" type="__7WUYBzFEeChOvWwuwx7tQ" association="_kicNEBzGEeChOvWwuwx7tQ">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kidbMBzGEeChOvWwuwx7tQ" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kic0IRzGEeChOvWwuwx7tQ"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_qyt4UBzGEeChOvWwuwx7tQ" name="HasEnclosedExpression" memberEnd="_qyt4URzGEeChOvWwuwx7tQ _qyufYhzGEeChOvWwuwx7tQ">
+          <ownedEnd xmi:id="_qyt4URzGEeChOvWwuwx7tQ" name="revEnclosedExpression" type="__NYbIBzFEeChOvWwuwx7tQ" association="_qyt4UBzGEeChOvWwuwx7tQ">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qyufYRzGEeChOvWwuwx7tQ" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qyufYBzGEeChOvWwuwx7tQ"/>
+          </ownedEnd>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_8-3VIBzFEeChOvWwuwx7tQ" name="TextualExpression">
+        <ownedComment xmi:id="_ROhQEBzsEeChOvWwuwx7tQ" annotatedElement="_8-3VIBzFEeChOvWwuwx7tQ">
+          <body>Represents any expression in a textual language embedded into Story Diagrams, e.g. OCL or Java .</body>
+        </ownedComment>
+        <generalization xmi:id="_D2JWABzGEeChOvWwuwx7tQ" general="80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+        <ownedAttribute xmi:id="_LVs30BzGEeChOvWwuwx7tQ" name="expressionText">
+          <ownedComment xmi:id="_VGEwcBzsEeChOvWwuwx7tQ" annotatedElement="_LVs30BzGEeChOvWwuwx7tQ">
+            <body>Holds the expression, e.g. in OCL or Java.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_MnugYBzGEeChOvWwuwx7tQ" name="language" visibility="public">
+          <ownedComment xmi:id="_XFecYBzsEeChOvWwuwx7tQ" annotatedElement="_MnugYBzGEeChOvWwuwx7tQ">
+            <body>String representation of the used language which has to be unique. Examples are OCL and Java.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_RLu3EBzGEeChOvWwuwx7tQ" name="languageVersion" visibility="public">
+          <ownedComment xmi:id="_XeQIwBzsEeChOvWwuwx7tQ" annotatedElement="_RLu3EBzGEeChOvWwuwx7tQ">
+            <body>String representation of the used language's version. The format is &lt;Major>.&lt;Minor>[.&lt;Revision>[.&lt;Build>]]&#xD;
+Examples: 1.4 or 3.0.1 or 1.0.2.20101208.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLtGUBzGEeChOvWwuwx7tQ"/>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_HPoxgLLzEd-uk56s-ldeog" name="HasType" memberEnd="_HPoxgbLzEd-uk56s-ldeog _HPpYkbLzEd-uk56s-ldeog">
+      <ownedComment xmi:id="_rmak4JxkEeCuYMafrm1l2g" annotatedElement="_HPoxgLLzEd-uk56s-ldeog">
+        <body>The EClassifier this model element is typed over.</body>
+      </ownedComment>
+      <ownedEnd xmi:id="_HPoxgbLzEd-uk56s-ldeog" name="typedElement" visibility="public" type="__xUl0LLyEd-uk56s-ldeog" association="_HPoxgLLzEd-uk56s-ldeog">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HPpYkLLzEd-uk56s-ldeog" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HPoxgrLzEd-uk56s-ldeog"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_rCMwALw1Ed-Ytrd77fw2LA" name="HasGenericType" memberEnd="_rCNXELw1Ed-Ytrd77fw2LA _rCN-Ibw1Ed-Ytrd77fw2LA">
+      <ownedEnd xmi:id="_rCNXELw1Ed-Ytrd77fw2LA" name="typedElement" type="__xUl0LLyEd-uk56s-ldeog" association="_rCMwALw1Ed-Ytrd77fw2LA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rCN-ILw1Ed-Ytrd77fw2LA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rCNXEbw1Ed-Ytrd77fw2LA"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_3o5hAL0VEd-DQ5q3aRKcIw" name="HasModelExtension" memberEnd="_3o6vIr0VEd-DQ5q3aRKcIw _3o6IEL0VEd-DQ5q3aRKcIw">
+      <ownedEnd xmi:id="_3o6IEL0VEd-DQ5q3aRKcIw" name="extension" type="_vasJcL0VEd-DQ5q3aRKcIw" isDerived="true" aggregation="composite" association="_3o5hAL0VEd-DQ5q3aRKcIw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3o6vIb0VEd-DQ5q3aRKcIw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3o6vIL0VEd-DQ5q3aRKcIw"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_tCyogL0WEd-DQ5q3aRKcIw" name="HasExtension" memberEnd="_tCyogb0WEd-DQ5q3aRKcIw _tCzPkr0WEd-DQ5q3aRKcIw"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_8klicL0WEd-DQ5q3aRKcIw" name="HasExtendedObject" memberEnd="_8kmJgL0WEd-DQ5q3aRKcIw _8kmwkb0WEd-DQ5q3aRKcIw">
+      <ownedEnd xmi:id="_8kmJgL0WEd-DQ5q3aRKcIw" name="extension" type="_vasJcL0VEd-DQ5q3aRKcIw" association="_8klicL0WEd-DQ5q3aRKcIw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8kmwkL0WEd-DQ5q3aRKcIw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8kmJgb0WEd-DQ5q3aRKcIw"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_w551QL0cEd-DQ5q3aRKcIw" name="" memberEnd="_w56cUL0cEd-DQ5q3aRKcIw _w56cU70cEd-DQ5q3aRKcIw">
+      <ownedEnd xmi:id="_w56cUL0cEd-DQ5q3aRKcIw" name="extension" type="_vasJcL0VEd-DQ5q3aRKcIw" association="_w551QL0cEd-DQ5q3aRKcIw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_w56cUr0cEd-DQ5q3aRKcIw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_w56cUb0cEd-DQ5q3aRKcIw"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_VuVpALyyEd-eCY_Peu5fFw" name="HasAnnotation" memberEnd="_VuWQELyyEd-eCY_Peu5fFw _VuXeMLyyEd-eCY_Peu5fFw">
+      <ownedEnd xmi:id="_VuWQELyyEd-eCY_Peu5fFw" name="annotatedElement" type="_zX-c0LyxEd-eCY_Peu5fFw" association="_VuVpALyyEd-eCY_Peu5fFw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VuW3IbyyEd-eCY_Peu5fFw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VuW3ILyyEd-eCY_Peu5fFw"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_tB8FcLK5Ed-uk56s-ldeog" name="NamedElement" isAbstract="true">
+      <ownedComment xmi:id="_beYKUJxkEeCuYMafrm1l2g" annotatedElement="_tB8FcLK5Ed-uk56s-ldeog">
+        <body>Abstract super class for all meta-model elements that carry a name. </body>
+      </ownedComment>
+      <generalization xmi:id="_3_6b0LyyEd-eCY_Peu5fFw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
+      <ownedAttribute xmi:id="9a70c295-e052-4eb6-a68c-778c528f658f" name="name" visibility="public">
+        <ownedComment xmi:id="_f_Jm0JxkEeCuYMafrm1l2g" annotatedElement="9a70c295-e052-4eb6-a68c-778c528f658f">
+          <body>The name attribute of a meta-model element.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_e7CFQLLyEd-uk56s-ldeog" name="CommentableElement" isAbstract="true">
+      <ownedComment xmi:id="_XD2fwJxkEeCuYMafrm1l2g" annotatedElement="_e7CFQLLyEd-uk56s-ldeog">
+        <body>Abstract super class for all meta-model elements that may carry a comment in form of a string.</body>
+      </ownedComment>
+      <generalization xmi:id="_5NGAoLyyEd-eCY_Peu5fFw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
+      <ownedAttribute xmi:id="_l9XfkLLyEd-uk56s-ldeog" name="comment" visibility="public">
+        <ownedComment xmi:id="_kY5KUG3CEeGdlstntMEf0g" annotatedElement="_l9XfkLLyEd-uk56s-ldeog">
+          <body>The comment string that can be used to attach arbitrary information to CommentableElements.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Fs4yABzCEeChOvWwuwx7tQ"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_IRlmIO82EeC2_OK3onprow" value="&quot;no comment provided&quot;"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="__xUl0LLyEd-uk56s-ldeog" name="TypedElement" isAbstract="true">
+      <ownedComment xmi:id="_iSb4EJxkEeCuYMafrm1l2g" annotatedElement="__xUl0LLyEd-uk56s-ldeog">
+        <body>Abstract super class for all meta-model elements that are typed by means of an EClassifier or an EGenericType.</body>
+      </ownedComment>
+      <generalization xmi:id="_3aIOMLyyEd-eCY_Peu5fFw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
+      <ownedAttribute xmi:id="_HPpYkbLzEd-uk56s-ldeog" name="type" isReadOnly="true" isDerived="true" isDerivedUnion="true" association="_HPoxgLLzEd-uk56s-ldeog">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClassifier"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HPpYk7LzEd-uk56s-ldeog" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HPpYkrLzEd-uk56s-ldeog"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rCN-Ibw1Ed-Ytrd77fw2LA" name="genericType" aggregation="composite" association="_rCMwALw1Ed-Ytrd77fw2LA">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EGenericType"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rCOlMLw1Ed-Ytrd77fw2LA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rCN-Irw1Ed-Ytrd77fw2LA"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_zX-c0LyxEd-eCY_Peu5fFw" name="ExtendableElement" isAbstract="true">
+      <ownedComment xmi:id="_-S-AEJxjEeCuYMafrm1l2g" annotatedElement="_zX-c0LyxEd-eCY_Peu5fFw">
+        <body>Abstract base class for the whole story diagram model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references.</body>
+      </ownedComment>
+      <generalization xmi:id="_Sm0qkL0XEd-DQ5q3aRKcIw">
+        <general xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
+      </generalization>
+      <ownedAttribute xmi:id="_VuXeMLyyEd-eCY_Peu5fFw" name="annotation" aggregation="composite" association="_VuVpALyyEd-eCY_Peu5fFw">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VuYFQLyyEd-eCY_Peu5fFw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VuXeMbyyEd-eCY_Peu5fFw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_tCzPkr0WEd-DQ5q3aRKcIw" name="extension" type="_vasJcL0VEd-DQ5q3aRKcIw" aggregation="composite" association="_tCyogL0WEd-DQ5q3aRKcIw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tCz2ob0WEd-DQ5q3aRKcIw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tCz2oL0WEd-DQ5q3aRKcIw"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_uRFyML0XEd-DQ5q3aRKcIw" name="getExtension" visibility="public">
+        <ownedParameter xmi:id="_uRFyMb0XEd-DQ5q3aRKcIw" type="_vasJcL0VEd-DQ5q3aRKcIw" direction="return"/>
+        <ownedParameter xmi:id="_uRJckL0XEd-DQ5q3aRKcIw" name="type">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_27xDUL0XEd-DQ5q3aRKcIw" name="provideExtension" visibility="public">
+        <ownedParameter xmi:id="_27xDUb0XEd-DQ5q3aRKcIw" type="_vasJcL0VEd-DQ5q3aRKcIw" direction="return"/>
+        <ownedParameter xmi:id="_27xDUr0XEd-DQ5q3aRKcIw" name="type">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Vmj8sL0YEd-DQ5q3aRKcIw" name="getAnnotation">
+        <ownedParameter xmi:id="_Vmj8sb0YEd-DQ5q3aRKcIw" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_Vmj8sr0YEd-DQ5q3aRKcIw" name="source">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_YyxaAL0YEd-DQ5q3aRKcIw" name="provideAnnotation">
+        <ownedParameter xmi:id="_YyxaAb0YEd-DQ5q3aRKcIw" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_YyxaAr0YEd-DQ5q3aRKcIw" name="source">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vasJcL0VEd-DQ5q3aRKcIw" name="Extension" isAbstract="true">
+      <ownedComment xmi:id="_Pj6jcJxkEeCuYMafrm1l2g" annotatedElement="_vasJcL0VEd-DQ5q3aRKcIw">
+        <body>Abstract super class for an Extension that can be defined for an object.</body>
+      </ownedComment>
+      <generalization xmi:id="_DmpoQL0dEd-DQ5q3aRKcIw" general="_zX-c0LyxEd-eCY_Peu5fFw"/>
+      <ownedAttribute xmi:id="_8kmwkb0WEd-DQ5q3aRKcIw" name="base" isReadOnly="true" isDerived="true" isDerivedUnion="true" association="_8klicL0WEd-DQ5q3aRKcIw">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8knXob0WEd-DQ5q3aRKcIw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8knXoL0WEd-DQ5q3aRKcIw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_tCyogb0WEd-DQ5q3aRKcIw" name="extendableBase" type="_zX-c0LyxEd-eCY_Peu5fFw" subsettedProperty="_8kmwkb0WEd-DQ5q3aRKcIw" association="_tCyogL0WEd-DQ5q3aRKcIw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tCzPkb0WEd-DQ5q3aRKcIw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tCzPkL0WEd-DQ5q3aRKcIw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_3o6vIr0VEd-DQ5q3aRKcIw" name="modelBase" isDerived="true" subsettedProperty="_8kmwkb0WEd-DQ5q3aRKcIw" association="_3o5hAL0VEd-DQ5q3aRKcIw">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EModelElement"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3o7WML0VEd-DQ5q3aRKcIw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3o6vI70VEd-DQ5q3aRKcIw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_w56cU70cEd-DQ5q3aRKcIw" name="owningAnnotation" isDerived="true" association="_w551QL0cEd-DQ5q3aRKcIw">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EAnnotation"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_w57DYL0cEd-DQ5q3aRKcIw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_w56cVL0cEd-DQ5q3aRKcIw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <profileApplication xmi:id="_kwI8ELw1Ed-Ytrd77fw2LA">
+      <eAnnotations xmi:id="_kwTUILw1Ed-Ytrd77fw2LA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Package>
+  <Ecore:EReference xmi:id="_mHa4ELw1Ed-Ytrd77fw2LA" isTransient="true" isVolatile="true" base_Property="_HPpYkbLzEd-uk56s-ldeog"/>
+  <Ecore:EPackage xmi:id="_zYCZkLw1Ed-Ytrd77fw2LA" base_Package="bd7155bb-4f57-4868-b74a-5672b1eac640" nsPrefix="core" nsURI="http://www.storydriven.org/core/0.2.7" basePackage="org.storydriven" prefix="Core"/>
+  <Ecore:EPackage xmi:id="_DWk54Lw2Ed-Ytrd77fw2LA" base_Package="_gsByQLN1Ed-vJ9Qpen_Iuw" nsPrefix="expr" nsURI="http://www.storydriven.org/core/expressions/0.2.0"/>
+  <Ecore:EPackage xmi:id="_8yfvIMmbEeG1Tu0kxZC-sA" base_Package="_8yfvIMmbEeG1Tu0kxZC-sQ" nsPrefix="sdcec" nsURI="http://www.storydriven.org/core/expressions/common/0.2.0"/>
+  <Ecore:EReference xmi:id="_TmA58LxXEd-Ytrd77fw2LA" isTransient="true"/>
+  <Ecore:EReference xmi:id="_aoEjQLxeEd-HP-M1eWm3kg" isUnsettable="true" base_Property="_rCN-Ibw1Ed-Ytrd77fw2LA"/>
+  <Ecore:EReference xmi:id="_DyGToLy3Ed-eCY_Peu5fFw"/>
+  <Ecore:EReference xmi:id="_WgqC4L0XEd-DQ5q3aRKcIw" isTransient="true" isVolatile="true" isUnsettable="true" base_Property="_3o6vIr0VEd-DQ5q3aRKcIw"/>
+  <Ecore:EReference xmi:id="_3L9CIL0cEd-DQ5q3aRKcIw" isTransient="true" isVolatile="true" isUnsettable="true" base_Property="_w56cU70cEd-DQ5q3aRKcIw"/>
+  <Ecore:EReference xmi:id="_DQedwL06Ed-8i6uUe2B2Qg" isTransient="true" isVolatile="true" base_Property="_8kmwkb0WEd-DQ5q3aRKcIw"/>
+  <Ecore:EReference xmi:id="_UR3SkB1rEeCKeJCjS51luQ" isTransient="true" isVolatile="true"/>
+  <Ecore:EReference xmi:id="_8MjQ4B2VEeCKeJCjS51luQ" isTransient="true"/>
+  <Ecore:EReference xmi:id="_YZiT8B2qEeCgKe8vMUdTKg" isTransient="true" isVolatile="true" isUnsettable="true" isResolveProxies="false"/>
+  <Ecore:EReference xmi:id="_av6VcB2qEeCgKe8vMUdTKg" isTransient="true" isVolatile="true" isUnsettable="true" isResolveProxies="false"/>
+  <Ecore:EAttribute xmi:id="_Cxb3EF65EeC6SYIxo2pjJw" isTransient="true" isVolatile="true"/>
+  <Ecore:EReference xmi:id="_47OfQGKPEeCBq7LKLVIv3g"/>
+  <Ecore:EReference xmi:id="_fD9fcKDOEeC9buz9OQgOvw" isTransient="true"/>
+</xmi:XMI>

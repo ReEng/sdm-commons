@@ -1,0 +1,325 @@
+\documentclass[12pt,a4paper,twoside,titlepage,openright,headsepline,listof=totoc,index=totoc,chapterprefix,bibliography=totoc]{scrreprt}
+
+
+\usepackage[ngerman,english]{babel}
+%\selectlanguage{english}
+\usepackage[T1]{fontenc}
+
+\newif\ifpdfhere
+\ifx\pdfoutput\undefined
+\pdfherefalse % we are not running pdflatex
+\else
+\pdfoutput=1 % we are running pdflatex
+\pdfcompresslevel=9     % compression level for text and image;
+\pdfminorversion=6
+\pdfheretrue
+\fi
+
+\ifpdfhere
+%\usepackage{techreport}
+
+\usepackage[pdftex,bookmarks=true,bookmarksopen=false,bookmarksnumbered=true,linktocpage,colorlinks=true,backref,pagebackref, linkcolor=blue,  citecolor=blue, urlcolor=blue]{hyperref}
+%% Weitere Hyperrefeinstellungen
+\hypersetup{%
+pdfauthor={Markus von Detten, Stephan Hildebrandt, Christian Heinzemann, Marie Christin Platenius, Jan Rieke, Julian Suck, Dietrich Travkin}
+,pdftitle={Story Diagrams -- Syntax and Semantics}
+,pdfsubject={Technical Report}
+%% fuer die Screen-Version: blue
+,linkcolor=blue,anchorcolor=blue,citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue
+% fuer die Print-Version: black
+% ,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,pagecolor=black,urlcolor=black%
+}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{thumbpdf}
+
+\graphicspath{{figures/}}
+
+\fi
+
+
+% *** amsfonts ***
+% Paket  : amsfonts
+% Zweck  : f"ur spezielle Mathematik-Schriftarten (z.B. geschwungenes NP)
+% Hinweis: Die Symbole erh"alt man mit \mathcal{NP}
+% Doku   : Dokumentation zu finden unter (SuSE-Linux 7.0):
+%          /usr/share/doc/packages/te_latex/texmf/fonts/amsfonts/amsfndoc.dvi
+\usepackage{amsfonts}
+\usepackage{algorithmic}
+\usepackage{listings}
+\lstset{ % 
+basicstyle=\footnotesize,
+tabsize=3,
+language=[Visual]C++,
+backgroundcolor=\color{white}
+}
+\usepackage{url}
+\usepackage{color}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+\usepackage{inputenc}
+
+\usepackage{std_authorlist}
+
+% *** amsmath ***
+% Paket  : amsmath
+% Zweck  : f"ur spezielle Mathematik-Symbole (z.B. nat"urliche und reelle Zahlen)
+% Hinweis: Die Symbole erh"alt man mit \mathbb{N}
+% Doku   : Dokumentation zu finden unter (SuSE-Linux 7.0):
+%          /usr/share/doc/packages/te_latex/texmf/latex/amsmath/amsldoc.dvi
+\usepackage{bbm}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ntheorem}
+\usepackage{mathtools}
+
+% *** fancyvrb ***
+% Paket  : fancyvrb
+% Zweck  : f"ur das Einf"ugen von Quellcode
+% Doku   : Dokumentation zu finden unter (SuSE-Linux 7.0):
+%          /usr/share/doc/packages/te_latex/texmf/latex/fancyvrb/fancyvrb.ps
+\usepackage{fancyvrb}
+
+% *** floatflt ***
+% Paket  : floatflt
+% Zweck  : f"ur Textfluss um Abbildungen und Tabellen
+% Doku   : Dokumentation zu finden unter (SuSE-Linux 7.0):
+%          /usr/share/doc/packages/te_latex/texmf/latex/floatflt/floatflt.dvi
+\usepackage{floatflt} 
+
+% *** graphics ***
+% Paket  : graphicx
+% Zweck  : zum Einbinden von EPS-Graphiken
+% Doku   : Dokumentation zu finden unter (SuSE-Linux 7.0):
+%          /usr/share/doc/packages/te_latex/texmf/latex/graphics/grfguide.ps
+\usepackage{graphicx}
+
+% \DeclareGraphicsExtensions{.png,.jpg}
+% *** ngerman ***
+% Paket  : ngerman
+% Zweck  : f"ur Umlaute, deutsche Silbentrennung usw.
+% Hinweis: ngerman benutzt im Gegensatz zu german die neue Rechtschreibung
+%          (wichtig f"ur die Silbentrennung)
+% Doku   : Dokumentation zu finden unter (SuSE-Linux 7.0):
+%          /usr/share/doc/packages/te_latex/texmf/generic/styles/gerdoc.dvi
+%\usepackage{ngerman}
+%\selectlanguage{english} % Dokumentensprache auf deutsch stellen
+
+
+% *** times ***
+% Paket: Times
+% Zweck: Schrift Times benutzen (sieht wesentlich besser als die Standardschrift aus)
+\usepackage{times}
+\usepackage[rightcaption]{sidecap}
+
+%\usepackage{setspace}
+
+\addtolength{\oddsidemargin}{1.5cm}
+\addtolength{\evensidemargin}{-1.5cm}
+%\addtolength{\topmargin}{-0,2cm}
+%\addtolength{\textheight}{+1.5cm}
+%\addtolength{\textwidth}{-0cm}
+
+\sloppy
+\usepackage{supertabular} 
+
+%% snake-oil f�r den Satz
+ \pretolerance=100           %% Textsatz: interner Parameter zur Steuerung des Zeilenumbruchs \tolerance 300              %% 1414 Bewertungsgrenzwert f�r schlecht umbrochene Zeilen
+ \hfuzz=0.2pt                %% Grenze, ab der eine overfull hbox gemeldet wird
+ \vfuzz=0.2pt                %% Grenzwert, ab dem die �berf�llung einer \vbox protokolliert wird
+ \hbadness 1414              %% Grenzwert f�r �schlechte� Zeilen, bzw. Boxen
+ \vbadness	1000              %% Grenzwert f�r eine �schlechte� \vbox 
+ \emergencystretch 1em       %% zus�tzlicher dynamischer Leerraum
+ \hyphenpenalty=30           %% Strafpunkte bei Silbentrennung �ber Absatz hinweg
+ \widowpenalty=100000          %% falls letzte Zeile auf neue Seite gebrochen wird.
+ \clubpenalty=100000           %% wenn erste Zeile eines Absatzes auf alter Seite bleibt.
+ \doublehyphendemerits=50    %% Aufeinanderfolgende Silbentrennungen eher vermeiden. 
+
+\setcounter{secnumdepth}{3}
+
+%use this command to denote figure element that appear inside a figure
+\newcommand{\fe}[1]{\textsf{\small #1}}
+
+\theoremstyle{break}
+\newtheorem{definition}{Definition}[section] 
+\newtheorem{bsp}{Beispiel}[section] 
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy} 
+\fancyhf{} 
+\fancyhead[EL,OR]{\thepage} 
+\fancyhead[ER]{\bf\small\nouppercase\leftmark}
+\fancyhead[OL]{\it\small\nouppercase\rightmark}
+
+\fancypagestyle{plain}{% Neudefinition der plain-Seiten (erste Seite bei Verzeichnissen und Kapiteln)
+  \fancyhf{}
+  \fancyhead[EL,OR]{\thepage} 
+  \fancyhead[ER]{\bf\small\nouppercase\leftmark}
+  \fancyhead[OL]{\it\small\nouppercase\rightmark}
+}
+
+%% \TODO{}-Command um schnell zu sehen was noch zu machen ist ;)
+
+\RequirePackage{xspace}
+\providecommand{\fuj}[1][\xspace]{{\scshape Fujaba}#1}
+\providecommand{\destroy}[1][\xspace]{{\texttt{\small{\flqq destroy\frqq}}}#1}
+\providecommand{\create}[1][\xspace]{\texttt{\small{\flqq create\frqq}}#1}
+
+\setlength{\marginparwidth}{2cm}
+
+\usepackage[colorinlistoftodos, textwidth=2.0cm, disable]{todonotes}
+%\usepackage[colorinlistoftodos, textwidth=2.0cm]{todonotes}
+\newcommand{\todoall}[1]{\todo[inline, color=green!40]{Alle: #1}}
+\newcommand{\todoch}[1]{\todo[inline, color=yellow!40]{Chris: #1}}
+\newcommand{\todomvd}[1]{\todo[inline, color=cyan!40]{Markus: #1}}
+\newcommand{\tododt}[1]{\todo[inline, color=blue!40]{Dietrich: #1}}
+\newcommand{\todoib}[1]{\todo[inline, color=pink!30]{Ingo: #1}}
+\newcommand{\todojr}[1]{\todo[inline, color=orange!30]{Jan: #1}}
+\newcommand{\todomcp}[1]{\todo[inline, color=red!40]{Marie: #1}}
+\newcommand{\todosh}[1]{\todo[inline, color=violet!30]{Stephan: #1}}
+
+
+\begin{document}                     % und los!
+
+	% ************************************************************
+	% *****                    Titelseite                    *****
+	% ************************************************************
+
+	\setcounter{page}{1}
+	\pagenumbering{roman}
+
+	\begin{titlepage}
+	\thispagestyle{empty}
+	{\center
+
+			\vspace{1.5cm}
+            {\LARGE  {\bf Story Diagrams -- Syntax and Semantics}\,
+             \footnote{This work was partially developed in the Collaborative Research Center %developed in the course of the Special Research Initiative
+             614, "Self-optimizing Concepts and Structures in Mechanical Engineering" at the University of Paderborn
+             and was published on its behalf and funded by the Deutsche Forschungsgemeinschaft (DFG).}
+             \footnote{This work was partially supported by the German Research Foundation (DFG) within the 
+             Collaborative Research Centre ``On-The-Fly Computing'' (CRC 901).}
+             \footnote{This work was partially developed in the project "ENTIME: Entwurfstechnik Intelligente Mechatronik" (Design Methods for Intelligent Mechatronic Systems).
+             The project ENTIME is funded by the state of North Rhine-Westphalia (NRW), Germany and the European Union, European Regional Development Fund, "Investing in Your Future".}}
+			\\
+			\vspace{1.5cm}
+			{\Large Technical Report} \\[0.2cm]
+			{\large tr-ri-12-320} \\
+			\vspace{1cm}
+			 
+			
+			Markus von Detten, Christian Heinzemann, Marie Christin Platenius, \\
+			Jan Rieke, Julian Suck, and Dietrich Travkin \\
+			Software Engineering Group\\			
+			Heinz Nixdorf Institute\\
+			University of Paderborn\\
+			Zukunftsmeile 1\\
+			D-33102 Paderborn, Germany\\
+			$[$Markus.von.Detten|Christian.Heinzemann|Marie.Christin.Platenius|\\
+			Jan.Rieke|Julian.Suck|Dietrich.Travkin$]$@uni-paderborn.de\\
+
+            \vspace{1cm}
+
+			Stephan Hildebrandt\\
+			Department System Analysis and Modeling\\
+			Hasso-Plattner-Institut\\
+			Prof.-Dr.-Helmert-Str. 2-3\\
+			D-14482 Potsdam, Germany\\
+			stephan.hildebrandt@hpi.uni-potsdam.de\\
+
+            \vspace{1.5cm}
+
+            Version: 0.1
+
+			\vspace{1.5cm}
+			Paderborn, \today
+
+		}
+	\end{titlepage}
+
+
+	
+%
+%	 ~
+%	\newpage
+	
+%	\input{content/eid.tex}
+        
+%	\newpage
+%	~
+% 	
+
+% 	
+% 	\newpage
+% 	~	
+	
+	\tableofcontents
+	\listoftodos
+	\cleardoublepage
+% 	~
+% 
+% 	\newpage
+% 	~
+
+% 	\newpage
+
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+
+	\input{01_Introduction.tex} 
+
+	\input{02_Foundations}
+
+	\input{03_Concepts.tex}
+	
+	\input{04_CompleteExample.tex}	
+
+	\input{06_RelatedWork.tex}
+	
+	\input{07_Conclusions.tex}
+	
+	%\setstretch{1}
+        
+% -------------------------------------------------------------
+% Literaturverzeichnis 
+% -------------------------------------------------------------
+	\addtocontents{toc}{}         % Zum Inhaltsverzeichnis muss eine Leerzeile zugef"ugt werden, weil
+                        	      % sonst das Literaturverzeichnis falsch im Inhaltsverzeichnis erscheint.
+	\bibliographystyle{alpha}
+
+	\bibliography{SdmPaper}
+
+% ------------------------------------------------------------
+% Appendix
+% ------------------------------------------------------------
+
+\appendix
+
+\ext{	\input{08a_User_Guide.tex}}
+
+	\input{08b_Execution.tex}
+
+	\chapter{Technical Reference}
+	\label{sec-reference}
+	
+	\input{08_TechDoc_Contents}	
+
+% ------------------------------------------------------------
+% Abbilungsverzeichnis
+% ------------------------------------------------------------
+	%\listoffigures
+
+
+% -------------------------------------------------------------
+% Tabellenverzeichnis 
+% -------------------------------------------------------------
+    %\listoftables
+	
+
+	% ************************************************************
+	% *****                      Ende                        *****
+	% ************************************************************
+
+\end{document}

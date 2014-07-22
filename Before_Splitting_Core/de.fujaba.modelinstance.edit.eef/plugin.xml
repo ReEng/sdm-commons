@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>  
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.fujaba.de/modelinstance/0.2.4"
+            class="de.fujaba.modelinstance.providers.ModelinstanceEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="de.fujaba.modelinstance.providers.ModelinstancePropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+</plugin>

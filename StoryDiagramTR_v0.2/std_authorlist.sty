@@ -1,0 +1,31 @@
+%% 
+%% this is `std_authorlist.sty'
+%% 
+%% 
+%% 
+\ProvidesPackage{std_authorlist}
+                [1995/15/08 v0.0h HG LaTeX package]
+\ProvidesPackage{std_authorlist}
+%\wlog{HG package `std_authorlist' <\filedate>.}
+\wlog{HG package `std_authorlist'.}
+
+\RequirePackage{std_format}
+
+% used packages ...
+
+\newcommand{\authorindex}[2][]{\index{AUTHORENTRY:#2, #1}}
+\newcommand{\authorindexplus}[3][]{\index{AUTHORENTRY:#3@#2, #1}}
+%\renewcommand{\a}[2][]{\emphasis{#2}}
+%\newcommand{\af}[2][]{\emphasis{#1 #2}}
+\renewcommand{\a}[2][]{{#2}}
+\newcommand{\af}[2][]{{#1 #2}}
+\newcommand{\ai}[2][]{{\debugindex{\a[#1]{#2}}}\authorindex[#1]{#2}}
+\newcommand{\aiv}[3][]{{\debugindex{\a[#1]{#2}}}\authorindexplus[#1]{#2}{#3}}
+\newcommand{\aif}[2][]{{\debugindex{\af[#1]{#2}}}\authorindex[#1]{#2}}
+
+
+\newcommand{\includeauthorlist}[0]{\input{\jobname.ali}}
+
+%% 
+%% End of file `std_authorlist.sty'
+

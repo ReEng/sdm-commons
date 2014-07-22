@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.7"?>
+
+<plugin>
+
+	<extension point="org.eclipse.ui.commands">
+		<command
+			defaultHandler="org.storydriven.storydiagrams.diagram.interpreter.handlers.StartInterpreterHandler"
+			id="com.aljoschability.modeling.sdm.experiments.interprete"
+			name="Interpret Activity..."/>
+	</extension>
+
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			allPopups="false"
+			locationURI="menu:org.eclipse.ui.main.menu">
+			<menu label="Story Diagram">
+				<command
+					commandId="com.aljoschability.modeling.sdm.experiments.interprete"
+					label="Interpret Activity..."
+					style="push">
+				</command>
+			</menu>
+		</menuContribution>
+	</extension>
+
+</plugin>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+
+
+
+
+
+
+
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.storydriven.storydiagrams.patterns.presentation.PatternsModelWizardID"
+            name="%_UI_StorydiagramsModelWizard_label"
+            class="org.storydriven.storydiagrams.presentation.StorydiagramsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/StorydiagramsModelFile.gif">
+         <description>%_UI_StorydiagramsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.storydriven.storydiagrams.patterns.presentation.PatternsEditorID"
+            name="%_UI_StorydiagramsEditor_label"
+            icon="icons/full/obj16/StorydiagramsModelFile.gif"
+            extensions="sdm"
+            class="org.storydriven.storydiagrams.presentation.StorydiagramsEditor"
+            contributorClass="org.storydriven.storydiagrams.presentation.StorydiagramsActionBarContributor">
+      </editor>
+   </extension>
+
+
+
+
+
+</plugin>

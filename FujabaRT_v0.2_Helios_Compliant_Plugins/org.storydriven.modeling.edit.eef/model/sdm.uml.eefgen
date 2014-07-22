@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/org.storydriven.modeling.edit.eef/src-gen">
+  <editionContexts basePackage="org.storydriven" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="sdm.uml.components#_lvcnIFYUEeGJ4qlxiuPyww"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.modeling" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="sdm.uml.components#_lvcnIlYUEeGJ4qlxiuPyww"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.modeling.activities" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="sdm.uml.components#_lvdOW1YUEeGJ4qlxiuPyww"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.modeling" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="sdm.uml.components#_lvdOYFYUEeGJ4qlxiuPyww"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.modeling" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="sdm.uml.components#_lvdOdlYUEeGJ4qlxiuPyww"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.modeling.calls" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="sdm.uml.components#_lvd1RlYUEeGJ4qlxiuPyww"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.modeling" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="sdm.uml.components#_lvd1TlYUEeGJ4qlxiuPyww"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.modeling.patterns" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="sdm.uml.components#_lvecZ1YUEeGJ4qlxiuPyww"/>
+  </editionContexts>
+  <editionContexts basePackage="org.storydriven.modeling" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="sdm.uml.components#_lvecdlYUEeGJ4qlxiuPyww"/>
+  </editionContexts>
+  <viewsRepositories basePackage="org.storydriven.modeling.calls" swtViews="true" formViews="true">
+    <viewsRepository href="sdm.uml.components#_lvecgFYUEeGJ4qlxiuPyww"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.modeling.calls.expressions" swtViews="true" formViews="true">
+    <viewsRepository href="sdm.uml.components#_lveckVYUEeGJ4qlxiuPyww"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.modeling.templates" swtViews="true" formViews="true">
+    <viewsRepository href="sdm.uml.components#_lvecm1YUEeGJ4qlxiuPyww"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.modeling.patterns" swtViews="true" formViews="true">
+    <viewsRepository href="sdm.uml.components#_lvfDZVYUEeGJ4qlxiuPyww"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.modeling.activities.expressions" swtViews="true" formViews="true">
+    <viewsRepository href="sdm.uml.components#_lvfqfFYUEeGJ4qlxiuPyww"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.modeling.patterns.expressions" swtViews="true" formViews="true">
+    <viewsRepository href="sdm.uml.components#_lvfqglYUEeGJ4qlxiuPyww"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.modeling.activities" swtViews="true" formViews="true">
+    <viewsRepository href="sdm.uml.components#_lvfqlVYUEeGJ4qlxiuPyww"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.modeling.expressions" swtViews="true" formViews="true">
+    <viewsRepository href="sdm.uml.components#_lvgRq1YUEeGJ4qlxiuPyww"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.storydriven.modeling" swtViews="true" formViews="true">
+    <viewsRepository href="sdm.uml.components#_lvgRx1YUEeGJ4qlxiuPyww"/>
+  </viewsRepositories>
+</eef-gen:EEFGenModel>

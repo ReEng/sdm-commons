@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MDELab SDM Debugger Core UI
+Bundle-SymbolicName: de.mdelab.sdm.interpreter.core.debug.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.mdelab.sdm.interpreter.code.debug.ui.SDDebugUiPlugin
+Bundle-Vendor: MDELab.de
+Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
+ org.eclipse.ui;bundle-version="3.6.2";visibility:=reexport,
+ org.eclipse.debug.core;bundle-version="3.6.0";visibility:=reexport,
+ de.hpi.sam.storyDiagramEcore;bundle-version="2.3.3",
+ org.eclipse.debug.ui;bundle-version="3.6.3";visibility:=reexport,
+ de.mdelab.sdm.interpreter.core.debug.client;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.emf;bundle-version="2.6.0";visibility:=reexport,
+ org.eclipse.emf.ecore.editor;bundle-version="2.6.0";visibility:=reexport,
+ org.apache.log4j;bundle-version="1.2.15";visibility:=reexport,
+ org.eclipse.ui.workbench.texteditor;bundle-version="3.6.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: de.mdelab.sdm.interpreter.code.debug.ui,
+ de.mdelab.sdm.interpreter.code.debug.ui.breakpoints,
+ de.mdelab.sdm.interpreter.code.debug.ui.debugView,
+ de.mdelab.sdm.interpreter.code.debug.ui.instanceGraph,
+ de.mdelab.sdm.interpreter.code.debug.ui.launcher,
+ de.mdelab.sdm.interpreter.code.debug.ui.stepCommands,
+ de.mdelab.sdm.interpreter.code.debug.ui.storyDiagramEditor,
+ de.mdelab.sdm.interpreter.code.debug.ui.variables

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.fujaba.commons.feature"
+      label="Fujaba Commons"
+      version="1.2.0.qualifier"
+      provider-name="storydriven.org">
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      Eclipse Public License
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.ui.forms" version="3.5.2" match="compatible"/>
+      <import plugin="org.eclipse.ui.ide" version="3.6.1" match="compatible"/>
+      <import plugin="org.eclipse.ui.editors" version="3.6.1" match="compatible"/>
+      <import plugin="org.eclipse.ui.navigator" version="3.5.0" match="compatible"/>
+      <import plugin="org.eclipse.gef" version="3.6.1" match="compatible"/>
+      <import plugin="org.eclipse.core.expressions" version="3.4.200" match="compatible"/>
+      <import plugin="org.eclipse.jface.text" version="3.6.1" match="compatible"/>
+      <import plugin="org.eclipse.emf.edit.ui" version="2.6.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.transaction" version="1.4.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.console" version="3.5.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore.edit" version="2.6.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.100" match="compatible"/>
+      <import plugin="org.eclipse.xtext" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.xtext.ui" version="2.0.0" match="compatible"/>
+   </requires>
+
+   <plugin
+         id="org.fujaba.commons"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <!-- modeling -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://ns.storydriven.org/sdm/0.1.0"
+            class="org.storydriven.modeling.providers.ModelingEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.storydriven.modeling.providers.ModelingPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+
+   <!-- activities -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://ns.storydriven.org/sdm/activities/0.1.0"
+            class="org.storydriven.modeling.activities.providers.ActivitiesEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.storydriven.modeling.activities.providers.ActivitiesPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   
+   <!-- activities.expressions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://ns.storydriven.org/sdm/activities/expressions/0.1.0"
+            class="org.storydriven.modeling.activities.providers.ExpressionsEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.storydriven.modeling.activities.expressions.providers.ExpressionsPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   
+   <!-- calls -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://ns.storydriven.org/sdm/calls/0.1.0"
+            class="org.storydriven.modeling.calls.providers.CallsEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>   
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.storydriven.modeling.calls.providers.CallsPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+
+   <!-- calls.expressions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://ns.storydriven.org/sdm/calls/expressions/0.1.0"
+            class="org.storydriven.modeling.calls.providers.ExpressionsEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.storydriven.modeling.calls.expressions.providers.ExpressionsPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   
+   <!-- expressions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://ns.storydriven.org/sdm/patterns/expressions/0.1.0"
+            class="org.storydriven.modeling.patterns.expressions.providers.ExpressionsEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.storydriven.modeling.calls.expressions.providers.ExpressionsPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   
+   <!-- modeling -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://ns.storydriven.org/sdm/0.1.0"
+            class="org.storydriven.modeling.providers.ModelingEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.storydriven.modeling.providers.ModelingPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   
+   <!-- patterns -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://ns.storydriven.org/sdm/patterns/0.1.0"
+            class="org.storydriven.modeling.patterns.providers.PatternsEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.storydriven.modeling.patterns.providers.PatternsPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+
+   <!-- templates -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://ns.storydriven.org/sdm/templates/0.1.0"
+            class="org.storydriven.modeling.templates.providers.TemplatesEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.storydriven.modeling.templates.providers.TemplatesPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   
+</plugin>

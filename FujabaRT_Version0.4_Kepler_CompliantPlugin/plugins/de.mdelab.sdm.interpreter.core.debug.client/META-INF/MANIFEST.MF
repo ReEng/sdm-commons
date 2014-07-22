@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MDELab SD Debugger Client
+Bundle-SymbolicName: de.mdelab.sdm.interpreter.core.debug.client
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: MDELab.de
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: de.mdelab.sdm.interpreter.core.debug;bundle-version="1.0.0";visibility:=reexport
+Export-Package: de.mdelab.sdm.interpreter.core.debug.client,
+ de.mdelab.sdm.interpreter.core.debug.client.protocol,
+ de.mdelab.sdm.interpreter.core.debug.client.protocol.indications,
+ de.mdelab.sdm.interpreter.core.debug.client.protocol.requests,
+ de.mdelab.sdm.interpreter.core.debug.client.stack

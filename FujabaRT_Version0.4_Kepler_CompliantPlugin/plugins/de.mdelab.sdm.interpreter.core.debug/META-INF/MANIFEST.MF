@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MDELab SDM Debugger Core
+Bundle-SymbolicName: de.mdelab.sdm.interpreter.core.debug
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.mdelab.sdm.interpreter.core.debug,
+ de.mdelab.sdm.interpreter.core.debug.breakpoints,
+ de.mdelab.sdm.interpreter.core.debug.protocol,
+ de.mdelab.sdm.interpreter.core.debug.protocol.indications,
+ de.mdelab.sdm.interpreter.core.debug.protocol.requests
+Bundle-Vendor: MDELab.de
+Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.6.1";visibility:=reexport,
+ org.eclipse.emf.ecore.change;bundle-version="2.5.1";visibility:=reexport,
+ de.mdelab.sdm.interpreter.core;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.net4j;bundle-version="3.0.1";visibility:=reexport,
+ org.eclipse.net4j.tcp;bundle-version="3.0.1";visibility:=reexport,
+ de.mdelab.resourceSetSynchronizer;bundle-version="1.0.0";visibility:=reexport

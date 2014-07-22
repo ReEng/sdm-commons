@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmftool:ToolRegistry xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="Story Diagram Palette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Activities"
+        collapsible="true"
+        active="//@palette/@tools.0/@tools.1">
+      <smallIcon
+          xsi:type="gmftool:BundleImage"
+          path="/icons/palette/activities.png"
+          bundle="org.storydriven.storydiagrams.diagram.custom"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Activity Call Node"
+          description="Create Activity Call Node"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Modifying Story Node"
+          description="Create Modifying Story Node"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Matching Story Node"
+          description="Create Matching Story Node"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Statement Node"
+          description="Create Statement Node"/>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Activity Edge"
+          description="Create Activity Edge"/>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Initial Node"
+          description="Create Initial Node"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Junction Node"
+          description="Create Junction Node"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Activity Final Node"
+          description="Create Activity Final Node"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Flow Final Node"
+          description="Create Flow Final Node"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Patterns"
+        collapsible="true"
+        active="//@palette/@tools.1/@tools.0">
+      <smallIcon
+          xsi:type="gmftool:BundleImage"
+          path="/icons/palette/patterns.png"
+          bundle="org.storydriven.storydiagrams.diagram.custom"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Object Variable"
+          description="Create Object Variable"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Collection Variable"
+          description="Create Collection Variable"/>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Link Variable"
+          description="Create Link Variable"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Inclusion Link"
+          description="Create Inclusion Link"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Maybe Link"
+          description="Create Maybe Link"/>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Constraint"
+          description="Create Constraint"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Link Constraint"
+          description="Create Link Constraint"/>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Attribute Assignment"
+          description="Create Attribute Assignment"/>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

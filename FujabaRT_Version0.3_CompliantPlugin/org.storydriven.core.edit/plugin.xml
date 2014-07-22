@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+	<extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+		<factory
+			uri="http://www.storydriven.org/core/0.2.7"
+			class="org.storydriven.core.provider.CoreItemProviderAdapterFactory"
+			supportedTypes=
+				"org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+				 org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+				 org.eclipse.emf.edit.provider.ITreeItemContentProvider
+				 org.eclipse.emf.edit.provider.IItemLabelProvider
+				 org.eclipse.emf.edit.provider.IItemPropertySource"/>
+		<factory
+			uri="http://www.storydriven.org/core/expressions/0.2.0"
+			class="org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory"
+			supportedTypes=
+				"org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+				 org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+				 org.eclipse.emf.edit.provider.ITreeItemContentProvider
+				 org.eclipse.emf.edit.provider.IItemLabelProvider
+				 org.eclipse.emf.edit.provider.IItemPropertySource"/>
+  <factory
+        class="org.storydriven.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory"
+        uri="http://www.storydriven.org/core/expressions/common/0.2.0"
+			supportedTypes=
+				"org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+				 org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+				 org.eclipse.emf.edit.provider.ITreeItemContentProvider
+				 org.eclipse.emf.edit.provider.IItemLabelProvider
+				 org.eclipse.emf.edit.provider.IItemPropertySource"/>
+	</extension>
+</plugin>

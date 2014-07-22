@@ -1,0 +1,8 @@
+#Mon Feb 13 15:06:04 CET 2012
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/org.storydriven.modeling/model/sdm.uml.genmodel
+gmf_dashboard/domainModel=platform\:/resource/org.storydriven.modeling/model/sdm.ecore
+gmf_dashboard/generationModel=platform\:/resource/org.storydriven.modeling/gmfModel/sdm.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/org.storydriven.modeling/gmfModel/sdm.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/org.storydriven.modeling/gmfModel/sdm.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/org.storydriven.modeling/gmfModel/sdm.gmftool

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.storydriven.modeling.editor.feature"
+      label="Storydriven Editor"
+      version="1.0.0.qualifier"
+      provider-name="storydriven.org">
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      Eclipse Public License
+   </license>
+
+   <requires>
+      <import feature="org.fujaba.commons.feature" version="1.2.0.qualifier"/>
+      <import feature="org.storydriven.modeling.model.feature" version="1.0.0.qualifier"/>
+   </requires>
+
+   <plugin
+         id="org.storydriven.modeling.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.storydriven.modeling.editor.gef"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,63 @@
+%% 
+%% this is `std_format.sty'
+%% 
+%% 
+%% 
+\ProvidesPackage{std_format}
+                [1995/15/08 v0.0h HG LaTeX package]
+\ProvidesPackage{std_format}
+%\wlog{HG package `std_format' <\filedate>.}
+\wlog{HG package `std_format'.}
+
+% used packages ...
+
+\newcommand{\emphasis}[1]{\emph{#1}}
+\newcommand{\btype}[1]{\textbf{#1}}
+\newcommand{\ttype}[1]{\texttt{#1}}
+
+\newcommand{\debugindex}[1]{#1}
+\newcommand{\debug}[1]{}
+\newcommand{\debugsep}[0]{}
+\newcommand{\debugout}[1]{}
+\newcommand{\debugmarginpar}[1]{}
+\newcommand{\debuginclude}[1]{}
+
+% Vervorhebung + Index + Definition
+\newcommand{\e}[1]{\emphasis{#1}}
+\renewcommand{\b}[1]{\textbf{#1}}
+\renewcommand{\t}[1]{\texttt{#1}}
+\newcommand{\p}[1]{\textsf{#1}}
+\newcommand{\n}[1]{#1}
+
+\newcommand{\defindex}[1]{\index{#1|btype}}
+\newcommand{\ei}[1]{\emphasis{\debugindex{#1}}\index{#1}}
+\newcommand{\bi}[1]{\textbf{\debugindex{#1}}\index{#1}}
+\newcommand{\ti}[1]{\texttt{\debugindex{#1}}\index{#1}}
+\newcommand{\di}[1]{\emphasis{\debugindex{#1}}\defindex{#1}}
+\renewcommand{\ni}[1]{\debugindex{#1}\index{#1}}
+
+
+%Verz~Tgerte Fehler !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\newcommand{\warning}[1]{\wlog{LaTeX Warning: Macro ''#1'' only intended for debug or unfinished mode }}
+
+%
+\def\BUG{BUG\warning{BUG}}
+\def\XXX{LEFT\warning{XXX}}
+\def\TODO{\mbox{$<\mbox{to do}>$}\warning{TODO}}
+\def\IDEA{additional Idea:\newline\warning{IDEA}}
+\def\NEW{{\bf new Idea !!!}\warning{NEW}}
+
+%
+\newcommand{\REWRITE}[1]{~\\{\it \centerline{\dotfill{\bf REWRITE-START}} #1 ~\\\centerline{\dotfill{\bf REWRITE-END}}}\warning{REWRITE}}
+\newcommand{\MOVE}[1]{{~\\\it \centerline{\dotfill{\bf MOVE-START}} #1 ~\\\centerline{\dotfill{\bf MOVE-END}}}\warning{MOVE}}
+\newcommand{\REMARK}[1]{({\bf REMARK:} {\it #1})\newline\warning{REMARK}}
+
+
+\newcommand{\ext}[3][]{}%
+\newcommand{\extinline}[3][]{}%
+\newcommand{\extor}[4][]{#4}%
+\newcommand{\extfootnote}[3][]{}%
+
+%% 
+%% End of file `std_format.sty'
+
