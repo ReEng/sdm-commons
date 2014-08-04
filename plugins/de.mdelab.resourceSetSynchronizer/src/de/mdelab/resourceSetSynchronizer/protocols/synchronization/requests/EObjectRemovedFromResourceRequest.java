@@ -37,7 +37,7 @@ public class EObjectRemovedFromResourceRequest extends SynchronizerRequestWithCo
 	@Override
 	protected void doRequesting(ExtendedDataOutputStream out) throws Exception
 	{
-		this.logger.debug("EObject '" + this.eObject + "' (UUID: "
+		LOGGER.debug("EObject '" + this.eObject + "' (UUID: "
 				+ this.getSynchronizerAdapter().getEObjectUUIDManager().getUuid(this.eObject) + ") removed from resource '"
 				+ this.resource.getURI());
 

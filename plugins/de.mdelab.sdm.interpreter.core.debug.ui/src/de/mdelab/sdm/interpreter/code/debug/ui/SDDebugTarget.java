@@ -30,7 +30,7 @@ import de.mdelab.sdm.interpreter.core.debug.client.stack.DebugClientStackFrame;
 public abstract class SDDebugTarget<StoryDiagramElement extends EObject, Activity> extends SDDebugElement<StoryDiagramElement> implements
 		IDebugTarget
 {
-	// private final Logger logger = Logger.getLogger(this.getClass());
+	// private final Logger LOGGER = Logger.getLogger(this.getClass());
 
 	private final ILaunch											launch;
 	private final SDDebugEventListenerJob<StoryDiagramElement>		debugEventListenerJob;

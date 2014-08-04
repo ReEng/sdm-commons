@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  */
 public class EObjectUuidManager
 {
-	private final Logger				logger	= Logger.getLogger(EObjectUuidManager.class);
+    private static final Logger LOGGER	= Logger.getLogger(EObjectUuidManager.class);
 
 	/*
 	 * Maps UUIDs to EObjects
@@ -65,11 +65,11 @@ public class EObjectUuidManager
 	{
 		if (this.eObject2uuidMap.containsKey(eObject))
 		{
-			this.logger.info("EObjectUuidManager.registerEObject(" + eObject + ", " + uuid + "), mapping exists already");
+			LOGGER.info("EObjectUuidManager.registerEObject(" + eObject + ", " + uuid + "), mapping exists already");
 		}
 		else
 		{
-			this.logger.info("EObjectUuidManager.registerEObject(" + eObject + ", " + uuid + ")");
+			LOGGER.info("EObjectUuidManager.registerEObject(" + eObject + ", " + uuid + ")");
 		}
 
 		this.uuid2eObjectMap.put(uuid, eObject);
@@ -137,7 +137,7 @@ public class EObjectUuidManager
 
 		// String uuid = this.eObject2uuidMap.remove(eObject);
 		//
-		// this.logger.info("unregisterEObject(" + eObject + "), uuid: " +
+		// LOGGER.info("unregisterEObject(" + eObject + "), uuid: " +
 		// uuid);
 		//
 		// if (uuid != null)
