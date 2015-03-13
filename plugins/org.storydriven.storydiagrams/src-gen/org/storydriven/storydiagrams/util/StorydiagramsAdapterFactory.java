@@ -12,7 +12,6 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.TypedElement;
-import org.storydriven.storydiagrams.*;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 import org.storydriven.storydiagrams.Variable;
 

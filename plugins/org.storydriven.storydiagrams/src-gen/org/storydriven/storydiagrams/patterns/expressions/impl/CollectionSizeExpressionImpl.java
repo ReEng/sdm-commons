@@ -28,8 +28,7 @@ import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPac
  *
  * @generated
  */
-public class CollectionSizeExpressionImpl extends ExpressionImpl implements
-		CollectionSizeExpression {
+public class CollectionSizeExpressionImpl extends ExpressionImpl implements CollectionSizeExpression {
 	/**
 	 * The cached value of the '{@link #getSet() <em>Set</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -70,11 +69,8 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 			set = (CollectionVariable) eResolveProxy(oldSet);
 			if (set != oldSet) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET,
-							oldSet, set));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET, oldSet, set));
 			}
 		}
 		return set;
@@ -99,8 +95,7 @@ public class CollectionSizeExpressionImpl extends ExpressionImpl implements
 		set = newSet;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET,
-					oldSet, set));
+					PatternsExpressionsPackage.COLLECTION_SIZE_EXPRESSION__SET, oldSet, set));
 	}
 
 	/**

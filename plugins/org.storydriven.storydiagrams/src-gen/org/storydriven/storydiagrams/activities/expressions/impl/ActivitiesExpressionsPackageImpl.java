@@ -36,8 +36,7 @@ import org.storydriven.storydiagrams.templates.impl.TemplatesPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
-		ActivitiesExpressionsPackage {
+public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements ActivitiesExpressionsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -90,8 +89,8 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 
 		// Obtain or create and register package
 		ActivitiesExpressionsPackageImpl theActivitiesExpressionsPackage = (ActivitiesExpressionsPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.get(eNS_URI) : new ActivitiesExpressionsPackageImpl());
+				.get(eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+				: new ActivitiesExpressionsPackageImpl());
 
 		isInited = true;
 
@@ -101,31 +100,25 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 		// Obtain or create and register interdependencies
 		StorydiagramsPackageImpl theStorydiagramsPackage = (StorydiagramsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(StorydiagramsPackage.eNS_URI) instanceof StorydiagramsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(StorydiagramsPackage.eNS_URI)
-				: StorydiagramsPackage.eINSTANCE);
+				.getEPackage(StorydiagramsPackage.eNS_URI) : StorydiagramsPackage.eINSTANCE);
 		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ActivitiesPackage.eNS_URI)
-				: ActivitiesPackage.eINSTANCE);
+				.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);
 		CallsPackageImpl theCallsPackage = (CallsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(CallsPackage.eNS_URI) instanceof CallsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(CallsPackage.eNS_URI) : CallsPackage.eINSTANCE);
 		CallsExpressionsPackageImpl theCallsExpressionsPackage = (CallsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(CallsExpressionsPackage.eNS_URI) instanceof CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(CallsExpressionsPackage.eNS_URI)
-				: CallsExpressionsPackage.eINSTANCE);
+				.getEPackage(CallsExpressionsPackage.eNS_URI) : CallsExpressionsPackage.eINSTANCE);
 		PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(PatternsPackage.eNS_URI)
-				: PatternsPackage.eINSTANCE);
+				.getEPackage(PatternsPackage.eNS_URI) : PatternsPackage.eINSTANCE);
 		PatternsExpressionsPackageImpl thePatternsExpressionsPackage = (PatternsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(PatternsExpressionsPackage.eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(PatternsExpressionsPackage.eNS_URI)
-				: PatternsExpressionsPackage.eINSTANCE);
+				.getEPackage(PatternsExpressionsPackage.eNS_URI) : PatternsExpressionsPackage.eINSTANCE);
 		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(TemplatesPackage.eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(TemplatesPackage.eNS_URI)
-				: TemplatesPackage.eINSTANCE);
+				.getEPackage(TemplatesPackage.eNS_URI) : TemplatesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theActivitiesExpressionsPackage.createPackageContents();
@@ -151,8 +144,7 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 		theActivitiesExpressionsPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(ActivitiesExpressionsPackage.eNS_URI,
-				theActivitiesExpressionsPackage);
+		EPackage.Registry.INSTANCE.put(ActivitiesExpressionsPackage.eNS_URI, theActivitiesExpressionsPackage);
 		return theActivitiesExpressionsPackage;
 	}
 
@@ -171,8 +163,7 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getExceptionVariableExpression_ExceptionVariable() {
-		return (EReference) exceptionVariableExpressionEClass
-				.getEStructuralFeatures().get(0);
+		return (EReference) exceptionVariableExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -205,8 +196,7 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 
 		// Create classes and their features
 		exceptionVariableExpressionEClass = createEClass(EXCEPTION_VARIABLE_EXPRESSION);
-		createEReference(exceptionVariableExpressionEClass,
-				EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE);
+		createEReference(exceptionVariableExpressionEClass, EXCEPTION_VARIABLE_EXPRESSION__EXCEPTION_VARIABLE);
 	}
 
 	/**
@@ -244,20 +234,14 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		exceptionVariableExpressionEClass.getESuperTypes().add(
-				theExpressionsPackage.getExpression());
+		exceptionVariableExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(exceptionVariableExpressionEClass,
-				ExceptionVariableExpression.class,
-				"ExceptionVariableExpression", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExceptionVariableExpression_ExceptionVariable(),
-				theActivitiesPackage.getExceptionVariable(), null,
-				"exceptionVariable", null, 1, 1,
-				ExceptionVariableExpression.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(exceptionVariableExpressionEClass, ExceptionVariableExpression.class, "ExceptionVariableExpression",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExceptionVariableExpression_ExceptionVariable(), theActivitiesPackage.getExceptionVariable(),
+				null, "exceptionVariable", null, 1, 1, ExceptionVariableExpression.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/GenModel
@@ -275,8 +259,7 @@ public class ActivitiesExpressionsPackageImpl extends EPackageImpl implements
 		addAnnotation(
 				exceptionVariableExpressionEClass,
 				source,
-				new String[] {
-						"documentation",
+				new String[] { "documentation",
 						"Represents the value of an exception variable declared as a transition guard (the guard of an activity edge)." });
 		addAnnotation(
 				getExceptionVariableExpression_ExceptionVariable(),

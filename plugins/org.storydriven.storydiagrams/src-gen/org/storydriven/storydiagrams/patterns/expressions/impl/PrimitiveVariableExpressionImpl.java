@@ -28,8 +28,7 @@ import org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpre
  *
  * @generated
  */
-public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
-		PrimitiveVariableExpression {
+public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements PrimitiveVariableExpression {
 	/**
 	 * The cached value of the '{@link #getPrimitiveVariable() <em>Primitive Variable</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -70,9 +69,7 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 			primitiveVariable = (PrimitiveVariable) eResolveProxy(oldPrimitiveVariable);
 			if (primitiveVariable != oldPrimitiveVariable) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
 							PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE,
 							oldPrimitiveVariable, primitiveVariable));
 			}
@@ -98,11 +95,9 @@ public class PrimitiveVariableExpressionImpl extends ExpressionImpl implements
 		PrimitiveVariable oldPrimitiveVariable = primitiveVariable;
 		primitiveVariable = newPrimitiveVariable;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE,
-					oldPrimitiveVariable, primitiveVariable));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsExpressionsPackage.PRIMITIVE_VARIABLE_EXPRESSION__PRIMITIVE_VARIABLE, oldPrimitiveVariable,
+					primitiveVariable));
 	}
 
 	/**

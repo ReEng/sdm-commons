@@ -26,8 +26,7 @@ import org.storydriven.storydiagrams.patterns.StoryPattern;
  *
  * @generated
  */
-public abstract class StoryNodeImpl extends ActivityNodeImpl implements
-		StoryNode {
+public abstract class StoryNodeImpl extends ActivityNodeImpl implements StoryNode {
 	/**
 	 * The default value of the '{@link #isForEach() <em>For Each</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -79,8 +78,8 @@ public abstract class StoryNodeImpl extends ActivityNodeImpl implements
 		boolean oldForEach = forEach;
 		forEach = newForEach;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActivitiesPackage.STORY_NODE__FOR_EACH, oldForEach, forEach));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.STORY_NODE__FOR_EACH, oldForEach,
+					forEach));
 	}
 
 	/**

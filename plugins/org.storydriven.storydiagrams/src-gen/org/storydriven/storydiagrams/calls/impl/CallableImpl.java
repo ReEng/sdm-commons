@@ -34,8 +34,7 @@ import org.storydriven.storydiagrams.calls.CallsPackage;
  *
  * @generated
  */
-public abstract class CallableImpl extends CommentableElementImpl implements
-		Callable {
+public abstract class CallableImpl extends CommentableElementImpl implements Callable {
 	/**
 	 * The cached value of the '{@link #getInParameters() <em>In Parameter</em>}' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -84,8 +83,7 @@ public abstract class CallableImpl extends CommentableElementImpl implements
 	 */
 	public EList<EParameter> getContainedParameters() {
 		if (containedParameters == null) {
-			containedParameters = new EObjectContainmentEList.Resolving<EParameter>(
-					EParameter.class, this,
+			containedParameters = new EObjectContainmentEList.Resolving<EParameter>(EParameter.class, this,
 					CallsPackage.CALLABLE__CONTAINED_PARAMETERS);
 		}
 		return containedParameters;
@@ -96,13 +94,13 @@ public abstract class CallableImpl extends CommentableElementImpl implements
 	 * @generated NOT
 	 */
 	public EList<EParameter> getInParameters() {
-		if (eContainer() instanceof OperationExtension) {
+		if(eContainer() instanceof OperationExtension) {
 			return ((OperationExtension) eContainer()).getInParameters();
 		}
 
 		if (inParameters == null) {
-			inParameters = new EObjectResolvingEList<EParameter>(
-					EParameter.class, this, CallsPackage.CALLABLE__IN_PARAMETER);
+			inParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
+					CallsPackage.CALLABLE__IN_PARAMETER);
 		}
 		return inParameters;
 	}
@@ -112,13 +110,12 @@ public abstract class CallableImpl extends CommentableElementImpl implements
 	 * @generated NOT
 	 */
 	public EList<EParameter> getOutParameters() {
-		if (eContainer() instanceof OperationExtension) {
+		if(eContainer() instanceof OperationExtension) {
 			return ((OperationExtension) eContainer()).getOutParameters();
 		}
 
 		if (outParameters == null) {
-			outParameters = new EObjectResolvingEList<EParameter>(
-					EParameter.class, this,
+			outParameters = new EObjectResolvingEList<EParameter>(EParameter.class, this,
 					CallsPackage.CALLABLE__OUT_PARAMETER);
 		}
 		return outParameters;
@@ -129,12 +126,10 @@ public abstract class CallableImpl extends CommentableElementImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CallsPackage.CALLABLE__CONTAINED_PARAMETERS:
-			return ((InternalEList<?>) getContainedParameters()).basicRemove(
-					otherEnd, msgs);
+			return ((InternalEList<?>) getContainedParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -166,18 +161,15 @@ public abstract class CallableImpl extends CommentableElementImpl implements
 		switch (featureID) {
 		case CallsPackage.CALLABLE__IN_PARAMETER:
 			getInParameters().clear();
-			getInParameters().addAll(
-					(Collection<? extends EParameter>) newValue);
+			getInParameters().addAll((Collection<? extends EParameter>) newValue);
 			return;
 		case CallsPackage.CALLABLE__OUT_PARAMETER:
 			getOutParameters().clear();
-			getOutParameters().addAll(
-					(Collection<? extends EParameter>) newValue);
+			getOutParameters().addAll((Collection<? extends EParameter>) newValue);
 			return;
 		case CallsPackage.CALLABLE__CONTAINED_PARAMETERS:
 			getContainedParameters().clear();
-			getContainedParameters().addAll(
-					(Collection<? extends EParameter>) newValue);
+			getContainedParameters().addAll((Collection<? extends EParameter>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -215,8 +207,7 @@ public abstract class CallableImpl extends CommentableElementImpl implements
 		case CallsPackage.CALLABLE__OUT_PARAMETER:
 			return outParameters != null && !outParameters.isEmpty();
 		case CallsPackage.CALLABLE__CONTAINED_PARAMETERS:
-			return containedParameters != null
-					&& !containedParameters.isEmpty();
+			return containedParameters != null && !containedParameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

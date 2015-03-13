@@ -477,7 +477,7 @@ public class CommonExpressionsPackageImpl extends EPackageImpl implements
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				!IS_ORDERED);
 		initEAttribute(getUnaryExpression_Operator(), this.getUnaryOperator(),
-				"operator", null, 1, 1, UnaryExpression.class, !IS_TRANSIENT,
+				"operator", "", 1, 1, UnaryExpression.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
@@ -526,7 +526,7 @@ public class CommonExpressionsPackageImpl extends EPackageImpl implements
 				"LiteralExpression", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLiteralExpression_Value(), ecorePackage.getEString(),
-				"value", null, 1, 1, LiteralExpression.class, !IS_TRANSIENT,
+				"value", null, 0, 1, LiteralExpression.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, !IS_ORDERED);
 
@@ -560,31 +560,14 @@ public class CommonExpressionsPackageImpl extends EPackageImpl implements
 
 		initEEnum(unaryOperatorEEnum, UnaryOperator.class, "UnaryOperator");
 		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.NOT);
+		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.PLUS);
 		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.MINUS);
 		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.INCREMENT);
 		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.DECREMENT);
 
 		// Create annotations
-		// http://www.eclipse.org/emf/2002/Ecore
-		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/GenModel
 		createGenModelAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";
-		addAnnotation(this, source, new String[] { "invocationDelegates",
-				"http://www.eclipse.org/emf/2002/Ecore/OCL",
-				"settingDelegates",
-				"http://www.eclipse.org/emf/2002/Ecore/OCL",
-				"validationDelegates",
-				"http://www.eclipse.org/emf/2002/Ecore/OCL" });
 	}
 
 	/**
@@ -601,12 +584,9 @@ public class CommonExpressionsPackageImpl extends EPackageImpl implements
 				new String[] {
 						"documentation",
 						"Defines the operators for binary logic expressions. The unary logic expression representing negated expressions is reflected by the NotExpression." });
-		addAnnotation(
-				comparingOperatorEEnum,
-				source,
-				new String[] {
-						"documentation",
-						"Defines the operators for comparing expressions. The operators LESS, LESS_OR_EQUAL, EQUAL,\r\nGREATER_OR_EQUAL, GREATER, and UNEQUAL have their usual semantics.\r\nThe operator REGULAR_EXPRESSION enables to compare a String contained in the\r\nleft hand side of a ComparisonExpression with a regular expression contained in the \r\nright hand side of the ComparisonExpression." });
+		addAnnotation(comparingOperatorEEnum, source, new String[] {
+				"documentation",
+				"Defines the operators for comparing expressions." });
 		addAnnotation(
 				comparingOperatorEEnum.getELiterals().get(6),
 				source,

@@ -110,36 +110,36 @@ public abstract class ExtendableElementImpl extends EObjectImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public Extension getExtension(final EClass type) {
+	public Extension getExtension(EClass type) {
 		return ExtendableElementOperations.getExtension(this, type);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public Extension provideExtension(final EClass type) {
+	public Extension provideExtension(EClass type) {
 		return ExtendableElementOperations.provideExtension(this, type);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public EAnnotation getAnnotation(final String source) {
+	public EAnnotation getAnnotation(String source) {
 		return ExtendableElementOperations.getAnnotation(this, source);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public EAnnotation provideAnnotation(final String source) {
+	public EAnnotation provideAnnotation(String source) {
 		return ExtendableElementOperations.provideAnnotation(this, source);
 	}
 

@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.storydriven.storydiagrams.calls.*;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 import org.storydriven.storydiagrams.calls.CallsPackage;
 import org.storydriven.storydiagrams.calls.OpaqueCallable;
@@ -34,7 +33,7 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory {
 	public static CallsFactory init() {
 		try {
 			CallsFactory theCallsFactory = (CallsFactory) EPackage.Registry.INSTANCE
-					.getEFactory(CallsPackage.eNS_URI);
+					.getEFactory("http://www.storydriven.org/storydiagrams/calls/0.2.0");
 			if (theCallsFactory != null) {
 				return theCallsFactory;
 			}
@@ -69,8 +68,7 @@ public class CallsFactoryImpl extends EFactoryImpl implements CallsFactory {
 		case CallsPackage.PARAMETER_EXTENSION:
 			return createParameterExtension();
 		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 

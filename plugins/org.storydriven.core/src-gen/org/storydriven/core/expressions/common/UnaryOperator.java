@@ -33,6 +33,16 @@ public enum UnaryOperator implements Enumerator {
 	NOT(0, "NOT", "NOT"),
 
 	/**
+	 * The '<em><b>PLUS</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #PLUS_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	PLUS(1, "PLUS", "PLUS"),
+
+	/**
 	 * The '<em><b>MINUS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -72,6 +82,21 @@ public enum UnaryOperator implements Enumerator {
 	 * @ordered
 	 */
 	public static final int NOT_VALUE = 0;
+
+	/**
+	 * The '<em><b>PLUS</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>PLUS</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #PLUS
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PLUS_VALUE = 1;
 
 	/**
 	 * The '<em><b>MINUS</b></em>' literal value.
@@ -125,7 +150,7 @@ public enum UnaryOperator implements Enumerator {
 	 * @generated
 	 */
 	private static final UnaryOperator[] VALUES_ARRAY = new UnaryOperator[] {
-			NOT, MINUS, INCREMENT, DECREMENT, };
+			NOT, PLUS, MINUS, INCREMENT, DECREMENT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Unary Operator</b></em>' enumerators.
@@ -178,6 +203,8 @@ public enum UnaryOperator implements Enumerator {
 		switch (value) {
 		case NOT_VALUE:
 			return NOT;
+		case PLUS_VALUE:
+			return PLUS;
 		case MINUS_VALUE:
 			return MINUS;
 		case INCREMENT_VALUE:

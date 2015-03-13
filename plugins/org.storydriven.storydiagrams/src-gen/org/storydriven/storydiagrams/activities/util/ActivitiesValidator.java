@@ -12,7 +12,6 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.storydriven.storydiagrams.activities.*;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
@@ -109,52 +108,38 @@ public class ActivitiesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	@Override
-	protected boolean validate(int classifierID, Object value,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
+	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
 		case ActivitiesPackage.EXCEPTION_VARIABLE:
-			return validateExceptionVariable((ExceptionVariable) value,
-					diagnostics, context);
+			return validateExceptionVariable((ExceptionVariable) value, diagnostics, context);
 		case ActivitiesPackage.ACTIVITY_EDGE:
-			return validateActivityEdge((ActivityEdge) value, diagnostics,
-					context);
+			return validateActivityEdge((ActivityEdge) value, diagnostics, context);
 		case ActivitiesPackage.ACTIVITY_NODE:
-			return validateActivityNode((ActivityNode) value, diagnostics,
-					context);
+			return validateActivityNode((ActivityNode) value, diagnostics, context);
 		case ActivitiesPackage.ACTIVITY:
 			return validateActivity((Activity) value, diagnostics, context);
 		case ActivitiesPackage.OPERATION_EXTENSION:
-			return validateOperationExtension((OperationExtension) value,
-					diagnostics, context);
+			return validateOperationExtension((OperationExtension) value, diagnostics, context);
 		case ActivitiesPackage.MATCHING_STORY_NODE:
-			return validateMatchingStoryNode((MatchingStoryNode) value,
-					diagnostics, context);
+			return validateMatchingStoryNode((MatchingStoryNode) value, diagnostics, context);
 		case ActivitiesPackage.STORY_NODE:
 			return validateStoryNode((StoryNode) value, diagnostics, context);
 		case ActivitiesPackage.STRUCTURED_NODE:
-			return validateStructuredNode((StructuredNode) value, diagnostics,
-					context);
+			return validateStructuredNode((StructuredNode) value, diagnostics, context);
 		case ActivitiesPackage.JUNCTION_NODE:
-			return validateJunctionNode((JunctionNode) value, diagnostics,
-					context);
+			return validateJunctionNode((JunctionNode) value, diagnostics, context);
 		case ActivitiesPackage.INITIAL_NODE:
-			return validateInitialNode((InitialNode) value, diagnostics,
-					context);
+			return validateInitialNode((InitialNode) value, diagnostics, context);
 		case ActivitiesPackage.STATEMENT_NODE:
-			return validateStatementNode((StatementNode) value, diagnostics,
-					context);
+			return validateStatementNode((StatementNode) value, diagnostics, context);
 		case ActivitiesPackage.ACTIVITY_FINAL_NODE:
-			return validateActivityFinalNode((ActivityFinalNode) value,
-					diagnostics, context);
+			return validateActivityFinalNode((ActivityFinalNode) value, diagnostics, context);
 		case ActivitiesPackage.ACTIVITY_CALL_NODE:
-			return validateActivityCallNode((ActivityCallNode) value,
-					diagnostics, context);
+			return validateActivityCallNode((ActivityCallNode) value, diagnostics, context);
 		case ActivitiesPackage.MODIFYING_STORY_NODE:
-			return validateModifyingStoryNode((ModifyingStoryNode) value,
-					diagnostics, context);
+			return validateModifyingStoryNode((ModifyingStoryNode) value, diagnostics, context);
 		case ActivitiesPackage.FLOW_FINAL_NODE:
-			return validateFlowFinalNode((FlowFinalNode) value, diagnostics,
-					context);
+			return validateFlowFinalNode((FlowFinalNode) value, diagnostics, context);
 		case ActivitiesPackage.EDGE_GUARD:
 			return validateEdgeGuard((EdgeGuard) value, diagnostics, context);
 		default:
@@ -167,11 +152,9 @@ public class ActivitiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateExceptionVariable(
-			ExceptionVariable exceptionVariable, DiagnosticChain diagnostics,
+	public boolean validateExceptionVariable(ExceptionVariable exceptionVariable, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(exceptionVariable, diagnostics,
-				context);
+		return validate_EveryDefaultConstraint(exceptionVariable, diagnostics, context);
 	}
 
 	/**
@@ -179,10 +162,9 @@ public class ActivitiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateActivityEdge(ActivityEdge activityEdge,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(activityEdge, diagnostics,
-				context);
+	public boolean validateActivityEdge(ActivityEdge activityEdge, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(activityEdge, diagnostics, context);
 	}
 
 	/**
@@ -190,10 +172,9 @@ public class ActivitiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateActivityNode(ActivityNode activityNode,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(activityNode, diagnostics,
-				context);
+	public boolean validateActivityNode(ActivityNode activityNode, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(activityNode, diagnostics, context);
 	}
 
 	/**
@@ -201,8 +182,7 @@ public class ActivitiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateActivity(Activity activity,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateActivity(Activity activity, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(activity, diagnostics, context);
 	}
 
@@ -211,38 +191,27 @@ public class ActivitiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateOperationExtension(
-			OperationExtension operationExtension, DiagnosticChain diagnostics,
+	public boolean validateOperationExtension(OperationExtension operationExtension, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(operationExtension, diagnostics,
-				context))
+		if (!validate_NoCircularContainment(operationExtension, diagnostics, context))
 			return false;
-		boolean result = validate_EveryMultiplicityConforms(operationExtension,
-				diagnostics, context);
+		boolean result = validate_EveryMultiplicityConforms(operationExtension, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryDataValueConforms(operationExtension,
-					diagnostics, context);
+			result &= validate_EveryDataValueConforms(operationExtension, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryReferenceIsContained(operationExtension,
-					diagnostics, context);
+			result &= validate_EveryReferenceIsContained(operationExtension, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryBidirectionalReferenceIsPaired(
-					operationExtension, diagnostics, context);
+			result &= validate_EveryBidirectionalReferenceIsPaired(operationExtension, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryProxyResolves(operationExtension,
-					diagnostics, context);
+			result &= validate_EveryProxyResolves(operationExtension, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_UniqueID(operationExtension, diagnostics,
-					context);
+			result &= validate_UniqueID(operationExtension, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryKeyUnique(operationExtension, diagnostics,
-					context);
+			result &= validate_EveryKeyUnique(operationExtension, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryMapEntryUnique(operationExtension,
-					diagnostics, context);
+			result &= validate_EveryMapEntryUnique(operationExtension, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateOperationExtension_NumberOfOutParams(
-					operationExtension, diagnostics, context);
+			result &= validateOperationExtension_NumberOfOutParams(operationExtension, diagnostics, context);
 		return result;
 	}
 
@@ -252,9 +221,8 @@ public class ActivitiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateOperationExtension_NumberOfOutParams(
-			OperationExtension operationExtension, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
+	public boolean validateOperationExtension_NumberOfOutParams(OperationExtension operationExtension,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return operationExtension.NumberOfOutParams(diagnostics, context);
 	}
 
@@ -263,11 +231,9 @@ public class ActivitiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMatchingStoryNode(
-			MatchingStoryNode matchingStoryNode, DiagnosticChain diagnostics,
+	public boolean validateMatchingStoryNode(MatchingStoryNode matchingStoryNode, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(matchingStoryNode, diagnostics,
-				context);
+		return validate_EveryDefaultConstraint(matchingStoryNode, diagnostics, context);
 	}
 
 	/**
@@ -275,8 +241,7 @@ public class ActivitiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateStoryNode(StoryNode storyNode,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateStoryNode(StoryNode storyNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(storyNode, diagnostics, context);
 	}
 
@@ -285,55 +250,9 @@ public class ActivitiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateStructuredNode(StructuredNode structuredNode,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(structuredNode, diagnostics,
-				context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateJunctionNode(JunctionNode junctionNode,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(junctionNode, diagnostics,
-				context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateInitialNode(InitialNode initialNode,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(initialNode, diagnostics,
-				context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateStatementNode(StatementNode statementNode,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(statementNode, diagnostics,
-				context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateActivityFinalNode(
-			ActivityFinalNode activityFinalNode, DiagnosticChain diagnostics,
+	public boolean validateStructuredNode(StructuredNode structuredNode, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(activityFinalNode, diagnostics,
-				context);
+		return validate_EveryDefaultConstraint(structuredNode, diagnostics, context);
 	}
 
 	/**
@@ -341,22 +260,9 @@ public class ActivitiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateActivityCallNode(ActivityCallNode activityCallNode,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(activityCallNode, diagnostics,
-				context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateModifyingStoryNode(
-			ModifyingStoryNode modifyingStoryNode, DiagnosticChain diagnostics,
+	public boolean validateJunctionNode(JunctionNode junctionNode, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(modifyingStoryNode, diagnostics,
-				context);
+		return validate_EveryDefaultConstraint(junctionNode, diagnostics, context);
 	}
 
 	/**
@@ -364,10 +270,8 @@ public class ActivitiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFlowFinalNode(FlowFinalNode flowFinalNode,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(flowFinalNode, diagnostics,
-				context);
+	public boolean validateInitialNode(InitialNode initialNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(initialNode, diagnostics, context);
 	}
 
 	/**
@@ -375,8 +279,57 @@ public class ActivitiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEdgeGuard(EdgeGuard edgeGuard,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateStatementNode(StatementNode statementNode, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(statementNode, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateActivityFinalNode(ActivityFinalNode activityFinalNode, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(activityFinalNode, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateActivityCallNode(ActivityCallNode activityCallNode, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(activityCallNode, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateModifyingStoryNode(ModifyingStoryNode modifyingStoryNode, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(modifyingStoryNode, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFlowFinalNode(FlowFinalNode flowFinalNode, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(flowFinalNode, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEdgeGuard(EdgeGuard edgeGuard, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

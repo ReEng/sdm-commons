@@ -40,8 +40,7 @@ import org.storydriven.storydiagrams.impl.VariableImpl;
  *
  * @generated
  */
-public class ParameterExtensionImpl extends VariableImpl implements
-		ParameterExtension {
+public class ParameterExtensionImpl extends VariableImpl implements ParameterExtension {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -173,8 +172,7 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetExtendableBase(
-			ExtendableElement newExtendableBase, NotificationChain msgs) {
+	public NotificationChain basicSetExtendableBase(ExtendableElement newExtendableBase, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject) newExtendableBase,
 				CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE, msgs);
 		return msgs;
@@ -188,21 +186,18 @@ public class ParameterExtensionImpl extends VariableImpl implements
 		if (newExtendableBase != eInternalContainer()
 				|| (eContainerFeatureID() != CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE && newExtendableBase != null)) {
 			if (EcoreUtil.isAncestor(this, newExtendableBase))
-				throw new IllegalArgumentException(
-						"Recursive containment not allowed for " + toString());
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newExtendableBase != null)
 				msgs = ((InternalEObject) newExtendableBase).eInverseAdd(this,
-						CorePackage.EXTENDABLE_ELEMENT__EXTENSION,
-						ExtendableElement.class, msgs);
+						CorePackage.EXTENDABLE_ELEMENT__EXTENSION, ExtendableElement.class, msgs);
 			msgs = basicSetExtendableBase(newExtendableBase, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE,
+			eNotify(new ENotificationImpl(this, Notification.SET, CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE,
 					newExtendableBase, newExtendableBase));
 	}
 
@@ -253,8 +248,7 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
 			if (eInternalContainer() != null)
@@ -269,8 +263,7 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
 			return basicSetExtendableBase(null, msgs);
@@ -283,12 +276,10 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(
-			NotificationChain msgs) {
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case CallsPackage.PARAMETER_EXTENSION__EXTENDABLE_BASE:
-			return eInternalContainer().eInverseRemove(this,
-					CorePackage.EXTENDABLE_ELEMENT__EXTENSION,
+			return eInternalContainer().eInverseRemove(this, CorePackage.EXTENDABLE_ELEMENT__EXTENSION,
 					ExtendableElement.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -442,8 +433,7 @@ public class ParameterExtensionImpl extends VariableImpl implements
 	 */
 	public EObject getBase() {
 		EObject base = basicGetBase();
-		return base != null && base.eIsProxy() ? eResolveProxy((InternalEObject) base)
-				: base;
+		return base != null && base.eIsProxy() ? eResolveProxy((InternalEObject) base) : base;
 	}
 
 	/**

@@ -19,8 +19,7 @@ import org.storydriven.storydiagrams.activities.FlowFinalNode;
  *
  * @generated
  */
-public class FlowFinalNodeImpl extends ActivityFinalNodeImpl implements
-		FlowFinalNode {
+public class FlowFinalNodeImpl extends ActivityFinalNodeImpl implements FlowFinalNode {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

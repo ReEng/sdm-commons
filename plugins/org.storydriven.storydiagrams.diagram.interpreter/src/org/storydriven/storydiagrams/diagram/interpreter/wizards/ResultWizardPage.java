@@ -19,6 +19,7 @@ import org.storydriven.storydiagrams.diagram.custom.DiagramImages;
 import org.storydriven.storydiagrams.diagram.interpreter.providers.ResultContentProvider;
 import org.storydriven.storydiagrams.diagram.interpreter.providers.ResultLabelProvider;
 
+import de.mdelab.sdm.interpreter.core.SDMInterpreterConstants;
 import de.mdelab.sdm.interpreter.core.variables.Variable;
 
 public class ResultWizardPage extends WizardPage {
@@ -58,7 +59,7 @@ public class ResultWizardPage extends WizardPage {
 
 			Map<String, Variable<EClassifier>> results = getWizard().getResults();
 			if (results != null) {
-				Variable<EClassifier> result = results.get("resultValue");
+				Variable<EClassifier> result = results.get(SDMInterpreterConstants.RETURN_VALUE_VAR_NAME);
 
 				labelProvider.setResult(result);
 				resultComposite.setVisible(true);

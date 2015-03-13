@@ -97,7 +97,6 @@ public interface OpaqueCallable extends Callable {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.oclAsType(Callable).out->size() <= 1'"
 	 * @generated
 	 */
-	boolean NumberOfOutParams(DiagnosticChain diagnostics,
-			Map<Object, Object> context);
+	boolean NumberOfOutParams(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // OpaqueCallable

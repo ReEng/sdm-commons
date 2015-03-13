@@ -39,8 +39,7 @@ import org.storydriven.storydiagrams.templates.TemplatesPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplatesPackageImpl extends EPackageImpl implements
-		TemplatesPackage {
+public class TemplatesPackageImpl extends EPackageImpl implements TemplatesPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,12 +101,10 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 	 */
 	public static TemplatesPackage init() {
 		if (isInited)
-			return (TemplatesPackage) EPackage.Registry.INSTANCE
-					.getEPackage(TemplatesPackage.eNS_URI);
+			return (TemplatesPackage) EPackage.Registry.INSTANCE.getEPackage(TemplatesPackage.eNS_URI);
 
 		// Obtain or create and register package
-		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE
+		TemplatesPackageImpl theTemplatesPackage = (TemplatesPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof TemplatesPackageImpl ? EPackage.Registry.INSTANCE
 				.get(eNS_URI) : new TemplatesPackageImpl());
 
 		isInited = true;
@@ -118,31 +115,25 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 		// Obtain or create and register interdependencies
 		StorydiagramsPackageImpl theStorydiagramsPackage = (StorydiagramsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(StorydiagramsPackage.eNS_URI) instanceof StorydiagramsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(StorydiagramsPackage.eNS_URI)
-				: StorydiagramsPackage.eINSTANCE);
+				.getEPackage(StorydiagramsPackage.eNS_URI) : StorydiagramsPackage.eINSTANCE);
 		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ActivitiesPackage.eNS_URI)
-				: ActivitiesPackage.eINSTANCE);
+				.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);
 		ActivitiesExpressionsPackageImpl theActivitiesExpressionsPackage = (ActivitiesExpressionsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(ActivitiesExpressionsPackage.eNS_URI) instanceof ActivitiesExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(ActivitiesExpressionsPackage.eNS_URI)
-				: ActivitiesExpressionsPackage.eINSTANCE);
+				.getEPackage(ActivitiesExpressionsPackage.eNS_URI) : ActivitiesExpressionsPackage.eINSTANCE);
 		CallsPackageImpl theCallsPackage = (CallsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(CallsPackage.eNS_URI) instanceof CallsPackageImpl ? EPackage.Registry.INSTANCE
 				.getEPackage(CallsPackage.eNS_URI) : CallsPackage.eINSTANCE);
 		CallsExpressionsPackageImpl theCallsExpressionsPackage = (CallsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(CallsExpressionsPackage.eNS_URI) instanceof CallsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(CallsExpressionsPackage.eNS_URI)
-				: CallsExpressionsPackage.eINSTANCE);
+				.getEPackage(CallsExpressionsPackage.eNS_URI) : CallsExpressionsPackage.eINSTANCE);
 		PatternsPackageImpl thePatternsPackage = (PatternsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(PatternsPackage.eNS_URI) instanceof PatternsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(PatternsPackage.eNS_URI)
-				: PatternsPackage.eINSTANCE);
+				.getEPackage(PatternsPackage.eNS_URI) : PatternsPackage.eINSTANCE);
 		PatternsExpressionsPackageImpl thePatternsExpressionsPackage = (PatternsExpressionsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(PatternsExpressionsPackage.eNS_URI) instanceof PatternsExpressionsPackageImpl ? EPackage.Registry.INSTANCE
-				.getEPackage(PatternsExpressionsPackage.eNS_URI)
-				: PatternsExpressionsPackage.eINSTANCE);
+				.getEPackage(PatternsExpressionsPackage.eNS_URI) : PatternsExpressionsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theTemplatesPackage.createPackageContents();
@@ -168,8 +159,7 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 		theTemplatesPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(TemplatesPackage.eNS_URI,
-				theTemplatesPackage);
+		EPackage.Registry.INSTANCE.put(TemplatesPackage.eNS_URI, theTemplatesPackage);
 		return theTemplatesPackage;
 	}
 
@@ -188,8 +178,7 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getTemplateBinding_BoundParameter() {
-		return (EReference) templateBindingEClass.getEStructuralFeatures().get(
-				0);
+		return (EReference) templateBindingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -198,8 +187,7 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getTemplateBinding_BindingExpression() {
-		return (EReference) templateBindingEClass.getEStructuralFeatures().get(
-				1);
+		return (EReference) templateBindingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -208,8 +196,7 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getTemplateBinding_Template() {
-		return (EReference) templateBindingEClass.getEStructuralFeatures().get(
-				2);
+		return (EReference) templateBindingEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -218,8 +205,7 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getTemplateBinding_PropertyBinding() {
-		return (EReference) templateBindingEClass.getEStructuralFeatures().get(
-				3);
+		return (EReference) templateBindingEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -237,8 +223,7 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getPropertyBinding_BoundProperty() {
-		return (EReference) propertyBindingEClass.getEStructuralFeatures().get(
-				0);
+		return (EReference) propertyBindingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -247,8 +232,7 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getPropertyBinding_BindingExpression() {
-		return (EReference) propertyBindingEClass.getEStructuralFeatures().get(
-				1);
+		return (EReference) propertyBindingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -257,8 +241,7 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getPropertyBinding_TemplateBinding() {
-		return (EReference) propertyBindingEClass.getEStructuralFeatures().get(
-				2);
+		return (EReference) propertyBindingEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -276,8 +259,7 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getTemplateSignature_TemplateBinding() {
-		return (EReference) templateSignatureEClass.getEStructuralFeatures()
-				.get(0);
+		return (EReference) templateSignatureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -286,8 +268,7 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getTemplateSignature_TypeParameter() {
-		return (EReference) templateSignatureEClass.getEStructuralFeatures()
-				.get(1);
+		return (EReference) templateSignatureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -296,8 +277,7 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getTemplateSignature_Pattern() {
-		return (EReference) templateSignatureEClass.getEStructuralFeatures()
-				.get(2);
+		return (EReference) templateSignatureEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -330,27 +310,19 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 
 		// Create classes and their features
 		templateBindingEClass = createEClass(TEMPLATE_BINDING);
-		createEReference(templateBindingEClass,
-				TEMPLATE_BINDING__BOUND_PARAMETER);
-		createEReference(templateBindingEClass,
-				TEMPLATE_BINDING__BINDING_EXPRESSION);
+		createEReference(templateBindingEClass, TEMPLATE_BINDING__BOUND_PARAMETER);
+		createEReference(templateBindingEClass, TEMPLATE_BINDING__BINDING_EXPRESSION);
 		createEReference(templateBindingEClass, TEMPLATE_BINDING__TEMPLATE);
-		createEReference(templateBindingEClass,
-				TEMPLATE_BINDING__PROPERTY_BINDING);
+		createEReference(templateBindingEClass, TEMPLATE_BINDING__PROPERTY_BINDING);
 
 		propertyBindingEClass = createEClass(PROPERTY_BINDING);
-		createEReference(propertyBindingEClass,
-				PROPERTY_BINDING__BOUND_PROPERTY);
-		createEReference(propertyBindingEClass,
-				PROPERTY_BINDING__BINDING_EXPRESSION);
-		createEReference(propertyBindingEClass,
-				PROPERTY_BINDING__TEMPLATE_BINDING);
+		createEReference(propertyBindingEClass, PROPERTY_BINDING__BOUND_PROPERTY);
+		createEReference(propertyBindingEClass, PROPERTY_BINDING__BINDING_EXPRESSION);
+		createEReference(propertyBindingEClass, PROPERTY_BINDING__TEMPLATE_BINDING);
 
 		templateSignatureEClass = createEClass(TEMPLATE_SIGNATURE);
-		createEReference(templateSignatureEClass,
-				TEMPLATE_SIGNATURE__TEMPLATE_BINDING);
-		createEReference(templateSignatureEClass,
-				TEMPLATE_SIGNATURE__TYPE_PARAMETER);
+		createEReference(templateSignatureEClass, TEMPLATE_SIGNATURE__TEMPLATE_BINDING);
+		createEReference(templateSignatureEClass, TEMPLATE_SIGNATURE__TYPE_PARAMETER);
 		createEReference(templateSignatureEClass, TEMPLATE_SIGNATURE__PATTERN);
 	}
 
@@ -379,10 +351,8 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CorePackage theCorePackage = (CorePackage) EPackage.Registry.INSTANCE
-				.getEPackage(CorePackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE
-				.getEPackage(EcorePackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage) EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage) EPackage.Registry.INSTANCE
 				.getEPackage(ExpressionsPackage.eNS_URI);
 		PatternsPackage thePatternsPackage = (PatternsPackage) EPackage.Registry.INSTANCE
@@ -393,80 +363,53 @@ public class TemplatesPackageImpl extends EPackageImpl implements
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		templateBindingEClass.getESuperTypes().add(
-				theCorePackage.getExtendableElement());
-		propertyBindingEClass.getESuperTypes().add(
-				theCorePackage.getExtendableElement());
+		templateBindingEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
+		propertyBindingEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(templateBindingEClass, TemplateBinding.class,
-				"TemplateBinding", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(templateBindingEClass, TemplateBinding.class, "TemplateBinding", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTemplateBinding_BoundParameter(),
-				theEcorePackage.getEClassifier(), null, "boundParameter", null,
-				1, 1, TemplateBinding.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getTemplateBinding_BindingExpression(),
-				theExpressionsPackage.getExpression(), null,
-				"bindingExpression", null, 1, 1, TemplateBinding.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getTemplateBinding_Template(),
-				this.getTemplateSignature(),
-				this.getTemplateSignature_TemplateBinding(), "template", null,
-				1, 1, TemplateBinding.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getTemplateBinding_PropertyBinding(),
-				this.getPropertyBinding(),
-				this.getPropertyBinding_TemplateBinding(), "propertyBinding",
-				null, 0, -1, TemplateBinding.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTemplateBinding_BoundParameter(), theEcorePackage.getEClassifier(), null, "boundParameter",
+				null, 1, 1, TemplateBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTemplateBinding_BindingExpression(), theExpressionsPackage.getExpression(), null,
+				"bindingExpression", null, 1, 1, TemplateBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTemplateBinding_Template(), this.getTemplateSignature(),
+				this.getTemplateSignature_TemplateBinding(), "template", null, 1, 1, TemplateBinding.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTemplateBinding_PropertyBinding(), this.getPropertyBinding(),
+				this.getPropertyBinding_TemplateBinding(), "propertyBinding", null, 0, -1, TemplateBinding.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(propertyBindingEClass, PropertyBinding.class,
-				"PropertyBinding", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(propertyBindingEClass, PropertyBinding.class, "PropertyBinding", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPropertyBinding_BoundProperty(),
-				theEcorePackage.getEStructuralFeature(), null, "boundProperty",
-				null, 1, 1, PropertyBinding.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getPropertyBinding_BindingExpression(),
-				theExpressionsPackage.getExpression(), null,
-				"bindingExpression", null, 1, 1, PropertyBinding.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getPropertyBinding_TemplateBinding(),
-				this.getTemplateBinding(),
-				this.getTemplateBinding_PropertyBinding(), "templateBinding",
-				null, 1, 1, PropertyBinding.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPropertyBinding_BoundProperty(), theEcorePackage.getEStructuralFeature(), null,
+				"boundProperty", null, 1, 1, PropertyBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPropertyBinding_BindingExpression(), theExpressionsPackage.getExpression(), null,
+				"bindingExpression", null, 1, 1, PropertyBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPropertyBinding_TemplateBinding(), this.getTemplateBinding(),
+				this.getTemplateBinding_PropertyBinding(), "templateBinding", null, 1, 1, PropertyBinding.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(templateSignatureEClass, TemplateSignature.class,
-				"TemplateSignature", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(templateSignatureEClass, TemplateSignature.class, "TemplateSignature", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTemplateSignature_TemplateBinding(),
-				this.getTemplateBinding(), this.getTemplateBinding_Template(),
-				"templateBinding", null, 0, -1, TemplateSignature.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				!IS_ORDERED);
-		initEReference(getTemplateSignature_TypeParameter(),
-				theEcorePackage.getEClassifier(), null, "typeParameter", null,
-				0, -1, TemplateSignature.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getTemplateSignature_Pattern(),
-				thePatternsPackage.getStoryPattern(),
-				thePatternsPackage.getStoryPattern_TemplateSignature(),
-				"pattern", null, 1, 1, TemplateSignature.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTemplateSignature_TemplateBinding(), this.getTemplateBinding(),
+				this.getTemplateBinding_Template(), "templateBinding", null, 0, -1, TemplateSignature.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTemplateSignature_TypeParameter(), theEcorePackage.getEClassifier(), null, "typeParameter",
+				null, 0, -1, TemplateSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTemplateSignature_Pattern(), thePatternsPackage.getStoryPattern(),
+				thePatternsPackage.getStoryPattern_TemplateSignature(), "pattern", null, 1, 1, TemplateSignature.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 	}
 
 } //TemplatesPackageImpl

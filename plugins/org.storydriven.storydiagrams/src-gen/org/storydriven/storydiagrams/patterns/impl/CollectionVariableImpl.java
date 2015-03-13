@@ -26,8 +26,7 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
  *
  * @generated
  */
-public class CollectionVariableImpl extends ObjectVariableImpl implements
-		CollectionVariable {
+public class CollectionVariableImpl extends ObjectVariableImpl implements CollectionVariable {
 	/**
 	 * The default value of the '{@link #isAtLeastOne() <em>At Least One</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -105,8 +104,7 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements
 		boolean oldAtLeastOne = atLeastOne;
 		atLeastOne = newAtLeastOne;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE,
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.COLLECTION_VARIABLE__AT_LEAST_ONE,
 					oldAtLeastOne, atLeastOne));
 	}
 
@@ -128,9 +126,8 @@ public class CollectionVariableImpl extends ObjectVariableImpl implements
 		boolean oldUnique = unique;
 		unique = newUnique;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PatternsPackage.COLLECTION_VARIABLE__UNIQUE, oldUnique,
-					unique));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.COLLECTION_VARIABLE__UNIQUE,
+					oldUnique, unique));
 	}
 
 	/**

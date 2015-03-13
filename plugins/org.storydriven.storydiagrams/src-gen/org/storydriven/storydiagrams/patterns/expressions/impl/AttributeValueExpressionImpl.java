@@ -30,8 +30,7 @@ import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsPac
  *
  * @generated
  */
-public class AttributeValueExpressionImpl extends ExpressionImpl implements
-		AttributeValueExpression {
+public class AttributeValueExpressionImpl extends ExpressionImpl implements AttributeValueExpression {
 	/**
 	 * The cached value of the '{@link #getObject() <em>Object</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -82,11 +81,8 @@ public class AttributeValueExpressionImpl extends ExpressionImpl implements
 			object = (ObjectVariable) eResolveProxy(oldObject);
 			if (object != oldObject) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT,
-							oldObject, object));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT, oldObject, object));
 			}
 		}
 		return object;
@@ -110,11 +106,8 @@ public class AttributeValueExpressionImpl extends ExpressionImpl implements
 		ObjectVariable oldObject = object;
 		object = newObject;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT,
-					oldObject, object));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__OBJECT, oldObject, object));
 	}
 
 	/**
@@ -128,11 +121,8 @@ public class AttributeValueExpressionImpl extends ExpressionImpl implements
 			attribute = (EAttribute) eResolveProxy(oldAttribute);
 			if (attribute != oldAttribute) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE,
-							oldAttribute, attribute));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE, oldAttribute, attribute));
 			}
 		}
 		return attribute;
@@ -156,11 +146,8 @@ public class AttributeValueExpressionImpl extends ExpressionImpl implements
 		EAttribute oldAttribute = attribute;
 		attribute = newAttribute;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE,
-					oldAttribute, attribute));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					PatternsExpressionsPackage.ATTRIBUTE_VALUE_EXPRESSION__ATTRIBUTE, oldAttribute, attribute));
 	}
 
 	/**

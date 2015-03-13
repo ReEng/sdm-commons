@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
-    modelDirectory="/org.storydriven.core/src-gen" creationIcons="false"
-    editDirectory="/org.storydriven.core.edit/src-gen" editorDirectory="/org.storydriven.core.editor/src-gen"
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.storydriven.core/src-gen"
+    creationIcons="false" editDirectory="/org.storydriven.core.edit/src-gen" editorDirectory="/org.storydriven.core.editor/src-gen"
     modelPluginID="org.storydriven.core" templateDirectory="" modelName="Core" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" containmentProxies="true" complianceLevel="6.0"
     suppressGenModelAnnotations="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"

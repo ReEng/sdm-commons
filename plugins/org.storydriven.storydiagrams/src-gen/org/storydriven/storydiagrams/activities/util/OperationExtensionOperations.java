@@ -83,8 +83,7 @@ public class OperationExtensionOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static boolean NumberOfOutParams(
-			OperationExtension operationExtension, DiagnosticChain diagnostics,
+	public static boolean NumberOfOutParams(OperationExtension operationExtension, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		if (NUMBER_OF_OUT_PARAMS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
@@ -93,29 +92,19 @@ public class OperationExtensionOperations {
 				NUMBER_OF_OUT_PARAMS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper
 						.createInvariant(NUMBER_OF_OUT_PARAMS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			} catch (ParserException pe) {
-				throw new UnsupportedOperationException(
-						pe.getLocalizedMessage());
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(
-				NUMBER_OF_OUT_PARAMS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(
-				operationExtension)) {
+		if (!EOCL_ENV.createQuery(NUMBER_OF_OUT_PARAMS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(operationExtension)) {
 			if (diagnostics != null) {
-				diagnostics
-						.add(new BasicDiagnostic(
-								Diagnostic.ERROR,
-								ActivitiesValidator.DIAGNOSTIC_SOURCE,
-								ActivitiesValidator.OPERATION_EXTENSION__NUMBER_OF_OUT_PARAMS,
-								org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE
-										.getString(
-												"_UI_GenericInvariant_diagnostic",
-												new Object[] {
-														"NumberOfOutParams",
-														org.eclipse.emf.ecore.util.EObjectValidator
-																.getObjectLabel(
-																		operationExtension,
-																		context) }),
-								new Object[] { operationExtension }));
+				diagnostics.add(new BasicDiagnostic(Diagnostic.ERROR, ActivitiesValidator.DIAGNOSTIC_SOURCE,
+						ActivitiesValidator.OPERATION_EXTENSION__NUMBER_OF_OUT_PARAMS,
+						org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString(
+								"_UI_GenericInvariant_diagnostic",
+								new Object[] {
+										"NumberOfOutParams",
+										org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(operationExtension,
+												context) }), new Object[] { operationExtension }));
 			}
 			return false;
 		}
@@ -133,16 +122,14 @@ public class OperationExtensionOperations {
 	 * @generated NOT
 	 */
 	public static EOperation getOperation(OperationExtension operationExtension) {
-		EModelElement modelBase = ExtensionOperations
-				.getModelBase(operationExtension);
+		EModelElement modelBase = ExtensionOperations.getModelBase(operationExtension);
 		return modelBase instanceof EOperation ? (EOperation) modelBase : null;
 	}
 
 	/**
 	 * @generated NOT
 	 */
-	public static void setOperation(OperationExtension operationExtension,
-			EOperation operation) {
+	public static void setOperation(OperationExtension operationExtension, EOperation operation) {
 		ExtensionOperations.setModelBase(operationExtension, operation);
 	}
 

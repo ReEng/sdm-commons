@@ -62,8 +62,7 @@ public interface ActivitiesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ActivitiesPackage eINSTANCE = org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl
-			.init();
+	ActivitiesPackage eINSTANCE = org.storydriven.storydiagrams.activities.impl.ActivitiesPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.storydriven.storydiagrams.activities.impl.ExceptionVariableImpl <em>Exception Variable</em>}' class.
@@ -4430,8 +4429,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXCEPTION_VARIABLE__ACTIVITY_EDGE = eINSTANCE
-				.getExceptionVariable_ActivityEdge();
+		EReference EXCEPTION_VARIABLE__ACTIVITY_EDGE = eINSTANCE.getExceptionVariable_ActivityEdge();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -4439,8 +4437,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EXCEPTION_VARIABLE__NAME = eINSTANCE
-				.getExceptionVariable_Name();
+		EAttribute EXCEPTION_VARIABLE__NAME = eINSTANCE.getExceptionVariable_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Exception Type</b></em>' reference list feature.
@@ -4448,8 +4445,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXCEPTION_VARIABLE__EXCEPTION_TYPE = eINSTANCE
-				.getExceptionVariable_ExceptionType();
+		EReference EXCEPTION_VARIABLE__EXCEPTION_TYPE = eINSTANCE.getExceptionVariable_ExceptionType();
 
 		/**
 		 * The meta object literal for the '<em><b>Generic Exception Type</b></em>' reference list feature.
@@ -4457,8 +4453,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE = eINSTANCE
-				.getExceptionVariable_GenericExceptionType();
+		EReference EXCEPTION_VARIABLE__GENERIC_EXCEPTION_TYPE = eINSTANCE.getExceptionVariable_GenericExceptionType();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityEdgeImpl <em>Activity Edge</em>}' class.
@@ -4492,8 +4487,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_EDGE__OWNING_ACTIVITY = eINSTANCE
-				.getActivityEdge_OwningActivity();
+		EReference ACTIVITY_EDGE__OWNING_ACTIVITY = eINSTANCE.getActivityEdge_OwningActivity();
 
 		/**
 		 * The meta object literal for the '<em><b>Guard</b></em>' attribute feature.
@@ -4509,8 +4503,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_EDGE__GUARD_EXPRESSION = eINSTANCE
-				.getActivityEdge_GuardExpression();
+		EReference ACTIVITY_EDGE__GUARD_EXPRESSION = eINSTANCE.getActivityEdge_GuardExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Guard Exception</b></em>' containment reference list feature.
@@ -4518,8 +4511,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_EDGE__GUARD_EXCEPTION = eINSTANCE
-				.getActivityEdge_GuardException();
+		EReference ACTIVITY_EDGE__GUARD_EXCEPTION = eINSTANCE.getActivityEdge_GuardException();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityNodeImpl <em>Activity Node</em>}' class.
@@ -4537,8 +4529,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_NODE__OUTGOING = eINSTANCE
-				.getActivityNode_Outgoing();
+		EReference ACTIVITY_NODE__OUTGOING = eINSTANCE.getActivityNode_Outgoing();
 
 		/**
 		 * The meta object literal for the '<em><b>Owning Activity</b></em>' container reference feature.
@@ -4546,8 +4537,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_NODE__OWNING_ACTIVITY = eINSTANCE
-				.getActivityNode_OwningActivity();
+		EReference ACTIVITY_NODE__OWNING_ACTIVITY = eINSTANCE.getActivityNode_OwningActivity();
 
 		/**
 		 * The meta object literal for the '<em><b>Owning Activity Node</b></em>' container reference feature.
@@ -4555,8 +4545,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_NODE__OWNING_ACTIVITY_NODE = eINSTANCE
-				.getActivityNode_OwningActivityNode();
+		EReference ACTIVITY_NODE__OWNING_ACTIVITY_NODE = eINSTANCE.getActivityNode_OwningActivityNode();
 
 		/**
 		 * The meta object literal for the '<em><b>Incoming</b></em>' reference list feature.
@@ -4564,8 +4553,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_NODE__INCOMING = eINSTANCE
-				.getActivityNode_Incoming();
+		EReference ACTIVITY_NODE__INCOMING = eINSTANCE.getActivityNode_Incoming();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityImpl <em>Activity</em>}' class.
@@ -4583,8 +4571,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY__OWNING_OPERATION = eINSTANCE
-				.getActivity_OwningOperation();
+		EReference ACTIVITY__OWNING_OPERATION = eINSTANCE.getActivity_OwningOperation();
 
 		/**
 		 * The meta object literal for the '<em><b>Owned Activity Edge</b></em>' containment reference list feature.
@@ -4592,8 +4579,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY__OWNED_ACTIVITY_EDGE = eINSTANCE
-				.getActivity_OwnedActivityEdge();
+		EReference ACTIVITY__OWNED_ACTIVITY_EDGE = eINSTANCE.getActivity_OwnedActivityEdge();
 
 		/**
 		 * The meta object literal for the '<em><b>Precondition</b></em>' reference feature.
@@ -4601,8 +4587,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY__PRECONDITION = eINSTANCE
-				.getActivity_Precondition();
+		EReference ACTIVITY__PRECONDITION = eINSTANCE.getActivity_Precondition();
 
 		/**
 		 * The meta object literal for the '<em><b>Owned Activity Node</b></em>' containment reference list feature.
@@ -4610,8 +4595,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY__OWNED_ACTIVITY_NODE = eINSTANCE
-				.getActivity_OwnedActivityNode();
+		EReference ACTIVITY__OWNED_ACTIVITY_NODE = eINSTANCE.getActivity_OwnedActivityNode();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.OperationExtensionImpl <em>Operation Extension</em>}' class.
@@ -4629,8 +4613,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPERATION_EXTENSION__OPERATION = eINSTANCE
-				.getOperationExtension_Operation();
+		EReference OPERATION_EXTENSION__OPERATION = eINSTANCE.getOperationExtension_Operation();
 
 		/**
 		 * The meta object literal for the '<em><b>Return Value</b></em>' containment reference feature.
@@ -4638,8 +4621,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPERATION_EXTENSION__RETURN_VALUE = eINSTANCE
-				.getOperationExtension_ReturnValue();
+		EReference OPERATION_EXTENSION__RETURN_VALUE = eINSTANCE.getOperationExtension_ReturnValue();
 
 		/**
 		 * The meta object literal for the '<em><b>Owned Activity</b></em>' containment reference feature.
@@ -4647,8 +4629,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPERATION_EXTENSION__OWNED_ACTIVITY = eINSTANCE
-				.getOperationExtension_OwnedActivity();
+		EReference OPERATION_EXTENSION__OWNED_ACTIVITY = eINSTANCE.getOperationExtension_OwnedActivity();
 
 		/**
 		 * The meta object literal for the '<em><b>Number Of Out Params</b></em>' operation.
@@ -4675,8 +4656,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MATCHING_STORY_NODE__OWNED_PATTERN = eINSTANCE
-				.getMatchingStoryNode_OwnedPattern();
+		EReference MATCHING_STORY_NODE__OWNED_PATTERN = eINSTANCE.getMatchingStoryNode_OwnedPattern();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StoryNodeImpl <em>Story Node</em>}' class.
@@ -4702,8 +4682,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STORY_NODE__STORY_PATTERN = eINSTANCE
-				.getStoryNode_StoryPattern();
+		EReference STORY_NODE__STORY_PATTERN = eINSTANCE.getStoryNode_StoryPattern();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.StructuredNodeImpl <em>Structured Node</em>}' class.
@@ -4721,8 +4700,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STRUCTURED_NODE__OWNED_ACTIVITY_NODE = eINSTANCE
-				.getStructuredNode_OwnedActivityNode();
+		EReference STRUCTURED_NODE__OWNED_ACTIVITY_NODE = eINSTANCE.getStructuredNode_OwnedActivityNode();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.JunctionNodeImpl <em>Junction Node</em>}' class.
@@ -4760,8 +4738,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATEMENT_NODE__STATEMENT_EXPRESSION = eINSTANCE
-				.getStatementNode_StatementExpression();
+		EReference STATEMENT_NODE__STATEMENT_EXPRESSION = eINSTANCE.getStatementNode_StatementExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityFinalNodeImpl <em>Activity Final Node</em>}' class.
@@ -4779,8 +4756,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_FINAL_NODE__RETURN_VALUE = eINSTANCE
-				.getActivityFinalNode_ReturnValue();
+		EReference ACTIVITY_FINAL_NODE__RETURN_VALUE = eINSTANCE.getActivityFinalNode_ReturnValue();
 
 		/**
 		 * The meta object literal for the '<em><b>Return Values</b></em>' containment reference list feature.
@@ -4788,8 +4764,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_FINAL_NODE__RETURN_VALUES = eINSTANCE
-				.getActivityFinalNode_ReturnValues();
+		EReference ACTIVITY_FINAL_NODE__RETURN_VALUES = eINSTANCE.getActivityFinalNode_ReturnValues();
 
 		/**
 		 * The meta object literal for the '<em><b>Success</b></em>' attribute feature.
@@ -4797,8 +4772,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACTIVITY_FINAL_NODE__SUCCESS = eINSTANCE
-				.getActivityFinalNode_Success();
+		EAttribute ACTIVITY_FINAL_NODE__SUCCESS = eINSTANCE.getActivityFinalNode_Success();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ActivityCallNodeImpl <em>Activity Call Node</em>}' class.
@@ -4816,8 +4790,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTIVITY_CALL_NODE__CALLED_ACTIVITY = eINSTANCE
-				.getActivityCallNode_CalledActivity();
+		EReference ACTIVITY_CALL_NODE__CALLED_ACTIVITY = eINSTANCE.getActivityCallNode_CalledActivity();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.ModifyingStoryNodeImpl <em>Modifying Story Node</em>}' class.
@@ -4835,8 +4808,7 @@ public interface ActivitiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MODIFYING_STORY_NODE__OWNED_RULE = eINSTANCE
-				.getModifyingStoryNode_OwnedRule();
+		EReference MODIFYING_STORY_NODE__OWNED_RULE = eINSTANCE.getModifyingStoryNode_OwnedRule();
 
 		/**
 		 * The meta object literal for the '{@link org.storydriven.storydiagrams.activities.impl.FlowFinalNodeImpl <em>Flow Final Node</em>}' class.

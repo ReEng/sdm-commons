@@ -526,8 +526,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/GenModel
 		createGenModelAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore
-		createEcoreAnnotations();
+		// http://www.eclipse.org/edapt
+		createEdaptAnnotations();
 		// union
 		createUnionAnnotations();
 		// subsets
@@ -567,26 +567,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 						"documentation",
 						"Abstract base class for the whole story diagram model. The ExtendableElement specifies the extension mechanism that can be used to extend an object by an Extension containing additional attributes and references." });
 		addAnnotation(
-				getExtendableElement__GetExtension__EClass(),
-				source,
-				new String[] { "body",
-						"return ExtendableElementOperations.getExtension(this, type);" });
-		addAnnotation(
-				getExtendableElement__ProvideExtension__EClass(),
-				source,
-				new String[] { "body",
-						"return ExtendableElementOperations.provideExtension(this, type);" });
-		addAnnotation(
-				getExtendableElement__GetAnnotation__String(),
-				source,
-				new String[] { "body",
-						"return ExtendableElementOperations.getAnnotation(this, source);" });
-		addAnnotation(
-				getExtendableElement__ProvideAnnotation__String(),
-				source,
-				new String[] { "body",
-						"return ExtendableElementOperations.provideAnnotation(this, source);" });
-		addAnnotation(
 				extensionEClass,
 				source,
 				new String[] { "documentation",
@@ -608,19 +588,15 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	}
 
 	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * Initializes the annotations for <b>http://www.eclipse.org/edapt</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";
-		addAnnotation(this, source, new String[] { "invocationDelegates",
-				"http://www.eclipse.org/emf/2002/Ecore/OCL",
-				"settingDelegates",
-				"http://www.eclipse.org/emf/2002/Ecore/OCL",
-				"validationDelegates",
-				"http://www.eclipse.org/emf/2002/Ecore/OCL" });
+	protected void createEdaptAnnotations() {
+		String source = "http://www.eclipse.org/edapt";
+		addAnnotation(this, source, new String[] { "historyURI",
+				"../../de.uni_paderborn.fujaba.muml.model/model/muml.history" });
 	}
 
 	/**
