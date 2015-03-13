@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/0.9.0" xmi:id="_xdiYYMtkEeGgX-yRbtg0lw">
+  <modelElement href="../core.uml#_gsByQLN1Ed-vJ9Qpen_Iuw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_x6_JYMtkEeGgX-yRbtg0lw" sourceItem="_x61_cMtkEeGgX-yRbtg0lw" targetItem="_x7lmUMtkEeGgX-yRbtg0lw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_x7uwQMtkEeGgX-yRbtg0lw" sourceAnchor="111.0,0.0" targetAnchor="43.0,27.0" subClass="_yB_JQMtkEeGgX-yRbtg0lw" superClass="_x7lmUMtkEeGgX-yRbtg0lw">
+    <modelElement href="../core.uml#_D2JWABzGEeChOvWwuwx7tQ"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_x_cyoctkEeGgX-yRbtg0lw" sourceItem="_x_cyoMtkEeGgX-yRbtg0lw" targetItem="_yB_JQMtkEeGgX-yRbtg0lw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_yBYsUctkEeGgX-yRbtg0lw" sourceItem="_yBYsUMtkEeGgX-yRbtg0lw" targetItem="_yB_JQstkEeGgX-yRbtg0lw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_yBYsU8tkEeGgX-yRbtg0lw" sourceItem="_yBYsUstkEeGgX-yRbtg0lw" targetItem="_yB_JRstkEeGgX-yRbtg0lw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_yBYsVctkEeGgX-yRbtg0lw" sourceItem="_yBYsVMtkEeGgX-yRbtg0lw" targetItem="_yB_JSstkEeGgX-yRbtg0lw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2mw8ActkEeGgX-yRbtg0lw" sourceItem="_2mw8AMtkEeGgX-yRbtg0lw" targetItem="_2m6tAstkEeGgX-yRbtg0lw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_2mw8AstkEeGgX-yRbtg0lw" sourceAnchor="43.0,0.0" targetAnchor="163.0,54.0" subClass="_x7lmUMtkEeGgX-yRbtg0lw" superClass="_2m6tAstkEeGgX-yRbtg0lw">
+    <modelElement href="../core.uml#_mg81QBzTEeChOvWwuwx7tQ"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:ConnectionVisual" xmi:id="_2m6tActkEeGgX-yRbtg0lw" sourceItem="_2m6tAMtkEeGgX-yRbtg0lw" targetItem="_2m6tBctkEeGgX-yRbtg0lw"/>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_x61_cMtkEeGgX-yRbtg0lw" item="_x7lmUMtkEeGgX-yRbtg0lw" sourceConnectionVisual="_x6_JYMtkEeGgX-yRbtg0lw" text="Represents any expression in an embedded textual language, e.g. OCL or Java. An expression's type is dynamically derived by an external mechanism (see TypedElement).">
+    <modelElement href="../core.uml#_RcJm8BztEeChOvWwuwx7tQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_x_cyoMtkEeGgX-yRbtg0lw" item="_yB_JQMtkEeGgX-yRbtg0lw" sourceConnectionVisual="_x_cyoctkEeGgX-yRbtg0lw" text="Represents any expression in a textual language embedded into Story Diagrams, e.g. OCL or Java .">
+    <modelElement href="../core.uml#_ROhQEBzsEeChOvWwuwx7tQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_yBYsUMtkEeGgX-yRbtg0lw" item="_yB_JQstkEeGgX-yRbtg0lw" sourceConnectionVisual="_yBYsUctkEeGgX-yRbtg0lw" text="Holds the expression, e.g. in OCL or Java.">
+    <modelElement href="../core.uml#_VGEwcBzsEeChOvWwuwx7tQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_yBYsUstkEeGgX-yRbtg0lw" item="_yB_JRstkEeGgX-yRbtg0lw" sourceConnectionVisual="_yBYsU8tkEeGgX-yRbtg0lw" text="String representation of the used language which has to be unique. Examples are OCL and Java.">
+    <modelElement href="../core.uml#_XFecYBzsEeChOvWwuwx7tQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_yBYsVMtkEeGgX-yRbtg0lw" item="_yB_JSstkEeGgX-yRbtg0lw" sourceConnectionVisual="_yBYsVctkEeGgX-yRbtg0lw" text="String representation of the used language's version. The format is &lt;Major>.&lt;Minor>[.&lt;Revision>[.&lt;Build>]]&#xD;&#xA;Examples: 1.4 or 3.0.1 or 1.0.2.20101208.">
+    <modelElement href="../core.uml#_XeQIwBzsEeChOvWwuwx7tQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2mw8AMtkEeGgX-yRbtg0lw" item="_2m6tAstkEeGgX-yRbtg0lw" sourceConnectionVisual="_2mw8ActkEeGgX-yRbtg0lw" text="Abstract super class for all meta-model elements that may carry a comment in form of a string.">
+    <modelElement href="../core.uml#_XD2fwJxkEeCuYMafrm1l2g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:CommentVisual" xmi:id="_2m6tAMtkEeGgX-yRbtg0lw" item="_2m6tBctkEeGgX-yRbtg0lw" sourceConnectionVisual="_2m6tActkEeGgX-yRbtg0lw" text="The comment string that can be used to attach arbitrary information to CommentableElements.">
+    <modelElement href="../core.uml#_kY5KUG3CEeGdlstntMEf0g"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_2m6tAstkEeGgX-yRbtg0lw" comments="_2mw8AMtkEeGgX-yRbtg0lw" targetConnectionVisual="_2mw8ActkEeGgX-yRbtg0lw" name="CommentableElement" abstractClass="true" subclassedBy="_2mw8AstkEeGgX-yRbtg0lw">
+    <modelElement href="../core.uml#_e7CFQLLyEd-uk56s-ldeog"/>
+    <visualProperties xmi:id="_2m6tA8tkEeGgX-yRbtg0lw" position="10.0,30.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_2m6tBMtkEeGgX-yRbtg0lw" label="+"/>
+    <attributes xmi:id="_2m6tBctkEeGgX-yRbtg0lw" comments="_2m6tAMtkEeGgX-yRbtg0lw" targetConnectionVisual="_2m6tActkEeGgX-yRbtg0lw" defaultValue="&quot;no comment provided&quot;" name="comment">
+      <modelElement href="../core.uml#_l9XfkLLyEd-uk56s-ldeog"/>
+      <visualProperties xmi:id="_2m6tCctkEeGgX-yRbtg0lw"/>
+      <visibility xmi:id="_2m6tBstkEeGgX-yRbtg0lw" label="+"/>
+      <cardinality xmi:id="_2m6tB8tkEeGgX-yRbtg0lw" label="0..1" max="1"/>
+      <type xmi:id="_2m6tCMtkEeGgX-yRbtg0lw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_yB_JQMtkEeGgX-yRbtg0lw" comments="_x_cyoMtkEeGgX-yRbtg0lw" targetConnectionVisual="_x_cyoctkEeGgX-yRbtg0lw" name="TextualExpression" generalizations="_x7uwQMtkEeGgX-yRbtg0lw">
+    <modelElement href="../core.uml#_8-3VIBzFEeChOvWwuwx7tQ"/>
+    <visualProperties xmi:id="_yB_JTstkEeGgX-yRbtg0lw" position="62.0,180.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_yB_JQctkEeGgX-yRbtg0lw" label="+"/>
+    <attributes xmi:id="_yB_JQstkEeGgX-yRbtg0lw" comments="_yBYsUMtkEeGgX-yRbtg0lw" targetConnectionVisual="_yBYsUctkEeGgX-yRbtg0lw" name="expressionText">
+      <modelElement href="../core.uml#_LVs30BzGEeChOvWwuwx7tQ"/>
+      <visibility xmi:id="_yB_JQ8tkEeGgX-yRbtg0lw" label="+"/>
+      <cardinality xmi:id="_yB_JRMtkEeGgX-yRbtg0lw" label="1" max="1" min="1"/>
+      <type xmi:id="_yB_JRctkEeGgX-yRbtg0lw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_yB_JRstkEeGgX-yRbtg0lw" comments="_yBYsUstkEeGgX-yRbtg0lw" targetConnectionVisual="_yBYsU8tkEeGgX-yRbtg0lw" name="language">
+      <modelElement href="../core.uml#_MnugYBzGEeChOvWwuwx7tQ"/>
+      <visibility xmi:id="_yB_JR8tkEeGgX-yRbtg0lw" label="+"/>
+      <cardinality xmi:id="_yB_JSMtkEeGgX-yRbtg0lw" label="1" max="1" min="1"/>
+      <type xmi:id="_yB_JSctkEeGgX-yRbtg0lw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_yB_JSstkEeGgX-yRbtg0lw" comments="_yBYsVMtkEeGgX-yRbtg0lw" targetConnectionVisual="_yBYsVctkEeGgX-yRbtg0lw" name="languageVersion">
+      <modelElement href="../core.uml#_RLu3EBzGEeChOvWwuwx7tQ"/>
+      <visibility xmi:id="_yB_JS8tkEeGgX-yRbtg0lw" label="+"/>
+      <cardinality xmi:id="_yB_JTMtkEeGgX-yRbtg0lw" label="0..1" max="1"/>
+      <type xmi:id="_yB_JTctkEeGgX-yRbtg0lw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_x7lmUMtkEeGgX-yRbtg0lw" comments="_x61_cMtkEeGgX-yRbtg0lw" targetConnectionVisual="_x6_JYMtkEeGgX-yRbtg0lw" name="Expression" abstractClass="true" generalizations="_2mw8AstkEeGgX-yRbtg0lw" subclassedBy="_x7uwQMtkEeGgX-yRbtg0lw">
+    <modelElement href="../core.uml#80a7a6ae-11bf-46c7-8da0-3ce6887b9a58"/>
+    <visualProperties xmi:id="_x7lmUstkEeGgX-yRbtg0lw" position="130.0,121.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_x7lmUctkEeGgX-yRbtg0lw" label="+"/>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
