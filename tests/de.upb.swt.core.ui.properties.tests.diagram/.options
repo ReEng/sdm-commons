@@ -1,7 +1,0 @@
-# Tracing options for the de.upb.swt.core.ui.properties.tests.diagram plug-in
-
-# Common issues
-de.upb.swt.core.ui.properties.tests.diagram/debug=false
-
-# Visual IDs
-de.upb.swt.core.ui.properties.tests.diagram/debug/visualID=false
