@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.storydriven.org/core/expressions/0.2.0" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.0" comment="activity with parameters" inParameter="//@containedParameters.0" outParameter="//@containedParameters.1">
+  <annotation source="http://www.storydriven.org/storydiagrams/types">
+    <details key="http://www.eclipse.org/emf/2002/Ecore" value="true"/>
+    <references href="../testclassmodels/testClassmodel.ecore#/"/>
+    <references href="../testclassmodels/testMetamodel.ecore#/"/>
+  </annotation>
+  <containedParameters name="param">
+    <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </containedParameters>
+  <containedParameters name="return">
+    <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </containedParameters>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.0"/>
+  <ownedActivityNode xsi:type="sda:StartNode" outgoing="//@ownedActivityEdge.0"/>
+  <ownedActivityNode xsi:type="sda:StopNode" incoming="//@ownedActivityEdge.0">
+    <returnValues xsi:type="expr:TextualExpression" expressionText="param * 2" language="OCL" languageVersion="1.0"/>
+  </ownedActivityNode>
+</sda:Activity>

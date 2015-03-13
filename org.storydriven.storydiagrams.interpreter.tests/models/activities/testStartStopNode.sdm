@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sda:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expr="http://www.storydriven.org/core/expressions/0.2.0" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.0">
+    <annotation source="http://www.storydriven.org/storydiagrams/types">
+    <details key="http://www.eclipse.org/emf/2002/Ecore" value="true"/>
+    <references href="../testclassmodels/testClassmodel.ecore#/"/>
+    <references href="../testclassmodels/testMetamodel.ecore#/"/>
+  </annotation><ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.0"/>
+  <ownedActivityNode xsi:type="sda:StartNode" outgoing="//@ownedActivityEdge.0"/>
+  <ownedActivityNode xsi:type="sda:StopNode" incoming="//@ownedActivityEdge.0">
+    <returnValues xsi:type="expr:LiteralExpression" value="true">
+      <valueType href="../../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    </returnValues>
+  </ownedActivityNode>
+</sda:Activity>

@@ -1,0 +1,119 @@
+
+@GenModel(creationIcons="false", editPluginID="org.storydriven.storydiagrams.interpreter.tests", complianceLevel="6.0",
+nonNLSMarkers="true", runtimeVersion="2.7", editDirectory="/org.storydriven.storydiagrams.interpreter.tests/src-gen", resource="XMI",
+codeFormatting="true")
+@Ecore(nsURI="http://www.storydriven.org/storydiagrams/interpreter/tests")
+package org.storydriven.storydiagrams.interpreter.tests
+
+interface TNamed
+{
+	id String [1] name
+}
+
+interface TModifyable
+{
+	TVisibilityType [1] visibility
+	TInheritanceType [1] inheritance
+	boolean [1] static
+}
+
+interface TTyped extends TNamed, TModifyable
+{
+	boolean [1] ^transient
+	boolean [1] native
+	boolean [1] strictfp
+	boolean [1] synchronized
+	refers TType [1] ^type
+}
+
+@GenModel(image="false")
+class TModel extends TNamed
+{
+	contains TPackage [] packages opposite model
+}
+
+@GenModel(image="false")
+class TPackage extends TNamed
+{
+	container TModel model opposite packages
+	container TPackage containingPackage opposite packages
+	contains TPackage [] packages opposite containingPackage
+	contains TType [] types opposite containingPackage
+}
+
+interface TType extends TNamed, TModifyable
+{
+	container TPackage containingPackage opposite types
+	container TType containingType opposite types
+	refers TInterface [] extendedInterfaces
+	contains TType [] types opposite containingType
+	contains TField [] fields opposite containingType
+	contains TMethod [] methods opposite containingType
+}
+
+@GenModel(image="false")
+class TInterface extends TType
+{
+}
+
+@GenModel(image="false")
+class TClass extends TType
+{
+	refers TClass extendedClass
+}
+
+@GenModel(image="false")
+class TEnum extends TType
+{
+}
+
+@GenModel(image="false")
+class TField extends TTyped
+{
+	container TType [1] containingType opposite fields
+}
+
+@GenModel(image="false")
+class TMethod extends TTyped
+{
+	container TType [1] containingType opposite methods
+	contains TParameter [] parameters opposite method
+	contains TStatement [] statements
+}
+
+@GenModel(image="false")
+class TParameter extends TTyped
+{
+	container TMethod [1] method opposite parameters
+}
+
+interface TStatement
+{
+	String [1] text
+}
+
+@GenModel(image="false")
+class TReturnStatement extends TStatement
+{
+}
+
+@GenModel(image="false")
+class TMethodCallStatement extends TStatement
+{
+	refers TMethod [1] accessedTarget
+}
+
+enum TVisibilityType
+{
+	PUBLIC
+	DEFAULT
+	PROTECTED
+	PRIVATE
+}
+
+enum TInheritanceType
+{
+	DEFAULT
+	FINAL
+	ABSTRACT
+}
