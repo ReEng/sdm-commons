@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse
+Bundle-SymbolicName: org.storydriven.storydiagrams.interpreter.eclipse;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.storydriven.storydiagrams.interpreter;bundle-version="1.0.0";visibility:=reexport,
+ de.mdelab.sdm.interpreter.core.eclipse;bundle-version="1.0.0";visibility:=reexport
+Export-Package: org.storydriven.storydiagrams.interpreter.eclipse
