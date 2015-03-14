@@ -13,18 +13,18 @@ import org.fujaba.commons.edit.parts.AbstractNodeEditPart;
 import org.fujaba.commons.notation.Edge;
 import org.fujaba.commons.notation.HierarchicalNode;
 import org.fujaba.commons.notation.Node;
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.ActivityNode;
+import org.storydriven.core.expressions.Expression;
 import org.storydriven.modeling.editor.gef.edit.commands.DeleteAbstractVariableCommand;
 import org.storydriven.modeling.editor.gef.edit.commands.DeleteActivityEdgeCommand;
 import org.storydriven.modeling.editor.gef.edit.commands.DeleteActivityNodeCommand;
 import org.storydriven.modeling.editor.gef.edit.commands.DeleteBindingExpressionCommand;
 import org.storydriven.modeling.editor.gef.edit.commands.DeleteConstraintCommand;
 import org.storydriven.modeling.editor.gef.edit.commands.DeleteLinkVariableCommand;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.Constraint;
-import org.storydriven.modeling.patterns.LinkVariable;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.Constraint;
+import org.storydriven.storydiagrams.patterns.LinkVariable;
 
 /**
  * @author Oleg

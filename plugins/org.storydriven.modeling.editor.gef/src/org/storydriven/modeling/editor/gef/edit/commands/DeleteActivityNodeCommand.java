@@ -6,9 +6,8 @@ package org.storydriven.modeling.editor.gef.edit.commands;
 import org.fujaba.commons.edit.commands.AbstractDeleteNodeCommand;
 import org.fujaba.commons.notation.HierarchicalNode;
 import org.fujaba.commons.notation.Node;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityCallNode;
-import org.storydriven.modeling.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityNode;
 
 /**
  * @author Oleg

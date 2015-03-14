@@ -5,10 +5,10 @@ package org.storydriven.modeling.editor.gef.edit.commands;
 
 import org.fujaba.commons.edit.commands.AbstractDeleteEdgeCommand;
 import org.fujaba.commons.notation.Edge;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.ObjectVariable;
-import org.storydriven.modeling.patterns.StoryPattern;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.ObjectVariable;
+import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 /**
  * @author Oleg

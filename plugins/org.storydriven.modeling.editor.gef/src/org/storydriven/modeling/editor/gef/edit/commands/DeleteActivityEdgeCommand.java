@@ -5,9 +5,9 @@ package org.storydriven.modeling.editor.gef.edit.commands;
 
 import org.fujaba.commons.edit.commands.AbstractDeleteEdgeCommand;
 import org.fujaba.commons.notation.Edge;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityNode;
 
 /**
  * @author Oleg

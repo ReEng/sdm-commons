@@ -10,14 +10,14 @@ import org.fujaba.commons.notation.Edge;
 import org.fujaba.commons.notation.HierarchicalNode;
 import org.fujaba.commons.notation.Node;
 import org.fujaba.commons.notation.NotationFactory;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityCallNode;
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.ActivityNode;
-import org.storydriven.modeling.activities.StoryNode;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.Constraint;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityCallNode;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.StoryNode;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.Constraint;
 
 
 /**

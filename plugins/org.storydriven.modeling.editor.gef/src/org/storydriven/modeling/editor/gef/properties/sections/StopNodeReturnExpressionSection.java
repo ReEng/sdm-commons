@@ -8,9 +8,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.storydriven.modeling.activities.ActivitiesPackage;
-import org.storydriven.modeling.activities.StopNode;
-import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
 
 /**
  * @author Oleg
@@ -25,9 +25,9 @@ public class StopNodeReturnExpressionSection extends ExpressionSection
     * @see org.fujaba.commons.properties.section.AbstractSection#getElement()
     */
    @Override
-   protected StopNode getElement()
+   protected ActivityFinalNode getElement()
    {
-      return (StopNode)super.getElement();
+      return (ActivityFinalNode)super.getElement();
    }
 
 
@@ -57,7 +57,7 @@ public class StopNodeReturnExpressionSection extends ExpressionSection
    @Override
    protected EStructuralFeature getFeature()
    {
-      return ActivitiesPackage.eINSTANCE.getStopNode_ReturnValues();
+      return ActivitiesPackage.eINSTANCE.getActivityFinalNode_ReturnValues();
    }
 
 

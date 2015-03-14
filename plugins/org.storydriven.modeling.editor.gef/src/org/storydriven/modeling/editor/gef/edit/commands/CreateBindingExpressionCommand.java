@@ -5,9 +5,9 @@ package org.storydriven.modeling.editor.gef.edit.commands;
 
 import org.fujaba.commons.edit.commands.AbstractCreateNodeCommand;
 import org.fujaba.commons.notation.HierarchicalNode;
-import org.storydriven.modeling.expressions.ExpressionsFactory;
-import org.storydriven.modeling.expressions.TextualExpression;
-import org.storydriven.modeling.patterns.AbstractVariable;
+import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.TextualExpression;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
 
 /**
  * @author Oleg

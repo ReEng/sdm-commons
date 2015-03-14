@@ -3,13 +3,13 @@ package org.storydriven.modeling.editor.gef.edit.commands;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.fujaba.commons.edit.commands.AbstractCreateNodeCommand;
 import org.fujaba.commons.notation.HierarchicalNode;
-import org.storydriven.modeling.activities.StoryNode;
-import org.storydriven.modeling.expressions.ExpressionsFactory;
-import org.storydriven.modeling.expressions.TextualExpression;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.Constraint;
-import org.storydriven.modeling.patterns.PatternsFactory;
-import org.storydriven.modeling.patterns.StoryPattern;
+import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.TextualExpression;
+import org.storydriven.storydiagrams.activities.StoryNode;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.Constraint;
+import org.storydriven.storydiagrams.patterns.PatternsFactory;
+import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 public class CreateConstraintCommand extends AbstractCreateNodeCommand
 {

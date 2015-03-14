@@ -9,8 +9,16 @@ import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.fujaba.commons.properties.CustomTabbedPropertySheetPage;
-import org.storydriven.modeling.activities.expressions.provider.ExpressionsItemProviderAdapterFactory;
-import org.storydriven.modeling.activities.provider.ActivitiesItemProviderAdapterFactory;
+import org.storydriven.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
+import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
+import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.activities.expressions.provider.ActivitiesExpressionsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.activities.provider.ActivitiesItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.calls.provider.CallsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.patterns.provider.PatternsItemProviderAdapterFactory;
+import org.storydriven.storydiagrams.provider.StorydiagramsItemProviderAdapterFactory;
 
 
 /**
@@ -36,12 +44,19 @@ public class SDMTabbedPropertySheetPage extends CustomTabbedPropertySheetPage
       List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 
       factories.add(new ResourceItemProviderAdapterFactory());
-      factories.add(new ActivitiesItemProviderAdapterFactory());
-      factories.add(new ExpressionsItemProviderAdapterFactory());
-      factories.add(new org.storydriven.modeling.patterns.expressions.provider.ExpressionsItemProviderAdapterFactory());
-      factories.add(new org.storydriven.modeling.calls.expressions.provider.ExpressionsItemProviderAdapterFactory());
-      factories.add(new org.storydriven.modeling.expressions.provider.ExpressionsItemProviderAdapterFactory());
       factories.add(new EcoreItemProviderAdapterFactory());
+      
+      factories.add(new CoreItemProviderAdapterFactory());
+      factories.add(new ExpressionsItemProviderAdapterFactory());
+      factories.add(new CommonExpressionsItemProviderAdapterFactory());
+      
+      factories.add(new StorydiagramsItemProviderAdapterFactory());
+      factories.add(new ActivitiesItemProviderAdapterFactory());
+      factories.add(new ActivitiesExpressionsItemProviderAdapterFactory());
+      factories.add(new PatternsItemProviderAdapterFactory());
+      factories.add(new PatternsExpressionsItemProviderAdapterFactory());
+      factories.add(new CallsItemProviderAdapterFactory());
+      factories.add(new CallsExpressionsItemProviderAdapterFactory());
 
       return factories;
    }

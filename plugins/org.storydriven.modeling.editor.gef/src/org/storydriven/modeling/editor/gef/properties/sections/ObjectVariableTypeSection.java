@@ -15,8 +15,8 @@ import org.fujaba.commons.properties.section.AbstractObjectSelectionComboSection
 import org.fujaba.commons.properties.util.SingleTypeSelectionDialog;
 import org.storydriven.modeling.editor.gef.utils.ModelHelper;
 import org.storydriven.modeling.editor.gef.utils.NameComparator;
-import org.storydriven.modeling.patterns.ObjectVariable;
-import org.storydriven.modeling.patterns.PatternsPackage;
+import org.storydriven.storydiagrams.patterns.ObjectVariable;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 
 public class ObjectVariableTypeSection extends AbstractObjectSelectionComboSection

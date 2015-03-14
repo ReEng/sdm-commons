@@ -6,9 +6,9 @@ package org.storydriven.modeling.editor.gef.edit.parts;
 import org.eclipse.emf.common.notify.Notification;
 import org.fujaba.commons.figures.UMLObjectFigure;
 import org.fujaba.commons.notation.Edge;
+import org.storydriven.core.expressions.Expression;
 import org.storydriven.modeling.editor.gef.utils.Expr2String;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.patterns.PatternsPackage;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 
 

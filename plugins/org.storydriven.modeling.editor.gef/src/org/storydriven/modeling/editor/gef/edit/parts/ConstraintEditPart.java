@@ -11,8 +11,8 @@ import org.fujaba.commons.edit.parts.AbstractNodeEditPart;
 import org.fujaba.commons.figures.UMLConstraintFigure;
 import org.storydriven.modeling.editor.gef.edit.policies.ActivityDeleteEditPolicy;
 import org.storydriven.modeling.editor.gef.utils.Expr2String;
-import org.storydriven.modeling.patterns.Constraint;
-import org.storydriven.modeling.patterns.PatternsPackage;
+import org.storydriven.storydiagrams.patterns.Constraint;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 /**
  * @author Oleg

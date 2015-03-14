@@ -18,10 +18,10 @@ import org.eclipse.jface.dialogs.IDialogConstants;
 import org.fujaba.commons.properties.section.AbstractObjectSelectionComboSection;
 import org.fujaba.commons.properties.util.SingleReferenceSelectionDialog;
 import org.storydriven.modeling.editor.gef.utils.NameComparator;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.LinkVariable;
-import org.storydriven.modeling.patterns.ObjectVariable;
-import org.storydriven.modeling.patterns.PatternsPackage;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.LinkVariable;
+import org.storydriven.storydiagrams.patterns.ObjectVariable;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 
 public class LinkVariableTypeSection extends AbstractObjectSelectionComboSection

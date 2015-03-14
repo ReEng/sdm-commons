@@ -14,8 +14,8 @@ import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.fujaba.commons.editor.AbstractSimpleEditorPart;
 import org.fujaba.commons.editor.NestedEObjectEditorInput;
 import org.fujaba.commons.notation.HierarchicalNode;
-import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.editor.gef.edit.parts.SDMEditPartFactory;
+import org.storydriven.storydiagrams.activities.Activity;
 
 
 public class SDMActivityPage extends AbstractSimpleEditorPart implements IEditingDomainProvider

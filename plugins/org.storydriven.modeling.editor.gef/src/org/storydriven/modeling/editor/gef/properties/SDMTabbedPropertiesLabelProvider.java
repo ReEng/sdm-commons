@@ -9,18 +9,18 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
 import org.fujaba.commons.properties.util.AdapterUtil;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.ActivityNode;
-import org.storydriven.modeling.activities.JunctionNode;
-import org.storydriven.modeling.activities.StartNode;
-import org.storydriven.modeling.activities.StopNode;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.patterns.Constraint;
-import org.storydriven.modeling.patterns.LinkVariable;
-import org.storydriven.modeling.patterns.ObjectVariable;
-import org.storydriven.modeling.patterns.Path;
-import org.storydriven.modeling.util.SDMAdapterFactory;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
+import org.storydriven.storydiagrams.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.InitialNode;
+import org.storydriven.storydiagrams.activities.JunctionNode;
+import org.storydriven.storydiagrams.patterns.Constraint;
+import org.storydriven.storydiagrams.patterns.LinkVariable;
+import org.storydriven.storydiagrams.patterns.ObjectVariable;
+import org.storydriven.storydiagrams.patterns.Path;
+import org.storydriven.storydiagrams.util.StorydiagramsAdapterFactory;
 
 
 public class SDMTabbedPropertiesLabelProvider extends LabelProvider
@@ -37,7 +37,7 @@ public class SDMTabbedPropertiesLabelProvider extends LabelProvider
       if (provider == null)
       {
          provider = new AdapterFactoryLabelProvider(
-               new SDMAdapterFactory());
+               new StorydiagramsAdapterFactory());
       }
 
       // let the provider return the image
@@ -55,12 +55,12 @@ public class SDMTabbedPropertiesLabelProvider extends LabelProvider
          return "Activity";
       }
       
-      if (element instanceof StartNode)
+      if (element instanceof InitialNode)
       {
          return "Start Node";
       }
       
-      if (element instanceof StopNode)
+      if (element instanceof ActivityFinalNode)
       {
          return "Stop Node";
       }

@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.fujaba.commons.properties.section.AbstractObjectSelectionComboSection;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityCallNode;
-import org.storydriven.modeling.calls.CallsPackage;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityCallNode;
+import org.storydriven.storydiagrams.calls.CallsPackage;
 
 /**
  * @author Oleg

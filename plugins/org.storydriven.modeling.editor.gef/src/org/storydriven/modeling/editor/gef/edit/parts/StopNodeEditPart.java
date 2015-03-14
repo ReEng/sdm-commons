@@ -9,14 +9,12 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.fujaba.commons.figures.LabelFigure;
-import org.storydriven.modeling.activities.StopNode;
+import org.storydriven.core.expressions.Expression;
 import org.storydriven.modeling.editor.gef.figures.CircleChopboxAnchor;
 import org.storydriven.modeling.editor.gef.figures.UMLStopActivityFigure;
 import org.storydriven.modeling.editor.gef.utils.Expr2String;
-import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
 
 
 /**
@@ -61,7 +59,7 @@ public class StopNodeEditPart extends ActivityNodeEditPart
       super.refreshVisuals();
       
       // create/remove/update return value label
-      StopNode activity = this.getRealModel();
+      ActivityFinalNode activity = this.getRealModel();
       Expression expression = activity.getReturnValue();
      
       if (expression != null)
@@ -109,9 +107,9 @@ public class StopNodeEditPart extends ActivityNodeEditPart
    }
 
    @Override
-   public StopNode getRealModel()
+   public ActivityFinalNode getRealModel()
    {
-      return (StopNode)super.getRealModel();
+      return (ActivityFinalNode)super.getRealModel();
    }
 
 }

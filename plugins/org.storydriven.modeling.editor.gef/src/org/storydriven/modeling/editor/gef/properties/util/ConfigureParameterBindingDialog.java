@@ -18,9 +18,9 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.PlatformUI;
-import org.storydriven.modeling.calls.ParameterBinding;
+import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.modeling.editor.gef.utils.ModelHelper;
-import org.storydriven.modeling.expressions.TextualExpression;
+import org.storydriven.storydiagrams.calls.ParameterBinding;
 
 
 public class ConfigureParameterBindingDialog extends TitleAreaDialog

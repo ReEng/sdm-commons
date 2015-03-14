@@ -11,9 +11,9 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.editpolicies.RootComponentEditPolicy;
 import org.fujaba.commons.edit.parts.AbstractDiagramEditPart;
 import org.fujaba.commons.figures.UMLFragmentLabelFigure;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.OperationExtension;
 import org.storydriven.modeling.editor.gef.edit.policies.ActivityLayoutEditPolicy;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.OperationExtension;
 
 
 /**

@@ -12,10 +12,10 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.fujaba.commons.edit.parts.AbstractNodeEditPart;
 import org.fujaba.commons.figures.LabelFigure;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.modeling.editor.gef.edit.policies.ActivityDeleteEditPolicy;
 import org.storydriven.modeling.editor.gef.utils.Expr2String;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 /**
  * @author Oleg

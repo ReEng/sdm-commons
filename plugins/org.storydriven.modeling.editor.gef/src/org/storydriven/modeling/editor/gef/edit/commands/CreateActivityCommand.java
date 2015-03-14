@@ -8,10 +8,10 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gef.commands.Command;
 import org.fujaba.commons.notation.HierarchicalNode;
 import org.fujaba.commons.notation.NotationFactory;
-import org.storydriven.modeling.activities.ActivitiesFactory;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.OperationExtension;
-import org.storydriven.modeling.activities.StartNode;
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.InitialNode;
+import org.storydriven.storydiagrams.activities.OperationExtension;
 
 /**
  * @author Oleg
@@ -27,7 +27,7 @@ public class CreateActivityCommand extends Command
    
    private Activity activity;
    private HierarchicalNode newActivityView;
-   private StartNode start;
+   private InitialNode start;
    private HierarchicalNode newStartView;
   
    
@@ -72,7 +72,7 @@ public class CreateActivityCommand extends Command
       
       if(start == null)
       {
-         start = ActivitiesFactory.eINSTANCE.createStartNode();
+         start = ActivitiesFactory.eINSTANCE.createInitialNode();
       }
       start.setOwningActivity(activity);
 

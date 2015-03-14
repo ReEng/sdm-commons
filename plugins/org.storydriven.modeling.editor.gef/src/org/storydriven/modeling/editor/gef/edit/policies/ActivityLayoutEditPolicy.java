@@ -9,14 +9,14 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.requests.CreateRequest;
 import org.fujaba.commons.edit.parts.AbstractDiagramEditPart;
 import org.fujaba.commons.edit.policies.AbstractLayoutEditPolicy;
-import org.storydriven.modeling.activities.ActivityCallNode;
-import org.storydriven.modeling.activities.JunctionNode;
-import org.storydriven.modeling.activities.ModifyingStoryNode;
-import org.storydriven.modeling.activities.StopNode;
 import org.storydriven.modeling.editor.gef.edit.commands.CreateActivityCallNode;
 import org.storydriven.modeling.editor.gef.edit.commands.CreateActivityNodeWithStoryPatternCommand;
 import org.storydriven.modeling.editor.gef.edit.commands.CreateJunctionNodeCommand;
 import org.storydriven.modeling.editor.gef.edit.commands.CreateStopNodeCommand;
+import org.storydriven.storydiagrams.activities.ActivityCallNode;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
+import org.storydriven.storydiagrams.activities.JunctionNode;
+import org.storydriven.storydiagrams.activities.ModifyingStoryNode;
 
 
 /**
@@ -57,7 +57,7 @@ public class ActivityLayoutEditPolicy extends AbstractLayoutEditPolicy
          {
             return new CreateActivityNodeWithStoryPatternCommand(host.getModel(), getBounds(request));
          }
-         if (StopNode.class.isAssignableFrom(type))
+         if (ActivityFinalNode.class.isAssignableFrom(type))
          {
             return new CreateStopNodeCommand(host.getModel(), getBounds(request));
          }

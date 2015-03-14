@@ -9,10 +9,10 @@ import org.storydriven.modeling.editor.gef.edit.commands.CreateConstraintCommand
 import org.storydriven.modeling.editor.gef.edit.commands.CreateObjectSetVariableCommand;
 import org.storydriven.modeling.editor.gef.edit.commands.CreateObjectVariableCommand;
 import org.storydriven.modeling.editor.gef.edit.commands.CreatePrimitveVariableCommand;
-import org.storydriven.modeling.patterns.Constraint;
-import org.storydriven.modeling.patterns.ObjectSetVariable;
-import org.storydriven.modeling.patterns.ObjectVariable;
-import org.storydriven.modeling.patterns.PrimitiveVariable;
+import org.storydriven.storydiagrams.patterns.CollectionVariable;
+import org.storydriven.storydiagrams.patterns.Constraint;
+import org.storydriven.storydiagrams.patterns.ObjectVariable;
+import org.storydriven.storydiagrams.patterns.PrimitiveVariable;
 
 public class StoryPatternLayoutEditPolicy extends AbstractLayoutEditPolicy
 {
@@ -27,7 +27,7 @@ public class StoryPatternLayoutEditPolicy extends AbstractLayoutEditPolicy
          AbstractDiagramEditPart host = (AbstractDiagramEditPart) getHost();
          Class<?> type = (Class<?>) request.getNewObjectType();
          // decide which element to create
-         if (ObjectSetVariable.class.isAssignableFrom(type))
+         if (CollectionVariable.class.isAssignableFrom(type))
          {
             return new CreateObjectSetVariableCommand(host.getModel(), getBounds(request));
          }

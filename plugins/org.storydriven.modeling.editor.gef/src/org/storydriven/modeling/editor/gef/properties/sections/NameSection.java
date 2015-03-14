@@ -5,8 +5,8 @@ package org.storydriven.modeling.editor.gef.properties.sections;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.fujaba.commons.properties.section.AbstractTextSection;
-import org.storydriven.modeling.NamedElement;
-import org.storydriven.modeling.SDMPackage;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.NamedElement;
 
 /**
  * @author Oleg
@@ -75,7 +75,7 @@ public class NameSection extends AbstractTextSection
    @Override
    protected EStructuralFeature getFeature()
    {
-      return SDMPackage.Literals.NAMED_ELEMENT__NAME;
+      return CorePackage.Literals.NAMED_ELEMENT__NAME;
    }
 
 

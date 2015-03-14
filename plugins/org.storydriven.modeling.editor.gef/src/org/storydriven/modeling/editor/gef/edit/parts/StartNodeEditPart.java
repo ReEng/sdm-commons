@@ -7,11 +7,10 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
-import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.storydriven.modeling.activities.StartNode;
 import org.storydriven.modeling.editor.gef.edit.policies.ActivityNodeEditPolicy;
 import org.storydriven.modeling.editor.gef.figures.UMLStartActivityChopboxAnchor;
 import org.storydriven.modeling.editor.gef.figures.UMLStartActivityFigure;
+import org.storydriven.storydiagrams.activities.InitialNode;
 
 /**
  * @author Oleg
@@ -40,9 +39,9 @@ public class StartNodeEditPart extends ActivityNodeEditPart
    }
 
    @Override
-   public StartNode getRealModel()
+   public InitialNode getRealModel()
    {
-      return (StartNode)super.getRealModel();
+      return (InitialNode)super.getRealModel();
    }
    
    /**

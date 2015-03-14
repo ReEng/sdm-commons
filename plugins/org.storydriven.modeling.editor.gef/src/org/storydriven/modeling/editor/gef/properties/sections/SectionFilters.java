@@ -5,13 +5,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.IFilter;
 import org.fujaba.commons.identifier.Identifier;
 import org.fujaba.commons.properties.util.AdapterUtil;
-import org.storydriven.modeling.NamedElement;
-import org.storydriven.modeling.activities.ActivityCallNode;
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.StopNode;
-import org.storydriven.modeling.patterns.Constraint;
-import org.storydriven.modeling.patterns.LinkVariable;
-import org.storydriven.modeling.patterns.ObjectVariable;
+import org.storydriven.core.NamedElement;
+import org.storydriven.storydiagrams.activities.ActivityCallNode;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
+import org.storydriven.storydiagrams.patterns.Constraint;
+import org.storydriven.storydiagrams.patterns.LinkVariable;
+import org.storydriven.storydiagrams.patterns.ObjectVariable;
 
 
 public enum SectionFilters
@@ -86,7 +86,7 @@ public enum SectionFilters
          // get adapted element
          EObject element = AdapterUtil.adaptObject(object);
 
-         return element instanceof StopNode;
+         return element instanceof ActivityFinalNode;
       }
    }
    

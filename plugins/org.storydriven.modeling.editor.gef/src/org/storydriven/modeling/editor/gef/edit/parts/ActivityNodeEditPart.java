@@ -5,9 +5,9 @@ package org.storydriven.modeling.editor.gef.edit.parts;
 
 import org.eclipse.gef.EditPolicy;
 import org.fujaba.commons.edit.parts.AbstractNodeEditPart;
-import org.storydriven.modeling.activities.ActivityNode;
 import org.storydriven.modeling.editor.gef.edit.policies.ActivityDeleteEditPolicy;
 import org.storydriven.modeling.editor.gef.edit.policies.ActivityNodeEditPolicy;
+import org.storydriven.storydiagrams.activities.ActivityNode;
 
 
 /**

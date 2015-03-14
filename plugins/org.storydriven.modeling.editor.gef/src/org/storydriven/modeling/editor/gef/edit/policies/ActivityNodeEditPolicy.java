@@ -10,9 +10,9 @@ import org.eclipse.gef.requests.CreateConnectionRequest;
 import org.eclipse.gef.requests.ReconnectRequest;
 import org.fujaba.commons.edit.parts.AbstractNodeViewEditPart;
 import org.fujaba.commons.notation.Node;
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.ActivityNode;
 import org.storydriven.modeling.editor.gef.edit.commands.CreateActivityEdgeCommand;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityNode;
 
 /**
  * @author Oleg

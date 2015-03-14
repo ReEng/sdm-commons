@@ -6,8 +6,8 @@ package org.storydriven.modeling.editor.gef.edit.commands;
 import org.fujaba.commons.edit.commands.AbstractDeleteNodeCommand;
 import org.fujaba.commons.notation.HierarchicalNode;
 import org.fujaba.commons.notation.Node;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.StoryPattern;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 /**
  * @author Oleg

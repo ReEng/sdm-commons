@@ -10,11 +10,11 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.requests.CreateRequest;
 import org.fujaba.commons.edit.parts.AbstractDiagramEditPart;
 import org.fujaba.commons.edit.policies.AbstractLayoutEditPolicy;
+import org.storydriven.core.expressions.Expression;
 import org.storydriven.modeling.editor.gef.edit.commands.CreateBindingExpressionCommand;
 import org.storydriven.modeling.editor.gef.edit.commands.CreateConstraintCommand;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.Constraint;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.Constraint;
 
 /**
  * @author Oleg

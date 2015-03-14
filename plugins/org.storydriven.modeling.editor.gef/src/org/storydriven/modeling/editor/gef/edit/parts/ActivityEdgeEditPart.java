@@ -8,10 +8,10 @@ import org.eclipse.emf.common.notify.Notification;
 import org.fujaba.commons.edit.parts.AbstractEdgeEditPart;
 import org.fujaba.commons.figures.utils.ConnectionDecorationFactory;
 import org.fujaba.commons.notation.Edge;
-import org.storydriven.modeling.activities.ActivitiesPackage;
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.EdgeGuard;
 import org.storydriven.modeling.editor.gef.utils.Expr2String;
+import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.EdgeGuard;
 
 
 /**

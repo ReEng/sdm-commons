@@ -15,8 +15,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.fujaba.commons.editor.overviewpage.NestedDiagramsSectionPart;
-import org.storydriven.modeling.activities.OperationExtension;
 import org.storydriven.modeling.editor.gef.SdmUiPlugin;
+import org.storydriven.storydiagrams.activities.OperationExtension;
 
 
 public class SDMSectionPart extends NestedDiagramsSectionPart

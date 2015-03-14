@@ -4,23 +4,23 @@
 package org.storydriven.modeling.editor.gef.utils;
 
 import org.fujaba.commons.utils.Class2EClassRegistry;
-import org.storydriven.modeling.activities.ActivitiesPackage;
-import org.storydriven.modeling.activities.impl.ActivityCallNodeImpl;
-import org.storydriven.modeling.activities.impl.ActivityEdgeImpl;
-import org.storydriven.modeling.activities.impl.JunctionNodeImpl;
-import org.storydriven.modeling.activities.impl.ModifyingStoryNodeImpl;
-import org.storydriven.modeling.activities.impl.StartNodeImpl;
-import org.storydriven.modeling.activities.impl.StatementNodeImpl;
-import org.storydriven.modeling.activities.impl.StopNodeImpl;
-import org.storydriven.modeling.expressions.ExpressionsPackage;
-import org.storydriven.modeling.expressions.impl.TextualExpressionImpl;
-import org.storydriven.modeling.patterns.PatternsPackage;
-import org.storydriven.modeling.patterns.impl.ConstraintImpl;
-import org.storydriven.modeling.patterns.impl.LinkVariableImpl;
-import org.storydriven.modeling.patterns.impl.ObjectSetVariableImpl;
-import org.storydriven.modeling.patterns.impl.ObjectVariableImpl;
-import org.storydriven.modeling.patterns.impl.PathImpl;
-import org.storydriven.modeling.patterns.impl.PrimitiveVariableImpl;
+import org.storydriven.core.expressions.ExpressionsPackage;
+import org.storydriven.core.expressions.impl.TextualExpressionImpl;
+import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
+import org.storydriven.storydiagrams.activities.impl.ActivityCallNodeImpl;
+import org.storydriven.storydiagrams.activities.impl.ActivityEdgeImpl;
+import org.storydriven.storydiagrams.activities.impl.InitialNodeImpl;
+import org.storydriven.storydiagrams.activities.impl.JunctionNodeImpl;
+import org.storydriven.storydiagrams.activities.impl.ModifyingStoryNodeImpl;
+import org.storydriven.storydiagrams.activities.impl.StatementNodeImpl;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
+import org.storydriven.storydiagrams.patterns.impl.CollectionVariableImpl;
+import org.storydriven.storydiagrams.patterns.impl.ConstraintImpl;
+import org.storydriven.storydiagrams.patterns.impl.LinkVariableImpl;
+import org.storydriven.storydiagrams.patterns.impl.ObjectVariableImpl;
+import org.storydriven.storydiagrams.patterns.impl.PathImpl;
+import org.storydriven.storydiagrams.patterns.impl.PrimitiveVariableImpl;
 
 /**
  * @author Oleg
@@ -37,13 +37,13 @@ public abstract class ModelRegistrator
       Class2EClassRegistry.registerClass(ActivityCallNodeImpl.class, pack.getActivityCallNode());
       Class2EClassRegistry.registerClass(ActivityEdgeImpl.class, pack.getActivityEdge());
       Class2EClassRegistry.registerClass(JunctionNodeImpl.class, pack.getJunctionNode());
-      Class2EClassRegistry.registerClass(StartNodeImpl.class, pack.getStartNode());
-      Class2EClassRegistry.registerClass(StopNodeImpl.class, pack.getStopNode());
+      Class2EClassRegistry.registerClass(InitialNodeImpl.class, pack.getInitialNode());
+      Class2EClassRegistry.registerClass(ActivityFinalNode.class, pack.getActivityFinalNode());
       Class2EClassRegistry.registerClass(StatementNodeImpl.class, pack.getStatementNode());
       
       PatternsPackage pack2 = PatternsPackage.eINSTANCE;
       Class2EClassRegistry.registerClass(LinkVariableImpl.class, pack2.getLinkVariable());
-      Class2EClassRegistry.registerClass(ObjectSetVariableImpl.class, pack2.getObjectSetVariable());
+      Class2EClassRegistry.registerClass(CollectionVariableImpl.class, pack2.getCollectionVariable());
       Class2EClassRegistry.registerClass(ObjectVariableImpl.class, pack2.getObjectVariable());
       Class2EClassRegistry.registerClass(PathImpl.class, pack2.getPath());
       Class2EClassRegistry.registerClass(PrimitiveVariableImpl.class, pack2.getPrimitiveVariable());

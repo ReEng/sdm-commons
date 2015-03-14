@@ -28,10 +28,10 @@ import org.fujaba.commons.editor.CommandStackDelegate;
 import org.fujaba.commons.notation.HierarchicalNode;
 import org.fujaba.commons.providers.ModelViewAdapterFactoryContentProvider;
 import org.fujaba.commons.utils.IDUsingResourceFactory;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.OperationExtension;
 import org.storydriven.modeling.editor.gef.SdmUiPlugin;
 import org.storydriven.modeling.editor.gef.properties.SDMTabbedPropertySheetPage;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.OperationExtension;
 
 
 /**

@@ -4,12 +4,12 @@
 package org.storydriven.modeling.editor.gef.properties.sections;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.modeling.editor.gef.utils.Expr2String;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.expressions.ExpressionsFactory;
-import org.storydriven.modeling.expressions.TextualExpression;
-import org.storydriven.modeling.patterns.Constraint;
-import org.storydriven.modeling.patterns.PatternsPackage;
+import org.storydriven.storydiagrams.patterns.Constraint;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 /**
  * @author Oleg

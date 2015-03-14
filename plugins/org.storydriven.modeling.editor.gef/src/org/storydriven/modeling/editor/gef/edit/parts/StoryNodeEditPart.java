@@ -8,14 +8,14 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPolicy;
 import org.fujaba.commons.edit.parts.AbstractDiagramEditPart;
 import org.fujaba.commons.notation.Edge;
-import org.storydriven.modeling.activities.ActivitiesPackage;
-import org.storydriven.modeling.activities.StoryNode;
 import org.storydriven.modeling.editor.gef.edit.policies.ActivityDeleteEditPolicy;
 import org.storydriven.modeling.editor.gef.edit.policies.ActivityNodeEditPolicy;
 import org.storydriven.modeling.editor.gef.edit.policies.StoryPatternLayoutEditPolicy;
 import org.storydriven.modeling.editor.gef.figures.UMLActivityChopboxAnchor;
 import org.storydriven.modeling.editor.gef.figures.UMLStoryActivityFigure;
-import org.storydriven.modeling.patterns.PatternsPackage;
+import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.storydriven.storydiagrams.activities.StoryNode;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 
 /**

@@ -6,10 +6,10 @@ package org.storydriven.modeling.editor.gef.edit.commands;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.fujaba.commons.edit.commands.AbstractCreateNodeCommand;
 import org.fujaba.commons.notation.HierarchicalNode;
-import org.storydriven.modeling.activities.StoryNode;
-import org.storydriven.modeling.patterns.ObjectVariable;
-import org.storydriven.modeling.patterns.PatternsFactory;
-import org.storydriven.modeling.patterns.StoryPattern;
+import org.storydriven.storydiagrams.activities.StoryNode;
+import org.storydriven.storydiagrams.patterns.ObjectVariable;
+import org.storydriven.storydiagrams.patterns.PatternsFactory;
+import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 /**
  * @author Oleg

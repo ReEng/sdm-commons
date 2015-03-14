@@ -5,10 +5,10 @@ package org.storydriven.modeling.editor.gef.edit.commands;
 
 import org.fujaba.commons.edit.commands.AbstractCreateEdgeCommand;
 import org.fujaba.commons.notation.Node;
-import org.storydriven.modeling.activities.ActivitiesFactory;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.ActivityNode;
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityNode;
 
 /**
  * @author Oleg

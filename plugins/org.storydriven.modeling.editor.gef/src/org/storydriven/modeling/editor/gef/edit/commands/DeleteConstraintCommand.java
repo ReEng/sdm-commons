@@ -7,9 +7,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.fujaba.commons.edit.commands.AbstractDeleteNodeCommand;
 import org.fujaba.commons.notation.HierarchicalNode;
 import org.fujaba.commons.notation.Node;
-import org.storydriven.modeling.activities.StoryNode;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.Constraint;
+import org.storydriven.storydiagrams.activities.StoryNode;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.Constraint;
 
 /**
  * @author Oleg

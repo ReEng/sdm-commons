@@ -16,12 +16,12 @@ import org.fujaba.commons.figures.DoublePolylineConnection;
 import org.fujaba.commons.figures.utils.ConnectionDecorationFactory;
 import org.fujaba.commons.notation.Edge;
 import org.storydriven.modeling.editor.gef.utils.Expr2String;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.BindingOperator;
-import org.storydriven.modeling.patterns.BindingSemantics;
-import org.storydriven.modeling.patterns.LinkVariable;
-import org.storydriven.modeling.patterns.Path;
-import org.storydriven.modeling.patterns.PatternsPackage;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.BindingOperator;
+import org.storydriven.storydiagrams.patterns.BindingSemantics;
+import org.storydriven.storydiagrams.patterns.LinkVariable;
+import org.storydriven.storydiagrams.patterns.Path;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 
 /**
@@ -164,12 +164,10 @@ public class LinkVariableEditPart extends AbstractEdgeEditPart
       int featureID = notification.getFeatureID(Edge.class);
       if (featureID == PatternsPackage.LINK_VARIABLE__BINDING_OPERATOR
             || featureID == PatternsPackage.LINK_VARIABLE__BINDING_SEMANTICS
-            || featureID == PatternsPackage.LINK_VARIABLE__BINDING_STATE
             || featureID == PatternsPackage.LINK_VARIABLE__NAME
             || featureID == PatternsPackage.LINK_VARIABLE__FIRST_LINK_CONSTRAINT
             || featureID == PatternsPackage.LINK_VARIABLE__QUALIFIER_EXPRESSION
             || featureID == PatternsPackage.LINK_VARIABLE__SECOND_LINK_CONSTRAINT
-            || featureID == PatternsPackage.LINK_VARIABLE__BINDING_SEMANTICS
             || featureID == PatternsPackage.LINK_VARIABLE__SOURCE_END
             || featureID == PatternsPackage.LINK_VARIABLE__TARGET_END)
       {

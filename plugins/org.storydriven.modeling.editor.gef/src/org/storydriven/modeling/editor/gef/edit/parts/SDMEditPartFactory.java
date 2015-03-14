@@ -7,18 +7,18 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartFactory;
 import org.fujaba.commons.notation.DiagramElement;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityCallNode;
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.activities.JunctionNode;
-import org.storydriven.modeling.activities.StartNode;
-import org.storydriven.modeling.activities.StopNode;
-import org.storydriven.modeling.activities.StoryNode;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.patterns.AbstractLinkVariable;
-import org.storydriven.modeling.patterns.Constraint;
-import org.storydriven.modeling.patterns.ObjectVariable;
-import org.storydriven.modeling.patterns.PrimitiveVariable;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityCallNode;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
+import org.storydriven.storydiagrams.activities.InitialNode;
+import org.storydriven.storydiagrams.activities.JunctionNode;
+import org.storydriven.storydiagrams.activities.StoryNode;
+import org.storydriven.storydiagrams.patterns.AbstractLinkVariable;
+import org.storydriven.storydiagrams.patterns.Constraint;
+import org.storydriven.storydiagrams.patterns.ObjectVariable;
+import org.storydriven.storydiagrams.patterns.PrimitiveVariable;
 
 
 /**
@@ -55,11 +55,11 @@ public class SDMEditPartFactory implements EditPartFactory
       {
          part = new ActivityEditPart();
       }
-      else if (realModel instanceof StartNode)
+      else if (realModel instanceof InitialNode)
       {
          part = new StartNodeEditPart();
       }
-      else if (realModel instanceof StopNode)
+      else if (realModel instanceof ActivityFinalNode)
       {
          part = new StopNodeEditPart();
       }

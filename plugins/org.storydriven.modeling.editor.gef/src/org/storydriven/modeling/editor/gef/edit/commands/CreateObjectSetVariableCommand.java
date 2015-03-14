@@ -6,10 +6,10 @@ package org.storydriven.modeling.editor.gef.edit.commands;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.fujaba.commons.edit.commands.AbstractCreateNodeCommand;
 import org.fujaba.commons.notation.HierarchicalNode;
-import org.storydriven.modeling.activities.StoryNode;
-import org.storydriven.modeling.patterns.ObjectSetVariable;
-import org.storydriven.modeling.patterns.PatternsFactory;
-import org.storydriven.modeling.patterns.StoryPattern;
+import org.storydriven.storydiagrams.activities.StoryNode;
+import org.storydriven.storydiagrams.patterns.CollectionVariable;
+import org.storydriven.storydiagrams.patterns.PatternsFactory;
+import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 /**
  * @author Oleg
@@ -21,7 +21,7 @@ public class CreateObjectSetVariableCommand extends AbstractCreateNodeCommand
 {
 
    private StoryPattern parent;
-   private ObjectSetVariable objectSetVariable;
+   private CollectionVariable objectSetVariable;
    protected static int varNumber = 1;
    /**
     * @param label
@@ -46,7 +46,7 @@ public class CreateObjectSetVariableCommand extends AbstractCreateNodeCommand
    {
       if(this.objectSetVariable == null)
       {
-         this.objectSetVariable = PatternsFactory.eINSTANCE.createObjectSetVariable();
+         this.objectSetVariable = PatternsFactory.eINSTANCE.createCollectionVariable();
          this.modelElement = this.objectSetVariable;
          this.objectSetVariable.setName("objSet"+ varNumber++);
       }

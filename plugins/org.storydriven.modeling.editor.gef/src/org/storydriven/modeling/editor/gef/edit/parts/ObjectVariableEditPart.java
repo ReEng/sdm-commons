@@ -6,12 +6,12 @@ package org.storydriven.modeling.editor.gef.edit.parts;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.emf.common.notify.Notification;
 import org.fujaba.commons.figures.UMLObjectFigure;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.BindingOperator;
-import org.storydriven.modeling.patterns.BindingSemantics;
-import org.storydriven.modeling.patterns.ObjectSetVariable;
-import org.storydriven.modeling.patterns.ObjectVariable;
-import org.storydriven.modeling.patterns.PatternsPackage;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.BindingOperator;
+import org.storydriven.storydiagrams.patterns.BindingSemantics;
+import org.storydriven.storydiagrams.patterns.CollectionVariable;
+import org.storydriven.storydiagrams.patterns.ObjectVariable;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 
 /**
@@ -69,7 +69,7 @@ public class ObjectVariableEditPart extends AbstractVariableEditPart
          figure.setIsNegative(false);
       }
       
-      if(this.getRealModel() instanceof ObjectSetVariable)
+      if(this.getRealModel() instanceof CollectionVariable)
       {
          figure.setIsSet(true);
       }
@@ -93,12 +93,12 @@ public class ObjectVariableEditPart extends AbstractVariableEditPart
             || featureID == PatternsPackage.OBJECT_VARIABLE__BINDING_STATE
             || featureID == PatternsPackage.OBJECT_VARIABLE__CLASSIFIER
             || featureID == PatternsPackage.OBJECT_VARIABLE__NAME
-            || featureID == PatternsPackage.OBJECT_SET_VARIABLE__ATTRIBUTE_ASSIGNMENT
-            || featureID == PatternsPackage.OBJECT_SET_VARIABLE__BINDING_OPERATOR
-            || featureID == PatternsPackage.OBJECT_SET_VARIABLE__BINDING_SEMANTICS
-            || featureID == PatternsPackage.OBJECT_SET_VARIABLE__BINDING_STATE
-            || featureID == PatternsPackage.OBJECT_SET_VARIABLE__CLASSIFIER
-            || featureID == PatternsPackage.OBJECT_SET_VARIABLE__NAME)
+            || featureID == PatternsPackage.COLLECTION_VARIABLE__ATTRIBUTE_ASSIGNMENT
+            || featureID == PatternsPackage.COLLECTION_VARIABLE__BINDING_OPERATOR
+            || featureID == PatternsPackage.COLLECTION_VARIABLE__BINDING_SEMANTICS
+            || featureID == PatternsPackage.COLLECTION_VARIABLE__BINDING_STATE
+            || featureID == PatternsPackage.COLLECTION_VARIABLE__CLASSIFIER
+            || featureID == PatternsPackage.COLLECTION_VARIABLE__NAME)
       {
          refreshVisuals();
       }

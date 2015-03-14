@@ -6,9 +6,9 @@ package org.storydriven.modeling.editor.gef.edit.commands;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.fujaba.commons.edit.commands.AbstractCreateNodeCommand;
 import org.fujaba.commons.notation.HierarchicalNode;
-import org.storydriven.modeling.activities.ActivitiesFactory;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.JunctionNode;
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.JunctionNode;
 
 /**
  * @author Oleg

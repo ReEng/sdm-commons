@@ -5,11 +5,11 @@ package org.storydriven.modeling.editor.gef.edit.commands;
 
 import org.fujaba.commons.edit.commands.AbstractCreateEdgeCommand;
 import org.fujaba.commons.notation.Node;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.LinkVariable;
-import org.storydriven.modeling.patterns.ObjectVariable;
-import org.storydriven.modeling.patterns.PatternsFactory;
-import org.storydriven.modeling.patterns.StoryPattern;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.LinkVariable;
+import org.storydriven.storydiagrams.patterns.ObjectVariable;
+import org.storydriven.storydiagrams.patterns.PatternsFactory;
+import org.storydriven.storydiagrams.patterns.StoryPattern;
 
 /**
  * @author Oleg

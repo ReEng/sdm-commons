@@ -15,10 +15,10 @@ import org.storydriven.modeling.editor.gef.edit.policies.AbstractVariableLayoutE
 import org.storydriven.modeling.editor.gef.edit.policies.ActivityDeleteEditPolicy;
 import org.storydriven.modeling.editor.gef.edit.policies.StoryPatternNodeEditPolicy;
 import org.storydriven.modeling.editor.gef.figures.UMLObjectChopboxAnchor;
-import org.storydriven.modeling.patterns.AbstractVariable;
-import org.storydriven.modeling.patterns.BindingState;
-import org.storydriven.modeling.patterns.Constraint;
-import org.storydriven.modeling.patterns.PatternsPackage;
+import org.storydriven.storydiagrams.patterns.AbstractVariable;
+import org.storydriven.storydiagrams.patterns.BindingState;
+import org.storydriven.storydiagrams.patterns.Constraint;
+import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 
 public class AbstractVariableEditPart extends AbstractDiagramEditPart

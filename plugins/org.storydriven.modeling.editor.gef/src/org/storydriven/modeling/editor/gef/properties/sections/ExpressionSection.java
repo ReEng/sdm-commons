@@ -5,10 +5,10 @@ package org.storydriven.modeling.editor.gef.properties.sections;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.fujaba.commons.properties.section.AbstractTextSection;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.modeling.editor.gef.utils.Expr2String;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.expressions.ExpressionsFactory;
-import org.storydriven.modeling.expressions.TextualExpression;
 
 /**
  * @author Oleg

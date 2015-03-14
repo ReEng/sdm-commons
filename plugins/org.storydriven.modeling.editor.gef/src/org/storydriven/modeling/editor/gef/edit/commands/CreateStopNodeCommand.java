@@ -6,9 +6,9 @@ package org.storydriven.modeling.editor.gef.edit.commands;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.fujaba.commons.edit.commands.AbstractCreateNodeCommand;
 import org.fujaba.commons.notation.HierarchicalNode;
-import org.storydriven.modeling.activities.ActivitiesFactory;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.StopNode;
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityFinalNode;
 
 /**
  * @author Oleg
@@ -18,7 +18,7 @@ import org.storydriven.modeling.activities.StopNode;
  */
 public class CreateStopNodeCommand extends AbstractCreateNodeCommand
 {
-   private StopNode stopNode;
+   private ActivityFinalNode stopNode;
    private Activity parentActivity;
    /**
     * @param label
@@ -46,7 +46,7 @@ public class CreateStopNodeCommand extends AbstractCreateNodeCommand
    {
       if(this.stopNode == null)
       {
-         this.stopNode = ActivitiesFactory.eINSTANCE.createStopNode();
+         this.stopNode = ActivitiesFactory.eINSTANCE.createActivityFinalNode();
          this.modelElement = this.stopNode;
       }
 

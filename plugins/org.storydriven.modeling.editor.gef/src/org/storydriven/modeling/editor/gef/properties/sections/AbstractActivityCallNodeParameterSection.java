@@ -34,16 +34,16 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.fujaba.commons.properties.section.AbstractSection;
-import org.storydriven.modeling.activities.ActivityCallNode;
-import org.storydriven.modeling.calls.CallsFactory;
-import org.storydriven.modeling.calls.CallsPackage;
-import org.storydriven.modeling.calls.ParameterBinding;
+import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.ExpressionsPackage;
+import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.modeling.editor.gef.properties.util.ConfigureParameterBindingDialog;
 import org.storydriven.modeling.editor.gef.utils.Expr2String;
 import org.storydriven.modeling.editor.gef.utils.ModelHelper;
-import org.storydriven.modeling.expressions.ExpressionsFactory;
-import org.storydriven.modeling.expressions.ExpressionsPackage;
-import org.storydriven.modeling.expressions.TextualExpression;
+import org.storydriven.storydiagrams.activities.ActivityCallNode;
+import org.storydriven.storydiagrams.calls.CallsFactory;
+import org.storydriven.storydiagrams.calls.CallsPackage;
+import org.storydriven.storydiagrams.calls.ParameterBinding;
 
 /**
  * @author Oleg

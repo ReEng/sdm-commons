@@ -1,21 +1,22 @@
 package org.storydriven.modeling.editor.gef.utils;
 
-import org.storydriven.modeling.calls.expressions.ParameterExpression;
-import org.storydriven.modeling.expressions.ArithmeticExpression;
-import org.storydriven.modeling.expressions.ArithmeticOperator;
-import org.storydriven.modeling.expressions.BinaryExpression;
-import org.storydriven.modeling.expressions.BinaryLogicExpression;
-import org.storydriven.modeling.expressions.ComparingOperator;
-import org.storydriven.modeling.expressions.ComparisonExpression;
-import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.expressions.LiteralExpression;
-import org.storydriven.modeling.expressions.LogicOperator;
-import org.storydriven.modeling.expressions.NotExpression;
-import org.storydriven.modeling.expressions.TextualExpression;
-import org.storydriven.modeling.patterns.expressions.AttributeValueExpression;
-import org.storydriven.modeling.patterns.expressions.ObjectSetSizeExpression;
-import org.storydriven.modeling.patterns.expressions.ObjectVariableExpression;
-import org.storydriven.modeling.patterns.expressions.PrimitiveVariableExpression;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.TextualExpression;
+import org.storydriven.core.expressions.common.ArithmeticExpression;
+import org.storydriven.core.expressions.common.ArithmeticOperator;
+import org.storydriven.core.expressions.common.BinaryExpression;
+import org.storydriven.core.expressions.common.ComparingOperator;
+import org.storydriven.core.expressions.common.ComparisonExpression;
+import org.storydriven.core.expressions.common.LiteralExpression;
+import org.storydriven.core.expressions.common.LogicOperator;
+import org.storydriven.core.expressions.common.LogicalExpression;
+import org.storydriven.core.expressions.common.UnaryExpression;
+import org.storydriven.core.expressions.common.UnaryOperator;
+import org.storydriven.storydiagrams.calls.expressions.ParameterExpression;
+import org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression;
+import org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression;
+import org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression;
+import org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression;
 
 public abstract class Expr2String
 {
@@ -33,13 +34,13 @@ public abstract class Expr2String
       {
          return litExpr((LiteralExpression)e);
       }
-      else if(e instanceof NotExpression)
+      else if(e instanceof UnaryExpression)
       {
-         return notExpr((NotExpression)e);
+         return unaryExpr((UnaryExpression) e);
       }
-      else if(e instanceof ObjectSetSizeExpression)
+      else if(e instanceof CollectionSizeExpression)
       {
-         return objSetExpr((ObjectSetSizeExpression)e);
+         return objSetExpr((CollectionSizeExpression)e);
       }
       else if(e instanceof ObjectVariableExpression)
       {
@@ -80,14 +81,9 @@ public abstract class Expr2String
       return e.getObject().getName();
    }
 
-   private static String objSetExpr(ObjectSetSizeExpression e)
+   private static String objSetExpr(CollectionSizeExpression e)
    {
       return e.getSet().getName();
-   }
-
-   private static String notExpr(NotExpression e)
-   {
-      return "NOT(" + toString(e.getNegatedExpression()) + ")";
    }
 
    private static String litExpr(LiteralExpression e)
@@ -101,9 +97,9 @@ public abstract class Expr2String
       {
          return arithExpr((ArithmeticExpression)e);
       }
-      else if(e instanceof BinaryLogicExpression)
+      else if(e instanceof LogicalExpression)
       {
-         return binLogExpr((BinaryLogicExpression)e);
+         return binLogExpr((LogicalExpression)e);
       }
       else if(e instanceof ComparisonExpression)
       {
@@ -146,7 +142,7 @@ public abstract class Expr2String
       return toString(e.getLeftExpression()) + operator + toString(e.getRightExpression());
    }
 
-   private static String binLogExpr(BinaryLogicExpression e)
+   private static String binLogExpr(LogicalExpression e)
    {
       String operator = null;
       if(e.getOperator().equals(LogicOperator.AND))
@@ -179,10 +175,10 @@ public abstract class Expr2String
       {
          operator = "/";
       }
-      else if(e.getOperator().equals(ArithmeticOperator.EXP))
-      {
-         operator = "^";
-      }
+//      else if(e.getOperator().equals(ArithmeticOperator.EXP))
+//      {
+//         operator = "^";
+//      }
       else if(e.getOperator().equals(ArithmeticOperator.MINUS))
       {
          operator = "-";
@@ -200,6 +196,23 @@ public abstract class Expr2String
          operator = "*";
       }
       return toString(e.getLeftExpression()) + operator + toString(e.getRightExpression());
+   }
+   
+   private static String unaryExpr(UnaryExpression e)
+   {
+		String operator = null;
+		if (e.getOperator().equals(UnaryOperator.NOT))
+		{
+			operator = "NOT";
+		}
+		else if (e.getOperator().equals(UnaryOperator.PLUS))
+		{
+			operator = "+";
+		} else if (e.getOperator().equals(UnaryOperator.MINUS))
+		{
+			operator = "-";
+		}
+		return operator + "(" + toString(e.getEnclosedExpression()) + ")";
    }
 
    private static String attrValueExpr(AttributeValueExpression e)

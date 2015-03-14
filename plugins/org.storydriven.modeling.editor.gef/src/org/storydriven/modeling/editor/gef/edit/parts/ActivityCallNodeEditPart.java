@@ -14,14 +14,14 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.fujaba.commons.edit.parts.AbstractDiagramEditPart;
 import org.fujaba.commons.edit.policies.AbstractLayoutEditPolicy;
 import org.fujaba.commons.notation.Edge;
-import org.storydriven.modeling.activities.ActivitiesPackage;
-import org.storydriven.modeling.activities.Activity;
-import org.storydriven.modeling.activities.ActivityCallNode;
-import org.storydriven.modeling.calls.ParameterBinding;
 import org.storydriven.modeling.editor.gef.edit.policies.ActivityNodeEditPolicy;
 import org.storydriven.modeling.editor.gef.figures.UMLActivityChopboxAnchor;
 import org.storydriven.modeling.editor.gef.figures.UMLStoryActivityFigure;
 import org.storydriven.modeling.editor.gef.utils.Expr2String;
+import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityCallNode;
+import org.storydriven.storydiagrams.calls.ParameterBinding;
 
 
 /**

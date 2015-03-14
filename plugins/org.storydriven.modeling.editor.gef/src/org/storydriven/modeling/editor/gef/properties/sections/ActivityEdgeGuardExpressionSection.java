@@ -4,9 +4,9 @@
 package org.storydriven.modeling.editor.gef.properties.sections;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.storydriven.modeling.activities.ActivitiesPackage;
-import org.storydriven.modeling.activities.ActivityEdge;
-import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.storydiagrams.activities.ActivitiesPackage;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
 
 /**
  * @author Oleg
