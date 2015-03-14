@@ -115,9 +115,12 @@ public class NameSectionPart extends SectionPart implements
    @Override
    public void commit(boolean onSave)
    {
-      SetNameCommand cmd = new SetNameCommand(namedElement, this.nameField.getText());
-      this.editor.getCommandStack().execute(cmd);
-      super.commit(onSave);
+	   if (this.namedElement != null)
+	   {
+		   SetNameCommand cmd = new SetNameCommand(namedElement, this.nameField.getText());
+		   this.editor.getCommandStack().execute(cmd);
+	   }
+	   super.commit(onSave);
    }
 
 
