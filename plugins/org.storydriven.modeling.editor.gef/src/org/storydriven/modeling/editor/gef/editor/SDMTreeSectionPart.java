@@ -9,7 +9,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
@@ -28,12 +27,10 @@ import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.fujaba.commons.editor.overviewpage.NestedDiagramsTreeSectionPart;
 import org.fujaba.commons.properties.TreeNodeLabelProvider;
-import org.storydriven.core.Extension;
-import org.storydriven.core.util.EModelElementOperations;
 import org.storydriven.modeling.editor.gef.edit.commands.CreateActivityCommand;
 import org.storydriven.modeling.editor.gef.edit.commands.CreateMethodWithActivityCommand;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.activities.OperationExtension;
+import org.storydriven.modeling.editor.gef.utils.ModelHelper;
+import org.storydriven.storydiagrams.activities.Activity;
 
 
 /**
@@ -52,12 +49,11 @@ public class SDMTreeSectionPart extends NestedDiagramsTreeSectionPart
       super(editor, parent, toolkit);
 
       // set section data
-      getSection().setText("Pattern Specifications contained in this catalog");
+      getSection().setText("Packages, classes, and operations with corresponding story diagrams (activities)");
    }
 
 
-   public SDMTreeSectionPart(SDMEditor editor,
-         IManagedForm mForm)
+   public SDMTreeSectionPart(SDMEditor editor, IManagedForm mForm)
    {
       this(editor, mForm.getForm().getBody(), mForm.getToolkit());
    }
@@ -74,16 +70,23 @@ public class SDMTreeSectionPart extends NestedDiagramsTreeSectionPart
 
       // get children
       List<EObject> children = new ArrayList<EObject>();
-      if(type instanceof EPackage)
+      if (type instanceof EPackage)
       {
          EPackage p = (EPackage) type;
          children.addAll(p.getESubpackages());
          children.addAll(p.getEClassifiers());
       }
-      else if(type instanceof EClass)
+      else if (type instanceof EClass)
       {
          EClass c = (EClass) type;
          children.addAll(c.getEOperations());
+      }
+      else if (type instanceof EOperation) {
+    	  Activity activity = ModelHelper.getActivityOfEOperation((EOperation) type);
+    	  if (activity != null)
+    	  {
+    		  children.add(activity); // add the story diagram
+    	  }
       }
 
       // create children array
@@ -254,12 +257,10 @@ public class SDMTreeSectionPart extends NestedDiagramsTreeSectionPart
       if (diagramRoot instanceof EOperation)
       {
          EOperation eop = (EOperation) diagramRoot;
-         Extension extension = EModelElementOperations.getExtension(eop, ActivitiesPackage.eINSTANCE.getOperationExtension());
-         
-         if (extension != null && extension instanceof OperationExtension)
+         Activity activity = ModelHelper.getActivityOfEOperation(eop);
+         if (activity != null)
          {
-        	 OperationExtension ext = (OperationExtension) extension;
-            ((SDMEditor) this.editor).addPageFor(ext.getOwnedActivity());
+            ((SDMEditor) this.editor).addPageFor(activity);
          }
          else
          {
@@ -267,8 +268,13 @@ public class SDMTreeSectionPart extends NestedDiagramsTreeSectionPart
                   "The selected EOperation is not formalized by a story diagram.");
          }
       }
+      else if (diagramRoot instanceof Activity)
+      {
+    	  Activity activity = (Activity) diagramRoot;
+    	  ((SDMEditor) this.editor).addPageFor(activity);
+      }
    }
-
+   
 
    @Override
    protected IBaseLabelProvider getLabelProvider()

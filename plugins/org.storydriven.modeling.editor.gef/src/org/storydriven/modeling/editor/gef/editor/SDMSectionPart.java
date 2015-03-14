@@ -14,11 +14,9 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.fujaba.commons.editor.overviewpage.NestedDiagramsSectionPart;
-import org.storydriven.core.Extension;
-import org.storydriven.core.util.EModelElementOperations;
 import org.storydriven.modeling.editor.gef.SdmUiPlugin;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.activities.OperationExtension;
+import org.storydriven.modeling.editor.gef.utils.ModelHelper;
+import org.storydriven.storydiagrams.activities.Activity;
 
 
 public class SDMSectionPart extends NestedDiagramsSectionPart
@@ -66,24 +64,24 @@ public class SDMSectionPart extends NestedDiagramsSectionPart
       return null;
    }
 
-   @Override
-   protected void openDiagramFor(EObject diagramRoot)
-   {
-      if(diagramRoot instanceof EOperation)
-      {
-         try
-         {
-        	 Extension extension = EModelElementOperations.getExtension(((EOperation) diagramRoot), ActivitiesPackage.eINSTANCE.getOperationExtension());
-             OperationExtension ext = (OperationExtension) extension;
-             ((SDMEditor)this.editor).addPageFor(ext.getOwnedActivity());
-         }
-         catch (Exception e)
-         {
-            SdmUiPlugin.getDefault().logError("Could not open activity diagram for EOperation.", e);
-         }
+	@Override
+	protected void openDiagramFor(EObject diagramRoot)
+	{
+		if (diagramRoot instanceof EOperation)
+		{
+			Activity activity = ModelHelper
+					.getActivityOfEOperation((EOperation) diagramRoot);
+			try
+			{
+				((SDMEditor) this.editor).addPageFor(activity);
+			} catch (Exception e)
+			{
+				SdmUiPlugin.getDefault().logError(
+						"Could not open activity diagram for EOperation.", e);
+			}
 
-      }
-   }
+		}
+	}
    
    
    @Override
