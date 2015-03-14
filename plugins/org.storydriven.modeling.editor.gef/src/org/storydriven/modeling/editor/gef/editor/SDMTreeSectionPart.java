@@ -28,8 +28,11 @@ import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.fujaba.commons.editor.overviewpage.NestedDiagramsTreeSectionPart;
 import org.fujaba.commons.properties.TreeNodeLabelProvider;
+import org.storydriven.core.Extension;
+import org.storydriven.core.util.EModelElementOperations;
 import org.storydriven.modeling.editor.gef.edit.commands.CreateActivityCommand;
 import org.storydriven.modeling.editor.gef.edit.commands.CreateMethodWithActivityCommand;
+import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.OperationExtension;
 
 
@@ -251,10 +254,11 @@ public class SDMTreeSectionPart extends NestedDiagramsTreeSectionPart
       if (diagramRoot instanceof EOperation)
       {
          EOperation eop = (EOperation) diagramRoot;
-         EAnnotation anno = eop.getEAnnotation("http://ns.storydriven.org/extension");
-         if (anno != null)
+         Extension extension = EModelElementOperations.getExtension(eop, ActivitiesPackage.eINSTANCE.getOperationExtension());
+         
+         if (extension != null && extension instanceof OperationExtension)
          {
-            OperationExtension ext = (OperationExtension) anno.getContents().get(0);
+        	 OperationExtension ext = (OperationExtension) extension;
             ((SDMEditor) this.editor).addPageFor(ext.getOwnedActivity());
          }
          else

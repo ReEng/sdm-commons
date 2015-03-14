@@ -65,8 +65,6 @@ public class CreateActivityCommand extends Command
          activity = ActivitiesFactory.eINSTANCE.createActivity();
       }
       activity.setOwningOperation(oExtension);
-      activity.getInParameters().addAll(oExtension.getInParameters());
-      activity.getOutParameters().addAll(oExtension.getOutParameters());
       
       activity.getOutParameters();
       

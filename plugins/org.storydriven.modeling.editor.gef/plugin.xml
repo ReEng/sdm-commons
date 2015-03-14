@@ -105,7 +105,7 @@
             icon16="icons/editLink16.png"
             id="org.fujaba.sdm.ui.palette.link"
             label="Link"
-            product="org.storydriven.modeling.patterns.impl.LinkVariableImpl"
+            product="org.storydriven.storydiagrams.patterns.impl.LinkVariableImpl"
             tooltip="Create a new Link"
             type="connection">
       </paletteEntry>
@@ -113,7 +113,7 @@
             icon16="icons/newstop16.gif"
             id="org.fujaba.sdm.ui.palette.stop"
             label="Stop Node"
-            product="org.storydriven.modeling.activities.impl.StopNodeImpl"
+            product="org.storydriven.storydiagrams.activities.impl.ActivityFinalNodeImpl"
             tooltip="Create a Stop Node"
             type="element">
       </paletteEntry>
@@ -121,7 +121,7 @@
             icon16="icons/newstory16.gif"
             id="org.fujaba.sdm.ui.palette.story"
             label="Story Node"
-            product="org.storydriven.modeling.activities.impl.ModifyingStoryNodeImpl"
+            product="org.storydriven.storydiagrams.activities.impl.ModifyingStoryNodeImpl"
             tooltip="Create a new Story Pattern"
             type="element">
       </paletteEntry>
@@ -129,7 +129,7 @@
             icon16="icons/editObject16.gif"
             id="org.fujaba.sdm.ui.palette.object"
             label="Object Variable"
-            product="org.storydriven.modeling.patterns.impl.ObjectVariableImpl"
+            product="org.storydriven.storydiagrams.patterns.impl.ObjectVariableImpl"
             tooltip="Create a new Object Variable"
             type="element">
       </paletteEntry>
@@ -137,7 +137,7 @@
             icon16="icons/editObject16.gif"
             id="org.fujaba.sdm.ui.palette.objectset"
             label="Object Set Variable"
-            product="org.storydriven.modeling.patterns.impl.ObjectSetVariableImpl"
+            product="org.storydriven.storydiagrams.patterns.impl.CollectionVariableImpl"
             tooltip="Create a new Object Set Variable"
             type="element">
       </paletteEntry>
@@ -145,13 +145,13 @@
             icon16="icons/newnop16.gif"
             id="org.fujaba.sdm.ui.palette.junction"
             label="Junction Node"
-            product="org.storydriven.modeling.activities.impl.JunctionNodeImpl"
+            product="org.storydriven.storydiagrams.activities.impl.JunctionNodeImpl"
             type="element">
       </paletteEntry>
       <paletteEntry
             id="org.fujaba.sdm.ui.palette.statement"
             label="Statement"
-            product="org.storydriven.modeling.activities.impl.StatementNodeImpl"
+            product="org.storydriven.storydiagrams.activities.impl.StatementNodeImpl"
             tooltip="Create a new Statement"
             type="element">
       </paletteEntry>
@@ -159,14 +159,14 @@
             icon16="icons/editTransition16.gif"
             id="org.fujaba.sdm.ui.palette.activityedge"
             label="Control Flow Transition"
-            product="org.storydriven.modeling.activities.impl.ActivityEdgeImpl"
+            product="org.storydriven.storydiagrams.activities.impl.ActivityEdgeImpl"
             tooltip="Create a new Control Flow Transition"
             type="connection">
       </paletteEntry>
       <paletteEntry
             id="org.fujaba.sdm.ui.palette.path"
             label="Path"
-            product="org.storydriven.modeling.patterns.impl.PathImpl"
+            product="org.storydriven.storydiagrams.patterns.impl.PathImpl"
             tooltip="Create a new Path"
             type="connection">
       </paletteEntry>
@@ -174,14 +174,14 @@
             icon16="icons/editObject16.gif"
             id="org.fujaba.sdm.ui.palette.primitive"
             label="Primitve Variable"
-            product="org.storydriven.modeling.patterns.impl.PrimitiveVariableImpl"
+            product="org.storydriven.storydiagrams.patterns.impl.PrimitiveVariableImpl"
             tooltip="Create a new Primitive Variable"
             type="element">
       </paletteEntry>
       <paletteEntry
             id="org.fujaba.sdm.ui.palette.activitycall"
             label="Activity Call"
-            product="org.storydriven.modeling.activities.impl.ActivityCallNodeImpl"
+            product="org.storydriven.storydiagrams.activities.impl.ActivityCallNodeImpl"
             tooltip="Create a new Activity Call"
             type="element">
       </paletteEntry>
@@ -189,14 +189,14 @@
             icon16="icons/editConstraint16.gif"
             id="org.fujaba.sdm.ui.palette.bindingExpression"
             label="Binding Expression"
-            product="org.storydriven.modeling.expressions.impl.TextualExpressionImpl"
+            product="org.storydriven.core.expressions.impl.TextualExpressionImpl"
             type="element">
       </paletteEntry>
       <paletteEntry
             icon16="icons/editConstraint16.gif"
             id="org.fujaba.sdm.ui.palette.constraint"
             label="Constraint"
-            product="org.storydriven.modeling.patterns.impl.ConstraintImpl"
+            product="org.storydriven.storydiagrams.patterns.impl.ConstraintImpl"
             tooltip="Create a new Constraint"
             type="element">
       </paletteEntry>

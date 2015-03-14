@@ -3,7 +3,6 @@ package org.storydriven.modeling.editor.gef.editor;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
@@ -15,7 +14,10 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.fujaba.commons.editor.overviewpage.NestedDiagramsSectionPart;
+import org.storydriven.core.Extension;
+import org.storydriven.core.util.EModelElementOperations;
 import org.storydriven.modeling.editor.gef.SdmUiPlugin;
+import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.OperationExtension;
 
 
@@ -71,9 +73,9 @@ public class SDMSectionPart extends NestedDiagramsSectionPart
       {
          try
          {
-            EAnnotation anno = ((EOperation)diagramRoot).getEAnnotations().get(0);
-            OperationExtension ext = (OperationExtension) anno.getContents().get(0);
-            ((SDMEditor)this.editor).addPageFor(ext.getOwnedActivity());
+        	 Extension extension = EModelElementOperations.getExtension(((EOperation) diagramRoot), ActivitiesPackage.eINSTANCE.getOperationExtension());
+             OperationExtension ext = (OperationExtension) extension;
+             ((SDMEditor)this.editor).addPageFor(ext.getOwnedActivity());
          }
          catch (Exception e)
          {

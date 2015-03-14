@@ -3,6 +3,7 @@ package org.storydriven.modeling.editor.gef.editor;
 import java.util.Iterator;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
@@ -67,12 +68,20 @@ public class SDMActivityPage extends AbstractSimpleEditorPart implements IEditin
       return ImageDescriptor.getMissingImageDescriptor().createImage();
    }
 
+   /**
+    * @see org.fujaba.commons.editor.AbstractSimpleEditorPart#doSave(org.eclipse.core.runtime.IProgressMonitor)
+    */
+   @Override
+   public void doSave(IProgressMonitor monitor)
+   {
+	   // save in parent editor (this one has no own file)
+	   this.parentEditor.doSave(monitor);
+   }
 
    @Override
    protected void performSaveAs(IFile file)
    {
-      // TODO Auto-generated method stub
-      
+      // do nothing
    }
 
    @Override
@@ -99,7 +108,7 @@ public class SDMActivityPage extends AbstractSimpleEditorPart implements IEditin
             }
          }
          
-         if(this.getDiagram() == null)
+         if (this.getDiagram() == null)
          {
             DiagramInitializer initializer = new DiagramInitializer(activity);
             this.setDiagram(initializer.init());
@@ -128,4 +137,5 @@ public class SDMActivityPage extends AbstractSimpleEditorPart implements IEditin
    {
       return (Activity) super.getDiagramModel();
    }
+
 }

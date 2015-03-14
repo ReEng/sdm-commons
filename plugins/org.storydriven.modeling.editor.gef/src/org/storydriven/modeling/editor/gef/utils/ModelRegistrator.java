@@ -7,9 +7,9 @@ import org.fujaba.commons.utils.Class2EClassRegistry;
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.impl.TextualExpressionImpl;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
-import org.storydriven.storydiagrams.activities.ActivityFinalNode;
 import org.storydriven.storydiagrams.activities.impl.ActivityCallNodeImpl;
 import org.storydriven.storydiagrams.activities.impl.ActivityEdgeImpl;
+import org.storydriven.storydiagrams.activities.impl.ActivityFinalNodeImpl;
 import org.storydriven.storydiagrams.activities.impl.InitialNodeImpl;
 import org.storydriven.storydiagrams.activities.impl.JunctionNodeImpl;
 import org.storydriven.storydiagrams.activities.impl.ModifyingStoryNodeImpl;
@@ -38,7 +38,7 @@ public abstract class ModelRegistrator
       Class2EClassRegistry.registerClass(ActivityEdgeImpl.class, pack.getActivityEdge());
       Class2EClassRegistry.registerClass(JunctionNodeImpl.class, pack.getJunctionNode());
       Class2EClassRegistry.registerClass(InitialNodeImpl.class, pack.getInitialNode());
-      Class2EClassRegistry.registerClass(ActivityFinalNode.class, pack.getActivityFinalNode());
+      Class2EClassRegistry.registerClass(ActivityFinalNodeImpl.class, pack.getActivityFinalNode());
       Class2EClassRegistry.registerClass(StatementNodeImpl.class, pack.getStatementNode());
       
       PatternsPackage pack2 = PatternsPackage.eINSTANCE;
