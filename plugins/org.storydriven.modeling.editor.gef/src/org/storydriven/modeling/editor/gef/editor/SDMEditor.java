@@ -42,7 +42,10 @@ import org.storydriven.storydiagrams.activities.OperationExtension;
  */
 public class SDMEditor extends AbstractPersistableModelViewMultiPageEditor implements ITabbedPropertySheetPageContributor
 {
-   private SDMOverviewPage overviewPage;
+	public static final String FILE_EXTENSION_DIAGRAMS = "diagrams";
+	public static final String FILE_EXTENSION_ECORE = "ecore";
+	
+	private SDMOverviewPage overviewPage;
    private ComposedAdapterFactory adapterFactory;
    private EPackage pack;
    protected PropertySheetPage propertySheetPage;
@@ -106,7 +109,6 @@ public class SDMEditor extends AbstractPersistableModelViewMultiPageEditor imple
       });
 
       // Create the editing domain with a special command stack.
-      //
       editingDomain = new AdapterFactoryEditingDomain(adapterFactory,
             commandStack, new HashMap<Resource, Boolean>());
       
@@ -178,7 +180,7 @@ public class SDMEditor extends AbstractPersistableModelViewMultiPageEditor imple
     * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
     */
    @Override
-   public Object getAdapter(@SuppressWarnings("unchecked") Class adapter)
+   public Object getAdapter(Class adapter)
    {
       if (adapter == IPropertySheetPage.class)
       {
@@ -190,52 +192,64 @@ public class SDMEditor extends AbstractPersistableModelViewMultiPageEditor imple
       }
    }
    
+   private Resource loadResource(URI resourceURI)
+   {
+		Resource resource = null;
+		try
+		{
+			// Load the resource through the editing domain.
+			resource = editingDomain.getResourceSet().getResource(resourceURI,
+					true);
+		} catch (Exception e)
+		{
+			SdmUiPlugin.getDefault().logError("load on demand failed", e);
+			resource = editingDomain.getResourceSet().getResource(resourceURI,
+					false);
+		}
+		return resource;
+   }
+   
    @Override
    protected void setInput(IEditorInput input)
    {
       setInputWithNotify(input);
       
       URI resourceURI = EditUIUtil.getURI(getEditorInput());
-      Exception exception = null;
       Resource resource = null;
-      try
+      if (FILE_EXTENSION_ECORE.equals(resourceURI.fileExtension()))
       {
-         // Load the resource through the editing domain.
-         //
-         resource = editingDomain.getResourceSet().getResource(resourceURI,
-               true);
-      }
-      catch (Exception e)
-      {
-         exception = e;
-         SdmUiPlugin.getDefault().logError("load on demand failed", exception);
-         resource = editingDomain.getResourceSet().getResource(resourceURI,
-               false);
+    	  // try to find a diagram file for the ecore file
+    	  resource = loadResource(resourceURI.appendFileExtension(FILE_EXTENSION_DIAGRAMS));
+    	  if (resource == null)
+    	  {
+    		  resource = loadResource(resourceURI);
+    	  }
       }
 
-      EObject obj = null;
+      EObject rootElement = null;
       try
       {
-         obj = resource.getContents().get(1);
+         rootElement = resource.getContents().get(1);
       }
       catch (Exception e)
       {
-         obj = resource.getContents().get(0);
+         rootElement = resource.getContents().get(0);
       }
-      if (obj instanceof HierarchicalNode)
+      
+      if (rootElement instanceof HierarchicalNode) // found the diagram file
       {
-         Activity activity = (Activity)((HierarchicalNode) obj).getModel();
+         Activity activity = (Activity)((HierarchicalNode) rootElement).getModel();
          OperationExtension ext = (OperationExtension) activity.eContainer();
          
          this.pack = ext.getOperation().getEContainingClass().getEPackage();
          this.modelResource = this.pack.eResource();
          this.diagramResource = resource;
       }
-      else if (obj instanceof EPackage)
+      else if (rootElement instanceof EPackage)
       {
-         this.pack = (EPackage) obj;
+         this.pack = (EPackage) rootElement;
          this.modelResource = this.pack.eResource();
-         URI uri = this.modelResource.getURI().appendFileExtension("diagrams");
+         URI uri = this.modelResource.getURI().appendFileExtension(FILE_EXTENSION_DIAGRAMS);
          this.diagramResource = this.editingDomain.getResourceSet().createResource(uri); 
       }
       else
