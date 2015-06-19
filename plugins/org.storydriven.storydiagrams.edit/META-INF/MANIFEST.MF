@@ -14,8 +14,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.core;visibility:=reexport,
  org.storydriven.core.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.ecore.edit;visibility:=reexport,
- org.eclipse.uml2.common.edit;visibility:=reexport
+ org.eclipse.emf.ecore.edit;visibility:=reexport
 Export-Package: org.storydriven.storydiagrams.activities.expressions.provider,
  org.storydriven.storydiagrams.activities.provider,
  org.storydriven.storydiagrams.calls.expressions.provider,

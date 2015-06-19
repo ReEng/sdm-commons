@@ -25,7 +25,6 @@
    <requires>
       <import plugin="org.eclipse.core.runtime" version="3.6.0" match="compatible"/>
       <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="compatible"/>
-      <import plugin="org.eclipse.uml2.codegen.ecore" version="1.6.0" match="compatible"/>
       <import plugin="org.eclipse.ocl" version="3.0.0" match="compatible"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="compatible"/>
       <import plugin="org.storydriven.core" version="1.0.1" match="greaterOrEqual"/>
@@ -33,7 +32,6 @@
       <import plugin="org.storydriven.core.edit"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
-      <import plugin="org.eclipse.uml2.common.edit"/>
       <import feature="org.storydriven.core.feature" version="1.0.1.qualifier"/>
    </requires>
 
