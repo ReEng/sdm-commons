@@ -28,7 +28,7 @@
       <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="compatible"/>
       <import plugin="org.eclipse.ocl" version="3.0.0" match="compatible"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="compatible"/>
-      <import plugin="org.eclipse.emf.edit" version="2.11.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edit" version="2.9.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf" version="2.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.edit" version="2.9.0" match="greaterOrEqual"/>
    </requires>
