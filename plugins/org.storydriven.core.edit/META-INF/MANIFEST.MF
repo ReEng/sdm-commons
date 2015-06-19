@@ -9,7 +9,9 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.storydriven.core.provider.CoreEditPlugin$Implementation
 Require-Bundle: org.storydriven.core;visibility:=reexport,
- org.eclipse.uml2.common.edit;visibility:=reexport
+ org.eclipse.emf.edit;bundle-version="2.11.0",
+ org.eclipse.emf;bundle-version="2.6.0",
+ org.eclipse.emf.ecore.edit;bundle-version="2.9.0"
 Export-Package: org.storydriven.core.expressions.common.provider,
  org.storydriven.core.expressions.provider,
  org.storydriven.core.provider
