@@ -2,7 +2,7 @@
 <feature
       id="de.mdelab.sdm.interpreter.core.feature"
       label="MDELab SDM Interpreter Core Feature"
-      version="1.0.0.qualifier"
+      version="1.1.0.qualifier"
       provider-name="MDELab.de">
 
    <description url="http://www.mdelab.de">
