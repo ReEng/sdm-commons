@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
 
-  <rm:locator pattern="^de\.mdelab\.sdm\..*" searchPathRef="sdmsvn_features" failOnError="false" />
-  <rm:locator pattern="^org\.storydriven.*" searchPathRef="sdmsvn_features" failOnError="false" />
+  <rm:locator pattern="^org\.fujaba\.commons.*feature$" searchPathRef="sdmsvn_features" failOnError="false" />
+  <rm:locator pattern="^de\.mdelab\.sdm\..*feature$" searchPathRef="sdmsvn_features" failOnError="false" />
+  <rm:locator pattern="^de\.mdelab\.sdm\..*feature$" searchPathRef="sdmsvn_features" failOnError="false" />
+  <rm:locator pattern="^org\.storydriven.*feature$" searchPathRef="sdmsvn_features" failOnError="false" />
+  <rm:locator pattern="^de\.upb\.swt\.core.*feature$" searchPathRef="sdmsvn_features" failOnError="false" />
   <rm:locator pattern="^de\.mdelab\.sdm\..*" searchPathRef="sdmsvn_plugins" failOnError="false" />
   <rm:locator pattern="^org\.storydriven.*" searchPathRef="sdmsvn_plugins" failOnError="false" />
+  <rm:locator pattern="^org\.fujaba\.commons.*" searchPathRef="sdmsvn_plugins" failOnError="false" />
+  <rm:locator pattern="^de\.upb\.swt\.core.*" searchPathRef="sdmsvn_plugins" failOnError="false" />
   <rm:locator searchPathRef="luna" failOnError="true" pattern="^org\.eclipse\..*" />
   <rm:locator searchPathRef="orbit" failOnError="false"/>
 
