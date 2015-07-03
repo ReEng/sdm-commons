@@ -4,7 +4,7 @@
   <rm:locator pattern="^org\.fujaba\.commons.*feature$" searchPathRef="sdmsvn_features" failOnError="false" />
   <rm:locator pattern="^de\.mdelab\.sdm\..*feature$" searchPathRef="sdmsvn_features" failOnError="false" />
   <rm:locator pattern="^de\.mdelab\.sdm\..*feature$" searchPathRef="sdmsvn_features" failOnError="false" />
-  <rm:locator pattern="^org\.storydriven.*feature$" searchPathRef="sdmsvn_features" failOnError="false" />
+  <rm:locator pattern="^org\.storydriven.*[feature|buckminster}$" searchPathRef="sdmsvn_features" failOnError="false" />
   <rm:locator pattern="^de\.upb\.swt\.core.*feature$" searchPathRef="sdmsvn_features" failOnError="false" />
   <rm:locator pattern="^de\.mdelab\.sdm\..*" searchPathRef="sdmsvn_plugins" failOnError="false" />
   <rm:locator pattern="^org\.storydriven.*" searchPathRef="sdmsvn_plugins" failOnError="false" />
