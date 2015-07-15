@@ -1,0 +1,1 @@
+A common EMF-based metamodel specification and implementation for the various research tools building on the original story diagrams and story patterns model transformation language.
