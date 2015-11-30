@@ -44,7 +44,8 @@ public class PathExpressionsActivator extends AbstractUIPlugin {
 	
 	public Injector getInjector(String languageName) {
 		try {
-			return injectors.get(languageName);
+			/*FALKO*/
+			return injectors.get(languageName, null);
 		} catch(ExecutionException e) {
 			logger.error("Failed to create injector for " + languageName);
 			logger.error(e.getMessage(), e);

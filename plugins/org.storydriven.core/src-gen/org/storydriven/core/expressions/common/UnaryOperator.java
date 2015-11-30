@@ -40,6 +40,8 @@ public enum UnaryOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
+	/*FALKO*/
+	PLUS(1, "PLUS", "PLUS"),
 	MINUS(2, "MINUS", "MINUS"), /**
 								 * The '<em><b>INCREMENT</b></em>' literal object.
 								 * <!-- begin-user-doc -->
@@ -86,6 +88,8 @@ public enum UnaryOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
+	public static final int PLUS_VALUE = 1;
+
 	public static final int MINUS_VALUE = 2;
 
 	/**
@@ -178,6 +182,8 @@ public enum UnaryOperator implements Enumerator {
 		switch (value) {
 		case NOT_VALUE:
 			return NOT;
+		case PLUS_VALUE:
+			return PLUS;
 		case MINUS_VALUE:
 			return MINUS;
 		case INCREMENT_VALUE:
