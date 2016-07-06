@@ -18,15 +18,17 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho-version>0.16.0</tycho-version>
+		<tycho-version>0.25.0</tycho-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<modules>
 		<module>plugins/org.storydriven.core</module>
+		<module>plugins/org.storydriven.core.ui</module>
 		<module>plugins/org.storydriven.core.edit</module>
 		<module>plugins/org.storydriven.storydiagrams</module>
 		<module>plugins/org.storydriven.storydiagrams.edit</module>
+		<module>plugins/org.storydriven.storydiagrams.ui</module>
 		<module>plugins/org.storydriven.storydiagrams.editor</module>
 		<module>plugins/org.storydriven.storydiagrams.diagram</module>
 		<module>plugins/org.storydriven.storydiagrams.diagram.ocl</module>
@@ -41,29 +43,22 @@
 		<module>features/org.storydriven.storydiagrams.interpreter.feature</module>
 		<module>features/org.storydriven.storydiagrams.diagram.feature</module>
 
-		<module>repositories/org.storydriven.repository.main</module>
+		<!--<module>repositories/org.storydriven.repository.main</module>-->
 	</modules>
 
 	<repositories>
 		<!-- add Indigo repository to resolve basic dependencies -->
 		<repository>
-			<id>Indigo</id>
+			<id>Neon</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/indigo</url>
-		</repository>
-
-		<!-- add Juno repository to resolve basic dependencies -->
-		<repository>
-			<id>Juno</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/juno</url>
+			<url>http://download.eclipse.org/releases/neon</url>
 		</repository>
 
 		<!-- add MDELab repository to resolve interpreter dependencies -->
 		<repository>
-			<id>mdelab.de</id>
+			<id>Palladio SDM Update Site</id>
 			<layout>p2</layout>
-			<url>http://www.hpi.uni-potsdam.de/giese/gforge/mdelab/update-site/sdm</url>
+			<url>https://sdqweb.ipd.kit.edu/eclipse/storydiagraminterpreter/releases/1.1.0/</url>
 		</repository>
 	</repositories>
 

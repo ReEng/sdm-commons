@@ -18,7 +18,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho-version>0.17.0</tycho-version>
+		<tycho-version>0.25.0</tycho-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -35,9 +35,9 @@
 	<repositories>
 		<!-- basic eclipse dependencies -->
 		<repository>
-			<id>eclipse-juno</id>
+			<id>Neon</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/juno</url>
+			<url>http://download.eclipse.org/releases/neon</url>
 		</repository>
 	</repositories>
 
