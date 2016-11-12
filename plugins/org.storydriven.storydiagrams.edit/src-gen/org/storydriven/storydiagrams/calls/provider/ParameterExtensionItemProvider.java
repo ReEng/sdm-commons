@@ -31,186 +31,196 @@ import org.storydriven.storydiagrams.provider.VariableItemProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ParameterExtensionItemProvider extends VariableItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
-	/**
-	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ParameterExtensionItemProvider(AdapterFactory adapterFactory) {
-		super(adapterFactory);
-	}
+public class ParameterExtensionItemProvider extends VariableItemProvider {
+    /**
+     * This constructs an instance from a factory and a notifier.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ParameterExtensionItemProvider(AdapterFactory adapterFactory) {
+        super(adapterFactory);
+    }
 
-	/**
-	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
-			super.getPropertyDescriptors(object);
+    /**
+     * This returns the property descriptors for the adapted class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+        if (itemPropertyDescriptors == null) {
+            super.getPropertyDescriptors(object);
 
-			addBasePropertyDescriptor(object);
-			addModelBasePropertyDescriptor(object);
-			addOwningAnnotationPropertyDescriptor(object);
-			addParameterPropertyDescriptor(object);
-		}
-		return itemPropertyDescriptors;
-	}
+            addBasePropertyDescriptor(object);
+            addModelBasePropertyDescriptor(object);
+            addOwningAnnotationPropertyDescriptor(object);
+            addParameterPropertyDescriptor(object);
+        }
+        return itemPropertyDescriptors;
+    }
 
-	/**
-	 * This adds a property descriptor for the Base feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addBasePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Extension_base_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Extension_base_feature", "_UI_Extension_type"),
-				CorePackage.Literals.EXTENSION__BASE, false, false, false,
-				null, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Base feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addBasePropertyDescriptor(Object object) {
+        itemPropertyDescriptors
+                .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString("_UI_Extension_base_feature"),
+                        getString("_UI_PropertyDescriptor_description", "_UI_Extension_base_feature",
+                                "_UI_Extension_type"),
+                        CorePackage.Literals.EXTENSION__BASE,
+                        false,
+                        false,
+                        false,
+                        null,
+                        null,
+                        null));
+    }
 
-	/**
-	 * This adds a property descriptor for the Model Base feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addModelBasePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Extension_modelBase_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_Extension_modelBase_feature",
-								"_UI_Extension_type"),
-						CorePackage.Literals.EXTENSION__MODEL_BASE, true,
-						false, true, null, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Model Base feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addModelBasePropertyDescriptor(Object object) {
+        itemPropertyDescriptors
+                .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString("_UI_Extension_modelBase_feature"),
+                        getString("_UI_PropertyDescriptor_description", "_UI_Extension_modelBase_feature",
+                                "_UI_Extension_type"),
+                        CorePackage.Literals.EXTENSION__MODEL_BASE,
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null));
+    }
 
-	/**
-	 * This adds a property descriptor for the Owning Annotation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOwningAnnotationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Extension_owningAnnotation_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Extension_owningAnnotation_feature",
-						"_UI_Extension_type"),
-				CorePackage.Literals.EXTENSION__OWNING_ANNOTATION, true, false,
-				true, null, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Owning Annotation feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addOwningAnnotationPropertyDescriptor(Object object) {
+        itemPropertyDescriptors
+                .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString("_UI_Extension_owningAnnotation_feature"),
+                        getString("_UI_PropertyDescriptor_description", "_UI_Extension_owningAnnotation_feature",
+                                "_UI_Extension_type"),
+                        CorePackage.Literals.EXTENSION__OWNING_ANNOTATION,
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null));
+    }
 
-	/**
-	 * This adds a property descriptor for the Parameter feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParameterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ParameterExtension_parameter_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ParameterExtension_parameter_feature",
-						"_UI_ParameterExtension_type"),
-				CallsPackage.Literals.PARAMETER_EXTENSION__PARAMETER, true,
-				false, true, null, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Parameter feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addParameterPropertyDescriptor(Object object) {
+        itemPropertyDescriptors
+                .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString("_UI_ParameterExtension_parameter_feature"),
+                        getString("_UI_PropertyDescriptor_description", "_UI_ParameterExtension_parameter_feature",
+                                "_UI_ParameterExtension_type"),
+                        CallsPackage.Literals.PARAMETER_EXTENSION__PARAMETER,
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null));
+    }
 
-	/**
-	 * This returns ParameterExtension.png.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(
-				object,
-				getResourceLocator().getImage(
-						"elements/calls/ParameterExtension.png"));
-	}
+    /**
+     * This returns ParameterExtension.png.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Object getImage(Object object) {
+        return overlayImage(
+                object,
+                getResourceLocator().getImage(
+                        "elements/calls/ParameterExtension.png"));
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean shouldComposeCreationImage() {
-		return true;
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    protected boolean shouldComposeCreationImage() {
+        return true;
+    }
 
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return StorydiagramsEditPlugin.INSTANCE;
-	}
+    /**
+     * Return the resource locator for this item provider's resources.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public ResourceLocator getResourceLocator() {
+        return StorydiagramsEditPlugin.INSTANCE;
+    }
 
-	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getText(Object object) {
-		String label = ((ParameterExtension) object).getVariableName();
-		return label == null || label.length() == 0 ? getString("_UI_ParameterExtension_type")
-				: getString("_UI_ParameterExtension_type") + " " + label;
-	}
+    /**
+     * This returns the label text for the adapted class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getText(Object object) {
+        String label = ((ParameterExtension) object).getVariableName();
+        return label == null || label.length() == 0 ? getString("_UI_ParameterExtension_type")
+                : getString("_UI_ParameterExtension_type") + " " + label;
+    }
 
-	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update any cached
-	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void notifyChanged(Notification notification) {
-		updateChildren(notification);
-		super.notifyChanged(notification);
-	}
+    /**
+     * This handles model notifications by calling {@link #updateChildren} to update any cached
+     * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void notifyChanged(Notification notification) {
+        updateChildren(notification);
+        super.notifyChanged(notification);
+    }
 
-	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
-		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
+    /**
+     * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+     * that can be created under this object.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    protected void collectNewChildDescriptors(
+            Collection<Object> newChildDescriptors, Object object) {
+        super.collectNewChildDescriptors(newChildDescriptors, object);
+    }
 
 }

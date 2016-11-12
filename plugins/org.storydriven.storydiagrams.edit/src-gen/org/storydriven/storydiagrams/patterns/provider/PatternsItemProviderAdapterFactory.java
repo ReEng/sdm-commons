@@ -35,454 +35,452 @@ import org.storydriven.storydiagrams.patterns.util.PatternsAdapterFactory;
  * @generated
  */
 public class PatternsItemProviderAdapterFactory extends PatternsAdapterFactory
-		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
-	/**
-	 * This keeps track of the root adapter factory that delegates to this adapter factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ComposedAdapterFactory parentAdapterFactory;
+        implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+    /**
+     * This keeps track of the root adapter factory that delegates to this adapter factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected ComposedAdapterFactory parentAdapterFactory;
 
-	/**
-	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IChangeNotifier changeNotifier = new ChangeNotifier();
+    /**
+     * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
-	/**
-	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Collection<Object> supportedTypes = new ArrayList<Object>();
+    /**
+     * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.ObjectVariable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ObjectVariableItemProvider objectVariableItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.ObjectVariable} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected ObjectVariableItemProvider objectVariableItemProvider;
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.Constraint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConstraintItemProvider constraintItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.Constraint} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected ConstraintItemProvider constraintItemProvider;
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.LinkConstraint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected LinkConstraintItemProvider linkConstraintItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.LinkConstraint} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected LinkConstraintItemProvider linkConstraintItemProvider;
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.AttributeAssignment} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AttributeAssignmentItemProvider attributeAssignmentItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.AttributeAssignment} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected AttributeAssignmentItemProvider attributeAssignmentItemProvider;
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.PrimitiveVariable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PrimitiveVariableItemProvider primitiveVariableItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.PrimitiveVariable} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected PrimitiveVariableItemProvider primitiveVariableItemProvider;
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.Path} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PathItemProvider pathItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.Path} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected PathItemProvider pathItemProvider;
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.LinkVariable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected LinkVariableItemProvider linkVariableItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.LinkVariable} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected LinkVariableItemProvider linkVariableItemProvider;
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.MatchingPattern} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MatchingPatternItemProvider matchingPatternItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.MatchingPattern} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected MatchingPatternItemProvider matchingPatternItemProvider;
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.StoryPattern} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StoryPatternItemProvider storyPatternItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.StoryPattern} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected StoryPatternItemProvider storyPatternItemProvider;
 
-	/**
-	 * This constructs an instance.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PatternsItemProviderAdapterFactory() {
-		supportedTypes.add(IEditingDomainItemProvider.class);
-		supportedTypes.add(IStructuredItemContentProvider.class);
-		supportedTypes.add(ITreeItemContentProvider.class);
-		supportedTypes.add(IItemLabelProvider.class);
-		supportedTypes.add(IItemPropertySource.class);
-	}
+    /**
+     * This constructs an instance.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public PatternsItemProviderAdapterFactory() {
+        supportedTypes.add(IEditingDomainItemProvider.class);
+        supportedTypes.add(IStructuredItemContentProvider.class);
+        supportedTypes.add(ITreeItemContentProvider.class);
+        supportedTypes.add(IItemLabelProvider.class);
+        supportedTypes.add(IItemPropertySource.class);
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
-			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
-				return adapter;
-			}
-		}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Object adapt(Object object, Object type) {
+        if (isFactoryForType(type)) {
+            Object adapter = super.adapt(object, type);
+            if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+                return adapter;
+            }
+        }
 
-		return null;
-	}
+        return null;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isFactoryForType(Object type) {
-		return supportedTypes.contains(type) || super.isFactoryForType(type);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isFactoryForType(Object type) {
+        return supportedTypes.contains(type) || super.isFactoryForType(type);
+    }
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.ObjectVariable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createObjectVariableAdapter() {
-		if (objectVariableItemProvider == null) {
-			objectVariableItemProvider = new CustomObjectVariableItemProvider(
-					this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.ObjectVariable}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createObjectVariableAdapter() {
+        if (objectVariableItemProvider == null) {
+            objectVariableItemProvider = new CustomObjectVariableItemProvider(
+                    this);
+        }
 
-		return objectVariableItemProvider;
-	}
+        return objectVariableItemProvider;
+    }
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.Constraint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createConstraintAdapter() {
-		if (constraintItemProvider == null) {
-			constraintItemProvider = new CustomConstraintItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.Constraint}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createConstraintAdapter() {
+        if (constraintItemProvider == null) {
+            constraintItemProvider = new CustomConstraintItemProvider(this);
+        }
 
-		return constraintItemProvider;
-	}
+        return constraintItemProvider;
+    }
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.LinkConstraint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createLinkConstraintAdapter() {
-		if (linkConstraintItemProvider == null) {
-			linkConstraintItemProvider = new CustomLinkConstraintItemProvider(
-					this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.LinkConstraint}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createLinkConstraintAdapter() {
+        if (linkConstraintItemProvider == null) {
+            linkConstraintItemProvider = new CustomLinkConstraintItemProvider(
+                    this);
+        }
 
-		return linkConstraintItemProvider;
-	}
+        return linkConstraintItemProvider;
+    }
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.AttributeAssignment}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createAttributeAssignmentAdapter() {
-		if (attributeAssignmentItemProvider == null) {
-			attributeAssignmentItemProvider = new CustomAttributeAssignmentItemProvider(
-					this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.AttributeAssignment}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createAttributeAssignmentAdapter() {
+        if (attributeAssignmentItemProvider == null) {
+            attributeAssignmentItemProvider = new CustomAttributeAssignmentItemProvider(
+                    this);
+        }
 
-		return attributeAssignmentItemProvider;
-	}
+        return attributeAssignmentItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.CollectionVariable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CollectionVariableItemProvider collectionVariableItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.CollectionVariable} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected CollectionVariableItemProvider collectionVariableItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.CollectionVariable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createCollectionVariableAdapter() {
-		if (collectionVariableItemProvider == null) {
-			collectionVariableItemProvider = new CustomCollectionVariableItemProvider(
-					this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.CollectionVariable}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createCollectionVariableAdapter() {
+        if (collectionVariableItemProvider == null) {
+            collectionVariableItemProvider = new CustomCollectionVariableItemProvider(
+                    this);
+        }
 
-		return collectionVariableItemProvider;
-	}
+        return collectionVariableItemProvider;
+    }
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.PrimitiveVariable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createPrimitiveVariableAdapter() {
-		if (primitiveVariableItemProvider == null) {
-			primitiveVariableItemProvider = new CustomPrimitiveVariableItemProvider(
-					this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.PrimitiveVariable}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createPrimitiveVariableAdapter() {
+        if (primitiveVariableItemProvider == null) {
+            primitiveVariableItemProvider = new CustomPrimitiveVariableItemProvider(
+                    this);
+        }
 
-		return primitiveVariableItemProvider;
-	}
+        return primitiveVariableItemProvider;
+    }
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.Path}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createPathAdapter() {
-		if (pathItemProvider == null) {
-			pathItemProvider = new CustomPathItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.Path}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createPathAdapter() {
+        if (pathItemProvider == null) {
+            pathItemProvider = new CustomPathItemProvider(this);
+        }
 
-		return pathItemProvider;
-	}
+        return pathItemProvider;
+    }
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.LinkVariable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createLinkVariableAdapter() {
-		if (linkVariableItemProvider == null) {
-			linkVariableItemProvider = new CustomLinkVariableItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.LinkVariable}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createLinkVariableAdapter() {
+        if (linkVariableItemProvider == null) {
+            linkVariableItemProvider = new CustomLinkVariableItemProvider(this);
+        }
 
-		return linkVariableItemProvider;
-	}
+        return linkVariableItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.InclusionLink} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected InclusionLinkItemProvider inclusionLinkItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.InclusionLink} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected InclusionLinkItemProvider inclusionLinkItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.InclusionLink}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createInclusionLinkAdapter() {
-		if (inclusionLinkItemProvider == null) {
-			inclusionLinkItemProvider = new CustomInclusionLinkItemProvider(
-					this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.InclusionLink}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createInclusionLinkAdapter() {
+        if (inclusionLinkItemProvider == null) {
+            inclusionLinkItemProvider = new CustomInclusionLinkItemProvider(
+                    this);
+        }
 
-		return inclusionLinkItemProvider;
-	}
+        return inclusionLinkItemProvider;
+    }
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.MatchingPattern}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createMatchingPatternAdapter() {
-		if (matchingPatternItemProvider == null) {
-			matchingPatternItemProvider = new CustomMatchingPatternItemProvider(
-					this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.MatchingPattern}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createMatchingPatternAdapter() {
+        if (matchingPatternItemProvider == null) {
+            matchingPatternItemProvider = new CustomMatchingPatternItemProvider(
+                    this);
+        }
 
-		return matchingPatternItemProvider;
-	}
+        return matchingPatternItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.MaybeLink} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MaybeLinkItemProvider maybeLinkItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.MaybeLink} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected MaybeLinkItemProvider maybeLinkItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.MaybeLink}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createMaybeLinkAdapter() {
-		if (maybeLinkItemProvider == null) {
-			maybeLinkItemProvider = new CustomMaybeLinkItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.MaybeLink}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createMaybeLinkAdapter() {
+        if (maybeLinkItemProvider == null) {
+            maybeLinkItemProvider = new CustomMaybeLinkItemProvider(this);
+        }
 
-		return maybeLinkItemProvider;
-	}
+        return maybeLinkItemProvider;
+    }
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.StoryPattern}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createStoryPatternAdapter() {
-		if (storyPatternItemProvider == null) {
-			storyPatternItemProvider = new CustomStoryPatternItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.StoryPattern}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createStoryPatternAdapter() {
+        if (storyPatternItemProvider == null) {
+            storyPatternItemProvider = new CustomStoryPatternItemProvider(this);
+        }
 
-		return storyPatternItemProvider;
-	}
+        return storyPatternItemProvider;
+    }
 
-	/**
-	 * This returns the root adapter factory that contains this factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
-	}
+    /**
+     * This returns the root adapter factory that contains this factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ComposeableAdapterFactory getRootAdapterFactory() {
+        return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+    }
 
-	/**
-	 * This sets the composed adapter factory that contains this factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
-		this.parentAdapterFactory = parentAdapterFactory;
-	}
+    /**
+     * This sets the composed adapter factory that contains this factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setParentAdapterFactory(
+            ComposedAdapterFactory parentAdapterFactory) {
+        this.parentAdapterFactory = parentAdapterFactory;
+    }
 
-	/**
-	 * This implementation substitutes the factory itself as the key for the adapter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter adapt(Notifier notifier, Object type) {
-		return super.adapt(notifier, this);
-	}
+    /**
+     * This implementation substitutes the factory itself as the key for the adapter.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter adapt(Notifier notifier, Object type) {
+        return super.adapt(notifier, this);
+    }
 
-	/**
-	 * This adds a listener.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void addListener(INotifyChangedListener notifyChangedListener) {
-		changeNotifier.addListener(notifyChangedListener);
-	}
+    /**
+     * This adds a listener.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void addListener(INotifyChangedListener notifyChangedListener) {
+        changeNotifier.addListener(notifyChangedListener);
+    }
 
-	/**
-	 * This removes a listener.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void removeListener(INotifyChangedListener notifyChangedListener) {
-		changeNotifier.removeListener(notifyChangedListener);
-	}
+    /**
+     * This removes a listener.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void removeListener(INotifyChangedListener notifyChangedListener) {
+        changeNotifier.removeListener(notifyChangedListener);
+    }
 
-	/**
-	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void fireNotifyChanged(Notification notification) {
-		changeNotifier.fireNotifyChanged(notification);
+    /**
+     * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void fireNotifyChanged(Notification notification) {
+        changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
-			parentAdapterFactory.fireNotifyChanged(notification);
-		}
-	}
+        if (parentAdapterFactory != null) {
+            parentAdapterFactory.fireNotifyChanged(notification);
+        }
+    }
 
-	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void dispose() {
-		if (objectVariableItemProvider != null)
-			objectVariableItemProvider.dispose();
-		if (constraintItemProvider != null)
-			constraintItemProvider.dispose();
-		if (linkConstraintItemProvider != null)
-			linkConstraintItemProvider.dispose();
-		if (attributeAssignmentItemProvider != null)
-			attributeAssignmentItemProvider.dispose();
-		if (collectionVariableItemProvider != null)
-			collectionVariableItemProvider.dispose();
-		if (primitiveVariableItemProvider != null)
-			primitiveVariableItemProvider.dispose();
-		if (pathItemProvider != null)
-			pathItemProvider.dispose();
-		if (linkVariableItemProvider != null)
-			linkVariableItemProvider.dispose();
-		if (inclusionLinkItemProvider != null)
-			inclusionLinkItemProvider.dispose();
-		if (matchingPatternItemProvider != null)
-			matchingPatternItemProvider.dispose();
-		if (maybeLinkItemProvider != null)
-			maybeLinkItemProvider.dispose();
-		if (storyPatternItemProvider != null)
-			storyPatternItemProvider.dispose();
-	}
+    /**
+     * This disposes all of the item providers created by this factory. 
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void dispose() {
+        if (objectVariableItemProvider != null)
+            objectVariableItemProvider.dispose();
+        if (constraintItemProvider != null)
+            constraintItemProvider.dispose();
+        if (linkConstraintItemProvider != null)
+            linkConstraintItemProvider.dispose();
+        if (attributeAssignmentItemProvider != null)
+            attributeAssignmentItemProvider.dispose();
+        if (collectionVariableItemProvider != null)
+            collectionVariableItemProvider.dispose();
+        if (primitiveVariableItemProvider != null)
+            primitiveVariableItemProvider.dispose();
+        if (pathItemProvider != null)
+            pathItemProvider.dispose();
+        if (linkVariableItemProvider != null)
+            linkVariableItemProvider.dispose();
+        if (inclusionLinkItemProvider != null)
+            inclusionLinkItemProvider.dispose();
+        if (matchingPatternItemProvider != null)
+            matchingPatternItemProvider.dispose();
+        if (maybeLinkItemProvider != null)
+            maybeLinkItemProvider.dispose();
+        if (storyPatternItemProvider != null)
+            storyPatternItemProvider.dispose();
+    }
 
 }

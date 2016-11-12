@@ -35,252 +35,250 @@ import org.storydriven.storydiagrams.patterns.expressions.util.PatternsExpressio
  * @generated
  */
 public class PatternsExpressionsItemProviderAdapterFactory extends
-		PatternsExpressionsAdapterFactory implements ComposeableAdapterFactory,
-		IChangeNotifier, IDisposable {
-	/**
-	 * This keeps track of the root adapter factory that delegates to this adapter factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ComposedAdapterFactory parentAdapterFactory;
+        PatternsExpressionsAdapterFactory implements ComposeableAdapterFactory,
+        IChangeNotifier, IDisposable {
+    /**
+     * This keeps track of the root adapter factory that delegates to this adapter factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected ComposedAdapterFactory parentAdapterFactory;
 
-	/**
-	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IChangeNotifier changeNotifier = new ChangeNotifier();
+    /**
+     * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
-	/**
-	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Collection<Object> supportedTypes = new ArrayList<Object>();
+    /**
+     * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AttributeValueExpressionItemProvider attributeValueExpressionItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected AttributeValueExpressionItemProvider attributeValueExpressionItemProvider;
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ObjectVariableExpressionItemProvider objectVariableExpressionItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected ObjectVariableExpressionItemProvider objectVariableExpressionItemProvider;
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PrimitiveVariableExpressionItemProvider primitiveVariableExpressionItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected PrimitiveVariableExpressionItemProvider primitiveVariableExpressionItemProvider;
 
-	/**
-	 * This constructs an instance.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PatternsExpressionsItemProviderAdapterFactory() {
-		supportedTypes.add(IEditingDomainItemProvider.class);
-		supportedTypes.add(IStructuredItemContentProvider.class);
-		supportedTypes.add(ITreeItemContentProvider.class);
-		supportedTypes.add(IItemLabelProvider.class);
-		supportedTypes.add(IItemPropertySource.class);
-	}
+    /**
+     * This constructs an instance.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public PatternsExpressionsItemProviderAdapterFactory() {
+        supportedTypes.add(IEditingDomainItemProvider.class);
+        supportedTypes.add(IStructuredItemContentProvider.class);
+        supportedTypes.add(ITreeItemContentProvider.class);
+        supportedTypes.add(IItemLabelProvider.class);
+        supportedTypes.add(IItemPropertySource.class);
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
-			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
-				return adapter;
-			}
-		}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Object adapt(Object object, Object type) {
+        if (isFactoryForType(type)) {
+            Object adapter = super.adapt(object, type);
+            if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+                return adapter;
+            }
+        }
 
-		return null;
-	}
+        return null;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isFactoryForType(Object type) {
-		return supportedTypes.contains(type) || super.isFactoryForType(type);
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isFactoryForType(Object type) {
+        return supportedTypes.contains(type) || super.isFactoryForType(type);
+    }
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createAttributeValueExpressionAdapter() {
-		if (attributeValueExpressionItemProvider == null) {
-			attributeValueExpressionItemProvider = new CustomAttributeValueExpressionItemProvider(
-					this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.AttributeValueExpression}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createAttributeValueExpressionAdapter() {
+        if (attributeValueExpressionItemProvider == null) {
+            attributeValueExpressionItemProvider = new CustomAttributeValueExpressionItemProvider(
+                    this);
+        }
 
-		return attributeValueExpressionItemProvider;
-	}
+        return attributeValueExpressionItemProvider;
+    }
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createObjectVariableExpressionAdapter() {
-		if (objectVariableExpressionItemProvider == null) {
-			objectVariableExpressionItemProvider = new CustomObjectVariableExpressionItemProvider(
-					this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.ObjectVariableExpression}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createObjectVariableExpressionAdapter() {
+        if (objectVariableExpressionItemProvider == null) {
+            objectVariableExpressionItemProvider = new CustomObjectVariableExpressionItemProvider(
+                    this);
+        }
 
-		return objectVariableExpressionItemProvider;
-	}
+        return objectVariableExpressionItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CollectionSizeExpressionItemProvider collectionSizeExpressionItemProvider;
+    /**
+     * This keeps track of the one adapter used for all {@link org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected CollectionSizeExpressionItemProvider collectionSizeExpressionItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createCollectionSizeExpressionAdapter() {
-		if (collectionSizeExpressionItemProvider == null) {
-			collectionSizeExpressionItemProvider = new CustomCollectionSizeExpressionItemProvider(
-					this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.CollectionSizeExpression}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createCollectionSizeExpressionAdapter() {
+        if (collectionSizeExpressionItemProvider == null) {
+            collectionSizeExpressionItemProvider = new CustomCollectionSizeExpressionItemProvider(
+                    this);
+        }
 
-		return collectionSizeExpressionItemProvider;
-	}
+        return collectionSizeExpressionItemProvider;
+    }
 
-	/**
-	 * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Adapter createPrimitiveVariableExpressionAdapter() {
-		if (primitiveVariableExpressionItemProvider == null) {
-			primitiveVariableExpressionItemProvider = new CustomPrimitiveVariableExpressionItemProvider(
-					this);
-		}
+    /**
+     * This creates an adapter for a {@link org.storydriven.storydiagrams.patterns.expressions.PrimitiveVariableExpression}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public Adapter createPrimitiveVariableExpressionAdapter() {
+        if (primitiveVariableExpressionItemProvider == null) {
+            primitiveVariableExpressionItemProvider = new CustomPrimitiveVariableExpressionItemProvider(
+                    this);
+        }
 
-		return primitiveVariableExpressionItemProvider;
-	}
+        return primitiveVariableExpressionItemProvider;
+    }
 
-	/**
-	 * This returns the root adapter factory that contains this factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
-	}
+    /**
+     * This returns the root adapter factory that contains this factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ComposeableAdapterFactory getRootAdapterFactory() {
+        return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+    }
 
-	/**
-	 * This sets the composed adapter factory that contains this factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
-		this.parentAdapterFactory = parentAdapterFactory;
-	}
+    /**
+     * This sets the composed adapter factory that contains this factory.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setParentAdapterFactory(
+            ComposedAdapterFactory parentAdapterFactory) {
+        this.parentAdapterFactory = parentAdapterFactory;
+    }
 
-	/**
-	 * This implementation substitutes the factory itself as the key for the adapter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter adapt(Notifier notifier, Object type) {
-		return super.adapt(notifier, this);
-	}
+    /**
+     * This implementation substitutes the factory itself as the key for the adapter.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter adapt(Notifier notifier, Object type) {
+        return super.adapt(notifier, this);
+    }
 
-	/**
-	 * This adds a listener.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void addListener(INotifyChangedListener notifyChangedListener) {
-		changeNotifier.addListener(notifyChangedListener);
-	}
+    /**
+     * This adds a listener.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void addListener(INotifyChangedListener notifyChangedListener) {
+        changeNotifier.addListener(notifyChangedListener);
+    }
 
-	/**
-	 * This removes a listener.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void removeListener(INotifyChangedListener notifyChangedListener) {
-		changeNotifier.removeListener(notifyChangedListener);
-	}
+    /**
+     * This removes a listener.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void removeListener(INotifyChangedListener notifyChangedListener) {
+        changeNotifier.removeListener(notifyChangedListener);
+    }
 
-	/**
-	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void fireNotifyChanged(Notification notification) {
-		changeNotifier.fireNotifyChanged(notification);
+    /**
+     * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void fireNotifyChanged(Notification notification) {
+        changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
-			parentAdapterFactory.fireNotifyChanged(notification);
-		}
-	}
+        if (parentAdapterFactory != null) {
+            parentAdapterFactory.fireNotifyChanged(notification);
+        }
+    }
 
-	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void dispose() {
-		if (attributeValueExpressionItemProvider != null)
-			attributeValueExpressionItemProvider.dispose();
-		if (objectVariableExpressionItemProvider != null)
-			objectVariableExpressionItemProvider.dispose();
-		if (collectionSizeExpressionItemProvider != null)
-			collectionSizeExpressionItemProvider.dispose();
-		if (primitiveVariableExpressionItemProvider != null)
-			primitiveVariableExpressionItemProvider.dispose();
-	}
+    /**
+     * This disposes all of the item providers created by this factory. 
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void dispose() {
+        if (attributeValueExpressionItemProvider != null)
+            attributeValueExpressionItemProvider.dispose();
+        if (objectVariableExpressionItemProvider != null)
+            objectVariableExpressionItemProvider.dispose();
+        if (collectionSizeExpressionItemProvider != null)
+            collectionSizeExpressionItemProvider.dispose();
+        if (primitiveVariableExpressionItemProvider != null)
+            primitiveVariableExpressionItemProvider.dispose();
+    }
 
 }
