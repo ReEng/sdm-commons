@@ -10,88 +10,88 @@ import org.eclipse.jface.wizard.Wizard;
 import org.storydriven.storydiagrams.ui.interpreter.Activator;
 
 public class InterpreteActivityWizard extends Wizard {
-	// settings
+    // settings
 
-	private InterpreterConfiguration configuration;
+    private InterpreterConfiguration configuration;
 
-	private InterpreterWizardInputPage inputPage;
-	private InterpreterWizardExecutionPage executionPage;
-	private InterpreterWizardResultPage resultPage;
+    private InterpreterWizardInputPage inputPage;
+    private InterpreterWizardExecutionPage executionPage;
+    //    private InterpreterWizardResultPage resultPage;
 
-	private ResourceSet originalResourceSet;
-	private ResourceSet workingResourceSet;
+    private ResourceSet originalResourceSet;
+    private ResourceSet workingResourceSet;
 
-	private IFile file;
+    private final IFile file;
 
-	public InterpreteActivityWizard(IFile file, URI activityUri) {
-		this.file = file;
+    public InterpreteActivityWizard(final IFile file, final URI activityUri) {
+        this.file = file;
 
-		// resolve settings
-		String settingsKey = InterpreteActivityWizard.class.getCanonicalName();
-		IDialogSettings pluginDialogSettings = Activator.get().getDialogSettings();
-		IDialogSettings wizardDialogSettings = pluginDialogSettings.getSection(settingsKey);
-		if (wizardDialogSettings == null) {
-			wizardDialogSettings = pluginDialogSettings.addNewSection(settingsKey);
-		}
-		setDialogSettings(wizardDialogSettings);
+        // resolve settings
+        final String settingsKey = InterpreteActivityWizard.class.getCanonicalName();
+        final IDialogSettings pluginDialogSettings = Activator.get().getDialogSettings();
+        IDialogSettings wizardDialogSettings = pluginDialogSettings.getSection(settingsKey);
+        if (wizardDialogSettings == null) {
+            wizardDialogSettings = pluginDialogSettings.addNewSection(settingsKey);
+        }
+        setDialogSettings(wizardDialogSettings);
 
-		setWindowTitle("Interprete Activity");
-		// TODO: add wizard banner image
-		// setDefaultPageImageDescriptor(null);
+        setWindowTitle("Interprete Activity");
+        // TODO: add wizard banner image
+        // setDefaultPageImageDescriptor(null);
 
-		// create interpreter configuration
-		if (activityUri == null) {
-			configuration = new InterpreterConfiguration();
-		} else {
-			configuration = InterpreterConfiguration.fromSettings(wizardDialogSettings, activityUri);
-		}
-	}
+        // create interpreter configuration
+        if (activityUri == null) {
+            configuration = new InterpreterConfiguration();
+        } else {
+            configuration = InterpreterConfiguration.fromSettings(wizardDialogSettings, activityUri);
+        }
+    }
 
-	public ResourceSet getOriginalResourceSet() {
-		if (originalResourceSet == null) {
-			originalResourceSet = new ResourceSetImpl();
+    public ResourceSet getOriginalResourceSet() {
+        if (originalResourceSet == null) {
+            originalResourceSet = new ResourceSetImpl();
 
-			// copy from working resource set
-			for (Resource resource : getWorkingResourceSet().getResources()) {
-				originalResourceSet.getResource(resource.getURI(), true);
-			}
-		}
-		return originalResourceSet;
-	}
+            // copy from working resource set
+            for (final Resource resource : getWorkingResourceSet().getResources()) {
+                originalResourceSet.getResource(resource.getURI(), true);
+            }
+        }
+        return originalResourceSet;
+    }
 
-	public ResourceSet getWorkingResourceSet() {
-		if (workingResourceSet == null) {
-			workingResourceSet = new ResourceSetImpl();
-		}
-		return workingResourceSet;
-	}
+    public ResourceSet getWorkingResourceSet() {
+        if (workingResourceSet == null) {
+            workingResourceSet = new ResourceSetImpl();
+        }
+        return workingResourceSet;
+    }
 
-	@Override
-	public boolean performCancel() {
-		configuration.toSettings(getDialogSettings());
+    @Override
+    public boolean performCancel() {
+        configuration.toSettings(getDialogSettings());
 
-		return super.performCancel();
-	}
+        return super.performCancel();
+    }
 
-	@Override
-	public boolean performFinish() {
-		configuration.toSettings(getDialogSettings());
+    @Override
+    public boolean performFinish() {
+        configuration.toSettings(getDialogSettings());
 
-		return true;
-	}
+        return true;
+    }
 
-	@Override
-	public void addPages() {
-		inputPage = new InterpreterWizardInputPage(file);
-		executionPage = new InterpreterWizardExecutionPage();
-		resultPage = new InterpreterWizardResultPage();
+    @Override
+    public void addPages() {
+        inputPage = new InterpreterWizardInputPage(file);
+        executionPage = new InterpreterWizardExecutionPage();
+        // resultPage = new InterpreterWizardResultPage();
 
-		addPage(inputPage);
-		addPage(executionPage);
-		addPage(resultPage);
-	}
+        addPage(inputPage);
+        addPage(executionPage);
+        // addPage(resultPage);
+    }
 
-	public InterpreterConfiguration getConfiguration() {
-		return configuration;
-	}
+    public InterpreterConfiguration getConfiguration() {
+        return configuration;
+    }
 }
