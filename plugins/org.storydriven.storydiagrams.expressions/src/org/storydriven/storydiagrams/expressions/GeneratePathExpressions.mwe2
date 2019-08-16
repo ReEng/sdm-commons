@@ -4,10 +4,10 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/org/storydriven/modeling/expressions/PathExpressions.xtext"
 var file.extensions = "sdpath"
 var projectName = "org.storydriven.storydiagrams.expressions"
 var runtimeProject = "../${projectName}"
+var grammarURI = "${runtimeProject}/src/org/storydriven/storydiagrams/expressions/PathExpressions.xtext"
 
 Workflow {
     bean = StandaloneSetup {
@@ -37,6 +37,8 @@ Workflow {
 			// generates Java API for the generated EPackages 
 			fragment = ecore.EcoreGeneratorFragment {
 			// referencedGenModels = "uri to genmodel, uri to next genmodel"
+				xmiModelDirectory = "${runtimeProject}/model/"
+				emfRuntimeVersion = "2.9"
 			}
 
 			// the serialization component
